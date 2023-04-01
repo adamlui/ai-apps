@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.04.01.4
+// @version             2023.04.01.5
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -53,7 +53,7 @@
     var openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
     var proxyEndpointMap = [[ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-3.5-turbo' ]]
 
-    var ddgptDivAlerts = {
+    var ddgptAlerts = {
         waitingResponse: 'Waiting for ChatGPT response...',
         login: 'Please login @ ',
         tooManyRequests: 'ChatGPT is flooded with too many requests. Check back later!',
@@ -137,11 +137,11 @@
         var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to toggle proxy API mode
-        var pamLabel = stateIndicator.menuSymbol[+config.proxyAPIdisabled] + ' Proxy API Mode '
-                     + stateSeparator + stateIndicator.menuWord[+config.proxyAPIdisabled]
+        var pamLabel = stateIndicator.menuSymbol[+!config.proxyAPIenabled] + ' Proxy API Mode '
+                     + stateSeparator + stateIndicator.menuWord[+!config.proxyAPIenabled]
         menuID.push(GM_registerMenuCommand(pamLabel, function() {
-            saveSetting('proxyAPIdisabled', !config.proxyAPIdisabled)
-            chatgpt.notify('Proxy Mode ' + stateIndicator.notifWord[+config.proxyAPIdisabled], '', '', 'shadow')
+            saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
+            chatgpt.notify('Proxy Mode ' + stateIndicator.notifWord[+!config.proxyAPIenabled], '', '', 'shadow')
             for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
             registerMenu() // serve fresh menu
             location.reload() // re-send query using new endpoint
@@ -173,8 +173,8 @@
         if (msg.includes('login')) deleteOpenAIcookies()
         ddgptDiv.innerHTML = (
             /waiting|loading/i.test(msg) ? // if alert involves loading, add class
-                '<p class="loading">' : '<p>') + ddgptDivAlerts[msg]
-            + (ddgptDivAlerts[msg].includes('@') ? // if msg needs login link, add it
+                '<p class="loading">' : '<p>') + ddgptAlerts[msg]
+            + (ddgptAlerts[msg].includes('@') ? // if msg needs login link, add it
                 '<a href="https://chat.openai.com" target="_blank">chat.openai.com</a></p>' : '</p>')
     }
 
@@ -210,9 +210,6 @@
             } else { resolve(accessToken) }
     })}
 
-    var timeoutPromise = new Promise((resolve, reject) => {
-        setTimeout(() => { reject(new Error('Timeout occurred')) }, 3000) })
-
     function isBlockedbyCloudflare(resp) {
         try {
             var html = new DOMParser().parseFromString(resp, 'text/html')
@@ -237,13 +234,15 @@
         if (!getShowAnswer.attemptCnt) getShowAnswer.attemptCnt = 0
 
         // Pick API
-        if (!config.proxyAPIdisabled) { // randomize proxy API
+        if (config.proxyAPIenabled) { // randomize proxy API
             var untriedEndpoints = proxyEndpointMap.filter(function(entry) {
                 return !getShowAnswer.triedEndpoints?.includes(entry[0]) })
             var entry = untriedEndpoints[Math.floor(Math.random() * untriedEndpoints.length)]
             var endpoint = entry[0], accessKey = entry[1], model = entry[2]
         } else { // use OpenAI API
             var endpoint = openAIchatEndpoint
+            var timeoutPromise = new Promise((resolve, reject) => {
+                setTimeout(() => { reject(new Error('Timeout occurred')) }, 3000) })
             var accessKey = await Promise.race([getAccessToken(), timeoutPromise])
             if (!accessKey) { ddgptAlert('login') ; return }
             model = 'text-davinci-002-render'
@@ -257,18 +256,18 @@
             data: JSON.stringify({
                 action: 'next',
                 messages: [{
-                    role: 'user', id: config.proxyAPIdisabled ? uuidv4() : '',
-                    content: config.proxyAPIdisabled ? { content_type: 'text', parts: [question] } : question
+                    role: 'user', id: !config.proxyAPIenabled ? uuidv4() : '',
+                    content: !config.proxyAPIenabled ? { content_type: 'text', parts: [question] } : question
                 }],
                 model: model,
-                parent_message_id: config.proxyAPIdisabled ? uuidv4() : '',
+                parent_message_id: !config.proxyAPIenabled ? uuidv4() : '',
                 max_tokens: 4000
             }),
             onloadstart: onLoadStart(),
             onload: onLoad(),
             onerror: function(error) {
                 ddgptConsole.error(error)
-                if (config.proxyAPIdisabled) ddgptAlert(!accessKey ? 'login' : 'suggestProxy')
+                if (!config.proxyAPIenabled) ddgptAlert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
                     if (getShowAnswer.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
                     else ddgptAlert('suggestOpenAI')
@@ -277,7 +276,7 @@
         })
 
         function responseType() {
-          if (config.proxyAPIdisabled && getUserscriptManager() === 'Tampermonkey') {
+          if (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') {
             return 'stream' } else { return 'text' }
         }
 
@@ -290,7 +289,7 @@
 
         function onLoadStart() { // process streams for unproxied TM users
             ddgptConsole.info('Endpoint used: ' + endpoint)
-            if (config.proxyAPIdisabled && getUserscriptManager() === 'Tampermonkey') {
+            if (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') {
                 return function(stream) {
                     var reader = stream.response.getReader()
                     reader.read().then(function processText({ done, value }) {
@@ -312,34 +311,37 @@
 
         function onLoad() {
             return function(event) {
-                if (event.status !== 200 && !config.proxyAPIdisabled && getShowAnswer.attemptCnt < 1 && proxyEndpointMap.length > 1) {
+                if (event.status !== 200) {
                     ddgptConsole.error('Event status: ' + event.status)
-                    ddgptConsole.error('Event response: ' + event.responseText)
-                    retryDiffHost() }
-                else if (event.status === 401 && !config.proxyAPIdisabled) {
-                    GM_deleteValue('accessToken') ; ddgptAlert('login') }
-                else if (event.status === 403) {
-                    ddgptAlert(config.proxyAPIdisabled ? 'suggestProxy' : 'suggestOpenAI') }
-                else if (event.status === 429) { ddgptAlert('tooManyRequests') }
-                else if (config.proxyAPIdisabled && getUserscriptManager() !== 'Tampermonkey') {
+                    ddgptConsole.info('Event response: ' + event.responseText)
+                    if (config.proxyAPIenabled && getShowAnswer.attemptCnt < 1 && proxyEndpointMap.length > 1) {
+                        retryDiffHost() }
+                    else if (event.status === 401 && !config.proxyAPIenabled) {
+                        GM_deleteValue('accessToken') ; ddgptAlert('login') }
+                    else if (event.status === 403) {
+                        ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy') }
+                    else if (event.status === 429) { ddgptAlert('tooManyRequests') }
+                } else if (!config.proxyAPIenabled && getUserscriptManager() !== 'Tampermonkey') {
                     if (event.response) {
                         try { // to parse txt response from OpenAI endpoint for non-TM users
                             var answer = JSON.parse(event.response
                                 .split("\n\n").slice(-3, -2)[0].slice(6)).message.content.parts[0]
                             ddgptShow(answer)
                         } catch (error) {
-                            ddgptDivAlerts('parseFailed')
-                            ddgptConsole.error(ddgptDivAlerts.parseFailed + ': ' + error)
+                            ddgptAlert('parseFailed')
+                            ddgptConsole.error(ddgptAlerts.parseFailed + ': ' + error)
+                            ddgptConsole.info('Response: ' + event.response)
                         }
                     }
-                } else if (!config.proxyAPIdisabled) {
+                } else if (config.proxyAPIenabled) {
                     if (event.responseText) {
                         try { // to parse txt response from proxy endpoints
                             var answer = JSON.parse(event.responseText).choices[0].message.content
                             ddgptShow(answer) ; getShowAnswer.triedEndpoints = [] ; getShowAnswer.attemptCnt = 0
                         } catch (error) {
-                            ddgptDivAlerts('parseFailed')
-                            ddgptConsole.error(ddgptDivAlerts.parseFailed + ': ' + error)
+                            ddgptAlert('parseFailed')
+                            ddgptConsole.error(ddgptAlerts.parseFailed + ': ' + error)
+                            ddgptConsole.info('Response: ' + event.responseText)
                         }
         }}}}
     }
@@ -359,7 +361,7 @@
     // Run main routine
 
     var config = {}, configKeyPrefix = 'ddgpt_'
-    loadSetting('proxyAPIdisabled')
+    loadSetting('proxyAPIenabled')
     registerMenu() // create browser toolbar menu
 
     // Stylize ChatGPT container + footer
