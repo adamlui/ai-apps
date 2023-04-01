@@ -2,14 +2,13 @@ name: Sync bravegpt to kudoai/bravegpt/greasemonkey
 
 on:
   push:
-    branches:
-      - main
+    branches: [ master, main ]
     paths:
       - 'bravegpt/**'
-    if: 'github.event.head_commit.committer.username != "auto-sync-bot"'
 
 jobs:
-  sync-bravegpt:
+  build:
+    if: github.event.commits[0].committer.username != 'auto-sync-bot'
     runs-on: ubuntu-latest
     steps:
 
