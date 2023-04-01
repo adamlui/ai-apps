@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.03.30.1
+// @version             2023.04.01
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -29,7 +29,7 @@
 // @match               https://search.brave.com/search*
 // @include             https://auth0.openai.com
 // @connect             chat.openai.com
-// @connect             api.pawan.krd
+// @connect             c1b9-67-188-52-169.ngrok.io
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
@@ -51,13 +51,12 @@
     var openAIauthDomain = 'https://auth0.openai.com'
     var chatGPTsessURL = 'https://chat.openai.com/api/auth/session'
     var openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
-    var proxyEndpointMap = {
-        'https://api.pawan.krd/v1/chat/completions' : 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI'
-    }
+    var proxyEndpointMap = [[ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-3.5-turbo' ]]
 
-    var braveGPTdivAlerts = {
+    var braveGPTalerts = {
         login: 'Please login @ ',
         tooManyRequests: 'ChatGPT is flooded with too many requests. Check back later!',
+        parseFailed: 'Failed to parse response JSON',
         checkCloudflare: 'Please pass Cloudflare security check @ ',
         suggestProxy: 'OpenAI API is not working. (Try switching on Proxy Mode in toolbar)',
         suggestOpenAI: 'Proxy API is not working. (Try switching off Proxy Mode in toolbar)'
@@ -137,11 +136,11 @@
         var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to toggle proxy API mode
-        var pamLabel = stateIndicator.menuSymbol[+config.proxyAPIdisabled] + ' Proxy API Mode '
-                     + stateSeparator + stateIndicator.menuWord[+config.proxyAPIdisabled]
+        var pamLabel = stateIndicator.menuSymbol[+!config.proxyAPIenabled] + ' Proxy API Mode '
+                     + stateSeparator + stateIndicator.menuWord[+!config.proxyAPIenabled]
         menuID.push(GM_registerMenuCommand(pamLabel, function() {
-            saveSetting('proxyAPIdisabled', !config.proxyAPIdisabled)
-            chatgpt.notify('Proxy Mode ' + stateIndicator.notifWord[+config.proxyAPIdisabled], '', '', 'shadow')
+            saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
+            chatgpt.notify('Proxy Mode ' + stateIndicator.notifWord[+!config.proxyAPIenabled], '', '', 'shadow')
             for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
             registerMenu() // serve fresh menu
             location.reload() // re-send query using new endpoint
@@ -166,13 +165,13 @@
 
     var braveGPTconsole = {
         info: function(msg) {console.info('🦁 BraveGPT >> ' + msg)},
-        error: function(msg) {console.error('🦁 BraveGPT >> ' + msg)},
+        error: function(msg) {console.error('🦁 BraveGPT >> ERROR: ' + msg)},
     }
 
     function braveGPTalert(msg) {
         if (msg.includes('login')) deleteOpenAIcookies()
-        braveGPTdiv.innerHTML = braveGPTdivAlerts[msg]
-            + (braveGPTdivAlerts[msg].includes('@') ? // if msg needs login link, add it
+        braveGPTdiv.innerHTML = braveGPTalerts[msg]
+            + (braveGPTalerts[msg].includes('@') ? // if msg needs login link, add it
                 '<a href="https://chat.openai.com" target="_blank">chat.openai.com</a></p>' : '</p>')
     }
 
@@ -202,7 +201,7 @@
                             var newAccessToken = JSON.parse(response.responseText).accessToken
                             GM_setValue('accessToken', newAccessToken)
                             resolve(newAccessToken)
-                        } catch { braveGPTalert('suggestProxy') ; return }
+                        } catch { braveGPTalert('login') ; return }
                     }
                 })
             } else { resolve(accessToken) }
@@ -232,14 +231,18 @@
         if (!getShowAnswer.attemptCnt) getShowAnswer.attemptCnt = 0
 
         // Pick API
-        if (!config.proxyAPIdisabled) { // randomize proxy API
-            var endpoints = Object.keys(proxyEndpointMap).filter(function(endpoint) {
-                return !getShowAnswer.triedEndpoints?.includes(endpoint) })
-            var endpoint = endpoints[Math.floor(Math.random() * endpoints.length)]
-            var accessKey = proxyEndpointMap[endpoint]
+        if (config.proxyAPIenabled) { // randomize proxy API
+            var untriedEndpoints = proxyEndpointMap.filter(function(entry) {
+                return !getShowAnswer.triedEndpoints?.includes(entry[0]) })
+            var entry = untriedEndpoints[Math.floor(Math.random() * untriedEndpoints.length)]
+            var endpoint = entry[0], accessKey = entry[1], model = entry[2]
         } else { // use OpenAI API
             var endpoint = openAIchatEndpoint
-            var accessKey = await getAccessToken()
+            var timeoutPromise = new Promise((resolve, reject) => {
+                setTimeout(() => { reject(new Error('Timeout occurred')) }, 3000) })
+            var accessKey = await Promise.race([getAccessToken(), timeoutPromise])
+            if (!accessKey) { braveGPTalert('login') ; return }
+            model = 'text-davinci-002-render'
         }
 
         // Get answer from ChatGPT
@@ -250,22 +253,27 @@
             data: JSON.stringify({
                 action: 'next',
                 messages: [{
-                    role: 'user', id: config.proxyAPIdisabled ? uuidv4() : '', 
-                    content: config.proxyAPIdisabled ? { content_type: 'text', parts: [question] } : question
+                    role: 'user', id: !config.proxyAPIenabled ? uuidv4() : '',
+                    content: !config.proxyAPIenabled ? { content_type: 'text', parts: [question] } : question
                 }],
-                model: config.proxyAPIdisabled ? 'text-davinci-002-render' : 'text-davinci-003',
-                parent_message_id: config.proxyAPIdisabled ? uuidv4() : '',
+                model: model,
+                parent_message_id: !config.proxyAPIenabled ? uuidv4() : '',
                 max_tokens: 4000
             }),
             onloadstart: onLoadStart(),
             onload: onLoad(),
             onerror: function(error) {
-                if (!config.proxyAPIdisabled && getShowAnswer.attemptCnt < 1) {
-                    retryDiffHost() } else { braveGPTconsole.error(error) }}
+                braveGPTconsole.error(error)
+                if (!config.proxyAPIenabled) braveGPTalert(!accessKey ? 'login' : 'suggestProxy')
+                else { // if proxy mode
+                    if (getShowAnswer.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
+                    else braveGPTalert('suggestOpenAI')
+                }
+            }
         })
 
         function responseType() {
-          if (config.proxyAPIdisabled && getUserscriptManager() === 'Tampermonkey') {
+          if (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') {
             return 'stream' } else { return 'text' }
         }
 
@@ -278,7 +286,7 @@
 
         function onLoadStart() { // process streams for unproxied TM users
             braveGPTconsole.info('Endpoint used: ' + endpoint)
-            if (config.proxyAPIdisabled && getUserscriptManager() === 'Tampermonkey') {
+            if (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') {
                 return function(stream) {
                     var reader = stream.response.getReader()
                     reader.read().then(function processText({ done, value }) {
@@ -300,27 +308,38 @@
 
         function onLoad() {
             return function(event) {
-                if (event.status !== 200 && !config.proxyAPIdisabled && getShowAnswer.attemptCnt < 1) {
-                    retryDiffHost() }
-                else if (event.status === 401 && !config.proxyAPIdisabled) {
-                    GM_deleteValue('accessToken') ; braveGPTalert('login') }
-                else if (event.status === 403) {
-                    braveGPTalert(config.proxyAPIdisabled ? 'suggestProxy' : 'suggestOpenAI') }
-                else if (event.status === 429) { braveGPTalert('tooManyRequests') }
-                else if (config.proxyAPIdisabled && getUserscriptManager() !== 'Tampermonkey') {
+                if (event.status !== 200) {
+                    braveGPTconsole.error('Event status: ' + event.status)
+                    braveGPTconsole.info('Event response: ' + event.responseText)
+                    if (config.proxyAPIenabled && getShowAnswer.attemptCnt < 1 && proxyEndpointMap.length > 1) {
+                        retryDiffHost() }
+                    else if (event.status === 401 && !config.proxyAPIenabled) {
+                        GM_deleteValue('accessToken') ; braveGPTalert('login') }
+                    else if (event.status === 403) {
+                        braveGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy') }
+                    else if (event.status === 429) { braveGPTalert('tooManyRequests') }
+                } else if (!config.proxyAPIenabled && getUserscriptManager() !== 'Tampermonkey') {
                     if (event.response) {
-                        try {
+                        try { // to parse txt response from OpenAI endpoint for non-TM users
                             var answer = JSON.parse(event.response
                                 .split("\n\n").slice(-3, -2)[0].slice(6)).message.content.parts[0]
                             braveGPTshow(answer)
-                        } catch (error) { braveGPTconsole.error('Failed to parse response JSON: ' + error) }
+                        } catch (error) {
+                            braveGPTalert('parseFailed')
+                            braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + error)
+                            braveGPTconsole.info('Response: ' + event.response)
+                        }
                     }
-                } else if (!config.proxyAPIdisabled) {
+                } else if (config.proxyAPIenabled) {
                     if (event.responseText) {
-                        try {
+                        try { // to parse txt response from proxy endpoints
                             var answer = JSON.parse(event.responseText).choices[0].message.content
                             braveGPTshow(answer) ; getShowAnswer.triedEndpoints = [] ; getShowAnswer.attemptCnt = 0
-                        } catch (error) { braveGPTconsole.error('Failed to parse response JSON: ' + error) }
+                        } catch (error) {
+                            braveGPTalert('parseFailed')
+                            braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + error)
+                            braveGPTconsole.info('Response: ' + event.responseText)
+                        }
         }}}}
     }
 
@@ -341,7 +360,7 @@
     // Run main routine
 
     var config = {}, configKeyPrefix = 'braveGPT_'
-    loadSetting('proxyAPIdisabled')
+    loadSetting('proxyAPIenabled')
     registerMenu() // create browser toolbar menu
 
     // Stylize ChatGPT container + children
