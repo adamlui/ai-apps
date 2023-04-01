@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.04.01.1
+// @version             2023.04.01.2
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -43,15 +43,17 @@
 // @supportURL          https://github.duckduckgpt.com/issues
 // ==/UserScript==
 
+// NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgptjs.org (c) 2023 Adam Lui & 冯不游 under the MIT license.
+
 (function() {
 
     // API endpoints
     var openAIauthDomain = 'https://auth0.openai.com'
     var chatGPTsessURL = 'https://chat.openai.com/api/auth/session'
     var openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
-    var proxyEndpointMap = {
-        'https://89a7-67-188-52-169.ngrok.io' : 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI'
-    }
+    var proxyEndpointMap = [
+        ['https://89a7-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-3.5-turbo' ]
+    ]
 
     var ddgptDivAlerts = {
         waitingResponse: 'Waiting for ChatGPT response...',
@@ -238,14 +240,15 @@
 
         // Pick API
         if (!config.proxyAPIdisabled) { // randomize proxy API
-            var endpoints = Object.keys(proxyEndpointMap).filter(function(endpoint) {
-                return !getShowAnswer.triedEndpoints?.includes(endpoint) })
-            var endpoint = endpoints[Math.floor(Math.random() * endpoints.length)]
-            var accessKey = proxyEndpointMap[endpoint]
+            var untriedEndpoints = proxyEndpointMap.filter(function(entry) {
+                return !getShowAnswer.triedEndpoints?.includes(entry[0]) })
+            var entry = untriedEndpoints[Math.floor(Math.random() * untriedEndpoints.length)]
+            var endpoint = entry[0], accessKey = entry[1], model = entry[2]
         } else { // use OpenAI API
             var endpoint = openAIchatEndpoint
             var accessKey = await Promise.race([getAccessToken(), timeoutPromise])
             if (!accessKey) { ddgptAlert('login') ; return }
+            model = 'text-davinci-002-render'
         }
 
         // Get answer from ChatGPT
@@ -259,7 +262,7 @@
                     role: 'user', id: config.proxyAPIdisabled ? uuidv4() : '',
                     content: config.proxyAPIdisabled ? { content_type: 'text', parts: [question] } : question
                 }],
-                model: config.proxyAPIdisabled ? 'text-davinci-002-render' : 'gpt-3.5-turbo',
+                model: model,
                 parent_message_id: config.proxyAPIdisabled ? uuidv4() : '',
                 max_tokens: 4000
             }),
