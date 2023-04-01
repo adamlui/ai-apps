@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖 iOS
-// @version             2023.03.30
+// @version             2023.04.01
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar on iOS
@@ -19,7 +19,7 @@
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
 // @match               https://duckduckgo.com/*
-// @connect             api.pawan.krd
+// @connect             89a7-67-188-52-169.ngrok.io
 // @grant               GM.xmlHttpRequest
 // @downloadURL         https://github.com/kudoai/duckduckgpt/raw/main/greasemonkey/duckduckgpt-ios.user.js
 // @updateURL           https://github.com/kudoai/duckduckgpt/raw/main/greasemonkey/duckduckgpt-ios.user.js
@@ -31,7 +31,7 @@
 
     // API endpoints
     var proxyEndpointMap = {
-        'https://api.pawan.krd/v1/chat/completions' : 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI'
+        '89a7-67-188-52-169.ngrok.io' : 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI'
     }
 
     var ddgptDivAlerts = {
