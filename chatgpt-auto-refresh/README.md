@@ -63,7 +63,7 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions) / 
 [Leave a review](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
-[More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
+[More ChatGPT userscripts](https://github.com/adamlui/chatgpt-userscripts)
 
 ## Author links
 
