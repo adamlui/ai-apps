@@ -1,0 +1,45 @@
+name: Sync bravegpt to kudoai/bravegpt/greasemonkey
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'bravegpt/**'
+    if: 'github.event.head_commit.committer.username != "github-actions-bot"'
+
+jobs:
+  sync-bravegpt:
+    runs-on: ubuntu-latest
+    steps:
+
+      # Checkout adamlui/chatgpt-userscripts
+      - name: Checkout adamlui/chatgpt-userscripts
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-userscripts
+          path: adamlui/chatgpt-userscripts
+
+      # Checkout kudoai/bravegpt
+      - name: Checkout kudoai/bravegpt
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: kudoai/bravegpt
+          path: kudoai/bravegpt
+
+      # Sync adamlui/chatgpt-userscripts/bravegpt to kudoai/bravegpt/greasemonkey
+      - name: Sync bravegpt
+        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/bravegpt/ ${{ github.workspace }}/kudoai/bravegpt/greasemonkey/
+      
+      # Push to kudoai/bravegpt
+      - name: Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@userscripts.co
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-userscripts`]'
+          file_pattern: '*'
+          repository: kudoai/bravegpt

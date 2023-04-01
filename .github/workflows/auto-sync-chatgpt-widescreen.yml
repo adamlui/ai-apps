@@ -1,0 +1,45 @@
+name: Sync chatgpt-widescreen-mode to adamlui/chatgpt-widescreen/greasemonkey
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'chatgpt-widescreen-mode/**'
+    if: 'github.event.head_commit.committer.username != "auto-sync-bot"'
+
+jobs:
+  sync-chatgpt-widescreen:
+    runs-on: ubuntu-latest
+    steps:
+
+      # Checkout adamlui/chatgpt-userscripts
+      - name: Checkout adamlui/chatgpt-userscripts
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-userscripts
+          path: adamlui/chatgpt-userscripts
+
+      # Checkout adamlui/chatgpt-widescreen
+      - name: Checkout adamlui/chatgpt-widescreen
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-widescreen
+          path: adamlui/chatgpt-widescreen
+
+      # Sync adamlui/chatgpt-userscripts/chatgpt-widescreen-mode to adamlui/chatgpt-widescreen/greasemonkey
+      - name: Sync chatgpt-widescreen
+        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/chatgpt-widescreen-mode/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/
+      
+      # Push to adamlui/chatgpt-widescreen
+      - name: Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@userscripts.co
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-userscripts`]'
+          file_pattern: '*'
+          repository: adamlui/chatgpt-widescreen

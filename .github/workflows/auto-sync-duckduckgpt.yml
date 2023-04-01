@@ -1,19 +1,19 @@
-name: Sync adamlui/chatgpt-userscripts to adamlui/userscripts/chatgpt
+name: Sync duckduckgpt to kudoai/duckduckgpt/greasemonkey
 
 on:
   push:
     branches:
-      - main
+      - master
     paths:
-      - '**'
-      - '!/**/.*'
+      - 'duckduckgpt/**'
     if: 'github.event.head_commit.committer.username != "auto-sync-bot"'
 
 jobs:
-  sync-chatgpt-userscripts:
+  sync-duckduckgpt:
     runs-on: ubuntu-latest
     steps:
 
+      # Checkout adamlui/chatgpt-userscripts
       - name: Checkout adamlui/chatgpt-userscripts
         uses: actions/checkout@v2
         with:
@@ -21,22 +21,25 @@ jobs:
           repository: adamlui/chatgpt-userscripts
           path: adamlui/chatgpt-userscripts
 
-      - name: Checkout adamlui/userscripts
+      # Checkout kudoai/duckduckgpt
+      - name: Checkout kudoai/duckduckgpt
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/userscripts
-          path: adamlui/userscripts
+          repository: kudoai/duckduckgpt
+          path: kudoai/duckduckgpt
 
-      - name: Sync adamlui/chatgpt-userscripts to adamlui/userscripts/chatgpt
-        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/
-
-      - name: Push to adamlui/userscripts
+      # Sync adamlui/chatgpt-userscripts/duckduckgpt to adamlui/duckduckgpt/greasemonkey
+      - name: Sync duckduckgpt
+        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/duckduckgpt/ ${{ github.workspace }}/kudoai/duckduckgpt/greasemonkey/
+      
+      # Push to kudoai/duckduckgpt
+      - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
           add_options: '--all'
           commit_user_email: auto-sync@userscripts.co
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-userscripts`]'
-          file_pattern: 'chatgpt/*'
-          repository: adamlui/userscripts
+          file_pattern: '*'
+          repository: kudoai/duckduckgpt
