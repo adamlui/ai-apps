@@ -19,7 +19,7 @@
 
 [Install this script](https://github.com/adamlui/userscripts/raw/master/chatgpt/chatgpt-heartbeat/ChatGPT-Heartbeat.user.js) / 
 [Discuss](https://github.com/adamlui/userscripts/discussions) / 
-[More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
+[More ChatGPT userscripts](https://github.com/adamlui/chatgpt-userscripts/commits/main)
 
 ## Author links
 
