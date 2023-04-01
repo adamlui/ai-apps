@@ -12,9 +12,6 @@ jobs:
     if: github.event.commits[0].committer.username != 'auto-sync-bot'
     runs-on: ubuntu-latest
     steps:
-      
-    - name: Log Committer Username
-      run: echo ${{ github.event.head_commit.committer.username }}
 
     - name: Checkout adamlui/chatgpt-userscripts
       uses: actions/checkout@v2
