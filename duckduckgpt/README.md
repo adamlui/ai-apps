@@ -90,7 +90,7 @@ For even *faster* stream-type responses (like the one in demo), Tampermonkey use
 <br>
 [Discuss](https://github.duckduckgpt.com/discussions) /
 [Leave a review](https://duckduckgpt.com/userscript/review) /
-[More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
+[More ChatGPT userscripts](https://github.com/adamlui/chatgpt-userscripts)
 
 ## Social links
 
