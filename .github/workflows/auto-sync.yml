@@ -6,7 +6,8 @@ on:
     paths:
       - '**'
       - '!/.git/**'
-      - '!/.gitignore/**'
+      - '!/.github/**'
+
 jobs:
   build:
     if: github.event.commits[0].committer.username != 'auto-sync-bot'
