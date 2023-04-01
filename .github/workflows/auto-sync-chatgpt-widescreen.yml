@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # Checkout adamlui/chatgpt-userscripts
       - name: Checkout adamlui/chatgpt-userscripts
         uses: actions/checkout@v2
         with:
@@ -21,7 +20,6 @@ jobs:
           repository: adamlui/chatgpt-userscripts
           path: adamlui/chatgpt-userscripts
 
-      # Checkout adamlui/chatgpt-widescreen
       - name: Checkout adamlui/chatgpt-widescreen
         uses: actions/checkout@v2
         with:
@@ -29,12 +27,10 @@ jobs:
           repository: adamlui/chatgpt-widescreen
           path: adamlui/chatgpt-widescreen
 
-      # Sync adamlui/chatgpt-userscripts/chatgpt-widescreen-mode to adamlui/chatgpt-widescreen/greasemonkey
-      - name: Sync chatgpt-widescreen
+      - name: Sync adamlui/chatgpt-userscripts/chatgpt-widescreen-mode to adamlui/chatgpt-widescreen/greasemonkey
         run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/chatgpt-widescreen-mode/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/
       
-      # Push to adamlui/chatgpt-widescreen
-      - name: Push changes
+      - name: Push to adamlui/chatgpt-widescreen
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'

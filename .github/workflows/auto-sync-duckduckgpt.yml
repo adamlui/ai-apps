@@ -13,7 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      # Checkout adamlui/chatgpt-userscripts
       - name: Checkout adamlui/chatgpt-userscripts
         uses: actions/checkout@v2
         with:
@@ -21,7 +20,6 @@ jobs:
           repository: adamlui/chatgpt-userscripts
           path: adamlui/chatgpt-userscripts
 
-      # Checkout kudoai/duckduckgpt
       - name: Checkout kudoai/duckduckgpt
         uses: actions/checkout@v2
         with:
@@ -29,12 +27,10 @@ jobs:
           repository: kudoai/duckduckgpt
           path: kudoai/duckduckgpt
 
-      # Sync adamlui/chatgpt-userscripts/duckduckgpt to adamlui/duckduckgpt/greasemonkey
-      - name: Sync duckduckgpt
+      - name: Sync adamlui/chatgpt-userscripts/duckduckgpt to adamlui/duckduckgpt/greasemonkey
         run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/duckduckgpt/ ${{ github.workspace }}/kudoai/duckduckgpt/greasemonkey/
       
-      # Push to kudoai/duckduckgpt
-      - name: Push changes
+      - name: Push to kudoai/duckduckgpt
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
