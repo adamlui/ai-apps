@@ -3,7 +3,7 @@ name: Sync autoclear-chatgpt-history to adamlui/autoclear-chatgpt-history/grease
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'autoclear-chatgpt-history/**'
     if: 'github.event.head_commit.committer.username != "auto-sync-bot"'

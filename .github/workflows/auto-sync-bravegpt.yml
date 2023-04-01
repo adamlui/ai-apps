@@ -3,7 +3,7 @@ name: Sync bravegpt to kudoai/bravegpt/greasemonkey
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'bravegpt/**'
     if: 'github.event.head_commit.committer.username != "auto-sync-bot"'
