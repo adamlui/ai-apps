@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.03.30.2
+// @version             2023.04.01
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -29,7 +29,7 @@
 // @match               https://duckduckgo.com/?*
 // @include             https://auth0.openai.com
 // @connect             chat.openai.com
-// @connect             api.pawan.krd
+// @connect             89a7-67-188-52-169.ngrok.io
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
@@ -52,7 +52,7 @@
     var chatGPTsessURL = 'https://chat.openai.com/api/auth/session'
     var openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
     var proxyEndpointMap = {
-        'https://api.pawan.krd/v1/chat/completions' : 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI'
+        'https://89a7-67-188-52-169.ngrok.io' : 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI'
     }
 
     var ddgptDivAlerts = {
