@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.03.30.1
+// @version             2023.03.30.2
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -167,7 +167,7 @@
 
     var ddgptConsole = {
         info: function(msg) {console.info('🐤 DuckDuckGPT >> ' + msg)},
-        error: function(msg) {console.error('🐤 DuckDuckGPT >> ' + msg)},
+        error: function(msg) {console.error('🐤 DuckDuckGPT >> ERROR: ' + msg)},
     }
 
     function ddgptAlert(msg) {
@@ -253,18 +253,19 @@
             data: JSON.stringify({
                 action: 'next',
                 messages: [{
-                    role: 'user', id: config.proxyAPIdisabled ? uuidv4() : '', 
+                    role: 'user', id: config.proxyAPIdisabled ? uuidv4() : '',
                     content: config.proxyAPIdisabled ? { content_type: 'text', parts: [question] } : question
                 }],
                 model: config.proxyAPIdisabled ? 'text-davinci-002-render' : 'text-davinci-003',
                 parent_message_id: config.proxyAPIdisabled ? uuidv4() : '',
-                max_tokens: 4000                
+                max_tokens: 4000
             }),
             onloadstart: onLoadStart(),
             onload: onLoad(),
             onerror: function(error) {
-                if (!config.proxyAPIdisabled && getShowAnswer.attemptCnt < 1) {
-                    retryDiffHost() } else { ddgptConsole.error(error) }}
+                ddgptConsole.error(error)
+                if (!config.proxyAPIdisabled && getShowAnswer.attemptCnt < 1) retryDiffHost()
+            }
         })
 
         function responseType() {
@@ -304,6 +305,8 @@
         function onLoad() {
             return function(event) {
                 if (event.status !== 200 && !config.proxyAPIdisabled && getShowAnswer.attemptCnt < 1) {
+                    ddgptConsole.error('Event status: ' + event.status)
+                    ddgptConsole.error('Event response: ' + event.responseText)
                     retryDiffHost() }
                 else if (event.status === 401 && !config.proxyAPIdisabled) {
                     GM_deleteValue('accessToken') ; ddgptAlert('login') }
