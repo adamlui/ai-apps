@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '/**'
-      - '!/.*'
+    paths-ignore:
+      - '.github/**'
+      - '.git/**'
     if: 'github.event.head_commit.committer.username != "auto-sync-bot"'
 
 jobs:
