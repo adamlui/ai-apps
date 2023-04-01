@@ -5,9 +5,9 @@ on:
     branches:
       - main
     paths:
-      - '/**'
+      - '**'
       - '!/.git/**'
-      - '!/.gitignore/**'
+      - '!/.github/**'
     if: 'github.event.head_commit.committer.username != "auto-sync-bot"'
 
 jobs:
