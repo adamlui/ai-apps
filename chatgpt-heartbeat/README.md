@@ -7,7 +7,7 @@
 <a href="https://github.com/adamlui/userscripts/raw/master/chatgpt/chatgpt-heartbeat/ChatGPT-Heartbeat.user.js"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
 <br>
 [Discuss](https://github.com/adamlui/userscripts/discussions) / 
-[More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
+[More ChatGPT userscripts](https://github.com/adamlui/chatgpt-userscripts)
 
 ## Installation
 
@@ -19,7 +19,7 @@
 
 [Install this script](https://github.com/adamlui/userscripts/raw/master/chatgpt/chatgpt-heartbeat/ChatGPT-Heartbeat.user.js) / 
 [Discuss](https://github.com/adamlui/userscripts/discussions) / 
-[More ChatGPT userscripts](https://github.com/adamlui/chatgpt-userscripts/commits/main)
+[More ChatGPT userscripts](https://github.com/adamlui/chatgpt-userscripts)
 
 ## Author links
 
