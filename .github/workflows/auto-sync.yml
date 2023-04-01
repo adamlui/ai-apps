@@ -1,0 +1,41 @@
+name: Sync adamlui/chatgpt-userscripts to adamlui/userscripts/chatgpt
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**'
+
+jobs:
+  sync-chatgpt-userscripts:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout adamlui/chatgpt-userscripts
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-userscripts
+          path: adamlui/chatgpt-userscripts
+
+      - name: Checkout adamlui/userscripts
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/userscripts
+          path: adamlui/userscripts
+
+      - name: Sync adamlui/chatgpt-userscripts to adamlui/userscripts/chatgpt
+        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/
+
+      - name: Push to adamlui/userscripts
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_name: 'auto-sync[bot]'
+          commit_user_email: auto-sync@userscripts.co
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-userscripts`]'
+          file_pattern: 'chatgpt/*'
+          repository: adamlui/userscripts
