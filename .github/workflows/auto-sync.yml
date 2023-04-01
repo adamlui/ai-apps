@@ -16,7 +16,7 @@ jobs:
     steps:
 
       - name: Log Committer Username
-        run: echo 'Committer Username: ${{ github.event.head_commit.committer.username }}'
+        run: echo ${{ github.event.head_commit.committer.username }}
 
       - name: Checkout adamlui/chatgpt-userscripts
         uses: actions/checkout@v2
