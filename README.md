@@ -1,4 +1,4 @@
-# 🤖 ChatGPT userscripts &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20these%20%23ChatGPT%20userscripts%20out%21&url=https://github.com/adamlui/userscripts/tree/master/chatgpt&hashtags=greasemonkey,userscripts,javascript,ai)
+# 🤖 ChatGPT userscripts &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20these%20%23ChatGPT%20userscripts%20out%21&url=https://github.com/adamlui/chatgpt-userscripts&hashtags=greasemonkey,userscript,javascript,ai)
 Userscripts that utilize the astounding AI of ChatGPT or enhances its UX. A userscript manager such as [Tampermonkey](https://www.tampermonkey.net/) is required to run these scripts.
 
 利用 ChatGPT 惊人的 AI 或增强其 UX 的用户脚本。 运行这些脚本需要一个用户脚本管理器,例如 [Tampermonkey](https://www.tampermonkey.net/)。
