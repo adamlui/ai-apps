@@ -10,6 +10,7 @@
 ![usercount](https://img.shields.io/greasyfork/dt/459849?label=Users)
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 [![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/QQ-989898.svg)](#compatibility)
+[![code-quality](https://img.shields.io/codefactor/grade/github/kudoai/duckduckgpt?label=Code%20Quality)](https://www.codefactor.io/repository/github/kudoai/duckduckgpt)
 [![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#duckduckgo)
 
 <h3><b>DuckDuckGPT</b> brings the magic of ChatGPT to search results.</h3>
@@ -96,7 +97,7 @@ For even *faster* stream-type responses (like the one in demo), Tampermonkey use
 
 <a href="https://technodon.org/@duckduckgpt" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109876284007792895?domain=https%3A%2F%2Ftechnodon.org&style=social" alt="Follow @duckduckgpt on Mastodon" title="Mastodon"></a>
 [![Follow @adamlui on GitHub](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "GitHub")](https://github.com/adamlui)
-[![Follow @AdamLuiTube on YouTube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40AdamLuiTube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
+[![Follow @adamluitube on YouTube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 <a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" alt="Follow @adam on Mastodon" title="Mastodon">
 [![Follow @adamllui on Twitter](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
 <br><br>
