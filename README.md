@@ -5,6 +5,7 @@ Userscripts that utilize the astounding AI of ChatGPT or enhances its UX. A user
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 ![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/LibreWolf/QQ-989898.svg)
+[![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-userscripts?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-userscripts)
 
 ---
 
