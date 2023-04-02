@@ -9,7 +9,7 @@ Userscripts that utilize the astounding AI of ChatGPT or enhances its UX. A user
 
 ---
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](autoclear-chatgpt-history)
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](autoclear-chatgpt-history) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
 Auto-clear your ChatGPT query history for maximum privacy. // 自动清除您的 ChatGPT 查询历史记录以获得最大的隐私。
 <br>[Install](https://greasyfork.org/en/scripts/460805-auto-clear-chatgpt-history) / 
@@ -29,9 +29,9 @@ Display ChatGPT answers in Brave Search sidebar. // 在 Brave Search 侧边栏�
 [Readme](bravegpt/README.md) / 
 [Discuss](https://github.bravegpt.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](chatgpt-auto-refresh)
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](chatgpt-auto-refresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
-Keeps your ChatGPT sessions active to avoid constant Cloudflare checks. // 使您的 ChatGPT 会话保持活动状态以避免 Cloudflare 检查。
+Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks. // 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
 <br>[Install](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh) / 
 [Readme](chatgpt-auto-refresh/README.md) / 
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
@@ -43,7 +43,7 @@ Keeps conversations flowing when network errors are encountered. // 在遇到网
 [Readme](chatgpt-heartbeat/README.md) / 
 [Discuss](https://github.com/adamlui/userscripts/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Widescreen Mode 🖥️](chatgpt-widescreen-mode)
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Widescreen Mode 🖥️](chatgpt-widescreen-mode) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 3px"></a>
 
 Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling. // 向 ChatGPT 添加宽屏 + 全窗口模式以减少滚动。
 <br>[Install](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode) / 
