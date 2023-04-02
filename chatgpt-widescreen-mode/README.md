@@ -14,7 +14,7 @@
 
 ##
 
-![Full-Window mode](https://i.imgur.com/KKWdLuF.png)
+[![Full-Window mode](https://i.imgur.com/KKWdLuF.png)](https://www.youtube.com/watch?v=mWPAgnTcGyw&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1&index=1)
 
 ## Installation
 
