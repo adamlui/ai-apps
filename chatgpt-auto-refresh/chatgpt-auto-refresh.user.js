@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                ChatGPT Auto Refresh ↻
-// @version             2023.03.31
+// @version             2023.04.01
 // @description         Keeps ChatGPT sessions fresh to avoid Cloudflare checks
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -75,7 +75,7 @@
             } else { console.info('↻ ChatGPT >> Auto refresh already active!'); }
         },
 
-        notify: function(msg, position, notifDuration) {
+        notify: function(msg, position, notifDuration, shadow) {
             notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
             var fadeDuration = 0.6; // sec duration of fade-out
             var vpYoffset = 13, vpXoffset = 27; // px offset from viewport border
@@ -83,8 +83,9 @@
             // Make/stylize/insert div
             var notificationDiv = document.createElement('div'); // make div
             notificationDiv.style.cssText = ( // stylize it
-                '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
-                + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white');
+                  '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
+                + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; '
+                + ( shadow ? ( 'box-shadow: 0 4px 11px 0px ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
             document.body.appendChild(notificationDiv); // insert into DOM
 
             // Determine div position/quadrant
@@ -94,7 +95,7 @@
                                      + (notificationDiv.isRight ? 'Right' : 'Left');
 
             // Store div in global memory
-            unsafeWindow.chatgptNotifyProps.quadrants[notificationDiv.quadrant].push(notificationDiv);
+            unsafeWindow.chatgptNotifyProps.quadrants[notificationDiv.quadrant].push(notificationDiv); // store div in global object
 
             // Position notification (defaults to top-right)
             notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
@@ -108,7 +109,7 @@
                 var divsToMove = thisQuadrantDivs.slice(0, -1); // exclude new div
                 for (var j = 0; j < divsToMove.length; j++) {
                     var oldDiv = divsToMove[j];
-                    var offsetProp = oldDiv.style.top ? "top" : "bottom"; // pick property to change
+                    var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
                     var vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
             }}
@@ -123,7 +124,7 @@
                 fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
                 : notifDuration - fadeDuration); // otherwise delay for difference
             notificationDiv.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
-                notificationDiv.style.transition = `opacity ${fadeDuration}s`; // add fade effect
+                notificationDiv.style.transition = 'opacity ' + fadeDuration.toString() + 's'; // add fade effect
                 notificationDiv.style.opacity = 0; // hide notification
                 notificationDiv.hideTimer = null; // prevent memory leaks
             }, hideDelay * 1000); // ...after pre-set duration
