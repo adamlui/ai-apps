@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                ChatGPT Auto Refresh ↻
-// @version             2023.04.01
+// @version             2023.04.02
 // @description         Keeps ChatGPT sessions fresh to avoid Cloudflare checks
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -85,7 +85,7 @@
             notificationDiv.style.cssText = ( // stylize it
                   '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
                 + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; '
-                + ( shadow ? ( 'box-shadow: 0 4px 11px 0px ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
+                + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
             document.body.appendChild(notificationDiv); // insert into DOM
 
             // Determine div position/quadrant
