@@ -134,7 +134,7 @@
         + '.chatgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
         + '.chatgpt-container pre { white-space: pre-wrap ; min-width: 0 ; margin-bottom: 0 ; line-height: 20px }'
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-        + '.chatgpt-feedback { margin: 2px 0 25px 0 }' )
+        + '.chatgpt-feedback { margin: 2px 0 25px }' )
     document.head.appendChild(ddgptStyle) // append style to <head>
 
     // Create DDGPT container & add class
