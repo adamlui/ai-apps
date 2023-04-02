@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                ChatGPT Auto Refresh ↻
-// @version             2023.04.02.2
-// @description         Keeps ChatGPT sessions fresh to avoid network errors + Cloudflare checks
+// @version             2023.04.02.3
+// @description         Keeps ChatGPT sessions fresh by auto-sending background requests to eliminate network errors + Cloudflare checks
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @name:zh-CN          ChatGPT 自动刷新 ↻
@@ -16,19 +16,19 @@
 // @name:fr             Actualisation Automatique de ChatGPT ↻
 // @name:it             Aggiornamento Automatico ChatGPT ↻
 // @name:fi             ChatGPT automaattinen päivitys ↻
-// @description:zh-CN   保持 ChatGPT 会话新鲜以避免网络错误 + Cloudflare 检查
-// @description:zh-SG   保持 ChatGPT 会话新鲜以避免网络错误 + Cloudflare 检查
-// @description:zh-TW   保持 ChatGPT 會話新鮮以避免網絡錯誤 + Cloudflare 檢查
-// @description:zh-HK   保持 ChatGPT 會話新鮮以避免網絡錯誤 + Cloudflare 檢查
-// @description:ja      ネットワーク エラーを回避するために ChatGPT セッションを最新の状態に保ちます + Cloudflare チェック
-// @description:ko      네트워크 오류 + Cloudflare 확인을 피하기 위해 ChatGPT 세션을 최신 상태로 유지
-// @description:ru      Сохраняет актуальность сеансов ChatGPT, чтобы избежать сетевых ошибок + проверка Cloudflare
-// @description:de      Hält ChatGPT-Sitzungen frisch, um Netzwerkfehler zu vermeiden + Cloudflare-Prüfung
-// @description:es      Mantiene las sesiones de ChatGPT actualizadas para evitar errores de red + Verificación de Cloudflare
-// @description:fr      Maintient les sessions ChatGPT à jour pour éviter les erreurs de réseau + vérifications Cloudflare
-// @description:it      Mantiene aggiornate le sessioni ChatGPT per evitare errori di rete + controlli Cloudflare
-// @description:sv      Håller ChatGPT-sessioner fräscha för att undvika nätverksfel + Cloudflare-kontroller
-// @description:fi      Pitää ChatGPT-istunnot tuoreina verkkovirheiden välttämiseksi + Cloudflare-tarkistukset
+// @description:zh-CN   通过自动发送后台请求来消除网络错误 + Cloudflare 检查，使 ChatGPT 会话保持最新
+// @description:zh-SG   通过自动发送后台请求来消除网络错误 + Cloudflare 检查，使 ChatGPT 会话保持最新
+// @description:zh-TW   通過自動發送後台請求來消除網絡錯誤 + Cloudflare 檢查，使 ChatGPT 會話保持最新
+// @description:zh-HK   通過自動發送後台請求來消除網絡錯誤 + Cloudflare 檢查，使 ChatGPT 會話保持最新
+// @description:ja      バックグラウンド リクエストを自動送信してネットワーク エラーと Cloudflare チェックを排除することで、ChatGPT セッションを最新の状態に保ちます
+// @description:ko      네트워크 오류 + Cloudflare 검사를 제거하기 위해 백그라운드 요청을 자동 전송하여 ChatGPT 세션을 최신 상태로 유지합니다.
+// @description:ru      Поддерживает актуальность сеансов ChatGPT, автоматически отправляя фоновые запросы для устранения сетевых ошибок + проверки Cloudflare
+// @description:de      Hält ChatGPT-Sitzungen frisch, indem automatisch Hintergrundanfragen gesendet werden, um Netzwerkfehler + Cloudflare-Prüfungen zu beseitigen
+// @description:es      Mantiene las sesiones de ChatGPT actualizadas mediante el envío automático de solicitudes en segundo plano para eliminar errores de red + verificaciones de Cloudflare
+// @description:fr      Maintient les sessions ChatGPT à jour en envoyant automatiquement des requêtes en arrière-plan pour éliminer les erreurs de réseau + vérifications Cloudflare
+// @description:it      Mantiene aggiornate le sessioni ChatGPT inviando automaticamente richieste in background per eliminare errori di rete + controlli Cloudflare
+// @description:sv      Håller ChatGPT-sessioner fräscha genom att automatiskt skicka bakgrundsförfrågningar för att eliminera nätverksfel + Cloudflare-kontroller
+// @description:fi      Pitää ChatGPT-istunnot tuoreina lähettämällä automaattisesti taustapyyntöjä verkkovirheiden poistamiseksi + Cloudflare-tarkistukset
 // @license             MIT
 // @match               https://chat.openai.com/chat*
 // @compatible          chrome
