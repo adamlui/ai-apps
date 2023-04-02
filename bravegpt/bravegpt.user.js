@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.01
+// @version             2023.04.01.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -172,7 +172,7 @@
         if (msg.includes('login')) deleteOpenAIcookies()
         braveGPTdiv.innerHTML = braveGPTalerts[msg]
             + (braveGPTalerts[msg].includes('@') ? // if msg needs login link, add it
-                '<a href="https://chat.openai.com" target="_blank">chat.openai.com</a></p>' : '</p>')
+                '<a href="https://chat.openai.com" target="_blank">chat.openai.com</a>(If issue persists, try activating Proxy Mode)</p>' : '</p>')
     }
 
     // Define SESSION functions
@@ -316,7 +316,7 @@
                     else if (event.status === 401 && !config.proxyAPIenabled) {
                         GM_deleteValue('accessToken') ; braveGPTalert('login') }
                     else if (event.status === 403) {
-                        braveGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy') }
+                        braveGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare') }
                     else if (event.status === 429) { braveGPTalert('tooManyRequests') }
                 } else if (!config.proxyAPIenabled && getUserscriptManager() !== 'Tampermonkey') {
                     if (event.response) {
