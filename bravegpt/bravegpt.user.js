@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.01.1
+// @version             2023.04.02
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -66,7 +66,7 @@
 
     window.chatgptNotifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
     var chatgpt = {
-         notify: function(msg, position, notifDuration, shadow) {
+        notify: function(msg, position, notifDuration, shadow) {
             notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
             var fadeDuration = 0.6; // sec duration of fade-out
             var vpYoffset = 13, vpXoffset = 27; // px offset from viewport border
@@ -76,7 +76,7 @@
             notificationDiv.style.cssText = ( // stylize it
                   '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
                 + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; '
-                + ( shadow ? ( 'box-shadow: 0 4px 11px 0px ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
+                + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
             document.body.appendChild(notificationDiv); // insert into DOM
 
             // Determine div position/quadrant
@@ -172,7 +172,7 @@
         if (msg.includes('login')) deleteOpenAIcookies()
         braveGPTdiv.innerHTML = braveGPTalerts[msg]
             + (braveGPTalerts[msg].includes('@') ? // if msg needs login link, add it
-                '<a href="https://chat.openai.com" target="_blank">chat.openai.com</a>(If issue persists, try activating Proxy Mode)</p>' : '</p>')
+                '<a href="https://chat.openai.com" target="_blank">chat.openai.com</a> (If issue persists, try activating Proxy Mode)</p>' : '</p>')
     }
 
     // Define SESSION functions
