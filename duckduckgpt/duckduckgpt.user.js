@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.04.01.7
+// @version             2023.04.01.8
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -175,7 +175,7 @@
             /waiting|loading/i.test(msg) ? // if alert involves loading, add class
                 '<p class="loading">' : '<p>') + ddgptAlerts[msg]
             + (ddgptAlerts[msg].includes('@') ? // if msg needs login link, add it
-                '<a href="https://chat.openai.com" target="_blank">chat.openai.com</a></p>' : '</p>')
+                '<a href="https://chat.openai.com" target="_blank">chat.openai.com</a><br>(If issue persists, try activating Proxy Mode)</p>' : '</p>')
     }
 
     // Define SESSION functions
@@ -319,7 +319,7 @@
                     else if (event.status === 401 && !config.proxyAPIenabled) {
                         GM_deleteValue('accessToken') ; ddgptAlert('login') }
                     else if (event.status === 403) {
-                        ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy') }
+                        ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare') }
                     else if (event.status === 429) { ddgptAlert('tooManyRequests') }
                 } else if (!config.proxyAPIenabled && getUserscriptManager() !== 'Tampermonkey') {
                     if (event.response) {
