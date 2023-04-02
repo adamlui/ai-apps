@@ -16,7 +16,7 @@
 
 ##
 
-[![Full-Window mode](https://i.imgur.com/KKWdLuF.png)](https://www.youtube.com/watch?v=mWPAgnTcGyw&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1&index=1)
+[![Full-Window mode](https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/widescreen-mode-video-thumbnail.png)](https://www.youtube.com/watch?v=mWPAgnTcGyw&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1&index=1)
 
 ## Installation
 
@@ -91,12 +91,12 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 
 ## Related scripts
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](https://github.com/adamlui/autoclear-chatgpt-history/tree/main/greasemonkey)
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
-Auto-clear your ChatGPT query history for maximum privacy. // 自动清除您的 ChatGPT 查询历史记录以获得最大的隐私。
-<br>[Install](https://greasyfork.org/en/scripts/460805-auto-clear-chatgpt-history) / 
-[Readme](https://github.com/adamlui/autoclear-chatgpt-history/tree/main/greasemonkey/README.md) / 
-[Discuss](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
+Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks. // 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
+<br>[Install](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh) / 
+[Readme](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey/README.md) / 
+[Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com/greasemonkey) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
@@ -105,12 +105,12 @@ Display ChatGPT answers in Brave Search sidebar. // 在 Brave Search 侧边栏�
 [Readme](https://bravegpt.com/greasemonkey/README.md) / 
 [Discuss](https://github.bravegpt.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey)
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](https://github.com/adamlui/autoclear-chatgpt-history/tree/main/greasemonkey) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
-Keeps your ChatGPT sessions active to avoid constant Cloudflare checks. // 使您的 ChatGPT 会话保持活动状态以避免 Cloudflare 检查。
-<br>[Install](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh) / 
-[Readme](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey/README.md) / 
-[Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
+Auto-clear your ChatGPT query history for maximum privacy. // 自动清除您的 ChatGPT 查询历史记录以获得最大的隐私。
+<br>[Install](https://greasyfork.org/en/scripts/460805-auto-clear-chatgpt-history) / 
+[Readme](https://github.com/adamlui/autoclear-chatgpt-history/tree/main/greasemonkey/README.md) / 
+[Discuss](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
 #
 
