@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                ChatGPT Widescreen Mode 🖥️
-// @version             2023.03.29.2
+// @version             2023.04.02
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -66,7 +66,7 @@
     var navLinkLabels = { newChat: location.host === 'freegpt.one' ? 'Reset Thread' : 'New chat' };
     var chatgpt = {
 
-        notify: function(msg, position, notifDuration) {
+        notify: function(msg, position, notifDuration, shadow) {
             notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
             var fadeDuration = 0.6; // sec duration of fade-out
             var vpYoffset = 13, vpXoffset = 27; // px offset from viewport border
@@ -75,7 +75,8 @@
             var notificationDiv = document.createElement('div'); // make div
             notificationDiv.style.cssText = ( // stylize it
                   '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
-                + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white');
+                + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; '
+                + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
             document.body.appendChild(notificationDiv); // insert into DOM
 
             // Determine div position/quadrant
@@ -114,7 +115,7 @@
                 fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
                 : notifDuration - fadeDuration); // otherwise delay for difference
             notificationDiv.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
-                notificationDiv.style.transition = `opacity ${fadeDuration}s`; // add fade effect
+                notificationDiv.style.transition = 'opacity ' + fadeDuration.toString() + 's'; // add fade effect
                 notificationDiv.style.opacity = 0; // hide notification
                 notificationDiv.hideTimer = null; // prevent memory leaks
             }, hideDelay * 1000); // ...after pre-set duration
