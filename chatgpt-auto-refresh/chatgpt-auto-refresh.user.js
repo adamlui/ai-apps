@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                ChatGPT Auto Refresh ↻
-// @version             2023.04.02.6
-// @description         Keeps ChatGPT sessions fresh to eliminate constant network errors + Cloudflare checks
+// @version             2023.04.02.7
+// @description         Keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks 
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @name:ar             تحديث تلقائي لـ ChatGPT ↻
@@ -53,56 +53,56 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @description:ar      يحافظ على جلسات ChatGPT جديدة للتخلص من أخطاء الشبكة المستمرة + فحوصات Cloudflare
-// @description:bg      يحافظ على Поддържа сесиите на ChatGPT свежи, за да елиминира постоянните мрежови грешки + проверките на Cloudflare
-// @description:bn      يحافظ ধ্রুবক নেটওয়ার্ক ত্রুটি + ক্লাউডফ্লেয়ার চেকগুলি দূর করতে ChatGPT সেশনগুলিকে সতেজ রাখে৷
-// @description:cs      Udržuje relace ChatGPT čerstvé, aby se eliminovaly neustálé chyby sítě + kontroly Cloudflare
-// @description:da      Holder ChatGPT-sessioner friske for at eliminere konstante netværksfejl + Cloudflare-tjek
-// @description:de      Hält ChatGPT-Sitzungen frisch, um ständige Netzwerkfehler zu vermeiden + Cloudflare-Prüfungen
-// @description:el      Διατηρεί φρέσκες τις συνεδρίες ChatGPT για την εξάλειψη συνεχών σφαλμάτων δικτύου + ελέγχους Cloudflare
-// @description:eo      Tenas ChatGPT-sesiojn freŝaj por forigi konstantajn retajn erarojn + Cloudflare-kontrolojn
-// @description:es      Mantiene las sesiones de ChatGPT actualizadas para eliminar errores de red constantes + verificaciones de Cloudflare
-// @description:fi      Pitää ChatGPT-istunnot tuoreina ja eliminoi jatkuvat verkkovirheet + Cloudflare-tarkistukset
-// @description:fr      Maintient les sessions ChatGPT à jour pour éliminer les erreurs réseau constantes + vérifications Cloudflare
-// @description:fr-CA   Maintient les sessions ChatGPT à jour pour éliminer les erreurs réseau constantes + vérifications Cloudflare
-// @description:gu      સતત નેટવર્ક ભૂલો + Cloudflare તપાસો દૂર કરવા માટે ChatGPT સત્રોને તાજા રાખે છે
-// @description:hi      निरंतर नेटवर्क त्रुटियों को समाप्त करने के लिए ChatGPT सत्रों को ताजा रखता है + क्लाउडफ्लेयर चेक
-// @description:hu      Frissen tartja a ChatGPT munkameneteket, hogy kiküszöbölje az állandó hálózati hibákat + Cloudflare ellenőrzéseket
-// @description:in      Menjaga sesi ChatGPT tetap segar untuk menghilangkan kesalahan jaringan konstan + pemeriksaan Cloudflare
-// @description:it      Mantiene aggiornate le sessioni ChatGPT per eliminare errori di rete costanti + controlli Cloudflare
-// @description:iw      שומר על מפגשי ChatGPT טריים כדי למנוע שגיאות רשת קבועות + בדיקות Cloudflare
+// @description:ar      يحافظ على جلسات ChatGPT جديدة ، مما يقلل من أخطاء الشبكة المستمرة + فحوصات Cloudflare
+// @description:bg      Поддържа сесиите на ChatGPT свежи, като елиминира постоянните мрежови грешки + проверките на Cloudflare
+// @description:bn      ChatGPT সেশনগুলিকে সতেজ রাখে, ধ্রুবক নেটওয়ার্ক ত্রুটিগুলি দূর করে + ক্লাউডফ্লেয়ার চেকগুলি
+// @description:cs      Udržuje relace ChatGPT čerstvé, eliminuje neustálé chyby sítě + kontroly Cloudflare
+// @description:da      Holder ChatGPT-sessioner friske og eliminerer konstante netværksfejl + Cloudflare-tjek
+// @description:de      Hält ChatGPT-Sitzungen frisch, eliminiert ständige Netzwerkfehler + Cloudflare-Prüfungen
+// @description:el      Διατηρεί φρέσκες τις περιόδους σύνδεσης ChatGPT, εξαλείφοντας συνεχή σφάλματα δικτύου + ελέγχους Cloudflare
+// @description:eo      Tenas ChatGPT-sesiojn freŝaj, forigante konstantajn retajn erarojn + Cloudflare-kontrolojn
+// @description:es      Mantiene las sesiones de ChatGPT actualizadas, lo que elimina los errores de red constantes + comprobaciones de Cloudflare
+// @description:fi      Pitää ChatGPT-istunnot tuoreina, eliminoiden jatkuvat verkkovirheet + Cloudflare-tarkistukset
+// @description:fr      Maintient les sessions ChatGPT à jour, éliminant les erreurs réseau constantes + vérifications Cloudflare
+// @description:fr-CA   Maintient les sessions ChatGPT à jour, éliminant les erreurs réseau constantes + vérifications Cloudflare
+// @description:gu      સતત નેટવર્ક ભૂલો + Cloudflare તપાસને દૂર કરીને ChatGPT સત્રોને તાજા રાખે છે
+// @description:hi      चैटजीपीटी सत्रों को ताजा रखता है, निरंतर नेटवर्क त्रुटियों को समाप्त करता है + क्लाउडफ्लेयर चेक
+// @description:hu      Frissen tartja a ChatGPT munkameneteket, kiküszöbölve az állandó hálózati hibákat + Cloudflare ellenőrzéseket
+// @description:in      Menjaga sesi ChatGPT tetap segar, menghilangkan kesalahan jaringan konstan + pemeriksaan Cloudflare
+// @description:it      Mantiene aggiornate le sessioni di ChatGPT, eliminando i continui errori di rete + i controlli di Cloudflare
+// @description:iw      שומר על מפגשי ChatGPT טריים, מבטל שגיאות רשת קבועות + בדיקות Cloudflare
 // @description:ja      ChatGPT セッションを最新の状態に保ち、一定のネットワーク エラーを排除 + Cloudflare チェック
-// @description:ka      ინახავს ChatGPT სესიებს ახალი ქსელის მუდმივი შეცდომების აღმოსაფხვრელად + Cloudflare შემოწმებები
+// @description:ka      ಚಾಟ್‌ಜಿಪಿಟಿ ಸೆಷನ್‌ಗಳನ್ನು ತಾಜಾವಾಗಿರಿಸುತ್ತದೆ, ನಿರಂತರ ನೆಟ್‌ವರ್ಕ್ ದೋಷಗಳನ್ನು ತೆಗೆದುಹಾಕುತ್ತದೆ + ಕ್ಲೌಡ್‌ಫ್ಲೇರ್ ಪರಿಶೀಲನೆಗಳು
 // @description:kn      ನಿರಂತರ ನೆಟ್‌ವರ್ಕ್ ದೋಷಗಳು + ಕ್ಲೌಡ್‌ಫ್ಲೇರ್ ಪರಿಶೀಲನೆಗಳನ್ನು ತೊಡೆದುಹಾಕಲು ChatGPT ಸೆಷನ್‌ಗಳನ್ನು ತಾಜಾವಾಗಿರಿಸುತ್ತದೆ
-// @description:ko      지속적인 네트워크 오류 + Cloudflare 검사를 제거하기 위해 ChatGPT 세션을 최신 상태로 유지
-// @description:ku      Danişînên ChatGPT nû digire da ku xeletiyên domdar ên torê + kontrolên Cloudflare ji holê rake
-// @description:ml      നിരന്തരമായ നെറ്റ്‌വർക്ക് പിശകുകൾ + ക്ലൗഡ്ഫ്ലെയർ പരിശോധനകൾ ഇല്ലാതാക്കാൻ ChatGPT സെഷനുകൾ പുതുമയുള്ളതാക്കുന്നു
-// @description:mr      सतत नेटवर्क त्रुटी दूर करण्यासाठी ChatGPT सत्र ताजे ठेवते + क्लाउडफ्लेअर तपासणी
-// @description:ms      Memastikan sesi ChatGPT sentiasa segar untuk menghapuskan ralat rangkaian yang berterusan + pemeriksaan Cloudflare
-// @description:my      စဉ်ဆက်မပြတ်ကွန်ရက်အမှားအယွင်းများ + Cloudflare စစ်ဆေးမှုများကိုဖယ်ရှားရန် ChatGPT စက်ရှင်များကို လတ်ဆတ်စေသည်။
-// @description:nl      Houdt ChatGPT-sessies up-to-date om constante netwerkfouten te elimineren + Cloudflare-controles
-// @description:no      Holder ChatGPT-økter ferske for å eliminere konstante nettverksfeil + Cloudflare-sjekker
-// @description:or      ଲଗାତାର ନେଟୱର୍କ ତ୍ରୁଟି + କ୍ଲାଉଡ୍ ଫ୍ଲେର୍ ଯା check ୍ଚକୁ ଦୂର କରିବା ପାଇଁ ChatGPT ଅଧିବେଶନକୁ ସତେଜ ରଖେ |
-// @description:pa      ਲਗਾਤਾਰ ਨੈੱਟਵਰਕ ਤਰੁਟੀਆਂ + Cloudflare ਜਾਂਚਾਂ ਨੂੰ ਖਤਮ ਕਰਨ ਲਈ ChatGPT ਸੈਸ਼ਨਾਂ ਨੂੰ ਤਾਜ਼ਾ ਰੱਖਦਾ ਹੈ
-// @description:pl      Utrzymuje sesje ChatGPT na bieżąco, aby wyeliminować ciągłe błędy sieciowe + kontrole Cloudflare
-// @description:pt      Mantém as sessões ChatGPT atualizadas para eliminar erros de rede constantes + verificações Cloudflare
-// @description:pt-BR   Mantém as sessões ChatGPT atualizadas para eliminar erros de rede constantes + verificações Cloudflare
-// @description:ro      Păstrează sesiunile ChatGPT proaspete pentru a elimina erorile constante de rețea + verificări Cloudflare
-// @description:ru      Сохраняет актуальность сеансов ChatGPT для устранения постоянных сетевых ошибок + проверки Cloudflare
-// @description:sk      Udržuje relácie ChatGPT čerstvé, aby sa eliminovali neustále chyby siete + kontroly Cloudflare
-// @description:sr      Одржава сесије ЦхатГПТ свежим како би се елиминисале сталне мрежне грешке + Цлоудфларе провере
-// @description:sv      Håller ChatGPT-sessioner fräscha för att eliminera konstanta nätverksfel + Cloudflare-kontroller
-// @description:ta      நிலையான நெட்வொர்க் பிழைகள் + Cloudflare சோதனைகளை அகற்ற ChatGPT அமர்வுகளை புதியதாக வைத்திருக்கிறது
-// @description:th      รักษาเซสชัน ChatGPT ให้ใหม่อยู่เสมอเพื่อกำจัดข้อผิดพลาดของเครือข่ายอย่างต่อเนื่อง + การตรวจสอบ Cloudflare
-// @description:tr      Sürekli ağ hatalarını ve Cloudflare kontrollerini ortadan kaldırmak için ChatGPT oturumlarını taze tutar
-// @description:ug      دائىملىق تور خاتالىقى + Cloudflare تەكشۈرۈشىنى تۈگىتىش ئۈچۈن ChatGPT 
-// @description:uk      Зберігає актуальність сеансів ChatGPT для усунення постійних помилок мережі + перевірки Cloudflareيىغىنلىرىنى يېڭى ھالەتتە ساقلايدۇ
-// @description:ur      نیٹ ورک کی مستقل خرابیوں + Cloudflare چیکس کو ختم کرنے کے لیے ChatGPT سیشنز کو تازہ رکھتا ہے۔
-// @description:vi      Giữ cho các phiên ChatGPT luôn mới để loại bỏ lỗi mạng liên tục + kiểm tra Cloudflare
-// @description:zh-CN   保持 ChatGPT 会话新鲜以消除持续的网络错误 + Cloudflare 检查
-// @description:zh-HK   保持 ChatGPT 會話新鮮以消除持續的網絡錯誤 + Cloudflare 檢查
-// @description:zh-SG   保持 ChatGPT 会话新鲜以消除持续的网络错误 + Cloudflare 检查
-// @description:zh-TW   保持 ChatGPT 會話新鮮以消除持續的網絡錯誤 + Cloudflare 檢查
+// @description:ko      ChatGPT 세션을 최신 상태로 유지하여 지속적인 네트워크 오류 제거 + Cloudflare 검사
+// @description:ku      Danişînên ChatGPT nû digire, xeletiyên torê yên domdar + kontrolên Cloudflare ji holê radike
+// @description:ml      സ്ഥിരമായ നെറ്റ്‌വർക്ക് പിശകുകൾ + ക്ലൗഡ്ഫ്ലെയർ പരിശോധനകൾ ഒഴിവാക്കിക്കൊണ്ട് ChatGPT സെഷനുകൾ പുതുമയുള്ളതാക്കുന്നു
+// @description:mr      ChatGPT सत्रे ताजे ठेवते, सतत नेटवर्क त्रुटी दूर करते + क्लाउडफ्लेअर तपासणी
+// @description:ms      Memastikan sesi ChatGPT sentiasa segar, menghapuskan ralat rangkaian berterusan + pemeriksaan Cloudflare
+// @description:my      ChatGPT စက်ရှင်များကို လတ်ဆတ်စေပြီး စဉ်ဆက်မပြတ် ကွန်ရက်အမှားအယွင်းများ + Cloudflare စစ်ဆေးမှုများကို ဖယ်ရှားပေးသည်
+// @description:nl      Houdt ChatGPT-sessies actueel en elimineert constante netwerkfouten + Cloudflare-controles
+// @description:no      Holder ChatGPT-økter ferske, og eliminerer konstante nettverksfeil + Cloudflare-sjekker
+// @description:or      ଚାଟ୍ ଜିପିଟି ଅଧିବେଶନଗୁଡ଼ିକୁ ସତେଜ ରଖେ, କ୍ରମାଗତ ନେଟୱର୍କ ତ୍ରୁଟି + କ୍ଲାଉଡ୍ ଫ୍ଲାର୍ ଚେକ୍ ଦୂର କରେ |
+// @description:pa      ChatGPT ਸੈਸ਼ਨਾਂ ਨੂੰ ਤਾਜ਼ਾ ਰੱਖਦਾ ਹੈ, ਲਗਾਤਾਰ ਨੈੱਟਵਰਕ ਤਰੁਟੀਆਂ ਨੂੰ ਖਤਮ ਕਰਦਾ ਹੈ + Cloudflare ਜਾਂਚਾਂ
+// @description:pl      Utrzymuje świeżość sesji ChatGPT, eliminując ciągłe błędy sieciowe + kontrole Cloudflare
+// @description:pt      Mantém as sessões ChatGPT atualizadas, eliminando erros constantes de rede + verificações Cloudflare
+// @description:pt-BR   Mantém as sessões ChatGPT atualizadas, eliminando erros constantes de rede + verificações Cloudflare
+// @description:ro      Păstrează sesiunile ChatGPT actuale, eliminând erorile constante de rețea + verificări Cloudflare
+// @description:ru      Поддерживает актуальность сеансов ChatGPT, устраняя постоянные сетевые ошибки + проверки Cloudflare
+// @description:sk      Udržuje relácie ChatGPT čerstvé, eliminuje neustále chyby siete + kontroly Cloudflare
+// @description:sr      Одржава сесије ЦхатГПТ свежим, елиминишући сталне мрежне грешке + Цлоудфларе провере
+// @description:sv      Håller ChatGPT-sessioner fräscha och eliminerar konstant nätverksfel + Cloudflare-kontroller
+// @description:ta      ChatGPT அமர்வுகளை புதியதாக வைத்திருக்கிறது, நிலையான நெட்வொர்க் பிழைகள் + Cloudflare சோதனைகளை நீக்குகிறது
+// @description:th      รักษาเซสชัน ChatGPT ให้สดใหม่ ขจัดข้อผิดพลาดของเครือข่ายอย่างต่อเนื่อง + การตรวจสอบ Cloudflare
+// @description:tr      Sürekli ağ hatalarını ve Cloudflare kontrollerini ortadan kaldırarak ChatGPT oturumlarını güncel tutar
+// @description:ug      ChatGPT يىغىنلىرىنى يېڭى ھالەتتە ساقلايدۇ ، دائىملىق تور خاتالىقى + Cloudflare تەكشۈرۈشىنى يوقىتىدۇ
+// @description:uk      Зберігає актуальність сеансів ChatGPT, усуваючи постійні помилки мережі + перевірки Cloudflare
+// @description:ur      نیٹ ورک کی مستقل خرابیوں + Cloudflare چیکس کو ختم کرتے ہوئے ChatGPT سیشنز کو تازہ رکھتا ہے۔
+// @description:vi      Giữ cho các phiên ChatGPT luôn mới, loại bỏ các lỗi mạng liên tục + kiểm tra Cloudflare
+// @description:zh-CN   保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查
+// @description:zh-HK   保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查
+// @description:zh-SG   保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查
+// @description:zh-TW   保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查
 // @license             MIT
 // @match               https://chat.openai.com/chat*
 // @compatible          chrome
