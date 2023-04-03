@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                ChatGPT Auto Refresh ↻
-// @version             2023.04.02.4
-// @description         Keeps ChatGPT sessions fresh, by auto-sending background requests, eliminating network errors + Cloudflare checks
+// @version             2023.04.02.5
+// @description         Keeps ChatGPT sessions fresh by auto-sending background requests, eliminating constsant network errors + Cloudflare checks
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @name:zh-CN          ChatGPT 自动刷新 ↻
@@ -16,19 +16,19 @@
 // @name:fr             Actualisation Automatique de ChatGPT ↻
 // @name:it             Aggiornamento Automatico ChatGPT ↻
 // @name:fi             ChatGPT automaattinen päivitys ↻
-// @description:zh-CN   通过自动发送后台请求，消除网络错误 + Cloudflare 检查，使 ChatGPT 会话保持最新
-// @description:zh-SG   通过自动发送后台请求，消除网络错误 + Cloudflare 检查，使 ChatGPT 会话保持最新
-// @description:zh-TW   通過自動發送後台請求，消除網絡錯誤 + Cloudflare 檢查，使 ChatGPT 會話保持最新
-// @description:zh-HK   通過自動發送後台請求，消除網絡錯誤 + Cloudflare 檢查，使 ChatGPT 會話保持最新
-// @description:ja      バックグラウンド リクエストを自動送信し、ネットワーク エラーと Cloudflare チェックを排除することで、ChatGPT セッションを最新の状態に保ちます
-// @description:ko      백그라운드 요청을 자동 전송하여 네트워크 오류 + Cloudflare 검사를 제거하여 ChatGPT 세션을 최신 상태로 유지합니다.
-// @description:ru      Сохраняет актуальность сеансов ChatGPT, автоматически отправляя фоновые запросы, устраняя сетевые ошибки + проверки Cloudflare
-// @description:de      Hält ChatGPT-Sitzungen frisch, indem automatisch Hintergrundanfragen gesendet, Netzwerkfehler und Cloudflare-Prüfungen beseitigt werden
-// @description:es      Mantiene las sesiones de ChatGPT actualizadas mediante el envío automático de solicitudes en segundo plano, eliminando errores de red y comprobaciones de Cloudflare
-// @description:fr      Maintient les sessions ChatGPT à jour, en envoyant automatiquement des requêtes en arrière-plan, en éliminant les erreurs de réseau + vérifications Cloudflare
-// @description:it      Mantiene aggiornate le sessioni ChatGPT, inviando automaticamente richieste in background, eliminando errori di rete + controlli Cloudflare
-// @description:sv      Håller ChatGPT-sessioner fräscha genom att automatiskt skicka bakgrundsförfrågningar, eliminera nätverksfel + Cloudflare-kontroller
-// @description:fi      Pitää ChatGPT-istunnot tuoreina lähettämällä automaattisesti taustapyyntöjä, poistamalla verkkovirheet + Cloudflare-tarkistukset
+// @description:zh-CN   通过自动发送后台请求保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查
+// @description:zh-SG   通过自动发送后台请求保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查
+// @description:zh-TW   通過自動發送後台請求保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查
+// @description:zh-HK   通過自動發送後台請求保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查
+// @description:ja      バックグラウンド リクエストを自動送信することで ChatGPT セッションを最新の状態に保ち、一定のネットワーク エラーを排除 + Cloudflare チェック
+// @description:ko      백그라운드 요청을 자동 전송하여 ChatGPT 세션을 최신 상태로 유지하고 지속적인 네트워크 오류 + Cloudflare 검사를 제거합니다.
+// @description:ru      Сохраняет актуальность сеансов ChatGPT, автоматически отправляя фоновые запросы, устраняя постоянные сетевые ошибки + проверки Cloudflare
+// @description:de      Hält ChatGPT-Sitzungen frisch, indem automatisch Hintergrundanfragen gesendet werden, wodurch ständige Netzwerkfehler und Cloudflare-Prüfungen eliminiert werden
+// @description:es      Mantiene las sesiones de ChatGPT actualizadas mediante el envío automático de solicitudes en segundo plano, lo que elimina los errores de red constantes y las comprobaciones de Cloudflare
+// @description:fr      Maintient les sessions ChatGPT à jour en envoyant automatiquement des requêtes en arrière-plan, éliminant les erreurs réseau constantes + vérifications Cloudflare
+// @description:it      Mantiene aggiornate le sessioni di ChatGPT inviando automaticamente le richieste in background, eliminando i continui errori di rete + i controlli di Cloudflare
+// @description:sv      Håller ChatGPT-sessioner fräscha genom att automatiskt skicka bakgrundsförfrågningar, vilket eliminerar konstanta nätverksfel + Cloudflare-kontroller
+// @description:fi      Pitää ChatGPT-istunnot tuoreina lähettämällä automaattisesti taustapyyntöjä, mikä eliminoi jatkuvat verkkovirheet + Cloudflare-tarkistukset
 // @license             MIT
 // @match               https://chat.openai.com/chat*
 // @compatible          chrome
