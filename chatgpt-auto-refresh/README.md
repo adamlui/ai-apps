@@ -33,8 +33,8 @@
 
 <div align="center">
 
-![229413173-7183e459-06ca-4b95-b241-8ca79b18039d](https://user-images.githubusercontent.com/10906554/229421214-53060cca-3f37-4d89-b8ed-be6d09373130.png)
-![229413421-a6264dc2-a2e3-48a7-ad86-7789dbd7df54](https://user-images.githubusercontent.com/10906554/229421225-32b27602-6e38-423a-859a-d838eb124693.png)
+![image psd(4)](https://user-images.githubusercontent.com/10906554/229413173-7183e459-06ca-4b95-b241-8ca79b18039d.png)
+![image psd(3)(2)](https://user-images.githubusercontent.com/10906554/229413421-a6264dc2-a2e3-48a7-ad86-7789dbd7df54.png)
 <img width=333 src="https://user-images.githubusercontent.com/10906554/229416105-931e2035-7e30-440a-bdc9-e570daf0d769.png">
     
 </div>
