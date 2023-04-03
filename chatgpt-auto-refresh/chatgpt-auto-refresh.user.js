@@ -49,7 +49,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.04.03.4
+// @version             2023.04.03.5
 // @description         Keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -154,7 +154,7 @@
                 console.info('↻ ChatGPT >> Auto refresh activated');
                 console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via GET-fetch)');
 
-                if (typeof document.hidden) { // if Page Visibility API supported
+                if (typeof document.hidden !== 'undefined') { // if Page Visibility API supported
                     document.addEventListener('visibilitychange', function() { // add listener to switch methods
                         if (document.hidden) scheduleRefresher('beacon');
                         else { // the page became visible
