@@ -19,6 +19,24 @@
 ![image](https://user-images.githubusercontent.com/10906554/227314347-10671177-f485-4698-9931-2f6d0910ee54.png)
 ![image](https://user-images.githubusercontent.com/10906554/227314471-cfd8362b-0662-479d-bb2e-5c13e2f622b0.png)
 
+## What it does
+
+- #### Get rid of annoying Cloudflare checks:
+
+<div align="center">
+    
+![image psd(7)](https://user-images.githubusercontent.com/10906554/229415084-97f55e6d-eb21-4ac0-bc2a-c6174a44cfe1.png)
+
+</div>
+
+- #### Get rid of annoying ChatGPT network errors:
+
+<div align="center">
+
+![image psd(4)](https://user-images.githubusercontent.com/10906554/229413173-7183e459-06ca-4b95-b241-8ca79b18039d.png)
+![image psd(3)(2)](https://user-images.githubusercontent.com/10906554/229413421-a6264dc2-a2e3-48a7-ad86-7789dbd7df54.png)
+    
+</div>
 
 ## Installation
 
