@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                ChatGPT Auto Refresh ↻
-// @version             2023.04.03.1
+// @version             2023.04.03.2
 // @description         Keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -63,8 +63,8 @@
 // @description:eo      Tenas ChatGPT-sesiojn freŝaj, forigante konstantajn retajn erarojn + Cloudflare-kontroloj (ĉio el la fono!)
 // @description:es      Mantiene las sesiones de ChatGPT actualizadas, lo que elimina los errores de red constantes + las comprobaciones de Cloudflare (¡todo en segundo plano!)
 // @description:fi      Pitää ChatGPT-istunnot tuoreina, eliminoiden jatkuvat verkkovirheet + Cloudflare-tarkistukset (kaikki taustalta!)
-// @description:fr      Maintient les sessions ChatGPT à jour, éliminant les erreurs réseau constantes + vérifications Cloudflare (le tout en arrière-plan !)
-// @description:fr-CA   Maintient les sessions ChatGPT à jour, éliminant les erreurs réseau constantes + vérifications Cloudflare (le tout en arrière-plan !)
+// @description:fr      Maintient les sessions ChatGPT à jour, éliminant les erreurs réseau constantes + vérifications Cloudflare (le tout en arrière-plan!)
+// @description:fr-CA   Maintient les sessions ChatGPT à jour, éliminant les erreurs réseau constantes + vérifications Cloudflare (le tout en arrière-plan!)
 // @description:gu      ChatGPT સત્રોને તાજા રાખે છે, સતત નેટવર્ક ભૂલોને દૂર કરે છે + Cloudflare તપાસો (બધું પૃષ્ઠભૂમિમાંથી!)
 // @description:hi      चैटजीपीटी सत्रों को ताजा रखता है, लगातार नेटवर्क त्रुटियों को समाप्त करता है + क्लाउडफ्लेयर चेक (सभी पृष्ठभूमि से!)
 // @description:hu      Frissen tartja a ChatGPT munkameneteket, kiküszöbölve az állandó hálózati hibákat + Cloudflare ellenőrzéseket (mind a háttérből!)
