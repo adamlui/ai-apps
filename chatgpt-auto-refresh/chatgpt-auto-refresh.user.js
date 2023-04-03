@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                ChatGPT Auto Refresh ↻
-// @version             2023.04.02.7
+// @version             2023.04.03
 // @description         Keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks 
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -145,9 +145,8 @@
             if (!this.activateAutoRefresh.intervalId) {
                 console.info('↻ ChatGPT >> Auto refresh activated');
                 this.activateAutoRefresh.intervalId = setInterval(function() {
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('GET', chatGPTsessURL);
-                    xhr.send(); console.info('ChatGPT session refreshed');
+                    navigator.sendBeacon(chatGPTsessURL, new Uint8Array());
+                    console.info('↻ ChatGPT >> ChatGPT session refreshed');
                 }, autoRefreshTimer * 1000); // refresh every pre-set interval
             } else { console.info('↻ ChatGPT >> Auto refresh already active!'); }
         },
@@ -217,9 +216,8 @@
             if (!this.activateAutoRefresh.intervalId) {
                 console.info('↻ ChatGPT >> Auto refresh activated');
                 this.activateAutoRefresh.intervalId = setInterval(function() {
-                    var xhr = new XMLHttpRequest();
-                    xhr.open('GET', chatGPTsessURL);
-                    xhr.send(); console.info('↻ ChatGPT >> ChatGPT session refreshed');
+                    navigator.sendBeacon(chatGPTsessURL, new Uint8Array());
+                    console.info('↻ ChatGPT >> ChatGPT session refreshed');
                 }, autoRefreshTimer * 1000); // refresh every pre-set interval
             } else {
                 clearInterval(this.activateAutoRefresh.intervalId);
