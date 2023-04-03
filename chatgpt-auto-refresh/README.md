@@ -45,7 +45,7 @@
 
 2. Install [ChatGPT Auto Refresh](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh) (will load in userscript manager installed above)
 
-3. Visit [chat.openai.com](https://chat.openai.com) as normal, and sessions will auto-refresh at a regular interval!
+3. Visit [chat.openai.com](https://chat.openai.com) as normal, and sessions will auto-refresh (in background w/ no penalty to you) at a regular interval!
 
 ## Dependencies
 
