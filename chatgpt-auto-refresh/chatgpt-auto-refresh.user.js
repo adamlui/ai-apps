@@ -1,9 +1,5 @@
 // ==UserScript==
 // @name                ChatGPT Auto Refresh ↻
-// @version             2023.04.03.2
-// @description         Keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
-// @author              Adam Lui
-// @namespace           https://github.com/adamlui
 // @name:ar             تحديث تلقائي لـ ChatGPT ↻
 // @name:bg             Автоматично опресняване на ChatGPT ↻
 // @name:bn             ChatGPT অটো রিফ্রেশ ↻
@@ -53,6 +49,10 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
+// @version             2023.04.03.3
+// @description         Keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
+// @author              Adam Lui
+// @namespace           https://github.com/adamlui
 // @description:ar      يحافظ على جلسات ChatGPT جديدة ، مما يقلل من أخطاء الشبكة المستمرة + فحوصات Cloudflare (كل ذلك من الخلفية!)
 // @description:bg      Поддържа сесиите на ChatGPT свежи, елиминирайки постоянни мрежови грешки + проверки на Cloudflare (всички от заден план!)
 // @description:bn      ChatGPT সেশনগুলিকে সতেজ রাখে, ধ্রুবক নেটওয়ার্ক ত্রুটিগুলি দূর করে + ক্লাউডফ্লেয়ার চেক (সবই ব্যাকগ্রাউন্ড থেকে!)
@@ -141,14 +141,36 @@
     var autoRefreshTimer = 60; // secs between session auto-refreshes
     var chatgpt = {
 
-        activateAutoRefresh: function() {
-            if (!this.activateAutoRefresh.intervalId) {
-                console.info('↻ ChatGPT >> Auto refresh activated');
-                this.activateAutoRefresh.intervalId = setInterval(function() {
-                    navigator.sendBeacon(chatGPTsessURL, new Uint8Array());
-                    console.info('↻ ChatGPT >> ChatGPT session refreshed');
-                }, autoRefreshTimer * 1000); // refresh every pre-set interval
-            } else { console.info('↻ ChatGPT >> Auto refresh already active!'); }
+        autoRefresh: {
+            activate: function() {
+                if (!this.activate.intervalId) {
+                    console.info('↻ ChatGPT >> Auto refresh activated');
+                    this.activate.intervalId = setInterval(function() {
+                        navigator.sendBeacon(chatGPTsessURL, new Uint8Array());
+                        var now = new Date();
+                        var hours = now.getHours() % 12 || 12; // Convert to 12-hour format
+                        var minutes = now.getMinutes();
+                        var seconds = now.getSeconds();
+                        var meridiem = now.getHours() < 12 ? 'AM' : 'PM';
+                        var timestamp = hours + ':' + minutes + ':' + seconds + ' ' + meridiem;
+                        console.info('↻ ChatGPT >> [' + timestamp + '] ChatGPT session refreshed');
+                    }, autoRefreshTimer * 1000); // refresh every pre-set interval
+                } else { console.info('↻ ChatGPT >> Auto refresh already active!'); }
+            },
+
+            deactivate: function() {
+                if (!this.activate.intervalId) {
+                    console.info('↻ ChatGPT >> Auto refresh already inactive!');
+                } else {
+                    clearInterval(this.activate.intervalId);
+                    this.activate.intervalId = null;
+                    console.info('↻ ChatGPT >> Auto refresh de-activated');
+                }
+            },
+
+            toggle: function() {
+                if (!this.activate.intervalId) { this.activate(); } else { this.deactivate; }
+            }
         },
 
         notify: function(msg, position, notifDuration, shadow) {
@@ -210,20 +232,6 @@
                 notificationDiv.remove(); thisQuadrantDivs.shift(); // remove from DOM + memory
                 notificationDiv.destroyTimer = null; // prevent memory leaks
             }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
-        },
-
-        toggleAutoRefresh: function() {
-            if (!this.activateAutoRefresh.intervalId) {
-                console.info('↻ ChatGPT >> Auto refresh activated');
-                this.activateAutoRefresh.intervalId = setInterval(function() {
-                    navigator.sendBeacon(chatGPTsessURL, new Uint8Array());
-                    console.info('↻ ChatGPT >> ChatGPT session refreshed');
-                }, autoRefreshTimer * 1000); // refresh every pre-set interval
-            } else {
-                clearInterval(this.activateAutoRefresh.intervalId);
-                this.activateAutoRefresh.intervalId = null;
-                console.info('↻ ChatGPT >> Auto refresh de-activated');
-            }
         }
     };
 
@@ -238,7 +246,7 @@
         var arLabel = stateSymbol[+config.arDisabled] + ' Auto-Refresh ↻ '
                     + stateSeparator + stateWord[+config.arDisabled]
         menuID.push(GM_registerMenuCommand(arLabel, function() {
-            chatgpt.toggleAutoRefresh()
+            chatgpt.autoRefresh.toggle()
             saveSetting('arDisabled', !config.arDisabled)
             if (!config.notifHidden) chatgpt.notify('Auto-Refresh: ' + stateWord[+config.arDisabled])
             for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i]) // remove all cmd's
@@ -275,7 +283,7 @@
     var config = {}, configKeyPrefix = 'chatGPTar_'
     loadSetting('arDisabled', 'notifHidden')
     registerMenu() // create browser toolbar menu
-    if (!config.arDisabled) chatgpt.activateAutoRefresh()
+    if (!config.arDisabled) chatgpt.autoRefresh.activate()
     if (!config.notifHidden && document.title === 'New chat') {
         chatgpt.notify('Auto-Refresh: ' + (config.arDisabled ? 'OFF' : 'ON')) }
 
