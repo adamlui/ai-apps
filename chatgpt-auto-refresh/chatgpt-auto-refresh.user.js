@@ -49,7 +49,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.04.03.5
+// @version             2023.04.04
 // @description         Keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -199,6 +199,13 @@
             toggle: function() { if (this.activate.fetchID || this.activate.beaconID) { this.deactivate(); } else { this.activate(); }}
         },
 
+        isDarkMode: function() {
+            for (var navLink of document.querySelectorAll('nav > a')) {
+                if (navLink.text.toLowerCase().includes('light mode')) {
+                    return true; }}
+            return false;
+        },
+
         notify: function(msg, position, notifDuration, shadow) {
             notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
             var fadeDuration = 0.6; // sec duration of fade-out
@@ -274,7 +281,7 @@
         menuID.push(GM_registerMenuCommand(arLabel, function() {
             chatgpt.autoRefresh.toggle()
             saveSetting('arDisabled', !config.arDisabled)
-            if (!config.notifHidden) chatgpt.notify('Auto-Refresh: ' + stateWord[+config.arDisabled])
+            if (!config.notifHidden) chatgpt.notify('Auto-Refresh: ' + stateWord[+config.arDisabled], '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i]) // remove all cmd's
             registerMenu() // serve fresh one
         }))
@@ -284,7 +291,7 @@
                     + stateSeparator + stateWord[+config.notifHidden]
         menuID.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
-            chatgpt.notify('Mode Notifications: ' + stateWord[+config.notifHidden])
+            chatgpt.notify('Mode Notifications: ' + stateWord[+config.notifHidden], '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i]) // remove all cmd's
             registerMenu() // serve fresh one
         }))
@@ -311,6 +318,6 @@
     registerMenu() // create browser toolbar menu
     if (!config.arDisabled) chatgpt.autoRefresh.activate()
     if (!config.notifHidden && document.title === 'New chat') {
-        chatgpt.notify('Auto-Refresh: ' + (config.arDisabled ? 'OFF' : 'ON')) }
+        chatgpt.notify('Auto-Refresh: ' + (config.arDisabled ? 'OFF' : 'ON'), '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
 
 })()
