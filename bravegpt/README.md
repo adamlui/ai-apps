@@ -12,6 +12,7 @@
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 [![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/QQ-989898.svg)](#compatibility)
 [![code-quality](https://img.shields.io/codefactor/grade/github/kudoai/bravegpt?label=Code%20Quality)](https://www.codefactor.io/repository/github/kudoai/bravegpt)
+<a alt="chatgpt.js" href="https://github.com/chatgptjs/chatgpt.js"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
 [![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#brave-search)
 
 <h3><b>BraveGPT</b> brings the magic of ChatGPT to search results.</h3>
