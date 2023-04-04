@@ -1,11 +1,5 @@
 // ==UserScript==
 // @name                ChatGPT Widescreen Mode 🖥️
-// @version             2023.04.04
-// @description         Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling
-// @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
-// @namespace           https://github.com/adamlui
-// @namespace           https://github.com/xiaoyingyo
-// @namespace           https://github.com/mefengl
 // @name:zh-CN          ChatGPT 宽屏模式🖥️
 // @name:zh-SG          ChatGPT 宽屏模式🖥️
 // @name:zh-TW          ChatGPT 寬屏模式🖥️
@@ -17,6 +11,12 @@
 // @name:es             Modo de Pantalla Ancha de ChatGPT 🖥️
 // @name:fr             Mode Écran Large ChatGPT 🖥️
 // @name:it             ChatGPT Modalità Widescreen 🖥️
+// @version             2023.04.04.1
+// @description         Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling
+// @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
+// @namespace           https://github.com/adamlui
+// @namespace           https://github.com/xiaoyingyo
+// @namespace           https://github.com/mefengl
 // @description:zh-CN   向 ChatGPT 添加宽屏 + 全窗口模式以减少滚动
 // @description:zh-SG   向 ChatGPT 添加宽屏 + 全窗口模式以减少滚动
 // @description:zh-TW   向 ChatGPT 添加寬屏 + 全窗口模式以減少滾動
@@ -127,6 +127,14 @@
             }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
         },
 
+        isDarkMode: function() {
+            for (var navLink of document.querySelectorAll('nav > a')) {
+                if (navLink.text.toLowerCase().includes('light mode')) {
+                    return true;
+            }}
+            return false;
+        },
+
         startNewChat: function() {
             for (var navLink of document.querySelectorAll('nav > a')) {
                 if (navLink.text.includes(navLinkLabels.newChat)) {
@@ -146,7 +154,7 @@
             + stateSeparator + stateWord[+!config.fullerWindow]
         menuID.push(GM_registerMenuCommand(fwLabel, function () {
             saveSetting('fullerWindow', !config.fullerWindow)
-            if (!config.notifHidden) chatgpt.notify('Fuller Windows: ' + stateWord[+!config.fullerWindow])
+            if (!config.notifHidden) chatgpt.notify('Fuller Windows: ' + stateWord[+!config.fullerWindow], '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             for (var id of menuID) { GM_unregisterMenuCommand(id) }; registerMenu() // refresh menu
         }))
 
@@ -155,7 +163,7 @@
             + stateSeparator + stateWord[+config.notifHidden]
         menuID.push(GM_registerMenuCommand(mnLabel, function () {
             saveSetting('notifHidden', !config.notifHidden)
-            chatgpt.notify('Mode Notifications: ' + stateWord[+config.notifHidden])
+            chatgpt.notify('Mode Notifications: ' + stateWord[+config.notifHidden], '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             for (var id of menuID) { GM_unregisterMenuCommand(id) }; registerMenu() // refresh menu
         }))
     }
@@ -203,7 +211,7 @@
         saveSetting(mode, state.toUpperCase() == 'ON' ? true : false)
         updateSVG(mode); updateTooltip(mode) // update icon/tooltip
         if (!config.notifHidden) { // show mode notification if enabled
-            chatgpt.notify(`${mode == 'wideScreen' ? 'Wide screen' : 'Full-window'} ${state.toUpperCase()}`)
+            chatgpt.notify(`${mode == 'wideScreen' ? 'Wide screen' : 'Full-window'} ${state.toUpperCase()}`, '', '', chatgpt.isDarkMode() ? '' : 'shadow')
         }
     }
 
