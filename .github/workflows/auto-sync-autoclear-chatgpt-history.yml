@@ -5,7 +5,7 @@ on:
     branches: [ master, main ]
     paths:
       - 'autoclear-chatgpt-history/**'
-      
+
 jobs:
   build:
     if: github.event.commits[0].committer.username != 'auto-sync-bot'
