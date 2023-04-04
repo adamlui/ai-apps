@@ -5,7 +5,7 @@
 [![commits](https://img.shields.io/github/commit-activity/w/adamlui/autoclear-chatgpt-history?label=Commits)](https://github.com/adamlui/autoclear-chatgpt-history/commits/main)
 [![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/autoclear-chatgpt-history?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/autoclear-chatgpt-history)
 <a alt="chatgpt.js" href="https://github.com/chatgptjs/chatgpt.js"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
-[![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
+[![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#privacy)
 
 ### Auto-clears chat history when visiting chat.openai.com for maximum privacy.
 

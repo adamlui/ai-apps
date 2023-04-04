@@ -1,11 +1,5 @@
 // ==UserScript==
 // @name                Autoclear ChatGPT History
-// @version             2023.04.03
-// @description         Auto-clears chat history when visiting chat.openai.com
-// @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
-// @namespace           https://github.com/adamlui
-// @namespace           https://github.com/Tripp1e
-// @namespace           https://github.com/XiaoYingYo
 // @name:zh-CN          自动清除 ChatGPT 历史记录
 // @name:zh-SG          自动清除 ChatGPT 历史记录
 // @name:zh-TW          自動清除 ChatGPT 歷史記錄
@@ -17,6 +11,12 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
+// @version             2023.04.04
+// @description         Auto-clears chat history when visiting chat.openai.com
+// @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
+// @namespace           https://github.com/adamlui
+// @namespace           https://github.com/Tripp1e
+// @namespace           https://github.com/XiaoYingYo
 // @description:zh-CN   访问 chat.openai.com 时自动清除聊天记录
 // @description:zh-SG   访问 chat.openai.com 时自动清除聊天记录
 // @description:zh-TW   訪問 chat.openai.com 時自動清除聊天記錄
