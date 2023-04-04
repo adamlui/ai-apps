@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                ChatGPT Widescreen Mode 🖥️
-// @version             2023.04.02
+// @version             2023.04.04
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -210,8 +210,8 @@
     function toggleTooltip(event) {
         var buttonType = (
             event.target.id.includes('wide') ? 'wideScreen' :
-                event.target.id.includes('full') ? 'fullWindow' :
-                    event.target.id.includes('new') ? 'newChat' : 'sendMsg')
+            event.target.id.includes('full') ? 'fullWindow' :
+            event.target.id.includes('new') ? 'newChat' : 'sendMsg')
         updateTooltip(buttonType) // since mouseover's can indicate button change
         tooltipDiv.style.opacity = event.type === 'mouseover' ? '0.8' : '0' // toggle visibility
     }
@@ -223,7 +223,7 @@
         var iniRoffset = overlayWidth * (
             buttonType.includes('send') ? 0
                 : buttonType.includes('Window') ? 1
-                    : buttonType.includes('Screen') ? 2 : 3) + ctrAddend
+                : buttonType.includes('Screen') ? 2 : 3) + ctrAddend
         tooltipDiv.style.right = `${ // horizontal position
             iniRoffset - tooltipDiv.getBoundingClientRect().width / 2}px`
     }
@@ -330,7 +330,7 @@
     wideScreenButton.style.cssText = 'right: 3.83rem' // position left of Send button
     wideScreenButton.addEventListener('click', () => { toggleMode('wideScreen') })
     wideScreenButton.addEventListener('mouseover', toggleTooltip)
-    wideScreenButton.addEventListener('mouseover', toggleTooltip)
+    wideScreenButton.addEventListener('mouseout', toggleTooltip)
 
     // Create full-window button & add icon/classes/position/listeners
     var fullWindowButton = document.createElement('button') // create button
