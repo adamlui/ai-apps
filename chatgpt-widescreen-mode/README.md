@@ -16,7 +16,7 @@
 
 ##
 
-[![Full-Window mode](https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/widescreen-mode-video-thumbnail.png)](https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1)
+[![Full-Window mode](https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/widescreen-mode-video-thumbnail.png)](https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1)
 
 ## Installation
 
