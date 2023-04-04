@@ -28,7 +28,7 @@ jobs:
 
       - name: Sync adamlui/chatgpt-userscripts/bravegpt to kudoai/bravegpt/greasemonkey
         run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/bravegpt/ ${{ github.workspace }}/kudoai/bravegpt/greasemonkey/
-      
+
       - name: Push to kudoai/bravegpt
         uses: stefanzweifel/git-auto-commit-action@v4
         with:

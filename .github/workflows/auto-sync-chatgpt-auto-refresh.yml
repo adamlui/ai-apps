@@ -28,7 +28,7 @@ jobs:
 
       - name: Sync adamlui/chatgpt-userscripts/chatgpt-auto-refresh to adamlui/chatgpt-auto-refresh/greasemonkey
         run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/chatgpt-auto-refresh/ ${{ github.workspace }}/adamlui/chatgpt-auto-refresh/greasemonkey/
-      
+
       - name: Push to adamlui/chatgpt-auto-refresh
         uses: stefanzweifel/git-auto-commit-action@v4
         with:

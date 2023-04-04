@@ -28,7 +28,7 @@ jobs:
 
       - name: Sync adamlui/chatgpt-userscripts/duckduckgpt to adamlui/duckduckgpt/greasemonkey
         run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/duckduckgpt/ ${{ github.workspace }}/kudoai/duckduckgpt/greasemonkey/
-      
+
       - name: Push to kudoai/duckduckgpt
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
