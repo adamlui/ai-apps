@@ -29,12 +29,15 @@ jobs:
       - name: Sync adamlui/chatgpt-userscripts/bravegpt to kudoai/bravegpt/greasemonkey
         run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/bravegpt/ ${{ github.workspace }}/kudoai/bravegpt/greasemonkey/
 
+      - name: Copy README.md to kudoai/bravegpt
+        run: cp -f ${{ github.workspace }}/adamlui/chatgpt-userscripts/bravegpt/README.md ${{ github.workspace }}/kudoai/bravegpt/README.md
+
       - name: Push to kudoai/bravegpt
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
           add_options: '--all'
-          commit_user_email: auto-sync@userscripts.co
+          commit_user_email: auto-sync@kudoai.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-userscripts`]'
           file_pattern: '*'
           repository: kudoai/bravegpt

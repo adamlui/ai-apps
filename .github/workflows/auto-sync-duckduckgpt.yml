@@ -26,15 +26,18 @@ jobs:
           repository: kudoai/duckduckgpt
           path: kudoai/duckduckgpt
 
-      - name: Sync adamlui/chatgpt-userscripts/duckduckgpt to adamlui/duckduckgpt/greasemonkey
+      - name: Sync adamlui/chatgpt-userscripts/duckduckgpt to kudoai/duckduckgpt/greasemonkey
         run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/duckduckgpt/ ${{ github.workspace }}/kudoai/duckduckgpt/greasemonkey/
+
+      - name: Copy README.md to kudoai/duckduckgpt
+        run: cp -f ${{ github.workspace }}/adamlui/chatgpt-userscripts/duckduckgpt/README.md ${{ github.workspace }}/kudoai/duckduckgpt/README.md
 
       - name: Push to kudoai/duckduckgpt
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
           add_options: '--all'
-          commit_user_email: auto-sync@userscripts.co
+          commit_user_email: auto-sync@kudoai.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-userscripts`]'
           file_pattern: '*'
           repository: kudoai/duckduckgpt
