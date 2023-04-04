@@ -49,7 +49,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.04.04
+// @version             2023.04.04.1
 // @description         Keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -199,12 +199,7 @@
             toggle: function() { if (this.activate.fetchID || this.activate.beaconID) { this.deactivate(); } else { this.activate(); }}
         },
 
-        isDarkMode: function() {
-            for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.toLowerCase().includes('light mode')) {
-                    return true; }}
-            return false;
-        },
+        isDarkMode: function() { return document.documentElement.classList.contains('light'); },
 
         notify: function(msg, position, notifDuration, shadow) {
             notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
