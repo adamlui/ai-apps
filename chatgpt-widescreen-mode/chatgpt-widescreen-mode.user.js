@@ -11,7 +11,7 @@
 // @name:es             Modo de Pantalla Ancha de ChatGPT 🖥️
 // @name:fr             Mode Écran Large ChatGPT 🖥️
 // @name:it             ChatGPT Modalità Widescreen 🖥️
-// @version             2023.04.04.1
+// @version             2023.04.04.2
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -65,7 +65,9 @@
     };
     var navLinkLabels = { newChat: location.host === 'freegpt.one' ? 'Reset Thread' : 'New chat' };
     var chatgpt = {
-
+        
+        isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
+        
         notify: function(msg, position, notifDuration, shadow) {
             notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
             var fadeDuration = 0.6; // sec duration of fade-out
@@ -125,14 +127,6 @@
                 notificationDiv.remove(); thisQuadrantDivs.shift(); // remove from DOM + memory
                 notificationDiv.destroyTimer = null; // prevent memory leaks
             }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
-        },
-
-        isDarkMode: function() {
-            for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.toLowerCase().includes('light mode')) {
-                    return true;
-            }}
-            return false;
         },
 
         startNewChat: function() {
