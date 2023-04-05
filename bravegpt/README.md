@@ -76,14 +76,16 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 
 ## Proxy Mode
 
-Proxy API Mode (enabled by default) returns text responses, without the need for a chat.openai.com account!
+Proxy API Mode (disabled by default) returns text responses, without the need for a chat.openai.com account.
 
-For even *faster* stream-type responses (like the one in demo), Tampermonkey users (w/ registered accounts) can disable it like this:
+When disabled, a ChatGPT account is required to fetch responses, but they are faster stream-type ones (like in demo).
+
+If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <div align='center'>
 
 ![image](https://user-images.githubusercontent.com/10906554/229068389-795e517f-a95c-4c2f-829c-3fa83a6dbf73.png)
-![image](https://user-images.githubusercontent.com/10906554/229062275-fe67713f-cb93-4e08-b4ad-7e273eef2cd1.png)
+![image](https://user-images.githubusercontent.com/10906554/229728672-3fec6a2d-c4fe-4738-871d-56c1d97cb2c5.png)
 
 </div>
 
