@@ -89,6 +89,10 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 [![Follow @XiaoYingYo on GitHub](https://img.shields.io/github/followers/XiaoYingYo?label=Follow%20%40XiaoYingYo&style=social "GitHub")](https://github.com/XiaoYingYo)
 [![Follow @mefengl on GitHub](https://img.shields.io/github/followers/mefengl?label=Follow%20%40mefengl&style=social "GitHub")](https://github.com/mefengl)
 [![Follow @mefengl on Twitter](https://img.shields.io/twitter/follow/mefengl?style=social)](https://twitter.com/mefengl)
+
+## More ChatGPT scripts
+
+For even more epic ChatGPT scripts, go here: https://github.com/adamlui/chatgpt-userscripts
 <br><br>
 
 ## Related scripts
