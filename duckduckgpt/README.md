@@ -80,7 +80,7 @@ Proxy API Mode (disabled by default) returns text responses, without the need fo
 
 When disabled, a ChatGPT account is required to fetch responses, but they are faster stream-type ones (like in demo).
 
-If OpenAI API is acting unreliable, Tampermonkey users (w/ registered accounts) can enable Proxy Mode like this:
+If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <div align='center'>
 
