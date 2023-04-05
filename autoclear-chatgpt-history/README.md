@@ -84,6 +84,10 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
 [![Follow @adamllui on Twitter](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
 [![Follow @Tripp1e on GitHub](https://img.shields.io/github/followers/Tripp1e?label=Follow%20%40Tripp1e&style=social "GitHub")](https://github.com/Tripp1e)
 [![Follow @XiaoYingYo on GitHub](https://img.shields.io/github/followers/XiaoYingYo?label=Follow%20%40XiaoYingYo&style=social "GitHub")](https://github.com/XiaoYingYo)
+
+## More ChatGPT scripts
+
+For even more epic ChatGPT scripts, go here: https://github.com/adamlui/chatgpt-userscripts
 <br><br>
 
 ## Related scripts
