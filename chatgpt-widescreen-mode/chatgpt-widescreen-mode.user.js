@@ -11,7 +11,7 @@
 // @name:es             Modo de Pantalla Ancha de ChatGPT 🖥️
 // @name:fr             Mode Écran Large ChatGPT 🖥️
 // @name:it             ChatGPT Modalità Widescreen 🖥️
-// @version             2023.04.05
+// @version             2023.04.05.1
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -56,13 +56,9 @@
 (function () {
 
     // Import chatgpt.js functions
-
-    unsafeWindow.chatgptNotifyProps = { // NOTE: `unsafeWindow` is safe! `@match` is limited in scope.
-        // (Only if `@match` is highly inclusive, a malicious website could make userscripts do bad things.)
-        // Because this script uses GM methods (which isolates script in sandbox) `unsafeWindow` is
-        // required to create global object for notification positioning across scripts (but is safe!)
-        quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }
-    };
+    
+    var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
+    localStorage.notifyProps = JSON.stringify(notifyProps);
     var navLinkLabels = { newChat: location.host === 'freegpt.one' ? 'Reset Thread' : 'New chat' };
     var chatgpt = {
         
@@ -75,8 +71,9 @@
 
             // Make/stylize/insert div
             var notificationDiv = document.createElement('div'); // make div
+            notificationDiv.id = Math.floor(Math.random() * 1000000) + Date.now();
             notificationDiv.style.cssText = ( // stylize it
-                  '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
+                '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
                 + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; '
                 + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
             document.body.appendChild(notificationDiv); // insert into DOM
@@ -85,10 +82,13 @@
             notificationDiv.isTop = !position || !/low|bottom/i.test(position) ? true : false;
             notificationDiv.isRight = !position || !/left/i.test(position) ? true : false;
             notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
-                                     + (notificationDiv.isRight ? 'Right' : 'Left');
+                + (notificationDiv.isRight ? 'Right' : 'Left');
 
-            // Store div in global memory
-            unsafeWindow.chatgptNotifyProps.quadrants[notificationDiv.quadrant].push(notificationDiv); // store div in global object
+            // Store div
+            notifyProps = JSON.parse(localStorage.notifyProps);
+            notifyProps.quadrants[notificationDiv.quadrant].push(notificationDiv.id);
+            localStorage.notifyProps = JSON.stringify(notifyProps)
+
 
             // Position notification (defaults to top-right)
             notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
@@ -97,15 +97,15 @@
             notificationDiv.style.left = !notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
 
             // Reposition old notifications
-            var thisQuadrantDivs = unsafeWindow.chatgptNotifyProps.quadrants[notificationDiv.quadrant];
-            if (thisQuadrantDivs.length > 1) {
-                var divsToMove = thisQuadrantDivs.slice(0, -1); // exclude new div
+            var thisQuadrantDivIDs = notifyProps.quadrants[notificationDiv.quadrant];
+            if (thisQuadrantDivIDs.length > 1) {
+                var divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
                 for (var j = 0; j < divsToMove.length; j++) {
-                    var oldDiv = divsToMove[j];
+                    var oldDiv = document.getElementById(divsToMove[j]);
                     var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
                     var vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
-            }}
+                }}
 
             // Show notification
             notificationDiv.innerHTML = msg; // insert msg
@@ -124,7 +124,10 @@
 
             // Destroy notification
             notificationDiv.destroyTimer = setTimeout(function destroyNotif() {
-                notificationDiv.remove(); thisQuadrantDivs.shift(); // remove from DOM + memory
+                notificationDiv.remove(); // remove from DOM
+                notifyProps = JSON.parse(localStorage.notifyProps)
+                notifyProps.quadrants[notificationDiv.quadrant].shift(); // + memory
+                localStorage.notifyProps = JSON.stringify(notifyProps); // + storage
                 notificationDiv.destroyTimer = null; // prevent memory leaks
             }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
         },
