@@ -11,7 +11,7 @@
 // @name:es             Modo de Pantalla Ancha de ChatGPT 🖥️
 // @name:fr             Mode Écran Large ChatGPT 🖥️
 // @name:it             ChatGPT Modalità Widescreen 🖥️
-// @version             2023.04.04.2
+// @version             2023.04.05
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -273,6 +273,7 @@
     var sidepadClasses = document.querySelector('#__next > div > div').classList
     var sidebarClasses = document.querySelector(`#__next > div > div.${
         location.host === 'freegpt.one' ? 'hidden' : 'dark' }`).classList
+    var mainDivClasses = document.querySelector('#__next > div > div.flex').classList
 
     // Create/stylize tooltip div
     var tooltipDiv = document.createElement('div')
@@ -293,7 +294,8 @@
     // Create wide screen style
     var wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for toggleMode()
-    wideScreenStyle.innerHTML = '.text-base { max-width: 93% !important }'
+    wideScreenStyle.innerHTML = '.text-base { max-width: 93% !important } '
+        + 'div' + classListToCSS(mainDivClasses) + '{ width: 100px }' // prevent sidebar shrinking when zoomed
 
     // Create full-window style
     var fullWindowStyle = document.createElement('style')
