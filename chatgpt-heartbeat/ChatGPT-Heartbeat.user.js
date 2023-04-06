@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://chat.openai.com/*
 // @match       *://freegpt.one/*
-// @version     2023.3.24 10:47:30
+// @version     2023.4.7
 // @grant       none
 // @run-at      document-body
 // @author      github.com @XiaoYingYo
@@ -159,16 +159,18 @@ async function FindPrimaryBtn(NetworkErrorElement) {
             resolve(null);
             return null;
         }
-        let dialogeleclass = ["w-full", "group w-full"];
+        let dialogeleclasss = ["w-full", "group w-full"];
+        let dialogeleclass = "";
         let LastMessageParent = null;
-        let length = dialogeleclass.length;
+        let length = dialogeleclasss.length;
         for (let i = 0; i < length; i++) {
-            LastMessageParent = $(NetworkErrorElement).parents("div[class^='" + dialogeleclass[i] + "']").eq(0);
-            console.log("div[class^='" + dialogeleclass[i] + "']");
+            LastMessageParent = $(NetworkErrorElement).parents("div[class^='" + dialogeleclasss[i] + "']").eq(0);
             if (LastMessageParent.length > 0) {
+                dialogeleclass = dialogeleclasss[i];
                 break;
             }
         }
+        let w_full = "div[class^='" + dialogeleclass + "']";
         let LastMessageElement = $(LastMessageParent).prev(w_full).eq(0);
         let buttons = $(LastMessageElement).find("button");
         for (let i = 0; i < buttons.length; i++) {
