@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.04.02.1
+// @version             2023.04.06
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -70,7 +70,7 @@
         notify: function(msg, position, notifDuration, shadow) {
             notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
             var fadeDuration = 0.6; // sec duration of fade-out
-            var vpYoffset = 13, vpXoffset = 27; // px offset from viewport border
+            var vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
             // Make/stylize/insert div
             var notificationDiv = document.createElement('div'); // make div
