@@ -11,7 +11,7 @@
 // @name:es             Modo de Pantalla Ancha de ChatGPT 🖥️
 // @name:fr             Mode Écran Large ChatGPT 🖥️
 // @name:it             ChatGPT Modalità Widescreen 🖥️
-// @version             2023.04.08
+// @version             2023.04.08.1
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -267,10 +267,6 @@
     var sendButtonColor = 'currentColor' // changes w/ scheme
     var sendButtonClasses = document.querySelector('form button[class*="bottom"]').classList
     var sendSVGclasses = document.querySelector('form button[class*="bottom"] > svg').classList
-    if (location.host === 'freegpt.one') { // remove rotation effect
-        [...sendSVGclasses].forEach(sendSVGclass => {
-            if (sendSVGclass.includes('rotate')) sendSVGclasses.remove(sendSVGclass)
-    })}
     var inputTextAreaClasses = document.querySelector("form button[class*='bottom']").previousSibling.classList
     var sidepadClasses = document.querySelector('#__next > div > div').classList
     var sidebarClasses = document.querySelector(`#__next > div > div.${
