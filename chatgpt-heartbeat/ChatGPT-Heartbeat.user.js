@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://chat.openai.com/*
 // @match       *://freegpt.one/*
-// @version     2023.4.7
+// @version     2023.4.9
 // @grant       none
 // @run-at      document-body
 // @author      github.com @XiaoYingYo
@@ -17,16 +17,30 @@
 var global_module = window["global_module"];
 var $ = window["$$$"];
 
+let GlobalVariable = {};
 let cookiescache = {};
 
 unsafeWindow.ResetIframeFun = null;
 
 MaskLayer = {
-    show: function () {
+    show: function (hide) {
         if (MaskLayerIsExist()) {
+            if (!hide) {
+                try {
+                    let openIframe = GlobalVariable["openIframe"];
+                    let MainElement = GlobalVariable["MainElement"];
+                    $(openIframe).show();
+                    $(MainElement).show();
+                    $("div#_MaskLayer_").eq(0).show();
+                } catch (e) { }
+            }
             return;
         }
-        let html = "<div id='_MaskLayer_' style='position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999999999;'><div style='position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; font-weight: bold;'>ChatGPT Checking whether you are a man-machine, please wait a moment, we are providing you with a better user experience in automation<br>If you stay here for a long time, please refresh the page directly!<br><br>ChatGPT 正在检测您是不是人机,请稍等,我们正在自动化为您提供更好的用户体验<br>如果您久留,请直接刷新页面!" + getRefreshIcon() + "</div></div>";
+        let f = "";
+        if (hide) {
+            f = "display:none!important;";
+        }
+        let html = "<div id='_MaskLayer_' style='" + f + "position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999999999;'><div style='position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; font-weight: bold;'>ChatGPT Checking whether you are a man-machine, please wait a moment, we are providing you with a better user experience in automation<br>If you stay here for a long time, please refresh the page directly!<br><br>ChatGPT 正在检测您是不是人机,请稍等,我们正在自动化为您提供更好的用户体验<br>如果您久留,请直接刷新页面!" + getRefreshIcon() + "</div></div>";
         $("body").eq(0).append(html);
     },
     hide: function () {
@@ -47,7 +61,6 @@ function getRefreshIcon() {
     </svg><span style="margin-left: 5px;">Retry</span></button>`;
 }
 
-let GlobalVariable = {};
 GlobalVariable["NetworkErrorClass"] = "flex flex-col items-start gap-4 whitespace-pre-wrap flex flex-row gap-2 text-red-500";
 
 unsafeWindow["ChatGPTHeartbeat.user.function"] = {};
@@ -115,15 +128,15 @@ async function OpenNewChatGPTIniframe(force) {
     GlobalVariable["MainElement"] = await global_module.waitForElement("main[class^='relative ']", null, null, 100, -1);
     if (!force) {
         await FindPrimaryBtn();
+        $(GlobalVariable["MainElement"]).hide();
     }
-    $(GlobalVariable["MainElement"]).hide();
     that.createiframe = function () {
         let that = this;
         let iframe = document.createElement("iframe");
         iframe.src = "/";
         iframe.style.width = "100%";
         iframe.style.height = "100%";
-        iframe.style.display = "block";
+        iframe.style.display = force ? "none" : "block";
         $(GlobalVariable["MainElement"]).after(iframe);
         that.reset = async function () {
             iframe.remove();
@@ -193,7 +206,7 @@ async function FindPrimaryBtn(NetworkErrorElement) {
 
 async function FindAndDealWith() {
     return new Promise(async (resolve) => {
-        await MaskLayerDisappear();
+        // await MaskLayerDisappear();
         let NetworkErrorElement = await FindNetworkErrorElement(true);
         let Check = await PassTest();
         if (Check) {
@@ -203,7 +216,7 @@ async function FindAndDealWith() {
             resolve();
             return;
         }
-        MaskLayer.show();
+        MaskLayer.show(false);
         OpenNewChatGPTIniframe(false);
         resolve();
     });
@@ -283,7 +296,7 @@ async function CheckInspection() {
         let Check = await PassTest();
         if (!Check) {
             if (!MaskLayerIsExist()) {
-                MaskLayer.show();
+                MaskLayer.show(true);
                 OpenNewChatGPTIniframe(true);
             }
             await MaskLayerDisappear();
