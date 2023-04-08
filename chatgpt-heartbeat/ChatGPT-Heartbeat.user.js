@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://chat.openai.com/*
 // @match       *://freegpt.one/*
-// @version     2023.4.9
+// @version     2023.4.9.1
 // @grant       none
 // @run-at      document-body
 // @author      github.com @XiaoYingYo
@@ -89,7 +89,8 @@ unsafeWindow["ChatGPTHeartbeat.user.function"]["PostMessage"] = function (messag
             })();
         };
         if (openIframe != null) {
-            openIframe.remove();
+            let id = $(openIframe).attr("id");
+            $("iframe#" + id).remove();
             openIframe = null;
         }
         if (MainElement != null) {
@@ -134,6 +135,7 @@ async function OpenNewChatGPTIniframe(force) {
         let that = this;
         let iframe = document.createElement("iframe");
         iframe.src = "/";
+        iframe.id = "_ChatGPTIframe_";
         iframe.style.width = "100%";
         iframe.style.height = "100%";
         iframe.style.display = force ? "none" : "block";
