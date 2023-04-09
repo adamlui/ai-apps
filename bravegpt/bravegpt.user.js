@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.09.2
+// @version             2023.04.09.3
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -375,7 +375,7 @@
     registerMenu() // create browser toolbar menu
 
     // Load BraveGPT if necessary
-    if (!config.suffixEnabled || (config.suffixEnabled && /.*q=.*%3F(&|$)/.test(document.location))) {
+    if (!config.suffixEnabled || (config.suffixEnabled && /.*q=.*%3F(\+?(&|$))/.test(document.location))) {
 
         // Stylize ChatGPT container + children
         var braveGPTstyle = document.createElement('style')
