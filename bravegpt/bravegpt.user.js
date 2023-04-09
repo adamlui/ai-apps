@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.09.3
+// @version             2023.04.09.4
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -355,8 +355,7 @@
     }
 
     function braveGPTshow(answer) {
-        braveGPTdiv.innerHTML = `${ navigator.userAgent.includes('Firefox') ? // only load robot emoji in FF + forks
-            '<span class="chatgpt-icon"><img width=25 src="https://media.bravegpt.com/images/robot-emoji.png"></span>' : '' }<span class="prefix"><a href="https://www.bravegpt.com" target="_blank">BraveGPT</a></span><pre></pre>`
+        braveGPTdiv.innerHTML = `<span class="prefix"><a href="https://www.bravegpt.com" target="_blank">🤖  BraveGPT</a></span><pre></pre>`
         braveGPTdiv.querySelector('pre').textContent = answer
         braveGPTdiv.appendChild(braveGPTfooter) // append feedback link
     }
