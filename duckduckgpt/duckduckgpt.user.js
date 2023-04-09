@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.04.09.1
+// @version             2023.04.09.2
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -358,7 +358,7 @@
     }
 
     function ddgptShow(answer) {
-        ddgptDiv.innerHTML = '<p><span class="prefix"><a href="https://duckduckgpt.com" target="_blank">🤖 DuckDuckGPT</a></span><pre></pre></p>'
+        ddgptDiv.innerHTML = '<p><span class="prefix"><a href="https://duckduckgpt.com" target="_blank">🤖  DuckDuckGPT</a></span><pre></pre></p>'
         ddgptDiv.querySelector('pre').textContent = answer
     }
 
