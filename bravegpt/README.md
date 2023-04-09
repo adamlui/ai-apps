@@ -8,11 +8,11 @@
   
 </h1>
 
+![usercount](https://img.shields.io/greasyfork/dt/462440?label=Users&color=brightgreen)
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 [![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/QQ-989898.svg)](#compatibility)
-[![commits](https://img.shields.io/github/commit-activity/w/kudoai/bravegpt?label=Commits)](https://github.com/adamlui/userscripts/commits/master/chatgpt/bravegpt)
 [![code-quality](https://img.shields.io/codefactor/grade/github/kudoai/bravegpt?label=Code%20Quality)](https://www.codefactor.io/repository/github/kudoai/bravegpt)
-<a alt="chatgpt.js" href="https://github.com/chatgptjs/chatgpt.js"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
+<a alt="chatgpt.js" href="https://github.com/chatgptjs/chatgpt.js"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
 [![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#brave-search)
 
 <h3><b>BraveGPT</b> brings the magic of ChatGPT to search results.</h3>
@@ -76,16 +76,14 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 
 ## Proxy Mode
 
-Proxy API Mode (disabled by default) returns text responses, without the need for a chat.openai.com account.
+Proxy API Mode (enabled by default) returns text responses, without the need for a chat.openai.com account!
 
-When disabled, a ChatGPT account is required to fetch responses, but they are faster stream-type ones (like in demo).
-
-If OpenAI API is acting unreliable, enable Proxy Mode like this:
+For even *faster* stream-type responses (like the one in demo), Tampermonkey users (w/ registered accounts) can disable it like this:
 
 <div align='center'>
 
 ![image](https://user-images.githubusercontent.com/10906554/229068389-795e517f-a95c-4c2f-829c-3fa83a6dbf73.png)
-![image](https://user-images.githubusercontent.com/10906554/229728672-3fec6a2d-c4fe-4738-871d-56c1d97cb2c5.png)
+![image](https://user-images.githubusercontent.com/10906554/229062275-fe67713f-cb93-4e08-b4ad-7e273eef2cd1.png)
 
 </div>
 
@@ -104,10 +102,6 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 [![Follow @Adamluitube on YouTube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 <a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" alt="Follow @adam on Mastodon" title="Mastodon">
 [![Follow @adamllui on Twitter](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
-
-## More ChatGPT scripts
-
-For even more epic ChatGPT scripts, go here: https://github.com/adamlui/chatgpt-userscripts
 <br><br>
 
 ## Related scripts

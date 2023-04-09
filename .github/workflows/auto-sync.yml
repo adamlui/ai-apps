@@ -1,12 +1,10 @@
-name: Sync adamlui/chatgpt-userscripts to adamlui/userscripts/chatgpt
+name: Sync adamlui/chatgpt-addons/*/greasemonkey to adamlui/userscripts/chatgpt/*
 
 on:
   push:
     branches: [ master, main ]
     paths:
-      - '**'
-      - '!/.git/**'
-      - '!/.github/**'
+      - '*/greasemonkey'
 
 jobs:
   build:
@@ -14,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout adamlui/chatgpt-userscripts
+      - name: Checkout adamlui/chatgpt-addons
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/chatgpt-userscripts
-          path: adamlui/chatgpt-userscripts
+          repository: adamlui/chatgpt-addons
+          path: adamlui/chatgpt-addons
 
       - name: Checkout adamlui/userscripts
         uses: actions/checkout@v2
@@ -28,15 +26,20 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync adamlui/chatgpt-userscripts to adamlui/userscripts/chatgpt
-        run: rsync -av --delete --exclude={'.git','.github'} ${{ github.workspace }}/adamlui/chatgpt-userscripts/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/
+      - name: adamlui/chatgpt-addons/*/greasemonkey to adamlui/userscripts/chatgpt/*
+
+      run: |
+        addon_name=$(sed -n 's#.*/\(.*\)/greasemonkey.*#\1#p' <<< "${{ github.event_path }}")
+        src_dir="${{ github.workspace }}/adamlui/chatgpt-addons/${ addon_name }/greasemonkey/"
+        dest_dir="${{ github.workspace }}/adamlui/userscripts/chatgpt/${ addon_name }/"
+        rsync -avh --delete "$src_dir" "$dest_dir"
 
       - name: Push to adamlui/userscripts
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
           add_options: '--all'
-          commit_user_email: auto-sync@userscripts.co
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-userscripts`]'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
           file_pattern: 'chatgpt/*'
           repository: adamlui/userscripts

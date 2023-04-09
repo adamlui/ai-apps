@@ -1,4 +1,4 @@
-name: Sync chatgpt-widescreen-mode to adamlui/chatgpt-widescreen/greasemonkey
+name: Sync adamlui/chatgpt-addons/chatgpt-widescreen-mode to adamlui/chatgpt-widescreen
 
 on:
   push:
@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout adamlui/chatgpt-userscripts
+      - name: Checkout adamlui/chatgpt-addons
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/chatgpt-userscripts
-          path: adamlui/chatgpt-userscripts
+          repository: adamlui/chatgpt-addons
+          path: adamlui/chatgpt-addons
 
       - name: Checkout adamlui/chatgpt-widescreen
         uses: actions/checkout@v2
@@ -26,18 +26,15 @@ jobs:
           repository: adamlui/chatgpt-widescreen
           path: adamlui/chatgpt-widescreen
 
-      - name: Sync adamlui/chatgpt-userscripts/chatgpt-widescreen-mode to adamlui/chatgpt-widescreen/greasemonkey
-        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/chatgpt-widescreen-mode/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/greasemonkey/
-
-      - name: Copy README.md to adamlui/chatgpt-widescreen
-        run: cp -f ${{ github.workspace }}/adamlui/chatgpt-userscripts/chatgpt-widescreen-mode/README.md ${{ github.workspace }}/adamlui/chatgpt-widescreen/README.md
+      - name: Sync adamlui/chatgpt-addons/chatgpt-widescreen-mode to adamlui/chatgpt-widescreen
+        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen-mode/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/
 
       - name: Push to adamlui/chatgpt-widescreen
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
           add_options: '--all'
-          commit_user_email: auto-sync@adamlui.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-userscripts`]'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
           file_pattern: '*'
           repository: adamlui/chatgpt-widescreen

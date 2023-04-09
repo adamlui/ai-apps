@@ -1,0 +1,311 @@
+<?xml version="1.0" standalone="no"?>
+<mlt LC_NUMERIC="C" version="7.13.0" title="Shotcut version 22.12.21" producer="main_bin">
+  <profile description="automatic" width="1382" height="876" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="691" display_aspect_den="438" frame_rate_num="24" frame_rate_den="1" colorspace="709"/>
+  <chain id="chain0" out="00:00:22.833">
+    <property name="length">00:00:22.875</property>
+    <property name="eof">pause</property>
+    <property name="resource">bravegpt-lion-vs-gorilla-demo-raw.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-03-24T05:29:15</property>
+    <property name="shotcut:hash">25afb1d30ce566980f3a8dcf08551abe</property>
+    <property name="ignore_points">0</property>
+    <property name="xml">was here</property>
+  </chain>
+  <chain id="chain1" out="00:02:10.042">
+    <property name="length">00:02:10.083</property>
+    <property name="eof">pause</property>
+    <property name="resource">zove-toma-ms196.mp3</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-03-24T05:41:09</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">811e6e8fdeb0677765f27acfe0fdd5d8</property>
+  </chain>
+  <producer id="producer0" in="00:00:00.000" out="03:59:59.958">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">bravegpt-endscreen-green-1382x876.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="format">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2023-03-24T06:34:59</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">c52a643a927b31acbb8b6b60ef73069d</property>
+  </producer>
+  <producer id="producer1" in="00:00:00.000" out="03:59:59.958">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">bravegpt-endscreen-white-1382x876.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="format">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2023-03-24T06:34:39</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">83b264722f68d62bb480c15d7a21231d</property>
+  </producer>
+  <playlist id="main_bin" title="Shotcut version 22.12.21">
+    <property name="shotcut:projectAudioChannels">2</property>
+    <property name="shotcut:projectFolder">0</property>
+    <property name="xml_retain">1</property>
+    <entry producer="chain0" in="00:00:00.000" out="00:00:22.833"/>
+    <entry producer="chain1" in="00:00:00.000" out="00:02:10.042"/>
+    <entry producer="producer0" in="00:00:00.000" out="00:00:03.958"/>
+    <entry producer="producer1" in="00:00:00.000" out="00:00:03.958"/>
+  </playlist>
+  <producer id="black" in="00:00:00.000" out="00:00:29.458">
+    <property name="length">00:00:29.500</property>
+    <property name="eof">pause</property>
+    <property name="resource">0</property>
+    <property name="aspect_ratio">1</property>
+    <property name="mlt_service">color</property>
+    <property name="mlt_image_format">rgba</property>
+    <property name="set.test_audio">0</property>
+  </producer>
+  <playlist id="background">
+    <entry producer="black" in="00:00:00.000" out="00:00:29.458"/>
+  </playlist>
+  <chain id="chain2" out="00:00:22.833">
+    <property name="length">00:00:22.875</property>
+    <property name="eof">pause</property>
+    <property name="resource">bravegpt-lion-vs-gorilla-demo-raw.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-03-24T05:29:15</property>
+    <property name="shotcut:hash">25afb1d30ce566980f3a8dcf08551abe</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">bravegpt-lion-vs-gorilla-demo-raw.wmv</property>
+    <property name="xml">was here</property>
+  </chain>
+  <producer id="producer2" in="00:00:00.000" out="03:59:59.958">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">bravegpt-endscreen-white-1382x876.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="format">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2023-03-24T06:34:39</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">83b264722f68d62bb480c15d7a21231d</property>
+    <property name="shotcut:caption">bravegpt-endscreen-white-1382x876.png</property>
+  </producer>
+  <producer id="producer3" in="00:00:00.000" out="03:59:59.958">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">bravegpt-endscreen-green-1382x876.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="format">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2023-03-24T06:34:59</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">c52a643a927b31acbb8b6b60ef73069d</property>
+    <property name="shotcut:caption">bravegpt-endscreen-green-1382x876.png</property>
+    <filter id="filter0" out="00:00:03.708">
+      <property name="start">1</property>
+      <property name="level">00:00:03.333=1;00:00:03.708=0</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeOutBrightness</property>
+      <property name="alpha">1</property>
+      <property name="shotcut:animOut">10</property>
+    </filter>
+    <filter id="filter1" out="00:00:03.708">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:03.333=0;00:00:03.708=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">10</property>
+    </filter>
+  </producer>
+  <playlist id="playlist0">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V1</property>
+    <blank length="00:00:00.708"/>
+    <entry producer="chain2" in="00:00:00.000" out="00:00:22.167"/>
+    <blank length="00:00:00.875"/>
+    <entry producer="producer2" in="00:00:00.167" out="00:00:01.250"/>
+    <entry producer="producer3" in="00:00:00.000" out="00:00:03.708"/>
+  </playlist>
+  <chain id="chain3" out="00:00:22.833">
+    <property name="length">00:00:22.875</property>
+    <property name="eof">pause</property>
+    <property name="resource">bravegpt-lion-vs-gorilla-demo-raw.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-03-24T05:29:15</property>
+    <property name="shotcut:hash">25afb1d30ce566980f3a8dcf08551abe</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">bravegpt-lion-vs-gorilla-demo-raw.wmv</property>
+    <property name="xml">was here</property>
+    <filter id="filter2" in="00:00:06.792" out="00:00:09.083">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-2333.81 -1025.3 3829.52 2427.4 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+  </chain>
+  <chain id="chain4" out="00:00:22.833">
+    <property name="length">00:00:22.875</property>
+    <property name="eof">pause</property>
+    <property name="resource">bravegpt-lion-vs-gorilla-demo-raw.wmv</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-03-24T05:29:15</property>
+    <property name="shotcut:hash">25afb1d30ce566980f3a8dcf08551abe</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">bravegpt-lion-vs-gorilla-demo-raw.wmv</property>
+    <property name="xml">was here</property>
+    <filter id="filter3" in="00:00:09.125" out="00:00:16.958">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-2345.31 -1432 3829.52 2427.39 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.fix_rotate_x">0</property>
+    </filter>
+  </chain>
+  <playlist id="playlist1">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V2</property>
+    <blank length="00:00:07.500"/>
+    <entry producer="chain3" in="00:00:06.792" out="00:00:09.083"/>
+    <entry producer="chain4" in="00:00:09.125" out="00:00:16.958"/>
+  </playlist>
+  <chain id="chain5" out="00:02:10.042">
+    <property name="length">00:02:10.083</property>
+    <property name="eof">pause</property>
+    <property name="resource">zove-toma-ms196.mp3</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-03-24T05:41:09</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">811e6e8fdeb0677765f27acfe0fdd5d8</property>
+    <property name="shotcut:caption">zove-toma-ms196.mp3</property>
+    <filter id="filter4" in="00:00:51.083" out="00:01:20.542">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:27.750=0;00:00:29.458=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">42</property>
+    </filter>
+  </chain>
+  <playlist id="playlist2">
+    <property name="shotcut:audio">1</property>
+    <property name="shotcut:name">A1</property>
+    <entry producer="chain5" in="00:00:51.083" out="00:01:20.542"/>
+  </playlist>
+  <playlist id="playlist3">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V3</property>
+    <blank length="00:00:00.042"/>
+  </playlist>
+  <tractor id="tractor0" title="Shotcut version 22.12.21" in="00:00:00.000" out="00:00:29.458">
+    <property name="shotcut">1</property>
+    <property name="shotcut:projectAudioChannels">2</property>
+    <property name="shotcut:projectFolder">0</property>
+    <property name="shotcut:scaleFactor">3.95431</property>
+    <track producer="background"/>
+    <track producer="playlist0"/>
+    <track producer="playlist1"/>
+    <track producer="playlist2" hide="video"/>
+    <track producer="playlist3"/>
+    <transition id="transition0">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition1">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="version">0.1</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">1</property>
+      <property name="1">normal</property>
+    </transition>
+    <transition id="transition2">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition3">
+      <property name="a_track">1</property>
+      <property name="b_track">2</property>
+      <property name="version">0.1</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">0</property>
+      <property name="1">normal</property>
+    </transition>
+    <transition id="transition4">
+      <property name="a_track">0</property>
+      <property name="b_track">3</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition5">
+      <property name="a_track">0</property>
+      <property name="b_track">4</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition6">
+      <property name="a_track">1</property>
+      <property name="b_track">4</property>
+      <property name="version">0.1</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">0</property>
+    </transition>
+  </tractor>
+</mlt>

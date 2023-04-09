@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "ChatGPT Widescreen Mode",
+    "version": "2023.04.08",
+    "author": "Adam Lui",
+    "description": "Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling",
+    "icons": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "64": "icons/icon64.png",
+        "128": "icons/icon128.png",
+        "223": "icons/icon223.png"
+    },
+    "permissions": [ "storage", "tabs" ],
+    "action": { "default_popup": "popup/index.html" },
+    "web_accessible_resources": [{
+        "matches": ["<all_urls>"],
+        "resources": ["lib/settings-utils.js", "lib/chatgpt.js"]
+    }],
+    "content_scripts": [{
+        "matches": ["https://chat.openai.com/chat/*"],
+        "js": ["content.js"]
+    }],
+    "background": { "service_worker": "background.js" }
+}

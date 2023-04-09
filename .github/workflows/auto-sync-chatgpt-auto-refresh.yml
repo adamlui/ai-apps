@@ -1,4 +1,4 @@
-name: Sync chatgpt-auto-refresh to adamlui/chatgpt-auto-refresh/greasemonkey
+name: Sync adamlui/chatgpt-addons/chatgpt-auto-refresh to adamlui/chatgpt-auto-refresh
 
 on:
   push:
@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout adamlui/chatgpt-userscripts
+      - name: Checkout adamlui/chatgpt-addons
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/chatgpt-userscripts
-          path: adamlui/chatgpt-userscripts
+          repository: adamlui/chatgpt-addons
+          path: adamlui/chatgpt-addons
 
       - name: Checkout adamlui/chatgpt-auto-refresh
         uses: actions/checkout@v2
@@ -26,18 +26,15 @@ jobs:
           repository: adamlui/chatgpt-auto-refresh
           path: adamlui/chatgpt-auto-refresh
 
-      - name: Sync adamlui/chatgpt-userscripts/chatgpt-auto-refresh to adamlui/chatgpt-auto-refresh/greasemonkey
-        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-userscripts/chatgpt-auto-refresh/ ${{ github.workspace }}/adamlui/chatgpt-auto-refresh/greasemonkey/
-
-      - name: Copy README.md to adamlui/chatgpt-auto-refresh
-        run: cp -f ${{ github.workspace }}/adamlui/chatgpt-userscripts/chatgpt-auto-refresh/README.md ${{ github.workspace }}/adamlui/chatgpt-auto-refresh/README.md
+      - name: Sync adamlui/chatgpt-addons/chatgpt-auto-refresh to adamlui/chatgpt-auto-refresh
+        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-auto-refresh/ ${{ github.workspace }}/adamlui/chatgpt-auto-refresh/
 
       - name: Push to adamlui/chatgpt-auto-refresh
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
           add_options: '--all'
-          commit_user_email: auto-sync@adamlui.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-userscripts`]'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
           file_pattern: '*'
           repository: adamlui/chatgpt-auto-refresh
