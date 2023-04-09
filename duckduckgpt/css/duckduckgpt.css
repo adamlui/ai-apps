@@ -1,0 +1,12 @@
+/* CSS for DuckDuckGPT https://duckduckgpt.com */
+
+.ddgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 15px ; flex-basis: 0 ;
+    flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) }
+.ddgpt-container p { margin: 0 }
+.ddgpt-container .prefix { font-weight: 700 }
+.ddgpt-container .prefix > a { color: inherit ; text-decoration: none }
+.ddgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }
+.ddgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }
+.ddgpt-container pre { white-space: pre-wrap ; min-width: 0 ; margin-bottom: 0 ; line-height: 20px ; padding: .9em ; border-radius: 12px 12px 12px 0 }
+@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}
+.ddgpt-feedback { margin: 2px 0 25px }

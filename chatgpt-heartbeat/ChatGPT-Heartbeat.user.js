@@ -162,7 +162,9 @@ async function OpenNewChatGPTIniframe(force) {
         }, 5000);
         GlobalVariable["openIframe"] = iframe;
     };
-    that.createiframe();
+    if (document.getElementById("_ChatGPTIframe_") == null) {
+        that.createiframe();
+    }
 }
 
 async function FindPrimaryBtn(NetworkErrorElement) {
@@ -212,11 +214,13 @@ async function FindAndDealWith() {
         let NetworkErrorElement = await FindNetworkErrorElement(true);
         let Check = await PassTest();
         if (Check) {
-            // Explain that this NetworkErrorElement does not prompt a network error, but other related red warnings. In order to prevent repeated discovery of NetworkErrorElement, its `class` feature should be changed so that it does not meet the conditions.
-            // 说明这个 NetworkErrorElement 并不是提示网络错误,而是其他相关的红色警告,为了防止重复找到 NetworkErrorElement,应该改变它的`类`特征,使它不符合条件成立
-            NetworkErrorElement.attr("class", NetworkErrorElement.attr("class").replace("-red-", "-"));
             resolve();
             return;
+        }
+        // Explain that this NetworkErrorElement does not prompt a network error, but other related red warnings. In order to prevent repeated discovery of NetworkErrorElement, its `class` feature should be changed so that it does not meet the conditions.
+        // 说明这个 NetworkErrorElement 并不是提示网络错误,而是其他相关的红色警告,为了防止重复找到 NetworkErrorElement,应该改变它的`类`特征,使它不符合条件成立
+        if (NetworkErrorElement != null) {
+            NetworkErrorElement.attr("class", NetworkErrorElement.attr("class").replace("-red-", "-"));
         }
         MaskLayer.show(false);
         OpenNewChatGPTIniframe(false);

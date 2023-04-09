@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mlt LC_NUMERIC="C" title="Shotcut version 22.12.21" producer="main_bin">
+  <profile description="automatic" width="968" height="562" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="966" display_aspect_den="562" frame_rate_num="24" frame_rate_den="1" colorspace="601"/>
+  <producer id="producer0" title="Anonymous Submission" in="00:00:00.000" out="00:00:18.583">
+    <property name="length">00:00:18.625</property>
+    <property name="eof">pause</property>
+    <property name="resource">ddgpt-demo-mastodon-raw.wmv</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">5f4acb88890c5046b77d7fcf8fa5675a</property>
+    <property name="ignore_points">0</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <chain id="chain0" out="00:04:12.917">
+    <property name="length">00:04:12.958</property>
+    <property name="eof">pause</property>
+    <property name="resource">neon-underworld-master-final.wav</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-02-17T13:14:41</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">65512529333b203f45222da967aa4118</property>
+  </chain>
+  <producer id="producer1" in="00:00:00.000" out="03:59:59.958">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">ddgpt-endscreen-green-966x562.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="format">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2023-02-18T08:06:12</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">7d93441b145ae13921901a6de6f08c65</property>
+  </producer>
+  <producer id="producer2" in="00:00:00.000" out="03:59:59.958">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">ddgpt-endscreen-white-966x562.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="format">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2023-02-18T08:06:26</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">71f9bb9a75f3ba1bbd86c73257719629</property>
+  </producer>
+  <playlist id="main_bin">
+    <property name="xml_retain">1</property>
+    <entry producer="producer0" in="00:00:00.000" out="00:00:18.583"/>
+    <entry producer="chain0" in="00:00:00.000" out="00:04:12.917"/>
+    <entry producer="producer1" in="00:00:00.000" out="00:00:03.958"/>
+    <entry producer="producer2" in="00:00:00.000" out="00:00:03.958"/>
+  </playlist>
+  <producer id="black" in="00:00:00.000" out="00:00:20.875">
+    <property name="length">00:00:20.917</property>
+    <property name="eof">pause</property>
+    <property name="resource">black</property>
+    <property name="aspect_ratio">1</property>
+    <property name="mlt_service">color</property>
+    <property name="set.test_audio">0</property>
+  </producer>
+  <playlist id="background">
+    <entry producer="black" in="00:00:00.000" out="00:00:20.875"/>
+  </playlist>
+  <producer id="producer3" title="Anonymous Submission" in="00:00:00.000" out="00:00:18.583">
+    <property name="length">00:00:18.625</property>
+    <property name="eof">pause</property>
+    <property name="resource">ddgpt-demo-mastodon-raw.wmv</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">5f4acb88890c5046b77d7fcf8fa5675a</property>
+    <property name="ignore_points">0</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:caption">ddgpt-demo-mastodon-raw.wmv</property>
+    <property name="format">3</property>
+    <filter id="filter0" in="00:00:07.042" out="00:00:12.542">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">-1473.87 -566.772 2480.69 1440.23 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+      <property name="transition.fix_rotate_x">0</property>
+    </filter>
+  </producer>
+  <producer id="producer4" title="Anonymous Submission" in="00:00:00.000" out="00:00:18.583">
+    <property name="length">00:00:18.625</property>
+    <property name="eof">pause</property>
+    <property name="resource">ddgpt-demo-mastodon-raw.wmv</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">5f4acb88890c5046b77d7fcf8fa5675a</property>
+    <property name="ignore_points">0</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:caption">ddgpt-demo-mastodon-raw.wmv</property>
+    <property name="format">3</property>
+  </producer>
+  <playlist id="playlist0">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V1</property>
+    <blank length="00:00:04.583"/>
+    <entry producer="producer3" in="00:00:07.042" out="00:00:12.542"/>
+    <blank length="00:00:04.458"/>
+    <entry producer="producer4" in="00:00:17.042" out="00:00:17.833"/>
+  </playlist>
+  <producer id="producer5" title="Anonymous Submission" in="00:00:00.000" out="00:00:18.583">
+    <property name="length">00:00:18.625</property>
+    <property name="eof">pause</property>
+    <property name="resource">ddgpt-demo-mastodon-raw.wmv</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">5f4acb88890c5046b77d7fcf8fa5675a</property>
+    <property name="ignore_points">0</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:caption">ddgpt-demo-mastodon-raw.wmv</property>
+    <property name="format">3</property>
+    <filter id="filter1" in="00:00:02.542" out="00:00:07.708">
+      <property name="start">1</property>
+      <property name="level">00:00:00.000=0;00:00:00.208=1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeInBrightness</property>
+      <property name="alpha">1</property>
+      <property name="shotcut:animIn">6</property>
+    </filter>
+    <filter id="filter2" in="00:00:02.542" out="00:00:07.708">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:00.000=-60;00:00:00.208=0</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeInVolume</property>
+      <property name="shotcut:animIn">6</property>
+    </filter>
+  </producer>
+  <producer id="producer6" title="Anonymous Submission" in="00:00:00.000" out="00:00:18.583">
+    <property name="length">00:00:18.625</property>
+    <property name="eof">pause</property>
+    <property name="resource">ddgpt-demo-mastodon-raw.wmv</property>
+    <property name="audio_index">1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="shotcut:hash">5f4acb88890c5046b77d7fcf8fa5675a</property>
+    <property name="ignore_points">0</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:caption">ddgpt-demo-mastodon-raw.wmv</property>
+    <property name="format">3</property>
+  </producer>
+  <playlist id="playlist1">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V2</property>
+    <blank length="00:00:00.125"/>
+    <entry producer="producer5" in="00:00:02.542" out="00:00:07.708"/>
+    <blank length="00:00:04.792"/>
+    <entry producer="producer6" in="00:00:12.542" out="00:00:17.000"/>
+  </playlist>
+  <chain id="chain1" out="00:04:12.917">
+    <property name="length">00:04:12.958</property>
+    <property name="eof">pause</property>
+    <property name="resource">neon-underworld-master-final.wav</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="creation_time">2023-02-17T13:14:41</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">65512529333b203f45222da967aa4118</property>
+    <property name="shotcut:caption">neon-underworld-master-final.wav</property>
+    <filter id="filter3" in="00:03:06.750" out="00:03:27.500">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:19.292=0;00:00:20.750=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">36</property>
+    </filter>
+    <filter id="filter4" in="00:03:06.750" out="00:03:27.500">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:00.000=-60;00:00:00.167=0</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeInVolume</property>
+      <property name="shotcut:animIn">5</property>
+    </filter>
+  </chain>
+  <playlist id="playlist2">
+    <property name="shotcut:audio">1</property>
+    <property name="shotcut:name">A1</property>
+    <blank length="00:00:00.125"/>
+    <entry producer="chain1" in="00:03:06.750" out="00:03:27.500"/>
+  </playlist>
+  <producer id="producer7" in="00:00:00.000" out="03:59:59.958">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">ddgpt-endscreen-white-966x562.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="format">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2023-02-18T08:06:26</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">71f9bb9a75f3ba1bbd86c73257719629</property>
+    <property name="shotcut:caption">ddgpt-endscreen-white-966x562.png</property>
+    <filter id="filter5" out="00:00:01.167">
+      <property name="start">1</property>
+      <property name="level">00:00:00.000=0;00:00:00.083=1</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeInBrightness</property>
+      <property name="alpha">1</property>
+      <property name="shotcut:animIn">3</property>
+    </filter>
+    <filter id="filter6" out="00:00:01.167">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:00.000=-60;00:00:00.083=0</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeInVolume</property>
+      <property name="shotcut:animIn">3</property>
+    </filter>
+  </producer>
+  <producer id="producer8" in="00:00:00.000" out="03:59:59.958">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">ddgpt-endscreen-green-966x562.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="format">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2023-02-18T08:06:12</property>
+    <property name="xml">was here</property>
+    <property name="shotcut:hash">7d93441b145ae13921901a6de6f08c65</property>
+    <property name="shotcut:caption">ddgpt-endscreen-green-966x562.png</property>
+    <filter id="filter7" out="00:00:03.750">
+      <property name="start">1</property>
+      <property name="level">00:00:03.333=1;00:00:03.750=0</property>
+      <property name="mlt_service">brightness</property>
+      <property name="shotcut:filter">fadeOutBrightness</property>
+      <property name="alpha">1</property>
+      <property name="shotcut:animOut">11</property>
+    </filter>
+    <filter id="filter8" in="00:00:00.125" out="00:00:03.750">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">00:00:03.208=0;00:00:03.625=-60</property>
+      <property name="mlt_service">volume</property>
+      <property name="shotcut:filter">fadeOutVolume</property>
+      <property name="shotcut:animOut">11</property>
+    </filter>
+  </producer>
+  <tractor id="tractor0" in="00:00:00.000" out="00:00:00.083">
+    <property name="shotcut:transition">lumaMix</property>
+    <track producer="producer7" in="00:00:01.000" out="00:00:01.083"/>
+    <track producer="producer8" in="00:00:00.000" out="00:00:00.083"/>
+    <transition id="transition0" out="00:00:00.083">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="factory">loader</property>
+      <property name="mlt_service">luma</property>
+      <property name="alpha_over">1</property>
+    </transition>
+    <transition id="transition1" out="00:00:00.083">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="start">-1</property>
+      <property name="accepts_blanks">1</property>
+      <property name="mlt_service">mix</property>
+    </transition>
+  </tractor>
+  <playlist id="playlist3">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V3</property>
+    <blank length="00:00:15.542"/>
+    <entry producer="producer7" in="00:00:00.000" out="00:00:01.167"/>
+    <entry producer="tractor0" in="00:00:00.000" out="00:00:00.083"/>
+    <entry producer="producer8" in="00:00:00.125" out="00:00:03.750"/>
+  </playlist>
+  <tractor id="tractor1" title="Shotcut version 22.12.21" in="00:00:00.000" out="00:00:20.875">
+    <property name="shotcut">1</property>
+    <property name="shotcut:scaleFactor">8.1306</property>
+    <property name="shotcut:projectAudioChannels">2</property>
+    <property name="shotcut:projectFolder">0</property>
+    <track producer="background"/>
+    <track producer="playlist0"/>
+    <track producer="playlist1"/>
+    <track producer="playlist2" hide="video"/>
+    <track producer="playlist3"/>
+    <transition id="transition2">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition3">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="version">0.9</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="disable">1</property>
+    </transition>
+    <transition id="transition4">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition5">
+      <property name="a_track">1</property>
+      <property name="b_track">2</property>
+      <property name="version">0.1</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">0</property>
+    </transition>
+    <transition id="transition6">
+      <property name="a_track">0</property>
+      <property name="b_track">3</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition7">
+      <property name="a_track">0</property>
+      <property name="b_track">4</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition8">
+      <property name="a_track">1</property>
+      <property name="b_track">4</property>
+      <property name="version">0.1</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">0</property>
+    </transition>
+  </tractor>
+</mlt>
+
