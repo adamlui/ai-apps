@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.04.09
+// @version             2023.04.09.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -145,6 +145,17 @@
             for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
             registerMenu() // serve fresh menu
             location.reload() // re-send query using new endpoint
+        }))
+
+        // Add command to toggle suffix mode
+        var smLabel = stateIndicator.menuSymbol[+!config.suffixEnabled] + ' Require Suffix (\'?\') '
+                     + stateSeparator + stateIndicator.menuWord[+!config.suffixEnabled]
+        menuID.push(GM_registerMenuCommand(smLabel, function() {
+            saveSetting('suffixEnabled', !config.suffixEnabled)
+            chatgpt.notify('Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled], '', '', 'shadow')
+            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
+            registerMenu() // serve fresh menu
+            if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
     }
 
@@ -347,7 +358,7 @@
     }
 
     function ddgptShow(answer) {
-        ddgptDiv.innerHTML = '<p><span class="prefix">ChatGPT</span><pre></pre></p>'
+        ddgptDiv.innerHTML = '<p><span class="prefix"><a href="https://duckduckgpt.com" target="_blank">🤖 DuckDuckGPT</a></span><pre></pre></p>'
         ddgptDiv.querySelector('pre').textContent = answer
     }
 
@@ -361,32 +372,38 @@
     // Run main routine
 
     var config = {}, configKeyPrefix = 'ddgpt_'
-    loadSetting('proxyAPIenabled')
+    loadSetting('proxyAPIenabled', 'suffixEnabled')
     registerMenu() // create browser toolbar menu
 
-    // Stylize ChatGPT container + footer
-    var ddgptStyle = document.createElement('style')
-    ddgptStyle.innerText = (
-         '.chatgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 15px ; flex-basis: 0 ;'
-        + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) }'
-        + '.chatgpt-container p { margin: 0 }'
-        + '.chatgpt-container .prefix { font-weight: 700 }'
-        + '.chatgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
-        + '.chatgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
-        + '.chatgpt-container pre { white-space: pre-wrap ; min-width: 0 ; margin-bottom: 0 ; line-height: 20px ; padding: .9em ; border-radius: 12px 12px 12px 0 }'
-        + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-        + '.chatgpt-feedback { margin: 2px 0 25px }' )
-    document.head.appendChild(ddgptStyle) // append style to <head>
+    // Load DuckDuckGPT if necessary
+    if (!config.suffixEnabled || (config.suffixEnabled && /.*q=.*%3F(\+?(&|$))/.test(document.location))) {
 
-    // Create DDGPT container & add class
-    var ddgptDiv = document.createElement('div') // create container div
-    ddgptDiv.className = 'chatgpt-container'
+        // Stylize ChatGPT container + footer
+        var ddgptStyle = document.createElement('style')
+        ddgptStyle.innerText = (
+            '.chatgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 15px ; flex-basis: 0 ;'
+            + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) }'
+            + '.chatgpt-container p { margin: 0 }'
+            + '.chatgpt-container .prefix { font-weight: 700 }'
+            + '.chatgpt-container .prefix > a { color: inherit ; text-decoration: none }'
+            + '.chatgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
+            + '.chatgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
+            + '.chatgpt-container pre { white-space: pre-wrap ; min-width: 0 ; margin-bottom: 0 ; line-height: 20px ; padding: .9em ; border-radius: 12px 12px 12px 0 }'
+            + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
+            + '.chatgpt-feedback { margin: 2px 0 25px }' )
+        document.head.appendChild(ddgptStyle) // append style to <head>
 
-    // Create feedback footer & add classes/HTML
-    var ddgptFooter = document.createElement('div')
-    ddgptFooter.className = 'feedback-prompt chatgpt-feedback'
-    ddgptFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
+        // Create DDGPT container & add class
+        var ddgptDiv = document.createElement('div') // create container div
+        ddgptDiv.className = 'chatgpt-container'
 
-    loadDDGPT()
+        // Create feedback footer & add classes/HTML
+        var ddgptFooter = document.createElement('div')
+        ddgptFooter.className = 'feedback-prompt chatgpt-feedback'
+        ddgptFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
+
+        loadDDGPT()
+
+    }
 
 })()
