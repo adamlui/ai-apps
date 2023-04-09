@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.09.5
+// @version             2023.04.09.6
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -147,7 +147,7 @@
         }))
 
         // Add command to toggle prefix mode
-        var pmLabel = stateIndicator.menuSymbol[+!config.prefixEnabled] + ' Require Prefix (\'!\') '
+        var pmLabel = stateIndicator.menuSymbol[+!config.prefixEnabled] + ' Require Prefix (\'/\') '
                      + stateSeparator + stateIndicator.menuWord[+!config.prefixEnabled]
         menuID.push(GM_registerMenuCommand(pmLabel, function() {
             saveSetting('prefixEnabled', !config.prefixEnabled)
@@ -382,14 +382,16 @@
         getShowAnswer(new URL(location.href).searchParams.get('q')) // get/show answer
     }
 
-    // Run main routine
+    // Run MAIN routine
+    
+    // Initialize script
     var config = {}, configKeyPrefix = 'braveGPT_'
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
     registerMenu() // create browser toolbar menu
 
     // Load BraveGPT if necessary
     if (( !config.prefixEnabled && !config.suffixEnabled) || // prefix/suffix not required
-            ( config.prefixEnabled && /.*q=%21/.test(document.location)) || // or prefix required & included
+            ( config.prefixEnabled && /.*q=%2F/.test(document.location)) || // or prefix required & included
             ( config.suffixEnabled && /.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required & included
 
         // Stylize ChatGPT container + children
