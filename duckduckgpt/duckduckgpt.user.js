@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.04.02.1
+// @version             2023.04.09
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -70,7 +70,7 @@
         notify: function(msg, position, notifDuration, shadow) {
             notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
             var fadeDuration = 0.6; // sec duration of fade-out
-            var vpYoffset = 13, vpXoffset = 27; // px offset from viewport border
+            var vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
             // Make/stylize/insert div
             var notificationDiv = document.createElement('div'); // make div
@@ -373,7 +373,7 @@
         + '.chatgpt-container .prefix { font-weight: 700 }'
         + '.chatgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
         + '.chatgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
-        + '.chatgpt-container pre { white-space: pre-wrap ; min-width: 0 ; margin-bottom: 0 ; line-height: 20px }'
+        + '.chatgpt-container pre { white-space: pre-wrap ; min-width: 0 ; margin-bottom: 0 ; line-height: 20px ; padding: .9em ; border-radius: 12px 12px 12px 0 }'
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.chatgpt-feedback { margin: 2px 0 25px }' )
     document.head.appendChild(ddgptStyle) // append style to <head>

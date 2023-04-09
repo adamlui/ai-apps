@@ -12,7 +12,7 @@
 [![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/QQ-989898.svg)](#compatibility)
 [![commits](https://img.shields.io/github/commit-activity/w/kudoai/duckduckgpt?label=Commits)](https://github.com/kudoai/duckduckgpt/commits/main)
 [![code-quality](https://img.shields.io/codefactor/grade/github/kudoai/duckduckgpt?label=Code%20Quality)](https://www.codefactor.io/repository/github/kudoai/duckduckgpt)
-<a alt="chatgpt.js" href="https://github.com/chatgptjs/chatgpt.js"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
+<a alt="chatgpt.js" href="https://github.com/chatgptjs/chatgpt.js"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#duckduckgo)
 
 <h3><b>DuckDuckGPT</b> brings the magic of ChatGPT to search results.</h3>
@@ -72,7 +72,7 @@ DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/cha
 - LibreWolf
 - QQ
 
-If you've tested it to work in a browser not listed, create a [pull request](https://github.duckduckgpt.com/pulls) to become a contributor!
+If you've tested it to work in a browser not listed, simply create a [pull request](https://github.duckduckgpt.com/pulls) to become a contributor!
 
 ## Proxy Mode
 
@@ -80,7 +80,7 @@ Proxy API Mode (disabled by default) returns text responses, without the need fo
 
 When disabled, a ChatGPT account is required to fetch responses, but they are faster stream-type ones (like in demo).
 
-Tampermonkey users (w/ registered accounts) can enable Proxy Mode like this:
+If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <div align='center'>
 
@@ -104,6 +104,10 @@ Tampermonkey users (w/ registered accounts) can enable Proxy Mode like this:
 [![Follow @adamluitube on YouTube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 <a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" alt="Follow @adam on Mastodon" title="Mastodon">
 [![Follow @adamllui on Twitter](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
+
+## More ChatGPT scripts
+
+For even more epic ChatGPT scripts, go here: https://github.com/adamlui/chatgpt-userscripts
 <br><br>
 
 ## Related scripts
