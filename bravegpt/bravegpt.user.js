@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.09.4
+// @version             2023.04.09.5
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -146,11 +146,26 @@
             location.reload() // re-send query using new endpoint
         }))
 
+        // Add command to toggle prefix mode
+        var pmLabel = stateIndicator.menuSymbol[+!config.prefixEnabled] + ' Require Prefix (\'!\') '
+                     + stateSeparator + stateIndicator.menuWord[+!config.prefixEnabled]
+        menuID.push(GM_registerMenuCommand(pmLabel, function() {
+            saveSetting('prefixEnabled', !config.prefixEnabled)
+            if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
+                saveSetting('suffixEnabled', !config.suffixEnabled) }
+            chatgpt.notify('Prefix Mode ' + stateIndicator.notifWord[+!config.prefixEnabled], '', '', 'shadow')
+            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
+            registerMenu() // serve fresh menu
+            if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
+        }))
+
         // Add command to toggle suffix mode
         var smLabel = stateIndicator.menuSymbol[+!config.suffixEnabled] + ' Require Suffix (\'?\') '
                      + stateSeparator + stateIndicator.menuWord[+!config.suffixEnabled]
         menuID.push(GM_registerMenuCommand(smLabel, function() {
             saveSetting('suffixEnabled', !config.suffixEnabled)
+            if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
+                saveSetting('prefixEnabled', !config.prefixEnabled) }
             chatgpt.notify('Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled], '', '', 'shadow')
             for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
             registerMenu() // serve fresh menu
@@ -368,13 +383,14 @@
     }
 
     // Run main routine
-
     var config = {}, configKeyPrefix = 'braveGPT_'
-    loadSetting('proxyAPIenabled', 'suffixEnabled')
+    loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
     registerMenu() // create browser toolbar menu
 
     // Load BraveGPT if necessary
-    if (!config.suffixEnabled || (config.suffixEnabled && /.*q=.*%3F(\+?(&|$))/.test(document.location))) {
+    if (( !config.prefixEnabled && !config.suffixEnabled) || // prefix/suffix not required
+            ( config.prefixEnabled && /.*q=%21/.test(document.location)) || // or prefix required & included
+            ( config.suffixEnabled && /.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required & included
 
         // Stylize ChatGPT container + children
         var braveGPTstyle = document.createElement('style')
