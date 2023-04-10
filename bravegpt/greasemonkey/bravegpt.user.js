@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.09.6
+// @version             2023.04.09.7
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -147,7 +147,7 @@
         }))
 
         // Add command to toggle prefix mode
-        var pmLabel = stateIndicator.menuSymbol[+!config.prefixEnabled] + ' Require Prefix (\'/\') '
+        var pmLabel = stateIndicator.menuSymbol[+!config.prefixEnabled] + ' Require "/" before query '
                      + stateSeparator + stateIndicator.menuWord[+!config.prefixEnabled]
         menuID.push(GM_registerMenuCommand(pmLabel, function() {
             saveSetting('prefixEnabled', !config.prefixEnabled)
@@ -160,7 +160,7 @@
         }))
 
         // Add command to toggle suffix mode
-        var smLabel = stateIndicator.menuSymbol[+!config.suffixEnabled] + ' Require Suffix (\'?\') '
+        var smLabel = stateIndicator.menuSymbol[+!config.suffixEnabled] + ' Require "?" after query '
                      + stateSeparator + stateIndicator.menuWord[+!config.suffixEnabled]
         menuID.push(GM_registerMenuCommand(smLabel, function() {
             saveSetting('suffixEnabled', !config.suffixEnabled)
@@ -370,7 +370,7 @@
     }
 
     function braveGPTshow(answer) {
-        braveGPTdiv.innerHTML = `<span class="prefix"><a href="https://www.bravegpt.com" target="_blank">🤖  BraveGPT</a></span><pre></pre>`
+        braveGPTdiv.innerHTML = '<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank">BraveGPT</a></span><span class="balloon-tip"></span><pre></pre>'
         braveGPTdiv.querySelector('pre').textContent = answer
         braveGPTdiv.appendChild(braveGPTfooter) // append feedback link
     }
@@ -382,9 +382,7 @@
         getShowAnswer(new URL(location.href).searchParams.get('q')) // get/show answer
     }
 
-    // Run MAIN routine
-    
-    // Initialize script
+    // Run main routine
     var config = {}, configKeyPrefix = 'braveGPT_'
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
     registerMenu() // create browser toolbar menu
@@ -406,7 +404,7 @@
         .chatgpt-container pre { /* ChatGPT output box */
             /* text spacing */ white-space: pre-wrap ; line-height: 21px ;
             font-family: Consolas, Menlo, Monaco, monospace ;
-            /* box spacing */ padding: 1.2em ; margin: .5em 0 ; border-radius: 15px 15px 15px 0 ;
+            /* box spacing */ padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;
             background-color: #eaeaea
         }
         .chatgpt-container .footer {
@@ -418,7 +416,9 @@
             font-size: .65rem ; letter-spacing: .02em ; line-height: 1; position: relative ; right: -222px }
         .chatgpt-container .feedback .icon { fill: currentColor ; color: currentColor ; --size:15px }
         .chatgpt-container .footer a:hover { color: black }
-        @keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}`
+        @keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }} `
+        + '.balloon-tip { content: "" ; position: relative ; top: 0.23em ; right: 7.92em ; border: 7px solid transparent ;'
+            + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-bottom-color: #eaeaea ; border-top: 0 }'
         document.head.appendChild(braveGPTstyle) // append style to <head>
 
         // Create BraveGPT container & add id/classes
