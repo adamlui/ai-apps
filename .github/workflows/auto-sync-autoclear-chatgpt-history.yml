@@ -34,7 +34,7 @@ jobs:
           path: adamlui/userscripts
 
       - name: Sync README.md between directories
-        if: contains(github.event.head_commit.modified, 'README.md')
+        if: ${{ github.event.head_commit.modified | join(' ').contains('README.md') }}
         run: |
           echo "Modified files: ${{ github.event.head_commit.modified }}"
           if [ -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md" ]; then
