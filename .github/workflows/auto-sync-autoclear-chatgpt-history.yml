@@ -34,7 +34,7 @@ jobs:
           path: adamlui/userscripts
 
       - name: Sync README.md between directories
-        if: ${{ 'autoclear-chatgpt-history/(greasemonkey/)README.md' in github.event.head_commit.modified }}
+        if: ${{ 'README.md' in github.event.head_commit.modified }}
         run: |
           echo "Modified files: ${{ github.event.head_commit.modified }}"
           if [ -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md" ]; then
