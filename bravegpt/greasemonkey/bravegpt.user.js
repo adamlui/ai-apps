@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.10
+// @version             2023.04.10.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -370,7 +370,7 @@
     }
 
     function braveGPTshow(answer) {
-        braveGPTdiv.innerHTML = '<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank">BraveGPT</a><a href="https://github.com/chatgptjs/chatgpt.js" target="_blank"><img class="chatgptjs-badge" src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/badges/powered-by-chatgpt.js-txt.png"></a></span><span class="balloon-tip"></span><pre></pre>'
+        braveGPTdiv.innerHTML = '<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank">BraveGPT</a></span><span class="balloon-tip"></span><pre></pre>'
         braveGPTdiv.querySelector('pre').textContent = answer
         braveGPTdiv.appendChild(braveGPTfooter) // append feedback link
     }
@@ -411,16 +411,16 @@
                 margin: 20px 0 -32px 0 ; padding-top: 17px !important ; font-size: var(--text-sm-2)
                 justify-content: right !important
             }
-            .chatgpt-container .footer a { margin-right: -22px /* to counter .snippet padding */ }
             .chatgpt-container .feedback { font-family: var(--brand-font) ; color: var(--search-text-06);
-                font-size: .65rem ; letter-spacing: .02em ; line-height: 1; position: relative ; right: -222px }
-            .chatgpt-container .feedback .icon { fill: currentColor ; color: currentColor ; --size:15px }
+                font-size: .65rem ; letter-spacing: .02em ; line-height: 1; position: relative ; right: -22px }
+            .chatgpt-container .feedback .icon { fill: currentColor ; color: currentColor ; --size:15px ; position: relative ; top: 3px ; right: 3px }
             .chatgpt-container .footer a:hover { color: black }
             @keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }} `
-            + '.chatgptjs-badge { position: relative ; left: 119px ; top: 2px ; opacity: .4 ; transition: opacity 0.025s } '
-            + '.chatgptjs-badge:hover { opacity: 1 } '
-            + '.balloon-tip { content: "" ; position: relative ; top: 0.23em ; right: 12.22em ; border: 7px solid transparent ;'
+            + '.balloon-tip { content: "" ; position: relative ; top: 0.23em ; right: 6.32rem ; border: 7px solid transparent ;'
                 + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-bottom-color: #eaeaea ; border-top: 0 } '
+            + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem } '
+            + '.chatgpt-js > a { color: inherit ; top: .054rem } '
+            + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px } '
         document.head.appendChild(braveGPTstyle) // append style to <head>
 
         // Create BraveGPT container & add id/classes
@@ -432,7 +432,13 @@
         // Create feedback footer & add class/HTML
         var braveGPTfooter = document.createElement('div') // create footer div
         braveGPTfooter.className = 'footer'
-        braveGPTfooter.innerHTML = `<a class="feedback svelte-8js1iq" target="_blank" href="https://github.bravegpt.com/discussions/new/choose"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path fill-rule="evenodd" d="M.577 6.23a.577.577 0 1 1 0-1.153H1.5a.577.577 0 0 1 0 1.154H.577ZM2.83 8.939a.576.576 0 0 1 0 .816l-1.385 1.385a.573.573 0 0 1-.816 0 .576.576 0 0 1 0-.816l1.385-1.385a.577.577 0 0 1 .816 0ZM.63.985a.576.576 0 1 1 .815-.816L2.83 1.553a.576.576 0 1 1-.816.816L.63.985ZM15 5.654a.577.577 0 0 1-.577.577H13.5a.577.577 0 0 1 0-1.154h.923c.319 0 .577.258.577.577Zm-.631 4.669a.576.576 0 1 1-.816.816l-1.385-1.385a.576.576 0 1 1 .816-.816l1.385 1.385Zm-2.2-7.954a.576.576 0 0 1 0-.816L13.553.17a.577.577 0 0 1 .816.816l-1.385 1.384a.575.575 0 0 1-.816 0ZM9.3 9.09a.579.579 0 0 0-.045.038c-.45.417-.486 1.23-.486 1.47v.238c-1.045.45-2.053.177-2.537-.013v-.226c0-.24-.036-1.053-.487-1.469a.687.687 0 0 0-.044-.037c-.81-.609-1.777-1.667-1.777-3.253 0-2.073 1.604-3.76 3.576-3.76s3.577 1.687 3.577 3.76c0 1.586-.967 2.644-1.777 3.252Zm-1.8 4.757c-.995 0-1.223-.623-1.27-.814v-.997a4.83 4.83 0 0 0 1.343.197c.374 0 .78-.057 1.195-.18v.978c-.05.202-.282.816-1.269.816ZM7.5.923c-2.609 0-4.73 2.204-4.73 4.914 0 1.616.757 3.047 2.192 4.141.058.094.114.39.115.618v2.494c0 .03.003.06.007.09.1.63.732 1.82 2.416 1.82s2.316-1.19 2.416-1.82a.674.674 0 0 0 .006-.09v-2.494c0-.206.054-.525.11-.613 1.438-1.096 2.198-2.528 2.198-4.146 0-2.71-2.121-4.914-4.73-4.914Z" clip-rule="evenodd"></path></svg> Feedback</a>`
+        braveGPTfooter.innerHTML = `<span class="chatgpt-js"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 60.000000 64.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" fill=currentColor stroke="none"><path d="M178 463 c-92 -92 -168 -174 -168 -183 0 -34 22 -40 137 -40 62 0
+            113 -3 113 -7 0 -5 -14 -50 -31 -101 -25 -74 -28 -96 -19 -107 7 -8 20 -15 29
+            -15 9 0 93 77 186 170 207 207 206 204 31 208 -87 2 -116 6 -116 16 0 7 11 46
+            25 86 14 40 25 83 25 95 0 22 -17 45 -34 45 -5 0 -85 -75 -178 -167z m137 7
+            c-19 -57 -35 -105 -35 -107 0 -2 58 -3 130 -3 72 0 130 -3 130 -8 0 -4 -65
+            -72 -145 -152 -80 -80 -145 -140 -145 -134 0 5 15 56 34 112 l35 102 -137 0
+            -137 0 150 150 c82 82 150 148 152 146 2 -1 -13 -49 -32 -106z"/></g></svg> Powered by <a href="https://github.com/chatgptjs/chatgpt.js" target="_blank">chatgpt.js</a></span><a class="feedback svelte-8js1iq" target="_blank" href="https://github.bravegpt.com/discussions/new/choose"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path fill-rule="evenodd" d="M.577 6.23a.577.577 0 1 1 0-1.153H1.5a.577.577 0 0 1 0 1.154H.577ZM2.83 8.939a.576.576 0 0 1 0 .816l-1.385 1.385a.573.573 0 0 1-.816 0 .576.576 0 0 1 0-.816l1.385-1.385a.577.577 0 0 1 .816 0ZM.63.985a.576.576 0 1 1 .815-.816L2.83 1.553a.576.576 0 1 1-.816.816L.63.985ZM15 5.654a.577.577 0 0 1-.577.577H13.5a.577.577 0 0 1 0-1.154h.923c.319 0 .577.258.577.577Zm-.631 4.669a.576.576 0 1 1-.816.816l-1.385-1.385a.576.576 0 1 1 .816-.816l1.385 1.385Zm-2.2-7.954a.576.576 0 0 1 0-.816L13.553.17a.577.577 0 0 1 .816.816l-1.385 1.384a.575.575 0 0 1-.816 0ZM9.3 9.09a.579.579 0 0 0-.045.038c-.45.417-.486 1.23-.486 1.47v.238c-1.045.45-2.053.177-2.537-.013v-.226c0-.24-.036-1.053-.487-1.469a.687.687 0 0 0-.044-.037c-.81-.609-1.777-1.667-1.777-3.253 0-2.073 1.604-3.76 3.576-3.76s3.577 1.687 3.577 3.76c0 1.586-.967 2.644-1.777 3.252Zm-1.8 4.757c-.995 0-1.223-.623-1.27-.814v-.997a4.83 4.83 0 0 0 1.343.197c.374 0 .78-.057 1.195-.18v.978c-.05.202-.282.816-1.269.816ZM7.5.923c-2.609 0-4.73 2.204-4.73 4.914 0 1.616.757 3.047 2.192 4.141.058.094.114.39.115.618v2.494c0 .03.003.06.007.09.1.63.732 1.82 2.416 1.82s2.316-1.19 2.416-1.82a.674.674 0 0 0 .006-.09v-2.494c0-.206.054-.525.11-.613 1.438-1.096 2.198-2.528 2.198-4.146 0-2.71-2.121-4.914-4.73-4.914Z" clip-rule="evenodd"></path></svg> Feedback</a>`
 
         loadBraveGPT()
     }
