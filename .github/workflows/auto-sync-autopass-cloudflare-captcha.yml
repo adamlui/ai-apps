@@ -1,10 +1,10 @@
-name: Sync chatgpt-heartbeat/ to adamlui/userscripts/chatgpt/chatgpt-heartbeat/
+name: Sync autopass-cloudflare-captcha/ to adamlui/userscripts/autopass-cloudflare-captcha/
 
 on:
   push:
     branches: [ master, main ]
     paths:
-      - 'chatgpt-heartbeat/**'
+      - 'autopass-cloudflare-captcha/**'
 
 jobs:
   build:
@@ -26,8 +26,8 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync chatgpt-heartbeat/ to adamlui/userscripts/chatgpt/chatgpt-heartbeat/
-        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-heartbeat/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-heartbeat/
+      - name: Sync autopass-cloudflare-captcha/ to adamlui/userscripts/autopass-cloudflare-captcha/
+        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-addons/autopass-cloudflare-captcha/ ${{ github.workspace }}/adamlui/userscripts/autopass-cloudflare-captcha/
 
       - name: Push to adamlui/userscripts
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -36,5 +36,5 @@ jobs:
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
-          file_pattern: 'chatgpt/chatgpt-heartbeat/*'
+          file_pattern: 'autopass-cloudflare-captcha/*'
           repository: adamlui/userscripts
