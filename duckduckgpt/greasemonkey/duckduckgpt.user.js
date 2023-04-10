@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.04.09.2
+// @version             2023.04.09.3
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -147,11 +147,26 @@
             location.reload() // re-send query using new endpoint
         }))
 
+        // Add command to toggle prefix mode
+        var pmLabel = stateIndicator.menuSymbol[+!config.prefixEnabled] + ' Require "/" before query '
+                     + stateSeparator + stateIndicator.menuWord[+!config.prefixEnabled]
+        menuID.push(GM_registerMenuCommand(pmLabel, function() {
+            saveSetting('prefixEnabled', !config.prefixEnabled)
+            if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
+                saveSetting('suffixEnabled', !config.suffixEnabled) }
+            chatgpt.notify('Prefix Mode ' + stateIndicator.notifWord[+!config.prefixEnabled], '', '', 'shadow')
+            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
+            registerMenu() // serve fresh menu
+            if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
+        }))
+
         // Add command to toggle suffix mode
-        var smLabel = stateIndicator.menuSymbol[+!config.suffixEnabled] + ' Require Suffix (\'?\') '
+        var smLabel = stateIndicator.menuSymbol[+!config.suffixEnabled] + ' Require "?" after query '
                      + stateSeparator + stateIndicator.menuWord[+!config.suffixEnabled]
         menuID.push(GM_registerMenuCommand(smLabel, function() {
             saveSetting('suffixEnabled', !config.suffixEnabled)
+            if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
+                saveSetting('prefixEnabled', !config.prefixEnabled) }
             chatgpt.notify('Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled], '', '', 'shadow')
             for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
             registerMenu() // serve fresh menu
@@ -358,7 +373,7 @@
     }
 
     function ddgptShow(answer) {
-        ddgptDiv.innerHTML = '<p><span class="prefix"><a href="https://duckduckgpt.com" target="_blank">🤖  DuckDuckGPT</a></span><pre></pre></p>'
+        ddgptDiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank">DuckDuckGPT</a></span><span class="balloon-tip"></span><pre></pre></p>'
         ddgptDiv.querySelector('pre').textContent = answer
     }
 
@@ -369,28 +384,34 @@
         getShowAnswer(new URL(location.href).searchParams.get('q'))
     }
 
-    // Run main routine
+    // Run MAIN routine
 
+    // Initialize script
     var config = {}, configKeyPrefix = 'ddgpt_'
-    loadSetting('proxyAPIenabled', 'suffixEnabled')
+    loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
     registerMenu() // create browser toolbar menu
 
     // Load DuckDuckGPT if necessary
-    if (!config.suffixEnabled || (config.suffixEnabled && /.*q=.*%3F(\+?(&|$))/.test(document.location))) {
+    if (( !config.prefixEnabled && !config.suffixEnabled) || // prefix/suffix not required
+            ( config.prefixEnabled && /.*q=%2F/.test(document.location)) || // or prefix required & included
+            ( config.suffixEnabled && /.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required & included
 
         // Stylize ChatGPT container + footer
         var ddgptStyle = document.createElement('style')
         ddgptStyle.innerText = (
             '.chatgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 15px ; flex-basis: 0 ;'
-            + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) }'
+                + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) }'
             + '.chatgpt-container p { margin: 0 }'
             + '.chatgpt-container .prefix { font-weight: 700 }'
             + '.chatgpt-container .prefix > a { color: inherit ; text-decoration: none }'
             + '.chatgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
             + '.chatgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
-            + '.chatgpt-container pre { white-space: pre-wrap ; min-width: 0 ; margin-bottom: 0 ; line-height: 20px ; padding: .9em ; border-radius: 12px 12px 12px 0 }'
+            + '.chatgpt-container pre { white-space: pre-wrap ; min-width: 0 ; margin-bottom: 0 ; line-height: 20px ; padding: .9em ; border-radius: 10px }'
             + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-            + '.chatgpt-feedback { margin: 2px 0 25px }' )
+            + '.chatgpt-feedback { margin: 2px 0 25px }'
+            + '.balloon-tip { content: "" ; position: relative ; top: 4px ; right: 8.15em ; border: 7px solid transparent ;'
+                + 'border-bottom-style: solid ; border-bottom-width: 15px ; border-bottom-color: #eaeaea ; border-top: 0 }'
+        )
         document.head.appendChild(ddgptStyle) // append style to <head>
 
         // Create DDGPT container & add class
