@@ -17,11 +17,11 @@ Auto-clear your ChatGPT query history for maximum privacy. // 自动清除您的
 [Readme](autoclear-chatgpt-history/README.md) / 
 [Discuss](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
-### <img width=16 src="https://www.google.com/s2/favicons?sz=64&domain=cloudflare.com"> [Autopass Cloudflare CAPTCHA](https://github.com/adamlui/userscripts/tree/master/autopass-cloudflare-captcha)
+### <img width=16 src="https://www.google.com/s2/favicons?sz=64&domain=cloudflare.com"> [Autopass Cloudflare CAPTCHA](autopass-cloudflare-captcha)
 
 Automatically verify your humanity during Cloudflare Turnstile challenges. // 在 Cloudflare Turnstile 挑战期间自动验证您的人性。
-<br>[Install](https://github.com/adamlui/userscripts/raw/master/autopass-cloudflare-captcha/autopass-cloudflare-captcha.user.js) / 
-[Discuss](https://github.com/adamlui/userscripts/discussions)
+<br>[Install](https://github.com/adamlui/chatgpt-addons/raw/main/autopass-cloudflare-captcha/autopass-cloudflare-captcha.user.js) / 
+[Discuss](https://github.com/adamlui/chatgpt-addons/discussions)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](bravegpt) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
@@ -40,9 +40,9 @@ Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks. //
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Heartbeat 💓](chatgpt-heartbeat)
 
 Keeps conversations flowing when network errors are encountered. // 在遇到网络错误时保持对话流畅。
-<br>[Install](https://github.com/adamlui/userscripts/raw/master/chatgpt/chatgpt-heartbeat/ChatGPT-Heartbeat.user.js) / 
+<br>[Install](https://github.com/adamlui/chatgpt-addons/raw/main/chatgpt-heartbeat/ChatGPT-Heartbeat.user.js) / 
 [Readme](chatgpt-heartbeat/README.md) / 
-[Discuss](https://github.com/adamlui/userscripts/discussions)
+[Discuss](https://github.com/adamlui/chatgpt-addons/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Widescreen Mode 🖥️](chatgpt-widescreen) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 3px"></a>
 
