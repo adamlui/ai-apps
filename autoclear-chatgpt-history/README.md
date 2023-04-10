@@ -7,7 +7,7 @@
 <a alt="chatgpt.js" href="https://github.com/chatgptjs/chatgpt.js"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#privacy)
 
-### Auto-clears chat history when visiting chat.openai.com for maximum privacy.
+### Auto-clears chat history when visiting chat.openai.com for maximum privacy
 
 <a href="https://greasyfork.org/en/scripts/460805-autoclear-chatgpt-history"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
 <br>
