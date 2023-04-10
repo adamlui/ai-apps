@@ -1,4 +1,4 @@
-name: Sync adamlui/chatgpt-addons/bravegpt to kudoai/bravegpt
+name: Sync (bravegpt/ to kudoai/bravegpt/) && (bravegpt/greasemonkey/ to adamlui/userscripts/chatgpt/bravegpt/)
 
 on:
   push:
@@ -26,15 +26,53 @@ jobs:
           repository: kudoai/bravegpt
           path: kudoai/bravegpt
 
-      - name: Sync adamlui/chatgpt-addons/bravegpt to kudoai/bravegpt
-        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-addons/bravegpt/ ${{ github.workspace }}/kudoai/bravegpt/
+      - name: Checkout adamlui/userscripts
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/userscripts
+          path: adamlui/userscripts
+
+      - name: Sync README.md between directories
+        run: |
+          if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/bravegpt/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/bravegpt/greasemonkey/README.md")" ]; then
+            cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/bravegpt/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/bravegpt/greasemonkey/README.md"
+          elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/bravegpt/greasemonkey/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/bravegpt/README.md")" ]; then
+            cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/bravegpt/greasemonkey/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/bravegpt/README.md"
+          fi
+
+      - name: Sync bravegpt/ to kudoai/bravegpt/
+        run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-addons/bravegpt/ ${{ github.workspace }}/kudoai/bravegpt/
+
+      - name: Sync bravegpt/greasemonkey/ to adamlui/userscripts/chatgpt/bravegpt/
+        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-addons/bravegpt/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/bravegpt/
+
+      - name: Push to adamlui/chatgpt-addons
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
+          file_pattern: 'bravegpt/*' 
+          repository: adamlui/chatgpt-addons
 
       - name: Push to kudoai/bravegpt
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
           add_options: '--all'
-          commit_user_email: auto-sync@kudoai.com
+          commit_user_email: auto-sync@chatgptevo.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
           file_pattern: '*'
           repository: kudoai/bravegpt
+
+      - name: Push to adamlui/userscripts
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
+          file_pattern: 'chatgpt/bravegpt/*'
+          repository: adamlui/userscripts

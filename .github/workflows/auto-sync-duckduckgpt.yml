@@ -1,4 +1,4 @@
-name: Sync adamlui/chatgpt-addons/duckduckgpt to kudoai/duckduckgpt
+name: Sync (duckduckgpt/ to kudoai/duckduckgpt/) && (duckduckgpt/greasemonkey/ to adamlui/userscripts/chatgpt/duckduckgpt/)
 
 on:
   push:
@@ -26,15 +26,53 @@ jobs:
           repository: kudoai/duckduckgpt
           path: kudoai/duckduckgpt
 
-      - name: Sync adamlui/chatgpt-addons/duckduckgpt to kudoai/duckduckgpt
-        run: rsync -av --delete ${{ github.workspace }}/adamlui/chatgpt-addons/duckduckgpt/ ${{ github.workspace }}/kudoai/duckduckgpt/
+      - name: Checkout adamlui/userscripts
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/userscripts
+          path: adamlui/userscripts
+
+      - name: Sync README.md between directories
+        run: |
+          if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/duckduckgpt/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/duckduckgpt/greasemonkey/README.md")" ]; then
+            cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/duckduckgpt/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/duckduckgpt/greasemonkey/README.md"
+          elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/duckduckgpt/greasemonkey/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/duckduckgpt/README.md")" ]; then
+            cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/duckduckgpt/greasemonkey/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/duckduckgpt/README.md"
+          fi
+
+      - name: Sync duckduckgpt/ to kudoai/duckduckgpt/
+        run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-addons/duckduckgpt/ ${{ github.workspace }}/kudoai/duckduckgpt/
+
+      - name: Sync duckduckgpt/greasemonkey/ to adamlui/userscripts/chatgpt/duckduckgpt/
+        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-addons/duckduckgpt/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/duckduckgpt/
+
+      - name: Push to adamlui/chatgpt-addons
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
+          file_pattern: 'duckduckgpt/*' 
+          repository: adamlui/chatgpt-addons
 
       - name: Push to kudoai/duckduckgpt
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
           add_options: '--all'
-          commit_user_email: auto-sync@kudoai.com
+          commit_user_email: auto-sync@chatgptevo.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
           file_pattern: '*'
           repository: kudoai/duckduckgpt
+
+      - name: Push to adamlui/userscripts
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
+          file_pattern: 'chatgpt/duckduckgpt/*'
+          repository: adamlui/userscripts

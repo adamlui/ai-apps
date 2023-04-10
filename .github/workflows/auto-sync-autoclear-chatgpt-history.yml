@@ -1,4 +1,4 @@
-name: Sync (autoclear-chatgpt-history to adamlui/autoclear-chatgpt-history) && (autoclear-chatgpt-history/greasemonkey to adamlui/userscripts/chatgpt/autoclear-chatgpt-history)
+name: Sync (autoclear-chatgpt-history/ to adamlui/autoclear-chatgpt-history/) && (autoclear-chatgpt-history/greasemonkey/ to adamlui/userscripts/chatgpt/autoclear-chatgpt-history/)
 
 on:
   push:
@@ -41,10 +41,10 @@ jobs:
             cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md"
           fi
 
-      - name: Sync autoclear-chatgpt-history to adamlui/autoclear-chatgpt-history
+      - name: Sync autoclear-chatgpt-history/ to adamlui/autoclear-chatgpt-history/
         run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/ ${{ github.workspace }}/adamlui/autoclear-chatgpt-history/
 
-      - name: Sync autoclear-chatgpt-history/greasemonkey to adamlui/userscripts/chatgpt/autoclear-chatgpt-history
+      - name: Sync autoclear-chatgpt-history/greasemonkey/ to adamlui/userscripts/chatgpt/autoclear-chatgpt-history/
         run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/autoclear-chatgpt-history/
 
       - name: Push to adamlui/chatgpt-addons
