@@ -1,7 +1,6 @@
 # 🤖 ChatGPT add-ons &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20these%20%23ChatGPT%20add-ons%20out%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
-Add-ons that utilize the astounding AI of ChatGPT or enhances its UX.
 
-利用 ChatGPT 惊人的 AI 或增强其 UX 的附加组件。
+Add-ons that utilize the astounding AI of ChatGPT or enhances its UX. // 利用 ChatGPT 惊人的 AI 或增强其 UX 的附加组件。
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 ![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/LibreWolf/QQ-989898.svg)
