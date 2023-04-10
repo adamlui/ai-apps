@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.09.7
+// @version             2023.04.10
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -370,7 +370,7 @@
     }
 
     function braveGPTshow(answer) {
-        braveGPTdiv.innerHTML = '<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank">BraveGPT</a></span><span class="balloon-tip"></span><pre></pre>'
+        braveGPTdiv.innerHTML = '<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank">BraveGPT</a><a href="https://github.com/chatgptjs/chatgpt.js" target="_blank"><img class="chatgptjs-badge" src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/badges/powered-by-chatgpt.js-txt.png"></a></span><span class="balloon-tip"></span><pre></pre>'
         braveGPTdiv.querySelector('pre').textContent = answer
         braveGPTdiv.appendChild(braveGPTfooter) // append feedback link
     }
@@ -395,30 +395,32 @@
         // Stylize ChatGPT container + children
         var braveGPTstyle = document.createElement('style')
         braveGPTstyle.innerText = `
-        .chatgpt-container { word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px }
-        .chatgpt-container p { margin: 0 }
-        .chatgpt-container .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }
-        .chatgpt-container .prefix { font-size: 20px ; font-family: var(--brand-font) }
-        .chatgpt-container .prefix > a { color: inherit }
-        .chatgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }
-        .chatgpt-container pre { /* ChatGPT output box */
-            /* text spacing */ white-space: pre-wrap ; line-height: 21px ;
-            font-family: Consolas, Menlo, Monaco, monospace ;
-            /* box spacing */ padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;
-            background-color: #eaeaea
-        }
-        .chatgpt-container .footer {
-            margin: 20px 0 -32px 0 ; padding-top: 17px !important ; font-size: var(--text-sm-2)
-            justify-content: right !important
-        }
-        .chatgpt-container .footer a { margin-right: -22px /* to counter .snippet padding */ }
-        .chatgpt-container .feedback { font-family: var(--brand-font) ; color: var(--search-text-06);
-            font-size: .65rem ; letter-spacing: .02em ; line-height: 1; position: relative ; right: -222px }
-        .chatgpt-container .feedback .icon { fill: currentColor ; color: currentColor ; --size:15px }
-        .chatgpt-container .footer a:hover { color: black }
-        @keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }} `
-        + '.balloon-tip { content: "" ; position: relative ; top: 0.23em ; right: 7.92em ; border: 7px solid transparent ;'
-            + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-bottom-color: #eaeaea ; border-top: 0 }'
+            .chatgpt-container { word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px }
+            .chatgpt-container p { margin: 0 }
+            .chatgpt-container .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }
+            .chatgpt-container .prefix { font-size: 20px ; font-family: var(--brand-font) }
+            .chatgpt-container .prefix > a { color: inherit }
+            .chatgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }
+            .chatgpt-container pre { /* ChatGPT output box */
+                /* text spacing */ white-space: pre-wrap ; line-height: 21px ;
+                font-family: Consolas, Menlo, Monaco, monospace ;
+                /* box spacing */ padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;
+                background-color: #eaeaea
+            }
+            .chatgpt-container .footer {
+                margin: 20px 0 -32px 0 ; padding-top: 17px !important ; font-size: var(--text-sm-2)
+                justify-content: right !important
+            }
+            .chatgpt-container .footer a { margin-right: -22px /* to counter .snippet padding */ }
+            .chatgpt-container .feedback { font-family: var(--brand-font) ; color: var(--search-text-06);
+                font-size: .65rem ; letter-spacing: .02em ; line-height: 1; position: relative ; right: -222px }
+            .chatgpt-container .feedback .icon { fill: currentColor ; color: currentColor ; --size:15px }
+            .chatgpt-container .footer a:hover { color: black }
+            @keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }} `
+            + '.chatgptjs-badge { position: relative ; left: 119px ; top: 2px ; opacity: .4 ; transition: opacity 0.025s } '
+            + '.chatgptjs-badge:hover { opacity: 1 } '
+            + '.balloon-tip { content: "" ; position: relative ; top: 0.23em ; right: 12.22em ; border: 7px solid transparent ;'
+                + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-bottom-color: #eaeaea ; border-top: 0 } '
         document.head.appendChild(braveGPTstyle) // append style to <head>
 
         // Create BraveGPT container & add id/classes
