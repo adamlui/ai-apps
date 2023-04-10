@@ -33,11 +33,17 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Change ownership of directories
+      - name: Get current user and group
+        id: user
         run: |
-          sudo chown -R $USER:$USER adamlui/chatgpt-addons/autoclear-chatgpt-history
-          sudo chown -R $USER:$USER adamlui/autoclear-chatgpt-history
-          sudo chown -R $USER:$USER adamlui/userscripts/chatgpt/autoclear-chatgpt-history
+          echo "::set-output name=user::$(id -un)"
+          echo "::set-output name=group::$(id -gn)"
+
+      - name: Set ownership to user and group
+        run: |
+          sudo chown -R ${{ steps.user.outputs.user }}:${{ steps.user.outputs.group }} adamlui/chatgpt-addons/autoclear-chatgpt-history
+          sudo chown -R ${{ steps.user.outputs.user }}:${{ steps.user.outputs.group }} adamlui/autoclear-chatgpt-history
+          sudo chown -R ${{ steps.user.outputs.user }}:${{ steps.user.outputs.group }} adamlui/userscripts/chatgpt/autoclear-chatgpt-history
 
       - name: Sync README.md between directories
         run: |
