@@ -33,18 +33,6 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Get current user and group
-        id: user
-        run: |
-          echo "::set-output name=user::$(id -un)"
-          echo "::set-output name=group::$(id -gn)"
-
-      - name: Set ownership to user and group
-        run: |
-          sudo chown -R ${{ steps.user.outputs.user }}:${{ steps.user.outputs.group }} adamlui/chatgpt-addons/autoclear-chatgpt-history
-          sudo chown -R ${{ steps.user.outputs.user }}:${{ steps.user.outputs.group }} adamlui/autoclear-chatgpt-history
-          sudo chown -R ${{ steps.user.outputs.user }}:${{ steps.user.outputs.group }} adamlui/userscripts/chatgpt/autoclear-chatgpt-history
-
       - name: Sync README.md between directories
         run: |
           if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md")" ]; then
@@ -76,7 +64,7 @@ jobs:
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
-          file_pattern: '*'
+          file_pattern: 'autoclear-chatgpt-history/*'
           repository: adamlui/autoclear-chatgpt-history
 
       - name: Push to adamlui/userscripts
