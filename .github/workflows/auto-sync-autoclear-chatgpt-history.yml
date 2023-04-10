@@ -33,11 +33,31 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
+      - name: Sync README.md between directories
+        if: ${{ 'autoclear-chatgpt-history/(greasemonkey/)README.md' in github.event.head_commit.modified }}
+        run: |
+          echo "Modified files: ${{ github.event.head_commit.modified }}"
+          if [ -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md" ]; then
+            cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md"
+          elif [ -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md" ]; then
+            cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md"
+          fi
+
       - name: Sync autoclear-chatgpt-history to adamlui/autoclear-chatgpt-history
         run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/ ${{ github.workspace }}/adamlui/autoclear-chatgpt-history/
 
       - name: Sync autoclear-chatgpt-history/greasemonkey to adamlui/userscripts/chatgpt/autoclear-chatgpt-history
         run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey ${{ github.workspace }}/adamlui/userscripts/chatgpt/autoclear-chatgpt-history/
+
+      - name: Push to adamlui/chatgpt-addons
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
+          file_pattern: '*'
+          repository: adamlui/chatgpt-addons
 
       - name: Push to adamlui/autoclear-chatgpt-history
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -46,7 +66,7 @@ jobs:
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
-          file_pattern: '*'
+          file_pattern: 'autoclear-chatgpt-history/*'
           repository: adamlui/autoclear-chatgpt-history
 
       - name: Push to adamlui/userscripts
