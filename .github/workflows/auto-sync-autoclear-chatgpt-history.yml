@@ -76,7 +76,7 @@ jobs:
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
-          file_pattern: 'autoclear-chatgpt-history/*'
+          file_pattern: '*'
           repository: adamlui/autoclear-chatgpt-history
 
       - name: Push to adamlui/userscripts
