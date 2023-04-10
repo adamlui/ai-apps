@@ -1,17 +1,17 @@
-# 🤖 ChatGPT userscripts &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20these%20%23ChatGPT%20userscripts%20out%21&url=https://github.com/adamlui/chatgpt-userscripts&hashtags=greasemonkey,userscript,javascript,ai)
+# 🤖 ChatGPT userscripts &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20these%20%23ChatGPT%20add-ons%20out%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
 Userscripts that utilize the astounding AI of ChatGPT or enhances its UX. A userscript manager such as [Tampermonkey](https://www.tampermonkey.net/) is required to run these scripts.
 
 利用 ChatGPT 惊人的 AI 或增强其 UX 的用户脚本。 运行这些脚本需要一个用户脚本管理器,例如 [Tampermonkey](https://www.tampermonkey.net/)。
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 ![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/LibreWolf/QQ-989898.svg)
-[![commits](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-userscripts?label=Commits)](https://github.com/adamlui/chatgpt-userscripts/commits/main)
-[![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-userscripts?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-userscripts)
+[![commits](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-addons?label=Commits)](https://github.com/adamlui/chatgpt-addons/commits/main)
+[![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-addons?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-addons)
 <a alt="chatgpt.js" href="https://github.com/chatgptjs/chatgpt.js"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
 
 ---
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](autoclear-chatgpt-history) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](autoclear-chatgpt-history) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
 Auto-clear your ChatGPT query history for maximum privacy. // 自动清除您的 ChatGPT 查询历史记录以获得最大的隐私。
 <br>[Install](https://greasyfork.org/en/scripts/460805-auto-clear-chatgpt-history) / 
@@ -31,21 +31,21 @@ Display ChatGPT answers in Brave Search sidebar. // 在 Brave Search 侧边栏�
 [Readme](bravegpt/README.md) / 
 [Discuss](https://github.bravegpt.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](chatgpt-auto-refresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](chatgpt-auto-refresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
 Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks. // 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
 <br>[Install](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh) / 
 [Readme](chatgpt-auto-refresh/README.md) / 
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Heartbeat 💓](chatgpt-heartbeat)
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Heartbeat 💓](chatgpt-heartbeat)
 
 Keeps conversations flowing when network errors are encountered. // 在遇到网络错误时保持对话流畅。
 <br>[Install](https://github.com/adamlui/userscripts/raw/master/chatgpt/chatgpt-heartbeat/ChatGPT-Heartbeat.user.js) / 
 [Readme](chatgpt-heartbeat/README.md) / 
 [Discuss](https://github.com/adamlui/userscripts/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Widescreen Mode 🖥️](chatgpt-widescreen-mode) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 3px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Widescreen Mode 🖥️](chatgpt-widescreen-mode) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 3px"></a>
 
 Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling. // 向 ChatGPT 添加宽屏 + 全窗口模式以减少滚动。
 <br>[Install](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode) / 
@@ -62,4 +62,4 @@ Display ChatGPT answers in DuckDuckGo sidebar. // 在 DuckDuckGo 侧边栏中显
 #
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
-<a href="#-chatgpt-userscripts-">Back to top ↑</a>
+<a href="#-chatgpt-addons-">Back to top ↑</a>
