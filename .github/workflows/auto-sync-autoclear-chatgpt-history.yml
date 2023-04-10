@@ -33,6 +33,12 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
+      - name: Change ownership of directories
+        run: |
+          sudo chown -R $USER:$USER adamlui/chatgpt-addons/autoclear-chatgpt-history
+          sudo chown -R $USER:$USER adamlui/autoclear-chatgpt-history
+          sudo chown -R $USER:$USER adamlui/userscripts/chatgpt/autoclear-chatgpt-history
+
       - name: Sync README.md between directories
         run: |
           if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md")" ]; then
