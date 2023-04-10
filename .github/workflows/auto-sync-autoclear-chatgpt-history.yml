@@ -35,9 +35,9 @@ jobs:
 
       - name: Sync README.md between directories
         run: |
-          if [ "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md" -nt "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md" ]; then
+          if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md")" ]; then
             cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md"
-          elif [ "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md" -nt "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md" ]; then
+          elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md")" ]; then
             cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md"
           fi
 
