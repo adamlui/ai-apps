@@ -34,12 +34,10 @@ jobs:
           path: adamlui/userscripts
 
       - name: Sync README.md between directories
-        if: contains(join(github.event.head_commit.modified, ' '), 'README.md')
         run: |
-          echo "Modified files: ${{ github.event.head_commit.modified }}"
-          if [ -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md" ]; then
+          if [[ "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md" -nt "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md" ]]; then
             cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md"
-          elif [ -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md" ]; then
+          elif [[ "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md" -nt "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md" ]]; then
             cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/greasemonkey/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/autoclear-chatgpt-history/README.md"
           fi
 
