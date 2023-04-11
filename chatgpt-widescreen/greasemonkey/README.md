@@ -63,7 +63,7 @@ ChatGPT Widescreen Mode can be activated on the following sites...
 
 ...when using the following browsers (via [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/)):
 
-- Google Chrome
+- Google Chrome (also available on [Chrome Web Store](https://chatgptevo.com/widescreen/chrome))
 - Mozilla Firefox
 - Microsoft Edge
 - Opera
