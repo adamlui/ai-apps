@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "ChatGPT Widescreen Mode",
-    "version": "23.4.10",
+    "version": "23.4.11",
     "author": "Adam Lui",
     "description": "Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling",
     "icons": {

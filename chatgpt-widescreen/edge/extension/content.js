@@ -40,10 +40,13 @@
         /* Visibility */  opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 }`
     document.head.appendChild(tooltipStyle)
 
-    // Re-stylize input text area to accomodate buttons
-    var inputTextAreaStyle = document.createElement('style')
-    inputTextAreaStyle.innerHTML = classListToCSS(inputTextAreaClasses) + '{ padding-right: 115px }'
-    document.head.appendChild(inputTextAreaStyle)
+    // General style tweaks
+    var tweaksStyle = document.createElement('style')
+    tweaksStyle.innerHTML = (
+        classListToCSS(inputTextAreaClasses) + ' { padding-right: 115px } ' // make input text area accomdate buttons
+        + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
+            + 'position: relative ; left: 54px ; top: 7px ; } ' ) // ...below avatar to avoid cropping
+    document.head.appendChild(tweaksStyle)
 
     // Create wide screen style
     var wideScreenStyle = document.createElement('style')
