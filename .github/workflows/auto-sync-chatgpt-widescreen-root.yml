@@ -1,10 +1,10 @@
-name: Sync (chatgpt-widescreen/ to adamlui/chatgpt-widescreen/) && (chatgpt-widescreen/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/)
+name: Sync /chatgpt-widescreen/* to adamlui/chatgpt-widescreen/*
 
 on:
   push:
     branches: [ master, main ]
     paths:
-      - 'chatgpt-widescreen/**'
+      - 'chatgpt-widescreen/*'
 
 jobs:
   build:
@@ -26,18 +26,8 @@ jobs:
           repository: adamlui/chatgpt-widescreen
           path: adamlui/chatgpt-widescreen
 
-      - name: Checkout adamlui/userscripts
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/userscripts
-          path: adamlui/userscripts
-
-      - name: Sync chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
+      - name: Sync /chatgpt-widescreen/* to adamlui/chatgpt-widescreen/*
         run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/
-
-      - name: Sync chatgpt-widescreen/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
-        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
 
       - name: Push to adamlui/chatgpt-widescreen
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -48,13 +38,3 @@ jobs:
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
           file_pattern: '*'
           repository: adamlui/chatgpt-widescreen
-
-      - name: Push to adamlui/userscripts
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: '--force'
-          add_options: '--all'
-          commit_user_email: auto-sync@chatgptevo.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
-          file_pattern: 'chatgpt/chatgpt-widescreen/*'
-          repository: adamlui/userscripts

@@ -1,0 +1,56 @@
+name: Sync /chatgpt-widescreen/opera/extension/ to /chatgpt-widescreen/(chrome|edge)/extension/, then /chatgpt-widescreen/ to adamlui/chatgpt-addons/chatgpt-widescreen/
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'chatgpt-widescreen/opera/**'
+
+jobs:
+  build:
+    if: github.event.commits[0].committer.username != 'auto-sync-bot'
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout adamlui/chatgpt-addons
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-addons
+          path: adamlui/chatgpt-addons
+
+      - name: Checkout adamlui/chatgpt-widescreen
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-widescreen
+          path: adamlui/chatgpt-widescreen
+
+      - name: Sync /chatgpt-widescreen/opera/extension/ to /chatgpt-widescreen/chrome/extension/
+        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen/opera/extension/ ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen/chrome/extension/
+
+      - name: Sync /chatgpt-widescreen/opera/extension/ to /edge/extension/
+        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen/opera/extension/ ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen/edge/extension/
+
+      - name: Sync /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
+        run: rsync -avhr ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/
+
+      - name: Push to adamlui/chatgpt-addons
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
+          file_pattern: 'chatgpt-widescreen/*'
+          repository: adamlui/chatgpt-addons
+
+      - name: Push to adamlui/chatgpt-widescreen
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
+          file_pattern: '*'
+          repository: adamlui/chatgpt-widescreen
