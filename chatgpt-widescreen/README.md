@@ -29,11 +29,11 @@
 
 ## Installation
 
-### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome extension
+### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"><img style="margin: 0 2px -1px 0" height=16 src="https://i.imgur.com/0wUsChU.png"> Browser extension
 
-1. Install [ChatGPT Widescreen Mode](https://chatgptevo.com/widescreen/chrome) for Chrome
+1. Install ChatGPT Widescreen Mode ([Chrome](https://chatgptevo.com/widescreen/chrome), [Edge](https://chatgptevo.com/widescreen/edge))
 
-2. Visit chat.openai.com as normal & mode toggles are added to chatbar!
+2. Visit [chat.openai.com](https://chat.openai.com) as normal & mode toggles are added to chatbar!
 
 ### <img style="margin: 0 3px 0 0" height=17 src="https://i.imgur.com/huwclJK.png"> Greasemonkey userscript
 
