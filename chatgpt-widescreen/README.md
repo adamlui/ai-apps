@@ -17,7 +17,7 @@
 
 ## About
 
-**ChatGPT Widescreen Mode** adds widescreen + full-window modes to ChatGPT, so you can enjoy more content unhindered by unnecessary scrolling, thus enhancing your pleasure...
+**ChatGPT Widescreen Mode** adds widescreen + full-window modes to ChatGPT, so you can enjoy more content unhindered by unnecessary scrolling, thus enhancing your pleasure.
 
 ## Demo
 
