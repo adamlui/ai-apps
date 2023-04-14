@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.10.3
+// @version             2023.04.14
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -272,28 +272,35 @@
         }
 
         // Get answer from ChatGPT
+        var data = {}
+        if (!config.proxyAPIenabled) {
+            data = JSON.stringify({
+                action: 'next',
+                messages: [{
+                    role: 'user', id: uuidv4(),
+                    content: { content_type: 'text', parts: [question] }
+                }],
+                model: model, parent_message_id: uuidv4(), max_tokens: 4000
+            })
+        } else {
+            data = JSON.stringify({
+                messages: [{ role: 'user', content: question }],
+                model: model, max_tokens: 4000
+            })
+        }
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
             headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
             responseType: responseType(),
-            data: JSON.stringify({
-                action: 'next',
-                messages: [{
-                    role: 'user', id: !config.proxyAPIenabled ? uuidv4() : '',
-                    content: !config.proxyAPIenabled ? { content_type: 'text', parts: [question] } : question
-                }],
-                model: model,
-                parent_message_id: !config.proxyAPIenabled ? uuidv4() : '',
-                max_tokens: 4000
-            }),
+            data: data,
             onloadstart: onLoadStart(),
             onload: onLoad(),
             onerror: function(error) {
-                braveGPTconsole.error(error)
-                if (!config.proxyAPIenabled) braveGPTalert(!accessKey ? 'login' : 'suggestProxy')
+                ddgptConsole.error(error)
+                if (!config.proxyAPIenabled) ddgptAlert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
                     if (getShowAnswer.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
-                    else braveGPTalert('suggestOpenAI')
+                    else ddgptAlert('suggestOpenAI')
                 }
             }
         })
