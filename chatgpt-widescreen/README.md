@@ -57,14 +57,14 @@
 <div align="center">
 <br />
 
-<a href="https://github.com/chatgptjs/chatgpt.js">
+<a href="https://chatgpt.js.org">
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
     <img width=546 alt="chatgpt.js" src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
 </picture></a>
 <br /><br />
 
-ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://chatgpt.js.org) library (c) 2023 Adam Lui, 冯不游 & chatgpt.js under the MIT license.
+ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 Adam Lui, 冯不游 & chatgpt.js under the MIT license.
 
 </div>
 </h6>
