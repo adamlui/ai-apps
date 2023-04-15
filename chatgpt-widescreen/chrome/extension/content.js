@@ -60,6 +60,12 @@
     fullWindowStyle.innerHTML = classListToCSS(sidebarClasses) + '{ display: none }' // hide sidebar
         + classListToCSS(sidepadClasses) + '{ padding-left: 0px }' // remove side padding
 
+    // Create larger text input style
+    var largerInputStyle = document.createElement('style')
+    largerInputStyle.id = 'largerInput-mode' // for toggleMode()
+    largerInputStyle.innerHTML = 'form > div > div:nth-child(2), form textarea { max-height: 85vh !important; } '
+    document.head.appendChild(largerInputStyle)
+
     // Define SVG viewbox + paths
     var svgViewBox = '8 8 ' // move to XY coords to crop whitespace
         + '20 20' // shrink to 20x20 to match Send button size
