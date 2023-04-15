@@ -1,9 +1,10 @@
 {
     "manifest_version": 3,
-    "name": "ChatGPT Widescreen Mode",
-    "version": "2023.04.14",
+    "name": "__MSG_appName__",
+    "description": "__MSG_appDesc__",
+    "version": "2023.4.14.1",
     "author": "Adam Lui",
-    "description": "Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling",
+    "default_locale": "en",
     "icons": {
         "16": "icons/icon16.png",
         "32": "icons/icon32.png",
