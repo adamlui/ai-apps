@@ -49,7 +49,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.04.16
+// @version             2023.04.16.1
 // @description         Keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -119,8 +119,6 @@
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
-// @downloadURL         https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.user.js
-// @updateURL           https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.meta.js
 // @homepageURL         https://github.com/adamlui/chatgpt-auto-refresh
 // @supportURL          https://github.com/adamlui/chatgpt-auto-refresh/issues
 // ==/UserScript==
@@ -132,7 +130,7 @@
     // Import chatgpt.js functions
     
     var chatGPTsessURL = 'https://chat.openai.com/api/auth/session';
-    var autoRefreshTimer = 60; // secs between session auto-refreshes    
+    var autoRefreshTimer = 45; // secs between session auto-refreshes    
     var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
     localStorage.notifyProps = JSON.stringify(notifyProps);
     var chatgpt = {
@@ -145,17 +143,17 @@
                 var autoRefresh = this;
 
                 // Fetch immediately then schedule
-                fetch(chatGPTsessURL, { method: 'GET' }); scheduleRefresher('fetch');
+                fetch(chatGPTsessURL, { method: 'POST' }); scheduleRefresher('fetch');
 
                 console.info('↻ ChatGPT >> Auto refresh activated');
-                console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via GET-fetch)');
+                console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via POST-fetch)');
 
                 if (typeof document.hidden !== 'undefined') { // if Page Visibility API supported
                     document.addEventListener('visibilitychange', function() { // add listener to switch methods
                         if (document.hidden) scheduleRefresher('beacon');
                         else { // the page became visible
                             fetch(chatGPTsessURL, { method: 'GET' }); // send fetch asap
-                            console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via GET-fetch)')
+                            console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via POST-fetch)')
                             scheduleRefresher('fetch');
                 }})}
 
@@ -174,10 +172,10 @@
                     clearInterval(autoRefresh[oppositeID]); autoRefresh[oppositeID] = null;
                     autoRefresh[thisID] = setInterval(function() {
                         if (thisID.includes('fetch')) {
-                            fetch(chatGPTsessURL, { method: 'GET' });
+                            fetch(chatGPTsessURL, { method: 'POST' });
                         } else { navigator.sendBeacon(chatGPTsessURL, new Uint8Array()); }
                         console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via '
-                            + ( thisID.includes('fetch') ? 'GET-fetch)' : 'POST-beacon)' ));
+                            + ( thisID.includes('fetch') ? 'POST-fetch)' : 'POST-beacon)' ));
                     }, autoRefreshTimer * 1000);
                 }
             },
