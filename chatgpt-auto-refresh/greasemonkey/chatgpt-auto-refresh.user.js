@@ -49,7 +49,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.04.16.1
+// @version             2023.04.17
 // @description         Keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -130,7 +130,7 @@
     // Import chatgpt.js functions
     
     var chatGPTsessURL = 'https://chat.openai.com/api/auth/session';
-    var autoRefreshTimer = 45; // secs between session auto-refreshes    
+    var autoRefreshTimer = 30; // secs between session auto-refreshes    
     var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
     localStorage.notifyProps = JSON.stringify(notifyProps);
     var chatgpt = {
