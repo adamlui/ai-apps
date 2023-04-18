@@ -5,7 +5,7 @@ on:
     branches: [ master, main ]
     paths:
       - 'chatgpt-widescreen/*'
-      - 'media/**'
+      - 'chatgpt-widescreen/media/**'
 
 jobs:
   build:
