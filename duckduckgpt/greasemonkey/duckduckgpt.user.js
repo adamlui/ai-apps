@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.04.14
+// @version             2023.4.18
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -253,16 +253,16 @@
 
     // Define ANSWER functions
 
-    async function getShowAnswer(question, callback) {
+    async function getShowReply(messages, callback) {
 
         // Initialize attempt properties
-        if (!getShowAnswer.triedEndpoints) getShowAnswer.triedEndpoints = []
-        if (!getShowAnswer.attemptCnt) getShowAnswer.attemptCnt = 0
+        if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []
+        if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 0
 
         // Pick API
         if (config.proxyAPIenabled) { // randomize proxy API
             var untriedEndpoints = proxyEndpointMap.filter(function(entry) {
-                return !getShowAnswer.triedEndpoints?.includes(entry[0]) })
+                return !getShowReply.triedEndpoints?.includes(entry[0]) })
             var entry = untriedEndpoints[Math.floor(Math.random() * untriedEndpoints.length)]
             var endpoint = entry[0], accessKey = entry[1], model = entry[2]
         } else { // use OpenAI API
@@ -278,19 +278,16 @@
         var data = {}
         if (!config.proxyAPIenabled) {
             data = JSON.stringify({
-                action: 'next',
-                messages: [{
-                    role: 'user', id: uuidv4(),
-                    content: { content_type: 'text', parts: [question] }
-                }],
+                action: 'next', messages: messages,
                 model: model, parent_message_id: uuidv4(), max_tokens: 4000
             })
         } else {
             data = JSON.stringify({
-                messages: [{ role: 'user', content: question }],
+                messages: messages,
                 model: model, max_tokens: 4000
             })
         }
+
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
             headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
@@ -302,7 +299,7 @@
                 ddgptConsole.error(error)
                 if (!config.proxyAPIenabled) ddgptAlert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
-                    if (getShowAnswer.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
+                    if (getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
                     else ddgptAlert('suggestOpenAI')
                 }
             }
@@ -315,9 +312,9 @@
 
         function retryDiffHost() {
             ddgptConsole.error(`Error calling ${ endpoint }. Trying another endpoint...`)
-            getShowAnswer.triedEndpoints.push(endpoint) // store current proxy to not retry
-            getShowAnswer.attemptCnt++
-            getShowAnswer(question, callback)
+            getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
+            getShowReply.attemptCnt++
+            getShowReply(msg, callback)
         }
 
         function onLoadStart() { // process streams for unproxied TM users
@@ -347,7 +344,7 @@
                 if (event.status !== 200) {
                     ddgptConsole.error('Event status: ' + event.status)
                     ddgptConsole.info('Event response: ' + event.responseText)
-                    if (config.proxyAPIenabled && getShowAnswer.attemptCnt < 1 && proxyEndpointMap.length > 1) {
+                    if (config.proxyAPIenabled && getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) {
                         retryDiffHost() }
                     else if (event.status === 401 && !config.proxyAPIenabled) {
                         GM_deleteValue('accessToken') ; ddgptAlert('login') }
@@ -370,7 +367,7 @@
                     if (event.responseText) {
                         try { // to parse txt response from proxy endpoints
                             var answer = JSON.parse(event.responseText).choices[0].message.content
-                            ddgptShow(answer) ; getShowAnswer.triedEndpoints = [] ; getShowAnswer.attemptCnt = 0
+                            ddgptShow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (error) {
                             ddgptAlert('parseFailed')
                             ddgptConsole.error(ddgptAlerts.parseFailed + ': ' + error)
@@ -380,15 +377,73 @@
     }
 
     function ddgptShow(answer) {
-        ddgptDiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank">DuckDuckGPT</a></span><span class="balloon-tip"></span><pre></pre></p>'
+        ddgptDiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank">DuckDuckGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="ddgpt-reply-box" rows="1" placeholder="Send reply..."></textarea></div></form></section>'
         ddgptDiv.querySelector('pre').textContent = answer
+
+        var form = ddgptDiv.querySelector('form')
+        var replyBox = document.getElementById('ddgpt-reply-box')
+        var { paddingTop, paddingBottom } = getComputedStyle(replyBox)
+        var vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
+        var prevLength = replyBox.value.length
+
+        // Add listeners
+        form.addEventListener('keydown', enterToSubmit)
+        form.addEventListener('submit', handleSubmit )
+        replyBox.addEventListener('input', autosizeBox)
+
+        function enterToSubmit(event) {
+            if (event.key === 'Enter' && event.target.nodeName === 'TEXTAREA') handleSubmit(event)
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault()
+            if (messages.length > 2) messages.splice(0, 2) // keep token usage maintainable
+            var prevReplyTrimmed = ddgptDiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length)
+            if (!config.proxyAPIenabled) {
+                messages.push({ role: 'assistant', id: uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
+                messages.push({ role: 'user', id: uuidv4(), content: { content_type: 'text', parts: [replyBox.value] } })
+            } else { // send whole convo
+                messages.push({ role: 'assistant', content: prevReplyTrimmed })
+                messages.push({ role: 'user', content: replyBox.value })
+            }
+            getShowReply(messages)
+
+            // Remove listeners since they're re-added
+            replyBox.removeEventListener('input', autosizeBox)
+            replyBox.removeEventListener('keydown', enterToSubmit)
+            form.removeEventListener('submit', handleSubmit)
+
+            replyBox.value = ''
+
+            var replySection = ddgptDiv.querySelector('section')
+            replySection.classList.add('loading')
+            replySection.innerHTML = ddgptAlerts.waitingResponse
+        }
+
+        function autosizeBox() {
+            var newLength = replyBox.value.length
+            if (newLength < prevLength) { // if deleting txt
+                replyBox.style.height = 'auto' // ...auto-fit height
+                if (parseInt(getComputedStyle(replyBox).height) < 35) { // if down to one line
+                    replyBox.style.height = '1.55rem' } // ...reset to original height
+            }
+            replyBox.style.height = replyBox.scrollHeight - vOffset + 'px'
+            prevLength = newLength
+        }
     }
 
     async function loadDDGPT() {
         ddgptAlert('waitingResponse')
         var siderbarContainer = document.getElementsByClassName('results--sidebar')[0]
         siderbarContainer.prepend(ddgptDiv, ddgptFooter)
-        getShowAnswer(new URL(location.href).searchParams.get('q'))
+        var query = new URL(location.href).searchParams.get('q')
+        if (!config.proxyAPIenabled) {
+            messages.push({
+                role: 'user', id: uuidv4(),
+                content: { content_type: 'text', parts: [query] }
+            })
+        } else { messages.push({ role: 'user', content: query }) }
+        getShowReply(messages)
     }
 
     // Run MAIN routine
@@ -397,27 +452,35 @@
     var config = {}, configKeyPrefix = 'ddgpt_'
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
     registerMenu() // create browser toolbar menu
+    var messages = []
 
     // Load DuckDuckGPT if necessary
     if (( !config.prefixEnabled && !config.suffixEnabled) || // prefix/suffix not required
             ( config.prefixEnabled && /.*q=%2F/.test(document.location)) || // or prefix required & included
             ( config.suffixEnabled && /.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required & included
 
-        // Stylize ChatGPT container + footer
+        // Stylize response container + reply box + footer
         var ddgptStyle = document.createElement('style')
         ddgptStyle.innerText = (
-            '.chatgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 15px ; flex-basis: 0 ;'
+            '.chatgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 16px 26px ; flex-basis: 0 ;'
                 + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) }'
-            + '.chatgpt-container p { margin: 0 }'
-            + '.chatgpt-container .prefix { font-weight: 700 }'
+            + '.chatgpt-container p { margin: 0 } '
+            + '.chatgpt-container .prefix { font-size: 1.5rem ; font-weight: 700 }'
             + '.chatgpt-container .prefix > a { color: inherit ; text-decoration: none }'
             + '.chatgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
             + '.chatgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
-            + '.chatgpt-container pre { white-space: pre-wrap ; min-width: 0 ; margin-bottom: 0 ; line-height: 20px ; padding: .9em ; border-radius: 10px }'
+            + '.chatgpt-container pre { font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 12px 0 0 0 ; line-height: 21px ; padding: 1.25em ; border-radius: 10px }'
             + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
+            + '.chatgpt-container section.loading { padding-left: 5px } ' /* left-pad loading status when sending replies */
             + '.chatgpt-feedback { margin: 2px 0 25px }'
-            + '.balloon-tip { content: "" ; position: relative ; top: 4px ; right: 8.15em ; border: 7px solid transparent ;'
-                + 'border-bottom-style: solid ; border-bottom-width: 15px ; border-bottom-color: #eaeaea ; border-top: 0 }'
+            + '.balloon-tip { content: "" ; position: relative ; top: 5px ; right: 16.5em ; border: 7px solid transparent ;'
+                + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-bottom-color: #eaeaea ; border-top: 0 }'
+            + '.continue-chat > textarea { border: none ; background: #eeeeee70 ; height: 1.55rem ; width: 97.6% ; margin-top: 3px ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px } '
+            + '.continue-chat > button { position: absolute ; right: 182px ; border: none ; background: none ; margin: 13px 4px 0 0 ; color: lightgrey ; cursor: pointer } '
+            + '.kudo-ai { position: relative ; left: 6px ; color: #666 } '
+            + '.kudo-ai a { color: #666 ; text-decoration: none } '
+            + '.kudo-ai a:hover { color: black ; text-decoration: none } '
+            + '.ph { margin-bottom: 48px ; display: flex } '
         )
         document.head.appendChild(ddgptStyle) // append style to <head>
 
@@ -429,6 +492,11 @@
         var ddgptFooter = document.createElement('div')
         ddgptFooter.className = 'feedback-prompt chatgpt-feedback'
         ddgptFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
+
+        var phDiv = document.createElement('div')
+        phDiv.className = 'chatgpt-container ph'
+        phDiv.innerHTML = `<div style="width: 65px"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAsdQTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgoKPDw8SUlJREREFRUVAAAAAAAAgoKCzMzMra2tAAAAo6Ojrq6uRUVFkZGRAwMDAAAApKSkpaWlHx8fgYGBBAQEIyMjGBgYERERbGxsLi4uAgICDw8PBwcHFxcXCQkJDQ0NIiIiGRkZDw8PMzMzdXV1UFBQAQEBICAgT09PNDQ0Dg4Oa2trNzc3BQUFDAwMCwsLCwsLISEhWFhYQkJCTU1NcnJyb0dAbRwOEBAQXV1dwMDA8vLy////9puJ7zgW9pyK///+XFxcCwsLbm5uy8vL9pyLe3t7/v//9Z6M9Z6Ntra2bW1th4eH+NPL7kkq+NPKnJyci4uLxsbGp6enxMTEzs7OzMnIAAAAkpKSWVlZAgUGE0ZSEDZAAgEBE0VTAgQGCwsLAAAAaGhopqammpqaVVVVDiszMc/0McTnAgIEAgIDMMboDSwzCwsLAAAAAAAAf39/Z2dnBgYGCAgId3d3DjVAMdP5MtD1AQMDAQMEMtD3DjZADg4OAAAAAAAAAAAANTU1DCcuMczvLr7fL7/hDCcvBQUFExMTAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCgowsLCAwMFDS42CyIoAQECCyEoAwMEw8PDKSkp2dnZAAAAAAAAhISEvr6+wcHBDw8PAAAAAAAAFBQUlJSUv7+/srKyYGBggICAvLy8ZmZmGxsbAAAAQ0NDqampR0dHQEBAPz8/QUFBRkZGMTExAAAAu7u7FhYWJycnJiYmDw8PvLy8GhoaMDAwdHR0oaGhLy8vBQUFIiIiOjo6n5+fGBgYX19fAAAAAAAAAwMDExMTLS0tm5ubyMjIAgICHR0dZmZmnJycGhoaCgoKWlpaMTExmpqaOzs7Hh4eDQ0NCAgIOjo6FzXm1AAAAO10Uk5TACZHTEozAiWz/9BDFcPnMHL//////6e3////7P//////9/////////////////j///////3//////////////////v/////////7////////////+f//////////////////////////vP//////////9YH//////////////8ou6////////////////2oBP9j////////+nwUIUnd9sPz/////////////AQrH////uDX6//////////+MS/////////87Tf/////ZAf//////+1D//5YDPszN6v////6ZBgNv5P//Axtz0vobfpAcgQAAAolJREFUeJxjYBihgJGJmSjAwsoGUs7OwUk04OJmY+DhJV49JycfP4MAJ6egkDBRQESUk1OMQZyTU0KSSCDFySnNAHSRjKwcUUBeUoFTEaRBSVmFKKAqqTaqYVQDHTSoa6hpqqMKaWnr6Orh1KBvoK1raIQsYmSsq21gglODgqmZuYUlipCFlZm1Ak4NNhq2dvbqog6ODmDg6CCqbm9na+yEU4OzhYurjo6Km5a7h6enh7uWm4qCjqsLpxduDZwu3grePpK+fv4BAYFBvpI+3grBLpwh+DSEaoVJQjSEAzVIhmmFEtAQ4QMsKXwjowICoiOBGiR9ImAaYmIxgQunSxyoaPH1i09ISPQDaZCMg2nAVgYlcbokS6akKqelp2dkpKenKaemSCaDNGRycmbh1JCdk5tnASoi8/MKCl1AGooYijk5NYJL4KC0DMootyhPljStqKyqBmmoqa2sM5VMLuesZ2hoRCltm5qhjJZWjTZJ0/aOzi4Qr7uno9dUsk3DoI+hf8JErBo4HewnSZpOnjJVB8TRmTZluqnkpBkzZwEriNlz5s4Dg/kLkDVYtC5c5L14ydJlFiCwfMkK75Wr6lcjV0Rr1nJyqq0LtYEBXVGJ9Rt84GDDegnRjSg116bNnFu2bti2HQZ2tDbv3IUItl07d7fuQdGwl5NzH3LA7rc4YLbTJ+zgISA4LOmz0+yIxVEUDcc4OQ8eRwarToSaKYWdPAUEq8KUzGJFT59B19CqjwzO2p87fwFm34XzFy9dZkDXgAosbHSuXIVpuHpF59p1VA03bqKDW7d17ty9B1J+7+6d+w8eEq7yHz1+onDuaWjo02cKTx4/J6weCF68fPWak/P1q5dvoAIAEmF8ewzZ6fwAAAAASUVORK5CYII="></div><div style="margin: 6px 0 0 10px ; line-height: initial"><strong>ChatGPT Widescreen Mode</strong> is featured on Product Hunt today!! 😍 <a href="https://www.producthunt.com/posts/chatgpt-widescreen-mode" target="_blank">https://www.producthunt.com/posts...</a></div>`
+        document.getElementsByClassName('results--sidebar')[0].prepend(phDiv)
 
         loadDDGPT()
 
