@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.4.18.5
+// @version             2023.4.18.6
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -28,7 +28,7 @@
 // @compatible          qq
 // @match               https://duckduckgo.com/?*
 // @include             https://auth0.openai.com
-// @connect             github.ddgpt.com
+// @connect             raw.githubusercontent.com
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
 // @grant               GM_getValue
@@ -380,7 +380,7 @@
     function ddgptShow(answer) {
         ddgptDiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank">DuckDuckGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="ddgpt-reply-box" rows="1" placeholder="Send reply..."></textarea></div></form></section>'
         ddgptDiv.querySelector('pre').textContent = answer
-        
+
         // Initialize variables for listeners
         var form = ddgptDiv.querySelector('form')
         var replyBox = document.getElementById('ddgpt-reply-box')
@@ -403,7 +403,7 @@
             if (!config.proxyAPIenabled) {
                 messages.push({ role: 'assistant', id: uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
                 messages.push({ role: 'user', id: uuidv4(), content: { content_type: 'text', parts: [replyBox.value] } })
-            } else { // send whole convo
+            } else {
                 messages.push({ role: 'assistant', content: prevReplyTrimmed })
                 messages.push({ role: 'user', content: replyBox.value })
             }
@@ -411,7 +411,7 @@
 
             // Remove listeners since they're re-added
             replyBox.removeEventListener('input', autosizeBox)
-            replyBox.removeEventListener('keydown', enterToSubmit)            
+            replyBox.removeEventListener('keydown', enterToSubmit)
 
             // Show loading status
             var replySection = ddgptDiv.querySelector('section')
@@ -474,7 +474,7 @@
             + '.chatgpt-feedback { margin: 2px 0 25px }'
             + '.balloon-tip { content: "" ; position: relative ; top: 5px ; right: 16.5em ; border: 7px solid transparent ;'
                 + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-bottom-color: #eaeaea ; border-top: 0 }'
-            + '.continue-chat > textarea { border: none ; background: #eeeeee70 ; height: 1.55rem ; width: 97.6% ; margin: 3px 0 5px 0 ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px } '
+            + '.continue-chat > textarea { border: none ; background: #eeeeee70 ; height: 1.55rem ; width: 97.6% ; margin: 3px 0 15px 0 ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px } '
             + '.continue-chat > button { position: absolute ; right: 182px ; border: none ; background: none ; margin: 13px 4px 0 0 ; color: lightgrey ; cursor: pointer } '
             + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
             + '.kudo-ai a { color: #aaa ; text-decoration: none } '
@@ -493,7 +493,7 @@
 
         // Activate promo campaign if active
         GM.xmlHttpRequest({
-            method: 'GET', url: 'https://github.ddgpt.com/raw/main/ads/live/creative.html',
+            method: 'GET', url: 'https://raw.githubusercontent.com/kudoai/duckduckgpt/main/ads/live/creative.html',
             onload: function(response) {
                 if (response.status == 200) {
 
@@ -509,7 +509,8 @@
                     pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
 
                     // Inject in sidebar
-                    document.getElementsByClassName('results--sidebar')[0].prepend(pcDiv, pcFooter)
+                    ddgptFooter.insertAdjacentElement('afterend', pcDiv)
+                    pcDiv.insertAdjacentElement('afterend', pcFooter)
         }}})
 
         loadDDGPT()
