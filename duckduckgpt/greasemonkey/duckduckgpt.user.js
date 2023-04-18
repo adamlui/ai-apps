@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.4.18.1
+// @version             2023.4.18.2
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -28,6 +28,7 @@
 // @compatible          qq
 // @match               https://duckduckgo.com/?*
 // @include             https://auth0.openai.com
+// @connect             raw.githubusercontent.com
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
 // @grant               GM_getValue
@@ -43,7 +44,7 @@
 // @supportURL          https://github.duckduckgpt.com/issues
 // ==/UserScript==
 
-// NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgptjs.org (c) 2023 Adam Lui & 冯不游 under the MIT license.
+// NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui & 冯不游 under the MIT license.
 
 (function() {
 
@@ -462,44 +463,58 @@
         // Stylize response container + reply box + footer
         var ddgptStyle = document.createElement('style')
         ddgptStyle.innerText = (
-            '.chatgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 16px 26px ; flex-basis: 0 ;'
+            '.ddgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 16px 26px ; flex-basis: 0 ;'
                 + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) }'
-            + '.chatgpt-container p { margin: 0 } '
-            + '.chatgpt-container .prefix { font-size: 1.5rem ; font-weight: 700 }'
-            + '.chatgpt-container .prefix > a { color: inherit ; text-decoration: none }'
-            + '.chatgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
-            + '.chatgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
-            + '.chatgpt-container pre { font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 12px 0 0 0 ; line-height: 21px ; padding: 1.25em ; border-radius: 10px }'
+            + '.ddgpt-container p { margin: 0 } '
+            + '.ddgpt-container .prefix { font-size: 1.5rem ; font-weight: 700 }'
+            + '.ddgpt-container .prefix > a { color: inherit ; text-decoration: none }'
+            + '.ddgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
+            + '.ddgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
+            + '.ddgpt-container pre { font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 12px 0 0 0 ; line-height: 21px ; padding: 1.25em ; border-radius: 10px }'
             + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-            + '.chatgpt-container section.loading { padding-left: 5px } ' /* left-pad loading status when sending replies */
+            + '.ddgpt-container section.loading { padding-left: 5px } ' /* left-pad loading status when sending replies */
             + '.chatgpt-feedback { margin: 2px 0 25px }'
             + '.balloon-tip { content: "" ; position: relative ; top: 5px ; right: 16.5em ; border: 7px solid transparent ;'
                 + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-bottom-color: #eaeaea ; border-top: 0 }'
             + '.continue-chat > textarea { border: none ; background: #eeeeee70 ; height: 1.55rem ; width: 97.6% ; margin: 3px 0 5px 0 ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px } '
             + '.continue-chat > button { position: absolute ; right: 182px ; border: none ; background: none ; margin: 13px 4px 0 0 ; color: lightgrey ; cursor: pointer } '
-            + '.kudo-ai { position: relative ; left: 6px ; color: #666 } '
+            + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
             + '.kudo-ai a { color: #666 ; text-decoration: none } '
             + '.kudo-ai a:hover { color: black ; text-decoration: none } '
-            + '.ph { margin-bottom: 48px ; display: flex } '
         )
         document.head.appendChild(ddgptStyle) // append style to <head>
 
         // Create DDGPT container & add class
         var ddgptDiv = document.createElement('div') // create container div
-        ddgptDiv.className = 'chatgpt-container'
+        ddgptDiv.className = 'ddgpt-container'
 
         // Create feedback footer & add classes/HTML
         var ddgptFooter = document.createElement('div')
         ddgptFooter.className = 'feedback-prompt chatgpt-feedback'
         ddgptFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
 
-        var phDiv = document.createElement('div')
-        phDiv.className = 'chatgpt-container ph'
-        phDiv.innerHTML = `<div style="width: 65px"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAsdQTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgoKPDw8SUlJREREFRUVAAAAAAAAgoKCzMzMra2tAAAAo6Ojrq6uRUVFkZGRAwMDAAAApKSkpaWlHx8fgYGBBAQEIyMjGBgYERERbGxsLi4uAgICDw8PBwcHFxcXCQkJDQ0NIiIiGRkZDw8PMzMzdXV1UFBQAQEBICAgT09PNDQ0Dg4Oa2trNzc3BQUFDAwMCwsLCwsLISEhWFhYQkJCTU1NcnJyb0dAbRwOEBAQXV1dwMDA8vLy////9puJ7zgW9pyK///+XFxcCwsLbm5uy8vL9pyLe3t7/v//9Z6M9Z6Ntra2bW1th4eH+NPL7kkq+NPKnJyci4uLxsbGp6enxMTEzs7OzMnIAAAAkpKSWVlZAgUGE0ZSEDZAAgEBE0VTAgQGCwsLAAAAaGhopqammpqaVVVVDiszMc/0McTnAgIEAgIDMMboDSwzCwsLAAAAAAAAf39/Z2dnBgYGCAgId3d3DjVAMdP5MtD1AQMDAQMEMtD3DjZADg4OAAAAAAAAAAAANTU1DCcuMczvLr7fL7/hDCcvBQUFExMTAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCgowsLCAwMFDS42CyIoAQECCyEoAwMEw8PDKSkp2dnZAAAAAAAAhISEvr6+wcHBDw8PAAAAAAAAFBQUlJSUv7+/srKyYGBggICAvLy8ZmZmGxsbAAAAQ0NDqampR0dHQEBAPz8/QUFBRkZGMTExAAAAu7u7FhYWJycnJiYmDw8PvLy8GhoaMDAwdHR0oaGhLy8vBQUFIiIiOjo6n5+fGBgYX19fAAAAAAAAAwMDExMTLS0tm5ubyMjIAgICHR0dZmZmnJycGhoaCgoKWlpaMTExmpqaOzs7Hh4eDQ0NCAgIOjo6FzXm1AAAAO10Uk5TACZHTEozAiWz/9BDFcPnMHL//////6e3////7P//////9/////////////////j///////3//////////////////v/////////7////////////+f//////////////////////////vP//////////9YH//////////////8ou6////////////////2oBP9j////////+nwUIUnd9sPz/////////////AQrH////uDX6//////////+MS/////////87Tf/////ZAf//////+1D//5YDPszN6v////6ZBgNv5P//Axtz0vobfpAcgQAAAolJREFUeJxjYBihgJGJmSjAwsoGUs7OwUk04OJmY+DhJV49JycfP4MAJ6egkDBRQESUk1OMQZyTU0KSSCDFySnNAHSRjKwcUUBeUoFTEaRBSVmFKKAqqTaqYVQDHTSoa6hpqqMKaWnr6Orh1KBvoK1raIQsYmSsq21gglODgqmZuYUlipCFlZm1Ak4NNhq2dvbqog6ODmDg6CCqbm9na+yEU4OzhYurjo6Km5a7h6enh7uWm4qCjqsLpxduDZwu3grePpK+fv4BAYFBvpI+3grBLpwh+DSEaoVJQjSEAzVIhmmFEtAQ4QMsKXwjowICoiOBGiR9ImAaYmIxgQunSxyoaPH1i09ISPQDaZCMg2nAVgYlcbokS6akKqelp2dkpKenKaemSCaDNGRycmbh1JCdk5tnASoi8/MKCl1AGooYijk5NYJL4KC0DMootyhPljStqKyqBmmoqa2sM5VMLuesZ2hoRCltm5qhjJZWjTZJ0/aOzi4Qr7uno9dUsk3DoI+hf8JErBo4HewnSZpOnjJVB8TRmTZluqnkpBkzZwEriNlz5s4Dg/kLkDVYtC5c5L14ydJlFiCwfMkK75Wr6lcjV0Rr1nJyqq0LtYEBXVGJ9Rt84GDDegnRjSg116bNnFu2bti2HQZ2tDbv3IUItl07d7fuQdGwl5NzH3LA7rc4YLbTJ+zgISA4LOmz0+yIxVEUDcc4OQ8eRwarToSaKYWdPAUEq8KUzGJFT59B19CqjwzO2p87fwFm34XzFy9dZkDXgAosbHSuXIVpuHpF59p1VA03bqKDW7d17ty9B1J+7+6d+w8eEq7yHz1+onDuaWjo02cKTx4/J6weCF68fPWak/P1q5dvoAIAEmF8ewzZ6fwAAAAASUVORK5CYII="></div><div style="margin: 6px 0 0 10px ; line-height: initial"><strong>ChatGPT Widescreen Mode</strong> is featured on Product Hunt today!! 😍 <a href="https://www.producthunt.com/posts/chatgpt-widescreen-mode" target="_blank">https://www.producthunt.com/posts...</a></div>`
-        document.getElementsByClassName('results--sidebar')[0].prepend(phDiv)
+        // Activate promo campaign if active
+        GM.xmlHttpRequest({
+            method: 'GET', url: 'https://raw.githubusercontent.com/kudoai/duckduckgpt/main/ads/live/creative.html',
+            onload: function(response) {
+                if (response.status == 200) {
+
+                    // Create campaign div & add class/style/HTML
+                    var pcDiv = document.createElement('div')
+                    pcDiv.className = 'ddgpt-container'
+                    pcDiv.style.display = 'flex'
+                    pcDiv.innerHTML = response.responseText
+
+                    // Create feedback footer & add classes/HTML
+                    var pcFooter = document.createElement('div')
+                    pcFooter.className = 'feedback-prompt chatgpt-feedback'
+                    pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
+
+                    // Inject in sidebar
+                    document.getElementsByClassName('results--sidebar')[0].prepend(pcDiv, pcFooter)
+        }}})
 
         loadDDGPT()
-
     }
 
 })()
