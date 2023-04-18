@@ -42,8 +42,12 @@
 
 *Pro tip: For easier access to extension toggles, (1) click <img height=12 width=12 src="https://user-images.githubusercontent.com/10906554/232301021-9fd8a67a-8911-4dd1-8455-2eb3757428b9.png"> in the browser's toolbar, (2) then <img height=12 width=12 src="https://user-images.githubusercontent.com/10906554/232302439-45d547e5-f96e-464d-ab43-da9c028caf10.png"> next to extension name.*
 
+<div align="center">
+
 ![image](https://i.imgur.com/vprjKMs.png)
 ![image](https://i.imgur.com/h1iD69S.png)
+
+</div>
 
 ### <img style="margin: 0 3px 0 0" height=17 src="https://i.imgur.com/huwclJK.png"> Greasemonkey userscript:
 
