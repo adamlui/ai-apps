@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.4.18.3
+// @version             2023.4.18.4
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -28,7 +28,7 @@
 // @compatible          qq
 // @match               https://duckduckgo.com/?*
 // @include             https://auth0.openai.com
-// @connect             raw.githubusercontent.com
+// @connect             github.ddgpt.com
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
 // @grant               GM_getValue
@@ -495,7 +495,7 @@
 
         // Activate promo campaign if active
         GM.xmlHttpRequest({
-            method: 'GET', url: 'https://raw.githubusercontent.com/kudoai/duckduckgpt/main/ads/live/creative.html',
+            method: 'GET', url: 'https://github.ddgpt.com/raw/main/ads/live/creative.html',
             onload: function(response) {
                 if (response.status == 200) {
 
