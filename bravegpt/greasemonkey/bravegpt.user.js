@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.14
+// @version             2023.04.18
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -28,6 +28,7 @@
 // @compatible          qq
 // @match               https://search.brave.com/search*
 // @include             https://auth0.openai.com
+// @connect             raw.githubusercontent.com
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
 // @grant               GM_getValue
@@ -43,7 +44,7 @@
 // @supportURL          https://github.bravegpt.com/issues
 // ==/UserScript==
 
-// NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgptjs.org (c) 2023 Adam Lui & 冯不游 under the MIT license.
+// NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui & 冯不游 under the MIT license.
 
 (function() {
 
@@ -250,16 +251,16 @@
 
     // Define ANSWER functions
 
-    async function getShowAnswer(question, callback) {
+    async function getShowReply(question, callback) {
 
         // Initialize attempt properties
-        if (!getShowAnswer.triedEndpoints) getShowAnswer.triedEndpoints = []
-        if (!getShowAnswer.attemptCnt) getShowAnswer.attemptCnt = 0
+        if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []
+        if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 0
 
         // Pick API
         if (config.proxyAPIenabled) { // randomize proxy API
             var untriedEndpoints = proxyEndpointMap.filter(function(entry) {
-                return !getShowAnswer.triedEndpoints?.includes(entry[0]) })
+                return !getShowReply.triedEndpoints?.includes(entry[0]) })
             var entry = untriedEndpoints[Math.floor(Math.random() * untriedEndpoints.length)]
             var endpoint = entry[0], accessKey = entry[1], model = entry[2]
         } else { // use OpenAI API
@@ -275,19 +276,16 @@
         var data = {}
         if (!config.proxyAPIenabled) {
             data = JSON.stringify({
-                action: 'next',
-                messages: [{
-                    role: 'user', id: uuidv4(),
-                    content: { content_type: 'text', parts: [question] }
-                }],
+                action: 'next', messages: messages,
                 model: model, parent_message_id: uuidv4(), max_tokens: 4000
             })
         } else {
             data = JSON.stringify({
-                messages: [{ role: 'user', content: question }],
+                messages: messages,
                 model: model, max_tokens: 4000
             })
         }
+
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
             headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
@@ -299,7 +297,7 @@
                 ddgptConsole.error(error)
                 if (!config.proxyAPIenabled) ddgptAlert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
-                    if (getShowAnswer.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
+                    if (getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
                     else ddgptAlert('suggestOpenAI')
                 }
             }
@@ -312,9 +310,9 @@
 
         function retryDiffHost() {
             braveGPTconsole.error(`Error calling ${ endpoint }. Trying another endpoint...`)
-            getShowAnswer.triedEndpoints.push(endpoint) // store current proxy to not retry
-            getShowAnswer.attemptCnt++
-            getShowAnswer(question, callback)
+            getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
+            getShowReply.attemptCnt++
+            getShowReply(question, callback)
         }
 
         function onLoadStart() { // process streams for unproxied TM users
@@ -344,7 +342,7 @@
                 if (event.status !== 200) {
                     braveGPTconsole.error('Event status: ' + event.status)
                     braveGPTconsole.info('Event response: ' + event.responseText)
-                    if (config.proxyAPIenabled && getShowAnswer.attemptCnt < 1 && proxyEndpointMap.length > 1) {
+                    if (config.proxyAPIenabled && getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) {
                         retryDiffHost() }
                     else if (event.status === 401 && !config.proxyAPIenabled) {
                         GM_deleteValue('accessToken') ; braveGPTalert('login') }
@@ -367,7 +365,7 @@
                     if (event.responseText) {
                         try { // to parse txt response from proxy endpoints
                             var answer = JSON.parse(event.responseText).choices[0].message.content
-                            braveGPTshow(answer) ; getShowAnswer.triedEndpoints = [] ; getShowAnswer.attemptCnt = 0
+                            braveGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (error) {
                             braveGPTalert('parseFailed')
                             braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + error)
@@ -377,22 +375,88 @@
     }
 
     function braveGPTshow(answer) {
-        braveGPTdiv.innerHTML = '<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank">BraveGPT</a></span><span class="balloon-tip"></span><pre></pre>'
+        braveGPTdiv.innerHTML = '<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank">BraveGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai">KudoAI</a></span><span class="balloon-tip"></span><pre></pre><section style="margin-bottom: -47px"><form><div class="continue-chat"><textarea id="bravegpt-reply-box" rows="1" placeholder="Send reply..."></textarea><button title="Send reply"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>'
         braveGPTdiv.querySelector('pre').textContent = answer
+        fillBraveGPTfooter() ; braveGPTfooter.style.height = "inherit" // (re-)init (after loading replies)
         braveGPTdiv.appendChild(braveGPTfooter) // append feedback link
+
+        // Initialize variables for listeners
+        var form = braveGPTdiv.querySelector('form')
+        var replyBox = document.getElementById('bravegpt-reply-box')
+        var { paddingTop, paddingBottom } = getComputedStyle(replyBox)
+        var vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
+        var prevLength = replyBox.value.length
+
+        // Add listeners
+        form.addEventListener('keydown', enterToSubmit)
+        form.addEventListener('submit', handleSubmit )
+        replyBox.addEventListener('input', autosizeBox)
+
+        function enterToSubmit(event) {
+            if (event.key === 'Enter' && event.target.nodeName === 'TEXTAREA') handleSubmit(event)
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault()
+            if (messages.length > 2) messages.splice(0, 2) // keep token usage maintainable
+            var prevReplyTrimmed = braveGPTdiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length)
+            if (!config.proxyAPIenabled) {
+                messages.push({ role: 'assistant', id: uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
+                messages.push({ role: 'user', id: uuidv4(), content: { content_type: 'text', parts: [replyBox.value] } })
+            } else {
+                messages.push({ role: 'assistant', content: prevReplyTrimmed })
+                messages.push({ role: 'user', content: replyBox.value })
+            }
+            getShowReply(messages)
+
+            // Remove listeners since they're re-added
+            replyBox.removeEventListener('input', autosizeBox)
+            form.removeEventListener('submit', handleSubmit)
+            replyBox.removeEventListener('keydown', enterToSubmit)
+
+            // Show loading status
+            var replySection = braveGPTdiv.querySelector('section')
+            replySection.classList.add('loading'), replySection.innerHTML = ''
+            braveGPTfooter.innerHTML = '', braveGPTfooter.style.height = '51px'
+        }
+
+        function autosizeBox() {
+            var newLength = replyBox.value.length
+            if (newLength < prevLength) { // if deleting txt
+                replyBox.style.height = 'auto' // ...auto-fit height
+                if (parseInt(getComputedStyle(replyBox).height) < 55) { // if down to one line
+                    replyBox.style.height = '2.15rem' } // ...reset to original height
+            }
+            replyBox.style.height = replyBox.scrollHeight + 'px'
+            prevLength = newLength
+        }
+    }
+
+    function fillBraveGPTfooter() {
+        braveGPTfooter.innerHTML = `<a class="feedback svelte-8js1iq" target="_blank" href="https://github.bravegpt.com/discussions/new/choose"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path fill-rule="evenodd" d="M.577 6.23a.577.577 0 1 1 0-1.153H1.5a.577.577 0 0 1 0 1.154H.577ZM2.83 8.939a.576.576 0 0 1 0 .816l-1.385 1.385a.573.573 0 0 1-.816 0 .576.576 0 0 1 0-.816l1.385-1.385a.577.577 0 0 1 .816 0ZM.63.985a.576.576 0 1 1 .815-.816L2.83 1.553a.576.576 0 1 1-.816.816L.63.985ZM15 5.654a.577.577 0 0 1-.577.577H13.5a.577.577 0 0 1 0-1.154h.923c.319 0 .577.258.577.577Zm-.631 4.669a.576.576 0 1 1-.816.816l-1.385-1.385a.576.576 0 1 1 .816-.816l1.385 1.385Zm-2.2-7.954a.576.576 0 0 1 0-.816L13.553.17a.577.577 0 0 1 .816.816l-1.385 1.384a.575.575 0 0 1-.816 0ZM9.3 9.09a.579.579 0 0 0-.045.038c-.45.417-.486 1.23-.486 1.47v.238c-1.045.45-2.053.177-2.537-.013v-.226c0-.24-.036-1.053-.487-1.469a.687.687 0 0 0-.044-.037c-.81-.609-1.777-1.667-1.777-3.253 0-2.073 1.604-3.76 3.576-3.76s3.577 1.687 3.577 3.76c0 1.586-.967 2.644-1.777 3.252Zm-1.8 4.757c-.995 0-1.223-.623-1.27-.814v-.997a4.83 4.83 0 0 0 1.343.197c.374 0 .78-.057 1.195-.18v.978c-.05.202-.282.816-1.269.816ZM7.5.923c-2.609 0-4.73 2.204-4.73 4.914 0 1.616.757 3.047 2.192 4.141.058.094.114.39.115.618v2.494c0 .03.003.06.007.09.1.63.732 1.82 2.416 1.82s2.316-1.19 2.416-1.82a.674.674 0 0 0 .006-.09v-2.494c0-.206.054-.525.11-.613 1.438-1.096 2.198-2.528 2.198-4.146 0-2.71-2.121-4.914-4.73-4.914Z" clip-rule="evenodd"></path></svg> Feedback</a>`
     }
 
     async function loadBraveGPT() {
         braveGPTdiv.innerHTML = '<p class="loading"></p>' // give BraveGPT container spinning loader
         var siderbarContainer = document.querySelector('#side-right')
         siderbarContainer.prepend(braveGPTdiv) // inject BraveGPT container
-        getShowAnswer(new URL(location.href).searchParams.get('q')) // get/show answer
+        var query = new URL(location.href).searchParams.get('q')
+        if (!config.proxyAPIenabled) {
+            messages.push({
+                role: 'user', id: uuidv4(),
+                content: { content_type: 'text', parts: [query] }
+            })
+        } else { messages.push({ role: 'user', content: query }) }
+        getShowReply(messages)
     }
 
-    // Run main routine
+    // Run MAIN routine
+
+    // Initialize script
     var config = {}, configKeyPrefix = 'braveGPT_'
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
     registerMenu() // create browser toolbar menu
+    var messages = []
 
     // Load BraveGPT if necessary
     if (( !config.prefixEnabled && !config.suffixEnabled) || // prefix/suffix not required
@@ -402,52 +466,69 @@
         // Stylize ChatGPT container + children
         var braveGPTstyle = document.createElement('style')
         braveGPTstyle.innerText = `
-            .chatgpt-container { word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px }
-            .chatgpt-container p { margin: 0 }
-            .chatgpt-container .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }
-            .chatgpt-container .prefix { font-size: 20px ; font-family: var(--brand-font) }
-            .chatgpt-container .prefix > a { color: inherit }
-            .chatgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }
-            .chatgpt-container pre { /* ChatGPT output box */
+            .bravegpt-container { word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px }
+            .bravegpt-container p { margin: 0 }
+            .bravegpt-container .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }
+            .bravegpt-container .prefix { font-size: 20px ; font-family: var(--brand-font) }
+            .bravegpt-container .prefix > a { color: inherit }
+            .bravegpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }
+            .bravegpt-container pre { /* ChatGPT output box */
                 /* text spacing */ white-space: pre-wrap ; line-height: 21px ;
                 font-family: Consolas, Menlo, Monaco, monospace ;
                 /* box spacing */ padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;
                 background-color: #eaeaea
             }
-            .chatgpt-container .footer {
-                margin: 20px 0 -32px 0 ; padding-top: 9px !important ; font-size: var(--text-sm-2)
-                justify-content: right !important
+            .bravegpt-container .footer {
+                margin: 7px 0 -26px 0 ; padding: 14px -1 !important ; font-size: var(--text-sm-2)
+                justify-content: right !important ; border-top: none !important
             }
-            .chatgpt-container .feedback { font-family: var(--brand-font) ; color: var(--search-text-06);
-                font-size: .65rem ; letter-spacing: .02em ; line-height: 1; position: relative ; right: -22px }
-            .chatgpt-container .feedback .icon { fill: currentColor ; color: currentColor ; --size:15px ; position: relative ; top: 3px ; right: 3px }
-            .chatgpt-container .footer a:hover { color: black }
+            .bravegpt-container .feedback { font-family: var(--brand-font) ; color: var(--search-text-06);
+                font-size: .65rem ; letter-spacing: .02em ; line-height: 1; position: relative ; left: 222px }
+            .bravegpt-container .feedback .icon { fill: currentColor ; color: currentColor ; --size:15px ; position: relative ; top: 3px ; right: 3px }
+            .bravegpt-container .footer a:hover { color: black }
             @keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }} `
-            + '.balloon-tip { content: "" ; position: relative ; top: 0.23em ; right: 6.32rem ; border: 7px solid transparent ;'
+            + '.balloon-tip { content: "" ; position: relative ; top: 0.23em ; right: 9.76rem ; border: 7px solid transparent ;'
                 + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-bottom-color: #eaeaea ; border-top: 0 } '
             + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem } '
             + '.chatgpt-js > a { color: inherit ; top: .054rem } '
             + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px } '
+            + '.continue-chat > textarea { border: none ; background: #eeeeee70 ; height: 2.15rem ; width: 100% ; margin: -6px 0 5px 0 ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px } '
+            + '.continue-chat > button { position: relative ; bottom: 54px; left: 299px; border: none ; background: none ; margin: 13px 4px 0 0 ; color: lightgrey ; cursor: pointer } '
+            + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
+            + '.kudo-ai a { color: #aaa ; text-decoration: none } '
+            + '.kudo-ai a:hover { color: black ; text-decoration: none } '
         document.head.appendChild(braveGPTstyle) // append style to <head>
 
         // Create BraveGPT container & add id/classes
         var braveGPTdiv = document.createElement('div') // create container div
         braveGPTdiv.setAttribute('id', 'infobox')
         braveGPTdiv.setAttribute( // assign Brave's .snippet + custom class
-            'class', 'snippet chatgpt-container')
+            'class', 'snippet bravegpt-container')
 
-        // Create feedback footer & add class/HTML
+        // Create feedback footer & add class
         var braveGPTfooter = document.createElement('div') // create footer div
         braveGPTfooter.className = 'footer'
-        braveGPTfooter.innerHTML = `<span class="chatgpt-js"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 60.000000 64.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" fill=currentColor stroke="none"><path d="M178 463 c-92 -92 -168 -174 -168 -183 0 -34 22 -40 137 -40 62 0
-            113 -3 113 -7 0 -5 -14 -50 -31 -101 -25 -74 -28 -96 -19 -107 7 -8 20 -15 29
-            -15 9 0 93 77 186 170 207 207 206 204 31 208 -87 2 -116 6 -116 16 0 7 11 46
-            25 86 14 40 25 83 25 95 0 22 -17 45 -34 45 -5 0 -85 -75 -178 -167z m137 7
-            c-19 -57 -35 -105 -35 -107 0 -2 58 -3 130 -3 72 0 130 -3 130 -8 0 -4 -65
-            -72 -145 -152 -80 -80 -145 -140 -145 -134 0 5 15 56 34 112 l35 102 -137 0
-            -137 0 150 150 c82 82 150 148 152 146 2 -1 -13 -49 -32 -106z"/></g></svg> Powered by <a href="https://kudoai.com" target="_blank">KudoAI</a></span><a class="feedback svelte-8js1iq" target="_blank" href="https://github.bravegpt.com/discussions/new/choose"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><path fill-rule="evenodd" d="M.577 6.23a.577.577 0 1 1 0-1.153H1.5a.577.577 0 0 1 0 1.154H.577ZM2.83 8.939a.576.576 0 0 1 0 .816l-1.385 1.385a.573.573 0 0 1-.816 0 .576.576 0 0 1 0-.816l1.385-1.385a.577.577 0 0 1 .816 0ZM.63.985a.576.576 0 1 1 .815-.816L2.83 1.553a.576.576 0 1 1-.816.816L.63.985ZM15 5.654a.577.577 0 0 1-.577.577H13.5a.577.577 0 0 1 0-1.154h.923c.319 0 .577.258.577.577Zm-.631 4.669a.576.576 0 1 1-.816.816l-1.385-1.385a.576.576 0 1 1 .816-.816l1.385 1.385Zm-2.2-7.954a.576.576 0 0 1 0-.816L13.553.17a.577.577 0 0 1 .816.816l-1.385 1.384a.575.575 0 0 1-.816 0ZM9.3 9.09a.579.579 0 0 0-.045.038c-.45.417-.486 1.23-.486 1.47v.238c-1.045.45-2.053.177-2.537-.013v-.226c0-.24-.036-1.053-.487-1.469a.687.687 0 0 0-.044-.037c-.81-.609-1.777-1.667-1.777-3.253 0-2.073 1.604-3.76 3.576-3.76s3.577 1.687 3.577 3.76c0 1.586-.967 2.644-1.777 3.252Zm-1.8 4.757c-.995 0-1.223-.623-1.27-.814v-.997a4.83 4.83 0 0 0 1.343.197c.374 0 .78-.057 1.195-.18v.978c-.05.202-.282.816-1.269.816ZM7.5.923c-2.609 0-4.73 2.204-4.73 4.914 0 1.616.757 3.047 2.192 4.141.058.094.114.39.115.618v2.494c0 .03.003.06.007.09.1.63.732 1.82 2.416 1.82s2.316-1.19 2.416-1.82a.674.674 0 0 0 .006-.09v-2.494c0-.206.054-.525.11-.613 1.438-1.096 2.198-2.528 2.198-4.146 0-2.71-2.121-4.914-4.73-4.914Z" clip-rule="evenodd"></path></svg> Feedback</a>`
+
+        // Activate promo campaign if active
+        GM.xmlHttpRequest({
+            method: 'GET', url: 'https://raw.githubusercontent.com/kudoai/bravegpt/main/ads/live/creative.html',
+            onload: function(response) {
+                if (response.status == 200) {
+
+                    // Create campaign div & add class/style/HTML
+                    var pcDiv = document.createElement('div')
+                    pcDiv.setAttribute( // assign Brave's .snippet + custom class
+                        'class', 'snippet bravegpt-container')
+                    pcDiv.style.display = 'flex'
+                    pcDiv.style.padding = '17px 19px 21px 23px'
+                    pcDiv.innerHTML = response.responseText
+
+                    // Inject in sidebar
+                    braveGPTdiv.insertAdjacentElement('afterend', pcDiv)
+        }}})
 
         loadBraveGPT()
+
     }
 
 })()
