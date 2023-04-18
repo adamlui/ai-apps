@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.4.18.4
+// @version             2023.4.18.5
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -380,7 +380,8 @@
     function ddgptShow(answer) {
         ddgptDiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank">DuckDuckGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="ddgpt-reply-box" rows="1" placeholder="Send reply..."></textarea></div></form></section>'
         ddgptDiv.querySelector('pre').textContent = answer
-
+        
+        // Initialize variables for listeners
         var form = ddgptDiv.querySelector('form')
         var replyBox = document.getElementById('ddgpt-reply-box')
         var { paddingTop, paddingBottom } = getComputedStyle(replyBox)
@@ -389,7 +390,6 @@
 
         // Add listeners
         form.addEventListener('keydown', enterToSubmit)
-        form.addEventListener('submit', handleSubmit )
         replyBox.addEventListener('input', autosizeBox)
 
         function enterToSubmit(event) {
@@ -411,11 +411,9 @@
 
             // Remove listeners since they're re-added
             replyBox.removeEventListener('input', autosizeBox)
-            replyBox.removeEventListener('keydown', enterToSubmit)
-            form.removeEventListener('submit', handleSubmit)
+            replyBox.removeEventListener('keydown', enterToSubmit)            
 
-            replyBox.value = ''
-
+            // Show loading status
             var replySection = ddgptDiv.querySelector('section')
             replySection.classList.add('loading')
             replySection.innerHTML = ddgptAlerts.waitingResponse
