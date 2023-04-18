@@ -44,8 +44,8 @@
 
 <div align="center">
 
-![image](https://i.imgur.com/vprjKMs.png)
-![image](https://i.imgur.com/h1iD69S.png)
+![image](https://i.imgur.com/nt3VDtc.png)
+![image](https://i.imgur.com/7r4NQIy.png)
 
 </div>
 
