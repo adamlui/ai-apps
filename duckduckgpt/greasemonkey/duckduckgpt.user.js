@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.4.18.6
+// @version             2023.4.19
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -474,7 +474,7 @@
             + '.chatgpt-feedback { margin: 2px 0 25px }'
             + '.balloon-tip { content: "" ; position: relative ; top: 5px ; right: 16.5em ; border: 7px solid transparent ;'
                 + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-bottom-color: #eaeaea ; border-top: 0 }'
-            + '.continue-chat > textarea { border: none ; background: #eeeeee70 ; height: 1.55rem ; width: 97.6% ; margin: 3px 0 15px 0 ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px } '
+            + '.continue-chat > textarea { border: none ; background: #eeeeee70 ; height: 1.55rem ; width: 97.6% ; margin: 3px 0 15px 0 ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px ; border-radius: 12px 13px 12px 0 } '
             + '.continue-chat > button { position: absolute ; right: 182px ; border: none ; background: none ; margin: 13px 4px 0 0 ; color: lightgrey ; cursor: pointer } '
             + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
             + '.kudo-ai a { color: #aaa ; text-decoration: none } '
