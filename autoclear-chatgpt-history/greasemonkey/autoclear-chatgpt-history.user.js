@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.04.04.1
+// @version             2023.04.19
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -41,6 +41,7 @@
 // @compatible          qq
 // @match               https://chat.openai.com/*
 // @run-at              document-end
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@25d3b75b45a09687caa47c741b2718187927fee0/dist/chatgpt-1.2.3.min.js
 // @grant               GM_setValue
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
@@ -51,30 +52,9 @@
 // @supportURL          https://github.com/adamlui/autoclear-chatgpt-history/issues
 // ==/UserScript==
 
-// NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgptjs.org (c) 2023 Adam Lui & 冯不游 under the MIT license.
+// NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
 (function () {
-
-    // Import chatgpt.js functions
-
-    var navLinkLabels = {
-        clearChats: 'Clear conversations',
-        confirmClearChats: 'Confirm clear conversations'
-    };
-
-    var chatgpt = {
-        clearChats: function() {
-            if (!this.clearChats.cnt) this.clearChats.cnt = 0;
-            for (var navLink of document.querySelectorAll('nav > a')) {
-                if (navLink.text.includes(navLinkLabels[(
-                        this.clearChats.cnt > 0 ? 'confirmC' : 'c') + 'learChats'])) {
-                    navLink.click(); this.clearChats.cnt++;
-                    if (this.clearChats.cnt < 2) { // repeat to confirm
-                        setTimeout(this.clearChats.bind(this), 500);
-                    } else { this.clearChats.cnt = 0; }
-                    return; // break navLink loop
-        }}}
-    };
 
     // Define script functions
 
