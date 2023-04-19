@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.19
+// @version             2023.04.19.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -384,7 +384,6 @@
         var form = braveGPTdiv.querySelector('form')
         var replyBox = document.getElementById('bravegpt-reply-box')
         var { paddingTop, paddingBottom } = getComputedStyle(replyBox)
-        var vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
         var prevLength = replyBox.value.length
 
         // Add listeners
