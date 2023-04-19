@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.19.1
+// @version             2023.04.19.2
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -486,7 +486,7 @@
             .bravegpt-container .feedback .icon { fill: currentColor ; color: currentColor ; --size:15px ; position: relative ; top: 3px ; right: 3px }
             .bravegpt-container .footer a:hover { color: black }
             @keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }} `
-            + '.balloon-tip { content: "" ; position: relative ; top: 0.23em ; right: 9.76rem ; border: 7px solid transparent ;'
+            + '.balloon-tip { content: "" ; position: relative ; top: 0.25em ; right: 9.64rem ; border: 7px solid transparent ;'
                 + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-bottom-color: #eaeaea ; border-top: 0 } '
             + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem } '
             + '.chatgpt-js > a { color: inherit ; top: .054rem } '
