@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.4.19.2
+// @version             2023.4.19.3
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -63,72 +63,6 @@
         suggestProxy: 'OpenAI API is not working. (Try switching on Proxy Mode in toolbar)',
         suggestOpenAI: 'Proxy API is not working. (Try switching off Proxy Mode in toolbar)'
     }
-
-    // Initialize settings/messages/menu
-    var config = {}, configKeyPrefix = 'ddgpt_', messages = []
-    loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
-    registerMenu() // create browser toolbar menu
-    
-    // Exit if prefix/suffix required but not present
-    if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
-        ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
-            return }
-
-    // Stylize elements
-    var ddgptStyle = document.createElement('style')
-    ddgptStyle.innerText = (
-        '.ddgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 16px 26px ; flex-basis: 0 ;'
-            + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) }'
-        + '.ddgpt-container p { margin: 0 } '
-        + '.ddgpt-container .prefix { font-size: 1.5rem ; font-weight: 700 }'
-        + '.ddgpt-container .prefix > a { color: inherit ; text-decoration: none }'
-        + '.ddgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
-        + '.ddgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
-        + '.ddgpt-container pre { font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 12px 0 0 0 ; line-height: 21px ; padding: 1.25em ; border-radius: 10px }'
-        + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-        + '.ddgpt-container section.loading { padding-left: 5px } ' /* left-pad loading status when sending replies */
-        + '.chatgpt-feedback { margin: 2px 0 25px }'
-        + '.balloon-tip { content: "" ; position: relative ; top: 5px ; right: 16.5em ; border: 7px solid transparent ;'
-            + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-bottom-color: #eaeaea ; border-top: 0 }'
-        + '.continue-chat > textarea { border: none ; background: #eeeeee70 ; height: 1.55rem ; width: 97.6% ; margin: 3px 0 15px 0 ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px ; border-radius: 12px 13px 12px 0 } '
-        + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
-        + '.kudo-ai a { color: #aaa ; text-decoration: none } '
-        + '.kudo-ai a:hover { color: black ; text-decoration: none } '
-    )
-    document.head.appendChild(ddgptStyle) // append style to <head>
-
-    // Create DDGPT container & add class
-    var ddgptDiv = document.createElement('div') // create container div
-    ddgptDiv.className = 'ddgpt-container'
-
-    // Create feedback footer & add classes/HTML
-    var ddgptFooter = document.createElement('div')
-    ddgptFooter.className = 'feedback-prompt chatgpt-feedback'
-    ddgptFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
-
-    // Activate promo campaign if active
-    GM.xmlHttpRequest({
-        method: 'GET', url: 'https://raw.githubusercontent.com/kudoai/duckduckgpt/main/ads/live/creative.html',
-        onload: function(response) {
-            if (response.status == 200) {
-
-                // Create campaign div & add class/style/HTML
-                var pcDiv = document.createElement('div')
-                pcDiv.className = 'ddgpt-container'
-                pcDiv.style.display = 'flex'
-                pcDiv.innerHTML = response.responseText
-
-                // Create feedback footer & add classes/HTML
-                var pcFooter = document.createElement('div')
-                pcFooter.className = 'feedback-prompt chatgpt-feedback'
-                pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
-
-                // Inject in sidebar
-                ddgptFooter.insertAdjacentElement('afterend', pcDiv)
-                pcDiv.insertAdjacentElement('afterend', pcFooter)
-    }}})
-
-    loadDDGPT()
 
     // Define SCRIPT functions
 
@@ -434,5 +368,73 @@
         } else { messages.push({ role: 'user', content: query }) }
         getShowReply(messages)
     }
+    
+    // Run MAIN routine
+    
+    // Initialize settings/messages/menu
+    var config = {}, configKeyPrefix = 'ddgpt_', messages = []
+    loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
+    registerMenu() // create browser toolbar menu
+    
+    // Exit if prefix/suffix required but not present
+    if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
+        ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
+            return }
+
+    // Stylize elements
+    var ddgptStyle = document.createElement('style')
+    ddgptStyle.innerText = (
+        '.ddgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 16px 26px ; flex-basis: 0 ;'
+            + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) }'
+        + '.ddgpt-container p { margin: 0 } '
+        + '.ddgpt-container .prefix { font-size: 1.5rem ; font-weight: 700 }'
+        + '.ddgpt-container .prefix > a { color: inherit ; text-decoration: none }'
+        + '.ddgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
+        + '.ddgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
+        + '.ddgpt-container pre { font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 12px 0 0 0 ; line-height: 21px ; padding: 1.25em ; border-radius: 10px }'
+        + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
+        + '.ddgpt-container section.loading { padding-left: 5px } ' /* left-pad loading status when sending replies */
+        + '.chatgpt-feedback { margin: 2px 0 25px }'
+        + '.balloon-tip { content: "" ; position: relative ; top: 5px ; right: 16.5em ; border: 7px solid transparent ;'
+            + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-bottom-color: #eaeaea ; border-top: 0 }'
+        + '.continue-chat > textarea { border: none ; background: #eeeeee70 ; height: 1.55rem ; width: 97.6% ; margin: 3px 0 15px 0 ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px ; border-radius: 12px 13px 12px 0 } '
+        + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
+        + '.kudo-ai a { color: #aaa ; text-decoration: none } '
+        + '.kudo-ai a:hover { color: black ; text-decoration: none } '
+    )
+    document.head.appendChild(ddgptStyle) // append style to <head>
+
+    // Create DDGPT container & add class
+    var ddgptDiv = document.createElement('div') // create container div
+    ddgptDiv.className = 'ddgpt-container'
+
+    // Create feedback footer & add classes/HTML
+    var ddgptFooter = document.createElement('div')
+    ddgptFooter.className = 'feedback-prompt chatgpt-feedback'
+    ddgptFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
+
+    // Activate promo campaign if active
+    GM.xmlHttpRequest({
+        method: 'GET', url: 'https://raw.githubusercontent.com/kudoai/duckduckgpt/main/ads/live/creative.html',
+        onload: function(response) {
+            if (response.status == 200) {
+
+                // Create campaign div & add class/style/HTML
+                var pcDiv = document.createElement('div')
+                pcDiv.className = 'ddgpt-container'
+                pcDiv.style.display = 'flex'
+                pcDiv.innerHTML = response.responseText
+
+                // Create feedback footer & add classes/HTML
+                var pcFooter = document.createElement('div')
+                pcFooter.className = 'feedback-prompt chatgpt-feedback'
+                pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
+
+                // Inject in sidebar
+                ddgptFooter.insertAdjacentElement('afterend', pcDiv)
+                pcDiv.insertAdjacentElement('afterend', pcFooter)
+    }}})
+
+    loadDDGPT()
  
 })()
