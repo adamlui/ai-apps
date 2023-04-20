@@ -54,7 +54,7 @@
 </picture></a>
 <br /><br />
 
-DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 Adam Lui, 冯不游 & chatgpt.js under the MIT license.
+DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
 </div>
 </h6>
@@ -95,7 +95,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 <br>
 [Discuss](https://github.duckduckgpt.com/discussions) /
 [Leave a review](https://duckduckgpt.com/userscript/review) /
-[More ChatGPT userscripts](https://github.com/adamlui/chatgpt-userscripts)
+[More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 ## Social links
 
@@ -105,9 +105,9 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 <a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" alt="Follow @adam on Mastodon" title="Mastodon">
 [![Follow @adamllui on Twitter](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
 
-## More ChatGPT scripts
+## More ChatGPT apps
 
-For even more epic ChatGPT scripts, go here: https://github.com/adamlui/chatgpt-userscripts
+For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
 ## Related scripts
