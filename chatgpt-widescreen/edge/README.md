@@ -47,6 +47,11 @@
 
 *NOTE: Since full-window mode hides the sidebar, press '+' to start new chats*
 
+![image](https://i.imgur.com/nt3VDtc.png)
+![image](https://i.imgur.com/7r4NQIy.png)
+
+*Pro tip: For easier access to extension toggles, (1) click <img height=12 width=12 src="https://user-images.githubusercontent.com/10906554/232301021-9fd8a67a-8911-4dd1-8455-2eb3757428b9.png"> in the browser's toolbar, (2) then <img height=12 width=12 src="https://user-images.githubusercontent.com/10906554/232302439-45d547e5-f96e-464d-ab43-da9c028caf10.png"> next to extension name.*
+
 </div>
 
 ## Dependencies
@@ -62,7 +67,7 @@
 </picture></a>
 <br /><br />
 
-ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 Adam Lui, 冯不游 & chatgpt.js under the MIT license.
+ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
 </div>
 </h6>
