@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.19.3
+// @version             2023.4.20
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -209,7 +209,7 @@
         // Get answer from ChatGPT
         var data = {}
         if (!config.proxyAPIenabled) data = JSON.stringify({ action: 'next', messages: messages, model: model, parent_message_id: uuidv4(), max_tokens: 4000 })
-        else data = JSON.stringify({ messages: messages, model: model, max_tokens: 4000 })
+        else data = JSON.stringify({ messages: messages, model: model })
 
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
