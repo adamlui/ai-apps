@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout adamlui/chatgpt-addons
+      - name: Checkout adamlui/chatgpt-apps
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/chatgpt-addons
-          path: adamlui/chatgpt-addons
+          repository: adamlui/chatgpt-apps
+          path: adamlui/chatgpt-apps
 
       - name: Checkout adamlui/chatgpt-widescreen
         uses: actions/checkout@v2
@@ -28,7 +28,7 @@ jobs:
           path: adamlui/chatgpt-widescreen
 
       - name: Sync /chatgpt-widescreen/* to adamlui/chatgpt-widescreen/*
-        run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/
+        run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/
 
       - name: Push to adamlui/chatgpt-widescreen
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -36,6 +36,6 @@ jobs:
           push_options: '--force'
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: '*'
           repository: adamlui/chatgpt-widescreen

@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout adamlui/chatgpt-addons
+      - name: Checkout adamlui/chatgpt-apps
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/chatgpt-addons
-          path: adamlui/chatgpt-addons
+          repository: adamlui/chatgpt-apps
+          path: adamlui/chatgpt-apps
 
       - name: Checkout adamlui/userscripts
         uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
           path: adamlui/userscripts
 
       - name: Sync chatgpt-heartbeat/ to adamlui/userscripts/chatgpt/chatgpt-heartbeat/
-        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-heartbeat/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-heartbeat/
+        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-heartbeat/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-heartbeat/
 
       - name: Push to adamlui/userscripts
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -35,6 +35,6 @@ jobs:
           push_options: '--force'
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: 'chatgpt/chatgpt-heartbeat/*'
           repository: adamlui/userscripts

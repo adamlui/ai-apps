@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout adamlui/chatgpt-addons
+      - name: Checkout adamlui/chatgpt-apps
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/chatgpt-addons
-          path: adamlui/chatgpt-addons
+          repository: adamlui/chatgpt-apps
+          path: adamlui/chatgpt-apps
 
       - name: Checkout adamlui/chatgpt-auto-refresh
         uses: actions/checkout@v2
@@ -35,27 +35,27 @@ jobs:
 
       - name: Sync README.md between directories
         run: |
-          if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-auto-refresh/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-auto-refresh/greasemonkey/README.md")" ]; then
-            cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-auto-refresh/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-auto-refresh/greasemonkey/README.md"
-          elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-auto-refresh/greasemonkey/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-auto-refresh/README.md")" ]; then
-            cp -f "${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-auto-refresh/greasemonkey/README.md" "${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-auto-refresh/README.md"
+          if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/README.md")" ]; then
+            cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/README.md" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/README.md"
+          elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/README.md")" ]; then
+            cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/README.md" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/README.md"
           fi
 
       - name: Sync chatgpt-auto-refresh/ to adamlui/chatgpt-auto-refresh/
-        run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-auto-refresh/ ${{ github.workspace }}/adamlui/chatgpt-auto-refresh/
+        run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/ ${{ github.workspace }}/adamlui/chatgpt-auto-refresh/
 
       - name: Sync chatgpt-auto-refresh/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-auto-refresh/
-        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-addons/chatgpt-auto-refresh/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-auto-refresh/
+        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-auto-refresh/
 
-      - name: Push to adamlui/chatgpt-addons
+      - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: 'chatgpt-auto-refresh/*'
-          repository: adamlui/chatgpt-addons
+          repository: adamlui/chatgpt-apps
 
       - name: Push to adamlui/chatgpt-auto-refresh
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -63,7 +63,7 @@ jobs:
           push_options: '--force'
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: '*'
           repository: adamlui/chatgpt-auto-refresh
 
@@ -73,6 +73,6 @@ jobs:
           push_options: '--force'
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-addons`]'
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: 'chatgpt/chatgpt-auto-refresh/*'
           repository: adamlui/userscripts
