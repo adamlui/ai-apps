@@ -105,9 +105,9 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 <a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" alt="Follow @adam on Mastodon" title="Mastodon">
 [![Follow @adamllui on Twitter](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
 
-## More ChatGPT scripts
+## More ChatGPT apps
 
-For even more epic ChatGPT scripts, go here: https://github.com/adamlui/userscripts/tree/master/chatgpt
+For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
 ## Related scripts
