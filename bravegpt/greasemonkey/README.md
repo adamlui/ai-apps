@@ -95,7 +95,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 <br>
 [Discuss](https://github.bravegpt.com/discussions) /
 [Leave a review](https://greasyfork.org/en/scripts/462440-bravegpt/feedback#post-discussion) /
-[More ChatGPT userscripts](https://github.com/adamlui/chatgpt-userscripts)
+[More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 ## Social links
 
@@ -107,7 +107,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 ## More ChatGPT scripts
 
-For even more epic ChatGPT scripts, go here: https://github.com/adamlui/chatgpt-userscripts
+For even more epic ChatGPT scripts, go here: https://github.com/adamlui/userscripts/tree/master/chatgpt
 <br><br>
 
 ## Related scripts
