@@ -65,7 +65,7 @@
 </picture></a>
 <br /><br />
 
-ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 Adam Lui, 冯不游 & chatgpt.js under the MIT license.
+ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
 </div>
 </h6>
@@ -89,7 +89,7 @@ If you've tested it to work in a browser not listed above, simply create a [pull
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
 [Leave a review](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode/feedback#post-discussion) / 
-[More ChatGPT userscripts](https://github.com/adamlui/chatgpt-userscripts)
+[More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 ## Contributor links
 
@@ -98,12 +98,10 @@ If you've tested it to work in a browser not listed above, simply create a [pull
 <a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" alt="Follow @adam on Mastodon" title="Mastodon">
 [![Follow @adamllui on Twitter](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
 [![Follow @XiaoYingYo on GitHub](https://img.shields.io/github/followers/XiaoYingYo?label=Follow%20%40XiaoYingYo&style=social "GitHub")](https://github.com/XiaoYingYo)
-[![Follow @mefengl on GitHub](https://img.shields.io/github/followers/mefengl?label=Follow%20%40mefengl&style=social "GitHub")](https://github.com/mefengl)
-[![Follow @mefengl on Twitter](https://img.shields.io/twitter/follow/mefengl?style=social)](https://twitter.com/mefengl)
 
-## More ChatGPT scripts
+## More ChatGPT apps
 
-For even more epic ChatGPT scripts, go here: https://github.com/adamlui/chatgpt-userscripts
+For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
 ## Related scripts

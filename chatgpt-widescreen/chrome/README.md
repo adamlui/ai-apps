@@ -95,7 +95,7 @@ If you've tested the userscript to work in a browser not listed above, simply cr
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions) / 
 [Review](https://chrome.google.com/webstore/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm) / 
-[More ChatGPT add-ons](https://github.com/adamlui/chatgpt-addons)
+[More ChatGPT add-ons](https://github.com/adamlui/chatgpt-apps)
 
 </div>
 
@@ -109,9 +109,9 @@ If you've tested the userscript to work in a browser not listed above, simply cr
 [![Follow @mefengl on GitHub](https://img.shields.io/github/followers/mefengl?label=Follow%20%40mefengl&style=social "GitHub")](https://github.com/mefengl)
 [![Follow @mefengl on Twitter](https://img.shields.io/twitter/follow/mefengl?style=social)](https://twitter.com/mefengl)
 
-## More ChatGPT add-ons
+## More ChatGPT apps
 
-For even more epic ChatGPT add-ons, go here: https://github.com/adamlui/chatgpt-addons
+For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
 ## Related add-ons
