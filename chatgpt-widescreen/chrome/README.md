@@ -47,7 +47,6 @@
 
 *NOTE: Since full-window mode hides the sidebar, press '+' to start new chats*
 
-
 ![image](https://i.imgur.com/nt3VDtc.png)
 ![image](https://i.imgur.com/7r4NQIy.png)
 
@@ -68,7 +67,7 @@
 </picture></a>
 <br /><br />
 
-ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 Adam Lui, 冯不游 & chatgpt.js under the MIT license.
+ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
 </div>
 </h6>
