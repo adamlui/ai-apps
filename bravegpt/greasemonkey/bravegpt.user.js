@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.04.19.2
+// @version             2023.04.19.3
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -31,6 +31,7 @@
 // @connect             raw.githubusercontent.com
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@25d3b75b45a09687caa47c741b2718187927fee0/dist/chatgpt-1.2.3.min.js
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
@@ -44,13 +45,12 @@
 // @supportURL          https://github.bravegpt.com/issues
 // ==/UserScript==
 
-// NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui & 冯不游 under the MIT license.
+// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
 (function() {
 
     // API endpoints
     var openAIauthDomain = 'https://auth0.openai.com'
-    var chatGPTsessURL = 'https://chat.openai.com/api/auth/session'
     var openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
     var proxyEndpointMap = [[ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-3.5-turbo' ]]
 
@@ -63,73 +63,7 @@
         suggestOpenAI: 'Proxy API is not working. (Try switching off Proxy Mode in toolbar)'
     }
 
-    // Import chatgpt.js functions
-
-    window.chatgptNotifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
-    var chatgpt = {
-        notify: function(msg, position, notifDuration, shadow) {
-            notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-            var fadeDuration = 0.6; // sec duration of fade-out
-            var vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
-
-            // Make/stylize/insert div
-            var notificationDiv = document.createElement('div'); // make div
-            notificationDiv.style.cssText = ( // stylize it
-                  '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
-                + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; '
-                + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
-            document.body.appendChild(notificationDiv); // insert into DOM
-
-            // Determine div position/quadrant
-            notificationDiv.isTop = !position || !/low|bottom/i.test(position) ? true : false;
-            notificationDiv.isRight = !position || !/left/i.test(position) ? true : false;
-            notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
-                                     + (notificationDiv.isRight ? 'Right' : 'Left');
-
-            // Store div in global memory
-            window.chatgptNotifyProps.quadrants[notificationDiv.quadrant].push(notificationDiv); // store div in global object
-
-            // Position notification (defaults to top-right)
-            notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
-            notificationDiv.style.bottom = !notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
-            notificationDiv.style.right = notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
-            notificationDiv.style.left = !notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
-
-            // Reposition old notifications
-            var thisQuadrantDivs = window.chatgptNotifyProps.quadrants[notificationDiv.quadrant];
-            if (thisQuadrantDivs.length > 1) {
-                var divsToMove = thisQuadrantDivs.slice(0, -1); // exclude new div
-                for (var j = 0; j < divsToMove.length; j++) {
-                    var oldDiv = divsToMove[j];
-                    var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
-                    var vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
-                    oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
-            }}
-
-            // Show notification
-            notificationDiv.innerHTML = msg; // insert msg
-            notificationDiv.style.transition = 'none'; // remove fade effect
-            notificationDiv.style.opacity = 1; // show msg
-
-            // Hide notification
-            var hideDelay = ( // set delay before fading
-                fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
-                : notifDuration - fadeDuration); // otherwise delay for difference
-            notificationDiv.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
-                notificationDiv.style.transition = 'opacity ' + fadeDuration.toString() + 's'; // add fade effect
-                notificationDiv.style.opacity = 0; // hide notification
-                notificationDiv.hideTimer = null; // prevent memory leaks
-            }, hideDelay * 1000); // ...after pre-set duration
-
-            // Destroy notification
-            notificationDiv.destroyTimer = setTimeout(function destroyNotif() {
-                notificationDiv.remove(); thisQuadrantDivs.shift(); // remove from DOM + memory
-                notificationDiv.destroyTimer = null; // prevent memory leaks
-            }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
-        }
-    };
-
-    // Define userscript functions
+    // Define SCRIPT functions
 
     function registerMenu() {
         var menuID = [] // to store registered commands for removal while preserving order
@@ -188,7 +122,7 @@
         config[key] = value // and memory
     }
 
-    // Define console/alert functions
+    // Define CONSOLE/ALERT functions
 
     var braveGPTconsole = {
         info: function(msg) {console.info('🦁 BraveGPT >> ' + msg)},
@@ -274,17 +208,8 @@
 
         // Get answer from ChatGPT
         var data = {}
-        if (!config.proxyAPIenabled) {
-            data = JSON.stringify({
-                action: 'next', messages: messages,
-                model: model, parent_message_id: uuidv4(), max_tokens: 4000
-            })
-        } else {
-            data = JSON.stringify({
-                messages: messages,
-                model: model, max_tokens: 4000
-            })
-        }
+        if (!config.proxyAPIenabled) data = JSON.stringify({ action: 'next', messages: messages, model: model, parent_message_id: uuidv4(), max_tokens: 4000 })
+        else data = JSON.stringify({ messages: messages, model: model, max_tokens: 4000 })
 
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
@@ -299,8 +224,7 @@
                 else { // if proxy mode
                     if (getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
                     else ddgptAlert('suggestOpenAI')
-                }
-            }
+            }}
         })
 
         function responseType() {
@@ -451,11 +375,10 @@
 
     // Run MAIN routine
 
-    // Initialize script
-    var config = {}, configKeyPrefix = 'braveGPT_'
+    // Initialize settings/messages/menu
+    var config = {}, configKeyPrefix = 'braveGPT_', messages = []
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
     registerMenu() // create browser toolbar menu
-    var messages = []
 
     // Load BraveGPT if necessary
     if (( !config.prefixEnabled && !config.suffixEnabled) || // prefix/suffix not required
@@ -527,7 +450,6 @@
         }}})
 
         loadBraveGPT()
-
     }
 
 })()
