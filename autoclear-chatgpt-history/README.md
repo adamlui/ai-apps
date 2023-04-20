@@ -39,14 +39,14 @@
 <div align="center">
 <br />
 
-<a href="https://github.com/chatgptjs/chatgpt.js">
+<a href="https://chatgpt.js.org">
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
     <img width=546 alt="chatgpt.js" src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
 </picture></a>
 <br /><br />
 
-Autoclear ChatGPT History relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 Adam Lui, 冯不游 & chatgpt.js under the MIT license.
+Autoclear ChatGPT History relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
 </div>
 </h6>
@@ -70,7 +70,7 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
 <br>
 [Discuss](https://github.com/adamlui/autoclear-chatgpt-history/discussions) / 
 [Leave a review](https://greasyfork.org/en/scripts/460805-autoclear-chatgpt-history/feedback#post-discussion) /
-[More ChatGPT userscripts](https://github.com/adamlui/chatgpt-userscripts)
+[More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 ## Special thanks
 
@@ -85,9 +85,9 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
 [![Follow @Tripp1e on GitHub](https://img.shields.io/github/followers/Tripp1e?label=Follow%20%40Tripp1e&style=social "GitHub")](https://github.com/Tripp1e)
 [![Follow @XiaoYingYo on GitHub](https://img.shields.io/github/followers/XiaoYingYo?label=Follow%20%40XiaoYingYo&style=social "GitHub")](https://github.com/XiaoYingYo)
 
-## More ChatGPT scripts
+## More ChatGPT apps
 
-For even more epic ChatGPT scripts, go here: https://github.com/adamlui/chatgpt-userscripts
+For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
 ## Related scripts
