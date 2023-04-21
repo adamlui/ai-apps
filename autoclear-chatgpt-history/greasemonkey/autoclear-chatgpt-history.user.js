@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.04.19
+// @version             2023.4.20
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -41,7 +41,7 @@
 // @compatible          qq
 // @match               https://chat.openai.com/*
 // @run-at              document-end
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@25d3b75b45a09687caa47c741b2718187927fee0/dist/chatgpt-1.2.3.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@d3e86892d75c0caeefa2e2ab8d26e5b053c28ad3/dist/chatgpt-1.3.3.min.js
 // @grant               GM_setValue
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
@@ -52,7 +52,7 @@
 // @supportURL          https://github.com/adamlui/autoclear-chatgpt-history/issues
 // ==/UserScript==
 
-// NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
+// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
 (function () {
 
@@ -98,10 +98,10 @@
     }
 
     function insertToggle() {
-        for (var nav of document.querySelectorAll('nav')) {
-            if (!nav.contains(toggleLabel)) { // check if label exists first // 检查标签是否首先存在
-                nav.insertBefore(toggleLabel, nav.childNodes[0]) // insert before 'New chat'// 在"新聊天"之前插入
-    }}}
+        var firstMenu = document.querySelector('nav')
+        if (!firstMenu.contains(toggleLabel)) { // check if label exists first // 检查标签是否首先存在
+            firstMenu.insertBefore(toggleLabel, firstMenu.childNodes[0]) // insert before 'New chat'// 在"新聊天"之前插入
+    }}
 
     function toggleAutoclear() {
         var toggleInput = document.querySelector('#autoclearToggle')
@@ -157,13 +157,13 @@
     // Auto-clear chats if activated // 自动清除聊天是否激活
     var clearObserver = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
-            if (mutation.addedNodes[0]?.innerHTML.includes('Clear conversations')) {
+            if (document.querySelectorAll('nav > div > div > a').length > 0) {
                 chatgpt.clearChats(); clearObserver.disconnect()
     }})})
     if (config.autoclear) {
         clearObserver.observe(document, { childList: true, subtree: true })
-        // Auto-disconnect after 2.5sec to avoid clearing new chats // 还要在2.5秒后断开连接,以避免清除新的频道
-        setTimeout(function () { clearObserver.disconnect() }, 2500)
+        // Auto-disconnect after 3.5sec to avoid clearing new chats // 还要在3.5秒后断开连接,以避免清除新的频道
+        setTimeout(function () { clearObserver.disconnect() }, 3500)
     }
 
 })()
