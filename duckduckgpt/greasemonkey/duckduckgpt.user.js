@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.4.20
+// @version             2023.4.21
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -45,7 +45,7 @@
 // @supportURL          https://github.duckduckgpt.com/issues
 // ==/UserScript==
 
-// NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
+// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
 (function() {
 
@@ -122,6 +122,8 @@
         GM_setValue(configKeyPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
+
+    function isDarkMode() { return document.documentElement.classList.toString().includes('dark') }
 
     // Define CONSOLE/ALERT functions
 
@@ -212,7 +214,7 @@
         // Get answer from ChatGPT
         var data = {}
         if (!config.proxyAPIenabled) data = JSON.stringify({ action: 'next', messages: messages, model: model, parent_message_id: uuidv4(), max_tokens: 4000 })
-        else data = JSON.stringify({ messages: messages, model: model })
+        else data = JSON.stringify({ messages: messages, model: model, max_tokens: 3800 })
 
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
@@ -386,21 +388,25 @@
     ddgptStyle.innerText = (
         '.ddgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 16px 26px ; flex-basis: 0 ;'
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) }'
-        + '.ddgpt-container p { margin: 0 } '
+        + '.ddgpt-container p { margin: 0 ; ' + ( isDarkMode() ? 'color: #ccc } ' : ' } ' )
+        + ( isDarkMode() ? '.ddgpt-container a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
         + '.ddgpt-container .prefix { font-size: 1.5rem ; font-weight: 700 }'
-        + '.ddgpt-container .prefix > a { color: inherit ; text-decoration: none }'
+        + '.ddgpt-container .prefix > a { color: ' + ( isDarkMode() ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
         + '.ddgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
         + '.ddgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
-        + '.ddgpt-container pre { font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 12px 0 0 0 ; line-height: 21px ; padding: 1.25em ; border-radius: 10px }'
+        + '.ddgpt-container pre { font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 12px 0 0 0 ; line-height: 21px ; padding: 1.25em ; border-radius: 10px ; '
+            + ( isDarkMode() ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' } ' )
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-        + '.ddgpt-container section.loading { padding-left: 5px } ' /* left-pad loading status when sending replies */
+        + '.ddgpt-container section.loading { padding-left: 5px } ' // left-pad loading status when sending replies
         + '.chatgpt-feedback { margin: 2px 0 25px }'
         + '.balloon-tip { content: "" ; position: relative ; top: 5px ; right: 16.5em ; border: 7px solid transparent ;'
-            + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-bottom-color: #eaeaea ; border-top: 0 }'
-        + '.continue-chat > textarea { border: none ; background: #eeeeee70 ; height: 1.55rem ; width: 97.6% ; margin: 3px 0 15px 0 ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px ; border-radius: 12px 13px 12px 0 } '
+            + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
+            + ( isDarkMode() ? '#3a3a3a' : '#eaeaea' ) + ' } '
+        + '.continue-chat > textarea { border: none ; height: 1.55rem ; width: 97.6% ; margin: 3px 0 15px 0 ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px ; border-radius: 12px 13px 12px 0 ; background: '
+            + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' } '
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
-        + '.kudo-ai a { color: #aaa ; text-decoration: none } '
-        + '.kudo-ai a:hover { color: black ; text-decoration: none } '
+        + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
+        + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
     )
     document.head.appendChild(ddgptStyle) // append style to <head>
 
