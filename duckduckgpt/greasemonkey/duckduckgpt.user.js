@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.4.21
+// @version             2023.4.21.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -39,8 +39,6 @@
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
 // @grant               GM.xmlHttpRequest
-// @downloadURL         https://www.duckduckgpt.com/userscript/code/duckduckgpt.user.js
-// @updateURL           https://www.duckduckgpt.com/userscript/code/duckduckgpt.meta.js
 // @homepageURL         https://www.duckduckgpt.com
 // @supportURL          https://github.duckduckgpt.com/issues
 // ==/UserScript==
@@ -387,7 +385,8 @@
     var ddgptStyle = document.createElement('style')
     ddgptStyle.innerText = (
         '.ddgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 16px 26px ; flex-basis: 0 ;'
-            + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) }'
+            + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ; '
+            + ( isDarkMode() ? ' border: none ; background: #282828 } ' : ' } ' )
         + '.ddgpt-container p { margin: 0 ; ' + ( isDarkMode() ? 'color: #ccc } ' : ' } ' )
         + ( isDarkMode() ? '.ddgpt-container a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
         + '.ddgpt-container .prefix { font-size: 1.5rem ; font-weight: 700 }'
