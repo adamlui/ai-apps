@@ -49,7 +49,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.04.22.1
+// @version             2023.04.22.2
 // @description         Keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -131,7 +131,6 @@
 
     // Initialize variables/settings/menu
     var config = {}, configKeyPrefix = 'chatGPTar_'
-    var chatGPTsessURL = 'https://chat.openai.com/api/auth/session'
     var refreshInterval = 30 // secs between refreshes
     loadSetting('arDisabled', 'notifHidden')
     registerMenu() // create browser toolbar menu
