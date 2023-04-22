@@ -49,7 +49,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.04.17
+// @version             2023.04.22
 // @description         Keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -115,155 +115,35 @@
 // @compatible          qq
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@bfb19d04932a936b7190de8d9fd62b55751b4634/dist/chatgpt-1.4.0.min.js
 // @grant               GM_setValue
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
+// @noframes
 // @homepageURL         https://github.com/adamlui/chatgpt-auto-refresh
 // @supportURL          https://github.com/adamlui/chatgpt-auto-refresh/issues
 // ==/UserScript==
 
-// NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgptjs.org (c) 2023 Adam Lui, 冯不游 & chatgpt.js under the MIT license.
+// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
 (function() {
 
-    // Import chatgpt.js functions
-    
-    var chatGPTsessURL = 'https://chat.openai.com/api/auth/session';
-    var autoRefreshTimer = 30; // secs between session auto-refreshes    
-    var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
-    localStorage.notifyProps = JSON.stringify(notifyProps);
-    var chatgpt = {
+    // Initialize variables/settings/menu
+    var config = {}, configKeyPrefix = 'chatGPTar_'
+    var chatGPTsessURL = 'https://chat.openai.com/api/auth/session'
+    var refreshInterval = 30 // secs between refreshes
+    loadSetting('arDisabled', 'notifHidden')
+    registerMenu() // create browser toolbar menu
 
-        autoRefresh: {
-            activate: function() {
-                if (this.fetchID || this.beaconID) { // already running, do nothing
-                    console.info('↻ ChatGPT >> Auto refresh already active!'); return; }
+    // Activate auto-refresh if enabled
+    if (!config.arDisabled) chatgpt.autoRefresh.activate(refreshInterval)
 
-                var autoRefresh = this;
+    // Show status notification on first visit if enabled
+    if (!config.notifHidden && document.title === 'New chat') {
+        chatgpt.notify('Auto-Refresh: ' + (config.arDisabled ? 'OFF' : 'ON'), '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
 
-                // Fetch immediately then schedule
-                fetch(chatGPTsessURL, { method: 'POST' }); scheduleRefresher('fetch');
-
-                console.info('↻ ChatGPT >> Auto refresh activated');
-                console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via POST-fetch)');
-
-                if (typeof document.hidden !== 'undefined') { // if Page Visibility API supported
-                    document.addEventListener('visibilitychange', function() { // add listener to switch methods
-                        if (document.hidden) scheduleRefresher('beacon');
-                        else { // the page became visible
-                            fetch(chatGPTsessURL, { method: 'GET' }); // send fetch asap
-                            console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via POST-fetch)')
-                            scheduleRefresher('fetch');
-                }})}
-
-                function nowTimeStamp() {
-                    var now = new Date();
-                    var hours = now.getHours() % 12 || 12; // Convert to 12-hour format
-                    var minutes = now.getMinutes();
-                    var seconds = now.getSeconds();
-                    var meridiem = now.getHours() < 12 ? 'AM' : 'PM';
-                    return hours + ':' + minutes + ':' + seconds + ' ' + meridiem;
-                }
-
-                function scheduleRefresher(refreshMethod) {
-                    var thisID = ( /fetch|get/i.test(refreshMethod) ? 'fetch' : 'beacon' ) + 'ID';
-                    var oppositeID = ( /fetch/.test(thisID) ? 'beacon' : 'fetch' ) + 'ID';
-                    clearInterval(autoRefresh[oppositeID]); autoRefresh[oppositeID] = null;
-                    autoRefresh[thisID] = setInterval(function() {
-                        if (thisID.includes('fetch')) {
-                            fetch(chatGPTsessURL, { method: 'POST' });
-                        } else { navigator.sendBeacon(chatGPTsessURL, new Uint8Array()); }
-                        console.info('↻ ChatGPT >> [' + nowTimeStamp() + '] ChatGPT session refreshed (via '
-                            + ( thisID.includes('fetch') ? 'POST-fetch)' : 'POST-beacon)' ));
-                    }, autoRefreshTimer * 1000);
-                }
-            },
-
-            deactivate: function() {
-                if (this.activate.fetchID) {
-                    clearInterval(this.activate.fetchID); this.activate.fetchID = null;
-                    console.info('↻ ChatGPT >> Auto refresh de-activated');
-                } else if (this.activate.beaconID) {
-                    clearInterval(this.activate.beaconID); this.activate.beaconID = null;
-                    console.info('↻ ChatGPT >> Auto refresh de-activated');
-                } else { console.info('↻ ChatGPT >> Auto refresh already inactive!'); }
-            },
-
-            toggle: function() { if (this.activate.fetchID || this.activate.beaconID) { this.deactivate(); } else { this.activate(); }}
-        },
-
-        isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
-
-        notify: function(msg, position, notifDuration, shadow) {
-            notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-            var fadeDuration = 0.6; // sec duration of fade-out
-            var vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
-
-            // Make/stylize/insert div
-            var notificationDiv = document.createElement('div'); // make div
-            notificationDiv.id = Math.floor(Math.random() * 1000000) + Date.now();
-            notificationDiv.style.cssText = ( // stylize it
-                '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
-                + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; '
-                + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
-            document.body.appendChild(notificationDiv); // insert into DOM
-
-            // Determine div position/quadrant
-            notificationDiv.isTop = !position || !/low|bottom/i.test(position) ? true : false;
-            notificationDiv.isRight = !position || !/left/i.test(position) ? true : false;
-            notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
-                + (notificationDiv.isRight ? 'Right' : 'Left');
-
-            // Store div
-            notifyProps = JSON.parse(localStorage.notifyProps);
-            notifyProps.quadrants[notificationDiv.quadrant].push(notificationDiv.id);
-            localStorage.notifyProps = JSON.stringify(notifyProps)
-
-            // Position notification (defaults to top-right)
-            notificationDiv.style.top = notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
-            notificationDiv.style.bottom = !notificationDiv.isTop ? vpYoffset.toString() + 'px' : '';
-            notificationDiv.style.right = notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
-            notificationDiv.style.left = !notificationDiv.isRight ? vpXoffset.toString() + 'px' : '';
-
-            // Reposition old notifications
-            var thisQuadrantDivIDs = notifyProps.quadrants[notificationDiv.quadrant];
-            if (thisQuadrantDivIDs.length > 1) {
-                var divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
-                for (var j = 0; j < divsToMove.length; j++) {
-                    var oldDiv = document.getElementById(divsToMove[j]);
-                    var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
-                    var vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
-                    oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
-            }}
-
-            // Show notification
-            notificationDiv.innerHTML = msg; // insert msg
-            notificationDiv.style.transition = 'none'; // remove fade effect
-            notificationDiv.style.opacity = 1; // show msg
-
-            // Hide notification
-            var hideDelay = ( // set delay before fading
-                fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
-                : notifDuration - fadeDuration); // otherwise delay for difference
-            notificationDiv.hideTimer = setTimeout(function hideNotif() { // maintain notification visibility, then fade out
-                notificationDiv.style.transition = 'opacity ' + fadeDuration.toString() + 's'; // add fade effect
-                notificationDiv.style.opacity = 0; // hide notification
-                notificationDiv.hideTimer = null; // prevent memory leaks
-            }, hideDelay * 1000); // ...after pre-set duration
-
-            // Destroy notification
-            notificationDiv.destroyTimer = setTimeout(function destroyNotif() {
-                notificationDiv.remove(); // remove from DOM
-                notifyProps = JSON.parse(localStorage.notifyProps)
-                notifyProps.quadrants[notificationDiv.quadrant].shift(); // + memory
-                localStorage.notifyProps = JSON.stringify(notifyProps); // + storage
-                notificationDiv.destroyTimer = null; // prevent memory leaks
-            }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
-        }
-    };
-
-    // Define script functions
+    // Functions
 
     function registerMenu() {
         var menuID = [] // to store registered commands for removal while preserving order
@@ -274,7 +154,8 @@
         var arLabel = stateSymbol[+config.arDisabled] + ' Auto-Refresh ↻ '
                     + stateSeparator + stateWord[+config.arDisabled]
         menuID.push(GM_registerMenuCommand(arLabel, function() {
-            chatgpt.autoRefresh.toggle()
+            if (config.arDisabled) chatgpt.autoRefresh.activate(15)
+            else chatgpt.autoRefresh.deactivate(15)
             saveSetting('arDisabled', !config.arDisabled)
             if (!config.notifHidden) chatgpt.notify('Auto-Refresh: ' + stateWord[+config.arDisabled], '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i]) // remove all cmd's
@@ -305,14 +186,5 @@
         GM_setValue(configKeyPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
-
-    // Run main routine
-
-    var config = {}, configKeyPrefix = 'chatGPTar_'
-    loadSetting('arDisabled', 'notifHidden')
-    registerMenu() // create browser toolbar menu
-    if (!config.arDisabled) chatgpt.autoRefresh.activate()
-    if (!config.notifHidden && document.title === 'New chat') {
-        chatgpt.notify('Auto-Refresh: ' + (config.arDisabled ? 'OFF' : 'ON'), '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
 
 })()
