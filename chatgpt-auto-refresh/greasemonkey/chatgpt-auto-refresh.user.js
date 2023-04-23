@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.04.22.3
+// @version             2023.04.22.4
 // @description         (Safely) keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -62,8 +62,8 @@
 // @description:eo      (Sekure) konservas ChatGPT-sesiojn freŝaj, forigante konstantajn retajn erarojn + Cloudflare-kontroloj (ĉiuj el la fono!)
 // @description:es      (Con seguridad) mantiene las sesiones de ChatGPT actualizadas, lo que elimina los errores de red constantes + las comprobaciones de Cloudflare (¡todo en segundo plano!)
 // @description:fi      (Turvallisesti) pitää ChatGPT-istunnot tuoreina, eliminoiden jatkuvat verkkovirheet + Cloudflare-tarkistukset (kaikki taustalta!)
-// @description:fr      (En toute sécurité) maintient les sessions ChatGPT à jour, éliminant les erreurs réseau constantes + vérifications Cloudflare (le tout en arrière-plan !)
-// @description:fr-CA   (En toute sécurité) maintient les sessions ChatGPT à jour, éliminant les erreurs réseau constantes + vérifications Cloudflare (le tout en arrière-plan !)
+// @description:fr      (En toute sécurité) maintient les sessions ChatGPT à jour, éliminant les erreurs réseau constantes + vérifications Cloudflare (le tout en arrière-plan!)
+// @description:fr-CA   (En toute sécurité) maintient les sessions ChatGPT à jour, éliminant les erreurs réseau constantes + vérifications Cloudflare (le tout en arrière-plan!)
 // @description:gu      (સુરક્ષિત રીતે) ChatGPT સત્રોને તાજા રાખે છે, સતત નેટવર્ક ભૂલોને દૂર કરે છે + Cloudflare તપાસો (બધું પૃષ્ઠભૂમિમાંથી!)
 // @description:hi      (सुरक्षित रूप से) निरंतर नेटवर्क त्रुटियों को समाप्त करते हुए चैटजीपीटी सत्रों को ताजा रखता है + क्लाउडफ्लेयर चेक (सभी पृष्ठभूमि से!)
 // @description:hu      (Biztonságosan) frissen tartja a ChatGPT munkameneteket, kiküszöbölve az állandó hálózati hibákat + Cloudflare ellenőrzéseket (mind a háttérből!)
