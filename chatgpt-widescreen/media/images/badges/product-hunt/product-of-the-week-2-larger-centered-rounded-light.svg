@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="231" height="54" viewBox="0 0 231 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="227" height="54" viewBox="0 0 227 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
     <g transform="translate(-130.000000, -73.000000)">
       <g transform="translate(130.000000, 73.000000)">
-        <rect stroke="#FF6154" stroke-width="1" fill="#FFFFFF" x="0.5" y="0.5" width="230" height="53" rx="10"></rect>
+        <rect stroke="#FF6154" stroke-width="1" fill="#FFFFFF" x="0.5" y="0.5" width="226" height="53" rx="10"></rect>
         <text font-family="Helvetica-Bold, Helvetica" font-size="12" font-weight="bold" fill="#FF6154">
           <tspan x="51" y="23">#2 PRODUCT OF THE WEEK</tspan>
         </text>
