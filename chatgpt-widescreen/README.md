@@ -16,7 +16,10 @@
 
 <br>
 
-<a href="https://chatgptevo.com/widescreen/chrome"><img height=70 alt="Add to Chrome" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a><a href="https://chatgptevo.com/widescreen/edge"><img height=70 alt="Add to Edge" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-edge-button.png"></a><a href="https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode"><img height=70 alt="Add Userscript" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-userscript-button.png"></a>
+<img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-square-light.svg" alt="ChatGPT Widescreen Mode - Add Widescreen + Full-Window modes to ChatGPT | Product Hunt" style="width: auto; height: 44px; margin:0 0 11px 5px;" width="auto" height="44px" />
+<a href="https://chatgptevo.com/widescreen/chrome" target="_blank"><img alt="Available on Chrome Web Store" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png" height=44px width=auto></a>
+<a href="https://chatgptevo.com/widescreen/edge" target="_blank"><img alt="Available from Microsoft" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png" height="44px" width="auto" ></a>
+<a href="https://chatgptevo.com/widescreen/greasyfork" target="_blank"><img height=44px alt="Available on Greasy Fork" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
 
 </div>
 
