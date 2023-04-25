@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.4.23.5
+// @version             2023.4.24
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -113,7 +113,7 @@
 // @compatible          qq
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@48ae809c8dc53ca2938f7eefe9d449bb7b387901/dist/chatgpt-1.5.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@b3216af1fad638180237e3624727a146be92cc70/dist/chatgpt-1.5.1.min.js
 // @grant               GM_setValue
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
@@ -131,12 +131,12 @@
 
     // Initialize variables/settings/menu
     var config = {}, configKeyPrefix = 'chatGPTar_'
-    var refreshInterval = 30 // secs between refreshes
-    loadSetting('arDisabled', 'notifHidden')
+    loadSetting('arDisabled', 'notifHidden', 'refreshInterval')
+    if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
     registerMenu() // create browser toolbar menu
 
     // Activate auto-refresh if enabled
-    if (!config.arDisabled) chatgpt.autoRefresh.activate(refreshInterval)
+    if (!config.arDisabled) chatgpt.autoRefresh.activate(config.refreshInterval)
 
     // Show status notification on first visit if enabled
     if (!config.notifHidden && document.title === 'New chat') {
@@ -153,8 +153,8 @@
         var arLabel = stateSymbol[+config.arDisabled] + ' Auto-Refresh ↻ '
                     + stateSeparator + stateWord[+config.arDisabled]
         menuID.push(GM_registerMenuCommand(arLabel, function() {
-            if (config.arDisabled) chatgpt.autoRefresh.activate(15)
-            else chatgpt.autoRefresh.deactivate(15)
+            if (config.arDisabled) chatgpt.autoRefresh.activate(config.refreshInterval)
+            else chatgpt.autoRefresh.deactivate()
             saveSetting('arDisabled', !config.arDisabled)
             if (!config.notifHidden) chatgpt.notify('Auto-Refresh: ' + stateWord[+config.arDisabled], '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i]) // remove all cmd's
@@ -170,6 +170,25 @@
             for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i]) // remove all cmd's
             registerMenu() // serve fresh one
         }))
+
+        // Add command to change refresh interval
+        menuID.push(GM_registerMenuCommand('⌚ Change Refresh Interval (' + config.refreshInterval + 's)', function() {
+            while (true) {
+                var refreshInterval = prompt("Update refresh interval (in secs):", config.refreshInterval)
+                if (refreshInterval === null) break // user cancelled so do nothing
+                else if (!isNaN(parseInt(refreshInterval)) && parseInt(refreshInterval) > 0) { // valid int set
+                    saveSetting('refreshInterval', parseInt(refreshInterval))
+                    if (chatgpt.autoRefresh.ssgID) { // reset running auto-refresh
+                        chatgpt.autoRefresh.deactivate()
+                        chatgpt.autoRefresh.activate(refreshInterval)
+                    }
+                    for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i]) // remove all cmd's
+                    registerMenu() // serve fresh one
+                    var minInterval = Math.max(2, config.refreshInterval - 10)
+                    var maxInterval = config.refreshInterval + 10
+                    alert('ChatGPT session will auto-refresh every ' + minInterval + ' to ' + maxInterval + ' secs')
+                    break
+        }}}))
     }
 
     function getUserscriptManager() {
