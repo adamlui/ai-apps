@@ -1,6 +1,6 @@
 # 安全政策
 
-###### 简体中文 | [English](../SECURITY.md) | [हिंदी](hi/SECURITY.md)
+###### 简体中文 | [English](../SECURITY.md) | [हिंदी](../hi/SECURITY.md)
 
 <br>
 
