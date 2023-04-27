@@ -53,7 +53,7 @@
 
 ## User feedback
 
-![](https://i.imgur.com/A0kjk9A.png)
+<img height=333 width=auto src="https://i.imgur.com/toNHGt4.png">
 
 ## Installation
 
