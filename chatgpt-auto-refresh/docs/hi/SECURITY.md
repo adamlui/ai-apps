@@ -1,6 +1,8 @@
 # सुरक्षा नीति
 
-हिंदी | [English](../SECURITY.md) | [简体中文](zh-cn/SECURITY.md)
+###### हिंदी | [English](../SECURITY.md) | [简体中文](../zh-cn/SECURITY.md)
+
+<br>
 
 अगर आपको कोई भेद्यता मिलती है, तो कृपया [ड्राफ़्ट सुरक्षा सलाह](https://github.com/adamlui/chatgpt-auto-refresh/security/advisories/new) खोलें।  
 
