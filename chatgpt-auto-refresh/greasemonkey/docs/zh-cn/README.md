@@ -129,14 +129,14 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 
 在 Brave Search 侧边栏中显示 ChatGPT 答案。<br>
 [安装](https://greasyfork.org/en/scripts/462440-bravegpt) / 
-[自述文件](https://bravegpt.com/greasemonkey/README.md) / 
+[自述文件](https://github.bravegpt.com/blob/main/greasemonkey/README.md) / 
 [讨论](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [自动清除 ChatGPT 历史记录](https://github.com/adamlui/autoclear-chatgpt-history/tree/main/greasemonkey) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" alt="在 Awesome Userscripts 中提到" style="margin:0 0 -2px 5px"></a>
 
 自动清除您的 ChatGPT 查询历史记录以获得最大的隐私。
 <br>[安装](https://greasyfork.org/en/scripts/460805-auto-clear-chatgpt-history) / 
-[自述文件](https://github.com/adamlui/autoclear-chatgpt-history/tree/main/greasemonkey/README.md) / 
+[自述文件](https://github.com/adamlui/autoclear-chatgpt-history/blob/main/greasemonkey/README.md) / 
 [讨论](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
 #
