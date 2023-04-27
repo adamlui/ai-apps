@@ -1,4 +1,4 @@
-## MIT License
+# MIT License
 
 English | [简体中文](zh-cn/LICENSE.md)
 
