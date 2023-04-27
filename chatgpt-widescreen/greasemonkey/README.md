@@ -28,6 +28,16 @@
 
 **ChatGPT Widescreen Mode** adds widescreen + full-window modes to ChatGPT, so you can enjoy more content unhindered by unnecessary scrolling, thus enhancing your pleasure.
 
+## Benefits
+
+- Experience clearer programming code display with proper indentation
+
+- View multi-step instructions or long recipes on a single page for easier reference
+
+- Enjoy original lyrics, poetry, essays, or compositions in a more visually pleasing format
+
+- Streamline your ChatGPT experience with automatically applied settings
+
 ## Demo
 
 <div align="center">
