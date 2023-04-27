@@ -33,13 +33,17 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync README.md between directories
+      - name: Sync docs between root & /greasemonkey
         run: |
-          if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/README.md")" ]; then
-            cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/README.md" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/README.md"
-          elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/README.md")" ]; then
-            cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/README.md" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/README.md"
-          fi
+          shopt -s globstar
+          for file in "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/"**/*.md; do
+            relative_path=${file#"${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/"}
+            if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path")" ]; then
+              cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path"
+            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/cchatgpt-apps/hatgpt-auto-refresh/docs/$relative_path")" ]; then
+              cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path"
+            fi
+          done
 
       - name: Sync chatgpt-auto-refresh/ to adamlui/chatgpt-auto-refresh/
         run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/ ${{ github.workspace }}/adamlui/chatgpt-auto-refresh/
