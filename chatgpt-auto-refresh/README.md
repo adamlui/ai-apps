@@ -53,7 +53,7 @@
 
 ## User feedback
 
-<img height="333" src="https://i.imgur.com/toNHGt4.png">
+<img width=535 src="https://i.imgur.com/JX3u7Yz.png">
 
 ## Installation
 
