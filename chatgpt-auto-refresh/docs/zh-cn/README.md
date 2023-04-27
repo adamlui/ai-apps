@@ -105,7 +105,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 
 [![在 GitHub 上关注@adamlui](https://img.shields.io/github/followers/adamlui?label=关注@adamlui&style=social "GitHub")](https://github.com/adamlui)
 [![在 YouTube 上关注@adamluitube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=关注@adamluitube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
-<a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&label=关注@adam&style=social" alt="在 Mastodon 上关注@adam" title="Mastodon">
+<a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&label=关注@adam&style=social" alt="在 Mastodon 上关注@adam" title="Mastodon"></a>
 [![在推特上关注@adamllui](https://img.shields.io/twitter/follow/adamllui?label=关注@adamllui&style=social)](https://twitter.com/adamllui)
 
 ## 更多 ChatGPT 应用
