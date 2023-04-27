@@ -53,7 +53,7 @@
 
 ## User feedback
 
-<img height=333 width=auto src="https://i.imgur.com/toNHGt4.png">
+<img height="333" src="https://i.imgur.com/toNHGt4.png">
 
 ## Installation
 
