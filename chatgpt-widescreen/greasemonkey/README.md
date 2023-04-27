@@ -38,6 +38,10 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> Streamline your ChatGPT experience with automatically applied settings
 
+## User feedback
+
+<img width=999 src="https://i.imgur.com/DXS1ew7.png">
+
 ## Demo
 
 <div align="center">
