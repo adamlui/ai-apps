@@ -1,6 +1,8 @@
 # 安全政策
 
-简体中文 | [English](../SECURITY.md)
+###### 简体中文 | [English](../SECURITY.md) | [हिंदी](hi/SECURITY.md)
+
+<br>
 
 如果您发现漏洞，请打开一个[安全建议草案](https://github.com/adamlui/chatgpt-auto-refresh/security/advisories/new)。
 
