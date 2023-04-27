@@ -1,6 +1,4 @@
-# MIT License
-
-English | [简体中文](zh-cn/LICENSE.md)
+MIT License
 
 Copyright (c) 2023 Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & 冯不游
 
