@@ -1,7 +1,7 @@
-# Security Policy
+# सुरक्षा नीति
 
-Hindi | [English](../SECURITY.md) | [简体中文](zh-cn/SECURITY.md)
+हिंदी | [English](../SECURITY.md) | [简体中文](zh-cn/SECURITY.md)
 
-If you find a vulnerability, please open a [draft security advisory](https://github.com/adamlui/chatgpt-auto-refresh/security/advisories/new).
+अगर आपको कोई भेद्यता मिलती है, तो कृपया [ड्राफ़्ट सुरक्षा सलाह](https://github.com/adamlui/chatgpt-auto-refresh/security/advisories/new) खोलें।  
 
-Pull requests are also welcome, but for safety reasons, send an email to adamlui@pm.me and wait for a response before making it public.
+पुल अनुरोधों का भी स्वागत है, लेकिन सुरक्षा कारणों से, adamlui@pm.me पर एक ईमेल भेजें और इसे सार्वजनिक करने से पहले प्रतिक्रिया की प्रतीक्षा करें।
