@@ -53,7 +53,7 @@
 
 ## User feedback
 
-![](https://i.imgur.com/slZzgSE.png)
+![](https://i.imgur.com/A0kjk9A.png)
 
 ## Installation
 
