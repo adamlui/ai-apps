@@ -11,7 +11,7 @@
 // @name:es             Modo de Pantalla Ancha de ChatGPT 🖥️
 // @name:fr             Mode Écran Large ChatGPT 🖥️
 // @name:it             ChatGPT Modalità Widescreen 🖥️
-// @version             2023.4.22
+// @version             2023.4.26
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -228,8 +228,9 @@
     function getUserscriptManager() {
         try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
-    function loadSetting(...keys) {
-        keys.forEach(function (key) {
+    function loadSetting() {
+        var keys = [].slice.call(arguments)
+        keys.forEach(function(key) {
             config[key] = GM_getValue(configKeyPrefix + key, false)
     })}
 

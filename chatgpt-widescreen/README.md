@@ -33,6 +33,16 @@
 
 </div>
 
+## Benefits
+
+- Experience clearer programming code display with proper indentation
+
+- View multi-step instructions or long recipes on a single page for easier reference
+
+- Enjoy original lyrics, poetry, essays, or compositions in a more visually pleasing format
+
+- Streamline your ChatGPT experience with automatically applied settings
+
 ## Installation
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"><img style="margin: 0 2px -1px 0" height=16 src="https://i.imgur.com/0wUsChU.png"> Browser extension:
