@@ -1,4 +1,4 @@
-## MIT 执照
+# MIT 执照
 
 简体中文 | [English](../LICENSE.md)
 
