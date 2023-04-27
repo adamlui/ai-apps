@@ -1,6 +1,6 @@
 # Security Policy
 
-English | [简体中文](zh-cn/SECURITY.md)
+###### English | [简体中文](zh-cn/SECURITY.md) | [हिंदी](hi/LICENSE.md)
 
 If you find a vulnerability, please open a [draft security advisory](https://github.com/adamlui/chatgpt-auto-refresh/security/advisories/new).
 
