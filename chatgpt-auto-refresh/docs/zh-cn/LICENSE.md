@@ -1,4 +1,6 @@
-MIT 执照
+## MIT 执照
+
+简体中文 | [English](../LICENSE.md)
 
 版权所有 (c) 2023 刘展鹏 (Adam Lui)
 
