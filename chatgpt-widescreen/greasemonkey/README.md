@@ -30,13 +30,13 @@
 
 ## Benefits
 
-- Experience clearer programming code display with proper indentation
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> Experience clearer programming code display with proper indentation
 
-- View multi-step instructions or long recipes on a single page for easier reference
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> View multi-step instructions or long recipes on a single page for easier reference
 
-- Enjoy original lyrics, poetry, essays, or compositions in a more visually pleasing format
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> Enjoy original lyrics, poetry, essays, or compositions in a more visually pleasing format
 
-- Streamline your ChatGPT experience with automatically applied settings
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> Streamline your ChatGPT experience with automatically applied settings
 
 ## Demo
 
