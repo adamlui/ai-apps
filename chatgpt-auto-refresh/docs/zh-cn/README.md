@@ -80,9 +80,9 @@ ChatGPT 自动刷新依赖于强大的 [chatgpt.js](https://github.com/chatgptjs
 </div>
 </h6>
 
-## Compatibility
+## 兼容性
 
-ChatGPT Auto Refresh is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/):
+ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.net/) 或 [Violentmonkey](https://violentmonkey.github.io/) 的浏览器:
 
 - Google Chrome
 - Mozilla Firefox
