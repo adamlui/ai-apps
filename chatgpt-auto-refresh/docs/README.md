@@ -129,14 +129,14 @@ Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling.
 
 Display ChatGPT answers in Brave Search sidebar.
 <br>[Install](https://greasyfork.org/en/scripts/462440-bravegpt) / 
-[Readme](https://bravegpt.com/greasemonkey/README.md) / 
+[Readme](https://github.bravegpt.com/blob/main/greasemonkey/README.md) / 
 [Discuss](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [Autoclear ChatGPT History](https://github.com/adamlui/autoclear-chatgpt-history/tree/main/greasemonkey) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
 Auto-clear your ChatGPT query history for maximum privacy.
 <br>[Install](https://greasyfork.org/en/scripts/460805-auto-clear-chatgpt-history) / 
-[Readme](https://github.com/adamlui/autoclear-chatgpt-history/tree/main/greasemonkey/README.md) / 
+[Readme](https://github.com/adamlui/autoclear-chatgpt-history/blob/main/greasemonkey/README.md) / 
 [Discuss](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
 
 #
