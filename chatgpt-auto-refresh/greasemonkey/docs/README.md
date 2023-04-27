@@ -10,7 +10,7 @@
 
 ### Keeps ChatGPT sessions fresh via background requests to eliminate network errors + Cloudflare checks.
 
-English | [简体中文](zh-cn/README.md)
+###### English | [简体中文](zh-cn/README.md)
 
 <a href="https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
 <br>
