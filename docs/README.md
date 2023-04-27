@@ -34,7 +34,7 @@ Display ChatGPT answers in Brave Search sidebar. // 在 Brave Search 侧边栏�
 
 Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks. // 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
 <br>[Install](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh) / 
-[Readme](chatgpt-auto-refresh/README.md) / 
+[Readme](chatgpt-auto-refresh/docs/README.md) / 
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Heartbeat 💓](chatgpt-heartbeat)
