@@ -1,7 +1,7 @@
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT无限 ∞ &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=从无所不知的%20ChatGPT%20生成无穷无尽的答案%21&url=https://chatgptevo.com/infinity&hashtags=javascript,openai,chatgpt)
 
 [![执照](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
-[![提交](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-infinity?label=GitHub+提交)](https://github.com/adamlui/chatgpt-infinity/commits/main)
+[![提交](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-infinity?label=提交)](https://github.com/adamlui/chatgpt-infinity/commits/main)
 [![代码质量](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 
