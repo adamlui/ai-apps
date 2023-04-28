@@ -1,5 +1,5 @@
-# Security Policy
+सुरक्षा नीति
 
-If you find a vulnerability, please open a [draft security advisory](https://github.com/adamlui/autoclear-chatgpt-history/security/advisories/new).
+यदि आपको कोई भेद्यता मिलती है, तो कृपया एक मसौदा सुरक्षा सलाहकार खोलें।
 
-Pull requests are also welcome, but for safety reasons, send an email to adamlui@pm.me and wait for a response before making it public.
+पुल अनुरोधों का भी स्वागत है, लेकिन सुरक्षा कारणों से, security@chatgpt.evo पर एक ईमेल भेजें और इसे सार्वजनिक करने से पहले प्रतिक्रिया की प्रतीक्षा करें।
