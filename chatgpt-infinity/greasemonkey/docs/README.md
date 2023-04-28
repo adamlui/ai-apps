@@ -7,10 +7,10 @@
 
 ### Generate endless answers from all-knowing ChatGPT
 
-<a href="#"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/en/scripts/465051-chatgpt-infinity"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptevo.com/infinity/discussions) /
-[Review](#) /
+[Review](https://greasyfork.org/en/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
 [Contact author](https://github.com/adamlui)
 
 ## Installation
