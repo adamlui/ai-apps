@@ -9,13 +9,13 @@
 
 ###### 简体中文 | [English](../README.md)
 
-<a href="https://greasyfork.org/en/scripts/465051-chatgpt-infinity"><img alt="安装这个脚本" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#安装"><img alt="如何安装" title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/en/scripts/465051-chatgpt-infinity"><img alt="安装这个脚本" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#如何安装"><img alt="如何安装" title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
 <br>
 [讨论](https://chatgptevo.com/infinity/discussions) /
 [审查](https://greasyfork.org/en/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
 [联系作者](https://github.com/adamlui)
 
-## 安装
+## 如何安装
 
 1. 安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)) 或者 Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
