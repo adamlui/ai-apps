@@ -5,7 +5,7 @@
 [![代码质量](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 
-### 从无所不知的 ChatGPT 生成无穷无尽的答案
+### 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
 
 ###### 简体中文 | [English](../README.md)
 
