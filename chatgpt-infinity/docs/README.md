@@ -5,7 +5,7 @@
 [![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 
-### Generate endless answers from all-knowing ChatGPT
+### Generate endless answers from all-knowing ChatGPT (in any language!)
 
 ###### English | [简体中文](zh-cn/README.md)
 
