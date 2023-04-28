@@ -15,6 +15,15 @@
 [审查](https://greasyfork.org/en/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
 [联系作者](https://github.com/adamlui)
 
+#
+
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-tm-menu.png">
+<img width=322 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-on-notification.png">
+
+</div>
+
 ## 如何安装
 
 1. 安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)) 或者 Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
