@@ -1,21 +1,10 @@
-MIT License
 
-Copyright (c) 2023 Adam Lui (刘展鹏) & Xiao-Ying Yo (小影哟)
+एमआईटी लाइसेंस
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+कॉपीराइट (सी) 2023 एडम लुई (刘展鹏), जिओ-यिंग यो (小影哟) और 冯不游।
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+किसी भी व्यक्ति को इस सॉफ़्टवेयर और संबंधित दस्तावेज़ फ़ाइलों ("सॉफ़्टवेयर") की एक प्रति प्राप्त करने के लिए अनुमति दी जाती है, बिना किसी प्रतिबंध के सॉफ़्टवेयर में डील करने के लिए अनुमति दी जाती है, जिसमें बिना किसी सीमा के उपयोग, कॉपी, संशोधित, मर्ज करने के अधिकार शामिल हैं। , सॉफ़्टवेयर की प्रतियां प्रकाशित, वितरित, सबलाइसेंस, और/या बेचना, और उन व्यक्तियों को अनुमति देना जिन्हें सॉफ़्टवेयर ऐसा करने के लिए प्रस्तुत किया गया है, निम्नलिखित शर्तों के अधीन:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+उपरोक्त कॉपीराइट नोटिस और यह अनुमति नोटिस सॉफ्टवेयर की सभी प्रतियों या पर्याप्त भागों में शामिल किया जाएगा।
+
+सॉफ़्टवेयर किसी भी प्रकार की वारंटी के बिना "जैसा है" प्रदान किया जाता है, व्यक्त या निहित, व्यापारिकता, किसी विशेष उद्देश्य के लिए उपयुक्तता और गैर-उल्लंघन की वारंटी सहित लेकिन सीमित नहीं है। किसी भी घटना में लेखक या कॉपीराइट धारक किसी भी दावे, नुकसान या अन्य देयता के लिए उत्तरदायी नहीं होंगे, चाहे अनुबंध की कार्रवाई में, टोर्ट या अन्यथा, सॉफ़्टवेयर या उपयोग या अन्य व्यवहार के संबंध में या उससे उत्पन्न हो सॉफ़्टवेयर।
