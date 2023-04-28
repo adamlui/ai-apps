@@ -134,7 +134,7 @@ Display ChatGPT answers in Brave Search sidebar.
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](https://chatgptevo.com/infinity/github)
 
-Generate endless answers from all-knowing ChatGPT.
+Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
 [Readme](https://github.com/adamlui/chatgpt-infinity#readme) / 
 [Discuss](https://chatgptevo.com/infinity/discussions)
