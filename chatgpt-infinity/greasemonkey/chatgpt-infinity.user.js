@@ -4,12 +4,12 @@
 // @name:zh-HK          ChatGPT無限 ∞
 // @name:zh-SG          ChatGPT无限 ∞
 // @name:zh-TW          ChatGPT無限 ∞
-// @version             2023.4.28.3
-// @description         Generate endless answers from all-knowing ChatGPT
-// @description:zh-CN   从无所不知的 ChatGPT 生成无穷无尽的答案
-// @description:zh-HK   從無所不知的 ChatGPT 生成無窮無盡的答案
-// @description:zh-SG   从无所不知的 ChatGPT 生成无穷无尽的答案
-// @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案
+// @version             2023.4.28.4
+// @description         Generate endless answers from all-knowing ChatGPT (in any language!)
+// @description:zh-CN   从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
+// @description:zh-HK   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
+// @description:zh-SG   从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
+// @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @license             MIT
