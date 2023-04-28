@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                ChatGPT Infinity ∞
-// @version             2023.4.28
+// @version             2023.4.28.1
 // @description         Generate endless answers from all-knowing ChatGPT
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -87,7 +87,7 @@
 
     function updateToggleHTML() {
         toggleLabel.innerHTML = `
-            <img width="18px" src="https://i.imgur.com/QdwpqDt.png">
+            <img width="18px" src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-navicon-light-80.png">
             Infinity Mode ${config.infinityMode ? 'enabled' : 'disabled'}
             <label class="switch" ><input id="infinityToggle" type="checkbox"
                 ${config.infinityMode ? "checked='true'" : ""} >
