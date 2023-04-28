@@ -12,10 +12,10 @@
 
 ###### 简体中文 | [English](../README.md)
 
-<a href="https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh"><img alt="安装这个脚本" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#如何安装"><img alt="如何安装" title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462422-chatgpt-auto-refresh"><img alt="安装这个脚本" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#如何安装"><img alt="如何安装" title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
 <br>
 [讨论](https://github.com/adamlui/chatgpt-auto-refresh/discussions) /
-[审查](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
+[审查](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
 [联系作者](https://github.com/adamlui)
 
 #
@@ -59,9 +59,9 @@
 
 ## 如何安装
 
-1. 安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)) 或者 Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
+1. 安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) 或者 Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
-2. 安装 [ChatGPT 自动刷新](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh) (将加载上面安装的用户脚本管理器)
+2. 安装 [ChatGPT 自动刷新](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) (将加载上面安装的用户脚本管理器)
 
 3. 正常访问 [chat.openai.com](https://chat.openai.com)，会话将定期自动刷新 (在后台，不会对您造成任何损失)!
 
@@ -98,10 +98,10 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 
 如果您已经测试它可以在未列出的浏览器中工作，请创建一个 [pull request](https://github.com/adamlui/chatgpt-auto-refresh/pulls) 成为贡献者！
 
-<a href="https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh"><img alt="安装这个脚本" height=40 src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#如何安装"><img alt="如何安装" height=40 title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462422-chatgpt-auto-refresh"><img alt="安装这个脚本" height=40 src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#如何安装"><img alt="如何安装" height=40 title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
 <br>
 [讨论](https://github.com/adamlui/chatgpt-auto-refresh/discussions) / 
-[发表评论](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
+[发表评论](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
 [更多 ChatGPT 用户脚本](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 ## 作者链接
@@ -121,23 +121,23 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> [ChatGPT 宽屏模式🖥️](https://github.com/adamlui/chatgpt-widescreen/blob/main/greasemonkey) &nbsp;<img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" alt="ChatGPT&#0032;Widescreen&#0032;Mode - Add&#0032;widescreen&#0032;&#0043;&#0032;full&#0032;window&#0032;modes&#0032;to&#0032;ChatGPT | Product Hunt" style="width: auto; height: 24px; margin:0 0 -4px 3px;" width="auto" height="24" />
 
 向 ChatGPT 添加宽屏 + 全窗口模式以减少滚动。<br>
-[安装](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode) / 
-[自述文件](https://github.com/adamlui/chatgpt-widescreen/blob/main/greasemonkey/README.md) / 
-[讨论](https://github.com/adamlui/chatgpt-widescreen/discussions)
+[安装](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) / 
+[自述文件](https://github.com/adamlui/chatgpt-widescreen#readme) / 
+[讨论](https://chatgptevo.com/widescreen/discussions)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com/greasemonkey) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 在 Brave Search 侧边栏中显示 ChatGPT 答案。<br>
-[安装](https://greasyfork.org/en/scripts/462440-bravegpt) / 
-[自述文件](https://github.bravegpt.com/blob/main/greasemonkey/README.md) / 
+[安装](https://greasyfork.org/scripts/462440-bravegpt) / 
+[自述文件](https://github.bravegpt.com/#readme) / 
 [讨论](https://github.bravegpt.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [自动清除 ChatGPT 历史记录](https://github.com/adamlui/autoclear-chatgpt-history/tree/main/greasemonkey) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" alt="在 Awesome Userscripts 中提到" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](https://chatgptevo.com/infinity/github)
 
-自动清除您的 ChatGPT 查询历史记录以获得最大的隐私。
-<br>[安装](https://greasyfork.org/en/scripts/460805-auto-clear-chatgpt-history) / 
-[自述文件](https://github.com/adamlui/autoclear-chatgpt-history/blob/main/greasemonkey/README.md) / 
-[讨论](https://github.com/adamlui/autoclear-chatgpt-history/discussions)
+从无所不知的 ChatGPT 生成无穷无尽的答案。
+<br>[安装](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
+[自述文件](https://github.com/adamlui/chatgpt-infinity/blob/main/docs/zh-cn/README.md) / 
+[讨论](https://chatgptevo.com/infinity/discussions)
 
 #
   
