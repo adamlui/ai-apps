@@ -4,7 +4,7 @@
 // @name:zh-HK          ChatGPT無限 ∞
 // @name:zh-SG          ChatGPT无限 ∞
 // @name:zh-TW          ChatGPT無限 ∞
-// @version             2023.4.28.5
+// @version             2023.4.28.6
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:zh-CN   从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
 // @description:zh-HK   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
@@ -22,8 +22,8 @@
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
 // @noframes
-// @homepageURL         https://github.com/adamlui/chatgpt-infinity
-// @supportURL          https://github.com/adamlui/chatgpt-infinity/issues
+// @homepageURL         https://chatgptevo.com/infinity
+// @supportURL          https://chatgptevo.com/infinity/support
 // @updateURL           https://greasyfork.org/scripts/465051/code/chatgpt-infinity.meta.js
 // @downloadURL         https://greasyfork.org/scripts/465051/code/chatgpt-infinity.user.js
 // ==/UserScript==
