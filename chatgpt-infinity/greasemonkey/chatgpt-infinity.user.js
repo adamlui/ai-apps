@@ -1,7 +1,15 @@
 // ==UserScript==
 // @name                ChatGPT Infinity ∞
-// @version             2023.4.28.2
+// @name:zh-CN          ChatGPT无限 ∞
+// @name:zh-HK          ChatGPT無限 ∞
+// @name:zh-SG          ChatGPT无限 ∞
+// @name:zh-TW          ChatGPT無限 ∞
+// @version             2023.4.28.3
 // @description         Generate endless answers from all-knowing ChatGPT
+// @description:zh-CN   从无所不知的 ChatGPT 生成无穷无尽的答案
+// @description:zh-HK   從無所不知的 ChatGPT 生成無窮無盡的答案
+// @description:zh-SG   从无所不知的 ChatGPT 生成无穷无尽的答案
+// @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @license             MIT
