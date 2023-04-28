@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                ChatGPT Infinity ∞
-// @version             2023.4.28.1
+// @version             2023.4.28.2
 // @description         Generate endless answers from all-knowing ChatGPT
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -8,7 +8,7 @@
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@95c0547bdec79385eb8931d57bdad0b2b357b67f/dist/chatgpt-1.6.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@aa37089ffb0462f72d5020d0c7d1c78937d42a07/dist/chatgpt-1.6.1.min.js
 // @grant               GM_setValue
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
@@ -33,7 +33,6 @@
             + stateSeparator + stateWord[+!config.infinityMode]
         menuIDs.push(GM_registerMenuCommand(imLabel, function() {
             document.querySelector('#infinityToggle').click()
-            if (!config.notifHidden) chatgpt.notify('Infinity Mode: ' + stateWord[+!config.infinityMode], '', '', chatgpt.isDarkMode() ? '' : 'shadow')
         }))
 
         // Add command to set language
@@ -97,27 +96,31 @@
 
     async function toggleInfinityMode() {
         var toggleInput = document.querySelector('#infinityToggle')
-        if (event.target == toggleLabel) toggleInput.click() // to avoid double-toggle
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.infinityMode = toggleInput.checked
         for (var id of menuIDs) { GM_unregisterMenuCommand(id) } ; registerMenu() // refresh menu
-        if (config.infinityMode) { // activate it
-            chatgpt.sendInNewChat('generate a single random q&a in ' + config.replyLanguage + '. don\'t type anything else')
+        if (config.infinityMode && !config.sent) { // activate it
+            if (!config.notifHidden) chatgpt.notify('Infinity Mode: ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            document.querySelector('nav > a').click()
+            setTimeout(function() {
+                chatgpt.send('generate a single random q&a in ' + config.replyLanguage + '. don\'t type anything else') }, 500)
+            config.sent = true
             await chatgpt.isIdle()
             if (config.infinityMode && !config.isActive) { // double-check in case de-activated before scheduled
                 config.isActive = setInterval(async function() {
                     chatgpt.send('do it again') ; await chatgpt.isIdle()
                 }, parseInt(config.replyInterval) * 1000)
             }
-        } else { // de-activate it
-            clearInterval(config.isActive) ; config.isActive = null
-        }
+        } else if (!config.infinityMode && config.sent) { // de-activate it
+            if (!config.notifHidden) chatgpt.notify('Infinity Mode: OFF', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            clearInterval(config.isActive) ; config.isActive = null, config.sent = null
+        } else return
     }
 
     // Run MAIN routine
 
     // Init settings
-    var config = { isActive: false }, configKeyPrefix = 'chatGPTinf_' // initialize config variables
+    var config = { isActive: false, sent: false }, configKeyPrefix = 'chatGPTinf_' // initialize config variables
     loadSetting('replyLanguage', 'replyInterval')
     if (!config.replyLanguage) saveSetting('replyLanguage', 'English') // init reply language to English if unset
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
@@ -146,7 +149,10 @@
 
     // Create toggle label, add listener/classes/HTML
     var toggleLabel = document.createElement('div') // create label div
-    toggleLabel.addEventListener('click', (event) => { toggleInfinityMode(event) })
+    toggleLabel.addEventListener('click', (event) => {
+        var toggleInput = document.querySelector('#infinityToggle')
+        toggleInput.click() ; toggleInfinityMode()
+    })
     for (var link of document.querySelectorAll('a')) { // inspect sidebar links for classes
         if (link.innerHTML.includes('New chat')) { // focus on 'New chat'
             toggleLabel.setAttribute('class', link.classList) // borrow its classes
