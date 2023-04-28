@@ -7,17 +7,17 @@
 
 ### Generate endless answers from all-knowing ChatGPT
 
-<a href="https://greasyfork.org/en/scripts/465051-chatgpt-infinity"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/465051-chatgpt-infinity"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptevo.com/infinity/discussions) /
-[Review](https://greasyfork.org/en/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
+[Review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
 [Contact author](https://github.com/adamlui)
 
 ## Installation
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
-2. Install [ChatGPT Infinity](https://greasyfork.org/en/scripts/465051-chatgpt-infinity) (will load in userscript manager installed above)
+2. Install [ChatGPT Infinity](https://greasyfork.org/scripts/465051-chatgpt-infinity) (will load in userscript manager installed above)
 
 3. Visit [chat.openai.com](https://chat.openai.com) as normal, and a toggle appears!
 
@@ -62,21 +62,21 @@ For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-app
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://chatgptevo.com/autorefresh/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 5px"></a>
 
 Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks. // 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
-<br>[Install](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh) / 
+<br>[Install](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) / 
 [Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) / 
 [Discuss](https://chatgptevo.com/autorefresh/discuss)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://github.bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 Display ChatGPT answers in Brave Search sidebar. // 在 Brave Search 侧边栏中显示 ChatGPT 答案。
-<br>[Install](https://greasyfork.org/en/scripts/462440-bravegpt) / 
+<br>[Install](https://greasyfork.org/scripts/462440-bravegpt) / 
 [Readme](https://github.bravegpt.com/#readme) / 
 [Discuss](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> [ChatGPT Widescreen Mode 🖥️](https://chatgptevo.com/widescreen/github) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" alt="ChatGPT&#0032;Widescreen&#0032;Mode - Add&#0032;widescreen&#0032;&#0043;&#0032;full&#0032;window&#0032;modes&#0032;to&#0032;ChatGPT | Product Hunt" style="width: auto; height: 24px; margin:0 0 -4px 3px;" width="auto" height="24" />
 
 Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling. // 向 ChatGPT 添加宽屏 + 全窗口模式以减少滚动。<br>
-[Install](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode) / 
+[Install](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) / 
 [Readme](https://github.com/adamlui/chatgpt-widescreen#readme) / 
 [Discuss](https://chatgptevo.com/widescreen/discuss)
 
