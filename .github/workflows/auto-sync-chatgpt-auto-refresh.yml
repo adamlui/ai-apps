@@ -40,7 +40,7 @@ jobs:
             relative_path=${file#"${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/"}
             if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path")" ]; then
               cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path"
-            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/cchatgpt-apps/hatgpt-auto-refresh/docs/$relative_path")" ]; then
+            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path")" ]; then
               cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path"
             fi
           done
