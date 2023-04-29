@@ -4,7 +4,6 @@
 
 ![usercount](https://img.shields.io/badge/Users-1,000+-brightgreen)
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
-[![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/QQ-989898.svg)](#compatibility)
 [![commits](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-widescreen?label=Commits)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
 [![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
 <a alt="chatgpt.js" href="https://github.com/chatgptjs/chatgpt.js"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
