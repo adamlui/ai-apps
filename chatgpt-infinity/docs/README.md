@@ -1,6 +1,7 @@
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Infinity ∞ &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20endless%20answers%20from%20all-knowing%20ChatGPT&url=https://chatgptevo.com/infinity&hashtags=javascript,openai,chatgpt)
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
+[![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/QQ-989898.svg)](#compatibility)
 [![commits](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-infinity?label=Commits)](https://github.com/adamlui/chatgpt-infinity/commits/main)
 [![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
@@ -55,6 +56,28 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 
 </div>
 </h6>
+
+## Compatibility 
+
+**ChatGPT Infinity** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/):
+
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+- Opera
+- Brave
+- Vivaldi
+- Waterfox
+- LibreWolf
+- QQ
+
+If you've tested it to work in a browser not listed, simply create a [pull request](https://github.com/adamlui/chatgpt-infinity/pulls) (contributions of all kinds are welcome!)
+
+<a href="https://greasyfork.org/en/scripts/465051-chatgpt-infinity"><img height-40 alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img height-40 alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<br>
+[Discuss](https://chatgptevo.com/infinity/discussions) /
+[Leave a review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
+[More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 ## Author links
 
