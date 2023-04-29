@@ -106,7 +106,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 - **Google Chrome** (通过 [Chrome 扩展程序](https://chatgptevo.com/widescreen/chrome) 或者 [Greasemonkey 用户脚本](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 - **Mozilla Firefox** (通过 [Greasemonkey 用户脚本](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **Microsoft Edge** (通过 [Edge 扩展程序](https://chatgptevo.com/widescreen/edge) or [Greasemonkey 用户脚本](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Microsoft Edge** (通过 [Edge 扩展程序](https://chatgptevo.com/widescreen/edge) 或者 [Greasemonkey 用户脚本](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 - **Opera** (通过 [Chrome 扩展程序](https://chatgptevo.com/widescreen/chrome) 或者 [Greasemonkey 用户脚本](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 - **Brave** (通过 [Chrome 扩展程序](https://chatgptevo.com/widescreen/chrome) 或者 [Greasemonkey 用户脚本](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 - **Vivaldi** (通过 [Chrome 扩展程序](https://chatgptevo.com/widescreen/chrome) 或者 [Greasemonkey 用户脚本](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
