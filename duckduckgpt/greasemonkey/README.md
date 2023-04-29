@@ -17,7 +17,7 @@
 
 <h3><b>DuckDuckGPT</b> brings the magic of ChatGPT to search results.</h3>
 
-<a href="https://greasyfork.org/en/scripts/459849-duckduckgpt"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
 <br>
 [Discuss](https://github.duckduckgpt.com/discussions) /
 [Review](https://duckduckgpt.com/userscript/review) /
@@ -29,9 +29,9 @@
 
 ## Installation
 
-1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
+1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
-2. Install [DuckDuckGPT](https://greasyfork.org/en/scripts/459849-duckduckgpt) (will load in userscript manager installed above)
+2. Install [DuckDuckGPT](https://greasyfork.org/scripts/459849-duckduckgpt) (will load in userscript manager installed above)
 
 3. Visit [duckduckgo.com](https://duckduckgo.com), type your search, engage bot!
 
@@ -91,7 +91,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <br>
 
-<a href="https://greasyfork.org/en/scripts/459849-duckduckgpt"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
 <br>
 [Discuss](https://github.duckduckgpt.com/discussions) /
 [Leave a review](https://duckduckgpt.com/userscript/review) /
@@ -122,14 +122,14 @@ Generate endless answers from all-knowing ChatGPT (in any language!)
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com/greasemonkey) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 Display ChatGPT answers in Brave Search sidebar.
-<br>[Install](https://greasyfork.org/en/scripts/462440-bravegpt) / 
+<br>[Install](https://greasyfork.org/scripts/462440-bravegpt) / 
 [Readme](https://bravegpt.com/greasemonkey/README.md) / 
 [Discuss](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> [ChatGPT Widescreen Mode 🖥️](https://github.com/adamlui/chatgpt-widescreen/tree/main/greasemonkey) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" alt="ChatGPT&#0032;Widescreen&#0032;Mode - Add&#0032;widescreen&#0032;&#0043;&#0032;full&#0032;window&#0032;modes&#0032;to&#0032;ChatGPT | Product Hunt" style="width: auto; height: 24px; margin:0 0 -4px 3px;" width="auto" height="24" />
 
 Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing.
-<br>[Install](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode) / 
+<br>[Install](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) / 
 [Readme](https://github.com/adamlui/chatgpt-widescreen/blob/main/greasemonkey/README.md) / 
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
