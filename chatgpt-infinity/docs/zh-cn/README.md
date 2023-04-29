@@ -118,4 +118,4 @@ ChatGPT无限依赖于强大的 [chatgpt.js](https://github.com/chatgptjs/chatgp
 #
   
 <a href="https://github.com/adamlui/userscripts">**更多用户脚本**</a> / 
-<a href="#-chatgpt%E6%97%A0%E9%99%90--">回到顶部 ↑</a>
+<a href="#-chatgpt-%E6%97%A0%E9%99%90--">回到顶部 ↑</a>
