@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.4.28.8
+// @version             2023.4.28.9
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -142,7 +142,7 @@
                 if (replyLanguage === null) break // user cancelled so do nothing
                 saveSetting('replyLanguage', replyLanguage)
                 alert('ChatGPT Infinity will reply in ' + ( replyLanguage ? replyLanguage : 'your system language' ) + '.')
-                if (typeof config.infinityMode.isActive !== 'undefined') { // reset running infinity mode
+                if (config.infinityMode.isActive) { // reset running infinity mode
                     toggleInfinityMode() ; toggleInfinityMode() }
                 for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
                 registerMenu() // serve fresh menu
@@ -217,7 +217,7 @@
         } else if (!config.infinityMode && config.sent) { // de-activate it
             if (!config.notifHidden) chatgpt.notify('Infinity Mode: OFF', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             clearInterval(config.isActive) ; config.isActive = null, config.sent = null
-        } else return
+        }
     }
 
     // Run MAIN routine
