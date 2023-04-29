@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.4.28.7
+// @version             2023.4.28.8
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -135,20 +135,24 @@
         }))
 
         // Add command to set language
-        menuIDs.push(GM_registerMenuCommand('🌐 Reply Language (' + config.replyLanguage + ')', function() {
-            var replyLanguage = prompt('Update reply language:', config.replyLanguage)
-            saveSetting('replyLanguage', replyLanguage)
-            alert('ChatGPT Infinity will reply in ' + replyLanguage + '.')
-            if (config.infinityMode.isActive) { // reset running infinity mode
-                toggleInfinityMode() ; toggleInfinityMode() }
-            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
-            registerMenu() // serve fresh menu
-        }))
+        var rlLabel = '🌐 Reply Language' + ( config.replyLanguage ? ( ' (' + config.replyLanguage + ')' ) : '' )
+        menuIDs.push(GM_registerMenuCommand(rlLabel, function() {
+            while (true) {
+                var replyLanguage = prompt('Update reply language:', config.replyLanguage)
+                if (replyLanguage === null) break // user cancelled so do nothing
+                saveSetting('replyLanguage', replyLanguage)
+                alert('ChatGPT Infinity will reply in ' + ( replyLanguage ? replyLanguage : 'your system language' ) + '.')
+                if (typeof config.infinityMode.isActive !== 'undefined') { // reset running infinity mode
+                    toggleInfinityMode() ; toggleInfinityMode() }
+                for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
+                registerMenu() // serve fresh menu
+                break
+        }}))
 
         // Add command to change reply interval
         menuIDs.push(GM_registerMenuCommand('⌚ Reply Interval (' + config.replyInterval + 's)', function() {
             while (true) {
-                var replyInterval = prompt("Update reply interval (minimum 5 secs):", config.replyInterval)
+                var replyInterval = prompt('Update reply interval (minimum 5 secs):', config.replyInterval)
                 if (replyInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
                     saveSetting('replyInterval', parseInt(replyInterval))
@@ -161,8 +165,8 @@
         }}}))
     }
 
-    function getUserscriptManager() {
-        try { return GM_info.scriptHandler } catch (error) { return 'other' }}
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch(error) { return 'other' }}
+    function getUserLanguage() { return ( navigator.languages[0] || navigator.language || '' )}
 
     function loadSetting() {
         var keys = [].slice.call(arguments)
@@ -202,9 +206,9 @@
             if (!config.notifHidden) chatgpt.notify('Infinity Mode: ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             document.querySelector('nav > a').click()
             setTimeout(function() {
-                chatgpt.send('generate a single random q&a in ' + config.replyLanguage + '. don\'t type anything else') }, 500)
-            config.sent = true
-            await chatgpt.isIdle()
+                chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : ''  )
+                                                            + '. don\'t type anything else') }, 500)
+            config.sent = true ; await chatgpt.isIdle()
             if (config.infinityMode && !config.isActive) { // double-check in case de-activated before scheduled
                 config.isActive = setInterval(async function() {
                     chatgpt.send('do it again') ; await chatgpt.isIdle()
@@ -219,9 +223,9 @@
     // Run MAIN routine
 
     // Init settings
-    var config = { isActive: false, sent: false }, configKeyPrefix = 'chatGPTinf_' // initialize config variables
+    var config = { isActive: false, sent: false, infinityMode: false }, configKeyPrefix = 'chatGPTinf_' // initialize config variables
     loadSetting('replyLanguage', 'replyInterval')
-    if (!config.replyLanguage) saveSetting('replyLanguage', 'English') // init reply language to English if unset
+    if (!config.replyLanguage) saveSetting('replyLanguage', getUserLanguage()) // init reply language
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
 
     // Init/register menu
