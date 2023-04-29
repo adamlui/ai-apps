@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.4.28.9
+// @version             2023.4.28.10
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -144,8 +144,7 @@
                 alert('ChatGPT Infinity will reply in ' + ( replyLanguage ? replyLanguage : 'your system language' ) + '.')
                 if (config.infinityMode.isActive) { // reset running infinity mode
                     toggleInfinityMode() ; toggleInfinityMode() }
-                for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
-                registerMenu() // serve fresh menu
+                for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
                 break
         }}))
 
@@ -159,8 +158,7 @@
                     alert('ChatGPT Infinity will reply every ' + replyInterval + ' seconds.')
                     if (config.infinityMode.isActive) { // reset running infinity mode
                         toggleInfinityMode() ; toggleInfinityMode() }
-                    for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
-                    registerMenu() // serve fresh menu
+                    for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
                     break
         }}}))
     }
@@ -201,7 +199,7 @@
         var toggleInput = document.querySelector('#infinityToggle')
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.infinityMode = toggleInput.checked
-        for (var id of menuIDs) { GM_unregisterMenuCommand(id) } ; registerMenu() // refresh menu
+        for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
         if (config.infinityMode && !config.sent) { // activate it
             if (!config.notifHidden) chatgpt.notify('Infinity Mode: ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             document.querySelector('nav > a').click()
