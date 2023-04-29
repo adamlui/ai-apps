@@ -1,6 +1,7 @@
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT 无限 ∞ &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=从无所不知的%20ChatGPT%20生成无穷无尽的答案%21&url=https://chatgptevo.com/infinity&hashtags=javascript,openai,chatgpt)
 
 [![执照](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
+[![兼容性](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/QQ-989898.svg)](#兼容性)
 [![提交](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-infinity?label=提交)](https://github.com/adamlui/chatgpt-infinity/commits/main)
 [![代码质量](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
@@ -9,10 +10,10 @@
 
 ###### 简体中文 | [English](../README.md)
 
-<a href="https://greasyfork.org/en/scripts/465051-chatgpt-infinity"><img alt="安装这个脚本" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#如何安装"><img alt="如何安装" title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/465051-chatgpt-infinity"><img alt="安装这个脚本" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#如何安装"><img alt="如何安装" title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
 <br>
 [讨论](https://chatgptevo.com/infinity/discussions) /
-[审查](https://greasyfork.org/en/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
+[审查](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
 [联系作者](https://github.com/adamlui)
 
 #
@@ -26,7 +27,7 @@
 
 ## 如何安装
 
-1. 安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)) 或者 Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
+1. 安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) 或者 Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
 2. 安装 [ChatGPT无限](https://greasyfork.org/scripts/465051-chatgpt-infinity) (将加载上面安装的用户脚本管理器)
 
@@ -55,6 +56,28 @@ ChatGPT无限依赖于强大的 [chatgpt.js](https://github.com/chatgptjs/chatgp
 
 </div>
 </h6>
+
+## 兼容性
+
+**ChatGPT 無限** 與以下使用 [Tampermonkey](https://www.tampermonkey.net/) 或 [Violentmonkey](https://violentmonkey.github.io/) 的瀏覽器兼容：
+
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+- Opera
+- Brave
+- Vivaldi
+- Waterfox
+- LibreWolf
+- QQ
+
+如果您已經測試它可以在未列出的瀏覽器中工作，只需創建一個 [pull request](https://github.com/adamlui/chatgpt-infinity/pulls) (歡迎各種貢獻!)
+
+<a href="https://greasyfork.org/scripts/465051-chatgpt-infinity"><img height-40 alt="安裝這個腳本" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#如何安装"><img height-40 alt="如何安裝" title="如何安裝" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<br>
+[討論](https://chatgptevo.com/infinity/discussions) /
+[發表評論](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
+[更多 ChatGPT 用戶腳本](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 ## 作者链接
 
