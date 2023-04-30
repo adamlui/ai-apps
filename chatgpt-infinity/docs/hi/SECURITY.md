@@ -1,6 +1,6 @@
 # सुरक्षा नीति
 
-###### अंग्रेजी | [अधिक जानकारी](zh-cn/SECURITY.md)
+###### हिंदी | [English](../SECURITY.md) | [简体中文](../zh-cn/SECURITY.md)
 
 <br>
 
