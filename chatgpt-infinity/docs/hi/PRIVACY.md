@@ -1,8 +1,6 @@
-
-
 # गोपनीयता नीति
 
-###### अंग्रेजी | [अधिक जानकारी](zh-cn/PRIVACY.md) | [हिंदी](hi/privacy.md)
+###### हिंदी | [简体中文](../zh-cn/PRIVACY.md) | [English](../PRIVACY.md)
 
 <br>
 
