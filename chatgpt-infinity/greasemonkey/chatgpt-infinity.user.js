@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.4.28.20
+// @version             2023.4.29
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -145,29 +145,33 @@
 
         // Add command to set language
         var rlLabel = '🌐 Reply Language' + ( config.replyLanguage ? ( ' (' + config.replyLanguage + ')' ) : '' )
-        menuIDs.push(GM_registerMenuCommand(rlLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(rlLabel, async function() {
             while (true) {
                 var replyLanguage = prompt('Update reply language:', config.replyLanguage)
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage)
                     alert('ChatGPT Infinity will reply in ' + ( replyLanguage ? replyLanguage : 'your system language' ) + '.')
-                    if (config.infinityMode.isActive) { // reset running infinity mode
-                        toggleInfinityMode() ; toggleInfinityMode() }
+                    if (config.infinityMode) { // reset reply language live
+                        chatgpt.stop() ; clearInterval(config.isActive) ; config.sent = null ; toggleInfinityMode() }
                     for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
                     break
         }}}))
 
         // Add command to change reply interval
-        menuIDs.push(GM_registerMenuCommand('⌚ Reply Interval (' + config.replyInterval + 's)', function() {
+        menuIDs.push(GM_registerMenuCommand('⌚ Reply Interval (' + config.replyInterval + 's)', async function() {
             while (true) {
                 var replyInterval = prompt('Update reply interval (minimum 5 secs):', config.replyInterval)
                 if (replyInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
                     saveSetting('replyInterval', parseInt(replyInterval))
                     alert('ChatGPT Infinity will reply every ' + replyInterval + ' seconds.')
-                    if (config.infinityMode.isActive) { // reset running infinity mode
-                        toggleInfinityMode() ; toggleInfinityMode() }
+                    if (config.infinityMode) { // reset reply interval live
+                        clearInterval(config.isActive) ; await chatgpt.isIdle()
+                        config.isActive = setInterval(async function() {
+                            chatgpt.send('do it again') ; await chatgpt.isIdle()
+                        }, parseInt(config.replyInterval) * 1000)
+                    }
                     for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
                     break
         }}}))
@@ -210,6 +214,7 @@
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.infinityMode = toggleInput.checked
         for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
+        chatgpt.stop()
         if (config.infinityMode && !config.sent) { // activate it
             if (!config.notifHidden) chatgpt.notify('Infinity Mode: ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             document.querySelector('nav > a').click()
