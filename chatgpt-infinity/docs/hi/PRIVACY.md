@@ -1,6 +1,6 @@
 # गोपनीयता नीति
 
-###### हिंदी | [简体中文](../zh-cn/PRIVACY.md) | [English](../PRIVACY.md)
+###### हिंदी | [English](../PRIVACY.md) | [简体中文](../zh-cn/PRIVACY.md)
 
 <br>
 
