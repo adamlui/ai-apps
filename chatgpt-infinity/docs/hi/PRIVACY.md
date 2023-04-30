@@ -1,11 +1,13 @@
-# Privacy Policy
 
-###### English | [简体中文](zh-cn/PRIVACY.md) | [हिंदी](hi/PRIVACY.md)
+
+# गोपनीयता नीति
+
+###### अंग्रेजी | [अधिक जानकारी](zh-cn/PRIVACY.md) | [हिंदी](hi/privacy.md)
 
 <br>
 
-ChatGPT Infinity does not collect nor store any user data. No information is shared with third-parties for personally-targeted, behavioral marketing or any other purpose. No information is collected from any third-parties. 
+चैटजीपीटी इन्फिनिटी किसी भी उपयोगकर्ता डेटा को एकत्र या संग्रहीत नहीं करता है। व्यक्तिगत रूप से लक्षित, व्यवहारिक विपणन या किसी अन्य उद्देश्य के लिए तीसरे पक्ष के साथ कोई जानकारी साझा नहीं की जाती है। किसी तीसरे पक्ष से कोई जानकारी एकत्र नहीं की जाती है।
 
-## Updates
+## अपडेट
 
-To view revisions to this policy, visit https://github.com/adamlui/chatgpt-infinity/commits/main/docs/hi/PRIVACY.md
+इस नीति में संशोधन देखने के लिए, https://github.com/adamlui/chatgpt-infinity/commits/main/docs/hi/PRIVACY.md पर जाएं
