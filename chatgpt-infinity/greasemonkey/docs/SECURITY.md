@@ -1,6 +1,6 @@
 # Security Policy
 
-###### English | [简体中文](zh-cn/SECURITY.md)
+###### English | [简体中文](zh-cn/SECURITY.md) | [हिंदी](hi/SECURITY.md)
 
 <br>
 
