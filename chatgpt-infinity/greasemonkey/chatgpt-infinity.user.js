@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.4.30
+// @version             2023.4.30.1
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -141,6 +141,15 @@
             + stateSeparator + stateWord[+!config.infinityMode]
         menuIDs.push(GM_registerMenuCommand(imLabel, function() {
             document.querySelector('#infinityToggle').click()
+        }))
+
+        // Add command to toggle visibility of toggle
+        var tvLabel = stateSymbol[+config.toggleHidden] + ' Toggle Visibility'
+            + stateSeparator + stateWord[+config.toggleHidden]
+        menuIDs.push(GM_registerMenuCommand(tvLabel, function() {
+            saveSetting('toggleHidden', !config.toggleHidden)
+            toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
+            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
         }))
 
         // Add command to set language
@@ -247,7 +256,7 @@
 
     // Init settings
     var config = { isActive: false, sent: false, infinityMode: false }, configKeyPrefix = 'chatGPTinf_' // initialize config variables
-    loadSetting('replyLanguage', 'replyInterval')
+    loadSetting('toggleHidden', 'replyLanguage', 'replyInterval')
     if (!config.replyLanguage) saveSetting('replyLanguage', getUserLanguage()) // init reply language
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
 
