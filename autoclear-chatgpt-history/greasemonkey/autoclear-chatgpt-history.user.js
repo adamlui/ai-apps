@@ -229,7 +229,7 @@
         border.insertBefore(div, border.childNodes[0]);
         div.addEventListener("click", function () {
             let json = FetchMap.get("conversations");
-            if(json.items.length == 0){
+            if(json.items.length === 0){
                 div.name = 0;
                 div.innerHTML = Svg[div.name] + "Clear Conversations";
                 return;
@@ -253,7 +253,7 @@
         if(json.items.length === 0){
             CreateClearButtonOrShow("none");
         }else{
-            CreateClearButtonOrShow();
+            CreateClearButtonOrShow("");
         }
         FetchMap.set("conversations", json);
     });
