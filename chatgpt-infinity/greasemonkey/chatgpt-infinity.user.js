@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.4.30.1
+// @version             2023.4.30.2
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -152,6 +152,14 @@
             for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
         }))
 
+        // Add command to toggle auto-scroll
+        var asLabel = stateSymbol[+config.autoScrollDisabled] + ' Auto-Scroll'
+            + stateSeparator + stateWord[+config.autoScrollDisabled]
+        menuIDs.push(GM_registerMenuCommand(asLabel, function() {
+            saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
+            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
+        }))
+
         // Add command to set language
         var rlLabel = '🌐 Reply Language' + ( config.replyLanguage ? ( ' (' + config.replyLanguage + ')' ) : '' )
         menuIDs.push(GM_registerMenuCommand(rlLabel, async function() {
@@ -232,6 +240,7 @@
 
         continue: async function() {
             chatgpt.send('do it again')
+            if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(error) {}
             await chatgpt.isIdle() // before starting delay till next iteration
             if (config.isActive) config.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
         },
@@ -256,7 +265,7 @@
 
     // Init settings
     var config = { isActive: false, sent: false, infinityMode: false }, configKeyPrefix = 'chatGPTinf_' // initialize config variables
-    loadSetting('toggleHidden', 'replyLanguage', 'replyInterval')
+    loadSetting('toggleHidden', 'autoScrollDisabled', 'replyLanguage', 'replyInterval')
     if (!config.replyLanguage) saveSetting('replyLanguage', getUserLanguage()) // init reply language
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
 
