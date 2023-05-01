@@ -33,13 +33,17 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync README.md between directories
+      - name: Sync docs between root & /greasemonkey
         run: |
-          if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/greasemonkey/README.md")" ]; then
-            cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/README.md" "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/greasemonkey/README.md"
-          elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/greasemonkey/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/README.md")" ]; then
-            cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/greasemonkey/README.md" "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/README.md"
-          fi
+          shopt -s globstar
+          for file in "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/docs/"**/*.md; do
+            relative_path=${file#"${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/docs/"}
+            if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/greasemonkey/docs/$relative_path")" ]; then
+              cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/docs/$relative_path" "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/greasemonkey/docs/$relative_path"
+            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/greasemonkey/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/docs/$relative_path")" ]; then
+              cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/greasemonkey/docs/$relative_path" "${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/docs/$relative_path"
+            fi
+          done
 
       - name: Sync autoclear-chatgpt-history/ to adamlui/autoclear-chatgpt-history/
         run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/ ${{ github.workspace }}/adamlui/autoclear-chatgpt-history/
