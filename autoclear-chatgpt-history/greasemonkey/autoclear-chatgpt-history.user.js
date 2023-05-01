@@ -263,7 +263,7 @@
         let json = await f.json()
         createClearButtonOrShow(null)
         if (json.items.length === 0) createClearButtonOrShow('none')
-        else createClearButtonOrShow()
+        else createClearButtonOrShow("")
         fetchMap.set('conversations', json)
     })
 
