@@ -39,14 +39,7 @@
 [自述文件](../../chatgpt-auto-refresh/docs/zh-cn/README.md) / 
 [讨论](https://chatgptevo.com/autorefresh/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 心跳 💓](../../chatgpt-heartbeat)
-
-在遇到网络错误时保持对话流畅。
-<br>[安装](https://greasyfork.org/scripts/464783-chatgpt-heartbeat) / 
-[自述文件](../../chatgpt-heartbeat#readme) / 
-[讨论](https://github.com/adamlui/chatgpt-apps/discussions)
-
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](../../chatgpt-infinity)
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](../../chatgpt-infinity) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="在 Awesome Userscripts 中提到" style="margin:0 0 -2px 4px"></a>
 
 从无所不知的 ChatGPT 生成无穷无尽的答案。
 <br>[安装](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
