@@ -39,7 +39,7 @@ Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks.
 [Readme](../chatgpt-auto-refresh#readme) / 
 [Discuss](https://chatgptevo.com/autorefresh/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](../chatgpt-infinity)
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](../chatgpt-infinity) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 4px"></a>
 
 Generate endless answers from all-knowing ChatGPT.
 <br>[Install](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
