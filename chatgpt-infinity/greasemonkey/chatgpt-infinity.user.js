@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.4.29
+// @version             2023.4.30
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -152,8 +152,8 @@
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage)
                     alert('ChatGPT Infinity will reply in ' + ( replyLanguage ? replyLanguage : 'your system language' ) + '.')
-                    if (config.infinityMode) { // reset reply language live
-                        chatgpt.stop() ; clearInterval(config.isActive) ; config.sent = null ; toggleInfinityMode() }
+                    if (config.infinityMode) { // restart session using new reply language
+                        chatgpt.stop() ; infinityMode.deactivate() ; infinityMode.toggle() }
                     for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
                     break
         }}}))
@@ -166,11 +166,9 @@
                 else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
                     saveSetting('replyInterval', parseInt(replyInterval))
                     alert('ChatGPT Infinity will reply every ' + replyInterval + ' seconds.')
-                    if (config.infinityMode) { // reset reply interval live
-                        clearInterval(config.isActive) ; await chatgpt.isIdle()
-                        config.isActive = setInterval(async function() {
-                            chatgpt.send('do it again') ; await chatgpt.isIdle()
-                        }, parseInt(config.replyInterval) * 1000)
+                    if (config.infinityMode) { // reset reply interval w/o ending session
+                        clearTimeout(config.isActive) ; await chatgpt.isIdle()
+                        config.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
                     }
                     for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
                     break
@@ -209,13 +207,9 @@
         toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
     }
 
-    async function toggleInfinityMode() {
-        var toggleInput = document.querySelector('#infinityToggle')
-        setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
-        config.infinityMode = toggleInput.checked
-        for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
-        chatgpt.stop()
-        if (config.infinityMode && !config.sent) { // activate it
+    var infinityMode = {
+
+        activate: async function() {
             if (!config.notifHidden) chatgpt.notify('Infinity Mode: ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             document.querySelector('nav > a').click()
             setTimeout(function() {
@@ -223,13 +217,29 @@
                                                             + '. don\'t type anything else') }, 500)
             config.sent = true ; await chatgpt.isIdle()
             if (config.infinityMode && !config.isActive) { // double-check in case de-activated before scheduled
-                config.isActive = setInterval(async function() {
-                    chatgpt.send('do it again') ; await chatgpt.isIdle()
-                }, parseInt(config.replyInterval) * 1000)
+                config.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
             }
-        } else if (!config.infinityMode && config.sent) { // de-activate it
+        },
+
+        continue: async function() {
+            chatgpt.send('do it again')
+            await chatgpt.isIdle() // before starting delay till next iteration
+            if (config.isActive) config.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
+        },
+
+        deactivate: function() {
             if (!config.notifHidden) chatgpt.notify('Infinity Mode: OFF', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-            clearInterval(config.isActive) ; config.isActive = null, config.sent = null
+            clearTimeout(config.isActive) ; config.isActive = null, config.sent = null
+        },
+
+        toggle: async function() {
+            var toggleInput = document.querySelector('#infinityToggle')
+            setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
+            config.infinityMode = toggleInput.checked
+            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
+            chatgpt.stop()
+            if (config.infinityMode && !config.sent) infinityMode.activate()
+            else if (!config.infinityMode && config.sent) infinityMode.deactivate()
         }
     }
 
@@ -267,7 +277,7 @@
     var toggleLabel = document.createElement('div') // create label div
     toggleLabel.addEventListener('click', (event) => {
         var toggleInput = document.querySelector('#infinityToggle')
-        toggleInput.click() ; toggleInfinityMode()
+        toggleInput.click() ; infinityMode.toggle()
     })
     for (var link of document.querySelectorAll('a')) { // inspect sidebar links for classes
         if (link.innerHTML.includes('New chat')) { // focus on 'New chat'
