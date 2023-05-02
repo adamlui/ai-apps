@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.4.30.2
+// @version             2023.5.2
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -227,7 +227,7 @@
     var infinityMode = {
 
         activate: async function() {
-            if (!config.notifHidden) chatgpt.notify('Infinity Mode: ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            if (!config.notifHidden) chatgpt.notify('∞ Infinity Mode: ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             document.querySelector('nav > a').click()
             setTimeout(function() {
                 chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : ''  )
@@ -246,7 +246,7 @@
         },
 
         deactivate: function() {
-            if (!config.notifHidden) chatgpt.notify('Infinity Mode: OFF', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            if (!config.notifHidden) chatgpt.notify('∞ Infinity Mode: OFF', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             clearTimeout(config.isActive) ; config.isActive = null, config.sent = null
         },
 
