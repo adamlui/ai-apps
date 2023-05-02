@@ -3,7 +3,7 @@
 Apps that utilize the astounding AI of ChatGPT or enhances its UX.
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
-![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/LibreWolf/QQ-989898.svg)
+![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/Waterfox/LibreWolf/QQ-989898.svg)
 [![commits](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-addons?label=Commits)](https://github.com/adamlui/chatgpt-addons/commits/main)
 [![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
