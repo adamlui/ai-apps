@@ -4,7 +4,7 @@
 
 ![用户数](https://img.shields.io/badge/用户-1,000+-brightgreen)
 [![执照](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
-[![兼容性](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/QQ-989898.svg)](#兼容性)
+[![兼容性](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#兼容性)
 [![GitHub+提交](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-widescreen?label=GitHub+提交)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
 [![代码质量](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
