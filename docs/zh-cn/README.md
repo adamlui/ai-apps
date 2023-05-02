@@ -3,7 +3,7 @@
 利用 ChatGPT 惊人的 AI 或增强其 UX 的应用程序。
 
 [![执照](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
-![兼容性](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/LibreWolf/QQ-989898.svg)
+![兼容性](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/Waterfox/LibreWolf/QQ-989898.svg)
 [![提交](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-addons?label=提交)](https://github.com/adamlui/chatgpt-addons/commits/main)
 [![代码质量](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
