@@ -17,7 +17,7 @@
 
 <h3><b>DuckDuckGPT</b> brings the magic of ChatGPT to search results.</h3>
 
-<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img alt="Install this script" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.duckduckgpt.com/discussions) /
 [Review](https://duckduckgpt.com/userscript/review) /
@@ -91,7 +91,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <br>
 
-<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img alt="Install this script" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.duckduckgpt.com/discussions) /
 [Leave a review](https://duckduckgpt.com/userscript/review) /
