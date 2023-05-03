@@ -19,12 +19,6 @@
 [自述文件](../../autoclear-chatgpt-history#readme) / 
 [讨论](https://chatgptevo.com/autoclear/discussions)
 
-### <img width=16 src="https://www.google.com/s2/favicons?sz=64&domain=cloudflare.com"> [自动通过 Cloudflare CAPTCHA](../../autopass-cloudflare-captcha)
-
-在 Cloudflare Turnstile 挑战期间自动验证您的人性。
-<br>[安装](https://greasyfork.org/scripts/464785-autopass-cloudflare-captcha) / 
-[讨论](https://github.com/adamlui/chatgpt-apps/discussions)
-
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](../../bravegpt) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 在 Brave Search 侧边栏中显示 ChatGPT 答案。

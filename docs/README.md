@@ -19,12 +19,6 @@ Auto-clear your ChatGPT query history for maximum privacy.
 [Readme](../autoclear-chatgpt-history#readme) / 
 [Discuss](https://chatgptevo.com/autoclear/discussions)
 
-### <img width=16 src="https://www.google.com/s2/favicons?sz=64&domain=cloudflare.com"> [Autopass Cloudflare CAPTCHA](../autopass-cloudflare-captcha)
-
-Automatically verify your humanity during Cloudflare Turnstile challenges.
-<br>[Install](https://greasyfork.org/en/scripts/464785-autopass-cloudflare-captcha) / 
-[Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
-
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](../bravegpt) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 Display ChatGPT answers in Brave Search sidebar.
