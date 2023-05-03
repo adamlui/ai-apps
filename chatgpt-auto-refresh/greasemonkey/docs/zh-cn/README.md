@@ -2,7 +2,7 @@
 
 ![用户数](https://img.shields.io/greasyfork/dt/462422?label=用户&color=brightgreen)
 [![执照](https://img.shields.io/badge/执照-MIT-green.svg)](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/greasemonkey/LICENSE.md)
-[![兼容性](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey#compatibility)
+[![支持](https://img.shields.io/badge/支持-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey#compatibility)
 [![提交](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-auto-refresh?label=提交)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
 [![代码质量](https://img.shields.io/codefactor/grade/github/adamlui/autoclear-chatgpt-history?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
