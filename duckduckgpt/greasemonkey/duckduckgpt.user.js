@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.4.28
+// @version             2023.5.2
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -26,6 +26,7 @@
 // @compatible          vivaldi
 // @compatible          waterfox
 // @compatible          librewolf
+// @compatible          ghost
 // @compatible          qq
 // @match               https://duckduckgo.com/?*
 // @include             https://auth0.openai.com
