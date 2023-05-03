@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.5.2
+// @version             2023.5.2.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar
@@ -131,7 +131,7 @@
 
     var ddgptConsole = {
         info: function(msg) {console.info('🐤 DuckDuckGPT >> ' + msg)},
-        error: function(msg) {console.error('🐤 DuckDuckGPT >> ERROR: ' + msg)},
+        error: function(msg) {console.error('🐤 DuckDuckGPT >> ERROR: ' + msg)}
     }
 
     function ddgptAlert(msg) {
@@ -156,7 +156,7 @@
     }
 
     function getAccessToken() {
-        return new Promise(function(resolve, reject) {
+        return new Promise(function(resolve) {
             var accessToken = GM_getValue('accessToken')
             ddgptConsole.info('OpenAI access token: ' + accessToken)
             if (!accessToken) {
@@ -199,16 +199,17 @@
         if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 0
 
         // Pick API
+        var endpoint, accessKey, model
         if (config.proxyAPIenabled) { // randomize proxy API
             var untriedEndpoints = proxyEndpointMap.filter(function(entry) {
                 return !getShowReply.triedEndpoints?.includes(entry[0]) })
             var entry = untriedEndpoints[Math.floor(Math.random() * untriedEndpoints.length)]
-            var endpoint = entry[0], accessKey = entry[1], model = entry[2]
+            endpoint = entry[0] ; accessKey = entry[1] ; model = entry[2]
         } else { // use OpenAI API
-            var endpoint = openAIchatEndpoint
+            endpoint = openAIchatEndpoint
             var timeoutPromise = new Promise((resolve, reject) => {
                 setTimeout(() => { reject(new Error('Timeout occurred')) }, 3000) })
-            var accessKey = await Promise.race([getAccessToken(), timeoutPromise])
+            accessKey = await Promise.race([getAccessToken(), timeoutPromise])
             if (!accessKey) { ddgptAlert('login') ; return }
             model = 'text-davinci-002-render'
         }
@@ -243,7 +244,7 @@
             ddgptConsole.error(`Error calling ${ endpoint }. Trying another endpoint...`)
             getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
             getShowReply.attemptCnt++
-            getShowReply(msg, callback)
+            getShowReply(messages, callback)
         }
 
         function onLoadStart() { // process streams for unproxied TM users
@@ -281,10 +282,11 @@
                         ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare') }
                     else if (event.status === 429) { ddgptAlert('tooManyRequests') }
                 } else if (!config.proxyAPIenabled && getUserscriptManager() !== 'Tampermonkey') {
+                    var answer
                     if (event.response) {
                         try { // to parse txt response from OpenAI endpoint for non-TM users
-                            var answer = JSON.parse(event.response
-                                .split("\n\n").slice(-3, -2)[0].slice(6)).message.content.parts[0]
+                            answer = JSON.parse(event.response
+                                .split('\n\n').slice(-3, -2)[0].slice(6)).message.content.parts[0]
                             ddgptShow(answer)
                         } catch (error) {
                             ddgptAlert('parseFailed')
@@ -295,7 +297,7 @@
                 } else if (config.proxyAPIenabled) {
                     if (event.responseText) {
                         try { // to parse txt response from proxy endpoints
-                            var answer = JSON.parse(event.responseText).choices[0].message.content
+                            answer = JSON.parse(event.responseText).choices[0].message.content
                             ddgptShow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (error) {
                             ddgptAlert('parseFailed')
@@ -372,14 +374,14 @@
         } else { messages.push({ role: 'user', content: query }) }
         getShowReply(messages)
     }
-    
+
     // Run MAIN routine
-    
+
     // Initialize settings/messages/menu
     var config = {}, configKeyPrefix = 'ddgpt_', messages = []
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
     registerMenu() // create browser toolbar menu
-    
+
     // Exit if prefix/suffix required but not present
     if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
         ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
@@ -445,5 +447,5 @@
     }}})
 
     loadDDGPT()
- 
+
 })()
