@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.5.2.1
+// @version             2023.5.2.2
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -111,10 +111,10 @@
         saveSetting('autoclear', toggleInput.checked)
     }
 
-    async function InitSvg() { 
-        return new Promise((resolve) => {
+    async function InitSvg() {
+        return new Promise(async (resolve) => {
             let Svg = GM_getValue('clearSvg', [])
-            if (Svg.length !== 0) { 
+            if (Svg.length !== 0) {
                 clearSvg = Svg
                 resolve(true)
                 return
@@ -130,7 +130,7 @@
             await new Promise((resolve) => {
                 let Timer = setInterval(() => {
                     menuitems = document.querySelectorAll('a[role="menuitem"]')
-                    if (menuitems.length < 4) { 
+                    if (menuitems.length < 4) {
                         return;
                     }
                     clearInterval(Timer)
@@ -138,7 +138,7 @@
                 }, 100)
             });
             let menuitem = menuitems[1]
-            if (menuitem.name === 1) { 
+            if (menuitem.name === 1) {
                 return
             }
             let svg = menuitem.querySelector('svg')
