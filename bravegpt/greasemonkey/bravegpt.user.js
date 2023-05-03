@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.5.2.1
+// @version             2023.5.2.2
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -127,7 +127,7 @@
 
     var braveGPTconsole = {
         info: function(msg) {console.info('🦁 BraveGPT >> ' + msg)},
-        error: function(msg) {console.error('🦁 BraveGPT >> ERROR: ' + msg)},
+        error: function(msg) {console.error('🦁 BraveGPT >> ERROR: ' + msg)}
     }
 
     function braveGPTalert(msg) {
@@ -150,7 +150,7 @@
     }
 
     function getAccessToken() {
-        return new Promise(function(resolve, reject) {
+        return new Promise(function(resolve) {
             var accessToken = GM_getValue('accessToken')
             braveGPTconsole.info('OpenAI access token: ' + accessToken)
             if (!accessToken) {
@@ -171,9 +171,9 @@
 
     function isBlockedbyCloudflare(resp) {
         try {
-            var html = new DOMParser().parseFromString(resp, "text/html")
-            var title = html.querySelector("title")
-            return title.innerText === "Just a moment..."
+            var html = new DOMParser().parseFromString(resp, 'text/html')
+            var title = html.querySelector('title')
+            return title.innerText === 'Just a moment...'
         } catch (error) { return false }
     }
 
@@ -193,16 +193,17 @@
         if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 0
 
         // Pick API
+        var endpoint, accessKey, model
         if (config.proxyAPIenabled) { // randomize proxy API
             var untriedEndpoints = proxyEndpointMap.filter(function(entry) {
                 return !getShowReply.triedEndpoints?.includes(entry[0]) })
             var entry = untriedEndpoints[Math.floor(Math.random() * untriedEndpoints.length)]
-            var endpoint = entry[0], accessKey = entry[1], model = entry[2]
+            endpoint = entry[0] ; accessKey = entry[1] ; model = entry[2]
         } else { // use OpenAI API
-            var endpoint = openAIchatEndpoint
+            endpoint = openAIchatEndpoint
             var timeoutPromise = new Promise((resolve, reject) => {
                 setTimeout(() => { reject(new Error('Timeout occurred')) }, 3000) })
-            var accessKey = await Promise.race([getAccessToken(), timeoutPromise])
+            accessKey = await Promise.race([getAccessToken(), timeoutPromise])
             if (!accessKey) { braveGPTalert('login') ; return }
             model = 'text-davinci-002-render'
         }
@@ -220,11 +221,11 @@
             onloadstart: onLoadStart(),
             onload: onLoad(),
             onerror: function(error) {
-                ddgptConsole.error(error)
-                if (!config.proxyAPIenabled) ddgptAlert(!accessKey ? 'login' : 'suggestProxy')
+                braveGPTconsole.error(error)
+                if (!config.proxyAPIenabled) braveGPTalert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
                     if (getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
-                    else ddgptAlert('suggestOpenAI')
+                    else braveGPTalert('suggestOpenAI')
             }}
         })
 
@@ -275,10 +276,11 @@
                         braveGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare') }
                     else if (event.status === 429) { braveGPTalert('tooManyRequests') }
                 } else if (!config.proxyAPIenabled && getUserscriptManager() !== 'Tampermonkey') {
+                    var answer
                     if (event.response) {
                         try { // to parse txt response from OpenAI endpoint for non-TM users
-                            var answer = JSON.parse(event.response
-                                .split("\n\n").slice(-3, -2)[0].slice(6)).message.content.parts[0]
+                            answer = JSON.parse(event.response
+                                .split('\n\n').slice(-3, -2)[0].slice(6)).message.content.parts[0]
                             braveGPTshow(answer)
                         } catch (error) {
                             braveGPTalert('parseFailed')
@@ -289,7 +291,7 @@
                 } else if (config.proxyAPIenabled) {
                     if (event.responseText) {
                         try { // to parse txt response from proxy endpoints
-                            var answer = JSON.parse(event.responseText).choices[0].message.content
+                            answer = JSON.parse(event.responseText).choices[0].message.content
                             braveGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (error) {
                             braveGPTalert('parseFailed')
@@ -302,13 +304,12 @@
     function braveGPTshow(answer) {
         braveGPTdiv.innerHTML = '<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank">BraveGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai">KudoAI</a></span><span class="balloon-tip"></span><pre></pre><section style="margin-bottom: -47px"><form><div class="continue-chat"><textarea id="bravegpt-reply-box" rows="1" placeholder="Send reply..."></textarea><button title="Send reply"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>'
         braveGPTdiv.querySelector('pre').textContent = answer
-        fillBraveGPTfooter() ; braveGPTfooter.style.height = "inherit" // (re-)init (after loading replies)
+        fillBraveGPTfooter() ; braveGPTfooter.style.height = 'inherit' // (re-)init (after loading replies)
         braveGPTdiv.appendChild(braveGPTfooter) // append feedback link
 
         // Initialize variables for listeners
         var form = braveGPTdiv.querySelector('form')
         var replyBox = document.getElementById('bravegpt-reply-box')
-        var { paddingTop, paddingBottom } = getComputedStyle(replyBox)
         var prevLength = replyBox.value.length
 
         // Add listeners
@@ -340,8 +341,8 @@
 
             // Show loading status
             var replySection = braveGPTdiv.querySelector('section')
-            replySection.classList.add('loading'), replySection.innerHTML = ''
-            braveGPTfooter.innerHTML = '', braveGPTfooter.style.height = '51px'
+            replySection.classList.add('loading') ; replySection.innerHTML = ''
+            braveGPTfooter.innerHTML = '' ; braveGPTfooter.style.height = '51px'
         }
 
         function autosizeBox() {
