@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.4.21
+// @version             2023.5.2
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -25,6 +25,7 @@
 // @compatible          brave
 // @compatible          vivaldi
 // @compatible          librewolf
+// @compatible          ghost
 // @compatible          qq
 // @match               https://search.brave.com/search*
 // @include             https://auth0.openai.com
