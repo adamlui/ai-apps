@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.5.2
+// @version             2023.5.2.1
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -178,7 +178,7 @@
         // Add command to change refresh interval
         menuID.push(GM_registerMenuCommand('⌚ Change Refresh Interval (' + config.refreshInterval + 's)', function() {
             while (true) {
-                var refreshInterval = prompt("Update refresh interval (in secs):", config.refreshInterval)
+                var refreshInterval = prompt('Update refresh interval (in secs):', config.refreshInterval)
                 if (refreshInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(refreshInterval)) && parseInt(refreshInterval) > 0) { // valid int set
                     saveSetting('refreshInterval', parseInt(refreshInterval))
