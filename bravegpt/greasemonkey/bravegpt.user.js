@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.5.2
+// @version             2023.5.2.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -163,7 +163,7 @@
                             var newAccessToken = JSON.parse(response.responseText).accessToken
                             GM_setValue('accessToken', newAccessToken)
                             resolve(newAccessToken)
-                        } catch { braveGPTalert('login') ; return }
+                        } catch (error) { braveGPTalert('login') ; return }
                     }
                 })
             } else { resolve(accessToken) }
