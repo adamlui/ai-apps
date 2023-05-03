@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.5.2
+// @version             2023.5.2.1
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -120,15 +120,15 @@
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
 // @noframes
-// @homepageURL         https://chatgptevo.com/infinity
-// @supportURL          https://chatgptevo.com/infinity/support
 // @updateURL           https://greasyfork.org/scripts/465051/code/chatgpt-infinity.meta.js
 // @downloadURL         https://greasyfork.org/scripts/465051/code/chatgpt-infinity.user.js
+// @homepageURL         https://chatgptevo.com/infinity
+// @supportURL          https://chatgptevo.com/infinity/support
 // ==/UserScript==
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
-(function () {
+(function() {
 
     // Define SCRIPT functions
 
@@ -219,7 +219,7 @@
             <img width="18px" src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-navicon-light-80.png">
             Infinity Mode ${config.infinityMode ? 'enabled' : 'disabled'}
             <label class="switch" ><input id="infinityToggle" type="checkbox"
-                ${config.infinityMode ? "checked='true'" : ""} >
+                ${ config.infinityMode ? 'checked="true"' : '' } >
                 <span class="slider"></span></label>`
         toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
     }
@@ -293,7 +293,7 @@
 
     // Create toggle label, add listener/classes/HTML
     var toggleLabel = document.createElement('div') // create label div
-    toggleLabel.addEventListener('click', (event) => {
+    toggleLabel.addEventListener('click', function() {
         var toggleInput = document.querySelector('#infinityToggle')
         toggleInput.click() ; infinityMode.toggle()
     })
@@ -306,8 +306,8 @@
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
     insertToggle()
-    var navObserver = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
+    var navObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 insertToggle()
     }})})
