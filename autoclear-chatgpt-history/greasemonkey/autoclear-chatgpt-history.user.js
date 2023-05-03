@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.5.2
+// @version             2023.5.2.1
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -56,7 +56,7 @@
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
-(function () {
+(function() {
 
     // Define script functions
 
@@ -69,7 +69,7 @@
         var tvLabel = tvStateSymbol[+config.toggleHidden] + ' Toggle Visibility'
             + (getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ')
             + tvStateWord[+config.toggleHidden]
-        menuID.push(GM_registerMenuCommand(tvLabel, function () {
+        menuID.push(GM_registerMenuCommand(tvLabel, function() {
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             for (var id of menuID) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -79,7 +79,7 @@
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
     function loadSetting(...keys) {
-        keys.forEach(function (key) {
+        keys.forEach(function(key) {
             config[key] = GM_getValue(configKeyPrefix + key, false)
     })}
 
@@ -93,7 +93,7 @@
             <img width="18px" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/icons/navicon.png">
             Auto-clear ${config.autoclear ? 'enabled' : 'disabled'}
             <label class="switch" ><input id="autoclearToggle" type="checkbox"
-                ${config.autoclear ? "checked='true'" : ""} >
+                ${config.autoclear ? 'checked="true"' : '' } >
                 <span class="slider"></span></label>`
         toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
     }
@@ -112,8 +112,8 @@
     }
 
     async function InitSvg() { 
-        return new Promise(async (resolve) => {
-            let Svg = GM_getValue("clearSvg", [])
+        return new Promise((resolve) => {
+            let Svg = GM_getValue('clearSvg', [])
             if (Svg.length !== 0) { 
                 clearSvg = Svg
                 resolve(true)
@@ -127,7 +127,7 @@
             let menuButton = document.querySelector('button[id^="headlessui-menu-button-"]')
             menuButton.click()
             let menuitems = [];
-            await new Promise(async (resolve) => {
+            await new Promise((resolve) => {
                 let Timer = setInterval(() => {
                     menuitems = document.querySelectorAll('a[role="menuitem"]')
                     if (menuitems.length < 4) { 
@@ -152,7 +152,7 @@
                 menuitem.remove()
                 console.log(clearSvg)
                 menuButton.click()
-                GM_setValue("clearSvg", clearSvg)
+                GM_setValue('clearSvg', clearSvg)
                 resolve(true);
             }, 100)
         });
@@ -184,7 +184,7 @@
         let className = border.childNodes[0].className
         div.className = className
         border.insertBefore(div, border.childNodes[0]);
-        (async function () {
+        (async function() {
             if (clearSvg == null) { 
                 if (!await InitSvg()) { 
                     return
@@ -192,7 +192,7 @@
             }
             div.innerHTML = clearSvg[0] + 'Clear Conversations'
             div.name = 0
-            div.addEventListener('click', function () {
+            div.addEventListener('click', function() {
                 let json = fetchMap.get('conversations')
                 if (json.items.length == 0) {
                     div.name = 0 ; div.innerHTML = clearSvg[div.name] + 'Clear Conversations'
@@ -235,7 +235,7 @@
     // Initialize/fill conversation map
     var fetchMap = new Map()
     fetchMap.set('conversations', {})
-    fetchMap.set('/backend-api/conversations', async function (f) {
+    fetchMap.set('/backend-api/conversations', async function(f) {
         let json = await f.json()
         fetchMap.set('conversations', json)
         createOrShowClearButton(null)
@@ -245,19 +245,19 @@
     hookFetch()
 
     // Create toggle label & add listener/classes/HTML
-    var toggleLabel = document.createElement("div") // create label div
+    var toggleLabel = document.createElement('div') // create label div
     toggleLabel.addEventListener('click', (event) => { toggleAutoclear(event) })
     for (var link of document.querySelectorAll('a')) { // inspect sidebar links for classes
         if (link.innerHTML.includes('New chat')) { // focus on 'New chat'
-            toggleLabel.setAttribute("class", link.classList) // borrow its classes
+            toggleLabel.setAttribute('class', link.classList) // borrow its classes
             break // stop looping since class assignment is done
         }
     } updateToggleHTML()
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
     insertToggle()
-    var navObserver = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
+    var navObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 insertToggle()
             }
