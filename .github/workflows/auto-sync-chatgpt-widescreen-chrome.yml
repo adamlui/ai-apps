@@ -27,10 +27,10 @@ jobs:
           path: adamlui/chatgpt-widescreen
 
       - name: Sync /chatgpt-widescreen/chrome/extension/ to /chatgpt-widescreen/edge/extension/
-        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/edge/extension/
+        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/edge/extension/
 
       - name: Sync /chatgpt-widescreen/chrome/extension/ to /opera/extension/
-        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/opera/extension/
+        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/chrome/extension/ ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/opera/extension/
 
       - name: Sync /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
         run: rsync -avhr ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/
