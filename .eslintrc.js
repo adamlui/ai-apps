@@ -20,7 +20,11 @@ module.exports  = {
     'globals': { '$': true, 'chatgpt': true, 'chrome': true, 'global_module': true, 'GM_cookie': true },
     'parserOptions': {
         'ecmaVersion': 2022,
-        'sourceType': ['script', 'module']
+        'sourceType': 'script'
     },
+    'overrides': [{
+        'files': ['**/lib/**.js'],
+        'parserOptions': { 'sourceType': 'module' }
+    }]
     'env': { 'browser': true, 'node': true, 'es6': true, 'greasemonkey': true }
 };
