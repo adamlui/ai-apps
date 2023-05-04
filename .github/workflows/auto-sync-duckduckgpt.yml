@@ -42,10 +42,10 @@ jobs:
           fi
 
       - name: Sync duckduckgpt/ to kudoai/duckduckgpt/
-        run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/ ${{ github.workspace }}/kudoai/duckduckgpt/
+        run: rsync -avhr ${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/ ${{ github.workspace }}/kudoai/duckduckgpt/
 
       - name: Sync duckduckgpt/greasemonkey/ to adamlui/userscripts/chatgpt/duckduckgpt/
-        run: rsync -avh --delete ${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/duckduckgpt/
+        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/duckduckgpt/
 
       - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -54,7 +54,7 @@ jobs:
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
-          file_pattern: 'duckduckgpt/*'
+          file_pattern: 'duckduckgpt/**'
           repository: adamlui/chatgpt-apps
 
       - name: Push to kudoai/duckduckgpt
@@ -64,7 +64,7 @@ jobs:
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
-          file_pattern: '*'
+          file_pattern: '**'
           repository: kudoai/duckduckgpt
 
       - name: Push to adamlui/userscripts
@@ -74,5 +74,5 @@ jobs:
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
-          file_pattern: 'chatgpt/duckduckgpt/*'
+          file_pattern: 'chatgpt/duckduckgpt/**'
           repository: adamlui/userscripts

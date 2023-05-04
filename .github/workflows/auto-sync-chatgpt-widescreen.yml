@@ -29,7 +29,7 @@ jobs:
           path: adamlui/chatgpt-widescreen
 
       - name: Sync /chatgpt-widescreen/* to adamlui/chatgpt-widescreen/*
-        run: rsync -avh ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/
+        run: rsync -avhr ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/
 
       - name: Push to adamlui/chatgpt-widescreen
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -38,5 +38,5 @@ jobs:
           add_options: '--all'
           commit_user_email: auto-sync@chatgptevo.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
-          file_pattern: '*'
+          file_pattern: '**'
           repository: adamlui/chatgpt-widescreen
