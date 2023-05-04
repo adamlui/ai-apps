@@ -29,7 +29,6 @@
             if (!config.notifHidden) { // show mode notification if enabled
                 notify('Fuller Windows ' + ( config.fullerWindow ? 'ON' : 'OFF' ), 'bottom-right')
         }})
-
     })
     fullerWinLabel.addEventListener('click', (event) => {
         if (event.target == fullerWinLabel) fullerWinToggle.click() // to avoid double-toggle
