@@ -156,7 +156,7 @@
                         if (config.fullWindow) toggleMode('fullWindow', 'ON')
                         prevSessionChecked = true
                     }
-                    insertChatButtons() // again or they constantly disappear // eslint-disable-line no-undef
+                    insertChatButtons() // eslint-disable-line no-undef
                 }
                 prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
             })
@@ -243,7 +243,7 @@
         } else { chatbar.append(newChatButton, fullWindowButton, wideScreenButton, tooltipDiv) }
     }
 
-    removeChatButtons = function() {
+    removeChatButtons = function() { // eslint-disable-line no-undef
         var chatbar = document.querySelector('form button[class*="bottom"]').parentNode
         if (!chatbar.contains(fullWindowButton)) { return // if buttons are missing, exit
         } else { // remove chat toggles
