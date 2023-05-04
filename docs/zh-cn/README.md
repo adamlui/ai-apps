@@ -2,6 +2,7 @@
 
 利用 ChatGPT 惊人的 AI 或增强其 UX 的应用程序。
 
+![用户](https://img.shields.io/badge/用户-10,000+-brightgreen)
 [![执照](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
 ![兼容性](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)
 [![提交](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-addons?label=提交)](https://github.com/adamlui/chatgpt-addons/commits/main)
