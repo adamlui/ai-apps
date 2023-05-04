@@ -15,7 +15,8 @@ module.exports  = {
         'no-async-promise-executor': 'off', // allow promise executor functions to be async (to accomodate await lines)
         'no-constant-condition': 'off', // allow constant conditions
         'no-empty': 'off', // allow empty blocks
-        'no-useless-escape': 'off' // allow all escape chars because ESLint sucks at detecting useless ones
+        'no-useless-escape': 'off', // allow all escape chars because ESLint sucks at detecting useless ones
+        'no-undef': ['error', { 'typeof': true }] // ignore references to vars defined globally via `window.varName`
     },
     'globals': { 'chatgpt': true, 'global_module': true, '$': true, 'GM_cookie': true, 'chrome': true },
     'parserOptions': {
