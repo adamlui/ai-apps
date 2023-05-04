@@ -12,7 +12,7 @@
 
 ###### English | [简体中文](zh-cn/README.md)
 
-<a href="https://greasyfork.org/scripts/465051-chatgpt-infinity"><img alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/465051-chatgpt-infinity"><img alt="Install this script" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptevo.com/infinity/discussions) /
 [Review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
@@ -75,7 +75,7 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.com/adamlui/chatgpt-infinity/pulls) (contributions of all kinds are welcome!)
 
-<a href="https://greasyfork.org/scripts/465051-chatgpt-infinity"><img height-40 alt="Install this script" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#installation"><img height-40 alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/465051-chatgpt-infinity"><img height-40 alt="Install this script" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height-40 alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptevo.com/infinity/discussions) /
 [Leave a review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) /

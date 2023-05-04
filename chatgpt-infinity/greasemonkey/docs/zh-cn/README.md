@@ -12,7 +12,7 @@
 
 ###### 简体中文 | [English](../README.md)
 
-<a href="https://greasyfork.org/scripts/465051-chatgpt-infinity"><img alt="安装这个脚本" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#如何安装"><img alt="如何安装" title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/465051-chatgpt-infinity"><img alt="安装这个脚本" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#如何安装"><img alt="如何安装" title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [讨论](https://chatgptevo.com/infinity/discussions) /
 [审查](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
@@ -75,7 +75,7 @@ ChatGPT无限依赖于强大的 [chatgpt.js](https://github.com/chatgptjs/chatgp
 
 如果您已經測試它可以在未列出的瀏覽器中工作，只需創建一個 [pull request](https://github.com/adamlui/chatgpt-infinity/pulls) (歡迎各種貢獻!)
 
-<a href="https://greasyfork.org/scripts/465051-chatgpt-infinity"><img height-40 alt="安裝這個腳本" src="https://raw.githubusercontent.com/adamlui/userscripts/master/install-button.svg"></a><a href="#如何安装"><img height-40 alt="如何安裝" title="如何安裝" src="https://github.com/adamlui/userscripts/raw/master/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/465051-chatgpt-infinity"><img height-40 alt="安裝這個腳本" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#如何安装"><img height-40 alt="如何安裝" title="如何安裝" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [討論](https://chatgptevo.com/infinity/discussions) /
 [發表評論](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
