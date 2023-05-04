@@ -25,6 +25,6 @@ module.exports  = {
     'overrides': [{
         'files': ['**/lib/**.js'],
         'parserOptions': { 'sourceType': 'module' }
-    }]
+    }],
     'env': { 'browser': true, 'node': true, 'es6': true, 'greasemonkey': true }
 };
