@@ -1,7 +1,7 @@
 (async function() {
 
     // Import settings-utils.js
-    var { config, settings } = await import(chrome.runtime.getURL("lib/settings-utils.js"))
+    var { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
     // Initialize popup
     settings.load('wideScreen', 'fullWindow', 'notifHidden', 'fullerWindow', 'extensionDisabled')
@@ -73,13 +73,13 @@
     function notify(msg, position) {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
             chrome.tabs.sendMessage(tabs[0].id, { 
-                type: 'notify', msg: msg, position: position ? position : 'bottom-right' 
-    })})}
+                type: 'notify', msg: msg, position: position ? position : 'bottom-right' })
+    })}
 
     function toggleExtension() {
         chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            chrome.tabs.sendMessage(tabs[0].id, { type: 'toggleExtension' }
-    )})}
+            chrome.tabs.sendMessage(tabs[0].id, { type: 'toggleExtension' })
+    })}
 
     function updateGreyness() {
 
