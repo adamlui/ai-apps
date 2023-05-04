@@ -125,7 +125,7 @@
 
     // Insert buttons
     settings.load('extensionDisabled').then(function() {
-        if (!config.extensionDisabled) insertChatButtons()
+        if (!config.extensionDisabled) insertChatButtons() // eslint-disable-line no-undef
     })
 
     // Monitor node changes to update button visibility + auto-toggle once + manage send button's tooltip
@@ -156,7 +156,7 @@
                         if (config.fullWindow) toggleMode('fullWindow', 'ON')
                         prevSessionChecked = true
                     }
-                    insertChatButtons() // again or they constantly disappear
+                    insertChatButtons() // again or they constantly disappear // eslint-disable-line no-undef
                 }
                 prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
             })
@@ -236,7 +236,7 @@
 
     // Define script functions as expressions for listeners
 
-    insertChatButtons = function() {
+    insertChatButtons = function() { // eslint-disable-line no-undef
         var chatbar = document.querySelector("form button[class*='bottom']").parentNode
         if (chatbar.contains(fullWindowButton)) {
             return // if buttons aren't missing, exit
@@ -251,12 +251,12 @@
             for (var i = 0 ; i < nodesToRemove.length ; i++) { chatbar.removeChild(nodesToRemove[i]) }
     }}
 
-    toggleExtension = function() {   
+    toggleExtension = function() { // eslint-disable-line no-undef
         settings.load('extensionDisabled', 'fullWindow', 'fullerWindow', 'notifHidden', 'wideScreenStyle').then(function() {
             if (config.extensionDisabled) {
                 try { document.head.removeChild(wideScreenStyle) } catch {}
                 try { document.head.removeChild(fullWindowStyle) } catch {}
-                removeChatButtons()
+                removeChatButtons() // eslint-disable-line no-undef
             } else {
                 if (config.fullWindow) {
                     document.head.appendChild(fullWindowStyle)
@@ -266,7 +266,7 @@
                     document.head.appendChild(wideScreenStyle)
                     if (!config.notifHidden) chatgpt.notify('Wide screen ON', 'lower-right')
                 }
-                insertChatButtons()
+                insertChatButtons() // eslint-disable-line no-undef
         }
     })}
 
