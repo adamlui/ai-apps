@@ -1,14 +1,14 @@
 /* NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgpt.js.org */
-/* (c) 2023 Adam Lui, 冯不游 & chatgpt.js under the MIT license. */
+/* (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license. */
 
 (async function() {
 
     // Import libs
-    var { config, settings } = await import(chrome.runtime.getURL("lib/settings-utils.js"))
-    var { chatgpt } = await import(chrome.runtime.getURL("lib/chatgpt.js"))
+    var { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
+    var { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
     // Add msg listener
-    chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    chrome.runtime.onMessage.addListener(function(request) {
         if (request.type === 'notify') chatgpt.notify(request.msg, request.position)
         else window[request.type]()
         return true
@@ -164,7 +164,7 @@
     })
     navObserver.observe(document.documentElement, { childList: true, subtree: true })
 
-    // Define script functions
+    // Declare script functions
 
     function classListToCSS(classList) { // convert DOM classList to single CSS selector
         return '.' + [...classList].join('.') // prepend dot to dot-separated string
@@ -234,16 +234,16 @@
             iniRoffset - tooltipDiv.getBoundingClientRect().width / 2}px`
     }
 
-    // Define global extension-toggle functions 
+    // Define script functions as expressions for listeners
 
-    window.insertChatButtons = function() {
+    insertChatButtons = function() {
         var chatbar = document.querySelector("form button[class*='bottom']").parentNode
         if (chatbar.contains(fullWindowButton)) {
             return // if buttons aren't missing, exit
         } else { chatbar.append(newChatButton, fullWindowButton, wideScreenButton, tooltipDiv) }
     }
 
-    window.removeChatButtons = function() {
+    removeChatButtons = function() {
         var chatbar = document.querySelector('form button[class*="bottom"]').parentNode
         if (!chatbar.contains(fullWindowButton)) { return // if buttons are missing, exit
         } else { // remove chat toggles
@@ -251,8 +251,8 @@
             for (var i = 0 ; i < nodesToRemove.length ; i++) { chatbar.removeChild(nodesToRemove[i]) }
     }}
 
-    window.toggleExtension = function() {   
-        settings.load('extensionDisabled', 'fullWindow', 'fullerWindow', 'wideScreenStyle').then(function() {
+    toggleExtension = function() {   
+        settings.load('extensionDisabled', 'fullWindow', 'fullerWindow', 'notifHidden', 'wideScreenStyle').then(function() {
             if (config.extensionDisabled) {
                 try { document.head.removeChild(wideScreenStyle) } catch {}
                 try { document.head.removeChild(fullWindowStyle) } catch {}
@@ -260,11 +260,11 @@
             } else {
                 if (config.fullWindow) {
                     document.head.appendChild(fullWindowStyle)
-                    chatgpt.notify('Full-window ON', 'lower-right')
+                    if (!config.notifHidden) chatgpt.notify('Full-window ON', 'lower-right')
                 }
                 if (config.wideScreen || ( config.fullWindow && config.fullerWindow )) {
                     document.head.appendChild(wideScreenStyle)
-                    chatgpt.notify('Wide screen ON', 'lower-right')
+                    if (!config.notifHidden) chatgpt.notify('Wide screen ON', 'lower-right')
                 }
                 insertChatButtons()
         }
