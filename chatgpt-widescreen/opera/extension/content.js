@@ -93,28 +93,33 @@
             d="M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z M14,7H2v1h12V7z M2,12h8v-1H2V12z M2,16h8v-1H2V16z"></path>`
 
     // Create wide screen button & add icon/classes/position/icon/listeners
-    var wideScreenButton = document.createElement('button') // create button
+    var wideScreenButton = document.createElement('div') // create button
     wideScreenButton.id = 'wideScreen-button' // for toggleTooltip()
+    wideScreenButton.type = 'button'
     updateSVG('wideScreen') // insert icon
     wideScreenButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
-    wideScreenButton.style.cssText = 'right: 3.83rem' // position left of Send button
+    wideScreenButton.style.cssText = 'right: 3.83rem' // position left of Send buttonx
+    wideScreenButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
     wideScreenButton.addEventListener('click', () => { toggleMode('wideScreen') })
     wideScreenButton.addEventListener('mouseover', toggleTooltip)
     wideScreenButton.addEventListener('mouseout', toggleTooltip)
 
     // Create full-window button & add icon/classes/position/listeners
-    var fullWindowButton = document.createElement('button') // create button
+    var fullWindowButton = document.createElement('div') // create button
     fullWindowButton.id = 'fullWindow-button' // for toggleTooltip()
+    fullWindowButton.type = 'button'
     updateSVG('fullWindow') // insert icon
     fullWindowButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
     fullWindowButton.style.cssText = 'right: 2.17rem' // position left of wide screen button
+    fullWindowButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
     fullWindowButton.addEventListener('click', () => { toggleMode('fullWindow') })
     fullWindowButton.addEventListener('mouseover', toggleTooltip)
     fullWindowButton.addEventListener('mouseout', toggleTooltip)
 
     // Create new chat button & add icon/classes/position/icon/listeners
-    var newChatButton = document.createElement('button') // create button
+    var newChatButton = document.createElement('div') // create button
     newChatButton.id = 'newChat-button' // for toggleTooltip()
+    newChatButton.type = 'button'
     newChatButton.innerHTML = '<svg ' // insert icon
         + `class="${sendSVGclasses}" ` // assign borrowed classes
         + `style="margin: .24rem .05rem -.08rem .16rem ; ` // center overlay
@@ -122,6 +127,7 @@
         + `viewBox="11 8 13 13"> ${newChatPaths} </svg>` // set viewbox & insert paths
     newChatButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
     newChatButton.style.cssText = 'right: 5.5rem' // position left of full-window button
+    newChatButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
     newChatButton.addEventListener('click', () => { chatgpt.startNewChat() })
     newChatButton.addEventListener('mouseover', toggleTooltip)
     newChatButton.addEventListener('mouseout', toggleTooltip)
@@ -175,7 +181,6 @@
     }
 
     function toggleMode(mode, state = '') {
-
         var modeStyle = document.getElementById(mode + '-mode') // look for existing mode style
         if (state.toUpperCase() == 'ON' || !modeStyle) { // if missing or ON-state passed
             modeStyle = mode == 'wideScreen' ? wideScreenStyle : fullWindowStyle
