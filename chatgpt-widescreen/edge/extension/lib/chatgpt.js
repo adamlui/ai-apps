@@ -87,7 +87,7 @@ var chatgpt = {
         for (var navLink of document.querySelectorAll('nav > a')) {
             if (navLink.text.includes('New chat')) {
                 navLink.click(); return;
-    }}},
+    }}}
 
 };
 
