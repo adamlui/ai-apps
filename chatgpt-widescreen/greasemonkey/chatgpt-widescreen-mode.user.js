@@ -11,7 +11,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式🖥️
 // @name:zh-SG          ChatGPT 宽屏模式🖥️
 // @name:zh-TW          ChatGPT 寬屏模式🖥️
-// @version             2023.5.4.1
+// @version             2023.5.5
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -159,9 +159,7 @@
     updateSVG('fullWindow') // insert icon
     fullWindowButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
     fullWindowButton.style.cssText = 'right: 2.17rem' // position left of wide screen button
-    // 中文: 添加鼠标手势为手指
-    // English: Add mouse gesture as finger
-    fullWindowButton.style.cursor = 'pointer'
+    fullWindowButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
     fullWindowButton.addEventListener('click', () => { toggleMode('fullWindow') })
     fullWindowButton.addEventListener('mouseover', toggleTooltip)
     fullWindowButton.addEventListener('mouseout', toggleTooltip)
@@ -177,9 +175,7 @@
         + `viewBox="11 8 13 13"> ${newChatPaths} </svg>` // set viewbox & insert paths
     newChatButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
     newChatButton.style.cssText = 'right: 5.5rem' // position left of full-window button
-    // 中文: 添加鼠标手势为手指
-    // English: Add mouse gesture as finger
-    newChatButton.style.cursor = 'pointer'
+    newChatButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
     newChatButton.addEventListener('click', () => { chatgpt.startNewChat() })
     newChatButton.addEventListener('mouseover', toggleTooltip)
     newChatButton.addEventListener('mouseout', toggleTooltip)
