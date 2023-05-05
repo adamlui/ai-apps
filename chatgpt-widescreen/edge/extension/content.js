@@ -1,7 +1,8 @@
-/* NOTE: This script uses code from the powerful chatgpt.js library @ https://chatgpt.js.org */
-/* (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license. */
+/* NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org */
+/* (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license */
+/* Source: https://github.com/chatgptjs/chatgpt.js */
 
-(async function() {
+(async () => {
 
     // Import libs
     var { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
@@ -19,6 +20,8 @@
         fullWindowON: 'Exit full window', fullWindowOFF: 'Full-window mode',
         newChat: 'New chat', sendMsg: 'Send message'
     }
+
+    await chatgpt.isLoaded()
 
     // Collect OpenAI classes/colors
     var sendButtonColor = 'currentColor' // changes w/ scheme

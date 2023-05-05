@@ -1,19 +1,20 @@
-/* This library is a condensed version of chatgpt.js */
-/* (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license. */
+/* This library is a condensed version of chatgpt.js v1.6.5 */
+/* (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license */
 /* Source: https://github.com/chatgptjs/chatgpt.js */
 
 var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
 localStorage.notifyProps = JSON.stringify(notifyProps);
 
-var navLinkLabels = {
-    clearChats: 'Clear conversations',
-    confirmClearChats: 'Confirm clear conversations',
-    newChat: 'New chat'
-};
-
 var chatgpt = {
 
     isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
+
+    isLoaded: function() {
+        return new Promise(resolve => {
+            var intervalId = setInterval(() => {
+                if (document.querySelector('form button[class*="bottom"]')) {
+                    clearInterval(intervalId); resolve();
+    }}, 100);});},
 
     notify: function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
@@ -84,9 +85,9 @@ var chatgpt = {
 
     startNewChat: function() {
         for (var navLink of document.querySelectorAll('nav > a')) {
-            if (navLink.text.includes(navLinkLabels.newChat)) {
+            if (navLink.text.includes('New chat')) {
                 navLink.click(); return;
-    }}}
+    }}},
 
 };
 
