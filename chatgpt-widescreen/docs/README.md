@@ -111,6 +111,7 @@ ChatGPT Widescreen Mode is compatible w/ the following browsers:
 - **Brave** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 - **Vivaldi** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 - **LibreWolf** (via [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Ghost** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 - **QQ** (via [Chrome extension](https://chatgptevo.com/widescreen/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 
 If you've tested the userscript to work in a browser not listed above, simply create a [pull request](https://github.com/adamlui/chatgpt-widescreen/pulls) (contributions of all kinds are welcome!)
