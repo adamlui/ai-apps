@@ -95,6 +95,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 - Vivaldi
 - Waterfox
 - LibreWolf
+- Ghost
 - QQ
 
 如果您已经测试它可以在未列出的浏览器中工作，请创建一个 [pull request](https://github.com/adamlui/chatgpt-auto-refresh/pulls) 成为贡献者！
