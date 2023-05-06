@@ -71,6 +71,7 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 - Vivaldi
 - Waterfox
 - LibreWolf
+- Ghost
 - QQ
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.com/adamlui/chatgpt-infinity/pulls) (contributions of all kinds are welcome!)
