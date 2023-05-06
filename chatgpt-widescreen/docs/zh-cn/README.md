@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![用户数](https://img.shields.io/badge/用户-1,000+-brightgreen)
+![用户数](https://img.shields.io/badge/用户-2,000+-brightgreen)
 [![执照](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
 [![兼容性](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#兼容性)
 [![GitHub+提交](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-widescreen?label=GitHub+提交)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
