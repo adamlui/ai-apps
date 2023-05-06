@@ -62,6 +62,7 @@ Autoclear ChatGPT History is compatible w/ the following browsers using [Tamperm
 - Brave
 - Vivaldi
 - LibreWolf
+- Ghost
 - QQ
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.com/adamlui/autoclear-chatgpt-history/pulls) to become a contributor!
