@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.5.2.3
+// @version             2023.5.5
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -42,7 +42,7 @@
 // @compatible          qq
 // @match               https://chat.openai.com/*
 // @run-at              document-end
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@6f86ebd392312d2521a5c814c8df721ba55965a3/dist/chatgpt-1.6.2.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@51dc48d5bff8e5539e8cee273032360d0691c6a6/dist/chatgpt-1.6.5.min.js
 // @grant               GM_setValue
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
@@ -56,7 +56,7 @@
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
-(function() {
+(async () => {
 
     // Define script functions
 
@@ -115,47 +115,32 @@
         return new Promise(async(resolve) => {
             let Svg = GM_getValue('clearSvg', [])
             if (Svg.length !== 0) {
-                clearSvg = Svg
-                resolve(true)
-                return
-            }
+                clearSvg = Svg ; resolve(true) ; return }
             let json = fetchMap.get('conversations')
             if (json && json.items && json.items.length == 0) {
-                resolve(false)
-                return
-            }
+                resolve(false) ; return }
             let menuButton = document.querySelector('button[id^="headlessui-menu-button-"]')
             menuButton.click()
-            let menuitems = [];
+            let menuitems = []
             await new Promise((resolve) => {
                 let Timer = setInterval(() => {
                     menuitems = document.querySelectorAll('a[role="menuitem"]')
-                    if (menuitems.length < 4) {
-                        return;
-                    }
-                    clearInterval(Timer)
-                    resolve()
+                    if (menuitems.length < 4) return
+                    clearInterval(Timer) ; resolve()
                 }, 100)
-            });
+            })
             let menuitem = menuitems[1]
-            if (menuitem.name === 1) {
-                return
-            }
+            if (menuitem.name === 1) return
             let svg = menuitem.querySelector('svg')
-            clearSvg = []
-            clearSvg.push(svg.outerHTML)
-            menuitem.click()
+            clearSvg = [] ; clearSvg.push(svg.outerHTML) ; menuitem.click()
             setTimeout(() => {
                 svg = menuitem.querySelector('svg')
                 clearSvg.push(svg.outerHTML)
-                menuitem.name = 1
-                menuitem.remove()
-                console.log(clearSvg)
-                menuButton.click()
+                menuitem.name = 1 ; menuitem.remove() ; menuButton.click()
                 GM_setValue('clearSvg', clearSvg)
-                resolve(true);
+                resolve(true)
             }, 100)
-        });
+        })
     }
 
     async function hookFetch() {
@@ -185,8 +170,8 @@
         div.className = className
         border.insertBefore(div, border.childNodes[0]);
         (async function() {
-            if (clearSvg == null) { 
-                if (!await InitSvg()) { 
+            if (clearSvg == null) {
+                if (!await InitSvg()) {
                     return
                 }
             }
@@ -211,6 +196,8 @@
     var config = {}, configKeyPrefix = 'chatGPTac_' // initialize config variables
     loadSetting('autoclear', 'toggleHidden') // load script settings
     registerMenu() // create browser toolbar menu
+
+    await chatgpt.isLoaded()
 
     // Stylize/insert toggle switch
     var switchStyle = document.createElement('style')
