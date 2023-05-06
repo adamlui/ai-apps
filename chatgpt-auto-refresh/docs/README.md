@@ -95,6 +95,7 @@ ChatGPT Auto Refresh is compatible w/ the following browsers using [Tampermonkey
 - Vivaldi
 - Waterfox
 - LibreWolf
+- Ghost
 - QQ
 
 If you've tested it to work in a browser not listed, create a [pull request](https://github.com/adamlui/chatgpt-auto-refresh/pulls) to become a contributor!
