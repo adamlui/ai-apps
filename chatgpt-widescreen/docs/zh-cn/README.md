@@ -66,7 +66,7 @@
 
 </div>
 
-### <img style="margin: 0 3px 0 0" height=17 src="https://i.imgur.com/huwclJK.png"> Greasemonkey 用户脚本:
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/edMcUl5.png"><img style="margin: 0 2px -0.035rem 0" height=15 src="https://i.imgur.com/qgGTnwB.png"></picture><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey 用户脚本:
 
 1. 安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) 或者 Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
