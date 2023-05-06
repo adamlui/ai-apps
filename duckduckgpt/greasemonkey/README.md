@@ -70,6 +70,7 @@ DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/cha
 - Brave
 - Vivaldi
 - LibreWolf
+- Ghost
 - QQ
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.duckduckgpt.com/pulls) to become a contributor!
