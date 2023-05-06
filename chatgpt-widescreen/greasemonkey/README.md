@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![usercount](https://img.shields.io/badge/Users-1,000+-brightgreen)
+![usercount](https://img.shields.io/badge/Users-1,500+-brightgreen)
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 [![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/QQ-989898.svg)](#compatibility)
 [![commits](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-widescreen?label=Commits)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
