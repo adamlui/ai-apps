@@ -70,6 +70,7 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/chatgp
 - Brave
 - Vivaldi
 - LibreWolf
+- Ghost
 - QQ
 
 If you've tested it to work in a browser not listed, create a [pull request](https://github.bravegpt.com/pulls) to become a contributor!
