@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.5.9
+// @version             2023.5.9.1
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -131,6 +131,80 @@
 
 (async () => {
 
+    // Initialize settings
+    var config = {}, configKeyPrefix = 'chatGPTar_'
+    loadSetting('arDisabled', 'notifHidden', 'refreshInterval', 'toggleHidden')
+    if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
+
+    // Init/register menu
+    var menuIDs = [], stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF'] // initialize menu vars
+    registerMenu() // create browser toolbar menu
+
+    await chatgpt.isLoaded()
+
+    // Stylize toggle switch
+    var switchStyle = document.createElement('style')
+    switchStyle.innerHTML = `/* Stylize switch */
+        .switch { position:absolute ; left:208px ; width:34px ; height:18px }
+        .switch input { opacity:0 ; width:0 ; height:0 } /* hide checkbox */
+        .slider { position:absolute ; cursor:pointer ; top:0 ; left:0 ; right:0 ; bottom:0 ; background-color:#ccc ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
+        .slider:before { position:absolute ; content:"" ; height:14px ; width:14px ; left:3px; bottom:2px ; background-color:white ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
+
+        /* Position/color ON-state */
+        input:checked { position:absolute ; right:3px }
+        input:checked + .slider { background-color:#42B4BF }
+        input:checked + .slider:before {
+            -webkit-transform: translateX(14px) translateY(1px) ;
+            -ms-transform: translateX(14px) translateY(1px) ;
+            transform: translateX(14px) }`
+
+    document.head.appendChild(switchStyle)
+
+    // Create toggle label, add listener/classes/HTML
+    var toggleLabel = document.createElement('div') // create label div
+    toggleLabel.addEventListener('click', function() {
+        var toggleInput = document.querySelector('#autoRefreshToggle')
+        toggleInput.click()
+        setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
+        config.arDisabled = !toggleInput.checked
+        for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
+        if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
+            chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true
+            if (!config.notifHidden) {
+                chatgpt.notify('↻ Auto-Refresh: ON',
+                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+        }} else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
+            chatgpt.autoRefresh.deactivate() // ; config.isActive = false
+            if (!config.notifHidden) {
+                chatgpt.notify('↻ Auto-Refresh: OFF',
+                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+        }}
+        saveSetting('arDisabled', config.arDisabled)
+    })
+    for (var link of document.querySelectorAll('a')) { // inspect sidebar links for classes
+        if (link.innerHTML.includes('New chat')) { // focus on 'New chat'
+            toggleLabel.setAttribute('class', link.classList) // borrow its classes
+            break // stop looping since class assignment is done
+        }
+    } updateToggleHTML()
+
+    // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
+    insertToggle()
+    var navObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length) {
+                insertToggle()
+    }})})
+    navObserver.observe(document.documentElement, { childList: true, subtree: true })
+
+    // Activate auto-refresh on first visit if enabled
+    if (!config.arDisabled) {
+        chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true
+        if (!config.notifHidden && document.title === 'New chat') {
+            chatgpt.notify('↻ Auto-Refresh: ON',
+                '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+    }}
+
     // Define SCRIPT functions
 
     function registerMenu() {
@@ -142,8 +216,6 @@
                     + stateSeparator + stateWord[+config.arDisabled]
         menuIDs.push(GM_registerMenuCommand(arLabel, function() {
             document.querySelector('#autoRefreshToggle').click()
-            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
-            registerMenu() // serve fresh one
         }))
 
         // Add command to toggle visibility of toggle
@@ -216,81 +288,5 @@
                 <span class="slider"></span></label>`
         toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
     }
-
-    // Run MAIN routine
-
-        // Initialize settings
-    var config = {}, configKeyPrefix = 'chatGPTar_'
-    loadSetting('arDisabled', 'notifHidden', 'refreshInterval', 'toggleHidden')
-    if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
-
-    // Init/register menu
-    var menuIDs = [], stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF'] // initialize menu vars
-    registerMenu() // create browser toolbar menu
-
-    await chatgpt.isLoaded()
-
-    // Stylize toggle switch
-    var switchStyle = document.createElement('style')
-    switchStyle.innerHTML = `/* Stylize switch */
-        .switch { position:absolute ; left:208px ; width:34px ; height:18px }
-        .switch input { opacity:0 ; width:0 ; height:0 } /* hide checkbox */
-        .slider { position:absolute ; cursor:pointer ; top:0 ; left:0 ; right:0 ; bottom:0 ; background-color:#ccc ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
-        .slider:before { position:absolute ; content:"" ; height:14px ; width:14px ; left:3px; bottom:2px ; background-color:white ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
-
-        /* Position/color ON-state */
-        input:checked { position:absolute ; right:3px }
-        input:checked + .slider { background-color:#42B4BF }
-        input:checked + .slider:before {
-            -webkit-transform: translateX(14px) translateY(1px) ;
-            -ms-transform: translateX(14px) translateY(1px) ;
-            transform: translateX(14px) }`
-
-    document.head.appendChild(switchStyle)
-
-    // Create toggle label, add listener/classes/HTML
-    var toggleLabel = document.createElement('div') // create label div
-    toggleLabel.addEventListener('click', function() {
-        var toggleInput = document.querySelector('#autoRefreshToggle')
-        toggleInput.click()
-        setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
-        config.arDisabled = !toggleInput.checked
-        for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
-        if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
-            chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true 
-            if (!config.notifHidden) {
-                chatgpt.notify('↻ Auto-Refresh: ON',
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-        }} else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
-            chatgpt.autoRefresh.deactivate() // ; config.isActive = false
-            if (!config.notifHidden) {
-                chatgpt.notify('↻ Auto-Refresh: OFF',
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-        }}
-        saveSetting('arDisabled', config.arDisabled)
-    })
-    for (var link of document.querySelectorAll('a')) { // inspect sidebar links for classes
-        if (link.innerHTML.includes('New chat')) { // focus on 'New chat'
-            toggleLabel.setAttribute('class', link.classList) // borrow its classes
-            break // stop looping since class assignment is done
-        }
-    } updateToggleHTML()
-
-    // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
-    insertToggle()
-    var navObserver = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            if (mutation.type === 'childList' && mutation.addedNodes.length) {
-                insertToggle()
-    }})})
-    navObserver.observe(document.documentElement, { childList: true, subtree: true })
-
-    // Activate auto-refresh on first visit if enabled
-    if (!config.arDisabled) {
-        chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true
-        if (!config.notifHidden && document.title === 'New chat') {
-            chatgpt.notify('↻ Auto-Refresh: ON',
-                '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-    }}
 
 })()
