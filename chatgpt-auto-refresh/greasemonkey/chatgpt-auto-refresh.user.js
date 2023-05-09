@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.5.2.1
+// @version             2023.5.9
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -115,7 +115,7 @@
 // @compatible          qq
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@b3216af1fad638180237e3624727a146be92cc70/dist/chatgpt-1.5.1.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@51dc48d5bff8e5539e8cee273032360d0691c6a6/dist/chatgpt-1.6.5.min.js
 // @grant               GM_setValue
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
@@ -129,64 +129,54 @@
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
-(function() {
+(async () => {
 
-    // Init settings
-    var config = {}, configKeyPrefix = 'chatGPTar_'
-    loadSetting('arDisabled', 'notifHidden', 'refreshInterval')
-    if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
-    
-    // Create toolbar menu
-    registerMenu()
-
-    // Activate auto-refresh if enabled
-    if (!config.arDisabled) chatgpt.autoRefresh.activate(config.refreshInterval)
-
-    // Show status notification on first visit if enabled
-    if (!config.notifHidden && document.title === 'New chat') {
-        chatgpt.notify('Auto-Refresh: ' + (config.arDisabled ? 'OFF' : 'ON'), '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
-
-    // Functions
+    // Define SCRIPT functions
 
     function registerMenu() {
-        var menuID = [] // to store registered commands for removal while preserving order
-        var stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF']
+        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
         var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to toggle auto-refresh
         var arLabel = stateSymbol[+config.arDisabled] + ' Auto-Refresh ↻ '
                     + stateSeparator + stateWord[+config.arDisabled]
-        menuID.push(GM_registerMenuCommand(arLabel, function() {
-            if (config.arDisabled) chatgpt.autoRefresh.activate(config.refreshInterval)
-            else chatgpt.autoRefresh.deactivate()
-            saveSetting('arDisabled', !config.arDisabled)
-            if (!config.notifHidden) chatgpt.notify('Auto-Refresh: ' + stateWord[+config.arDisabled], '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i]) // remove all cmd's
+        menuIDs.push(GM_registerMenuCommand(arLabel, function() {
+            document.querySelector('#autoRefreshToggle').click()
+            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
             registerMenu() // serve fresh one
+        }))
+
+        // Add command to toggle visibility of toggle
+        var tvLabel = stateSymbol[+config.toggleHidden] + ' Toggle Visibility'
+            + stateSeparator + stateWord[+config.toggleHidden]
+        menuIDs.push(GM_registerMenuCommand(tvLabel, function() {
+            saveSetting('toggleHidden', !config.toggleHidden)
+            toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
+            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when switching modes
         var mnLabel = stateSymbol[+config.notifHidden] + ' Mode Notifications'
                     + stateSeparator + stateWord[+config.notifHidden]
-        menuID.push(GM_registerMenuCommand(mnLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
-            chatgpt.notify('Mode Notifications: ' + stateWord[+config.notifHidden], '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i]) // remove all cmd's
+            chatgpt.notify('↻ Mode Notifications: ' + stateWord[+config.notifHidden], '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
             registerMenu() // serve fresh one
         }))
 
         // Add command to change refresh interval
-        menuID.push(GM_registerMenuCommand('⌚ Change Refresh Interval (' + config.refreshInterval + 's)', function() {
+        menuIDs.push(GM_registerMenuCommand('⌚ Refresh Interval (' + config.refreshInterval + 's)', function() {
             while (true) {
                 var refreshInterval = prompt('Update refresh interval (in secs):', config.refreshInterval)
                 if (refreshInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(refreshInterval)) && parseInt(refreshInterval) > 0) { // valid int set
                     saveSetting('refreshInterval', parseInt(refreshInterval))
-                    if (chatgpt.autoRefresh.ssgID) { // reset running auto-refresh
+                    if (chatgpt.autoRefresh.isActive) { // reset running auto-refresh
                         chatgpt.autoRefresh.deactivate()
                         chatgpt.autoRefresh.activate(refreshInterval)
                     }
-                    for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i]) // remove all cmd's
+                    for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
                     registerMenu() // serve fresh one
                     var minInterval = Math.max(2, config.refreshInterval - 10)
                     var maxInterval = config.refreshInterval + 10
@@ -208,5 +198,99 @@
         GM_setValue(configKeyPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
+
+    // Define TOGGLE functions
+
+    function insertToggle() {
+        var firstMenu = document.querySelector('nav')
+        if (!firstMenu.contains(toggleLabel)) { // check if label exists first // 检查标签是否首先存在
+            firstMenu.insertBefore(toggleLabel, firstMenu.childNodes[0]) // insert before 'New chat'// 在"新聊天"之前插入
+    }}
+
+    function updateToggleHTML() {
+        toggleLabel.innerHTML = `
+            <img width="18px" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/icons/auto-refresh-navicon-light-155.png">
+            Auto-Refresh ${config.arDisabled ? 'disabled' : 'enabled'}
+            <label class="switch" ><input id="autoRefreshToggle" type="checkbox"
+                ${ !config.arDisabled ? 'checked="true"' : '' } >
+                <span class="slider"></span></label>`
+        toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
+    }
+
+    // Run MAIN routine
+
+        // Initialize settings
+    var config = {}, configKeyPrefix = 'chatGPTar_'
+    loadSetting('arDisabled', 'notifHidden', 'refreshInterval', 'toggleHidden')
+    if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
+
+    // Init/register menu
+    var menuIDs = [], stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF'] // initialize menu vars
+    registerMenu() // create browser toolbar menu
+
+    await chatgpt.isLoaded()
+
+    // Stylize toggle switch
+    var switchStyle = document.createElement('style')
+    switchStyle.innerHTML = `/* Stylize switch */
+        .switch { position:absolute ; left:208px ; width:34px ; height:18px }
+        .switch input { opacity:0 ; width:0 ; height:0 } /* hide checkbox */
+        .slider { position:absolute ; cursor:pointer ; top:0 ; left:0 ; right:0 ; bottom:0 ; background-color:#ccc ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
+        .slider:before { position:absolute ; content:"" ; height:14px ; width:14px ; left:3px; bottom:2px ; background-color:white ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
+
+        /* Position/color ON-state */
+        input:checked { position:absolute ; right:3px }
+        input:checked + .slider { background-color:#42B4BF }
+        input:checked + .slider:before {
+            -webkit-transform: translateX(14px) translateY(1px) ;
+            -ms-transform: translateX(14px) translateY(1px) ;
+            transform: translateX(14px) }`
+
+    document.head.appendChild(switchStyle)
+
+    // Create toggle label, add listener/classes/HTML
+    var toggleLabel = document.createElement('div') // create label div
+    toggleLabel.addEventListener('click', function() {
+        var toggleInput = document.querySelector('#autoRefreshToggle')
+        toggleInput.click()
+        setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
+        config.arDisabled = !toggleInput.checked
+        for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
+        if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
+            chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true 
+            if (!config.notifHidden) {
+                chatgpt.notify('↻ Auto-Refresh: ON',
+                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+        }} else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
+            chatgpt.autoRefresh.deactivate() // ; config.isActive = false
+            if (!config.notifHidden) {
+                chatgpt.notify('↻ Auto-Refresh: OFF',
+                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+        }}
+        saveSetting('arDisabled', config.arDisabled)
+    })
+    for (var link of document.querySelectorAll('a')) { // inspect sidebar links for classes
+        if (link.innerHTML.includes('New chat')) { // focus on 'New chat'
+            toggleLabel.setAttribute('class', link.classList) // borrow its classes
+            break // stop looping since class assignment is done
+        }
+    } updateToggleHTML()
+
+    // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
+    insertToggle()
+    var navObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length) {
+                insertToggle()
+    }})})
+    navObserver.observe(document.documentElement, { childList: true, subtree: true })
+
+    // Activate auto-refresh on first visit if enabled
+    if (!config.arDisabled) {
+        chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true
+        if (!config.notifHidden && document.title === 'New chat') {
+            chatgpt.notify('↻ Auto-Refresh: ON',
+                '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+    }}
 
 })()
