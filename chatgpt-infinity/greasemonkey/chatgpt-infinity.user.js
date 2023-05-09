@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.5.5
+// @version             2023.5.9
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -115,7 +115,7 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@aa37089ffb0462f72d5020d0c7d1c78937d42a07/dist/chatgpt-1.6.1.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@51dc48d5bff8e5539e8cee273032360d0691c6a6/dist/chatgpt-1.6.5.min.js
 // @grant               GM_setValue
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
@@ -129,7 +129,7 @@
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
-(function() {
+(async () => {
 
     // Define SCRIPT functions
 
@@ -194,7 +194,6 @@
     }
 
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch(error) { return 'other' }}
-    function getUserLanguage() { return ( navigator.languages[0] || navigator.language || '' )}
 
     function loadSetting() {
         var keys = [].slice.call(arguments)
@@ -267,12 +266,14 @@
     // Init settings
     var config = { isActive: false, sent: false, infinityMode: false }, configKeyPrefix = 'chatGPTinf_' // initialize config variables
     loadSetting('toggleHidden', 'autoScrollDisabled', 'replyLanguage', 'replyInterval')
-    if (!config.replyLanguage) saveSetting('replyLanguage', getUserLanguage()) // init reply language
+    if (!config.replyLanguage) saveSetting('replyLanguage', navigator.languages[0] || navigator.language || '') // init reply language
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
 
     // Init/register menu
     var menuIDs = [], stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF'] // initialize menu vars
     registerMenu() // create browser toolbar menu
+
+    await chatgpt.isLoaded()
 
     // Stylize toggle switch
     var switchStyle = document.createElement('style')
