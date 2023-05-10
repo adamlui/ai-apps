@@ -11,7 +11,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式🖥️
 // @name:zh-SG          ChatGPT 宽屏模式🖥️
 // @name:zh-TW          ChatGPT 寬屏模式🖥️
-// @version             2023.5.10
+// @version             2023.5.10.1
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing pleasure
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -24,10 +24,10 @@
 // @description:ja      ChatGPT にワイドスクリーン + フルウィンドウ モードを追加して、視聴の楽しみを強化
 // @description:ko      향상된 보기 즐거움을 위해 ChatGPT에 와이드스크린 + 전체 창 모드를 추가합니다.
 // @description:ru      Добавляет широкоэкранный и полноэкранный режимы в ChatGPT для большего удовольствия от просмотра.
-// @description:zh-CN   为 ChatGPT 添加宽屏 + 全窗口模式以增强观看乐趣
-// @description:zh-HK   為 ChatGPT 添加寬屏 + 全窗口模式以增強觀看樂趣
-// @description:zh-SG   为 ChatGPT 添加宽屏 + 全窗口模式以增强观看乐趣
-// @description:zh-TW   為 ChatGPT 添加寬屏 + 全窗口模式以增強觀看樂趣
+// @description:zh-CN   为 ChatGPT 添加宽屏 + 全屏口模式以增强观看乐趣
+// @description:zh-HK   為 ChatGPT 添加寬屏 + 全屏口模式以增強觀看樂趣
+// @description:zh-SG   为 ChatGPT 添加宽屏 + 全屏口模式以增强观看乐趣
+// @description:zh-TW   為 ChatGPT 添加寬屏 + 全屏口模式以增強觀看樂趣
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -138,7 +138,7 @@
         case 'zh' : case 'zh-CN' : case 'zh-SG' :
             messages = {
                 menuLabels: { fullerWins: '更完整的窗口', modeNotifs: '模式通知' },
-                modes: { wideScreen: '宽屏', fullWindow: '全窗' },
+                modes: { wideScreen: '宽屏', fullWindow: '全屏' },
                 tooltips: {
                     wideScreenON: '退出宽屏', wideScreenOFF: '宽屏',
                     fullWindowON: '退出全窗口', fullWindowOFF: '全窗口模式',
@@ -148,7 +148,7 @@
         case 'zh-HK' : case 'zh-TW' :
             messages = {
                 menuLabels: { fullerWins: '更完整的窗口', modeNotifs: '模式通知' },
-                modes: { wideScreen: '寬屏', fullWindow: '全窗' },
+                modes: { wideScreen: '寬屏', fullWindow: '全屏' },
                 tooltips: {
                     wideScreenON: '退出寬屏', wideScreenOFF: '寬屏',
                     fullWindowON: '退出全窗口', fullWindowOFF: '全窗口模式',
