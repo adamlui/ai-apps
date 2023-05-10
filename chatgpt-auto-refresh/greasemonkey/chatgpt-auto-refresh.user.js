@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.5.10
+// @version             2023.5.10.1
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -544,7 +544,10 @@
         menuIDs.push(GM_registerMenuCommand(tvLabel, function() {
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
+            if (!config.notifHidden) {
+                chatgpt.notify('↻ ' + messages.toggleVisibility + ': '+ stateWord[+config.toggleHidden],
+                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            } for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when switching modes
