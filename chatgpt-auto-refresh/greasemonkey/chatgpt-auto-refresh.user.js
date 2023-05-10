@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.5.9.2
+// @version             2023.5.10
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -132,9 +132,329 @@
 (async () => {
 
     // Initialize settings
-    var config = {}, configKeyPrefix = 'chatGPTar_'
+    var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
+    var configKeyPrefix = 'chatGPTar_', messages = {}
     loadSetting('arDisabled', 'notifHidden', 'refreshInterval', 'toggleHidden')
     if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
+
+    // Define messages
+    switch (config.userLanguage) {
+
+        case 'ar': // Arabic
+            messages = {
+                autoRefresh: 'تحديث تلقائي', toggleVisibility: 'تبديل الرؤية',
+                modeNotifs: 'وضع الإخطارات', refreshInterval: 'الفاصل الزمني للتحديث',
+                enabled: 'ممكن', disabled: 'عاجز'
+            } ; break
+
+        case 'bg': // Bulgarian
+            messages = {
+                autoRefresh: 'Авто-обновяване', toggleVisibility: 'Превключване на видимостта',
+                modeNotifs: 'Известия за режим', refreshInterval: 'Интервал на обновяване',
+                enabled: '', disabled: '' // too long for sidebar
+            }; break
+
+        case 'bn': // Bengali
+            messages = {
+                autoRefresh: 'স্বয়ংক্রিয় রিফ্রেশ', toggleVisibility: 'দৃশ্যমানতা টগল করুন',
+                modeNotifs: 'মোড বিজ্ঞপ্তি', refreshInterval: 'রিফ্রেশ ইন্টারভাল',
+                enabled: 'সক্রিয়', disabled: 'অক্ষম'
+            } ; break
+
+        case 'cs': // Czech
+            messages = {
+                autoRefresh: 'Automatické obnovení', toggleVisibility: 'Přepnutí viditelnosti',
+                modeNotifs: 'Oznámení režimu', refreshInterval: 'Interval obnovování',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'da': // Danish
+            messages = {
+                autoRefresh: 'Automatisk opdatering', toggleVisibility: 'Skift synlighed',
+                modeNotifs: 'Tilstand meddelelser', refreshInterval: 'Opdateringsinterval',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'de': // German
+            messages = {
+                autoRefresh: 'Automatisches Aktualisieren', toggleVisibility: 'Sichtbarkeit umschalten',
+                modeNotifs: 'Modusbenachrichtigungen', refreshInterval: 'Aktualisierungsintervall',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'el': // Greek
+            messages = {
+                autoRefresh: 'Αυτόματη Ανανέωση', toggleVisibility: 'Εναλλαγή Ορατότητας',
+                modeNotifs: 'Ειδοποιήσεις Λειτουργίας', refreshInterval: 'Διάστημα Ανανέωσης',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'eo': // Esperanto
+            messages = {
+                autoRefresh: 'Aŭtomata Refreŝigo', toggleVisibility: 'Ŝalti Videblecon',
+                modeNotifs: 'Modaj Sciigoj', refreshInterval: 'Refreŝiga Intervalo',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'es': // Spanish
+            messages = {
+                autoRefresh: 'Auto-actualización', toggleVisibility: 'Alternar visibilidad',
+                modeNotifs: 'Notificaciones de modo', refreshInterval: 'Intervalo de actualización',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'fi': // Finnish
+            messages = {
+                autoRefresh: 'Automaattinen päivitys', toggleVisibility: 'Vaihda näkyvyyttä',
+                modeNotifs: 'Tilailmoitukset', refreshInterval: 'Päivitysväli',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'fr' : case 'fr-CA' : // French
+            messages = {
+                autoRefresh: 'Actualisation automatique', toggleVisibility: 'Basculer la visibilité',
+                modeNotifs: 'Notifications de mode', refreshInterval: 'Intervalle de rafraîchissement',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'gu': // Gujarati
+            messages = {
+                autoRefresh: 'આપો-રીફ્રેશ', toggleVisibility: 'દૃષ્ટિગતતા ટૉગલ કરો',
+                modeNotifs: 'મોડ સૂચનાઓ', refreshInterval: 'રિફ્રેશ અંતરાલ',
+                enabled: 'સક્ષમ', disabled: 'અક્ષમ'
+            } ; break
+
+        case 'hi': // Hindi
+            messages = {
+                autoRefresh: 'ऑटो-ताज़ा करें', toggleVisibility: 'दृश्यता टॉगल करें',
+                modeNotifs: 'मोड सूचनाएं', refreshInterval: 'ताजगी अंतराल',
+                enabled: 'सक्रिय', disabled: 'अक्षम'
+            } ; break
+
+        case 'hu': // Hungarian
+            messages = {
+                autoRefresh: 'Automatikus frissítés', toggleVisibility: 'Láthatóság váltása',
+                modeNotifs: 'Mód értesítések', refreshInterval: 'Frissítési időköz',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'in': // Indonesian
+            messages = {
+                autoRefresh: 'Penyegaran Otomatis', toggleVisibility: 'Beralih Visibilitas',
+                modeNotifs: 'Pemberitahuan Mode', refreshInterval: 'Interval Penyegaran',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'it': // Italian
+            messages = {
+                autoRefresh: 'Aggiornamento automatico', toggleVisibility: 'Attiva/disattiva visibilità',
+                modeNotifs: 'Notifiche di modalità', refreshInterval: 'Intervallo di aggiornamento',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'iw': // Hebrew
+            messages = {
+                autoRefresh: 'רענון אוטומטי', toggleVisibility: 'החלפת נראות',
+                modeNotifs: 'הודעות מצב', refreshInterval: 'מרווח רענון',
+                enabled: 'מופעל', disabled: 'נָכֶה'
+            } ; break
+
+        case 'ja': // Japanese
+            messages = {
+                autoRefresh: '自動更新', toggleVisibility: '表示の切り替え',
+                modeNotifs: 'モードの通知', refreshInterval: '更新間隔',
+                enabled: '有効', disabled: '無効'
+            } ; break
+
+        case 'ka': // Georgian
+            messages = {
+                autoRefresh: 'ავტო-განახლება', toggleVisibility: 'ხილვის გადართვა',
+                modeNotifs: 'რეჟიმის შეტყობინებები', refreshInterval: 'განახლების ინტერვალი',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'kn': // Kannada
+            messages = {
+                autoRefresh: 'ಸ್ವಯಂಚಾಲಿತ ರೀಫ್ರೆಶ್', toggleVisibility: 'ದೃಶ್ಯತೆ ಬದಲಾಯಿಸು',
+                modeNotifs: 'ಮೋಡ್ ಅಧಿಸೂಚನೆಗಳು', refreshInterval: 'ರೀಫ್ರೆಶ್ ಅಂತರವನ್ನು',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'ko': // Korean
+            messages = {
+                autoRefresh: '자동 새로고침', toggleVisibility: '가시성 전환',
+                modeNotifs: '모드 알림', refreshInterval: '새로고침 간격',
+                enabled: '가능', disabled: '장애가 있는'
+            } ; break
+
+        case 'ku': // Kurdish
+            messages = {
+                autoRefresh: 'Auto-Refresh', toggleVisibility: 'Veguhastina Dîtinê',
+                modeNotifs: 'Mode Notifications', refreshInterval: 'Navbera nûvekirinê',
+                enabled: 'enabled', disabled: 'bêmecel'
+            } ; break
+
+        case 'ml': // Malayalam
+            messages = {
+                autoRefresh: 'ഓട്ടോ-റീഫ്രഷ് ചെയ്യുക', toggleVisibility: 'ദൃശ്യമായി മാറ്റുക',
+                modeNotifs: 'മോഡ് അറിയിപ്പ്', refreshInterval: 'റീഫ്രഷ് ഇന്റർവൽ',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'mr': // Marathi
+            messages = {
+                autoRefresh: 'स्वयंपाकडे नवीनीकृत करा', toggleVisibility: 'दृश्यता टॉगल करा',
+                modeNotifs: 'मोड सूचना', refreshInterval: 'रिफ्रेश अंतराल',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'ms': // Malay
+            messages = {
+                autoRefresh: 'Muat semula Auto', toggleVisibility: 'Togol Visibiliti',
+                modeNotifs: 'Pemberitahuan Mod', refreshInterval: 'Interval Muat semula',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'my': // Burmese
+            messages = {
+                autoRefresh: 'အော့စ်ထိုးဖြင့်ပြောင်းရန်', toggleVisibility: 'အမြဲပြောင်းရန်',
+                modeNotifs: 'အောက်ပါ အသိပေးချက်များ', refreshInterval: 'အပြန်လိုက်လှမ်းများ',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'nl': // Dutch
+            messages = {
+                autoRefresh: 'Automatisch verversen', toggleVisibility: 'Zichtbaarheid omwisselen',
+                modeNotifs: 'Modusmeldingen', refreshInterval: 'Verversingsinterval',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'no': // Norwegian
+            messages = {
+                autoRefresh: 'Automatisk oppdatering', toggleVisibility: 'Bytt synlighet',
+                modeNotifs: 'Modusvarsel', refreshInterval: 'Oppdateringsintervall',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'or': // Oriya
+            messages = {
+                autoRefresh: 'ଅଟୋ-ରଫ୍ରେସ୍', toggleVisibility: 'ଦୃଶ୍ୟତା ପରିବର୍ତନ କରନ୍ତୁ',
+                modeNotifs: 'ମୋଡ ସୂଚନାଗୁଡିକ', refreshInterval: 'ରଫ୍ରେସ୍ ଅନ୍େକାଂତ',
+                enabled: 'ସକ୍ଷମ', disabled: 'ଅକ୍ଷମ'
+            } ; break
+
+        case 'pa': // Punjabi
+            messages = {
+                autoRefresh: 'ਆਟੋ-ਤਾਜ਼ਾ ਕਰੋ', toggleVisibility: 'ਦਿੱਖਲਤ ਬਦਲੋ',
+                modeNotifs: 'ਸਥਿਤੀ ਸੂਚਨਾ ਮੋਡ', refreshInterval: 'ਤਾਜ਼ਗੀ ਅੰਤਰਾਲ',
+                enabled: 'ਸਮਰੱਥ', disabled: 'ਅਯੋਗ'
+            } ; break
+
+        case 'pl': // Polish
+            messages = {
+                autoRefresh: 'Automatyczne odświeżanie', toggleVisibility: 'Przełącz widoczność',
+                modeNotifs: 'Tryb powiadomień', refreshInterval: 'Interwał odświeżania',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'pt' : case 'pt-BR' : // Portuguese
+            messages = {
+                autoRefresh: 'Atualização automática', toggleVisibility: 'Alternar Visibilidade',
+                modeNotifs: 'Modo de Notificações', refreshInterval: 'Intervalo de Atualização',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'ro': // Romanian
+            messages = {
+                autoRefresh: 'Reîmprospătare automată', toggleVisibility: 'Comutare vizibilitate',
+                modeNotifs: 'Mod notificări', refreshInterval: 'Interval de reîmprospătare',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'ru': // Russian
+            messages = {
+                autoRefresh: 'Автообновление', toggleVisibility: 'Переключение видимости',
+                modeNotifs: 'Режим уведомлений', refreshInterval: 'Интервал обновления',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'sk': // Slovak
+            messages = {
+                autoRefresh: 'Automatické obnovenie', toggleVisibility: 'Prepnúť viditeľnosť',
+                modeNotifs: 'Režim upozornení', refreshInterval: 'Interval obnovy',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'sr': // Serbian
+            messages = {
+                autoRefresh: 'Automatsko osvežavanje', toggleVisibility: 'Prekidač vidljivosti',
+                modeNotifs: 'Režim obaveštenja', refreshInterval: 'Interval osvežavanja',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'ta': // Tamil
+            messages = {
+                autoRefresh: 'தானாக புதுப்பிப்பு', toggleVisibility: 'காட்டுதல் மாற்று',
+                modeNotifs: 'முறை அறிவிப்புகள்', refreshInterval: 'புதுப்பிப்பு இடைவெளி',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'th': // Thai
+            messages = {
+                autoRefresh: 'รีเฟรชอัตโนมัติ', toggleVisibility: 'สลับการแสดงผล',
+                modeNotifs: 'การแจ้งเตือนโหมด', refreshInterval: 'ช่วงเวลารีเฟรช',
+                enabled: 'เปิดใช้งาน', disabled: 'พิการ'
+            } ; break
+
+        case 'tr': // Turkish
+            messages = {
+                autoRefresh: 'Otomatik Yenileme', toggleVisibility: 'Görünürlüğü Değiştir',
+                modeNotifs: 'Mod Bildirimleri', refreshInterval: 'Yenileme Aralığı',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'uk': // Ukrainian
+            messages = {
+                autoRefresh: 'Автооновлення', toggleVisibility: 'Перемикач видимості',
+                modeNotifs: 'Режим повідомлень', refreshInterval: 'Інтервал оновлення',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'ur': // Urdu
+            messages = {
+                autoRefresh: 'آٹو ریفریش', toggleVisibility: 'مرئیت کو ٹوگل کریں۔',
+                modeNotifs: 'موڈ اطلاعات', refreshInterval: 'تروتازہ کیا وقفہ',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'vi': // Vietnamese
+            messages = {
+                autoRefresh: 'Tự động làm mới', toggleVisibility: 'Chuyển đổi hiển thị',
+                modeNotifs: 'Thông báo chế độ', refreshInterval: 'Khoảng thời gian làm mới',
+                enabled: '', disabled: '' // too long for sidebar
+            } ; break
+
+        case 'zh' : case 'zh-CN' : case 'zh-SG' : // Simplified Chinese
+            messages = {
+                autoRefresh: '自动刷新', toggleVisibility: '切换可见性',
+                modeNotifs: '模式通知', refreshInterval: '刷新间隔',
+                enabled: '启用', disabled: '禁用'
+            } ; break
+
+        case 'zh-HK' : case 'zh-TW' : // Traditional Chinese
+            messages = {
+                autoRefresh: '自動更新', toggleVisibility: '切換可見性',
+                modeNotifs: '模式通知', refreshInterval: '更新間隔',
+                enabled: '啟用', disabled: '禁用'
+            } ; break
+
+        default: // English
+            messages = {
+                autoRefresh: 'Auto-Refresh', toggleVisibility: 'Toggle Visibility',
+                modeNotifs: 'Mode Notifications', refreshInterval: 'Refresh Interval',
+                enabled: 'enabled', disabled: 'disabled'
+            }
+    }
 
     // Init/register menu
     var menuIDs = [], stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF'] // initialize menu vars
@@ -171,12 +491,12 @@
         if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true
             if (!config.notifHidden) {
-                chatgpt.notify('↻ Auto-Refresh: ON',
+                chatgpt.notify('↻ ' + messages.autoRefresh + ': ON',
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
         }} else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.deactivate() // ; config.isActive = false
             if (!config.notifHidden) {
-                chatgpt.notify('↻ Auto-Refresh: OFF',
+                chatgpt.notify('↻ ' + messages.autoRefresh + ': OFF',
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
         }}
         saveSetting('arDisabled', config.arDisabled)
@@ -201,7 +521,7 @@
     if (!config.arDisabled) {
         chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true
         if (!config.notifHidden && document.title === 'New chat') {
-            chatgpt.notify('↻ Auto-Refresh: ON',
+            chatgpt.notify('↻ ' + messages.autoRefresh + ': ON',
                 '', '', chatgpt.isDarkMode() ? '' : 'shadow')
     }}
 
@@ -212,14 +532,14 @@
         var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to toggle auto-refresh
-        var arLabel = stateSymbol[+config.arDisabled] + ' Auto-Refresh ↻ '
+        var arLabel = stateSymbol[+config.arDisabled] + ' ' + messages.autoRefresh + ' ↻ '
                     + stateSeparator + stateWord[+config.arDisabled]
         menuIDs.push(GM_registerMenuCommand(arLabel, function() {
             document.querySelector('#autoRefreshToggle').click()
         }))
 
         // Add command to toggle visibility of toggle
-        var tvLabel = stateSymbol[+config.toggleHidden] + ' Toggle Visibility'
+        var tvLabel = stateSymbol[+config.toggleHidden] + ' ' + messages.toggleVisibility
             + stateSeparator + stateWord[+config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, function() {
             saveSetting('toggleHidden', !config.toggleHidden)
@@ -228,17 +548,19 @@
         }))
 
         // Add command to show notifications when switching modes
-        var mnLabel = stateSymbol[+config.notifHidden] + ' Mode Notifications'
+        var mnLabel = stateSymbol[+config.notifHidden] + ' ' + messages.modeNotifs
                     + stateSeparator + stateWord[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
-            chatgpt.notify('↻ Mode Notifications: ' + stateWord[+config.notifHidden], '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            chatgpt.notify('↻ ' + messages.modeNotifs + ': ' + stateWord[+config.notifHidden],
+                '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
             registerMenu() // serve fresh one
         }))
 
         // Add command to change refresh interval
-        menuIDs.push(GM_registerMenuCommand('⌚ Refresh Interval ' + stateSeparator + config.refreshInterval + 's', function() {
+        var riLabel = '⌚ ' + messages.refreshInterval + ' ' + stateSeparator + config.refreshInterval + 's'
+        menuIDs.push(GM_registerMenuCommand(riLabel, function() {
             while (true) {
                 var refreshInterval = prompt('Update refresh interval (in secs):', config.refreshInterval)
                 if (refreshInterval === null) break // user cancelled so do nothing
@@ -282,7 +604,7 @@
     function updateToggleHTML() {
         toggleLabel.innerHTML = `
             <img width="18px" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/icons/auto-refresh-navicon-light-155.png">
-            Auto-Refresh ${config.arDisabled ? 'disabled' : 'enabled'}
+            ${ messages.autoRefresh } ${ config.arDisabled ? messages.disabled : messages.enabled }
             <label class="switch" ><input id="autoRefreshToggle" type="checkbox"
                 ${ !config.arDisabled ? 'checked="true"' : '' } >
                 <span class="slider"></span></label>`
