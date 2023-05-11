@@ -20,8 +20,8 @@
 
 #
 
-![image](https://user-images.githubusercontent.com/10906554/234756105-cf367acc-644a-49ee-8586-43c51d43e359.png)
-![image](https://user-images.githubusercontent.com/10906554/227314471-cfd8362b-0662-479d-bb2e-5c13e2f622b0.png)
+![菜单切换](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/zh-cn/tm-menu-toggle.png)
+![↻ 自动刷新: ON](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/zh-cn/mode-notification-on.png)
 
 ## 它能做什么
 
@@ -64,6 +64,12 @@
 2. 安装 [ChatGPT 自动刷新](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) (将加载上面安装的用户脚本管理器)
 
 3. 正常访问 [chat.openai.com](https://chat.openai.com)，会话将定期自动刷新 (在后台，不会对您造成任何损失)!
+
+<div align="center">
+
+![自动刷新 启用](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/zh-cn/mode-toggle-on.jpg)    
+
+</div>
 
 ## 依赖关系
 
