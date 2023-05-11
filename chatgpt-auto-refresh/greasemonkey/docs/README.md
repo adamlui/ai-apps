@@ -21,7 +21,7 @@
 #
 
 ![image](https://user-images.githubusercontent.com/10906554/234756105-cf367acc-644a-49ee-8586-43c51d43e359.png)
-![↻ Auto-Refresh: ON](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/mode-notification-on.png)
+<img alt="↻ Auto-Refresh: ON]" width=355 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/mode-notification-on.png">
 
 ## What it does
 
