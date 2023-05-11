@@ -65,6 +65,12 @@
 
 3. Visit [chat.openai.com](https://chat.openai.com) as normal, and sessions will auto-refresh (in background w/ no penalty to you) at a regular interval!
 
+<div align="center">
+    
+![Auto-Refresh Enabled](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/mode-toggle-on.jpg)
+
+</div>
+
 ## Dependencies
 
 <h6>
