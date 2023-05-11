@@ -21,7 +21,7 @@
 #
 
 ![image](https://user-images.githubusercontent.com/10906554/234756105-cf367acc-644a-49ee-8586-43c51d43e359.png)
-![image](https://user-images.githubusercontent.com/10906554/227314471-cfd8362b-0662-479d-bb2e-5c13e2f622b0.png)
+![↻ Auto-Refresh: ON](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/mode-notification-on.png)
 
 ## What it does
 
