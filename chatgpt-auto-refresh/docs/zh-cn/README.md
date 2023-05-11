@@ -144,7 +144,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 
 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
 <br>[安装](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
-[自述文件](https://github.com/adamlui/chatgpt-infinity/blob/main/docs/zh-cn/README.md) / 
+[自述文件](https://github.com/adamlui/chatgpt-infinity/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptevo.com/infinity/discussions)
 
 #
