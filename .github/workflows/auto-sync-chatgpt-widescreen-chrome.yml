@@ -1,4 +1,4 @@
-name: Sync /chatgpt-widescreen/chrome/extension/ to /chatgpt-widescreen/(edge|opera)/extension/, then /chatgpt-widescreen/ to adamlui/chatgpt-apps/chatgpt-widescreen/
+name: Sync /chatgpt-widescreen/chrome/extension/ to /chatgpt-widescreen/(edge|opera)/extension/, then /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
 
 on:
   push:
