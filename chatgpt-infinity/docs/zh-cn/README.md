@@ -22,8 +22,8 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-tm-menu.png">
-<img width=322 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-on-notification.png">
+<img src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/zh-cn/infinity-mode-tm-menu.png">
+<img width=322 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/zh-cn/infinity-mode-on-notification.png">
 
 </div>
 
@@ -37,7 +37,7 @@
 
 <div align="center">
 
-![infinity-toggle](https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-toggle.jpg)
+![infinity-toggle](https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/zh-cn/infinity-mode-toggle.jpg)
 
 </div>
 
