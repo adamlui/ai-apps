@@ -21,7 +21,7 @@
 
 </div>
 
-###### 简体中文 | [English](../README.md)
+###### 简体中文 | [English](../..#readme)
 
 ## 關於
 
