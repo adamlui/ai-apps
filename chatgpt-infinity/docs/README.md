@@ -10,7 +10,7 @@
 
 ### Generate endless answers from all-knowing ChatGPT (in any language!)
 
-###### English | [简体中文](zh-cn/README.md)
+###### English | [简体中文](zh-cn#readme)
 
 <a href="https://greasyfork.org/scripts/465051-chatgpt-infinity"><img alt="Install this script" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
