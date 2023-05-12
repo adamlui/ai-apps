@@ -7,11 +7,12 @@
 // @name:ja             ChatGPTワイドスクリーンモード🖥️
 // @name:ko             ChatGPT 와이드스크린 모드 🖥️
 // @name:ru             Широкоэкранный Режим ChatGPT 🖥️
+// @name:uk             Широкоекранний Pежим ChatGPT 🖥️
 // @name:zh-CN          ChatGPT 宽屏模式🖥️
 // @name:zh-HK          ChatGPT 寬屏模式🖥️
 // @name:zh-SG          ChatGPT 宽屏模式🖥️
 // @name:zh-TW          ChatGPT 寬屏模式🖥️
-// @version             2023.5.11.1
+// @version             2023.5.11.2
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -24,6 +25,7 @@
 // @description:ja      ChatGPT にワイドスクリーン + フルウィンドウ モードを追加し、表示の強化とスクロールの削減を実現します
 // @description:ko      향상된 보기 + 스크롤 감소를 위해 ChatGPT에 와이드스크린 + 전체 창 모드를 추가합니다.
 // @description:ru      Добавляет широкоэкранный и полноэкранный режимы в ChatGPT для улучшенного просмотра и уменьшения прокрутки.
+// @description:uk      Додано широкоформатний + повновіконний режими до ChatGPT для покращеного перегляду + зменшеного прокручування
 // @description:zh-CN   向 ChatGPT 添加宽屏 + 全屏模式以增强查看效果 + 减少滚动
 // @description:zh-HK   向 ChatGPT 添加寬屏 + 全屏模式以增強查看效果 + 減少滾動
 // @description:zh-SG   向 ChatGPT 添加宽屏 + 全屏模式以增强查看效果 + 减少滚动
