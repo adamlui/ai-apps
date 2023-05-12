@@ -99,13 +99,13 @@ ChatGPT无限依赖于强大的 [chatgpt.js](https://github.com/chatgptjs/chatgp
 
 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
 <br>[安装](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) / 
-[自述文件](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/docs/zh-cn/README.md) / 
+[自述文件](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptevo.com/autorefresh/discuss)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://github.bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-在 Brave Search 侧边栏中显示 ChatGPT 答案。
-<br>[安装](https://greasyfork.org/scripts/462440-bravegpt) / 
+在 Brave Search 侧边栏中显示 ChatGPT 答案。<br>
+[安装](https://greasyfork.org/scripts/462440-bravegpt) / 
 [自述文件](https://github.bravegpt.com/#readme) / 
 [讨论](https://github.bravegpt.com/discussions)
 
