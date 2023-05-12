@@ -6,13 +6,15 @@
 // @name:it             ChatGPT Modalità Widescreen 🖥️
 // @name:ja             ChatGPTワイドスクリーンモード🖥️
 // @name:ko             ChatGPT 와이드스크린 모드 🖥️
+// @name:pt             Modo Widescreen ChatGPT 🖥️
+// @name:pt-BR          Modo Widescreen ChatGPT 🖥️
 // @name:ru             Широкоэкранный Режим ChatGPT 🖥️
 // @name:uk             Широкоекранний Pежим ChatGPT 🖥️
 // @name:zh-CN          ChatGPT 宽屏模式🖥️
 // @name:zh-HK          ChatGPT 寬屏模式🖥️
 // @name:zh-SG          ChatGPT 宽屏模式🖥️
 // @name:zh-TW          ChatGPT 寬屏模式🖥️
-// @version             2023.5.11.3
+// @version             2023.5.11.4
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -24,6 +26,8 @@
 // @description:it      Aggiunge le modalità Widescreen + Full-Window a ChatGPT per una visualizzazione migliorata + scorrimento ridotto
 // @description:ja      ChatGPT にワイドスクリーン + フルウィンドウ モードを追加し、表示の強化とスクロールの削減を実現します
 // @description:ko      향상된 보기 + 스크롤 감소를 위해 ChatGPT에 와이드스크린 + 전체 창 모드를 추가합니다.
+// @description:pt      Adiciona os modos Widescreen + Full-Window ao ChatGPT para visualização aprimorada + rolagem reduzida
+// @description:pt-BR   Adiciona os modos Widescreen + Full-Window ao ChatGPT para visualização aprimorada + rolagem reduzida
 // @description:ru      Добавляет широкоэкранный и полноэкранный режимы в ChatGPT для улучшенного просмотра и уменьшения прокрутки.
 // @description:uk      Додано широкоформатний + повновіконний режими до ChatGPT для покращеного перегляду + зменшеного прокручування
 // @description:zh-CN   向 ChatGPT 添加宽屏 + 全屏模式以增强查看效果 + 减少滚动
@@ -67,7 +71,7 @@
     // Define messages
     switch (config.userLanguage) {
 
-        case 'de':
+        case 'de': // German
             messages = {
                 menuLabels: { fullerWins: 'Vollere Fenster', modeNotifs: 'Modus-Benachrichtigungen' },
                 modes: { wideScreen: 'Breitbild', fullWindow: 'Vollständiges Fenster' },
@@ -77,7 +81,7 @@
                     newChat: 'Neuer Chat', sendMsg: 'Nachricht senden' }
             } ; break
 
-        case 'es':
+        case 'es': // Spanish
             messages = {
                 menuLabels: { fullerWins: 'Ventanas más completas', modeNotifs: 'Notificaciones de modo' },
                 modes: { wideScreen: 'Pantalla ancha', fullWindow: 'Ventana completa' },
@@ -87,7 +91,7 @@
                     newChat: 'Nueva conversación', sendMsg: 'Enviar mensaje' }
             } ; break
 
-        case 'fr' : case 'fr-CA' :
+        case 'fr' : case 'fr-CA' : // French
             messages = {
                 menuLabels: { fullerWins: 'Fenêtres plus complètes', modeNotifs: 'Notifications de modes' },
                 modes: { wideScreen: 'Écran large', fullWindow: 'Fenêtre complète' },
@@ -97,7 +101,7 @@
                     newChat: 'Nouvelle conversation', sendMsg: 'Envoyer le message' }
             } ; break
 
-        case 'it':
+        case 'it': // Italian
             messages = {
                 menuLabels: { fullerWins: 'Finestre più complete', modeNotifs: 'Modalità Notifiche' },
                 modes: { wideScreen: 'Ampio schermo', fullWindow: 'A tutta finestra' },
@@ -107,7 +111,7 @@
                     newChat: 'Nuova chiacchierata', sendMsg: 'Invia messaggio' }
             } ; break
 
-        case 'ja':
+        case 'ja': // Japanese
             messages = {
                 menuLabels: { fullerWins: 'より充実したウィンドウ', modeNotifs: 'モード通知' },
                 modes: { wideScreen: 'ワイドスクリーン', fullWindow: 'フルウィンドウ' },
@@ -117,7 +121,7 @@
                     newChat: '新しいチャット', sendMsg: 'メッセージを送る' }
             } ; break
 
-        case 'ko':
+        case 'ko': // Korean
             messages = {
                 menuLabels: { fullerWins: '풀러 윈도우', modeNotifs: '모드 알림' },
                 modes: { wideScreen: '와이드 스크린', fullWindow: '전체 창' },
@@ -127,7 +131,17 @@
                     newChat: '새 채팅', sendMsg: '문자 보내' }
             } ; break
 
-        case 'ru':
+        case 'pt' : case 'pt-BR' : // Portuguese
+            messages = {
+                menuLabels: { fullerWins: 'Janelas mais cheias', modeNotifs: 'Notificações de modo' },
+                modes: { wideScreen: 'Panorâmico', fullWindow: 'Janela cheia' },
+                tooltips: {
+                    wideScreenON: 'Sair da tela ampla', wideScreenOFF: 'Panorâmico',
+                    fullWindowON: 'Sair da janela cheia', fullWindowOFF: 'Modo de janela inteira',
+                    newChat: 'Novo chat', sendMsg: 'Enviar mensagem' }
+            } ; break
+
+        case 'ru': // Russian
             messages = {
                 menuLabels: { fullerWins: 'Полные окна', modeNotifs: 'Уведомления о режиме' },
                 modes: { wideScreen: 'Широкий экран', fullWindow: 'Полное окно' },
@@ -137,7 +151,7 @@
                     newChat: 'Новый чат', sendMsg: 'Отправить сообщение' }
             } ; break
 
-        case 'uk':
+        case 'uk': // Ukrainian
             messages = {
                 menuLabels: { fullerWins: 'Повні вікна', modeNotifs: 'Сповіщення режиму' },
                 modes: { wideScreen: 'Широкий екран', fullWindow: 'На повне вікно' },
@@ -147,7 +161,7 @@
                     newChat: 'Новий чат', sendMsg: 'Відправити повідомлення' }
             } ; break
 
-        case 'zh' : case 'zh-CN' : case 'zh-SG' :
+        case 'zh' : case 'zh-CN' : case 'zh-SG' : // Simplified Chinese
             messages = {
                 menuLabels: { fullerWins: '更完整的窗口', modeNotifs: '模式通知' },
                 modes: { wideScreen: '宽屏', fullWindow: '全屏' },
@@ -157,7 +171,7 @@
                     newChat: '新聊天', sendMsg: '发信息' }
             } ; break
 
-        case 'zh-HK' : case 'zh-TW' :
+        case 'zh-HK' : case 'zh-TW' : // Traditional Chinese
             messages = {
                 menuLabels: { fullerWins: '更完整的窗口', modeNotifs: '模式通知' },
                 modes: { wideScreen: '寬屏', fullWindow: '全屏' },
@@ -167,7 +181,7 @@
                     newChat: '新聊天', sendMsg: '發信息' }
             } ; break
 
-        default:
+        default: // English
             messages = {
                 menuLabels: { fullerWins: 'Fuller Windows', modeNotifs: 'Mode Notifications' },
                 modes: { wideScreen: 'Wide screen', fullWindow: 'Full-window' },
