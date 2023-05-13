@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.5.13.1
+// @version             2023.5.13.2
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -313,12 +313,13 @@
     }}
 
     function updateToggleHTML() {
-        toggleLabel.innerHTML = `
-            <img width="18px" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/icons/auto-refresh-navicon-light-155.png">
-            ${ messages.menuLabel_autoRefresh } ${ config.arDisabled ? messages.state_disabled : messages.state_enabled }
-            <label class="switch" ><input id="autoRefreshToggle" type="checkbox"
-                ${ !config.arDisabled ? 'checked="true"' : '' } >
-                <span class="slider"></span></label>`
+        toggleLabel.innerHTML = (
+            '<img width="18px" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/icons/auto-refresh-navicon-light-155.png">'
+                + ( messages.menuLabel_autoRefresh
+                    + (( messages.menuLabel_autoRefresh.length + Math.max(messages.state_disabled.length, messages.state_enabled.length )) > 21 ? ''
+                        : ( ' ' + ( config.arDisabled ? messages.state_disabled : messages.state_enabled ))))
+                + '<label class="switch" ><input id="autoRefreshToggle" type="checkbox"'
+                + ( !config.arDisabled ? 'checked="true"' : '' ) + '><span class="slider"></span></label>' )
         toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
     }
 
