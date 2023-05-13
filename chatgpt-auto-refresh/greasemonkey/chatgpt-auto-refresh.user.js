@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.5.13
+// @version             2023.5.13.1
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -134,8 +134,8 @@
 (async () => {
 
     // Initialize settings
+    var configKeyPrefix = 'chatGPTar_'
     var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
-    var configKeyPrefix = 'chatGPTar_', messages = {}
     loadSetting('arDisabled', 'notifHidden', 'refreshInterval', 'toggleHidden')
     if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
 
