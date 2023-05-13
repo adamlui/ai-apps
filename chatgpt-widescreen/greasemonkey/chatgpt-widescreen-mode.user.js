@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式🖥️
 // @name:zh-SG          ChatGPT 宽屏模式🖥️
 // @name:zh-TW          ChatGPT 寬屏模式🖥️
-// @version             2023.5.11.4
+// @version             2023.5.12
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -62,6 +62,12 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
 
 (async () => {
+
+    // Disable if browser extension installed
+    if (document.documentElement.getAttribute('cwm-extension-installed')) {
+        GM_registerMenuCommand('❌ Disabled (extension installed)', function() { return })
+        return // exit script
+    }
 
     // Initialize settings
     var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
