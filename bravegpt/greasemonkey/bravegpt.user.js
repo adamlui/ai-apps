@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.5.2.2
+// @version             2023.5.13
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar
@@ -53,7 +53,7 @@
     var openAIauthDomain = 'https://auth0.openai.com'
     var chatGPTsessURL = 'https://chat.openai.com/api/auth/session'
     var openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
-    var proxyEndpointMap = [[ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-3.5-turbo' ]]
+    var proxyEndpointMap = [[ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-4' ]]
 
     var braveGPTalerts = {
         login: 'Please login @ ',
