@@ -1,0 +1,15 @@
+{
+  "appName": { "message": "ChatGPT वाइडस्क्रीन मोड" },
+  "appDesc": { "message": "व्यूइंग और स्क्रोलिंग को कम करने के लिए ChatGPT में वाइडस्क्रीन + फुलस्क्रीन मोड जोड़ता है" },
+  "menuLabel_fullerWins": { "message": "फुलर विंडोज" },
+  "menuLabel_modeNotifs": { "message": "मोड नोटिफिकेशन" },
+  "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन इंस्टॉल किया गया)" },
+  "mode_wideScreen": { "message": "वाइड स्क्रीन" },
+  "mode_fullWindow": { "message": "फुलस्क्रीन" },
+  "tooltip_wideScreenON": { "message": "वाइड स्क्रीन" },
+  "tooltip_wideScreenOFF": { "message": "वाइड स्क्रीन से बाहर निकलें" },
+  "tooltip_fullWindowON": { "message": "फुलस्क्रीन मोड" },
+  "tooltip_fullWindowOFF": { "message": "फुलस्क्रीन से बाहर निकलें" },
+  "tooltip_newChat": { "message": "नया चैट" },
+  "tooltip_sendMsg": { "message": "संदेश भेजें" }
+}

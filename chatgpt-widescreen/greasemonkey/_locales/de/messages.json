@@ -1,0 +1,15 @@
+{
+  "appName": { "message": "ChatGPT Breitbild-Modus" },
+  "appDesc": { "message": "Fügt ChatGPT Breitbild- und Vollbildmodi hinzu, um die Anzeige zu verbessern und das Scrollen zu reduzieren." },
+  "menuLabel_fullerWins": { "message": "Breitere Fenster" },
+  "menuLabel_modeNotifs": { "message": "Modusbenachrichtigungen" },
+  "menuLabel_disabled": { "message": "Deaktiviert (Erweiterung installiert)" },
+  "mode_wideScreen": { "message": "Breitbildmodus" },
+  "mode_fullWindow": { "message": "Vollbildmodus" },
+  "tooltip_wideScreenON": { "message": "Breitbildmodus" },
+  "tooltip_wideScreenOFF": { "message": "Breitbildmodus beenden" },
+  "tooltip_fullWindowON": { "message": "Vollbildmodus" },
+  "tooltip_fullWindowOFF": { "message": "Vollbildmodus beenden" },
+  "tooltip_newChat": { "message": "Neuer Chat" },
+  "tooltip_sendMsg": { "message": "Nachricht senden" }
+}

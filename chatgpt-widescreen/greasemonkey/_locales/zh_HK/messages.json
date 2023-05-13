@@ -1,0 +1,15 @@
+{
+  "appName": { "message": "ChatGPT 寬屏模式" },
+  "appDesc": { "message": "向 ChatGPT 添加寬屏 + 全屏口模式以增強查看效果 + 減少滾動" },
+  "menuLabel_fullerWins": { "message": "更寬廣的視窗" },
+  "menuLabel_modeNotifs": { "message": "模式通知" },
+  "menuLabel_disabled": { "message": "已停用 (擴充套件已安裝)" },
+  "mode_wideScreen": { "message": "寬螢幕模式" },
+  "mode_fullWindow": { "message": "全螢幕模式" },
+  "tooltip_wideScreenON": { "message": "寬螢幕模式" },
+  "tooltip_wideScreenOFF": { "message": "退出寬螢幕模式" },
+  "tooltip_fullWindowON": { "message": "全螢幕模式" },
+  "tooltip_fullWindowOFF": { "message": "退出全螢幕模式" },
+  "tooltip_newChat": { "message": "新聊天" },
+  "tooltip_sendMsg": { "message": "發送訊息" }
+}
