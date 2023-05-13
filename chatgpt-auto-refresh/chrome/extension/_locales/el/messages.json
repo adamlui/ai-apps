@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "Αυτόματη Ανανέωση ChatGPT" },
+  "appDesc": { "message": "*ΑΣΦΑΛΕΣ* κρατά τις συνεδρίες ChatGPT φρέσκες, εξαλείφοντας συνεχείς σφάλματα δικτύου + ελέγχους Cloudflare (όλα από το παρασκήνιο!)" },
+  "menuLabel_autoRefresh": { "message": "Αυτόματη Ανανέωση" },
+  "menuLabel_toggleVis": { "message": "Εναλλαγή Ορατότητας" },
+  "menuLabel_modeNotifs": { "message": "Ειδοποιήσεις Λειτουργίας" },
+  "menuLabel_refreshInt": { "message": "Διάστημα Ανανέωσης" },
+  "menuLabel_disabled": { "message": "Απενεργοποιημένο (επέκταση εγκατεστημένη)" },
+  "prompt_updateInt": { "message": "Ενημερώστε το διάστημα ανανέωσης (σε δευτερόλεπτα)" },
+  "alert_intUpdated": { "message": "Η συνεδρία ChatGPT θα ανανεώνεται αυτόματα κάθε" },
+  "unit_secs": { "message": "δευτερόλεπτα" },
+  "state_enabled": { "message": "ενεργοποιημένο" },
+  "state_disabled": { "message": "απενεργοποιημένο" }
+}

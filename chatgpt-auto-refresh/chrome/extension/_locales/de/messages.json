@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "ChatGPT Automatisches Aktualisieren" },
+  "appDesc": { "message": "*SICHER* hält ChatGPT-Sitzungen frisch und eliminiert ständige Netzwerkfehler + Cloudflare-Checks (alles im Hintergrund!)" },
+  "menuLabel_autoRefresh": { "message": "Automatisches Aktualisieren" },
+  "menuLabel_toggleVis": { "message": "Sichtbarkeit umschalten" },
+  "menuLabel_modeNotifs": { "message": "Modus-Benachrichtigungen" },
+  "menuLabel_refreshInt": { "message": "Aktualisierungsintervall" },
+  "menuLabel_disabled": { "message": "Deaktiviert (Erweiterung installiert)" },
+  "prompt_updateInt": { "message": "Aktualisieren Sie das Aktualisierungsintervall (in Sekunden)" },
+  "alert_intUpdated": { "message": "ChatGPT-Sitzung wird alle" },
+  "unit_secs": { "message": "Sekunden" },
+  "state_enabled": { "message": "aktiviert" },
+  "state_disabled": { "message": "deaktiviert" }
+}
