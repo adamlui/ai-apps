@@ -1,8 +1,9 @@
 /* Monitor active tab URL to toggle extension on chat.openai.com */
 
-// Auto-enable on install/update
-chrome.runtime.onInstalled.addListener(function() {
-    chrome.storage.local.set({ 'chatGPTws_extensionDisabled': false })
+// Add install/update actions
+chrome.runtime.onInstalled.addListener(function(details) {
+    chrome.storage.local.set({ 'chatGPTws_extensionDisabled': false }) // auto-enable
+    if (details.reason == 'install') chrome.tabs.create({ url: 'https://chat.openai.com/' }) // open ChatGPT
 })
 
 // Sync extension toggle state when ChatGPT tab active
