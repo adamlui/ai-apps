@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "ChatGPT Auto Refresh" },
+  "appDesc": { "message": "*SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)" },
+  "menuLabel_autoRefresh": { "message": "Auto-Refresh" },
+  "menuLabel_toggleVis": { "message": "Toggle Visibility" },
+  "menuLabel_modeNotifs": { "message": "Mode Notifications" },
+  "menuLabel_refreshInt": { "message": "Refresh Interval" },
+  "menuLabel_disabled": { "message": "Disabled (extension installed)" },
+  "prompt_updateInt": { "message": "Update refresh interval (in secs)" },
+  "alert_intUpdated": { "message": "ChatGPT session will auto-refresh every" },
+  "unit_secs": { "message": "secs" }
+}
