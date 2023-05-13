@@ -9,7 +9,7 @@ Apps that utilize the astounding AI of ChatGPT or enhances its UX.
 [![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
 
-###### English | [简体中文](zh-cn/README.md)
+###### English | [简体中文](zh-cn#readme)
 
 ---
 
