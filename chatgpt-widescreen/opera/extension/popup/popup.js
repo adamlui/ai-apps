@@ -3,14 +3,18 @@
     // Import settings-utils.js
     var { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
-    // Initialize popup
+    // Initialize popup toggles
     settings.load('wideScreen', 'fullWindow', 'notifHidden', 'fullerWindow', 'extensionDisabled')
         .then(function() { // restore extension/toggle states
             mainToggle.checked = !config.extensionDisabled
             fullerWinToggle.checked = config.fullerWindow
             notificationsToggle.checked = !config.notifHidden
             updateGreyness()
-        })    
+        })
+
+    // Get international msg's
+    document.querySelectorAll('[data-locale]').forEach(elem => {
+        elem.innerText = chrome.i18n.getMessage(elem.dataset.locale) })
 
     // Add main toggle click-listener
     var toggles = document.querySelectorAll('input')
@@ -27,7 +31,8 @@
         settings.save('fullerWindow', !config.fullerWindow)
         settings.load('notifHidden').then(function() {
             if (!config.notifHidden) { // show mode notification if enabled
-                notify('Fuller Windows ' + ( config.fullerWindow ? 'ON' : 'OFF' ), 'bottom-right')
+                notify(chrome.i18n.getMessage('menuLabel_fullerWins') + ' '
+                         + ( config.fullerWindow ? 'ON' : 'OFF' ), 'bottom-right')
         }})
     })
     fullerWinLabel.addEventListener('click', (event) => {
@@ -39,7 +44,8 @@
     var notificationsLabel = notificationsToggle.parentNode.parentNode
     notificationsToggle.addEventListener('change', function toggleNotifications() {
         settings.save('notifHidden', !config.notifHidden)
-        notify('Mode Notifications ' + ( config.notifHidden ? 'OFF' : 'ON' ), 'bottom-right' )
+        notify(chrome.i18n.getMessage('menuLabel_modeNotifs') + ' '
+                 + ( config.notifHidden ? 'OFF' : 'ON' ), 'bottom-right' )
     })
     notificationsLabel.addEventListener('click', (event) => {
         if (event.target == notificationsLabel) notificationsToggle.click() // to avoid double-toggle

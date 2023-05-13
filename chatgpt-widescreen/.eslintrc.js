@@ -6,8 +6,9 @@ module.exports  = {
             'TemplateLiteral > *', // template literal children
             'ConditionalExpression', // ternarys
             'IfStatement > BlockStatement', // multi-line if's
-            'BinaryExpression', // string concatenations, math, comparison, etc.,
-            'BlockStatement', 'SwitchCase' // closing braces
+            'BinaryExpression', // string concatenations, math, comparison, etc.
+            'BlockStatement', 'SwitchCase', // closing braces
+            'ObjectExpression' // object literals
         ]}],
         'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }], // enforce single quotes for string literals
         'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }], // enforce spacing in object properties

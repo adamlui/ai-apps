@@ -1,0 +1,15 @@
+{
+  "appName": { "message": "Режим широкого екрану ChatGPT" },
+  "appDesc": { "message": "Додає режими широкого екрану та повноекранного режиму до ChatGPT для покращеного перегляду та зменшення прокрутки" },
+  "menuLabel_fullerWins": { "message": "Ширші вікна" },
+  "menuLabel_modeNotifs": { "message": "Повідомлення про режим" },
+  "menuLabel_disabled": { "message": "Вимкнено (розширення встановлено)" },
+  "mode_wideScreen": { "message": "Широкий екран" },
+  "mode_fullWindow": { "message": "Повноекранний режим" },
+  "tooltip_wideScreenON": { "message": "Широкий екран" },
+  "tooltip_wideScreenOFF": { "message": "Вийти з режиму широкого екрану" },
+  "tooltip_fullWindowON": { "message": "Повноекранний режим" },
+  "tooltip_fullWindowOFF": { "message": "Вийти з повноекранного режиму" },
+  "tooltip_newChat": { "message": "Новий чат" },
+  "tooltip_sendMsg": { "message": "Відправити повідомлення" }
+}

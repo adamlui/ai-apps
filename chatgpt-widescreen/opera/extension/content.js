@@ -4,6 +4,8 @@
 
 (async () => {
 
+    document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
+
     // Import libs
     var { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
     var { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
@@ -14,12 +16,6 @@
         else window[request.type]()
         return true
     })
-
-    var tooltips = {
-        wideScreenON: 'Exit wide screen', wideScreenOFF: 'Wide screen',
-        fullWindowON: 'Exit full window', fullWindowOFF: 'Full-window mode',
-        newChat: 'New chat', sendMsg: 'Send message'
-    }
 
     await chatgpt.isLoaded()
 
@@ -142,6 +138,19 @@
     var navObserver = new MutationObserver(([{ addedNodes, type }]) => {
         if (type === 'childList' && addedNodes.length) {
 
+            // Restore previous session's state + manage toggles
+            settings.load(['wideScreen', 'fullWindow', 'fullerWindow', 'extensionDisabled']).then(function() {
+                if (!config.extensionDisabled) {                    
+                    if (!prevSessionChecked) { // restore previous session's state
+                        if (config.wideScreen) toggleMode('wideScreen', 'ON')
+                        if (config.fullWindow) toggleMode('fullWindow', 'ON')
+                        prevSessionChecked = true
+                    }
+                    insertChatButtons() // eslint-disable-line no-undef
+                }
+                prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
+            })
+
             // Manage send button's tooltip
             var sendButton = document.querySelector('form button[class*="bottom"]')
             if (sendButton) { // add/remove tooltip based on enabled state
@@ -156,19 +165,6 @@
                     sendButton.removeAttribute('hasTooltip')
                 }
             }
-
-            // Restore previous session's state + manage toggles
-            settings.load(['wideScreen', 'fullWindow', 'fullerWindow', 'extensionDisabled']).then(function() {
-                if (!config.extensionDisabled) {                    
-                    if (!prevSessionChecked) { // restore previous session's state
-                        if (config.wideScreen) toggleMode('wideScreen', 'ON')
-                        if (config.fullWindow) toggleMode('fullWindow', 'ON')
-                        prevSessionChecked = true
-                    }
-                    insertChatButtons() // eslint-disable-line no-undef
-                }
-                prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
-            })
         }
     })
     navObserver.observe(document.documentElement, { childList: true, subtree: true })
@@ -198,8 +194,8 @@
         updateSVG(mode); updateTooltip(mode) // update icon/tooltip
         settings.load('notifHidden').then(function() {
             if (!config.notifHidden) { // show mode notification if enabled
-                chatgpt.notify(`${mode == 'wideScreen' ? 'Wide screen' : 'Full-window'} ${state.toUpperCase()}`, '', '',
-                    chatgpt.isDarkMode() ? '' : 'shadow')
+                chatgpt.notify(chrome.i18n.getMessage('mode_' + mode) + ' ' + state.toUpperCase(),
+                    '', '', chatgpt.isDarkMode() ? '' : 'shadow' )
         }})
     }
 
@@ -231,8 +227,8 @@
     }
 
     function updateTooltip(buttonType) { // text & position
-        tooltipDiv.innerHTML = tooltips[buttonType + (
-            !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'ON' : 'OFF'))]
+        tooltipDiv.innerHTML = chrome.i18n.getMessage('tooltip_' + buttonType + (
+            !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON')))
         var ctrAddend = 17, overlayWidth = 30
         var iniRoffset = overlayWidth * (
             buttonType.includes('send') ? 0
@@ -268,11 +264,13 @@
             } else {
                 if (config.fullWindow) {
                     document.head.appendChild(fullWindowStyle)
-                    if (!config.notifHidden) chatgpt.notify('Full-window ON', 'lower-right')
+                    if (!config.notifHidden) {
+                        chatgpt.notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON', 'lower-right') }
                 }
                 if (config.wideScreen || ( config.fullWindow && config.fullerWindow )) {
                     document.head.appendChild(wideScreenStyle)
-                    if (!config.notifHidden) chatgpt.notify('Wide screen ON', 'lower-right')
+                    if (!config.notifHidden) {
+                        chatgpt.notify(chrome.i18n.getMessage('mode_wideScreen') + ' ON', 'lower-right') }
                 }
                 insertChatButtons() // eslint-disable-line no-undef
         }
