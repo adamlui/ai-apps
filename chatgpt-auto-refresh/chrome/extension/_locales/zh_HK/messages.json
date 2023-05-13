@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "ChatGPT 自動重新整理" },
+  "appDesc": { "message": "*安全地* 保持 ChatGPT 會話的新鮮度，消除了不斷的網路錯誤和 Cloudflare 檢查（所有這些都在背景中完成！）" },
+  "menuLabel_autoRefresh": { "message": "自動重新整理" },
+  "menuLabel_toggleVis": { "message": "切換可見性" },
+  "menuLabel_modeNotifs": { "message": "模式通知" },
+  "menuLabel_refreshInt": { "message": "重新整理間隔" },
+  "menuLabel_disabled": { "message": "已停用（擴展已安裝）" },
+  "prompt_updateInt": { "message": "更新重新整理間隔（以秒為單位）" },
+  "alert_intUpdated": { "message": "ChatGPT 會話將自動重新整理每" },
+  "unit_secs": { "message": "秒" },
+  "state_enabled": { "message": "已啟用" },
+  "state_disabled": { "message": "已停用" }
+}
