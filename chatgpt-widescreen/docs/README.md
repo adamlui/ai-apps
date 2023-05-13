@@ -61,8 +61,8 @@
 
 <div align="center">
 
-![image](https://i.imgur.com/nt3VDtc.png)
-![image](https://i.imgur.com/7r4NQIy.png)
+<img width=268 src="https://i.imgur.com/nt3VDtc.png">
+<img width=268 src="https://i.imgur.com/7r4NQIy.png">
 
 </div>
 
