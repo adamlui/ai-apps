@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.5.12.1
+// @version             2023.5.12.2
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -79,7 +79,7 @@
             try {
                 var messages = JSON.parse(response.responseText)
                 var cleanerMsgs = new Proxy(messages, { // remove need to ref nested keys
-                    get(target, prop, receiver) {
+                    get(target, prop) {
                         if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
                 }}}) ; resolve(cleanerMsgs)
