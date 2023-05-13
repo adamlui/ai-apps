@@ -9,7 +9,7 @@
 [![代码质量](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
 
-###### 简体中文 | [English](../README.md)
+###### 简体中文 | [English](../..#readme)
 
 ---
 
