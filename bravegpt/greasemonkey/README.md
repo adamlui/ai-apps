@@ -77,7 +77,7 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 
 ## Proxy Mode
 
-Proxy API Mode (disabled by default) returns text responses, without the need for a chat.openai.com account.
+Proxy API Mode (disabled by default) returns text responses using GPT-4, without the need for a chat.openai.com account.
 
 When disabled, a ChatGPT account is required to fetch responses, but they are faster stream-type ones (like in demo).
 
