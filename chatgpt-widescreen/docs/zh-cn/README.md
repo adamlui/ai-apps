@@ -61,8 +61,8 @@
 
 <div align="center">
 
-![image](https://i.imgur.com/nt3VDtc.png)
-![image](https://i.imgur.com/7r4NQIy.png)
+<img width=268 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/zh-cn/chrome-extension-pin-instructions.png">
+<img width=288 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/zh-cn/extension-menu.png">
 
 </div>
 
