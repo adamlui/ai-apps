@@ -1,20 +1,20 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.5.13
+// @version             2023.5.13.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @description         Adds ChatGPT answers to DuckDuckGo sidebar
-// @description:zh-CN   将 ChatGPT 答案添加到 DuckDuckGo 侧边栏
-// @description:zh-SG   将 ChatGPT 答案添加到 DuckDuckGo 侧边栏
-// @description:zh-TW   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄
-// @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄
-// @description:ja      ChatGPT の回答を DuckDuckGo サイドバーに追加します
-// @description:ko      DuckDuckGo 사이드바에 ChatGPT 답변 추가
-// @description:ru      Добавляет ответы ChatGPT на боковую панель DuckDuckGo
-// @description:de      Fügt ChatGPT-Antworten zur Seitenleiste von DuckDuckGo hinzu
-// @description:es      Agrega respuestas de ChatGPT a la barra lateral de DuckDuckGo
-// @description:fr      Ajoute les réponses ChatGPT à la barre latérale DuckDuckGo
-// @description:it      Aggiunge le risposte di ChatGPT alla barra laterale di DuckDuckGo
+// @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4!)
+// @description:de      Fügt ChatGPT-Antworten zur DuckDuckGo-Seitenleiste hinzu (unterstützt von GPT-4!)
+// @description:es      Agrega respuestas de ChatGPT a la barra lateral de DuckDuckGo (¡con tecnología de GPT-4!)
+// @description:fr      Ajoute les réponses ChatGPT à la barre latérale DuckDuckGo (propulsé par GPT-4!)
+// @description:it      Aggiunge le risposte ChatGPT alla barra laterale di DuckDuckGo (basata su GPT-4!)
+// @description:ja      ChatGPT の回答を DuckDuckGo サイドバーに追加します (GPT-4 を搭載!)
+// @description:ko      DuckDuckGo 사이드바에 ChatGPT 답변 추가(GPT-4 기반!)
+// @description:ru      Добавляет ответы ChatGPT на боковую панель DuckDuckGo (на базе GPT-4!)
+// @description:zh-CN   将 ChatGPT 答案添加到 DuckDuckGo 侧边栏 (由 GPT-4 提供支持!)
+// @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
+// @description:zh-SG   将 ChatGPT 答案添加到 DuckDuckGo 侧边栏 (由 GPT-4 提供支持!)
+// @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
