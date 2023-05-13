@@ -4,17 +4,17 @@
 // @name:es             Modo de Pantalla Ancha de ChatGPT 🖥️
 // @name:fr             Mode Écran Large ChatGPT 🖥️
 // @name:it             ChatGPT Modalità Widescreen 🖥️
-// @name:ja             ChatGPTワイドスクリーンモード🖥️
+// @name:ja             ChatGPT ワイドスクリーンモード 🖥️
 // @name:ko             ChatGPT 와이드스크린 모드 🖥️
 // @name:pt             Modo Widescreen ChatGPT 🖥️
 // @name:pt-BR          Modo Widescreen ChatGPT 🖥️
 // @name:ru             Широкоэкранный Режим ChatGPT 🖥️
 // @name:uk             Широкоекранний Pежим ChatGPT 🖥️
-// @name:zh-CN          ChatGPT 宽屏模式🖥️
-// @name:zh-HK          ChatGPT 寬屏模式🖥️
-// @name:zh-SG          ChatGPT 宽屏模式🖥️
-// @name:zh-TW          ChatGPT 寬屏模式🖥️
-// @version             2023.5.12
+// @name:zh-CN          ChatGPT 宽屏模式 🖥️
+// @name:zh-HK          ChatGPT 寬屏模式 🖥️
+// @name:zh-SG          ChatGPT 宽屏模式 🖥️
+// @name:zh-TW          ChatGPT 寬屏模式 🖥️
+// @version             2023.5.12.1
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -48,13 +48,13 @@
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon64.png
 // @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@51dc48d5bff8e5539e8cee273032360d0691c6a6/dist/chatgpt-1.6.5.min.js
+// @connect             raw.githubusercontent.com
 // @grant               GM_setValue
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
+// @grant               GM.xmlHttpRequest
 // @noframes
-// @downloadURL         https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.user.js
-// @updateURL           https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.meta.js
 // @homepageURL         https://github.com/adamlui/chatgpt-widescreen
 // @supportURL          https://github.com/adamlui/chatgpt-widescreen/issues
 // ==/UserScript==
@@ -63,144 +63,42 @@
 
 (async () => {
 
-    // Disable if browser extension installed
-    if (document.documentElement.getAttribute('cwm-extension-installed')) {
-        GM_registerMenuCommand('❌ Disabled (extension installed)', function() { return })
-        return // exit script
-    }
-
     // Initialize settings
+    var configKeyPrefix = 'chatGPTws_'
     var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
-    var configKeyPrefix = 'chatGPTws_', messages = {}
     loadSetting('wideScreen', 'fullWindow', 'notifHidden', 'fullerWindows')
 
     // Define messages
-    switch (config.userLanguage) {
-
-        case 'de': // German
-            messages = {
-                menuLabels: { fullerWins: 'Vollere Fenster', modeNotifs: 'Modus-Benachrichtigungen' },
-                modes: { wideScreen: 'Breitbild', fullWindow: 'Vollständiges Fenster' },
-                tooltips: {
-                    wideScreenON: 'Breitbild verlassen', wideScreenOFF: 'Breitbild',
-                    fullWindowON: 'Vollständiges Fenster verlassen', fullWindowOFF: 'Vollfenstermodus',
-                    newChat: 'Neuer Chat', sendMsg: 'Nachricht senden' }
-            } ; break
-
-        case 'es': // Spanish
-            messages = {
-                menuLabels: { fullerWins: 'Ventanas más completas', modeNotifs: 'Notificaciones de modo' },
-                modes: { wideScreen: 'Pantalla ancha', fullWindow: 'Ventana completa' },
-                tooltips: {
-                    wideScreenON: 'Salir de la pantalla ancha', wideScreenOFF: 'Pantalla ancha',
-                    fullWindowON: 'Salir de la ventana completa', fullWindowOFF: 'Modo de ventana completa',
-                    newChat: 'Nueva conversación', sendMsg: 'Enviar mensaje' }
-            } ; break
-
-        case 'fr' : case 'fr-CA' : // French
-            messages = {
-                menuLabels: { fullerWins: 'Fenêtres plus complètes', modeNotifs: 'Notifications de modes' },
-                modes: { wideScreen: 'Écran large', fullWindow: 'Fenêtre complète' },
-                tooltips: {
-                    wideScreenON: 'Quitter l\'écran large', wideScreenOFF: 'Écran large',
-                    fullWindowON: 'Quitter la fenêtre complète', fullWindowOFF: 'Mode pleine fenêtre',
-                    newChat: 'Nouvelle conversation', sendMsg: 'Envoyer le message' }
-            } ; break
-
-        case 'it': // Italian
-            messages = {
-                menuLabels: { fullerWins: 'Finestre più complete', modeNotifs: 'Modalità Notifiche' },
-                modes: { wideScreen: 'Ampio schermo', fullWindow: 'A tutta finestra' },
-                tooltips: {
-                    wideScreenON: 'Uscire dallo schermo panoramico', wideScreenOFF: 'Ampio schermo',
-                    fullWindowON: 'Esci dalla finestra completa', fullWindowOFF: 'Modalità a finestra intera',
-                    newChat: 'Nuova chiacchierata', sendMsg: 'Invia messaggio' }
-            } ; break
-
-        case 'ja': // Japanese
-            messages = {
-                menuLabels: { fullerWins: 'より充実したウィンドウ', modeNotifs: 'モード通知' },
-                modes: { wideScreen: 'ワイドスクリーン', fullWindow: 'フルウィンドウ' },
-                tooltips: {
-                    wideScreenON: 'ワイドスクリーンを終了する', wideScreenOFF: 'ワイドスクリーン',
-                    fullWindowON: 'フル ウィンドウを終了する', fullWindowOFF: 'フルウィンドウモード',
-                    newChat: '新しいチャット', sendMsg: 'メッセージを送る' }
-            } ; break
-
-        case 'ko': // Korean
-            messages = {
-                menuLabels: { fullerWins: '풀러 윈도우', modeNotifs: '모드 알림' },
-                modes: { wideScreen: '와이드 스크린', fullWindow: '전체 창' },
-                tooltips: {
-                    wideScreenON: '와이드스크린 종료', wideScreenOFF: '와이드 스크린',
-                    fullWindowON: '전체 창 종료', fullWindowOFF: '전체 창 모드',
-                    newChat: '새 채팅', sendMsg: '문자 보내' }
-            } ; break
-
-        case 'pt' : case 'pt-BR' : // Portuguese
-            messages = {
-                menuLabels: { fullerWins: 'Janelas mais cheias', modeNotifs: 'Notificações de modo' },
-                modes: { wideScreen: 'Panorâmico', fullWindow: 'Janela cheia' },
-                tooltips: {
-                    wideScreenON: 'Sair da tela ampla', wideScreenOFF: 'Panorâmico',
-                    fullWindowON: 'Sair da janela cheia', fullWindowOFF: 'Modo de janela inteira',
-                    newChat: 'Novo chat', sendMsg: 'Enviar mensagem' }
-            } ; break
-
-        case 'ru': // Russian
-            messages = {
-                menuLabels: { fullerWins: 'Полные окна', modeNotifs: 'Уведомления о режиме' },
-                modes: { wideScreen: 'Широкий экран', fullWindow: 'Полное окно' },
-                tooltips: {
-                    wideScreenON: 'Выйти из широкого экрана', wideScreenOFF: 'Широкий экран',
-                    fullWindowON: 'Выйти из полного окна', fullWindowOFF: 'Полнооконный режим',
-                    newChat: 'Новый чат', sendMsg: 'Отправить сообщение' }
-            } ; break
-
-        case 'uk': // Ukrainian
-            messages = {
-                menuLabels: { fullerWins: 'Повні вікна', modeNotifs: 'Сповіщення режиму' },
-                modes: { wideScreen: 'Широкий екран', fullWindow: 'На повне вікно' },
-                tooltips: {
-                    wideScreenON: 'Вийти з широкоформатного екрана', wideScreenOFF: 'Широкий екран',
-                    fullWindowON: 'Вийти з повного вікна', fullWindowOFF: 'Повноконний режим',
-                    newChat: 'Новий чат', sendMsg: 'Відправити повідомлення' }
-            } ; break
-
-        case 'zh' : case 'zh-CN' : case 'zh-SG' : // Simplified Chinese
-            messages = {
-                menuLabels: { fullerWins: '更完整的窗口', modeNotifs: '模式通知' },
-                modes: { wideScreen: '宽屏', fullWindow: '全屏' },
-                tooltips: {
-                    wideScreenON: '退出宽屏', wideScreenOFF: '宽屏',
-                    fullWindowON: '退出全窗口', fullWindowOFF: '全窗口模式',
-                    newChat: '新聊天', sendMsg: '发信息' }
-            } ; break
-
-        case 'zh-HK' : case 'zh-TW' : // Traditional Chinese
-            messages = {
-                menuLabels: { fullerWins: '更完整的窗口', modeNotifs: '模式通知' },
-                modes: { wideScreen: '寬屏', fullWindow: '全屏' },
-                tooltips: {
-                    wideScreenON: '退出寬屏', wideScreenOFF: '寬屏',
-                    fullWindowON: '退出全窗口', fullWindowOFF: '全窗口模式',
-                    newChat: '新聊天', sendMsg: '發信息' }
-            } ; break
-
-        default: // English
-            messages = {
-                menuLabels: { fullerWins: 'Fuller Windows', modeNotifs: 'Mode Notifications' },
-                modes: { wideScreen: 'Wide screen', fullWindow: 'Full-window' },
-                tooltips: {
-                    wideScreenON: 'Exit wide screen', wideScreenOFF: 'Wide screen',
-                    fullWindowON: 'Exit full window', fullWindowOFF: 'Full-window mode',
-                    newChat: 'New chat', sendMsg: 'Send message' }
-            }
-    }
-
-    registerMenu() // create browser toolbar menu
+    var msgsLoaded = new Promise(resolve => {
+        var msgHostDir = 'https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/extension/_locales/'
+        var msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        var msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
+        var msgXHRtries = 0
+        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: msgXHRonLoad })
+        function msgXHRonLoad(response) {
+            try {
+                var messages = JSON.parse(response.responseText)
+                var cleanerMsgs = new Proxy(messages, { // remove need to ref nested keys
+                    get(target, prop, receiver) {
+                        if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
+                            return target[prop].message
+                }}}) ; resolve(cleanerMsgs)
+            } catch (error) {
+                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3x only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional user lang on 1st try...
+                    msgHref.replace(/(.*)(_.*)(\/.*)/, '$1$3') // ...strip region before retrying
+                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: msgXHRonLoad })
+        }}
+    }) ; var messages = await msgsLoaded
 
     await chatgpt.isLoaded()
+
+    // Create browser toolbar menu
+    if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed, disable script/menu
+        GM_registerMenuCommand('❌ ' + messages.menuLabel_disabled, function() { return })
+        return // exit script
+    } else registerMenu() // create functional menu
 
     // Collect OpenAI classes/colors
     var sendButtonColor = 'currentColor' // changes w/ scheme
@@ -350,22 +248,22 @@
         var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to also activate wide screen in full-window
-        var fwLabel = stateSymbol[+!config.fullerWindows] + ' ' + messages.menuLabels.fullerWins
+        var fwLabel = stateSymbol[+!config.fullerWindows] + ' ' + messages.menuLabel_fullerWins
             + stateSeparator + stateWord[+!config.fullerWindows]
         menuID.push(GM_registerMenuCommand(fwLabel, function() {
             saveSetting('fullerWindows', !config.fullerWindows)
             if (!config.notifHidden) {
-                chatgpt.notify(messages.menuLabels.fullerWins + ': '+ stateWord[+!config.fullerWindows],
+                chatgpt.notify(messages.menuLabel_fullerWins + ': '+ stateWord[+!config.fullerWindows],
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             } for (var id of menuID) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when switching modes
-        var mnLabel = stateSymbol[+config.notifHidden] + ' ' + messages.menuLabels.modeNotifs
+        var mnLabel = stateSymbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
             + stateSeparator + stateWord[+config.notifHidden]
         menuID.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
-            chatgpt.notify(messages.menuLabels.modeNotifs + ': ' + stateWord[+config.notifHidden],
+            chatgpt.notify(messages.menuLabel_modeNotifs + ': ' + stateWord[+config.notifHidden],
                 '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             for (var id of menuID) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
@@ -414,7 +312,7 @@
         saveSetting(mode, state.toUpperCase() == 'ON' ? true : false)
         updateSVG(mode); updateTooltip(mode) // update icon/tooltip
         if (!config.notifHidden) { // show mode notification if enabled
-            chatgpt.notify(( mode == 'wideScreen' ? messages.modes.wideScreen : messages.modes.fullWindow )
+            chatgpt.notify(( mode == 'wideScreen' ? messages.mode_wideScreen : messages.mode_fullWindow )
                 + ' ' + state.toUpperCase(), '', '', chatgpt.isDarkMode() ? '' : 'shadow')
         }
     }
@@ -429,7 +327,7 @@
     }
 
     function updateTooltip(buttonType) { // text & position
-        tooltipDiv.innerHTML = messages.tooltips[buttonType + (
+        tooltipDiv.innerHTML = messages['tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'ON' : 'OFF'))]
         var ctrAddend = 17, overlayWidth = 30
         var iniRoffset = overlayWidth * (
