@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT Modalità Widescreen" },
-  "appDesc": { "message": "Aggiunge le modalità schermo panoramico e a schermo intero a ChatGPT per migliorare la visualizzazione e ridurre lo scrolling" },
+  "appDesc": { "message": "Aggiunge le modalità schermo panoramico e a schermo intero a ChatGPT per migliorare la visualizzazione e ridurre lo scrolling." },
   "menuLabel_fullerWins": { "message": "Finestre più ampie" },
   "menuLabel_modeNotifs": { "message": "Notifiche di modalità" },
   "menuLabel_disabled": { "message": "Disattivato (estensione installata)" },
