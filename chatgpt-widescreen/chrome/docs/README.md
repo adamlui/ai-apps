@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
+[![license](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![commits](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-widescreen?label=Commits)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
 [![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
