@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT 와이드스크린 모드" },
-  "appDesc": { "message": "향상된 보기 + 스크롤 감소를 위해 ChatGPT에 와이드스크린 + 전체 창 모드를 추가합니다" },
+  "appDesc": { "message": "향상된 보기 + 스크롤 감소를 위해 ChatGPT에 와이드스크린 + 전체 창 모드를 추가합니다." },
   "menuLabel_fullerWins": { "message": "보다 넓은 창" },
   "menuLabel_modeNotifs": { "message": "모드 알림" },
   "menuLabel_disabled": { "message": "비활성화됨 (확장 기능 설치됨)" },
