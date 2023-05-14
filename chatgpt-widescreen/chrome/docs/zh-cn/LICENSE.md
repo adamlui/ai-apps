@@ -1,6 +1,6 @@
 # MIT 执照
 
-###### 简体中文 | [English](../LICENSE.md) | [हिंदी](../hi/LICENSE.md)
+###### 简体中文 | [English](../../LICENSE.md) | [हिंदी](../hi/LICENSE.md)
 
 <br>
 
