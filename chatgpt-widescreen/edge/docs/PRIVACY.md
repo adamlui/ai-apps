@@ -6,4 +6,4 @@ ChatGPT Widescreen Mode does not collect nor store any user data. No information
 
 ## Updates
 
-To view revisions to this policy, visit https://github.com/adamlui/chatgpt-widescreen/commits/main/edge/PRIVACY.md
+To view revisions to this policy, visit https://github.com/adamlui/chatgpt-widescreen/commits/main/edge/docs/PRIVACY.md
