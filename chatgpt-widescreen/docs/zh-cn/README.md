@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png)
+![](../../chrome/media/images/tiles/marquee-promo-tile-1400x560.png)
 
 <div align="center">
 
