@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Modo de Tela Larga ChatGPT" },
-  "appDesc": { "message": "Adiciona modos de tela larga e tela cheia ao ChatGPT para visualização aprimorada e redução de rolagem" },
+  "appDesc": { "message": "Adiciona modos de tela larga e tela cheia ao ChatGPT para visualização aprimorada e redução de rolagem." },
   "menuLabel_fullerWins": { "message": "Janelas mais amplas" },
   "menuLabel_modeNotifs": { "message": "Notificações de modo" },
   "menuLabel_disabled": { "message": "Desativado (extensão instalada)" },
