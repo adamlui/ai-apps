@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Modo panorámico de ChatGPT" },
-  "appDesc": { "message": "Agrega modos panorámico y de pantalla completa a ChatGPT para mejorar la visualización y reducir el desplazamiento" },
+  "appDesc": { "message": "Agrega modos panorámico y de pantalla completa a ChatGPT para mejorar la visualización y reducir el desplazamiento." },
   "menuLabel_fullerWins": { "message": "Ventanas más anchas" },
   "menuLabel_modeNotifs": { "message": "Notificaciones de modo" },
   "menuLabel_disabled": { "message": "Deshabilitado (extensión instalada)" },
