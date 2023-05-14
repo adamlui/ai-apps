@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Mode écran large de ChatGPT" },
-  "appDesc": { "message": "Ajoute des modes écran large et plein écran à ChatGPT pour améliorer la visualisation et réduire le défilement." },
+  "appDesc": { "message": "Ajoute des modes écran large et plein écran à ChatGPT pour améliorer la visualisation et réduire le défilement" },
   "menuLabel_fullerWins": { "message": "Fenêtres plus larges" },
   "menuLabel_modeNotifs": { "message": "Notifications de mode" },
   "menuLabel_disabled": { "message": "Désactivé (extension installée)" },
