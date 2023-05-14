@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT ワイドスクリーンモード" },
-  "appDesc": { "message": "ChatGPT にワイドスクリーンモードとフルスクリーンモードを追加して、閲覧の向上とスクロールの削減を実現します。" },
+  "appDesc": { "message": "ChatGPT にワイドスクリーンモードとフルスクリーンモードを追加して、閲覧の向上とスクロールの削減を実現します" },
   "menuLabel_fullerWins": { "message": "より広いウィンドウ" },
   "menuLabel_modeNotifs": { "message": "モード通知" },
   "menuLabel_disabled": { "message": "無効 (拡張機能がインストールされています)" },
