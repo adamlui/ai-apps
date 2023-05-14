@@ -44,7 +44,7 @@ jobs:
           done
 
       - name: Sync /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
-        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/
+        run: rsync -avhr ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/
 
       - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
