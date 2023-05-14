@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "ChatGPT ଆଟୋ ରିଫ୍ରେସ୍" },
+  "appDesc": { "message": "*ସୁରକ୍ଷିତ* ଚାଟ୍‌ଜିପିଟି ସେସନ୍‌ଗୁଡ଼ିକୁ ତାଜା ରଖିବା ଯୋଗ୍ୟ ରହିଥିବା ମାଧ୍ୟମରେ, ଦୃଷ୍ଟିଗୋଚର ନେଟୱର୍କ ତୃତୀୟ ତ୍ରୁଟି ଓ କ୍ଲାଉଡଫଲେର୍ ଯାଞ୍ଚନ (ଉଭୟ ପଛାରେ ସେବା ପୁରିତିରେ ହୋଇଥାଏ!)" },
+  "menuLabel_autoRefresh": { "message": "ଆଟୋ ରିଫ୍ରେସ୍" },
+  "menuLabel_toggleVis": { "message": "ଦୃଶ୍ୟତା ଟଗୋଳ କରନ୍ତୁ" },
+  "menuLabel_modeNotifs": { "message": "ମୋଡ୍ ନୋଟିଫିକେସନ୍ସ" },
+  "menuLabel_refreshInt": { "message": "ରିଫ୍ରେସ୍ ଇଣ୍ଟରଭାଲ୍" },
+  "menuLabel_disabled": { "message": "ସତେଜ ବ୍ୟବଧାନ ଅଦ୍ୟତନ କରନ୍ତୁ (ସେକେଣ୍ଡରେ)" },
+  "prompt_updateInt": { "message": "ସତେଜ ବ୍ୟବଧାନ ଅଦ୍ୟତନ କରନ୍ତୁ (ସେକେଣ୍ଡରେ)" },
+  "alert_intUpdated": { "message": "ଚାଟ୍ ଜିପିଟି ଅଧିବେଶନ ପ୍ରତ୍ୟେକକୁ ସ୍ auto ତ - ସତେଜ କରିବ |" },
+  "unit_secs": { "message": "ସେକେଣ୍ଡ୍" },
+  "state_enabled": { "message": "ସକ୍ଷମ" },
+  "state_disabled": { "message": "ଅକ୍ଷମ" }
+}

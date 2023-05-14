@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "ChatGPT Automatsko osvežavanje" },
+  "appDesc": { "message": "*BEZBEDNO* održava ChatGPT sesije svežim, eliminišući stalne mrežne greške i Cloudflare provere (sve iz pozadine!)" },
+  "menuLabel_autoRefresh": { "message": "Automatsko osvežavanje" },
+  "menuLabel_toggleVis": { "message": "Preklopi vidljivost" },
+  "menuLabel_modeNotifs": { "message": "Režim obaveštenja" },
+  "menuLabel_refreshInt": { "message": "Interval osvežavanja" },
+  "menuLabel_disabled": { "message": "Isključeno (dodatak instaliran)" },
+  "prompt_updateInt": { "message": "Ažuriraj interval osvežavanja (u sekundama)" },
+  "alert_intUpdated": { "message": "ChatGPT sesija će se automatski osvežavati svakih" },
+  "unit_secs": { "message": "sekundi" },
+  "state_enabled": { "message": "uključeno" },
+  "state_disabled": { "message": "isključeno" }
+}

@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "Penyegar Auto ChatGPT" },
+  "appDesc": { "message": "Menjaga sesi ChatGPT segar dengan selamat, menghilangkan ralat rangkaian yang berterusan + pemeriksaan Cloudflare (semua dari latar belakang!)" },
+  "menuLabel_autoRefresh": { "message": "Auto-Segar" },
+  "menuLabel_toggleVis": { "message": "Togol Visibiliti" },
+  "menuLabel_modeNotifs": { "message": "Mod Pemberitahuan" },
+  "menuLabel_refreshInt": { "message": "Interval Segar" },
+  "menuLabel_disabled": { "message": "Dilumpuhkan (pengaya dipasang)" },
+  "prompt_updateInt": { "message": "Kemas kini selang penyegaran (dalam saat)" },
+  "alert_intUpdated": { "message": "Sesi ChatGPT akan dikemas kini secara auto-segar setiap" },
+  "unit_secs": { "message": "saat" },
+  "state_enabled": { "message": "diaktifkan" },
+  "state_disabled": { "message": "dilumpuhkan" }
+}

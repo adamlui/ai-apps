@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "ChatGPT Automatické obnovenie" },
+  "appDesc": { "message": "*BEZPEČNE* udržuje ChatGPT relácie čerstvé, eliminujúc konštantné sieťové chyby a kontrolu Cloudflare (všetko z pozadia!)" },
+  "menuLabel_autoRefresh": { "message": "Automatické obnovenie" },
+  "menuLabel_toggleVis": { "message": "Prepínať viditeľnosť" },
+  "menuLabel_modeNotifs": { "message": "Upozornenia na režim" },
+  "menuLabel_refreshInt": { "message": "Interval obnovy" },
+  "menuLabel_disabled": { "message": "Zakázané (rozšírenie nainštalované)" },
+  "prompt_updateInt": { "message": "Aktualizovať interval obnovy (v sekundách)" },
+  "alert_intUpdated": { "message": "Relácia ChatGPT sa bude automaticky obnovovať každých" },
+  "unit_secs": { "message": "sekúnd" },
+  "state_enabled": { "message": "zapnuté" },
+  "state_disabled": { "message": "vypnuté" }
+}

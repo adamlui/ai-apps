@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "चैटजीपीटी ऑटो रिफ्रेश" },
+  "appDesc": { "message": "*सुरक्षित रूप से* चैटजीपीटी सत्रों को ताजगी से भरा रखना, नेटवर्क त्रुटियों और क्लाउडफ्लेयर जाँचों को हटा देना (सब पृष्ठभूमि से!)" },
+  "menuLabel_autoRefresh": { "message": "ऑटो रिफ्रेश" },
+  "menuLabel_toggleVis": { "message": "दृश्यता टॉगल करें" },
+  "menuLabel_modeNotifs": { "message": "मोड सूचनाएँ" },
+  "menuLabel_refreshInt": { "message": "रिफ्रेश अंतराल" },
+  "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन इंस्टॉल किया गया है)" },
+  "prompt_updateInt": { "message": "रिफ्रेश अंतराल अपडेट करें (सेकंड में)" },
+  "alert_intUpdated": { "message": "चैटजीपीटी सत्र हर" },
+  "unit_secs": { "message": "सेकंड" },
+  "state_enabled": { "message": "सक्षम" },
+  "state_disabled": { "message": "अक्षम" }
+}

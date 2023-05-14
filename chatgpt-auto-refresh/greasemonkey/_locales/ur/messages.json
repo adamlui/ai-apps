@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "ChatGPT خودکار تازہ کاری" },
+  "appDesc": { "message": "ChatGPT سیشن کو تازہ رکھنا، اس کے تمام  نیٹ ورک خرابیوں اور کلاؤڈ فلیر چیکس (سب پس منظر سے!) کے ختم کرکے، *پر سلامتی* ترتیب دیا جاتا ہے۔" },
+  "menuLabel_autoRefresh": { "message": "آٹو-تازہ کاری" },
+  "menuLabel_toggleVis": { "message": "دکھائی کی تبدیلی" },
+  "menuLabel_modeNotifs": { "message": "موڈ نوٹیفیکیشن" },
+  "menuLabel_refreshInt": { "message": "تازہ کاری وقفہ" },
+  "menuLabel_disabled": { "message": "غیر فعال (ایکسٹینشن نصب کردیا گیا ہے)" },
+  "prompt_updateInt": { "message": "تازہ کاری وقفہ کو اپ ڈیٹ کریں (سیکنڈز میں)" },
+  "alert_intUpdated": { "message": "ChatGPT سیشن ہر" },
+  "unit_secs": { "message": "سیکنڈز" },
+  "state_enabled": { "message": "فعال شدہ" },
+  "state_disabled": { "message": "غیر فعال شدہ" }
+}

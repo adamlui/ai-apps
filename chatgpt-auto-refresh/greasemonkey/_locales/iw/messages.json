@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "ChatGPT Auto Refresh" },
+  "appDesc": { "message": "*בצורה בטוחה* מחזיק פעילויות ChatGPT רעננות, מסיר שגיאות רשת קבועות + בדיקות Cloudflare (הכול מהרקע!)" },
+  "menuLabel_autoRefresh": { "message": "רענון אוטומטי" },
+  "menuLabel_toggleVis": { "message": "שינוי נראות" },
+  "menuLabel_modeNotifs": { "message": "התראות מצב" },
+  "menuLabel_refreshInt": { "message": "מרווח רענון" },
+  "menuLabel_disabled": { "message": "מנוטרל (הרחבה מותקנת)" },
+  "prompt_updateInt": { "message": "עדכן מרווח רענון (בשניות)" },
+  "alert_intUpdated": { "message": "פעילות ChatGPT יתעדכן באופן אוטומטי כל" },
+  "unit_secs": { "message": "שניות" },
+  "state_enabled": { "message": "מופעל" },
+  "state_disabled": { "message": "מנוטרל" }
+}

@@ -1,0 +1,16 @@
+Translate the following messages to Georgian:
+
+{
+  "appName": { "message": "ChatGPT ავტო განახლება" },
+  "appDesc": { "message": "*უსაფრთხოდ* ახდენს ChatGPT სესიების განახლებას, ამოშლის კონსტანტურ ქსელის შეცდომებს და Cloudflare შემოწმებებს (ყველაფერი ფონურიდან!)" },
+  "menuLabel_autoRefresh": { "message": "ავტო განახლება" },
+  "menuLabel_toggleVis": { "message": "ხილვის გადართვა" },
+  "menuLabel_modeNotifs": { "message": "რეჟიმის შეტყობინებები" },
+  "menuLabel_refreshInt": { "message": "განახლების ინტერვალი" },
+  "menuLabel_disabled": { "message": "გამორთულია (გაფართოება დაყენებულია)" },
+  "prompt_updateInt": { "message": "განახლების ინტერვალის განახლება (წამებში)" },
+  "alert_intUpdated": { "message": "ChatGPT სესია ავტომატურად განახლდება ყოველი" },
+  "unit_secs": { "message": "წამებში" },
+  "state_enabled": { "message": "ჩართულია" },
+  "state_disabled": { "message": "ინვალიდი" }
+}

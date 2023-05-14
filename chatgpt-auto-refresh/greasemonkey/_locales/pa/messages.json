@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "ChatGPT ਆਟੋ ਰੀਫਰੈਸ਼" },
+  "appDesc": { "message": "ਸੁਰੱਖਿਅਤ ਤਰੀਕੇ ਨਾਲ ChatGPT ਸੈਸ਼ਨਾਂ ਨੂੰ ਤਾਜ਼ਾ ਰੱਖਣਾ। ਹਰ ਵੇਲੇ ਨੈੱਟਵਰਕ ਤਰੱਕੀਆਂ ਅਤੇ ਕਲਾਉਡਫਲੇਅਰ ਚੈੱਕ ਨੂੰ ਦੂਰ ਕਰਦਾ ਹੈ (ਸਭ ਬੈਕਗਰਾਊਂਡ ਵਿੱਚ!)" },
+  "menuLabel_autoRefresh": { "message": "ਆਟੋ ਰੀਫਰੈਸ" },
+  "menuLabel_toggleVis": { "message": "ਦਿਖਾਈਬੋਰਡ ਬਦਲੋ" },
+  "menuLabel_modeNotifs": { "message": "ਮੋਡ ਨੋਟੀਫਿਕੇਸ਼ਨਸ" },
+  "menuLabel_refreshInt": { "message": "ਰੀਫਰੈਸ਼ ਅੰਤਰਾਲ" },
+  "menuLabel_disabled": { "message": "ਅਯੋਗ ਕੀਤਾ (ਐਕਸਟੈਂਸ਼ਨ ਇੰਸਟਾਲ ਕੀਤਾ)" },
+  "prompt_updateInt": { "message": "ਰੀਫਰੈਸ਼ ਅੰਤਰਾਲ ਅੱਪਡੇਟ ਕਰੋ (ਸਕਿੰਟਾਂ ਵਿੱਚ)" },
+  "alert_intUpdated": { "message": "ChatGPT ਸੈਸ਼ਨ ਆਟੋ ਰੀਫਰੈਸ਼ ਹੋਵੇਗਾ" },
+  "unit_secs": { "message": "ਸਕਿੰਟ" },
+  "state_enabled": { "message": "ਸਕ੍ਰਿਆ ਕੀਤਾ ਗਿਆ" },
+  "state_disabled": { "message": "ਅਯੋਗ ਕੀਤਾ ਗਿਆ" }
+}

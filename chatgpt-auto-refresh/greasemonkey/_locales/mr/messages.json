@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "चॅटजीपीटी स्वयंचलित रिफ्रेश" },
+  "appDesc": { "message": "नेटवर्क त्रुटी आणि क्लाउडफ्लेअर चेक उघडण्यासारखे असंच निरोधित करते (सर्व संदर्भातून पार्श्वभूमीत!)" },
+  "menuLabel_autoRefresh": { "message": "स्वयंचलित रिफ्रेश" },
+  "menuLabel_toggleVis": { "message": "दृश्य टॉगल करा" },
+  "menuLabel_modeNotifs": { "message": "मोड सूचना" },
+  "menuLabel_refreshInt": { "message": "रिफ्रेश अंतराल" },
+  "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन स्थापित)" },
+  "prompt_updateInt": { "message": "रिफ्रेश अंतराल अपडेट करा (सेकंडमध्ये)" },
+  "alert_intUpdated": { "message": "चॅटजीपीटी सत्र स्वयंचलित रिफ्रेश होईल प्रत्येक" },
+  "unit_secs": { "message": "सेकंद" },
+  "state_enabled": { "message": "सक्षम" },
+  "state_disabled": { "message": "अक्षम" }
+}

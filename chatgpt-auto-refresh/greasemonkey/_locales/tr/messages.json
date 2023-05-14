@@ -1,0 +1,14 @@
+{
+  "appName": { "message": "ChatGPT Otomatik Yenileme" },
+  "appDesc": { "message": "*GÜVENLİ BİR ŞEKİLDE* ChatGPT oturumlarınızı taze tutarak sürekli ağ hatalarını ve Cloudflare kontrollerini (tümü arka planda!) ortadan kaldırır." },
+  "menuLabel_autoRefresh": { "message": "Otomatik Yenileme" },
+  "menuLabel_toggleVis": { "message": "Görünürlüğü Değiştir" },
+  "menuLabel_modeNotifs": { "message": "Mod Bildirimleri" },
+  "menuLabel_refreshInt": { "message": "Yenileme Aralığı" },
+  "menuLabel_disabled": { "message": "Devre Dışı (uzantı yüklü)" },
+  "prompt_updateInt": { "message": "Yenileme aralığını güncelle (saniye cinsinden)" },
+  "alert_intUpdated": { "message": "ChatGPT oturumu otomatik olarak yenilenecek her" },
+  "unit_secs": { "message": "sn" },
+  "state_enabled": { "message": "etkin" },
+  "state_disabled": { "message": "devre dışı" }
+}
