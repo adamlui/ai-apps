@@ -1,5 +1,3 @@
-Translate the following messages to Georgian:
-
 {
   "appName": { "message": "ChatGPT ავტო განახლება" },
   "appDesc": { "message": "*უსაფრთხოდ* ახდენს ChatGPT სესიების განახლებას, ამოშლის კონსტანტურ ქსელის შეცდომებს და Cloudflare შემოწმებებს (ყველაფერი ფონურიდან!)" },

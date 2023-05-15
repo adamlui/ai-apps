@@ -1,14 +1,14 @@
 {
-  "appName": { "message": "ChatGPT Automatsko osvežavanje" },
-  "appDesc": { "message": "*BEZBEDNO* održava ChatGPT sesije svežim, eliminišući stalne mrežne greške i Cloudflare provere (sve iz pozadine!)" },
-  "menuLabel_autoRefresh": { "message": "Automatsko osvežavanje" },
-  "menuLabel_toggleVis": { "message": "Preklopi vidljivost" },
-  "menuLabel_modeNotifs": { "message": "Režim obaveštenja" },
-  "menuLabel_refreshInt": { "message": "Interval osvežavanja" },
-  "menuLabel_disabled": { "message": "Isključeno (dodatak instaliran)" },
-  "prompt_updateInt": { "message": "Ažuriraj interval osvežavanja (u sekundama)" },
-  "alert_intUpdated": { "message": "ChatGPT sesija će se automatski osvežavati svakih" },
-  "unit_secs": { "message": "sekundi" },
-  "state_enabled": { "message": "uključeno" },
-  "state_disabled": { "message": "isključeno" }
+   "appName": { "message": "ЦхатГПТ Аутоматско освежавање" },
+   "appDesc": { "message": "*САФЕЛИ* одржава сесије ЦхатГПТ свежим, елиминишући сталне мрежне грешке + Цлоудфларе провере (све из позадине!)" },
+   "menuLabel_autoRefresh": { "message": "Ауто-Рефресх" },
+   "menuLabel_toggleVis": { "message": "Пребаци видљивост" },
+   "menuLabel_modeNotifs": { "message": "Обавештења о режиму" },
+   "menuLabel_refreshInt": { "message": "Интервал освежавања" },
+   "menuLabel_disabled": { "message": "Онемогућено (инсталирано проширење)" },
+   "prompt_updateInt": { "message": "Интервал освежавања ажурирања (у секундама)" },
+   "alert_intUpdated": { "message": "ЦхатГПТ сесија ће се аутоматски освежавати сваке" },
+   "unit_secs": { "message": "сецс" },
+   "state_enabled": { "message": "енаблед" },
+   "state_disabled": { "message": "дисаблед" }
 }

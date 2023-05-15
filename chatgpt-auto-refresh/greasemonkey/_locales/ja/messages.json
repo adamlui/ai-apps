@@ -1,5 +1,3 @@
-次のメッセージを日本語に翻訳してください：
-
 {
   "appName": { "message": "ChatGPT 自動更新" },
   "appDesc": { "message": "*安全に* ChatGPT セッションを常に最新の状態に保ち、ネットワークエラーと Cloudflare のチェックを排除します（すべてバックグラウンドで！）" },
