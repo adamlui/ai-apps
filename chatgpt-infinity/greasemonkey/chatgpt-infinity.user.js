@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.5.14
+// @version             2023.5.15
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -218,7 +218,7 @@
         var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to toggle Infinity Mode
-        var imLabel = stateSymbol[+!config.infinityMode] + ' ' + messages.menuLabel_infinityMode
+        var imLabel = stateSymbol[+!config.infinityMode] + ' ' + messages.menuLabel_infinityMode + ' ∞ '
             + stateSeparator + stateWord[+!config.infinityMode]
         menuIDs.push(GM_registerMenuCommand(imLabel, function() {
             document.querySelector('#infinityToggle').click()
