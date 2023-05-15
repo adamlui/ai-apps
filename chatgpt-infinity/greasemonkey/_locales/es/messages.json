@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinito" },
+  "appDesc": { "message": "Genera respuestas infinitas del omnipotente ChatGPT (¡en cualquier idioma!)" },
+  "menuLabel_infinityMode": { "message": "Modo Infinito" },
+  "menuLabel_toggleVis": { "message": "Alternar visibilidad" },
+  "menuLabel_autoScroll": { "message": "Desplazamiento automático" },
+  "menuLabel_replyLang": { "message": "Idioma de respuesta" },
+  "menuLabel_replyInt": { "message": "Intervalo de respuesta" },
+  "menuLabel_disabled": { "message": "Desactivado (extensión instalada)" },
+  "prompt_updateReplyLang": { "message": "Actualizar idioma de respuesta" },
+  "prompt_updateReplyInt": { "message": "Actualizar intervalo de respuesta (mínimo 5 segundos)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinito responderá en" },
+  "alert_yourSysLang": { "message": "tu idioma de sistema" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinito responderá cada" },
+  "unit_seconds": { "message": "segundos" },
+  "state_enabled": { "message": "habilitado" },
+  "state_disabled": { "message": "deshabilitado" }
+}

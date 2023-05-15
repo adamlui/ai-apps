@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "சாட்ஜிபிடி இன்பினிடி" },
+  "appDesc": { "message": "எந்த மொழியிலும் அனைத்துக் கேள்விகளுக்கும் பதிலளிக்கப்படும் அனைத்து அறிமுக சாட்ஜிபிடி இன்பினிடி இத்தளத்தில்!" },
+  "menuLabel_infinityMode": { "message": "முடிவிலிட்ட முறை" },
+  "menuLabel_toggleVis": { "message": "காண்பிப்பு மாற்று" },
+  "menuLabel_autoScroll": { "message": "தானாக நகர்த்து" },
+  "menuLabel_replyLang": { "message": "பதில் மொழி" },
+  "menuLabel_replyInt": { "message": "பதில் இடைவெளி" },
+  "menuLabel_disabled": { "message": "முடக்கப்பட்டது (நீட்டிப்பு நிறுவப்பட்டது)" },
+  "prompt_updateReplyLang": { "message": "பதில் மொழியை புதுப்பிக்கவும்" },
+  "prompt_updateReplyInt": { "message": "பதில் இடைவெளி புதுப்பிக்கவும் (குறைந்தபட்சம் 5 வினாடிகள்)" },
+  "alert_willReplyIn": { "message": "சாட்ஜிபிடி இன்பினிடி பதிலளிக்கும்" },
+  "alert_yourSysLang": { "message": "உங்கள் கணினி மொழி" },
+  "alert_willReplyEvery": { "message": "சாட்ஜிபிடி இன்பினிடி ஒவ்வொரு" },
+  "unit_seconds": { "message": "விநாடிகள்" },
+  "state_enabled": { "message": "ਸਮਰੱਥ" },
+  "state_disabled": { "message": "ਅਯੋਗ" }
+}

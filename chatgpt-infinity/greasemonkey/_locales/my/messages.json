@@ -1,0 +1,18 @@
+{
+   "appName": { "message": "ChatGPT Infinity" },
+   "appDesc": { "message": "အားလုံးသိသော ChatGPT (မည်သည့်ဘာသာစကားဖြင့်မဆို) မှ အဆုံးမဲ့အဖြေများကို ထုတ်ပေးပါ" },
+   "menuLabel_infinityMode": { "message": "Infinity မုဒ်" },
+   "menuLabel_toggleVis": { "message": "မြင်နိုင်မှုခလုတ်" },
+   "menuLabel_autoScroll": { "message": "Auto-Scroll" },
+   "menuLabel_replyLang": { "message": "ပြန်ကြားရေးဘာသာစကား" },
+   "menuLabel_replyInt": { "message": "စာပြန်ကြားကာလ" },
+   "menuLabel_disabled": { "message": "ပိတ်ထားသည် (တိုးချဲ့တပ်ဆင်ထားသည်)" },
+   "prompt_updateReplyLang": { "message": "ပြန်ကြားရေးဘာသာစကားကို အပ်ဒိတ်လုပ်ပါ" },
+   "prompt_updateReplyInt": { "message": "စာပြန်ကြားကာလ (အနည်းဆုံး 5 စက္ကန့်)" },
+   "alert_willReplyIn": { "message": "ChatGPT Infinity မှ စာပြန်မည်" },
+   "alert_yourSysLang": { "message": "မင်းရဲ့ စနစ်ဘာသာစကား" },
+   "alert_willReplyEvery": { "message": "ChatGPT Infinity တိုင်းသည် စာပြန်လိမ့်မည်" },
+   "unit_seconds": { "message": "စက္ကန့်" },
+   "state_enabled": { "message": "ဖွင့်ထားသည်။" },
+   "state_disabled": { "message": "မသန်စွမ်း" }
+}

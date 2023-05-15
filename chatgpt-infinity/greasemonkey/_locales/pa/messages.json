@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ਚੈਟਜੀਪੀਟੀ ਇੰਫਿਨਿਟੀ" },
+  "appDesc": { "message": "ਸਭ-ਜਾਣਤਾ ਚੈਟਜੀਪੀਟੀ ਤੋਂ ਅਨੰਤ ਜਵਾਬ ਬਣਾਓ (ਕਿਸੇ ਵੀ ਭਾਸ਼ਾ ਵਿੱਚ!)" },
+  "menuLabel_infinityMode": { "message": "ਅਨੰਤ ਮੋਡ" },
+  "menuLabel_toggleVis": { "message": "ਦਿੱਖ ਬਦਲੋ" },
+  "menuLabel_autoScroll": { "message": "ਸਵੈ-ਸਕ੍ਰੋਲ" },
+  "menuLabel_replyLang": { "message": "ਜਵਾਬ ਭਾਸ਼ਾ" },
+  "menuLabel_replyInt": { "message": "ਜਵਾਬ ਅੰਤਰਾਲ" },
+  "menuLabel_disabled": { "message": "ਅਯੋਗਤ (ਐਕਸਟੈਂਸ਼ਨ ਇੰਸਟਾਲ ਕੀਤਾ ਗਿਆ)" },
+  "prompt_updateReplyLang": { "message": "ਜਵਾਬ ਭਾਸ਼ਾ ਅਪਡੇਟ ਕਰੋ" },
+  "prompt_updateReplyInt": { "message": "ਜਵਾਬ ਅੰਤਰਾਲ ਅਪਡੇਟ ਕਰੋ (ਘੱਟੋ ਘੱਟ 5 ਸਕਿੰਟ)" },
+  "alert_willReplyIn": { "message": "ਚੈਟਜੀਪੀਟੀ ਇੰਫਿਨਿਟੀ ਇਸ ਵਿੱਚ ਜਵਾਬ ਦਿਓਗੀ" },
+  "alert_yourSysLang": { "message": "ਤੁਹਾਡੀ ਸਿਸਟਮ ਭਾਸ਼ਾ" },
+  "alert_willReplyEvery": { "message": "ਚੈਟਜੀਪੀਟੀ ਇੰਫਿਨਿਟੀ ਹਰ ਵਿੱਚ ਜਵਾਬ ਦਿਓਗੀ" },
+  "unit_seconds": { "message": "ਸਕਿੰਟ" },
+  "state_enabled": { "message": "ਸਮਰੱਥ" },
+  "state_disabled": { "message": "ਬੰਦ" }
+}

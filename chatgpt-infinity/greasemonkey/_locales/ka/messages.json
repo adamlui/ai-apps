@@ -1,0 +1,16 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "გენერირებს უსასრულობის პასუხებს ყველა ცოდნისგან რომელიც მისცეს ChatGPT (ნებისმიერ ენაზე!)" },
+  "menuLabel_infinityMode": { "message": "უსასრულობის რეჟიმი" },
+  "menuLabel_toggleVis": { "message": "ხილვის ჩართვა/გათიშვა" },
+  "menuLabel_autoScroll": { "message": "ავტო-გადართვა" },
+  "menuLabel_replyLang": { "message": "პასუხის ენა" },
+  "menuLabel_replyInt": { "message": "პასუხის ინტერვალი" },
+  "menuLabel_disabled": { "message": "გაუქმებულია (გაფართოება დაყენებულია)" },
+  "prompt_updateReplyLang": { "message": "განახლება პასუხის ენა" },
+  "prompt_updateReplyInt": { "message": "განახლება პასუხის ინტერვალი (მინიმუმ 5 წამი)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity პასუხს გადაეცემა" },
+  "unit_seconds": { "message": "წამი" },
+  "state_enabled": { "message": "ჩართულია" },
+  "state_disabled": { "message": "ინვალიდი" }
+}

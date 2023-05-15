@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ચેટજીપીટી ઇન્ફિનિટી" },
+  "appDesc": { "message": "જાણતા સર્વજ્ઞ ચેટજીપીટીમાંથી અનંત જવાબો ઉત્પન્ન કરો (કોઈ પણ ભાષામાં!)" },
+  "menuLabel_infinityMode": { "message": "અનંત મોડ" },
+  "menuLabel_toggleVis": { "message": "દૃષ્ટિગોચરતા ટૉગલ કરો" },
+  "menuLabel_autoScroll": { "message": "સ્વચાલિત સ્ક્રોલ" },
+  "menuLabel_replyLang": { "message": "જવાબ ભાષા" },
+  "menuLabel_replyInt": { "message": "જવાબ અંતરાલ" },
+  "menuLabel_disabled": { "message": "નિષ્ક્રિય (એક્સ્ટેન્શન સ્થાપિત છે)" },
+  "prompt_updateReplyLang": { "message": "જવાબ ભાષા અપડેટ કરો" },
+  "prompt_updateReplyInt": { "message": "જવાબ અંતરાલ અપડેટ કરો (ઓછીમાંથી ઓછી 5 સેકંડ)" },
+  "alert_willReplyIn": { "message": "ચેટજીપીટી ઇન્ફિનિટી જવાબ આપશે" },
+  "alert_yourSysLang": { "message": "તમારી સિસ્ટમ ભાષા" },
+  "alert_willReplyEvery": { "message": "ચેટજીપીટી ઇન્ફિનિટી હર" },
+  "unit_seconds": { "message": "સેકંડો" },
+  "state_enabled": { "message": "સક્ષમ" },
+  "state_disabled": { "message": "અક્ષમ" }
+}

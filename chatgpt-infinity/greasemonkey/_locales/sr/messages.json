@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ЧатГПТ Бескрај" },
+  "appDesc": { "message": "Генеришите бесконачне одговоре од свемогућег ЧатГПТ (на било ком језику!)" },
+  "menuLabel_infinityMode": { "message": "Бескрајни режим" },
+  "menuLabel_toggleVis": { "message": "Промени видљивост" },
+  "menuLabel_autoScroll": { "message": "Аутоматско скроловање" },
+  "menuLabel_replyLang": { "message": "Језик одговора" },
+  "menuLabel_replyInt": { "message": "Интервал одговора" },
+  "menuLabel_disabled": { "message": "Искључено (прикључак је инсталиран)" },
+  "prompt_updateReplyLang": { "message": "Ажурирај језик одговора" },
+  "prompt_updateReplyInt": { "message": "Ажурирај интервал одговора (минимум 5 секунди)" },
+  "alert_willReplyIn": { "message": "ЧатГПТ Бескрај ће одговорити за" },
+  "alert_yourSysLang": { "message": "ваш језик система" },
+  "alert_willReplyEvery": { "message": "ЧатГПТ Бескрај ће одговорити сваких" },
+  "unit_seconds": { "message": "секунди" },
+  "state_enabled": { "message": "укључено" },
+  "state_disabled": { "message": "искључено" }
+}

@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ЧатДжиПиТи Инфинити" },
+  "appDesc": { "message": "Генерирайте безкрайни отговори от всезнайния ЧатДжиПиТи (на всяки език!)" },
+  "menuLabel_infinityMode": { "message": "Режим безкрайност" },
+  "menuLabel_toggleVis": { "message": "Превключване на видимостта" },
+  "menuLabel_autoScroll": { "message": "Автоматична превъртане" },
+  "menuLabel_replyLang": { "message": "Език за отговор" },
+  "menuLabel_replyInt": { "message": "Интервал за отговор" },
+  "menuLabel_disabled": { "message": "Деактивирано (разширението е инсталирано)" },
+  "prompt_updateReplyLang": { "message": "Актуализиране на езика за отговор" },
+  "prompt_updateReplyInt": { "message": "Актуализиране на интервала за отговор (минимум 5 секунди)" },
+  "alert_willReplyIn": { "message": "ЧатДжиПиТи Инфинити ще отговори в" },
+  "alert_yourSysLang": { "message": "вашето системно езиково настройки" },
+  "alert_willReplyEvery": { "message": "ЧатДжиПиТи Инфинити ще отговаря на всеки" },
+  "unit_seconds": { "message": "секунди" },
+  "state_enabled": { "message": "активиран" },
+  "state_disabled": { "message": "деактивиран" }
+}

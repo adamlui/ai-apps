@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT ଅନନ୍ତ" },
+  "appDesc": { "message": "ସମସ୍ତ ଭାଷାରେ ଜାଣାମଣି କରନ୍ତୁ ଅଜ୍ଞାତନାଥ ଚ୍ୟାଟଜିପିଟି ଥରେଇନ୍ତୁ (ସମସ୍ତ ଜିନିଷ!)" },
+  "menuLabel_infinityMode": { "message": "ଅନନ୍ତ ମୋଡ" },
+  "menuLabel_toggleVis": { "message": "ଦୃଶ୍ୟତା ଟଗୋଲ କରନ୍ତୁ" },
+  "menuLabel_autoScroll": { "message": "ଅଟୋ ସ୍କ୍ରୋଲ୍" },
+  "menuLabel_replyLang": { "message": "ଜବା ଭାଷା" },
+  "menuLabel_replyInt": { "message": "ଜବା ଅନୁପାତ" },
+  "menuLabel_disabled": { "message": "ଅସ୍ଥାୟୀଭାବରେ ଅକ୍ଷମ (ଏକ୍ସଟେନସନ ଇନସ୍ଟଲ୍ କରାଗଲା)" },
+  "prompt_updateReplyLang": { "message": "ଜବା ଭାଷା ଅପଡେଟ କରନ୍ତୁ" },
+  "prompt_updateReplyInt": { "message": "ଉତ୍ତର ବ୍ୟବଧାନ ଅଦ୍ୟତନ କରନ୍ତୁ (ସର୍ବନିମ୍ନ 5 ସେକେଣ୍ଡ)" },
+  "alert_willReplyIn": { "message": "ChatGPT ଅସୀମତା ଉତ୍ତର ଦେବ |" },
+  "alert_yourSysLang": { "message": "ତୁମର ସିଷ୍ଟମ୍ ଭାଷା" },
+  "alert_willReplyEvery": { "message": "ChatGPT ଅସୀମତା ପ୍ରତ୍ୟେକଙ୍କୁ ଉତ୍ତର ଦେବ |" },
+  "unit_seconds": { "message": "ସେକେଣ୍ଡ୍ |" },
+  "state_enabled": { "message": "ସକ୍ଷମ" },
+  "state_disabled": { "message": "ଅକ୍ଷମ" }
+}

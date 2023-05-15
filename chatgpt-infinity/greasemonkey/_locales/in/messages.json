@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Hasilkan jawaban tak terbatas dari ChatGPT yang penuh pengetahuan (dalam bahasa apa pun!)" },
+  "menuLabel_infinityMode": { "message": "Mode Infinity" },
+  "menuLabel_toggleVis": { "message": "Toggle Visibilitas" },
+  "menuLabel_autoScroll": { "message": "Gulir Otomatis" },
+  "menuLabel_replyLang": { "message": "Bahasa Balasan" },
+  "menuLabel_replyInt": { "message": "Interval Balasan" },
+  "menuLabel_disabled": { "message": "Nonaktifkan (ekstensi diinstal)" },
+  "prompt_updateReplyLang": { "message": "Perbarui bahasa balasan" },
+  "prompt_updateReplyInt": { "message": "Perbarui interval balasan (minimum 5 detik)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity akan menjawab dalam" },
+  "alert_yourSysLang": { "message": "bahasa sistem Anda" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity akan menjawab setiap" },
+  "unit_seconds": { "message": "detik" },
+  "state_enabled": { "message": "diaktifkan" },
+  "state_disabled": { "message": "dinonaktifkan" }
+}

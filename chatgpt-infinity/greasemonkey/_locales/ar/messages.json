@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "تشات جي بي تي إنفينيتي" },
+  "appDesc": { "message": "تولد أجوبة لا نهائية من تشات جي بي تي المعرف بكل شيء (بأي لغة!)" },
+  "menuLabel_infinityMode": { "message": "وضع اللانهائية" },
+  "menuLabel_toggleVis": { "message": "تبديل الرؤية" },
+  "menuLabel_autoScroll": { "message": "التمرير التلقائي" },
+  "menuLabel_replyLang": { "message": "لغة الرد" },
+  "menuLabel_replyInt": { "message": "فترة الرد" },
+  "menuLabel_disabled": { "message": "معطل (تم تثبيت الإضافة)" },
+  "prompt_updateReplyLang": { "message": "تحديث لغة الرد" },
+  "prompt_updateReplyInt": { "message": "تحديث فترة الرد (الحد الأدنى 5 ثواني)" },
+  "alert_willReplyIn": { "message": "سيقوم تشات جي بي تي إنفينيتي بالرد في" },
+  "alert_yourSysLang": { "message": "لغة نظامك" },
+  "alert_willReplyEvery": { "message": "سيقوم تشات جي بي تي إنفينيتي بالرد كل" },
+  "unit_seconds": { "message": "ثواني" },
+  "state_enabled": { "message": "مُفعل" },
+  "state_disabled": { "message": "مُعطل" }
+}

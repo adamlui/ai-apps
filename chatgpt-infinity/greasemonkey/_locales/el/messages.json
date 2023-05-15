@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Δημιουργία ατελείωτων απαντήσεων από τον πανγνωστικό ChatGPT (σε οποιαδήποτε γλώσσα!)" },
+  "menuLabel_infinityMode": { "message": "Λειτουργία Άπειρο" },
+  "menuLabel_toggleVis": { "message": "Εναλλαγή ορατότητας" },
+  "menuLabel_autoScroll": { "message": "Αυτόματη κύλιση" },
+  "menuLabel_replyLang": { "message": "Γλώσσα Απάντησης" },
+  "menuLabel_replyInt": { "message": "Διάστημα Απάντησης" },
+  "menuLabel_disabled": { "message": "Απενεργοποιημένο (επέκταση εγκατεστημένη)" },
+  "prompt_updateReplyLang": { "message": "Ενημέρωση γλώσσας απάντησης" },
+  "prompt_updateReplyInt": { "message": "Ενημέρωση διαστήματος απάντησης (ελάχιστο 5 δευτερόλεπτα)" },
+  "alert_willReplyIn": { "message": "Το ChatGPT Infinity θα απαντήσει σε" },
+  "alert_yourSysLang": { "message": "τη γλώσσα του συστήματός σας" },
+  "alert_willReplyEvery": { "message": "Το ChatGPT Infinity θα απαντά κάθε" },
+  "unit_seconds": { "message": "δευτερόλεπτα" },
+  "state_enabled": { "message": "ενεργοποιημένο" },
+  "state_disabled": { "message": "απενεργοποιημένο" }
+}

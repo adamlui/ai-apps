@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ചാറ്റ്‌ജിപിടി ഇൻഫിനിറ്റി" },
+  "appDesc": { "message": "എന്തെങ്കിലും ഭാഷയിലുള്ള അനന്തമായ ഉത്തരങ്ങൾ ജനറേറ്റ് ചെയ്യുക അറിയുന്ന സര്‍വാജ്ഞതയുള്ള ചാറ്റ്‌ജിപിടി ഇൻഫിനിറ്റി എന്നതില്‍" },
+  "menuLabel_infinityMode": { "message": "അനന്തത മോഡ്" },
+  "menuLabel_toggleVis": { "message": "ദൃശ്യത മാറ്റുക" },
+  "menuLabel_autoScroll": { "message": "ഓട്ടോ സ്‌ക്രോൾ" },
+  "menuLabel_replyLang": { "message": "പ്രതികരണ ഭാഷ" },
+  "menuLabel_replyInt": { "message": "പ്രതികരണ ഇന്റർവൽ" },
+  "menuLabel_disabled": { "message": "അപ്രാപ്തമാക്കിയിരിക്കുന്നു (വിപുലീകരണം ഇൻസ്റ്റാൾ ചെയ്തിരിക്കുന്നു)" },
+  "prompt_updateReplyLang": { "message": "പ്രതികരണ ഭാഷ അപ്ഡേറ്റ് ചെയ്യുക" },
+  "prompt_updateReplyInt": { "message": "പ്രതികരണ ഇന്റർവൽ അപ്ഡേറ്റ് ചെയ്യുക (കുറഞ്ഞത് 5 സെക്കൻഡ്)" },
+  "alert_willReplyIn": { "message": "ChatGPT ഇൻഫിനിറ്റി മറുപടി നൽകും" },
+  "alert_yourSysLang": { "message": "നിങ്ങളുടെ സിസ്റ്റം ഭാഷ" },
+  "alert_willReplyEvery": { "message": "ChatGPT ഇൻഫിനിറ്റി ഓരോന്നിനും മറുപടി നൽകും" },
+  "unit_seconds": { "message": "സെക്കന്റുകൾ" },
+  "state_enabled": { "message": "പ്രവർത്തനക്ഷമമാക്കി" },
+  "state_disabled": { "message": "വികലാംഗൻ" }
+}

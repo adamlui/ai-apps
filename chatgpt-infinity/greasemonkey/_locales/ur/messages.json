@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "تمام جانبدار چیٹ جی پی ٹی (کسی بھی زبان میں) سے لامحدود جوابات پیدا کریں!" },
+  "menuLabel_infinityMode": { "message": "لامحدود وضع" },
+  "menuLabel_toggleVis": { "message": "نظریہ تبدیل کریں" },
+  "menuLabel_autoScroll": { "message": "خود کار سکرول" },
+  "menuLabel_replyLang": { "message": "جواب کی زبان" },
+  "menuLabel_replyInt": { "message": "جواب وقفہ" },
+  "menuLabel_disabled": { "message": "غیر فعال (توسیع نصب کی گئی)" },
+  "prompt_updateReplyLang": { "message": "جواب کی زبان اپ ڈیٹ کریں" },
+  "prompt_updateReplyInt": { "message": "جواب وقفہ اپ ڈیٹ کریں (کم از کم 5 سیکنڈ)" },
+  "alert_willReplyIn": { "message": "چیٹ جی پی ٹی انفنٹی جواب دے گا" },
+  "alert_yourSysLang": { "message": "آپ کی سسٹم زبان" },
+  "alert_willReplyEvery": { "message": "چیٹ جی پی ٹی انفنٹی ہر بار جواب دے گا" },
+  "unit_seconds": { "message": "سیکنڈ" },
+  "state_enabled": { "message": "فعال" },
+  "state_disabled": { "message": "غیر فعال" }
+}

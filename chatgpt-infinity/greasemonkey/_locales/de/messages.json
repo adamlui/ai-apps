@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Generiere endlose Antworten von dem allwissenden ChatGPT (in jeder Sprache!)" },
+  "menuLabel_infinityMode": { "message": "Unendlichkeitsmodus" },
+  "menuLabel_toggleVis": { "message": "Sichtbarkeit umschalten" },
+  "menuLabel_autoScroll": { "message": "Automatisches Scrollen" },
+  "menuLabel_replyLang": { "message": "Antwortsprache" },
+  "menuLabel_replyInt": { "message": "Antwortintervall" },
+  "menuLabel_disabled": { "message": "Deaktiviert (Erweiterung installiert)" },
+  "prompt_updateReplyLang": { "message": "Antwortsprache aktualisieren" },
+  "prompt_updateReplyInt": { "message": "Antwortintervall aktualisieren (mindestens 5 Sekunden)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity wird in" },
+  "alert_yourSysLang": { "message": "Ihr Systemsprache" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity wird alle" },
+  "unit_seconds": { "message": "Sekunden" },
+  "state_enabled": { "message": "aktiviert" },
+  "state_disabled": { "message": "deaktiviert" }
+}

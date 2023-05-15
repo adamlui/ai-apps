@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "전능한 ChatGPT에서 (어떤 언어든) 끝없는 대답 생성" },
+  "menuLabel_infinityMode": { "message": "무한 모드" },
+  "menuLabel_toggleVis": { "message": "가시성 전환" },
+  "menuLabel_autoScroll": { "message": "자동 스크롤" },
+  "menuLabel_replyLang": { "message": "응답 언어" },
+  "menuLabel_replyInt": { "message": "응답 간격" },
+  "menuLabel_disabled": { "message": "비활성화됨 (확장이 설치됨)" },
+  "prompt_updateReplyLang": { "message": "응답 언어 업데이트" },
+  "prompt_updateReplyInt": { "message": "응답 간격 업데이트 (최소 5초)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity에서 응답이 될 것입니다." },
+  "alert_yourSysLang": { "message": "귀하의 시스템 언어" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity에서 응답이 될 것입니다." },
+  "unit_seconds": { "message": "초" },
+  "state_enabled": { "message": "활성화됨" },
+  "state_disabled": { "message": "비활성화됨" }
+}

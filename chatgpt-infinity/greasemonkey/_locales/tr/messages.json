@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Sonsuzluk" },
+  "appDesc": { "message": "Hep-bilen ChatGPT'den sonsuz cevaplar üretin (herhangi bir dilde!)" },
+  "menuLabel_infinityMode": { "message": "Sonsuz Mod" },
+  "menuLabel_toggleVis": { "message": "Görünürlüğü Değiştir" },
+  "menuLabel_autoScroll": { "message": "Otomatik Kaydırma" },
+  "menuLabel_replyLang": { "message": "Cevap Dili" },
+  "menuLabel_replyInt": { "message": "Cevap Aralığı" },
+  "menuLabel_disabled": { "message": "Devre dışı (uzantı yüklü)" },
+  "prompt_updateReplyLang": { "message": "Cevap dili güncelle" },
+  "prompt_updateReplyInt": { "message": "Cevap aralığını güncelle (minimum 5 saniye)" },
+  "alert_willReplyIn": { "message": "ChatGPT Sonsuzluk şu sürede cevap verecek:" },
+  "alert_yourSysLang": { "message": "sistem diliniz" },
+  "alert_willReplyEvery": { "message": "ChatGPT Sonsuzluk her şu sürede cevap verecek:" },
+  "unit_seconds": { "message": "saniye" },
+  "state_enabled": { "message": "etkin" },
+  "state_disabled": { "message": "devre dışı" }
+}

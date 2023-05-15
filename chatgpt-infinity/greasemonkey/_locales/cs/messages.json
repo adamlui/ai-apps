@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Vygenerujte nekonečné odpovědi od vševědoucího ChatGPT (v jakémkoli jazyce!)" },
+  "menuLabel_infinityMode": { "message": "Režim nekonečna" },
+  "menuLabel_toggleVis": { "message": "Přepnout viditelnost" },
+  "menuLabel_autoScroll": { "message": "Automatické posouvání" },
+  "menuLabel_replyLang": { "message": "Jazyk odpovědi" },
+  "menuLabel_replyInt": { "message": "Interval odpovědi" },
+  "menuLabel_disabled": { "message": "Vypnuto (rozšíření nainstalováno)" },
+  "prompt_updateReplyLang": { "message": "Aktualizovat jazyk odpovědi" },
+  "prompt_updateReplyInt": { "message": "Aktualizovat interval odpovědi (minimálně 5 sekund)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity odpoví za" },
+  "alert_yourSysLang": { "message": "váš systémový jazyk" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity bude odpovídat každých" },
+  "unit_seconds": { "message": "sekund" },
+  "state_enabled": { "message": "zapnuto" },
+  "state_disabled": { "message": "vypnuto" }
+}

@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinito" },
+  "appDesc": { "message": "Generu senfinaĵajn respondojn el la ĉio-scia ChatGPT (en kiu ajn lingvo!)" },
+  "menuLabel_infinityMode": { "message": "Modo Senfinaĵo" },
+  "menuLabel_toggleVis": { "message": "Ŝalti videblecon" },
+  "menuLabel_autoScroll": { "message": "Aŭtomata Rulumado" },
+  "menuLabel_replyLang": { "message": "Responda Lingvo" },
+  "menuLabel_replyInt": { "message": "Responda Intervalo" },
+  "menuLabel_disabled": { "message": "Malŝaltita (etendaĵo instalita)" },
+  "prompt_updateReplyLang": { "message": "Ĝisdatigu responda lingvo" },
+  "prompt_updateReplyInt": { "message": "Ĝisdatigu responda intervalo (minimume 5 sekundoj)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinito respondos en" },
+  "alert_yourSysLang": { "message": "vian sisteman lingvon" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinito respondos ĉiujn" },
+  "unit_seconds": { "message": "sekundojn" },
+  "state_enabled": { "message": "aktivigita" },
+  "state_disabled": { "message": "malaktivigita" }
+}
