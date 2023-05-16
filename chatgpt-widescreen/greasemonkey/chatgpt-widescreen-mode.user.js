@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.5.13
+// @version             2023.5.15
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -74,22 +74,23 @@
         var msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         var msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
         var msgXHRtries = 0
-        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: msgXHRonLoad })
-        function msgXHRonLoad(response) {
-            try {
+        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        function onLoad(response) {
+            try { // to return localized messages.json
                 var messages = JSON.parse(response.responseText)
                 var cleanerMsgs = new Proxy(messages, { // remove need to ref nested keys
                     get(target, prop) {
                         if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
                 }}}) ; resolve(cleanerMsgs)
-            } catch (error) {
-                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3x only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional user lang on 1st try...
-                    msgHref.replace(/(.*)(_.*)(\/.*)/, '$1$3') // ...strip region before retrying
+            } catch (error) { // if 404
+                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                    msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: msgXHRonLoad })
-        }}
+                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+            }
+        }
     }) ; var messages = await msgsLoaded
 
     await chatgpt.isLoaded()
