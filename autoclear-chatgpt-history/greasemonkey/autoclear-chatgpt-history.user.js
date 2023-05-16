@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.5.16.3
+// @version             2023.5.16.4
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -287,7 +287,7 @@
                     div.innerHTML = clearSvg[div.name] + 'Clear Conversations'
                     return
                 }
-                if (div.name === 0) div.name = 1
+                if (div.name === 0) { div.innerHTML = clearSvg[div.name] + 'Clear Conversations', div.name = 1}
                 else { createOrShowClearButton('none') ; div.name = 0 ; chatgpt.clearChats() }
                 div.innerHTML = clearSvg[div.name] + 'Confirm Clear Conversations'
             })
