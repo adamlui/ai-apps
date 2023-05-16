@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.5.16.2
+// @version             2023.5.16.3
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -137,8 +137,7 @@
         config.autoclear = toggleInput.checked
         for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         if (config.autoclear && !config.isActive) {
-            if (document.getElementById('clearButton').style.display != 'none') {
-                setTimeout(chatgpt.clearChats, 250) }
+            if (fetchMap.get('conversations').items.length > 0) setTimeout(chatgpt.clearChats, 250)
             config.isActive = true
             if (!config.notifHidden) {
                 chatgpt.notify('🕶 ' + messages.mode_autoClear + ': ON',
@@ -172,11 +171,9 @@
     // Auto-clear chats if activated // 自动清除聊天是否激活
     var clearObserver = new MutationObserver(function(mutations) {
         mutations.forEach(function() {
-            var clearButton = document.getElementById('clearButton')
-            if (clearButton) {
-                if (clearButton.style.display != 'none') {
+            if (fetchMap.get('conversations').items.length > 0) {
                     setTimeout(chatgpt.clearChats, 250) ; clearObserver.disconnect()
-    }}})})
+    }})})
     if (config.autoclear) {
         if (!config.notifHidden && document.title === 'New chat') {
             chatgpt.notify('🕶 ' + messages.mode_autoClear + ': ON',
