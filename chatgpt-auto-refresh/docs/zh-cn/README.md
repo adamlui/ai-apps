@@ -133,7 +133,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [自述文件](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptevo.com/widescreen/discussions)
 
-### <img style="margin-bottom:-1px" src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com/github) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -3px 5px;" width="112" height="24" /></a>
+### <img style="margin-bottom:-1px" src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://github.bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -3px 5px;" width="112" height="24" /></a>
 
 在 Brave Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4 驱动!)<br>
 [安装](https://greasyfork.org/scripts/462440-bravegpt) / 
