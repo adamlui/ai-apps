@@ -22,7 +22,7 @@
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](../../bravegpt) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-在 Brave Search 侧边栏中显示 ChatGPT 答案。
+在 Brave Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4 驱动!)
 <br>[安装](https://greasyfork.org/scripts/462440-bravegpt) / 
 [自述文件](../../bravegpt#readme) / 
 [讨论](https://github.bravegpt.com/discussions)
@@ -36,7 +36,7 @@
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](../../chatgpt-infinity) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="在 Awesome Userscripts 中提到" style="margin:0 0 -2px 4px"></a>
 
-从无所不知的 ChatGPT 生成无穷无尽的答案。
+从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
 <br>[安装](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
 [自述文件](../../chatgpt-infinity/docs/zh-cn/README.md) / 
 [讨论](https://chatgptevo.com/infinity/discussions)
@@ -50,7 +50,7 @@
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](../../duckduckgpt) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" alt="DuckDuckGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;DuckDuckGo | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-在 DuckDuckGo 侧边栏中显示 ChatGPT 答案。
+在 DuckDuckGo 侧边栏中显示 ChatGPT 答案 (由 GPT-4 驱动!)
 <br>[安装](https://greasyfork.org/scripts/459849-duckduckgpt) / 
 [自述文件](../../duckduckgpt#readme) / 
 [讨论](https://github.duckduckgpt.com/discussions)
