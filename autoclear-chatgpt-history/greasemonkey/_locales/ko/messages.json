@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "ChatGPT 히스토리 자동 삭제" },
+  "appDesc": { "message": "chat.openai.com 방문 시 채팅 히스토리를 자동으로 삭제합니다." },
+  "menuLabel_autoClear": { "message": "채팅 자동 삭제" },
+  "menuLabel_toggleVis": { "message": "가시성 전환" },
+  "menuLabel_buttonVis": { "message": "버튼 가시성" },
+  "menuLabel_modeNotifs": { "message": "모드 알림" },
+  "menuLabel_disabled": { "message": "비활성화됨 (확장 프로그램 설치됨)" },
+  "buttonLabel_clearChats": { "message": "대화 지우기" },
+  "buttonLabel_confirm": { "message": "확인" },
+  "mode_autoClear": { "message": "자동 삭제 모드" }
+}

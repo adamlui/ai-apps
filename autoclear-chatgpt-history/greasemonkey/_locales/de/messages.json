@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "ChatGPT-Verlauf automatisch löschen" },
+  "appDesc": { "message": "Löscht den Chat-Verlauf automatisch beim Besuch von chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Chats automatisch löschen" },
+  "menuLabel_toggleVis": { "message": "Sichtbarkeit umschalten" },
+  "menuLabel_buttonVis": { "message": "Button-Sichtbarkeit" },
+  "menuLabel_modeNotifs": { "message": "Modus-Benachrichtigungen" },
+  "menuLabel_disabled": { "message": "Deaktiviert (Erweiterung installiert)" },
+  "buttonLabel_clearChats": { "message": "Konversationen löschen" },
+  "buttonLabel_confirm": { "message": "Bestätigen" },
+  "mode_autoClear": { "message": "Automatisch löschen" }
+}

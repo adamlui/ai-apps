@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Cancella automaticamente la cronologia di ChatGPT" },
+  "appDesc": { "message": "Cancella automaticamente la cronologia della chat durante la visita di chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Cancella automaticamente le chat" },
+  "menuLabel_toggleVis": { "message": "Attiva/Disattiva visibilità" },
+  "menuLabel_buttonVis": { "message": "Visibilità del pulsante" },
+  "menuLabel_modeNotifs": { "message": "Notifiche modalità" },
+  "menuLabel_disabled": { "message": "Disabilitato (estensione installata)" },
+  "buttonLabel_clearChats": { "message": "Cancella Conversazioni" },
+  "buttonLabel_confirm": { "message": "Conferma" },
+  "mode_autoClear": { "message": "Cancellazione automatica" }
+}

@@ -6,5 +6,7 @@
   "menuLabel_buttonVis": { "message": "Button Visibility" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
   "menuLabel_disabled": { "message": "Disabled (extension installed)" },
+  "buttonLabel_clearChats": { "message": "Clear Conversations" },
+  "buttonLabel_confirm": { "message": "Confirm" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }
