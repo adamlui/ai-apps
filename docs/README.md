@@ -57,4 +57,5 @@ Display ChatGPT answers in DuckDuckGo sidebar.
 
 #
 
+[Discuss](https://github.com/adamlui/chatgpt-apps/discussions) / 
 <a href="#-chatgpt-apps-">Back to top ↑</a>
