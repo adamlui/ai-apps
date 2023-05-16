@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.5.5
+// @version             2023.5.16
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -58,21 +58,150 @@
 
 (async () => {
 
-    // Define script functions
+    // Initialize settings
+    var configKeyPrefix = 'chatGPTac_'
+    var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
+    loadSetting('autoclear', 'toggleHidden', 'buttonHidden', 'notifHidden') ; config.isActive = config.autoclear
+
+    // Init/register menu
+    var menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'] } // initialize menu vars
+    registerMenu() // create browser toolbar menu
+
+    await chatgpt.isLoaded()
+
+    // Stylize/insert toggle switch
+    var switchStyle = document.createElement('style')
+    switchStyle.innerHTML = `/* Stylize switch */
+        .switch { position:absolute ; left:208px ; width:34px ; height:18px }
+        .switch input { opacity:0 ; width:0 ; height:0 } /* hide checkbox */
+        .slider { position:absolute ; cursor:pointer ; top:0 ; left:0 ; right:0 ; bottom:0 ; background-color:#ccc ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
+        .slider:before { position:absolute ; content:"" ; height:14px ; width:14px ; left:3px; bottom:2px ; background-color:white ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
+
+        /* Position/color ON-state */
+        input:checked { position:absolute ; right:3px }
+        input:checked + .slider { background-color:#42B4BF }
+        input:checked + .slider:before {
+            -webkit-transform: translateX(14px) translateY(1px) ;
+            -ms-transform: translateX(14px) translateY(1px) ;
+            transform: translateX(14px) }`
+    document.head.appendChild(switchStyle)
+
+    // Stylize clear button icons
+    var clearSvg = null
+
+    // Init/fill conversation map
+    var fetchMap = new Map()
+    fetchMap.set('conversations', {})
+    fetchMap.set('/backend-api/conversations', async function(f) {
+        let json = await f.json()
+        fetchMap.set('conversations', json)
+        createOrShowClearButton(null)
+        if (json.items.length === 0 || config.buttonHidden) createOrShowClearButton('none')
+        else createOrShowClearButton('')
+    })
+    fetchHook()
+
+    // Create toggle label, add listener/classes/HTML
+    var toggleLabel = document.createElement('div') // create label div
+    toggleLabel.addEventListener('click', function() {
+        var toggleInput = document.querySelector('#autoClearToggle')
+        toggleInput.click()
+        setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
+        config.autoclear = toggleInput.checked
+        for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        if (config.autoclear && !config.isActive) {
+            if (document.getElementById('clearButton').style.display != 'none') {
+                setTimeout(chatgpt.clearChats, 250) }
+            config.isActive = true
+            if (!config.notifHidden) {
+                chatgpt.notify('🕶 Auto-Clear: ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+        }} else if (!config.autoclear && config.isActive) {
+            config.isActive = false
+            if (!config.notifHidden) {
+                chatgpt.notify('🕶 Auto-Clear: OFF', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+        }}
+        saveSetting('autoclear', config.autoclear)
+    })
+    for (var link of document.querySelectorAll('a')) { // inspect sidebar links for classes
+        if (link.innerHTML.includes('New chat')) { // focus on 'New chat'
+            toggleLabel.setAttribute('class', link.classList) // borrow its classes
+            break // stop looping since class assignment is done
+        }
+    } updateToggleHTML()
+
+    // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
+    insertToggle()
+    var navObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length) {
+                insertToggle()
+            }
+        })
+    })
+    navObserver.observe(document.documentElement, { childList: true, subtree: true })
+
+    // Auto-clear chats if activated // 自动清除聊天是否激活
+    var clearObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function() {
+            var clearButton = document.getElementById('clearButton')
+            if (clearButton) {
+                if (clearButton.style.display != 'none') {
+                    setTimeout(chatgpt.clearChats, 250) ; clearObserver.disconnect()
+    }}})})
+    if (config.autoclear) {
+        if (!config.notifHidden && document.title === 'New chat') {
+            chatgpt.notify('🕶 Auto-Clear: ON',
+                '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+        } clearObserver.observe(document, { childList: true, subtree: true })
+        // Auto-disconnect after 3.5sec to avoid clearing new chats // 还要在3.5秒后断开连接,以避免清除新的频道
+        setTimeout(function() { clearObserver.disconnect() }, 3500)
+    }
+
+    // Define SCRIPT functions
 
     function registerMenu() {
-        var menuID = [] // to store registered commands for removal while preserving order
+        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
+        var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
+
+        // Add command to toggle auto-clear
+        var acLabel = state.symbol[+!config.autoclear] + ' Auto-Clear Chats'
+                    + stateSeparator + state.word[+!config.autoclear]
+        menuIDs.push(GM_registerMenuCommand(acLabel, function() {
+            document.querySelector('#autoClearToggle').click()
+        }))
 
         // Add 'Toggle Visibility' command
-        var tvStateSymbol = ['✔️', '❌']
-        var tvStateWord = ['ON', 'OFF']
-        var tvLabel = tvStateSymbol[+config.toggleHidden] + ' Toggle Visibility'
-            + (getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ')
-            + tvStateWord[+config.toggleHidden]
-        menuID.push(GM_registerMenuCommand(tvLabel, function() {
+        var tvLabel = state.symbol[+config.toggleHidden] + ' Toggle Visibility'
+                    + stateSeparator + state.word[+config.toggleHidden]
+        menuIDs.push(GM_registerMenuCommand(tvLabel, function() {
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            for (var id of menuID) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            if (!config.notifHidden) {
+                chatgpt.notify('🕶 Toggle Visibility: '+ state.word[+config.toggleHidden],
+                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add 'Button Visibility' command
+        var bvLabel = state.symbol[+config.buttonHidden] + ' Button Visibility'
+                    + stateSeparator + state.word[+config.buttonHidden]
+        menuIDs.push(GM_registerMenuCommand(bvLabel, function() {
+            saveSetting('buttonHidden', !config.buttonHidden)
+            document.getElementById('clearButton').style.display = config.buttonHidden ? 'none' : '' // toggle visibility
+            if (!config.notifHidden) {
+                chatgpt.notify('🕶 Button Visibility: '+ state.word[+config.buttonHidden],
+                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to show notifications when changing settings/modes
+        var mnLabel = state.symbol[+config.notifHidden] + ' Mode Notifications'
+                    + stateSeparator + state.word[+config.notifHidden]
+        menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
+            saveSetting('notifHidden', !config.notifHidden)
+            chatgpt.notify('🕶 Mode Notifications: ' + state.word[+config.notifHidden],
+                '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
     }
 
@@ -88,15 +217,7 @@
         config[key] = value // and memory
     }
 
-    function updateToggleHTML() {
-        toggleLabel.innerHTML = `
-            <img width="18px" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/icons/navicon.png">
-            Auto-clear ${config.autoclear ? 'enabled' : 'disabled'}
-            <label class="switch" ><input id="autoclearToggle" type="checkbox"
-                ${config.autoclear ? 'checked="true"' : '' } >
-                <span class="slider"></span></label>`
-        toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
-    }
+    // Define TOGGLE functions
 
     function insertToggle() {
         var firstMenu = document.querySelector('nav')
@@ -104,14 +225,50 @@
             firstMenu.insertBefore(toggleLabel, firstMenu.childNodes[0]) // insert before 'New chat'// 在"新聊天"之前插入
     }}
 
-    function toggleAutoclear() {
-        var toggleInput = document.querySelector('#autoclearToggle')
-        if (event.target == toggleLabel) toggleInput.click() // to avoid double-toggle
-        setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
-        saveSetting('autoclear', toggleInput.checked)
+    function updateToggleHTML() {
+        toggleLabel.innerHTML = `
+            <img width="18px" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/icons/navicon.png">
+            Auto-clear ${config.autoclear ? 'enabled' : 'disabled'}
+            <label class="switch" ><input id="autoClearToggle" type="checkbox"
+                ${config.autoclear ? 'checked="true"' : '' } >
+                <span class="slider"></span></label>`
+        toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
     }
 
-    async function InitSvg() {
+    // Define BUTTON functions
+
+    function createOrShowClearButton(Show = null) {
+        if (document.getElementById('clearButton') != null) {
+            if (Show != null) document.getElementById('clearButton').style.display = Show
+            return
+        }
+        let border = document.querySelectorAll('div[class^="border-"]')
+        border = border[border.length - 1]
+        let div = document.createElement('div')
+        div.id = 'clearButton'
+        let className = border.childNodes[0].className
+        div.className = className
+        border.insertBefore(div, border.childNodes[0]);
+        (async function() {
+            if (clearSvg == null) {
+                if (!await initClearSvg()) return }
+            div.innerHTML = clearSvg[0] + 'Clear Conversations'
+            div.name = 0
+            div.addEventListener('click', function() {
+                let json = fetchMap.get('conversations')
+                if (json.items.length == 0) {
+                    div.name = 0
+                    div.innerHTML = clearSvg[div.name] + 'Clear Conversations'
+                    return
+                }
+                if (div.name === 0) div.name = 1
+                else { createOrShowClearButton('none') ; div.name = 0 ; chatgpt.clearChats() }
+                div.innerHTML = clearSvg[div.name] + 'Confirm Clear Conversations'
+            })
+        })()
+    }
+
+    async function initClearSvg() {
         return new Promise(async(resolve) => {
             let Svg = GM_getValue('clearSvg', [])
             if (Svg.length !== 0) {
@@ -143,10 +300,12 @@
         })
     }
 
-    async function hookFetch() {
-        let unsafeWindow = document.defaultView
-        const originalFetch = unsafeWindow.fetch
-        unsafeWindow.fetch = function(...args) {
+    // Define FETCH-HOOK function
+
+    async function fetchHook() {
+        let browserWindow = document.defaultView
+        const originalFetch = browserWindow.fetch
+        browserWindow.fetch = function(...args) {
             (async function() {
                 let U = args[0]
                 if (U.indexOf('http') == -1) return
@@ -156,114 +315,5 @@
             })()
             return originalFetch.apply(this, args)
     }}
-
-    function createOrShowClearButton(Show = null) {
-        if (document.getElementById('_clearButton_') != null) {
-            if (Show != null) document.getElementById('_clearButton_').style.display = Show
-            return
-        }
-        let border = document.querySelectorAll('div[class^="border-"]')
-        border = border[border.length - 1]
-        let div = document.createElement('div')
-        div.id = '_clearButton_'
-        let className = border.childNodes[0].className
-        div.className = className
-        border.insertBefore(div, border.childNodes[0]);
-        (async function() {
-            if (clearSvg == null) {
-                if (!await InitSvg()) {
-                    return
-                }
-            }
-            div.innerHTML = clearSvg[0] + 'Clear Conversations'
-            div.name = 0
-            div.addEventListener('click', function() {
-                let json = fetchMap.get('conversations')
-                if (json.items.length == 0) {
-                    div.name = 0 ; div.innerHTML = clearSvg[div.name] + 'Clear Conversations'
-                    return
-                }
-                if (div.name === 0) div.name = 1
-                else { createOrShowClearButton('none') ; div.name = 0 ; chatgpt.clearChats() }
-                div.innerHTML = clearSvg[div.name] + 'Confirm Clear Conversations'
-            })
-        })()
-    }
-
-    // Run MAIN routine
-
-    // Initialize script
-    var config = {}, configKeyPrefix = 'chatGPTac_' // initialize config variables
-    loadSetting('autoclear', 'toggleHidden') // load script settings
-    registerMenu() // create browser toolbar menu
-
-    await chatgpt.isLoaded()
-
-    // Stylize/insert toggle switch
-    var switchStyle = document.createElement('style')
-    switchStyle.innerHTML = `/* Stylize switch */
-        .switch { position:absolute ; left:208px ; width:34px ; height:18px }
-        .switch input { opacity:0 ; width:0 ; height:0 } /* hide checkbox */
-        .slider { position:absolute ; cursor:pointer ; top:0 ; left:0 ; right:0 ; bottom:0 ; background-color:#ccc ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
-        .slider:before { position:absolute ; content:"" ; height:14px ; width:14px ; left:3px; bottom:2px ; background-color:white ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
-
-        /* Position/color ON-state */
-        input:checked { position:absolute ; right:3px }
-        input:checked + .slider { background-color:#42B4BF }
-        input:checked + .slider:before {
-            -webkit-transform: translateX(14px) translateY(1px) ;
-            -ms-transform: translateX(14px) translateY(1px) ;
-            transform: translateX(14px) }`
-    document.head.appendChild(switchStyle)
-
-    // Stylize clear button icons
-    var clearSvg = null;
-
-    // Initialize/fill conversation map
-    var fetchMap = new Map()
-    fetchMap.set('conversations', {})
-    fetchMap.set('/backend-api/conversations', async function(f) {
-        let json = await f.json()
-        fetchMap.set('conversations', json)
-        createOrShowClearButton(null)
-        if (json.items.length === 0) createOrShowClearButton('none')
-        else createOrShowClearButton('')
-    })
-    hookFetch()
-
-    // Create toggle label & add listener/classes/HTML
-    var toggleLabel = document.createElement('div') // create label div
-    toggleLabel.addEventListener('click', (event) => { toggleAutoclear(event) })
-    for (var link of document.querySelectorAll('a')) { // inspect sidebar links for classes
-        if (link.innerHTML.includes('New chat')) { // focus on 'New chat'
-            toggleLabel.setAttribute('class', link.classList) // borrow its classes
-            break // stop looping since class assignment is done
-        }
-    } updateToggleHTML()
-
-    // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
-    insertToggle()
-    var navObserver = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            if (mutation.type === 'childList' && mutation.addedNodes.length) {
-                insertToggle()
-            }
-        })
-    })
-    navObserver.observe(document.documentElement, { childList: true, subtree: true })
-
-    // Auto-clear chats if activated // 自动清除聊天是否激活
-    var clearObserver = new MutationObserver(function(mutations) {
-        mutations.forEach(function() {
-            var clearButton = document.getElementById('_clearButton_')
-            if (clearButton) {
-                if (clearButton.style.display != 'none') {
-                    setTimeout(chatgpt.clearChats, 250) ; clearObserver.disconnect()
-    }}})})
-    if (config.autoclear) {
-        clearObserver.observe(document, { childList: true, subtree: true })
-        // Auto-disconnect after 3.5sec to avoid clearing new chats // 还要在3.5秒后断开连接,以避免清除新的频道
-        setTimeout(function() { clearObserver.disconnect() }, 3500)
-    }
 
 })()
