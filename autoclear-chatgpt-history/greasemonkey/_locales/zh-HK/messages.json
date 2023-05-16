@@ -1,0 +1,10 @@
+{
+  "appName": { "message": "自動清除 ChatGPT 歷史記錄" },
+  "appDesc": { "message": "訪問 chat.openai.com 時自動清除聊天記錄" },
+  "menuLabel_autoClear": { "message": "自動清除聊天" },
+  "menuLabel_toggleVis": { "message": "切換可見性" },
+  "menuLabel_buttonVis": { "message": "按鈕可見性" },
+  "menuLabel_modeNotifs": { "message": "模式通知" },
+  "menuLabel_disabled": { "message": "已禁用（已安裝擴展）" },
+  "mode_autoClear": { "message": "自動清除" }
+}
