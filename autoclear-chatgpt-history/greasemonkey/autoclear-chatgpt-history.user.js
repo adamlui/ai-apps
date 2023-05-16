@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.5.16
+// @version             2023.5.16.1
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -62,6 +62,31 @@
     var configKeyPrefix = 'chatGPTac_'
     var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
     loadSetting('autoclear', 'toggleHidden', 'buttonHidden', 'notifHidden') ; config.isActive = config.autoclear
+
+    // Define messages
+    var msgsLoaded = new Promise(resolve => {
+        var msgHostDir = 'https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/greasemonkey/_locales/'
+        var msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        var msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
+        var msgXHRtries = 0
+        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        function onLoad(response) {
+            try { // to return localized messages.json
+                var messages = JSON.parse(response.responseText)
+                var cleanerMsgs = new Proxy(messages, { // remove need to ref nested keys
+                    get(target, prop) {
+                        if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
+                            return target[prop].message
+                }}}) ; resolve(cleanerMsgs)
+            } catch (error) { // if 404
+                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                    msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
+                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+            }
+        }
+    }) ; var messages = await msgsLoaded
 
     // Init/register menu
     var menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'] } // initialize menu vars
@@ -114,11 +139,13 @@
                 setTimeout(chatgpt.clearChats, 250) }
             config.isActive = true
             if (!config.notifHidden) {
-                chatgpt.notify('🕶 Auto-Clear: ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+                chatgpt.notify('🕶 ' + messages.mode_autoClear + ': ON',
+                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
         }} else if (!config.autoclear && config.isActive) {
             config.isActive = false
             if (!config.notifHidden) {
-                chatgpt.notify('🕶 Auto-Clear: OFF', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+                chatgpt.notify('🕶 ' + messages.mode_autoClear + ': OFF',
+                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
         }}
         saveSetting('autoclear', config.autoclear)
     })
@@ -150,7 +177,7 @@
     }}})})
     if (config.autoclear) {
         if (!config.notifHidden && document.title === 'New chat') {
-            chatgpt.notify('🕶 Auto-Clear: ON',
+            chatgpt.notify('🕶 ' + messages.mode_autoClear + ': ON',
                 '', '', chatgpt.isDarkMode() ? '' : 'shadow')
         } clearObserver.observe(document, { childList: true, subtree: true })
         // Auto-disconnect after 3.5sec to avoid clearing new chats // 还要在3.5秒后断开连接,以避免清除新的频道
@@ -164,42 +191,42 @@
         var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to toggle auto-clear
-        var acLabel = state.symbol[+!config.autoclear] + ' Auto-Clear Chats'
+        var acLabel = state.symbol[+!config.autoclear] + ' ' + messages.menuLabel_autoClear
                     + stateSeparator + state.word[+!config.autoclear]
         menuIDs.push(GM_registerMenuCommand(acLabel, function() {
             document.querySelector('#autoClearToggle').click()
         }))
 
         // Add 'Toggle Visibility' command
-        var tvLabel = state.symbol[+config.toggleHidden] + ' Toggle Visibility'
+        var tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
                     + stateSeparator + state.word[+config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, function() {
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden) {
-                chatgpt.notify('🕶 Toggle Visibility: '+ state.word[+config.toggleHidden],
+                chatgpt.notify('🕶 ' + messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden],
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add 'Button Visibility' command
-        var bvLabel = state.symbol[+config.buttonHidden] + ' Button Visibility'
+        var bvLabel = state.symbol[+config.buttonHidden] + ' ' + messages.menuLabel_buttonVis
                     + stateSeparator + state.word[+config.buttonHidden]
         menuIDs.push(GM_registerMenuCommand(bvLabel, function() {
             saveSetting('buttonHidden', !config.buttonHidden)
             document.getElementById('clearButton').style.display = config.buttonHidden ? 'none' : '' // toggle visibility
             if (!config.notifHidden) {
-                chatgpt.notify('🕶 Button Visibility: '+ state.word[+config.buttonHidden],
+                chatgpt.notify('🕶 ' + messages.menuLabel_buttonVis + ': '+ state.word[+config.buttonHidden],
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when changing settings/modes
-        var mnLabel = state.symbol[+config.notifHidden] + ' Mode Notifications'
+        var mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
                     + stateSeparator + state.word[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
-            chatgpt.notify('🕶 Mode Notifications: ' + state.word[+config.notifHidden],
+            chatgpt.notify('🕶 ' + messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden],
                 '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
