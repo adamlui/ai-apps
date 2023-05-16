@@ -22,7 +22,7 @@ Auto-clear your ChatGPT query history for maximum privacy.
 
 ### <img style="margin-bottom:-1px" src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](../bravegpt) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-Display ChatGPT answers in Brave Search sidebar.
+Display ChatGPT answers in Brave Search sidebar (powered by GPT-4!)
 <br>[Install](https://greasyfork.org/scripts/462440-bravegpt) / 
 [Readme](../bravegpt#readme) / 
 [Discuss](https://github.bravegpt.com/discussions)
@@ -50,7 +50,7 @@ Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling.
 
 ### <img style="margin-bottom:-1px" src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](../duckduckgpt) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" alt="DuckDuckGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;DuckDuckGo | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-Display ChatGPT answers in DuckDuckGo sidebar.
+Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 <br>[Install](https://greasyfork.org/scripts/459849-duckduckgpt) / 
 [Readme](../duckduckgpt#readme) / 
 [Discuss](https://github.duckduckgpt.com/discussions)
