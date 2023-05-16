@@ -57,4 +57,5 @@
 
 #
 
-<a href="#-chatgpt-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F-">Back to top ↑</a>
+[讨论](https://github.com/adamlui/chatgpt-apps/discussions) / 
+<a href="#-chatgpt-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F-">回到顶部 ↑</a>
