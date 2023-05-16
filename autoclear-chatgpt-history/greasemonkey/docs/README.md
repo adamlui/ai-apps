@@ -87,6 +87,7 @@ The following contributors made this project possible:
 [![Follow @adamllui on Twitter](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
 [![Follow @Tripp1e on GitHub](https://img.shields.io/github/followers/Tripp1e?label=Follow%20%40Tripp1e&style=social "GitHub")](https://github.com/Tripp1e)
 [![Follow @XiaoYingYo on GitHub](https://img.shields.io/github/followers/XiaoYingYo?label=Follow%20%40XiaoYingYo&style=social "GitHub")](https://github.com/XiaoYingYo)
+[![Follow @Zin6969 on GitHub](https://img.shields.io/github/followers/Zin6969?label=Follow%20%40Zin6969&style=social "GitHub")](https://github.com/Zin6969)
 
 ## More ChatGPT apps
 
