@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.5.13.1
+// @version             2023.5.17
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4!)
@@ -33,6 +33,8 @@
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
 // @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@25d3b75b45a09687caa47c741b2718187927fee0/dist/chatgpt-1.2.3.min.js
+// @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
+// @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
@@ -307,6 +309,23 @@
         fillBraveGPTfooter() ; braveGPTfooter.style.height = 'inherit' // (re-)init (after loading replies)
         braveGPTdiv.appendChild(braveGPTfooter) // append feedback link
 
+        // Render math
+        renderMathInElement(braveGPTdiv.querySelector('pre'), { // eslint-disable-line no-undef
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true},
+                {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+                {left: "\\begin{align}", right: "\\end{align}", display: true},
+                {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+                {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+                {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+                {left: "\\[", right: "\\]", display: true}
+            ],
+            throwOnError: false
+        })
+
         // Initialize variables for listeners
         var form = braveGPTdiv.querySelector('form')
         var replyBox = document.getElementById('bravegpt-reply-box')
@@ -421,6 +440,7 @@
             + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
             + '.kudo-ai a { color: #aaa ; text-decoration: none } '
             + '.kudo-ai a:hover { color: black ; text-decoration: none } '
+            + '.katex-html { display: none } ' // hide unrendered math
         document.head.appendChild(braveGPTstyle) // append style to <head>
 
         // Create BraveGPT container & add id/classes
