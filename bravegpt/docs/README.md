@@ -8,7 +8,7 @@
   
 </h1>
 
-[![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
+[![license](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
 [![commits](https://img.shields.io/github/commit-activity/w/kudoai/bravegpt?label=Commits)](https://github.com/adamlui/userscripts/commits/master/chatgpt/bravegpt)
 [![code-quality](https://img.shields.io/codefactor/grade/github/kudoai/bravegpt?label=Code%20Quality)](https://www.codefactor.io/repository/github/kudoai/bravegpt)
