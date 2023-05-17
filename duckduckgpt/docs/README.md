@@ -53,7 +53,7 @@
     <img width=455 alt="chatgpt.js" style="margin: 0 0 -13px 18px" src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
 </picture></a>
 <a href="https://katex.org">
-    <img width=175 alt="KaTeX" style="margin: 0 0 -13px 24px" src="https://i.imgur.com/0AOdrcR.png">
+    <img width=175 alt="KaTeX" style="margin: 0 0 -13px 24px" src="https://i.imgur.com/3FBdSCi.png">
 </a>
 <br /><br />
 
