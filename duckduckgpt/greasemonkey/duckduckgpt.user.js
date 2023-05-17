@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.5.17
+// @version             2023.5.17.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4!)
@@ -312,14 +312,14 @@
         ddgptDiv.querySelector('pre').textContent = answer
 
         // Render math
-        renderMathInElement(ddgptDiv.querySelector('pre'), {
+        renderMathInElement(ddgptDiv.querySelector('pre'), { // eslint-disable-line no-undef
             delimiters: [
                 {left: '$$', right: '$$', display: true},
                 {left: '$', right: '$', display: false},
                 {left: '\\(', right: '\\)', display: false},
                 {left: '\\[', right: '\\]', display: true}
             ],
-            throwOnError : false
+            throwOnError: false
         })
 
         // Initialize variables for listeners
