@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.5.17.4
+// @version             2023.5.17.5
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4!)
@@ -43,6 +43,8 @@
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
 // @grant               GM.xmlHttpRequest
+// @downloadURL         https://www.duckduckgpt.com/userscript/code/duckduckgpt.user.js
+// @updateURL           https://www.duckduckgpt.com/userscript/code/duckduckgpt.meta.js
 // @homepageURL         https://www.duckduckgpt.com
 // @supportURL          https://github.duckduckgpt.com/issues
 // ==/UserScript==
