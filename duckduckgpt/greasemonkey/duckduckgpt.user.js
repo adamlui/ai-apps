@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.5.13.2
+// @version             2023.5.17
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4!)
@@ -34,6 +34,8 @@
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
 // @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@25d3b75b45a09687caa47c741b2718187927fee0/dist/chatgpt-1.2.3.min.js
+// @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
+// @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
@@ -41,8 +43,6 @@
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
 // @grant               GM.xmlHttpRequest
-// @downloadURL         https://www.duckduckgpt.com/userscript/code/duckduckgpt.user.js
-// @updateURL           https://www.duckduckgpt.com/userscript/code/duckduckgpt.meta.js
 // @homepageURL         https://www.duckduckgpt.com
 // @supportURL          https://github.duckduckgpt.com/issues
 // ==/UserScript==
@@ -311,6 +311,17 @@
         ddgptDiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank">DuckDuckGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="ddgpt-reply-box" rows="1" placeholder="Send reply..."></textarea></div></form></section>'
         ddgptDiv.querySelector('pre').textContent = answer
 
+        // Render math
+        renderMathInElement(ddgptDiv.querySelector('pre'), {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError : false
+        })
+
         // Initialize variables for listeners
         var form = ddgptDiv.querySelector('form')
         var replyBox = document.getElementById('ddgpt-reply-box')
@@ -412,6 +423,7 @@
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
         + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
+        + '.katex-html { display: none } ' // hide unrendered math
     )
     document.head.appendChild(ddgptStyle) // append style to <head>
 
