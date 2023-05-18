@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.5.17
+// @version             2023.5.17.1
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -103,8 +103,8 @@
 // @namespace           https://github.com/adamlui
 // @license             MIT
 // @match               https://chat.openai.com/*
-// @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
-// @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
+// @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-icon/black/icon48.png
+// @icon64              https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-icon/black/icon64.png
 // @compatible          chrome
 // @compatible          firefox
 // @compatible          edge
@@ -129,7 +129,7 @@
 // @supportURL          https://chatgptevo.com/infinity/support
 // ==/UserScript==
 
-// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
+// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license
 
 (async () => {
 
@@ -305,7 +305,7 @@
 
     function updateToggleHTML() {
         toggleLabel.innerHTML = `
-            <img width="18px" src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-icon/icon64.png">
+            <img width="18px" src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-icon/white/icon64.png">
             ${ messages.menuLabel_infinityMode } ${config.infinityMode ? messages.state_enabled : messages.state_disabled }
             <label class="switch" ><input id="infinityToggle" type="checkbox"
                 ${ config.infinityMode ? 'checked="true"' : '' } >
