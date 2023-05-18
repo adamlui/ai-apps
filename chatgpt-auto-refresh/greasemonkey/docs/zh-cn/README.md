@@ -84,7 +84,7 @@
 </picture></a>
 <br /><br />
 
-ChatGPT 无限依赖于强大的 [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) 库 (c) 2023 KudoAI 和 MIT 许可下的贡献者。
+ChatGPT 自動刷新依賴於強大的 [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) 庫 (c) 2023 KudoAI 和 MIT 許可下的貢獻者。
 
 </div>
 </h6>
