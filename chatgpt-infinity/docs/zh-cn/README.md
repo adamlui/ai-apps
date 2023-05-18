@@ -54,7 +54,7 @@
 </picture></a>
 <br /><br />
 
-ChatGPT无限依赖于强大的 [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) 库 (c) 2023 刘展鹏 (Adam Lui), chatgpt.js 和 MIT 许可下的贡献者的代码。
+ChatGPT 无限依赖于强大的 [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) 库 (c) 2023 KudoAI 和 MIT 许可下的贡献者。
 
 </div>
 </h6>
