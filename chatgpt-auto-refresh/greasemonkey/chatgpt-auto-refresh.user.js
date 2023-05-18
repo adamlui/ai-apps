@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.5.15
+// @version             2023.5.17
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -129,7 +129,7 @@
 // @supportURL          https://github.com/adamlui/chatgpt-auto-refresh/issues
 // ==/UserScript==
 
-// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
+// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license.
 
 (async () => {
 

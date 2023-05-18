@@ -84,7 +84,7 @@
 </picture></a>
 <br /><br />
 
-ChatGPT Auto Refresh relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 Adam Lui, chatgpt.js & contributors under the MIT license.
+ChatGPT Auto Refresh relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 KudoAI & contributors under the MIT license.
 
 </div>
 </h6>
