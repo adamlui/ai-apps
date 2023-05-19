@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.5.17
+// @version             2023.5.19
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -42,7 +42,7 @@
 // @compatible          qq
 // @match               https://chat.openai.com/*
 // @run-at              document-end
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@51dc48d5bff8e5539e8cee273032360d0691c6a6/dist/chatgpt-1.6.5.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@abf4e7ea3ed450b9f34b045d73c9522be43b2c1c/dist/chatgpt-1.6.7.min.js
 // @connect             raw.githubusercontent.com
 // @grant               GM_setValue
 // @grant               GM_getValue
@@ -150,9 +150,9 @@
         }}
         saveSetting('autoclear', config.autoclear)
     })
-    for (var link of document.querySelectorAll('a')) { // inspect sidebar links for classes
-        if (link.innerHTML.includes('New chat')) { // focus on 'New chat'
-            toggleLabel.setAttribute('class', link.classList) // borrow its classes
+    for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) { // inspect sidebar for classes
+        if (navLink.text.match(/.*chat/)) { // focus on new/clear chat button
+            toggleLabel.setAttribute('class', navLink.classList) // borrow its classes
             break // stop looping since class assignment is done
         }
     } updateToggleHTML()
@@ -246,10 +246,11 @@
     // Define TOGGLE functions
 
     function insertToggle() {
-        var firstMenu = document.querySelector('nav')
-        if (!firstMenu.contains(toggleLabel)) { // check if label exists first // 检查标签是否首先存在
-            firstMenu.insertBefore(toggleLabel, firstMenu.childNodes[0]) // insert before 'New chat'// 在"新聊天"之前插入
-    }}
+        var chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]')
+        var firstButton = chatHistoryNav.querySelector('a')
+        if (chatgpt.history.isOff()) firstButton.nextElementSibling.style.display = 'none' // hide enable-history spam div
+        if (!chatHistoryNav.contains(toggleLabel)) chatHistoryNav.insertBefore(toggleLabel, firstButton) // insert toggle
+    }
 
     function updateToggleHTML() {
         toggleLabel.innerHTML = `
