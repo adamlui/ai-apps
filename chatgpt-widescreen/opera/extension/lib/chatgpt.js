@@ -1,4 +1,4 @@
-/* This library is a condensed version of chatgpt.js v1.6.5 */
+/* This library is a condensed version of chatgpt.js v1.6.7 */
 /* (c) 2023 KudoAI & contributors under the MIT license */
 /* Source: https://github.com/chatgptjs/chatgpt.js */
 
@@ -84,8 +84,8 @@ var chatgpt = {
     },
 
     startNewChat: function() {
-        for (var navLink of document.querySelectorAll('nav > a')) {
-            if (navLink.text.includes('New chat')) {
+        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+            if (navLink.text.match(/(new|clear) chat/i)) {
                 navLink.click(); return;
     }}}
 
