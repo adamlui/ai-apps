@@ -1,6 +1,7 @@
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Auto-Continue ⏩ &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Automatically%20continue%20the%20conversation%20from%20multiple%20ChatGPT%20responses%20w%2F%20this%20plug-in%21T&url=https://chatgptevo.com/autocontinue&hashtags=javascript,openai,chatgpt)
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
+[![commits](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-auto-continue?label=GitHub+Commits)](https://github.com/adamlui/chatgpt-auto-continue/commits/main)
 [![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-continue?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-continue)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 
