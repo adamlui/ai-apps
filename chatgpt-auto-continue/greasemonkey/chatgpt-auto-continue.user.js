@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                ChatGPT Auto-Continue
-// @version             2023.5.21.3
+// @version             2023.5.21.4
 // @description         Auto-continue multiple ChatGPT responses
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -14,7 +14,6 @@
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
 // @grant               GM.xmlHttpRequest
-// @grant               none
 // @noframes
 // @homepageURL         https://github.com/adamlui/chatgpt-auto-continue
 // @supportURL          https://github.com/adamlui/chatgpt-auto-continue/issues
@@ -109,7 +108,7 @@
     continueObserver.observe(document, { childList: true, subtree: true })
 
     // Notify of status on load
-    if (!config.notifHidden && document.title === 'New chat') {
+    if (!config.notifHidden) {
         chatgpt.notify(appSymbol + ' ' + messages.mode_autoContinue + ': ON',
             '', '', chatgpt.isDarkMode() ? '' : 'shadow' )}
 
