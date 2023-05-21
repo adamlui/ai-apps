@@ -27,6 +27,13 @@
 [自述文件](../../bravegpt#readme) / 
 [讨论](https://github.bravegpt.com/discussions)
 
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动继续 ⏩](../../chatgpt-auto-continue)
+
+自动继续生成多个 ChatGPT 响应。<br>
+[安装](https://greasyfork.org/scripts/466789-chatgpt-auto-continue) / 
+[自述文件](../../chatgpt-auto-continue#readme) / 
+[讨论](https://chatgptevo.com/autocontinue/discussions)
+
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](../../chatgpt-auto-refresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="在 Awesome Userscripts 中提到" style="margin:0 0 -2px 5px"></a>
 
 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
