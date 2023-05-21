@@ -133,12 +133,12 @@ Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced sc
 [Readme](https://github.com/adamlui/chatgpt-widescreen#readme) / 
 [Discuss](https://chatgptevo.com/widescreen/discussions)
 
-### <img style="margin-bottom:-1px" src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://github.bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -3px 5px;" width="112" height="24" /></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continue ⏩](https://chatgptevo.com/autocontinue/github)
 
-Display ChatGPT answers in Brave Search sidebar (powered by GPT-4!)
-<br>[Install](https://greasyfork.org/scripts/462440-bravegpt) / 
-[Readme](https://github.bravegpt.com/#readme) / 
-[Discuss](https://github.bravegpt.com/discussions)
+Auto-continue generating multiple ChatGPT responses.<br>
+[Install](https://greasyfork.org/scripts/466789-chatgpt-auto-continue) / 
+[Readme](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
+[Discuss](https://chatgptevo.com/autocontinue/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](https://chatgptevo.com/infinity/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 4px"></a>
 
