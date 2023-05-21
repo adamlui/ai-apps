@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name                ChatGPT Auto-Continue
-// @version             2023.5.21.4
+// @name                ChatGPT Auto-Continue ⏩
+// @version             2023.5.21.5
 // @description         Auto-continue multiple ChatGPT responses
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
