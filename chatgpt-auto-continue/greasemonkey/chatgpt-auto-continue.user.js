@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                ChatGPT Auto-Continue ⏩
-// @version             2023.5.21.5
+// @version             2023.5.21.6
 // @description         Auto-continue multiple ChatGPT responses
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -15,6 +15,8 @@
 // @grant               GM_unregisterMenuCommand
 // @grant               GM.xmlHttpRequest
 // @noframes
+// @updateURL           https://greasyfork.org/scripts/466789/code/chatgpt-auto-continue.meta.js
+// @updateURL           https://greasyfork.org/scripts/466789/code/chatgpt-auto-continue.user.js
 // @homepageURL         https://github.com/adamlui/chatgpt-auto-continue
 // @supportURL          https://github.com/adamlui/chatgpt-auto-continue/issues
 // ==/UserScript==
