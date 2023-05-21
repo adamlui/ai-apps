@@ -38,12 +38,6 @@ ChatGPT Auto-Continue relies on code from the powerful [chatgpt.js](https://gith
 </div>
 </h6>
 
-<a href="#"><img height-40 alt="Install this script" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height-40 alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
-<br>
-[Discuss](https://chatgptevo.com/autocontinue/discussions) /
-[Leave a review](#) /
-[More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
-
 ## Author links
 
 [![Follow @adamlui on GitHub](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "GitHub")](https://github.com/adamlui)
