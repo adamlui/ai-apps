@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT Auto-Continue" },
-  "appDesc": { "message": "Auto-continue generating multiple ChatGPT responses" },
+  "appDesc": { "message": "Automatically continue generating multiple ChatGPT responses" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
   "menuLabel_disabled": { "message": "Disabled (extension installed)" },
   "mode_autoContinue": { "message": "Auto-Continue" },
