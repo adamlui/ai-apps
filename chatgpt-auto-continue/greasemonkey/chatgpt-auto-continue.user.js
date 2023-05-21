@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動繼續 ⏩
 // @name:zh-SG          ChatGPT 自动继续 ⏩
 // @name:zh-TW          ChatGPT 自動繼續 ⏩
-// @version             2023.5.21.7
+// @version             2023.5.21.8
 // @description         Auto-continue generating multiple ChatGPT responses
 // @description:ar      متابعة توليد إجابات متعددة من ChatGPT تلقائيًا
 // @description:bg      Автоматично продължаване на генерирането на множество отговори от ChatGPT
@@ -117,6 +117,8 @@
 // @homepageURL         https://github.com/adamlui/chatgpt-auto-continue
 // @supportURL          https://github.com/adamlui/chatgpt-auto-continue/issues
 // ==/UserScript==
+
+// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license.
 
 (async () => {
 
