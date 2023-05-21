@@ -16,7 +16,11 @@
 
 #
 
-<img src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/media/images/screenshots/auto-continue-on-notification.png">
+<div align="center">
+
+<img width=455 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/media/images/screenshots/regenerate-continue-buttons.jpg"> <img width=377 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/media/images/screenshots/auto-continue-on-notification.png">
+
+</div>
 
 ## Installation
 
