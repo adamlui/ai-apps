@@ -7,17 +7,17 @@
 ### Automatically continue generating ChatGPT responses when chats cut off.
 <br>
 
-<a href="#"><img alt="Install this script" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/466789-chatgpt-auto-continue"><img alt="Install this script" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptevo.com/autocontinue/discussions) /
-[Review](#) /
+[Review](https://greasyfork.org/scripts/466789-chatgpt-auto-continue/feedback#post-discussion) /
 [Contact author](https://github.com/adamlui)
 
 ## Installation
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
-2. Install [ChatGPT Auto-Continue](#) (will load in userscript manager installed above)
+2. Install [ChatGPT Auto-Continue](https://greasyfork.org/scripts/466789-chatgpt-auto-continue) (will load in userscript manager installed above)
 
 3. Visit [chat.openai.com](https://chat.openai.com) as normal, and multi-reply conversations will automatically continue generating when cut-off!
 
