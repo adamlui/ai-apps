@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT Auto-Continue" },
-  "appDesc": { "message": "Automatically continue generating ChatGPT responses when conversation cuts-off" },
+  "appDesc": { "message": "Automatically continue generating ChatGPT responses when chats cut off" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
   "menuLabel_disabled": { "message": "Disabled (extension installed)" },
   "mode_autoContinue": { "message": "Auto-Continue" },
