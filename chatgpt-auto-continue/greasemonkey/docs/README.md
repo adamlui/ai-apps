@@ -13,6 +13,10 @@
 [Review](https://greasyfork.org/scripts/466789-chatgpt-auto-continue/feedback#post-discussion) /
 [Contact author](https://github.com/adamlui)
 
+#
+
+<img src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/media/images/screenshots/auto-continue-on-notification.png">
+
 ## Installation
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
