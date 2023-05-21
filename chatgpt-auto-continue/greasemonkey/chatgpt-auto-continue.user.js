@@ -11,7 +11,7 @@
 // @name:es             ChatGPT Continuación Automática ⏩
 // @name:fi             ChatGPT Automaattinen Jatkaminen ⏩
 // @name:fr             ChatGPT Auto-Continuation ⏩
-// @name:fr-            CA ChatGPT Auto-Continuation ⏩
+// @name:fr-CA          ChatGPT Auto-Continuation ⏩
 // @name:gu             ચેટજીપીટી સ્વચાલિત ચાલુ રાખો ⏩
 // @name:hi             चैटजीपीटी स्वचालित जारी रखें ⏩
 // @name:hu             ChatGPT Automatikus Folytatás ⏩
@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動繼續 ⏩
 // @name:zh-SG          ChatGPT 自动继续 ⏩
 // @name:zh-TW          ChatGPT 自動繼續 ⏩
-// @version             2023.5.21.8
+// @version             2023.5.21.9
 // @description         Auto-continue generating multiple ChatGPT responses
 // @description:ar      متابعة توليد إجابات متعددة من ChatGPT تلقائيًا
 // @description:bg      Автоматично продължаване на генерирането на множество отговори от ChatGPT
