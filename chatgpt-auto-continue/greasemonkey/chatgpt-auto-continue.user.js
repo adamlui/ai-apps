@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                ChatGPT Auto-Continue
-// @version             2023.5.21.2
+// @version             2023.5.21.3
 // @description         Auto-continue multiple ChatGPT responses
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -9,6 +9,11 @@
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=openai.com
 // @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@744003f7589935a1027840a8be65239696efd05a/dist/chatgpt-1.7.1.min.js
 // @connect             raw.githubusercontent.com
+// @grant               GM_setValue
+// @grant               GM_getValue
+// @grant               GM_registerMenuCommand
+// @grant               GM_unregisterMenuCommand
+// @grant               GM.xmlHttpRequest
 // @grant               none
 // @noframes
 // @homepageURL         https://github.com/adamlui/chatgpt-auto-continue
