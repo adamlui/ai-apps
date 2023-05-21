@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.5.19
+// @version             2023.5.21
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -228,7 +228,7 @@
     // Activate auto-refresh on first visit if enabled
     if (!config.arDisabled) {
         chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true
-        if (!config.notifHidden && document.title === 'New chat') {
+        if (!config.notifHidden) {
             chatgpt.notify('↻ ' + messages.menuLabel_autoRefresh + ': ON',
                 '', '', chatgpt.isDarkMode() ? '' : 'shadow')
     }}
