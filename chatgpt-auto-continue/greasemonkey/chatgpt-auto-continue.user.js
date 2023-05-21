@@ -48,56 +48,56 @@
 // @name:zh-HK          ChatGPT 自動繼續 ⏩
 // @name:zh-SG          ChatGPT 自动继续 ⏩
 // @name:zh-TW          ChatGPT 自動繼續 ⏩
-// @version             2023.5.21.9
-// @description         Auto-continue generating multiple ChatGPT responses
-// @description:ar      متابعة توليد إجابات متعددة من ChatGPT تلقائيًا
-// @description:bg      Автоматично продължаване на генерирането на множество отговори от ChatGPT
-// @description:bn      অটো-চালিত মাল্টিপল চ্যাটজিপিটি উত্তর তৈরি করা
-// @description:cs      Automatické pokračování v generování více odpovědí od ChatGPT
-// @description:da      Auto-fortsæt med at generere flere ChatGPT-svar
-// @description:de      Automatisches Fortsetzen der Generierung mehrerer ChatGPT-Antworten
-// @description:el      Αυτόματη συνέχιση παραγωγής πολλαπλών απαντήσεων από το ChatGPT
-// @description:eo      Aŭtomata daŭrigado de generado de pluraj respondoj de ChatGPT
-// @description:es      Continuación automática generando múltiples respuestas de ChatGPT
-// @description:fi      Automaattinen jatkuva useiden ChatGPT-vastausten generointi
-// @description:fr      Génération automatique continue de multiples réponses ChatGPT
-// @description:fr-CA   Génération automatique continue de multiples réponses ChatGPT
-// @description:gu      આપમો-ચાલેલો મલ્ટીપલ ચેટજીપીટી જવાબો જનરેટ કરવો
-// @description:hi      ऑटो-जारी अनेक ChatGPT उत्तरों का उत्पादन करें
-// @description:hu      Automatikus folyamatos ChatGPT válaszok generálása
-// @description:in      Lanjutkan menghasilkan banyak jawaban ChatGPT secara otomatis
-// @description:it      Continua automaticamente a generare molteplici risposte ChatGPT
-// @description:iw      המשך אוטומטי ליצירת מספר תשובות מרובות של ChatGPT
-// @description:ja      ChatGPT の複数の回答を自動で継続的に生成
-// @description:ka      ავტომატურად გაგებ.
-// @description:kn      ಚಾಟ್ಜಿಪಿಟಿ ಬಹುತರದ ಪ್ರತಿಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮುಂಚಿತವಾಗಿಸುವುದು
-// @description:ko      ChatGPT 다중 응답 자동 생성 계속하기
-// @description:ku      Berdewamkirina Otonom a ChatGPT-ê jiberîne
-// @description:ml      ചാറ്റ്‌ജിപിടി പലപ്പോഴും ഉത്തരങ്ങൾ സ്വയംചാലിതമായി തുടങ്ങുക
-// @description:mr      चॅटजीपीटी स्वयंचलितपणे प्रारंभ करा
-// @description:ms      Sambungan Auto menghasilkan banyak respons ChatGPT
-// @description:my      ChatGPT အလိုအလျောက်စက်မှန်ပြတ်သက်ရောက်ခြင်း
-// @description:nl      ChatGPT Automatisch Doorgaan met het genereren van meerdere reacties
-// @description:no      ChatGPT Automatisk Fortsette generering av flere svar
-// @description:or      ଚାଟଜିପିଟି ସ୍ୱୟଂଚାଳିତ ବହୁତର ପ୍ରତିଭା ଉତ୍ପାଦନ କରନ୍ତୁ
-// @description:pa      ਚੈਟਜੀਪੀਟੀ ਆਟੋ-ਕੰਟੀਨਿਊ ਕਰੋ ਬਹੁਤ ਸਾਰੇ ਜਵਾਬ ਦੀ ਪੈਦਾਵਾਰ
-// @description:pl      ChatGPT Automatycznie Kontynuuj generowanie wielu odpowiedzi
-// @description:pt      ChatGPT Continuação Automática da geração de várias respostas
-// @description:pt-BR   ChatGPT Continuação Automática da geração de várias respostas
-// @description:ro      ChatGPT Continuare automată generarea de mai multe răspunsuri
-// @description:ru      Автоматическое продолжение генерации нескольких ответов ChatGPT
-// @description:sk      ChatGPT Automaticky Pokračujte v generovaní viacerých odpovedí
-// @description:sr      Аутоматски наставак генерисања више одговора ЧатГПТ
-// @description:ta      பல பதிவுகளைத் தானியங்கி உருவாக்கும் சாட் ஜிபிடி தொடங்கல்
-// @description:th      ChatGPT ดำเนินการต่ออัตโนมัติในการสร้างคำตอบหลายรายการ
-// @description:tr      ChatGPT Otomatik Devam Etme Çoklu Yanıt Üretme
-// @description:uk      Автоматичне продовження генерації кількох відповідей ChatGPT
-// @description:ur      چیٹ جی پی ٹی متعدد جوابات کی خودکار تیاری جاری رکھیں
-// @description:vi      ChatGPT Tự Động Tiếp Tục tạo nhiều câu trả lời
-// @description:zh-CN   自动继续生成多个 ChatGPT 响应
-// @description:zh-HK   自動繼續生成多個 ChatGPT 響應
-// @description:zh-SG   自动继续生成多个 ChatGPT 响应
-// @description:zh-TW   自動繼續生成多個 ChatGPT 響應
+// @version             2023.5.21.10
+// @description         ⚡ Automatically continue generating multiple ChatGPT responses
+// @description:ar      ⚡ استمر في توليد إجابات متعددة من ChatGPT تلقائيًا
+// @description:bg      ⚡ Автоматично продължаване на генерирането на множество отговори от ChatGPT
+// @description:bn      ⚡ অটো-চালিত মাল্টিপল চ্যাটজিপিটি উত্তর তৈরি করা
+// @description:cs      ⚡ Automatické pokračování v generování více odpovědí od ChatGPT
+// @description:da      ⚡ Auto-fortsæt med at generere flere ChatGPT-svar
+// @description:de      ⚡ Automatisches Fortsetzen der Generierung mehrerer ChatGPT-Antworten
+// @description:el      ⚡ Αυτόματη συνέχιση παραγωγής πολλαπλών απαντήσεων από το ChatGPT
+// @description:eo      ⚡ Aŭtomata daŭrigado de generado de pluraj respondoj de ChatGPT
+// @description:es      ⚡ Continuación automática generando múltiples respuestas de ChatGPT
+// @description:fi      ⚡ Automaattinen jatkuva useiden ChatGPT-vastausten generointi
+// @description:fr      ⚡ Génération automatique continue de multiples réponses ChatGPT
+// @description:fr-CA   ⚡ Génération automatique continue de multiples réponses ChatGPT
+// @description:gu      ⚡ આપમો-ચાલેલો મલ્ટીપલ ચેટજીપીટી જવાબો જનરેટ કરવો
+// @description:hi      ⚡ ऑटो-जारी अनेक ChatGPT उत्तरों का उत्पादन करें
+// @description:hu      ⚡ Automatikus folyamatos ChatGPT válaszok generálása
+// @description:in      ⚡ Lanjutkan menghasilkan banyak jawaban ChatGPT secara otomatis
+// @description:it      ⚡ Continua automaticamente a generare molteplici risposte ChatGPT
+// @description:iw      ⚡ המשך אוטומטי ליצירת מספר תשובות מרובות של ChatGPT
+// @description:ja      ⚡ ChatGPT の複数の回答を自動で継続的に生成
+// @description:ka      ⚡ ავტომატურად გაგებ.
+// @description:kn      ⚡ ಚಾಟ್ಜಿಪಿಟಿ ಬಹುತರದ ಪ್ರತಿಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮುಂಚಿತವಾಗಿಸುವುದು
+// @description:ko      ⚡ ChatGPT 다중 응답 자동 생성 계속하기
+// @description:ku      ⚡ Berdewamkirina Otonom a ChatGPT-ê jiberîne
+// @description:ml      ⚡ ചാറ്റ്‌ജിപിടി പലപ്പോഴും ഉത്തരങ്ങൾ സ്വയംചാലിതമായി തുടങ്ങുക
+// @description:mr      ⚡ चॅटजीपीटी स्वयंचलितपणे प्रारंभ करा
+// @description:ms      ⚡ Sambungan Auto menghasilkan banyak respons ChatGPT
+// @description:my      ⚡ ChatGPT အလိုအလျောက်စက်မှန်ပြတ်သက်ရောက်ခြင်း
+// @description:nl      ⚡ ChatGPT Automatisch Doorgaan met het genereren van meerdere reacties
+// @description:no      ⚡ ChatGPT Automatisk Fortsette generering av flere svar
+// @description:or      ⚡ ଚାଟଜିପିଟି ସ୍ୱୟଂଚାଳିତ ବହୁତର ପ୍ରତିଭା ଉତ୍ପାଦନ କରନ୍ତୁ
+// @description:pa      ⚡ ਚੈਟਜੀਪੀਟੀ ਆਟੋ-ਕੰਟੀਨਿਊ ਕਰੋ ਬਹੁਤ ਸਾਰੇ ਜਵਾਬ ਦੀ ਪੈਦਾਵਾਰ
+// @description:pl      ⚡ ChatGPT Automatycznie Kontynuuj generowanie wielu odpowiedzi
+// @description:pt      ⚡ ChatGPT Continuação Automática da geração de várias respostas
+// @description:pt-BR   ⚡ ChatGPT Continuação Automática da geração de várias respostas
+// @description:ro      ⚡ ChatGPT Continuare automată generarea de mai multe răspunsuri
+// @description:ru      ⚡ Автоматическое продолжение генерации нескольких ответов ChatGPT
+// @description:sk      ⚡ ChatGPT Automaticky Pokračujte v generovaní viacerých odpovedí
+// @description:sr      ⚡ Аутоматски наставак генерисања више одговора ЧатГПТ
+// @description:ta      ⚡ பல பதிவுகளைத் தானியங்கி உருவாக்கும் சாட் ஜிபிடி தொடங்கல்
+// @description:th      ⚡ ChatGPT ดำเนินการต่ออัตโนมัติในการสร้างคำตอบหลายรายการ
+// @description:tr      ⚡ ChatGPT Otomatik Devam Etme Çoklu Yanıt Üretme
+// @description:uk      ⚡ Автоматичне продовження генерації кількох відповідей ChatGPT
+// @description:ur      ⚡ چیٹ جی پی ٹی متعدد جوابات کی خودکار تیاری جاری رکھیں
+// @description:vi      ⚡ ChatGPT Tự Động Tiếp Tục tạo nhiều câu trả lời
+// @description:zh-CN   ⚡ 自动继续生成多个 ChatGPT 响应
+// @description:zh-HK   ⚡ 自動繼續生成多個 ChatGPT 響應
+// @description:zh-SG   ⚡ 自动继续生成多个 ChatGPT 响应
+// @description:zh-TW   ⚡ 自動繼續生成多個 ChatGPT 響應
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @license             MIT
@@ -153,10 +153,10 @@
 
     await chatgpt.isLoaded()
 
-    // Check for update (1x/24h)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 86400000) { // if 24h since last check
+    // Check for update (1x/48h)
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) { // if 48h since last check
 
-        // Fetch .js to examine meta
+        // Fetch latest meta
         var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
         fetch(updateURL + '?t=' + Date.now(), { cache: 'no-cache' })
             .then((response) => { response.text().then((data) => {
@@ -198,7 +198,7 @@
     var menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'] } // initialize menu vars
     registerMenu() // create browser toolbar menu
 
-    // Observe DOM for need to continue
+    // Observe DOM for need to continue generating response
     const continueObserver = new MutationObserver((mutationsList) => {
         for (const mutation of mutationsList) {
             if (mutation.type === 'childList') {
