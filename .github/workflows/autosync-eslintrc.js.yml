@@ -1,4 +1,4 @@
-name: Sync /.eslintrc.js to ( adamlui/(userscripts|autoclear-chatgpt-history|chatgpt-auto-refresh|chatgpt-infinity|chatgpt-widescreen|youtube-classic)/.eslintrc.js && kudoai/(bravegpt|duckduckgpt)/.eslintrc.js )
+name: Sync /.eslintrc.js to ( adamlui/(userscripts|autoclear-chatgpt-history|chatgpt-auto-continue|chatgpt-auto-refresh|chatgpt-infinity|chatgpt-widescreen|youtube-classic)/.eslintrc.js && kudoai/(bravegpt|duckduckgpt)/.eslintrc.js )
 
 on:
   push:
@@ -31,6 +31,13 @@ jobs:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/autoclear-chatgpt-history
           path: adamlui/autoclear-chatgpt-history
+
+      - name: Checkout adamlui/chatgpt-auto-continue
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-auto-continue
+          path: adamlui/chatgpt-auto-continue
 
       - name: Checkout adamlui/chatgpt-auto-refresh
         uses: actions/checkout@v2
@@ -80,6 +87,9 @@ jobs:
       - name: Sync /.eslintrc.js to adamlui/autoclear-chatgpt-history/.eslintrc.js
         run: cp -f -v ${{ github.workspace }}/adamlui/chatgpt-apps/.eslintrc.js ${{ github.workspace }}/adamlui/autoclear-chatgpt-history/.eslintrc.js
 
+      - name: Sync /.eslintrc.js to adamlui/chatgpt-auto-continue/.eslintrc.js
+        run: cp -f -v ${{ github.workspace }}/adamlui/chatgpt-apps/.eslintrc.js ${{ github.workspace }}/adamlui/chatgpt-auto-continue/.eslintrc.js
+
       - name: Sync /.eslintrc.js to adamlui/chatgpt-auto-refresh/.eslintrc.js
         run: cp -f -v ${{ github.workspace }}/adamlui/chatgpt-apps/.eslintrc.js ${{ github.workspace }}/adamlui/chatgpt-auto-refresh/.eslintrc.js
 
@@ -117,6 +127,16 @@ jobs:
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: '.eslintrc.js'
           repository: adamlui/autoclear-chatgpt-history
+
+      - name: Push to adamlui/chatgpt-auto-continue
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
+          file_pattern: '.eslintrc.js'
+          repository: adamlui/chatgpt-auto-continue
 
       - name: Push to adamlui/chatgpt-auto-refresh
         uses: stefanzweifel/git-auto-commit-action@v4
