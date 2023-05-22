@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動繼續 ⏩
 // @name:zh-SG          ChatGPT 自动继续 ⏩
 // @name:zh-TW          ChatGPT 自動繼續 ⏩
-// @version             2023.5.22
+// @version             2023.5.22.1
 // @description         ⚡ Automatically continue generating multiple ChatGPT responses
 // @description:ar      ⚡ استمر في توليد إجابات متعددة من ChatGPT تلقائيًا
 // @description:bg      ⚡ Автоматично продължаване на генерирането на множество отговори от ChatGPT
@@ -234,10 +234,10 @@
     function getUserscriptManager() {
         try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
-function loadSetting(...keys) {
-    keys.forEach(key => {
-        config[key] = GM_getValue(configKeyPrefix + key, false)
-})}
+    function loadSetting(...keys) {
+        keys.forEach(key => {
+            config[key] = GM_getValue(configKeyPrefix + key, false)
+    })}
 
     function saveSetting(key, value) {
         GM_setValue(configKeyPrefix + key, value) // save to browser
