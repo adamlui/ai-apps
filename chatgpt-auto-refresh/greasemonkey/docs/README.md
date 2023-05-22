@@ -135,7 +135,7 @@ Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced sc
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continue ⏩](https://chatgptevo.com/autocontinue/github)
 
-Auto-continue generating multiple ChatGPT responses.<br>
+Automatically continue generating multiple ChatGPT responses.<br>
 [Install](https://greasyfork.org/scripts/466789-chatgpt-auto-continue) / 
 [Readme](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
 [Discuss](https://chatgptevo.com/autocontinue/discussions)
