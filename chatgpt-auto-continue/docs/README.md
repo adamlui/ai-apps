@@ -19,7 +19,7 @@
 
 <div align="center">
 
-<img width=388 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/media/images/screenshots/regenerate-continue-buttons.jpg"> <img width=321 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/media/images/screenshots/auto-continue-on-notification.png">
+<img width=388 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/media/images/screenshots/continue-button-crossed.jpg"> <img width=321 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/media/images/screenshots/auto-continue-on-notification.png">
 
 </div>
 
