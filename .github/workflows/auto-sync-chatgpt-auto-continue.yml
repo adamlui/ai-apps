@@ -1,0 +1,82 @@
+name: Sync (chatgpt-auto-continue/ to adamlui/chatgpt-auto-continue/) && (chatgpt-auto-continue/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-auto-continue/)
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'chatgpt-auto-continue/**'
+
+jobs:
+  build:
+    if: github.event.commits[0].committer.username != 'auto-sync-bot'
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout adamlui/chatgpt-apps
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-apps
+          path: adamlui/chatgpt-apps
+
+      - name: Checkout adamlui/chatgpt-auto-continue
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-auto-continue
+          path: adamlui/chatgpt-auto-continue
+
+      - name: Checkout adamlui/userscripts
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/userscripts
+          path: adamlui/userscripts
+
+      - name: Sync docs between root & /greasemonkey
+        run: |
+          shopt -s globstar
+          for file in "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/docs/"**/*.md; do
+            relative_path=${file#"${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/docs/"}
+            if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/greasemonkey/docs/$relative_path")" ]; then
+              cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/docs/$relative_path" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/greasemonkey/docs/$relative_path"
+            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/greasemonkey/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/hatgpt-auto-refresh/docs/$relative_path")" ]; then
+              cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/greasemonkey/docs/$relative_path" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/docs/$relative_path"
+            fi
+          done
+
+      - name: Sync chatgpt-auto-continue/ to adamlui/chatgpt-auto-continue/
+        run: rsync -avhr ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/ ${{ github.workspace }}/adamlui/chatgpt-auto-continue/
+
+      - name: Sync chatgpt-auto-continue/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-auto-continue/
+        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-auto-continue/
+
+      - name: Push to adamlui/chatgpt-apps
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
+          file_pattern: 'chatgpt-auto-continue/**'
+          repository: adamlui/chatgpt-apps
+
+      - name: Push to adamlui/chatgpt-auto-continue
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
+          file_pattern: '**'
+          repository: adamlui/chatgpt-auto-continue
+
+      - name: Push to adamlui/userscripts
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@chatgptevo.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
+          file_pattern: 'chatgpt/chatgpt-auto-continue/**'
+          repository: adamlui/userscripts
