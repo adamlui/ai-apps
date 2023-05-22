@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.5.21
+// @version             2023.5.22
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -74,12 +74,11 @@
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
             try { // to return localized messages.json
-                var messages = JSON.parse(response.responseText)
-                var cleanerMsgs = new Proxy(messages, { // remove need to ref nested keys
-                    get(target, prop) {
+                var messages = new Proxy(JSON.parse(response.responseText), {
+                    get(target, prop) { // remove need to ref nested keys
                         if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
-                }}}) ; resolve(cleanerMsgs)
+                }}}) ; resolve(messages)
             } catch (error) { // if 404
                 msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
                 msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
