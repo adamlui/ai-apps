@@ -1,0 +1,15 @@
+{
+  "appName": { "message": "ChatGPT 自動繼續" },
+  "appDesc": { "message": "自動繼續生成多個 ChatGPT 回應" },
+  "menuLabel_modeNotifs": { "message": "模式通知" },
+  "menuLabel_disabled": { "message": "已停用（已安裝擴充功能）" },
+  "mode_autoContinue": { "message": "自動繼續" },
+  "alert_updateAvail": { "message": "有可用更新" },
+  "alert_newerVer": { "message": "有新版本可用" },
+  "alert_isAvail": { "message": "可用" },
+  "alert_dontShowAgain": { "message": "不再顯示" },
+  "alert_untilNextVer": { "message": "直到下次更新" },
+  "buttonLabel_update": { "message": "更新" },
+  "buttonLabel_dismiss": { "message": "忽略" },
+  "link_viewChanges": { "message": "查看變更" }
+}
