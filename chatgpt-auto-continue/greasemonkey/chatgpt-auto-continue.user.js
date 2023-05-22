@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動繼續 ⏩
 // @name:zh-SG          ChatGPT 自动继续 ⏩
 // @name:zh-TW          ChatGPT 自動繼續 ⏩
-// @version             2023.5.21.10
+// @version             2023.5.22
 // @description         ⚡ Automatically continue generating multiple ChatGPT responses
 // @description:ar      ⚡ استمر في توليد إجابات متعددة من ChatGPT تلقائيًا
 // @description:bg      ⚡ Автоматично продължаване на генерирането на множество отговори от ChatGPT
@@ -153,6 +153,10 @@
 
     await chatgpt.isLoaded()
 
+    // Init/register menu
+    var menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'] } // initialize menu vars
+    registerMenu() // create browser toolbar menu
+
     // Check for update (1x/48h)
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) { // if 48h since last check
 
@@ -194,10 +198,6 @@
                         return
     }}})})}
 
-    // Init/register menu
-    var menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'] } // initialize menu vars
-    registerMenu() // create browser toolbar menu
-
     // Observe DOM for need to continue generating response
     const continueObserver = new MutationObserver((mutationsList) => {
         for (const mutation of mutationsList) {
@@ -234,11 +234,10 @@
     function getUserscriptManager() {
         try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
-    function loadSetting() {
-        var keys = [].slice.call(arguments)
-        keys.forEach(function(key) {
-            config[key] = GM_getValue(configKeyPrefix + key, false)
-    })}
+function loadSetting(...keys) {
+    keys.forEach(key => {
+        config[key] = GM_getValue(configKeyPrefix + key, false)
+})}
 
     function saveSetting(key, value) {
         GM_setValue(configKeyPrefix + key, value) // save to browser
