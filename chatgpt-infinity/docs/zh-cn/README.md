@@ -111,7 +111,7 @@ ChatGPT 无限依赖于强大的 [chatgpt.js](https://github.com/chatgptjs/chatg
 
 ### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://chatgptevo.com/widescreen/github) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" alt="ChatGPT&#0032;Widescreen&#0032;Mode - Add&#0032;widescreen&#0032;&#0043;&#0032;full&#0032;window&#0032;modes&#0032;to&#0032;ChatGPT | Product Hunt" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
 
-向 ChatGPT 添加宽屏 + 全窗口模式以减少滚动。<br>
+向 ChatGPT 添加宽屏 + 全窗口模式以增强查看效果 + 减少滚动。<br>
 [安装](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#%E5%AE%89%E8%A3%85) / 
 [自述文件](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptevo.com/widescreen/discuss)
