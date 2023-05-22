@@ -29,8 +29,8 @@ Display ChatGPT answers in Brave Search sidebar (powered by GPT-4!)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continue ⏩](../chatgpt-auto-continue)
 
-Auto-continue generating multiple ChatGPT responses.
-<br>[Install](https://greasyfork.org/scripts/466789-chatgpt-auto-continue) / 
+Automatically continue generating multiple ChatGPT responses.<br>
+[Install](https://greasyfork.org/scripts/466789-chatgpt-auto-continue) / 
 [Readme](../chatgpt-auto-continue#readme) / 
 [Discuss](https://chatgptevo.com/autocontinue/discussions)
 
