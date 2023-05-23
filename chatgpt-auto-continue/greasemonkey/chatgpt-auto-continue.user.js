@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動繼續 ⏩
 // @name:zh-SG          ChatGPT 自动继续 ⏩
 // @name:zh-TW          ChatGPT 自動繼續 ⏩
-// @version             2023.5.23
+// @version             2023.5.23.1
 // @description         ⚡ Automatically continue generating multiple ChatGPT responses
 // @description:ar      ⚡ استمر في توليد إجابات متعددة من ChatGPT تلقائيًا
 // @description:bg      ⚡ Автоматично продължаване на генерирането на множество отговори от ChatGPT
@@ -113,7 +113,7 @@
 // @grant               GM.xmlHttpRequest
 // @noframes
 // @updateURL           https://greasyfork.org/scripts/466789/code/chatgpt-auto-continue.meta.js
-// @downloadURL           https://greasyfork.org/scripts/466789/code/chatgpt-auto-continue.user.js
+// @downloadURL         https://greasyfork.org/scripts/466789/code/chatgpt-auto-continue.user.js
 // @homepageURL         https://github.com/adamlui/chatgpt-auto-continue
 // @supportURL          https://github.com/adamlui/chatgpt-auto-continue/issues
 // ==/UserScript==
