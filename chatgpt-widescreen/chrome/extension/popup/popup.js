@@ -36,7 +36,8 @@
         }})
     })
     fullerWinLabel.addEventListener('click', (event) => {
-        if (event.target == fullerWinLabel) fullerWinToggle.click() // to avoid double-toggle
+        if ([fullerWinLabel, document.querySelector('[data-locale*="fullerWins"]')].includes(event.target))
+            fullerWinToggle.click() 
     })
 
     // Add notifications toggle label click-listeners
@@ -48,7 +49,8 @@
                  + ( config.notifHidden ? 'OFF' : 'ON' ), 'bottom-right' )
     })
     notificationsLabel.addEventListener('click', (event) => {
-        if (event.target == notificationsLabel) notificationsToggle.click() // to avoid double-toggle
+        if ([notificationsLabel, document.querySelector('[data-locale*="modeNotifs"]')].includes(event.target))
+            notificationsToggle.click()
     })
 
     // Add Support span click-listener
