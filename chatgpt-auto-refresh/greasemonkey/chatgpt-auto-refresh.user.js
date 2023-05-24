@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.5.22
+// @version             2023.5.23
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -194,7 +194,7 @@
         toggleInput.click()
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.arDisabled = !toggleInput.checked
-        for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
+        for (var id of menuID) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true
             if (!config.notifHidden) {
@@ -254,7 +254,7 @@
             if (!config.notifHidden) {
                 chatgpt.notify('↻ ' + messages.menuLabel_toggleVis + ': '+ stateWord[+config.toggleHidden],
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-            } for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) ; registerMenu() // refresh menu
+            } for (var id of menuID) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when switching modes
@@ -292,9 +292,8 @@
     function getUserscriptManager() {
         try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
-    function loadSetting() {
-        var keys = [].slice.call(arguments)
-        keys.forEach(function(key) {
+    function loadSetting(...keys) {
+        keys.forEach(key => {
             config[key] = GM_getValue(configKeyPrefix + key, false)
     })}
 
