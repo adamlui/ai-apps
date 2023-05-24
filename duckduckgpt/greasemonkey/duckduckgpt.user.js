@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.5.23
+// @version             2023.5.23.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4!)
@@ -426,8 +426,11 @@
         + '.balloon-tip { content: "" ; position: relative ; top: 5px ; right: 16.5em ; border: 7px solid transparent ;'
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
             + ( isDarkMode() ? '#3a3a3a' : '#eaeaea' ) + ' } '
-        + '.continue-chat > textarea { border: none ; height: 1.55rem ; width: 97.6% ; margin: 3px 0 15px 0 ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px ; border-radius: 12px 13px 12px 0 ; background: '
-            + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' } '
+        + '.continue-chat > textarea {'
+            + 'border: none ; border-radius: 12px 13px 12px 0 ; '
+            + 'height: 1.55rem ; width: 97.6% ; max-height: 200px ;resize: none ; '
+            + 'margin: 3px 0 15px 0 ; padding: 9px 0 5px 10px ; '
+            + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' } '
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
         + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
