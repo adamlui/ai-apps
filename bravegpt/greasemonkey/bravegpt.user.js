@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.5.23.1
+// @version             2023.5.23.2
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4!)
@@ -435,8 +435,10 @@
             + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem } '
             + '.chatgpt-js > a { color: inherit ; top: .054rem } '
             + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px } '
-            + '.continue-chat > textarea { border: none ; background: #eeeeee70 ; height: 2.15rem ; width: 100% ; margin: -6px 0 5px 0 ; resize: none ; max-height: 200px ; padding: 9px 0 5px 10px ; border-radius: 15px 16px 15px 0 } '
-            + '.continue-chat > button { position: relative ; bottom: 54px; left: 299px; border: none ; background: none ; margin: 13px 4px 0 0 ; color: lightgrey ; cursor: pointer } '
+            + '.continue-chat > textarea { border: none ; border-radius: 15px 16px 15px 0 ; margin: -6px 0 5px 0 ;  padding: 9px 0 5px 10px ; '
+                + 'background: #eeeeee70 ; height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ;  } '
+            + '.continue-chat > button { position: relative ; bottom: 54px; left: 299px; border: none ; margin: 13px 4px 0 0 ; '
+                + 'background: none ; color: lightgrey ; cursor: pointer } '
             + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
             + '.kudo-ai a { color: #aaa ; text-decoration: none } '
             + '.kudo-ai a:hover { color: black ; text-decoration: none } '
