@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.5.17.6
+// @version             2023.5.23
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4!)
@@ -117,9 +117,8 @@
     function getUserscriptManager() {
         try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
-    function loadSetting() {
-        var keys = [].slice.call(arguments)
-        keys.forEach(function(key) {
+    function loadSetting(...keys) {
+        keys.forEach(key => {
             config[key] = GM_getValue(configKeyPrefix + key, false)
     })}
 
