@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.5.23
+// @version             2023.5.23.1
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -346,7 +346,7 @@
             var toggleInput = document.querySelector('#infinityToggle')
             setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
             config.infinityMode = toggleInput.checked
-            for (var id of menuID) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu 
+            for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu 
             chatgpt.stop()
             if (config.infinityMode && !infinityMode.sent) infinityMode.activate()
             else if (!config.infinityMode && infinityMode.sent) infinityMode.deactivate()
