@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.5.17.3
+// @version             2023.5.23
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4!)
@@ -115,9 +115,8 @@
     function getUserscriptManager() {
         try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
-    function loadSetting() {
-        var keys = [].slice.call(arguments)
-        keys.forEach(function(key) {
+    function loadSetting(...keys) {
+        keys.forEach(key => {
             config[key] = GM_getValue(configKeyPrefix + key, false)
     })}
 
