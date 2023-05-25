@@ -1,4 +1,4 @@
-# Translate msg's from en/messages.json to output_langs
+# Translate msg's from en/messages.json to [output_langs]
 
 import os, json
 from sys import stdout # for dynamic prints
