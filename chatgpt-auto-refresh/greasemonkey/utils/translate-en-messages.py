@@ -32,7 +32,7 @@ with open(en_msgs_path, 'r', encoding='utf-8') as en_file:
     en_messages = json.load(en_file)
 
 # Create/update/translate [output_langs]/messages.json
-langs_added, langs_skipped, langs_translated, langs_not_translated  = [], [], [], []
+langs_added, langs_skipped, langs_translated, langs_not_translated = [], [], [], []
 for lang_code in output_langs:
     lang_added, lang_skipped, lang_translated = False, False, False
     folder = lang_code.replace('-', '_') ; translated_msgs = {}
