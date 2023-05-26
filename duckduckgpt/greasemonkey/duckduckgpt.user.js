@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.5.23.1
+// @version             2023.5.26
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4!)
@@ -127,6 +127,7 @@
         config[key] = value // and memory
     }
 
+    function isCenteredMode() { return document.querySelector('html').classList.toString().includes('center') }
     function isDarkMode() { return document.documentElement.classList.toString().includes('dark') }
 
     // Define CONSOLE/ALERT functions
@@ -382,8 +383,8 @@
 
     async function loadDDGPT() {
         ddgptAlert('waitingResponse')
-        var sidebarContainer = document.querySelector('[class*="sidebar"]')
-        sidebarContainer.prepend(ddgptDiv, ddgptFooter)
+        var hostContainer = document.querySelector(isCenteredMode() ? '[data-area*="mainline"]' : '[class*="sidebar"]')
+        hostContainer.prepend(ddgptDiv, ddgptFooter)
         var query = new URL(location.href).searchParams.get('q')
         if (!config.proxyAPIenabled) {
             messages.push({
