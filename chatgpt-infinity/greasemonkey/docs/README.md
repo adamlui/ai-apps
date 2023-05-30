@@ -82,12 +82,12 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
 [Leave a review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
-## Author links
+## Contributors
 
-[![Follow @adamlui on GitHub](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "GitHub")](https://github.com/adamlui)
-[![Follow @adamluitube on YouTube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
-<a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" alt="Follow @adam on Mastodon" title="Mastodon">
-[![Follow @adamllui on Twitter](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
+This project exists thanks to code, translations, issues & ideas from the following people:
+
+[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
+[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?h=50&w=50&mask=circle&maxage=7d)](https://github.com/Zin6969)
 
 ## More ChatGPT apps
 
