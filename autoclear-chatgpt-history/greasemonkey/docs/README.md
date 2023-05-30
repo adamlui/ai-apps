@@ -79,7 +79,7 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
 
 ## Contributors
 
-The following contributors made this project possible:
+This project exists thanks to code, translations, issues & ideas from the following people:
 
 [![Follow @adamlui on GitHub](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "GitHub")](https://github.com/adamlui)
 [![Follow @adamluitube on YouTube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
