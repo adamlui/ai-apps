@@ -81,12 +81,12 @@ ChatGPT 无限依赖于强大的 [chatgpt.js](https://github.com/chatgptjs/chatg
 [發表評論](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) /
 [更多 ChatGPT 用戶腳本](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
-## 作者链接
+## 贡献者
 
-[![在 GitHub 上关注@adamlui](https://img.shields.io/github/followers/adamlui?label=关注@adamlui&style=social "GitHub")](https://github.com/adamlui)
-[![在 YouTube 上关注@adamluitube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=关注@adamluitube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
-<a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&label=%E5%85%B3%E6%B3%A8@adam&style=social" alt="在 Mastodon 上关注@adam" title="Mastodon"></a>
-[![在推特上关注@adamllui](https://img.shields.io/twitter/follow/adamllui?label=关注@adamllui&style=social)](https://twitter.com/adamllui)
+该项目的存在归功于以下人员的代码、翻译、问题和想法:
+
+[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
+[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?h=50&w=50&mask=circle&maxage=7d)](https://github.com/Zin6969)
 
 ## 更多 ChatGPT 应用
 
