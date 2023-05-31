@@ -115,6 +115,8 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 This app exists thanks to code, translations, issues & ideas from the following contributors:
 
 [![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.23&h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
+[![@Delamcode](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/68170410?first-contrib=2023.02.19&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Delamcode)
+[![@Quoid](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/7660254?first-contrib=2023.02.19&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Quoid)
 [![@Nord1cWarr1or](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/47604048?first-contrib=2023.03.26&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Nord1cWarr1or)
 [![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23&h=50&w=50&mask=circle&maxage=7d)](https://github.com/AliAlSarre)
 
