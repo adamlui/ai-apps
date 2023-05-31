@@ -112,11 +112,11 @@ If you've tested it to work in a browser not listed above, simply create a [pull
 This script exists thanks to code, translations, issues & ideas from the following contributors:
 
 [![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.07&h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
-[![@XiaoYingYo](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?&first-contrib=2023.03.06&h=50&w=50&mask=circle&maxage=7d)](https://github.com/XiaoYingYo)
-[![@mefengl](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?&first-contrib=2023.03.12&h=50&w=50&mask=circle&maxage=7d)](https://github.com/mefengl)
-[![@nhan000](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/85216095?&first-contrib=2023.04.11&h=50&w=50&mask=circle&maxage=7d)](https://github.com/nhan000)
-[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?&first-contrib=2023.04.27&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Zin6969)
-[![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?&first-contrib=2023.05.23&h=50&w=50&mask=circle&maxage=7d)](https://github.com/AliAlSarre)
+[![@XiaoYingYo](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?first-contrib=2023.03.06&h=50&w=50&mask=circle&maxage=7d)](https://github.com/XiaoYingYo)
+[![@mefengl](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.12&h=50&w=50&mask=circle&maxage=7d)](https://github.com/mefengl)
+[![@nhan000](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/85216095?first-contrib=2023.04.11&h=50&w=50&mask=circle&maxage=7d)](https://github.com/nhan000)
+[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.27&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Zin6969)
+[![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23&h=50&w=50&mask=circle&maxage=7d)](https://github.com/AliAlSarre)
 
 ## More ChatGPT apps
 
