@@ -110,6 +110,17 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 <a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" alt="Follow @adam on Mastodon" title="Mastodon">
 [![Follow @adamllui on Twitter](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
 
+## Contributors
+
+This app exists thanks to code, translations, issues & ideas from the following contributors:
+
+[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.02.11&h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
+[![@Delamcode](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/68170410?first-contrib=2023.02.19&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Delamcode)
+[![@Quoid](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/7660254?first-contrib=2023.02.19&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Quoid)
+[![@luetage](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13988217?first-contrib=2023.04.21&h=50&w=50&mask=circle&maxage=7d)](https://github.com/luetage)
+[![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23&h=50&w=50&mask=circle&maxage=7d)](https://github.com/AliAlSarre)
+[![@wznmickey](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/44784663?first-contrib=2023.05.26&h=50&w=50&mask=circle&maxage=7d)](https://github.com/wznmickey)
+
 ## More ChatGPT apps
 
 For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
