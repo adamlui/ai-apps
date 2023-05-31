@@ -3,7 +3,7 @@
 ![用户数](https://img.shields.io/greasyfork/dt/462422?label=用户&color=brightgreen)
 [![执照](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
 [![支持](https://img.shields.io/badge/支持-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey#compatibility)
-[![提交](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-auto-refresh?label=提交)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
+[![提交](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=提交)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
 [![代码质量](https://img.shields.io/codefactor/grade/github/adamlui/autoclear-chatgpt-history?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![在 Awesome Userscripts 中提到](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
@@ -112,12 +112,24 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [发表评论](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
 [更多 ChatGPT 用户脚本](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
-## 作者链接
+## 贡献者
 
-[![在 GitHub 上关注@adamlui](https://img.shields.io/github/followers/adamlui?label=关注@adamlui&style=social "GitHub")](https://github.com/adamlui)
-[![在 YouTube 上关注@adamluitube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=关注@adamluitube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
-<a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&label=%E5%85%B3%E6%B3%A8@adam&style=social" alt="在 Mastodon 上关注@adam" title="Mastodon"></a>
-[![在推特上关注@adamllui](https://img.shields.io/twitter/follow/adamllui?label=关注@adamllui&style=social)](https://twitter.com/adamllui)
+该项目的存在归功于以下贡献者的代码、翻译、问题和想法:
+
+[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
+[![@Camouflager](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/26111796?h=50&w=50&mask=circle&maxage=7d)](https://github.com/Camouflager)
+[![@ArtificialTruth](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/3297866?h=50&w=50&mask=circle&maxage=7d)](https://github.com/ArtificialTruth)
+[![@Liumeng404](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/25640306?h=50&w=50&mask=circle&maxage=7d)](https://github.com/Liumeng404)
+[![@mzvast](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/8097465?h=50&w=50&mask=circle&maxage=7d)](https://github.com/mzvast)
+[![@halvabner](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/130675714?h=50&w=50&mask=circle&maxage=7d)](https://github.com/halvabner)
+[![@Cupcc](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/53716543?h=50&w=50&mask=circle&maxage=7d)](https://github.com/Cupcc)
+[![@gydx6](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/45654564?h=50&w=50&mask=circle&maxage=7d)](https://github.com/gydx6)
+[![@NoahXcl](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/81360639?h=50&w=50&mask=circle&maxage=7d)](https://github.com/NoahXcl)
+[![@selfboot](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2769831?h=50&w=50&mask=circle&maxage=7d)](https://github.com/selfboot)
+[![@maplepicker](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/116735067?h=50&w=50&mask=circle&maxage=7d)](https://github.com/maplepicker)
+[![@Cloudkkk](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/58101940?h=50&w=50&mask=circle&maxage=7d)](https://github.com/Cloudkkk)
+[![@chenzhihao1040728129](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/49114216?h=50&w=50&mask=circle&maxage=7d)](https://github.com/chenzhihao1040728129)
+[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?h=50&w=50&mask=circle&maxage=7d)](https://github.com/Zin6969)
 
 ## 更多 ChatGPT 应用
 
