@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.5.23
+// @version             2023.5.30
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -61,7 +61,7 @@
 (async () => {
 
     // Initialize settings
-    var configKeyPrefix = 'chatGPTac_'
+    var configPrefix = 'chatGPTac_'
     var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
     loadSetting('autoclear', 'toggleHidden', 'buttonHidden', 'notifHidden') ; config.isActive = config.autoclear
 
@@ -234,11 +234,11 @@
 
     function loadSetting(...keys) {
         keys.forEach(key => {
-            config[key] = GM_getValue(configKeyPrefix + key, false)
+            config[key] = GM_getValue(configPrefix + key, false)
     })}
 
     function saveSetting(key, value) {
-        GM_setValue(configKeyPrefix + key, value) // save to browser
+        GM_setValue(configPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
 
