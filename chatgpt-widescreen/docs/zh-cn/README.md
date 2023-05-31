@@ -5,7 +5,7 @@
 ![用户数](https://img.shields.io/badge/用户-2,000+-brightgreen)
 [![执照](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
 [![兼容性](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#兼容性)
-[![GitHub+提交](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-widescreen?label=GitHub+提交)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
+[![GitHub+提交](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=GitHub+提交)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
 [![代码质量](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![在 Awesome Userscripts 中提到](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
@@ -125,13 +125,16 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 </div>
 
-## 贡献者链接
+## 贡献者
 
-[![在 GitHub 上关注@adamlui](https://img.shields.io/github/followers/adamlui?label=关注@adamlui&style=social "GitHub")](https://github.com/adamlui)
-[![在 YouTube 上关注@adamluitube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=关注@adamluitube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
-<a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&label=%E5%85%B3%E6%B3%A8@adam&style=social" alt="在 Mastodon 上关注@adam" title="Mastodon">
-[![在推特上关注@adamllui](https://img.shields.io/twitter/follow/adamllui?label=关注@adamllui&style=social)](https://twitter.com/adamllui)
-[![在 GitHub 上关注@XiaoYingYo](https://img.shields.io/github/followers/XiaoYingYo?label=关注XiaoYingYo&style=social "GitHub")](https://github.com/XiaoYingYo)
+该脚本的存在归功于以下贡献者的代码、翻译、问题和想法:
+
+[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
+[![@XiaoYingYo](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?&first-contrib=2023.03.06&h=50&w=50&mask=circle&maxage=7d)](https://github.com/XiaoYingYo)
+[![@mefengl](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?&first-contrib=2023.03.12&h=50&w=50&mask=circle&maxage=7d)](https://github.com/mefengl)
+[![@nhan000](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/85216095?&first-contrib=2023.04.11&h=50&w=50&mask=circle&maxage=7d)](https://github.com/nhan000)
+[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?&first-contrib=2023.04.27&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Zin6969)
+[![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?&first-contrib=2023.05.23&h=50&w=50&mask=circle&maxage=7d)](https://github.com/AliAlSarre)
 
 ## 更多 ChatGPT 应用
 
