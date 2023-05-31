@@ -127,7 +127,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 ## 贡献者
 
-该脚本的存在归功于以下贡献者的代码、翻译、问题和想法:
+该项目的存在归功于以下贡献者的代码、翻译、问题和想法:
 
 [![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
 [![@XiaoYingYo](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?&first-contrib=2023.03.06&h=50&w=50&mask=circle&maxage=7d)](https://github.com/XiaoYingYo)
