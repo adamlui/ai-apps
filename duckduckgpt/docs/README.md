@@ -120,6 +120,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![@Nord1cWarr1or](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/47604048?first-contrib=2023.03.26&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Nord1cWarr1or)
 [![@daemonspudguy](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/24438557?first-contrib=2023.04.20&h=50&w=50&mask=circle&maxage=7d)](https://github.com/daemonspudguy)
 [![@luetage](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13988217?first-contrib=2023.04.21&h=50&w=50&mask=circle&maxage=7d)](https://github.com/luetage)
+[![@afkvido](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/69060894?first-contrib=2023.05.16-katex-idea&h=50&w=50&mask=circle&maxage=7d)](https://github.com/afkvido)
 [![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23&h=50&w=50&mask=circle&maxage=7d)](https://github.com/AliAlSarre)
 [![@wznmickey](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/44784663?first-contrib=2023.05.26&h=50&w=50&mask=circle&maxage=7d)](https://github.com/wznmickey)
 
