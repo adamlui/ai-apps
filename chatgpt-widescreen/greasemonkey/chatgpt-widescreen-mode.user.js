@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.5.31
+// @version             2023.5.31.1
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -102,12 +102,12 @@
 
     // Collect OpenAI classes/colors
     var sendButtonColor = 'currentColor' // changes w/ scheme
-    var sendButtonClasses = document.querySelector('form button[class*="bottom"]').classList
-    var sendSVGclasses = document.querySelector('form button[class*="bottom"] svg').classList
-    var inputTextAreaClasses = document.querySelector("form button[class*='bottom']").previousSibling.classList
-    var sidepadClasses = document.querySelector('#__next > div > div').classList
-    var sidebarClasses = document.querySelector('#__next > div > div.dark').classList
-    var mainDivClasses = document.querySelector('#__next > div > div.flex').classList
+    var sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
+    var sendSVGclasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
+    var inputTextAreaClasses = (document.querySelector("form button[class*='bottom']") || {}).previousSibling.classList || []
+    var sidepadClasses = (document.querySelector('#__next > div > div') || {}).classList || []
+    var sidebarClasses = (document.querySelector('#__next > div > div.dark') || {}).classList || []
+    var mainDivClasses = (document.querySelector('#__next > div > div.flex') || {}).classList || []
 
     // Create/stylize tooltip div
     var tooltipDiv = document.createElement('div')
