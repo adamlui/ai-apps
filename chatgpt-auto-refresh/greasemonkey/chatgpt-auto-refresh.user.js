@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.5.23.2
+// @version             2023.5.30
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -134,7 +134,7 @@
 (async () => {
 
     // Initialize settings
-    var configKeyPrefix = 'chatGPTar_'
+    var configPrefix = 'chatGPTar_'
     var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
     loadSetting('arDisabled', 'notifHidden', 'refreshInterval', 'toggleHidden')
     if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
@@ -294,11 +294,11 @@
 
     function loadSetting(...keys) {
         keys.forEach(key => {
-            config[key] = GM_getValue(configKeyPrefix + key, false)
+            config[key] = GM_getValue(configPrefix + key, false)
     })}
 
     function saveSetting(key, value) {
-        GM_setValue(configKeyPrefix + key, value) // save to browser
+        GM_setValue(configPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
 
