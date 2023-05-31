@@ -1,11 +1,25 @@
-/* This library is a condensed version of chatgpt.js v1.6.7 */
-/* (c) 2023 KudoAI & contributors under the MIT license */
-/* Source: https://github.com/chatgptjs/chatgpt.js */
+// This library is a condensed version of chatgpt.js v1.7.2
+// (c) 2023 KudoAI & contributors under the MIT license
+// Source: https://github.com/chatgptjs/chatgpt.js
 
 var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
 localStorage.notifyProps = JSON.stringify(notifyProps);
 
 var chatgpt = {
+
+    history: {
+        isOn: function() {
+            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+                if (navLink.text.match(/new chat/i)) return true;
+            } return false;
+        },
+
+        isOff: function() {
+            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+                if (navLink.text.match(/new chat/i)) return false;
+            } return true;
+        }
+    },
 
     isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
 
