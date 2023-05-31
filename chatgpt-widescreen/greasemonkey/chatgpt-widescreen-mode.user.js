@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.5.31.1
+// @version             2023.5.31.2
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -101,7 +101,6 @@
     } else registerMenu() // create functional menu
 
     // Collect OpenAI classes/colors
-    var sendButtonColor = 'currentColor' // changes w/ scheme
     var sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
     var sendSVGclasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
     var inputTextAreaClasses = (document.querySelector("form button[class*='bottom']") || {}).previousSibling.classList || []
@@ -123,9 +122,10 @@
     // General style tweaks
     var tweaksStyle = document.createElement('style')
     tweaksStyle.innerHTML = (
-        classListToCSS(inputTextAreaClasses) + ' { padding-right: 115px } ' // make input text area accomdate buttons
+           classListToCSS(inputTextAreaClasses) + ' { padding-right: 128px } ' // make input text area accomdate buttons
         + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
-            + 'position: relative ; left: 54px ; top: 7px ; } ' ) // ...below avatar to avoid cropping
+            + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
+        + 'form > div > div:nth-child(2), form textarea { max-height: 68vh !important; } ' ) // expand text input vertically
     document.head.appendChild(tweaksStyle)
 
     // Create wide screen style
@@ -140,69 +140,34 @@
     fullWindowStyle.innerHTML = classListToCSS(sidebarClasses) + '{ display: none }' // hide sidebar
         + classListToCSS(sidepadClasses) + '{ padding-left: 0px }' // remove side padding
 
-    // Create larger text input style
-    var largerInputStyle = document.createElement('style')
-    largerInputStyle.innerHTML = 'form > div > div:nth-child(2), form textarea { max-height: 85vh !important; } '
-    document.head.appendChild(largerInputStyle)
-
-    // Define SVG viewbox + paths
-    var svgViewBox = '8 8 ' // move to XY coords to crop whitespace
-        + '20 20' // shrink to 20x20 to match Send button size
-    var wideScreenONpaths = `
-        <path fill="${sendButtonColor}" fill-rule="evenodd"
-            d="m 26,13 0,10 -16,0 0,-10 z m -14,2 12,0 0,6 -12,0 0,-6 z"></path>`
-    var wideScreenOFFpaths = `
-        <path fill="${sendButtonColor}" fill-rule="evenodd"
-            d="m 28,11 0,14 -20,0 0,-14 z m -18,2 16,0 0,10 -16,0 0,-10 z"></path>`
-    var fullWindowONpaths = `
-        <path fill="${sendButtonColor}" d="m 14,14 -4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z"></path>
-        <path fill="${sendButtonColor}" d="m 22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z"></path>
-        <path fill="${sendButtonColor}" d="m 20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z"></path>
-        <path fill="${sendButtonColor}" d="m 10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z"></path>`
-    var fullWindowOFFpaths = `
-        <path fill="${sendButtonColor}" d="m 10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z"></path>
-        <path fill="${sendButtonColor}" d="m 20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z"></path>
-        <path fill="${sendButtonColor}" d="m 24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z"></path>
-        <path fill="${sendButtonColor}" d="M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z"></path>`
-    var newChatPaths = `
-        <path fill="${sendButtonColor}"
-            d="M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z M14,7H2v1h12V7z M2,12h8v-1H2V12z M2,16h8v-1H2V16z"></path>`
-
-    // Create wide screen button & add icon/classes/position/icon/listeners
-    var wideScreenButton = document.createElement('div') // create button
-    wideScreenButton.id = 'wideScreen-button' // for toggleTooltip()
-    wideScreenButton.type = 'button'
-    updateSVG('wideScreen') // insert icon
-    wideScreenButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
-    wideScreenButton.style.cssText = 'right: 3.83rem' // position left of Send button
-    wideScreenButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
-    wideScreenButton.addEventListener('click', () => { toggleMode('wideScreen') })
-    wideScreenButton.addEventListener('mouseover', toggleTooltip)
-    wideScreenButton.addEventListener('mouseout', toggleTooltip)
-
     // Create full-window button & add icon/classes/position/listeners
     var fullWindowButton = document.createElement('div') // create button
     fullWindowButton.id = 'fullWindow-button' // for toggleTooltip()
-    fullWindowButton.type = 'button'
     updateSVG('fullWindow') // insert icon
     fullWindowButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
-    fullWindowButton.style.cssText = 'right: 2.17rem' // position left of wide screen button
+    fullWindowButton.style.cssText = 'right: 2.57rem' // position left of wide screen button
     fullWindowButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
     fullWindowButton.addEventListener('click', () => { toggleMode('fullWindow') })
     fullWindowButton.addEventListener('mouseover', toggleTooltip)
     fullWindowButton.addEventListener('mouseout', toggleTooltip)
 
+    // Create wide screen button & add icon/classes/position/icon/listeners
+    var wideScreenButton = document.createElement('div') // create button
+    wideScreenButton.id = 'wideScreen-button' // for toggleTooltip()
+    updateSVG('wideScreen') // insert icon
+    wideScreenButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
+    wideScreenButton.style.cssText = 'right: 4.34rem' // position left of Send button
+    wideScreenButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
+    wideScreenButton.addEventListener('click', () => { toggleMode('wideScreen') })
+    wideScreenButton.addEventListener('mouseover', toggleTooltip)
+    wideScreenButton.addEventListener('mouseout', toggleTooltip)
+
     // Create new chat button & add icon/classes/position/icon/listeners
     var newChatButton = document.createElement('div') // create button
     newChatButton.id = 'newChat-button' // for toggleTooltip()
-    newChatButton.type = 'button'
-    newChatButton.innerHTML = '<svg ' // insert icon
-        + `class="${sendSVGclasses}" ` // assign borrowed classes
-        + `style="margin: .24rem .05rem -.08rem .16rem ; ` // center overlay
-        + `pointer-events: none" ` // prevent triggering tooltips twice
-        + `viewBox="11 8 13 13"> ${newChatPaths} </svg>` // set viewbox & insert paths
+    updateSVG('newChat') // insert icon
     newChatButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
-    newChatButton.style.cssText = 'right: 5.5rem' // position left of full-window button
+    newChatButton.style.cssText = 'right: 6.11rem' // position left of full-window button
     newChatButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
     newChatButton.addEventListener('click', () => { chatgpt.startNewChat() })
     newChatButton.addEventListener('mouseover', toggleTooltip)
@@ -212,7 +177,7 @@
 
     // Monitor node changes to maintain button visibility + auto-toggle once + manage send button's tooltip
     var prevSessionChecked = false
-    var navObserver = new MutationObserver(([{ addedNodes, type }]) => {
+    var nodeObserver = new MutationObserver(([{ addedNodes, type }]) => {
         if (type === 'childList' && addedNodes.length) {
             insertButtons() // again or they constantly disappear
 
@@ -238,7 +203,14 @@
                 }
             }
     }})
-    navObserver.observe(document.documentElement, { childList: true, subtree: true })
+    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
+
+    // Monitor scheme changes to update button colors
+    var schemeObserver = new MutationObserver(([{ type, target }]) => {
+        if (target === document.documentElement && type === 'attributes' && target.getAttribute('class'))
+            updateSVG('wideScreen') ; updateSVG('fullWindow') ; updateSVG('newChat')
+    })
+    schemeObserver.observe(document.documentElement, { attributes: true })
 
     // Define script functions
 
@@ -272,9 +244,8 @@
     function getUserscriptManager() {
         try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
-    function loadSetting() {
-        var keys = [].slice.call(arguments)
-        keys.forEach(function(key) {
+    function loadSetting(...keys) {
+        keys.forEach(key => {
             config[key] = GM_getValue(configPrefix + key, false)
     })}
 
@@ -328,7 +299,7 @@
 
     function updateTooltip(buttonType) { // text & position
         tooltipDiv.innerHTML = messages['tooltip_' + buttonType + (
-            !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'ON' : 'OFF'))]
+            !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON'))]
         var ctrAddend = 17, overlayWidth = 30
         var iniRoffset = overlayWidth * (
             buttonType.includes('send') ? 0
@@ -339,9 +310,34 @@
     }
 
     function updateSVG(mode) {
-        var [button, ONpaths, OFFpaths] = (mode ==
-            'wideScreen' ? [wideScreenButton, wideScreenONpaths, wideScreenOFFpaths]
-                         : [fullWindowButton, fullWindowONpaths, fullWindowOFFpaths])
+
+        // Define SVG viewbox + paths
+        var buttonColor = chatgpt.isDarkMode() ? 'white' : '#202123'
+        var svgViewBox = ( mode == 'newChat' ? '11 6 ' : '8 8 ' ) // move to XY coords to crop whitespace
+            + ( mode == 'newChat' ? '13 13' : '20 20' ) // shrink to 20x20 to match Send button size
+        var wideScreenONpaths = `
+            <path fill="${ buttonColor }" fill-rule="evenodd"
+                d="m 26,13 0,10 -16,0 0,-10 z m -14,2 12,0 0,6 -12,0 0,-6 z"></path>`
+        var wideScreenOFFpaths = `
+            <path fill="${ buttonColor }" fill-rule="evenodd"
+                d="m 28,11 0,14 -20,0 0,-14 z m -18,2 16,0 0,10 -16,0 0,-10 z"></path>`
+        var fullWindowONpaths = `
+            <path fill="${ buttonColor }" d="m 14,14 -4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z"></path>
+            <path fill="${ buttonColor }" d="m 22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z"></path>
+            <path fill="${ buttonColor }" d="m 20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z"></path>
+            <path fill="${ buttonColor }" d="m 10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z"></path>`
+        var fullWindowOFFpaths = `
+            <path fill="${ buttonColor }" d="m 10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z"></path>
+            <path fill="${ buttonColor }" d="m 20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z"></path>
+            <path fill="${ buttonColor }" d="m 24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z"></path>
+            <path fill="${ buttonColor }" d="M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z"></path>`
+        var newChatPaths = `<path fill="${ buttonColor }"d="M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z"></path>`
+
+        // Pick appropriate button/paths
+        var [button, ONpaths, OFFpaths] = (
+            mode == 'wideScreen' ? [wideScreenButton, wideScreenONpaths, wideScreenOFFpaths]
+          : mode == 'fullWindow' ? [fullWindowButton, fullWindowONpaths, fullWindowOFFpaths]
+                                 : [newChatButton, newChatPaths, newChatPaths])
 
         // Initialize rem margin offset vs. OpenAI's .mr-1 for hover overlay centeredness
         var lMargin = mode == 'wideScreen' ? .11 : .12
@@ -349,10 +345,10 @@
 
         // Update SVG
         button.innerHTML = '<svg '
-            + `class="${sendSVGclasses}" ` // assign borrowed classes
-            + `style="margin: 0 ${rMargin}rem 0 ${lMargin}rem ; ` // center overlay
-            + `pointer-events: none" ` // prevent triggering tooltips twice
-            + `viewBox="${svgViewBox}"> ` // set viewbox pre-tweaked to match Send
+            + `class="${ sendSVGclasses }" ` // assign borrowed classes
+            + `style="margin: 0 ${ rMargin }rem 0 ${ lMargin }rem ; ` // center overlay
+            + 'pointer-events: none" ' // prevent triggering tooltips twice
+            + `viewBox="${ svgViewBox }"> ` // set pre-tweaked viewbox
             + (config[mode] ? ONpaths : OFFpaths + '</svg>') // dynamically insert paths based on loaded key
     }
 
