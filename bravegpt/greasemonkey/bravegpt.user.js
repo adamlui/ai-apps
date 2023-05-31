@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.5.23.2
+// @version             2023.5.30
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4!)
@@ -117,11 +117,11 @@
 
     function loadSetting(...keys) {
         keys.forEach(key => {
-            config[key] = GM_getValue(configKeyPrefix + key, false)
+            config[key] = GM_getValue(configPrefix + key, false)
     })}
 
     function saveSetting(key, value) {
-        GM_setValue(configKeyPrefix + key, value) // save to browser
+        GM_setValue(configPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
 
@@ -397,7 +397,7 @@
     // Run MAIN routine
 
     // Initialize settings/messages/menu
-    var config = {}, configKeyPrefix = 'braveGPT_', messages = []
+    var config = {}, configPrefix = 'braveGPT_', messages = []
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
     registerMenu() // create browser toolbar menu
 
