@@ -85,8 +85,8 @@ ChatGPT 无限依赖于强大的 [chatgpt.js](https://github.com/chatgptjs/chatg
 
 该脚本的存在归功于以下贡献者的代码、翻译、问题和想法:
 
-[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.04.28&h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
-[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.30&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Zin6969)
+[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.04.28&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
+[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.30-doc-translations&h=50&w=50&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
 
 ## 更多 ChatGPT 应用
 
