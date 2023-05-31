@@ -21,12 +21,12 @@
 
     // Collect OpenAI classes/colors
     var sendButtonColor = 'currentColor' // changes w/ scheme
-    var sendButtonClasses = document.querySelector('form button[class*="bottom"]').classList
-    var sendSVGclasses = document.querySelector('form button[class*="bottom"] > svg').classList
-    var inputTextAreaClasses = document.querySelector("form button[class*='bottom']").previousSibling.classList
-    var sidepadClasses = document.querySelector('#__next > div > div').classList
-    var sidebarClasses = document.querySelector('#__next > div > div.dark').classList
-    var mainDivClasses = document.querySelector('#__next > div > div.flex').classList
+    var sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
+    var sendSVGclasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
+    var inputTextAreaClasses = (document.querySelector("form button[class*='bottom']") || {}).previousSibling.classList || []
+    var sidepadClasses = (document.querySelector('#__next > div > div') || {}).classList || []
+    var sidebarClasses = (document.querySelector('#__next > div > div.dark') || {}).classList || []
+    var mainDivClasses = (document.querySelector('#__next > div > div.flex') || {}).classList || []
 
     // Create/stylize tooltip div
     var tooltipDiv = document.createElement('div')
