@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.5.31.2
+// @version             2023.5.31.3
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -47,7 +47,7 @@
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon64.png
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@abf4e7ea3ed450b9f34b045d73c9522be43b2c1c/dist/chatgpt-1.6.7.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@6ab8dbf57963626b130eb2d3a6e068d673937b64/dist/chatgpt-1.7.2.min.js
 // @connect             raw.githubusercontent.com
 // @grant               GM_setValue
 // @grant               GM_getValue
@@ -312,7 +312,7 @@
     function updateSVG(mode) {
 
         // Define SVG viewbox + paths
-        var buttonColor = chatgpt.isDarkMode() ? 'white' : '#202123'
+        var buttonColor = chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123'
         var svgViewBox = ( mode == 'newChat' ? '11 6 ' : '8 8 ' ) // move to XY coords to crop whitespace
             + ( mode == 'newChat' ? '13 13' : '20 20' ) // shrink to 20x20 to match Send button size
         var wideScreenONpaths = `
