@@ -3,7 +3,7 @@
 ![usercount](https://img.shields.io/greasyfork/dt/462422?label=Users&color=)
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
-[![commits](https://img.shields.io/github/commit-activity/w/adamlui/chatgpt-auto-refresh?label=Commits)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
+[![commits](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=Commits)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
 [![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
@@ -112,12 +112,24 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 [Leave a review](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
-## Author links
+## Contributors
 
-[![Follow @adamlui on GitHub](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "GitHub")](https://github.com/adamlui)
-[![Follow @adamluitube on YouTube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
-<a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" alt="Follow @adam on Mastodon" title="Mastodon"></a>
-[![Follow @adamllui on Twitter](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
+This project exists thanks to code, translations, issues & ideas from the following contributors:
+
+[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
+[![@Camouflager](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/26111796?h=50&w=50&mask=circle&maxage=7d)](https://github.com/Camouflager)
+[![@ArtificialTruth](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/3297866?h=50&w=50&mask=circle&maxage=7d)](https://github.com/ArtificialTruth)
+[![@Liumeng404](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/25640306?h=50&w=50&mask=circle&maxage=7d)](https://github.com/Liumeng404)
+[![@mzvast](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/8097465?h=50&w=50&mask=circle&maxage=7d)](https://github.com/mzvast)
+[![@halvabner](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/130675714?h=50&w=50&mask=circle&maxage=7d)](https://github.com/halvabner)
+[![@Cupcc](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/53716543?h=50&w=50&mask=circle&maxage=7d)](https://github.com/Cupcc)
+[![@gydx6](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/45654564?h=50&w=50&mask=circle&maxage=7d)](https://github.com/gydx6)
+[![@NoahXcl](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/81360639?h=50&w=50&mask=circle&maxage=7d)](https://github.com/NoahXcl)
+[![@selfboot](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2769831?h=50&w=50&mask=circle&maxage=7d)](https://github.com/selfboot)
+[![@maplepicker](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/116735067?h=50&w=50&mask=circle&maxage=7d)](https://github.com/maplepicker)
+[![@Cloudkkk](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/58101940?h=50&w=50&mask=circle&maxage=7d)](https://github.com/Cloudkkk)
+[![@chenzhihao1040728129](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/49114216?h=50&w=50&mask=circle&maxage=7d)](https://github.com/chenzhihao1040728129)
+[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?h=50&w=50&mask=circle&maxage=7d)](https://github.com/Zin6969)
 
 ## More ChatGPT apps
 
