@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.5.23.1
+// @version             2023.5.30
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -134,7 +134,7 @@
 (async () => {
 
     // Initialize settings
-    var configKeyPrefix = 'chatGPTinf_'
+    var configPrefix = 'chatGPTinf_'
     var config = { userLanguage: navigator.languages[0] || navigator.language || '', infinityMode: false }
     loadSetting('toggleHidden', 'autoScrollDisabled', 'replyLanguage', 'replyInterval')
     if (!config.replyLanguage) saveSetting('replyLanguage', navigator.languages[0] || navigator.language || '') // init reply language
@@ -285,11 +285,11 @@
 
     function loadSetting(...keys) {
         keys.forEach(key => {
-            config[key] = GM_getValue(configKeyPrefix + key, false)
+            config[key] = GM_getValue(configPrefix + key, false)
     })}
 
     function saveSetting(key, value) {
-        GM_setValue(configKeyPrefix + key, value) // save to browser
+        GM_setValue(configPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
 
