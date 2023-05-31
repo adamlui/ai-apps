@@ -86,7 +86,7 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
 
 This project exists thanks to code, translations, issues & ideas from the following contributors:
 
-[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
+[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.04.28&h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
 [![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.30&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Zin6969)
 
 ## More ChatGPT apps
