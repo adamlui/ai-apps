@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.5.22
+// @version             2023.5.30
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -64,7 +64,7 @@
 (async () => {
 
     // Initialize settings
-    var configKeyPrefix = 'chatGPTws_'
+    var configPrefix = 'chatGPTws_'
     var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
     loadSetting('wideScreen', 'fullWindow', 'notifHidden', 'fullerWindows')
 
@@ -275,11 +275,11 @@
     function loadSetting() {
         var keys = [].slice.call(arguments)
         keys.forEach(function(key) {
-            config[key] = GM_getValue(configKeyPrefix + key, false)
+            config[key] = GM_getValue(configPrefix + key, false)
     })}
 
     function saveSetting(key, value) {
-        GM_setValue(configKeyPrefix + key, value) // save to browser
+        GM_setValue(configPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
 
