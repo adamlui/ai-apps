@@ -77,10 +77,10 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
 
 This project exists thanks to code, translations, issues & ideas from the following contributors:
 
-[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.02.26&h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
-[![@Tripp1e](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/102437240?first-contrib=2023.02.25&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Tripp1e)
-[![@XiaoYingYo](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?first-contrib=2023.03.23&h=50&w=50&mask=circle&maxage=7d)](https://github.com/XiaoYingYo)
-[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.27&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Zin6969)
+[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.02.26&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
+[![@Tripp1e](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/102437240?first-contrib=2023.02.25&h=50&w=50&mask=circle&maxage=7d "@Tripp1e")](https://github.com/Tripp1e)
+[![@XiaoYingYo](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?first-contrib=2023.03.23&h=50&w=50&mask=circle&maxage=7d "@XiaoYingYo")](https://github.com/XiaoYingYo)
+[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.27&h=50&w=50&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
 
 ## More ChatGPT apps
 
