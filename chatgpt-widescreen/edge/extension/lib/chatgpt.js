@@ -64,13 +64,16 @@ var chatgpt = {
         // Reposition old notifications
         var thisQuadrantDivIDs = notifyProps.quadrants[notificationDiv.quadrant];
         if (thisQuadrantDivIDs.length > 1) {
-            var divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
-            for (var j = 0; j < divsToMove.length; j++) {
-                var oldDiv = document.getElementById(divsToMove[j]);
-                var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
-                var vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
-                oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
-        }}
+            try {
+                var divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
+                for (var j = 0; j < divsToMove.length; j++) {
+                    var oldDiv = document.getElementById(divsToMove[j]);
+                    var offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
+                    var vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
+                    oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
+                }
+            } catch (error) {}
+        }
 
         // Show notification
         notificationDiv.innerHTML = msg; // insert msg
