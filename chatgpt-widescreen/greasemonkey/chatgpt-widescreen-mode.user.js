@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.1
+// @version             2023.6.1.1
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -270,15 +270,13 @@
         var modeStyle = document.getElementById(mode + '-mode') // look for existing mode style
         if (state.toUpperCase() == 'ON' || !modeStyle) { // if missing or ON-state passed
             modeStyle = mode == 'wideScreen' ? wideScreenStyle : fullWindowStyle
-            if (mode == 'fullWindow' && config.fullerWindows) { // activate fuller window if enabled for full window
-                if (!config.wideScreen) document.head.appendChild(wideScreenStyle)
-            }
+            if (mode == 'fullWindow' && config.fullerWindow) // activate fuller window if enabled for full window
+                if (!config.wideScreen) document.head.appendChild(wideScreenStyle) ; updateSVG('wideScreen', 'on')
             document.head.appendChild(modeStyle); state = 'on' // activate mode
         } else { // de-activate mode
-            if (mode == 'fullWindow' && !config.wideScreen) { // if exiting full-window & wide screen wasn't manually enabled
-                try { document.head.removeChild(wideScreenStyle) } catch { }
-            } // also remove wide screen since fuller window turns it on
-            document.head.removeChild(modeStyle); state = 'off'
+            if (mode == 'fullWindow' && !config.wideScreen) // if exiting full-window, also disable widescreen if not manually enabled
+                try { document.head.removeChild(wideScreenStyle) } catch (error) {} ; updateSVG('wideScreen', 'off')
+            document.head.removeChild(modeStyle) ; state = 'off' // de-activate mode
         }
         saveSetting(mode, state.toUpperCase() == 'ON' ? true : false)
         updateSVG(mode); updateTooltip(mode) // update icon/tooltip
@@ -309,7 +307,7 @@
             iniRoffset - tooltipDiv.getBoundingClientRect().width / 2}px`
     }
 
-    function updateSVG(mode) {
+    function updateSVG(mode, state = '') {
 
         // Define SVG viewbox + paths
         var buttonColor = chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123'
@@ -349,7 +347,7 @@
             + `style="margin: 0 ${ rMargin }rem 0 ${ lMargin }rem ; ` // center overlay
             + 'pointer-events: none" ' // prevent triggering tooltips twice
             + `viewBox="${ svgViewBox }"> ` // set pre-tweaked viewbox
-            + (config[mode] ? ONpaths : OFFpaths + '</svg>') // dynamically insert paths based on loaded key
+            + (config[mode] || state.toLowerCase() == 'on' ? ONpaths : OFFpaths + '</svg>') // dynamically insert paths based on loaded key
     }
 
 })()
