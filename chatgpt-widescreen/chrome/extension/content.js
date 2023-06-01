@@ -153,18 +153,16 @@
         var modeStyle = document.getElementById(mode + '-mode') // look for existing mode style
         if (state.toUpperCase() == 'ON' || !modeStyle) { // if missing or ON-state passed
             modeStyle = mode == 'wideScreen' ? wideScreenStyle : fullWindowStyle
-            if (mode == 'fullWindow' && config.fullerWindow) { // activate fuller window if enabled for full window
-                if (!config.wideScreen) document.head.appendChild(wideScreenStyle)
-            }
+            if (mode == 'fullWindow' && config.fullerWindow) // activate fuller window if enabled for full window
+                if (!config.wideScreen) document.head.appendChild(wideScreenStyle) ; updateSVG('wideScreen', 'on')
             document.head.appendChild(modeStyle); state = 'on' // activate mode
         } else { // de-activate mode
-            if (mode == 'fullWindow' && !config.wideScreen) { // if exiting full-window & wide screen wasn't manually enabled
-                try { document.head.removeChild(wideScreenStyle) } catch { }
-            } // also remove wide screen since fuller window turns it on
-            document.head.removeChild(modeStyle); state = 'off'
+            if (mode == 'fullWindow' && !config.wideScreen) // if exiting full-window, also disable widescreen if not manually enabled
+                try { document.head.removeChild(wideScreenStyle) ; updateSVG('wideScreen', 'off') } catch (error) {}
+            document.head.removeChild(modeStyle) ; state = 'off' // de-activate mode
         }
         settings.save(mode, state.toUpperCase() === 'ON' ? true : false)
-        updateSVG(mode); updateTooltip(mode) // update icon/tooltip
+        updateSVG(mode) ; updateTooltip(mode) // update icon/tooltip
         settings.load('notifHidden').then(function() {
             if (!config.notifHidden) { // show mode notification if enabled
                 chatgpt.notify(chrome.i18n.getMessage('mode_' + mode) + ' ' + state.toUpperCase(),
@@ -181,7 +179,7 @@
         tooltipDiv.style.opacity = event.type === 'mouseover' ? '0.8' : '0' // toggle visibility
     }
 
-    function updateSVG(mode) {
+    function updateSVG(mode, state = '') {
 
         // Define SVG viewbox + paths
         var buttonColor = chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123'
@@ -221,7 +219,7 @@
             + `style="margin: 0 ${ rMargin }rem 0 ${ lMargin }rem ; ` // center overlay
             + 'pointer-events: none" ' // prevent triggering tooltips twice
             + `viewBox="${ svgViewBox }"> ` // set pre-tweaked viewbox
-            + (config[mode] ? ONpaths : OFFpaths + '</svg>') // dynamically insert paths based on loaded key
+            + (config[mode] || state.toLowerCase() == 'on' ? ONpaths : OFFpaths + '</svg>') // dynamically insert paths based on loaded key
     }
 
     function updateTooltip(buttonType) { // text & position
@@ -253,25 +251,65 @@
             for (var i = 0 ; i < nodesToRemove.length ; i++) { chatbar.removeChild(nodesToRemove[i]) }
     }}
 
+    function toggleMode(mode, state = '') {
+        var modeStyle = document.getElementById(mode + '-mode') // look for existing mode style
+        if (state.toUpperCase() == 'ON' || !modeStyle) { // if missing or ON-state passed
+            modeStyle = mode == 'wideScreen' ? wideScreenStyle : fullWindowStyle
+            if (mode == 'fullWindow' && config.fullerWindow) // activate fuller window if enabled for full window
+                if (!config.wideScreen) document.head.appendChild(wideScreenStyle) ; updateSVG('wideScreen', 'on')
+            document.head.appendChild(modeStyle); state = 'on' // activate mode
+        } else { // de-activate mode
+            if (mode == 'fullWindow' && !config.wideScreen) // if exiting full-window, also disable widescreen if not manually enabled
+                try { document.head.removeChild(wideScreenStyle) } catch (error) {} ; updateSVG('wideScreen', 'off')
+            document.head.removeChild(modeStyle) ; state = 'off' // de-activate mode
+        }
+        settings.save(mode, state.toUpperCase() === 'ON' ? true : false)
+        updateSVG(mode) ; updateTooltip(mode) // update icon/tooltip
+        settings.load('notifHidden').then(function() {
+            if (!config.notifHidden) { // show mode notification if enabled
+                chatgpt.notify(chrome.i18n.getMessage('mode_' + mode) + ' ' + state.toUpperCase(),
+                    '', '', chatgpt.isDarkMode() ? '' : 'shadow' )
+        }})
+    }
+
     toggleExtension = function() { // eslint-disable-line no-undef
-        settings.load('extensionDisabled', 'fullWindow', 'fullerWindow', 'notifHidden', 'wideScreenStyle').then(function() {
-            if (config.extensionDisabled) {
+        settings.load('extensionDisabled', 'wideScreen', 'fullWindow', 'fullerWindow', 'notifHidden', 'wideScreenStyle').then(function() {
+
+            if (config.extensionDisabled) { // try to disable modes
                 try { document.head.removeChild(wideScreenStyle) } catch {}
                 try { document.head.removeChild(fullWindowStyle) } catch {}
                 removeChatButtons() // eslint-disable-line no-undef
-            } else {
-                if (config.fullWindow) {
-                    document.head.appendChild(fullWindowStyle)
-                    if (!config.notifHidden) {
-                        chatgpt.notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON', 'lower-right') }
+
+            } else { // extension is enabled, so update mode states
+
+                // Toggle full-window if necessary
+                if (config.fullWindow && !document.getElementById('fullWindow-mode')) {
+                    document.head.appendChild(fullWindowStyle) ; updateSVG('fullWindow', 'on')
+                    if (config.fullerWindow && !document.getElementById('wideScreen-mode'))
+                        document.head.appendChild(wideScreenStyle) ; updateSVG('wideScreen', 'on')
+                    if (!config.notifHidden)
+                        chatgpt.notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON', 'lower-right')
+                } else if (!config.fullWindow && document.getElementById('fullWindow-mode')) {
+                    document.head.removeChild(fullWindowStyle) ; updateSVG('fullWindow', 'off')
+                    if (!config.wideScreen) // also remove widescreen since not manually enabled
+                        try { document.head.removeChild(wideScreenStyle) ; updateSVG('wideScreen', 'off') } catch (error) {}
+                    if (!config.notifHidden)
+                        chatgpt.notify(chrome.i18n.getMessage('mode_fullWindow') + ' OFF', 'lower-right')
                 }
-                if (config.wideScreen || ( config.fullWindow && config.fullerWindow )) {
-                    document.head.appendChild(wideScreenStyle)
+
+                // Toggle widescreen if necessary
+                if (config.wideScreen && !document.getElementById('wideScreen-mode')) {
+                    document.head.appendChild(wideScreenStyle) ; updateSVG('wideScreen', 'on')
                     if (!config.notifHidden) {
                         chatgpt.notify(chrome.i18n.getMessage('mode_wideScreen') + ' ON', 'lower-right') }
+                } else if (!config.wideScreen && !config.fullWindow && document.getElementById('wideScreen-mode')) {
+                    document.head.removeChild(wideScreenStyle) ; updateSVG('wideScreen', 'off')
+                    if (!config.notifHidden)
+                        chatgpt.notify(chrome.i18n.getMessage('mode_wideScreen') + ' OFF', 'lower-right')
                 }
+
                 insertChatButtons() // eslint-disable-line no-undef
-        }
+            }
     })}
 
 })()
