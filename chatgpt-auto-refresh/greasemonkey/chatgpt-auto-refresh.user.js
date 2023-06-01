@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.5.30
+// @version             2023.6.1
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -115,7 +115,7 @@
 // @compatible          qq
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@abf4e7ea3ed450b9f34b045d73c9522be43b2c1c/dist/chatgpt-1.6.7.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@ef94dc315d2f73dc5b9f213d4dc16df7236c020a/dist/chatgpt-1.7.3.min.js
 // @connect             raw.githubusercontent.com
 // @grant               GM_setValue
 // @grant               GM_getValue
