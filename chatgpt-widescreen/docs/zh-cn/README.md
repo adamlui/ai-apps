@@ -129,12 +129,12 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 该项目的存在归功于以下贡献者的代码、翻译、问题和想法:
 
-[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.07&h=50&w=50&mask=circle&maxage=7d)](https://github.com/adamlui)
-[![@XiaoYingYo](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?first-contrib=2023.03.06&h=50&w=50&mask=circle&maxage=7d)](https://github.com/XiaoYingYo)
-[![@mefengl](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.12&h=50&w=50&mask=circle&maxage=7d)](https://github.com/mefengl)
-[![@nhan000](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/85216095?first-contrib=2023.04.11&h=50&w=50&mask=circle&maxage=7d)](https://github.com/nhan000)
-[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.27&h=50&w=50&mask=circle&maxage=7d)](https://github.com/Zin6969)
-[![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23&h=50&w=50&mask=circle&maxage=7d)](https://github.com/AliAlSarre)
+[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.07&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
+[![@XiaoYingYo](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?first-contrib=2023.03.06-original-script&h=50&w=50&mask=circle&maxage=7d "@XiaoYingYo")](https://github.com/XiaoYingYo)
+[![@mefengl](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.12-new-chat-button&h=50&w=50&mask=circle&maxage=7d "@mefengl")](https://github.com/mefengl)
+[![@nhan000](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/85216095?first-contrib=2023.04.11-paginator-bug-report&h=50&w=50&mask=circle&maxage=7d "@nhan000")](https://github.com/nhan000)
+[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.27-doc-translations&h=50&w=50&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
+[![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23-css-readability&h=50&w=50&mask=circle&maxage=7d "@AliAlSarre")](https://github.com/AliAlSarre)
 
 ## 更多 ChatGPT 应用
 
