@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動繼續 ⏩
 // @name:zh-SG          ChatGPT 自动继续 ⏩
 // @name:zh-TW          ChatGPT 自動繼續 ⏩
-// @version             2023.5.23.1
+// @version             2023.6.1
 // @description         ⚡ Automatically continue generating multiple ChatGPT responses
 // @description:ar      ⚡ استمر في توليد إجابات متعددة من ChatGPT تلقائيًا
 // @description:bg      ⚡ Автоматично продължаване на генерирането на множество отговори от ChatGPT
@@ -104,7 +104,7 @@
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@744003f7589935a1027840a8be65239696efd05a/dist/chatgpt-1.7.1.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@ef94dc315d2f73dc5b9f213d4dc16df7236c020a/dist/chatgpt-1.7.3.min.js
 // @connect             raw.githubusercontent.com
 // @grant               GM_setValue
 // @grant               GM_getValue
@@ -123,7 +123,7 @@
 (async () => {
 
     // Initialize settings
-    var appSymbol = '≫', configKeyPrefix = 'chatGPTactn_'
+    var appSymbol = '≫', configPrefix = 'chatGPTactn_'
     var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
     loadSetting('lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer')
 
@@ -236,11 +236,11 @@
 
     function loadSetting(...keys) {
         keys.forEach(key => {
-            config[key] = GM_getValue(configKeyPrefix + key, false)
+            config[key] = GM_getValue(configPrefix + key, false)
     })}
 
     function saveSetting(key, value) {
-        GM_setValue(configKeyPrefix + key, value) // save to browser
+        GM_setValue(configPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
 
