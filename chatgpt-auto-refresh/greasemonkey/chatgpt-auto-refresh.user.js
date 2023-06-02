@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.6.1
+// @version             2023.6.2
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -115,7 +115,7 @@
 // @compatible          qq
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@ef94dc315d2f73dc5b9f213d4dc16df7236c020a/dist/chatgpt-1.7.3.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@821a4afaedc308160425b0ec91454af0d3af996e/dist/chatgpt-1.7.5.min.js
 // @connect             raw.githubusercontent.com
 // @grant               GM_setValue
 // @grant               GM_getValue
@@ -123,8 +123,6 @@
 // @grant               GM_unregisterMenuCommand
 // @grant               GM.xmlHttpRequest
 // @noframes
-// @downloadURL         https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.user.js
-// @updateURL           https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.meta.js
 // @homepageURL         https://github.com/adamlui/chatgpt-auto-refresh
 // @supportURL          https://github.com/adamlui/chatgpt-auto-refresh/issues
 // ==/UserScript==
@@ -187,7 +185,7 @@
 
     document.head.appendChild(switchStyle)
 
-    // Create toggle label, add listener/classes/HTML
+    // Create toggle label, add listener/max-height/classes/HTML
     var toggleLabel = document.createElement('div') // create label div
     toggleLabel.addEventListener('click', function() {
         var toggleInput = document.querySelector('#autoRefreshToggle')
@@ -208,12 +206,13 @@
         }}
         saveSetting('arDisabled', config.arDisabled)
     })
-    for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) { // inspect sidebar for classes
-        if (navLink.text.match(/.*chat/)) { // focus on new/clear chat button
-            toggleLabel.setAttribute('class', navLink.classList) // borrow its classes
+    for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
+        if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
+            toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
             break // stop looping since class assignment is done
         }
-    } updateToggleHTML()
+    } toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
+    updateToggleHTML()
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
     insertToggle()
@@ -305,10 +304,10 @@
     // Define TOGGLE functions
 
     function insertToggle() {
-        var chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]')
-        var firstButton = chatHistoryNav.querySelector('a')
-        if (chatgpt.history.isOff()) firstButton.nextElementSibling.style.display = 'none' // hide enable-history spam div
-        if (!chatHistoryNav.contains(toggleLabel)) chatHistoryNav.insertBefore(toggleLabel, firstButton) // insert toggle
+        var chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {}
+        var firstButton = chatHistoryNav.querySelector('a') || {}
+        if (chatgpt.history.isOff()) try { firstButton.parentNode.nextElementSibling.style.display = 'none' } catch (error) {} // hide enable-history spam div
+        if (!chatHistoryNav.contains(toggleLabel)) try { chatHistoryNav.insertBefore(toggleLabel, firstButton.parentNode) } catch (error) {} // insert toggle
     }
 
     function updateToggleHTML() {
