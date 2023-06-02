@@ -4,7 +4,7 @@
 
 <br>
 
-Copyright (c) 2023 [Adam Lui](https://github.com/adamlui) & contributors under the MIT license
+Copyright (c) 2023 [Adam Lui](https://github.com/adamlui) & [contributors](.#contributors) under the MIT license
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
