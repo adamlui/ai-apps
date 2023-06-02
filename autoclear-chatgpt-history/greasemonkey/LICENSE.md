@@ -1,4 +1,8 @@
-MIT License
+# MIT License
+
+###### English | [हिंदी](docs/hi/LICENSE.md)
+
+<br>
 
 Copyright (c) 2023 [Adam Lui](https://github.com/adamlui) & contributors under the MIT license
 
