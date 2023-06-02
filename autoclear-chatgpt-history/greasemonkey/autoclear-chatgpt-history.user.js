@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.6.1
+// @version             2023.6.2
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -42,7 +42,7 @@
 // @compatible          qq
 // @match               https://chat.openai.com/*
 // @run-at              document-end
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@ef94dc315d2f73dc5b9f213d4dc16df7236c020a/dist/chatgpt-1.7.3.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@821a4afaedc308160425b0ec91454af0d3af996e/dist/chatgpt-1.7.5.min.js
 // @connect             raw.githubusercontent.com
 // @grant               GM_setValue
 // @grant               GM_getValue
@@ -127,7 +127,7 @@
     })
     fetchHook()
 
-    // Create toggle label, add listener/classes/HTML
+    // Create toggle label, add listener/max-height/classes/HTML
     var toggleLabel = document.createElement('div') // create label div
     toggleLabel.addEventListener('click', function() {
         var toggleInput = document.querySelector('#autoClearToggle')
@@ -149,12 +149,13 @@
         }}
         saveSetting('autoclear', config.autoclear)
     })
-    for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) { // inspect sidebar for classes
-        if (navLink.text.match(/.*chat/)) { // focus on new/clear chat button
-            toggleLabel.setAttribute('class', navLink.classList) // borrow its classes
+    for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
+        if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
+            toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
             break // stop looping since class assignment is done
         }
-    } updateToggleHTML()
+    } toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
+    updateToggleHTML()
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
     insertToggle()
@@ -245,10 +246,10 @@
     // Define TOGGLE functions
 
     function insertToggle() {
-        var chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]')
-        var firstButton = chatHistoryNav.querySelector('a')
-        if (chatgpt.history.isOff()) firstButton.nextElementSibling.style.display = 'none' // hide enable-history spam div
-        if (!chatHistoryNav.contains(toggleLabel)) chatHistoryNav.insertBefore(toggleLabel, firstButton) // insert toggle
+        var chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {}
+        var firstButton = chatHistoryNav.querySelector('a') || {}
+        if (chatgpt.history.isOff()) try { firstButton.parentNode.nextElementSibling.style.display = 'none' } catch (error) {} // hide enable-history spam div
+        if (!chatHistoryNav.contains(toggleLabel)) try { chatHistoryNav.insertBefore(toggleLabel, firstButton.parentNode) } catch (error) {} // insert toggle
     }
 
     function updateToggleHTML() {
