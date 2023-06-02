@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.6.2
+// @version             2023.6.2.1
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -209,9 +209,11 @@
     for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
         if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
             toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
+            navLink.parentNode.style.margin = '2px 0' // add v-margins
             break // stop looping since class assignment is done
-        }
-    } toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
+    }}
+    toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
+    toggleLabel.style.margin = '2px 0' // add v-margins
     updateToggleHTML()
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
