@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.2
+// @version             2023.6.2.1
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -115,7 +115,7 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@f8b2faf2b52d72459dac9bb29281630b6471d66d/dist/chatgpt-1.7.4.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@bdc3e03cc0b1fbcfcc886022d5690880aa40442c/dist/chatgpt-1.7.6.min.js
 // @connect             raw.githubusercontent.com
 // @grant               GM_setValue
 // @grant               GM_getValue
@@ -188,18 +188,22 @@
 
     document.head.appendChild(switchStyle)
 
-    // Create toggle label, add listener/classes/HTML
+    // Create toggle label, add listener/classes/style/HTML
     var toggleLabel = document.createElement('div') // create label div
     toggleLabel.addEventListener('click', function() {
         var toggleInput = document.querySelector('#infinityToggle')
         toggleInput.click() ; infinityMode.toggle()
     })
-    for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) { // inspect sidebar for classes
-        if (navLink.text.match(/.*chat/)) { // focus on new/clear chat button
-            toggleLabel.setAttribute('class', navLink.classList) // borrow its classes
+    for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
+        if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
+            toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
+            navLink.parentNode.style.margin = '2px 0' // add v-margins
             break // stop looping since class assignment is done
         }
-    } updateToggleHTML()
+    }
+    toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
+    toggleLabel.style.margin = '2px 0' // add v-margins
+    updateToggleHTML()
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
     insertToggle()
@@ -296,10 +300,10 @@
     // Define TOGGLE functions
 
     function insertToggle() {
-        var chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]')
-        var firstButton = chatHistoryNav.querySelector('a')
-        if (chatgpt.history.isOff()) firstButton.nextElementSibling.style.display = 'none' // hide enable-history spam div
-        if (!chatHistoryNav.contains(toggleLabel)) chatHistoryNav.insertBefore(toggleLabel, firstButton) // insert toggle
+        var chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {}
+        var firstButton = chatHistoryNav.querySelector('a') || {}
+        if (chatgpt.history.isOff()) try { firstButton.parentNode.nextElementSibling.style.display = 'none' } catch (error) {} // hide enable-history spam div
+        if (!chatHistoryNav.contains(toggleLabel)) try { chatHistoryNav.insertBefore(toggleLabel, firstButton.parentNode) } catch (error) {} // insert toggle
     }
 
     function updateToggleHTML() {
@@ -318,7 +322,7 @@
             if (!config.notifHidden) {
                 chatgpt.notify('∞ ' + messages.menuLabel_infinityMode + ': ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             }
-            document.querySelector('nav > a').click()
+            try { document.querySelector('nav a').click() } catch (error) { return }
             setTimeout(function() {
                 chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : ''  )
                                                             + '. don\'t type anything else') }, 500)
@@ -346,7 +350,7 @@
             var toggleInput = document.querySelector('#infinityToggle')
             setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
             config.infinityMode = toggleInput.checked
-            for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu 
+            for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
             chatgpt.stop()
             if (config.infinityMode && !infinityMode.sent) infinityMode.activate()
             else if (!config.infinityMode && infinityMode.sent) infinityMode.deactivate()
