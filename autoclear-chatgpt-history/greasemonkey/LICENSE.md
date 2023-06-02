@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2023 Adam Lui (刘展鹏) & Xiao-Ying Yo (小影哟)
+Copyright (c) 2023 [Adam Lui](https://github.com/adamlui) & contributors under the MIT license
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
