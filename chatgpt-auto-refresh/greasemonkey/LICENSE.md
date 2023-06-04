@@ -2,7 +2,9 @@
 
 ###### English | [简体中文](zh-cn/LICENSE.md) | [हिंदी](hi/LICENSE.md)
 
-Copyright (c) 2023 Adam Lui & Zin6969
+<br>
+
+Copyright (c) 2023 [Adam Lui](https://github.com/adamlui) & [contributors](.#contributors)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
