@@ -8,7 +8,7 @@
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 
-### Keeps ChatGPT sessions fresh via background requests to eliminate network errors + Cloudflare checks..
+### Keeps ChatGPT sessions fresh via background requests to eliminate network errors + Cloudflare checks.
 
 ###### English | [简体中文](zh-cn#readme)
 
