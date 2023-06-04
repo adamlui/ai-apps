@@ -1,6 +1,6 @@
 # 🤖 ChatGPT apps &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20these%20%23ChatGPT%20add-ons%20out%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
 
-Apps that utilize the astounding AI of ChatGPT or enhances its UX.
+Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
 ![usercount](https://img.shields.io/badge/Users-20,000+-brightgreen)
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
