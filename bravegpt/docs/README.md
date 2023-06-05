@@ -106,7 +106,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <a href="https://technodon.org/@bravegpt" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/110077227154250890?domain=https%3A%2F%2Ftechnodon.org&style=social" alt="Follow @bravegpt on Mastodon" title="Mastodon">
 [![Follow @adamlui on GitHub](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "GitHub")](https://github.com/adamlui)
-[![Follow @Adamluitube on YouTube](https://img.shields.io/badge/Youtube-@AdamLuiTube-blue?style=social&logo=youtube&link=https://www.youtube.com/@AdamLuiTube)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
+[![Follow @Adamluitube on YouTube](https://img.shields.io/badge/YouTube-@AdamLuiTube-blue?style=social&logo=youtube&link=https://www.youtube.com/@AdamLuiTube)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 <a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" alt="Follow @adam on Mastodon" title="Mastodon">
 [![Follow @adamllui on Twitter](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
 
