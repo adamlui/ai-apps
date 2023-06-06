@@ -1,6 +1,10 @@
-MIT License
+# एमआईटी लाइसेंस
 
-Copyright (c) 2023 Adam Lui & KudoAI.
+##### हिंदी | [English](../../LICENSE.md)
+
+<br>
+
+कॉपीराइट (सी) 2023 [KudoAI](https://kudoai.com) और [योगदानकर्ता](../..#contributors)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
