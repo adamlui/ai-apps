@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.3
+// @version             2023.6.5
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -202,15 +202,13 @@
                     sendButton.removeAttribute('hasTooltip');
                 }
             }
-    }})
-    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
+    }}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Monitor scheme changes to update button colors
     var schemeObserver = new MutationObserver(([{ type, target }]) => {
         if (target === document.documentElement && type === 'attributes' && target.getAttribute('class'))
             updateSVG('wideScreen') ; updateSVG('fullWindow') ; updateSVG('newChat')
-    })
-    schemeObserver.observe(document.documentElement, { attributes: true })
+    }) ; schemeObserver.observe(document.documentElement, { attributes: true })
 
     // Define script functions
 
@@ -261,9 +259,8 @@
 
     function insertButtons() {
         var chatbar = document.querySelector("form button[class*='bottom']").parentNode
-        if (chatbar.contains(fullWindowButton)) {
-            return // if buttons aren't missing, exit
-        } else { chatbar.append(newChatButton, fullWindowButton, wideScreenButton, tooltipDiv) }
+        if (chatbar.contains(fullWindowButton)) return // if buttons aren't missing, exit
+        else chatbar.append(newChatButton, fullWindowButton, wideScreenButton, tooltipDiv)
     }
 
     function toggleMode(mode, state = '') {
