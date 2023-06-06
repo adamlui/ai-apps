@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.6.3.1
+// @version             2023.6.5
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -124,8 +124,7 @@
         createOrShowClearButton(null)
         if (json.items.length === 0 || config.buttonHidden) createOrShowClearButton('none')
         else createOrShowClearButton('')
-    })
-    fetchHook()
+    }) ; fetchHook()
 
     // Create toggle label, add listener/max-height/classes/HTML
     var toggleLabel = document.createElement('div') // create label div
@@ -146,8 +145,7 @@
             if (!config.notifHidden) {
                 chatgpt.notify('🕶 ' + messages.mode_autoClear + ': OFF',
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-        }}
-        saveSetting('autoclear', config.autoclear)
+        }} saveSetting('autoclear', config.autoclear)
     })
     for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
         if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
@@ -165,10 +163,7 @@
         mutations.forEach(function(mutation) {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 insertToggle()
-            }
-        })
-    })
-    navObserver.observe(document.documentElement, { childList: true, subtree: true })
+    }})}) ; navObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Auto-clear chats if activated // 自动清除聊天是否激活
     var clearObserver = new MutationObserver(function(mutations) {
