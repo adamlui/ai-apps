@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動繼續 ⏩
 // @name:zh-SG          ChatGPT 自动继续 ⏩
 // @name:zh-TW          ChatGPT 自動繼續 ⏩
-// @version             2023.6.3
+// @version             2023.6.5
 // @description         ⚡ Automatically continue generating multiple ChatGPT responses
 // @description:ar      ⚡ استمر في توليد إجابات متعددة من ChatGPT تلقائيًا
 // @description:bg      ⚡ Автоматично продължаване на генерирането на множество отговори от ChatGPT
@@ -205,8 +205,7 @@
                 for (const addedNode of mutation.addedNodes) {
                     if (addedNode.nodeName === 'BUTTON' && addedNode.innerHTML.includes('Continue generating')) {
                         addedNode.click()
-    }}}}})
-    continueObserver.observe(document, { childList: true, subtree: true })
+    }}}}}) ; continueObserver.observe(document, { childList: true, subtree: true })
 
     // Notify of status on load
     if (!config.notifHidden) {
