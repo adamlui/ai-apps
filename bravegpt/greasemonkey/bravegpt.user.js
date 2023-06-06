@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.6.3
+// @version             2023.6.5
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4!)
@@ -168,7 +168,7 @@
                         } catch (error) { braveGPTalert('login') ; return }
                     }
                 })
-            } else { resolve(accessToken) }
+            } else resolve(accessToken)
     })}
 
     function isBlockedbyCloudflare(resp) {
@@ -390,7 +390,7 @@
                 role: 'user', id: uuidv4(),
                 content: { content_type: 'text', parts: [query] }
             })
-        } else { messages.push({ role: 'user', content: query }) }
+        } else messages.push({ role: 'user', content: query })
         getShowReply(messages)
     }
 
