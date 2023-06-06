@@ -1,6 +1,10 @@
-MIT License
+# MIT License
 
-Copyright (c) 2023 Adam Lui & contributors
+##### English | [हिंदी](docs/hi/LICENSE.md) | [简体中文](docs/zh-cn/LICENSE.md)
+
+<br>
+
+Copyright (c) 2023 [Adam Lui](https://github.com/adamlui) & [contributors](.#contributors)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
