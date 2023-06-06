@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.6.3
+// @version             2023.6.5
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4!)
@@ -175,7 +175,7 @@
                         } catch { ddgptAlert('login') ; return }
                     }
                 })
-            } else { resolve(accessToken) }
+            } else resolve(accessToken)
     })}
 
     function isBlockedbyCloudflare(resp) {
@@ -268,7 +268,7 @@
                         if (responseItem.startsWith('data: {')) {
                             var answer = JSON.parse(responseItem.slice(6)).message.content.parts[0]
                             ddgptShow(answer)
-                        } else if (responseItem.startsWith('data: [DONE]')) { return }
+                        } else if (responseItem.startsWith('data: [DONE]')) return
                         return reader.read().then(processText)
         })}}}
 
@@ -391,7 +391,7 @@
                 role: 'user', id: uuidv4(),
                 content: { content_type: 'text', parts: [query] }
             })
-        } else { messages.push({ role: 'user', content: query }) }
+        } else messages.push({ role: 'user', content: query })
         getShowReply(messages)
     }
 
