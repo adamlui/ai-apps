@@ -1,6 +1,6 @@
 # MIT License
 
-###### English | [简体中文](docs/zh-cn/LICENSE.md)
+##### English | [简体中文](docs/zh-cn/LICENSE.md)
 
 <br>
 
