@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.3
+// @version             2023.6.5
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -199,8 +199,7 @@
             toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
             navLink.parentNode.style.margin = '2px 0' // add v-margins
             break // stop looping since class assignment is done
-        }
-    }
+    }}
     toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
     toggleLabel.style.margin = '2px 0' // add v-margins
     updateToggleHTML()
@@ -211,8 +210,7 @@
         mutations.forEach(function(mutation) {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 insertToggle()
-    }})})
-    navObserver.observe(document.documentElement, { childList: true, subtree: true })
+    }})}) ; navObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Define SCRIPT functions
 
