@@ -1,6 +1,10 @@
-MIT License
+# MIT License
 
-Copyright (c) 2023 Adam Lui, Zin6969 & KudoAI.
+##### English | [हिंदी](hi/LICENSE.md)
+
+<br>
+
+Copyright (c) 2023 [KudoAI](https://kuduoai.com) & [contributors](.#contributors)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
