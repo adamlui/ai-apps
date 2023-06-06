@@ -1,6 +1,6 @@
 # एमआईटी लाइसेंस
 
-###### हिंदी | [English](../../LICENSE.md) | [简体中文](../zh-cn/LICENSE.md)
+##### हिंदी | [English](../../LICENSE.md) | [简体中文](../zh-cn/LICENSE.md)
 
 <br>
 
