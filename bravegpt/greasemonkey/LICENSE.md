@@ -1,6 +1,6 @@
 # MIT License
 
-##### English | [हिंदी](hi/LICENSE.md)
+##### English | [हिंदी](docs/hi/LICENSE.md)
 
 <br>
 
