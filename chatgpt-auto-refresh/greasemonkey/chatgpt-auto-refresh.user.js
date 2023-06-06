@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.6.3
+// @version             2023.6.5
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -203,8 +203,7 @@
             if (!config.notifHidden) {
                 chatgpt.notify('↻ ' + messages.menuLabel_autoRefresh + ': OFF',
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-        }}
-        saveSetting('arDisabled', config.arDisabled)
+        }} saveSetting('arDisabled', config.arDisabled)
     })
     for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
         if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
@@ -222,8 +221,7 @@
         mutations.forEach(function(mutation) {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 insertToggle()
-    }})})
-    navObserver.observe(document.documentElement, { childList: true, subtree: true })
+    }})}) ; navObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Activate auto-refresh on first visit if enabled
     if (!config.arDisabled) {
