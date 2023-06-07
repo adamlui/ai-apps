@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.7.3
+// @version             2023.6.7.4
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -114,11 +114,12 @@
     var tooltipDiv = document.createElement('div')
     tooltipDiv.classList.add('toggle-tooltip')
     var tooltipStyle = document.createElement('style')
-    tooltipStyle.innerHTML = `.toggle-tooltip {
-        /* Box style */   background: black ; padding: 5px ; border-radius: 6px ;
-        /* Font style */  font-size: 0.7rem ; color: white ;
-        /* V-position */  position: absolute ; top: -22px ;
-        /* Visibility */  opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 }`
+    tooltipStyle.innerHTML = '.toggle-tooltip {'
+        + 'background: black ; padding: 5px ; border-radius: 6px ; ' // box style
+        + 'font-size: 0.7rem ; color: white ; ' // font style
+        + 'position: absolute ; top: -22px ; ' // v-position
+        + 'opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 ; ' // visibility
+        + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }' // disable select
     document.head.appendChild(tooltipStyle)
 
     // General style tweaks
@@ -219,12 +220,12 @@
     }}) ; schemeObserver.observe(document.documentElement, { attributes: true })
 
     // Add full screen listeners to update setting/button + set F11 flag
-    window.addEventListener('resize', function() { // sync full screen settings/button
+    window.addEventListener('resize', () => { // sync full screen settings/button
         var fullScreenState = isFullScreen()
         if (config.fullScreen && !fullScreenState) { syncFullScreen() ; config.f11 = false } // entering full screen
         else if (!config.fullScreen && fullScreenState) syncFullScreen() // exiting full screen
     })
-    window.addEventListener('keydown', function() { // set F11 flag for toggleMode() disabled warning
+    window.addEventListener('keydown', () => { // set F11 flag for toggleMode() disabled warning
         if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true // set flag if entering full screen via F11
     })
 
