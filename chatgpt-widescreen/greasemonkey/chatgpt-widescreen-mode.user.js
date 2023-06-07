@@ -136,7 +136,7 @@
     wideScreenStyle.innerHTML = '.text-base { max-width: 93% !important } '
         + 'div' + classListToCSS(mainDivClasses) + '{ width: 100px }' // prevent sidebar shrinking when zoomed
 
-    // Create full-screen button & add icon/classes/position/listeners
+    // Create full screen button & add icon/classes/position/listeners
     var fullScreenButton = document.createElement('div') // create button
     fullScreenButton.id = 'fullScreen-button' // for toggleTooltip()
     updateBtnSVG('fullScreen') // insert icon
