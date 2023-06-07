@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.7.2
+// @version             2023.6.7.3
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -92,7 +92,7 @@
         }
     }) ; var messages = await msgsLoaded
 
-    // Save full-window + fullscreen states
+    // Save full-window + full screen states
     await chatgpt.isLoaded() ; config.fullWindow = chatgpt.sidebar.isOff() ; config.fullScreen = isFullScreen()
 
     // Create browser toolbar menu
@@ -218,15 +218,14 @@
             updateBtnSVG('fullScreen') ; updateBtnSVG('fullWindow') ; updateBtnSVG('wideScreen') ; updateBtnSVG('newChat')
     }}) ; schemeObserver.observe(document.documentElement, { attributes: true })
 
-    // Add fullscreen listeners to update setting/button + enable F11 flag
-    window.addEventListener('resize', function() { // sync fullscreen settings/button
+    // Add full screen listeners to update setting/button + set F11 flag
+    window.addEventListener('resize', function() { // sync full screen settings/button
         var fullScreenState = isFullScreen()
-        if ((config.fullScreen && !fullScreenState) || (!config.fullScreen && fullScreenState)) syncFullScreen()
-        if (!fullScreenState) config.f11 = false
+        if (config.fullScreen && !fullScreenState) { syncFullScreen() ; config.f11 = false } // entering full screen
+        else if (!config.fullScreen && fullScreenState) syncFullScreen() // exiting full screen
     })
-    window.addEventListener('keydown', function() { // enable F11 flag for toggleMode() disabled warning
-        if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) // if entering fullscreen via F11
-            config.f11 = true
+    window.addEventListener('keydown', function() { // set F11 flag for toggleMode() disabled warning
+        if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true // set flag if entering full screen via F11
     })
 
     // Define SCRIPT functions
@@ -363,7 +362,7 @@
 
     function toggleMode(mode, state = '') {
         if (state.toUpperCase() == 'ON' || !config[mode]) { // if de-activated or ON-state passed
-            if (mode == 'fullScreen') { // activate fullscreen
+            if (mode == 'fullScreen') { // activate full screen
                 var htmlNode = document.documentElement
                 if (htmlNode.requestFullscreen) htmlNode.requestFullscreen() // HTML5
                 else if (htmlNode.webkitRequestFullscreen) htmlNode.webkitRequestFullscreen() // Safari
@@ -375,12 +374,12 @@
             } else document.head.appendChild(wideScreenStyle) // activate widescreen
             state = 'ON'
         } else { // de-activate mode
-            if (mode == 'fullScreen') { // exit fullscreen
+            if (mode == 'fullScreen') { // exit full screen
                 if (config.f11) {
                     chatgpt.notify(`${ appSymbol } Press [F11] to EXIT full screen`,
                         '', 3.5, chatgpt.isDarkMode() ? '' : 'shadow')
                 } else {
-                    try { // to exit fullscreen
+                    try { // to exit full screen
                         if (document.exitFullscreen) document.exitFullscreen() // HTML5
                         else if (document.webkitExitFullscreen) document.webkitExitFullscreen() // Safari
                         else if (document.msExitFullscreen) document.msExitFullscreen() // IE11
