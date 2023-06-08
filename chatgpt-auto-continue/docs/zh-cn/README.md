@@ -53,7 +53,7 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/ch
 ## 作者链接
 
 [![在 GitHub 上关注@adamlui](https://img.shields.io/github/followers/adamlui?label=关注@adamlui&style=social "GitHub")](https://github.com/adamlui)
-[![在 YouTube 上关注@adamluitube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=关注@adamluitube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
+[![Follow @AdamLuiTube on YouTube](https://img.shields.io/badge/YouTube-@AdamLuiTube-blue?style=social&logo=youtube&link=https://www.youtube.com/@AdamLuiTube)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 <a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&label=%E5%85%B3%E6%B3%A8@adam&style=social" alt="在 Mastodon 上关注@adam" title="Mastodon"></a>
 [![在推特上关注@adamllui](https://img.shields.io/twitter/follow/adamllui?label=关注@adamllui&style=social)](https://twitter.com/adamllui)
 
