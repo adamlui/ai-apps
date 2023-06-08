@@ -4,7 +4,7 @@ import os, json
 from sys import stdout # for dynamic prints
 from translate import Translator
 
-provider = ''
+locales_folder = '_locales' ; provider = ''
 output_langs = ['af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'br', 'bs', 'ca', 'ceb', 'ckb', 'cs', 'cy', 'da', 'de', 'dv', 'dz', 'el', 'en', 'en-GB', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fo', 'fr', 'gd', 'gl', 'gu', 'haw', 'he', 'hi', 'hr', 'ht', 'hu', 'hy', 'id', 'is', 'it', 'ja', 'jam', 'jv', 'ka', 'kab', 'kk', 'kl', 'km', 'kn', 'ko', 'ku', 'ky', 'la', 'lb', 'lo', 'lt', 'lv', 'men', 'mg', 'mi', 'mk', 'ml', 'mn', 'mfe', 'ms', 'mt', 'my', 'ne', 'niu', 'nl', 'no', 'ny', 'pa', 'pap', 'pau', 'pis', 'pl', 'pov', 'ppk', 'ps', 'pt', 'pot', 'qu', 'rn', 'ro', 'rm', 'ru', 'rw', 'sg', 'si', 'sk', 'sl', 'sm', 'sn', 'so', 'sr', 'srn', 'syc', 'sv', 'sw', 'ta', 'te', 'tet', 'tg', 'th', 'ti', 'tk', 'tkl', 'tn', 'to', 'tpi', 'tr', 'tvl', 'uk', 'ur', 'uz', 'vic', 'vi', 'wls', 'wo', 'xh', 'yi', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW', 'zdj', 'zu']
 
 # UI initializations
@@ -14,17 +14,27 @@ def print_trunc(msg) : print(msg if len(msg) < terminal_width else msg[0:termina
 
 print('')
 
-# Determine _locales dir
-print_trunc('Searching for _locales...')
-locales_dir = None
-root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
-for root, dirs, files in os.walk(root_dir):
-    if '_locales' in dirs : # _locales found
-        locales_dir = os.path.join(root, '_locales') ; break
+# Determine closest locales dir
+print_trunc(f'Searching for { locales_folder }...')
+script_dir = os.path.abspath(os.path.dirname(__file__))
+for root, dirs, files in os.walk(script_dir): # search script dir recursively
+    if locales_folder in dirs:
+        locales_dir = os.path.join(root, locales_folder) ; break
+else: # search script parent dirs recursively
+    parent_dir = os.path.dirname(script_dir)
+    while parent_dir and parent_dir != script_dir:
+        for root, dirs, files in os.walk(parent_dir):
+            if locales_folder in dirs:
+                locales_dir = os.path.join(root, locales_folder) ; break
+        if locales_dir : break
+        parent_dir = os.path.dirname(parent_dir)
+    else : locales_dir = None
 
 # Print result
 if locales_dir : print_trunc(f'_locales directory found!\n\n>> { locales_dir }\n')
-else : print_trunc('Unable to locate a _locales directory.') ; exit()
+else : print_trunc(f'Unable to locate a { locales_folder } directory.') ; exit()
+
+exit()
 
 # Load en/messages.json
 en_msgs_path = os.path.join(locales_dir, 'en', 'messages.json')
