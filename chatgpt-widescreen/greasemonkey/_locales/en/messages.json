@@ -3,6 +3,7 @@
   "appDesc": { "message": "Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
+  "menuLabel_updateCheck": { "message": "Check for Updates" },
   "menuLabel_disabled": { "message": "Disabled (extension installed)" },
   "mode_wideScreen": { "message": "Wide screen" },
   "mode_fullWindow": { "message": "Full-window" },
