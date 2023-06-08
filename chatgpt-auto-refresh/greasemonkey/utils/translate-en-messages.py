@@ -1,11 +1,11 @@
-# Translate msg's from en/messages.json to [output_langs]
+# Translate msg's from en/messages.json to [output_langs]/messages.json
 
 import os, json
 from sys import stdout # for dynamic prints
 from translate import Translator
 
 provider = ''
-output_langs = ['en', 'fr', 'in', 'vi', 'zh', 'zh-cn', 'zh-hk', 'zh-sg', 'zh-tw']
+output_langs = ['af', 'am', 'ar', 'az', 'be', 'bem', 'bg', 'bn', 'bo', 'br', 'bs', 'ca', 'ceb', 'ckb', 'cs', 'cy', 'da', 'de', 'dv', 'dz', 'el', 'en', 'en-GB', 'eo', 'es', 'et', 'eu', 'fa', 'fi', 'fo', 'fr', 'gd', 'gl', 'gu', 'haw', 'he', 'hi', 'hr', 'ht', 'hu', 'hy', 'id', 'is', 'it', 'ja', 'jam', 'jv', 'ka', 'kab', 'kk', 'kl', 'km', 'kn', 'ko', 'ku', 'ky', 'la', 'lb', 'lo', 'lt', 'lv', 'men', 'mg', 'mi', 'mk', 'ml', 'mn', 'mfe', 'ms', 'mt', 'my', 'ne', 'niu', 'nl', 'no', 'ny', 'pa', 'pap', 'pau', 'pis', 'pl', 'pov', 'ppk', 'ps', 'pt', 'pot', 'qu', 'rn', 'ro', 'rm', 'ru', 'rw', 'sg', 'si', 'sk', 'sl', 'sm', 'sn', 'so', 'sr', 'srn', 'syc', 'sv', 'sw', 'ta', 'te', 'tet', 'tg', 'th', 'ti', 'tk', 'tkl', 'tn', 'to', 'tpi', 'tr', 'tvl', 'uk', 'ur', 'uz', 'vic', 'vi', 'wls', 'wo', 'xh', 'yi', 'zh', 'zh-CN', 'zh-HK', 'zh-SG', 'zh-TW', 'zdj', 'zu']
 
 # UI initializations
 os.system('color') ; print('\033[0;92m') # set font to bright green
@@ -43,7 +43,7 @@ for lang_code in output_langs:
     # Skip English locales
     if lang_code.startswith('en'):
         print_trunc(f'Skipped {folder}/messages.json...')
-        langs_skipped.append(lang_code) ; continue
+        langs_skipped.append(lang_code) ; langs_not_translated.append(lang_code) ; continue
 
     # Initialize target locale folder
     folder_path = os.path.join(locales_dir, folder)
@@ -53,8 +53,7 @@ for lang_code in output_langs:
     # Initialize target messages
     msgs_path = os.path.join(folder_path, 'messages.json')
     if os.path.exists(msgs_path):
-        with open(msgs_path, 'r', encoding='utf-8') as messages_file:
-            messages = json.load(messages_file)
+        with open(msgs_path, 'r', encoding='utf-8') as messages_file : messages = json.load(messages_file)
     else : messages = {}    
 
     # Attempt translations
@@ -66,33 +65,27 @@ for lang_code in output_langs:
         if key not in messages:
             original_msg = translated_msg = en_messages[key]['message']
             try:
-                # if provider : translator = Translator(provider=provider, to_lang=lang_code)
-                # else: translator = Translator(to_lang=lang_code)
-                translator = Translator(to_lang=lang_code)
+                translator = Translator(provider=provider if provider else '', to_lang=lang_code)
                 translated_msg = translator.translate(original_msg)
                 if any(flag in translated_msg for flag in fail_flags):
                     translated_msg = original_msg
             except Exception as e:
-                print_trunc(f'Translation failed for key "{key}" in {lang_code}: {e}')
+                print_trunc(f'Translation failed for key "{key}" in {lang_code}/messages.json: {e}')
                 translated_msg = original_msg
             translated_msgs[key] = { 'message': translated_msg }
         else : translated_msgs[key] = messages[key]
 
     # Format messages
-    formatted_msgs_string = '{\n'
-    for index, (key, message) in enumerate(translated_msgs.items()):
-        msg_string = json.dumps(message, ensure_ascii=False)
-        msg_string = msg_string.replace('{', '{ ')
-        msg_string = msg_string.replace(':', ': ')
-        msg_string = msg_string.replace('}', ' }')
-        formatted_line = f'  "{key}": {msg_string}'
-        formatted_msgs_string += formatted_line
-        if index < len(translated_msgs) - 1 : formatted_msgs_string += ','
-        formatted_msgs_string += '\n'
-    formatted_msgs_string += '}'
-    with open(msgs_path, 'w', encoding='utf-8') as output_file:
-        output_file.write(formatted_msgs_string)
+    formatted_msgs = '{\n'
+    for index, (key, message_data) in enumerate(translated_msgs.items()):
+        formatted_msg = json.dumps(message_data, ensure_ascii=False) \
+                            .replace('{', '{ ').replace(':', ': ').replace('}', ' }') # add spacing
+        formatted_msgs += ( f'  "{key}": {formatted_msg}'
+                        + ( ',\n' if index < len(translated_msgs) - 1 else '\n' )) # terminate line
+    formatted_msgs += '}'
+    with open(msgs_path, 'w', encoding='utf-8') as output_file : output_file.write(formatted_msgs)
 
+    # Print file summary
     if translated_msgs == messages : langs_skipped.append(lang_code) ; lang_skipped = True
     elif translated_msgs != messages : langs_translated.append(lang_code) ; lang_translated = True
     if not lang_translated : langs_not_translated.append(lang_code)
@@ -100,17 +93,12 @@ for lang_code in output_langs:
     stdout.write(f"{ 'Added' if lang_added else 'Skipped' if lang_skipped else 'Updated' } { folder }/messages.json\n")
     stdout.flush()
 
-# Print summary
-print_trunc('\n\nAll messages.json files updated successfully!\n')
-if langs_translated:
-    print_trunc(f'Languages translated: {len(langs_translated)}')
-    print_trunc('[ ' + ', '.join(langs_translated) + ' ]')
-if langs_skipped:
-    print_trunc(f'Languages skipped: {len(langs_skipped)}')
-    print_trunc('[ ' + ', '.join(langs_skipped) + ' ]')
-if langs_added:
-    print_trunc(f'Languages added: {len(langs_added)}')
-    print_trunc('[ ' + ', '.join(langs_added) + ' ]')
-if langs_not_translated:
-    print_trunc(f'Languages not translated: {len(langs_not_translated)}')
-    print_trunc('[ ' + ', '.join(langs_not_translated) + ' ]')
+# Print final summary
+print_trunc('\nAll messages.json files updated successfully!\n')
+lang_data = [langs_translated, langs_skipped, langs_added, langs_not_translated]
+for data in lang_data:
+    if data:
+        list_name = next(name for name, value in globals().items() if value is data)
+        status = list_name.split('langs_')[-1].replace('_', ' ')
+        print(f'Languages {status}: {len(data)}\n')  # print tally
+        print('[ ' + ', '.join(data) + ' ]\n')  # list languages
