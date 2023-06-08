@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.8.1
+// @version             2023.6.8.2
 // @description         Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui (刘展鹏), Xiao-Ying Yo (小影哟) & mefengl (冯不游)
 // @namespace           https://github.com/adamlui
@@ -55,6 +55,8 @@
 // @grant               GM_unregisterMenuCommand
 // @grant               GM.xmlHttpRequest
 // @noframes
+// @downloadURL         https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.user.js
+// @updateURL           https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.meta.js
 // @homepageURL         https://github.com/adamlui/chatgpt-widescreen
 // @supportURL          https://github.com/adamlui/chatgpt-widescreen/issues
 // ==/UserScript==
@@ -282,12 +284,12 @@
 
         // Fetch latest meta
         var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
+        var currentVer = GM_info.script.version
         fetch(updateURL + '?t=' + Date.now(), { cache: 'no-cache' })
             .then((response) => { response.text().then((data) => {
                 saveSetting('lastCheckTime', Date.now())
 
-                // Compare versions
-                var currentVer = GM_info.script.version
+                // Compare versions                
                 var latestVer = data.match(/@version +(.*)/)[1]
                 if (config.skipNextUpdate && latestVer === config.skippedVer) return // exit comparison if past alert hidden
                 for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
@@ -319,6 +321,11 @@
 
                         return
         }}})})
+
+        if (checkForUpdates.fromMenu) { // alert to no update found
+            chatgpt.alert(`${ appSymbol } ${ messages.alert_upToDate }!`,
+                `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`)
+        }
     }
 
     // Define CSS function
@@ -427,7 +434,7 @@
         } else { // de-activate mode
             if (mode == 'fullScreen') { // exit full screen
                 if (config.f11) {
-                    chatgpt.alert(messages.alert_pressF11, messages.alert_f11reason)
+                    chatgpt.alert(appSymbol + ' ' + messages.alert_pressF11, messages.alert_f11reason + '.')
                 } else {
                     try { // to exit full screen
                         if (document.exitFullscreen) document.exitFullscreen() // HTML5
