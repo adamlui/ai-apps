@@ -34,8 +34,6 @@ else: # search script parent dirs recursively
 if locales_dir : print_trunc(f'_locales directory found!\n\n>> { locales_dir }\n')
 else : print_trunc(f'Unable to locate a { locales_folder } directory.') ; exit()
 
-exit()
-
 # Load en/messages.json
 en_msgs_path = os.path.join(locales_dir, 'en', 'messages.json')
 with open(en_msgs_path, 'r', encoding='utf-8') as en_file:
