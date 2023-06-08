@@ -87,7 +87,7 @@ for lang_code in output_langs:
     formatted_msgs = '{\n'
     for index, (key, message_data) in enumerate(translated_msgs.items()):
         formatted_msg = json.dumps(message_data, ensure_ascii=False) \
-                            .replace('{', '{ ').replace(':', ': ').replace('}', ' }') # add spacing
+                            .replace('{', '{ ').replace('}', ' }') # add spacing
         formatted_msgs += ( f'  "{key}": {formatted_msg}'
                         + ( ',\n' if index < len(translated_msgs) - 1 else '\n' )) # terminate line
     formatted_msgs += '}'
