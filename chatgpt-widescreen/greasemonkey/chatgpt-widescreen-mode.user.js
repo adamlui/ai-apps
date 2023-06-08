@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.8.6
+// @version             2023.6.8.7
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -66,7 +66,7 @@
     // Initialize settings
     var appSymbol = '🖥️', configPrefix = 'chatGPTws_'
     var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
-    loadSetting('fullerWindows', 'lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer', 'wideScreen')
+    loadSetting('fullerWindows', 'lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer', 'tcbDisabled', 'wideScreen')
 
     // Define messages
     var msgsLoaded = new Promise(resolve => {
@@ -123,13 +123,14 @@
         + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }' // disable select
     document.head.appendChild(tooltipStyle)
 
-    // General style tweaks
+    // Create general style tweaks
     var tweaksStyle = document.createElement('style')
+    var tcbStyle = 'form > div > div:nth-child(2), form textarea { max-height: 68vh !important; } '
     tweaksStyle.innerHTML = (
            classListToCSS(inputTextAreaClasses) + ' { padding-right: 145px } ' // make input text area accomdate buttons
         + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
             + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
-        + 'form > div > div:nth-child(2), form textarea { max-height: 68vh !important; } ' ) // expand text input vertically
+        + ( !config.tcbDisabled ? tcbStyle : '' )) // expand text input vertically
     document.head.appendChild(tweaksStyle)
 
     // Create wide screen style
@@ -245,7 +246,20 @@
         menuIDs.push(GM_registerMenuCommand(fwLabel, function() {
             saveSetting('fullerWindows', !config.fullerWindows)
             if (!config.notifHidden) {
-                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_fullerWins + ': '+ stateWord[+!config.fullerWindows],
+                chatgpt.notify(`${ appSymbol } ${ messages.menuLabel_fullerWins }: ${ stateWord[+!config.fullerWindows] }`,
+                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to toggle taller chatboxes when typing
+        var tcbLabel = stateSymbol[+config.tcbDisabled] + ' ' + messages.menuLabel_tallerChatbox
+            + stateSeparator + stateWord[+config.tcbDisabled]
+        menuIDs.push(GM_registerMenuCommand(tcbLabel, function() {
+            saveSetting('tcbDisabled', !config.tcbDisabled)
+            tweaksStyle.innerHTML = config.tcbDisabled ? tweaksStyle.innerHTML.replace(tcbStyle, '')
+                                                       : tweaksStyle.innerHTML + tcbStyle
+            if (!config.notifHidden) {
+                chatgpt.notify(`${ appSymbol } ${ messages.menuLabel_tallerChatbox }: ${ stateWord[+config.tcbDisabled] }`,
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
@@ -255,7 +269,7 @@
             + stateSeparator + stateWord[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
-            chatgpt.notify(appSymbol + ' ' + messages.menuLabel_modeNotifs + ': ' + stateWord[+config.notifHidden],
+            chatgpt.notify(`${ appSymbol } ${ messages.menuLabel_modeNotifs }: ${ stateWord[+config.notifHidden] }`,
                 '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
@@ -321,8 +335,8 @@
         }}})})
 
         if (checkForUpdates.fromMenu) { // alert to no update found
-            chatgpt.alert(`${ appSymbol } ${ messages.alert_upToDate }!`,
-                `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`)
+            chatgpt.alert(`${ appSymbol } ${ messages.alert_upToDate }!`, // title
+                `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
         }
     }
 
