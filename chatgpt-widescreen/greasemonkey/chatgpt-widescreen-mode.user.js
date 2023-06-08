@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.8.3
+// @version             2023.6.8.4
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -55,8 +55,8 @@
 // @noframes
 // @downloadURL         https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.user.js
 // @updateURL           https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.meta.js
-// @homepageURL         https://github.com/adamlui/chatgpt-widescreen
-// @supportURL          https://github.com/adamlui/chatgpt-widescreen/issues
+// @homepageURL         https://chatgptevo.com/widescreen
+// @supportURL          https://chatgptevo.com/widescreen/support
 // ==/UserScript==
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license.
