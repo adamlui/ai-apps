@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.6.5
+// @version             2023.6.8
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4!)
@@ -32,7 +32,7 @@
 // @connect             raw.githubusercontent.com
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@65b028f36b34e830ae3a557c987e8757e7b025f1/dist/chatgpt-1.8.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@7b8ac3c8cef0a9235363cbba29753d03a32f1204/dist/chatgpt-1.9.0.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
