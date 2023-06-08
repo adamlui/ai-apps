@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.8.4
+// @version             2023.6.8.5
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -92,16 +92,17 @@
         }
     }) ; var messages = await msgsLoaded
 
-    // Save full-window + full screen states
-    await chatgpt.isLoaded() ; config.fullWindow = chatgpt.sidebar.isOff() ; config.fullScreen = isFullScreen()
-
-    // Create browser toolbar menu
+    // Create browser toolbar menu or disable script if extension installed
+    await chatgpt.isLoaded()
     if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed, disable script/menu
         GM_registerMenuCommand('❌ ' + messages.menuLabel_disabled, function() { return })
         return // exit script
     } else registerMenu() // create functional menu
 
-    // Check for update (1x/48h)
+    // Save full-window + full screen states
+    config.fullWindow = chatgpt.sidebar.isOff() ; config.fullScreen = isFullScreen()
+
+    // Check for updates (1x/48h)
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
 
     // Collect OpenAI classes
@@ -109,9 +110,6 @@
     var sendSVGclasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
     var inputTextAreaClasses = (document.querySelector("form button[class*='bottom']") || {}).previousSibling.classList || []
     var mainDivClasses = (document.querySelector('#__next > div > div.flex') || {}).classList || []
-
-    // Set toggle colors
-    var buttonColor = setBtnColor()    
 
     // Create/stylize tooltip div
     var tooltipDiv = document.createElement('div')
@@ -139,6 +137,8 @@
     wideScreenStyle.id = 'wideScreen-mode' // for toggleMode()
     wideScreenStyle.innerHTML = '.text-base { max-width: 93% !important } '
         + 'div' + classListToCSS(mainDivClasses) + '{ width: 100px }' // prevent sidebar shrinking when zoomed
+
+    var buttonColor = setBtnColor()
 
     // Create full screen button & add icon/classes/position/listeners
     var fullScreenButton = document.createElement('div') // create button
