@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.6.9
+// @version             2023.6.9.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4!)
@@ -137,7 +137,7 @@
         // Fetch latest meta
         var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
         var currentVer = GM_info.script.version
-        GM.xmlHttpRequest({ method: "GET", url: updateURL + "?t=" + Date.now(), headers: { "Cache-Control": "no-cache" },
+        GM.xmlHttpRequest({ method: 'GET', url: updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
             onload: function(response) {
                 var data = response.responseText
                 saveSetting('lastCheckTime', Date.now())
