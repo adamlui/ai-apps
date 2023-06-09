@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.6.8
+// @version             2023.6.9
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4!)
@@ -31,9 +31,10 @@
 // @match               https://duckduckgo.com/?*
 // @include             https://auth0.openai.com
 // @connect             raw.githubusercontent.com
+// @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@7b8ac3c8cef0a9235363cbba29753d03a32f1204/dist/chatgpt-1.9.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@f855a11607839fbc55273db604d167b503434598/dist/chatgpt-1.9.1.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -43,8 +44,8 @@
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
 // @grant               GM.xmlHttpRequest
-// @downloadURL         https://www.duckduckgpt.com/userscript/code/duckduckgpt.user.js
-// @updateURL           https://www.duckduckgpt.com/userscript/code/duckduckgpt.meta.js
+// @downloadURL         https://greasyfork.org/scripts/459849/code/duckduckgpt.user.js
+// @updateURL           https://greasyfork.org/scripts/459849/code/duckduckgpt.meta.js
 // @homepageURL         https://www.duckduckgpt.com
 // @supportURL          https://github.duckduckgpt.com/issues
 // ==/UserScript==
@@ -72,17 +73,17 @@
     // Define SCRIPT functions
 
     function registerMenu() {
-        var menuID = [] // to store registered commands for removal while preserving order
+        var menuIDs = [] // to store registered commands for removal while preserving order
         var stateIndicator = { menuSymbol: ['✔️', '❌'], menuWord: ['ON', 'OFF'], notifWord: ['Enabled', 'Disabled'] }
         var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to toggle proxy API mode
         var pamLabel = stateIndicator.menuSymbol[+!config.proxyAPIenabled] + ' Proxy API Mode '
                      + stateSeparator + stateIndicator.menuWord[+!config.proxyAPIenabled]
-        menuID.push(GM_registerMenuCommand(pamLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-            chatgpt.notify('Proxy Mode ' + stateIndicator.notifWord[+!config.proxyAPIenabled], '', '', 'shadow')
-            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
+            chatgpt.notify(appSymbol + ' Proxy Mode ' + stateIndicator.notifWord[+!config.proxyAPIenabled], '', '', 'shadow')
+            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
             registerMenu() // serve fresh menu
             location.reload() // re-send query using new endpoint
         }))
@@ -90,12 +91,12 @@
         // Add command to toggle prefix mode
         var pmLabel = stateIndicator.menuSymbol[+!config.prefixEnabled] + ' Require "/" before query '
                      + stateSeparator + stateIndicator.menuWord[+!config.prefixEnabled]
-        menuID.push(GM_registerMenuCommand(pmLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(pmLabel, function() {
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
-            chatgpt.notify('Prefix Mode ' + stateIndicator.notifWord[+!config.prefixEnabled], '', '', 'shadow')
-            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
+            chatgpt.notify(appSymbol + ' Prefix Mode ' + stateIndicator.notifWord[+!config.prefixEnabled], '', '', 'shadow')
+            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
             registerMenu() // serve fresh menu
             if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
@@ -103,15 +104,19 @@
         // Add command to toggle suffix mode
         var smLabel = stateIndicator.menuSymbol[+!config.suffixEnabled] + ' Require "?" after query '
                      + stateSeparator + stateIndicator.menuWord[+!config.suffixEnabled]
-        menuID.push(GM_registerMenuCommand(smLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(smLabel, function() {
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            chatgpt.notify('Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled], '', '', 'shadow')
-            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
+            chatgpt.notify(appSymbol + ' Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled], '', '', 'shadow')
+            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
             registerMenu() // serve fresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
+
+        // Add command to check for updates
+        var ucLabel = '🚀 Check for Updates'
+        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
     }
 
     function getUserscriptManager() {
@@ -127,14 +132,54 @@
         config[key] = value // and memory
     }
 
+    function checkForUpdates() {
+
+        // Fetch latest meta
+        var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
+        var currentVer = GM_info.script.version
+        GM.xmlHttpRequest({ method: "GET", url: updateURL + "?t=" + Date.now(), headers: { "Cache-Control": "no-cache" },
+            onload: function(response) {
+                var data = response.responseText
+                saveSetting('lastCheckTime', Date.now())
+
+                // Compare versions
+                var latestVer = data.match(/@version +(.*)/)[1]
+                if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
+                    return // exit comparison if past auto-alert hidden
+                for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
+                    if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
+
+                        // Alert to update
+                        chatgpt.alert(`${ appSymbol } Update available! 🚀`,
+                            `An update to DuckDuckGPT (v${ latestVer }) is available!`
+                                + `<a target="_blank" href="https://github.com/kudoai/duckduckgpt/commits/main/greasemonkey/duckduckgpt.user.js" style="font-size: 0.88rem ; position: relative ; left: 10px">View changes</a>`,
+                            function update() { // button
+                                saveSetting('skipNextUpdate', false) // reset hidden alert setting
+                                window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
+                                    + '?t=' + Date.now(), '_blank') },
+                            !checkForUpdates.fromMenu ? // checkbox if auto-alert
+                                function skipThisVersion() {
+                                    saveSetting('skipNextUpdate', !config.skipNextUpdate)
+                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
+                                : '', 328 // width
+                        )
+                        return
+                }}
+
+                if (checkForUpdates.fromMenu) { // alert to no update found
+                    chatgpt.alert(`${ appSymbol } Up-to-date!`, // title
+                        `DuckDuckGPT (v${ currentVer }) is up-to-date!`); // msg
+    }}})}
+
+
     function isCenteredMode() { return document.querySelector('html').classList.toString().includes('center') }
     function isDarkMode() { return document.documentElement.classList.toString().includes('dark') }
 
     // Define CONSOLE/ALERT functions
 
     var ddgptConsole = {
-        info: function(msg) {console.info('🐤 DuckDuckGPT >> ' + msg)},
-        error: function(msg) {console.error('🐤 DuckDuckGPT >> ERROR: ' + msg)}
+        info: function(msg) {console.info(appSymbol + ' DuckDuckGPT >> ' + msg)},
+        error: function(msg) {console.error(appSymbol + ' DuckDuckGPT >> ERROR: ' + msg)}
     }
 
     function ddgptAlert(msg) {
@@ -398,14 +443,17 @@
     // Run MAIN routine
 
     // Initialize settings/messages/menu
-    var config = {}, configPrefix = 'ddgpt_', messages = []
-    loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
+    var appSymbol = '🤖', configPrefix = 'ddgpt_', config = {}, messages = []
+    loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
     registerMenu() // create browser toolbar menu
 
     // Exit if prefix/suffix required but not present
     if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
         ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
             return }
+
+    // Check for updates (1x/72h)
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 1728000000) checkForUpdates()   
 
     // Stylize elements
     var ddgptStyle = document.createElement('style')
@@ -436,6 +484,11 @@
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
         + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
         + '.katex-html { display: none } ' // hide unrendered math
+        + '.chatgpt-modal h2 { margin: 0 ; padding: 0 } ' // shrink margin/padding around update alert title
+        + '.chatgpt-modal p { margin: -8px 0 -9px ; font-size: 1.25rem } ' // position/size update alert msg
+        + '.chatgpt-modal button { cursor: pointer } ' // add finger to update alert button hovers
+        + '.chatgpt-modal button:hover { color: white !important } ' // color text white on update alert button hovers
+        + '.chatgpt-modal div[class*=checkbox] label { position: relative ; bottom: -0.1857rem ; left: -2px } ' // position skip update checkbox
     )
     document.head.appendChild(ddgptStyle) // append style to <head>
 
