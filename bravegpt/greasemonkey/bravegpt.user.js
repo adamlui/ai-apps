@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.6.8
+// @version             2023.6.9
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4!)
@@ -32,7 +32,7 @@
 // @connect             raw.githubusercontent.com
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@7b8ac3c8cef0a9235363cbba29753d03a32f1204/dist/chatgpt-1.9.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@f855a11607839fbc55273db604d167b503434598/dist/chatgpt-1.9.1.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -70,17 +70,17 @@
     // Define SCRIPT functions
 
     function registerMenu() {
-        var menuID = [] // to store registered commands for removal while preserving order
+        var menuIDs = [] // to store registered commands for removal while preserving order
         var stateIndicator = { menuSymbol: ['✔️', '❌'], menuWord: ['ON', 'OFF'], notifWord: ['Enabled', 'Disabled'] }
         var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to toggle proxy API mode
         var pamLabel = stateIndicator.menuSymbol[+!config.proxyAPIenabled] + ' Proxy API Mode '
                      + stateSeparator + stateIndicator.menuWord[+!config.proxyAPIenabled]
-        menuID.push(GM_registerMenuCommand(pamLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-            chatgpt.notify('Proxy Mode ' + stateIndicator.notifWord[+!config.proxyAPIenabled], '', '', 'shadow')
-            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
+            chatgpt.notify(appSymbol + ' Proxy Mode ' + stateIndicator.notifWord[+!config.proxyAPIenabled], '', '', 'shadow')
+            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
             registerMenu() // serve fresh menu
             location.reload() // re-send query using new endpoint
         }))
@@ -88,12 +88,12 @@
         // Add command to toggle prefix mode
         var pmLabel = stateIndicator.menuSymbol[+!config.prefixEnabled] + ' Require "/" before query '
                      + stateSeparator + stateIndicator.menuWord[+!config.prefixEnabled]
-        menuID.push(GM_registerMenuCommand(pmLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(pmLabel, function() {
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
-            chatgpt.notify('Prefix Mode ' + stateIndicator.notifWord[+!config.prefixEnabled], '', '', 'shadow')
-            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
+            chatgpt.notify(appSymbol + ' Prefix Mode ' + stateIndicator.notifWord[+!config.prefixEnabled], '', '', 'shadow')
+            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
             registerMenu() // serve fresh menu
             if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
@@ -101,15 +101,19 @@
         // Add command to toggle suffix mode
         var smLabel = stateIndicator.menuSymbol[+!config.suffixEnabled] + ' Require "?" after query '
                      + stateSeparator + stateIndicator.menuWord[+!config.suffixEnabled]
-        menuID.push(GM_registerMenuCommand(smLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(smLabel, function() {
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            chatgpt.notify('Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled], '', '', 'shadow')
-            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuID[i])
+            chatgpt.notify(appSymbol + ' Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled], '', '', 'shadow')
+            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
             registerMenu() // serve fresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
+
+        // Add command to check for updates
+        var ucLabel = '🚀 Check for Updates'
+        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
     }
 
     function getUserscriptManager() {
@@ -125,11 +129,49 @@
         config[key] = value // and memory
     }
 
+    function checkForUpdates() {
+
+        // Fetch latest meta
+        var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
+        var currentVer = GM_info.script.version
+        fetch(updateURL + '?t=' + Date.now(), { cache: 'no-cache' })
+            .then((response) => { response.text().then((data) => {
+                saveSetting('lastCheckTime', Date.now())
+
+                // Compare versions
+                var latestVer = data.match(/@version +(.*)/)[1]
+                if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
+                    return // exit comparison if past auto-alert hidden
+                for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
+                    if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
+
+                        // Alert to update
+                        chatgpt.alert(`${ appSymbol } Update available! 🚀`,
+                            `An update to BraveGPT (v${ latestVer }) is available!`
+                                + `<br><a target="_blank" href="https://github.com/kudoai/bravegpt/commits/main/greasemonkey/bravegpt.user.js" style="font-size: 0.7rem">View changes</a>`,
+                            function update() { // button
+                                saveSetting('skipNextUpdate', false) // reset hidden alert setting
+                                window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
+                                    + '?t=' + Date.now(), '_blank') },
+                            !checkForUpdates.fromMenu ? // checkbox if auto-alert
+                                function skipThisVersion() {
+                                    saveSetting('skipNextUpdate', !config.skipNextUpdate)
+                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
+                                : ''
+                        )
+                        return
+                }}
+
+                if (checkForUpdates.fromMenu) { // alert to no update found
+                    chatgpt.alert(`${ appSymbol } Up-to-date!`, // title
+                        `BraveGPT (v${ currentVer }) is up-to-date!`) // msg
+    }})})}
+
     // Define CONSOLE/ALERT functions
 
     var braveGPTconsole = {
-        info: function(msg) {console.info('🦁 BraveGPT >> ' + msg)},
-        error: function(msg) {console.error('🦁 BraveGPT >> ERROR: ' + msg)}
+        info: function(msg) {console.info(appSymbol + ' BraveGPT >> ' + msg)},
+        error: function(msg) {console.error(appSymbol + ' BraveGPT >> ERROR: ' + msg)}
     }
 
     function braveGPTalert(msg) {
@@ -397,9 +439,12 @@
     // Run MAIN routine
 
     // Initialize settings/messages/menu
-    var config = {}, configPrefix = 'braveGPT_', messages = []
-    loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
+    var appSymbol = '🤖', configPrefix = 'braveGPT_', config = {}, messages = []
+    loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
     registerMenu() // create browser toolbar menu
+
+    // Check for updates (1x/72h)
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 1728000000) checkForUpdates()
 
     // Load BraveGPT if necessary
     if (( !config.prefixEnabled && !config.suffixEnabled) || // prefix/suffix not required
