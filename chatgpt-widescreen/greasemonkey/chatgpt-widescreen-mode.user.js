@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.9
+// @version             2023.6.9.1
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -332,13 +332,12 @@
                         }
 
                         return
-        }}})})
+                }}
 
-        if (checkForUpdates.fromMenu) { // alert to no update found
-            chatgpt.alert(`${ appSymbol } ${ messages.alert_upToDate }!`, // title
-                `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
-        }
-    }
+                if (checkForUpdates.fromMenu) { // alert to no update found
+                    chatgpt.alert(`${ appSymbol } ${ messages.alert_upToDate }!`, // title
+                        `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
+    }})})}
 
     // Define CSS function
 
