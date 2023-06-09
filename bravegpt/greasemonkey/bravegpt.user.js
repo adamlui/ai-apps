@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.6.9
+// @version             2023.6.9.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4!)
@@ -93,7 +93,7 @@
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
             chatgpt.notify(appSymbol + ' Prefix Mode ' + stateIndicator.notifWord[+!config.prefixEnabled], '', '', 'shadow')
-            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
+            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
             registerMenu() // serve fresh menu
             if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
@@ -106,7 +106,7 @@
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
             chatgpt.notify(appSymbol + ' Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled], '', '', 'shadow')
-            for (var i = 0 ; i < menuID.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
+            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
             registerMenu() // serve fresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
