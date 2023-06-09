@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動繼續 ⏩
 // @name:zh-SG          ChatGPT 自动继续 ⏩
 // @name:zh-TW          ChatGPT 自動繼續 ⏩
-// @version             2023.6.9
+// @version             2023.6.9.1
 // @description         ⚡ Automatically continue generating multiple ChatGPT responses
 // @description:ar      ⚡ استمر في توليد إجابات متعددة من ChatGPT تلقائيًا
 // @description:bg      ⚡ Автоматично продължаване на генерирането на множество отговори от ChatGPT
@@ -104,7 +104,7 @@
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@7b8ac3c8cef0a9235363cbba29753d03a32f1204/dist/chatgpt-1.9.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@f855a11607839fbc55273db604d167b503434598/dist/chatgpt-1.9.1.min.js
 // @connect             raw.githubusercontent.com
 // @grant               GM_setValue
 // @grant               GM_getValue
@@ -151,52 +151,13 @@
         }
     }) ; var messages = await msgsLoaded
 
-    await chatgpt.isLoaded()
-
     // Init/register menu
     var menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'] } // initialize menu vars
     registerMenu() // create browser toolbar menu
 
-    // Check for update (1x/48h)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) { // if 48h since last check
-
-        // Fetch latest meta
-        var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
-        fetch(updateURL + '?t=' + Date.now(), { cache: 'no-cache' })
-            .then((response) => { response.text().then((data) => {
-                saveSetting('lastCheckTime', Date.now())
-
-                // Compare versions
-                var currentVer = GM_info.script.version
-                var latestVer = data.match(/@version +(.*)/)[1]
-                if (config.skipNextUpdate && latestVer === config.skippedVer) return // exit comparison if past alert hidden
-                for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
-
-                        // Alert to update
-                        var updateAlertID = chatgpt.alert(`${ appSymbol } ${ messages.alert_updateAvail }! 🚀`,
-                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!`
-                                + `<a target="_blank" href="https://github.com/adamlui/chatgpt-auto-continue/commits/main/greasemonkey/chatgpt-auto-continue.user.js" style="font-size: 0.7rem ; position: relative ; left: 8px">${ messages.link_viewChanges }</a>`,
-                            function update() { // button
-                                saveSetting('skipNextUpdate', false) // reset hidden alert setting
-                                window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
-                                    + '?t=' + Date.now(), '_blank') },
-                            function dontShowAgainUntilNextUpdate() { // checkbox
-                                saveSetting('skipNextUpdate', !config.skipNextUpdate)
-                                saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
-                        )
-
-                        // Internationalize button/checkbox labels if needed
-                        if (!config.userLanguage.startsWith('en')) {
-                            var updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
-                            updateAlert.querySelector('label').textContent = ( // checkbox label
-                                `${ messages.alert_dontShowAgain } ${ messages.alert_untilNextVer }`)
-                            updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
-                            updateAlert.querySelectorAll('button')[0].textContent = messages.buttonLabel_dismiss
-                        }
-
-                        return
-    }}})})}
+    // Check for updates (1x/48h)
+    await chatgpt.isLoaded()
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
 
     // Observe DOM for need to continue generating response
     const continueObserver = new MutationObserver((mutationsList) => {
@@ -228,6 +189,10 @@
             for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
             registerMenu() // serve fresh one
         }))
+
+        // Add command to check for updates
+        var ucLabel = '🚀 Check for Updates'
+        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
     }
 
     function getUserscriptManager() {
@@ -242,5 +207,53 @@
         GM_setValue(configPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
+
+    function checkForUpdates() {
+
+        // Fetch latest meta
+        var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
+        var currentVer = GM_info.script.version
+        fetch(updateURL + '?t=' + Date.now(), { cache: 'no-cache' })
+            .then((response) => { response.text().then((data) => {
+                saveSetting('lastCheckTime', Date.now())
+
+                // Compare versions                
+                var latestVer = data.match(/@version +(.*)/)[1]
+                if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
+                    return // exit comparison if past auto-alert hidden
+                for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
+                    if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
+
+                        // Alert to update
+                        var updateAlertID = chatgpt.alert(`${ appSymbol } ${ messages.alert_updateAvail }! 🚀`,
+                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!`
+                                + `<a target="_blank" href="https://github.com/adamlui/chatgpt-auto-continue/commits/main/greasemonkey/chatgpt-auto-continue.user.js" style="font-size: 0.7rem ; position: relative ; left: 8px">${ messages.link_viewChanges }</a>`,
+                            function update() { // button
+                                saveSetting('skipNextUpdate', false) // reset hidden alert setting
+                                window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
+                                    + '?t=' + Date.now(), '_blank') },
+                            !checkForUpdates.fromMenu ? // checkbox if auto-alert
+                                function dontShowAgainUntilNextUpdate() {
+                                    saveSetting('skipNextUpdate', !config.skipNextUpdate)
+                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
+                                : ''
+                        )
+
+                        // Localize button/checkbox labels if needed
+                        if (!config.userLanguage.startsWith('en')) {
+                            var updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
+                            updateAlert.querySelector('label').textContent = ( // checkbox label
+                                `${ messages.alert_dontShowAgain } ${ messages.alert_untilNextVer }`)
+                            updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
+                            updateAlert.querySelectorAll('button')[0].textContent = messages.buttonLabel_dismiss
+                        }
+
+                        return
+                }}
+
+                if (checkForUpdates.fromMenu) { // alert to no update found
+                    chatgpt.alert(`${ appSymbol } Up-to-date!`, // title
+                        `${ messages.appName } (v${ currentVer }) is up-to-date!`) // msg
+    }})})}
 
 })()
