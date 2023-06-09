@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.6.9
+// @version             2023.6.9.1
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -324,7 +324,7 @@
                     if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
 
                         // Alert to update
-                        var updateAlertID = chatgpt.alert(`${ appSymbol } Update available! 🚀`,
+                        chatgpt.alert(`${ appSymbol } Update available! 🚀`,
                             `An update to ${ messages.appName } (v${ latestVer }) is available!`
                                 + `<a target="_blank" href="https://github.com/adamlui/chatgpt-auto-refresh/commits/main/greasemonkey/chatgpt-auto-refresh.user.js" style="font-size: 0.7rem ; position: relative ; left: 8px">View changes</a>`,
                             function update() { // button
@@ -337,7 +337,6 @@
                                     saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
                                 : ''
                         )
-
                         return
                 }}
 
