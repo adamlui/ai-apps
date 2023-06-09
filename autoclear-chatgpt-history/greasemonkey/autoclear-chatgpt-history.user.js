@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.6.9
+// @version             2023.6.9.1
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -61,9 +61,10 @@
 (async () => {
 
     // Initialize settings
-    var configPrefix = 'chatGPTac_'
+    var appSymbol = '🕶️', configPrefix = 'chatGPTac_'
     var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
-    loadSetting('autoclear', 'toggleHidden', 'buttonHidden', 'notifHidden') ; config.isActive = config.autoclear
+    loadSetting('autoclear', 'buttonHidden', 'lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
+    config.isActive = config.autoclear
 
     // Define messages
     var msgsLoaded = new Promise(resolve => {
@@ -93,13 +94,16 @@
     var menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'] } // initialize menu vars
     registerMenu() // create browser toolbar menu
 
+    // Check for updates (1x/48h)
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
+
     // Auto-clear chats if activated // 自动清除聊天是否激活
     await chatgpt.isLoaded()
     setTimeout(() => { if (config.autoclear) chatgpt.clearChats() }, 250)
 
     // Notify of mode if enabled
     if (!config.notifHidden) {
-            chatgpt.notify('🕶 ' + messages.mode_autoClear + ': ON',
+            chatgpt.notify(appSymbol + ' ' + messages.mode_autoClear + ': ON',
                 '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
 
     // Stylize/insert toggle switch
@@ -130,12 +134,12 @@
         if (config.autoclear && !config.isActive) {
             setTimeout(chatgpt.clearChats, 250) ; config.isActive = true
             if (!config.notifHidden) {
-                chatgpt.notify('🕶 ' + messages.mode_autoClear + ': ON',
+                chatgpt.notify(appSymbol + ' ' + messages.mode_autoClear + ': ON',
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
         }} else if (!config.autoclear && config.isActive) {
             config.isActive = false
             if (!config.notifHidden) {
-                chatgpt.notify('🕶 ' + messages.mode_autoClear + ': OFF',
+                chatgpt.notify(appSymbol + ' ' + messages.mode_autoClear + ': OFF',
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
         }} saveSetting('autoclear', config.autoclear)
     })
@@ -177,7 +181,7 @@
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden) {
-                chatgpt.notify('🕶 ' + messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden],
+                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden],
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
@@ -187,10 +191,14 @@
                     + stateSeparator + state.word[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
-            chatgpt.notify('🕶 ' + messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden],
+            chatgpt.notify(appSymbol + ' ' + messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden],
                 '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
+
+        // Add command to check for updates
+        var ucLabel = '🚀 Check for Updates'
+        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
     }
 
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
@@ -204,6 +212,45 @@
         GM_setValue(configPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
+
+    function checkForUpdates() {
+
+        // Fetch latest meta
+        var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
+        var currentVer = GM_info.script.version
+        fetch(updateURL + '?t=' + Date.now(), { cache: 'no-cache' })
+            .then((response) => { response.text().then((data) => {
+                saveSetting('lastCheckTime', Date.now())
+
+                // Compare versions                
+                var latestVer = data.match(/@version +(.*)/)[1]
+                if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
+                    return // exit comparison if past auto-alert hidden
+                for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
+                    if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
+
+                        // Alert to update
+                        var updateAlertID = chatgpt.alert(`${ appSymbol } Update available! 🚀`,
+                            `An update to ${ messages.appName } (v${ latestVer }) is available!`
+                                + `<a target="_blank" href="https://github.com/adamlui/autoclear-chatgpt-history/commits/main/greasemonkey/autoclear-chatgpt-history.user.js" style="font-size: 0.7rem ; position: relative ; left: 8px">View changes</a>`,
+                            function update() { // button
+                                saveSetting('skipNextUpdate', false) // reset hidden alert setting
+                                window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
+                                    + '?t=' + Date.now(), '_blank') },
+                            !checkForUpdates.fromMenu ? // checkbox if auto-alert
+                                function dontShowAgainUntilNextUpdate() {
+                                    saveSetting('skipNextUpdate', !config.skipNextUpdate)
+                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
+                                : ''
+                        )
+
+                        return
+                }}
+
+                if (checkForUpdates.fromMenu) { // alert to no update found
+                    chatgpt.alert(`${ appSymbol } Up-to-date!`, // title
+                        `${ messages.appName } (v${ currentVer }) is up-to-date!`) // msg
+    }})})}
 
     // Define TOGGLE functions
 
