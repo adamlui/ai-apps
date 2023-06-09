@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.9.1
+// @version             2023.6.9.2
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -330,7 +330,7 @@
                                     saveSetting('skipNextUpdate', !config.skipNextUpdate)
                                     saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
                                 : ''
-
+                        )
                         return
                 }}
 
