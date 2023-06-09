@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.6.8
+// @version             2023.6.9
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -42,7 +42,7 @@
 // @compatible          qq
 // @match               https://chat.openai.com/*
 // @run-at              document-end
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@7b8ac3c8cef0a9235363cbba29753d03a32f1204/dist/chatgpt-1.9.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@f855a11607839fbc55273db604d167b503434598/dist/chatgpt-1.9.1.min.js
 // @connect             raw.githubusercontent.com
 // @grant               GM_setValue
 // @grant               GM_getValue
@@ -93,7 +93,14 @@
     var menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'] } // initialize menu vars
     registerMenu() // create browser toolbar menu
 
+    // Auto-clear chats if activated // 自动清除聊天是否激活
     await chatgpt.isLoaded()
+    setTimeout(() => { if (config.autoclear) chatgpt.clearChats() }, 250)
+
+    // Notify of mode if enabled
+    if (!config.notifHidden) {
+            chatgpt.notify('🕶 ' + messages.mode_autoClear + ': ON',
+                '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
 
     // Stylize/insert toggle switch
     var switchStyle = document.createElement('style')
@@ -112,31 +119,16 @@
             transform: translateX(14px) }`
     document.head.appendChild(switchStyle)
 
-    // Stylize clear button icons
-    var clearSvg = null
-
-    // Init/fill conversation map
-    var fetchMap = new Map()
-    fetchMap.set('conversations', {})
-    fetchMap.set('/backend-api/conversations', async function(f) {
-        let json = await f.json()
-        fetchMap.set('conversations', json)
-        createOrShowClearButton(null)
-        if (json.items.length === 0 || config.buttonHidden) createOrShowClearButton('none')
-        else createOrShowClearButton('')
-    }) ; fetchHook()
-
     // Create toggle label, add listener/max-height/classes/HTML
     var toggleLabel = document.createElement('div') // create label div
-    toggleLabel.addEventListener('click', function() {
+    toggleLabel.addEventListener('click', () => {
         var toggleInput = document.querySelector('#autoClearToggle')
         toggleInput.click()
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.autoclear = toggleInput.checked
         for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         if (config.autoclear && !config.isActive) {
-            if (fetchMap.get('conversations').items.length > 0) setTimeout(chatgpt.clearChats, 250)
-            config.isActive = true
+            setTimeout(chatgpt.clearChats, 250) ; config.isActive = true
             if (!config.notifHidden) {
                 chatgpt.notify('🕶 ' + messages.mode_autoClear + ': ON',
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
@@ -149,7 +141,7 @@
     })
     for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
         if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
-            toggleLabel.setAttribute('class', navLink.classList) // borrow link classes            
+            toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
             navLink.parentNode.style.margin = '2px 0' // add v-margins
             break // stop looping since class assignment is done
     }}
@@ -159,26 +151,11 @@
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
     insertToggle()
-    var navObserver = new MutationObserver(function(mutations) {
+    var nodeObserver = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 insertToggle()
-    }})}) ; navObserver.observe(document.documentElement, { childList: true, subtree: true })
-
-    // Auto-clear chats if activated // 自动清除聊天是否激活
-    var clearObserver = new MutationObserver(function(mutations) {
-        mutations.forEach(function() {
-            if (fetchMap.get('conversations').items.length > 0) {
-                    setTimeout(chatgpt.clearChats, 250) ; clearObserver.disconnect()
-    }})})
-    if (config.autoclear) {
-        if (!config.notifHidden) {
-            chatgpt.notify('🕶 ' + messages.mode_autoClear + ': ON',
-                '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-        } clearObserver.observe(document, { childList: true, subtree: true })
-        // Auto-disconnect after 3.5sec to avoid clearing new chats // 还要在3.5秒后断开连接,以避免清除新的频道
-        setTimeout(function() { clearObserver.disconnect() }, 3500)
-    }
+    }})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Define SCRIPT functions
 
@@ -201,18 +178,6 @@
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden) {
                 chatgpt.notify('🕶 ' + messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden],
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-            } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
-
-        // Add 'Button Visibility' command
-        var bvLabel = state.symbol[+config.buttonHidden] + ' ' + messages.menuLabel_buttonVis
-                    + stateSeparator + state.word[+config.buttonHidden]
-        menuIDs.push(GM_registerMenuCommand(bvLabel, function() {
-            saveSetting('buttonHidden', !config.buttonHidden)
-            document.getElementById('clearButton').style.display = config.buttonHidden ? 'none' : '' // toggle visibility
-            if (!config.notifHidden) {
-                chatgpt.notify('🕶 ' + messages.menuLabel_buttonVis + ': '+ state.word[+config.buttonHidden],
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
@@ -258,86 +223,5 @@
                 <span class="slider"></span></label>`
         toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
     }
-
-    // Define BUTTON functions
-
-    function createOrShowClearButton(Show = null) {
-        if (document.getElementById('clearButton') != null) {
-            if (Show != null) document.getElementById('clearButton').style.display = Show
-            return
-        }
-        let border = document.querySelectorAll('div[class^="border-"]')
-        border = border[border.length - 1]
-        let div = document.createElement('div')
-        div.id = 'clearButton'
-        let className = border.childNodes[0].className
-        div.className = className
-        border.insertBefore(div, border.childNodes[0]);
-        (async function() {
-            if (clearSvg == null) {
-                if (!await initClearSvg()) return }
-            div.innerHTML = clearSvg[0] + messages.buttonLabel_clearChats
-            div.name = 0
-            div.addEventListener('click', function() {
-                let json = fetchMap.get('conversations')
-                if (json.items.length == 0) {
-                    div.name = 0
-                    div.innerHTML = clearSvg[div.name] + messages.buttonLabel_clearChats
-                    return
-                }
-                if (div.name === 0) { div.innerHTML = clearSvg[div.name] + messages.buttonLabel_clearChats, div.name = 1}
-                else { createOrShowClearButton('none') ; div.name = 0 ; chatgpt.clearChats() }
-                div.innerHTML = clearSvg[div.name] + ' '+ messages.buttonLabel_confirm + ' ' + messages.buttonLabel_clearChats
-            })
-        })()
-    }
-
-    async function initClearSvg() {
-        return new Promise(async(resolve) => {
-            let Svg = GM_getValue('clearSvg', [])
-            if (Svg.length !== 0) {
-                clearSvg = Svg ; resolve(true) ; return }
-            let json = fetchMap.get('conversations')
-            if (json && json.items && json.items.length == 0) {
-                resolve(false) ; return }
-            let menuButton = document.querySelector('button[id^="headlessui-menu-button-"]')
-            menuButton.click()
-            let menuitems = []
-            await new Promise((resolve) => {
-                let Timer = setInterval(() => {
-                    menuitems = document.querySelectorAll('a[role="menuitem"]')
-                    if (menuitems.length < 4) return
-                    clearInterval(Timer) ; resolve()
-                }, 100)
-            })
-            let menuitem = menuitems[1]
-            if (menuitem.name === 1) return
-            let svg = menuitem.querySelector('svg')
-            clearSvg = [] ; clearSvg.push(svg.outerHTML) ; menuitem.click()
-            setTimeout(() => {
-                svg = menuitem.querySelector('svg')
-                clearSvg.push(svg.outerHTML)
-                menuitem.name = 1 ; menuitem.remove() ; menuButton.click()
-                GM_setValue('clearSvg', clearSvg)
-                resolve(true)
-            }, 100)
-        })
-    }
-
-    // Define FETCH-HOOK function
-
-    async function fetchHook() {
-        let browserWindow = document.defaultView
-        const originalFetch = browserWindow.fetch
-        browserWindow.fetch = function(...args) {
-            (async function() {
-                let U = args[0]
-                if (U.indexOf('http') == -1) return
-                let url = new URL(U), pathname = url.pathname, callback = fetchMap.get(pathname)
-                if (callback == null) return
-                callback(await originalFetch.apply(this, args))
-            })()
-            return originalFetch.apply(this, args)
-    }}
 
 })()
