@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.9
+// @version             2023.6.9.1
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -318,7 +318,7 @@
                     if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
 
                         // Alert to update
-                        var updateAlertID = chatgpt.alert(`${ appSymbol } Update available! 🚀`,
+                        chatgpt.alert(`${ appSymbol } Update available! 🚀`,
                             `An update to ${ messages.appName } (v${ latestVer }) is available!`
                                 + `<a target="_blank" href="https://github.com/adamlui/chatgpt-infinity/commits/main/greasemonkey/chatgpt-infinity.user.js" style="font-size: 0.7rem ; position: relative ; left: 8px">View changes</a>`,
                             function update() { // button
@@ -330,7 +330,6 @@
                                     saveSetting('skipNextUpdate', !config.skipNextUpdate)
                                     saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
                                 : ''
-                        )
 
                         return
                 }}
