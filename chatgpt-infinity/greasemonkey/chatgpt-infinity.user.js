@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.8
+// @version             2023.6.9
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -115,7 +115,7 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@7b8ac3c8cef0a9235363cbba29753d03a32f1204/dist/chatgpt-1.9.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@f855a11607839fbc55273db604d167b503434598/dist/chatgpt-1.9.1.min.js
 // @connect             raw.githubusercontent.com
 // @grant               GM_setValue
 // @grant               GM_getValue
@@ -134,9 +134,9 @@
 (async () => {
 
     // Initialize settings
-    var configPrefix = 'chatGPTinf_'
+    var appSymbol = '∞', configPrefix = 'chatGPTinf_'
     var config = { userLanguage: navigator.languages[0] || navigator.language || '', infinityMode: false }
-    loadSetting('toggleHidden', 'autoScrollDisabled', 'replyLanguage', 'replyInterval')
+    loadSetting('autoScrollDisabled', 'lastCheckTime', 'replyInterval', 'replyLanguage', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
     if (!config.replyLanguage) saveSetting('replyLanguage', navigator.languages[0] || navigator.language || '') // init reply language
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
 
@@ -168,7 +168,9 @@
     var menuIDs = [], stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF'] // initialize menu vars
     registerMenu() // create browser toolbar menu
 
+    // Check for updates (1x/48h)
     await chatgpt.isLoaded()
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
 
     // Stylize toggle switch
     var switchStyle = document.createElement('style')
@@ -232,7 +234,7 @@
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden) {
-                chatgpt.notify('∞ ' + messages.menuLabel_toggleVis + ': '+ stateWord[+config.toggleHidden],
+                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_toggleVis + ': '+ stateWord[+config.toggleHidden],
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             } for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
         }))
@@ -243,7 +245,7 @@
         menuIDs.push(GM_registerMenuCommand(asLabel, function() {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
             if (!config.notifHidden) {
-                chatgpt.notify('∞ ' + messages.menuLabel_autoScroll + ': '+ stateWord[+config.autoScrollDisabled],
+                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_autoScroll + ': '+ stateWord[+config.autoScrollDisabled],
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             } for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
         }))
@@ -281,6 +283,10 @@
                     for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
                     break
         }}}))
+
+        // Add command to check for updates
+        var ucLabel = '🚀 Check for Updates'
+        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
     }
 
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch(error) { return 'other' }}
@@ -294,6 +300,45 @@
         GM_setValue(configPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
+
+    function checkForUpdates() {
+
+        // Fetch latest meta
+        var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
+        var currentVer = GM_info.script.version
+        fetch(updateURL + '?t=' + Date.now(), { cache: 'no-cache' })
+            .then((response) => { response.text().then((data) => {
+                saveSetting('lastCheckTime', Date.now())
+
+                // Compare versions                
+                var latestVer = data.match(/@version +(.*)/)[1]
+                if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
+                    return // exit comparison if past auto-alert hidden
+                for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
+                    if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
+
+                        // Alert to update
+                        var updateAlertID = chatgpt.alert(`${ appSymbol } Update available! 🚀`,
+                            `An update to ${ messages.appName } (v${ latestVer }) is available!`
+                                + `<a target="_blank" href="https://github.com/adamlui/chatgpt-infinity/commits/main/greasemonkey/chatgpt-infinity.user.js" style="font-size: 0.7rem ; position: relative ; left: 8px">View changes</a>`,
+                            function update() { // button
+                                saveSetting('skipNextUpdate', false) // reset hidden alert setting
+                                window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
+                                    + '?t=' + Date.now(), '_blank') },
+                            !checkForUpdates.fromMenu ? // checkbox if auto-alert
+                                function dontShowAgainUntilNextUpdate() {
+                                    saveSetting('skipNextUpdate', !config.skipNextUpdate)
+                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
+                                : ''
+                        )
+
+                        return
+                }}
+
+                if (checkForUpdates.fromMenu) { // alert to no update found
+                    chatgpt.alert(`${ appSymbol } Up-to-date!`, // title
+                        `${ messages.appName } (v${ currentVer }) is up-to-date!`) // msg
+    }})})}
 
     // Define TOGGLE functions
 
@@ -318,7 +363,7 @@
 
         activate: async function() {
             if (!config.notifHidden) {
-                chatgpt.notify('∞ ' + messages.menuLabel_infinityMode + ': ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_infinityMode + ': ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             }
             try { document.querySelector('nav a').click() } catch (error) { return }
             setTimeout(function() {
@@ -340,7 +385,7 @@
         deactivate: function() {
             clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null, infinityMode.sent = null
             if (!config.notifHidden) {
-                chatgpt.notify('∞ ' + messages.menuLabel_infinityMode + ': OFF', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_infinityMode + ': OFF', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             }
         },
 
