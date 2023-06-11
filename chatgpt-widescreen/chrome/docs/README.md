@@ -4,6 +4,7 @@
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![commits](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=Commits)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
+![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-widescreen?label=Vulnerabilities&labelColor=464646&color=gold)
 [![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
