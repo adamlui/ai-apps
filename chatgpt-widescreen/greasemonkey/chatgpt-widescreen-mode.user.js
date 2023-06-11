@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.10
+// @version             2023.6.11
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -111,6 +111,8 @@
     var sendSVGclasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
     var inputTextAreaClasses = (document.querySelector("form button[class*='bottom']") || {}).previousSibling.classList || []
     var mainDivClasses = (document.querySelector('#__next > div > div.flex') || {}).classList || []
+    var sidepadClasses = (document.querySelector('#__next > div > div') || {}).classList || []
+    var sidebarClasses = (document.querySelector('#__next > div > div.dark') || {}).classList || []
 
     // Create/stylize tooltip div
     var tooltipDiv = document.createElement('div')
@@ -140,6 +142,11 @@
     wideScreenStyle.innerHTML = '.text-base { max-width: 93% !important } '
         + 'div' + classListToCSS(mainDivClasses) + '{ width: 100px }' // prevent sidebar shrinking when zoomed
 
+    // Create full-window style
+    var fullWindowStyle = document.createElement('style')
+    fullWindowStyle.id = 'fullWindow-mode' // for toggleMode()
+    fullWindowStyle.innerHTML = classListToCSS(sidebarClasses) + '{ display: none }' // hide sidebar
+        + classListToCSS(sidepadClasses) + '{ padding-left: 0px }' // remove side padding
     var buttonColor = setBtnColor()
 
     // Create full screen button & add icon/classes/position/listeners
@@ -215,7 +222,9 @@
                     sendButton.removeAttribute('hasTooltip');
                 }
             }
+
     }}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
+
 
     // Monitor scheme changes to update button colors
     var schemeObserver = new MutationObserver(([{ type, target }]) => {
@@ -224,11 +233,18 @@
             updateBtnSVG('fullScreen') ; updateBtnSVG('fullWindow') ; updateBtnSVG('wideScreen') ; updateBtnSVG('newChat')
     }}) ; schemeObserver.observe(document.documentElement, { attributes: true })
 
+    // Monitor sidebar to update full-window setting
+    var sidebarObserver = new MutationObserver((mutationsList, observer) => {
+        var fullWindowState = chatgpt.sidebar.isOff()
+        if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
+            syncMode('fullWindow')
+    }) ; sidebarObserver.observe(document.body, { childList: true, subtree: true })
+
     // Add full screen listeners to update setting/button + set F11 flag
     window.addEventListener('resize', () => { // sync full screen settings/button
         var fullScreenState = chatgpt.isFullScreen()
-        if (config.fullScreen && !fullScreenState) { syncFullScreen() ; config.f11 = false } // entering full screen
-        else if (!config.fullScreen && fullScreenState) syncFullScreen() // exiting full screen
+        if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
+        else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     })
     window.addEventListener('keydown', () => { // set F11 flag for toggleMode() disabled warning
         if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true // set flag if entering full screen via F11
@@ -433,20 +449,18 @@
     // Define MODE functions
 
     function toggleMode(mode, state = '') {
-        if (state.toUpperCase() == 'ON' || !config[mode]) { // if de-activated or ON-state passed
+        if (state.toUpperCase() == 'ON' || !config[mode]) { // activate mode
             if (mode == 'fullScreen') { // activate full screen
                 var htmlNode = document.documentElement
                 if (htmlNode.requestFullscreen) htmlNode.requestFullscreen() // HTML5
                 else if (htmlNode.webkitRequestFullscreen) htmlNode.webkitRequestFullscreen() // Safari
                 else if (htmlNode.msRequestFullscreen) htmlNode.msRequestFullscreen() // IE11
             } else if (mode == 'fullWindow') { // activate full-window
-                if (config.fullerWindows) // activate fuller window if needed
-                    if (!config.wideScreen) { document.head.appendChild(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on') }
-                chatgpt.sidebar.hide()
-            } else document.head.appendChild(wideScreenStyle) // activate widescreen
-            state = 'ON'
+                document.head.appendChild(fullWindowStyle) ; chatgpt.sidebar.hide()
+            } else { // activate widescreen
+                document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
         } else { // de-activate mode
-            if (mode == 'fullScreen') { // exit full screen
+            if (mode == 'fullScreen') { // de-activate full screen
                 if (config.f11) {
                     chatgpt.alert(appSymbol + ' ' + messages.alert_pressF11, messages.alert_f11reason + '.')
                 } else {
@@ -456,25 +470,31 @@
                         else if (document.msExitFullscreen) document.msExitFullscreen() // IE11
                     } catch (error) { console.error(appSymbol + ' >> '), error }
                 }
-            } else if (mode == 'fullWindow') { // exit full-window
-                if (!config.wideScreen) // de-activate fuller window if needed
-                    try { document.head.removeChild(wideScreenStyle) } catch (error) {} updateBtnSVG('wideScreen', 'off')
-                chatgpt.sidebar.show()
-            } else try { document.head.removeChild(wideScreenStyle) } catch (error) {} // exit widescreen
-            state = 'OFF'
+            } else if (mode == 'fullWindow') { // de-activate full-window
+                try { document.head.removeChild(fullWindowStyle) } catch (error) {} chatgpt.sidebar.show()
+            } else // de-activate widescreen
+                try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (error) {}
         }
-        if (mode !== 'fullScreen') saveSetting(mode, state == 'ON' ? true : false)
-        updateBtnSVG(mode); updateTooltip(mode) // update icon/tooltip
-        if (!config.notifHidden & mode !== 'fullScreen') { // show mode notification if enabled
-            chatgpt.notify(`${ appSymbol } ${ messages['mode_' + mode] } ${ state.toUpperCase() }`,
-                '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
     }
 
-    function syncFullScreen() { // setting + toggle icon
-        var fullScreenState = chatgpt.isFullScreen()
-        saveSetting('fullScreen', fullScreenState) ; updateBtnSVG('fullScreen')
-        if (!config.notifHidden) { // show exit notification if enabled
-            chatgpt.notify(`${ appSymbol } ${ messages.mode_fullScreen } ${ fullScreenState ? 'ON' : 'OFF' }`,
+    function syncMode(mode) {
+        var state = ( mode === 'wideScreen' ? document.querySelector('#wideScreen-mode')
+                    : mode === 'fullWindow' ? chatgpt.sidebar.isOff()
+                                            : chatgpt.isFullScreen() )
+        saveSetting(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
+
+        // Handle fuller window & OpenAI toggle
+        if (mode === 'fullWindow') {
+            if (state && config.fullerWindows && !config.wideScreen) { // activate fuller window
+                document.head.appendChild(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
+            } else if (!state) {
+                try { document.head.removeChild(fullWindowStyle) } catch (error) {} // remove style too so sidebar shows
+                if (!config.wideScreen) { // disable widescreen if result of fuller window
+                    try { document.head.removeChild(wideScreenStyle) } catch (error) {} updateBtnSVG('wideScreen', 'off')
+        }}}
+
+        if (!config.notifHidden) { // notify synced state
+            chatgpt.notify(`${ appSymbol } ${ messages['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`,
                 '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
     }
 
