@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.6.9.1
+// @version             2023.6.10
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -117,6 +117,7 @@
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
 // @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@f855a11607839fbc55273db604d167b503434598/dist/chatgpt-1.9.1.min.js
 // @connect             raw.githubusercontent.com
+// @connect             greasyfork.org
 // @grant               GM_setValue
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
@@ -166,7 +167,7 @@
     var menuIDs = [], stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF'] // initialize menu vars
     registerMenu() // create browser toolbar menu
 
-    // Check for updates (1x/48h)
+    // Check for updates (1x/72h)
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
 
     // Stylize toggle switch
@@ -312,8 +313,9 @@
         // Fetch latest meta
         var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
         var currentVer = GM_info.script.version
-        fetch(updateURL + '?t=' + Date.now(), { cache: 'no-cache' })
-            .then((response) => { response.text().then((data) => {
+        GM.xmlHttpRequest({ method: 'GET', url: updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
+            onload: function(response) {
+                var data = response.responseText
                 saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions                
@@ -326,7 +328,7 @@
                         // Alert to update
                         chatgpt.alert(`${ appSymbol } Update available! 🚀`,
                             `An update to ${ messages.appName } (v${ latestVer }) is available!`
-                                + `<a target="_blank" href="https://github.com/adamlui/chatgpt-auto-refresh/commits/main/greasemonkey/chatgpt-auto-refresh.user.js" style="font-size: 0.7rem ; position: relative ; left: 8px">View changes</a>`,
+                                + `<br><a target="_blank" href="https://github.com/adamlui/chatgpt-auto-refresh/commits/main/greasemonkey/chatgpt-auto-refresh.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
                                 saveSetting('skipNextUpdate', false) // reset hidden alert setting
                                 window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
@@ -343,7 +345,7 @@
                 if (checkForUpdates.fromMenu) { // alert to no update found
                     chatgpt.alert(`${ appSymbol } Up-to-date!`, // title
                         `${ messages.appName } (v${ currentVer }) is up-to-date!`) // msg
-    }})})}
+    }}})}
 
     // Define TOGGLE functions
 
