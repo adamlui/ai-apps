@@ -2,6 +2,7 @@
 
 [![执照](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
 [![提交](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-continue?label=提交)](https://github.com/adamlui/chatgpt-auto-continue/commits/main)
+![弱点](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-auto-continue?label=弱点&labelColor=464646&color=gold)
 [![代码质量](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-continue?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-continue)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![在 Awesome Userscripts 中提到](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
