@@ -7,6 +7,7 @@
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 [![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
 [![commits](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=Commits)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
+![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-widescreen?label=Vulnerabilities&labelColor=464646&color=gold)
 [![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 <a href="https://www.producthunt.com/posts/chatgpt-widescreen-mode"><img height=20 src="https://raw.githubusercontent.com/adamlui/chatgpt-addons/main/media/badges/product-hunt-tomato.svg"></a>
