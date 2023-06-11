@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.9.2
+// @version             2023.6.10
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -117,6 +117,7 @@
 // @compatible          qq
 // @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@f855a11607839fbc55273db604d167b503434598/dist/chatgpt-1.9.1.min.js
 // @connect             raw.githubusercontent.com
+// @connect             greasyfork.org
 // @grant               GM_setValue
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
@@ -306,8 +307,9 @@
         // Fetch latest meta
         var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
         var currentVer = GM_info.script.version
-        fetch(updateURL + '?t=' + Date.now(), { cache: 'no-cache' })
-            .then((response) => { response.text().then((data) => {
+        GM.xmlHttpRequest({ method: 'GET', url: updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
+            onload: function(response) {
+                var data = response.responseText
                 saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions                
@@ -320,7 +322,7 @@
                         // Alert to update
                         chatgpt.alert(`${ appSymbol } Update available! 🚀`,
                             `An update to ${ messages.appName } (v${ latestVer }) is available!`
-                                + `<a target="_blank" href="https://github.com/adamlui/chatgpt-infinity/commits/main/greasemonkey/chatgpt-infinity.user.js" style="font-size: 0.7rem ; position: relative ; left: 8px">View changes</a>`,
+                                + `<br><a target="_blank" href="https://github.com/adamlui/chatgpt-infinity/commits/main/greasemonkey/chatgpt-infinity.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
                                 saveSetting('skipNextUpdate', false) // reset hidden alert setting
                                 window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
@@ -337,7 +339,7 @@
                 if (checkForUpdates.fromMenu) { // alert to no update found
                     chatgpt.alert(`${ appSymbol } Up-to-date!`, // title
                         `${ messages.appName } (v${ currentVer }) is up-to-date!`) // msg
-    }})})}
+    }}})}
 
     // Define TOGGLE functions
 
