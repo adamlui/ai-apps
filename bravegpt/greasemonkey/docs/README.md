@@ -8,6 +8,7 @@
   
 </h1>
 
+![usercount](https://img.shields.io/greasyfork/dt/462440?label=Users)
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
 [![commits](https://img.shields.io/github/commit-activity/m/kudoai/bravegpt?label=Commits)](https://github.com/adamlui/userscripts/commits/master/chatgpt/bravegpt)
