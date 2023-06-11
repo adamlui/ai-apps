@@ -3,6 +3,7 @@
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
 [![commits](https://img.shields.io/github/commit-activity/m/adamlui/autoclear-chatgpt-history?label=Commits)](https://github.com/adamlui/autoclear-chatgpt-history/commits/main)
+![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/adamlui/autoclear-chatgpt-history?label=Vulnerabilities&labelColor=464646&color=gold)
 [![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/autoclear-chatgpt-history?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/autoclear-chatgpt-history)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#privacy)
