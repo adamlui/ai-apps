@@ -117,6 +117,7 @@ This script exists thanks to code, translations, issues & ideas from the followi
 [![@nhan000](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/85216095?first-contrib=2023.04.11-paginator-bug-report&h=50&w=50&mask=circle&maxage=7d "@nhan000")](https://github.com/nhan000)
 [![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.27-doc-translations&h=50&w=50&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
 [![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23-css-readability&h=50&w=50&mask=circle&maxage=7d "@AliAlSarre")](https://github.com/AliAlSarre)
+[![ChatGPT](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
 ## More ChatGPT apps
 
