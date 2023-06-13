@@ -158,7 +158,7 @@
     }})}) ; schemeObserver.observe(document.documentElement, { attributes: true })
 
     // Monitor sidebar button to update full-window setting
-    var sidebarObserver = new MutationObserver((mutations) => {
+    var sidebarObserver = new MutationObserver(() => {
         settings.load(['extensionDisabled']).then(() => {
             if (!config.extensionDisabled) {
                 var fullWindowState = chatgpt.sidebar.isOff()
