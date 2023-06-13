@@ -70,7 +70,7 @@
 
     // Add update-check span click-listener
     var updateSpan = document.querySelector('span[title*="update" i]')
-    updateSpan.addEventListener('click', (event) => {
+    updateSpan.addEventListener('click', () => {
         window.close() // popup
         chrome.runtime.requestUpdateCheck((status, version) => {
             if (status === 'update_available') {
