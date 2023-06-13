@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.13.4
+// @version             2023.6.13.5
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -129,12 +129,7 @@
     // Create general style tweaks
     var tweaksStyle = document.createElement('style')
     var tcbStyle = 'form > div > div:nth-child(2), form textarea { max-height: 68vh !important; } '
-    tweaksStyle.innerHTML = (
-           classListToCSS(inputTextAreaClasses) + ' { padding-right: 145px } ' // make input text area accomdate buttons
-        + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
-            + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
-        + ( !config.tcbDisabled ? tcbStyle : '' )) // expand text input vertically
-    document.head.appendChild(tweaksStyle)
+    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create wide screen style
     var wideScreenStyle = document.createElement('style')
@@ -205,6 +200,7 @@
             if (!prevSessionChecked) {
                 if (config.wideScreen) toggleMode('wideScreen', 'ON')
                 if (config.fullWindow) toggleMode('fullWindow', 'ON')
+                if (config.tcbDisabled) updateTweaksStyle()
                 prevSessionChecked = true
             }
 
@@ -492,6 +488,14 @@
                 '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
 
         config.modeSynced = true ; setTimeout(() => { config.modeSynced = false }, 100) // prevent repetition
+    }
+
+    function updateTweaksStyle() {
+        tweaksStyle.innerHTML = (
+               classListToCSS(inputTextAreaClasses) + ' { padding-right: 145px } ' // make input text area accomdate buttons
+            + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
+                + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
+            + ( !config.tcbDisabled ? tcbStyle : '' )) // expand text input vertically        
     }
 
 })()
