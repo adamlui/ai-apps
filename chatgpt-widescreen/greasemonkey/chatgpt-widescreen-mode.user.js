@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.13.1
+// @version             2023.6.13.2
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -448,34 +448,27 @@
 
     // Define MODE functions
 
-    function toggleMode(mode, state = '') {
-        if (state.toUpperCase() == 'ON' || !config[mode]) { // activate mode
-            if (mode == 'fullScreen') { // activate full screen
-                var htmlNode = document.documentElement
-                if (htmlNode.requestFullscreen) htmlNode.requestFullscreen() // HTML5
-                else if (htmlNode.webkitRequestFullscreen) htmlNode.webkitRequestFullscreen() // Safari
-                else if (htmlNode.msRequestFullscreen) htmlNode.msRequestFullscreen() // IE11
-            } else if (mode == 'fullWindow') { // activate full-window
-                document.head.appendChild(fullWindowStyle) ; chatgpt.sidebar.hide()
-            } else { // activate widescreen
-                document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
-        } else { // de-activate mode
-            if (mode == 'fullScreen') { // de-activate full screen
-                if (config.f11) {
-                    chatgpt.alert(appSymbol + ' ' + messages.alert_pressF11, messages.alert_f11reason + '.')
-                } else {
-                    try { // to exit full screen
-                        if (document.exitFullscreen) document.exitFullscreen() // HTML5
-                        else if (document.webkitExitFullscreen) document.webkitExitFullscreen() // Safari
-                        else if (document.msExitFullscreen) document.msExitFullscreen() // IE11
-                    } catch (error) { console.error(appSymbol + ' >> '), error }
-                }
-            } else if (mode == 'fullWindow') { // de-activate full-window
-                try { document.head.removeChild(fullWindowStyle) } catch (error) {} chatgpt.sidebar.show()
-            } else // de-activate widescreen
-                try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (error) {}
-        }
+    function activateMode(mode) {
+        if (mode == 'wideScreen') { document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
+        else if (mode == 'fullWindow') { document.head.appendChild(fullWindowStyle) ; chatgpt.sidebar.hide() ; console.log('fullWindow activated')}
+        else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
     }
+
+    function deactivateMode(mode) {
+        if (mode == 'wideScreen') try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (error) {}
+        else if (mode == 'fullWindow') { try { document.head.removeChild(fullWindowStyle) } catch (error) {} chatgpt.sidebar.show() }
+        else if (mode == 'fullScreen') {
+            if (config.f11)
+                chatgpt.alert(appSymbol + ' ' + chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
+            else try { document.exitFullscreen() } catch (error) { console.error(appSymbol + ' >> ', error) }
+    }}
+
+    function toggleMode(mode, state = '') {
+        switch (state.toUpperCase()) {
+            case 'ON' : activateMode(mode) ; break
+            case 'OFF' : deactivateMode(mode) ; break
+            default : config[mode] ? deactivateMode(mode) : activateMode(mode)
+    }}
 
     function syncMode(mode) {
         var state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
