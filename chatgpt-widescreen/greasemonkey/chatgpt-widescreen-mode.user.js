@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.13.5
+// @version             2023.6.13.6
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -325,7 +325,7 @@
                         // Alert to update
                         var updateAlertID = chatgpt.alert(`${ appSymbol } ${ messages.alert_updateAvail }! 🚀`,
                             `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!`
-                                + `<br><a target="_blank" href="https://github.com/adamlui/chatgpt-widescreen/commits/main/greasemonkey/chatgpt-widescreen-mode.user.js" style="font-size: 0.7rem">${ messages.link_viewChanges }</a>`,
+                                + `&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/adamlui/chatgpt-widescreen/commits/main/greasemonkey/chatgpt-widescreen-mode.user.js" style="font-size: 0.7rem">${ messages.link_viewChanges }</a>`,
                             function update() { // button
                                 saveSetting('skipNextUpdate', false) // reset hidden alert setting
                                 window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
