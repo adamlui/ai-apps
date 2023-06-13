@@ -1,21 +1,175 @@
-// This library is a condensed version of chatgpt.js v1.7.2
+// This library is a condensed version of chatgpt.js v1.9.1
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/chatgptjs/chatgpt.js
 
+var alertProps = { queue: [] };
 var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
+localStorage.alertProps = JSON.stringify(alertProps);
 localStorage.notifyProps = JSON.stringify(notifyProps);
 
 var chatgpt = {
 
-    history: {
-        isOn: function() {
-            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
-                if (navLink.text.match(/new chat/i)) return true;
-            } return false;
-        },
+    alert: function(title, msg, btns, checkbox, width) {
+    // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
 
+        // Create modal parent/children elements
+        var modalContainer = document.createElement('div');
+        modalContainer.id = Math.floor(Math.random() * 1000000) + Date.now();
+        modalContainer.classList.add('chatgpt-modal'); // add class to main div
+        var modal = document.createElement('div');
+        var modalTitle = document.createElement('h2');
+        var modalMessage = document.createElement('p');
+
+        // Create/append style if necessary
+        if (!document.querySelector('#chatgpt-alert-style')) {
+            var scheme = chatgpt.isDarkMode() ? 'dark' : 'light';
+            var modalStyle = document.createElement('style');
+            modalStyle.id = 'chatgpt-alert-style';
+            modalStyle.innerHTML = (
+
+                // Background styles
+                '.chatgpt-modal {' 
+                    + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
+                    + 'background-color: rgba(67, 70, 72, 0.75) ;' // dim bg
+                    + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
+
+                // Alert styles
+                + '.chatgpt-modal > div {'
+                    + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
+                    + `max-width: ${ width ? width : 454 }px ;`
+                    + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) }'
+                + '.chatgpt-modal h2 { margin-bottom: 9px }'
+                + `.chatgpt-modal p > a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
+
+                // Button styles
+                + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
+                + '.chatgpt-modal button {'
+                    + 'margin-left: 10px ; padding: 4px 18px ; border-radius: 15px ;'
+                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
+                + '.primary-modal-btn {'
+                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                    + `background: ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                    + `color: ${ scheme == 'dark' ? 'black' : 'white' }}`
+                + '.chatgpt-modal button:hover { background-color: #42B4BF ; border-color: #42B4BF ; color: black }'
+
+                /* Checkbox styles */
+                + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
+                + '.chatgpt-modal .checkbox-group label {'
+                    + 'font-size: .7rem ; margin: -.04rem 0 0px .3rem ;'
+                    + `color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
+                + '.chatgpt-modal input[type="checkbox"] { transform: scale(0.7) ;'
+                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
+                + '.chatgpt-modal input[type="checkbox"]:checked {'
+                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                    + 'background-color: black ; position: inherit }'
+                + '.chatgpt-modal input[type="checkbox"]:focus { outline: none ; box-shadow: none }'
+            );
+            document.head.appendChild(modalStyle);
+        }
+
+        // Insert text into elements
+        modalTitle.innerHTML = title ? title : ''; modalMessage.innerHTML = msg ? msg : '';
+
+        // Create/append buttons (if provided) to buttons div
+        var modalButtons = document.createElement('div');
+        modalButtons.classList.add('modal-buttons');
+        if (btns) { // are supplied
+            if (!Array.isArray(btns)) btns = [btns]; // convert single button to array if necessary
+            btns.forEach(function(buttonFn) { // create title-cased labels + attach listeners
+                var button = document.createElement('button');
+                button.textContent = buttonFn.name.charAt(0).toUpperCase() // cap 1st char
+                                   + buttonFn.name.slice(1).replace(/([A-Z])/g, ' $1').trim(); // insert spaces
+                button.addEventListener('click', function() { destroyAlert(); buttonFn(); });
+                modalButtons.insertBefore(button, modalButtons.firstChild); // insert button to left
+            });
+        }
+
+        // Create/append OK/dismiss button to buttons div
+        var dismissBtn = document.createElement('button');
+        dismissBtn.textContent = btns ? 'Dismiss' : 'OK';
+        dismissBtn.addEventListener('click', destroyAlert);
+        modalButtons.insertBefore(dismissBtn, modalButtons.firstChild);
+
+        // Highlight primary button
+        modalButtons.lastChild.classList.add('primary-modal-btn');
+
+        // Create/append checkbox (if provided) to checkbox group div
+        var checkboxDiv = document.createElement('div');
+        if (checkbox) { // is supplied
+            checkboxDiv.classList.add('checkbox-group');
+            var checkboxFn = checkbox; // assign the named function to checkboxFn
+            var checkboxInput = document.createElement('input');
+            checkboxInput.type = 'checkbox';
+            checkboxInput.addEventListener('change', checkboxFn);
+
+            // Create/show label
+            var checkboxLabel = document.createElement('label');
+            checkboxLabel.addEventListener('click', function() {
+                checkboxInput.checked = !checkboxInput.checked; checkboxFn(); });
+            checkboxLabel.textContent = checkboxFn.name.charAt(0).toUpperCase() // capitalize first char
+                + checkboxFn.name.slice(1) // format remaining chars
+                    .replace(/([A-Z])/g, (match, letter) => ' ' + letter.toLowerCase()) // insert spaces, convert to lowercase
+                    .replace(/\b(\w+)nt\b/gi, '$1n\'t') // insert apostrophe in 'nt' suffixes
+                    .trim(); // trim leading/trailing spaces
+
+            checkboxDiv.appendChild(checkboxInput); checkboxDiv.appendChild(checkboxLabel);
+        }
+
+        // Assemble/append div
+        var elements = [modalTitle, modalMessage, modalButtons, checkboxDiv];
+        elements.forEach(function(element) { modal.appendChild(element); });
+        modalContainer.appendChild(modal); document.body.appendChild(modalContainer); 
+
+        // Enqueue alert
+        alertProps = JSON.parse(localStorage.alertProps);
+        alertProps.queue.push(modalContainer.id);
+        localStorage.alertProps = JSON.stringify(alertProps);
+
+        // Add listeners
+        document.addEventListener('keydown', keyHandler);
+        modalContainer.addEventListener('click', function(event) {
+            if (event.target === modalContainer) destroyAlert(); });
+
+        // Show alert if none active
+        modalContainer.style.display = (alertProps.queue.length === 1) ? '' : 'none';
+
+        function destroyAlert() {
+            modalContainer.remove(); // remove from DOM
+            var alertProps = JSON.parse(localStorage.alertProps);
+            alertProps.queue.shift(); // + memory
+            localStorage.alertProps = JSON.stringify(alertProps); // + storage
+
+            // Prevent memory leaks
+            modalContainer.removeEventListener('click', destroyAlert);
+            document.removeEventListener('keydown', keyHandler);
+            dismissBtn.removeEventListener('click', destroyAlert);
+
+            // Check for pending alerts in queue
+            if (alertProps.queue.length > 0) {
+                var nextAlert = document.getElementById(alertProps.queue[0]);
+                setTimeout(() => { nextAlert.style.display = 'flex'; }, 500 );
+            }
+        }
+
+        function keyHandler(event) {
+            var dismissKeys = [13, 27, 32]; // enter/esc/space
+            if (dismissKeys.includes(event.keyCode)) {
+                for (var i = 0; i < alertProps.queue.length; i++) { // look to handle only if triggering alert is active
+                    var alert = document.getElementById(alertProps.queue[i]);
+                    if (alert && alert.style.display != 'none') { // active alert found
+                        if (event.keyCode === 27) destroyAlert(); // if esc pressed, dismiss alert & do nothing
+                        else if (event.keyCode === 32 || event.keyCode === 13) { // else if space/enter pressed
+                            var mainButton = alert.querySelector('.modal-buttons').lastChild; // look for main button
+                            if (mainButton) { mainButton.click(); event.preventDefault(); } // click if found
+                        } return;
+        }}}}
+
+        return modalContainer.id;
+    },
+
+    history: {
         isOff: function() {
-            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (navLink.text.match(/new chat/i)) return false;
             } return true;
         }
@@ -23,10 +177,17 @@ var chatgpt = {
 
     isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
 
+    isFullScreen: function() {
+        var userAgentStr = navigator.userAgent;
+        return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
+             : userAgentStr.includes('Firefox') ? window.fullScreen
+             : userAgentStr.match(/MSIE|rv:/) ? document.msFullscreenElement : document.webkitIsFullScreen;
+    },
+
     isLoaded: function() {
         return new Promise(resolve => {
             var intervalId = setInterval(() => {
-                if (document.querySelector('form button[class*="bottom"]')) {
+                if (document.querySelector('nav button[id*="menu"]')) {
                     clearInterval(intervalId); resolve();
     }}, 100);});},
 
@@ -39,8 +200,9 @@ var chatgpt = {
         var notificationDiv = document.createElement('div'); // make div
         notificationDiv.id = Math.floor(Math.random() * 1000000) + Date.now();
         notificationDiv.style.cssText = ( // stylize it
-            '/* Box style */   background-color: black ; padding: 10px ; border-radius: 8px ; '
-            + '/* Visibility */  opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; '
+              ' background-color: black ; padding: 10px ; border-radius: 8px ; ' // box style
+            + ' opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; ' // visibility
+            + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; ' // disable selection
             + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
         document.body.appendChild(notificationDiv); // insert into DOM
 
@@ -64,7 +226,7 @@ var chatgpt = {
         // Reposition old notifications
         var thisQuadrantDivIDs = notifyProps.quadrants[notificationDiv.quadrant];
         if (thisQuadrantDivIDs.length > 1) {
-            try {
+            try { // to move old notifications
                 var divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
                 for (var j = 0; j < divsToMove.length; j++) {
                     var oldDiv = document.getElementById(divsToMove[j]);
@@ -100,8 +262,21 @@ var chatgpt = {
         }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
     },
 
+    sidebar: {
+        isOn: function() { return !document.querySelector('button[aria-label*="Show sidebar"]'); },
+        isOff: function() { return document.querySelector('button[aria-label*="Show sidebar"]'); },
+        hide: function() { this.isOn() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already hidden!'); },
+        show: function() { this.isOff() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already shown!'); },
+
+        toggle: function() {
+            for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+                if (navLink.text.match(/hide sidebar/i)) {
+                    navLink.click(); return;                
+        }}}
+    },
+
     startNewChat: function() {
-        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] > a')) {
+        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
             if (navLink.text.match(/(new|clear) chat/i)) {
                 navLink.click(); return;
     }}}
