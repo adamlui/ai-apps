@@ -3,13 +3,13 @@ module.exports  = {
     'ignorePatterns': ['**/*.md', '**/*.min.js'],
     'rules': {
         'indent': ['error', 4, { 'ignoredNodes': [ // enforce 4-space indentation, except for...
-            'TemplateLiteral > *', // template literal children
-            'ConditionalExpression', // ternarys
-            'IfStatement > BlockStatement', // multi-line if's
-            'BinaryExpression', // string concatenations, math, comparison, etc.
-            'BlockStatement', 'SwitchCase', // closing braces
-            'ObjectExpression' // object literals
-        ]}],
+                'TemplateLiteral > *', // template literal children
+                'ConditionalExpression', // ternarys
+                'BinaryExpression', // string concatenations, math, comparison, etc.
+                'BlockStatement', 'SwitchCase', // closing braces
+                'ObjectExpression' // object literals
+            ], 'SwitchCase': 1 // allow 1 level of indentation for switch cases
+        }],
         'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }], // enforce single quotes for string literals
         'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }], // enforce spacing in object properties
         'comma-dangle': ['error', 'never'], // enforce no trailing commas in arrays or objects
