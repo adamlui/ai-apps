@@ -25,7 +25,7 @@
   "alert_dontShowAgain": { "message": "Vis ikke dette igen" },
   "alert_untilNextVer": { "message": "indtil næste opdatering" },
   "alert_upToDate": { "message": "Opdateret" },
-  "alert_isUpToDate": { "message": "{ 0 } er opdateret" },
+  "alert_isUpToDate": { "message": "er opdateret" },
   "buttonLabel_update": { "message": "Opdatér" },
   "buttonLabel_dismiss": { "message": "Afvis" },
   "link_viewChanges": { "message": "Se ændringer" }
