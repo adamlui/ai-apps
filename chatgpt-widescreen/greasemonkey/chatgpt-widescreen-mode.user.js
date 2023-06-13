@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.13.6
+// @version             2023.6.13.7
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -259,7 +259,7 @@
         menuIDs.push(GM_registerMenuCommand(fwLabel, function() {
             saveSetting('fullerWindows', !config.fullerWindows)
             if (!config.notifHidden) {
-                chatgpt.notify(`${ appSymbol } ${ messages.menuLabel_fullerWins }: ${ stateWord[+!config.fullerWindows] }`,
+                notify(`${ messages.menuLabel_fullerWins }: ${ stateWord[+!config.fullerWindows] }`,
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
@@ -272,7 +272,7 @@
             tweaksStyle.innerHTML = config.tcbDisabled ? tweaksStyle.innerHTML.replace(tcbStyle, '')
                                                        : tweaksStyle.innerHTML + tcbStyle
             if (!config.notifHidden) {
-                chatgpt.notify(`${ appSymbol } ${ messages.menuLabel_tallerChatbox }: ${ stateWord[+config.tcbDisabled] }`,
+                notify(`${ messages.menuLabel_tallerChatbox }: ${ stateWord[+config.tcbDisabled] }`,
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
@@ -282,7 +282,7 @@
             + stateSeparator + stateWord[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
-            chatgpt.notify(`${ appSymbol } ${ messages.menuLabel_modeNotifs }: ${ stateWord[+config.notifHidden] }`,
+            notify(`${ messages.menuLabel_modeNotifs }: ${ stateWord[+config.notifHidden] }`,
                 '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
@@ -305,6 +305,12 @@
         config[key] = value // and memory
     }
 
+    function notify(msg, position = '') {
+        chatgpt.notify(`${ appSymbol } ${ msg }`, position ? position : '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
+
+    function alert(title = '', msg = '', btns = '') {
+        chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns )}
+
     function checkForUpdates() {
 
         // Fetch latest meta
@@ -323,7 +329,7 @@
                     if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
 
                         // Alert to update
-                        var updateAlertID = chatgpt.alert(`${ appSymbol } ${ messages.alert_updateAvail }! 🚀`,
+                        var updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`,
                             `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!`
                                 + `&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://github.com/adamlui/chatgpt-widescreen/commits/main/greasemonkey/chatgpt-widescreen-mode.user.js" style="font-size: 0.7rem">${ messages.link_viewChanges }</a>`,
                             function update() { // button
@@ -350,7 +356,7 @@
                 }}
 
                 if (checkForUpdates.fromMenu) { // alert to no update found
-                    chatgpt.alert(`${ appSymbol } ${ messages.alert_upToDate }!`, // title
+                    alert(`${ messages.alert_upToDate }!`, // title
                         `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
     }}})}
 
@@ -455,7 +461,7 @@
         else if (mode == 'fullWindow') { try { document.head.removeChild(fullWindowStyle) } catch (error) {} chatgpt.sidebar.show() }
         else if (mode == 'fullScreen') {
             if (config.f11)
-                chatgpt.alert(appSymbol + ' ' + chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
+                alert(messages.alert_pressF11, messages.alert_f11reason + '.')
             else try { document.exitFullscreen() } catch (error) { console.error(appSymbol + ' >> ', error) }
     }}
 
