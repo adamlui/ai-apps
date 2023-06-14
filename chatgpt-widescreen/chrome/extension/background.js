@@ -25,5 +25,5 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
 function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, { 
-            action: 'alert', title: title, msg: msg, btns: btns })
-})}
+            action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width
+})})}
