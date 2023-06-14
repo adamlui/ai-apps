@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.6.13
+// @version             2023.6.13.1
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4!)
@@ -133,7 +133,7 @@
         chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow) }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+        return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function checkForUpdates() {
 
