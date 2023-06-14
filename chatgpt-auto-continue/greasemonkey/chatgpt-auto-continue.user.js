@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動繼續 ⏩
 // @name:zh-SG          ChatGPT 自动继续 ⏩
 // @name:zh-TW          ChatGPT 自動繼續 ⏩
-// @version             2023.6.10
+// @version             2023.6.13
 // @description         ⚡ Automatically continue generating multiple ChatGPT responses
 // @description:ar      ⚡ استمر في توليد إجابات متعددة من ChatGPT تلقائيًا
 // @description:bg      ⚡ Автоматично продължаване на генерирането на множество отговори от ChatGPT
@@ -170,9 +170,7 @@
     }}}}}) ; continueObserver.observe(document, { childList: true, subtree: true })
 
     // Notify of status on load
-    if (!config.notifHidden) {
-        chatgpt.notify(appSymbol + ' ' + messages.mode_autoContinue + ': ON',
-            '', '', chatgpt.isDarkMode() ? '' : 'shadow' )}
+    if (!config.notifHidden) notify(messages.mode_autoContinue + ': ON')
 
     // Define SCRIPT functions
 
@@ -185,8 +183,7 @@
                     + stateSeparator + state.word[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
-            chatgpt.notify(appSymbol + ' ' + messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden],
-                '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
             for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
             registerMenu() // serve fresh one
         }))
@@ -209,6 +206,12 @@
         config[key] = value // and memory
     }
 
+    function notify(msg, position = '', notifDuration = '', shadow = '') {
+        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+
     function checkForUpdates() {
 
         // Fetch latest meta
@@ -227,7 +230,7 @@
                     if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
 
                         // Alert to update
-                        var updateAlertID = chatgpt.alert(`${ appSymbol } ${ messages.alert_updateAvail }! 🚀`,
+                        var updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`,
                             `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!`
                                 + `<br><a target="_blank" href="https://github.com/adamlui/chatgpt-auto-continue/commits/main/greasemonkey/chatgpt-auto-continue.user.js" style="font-size: 0.7rem">${ messages.link_viewChanges }</a>`,
                             function update() { // button
@@ -253,9 +256,8 @@
                         return
                 }}
 
-                if (checkForUpdates.fromMenu) { // alert to no update found
-                    chatgpt.alert(`${ appSymbol } Up-to-date!`, // title
-                        `${ messages.appName } (v${ currentVer }) is up-to-date!`) // msg
-    }}})}
+                if (checkForUpdates.fromMenu) // alert to no update found
+                    alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
+    }})}
 
 })()
