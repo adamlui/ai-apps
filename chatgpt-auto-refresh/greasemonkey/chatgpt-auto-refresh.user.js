@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.6.10
+// @version             2023.6.13
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -198,15 +198,11 @@
         for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
         if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true
-            if (!config.notifHidden) {
-                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_autoRefresh + ': ON',
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-        }} else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
+            if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': ON')
+        } else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.deactivate() // ; config.isActive = false
-            if (!config.notifHidden) {
-                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_autoRefresh + ': OFF',
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-        }} saveSetting('arDisabled', config.arDisabled)
+            if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': OFF')
+        } saveSetting('arDisabled', config.arDisabled)
     })
     for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
         if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
@@ -229,10 +225,8 @@
     // Activate auto-refresh on first visit if enabled
     if (!config.arDisabled) {
         chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true
-        if (!config.notifHidden) {
-            chatgpt.notify(appSymbol + ' ' + messages.menuLabel_autoRefresh + ': ON',
-                '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-    }}
+        if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': ON')
+    }
 
     // Define SCRIPT functions
 
@@ -254,8 +248,7 @@
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden) {
-                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_toggleVis + ': '+ stateWord[+config.toggleHidden],
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+                notify(messages.menuLabel_toggleVis + ': '+ stateWord[+config.toggleHidden])
             } for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
         }))
 
@@ -264,8 +257,7 @@
                     + stateSeparator + stateWord[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
-            chatgpt.notify(appSymbol + ' ' + messages.menuLabel_modeNotifs + ': ' + stateWord[+config.notifHidden],
-                '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            notify(messages.menuLabel_modeNotifs + ': ' + stateWord[+config.notifHidden])
             for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
             registerMenu() // serve fresh one
         }))
@@ -308,6 +300,12 @@
         config[key] = value // and memory
     }
 
+    function notify(msg, position = '', notifDuration = '', shadow = '') {
+        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+
     function checkForUpdates() {
 
         // Fetch latest meta
@@ -326,7 +324,7 @@
                     if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
 
                         // Alert to update
-                        chatgpt.alert(`${ appSymbol } Update available! 🚀`,
+                        alert('Update available! 🚀',
                             `An update to ${ messages.appName } (v${ latestVer }) is available!`
                                 + `<br><a target="_blank" href="https://github.com/adamlui/chatgpt-auto-refresh/commits/main/greasemonkey/chatgpt-auto-refresh.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
@@ -342,10 +340,9 @@
                         return
                 }}
 
-                if (checkForUpdates.fromMenu) { // alert to no update found
-                    chatgpt.alert(`${ appSymbol } Up-to-date!`, // title
-                        `${ messages.appName } (v${ currentVer }) is up-to-date!`) // msg
-    }}})}
+                if (checkForUpdates.fromMenu) // alert to no update found
+                    alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
+    }})}
 
     // Define TOGGLE functions
 
