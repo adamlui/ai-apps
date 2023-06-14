@@ -181,7 +181,7 @@
     // Define GENERAL functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( isDarkMode() ? '' : 'shadow')) }
+        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow' ))}
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
