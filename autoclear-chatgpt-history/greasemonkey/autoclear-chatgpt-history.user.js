@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.6.10
+// @version             2023.6.13
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -103,9 +103,7 @@
     setTimeout(() => { if (config.autoclear) chatgpt.clearChats() }, 250)
 
     // Notify of mode if enabled
-    if (!config.notifHidden) {
-            chatgpt.notify(appSymbol + ' ' + messages.mode_autoClear + ': ON',
-                '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
+    if (!config.notifHidden) notify(messages.mode_autoClear + ': ON')
 
     // Stylize/insert toggle switch
     var switchStyle = document.createElement('style')
@@ -134,15 +132,11 @@
         for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         if (config.autoclear && !config.isActive) {
             setTimeout(chatgpt.clearChats, 250) ; config.isActive = true
-            if (!config.notifHidden) {
-                chatgpt.notify(appSymbol + ' ' + messages.mode_autoClear + ': ON',
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-        }} else if (!config.autoclear && config.isActive) {
+            if (!config.notifHidden) notify(messages.mode_autoClear + ': ON')
+        } else if (!config.autoclear && config.isActive) {
             config.isActive = false
-            if (!config.notifHidden) {
-                chatgpt.notify(appSymbol + ' ' + messages.mode_autoClear + ': OFF',
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-        }} saveSetting('autoclear', config.autoclear)
+            if (!config.notifHidden) notify(messages.mode_autoClear + ': OFF')
+        } saveSetting('autoclear', config.autoclear)
     })
     for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
         if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
@@ -182,8 +176,7 @@
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden) {
-                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden],
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+                notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
             } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -192,8 +185,7 @@
                     + stateSeparator + state.word[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
-            chatgpt.notify(appSymbol + ' ' + messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden],
-                '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
             for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -214,6 +206,12 @@
         config[key] = value // and memory
     }
 
+    function notify(msg, position = '', notifDuration = '', shadow = '') {
+        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+
     function checkForUpdates() {
 
         // Fetch latest meta
@@ -232,7 +230,7 @@
                     if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
 
                         // Alert to update
-                        chatgpt.alert(`${ appSymbol } Update available! 🚀`,
+                        alert('Update available! 🚀',
                             `An update to ${ messages.appName } (v${ latestVer }) is available!`
                                 + `<br><a target="_blank" href="https://github.com/adamlui/autoclear-chatgpt-history/commits/main/greasemonkey/autoclear-chatgpt-history.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
@@ -249,8 +247,7 @@
                 }}
 
                 if (checkForUpdates.fromMenu) { // alert to no update found
-                    chatgpt.alert(`${ appSymbol } Up-to-date!`, // title
-                        `${ messages.appName } (v${ currentVer }) is up-to-date!`) // msg
+                    alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
     }}})}
 
     // Define TOGGLE functions
