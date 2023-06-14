@@ -8,8 +8,8 @@ chrome.runtime.onInstalled.addListener((details) => {
 chrome.runtime.onUpdateAvailable.addListener((details) => {
     alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
         chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
-            + ' v' + details.version + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!' + '!&nbsp;&nbsp;&nbsp;'
-            + '<br><a target="_blank" href="https://github.com/adamlui/chatgpt-widescreen/commits/main/chrome/extension" '
+            + ' v' + details.version + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!&nbsp;&nbsp;&nbsp;'
+            + '<a target="_blank" href="https://github.com/adamlui/chatgpt-widescreen/commits/main/chrome/extension" '
             + 'style="font-size: 0.7rem">' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
         function update() { chrome.runtime.reload() } // update button
     )
