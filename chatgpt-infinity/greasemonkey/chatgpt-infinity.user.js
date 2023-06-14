@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.10
+// @version             2023.6.13
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -235,7 +235,7 @@
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden) {
-                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_toggleVis + ': '+ stateWord[+config.toggleHidden],
+                notify(messages.menuLabel_toggleVis + ': '+ stateWord[+config.toggleHidden],
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             } for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
         }))
@@ -246,7 +246,7 @@
         menuIDs.push(GM_registerMenuCommand(asLabel, function() {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
             if (!config.notifHidden) {
-                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_autoScroll + ': '+ stateWord[+config.autoScrollDisabled],
+                notify(messages.menuLabel_autoScroll + ': '+ stateWord[+config.autoScrollDisabled],
                     '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             } for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
         }))
@@ -302,6 +302,12 @@
         config[key] = value // and memory
     }
 
+    function notify(msg, position = '', notifDuration = '', shadow = '') {
+        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+
     function checkForUpdates() {
 
         // Fetch latest meta
@@ -320,7 +326,7 @@
                     if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
 
                         // Alert to update
-                        chatgpt.alert(`${ appSymbol } Update available! 🚀`,
+                        alert('Update available! 🚀',
                             `An update to ${ messages.appName } (v${ latestVer }) is available!`
                                 + `<br><a target="_blank" href="https://github.com/adamlui/chatgpt-infinity/commits/main/greasemonkey/chatgpt-infinity.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
@@ -337,7 +343,7 @@
                 }}
 
                 if (checkForUpdates.fromMenu) { // alert to no update found
-                    chatgpt.alert(`${ appSymbol } Up-to-date!`, // title
+                    alert('Up-to-date!', // title
                         `${ messages.appName } (v${ currentVer }) is up-to-date!`) // msg
     }}})}
 
@@ -364,7 +370,7 @@
 
         activate: async function() {
             if (!config.notifHidden) {
-                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_infinityMode + ': ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+                notify(messages.menuLabel_infinityMode + ': ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             }
             try { document.querySelector('nav a').click() } catch (error) { return }
             setTimeout(function() {
@@ -386,7 +392,7 @@
         deactivate: function() {
             clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null, infinityMode.sent = null
             if (!config.notifHidden) {
-                chatgpt.notify(appSymbol + ' ' + messages.menuLabel_infinityMode + ': OFF', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+                notify(messages.menuLabel_infinityMode + ': OFF', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
             }
         },
 
