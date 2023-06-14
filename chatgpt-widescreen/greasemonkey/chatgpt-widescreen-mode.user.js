@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.13.7
+// @version             2023.6.13.8
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -259,8 +259,7 @@
         menuIDs.push(GM_registerMenuCommand(fwLabel, function() {
             saveSetting('fullerWindows', !config.fullerWindows)
             if (!config.notifHidden) {
-                notify(`${ messages.menuLabel_fullerWins }: ${ stateWord[+!config.fullerWindows] }`,
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+                notify(`${ messages.menuLabel_fullerWins }: ${ stateWord[+!config.fullerWindows] }`)
             } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -272,8 +271,7 @@
             tweaksStyle.innerHTML = config.tcbDisabled ? tweaksStyle.innerHTML.replace(tcbStyle, '')
                                                        : tweaksStyle.innerHTML + tcbStyle
             if (!config.notifHidden) {
-                notify(`${ messages.menuLabel_tallerChatbox }: ${ stateWord[+config.tcbDisabled] }`,
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+                notify(`${ messages.menuLabel_tallerChatbox }: ${ stateWord[+config.tcbDisabled] }`)
             } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -282,8 +280,7 @@
             + stateSeparator + stateWord[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
-            notify(`${ messages.menuLabel_modeNotifs }: ${ stateWord[+config.notifHidden] }`,
-                '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+            notify(`${ messages.menuLabel_modeNotifs }: ${ stateWord[+config.notifHidden] }`)
             for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -305,11 +302,11 @@
         config[key] = value // and memory
     }
 
-    function notify(msg, position = '') {
-        chatgpt.notify(`${ appSymbol } ${ msg }`, position ? position : '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
+    function notify(msg, position = '', notifDuration = '', shadow = '') {
+        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
 
-    function alert(title = '', msg = '', btns = '') {
-        chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns )}
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function checkForUpdates() {
 
@@ -490,8 +487,7 @@
         }}}
 
         if (!config.notifHidden) { // notify synced state
-            chatgpt.notify(`${ appSymbol } ${ messages['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`,
-                '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
+            notify(`${ messages['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`) }
 
         config.modeSynced = true ; setTimeout(() => { config.modeSynced = false }, 100) // prevent repetition
     }
