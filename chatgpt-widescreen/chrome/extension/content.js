@@ -183,8 +183,8 @@
     function notify(msg, position = '') {
         chatgpt.notify(`${ appSymbol } ${ msg }`, position ? position : '', '', chatgpt.isDarkMode() ? '' : 'shadow') }
 
-    function alert(title = '', msg = '', btns = '') {
-        chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns )}
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function classListToCSS(classList) { // convert DOM classList to single CSS selector
         return '.' + [...classList].join('.') // prepend dot to dot-separated string
