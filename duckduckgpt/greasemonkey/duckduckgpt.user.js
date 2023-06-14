@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.6.9.1
+// @version             2023.6.13
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4!)
@@ -82,7 +82,7 @@
                      + stateSeparator + stateIndicator.menuWord[+!config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-            chatgpt.notify(appSymbol + ' Proxy Mode ' + stateIndicator.notifWord[+!config.proxyAPIenabled], '', '', 'shadow')
+            notify('Proxy Mode ' + stateIndicator.notifWord[+!config.proxyAPIenabled])
             for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
             registerMenu() // serve fresh menu
             location.reload() // re-send query using new endpoint
@@ -95,7 +95,7 @@
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
-            chatgpt.notify(appSymbol + ' Prefix Mode ' + stateIndicator.notifWord[+!config.prefixEnabled], '', '', 'shadow')
+            notify('Prefix Mode ' + stateIndicator.notifWord[+!config.prefixEnabled])
             for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
             registerMenu() // serve fresh menu
             if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
@@ -108,7 +108,7 @@
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            chatgpt.notify(appSymbol + ' Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled], '', '', 'shadow')
+            notify('Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled])
             for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
             registerMenu() // serve fresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
@@ -132,6 +132,12 @@
         config[key] = value // and memory
     }
 
+    function notify(msg, position = '', notifDuration = '', shadow = '') {
+        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( isDarkMode() ? '' : 'shadow')) }
+
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+
     function checkForUpdates() {
 
         // Fetch latest meta
@@ -150,7 +156,7 @@
                     if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
 
                         // Alert to update
-                        chatgpt.alert(`${ appSymbol } Update available! 🚀`,
+                        alert('Update available! 🚀',
                             `An update to DuckDuckGPT (v${ latestVer }) is available!`
                                 + `<a target="_blank" href="https://github.com/kudoai/duckduckgpt/commits/main/greasemonkey/duckduckgpt.user.js" style="font-size: 0.88rem ; position: relative ; left: 10px">View changes</a>`,
                             function update() { // button
@@ -166,10 +172,9 @@
                         return
                 }}
 
-                if (checkForUpdates.fromMenu) { // alert to no update found
-                    chatgpt.alert(`${ appSymbol } Up-to-date!`, // title
-                        `DuckDuckGPT (v${ currentVer }) is up-to-date!`); // msg
-    }}})}
+                if (checkForUpdates.fromMenu) // alert to no update found
+                    alert('Up-to-date!', `DuckDuckGPT (v${ currentVer }) is up-to-date!`)
+    }})}
 
 
     function isCenteredMode() { return document.querySelector('html').classList.toString().includes('center') }
