@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.6.13.2
+// @version             2023.6.13.3
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4!)
@@ -153,8 +153,8 @@
 
                         // Alert to update
                         alert('Update available! 🚀',
-                            `An update to BraveGPT (v${ latestVer }) is available!&nbsp;&nbsp;&nbsp;`
-                                + `<a target="_blank" href="https://github.com/kudoai/bravegpt/commits/main/greasemonkey/bravegpt.user.js" style="font-size: 0.7rem">View changes</a>`,
+                            `An update to BraveGPT (v${ latestVer }) is available!`
+                                + `<br><a target="_blank" href="https://github.com/kudoai/bravegpt/commits/main/greasemonkey/bravegpt.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
                                 saveSetting('skipNextUpdate', false) // reset hidden alert setting
                                 window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
