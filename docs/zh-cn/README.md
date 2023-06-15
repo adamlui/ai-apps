@@ -1,14 +1,14 @@
-# 🤖 ChatGPT 应用程序 &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=检查这些%20ChatGPT%20应用程序%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
+# 🤖 ChatGPT 应用程序 &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=检查这些%20ChatGPT%20应用程序%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
 
 利用 ChatGPT 惊人的 AI 或增强其 UX 的应用程序。
 
-![用户](https://img.shields.io/badge/用户-20,000+-brightgreen)
-[![执照](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
-![兼容性](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)
-[![提交](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-addons?label=提交)](https://github.com/adamlui/chatgpt-addons/commits/main)
-![弱点](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-apps?label=弱点&labelColor=464646&color=gold)
-[![代码质量](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
-<a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
+![](https://img.shields.io/badge/用户-20,000+-brightgreen)
+[![](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
+![](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)
+[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-addons?label=提交)](https://github.com/adamlui/chatgpt-addons/commits/main)
+![](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-apps?label=弱点&labelColor=464646&color=gold)
+[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
+<a href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
 
 ###### 简体中文 | [English](../..#readme)
 
