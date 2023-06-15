@@ -84,8 +84,7 @@
             } else { // alert to no update found
                 alert(chrome.i18n.getMessage('alert_upToDate') + '!',
                     chrome.i18n.getMessage('appName') + ' v' + chrome.runtime.getManifest().version
-                        + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!'
-                )
+                        + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!')
             }
     })})
 

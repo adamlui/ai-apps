@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v1.10.0
+// This library is a condensed version of chatgpt.js v1.10.1
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/chatgptjs/chatgpt.js
 
@@ -39,7 +39,7 @@ var chatgpt = {
                     + `max-width: ${ width ? width : 454 }px ;`
                     + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) }'
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
-                + `.chatgpt-modal p > a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
+                + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
 
                 // Button styles
                 + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
@@ -69,7 +69,7 @@ var chatgpt = {
 
         // Insert text into elements
         modalTitle.innerText = title ? title : '';
-        modalMessage.innerText = msg ? msg : ''; this.renderLinks(modalMessage);
+        modalMessage.innerText = msg ? msg : ''; this.renderHTML(modalMessage);
 
         // Create/append buttons (if provided) to buttons div
         var modalButtons = document.createElement('div');
@@ -264,34 +264,56 @@ var chatgpt = {
         }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
     },
 
-    renderLinks: function(node) {
-        const reLinks = /<a\b[^>]*>(.*?)<\/a>/g;
-        const links = [], nodeText = node.innerText;
+    renderHTML: function(node) {
+        const reTags = /<([a-z]+)\b([^>]*)>([\s\S]*?)<\/\1>/g;
+        const nodeContent = node.childNodes;
 
-        // Track link tags
-        let link;
-        while ((link = reLinks.exec(nodeText)) !== null) {
-            const linkTag = link[0], linkText = link[1];
-            links.push({ linkTag, linkText });
+        // Preserve consecutive spaces + line breaks
+        if (!this.renderHTML.preWrapSet) {
+            node.style.whiteSpace = 'pre-wrap'; this.renderHTML.preWrapSet = true;
+            setTimeout(() => { this.renderHTML.preWrapSet = false; }, 100);
         }
 
-        // Create/insert hyperlink elements
-        while (node.firstChild) node.removeChild(node.firstChild); // remove old content
-        let currentIndex = 0;
-        links.forEach(({ linkTag, linkText }) => {
-            const index = nodeText.indexOf(linkTag, currentIndex); // of current link tag
-            if (index !== -1) { // if tag found
-                const beforeText = nodeText.substring(currentIndex, index); // extract text before link tag
-                const textNode = document.createTextNode(beforeText.replace(/ /g, '\u00A0')); // create text node w/ preceding text
-                const hyperlink = document.createElement('a'); // create hyperlink elem
-                hyperlink.href = linkTag.match(/href="(.*?)"/)[1]; // extract href value from link tag
-                hyperlink.textContent = linkText; // set content of hyperlink
-                node.appendChild(textNode); node.appendChild(hyperlink); // append preceding text node + hyperlink elem
-                currentIndex = index + linkTag.length; // update current index to skip processed tag
-        }});
-        const remainingText = nodeText.substring(currentIndex); // get remaining text after all link tags
-        const remainingTextNode = document.createTextNode(remainingText.replace(/ /g, '\u00A0')); // create node w/ remaining text
-        node.appendChild(remainingTextNode); // append remaining text node
+        // Process child nodes
+        for (let i = 0; i < nodeContent.length; i++) {
+            const childNode = nodeContent[i];
+
+            // Process text node
+            if (childNode.nodeType === Node.TEXT_NODE) {
+                const text = childNode.nodeValue;
+                const elems = Array.from(text.matchAll(reTags));
+
+                // Process 1st element to render
+                if (elems.length > 0) {
+                    const elem = elems[0];
+                    const [tagContent, tagName, tagAttributes, tagText] = elem.slice(0, 4);
+                    const tagNode = document.createElement(tagName); tagNode.textContent = tagText;
+
+                    // Extract/set attributes
+                    const attributes = tagAttributes.split(/\s+/);
+                    attributes.forEach(attribute => { // handle attributes...
+                        const [name, value] = attribute.split('='); // ...by extracting them...
+                        if (name && value)  // ...then setting quote-stripped attr on rendered node
+                            tagNode.setAttribute(name, value.replace(/['"]/g, ''));
+                    });
+
+                    const renderedNode = this.renderHTML(tagNode); // render child elements of newly created node
+
+                    // Insert newly rendered node
+                    const beforeTextNode = document.createTextNode(text.substring(0, elem.index));
+                    const afterTextNode = document.createTextNode(text.substring(elem.index + tagContent.length));
+
+                    // Replace text node with processed nodes
+                    node.replaceChild(beforeTextNode, childNode);
+                    node.insertBefore(renderedNode, beforeTextNode.nextSibling);
+                    node.insertBefore(afterTextNode, renderedNode.nextSibling);
+                }
+
+            // Process element nodes recursively
+            } else if (childNode.nodeType === Node.ELEMENT_NODE) this.renderHTML(childNode);
+        }
+
+        return node; // if assignment used
     },
 
     sidebar: {
