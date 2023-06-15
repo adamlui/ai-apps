@@ -1,14 +1,14 @@
-# 🤖 ChatGPT apps &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20these%20%23ChatGPT%20add-ons%20out%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
+# 🤖 ChatGPT apps &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20these%20%23ChatGPT%20add-ons%20out%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
 
 Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
-![usercount](https://img.shields.io/badge/Users-20,000+-brightgreen)
-[![license](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
-![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)
-[![commits](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-addons?label=Commits)](https://github.com/adamlui/chatgpt-addons/commits/main)
-![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-apps?label=Vulnerabilities&labelColor=464646&color=gold)
-[![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
-<a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
+![](https://img.shields.io/badge/Users-20,000+-brightgreen)
+[![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
+![](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)
+[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-addons?label=Commits)](https://github.com/adamlui/chatgpt-addons/commits/main)
+![](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-apps?label=Vulnerabilities&labelColor=464646&color=gold)
+[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
+<a href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
 
 ###### English | [简体中文](zh-cn#readme)
 
