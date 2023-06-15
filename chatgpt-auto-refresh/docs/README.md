@@ -1,19 +1,19 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Auto Refresh ↻ &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20constant%20interruptions%20on%20ChatGPT%3F%20Auto-refresh%20your%20sessions%20w%2F%20this%20plug-in%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Auto Refresh ↻ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20constant%20interruptions%20on%20ChatGPT%3F%20Auto-refresh%20your%20sessions%20w%2F%20this%20plug-in%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt)
 
-![usercount](https://img.shields.io/greasyfork/dt/462422?label=Users&color=)
-[![license](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
-[![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
-[![commits](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=Commits)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
-![vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-auto-refresh?label=Vulnerabilities&labelColor=464646&color=gold)
-[![code-quality](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh)
+![](https://img.shields.io/greasyfork/dt/462422?label=Users&color=)
+[![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
+[![](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
+[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=Commits)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
+![](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-auto-refresh?label=Vulnerabilities&labelColor=464646&color=gold)
+[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh)
 <a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
-[![Mentioned in Awesome Userscripts](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
+[![](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 
 ### Keeps ChatGPT sessions fresh via background requests to eliminate network errors + Cloudflare checks.
 
 ###### English | [简体中文](zh-cn#readme)
 
-<a href="https://greasyfork.org/scripts/462422-chatgpt-auto-refresh"><img alt="Install this script" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462422-chatgpt-auto-refresh"><img src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions) /
 [Review](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
@@ -21,8 +21,8 @@
 
 #
 
-![image](https://user-images.githubusercontent.com/10906554/234756105-cf367acc-644a-49ee-8586-43c51d43e359.png)
-<img alt="↻ Auto-Refresh: ON]" width=355 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/mode-notification-on.png">
+![](https://user-images.githubusercontent.com/10906554/234756105-cf367acc-644a-49ee-8586-43c51d43e359.png)
+<img width=355 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/mode-notification-on.png">
 
 ## What it does
 
@@ -68,7 +68,7 @@
 
 <div align="center">
     
-![Auto-Refresh Enabled](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/mode-toggle-on.jpg)
+![](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/mode-toggle-on.jpg)
 
 </div>
 
@@ -81,7 +81,7 @@
 <a href="https://chatgpt.js.org">
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
-    <img width=546 alt="chatgpt.js" src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
+    <img width=546 src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
 </picture></a>
 <br /><br />
 
@@ -107,7 +107,7 @@ ChatGPT Auto Refresh is compatible w/ the following browsers using [Tampermonkey
 
 If you've tested it to work in a browser not listed, create a [pull request](https://github.com/adamlui/chatgpt-auto-refresh/pulls) to become a contributor!
 
-<a href="https://greasyfork.org/scripts/462422-chatgpt-auto-refresh"><img alt="Install this script" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img alt="How to install" title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462422-chatgpt-auto-refresh"><img src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions) / 
 [Leave a review](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
@@ -117,21 +117,21 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 
 This project exists thanks to code, translations, issues & ideas from the following contributors:
 
-[![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.23&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
-[![@Camouflager](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/26111796?first-contrib=2023.04.02&h=50&w=50&mask=circle&maxage=7d "@Camouflager")](https://github.com/Camouflager)
-[![@ArtificialTruth](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/3297866?first-contrib=2023.04.04&h=50&w=50&mask=circle&maxage=7d "@ArtificialTruth")](https://github.com/ArtificialTruth)
-[![@Liumeng404](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/25640306?first-contrib=2023.04.05&h=50&w=50&mask=circle&maxage=7d "@Liumeng404")](https://github.com/Liumeng404)
-[![@mzvast](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/8097465?first-contrib=2023.04.08&h=50&w=50&mask=circle&maxage=7d "@mzvast")](https://github.com/mzvast)
-[![@halvabner](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/130675714?first-contrib=2023.04.13&h=50&w=50&mask=circle&maxage=7d "@halvabner")](https://github.com/halvabner)
-[![@Cupcc](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/53716543?first-contrib=2023.04.15&h=50&w=50&mask=circle&maxage=7d "@Cupcc")](https://github.com/Cupcc)
-[![@gydx6](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/45654564?first-contrib=2023.04.16&h=50&w=50&mask=circle&maxage=7d "@gydx6")](https://github.com/gydx6)
-[![@NoahXcl](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/81360639?first-contrib=2023.04.16&h=50&w=50&mask=circle&maxage=7d "@NoahXcl")](https://github.com/NoahXcl)
-[![@selfboot](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2769831?first-contrib=2023.04.17&h=50&w=50&mask=circle&maxage=7d "@selfboot")](https://github.com/selfboot)
-[![@maplepicker](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/116735067?first-contrib=2023.04.18&h=50&w=50&mask=circle&maxage=7d "@maplepicker")](https://github.com/maplepicker)
-[![@Cloudkkk](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/58101940?first-contrib=2023.04.19&h=50&w=50&mask=circle&maxage=7d "@Cloudkkk")](https://github.com/Cloudkkk)
-[![@chenzhihao1040728129](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/49114216?first-contrib=2023.04.23&h=50&w=50&mask=circle&maxage=7d "@chenzhihao1040728129")](https://github.com/chenzhihao1040728129)
-[![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.27&h=50&w=50&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
-[![ChatGPT](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.23&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/26111796?first-contrib=2023.04.02&h=50&w=50&mask=circle&maxage=7d "@Camouflager")](https://github.com/Camouflager)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/3297866?first-contrib=2023.04.04&h=50&w=50&mask=circle&maxage=7d "@ArtificialTruth")](https://github.com/ArtificialTruth)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/25640306?first-contrib=2023.04.05&h=50&w=50&mask=circle&maxage=7d "@Liumeng404")](https://github.com/Liumeng404)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/8097465?first-contrib=2023.04.08&h=50&w=50&mask=circle&maxage=7d "@mzvast")](https://github.com/mzvast)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/130675714?first-contrib=2023.04.13&h=50&w=50&mask=circle&maxage=7d "@halvabner")](https://github.com/halvabner)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/53716543?first-contrib=2023.04.15&h=50&w=50&mask=circle&maxage=7d "@Cupcc")](https://github.com/Cupcc)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/45654564?first-contrib=2023.04.16&h=50&w=50&mask=circle&maxage=7d "@gydx6")](https://github.com/gydx6)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/81360639?first-contrib=2023.04.16&h=50&w=50&mask=circle&maxage=7d "@NoahXcl")](https://github.com/NoahXcl)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2769831?first-contrib=2023.04.17&h=50&w=50&mask=circle&maxage=7d "@selfboot")](https://github.com/selfboot)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/116735067?first-contrib=2023.04.18&h=50&w=50&mask=circle&maxage=7d "@maplepicker")](https://github.com/maplepicker)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/58101940?first-contrib=2023.04.19&h=50&w=50&mask=circle&maxage=7d "@Cloudkkk")](https://github.com/Cloudkkk)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/49114216?first-contrib=2023.04.23&h=50&w=50&mask=circle&maxage=7d "@chenzhihao1040728129")](https://github.com/chenzhihao1040728129)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.27&h=50&w=50&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
+[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
 ## More ChatGPT apps
 
@@ -140,21 +140,21 @@ For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-app
 
 ## Related scripts
 
-### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptevo.com/widescreen/github) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" alt="ChatGPT&#0032;Widescreen&#0032;Mode - Add&#0032;widescreen&#0032;&#0043;&#0032;full&#0032;window&#0032;modes&#0032;to&#0032;ChatGPT | Product Hunt" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
+### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptevo.com/widescreen/github) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
 
 Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling.
 <br>[Install](https://github.com/adamlui/chatgpt-widescreen#installation) / 
 [Readme](https://github.com/adamlui/chatgpt-widescreen#readme) / 
 [Discuss](https://chatgptevo.com/widescreen/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continue ⏩](https://chatgptevo.com/autocontinue/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -3px 3px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continue ⏩](https://chatgptevo.com/autocontinue/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
 Automatically continue generating multiple ChatGPT responses.<br>
 [Install](https://greasyfork.org/scripts/466789-chatgpt-auto-continue) / 
 [Readme](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
 [Discuss](https://chatgptevo.com/autocontinue/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](https://chatgptevo.com/infinity/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="Mentioned in Awesome Userscripts" style="margin:0 0 -2px 4px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](https://chatgptevo.com/infinity/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
 
 Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
