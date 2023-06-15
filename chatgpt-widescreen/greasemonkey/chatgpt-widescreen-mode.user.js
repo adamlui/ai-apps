@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.15
+// @version             2023.6.15.1
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -45,7 +45,7 @@
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon64.png
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@1ba68e507e57c154fca9fca20668b03f28a2899d/dist/chatgpt-1.10.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@5eed48d721158fc3800c23bc02b5dc0d3959b472/dist/chatgpt-1.10.1.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -515,7 +515,7 @@
                classListToCSS(inputTextAreaClasses) + ' { padding-right: 145px } ' // make input text area accomdate buttons
             + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
                 + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
-            + ( !config.tcbDisabled ? tcbStyle : '' )) // expand text input vertically        
+            + ( !config.tcbDisabled ? tcbStyle : '' )) // expand text input vertically
     }
 
 })()
