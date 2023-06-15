@@ -35,7 +35,7 @@
     var tooltipDiv = document.createElement('div')
     tooltipDiv.classList.add('toggle-tooltip')
     var tooltipStyle = document.createElement('style')
-    tooltipStyle.innerHTML = '.toggle-tooltip {'
+    tooltipStyle.innerText = '.toggle-tooltip {'
         + 'background: black ; padding: 5px ; border-radius: 6px ; ' // box style
         + 'font-size: 0.7rem ; color: white ; ' // font style
         + 'position: absolute ; bottom: 50px ; ' // v-position
@@ -51,13 +51,13 @@
     // Create wide screen style
     var wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for toggleMode()
-    wideScreenStyle.innerHTML = '.text-base { max-width: 93% !important } '
+    wideScreenStyle.innerText = '.text-base { max-width: 93% !important } '
         + 'div' + classListToCSS(mainDivClasses) + '{ width: 100px }' // prevent sidebar shrinking when zoomed
 
     // Create full-window style
     var fullWindowStyle = document.createElement('style')
     fullWindowStyle.id = 'fullWindow-mode' // for toggleMode()
-    fullWindowStyle.innerHTML = classListToCSS(sidebarClasses) + '{ display: none }' // hide sidebar
+    fullWindowStyle.innerText = classListToCSS(sidebarClasses) + '{ display: none }' // hide sidebar
         + classListToCSS(sidepadClasses) + '{ padding-left: 0px }' // remove side padding
 
     var buttonColor = setBtnColor()
@@ -200,25 +200,26 @@
         // Define SVG viewbox + elems
         var svgViewBox = ( mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '0 0 ' : '8 8 ' ) // move to XY coords to crop whitespace
             + ( mode == 'newChat' ? '13 13' : mode == 'fullWindow' ? '24 24' : '20 20' ) // shrink to fit size
-        var fullScreenONelems = `
-            <path fill="${ buttonColor }" d="m 14,14 -4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z"></path>
-            <path fill="${ buttonColor }" d="m 22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z"></path>
-            <path fill="${ buttonColor }" d="m 20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z"></path>
-            <path fill="${ buttonColor }" d="m 10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z"></path>`
-        var fullScreenOFFelems = `
-            <path fill="${ buttonColor }" d="m 10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z"></path>
-            <path fill="${ buttonColor }" d="m 20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z"></path>
-            <path fill="${ buttonColor }" d="m 24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z"></path>
-            <path fill="${ buttonColor }" d="M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z"></path>`
-        var fullWindowElems = `
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line>`
-        var wideScreenONelems = `
-            <path fill="${ buttonColor }" fill-rule="evenodd"
-                d="m 26,13 0,10 -16,0 0,-10 z m -14,2 12,0 0,6 -12,0 0,-6 z"></path>`
-        var wideScreenOFFelems = `
-            <path fill="${ buttonColor }" fill-rule="evenodd"
-                d="m 28,11 0,14 -20,0 0,-14 z m -18,2 16,0 0,10 -16,0 0,-10 z"></path>`
-        var newChatElems = `<path fill="${ buttonColor }"d="M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z"></path>`
+        var fullScreenONelems = [
+            createSVGelem('path', { fill: buttonColor, d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
+            createSVGelem('path', { fill: buttonColor, d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
+            createSVGelem('path', { fill: buttonColor, d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
+            createSVGelem('path', { fill: buttonColor, d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
+        var fullScreenOFFelems = [
+            createSVGelem('path', { fill: buttonColor, d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
+            createSVGelem('path', { fill: buttonColor, d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
+            createSVGelem('path', { fill: buttonColor, d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
+            createSVGelem('path', { fill: buttonColor, d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ]
+        var fullWindowElems = [
+            createSVGelem('rect', { x: '3', y: '3', width: '18', height: '18', rx: '2', ry: '2' }),
+            createSVGelem('line', { x1: '9', y1: '3', x2: '9', y2: '21' }) ]
+        var wideScreenONelems = [
+            createSVGelem('path', { fill: buttonColor, 'fill-rule': 'evenodd',
+                d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
+        var wideScreenOFFelems = [
+            createSVGelem('path', { fill: buttonColor, 'fill-rule': 'evenodd',
+                d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ]
+        var newChatElems = [ createSVGelem('path', { fill: buttonColor, d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ]
 
         // Pick appropriate button/elements
         var [button, ONelems, OFFelems] = (
@@ -231,14 +232,33 @@
         var lMargin = mode == 'wideScreen' ? .11 : .12
         var rMargin = (.25 - lMargin)
 
+        // Set SVG attributes
+        var buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        if (mode == 'fullWindow') { // stylize full-window button
+            buttonSVG.setAttribute('stroke', buttonColor)
+            buttonSVG.setAttribute('fill', 'none')
+            buttonSVG.setAttribute('stroke-width', '2')
+            buttonSVG.setAttribute('height', '1em')
+            buttonSVG.setAttribute('width', '1em')
+        }
+        buttonSVG.setAttribute('class', sendSVGclasses) // assign borrowed classes
+        buttonSVG.setAttribute( // center oerlay + prevent triggering tooltips twice
+            'style', `margin: 0 ${rMargin}rem 0 ${lMargin}rem ; pointer-events: none`)
+        buttonSVG.setAttribute('viewBox', svgViewBox) // set pre-tweaked viewbox
+
+        // Update SVG elements
+        while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
+        var svgElems = config[mode] || state.toLowerCase() === 'on' ? ONelems : OFFelems;
+        svgElems.forEach(elem => { buttonSVG.appendChild(elem) })
+
         // Update SVG
-        button.innerHTML = '<svg '
-            + (mode == 'fullWindow' ? `stroke="${ buttonColor }" fill="none" stroke-width="2" height="1em" width="1em"` : '')
-            + `class="${ sendSVGclasses }" ` // assign borrowed classes
-            + `style="margin: 0 ${ rMargin }rem 0 ${ lMargin }rem ; ` // center overlay
-            + 'pointer-events: none" ' // prevent triggering tooltips twice
-            + `viewBox="${ svgViewBox }"> ` // set pre-tweaked viewbox
-            + (config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems + '</svg>') // dynamically insert elems based on loaded key
+        if (!button.contains(buttonSVG)) button.appendChild(buttonSVG)
+    }
+
+    function createSVGelem(tagName, attributes) {
+        var elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
+        for (var attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])       
+        return elem
     }
 
     // Define TOOLTIP functions
@@ -255,7 +275,7 @@
 
     function updateTooltip(buttonType) { // text & position
 
-        tooltipDiv.innerHTML = chrome.i18n.getMessage('tooltip_' + buttonType + (
+        tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON')))
         var ctrAddend = 25, overlayWidth = 30
         var iniRoffset = overlayWidth * (
@@ -318,7 +338,7 @@
     }
 
     function updateTweaksStyle() {
-        tweaksStyle.innerHTML = (
+        tweaksStyle.innerText = (
                classListToCSS(inputTextAreaClasses) + ' { padding-right: 145px } ' // make input text area accomdate buttons
             + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
                 + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
@@ -347,7 +367,7 @@
                 if (config.extensionDisabled) { // try to disable modes
                     try { document.head.removeChild(wideScreenStyle) } catch {}
                     try { document.head.removeChild(fullWindowStyle) ; chatgpt.sidebar.show() } catch {}
-                    tweaksStyle.innerHTML = tweaksStyle.innerHTML.replace(tcbStyle, '')
+                    tweaksStyle.innerText = tweaksStyle.innerText.replace(tcbStyle, '')
                     removeBtns() // eslint-disable-line no-undef
                 } else updateTweaksStyle() // sync taller chatbox
     })}
