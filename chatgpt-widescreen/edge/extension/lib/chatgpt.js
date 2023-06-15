@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v1.9.1
+// This library is a condensed version of chatgpt.js v1.10.0
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/chatgptjs/chatgpt.js
 
@@ -25,7 +25,7 @@ var chatgpt = {
             var scheme = chatgpt.isDarkMode() ? 'dark' : 'light';
             var modalStyle = document.createElement('style');
             modalStyle.id = 'chatgpt-alert-style';
-            modalStyle.innerHTML = (
+            modalStyle.innerText = (
 
                 // Background styles
                 '.chatgpt-modal {' 
@@ -68,7 +68,8 @@ var chatgpt = {
         }
 
         // Insert text into elements
-        modalTitle.innerHTML = title ? title : ''; modalMessage.innerHTML = msg ? msg : '';
+        modalTitle.innerText = title ? title : '';
+        modalMessage.innerText = msg ? msg : ''; this.renderLinks(modalMessage);
 
         // Create/append buttons (if provided) to buttons div
         var modalButtons = document.createElement('div');
@@ -168,11 +169,12 @@ var chatgpt = {
     },
 
     history: {
-        isOff: function() {
+        isOn: function() {
             for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (navLink.text.match(/new chat/i)) return false;
+                if (navLink.text.match(/clear chat/i)) return false;
             } return true;
-        }
+        },
+        isOff: function() { return !this.isOn(); }
     },
 
     isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
@@ -238,7 +240,7 @@ var chatgpt = {
         }
 
         // Show notification
-        notificationDiv.innerHTML = msg; // insert msg
+        notificationDiv.innerText = msg; // insert msg
         notificationDiv.style.transition = 'none'; // remove fade effect
         notificationDiv.style.opacity = 1; // show msg
 
@@ -260,6 +262,36 @@ var chatgpt = {
             localStorage.notifyProps = JSON.stringify(notifyProps); // + storage
             notificationDiv.destroyTimer = null; // prevent memory leaks
         }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
+    },
+
+    renderLinks: function(node) {
+        const reLinks = /<a\b[^>]*>(.*?)<\/a>/g;
+        const links = [], nodeText = node.innerText;
+
+        // Track link tags
+        let link;
+        while ((link = reLinks.exec(nodeText)) !== null) {
+            const linkTag = link[0], linkText = link[1];
+            links.push({ linkTag, linkText });
+        }
+
+        // Create/insert hyperlink elements
+        while (node.firstChild) node.removeChild(node.firstChild); // remove old content
+        let currentIndex = 0;
+        links.forEach(({ linkTag, linkText }) => {
+            const index = nodeText.indexOf(linkTag, currentIndex); // of current link tag
+            if (index !== -1) { // if tag found
+                const beforeText = nodeText.substring(currentIndex, index); // extract text before link tag
+                const textNode = document.createTextNode(beforeText.replace(/ /g, '\u00A0')); // create text node w/ preceding text
+                const hyperlink = document.createElement('a'); // create hyperlink elem
+                hyperlink.href = linkTag.match(/href="(.*?)"/)[1]; // extract href value from link tag
+                hyperlink.textContent = linkText; // set content of hyperlink
+                node.appendChild(textNode); node.appendChild(hyperlink); // append preceding text node + hyperlink elem
+                currentIndex = index + linkTag.length; // update current index to skip processed tag
+        }});
+        const remainingText = nodeText.substring(currentIndex); // get remaining text after all link tags
+        const remainingTextNode = document.createTextNode(remainingText.replace(/ /g, '\u00A0')); // create node w/ remaining text
+        node.appendChild(remainingTextNode); // append remaining text node
     },
 
     sidebar: {
