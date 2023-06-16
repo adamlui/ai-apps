@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Vô tận" },
+  "appDesc": { "message": "Tạo ra những câu trả lời vô tận từ ChatGPT thông thạo (bằng bất kỳ ngôn ngữ nào!)" },
+  "menuLabel_infinityMode": { "message": "Chế độ Vô tận" },
+  "menuLabel_toggleVis": { "message": "Chuyển đổi Tính hiển thị" },
+  "menuLabel_autoScroll": { "message": "Tự động cuộn trang" },
+  "menuLabel_replyLang": { "message": "Ngôn ngữ Trả lời" },
+  "menuLabel_replyInt": { "message": "Khoảng cách Trả lời" },
+  "menuLabel_disabled": { "message": "Vô hiệu hóa (tiện ích đã được cài đặt)" },
+  "prompt_updateReplyLang": { "message": "Cập nhật ngôn ngữ trả lời" },
+  "prompt_updateReplyInt": { "message": "Cập nhật khoảng cách trả lời (tối thiểu 5 giây)" },
+  "alert_willReplyIn": { "message": "ChatGPT Vô tận sẽ trả lời trong" },
+  "alert_yourSysLang": { "message": "ngôn ngữ hệ thống của bạn" },
+  "alert_willReplyEvery": { "message": "ChatGPT Vô tận sẽ trả lời mỗi" },
+  "unit_seconds": { "message": "giây" },
+  "state_enabled": { "message": "đã kích hoạt" },
+  "state_disabled": { "message": "đã tắt" }
+}

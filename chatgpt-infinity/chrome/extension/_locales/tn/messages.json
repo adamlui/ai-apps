@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Go na le dikarabo tse di sa felelang go tswa mo bathong botlhe ba ba itseng ChatGPT (ka puo epe fela!)" },
+  "menuLabel_infinityMode": { "message": "Infinity Mode" },
+  "menuLabel_toggleVis": { "message": "Toggle Visibility" },
+  "menuLabel_autoScroll": { "message": "Auto-Scroll" },
+  "menuLabel_replyLang": { "message": "Puo ya go Araba" },
+  "menuLabel_replyInt": { "message": "Answer Interval" },
+  "menuLabel_disabled": { "message": "Disable (extension installed)" },
+  "prompt_updateReplyLang": { "message": "Ntshwafatsa puo ya go araba" },
+  "prompt_updateReplyInt": { "message": "Ntshwafatsa sebaka sa go araba (bobotlana metsotswana e le 5)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity e tlile go araba" },
+  "alert_yourSysLang": { "message": "puo ya gago ya thulaganyo" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity e tlile go araba mongwe le mongwe" },
+  "unit_seconds": { "message": "metsotswana" },
+  "state_enabled": { "message": "e kgontshitswe" },
+  "state_disabled": { "message": "o golafetse" }
+}

@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ޗެޓްޖީޕީޓީ އިންފިނިޓީ" },
+  "appDesc": { "message": "އެންމެން ދަންނަ ޗެޓްޖީޕީޓީ (ކޮންމެ ބަހަކުންވެސް!) އިން ނިމުމެއް ނެތް ޖަވާބެއް ޖެނެރޭޓް ކުރާށެވެ!" },
+  "menuLabel_infinityMode": { "message": "އިންފިނިޓީ މޯޑް" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_autoScroll": { "message": "Auto-Scroll" },
+  "menuLabel_replyLang": { "message": "ޖަވާބުދޭ ބަހުރުވަ" },
+  "menuLabel_replyInt": { "message": "ޖަވާބު އިންޓަވަލް" },
+  "menuLabel_disabled": { "message": "ނުކުޅެދުންތެރިކަން ހުންނަ މީހުން (އެކްސްޓެންޝަން އިންސްޓޯލްކޮށްފައި)" },
+  "prompt_updateReplyLang": { "message": "ރިޕްލައި ލެންގުއޭޖް އަޕްޑޭޓް ކުރޭ" },
+  "prompt_updateReplyInt": { "message": "އަޕްޑޭޓް ޖަވާބު އިންޓަވަލް (މަދުވެގެން 5 ސިކުންތު)" },
+  "alert_willReplyIn": { "message": "ޗެޓްޖީޕީޓީ އިންފިނިޓީއިން ޖަވާބު ދޭނީ" },
+  "alert_yourSysLang": { "message": "ތިޔަބޭފުޅުންގެ ސިސްޓަމް ލެންގުއޭޖް" },
+  "alert_willReplyEvery": { "message": "ޗެޓްޖީޕީޓީ އިންފިނިޓީއިން ކޮންމެ ޖަވާބެއް ދޭނެ" },
+  "unit_seconds": { "message": "parts" },
+  "state_enabled": { "message": "އެނޭބަލްކޮށްފައި" },
+  "state_disabled": { "message": "ބޭނުންނުކުރެވޭ ގޮތަށް ހަދާފައި" }
+}

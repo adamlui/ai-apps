@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Végtelen válaszokat generál az mindentudó ChatGPT-ből (bármilyen nyelven!)" },
+  "menuLabel_infinityMode": { "message": "Végtelen mód" },
+  "menuLabel_toggleVis": { "message": "Láthatóság váltása" },
+  "menuLabel_autoScroll": { "message": "Automatikus görgetés" },
+  "menuLabel_replyLang": { "message": "Válasznyelv" },
+  "menuLabel_replyInt": { "message": "Válaszidőköz" },
+  "menuLabel_disabled": { "message": "Letiltva (kiegészítő telepítve)" },
+  "prompt_updateReplyLang": { "message": "Válasznyelv frissítése" },
+  "prompt_updateReplyInt": { "message": "Válaszidőköz frissítése (minimum 5 másodperc)" },
+  "alert_willReplyIn": { "message": "A ChatGPT Infinity válaszolni fog" },
+  "alert_yourSysLang": { "message": "a rendszer nyelve" },
+  "alert_willReplyEvery": { "message": "A ChatGPT Infinity minden" },
+  "unit_seconds": { "message": "másodpercenként" },
+  "state_enabled": { "message": "engedélyezve" },
+  "state_disabled": { "message": "letiltva" }
+}

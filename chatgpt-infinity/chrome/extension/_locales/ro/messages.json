@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinit" },
+  "appDesc": { "message": "Generează răspunsuri infinite de la ChatGPT, cel care știe totul (în orice limbă!)" },
+  "menuLabel_infinityMode": { "message": "Mod Infinit" },
+  "menuLabel_toggleVis": { "message": "Comutare vizibilitate" },
+  "menuLabel_autoScroll": { "message": "Derulare automată" },
+  "menuLabel_replyLang": { "message": "Limba de răspuns" },
+  "menuLabel_replyInt": { "message": "Interval de răspuns" },
+  "menuLabel_disabled": { "message": "Dezactivat (extensie instalată)" },
+  "prompt_updateReplyLang": { "message": "Actualizați limba de răspuns" },
+  "prompt_updateReplyInt": { "message": "Actualizați intervalul de răspuns (minimum 5 secunde)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinit va răspunde în" },
+  "alert_yourSysLang": { "message": "limba sistemului dvs." },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinit va răspunde la fiecare" },
+  "unit_seconds": { "message": "secunde" },
+  "state_enabled": { "message": "activat" },
+  "state_disabled": { "message": "dezactivat" }
+}

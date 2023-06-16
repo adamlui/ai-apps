@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "E hana i nā pane pau ʻole mai ChatGPT ʻike āpau (ma kekahi ʻōlelo!)" },
+  "menuLabel_infinityMode": { "message": "Ke ano pau ole" },
+  "menuLabel_toggleVis": { "message": "Hoʻololi i ka ʻike" },
+  "menuLabel_autoScroll": { "message": "Paʻa-Aunoa" },
+  "menuLabel_replyLang": { "message": "Pane ʻŌlelo" },
+  "menuLabel_replyInt": { "message": "Pane Interval" },
+  "menuLabel_disabled": { "message": "Hoʻopaʻa ʻia (kau ʻia ka hoʻonui)" },
+  "prompt_updateReplyLang": { "message": "Hōʻano hou i ka ʻōlelo pane" },
+  "prompt_updateReplyInt": { "message": "Hoʻohou i ka wā pane (ka liʻiliʻi he 5 kekona)" },
+  "alert_willReplyIn": { "message": "E pane mai ʻo ChatGPT Infinity" },
+  "alert_yourSysLang": { "message": "kāu ʻōlelo ʻōnaehana" },
+  "alert_willReplyEvery": { "message": "E pane ʻo ChatGPT Infinity i kēlā me kēia" },
+  "unit_seconds": { "message": "kekona" },
+  "state_enabled": { "message": "hiki" },
+  "state_disabled": { "message": "kino kīnā" }
+}

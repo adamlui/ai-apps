@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "GUTPELA SAVE I KAM LONG BAIBEL I KAM LONG BAIBEL (Long olgeta tok ples!)" },
+  "menuLabel_infinityMode": { "message": "Infinity Mode" },
+  "menuLabel_toggleVis": { "message": "Toggle Visibility" },
+  "menuLabel_autoScroll": { "message": "Auto-Scroll" },
+  "menuLabel_replyLang": { "message": "Bekim Tokples" },
+  "menuLabel_replyInt": { "message": "Bekim Interval" },
+  "menuLabel_disabled": { "message": "Disable (long long int)" },
+  "prompt_updateReplyLang": { "message": "Toksave long tokples" },
+  "prompt_updateReplyInt": { "message": "Tok tok tok tok (minimum 5 secs)" },
+  "alert_willReplyIn": { "message": "PNG Infinity bai bekim tok" },
+  "alert_yourSysLang": { "message": "tokples bilong yu" },
+  "alert_willReplyEvery": { "message": "Tok Pisin tpi-000 bai bekim olgeta tok" },
+  "unit_seconds": { "message": "ol Seconds" },
+  "state_enabled": { "message": "adjective inap long mekim" },
+  "state_disabled": { "message": "adjective i bagarap" }
+}

@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "สร้างคำตอบได้ไม่จำกัดจาก ChatGPT ที่รู้ทุกเรื่อง (ในภาษาใดก็ได้!)" },
+  "menuLabel_infinityMode": { "message": "โหมด Infinity" },
+  "menuLabel_toggleVis": { "message": "สลับมองเห็น" },
+  "menuLabel_autoScroll": { "message": "เลื่อนอัตโนมัติ" },
+  "menuLabel_replyLang": { "message": "ภาษาตอบกลับ" },
+  "menuLabel_replyInt": { "message": "ช่วงเวลาตอบกลับ" },
+  "menuLabel_disabled": { "message": "ปิดใช้งาน (ติดตั้งส่วนเสริมแล้ว)" },
+  "prompt_updateReplyLang": { "message": "อัปเดตภาษาตอบกลับ" },
+  "prompt_updateReplyInt": { "message": "อัปเดตช่วงเวลาตอบกลับ (ขั้นต่ำ 5 วินาที)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity จะตอบกลับใน" },
+  "alert_yourSysLang": { "message": "ภาษาระบบของคุณ" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity จะตอบกลับทุกๆ" },
+  "unit_seconds": { "message": "วินาที" },
+  "state_enabled": { "message": "เปิดใช้งาน" },
+  "state_disabled": { "message": "ปิดใช้งาน" }
+}

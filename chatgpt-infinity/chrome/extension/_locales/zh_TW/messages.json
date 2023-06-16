@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT 無盡" },
+  "appDesc": { "message": "從無所不知的ChatGPT中生成無盡的答案 (任何語言!)" },
+  "menuLabel_infinityMode": { "message": "無盡模式" },
+  "menuLabel_toggleVis": { "message": "切換可見性" },
+  "menuLabel_autoScroll": { "message": "自動捲動" },
+  "menuLabel_replyLang": { "message": "回覆語言" },
+  "menuLabel_replyInt": { "message": "回覆間隔" },
+  "menuLabel_disabled": { "message": "禁用（擴充已安裝）" },
+  "prompt_updateReplyLang": { "message": "更新回覆語言" },
+  "prompt_updateReplyInt": { "message": "更新回覆間隔（最少5秒）" },
+  "alert_willReplyIn": { "message": "ChatGPT 無盡將回覆" },
+  "alert_yourSysLang": { "message": "你的系統語言" },
+  "alert_willReplyEvery": { "message": "ChatGPT 無盡將每隔" },
+  "unit_seconds": { "message": "秒鐘" },
+  "state_enabled": { "message": "啟用" },
+  "state_disabled": { "message": "禁用" }
+}

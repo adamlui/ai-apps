@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "د KTTTGPTGP" },
+  "appDesc": { "message": "د ټولو معلوماتو په اړه د ځوابونو په اړه ځواب ورکړئ (په هر وخت کې)!" },
+  "menuLabel_infinityMode": { "message": "د اکر حالت" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_autoScroll": { "message": "د Autoc - Auto" },
+  "menuLabel_replyLang": { "message": "ژبه ځواب کړئ" },
+  "menuLabel_replyInt": { "message": "ځواب ورکړه" },
+  "menuLabel_disabled": { "message": "لګول شوی (لګول شوی)" },
+  "prompt_updateReplyLang": { "message": "نوې ژبه تازه کړئ" },
+  "prompt_updateReplyInt": { "message": "لږترلږه 5 ثانیې (لږترلږه 5 دقیقې)" },
+  "alert_willReplyIn": { "message": "د بهرنیو چارو په اړه د ځواب په اړه ځواب ورکړئ" },
+  "alert_yourSysLang": { "message": "خپل د ژبې سیسټم" },
+  "alert_willReplyEvery": { "message": "د ځواب په اړه به ډاډمن شي" },
+  "unit_seconds": { "message": "ثانيې" },
+  "state_enabled": { "message": "فعال شوی" },
+  "state_disabled": { "message": "غیر فعال شوی" }
+}

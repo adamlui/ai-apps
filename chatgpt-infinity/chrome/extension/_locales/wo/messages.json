@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "Xët yi lëkkalook wii \"Infinity\"" },
+  "appDesc": { "message": "Jëfandikoo ay tontu yu amul njariñ ci xam-xam bu nekk ci ChatGPT (lu ci làkk bu nekk!)" },
+  "menuLabel_infinityMode": { "message": "Xët yi lëkkalook wii \"'Infinity Mode\"'" },
+  "menuLabel_toggleVis": { "message": "Toggle Visibilité" },
+  "menuLabel_autoScroll": { "message": "KATANE 0" },
+  "menuLabel_replyLang": { "message": "Xët yi lëkkalook wii" },
+  "menuLabel_replyInt": { "message": "Xët yi lëkkalook wii \"'Interval\"'" },
+  "menuLabel_disabled": { "message": "Xët yi lëkkalook wii (ñiiñ)" },
+  "prompt_updateReplyLang": { "message": "Xët yi lëkkalook wii \"'Langue réponse\"'" },
+  "prompt_updateReplyInt": { "message": "Xët yi lëkkalook wii \"'Specialised Applications\"'" },
+  "alert_willReplyIn": { "message": "Xët yi lëkkalook wii \"Infinity\" dina tontu ci" },
+  "alert_yourSysLang": { "message": "sa langue sistema" },
+  "alert_willReplyEvery": { "message": "Xët yi lëkkalook wii \"'Infinity\"'" },
+  "unit_seconds": { "message": "2.Boo Loo" },
+  "state_enabled": { "message": "taxàl" },
+  "state_disabled": { "message": "dafa fayàl" }
+}

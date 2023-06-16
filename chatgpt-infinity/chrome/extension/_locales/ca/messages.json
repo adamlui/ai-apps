@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Genera infinites respostes a partir del XatGPT que ho sap tot (en qualsevol idioma!)" },
+  "menuLabel_infinityMode": { "message": "Mode infinit" },
+  "menuLabel_toggleVis": { "message": "Commuta la visibilitat" },
+  "menuLabel_autoScroll": { "message": "Desplaçament automàtic" },
+  "menuLabel_replyLang": { "message": "Idioma de la resposta" },
+  "menuLabel_replyInt": { "message": "Interval de resposta" },
+  "menuLabel_disabled": { "message": "Desactivat (extensió instal·lada)" },
+  "prompt_updateReplyLang": { "message": "Actualitza l'idioma de resposta" },
+  "prompt_updateReplyInt": { "message": "Interval de resposta d'actualització (mínim 5 segons)" },
+  "alert_willReplyIn": { "message": "XatGPT Infinity respondrà en" },
+  "alert_yourSysLang": { "message": "l'idioma del vostre sistema" },
+  "alert_willReplyEvery": { "message": "XatGPT Infinity respondrà cada" },
+  "unit_seconds": { "message": "segons" },
+  "state_enabled": { "message": "habilitat" },
+  "state_disabled": { "message": "inhabilitat" }
+}

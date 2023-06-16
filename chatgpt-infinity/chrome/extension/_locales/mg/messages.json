@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatTic Chat" },
+  "appDesc": { "message": "Soso-kevitra avy amin'ny teny Anglisy (tsy misy teny)!" },
+  "menuLabel_infinityMode": { "message": "Fampitandremana" },
+  "menuLabel_toggleVis": { "message": "Famaritana ny famintinana" },
+  "menuLabel_autoScroll": { "message": "Auto Auto Auto" },
+  "menuLabel_replyLang": { "message": "Fiteny" },
+  "menuLabel_replyInt": { "message": "Arovy" },
+  "menuLabel_disabled": { "message": "Famaritana (sanda)" },
+  "prompt_updateReplyLang": { "message": "Hanova ny teny fanalahidy" },
+  "prompt_updateReplyInt": { "message": "Valiny (5)" },
+  "alert_willReplyIn": { "message": "Hiditra ao amin'ny Chat" },
+  "alert_yourSysLang": { "message": "ampidiro ny fiteninao" },
+  "alert_willReplyEvery": { "message": "Ny fanontaniana rehetra dia ho azo antoka" },
+  "unit_seconds": { "message": "segaondra" },
+  "state_enabled": { "message": "Mampandeha" },
+  "state_disabled": { "message": "Natsahatra ; Najanona" }
+}

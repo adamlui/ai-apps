@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Paghimo sa walay katapusan nga mga tubag gikan sa tanan-nga nasayud ChatGPT (sa bisan unsa nga pinulongan!)" },
+  "menuLabel_infinityMode": { "message": "Infinity Mode" },
+  "menuLabel_toggleVis": { "message": "Toggle visibility" },
+  "menuLabel_autoScroll": { "message": "Auto-Scroll" },
+  "menuLabel_replyLang": { "message": "Hapit nalukop sa kaumahan ang" },
+  "menuLabel_replyInt": { "message": "Interval sa Tubag" },
+  "menuLabel_disabled": { "message": "Disabled (mga sumpay_usba)" },
+  "prompt_updateReplyLang": { "message": "Tubag sa Lenguahe" },
+  "prompt_updateReplyInt": { "message": "Pag-update sa agwat sa pagtubag (minimum nga 5 segundo)" },
+  "alert_willReplyIn": { "message": "Ang ChatGPT Infinity motubag" },
+  "alert_yourSysLang": { "message": "ang Imong Sistema sa Pinulongan" },
+  "alert_willReplyEvery": { "message": "Unsane Unsane Answers" },
+  "unit_seconds": { "message": "unit-format" },
+  "state_enabled": { "message": "Mipahimo" },
+  "state_disabled": { "message": "Baldado" }
+}

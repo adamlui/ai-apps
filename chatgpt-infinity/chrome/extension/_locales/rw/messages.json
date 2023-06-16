@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "GPT" },
+  "appDesc": { "message": "Mujye muvuga ibyo mutazi!!!!!!!!!!" },
+  "menuLabel_infinityMode": { "message": "Ubwoko" },
+  "menuLabel_toggleVis": { "message": "Ukugaragara" },
+  "menuLabel_autoScroll": { "message": "&lt; B B" },
+  "menuLabel_replyLang": { "message": "Subiza Ururimi" },
+  "menuLabel_replyInt": { "message": "Intera" },
+  "menuLabel_disabled": { "message": "Umugereka" },
+  "prompt_updateReplyLang": { "message": "Subiza Ururimi" },
+  "prompt_updateReplyInt": { "message": "Subiza Intera Gito 5 amasogonda" },
+  "alert_willReplyIn": { "message": "Igisubizo in" },
+  "alert_yourSysLang": { "message": "sisitemu Ururimi:" },
+  "alert_willReplyEvery": { "message": "Subiza buri" },
+  "unit_seconds": { "message": "amasegonda" },
+  "state_enabled": { "message": "Birafunguye" },
+  "state_disabled": { "message": "Yahagaritswe" }
+}

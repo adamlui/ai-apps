@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity None None" },
+  "appDesc": { "message": "Generate ata nyishu zitazwi na ChatGPT (mu rurimi rw'igihe cose!)" },
+  "menuLabel_infinityMode": { "message": "Infinity Mode None None" },
+  "menuLabel_toggleVis": { "message": "Toggle Visibility None None" },
+  "menuLabel_autoScroll": { "message": "Auto-Scroll None None" },
+  "menuLabel_replyLang": { "message": "Réponse de Ururimi" },
+  "menuLabel_replyInt": { "message": "Ashura Interval" },
+  "menuLabel_disabled": { "message": "Narumugaiye (extension)" },
+  "prompt_updateReplyLang": { "message": "Update Ashura Ururimi" },
+  "prompt_updateReplyInt": { "message": "Asobi ni Iku yo (5 secs)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity igiye kwishura mu" },
+  "alert_yourSysLang": { "message": "sisitemu y'ururimi rwawe" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity izokwishura buri musi" },
+  "unit_seconds": { "message": "amasegonde" },
+  "state_enabled": { "message": "ni igiki camufashije?" },
+  "state_disabled": { "message": "narumugaye Narumugaye" }
+}

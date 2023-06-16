@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Búðu til endalaus svör frá öllum þekktum ChatGPT (á hvaða tungumáli sem er!)" },
+  "menuLabel_infinityMode": { "message": "Óendanlegur hamur" },
+  "menuLabel_toggleVis": { "message": "Víxla sýnileika" },
+  "menuLabel_autoScroll": { "message": "Sjálfvirkur flettibúnaður" },
+  "menuLabel_replyLang": { "message": "Tungumál svars" },
+  "menuLabel_replyInt": { "message": "Bilið á milli svara" },
+  "menuLabel_disabled": { "message": "Óvirkt (viðbót uppsett)" },
+  "prompt_updateReplyLang": { "message": "Uppfæra tungumál svars" },
+  "prompt_updateReplyInt": { "message": "Uppfæra svarbil (að lágmarki 5 sek.)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity mun svara í" },
+  "alert_yourSysLang": { "message": "tungumál kerfisins" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity mun svara á hverjum degi" },
+  "unit_seconds": { "message": "sekúndur" },
+  "state_enabled": { "message": "Lag" },
+  "state_disabled": { "message": "óvirkt" }
+}

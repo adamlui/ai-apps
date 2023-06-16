@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Generer endeløse svar fra den altvidende ChatGPT (på enhver sprog!)" },
+  "menuLabel_infinityMode": { "message": "Uendelighedstilstand" },
+  "menuLabel_toggleVis": { "message": "Skift synlighed" },
+  "menuLabel_autoScroll": { "message": "Auto-rul" },
+  "menuLabel_replyLang": { "message": "Svar Sprog" },
+  "menuLabel_replyInt": { "message": "Svar Interval" },
+  "menuLabel_disabled": { "message": "Deaktiveret (udvidelse installeret)" },
+  "prompt_updateReplyLang": { "message": "Opdater svar sprog" },
+  "prompt_updateReplyInt": { "message": "Opdater svar interval (minimum 5 sekunder)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity vil svare om" },
+  "alert_yourSysLang": { "message": "dit system sprog" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity vil svare hvert" },
+  "unit_seconds": { "message": "sekunder" },
+  "state_enabled": { "message": "aktiveret" },
+  "state_disabled": { "message": "deaktiveret" }
+}

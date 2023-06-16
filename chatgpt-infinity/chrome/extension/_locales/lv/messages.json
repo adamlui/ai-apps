@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Radīt nebeidzamu atbildes no visiem zinošs ChatGPT (jebkurā valodā!)" },
+  "menuLabel_infinityMode": { "message": "Bezgalības režīms" },
+  "menuLabel_toggleVis": { "message": "Pārslēgt redzamību" },
+  "menuLabel_autoScroll": { "message": "Automātiskā ritināšana" },
+  "menuLabel_replyLang": { "message": "Atbildes valoda" },
+  "menuLabel_replyInt": { "message": "Atbildes intervāls" },
+  "menuLabel_disabled": { "message": "Atspējots (paplašinājums instalēts)" },
+  "prompt_updateReplyLang": { "message": "Atjaunināt atbildes valodu" },
+  "prompt_updateReplyInt": { "message": "Atjaunināt atbildes intervālu (vismaz 5 sekundes)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity atbildēs" },
+  "alert_yourSysLang": { "message": "jūsu sistēmas valoda" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity atbildēs katru" },
+  "unit_seconds": { "message": "sekundes" },
+  "state_enabled": { "message": "iespējots" },
+  "state_disabled": { "message": "Izslēgt" }
+}

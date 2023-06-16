@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "全知のChatGPTから無限の回答を生成します（どんな言語でも！）" },
+  "menuLabel_infinityMode": { "message": "無限モード" },
+  "menuLabel_toggleVis": { "message": "表示の切り替え" },
+  "menuLabel_autoScroll": { "message": "オートスクロール" },
+  "menuLabel_replyLang": { "message": "返信言語" },
+  "menuLabel_replyInt": { "message": "返信間隔" },
+  "menuLabel_disabled": { "message": "無効になっています（拡張機能がインストールされています）" },
+  "prompt_updateReplyLang": { "message": "返信言語を更新する" },
+  "prompt_updateReplyInt": { "message": "返信間隔を更新する（最小5秒）" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinityは次に返信します:" },
+  "alert_yourSysLang": { "message": "あなたのシステム言語" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinityは次に返信します:" },
+  "unit_seconds": { "message": "秒" },
+  "state_enabled": { "message": "有効" },
+  "state_disabled": { "message": "無効" }
+}

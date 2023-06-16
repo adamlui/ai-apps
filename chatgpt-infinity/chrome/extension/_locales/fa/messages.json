@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "پاسخ های بی پایان را از ChatGPT دانا (به هر زبانی!) ایجاد کنید." },
+  "menuLabel_infinityMode": { "message": "حالت بی نهایت" },
+  "menuLabel_toggleVis": { "message": "تغییر نمایانی" },
+  "menuLabel_autoScroll": { "message": "اسکرول خودکار" },
+  "menuLabel_replyLang": { "message": "زبان پاسخ" },
+  "menuLabel_replyInt": { "message": "فاصله پاسخ" },
+  "menuLabel_disabled": { "message": "غیرفعال (برنامه افزودنی نصب شده)" },
+  "prompt_updateReplyLang": { "message": "زبان پاسخ را به روز کنید" },
+  "prompt_updateReplyInt": { "message": "فاصله زمانی پاسخ به‌روزرسانی (حداقل 5 ثانیه)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity پاسخ خواهد داد" },
+  "alert_yourSysLang": { "message": "زبان سيستم" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity هر کدام پاسخ خواهد داد" },
+  "unit_seconds": { "message": "ثانیه" },
+  "state_enabled": { "message": "فعال" },
+  "state_disabled": { "message": "غیر فعال کردن" }
+}

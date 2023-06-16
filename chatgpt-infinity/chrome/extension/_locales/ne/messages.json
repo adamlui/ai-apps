@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT इन्फिनिटी" },
+  "appDesc": { "message": "सबै - ज्ञात ChatGPT देखि अनन्त जवाफ उत्पन्न (कुनै पनि भाषामा!)" },
+  "menuLabel_infinityMode": { "message": "इन्फिनिटी मोड" },
+  "menuLabel_toggleVis": { "message": "दृश्यता टगल गर्नुहोस्" },
+  "menuLabel_autoScroll": { "message": "स्वत: स्क्रोल गर्नुहोस्" },
+  "menuLabel_replyLang": { "message": "भाषा जवाफ दिनुहोस्" },
+  "menuLabel_replyInt": { "message": "जवाफ अन्तराल" },
+  "menuLabel_disabled": { "message": "अक्षम पारियो (विस्तार स्थापना गरियो)" },
+  "prompt_updateReplyLang": { "message": "जवाफ भाषा अद्यावधिक गर्नुहोस्" },
+  "prompt_updateReplyInt": { "message": "जवाफ अन्तराल अद्यावधिक गर्नुहोस् (न्यूनतम ५ सेकेन्ड)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity ले यसमा जवाफ दिनेछ" },
+  "alert_yourSysLang": { "message": "तपाईंको प्रणाली भाषा" },
+  "alert_willReplyEvery": { "message": "ChatGPT अनन्तता हरेक जवाफ हुनेछ" },
+  "unit_seconds": { "message": "सेकेण्ड" },
+  "state_enabled": { "message": "MHz" },
+  "state_disabled": { "message": "अक्षम" }
+}

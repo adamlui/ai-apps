@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Loo lõputuid vastuseid kõiketeadvast ChatGPT-st (mis tahes keeles!)" },
+  "menuLabel_infinityMode": { "message": "Lõpmatuse režiim" },
+  "menuLabel_toggleVis": { "message": "Nähtavuse lülitamine" },
+  "menuLabel_autoScroll": { "message": "Automaatne kerimine" },
+  "menuLabel_replyLang": { "message": "Vastuse keel" },
+  "menuLabel_replyInt": { "message": "Vastuse intervall" },
+  "menuLabel_disabled": { "message": "Keelatud (laiend installitud)" },
+  "prompt_updateReplyLang": { "message": "Uuenda vastuse keelt" },
+  "prompt_updateReplyInt": { "message": "Uuenda vastamisintervalli (vähemalt 5 sekundit)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity vastab" },
+  "alert_yourSysLang": { "message": "teie süsteemikeel" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity vastab iga" },
+  "unit_seconds": { "message": "sekundit" },
+  "state_enabled": { "message": "lubatud" },
+  "state_disabled": { "message": "välja lülitatud" }
+}

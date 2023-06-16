@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "चॅटजीपीटी अमर्त्यु" },
+  "appDesc": { "message": "सर्वज्ञ चॅटजीपीटी यांच्या सामग्रीचा अखंड उत्तर निर्माण करा (कोणत्याही भाषेत!)" },
+  "menuLabel_infinityMode": { "message": "अमर्त्यु मोड" },
+  "menuLabel_toggleVis": { "message": "दृश्यता टॉगल करा" },
+  "menuLabel_autoScroll": { "message": "स्वयंचलित स्क्रोल" },
+  "menuLabel_replyLang": { "message": "उत्तर भाषा" },
+  "menuLabel_replyInt": { "message": "उत्तर अंतराल" },
+  "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन स्थापित)" },
+  "prompt_updateReplyLang": { "message": "उत्तर भाषा अद्यतनित करा" },
+  "prompt_updateReplyInt": { "message": "उत्तर अंतराल अद्यतनित करा (किमान 5 सेकंद)" },
+  "alert_willReplyIn": { "message": "चॅटजीपीटी अमर्त्यु येणार आहे" },
+  "alert_yourSysLang": { "message": "आपली प्रणाली भाषा" },
+  "alert_willReplyEvery": { "message": "चॅटजीपीटी अमर्त्यु प्रत्येक वेळी उत्तर देणार आहे" },
+  "unit_seconds": { "message": "सेकंद" },
+  "state_enabled": { "message": "सक्षम" },
+  "state_disabled": { "message": "अक्षम" }
+}

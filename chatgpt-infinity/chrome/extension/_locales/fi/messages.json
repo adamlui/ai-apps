@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Generoi loputtomia vastauksia kaikkivaltiaasta ChatGPT:stä (minkä tahansa kielen!) " },
+  "menuLabel_infinityMode": { "message": "Infinity-tila" },
+  "menuLabel_toggleVis": { "message": "Vaihda näkyvyyttä" },
+  "menuLabel_autoScroll": { "message": "Automaattinen vieritys" },
+  "menuLabel_replyLang": { "message": "Vastauskieli" },
+  "menuLabel_replyInt": { "message": "Vastausväli" },
+  "menuLabel_disabled": { "message": "Poissa käytöstä (laajennus asennettu)" },
+  "prompt_updateReplyLang": { "message": "Päivitä vastauskieli" },
+  "prompt_updateReplyInt": { "message": "Päivitä vastausväli (vähintään 5 sekuntia)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity vastaa" },
+  "alert_yourSysLang": { "message": "järjestelmäsi kielellä" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity vastaa joka" },
+  "unit_seconds": { "message": "sekunti" },
+  "state_enabled": { "message": "käytössä" },
+  "state_disabled": { "message": "pois käytöstä" }
+}

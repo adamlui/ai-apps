@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Бесконечност" },
+  "appDesc": { "message": "Генерирање на бескрајни одговори од сите знаејќи ChatGPT (на било кој јазик!)" },
+  "menuLabel_infinityMode": { "message": "Бесконечен режим" },
+  "menuLabel_toggleVis": { "message": "Вклучи видливост" },
+  "menuLabel_autoScroll": { "message": "Автоматско лизгање" },
+  "menuLabel_replyLang": { "message": "Јазик на одговор" },
+  "menuLabel_replyInt": { "message": "Интервал на одговор" },
+  "menuLabel_disabled": { "message": "Оневозможено (наставката е инсталирана)" },
+  "prompt_updateReplyLang": { "message": "Ажурирај јазик за одговор" },
+  "prompt_updateReplyInt": { "message": "Ажурирајте го интервалот за одговор (минимум 5 секунди)" },
+  "alert_willReplyIn": { "message": "ChatGPT Бесконечност ќе одговори во" },
+  "alert_yourSysLang": { "message": "јазикот на вашиот систем" },
+  "alert_willReplyEvery": { "message": "ChatGPT Бесконечност ќе одговори на секој" },
+  "unit_seconds": { "message": "секунди" },
+  "state_enabled": { "message": "овозможено" },
+  "state_disabled": { "message": "оневозможено" }
+}

@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "Quocirca" },
+  "appDesc": { "message": "In tutto il mondo ci sono milioni (sì, milioni!)" },
+  "menuLabel_infinityMode": { "message": "Problema" },
+  "menuLabel_toggleVis": { "message": "Praefectio" },
+  "menuLabel_autoScroll": { "message": "RM: carcun da" },
+  "menuLabel_replyLang": { "message": "Découvrez un linguaggio" },
+  "menuLabel_replyInt": { "message": "Interrogatio" },
+  "menuLabel_disabled": { "message": "Votre nom (nécessaire)" },
+  "prompt_updateReplyLang": { "message": "Próximo Blog" },
+  "prompt_updateReplyInt": { "message": "(5 minutos para 5 minutos)" },
+  "alert_willReplyIn": { "message": "Respondeo dicendum quod respondebatur in" },
+  "alert_yourSysLang": { "message": "linguae linguae" },
+  "alert_willReplyEvery": { "message": "Respondeo dicendum quod respondebo" },
+  "unit_seconds": { "message": "Secundum" },
+  "state_enabled": { "message": "Actiosus" },
+  "state_disabled": { "message": "Invaliditas" }
+}

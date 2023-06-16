@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Anfeidredd" },
+  "appDesc": { "message": "Creu atebion diddiwedd o ChatGPT holl - wybodus (mewn unrhyw iaith!)" },
+  "menuLabel_infinityMode": { "message": "Modd Anfeidredd" },
+  "menuLabel_toggleVis": { "message": "Toglo Gwelededd" },
+  "menuLabel_autoScroll": { "message": "Cofrestru'n Awtomatig" },
+  "menuLabel_replyLang": { "message": "Iaith Ateb" },
+  "menuLabel_replyInt": { "message": "Ysbaid Ateb" },
+  "menuLabel_disabled": { "message": "Analluogwyd (estyniad wedi'i osod)" },
+  "prompt_updateReplyLang": { "message": "Diweddaru'r iaith ymateb" },
+  "prompt_updateReplyInt": { "message": "Ysbaid ateb diweddaru (lleiafswm 5 eiliad)" },
+  "alert_willReplyIn": { "message": "Bydd ChatGPT Infinity yn ateb yn" },
+  "alert_yourSysLang": { "message": "Iaith y System" },
+  "alert_willReplyEvery": { "message": "Bydd ChatGPT Infinity yn ateb pob" },
+  "unit_seconds": { "message": "eiliadau" },
+  "state_enabled": { "message": "wedi’i alluogi" },
+  "state_disabled": { "message": "analluogwyd" }
+}

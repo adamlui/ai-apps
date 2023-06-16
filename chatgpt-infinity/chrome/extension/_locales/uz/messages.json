@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Hamma narsani biladigan ChatGPT-dan cheksiz javoblar yarating (istalgan tilda!)" },
+  "menuLabel_infinityMode": { "message": "Cheksizlik rejimi" },
+  "menuLabel_toggleVis": { "message": "Koʻrinishni oʻzgartirish" },
+  "menuLabel_autoScroll": { "message": "Avtomatik aylantirish" },
+  "menuLabel_replyLang": { "message": "Javob berish tili" },
+  "menuLabel_replyInt": { "message": "Javob oralig&#39;i" },
+  "menuLabel_disabled": { "message": "O&#39;chirilgan (kengaytma o&#39;rnatilgan)" },
+  "prompt_updateReplyLang": { "message": "Javob berish tilini yangilang" },
+  "prompt_updateReplyInt": { "message": "Javoblar oralig&#39;ini yangilash (kamida 5 soniya)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity javob beradi" },
+  "alert_yourSysLang": { "message": "tizim tilingiz" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity har biriga javob beradi" },
+  "unit_seconds": { "message": "soniyalar" },
+  "state_enabled": { "message": "yoqilgan" },
+  "state_disabled": { "message": "o'chirilgan" }
+}

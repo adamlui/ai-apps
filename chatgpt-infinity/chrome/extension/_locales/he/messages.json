@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "צור תשובות אינסופיות מ - ChatGPT יודע - כל (בכל שפה!)" },
+  "menuLabel_infinityMode": { "message": "מצב אינפיניטי" },
+  "menuLabel_toggleVis": { "message": "החלף מצב ניראות" },
+  "menuLabel_autoScroll": { "message": "גלילה אוטומטית" },
+  "menuLabel_replyLang": { "message": "שפת תגובה" },
+  "menuLabel_replyInt": { "message": "מרווח זמן לתשובה" },
+  "menuLabel_disabled": { "message": "מושבת (תוסף מותקן)" },
+  "prompt_updateReplyLang": { "message": "עדכון שפת התגובה" },
+  "prompt_updateReplyInt": { "message": "עדכן מרווח זמן לתשובה (מינימום 5 שניות)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity יגיב בעוד" },
+  "alert_yourSysLang": { "message": "שפת המערכת שלך" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity יענה על כל שאלה" },
+  "unit_seconds": { "message": "שניות" },
+  "state_enabled": { "message": "מופעל" },
+  "state_disabled": { "message": "מושבת" }
+}
