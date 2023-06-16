@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "ສ້າງຄໍາຕອບບໍ່ຢຸດຢັ້ງຈາກ ChatGPT ທີ່ຮູ້ທຸກຢ່າງ (ໃນພາສາໃດໆ!)" },
+  "menuLabel_infinityMode": { "message": "ໂໝດ Infinity" },
+  "menuLabel_toggleVis": { "message": "ປິດການເບິ່ງເຫັນ" },
+  "menuLabel_autoScroll": { "message": "ອັດຕະໂນມັດ-Scroll" },
+  "menuLabel_replyLang": { "message": "ຕອບກັບ ພາສາ" },
+  "menuLabel_replyInt": { "message": "ໄລຍະເວລາຕອບ" },
+  "menuLabel_disabled": { "message": "ປິດໃຊ້ງານ (ຕິດຕັ້ງຂະຫຍາຍ)" },
+  "prompt_updateReplyLang": { "message": "ອັບເດດພາສາຕອບ" },
+  "prompt_updateReplyInt": { "message": "ອັບເດດໄລຍະເວລາຕອບ (ຕ່ໍາສຸດ 5 ວິນາທີ)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity ຈະຕອບໃນ" },
+  "alert_yourSysLang": { "message": "ພາສາລະບົບຂອງທ່ານ" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity ຈະຕອບທຸກໆ" },
+  "unit_seconds": { "message": "ວິນາທີ" },
+  "state_enabled": { "message": "ເປີດໃຊ້ງານ" },
+  "state_disabled": { "message": "ຄົນພິການ" }
+}

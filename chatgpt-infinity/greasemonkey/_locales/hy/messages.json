@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Ստեղծեք անվերջ պատասխաններ բոլորի իմացությամբ ChatGPT - ից (ցանկացած լեզվով):" },
+  "menuLabel_infinityMode": { "message": "Անսահմանության ռեժիմ" },
+  "menuLabel_toggleVis": { "message": "Միացնել տեսանելիությունը" },
+  "menuLabel_autoScroll": { "message": "Ինքնասպասարկում" },
+  "menuLabel_replyLang": { "message": "Պատասխանել լեզվով" },
+  "menuLabel_replyInt": { "message": "Պատասխանել ինտերվալով" },
+  "menuLabel_disabled": { "message": "Անջատված է (երկարաձգումը տեղադրված է)" },
+  "prompt_updateReplyLang": { "message": "Թարմացնել պատասխանի լեզուն" },
+  "prompt_updateReplyInt": { "message": "Թարմացնել պատասխանների միջակայքը (նվազագույնը 5 վրկ)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity - ը կպատասխանի անգլերեն լեզվով" },
+  "alert_yourSysLang": { "message": "համակարգի լեզուն" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity - ը կպատասխանի ամեն օր" },
+  "unit_seconds": { "message": "Վայրկյան" },
+  "state_enabled": { "message": "Թույլատրվա՞ծ է" },
+  "state_disabled": { "message": "հաշմանդամ" }
+}

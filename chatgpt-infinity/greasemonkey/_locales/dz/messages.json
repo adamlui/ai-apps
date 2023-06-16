@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ཨའི་ཌི་ཨར་སི་གི་རྒྱབ་སྐྱོར་འབད་ནི།" },
+  "appDesc": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
+  "menuLabel_infinityMode": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
+  "menuLabel_toggleVis": { "message": "མ་ཤེས་པའི་བརྡ་དོན།" },
+  "menuLabel_autoScroll": { "message": "ས་སྒོ་ལག་ལེན་འཐབ་ནིའི་དོན་ལུ་ ཨའི་ལེཊི།" },
+  "menuLabel_replyLang": { "message": "སྒྲ་སྐད།" },
+  "menuLabel_replyInt": { "message": "ལན་ཚུ།" },
+  "menuLabel_disabled": { "message": "ནུས་མེད་བཀྲམ་གཏང་། (_F)" },
+  "prompt_updateReplyLang": { "message": "ངོ་འཕྲད་གསརཔ་ཅིག་ གསར་བསྐྲུན་འབད།" },
+  "prompt_updateReplyInt": { "message": "དུས་ཡུན་ཚུ། (0)" },
+  "alert_willReplyIn": { "message": "ཨེསི་ཨེསི་ཨེསི་ཨེལ་ཨར་སི་" },
+  "alert_yourSysLang": { "message": "རང་བཞིན་གླིང་གི་རྒྱབ་དོན།" },
+  "alert_willReplyEvery": { "message": "ཨའི་ཌི་ཨར་ཨར་སི་གི་གློག་འཕྲིན་དོན་" },
+  "unit_seconds": { "message": "ཟླ་ཐོ།" },
+  "state_enabled": { "message": "གྲོགས་རམ་ཡོད།" },
+  "state_disabled": { "message": "སེལ་འཐུ་འབད་ཡོད་པའི་བརྡ་བཀོད་" }
+}

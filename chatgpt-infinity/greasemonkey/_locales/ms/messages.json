@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Menjana jawapan yang tidak berkesudahan dari ChatGPT yang serba tahu (dalam mana-mana bahasa!)" },
+  "menuLabel_infinityMode": { "message": "Mod Infiniti" },
+  "menuLabel_toggleVis": { "message": "Kejelasan Item" },
+  "menuLabel_autoScroll": { "message": "Tatal Sendiri" },
+  "menuLabel_replyLang": { "message": "Bahasa Balas" },
+  "menuLabel_replyInt": { "message": "Selang Balas" },
+  "menuLabel_disabled": { "message": "Dilumpuhkan (sambungan dipasang)" },
+  "prompt_updateReplyLang": { "message": "Kemas kini bahasa balasan" },
+  "prompt_updateReplyInt": { "message": "Kemas kini selang jawapan (minimum 5 saat)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity akan membalas dalam" },
+  "alert_yourSysLang": { "message": "Bahasa Sistem" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity akan membalas setiap" },
+  "unit_seconds": { "message": "saat" },
+  "state_enabled": { "message": "dibenarkan" },
+  "state_disabled": { "message": "dilumpuhkan" }
+}

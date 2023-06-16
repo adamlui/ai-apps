@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Oneindigheid" },
+  "appDesc": { "message": "Genereer eindelose antwoorde van alwetende ChatGPT (in enige taal!)" },
+  "menuLabel_infinityMode": { "message": "Oneindige modus" },
+  "menuLabel_toggleVis": { "message": "Wissel Sigbaarheid" },
+  "menuLabel_autoScroll": { "message": "Outo- Rol" },
+  "menuLabel_replyLang": { "message": "Antwoord Taal" },
+  "menuLabel_replyInt": { "message": "Antwoord Interval" },
+  "menuLabel_disabled": { "message": "Gestremde (uitbreiding geïnstalleer)" },
+  "prompt_updateReplyLang": { "message": "Dateer antwoordtaal op" },
+  "prompt_updateReplyInt": { "message": "Dateer antwoordinterval op (minimum 5 sekondes)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity sal antwoord in" },
+  "alert_yourSysLang": { "message": "jou stelsel taal" },
+  "alert_willReplyEvery": { "message": "ChatGPT Oneindigheid sal elke antwoord" },
+  "unit_seconds": { "message": "sekondes" },
+  "state_enabled": { "message": "Blou" },
+  "state_disabled": { "message": "gedeaktiveer" }
+}

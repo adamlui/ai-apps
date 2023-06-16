@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "បង្កើតចម្លើយគ្មានទីបញ្ចប់ពី ChatGPT ដែលមានចំណេះដឹងទាំងអស់ (ក្នុងភាសាណាមួយ!)" },
+  "menuLabel_infinityMode": { "message": "ម៉ូដគ្មានទីបញ្ចប់" },
+  "menuLabel_toggleVis": { "message": "បិទ/បើក ភាព មើល ឃើញ" },
+  "menuLabel_autoScroll": { "message": "ស្វ័យរំកិល" },
+  "menuLabel_replyLang": { "message": "ឆ្លើយតប ភាសា" },
+  "menuLabel_replyInt": { "message": "ចន្លោះពេលឆ្លើយតប" },
+  "menuLabel_disabled": { "message": "បានបិទ (បានបញ្ចូលផ្នែកបន្ថែម)" },
+  "prompt_updateReplyLang": { "message": "អាប់ដេតភាសាឆ្លើយតប" },
+  "prompt_updateReplyInt": { "message": "ធ្វើបច្ចុប្បន្នភាពចន្លោះពេលឆ្លើយតប (អប្បបរមា 5 វិនាទី)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity នឹងឆ្លើយតបនៅក្នុង" },
+  "alert_yourSysLang": { "message": "ភាសាប្រព័ន្ធរបស់អ្នក" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity នឹងឆ្លើយតបរៀងៗ" },
+  "unit_seconds": { "message": "ទីពីរ" },
+  "state_enabled": { "message": "បាន​ជ្រើស" },
+  "state_disabled": { "message": "បានបិទ" }
+}

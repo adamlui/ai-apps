@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Cruthaich freagairtean gun chrìoch bho ChatGPT uile - eòlach (ann an cànan sam bith!)" },
+  "menuLabel_infinityMode": { "message": "Modh Infinity" },
+  "menuLabel_toggleVis": { "message": "Toglaich an fhaicsinneachdrawable-action" },
+  "menuLabel_autoScroll": { "message": "Sgrolaich gu fèin - obrachail" },
+  "menuLabel_replyLang": { "message": "Cànan freagairt" },
+  "menuLabel_replyInt": { "message": "Eadar - ama freagairt" },
+  "menuLabel_disabled": { "message": "Cuir à comas (leudachan stàlaichte)" },
+  "prompt_updateReplyLang": { "message": "Ùraich an cànan freagairt" },
+  "prompt_updateReplyInt": { "message": "Ùraich an t - eadar - ama freagairt (5 diogan air a 'char as lugha)" },
+  "alert_willReplyIn": { "message": "Bidh ChatGPT Infinity a 'freagairt a - steach" },
+  "alert_yourSysLang": { "message": "cànan an t - siostaim agad" },
+  "alert_willReplyEvery": { "message": "Bidh ChatGPT Infinity a 'freagairt a h - uile duine" },
+  "unit_seconds": { "message": "diog(an)parts" },
+  "state_enabled": { "message": "An comas" },
+  "state_disabled": { "message": "Gun dòigh" }
+}

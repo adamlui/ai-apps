@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "WhatsApp онлайн чат!" },
+  "appDesc": { "message": "Сэдвийн хэлэлцэхгүй байна! (Инээд)" },
+  "menuLabel_infinityMode": { "message": "Удирдлага" },
+  "menuLabel_toggleVis": { "message": "Хариулт" },
+  "menuLabel_autoScroll": { "message": "Авто машин" },
+  "menuLabel_replyLang": { "message": "Дуудлага" },
+  "menuLabel_replyInt": { "message": "Аудит" },
+  "menuLabel_disabled": { "message": "Тохиргоо (Дэмжлэг)" },
+  "prompt_updateReplyLang": { "message": "Шинэчлэх" },
+  "prompt_updateReplyInt": { "message": "Сэтгэгдэл (5)" },
+  "alert_willReplyIn": { "message": "WhatsApp онлайн чат!" },
+  "alert_yourSysLang": { "message": "Системийн Хэл" },
+  "alert_willReplyEvery": { "message": "WhatsApp онлайн чат!" },
+  "unit_seconds": { "message": "секунд" },
+  "state_enabled": { "message": "Идэвхжүүлсэн" },
+  "state_disabled": { "message": "Идэвхгүй" }
+}

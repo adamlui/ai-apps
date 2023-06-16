@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Jenere repons kontinuèl soti nan tout konnen ChatGPT (nan nenpòt ki lang!)" },
+  "menuLabel_infinityMode": { "message": "Infinity Mode" },
+  "menuLabel_toggleVis": { "message": "Toggle vizibilite" },
+  "menuLabel_autoScroll": { "message": "Auto woulo liv" },
+  "menuLabel_replyLang": { "message": "Lang Repons" },
+  "menuLabel_replyInt": { "message": "Entèval repons" },
+  "menuLabel_disabled": { "message": "Andikape (ekstansyon enstale)" },
+  "prompt_updateReplyLang": { "message": "MIZAJOU REPONS LANG" },
+  "prompt_updateReplyInt": { "message": "Mizajou entèval repons (minimòm 5 secs)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity ap reponn nan" },
+  "alert_yourSysLang": { "message": "lang sistèm ou/votre langue système" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity ap reponn chak" },
+  "unit_seconds": { "message": "Segonn" },
+  "state_enabled": { "message": "pèmèt" },
+  "state_disabled": { "message": "andikape/enfim/antrave/antravè " }
+}

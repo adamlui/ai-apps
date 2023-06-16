@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "Inspiration_དཔལ་ལྡན་འབྲུག་གཞུང ། །" },
+  "appDesc": { "message": "རང་ཁོངས་ཚང་མ་འགྲེམས་སྟོན ། - གཞུང་ཆེན་ཁག ཀྭ ༽ - Serajeyrigzodchenmo" },
+  "menuLabel_infinityMode": { "message": "རྣམ་གྲངས་ལ་ནོར་འཁྲུལ" },
+  "menuLabel_toggleVis": { "message": "མཐོང་ནུས་ཀྱི་རྣམ་པ" },
+  "menuLabel_autoScroll": { "message": "རང་འགུལ་གྱི་ཡིག་ཆ །" },
+  "menuLabel_replyLang": { "message": "ལན་འདེབས །" },
+  "menuLabel_replyInt": { "message": "འབྲེལ་ལམ་འགེངས་ཤོག" },
+  "menuLabel_disabled": { "message": "སྒྲིག་འཇུག་སྣོད་སྒྲིག་འཇུག་བྱེད་པ (_T)" },
+  "prompt_updateReplyLang": { "message": "ལན་སློག" },
+  "prompt_updateReplyInt": { "message": "ལན་སློག (0 རྩོམ་ཡིག)" },
+  "alert_willReplyIn": { "message": "ཀུན ཏུ སྤྱོད པ" },
+  "alert_yourSysLang": { "message": "སྐད་ཡིག" },
+  "alert_willReplyEvery": { "message": "ཀ ༽ ལན་འདེབས་དུ་མ་ཡོད་པའི་དྲི་བ ། (Open-ended questions)" },
+  "unit_seconds": { "message": "parts" },
+  "state_enabled": { "message": "སྤྱོད་སྒོ་ཕྱེས།" },
+  "state_disabled": { "message": "སྤྱོད་སྒོ་བཀག" }
+}

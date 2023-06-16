@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "Infinity ChatGPT" },
+  "appDesc": { "message": "وەڵامە بێکۆتاکان بۆ هەموو زانینی ChatGPT (بە هەر زمانێک)!" },
+  "menuLabel_infinityMode": { "message": "دۆخی بێکۆتا" },
+  "menuLabel_toggleVis": { "message": "بینینه ‌ وه ‌ ی گۆشه ‌ كراو" },
+  "menuLabel_autoScroll": { "message": "لێخوڕینی ئۆتۆماتیکی" },
+  "menuLabel_replyLang": { "message": "زمانی وەڵامدانەوە" },
+  "menuLabel_replyInt": { "message": "ماوەی وەڵامدانەوە" },
+  "menuLabel_disabled": { "message": "ناچالاککراوە (درێژکراوەی دامەزراندن)" },
+  "prompt_updateReplyLang": { "message": "زمانی وەڵام نوێ بکەوە" },
+  "prompt_updateReplyInt": { "message": "نوێکردنەوەی ماوەی وەڵامدانەوە (کەمترین 5 چرکە)" },
+  "alert_willReplyIn": { "message": "هاوبەشکردنی بێژەی Infinity بە هوڵەندی:" },
+  "alert_yourSysLang": { "message": "زمانی سیستەمەکەت" },
+  "alert_willReplyEvery": { "message": "هاوبەشکردنی بێژەی Infinity بە هوڵەندی:" },
+  "unit_seconds": { "message": "چرکە" },
+  "state_enabled": { "message": "چالاکە، تواناپێدراو" },
+  "state_disabled": { "message": "پەککەوتە، بێ توانا، نەتوانا، ناچالاککراو، کوژاوەتەوە، کەنەفت، پەککەوت، کەم ئەندام، لێکەوتە، کەنفت" }
+}

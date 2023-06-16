@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Бясконцасць" },
+  "appDesc": { "message": "Генераваць бясконцыя адказы ад усёведання ChatGPT (на любой мове!)" },
+  "menuLabel_infinityMode": { "message": "Рэжым бясконцасці" },
+  "menuLabel_toggleVis": { "message": "Пераключыць бачнасць" },
+  "menuLabel_autoScroll": { "message": "Аўтаматычная пракрутка" },
+  "menuLabel_replyLang": { "message": "Адказаць на мову" },
+  "menuLabel_replyInt": { "message": "Інтэрвал адказу" },
+  "menuLabel_disabled": { "message": "Адключаны (усталяваны пашырэнне)" },
+  "prompt_updateReplyLang": { "message": "Абнавіць мову адказу" },
+  "prompt_updateReplyInt": { "message": "Абнаўленне інтэрвалу адказу (мінімум 5 сек)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity адкажа ў" },
+  "alert_yourSysLang": { "message": "Мова сістэмы" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity адкажа кожнаму" },
+  "unit_seconds": { "message": "секунд" },
+  "state_enabled": { "message": "XYZ/ альфа- канал" },
+  "state_disabled": { "message": "адключаны" }
+}
