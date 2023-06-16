@@ -338,7 +338,7 @@ var chatgpt = {
         for (var formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('stop')) {
                 formButton.click(); return;
-    }}},
+    }}}
 
 };
 
