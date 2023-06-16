@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Abuur jawaabo aan dhammaad lahayn oo ka socda ChatGPT oo dhan oo aqoon u leh (luqad kasta!)" },
+  "menuLabel_infinityMode": { "message": "Qaabka Aan Dhamaadka Lahayn" },
+  "menuLabel_toggleVis": { "message": "Beddel Aragtida" },
+  "menuLabel_autoScroll": { "message": "Auto-Scroll" },
+  "menuLabel_replyLang": { "message": "Luqadda Jawaabta" },
+  "menuLabel_replyInt": { "message": "Dhexdhexaadinta Jawaabta" },
+  "menuLabel_disabled": { "message": "Naafo (kordhin la rakibay)" },
+  "prompt_updateReplyLang": { "message": "Cusbooneysii luqadda jawaabta" },
+  "prompt_updateReplyInt": { "message": "Cusbooneysii waqtiga jawaabta (ugu yaraan 5 ilbiriqsi)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity ayaa ka jawaabi doonta" },
+  "alert_yourSysLang": { "message": "luqadda nidaamkaaga" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity ayaa ka jawaabi doonta mid kasta" },
+  "unit_seconds": { "message": "ilbiriqsi" },
+  "state_enabled": { "message": "La daaray" },
+  "state_disabled": { "message": "La damiyay" }
+}

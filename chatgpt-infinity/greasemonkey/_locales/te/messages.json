@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "చాట్GPT ఇన్ఫినిటీ" },
+  "appDesc": { "message": "అన్ని తెలిసిన చాట్పిటి నుండి అంతులేని సమాధానాలను సృష్టించండి (ఏ భాషలోనైనా!" },
+  "menuLabel_infinityMode": { "message": "ఇన్ఫినిటీ మోడ్" },
+  "menuLabel_toggleVis": { "message": "దృశ్యమానతను టోగుల్ చెయ్యి" },
+  "menuLabel_autoScroll": { "message": "స్వయంచాలక స్క్రోల్" },
+  "menuLabel_replyLang": { "message": "ప్రత్యుత్తరం భాష" },
+  "menuLabel_replyInt": { "message": "ఇంటర్వాల్ ‌ కు ప్రత్యుత్తరం ఇవ్వండి" },
+  "menuLabel_disabled": { "message": "డిసేబుల్ చేయబడింది (పొడిగింపు ఇన్స్టాల్ చేయబడింది)" },
+  "prompt_updateReplyLang": { "message": "ప్రత్యుత్తరం భాషను అప్ ‌ డేట్ చేయండి" },
+  "prompt_updateReplyInt": { "message": "ప్రతిస్పందన వ్యవధిని అప్ ‌ డేట్ చేయండి (కనీస 5 సెకన్లు)" },
+  "alert_willReplyIn": { "message": "చాట్GPT ఇన్ఫినిటీ లో ప్రత్యుత్తరం ఇస్తుంది" },
+  "alert_yourSysLang": { "message": "మీ సిస్టమ్ భాష" },
+  "alert_willReplyEvery": { "message": "చాట్GPT ఇన్ఫినిటీ ప్రతిదానికి ప్రత్యుత్తరం ఇస్తుంది" },
+  "unit_seconds": { "message": "సెకనులుparts" },
+  "state_enabled": { "message": "చేతనంచేసిన" },
+  "state_disabled": { "message": "వికలాంగులు" }
+}

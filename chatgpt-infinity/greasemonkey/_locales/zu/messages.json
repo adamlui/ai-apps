@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "IngxoxoGPT Infinity" },
+  "appDesc": { "message": "Khiqiza izimpendulo ezingapheli kusuka ku-ChatGPT eyazi konke (nganoma yiluphi ulimi!)" },
+  "menuLabel_infinityMode": { "message": "Imodi Engenamkhawulo" },
+  "menuLabel_toggleVis": { "message": "Vula ukubonakala" },
+  "menuLabel_autoScroll": { "message": "Skrola ngokuzenzakalelayo" },
+  "menuLabel_replyLang": { "message": "Phendula Ulimi" },
+  "menuLabel_replyInt": { "message": "Phendula Isikhathi" },
+  "menuLabel_disabled": { "message": "Khubaza (isandiso sifakiwe)" },
+  "prompt_updateReplyLang": { "message": "Buyekeza ulimi lokuphendula" },
+  "prompt_updateReplyInt": { "message": "Buyekeza isikhathi sokuphendula (okungenani imizuzwana engu-5)" },
+  "alert_willReplyIn": { "message": "I-ChatGPT Infinity izophendula" },
+  "alert_yourSysLang": { "message": "uhlelo lwakho lolimi" },
+  "alert_willReplyEvery": { "message": "I-ChatGPT Infinity izophendula njalo" },
+  "unit_seconds": { "message": "Sekunden" },
+  "state_enabled": { "message": "Inikwe amandla" },
+  "state_disabled": { "message": "Ivaliwe" }
+}

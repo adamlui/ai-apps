@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "සියලු දන්නා ChatGPT සිට නිමක් නැති පිළිතුරු උත්පාදනය (ඕනෑම භාෂාවකින්!)" },
+  "menuLabel_infinityMode": { "message": "Infinity Mode" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_autoScroll": { "message": "ස්වයංක්‍රීයව අනුචලනය කරන්න" },
+  "menuLabel_replyLang": { "message": "ප්‍රතිචාර භාෂාව" },
+  "menuLabel_replyInt": { "message": "ප්‍රතිචාර අන්තර්ගතය" },
+  "menuLabel_disabled": { "message": "අක්‍රීය කර ඇත (දීර්ඝ කිරීම ස්ථාපනය කර ඇත)" },
+  "prompt_updateReplyLang": { "message": "ප්‍රතිචාර භාෂාව යාවත්කාලීන කරන්න" },
+  "prompt_updateReplyInt": { "message": "ප්‍රතිචාර පරතරය යාවත්කාලීන කරන්න (අවම වශයෙන් තත්පර 5ක්)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity හි ප්‍රතිචාර දක්වනු ඇත" },
+  "alert_yourSysLang": { "message": "ඔබේ පද්ධති භාෂාව" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity සෑම පිළිතුරක්ම ලබා දෙනු ඇත" },
+  "unit_seconds": { "message": "parts" },
+  "state_enabled": { "message": "සක්‍රීය කල" },
+  "state_disabled": { "message": "අක්‍රීය කල" }
+}

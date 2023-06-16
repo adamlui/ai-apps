@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "Интерфейси ChatGPT" },
+  "appDesc": { "message": "Ҷавобҳои беохирро аз ChatGPT (дар ҳама забонҳо) ба даст оред!" },
+  "menuLabel_infinityMode": { "message": "Ҳолати беохир" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_autoScroll": { "message": "Ҳаракати худкор" },
+  "menuLabel_replyLang": { "message": "Ҷавоби забон" },
+  "menuLabel_replyInt": { "message": "Фосилаи ҷавоб" },
+  "menuLabel_disabled": { "message": "Ғайрифаъол (тавсеаи насбшуда)" },
+  "prompt_updateReplyLang": { "message": "Забони ҷавобро навсозӣ кунед" },
+  "prompt_updateReplyInt": { "message": "Фосилаи ҷавобро навсозӣ кунед (ҳадди аққал 5 сония)" },
+  "alert_willReplyIn": { "message": "Интерфейси ChatGPT беохир ҷавоб хоҳад дод" },
+  "alert_yourSysLang": { "message": "забони системаи шумо" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity ҷавоб ҳар" },
+  "unit_seconds": { "message": "сонияparts" },
+  "state_enabled": { "message": "ÐÐ°Ð±ÑÐ´" },
+  "state_disabled": { "message": "хомӯш аст" }
+}

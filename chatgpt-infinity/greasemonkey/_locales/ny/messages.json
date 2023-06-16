@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Infinity" },
+  "appDesc": { "message": "Pangani mayankho osatha kuchokera ku ChatGPT yodziwika bwino (m 'chinenero chilichonse!)" },
+  "menuLabel_infinityMode": { "message": "Mchitidwe wa Infinity" },
+  "menuLabel_toggleVis": { "message": "Kuwonekera kwa Toggle" },
+  "menuLabel_autoScroll": { "message": "ZOKHUDZA ZABWINO" },
+  "menuLabel_replyLang": { "message": "Yankhani Chilankhulo" },
+  "menuLabel_replyInt": { "message": "Yankhani Interval" },
+  "menuLabel_disabled": { "message": "Olemala (Extension anaikidwa)" },
+  "prompt_updateReplyLang": { "message": "Sinthani Chilankhulo cha Yankho" },
+  "prompt_updateReplyInt": { "message": "Sinthani kuyankha nthawi (osachepera 5 ma secs)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinity idzayankha mu" },
+  "alert_yourSysLang": { "message": "chilankhulo chanu cha dongosolo" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinity idzayankha aliyense" },
+  "unit_seconds": { "message": "masekondi" },
+  "state_enabled": { "message": "Utheketsa" },
+  "state_disabled": { "message": "Usatheketsa" }
+}

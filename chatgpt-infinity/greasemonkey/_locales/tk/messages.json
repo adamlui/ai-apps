@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT Sonsuzlygy" },
+  "appDesc": { "message": "Ähli bilen ChatGPT (her dilde!)" },
+  "menuLabel_infinityMode": { "message": "Sonsuzluk Mode" },
+  "menuLabel_toggleVis": { "message": "Görkezilen Ýagdaýyşy Gaýd Et" },
+  "menuLabel_autoScroll": { "message": "Auto-Scroll" },
+  "menuLabel_replyLang": { "message": "Tile Gaýd Et" },
+  "menuLabel_replyInt": { "message": "Gaýd edilen aralyk" },
+  "menuLabel_disabled": { "message": "Disabled (enjam gurnalýan)" },
+  "prompt_updateReplyLang": { "message": "Cevap Tilini Gaýd Et" },
+  "prompt_updateReplyInt": { "message": "Jawap aralygy (en az 5 sek)" },
+  "alert_willReplyIn": { "message": "ChatGPT Infinitiýa Gaýd Edilýär" },
+  "alert_yourSysLang": { "message": "ýygnaýjy täblisaňyz" },
+  "alert_willReplyEvery": { "message": "ChatGPT Infinitiýa her ýagdaýda cavab berýär" },
+  "unit_seconds": { "message": "sanyýa" },
+  "state_enabled": { "message": "Jawany Mümkin Et" },
+  "state_disabled": { "message": "Mümkin edigili" }
+}

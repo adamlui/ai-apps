@@ -1,0 +1,18 @@
+{
+  "appName": { "message": "ChatGPT ʻikai ke ʻi ai ha meʻa" },
+  "appDesc": { "message": "Fakatupu ha ngaahi tali taʻe-fakangatangata mei he chatGPT ʻilo kotoa pe (ʻi ha faʻahinga lea fakafonua pe!)" },
+  "menuLabel_infinityMode": { "message": "Founga ʻoku ʻikai ke ʻi ai ha meʻa" },
+  "menuLabel_toggleVis": { "message": "Tuʻu maʻu ʻi hono fakaʻasi" },
+  "menuLabel_autoScroll": { "message": "Scroll-Scroll" },
+  "menuLabel_replyLang": { "message": "Tali ʻa e Lea Fakafonuá" },
+  "menuLabel_replyInt": { "message": "Tali ʻi he vahaʻa taimi" },
+  "menuLabel_disabled": { "message": "Faingataʻaʻia fakaesino (fokotuʻu e extension)" },
+  "prompt_updateReplyLang": { "message": "Fakatonutonu e tali ʻi he lea fakafonua" },
+  "prompt_updateReplyInt": { "message": "Fakatonutonu e tali (siʻisiʻi taha ʻi he 5 THF)" },
+  "alert_willReplyIn": { "message": "ʻE tali mai ʻe ChatGPT ʻoku ʻikai ke ʻi ai ha meʻa ʻi he" },
+  "alert_yourSysLang": { "message": "hoʻo lea fakafonua ʻi he system" },
+  "alert_willReplyEvery": { "message": "ʻE tali ʻe chatGPT ʻa e meʻa kotoa pe" },
+  "unit_seconds": { "message": "sekoni ʻe" },
+  "state_enabled": { "message": "Faka'ataa" },
+  "state_disabled": { "message": "Tapui" }
+}
