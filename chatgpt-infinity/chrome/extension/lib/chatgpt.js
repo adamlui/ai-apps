@@ -168,6 +168,12 @@ var chatgpt = {
         return modalContainer.id;
     },
 
+    getRegenerateButton: function() {
+        for (var formButton of document.querySelectorAll('form button')) {
+            if (formButton.textContent.toLowerCase().includes('regenerate')) {
+                return formButton;
+    }}},
+
     history: {
         isOn: function() {
             for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
