@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.16.1
+// @version             2023.6.16.2
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -235,8 +235,7 @@
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden) {
-                notify(messages.menuLabel_toggleVis + ': '+ stateWord[+config.toggleHidden],
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+                notify(messages.menuLabel_toggleVis + ': '+ stateWord[+config.toggleHidden])
             } for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
         }))
 
@@ -246,8 +245,7 @@
         menuIDs.push(GM_registerMenuCommand(asLabel, function() {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
             if (!config.notifHidden) {
-                notify(messages.menuLabel_autoScroll + ': '+ stateWord[+config.autoScrollDisabled],
-                    '', '', chatgpt.isDarkMode() ? '' : 'shadow')
+                notify(messages.menuLabel_autoScroll + ': '+ stateWord[+config.autoScrollDisabled])
             } for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
         }))
 
@@ -377,13 +375,10 @@
         toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
     }
 
-
     var infinityMode = {
 
         activate: async function() {
-            if (!config.notifHidden) {
-                notify(messages.menuLabel_infinityMode + ': ON', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-            }
+            if (!config.notifHidden) notify(messages.menuLabel_infinityMode + ': ON')
             try { document.querySelector('nav a').click() } catch (error) { return }
             setTimeout(function() {
                 chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : ''  )
@@ -403,9 +398,7 @@
 
         deactivate: function() {
             clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null, infinityMode.sent = null
-            if (!config.notifHidden) {
-                notify(messages.menuLabel_infinityMode + ': OFF', '', '', chatgpt.isDarkMode() ? '' : 'shadow')
-            }
+            if (!config.notifHidden) notify(messages.menuLabel_infinityMode + ': OFF')
         },
 
         toggle: async function() {
