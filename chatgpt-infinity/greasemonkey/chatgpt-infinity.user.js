@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.16
+// @version             2023.6.16.1
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -364,9 +364,9 @@
         navicon.src = 'https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/white/icon64.png'
         const label = document.createElement('label') ; label.className = 'switch'
         const labelText = document.createTextNode(messages.menuLabel_infinityMode + ' '
-            + ( config.infinityMode ? messages.state_enabled : messages.state_disabled ))
-        const input = document.createElement('input') ; input.id = 'infinityToggle' ; input.type = 'checkbox'
-        input.checked = config.infinityMode
+            + messages['state_' + ( config.infinityMode ? 'enabled' : 'disabled' )])
+        const input = document.createElement('input') ; input.id = 'infinityToggle'
+        input.type = 'checkbox' ; input.checked = config.infinityMode
         const span = document.createElement('span') ; span.className = 'slider'
 
         // Append elements
