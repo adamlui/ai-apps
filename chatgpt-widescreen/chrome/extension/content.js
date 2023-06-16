@@ -82,7 +82,7 @@
         if (!config.extensionDisabled) insertBtns() // eslint-disable-line no-undef
     })
 
-    // Monitor node changes to update button visibility + auto-toggle once + manage send button's tooltip
+    // Monitor node changes to update button visibility + auto-toggle once
     var prevSessionChecked = false
     var navObserver = new MutationObserver(([{ addedNodes, type }]) => {
         if (type === 'childList' && addedNodes.length) {
@@ -97,26 +97,10 @@
                         prevSessionChecked = true
                     }
                     insertBtns() // eslint-disable-line no-undef
-                }
-                prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
+                } prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
             })
 
-            // Manage send button's tooltip
-            var sendButton = document.querySelector('form button[class*="bottom"]')
-            if (sendButton) { // add/remove tooltip based on enabled state
-                if (!sendButton.hasAttribute('disabled') && !sendButton.hasAttribute('hasTooltip')) {
-                    sendButton.addEventListener('mouseover', toggleTooltip)
-                    sendButton.addEventListener('mouseout', toggleTooltip)
-                    sendButton.setAttribute('hasTooltip', true)
-                } else if (sendButton.hasAttribute('disabled') && sendButton.hasAttribute('hasTooltip')) {
-                    tooltipDiv.style.opacity = '0' // hide tooltip in case cursor was hovering
-                    sendButton.removeEventListener('mouseover', toggleTooltip)
-                    sendButton.removeEventListener('mouseout', toggleTooltip)
-                    sendButton.removeAttribute('hasTooltip')
-                }
-            }
-        }
-    }) ; navObserver.observe(document.documentElement, { childList: true, subtree: true })
+    }}) ; navObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Monitor scheme changes to update button colors
     var schemeObserver = new MutationObserver(([{ type, target }]) => {
@@ -238,8 +222,7 @@
         var buttonType = (
             event.target.id.includes('fullScreen') ? 'fullScreen' :
             event.target.id.includes('fullWindow') ? 'fullWindow' :
-            event.target.id.includes('wide') ? 'wideScreen' :
-            event.target.id.includes('new') ? 'newChat' : 'sendMsg')
+            event.target.id.includes('wide') ? 'wideScreen' : 'newChat')
         updateTooltip(buttonType) // since mouseover's can indicate button change
         tooltipDiv.style.opacity = event.type === 'mouseover' ? '0.8' : '0' // toggle visibility
     }
@@ -250,10 +233,9 @@
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON')))
         var ctrAddend = 25, overlayWidth = 30
         var iniRoffset = overlayWidth * (
-              buttonType.includes('send') ? 0
-            : buttonType.includes('fullScreen') ? 1
+              buttonType.includes('fullScreen') ? 1
             : buttonType.includes('fullWindow') ? 2
-            : buttonType.includes('wide') ? 3 : 4) + ctrAddend
+            : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
         tooltipDiv.style.right = `${ // horizontal position
             iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
     }
