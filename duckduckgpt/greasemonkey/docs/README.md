@@ -153,7 +153,7 @@ Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing.
 [Readme](https://github.com/adamlui/chatgpt-widescreen/blob/main/greasemonkey/README.md) / 
 [Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions)
 
-#
+<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
 <a href="#--------------">Back to top ↑</a>
