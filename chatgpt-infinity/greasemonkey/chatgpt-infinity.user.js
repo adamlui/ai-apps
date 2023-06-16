@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.15
+// @version             2023.6.16
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -175,7 +175,7 @@
 
     // Stylize toggle switch
     var switchStyle = document.createElement('style')
-    switchStyle.innerHTML = `/* Stylize switch */
+    switchStyle.innerText = `/* Stylize switch */
         .switch { position:absolute ; left:208px ; width:34px ; height:18px }
         .switch input { opacity:0 ; width:0 ; height:0 } /* hide checkbox */
         .slider { position:absolute ; cursor:pointer ; top:0 ; left:0 ; right:0 ; bottom:0 ; background-color:#ccc ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
@@ -357,14 +357,26 @@
     }
 
     function updateToggleHTML() {
-        toggleLabel.innerHTML = `
-            <img width="18px" src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/white/icon64.png">
-            ${ messages.menuLabel_infinityMode } ${config.infinityMode ? messages.state_enabled : messages.state_disabled }
-            <label class="switch" ><input id="infinityToggle" type="checkbox"
-                ${ config.infinityMode ? 'checked="true"' : '' } >
-                <span class="slider"></span></label>`
+        while (toggleLabel.firstChild) toggleLabel.firstChild.remove() // clear old content
+
+        // Create elements
+        const navicon = document.createElement('img') ; navicon.width = '18px'
+        navicon.src = 'https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/white/icon64.png'
+        const label = document.createElement('label') ; label.className = 'switch'
+        const labelText = document.createTextNode(messages.menuLabel_infinityMode + ' '
+            + ( config.infinityMode ? messages.state_enabled : messages.state_disabled ))
+        const input = document.createElement('input') ; input.id = 'infinityToggle' ; input.type = 'checkbox'
+        input.checked = config.infinityMode
+        const span = document.createElement('span') ; span.className = 'slider'
+
+        // Append elements
+        label.appendChild(input) ; label.appendChild(span)
+        toggleLabel.appendChild(navicon) ; toggleLabel.appendChild(label) ; toggleLabel.appendChild(labelText)
+
+        // Update visibility
         toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
     }
+
 
     var infinityMode = {
 
