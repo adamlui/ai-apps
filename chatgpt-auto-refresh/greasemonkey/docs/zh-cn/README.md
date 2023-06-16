@@ -161,7 +161,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [自述文件](https://github.com/adamlui/chatgpt-infinity/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptevo.com/infinity/discussions)
 
-#
+<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**更多用户脚本**</a> / 
 <a href="#-chatgpt-%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0--">回到顶部↑</a>
