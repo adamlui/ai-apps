@@ -86,7 +86,7 @@ Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling.
 [Readme](https://github.com/adamlui/chatgpt-widescreen#readme) / 
 [Discuss](https://chatgptevo.com/widescreen/discuss)
 
-#
+<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
 <a href="#-chatgpt-auto-continue--">Back to top ↑</a>
