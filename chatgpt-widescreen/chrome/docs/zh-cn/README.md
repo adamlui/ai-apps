@@ -165,7 +165,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 [自述文件](https://github.com/adamlui/chatgpt-infinity/blob/main/docs/zh-cn/README.md) / 
 [讨论](https://chatgptevo.com/infinity/discussions)
 
-#
+<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-addons">**更多 ChatGPT 插件**</a> / 
 <a href="#">回到顶部 ↑</a>
