@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.15.1
+// @version             2023.6.16
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -128,7 +128,7 @@
 
     // Create general style tweaks
     var tweaksStyle = document.createElement('style')
-    var tcbStyle = 'form > div > div:nth-child(2), form textarea { max-height: 68vh !important; } '
+    var tcbStyle = 'form > div > div:nth-child(2), form textarea { max-height: 68vh !important } '
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create wide screen style
@@ -144,51 +144,23 @@
         + classListToCSS(sidepadClasses) + '{ padding-left: 0px }' // remove side padding
     var buttonColor = setBtnColor()
 
-    // Create full screen button & add icon/classes/position/listeners
-    var fullScreenButton = document.createElement('div') // create button
-    fullScreenButton.id = 'fullScreen-button' // for toggleTooltip()
-    updateBtnSVG('fullScreen') // insert icon
-    fullScreenButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
-    fullScreenButton.style.cssText = 'right: 2.57rem' // position left of wide screen button
-    fullScreenButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
-    fullScreenButton.addEventListener('click', () => { toggleMode('fullScreen') })
-    fullScreenButton.addEventListener('mouseover', toggleTooltip)
-    fullScreenButton.addEventListener('mouseout', toggleTooltip)
-
-    // Create full-window button & add icon/classes/position/listeners
-    var fullWindowButton = document.createElement('div') // create button
-    fullWindowButton.id = 'fullWindow-button' // for toggleTooltip()
-    updateBtnSVG('fullWindow') // insert icon
-    fullWindowButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
-    fullWindowButton.style.cssText = 'right: 4.34rem' // position left of wide screen button
-    fullWindowButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
-    fullWindowButton.addEventListener('click', () => { toggleMode('fullWindow') })
-    fullWindowButton.addEventListener('mouseover', toggleTooltip)
-    fullWindowButton.addEventListener('mouseout', toggleTooltip)
-
-    // Create wide screen button & add icon/classes/position/icon/listeners
-    var wideScreenButton = document.createElement('div') // create button
-    wideScreenButton.id = 'wideScreen-button' // for toggleTooltip()
-    updateBtnSVG('wideScreen') // insert icon
-    wideScreenButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
-    wideScreenButton.style.cssText = 'right: 6.11rem' // position left of Send button
-    wideScreenButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
-    wideScreenButton.addEventListener('click', () => { toggleMode('wideScreen') })
-    wideScreenButton.addEventListener('mouseover', toggleTooltip)
-    wideScreenButton.addEventListener('mouseout', toggleTooltip)
-
-    // Create new chat button & add icon/classes/position/icon/listeners
-    var newChatButton = document.createElement('div') // create button
-    newChatButton.id = 'newChat-button' // for toggleTooltip()
-    updateBtnSVG('newChat') // insert icon
-    newChatButton.setAttribute('class', sendButtonClasses) // assign borrowed classes
-    newChatButton.style.cssText = 'right: 7.88rem' // position left of full-window button
-    newChatButton.style.cursor = 'pointer' // Add finger cursor // 添加鼠标手势为手指
-    newChatButton.addEventListener('click', () => { chatgpt.startNewChat() })
-    newChatButton.addEventListener('mouseover', toggleTooltip)
-    newChatButton.addEventListener('mouseout', toggleTooltip)
-
-    insertBtns()
+    // Create/insert chatbar buttons
+    var buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
+    for (var i = 0 ; i < buttonTypes.length ; i++) {
+        ((buttonType) => { // enclose in IIFE to separately capture button type for async listeners
+            var buttonName = buttonType + 'Button'
+            window[buttonName] = document.createElement('div') // create button
+            window[buttonName].id = buttonType + '-button' // for toggleTooltip()
+            updateBtnSVG(buttonType); // insert icon
+            window[buttonName].setAttribute('class', sendButtonClasses); // assign borrowed classes
+            window[buttonName].style.cssText = `right: ${2.57 + i * 1.77}rem` // position left of prev button
+            window[buttonName].style.cursor = 'pointer' // add finger cursor // 添加鼠标手势为手指
+            window[buttonName].addEventListener('click', () => { // add click listeners
+                if (buttonType === 'newChat') chatgpt.startNewChat() ; else toggleMode(buttonType) })
+            window[buttonName].addEventListener('mouseover', toggleTooltip)
+            window[buttonName].addEventListener('mouseout', toggleTooltip)
+        })(buttonTypes[i])
+    } insertBtns()
 
     // Monitor node changes to maintain button visibility + auto-toggle once + manage send button's tooltip
     var prevSessionChecked = false
@@ -205,17 +177,17 @@
             }
 
             // Manage send button's tooltip
-            var sendButton = document.querySelector('form button[class*="bottom"]');
+            var sendButton = document.querySelector('form button[class*="bottom"]')
             if (sendButton) { // add/remove tooltip based on enabled state
                 if (!sendButton.hasAttribute('disabled') && !sendButton.hasAttribute('hasTooltip')) {
-                    sendButton.addEventListener('mouseover', toggleTooltip);
-                    sendButton.addEventListener('mouseout', toggleTooltip);
-                    sendButton.setAttribute('hasTooltip', true);
+                    sendButton.addEventListener('mouseover', toggleTooltip)
+                    sendButton.addEventListener('mouseout', toggleTooltip)
+                    sendButton.setAttribute('hasTooltip', true)
                 } else if (sendButton.hasAttribute('disabled') && sendButton.hasAttribute('hasTooltip')) {
                     tooltipDiv.style.opacity = '0' // hide tooltip in case cursor was hovering
-                    sendButton.removeEventListener('mouseover', toggleTooltip);
-                    sendButton.removeEventListener('mouseout', toggleTooltip);
-                    sendButton.removeAttribute('hasTooltip');
+                    sendButton.removeEventListener('mouseover', toggleTooltip)
+                    sendButton.removeEventListener('mouseout', toggleTooltip)
+                    sendButton.removeAttribute('hasTooltip')
                 }
             }
 
@@ -427,7 +399,7 @@
 
         // Update SVG elements
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
-        var svgElems = config[mode] || state.toLowerCase() === 'on' ? ONelems : OFFelems;
+        var svgElems = config[mode] || state.toLowerCase() === 'on' ? ONelems : OFFelems
         svgElems.forEach(elem => { buttonSVG.appendChild(elem) })
         if (!button.contains(buttonSVG)) button.appendChild(buttonSVG)
     }
