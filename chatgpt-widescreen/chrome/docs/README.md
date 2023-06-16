@@ -153,7 +153,7 @@ Generate endless answers from all-knowing ChatGPT (in any language!)
 [Readme](https://github.com/adamlui/chatgpt-infinity#readme) / 
 [Discuss](https://chatgptevo.com/infinity/discussions)
 
-#
+<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-addons">**More ChatGPT add-ons**</a> / 
 <a href="https://github.com/adamlui/chatgpt-widescreen#readme">Back to top ↑</a>
