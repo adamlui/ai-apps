@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Sejarah Sembang AutoclearGPT" },
+  "appDesc": { "message": "Auto-clears sejarah sembang apabila melawat chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Sembang Autoclear" },
+  "menuLabel_toggleVis": { "message": "Kejelasan Item" },
+  "menuLabel_buttonVis": { "message": "Kebolehlihatan Butang" },
+  "menuLabel_modeNotifs": { "message": "Pemberitahuan Mod" },
+  "menuLabel_disabled": { "message": "Dilumpuhkan (sambungan dipasang)" },
+  "buttonLabel_clearChats": { "message": "Kosongkan Perbualan" },
+  "buttonLabel_confirm": { "message": "Sah" },
+  "mode_autoClear": { "message": "Kosongkan-sendiri" }
+}

@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "GPT Urutonde" },
+  "appDesc": { "message": "Urutonde Ryari: chat.openai.com" },
+  "menuLabel_autoClear": { "message": "&lt; Uburemere UTSINDAGIYE" },
+  "menuLabel_toggleVis": { "message": "Ukugaragara" },
+  "menuLabel_buttonVis": { "message": "Ukugaragara kwa Buto" },
+  "menuLabel_modeNotifs": { "message": "&lt; Uburemere UTSINDAGIYE" },
+  "menuLabel_disabled": { "message": "Umugereka" },
+  "buttonLabel_clearChats": { "message": "Gusiba ibiganiro" },
+  "buttonLabel_confirm": { "message": "Emeza" },
+  "mode_autoClear": { "message": "&lt; Uburemere UTSINDAGIYE" }
+}

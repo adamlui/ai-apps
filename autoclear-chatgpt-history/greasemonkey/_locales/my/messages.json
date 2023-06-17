@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT သမိုင်း" },
+  "appDesc": { "message": "Chat.openai.com သို့သွားရောက်လည်ပတ်သောအခါအော်တိုရှင်းလင်းရေး Chat သမိုင်း" },
+  "menuLabel_autoClear": { "message": "အလိုအလျောက် Chat ကိုရှင်းလင်း" },
+  "menuLabel_toggleVis": { "message": "မြင်ကွင်းကို ထိန်းကျောင်းပါ" },
+  "menuLabel_buttonVis": { "message": "ခလုတ်မြင်နိုင်မှု" },
+  "menuLabel_modeNotifs": { "message": "Mode အသိပေးချက်များ" },
+  "menuLabel_disabled": { "message": "ပိတ်ထားသည် (တိုးချဲ့မှု တပ်ဆင်ထားသည်)" },
+  "buttonLabel_clearChats": { "message": "စကားပြောဆိုမှုများကို ရှင်းလင်းပါ" },
+  "buttonLabel_confirm": { "message": "အတည်ပြုသည်" },
+  "mode_autoClear": { "message": "အလိုအလျောက်ရှင်းလင်းခြင်း" }
+}

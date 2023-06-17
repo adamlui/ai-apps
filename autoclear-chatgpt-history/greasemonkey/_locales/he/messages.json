@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "ניקוי אוטומטי של היסטוריית הצ'אטGPT" },
+  "appDesc": { "message": "מנקה אוטומטית היסטוריית צ'אט בעת ביקור chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear Chats" },
+  "menuLabel_toggleVis": { "message": "החלף מצב ניראות" },
+  "menuLabel_buttonVis": { "message": "נראות הלחצן" },
+  "menuLabel_modeNotifs": { "message": "התראות מצב" },
+  "menuLabel_disabled": { "message": "מושבת (תוסף מותקן)" },
+  "buttonLabel_clearChats": { "message": "נקה שיחות" },
+  "buttonLabel_confirm": { "message": "אישור" },
+  "mode_autoClear": { "message": "ניקוי אוטומטי" }
+}

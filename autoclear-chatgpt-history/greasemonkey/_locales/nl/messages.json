@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "ChatGPT-geschiedenis automatisch wissen" },
+  "appDesc": { "message": "Automatisch wissen van chatgeschiedenis bij het bezoeken van chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Chats automatisch wissen" },
+  "menuLabel_toggleVis": { "message": "Zichtbaarheid afdwingen" },
+  "menuLabel_buttonVis": { "message": "Zichtbaarheid van de knop" },
+  "menuLabel_modeNotifs": { "message": "Modusmeldingen" },
+  "menuLabel_disabled": { "message": "Uitgeschakeld (extensie geïnstalleerd)" },
+  "buttonLabel_clearChats": { "message": "Gesprekken wissen" },
+  "buttonLabel_confirm": { "message": "Bevestigen" },
+  "mode_autoClear": { "message": "Auto-opruiming" }
+}

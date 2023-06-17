@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT ইতিহাস" },
+  "appDesc": { "message": "চ্যাট পরিদর্শন করার সময় অটো-পরিষ্কার চ্যাট ইতিহাস .openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear চ্যাট" },
+  "menuLabel_toggleVis": { "message": "দৃশ্যমানতা টগল করুন" },
+  "menuLabel_buttonVis": { "message": "বাটন দৃশ্যমানতা" },
+  "menuLabel_modeNotifs": { "message": "মোড বিজ্ঞপ্তি" },
+  "menuLabel_disabled": { "message": "নিষ্ক্রিয় (এক্সটেনশন ইনস্টল করা হয়েছে)" },
+  "buttonLabel_clearChats": { "message": "পরিষ্কার কথোপকথন" },
+  "buttonLabel_confirm": { "message": "নিশ্চিত করুন" },
+  "mode_autoClear": { "message": "অটো- ক্লিয়ার" }
+}

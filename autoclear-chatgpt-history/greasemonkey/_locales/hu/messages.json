@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT előzmények" },
+  "appDesc": { "message": "Automatikusan törli a csevegési előzményeket, amikor meglátogatja a chat.openai.com webhelyet" },
+  "menuLabel_autoClear": { "message": "Csevegések automatikus törlése" },
+  "menuLabel_toggleVis": { "message": "Láthatóság ki- be kapcsolása" },
+  "menuLabel_buttonVis": { "message": "Gomb láthatósága" },
+  "menuLabel_modeNotifs": { "message": "Üzemmód értesítések" },
+  "menuLabel_disabled": { "message": "Letiltva (bővítmény telepítve)" },
+  "buttonLabel_clearChats": { "message": "Beszélgetések törlése" },
+  "buttonLabel_confirm": { "message": "Megerősítés" },
+  "mode_autoClear": { "message": "Automatikus törlés" }
+}

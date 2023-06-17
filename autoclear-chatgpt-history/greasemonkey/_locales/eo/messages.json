@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT Historio" },
+  "appDesc": { "message": "Aŭtomate purigas babilejo historio kiam vizitante chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear Chats" },
+  "menuLabel_toggleVis": { "message": "Baskuligi videblecon" },
+  "menuLabel_buttonVis": { "message": "Butonvidebleco" },
+  "menuLabel_modeNotifs": { "message": "@ info: whatsthis" },
+  "menuLabel_disabled": { "message": "Malŝaltita (etendo instalita)" },
+  "buttonLabel_clearChats": { "message": "Forviŝi konversaciojn" },
+  "buttonLabel_confirm": { "message": "Konfirmi" },
+  "mode_autoClear": { "message": "Aŭtomate purigi" }
+}

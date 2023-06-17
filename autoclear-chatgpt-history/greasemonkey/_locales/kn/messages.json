@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "ಆಟೋಕೇಲರ್ ಚಾಟ್GPT ಇತಿಹಾಸ" },
+  "appDesc": { "message": "Chat.openai.com ಗೆ ಭೇಟಿ ನೀಡಿದಾಗ ಆಟೋ-ಕ್ಲಾಕರ್ಸ್ ಚಾಟ್ ಇತಿಹಾಸ" },
+  "menuLabel_autoClear": { "message": "ಆಟೋಕೇಲರ್ ಚಾಟ್ ‌ ಗಳು" },
+  "menuLabel_toggleVis": { "message": "ಗೋಚರತೆಯನ್ನು ಟಾಗಲ್ ಮಾಡಿ" },
+  "menuLabel_buttonVis": { "message": "ಬಟನ್ ಗೋಚರತೆ" },
+  "menuLabel_modeNotifs": { "message": "ಮೋಡ್ ಅಧಿಸೂಚನೆಗಳು" },
+  "menuLabel_disabled": { "message": "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ (ವಿಸ್ತರಣೆಯನ್ನು ಸ್ಥಾಪಿಸಲಾಗಿದೆ)" },
+  "buttonLabel_clearChats": { "message": "ಸಂಭಾಷಣೆಗಳನ್ನು ತೆರವುಗೊಳಿಸಿ" },
+  "buttonLabel_confirm": { "message": "ಖಚಿತಪಡಿಸಿ" },
+  "mode_autoClear": { "message": "ಸ್ವಯಂಚಾಲಿತ ಕಲಿಕೆ" }
+}

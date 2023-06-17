@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "ប្រវត្តិជជែកដោយស្វ័យប្រវត្តិGPT" },
+  "appDesc": { "message": "សម្អាតប្រវត្តិជជែកដោយស្វ័យប្រវត្តិនៅពេលចូលមើល chat.openai.com" },
+  "menuLabel_autoClear": { "message": "ការជជែកដោយស្វ័យប្រវត្តិ" },
+  "menuLabel_toggleVis": { "message": "បិទ/បើក ភាព មើល ឃើញ" },
+  "menuLabel_buttonVis": { "message": "ភាពមើលឃើញនៃប៊ូតុង" },
+  "menuLabel_modeNotifs": { "message": "ការជូនដំណឹងអំពីម៉ូដ" },
+  "menuLabel_disabled": { "message": "បានបិទ (បានបញ្ចូលផ្នែកបន្ថែម)" },
+  "buttonLabel_clearChats": { "message": "ជម្រះការសន្ទនា" },
+  "buttonLabel_confirm": { "message": "បញ្ជាក់" },
+  "mode_autoClear": { "message": "រៀនដោយស្វ័យប្រវត្តិ" }
+}

@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "د کابینې د کابینې تاریخ" },
+  "appDesc": { "message": "وېب پاڼه وګورئ کله چې تاسو آنلاین یاست، نو موږ ته زنګ ووهئ." },
+  "menuLabel_autoClear": { "message": "د Chats Chats" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_buttonVis": { "message": "د امستنې لیدنه" },
+  "menuLabel_modeNotifs": { "message": "خبرتیاوې" },
+  "menuLabel_disabled": { "message": "لګول شوی (لګول شوی)" },
+  "buttonLabel_clearChats": { "message": "خبرې اترې" },
+  "buttonLabel_confirm": { "message": "رښتینی کړه " },
+  "mode_autoClear": { "message": "اتومات لارموندنه" }
+}

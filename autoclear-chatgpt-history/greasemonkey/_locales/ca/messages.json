@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Esborra automàticament l'historial del xatGPT" },
+  "appDesc": { "message": "Esborra automàticament l'historial del xat quan visiteu chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Neteja automàticament els xats" },
+  "menuLabel_toggleVis": { "message": "Commuta la visibilitat" },
+  "menuLabel_buttonVis": { "message": "Visibilitat del botó" },
+  "menuLabel_modeNotifs": { "message": "Notificacions de mode" },
+  "menuLabel_disabled": { "message": "Desactivat (extensió instal·lada)" },
+  "buttonLabel_clearChats": { "message": "Neteja les converses" },
+  "buttonLabel_confirm": { "message": "Confirma" },
+  "mode_autoClear": { "message": "Esborra automàticament" }
+}

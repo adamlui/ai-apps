@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT-historikk" },
+  "appDesc": { "message": "Tømmer chatteloggen automatisk når du besøker chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear Chats" },
+  "menuLabel_toggleVis": { "message": "Synleg bokmerke" },
+  "menuLabel_buttonVis": { "message": "Knappsynlighet" },
+  "menuLabel_modeNotifs": { "message": "Modusvarsler" },
+  "menuLabel_disabled": { "message": "Deaktivert (utvidelse installert)" },
+  "buttonLabel_clearChats": { "message": "Tydelige samtaler" },
+  "buttonLabel_confirm": { "message": "Bekreft" },
+  "mode_autoClear": { "message": "Auto-tøm" }
+}

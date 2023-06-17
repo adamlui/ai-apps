@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT Geskiedenis" },
+  "appDesc": { "message": "Outomatiese skoonmaak kletsgeskiedenis wanneer u chat.openai.com besoek" },
+  "menuLabel_autoClear": { "message": "Autoclear Chats" },
+  "menuLabel_toggleVis": { "message": "Wissel Sigbaarheid" },
+  "menuLabel_buttonVis": { "message": "Knoppie Sigbaarheid" },
+  "menuLabel_modeNotifs": { "message": "Modus Kennisgewings" },
+  "menuLabel_disabled": { "message": "Gestremde (uitbreiding geïnstalleer)" },
+  "buttonLabel_clearChats": { "message": "Maak gesprekke skoon" },
+  "buttonLabel_confirm": { "message": "Bevestig" },
+  "mode_autoClear": { "message": "Auto-Clear" }
+}

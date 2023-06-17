@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "ChatGPT History" },
+  "appDesc": { "message": "Ckb.wikipedia.org \"ڕێکەوتی سەردانیکردنی Chat.openai.com" },
+  "menuLabel_autoClear": { "message": "پشیلەی خۆگەڕ" },
+  "menuLabel_toggleVis": { "message": "بینینه ‌ وه ‌ ی گۆشه ‌ كراو" },
+  "menuLabel_buttonVis": { "message": "بینینه ‌ ی په ‌ نجه ‌ ره ‌" },
+  "menuLabel_modeNotifs": { "message": "ئاگادارکردنه ‌ وه ‌ کانی مۆده ‌ ی" },
+  "menuLabel_disabled": { "message": "ناچالاککراوە (درێژکراوەی دامەزراندن)" },
+  "buttonLabel_clearChats": { "message": "دیالۆگەکان ڕوون بکەرەوە" },
+  "buttonLabel_confirm": { "message": "دووپاتکردنەوە" },
+  "mode_autoClear": { "message": "ده ‌ ستنیشانكردنی ئۆتۆماتیکی" }
+}

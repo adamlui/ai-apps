@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Automātiskās dzēšanas tērzēšanasGPT vēsture" },
+  "appDesc": { "message": "Automātiski notīra tērzēšanas vēsturi, apmeklējot chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Automātiski notīrīt tērzēšanu" },
+  "menuLabel_toggleVis": { "message": "Pārslēgt redzamību" },
+  "menuLabel_buttonVis": { "message": "Pogas redzamība" },
+  "menuLabel_modeNotifs": { "message": "Režīma paziņojumi" },
+  "menuLabel_disabled": { "message": "Atspējots (paplašinājums instalēts)" },
+  "buttonLabel_clearChats": { "message": "Notīrīt sarunas" },
+  "buttonLabel_confirm": { "message": "Apstiprināt" },
+  "mode_autoClear": { "message": "Automātiskā dzēšana" }
+}

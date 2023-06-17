@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Storja ta' ChatGPT Awtokleari" },
+  "appDesc": { "message": "Awtomatikament tikklerja l-istorja taċ-chat meta żżur chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Qtates Awtokleari" },
+  "menuLabel_toggleVis": { "message": "Aqleb il-Viżibilità" },
+  "menuLabel_buttonVis": { "message": "Viżibilità tal-Buttuna" },
+  "menuLabel_modeNotifs": { "message": "Notifiki tal-Modalità" },
+  "menuLabel_disabled": { "message": "Diżattivat (estensjoni installata)" },
+  "buttonLabel_clearChats": { "message": "Neħħi l-Konverżazzjonijiet" },
+  "buttonLabel_confirm": { "message": "Ikkonferma" },
+  "mode_autoClear": { "message": "Neħħi l-Awtomatikament" }
+}

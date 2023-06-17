@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "پاک کردن خودکار تاریخچه ChatGPT" },
+  "appDesc": { "message": "هنگام بازدید از chat.openai.com، تاریخچه چت را به صورت خودکار پاک می کند" },
+  "menuLabel_autoClear": { "message": "پاک کردن خودکار چت ها" },
+  "menuLabel_toggleVis": { "message": "تغییر نمایانی" },
+  "menuLabel_buttonVis": { "message": "قابلیت مشاهده را فعال کنید" },
+  "menuLabel_modeNotifs": { "message": "اعلان‌های حالت" },
+  "menuLabel_disabled": { "message": "غیرفعال (برنامه افزودنی نصب شده)" },
+  "buttonLabel_clearChats": { "message": "پاک کردن مکالمات" },
+  "buttonLabel_confirm": { "message": "ایمیل" },
+  "mode_autoClear": { "message": "پاک کردن خودکار" }
+}

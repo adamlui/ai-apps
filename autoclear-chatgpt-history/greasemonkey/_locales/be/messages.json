@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Аўтаматычная гісторыя ChatGPT" },
+  "appDesc": { "message": "Аўтаматычнае ачышчэнне гісторыі чата пры наведванні chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Аўтаачышчальныя чаты" },
+  "menuLabel_toggleVis": { "message": "Пераключыць бачнасць" },
+  "menuLabel_buttonVis": { "message": "Бачнасць кнопак" },
+  "menuLabel_modeNotifs": { "message": "Рэжым апавяшчэнняў" },
+  "menuLabel_disabled": { "message": "Адключаны (усталяваны пашырэнне)" },
+  "buttonLabel_clearChats": { "message": "Ачысціць размовы" },
+  "buttonLabel_confirm": { "message": "Пацвердзіць" },
+  "mode_autoClear": { "message": "Аўтаачыстка" }
+}

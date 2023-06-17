@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT History None None" },
+  "appDesc": { "message": "Auto-clears chat history igihe ugendera chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear Chats None None" },
+  "menuLabel_toggleVis": { "message": "Toggle Visibility None None" },
+  "menuLabel_buttonVis": { "message": "Button Visibility None None" },
+  "menuLabel_modeNotifs": { "message": "Mode Notifications None None" },
+  "menuLabel_disabled": { "message": "Narumugaiye (extension)" },
+  "buttonLabel_clearChats": { "message": "Ibiyago biribonekeza" },
+  "buttonLabel_confirm": { "message": "Kwikiriza Eugene" },
+  "mode_autoClear": { "message": "Auto-Clear None None" }
+}

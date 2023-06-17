@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Αυτόματη εκκαθάριση ιστορικού ChatGPT" },
+  "appDesc": { "message": "Αυτόματη εκκαθάριση ιστορικού συνομιλίας κατά την επίσκεψη στο chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Αυτόματη εκκαθάριση συνομιλιών" },
+  "menuLabel_toggleVis": { "message": "Εναλλαγή ορατότητας" },
+  "menuLabel_buttonVis": { "message": "Ορατότητα κουμπιού" },
+  "menuLabel_modeNotifs": { "message": "Ειδοποιήσεις λειτουργίας" },
+  "menuLabel_disabled": { "message": "Απενεργοποιημένο (εγκατεστημένη επέκταση)" },
+  "buttonLabel_clearChats": { "message": "Εκκαθάριση συνομιλιών" },
+  "buttonLabel_confirm": { "message": "Επιβεβαίωση κράτησης" },
+  "mode_autoClear": { "message": "Αυτόματος καθαρισμός" }
+}

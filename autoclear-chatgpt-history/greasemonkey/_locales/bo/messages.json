@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "རང་འགུལ་གྱི་ཡིག་ཆ །" },
+  "appDesc": { "message": "བོད་ཀྱི་དུས་བབ ། &gt; Mobile App &gt; རྒྱ་ནག་གི་ཚོང་འབྲེལ །" },
+  "menuLabel_autoClear": { "message": "གླེང་མོལ་སྒེའུ་ཁུང་།" },
+  "menuLabel_toggleVis": { "message": "མཐོང་ནུས་ཀྱི་རྣམ་པ" },
+  "menuLabel_buttonVis": { "message": "ཡིད་རྟོན་རུང་བའི་རྣམ་པ །" },
+  "menuLabel_modeNotifs": { "message": "མ་དབྱིབས་སྒྲིག་བཀོད །" },
+  "menuLabel_disabled": { "message": "སྒྲིག་འཇུག་སྣོད་སྒྲིག་འཇུག་བྱེད་པ (_T)" },
+  "buttonLabel_clearChats": { "message": "གཏན་ཁེལ་བྱེད་པ" },
+  "buttonLabel_confirm": { "message": "གཏན་ཁེལ །" },
+  "mode_autoClear": { "message": "རང་མོས་སྒྲིག་བཀོད ། (_O)" }
+}

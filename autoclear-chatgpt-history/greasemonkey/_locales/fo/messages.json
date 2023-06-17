@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT History" },
+  "appDesc": { "message": "AUTO-clears chat history when visiting chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear Chat" },
+  "menuLabel_toggleVis": { "message": "Goym eygleiðing" },
+  "menuLabel_buttonVis": { "message": "Knøttleysur sjónleiki" },
+  "menuLabel_modeNotifs": { "message": "Modus kunningarskriv" },
+  "menuLabel_disabled": { "message": "Broytingar í innsavningini (innsavning)" },
+  "buttonLabel_clearChats": { "message": "Rætta samrøðu" },
+  "buttonLabel_confirm": { "message": "Vátta" },
+  "mode_autoClear": { "message": "Auto-Clear" }
+}

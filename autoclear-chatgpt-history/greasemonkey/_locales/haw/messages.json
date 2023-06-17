@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT History" },
+  "appDesc": { "message": "Holoi ʻakomi i ka mōʻaukala kamaʻilio ke kipa ʻana iā chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Kūkākūkā Autoclear" },
+  "menuLabel_toggleVis": { "message": "Hoʻololi i ka ʻike" },
+  "menuLabel_buttonVis": { "message": "ʻIke ʻike pihi" },
+  "menuLabel_modeNotifs": { "message": "Hoʻolaha Kūlana" },
+  "menuLabel_disabled": { "message": "Hoʻopaʻa ʻia (kau ʻia ka hoʻonui)" },
+  "buttonLabel_clearChats": { "message": "Kamaʻilio maopopo" },
+  "buttonLabel_confirm": { "message": "E hōʻoia" },
+  "mode_autoClear": { "message": "Holoʻokoʻa" }
+}

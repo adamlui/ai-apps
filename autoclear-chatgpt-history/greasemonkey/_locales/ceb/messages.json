@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT Kasaysayan" },
+  "appDesc": { "message": "Auto-clears chat kasaysayan sa diha nga ang pagbisita sa chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Mga chat sa autoclear" },
+  "menuLabel_toggleVis": { "message": "Toggle visibility" },
+  "menuLabel_buttonVis": { "message": "Button Visibility" },
+  "menuLabel_modeNotifs": { "message": "Mga Notipikasyon sa Mode" },
+  "menuLabel_disabled": { "message": "Disabled (mga sumpay_usba)" },
+  "buttonLabel_clearChats": { "message": "Tin-aw nga mga Panag-istoryahanay" },
+  "buttonLabel_confirm": { "message": "kumpirma" },
+  "mode_autoClear": { "message": "Autoplay Loop" }
+}

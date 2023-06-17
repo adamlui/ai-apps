@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT Povijest" },
+  "appDesc": { "message": "Automatski briše povijest čavrljanja prilikom posjete chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Automatsko brisanje čavrljanja" },
+  "menuLabel_toggleVis": { "message": "Uključi/isključi vidljivost" },
+  "menuLabel_buttonVis": { "message": "Vidljivost tipaka" },
+  "menuLabel_modeNotifs": { "message": "Obavijesti o načinu rada" },
+  "menuLabel_disabled": { "message": "Onemogućeno (proširenje instalirano)" },
+  "buttonLabel_clearChats": { "message": "Očisti razgovore" },
+  "buttonLabel_confirm": { "message": "Potvrdi" },
+  "mode_autoClear": { "message": "automatsko �i��enje" }
+}

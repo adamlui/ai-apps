@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Amazray n ChatGPT s wudem awurman" },
+  "appDesc": { "message": "Taqsiṭ n udiwenni s wudem awurman mi ara teẓreḍ chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Tansiwin s wudem awurman" },
+  "menuLabel_toggleVis": { "message": "Rnu tamuɣli" },
+  "menuLabel_buttonVis": { "message": "Tamuɣli n tqeffalt" },
+  "menuLabel_modeNotifs": { "message": "Ilɣa n tγawsa" },
+  "menuLabel_disabled": { "message": "Yettwakkes (asiγzef yebna)" },
+  "buttonLabel_clearChats": { "message": "Sfeḍ inejmuεen" },
+  "buttonLabel_confirm": { "message": "Sentem" },
+  "mode_autoClear": { "message": "Tazelɣa tawurmant" }
+}

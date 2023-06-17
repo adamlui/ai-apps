@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Automatické vymazání historie chatuGPT" },
+  "appDesc": { "message": "Automaticky vymaže historii chatu při návštěvě chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Automatické vymazání chatů" },
+  "menuLabel_toggleVis": { "message": "Přepnout viditelnost" },
+  "menuLabel_buttonVis": { "message": "Viditelnost tlačítek" },
+  "menuLabel_modeNotifs": { "message": "Oznámení o režimu" },
+  "menuLabel_disabled": { "message": "Zakázáno (rozšíření nainstalováno)" },
+  "buttonLabel_clearChats": { "message": "Vymazat konverzace" },
+  "buttonLabel_confirm": { "message": "Potvrdit" },
+  "mode_autoClear": { "message": "Automatické vymazání" }
+}

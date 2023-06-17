@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Poista ChatGPT-historia automaattisesti" },
+  "appDesc": { "message": "Automaattinen tyhjentää keskusteluhistorian vieraillessasi chat.openai.com-sivustolla" },
+  "menuLabel_autoClear": { "message": "Poista keskustelut automaattisesti" },
+  "menuLabel_toggleVis": { "message": "Vaihda näkyvyyttä" },
+  "menuLabel_buttonVis": { "message": "Painikkeen näkyvyys" },
+  "menuLabel_modeNotifs": { "message": "Tilailmoitukset" },
+  "menuLabel_disabled": { "message": "Poistettu käytöstä (laajennus asennettu)" },
+  "buttonLabel_clearChats": { "message": "Tyhjennä keskustelut" },
+  "buttonLabel_confirm": { "message": "Vahvista" },
+  "mode_autoClear": { "message": "Automaattinen tyhjennys" }
+}

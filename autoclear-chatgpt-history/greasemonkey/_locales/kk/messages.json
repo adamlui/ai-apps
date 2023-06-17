@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT тарихы" },
+  "appDesc": { "message": "Чат.openai.com кірген кезде автоматты тазарту чат тарихы" },
+  "menuLabel_autoClear": { "message": "Автоматты чат" },
+  "menuLabel_toggleVis": { "message": "Көрінуін терістеу" },
+  "menuLabel_buttonVis": { "message": "Түйменің көрінісі" },
+  "menuLabel_modeNotifs": { "message": "Режим туралы хабарландырулар" },
+  "menuLabel_disabled": { "message": "Өшірілген (кеңейтім орнатылған)" },
+  "buttonLabel_clearChats": { "message": "Сөйлесулерді тазалау" },
+  "buttonLabel_confirm": { "message": "Растау" },
+  "mode_autoClear": { "message": "Автоматты тазалау" }
+}

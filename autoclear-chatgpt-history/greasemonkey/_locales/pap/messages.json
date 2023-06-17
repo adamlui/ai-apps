@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT Historia" },
+  "appDesc": { "message": "Página principal &gt; Historia &gt; Chat.openai.com Chat.openai" },
+  "menuLabel_autoClear": { "message": "Vashon Autoclear Chat" },
+  "menuLabel_toggleVis": { "message": "Togel Visibilitá" },
+  "menuLabel_buttonVis": { "message": "Button Visibilitá" },
+  "menuLabel_modeNotifs": { "message": "Notifikashon di Mode" },
+  "menuLabel_disabled": { "message": "Disabilitá (Extended)" },
+  "buttonLabel_clearChats": { "message": "Conversacion claro" },
+  "buttonLabel_confirm": { "message": "Konfirmá" },
+  "mode_autoClear": { "message": "Auto-Clear" }
+}

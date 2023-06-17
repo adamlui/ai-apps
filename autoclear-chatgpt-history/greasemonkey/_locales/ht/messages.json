@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT Istwa" },
+  "appDesc": { "message": "Auto-netwaye istwa chat lè vizite chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear Chat" },
+  "menuLabel_toggleVis": { "message": "Toggle vizibilite" },
+  "menuLabel_buttonVis": { "message": "Vizibilite bouton" },
+  "menuLabel_modeNotifs": { "message": "Notifikasyon Mode" },
+  "menuLabel_disabled": { "message": "Andikape (ekstansyon enstale)" },
+  "buttonLabel_clearChats": { "message": "Konvèsasyon Klè" },
+  "buttonLabel_confirm": { "message": "KONFIMEN" },
+  "mode_autoClear": { "message": "Auto-Klear" }
+}

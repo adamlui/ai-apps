@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Автоматично изчистване на историята на ChatGPT" },
+  "appDesc": { "message": "Автоматично изчиства историята на чата при посещение на chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Автоматично изчистване на чатове" },
+  "menuLabel_toggleVis": { "message": "Превключване на видимостта" },
+  "menuLabel_buttonVis": { "message": "Видимост на бутона" },
+  "menuLabel_modeNotifs": { "message": "Известия за режим" },
+  "menuLabel_disabled": { "message": "Деактивирано (разширението е инсталирано)" },
+  "buttonLabel_clearChats": { "message": "Изчистване на разговорите" },
+  "buttonLabel_confirm": { "message": "Потвърди" },
+  "mode_autoClear": { "message": "Автоматично изчистване" }
+}

@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Sjálfvirkt spjallGPT-ferill" },
+  "appDesc": { "message": "Auto-hreinsar spjall sögu þegar þú heimsækir chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear Spjall" },
+  "menuLabel_toggleVis": { "message": "Víxla sýnileika" },
+  "menuLabel_buttonVis": { "message": "Sýnileiki hnappa" },
+  "menuLabel_modeNotifs": { "message": "Tilkynningar um ham" },
+  "menuLabel_disabled": { "message": "Óvirkt (viðbót uppsett)" },
+  "buttonLabel_clearChats": { "message": "Hreinsa samtöl" },
+  "buttonLabel_confirm": { "message": "Samþykkja" },
+  "mode_autoClear": { "message": "Auto-Clear" }
+}

@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Auto nyukiliya ChatGPT History" },
+  "appDesc": { "message": "Auto-clears macheza mbiri pamene kuyendera chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Auto nyukiliya Chats" },
+  "menuLabel_toggleVis": { "message": "Kuwonekera kwa Toggle" },
+  "menuLabel_buttonVis": { "message": "Maonekedwe a Button" },
+  "menuLabel_modeNotifs": { "message": "Mfundo zazinsinsi" },
+  "menuLabel_disabled": { "message": "Olemala (Extension anaikidwa)" },
+  "buttonLabel_clearChats": { "message": "Kuyankhulana momveka bwino" },
+  "buttonLabel_confirm": { "message": "Tsimikizani" },
+  "mode_autoClear": { "message": "Auto-Clear" }
+}

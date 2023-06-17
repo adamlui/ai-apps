@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT Geschicht" },
+  "appDesc": { "message": "Chat Chat Histoire De Rencontre Chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten in de comments" },
+  "menuLabel_toggleVis": { "message": "Wiesselvisibilitéit" },
+  "menuLabel_buttonVis": { "message": "Knäppchenvisibilitéit" },
+  "menuLabel_modeNotifs": { "message": "Modus Notifikatiounen" },
+  "menuLabel_disabled": { "message": "Deaktivéiert (Extensioun installéiert)" },
+  "buttonLabel_clearChats": { "message": "Gespréicher läschen" },
+  "buttonLabel_confirm": { "message": "Bestätegen" },
+  "mode_autoClear": { "message": "Auto-Clear" }
+}

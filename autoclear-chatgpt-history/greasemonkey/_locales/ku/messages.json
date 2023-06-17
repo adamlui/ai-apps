@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Dîroka ChatGPT-ê bixweber paqij bike" },
+  "appDesc": { "message": "Dema ku serdana chat.openai.com bike dîroka chatê bixweber paqij dike" },
+  "menuLabel_autoClear": { "message": "Chats Autoclear" },
+  "menuLabel_toggleVis": { "message": "Veguheztina Dîtinê" },
+  "menuLabel_buttonVis": { "message": "Bişkojka Visibility" },
+  "menuLabel_modeNotifs": { "message": "Mode Notifications" },
+  "menuLabel_disabled": { "message": "Neçalakkirî (berfireh hate saz kirin)" },
+  "buttonLabel_clearChats": { "message": "Danûstandinên Paqij" },
+  "buttonLabel_confirm": { "message": "Tesdîqkirin" },
+  "mode_autoClear": { "message": "Auto-Clear" }
+}

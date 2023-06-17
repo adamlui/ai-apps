@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Istoric AutoClear ChatGPT" },
+  "appDesc": { "message": "Auto-clears chat istorie atunci când vizitați chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear Chats" },
+  "menuLabel_toggleVis": { "message": "comutați vizibilitatea" },
+  "menuLabel_buttonVis": { "message": "Vizibilitatea butonului" },
+  "menuLabel_modeNotifs": { "message": "Notificări de mod" },
+  "menuLabel_disabled": { "message": "Dezactivat (extensie instalată)" },
+  "buttonLabel_clearChats": { "message": "Ștergeți conversațiile" },
+  "buttonLabel_confirm": { "message": "Confirmare" },
+  "mode_autoClear": { "message": "Curățare automată" }
+}

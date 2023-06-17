@@ -1,0 +1,12 @@
+{
+  "appName": { "message": "Autoclear ChatGPT - ի պատմությունը" },
+  "appDesc": { "message": "Ավտոմատ կերպով մաքրում է զրուցարանի պատմությունը, երբ այցելում է chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear Զրուցարաններ" },
+  "menuLabel_toggleVis": { "message": "Միացնել տեսանելիությունը" },
+  "menuLabel_buttonVis": { "message": "Կոճակի տեսանելիություն" },
+  "menuLabel_modeNotifs": { "message": "Ռեժիմի ծանուցումներ" },
+  "menuLabel_disabled": { "message": "Անջատված է (երկարաձգումը տեղադրված է)" },
+  "buttonLabel_clearChats": { "message": "Ջնջել նամակագրությունները" },
+  "buttonLabel_confirm": { "message": "Հաստատել" },
+  "mode_autoClear": { "message": "Ավտոմատ մաքրում" }
+}
