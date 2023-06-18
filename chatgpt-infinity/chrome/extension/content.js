@@ -167,12 +167,12 @@
 
     // Define LIVE RESTART functions
 
-    restartOnReplyLang = () => { // restart live session on reply language update
+    restartOnReplyLang = () => { // eslint-disable-line no-undef
         settings.load('replyLanguage').then(() => {
             chatgpt.stop() ; infinityMode.deactivate() ; infinityMode.toggle()
     })}
 
-    restartOnReplyInt = () => { // restart live session on reply interval update
+    restartOnReplyInt = () => { // eslint-disable-line no-undef
         settings.load('replyInterval').then(async () => {
             clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
             if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
@@ -188,7 +188,7 @@
                 updateToggleHTML() // hide/show sidebar toggle based on newest setting
                 if (infinityMode.sent) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': OFF') // notify IM OFF state if running
                 infinityMode.deactivate() // disable IM
-                infinityToggle.checked = false // turn sidebar toggle off
+                infinityToggle.checked = false // eslint-disable-line no-undef
     })}
 
 })()

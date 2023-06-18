@@ -163,11 +163,6 @@
             chrome.tabs.sendMessage(tabs[0].id, { action: 'syncExtension' })
     })}
 
-    function updateToggleHTML() {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            chrome.tabs.sendMessage(tabs[0].id, { action: 'updateToggleHTML' })
-    })}
-
     function updateGreyness() {
 
         // Updated toolbar icon
