@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.18.1
+// @version             2023.6.18.2
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -357,7 +357,7 @@
         while (toggleLabel.firstChild) toggleLabel.firstChild.remove() // clear old content
 
         // Create elements
-        const navicon = document.createElement('img') ; navicon.width = '18px'
+        const navicon = document.createElement('img') ; navicon.width = 18
         navicon.src = 'https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/white/icon64.png'
         const label = document.createElement('label') ; label.className = 'switch'
         const labelText = document.createTextNode(messages.menuLabel_infinityMode + ' '

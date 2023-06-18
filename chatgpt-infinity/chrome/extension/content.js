@@ -107,7 +107,7 @@
         while (toggleLabel.firstChild) toggleLabel.firstChild.remove()
 
         // Create elements
-        const navicon = document.createElement('img') ; navicon.width = '18px'
+        const navicon = document.createElement('img') ; navicon.width = 18
         navicon.src = 'https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/white/icon64.png'
         const label = document.createElement('label') ; label.className = 'switch'
         const labelText = document.createTextNode(chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
