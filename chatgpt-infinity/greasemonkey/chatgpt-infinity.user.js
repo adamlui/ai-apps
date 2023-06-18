@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.17.2
+// @version             2023.6.18
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -138,7 +138,7 @@
     var appSymbol = '∞', configPrefix = 'chatGPTinf_'
     var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
     loadSetting('autoScrollDisabled', 'lastCheckTime', 'replyInterval', 'replyLanguage', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
-    if (!config.replyLanguage) saveSetting('replyLanguage', navigator.languages[0] || navigator.language || '') // init reply language
+    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
 
     // Define messages
