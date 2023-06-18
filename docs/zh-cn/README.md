@@ -12,7 +12,7 @@
 
 ###### 简体中文 | [English](../..#readme)
 
----
+<img height=10px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [自动清除 ChatGPT 历史记录](../../autoclear-chatgpt-history) <a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" alt="在 Awesome Userscripts 中提到" style="margin:0 0 -2px 5px"></a>
 
