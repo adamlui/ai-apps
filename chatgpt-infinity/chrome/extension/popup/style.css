@@ -1,6 +1,6 @@
 /* General size */
 html { height: fit-content }
-body { width: 265px ; height: 111px !important ; margin: 0 }
+body { min-width: 201px ; height: 111px !important ; margin: 0 }
 
 /* General font */
 body, button, input, select, textarea {
