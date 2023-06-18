@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.6.15
+// @version             2023.6.17
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -322,13 +322,14 @@
                     return // exit comparison if past auto-alert hidden
                 for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
                     if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
+                        if (!checkForUpdates.fromMenu) // if auto-alert...
+                            saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
                         alert('Update available! 🚀',
                             `An update to ${ messages.appName } (v${ latestVer }) is available!&nbsp;&nbsp;&nbsp;`
                                 + `<a target="_blank" href="https://github.com/adamlui/chatgpt-auto-refresh/commits/main/greasemonkey/chatgpt-auto-refresh.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
-                                saveSetting('skipNextUpdate', false) // reset hidden alert setting
                                 window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
                                     + '?t=' + Date.now(), '_blank') },
                             !checkForUpdates.fromMenu ? // checkbox if auto-alert
