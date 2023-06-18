@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.6.15
+// @version             2023.6.17
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -228,13 +228,14 @@
                     return // exit comparison if past auto-alert hidden
                 for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
                     if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
+                        if (!checkForUpdates.fromMenu) // if auto-alert...
+                            saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
                         alert('Update available! 🚀',
                             `An update to ${ messages.appName } (v${ latestVer }) is available!&nbsp;&nbsp;&nbsp;`
                                 + `<a target="_blank" href="https://github.com/adamlui/autoclear-chatgpt-history/commits/main/greasemonkey/autoclear-chatgpt-history.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
-                                saveSetting('skipNextUpdate', false) // reset hidden alert setting
                                 window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
                                     + '?t=' + Date.now(), '_blank') },
                             !checkForUpdates.fromMenu ? // checkbox if auto-alert
