@@ -63,7 +63,7 @@ Display ChatGPT answers in DuckDuckGo sidebar (powered by GPT-4!)
 [Readme](../duckduckgpt#readme) / 
 [Discuss](https://github.duckduckgpt.com/discussions)
 
-#
+<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions) / 
 <a href="#-chatgpt-apps-">Back to top ↑</a>
