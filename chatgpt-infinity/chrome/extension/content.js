@@ -15,7 +15,7 @@
         if (request.action === 'notify') notify(request.msg, request.position)
         else if (request.action === 'alert') alert(request.title, request.msg, request.btns)
         else if (request.action === 'updateToggleHTML') updateToggleHTML()
-        else if (request.action === 'clickToggle') { infinityMode.fromMenu = true ; document.querySelector('#infinityToggle').click() }
+        else if (request.action === 'clickToggle') { infinityMode.fromMenu = true ; document.querySelector('#infToggleLabel').click() }
         else if (request.action === 'stopInfinityMode') infinityMode.deactivate()
         else window[request.action]()            
         return true
@@ -47,39 +47,45 @@
 
     document.head.appendChild(switchStyle)
 
-    // Create toggle label, add listener/classes/style/HTML
+    // Create sidebar toggle, add styles/classes/listener/HTML
     const toggleLabel = document.createElement('div') // create label div
-    toggleLabel.addEventListener('click', () => {
-        const toggleInput = document.querySelector('#infinityToggle')
-        toggleInput.click() ; infinityMode.toggle()
-    })
+    toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
+    toggleLabel.style.margin = '2px 0' // add v-margins
+    toggleLabel.style.userSelect = 'none' // prevent highlighting
     for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
         if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
             toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
             navLink.parentNode.style.margin = '2px 0' // add v-margins
             break // stop looping since class assignment is done
     }}
-    toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
-    toggleLabel.style.margin = '2px 0' // add v-margins
-
+    toggleLabel.addEventListener('click', () => {
+        var toggleInput = document.querySelector('#infToggleInput')
+        toggleInput.checked = !toggleInput.checked
+        setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
+        config.infinityMode = toggleInput.checked
+        infinityMode.toggle()
+    })
     updateToggleHTML()
 
     // Insert full toggle on page load
     await chatgpt.isLoaded()
-    settings.load(['extensionDisabled']).then(() => { if (!config.extensionDisabled) insertToggle() })
+    settings.load(['extensionDisabled']).then(() => {
+        if (!config.extensionDisabled) insertToggle() })
 
     // Monitor node changes to update toggle visibility
-    const navObserver = new MutationObserver((mutations) => {
+    const nodeObserver = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 settings.load(['extensionDisabled']).then(() => {
                     if (!config.extensionDisabled) insertToggle()
-    })}})}) ; navObserver.observe(document.documentElement, { childList: true, subtree: true })
+    })}})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow' ))}
+        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration,
+            shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow' ))
+    }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
@@ -109,10 +115,10 @@
         // Create elements
         const navicon = document.createElement('img') ; navicon.width = 18
         navicon.src = 'https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/white/icon64.png'
-        const label = document.createElement('label') ; label.className = 'switch'
+        const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'infToggleLabel'
         const labelText = document.createTextNode(chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
             + chrome.i18n.getMessage('state_' + ( config.infinityMode ? 'enabled' : 'disabled' )))
-        const input = document.createElement('input') ; input.id = 'infinityToggle'
+        const input = document.createElement('input') ; input.id = 'infToggleInput'
         input.type = 'checkbox' ; input.checked = config.infinityMode
         const span = document.createElement('span') ; span.className = 'slider'
 
@@ -132,7 +138,7 @@
                 notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
             infinityMode.fromSync = false, infinityMode.fromMenu = false
             setTimeout(() => {
-                chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : ''  )
+                chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                                                             + '. don\'t type anything else') }, 500)
             infinityMode.sent = true ; settings.save('infinityMode', true) ; await chatgpt.isIdle()
             if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
@@ -150,15 +156,12 @@
         deactivate: () => {
             if (infinityMode.sent && !infinityMode.fromSync && !infinityMode.fromMenu)
                 notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': OFF')
-            clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null, infinityMode.sent = null
-            infinityMode.fromSync = false, infinityMode.fromMenu = false
+            clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; infinityMode.sent = null
+            infinityMode.fromSync = false ; infinityMode.fromMenu = false
             settings.save('infinityMode', false)
         },
 
         toggle: () => {
-            const toggleInput = document.querySelector('#infinityToggle')
-            setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
-            config.infinityMode = toggleInput.checked
             chatgpt.stop()
             if (config.infinityMode && !infinityMode.sent) infinityMode.activate()
             else if (!config.infinityMode && infinityMode.sent) infinityMode.deactivate()
@@ -188,7 +191,7 @@
                 updateToggleHTML() // hide/show sidebar toggle based on newest setting
                 if (infinityMode.sent) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': OFF') // notify IM OFF state if running
                 infinityMode.deactivate() // disable IM
-                infinityToggle.checked = false // eslint-disable-line no-undef
+                document.querySelector('#infToggleInput').checked = false // eslint-disable-line no-undef
     })}
 
 })()
