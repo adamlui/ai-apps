@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![](https://img.shields.io/badge/用户-3,000+-brightgreen)
+![](https://img.shields.io/badge/用户-3,000+-0ad4fc)
 [![](https://img.shields.io/chrome-web-store/stars/jgnjpnmofkalfliddjelaciggjgnphgm?color=gold&label=评分)](https://chrome.google.com/webstore/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews)
 [![](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
 [![](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#兼容性)
