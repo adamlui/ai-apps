@@ -8,12 +8,12 @@
   
 </h1>
 
-![](https://img.shields.io/greasyfork/dt/462440?label=Users)
+![](https://img.shields.io/greasyfork/dt/462440?label=Users&color=0ad4fc)
 [![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/bravegpt?label=Commits)](https://github.com/adamlui/userscripts/commits/master/chatgpt/bravegpt)
 ![](https://img.shields.io/snyk/vulnerabilities/github/kudoai/bravegpt?label=Vulnerabilities&labelColor=464646&color=gold)
-[![](https://img.shields.io/codefactor/grade/github/kudoai/bravegpt?label=Code%20Quality&color=0ad4fc)](https://www.codefactor.io/repository/github/kudoai/bravegpt)
+[![](https://img.shields.io/codefactor/grade/github/kudoai/bravegpt?label=Code%20Quality)](https://www.codefactor.io/repository/github/kudoai/bravegpt)
 <a href="https://github.com/chatgptjs/chatgpt.js"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#brave-search)
 
