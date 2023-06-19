@@ -40,7 +40,7 @@ with open(en_msgs_path, 'r', encoding='utf-8') as en_file:
     en_messages = json.load(en_file)
 
 # Combine [target_langs] w/ languages discovered in _locales
-output_langs = list(set(output_langs)) # remove duplicates
+output_langs = list(set(target_langs)) # remove duplicates
 for root, dirs, files in os.walk(locales_dir):
     for folder in dirs:
         folder_path = os.path.join(root, folder)
