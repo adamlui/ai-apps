@@ -11,7 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.6.17
+// @version             2023.6.18
 // @description         Auto-clears chat history when visiting chat.openai.com
 // @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
 // @namespace           https://github.com/adamlui
@@ -103,11 +103,11 @@
     setTimeout(() => { if (config.autoclear) chatgpt.clearChats() }, 250)
 
     // Notify of mode if enabled
-    if (!config.notifHidden) notify(messages.mode_autoClear + ': ON')
+    if (!config.notifHidden && config.autoclear) notify(messages.mode_autoClear + ': ON')
 
     // Stylize/insert toggle switch
     var switchStyle = document.createElement('style')
-    switchStyle.innerHTML = `/* Stylize switch */
+    switchStyle.innerText = `/* Stylize switch */
         .switch { position:absolute ; left:208px ; width:34px ; height:18px }
         .switch input { opacity:0 ; width:0 ; height:0 } /* hide checkbox */
         .slider { position:absolute ; cursor:pointer ; top:0 ; left:0 ; right:0 ; bottom:0 ; background-color:#ccc ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
@@ -122,11 +122,20 @@
             transform: translateX(14px) }`
     document.head.appendChild(switchStyle)
 
-    // Create toggle label, add listener/max-height/classes/HTML
+    // Create toggle label, add styles/classes/listener/HTML
     var toggleLabel = document.createElement('div') // create label div
-    toggleLabel.addEventListener('click', () => {
-        var toggleInput = document.querySelector('#autoClearToggle')
-        toggleInput.click()
+    toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
+    toggleLabel.style.margin = '2px 0' // add v-margins
+    toggleLabel.style.userSelect = 'none' // prevent highlighting
+    for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
+        if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
+            toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
+            navLink.parentNode.style.margin = '2px 0' // add v-margins
+            break // stop looping since class assignment is done
+    }}
+    toggleLabel.addEventListener('click', () => { // add listener to toggle switch/label/config/menu + auto-clear
+        var toggleInput = document.querySelector('#acToggleInput')
+        toggleInput.checked = !toggleInput.checked
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.autoclear = toggleInput.checked
         for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -138,14 +147,6 @@
             if (!config.notifHidden) notify(messages.mode_autoClear + ': OFF')
         } saveSetting('autoclear', config.autoclear)
     })
-    for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
-        if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
-            toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
-            navLink.parentNode.style.margin = '2px 0' // add v-margins
-            break // stop looping since class assignment is done
-    }}
-    toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
-    toggleLabel.style.margin = '2px 0' // add v-margins
     updateToggleHTML()
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
@@ -166,7 +167,7 @@
         var acLabel = state.symbol[+!config.autoclear] + ' ' + messages.menuLabel_autoClear
                     + stateSeparator + state.word[+!config.autoclear]
         menuIDs.push(GM_registerMenuCommand(acLabel, function() {
-            document.querySelector('#autoClearToggle').click()
+            document.querySelector('#acToggleLabel').click()
         }))
 
         // Add 'Toggle Visibility' command
@@ -261,12 +262,22 @@
     }
 
     function updateToggleHTML() {
-        toggleLabel.innerHTML = `
-            <img width="18px" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/icons/navicon.png">
-            Auto-clear ${config.autoclear ? 'enabled' : 'disabled'}
-            <label class="switch" ><input id="autoClearToggle" type="checkbox"
-                ${config.autoclear ? 'checked="true"' : '' } >
-                <span class="slider"></span></label>`
+        while (toggleLabel.firstChild) toggleLabel.firstChild.remove() // clear old content
+
+        // Create elements
+        const navicon = document.createElement('img') ; navicon.width = 18
+        navicon.src = 'https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/icons/navicon.png'
+        const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'acToggleLabel'
+        const labelText = document.createTextNode('Auto-clear ' + ( config.autoclear ? 'enabled' : 'disabled' ))
+        const input = document.createElement('input') ; input.id = 'acToggleInput'
+        input.type = 'checkbox' ; input.disabled = true ; input.checked = config.autoclear
+        const span = document.createElement('span') ; span.className = 'slider'
+
+        // Append elements
+        label.appendChild(input) ; label.appendChild(span)
+        toggleLabel.appendChild(navicon) ; toggleLabel.appendChild(label) ; toggleLabel.appendChild(labelText)
+
+        // Update visibility
         toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
     }
 
