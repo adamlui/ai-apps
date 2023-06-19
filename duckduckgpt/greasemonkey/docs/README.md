@@ -7,7 +7,7 @@
   <a href="https://twitter.com/intent/tweet?text=Want%20%23ChatGPT%20answers%20right%20alongside%20DuckDuckGo%20results%3F%20This%20%23userscript%20does%20just%20that%21&url=https://duckduckgpt.com&hashtags=greasemonkey,javascript,ai"><img style="margin:0 0 14px 5px;" src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
 </h1>
 
-![](https://img.shields.io/greasyfork/dt/459849?label=Users)
+![](https://img.shields.io/greasyfork/dt/459849?label=Users&color=0ad4fc)
 [![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/duckduckgpt?label=Commits)](https://github.com/kudoai/duckduckgpt/commits/main)
