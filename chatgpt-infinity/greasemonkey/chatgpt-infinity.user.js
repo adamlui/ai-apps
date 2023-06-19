@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.19.8
+// @version             2023.6.19.9
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -176,8 +176,12 @@
     // Check for updates (1x/72h)
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
 
-    // Add window listener to disable Infinity Mode when focus lost
-    window.addEventListener('blur', () => { if (config.infinityMode) infinityMode.deactivate() })
+    // Add listener to auto-disable Infinity Mode
+    if (document.hidden !== undefined) { // ...if Page Visibility API supported
+        document.addEventListener('visibilitychange', () => {
+            if (config.infinityMode) infinityMode.deactivate()
+            for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+    })}
 
     // Stylize toggle switch
     var switchStyle = document.createElement('style')
