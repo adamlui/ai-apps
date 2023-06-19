@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.19.5
+// @version             2023.6.19.6
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -385,7 +385,7 @@
 
     var infinityMode = {
 
-        activate: async function() {
+        activate: async () => {
             notify(messages.menuLabel_infinityMode + ': ON')
             try { document.querySelector('nav a').click() } catch (error) { return }
             setTimeout(function() {
@@ -397,7 +397,7 @@
             }
         },
 
-        continue: async function() {
+        continue: async () => {
             chatgpt.send('do it again')
             if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(error) {}
             await chatgpt.isIdle() // before starting delay till next iteration
@@ -405,16 +405,13 @@
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
         },
 
-        deactivate: function() {
+        deactivate: () => {
+            chatgpt.stop()
             clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; infinityMode.sent = null
             notify(messages.menuLabel_infinityMode + ': OFF')
         },
 
-        toggle: async function() {
-            chatgpt.stop()
-            if (config.infinityMode && !infinityMode.sent) infinityMode.activate()
-            else if (!config.infinityMode && infinityMode.sent) infinityMode.deactivate()
-        }
+        toggle: () => { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
     }
 
 })()

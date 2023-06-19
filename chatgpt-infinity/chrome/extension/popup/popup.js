@@ -29,8 +29,9 @@
         elem.innerText = chrome.i18n.getMessage(elem.dataset.locale) })
 
     // Add main toggle click-listener
-    mainToggle.addEventListener('change', () => {    
+    mainToggle.addEventListener('change', () => {
         settings.save('extensionDisabled', !config.extensionDisabled)
+        infinityModeToggle.checked = false
         syncExtension() ; updateGreyness()
     })
 

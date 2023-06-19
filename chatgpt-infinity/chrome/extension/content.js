@@ -154,6 +154,7 @@
         },
 
         deactivate: () => {
+            chatgpt.stop()
             if (infinityMode.sent && !infinityMode.fromSync && !infinityMode.fromMenu)
                 notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': OFF')
             clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; infinityMode.sent = null
@@ -161,18 +162,14 @@
             settings.save('infinityMode', false)
         },
 
-        toggle: () => {
-            chatgpt.stop()
-            if (config.infinityMode && !infinityMode.sent) infinityMode.activate()
-            else if (!config.infinityMode && infinityMode.sent) infinityMode.deactivate()
-        }
+        toggle: () => { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
     }
 
     // Define LIVE RESTART functions
 
     restartOnReplyLang = () => { // eslint-disable-line no-undef
         settings.load('replyLanguage').then(() => {
-            chatgpt.stop() ; infinityMode.deactivate() ; infinityMode.toggle()
+            chatgpt.stop() ; infinityMode.deactivate() ; setTimeout(infinityMode.activate, 500)
     })}
 
     restartOnReplyInt = () => { // eslint-disable-line no-undef
