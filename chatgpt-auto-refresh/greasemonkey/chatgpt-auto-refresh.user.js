@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.6.17
+// @version             2023.6.18
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -172,7 +172,7 @@
 
     // Stylize toggle switch
     var switchStyle = document.createElement('style')
-    switchStyle.innerHTML = `/* Stylize switch */
+    switchStyle.innerText = `/* Stylize switch */
         .switch { position:absolute ; left:208px ; width:34px ; height:18px }
         .switch input { opacity:0 ; width:0 ; height:0 } /* hide checkbox */
         .slider { position:absolute ; cursor:pointer ; top:0 ; left:0 ; right:0 ; bottom:0 ; background-color:#ccc ; -webkit-transition:.4s ; transition:.4s ; border-radius:28px }
@@ -188,43 +188,44 @@
 
     document.head.appendChild(switchStyle)
 
-    // Create toggle label, add listener/max-height/classes/HTML
+    // Create toggle label, add styles/classes/listener/HTML
     var toggleLabel = document.createElement('div') // create label div
-    toggleLabel.addEventListener('click', function() {
-        var toggleInput = document.querySelector('#autoRefreshToggle')
-        toggleInput.click()
-        setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
-        config.arDisabled = !toggleInput.checked
-        for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
-        if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
-            chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true
-            if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': ON')
-        } else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
-            chatgpt.autoRefresh.deactivate() // ; config.isActive = false
-            if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': OFF')
-        } saveSetting('arDisabled', config.arDisabled)
-    })
+    toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
+    toggleLabel.style.margin = '2px 0' // add v-margins
+    toggleLabel.style.userSelect = 'none' // prevent highlighting
     for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
         if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
             toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
             navLink.parentNode.style.margin = '2px 0' // add v-margins
             break // stop looping since class assignment is done
     }}
-    toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
-    toggleLabel.style.margin = '2px 0' // add v-margins
+    toggleLabel.addEventListener('click', () => { // add listener to toggle switch/label/config/menu/auto-refresh
+        var toggleInput = document.querySelector('#arToggleInput')
+        toggleInput.checked = !toggleInput.checked
+        setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
+        config.arDisabled = !toggleInput.checked
+        for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+        if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
+            chatgpt.autoRefresh.activate(config.refreshInterval)
+            if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': ON')
+        } else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
+            chatgpt.autoRefresh.deactivate()
+            if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': OFF')
+        } saveSetting('arDisabled', config.arDisabled)
+    })
     updateToggleHTML()
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
     insertToggle()
-    var navObserver = new MutationObserver(function(mutations) {
+    var nodeObserver = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 insertToggle()
-    }})}) ; navObserver.observe(document.documentElement, { childList: true, subtree: true })
+    }})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Activate auto-refresh on first visit if enabled
     if (!config.arDisabled) {
-        chatgpt.autoRefresh.activate(config.refreshInterval) // ; config.isActive = true
+        chatgpt.autoRefresh.activate(config.refreshInterval)
         if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': ON')
     }
 
@@ -238,7 +239,7 @@
         var arLabel = stateSymbol[+config.arDisabled] + ' ' + messages.menuLabel_autoRefresh + ' ↻ '
                     + stateSeparator + stateWord[+config.arDisabled]
         menuIDs.push(GM_registerMenuCommand(arLabel, function() {
-            document.querySelector('#autoRefreshToggle').click()
+            document.querySelector('#arToggleLabel').click()
         }))
 
         // Add command to toggle visibility of toggle
@@ -355,13 +356,24 @@
     }
 
     function updateToggleHTML() {
-        toggleLabel.innerHTML = (
-            '<img width="18px" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/icons/auto-refresh-navicon-light-155.png">'
-                + ( messages.menuLabel_autoRefresh
-                    + (( messages.menuLabel_autoRefresh.length + Math.max(messages.state_disabled.length, messages.state_enabled.length )) > 21 ? ''
-                        : ( ' ' + ( config.arDisabled ? messages.state_disabled : messages.state_enabled ))))
-                + '<label class="switch" ><input id="autoRefreshToggle" type="checkbox"'
-                + ( !config.arDisabled ? 'checked="true"' : '' ) + '><span class="slider"></span></label>' )
+
+        while (toggleLabel.firstChild) toggleLabel.firstChild.remove() // clear old content
+
+        // Create elements
+        const navicon = document.createElement('img') ; navicon.width = 18
+        navicon.src = 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/icons/auto-refresh-navicon-light-155.png'
+        const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'arToggleLabel'
+        const labelText = document.createTextNode(messages.menuLabel_autoRefresh + ' '
+            + ( messages['state_' + ( config.arDisabled ? 'disabled' : 'enabled' )]))
+        const input = document.createElement('input') ; input.id = 'arToggleInput'
+        input.type = 'checkbox' ; input.disabled = true ; input.checked = !config.arDisabled
+        const span = document.createElement('span') ; span.className = 'slider'
+
+        // Append elements
+        label.appendChild(input) ; label.appendChild(span)
+        toggleLabel.appendChild(navicon) ; toggleLabel.appendChild(label) ; toggleLabel.appendChild(labelText)
+
+        // Update visibility
         toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
     }
 
