@@ -8,7 +8,7 @@
   
 </h1>
 
-![](https://img.shields.io/greasyfork/dt/462440?label=Users)
+![](https://img.shields.io/greasyfork/dt/462440?label=Users&color=0ad4fc)
 [![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/bravegpt?label=Commits)](https://github.com/adamlui/userscripts/commits/master/chatgpt/bravegpt)
