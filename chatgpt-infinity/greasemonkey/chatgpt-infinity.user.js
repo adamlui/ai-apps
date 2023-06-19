@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.19
+// @version             2023.6.19.1
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -165,12 +165,15 @@
         }
     }) ; var messages = await msgsLoaded
 
-    // Init/register menu
-    var menuIDs = [], stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF'] // initialize menu vars
-    registerMenu() // create browser toolbar menu
-
-    // Check for updates (1x/48h)
+    // Create browser toolbar menu or disable script if extension installed
+    var menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'] } // initialize menu vars
     await chatgpt.isLoaded()
+    if (document.documentElement.getAttribute('cif-extension-installed')) { // if extension installed, disable script/menu
+        GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return })
+        return // exit script
+    } else registerMenu() // create functional menu
+
+    // Check for updates (1x/72h)
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
 
     // Stylize toggle switch
@@ -227,28 +230,28 @@
         var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to toggle Infinity Mode
-        var imLabel = stateSymbol[+!config.infinityMode] + ' ' + messages.menuLabel_infinityMode + ' ∞ '
-            + stateSeparator + stateWord[+!config.infinityMode]
+        var imLabel = state.symbol[+!config.infinityMode] + ' ' + messages.menuLabel_infinityMode + ' ∞ '
+            + stateSeparator + state.word[+!config.infinityMode]
         menuIDs.push(GM_registerMenuCommand(imLabel, () => {
             document.querySelector('#infToggleLabel').click()
         }))
 
         // Add command to toggle visibility of toggle
-        var tvLabel = stateSymbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
-            + stateSeparator + stateWord[+config.toggleHidden]
+        var tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
+            + stateSeparator + state.word[+config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            notify(messages.menuLabel_toggleVis + ': '+ stateWord[+config.toggleHidden])
+            notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
             for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
         }))
 
         // Add command to toggle auto-scroll
-        var asLabel = stateSymbol[+config.autoScrollDisabled] + ' ' + messages.menuLabel_autoScroll
-            + stateSeparator + stateWord[+config.autoScrollDisabled]
+        var asLabel = state.symbol[+config.autoScrollDisabled] + ' ' + messages.menuLabel_autoScroll
+            + stateSeparator + state.word[+config.autoScrollDisabled]
         menuIDs.push(GM_registerMenuCommand(asLabel, () => {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
-            notify(messages.menuLabel_autoScroll + ': '+ stateWord[+config.autoScrollDisabled])
+            notify(messages.menuLabel_autoScroll + ': '+ state.word[+config.autoScrollDisabled])
             for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
         }))
 
