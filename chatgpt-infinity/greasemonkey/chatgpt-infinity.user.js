@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.19.7
+// @version             2023.6.19.8
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -176,6 +176,9 @@
     // Check for updates (1x/72h)
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
 
+    // Add window listener to disable Infinity Mode when focus lost
+    window.addEventListener('blur', () => { if (config.infinityMode) infinityMode.deactivate() })
+
     // Stylize toggle switch
     var switchStyle = document.createElement('style')
     switchStyle.innerText = `/* Stylize switch */
@@ -266,7 +269,7 @@
                     saveSetting('replyLanguage', replyLanguage)
                     alert('Language updated!', `${ messages.alert_willReplyIn } ${ replyLanguage ? replyLanguage : messages.alerts.yourSysLang }.`)
                     if (config.infinityMode) { // restart session using new reply language
-                        chatgpt.stop() ; infinityMode.deactivate() ; infinityMode.toggle() }
+                        infinityMode.deactivate() ; setTimeout(infinityMode.activate, 500) }
                     for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
                     break
         }}}))
@@ -372,7 +375,7 @@
         const labelText = document.createTextNode(messages.menuLabel_infinityMode + ' '
             + messages['state_' + ( config.infinityMode ? 'enabled' : 'disabled' )])
         const input = document.createElement('input') ; input.id = 'infToggleInput'
-        input.type = 'checkbox' ; input.checked = config.infinityMode
+        input.type = 'checkbox' ; input.checked = config.infinityMode ; input.disabled = true
         const span = document.createElement('span') ; span.className = 'slider'
 
         // Append elements
@@ -391,10 +394,9 @@
             setTimeout(() => {
                 chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                                                             + '. don\'t type anything else') }, 500)
-            await chatgpt.isIdle()
-            if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
+            config.infinityMode = true ; await chatgpt.isIdle()
+            if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
-            }
         },
 
         continue: async () => {
@@ -406,9 +408,10 @@
         },
 
         deactivate: () => {
-            chatgpt.stop()
-            clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
+            chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
+            document.querySelector('#infToggleInput').checked = false // for window listener
             notify(messages.menuLabel_infinityMode + ': OFF')
+            config.infinityMode = false // in case window listener toggled
         },
 
         toggle: () => { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
