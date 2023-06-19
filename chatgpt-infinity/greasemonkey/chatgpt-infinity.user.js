@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.19.3
+// @version             2023.6.19.4
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -264,7 +264,7 @@
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage)
-                    alert(`${ messages.alert_willReplyIn } ${ replyLanguage ? replyLanguage : messages.alerts.yourSysLang }.`)
+                    alert('Language updated!', `${ messages.alert_willReplyIn } ${ replyLanguage ? replyLanguage : messages.alerts.yourSysLang }.`)
                     if (config.infinityMode) { // restart session using new reply language
                         chatgpt.stop() ; infinityMode.deactivate() ; infinityMode.toggle() }
                     for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
@@ -279,7 +279,7 @@
                 if (replyInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
                     saveSetting('replyInterval', parseInt(replyInterval))
-                    alert(`${ messages.alert_willReplyEvery } ${ replyInterval } ${ messages.unit_seconds }.`)
+                    alert('Interval updated!', `${ messages.alert_willReplyEvery } ${ replyInterval } ${ messages.unit_seconds }.`)
                     if (config.infinityMode) { // reset reply interval w/o ending session
                         clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
                         if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
