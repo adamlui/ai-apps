@@ -1,6 +1,6 @@
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT 自动刷新 ↻ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=厌倦了%20ChatGPT%20的不断中断？%20使用此插件自动刷新您的会话%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt)
 
-![](https://img.shields.io/greasyfork/dt/462422?label=用户&color=brightgreen)
+![](https://img.shields.io/greasyfork/dt/462422?label=用户&color=0ad4fc)
 [![](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
 [![](https://img.shields.io/badge/支持-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey#compatibility)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=提交)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
