@@ -1,6 +1,6 @@
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Infinity ∞ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20endless%20answers%20from%20all-knowing%20ChatGPT&url=https://chatgptevo.com/infinity&hashtags=javascript,openai,chatgpt)
 
-![](https://img.shields.io/greasyfork/dt/465051?label=Users)
+![](https://img.shields.io/greasyfork/dt/465051?label=Users&color=0ad4fc)
 [![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=Commits)](https://github.com/adamlui/chatgpt-infinity/commits/main)
