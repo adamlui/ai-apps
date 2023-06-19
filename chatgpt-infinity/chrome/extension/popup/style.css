@@ -17,7 +17,7 @@ a:focus, a:hover { text-decoration: underline ; color: inherit }
 .menu-icons > .toggle-switch { transform: scale(1.1) } /* make master toggle bigger */
 .main-toggle { margin-left: auto ; display: flex }
 
-/* Item elements */
+/* Menu item elements */
 .menu-item {    
     position: relative ; align-items: center ; border-bottom: 1px solid lightgrey ; display: flex ; min-height: 2rem ;
     padding-right: 14px ; white-space: nowrap ; font-size: 91%
@@ -27,6 +27,7 @@ a:focus, a:hover { text-decoration: underline ; color: inherit }
 .menu-item:hover .toggle-switch .slider { filter: invert(1) } /* invert toggle hovers */
 .menu-item:hover .menu-icon { filter: none } /* ...but not non-toggle icons */
 .menu-item > label > .slider { transform: scale(0.95) ; top: 1px } /* make child toggles smaller */
+.menu-prompt { margin-left: 2px } /* align non-toggle items */
 
 /* Toggle elements */
 .toggle-switch input[type="checkbox"] { display: none } /* hide checkbox from toggles */
