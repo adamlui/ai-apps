@@ -76,7 +76,7 @@
             else if (!/\d/.test(replyLanguage)) {
                 settings.save('replyLanguage', replyLanguage)
                 window.close() // popup
-                alert(chrome.i18n.getMessage('alert_willReplyIn') + ' '
+                alert('Language updated!', chrome.i18n.getMessage('alert_willReplyIn') + ' '
                     + ( replyLanguage ? replyLanguage : chrome.i18n.getMessage('alerts.yourSysLang') ) + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
                     if (tabs[0].url.includes('chat.openai.com') && config.infinityMode) { // reboot active session
@@ -93,7 +93,7 @@
             else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
                 settings.save('replyInterval', parseInt(replyInterval))
                 window.close() // popup
-                alert(chrome.i18n.getMessage('alert_willReplyEvery')
+                alert('Interval updated!', chrome.i18n.getMessage('alert_willReplyEvery')
                     + ' ' + replyInterval + ' ' + chrome.i18n.getMessage('unit_seconds') + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
                     if (tabs[0].url.includes('chat.openai.com') && config.infinityMode) // reboot active session

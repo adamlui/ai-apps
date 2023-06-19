@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.19.4
+// @version             2023.6.19.5
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -217,11 +217,11 @@
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
     insertToggle()
-    var navObserver = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
+    var nodeObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 insertToggle()
-    }})}) ; navObserver.observe(document.documentElement, { childList: true, subtree: true })
+    }})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Define SCRIPT functions
 
