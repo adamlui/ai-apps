@@ -1,6 +1,6 @@
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Auto-Continue ⏩ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Automatically%20continue%20the%20conversation%20from%20multiple%20ChatGPT%20responses%20w%2F%20this%20plug-in%21T&url=https://chatgptevo.com/autocontinue&hashtags=javascript,openai,chatgpt)
 
-![](https://img.shields.io/greasyfork/dt/466789?label=Users&color=0ad4fc))
+![](https://img.shields.io/greasyfork/dt/466789?label=Users&color=0ad4fc)
 [![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-continue?label=Commits)](https://github.com/adamlui/chatgpt-auto-continue/commits/main)
 ![](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-auto-continue?label=Vulnerabilities&labelColor=464646&color=gold)
