@@ -12,12 +12,12 @@
 
     // Add Chrome msg listener
     chrome.runtime.onMessage.addListener((request) => {
+        infinityMode.fromMsg = true
         if (request.action === 'notify') notify(request.msg, request.position)
         else if (request.action === 'alert') alert(request.title, request.msg, request.btns)
         else if (request.action === 'updateToggleHTML') updateToggleHTML()
-        else if (request.action === 'clickToggle') { infinityMode.fromMenu = true ; document.querySelector('#infToggleLabel').click() }
-        else if (request.action === 'stopInfinityMode') infinityMode.deactivate()
-        else window[request.action]()            
+        else if (request.action === 'clickToggle') document.querySelector('#infToggleLabel').click()
+        else window[request.action]
         return true
     })
 
@@ -28,6 +28,12 @@
         if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language
         if (!config.replyInterval) settings.save('replyInterval', 7) // init refresh interval to 7 secs if unset
     })
+
+    // Add listener to auto-disable Infinity Mode
+    if (document.hidden !== undefined) { // ...if Page Visibility API supported
+        document.addEventListener('visibilitychange', () => {
+            if (config.infinityMode) infinityMode.deactivate()
+    })}
 
     // Stylize toggle switch
     const switchStyle = document.createElement('style')
@@ -119,7 +125,7 @@
         const labelText = document.createTextNode(chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
             + chrome.i18n.getMessage('state_' + ( config.infinityMode ? 'enabled' : 'disabled' )))
         const input = document.createElement('input') ; input.id = 'infToggleInput'
-        input.type = 'checkbox' ; input.checked = config.infinityMode
+        input.type = 'checkbox' ; input.checked = config.infinityMode ; input.disabled = true
         const span = document.createElement('span') ; span.className = 'slider'
 
         // Append elements
@@ -133,33 +139,31 @@
     const infinityMode = {
 
         activate: async () => {
+            if (!infinityMode.fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
+            infinityMode.fromMsg = false
             try { document.querySelector('nav a').click() } catch (error) { return }
-            if (!infinityMode.fromSync && !infinityMode.fromMenu) // notify if not triggered by extension-sync or menu-click
-                notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
-            infinityMode.fromSync = false, infinityMode.fromMenu = false
             setTimeout(() => {
                 chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
-                                                            + '. don\'t type anything else') }, 500)
-            infinityMode.sent = true ; settings.save('infinityMode', true) ; await chatgpt.isIdle()
-            if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
+                                                            + '. don\'t type anything else') }, 500)            
+            config.infinityMode = true ; await chatgpt.isIdle()
+            if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
-            }
         },
 
         continue: async () => {
             chatgpt.send('do it again')
             if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(error) {}
             await chatgpt.isIdle() // before starting delay till next iteration
-            if (infinityMode.isActive) infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
+            if (infinityMode.isActive) // replace timer
+                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
         },
 
         deactivate: () => {
-            chatgpt.stop()
-            if (infinityMode.sent && !infinityMode.fromSync && !infinityMode.fromMenu)
-                notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': OFF')
-            clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; infinityMode.sent = null
-            infinityMode.fromSync = false ; infinityMode.fromMenu = false
-            settings.save('infinityMode', false)
+            if (!infinityMode.fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': OFF')
+            infinityMode.fromMsg = false
+            chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
+            document.querySelector('#infToggleInput').checked = false // for window listener
+            config.infinityMode = false // in case window listener toggled
         },
 
         toggle: () => { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
@@ -169,7 +173,7 @@
 
     restartOnReplyLang = () => { // eslint-disable-line no-undef
         settings.load('replyLanguage').then(() => {
-            chatgpt.stop() ; infinityMode.deactivate() ; setTimeout(infinityMode.activate, 500)
+            infinityMode.deactivate() ; setTimeout(infinityMode.activate, 500)
     })}
 
     restartOnReplyInt = () => { // eslint-disable-line no-undef
@@ -183,12 +187,7 @@
 
     syncExtension = () => { // eslint-disable-line no-undef
         settings.load(['extensionDisabled', 'toggleHidden', 'autoScrollDisabled', 'replyInterval', 'replyLanguage'])
-            .then(() => {
-                infinityMode.fromSync = true // set flag to prevent duplicate notifications
-                updateToggleHTML() // hide/show sidebar toggle based on newest setting
-                if (infinityMode.sent) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': OFF') // notify IM OFF state if running
-                infinityMode.deactivate() // disable IM
-                document.querySelector('#infToggleInput').checked = false // eslint-disable-line no-undef
+            .then(() => { updateToggleHTML() // hide/show sidebar toggle based on latest setting
     })}
 
 })()
