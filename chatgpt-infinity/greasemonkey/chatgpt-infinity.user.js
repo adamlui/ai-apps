@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.18.2
+// @version             2023.6.19
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -191,20 +191,25 @@
 
     document.head.appendChild(switchStyle)
 
-    // Create toggle label, add listener/classes/style/HTML
+    // Create toggle label, add styles//classes/listener/HTML
     var toggleLabel = document.createElement('div') // create label div
-    toggleLabel.addEventListener('click', () => {
-        var toggleInput = document.querySelector('#infinityToggle')
-        toggleInput.click() ; infinityMode.toggle()
-    })
+    toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
+    toggleLabel.style.margin = '2px 0' // add v-margins
+    toggleLabel.style.userSelect = 'none' // prevent highlighting
     for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
         if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
             toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
             navLink.parentNode.style.margin = '2px 0' // add v-margins
             break // stop looping since class assignment is done
     }}
-    toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
-    toggleLabel.style.margin = '2px 0' // add v-margins
+    toggleLabel.addEventListener('click', () => {
+        var toggleInput = document.querySelector('#infToggleInput')
+        toggleInput.checked = !toggleInput.checked
+        setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
+        config.infinityMode = toggleInput.checked
+        for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+        infinityMode.toggle()
+    })
     updateToggleHTML()
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
@@ -224,14 +229,14 @@
         // Add command to toggle Infinity Mode
         var imLabel = stateSymbol[+!config.infinityMode] + ' ' + messages.menuLabel_infinityMode + ' ∞ '
             + stateSeparator + stateWord[+!config.infinityMode]
-        menuIDs.push(GM_registerMenuCommand(imLabel, function() {
-            document.querySelector('#infinityToggle').click()
+        menuIDs.push(GM_registerMenuCommand(imLabel, () => {
+            document.querySelector('#infToggleLabel').click()
         }))
 
         // Add command to toggle visibility of toggle
         var tvLabel = stateSymbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
             + stateSeparator + stateWord[+config.toggleHidden]
-        menuIDs.push(GM_registerMenuCommand(tvLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             notify(messages.menuLabel_toggleVis + ': '+ stateWord[+config.toggleHidden])
@@ -241,7 +246,7 @@
         // Add command to toggle auto-scroll
         var asLabel = stateSymbol[+config.autoScrollDisabled] + ' ' + messages.menuLabel_autoScroll
             + stateSeparator + stateWord[+config.autoScrollDisabled]
-        menuIDs.push(GM_registerMenuCommand(asLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(asLabel, () => {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
             notify(messages.menuLabel_autoScroll + ': '+ stateWord[+config.autoScrollDisabled])
             for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
@@ -314,7 +319,7 @@
                 var data = response.responseText
                 saveSetting('lastCheckTime', Date.now())
 
-                // Compare versions                
+                // Compare versions
                 var latestVer = data.match(/@version +(.*)/)[1]
                 if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
@@ -359,10 +364,10 @@
         // Create elements
         const navicon = document.createElement('img') ; navicon.width = 18
         navicon.src = 'https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/white/icon64.png'
-        const label = document.createElement('label') ; label.className = 'switch'
+        const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'infToggleLabel'
         const labelText = document.createTextNode(messages.menuLabel_infinityMode + ' '
             + messages['state_' + ( config.infinityMode ? 'enabled' : 'disabled' )])
-        const input = document.createElement('input') ; input.id = 'infinityToggle'
+        const input = document.createElement('input') ; input.id = 'infToggleInput'
         input.type = 'checkbox' ; input.checked = config.infinityMode
         const span = document.createElement('span') ; span.className = 'slider'
 
@@ -380,7 +385,7 @@
             notify(messages.menuLabel_infinityMode + ': ON')
             try { document.querySelector('nav a').click() } catch (error) { return }
             setTimeout(function() {
-                chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : ''  )
+                chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                                                             + '. don\'t type anything else') }, 500)
             infinityMode.sent = true ; await chatgpt.isIdle()
             if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
@@ -392,19 +397,16 @@
             chatgpt.send('do it again')
             if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(error) {}
             await chatgpt.isIdle() // before starting delay till next iteration
-            if (infinityMode.isActive) infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
+            if (infinityMode.isActive) // replace timer
+                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
         },
 
         deactivate: function() {
-            clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null, infinityMode.sent = null
+            clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; infinityMode.sent = null
             notify(messages.menuLabel_infinityMode + ': OFF')
         },
 
         toggle: async function() {
-            var toggleInput = document.querySelector('#infinityToggle')
-            setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
-            config.infinityMode = toggleInput.checked
-            for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
             chatgpt.stop()
             if (config.infinityMode && !infinityMode.sent) infinityMode.activate()
             else if (!config.infinityMode && infinityMode.sent) infinityMode.deactivate()
