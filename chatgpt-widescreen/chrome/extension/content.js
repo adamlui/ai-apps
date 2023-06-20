@@ -51,7 +51,7 @@
     // Create wide screen style
     var wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for toggleMode()
-    wideScreenStyle.innerText = '.text-base { max-width: 93% !important } '
+    wideScreenStyle.innerText = '.text-base, main > div > div > div > div > div { max-width: 93% !important } '
         + 'div' + classListToCSS(mainDivClasses) + '{ width: 100px }' // prevent sidebar shrinking when zoomed
 
     // Create full-window style
