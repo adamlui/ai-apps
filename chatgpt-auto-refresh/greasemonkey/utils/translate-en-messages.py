@@ -45,7 +45,8 @@ for root, dirs, files in os.walk(locales_dir):
     for folder in dirs:
         folder_path = os.path.join(root, folder)
         msgs_path = os.path.join(folder_path, 'messages.json')
-        if os.path.exists(msgs_path) and folder not in output_langs : output_langs.append(folder)
+        if os.path.exists(msgs_path) and folder.replace('_', '-') not in output_langs : output_langs.append(folder)
+output_langs.sort() # alphabetize languages
 
 # Create/update/translate [[output_langs]/messages.json]
 langs_added, langs_skipped, langs_translated, langs_not_translated = [], [], [], []
