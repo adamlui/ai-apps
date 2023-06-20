@@ -17,8 +17,9 @@ module.exports  = {
         'no-empty': 'off', // allow empty blocks
         'no-useless-escape': 'off' // allow all escape chars cause ESLint sucks at detecting truly useless ones
     },
-    'globals': { '$': 'readonly', 'chatgpt': 'readonly', 'chrome': 'readonly', 'global_module': 'readonly', 'GM_cookie': 'readonly',
-                 'fullScreenButton': 'readonly', 'fullWindowButton': 'readonly', 'newChatButton': 'readonly', 'wideScreenButton': 'readonly' },
+    'globals': { '$': 'readonly', 'chatgpt': 'readonly', 'chrome': 'readonly', 'syncExtension': 'writable',
+                 'global_module': 'readonly', 'GM_cookie': 'readonly', 'fullScreenButton': 'readonly',
+                 'fullWindowButton': 'readonly', 'newChatButton': 'readonly', 'wideScreenButton': 'readonly' },
     'parserOptions': { 'ecmaVersion': 2022, 'sourceType': 'script' },
     'overrides': [{ 'files': ['**/lib*/**.js'], 'parserOptions': { 'sourceType': 'module' }}],
     'env': { 'browser': true, 'node': true, 'es6': true, 'greasemonkey': true }
