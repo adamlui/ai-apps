@@ -84,11 +84,11 @@
 
     // Monitor node changes to update button visibility + auto-toggle once
     var prevSessionChecked = false
-    var navObserver = new MutationObserver(([{ addedNodes, type }]) => {
+    var nodeObserver = new MutationObserver(([{ addedNodes, type }]) => {
         if (type === 'childList' && addedNodes.length) {
 
             // Restore previous session's state + manage toggles
-            settings.load(['wideScreen', 'fullWindow', 'fullerWindow', 'tcbDisabled', 'extensionDisabled']).then(function() {
+            settings.load(['wideScreen', 'fullWindow', 'fullerWindow', 'tcbDisabled', 'extensionDisabled']).then(() => {
                 if (!config.extensionDisabled) {                    
                     if (!prevSessionChecked) { // restore previous session's state
                         if (config.wideScreen) toggleMode('wideScreen', 'ON')
@@ -100,12 +100,12 @@
                 } prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
             })
 
-    }}) ; navObserver.observe(document.documentElement, { childList: true, subtree: true })
+    }}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Monitor scheme changes to update button colors
     var schemeObserver = new MutationObserver(([{ type, target }]) => {
         if (target === document.documentElement && type === 'attributes' && target.getAttribute('class'))
-            settings.load(['extensionDisabled']).then(function() {
+            settings.load(['extensionDisabled']).then(() => {
                 if (!config.extensionDisabled) {
                     buttonColor = setBtnColor()
                     updateBtnSVG('fullScreen') ; updateBtnSVG('fullWindow')
@@ -123,7 +123,7 @@
 
     // Add full screen listeners to update setting/button + set F11 flag
     window.addEventListener('resize', () => { // sync full screen settings/button
-        settings.load(['extensionDisabled']).then(function() {
+        settings.load(['extensionDisabled']).then(() => {
             if (!config.extensionDisabled) {
                 var fullScreenState = chatgpt.isFullScreen()
                 if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
@@ -282,7 +282,7 @@
                     try { document.head.removeChild(wideScreenStyle) } catch (error) {} updateBtnSVG('wideScreen', 'off')
         }}}
 
-        settings.load('notifHidden').then(function() {
+        settings.load('notifHidden').then(() => {
             if (!config.notifHidden) { // notify synced state
                 notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
         }})
@@ -316,7 +316,7 @@
 
     syncExtension = () => { // eslint-disable-line no-undef
         settings.load('extensionDisabled', 'fullerWindow', 'tcbDisabled', 'notifHidden') // sync toggle settings
-            .then(function() {
+            .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
                     try { document.head.removeChild(wideScreenStyle) } catch {}
                     try { document.head.removeChild(fullWindowStyle) ; chatgpt.sidebar.show() } catch {}
