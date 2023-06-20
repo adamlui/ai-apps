@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Ғайрифаъол (тавсеаи насбшуда)" },
   "prompt_updateReplyLang": { "message": "Забони ҷавобро навсозӣ кунед" },
   "prompt_updateReplyInt": { "message": "Фосилаи ҷавобро навсозӣ кунед (ҳадди аққал 5 сония)" },
+  "prompt_replyLangUpdated": { "message": "Забон навсозӣ шуд" },
+  "prompt_replyIntUpdated": { "message": "Фосила нав карда шуд" },
   "alert_willReplyIn": { "message": "Интерфейси ChatGPT беохир ҷавоб хоҳад дод" },
   "alert_yourSysLang": { "message": "забони системаи шумо" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity ҷавоб ҳар" },

@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "নিষ্ক্রিয় (এক্সটেনশন ইনস্টল করা হয়েছে)" },
   "prompt_updateReplyLang": { "message": "জবাব ভাষা আপডেট করুন" },
   "prompt_updateReplyInt": { "message": "জবাব ইন্টারভাল আপডেট করুন (সর্বনিম্ন ৫ সেকেন্ড)" },
+  "prompt_replyLangUpdated": { "message": "ভাষা আপডেট করা হয়েছে" },
+  "prompt_replyIntUpdated": { "message": "বিরতি আপডেট করা হয়েছে" },
   "alert_willReplyIn": { "message": "চ্যাটজিপিটি ইনফিনিটি উত্তর দেবে" },
   "alert_yourSysLang": { "message": "আপনার সিস্টেম ভাষা নির্বাচন করা হয়েছে" },
   "alert_willReplyEvery": { "message": "চ্যাটজিপিটি ইনফিনিটি প্রতি" },

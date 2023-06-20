@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Inaktiverad (tillägg installerat)" },
   "prompt_updateReplyLang": { "message": "Uppdatera svarsspråk" },
   "prompt_updateReplyInt": { "message": "Uppdatera svarsintervall (minst 5 sekunder)" },
+  "prompt_replyLangUpdated": { "message": "Språk uppdaterat" },
+  "prompt_replyIntUpdated": { "message": "Intervall uppdaterat" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity kommer att svara i" },
   "alert_yourSysLang": { "message": "systemspråk" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity kommer att svara varje" },

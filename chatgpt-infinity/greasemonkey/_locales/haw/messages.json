@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Hoʻopaʻa ʻia (kau ʻia ka hoʻonui)" },
   "prompt_updateReplyLang": { "message": "Hōʻano hou i ka ʻōlelo pane" },
   "prompt_updateReplyInt": { "message": "Hoʻohou i ka wā pane (ka liʻiliʻi he 5 kekona)" },
+  "prompt_replyLangUpdated": { "message": "Hōʻano hou ʻia ka ʻōlelo" },
+  "prompt_replyIntUpdated": { "message": "Hoʻonui ʻia ka wā waena" },
   "alert_willReplyIn": { "message": "E pane mai ʻo ChatGPT Infinity" },
   "alert_yourSysLang": { "message": "kāu ʻōlelo ʻōnaehana" },
   "alert_willReplyEvery": { "message": "E pane ʻo ChatGPT Infinity i kēlā me kēia" },

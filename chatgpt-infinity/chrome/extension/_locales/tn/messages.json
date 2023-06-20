@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Disable (extension installed)" },
   "prompt_updateReplyLang": { "message": "Ntshwafatsa puo ya go araba" },
   "prompt_updateReplyInt": { "message": "Ntshwafatsa sebaka sa go araba (bobotlana metsotswana e le 5)" },
+  "prompt_replyLangUpdated": { "message": "PUO E NTSHWAFATS" },
+  "prompt_replyIntUpdated": { "message": "Interval updated" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity e tlile go araba" },
   "alert_yourSysLang": { "message": "puo ya gago ya thulaganyo" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity e tlile go araba mongwe le mongwe" },

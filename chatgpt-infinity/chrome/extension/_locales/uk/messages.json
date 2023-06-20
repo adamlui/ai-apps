@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Вимкнено (розширення встановлено)" },
   "prompt_updateReplyLang": { "message": "Оновити мову відповіді" },
   "prompt_updateReplyInt": { "message": "Оновити інтервал відповіді (мінімум 5 секунд)" },
+  "prompt_replyLangUpdated": { "message": "Мову оновлено" },
+  "prompt_replyIntUpdated": { "message": "Інтервал оновлено" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity відповість через" },
   "alert_yourSysLang": { "message": "вашу системну мову" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity відповідатиме кожні" },

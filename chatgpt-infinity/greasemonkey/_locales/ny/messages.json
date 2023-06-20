@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Olemala (Extension anaikidwa)" },
   "prompt_updateReplyLang": { "message": "Sinthani Chilankhulo cha Yankho" },
   "prompt_updateReplyInt": { "message": "Sinthani kuyankha nthawi (osachepera 5 ma secs)" },
+  "prompt_replyLangUpdated": { "message": "Chilankhulo kusinthidwa" },
+  "prompt_replyIntUpdated": { "message": "Kusinthidwa kwa Interval" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity idzayankha mu" },
   "alert_yourSysLang": { "message": "chilankhulo chanu cha dongosolo" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity idzayankha aliyense" },

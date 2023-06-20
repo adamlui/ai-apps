@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Uitgeschakeld (extensie geïnstalleerd)" },
   "prompt_updateReplyLang": { "message": "Antwoordtaal bijwerken" },
   "prompt_updateReplyInt": { "message": "Antwoordinterval bijwerken (minimaal 5 seconden)" },
+  "prompt_replyLangUpdated": { "message": "taalbestand bijgewerkt" },
+  "prompt_replyIntUpdated": { "message": "Interval bijgewerkt" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity zal antwoorden in" },
   "alert_yourSysLang": { "message": "uw systeemtaal" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity zal antwoorden om de" },

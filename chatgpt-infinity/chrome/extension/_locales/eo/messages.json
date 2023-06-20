@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Malŝaltita (etendaĵo instalita)" },
   "prompt_updateReplyLang": { "message": "Ĝisdatigu responda lingvo" },
   "prompt_updateReplyInt": { "message": "Ĝisdatigu responda intervalo (minimume 5 sekundoj)" },
+  "prompt_replyLangUpdated": { "message": "Lingvo ĝisdatigita" },
+  "prompt_replyIntUpdated": { "message": "Intervalo ĝisdatigita" },
   "alert_willReplyIn": { "message": "ChatGPT Infinito respondos en" },
   "alert_yourSysLang": { "message": "vian sisteman lingvon" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinito respondos ĉiujn" },

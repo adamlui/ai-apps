@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Cuir à comas (leudachan stàlaichte)" },
   "prompt_updateReplyLang": { "message": "Ùraich an cànan freagairt" },
   "prompt_updateReplyInt": { "message": "Ùraich an t - eadar - ama freagairt (5 diogan air a 'char as lugha)" },
+  "prompt_replyLangUpdated": { "message": "Cànan air ùrachadh" },
+  "prompt_replyIntUpdated": { "message": "An t - eatramh air ùrachadh" },
   "alert_willReplyIn": { "message": "Bidh ChatGPT Infinity a 'freagairt a - steach" },
   "alert_yourSysLang": { "message": "cànan an t - siostaim agad" },
   "alert_willReplyEvery": { "message": "Bidh ChatGPT Infinity a 'freagairt a h - uile duine" },

@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Lē atoatoa le malosi (Extended faapipiiina)" },
   "prompt_updateReplyLang": { "message": "Fa'afouga o le Gagana Tali" },
   "prompt_updateReplyInt": { "message": "Taimi o le tali (itiiti ifo i le 5 sec)" },
+  "prompt_replyLangUpdated": { "message": "Fa'afouina le Gagana" },
+  "prompt_replyIntUpdated": { "message": "Fa'afouga o le vaitaimi" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity o le a tali atu i totonu" },
   "alert_yourSysLang": { "message": "o le gagana o lau 'upega tafaʻilagi" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity o le a taliina uma" },

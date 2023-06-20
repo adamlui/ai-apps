@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Akaremara (kuwedzera yakaiswa)" },
   "prompt_updateReplyLang": { "message": "Kuvandudza mutauro wekupindura" },
   "prompt_updateReplyInt": { "message": "Kuvandudza nguva yekupindura (zvishoma 5 secs)" },
+  "prompt_replyLangUpdated": { "message": "Mutauro wakagadziridzwa" },
+  "prompt_replyIntUpdated": { "message": "ZVIMWE ZVAKAITIKA" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity ichapindura mukati" },
   "alert_yourSysLang": { "message": "mutauro wako" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity ichapindura zvese" },

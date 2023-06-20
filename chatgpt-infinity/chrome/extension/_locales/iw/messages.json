@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "מנוטרל (הרחבה מותקנת)" },
   "prompt_updateReplyLang": { "message": "עדכן שפת תגובה" },
   "prompt_updateReplyInt": { "message": "עדכן מרווח זמן לתגובה (מינימום 5 שניות)" },
+  "prompt_replyLangUpdated": { "message": "השפה עודכנה" },
+  "prompt_replyIntUpdated": { "message": "מרווח עודכן" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity יענה בעוד" },
   "alert_yourSysLang": { "message": "שפת המערכת שלך" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity יענה כל" },

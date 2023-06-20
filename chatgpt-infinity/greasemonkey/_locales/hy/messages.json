@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Անջատված է (երկարաձգումը տեղադրված է)" },
   "prompt_updateReplyLang": { "message": "Թարմացնել պատասխանի լեզուն" },
   "prompt_updateReplyInt": { "message": "Թարմացնել պատասխանների միջակայքը (նվազագույնը 5 վրկ)" },
+  "prompt_replyLangUpdated": { "message": "Լեզուն թարմացվել է" },
+  "prompt_replyIntUpdated": { "message": "Ինտերվալը թարմացվել է" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity - ը կպատասխանի անգլերեն լեզվով" },
   "alert_yourSysLang": { "message": "համակարգի լեզուն" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity - ը կպատասխանի ամեն օր" },

@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "డిసేబుల్ చేయబడింది (పొడిగింపు ఇన్స్టాల్ చేయబడింది)" },
   "prompt_updateReplyLang": { "message": "ప్రత్యుత్తరం భాషను అప్ ‌ డేట్ చేయండి" },
   "prompt_updateReplyInt": { "message": "ప్రతిస్పందన వ్యవధిని అప్ ‌ డేట్ చేయండి (కనీస 5 సెకన్లు)" },
+  "prompt_replyLangUpdated": { "message": "భాష అప్ ‌ డేట్ చేయబడింది" },
+  "prompt_replyIntUpdated": { "message": "విరామం అప్ ‌ డేట్ చేయబడింది" },
   "alert_willReplyIn": { "message": "చాట్GPT ఇన్ఫినిటీ లో ప్రత్యుత్తరం ఇస్తుంది" },
   "alert_yourSysLang": { "message": "మీ సిస్టమ్ భాష" },
   "alert_willReplyEvery": { "message": "చాట్GPT ఇన్ఫినిటీ ప్రతిదానికి ప్రత్యుత్తరం ఇస్తుంది" },

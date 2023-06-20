@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Analluogwyd (estyniad wedi'i osod)" },
   "prompt_updateReplyLang": { "message": "Diweddaru'r iaith ymateb" },
   "prompt_updateReplyInt": { "message": "Ysbaid ateb diweddaru (lleiafswm 5 eiliad)" },
+  "prompt_replyLangUpdated": { "message": "Diweddarwyd yr iaith" },
+  "prompt_replyIntUpdated": { "message": "Cyfnod wedi'i ddiweddaru" },
   "alert_willReplyIn": { "message": "Bydd ChatGPT Infinity yn ateb yn" },
   "alert_yourSysLang": { "message": "Iaith y System" },
   "alert_willReplyEvery": { "message": "Bydd ChatGPT Infinity yn ateb pob" },

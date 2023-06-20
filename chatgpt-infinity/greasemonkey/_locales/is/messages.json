@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Óvirkt (viðbót uppsett)" },
   "prompt_updateReplyLang": { "message": "Uppfæra tungumál svars" },
   "prompt_updateReplyInt": { "message": "Uppfæra svarbil (að lágmarki 5 sek.)" },
+  "prompt_replyLangUpdated": { "message": "Tungumál uppfært" },
+  "prompt_replyIntUpdated": { "message": "Millibil uppfært" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity mun svara í" },
   "alert_yourSysLang": { "message": "tungumál kerfisins" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity mun svara á hverjum degi" },

@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Keelatud (laiend installitud)" },
   "prompt_updateReplyLang": { "message": "Uuenda vastuse keelt" },
   "prompt_updateReplyInt": { "message": "Uuenda vastamisintervalli (vähemalt 5 sekundit)" },
+  "prompt_replyLangUpdated": { "message": "Keel uuendatud" },
+  "prompt_replyIntUpdated": { "message": "Intervall uuendatud" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity vastab" },
   "alert_yourSysLang": { "message": "teie süsteemikeel" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity vastab iga" },

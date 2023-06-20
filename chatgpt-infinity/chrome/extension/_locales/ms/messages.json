@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Dilumpuhkan (sambungan dipasang)" },
   "prompt_updateReplyLang": { "message": "Kemas kini bahasa balasan" },
   "prompt_updateReplyInt": { "message": "Kemas kini selang jawapan (minimum 5 saat)" },
+  "prompt_replyLangUpdated": { "message": "Bahasa dikemas kini" },
+  "prompt_replyIntUpdated": { "message": "Selang masa dikemas kini" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity akan membalas dalam" },
   "alert_yourSysLang": { "message": "Bahasa Sistem" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity akan membalas setiap" },

@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Devre dışı (uzantı yüklü)" },
   "prompt_updateReplyLang": { "message": "Cevap dili güncelle" },
   "prompt_updateReplyInt": { "message": "Cevap aralığını güncelle (minimum 5 saniye)" },
+  "prompt_replyLangUpdated": { "message": "Dil güncelleme." },
+  "prompt_replyIntUpdated": { "message": "Aralık güncellendi" },
   "alert_willReplyIn": { "message": "ChatGPT Sonsuzluk şu sürede cevap verecek:" },
   "alert_yourSysLang": { "message": "sistem diliniz" },
   "alert_willReplyEvery": { "message": "ChatGPT Sonsuzluk her şu sürede cevap verecek:" },

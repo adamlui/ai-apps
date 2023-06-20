@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Vô hiệu hóa (tiện ích đã được cài đặt)" },
   "prompt_updateReplyLang": { "message": "Cập nhật ngôn ngữ trả lời" },
   "prompt_updateReplyInt": { "message": "Cập nhật khoảng cách trả lời (tối thiểu 5 giây)" },
+  "prompt_replyLangUpdated": { "message": "Đã cập nhật ngôn ngữ" },
+  "prompt_replyIntUpdated": { "message": "Đã cập nhật khoảng thời gian" },
   "alert_willReplyIn": { "message": "ChatGPT Vô tận sẽ trả lời trong" },
   "alert_yourSysLang": { "message": "ngôn ngữ hệ thống của bạn" },
   "alert_willReplyEvery": { "message": "ChatGPT Vô tận sẽ trả lời mỗi" },

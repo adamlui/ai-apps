@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Тохиргоо (Дэмжлэг)" },
   "prompt_updateReplyLang": { "message": "Шинэчлэх" },
   "prompt_updateReplyInt": { "message": "Сэтгэгдэл (5)" },
+  "prompt_replyLangUpdated": { "message": "Шинэчилсэн шинэчлэлт" },
+  "prompt_replyIntUpdated": { "message": "Шинэчилсэн шинэчилсэн" },
   "alert_willReplyIn": { "message": "WhatsApp онлайн чат!" },
   "alert_yourSysLang": { "message": "Системийн Хэл" },
   "alert_willReplyEvery": { "message": "WhatsApp онлайн чат!" },

@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "ปิดใช้งาน (ติดตั้งส่วนเสริมแล้ว)" },
   "prompt_updateReplyLang": { "message": "อัปเดตภาษาตอบกลับ" },
   "prompt_updateReplyInt": { "message": "อัปเดตช่วงเวลาตอบกลับ (ขั้นต่ำ 5 วินาที)" },
+  "prompt_replyLangUpdated": { "message": "อัปเดตภาษาแล้ว" },
+  "prompt_replyIntUpdated": { "message": "อัพเดทช่วงเวลาแล้ว" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity จะตอบกลับใน" },
   "alert_yourSysLang": { "message": "ภาษาระบบของคุณ" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity จะตอบกลับทุกๆ" },

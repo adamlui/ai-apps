@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Khubaza (isandiso sifakiwe)" },
   "prompt_updateReplyLang": { "message": "Buyekeza ulimi lokuphendula" },
   "prompt_updateReplyInt": { "message": "Buyekeza isikhathi sokuphendula (okungenani imizuzwana engu-5)" },
+  "prompt_replyLangUpdated": { "message": "Ulimi lubuyekeziwe" },
+  "prompt_replyIntUpdated": { "message": "Isikhala sibuyekeziwe" },
   "alert_willReplyIn": { "message": "I-ChatGPT Infinity izophendula" },
   "alert_yourSysLang": { "message": "uhlelo lwakho lolimi" },
   "alert_willReplyEvery": { "message": "I-ChatGPT Infinity izophendula njalo" },

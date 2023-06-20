@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Deaktivert (utvidelse installert)" },
   "prompt_updateReplyLang": { "message": "Oppdater svarspråk" },
   "prompt_updateReplyInt": { "message": "Oppdater svarintervall (minimum 5 sekunder)" },
+  "prompt_replyLangUpdated": { "message": "Språket er oppdatert" },
+  "prompt_replyIntUpdated": { "message": "Intervall oppdatert" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity vil svare om" },
   "alert_yourSysLang": { "message": "ditt systemspråk" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity vil svare hver" },

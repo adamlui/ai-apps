@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Onemogočeno (razširitev nameščena)" },
   "prompt_updateReplyLang": { "message": "Posodobi jezik odgovora" },
   "prompt_updateReplyInt": { "message": "Posodobi interval odgovora (najmanj 5 sekund)" },
+  "prompt_replyLangUpdated": { "message": "Jezik posodobljen" },
+  "prompt_replyIntUpdated": { "message": "Interval je posodobljen" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity bo odgovoril v" },
   "alert_yourSysLang": { "message": "vaš sistemski jezik" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity bo odgovoril vsak" },

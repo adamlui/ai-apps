@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Andikape (ekstansyon enstale)" },
   "prompt_updateReplyLang": { "message": "MIZAJOU REPONS LANG" },
   "prompt_updateReplyInt": { "message": "Mizajou entèval repons (minimòm 5 secs)" },
+  "prompt_replyLangUpdated": { "message": "Lang mete ajou" },
+  "prompt_replyIntUpdated": { "message": "Entèval mete ajou" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity ap reponn nan" },
   "alert_yourSysLang": { "message": "lang sistèm ou/votre langue système" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity ap reponn chak" },

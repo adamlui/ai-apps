@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Diżattivat (estensjoni installata)" },
   "prompt_updateReplyLang": { "message": "Aġġorna l-lingwa tat-tweġibiet" },
   "prompt_updateReplyInt": { "message": "Aġġorna l-intervall tat-tweġiba (minimu ta' 5 sekondi)" },
+  "prompt_replyLangUpdated": { "message": "Il-lingwa ġiet aġġornata" },
+  "prompt_replyIntUpdated": { "message": "L-intervall ġie aġġornat" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity se jwieġeb fil" },
   "alert_yourSysLang": { "message": "il-lingwa tas-sistema tiegħek" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity se jwieġeb kull" },

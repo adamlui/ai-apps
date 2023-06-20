@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "ནུས་མེད་བཀྲམ་གཏང་། (_F)" },
   "prompt_updateReplyLang": { "message": "ངོ་འཕྲད་གསརཔ་ཅིག་ གསར་བསྐྲུན་འབད།" },
   "prompt_updateReplyInt": { "message": "དུས་ཡུན་ཚུ། (0)" },
+  "prompt_replyLangUpdated": { "message": "སྐད་ཡིག་གི་ཡིག་སྣོད་ཚུ་" },
+  "prompt_replyIntUpdated": { "message": "དུས་མཐུན་བཟོ་ནི།" },
   "alert_willReplyIn": { "message": "ཨེསི་ཨེསི་ཨེསི་ཨེལ་ཨར་སི་" },
   "alert_yourSysLang": { "message": "རང་བཞིན་གླིང་གི་རྒྱབ་དོན།" },
   "alert_willReplyEvery": { "message": "ཨའི་ཌི་ཨར་ཨར་སི་གི་གློག་འཕྲིན་དོན་" },

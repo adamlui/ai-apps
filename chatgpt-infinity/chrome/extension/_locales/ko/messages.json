@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "비활성화됨 (확장이 설치됨)" },
   "prompt_updateReplyLang": { "message": "응답 언어 업데이트" },
   "prompt_updateReplyInt": { "message": "응답 간격 업데이트 (최소 5초)" },
+  "prompt_replyLangUpdated": { "message": "언어 업데이트됨" },
+  "prompt_replyIntUpdated": { "message": "간격 업데이트됨" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity에서 응답이 될 것입니다." },
   "alert_yourSysLang": { "message": "귀하의 시스템 언어" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity에서 응답이 될 것입니다." },

@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Деактивирано (разширението е инсталирано)" },
   "prompt_updateReplyLang": { "message": "Актуализиране на езика за отговор" },
   "prompt_updateReplyInt": { "message": "Актуализиране на интервала за отговор (минимум 5 секунди)" },
+  "prompt_replyLangUpdated": { "message": "{  } езикът е актуализиран" },
+  "prompt_replyIntUpdated": { "message": "Интервалът е актуализиран" },
   "alert_willReplyIn": { "message": "ЧатДжиПиТи Инфинити ще отговори в" },
   "alert_yourSysLang": { "message": "вашето системно езиково настройки" },
   "alert_willReplyEvery": { "message": "ЧатДжиПиТи Инфинити ще отговаря на всеки" },

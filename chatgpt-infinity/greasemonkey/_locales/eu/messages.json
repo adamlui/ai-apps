@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Desgaituta (luzapena instalatuta)" },
   "prompt_updateReplyLang": { "message": "Eguneratu erantzunen hizkuntza" },
   "prompt_updateReplyInt": { "message": "Eguneratu erantzun-tartea (gutxienez 5 segundo)" },
+  "prompt_replyLangUpdated": { "message": "Hizkuntza eguneratua" },
+  "prompt_replyIntUpdated": { "message": "Tarte eguneratua" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity-k erantzungo du" },
   "alert_yourSysLang": { "message": "Sistemaren hizkuntza" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity-k behin erantzungo du" },

@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Xët yi lëkkalook wii (ñiiñ)" },
   "prompt_updateReplyLang": { "message": "Xët yi lëkkalook wii \"'Langue réponse\"'" },
   "prompt_updateReplyInt": { "message": "Xët yi lëkkalook wii \"'Specialised Applications\"'" },
+  "prompt_replyLangUpdated": { "message": "Làkk bu njëkk biModifier" },
+  "prompt_replyIntUpdated": { "message": "Xët yi lëkkalook wii" },
   "alert_willReplyIn": { "message": "Xët yi lëkkalook wii \"Infinity\" dina tontu ci" },
   "alert_yourSysLang": { "message": "sa langue sistema" },
   "alert_willReplyEvery": { "message": "Xët yi lëkkalook wii \"'Infinity\"'" },

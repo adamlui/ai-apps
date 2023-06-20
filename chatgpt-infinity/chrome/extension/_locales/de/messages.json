@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Deaktiviert (Erweiterung installiert)" },
   "prompt_updateReplyLang": { "message": "Antwortsprache aktualisieren" },
   "prompt_updateReplyInt": { "message": "Antwortintervall aktualisieren (mindestens 5 Sekunden)" },
+  "prompt_replyLangUpdated": { "message": "Sprache aktualisiert" },
+  "prompt_replyIntUpdated": { "message": "Intervall aktualisiert" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity wird in" },
   "alert_yourSysLang": { "message": "Ihr Systemsprache" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity wird alle" },

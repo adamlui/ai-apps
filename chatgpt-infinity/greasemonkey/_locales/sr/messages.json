@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Искључено (прикључак је инсталиран)" },
   "prompt_updateReplyLang": { "message": "Ажурирај језик одговора" },
   "prompt_updateReplyInt": { "message": "Ажурирај интервал одговора (минимум 5 секунди)" },
+  "prompt_replyLangUpdated": { "message": "Jezik je ažuriran" },
+  "prompt_replyIntUpdated": { "message": "Interval je ažuriran" },
   "alert_willReplyIn": { "message": "ЧатГПТ Бескрај ће одговорити за" },
   "alert_yourSysLang": { "message": "ваш језик система" },
   "alert_willReplyEvery": { "message": "ЧатГПТ Бескрај ће одговорити сваких" },

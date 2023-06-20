@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Yettwakkes (asiγzef yebna)" },
   "prompt_updateReplyLang": { "message": "Leqqem tutlayt n tririt" },
   "prompt_updateReplyInt": { "message": "Leqqem agrudem n tririt (meẓẓi 5 n tsinin)" },
+  "prompt_replyLangUpdated": { "message": "Tutlayt tettwaleqqem" },
+  "prompt_replyIntUpdated": { "message": "Talγut tettwaleqqem" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity ad d-yerr deg" },
   "alert_yourSysLang": { "message": "Tutlayt tanagrawant" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity ad yerr yal" },

@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Gestremde (uitbreiding geïnstalleer)" },
   "prompt_updateReplyLang": { "message": "Dateer antwoordtaal op" },
   "prompt_updateReplyInt": { "message": "Dateer antwoordinterval op (minimum 5 sekondes)" },
+  "prompt_replyLangUpdated": { "message": "Taal opgedateer" },
+  "prompt_replyIntUpdated": { "message": "Interval opgedateer" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity sal antwoord in" },
   "alert_yourSysLang": { "message": "jou stelsel taal" },
   "alert_willReplyEvery": { "message": "ChatGPT Oneindigheid sal elke antwoord" },

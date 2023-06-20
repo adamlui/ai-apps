@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Nonaktifkan (ekstensi diinstal)" },
   "prompt_updateReplyLang": { "message": "Perbarui bahasa balasan" },
   "prompt_updateReplyInt": { "message": "Perbarui interval balasan (minimum 5 detik)" },
+  "prompt_replyLangUpdated": { "message": "Language updated" },
+  "prompt_replyIntUpdated": { "message": "Interval updated" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity akan menjawab dalam" },
   "alert_yourSysLang": { "message": "bahasa sistem Anda" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity akan menjawab setiap" },

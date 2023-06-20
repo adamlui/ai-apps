@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Wyłączone (rozszerzenie zainstalowane)" },
   "prompt_updateReplyLang": { "message": "Zaktualizuj język odpowiedzi" },
   "prompt_updateReplyInt": { "message": "Zaktualizuj interwał odpowiedzi (minimum 5 sekund)" },
+  "prompt_replyLangUpdated": { "message": "Język został zaktualizowany." },
+  "prompt_replyIntUpdated": { "message": "Zaktualizowano interwał" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity odpowie za" },
   "alert_yourSysLang": { "message": "twój język systemowy" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity będzie odpowiadał co" },

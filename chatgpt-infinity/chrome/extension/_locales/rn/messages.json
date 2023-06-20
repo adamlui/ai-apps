@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Narumugaiye (extension)" },
   "prompt_updateReplyLang": { "message": "Update Ashura Ururimi" },
   "prompt_updateReplyInt": { "message": "Asobi ni Iku yo (5 secs)" },
+  "prompt_replyLangUpdated": { "message": "Ururimi Updated" },
+  "prompt_replyIntUpdated": { "message": "Interval None None updated" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity igiye kwishura mu" },
   "alert_yourSysLang": { "message": "sisitemu y'ururimi rwawe" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity izokwishura buri musi" },

@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "A yeke na lege ti kode ti fango tënë ti mbeni zo so ayeke na yâ ti mbeni kete" },
   "prompt_updateReplyLang": { "message": "Tënë ti yanga ti kodoro niModifier" },
   "prompt_updateReplyInt": { "message": "A yeke kiri na peko ti tënë ni na ngoi so a yeke kiri na peko ti tënë ni (minimum 5 secs)" },
+  "prompt_replyLangUpdated": { "message": "Yanga ti awambongi ti kodoro" },
+  "prompt_replyIntUpdated": { "message": "Nduru tënëModifier" },
   "alert_willReplyIn": { "message": "A yeke na lege ti Infinity si a yeke kiri tënë na ni" },
   "alert_yourSysLang": { "message": "yanga ti awambongi ti mo" },
   "alert_willReplyEvery": { "message": "L 'infinix ayeke kiri tënë na zo oko oko" },

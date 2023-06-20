@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Disable (long long int)" },
   "prompt_updateReplyLang": { "message": "Toksave long tokples" },
   "prompt_updateReplyInt": { "message": "Tok tok tok tok (minimum 5 secs)" },
+  "prompt_replyLangUpdated": { "message": "Toktok i go long Tok Pisin" },
+  "prompt_replyIntUpdated": { "message": "Pasin bilong tanim bel i go pinis" },
   "alert_willReplyIn": { "message": "PNG Infinity bai bekim tok" },
   "alert_yourSysLang": { "message": "tokples bilong yu" },
   "alert_willReplyEvery": { "message": "Tok Pisin tpi-000 bai bekim olgeta tok" },

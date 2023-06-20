@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन स्थापित)" },
   "prompt_updateReplyLang": { "message": "उत्तर भाषा अद्यतनित करा" },
   "prompt_updateReplyInt": { "message": "उत्तर अंतराल अद्यतनित करा (किमान 5 सेकंद)" },
+  "prompt_replyLangUpdated": { "message": "भाषा अपडेट केली" },
+  "prompt_replyIntUpdated": { "message": "मध्यांतर अपडेट केले" },
   "alert_willReplyIn": { "message": "चॅटजीपीटी अमर्त्यु येणार आहे" },
   "alert_yourSysLang": { "message": "आपली प्रणाली भाषा" },
   "alert_willReplyEvery": { "message": "चॅटजीपीटी अमर्त्यु प्रत्येक वेळी उत्तर देणार आहे" },

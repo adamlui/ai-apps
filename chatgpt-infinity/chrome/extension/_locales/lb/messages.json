@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Deaktivéiert (Extensioun installéiert)" },
   "prompt_updateReplyLang": { "message": "Äntwertsprooch aktualiséieren" },
   "prompt_updateReplyInt": { "message": "Aktualiséieren d'Äntwertintervall (op d'mannst 5 Sekonnen)" },
+  "prompt_replyLangUpdated": { "message": "Sprooch aktualiséiert" },
+  "prompt_replyIntUpdated": { "message": "Interval aktualiséiert" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity ass" },
   "alert_yourSysLang": { "message": "är Systemsprooch" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity hat alle Antworten" },

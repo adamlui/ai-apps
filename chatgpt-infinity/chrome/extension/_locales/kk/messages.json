@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Өшірілген (кеңейтім орнатылған)" },
   "prompt_updateReplyLang": { "message": "Жауап беру тілін жаңарту" },
   "prompt_updateReplyInt": { "message": "Жауап беру арақатынасын жаңарту (ең аз 5 сек)" },
+  "prompt_replyLangUpdated": { "message": "Тіл жаңартылды" },
+  "prompt_replyIntUpdated": { "message": "Аралық жаңартылды" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity жауап береді" },
   "alert_yourSysLang": { "message": "Жүйенің тілі" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity әрбір жауап береді" },

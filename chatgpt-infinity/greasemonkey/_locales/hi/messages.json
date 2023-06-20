@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन इंस्टॉल हुआ है)" },
   "prompt_updateReplyLang": { "message": "जवाब भाषा अपडेट करें" },
   "prompt_updateReplyInt": { "message": "जवाब अंतराल अपडेट करें (न्यूनतम 5 सेकंड)" },
+  "prompt_replyLangUpdated": { "message": "भाषा अपडेट की गई" },
+  "prompt_replyIntUpdated": { "message": "अंतराल अपडेट किया गया" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity जवाब देगा" },
   "alert_yourSysLang": { "message": "आपकी सिस्टम भाषा" },
   "alert_willReplyEvery": { "message": "ChatGPT Infinity हर" },

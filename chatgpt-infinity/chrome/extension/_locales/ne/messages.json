@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "अक्षम पारियो (विस्तार स्थापना गरियो)" },
   "prompt_updateReplyLang": { "message": "जवाफ भाषा अद्यावधिक गर्नुहोस्" },
   "prompt_updateReplyInt": { "message": "जवाफ अन्तराल अद्यावधिक गर्नुहोस् (न्यूनतम ५ सेकेन्ड)" },
+  "prompt_replyLangUpdated": { "message": "भाषा अद्यावधिक गरियो" },
+  "prompt_replyIntUpdated": { "message": "अन्तराल अद्यावधिक गरियो" },
   "alert_willReplyIn": { "message": "ChatGPT Infinity ले यसमा जवाफ दिनेछ" },
   "alert_yourSysLang": { "message": "तपाईंको प्रणाली भाषा" },
   "alert_willReplyEvery": { "message": "ChatGPT अनन्तता हरेक जवाफ हुनेछ" },

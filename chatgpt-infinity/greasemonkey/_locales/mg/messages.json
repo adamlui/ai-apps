@@ -10,6 +10,8 @@
   "menuLabel_disabled": { "message": "Famaritana (sanda)" },
   "prompt_updateReplyLang": { "message": "Hanova ny teny fanalahidy" },
   "prompt_updateReplyInt": { "message": "Valiny (5)" },
+  "prompt_replyLangUpdated": { "message": "Teny vaovao" },
+  "prompt_replyIntUpdated": { "message": "Interformed" },
   "alert_willReplyIn": { "message": "Hiditra ao amin'ny Chat" },
   "alert_yourSysLang": { "message": "ampidiro ny fiteninao" },
   "alert_willReplyEvery": { "message": "Ny fanontaniana rehetra dia ho azo antoka" },
