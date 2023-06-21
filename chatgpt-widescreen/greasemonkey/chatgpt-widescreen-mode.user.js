@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.20.2
+// @version             2023.6.20.3
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -172,8 +172,9 @@
             if (!prevSessionChecked) {
                 if (config.wideScreen) toggleMode('wideScreen', 'ON')
                 if (config.fullWindow) { toggleMode('fullWindow', 'ON')
-                    notify( // since syncMode('fullWindow') from sidebar observer doesn't trigger
-                        messages.mode_fullWindow + ' ON') }
+                    // Also sync/notify since sidebar observer's syncMode('fullWindow') doesn't trigger
+                    syncFullerWindows(true) ; notify(messages.mode_fullWindow + ' ON')
+                }
                 if (config.tcbDisabled) updateTweaksStyle()
                 prevSessionChecked = true
             }
@@ -218,6 +219,7 @@
             + stateSeparator + stateWord[+!config.fullerWindows]
         menuIDs.push(GM_registerMenuCommand(fwLabel, () => {
             saveSetting('fullerWindows', !config.fullerWindows)
+            syncFullerWindows(config.fullerWindows) // live update on click
             if (!config.notifHidden) {
                 notify(`${ messages.menuLabel_fullerWins }: ${ stateWord[+!config.fullerWindows] }`)
             } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -447,27 +449,25 @@
         }
     }
 
-    function syncMode(mode) {
+    function syncMode(mode) { // setting + icon + tooltip
         const state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
-                    : mode === 'fullWindow' ? chatgpt.sidebar.isOff()
-                                            : chatgpt.isFullScreen() )
+                      : mode === 'fullWindow' ? chatgpt.sidebar.isOff()
+                                              : chatgpt.isFullScreen() )
         saveSetting(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
-
-        // Handle fuller window & OpenAI toggle
-        if (mode === 'fullWindow') {
-            if (state && config.fullerWindows && !config.wideScreen) { // activate fuller window
-                document.head.appendChild(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
-            } else if (!state) {
-                try { document.head.removeChild(fullWindowStyle) } catch (error) {} // remove style too so sidebar shows
-                if (!config.wideScreen) { // disable widescreen if result of fuller window
-                    try { document.head.removeChild(wideScreenStyle) } catch (error) {} updateBtnSVG('wideScreen', 'off')
-        }}}
-
+        if (mode === 'fullWindow') syncFullerWindows(state)
         if (!config.notifHidden) { // notify synced state
             notify(`${ messages['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`) }
-
         config.modeSynced = true ; setTimeout(() => { config.modeSynced = false }, 100) // prevent repetition
     }
+
+    function syncFullerWindows(fullWindowState) {
+        if (fullWindowState && config.fullerWindows && !config.wideScreen) { // activate fuller window
+            document.head.appendChild(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
+        } else if (!fullWindowState) {
+            try { document.head.removeChild(fullWindowStyle) } catch (error) {} // remove style too so sidebar shows
+            if (!config.wideScreen) { // disable widescreen if result of fuller window
+                try { document.head.removeChild(wideScreenStyle) } catch (error) {} updateBtnSVG('wideScreen', 'off')
+    }}}
 
     function updateTweaksStyle() {
         tweaksStyle.innerText = (

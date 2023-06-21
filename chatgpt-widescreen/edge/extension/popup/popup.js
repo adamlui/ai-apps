@@ -30,6 +30,7 @@
     var fullerWinLabel = fullerWinToggle.parentNode.parentNode
     fullerWinToggle.addEventListener('change', () => {
         settings.save('fullerWindows', !config.fullerWindows)
+        syncExtension()
         settings.load('notifHidden').then(() => {
             if (!config.notifHidden) { // show mode notification if enabled
                 notify(chrome.i18n.getMessage('menuLabel_fullerWins') + ' ' + ( config.fullerWindows ? 'ON' : 'OFF' ))

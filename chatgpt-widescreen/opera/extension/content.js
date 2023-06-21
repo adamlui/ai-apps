@@ -93,8 +93,9 @@
                     if (!prevSessionChecked) { // restore previous session's state
                         if (config.wideScreen) toggleMode('wideScreen', 'ON')
                         if (config.fullWindow) { toggleMode('fullWindow', 'ON')
-                            notify( // since syncMode('fullWindow') from sidebar observer doesn't trigger
-                                chrome.i18n.getMessage('mode_fullWindow') + ' ON') }
+                            // Also sync/notify since sidebar observer's syncMode('fullWindow') doesn't trigger
+                            syncFullerWindows(true) ; notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
+                        }
                         if (config.tcbDisabled) updateTweaksStyle()
                         prevSessionChecked = true
                     }
@@ -276,24 +277,22 @@
                       : mode === 'fullWindow' ? !!chatgpt.sidebar.isOff()
                                               : chatgpt.isFullScreen() )
         settings.save(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
-
-        // Handle fuller window & OpenAI toggle
-        if (mode === 'fullWindow') {
-            if (state && config.fullerWindows && !config.wideScreen) { // activate fuller window
-                document.head.appendChild(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
-            } else if (!state) {
-                try { document.head.removeChild(fullWindowStyle) } catch (error) {} // remove style too so sidebar shows
-                if (!config.wideScreen) { // disable widescreen if result of fuller window
-                    try { document.head.removeChild(wideScreenStyle) } catch (error) {} updateBtnSVG('wideScreen', 'off')
-        }}}
-
+        if (mode === 'fullWindow') syncFullerWindows(state)
         settings.load('notifHidden').then(() => {
             if (!config.notifHidden) { // notify synced state
                 notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
         }})
-
         config.modeSynced = true ; setTimeout(() => { config.modeSynced = false }, 100) // prevent repetition
     }
+
+    function syncFullerWindows(fullWindowState) {
+        if (fullWindowState && config.fullerWindows && !config.wideScreen) { // activate fuller windows
+            document.head.appendChild(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
+        } else if (!fullWindowState) { // de-activate fuller windows
+            try { document.head.removeChild(fullWindowStyle) } catch (error) {} // remove style too so sidebar shows
+            if (!config.wideScreen) { // disable widescreen if result of fuller window
+                try { document.head.removeChild(wideScreenStyle) } catch (error) {} updateBtnSVG('wideScreen', 'off')
+    }}}
 
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
@@ -320,14 +319,16 @@
     }}
 
     syncExtension = () => { // settings, then disable modes or sync taller chatbox
-        settings.load('extensionDisabled', 'fullerWindow', 'tcbDisabled', 'notifHidden')
+        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'notifHidden')
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
                     try { document.head.removeChild(wideScreenStyle) } catch {}
                     try { document.head.removeChild(fullWindowStyle) ; chatgpt.sidebar.show() } catch {}
                     tweaksStyle.innerText = tweaksStyle.innerText.replace(tcbStyle, '')
                     removeBtns() // eslint-disable-line no-undef
-                } else updateTweaksStyle() // sync taller chatbox
-    })}
+                } else {
+                    syncFullerWindows(config.fullerWindows)
+                    updateTweaksStyle() // sync taller chatbox
+    }})}
 
 })()
