@@ -10,7 +10,7 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
-    // Add Chrome msg listener
+    // Add Chrome action msg listener
     chrome.runtime.onMessage.addListener((request) => {
         if (request.action === 'notify') notify(request.msg, request.position)
         else if (request.action === 'alert') alert(request.title, request.msg, request.btns)
@@ -25,7 +25,7 @@
     await chatgpt.isLoaded()
 
     // Initialize config
-    config.appSymbol = '🖥️' ; config.fullScreen = chatgpt.isFullScreen()
+    config = { appSymbool: '🖥️', fullScreen: chatgpt.isFullScreen() }
 
     // Collect OpenAI classes
     const sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
@@ -139,13 +139,14 @@
                 else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     }})})
     window.addEventListener('keydown', () => { // set F11 flag for toggleMode() disabled warning
-        if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true // set flag if entering full screen via F11
+        if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true
     })
 
     // Define GENERAL functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow' ))}
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
+            shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow' ))}
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
