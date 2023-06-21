@@ -1,7 +1,7 @@
 (async () => {
 
     // Import settings-utils.js
-    var { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
     // Initialize popup toggles
     settings.load('fullerWindows', 'tcbDisabled', 'notifHidden', 'extensionDisabled')
@@ -18,16 +18,16 @@
         elem.innerText = chrome.i18n.getMessage(elem.dataset.locale) })
 
     // Add main toggle click-listener
-    var toggles = document.querySelectorAll('input')
-    var mainToggle = toggles[0]
+    const toggles = document.querySelectorAll('input')
+    const mainToggle = toggles[0]
     mainToggle.addEventListener('change', function() {    
         settings.save('extensionDisabled', !this.checked)
         syncExtension() ; updateGreyness()
     })
 
     // Add Fuller Windows toggle label click-listeners
-    var fullerWinToggle = toggles[1]
-    var fullerWinLabel = fullerWinToggle.parentNode.parentNode
+    const fullerWinToggle = toggles[1]
+    const fullerWinLabel = fullerWinToggle.parentNode.parentNode
     fullerWinToggle.addEventListener('change', () => {
         settings.save('fullerWindows', !config.fullerWindows)
         syncExtension()
@@ -42,8 +42,8 @@
     })
 
     // Add Taller Chatbox toggle label click-listeners
-    var tallerChatboxToggle = toggles[2]
-    var tallerChatboxLabel = tallerChatboxToggle.parentNode.parentNode
+    const tallerChatboxToggle = toggles[2]
+    const tallerChatboxLabel = tallerChatboxToggle.parentNode.parentNode
     tallerChatboxToggle.addEventListener('change', () => {
         settings.save('tcbDisabled', !config.tcbDisabled)
         syncExtension()
@@ -58,8 +58,8 @@
     })
 
     // Add notifications toggle label click-listeners
-    var notificationsToggle = toggles[3]
-    var notificationsLabel = notificationsToggle.parentNode.parentNode
+    const notificationsToggle = toggles[3]
+    const notificationsLabel = notificationsToggle.parentNode.parentNode
     notificationsToggle.addEventListener('change', function toggleNotifications() {
         settings.save('notifHidden', !config.notifHidden)
         notify(chrome.i18n.getMessage('menuLabel_modeNotifs') + ' ' + ( config.notifHidden ? 'OFF' : 'ON' ))
@@ -70,7 +70,7 @@
     })
 
     // Add update-check span click-listener
-    var updateSpan = document.querySelector('span[title*="update" i]')
+    const updateSpan = document.querySelector('span[title*="update" i]')
     updateSpan.addEventListener('click', () => {
         window.close() // popup
         chrome.runtime.requestUpdateCheck((status, version) => {
@@ -90,22 +90,22 @@
     })})
 
     // Add Support span click-listener
-    var supportLink = document.querySelector('a[title*="support" i]')
-    var supportSpan = supportLink.parentNode 
+    const supportLink = document.querySelector('a[title*="support" i]')
+    const supportSpan = supportLink.parentNode 
     supportSpan.addEventListener('click', (event) => {
         if (event.target == supportSpan) supportLink.click() // to avoid double-toggle
     })
 
     // Add More Add-ons span click-listener
-    var moreAddOnsLink = document.querySelector('a[title*="more" i]')
-    var moreAddOnsSpan = moreAddOnsLink.parentNode 
+    const moreAddOnsLink = document.querySelector('a[title*="more" i]')
+    const moreAddOnsSpan = moreAddOnsLink.parentNode 
     moreAddOnsSpan.addEventListener('click', (event) => {
         if (event.target == moreAddOnsSpan) moreAddOnsLink.click() // to avoid double-toggle
     })
 
     // Add Powered by chatgpt.js hover-listener
-    var chatGPTjsHostPath = 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/badges/'
-    var chatGPTjsImg = document.querySelector('.chatgpt-js img')
+    const chatGPTjsHostPath = 'https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/badges/'
+    const chatGPTjsImg = document.querySelector('.chatgpt-js img')
     chatGPTjsImg.addEventListener('mouseover', function() {
         chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png' })
     chatGPTjsImg.addEventListener('mouseout', function() {
@@ -133,7 +133,7 @@
     function updateGreyness() {
 
         // Updated toolbar icon
-        var dimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}
+        const dimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}
         dimensions.forEach((dimension) => {
             iconPaths[dimension] = '../icons/'
                 + (config.extensionDisabled ? 'faded/' : '')
