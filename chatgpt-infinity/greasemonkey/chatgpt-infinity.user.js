@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.21.3
+// @version             2023.6.21.4
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -137,8 +137,10 @@
     // Initialize settings
     var configPrefix = 'chatGPTinf_'
     var config = { appSymbol: '∞', userLanguage: navigator.languages[0] || navigator.language || '' }
-    loadSetting('autoScrollDisabled', 'lastCheckTime', 'replyInterval', 'replyLanguage', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
+    loadSetting('autoScrollDisabled', 'lastCheckTime', 'replyInterval', 'replyLanguage',
+        'replyTopic', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
+    if (!config.replyTopic) saveSetting('replyTopic', 'ALL') // init reply topic if unset
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
 
     // Define messages
@@ -232,79 +234,6 @@
 
     // Define SCRIPT functions
 
-    function registerMenu() {
-        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
-        var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
-
-        // Add command to toggle Infinity Mode
-        var imLabel = state.symbol[+!config.infinityMode] + ' ' + messages.menuLabel_infinityMode + ' ∞ '
-            + stateSeparator + state.word[+!config.infinityMode]
-        menuIDs.push(GM_registerMenuCommand(imLabel, () => {
-            document.querySelector('#infToggleLabel').click()
-        }))
-
-        // Add command to toggle visibility of toggle
-        var tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
-            + stateSeparator + state.word[+config.toggleHidden]
-        menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
-            saveSetting('toggleHidden', !config.toggleHidden)
-            toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
-            for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
-        }))
-
-        // Add command to toggle auto-scroll
-        var asLabel = state.symbol[+config.autoScrollDisabled] + ' ' + messages.menuLabel_autoScroll
-            + stateSeparator + state.word[+config.autoScrollDisabled]
-        menuIDs.push(GM_registerMenuCommand(asLabel, () => {
-            saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
-            notify(messages.menuLabel_autoScroll + ': '+ state.word[+config.autoScrollDisabled])
-            for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
-        }))
-
-        // Add command to set language
-        var rlLabel = '🌐 ' + messages.menuLabel_replyLang + stateSeparator + config.userLanguage
-        menuIDs.push(GM_registerMenuCommand(rlLabel, async () => {
-            while (true) {
-                var replyLanguage = prompt(`${ messages.prompt_updateReplyLang }:`, config.replyLanguage)
-                if (replyLanguage === null) break // user cancelled so do nothing
-                else if (!/\d/.test(replyLanguage)) {
-                    saveSetting('replyLanguage', replyLanguage ? replyLanguage : config.userLanguage)
-                    alert(messages.alert_replyLangUpdated + '!', messages.alert_willReplyIn + ' '
-                        + ( replyLanguage ? replyLanguage : messages.alert_yourSysLang ) + '.')
-                    if (config.infinityMode) { // restart session using new reply language
-                        chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
-                        setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) } // toggle on
-                    for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
-                    break
-        }}}))
-
-        // Add command to change reply interval
-        var riLabel = '⌚ ' + messages.menuLabel_replyInt + stateSeparator + config.replyInterval + 's'
-        menuIDs.push(GM_registerMenuCommand(riLabel, async () => {
-            while (true) {
-                var replyInterval = prompt(`${ messages.prompt_updateReplyInt }:`, config.replyInterval)
-                if (replyInterval === null) break // user cancelled so do nothing
-                else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
-                    saveSetting('replyInterval', parseInt(replyInterval))
-                    alert(messages.alert_replyIntUpdated + '!', messages.alert_willReplyEvery + ' '
-                        + replyInterval + ' ' + messages.unit_seconds + '.')
-                    if (config.infinityMode) { // reset reply interval w/o ending session
-                        clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
-                        if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
-                            infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
-                    }}
-                    for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
-                    break
-        }}}))
-
-        // Add command to check for updates
-        var ucLabel = '🚀 Check for Updates'
-        menuIDs.push(GM_registerMenuCommand(ucLabel, () => { checkForUpdates.fromMenu = true ; checkForUpdates() }))
-    }
-
-    function getUserscriptManager() { try { return GM_info.scriptHandler } catch(error) { return 'other' }}
-
     function loadSetting(...keys) {
         keys.forEach(key => {
             config[key] = GM_getValue(configPrefix + key, false)
@@ -314,12 +243,6 @@
         GM_setValue(configPrefix + key, value) // save to browser
         config[key] = value // and memory
     }
-
-    function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
-
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function checkForUpdates() {
 
@@ -361,6 +284,117 @@
                         `${ messages.appName } (v${ currentVer }) is up-to-date!`) // msg
     }}})}
 
+    // Define MENU functions
+
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch(error) { return 'other' }}
+
+    function toTitleCase(str) {
+        const words = str.toLowerCase().split(' ')
+        for (let i = 0 ; i < words.length ; i++)
+            words[i] = words[i][0].toUpperCase() + words[i].slice(1)
+        return words.join(' ')
+    }
+
+    function registerMenu() {
+        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
+        var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
+
+        // Add command to toggle Infinity Mode
+        var imLabel = state.symbol[+!config.infinityMode] + ' ' + messages.menuLabel_infinityMode + ' ∞ '
+            + stateSeparator + state.word[+!config.infinityMode]
+        menuIDs.push(GM_registerMenuCommand(imLabel, () => {
+            document.querySelector('#infToggleLabel').click()
+        }))
+
+        // Add command to toggle visibility of toggle
+        var tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
+            + stateSeparator + state.word[+config.toggleHidden]
+        menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
+            saveSetting('toggleHidden', !config.toggleHidden)
+            toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
+            notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
+            for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+        }))
+
+        // Add command to toggle auto-scroll
+        var asLabel = state.symbol[+config.autoScrollDisabled] + ' ' + messages.menuLabel_autoScroll
+            + stateSeparator + state.word[+config.autoScrollDisabled]
+        menuIDs.push(GM_registerMenuCommand(asLabel, () => {
+            saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
+            notify(messages.menuLabel_autoScroll + ': '+ state.word[+config.autoScrollDisabled])
+            for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+        }))
+
+        // Add command to set reply language
+        var rlLabel = '🌐 ' + messages.menuLabel_replyLang + stateSeparator + config.userLanguage
+        menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
+            while (true) {
+                var replyLanguage = prompt(`${ messages.prompt_updateReplyLang }:`, config.replyLanguage)
+                if (replyLanguage === null) break // user cancelled so do nothing
+                else if (!/\d/.test(replyLanguage)) {
+                    saveSetting('replyLanguage', replyLanguage ? replyLanguage : config.userLanguage)
+                    alert(messages.alert_replyLangUpdated + '!', messages.alert_willReplyIn + ' '
+                        + ( replyLanguage ? replyLanguage : messages.alert_yourSysLang ) + '.')
+                    if (config.infinityMode) { // restart session using new reply language
+                        chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
+                        setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) } // toggle on
+                    for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+                    break
+        }}}))
+
+        // Add command to set reply topic
+        var rtLabel = '🧠 Reply Topic' + stateSeparator
+                    + ( config.replyTopic.toUpperCase() == 'ALL' ? config.replyTopic.toUpperCase()
+                                                                 : toTitleCase(config.replyTopic) )
+        menuIDs.push(GM_registerMenuCommand(rtLabel, () => {
+            while (true) {
+                var replyTopic = prompt('Update reply topic:', config.replyTopic)
+                if (replyTopic === null) break // user cancelled so do nothing
+                else if (!/\d/.test(replyTopic)) {
+                    saveSetting('replyTopic', replyTopic ? replyTopic : 'ALL')
+                    alert('Topic updated!', messages.appName + ' will answer questions on '
+                        + ( !replyTopic || replyTopic.toUpperCase() == 'ALL' ? 'ALL topics'
+                                                                             : 'the topic of ' + replyTopic ) + '!')
+                    if (config.infinityMode) { // restart session using new reply topic
+                        chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
+                        setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) } // toggle on
+                    for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+                    break
+        }}}))
+
+        // Add command to change reply interval
+        var riLabel = '⌚ ' + messages.menuLabel_replyInt + stateSeparator + config.replyInterval + 's'
+        menuIDs.push(GM_registerMenuCommand(riLabel, async () => {
+            while (true) {
+                var replyInterval = prompt(`${ messages.prompt_updateReplyInt }:`, config.replyInterval)
+                if (replyInterval === null) break // user cancelled so do nothing
+                else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
+                    saveSetting('replyInterval', parseInt(replyInterval))
+                    alert(messages.alert_replyIntUpdated + '!', messages.alert_willReplyEvery + ' '
+                        + replyInterval + ' ' + messages.unit_seconds + '.')
+                    if (config.infinityMode) { // reset reply interval w/o ending session
+                        clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
+                        if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
+                            infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
+                    }}
+                    for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+                    break
+        }}}))
+
+        // Add command to check for updates
+        var ucLabel = '🚀 Check for Updates'
+        menuIDs.push(GM_registerMenuCommand(ucLabel, () => { checkForUpdates.fromMenu = true ; checkForUpdates() }))
+
+    }
+
+    // Define FEEDBACK functions
+
+    function notify(msg, position = '', notifDuration = '', shadow = '') {
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
+
     // Define TOGGLE functions
 
     function insertToggle() {
@@ -397,9 +431,12 @@
             notify(messages.menuLabel_infinityMode + ': ON')
             try { document.querySelector('nav a').click() } catch (error) { return }
             setTimeout(() => {
-                chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
-                                                            + '. don\'t type anything else') }, 500)
-            config.infinityMode = true ; await chatgpt.isIdle()
+                chatgpt.send('Generate a single random q&a'
+                    + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
+                    + ( ' on ' + ( config.replyTopic === 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
+                    + '. Don\'t type anything else.')
+            }, 500)
+            await chatgpt.isIdle()
             if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
         },
@@ -416,7 +453,7 @@
             chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
             document.querySelector('#infToggleInput').checked = false // for window listener
             notify(messages.menuLabel_infinityMode + ': OFF')
-            config.infinityMode = false // in case window listener toggled
+            config.infinityMode = false // in case toggled by PV listener
         },
 
         toggle: () => { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }

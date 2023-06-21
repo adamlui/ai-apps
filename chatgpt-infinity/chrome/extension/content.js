@@ -28,8 +28,9 @@
     // Init settings
     config.appSymbol = '∞' ; settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
     settings.save('infinityMode', false) // to reset popup toggle
-    settings.load(['autoScrollDisabled', 'replyInterval', 'replyLanguage', 'toggleHidden']).then(() => {
+    settings.load(['autoScrollDisabled', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden']).then(() => {
         if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
+        if (!config.replyTopic) settings.save('replyTopic', 'ALL') // init reply topic if unset
         if (!config.replyInterval) settings.save('replyInterval', 7) // init refresh interval to 7 secs if unset
     })
 
@@ -147,8 +148,11 @@
             infinityMode.fromMsg = false
             try { document.querySelector('nav a').click() } catch (error) { return }
             setTimeout(() => {
-                chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
-                                                            + '. don\'t type anything else') }, 500)            
+                chatgpt.send('Generate a single random q&a'
+                    + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
+                    + ( ' on ' + ( config.replyTopic === 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
+                    + '. Don\'t type anything else.')
+            }, 500)        
             await chatgpt.isIdle()
             if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
@@ -181,6 +185,12 @@
             setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) // toggle on
     })}
 
+    restartOnReplyTopic = () => { // eslint-disable-line no-undef
+        settings.load('replyTopic').then(() => {
+            chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
+            setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) // toggle on
+    })}
+
     restartOnReplyInt = () => { // eslint-disable-line no-undef
         settings.load('replyInterval').then(async () => {
             clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
@@ -191,7 +201,8 @@
     // Define SYNC function
 
     syncExtension = () => { // settings + sidebar toggle visibility
-        settings.load(['extensionDisabled', 'toggleHidden', 'autoScrollDisabled', 'replyInterval', 'replyLanguage'])
+        settings.load(['extensionDisabled', 'toggleHidden', 'autoScrollDisabled',
+                       'replyTopic', 'replyInterval', 'replyLanguage'])
             .then(() => { updateToggleHTML() // hide/show sidebar toggle based on latest setting
     })}
 

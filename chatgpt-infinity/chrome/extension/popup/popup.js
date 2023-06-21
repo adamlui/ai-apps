@@ -9,18 +9,22 @@
     const infinityModeDiv = menuItems[0], infinityModeToggle = infinityModeDiv.querySelector('input')
     const toggleVisDiv = menuItems[1], toggleVisToggle = toggleVisDiv.querySelector('input')
     const autoScrollDiv = menuItems[2], autoScrollToggle = autoScrollDiv.querySelector('input')
-    const replyLangDiv = menuItems[3] ; const replyLangLabel = replyLangDiv.querySelector('span')
-    const replyIntervalDiv = menuItems[4] ; const replyIntervalLabel = replyIntervalDiv.querySelector('span')
+    const replyLangDiv = menuItems[3], replyLangLabel = replyLangDiv.querySelector('span')
+    const replyTopicDiv = menuItems[4], replyTopicLabel = replyTopicDiv.querySelector('span')
+    const replyIntervalDiv = menuItems[5], replyIntervalLabel = replyIntervalDiv.querySelector('span')
 
     // Sync toggle states
     settings.load(['extensionDisabled', 'infinityMode', 'toggleHidden', 'autoScrollDisabled',
-                   'replyInterval', 'replyLanguage', 'userLanguage'])
+                   'replyInterval', 'replyTopic', 'replyLanguage', 'userLanguage'])
         .then(() => { // restore toggle states
             mainToggle.checked = !config.extensionDisabled
             infinityModeToggle.checked = config.infinityMode
             toggleVisToggle.checked = !config.toggleHidden
             autoScrollToggle.checked = !config.autoScrollDisabled
             replyLangLabel.innerText += ` — ${ config.replyLanguage }`
+            replyTopicLabel.innerText += ' — '
+                + ( config.replyTopic.toUpperCase() == 'ALL' ? config.replyTopic.toUpperCase()
+                                                             : toTitleCase(config.replyTopic) )
             replyIntervalLabel.innerText += ` — ${ config.replyInterval }s`
             updateGreyness()
         })
@@ -86,6 +90,24 @@
                 break
     }}})
 
+    // Add Reply Topic click-listener
+    replyTopicDiv.addEventListener('click', () => {
+        while (true) {
+            const replyTopic = prompt('Update reply topic:', config.replyTopic)
+            if (replyTopic === null) break // user cancelled so do nothing
+            else if (!/\d/.test(replyTopic)) {
+                settings.save('replyTopic', replyTopic ? replyTopic : 'ALL')
+                window.close() // popup
+                alert('Topic updated!', chrome.i18n.getMessage('appName') + ' will answer questions on '
+                        + ( !replyTopic || replyTopic.toUpperCase() == 'ALL' ? 'ALL topics'
+                                                                             : 'the topic of ' + replyTopic ) + '!')
+                chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
+                    if (tabs[0].url.includes('chat.openai.com') && config.infinityMode) { // reboot active session
+                        chrome.tabs.sendMessage(tabs[0].id, { action: 'restartOnReplyTopic' }) }
+                })
+                break
+    }}})
+
     // Add Reply Interval click-listener
     replyIntervalDiv.addEventListener('click', () => {
         while (true) {
@@ -145,7 +167,7 @@
     chatGPTjsImg.addEventListener('mouseout', function() {
       chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png' })
 
-    // Define functions
+    // Define FUNCTIONS
 
     function notify(msg, position) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -158,6 +180,13 @@
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width
     })})}
+
+    function toTitleCase(str) {
+        const words = str.toLowerCase().split(' ')
+        for (let i = 0 ; i < words.length ; i++)
+            words[i] = words[i][0].toUpperCase() + words[i].slice(1)
+        return words.join(' ')
+    }
 
     function syncExtension() {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
