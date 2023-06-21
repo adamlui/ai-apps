@@ -16,8 +16,12 @@
         if (request.action === 'notify') notify(request.msg, request.position)
         else if (request.action === 'alert') alert(request.title, request.msg, request.btns)
         else if (request.action === 'updateToggleHTML') updateToggleHTML()
-        else if (request.action === 'clickToggle') document.querySelector('#infToggleLabel').click()
-        else window[request.action]
+        else if (request.action === 'clickToggle') document.querySelector('#infToggleLabel').click()        
+        else if (typeof window[request.action] === 'function') {
+            const args = Array.isArray(request.args) ? request.args // preserve array if supplied
+                       : request.args !== undefined ? [request.args] : [] // convert to array if single or no arg
+            window[request.action](...args) // call expression functions
+        }
         return true
     })
 
@@ -185,7 +189,7 @@
 
     // Define SYNC function
 
-    syncExtension = () => { // eslint-disable-line no-undef
+    syncExtension = () => { // settings + sidebar toggle visibility
         settings.load(['extensionDisabled', 'toggleHidden', 'autoScrollDisabled', 'replyInterval', 'replyLanguage'])
             .then(() => { updateToggleHTML() // hide/show sidebar toggle based on latest setting
     })}
