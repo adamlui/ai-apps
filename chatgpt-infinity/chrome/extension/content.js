@@ -26,7 +26,8 @@
     })
 
     // Init settings
-    const config.appSymbol = '∞' ; config.userLanguage = (await chrome.i18n.getAcceptLanguages())[0]
+    config.appSymbol = '∞' ; config.userLanguage = (await chrome.i18n.getAcceptLanguages())[0]
+    settings.save('infinityMode', false)
     await chatgpt.isLoaded()
     settings.load(['autoScrollDisabled', 'replyInterval', 'replyLanguage', 'toggleHidden']).then(() => {
         if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language
@@ -72,7 +73,7 @@
         var toggleInput = document.querySelector('#infToggleInput')
         toggleInput.checked = !toggleInput.checked
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
-        config.infinityMode = toggleInput.checked
+        settings.save('infinityMode', toggleInput.checked)
         infinityMode.toggle()
     })
     updateToggleHTML()
@@ -149,7 +150,7 @@
             setTimeout(() => {
                 chatgpt.send('generate a single random q&a' + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                                                             + '. don\'t type anything else') }, 500)            
-            config.infinityMode = true ; await chatgpt.isIdle()
+            await chatgpt.isIdle()
             if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
         },
@@ -167,7 +168,7 @@
             infinityMode.fromMsg = false
             chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
             document.querySelector('#infToggleInput').checked = false // for window listener
-            config.infinityMode = false // in case window listener toggled
+            settings.save('infinityMode', false) // in case toggled by PV listener
         },
 
         toggle: () => { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }

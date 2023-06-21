@@ -21,7 +21,7 @@
             autoScrollToggle.checked = !config.autoScrollDisabled
             replyLangLabel.innerText += ` — ${ config.replyLanguage }`
             replyIntervalLabel.innerText += ` — ${ config.replyInterval }s`
-            updateGreyness()    
+            updateGreyness()
         })
 
     // Localize labels
@@ -37,7 +37,6 @@
 
     // Add Infinity Mode click-listeners
     infinityModeToggle.addEventListener('change', () => {
-        settings.save('infinityMode', !config.infinityMode)
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             if (!tabs[0].url.includes('chat.openai.com')) return // do nothing if not on ChatGPT
             else chrome.tabs.sendMessage(tabs[0].id, { action: 'clickToggle' }) // else click sidebar toggle
