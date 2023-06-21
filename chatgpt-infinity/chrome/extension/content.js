@@ -7,7 +7,7 @@
     document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
     // Import libs
-    var { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
     // Add Chrome msg listener
@@ -26,11 +26,9 @@
     })
 
     // Init settings
-    config.appSymbol = '∞' ; config.userLanguage = (await chrome.i18n.getAcceptLanguages())[0]
-    settings.save('infinityMode', false)
-    await chatgpt.isLoaded()
+    config.appSymbol = '∞' ; settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
+    settings.save('infinityMode', false) // to reset popup toggle
     settings.load(['autoScrollDisabled', 'replyInterval', 'replyLanguage', 'toggleHidden']).then(() => {
-        if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language
         if (!config.replyInterval) settings.save('replyInterval', 7) // init refresh interval to 7 secs if unset
     })
 

@@ -9,17 +9,18 @@
     const infinityModeDiv = menuItems[0], infinityModeToggle = infinityModeDiv.querySelector('input')
     const toggleVisDiv = menuItems[1], toggleVisToggle = toggleVisDiv.querySelector('input')
     const autoScrollDiv = menuItems[2], autoScrollToggle = autoScrollDiv.querySelector('input')
-    const replyLangDiv = menuItems[3] ; let replyLangLabel = replyLangDiv.querySelector('span')
-    const replyIntervalDiv = menuItems[4] ; let replyIntervalLabel = replyIntervalDiv.querySelector('span')
+    const replyLangDiv = menuItems[3] ; const replyLangLabel = replyLangDiv.querySelector('span')
+    const replyIntervalDiv = menuItems[4] ; const replyIntervalLabel = replyIntervalDiv.querySelector('span')
 
     // Sync toggle states
-    settings.load(['extensionDisabled', 'infinityMode', 'toggleHidden', 'autoScrollDisabled', 'replyInterval', 'replyLanguage'])
+    settings.load(['extensionDisabled', 'infinityMode', 'toggleHidden', 'autoScrollDisabled',
+                   'replyInterval', 'replyLanguage', 'userLanguage'])
         .then(() => { // restore toggle states
             mainToggle.checked = !config.extensionDisabled
             infinityModeToggle.checked = config.infinityMode
             toggleVisToggle.checked = !config.toggleHidden
             autoScrollToggle.checked = !config.autoScrollDisabled
-            replyLangLabel.innerText += ` — ${ config.replyLanguage }`
+            replyLangLabel.innerText += ` — ${ config.replyLanguage ? config.replyLanguage : config.userLanguage }`
             replyIntervalLabel.innerText += ` — ${ config.replyInterval }s`
             updateGreyness()
         })
@@ -31,7 +32,7 @@
     // Add main toggle click-listener
     mainToggle.addEventListener('change', () => {
         settings.save('extensionDisabled', !config.extensionDisabled)
-        infinityModeToggle.checked = false
+        infinityModeToggle.checked = false // always disable Infinity Mode on main toggle
         syncExtension() ; updateGreyness()
     })
 
@@ -71,7 +72,8 @@
     // Add Reply Language click-listener
     replyLangDiv.addEventListener('click', () => {
         while (true) {
-            var replyLanguage = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyLang') }:`, config.replyLanguage)
+            const replyLanguage = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyLang') }:`,
+                config.replyLanguage ? config.replyLanguage : config.userLanguage) // input placeholder
             if (replyLanguage === null) break // user cancelled so do nothing
             else if (!/\d/.test(replyLanguage)) {
                 settings.save('replyLanguage', replyLanguage)
@@ -88,7 +90,7 @@
     // Add Reply Interval click-listener
     replyIntervalDiv.addEventListener('click', () => {
         while (true) {
-            var replyInterval = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyInt') }:`, config.replyInterval)
+            const replyInterval = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyInt') }:`, config.replyInterval)
             if (replyInterval === null) break // user cancelled so do nothing
             else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
                 settings.save('replyInterval', parseInt(replyInterval))
