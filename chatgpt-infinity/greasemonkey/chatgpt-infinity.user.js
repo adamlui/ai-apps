@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.20
+// @version             2023.6.21
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -265,7 +265,7 @@
         // Add command to set language
         var rlLabel = '🌐 ' + messages.menuLabel_replyLang + stateSeparator
                     + ( config.replyLanguage ? config.replyLanguage : 'English' )
-        menuIDs.push(GM_registerMenuCommand(rlLabel, async function() {
+        menuIDs.push(GM_registerMenuCommand(rlLabel, async () => {
             while (true) {
                 var replyLanguage = prompt(`${ messages.prompt_updateReplyLang }:`, config.replyLanguage)
                 if (replyLanguage === null) break // user cancelled so do nothing
@@ -274,14 +274,15 @@
                     alert(messages.alert_replyLangUpdated + '!', messages.alert_willReplyIn + ' '
                         + ( replyLanguage ? replyLanguage : messages.alert_yourSysLang ) + '.')
                     if (config.infinityMode) { // restart session using new reply language
-                        infinityMode.deactivate() ; setTimeout(infinityMode.activate, 500) }
+                        chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
+                        setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) } // toggle on
                     for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
                     break
         }}}))
 
         // Add command to change reply interval
         var riLabel = '⌚ ' + messages.menuLabel_replyInt + stateSeparator + config.replyInterval + 's'
-        menuIDs.push(GM_registerMenuCommand(riLabel, async function() {
+        menuIDs.push(GM_registerMenuCommand(riLabel, async () => {
             while (true) {
                 var replyInterval = prompt(`${ messages.prompt_updateReplyInt }:`, config.replyInterval)
                 if (replyInterval === null) break // user cancelled so do nothing
@@ -300,7 +301,7 @@
 
         // Add command to check for updates
         var ucLabel = '🚀 Check for Updates'
-        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
+        menuIDs.push(GM_registerMenuCommand(ucLabel, () => { checkForUpdates.fromMenu = true ; checkForUpdates() }))
     }
 
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch(error) { return 'other' }}
@@ -327,12 +328,11 @@
         var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
         var currentVer = GM_info.script.version
         GM.xmlHttpRequest({ method: 'GET', url: updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: function(response) {
-                var data = response.responseText
+            onload: (response) => {
                 saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions
-                var latestVer = data.match(/@version +(.*)/)[1]
+                var latestVer = response.responseText.match(/@version +(.*)/)[1]
                 if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
                 for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
