@@ -22,8 +22,8 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
             chrome.tabs.sendMessage(tab.id, { action: 'syncExtension' })
 }})})
 
-function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+function alert(...args) {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, { 
-            action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width
+            action: 'alert', args: args
 })})}

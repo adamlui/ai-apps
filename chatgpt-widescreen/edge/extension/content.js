@@ -10,21 +10,16 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
     const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
-    // Add Chrome msg listener
+    // Add Chrome action msg listener
     chrome.runtime.onMessage.addListener((request) => {
-        if (request.action === 'notify') notify(request.msg, request.position)
-        else if (request.action === 'alert') alert(request.title, request.msg, request.btns)
-        else if (typeof window[request.action] === 'function') {
-            const args = Array.isArray(request.args) ? request.args // preserve array if supplied
-                       : request.args !== undefined ? [request.args] : [] // convert to array if single or no arg
-            window[request.action](...args) // call expression functions
-        }
+        const args = Array.isArray(request.args) ? request.args // preserve array if supplied
+                   : request.args !== undefined ? [request.args] : [] // convert to array if single or no arg
+        window[request.action](...args) // call expression function
         return true
     })
 
-    await chatgpt.isLoaded()
-
     // Initialize config
+    await chatgpt.isLoaded()
     config.appSymbol = '🖥️' ; config.fullScreen = chatgpt.isFullScreen()
 
     // Collect OpenAI classes
@@ -142,13 +137,15 @@
         if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true // set flag if entering full screen via F11
     })
 
-    // Define GENERAL functions
+    // Define FEEDBACK functions
 
-    function notify(msg, position = '', notifDuration = '', shadow = '') {
+    notify = (msg, position = '', notifDuration = '', shadow = '') => { // eslint-disable-line no-undef 
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow' ))}
 
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+    alert = (title = '', msg = '', btns = '', checkbox = '', width = '') => { // eslint-disable-line no-undef 
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
+
+    // Define CSS function
 
     function classListToCSS(classList) { // convert DOM classList to single CSS selector
         return '.' + [...classList].join('.') // prepend dot to dot-separated string

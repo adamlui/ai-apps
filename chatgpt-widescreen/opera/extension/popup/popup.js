@@ -111,18 +111,19 @@
     chatGPTjsImg.addEventListener('mouseout', function() {
       chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png' })
 
-    // Define script functions
+    // Define FUNCTIONS
 
-    function notify(msg, position) {
+    function notify(...args) {
+        args = [args[0], args[1] || 'bottom-right', ...args.slice(2)]
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'notify', msg: msg, position: position ? position : 'bottom-right' })
-    })}
+                action: 'notify', args: args
+    })})}
 
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+    function alert(...args) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width
+                action: 'alert', args: args
     })})}
 
     function syncExtension() {
