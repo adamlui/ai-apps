@@ -83,7 +83,7 @@
             window[buttonName].addEventListener('mouseout', toggleTooltip)
         })(buttonTypes[i])
     } settings.load('extensionDisabled').then(() => {
-        if (!config.extensionDisabled) insertBtns() // eslint-disable-line no-undef
+        if (!config.extensionDisabled) insertBtns()
     })
 
     // Monitor node changes to update button visibility + auto-toggle once
@@ -104,7 +104,7 @@
                         if (config.tcbDisabled) updateTweaksStyle()
                         prevSessionChecked = true
                     }
-                    insertBtns() // eslint-disable-line no-undef
+                    insertBtns()
                 } prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
             })
 
@@ -161,13 +161,13 @@
 
     function setBtnColor() { return chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' }
 
-    function insertBtns() { // eslint-disable-line no-undef
+    function insertBtns() {
         const chatbar = document.querySelector("form button[class*='bottom']").parentNode
         if (chatbar.contains(fullWindowButton)) return // if buttons aren't missing, exit
         else { chatbar.append(newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv) }
     }
 
-    function removeBtns() { // eslint-disable-line no-undef
+    function removeBtns() {
         const chatbar = document.querySelector('form button[class*="bottom"]').parentNode
         if (!chatbar.contains(fullWindowButton)) return // if buttons are missing, exit
         else { // remove chat toggles
@@ -331,7 +331,7 @@
                     try { document.head.removeChild(wideScreenStyle) } catch {}
                     try { document.head.removeChild(fullWindowStyle) ; chatgpt.sidebar.show() } catch {}
                     tweaksStyle.innerText = tweaksStyle.innerText.replace(tcbStyle, '')
-                    removeBtns() // eslint-disable-line no-undef
+                    removeBtns()
                 } else {
                     syncFullerWindows(config.fullWindow)
                     updateTweaksStyle() // sync taller chatbox
