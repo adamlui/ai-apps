@@ -139,10 +139,10 @@
 
     // Define FEEDBACK functions
 
-    notify = (msg, position = '', notifDuration = '', shadow = '') => { // eslint-disable-line no-undef 
+    const notify = (msg, position = '', notifDuration = '', shadow = '') => { // eslint-disable-line no-undef 
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow' ))}
 
-    alert = (title = '', msg = '', btns = '', checkbox = '', width = '') => { // eslint-disable-line no-undef 
+    const alert = (title = '', msg = '', btns = '', checkbox = '', width = '') => { // eslint-disable-line no-undef 
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     // Define CSS function
