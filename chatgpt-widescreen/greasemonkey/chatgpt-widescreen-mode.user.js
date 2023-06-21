@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.20
+// @version             2023.6.20.1
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -65,8 +65,8 @@
 (async () => {
 
     // Initialize settings
-    var appSymbol = '🖥️', configPrefix = 'chatGPTws_'
-    var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
+    var configPrefix = 'chatGPTws_'
+    var config = { appSymbol: '🖥️', userLanguage: navigator.languages[0] || navigator.language || '' }
     loadSetting('fullerWindows', 'lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer', 'tcbDisabled', 'wideScreen')
 
     // Define messages
@@ -171,7 +171,9 @@
             // Check loaded keys to restore previous session's state
             if (!prevSessionChecked) {
                 if (config.wideScreen) toggleMode('wideScreen', 'ON')
-                if (config.fullWindow) toggleMode('fullWindow', 'ON')
+                if (config.fullWindow) { toggleMode('fullWindow', 'ON')
+                    notify( // since syncMode('fullWindow') from sidebar observer doesn't trigger
+                        messages.mode_fullWindow + ' ON') }
                 if (config.tcbDisabled) updateTweaksStyle()
                 prevSessionChecked = true
             }
@@ -190,7 +192,9 @@
         var fullWindowState = chatgpt.sidebar.isOff()
         if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
             if (!config.modeSynced) syncMode('fullWindow')
-    }) ; sidebarObserver.observe(document.body, { childList: true, subtree: true })
+    })    
+    setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
+        sidebarObserver.observe(document.body, { childList: true, subtree: true })}, 500)
 
     // Add full screen listeners to update setting/button + set F11 flag
     window.addEventListener('resize', () => { // sync full screen settings/button
@@ -259,10 +263,10 @@
     }
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function checkForUpdates() {
 
@@ -433,7 +437,7 @@
         else if (mode == 'fullScreen') {
             if (config.f11)
                 alert(messages.alert_pressF11, messages.alert_f11reason + '.')
-            else try { document.exitFullscreen() } catch (error) { console.error(appSymbol + ' >> ', error) }
+            else try { document.exitFullscreen() } catch (error) { console.error(config.appSymbol + ' >> ', error) }
     }}
 
     function toggleMode(mode, state = '') {
