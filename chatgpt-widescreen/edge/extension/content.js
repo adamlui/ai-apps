@@ -14,8 +14,7 @@
     chrome.runtime.onMessage.addListener((request) => {
         const args = Array.isArray(request.args) ? request.args // preserve array if supplied
                    : request.args !== undefined ? [request.args] : [] // convert to array if single or no arg
-        window[request.action](...args) // call expression function
-        return true
+        window[request.action](...args) ; return true
     })
 
     // Initialize config
