@@ -14,7 +14,11 @@
     chrome.runtime.onMessage.addListener((request) => {
         if (request.action === 'notify') notify(request.msg, request.position)
         else if (request.action === 'alert') alert(request.title, request.msg, request.btns)
-        else window[request.action]()
+        else if (typeof window[request.action] === 'function') {
+            const args = Array.isArray(request.args) ? request.args // preserve array if supplied
+                       : request.args !== undefined ? [request.args] : [] // convert to array if single or no arg
+            window[request.action](...args) // call expression functions
+        }
         return true
     })
 
