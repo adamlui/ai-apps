@@ -155,6 +155,20 @@
 
     function setBtnColor() { return chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' }
 
+    function insertBtns() { // eslint-disable-line no-undef
+        const chatbar = document.querySelector("form button[class*='bottom']").parentNode
+        if (chatbar.contains(fullWindowButton)) return // if buttons aren't missing, exit
+        else { chatbar.append(newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv) }
+    }
+
+    function removeBtns() { // eslint-disable-line no-undef
+        const chatbar = document.querySelector('form button[class*="bottom"]').parentNode
+        if (!chatbar.contains(fullWindowButton)) return // if buttons are missing, exit
+        else { // remove chat toggles
+            const nodesToRemove = [newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv]
+            for (let i = 0 ; i < nodesToRemove.length ; i++) { chatbar.removeChild(nodesToRemove[i]) }
+    }}
+
     function updateBtnSVG(mode, state = '') {
 
         // Define SVG viewbox + elems
@@ -245,7 +259,7 @@
             iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
     }
 
-    // Define MODE functions
+    // Define TOGGLE functions
 
     function activateMode(mode) {
         if (mode == 'wideScreen') { document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
@@ -271,6 +285,8 @@
             default : config[mode] ? deactivateMode(mode) : activateMode(mode)
         }
     }
+
+    // Define SYNC functions
 
     function syncMode(mode) { // setting + icon + tooltip
         const state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
@@ -301,22 +317,6 @@
                 + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
             + ( !config.tcbDisabled ? tcbStyle : '' )) // expand text input vertically        
     }
-
-    // Define EXPRESSION functions for listeners
-
-    insertBtns = () => { // eslint-disable-line no-undef
-        const chatbar = document.querySelector("form button[class*='bottom']").parentNode
-        if (chatbar.contains(fullWindowButton)) return // if buttons aren't missing, exit
-        else { chatbar.append(newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv) }
-    }
-
-    removeBtns = () => { // eslint-disable-line no-undef
-        const chatbar = document.querySelector('form button[class*="bottom"]').parentNode
-        if (!chatbar.contains(fullWindowButton)) return // if buttons are missing, exit
-        else { // remove chat toggles
-            const nodesToRemove = [newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv]
-            for (let i = 0 ; i < nodesToRemove.length ; i++) { chatbar.removeChild(nodesToRemove[i]) }
-    }}
 
     syncExtension = () => { // settings, then disable modes or sync taller chatbox
         settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'notifHidden')
