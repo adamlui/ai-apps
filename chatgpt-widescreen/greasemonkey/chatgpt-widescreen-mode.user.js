@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.20.1
+// @version             2023.6.20.2
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -65,20 +65,20 @@
 (async () => {
 
     // Initialize settings
-    var configPrefix = 'chatGPTws_'
-    var config = { appSymbol: '🖥️', userLanguage: navigator.languages[0] || navigator.language || '' }
+    const configPrefix = 'chatGPTws_'
+    const config = { appSymbol: '🖥️', userLanguage: navigator.languages[0] || navigator.language || '' }
     loadSetting('fullerWindows', 'lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer', 'tcbDisabled', 'wideScreen')
 
     // Define messages
-    var msgsLoaded = new Promise(resolve => {
-        var msgHostDir = 'https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/greasemonkey/_locales/'
-        var msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        var msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
-        var msgXHRtries = 0
+    const msgsLoaded = new Promise(resolve => {
+        const msgHostDir = 'https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/greasemonkey/_locales/'
+        const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
+        let msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
             try { // to return localized messages.json
-                var messages = new Proxy(JSON.parse(response.responseText), {
+                const messages = new Proxy(JSON.parse(response.responseText), {
                     get(target, prop) { // remove need to ref nested keys
                         if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
@@ -91,7 +91,7 @@
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
             }
         }
-    }) ; var messages = await msgsLoaded
+    }) ; const messages = await msgsLoaded
 
     // Create browser toolbar menu or disable script if extension installed
     await chatgpt.isLoaded()
@@ -107,17 +107,17 @@
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
 
     // Collect OpenAI classes
-    var sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
-    var sendSVGclasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
-    var inputTextAreaClasses = (document.querySelector("form button[class*='bottom']") || {}).previousSibling.classList || []
-    var mainDivClasses = (document.querySelector('#__next > div > div.flex') || {}).classList || []
-    var sidepadClasses = (document.querySelector('#__next > div > div') || {}).classList || []
-    var sidebarClasses = (document.querySelector('#__next > div > div.dark') || {}).classList || []
+    const sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
+    const sendSVGclasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
+    const inputTextAreaClasses = (document.querySelector("form button[class*='bottom']") || {}).previousSibling.classList || []
+    const mainDivClasses = (document.querySelector('#__next > div > div.flex') || {}).classList || []
+    const sidepadClasses = (document.querySelector('#__next > div > div') || {}).classList || []
+    const sidebarClasses = (document.querySelector('#__next > div > div.dark') || {}).classList || []
 
     // Create/stylize tooltip div
-    var tooltipDiv = document.createElement('div')
+    const tooltipDiv = document.createElement('div')
     tooltipDiv.classList.add('toggle-tooltip')
-    var tooltipStyle = document.createElement('style')
+    const tooltipStyle = document.createElement('style')
     tooltipStyle.innerText = '.toggle-tooltip {'
         + 'background: black ; padding: 5px ; border-radius: 6px ; ' // box style
         + 'font-size: 0.7rem ; color: white ; ' // font style
@@ -127,28 +127,28 @@
     document.head.appendChild(tooltipStyle)
 
     // Create general style tweaks
-    var tweaksStyle = document.createElement('style')
-    var tcbStyle = 'form > div > div:nth-child(2), form textarea { max-height: 68vh !important } '
+    const tweaksStyle = document.createElement('style')
+    const tcbStyle = 'form > div > div:nth-child(2), form textarea { max-height: 68vh !important } '
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create wide screen style
-    var wideScreenStyle = document.createElement('style')
+    const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for toggleMode()
     wideScreenStyle.innerText = '.text-base, main > div > div > div > div > div { max-width: 93% !important } '
         + 'div' + classListToCSS(mainDivClasses) + '{ width: 100px }' // prevent sidebar shrinking when zoomed
 
     // Create full-window style
-    var fullWindowStyle = document.createElement('style')
+    const fullWindowStyle = document.createElement('style')
     fullWindowStyle.id = 'fullWindow-mode' // for toggleMode()
     fullWindowStyle.innerText = classListToCSS(sidebarClasses) + '{ display: none }' // hide sidebar
         + classListToCSS(sidepadClasses) + '{ padding-left: 0px }' // remove side padding
-    var buttonColor = setBtnColor()
+    let buttonColor = setBtnColor()
 
     // Create/insert chatbar buttons
-    var buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-    for (var i = 0 ; i < buttonTypes.length ; i++) {
+    const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
+    for (let i = 0 ; i < buttonTypes.length ; i++) {
         ((buttonType) => { // enclose in IIFE to separately capture button type for async listeners
-            var buttonName = buttonType + 'Button'
+            const buttonName = buttonType + 'Button'
             window[buttonName] = document.createElement('div') // create button
             window[buttonName].id = buttonType + '-button' // for toggleTooltip()
             updateBtnSVG(buttonType); // insert icon
@@ -163,8 +163,8 @@
     } insertBtns()
 
     // Monitor node changes to maintain button visibility + auto-toggle once + manage send button's tooltip
-    var prevSessionChecked = false
-    var nodeObserver = new MutationObserver(([{ addedNodes, type }]) => {
+    let prevSessionChecked = false
+    const nodeObserver = new MutationObserver(([{ addedNodes, type }]) => {
         if (type === 'childList' && addedNodes.length) {
             insertBtns() // again or they constantly disappear
 
@@ -181,15 +181,15 @@
     }}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Monitor scheme changes to update button colors
-    var schemeObserver = new MutationObserver(([{ type, target }]) => {
+    const schemeObserver = new MutationObserver(([{ type, target }]) => {
         if (target === document.documentElement && type === 'attributes' && target.getAttribute('class')) {
             buttonColor = setBtnColor()
             updateBtnSVG('fullScreen') ; updateBtnSVG('fullWindow') ; updateBtnSVG('wideScreen') ; updateBtnSVG('newChat')
     }}) ; schemeObserver.observe(document.documentElement, { attributes: true })
 
     // Monitor sidebar to update full-window setting
-    var sidebarObserver = new MutationObserver(() => {
-        var fullWindowState = chatgpt.sidebar.isOff()
+    const sidebarObserver = new MutationObserver(() => {
+        const fullWindowState = chatgpt.sidebar.isOff()
         if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
             if (!config.modeSynced) syncMode('fullWindow')
     })    
@@ -198,7 +198,7 @@
 
     // Add full screen listeners to update setting/button + set F11 flag
     window.addEventListener('resize', () => { // sync full screen settings/button
-        var fullScreenState = chatgpt.isFullScreen()
+        const fullScreenState = chatgpt.isFullScreen()
         if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
         else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     })
@@ -209,44 +209,44 @@
     // Define SCRIPT functions
 
     function registerMenu() {
-        var menuIDs = [] // to store registered commands for removal while preserving order
-        var stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF']
-        var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
+        const menuIDs = [] // to store registered commands for removal while preserving order
+        const stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF']
+        const stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to also activate wide screen in full-window
-        var fwLabel = stateSymbol[+!config.fullerWindows] + ' ' + messages.menuLabel_fullerWins
+        const fwLabel = stateSymbol[+!config.fullerWindows] + ' ' + messages.menuLabel_fullerWins
             + stateSeparator + stateWord[+!config.fullerWindows]
-        menuIDs.push(GM_registerMenuCommand(fwLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(fwLabel, () => {
             saveSetting('fullerWindows', !config.fullerWindows)
             if (!config.notifHidden) {
                 notify(`${ messages.menuLabel_fullerWins }: ${ stateWord[+!config.fullerWindows] }`)
-            } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle taller chatboxes when typing
-        var tcbLabel = stateSymbol[+config.tcbDisabled] + ' ' + messages.menuLabel_tallerChatbox
+        const tcbLabel = stateSymbol[+config.tcbDisabled] + ' ' + messages.menuLabel_tallerChatbox
             + stateSeparator + stateWord[+config.tcbDisabled]
-        menuIDs.push(GM_registerMenuCommand(tcbLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
             saveSetting('tcbDisabled', !config.tcbDisabled)
             tweaksStyle.innerText = config.tcbDisabled ? tweaksStyle.innerText.replace(tcbStyle, '')
                                                        : tweaksStyle.innerText + tcbStyle
             if (!config.notifHidden) {
                 notify(`${ messages.menuLabel_tallerChatbox }: ${ stateWord[+config.tcbDisabled] }`)
-            } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when switching modes
-        var mnLabel = stateSymbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
+        const mnLabel = stateSymbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
             + stateSeparator + stateWord[+config.notifHidden]
-        menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifHidden', !config.notifHidden)
             notify(`${ messages.menuLabel_modeNotifs }: ${ stateWord[+config.notifHidden] }`)
-            for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to check for updates
-        var ucLabel = '🚀 ' + messages.menuLabel_updateCheck
-        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
+        const ucLabel = '🚀 ' + messages.menuLabel_updateCheck
+        menuIDs.push(GM_registerMenuCommand(ucLabel, () => { checkForUpdates.fromMenu = true ; checkForUpdates() }))
     }
 
     function getUserscriptManager() {
@@ -271,24 +271,23 @@
     function checkForUpdates() {
 
         // Fetch latest meta
-        var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
-        var currentVer = GM_info.script.version
+        const updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
+        const currentVer = GM_info.script.version
         GM.xmlHttpRequest({ method: 'GET', url: updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: function(response) {
-                var data = response.responseText
+            onload: (response) => {
                 saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions                
-                var latestVer = data.match(/@version +(.*)/)[1]
+                const latestVer = response.responseText.match(/@version +(.*)/)[1]
                 if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
-                for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
+                for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
                     if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
                         if (!checkForUpdates.fromMenu) // if auto-alert...
                             saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
-                        var updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`,
+                        const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`,
                             `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
                                 + `<a target="_blank" href="https://github.com/adamlui/chatgpt-widescreen/commits/main/greasemonkey/chatgpt-widescreen-mode.user.js" style="font-size: 0.7rem">${ messages.link_viewChanges }</a>`,
                             function update() { // button
@@ -304,7 +303,7 @@
 
                         // Localize button/checkbox labels if needed
                         if (!config.userLanguage.startsWith('en')) {
-                            var updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
                             updateAlert.querySelector('label').textContent = ( // checkbox label
                                 `${ messages.alert_dontShowAgain } ${ messages.alert_untilNextVer }`)
                             updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
@@ -331,7 +330,7 @@
     function setBtnColor() { return chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' }
 
     function insertBtns() {
-        var chatbar = document.querySelector("form button[class*='bottom']").parentNode
+        const chatbar = document.querySelector("form button[class*='bottom']").parentNode
         if (chatbar.contains(fullWindowButton)) return // if buttons aren't missing, exit
         else chatbar.append(newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv)
     }
@@ -339,42 +338,42 @@
     function updateBtnSVG(mode, state = '') {
 
         // Define SVG viewbox + elems
-        var svgViewBox = ( mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '0 0 ' : '8 8 ' ) // move to XY coords to crop whitespace
+        const svgViewBox = ( mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '0 0 ' : '8 8 ' ) // move to XY coords to crop whitespace
             + ( mode == 'newChat' ? '13 13' : mode == 'fullWindow' ? '24 24' : '20 20' ) // shrink to fit size
-        var fullScreenONelems = [
+        const fullScreenONelems = [
             createSVGelem('path', { fill: buttonColor, d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
-        var fullScreenOFFelems = [
+        const fullScreenOFFelems = [
             createSVGelem('path', { fill: buttonColor, d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ]
-        var fullWindowElems = [
+        const fullWindowElems = [
             createSVGelem('rect', { x: '3', y: '3', width: '18', height: '18', rx: '2', ry: '2' }),
             createSVGelem('line', { x1: '9', y1: '3', x2: '9', y2: '21' }) ]
-        var wideScreenONelems = [
+        const wideScreenONelems = [
             createSVGelem('path', { fill: buttonColor, 'fill-rule': 'evenodd',
                 d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
-        var wideScreenOFFelems = [
+        const wideScreenOFFelems = [
             createSVGelem('path', { fill: buttonColor, 'fill-rule': 'evenodd',
                 d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ]
-        var newChatElems = [ createSVGelem('path', { fill: buttonColor, d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ]
+        const newChatElems = [ createSVGelem('path', { fill: buttonColor, d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ]
 
         // Pick appropriate button/elements
-        var [button, ONelems, OFFelems] = (
+        const [button, ONelems, OFFelems] = (
             mode == 'fullScreen' ? [fullScreenButton, fullScreenONelems, fullScreenOFFelems]
           : mode == 'fullWindow' ? [fullWindowButton, fullWindowElems, fullWindowElems]
           : mode == 'wideScreen' ? [wideScreenButton, wideScreenONelems, wideScreenOFFelems]
                                  : [newChatButton, newChatElems, newChatElems])
 
         // Initialize rem margin offset vs. OpenAI's .mr-1 for hover overlay centeredness
-        var lMargin = mode == 'wideScreen' ? .11 : .12
-        var rMargin = (.25 - lMargin)
+        const lMargin = mode == 'wideScreen' ? .11 : .12
+        const rMargin = (.25 - lMargin)
 
         // Set SVG attributes
-        var buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        const buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         if (mode == 'fullWindow') { // stylize full-window button
             buttonSVG.setAttribute('stroke', buttonColor)
             buttonSVG.setAttribute('fill', 'none')
@@ -389,21 +388,21 @@
 
         // Update SVG elements
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
-        var svgElems = config[mode] || state.toLowerCase() === 'on' ? ONelems : OFFelems
+        const svgElems = config[mode] || state.toLowerCase() === 'on' ? ONelems : OFFelems
         svgElems.forEach(elem => { buttonSVG.appendChild(elem) })
         if (!button.contains(buttonSVG)) button.appendChild(buttonSVG)
     }
 
     function createSVGelem(tagName, attributes) {
-        var elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
-        for (var attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])       
+        const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
+        for (const attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])       
         return elem
     }
 
     // Define TOOLTIP functions
 
     function toggleTooltip(event) {
-        var buttonType = (
+        const buttonType = (
             event.target.id.includes('fullScreen') ? 'fullScreen' :
             event.target.id.includes('fullWindow') ? 'fullWindow' :
             event.target.id.includes('wide') ? 'wideScreen' : 'newChat')
@@ -414,8 +413,8 @@
     function updateTooltip(buttonType) { // text & position
         tooltipDiv.innerText = messages['tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON'))]
-        var ctrAddend = 25, overlayWidth = 30
-        var iniRoffset = overlayWidth * (
+        const ctrAddend = 25, overlayWidth = 30
+        const iniRoffset = overlayWidth * (
               buttonType.includes('fullScreen') ? 1
             : buttonType.includes('fullWindow') ? 2
             : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
@@ -449,7 +448,7 @@
     }
 
     function syncMode(mode) {
-        var state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
+        const state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
                     : mode === 'fullWindow' ? chatgpt.sidebar.isOff()
                                             : chatgpt.isFullScreen() )
         saveSetting(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
