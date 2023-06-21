@@ -25,7 +25,7 @@
     await chatgpt.isLoaded()
 
     // Initialize config
-    config = { appSymbool: '🖥️', fullScreen: chatgpt.isFullScreen() }
+    config.appSymbol = '🖥️' ; config.fullScreen = chatgpt.isFullScreen()
 
     // Collect OpenAI classes
     const sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
@@ -92,13 +92,14 @@
         if (type === 'childList' && addedNodes.length) {
 
             // Restore previous session's state + manage toggles
-            settings.load(['wideScreen', 'fullWindow', 'fullerWindows', 'tcbDisabled', 'extensionDisabled']).then(() => {
-                if (!config.extensionDisabled) {                    
+            settings.load(['wideScreen', 'fullWindow', 'fullerWindows', 'tcbDisabled', 'notifHidden', 'extensionDisabled'])
+                .then(() => { if (!config.extensionDisabled) {                    
                     if (!prevSessionChecked) { // restore previous session's state
                         if (config.wideScreen) toggleMode('wideScreen', 'ON')
                         if (config.fullWindow) { toggleMode('fullWindow', 'ON')
-                            // Also sync/notify since sidebar observer's syncMode('fullWindow') doesn't trigger
-                            syncFullerWindows(true) ; notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
+                            syncFullerWindows(true) // also sync Fuller Windows...
+                            if (!config.notifHidden) // ... + notify since sidebar observer doesn't trigger
+                                notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                         }
                         if (config.tcbDisabled) updateTweaksStyle()
                         prevSessionChecked = true
