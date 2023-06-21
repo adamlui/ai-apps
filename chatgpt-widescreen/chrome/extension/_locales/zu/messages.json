@@ -1,6 +1,6 @@
 {
-  "appName": { "message": "Indlela yesikrini esibanzi sengxoxoGPT" },
-  "appDesc": { "message": "Ifaka izindlela ze-Widecreen + ezigcwele ku-ChatGPT yokubuka okuthuthukisiwe + ukunciphisa ukuskrola" },
+  "appName": { "message": "Imodi yesikrini esibanzi se-ChatGPT" },
+  "appDesc": { "message": "Yengeza isikrini esibanzi + amamodi esikrini esigcwele ku-ChatGPT ukuze uthole ukubukwa okuthuthukisiwe + nokuskrola okuncishisiwe" },
   "menuLabel_fullerWins": { "message": "Amafasitela agcwele" },
   "menuLabel_tallerChatbox": { "message": "Ibhokisi lokuxoxa elide" },
   "menuLabel_modeNotifs": { "message": "Izaziso Zendlela" },

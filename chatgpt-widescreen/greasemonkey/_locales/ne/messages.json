@@ -1,6 +1,6 @@
 {
-  "appName": { "message": "कुराकानीGPT चौडाइ पर्दा मोड" },
-  "appDesc": { "message": "बढाइएको दृश्य + घटाइएका स्क्रोलिङका लागि कुराकानीGPT मा वाइडस्क्रीन + पूरास्क्रीन मोड थप्दछ" },
+  "appName": { "message": "ChatGPT वाइडस्क्रिन मोड" },
+  "appDesc": { "message": "परिष्कृत अवलोकन + कम स्क्रोलिङको लागि ChatGPT मा वाइडस्क्रिन + फुलस्क्रिन मोडहरू थप्छ" },
   "menuLabel_fullerWins": { "message": "फुलर सञ्झ्याल" },
   "menuLabel_tallerChatbox": { "message": "टालर कुराकानी बाकस" },
   "menuLabel_modeNotifs": { "message": "मोड सूचनाहरू" },

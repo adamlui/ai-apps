@@ -1,6 +1,6 @@
 {
-  "appName": { "message": "Modd Sgrin Lydan SgwrsGPT" },
-  "appDesc": { "message": "Ychwanegu Widescreen + moddau sgrin lawn i ChatGPT ar gyfer gwylio gwell + llai o sgrolio" },
+  "appName": { "message": "ChatGPT Modd Sgrin Eang" },
+  "appDesc": { "message": "Yn ychwanegu moddau sgrin lydan + sgrin lawn i ChatGPT ar gyfer gwylio gwell + llai o sgrolio" },
   "menuLabel_fullerWins": { "message": "Ffenestri Lawn" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_modeNotifs": { "message": "Hysbysiadau Modd" },

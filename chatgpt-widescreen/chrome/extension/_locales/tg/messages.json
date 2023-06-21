@@ -1,8 +1,8 @@
 {
-  "appName": { "message": "Ҳолати экрани чатGPT" },
-  "appDesc": { "message": "Magdagdag ng Widescreen + Fullscreen na mga moda sa ChatGPT para sa pinakabagong pagbisita + kabuuang scrolling" },
+  "appName": { "message": "Ҳолати экрани васеъ ChatGPT" },
+  "appDesc": { "message": "Ба ChatGPT экрани васеъ + режимҳои пурраи экранро барои тамошои беҳтар + ҳаракати кам илова мекунад" },
   "menuLabel_fullerWins": { "message": "Тирезаҳои пурра" },
-  "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_tallerChatbox": { "message": "Чат қуттии баландтар" },
   "menuLabel_modeNotifs": { "message": "Огоҳиномаҳо" },
   "menuLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
   "menuLabel_disabled": { "message": "Ғайрифаъол (тавсеаи насбшуда)" },
