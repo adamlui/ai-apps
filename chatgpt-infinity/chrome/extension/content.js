@@ -29,6 +29,7 @@
     config.appSymbol = '∞' ; settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
     settings.save('infinityMode', false) // to reset popup toggle
     settings.load(['autoScrollDisabled', 'replyInterval', 'replyLanguage', 'toggleHidden']).then(() => {
+        if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
         if (!config.replyInterval) settings.save('replyInterval', 7) // init refresh interval to 7 secs if unset
     })
 

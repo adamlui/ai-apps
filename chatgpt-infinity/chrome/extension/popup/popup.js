@@ -20,7 +20,7 @@
             infinityModeToggle.checked = config.infinityMode
             toggleVisToggle.checked = !config.toggleHidden
             autoScrollToggle.checked = !config.autoScrollDisabled
-            replyLangLabel.innerText += ` — ${ config.replyLanguage ? config.replyLanguage : config.userLanguage }`
+            replyLangLabel.innerText += ` — ${ config.replyLanguage }`
             replyIntervalLabel.innerText += ` — ${ config.replyInterval }s`
             updateGreyness()
         })
@@ -72,11 +72,10 @@
     // Add Reply Language click-listener
     replyLangDiv.addEventListener('click', () => {
         while (true) {
-            const replyLanguage = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyLang') }:`,
-                config.replyLanguage ? config.replyLanguage : config.userLanguage) // input placeholder
+            const replyLanguage = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyLang') }:`, config.replyLanguage)
             if (replyLanguage === null) break // user cancelled so do nothing
             else if (!/\d/.test(replyLanguage)) {
-                settings.save('replyLanguage', replyLanguage)
+                settings.save('replyLanguage', replyLanguage ? replyLanguage : config.userLanguage)
                 window.close() // popup
                 alert(chrome.i18n.getMessage('alert_replyLangUpdated') + '!', chrome.i18n.getMessage('alert_willReplyIn') + ' '
                     + ( replyLanguage ? replyLanguage : chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
