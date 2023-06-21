@@ -333,7 +333,7 @@
                     tweaksStyle.innerText = tweaksStyle.innerText.replace(tcbStyle, '')
                     removeBtns() // eslint-disable-line no-undef
                 } else {
-                    syncFullerWindows(config.fullerWindows)
+                    syncFullerWindows(config.fullWindow)
                     updateTweaksStyle() // sync taller chatbox
     }})}
 
