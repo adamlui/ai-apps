@@ -26,7 +26,7 @@
     })
 
     // Init settings
-    const appSymbol = '∞' ; config.userLanguage = (await chrome.i18n.getAcceptLanguages())[0]
+    const config.appSymbol = '∞' ; config.userLanguage = (await chrome.i18n.getAcceptLanguages())[0]
     await chatgpt.isLoaded()
     settings.load(['autoScrollDisabled', 'replyInterval', 'replyLanguage', 'toggleHidden']).then(() => {
         if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language
@@ -93,12 +93,12 @@
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration,
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
             shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow' ))
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     // Define TOGGLE functions
 
@@ -177,7 +177,8 @@
 
     restartOnReplyLang = () => { // eslint-disable-line no-undef
         settings.load('replyLanguage').then(() => {
-            infinityMode.deactivate() ; setTimeout(infinityMode.activate, 500)
+            chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
+            setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) // toggle on
     })}
 
     restartOnReplyInt = () => { // eslint-disable-line no-undef
