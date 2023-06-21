@@ -1,5 +1,4 @@
-const configPrefix = 'chatGPTws_'
-const config = {}
+const configPrefix = 'chatGPTws_', config = {}
 const settings = {
 
     load: function() {

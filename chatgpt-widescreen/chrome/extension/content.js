@@ -7,8 +7,8 @@
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
     // Import libs
-    var { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
-    var { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
+    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
     // Add Chrome msg listener
     chrome.runtime.onMessage.addListener((request) => {
@@ -20,21 +20,21 @@
 
     await chatgpt.isLoaded()
 
-    // Initialize settings
-    var appSymbol = '🖥️' ; config.fullScreen = chatgpt.isFullScreen()
+    // Initialize config
+    config.appSymbol = '🖥️' ; config.fullScreen = chatgpt.isFullScreen()
 
     // Collect OpenAI classes
-    var sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
-    var sendSVGclasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
-    var inputTextAreaClasses = (document.querySelector("form button[class*='bottom']") || {}).previousSibling.classList || []
-    var mainDivClasses = (document.querySelector('#__next > div > div.flex') || {}).classList || []
-    var sidepadClasses = (document.querySelector('#__next > div > div') || {}).classList || []
-    var sidebarClasses = (document.querySelector('#__next > div > div.dark') || {}).classList || []
+    const sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
+    const sendSVGclasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
+    const inputTextAreaClasses = (document.querySelector("form button[class*='bottom']") || {}).previousSibling.classList || []
+    const mainDivClasses = (document.querySelector('#__next > div > div.flex') || {}).classList || []
+    const sidepadClasses = (document.querySelector('#__next > div > div') || {}).classList || []
+    const sidebarClasses = (document.querySelector('#__next > div > div.dark') || {}).classList || []
 
     // Create/stylize tooltip div
-    var tooltipDiv = document.createElement('div')
+    const tooltipDiv = document.createElement('div')
     tooltipDiv.classList.add('toggle-tooltip')
-    var tooltipStyle = document.createElement('style')
+    const tooltipStyle = document.createElement('style')
     tooltipStyle.innerText = '.toggle-tooltip {'
         + 'background: black ; padding: 5px ; border-radius: 6px ; ' // box style
         + 'font-size: 0.7rem ; color: white ; ' // font style
@@ -44,18 +44,18 @@
     document.head.appendChild(tooltipStyle)
 
     // Create general style tweaks
-    var tweaksStyle = document.createElement('style')
-    var tcbStyle = 'form > div > div:nth-child(2), form textarea { max-height: 68vh !important } '
+    const tweaksStyle = document.createElement('style')
+    const tcbStyle = 'form > div > div:nth-child(2), form textarea { max-height: 68vh !important } '
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create wide screen style
-    var wideScreenStyle = document.createElement('style')
+    const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for toggleMode()
     wideScreenStyle.innerText = '.text-base, main > div > div > div > div > div { max-width: 93% !important } '
         + 'div' + classListToCSS(mainDivClasses) + '{ width: 100px }' // prevent sidebar shrinking when zoomed
 
     // Create full-window style
-    var fullWindowStyle = document.createElement('style')
+    const fullWindowStyle = document.createElement('style')
     fullWindowStyle.id = 'fullWindow-mode' // for toggleMode()
     fullWindowStyle.innerText = classListToCSS(sidebarClasses) + '{ display: none }' // hide sidebar
         + classListToCSS(sidepadClasses) + '{ padding-left: 0px }' // remove side padding
@@ -63,10 +63,10 @@
     var buttonColor = setBtnColor()
 
     // Create/insert chatbar buttons
-    var buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-    for (var i = 0 ; i < buttonTypes.length ; i++) {
+    const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
+    for (let i = 0 ; i < buttonTypes.length ; i++) {
         ((buttonType) => { // enclose in IIFE to separately capture button type for async listeners
-            var buttonName = buttonType + 'Button'
+            const buttonName = buttonType + 'Button'
             window[buttonName] = document.createElement('div') // create button
             window[buttonName].id = buttonType + '-button' // for toggleTooltip()
             updateBtnSVG(buttonType); // insert icon
@@ -83,16 +83,18 @@
     })
 
     // Monitor node changes to update button visibility + auto-toggle once
-    var prevSessionChecked = false
-    var nodeObserver = new MutationObserver(([{ addedNodes, type }]) => {
+    let prevSessionChecked = false
+    const nodeObserver = new MutationObserver(([{ addedNodes, type }]) => {
         if (type === 'childList' && addedNodes.length) {
 
             // Restore previous session's state + manage toggles
-            settings.load(['wideScreen', 'fullWindow', 'fullerWindow', 'tcbDisabled', 'extensionDisabled']).then(() => {
+            settings.load(['wideScreen', 'fullWindow', 'fullerWindows', 'tcbDisabled', 'extensionDisabled']).then(() => {
                 if (!config.extensionDisabled) {                    
                     if (!prevSessionChecked) { // restore previous session's state
                         if (config.wideScreen) toggleMode('wideScreen', 'ON')
-                        if (config.fullWindow) toggleMode('fullWindow', 'ON')
+                        if (config.fullWindow) { toggleMode('fullWindow', 'ON')
+                            notify( // since syncMode('fullWindow') from sidebar observer doesn't trigger
+                                chrome.i18n.getMessage('mode_fullWindow') + ' ON') }
                         if (config.tcbDisabled) updateTweaksStyle()
                         prevSessionChecked = true
                     }
@@ -103,7 +105,7 @@
     }}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Monitor scheme changes to update button colors
-    var schemeObserver = new MutationObserver(([{ type, target }]) => {
+    const schemeObserver = new MutationObserver(([{ type, target }]) => {
         if (target === document.documentElement && type === 'attributes' && target.getAttribute('class'))
             settings.load(['extensionDisabled']).then(() => {
                 if (!config.extensionDisabled) {
@@ -113,19 +115,21 @@
     }})}) ; schemeObserver.observe(document.documentElement, { attributes: true })
 
     // Monitor sidebar button to update full-window setting
-    var sidebarObserver = new MutationObserver(() => {
+    const sidebarObserver = new MutationObserver(() => {
         settings.load(['extensionDisabled']).then(() => {
             if (!config.extensionDisabled) {
-                var fullWindowState = chatgpt.sidebar.isOff()
+                const fullWindowState = chatgpt.sidebar.isOff()
                 if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
                     if (!config.modeSynced) syncMode('fullWindow')
-    }})}) ; sidebarObserver.observe(document.body, { childList: true, subtree: true })
+    }})})
+    setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
+        sidebarObserver.observe(document.body, { childList: true, subtree: true })}, 500)
 
     // Add full screen listeners to update setting/button + set F11 flag
     window.addEventListener('resize', () => { // sync full screen settings/button
         settings.load(['extensionDisabled']).then(() => {
             if (!config.extensionDisabled) {
-                var fullScreenState = chatgpt.isFullScreen()
+                const fullScreenState = chatgpt.isFullScreen()
                 if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
                 else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     }})})
@@ -136,10 +140,10 @@
     // Define GENERAL functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow' ))}
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow' ))}
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function classListToCSS(classList) { // convert DOM classList to single CSS selector
         return '.' + [...classList].join('.') // prepend dot to dot-separated string
@@ -153,42 +157,42 @@
     function updateBtnSVG(mode, state = '') {
 
         // Define SVG viewbox + elems
-        var svgViewBox = ( mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '0 0 ' : '8 8 ' ) // move to XY coords to crop whitespace
+        const svgViewBox = ( mode == 'newChat' ? '11 6 ' : mode == 'fullWindow' ? '0 0 ' : '8 8 ' ) // move to XY coords to crop whitespace
             + ( mode == 'newChat' ? '13 13' : mode == 'fullWindow' ? '24 24' : '20 20' ) // shrink to fit size
-        var fullScreenONelems = [
+        const fullScreenONelems = [
             createSVGelem('path', { fill: buttonColor, d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
-        var fullScreenOFFelems = [
+        const fullScreenOFFelems = [
             createSVGelem('path', { fill: buttonColor, d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ]
-        var fullWindowElems = [
+        const fullWindowElems = [
             createSVGelem('rect', { x: '3', y: '3', width: '18', height: '18', rx: '2', ry: '2' }),
             createSVGelem('line', { x1: '9', y1: '3', x2: '9', y2: '21' }) ]
-        var wideScreenONelems = [
+        const wideScreenONelems = [
             createSVGelem('path', { fill: buttonColor, 'fill-rule': 'evenodd',
                 d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
-        var wideScreenOFFelems = [
+        const wideScreenOFFelems = [
             createSVGelem('path', { fill: buttonColor, 'fill-rule': 'evenodd',
                 d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ]
-        var newChatElems = [ createSVGelem('path', { fill: buttonColor, d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ]
+        const newChatElems = [ createSVGelem('path', { fill: buttonColor, d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ]
 
         // Pick appropriate button/elements
-        var [button, ONelems, OFFelems] = (
+        const [button, ONelems, OFFelems] = (
             mode == 'fullScreen' ? [fullScreenButton, fullScreenONelems, fullScreenOFFelems]
           : mode == 'fullWindow' ? [fullWindowButton, fullWindowElems, fullWindowElems]
           : mode == 'wideScreen' ? [wideScreenButton, wideScreenONelems, wideScreenOFFelems]
                                  : [newChatButton, newChatElems, newChatElems])
 
         // Initialize rem margin offset vs. OpenAI's .mr-1 for hover overlay centeredness
-        var lMargin = mode == 'wideScreen' ? .11 : .12
-        var rMargin = (.25 - lMargin)
+        const lMargin = mode == 'wideScreen' ? .11 : .12
+        const rMargin = (.25 - lMargin)
 
         // Set SVG attributes
-        var buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        const buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         if (mode == 'fullWindow') { // stylize full-window button
             buttonSVG.setAttribute('stroke', buttonColor)
             buttonSVG.setAttribute('fill', 'none')
@@ -203,7 +207,7 @@
 
         // Update SVG elements
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
-        var svgElems = config[mode] || state.toLowerCase() === 'on' ? ONelems : OFFelems
+        const svgElems = config[mode] || state.toLowerCase() === 'on' ? ONelems : OFFelems
         svgElems.forEach(elem => { buttonSVG.appendChild(elem) })
 
         // Update SVG
@@ -211,15 +215,15 @@
     }
 
     function createSVGelem(tagName, attributes) {
-        var elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
-        for (var attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])       
+        const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
+        for (const attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])       
         return elem
     }
 
     // Define TOOLTIP functions
 
     function toggleTooltip(event) {
-        var buttonType = (
+        const buttonType = (
             event.target.id.includes('fullScreen') ? 'fullScreen' :
             event.target.id.includes('fullWindow') ? 'fullWindow' :
             event.target.id.includes('wide') ? 'wideScreen' : 'newChat')
@@ -231,8 +235,8 @@
 
         tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON')))
-        var ctrAddend = 25, overlayWidth = 30
-        var iniRoffset = overlayWidth * (
+        const ctrAddend = 25, overlayWidth = 30
+        const iniRoffset = overlayWidth * (
               buttonType.includes('fullScreen') ? 1
             : buttonType.includes('fullWindow') ? 2
             : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
@@ -246,15 +250,17 @@
         if (mode == 'wideScreen') { document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
         else if (mode == 'fullWindow') { document.head.appendChild(fullWindowStyle) ; chatgpt.sidebar.hide() }
         else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
+        
     }
 
     function deactivateMode(mode) {
         if (mode == 'wideScreen') try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (error) {}
-        else if (mode == 'fullWindow') { try { document.head.removeChild(fullWindowStyle) } catch (error) { console.error(error)} chatgpt.sidebar.show() }
+        else if (mode == 'fullWindow') {
+            try { document.head.removeChild(fullWindowStyle) } catch (error) { console.error(error) } chatgpt.sidebar.show() }
         else if (mode == 'fullScreen') {
             if (config.f11)
                 alert(chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
-            else try { document.exitFullscreen() } catch (error) { console.error(appSymbol + ' >> ', error) }
+            else try { document.exitFullscreen() } catch (error) { console.error(config.appSymbol + ' >> ', error) }
     }}
 
     function toggleMode(mode, state = '') {
@@ -265,11 +271,10 @@
         }
     }
 
-    function syncMode(mode) { // setting + icon + tooltip')
-
-        var state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
-                    : mode === 'fullWindow' ? !!chatgpt.sidebar.isOff()
-                                            : chatgpt.isFullScreen() )
+    function syncMode(mode) { // setting + icon + tooltip
+        const state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
+                      : mode === 'fullWindow' ? !!chatgpt.sidebar.isOff()
+                                              : chatgpt.isFullScreen() )
         settings.save(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
 
         // Handle fuller window & OpenAI toggle
@@ -301,21 +306,21 @@
     // Define EXPRESSION functions for listeners
 
     insertBtns = () => { // eslint-disable-line no-undef
-        var chatbar = document.querySelector("form button[class*='bottom']").parentNode
+        const chatbar = document.querySelector("form button[class*='bottom']").parentNode
         if (chatbar.contains(fullWindowButton)) return // if buttons aren't missing, exit
         else { chatbar.append(newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv) }
     }
 
     removeBtns = () => { // eslint-disable-line no-undef
-        var chatbar = document.querySelector('form button[class*="bottom"]').parentNode
+        const chatbar = document.querySelector('form button[class*="bottom"]').parentNode
         if (!chatbar.contains(fullWindowButton)) return // if buttons are missing, exit
         else { // remove chat toggles
-            var nodesToRemove = [newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv]
-            for (var i = 0 ; i < nodesToRemove.length ; i++) { chatbar.removeChild(nodesToRemove[i]) }
+            const nodesToRemove = [newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv]
+            for (let i = 0 ; i < nodesToRemove.length ; i++) { chatbar.removeChild(nodesToRemove[i]) }
     }}
 
-    syncExtension = () => { // eslint-disable-line no-undef
-        settings.load('extensionDisabled', 'fullerWindow', 'tcbDisabled', 'notifHidden') // sync toggle settings
+    syncExtension = () => { // settings, then disable modes or sync taller chatbox
+        settings.load('extensionDisabled', 'fullerWindow', 'tcbDisabled', 'notifHidden')
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
                     try { document.head.removeChild(wideScreenStyle) } catch {}

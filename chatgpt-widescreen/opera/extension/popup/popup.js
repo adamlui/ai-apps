@@ -4,10 +4,10 @@
     var { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
     // Initialize popup toggles
-    settings.load('fullerWindow', 'tcbDisabled', 'notifHidden', 'extensionDisabled')
+    settings.load('fullerWindows', 'tcbDisabled', 'notifHidden', 'extensionDisabled')
         .then(function() { // restore extension/toggle states
             mainToggle.checked = !config.extensionDisabled
-            fullerWinToggle.checked = config.fullerWindow
+            fullerWinToggle.checked = config.fullerWindows
             tallerChatboxToggle.checked = !config.tcbDisabled
             notificationsToggle.checked = !config.notifHidden
             updateGreyness()
@@ -29,10 +29,10 @@
     var fullerWinToggle = toggles[1]
     var fullerWinLabel = fullerWinToggle.parentNode.parentNode
     fullerWinToggle.addEventListener('change', () => {
-        settings.save('fullerWindow', !config.fullerWindow)
+        settings.save('fullerWindows', !config.fullerWindows)
         settings.load('notifHidden').then(() => {
             if (!config.notifHidden) { // show mode notification if enabled
-                notify(chrome.i18n.getMessage('menuLabel_fullerWins') + ' ' + ( config.fullerWindow ? 'ON' : 'OFF' ))
+                notify(chrome.i18n.getMessage('menuLabel_fullerWins') + ' ' + ( config.fullerWindows ? 'ON' : 'OFF' ))
         }})
     })
     fullerWinLabel.addEventListener('click', (event) => {
