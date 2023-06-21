@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.21.1
+// @version             2023.6.21.2
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -138,7 +138,6 @@
     var configPrefix = 'chatGPTinf_'
     var config = { appSymbol: '∞', userLanguage: navigator.languages[0] || navigator.language || '' }
     loadSetting('autoScrollDisabled', 'lastCheckTime', 'replyInterval', 'replyLanguage', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
-    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
 
     // Define messages
@@ -264,10 +263,11 @@
 
         // Add command to set language
         var rlLabel = '🌐 ' + messages.menuLabel_replyLang + stateSeparator
-                    + ( config.replyLanguage ? config.replyLanguage : 'English' )
+                    + ( config.replyLanguage ? config.replyLanguage : config.userLanguage )
         menuIDs.push(GM_registerMenuCommand(rlLabel, async () => {
             while (true) {
-                var replyLanguage = prompt(`${ messages.prompt_updateReplyLang }:`, config.replyLanguage)
+                var replyLanguage = prompt(`${ messages.prompt_updateReplyLang }:`,
+                    config.replyLanguage ? config.replyLanguage : config.userLanguage) // input placeholder
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage)
