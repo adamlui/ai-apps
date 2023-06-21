@@ -60,7 +60,7 @@
     fullWindowStyle.innerText = classListToCSS(sidebarClasses) + '{ display: none }' // hide sidebar
         + classListToCSS(sidepadClasses) + '{ padding-left: 0px }' // remove side padding
 
-    var buttonColor = setBtnColor()
+    let buttonColor = setBtnColor()
 
     // Create/insert chatbar buttons
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
