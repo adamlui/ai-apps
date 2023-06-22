@@ -5,15 +5,7 @@ chrome.runtime.onInstalled.addListener((details) => {
 })
 
 // Add auto-alert on update available
-chrome.runtime.onUpdateAvailable.addListener((details) => {
-    alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
-        chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
-            + ' v' + details.version + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
-            + '<a target="_blank" href="https://github.com/adamlui/chatgpt-infinity/commits/main/chrome/extension" '
-            + 'style="font-size: 0.7rem">' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
-        function update() { chrome.runtime.reload() } // update button
-    )
-})
+chrome.runtime.onUpdateAvailable.addListener((details) => { alertToUpdate(true) })
 
 // Sync extension state/settings when ChatGPT tab active
 chrome.tabs.onActivated.addListener((activeInfo) => {
@@ -22,8 +14,8 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
             chrome.tabs.sendMessage(tab.id, { action: 'syncExtension' })
 }})})
 
-function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+function alertToUpdate(updateAvail) {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, { 
-            action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width
+            action: 'alertToUpdate', args: updateAvail
 })})}

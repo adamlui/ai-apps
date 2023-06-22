@@ -101,6 +101,20 @@
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
+    const alertToUpdate = (updateAvail) => {
+        if (updateAvail) {
+            chatgpt.alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
+                chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
+                    + ' v' + version.toString() + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
+                    + '<a target="_blank" href="https://github.com/adamlui/chatgpt-infinity/commits/main/chrome/extension" '
+                    + 'style="font-size: 0.7rem">' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
+                function update() { chrome.runtime.reload() } // update button
+        )} else {
+            chatgpt.alert(chrome.i18n.getMessage('alert_upToDate') + '!',
+                chrome.i18n.getMessage('appName') + ' v' + chrome.runtime.getManifest().version
+                    + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!'
+    )}}
+
     // Define TOGGLE functions
 
     function insertToggle() {

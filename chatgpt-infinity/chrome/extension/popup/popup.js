@@ -133,21 +133,8 @@
     const updateSpan = document.querySelector('span[title*="update" i]')
     updateSpan.addEventListener('click', () => {
         window.close() // popup
-        chrome.runtime.requestUpdateCheck((status, version) => {
-            if (status === 'update_available') {
-                alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
-                    chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
-                        + ' v' + version.toString() + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
-                        + '<a target="_blank" href="https://github.com/adamlui/chatgpt-infinity/commits/main/chrome/extension" '
-                        + 'style="font-size: 0.7rem">' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
-                    function update() { chrome.runtime.reload() } // update button
-                )
-            } else { // alert to no update found
-                alert(chrome.i18n.getMessage('alert_upToDate') + '!',
-                    chrome.i18n.getMessage('appName') + ' v' + chrome.runtime.getManifest().version
-                        + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!')
-            }
-    })})
+        chrome.runtime.requestUpdateCheck((status, version) => { alertToUpdate(status === 'update_available') }
+    )})
 
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]')
@@ -171,7 +158,7 @@
     chatGPTjsImg.addEventListener('mouseout', function() {
       chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png' })
 
-    // Define FUNCTIONS
+    // Define FEEDBACK functions
 
     function notify(msg, position) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -185,12 +172,22 @@
                 action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width
     })})}
 
+    function alertToUpdate(updateAvail) {
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            chrome.tabs.sendMessage(tabs[0].id, { 
+                action: 'alertToUpdate', args: updateAvail
+    })})}
+
+    // Define MENU label function
+
     function toTitleCase(str) {
         const words = str.toLowerCase().split(' ')
         for (let i = 0 ; i < words.length ; i++)
             words[i] = words[i][0].toUpperCase() + words[i].slice(1)
         return words.join(' ')
     }
+
+    // Define SYNC functions
 
     function syncExtension() {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
