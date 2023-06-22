@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.22
+// @version             2023.6.22.1
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -168,7 +168,9 @@
     }) ; var messages = await msgsLoaded
 
     // Create browser toolbar menu or disable script if extension installed
-    var menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'] } // initialize menu vars
+    var menuIDs = []
+    state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+              separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     await chatgpt.isLoaded()
     if (document.documentElement.getAttribute('cif-extension-installed')) { // if extension installed, disable script/menu
         GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return })
@@ -297,18 +299,17 @@
 
     function registerMenu() {
         menuIDs = [] // empty to store newly registered cmds for removal while preserving order
-        var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to toggle Infinity Mode
         var imLabel = state.symbol[+!config.infinityMode] + ' ' + messages.menuLabel_infinityMode + ' ∞ '
-            + stateSeparator + state.word[+!config.infinityMode]
+            + state.separator + state.word[+!config.infinityMode]
         menuIDs.push(GM_registerMenuCommand(imLabel, () => {
             document.querySelector('#infToggleLabel').click()
         }))
 
         // Add command to toggle visibility of toggle
         var tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
-            + stateSeparator + state.word[+config.toggleHidden]
+            + state.separator + state.word[+config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
@@ -318,7 +319,7 @@
 
         // Add command to toggle auto-scroll
         var asLabel = state.symbol[+config.autoScrollDisabled] + ' ' + messages.menuLabel_autoScroll
-            + stateSeparator + state.word[+config.autoScrollDisabled]
+            + state.separator + state.word[+config.autoScrollDisabled]
         menuIDs.push(GM_registerMenuCommand(asLabel, () => {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
             notify(messages.menuLabel_autoScroll + ': '+ state.word[+config.autoScrollDisabled])
@@ -326,7 +327,7 @@
         }))
 
         // Add command to set reply language
-        var rlLabel = '🌐 ' + messages.menuLabel_replyLang + stateSeparator + config.userLanguage
+        var rlLabel = '🌐 ' + messages.menuLabel_replyLang + state.separator + config.userLanguage
         menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
             while (true) {
                 var replyLanguage = prompt(`${ messages.prompt_updateReplyLang }:`, config.replyLanguage)
@@ -344,7 +345,7 @@
 
         // Add command to set reply topic
         const re_all = new RegExp('^(' + messages.menuLabel_all + '|all|any|every)$', 'i')
-        var rtLabel = '🧠 ' + messages.menuLabel_replyTopic + stateSeparator
+        var rtLabel = '🧠 ' + messages.menuLabel_replyTopic + state.separator
                     + ( config.replyTopic.match(re_all) ? messages.menuLabel_all
                                                         : toTitleCase(config.replyTopic) )
         menuIDs.push(GM_registerMenuCommand(rtLabel, () => {
@@ -367,7 +368,7 @@
         }}}))
 
         // Add command to change reply interval
-        var riLabel = '⌚ ' + messages.menuLabel_replyInt + stateSeparator + config.replyInterval + 's'
+        var riLabel = '⌚ ' + messages.menuLabel_replyInt + state.separator + config.replyInterval + 's'
         menuIDs.push(GM_registerMenuCommand(riLabel, async () => {
             while (true) {
                 var replyInterval = prompt(`${ messages.prompt_updateReplyInt }:`, config.replyInterval)
@@ -435,7 +436,7 @@
             notify(messages.menuLabel_infinityMode + ': ON')
             try { chatgpt.startNewChat() } catch (error) { return }
             setTimeout(() => {
-                chatgpt.send('Generate a single random q&a'
+                chatgpt.send('Generate a single random Q&A'
                     + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                     + ( ' on ' + ( config.replyTopic === 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
                     + '. Don\'t type anything else.')
