@@ -133,8 +133,8 @@
     const updateSpan = document.querySelector('span[title*="update" i]')
     updateSpan.addEventListener('click', () => {
         window.close() // popup
-        chrome.runtime.requestUpdateCheck((status, version) => { alertToUpdate(status === 'update_available') }
-    )})
+        chrome.runtime.requestUpdateCheck((status, version) => { alertToUpdate(status === 'update_available' ? version : '') })
+    })
 
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]')
@@ -171,11 +171,11 @@
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width
     })})}
-
-    function alertToUpdate(updateAvail) {
+    
+    function alertToUpdate(version) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'alertToUpdate', args: updateAvail
+                action: 'alertToUpdate', args: version
     })})}
 
     // Define MENU label function

@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.22.3
+// @version             2023.6.22.4
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -169,7 +169,7 @@
 
     // Create browser toolbar menu or disable script if extension installed
     var menuIDs = []
-    state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+    var state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
               separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     await chatgpt.isLoaded()
     if (document.documentElement.getAttribute('cif-extension-installed')) { // if extension installed, disable script/menu

@@ -5,7 +5,7 @@ chrome.runtime.onInstalled.addListener((details) => {
 })
 
 // Add auto-alert on update available
-chrome.runtime.onUpdateAvailable.addListener((details) => { alertToUpdate(true) })
+chrome.runtime.onUpdateAvailable.addListener((details) => { alertToUpdate(details.version) })
 
 // Sync extension state/settings when ChatGPT tab active
 chrome.tabs.onActivated.addListener((activeInfo) => {
@@ -14,8 +14,8 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
             chrome.tabs.sendMessage(tab.id, { action: 'syncExtension' })
 }})})
 
-function alertToUpdate(updateAvail) {
+function alertToUpdate(version) {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, { 
-            action: 'alertToUpdate', args: updateAvail
+            action: 'alertToUpdate', args: version
 })})}
