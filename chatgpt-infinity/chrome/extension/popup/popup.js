@@ -133,8 +133,9 @@
     const updateSpan = document.querySelector('span[title*="update" i]')
     updateSpan.addEventListener('click', () => {
         window.close() // popup
-        chrome.runtime.requestUpdateCheck((status, version) => { alertToUpdate(status === 'update_available' ? version : '') })
-    })
+        chrome.runtime.requestUpdateCheck((status, version) => {
+            alertToUpdate(status === 'update_available' ? version : '')
+    })})
 
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]')
