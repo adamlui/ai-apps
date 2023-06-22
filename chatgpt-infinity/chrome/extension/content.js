@@ -146,20 +146,20 @@
         activate: async () => {
             if (!infinityMode.fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
             infinityMode.fromMsg = false
-            try { document.querySelector('nav a').click() } catch (error) { return }
+            try { chatgpt.startNewChat() } catch (error) { return }
             setTimeout(() => {
-                chatgpt.send('Generate a single random q&a'
+                chatgpt.send('Generate a single random Q&A'
                     + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                     + ( ' on ' + ( config.replyTopic === 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
                     + '. Don\'t type anything else.')
-            }, 500)        
+            }, 500)
             await chatgpt.isIdle()
             if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
         },
 
         continue: async () => {
-            chatgpt.send('do it again')
+            chatgpt.send('Do it again.')
             if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(error) {}
             await chatgpt.isIdle() // before starting delay till next iteration
             if (infinityMode.isActive) // replace timer

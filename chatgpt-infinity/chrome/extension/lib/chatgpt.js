@@ -340,6 +340,12 @@ var chatgpt = {
         }, 25);
     },
 
+    startNewChat: function() {
+        for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+            if (navLink.text.match(/(new|clear) chat/i)) {
+                navLink.click(); return;
+    }}},
+
     stop: function() {
         for (var formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('stop')) {

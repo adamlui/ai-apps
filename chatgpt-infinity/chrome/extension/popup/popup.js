@@ -14,6 +14,7 @@
     const replyIntervalDiv = menuItems[5], replyIntervalLabel = replyIntervalDiv.querySelector('span')
 
     // Sync toggle states
+    const re_all = new RegExp('^(' + chrome.i18n.getMessage('menuLabel_all') + '|all|any|every)$', 'i')
     settings.load(['extensionDisabled', 'infinityMode', 'toggleHidden', 'autoScrollDisabled',
                    'replyInterval', 'replyTopic', 'replyLanguage', 'userLanguage'])
         .then(() => { // restore toggle states
@@ -23,8 +24,8 @@
             autoScrollToggle.checked = !config.autoScrollDisabled
             replyLangLabel.innerText += ` — ${ config.replyLanguage }`
             replyTopicLabel.innerText += ' — '
-                + ( config.replyTopic.toUpperCase() == 'ALL' ? config.replyTopic.toUpperCase()
-                                                             : toTitleCase(config.replyTopic) )
+                + ( config.replyTopic.match(re_all) ? chrome.i18n.getMessage('menuLabel_all')
+                                                    : toTitleCase(config.replyTopic) )
             replyIntervalLabel.innerText += ` — ${ config.replyInterval }s`
             updateGreyness()
         })
@@ -93,14 +94,17 @@
     // Add Reply Topic click-listener
     replyTopicDiv.addEventListener('click', () => {
         while (true) {
-            const replyTopic = prompt('Update reply topic:', config.replyTopic)
+            const replyTopic = prompt(chrome.i18n.getMessage('prompt_updateReplyTopic')
+                + ' (' + chrome.i18n.getMessage('prompt_orEnter') + ' \'ALL\'):', config.replyTopic)
             if (replyTopic === null) break // user cancelled so do nothing
             else if (!/\d/.test(replyTopic)) {
-                settings.save('replyTopic', replyTopic ? replyTopic : 'ALL')
+                settings.save('replyTopic', !replyTopic || replyTopic.match(re_all) ? 'ALL' : replyTopic)
                 window.close() // popup
-                alert('Topic updated!', chrome.i18n.getMessage('appName') + ' will answer questions on '
-                        + ( !replyTopic || replyTopic.toUpperCase() == 'ALL' ? 'ALL topics'
-                                                                             : 'the topic of ' + replyTopic ) + '!')
+                alert(chrome.i18n.getMessage('alert_replyTopicUpdated') + '!',
+                    chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willAnswer') + ' '
+                        + ( !replyTopic || replyTopic.match(re_all) ? chrome.i18n.getMessage('alert_onAllTopics')
+                                                                    : chrome.i18n.getMessage('alert_onTopicOf')
+                                                                        + ' ' + replyTopic ) + '!')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
                     if (tabs[0].url.includes('chat.openai.com') && config.infinityMode) { // reboot active session
                         chrome.tabs.sendMessage(tabs[0].id, { action: 'restartOnReplyTopic' }) }
