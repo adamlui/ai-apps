@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.21.4
+// @version             2023.6.22
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -343,18 +343,22 @@
         }}}))
 
         // Add command to set reply topic
-        var rtLabel = '🧠 Reply Topic' + stateSeparator
-                    + ( config.replyTopic.toUpperCase() == 'ALL' ? config.replyTopic.toUpperCase()
-                                                                 : toTitleCase(config.replyTopic) )
+        const re_all = new RegExp('^(' + messages.menuLabel_all + '|all|any|every)$', 'i')
+        var rtLabel = '🧠 ' + messages.menuLabel_replyTopic + stateSeparator
+                    + ( config.replyTopic.match(re_all) ? messages.menuLabel_all
+                                                        : toTitleCase(config.replyTopic) )
         menuIDs.push(GM_registerMenuCommand(rtLabel, () => {
             while (true) {
-                var replyTopic = prompt('Update reply topic:', config.replyTopic)
+                var replyTopic = prompt(messages.prompt_updateReplyTopic
+                    + ' (' + messages.prompt_orEnter + ' \'ALL\'):', config.replyTopic)
                 if (replyTopic === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyTopic)) {
-                    saveSetting('replyTopic', replyTopic ? replyTopic : 'ALL')
-                    alert('Topic updated!', messages.appName + ' will answer questions on '
-                        + ( !replyTopic || replyTopic.toUpperCase() == 'ALL' ? 'ALL topics'
-                                                                             : 'the topic of ' + replyTopic ) + '!')
+                    saveSetting('replyTopic', !replyTopic || replyTopic.match(re_all) ? 'ALL' : replyTopic)
+                    alert(messages.alert_replyTopicUpdated + '!',
+                        messages.appName + ' ' + messages.alert_willAnswer + ' '
+                            + ( !replyTopic || replyTopic.match(re_all) ? messages.alert_onAllTopics
+                                                                        : messages.alert_onTopicOf + ' ' + replyTopic )
+                            + '!')
                     if (config.infinityMode) { // restart session using new reply topic
                         chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
                         setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) } // toggle on
@@ -429,7 +433,7 @@
 
         activate: async () => {
             notify(messages.menuLabel_infinityMode + ': ON')
-            try { document.querySelector('nav a').click() } catch (error) { return }
+            try { chatgpt.startNewChat() } catch (error) { return }
             setTimeout(() => {
                 chatgpt.send('Generate a single random q&a'
                     + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
