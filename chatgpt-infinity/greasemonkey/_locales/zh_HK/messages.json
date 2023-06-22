@@ -20,7 +20,7 @@
   "alert_willReplyIn": { "message": "ChatGPT 無盡將回覆" },
   "alert_yourSysLang": { "message": "你的系統語言" },
   "alert_willAnswer": { "message": "將回答問題" },
-  "alert_onTopicOf": { "message": "關於The Topic Of" },
+  "alert_onTopicOf": { "message": "關於這個話題" },
   "alert_onAllTopics": { "message": "關於所有主題" },
   "alert_willReplyEvery": { "message": "ChatGPT 無盡將每隔" },
   "alert_updateAvail": { "message": "有可用的更新" },
