@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.22.2
+// @version             2023.6.22.3
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -265,8 +265,8 @@
                             saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
-                        alert('Update available! 🚀',
-                            `An update to ${ messages.appName } (v${ latestVer }) is available!   `
+                        const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`,
+                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
                                 + `<a target="_blank" href="https://github.com/adamlui/chatgpt-infinity/commits/main/greasemonkey/chatgpt-infinity.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
                                 window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
@@ -278,12 +278,22 @@
                                     saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
                                 : ''
                         )
+
+                        // Localize button/checkbox labels if needed
+                        if (!config.userLanguage.startsWith('en')) {
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
+                            updateAlert.querySelector('label').textContent = ( // checkbox label
+                                `${ messages.alert_dontShowAgain } ${ messages.alert_untilNextVer }`)
+                            updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
+                            updateAlert.querySelectorAll('button')[0].textContent = messages.buttonLabel_dismiss
+                        }
+
                         return
                 }}
 
                 if (checkForUpdates.fromMenu) { // alert to no update found
-                    alert('Up-to-date!', // title
-                        `${ messages.appName } (v${ currentVer }) is up-to-date!`) // msg
+                    alert(`${ messages.alert_upToDate }!`, // title
+                        `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
     }}})}
 
     // Define MENU functions
@@ -387,7 +397,7 @@
         }}}))
 
         // Add command to check for updates
-        var ucLabel = '🚀 Check for Updates'
+        const ucLabel = '🚀 ' + messages.menuLabel_updateCheck
         menuIDs.push(GM_registerMenuCommand(ucLabel, () => { checkForUpdates.fromMenu = true ; checkForUpdates() }))
 
     }
