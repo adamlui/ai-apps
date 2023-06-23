@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.6.22
+// @version             2023.6.22.1
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -132,7 +132,7 @@
 
 (async () => {
 
-    // Initialize settings
+    // Init config
     const config = { prefix: 'chatGPTar', appSymbol: '↻', userLanguage: navigator.languages[0] || navigator.language || '',
                      ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/' }
     loadSetting('arDisabled', 'lastCheckTime', 'notifHidden', 'refreshInterval', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
@@ -140,6 +140,7 @@
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
+        const msgHostDir = config.ghHostDir + 'greasemonkey/_locales/'
         const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = config.ghHostDir + 'greasemonkey/_locales/' + msgLocaleDir + 'messages.json' // build src link
         let msgXHRtries = 0
@@ -164,8 +165,7 @@
     // Init/register menu
     let menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
                                 separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
-    await chatgpt.isLoaded()
-    registerMenu() // create browser toolbar menu
+    await chatgpt.isLoaded() ; registerMenu() // create browser toolbar menu
 
     // Check for updates (1x/72h)
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
