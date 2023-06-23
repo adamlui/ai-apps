@@ -1,4 +1,4 @@
-const config = {}, configPrefix = 'chatGPTws_'
+const config = { prefix: 'chatGPTws', appSymbol: '🖥️' }
 const settings = {
 
     load: function() {
@@ -6,12 +6,12 @@ const settings = {
             Array.isArray(arguments[0]) ? arguments[0] : Array.prototype.slice.call(arguments))
         return Promise.all(keys.map((key) => { // resolve promise when all keys load
             return new Promise((resolve) => { // resolve promise when single key value loads
-                chrome.storage.local.get(configPrefix + key, (result) => { // load from Chrome
-                    config[key] = result[configPrefix + key] || false ; resolve()
+                chrome.storage.local.get(config.prefix + '_' + key, (result) => { // load from Chrome
+                    config[key] = result[config.prefix + '_' + key] || false ; resolve()
     })})}))},
 
     save: function(key, value) {
-        const obj = {} ; obj[configPrefix + key] = value
+        const obj = {} ; obj[config.prefix + '_' + key] = value
         chrome.storage.local.set(obj) // save to Chrome
         config[key] = value // save to memory
     }

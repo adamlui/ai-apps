@@ -22,10 +22,8 @@
         return true
     })
 
-    await chatgpt.isLoaded()
-
-    // Initialize config
-    config.appSymbol = '🖥️' ; config.fullScreen = chatgpt.isFullScreen()
+    // Store full screen state for listeners
+    await chatgpt.isLoaded() ; config.fullScreen = chatgpt.isFullScreen()
 
     // Collect OpenAI classes
     const sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
