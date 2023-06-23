@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.23.1
+// @version             2023.6.23.2
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -234,9 +234,10 @@
 (async () => {
 
     // Init config
-    const config = { prefix: 'chatGPTinf', appSymbol: '∞', userLanguage: navigator.languages[0] || navigator.language || '',
-                     ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/',
-                     updateURL: 'https://greasyfork.org/scripts/465051/code/chatgpt-infinity.meta.js' }
+    const config = {
+        prefix: 'chatGPTinf', appSymbol: '∞', userLanguage: navigator.languages[0] || navigator.language || '',
+        ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/',
+        updateURL: 'https://greasyfork.org/scripts/465051/code/chatgpt-infinity.meta.js' }
     loadSetting('autoScrollDisabled', 'lastCheckTime', 'replyInterval', 'replyLanguage',
         'replyTopic', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
@@ -269,8 +270,9 @@
 
     // Create browser toolbar menu or disable script if extension installed 
     let menuIDs = []
-    const state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-                  separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
+    const state = {
+        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+        separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     await chatgpt.isLoaded()
     if (document.documentElement.getAttribute('cif-extension-installed')) { // if extension installed, disable script/menu
         GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return })
@@ -402,9 +404,9 @@
 
     function toTitleCase(str) {
         const words = str.toLowerCase().split(' ')
-        for (let i = 0 ; i < words.length ; i++)
-            words[i] = words[i][0].toUpperCase() + words[i].slice(1)
-        return words.join(' ')
+        for (let i = 0 ; i < words.length ; i++) // for each word
+            words[i] = words[i][0].toUpperCase() + words[i].slice(1) // title-case it
+        return words.join(' ') // join'em back together
     }
 
     function registerMenu() {
@@ -412,14 +414,14 @@
 
         // Add command to toggle Infinity Mode
         const imLabel = state.symbol[+!config.infinityMode] + ' ' + messages.menuLabel_infinityMode + ' ∞ '
-            + state.separator + state.word[+!config.infinityMode]
+                      + state.separator + state.word[+!config.infinityMode]
         menuIDs.push(GM_registerMenuCommand(imLabel, () => {
             document.querySelector('#infToggleLabel').click()
         }))
 
         // Add command to toggle visibility of toggle
         const tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
-            + state.separator + state.word[+config.toggleHidden]
+                      + state.separator + state.word[+config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
@@ -429,7 +431,7 @@
 
         // Add command to toggle auto-scroll
         const asLabel = state.symbol[+config.autoScrollDisabled] + ' ' + messages.menuLabel_autoScroll
-            + state.separator + state.word[+config.autoScrollDisabled]
+                      + state.separator + state.word[+config.autoScrollDisabled]
         menuIDs.push(GM_registerMenuCommand(asLabel, () => {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
             notify(messages.menuLabel_autoScroll + ': '+ state.word[+config.autoScrollDisabled])
@@ -456,7 +458,7 @@
         // Add command to set reply topic
         const re_all = new RegExp('^(' + messages.menuLabel_all + '|all|any|every)$', 'i')
         const rtLabel = '🧠 ' + messages.menuLabel_replyTopic + state.separator
-                    + ( config.replyTopic.match(re_all) ? messages.menuLabel_all
+                      + ( config.replyTopic.match(re_all) ? messages.menuLabel_all
                                                         : toTitleCase(config.replyTopic) )
         menuIDs.push(GM_registerMenuCommand(rtLabel, () => {
             while (true) {
@@ -505,7 +507,9 @@
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
+            shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow'))
+    }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
