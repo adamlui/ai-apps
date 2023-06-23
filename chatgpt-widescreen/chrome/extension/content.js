@@ -141,7 +141,7 @@
         if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true
     })
 
-    // Define GENERAL functions
+    // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
@@ -150,10 +150,20 @@
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
-    function classListToCSS(classList) { // convert DOM classList to single CSS selector
-        return '.' + [...classList].join('.') // prepend dot to dot-separated string
-            .replaceAll(/([:\[\]])/g, '\\$1') // escape CSS special chars
-    }
+    alertToUpdate = (version) => { // eslint-disable-line no-undef
+        if (version) {
+            chatgpt.alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
+                chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
+                    + ' v' + version.toString() + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
+                    + '<a target="_blank" href="https://github.com/adamlui/chatgpt-widescreen/commits/main/chrome/extension" '
+                    + 'style="font-size: 0.7rem">' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
+                function update() { chrome.runtime.reload() } // update button
+            )
+        } else {
+            chatgpt.alert(chrome.i18n.getMessage('alert_upToDate') + '!',
+                chrome.i18n.getMessage('appName') + ' v' + chrome.runtime.getManifest().version
+                    + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!' )
+    }}
 
     // Define BUTTON functions
 
@@ -320,6 +330,11 @@
             + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
                 + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
             + ( !config.tcbDisabled ? tcbStyle : '' )) // expand text input vertically        
+    }
+
+    function classListToCSS(classList) { // convert DOM classList to single CSS selector
+        return '.' + [...classList].join('.') // prepend dot to dot-separated string
+            .replaceAll(/([:\[\]])/g, '\\$1') // escape CSS special chars
     }
 
     syncExtension = () => { // settings, then disable modes or sync taller chatbox

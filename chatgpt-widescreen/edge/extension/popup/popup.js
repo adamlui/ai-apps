@@ -74,19 +74,7 @@
     updateSpan.addEventListener('click', () => {
         window.close() // popup
         chrome.runtime.requestUpdateCheck((status, version) => {
-            if (status === 'update_available') {
-                alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
-                    chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
-                        + ' v' + version.toString() + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
-                        + '<a target="_blank" href="https://github.com/adamlui/chatgpt-widescreen/commits/main/chrome/extension" '
-                        + 'style="font-size: 0.7rem">' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
-                    function update() { chrome.runtime.reload() } // update button
-                )
-            } else { // alert to no update found
-                alert(chrome.i18n.getMessage('alert_upToDate') + '!',
-                    chrome.i18n.getMessage('appName') + ' v' + chrome.runtime.getManifest().version
-                        + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!')
-            }
+            alertToUpdate(status === 'update_available' ? version : '')
     })})
 
     // Add Support span click-listener
@@ -111,7 +99,7 @@
     chatGPTjsImg.addEventListener('mouseout', function() {
       chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png' })
 
-    // Define script functions
+    // Define FEEDBACK functions
 
     function notify(msg, position) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
@@ -124,6 +112,14 @@
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width
     })})}
+    
+    function alertToUpdate(version) {
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            chrome.tabs.sendMessage(tabs[0].id, { 
+                action: 'alertToUpdate', args: version
+    })})}
+
+    // Define SYNC functions
 
     function syncExtension() {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
