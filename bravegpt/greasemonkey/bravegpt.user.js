@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.6.19
+// @version             2023.6.22
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4!)
@@ -30,6 +30,7 @@
 // @match               https://search.brave.com/search*
 // @include             https://auth0.openai.com
 // @connect             raw.githubusercontent.com
+// @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
 // @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@5eed48d721158fc3800c23bc02b5dc0d3959b472/dist/chatgpt-1.10.1.min.js
@@ -138,25 +139,28 @@
     function checkForUpdates() {
 
         // Fetch latest meta
-        var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
-        var currentVer = GM_info.script.version
-        fetch(updateURL + '?t=' + Date.now(), { cache: 'no-cache' })
-            .then((response) => { response.text().then((data) => {
+        const updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
+        const currentVer = GM_info.script.version
+        GM.xmlHttpRequest({ method: 'GET', url: updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
+            onload: (response) => {
                 saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions
-                var latestVer = data.match(/@version +(.*)/)[1]
+                const latestVer = response.responseText.match(/@version +(.*)/)[1]
                 if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
-                for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
+                for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
+                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
+                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
+                    if (currentSubVer > latestSubVer) break // out of comparison since not outdated
+                    else if (latestSubVer > currentSubVer) { // if outdated
                         if (!checkForUpdates.fromMenu) // if auto-alert...
                             saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
                         alert('Update available! 🚀',
-                            `An update to BraveGPT (v${ latestVer }) is available!`
-                                + `<br><a target="_blank" href="https://github.com/kudoai/bravegpt/commits/main/greasemonkey/bravegpt.user.js" style="font-size: 0.7rem">View changes</a>`,
+                            `An update to BraveGPT (v${ latestVer }) is available!   `
+                                + `<a target="_blank" href="https://github.com/kudoai/bravegpt/commits/main/greasemonkey/bravegpt.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
                                 window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
                                     + '?t=' + Date.now(), '_blank')
@@ -172,7 +176,7 @@
 
                 if (checkForUpdates.fromMenu) // alert to no update found
                     alert('Up-to-date!', `BraveGPT (v${ currentVer }) is up-to-date!`)
-    })})}
+    }})}
 
     // Define CONSOLE/ALERT functions
 
