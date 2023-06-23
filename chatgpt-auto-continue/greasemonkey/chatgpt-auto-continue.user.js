@@ -48,7 +48,6 @@
 // @name:zh-HK          ChatGPT 自動繼續 ⏩
 // @name:zh-SG          ChatGPT 自动继续 ⏩
 // @name:zh-TW          ChatGPT 自動繼續 ⏩
-// @version             2023.6.22
 // @description         ⚡ Automatically continue generating multiple ChatGPT responses
 // @description:ar      ⚡ استمر في توليد إجابات متعددة من ChatGPT تلقائيًا
 // @description:bg      ⚡ Автоматично продължаване на генерирането на множество отговори от ChatGPT
@@ -100,6 +99,7 @@
 // @description:zh-TW   ⚡ 自動繼續生成多個 ChatGPT 響應
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
+// @version             2023.6.22.1
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -123,21 +123,22 @@
 
 (async () => {
 
-    // Initialize settings
-    var appSymbol = '≫', configPrefix = 'chatGPTactn_'
-    var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
+    // Init config
+    const config = { prefix: 'chatGPTactn', appSymbol: '≫', userLanguage: navigator.languages[0] || navigator.language || '',
+                     ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/',
+                     updateURL: 'https://greasyfork.org/scripts/466789/code/chatgpt-auto-continue.meta.js' }
     loadSetting('lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer')
 
     // Define messages
-    var msgsLoaded = new Promise(resolve => {
-        var msgHostDir = 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/greasemonkey/_locales/'
-        var msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        var msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
-        var msgXHRtries = 0
+    const msgsLoaded = new Promise(resolve => {
+        const msgHostDir = 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/greasemonkey/_locales/'
+        const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
+        let msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
             try { // to return localized messages.json
-                var messages = new Proxy(JSON.parse(response.responseText), {
+                const messages = new Proxy(JSON.parse(response.responseText), {
                     get(target, prop) { // remove need to ref nested keys
                         if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
@@ -150,10 +151,11 @@
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
             }
         }
-    }) ; var messages = await msgsLoaded
+    }) ; const messages = await msgsLoaded
 
     // Init/register menu
-    var menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'] } // initialize menu vars
+    let menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+                                separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     registerMenu() // create browser toolbar menu
 
     // Check for updates (1x/72h)
@@ -176,20 +178,19 @@
 
     function registerMenu() {
         menuIDs = [] // empty to store newly registered cmds for removal while preserving order
-        var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to hide/show notifications on load
-        var mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
-                    + stateSeparator + state.word[+config.notifHidden]
+        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
+                    + state.separator + state.word[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
             notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
-            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
+            for (const i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
             registerMenu() // serve fresh one
         }))
 
         // Add command to check for updates
-        var ucLabel = '🚀 Check for Updates'
+        const ucLabel = '🚀 Check for Updates'
         menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
     }
 
@@ -198,28 +199,26 @@
 
     function loadSetting(...keys) {
         keys.forEach(key => {
-            config[key] = GM_getValue(configPrefix + key, false)
+            config[key] = GM_getValue(config.prefix + '_' + key, false)
     })}
 
     function saveSetting(key, value) {
-        GM_setValue(configPrefix + key, value) // save to browser
+        GM_setValue(config.prefix + '_' + key, value) // save to browser
         config[key] = value // and memory
     }
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function checkForUpdates() {
 
         // Fetch latest meta
-        const updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
         const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({ method: 'GET', url: updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
-                saveSetting('lastCheckTime', Date.now())
+        GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
+            onload: (response) => { saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions
                 const latestVer = response.responseText.match(/@version +(.*)/)[1]
@@ -234,12 +233,11 @@
                             saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
-                        var updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`,
+                        const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`,
                             `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
                                 + `<a target="_blank" href="https://github.com/adamlui/chatgpt-auto-continue/commits/main/greasemonkey/chatgpt-auto-continue.user.js" style="font-size: 0.7rem">${ messages.link_viewChanges }</a>`,
                             function update() { // button
-                                window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
-                                    + '?t=' + Date.now(), '_blank')
+                                window.open(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(), '_blank')
                                 location.reload() },
                             !checkForUpdates.fromMenu ? // checkbox if auto-alert
                                 function dontShowAgainUntilNextUpdate() {
@@ -250,7 +248,7 @@
 
                         // Localize button/checkbox labels if needed
                         if (!config.userLanguage.startsWith('en')) {
-                            var updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
                             updateAlert.querySelector('label').textContent = ( // checkbox label
                                 `${ messages.alert_dontShowAgain } ${ messages.alert_untilNextVer }`)
                             updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
