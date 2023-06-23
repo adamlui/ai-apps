@@ -100,7 +100,7 @@
 // @description:zh-TW   *安全*保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查（全部來自後台！）
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.22.2
+// @version             2023.6.22.3
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @compatible          chrome
@@ -124,6 +124,8 @@
 // @grant               GM_unregisterMenuCommand
 // @grant               GM.xmlHttpRequest
 // @noframes
+// @updateURL           https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.meta.js
+// @downloadURL         https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.user.js
 // @homepageURL         https://github.com/adamlui/chatgpt-auto-refresh
 // @supportURL          https://github.com/adamlui/chatgpt-auto-refresh/issues
 // ==/UserScript==
@@ -134,7 +136,8 @@
 
     // Init config
     const config = { prefix: 'chatGPTar', appSymbol: '↻', userLanguage: navigator.languages[0] || navigator.language || '',
-                     ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/' }
+                     ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/',
+                     updateURL: 'https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.meta.js' }
     loadSetting('arDisabled', 'lastCheckTime', 'notifHidden', 'refreshInterval', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
     if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
 
@@ -309,11 +312,9 @@
     function checkForUpdates() {
 
         // Fetch latest meta
-        const updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
         const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({ method: 'GET', url: updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
-                saveSetting('lastCheckTime', Date.now())
+        GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
+            onload: (response) => { saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions
                 const latestVer = response.responseText.match(/@version +(.*)/)[1]
@@ -332,8 +333,7 @@
                             `An update to ${ messages.appName } (v${ latestVer }) is available!   `
                                 + `<a target="_blank" href="https://github.com/adamlui/chatgpt-auto-refresh/commits/main/greasemonkey/chatgpt-auto-refresh.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
-                                window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
-                                    + '?t=' + Date.now(), '_blank')
+                                window.open(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(), '_blank')
                                 location.reload() },
                             !checkForUpdates.fromMenu ? // checkbox if auto-alert
                                 function dontShowAgainUntilNextUpdate() {
