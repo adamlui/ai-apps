@@ -31,7 +31,7 @@
 // @description:zh-TW   向 ChatGPT 添加寬屏 + 全屏模式以增強查看效果 + 減少滾動
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.22.2
+// @version             2023.6.23
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -64,7 +64,7 @@
 
 (async () => {
 
-    // Initialize settings
+    // Init config
     const config = { prefix: 'chatGPTws', appSymbol: '🖥️', userLanguage: navigator.languages[0] || navigator.language || '',
                      ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/',
                      updateURL: 'https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.meta.js' }
@@ -277,8 +277,7 @@
         // Fetch latest meta
         const currentVer = GM_info.script.version
         GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
-                saveSetting('lastCheckTime', Date.now())
+            onload: (response) => {  saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions                
                 const latestVer = response.responseText.match(/@version +(.*)/)[1]
