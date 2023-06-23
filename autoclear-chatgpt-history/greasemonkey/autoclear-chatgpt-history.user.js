@@ -25,7 +25,7 @@
 // @description:it      Cancella automaticamente la cronologia chat quando visiti chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.22.3
+// @version             2023.6.22.4
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -61,9 +61,9 @@
 
     // Init config
     const config = { prefix: 'chatGPTac', appSymbol: '🕶️', userLanguage: navigator.languages[0] || navigator.language || '',
-                     ghHostDir: 'https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/' }
+                     ghHostDir: 'https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/',
+                     updateURL: 'https://greasyfork.org/scripts/460805/code/autoclear-chatgpt-history.meta.js' }
     loadSetting('autoclear', 'buttonHidden', 'lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
-    config.isActive = config.autoclear
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -138,13 +138,12 @@
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.autoclear = toggleInput.checked
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        if (config.autoclear && !config.isActive) {
-            setTimeout(chatgpt.clearChats, 250) ; config.isActive = true
+        if (config.autoclear) {
+            setTimeout(chatgpt.clearChats, 250)
             if (!config.notifHidden) notify(messages.mode_autoClear + ': ON')
-        } else if (!config.autoclear && config.isActive) {
-            config.isActive = false
+        } else if (!config.autoclear)
             if (!config.notifHidden) notify(messages.mode_autoClear + ': OFF')
-        } saveSetting('autoclear', config.autoclear)
+        saveSetting('autoclear', config.autoclear)
     })
     updateToggleHTML()
 
