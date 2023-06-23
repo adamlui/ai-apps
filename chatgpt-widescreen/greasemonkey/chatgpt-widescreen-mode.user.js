@@ -1,37 +1,215 @@
 // ==UserScript==
 // @name                ChatGPT Widescreen Mode 🖥️
-// @name:de             ChatGPT-Breitbildmodus 🖥️
-// @name:es             Modo de Pantalla Ancha de ChatGPT 🖥️
-// @name:fr             Mode Écran Large ChatGPT 🖥️
-// @name:it             ChatGPT Modalità Widescreen 🖥️
+// @name:af             ChatGPT Widescreen Modus 🖥️
+// @name:ar             ChatGPT وضع شاشة عريضة 🖥️
+// @name:az             ChatGPT Geniş Ekran Rejimi 🖥️
+// @name:be             ChatGPT Рэжым шырокага экрана 🖥️
+// @name:bg             ChatGPT Широкоекранен режим 🖥️
+// @name:bn             ChatGPT উইডস্ক্রিন মোড 🖥️
+// @name:bo             ChatGPT རྒྱུ་ཆེན་གཞི་བསྒྲུབ་ རྒྱལ་བཤད། 🖥️
+// @name:bs             ChatGPT Režim širokog ekrana 🖥️
+// @name:ca             ChatGPT Mode de pantalla ampla 🖥️
+// @name:ckb            ChatGPT دەستکاری چوارچێوەی ڕووکاری 🖥️
+// @name:cs             ChatGPT Režim širokoúhlé obrazovky 🖥️
+// @name:cy             ChatGPT Mod Sgrin Lled 🖥️
+// @name:da             ChatGPT Bredformat-tilstand 🖥️
+// @name:de             ChatGPT Breitbildmodus 🖥️
+// @name:dv             ChatGPT ވިސްނުވެއް މޯޑި 🖥️
+// @name:dz             ChatGPT འབྲེལ་བ་གཞུང་ལས་སྤྱི་ཚོགས་གླེང་། 🖥️
+// @name:el             ChatGPT Λειτουργία ευρείας οθόνης 🖥️
+// @name:eo             ChatGPT Larĝekrana reĝimo 🖥️
+// @name:es             ChatGPT Modo de pantalla panorámica 🖥️
+// @name:et             ChatGPT Laiarakenduse režiim 🖥️
+// @name:eu             ChatGPT Pantaila Zabalaren Modua 🖥️
+// @name:fa             ChatGPT حالت تلویزیونی 🖥️
+// @name:fi             ChatGPT Laajakuva-tila 🖥️
+// @name:fo             ChatGPT Búðarformaður háttur 🖥️
+// @name:fr             ChatGPT Mode plein écran 🖥️
+// @name:gd             ChatGPT Dreach-sgrìn Leud 🖥️
+// @name:gl             ChatGPT Modo de pantalla ancha 🖥️
+// @name:gu             ChatGPT પ્રશાંત સ્ક્રીન મોડ 🖥️
+// @name:he             ChatGPT מצב מסך רחב 🖥️
+// @name:hi             ChatGPT चहचटजीपटी वाइडस्क्रीन मोड 🖥️
+// @name:hr             ChatGPT Način širokog zaslona 🖥️
+// @name:ht             ChatGPT Mod Fomat Gwo 🖥️
+// @name:hu             ChatGPT Szélesvásznú mód 🖥️
+// @name:hy             ChatGPT լայնէկրանանշանի ռեժիմ 🖥️
+// @name:id             ChatGPT Mode Layar Lebar 🖥️
+// @name:is             ChatGPT Breiðskjásstilling 🖥️
+// @name:it             ChatGPT Modalità schermo panoramica 🖥️
 // @name:ja             ChatGPT ワイドスクリーンモード 🖥️
-// @name:ko             ChatGPT 와이드스크린 모드 🖥️
-// @name:pt             Modo Widescreen ChatGPT 🖥️
-// @name:pt-BR          Modo Widescreen ChatGPT 🖥️
-// @name:ru             Широкоэкранный Режим ChatGPT 🖥️
-// @name:uk             Широкоекранний Pежим ChatGPT 🖥️
+// @name:jv             ChatGPT Mode Layar Lebar 🖥️
+// @name:ka             ChatGPT ფანტსარიშის რეჟიმი 🖥️
+// @name:kab            ChatGPT Amezwaru n Tikliwin Isellalen 🖥️
+// @name:kk             ChatGPT Көлеңкескен түрі 🖥️
+// @name:km             ChatGPT របៀបបង្អស្សមួយធ្វើដំបូង 🖥️
+// @name:kn             ChatGPT ChatGPT ವೈಡ್‌ಸ್ಕ್ರೀನ್ ಮೋಡ್ 🖥️
+// @name:ko             ChatGPT 와이드 스크린 모드 🖥️
+// @name:ku             ChatGPT Moda Pêlên Dirêj 🖥️
+// @name:ky             ChatGPT Жогорку Экрандык Режим 🖥️
+// @name:la             ChatGPT Modus Latus Plenus 🖥️
+// @name:lb             ChatGPT Breitbild-Modus 🖥️
+// @name:lo             ChatGPT ຮູບແບບໂປຣຟອນໃຫຍ່ 🖥️
+// @name:lt             ChatGPT Išplėstojo ekrano režimas 🖥️
+// @name:lv             ChatGPT Plašā ekrāna režīms 🖥️
+// @name:mg             ChatGPT Tarehimarika tamin'ny Widescreen 🖥️
+// @name:mi             ChatGPT Āhua Whātika ā-Raupapa 🖥️
+// @name:mk             ChatGPT Режим на широк екран 🖥️
+// @name:ml             ChatGPT വൈഡ്‌സ്‌ക്രീൻ മോഡ് 🖥️
+// @name:mn             ChatGPT Жинхэнэ Экранны Арга 🖥️
+// @name:ms             ChatGPT Mod Skrin Lebar 🖥️
+// @name:mt             ChatGPT Modalità Widescreen 🖥️
+// @name:my             ChatGPT အများနှုန်းကျော်ဘုံ 🖥️
+// @name:ne             ChatGPT विस्तृत प्राण्डविक पद्धति 🖥️
+// @name:nl             ChatGPT Breedbeeldmodus 🖥️
+// @name:no             ChatGPT Bredskjermmodus 🖥️
+// @name:ny             ChatGPT Mawonekedwe Wathandiza 🖥️
+// @name:pa             ChatGPT ਵਾਇਡਸਕ੍ਰੀਨ ਮੋਡ 🖥️
+// @name:pl             ChatGPT Tryb szerokoekranowy 🖥️
+// @name:ps             ChatGPT د ډیسپلې موډ 🖥️
+// @name:pt             ChatGPT Modo Tela Larga 🖥️
+// @name:ro             ChatGPT Mod ecran lat 🖥️
+// @name:ru             ChatGPT Режим широкоформатного экрана 🖥️
+// @name:rw             ChatGPT Ibindi by'umuhondo bw'ishusho 🖥️
+// @name:sg             ChatGPT Mode Écran Large 🖥️
+// @name:si             ChatGPT විශේෂාංග පෙළක්ෂාව 🖥️
+// @name:sk             ChatGPT Režim širokouhlého displeja 🖥️
+// @name:sl             ChatGPT Način širokega zaslona 🖥️
+// @name:sm             ChatGPT Laititi Fuamatala 🖥️
+// @name:sn             ChatGPT Zvimwe Zvitsva Mode 🖥️
+// @name:so             ChatGPT hab Widescreen Mode 🖥️
+// @name:sr             ChatGPT Режим широког екрана 🖥️
+// @name:sv             ChatGPT Bredbildsläge 🖥️
+// @name:sw             ChatGPT Njia ya Skrini Panoramio 🖥️
+// @name:ta             ChatGPT விரிவான திரை முறை 🖥️
+// @name:te             ChatGPT ChatGPT వైడ్ స్క్రీన్ మోడ్ 🖥️
+// @name:tg             ChatGPT Возачи Режаи Дисплеи Барнома 🖥️
+// @name:th             ChatGPT โหมดหน้าจอแบบเต็มจอ 🖥️
+// @name:ti             ChatGPT ወዲ ኣንጻር መልቀሚ 🖥️
+// @name:tk             ChatGPT Görnüşekran Režimi 🖥️
+// @name:tn             ChatGPT Nyemba Yemba Mzizo 🖥️
+// @name:to             ChatGPT Moli ʻo e Ngaahi Fatongi ʻo Haʻaneesi 🖥️
+// @name:tr             ChatGPT Geniş Ekran Modu 🖥️
+// @name:uk             ChatGPT Режим широкого екрана 🖥️
+// @name:ur             ChatGPT وائڈ اسکرین موڈ 🖥️
+// @name:uz             ChatGPT Keng ekranga rejim 🖥️
+// @name:vi             ChatGPT Chế độ Màn hình Rộng 🖥️
+// @name:xh             ChatGPT Indlela ye-Widescreen Mode 🖥️
+// @name:yi             ChatGPT וויידסקרין מאָד 🖥️
+// @name:zh             ChatGPT 宽屏模式 🖥️
 // @name:zh-CN          ChatGPT 宽屏模式 🖥️
-// @name:zh-HK          ChatGPT 寬屏模式 🖥️
+// @name:zh-HK          ChatGPT 寬螢幕模 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
-// @name:zh-TW          ChatGPT 寬屏模式 🖥️
+// @name:zh-TW          ChatGPT 寬螢幕模 🖥️
+// @name:zu             ChatGPT Isimo sokudlalwa emkhumbini 🖥️
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
-// @description:de      Fügt ChatGPT die Modi Breitbild und Vollbild hinzu, um die Anzeige zu verbessern und das Scrollen zu reduzieren
-// @description:es      Agrega modos de pantalla ancha + ventana completa a ChatGPT para una visualización mejorada + desplazamiento reducido
-// @description:fr      Ajoute les modes écran large + pleine fenêtre à ChatGPT pour une visualisation améliorée + un défilement réduit
-// @description:it      Aggiunge le modalità Widescreen + Full-Window a ChatGPT per una visualizzazione migliorata + scorrimento ridotto
-// @description:ja      ChatGPT にワイドスクリーン + フルウィンドウ モードを追加し、表示の強化とスクロールの削減を実現します
-// @description:ko      향상된 보기 + 스크롤 감소를 위해 ChatGPT에 와이드스크린 + 전체 창 모드를 추가합니다.
-// @description:pt      Adiciona os modos Widescreen + Full-Window ao ChatGPT para visualização aprimorada + rolagem reduzida
-// @description:pt-BR   Adiciona os modos Widescreen + Full-Window ao ChatGPT para visualização aprimorada + rolagem reduzida
-// @description:ru      Добавляет широкоэкранный и полноэкранный режимы в ChatGPT для улучшенного просмотра и уменьшения прокрутки.
-// @description:uk      Додано широкоформатний + повновіконний режими до ChatGPT для покращеного перегляду + зменшеного прокручування
+// @description:af      Voeg Widescreen + Volledige skermmodusse by ChatGPT vir verbeterde kyk + verminderde skrol
+// @description:am      የራስ መጠን በ ChatGPT ውስጥ የተከፈተውን ወደ ትንቢት ማድረግ + ድምፅ እንዲታትና
+// @description:ar      إضافة وضعي الشاشة العريضة + الشاشة الكاملة إلى ChatGPT لتحسين العرض + تقليل التمرير
+// @description:az      ChatGPT üçün Geniş Ekran + Tam Ekran rejimləri əlavə etmək, görüntünü yaxşılaşdırmaq + səlahətən keçirməni azaltmaq
+// @description:be      Дадае рэжымы шырокага экрана + поўнага экрана да ChatGPT для паляпшэнага прагляду + змяншэння скролінгу
+// @description:bem     Ena Mode ya Widescreen + ya Fullscreen ku ChatGPT pa kuongeza kulandila + ukukonda scrolling
+// @description:bg      Добавя режими на Широк екран + Пълен екран към ChatGPT за подобрено гледане + намалено плъзгане
+// @description:bn      এক্স এগ্রিসিভ দেখার জন্য ChatGPT-এ ওয়াইডস্ক্রিন + ফুলস্ক্রিন মোড যুক্ত করে + স্ক্রলিং হ্রাস করে
+// @description:bo      བཅའ་དྲུག་རྒྱུས་པ་+ བདེ་ཆེན་རྒྱུས་པ་འདི་ChatGPT་ནང་ལས་བསྒྲགས་བཞག་བའི་ལྷག་པ་ཞིག་ཁམས་པའི་བརྟག་ཞིབ་བཅོ་སྒྲིག་འདུག
+// @description:bs      Dodaje Widescreen + Fullscreen režime ChatGPT-u za poboljšani prikaz + smanjenje klizanja
+// @description:ca      Afegeix els modes de pantalla ampla + pantalla completa a ChatGPT per a una visualització millorada + reducció de desplaçament
+// @description:ceb     Gidugang ang Mga Modo sa Widescreen + Fullscreen sa ChatGPT alang sa labaw nga pagtan-aw + paggamot sa pag-scroll
+// @description:ckb     Mode Widescreen + Mode Fullscreen bo ChatGPT zêde bike ji bo nêzîkbûna başkirinê + kam kirina birevandinê
+// @description:cs      Přidává režimy Widescreen + Fullscreen do ChatGPT pro zlepšené zobrazení + snížení posouvání
+// @description:cy      Ychwanega dulliau Sgrin Llydan + Sgrin Lawn i ChatGPT ar gyfer gwylio well + lleihau sgrolio
+// @description:da      Tilføjer Widescreen + Fuldscreen-tilstande til ChatGPT for forbedret visning + reduceret rulning
+// @description:de      Fügt Widescreen + Vollbildmodus zu ChatGPT für verbesserte Ansicht + reduziertes Scrollen hinzu
+// @description:dv      ChatGPT ބޮޓޮބޭސީ + ފަންވައިދާ މޯޑިއުލްއަޤް ހެދުމަށް ކަނޑުގެންނަވަން + ރުސަބް ބެންކުރުމަށްވެއްޖެ
+// @description:dz      ChatGPT སྒྲུབ་ཐབས་ + མིང་དཔྱད་ཆེས་དང་པ་ཡོངས་ཀྱི་ལྷག་པ་ཁྱབ་ལ་ཉོ་གར་བཞག་པ་དང་བདེན་པས་ཆེད་པ་དང་ཚིག་རྐྱང་ལ་མགོ་ནི་
+// @description:el      Προσθέτει λειτουργίες Widescreen + Fullscreen στο ChatGPT για βελτιωμένη προβολή + μείωση της κύλισης
+// @description:eo      Aldonas larĝekranajn + plenekranajn reĝimojn al ChatGPT por plibonigita vidado + malpliigo de ŝovado
+// @description:es      Agrega modos de pantalla panorámica + pantalla completa a ChatGPT para una visualización mejorada + desplazamiento reducido
+// @description:et      Lisab ChatGPT-le Widescreen + Täisekraani režiimid parema vaatamise ja vähenenud kerimisega
+// @description:eu      Gehitu Widescreen + Pantaila oso moduak ChatGPT-ra ikusmen hobetu + mugimendua gutxituz
+// @description:fa      اضافه کردن حالت های واید اسکرین + تمام صفحه به ChatGPT برای مشاهده بهتر + کاهش اسکرول
+// @description:fi      Lisää Widescreen + Koko näytön tilat ChatGPT:hen paremman katselun + vähentyneen vierityksen ansiosta
+// @description:fo      Leggur til Widescreen + Fullscreen hamrar á ChatGPT fyri bætta sýning + minnka skúvsetan
+// @description:fr      Ajoute les modes Plein écran + Plein écran à ChatGPT pour une visualisation améliorée + une réduction du défilement
+// @description:gd      Cuir gnèithean Leudachaidh + Faidhlichean sàbhaladh sgrùdair gu ChatGPT airson sealladh air àrdachadh + sgroladh lag
+// @description:gl      Engade os modos de pantalla panorámica + pantalla completa a ChatGPT para unha visualización mellorada + desprazamento reducido
+// @description:gu      એન્હાનો જોડાણ કરો વાઈડસ્ક્રીન + ફુલસ્ક્રીન મોડ તેમજ ChatGPT માટે સુધારેલ જોઈન્ટ પ્રદર્શન + કમેલી સ્ક્રોલિંગ માટે
+// @description:haw     Kālele i nā Ao Waiwai + Ao Piha i loko o ChatGPT no ka ho'ohana'ana ikaika + ka'u hā'ule 'ana
+// @description:he      מוסיף מצבי מסך מורחב + מסך מלא ל־ChatGPT לשיפור תצוגה + הפחתת גלילה
+// @description:hi      बढ़िया दृश्य + कम स्क्रोलिंग के लिए ChatGPT में वाइडस्क्रीन + फुलस्क्रीन मोड जोड़ता है
+// @description:hr      Dodaje Widescreen + Fullscreen načine na ChatGPT za poboljšani prikaz + smanjenje klizanja
+// @description:ht      Ajoute modes Widescreen + Fullscreen nan ChatGPT pou amelyore gade + redui defileman
+// @description:hu      Hozzáadja a Widescreen + Teljes képernyő módokat a ChatGPT-hoz jobb megtekintés + görgetés csökkentése érdekében
+// @description:hy      Ավելացնում է Widescreen + Fullscreen ռեժիմները ChatGPT-ում բարելավված դիտումի համար + սահմանափակումը
+// @description:id      Menambahkan mode Widescreen + Layar Penuh ke ChatGPT untuk penampilan yang lebih baik + pengurangan pengguliran
+// @description:is      Bætir við Widescreen + Fullskjárshamra í ChatGPT til að bæta sýn + draga úr skruni
+// @description:it      Aggiunge le modalità Widescreen + Schermo intero a ChatGPT per una visualizzazione migliorata + riduzione dello scorrimento
+// @description:ja      ChatGPTの表示を向上するために、ワイドスクリーン+フルスクリーンモードを追加します
+// @description:jv      Nambahi Modus Widescreen + Fullscreen menyang ChatGPT kanggo tampilan sing ditingkatake + ngecilake scrolling
+// @description:ka      დაამატებს Widescreen + Fullscreen რეჟიმებს ChatGPT-ში გაუმჯობესებული ნახვა + გამოკლებული გადადების მიზნით
+// @description:kk      ChatGPT-ге Widescreen + Fullscreen режимдерін қосу арқылы көрініс үздіктемелеу + скроллауды кеміту
+// @description:km      បន្ថែមរបៀប Widescreen + Fullscreen ទៅក្នុង ChatGPT សម្រាប់ការមើលឡើងប្រហែលជាក្រុមហ៊ុន + ការរងចាំខ្លួនឯងប៉ុណ្ណោះ
+// @description:kn      ಅಭ್ಯಾಸಕ್ರಮದ ದೃಷ್ಟಿಗೆ ಅನುಗುಣವಾಗಿ Widescreen + Fullscreen ಮೋಡ್ಗಳನ್ನು ChatGPTಗೆ ಸೇರಿಸುತ್ತದೆ
+// @description:ko      ChatGPT에 와이드스크린 + 전체화면 모드를 추가하여 개선된 화면 표시 + 스크롤 감소
+// @description:ku      Dihênîne modên Widescreen + Fullscreenê bo ChatGPTê ji bo pêşînkirina nîşandina + kêmkirina kayanînê
+// @description:ky      ChatGPT-го Widescreen + Fullscreen режимдору кошо аркылуу жакшы көрүнүштү + скроллоо жоготуу
+// @description:lb      Füügt Widescreen + Fullscreen Modi dem ChatGPT bäi fir verbessert Visioun + reduzéiert Scrollen
+// @description:lo      ເພີ່ມຮູບແບບ Widescreen + Fullscreen ໃຫ້ໄດ້ຮຽນ ChatGPT ສຳເລັດຂອງການສະແດງອ້າງວ່າງ + ການປະເມີດໃຫ້ນ້ໍາຂາຍຫນ້າ
+// @description:lt      Prideda Widescreen + Fullscreen režimus į ChatGPT, siekiant pagerinti peržiūrą ir sumažinti slinkimą
+// @description:lv      Pievieno Widescreen + Fullscreen režīmus ChatGPT, lai uzlabotu skatīšanos + samazinātu ritināšanu
+// @description:mg      Mametraka ny fomba Widescreen + Fullscreen amin'ny ChatGPT mba handresy ny fandefasana + famindrampoana ny firotsahana
+// @description:mi      Ka whakarite ana i ngā āhuatanga Widescreen + Fullscreen ki te ChatGPT mō te whakaatu whakapai ake + te whakaiti i te whakararuraru
+// @description:mk      Додава режими на Widescreen + Fullscreen во ChatGPT за подобрување на приказот + намалување на скролирањето
+// @description:ml      വായ്ഡ്‌സ്‌ക്രീൻ + പൂർണ്ണസ്ക്രീൻ മോഡുകൾ ചേർക്കുന്നു ChatGPT-യിൽ മിക്കവാറും കാഴ്ചപ്പാട് + കുറവ് തിരിക്കൽ ചെയ്യുന്നതിന്
+// @description:mn      Widescreen + Fullscreen горимуудыг ChatGPT рүү нэмэх нь дэлгэцэнд хувцаслан + гүйлгээний эвдрэлдээ хянахыг оруулна
+// @description:mr      व्हाइडस्क्रीन + फुलस्क्रीन मोड्स चे ChatGPTमध्ये जोडले जातात व पाहणी वाढविण्यासाठी स्क्रोलिंग कमी करतात
+// @description:ms      Menambah mod Widescreen + Layar Penuh ke ChatGPT untuk tampilan yang lebih baik + pengurangan penatalan
+// @description:mt      Jiddoqq modes Widescreen + Fullscreen għal ChatGPT għall-viżwalizzazzjoni miġġielda + qasam it-telf
+// @description:ne      सुधारिएको दृश्य + कम स्क्रोलिंगका लागि वाइडस्क्रिन + फुलस्क्रिन मोडहरूलाई ChatGPTमा थप्दछ
+// @description:nl      Voegt Widescreen + Fullscreen modi toe aan ChatGPT voor verbeterde weergave + verminderd scrollen
+// @description:no      Legger til Widescreen + Fullskjerm-moduser i ChatGPT for forbedret visning + redusert rulling
+// @description:ny      Ndiwonetsa zolengedwa + Zomwe zosowa ndi ChatGPT kwa kudzaza kuona + kuchotsa kupinda
+// @description:pa      ਚਾਟਜੀਪੀਟੀ ਵਿੱਚ Widescreen + Fullscreen ਮੋਡਾਂ ਸ਼ਾਮਿਲ ਕਰਦਾ ਹੈ ਜਿਹਨਾਂ ਨਾਲ ਵੇਖਾਉਣ ਵਧੀਆ ਹੋ ਜਾਂਦਾ ਹੈ + ਘੂਮਣ ਦੀ ਘਟ-ਪੁਟ ਹੋ ਜਾਂਦੀ ਹੈ
+// @description:pl      Dodaje tryby Widescreen + Fullscreen do ChatGPT dla lepszej widoczności + zmniejszonego przewijania
+// @description:ps      ځانګړې + ټولې پرده په ChatGPT کې اضافه کړي لپاره لاسرسی ترلاسه کړي + کوښښول په کمته
+// @description:pt      Adiciona modos Widescreen + Tela cheia ao ChatGPT para visualização aprimorada + rolagem reduzida
+// @description:ro      Adaugă modurile Widescreen + Ecran complet la ChatGPT pentru vizualizare îmbunătățită + defilare redusă
+// @description:ru      Добавляет режимы Widescreen + Fullscreen в ChatGPT для улучшенного просмотра + сокращенной прокрутки
+// @description:si      ChatGPT සඳහා Widescreen + Fullscreen ප්‍රදර්ශනයක් එක් කරයි තවත් පෙන්වන්නේ දැන් සිතූවාසිකාරක්ෂක විසින් සහ කෙසේදැයි ඇති අගයන් හුස්ම ක්‍රියාවලියකි
+// @description:sk      Pridáva Widescreen + Fullscreen režimy do ChatGPT pre vylepšené zobrazenie + zníženie posúvania
+// @description:sl      Dodaja Widescreen + Fullscreen načine v ChatGPT za izboljšan prikaz + zmanjšano premikanje
+// @description:sm      Faamauina Widescreen + Fullscreen faavae i le ChatGPT mo le faailoga faapea le mafaufau + le auina faavaivai
+// @description:sn      Ongorora Mutaundi wa Widescreen + Fullscreen muChatGPT kutora dzokubvumidzwa + kusha kusweropfuura
+// @description:so      Wax ka beddelaa Hababka Widescreen + Fullscreen ee ChatGPT si aad u fiirsato + si aad u yaraato garaabinta
+// @description:sq      Shton modalitete Widescreen + Fullscreen në ChatGPT për pamje të përmirësuar + ulje të skrollimit
+// @description:sr      Додаје Widescreen + Fullscreen режиме у ЧатГПТ за унапређен приказ + смањено листање
+// @description:st      E ngolisitsoe mokhabo Widescreen + Fullscreen ho ChatGPT bakeng sa mofuta ona le ho fokotsa liphalantere
+// @description:sv      Lägger till Widescreen + Fullscreen-lägen i ChatGPT för förbättrad visning + minskad scrollning
+// @description:sw      Inaongeza modes Widescreen + Fullscreen kwenye ChatGPT kwa kuimarisha kuonyesha + kupunguza kusokota
+// @description:ta      மேலதிரும் பார்வை + சுழற்சியை மோதித்து சாட்ஜிபிடியில் Widescreen + Fullscreen முறைகளைச் சேர்க்கிறது
+// @description:te      Widescreen + Fullscreen మోడ్లను ChatGPTకి చేర్చుకోవడంతో చంపుకునే వీక్షణ కనిపించడానికి స్క్రోల్ తక్కువగా మార్చండి
+// @description:tg      Маводиҳои Widescreen + Fullscreen-ро ба ChatGPT илова мекунад, барои кӯҳнашудаи намоиш + кам кардани скроллаш
+// @description:th      เพิ่มโหมดจอแบบ Widescreen + Fullscreen ใน ChatGPT สำหรับการดูที่ดีขึ้น + การเลื่อนลดลง
+// @description:tl      Nagdaragdag ng mga mode ng Widescreen + Fullscreen sa ChatGPT para sa pinabuting pagtingin + pinaikling pag-scroll
+// @description:tr      Geliştirilmiş görüntüleme + azaltılmış kaydırma için ChatGPT'ye Widescreen + Fullscreen modları ekler
+// @description:tt      ChatGPT-га Widescreen + Fullscreen рәжимләрен өстәәдегезгә, күрүләштеңләри үткәргә + скроллауны буянтартарга
+// @description:ug      ChatGPTغا Widescreen + Fullscreen كۆرۈنمە پەسەند قىلىش+يىتىپ ئاجرا قىلىش مۆچىيى
+// @description:uk      Додає режими Widescreen + Fullscreen до ChatGPT для поліпшеного перегляду + зменшення прокрутки
+// @description:ur      ترقی یافتہ دیکھائی کے لئے ChatGPT میں وائڈ اسکرین + پوری اسکرین موڈز شامل کرتا ہے
+// @description:uz      ChatGPT-ga Widescreen + Fullscreen rejimlarini qo'shadi, ko'rishni yaxshilash + aylantirishni kamaytirish uchun
+// @description:vi      Thêm chế độ Widescreen + Fullscreen vào ChatGPT để cải thiện hiển thị + giảm cuộn trang
+// @description:wo      Bëgg na ñiis-ñiis Widescreen + Fullscreen ci ChatGPT buñ leen waxtu dib lu jàmm + ñaari jëm
+// @description:xh      Enza izimvo Widescreen + Fullscreen kwakuhlanganiselelwa kwiChatGPT ukuze kube khona okukhulu + kokucima kwesithombe
+// @description:yo      Fi àwọn ohun ọrọ Widescreen + Fullscreen si ChatGPT fun iwọle aiyewo + iwọle ififunwọle
+// @description:zh      向 ChatGPT 添加宽屏 + 全屏模式以增强查看效果 + 减少滚动
 // @description:zh-CN   向 ChatGPT 添加宽屏 + 全屏模式以增强查看效果 + 减少滚动
 // @description:zh-HK   向 ChatGPT 添加寬屏 + 全屏模式以增強查看效果 + 減少滾動
 // @description:zh-SG   向 ChatGPT 添加宽屏 + 全屏模式以增强查看效果 + 减少滚动
 // @description:zh-TW   向 ChatGPT 添加寬屏 + 全屏模式以增強查看效果 + 減少滾動
+// @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.23
+// @version             2023.6.23.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -56,8 +234,8 @@
 // @noframes
 // @downloadURL         https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.user.js
 // @updateURL           https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.meta.js
-// @homepageURL         https://chatgptevo.com/widescreen
-// @supportURL          https://chatgptevo.com/widescreen/support
+// @homepageURL         https://chatgptwidescreen.com
+// @supportURL          https://chatgptwidescreen.com/support
 // ==/UserScript==
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license.
