@@ -99,7 +99,7 @@
 // @description:zh-TW   ⚡ 自動繼續生成多個 ChatGPT 響應
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.22.2
+// @version             2023.6.22.3
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -131,7 +131,7 @@
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/greasemonkey/_locales/'
+        const msgHostDir = config.ghHostDir + 'greasemonkey/_locales/'
         const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
         let msgXHRtries = 0
