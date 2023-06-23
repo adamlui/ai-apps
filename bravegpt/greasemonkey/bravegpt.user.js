@@ -14,7 +14,7 @@
 // @description:zh-TW   將 ChatGPT 答案添加到 Brave Search 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.22.1
+// @version             2023.6.22.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -139,11 +139,9 @@
     function checkForUpdates() {
 
         // Fetch latest meta
-        const updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
         const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({ method: 'GET', url: updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
-                saveSetting('lastCheckTime', Date.now())
+        GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
+            onload: (response) => { saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions
                 const latestVer = response.responseText.match(/@version +(.*)/)[1]
@@ -162,8 +160,7 @@
                             `An update to BraveGPT (v${ latestVer }) is available!   `
                                 + `<a target="_blank" href="https://github.com/kudoai/bravegpt/commits/main/greasemonkey/bravegpt.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
-                                window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
-                                    + '?t=' + Date.now(), '_blank')
+                                window.open(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(), '_blank')
                                 location.reload() },
                             !checkForUpdates.fromMenu ? // checkbox if auto-alert
                                 function skipThisVersion() {
@@ -452,7 +449,7 @@
     // Init config/messages/menu
     const config = { prefix: 'braveGPT', appSymbol: '🤖', userLanguage: navigator.languages[0] || navigator.language || '',
                      ghHostDir: 'https://raw.githubusercontent.com/kudoai/bravegpt/main/',
-                     updateURL: 'https://greasyfork.org/scripts/466789/code/chatgpt-auto-continue.meta.js' }
+                     updateURL: 'https://greasyfork.org/scripts/466789/code/bravegpt.meta.js' }
     loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
     var messages = [] ; registerMenu()
 
