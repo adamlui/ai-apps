@@ -11,12 +11,7 @@
 // @name:es             Borrar Automáticamente el Historial de ChatGPT
 // @name:fr             Effacement Automatique de L'Historique ChatGPT
 // @name:it             Cancella Automaticamente Cronologia ChatGPT
-// @version             2023.6.22
 // @description         Auto-clears chat history when visiting chat.openai.com
-// @author              Adam Lui (刘展鹏), Tripp1e & Xiao-Ying Yo (小影哟)
-// @namespace           https://github.com/adamlui
-// @namespace           https://github.com/Tripp1e
-// @namespace           https://github.com/XiaoYingYo
 // @description:zh-CN   访问 chat.openai.com 时自动清除聊天记录
 // @description:zh-SG   访问 chat.openai.com 时自动清除聊天记录
 // @description:zh-TW   訪問 chat.openai.com 時自動清除聊天記錄
@@ -28,6 +23,9 @@
 // @description:es      Borra automáticamente el historial de chat al visitar chat.openai.com
 // @description:fr      Efface automatiquement l'historique des discussions lors de la visite de chat.openai.com
 // @description:it      Cancella automaticamente la cronologia chat quando visiti chat.openai.com
+// @author              Adam Lui
+// @namespace           https://github.com/adamlui
+// @version             2023.6.22.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -61,22 +59,21 @@
 
 (async () => {
 
-    // Initialize settings
-    var appSymbol = '🕶️', configPrefix = 'chatGPTac_'
-    var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
+    // Init config
+    const config = { prefix: 'chatGPTac', appSymbol: '🕶️', userLanguage: navigator.languages[0] || navigator.language || '',
+                     ghHostDir: 'https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/' }
     loadSetting('autoclear', 'buttonHidden', 'lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
     config.isActive = config.autoclear
 
     // Define messages
-    var msgsLoaded = new Promise(resolve => {
-        var msgHostDir = 'https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/greasemonkey/_locales/'
-        var msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        var msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
-        var msgXHRtries = 0
+    const msgsLoaded = new Promise(resolve => {
+        const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        let msgHref = ghHostDir + '/greasemonkey/_locales/' + msgLocaleDir + 'messages.json' // build src link
+        let msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
             try { // to return localized messages.json
-                var messages = new Proxy(JSON.parse(response.responseText), {
+                const messages = new Proxy(JSON.parse(response.responseText), {
                     get(target, prop) { // remove need to ref nested keys
                         if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
@@ -89,10 +86,11 @@
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
             }
         }
-    }) ; var messages = await msgsLoaded
+    }) ; const messages = await msgsLoaded
 
     // Init/register menu
-    var menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'] } // initialize menu vars
+    let menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+                                separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     registerMenu() // create browser toolbar menu
 
     // Check for updates (1x/72h)
@@ -106,7 +104,7 @@
     if (!config.notifHidden && config.autoclear) notify(messages.mode_autoClear + ': ON')
 
     // Stylize/insert toggle switch
-    var switchStyle = document.createElement('style')
+    const switchStyle = document.createElement('style')
     switchStyle.innerText = `/* Stylize switch */
         .switch { position:absolute ; left:208px ; width:34px ; height:18px }
         .switch input { opacity:0 ; width:0 ; height:0 } /* hide checkbox */
@@ -123,22 +121,22 @@
     document.head.appendChild(switchStyle)
 
     // Create toggle label, add styles/classes/listener/HTML
-    var toggleLabel = document.createElement('div') // create label div
+    const toggleLabel = document.createElement('div') // create label div
     toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
     toggleLabel.style.margin = '2px 0' // add v-margins
     toggleLabel.style.userSelect = 'none' // prevent highlighting
-    for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
+    for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
         if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
             toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
             navLink.parentNode.style.margin = '2px 0' // add v-margins
             break // stop looping since class assignment is done
     }}
     toggleLabel.addEventListener('click', () => { // add listener to toggle switch/label/config/menu + auto-clear
-        var toggleInput = document.querySelector('#acToggleInput')
+        const toggleInput = document.querySelector('#acToggleInput')
         toggleInput.checked = !toggleInput.checked
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.autoclear = toggleInput.checked
-        for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         if (config.autoclear && !config.isActive) {
             setTimeout(chatgpt.clearChats, 250) ; config.isActive = true
             if (!config.notifHidden) notify(messages.mode_autoClear + ': ON')
@@ -151,7 +149,7 @@
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
     insertToggle()
-    var nodeObserver = new MutationObserver(function(mutations) {
+    const nodeObserver = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 insertToggle()
@@ -161,37 +159,36 @@
 
     function registerMenu() {
         menuIDs = [] // empty to store newly registered cmds for removal while preserving order
-        var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to toggle auto-clear
-        var acLabel = state.symbol[+!config.autoclear] + ' ' + messages.menuLabel_autoClear
-                    + stateSeparator + state.word[+!config.autoclear]
+        const acLabel = state.symbol[+!config.autoclear] + ' ' + messages.menuLabel_autoClear
+                    + state.separator + state.word[+!config.autoclear]
         menuIDs.push(GM_registerMenuCommand(acLabel, function() {
             document.querySelector('#acToggleLabel').click()
         }))
 
         // Add 'Toggle Visibility' command
-        var tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
-                    + stateSeparator + state.word[+config.toggleHidden]
+        const tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
+                    + state.separator + state.word[+config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, function() {
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden) {
                 notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
-            } for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when changing settings/modes
-        var mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
-                    + stateSeparator + state.word[+config.notifHidden]
+        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
+                    + state.separator + state.word[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
             notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
-            for (var id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to check for updates
-        var ucLabel = '🚀 Check for Updates'
+        const ucLabel = '🚀 Check for Updates'
         menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
     }
 
@@ -199,28 +196,26 @@
 
     function loadSetting(...keys) {
         keys.forEach(key => {
-            config[key] = GM_getValue(configPrefix + key, false)
+            config[key] = GM_getValue(config.prefix + '_' + key, false)
     })}
 
     function saveSetting(key, value) {
-        GM_setValue(configPrefix + key, value) // save to browser
+        GM_setValue(config.prefix + '_' + key, value) // save to browser
         config[key] = value // and memory
     }
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function checkForUpdates() {
 
         // Fetch latest meta
-        const updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
         const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({ method: 'GET', url: updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
-                saveSetting('lastCheckTime', Date.now())
+        GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
+            onload: (response) => { saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions                
                 const latestVer = response.responseText.match(/@version +(.*)/)[1]
@@ -239,8 +234,7 @@
                             `An update to ${ messages.appName } (v${ latestVer }) is available!   `
                                 + `<a target="_blank" href="https://github.com/adamlui/autoclear-chatgpt-history/commits/main/greasemonkey/autoclear-chatgpt-history.user.js" style="font-size: 0.7rem">View changes</a>`,
                             function update() { // button
-                                window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
-                                    + '?t=' + Date.now(), '_blank')
+                                window.open(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(), '_blank')
                                 location.reload() },
                             !checkForUpdates.fromMenu ? // checkbox if auto-alert
                                 function dontShowAgainUntilNextUpdate() {
@@ -258,8 +252,8 @@
     // Define TOGGLE functions
 
     function insertToggle() {
-        var chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {}
-        var firstButton = chatHistoryNav.querySelector('a') || {}
+        const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {}
+        const firstButton = chatHistoryNav.querySelector('a') || {}
         if (chatgpt.history.isOff()) try { firstButton.parentNode.nextElementSibling.style.display = 'none' } catch (error) {} // hide enable-history spam div
         if (!chatHistoryNav.contains(toggleLabel)) try { chatHistoryNav.insertBefore(toggleLabel, firstButton.parentNode) } catch (error) {} // insert toggle
     }
