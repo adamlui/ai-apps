@@ -48,10 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.6.22.1
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
-// @author              Adam Lui
-// @namespace           https://github.com/adamlui
 // @description:ar      *SAFELY* يحافظ على جلسات ChatGPT جديدة ، ويقضي على أخطاء الشبكة المستمرة + فحوصات Cloudflare (كلها من الخلفية!)
 // @description:bg      *БЕЗОПАСНО* поддържа сесиите на ChatGPT свежи, елиминирайки постоянни мрежови грешки + проверки на Cloudflare (всички от заден план!)
 // @description:bn      *নিরাপদে* চ্যাটজিপিটি সেশনগুলিকে সতেজ রাখে, ধ্রুবক নেটওয়ার্ক ত্রুটিগুলি দূর করে + ক্লাউডফ্লেয়ার চেক (সবই ব্যাকগ্রাউন্ড থেকে!)
@@ -101,6 +98,9 @@
 // @description:zh-HK   *安全*保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查（全部來自後台！）
 // @description:zh-SG   *安全*保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查（全部来自后台！）
 // @description:zh-TW   *安全*保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查（全部來自後台！）
+// @author              Adam Lui
+// @namespace           https://github.com/adamlui
+// @version             2023.6.22.2
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @compatible          chrome
@@ -142,7 +142,7 @@
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.ghHostDir + 'greasemonkey/_locales/'
         const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = config.ghHostDir + 'greasemonkey/_locales/' + msgLocaleDir + 'messages.json' // build src link
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
         let msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
@@ -315,7 +315,7 @@
             onload: (response) => {
                 saveSetting('lastCheckTime', Date.now())
 
-                // Compare versions                
+                // Compare versions
                 const latestVer = response.responseText.match(/@version +(.*)/)[1]
                 if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
