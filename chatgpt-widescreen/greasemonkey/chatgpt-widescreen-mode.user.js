@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.20.5
+// @version             2023.6.22
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -65,13 +65,13 @@
 (async () => {
 
     // Initialize settings
-    const configPrefix = 'chatGPTws_'
-    const config = { appSymbol: '🖥️', userLanguage: navigator.languages[0] || navigator.language || '' }
+    const config = { prefix: 'chatGPTws', appSymbol: '🖥️', userLanguage: navigator.languages[0] || navigator.language || '',
+                     ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/' }
     loadSetting('fullerWindows', 'lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer', 'tcbDisabled', 'wideScreen')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = 'https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/greasemonkey/_locales/'
+        const msgHostDir = config.ghHostDir + 'greasemonkey/_locales/'
         const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
         let msgXHRtries = 0
@@ -93,12 +93,14 @@
         }
     }) ; const messages = await msgsLoaded
 
-    // Create browser toolbar menu or disable script if extension installed
+    // Create browser toolbar menu or disable script if extension installed    
+    const state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+                    separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     await chatgpt.isLoaded()
-    if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed, disable script/menu
-        GM_registerMenuCommand('❌ ' + messages.menuLabel_disabled, function() { return })
+    if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
+        GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return }) // disable menu
         return // exit script
-    } else registerMenu() // create functional menu
+    } else { let menuIDs = [] ; registerMenu() } // create functional menu  
 
     // Save full-window + full screen states
     config.fullWindow = chatgpt.sidebar.isOff() ; config.fullScreen = chatgpt.isFullScreen()
@@ -176,8 +178,7 @@
                     if (!config.notifHidden) // ... + notify since sidebar observer doesn't trigger
                         notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                 }
-                if (config.tcbDisabled) updateTweaksStyle()
-                prevSessionChecked = true
+                if (config.tcbDisabled) updateTweaksStyle() ; prevSessionChecked = true
             }
 
     }}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
@@ -211,39 +212,37 @@
     // Define SCRIPT functions
 
     function registerMenu() {
-        const menuIDs = [] // to store registered commands for removal while preserving order
-        const stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF']
-        const stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
+        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
 
         // Add command to also activate wide screen in full-window
-        const fwLabel = stateSymbol[+!config.fullerWindows] + ' ' + messages.menuLabel_fullerWins
-            + stateSeparator + stateWord[+!config.fullerWindows]
+        const fwLabel = state.symbol[+!config.fullerWindows] + ' ' + messages.menuLabel_fullerWins
+                      + state.separator + state.word[+!config.fullerWindows]
         menuIDs.push(GM_registerMenuCommand(fwLabel, () => {
             saveSetting('fullerWindows', !config.fullerWindows)
             syncFullerWindows(config.fullerWindows) // live update on click
             if (!config.notifHidden) {
-                notify(`${ messages.menuLabel_fullerWins }: ${ stateWord[+!config.fullerWindows] }`)
+                notify(`${ messages.menuLabel_fullerWins }: ${ state.word[+!config.fullerWindows] }`)
             } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle taller chatboxes when typing
-        const tcbLabel = stateSymbol[+config.tcbDisabled] + ' ' + messages.menuLabel_tallerChatbox
-            + stateSeparator + stateWord[+config.tcbDisabled]
+        const tcbLabel = state.symbol[+config.tcbDisabled] + ' ' + messages.menuLabel_tallerChatbox
+                       + state.separator + state.word[+config.tcbDisabled]
         menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
             saveSetting('tcbDisabled', !config.tcbDisabled)
             tweaksStyle.innerText = config.tcbDisabled ? tweaksStyle.innerText.replace(tcbStyle, '')
                                                        : tweaksStyle.innerText + tcbStyle
             if (!config.notifHidden) {
-                notify(`${ messages.menuLabel_tallerChatbox }: ${ stateWord[+config.tcbDisabled] }`)
+                notify(`${ messages.menuLabel_tallerChatbox }: ${ state.word[+config.tcbDisabled] }`)
             } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when switching modes
-        const mnLabel = stateSymbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
-            + stateSeparator + stateWord[+config.notifHidden]
+        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
+                      + state.separator + state.word[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifHidden', !config.notifHidden)
-            notify(`${ messages.menuLabel_modeNotifs }: ${ stateWord[+config.notifHidden] }`)
+            notify(`${ messages.menuLabel_modeNotifs }: ${ state.word[+config.notifHidden] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -257,16 +256,17 @@
 
     function loadSetting(...keys) {
         keys.forEach(key => {
-            config[key] = GM_getValue(configPrefix + key, false)
+            config[key] = GM_getValue(config.prefix + '_' + key, false)
     })}
 
     function saveSetting(key, value) {
-        GM_setValue(configPrefix + key, value) // save to browser
+        GM_setValue(config.prefix + '_' + key, value) // save to browser
         config[key] = value // and memory
     }
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`,
+            position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
@@ -285,7 +285,10 @@
                 if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
+                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
+                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
+                    if (currentSubVer > latestSubVer) break // out of comparison since not outdated
+                    else if (latestSubVer > currentSubVer) { // if outdated
                         if (!checkForUpdates.fromMenu) // if auto-alert...
                             saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
