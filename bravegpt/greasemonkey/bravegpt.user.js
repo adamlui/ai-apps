@@ -1,8 +1,5 @@
 // ==UserScript==
 // @name                BraveGPT 🤖
-// @version             2023.6.22
-// @author              Adam Lui
-// @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to Brave Search sidebar (powered by GPT-4!)
 // @description:de      Fügt ChatGPT-Antworten zur Brave Search-Seitenleiste hinzu (unterstützt von GPT-4!)
 // @description:es      Agrega respuestas de ChatGPT a la barra lateral de Brave Search (¡con tecnología de GPT-4!)
@@ -15,6 +12,9 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 Brave Search 側邊欄 (由 GPT-4 提供支持!)
 // @description:zh-SG   将 ChatGPT 答案添加到 Brave Search 侧边栏 (由 GPT-4 提供支持!)
 // @description:zh-TW   將 ChatGPT 答案添加到 Brave Search 側邊欄 (由 GPT-4 提供支持!)
+// @author              Adam Lui
+// @namespace           https://github.com/adamlui
+// @version             2023.6.22.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -106,7 +106,7 @@
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify(appSymbol + ' Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled], '', '', 'shadow')
+            notify(config.appSymbol + ' Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled], '', '', 'shadow')
             for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
             registerMenu() // serve fresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
@@ -122,19 +122,19 @@
 
     function loadSetting(...keys) {
         keys.forEach(key => {
-            config[key] = GM_getValue(configPrefix + key, false)
+            config[key] = GM_getValue(config.prefix + '_' + key, false)
     })}
 
     function saveSetting(key, value) {
-        GM_setValue(configPrefix + key, value) // save to browser
+        GM_setValue(config.prefix + '_' + key, value) // save to browser
         config[key] = value // and memory
     }
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow) }
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow) }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function checkForUpdates() {
 
@@ -181,8 +181,8 @@
     // Define CONSOLE/ALERT functions
 
     var braveGPTconsole = {
-        info: function(msg) {console.info(appSymbol + ' BraveGPT >> ' + msg)},
-        error: function(msg) {console.error(appSymbol + ' BraveGPT >> ERROR: ' + msg)}
+        info: function(msg) {console.info(config.appSymbol + ' BraveGPT >> ' + msg)},
+        error: function(msg) {console.error(config.appSymbol + ' BraveGPT >> ERROR: ' + msg)}
     }
 
     function braveGPTalert(msg) {
@@ -449,10 +449,12 @@
 
     // Run MAIN routine
 
-    // Initialize settings/messages/menu
-    var appSymbol = '🤖', configPrefix = 'braveGPT_', config = {}, messages = []
+    // Init config/messages/menu
+    const config = { prefix: 'braveGPT', appSymbol: '🤖', userLanguage: navigator.languages[0] || navigator.language || '',
+                     ghHostDir: 'https://raw.githubusercontent.com/kudoai/bravegpt/main/',
+                     updateURL: 'https://greasyfork.org/scripts/466789/code/chatgpt-auto-continue.meta.js' }
     loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
-    registerMenu() // create browser toolbar menu
+    var messages = [] ; registerMenu()
 
     // Check for updates (1x/72h)
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 1728000000) checkForUpdates()
@@ -513,7 +515,7 @@
 
         // Activate promo campaign if active
         GM.xmlHttpRequest({
-            method: 'GET', url: 'https://raw.githubusercontent.com/kudoai/bravegpt/main/ads/live/creative.html',
+            method: 'GET', url: config.ghHostDir + 'ads/live/creative.html',
             onload: function(response) {
                 if (response.status == 200) {
 
