@@ -1,8 +1,5 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @version             2023.6.22
-// @author              Adam Lui
-// @namespace           https://github.com/adamlui
 // @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4!)
 // @description:de      Fügt ChatGPT-Antworten zur DuckDuckGo-Seitenleiste hinzu (unterstützt von GPT-4!)
 // @description:es      Agrega respuestas de ChatGPT a la barra lateral de DuckDuckGo (¡con tecnología de GPT-4!)
@@ -15,6 +12,9 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @description:zh-SG   将 ChatGPT 答案添加到 DuckDuckGo 侧边栏 (由 GPT-4 提供支持!)
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
+// @author              Adam Lui
+// @namespace           https://github.com/adamlui
+// @version             2023.6.22.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -124,28 +124,26 @@
 
     function loadSetting(...keys) {
         keys.forEach(key => {
-            config[key] = GM_getValue(configPrefix + key, false)
+            config[key] = GM_getValue(config.prefix + '_' + key, false)
     })}
 
     function saveSetting(key, value) {
-        GM_setValue(configPrefix + key, value) // save to browser
+        GM_setValue(config.prefix + '_' + key, value) // save to browser
         config[key] = value // and memory
     }
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( isDarkMode() ? '' : 'shadow')) }
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( isDarkMode() ? '' : 'shadow')) }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function checkForUpdates() {
 
         // Fetch latest meta
-        const updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
         const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({ method: 'GET', url: updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
-                saveSetting('lastCheckTime', Date.now())
+        GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
+            onload: (response) => { saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions
                 const latestVer = response.responseText.match(/@version +(.*)/)[1]
@@ -164,8 +162,7 @@
                             `An update to DuckDuckGPT (v${ latestVer }) is available!`
                                 + `<a target="_blank" href="https://github.com/kudoai/duckduckgpt/commits/main/greasemonkey/duckduckgpt.user.js" style="font-size: 0.88rem ; position: relative ; left: 10px">View changes</a>`,
                             function update() { // button
-                                window.open(( updateURL.includes('.meta.') ? GM_info.script.downloadURL : updateURL )
-                                    + '?t=' + Date.now(), '_blank')
+                                window.open(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(), '_blank')
                                 location.reload() },
                             !checkForUpdates.fromMenu ? // checkbox if auto-alert
                                 function skipThisVersion() {
@@ -187,8 +184,8 @@
     // Define CONSOLE/ALERT functions
 
     var ddgptConsole = {
-        info: function(msg) {console.info(appSymbol + ' DuckDuckGPT >> ' + msg)},
-        error: function(msg) {console.error(appSymbol + ' DuckDuckGPT >> ERROR: ' + msg)}
+        info: function(msg) {console.info(config.appSymbol + ' DuckDuckGPT >> ' + msg)},
+        error: function(msg) {console.error(config.appSymbol + ' DuckDuckGPT >> ERROR: ' + msg)}
     }
 
     function ddgptAlert(msg) {
@@ -451,10 +448,12 @@
 
     // Run MAIN routine
 
-    // Initialize settings/messages/menu
-    var appSymbol = '🤖', configPrefix = 'ddgpt_', config = {}, messages = []
+    // Init config/messages/menu
+    const config = { prefix: 'ddgpt', appSymbol: '🤖', userLanguage: navigator.languages[0] || navigator.language || '',
+                     ghHostDir: 'https://raw.githubusercontent.com/kudoai/duckduckgpt/main/',
+                     updateURL: 'https://greasyfork.org/scripts/459849/code/duckduckgpt.meta.js' }
     loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
-    registerMenu() // create browser toolbar menu
+    var messages = [] ; registerMenu()
 
     // Exit if prefix/suffix required but not present
     if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
@@ -512,7 +511,7 @@
 
     // Activate promo campaign if active
     GM.xmlHttpRequest({
-        method: 'GET', url: 'https://raw.githubusercontent.com/kudoai/duckduckgpt/main/ads/live/creative.html',
+        method: 'GET', url: config.ghHostDir + 'ads/live/creative.html',
         onload: function(response) {
             if (response.status == 200) {
 
