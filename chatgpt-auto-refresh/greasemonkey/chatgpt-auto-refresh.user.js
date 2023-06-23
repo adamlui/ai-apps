@@ -48,7 +48,7 @@
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
-// @version             2023.6.19.1
+// @version             2023.6.22
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -133,21 +133,20 @@
 (async () => {
 
     // Initialize settings
-    var appSymbol = '↻', configPrefix = 'chatGPTar_'
-    var config = { userLanguage: navigator.languages[0] || navigator.language || '' }
+    const config = { prefix: 'chatGPTar', appSymbol: '↻', userLanguage: navigator.languages[0] || navigator.language || '',
+                     ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/' }
     loadSetting('arDisabled', 'lastCheckTime', 'notifHidden', 'refreshInterval', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
     if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
 
     // Define messages
-    var msgsLoaded = new Promise(resolve => {
-        var msgHostDir = 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/greasemonkey/_locales/'
-        var msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        var msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
-        var msgXHRtries = 0
+    const msgsLoaded = new Promise(resolve => {
+        const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        let msgHref = config.ghHostDir + 'greasemonkey/_locales/' + msgLocaleDir + 'messages.json' // build src link
+        let msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
             try { // to return localized messages.json
-                var messages = new Proxy(JSON.parse(response.responseText), {
+                const messages = new Proxy(JSON.parse(response.responseText), {
                     get(target, prop) { // remove need to ref nested keys
                         if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
@@ -160,18 +159,19 @@
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
             }
         }
-    }) ; var messages = await msgsLoaded
+    }) ; const messages = await msgsLoaded
 
     // Init/register menu
+    let menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+                                separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     await chatgpt.isLoaded()
-    var menuIDs = [], stateSymbol = ['✔️', '❌'], stateWord = ['ON', 'OFF'] // initialize menu vars
     registerMenu() // create browser toolbar menu
 
     // Check for updates (1x/72h)
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
 
     // Stylize toggle switch
-    var switchStyle = document.createElement('style')
+    const switchStyle = document.createElement('style')
     switchStyle.innerText = `/* Stylize switch */
         .switch { position:absolute ; left:208px ; width:34px ; height:18px }
         .switch input { opacity:0 ; width:0 ; height:0 } /* hide checkbox */
@@ -189,22 +189,22 @@
     document.head.appendChild(switchStyle)
 
     // Create toggle label, add styles/classes/listener/HTML
-    var toggleLabel = document.createElement('div') // create label div
+    const toggleLabel = document.createElement('div') // create label div
     toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
     toggleLabel.style.margin = '2px 0' // add v-margins
     toggleLabel.style.userSelect = 'none' // prevent highlighting
-    for (var navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
+    for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
         if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
             toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
             navLink.parentNode.style.margin = '2px 0' // add v-margins
             break // stop looping since class assignment is done
     }}
     toggleLabel.addEventListener('click', () => { // add listener to toggle switch/label/config/menu/auto-refresh
-        var toggleInput = document.querySelector('#arToggleInput')
+        const toggleInput = document.querySelector('#arToggleInput')
         toggleInput.checked = !toggleInput.checked
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.arDisabled = !toggleInput.checked
-        for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+        for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
         if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.activate(config.refreshInterval)
             if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': ON')
@@ -217,8 +217,8 @@
 
     // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
     insertToggle()
-    var nodeObserver = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
+    const nodeObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 insertToggle()
     }})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
@@ -233,41 +233,40 @@
 
     function registerMenu() {
         menuIDs = [] // empty to store newly registered cmds for removal while preserving order
-        var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
 
         // Add command to toggle auto-refresh
-        var arLabel = stateSymbol[+config.arDisabled] + ' ' + messages.menuLabel_autoRefresh + ' ↻ '
-                    + stateSeparator + stateWord[+config.arDisabled]
-        menuIDs.push(GM_registerMenuCommand(arLabel, function() {
+        const arLabel = state.symbol[+config.arDisabled] + ' ' + messages.menuLabel_autoRefresh + ' ↻ '
+                      + state.separator + state.word[+config.arDisabled]
+        menuIDs.push(GM_registerMenuCommand(arLabel, () => {
             document.querySelector('#arToggleLabel').click()
         }))
 
         // Add command to toggle visibility of toggle
-        var tvLabel = stateSymbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
-            + stateSeparator + stateWord[+config.toggleHidden]
-        menuIDs.push(GM_registerMenuCommand(tvLabel, function() {
+        const tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
+                      + state.separator + state.word[+config.toggleHidden]
+        menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden) {
-                notify(messages.menuLabel_toggleVis + ': '+ stateWord[+config.toggleHidden])
-            } for (var id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+                notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
+            } for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when switching modes
-        var mnLabel = stateSymbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
-                    + stateSeparator + stateWord[+config.notifHidden]
-        menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
+        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
+                      + state.separator + state.word[+config.notifHidden]
+        menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifHidden', !config.notifHidden)
-            notify(messages.menuLabel_modeNotifs + ': ' + stateWord[+config.notifHidden])
-            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
+            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
+            for (let i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
             registerMenu() // serve fresh one
         }))
 
         // Add command to change refresh interval
-        var riLabel = '⌚ ' + messages.menuLabel_refreshInt + ' ' + stateSeparator + config.refreshInterval + 's'
-        menuIDs.push(GM_registerMenuCommand(riLabel, function() {
+        const riLabel = '⌚ ' + messages.menuLabel_refreshInt + ' ' + state.separator + config.refreshInterval + 's'
+        menuIDs.push(GM_registerMenuCommand(riLabel, () => {
             while (true) {
-                var refreshInterval = prompt(`${ messages.prompt_updateInt }:`, config.refreshInterval)
+                const refreshInterval = prompt(`${ messages.prompt_updateInt }:`, config.refreshInterval)
                 if (refreshInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(refreshInterval)) && parseInt(refreshInterval) > 0) { // valid int set
                     saveSetting('refreshInterval', parseInt(refreshInterval))
@@ -275,17 +274,17 @@
                         chatgpt.autoRefresh.deactivate()
                         chatgpt.autoRefresh.activate(refreshInterval)
                     }
-                    for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
+                    for (let i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
                     registerMenu() // serve fresh one
-                    var minInterval = Math.max(2, config.refreshInterval - 10)
-                    var maxInterval = config.refreshInterval + 10
-                    alert(`${ messages.alert_intUpdated } ${ minInterval }–${ maxInterval } secs`)
+                    const minInterval = Math.max(2, config.refreshInterval - 10)
+                    const maxInterval = config.refreshInterval + 10
+                    alert('Interval updated!', `${ messages.alert_intUpdated } ${ minInterval }–${ maxInterval } secs`)
                     break
         }}}))
 
         // Add command to check for updates
-        var ucLabel = '🚀 Check for Updates'
-        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
+        const ucLabel = '🚀 Check for Updates'
+        menuIDs.push(GM_registerMenuCommand(ucLabel, () => { checkForUpdates.fromMenu = true ; checkForUpdates() }))
     }
 
     function getUserscriptManager() {
@@ -293,36 +292,38 @@
 
     function loadSetting(...keys) {
         keys.forEach(key => {
-            config[key] = GM_getValue(configPrefix + key, false)
+            config[key] = GM_getValue(config.prefix + '_' + key, false)
     })}
 
     function saveSetting(key, value) {
-        GM_setValue(configPrefix + key, value) // save to browser
+        GM_setValue(config.prefix + '_' + key, value) // save to browser
         config[key] = value // and memory
     }
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ appSymbol } ${ title }`, msg, btns, checkbox, width )}
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function checkForUpdates() {
 
         // Fetch latest meta
-        var updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
-        var currentVer = GM_info.script.version
+        const updateURL = GM_info.scriptUpdateURL || GM_info.script.updateURL || GM_info.script.downloadURL
+        const currentVer = GM_info.script.version
         GM.xmlHttpRequest({ method: 'GET', url: updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: function(response) {
-                var data = response.responseText
+            onload: (response) => {
                 saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions                
-                var latestVer = data.match(/@version +(.*)/)[1]
+                const latestVer = response.responseText.match(/@version +(.*)/)[1]
                 if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
-                for (var i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    if (parseInt(latestVer.split('.')[i] || 0) > parseInt(currentVer.split('.')[i] || 0)) { // if outdated
+                for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
+                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
+                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
+                    if (currentSubVer > latestSubVer) break // out of comparison since not outdated
+                    else if (latestSubVer > currentSubVer) { // if outdated
                         if (!checkForUpdates.fromMenu) // if auto-alert...
                             saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
@@ -350,19 +351,20 @@
     // Define TOGGLE functions
 
     function insertToggle() {
-        var chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {}
-        var firstButton = chatHistoryNav.querySelector('a') || {}
-        if (chatgpt.history.isOff()) try { firstButton.parentNode.nextElementSibling.style.display = 'none' } catch (error) {} // hide enable-history spam div
-        if (!chatHistoryNav.contains(toggleLabel)) try { chatHistoryNav.insertBefore(toggleLabel, firstButton.parentNode) } catch (error) {} // insert toggle
+        const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {}
+        const firstButton = chatHistoryNav.querySelector('a') || {}
+        if (chatgpt.history.isOff()) // hide enable-history spam div
+            try { firstButton.parentNode.nextElementSibling.style.display = 'none' } catch (error) {}
+        if (!chatHistoryNav.contains(toggleLabel)) // insert toggle
+            try { chatHistoryNav.insertBefore(toggleLabel, firstButton.parentNode) } catch (error) {}
     }
 
     function updateToggleHTML() {
-
         while (toggleLabel.firstChild) toggleLabel.firstChild.remove() // clear old content
 
         // Create elements
         const navicon = document.createElement('img') ; navicon.width = 18
-        navicon.src = 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/icons/auto-refresh-navicon-light-155.png'
+        navicon.src = config.ghHostDir + 'media/images/icons/auto-refresh-navicon-light-155.png'
         const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'arToggleLabel'
         const labelText = document.createTextNode(messages.menuLabel_autoRefresh + ' '
             + ( messages['state_' + ( config.arDisabled ? 'disabled' : 'enabled' )]))
