@@ -161,6 +161,7 @@
 // @description:pl      Generuj nieskończone odpowiedzi od wszechwiedzącego ChatGPT (w dowolnym języku!)
 // @description:ps      د هغوی چټکال ChatGPT لخوا نهایت جوابونه جوړه کړئ (د هر یوه ژبه کی!)
 // @description:pt      Gere respostas infinitas do ChatGPT onisciente (em qualquer idioma!)
+// @description:pt-BR   Gere respostas infinitas do ChatGPT onisciente (em qualquer idioma!)
 // @description:rn      Basha inzira nk'itandukanye z'uko ChatGPT uzi (mu rurimi rwose!)
 // @description:ro      Generează răspunsuri infinite de la ChatGPT omniscient (în orice limbă!)
 // @description:ru      Генерируйте бесконечные ответы от всезнающего ChatGPT (на любом языке!)
@@ -198,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.23
+// @version             2023.6.23.1
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
