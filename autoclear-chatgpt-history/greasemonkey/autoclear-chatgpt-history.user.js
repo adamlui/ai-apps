@@ -25,7 +25,7 @@
 // @description:it      Cancella automaticamente la cronologia chat quando visiti chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.22.2
+// @version             2023.6.22.3
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -69,7 +69,7 @@
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.ghHostDir + 'greasemonkey/_locales/'
         const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = config.ghHostDir + '/greasemonkey/_locales/' + msgLocaleDir + 'messages.json' // build src link
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
         let msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
