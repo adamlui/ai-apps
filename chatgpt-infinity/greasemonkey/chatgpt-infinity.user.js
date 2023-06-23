@@ -48,7 +48,6 @@
 // @name:zh-HK          ChatGPT 無限 ∞
 // @name:zh-SG          ChatGPT 无限 ∞
 // @name:zh-TW          ChatGPT 無限 ∞
-// @version             2023.6.22.6
 // @description         Generate endless answers from all-knowing ChatGPT (in any language!)
 // @description:ar      احصل على إجابات لا حصر لها من ChatGPT الذي يعرف الجميع (بأي لغة!)
 // @description:bg      Генерирайте безкрайни отговори от всезнаещия ChatGPT (на всеки език!)
@@ -101,6 +100,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
+// @version             2023.6.22.7
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -126,8 +126,8 @@
 // @noframes
 // @updateURL           https://greasyfork.org/scripts/465051/code/chatgpt-infinity.meta.js
 // @downloadURL         https://greasyfork.org/scripts/465051/code/chatgpt-infinity.user.js
-// @homepageURL         https://chatgptevo.com/infinity
-// @supportURL          https://chatgptevo.com/infinity/support
+// @homepageURL         https://chatgptinfinity.com
+// @supportURL          https://chatgptinfinity.com/support
 // ==/UserScript==
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license
