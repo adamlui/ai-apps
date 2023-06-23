@@ -14,7 +14,7 @@
 // @name:zh-HK          ChatGPT 寬屏模式 🖥️
 // @name:zh-SG          ChatGPT 宽屏模式 🖥️
 // @name:zh-TW          ChatGPT 寬屏模式 🖥️
-// @version             2023.6.22
+// @version             2023.6.22.1
 // @description         Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
@@ -100,7 +100,7 @@
     if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
         GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return }) // disable menu
         return // exit script
-    } else { let menuIDs = [] ; registerMenu() } // create functional menu  
+    } else registerMenu() // create functional menu  
 
     // Save full-window + full screen states
     config.fullWindow = chatgpt.sidebar.isOff() ; config.fullScreen = chatgpt.isFullScreen()
@@ -212,7 +212,7 @@
     // Define SCRIPT functions
 
     function registerMenu() {
-        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
+        const menuIDs = [] // empty to store newly registered cmds for removal while preserving order
 
         // Add command to also activate wide screen in full-window
         const fwLabel = state.symbol[+!config.fullerWindows] + ' ' + messages.menuLabel_fullerWins
