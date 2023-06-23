@@ -25,7 +25,7 @@
 // @description:it      Cancella automaticamente la cronologia chat quando visiti chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.22.4
+// @version             2023.6.22.5
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -263,7 +263,7 @@
 
         // Create elements
         const navicon = document.createElement('img') ; navicon.width = 18
-        navicon.src = 'https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/icons/navicon.png'
+        navicon.src = config.ghHostDir + 'media/images/icons/navicon.png'
         const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'acToggleLabel'
         const labelText = document.createTextNode('Auto-clear ' + ( config.autoclear ? 'enabled' : 'disabled' ))
         const input = document.createElement('input') ; input.id = 'acToggleInput'
