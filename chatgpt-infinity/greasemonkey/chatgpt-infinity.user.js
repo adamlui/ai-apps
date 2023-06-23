@@ -100,7 +100,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.22.7
+// @version             2023.6.22.8
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -139,15 +139,16 @@
                      ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/',
                      updateURL: 'https://greasyfork.org/scripts/465051/code/chatgpt-infinity.meta.js' }
     loadSetting('autoScrollDisabled', 'lastCheckTime', 'replyInterval', 'replyLanguage',
-                'replyTopic', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
+        'replyTopic', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.replyTopic) saveSetting('replyTopic', 'ALL') // init reply topic if unset
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
+        const msgHostDir = config.ghHostDir + 'greasemonkey/_locales/'
         const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = config.ghHostDir + 'greasemonkey/_locales/' + msgLocaleDir + 'messages.json' // build src link
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
         let msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
