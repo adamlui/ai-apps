@@ -122,7 +122,8 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![@luetage](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13988217?first-contrib=2023.04.21-ddg-dark-theme-bug-report&h=50&w=50&mask=circle&maxage=7d "@luetage")](https://github.com/luetage)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/69060894?first-contrib=2023.05.16-katex-idea&h=50&w=50&mask=circle&maxage=7d "@afkvido")](https://github.com/afkvido)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23-css-readability&h=50&w=50&mask=circle&maxage=7d "@AliAlSarre")](https://github.com/AliAlSarre)
-[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/44784663?first-contrib=2023.05.26-ddg-centered-mode-bug-report&h=50&w=50&mask=circle&maxage=7d)](https://github.com/wznmickey)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/44784663?first-contrib=2023.05.26-ddg-centered-mode-bug-report&h=50&w=50&mask=circle&maxage=7d "@wznmickey")](https://github.com/wznmickey)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/96403800?first-contrib=2023.06.24-reply-language-idea&h=50&w=50&mask=circle&maxage=7d "@gitttt54")](https://github.com/gitttt54)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
 ## More ChatGPT apps
