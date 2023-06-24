@@ -1,106 +1,227 @@
 // ==UserScript==
 // @name                ChatGPT Auto Refresh ↻
-// @name:ar             تحديث تلقائي لـ ChatGPT ↻
+// @name:af             ChatGPT Auto Verfris ↻
+// @name:am             የአቃጥል GPT ራስሀሽ ↻
+// @name:ar             ChatGPT تحديث تلقائي ↻
+// @name:az             ChatGPT Avtomatik Yenilə ↻
+// @name:be             Аўтаматычнае абнаўленне ChatGPT ↻
+// @name:bem            ChatGPT Auto Sintalula ↻
 // @name:bg             Автоматично опресняване на ChatGPT ↻
-// @name:bn             ChatGPT অটো রিফ্রেশ ↻
-// @name:cs             Automatické obnovení ChatGPT ↻
-// @name:da             ChatGPT Auto Refresh ↻
-// @name:de             Automatische ChatGPT-Aktualisierung ↻
-// @name:el             Αυτόματη ανανέωση ChatGPT ↻
+// @name:bn             ChatGPT স্বয়ংক্রিয় রিফ্রেশ ↻
+// @name:bo             ChatGPT རེའུ་མིན་པར་སྣོད་དང་ ↻
+// @name:bs             ChatGPT Automatsko Osvježavanje ↻
+// @name:ca             ChatGPT Actualització Automàtica ↻
+// @name:ckb            ChatGPT نوێکردنه‌وه‌ی خۆکار ↻
+// @name:cs             ChatGPT Automatické obnovení ↻
+// @name:cy             ChatGPT Adnewyddu Auto ↻
+// @name:da             ChatGPT Automatisk Opdatering ↻
+// @name:de             ChatGPT Automatisches Aktualisieren ↻
+// @name:dv             ChatGPT އައްޗައިސް އަސްޓްރީ ↻
+// @name:dz             ChatGPT རེའུ་མིན་པར་སྣོད་དང་ ↻
+// @name:el             ChatGPT Αυτόματη Ανανέωση ↻
 // @name:eo             ChatGPT Aŭtomata Refreŝigo ↻
-// @name:es             Actualización Automática de ChatGPT ↻
-// @name:fi             ChatGPT automaattinen päivitys ↻
-// @name:fr             Actualisation Automatique de ChatGPT ↻
-// @name:fr-CA          Actualisation Automatique de ChatGPT ↻
-// @name:gu             ChatGPT ઓટો રિફ્રેશ ↻
-// @name:hi             चैटजीपीटी ऑटो रिफ्रेश ↻
-// @name:hu             ChatGPT automatikus frissítése ↻
-// @name:in             Penyegaran Otomatis ChatGPT ↻
-// @name:it             Aggiornamento Automatico ChatGPT ↻
-// @name:iw             רענון אוטומטי של ChatGPT ↻
+// @name:es             ChatGPT Actualización Automática ↻
+// @name:et             ChatGPT Automaatne Värskendamine ↻
+// @name:eu             ChatGPT Automatikoki Freskatu ↻
+// @name:fa             به روز رسانی خودکار ChatGPT ↻
+// @name:fi             ChatGPT Automaattinen Päivitys ↻
+// @name:fo             ChatGPT Auto Uppdatering ↻
+// @name:fr             ChatGPT Actualisation Automatique ↻
+// @name:fr-CA          ChatGPT Actualisation Automatique ↻
+// @name:gd             ChatGPT Ath-bhualadh Aonaranach ↻
+// @name:gl             ChatGPT Actualización Automática ↻
+// @name:gu             ChatGPT સ્વચાલિત રિફ્રેશ ↻
+// @name:haw            Hoʻonoho Hōʻike Auto ChatGPT ↻
+// @name:he             רענון אוטומטי של ChatGPT ↻
+// @name:hi             ChatGPT स्वचालित रीफ़्रेश ↻
+// @name:hr             ChatGPT Automatsko Osvježavanje ↻
+// @name:ht             ChatGPT Rafrechi Otomatik ↻
+// @name:hu             ChatGPT Automatikus Frissítés ↻
+// @name:hy             Ինքնաշխատ Թարմացում ChatGPT ↻
+// @name:id             ChatGPT Pembaruan Otomatis ↻
+// @name:is             ChatGPT Sjálfvirk Endurnýjun ↻
+// @name:it             ChatGPT Aggiornamento Automatico ↻
 // @name:ja             ChatGPT 自動更新 ↻
+// @name:jv             Pembaruan Otomatis ChatGPT ↻
 // @name:ka             ChatGPT ავტომატური განახლება ↻
-// @name:kn             ChatGPT ಸ್ವಯಂ ರಿಫ್ರೆಶ್ ↻
+// @name:kab            ChatGPT Akarẓim Aɣelnaw ↻
+// @name:kk             ChatGPT Автоматты Жаңарту ↻
+// @name:km             ChatGPT បន្ទាប់ពីបច្ចុប្បន្នភាព ↻
+// @name:kn             ChatGPT ಸ್ವಯಂಚಾಲಿತ ರಿಫ್ರೆಶ್ ↻
 // @name:ko             ChatGPT 자동 새로 고침 ↻
-// @name:ku             ChatGPT Xweseriya Nûvekirina ↻
-// @name:ml             ChatGPT യാന്ത്രിക പുതുക്കൽ ↻
-// @name:mr             ChatGPT ऑटो रिफ्रेश ↻
-// @name:ms             Segar Semula AutoGPT ↻
-// @name:my             ChatGPT အလိုအလျောက်ပြန်လည်စတင်ခြင်း ↻
-// @name:nl             ChatGPT automatisch vernieuwen ↻
-// @name:no             ChatGPT Auto Refresh ↻
-// @name:or             ChatGPT ଅଟୋ ସତେଜ ↻
-// @name:pa             ਚੈਟਜੀਪੀਟੀ ਆਟੋ ਰਿਫ੍ਰੈਸ਼ ↻
-// @name:pl             Automatyczne odświeżanie ChatGPT ↻
-// @name:pt             Atualização automática do ChatGPT ↻
-// @name:pt-BR          Atualização automática do ChatGPT ↻
-// @name:ro             Actualizare automată ChatGPT ↻
-// @name:ru             Автоматическое Обновление ChatGPT ↻
-// @name:sk             Automatické obnovenie chatGPT ↻
-// @name:sr             Аутоматско освежавање ЦхатГПТ ↻
-// @name:ta             ChatGPT தானியங்கு புதுப்பிப்பு ↻
+// @name:ky             ChatGPT Автоматтык Тазартуу ↻
+// @name:la             ChatGPT Automatica Refectio ↻
+// @name:lb             ChatGPT Automatescht Aktualiséieren ↻
+// @name:lo             ChatGPT ປັບປຸງອັດຕະໂນມັດອັດຕະໂນມັດ ChatGPT ↻
+// @name:lt             ChatGPT Automatinis Atnaujinimas ↻
+// @name:lv             ChatGPT Automātiska Atsvaidzināšana ↻
+// @name:mg             Fanavaozana Ankehitriny i ChatGPT ↻
+// @name:mi             ChatGPT Whakahōu Aunoa ↻
+// @name:mk             Автоматско освежување ChatGPT ↻
+// @name:ml             ChatGPT ഓട്ടോ അപ്‌ഡേറ്റ് ↻
+// @name:mn             ChatGPT Автоматаар Шинэчлэх ↻
+// @name:ms             Penyegaran Auto ChatGPT ↻
+// @name:mt             ChatGPT Rifreżġjar Awtomatiku ↻
+// @name:my             ChatGPT အလိုအလျောက်ထပ်ဖြန် ↻
+// @name:ne             ChatGPT आफ्नैजस्तै ताजा गर्नुहोस् ↻
+// @name:nl             ChatGPT Automatische Vernieuwing ↻
+// @name:no             ChatGPT Automatisk Oppdatering ↻
+// @name:pa             ChatGPT ਆਟੋ ਰਿਫਰੈਸ਼ ↻
+// @name:pap            ChatGPT Refreskamentu Automatico ↻
+// @name:pl             ChatGPT Automatyczne Odświeżanie ↻
+// @name:ps             د ChatGPT زما تازه کول ↻
+// @name:pt             ChatGPT Atualização Automática ↻
+// @name:pt-BR          ChatGPT Atualização Automática ↻
+// @name:rn             ChatGPT Gushira Ubushyuhe ↻
+// @name:ro             ChatGPT Reîmprospătare Automată ↻
+// @name:ru             Автообновление ChatGPT ↻
+// @name:sg             ChatGPT Rafraîchissement Auto ↻
+// @name:si             ChatGPT ස්වයංක්රීය නැවතුම් ↻
+// @name:sk             ChatGPT Automatické Obnovenie ↻
+// @name:sl             ChatGPT Samodejna Osvežitev ↻
+// @name:sm             ChatGPT Toeaina Auto Taulagaina ↻
+// @name:sn             ChatGPT Rurefu Rakaita Zvakanaka ↻
+// @name:so             ChatGPT Dib-u-helayna Xafiiska ↻
+// @name:sr             ChatGPT Аутоматско Освежавање ↻
+// @name:sv             ChatGPT Automatisk Uppdatering ↻
+// @name:sw             ChatGPT Kupakia Moja kwa moja ↻
+// @name:ta             ChatGPT தானியங்கி புதுப்பிப்பு ↻
+// @name:te             ChatGPT ఆటో రిఫ్రెష్ ↻
+// @name:tg             ChatGPT Таҷдиди худкори ChatGPT ↻
 // @name:th             ChatGPT รีเฟรชอัตโนมัติ ↻
+// @name:ti             ChatGPT ኣካውንታት እውነት ዓይኒ ↻
+// @name:tk             ChatGPT Awtomatik Täzele ↻
+// @name:tn             ChatGPT Tlhokomelo ya Moafrika ↻
+// @name:to             ChatGPT Fakahā ʻihaotaha ↻
+// @name:tpi            ChatGPT Awto Rifrehs ↻
 // @name:tr             ChatGPT Otomatik Yenileme ↻
-// @name:uk             Автоматичне оновлення ChatGPT ↻
-// @name:ur             چیٹ جی پی ٹی آٹو ریفریش ↻
-// @name:vi             Tự động làm mới ChatGPT ↻
+// @name:uk             Автоматичне Оновлення ChatGPT ↻
+// @name:ur             خودکار تازہ کاری ChatGPT ↻
+// @name:uz             ChatGPT Avtomatik Yangilash ↻
+// @name:vi             ChatGPT Tự động Cập nhật ↻
+// @name:xh             ChatGPT Ukunovusa Okuvela ↻
+// @name:yi             ChatGPT אַטאַ אַקטואַליזירן ↻
+// @name:zh             ChatGPT 自动刷新 ↻
 // @name:zh-CN          ChatGPT 自动刷新 ↻
 // @name:zh-HK          ChatGPT 自動刷新 ↻
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
+// @name:zu             ChatGPT Ukusasaza Ngokuzenzakalelayo ↻
 // @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
-// @description:ar      *SAFELY* يحافظ على جلسات ChatGPT جديدة ، ويقضي على أخطاء الشبكة المستمرة + فحوصات Cloudflare (كلها من الخلفية!)
-// @description:bg      *БЕЗОПАСНО* поддържа сесиите на ChatGPT свежи, елиминирайки постоянни мрежови грешки + проверки на Cloudflare (всички от заден план!)
-// @description:bn      *নিরাপদে* চ্যাটজিপিটি সেশনগুলিকে সতেজ রাখে, ধ্রুবক নেটওয়ার্ক ত্রুটিগুলি দূর করে + ক্লাউডফ্লেয়ার চেক (সবই ব্যাকগ্রাউন্ড থেকে!)
-// @description:cs      *BEZPEČNĚ* udržuje relace ChatGPT čerstvé, eliminuje neustálé chyby sítě + kontroly Cloudflare (vše na pozadí!)
-// @description:da      *SIKKERT* holder ChatGPT-sessioner friske og eliminerer konstante netværksfejl + Cloudflare-tjek (alt sammen fra baggrunden!)
-// @description:de      *SICHER* hält ChatGPT-Sitzungen frisch, eliminiert ständige Netzwerkfehler + Cloudflare-Prüfungen (alles aus dem Hintergrund!)
-// @description:el      Το *SAFELY* διατηρεί φρέσκες τις περιόδους σύνδεσης ChatGPT, εξαλείφοντας τα συνεχή σφάλματα δικτύου + τους ελέγχους Cloudflare (όλα από το παρασκήνιο!)
-// @description:eo      *SEKURE* konservas ChatGPT-sesiojn freŝaj, forigante konstantajn retajn erarojn + Cloudflare-kontroloj (ĉiuj el la fono!)
-// @description:es      *SEGURIDAD* mantiene las sesiones de ChatGPT actualizadas, lo que elimina los errores de red constantes + las comprobaciones de Cloudflare (¡todo en segundo plano!)
-// @description:fi      *TURVALLISESTI* pitää ChatGPT-istunnot tuoreina, eliminoiden jatkuvat verkkovirheet + Cloudflare-tarkistukset (kaikki taustalta!)
-// @description:fr      *EN TOUTE SÉCURITÉ* maintient les sessions ChatGPT à jour, éliminant les erreurs réseau constantes + vérifications Cloudflare (toutes en arrière-plan!)
-// @description:fr-CA   *EN TOUTE SÉCURITÉ* maintient les sessions ChatGPT à jour, éliminant les erreurs réseau constantes + vérifications Cloudflare (toutes en arrière-plan!)
-// @description:gu      *સેફલી* ચેટજીપીટી સત્રોને તાજા રાખે છે, સતત નેટવર્ક ભૂલોને દૂર કરે છે + ક્લાઉડફ્લેર તપાસો (બધું પૃષ્ઠભૂમિમાંથી!)
-// @description:hi      न*सुरक्षित* चैटजीपीटी सत्रों को ताज़ा रखता है, निरंतर नेटवर्क त्रुटियों को समाप्त करता है + क्लाउडफ्लेयर चेक (सभी पृष्ठभूमि से!)
-// @description:hu      *BIZTONSÁGOSAN* frissen tartja a ChatGPT munkameneteket, kiküszöbölve az állandó hálózati hibákat + Cloudflare ellenőrzéseket (mind a háttérből!)
-// @description:in      *AMAN* membuat sesi ChatGPT tetap segar, menghilangkan kesalahan jaringan konstan + pemeriksaan Cloudflare (semua dari latar belakang!)
-// @description:it      *IN MODO SICURO* mantiene aggiornate le sessioni di ChatGPT, eliminando i continui errori di rete + i controlli di Cloudflare (tutto in background!)
-// @description:iw      *בטוח* שומר על מפגשי ChatGPT טריים, מבטל שגיאות רשת קבועות + בדיקות Cloudflare (הכל מהרקע!)
-// @description:ja      *安全に* ChatGPT セッションを最新の状態に保ち、一定のネットワーク エラー + Cloudflare チェック (すべてバックグラウンドから!) を排除します。
-// @description:ka      *SAFELY* ინახავს ChatGPT სესიებს ახალი, აღმოფხვრის ქსელის მუდმივ შეცდომებს + Cloudflare შემოწმებებს (ყველაფერი ფონიდან!)
-// @description:kn      *ಸುರಕ್ಷಿತವಾಗಿ* ಚಾಟ್‌ಜಿಪಿಟಿ ಸೆಷನ್‌ಗಳನ್ನು ತಾಜಾವಾಗಿರಿಸುತ್ತದೆ, ನಿರಂತರ ನೆಟ್‌ವರ್ಕ್ ದೋಷಗಳನ್ನು ನಿವಾರಿಸುತ್ತದೆ + ಕ್ಲೌಡ್‌ಫ್ಲೇರ್ ಪರಿಶೀಲನೆಗಳು (ಎಲ್ಲವೂ ಹಿನ್ನೆಲೆಯಿಂದ!)
-// @description:ko      *SAFELY*는 ChatGPT 세션을 최신 상태로 유지하여 지속적인 네트워크 오류 + Cloudflare 검사(모두 백그라운드에서!)를 제거합니다.
-// @description:ku      *EWLE* danişînên ChatGPT nû digire, xeletiyên torê yên domdar ji holê radike + kontrolên Cloudflare (hemû ji paşîn!)
-// @description:ml      *സുരക്ഷിതമായി* ChatGPT സെഷനുകൾ പുതുമയുള്ളതാക്കുന്നു, നിരന്തരമായ നെറ്റ്‌വർക്ക് പിശകുകൾ ഇല്ലാതാക്കുന്നു + ക്ലൗഡ്ഫ്ലെയർ പരിശോധനകൾ (എല്ലാം പശ്ചാത്തലത്തിൽ നിന്ന്!)
-// @description:mr      *सुरक्षितपणे* ChatGPT सत्रे ताजे ठेवते, सतत नेटवर्क त्रुटी दूर करते + क्लाउडफ्लेअर तपासणी (सर्व पार्श्वभूमीतून!)
-// @description:ms      *SELAMAT* memastikan sesi ChatGPT sentiasa segar, menghapuskan ralat rangkaian berterusan + pemeriksaan Cloudflare (semua dari latar belakang!)
-// @description:my      *ဘေးကင်းစွာ* သည် ChatGPT ဆက်ရှင်များကို လတ်ဆတ်နေစေပြီး အမြဲမပြတ် ကွန်ရက်အမှားအယွင်းများကို ဖယ်ရှားပေးသည် + Cloudflare စစ်ဆေးမှုများ (အားလုံးသည် နောက်ခံမှ!)
-// @description:nl      *VEILIG* houdt ChatGPT-sessies up-to-date en elimineert constante netwerkfouten + Cloudflare-controles (allemaal vanaf de achtergrond!)
-// @description:no      *SIKKERT* holder ChatGPT-økter ferske, og eliminerer konstante nettverksfeil + Cloudflare-sjekker (alt fra bakgrunnen!)
-// @description:or      *ନିରାପଦ* ଚାଟ୍ ଜିପିଟି ଅଧିବେଶନକୁ ସତେଜ ରଖେ, କ୍ରମାଗତ ନେଟୱାର୍କ ତ୍ରୁଟି + କ୍ଲାଉଡ୍ ଫ୍ଲାର୍ ଚେକ୍ (ସମସ୍ତ ପୃଷ୍ଠଭୂମିରୁ!)
-// @description:pa      *ਸੁਰੱਖਿਅਤ* ਚੈਟਜੀਪੀਟੀ ਸੈਸ਼ਨਾਂ ਨੂੰ ਤਾਜ਼ਾ ਰੱਖਦਾ ਹੈ, ਨਿਰੰਤਰ ਨੈੱਟਵਰਕ ਤਰੁਟੀਆਂ ਨੂੰ ਖਤਮ ਕਰਦਾ ਹੈ + ਕਲਾਉਡਫਲੇਅਰ ਜਾਂਚਾਂ (ਸਾਰੇ ਪਿਛੋਕੜ ਤੋਂ!)
-// @description:pl      *BEZPIECZNIE* utrzymuje aktualne sesje ChatGPT, eliminując ciągłe błędy sieciowe + kontrole Cloudflare (wszystko w tle!)
-// @description:pt      *SEGURANÇA* mantém as sessões ChatGPT atualizadas, eliminando erros constantes de rede + verificações Cloudflare (tudo em segundo plano!)
-// @description:pt-BR   *SEGURANÇA* mantém as sessões ChatGPT atualizadas, eliminando erros constantes de rede + verificações Cloudflare (tudo em segundo plano!)
-// @description:ro      *ÎN SIGURANȚĂ* păstrează sesiunile ChatGPT actuale, eliminând erorile constante de rețea + verificări Cloudflare (toate din fundal!)
-// @description:ru      *БЕЗОПАСНО* обновляет сеансы ChatGPT, устраняя постоянные сетевые ошибки + проверки Cloudflare (все в фоновом режиме!)
-// @description:sk      *BEZPEČNE* udržiava relácie ChatGPT čerstvé, čím sa eliminujú neustále chyby siete + kontroly Cloudflare (všetko na pozadí!)
-// @description:sr      *СИГУРНО* одржава сесије ЦхатГПТ свежим, елиминишући сталне мрежне грешке + Цлоудфларе провере (све из позадине!)
-// @description:sv      *SÄKERT* håller ChatGPT-sessioner fräscha och eliminerar konstant nätverksfel + Cloudflare-kontroller (alla från bakgrunden!)
-// @description:ta      *பாதுகாப்பாக* ChatGPT அமர்வுகளை புதியதாக வைத்திருக்கிறது, நிலையான நெட்வொர்க் பிழைகள் + Cloudflare சோதனைகளை நீக்குகிறது (அனைத்தும் பின்புலத்திலிருந்து!)
-// @description:th      *ปลอดภัย* รักษาเซสชัน ChatGPT ให้สดใหม่ กำจัดข้อผิดพลาดของเครือข่ายอย่างต่อเนื่อง + ตรวจสอบ Cloudflare (ทั้งหมดจากเบื้องหลัง!)
-// @description:tr      *GÜVENLİ* ChatGPT oturumlarını güncel tutar, sürekli ağ hatalarını ve Cloudflare kontrollerini (hepsi arka planda!) ortadan kaldırır.
-// @description:uk      *БЕЗПЕЧНО* підтримує сеанси ChatGPT свіжими, усуваючи постійні помилки мережі + перевірки Cloudflare (все у фоновому режимі!)
-// @description:ur      *محفوظ طریقے سے* چیٹ جی پی ٹی سیشنز کو تازہ رکھتا ہے، نیٹ ورک کی مستقل خرابیوں کو ختم کرتا ہے + کلاؤڈ فلیئر چیکس (سب کچھ پس منظر سے!)
-// @description:vi      *AN TOÀN* giữ cho các phiên ChatGPT luôn mới, loại bỏ các lỗi mạng liên tục + kiểm tra Cloudflare (tất cả từ nền!)
-// @description:zh-CN   *安全*保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查（全部来自后台！）
-// @description:zh-HK   *安全*保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查（全部來自後台！）
-// @description:zh-SG   *安全*保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查（全部来自后台！）
-// @description:zh-TW   *安全*保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查（全部來自後台！）
+// @description:af      *VEILIG* hou ChatGPT-sessies vars deur konstante netwerkfoute en Cloudflare-kontrole uit die agtergrond te verwyder!
+// @description:am      *ባርማ* ብለው የኮንስትንት እስካሁን ጠፍተኛ እንዲያሳይ እና ክላይንት ፓስያንትን የሚያስተማሩበትን!
+// @description:ar      *بأمان* يحافظ على جلسات ChatGPT منتعشة، ويزيل أخطاء الشبكة المستمرة وفحوصات Cloudflare (كل ذلك من الخلفية)!
+// @description:az      *TƏHLÜKƏSİZ* olaraq ChatGPT seanslarını təzə tutaraq daimi şəbəkə səhvlərini və Cloudflare yoxlamalarını aradan qaldırır!
+// @description:be      *БЯСПЕКА* заўсёды падтрымлівае сеансы ChatGPT, выдаляючы пастаянныя сеткавыя памылкі і праверкі Cloudflare (усё гэта з фону)!
+// @description:bem     *SAFELY* ikalilesha imiseko yakasankha ya ChatGPT, yosinthika ma interneti osangalala ndi kupeza ndondomeko za Cloudflare (zikuchitika lonse lomwe m'gulu!)
+// @description:bg      *БЕЗОПАСНО* задържа свежите сесии на ChatGPT, като отстранява постоянните мрежови грешки и проверки на Cloudflare (всичко това от фона)!
+// @description:bn      *নিরাপদে* ChatGPT সেশনগুলিকে পুরোগামী রাখে, স্থায়ী নেটওয়ার্ক ত্রুটি ও ক্লাউডফ্লেয়ার পরীক্ষাগুলি সরায়। (সব এটা ব্যাকগ্রাউন্ড থেকে!)
+// @description:bo      *རྒྱབ་བཞིན་པའི་* ChatGPT གསརཔ་གཞི་སེལ་མཐོང་། མིན་འདུག་འདྲི་བརྡ་བསྐོར་འདོན་བརྡའི་ནུས་འཛིན་ལག་རིག་རེ་གནས་སྐབས་མངགས་འཛིན་པའི་སྐབས་ལེ།!
+// @description:bs      *SIGURNO* održava ChatGPT sesije svježima, eliminirajući stalne mrežne greške i Cloudflare provjere (sve iz pozadine)!
+// @description:ca      *SEGUR* manté les sessions de ChatGPT fresques, eliminant els errors constants de xarxa i les comprovacions de Cloudflare (tot des del fons)!
+// @description:ceb     *KANUNAYON* nagapabilin nga magbinuligay ang mga ChatGPT nga sesyon nga bag-o, nagapadayon nga mga network nga mga sayop + Cloudflare checks (tanang gikan sa background!)
+// @description:ckb     *بەبێ پەیمانە* بڵاو دەکە چاوانگە پەیوەندیکراوەکانی ChatGPT، هەڵەی شبکەیی کەسیی و بڵاودەکردنەوەکانی Cloudflare-ی دەستبکات (هەموو لە پشتەکە!)
+// @description:cs      *BEZPEČNĚ* udržuje sezení ChatGPT svěží, odstraňuje neustálé síťové chyby a kontroly Cloudflare (všechno z pozadí)!
+// @description:cy      *YN DIOGEL* yn cadw sesiynau ChatGPT yn ffres, gan ddileu gwallau rhwydwaith cyson a phrawfion Cloudflare (cyd-destun y cyfan hwn o'r cefndir!)
+// @description:da      *SIKKERT* holder ChatGPT-sessioner friske ved at fjerne konstante netværksfejl og Cloudflare-checks (det hele i baggrunden!)
+// @description:de      *SICHER* hält ChatGPT-Sitzungen frisch, indem ständige Netzwerkfehler und Cloudflare-Überprüfungen beseitigt werden (alles im Hintergrund!)
+// @description:dv      *ލައިންވެފަ* ހުރިމާލުން ތެރޭގުން ބޭނުންވާނީ ChatGPT ޝެޑިޔާ ކޮންފައިން ދެންވަރުކޮށް ފުރައިވާ ދިބުމުގެ ސެއްޕަންތައް (މިކަންކިފައިން!)
+// @description:dz      *དགའ་བསྐྱིད་བཞུགས་བརྡ* ChatGPT སེལ་ཐུབ་རྐྱངས་རྫོགས་དང་ Cloudflare བཤད་པ་བཟོ་བ་འདི་རེ་འཛིན་པའི་དཀར་ཆག་ལེབ་བྱེད་པ། (འདི་གཉེན་བྱིན་དགོངས་དང་གྲངས་ཀའི་སྒོ་དང་སྒྲིག་སྒྲིག་རྩོམ་ཡིན་པ།!)
+// @description:el      *ΜΕ ΑΣΦΑΛΕΙΑ* διατηρεί τις συνεδρίες ChatGPT φρέσκες, εξαλείφοντας συνεχείς σφάλματα δικτύου και ελέγχους Cloudflare (όλα από το παρασκήνιο!)
+// @description:eo      *SEKURE* tenas fresajn ChatGPT-sesiojn, forigante konstantajn reto-erarojn kaj Cloudflare-ekzamenojn (ĉio el la fono!)
+// @description:es      *SEGURO* mantiene las sesiones de ChatGPT frescas, eliminando constantes errores de red y verificaciones de Cloudflare (¡todo desde el fondo!)
+// @description:et      *TURVALISELT* hoiab ChatGPT seansid värskena, kõrvaldades pidevad võrguvead ja Cloudflare kontrollid (kõik taustal!)
+// @description:eu      *SEGUROA* ChatGPT saioak berrituak mantentzen ditu, sareko akats konstanteak eta Cloudflare egiaztapenak kentzen dituenez (dena hondartzatik!)
+// @description:fa      *به طور ایمن* جلسات ChatGPT را تازه نگه می دارد، با حذف خطاهای مداوم شبکه و بررسی های Cloudflare (همه اینها از پشت صحنه است!)
+// @description:fi      *TURVALLISESTI* pitää ChatGPT-istunnot tuoreina poistamalla jatkuvat verkkovirheet ja Cloudflare-tarkistukset (kaikki taustalla!)
+// @description:fo      *TRYGT* heldur ChatGPT-samrøður ferskar við at útrýma støðugum nettverksumbeinum og Cloudflare-próvtøkum (alt frá bakgrundini!)
+// @description:fr      *EN TOUTE SÉCURITÉ* maintient les sessions ChatGPT fraîches, en éliminant les erreurs réseau constantes et les vérifications Cloudflare (tout cela en arrière-plan!)
+// @description:fr-CA   *EN TOUTE SÉCURITÉ* maintient les sessions ChatGPT fraîches, en éliminant les erreurs réseau constantes et les vérifications Cloudflare (tout cela en arrière-plan!)
+// @description:gd      *LEANTAINNEACH* a' cumail seiseanan ChatGPT tioram, a' sgriosadh mearachdan làitheil sa chòmhdachd agus sgrùdadh Cloudflare (uile seo à taobh a-staigh!)
+// @description:gl      *SEGURO* mantén as sesións ChatGPT frescas, eliminando erros constantes de rede e verificacións de Cloudflare (todo desde o fondo!)
+// @description:gu      *સુરક્ષિતપણે* ChatGPT સેશન્સ ફ્રેશ રાખે છે, નેટવર્ક તરફથી સતત ત્રુટિઓ અને ક્લાઉડફ્લેર ચકાસોને દૂર કરે છે (આ સર્વો બૅકગ્રાઉન્ડમાંથી!)
+// @description:haw     *KUHIAO* e mālama ai i nā helu hōʻāpono ChatGPT maikaʻi, e hoʻopau ana i nā hewa kūʻokoʻa pūnaewele a me nā hōʻikeʻike Cloudflare (a pau mai ka hōʻāpono!)
+// @description:he      *בטחון* מחזיק את ההתוויות של ChatGPT טריות, מסיר שגיאות רשת קבועות ובדיקות Cloudflare (הכול מהרקע!)
+// @description:hi      *सुरक्षित रूप से* ChatGPT सत्रों को ताजगी बनाए रखता है, सतत नेटवर्क त्रुटियों और Cloudflare जांचों को खत्म करता है (सब कुछ पीछे से!)
+// @description:hr      *SIGURNO* održava ChatGPT sesije svježima, eliminirajući konstantne mrežne pogreške i Cloudflare provjere (sve iz pozadine!)
+// @description:ht      *AN SEKIRITE* kenbe sesyon ChatGPT fre, elimine erè sou rezo a ki konstan ak tcheke Cloudflare yo (tout sa soti nan fon an!)
+// @description:hu      *BIZTONSÁGOSAN* friss ChatGPT munkameneteket biztosít, megszünteti a folyamatos hálózati hibákat és a Cloudflare ellenőrzéseket (mindet a háttérből!)
+// @description:hy      *ԱՆՎԵՐՈՒԹՅՈՒՆ ՀԱՅՏԱՑՈՒՄՈՒՆ՝* պարտադրում է զբաղվող ChatGPT սեսիաներ, նշանակում է անվտանգ ցանցային սխալները և Cloudflare-ի ստուգումները (ամենը շարունակականորեն!)
+// @description:id      *AMAN* menjaga sesi ChatGPT tetap segar, menghilangkan kesalahan jaringan konstan dan pemeriksaan Cloudflare (semuanya dari latar belakang!)
+// @description:is      *ÖRUGGLIGT* heldur ChatGPT-samræður ferskar með því að eyða stöðugum netvilla og Cloudflare prófum (allt þetta úr bakgrunninum!)
+// @description:it      *IN SICUREZZA* mantiene le sessioni di ChatGPT fresche, eliminando gli errori di rete costanti e i controlli Cloudflare (tutto dallo sfondo!)
+// @description:ja      *安全に* ChatGPTセッションを新鮮に保ち、常に発生するネットワークエラーやCloudflareのチェックを排除します（すべてバックグラウンドで！）
+// @description:jv      *AMAN* ngadegake sesi ChatGPT tetep anyar, ngilangi kesalahan jaringan kang konstan lan pérangkat Cloudflare (kabeh saka latar belakang!)
+// @description:ka      *უსაფრთხოდ* ინახავს ChatGPT სესიებს ხარვეზებგან გამოცემულ ქსელურ შეცდომებსა და Cloudflare-ს შემოწმებას (ყველა ფონიდან!)
+// @description:kab     *ASGAS* yefka d iseklalen n t-sekhsis ChatGPT, yettunefken ad yeḥbes aḍris n yemgayan akked wudem n Cloudflare (imeslayen yerna meqqren!)
+// @description:kk      *ҚОРҒАУЛЫ* ChatGPT сессияларын жаңа қылатып, желі қателері мен Cloudflare тексерулерін жою (барлығы аркастан!)
+// @description:km      *ដោយសុខភាព* ការបកប្រែកម្មវិធី ChatGPT ជាស្ថានភាពថ្មីគ្រប់គ្រងដែលលុះត្រាតែកើតឡើងវិញជាមួយកំហុសបណ្ដាញទីនេះ!
+// @description:kn      *ಆಸ್ತಿಯಾಗಿ* ಚಾಟ್‌ಜಿಪಿಟಿ ಸತ್ರಗಳನ್ನು ಹೊತ್ತು ಉಳಿಸುವುದು, ನೇಟ್‌ವರ್ಕ್ ದೋಷಗಳನ್ನು ಮತ್ತು ಕ್ಲೌಡ್‌ಫ್ಲೇರ್ ಪರಿಶೀಲನೆಗಳನ್ನು ತೆಗೆದುಹಾಕುವುದು (ಎಲ್ಲವೂ ಹಿಂಬಾಲಕದಿಂದ!)
+// @description:ko      *안전하게* ChatGPT 세션을 신선하게 유지하며, 지속적인 네트워크 오류와 Cloudflare 검사를 제거합니다 (모두 백그라운드에서!)
+// @description:ku      *BEŞELE* seansên ChatGPT hilberînera, sêwiranên têkiliyên Cloudflare û têkiliyên têkiliyan ji bilî wê heye (her tişt ji arkaşê!)
+// @description:ky      *АКЫРКЫЛЫКТАН* ChatGPT сессияларын жаңыртып, туруктуу түзмөктөгө четте катааларды жана Cloudflare текшерүүлөрүн жок коондуруп (баарын аркадан!)
+// @description:la      *TUTA* ChatGPT sessiones recentes conservat, errores perennibus retis et Cloudflare inspectiones eliminans (omnia e fundo!)
+// @description:lb      *SIICHER* halt ChatGPT-Sessions frësch, dëstduerch dauerhaft Netzwierder an Cloudflare Checks z'erof ze huelen (all dat vum Hannergrond!)
+// @description:lo      *ດັດສະນັ່ງ* ສົບຜົນການ ChatGPT ປົດກະທົບເພື່ອສະຫຼັບທີ່ສະຫນອງ, ລຶບຂໍ້ຜິດພາດເຄື່ອງໝາຍເຊີ່ງໂພດແລະການກວດ Cloudflare (ທັງຫມົດຈາກພວກຫມາຍ!)
+// @description:lt      *SAUGIAI* išlaiko ChatGPT sesijas šviežias, pašalindamas nuolatinius tinklo klaidas ir Cloudflare patikrinimus (viską iš fono!)
+// @description:lv      *DROŠI* uztur ChatGPT sesijas svaigas, izslēdzot pastāvīgas tīkla kļūdas un Cloudflare pārbaudes (viss no fona!)
+// @description:mg      *MIANDRY ARA-KIRA* manamafy ny sesiny ChatGPT, manoloana ny diso amin'ny tambajotra sy ny fanamarinana anaty Cloudflare (rehetra avy amin'ny eny amin'ny hazofijaliana!)
+// @description:mi      *KAIRANGA KI TE WHAKATIKA* e tiakina ana e te ChatGPT nga huinga, e whakakore ana i nga hapa whatunga koreutu + nga whakamatautau Cloudflare (katoa mai i te taha!)
+// @description:mk      *БЕЗБЕДНО* ги задржува ChatGPT сесиите свежи, и ги отстранува константните мрежни грешки и Cloudflare проверките (сè од позадина!)
+// @description:ml      *സുരക്ഷിതമായി* ChatGPT സെഷനുകൾ പുതുമയിക്കുന്നു, സ്ഥിരമായ നെറ്റ് വർക്ക് പിശകുകൾ + Cloudflare പരിശോധനകൾ നീക്കുന്നു (എല്ലാം പിന്തുണയ്ക്കുന്നത്!)
+// @description:mn      *БАЙНГАШИН* ChatGPT сессийг анхны байхаар авах, сүлжээний алдааг хасах + Cloudflare шалгуурнуудыг (бүхий л дэлхийгээс!)
+// @description:ms      *DENGAN SELAMAT* mengekalkan sesi ChatGPT yang segar, menghapuskan ralat rangkaian yang berterusan + pemeriksaan Cloudflare (semuanya dari latar belakang!)
+// @description:mt      *B'JINNAR* jżomm is-sessjonijiet ChatGPT friski, jeliminaw l-ħsarat kostanti tal-netwerk + il-kontrolli Cloudflare (kollha minn wara l-kaxxa!)
+// @description:my      *လုံးဝ* ChatGPT စကားများကို အရမ်းကိုင်းစွာထုတ်လုပ်နိုင်သည်, အမြဲတမ်းတို့ကို မှတ်သားစွာကိုင်နိုင်သည်မှာဖြစ် (ထိုင်နေရာမှာအလွန်အသတ်များတိုက်!)
+// @description:ne      *सुरक्षित रूपमा* ChatGPT सत्रहरूलाई ताजा राख्छ, सञ्चालनमा गतिशील नेटवर्क त्रुटिहरू + Cloudflare जाँचहरूलाई निकाल्छ (सबै पछाडि!)
+// @description:nl      *VEILIG* houdt ChatGPT-sessies fris, elimineert constante netwerkfouten + Cloudflare-controles (allemaal op de achtergrond!)
+// @description:no      *SIKKERT* holder ChatGPT-økter friske, eliminerer konstante nettverksfeil + Cloudflare-sjekker (alt i bakgrunnen!)
+// @description:ny      *NDIWOYIMILIRENI* yatsikira mayiko a ChatGPT yonse, yosunga mafayilo opanda ntchito m'mtundu wa intaneti + mafunso a Cloudflare (zedi zonse kumtundu wosatha!)
+// @description:pa      *ਸੁਰੱਖਿਅਤ ਤਰੀਕੇ ਨਾਲ* ChatGPT ਸੈਸ਼ਨਾਂ ਨੂੰ ਤਾਜਗੀ ਬਖ਼ਸ਼ਦਾ ਹੈ, ਲਗਾਤਾਰ ਨੈੱਟਵਰਕ ਗਲਤੀਆਂ + Cloudflare ਜਾਂਚਾਂ ਨੂੰ ਮਿਟਾਉਂਦਾ ਹੈ (ਸਭ ਪਿੱਛੋਂ ਦੋਖ਼ੇ!)
+// @description:pap      *SEGURO* ta mantene sesionnan di ChatGPT fresku, eliminando erornan di red konstante + kontrolnan di Cloudflare (tur for di tras di fondu!)
+// @description:pl      *BEZPIECZNIE* utrzymuje świeżość sesji ChatGPT, eliminując stałe błędy sieciowe + kontrole Cloudflare (wszystko z tła!)
+// @description:ps      *د تورول* ChatGPT د سیشنونه راکړ کوي، د ګټورې مرستې شوي انټرنیټ اشتباهونه + د Cloudflare څټکي (ټول د پسوند په پښتو د څټکي!)
+// @description:pt      *COM SEGURANÇA* mantém as sessões do ChatGPT atualizadas, eliminando erros constantes de rede + verificações do Cloudflare (tudo em segundo plano!)
+// @description:pt-BR   *COM SEGURANÇA* mantém as sessões do ChatGPT atualizadas, eliminando erros constantes de rede + verificações do Cloudflare (tudo em segundo plano!)
+// @description:rn      *UBUHINZI* busimbura ibijanye n'amasessyoni za ChatGPT, azira inyongeramusaruro z'umuhoro + ibikorwa bya Cloudflare (byose binyuranye n'ijoro!)
+// @description:ro      *ÎN SIGURANȚĂ* menține sesiunile ChatGPT proaspete, eliminând erori constante de rețea + verificări Cloudflare (toate în fundal!)
+// @description:ru      *БЕЗОПАСНО* сохраняет актуальность сеансов ChatGPT, устраняет постоянные ошибки сети + проверки Cloudflare (все из фона!)
+// @description:rw      *MU BUNYAMINE* yategereza ibijanye n'amasomo ya ChatGPT, yakoresheje amakosa y'igikoresho + ikarangozwa ry'umuhato wa Cloudflare (byose mu ndango!)
+// @description:sg      *SẸNIMET* siimasi laðírì jəbbərə-jəbbərə ChatGPT, alu ńńúlè yìíhànì jìtìròlò fẹfẹ kàn ní ìtìjú bí ọ̀nà + àtòjọ ìgbà àkóbí yìí (gbogbo fún ọwọ!)
+// @description:si      *ආරක්ෂකයෙන්* ChatGPT සැසියන් නොරිවටවූ කාලීනවාදී, නිර්මාණවක්‍යා බොහෝ ජීවිත දෝෂ ඉවත් කරයි + Cloudflare පරීක්ෂක පරීක්ෂකයි (සියළුම පසුවෙනි!)
+// @description:sk      *BEZPEČNE* udržiava ChatGPT relácie čerstvé, eliminuje konštantné sieťové chyby + Cloudflare kontroly (všetko zo pozadia!)
+// @description:sl      *VARNOSTNO* ohranja sveže seje ChatGPT, odpravlja stalne napake v omrežju + preverjanja Cloudflare (vse iz ozadja!)
+// @description:sm      *SAFELY* faʻapea i ai le tusi tusitusi o le ChatGPT, faʻateʻilaina fautuaga a le tulaga e leʻi faʻaigoaina i le taimi nei + tulafono a le Cloudflare (uma mai le tafaʻilagi!)
+// @description:sn      *NEKUTAMBA* kugadzira sesi zveChatGPT fresh, kunyangadzora kusaziva kwevhanhu + kupindura Cloudflare (zvese pakugadziridzwa!)
+// @description:so      *KU GUULEEYSTO* wuxuu abuureen sessions ChatGPT cusub, ka saaray jilayaasha shabakadda qalad ah + dib-u-furidka Cloudflare (dhamaan ku dhex jira!)
+// @description:sr      *BEZBEDNO* održava sveže ChatGPT sesije, eliminiše konstantne mrežne greške + Cloudflare provere (sve iz pozadine!)
+// @description:sv      *SÄKERT* håller ChatGPT-sessioner fräscha, eliminerar konstanta nätverksfel + Cloudflare-kontroller (allt i bakgrunden!)
+// @description:sw      *KWA USAWA* inahifadhi vikao vya ChatGPT vikiwa safi, inaondoa makosa ya mtandao ya mara kwa mara + uchunguzi wa Cloudflare (yote kutoka nyuma!)
+// @description:ta      *பாதுகாப்பாக* ChatGPT அமர்வைப் பாதுகாக்குகின்றது, தானாகவே பிழைகளை நேரடியாக போக்குகின்றது + Cloudflare சோதனைகளை (அனைத்தும் பின்னர்!)
+// @description:te      *ఆంతరవిధిత* ప్రతిపాదించేందుకు ChatGPT సెషన్‌లను తాజాగా ఉంచుతుంది, నెట్‌వర్క్ లోపాలను + Cloudflare పరీక్షలను తొలగిస్తుంది (అన్నింటినీ నేపథ్యంలో!)
+// @description:tg      *БОДИДАР* сесияҳои ChatGPT-ро тоза медорад, хатоҳои почтаи пайвастагии танаффусанда + текширишҳои Cloudflare (ҳамаи манзаро аз писар!)
+// @description:th      *อย่างปลอดภัย* รักษาเซสชัน ChatGPT ให้เป็นรุ่นล่าสุด ป้องกันข้อผิดพลาดในเครือข่ายตลอดเวลา + ตรวจสอบ Cloudflare (ทั้งหมดจากพื้นหลัง!)
+// @description:ti      *ናይ ትንሽ ውልጥ* ይጠበቃል ChatGPT ሰማዕታት ጥራሕ ኣብዚ ሓደ ድምፂልካ + Cloudflare ግልባልካዊ መሰሪያዎት (ሓድሽ!)
+// @description:tk      *GÜWAGÖR* ChatGPT baýramly, täzedenet hatasyndan + Cloudflare barlama kontrolüni aýyrýar (ählisindän!)
+// @description:tn      *KA NAKANNA* kubeka izinsuku zobudlelwano be-ChatGPT ezinqe, ibuyisela amaphutha wokusesha i-Cloudflare (konke kusuka emphephandabeni!)
+// @description:to      *FAINGAMALIE* nau fakatupu e ngaahi hausi Falelotu 'oe ChatGPT, ngaue'aki e ngoueke siʻisiʻi netiuteki + ngaahi vavekapakilolo 'o e Cloudflare (kotoa 'i he tefito!')
+// @description:tpi     *SAFELY* iet i kamapim ChatGPT sesen bilong taim, em i helpim long pundaunim netwok error + kalamapim long Cloudflare (olsem oli kamap long bekgraon!)
+// @description:tr      *GÜVENLİ BİR ŞEKİLDE* ChatGPT oturumlarını taze tutarak sürekli ağ hatalarını ve Cloudflare kontrollerini ortadan kaldırır (hepsi arka planda!)
+// @description:uk      *БЕЗПЕКОВО* зберігає актуальність сеансів ChatGPT, усуває постійні мережеві помилки + перевірки Cloudflare (все з фону!)
+// @description:ur      *خوشحالی سے* ChatGPT سیشنز کو تازہ رکھتا ہے ، مستقل نیٹ ورک خرابیوں + کلاڈ فلیر کی چیکس کو ختم کرتا ہے (سب کچھ پس منظر سے!)
+// @description:uz      *XAVFSIZ* ChatGPT sessiyalarini yangi tutsa, doimiy tarmoq xatoliklarini + Cloudflare tekshiruvlarini bartaraf qiladi (hammasi orqasidan!)
+// @description:vi      *AN TOÀN* giữ cho các phiên ChatGPT luôn tươi mới, loại bỏ lỗi mạng liên tục + kiểm tra Cloudflare (tất cả từ phía nền!)
+// @description:xh      *NGOXOLO* izimvo zocingo zezichatGPT zingathunyelwa, zikhanjiswa imikhomba yezenkolo engakaze kuswela + ukuhlola ka-Cloudflare (konke kusaphelene!)
+// @description:yi      *פֿאַר זיכערהייט* העלט די ChatGPT סעסיעס פֿריש, אַלימינאַטינג קאָנסטאַנט נעטוואָרק פֿעהלער + קלאַודפֿלאַרע קאָנטראָלן (אַלע פֿון די קעשענען!)
+// @description:zh      *安全地* 保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查（全部来自后台！）
+// @description:zh-CN   *安全地* 保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查（全部来自后台！）
+// @description:zh-HK   *安全地* 保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查（全部來自背景！）
+// @description:zh-SG   *安全地* 保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查（全部来自后台！）
+// @description:zh-TW   *安全地* 保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查（全部來自背景！）
+// @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.22.3
+// @version             2023.6.24
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @compatible          chrome
@@ -122,6 +243,7 @@
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
+// @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
 // @noframes
 // @updateURL           https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.meta.js
@@ -135,18 +257,19 @@
 (async () => {
 
     // Init config
-    const config = { prefix: 'chatGPTar', appSymbol: '↻', userLanguage: navigator.languages[0] || navigator.language || '',
-                     ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/',
-                     updateURL: 'https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.meta.js' }
+    const config = {
+        prefix: 'chatGPTar', appSymbol: '↻', userLanguage: navigator.languages[0] || navigator.language || '',
+        ghRepoURL: 'https://github.com/adamlui/chatgpt-auto-refresh',
+        updateURL: 'https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.meta.js' }
+    config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('arDisabled', 'lastCheckTime', 'notifHidden', 'refreshInterval', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
     if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.ghHostDir + 'greasemonkey/_locales/'
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/'
         const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
-        let msgXHRtries = 0
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
             try { // to return localized messages.json
@@ -234,6 +357,62 @@
 
     // Define SCRIPT functions
 
+    function loadSetting(...keys) {
+        keys.forEach(key => {
+            config[key] = GM_getValue(config.prefix + '_' + key, false)
+    })}
+
+    function saveSetting(key, value) {
+        GM_setValue(config.prefix + '_' + key, value) // save to browser
+        config[key] = value // and memory
+    }
+
+    function checkForUpdates() {
+
+        // Fetch latest meta
+        const currentVer = GM_info.script.version
+        GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
+            onload: (response) => { saveSetting('lastCheckTime', Date.now())
+
+                // Compare versions
+                const latestVer = response.responseText.match(/@version +(.*)/)[1]
+                if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
+                    return // exit comparison if past auto-alert hidden
+                for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
+                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
+                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
+                    if (currentSubVer > latestSubVer) break // out of comparison since not outdated
+                    else if (latestSubVer > currentSubVer) { // if outdated
+                        if (!checkForUpdates.fromMenu) // if auto-alert...
+                            saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
+
+                        // Alert to update
+                        alert('Update available! 🚀', // title
+                            `An update to ${ messages.appName } (v${ latestVer }) is available!   `
+                                + '<a target="_blank" href=' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + config.updateURL.replace(/.*\/([^/]+)\.meta\.js$/, '$1.user.js')
+                                    + ' style="font-size: 0.7rem">View changes</a>',
+                            function update() { // button
+                                GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
+                                    { active: true, insert: true } // focus, make adjacent
+                                ).onclose = () => location.reload() },
+                            !checkForUpdates.fromMenu ? // checkbox if auto-alert
+                                function dontShowAgainUntilNextUpdate() {
+                                    saveSetting('skipNextUpdate', !config.skipNextUpdate)
+                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false)
+                                } : ''
+                        )
+                        return
+                }}
+
+                if (checkForUpdates.fromMenu) // alert to no update found
+                    alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
+    }})}
+
+    // Define MENU functions
+
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
+
     function registerMenu() {
         menuIDs = [] // empty to store newly registered cmds for removal while preserving order
 
@@ -290,63 +469,15 @@
         menuIDs.push(GM_registerMenuCommand(ucLabel, () => { checkForUpdates.fromMenu = true ; checkForUpdates() }))
     }
 
-    function getUserscriptManager() {
-        try { return GM_info.scriptHandler } catch (error) { return 'other' }}
-
-    function loadSetting(...keys) {
-        keys.forEach(key => {
-            config[key] = GM_getValue(config.prefix + '_' + key, false)
-    })}
-
-    function saveSetting(key, value) {
-        GM_setValue(config.prefix + '_' + key, value) // save to browser
-        config[key] = value // and memory
-    }
+    // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
+            shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow'))
+    }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
-
-    function checkForUpdates() {
-
-        // Fetch latest meta
-        const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => { saveSetting('lastCheckTime', Date.now())
-
-                // Compare versions
-                const latestVer = response.responseText.match(/@version +(.*)/)[1]
-                if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
-                    return // exit comparison if past auto-alert hidden
-                for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
-                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
-                    if (currentSubVer > latestSubVer) break // out of comparison since not outdated
-                    else if (latestSubVer > currentSubVer) { // if outdated
-                        if (!checkForUpdates.fromMenu) // if auto-alert...
-                            saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
-
-                        // Alert to update
-                        alert('Update available! 🚀',
-                            `An update to ${ messages.appName } (v${ latestVer }) is available!   `
-                                + `<a target="_blank" href="https://github.com/adamlui/chatgpt-auto-refresh/commits/main/greasemonkey/chatgpt-auto-refresh.user.js" style="font-size: 0.7rem">View changes</a>`,
-                            function update() { // button
-                                window.open(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(), '_blank')
-                                location.reload() },
-                            !checkForUpdates.fromMenu ? // checkbox if auto-alert
-                                function dontShowAgainUntilNextUpdate() {
-                                    saveSetting('skipNextUpdate', !config.skipNextUpdate)
-                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
-                                : ''
-                        )
-                        return
-                }}
-
-                if (checkForUpdates.fromMenu) // alert to no update found
-                    alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
-    }})}
 
     // Define TOGGLE functions
 
@@ -364,7 +495,7 @@
 
         // Create elements
         const navicon = document.createElement('img') ; navicon.width = 18
-        navicon.src = config.ghHostDir + 'media/images/icons/auto-refresh-navicon-light-155.png'
+        navicon.src = config.assetHostURL + 'media/images/icons/auto-refresh-navicon-light-155.png'
         const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'arToggleLabel'
         const labelText = document.createTextNode(messages.menuLabel_autoRefresh + ' '
             + ( messages['state_' + ( config.arDisabled ? 'disabled' : 'enabled' )]))
