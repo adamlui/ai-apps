@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.24
+// @version             2023.6.24.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -299,8 +299,8 @@
     // Save full-window + full screen states
     config.fullWindow = chatgpt.sidebar.isOff() ; config.fullScreen = chatgpt.isFullScreen()
 
-    // Check for updates (1x/72h)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
+    // Check for updates (1x/1w)
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()
 
     // Collect OpenAI classes
     const sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
