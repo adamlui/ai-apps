@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.24.1
+// @version             2023.6.24.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -361,7 +361,7 @@
                 } else if (config.proxyAPIenabled) {
                     if (event.responseText) {
                         try { // to parse txt response from proxy endpoints
-                            answer = JSON.parse(event.responseText).choices[0].message.content
+                            const answer = JSON.parse(event.responseText).choices[0].message.content
                             ddgptShow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (error) {
                             ddgptAlert('parseFailed')
@@ -461,7 +461,8 @@
         ghRepoURL: 'https://github.com/kudoai/duckduckgpt',
         updateURL: 'https://greasyfork.org/scripts/459849/code/duckduckgpt.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
+    loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled',
+        'replyLanguage', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const messages = [] ; registerMenu()
 
