@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.24.1
+// @version             2023.6.24.2
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -360,43 +360,6 @@
 
     // Define SCRIPT functions
 
-    function registerMenu() {
-        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
-
-        // Add command to toggle auto-clear
-        const acLabel = state.symbol[+!config.autoclear] + ' ' + messages.menuLabel_autoClear
-                    + state.separator + state.word[+!config.autoclear]
-        menuIDs.push(GM_registerMenuCommand(acLabel, function() {
-            document.querySelector('#acToggleLabel').click()
-        }))
-
-        // Add 'Toggle Visibility' command
-        const tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
-                    + state.separator + state.word[+config.toggleHidden]
-        menuIDs.push(GM_registerMenuCommand(tvLabel, function() {
-            saveSetting('toggleHidden', !config.toggleHidden)
-            toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            if (!config.notifHidden) {
-                notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
-            } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
-
-        // Add command to show notifications when changing settings/modes
-        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
-                    + state.separator + state.word[+config.notifHidden]
-        menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
-            saveSetting('notifHidden', !config.notifHidden)
-            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
-
-        // Add command to check for updates
-        const ucLabel = '🚀 Check for Updates'
-        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
-    }
-
-    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
-
     function loadSetting(...keys) {
         keys.forEach(key => {
             config[key] = GM_getValue(config.prefix + '_' + key, false)
@@ -406,12 +369,6 @@
         GM_setValue(config.prefix + '_' + key, value) // save to browser
         config[key] = value // and memory
     }
-
-    function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
-
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function checkForUpdates() {
 
@@ -454,6 +411,53 @@
                 if (checkForUpdates.fromMenu) { // alert to no update found
                     alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
     }}})}
+
+    // Define MENU functions
+
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
+
+    function registerMenu() {
+        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
+
+        // Add command to toggle auto-clear
+        const acLabel = state.symbol[+!config.autoclear] + ' ' + messages.menuLabel_autoClear
+                    + state.separator + state.word[+!config.autoclear]
+        menuIDs.push(GM_registerMenuCommand(acLabel, function() {
+            document.querySelector('#acToggleLabel').click()
+        }))
+
+        // Add 'Toggle Visibility' command
+        const tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
+                    + state.separator + state.word[+config.toggleHidden]
+        menuIDs.push(GM_registerMenuCommand(tvLabel, function() {
+            saveSetting('toggleHidden', !config.toggleHidden)
+            toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
+            if (!config.notifHidden) {
+                notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
+            } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to show notifications when changing settings/modes
+        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
+                    + state.separator + state.word[+config.notifHidden]
+        menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
+            saveSetting('notifHidden', !config.notifHidden)
+            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to check for updates
+        const ucLabel = '🚀 Check for Updates'
+        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
+    }
+
+    // Define FEEDBACK functions
+
+    function notify(msg, position = '', notifDuration = '', shadow = '') {
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
+
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     // Define TOGGLE functions
 
