@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.24.5
+// @version             2023.6.24.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -559,8 +559,8 @@
     loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
     var messages = [] ; registerMenu()
 
-    // Check for updates (1x/72h)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 1728000000) checkForUpdates()
+    // Check for updates (1x/1w)
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()
 
     // Load BraveGPT if necessary
     if (( !config.prefixEnabled && !config.suffixEnabled) || // prefix/suffix not required
