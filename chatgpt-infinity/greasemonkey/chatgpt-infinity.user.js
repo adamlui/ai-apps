@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.23.3
+// @version             2023.6.24
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -221,6 +221,7 @@
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
+// @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
 // @noframes
 // @updateURL           https://greasyfork.org/scripts/465051/code/chatgpt-infinity.meta.js
@@ -236,8 +237,9 @@
     // Init config
     const config = {
         prefix: 'chatGPTinf', appSymbol: '∞', userLanguage: navigator.languages[0] || navigator.language || '',
-        ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/',
+        ghRepoURL: 'https://github.com/adamlui/chatgpt-infinity',
         updateURL: 'https://greasyfork.org/scripts/465051/code/chatgpt-infinity.meta.js' }
+    config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('autoScrollDisabled', 'lastCheckTime', 'replyInterval', 'replyLanguage',
         'replyTopic', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
@@ -246,10 +248,9 @@
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.ghHostDir + 'greasemonkey/_locales/'
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/'
         const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
-        let msgXHRtries = 0
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
             try { // to return localized messages.json
@@ -368,17 +369,20 @@
                             saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
-                        const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`,
-                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
-                                + `<a target="_blank" href="https://github.com/adamlui/chatgpt-infinity/commits/main/greasemonkey/chatgpt-infinity.user.js" style="font-size: 0.7rem">View changes</a>`,
+                        const updateAlertID = alert('Update available! 🚀', // title
+                            `An update to ${ messages.appName } (v${ latestVer }) is available!   `
+                                + '<a target="_blank" href=' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + config.updateURL.replace(/.*\/([^/]+)\.meta\.js$/, '$1.user.js')
+                                    + ' style="font-size: 0.7rem">View changes</a>',
                             function update() { // button
-                                window.open(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(), '_blank')
-                                location.reload() },
+                                GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
+                                    { active: true, insert: true } // focus, make adjacent
+                                ).onclose = () => location.reload() },
                             !checkForUpdates.fromMenu ? // checkbox if auto-alert
                                 function dontShowAgainUntilNextUpdate() {
                                     saveSetting('skipNextUpdate', !config.skipNextUpdate)
-                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
-                                : ''
+                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false)
+                                } : ''
                         )
 
                         // Localize button/checkbox labels if needed
@@ -530,7 +534,7 @@
 
         // Create elements
         const navicon = document.createElement('img') ; navicon.width = 18
-        navicon.src = config.ghHostDir + 'media/images/icons/infinity-symbol/white/icon64.png'
+        navicon.src = config.assetHostURL + 'media/images/icons/infinity-symbol/white/icon64.png'
         const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'infToggleLabel'
         const labelText = document.createTextNode(messages.menuLabel_infinityMode + ' '
             + messages['state_' + ( config.infinityMode ? 'enabled' : 'disabled' )])
