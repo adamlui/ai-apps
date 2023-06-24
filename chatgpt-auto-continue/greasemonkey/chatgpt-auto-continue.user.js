@@ -1,105 +1,225 @@
 // ==UserScript==
 // @name                ChatGPT Auto-Continue ⏩
-// @name:ar             ChatGPT استمرار تلقائي ⏩
-// @name:bg             ChatGPT Автоматично продължаване ⏩
-// @name:bn             চ্যাটজিপিটি স্বয়ংক্রিয় চালিয়ে যান ⏩
-// @name:cs             ChatGPT Automatické pokračování ⏩
+// @name:af             ChatGPT Auto-Aangaan ⏩
+// @name:am             ChatGPT Auto-ተጨባጭ ማሳያ ⏩
+// @name:ar             ChatGPT الاستمرار التلقائي ⏩
+// @name:az             ChatGPT Avtomatik Davam et ⏩
+// @name:be             ChatGPT Аўтаматычнае Працягванне ⏩
+// @name:bg             ChatGPT Автоматично Продължаване ⏩
+// @name:bn             ChatGPT স্বয়ংক্রিয় চালিয়ে যাওয়া ⏩
+// @name:bo             ChatGPT རེད་འཐུམ་བཅོས་པ། ⏩
+// @name:bs             ChatGPT Automatski Nastavi ⏩
+// @name:ca             ChatGPT Auto-Continua ⏩
+// @name:ceb            ChatGPT Auto-Padayon ⏩
+// @name:ckb            ChatGPT ده‌ستكاری خۆکار ⏩
+// @name:cs             ChatGPT Automatické Pokračování ⏩
+// @name:cy             ChatGPT Auto-Parhau ⏩
 // @name:da             ChatGPT Auto-Fortsæt ⏩
-// @name:de             ChatGPT Automatisches Weitermachen ⏩
-// @name:el             ChatGPT Αυτόματη Συνέχεια ⏩
+// @name:de             ChatGPT Automatisches Fortfahren ⏩
+// @name:dv             ChatGPT އައިނާދު ހިސާބަތް ⏩
+// @name:dz             ChatGPT རེད་འཐུམ་གཅིག་ཁྱེར། ⏩
+// @name:el             ChatGPT Αυτόματη Συνέχιση ⏩
 // @name:eo             ChatGPT Aŭtomata Daŭrigado ⏩
-// @name:es             ChatGPT Continuación Automática ⏩
+// @name:es             ChatGPT Auto-Continuar ⏩
+// @name:et             ChatGPT Automaatne Jätkamine ⏩
+// @name:eu             ChatGPT Auto-Jarraitu ⏩
+// @name:fa             ChatGPT ادامه خودکار ⏩
 // @name:fi             ChatGPT Automaattinen Jatkaminen ⏩
-// @name:fr             ChatGPT Auto-Continuation ⏩
-// @name:fr-CA          ChatGPT Auto-Continuation ⏩
-// @name:gu             ચેટજીપીટી સ્વચાલિત ચાલુ રાખો ⏩
-// @name:hi             चैटजीपीटी स्वचालित जारी रखें ⏩
+// @name:fo             ChatGPT Auto-Verða ⏩
+// @name:fr             ChatGPT Auto-Continuer ⏩
+// @name:fr-CA          ChatGPT Auto-Continuer ⏩
+// @name:gd             ChatGPT Auto-Leantainn ⏩
+// @name:gl             ChatGPT Auto-Continuar ⏩
+// @name:gu             ChatGPT સ્વચાલિત-ચાલુ રાખો ⏩
+// @name:haw            ChatGPT Auto-Kōkua ⏩
+// @name:he             ChatGPT המשך אוטומטי ⏩
+// @name:hi             ChatGPT स्वचालित-प्रचालित रखें ⏩
+// @name:hr             ChatGPT Auto-Nastavi ⏩
+// @name:ht             ChatGPT Otomatik Kontinye ⏩
 // @name:hu             ChatGPT Automatikus Folytatás ⏩
-// @name:in             ChatGPT Lanjutan Otomatis ⏩
-// @name:it             ChatGPT Continuazione Automatica ⏩
-// @name:iw             צ'אטגפט המשך אוטומטי ⏩
+// @name:hy             ChatGPT Ինքնաշխատում Շարունակումը ⏩
+// @name:id             ChatGPT Lanjut Otomatis ⏩
+// @name:is             ChatGPT Sjálfvirk Framhald ⏩
+// @name:it             ChatGPT Auto-Continua ⏩
 // @name:ja             ChatGPT 自動継続 ⏩
+// @name:jv             ChatGPT Lanjut Otomatis ⏩
 // @name:ka             ChatGPT ავტომატური გაგრძელება ⏩
-// @name:kn             ಚಾಟ್ಜಿಪಿಟಿ ಸ್ವಯಂಚಾಲಿತ ಮುಂಚಿತವಾಗಿಸಿ ⏩
-// @name:ko             ChatGPT 자동 계속하기 ⏩
-// @name:ku             ChatGPT Berdewamkirina Otonom ⏩
-// @name:ml             ചാറ്റ്‌ജിപിടി ഓട്ടോ-തുടങ്ങൽ ⏩
-// @name:mr             चॅटजीपीटी स्वयंचलित सुरू ठेवा ⏩
-// @name:ms             ChatGPT Sambungan Auto ⏩
-// @name:my             ChatGPT အလိုအလျောက်စက်မှန်ပြတ်သက်ရောက်သည် ⏩
-// @name:nl             ChatGPT Automatisch Doorgaan ⏩
-// @name:no             ChatGPT Automatisk Fortsette ⏩
-// @name:or             ଚାଟଜିପିଟି ସ୍ୱୟଂଚାଳିତ ଚାଲନ୍ତୁ ⏩
-// @name:pa             ਚੈਟਜੀਪੀਟੀ ਆਟੋ-ਕੰਟੀਨਿਊ ਕਰੋ ⏩
+// @name:kab            ChatGPT Yemmeslayen Avrid n Tizwaru ⏩
+// @name:kk             ChatGPT Автоматты Жалғастыру ⏩
+// @name:km             ChatGPT បន្តទៅមកដល់ដោយស្វ័យប្រវត្តិ ⏩
+// @name:kn             ChatGPT ಸ್ವಯಂಚಾಲಿತ ಮುಂದುವರಿಕೆ ⏩
+// @name:ko             ChatGPT 자동 계속 ⏩
+// @name:ku             ChatGPT Berdewamkirina Auto ⏩
+// @name:ky             ChatGPT Автоматтык Жалгастыруу ⏩
+// @name:la             ChatGPT Auto-Continuare ⏩
+// @name:lb             ChatGPT Auto-Weiderginn ⏩
+// @name:lo             ChatGPT ດຽວນີ້ບໍ່ຮອດຄວາມເລີຍ ⏩
+// @name:lt             ChatGPT Automatinis Tęsti ⏩
+// @name:lv             ChatGPT Automātiska Turpināšana ⏩
+// @name:mg             ChatGPT Miverina Automatically ⏩
+// @name:mi             ChatGPT Whakareri Tūmau ⏩
+// @name:mk             ChatGPT Автоматско Продолжување ⏩
+// @name:ml             ChatGPT ഓട്ടോ-തുടരുക ⏩
+// @name:mn             ChatGPT Автомат Үргэлжлүүлэх ⏩
+// @name:ms             ChatGPT Auto-Sambung ⏩
+// @name:mt             ChatGPT Awto-Kontinwa ⏩
+// @name:my             ChatGPT အလိုအလျောက်-ဆက်လက်လုပ်ကိုင်တယ် ⏩
+// @name:ne             ChatGPT स्वचालित-तत्परता ⏩
+// @name:nl             ChatGPT Auto-Doorgaan ⏩
+// @name:no             ChatGPT Auto-Fortsette ⏩
+// @name:ny             ChatGPT Auto-Endeleza ⏩
+// @name:pa             ChatGPT ਸਵੈ-ਚਲੋ ⏩
+// @name:pap            ChatGPT Sigui Automátikamente ⏩
 // @name:pl             ChatGPT Automatyczne Kontynuowanie ⏩
-// @name:pt             ChatGPT Continuação Automática ⏩
-// @name:pt-BR          ChatGPT Continuação Automática ⏩
+// @name:ps             ChatGPT خپلکار تسلیم ⏩
+// @name:pt             ChatGPT Auto-Continuar ⏩
 // @name:ro             ChatGPT Auto-Continuare ⏩
-// @name:ru             ChatGPT Автоматическое Продолжение ⏩
-// @name:sk             ChatGPT Automatické Pokračovanie ⏩
-// @name:sr             ChatGPT Аутоматско наставак ⏩
-// @name:ta             சாட் ஜிபிடி தானியங்கி தொடங்கல் ⏩
-// @name:th             ChatGPT ดำเนินการต่ออัตโนมัติ ⏩
-// @name:tr             ChatGPT Otomatik Devam Etme ⏩
+// @name:ru             ChatGPT Авто-Продолжение ⏩
+// @name:rw             ChatGPT Kugerageza Auto ⏩
+// @name:si             ChatGPT ස්වයංක්‍රීය-දියවැඩියාව ⏩
+// @name:sk             ChatGPT Auto-Pokračovať ⏩
+// @name:sl             ChatGPT Samodejno Nadaljuj ⏩
+// @name:sm             ChatGPT Aunoa'i-Taulaga ⏩
+// @name:so             ChatGPT Isdhaaf Caruureed ⏩
+// @name:sr             ChatGPT Аутоматски Настави ⏩
+// @name:sv             ChatGPT Auto-Fortsätt ⏩
+// @name:sw             ChatGPT Kusonga Kiotomatiki ⏩
+// @name:ta             ChatGPT தானியங்கி தொடர்ந்து செல்லுங்கள் ⏩
+// @name:te             ChatGPT ఆటో-కంటిన్యూ ⏩
+// @name:tg             ChatGPT Давомоти автоматӣ ⏩
+// @name:th             ChatGPT ดำเนินการต่ออย่างอัตโนมัติ ⏩
+// @name:ti             ChatGPT ኣበይቲ ድሕሪ ተረኺቡ ⏩
+// @name:tk             ChatGPT Avtomatik Dowam etmek ⏩
+// @name:to             ChatGPT Tonu-'Aofa ⏩
+// @name:tpi            ChatGPT Otomatik Kontinyu ⏩
+// @name:tr             ChatGPT Otomatik Devam ⏩
 // @name:uk             ChatGPT Автоматичне Продовження ⏩
-// @name:ur             چیٹ جی پی ٹی خودکار جاری رکھیں ⏩
+// @name:ur             ChatGPT خودکار جاری رکھیں ⏩
+// @name:uz             ChatGPT Avtomatik Davom ⏩
 // @name:vi             ChatGPT Tự Động Tiếp Tục ⏩
+// @name:xh             ChatGPT Ukuphela Okuqukethweyo ⏩
+// @name:yi             ChatGPT אַווטאָ-קאַנטיניוירן ⏩
+// @name:zh             ChatGPT 自动继续 ⏩
 // @name:zh-CN          ChatGPT 自动继续 ⏩
 // @name:zh-HK          ChatGPT 自動繼續 ⏩
 // @name:zh-SG          ChatGPT 自动继续 ⏩
 // @name:zh-TW          ChatGPT 自動繼續 ⏩
+// @name:zu             ChatGPT Ngokugcwele Ukuphela ⏩
 // @description         ⚡ Automatically continue generating multiple ChatGPT responses
-// @description:ar      ⚡ استمر في توليد إجابات متعددة من ChatGPT تلقائيًا
-// @description:bg      ⚡ Автоматично продължаване на генерирането на множество отговори от ChatGPT
-// @description:bn      ⚡ অটো-চালিত মাল্টিপল চ্যাটজিপিটি উত্তর তৈরি করা
-// @description:cs      ⚡ Automatické pokračování v generování více odpovědí od ChatGPT
-// @description:da      ⚡ Auto-fortsæt med at generere flere ChatGPT-svar
-// @description:de      ⚡ Automatisches Fortsetzen der Generierung mehrerer ChatGPT-Antworten
-// @description:el      ⚡ Αυτόματη συνέχιση παραγωγής πολλαπλών απαντήσεων από το ChatGPT
-// @description:eo      ⚡ Aŭtomata daŭrigado de generado de pluraj respondoj de ChatGPT
-// @description:es      ⚡ Continuación automática generando múltiples respuestas de ChatGPT
-// @description:fi      ⚡ Automaattinen jatkuva useiden ChatGPT-vastausten generointi
-// @description:fr      ⚡ Génération automatique continue de multiples réponses ChatGPT
-// @description:fr-CA   ⚡ Génération automatique continue de multiples réponses ChatGPT
-// @description:gu      ⚡ આપમો-ચાલેલો મલ્ટીપલ ચેટજીપીટી જવાબો જનરેટ કરવો
-// @description:hi      ⚡ ऑटो-जारी अनेक ChatGPT उत्तरों का उत्पादन करें
-// @description:hu      ⚡ Automatikus folyamatos ChatGPT válaszok generálása
-// @description:in      ⚡ Lanjutkan menghasilkan banyak jawaban ChatGPT secara otomatis
-// @description:it      ⚡ Continua automaticamente a generare molteplici risposte ChatGPT
-// @description:iw      ⚡ המשך אוטומטי ליצירת מספר תשובות מרובות של ChatGPT
-// @description:ja      ⚡ ChatGPT の複数の回答を自動で継続的に生成
-// @description:ka      ⚡ ავტომატურად გაგებ.
-// @description:kn      ⚡ ಚಾಟ್ಜಿಪಿಟಿ ಬಹುತರದ ಪ್ರತಿಗಳನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮುಂಚಿತವಾಗಿಸುವುದು
-// @description:ko      ⚡ ChatGPT 다중 응답 자동 생성 계속하기
-// @description:ku      ⚡ Berdewamkirina Otonom a ChatGPT-ê jiberîne
-// @description:ml      ⚡ ചാറ്റ്‌ജിപിടി പലപ്പോഴും ഉത്തരങ്ങൾ സ്വയംചാലിതമായി തുടങ്ങുക
-// @description:mr      ⚡ चॅटजीपीटी स्वयंचलितपणे प्रारंभ करा
-// @description:ms      ⚡ Sambungan Auto menghasilkan banyak respons ChatGPT
-// @description:my      ⚡ ChatGPT အလိုအလျောက်စက်မှန်ပြတ်သက်ရောက်ခြင်း
-// @description:nl      ⚡ ChatGPT Automatisch Doorgaan met het genereren van meerdere reacties
-// @description:no      ⚡ ChatGPT Automatisk Fortsette generering av flere svar
-// @description:or      ⚡ ଚାଟଜିପିଟି ସ୍ୱୟଂଚାଳିତ ବହୁତର ପ୍ରତିଭା ଉତ୍ପାଦନ କରନ୍ତୁ
-// @description:pa      ⚡ ਚੈਟਜੀਪੀਟੀ ਆਟੋ-ਕੰਟੀਨਿਊ ਕਰੋ ਬਹੁਤ ਸਾਰੇ ਜਵਾਬ ਦੀ ਪੈਦਾਵਾਰ
-// @description:pl      ⚡ ChatGPT Automatycznie Kontynuuj generowanie wielu odpowiedzi
-// @description:pt      ⚡ ChatGPT Continuação Automática da geração de várias respostas
-// @description:pt-BR   ⚡ ChatGPT Continuação Automática da geração de várias respostas
-// @description:ro      ⚡ ChatGPT Continuare automată generarea de mai multe răspunsuri
-// @description:ru      ⚡ Автоматическое продолжение генерации нескольких ответов ChatGPT
-// @description:sk      ⚡ ChatGPT Automaticky Pokračujte v generovaní viacerých odpovedí
-// @description:sr      ⚡ Аутоматски наставак генерисања више одговора ЧатГПТ
-// @description:ta      ⚡ பல பதிவுகளைத் தானியங்கி உருவாக்கும் சாட் ஜிபிடி தொடங்கல்
-// @description:th      ⚡ ChatGPT ดำเนินการต่ออัตโนมัติในการสร้างคำตอบหลายรายการ
-// @description:tr      ⚡ ChatGPT Otomatik Devam Etme Çoklu Yanıt Üretme
-// @description:uk      ⚡ Автоматичне продовження генерації кількох відповідей ChatGPT
-// @description:ur      ⚡ چیٹ جی پی ٹی متعدد جوابات کی خودکار تیاری جاری رکھیں
-// @description:vi      ⚡ ChatGPT Tự Động Tiếp Tục tạo nhiều câu trả lời
+// @description:af      ⚡ Outomaties voortgaan met die opwekking van meerdere ChatGPT-antwoorde
+// @description:am      ⚡ እንዴትስ እንዲደርስ ያለብሳል የተወሰነ ምርጫዎች ለChatGPT
+// @description:ar      ⚡ استمر في توليد استجابات متعددة لـ ChatGPT تلقائيًا
+// @description:az      ⚡ ChatGPT cavablarını avtomatik olaraq çoxaldmağa davam edin
+// @description:be      ⚡ Аўтаматычна працягвайце генерацыю некалькіх адказаў ChatGPT
+// @description:bem     ⚡ Tontonkanyani kupitika kuwambo wanthu wokha-wokha wa ChatGPT
+// @description:bg      ⚡ Продължете автоматично да генерирате множество отговори от ChatGPT
+// @description:bn      ⚡ ChatGPT প্রতিক্রিয়া উত্পাদন অটোমেটিকভাবে চালিয়ে যান
+// @description:bo      ⚡ ཡིག་ཆ་འཚོལ་ལག་སྤྱོད་རོགས་བྱུང་གནང་ནུས་པའི་ChatGPTལྕེབ་གསོར་བརྡ་འཕྲོ་ཤོག་ནང་བསྐྱོད་པ།
+// @description:bs      ⚡ Nastavite automatski generirati više odgovora ChatGPT-a
+// @description:ca      ⚡ Continua generant automàticament múltiples respostes de ChatGPT
+// @description:ceb     ⚡ Magpadayon sa pag-generate og daghang mga Tugbang sa ChatGPT nga Otomatik
+// @description:ckb     ⚡ بەردەوامبوون بە سەرجەم وەڵامەکانی ChatGPT
+// @description:cs      ⚡ Automaticky pokračujte v generování více odpovědí ChatGPT
+// @description:cy      ⚡ Parhewch i gynhyrchu nifer o ymatebion ChatGPT yn awtomatig
+// @description:da      ⚡ Forsæt automatisk med at generere flere ChatGPT-responser
+// @description:de      ⚡ Generieren Sie automatisch mehrere ChatGPT-Antworten weiterhin
+// @description:dv      ⚡ އައުތީ ހުންނަވާ މެއިންމު ChatGPT އަޕް ކޮންޓެއް ބަދަލުކުރުމުގެ ރަނގަޅަ
+// @description:dz      ⚡ འཕྲོས་མེད་པར་དུག་ཞིབ་པ་བསྐུགས་པར་ཡོད་མི་ChatGPTལྕེབ་གསོར་བརྡ་འཕྲོ་ཤོག་ནང་བསྐྱོད་པ།
+// @description:el      ⚡ Συνεχίστε αυτόματα να δημιουργείτε πολλαπλές απαντήσεις ChatGPT
+// @description:eo      ⚡ Daŭrigu aŭtomate generi plurajn respondojn ChatGPT
+// @description:es      ⚡ Continúa generando automáticamente múltiples respuestas de ChatGPT
+// @description:et      ⚡ Jätkake automaatselt mitme ChatGPT-vastuse genereerimist
+// @description:eu      ⚡ Jarraitu automatikoki ChatGPT erantzun anitzak sortzen
+// @description:fa      ⚡ ادامه تولید خودکار چندین پاسخ ChatGPT
+// @description:fi      ⚡ Jatka automaattisesti useiden ChatGPT-vastausten generointia
+// @description:fo      ⚡ Halda áfram við at framleiða fleiri ChatGPT svar
+// @description:fr      ⚡ Continuez automatiquement à générer plusieurs réponses ChatGPT
+// @description:fr-CA   ⚡ Continuez automatiquement à générer plusieurs réponses ChatGPT
+// @description:gd      ⚡ Lean air adhart a' gabhail air adhart na freagairtean ChatGPT le bhith a' riochdachadh nas mòr
+// @description:gl      ⚡ Continúa xerando automaticamente múltiples respostas de ChatGPT
+// @description:gu      ⚡ આપોઆપ વધતા ચાર્જો આપતી કરો ChatGPT પ્રતિભાઓ
+// @description:haw     ⚡ E mālama i ka hōʻoluʻolu ʻana i nā pane ʻelua a i ʻole iā ChatGPT
+// @description:he      ⚡ המשך ליצור באופן אוטומטי מספר תגובות ChatGPT
+// @description:hi      ⚡ स्वचालित रूप से बहुत सारे ChatGPT प्रतिक्रियाएँ उत्पन्न करना जारी रखें
+// @description:hr      ⚡ Automatski nastavite generirati više ChatGPT odgovora
+// @description:ht      ⚡ Kontinye otomatikman kontinye jenerasyon plizyè repons ChatGPT
+// @description:hu      ⚡ Folytassa automatikusan több ChatGPT-válasz generálását
+// @description:hy      ⚡ Շարունակեք ավտոմատ ստեղծել մեկից ավելի ChatGPT պատասխաններ
+// @description:id      ⚡ Lanjutkan secara otomatis menghasilkan beberapa respons ChatGPT
+// @description:is      ⚡ Halda áfram að framleiða fjölda ChatGPT-svara sjálfkrafa
+// @description:it      ⚡ Continua automaticamente a generare più risposte di ChatGPT
+// @description:ja      ⚡ ChatGPTの複数の応答を自動的に継続的に生成し続ける
+// @description:jv      ⚡ Terus ngasilake balasan multipel ChatGPT kasebut otomatis
+// @description:ka      ⚡ გაგრძელეთ ავტომატურად გენერირებას რამდენიმე ChatGPT პასუხის
+// @description:kab     ⚡ Sekcem seg yilmeẓyen deg usefru n tufat ChatGPT
+// @description:kk      ⚡ ChatGPT-ның бірнеше жауаптарын автоматты түрде жалғастыруға жалғастырыңыз
+// @description:km      ⚡ បន្តទៀតហើយបន្តការបង្កើតចម្លើយជាច្រើននៃ ChatGPT ដោយស្វ័យប្រវត្តិ
+// @description:kn      ⚡ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ChatGPT ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ಮುಂದುವರಿಸಿ
+// @description:ko      ⚡ ChatGPT 응답을 자동으로 계속 생성하세요
+// @description:ku      ⚡ Parvekirina otomatîk a berdevkêya çêkirina gelek bersivên ChatGPT
+// @description:ky      ⚡ Тууралуу даярдалган көптөгөн ChatGPT каражаттарын жалгастыр
+// @description:la      ⚡ Automatica continua generatio plurium responsionum ChatGPT
+// @description:lb      ⚡ Fuert mat der Automatiséierung vum generéieren vun méi ChatGPT Äntwerten
+// @description:lo      ⚡ ຕະຫຼາດໃນການຜະລິດທັງເຫລົ່າຂອງການສ້າງຄໍາອະທິບາຍຂອງ ChatGPT
+// @description:lt      ⚡ Tęskite automatiškai generuoti daugelį ChatGPT atsakymų
+// @description:lv      ⚡ Turpiniet automātiski ģenerēt vairākas ChatGPT atbildes
+// @description:mg      ⚡ Mihatra ny famokarana an-taonana momba ny fijery maromaro amin'ny ChatGPT
+// @description:mi      ⚡ Whakapau tonu i te whakaputa i ngā whakahoki ā-ipurangi maha mō te ChatGPT
+// @description:mk      ⚡ Настани се автоматски да генерираш повеќе одговори на ChatGPT
+// @description:ml      ⚡ ChatGPT പ്രതികരണങ്ങൾക്ക് സ്വയംഭാവതന്നെ തുടങ്ങുക
+// @description:mn      ⚡ ChatGPT хариултуудыг автоматаар үүсгэнэ үү
+// @description:ms      ⚡ Terus menghasilkan beberapa respons ChatGPT secara automatik
+// @description:mt      ⚡ Kompluta b'mod awtomatiku jipproduċi iktar risposti tal-ChatGPT
+// @description:my      ⚡ ချောတောင်းကိုလည်း ChatGPT အတွက် အလိုအလျောက် ထပ်တိုးထားသည်ကိုနှိပ်ပါ
+// @description:ne      ⚡ क्याटजीपीटी प्रतिक्रियाहरूलाई स्वतः सार्नुहोस्
+// @description:nl      ⚡ Ga automatisch door met het genereren van meerdere ChatGPT-reacties
+// @description:no      ⚡ Fortsett automatisk med å generere flere ChatGPT-responser
+// @description:ny      ⚡ Kwezalitsa mabuku achinsinsi amakono apamwamba a ChatGPT
+// @description:pa      ⚡ ਆਪਣੇ ਆਪ ਕਈ ChatGPT ਜਵਾਬਾਂ ਨੂੰ ਜਾਰੀ ਰੱਖਣ ਦੇ ਨਾਲ ਜਾਰੀ ਰੱਖੋ
+// @description:pap     ⚡ Kontinua generando automaticamente varios respondenan di ChatGPT
+// @description:pl      ⚡ Kontynuuj automatyczne generowanie wielu odpowiedzi ChatGPT
+// @description:ps      ⚡ په خپله خوښه خپور شه کړه چې د ChatGPT پاسخونه وویشتل
+// @description:pt      ⚡ Continue gerando automaticamente várias respostas do ChatGPT
+// @description:pt-BR   ⚡ Continue gerando automaticamente várias respostas do ChatGPT
+// @description:rn      ⚡ Komeza automatik kugenera ibyanditswe byinshi bya ChatGPT
+// @description:ro      ⚡ Continuați să generați automat mai multe răspunsuri ChatGPT
+// @description:ru      ⚡ Продолжайте автоматически генерировать несколько ответов ChatGPT
+// @description:rw      ⚡ Angana gusuzumira kongera amakuru adahindurwa ya ChatGPT
+// @description:sg      ⚡ Kwâandâ mbele mbanzi mêlêba mêvâmba ya tâ ChatGPT
+// @description:si      ⚡ ChatGPT හි බහුතරක් ස්වයංක්රීයව පවතී
+// @description:sk      ⚡ Automaticky pokračujte v generovaní viacerých odpovedí ChatGPT
+// @description:sl      ⚡ Samodejno nadaljujte z generiranjem več odgovorov ChatGPT
+// @description:sm      ⚡ Alofa faauaogaina ona faaaogāina ni tali i le mafaufau ChatGPT
+// @description:sn      ⚡ Enda kusvika pachigadzirwa chekugadzirisa vashandisi vairambidzwi vechi ChatGPT
+// @description:so      ⚡ Sii wadnaansho badan oo ChatGPT ka heli
+// @description:sr      ⚡ Настави аутоматски да генеришеш више ChatGPT одговора
+// @description:sv      ⚡ Fortsätt att automatiskt generera flera ChatGPT-svar
+// @description:sw      ⚡ Endelea kuzalisha majibu mengi ya ChatGPT kiotomatiki
+// @description:ta      ⚡ தானியங்கி மீண்டும் பல விளக்கங்களை உருவாக்கத் தொடர்ந்துவிடுங்கள் ChatGPT
+// @description:te      ⚡ ఆటోమేటిక్‌గా మరియు మరిన్ని ChatGPT సమాధానాలను రచించండి
+// @description:tg      ⚡ Идомаи автоматӣ барои иҷод кардани чанд ҷавоби ChatGPT
+// @description:th      ⚡ ดำเนินการสร้างคำตอบหลาย ๆ ของ ChatGPT อัตโนมัติ
+// @description:ti      ⚡ ደቂቃዎት የሚጠፋ ኮድ ብቻ በኮስታኒክስ በሚገባ ጥሩ ጥያቄዎች ይሰጣል
+// @description:tk      ⚡ Tölegiňizde ChatGPT-e hasapla otomatik toplum
+// @description:tn      ⚡ Koisa ha maele a ChatGPT ho ngola ho tlaleletsa
+// @description:to      ⚡ Tonu ki hono fakahoko ki he fakafofonga ha nonga ai he ChatGPT
+// @description:tpi     ⚡ Kontinyu genaratim planti respons bilong ChatGPT bi autometik
+// @description:tr      ⚡ Otomatik olarak çoklu ChatGPT yanıtları üretmeye devam edin
+// @description:uk      ⚡ Продовжуйте автоматично генерувати багато відповідей ChatGPT
+// @description:ur      ⚡ ChatGPT جو جوابات خودکار طور پر تیار کرنا جاری رکھیں
+// @description:uz      ⚡ Ko'plab ChatGPT javoblarni avtomatik ravishda yaratishni davom ettirish
+// @description:vi      ⚡ Tiếp tục tạo ra nhiều câu trả lời ChatGPT một cách tự động
+// @description:xh      ⚡ Qhubeka ukuqhuba okuqukethweyo lwezibalo eziningi zikaChatGPT
+// @description:yi      ⚡ פֿאָרטזעצן ווײַטער גענערירן מיינערע אַנטוואָרטן פֿון ChatGPT אַװטאָמאַטיש
+// @description:zh      ⚡ 自动继续生成多个 ChatGPT 响应
 // @description:zh-CN   ⚡ 自动继续生成多个 ChatGPT 响应
 // @description:zh-HK   ⚡ 自動繼續生成多個 ChatGPT 響應
 // @description:zh-SG   ⚡ 自动继续生成多个 ChatGPT 响应
 // @description:zh-TW   ⚡ 自動繼續生成多個 ChatGPT 響應
+// @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.22.3
+// @version             2023.6.24
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -111,6 +231,7 @@
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
+// @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
 // @noframes
 // @updateURL           https://greasyfork.org/scripts/466789/code/chatgpt-auto-continue.meta.js
@@ -124,17 +245,18 @@
 (async () => {
 
     // Init config
-    const config = { prefix: 'chatGPTactn', appSymbol: '≫', userLanguage: navigator.languages[0] || navigator.language || '',
-                     ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/',
-                     updateURL: 'https://greasyfork.org/scripts/466789/code/chatgpt-auto-continue.meta.js' }
+    const config = {
+        prefix: 'chatGPTactn', appSymbol: '≫', userLanguage: navigator.languages[0] || navigator.language || '',
+        ghRepoURL: 'https://github.com/adamlui/chatgpt-auto-continue',
+        updateURL: 'https://greasyfork.org/scripts/466789/code/chatgpt-auto-continue.meta.js' }
+    config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.ghHostDir + 'greasemonkey/_locales/'
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/'
         const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
-        let msgXHRtries = 0
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
             try { // to return localized messages.json
@@ -176,27 +298,6 @@
 
     // Define SCRIPT functions
 
-    function registerMenu() {
-        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
-
-        // Add command to hide/show notifications on load
-        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
-                    + state.separator + state.word[+config.notifHidden]
-        menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
-            saveSetting('notifHidden', !config.notifHidden)
-            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
-            for (let i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
-            registerMenu() // serve fresh one
-        }))
-
-        // Add command to check for updates
-        const ucLabel = '🚀 Check for Updates'
-        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
-    }
-
-    function getUserscriptManager() {
-        try { return GM_info.scriptHandler } catch (error) { return 'other' }}
-
     function loadSetting(...keys) {
         keys.forEach(key => {
             config[key] = GM_getValue(config.prefix + '_' + key, false)
@@ -206,12 +307,6 @@
         GM_setValue(config.prefix + '_' + key, value) // save to browser
         config[key] = value // and memory
     }
-
-    function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow')) }
-
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function checkForUpdates() {
 
@@ -233,17 +328,20 @@
                             saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
-                        const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`,
-                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
-                                + `<a target="_blank" href="https://github.com/adamlui/chatgpt-auto-continue/commits/main/greasemonkey/chatgpt-auto-continue.user.js" style="font-size: 0.7rem">${ messages.link_viewChanges }</a>`,
+                        const updateAlertID = alert('Update available! 🚀', // title
+                            `An update to ${ messages.appName } (v${ latestVer }) is available!   `
+                                + '<a target="_blank" href=' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js')
+                                    + ' style="font-size: 0.7rem">View changes</a>',
                             function update() { // button
-                                window.open(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(), '_blank')
-                                location.reload() },
+                                GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
+                                    { active: true, insert: true } // focus, make adjacent
+                                ).onclose = () => location.reload() },
                             !checkForUpdates.fromMenu ? // checkbox if auto-alert
                                 function dontShowAgainUntilNextUpdate() {
                                     saveSetting('skipNextUpdate', !config.skipNextUpdate)
-                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
-                                : ''
+                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false)
+                                } : ''
                         )
 
                         // Localize button/checkbox labels if needed
@@ -261,5 +359,37 @@
                 if (checkForUpdates.fromMenu) // alert to no update found
                     alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
     }})}
+
+    // Define MENU functions
+
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
+
+    function registerMenu() {
+        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
+
+        // Add command to hide/show notifications on load
+        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
+                    + state.separator + state.word[+config.notifHidden]
+        menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
+            saveSetting('notifHidden', !config.notifHidden)
+            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
+            for (let i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
+            registerMenu() // serve fresh one
+        }))
+
+        // Add command to check for updates
+        const ucLabel = '🚀 Check for Updates'
+        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
+    }
+
+    // Define FEEDBACK functions
+
+    function notify(msg, position = '', notifDuration = '', shadow = '') {
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
+            shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow'))
+    }
+
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
 })()
