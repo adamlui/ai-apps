@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.24
+// @version             2023.6.24.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -54,14 +54,14 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license
 // ...and KaTeX, the fastest math typesetting library @ https://katex.org (c) 2013–2020 Khan Academy & contributors under the MIT license
 
-(function() {
+(async () => {
 
-    var chatGPTsessURL='https://chat.openai.com/api/auth/session'
-    var openAIauthDomain = 'https://auth0.openai.com'
-    var openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
-    var proxyEndpointMap = [[ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-4' ]]
+    const chatGPTsessURL='https://chat.openai.com/api/auth/session'
+    const openAIauthDomain = 'https://auth0.openai.com'
+    const openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
+    const proxyEndpointMap = [[ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-4' ]]
 
-    var ddgptAlerts = {
+    const ddgptAlerts = {
         waitingResponse: 'Waiting for ChatGPT response...',
         login: 'Please login @ ',
         tooManyRequests: 'ChatGPT is flooded with too many requests. Check back later!',
@@ -73,56 +73,6 @@
 
     // Define SCRIPT functions
 
-    function registerMenu() {
-        var menuIDs = [] // to store registered commands for removal while preserving order
-        var stateIndicator = { menuSymbol: ['✔️', '❌'], menuWord: ['ON', 'OFF'], notifWord: ['Enabled', 'Disabled'] }
-        var stateSeparator = getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': '
-
-        // Add command to toggle proxy API mode
-        var pamLabel = stateIndicator.menuSymbol[+!config.proxyAPIenabled] + ' Proxy API Mode '
-                     + stateSeparator + stateIndicator.menuWord[+!config.proxyAPIenabled]
-        menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
-            saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-            notify('Proxy Mode ' + stateIndicator.notifWord[+!config.proxyAPIenabled])
-            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
-            registerMenu() // serve fresh menu
-            location.reload() // re-send query using new endpoint
-        }))
-
-        // Add command to toggle prefix mode
-        var pmLabel = stateIndicator.menuSymbol[+!config.prefixEnabled] + ' Require "/" before query '
-                     + stateSeparator + stateIndicator.menuWord[+!config.prefixEnabled]
-        menuIDs.push(GM_registerMenuCommand(pmLabel, function() {
-            saveSetting('prefixEnabled', !config.prefixEnabled)
-            if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
-                saveSetting('suffixEnabled', !config.suffixEnabled) }
-            notify('Prefix Mode ' + stateIndicator.notifWord[+!config.prefixEnabled])
-            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
-            registerMenu() // serve fresh menu
-            if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
-        }))
-
-        // Add command to toggle suffix mode
-        var smLabel = stateIndicator.menuSymbol[+!config.suffixEnabled] + ' Require "?" after query '
-                     + stateSeparator + stateIndicator.menuWord[+!config.suffixEnabled]
-        menuIDs.push(GM_registerMenuCommand(smLabel, function() {
-            saveSetting('suffixEnabled', !config.suffixEnabled)
-            if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
-                saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify('Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled])
-            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
-            registerMenu() // serve fresh menu
-            if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
-        }))
-
-        // Add command to check for updates
-        var ucLabel = '🚀 Check for Updates'
-        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
-    }
-
-    function getUserscriptManager() {
-        try { return GM_info.scriptHandler } catch (error) { return 'other' }}
-
     function loadSetting(...keys) {
         keys.forEach(key => {
             config[key] = GM_getValue(config.prefix + '_' + key, false)
@@ -132,12 +82,6 @@
         GM_setValue(config.prefix + '_' + key, value) // save to browser
         config[key] = value // and memory
     }
-
-    function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow ? shadow : ( isDarkMode() ? '' : 'shadow')) }
-
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function checkForUpdates() {
 
@@ -181,13 +125,80 @@
                     alert('Up-to-date!', `DuckDuckGPT (v${ currentVer }) is up-to-date!`)
     }})}
 
+    // Define MENU functions
 
-    function isCenteredMode() { return document.querySelector('html').classList.toString().includes('center') }
-    function isDarkMode() { return document.documentElement.classList.toString().includes('dark') }
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
-    // Define CONSOLE/ALERT functions
+    function registerMenu() {
+        const menuIDs = [] // to store registered commands for removal while preserving order        
+        const state = {
+            symbol: ['✔️', '❌'], word: ['ON', 'OFF'], notifWord: ['Enabled', 'Disabled'],
+            separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
 
-    var ddgptConsole = {
+        // Add command to toggle proxy API mode
+        const pamLabel = state.symbol[+!config.proxyAPIenabled] + ' Proxy API Mode '
+                       + state.separator + state.word[+!config.proxyAPIenabled]
+        menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
+            saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
+            notify('Proxy Mode ' + state.notifWord[+!config.proxyAPIenabled])
+            for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+            location.reload() // re-send query using new endpoint
+        }))
+
+        // Add command to toggle prefix mode
+        const pmLabel = state.symbol[+!config.prefixEnabled] + ' Require "/" before query '
+                      + state.separator + state.word[+!config.prefixEnabled]
+        menuIDs.push(GM_registerMenuCommand(pmLabel, function() {
+            saveSetting('prefixEnabled', !config.prefixEnabled)
+            if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
+                saveSetting('suffixEnabled', !config.suffixEnabled) }
+            notify('Prefix Mode ' + state.notifWord[+!config.prefixEnabled])
+            for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+            if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
+        }))
+
+        // Add command to toggle suffix mode
+        const smLabel = state.symbol[+!config.suffixEnabled] + ' Require "?" after query '
+                      + state.separator + state.word[+!config.suffixEnabled]
+        menuIDs.push(GM_registerMenuCommand(smLabel, function() {
+            saveSetting('suffixEnabled', !config.suffixEnabled)
+            if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
+                saveSetting('prefixEnabled', !config.prefixEnabled) }
+            notify('Suffix Mode ' + state.notifWord[+!config.suffixEnabled])
+            for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+            if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
+        }))
+
+        // Add command to set reply language
+        const rlLabel = '🌐 Reply Language' + state.separator + config.replyLanguage
+        menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
+            while (true) {
+                const replyLanguage = prompt('Update reply language:', config.replyLanguage)
+                if (replyLanguage === null) break // user cancelled so do nothing
+                else if (!/\d/.test(replyLanguage)) {
+                    saveSetting('replyLanguage', replyLanguage ? replyLanguage : config.userLanguage)
+                    alert('Language updated!', 'DuckDuckGPT will reply in '
+                        + ( replyLanguage ? replyLanguage : 'your system language' ) + '.')
+                    for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+                    break
+        }}}))
+
+        // Add command to check for updates
+        const ucLabel = '🚀 Check for Updates'
+        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
+    }
+
+    // Define FEEDBACK functions
+
+    function notify(msg, position = '', notifDuration = '', shadow = '') {
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
+            shadow ? shadow : ( isDarkMode() ? '' : 'shadow'))
+    }
+
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
+
+    const ddgptConsole = {
         info: function(msg) {console.info(config.appSymbol + ' DuckDuckGPT >> ' + msg)},
         error: function(msg) {console.error(config.appSymbol + ' DuckDuckGPT >> ERROR: ' + msg)}
     }
@@ -201,42 +212,44 @@
                 '<a href="https://chat.openai.com" target="_blank">chat.openai.com</a> (If issue persists, try activating Proxy Mode)</p>' : '</p>')
     }
 
+    // Define UI detection functions
+
+    function isCenteredMode() { return document.querySelector('html').classList.toString().includes('center') }
+    function isDarkMode() { return document.documentElement.classList.toString().includes('dark') }
+
     // Define SESSION functions
 
     function uuidv4() {
-        var d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
-        var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            var r = (d + Math.random()*16)%16 | 0 // generate random nibble
+        let d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
+        const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            const r = (d + Math.random()*16)%16 | 0 // generate random nibble
             d = Math.floor(d/16) // correspond each UUID digit to unique 4-bit chunks of timestamp
-            return (c=='x' ? r : (r&0x3|0x8)).toString(16) // generate random hexadecimal digit
+            return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16) // generate random hexadecimal digit
         })
         return uuid
     }
 
     function getAccessToken() {
         return new Promise(function(resolve) {
-            var accessToken = GM_getValue('accessToken')
+            const accessToken = GM_getValue('accessToken')
             ddgptConsole.info('OpenAI access token: ' + accessToken)
             if (!accessToken) {
-                GM.xmlHttpRequest({
-                    url: chatGPTsessURL,
-                    onload: function(response) {
-                        if (isBlockedbyCloudflare(response.responseText)) {
-                            ddgptAlert('checkCloudflare') ; return }
-                        try {
-                            var newAccessToken = JSON.parse(response.responseText).accessToken
-                            GM_setValue('accessToken', newAccessToken)
-                            resolve(newAccessToken)
-                        } catch { ddgptAlert('login') ; return }
-                    }
-                })
+                GM.xmlHttpRequest({ url: chatGPTsessURL, onload: (response) => {
+                    if (isBlockedbyCloudflare(response.responseText)) {
+                        ddgptAlert('checkCloudflare') ; return }
+                    try {
+                        const newAccessToken = JSON.parse(response.responseText).accessToken
+                        GM_setValue('accessToken', newAccessToken)
+                        resolve(newAccessToken)
+                    } catch { ddgptAlert('login') ; return }
+                }})
             } else resolve(accessToken)
     })}
 
     function isBlockedbyCloudflare(resp) {
         try {
-            var html = new DOMParser().parseFromString(resp, 'text/html')
-            var title = html.querySelector('title')
+            const html = new DOMParser().parseFromString(resp, 'text/html')
+            const title = html.querySelector('title')
             return title.innerText === 'Just a moment...'
         } catch (error) { return false }
     }
@@ -244,7 +257,7 @@
     function deleteOpenAIcookies() {
         if (getUserscriptManager() !== 'Tampermonkey') return
         GM_cookie.list({ url: openAIauthDomain }, function(cookies, error) {
-            if (!error) { for (var i = 0; i < cookies.length; i++) {
+            if (!error) { for (let i = 0; i < cookies.length; i++) {
                 GM_cookie.delete({ url: openAIauthDomain, name: cookies[i].name })
     }}})}
 
@@ -257,15 +270,15 @@
         if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 0
 
         // Pick API
-        var endpoint, accessKey, model
+        let endpoint, accessKey, model
         if (config.proxyAPIenabled) { // randomize proxy API
-            var untriedEndpoints = proxyEndpointMap.filter(function(entry) {
+            const untriedEndpoints = proxyEndpointMap.filter((entry) => {
                 return !getShowReply.triedEndpoints?.includes(entry[0]) })
-            var entry = untriedEndpoints[Math.floor(Math.random() * untriedEndpoints.length)]
+            const entry = untriedEndpoints[Math.floor(Math.random() * untriedEndpoints.length)]
             endpoint = entry[0] ; accessKey = entry[1] ; model = entry[2]
         } else { // use OpenAI API
             endpoint = openAIchatEndpoint
-            var timeoutPromise = new Promise((resolve, reject) => {
+            const timeoutPromise = new Promise((resolve, reject) => {
                 setTimeout(() => { reject(new Error('Timeout occurred')) }, 3000) })
             accessKey = await Promise.race([getAccessToken(), timeoutPromise])
             if (!accessKey) { ddgptAlert('login') ; return }
@@ -273,18 +286,15 @@
         }
 
         // Get answer from ChatGPT
-        var data = {}
-        if (!config.proxyAPIenabled) data = JSON.stringify({ action: 'next', messages: messages, model: model, parent_message_id: uuidv4(), max_tokens: 4000 })
-        else data = JSON.stringify({ messages: messages, model: model })
-
+        const data = JSON.stringify(
+            config.proxyAPIenabled ? { messages: messages, model: model }
+                                   : { action: 'next', messages: messages, model: model,
+                                       parent_message_id: uuidv4(), max_tokens: 4000 })
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
             headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
-            responseType: responseType(),
-            data: data,
-            onloadstart: onLoadStart(),
-            onload: onLoad(),
-            onerror: function(error) {
+            responseType: responseType(), data: data, onloadstart: onLoadStart(), onload: onLoad(),
+            onerror: (error) => {
                 ddgptConsole.error(error)
                 if (!config.proxyAPIenabled) ddgptAlert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
@@ -294,9 +304,7 @@
         })
 
         function responseType() {
-          if (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') {
-            return 'stream' } else { return 'text' }
-        }
+            return (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') ? 'stream' : 'text' }
 
         function retryDiffHost() {
             ddgptConsole.error(`Error calling ${ endpoint }. Trying another endpoint...`)
@@ -308,42 +316,40 @@
         function onLoadStart() { // process streams for unproxied TM users
             ddgptConsole.info('Endpoint used: ' + endpoint)
             if (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') {
-                return function(stream) {
-                    var reader = stream.response.getReader()
+                return (stream) => {
+                    const reader = stream.response.getReader()
                     reader.read().then(function processText({ done, value }) {
-                        if (done) { return }
+                        if (done) return
                         let responseItem = String.fromCharCode(...Array.from(value))
-                        var items = responseItem.split('\n\n')
+                        const items = responseItem.split('\n\n')
                         if (items.length > 2) {
-                            var lastItem = items.slice(-3, -2)[0]
-                            if (lastItem.startsWith('data: [DONE]')) {
-                                responseItem = items.slice(-4, -3)[0]
-                            } else { responseItem = lastItem }
+                            const lastItem = items.slice(-3, -2)[0]
+                            if (lastItem.startsWith('data: [DONE]')) responseItem = items.slice(-4, -3)[0]
+                            else responseItem = lastItem
                         }
                         if (responseItem.startsWith('data: {')) {
-                            var answer = JSON.parse(responseItem.slice(6)).message.content.parts[0]
+                            const answer = JSON.parse(responseItem.slice(6)).message.content.parts[0]
                             ddgptShow(answer)
                         } else if (responseItem.startsWith('data: [DONE]')) return
                         return reader.read().then(processText)
         })}}}
 
         function onLoad() {
-            return function(event) {
+            return (event) => {
                 if (event.status !== 200) {
                     ddgptConsole.error('Event status: ' + event.status)
                     ddgptConsole.info('Event response: ' + event.responseText)
-                    if (config.proxyAPIenabled && getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) {
-                        retryDiffHost() }
+                    if (config.proxyAPIenabled && getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1)
+                        retryDiffHost()
                     else if (event.status === 401 && !config.proxyAPIenabled) {
                         GM_deleteValue('accessToken') ; ddgptAlert('login') }
-                    else if (event.status === 403) {
-                        ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare') }
-                    else if (event.status === 429) { ddgptAlert('tooManyRequests') }
+                    else if (event.status === 403)
+                        ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
+                    else if (event.status === 429) ddgptAlert('tooManyRequests')
                 } else if (!config.proxyAPIenabled && getUserscriptManager() !== 'Tampermonkey') {
-                    var answer
                     if (event.response) {
                         try { // to parse txt response from OpenAI endpoint for non-TM users
-                            answer = JSON.parse(event.response
+                            const answer = JSON.parse(event.response
                                 .split('\n\n').slice(-3, -2)[0].slice(6)).message.content.parts[0]
                             ddgptShow(answer)
                         } catch (error) {
@@ -386,46 +392,45 @@
             throwOnError: false
         })
 
-        // Initialize variables for listeners
-        var form = ddgptDiv.querySelector('form')
-        var replyBox = document.getElementById('ddgpt-reply-box')
-        var { paddingTop, paddingBottom } = getComputedStyle(replyBox)
-        var vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
-        var prevLength = replyBox.value.length
+        // Init variables for listeners
+        const form = ddgptDiv.querySelector('form')
+        const replyBox = document.getElementById('ddgpt-reply-box')
+        const { paddingTop, paddingBottom } = getComputedStyle(replyBox)
+        const vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
+        let prevLength = replyBox.value.length
 
         // Add listeners
         form.addEventListener('keydown', enterToSubmit)
         replyBox.addEventListener('input', autosizeBox)
 
         function enterToSubmit(event) {
-            if (event.key === 'Enter' && event.target.nodeName === 'TEXTAREA') handleSubmit(event)
-        }
+            if (event.key === 'Enter' && event.target.nodeName === 'TEXTAREA') handleSubmit(event) }
 
         function handleSubmit(event) {
             event.preventDefault()
             if (messages.length > 2) messages.splice(0, 2) // keep token usage maintainable
-            var prevReplyTrimmed = ddgptDiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length)
+            const prevReplyTrimmed = ddgptDiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length)
+            const yourReply = replyBox.value + ' / Answer in ' + config.replyLanguage
             if (!config.proxyAPIenabled) {
                 messages.push({ role: 'assistant', id: uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
-                messages.push({ role: 'user', id: uuidv4(), content: { content_type: 'text', parts: [replyBox.value] } })
+                messages.push({ role: 'user', id: uuidv4(), content: { content_type: 'text', parts: [yourReply] } })
             } else {
                 messages.push({ role: 'assistant', content: prevReplyTrimmed })
-                messages.push({ role: 'user', content: replyBox.value })
-            }
-            getShowReply(messages)
+                messages.push({ role: 'user', content: yourReply })
+            } getShowReply(messages)
 
             // Remove listeners since they're re-added
             replyBox.removeEventListener('input', autosizeBox)
             replyBox.removeEventListener('keydown', enterToSubmit)
 
             // Show loading status
-            var replySection = ddgptDiv.querySelector('section')
+            const replySection = ddgptDiv.querySelector('section')
             replySection.classList.add('loading')
             replySection.innerHTML = ddgptAlerts.waitingResponse
         }
 
         function autosizeBox() {
-            var newLength = replyBox.value.length
+            const newLength = replyBox.value.length
             if (newLength < prevLength) { // if deleting txt
                 replyBox.style.height = 'auto' // ...auto-fit height
                 if (parseInt(getComputedStyle(replyBox).height) < 35) { // if down to one line
@@ -438,15 +443,13 @@
 
     async function loadDDGPT() {
         ddgptAlert('waitingResponse')
-        var hostContainer = document.querySelector(isCenteredMode() ? '[data-area*="mainline"]' : '[class*="sidebar"]')
+        const hostContainer = document.querySelector(isCenteredMode() ? '[data-area*="mainline"]' : '[class*="sidebar"]')
         hostContainer.prepend(ddgptDiv, ddgptFooter)
-        var query = new URL(location.href).searchParams.get('q')
-        if (!config.proxyAPIenabled) {
-            messages.push({
-                role: 'user', id: uuidv4(),
-                content: { content_type: 'text', parts: [query] }
-            })
-        } else messages.push({ role: 'user', content: query })
+        const query = new URL(location.href).searchParams.get('q') + ' / Answer in ' + config.replyLanguage
+        messages.push(
+            config.proxyAPIenabled ? { role: 'user', content: query }
+                                   : { role: 'user', id: uuidv4(),
+                                       content: { content_type: 'text', parts: [query] }})
         getShowReply(messages)
     }
 
@@ -459,18 +462,19 @@
         updateURL: 'https://greasyfork.org/scripts/459849/code/duckduckgpt.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
-    var messages = [] ; registerMenu()
+    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
+    const messages = [] ; registerMenu()
 
     // Exit if prefix/suffix required but not present
     if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
         ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
             return }
 
-    // Check for updates (1x/72h)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 1728000000) checkForUpdates()   
+    // Check for updates (1x/1w)
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()   
 
     // Stylize elements
-    var ddgptStyle = document.createElement('style')
+    const ddgptStyle = document.createElement('style')
     ddgptStyle.innerText = (
         '.ddgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 16px 26px ; flex-basis: 0 ;'
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ; '
@@ -507,34 +511,34 @@
     document.head.appendChild(ddgptStyle) // append style to <head>
 
     // Create DDGPT container & add class
-    var ddgptDiv = document.createElement('div') // create container div
+    const ddgptDiv = document.createElement('div') // create container div
     ddgptDiv.className = 'ddgpt-container'
 
     // Create feedback footer & add classes/HTML
-    var ddgptFooter = document.createElement('div')
+    const ddgptFooter = document.createElement('div')
     ddgptFooter.className = 'feedback-prompt chatgpt-feedback'
-    ddgptFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
+    ddgptFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose"'
+        + ' class="feedback-prompt__link" target="_blank">Share Feedback</a>'
 
     // Activate promo campaign if active
     GM.xmlHttpRequest({
         method: 'GET', url: config.assetHostURL + 'ads/live/creative.html',
-        onload: function(response) {
-            if (response.status == 200) {
+        onload: (response) => { if (response.status == 200) {
 
-                // Create campaign div & add class/style/HTML
-                var pcDiv = document.createElement('div')
-                pcDiv.className = 'ddgpt-container'
-                pcDiv.style.display = 'flex'
-                pcDiv.innerHTML = response.responseText
+            // Create campaign div & add class/style/HTML
+            const pcDiv = document.createElement('div')
+            pcDiv.className = 'ddgpt-container'
+            pcDiv.style.display = 'flex'
+            pcDiv.innerHTML = response.responseText
 
-                // Create feedback footer & add classes/HTML
-                var pcFooter = document.createElement('div')
-                pcFooter.className = 'feedback-prompt chatgpt-feedback'
-                pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
+            // Create feedback footer & add classes/HTML
+            const pcFooter = document.createElement('div')
+            pcFooter.className = 'feedback-prompt chatgpt-feedback'
+            pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
 
-                // Inject in sidebar
-                ddgptFooter.insertAdjacentElement('afterend', pcDiv)
-                pcDiv.insertAdjacentElement('afterend', pcFooter)
+            // Inject in sidebar
+            ddgptFooter.insertAdjacentElement('afterend', pcDiv)
+            pcDiv.insertAdjacentElement('afterend', pcFooter)
     }}})
 
     loadDDGPT()
