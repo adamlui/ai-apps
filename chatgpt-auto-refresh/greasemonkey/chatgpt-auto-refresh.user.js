@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.24.2
+// @version             2023.6.24.3
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @compatible          chrome
@@ -293,8 +293,8 @@
                                 separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     await chatgpt.isLoaded() ; registerMenu() // create browser toolbar menu
 
-    // Check for updates (1x/72h)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
+    // Check for updates (1x/1w)
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()
 
     // Stylize toggle switch
     const switchStyle = document.createElement('style')
