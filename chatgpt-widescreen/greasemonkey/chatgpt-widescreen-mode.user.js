@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.23.2
+// @version             2023.6.24
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -236,13 +236,14 @@
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon64.png
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@5eed48d721158fc3800c23bc02b5dc0d3959b472/dist/chatgpt-1.10.1.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@76b0c6869466e1c2200137afc96f9687f7b9616b/dist/chatgpt-1.10.2.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
 // @grant               GM_getValue
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
+// @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
 // @noframes
 // @downloadURL         https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.user.js
@@ -256,17 +257,18 @@
 (async () => {
 
     // Init config
-    const config = { prefix: 'chatGPTws', appSymbol: '🖥️', userLanguage: navigator.languages[0] || navigator.language || '',
-                     ghHostDir: 'https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/',
-                     updateURL: 'https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.meta.js' }
+    const config = {
+        prefix: 'chatGPTws', appSymbol: '🖥️', userLanguage: navigator.languages[0] || navigator.language || '',
+        ghRepoURL: 'https://github.com/adamlui/chatgpt-widescreen',
+        updateURL: 'https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.meta.js' }
+    config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('fullerWindows', 'lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer', 'tcbDisabled', 'wideScreen')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.ghHostDir + 'greasemonkey/_locales/'
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/'
         const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json' // build src link
-        let msgXHRtries = 0
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
             try { // to return localized messages.json
@@ -403,6 +405,74 @@
 
     // Define SCRIPT functions
 
+    function loadSetting(...keys) {
+        keys.forEach(key => {
+            config[key] = GM_getValue(config.prefix + '_' + key, false)
+    })}
+
+    function saveSetting(key, value) {
+        GM_setValue(config.prefix + '_' + key, value) // save to browser
+        config[key] = value // and memory
+    }
+
+    function checkForUpdates() {
+
+        // Fetch latest meta
+        const currentVer = GM_info.script.version
+        GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
+            onload: (response) => { saveSetting('lastCheckTime', Date.now())
+
+                // Compare versions                
+                const latestVer = response.responseText.match(/@version +(.*)/)[1]
+                if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
+                    return // exit comparison if past auto-alert hidden
+                for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
+                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
+                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
+                    if (currentSubVer > latestSubVer) break // out of comparison since not outdated
+                    else if (latestSubVer > currentSubVer) { // if outdated
+                        if (!checkForUpdates.fromMenu) // if auto-alert...
+                            saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
+
+                        // Alert to update
+                        const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`, // title
+                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
+                                + '<a target="_blank" href=' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js')
+                                    + ' style="font-size: 0.7rem">' + messages.link_viewChanges + '</a>',
+                            function update() { // button
+                                GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
+                                    { active: true, insert: true } // focus, make adjacent
+                                ).onclose = () => location.reload() },
+                            !checkForUpdates.fromMenu ? // checkbox if auto-alert
+                                function dontShowAgainUntilNextUpdate() {
+                                    saveSetting('skipNextUpdate', !config.skipNextUpdate)
+                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false)
+                                } : ''
+                        )
+
+                        // Localize button/checkbox labels if needed
+                        if (!config.userLanguage.startsWith('en')) {
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
+                            updateAlert.querySelector('label').textContent = ( // checkbox label
+                                `${ messages.alert_dontShowAgain } ${ messages.alert_untilNextVer }`)
+                            updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
+                            updateAlert.querySelectorAll('button')[0].textContent = messages.buttonLabel_dismiss
+                        }
+
+                        return
+                }}
+
+                if (checkForUpdates.fromMenu) { // alert to no update found
+                    alert(`${ messages.alert_upToDate }!`, // title
+                        `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
+    }}})}
+
+    // Define MENU functions
+
+    function getUserscriptManager() {
+        try { return GM_info.scriptHandler } catch (error) { return 'other' }}
+
     function registerMenu() {
         const menuIDs = [] // empty to store newly registered cmds for removal while preserving order
 
@@ -443,18 +513,7 @@
         menuIDs.push(GM_registerMenuCommand(ucLabel, () => { checkForUpdates.fromMenu = true ; checkForUpdates() }))
     }
 
-    function getUserscriptManager() {
-        try { return GM_info.scriptHandler } catch (error) { return 'other' }}
-
-    function loadSetting(...keys) {
-        keys.forEach(key => {
-            config[key] = GM_getValue(config.prefix + '_' + key, false)
-    })}
-
-    function saveSetting(key, value) {
-        GM_setValue(config.prefix + '_' + key, value) // save to browser
-        config[key] = value // and memory
-    }
+    // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`,
@@ -462,56 +521,6 @@
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
-
-    function checkForUpdates() {
-
-        // Fetch latest meta
-        const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {  saveSetting('lastCheckTime', Date.now())
-
-                // Compare versions                
-                const latestVer = response.responseText.match(/@version +(.*)/)[1]
-                if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
-                    return // exit comparison if past auto-alert hidden
-                for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
-                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
-                    if (currentSubVer > latestSubVer) break // out of comparison since not outdated
-                    else if (latestSubVer > currentSubVer) { // if outdated
-                        if (!checkForUpdates.fromMenu) // if auto-alert...
-                            saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
-
-                        // Alert to update
-                        const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`,
-                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
-                                + `<a target="_blank" href="https://github.com/adamlui/chatgpt-widescreen/commits/main/greasemonkey/chatgpt-widescreen-mode.user.js" style="font-size: 0.7rem">${ messages.link_viewChanges }</a>`,
-                            function update() { // button
-                                window.open(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(), '_blank')
-                                location.reload() },
-                            !checkForUpdates.fromMenu ? // checkbox if auto-alert
-                                function dontShowAgainUntilNextUpdate() {
-                                    saveSetting('skipNextUpdate', !config.skipNextUpdate)
-                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
-                                : ''
-                        )
-
-                        // Localize button/checkbox labels if needed
-                        if (!config.userLanguage.startsWith('en')) {
-                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
-                            updateAlert.querySelector('label').textContent = ( // checkbox label
-                                `${ messages.alert_dontShowAgain } ${ messages.alert_untilNextVer }`)
-                            updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
-                            updateAlert.querySelectorAll('button')[0].textContent = messages.buttonLabel_dismiss
-                        }
-
-                        return
-                }}
-
-                if (checkForUpdates.fromMenu) { // alert to no update found
-                    alert(`${ messages.alert_upToDate }!`, // title
-                        `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
-    }}})}
 
     // Define CSS function
 
