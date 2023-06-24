@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.22.1
+// @version             2023.6.24
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -34,7 +34,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@5eed48d721158fc3800c23bc02b5dc0d3959b472/dist/chatgpt-1.10.1.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@76b0c6869466e1c2200137afc96f9687f7b9616b/dist/chatgpt-1.10.2.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -43,6 +43,7 @@
 // @grant               GM_cookie
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
+// @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
 // @downloadURL         https://greasyfork.org/scripts/459849/code/duckduckgpt.user.js
 // @updateURL           https://greasyfork.org/scripts/459849/code/duckduckgpt.meta.js
@@ -159,16 +160,19 @@
 
                         // Alert to update
                         alert('Update available! 🚀',
-                            `An update to DuckDuckGPT (v${ latestVer }) is available!`
-                                + `<a target="_blank" href="https://github.com/kudoai/duckduckgpt/commits/main/greasemonkey/duckduckgpt.user.js" style="font-size: 0.88rem ; position: relative ; left: 10px">View changes</a>`,
+                            `An update to DuckDuckGPT (v${ latestVer }) is available!   `
+                                + '<a target="_blank" href=' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js')
+                                    + ' style="font-size: 0.7rem">View changes</a>',
                             function update() { // button
-                                window.open(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(), '_blank')
-                                location.reload() },
+                                GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
+                                    { active: true, insert: true } // focus, make adjacent
+                                ).onclose = () => location.reload() },
                             !checkForUpdates.fromMenu ? // checkbox if auto-alert
                                 function skipThisVersion() {
                                     saveSetting('skipNextUpdate', !config.skipNextUpdate)
-                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false) }
-                                : '', 328 // width
+                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false)
+                                } : '', 328 // width
                         )
                         return
                 }}
@@ -449,9 +453,11 @@
     // Run MAIN routine
 
     // Init config/messages/menu
-    const config = { prefix: 'ddgpt', appSymbol: '🤖', userLanguage: navigator.languages[0] || navigator.language || '',
-                     ghHostDir: 'https://raw.githubusercontent.com/kudoai/duckduckgpt/main/',
-                     updateURL: 'https://greasyfork.org/scripts/459849/code/duckduckgpt.meta.js' }
+    const config = {
+        prefix: 'ddgpt', appSymbol: '🤖', userLanguage: navigator.languages[0] || navigator.language || '',
+        ghRepoURL: 'https://github.com/kudoai/duckduckgpt',
+        updateURL: 'https://greasyfork.org/scripts/459849/code/duckduckgpt.meta.js' }
+    config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
     var messages = [] ; registerMenu()
 
@@ -511,7 +517,7 @@
 
     // Activate promo campaign if active
     GM.xmlHttpRequest({
-        method: 'GET', url: config.ghHostDir + 'ads/live/creative.html',
+        method: 'GET', url: config.assetHostURL + 'ads/live/creative.html',
         onload: function(response) {
             if (response.status == 200) {
 
