@@ -14,7 +14,7 @@
 // @description:zh-TW   將 ChatGPT 答案添加到 Brave Search 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.22.2
+// @version             2023.6.24
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -42,6 +42,7 @@
 // @grant               GM_cookie
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
+// @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
 // @downloadURL         https://greasyfork.org/scripts/462440/code/bravegpt.user.js
 // @updateURL           https://greasyfork.org/scripts/462440/code/bravegpt.meta.js
@@ -158,10 +159,13 @@
                         // Alert to update
                         alert('Update available! 🚀',
                             `An update to BraveGPT (v${ latestVer }) is available!   `
-                                + `<a target="_blank" href="https://github.com/kudoai/bravegpt/commits/main/greasemonkey/bravegpt.user.js" style="font-size: 0.7rem">View changes</a>`,
+                                + '<a target="_blank" href=' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js')
+                                    + ' style="font-size: 0.7rem">View changes</a>',
                             function update() { // button
-                                window.open(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(), '_blank')
-                                location.reload() },
+                                GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
+                                    { active: true, insert: true } // focus, make adjacent
+                                ).onclose = () => location.reload() },
                             !checkForUpdates.fromMenu ? // checkbox if auto-alert
                                 function skipThisVersion() {
                                     saveSetting('skipNextUpdate', !config.skipNextUpdate)
@@ -447,9 +451,11 @@
     // Run MAIN routine
 
     // Init config/messages/menu
-    const config = { prefix: 'braveGPT', appSymbol: '🤖', userLanguage: navigator.languages[0] || navigator.language || '',
-                     ghHostDir: 'https://raw.githubusercontent.com/kudoai/bravegpt/main/',
-                     updateURL: 'https://greasyfork.org/scripts/466789/code/bravegpt.meta.js' }
+    const config = {
+        prefix: 'braveGPT', appSymbol: '🤖', userLanguage: navigator.languages[0] || navigator.language || '',
+        ghRepoURL: 'https://github.com/kudoai/bravegpt',
+        updateURL: 'https://greasyfork.org/scripts/466789/code/bravegpt.meta.js' }
+    config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
     var messages = [] ; registerMenu()
 
