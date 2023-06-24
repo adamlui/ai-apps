@@ -48,7 +48,7 @@
 // @description:ka      დაამატებს ChatGPT პასუხებს Brave Search გვერდის მარჯვნივ (GPT-4-ით გამოყენებული!)
 // @description:kab     Izgan-d yemdanen n teblaḍ n Brave Search (ɣef GPT-4!)
 // @description:kk      Brave іздеу жағдайындағы ChatGPT жауаптарын қосады (GPT-4-мен жұмыс істейді!)
-// @description:km      បន្ថែមការឆ្លើយតប ChatGPT ទៅជា​ក្រុមហ៊ុនប្រុង Brave (ដោយប្រើ GPT-4!)
+// @description:km      បន្ថែមចម្លើយ ChatGPT ទៅរបារចំហៀងស្វែងរកក្លាហាន (ដំណើរការដោយ GPT-4!)
 // @description:kn      ಬ್ರೇವ್ ಶೋಧನೆ ಪಟ್ಟಿಗೆ ChatGPT ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ (GPT-4 ಅನ್ನು ಬಳಸಿ!)
 // @description:ko      ChatGPT 답변을 Brave 검색 사이드바에 추가합니다 (GPT-4로 구동됨!)
 // @description:ku      Li ser panoya li serê lêgerîna Brave dihêle ChatGPT bersivan (bi alîkariya GPT-4!)
@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.24.4
+// @version             2023.6.24.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
