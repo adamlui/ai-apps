@@ -26,7 +26,7 @@
     })
 
     // Init settings
-    config.appSymbol = '∞' ; settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
+    settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
     settings.save('infinityMode', false) // to reset popup toggle
     settings.load(['autoScrollDisabled', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden']).then(() => {
         if (!config.replyLanguage) settings.save('replyLanguage', config.userLanguage) // init reply language if unset
@@ -106,8 +106,8 @@
             chatgpt.alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
                 chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
                     + ' v' + version.toString() + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
-                    + '<a target="_blank" href="https://github.com/adamlui/chatgpt-infinity/commits/main/chrome/extension" '
-                    + 'style="font-size: 0.7rem">' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
+                    + '<a target="_blank" href="' + config.ghRepoURL + '/commits/main/chrome/extension" '
+                        + 'style="font-size: 0.7rem">' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
                 function update() { chrome.runtime.reload() } // update button
             )
         } else {
@@ -140,7 +140,7 @@
 
         // Create elements
         const navicon = document.createElement('img') ; navicon.width = 18
-        navicon.src = 'https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/white/icon64.png'
+        navicon.src = config.assetHostURL + 'media/images/icons/infinity-symbol/white/icon64.png'
         const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'infToggleLabel'
         const labelText = document.createTextNode(chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
             + chrome.i18n.getMessage('state_' + ( config.infinityMode ? 'enabled' : 'disabled' )))
