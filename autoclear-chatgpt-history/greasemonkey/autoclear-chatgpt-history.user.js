@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.23
+// @version             2023.6.23.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -260,9 +260,10 @@
 (async () => {
 
     // Init config
-    const config = { prefix: 'chatGPTac', appSymbol: '🕶️', userLanguage: navigator.languages[0] || navigator.language || '',
-                     ghRepoURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
-                     updateURL: 'https://greasyfork.org/scripts/460805/code/autoclear-chatgpt-history.meta.js' }
+    const config = {
+        prefix: 'chatGPTac', appSymbol: '🕶️', userLanguage: navigator.languages[0] || navigator.language || '',
+        ghRepoURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
+        updateURL: 'https://greasyfork.org/scripts/460805/code/autoclear-chatgpt-history.meta.js' }
     loadSetting('autoclear', 'buttonHidden', 'lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
 
@@ -291,9 +292,10 @@
     }) ; const messages = await msgsLoaded
 
     // Init/register menu
-    let menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-                                separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
-    registerMenu() // create browser toolbar menu
+    const state = {
+        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+        separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
+    let menuIDs = [] ; registerMenu() // create browser toolbar menu
 
     // Check for updates (1x/72h)
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
@@ -433,7 +435,9 @@
                         // Alert to update
                         alert('Update available! 🚀',
                             `An update to ${ messages.appName } (v${ latestVer }) is available!   `
-                                + `<a target="_blank" href="${ config.ghRepoURL }/commits/main/greasemonkey/autoclear-chatgpt-history.user.js" style="font-size: 0.7rem">View changes</a>`,
+                                + '<a target="_blank" href=' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + config.updateURL.replace(/.*\/([^/]+)\.meta\.js$/, '$1.user.js')
+                                    + ' style="font-size: 0.7rem">View changes</a>',
                             function update() { // button
                                 window.open(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(), '_blank')
                                 location.reload() },
