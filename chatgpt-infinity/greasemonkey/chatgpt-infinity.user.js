@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.24.3
+// @version             2023.6.24.4
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -280,8 +280,8 @@
         return // exit script
     } else registerMenu() // create functional menu
 
-    // Check for updates (1x/72h)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
+    // Check for updates (1x/1w)
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()
 
     // Add listener to auto-disable Infinity Mode
     if (document.hidden !== undefined) { // ...if Page Visibility API supported
