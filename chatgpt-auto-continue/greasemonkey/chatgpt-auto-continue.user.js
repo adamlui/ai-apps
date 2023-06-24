@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.24.2
+// @version             2023.6.24.3
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -280,9 +280,9 @@
                                 separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     registerMenu() // create browser toolbar menu
 
-    // Check for updates (1x/72h)
+    // Check for updates (1x/1w)
     await chatgpt.isLoaded()
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 172800000) checkForUpdates()
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()
 
     // Observe DOM for need to continue generating response
     const continueObserver = new MutationObserver((mutationsList) => {
