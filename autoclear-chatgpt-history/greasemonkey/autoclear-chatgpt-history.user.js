@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.24
+// @version             2023.6.24.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -240,7 +240,7 @@
 // @compatible          qq
 // @match               https://chat.openai.com/*
 // @run-at              document-end
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@5eed48d721158fc3800c23bc02b5dc0d3959b472/dist/chatgpt-1.10.1.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@76b0c6869466e1c2200137afc96f9687f7b9616b/dist/chatgpt-1.10.2.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -436,7 +436,7 @@
                         alert('Update available! 🚀', // title
                             `An update to ${ messages.appName } (v${ latestVer }) is available!   `
                                 + '<a target="_blank" href=' + config.ghRepoURL + '/commits/main/greasemonkey/'
-                                    + config.updateURL.replace(/.*\/([^/]+)\.meta\.js$/, '$1.user.js')
+                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js')
                                     + ' style="font-size: 0.7rem">View changes</a>',
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
