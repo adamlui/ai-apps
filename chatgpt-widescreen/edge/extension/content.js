@@ -155,8 +155,9 @@
             chatgpt.alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
                 chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
                     + ' v' + version.toString() + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
-                    + '<a target="_blank" href="https://github.com/adamlui/chatgpt-widescreen/commits/main/chrome/extension" '
-                    + 'style="font-size: 0.7rem">' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
+                    + '<a target="_blank" href=' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                        + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js')
+                        + ' style="font-size: 0.7rem">' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
                 function update() { chrome.runtime.reload() } // update button
             )
         } else {
@@ -164,6 +165,13 @@
                 chrome.i18n.getMessage('appName') + ' v' + chrome.runtime.getManifest().version
                     + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!' )
     }}
+
+    // Define CSS function
+
+    function classListToCSS(classList) { // convert DOM classList to single CSS selector
+        return '.' + [...classList].join('.') // prepend dot to dot-separated string
+            .replaceAll(/([:\[\]])/g, '\\$1') // escape CSS special chars
+    }
 
     // Define BUTTON functions
 
@@ -330,11 +338,6 @@
             + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
                 + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
             + ( !config.tcbDisabled ? tcbStyle : '' )) // expand text input vertically        
-    }
-
-    function classListToCSS(classList) { // convert DOM classList to single CSS selector
-        return '.' + [...classList].join('.') // prepend dot to dot-separated string
-            .replaceAll(/([:\[\]])/g, '\\$1') // escape CSS special chars
     }
 
     syncExtension = () => { // settings, then disable modes or sync taller chatbox

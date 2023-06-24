@@ -1,4 +1,7 @@
-const config = { prefix: 'chatGPTws', appSymbol: '🖥️' }
+const config = {
+    prefix: 'chatGPTws', appSymbol: '🖥️',
+    ghRepoURL: 'https://github.com/adamlui/chatgpt-widescreen' }
+
 const settings = {
 
     load: function() {
