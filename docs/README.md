@@ -2,7 +2,7 @@
 
 Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
-![](https://img.shields.io/badge/Users-20,000+-0ad4fc)
+![](https://img.shields.io/badge/Users-25,000+-0ad4fc)
 [![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 ![](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-addons?label=Commits)](https://github.com/adamlui/chatgpt-addons/commits/main)
