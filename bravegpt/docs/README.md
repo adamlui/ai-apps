@@ -122,6 +122,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/47604048?first-contrib=2023.04.01-proxy-ip-bug-report&h=50&w=50&mask=circle&maxage=7d "@Nord1cWarr1or")](https://github.com/Nord1cWarr1or)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/69060894?first-contrib=2023.05.16-katex-idea&h=50&w=50&mask=circle&maxage=7d "@afkvido")](https://github.com/afkvido)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23-css-readability&h=50&w=50&mask=circle&maxage=7d "@AliAlSarre")](https://github.com/AliAlSarre)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
 ## More ChatGPT apps
