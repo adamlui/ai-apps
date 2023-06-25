@@ -52,12 +52,13 @@ ChatGPT Auto-Continue relies on code from the powerful [chatgpt.js](https://gith
 </div>
 </h6>
 
-## Author links
+## Contributors
 
-[![](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "GitHub")](https://github.com/adamlui)
-[![](https://img.shields.io/badge/YouTube-@AdamLuiTube-blue?style=social&logo=youtube&link=https://www.youtube.com/@AdamLuiTube)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
-<a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" alt="Follow @adam on Mastodon" title="Mastodon">
-[![](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
+This project exists thanks to code, translations, issues & ideas from the following contributors:
+
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.04.28&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
+[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
 ## More ChatGPT apps
 
