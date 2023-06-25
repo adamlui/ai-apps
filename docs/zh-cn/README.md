@@ -21,12 +21,16 @@
 [自述文件](../../autoclear-chatgpt-history#readme) / 
 [讨论](https://chatgptevo.com/autoclear/discussions)
 
+#
+
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](../../bravegpt) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 在 Brave Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4 驱动!)
 <br>[安装](https://greasyfork.org/scripts/462440-bravegpt) / 
 [自述文件](../../bravegpt#readme) / 
 [讨论](https://github.bravegpt.com/discussions)
+
+#
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动继续 ⏩](../../chatgpt-auto-continue) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="提到 Awesome Userscripts" style="margin:0 0 -3px 3px"></a>
 
@@ -35,12 +39,16 @@
 [自述文件](../../chatgpt-auto-continue#readme) / 
 [讨论](https://chatgptevo.com/autocontinue/discussions)
 
+#
+
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](../../chatgpt-auto-refresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="在 Awesome Userscripts 中提到" style="margin:0 0 -2px 5px"></a>
 
 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
 <br>[安装](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) / 
 [自述文件](../../chatgpt-auto-refresh/docs/zh-cn/README.md) / 
 [讨论](https://chatgptevo.com/autorefresh/discussions)
+
+#
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](../../chatgpt-infinity) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" alt="在 Awesome Userscripts 中提到" style="margin:0 0 -2px 4px"></a>
 
@@ -49,12 +57,16 @@
 [自述文件](../../chatgpt-infinity/docs/zh-cn/README.md) / 
 [讨论](https://chatgptevo.com/infinity/discussions)
 
+#
+
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 宽屏模式 🖥️](../../chatgpt-widescreen) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" alt="ChatGPT&#0032;Widescreen&#0032;Mode - Add&#0032;widescreen&#0032;&#0043;&#0032;full&#0032;window&#0032;modes&#0032;to&#0032;ChatGPT | Product Hunt" style="width: auto; height: 24px; margin:0 0 -4px 3px;" width="auto" height="24" />
 
 向 ChatGPT 添加宽屏 + 全屏模式以增强查看效果 + 减少滚动。
 <br>[安装](../../chatgpt-widescreen#installation) / 
 [自述文件](../../chatgpt-widescreen#readme) / 
 [讨论](https://chatgptevo.com/widescreen/discussions)
+
+#
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](../../duckduckgpt) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" alt="DuckDuckGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;DuckDuckGo | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
