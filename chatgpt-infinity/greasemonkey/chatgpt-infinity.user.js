@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.24.4
+// @version             2023.6.26
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -214,7 +214,7 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@76b0c6869466e1c2200137afc96f9687f7b9616b/dist/chatgpt-1.10.2.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@ffd846eb2c6211a7f1ee733a18e88433f05b5c8c/dist/chatgpt-1.10.3.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
