@@ -103,15 +103,15 @@
 
     alertToUpdate = (version) => { // eslint-disable-line no-undef
         if (version) {
-            chatgpt.alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
+            alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
                 chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
                     + ' v' + version.toString() + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
                     + '<a target="_blank" href="' + config.ghRepoURL + '/commits/main/chrome/extension" '
                         + 'style="font-size: 0.7rem">' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
-                function update() { chrome.runtime.reload() } // update button
+                function reloadChrome() { chrome.runtime.reload() } // update button
             )
         } else {
-            chatgpt.alert(chrome.i18n.getMessage('alert_upToDate') + '!',
+            alert(chrome.i18n.getMessage('alert_upToDate') + '!',
                 chrome.i18n.getMessage('appName') + ' v' + chrome.runtime.getManifest().version
                     + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!' )
     }}
