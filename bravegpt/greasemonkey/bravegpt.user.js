@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.24.6
+// @version             2023.6.26
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -133,7 +133,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@76b0c6869466e1c2200137afc96f9687f7b9616b/dist/chatgpt-1.10.2.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@ffd846eb2c6211a7f1ee733a18e88433f05b5c8c/dist/chatgpt-1.10.3.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
