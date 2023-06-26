@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.26.1
+// @version             2023.6.26.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -257,7 +257,7 @@
 
 (async () => {
 
-	const site = document.location.href.match(/:\/\/(.*?\.)?(.*)\.[^/]+/)[2]
+    const site = document.location.href.match(/:\/\/(.*?\.)?(.*)\.[^/]+/)[2]
 
     // Init config
     const configPrefix = site + 'WS', config = {
@@ -266,7 +266,7 @@
         updateURL: 'https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('fullerWindows', 'fullWindow', 'lastCheckTime', 'notifHidden',
-    	'skipNextUpdate', 'skippedVer', 'tcbDisabled', 'wideScreen')
+        'skipNextUpdate', 'skippedVer', 'tcbDisabled', 'wideScreen')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -340,16 +340,16 @@
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for toggleMode()
     wideScreenStyle.innerText = textContainerSelector + ' { max-width: 93% !important } '
-    	+ ( site == 'poe' ? // stretch inner container
-    		' [class*="ChatMessages"] { max-width: 100% !important } ' : '' )
+        + ( site == 'poe' ? // stretch inner container
+            ' [class*="ChatMessages"] { max-width: 100% !important } ' : '' )
         + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
-        	'#__next > div > div.flex { width: 100px }' : '' )
+            '#__next > div > div.flex { width: 100px }' : '' )
 
     // Create full-window style
     const fullWindowStyle = document.createElement('style')
     fullWindowStyle.id = 'fullWindow-mode' // for toggleMode()
     fullWindowStyle.innerText = (
-    	  sidebarSelector + ' { display: none } ' // hide sidebar
+          sidebarSelector + ' { display: none } ' // hide sidebar
         + sidepadSelector + ' { padding-left: 0px }' ) // remove side padding
 
     // Create/insert chatbar buttons
@@ -364,9 +364,9 @@
             window[buttonName].style.cssText = `right: ${2.57 + i * 1.77}rem` // position left of prev button
             window[buttonName].style.cursor = 'pointer' // add finger cursor // 添加鼠标手势为手指
             if (site == 'openai') // assign borrowed classes
-            	window[buttonName].setAttribute('class', sendButtonClasses)
+                window[buttonName].setAttribute('class', sendButtonClasses)
             else if (site == 'poe') // lift buttons slightly
-            	window[buttonName].style.cssText += '; margin-bottom: 0.2rem '
+                window[buttonName].style.cssText += '; margin-bottom: 0.2rem '
             window[buttonName].addEventListener('click', () => { // add click listeners
                 if (buttonType === 'newChat') chatgpt.startNewChat() ; else toggleMode(buttonType) })
             window[buttonName].addEventListener('mouseover', toggleTooltip)
@@ -384,10 +384,10 @@
             if (!prevSessionChecked) {
                 if (config.wideScreen) toggleMode('wideScreen', 'ON')
                 if (config.fullWindow) { toggleMode('fullWindow', 'ON')
-                	if (site == 'openai') { // sidebar observer doesn't trigger
-	                    syncFullerWindows(true) // so sync Fuller Windows...
-	                    if (!config.notifHidden) // ... + notify 
-	                        notify(messages.mode_fullWindow + ' ON')
+                    if (site == 'openai') { // sidebar observer doesn't trigger
+                        syncFullerWindows(true) // so sync Fuller Windows...
+                        if (!config.notifHidden) // ... + notify 
+                            notify(messages.mode_fullWindow + ' ON')
                 }}
                 if (config.tcbDisabled) updateTweaksStyle() ; prevSessionChecked = true
             }
@@ -403,14 +403,14 @@
 
     // Monitor chat.openai.com sidebar to update full-window setting
     if (site == 'openai') {
-	    const sidebarObserver = new MutationObserver(() => {
-	        const fullWindowState = chatgpt.sidebar.isOff()
-	        if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
-	            if (!config.modeSynced) syncMode('fullWindow')
-	    })    
-	    setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
-	        sidebarObserver.observe(document.body, { childList: true, subtree: true })}, 500)
-	}
+        const sidebarObserver = new MutationObserver(() => {
+            const fullWindowState = chatgpt.sidebar.isOff()
+            if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
+                if (!config.modeSynced) syncMode('fullWindow')
+        })    
+        setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
+            sidebarObserver.observe(document.body, { childList: true, subtree: true })}, 500)
+    }
 
     // Add full screen listeners to update setting/button + set F11 flag
     window.addEventListener('resize', () => { // sync full screen settings/button
@@ -508,16 +508,16 @@
 
         // Add command to toggle taller OpenAI chatboxes when typing
         if (site == 'openai') {
-	        const tcbLabel = state.symbol[+config.tcbDisabled] + ' ' + messages.menuLabel_tallerChatbox
-	                       + state.separator + state.word[+config.tcbDisabled]
-	        menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
-	            saveSetting('tcbDisabled', !config.tcbDisabled)
-	            tweaksStyle.innerText = config.tcbDisabled ? tweaksStyle.innerText.replace(tcbStyle, '')
-	                                                       : tweaksStyle.innerText + tcbStyle
-	            if (!config.notifHidden)
-	                notify(`${ messages.menuLabel_tallerChatbox }: ${ state.word[+config.tcbDisabled] }`)
-	            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-	    }))}
+            const tcbLabel = state.symbol[+config.tcbDisabled] + ' ' + messages.menuLabel_tallerChatbox
+                           + state.separator + state.word[+config.tcbDisabled]
+            menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
+                saveSetting('tcbDisabled', !config.tcbDisabled)
+                tweaksStyle.innerText = config.tcbDisabled ? tweaksStyle.innerText.replace(tcbStyle, '')
+                                                           : tweaksStyle.innerText + tcbStyle
+                if (!config.notifHidden)
+                    notify(`${ messages.menuLabel_tallerChatbox }: ${ state.word[+config.tcbDisabled] }`)
+                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))}
 
         // Add command to show notifications when switching modes
         const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
@@ -542,22 +542,15 @@
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
-    // Define CSS function
-
-    function classListToCSS(classList) { // convert DOM classList to single CSS selector
-        return '.' + [...classList].join('.') // prepend dot to dot-separated string
-            .replaceAll(/([:\[\]])/g, '\\$1') // escape CSS special chars
-    }
-
     // Define BUTTON functions
 
     function setBtnColor() { return chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' }
 
-	function insertBtns() {
+    function insertBtns() {
         const chatbar = site == 'poe' ? document.querySelector('div[class*="inputContainer"]')
                                                  : document.querySelector('form button[class*="bottom"]').parentNode;
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
-		const sendButton = chatbar.querySelector('button')
+        const sendButton = chatbar.querySelector('button')
         if (site == 'openai') chatbar.insertBefore(newChatButton, sendButton)
         chatbar.insertBefore(wideScreenButton, sendButton)
         chatbar.insertBefore(fullWindowButton, sendButton)
@@ -657,16 +650,16 @@
     function activateMode(mode) {
         if (mode == 'wideScreen') { document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
         else if (mode == 'fullWindow') {
-        	document.head.appendChild(fullWindowStyle)
-        	if (site == 'poe') { syncMode('fullWindow') } else chatgpt.sidebar.hide()
+            document.head.appendChild(fullWindowStyle)
+            if (site == 'poe') { syncMode('fullWindow') } else chatgpt.sidebar.hide()
         } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
     }
 
     function deactivateMode(mode) {
         if (mode == 'wideScreen') try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (error) {}
         else if (mode == 'fullWindow') {
-        	try { document.head.removeChild(fullWindowStyle) } catch (error) {}
-        	if (site == 'poe') { syncMode('fullWindow') } else chatgpt.sidebar.show()
+            try { document.head.removeChild(fullWindowStyle) } catch (error) {}
+            if (site == 'poe') { syncMode('fullWindow') } else chatgpt.sidebar.show()
         } else if (mode == 'fullScreen') {
             if (config.f11)
                 alert(messages.alert_pressF11, messages.alert_f11reason + '.')
