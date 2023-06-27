@@ -16,7 +16,7 @@
 <a href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#duckduckgo)
 
-<h3><b>DuckDuckGPT</b> brings the magic of ChatGPT to search results.</h3>
+<h3><b>DuckDuckGPT</b> brings the magic of ChatGPT to search results (powered by GPT-4!)</h3>
 
 <a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
