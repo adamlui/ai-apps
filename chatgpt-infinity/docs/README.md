@@ -22,7 +22,7 @@
 
 ## About
 
-**ChatGPT Infinity** is your ultimate chat companion: a free (yet powerful) add-on that makes ChatGPT generate infinite answers on *any* topic, thus widely increasing your knowledge!
+**ChatGPT Infinity** is your ultimate chat companion: a free (yet powerful) add-on that makes ChatGPT generate infinite answers on *any* topic!
 
 <div align="center">
 
