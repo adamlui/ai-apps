@@ -1,3 +1,5 @@
+<head><meta name="_foundr" content="2764afb80c495801bb0e8144d916028d"></head>
+
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Infinity ∞ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20endless%20answers%20from%20all-knowing%20ChatGPT&url=https://chatgptevo.com/infinity&hashtags=javascript,openai,chatgpt)
 
 ![](https://img.shields.io/greasyfork/dt/465051?label=Users&color=0ad4fc)
