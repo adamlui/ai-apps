@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![](https://img.shields.io/greasyfork/dt/465051?label=Users&color=0ad4fc)
+![](https://img.shields.io/badge/Users-10,000+-0ad4fc)
 [![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=Commits)](https://github.com/adamlui/chatgpt-infinity/commits/main)
