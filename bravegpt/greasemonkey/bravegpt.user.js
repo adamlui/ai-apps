@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.27
+// @version             2023.6.27.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -433,7 +433,6 @@
                         } catch (error) {
                             braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + error)
                             braveGPTconsole.info('Response: ' + event.response)
-                            if (getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
                             else braveGPTalert('suggestProxy')
                         }
                     }
