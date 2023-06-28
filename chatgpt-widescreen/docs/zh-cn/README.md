@@ -7,7 +7,6 @@
 [![](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
 [![](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#兼容性)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=GitHub+提交)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
-![](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-widescreen?label=弱点&labelColor=464646&color=gold)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
 <a href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
@@ -16,7 +15,6 @@
 
 <br>
 
-<img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-square-light.svg" style="width: auto; height: 44px; margin:0 0 11px 5px;" width="auto" height="44px" />
 <a href="https://chatgptwidescreen.com/chrome" target="_blank"><img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png" height=44px width=auto></a>
 <a href="https://chatgptwidescreen.com/edge" target="_blank"><img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png" height="44px" width="auto" ></a>
 <a href="https://chatgptwidescreen.com/greasyfork" target="_blank"><img height=44px src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
