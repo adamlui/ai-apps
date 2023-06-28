@@ -3,7 +3,6 @@
 ![](https://img.shields.io/greasyfork/dt/466789?label=Users&color=0ad4fc)
 [![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-continue?label=Commits)](https://github.com/adamlui/chatgpt-auto-continue/commits/main)
-![](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-auto-continue?label=Vulnerabilities&labelColor=464646&color=gold)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-continue?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-continue)
 <a href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
