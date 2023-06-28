@@ -6,7 +6,6 @@
 [![](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
 ![](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-addons?label=提交)](https://github.com/adamlui/chatgpt-addons/commits/main)
-![](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-apps?label=弱点&labelColor=464646&color=gold)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
 <a href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
 
