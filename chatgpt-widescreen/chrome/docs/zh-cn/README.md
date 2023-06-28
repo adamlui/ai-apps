@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/marquee-promo-tile-1400x560.png)
+![](../../media/images/tiles/marquee-promo-tile-1400x560.png)
 
 <div align="center">
 
@@ -14,7 +14,6 @@
 
 <br>
 
-<img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-square-light.svg" alt="ChatGPT Widescreen Mode - Add Widescreen + Full-Window modes to ChatGPT | Product Hunt" style="width: auto; height: 44px; margin:0 0 11px 5px;" width="auto" height="44px" />
 <a href="https://chatgptwidescreen.com/chrome" target="_blank"><img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png" height=44px width=auto></a>
 <a href="https://chatgptwidescreen.com/edge" target="_blank"><img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png" height="44px" width="auto" ></a>
 <a href="https://chatgptwidescreen.com/greasyfork" target="_blank"><img height=44px src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
