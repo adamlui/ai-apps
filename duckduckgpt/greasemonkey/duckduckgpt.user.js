@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.27.1
+// @version             2023.6.27.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -345,7 +345,7 @@
                             ddgptShow(answer)
                         } catch (error) {
                             ddgptConsole.error(ddgptAlerts.parseFailed + ': ' + error)
-                            ddgptConsole.info('Response: ' + event.responseText)
+                            ddgptConsole.info('Response: ' + event.response)
                             ddgptAlert('suggestProxyMode')
                         }
                     }
