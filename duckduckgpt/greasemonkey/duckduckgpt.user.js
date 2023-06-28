@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.26
+// @version             2023.6.27
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -60,16 +60,6 @@
     const openAIauthDomain = 'https://auth0.openai.com'
     const openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
     const proxyEndpointMap = [[ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-4' ]]
-
-    const ddgptAlerts = {
-        waitingResponse: 'Waiting for ChatGPT response...',
-        login: 'Please login @ ',
-        tooManyRequests: 'ChatGPT is flooded with too many requests. Check back later!',
-        parseFailed: 'Failed to parse response JSON',
-        checkCloudflare: 'Please pass Cloudflare security check @ ',
-        suggestProxy: 'OpenAI API is not working. (Try switching on Proxy Mode in toolbar)',
-        suggestOpenAI: 'Proxy API is not working. (Try switching off Proxy Mode in toolbar)'
-    }
 
     // Define SCRIPT functions
 
@@ -130,7 +120,7 @@
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
     function registerMenu() {
-        const menuIDs = [] // to store registered commands for removal while preserving order        
+        const menuIDs = [] // to store registered commands for removal while preserving order
         const state = {
             symbol: ['✔️', '❌'], word: ['ON', 'OFF'], notifWord: ['Enabled', 'Disabled'],
             separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
@@ -346,6 +336,7 @@
                     else if (event.status === 403)
                         ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
                     else if (event.status === 429) ddgptAlert('tooManyRequests')
+                    else ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
                 } else if (!config.proxyAPIenabled && getUserscriptManager() !== 'Tampermonkey') {
                     if (event.response) {
                         try { // to parse txt response from OpenAI endpoint for non-TM users
@@ -364,9 +355,10 @@
                             const answer = JSON.parse(event.responseText).choices[0].message.content
                             ddgptShow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (error) {
-                            ddgptAlert('parseFailed')
                             ddgptConsole.error(ddgptAlerts.parseFailed + ': ' + error)
                             ddgptConsole.info('Response: ' + event.responseText)
+                            if (getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
+                            else ddgptAlert('suggestOpenAI')
                         }
         }}}}
     }
@@ -471,8 +463,19 @@
         ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
             return }
 
+    // Init alerts
+    const ddgptAlerts = {
+        waitingResponse: 'Waiting for ChatGPT response...',
+        login: 'Please login @ ',
+        tooManyRequests: `ChatGPT is flooded with too many requests. Try switching ${ config.proxyAPIenabled ? 'off' : 'on' } Proxy Mode in toolbar`,
+        parseFailed: `Failed to parse response JSON. Try switching ${ config.proxyAPIenabled ? 'off' : 'on' } Proxy Mode in toolbar`,
+        checkCloudflare: 'Please pass Cloudflare security check @ ',
+        suggestProxy: 'OpenAI API is not working. Try switching on Proxy Mode in toolbar',
+        suggestOpenAI: 'Proxy API is not working. Try switching off Proxy Mode in toolbar'
+    }
+
     // Check for updates (1x/1w)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()   
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()
 
     // Stylize elements
     const ddgptStyle = document.createElement('style')
