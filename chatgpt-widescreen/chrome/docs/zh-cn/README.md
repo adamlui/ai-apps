@@ -6,7 +6,6 @@
 [![](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
 [![](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/QQ-989898.svg)](#兼容性)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=GitHub+提交)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
-![](https://img.shields.io/snyk/vulnerabilities/github/adamlui/chatgpt-widescreen?label=弱点&labelColor=464646&color=gold)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
 <a href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
