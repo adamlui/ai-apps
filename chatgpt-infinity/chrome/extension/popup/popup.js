@@ -86,7 +86,7 @@
                     + ( replyLanguage ? replyLanguage : chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
                     if (tabs[0].url.includes('chat.openai.com') && config.infinityMode) { // reboot active session
-                        chrome.tabs.sendMessage(tabs[0].id, { action: 'restartOnReplyLang' }) }
+                        chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
                 })
                 break
     }}})
@@ -107,7 +107,7 @@
                                                                         + ' ' + replyTopic ) + '!')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
                     if (tabs[0].url.includes('chat.openai.com') && config.infinityMode) { // reboot active session
-                        chrome.tabs.sendMessage(tabs[0].id, { action: 'restartOnReplyTopic' }) }
+                        chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
                 })
                 break
     }}})
@@ -124,7 +124,7 @@
                     + ' ' + replyInterval + ' ' + chrome.i18n.getMessage('unit_seconds') + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
                     if (tabs[0].url.includes('chat.openai.com') && config.infinityMode) // reboot active session
-                        chrome.tabs.sendMessage(tabs[0].id, { action: 'restartOnReplyInt' })
+                        chrome.tabs.sendMessage(tabs[0].id, { action: 'resetInSameChat' })
                 })
                 break
     }}})

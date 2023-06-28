@@ -162,12 +162,12 @@
             if (!infinityMode.fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
             infinityMode.fromMsg = false
             try { chatgpt.startNewChat() } catch (error) { return }
-            setTimeout(() => {
+            settings.load('replyLanguage', 'replyTopic', 'replyInterval').then(() => setTimeout(() => {
                 chatgpt.send('Generate a single random Q&A'
                     + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                     + ( ' on ' + ( config.replyTopic === 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
                     + '. Don\'t type anything else.')
-            }, 500)
+            }, 500))
             await chatgpt.isIdle()
             if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
@@ -194,24 +194,17 @@
 
     // Define LIVE RESTART functions
 
-    restartOnReplyLang = () => { // eslint-disable-line no-undef
-        settings.load('replyLanguage').then(() => {
-            chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
-            setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) // toggle on
-    })}
+    restartInNewChat = () => { // eslint-disable-line no-undef
+        chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
+        setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) // toggle on
+    }
 
-    restartOnReplyTopic = () => { // eslint-disable-line no-undef
-        settings.load('replyTopic').then(() => {
-            chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
-            setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) // toggle on
-    })}
-
-    restartOnReplyInt = () => { // eslint-disable-line no-undef
-        settings.load('replyInterval').then(async () => {
-            clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
-            if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
+    resetInSameChat = async () => { // eslint-disable-line no-undef
+        clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
+        if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
+            settings.load('replyInterval').then(() => {
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
-    })}
+    })}}
 
     // Define SYNC function
 
