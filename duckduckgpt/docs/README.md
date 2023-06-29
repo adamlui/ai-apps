@@ -123,6 +123,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23-css-readability&h=50&w=50&mask=circle&maxage=7d "@AliAlSarre")](https://github.com/AliAlSarre)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/44784663?first-contrib=2023.05.26-ddg-centered-mode-bug-report&h=50&w=50&mask=circle&maxage=7d "@wznmickey")](https://github.com/wznmickey)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/96403800?first-contrib=2023.06.24-reply-language-idea&h=50&w=50&mask=circle&maxage=7d "@gitttt54")](https://github.com/gitttt54)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/12557024?first-contrib=2023.06.29-fatter-sidebar-idea&h=50&w=50&mask=circle&maxage=7d "@mozzribo")](https://github.com/mozzribo)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
