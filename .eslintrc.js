@@ -15,8 +15,7 @@ module.exports  = {
         'no-async-promise-executor': 'off', // allow promise executor functions to be async (to accomodate await lines)
         'no-constant-condition': 'off', // allow constant conditions
         'no-empty': 'off', // allow empty blocks
-        'no-useless-escape': 'off', // allow all escape chars cause ESLint sucks at detecting truly useless ones
-        'wrap': ['error', 'never'] // due to removal of word-wrap because of ReDoS vulnerability
+        'no-useless-escape': 'off' // allow all escape chars cause ESLint sucks at detecting truly useless ones
     },
     'globals': { '$': 'readonly', 'chatgpt': 'readonly', 'chrome': 'readonly', 'syncExtension': 'writable',
                  'global_module': 'readonly', 'GM_cookie': 'readonly', 'fullScreenButton': 'readonly',
