@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.27.2
+// @version             2023.6.29
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -34,7 +34,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
-// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@ffd846eb2c6211a7f1ee733a18e88433f05b5c8c/dist/chatgpt-1.10.3.min.js
+// @require             https://cdn.jsdelivr.net/gh/chatgptjs/chatgpt.js@1e3e24998c2a338b4db8f28cc01c3e8e6bc9e872/dist/chatgpt-1.10.4.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -157,6 +157,16 @@
             notify('Suffix Mode ' + state.notifWord[+!config.suffixEnabled])
             for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
+        }))
+
+        // Add command to toggle fatter sidebar
+        const fsbLabel = '↔️ Fatter Sidebar' + state.separator + state.word[+!config.fatterSidebar]
+        menuIDs.push(GM_registerMenuCommand(fsbLabel, () => {
+            saveSetting('fatterSidebar', !config.fatterSidebar)
+            updateTweaksStyle()
+            if (!config.notifHidden)
+                notify(`Fatter Sidebar: ${ state.word[+!config.fatterSidebar] }`)
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to set reply language
@@ -445,6 +455,14 @@
         getShowReply(messages)
     }
 
+    // Define SYNC function
+
+    function updateTweaksStyle() {
+        tweaksStyle.innerText = config.fatterSidebar ? fsbStyle : (
+            'section[data-area="sidebar"] { flex-basis: 448px ; max-width: 448px } '
+          + 'section[data-area="mainline"] { flex-basis: 672px ; max-width: 672px } ')
+    }
+
     // Run MAIN routine
 
     // Init config/messages/menu
@@ -453,8 +471,8 @@
         ghRepoURL: 'https://github.com/kudoai/duckduckgpt',
         updateURL: 'https://greasyfork.org/scripts/459849/code/duckduckgpt.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled',
-        'replyLanguage', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
+    loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'replyLanguage',
+        'fatterSidebar', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const messages = [] ; registerMenu()
 
@@ -476,6 +494,12 @@
 
     // Check for updates (1x/1w)
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()
+
+    // Create DDG style tweaks
+    const tweaksStyle = document.createElement('style')
+    const fsbStyle = 'section[data-area="sidebar"], section[data-area="mainline"] '
+        + '{ flex-basis: 560px !important ; max-width: 560px !important }'
+    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Stylize elements
     const ddgptStyle = document.createElement('style')
