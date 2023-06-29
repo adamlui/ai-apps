@@ -11,22 +11,26 @@ a { color: #999 ; text-decoration: none }
 a:focus, a:hover { text-decoration: underline ; color: inherit }
 
 /* Header */
-.menu-header { border-bottom: solid 1px lightgrey ; padding: 5px 5px 5px 0; margin: 0 ; display: flex; background: white ; align-items: center }
+.menu-header {
+    border-bottom: solid 1px lightgrey ; padding: 5px 5px 5px 0; margin: 0 ;
+    display: flex; background: white ; align-items: center }
 .logo { margin: 4px 10px 4px 12px }
 .menu-title { font-size: 0.85rem ; font-weight: 600 }
 .menu-icons > .toggle-switch { transform: scale(1.1) } /* make master toggle bigger */
 .main-toggle { margin-left: auto ; display: flex }
 
-/* Item elements */
+/* Menu item elements */
 .menu-item {    
-    position: relative ; align-items: center ; border-bottom: 1px solid lightgrey ; display: flex ; min-height: 2rem ;
-    padding-right: 14px ; white-space: nowrap ; font-size: 91%
+    position: relative ; align-items: center ; border-bottom: 1px solid lightgrey ;
+    display: flex ; min-height: 2rem ; padding-right: 14px ; white-space: nowrap ; font-size: 91%
 }
 .menu-icon { padding: 8px }
-.menu-area:focus, .menu-area:hover { color: var(--bg); background: rgb(100, 149, 237) ; cursor: pointer } /* add hover color/cursor */
+.menu-area:focus, .menu-area:hover { /* add hover color/cursor */
+    color: var(--bg) ; background: rgb(100, 149, 237) ; cursor: pointer }
 .menu-item:hover .toggle-switch .slider, .menu-item:hover span { filter: invert(1) } /* invert toggle switch + label */
 .menu-item:hover .menu-icon { filter: none } /* ...but not non-toggle icons */
 .menu-item > label > .slider { transform: scale(0.95) ; top: 1px } /* make child toggles smaller */
+.menu-prompt { margin-left: 2px } /* align non-toggle items */
 
 /* Toggle elements */
 .toggle-switch input[type="checkbox"] { display: none } /* hide checkbox from toggles */
