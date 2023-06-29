@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.29
+// @version             2023.6.29.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -160,7 +160,8 @@
         }))
 
         // Add command to toggle fatter sidebar
-        const fsbLabel = '↔️ Fatter Sidebar' + state.separator + state.word[+!config.fatterSidebar]
+        const fsbLabel = ( config.fatterSidebar ? '🔛' : '↔️' ) + ' Fatter Sidebar'
+                       + state.separator + state.word[+!config.fatterSidebar]
         menuIDs.push(GM_registerMenuCommand(fsbLabel, () => {
             saveSetting('fatterSidebar', !config.fatterSidebar)
             updateTweaksStyle()
