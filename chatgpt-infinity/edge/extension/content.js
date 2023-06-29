@@ -196,7 +196,7 @@
 
     restartInNewChat = () => { // eslint-disable-line no-undef
         chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
-        setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) // toggle on
+        setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 750) // toggle on
     }
 
     resetInSameChat = async () => { // eslint-disable-line no-undef
