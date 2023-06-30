@@ -14,7 +14,7 @@
 <br>
 
 <a href="https://chatgptinfinity.com/chrome" target="_blank"><img width=195 height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png" height=44px width=auto></a>
-<a href="https://chatgptinfinity.com/edge" target="_blank"><img width=171 height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png" height=44px width=auto></a>
+<a href="https://chatgptinfinity.com/edge" target="_blank"><img width=175 height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png" height=44px width=auto></a>
 <a href="https://chatgptinfinity.com/greasyfork" target="_blank"><img width=185 height=60 height=44px src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
 
 </div>
