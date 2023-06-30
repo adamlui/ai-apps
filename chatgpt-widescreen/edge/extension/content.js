@@ -52,13 +52,13 @@
 
     // Create wide screen style
     const wideScreenStyle = document.createElement('style')
-    wideScreenStyle.id = 'wideScreen-mode' // for toggleMode()
+    wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     wideScreenStyle.innerText = '.text-base, main > div > div > div > div > div { max-width: 93% !important } '
         + 'div' + classListToCSS(mainDivClasses) + '{ width: 100px }' // prevent sidebar shrinking when zoomed
 
     // Create full-window style
     const fullWindowStyle = document.createElement('style')
-    fullWindowStyle.id = 'fullWindow-mode' // for toggleMode()
+    fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
     fullWindowStyle.innerText = classListToCSS(sidebarClasses) + '{ display: none }' // hide sidebar
         + classListToCSS(sidepadClasses) + '{ padding-left: 0px }' // remove side padding
 
@@ -286,7 +286,6 @@
         if (mode == 'wideScreen') { document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
         else if (mode == 'fullWindow') { document.head.appendChild(fullWindowStyle) ; chatgpt.sidebar.hide() }
         else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
-        
     }
 
     function deactivateMode(mode) {
