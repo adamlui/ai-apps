@@ -14,6 +14,7 @@
 <br>
 
 <a href="https://chatgptinfinity.com/chrome" target="_blank"><img width=195 height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png" height=44px width=auto></a>
+<a href="https://chatgptinfinity.com/edge" target="_blank"><img width=171 height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png" height=44px width=auto></a>
 <a href="https://chatgptinfinity.com/greasyfork" target="_blank"><img width=185 height=60 height=44px src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
 
 </div>
@@ -42,9 +43,9 @@
 
 ## Installation
 
-### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"> Chrome extension:
+### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"><img style="margin: 0 2px -1px 0" height=16 src="https://i.imgur.com/0wUsChU.png"> Browser extension:
 
-1. Install [ChatGPT Infinity](https://chatgptinfinity.com/chrome) Chrome extension
+1. Install ChatGPT Infinity extension ([Chrome](https://chatgptinfinity.com/chrome), [Edge](https://chatgptinfinity.com/edge))
 
 2. Visit [chat.openai.com](https://chat.openai.com) as normal & Infinity toggle is added to sidebar!
 
@@ -97,7 +98,7 @@ ChatGPT Infinity is compatible w/ the following browsers:
 
 - **Google Chrome** (via [Chrome extension](https://chatgptinfinity.com/chrome) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
 - **Mozilla Firefox** (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Microsoft Edge** (via [Chrome extension](https://chatgptinfinity.com/chrome) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **Microsoft Edge** (via [Edge add-on](https://chatgptinfinity.com/edge) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
 - **Opera** (via [Chrome extension](https://chatgptinfinity.com/chrome) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
 - **Brave** (via [Chrome extension](https://chatgptinfinity.com/chrome) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
 - **Vivaldi** (via [Chrome extension](https://chatgptinfinity.com/chrome) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
@@ -107,7 +108,7 @@ ChatGPT Infinity is compatible w/ the following browsers:
 
 <div align="center">
 
-<a href="https://chatgptinfinity.com/chrome"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a><a href="https://chatgptinfinity.com/greasyfork"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-userscript-button.png"></a>
+<a href="https://chatgptinfinity.com/chrome"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-chrome-button.png"></a><a href="https://chatgptinfinity.com/edge"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-edge-button.png"></a><a href="https://chatgptinfinity.com/greasyfork"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-userscript-button.png"></a>
 <br>
 [Discuss](https://chatgptinfinity.com/discuss) / 
 [More ChatGPT add-ons](https://github.com/adamlui/chatgpt-apps)
