@@ -1,6 +1,6 @@
 // This library is a condensed version of chatgpt.js v1.10.3
 // (c) 2023 KudoAI & contributors under the MIT license
-// Source: https://github.com/chatgptjs/chatgpt.js
+// Source: https://github.com/kudoai/chatgpt.js
 
 var alertProps = { queue: [] };
 var notifyProps = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
