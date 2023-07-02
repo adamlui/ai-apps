@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.30
+// @version             2023.7.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -133,7 +133,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@e0d398d681ea5f3394a8b1809d3b29a7d53bc6e0/dist/chatgpt-1.10.5.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@4fdaa0ede3dd0847e20722568ddce38b7a00f49a/dist/chatgpt-1.10.6.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -286,17 +286,6 @@
 
     // Define SESSION functions
 
-    function uuidv4() {
-        let d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
-        const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-            const r = ( // generate random nibble
-                (d + (window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) - 1))*16)%16 | 0 )
-            d = Math.floor(d/16) // correspond each UUID digit to unique 4-bit chunks of timestamp
-            return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16) // generate random hexadecimal digit
-        })
-        return uuid
-    }
-
     function getAccessToken() {
         return new Promise(function(resolve) {
             var accessToken = GM_getValue('accessToken')
@@ -358,7 +347,7 @@
 
         // Get answer from ChatGPT
         var data = {}
-        if (!config.proxyAPIenabled) data = JSON.stringify({ action: 'next', messages: messages, model: model, parent_message_id: uuidv4(), max_tokens: 4000 })
+        if (!config.proxyAPIenabled) data = JSON.stringify({ action: 'next', messages: messages, model: model, parent_message_id: chatgpt.uuidv4(), max_tokens: 4000 })
         else data = JSON.stringify({ messages: messages, model: model })
 
         GM.xmlHttpRequest({
@@ -493,8 +482,8 @@
             if (messages.length > 2) messages.splice(0, 2) // keep token usage maintainable
             var prevReplyTrimmed = braveGPTdiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length)
             if (!config.proxyAPIenabled) {
-                messages.push({ role: 'assistant', id: uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
-                messages.push({ role: 'user', id: uuidv4(), content: { content_type: 'text', parts: [replyBox.value] } })
+                messages.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
+                messages.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [replyBox.value] } })
             } else {
                 messages.push({ role: 'assistant', content: prevReplyTrimmed })
                 messages.push({ role: 'user', content: replyBox.value })
@@ -535,7 +524,7 @@
         var query = new URL(location.href).searchParams.get('q')
         if (!config.proxyAPIenabled) {
             messages.push({
-                role: 'user', id: uuidv4(),
+                role: 'user', id: chatgpt.uuidv4(),
                 content: { content_type: 'text', parts: [query] }
             })
         } else messages.push({ role: 'user', content: query })
