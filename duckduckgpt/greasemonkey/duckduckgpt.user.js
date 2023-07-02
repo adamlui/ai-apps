@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.6.30
+// @version             2023.7.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -34,7 +34,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@e0d398d681ea5f3394a8b1809d3b29a7d53bc6e0/dist/chatgpt-1.10.5.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@4fdaa0ede3dd0847e20722568ddce38b7a00f49a/dist/chatgpt-1.10.6.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -220,17 +220,6 @@
 
     // Define SESSION functions
 
-    function uuidv4() {
-        let d = new Date().getTime() // get current timestamp in ms (to ensure UUID uniqueness)
-        const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-            const r = ( // generate random nibble
-                (d + (window.crypto.getRandomValues(new Uint32Array(1))[0] / (Math.pow(2, 32) - 1))*16)%16 | 0 )
-            d = Math.floor(d/16) // correspond each UUID digit to unique 4-bit chunks of timestamp
-            return ( c == 'x' ? r : (r&0x3|0x8) ).toString(16) // generate random hexadecimal digit
-        })
-        return uuid
-    }
-
     function getAccessToken() {
         return new Promise(function(resolve) {
             const accessToken = GM_getValue('accessToken')
@@ -291,7 +280,7 @@
         const data = JSON.stringify(
             config.proxyAPIenabled ? { messages: messages, model: model }
                                    : { action: 'next', messages: messages, model: model,
-                                       parent_message_id: uuidv4(), max_tokens: 4000 })
+                                       parent_message_id: chatgpt.uuidv4(), max_tokens: 4000 })
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
             headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
@@ -416,8 +405,8 @@
             const prevReplyTrimmed = ddgptDiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length)
             const yourReply = replyBox.value + ' / Answer in ' + config.replyLanguage
             if (!config.proxyAPIenabled) {
-                messages.push({ role: 'assistant', id: uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
-                messages.push({ role: 'user', id: uuidv4(), content: { content_type: 'text', parts: [yourReply] } })
+                messages.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
+                messages.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [yourReply] } })
             } else {
                 messages.push({ role: 'assistant', content: prevReplyTrimmed })
                 messages.push({ role: 'user', content: yourReply })
@@ -452,7 +441,7 @@
         const query = new URL(location.href).searchParams.get('q') + ' / Answer in ' + config.replyLanguage
         messages.push(
             config.proxyAPIenabled ? { role: 'user', content: query }
-                                   : { role: 'user', id: uuidv4(),
+                                   : { role: 'user', id: chatgpt.uuidv4(),
                                        content: { content_type: 'text', parts: [query] }})
         getShowReply(messages)
     }
