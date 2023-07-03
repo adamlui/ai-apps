@@ -13,7 +13,7 @@
 [![](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/bravegpt?label=Commits)](https://github.com/adamlui/userscripts/commits/master/chatgpt/bravegpt)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/bravegpt?label=Code%20Quality)](https://www.codefactor.io/repository/github/kudoai/bravegpt)
-<a href="https://github.com/chatgptjs/chatgpt.js"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
+<a href="https://github.com/kudoai/chatgpt.js"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
 [![](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#brave-search)
 
 <h3><b>BraveGPT</b> brings the magic of ChatGPT to search results (powered by GPT-4!)</h3>
@@ -50,15 +50,15 @@
 
 <a href="https://chatgpt.js.org">
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
-    <img width=455 style="margin: 0 0 -13px 18px" src="https://raw.githubusercontent.com/chatgptjs/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
+    <img width=455 style="margin: 0 0 -13px 18px" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
 </picture></a>
 <a href="https://katex.org">
     <img width=175 style="margin: 0 0 -13px 24px" src="https://i.imgur.com/3FBdSCi.png">
 </a>
 <br /><br />
 
-BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/chatgptjs/chatgpt.js) library (c) 2023 KudoAI & contributors under the MIT license
+BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/kudoai/chatgpt.js) library (c) 2023 KudoAI & contributors under the MIT license
 <br>...and the [KaTeX](https://github.com/KaTeX/KaTeX) library (c) 2013–2020 Khan Academy & contributors under the MIT license.
 
 </div>
