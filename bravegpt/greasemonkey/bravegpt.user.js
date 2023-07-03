@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.2
+// @version             2023.7.2.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -133,6 +133,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
+// @connect             api.aigcfun.com
 // @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@4fdaa0ede3dd0847e20722568ddce38b7a00f49a/dist/chatgpt-1.10.6.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
@@ -153,12 +154,7 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license
 // ...and KaTeX, the fastest math typesetting library @ https://katex.org (c) 2013–2020 Khan Academy & contributors under the MIT license
 
-(function() {
-
-    var openAIauthDomain = 'https://auth0.openai.com'
-    var chatGPTsessURL = 'https://chat.openai.com/api/auth/session'
-    var openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
-    var proxyEndpointMap = [[ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-4' ]]
+(async () => {
 
     // Define SCRIPT functions
 
@@ -270,7 +266,7 @@
                     alert('Up-to-date!', `BraveGPT (v${ currentVer }) is up-to-date!`)
     }})}
 
-    // Define CONSOLE/ALERT functions
+    // Define FEEDBACK functions
 
     var braveGPTconsole = {
         info: function(msg) {console.info(config.appSymbol + ' BraveGPT >> ' + msg)},
@@ -285,26 +281,13 @@
     }
 
     // Define SESSION functions
-
-    function getAccessToken() {
-        return new Promise(function(resolve) {
-            var accessToken = GM_getValue('accessToken')
-            braveGPTconsole.info('OpenAI access token: ' + accessToken)
-            if (!accessToken) {
-                GM.xmlHttpRequest({
-                    url: chatGPTsessURL,
-                    onload: function(response) {
-                        if (isBlockedbyCloudflare(response.responseText)) {
-                            braveGPTalert('checkCloudflare') ; return }
-                        try {
-                            var newAccessToken = JSON.parse(response.responseText).accessToken
-                            GM_setValue('accessToken', newAccessToken)
-                            resolve(newAccessToken)
-                        } catch (error) { braveGPTalert('login') ; return }
-                    }
-                })
-            } else resolve(accessToken)
-    })}
+ 
+    function generateRandomIP() {
+        const ip = []
+        for (let i = 0 ; i < 4 ; i++)
+            ip.push(Math.floor(Math.random() * 256))
+        return ip.join('.')
+    }
 
     function isBlockedbyCloudflare(resp) {
         try {
@@ -320,6 +303,43 @@
             if (!error) { for (var i = 0; i < cookies.length; i++) {
                 GM_cookie.delete({ url: openAIauthDomain, name: cookies[i].name })
     }}})}
+
+    function getOpenAItoken() {
+        return new Promise((resolve) => {
+            const accessToken = GM_getValue('openAItoken')
+            braveGPTconsole.info('OpenAI access token: ' + accessToken)
+            if (!accessToken) {
+                GM.xmlHttpRequest({ url: chatGPTsessURL, onload: (response) => {
+                    if (isBlockedbyCloudflare(response.responseText)) {
+                        braveGPTalert('checkCloudflare') ; return }
+                    try {
+                        const newAccessToken = JSON.parse(response.responseText).accessToken
+                        GM_setValue('openAItoken', newAccessToken)
+                        resolve(newAccessToken)
+                    } catch { braveGPTalert('login') ; return }
+                }})
+            } else resolve(accessToken)
+    })}
+
+    function getAIGCFkey() {
+        return new Promise((resolve) => {
+            const publicKey = GM_getValue('aigcfKey')
+            braveGPTconsole.info('AIGCFun public key: ' + publicKey)
+            if (!publicKey) {         
+                GM.xmlHttpRequest({ method: 'GET', url: 'https://api.aigcfun.com/fc/key',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Referer': 'https://aigcfun.com/',
+                        'X-Forwarded-For': generateRandomIP() },
+                    onload: (response) => {
+                        const newPublicKey = JSON.parse(response.responseText).data
+                        if (!newPublicKey) { ddgpt.error('Failed to get AIGCFun public key') ; return }
+                        GM_setValue('aigcfKey', newPublicKey)
+                        console.info('AIGCFun public key set: ' + newPublicKey)
+                        resolve(newPublicKey)
+                }})
+            } else resolve(publicKey)
+    })}
 
     // Define ANSWER functions
 
@@ -340,7 +360,7 @@
             endpoint = openAIchatEndpoint
             var timeoutPromise = new Promise((resolve, reject) => {
                 setTimeout(() => { reject(new Error('Timeout occurred')) }, 3000) })
-            accessKey = await Promise.race([getAccessToken(), timeoutPromise])
+            accessKey = await Promise.race([getOpenAItoken(), timeoutPromise])
             if (!accessKey) { braveGPTalert('login') ; return }
             model = 'text-davinci-002-render'
         }
@@ -541,6 +561,14 @@
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
     var messages = [] ; registerMenu()
+
+    // Init endpoints
+    var openAIauthDomain = 'https://auth0.openai.com'
+    var chatGPTsessURL = 'https://chat.openai.com/api/auth/session'
+    var openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
+    const proxyEndpointMap = [ // endpoint, key, model
+        [ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-4' ],
+        [ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
     var braveGPTalerts = {
         login: 'Please login @ ',
