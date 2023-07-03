@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.2.1
+// @version             2023.7.2.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -333,7 +333,7 @@
                         'X-Forwarded-For': generateRandomIP() },
                     onload: (response) => {
                         const newPublicKey = JSON.parse(response.responseText).data
-                        if (!newPublicKey) { ddgpt.error('Failed to get AIGCFun public key') ; return }
+                        if (!newPublicKey) { braveGPTconsole.error('Failed to get AIGCFun public key') ; return }
                         GM_setValue('aigcfKey', newPublicKey)
                         console.info('AIGCFun public key set: ' + newPublicKey)
                         resolve(newPublicKey)
@@ -381,7 +381,7 @@
                 braveGPTconsole.error(error)
                 if (!config.proxyAPIenabled) braveGPTalert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
-                    if (getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
+                    if (getShowReply.attemptCnt < proxyEndpointMap.length) retryDiffHost()
                     else braveGPTalert('suggestOpenAI')
             }}
         })
@@ -425,7 +425,7 @@
                 if (event.status !== 200) {
                     braveGPTconsole.error('Event status: ' + event.status)
                     braveGPTconsole.info('Event response: ' + event.responseText)
-                    if (config.proxyAPIenabled && getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1)
+                    if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpointMap.length)
                         retryDiffHost()
                     else if (event.status === 401 && !config.proxyAPIenabled) {
                         GM_deleteValue('accessToken') ; braveGPTalert('login')
@@ -454,7 +454,7 @@
                         } catch (error) {
                             braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + error)
                             braveGPTconsole.info('Response: ' + event.responseText)
-                            if (getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
+                            if (getShowReply.attemptCnt < proxyEndpointMap.length) retryDiffHost()
                             else braveGPTalert('suggestOpenAI')
                         }
         }}}}
