@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.2
+// @version             2023.7.2.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -34,6 +34,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             c1b9-67-188-52-169.ngrok.io
+// @connect             api.aigcfun.com
 // @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@4fdaa0ede3dd0847e20722568ddce38b7a00f49a/dist/chatgpt-1.10.6.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
@@ -55,11 +56,6 @@
 // ...and KaTeX, the fastest math typesetting library @ https://katex.org (c) 2013–2020 Khan Academy & contributors under the MIT license
 
 (async () => {
-
-    const chatGPTsessURL='https://chat.openai.com/api/auth/session'
-    const openAIauthDomain = 'https://auth0.openai.com'
-    const openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
-    const proxyEndpointMap = [[ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-4' ]]
 
     // Define SCRIPT functions
 
@@ -213,29 +209,19 @@
                 '<a href="https://chat.openai.com" target="_blank">chat.openai.com</a> (If issue persists, try activating Proxy Mode)</p>' : '</p>')
     }
 
-    // Define UI detection functions
+    // Define DDG UI functions
 
     function isCenteredMode() { return document.querySelector('html').classList.toString().includes('center') }
     function isDarkMode() { return document.documentElement.classList.toString().includes('dark') }
 
     // Define SESSION functions
-
-    function getAccessToken() {
-        return new Promise(function(resolve) {
-            const accessToken = GM_getValue('accessToken')
-            ddgptConsole.info('OpenAI access token: ' + accessToken)
-            if (!accessToken) {
-                GM.xmlHttpRequest({ url: chatGPTsessURL, onload: (response) => {
-                    if (isBlockedbyCloudflare(response.responseText)) {
-                        ddgptAlert('checkCloudflare') ; return }
-                    try {
-                        const newAccessToken = JSON.parse(response.responseText).accessToken
-                        GM_setValue('accessToken', newAccessToken)
-                        resolve(newAccessToken)
-                    } catch { ddgptAlert('login') ; return }
-                }})
-            } else resolve(accessToken)
-    })}
+ 
+    function generateRandomIP() {
+        const ip = []
+        for (let i = 0 ; i < 4 ; i++)
+            ip.push(Math.floor(Math.random() * 256))
+        return ip.join('.')
+    }
 
     function isBlockedbyCloudflare(resp) {
         try {
@@ -251,6 +237,43 @@
             if (!error) { for (let i = 0; i < cookies.length; i++) {
                 GM_cookie.delete({ url: openAIauthDomain, name: cookies[i].name })
     }}})}
+
+    function getOpenAItoken() {
+        return new Promise((resolve) => {
+            const accessToken = GM_getValue('openAItoken')
+            ddgptConsole.info('OpenAI access token: ' + accessToken)
+            if (!accessToken) {
+                GM.xmlHttpRequest({ url: chatGPTsessURL, onload: (response) => {
+                    if (isBlockedbyCloudflare(response.responseText)) {
+                        ddgptAlert('checkCloudflare') ; return }
+                    try {
+                        const newAccessToken = JSON.parse(response.responseText).accessToken
+                        GM_setValue('openAItoken', newAccessToken)
+                        resolve(newAccessToken)
+                    } catch { ddgptAlert('login') ; return }
+                }})
+            } else resolve(accessToken)
+    })}
+
+    function getAIGCFkey() {
+        return new Promise((resolve) => {
+            const publicKey = GM_getValue('aigcfKey')
+            ddgptConsole.info('AIGCFun public key: ' + publicKey)
+            if (!publicKey) {         
+                GM.xmlHttpRequest({ method: 'GET', url: 'https://api.aigcfun.com/fc/key',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Referer': 'https://aigcfun.com/',
+                        'X-Forwarded-For': generateRandomIP() },
+                    onload: (response) => {
+                        const newPublicKey = JSON.parse(response.responseText).data
+                        if (!newPublicKey) { ddgpt.error('Failed to get AIGCFun public key') ; return }
+                        GM_setValue('aigcfKey', newPublicKey)
+                        console.info('AIGCFun public key set: ' + newPublicKey)
+                        resolve(newPublicKey)
+                }})
+            } else resolve(publicKey)
+    })}
 
     // Define ANSWER functions
 
@@ -271,7 +294,7 @@
             endpoint = openAIchatEndpoint
             const timeoutPromise = new Promise((resolve, reject) => {
                 setTimeout(() => { reject(new Error('Timeout occurred')) }, 3000) })
-            accessKey = await Promise.race([getAccessToken(), timeoutPromise])
+            accessKey = await Promise.race([getOpenAItoken(), timeoutPromise])
             if (!accessKey) { ddgptAlert('login') ; return }
             model = 'text-davinci-002-render'
         }
@@ -471,6 +494,14 @@
     if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
         ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
             return }
+
+    // Init endpoints
+    const chatGPTsessURL='https://chat.openai.com/api/auth/session'
+    const openAIauthDomain = 'https://auth0.openai.com'
+    const openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
+    const proxyEndpointMap = [ // endpoint, key, model
+        [ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-4' ],
+        [ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
     // Init alerts
     const ddgptAlerts = {
