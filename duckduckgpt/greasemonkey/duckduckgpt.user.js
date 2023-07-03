@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.2.1
+// @version             2023.7.2.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -267,7 +267,7 @@
                         'X-Forwarded-For': generateRandomIP() },
                     onload: (response) => {
                         const newPublicKey = JSON.parse(response.responseText).data
-                        if (!newPublicKey) { ddgpt.error('Failed to get AIGCFun public key') ; return }
+                        if (!newPublicKey) { ddgptConsole.error('Failed to get AIGCFun public key') ; return }
                         GM_setValue('aigcfKey', newPublicKey)
                         console.info('AIGCFun public key set: ' + newPublicKey)
                         resolve(newPublicKey)
@@ -312,7 +312,7 @@
                 ddgptConsole.error(error)
                 if (!config.proxyAPIenabled) ddgptAlert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
-                    if (getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
+                    if (getShowReply.attemptCnt < proxyEndpointMap.length) retryDiffHost()
                     else ddgptAlert('suggestOpenAI')
             }}
         })
@@ -353,7 +353,7 @@
                 if (event.status !== 200) {
                     ddgptConsole.error('Event status: ' + event.status)
                     ddgptConsole.info('Event response: ' + event.responseText)
-                    if (config.proxyAPIenabled && getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1)
+                    if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpointMap.length)
                         retryDiffHost()
                     else if (event.status === 401 && !config.proxyAPIenabled) {
                         GM_deleteValue('accessToken') ; ddgptAlert('login') }
@@ -381,7 +381,7 @@
                         } catch (error) {
                             ddgptConsole.error(ddgptAlerts.parseFailed + ': ' + error)
                             ddgptConsole.info('Response: ' + event.responseText)
-                            if (getShowReply.attemptCnt < 1 && proxyEndpointMap.length > 1) retryDiffHost()
+                            if (getShowReply.attemptCnt < proxyEndpointMap.length) retryDiffHost()
                             else ddgptAlert('suggestOpenAI')
                         }
         }}}}
