@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.4
+// @version             2023.7.4.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -445,7 +445,7 @@
                         } catch (error) {
                             braveGPTconsole.info('Response: ' + event.responseText)
 
-                            if (event.responseText.includes('errCode')) { // if AIGCF error encountered
+                            if (event.responseText.includes('finish_reason')) { // if AIGCF error encountered
                                 GM_setValue('aigcfKey', false) // clear GM key for fresh getAIGCFkey()
 
                                 // Determine index of AIGCF in endpoint map
