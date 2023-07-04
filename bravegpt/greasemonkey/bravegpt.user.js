@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.2.2
+// @version             2023.7.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -132,9 +132,8 @@
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @connect             chat.openai.com
-// @connect             c1b9-67-188-52-169.ngrok.io
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@4fdaa0ede3dd0847e20722568ddce38b7a00f49a/dist/chatgpt-1.10.6.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@8483b553675c3444db5c6b40a8686531c11b2a35/dist/chatgpt-1.11.0.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -281,13 +280,6 @@
     }
 
     // Define SESSION functions
- 
-    function generateRandomIP() {
-        const ip = []
-        for (let i = 0 ; i < 4 ; i++)
-            ip.push(Math.floor(Math.random() * 256))
-        return ip.join('.')
-    }
 
     function isBlockedbyCloudflare(resp) {
         try {
@@ -324,13 +316,12 @@
     function getAIGCFkey() {
         return new Promise((resolve) => {
             const publicKey = GM_getValue('aigcfKey')
-            braveGPTconsole.info('AIGCFun public key: ' + publicKey)
             if (!publicKey) {         
                 GM.xmlHttpRequest({ method: 'GET', url: 'https://api.aigcfun.com/fc/key',
                     headers: {
                         'Content-Type': 'application/json',
                         'Referer': 'https://aigcfun.com/',
-                        'X-Forwarded-For': generateRandomIP() },
+                        'X-Forwarded-For': chatgpt.generateRandomIP() },
                     onload: (response) => {
                         const newPublicKey = JSON.parse(response.responseText).data
                         if (!newPublicKey) { braveGPTconsole.error('Failed to get AIGCFun public key') ; return }
@@ -452,10 +443,31 @@
                             answer = JSON.parse(event.responseText).choices[0].message.content
                             braveGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (error) {
-                            braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + error)
                             braveGPTconsole.info('Response: ' + event.responseText)
-                            if (getShowReply.attemptCnt < proxyEndpointMap.length) retryDiffHost()
-                            else braveGPTalert('suggestOpenAI')
+
+                            if (event.responseText.includes('errCode')) { // if AIGCF error encountered
+                                GM_setValue('aigcfKey', false) // clear GM key for fresh getAIGCFkey()
+
+                                // Determine index of AIGCF in endpoint map
+                                let aigcfMapIndex = -1
+                                for (let i = 0 ; i < proxyEndpointMap.length ; i++) {
+                                    const endpoint = proxyEndpointMap[i]
+                                    if (endpoint.some(item => item.includes('aigcfun'))) {
+                                        aigcfMapIndex = i ; break
+                                }}
+
+                                // Updated AIGCF endpoint w/ fresh key (using fresh IP)
+                                (async () => { // IIFE to use await
+                                    proxyEndpointMap[aigcfMapIndex][0] = (
+                                        'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey())
+                                    getShowReply(messages, callback) // re-fetch reply
+                                })()
+
+                            } else { // use different endpoint or suggest OpenAI
+                                braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + error)
+                                if (getShowReply.attemptCnt < proxyEndpointMap.length) retryDiffHost()
+                                else braveGPTalert('suggestOpenAI')
+                            }
                         }
         }}}}
     }
@@ -566,9 +578,7 @@
     var openAIauthDomain = 'https://auth0.openai.com'
     var chatGPTsessURL = 'https://chat.openai.com/api/auth/session'
     var openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
-    const proxyEndpointMap = [ // endpoint, key, model
-        [ 'https://c1b9-67-188-52-169.ngrok.io', 'pk-pJNAtlAqCHbUDTrDudubjSKeUVgbOMvkRQWMLtscqsdiKmhI', 'gpt-4' ],
-        [ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
+    const proxyEndpointMap = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
     var braveGPTalerts = {
         login: 'Please login @ ',
