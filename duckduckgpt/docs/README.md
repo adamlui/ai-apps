@@ -25,7 +25,7 @@
 
 #
 
-<img src="https://i.imgur.com/emsmP6p.png">
+<img src="https://raw.githubusercontent.com/kudoai/duckduckgpt/main/media/images/screenshots/how-to-becum-rich-demo.png">
 
 ## Installation
 
