@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.6.1
+// @version             2023.7.6.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -257,7 +257,7 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license.
 
 (async () => {
-
+    
     const site = document.location.href.match(/:\/\/(.*?\.)?(.*)\.[^/]+/)[2]
 
     // Init config
@@ -554,8 +554,8 @@
         sidebar: {
             isOff: function() { return document.querySelector('main > div').style.width == '100%' },
             isOn: function() { return document.querySelector('main > div').style.width != '100%' },
-            hide: function() { this.isOn() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already hidden!'); },
-            show: function() { this.isOff() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already shown!'); },
+            hide: function() { this.isOn() ? this.toggle() : console.info(config.appSymbol + ' >> Sidebar already hidden!') },
+            show: function() { this.isOff() ? this.toggle() : console.info(config.appSymbol + ' >> Sidebar already shown!') },
 
             toggle: function() {
             	const toggleSVG = document.querySelector('[data-testid$="toggle-web-results-panel"] svg')
