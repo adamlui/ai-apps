@@ -1,15 +1,16 @@
+<div align="right">
+<h5>English | <a href="zh-cn#readme">简体中文</a></h5>
+</div>
+
 # 🤖 ChatGPT apps &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Check%20these%20%23ChatGPT%20add-ons%20out%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
 
 Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
-![](https://img.shields.io/badge/Users-25,000+-0ad4fc)
-[![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
-![](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Brave/Opera/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)
-[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-addons?label=Commits)](https://github.com/adamlui/chatgpt-addons/commits/main)
-[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
-<a href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/IlqFZJI.png"></a>
-
-###### English | [简体中文](zh-cn#readme)
+![](https://img.shields.io/badge/Installs-25,000+-0ad4fc?logo=docusign&logoColor=white&style=for-the-badge)
+[![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&style=for-the-badge)](../LICENSE.md)
+[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=Commits&logo=github&logoColor=white&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits/main)
+[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=Code+Quality&logo=codefactor&logoColor=white&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
+![](https://img.shields.io/badge/Powered_by-chatgpt.js-d909f9?logo=gamejolt&logoColor=white&style=for-the-badge)
 
 <img height=10px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
