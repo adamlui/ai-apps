@@ -58,7 +58,7 @@
 
 ![Full-Window toggle](https://i.imgur.com/wdoxZuh.png)
 
-*NOTE: Since full-window mode hides the sidebar, press '+' to start new chats*
+*NOTE: On openai.com, since full-window mode hides the sidebar, press '+' to start new chats*
 
 ![image](https://i.imgur.com/nt3VDtc.png)
 ![image](https://i.imgur.com/7r4NQIy.png)

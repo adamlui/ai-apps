@@ -64,7 +64,7 @@
 
 ![](https://i.imgur.com/wdoxZuh.png)
 
-*NOTE: Since full-window mode hides the sidebar, press '+' to start new chats*
+*NOTE: On openai.com, since full-window mode hides the sidebar, press '+' to start new chats*
 
 </div>
 
