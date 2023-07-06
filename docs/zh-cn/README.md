@@ -8,7 +8,7 @@
 [![](https://img.shields.io/badge/执照-MIT-green.svg?logo=internetarchive&logoColor=white&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=提交&logo=github&logoColor=white&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits/main)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=代码质量&logo=codefactor&logoColor=white&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
-![](https://img.shields.io/badge/供电-chatgpt.js-d909f9?logo=gamejolt&logoColor=white&style=for-the-badge)
+[![](https://img.shields.io/badge/供电-chatgpt.js-d909f9?logo=gamejolt&logoColor=white&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
 
 利用 ChatGPT 惊人的 AI 或增强其 UX 的应用程序。
 
