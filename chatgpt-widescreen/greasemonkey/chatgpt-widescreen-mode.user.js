@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.6.2
+// @version             2023.7.6.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -429,7 +429,7 @@
                 : ( site == 'you' ? '10 10 ' : '8 8 ' )) // fullscreen
             // shrink to fit size
             + ( mode == 'newChat' ? '13 13' : mode == 'wideScreen' ? '20 20 ' : mode == 'fullWindow' ? '24 24'
-            	: ( site == 'you' ? '17 17' : '20 20' )) // fullscreen
+                : ( site == 'you' ? '17 17' : '20 20' )) // fullscreen
         const fullScreenONelems = [
             createSVGelem('path', { fill: buttonColor, d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
@@ -544,7 +544,7 @@
     // Define YOU functions
 
     const you = {
-    	isLoaded: function() {
+        isLoaded: function() {
             return new Promise(resolve => {
                 var intervalId = setInterval(() => {
                     if (document.querySelector('div[data-testid="youchat-input"]')) {
@@ -558,7 +558,7 @@
             show: function() { this.isOff() ? this.toggle() : console.info(config.appSymbol + ' >> Sidebar already shown!') },
 
             toggle: function() {
-            	const toggleSVG = document.querySelector('[data-testid$="toggle-web-results-panel"] svg')
+                const toggleSVG = document.querySelector('[data-testid$="toggle-web-results-panel"] svg')
                 toggleSVG.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }))
             }
         }
@@ -569,7 +569,7 @@
     function syncMode(mode) { // setting + icon + tooltip
         const state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
                       : mode === 'fullWindow' ? ( site == 'poe' ? !!document.querySelector('#fullWindow-mode')
-                      	                        : site == 'you' ? you.sidebar.isOff() : chatgpt.sidebar.isOff() )
+                                                : site == 'you' ? you.sidebar.isOff() : chatgpt.sidebar.isOff() )
                                               : chatgpt.isFullScreen() )
         saveSetting(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
         if (mode === 'fullWindow') syncFullerWindows(state)
@@ -651,7 +651,7 @@
     wideScreenStyle.innerText = textContainerSelector + ' { max-width: 93% !important } '
         + ( site == 'poe' ? // stretch inner container
             ' [class*="ChatMessages"] { max-width: 100% !important } ' : '' )
-        + ( site == 'you' ?
+        + ( site == 'you' ? // stretch outer container
             ' main div[data-testid="YouChat-app"] { max-width: 85vw ; width: 85vw } ' : '' )
         + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
             '#__next > div > div.flex { width: 100px }' : '' )
