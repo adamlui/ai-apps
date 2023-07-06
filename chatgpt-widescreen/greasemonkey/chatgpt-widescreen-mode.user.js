@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.4
+// @version             2023.7.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -314,7 +314,8 @@
         site == 'poe' ? 'button[class*="sendButton"] svg' : 'form button[class*="bottom"] svg') || {}).classList || []
 
     // Define UI element selectors
-    const inputSelector = site == 'poe' ? '[class*="inputContainer"] textarea' : 'form textarea[id*="prompt"]'
+    const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after'
+                                        : 'form textarea[id*="prompt"]'
     const sidebarSelector = site == 'poe' ? 'aside[class*="leftSidebar"]' : '#__next > div > div.dark'
     const sidepadSelector = '#__next > div > div'
     const textContainerSelector = site === 'poe' ? '[class*="mainSection"]'
@@ -338,7 +339,7 @@
 
     // Create wide screen style
     const wideScreenStyle = document.createElement('style')
-    wideScreenStyle.id = 'wideScreen-mode' // for toggleMode()
+    wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     wideScreenStyle.innerText = textContainerSelector + ' { max-width: 93% !important } '
         + ( site == 'poe' ? // stretch inner container
             ' [class*="ChatMessages"] { max-width: 100% !important } ' : '' )
@@ -347,7 +348,7 @@
 
     // Create full-window style
     const fullWindowStyle = document.createElement('style')
-    fullWindowStyle.id = 'fullWindow-mode' // for toggleMode()
+    fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
     fullWindowStyle.innerText = (
           sidebarSelector + ' { display: none } ' // hide sidebar
         + sidepadSelector + ' { padding-left: 0px }' ) // remove side padding
@@ -507,17 +508,16 @@
         }))
 
         // Add command to toggle taller OpenAI chatboxes when typing
-        if (site == 'openai') {
-            const tcbLabel = state.symbol[+config.tcbDisabled] + ' ' + messages.menuLabel_tallerChatbox
-                           + state.separator + state.word[+config.tcbDisabled]
-            menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
-                saveSetting('tcbDisabled', !config.tcbDisabled)
-                tweaksStyle.innerText = config.tcbDisabled ? tweaksStyle.innerText.replace(tcbStyle, '')
-                                                           : tweaksStyle.innerText + tcbStyle
-                if (!config.notifHidden)
-                    notify(`${ messages.menuLabel_tallerChatbox }: ${ state.word[+config.tcbDisabled] }`)
-                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))}
+        const tcbLabel = state.symbol[+config.tcbDisabled] + ' ' + messages.menuLabel_tallerChatbox
+                       + state.separator + state.word[+config.tcbDisabled]
+        menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
+            saveSetting('tcbDisabled', !config.tcbDisabled)
+            tweaksStyle.innerText = config.tcbDisabled ? tweaksStyle.innerText.replace(tcbStyle, '')
+                                                       : tweaksStyle.innerText + tcbStyle
+            if (!config.notifHidden)
+                notify(`${ messages.menuLabel_tallerChatbox }: ${ state.word[+config.tcbDisabled] }`)
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
 
         // Add command to show notifications when switching modes
         const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
@@ -699,10 +699,10 @@
 
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
-            inputSelector + ' { padding-right: 145px } ' // make input text area accomdate buttons
+            site == 'openai' ? inputSelector + ' { padding-right: 145px } ' : '' ) // narrow OpenAI input to accomdate buttons
             + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
                 + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
-            + ( !config.tcbDisabled ? tcbStyle : '' )) // expand text input vertically
+            + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
     }
 
 })()
