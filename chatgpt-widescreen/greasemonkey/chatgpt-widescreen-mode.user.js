@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.5
+// @version             2023.7.6
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -308,10 +308,8 @@
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()
 
     // Collect button classes
-    const sendButtonClasses = (document.querySelector(
-        site == 'poe' ? 'button[class*="sendButton"]' : 'form button[class*="bottom"]' ) || {}).classList || []
-    const sendSVGclasses = (document.querySelector(
-        site == 'poe' ? 'button[class*="sendButton"] svg' : 'form button[class*="bottom"] svg') || {}).classList || []
+    const sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
+    const sendSVGclasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
 
     // Define UI element selectors
     const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after'
@@ -699,9 +697,9 @@
 
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
-            site == 'openai' ? inputSelector + ' { padding-right: 145px } ' : '' ) // narrow OpenAI input to accomdate buttons
-            + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
-                + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
+            site == 'openai' ? inputSelector + ' { padding-right: 145px } '  // narrow input to accomdate buttons
+                             + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
+                                 + 'position: relative ; left: 54px ; top: 7px } ' : '' ) // ...below avatar to avoid cropping
             + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
     }
 
