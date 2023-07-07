@@ -16,9 +16,9 @@
 
 <br>
 
-<a href="https://chatgptinfinity.com/chrome" target="_blank"><img height=68 width=auto src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-square-light.png"></a>
-<a href="https://chatgptinfinity.com/edge" target="_blank"><img width=203 height=68 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png" height=44px width=auto></a>
-<a href="https://chatgptinfinity.com/greasyfork"><img height=68 width=auto src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
+<a href="https://chatgptinfinity.com/chrome" target="_blank"><img height=60 width=auto src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-square-light.png"></a>
+<a href="https://chatgptinfinity.com/edge" target="_blank"><img height=60 width=auto src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png" height=44px width=auto></a>
+<a href="https://chatgptinfinity.com/greasyfork"><img height=60 width=auto src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
 
 </div>
 
