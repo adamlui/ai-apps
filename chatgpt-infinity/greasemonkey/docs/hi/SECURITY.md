@@ -1,8 +1,8 @@
+<div align="right">
+<h5>हिंदी | <a href="../SECURITY.md">English</a> | <a href="../zh-cn/SECURITY.md">简体中文</a></h5>
+</div>
+
 # सुरक्षा नीति
-
-###### हिंदी | [English](../SECURITY.md) | [简体中文](../zh-cn/SECURITY.md)
-
-<br>
 
 अगर आपको कोई भेद्यता मिलती है, तो कृपया [ड्राफ़्ट सुरक्षा सलाह](https://github.com/adamlui/chatgpt-infinity/security/advisories/new) खोलें।
 
