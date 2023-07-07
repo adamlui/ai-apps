@@ -1,6 +1,8 @@
-# Privacy Policy
+<div align="right">
+<h5>English | <a href="zh-cn/PRIVACY.md">简体中文</a> | <a href="hi/PRIVACY.md">हिंदी</a></h5>
+</div>
 
-###### English | [简体中文](zh-cn/PRIVACY.md) | [हिंदी](hi/PRIVACY.md)
+# Privacy Policy
 
 ChatGPT Widescreen Mode does not collect nor store any user data. No information is shared with third-parties for personally-targeted, behavioral marketing or any other purpose. No information is collected from any third-parties. 
 
