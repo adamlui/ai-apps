@@ -1,8 +1,8 @@
+<div align="right">
+<h5>हिंदी | <a href="../../LICENSE.md">English</a></h5>
+</div>
+
 # एमआईटी लाइसेंस
-
-##### हिंदी | [English](../../LICENSE.md)
-
-<br>
 
 कॉपीराइट (सी) 2023 [KudoAI](https://kudoai.com) और [योगदानकर्ता](../..#contributors)
 
