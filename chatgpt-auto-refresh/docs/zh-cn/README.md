@@ -64,7 +64,7 @@
 
 2. 安装 [ChatGPT 自动刷新](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) (将加载上面安装的用户脚本管理器)
 
-3. 正常访问 [chat.openai.com](https://chat.openai.com)，会话将定期自动刷新 (在后台，不会对您造成任何损失)!
+3. 正常访问 [chat.openai.com](https://chat.openai.com)，会话将定期自动刷新 (在后台)!
 
 <div align="center">
 
