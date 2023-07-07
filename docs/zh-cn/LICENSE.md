@@ -4,8 +4,6 @@
 
 # MIT 许可证
 
-<br>
-
 版权所有 (c) 2023 [刘展鹏 (Adam Lui)](https://github.com/adamlui) & 贡献者
 
 特此免费向任何获得副本的人授予许可
