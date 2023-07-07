@@ -1,6 +1,8 @@
-# MIT 许可证
+<div align="right">
+<h5>简体中文 | <a href="../../LICENSE.md">English</a> | <a href="../hi/LICENSE.md">हिंदी</a></h5>
+</div>
 
-##### 简体中文 | [English](../../LICENSE.md) | [हिंदी](../hi/LICENSE.md)
+# MIT 许可证
 
 <br>
 
