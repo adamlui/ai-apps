@@ -1,6 +1,8 @@
-# Security Policy
+<div align="right">
+<h5>English | <a href="zh-cn/SECURITY.md">简体中文</a> | <a href="hi/SECURITY.md">हिंदी</a></h5>
+</div>
 
-###### English | [简体中文](zh-cn/SECURITY.md) | [हिंदी](hi/SECURITY.md)
+# Security Policy
 
 If you find a vulnerability, please open a [draft security advisory](https://github.com/adamlui/chatgpt-widescreen/security/advisories/new).
 
