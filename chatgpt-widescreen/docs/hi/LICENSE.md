@@ -1,8 +1,8 @@
+<div align="right">
+<h5>हिंदी | <a href="../../LICENSE.md">English</a> | <a href="../zh-cn/LICENSE.md">简体中文</a></h5>
+</div>
+
 # एमआईटी लाइसेंस
-
-##### हिंदी | [English](../../LICENSE.md) | [简体中文](../zh-cn/LICENSE.md)
-
-<br>
 
 कॉपीराइट (सी) 2023 [एडम लुई (Adam Lui)](https://github.com/adamlui) और [योगदानकर्ता](../..#contributors)
 
