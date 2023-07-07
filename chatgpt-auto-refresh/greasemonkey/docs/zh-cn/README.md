@@ -1,18 +1,19 @@
+<div align="right">
+<h5>简体中文 | <a href="../..#readme">English</a></h5>
+</div>
+
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT 自动刷新 ↻ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=厌倦了%20ChatGPT%20的不断中断？%20使用此插件自动刷新您的会话%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt)
 
-![](https://img.shields.io/greasyfork/dt/462422?label=用户&color=0ad4fc)
-[![](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
-[![](https://img.shields.io/badge/支持-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey#compatibility)
-[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=提交)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
-[![](https://img.shields.io/codefactor/grade/github/adamlui/autoclear-chatgpt-history?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh)
-<a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
-[![](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
+![](https://img.shields.io/greasyfork/dt/462422?label=安装&logo=docusign&logoColor=white&color=2bbbd8&style=for-the-badge)
+[![](https://img.shields.io/badge/许可证-MIT-green.svg?logo=internetarchive&logoColor=white&style=for-the-badge)](LICENSE.md)
+[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=提交&logo=github&logoColor=white&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
+[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=代码质量&logo=codefactor&logoColor=white&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh)
+[![](https://img.shields.io/badge/供电-chatgpt.js-d909f9?logo=gamejolt&logoColor=white&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
+[![](https://img.shields.io/badge/提及于-Awesome-cca8c4?logo=awesomelists&logoColor=white&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 
 ### 通过后台请求保持 ChatGPT 会话新鲜，以消除网络错误 + Cloudflare 检查。
 
-###### 简体中文 | [English](../..#readme)
-
-<a href="https://greasyfork.org/scripts/462422-chatgpt-auto-refresh"><img src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#如何安装"><img title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462422-chatgpt-auto-refresh"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#如何安装"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [讨论](https://github.com/adamlui/chatgpt-auto-refresh/discussions) /
 [审查](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
