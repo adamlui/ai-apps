@@ -1,8 +1,8 @@
+<div align="right">
+<h5>English | <a href="docs/hi/LICENSE.md">हिंदी</a></h5>
+</div>
+
 # MIT License
-
-##### English | [हिंदी](docs/hi/LICENSE.md)
-
-<br>
 
 Copyright (c) 2023 [Adam Lui](https://github.com/adamlui) & [contributors](.#contributors)
 
