@@ -51,7 +51,7 @@ jobs:
         with:
           push_options: '--force'
           add_options: '--all'
-          commit_user_email: auto-sync@chatgptevo.com
+          commit_user_email: auto-sync@kudoai.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: 'chatgpt-widescreen/**'
           repository: adamlui/chatgpt-apps
@@ -61,7 +61,7 @@ jobs:
         with:
           push_options: '--force'
           add_options: '--all'
-          commit_user_email: auto-sync@chatgptevo.com
+          commit_user_email: auto-sync@kudoai.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: 'chatgpt/chatgpt-widescreen/**'
           repository: adamlui/userscripts
@@ -71,7 +71,7 @@ jobs:
         with:
           push_options: '--force'
           add_options: '--all'
-          commit_user_email: auto-sync@chatgptevo.com
+          commit_user_email: auto-sync@kudoai.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: '**'
           repository: adamlui/chatgpt-widescreen

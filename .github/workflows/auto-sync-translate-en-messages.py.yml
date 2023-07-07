@@ -86,7 +86,7 @@ jobs:
         with:
           push_options: '--force'
           add_options: '--all'
-          commit_user_email: auto-sync@chatgptevo.com
+          commit_user_email: auto-sync@kudoai.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: '**/translate-en-messages.py'
           repository: adamlui/chatgpt-apps
@@ -96,7 +96,7 @@ jobs:
         with:
           push_options: '--force'
           add_options: '--all'
-          commit_user_email: auto-sync@chatgptevo.com
+          commit_user_email: auto-sync@kudoai.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: '**/translate-en-messages.py'
           repository: adamlui/python-utils
