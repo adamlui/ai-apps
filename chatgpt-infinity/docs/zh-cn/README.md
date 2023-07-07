@@ -3,7 +3,7 @@
 <div align="center">
 
 ![](https://img.shields.io/badge/用户-10,000+-0ad4fc)
-[![](https://img.shields.io/badge/执照-MIT-green.svg)](LICENSE.md)
+[![](https://img.shields.io/badge/许可证-MIT-green.svg)](LICENSE.md)
 [![](https://img.shields.io/badge/兼容性-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/Waterfox/LibreWolf/Ghost/QQ-989898.svg)](#兼容性)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=提交)](https://github.com/adamlui/chatgpt-infinity/commits/main)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=代码质量)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)

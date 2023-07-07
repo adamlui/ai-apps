@@ -2,7 +2,7 @@
 <h5>简体中文 | <a href="../../LICENSE.md">English</a></h5>
 </div>
 
-# MIT 执照
+# MIT 许可证
 
 <br>
 
