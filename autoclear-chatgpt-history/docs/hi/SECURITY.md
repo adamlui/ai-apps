@@ -1,8 +1,8 @@
+<div align="right">
+<h5>हिंदी | <a href="../SECURITY.md">English</a></h5>
+</div>
+
 # सुरक्षा नीति
-
-###### हिंदी | [English](../SECURITY.md)
-
-<br>
 
 यदि आपको कोई भेद्यता मिलती है, तो कृपया एक [मसौदा सुरक्षा सलाहकार](https://github.com/adamlui/autoclear-chatgpt-history/security/advisories/new) खोलें।
 
