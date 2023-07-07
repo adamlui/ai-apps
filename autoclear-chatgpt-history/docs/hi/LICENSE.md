@@ -1,6 +1,8 @@
-# एमआईटी लाइसेंस
+<div align="right">
+<h5>हिंदी | <a href="../../LICENSE.md">English</a></h5>
+</div>
 
-##### हिंदी | [English](../../LICENSE.md)
+# एमआईटी लाइसेंस
 
 <br>
 
