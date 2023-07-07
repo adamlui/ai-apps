@@ -1,15 +1,14 @@
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> Autoclear ChatGPT History &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20cluttered%20ChatGPT%20chat%20history%3F%20Auto-clear%20it%20w%2F%20this%20plug-in%21&url=https://github.com/adamlui/autoclear-chatgpt-history&hashtags=javascript,openai,chatgpt)
 
-[![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
-[![](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
-[![](https://img.shields.io/github/commit-activity/m/adamlui/autoclear-chatgpt-history?label=Commits)](https://github.com/adamlui/autoclear-chatgpt-history/commits/main)
-[![](https://img.shields.io/codefactor/grade/github/adamlui/autoclear-chatgpt-history?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/autoclear-chatgpt-history)
-<a alt="chatgpt.js" href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
-[![](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#privacy)
+[![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&style=for-the-badge)](../LICENSE.md)
+[![](https://img.shields.io/github/commit-activity/m/adamlui/autoclear-chatgpt-history?label=Commits&logo=github&logoColor=white&style=for-the-badge)](https://github.com/adamlui/autoclear-chatgpt-history/commits/main)
+[![](https://img.shields.io/codefactor/grade/github/adamlui/autoclear-chatgpt-history?label=Code+Quality&logo=codefactor&logoColor=white&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/autoclear-chatgpt-history)
+[![](https://img.shields.io/badge/Powered_by-chatgpt.js-d909f9?logo=gamejolt&logoColor=white&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
+[![](https://img.shields.io/badge/Mentioned_in-Awesome-fc60a8?logo=awesomelists&logoColor=white&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
 
 ### Auto-clears chat history when visiting chat.openai.com for maximum privacy.
 
-<a href="https://greasyfork.org/en/scripts/460805-autoclear-chatgpt-history"><img src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/en/scripts/460805-autoclear-chatgpt-history"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.com/adamlui/autoclear-chatgpt-history/discussions) /
 [Review](https://greasyfork.org/en/scripts/460805-autoclear-chatgpt-history/feedback#post-discussion) /
