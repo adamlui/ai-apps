@@ -10,7 +10,7 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 [![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&style=for-the-badge)](../LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=Commits&logo=github&logoColor=white&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits/main)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=Code+Quality&logo=codefactor&logoColor=white&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
-[![](https://img.shields.io/badge/Powered_by-chatgpt.js-d909f9?logo=gamejolt&logoColor=white&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
+[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
 
 <img height=10px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
