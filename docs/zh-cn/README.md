@@ -66,4 +66,4 @@
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions) / 
-<a href="#-chatgpt-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F-">回到顶部 ↑</a>
+<a href="#%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87--english">回到顶部 ↑</a>
