@@ -4,11 +4,11 @@
 
 # 🤖 ChatGPT 应用程序 &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=检查这些%20ChatGPT%20应用程序%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
 
-![](https://img.shields.io/badge/安装-25,000+-2bbbd8?logo=docusign&logoColor=white&style=for-the-badge)
-[![](https://img.shields.io/badge/许可证-MIT-green.svg?logo=internetarchive&logoColor=white&style=for-the-badge)](LICENSE.md)
-[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=提交&logo=github&logoColor=white&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits/main)
-[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=代码质量&logo=codefactor&logoColor=white&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
-[![](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
+![](https://img.shields.io/badge/安装-25,000+-2bbbd8?logo=docusign&logoColor=white&labelColor=464646&style=for-the-badge)
+[![](https://img.shields.io/badge/许可证-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
+[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=提交&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits/main)
+[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=代码质量&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
+[![](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
 
 利用 ChatGPT 惊人的 AI 或增强其 UX 的应用程序。
 
