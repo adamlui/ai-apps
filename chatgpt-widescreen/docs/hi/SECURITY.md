@@ -1,6 +1,8 @@
-# सुरक्षा नीति
+<div align="right">
+<h5>हिंदी | <a href="../SECURITY.md">English</a> | <a href="../zh-cn/SECURITY.md">简体中文</a></h5>
+</div>
 
-###### हिंदी | [English](../SECURITY.md) | [简体中文](../zh-cn/SECURITY.md)
+# सुरक्षा नीति
 
 यदि आपको कोई भेद्यता मिलती है, तो कृपया एक [मसौदा सुरक्षा सलाहकार](https://github.com/adamlui/chatgpt-widescreen/security/advisories/new) खोलें।
 
