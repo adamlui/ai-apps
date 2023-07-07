@@ -8,17 +8,16 @@
   
 </h1>
 
-![](https://img.shields.io/greasyfork/dt/462440?label=Users&color=0ad4fc)
-[![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
-[![](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Brave/Vivaldi/LibreWolf/Ghost/QQ-989898.svg)](#compatibility)
-[![](https://img.shields.io/github/commit-activity/m/kudoai/bravegpt?label=Commits)](https://github.com/adamlui/userscripts/commits/master/chatgpt/bravegpt)
-[![](https://img.shields.io/codefactor/grade/github/kudoai/bravegpt?label=Code%20Quality)](https://www.codefactor.io/repository/github/kudoai/bravegpt)
-<a href="https://github.com/kudoai/chatgpt.js"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
-[![](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#brave-search)
+![](https://img.shields.io/greasyfork/dt/462440?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)
+[![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
+[![](https://img.shields.io/github/commit-activity/m/kudoai/bravegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/bravegpt/commits/main)
+[![](https://img.shields.io/codefactor/grade/github/kudoai/bravegpt?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/bravegpt)
+[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
+[![](https://img.shields.io/badge/Mentioned_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 
 <h3><b>BraveGPT</b> brings the magic of ChatGPT to search results (powered by GPT-4!)</h3>
 
-<a href="https://greasyfork.org/en/scripts/462440-bravegpt"><img src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/en/scripts/462440-bravegpt"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.bravegpt.com/discussions) / 
 [Review](https://greasyfork.org/en/scripts/462440-bravegpt/feedback#post-discussion) / 
