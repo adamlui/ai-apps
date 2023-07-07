@@ -1,17 +1,19 @@
+<div align="right">
+<h5>English | <a href="zh-cn#readme">简体中文</a></h5>
+</div>
+
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Auto-Continue ⏩ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Automatically%20continue%20the%20conversation%20from%20multiple%20ChatGPT%20responses%20w%2F%20this%20plug-in%21T&url=https://chatgptevo.com/autocontinue&hashtags=javascript,openai,chatgpt)
 
-![](https://img.shields.io/greasyfork/dt/466789?label=Users&color=0ad4fc)
-[![](https://img.shields.io/badge/License-MIT-green.svg)](../LICENSE.md)
-[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-continue?label=Commits)](https://github.com/adamlui/chatgpt-auto-continue/commits/main)
-[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-continue?label=Code%20Quality)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-continue)
-<a href="https://chatgpt.js.org"><img height=20 src="https://i.imgur.com/AwQqCmB.png"></a>
-[![](https://awesome.re/mentioned-badge.svg)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
+![](https://img.shields.io/greasyfork/dt/466789?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)
+[![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
+[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-continue?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-continue/commits/main)
+[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-continue?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-continue)
+[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
+[![](https://img.shields.io/badge/Mentioned_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 
 ### Automatically continue generating ChatGPT responses when chats cut off.
 
-###### English | [简体中文](zh-cn#readme)
-
-<a href="https://greasyfork.org/scripts/466789-chatgpt-auto-continue"><img src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/466789-chatgpt-auto-continue"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptevo.com/autocontinue/discussions) /
 [Review](https://greasyfork.org/scripts/466789-chatgpt-auto-continue/feedback#post-discussion) /
