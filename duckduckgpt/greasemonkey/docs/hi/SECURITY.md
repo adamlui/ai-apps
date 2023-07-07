@@ -1,5 +1,9 @@
-# Security Policy
+<div align="right">
+<h5>हिंदी | <a href="../SECURITY.md">English</a></h5>
+</div>
 
-If you find a vulnerability, please open a [draft security advisory](https://github.com/kudoai/duckduckgpt/security/advisories/new).
+# सुरक्षा नीति
 
-Pull requests are also welcome, but for safety reasons, send an email to security@kudoai.com and wait for a response before making it public.
+यदि आपको कोई भेद्यता मिलती है, तो कृपया एक [मसौदा सुरक्षा सलाहकार](https://github.com/kudoai/duckduckgpt/security/advisories/new) खोलें।
+
+पुल अनुरोधों का भी स्वागत है, लेकिन सुरक्षा कारणों से, security@kudoai.com पर एक ईमेल भेजें और इसे सार्वजनिक करने से पहले प्रतिक्रिया की प्रतीक्षा करें।
