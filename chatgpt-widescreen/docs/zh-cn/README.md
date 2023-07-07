@@ -169,4 +169,4 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-addons">**更多 ChatGPT 插件**</a> / 
-<a href="#">回到顶部 ↑</a>
+<a href="#%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87--english">回到顶部 ↑</a>
