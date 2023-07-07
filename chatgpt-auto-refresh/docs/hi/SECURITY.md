@@ -2,7 +2,7 @@
 <h5>हिंदी | <a href="../SECURITY.md">English</a> | <a href="../zh-cn/SECURITY.md">简体中文</a></h5>
 </div>
 
-<br>
+# सुरक्षा नीति
 
 अगर आपको कोई भेद्यता मिलती है, तो कृपया [ड्राफ़्ट सुरक्षा सलाह](https://github.com/adamlui/chatgpt-auto-refresh/security/advisories/new) खोलें।  
 
