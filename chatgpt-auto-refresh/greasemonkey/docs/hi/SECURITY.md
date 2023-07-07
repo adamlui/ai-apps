@@ -1,6 +1,6 @@
-# सुरक्षा नीति
-
-###### हिंदी | [English](../SECURITY.md) | [简体中文](../zh-cn/SECURITY.md)
+<div align="right">
+<h5>हिंदी | <a href="../SECURITY.md">English</a> | <a href="../zh-cn/SECURITY.md">简体中文</a></h5>
+</div>
 
 <br>
 
