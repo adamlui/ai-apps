@@ -1,10 +1,10 @@
+<div align="right">
+<h5>简体中文 | <a href="../../LICENSE.md">English</a></h5>
+</div>
+
 # MIT 许可证
 
-##### 简体中文 | [English](../../LICENSE.md)
-
-<br>
-
-版权所有 (c) 2023 [刘展鹏 (Adam Lui)](https://github.com/adamlui)
+版权所有 (c) 2023 [刘展鹏 (Adam Lui)](https://github.com/adamlui) & [贡献者](.#贡献者)
 
 特此免费向任何获得副本的人授予许可
 本软件和相关文档文件（“软件”），处理
