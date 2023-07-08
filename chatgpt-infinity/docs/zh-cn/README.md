@@ -148,7 +148,7 @@ Automatically continue generating multiple ChatGPT responses.<br>
 
 ### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptevo.com/widescreen/github) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
 
-Adds Widescreen + Full-Window modes to ChatGPT for enhanced viewing + reduced scrolling.
+Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
 <br>[安装](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#安装) / 
 [自述文件](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptwidescreen.com/discuss)
