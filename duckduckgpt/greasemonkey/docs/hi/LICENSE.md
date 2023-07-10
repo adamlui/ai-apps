@@ -2,7 +2,7 @@
 <h5>हिंदी | <a href="../../LICENSE.md">English</a></h5>
 </div>
 
-# एमआईटी लाइसेंस
+# MIT लाइसेंस
 
 कॉपीराइट (सी) 2023 [KudoAI](https://kudoai.com) और [योगदानकर्ता](../..#contributors)
 
