@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.4.1
+// @version             2023.7.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -207,15 +207,8 @@
     function getUserscriptManager() {
         try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
-    function loadSetting(...keys) {
-        keys.forEach(key => {
-            config[key] = GM_getValue(config.prefix + '_' + key, false)
-    })}
-
-    function saveSetting(key, value) {
-        GM_setValue(config.prefix + '_' + key, value) // save to browser
-        config[key] = value // and memory
-    }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
+    function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow) }
