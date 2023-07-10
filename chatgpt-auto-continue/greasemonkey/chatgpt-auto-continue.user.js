@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.4
+// @version             2023.7.9
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -246,7 +246,7 @@
 
     // Init config
     const config = {
-        prefix: 'chatGPTactn', appSymbol: '≫', userLanguage: navigator.languages[0] || navigator.language || '',
+        prefix: 'chatgptAutoContinue', appSymbol: '≫', userLanguage: navigator.languages[0] || navigator.language || '',
         ghRepoURL: 'https://github.com/adamlui/chatgpt-auto-continue',
         updateURL: 'https://greasyfork.org/scripts/466789/code/chatgpt-auto-continue.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
@@ -298,15 +298,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) {
-        keys.forEach(key => {
-            config[key] = GM_getValue(config.prefix + '_' + key, false)
-    })}
-
-    function saveSetting(key, value) {
-        GM_setValue(config.prefix + '_' + key, value) // save to browser
-        config[key] = value // and memory
-    }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
+    function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
 
     function checkForUpdates() {
 
