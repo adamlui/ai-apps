@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.4
+// @version             2023.7.9
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -235,8 +235,8 @@
 (async () => {
 
     // Init config
-    const config = {
-        prefix: 'chatGPTinf', appSymbol: '∞', userLanguage: navigator.languages[0] || navigator.language || '',
+    const configPrefix = 'chatgptInfinity', config = {
+        appSymbol: '∞', userLanguage: navigator.languages[0] || navigator.language || '',
         ghRepoURL: 'https://github.com/adamlui/chatgpt-infinity',
         updateURL: 'https://greasyfork.org/scripts/465051/code/chatgpt-infinity.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
@@ -339,15 +339,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) {
-        keys.forEach(key => {
-            config[key] = GM_getValue(config.prefix + '_' + key, false)
-    })}
-
-    function saveSetting(key, value) {
-        GM_setValue(config.prefix + '_' + key, value) // save to browser
-        config[key] = value // and memory
-    }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(configPrefix + '_' + key, false) })}
+    function saveSetting(key, value) { GM_setValue(configPrefix + '_' + key, value) ; config[key] = value }
 
     function checkForUpdates() {
 
