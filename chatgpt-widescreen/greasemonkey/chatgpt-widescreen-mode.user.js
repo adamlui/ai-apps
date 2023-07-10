@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.6.3
+// @version             2023.7.9
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -261,8 +261,9 @@
     const site = document.location.href.match(/:\/\/(.*?\.)?(.*)\.[^/]+/)[2]
 
     // Init config
-    const configPrefix = site + 'WS', config = {
-        appSymbol: '🖥️', userLanguage: navigator.languages[0] || navigator.language || '',
+    const config = {
+    	prefix: site + 'Widescreen', appSymbol: '🖥️',
+    	userLanguage: navigator.languages[0] || navigator.language || '',
         ghRepoURL: 'https://github.com/adamlui/chatgpt-widescreen',
         updateURL: 'https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
@@ -294,8 +295,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(configPrefix + '_' + key, false) })}
-    function saveSetting(key, value) { GM_setValue(configPrefix + '_' + key, value) ; config[key] = value }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
+    function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
 
     function checkForUpdates() {
 
