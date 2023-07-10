@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.4
+// @version             2023.7.9
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -262,7 +262,7 @@
 
     // Init config
     const config = {
-        prefix: 'chatGPTac', appSymbol: '🕶️', userLanguage: navigator.languages[0] || navigator.language || '',
+        prefix: 'chatgptAutoclear', appSymbol: '🕶️', userLanguage: navigator.languages[0] || navigator.language || '',
         ghRepoURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
         updateURL: 'https://greasyfork.org/scripts/460805/code/autoclear-chatgpt-history.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
@@ -360,15 +360,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) {
-        keys.forEach(key => {
-            config[key] = GM_getValue(config.prefix + '_' + key, false)
-    })}
-
-    function saveSetting(key, value) {
-        GM_setValue(config.prefix + '_' + key, value) // save to browser
-        config[key] = value // and memory
-    }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
+    function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
 
     function checkForUpdates() {
 
