@@ -1,5 +1,5 @@
 const config = {
-    prefix: 'chatGPTinf', appSymbol: '∞',
+    prefix: 'chatgptInfinity', appSymbol: '∞',
     ghRepoURL: 'https://github.com/adamlui/chatgpt-infinity' }
 config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
 
