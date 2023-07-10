@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.4
+// @version             2023.7.9
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @compatible          chrome
@@ -258,7 +258,7 @@
 
     // Init config
     const config = {
-        prefix: 'chatGPTar', appSymbol: '↻', userLanguage: navigator.languages[0] || navigator.language || '',
+        prefix: 'chatgptAutoRefresh', appSymbol: '↻', userLanguage: navigator.languages[0] || navigator.language || '',
         ghRepoURL: 'https://github.com/adamlui/chatgpt-auto-refresh',
         updateURL: 'https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
@@ -357,15 +357,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) {
-        keys.forEach(key => {
-            config[key] = GM_getValue(config.prefix + '_' + key, false)
-    })}
-
-    function saveSetting(key, value) {
-        GM_setValue(config.prefix + '_' + key, value) // save to browser
-        config[key] = value // and memory
-    }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
+    function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
 
     function checkForUpdates() {
 
