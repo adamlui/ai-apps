@@ -1,6 +1,6 @@
 // Add install/update actions
 chrome.runtime.onInstalled.addListener((details) => {
-    chrome.storage.local.set({ 'chatGPTinf_extensionDisabled': false }) // auto-enable
+    chrome.storage.local.set({ 'chatgptInfinity_extensionDisabled': false }) // auto-enable
     if (details.reason == 'install') chrome.tabs.create({ url: 'https://chat.openai.com/' }) // open ChatGPT
 })
 
