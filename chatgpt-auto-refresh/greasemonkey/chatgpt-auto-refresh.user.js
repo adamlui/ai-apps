@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.11
+// @version             2023.7.14
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @compatible          chrome
@@ -236,7 +236,7 @@
 // @compatible          qq
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@24a755998291094d0cd3b2bd395dff7c6756bbf9/dist/chatgpt-1.12.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@09e429363da222312c22ff7b67e3cc0fa08c4665/dist/chatgpt-2.0.0.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -258,7 +258,7 @@
 
     // Init config
     const config = {
-        prefix: 'chatgptAutoRefresh', appSymbol: '↻', userLanguage: navigator.languages[0] || navigator.language || '',
+        prefix: 'chatgptAutoRefresh', appSymbol: '↻', userLanguage: chatgpt.getUserLanguage(),
         ghRepoURL: 'https://github.com/adamlui/chatgpt-auto-refresh',
         updateURL: 'https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
