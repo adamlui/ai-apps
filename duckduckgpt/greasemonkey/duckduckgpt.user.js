@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.14
+// @version             2023.7.14.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -486,7 +486,7 @@
 
     // Init config/messages/menu
     const config = {
-        prefix: 'ddgpt', appSymbol: '🤖', userLanguage: navigator.languages[0] || navigator.language || '',
+        prefix: 'ddgpt', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         ghRepoURL: 'https://github.com/kudoai/duckduckgpt',
         updateURL: 'https://greasyfork.org/scripts/459849/code/duckduckgpt.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
