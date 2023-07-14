@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.11
+// @version             2023.7.14
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -214,7 +214,7 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@24a755998291094d0cd3b2bd395dff7c6756bbf9/dist/chatgpt-1.12.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@09e429363da222312c22ff7b67e3cc0fa08c4665/dist/chatgpt-2.0.0.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -236,7 +236,7 @@
 
     // Init config
     const config = {
-        prefix: 'chatgptInfinity', appSymbol: '∞', userLanguage: navigator.languages[0] || navigator.language || '',
+        prefix: 'chatgptInfinity', appSymbol: '∞', userLanguage: chatgpt.getUserLanguage(),
         ghRepoURL: 'https://github.com/adamlui/chatgpt-infinity',
         updateURL: 'https://greasyfork.org/scripts/465051/code/chatgpt-infinity.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
