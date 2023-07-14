@@ -35,7 +35,8 @@ if locales_dir : print_trunc(f'_locales directory found!\n\n>> { locales_dir }\n
 else : print_trunc(f'Unable to locate a { locales_folder } directory.') ; exit()
 
 # Load en/messages.json
-en_msgs_path = os.path.join(locales_dir, 'en', 'messages.json')
+msgs_filename = 'messages.json'
+en_msgs_path = os.path.join(locales_dir, 'en', msgs_filename)
 with open(en_msgs_path, 'r', encoding='utf-8') as en_file:
     en_messages = json.load(en_file)
 
@@ -44,7 +45,7 @@ output_langs = list(set(target_langs)) # remove duplicates
 for root, dirs, files in os.walk(locales_dir):
     for folder in dirs:
         folder_path = os.path.join(root, folder)
-        msgs_path = os.path.join(folder_path, 'messages.json')
+        msgs_path = os.path.join(folder_path, msgs_filename)
         discovered_lang = folder.replace('_', '-')
         if os.path.exists(msgs_path) and discovered_lang not in output_langs : output_langs.append(discovered_lang)
 output_langs.sort() # alphabetize languages
@@ -69,7 +70,7 @@ for lang_code in output_langs:
         os.makedirs(folder_path) ; langs_added.append(lang_code) ; lang_added = True
 
     # Initialize target messages
-    msgs_path = os.path.join(folder_path, 'messages.json')
+    msgs_path = os.path.join(folder_path, msgs_filename)
     if os.path.exists(msgs_path):
         with open(msgs_path, 'r', encoding='utf-8') as messages_file : messages = json.load(messages_file)
     else : messages = {}    
