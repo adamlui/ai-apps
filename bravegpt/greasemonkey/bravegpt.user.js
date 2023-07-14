@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.14
+// @version             2023.7.14.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -560,7 +560,7 @@
 
     // Init config/messages/menu
     const config = {
-        prefix: 'braveGPT', appSymbol: '🤖', userLanguage: navigator.languages[0] || navigator.language || '',
+        prefix: 'braveGPT', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         ghRepoURL: 'https://github.com/kudoai/bravegpt',
         updateURL: 'https://greasyfork.org/scripts/466789/code/bravegpt.meta.js' }
     config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
