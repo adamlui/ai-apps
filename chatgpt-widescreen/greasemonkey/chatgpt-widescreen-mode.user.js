@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.15.1
+// @version             2023.7.15.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -413,12 +413,13 @@
                       : site == 'you' ? document.querySelector('div[data-testid="youchat-input"]')
                                       : document.querySelector('form button[class*="bottom"]').parentNode;
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
-        const sendButton = chatbar.querySelector('button')
-        if (site == 'openai') chatbar.insertBefore(newChatButton, sendButton)
-        chatbar.insertBefore(wideScreenButton, sendButton)
-        chatbar.insertBefore(fullWindowButton, sendButton)
-        chatbar.insertBefore(fullScreenButton, sendButton)
-        chatbar.insertBefore(tooltipDiv, sendButton)
+        const leftMostBtn = chatbar.querySelector('button')
+        chatbar.insertBefore(leftMostBtn, chatbar.lastChild); // elevate to chatbar if nested
+        if (site == 'openai') chatbar.insertBefore(newChatButton, leftMostBtn)
+        chatbar.insertBefore(wideScreenButton, leftMostBtn)
+        chatbar.insertBefore(fullWindowButton, leftMostBtn)
+        chatbar.insertBefore(fullScreenButton, leftMostBtn)
+        chatbar.insertBefore(tooltipDiv, leftMostBtn)
     }
 
     function updateBtnSVG(mode, state = '') {
@@ -504,7 +505,8 @@
     function updateTooltip(buttonType) { // text & position
         tooltipDiv.innerText = messages['tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON'))]
-        const ctrAddend = 25, overlayWidth = site == 'poe' ? 42 : 30
+        const ctrAddend = 25 + ( site == 'poe' ? 42 : 0 )
+        const overlayWidth = site == 'poe' ? 42 : 30
         const iniRoffset = overlayWidth * (
               buttonType.includes('fullScreen') ? 1
             : buttonType.includes('fullWindow') ? 2
