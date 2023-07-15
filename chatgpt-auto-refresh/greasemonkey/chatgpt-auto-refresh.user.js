@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.14
+// @version             2023.7.15
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @compatible          chrome
@@ -382,9 +382,10 @@
                         // Alert to update
                         alert('Update available! 🚀', // title
                             `An update to ${ messages.appName } (v${ latestVer }) is available!   `
-                                + '<a target="_blank" href=' + config.ghRepoURL + '/commits/main/greasemonkey/'
-                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js')
-                                    + ' style="font-size: 0.7rem">View changes</a>',
+                                + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
+                                    + 'href="' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
+                                    + '>' + messages.link_viewChanges + '</a>',
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
