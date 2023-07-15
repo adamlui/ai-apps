@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.14.1
+// @version             2023.7.15
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -258,7 +258,7 @@
 
 (async () => {
     
-    const site = document.location.href.match(/:\/\/(.*?\.)?(.*)\.[^/]+/)[2]
+    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2]
 
     // Init config
     const config = {
@@ -305,7 +305,7 @@
             onload: (response) => { saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions                
-                const latestVer = response.responseText.match(/@version +(.*)/)[1]
+                const latestVer = /@version +(.*)/.exec(response.responseText)[1]
                 if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
