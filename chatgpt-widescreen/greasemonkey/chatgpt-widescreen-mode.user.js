@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.15
+// @version             2023.7.15.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -257,7 +257,7 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license.
 
 (async () => {
-    
+
     const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2]
 
     // Init config
@@ -304,7 +304,7 @@
         GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
             onload: (response) => { saveSetting('lastCheckTime', Date.now())
 
-                // Compare versions                
+                // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
                 if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
@@ -319,9 +319,10 @@
                         // Alert to update
                         const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`, // title
                             `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
-                                + '<a target="_blank" href=' + config.ghRepoURL + '/commits/main/greasemonkey/'
-                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js')
-                                    + ' style="font-size: 0.7rem">' + messages.link_viewChanges + '</a>',
+                                + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
+                                    + 'href="' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
+                                    + '>' + messages.link_viewChanges + '</a>',
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
@@ -485,7 +486,7 @@
 
     function createSVGelem(tagName, attributes) {
         const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
-        for (const attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])       
+        for (const attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])
         return elem
     }
 
@@ -598,14 +599,14 @@
 
     // Run MAIN routine
 
-    // Create browser toolbar menu or disable script if extension installed    
+    // Create browser toolbar menu or disable script if extension installed
     const state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
                     separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     if (site == 'openai') await chatgpt.isLoaded() ; if (site == 'you') await you.isLoaded()
     if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
         GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return }) // disable menu
         return // exit script
-    } else registerMenu() // create functional menu  
+    } else registerMenu() // create functional menu
 
     // Save full-window + full screen states
     config.fullWindow = site == 'openai' ? chatgpt.sidebar.isOff() : site == 'you' ? you.sidebar.isOff() : config.fullWindow
@@ -698,7 +699,7 @@
                 if (config.fullWindow) { toggleMode('fullWindow', 'ON')
                     if (site == 'openai') { // sidebar observer doesn't trigger
                         syncFullerWindows(true) // so sync Fuller Windows...
-                        if (!config.notifHidden) // ... + notify 
+                        if (!config.notifHidden) // ... + notify
                             notify(messages.mode_fullWindow + ' ON')
                 }}
                 if (config.tcbDisabled) updateTweaksStyle() ; prevSessionChecked = true
@@ -719,7 +720,7 @@
             const fullWindowState = site == 'you' ? you.sidebar.isOff() : chatgpt.sidebar.isOff()
             if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
                 if (!config.modeSynced) syncMode('fullWindow')
-        })    
+        })
         setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
             sidebarObserver.observe(document.body, { childList: true, subtree: true })}, 500)
     }
