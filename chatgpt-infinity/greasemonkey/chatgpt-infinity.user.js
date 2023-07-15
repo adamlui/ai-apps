@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.15
+// @version             2023.7.15.1
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -314,7 +314,7 @@
     toggleLabel.style.margin = '2px 0' // add v-margins
     toggleLabel.style.userSelect = 'none' // prevent highlighting
     for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
-        if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
+        if (/(new|clear) chat/i.test(navLink.text)) { // focus on new/clear chat button
             toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
             navLink.parentNode.style.margin = '2px 0' // add v-margins
             break // stop looping since class assignment is done
@@ -350,7 +350,7 @@
             onload: (response) => { saveSetting('lastCheckTime', Date.now())
 
                 // Compare versions
-                const latestVer = response.responseText.match(/@version +(.*)/)[1]
+                const latestVer = /@version +(.*)/.exec(response.responseText)[1]
                 if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
@@ -454,19 +454,19 @@
         // Add command to set reply topic
         const re_all = new RegExp('^(' + messages.menuLabel_all + '|all|any|every)$', 'i')
         const rtLabel = '🧠 ' + messages.menuLabel_replyTopic + state.separator
-                      + ( config.replyTopic.match(re_all) ? messages.menuLabel_all
-                                                        : toTitleCase(config.replyTopic) )
+                      + ( re_all.test(config.replyTopic) ? messages.menuLabel_all
+                                                         : toTitleCase(config.replyTopic) )
         menuIDs.push(GM_registerMenuCommand(rtLabel, () => {
             while (true) {
                 const replyTopic = prompt(messages.prompt_updateReplyTopic
                     + ' (' + messages.prompt_orEnter + ' \'ALL\'):', config.replyTopic)
                 if (replyTopic === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyTopic)) {
-                    saveSetting('replyTopic', !replyTopic || replyTopic.match(re_all) ? 'ALL' : replyTopic)
+                    saveSetting('replyTopic', !replyTopic || re_all.test(replyTopic) ? 'ALL' : replyTopic)
                     alert(messages.alert_replyTopicUpdated + '!',
                         messages.appName + ' ' + messages.alert_willAnswer + ' '
-                            + ( !replyTopic || replyTopic.match(re_all) ? messages.alert_onAllTopics
-                                                                        : messages.alert_onTopicOf + ' ' + replyTopic )
+                            + ( !replyTopic || re_all.test(replyTopic) ? messages.alert_onAllTopics
+                                                                       : messages.alert_onTopicOf + ' ' + replyTopic )
                             + '!')
                     if (config.infinityMode) { // restart session using new reply topic
                         chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off

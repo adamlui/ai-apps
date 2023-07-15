@@ -243,7 +243,6 @@ var chatgpt = {
                 for (let j = 0; j < divsToMove.length; j++) {
                     const oldDiv = document.getElementById(divsToMove[j]);
                     const offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
-                    // const vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
                     const vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
                 }
