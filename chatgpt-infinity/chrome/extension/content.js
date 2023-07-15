@@ -65,7 +65,7 @@
     toggleLabel.style.margin = '2px 0' // add v-margins
     toggleLabel.style.userSelect = 'none' // prevent highlighting
     for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
-        if (/(new|clear) chat/i.test(navLink.text)) { // focus on new/clear chat button
+        if (navLink.text.match(/(new|clear) chat/i)) { // focus on new/clear chat button
             toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
             navLink.parentNode.style.margin = '2px 0' // add v-margins
             break // stop looping since class assignment is done

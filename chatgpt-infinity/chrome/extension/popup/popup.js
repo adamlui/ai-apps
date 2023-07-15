@@ -24,7 +24,7 @@
             autoScrollToggle.checked = !config.autoScrollDisabled
             replyLangLabel.innerText += ` — ${ config.replyLanguage }`
             replyTopicLabel.innerText += ' — '
-                + ( re_all.test(config.replyTopic) ? chrome.i18n.getMessage('menuLabel_all')
+                + ( config.replyTopic.match(re_all) ? chrome.i18n.getMessage('menuLabel_all')
                                                     : toTitleCase(config.replyTopic) )
             replyIntervalLabel.innerText += ` — ${ config.replyInterval }s`
             updateGreyness()
@@ -44,7 +44,7 @@
     // Add Infinity Mode click-listeners
     infinityModeToggle.addEventListener('change', () => {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            if (!/^https:\/\/chat\.openai\.com/.test(tabs[0].url)) return // do nothing if not on ChatGPT
+            if (!tabs[0].url.match(/^https:\/\/chat\.openai\.com/)) return // do nothing if not on ChatGPT
             else chrome.tabs.sendMessage(tabs[0].id, { action: 'clickToggle' }) // else click sidebar toggle
         })
         notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ' ' + ( config.infinityMode ? 'ON' : 'OFF' ))
@@ -85,7 +85,7 @@
                 alert(chrome.i18n.getMessage('alert_replyLangUpdated') + '!', chrome.i18n.getMessage('alert_willReplyIn') + ' '
                     + ( replyLanguage ? replyLanguage : chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
-                    if (/^https:\/\/chat\.openai\.com/.test(tabs[0].url) && config.infinityMode) { // reboot active session
+                    if (tabs[0].url.match(/^https:\/\/chat\.openai\.com/) && config.infinityMode) { // reboot active session
                         chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
                 })
                 break
@@ -98,15 +98,15 @@
                 + ' (' + chrome.i18n.getMessage('prompt_orEnter') + ' \'ALL\'):', config.replyTopic)
             if (replyTopic === null) break // user cancelled so do nothing
             else if (!/\d/.test(replyTopic)) {
-                settings.save('replyTopic', !replyTopic || re_all.test(replyTopic) ? 'ALL' : replyTopic)
+                settings.save('replyTopic', !replyTopic || replyTopic.match(re_all) ? 'ALL' : replyTopic)
                 window.close() // popup
                 alert(chrome.i18n.getMessage('alert_replyTopicUpdated') + '!',
                     chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willAnswer') + ' '
-                        + ( !replyTopic || re_all.test(replyTopic) ? chrome.i18n.getMessage('alert_onAllTopics')
+                        + ( !replyTopic || replyTopic.match(re_all) ? chrome.i18n.getMessage('alert_onAllTopics')
                                                                     : chrome.i18n.getMessage('alert_onTopicOf')
                                                                         + ' ' + replyTopic ) + '!')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
-                    if (/^https:\/\/chat\.openai\.com/.test(tabs[0].url) && config.infinityMode) { // reboot active session
+                    if (tabs[0].url.match(/^https:\/\/chat\.openai\.com/) && config.infinityMode) { // reboot active session
                         chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
                 })
                 break
@@ -123,7 +123,7 @@
                 alert(chrome.i18n.getMessage('alert_replyIntUpdated') + '!', chrome.i18n.getMessage('alert_willReplyEvery')
                     + ' ' + replyInterval + ' ' + chrome.i18n.getMessage('unit_seconds') + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
-                    if (/^https:\/\/chat\.openai\.com/.test(tabs[0].url) && config.infinityMode) // reboot active session
+                    if (tabs[0].url.match(/^https:\/\/chat\.openai\.com/) && config.infinityMode) // reboot active session
                         chrome.tabs.sendMessage(tabs[0].id, { action: 'resetInSameChat' })
                 })
                 break
