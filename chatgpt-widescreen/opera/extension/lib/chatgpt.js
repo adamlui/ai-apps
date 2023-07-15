@@ -237,7 +237,6 @@ var chatgpt = {
                 for (let j = 0; j < divsToMove.length; j++) {
                     const oldDiv = document.getElementById(divsToMove[j]);
                     const offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
-                    // const vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
                     const vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
                 }
@@ -334,7 +333,7 @@ var chatgpt = {
         show: function() { this.isOff() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already shown!'); },
         toggle: function() {
             for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (navLink.text.match(/hide sidebar/i)) {
+                if (/hide sidebar/i.test(navLink.text)) {
                     navLink.click(); return;                
         }}}
     },

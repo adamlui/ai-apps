@@ -156,8 +156,9 @@
             alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
                 chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
                     + ' v' + version + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
-                    + '<a target="_blank" href="' + config.ghRepoURL + '/commits/main/chrome/extension" '
-                        + 'style="font-size: 0.7rem">' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
+                    + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
+                    + 'href="' + config.ghRepoURL + '/commits/main/chrome/extension" '
+                        + '>' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
                 function reloadChrome() { chrome.runtime.reload() } // update button
             )
         } else {

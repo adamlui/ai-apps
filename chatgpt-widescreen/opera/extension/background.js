@@ -7,6 +7,6 @@ chrome.runtime.onInstalled.addListener((details) => {
 // Sync extension state/settings when ChatGPT tab active
 chrome.tabs.onActivated.addListener((activeInfo) => {
     chrome.tabs.get(activeInfo.tabId, (tab) => {
-        if (tab.url.match(/^https:\/\/chat\.openai\.com/)) {
+        if (/^https:\/\/chat\.openai\.com/.test(tab.url)) {
             chrome.tabs.sendMessage(tab.id, { action: 'syncExtension' })
 }})})
