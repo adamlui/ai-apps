@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.14
+// @version             2023.7.15
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -364,9 +364,10 @@
                         // Alert to update
                         const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`, // title
                             `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
-                                + '<a target="_blank" href=' + config.ghRepoURL + '/commits/main/greasemonkey/'
-                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js')
-                                    + ' style="font-size: 0.7rem">' + messages.link_viewChanges + '</a>',
+                                + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
+                                    + 'href="' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
+                                    + '>' + messages.link_viewChanges + '</a>',
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
