@@ -123,8 +123,8 @@
     function updateGreyness() {
 
         // Updated toolbar icon
-        const dimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}
-        dimensions.forEach((dimension) => {
+        const iconDimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}
+        iconDimensions.forEach((dimension) => {
             iconPaths[dimension] = '../icons/'
                 + (config.extensionDisabled ? 'faded/' : '')
                 + 'icon' + dimension + '.png'
