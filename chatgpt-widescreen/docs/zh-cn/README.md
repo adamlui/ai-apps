@@ -43,7 +43,7 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> 以更赏心悦目的形式欣赏原创歌词、诗歌、散文或作曲
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> 适用于: openai.com, poe.com + you.com
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> 适用于: **openai.com**, **poe.com** + **you.com**
 
 ## 用户反馈
 
