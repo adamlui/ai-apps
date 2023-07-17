@@ -138,7 +138,7 @@
                 if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
                 else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     }})})
-    window.addEventListener('keydown', () => { // set F11 flag for toggleMode() disabled warning
+    window.addEventListener('keydown', (event) => { // set F11 flag for toggleMode() disabled warning
         if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true
     })
 

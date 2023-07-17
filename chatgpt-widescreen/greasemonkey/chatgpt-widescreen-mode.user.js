@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.17.1
+// @version             2023.7.17.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -733,7 +733,7 @@
         if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
         else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     })
-    window.addEventListener('keydown', () => { // set F11 flag for toggleMode() disabled warning
+    window.addEventListener('keydown', (event) => { // set F11 flag for toggleMode() disabled warning
         if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true // set flag if entering full screen via F11
     })
 
