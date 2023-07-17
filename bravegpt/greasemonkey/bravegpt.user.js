@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.15.1
+// @version             2023.7.17
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -168,8 +168,7 @@
         menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify('Proxy Mode ' + stateIndicator.notifWord[+!config.proxyAPIenabled], '', '', 'shadow')
-            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
-            registerMenu() // serve fresh menu
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             location.reload() // re-send query using new endpoint
         }))
 
@@ -181,8 +180,7 @@
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
             notify('Prefix Mode ' + stateIndicator.notifWord[+!config.prefixEnabled], '', '', 'shadow')
-            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
-            registerMenu() // serve fresh menu
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
 
@@ -194,8 +192,7 @@
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
             notify(config.appSymbol + ' Suffix Mode ' + stateIndicator.notifWord[+!config.suffixEnabled], '', '', 'shadow')
-            for (var i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i])
-            registerMenu() // serve fresh menu
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
