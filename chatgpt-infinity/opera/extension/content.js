@@ -71,7 +71,7 @@
             break // stop looping since class assignment is done
     }}
     toggleLabel.addEventListener('click', () => {
-        var toggleInput = document.querySelector('#infToggleInput')
+        const toggleInput = document.querySelector('#infToggleInput')
         toggleInput.checked = !toggleInput.checked
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         settings.save('infinityMode', toggleInput.checked)
