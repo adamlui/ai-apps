@@ -134,29 +134,28 @@
         // Hide toggle if set to hidden or extension disabled
         settings.load(['toggleHidden', 'extensionDisabled']).then(() => {
             if (config.toggleHidden || config.extensionDisabled) toggleLabel.style.display = 'none'
-            return
-        })
+            else {
 
-        // Clear old content
-        while (toggleLabel.firstChild) toggleLabel.firstChild.remove()
+                // Clear old content
+                while (toggleLabel.firstChild) toggleLabel.firstChild.remove()
 
-        // Create elements
-        const navicon = document.createElement('img') ; navicon.width = 18
-        navicon.src = config.assetHostURL + 'media/images/icons/infinity-symbol/white/icon64.png'
-        const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'infToggleLabel'
-        const labelText = document.createTextNode(chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
-            + chrome.i18n.getMessage('state_' + ( config.infinityMode ? 'enabled' : 'disabled' )))
-        const input = document.createElement('input') ; input.id = 'infToggleInput'
-        input.type = 'checkbox' ; input.checked = config.infinityMode ; input.disabled = true
-        const span = document.createElement('span') ; span.className = 'slider'
+                // Create elements
+                const navicon = document.createElement('img') ; navicon.width = 18
+                navicon.src = config.assetHostURL + 'media/images/icons/infinity-symbol/white/icon64.png'
+                const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'infToggleLabel'
+                const labelText = document.createTextNode(chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
+                    + chrome.i18n.getMessage('state_' + ( config.infinityMode ? 'enabled' : 'disabled' )))
+                const input = document.createElement('input') ; input.id = 'infToggleInput'
+                input.type = 'checkbox' ; input.checked = config.infinityMode ; input.disabled = true
+                const span = document.createElement('span') ; span.className = 'slider'
 
-        // Append elements
-        label.appendChild(input) ; label.appendChild(span)
-        toggleLabel.appendChild(navicon) ; toggleLabel.appendChild(label) ; toggleLabel.appendChild(labelText)
+                // Append elements
+                label.appendChild(input) ; label.appendChild(span)
+                toggleLabel.appendChild(navicon) ; toggleLabel.appendChild(label) ; toggleLabel.appendChild(labelText)
 
-        // Show toggle
-        toggleLabel.style.display = 'flex'
-    }
+                // Show toggle
+                toggleLabel.style.display = 'flex' ; console.log('hi')
+    }})}
 
     const infinityMode = {
 
