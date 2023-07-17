@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.15.1
+// @version             2023.7.17
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -120,7 +120,7 @@
         menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify('Proxy Mode ' + state.notifWord[+!config.proxyAPIenabled])
-            for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             location.reload() // re-send query using new endpoint
         }))
 
@@ -132,7 +132,7 @@
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
             notify('Prefix Mode ' + state.notifWord[+!config.prefixEnabled])
-            for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
 
@@ -144,7 +144,7 @@
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
             notify('Suffix Mode ' + state.notifWord[+!config.suffixEnabled])
-            for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
@@ -169,7 +169,7 @@
                     saveSetting('replyLanguage', replyLanguage ? replyLanguage : config.userLanguage)
                     alert('Language updated!', 'DuckDuckGPT will reply in '
                         + ( replyLanguage ? replyLanguage : 'your system language' ) + '.')
-                    for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+                    for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
 
