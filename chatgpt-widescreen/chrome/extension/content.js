@@ -297,7 +297,7 @@
         else if (mode == 'fullScreen') {
             if (config.f11)
                 alert(chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
-            else try { document.exitFullscreen() } catch (error) { console.error(config.appSymbol + ' >> ', error) }
+            document.exitFullscreen().catch(error => { console.error(config.appSymbol + ' >> Failed to exit fullscreen', error) })
     }}
 
     function toggleMode(mode, state = '') {
