@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.15.1
+// @version             2023.7.17
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -287,7 +287,7 @@
     if (document.hidden !== undefined) { // ...if Page Visibility API supported
         document.addEventListener('visibilitychange', () => {
             if (config.infinityMode) infinityMode.deactivate()
-            for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     })}
 
     // Stylize toggle switch
@@ -324,7 +324,7 @@
         toggleInput.checked = !toggleInput.checked
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.infinityMode = toggleInput.checked
-        for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         infinityMode.toggle()
     })
     updateToggleHTML()
@@ -424,7 +424,7 @@
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
-            for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle auto-scroll
@@ -433,7 +433,7 @@
         menuIDs.push(GM_registerMenuCommand(asLabel, () => {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
             notify(messages.menuLabel_autoScroll + ': '+ state.word[+config.autoScrollDisabled])
-            for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to set reply language
@@ -447,7 +447,7 @@
                     alert(messages.alert_replyLangUpdated + '!', messages.alert_willReplyIn + ' '
                         + ( replyLanguage ? replyLanguage : messages.alert_yourSysLang ) + '.')
                     if (config.infinityMode) restartInNewChat() // using new reply language                        
-                    for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+                    for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
 
@@ -471,7 +471,7 @@
                     if (config.infinityMode) { // restart session using new reply topic
                         chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
                         setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) } // toggle on
-                    for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+                    for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
 
@@ -486,7 +486,7 @@
                     alert(messages.alert_replyIntUpdated + '!', messages.alert_willReplyEvery + ' '
                         + replyInterval + ' ' + messages.unit_seconds + '.')
                     if (config.infinityMode) resetInSameChat() // using new reply interval                    
-                    for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+                    for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
 
