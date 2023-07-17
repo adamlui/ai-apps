@@ -8,7 +8,7 @@ var alertQueue = []; localStorage.alertQueue = JSON.stringify(alertQueue);
 var notifyQueue = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
 localStorage.notifyQueue = JSON.stringify(notifyQueue);
 
-var chatgpt = {
+const chatgpt = {
 
     alert: function(title, msg, btns, checkbox, width) {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
