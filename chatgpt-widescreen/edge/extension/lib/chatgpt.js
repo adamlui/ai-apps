@@ -233,9 +233,8 @@ var chatgpt = {
         const thisQuadrantDivIDs = notifyQueue.quadrants[notificationDiv.quadrant];
         if (thisQuadrantDivIDs.length > 1) {
             try { // to move old notifications
-                const divsToMove = thisQuadrantDivIDs.slice(0, -1); // exclude new div
-                for (let j = 0; j < divsToMove.length; j++) {
-                    const oldDiv = document.getElementById(divsToMove[j]);
+                for (const divId of thisQuadrantDivIDs.slice(0, -1)) { // exclude new div
+                    const oldDiv = document.getElementById(divId);
                     const offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
                     const vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
