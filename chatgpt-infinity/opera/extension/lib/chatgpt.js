@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.0.1
+// This library is a condensed version of chatgpt.js v2.0.2
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -159,9 +159,9 @@ var chatgpt = {
         function keyHandler(event) {
             const dismissKeys = [13, 27]; // enter/esc
             if (dismissKeys.includes(event.keyCode)) {
-                for (let i = 0; i < alertQueue.length; i++) { // look to handle only if triggering alert is active
-                    const alert = document.getElementById(alertQueue[i]);
-                    if (alert && alert.style.display != 'none') { // active alert found
+                for (const alertId of alertQueue) { // look to handle only if triggering alert is active
+                    const alert = document.getElementById(alertId);
+                    if (alert && alert.style.display !== 'none') { // active alert found
                         if (event.keyCode === 27) destroyAlert(); // if esc pressed, dismiss alert & do nothing
                         else if (event.keyCode === 13) { // else if enter pressed
                             const mainButton = alert.querySelector('.modal-buttons').lastChild; // look for main button
@@ -173,7 +173,7 @@ var chatgpt = {
     },
 
     getRegenerateButton: function() {
-        for (var formButton of document.querySelectorAll('form button')) {
+        for (const formButton of document.querySelectorAll('form button')) {
             if (formButton.textContent.toLowerCase().includes('regenerate')) {
                 return formButton;
     }}},
@@ -191,7 +191,7 @@ var chatgpt = {
 
     isIdle: function() {
         return new Promise(resolve => {
-            var intervalId = setInterval(() => {
+            const intervalId = setInterval(() => {
                 if (chatgpt.getRegenerateButton()) {
                     clearInterval(intervalId); resolve();
     }}, 100);});},
@@ -243,6 +243,7 @@ var chatgpt = {
                 for (let j = 0; j < divsToMove.length; j++) {
                     const oldDiv = document.getElementById(divsToMove[j]);
                     const offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
+                    // const vOffset = +oldDiv.style[offsetProp].match(/\d+/)[0] + 5 + oldDiv.getBoundingClientRect().height;
                     const vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
                 }
@@ -333,14 +334,16 @@ var chatgpt = {
     },
 
     scrollToBottom: function() {
-        try { document.querySelector('button[class*="cursor"]').click(); } catch (error) { console.error('🤖 chatgpt.js >> ', error); }},
+        try { document.querySelector('button[class*="cursor"]').click(); }
+        catch (error) { console.error('🤖 chatgpt.js >> ', error); }
+    },
 
     send: function(msg, method='') {
-        var textArea = document.querySelector('form textarea');
-        var sendButton = document.querySelector('form button[class*="bottom"]');
+        const textArea = document.querySelector('form textarea');
+        const sendButton = document.querySelector('form button[class*="bottom"]');
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
-        var delaySend = setInterval(function() {
+        const delaySend = setInterval(() => {
             if (!sendButton.hasAttribute('disabled')) { // send msg
                 method.toLowerCase() == 'click' ? sendButton.click()
                     : textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
