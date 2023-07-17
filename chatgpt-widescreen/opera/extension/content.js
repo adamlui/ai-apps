@@ -189,7 +189,7 @@
         if (!chatbar.contains(fullWindowButton)) return // if buttons are missing, exit
         else { // remove chat toggles
             const nodesToRemove = [newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv]
-            for (let i = 0 ; i < nodesToRemove.length ; i++) { chatbar.removeChild(nodesToRemove[i]) }
+            for (const node of nodesToRemove) chatbar.removeChild(node)
     }}
 
     function updateBtnSVG(mode, state = '') {
