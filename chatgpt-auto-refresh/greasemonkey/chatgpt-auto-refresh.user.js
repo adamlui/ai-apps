@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.15.1
+// @version             2023.7.17
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @compatible          chrome
@@ -330,7 +330,7 @@
         toggleInput.checked = !toggleInput.checked
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.arDisabled = !toggleInput.checked
-        for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.activate(config.refreshInterval)
             if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': ON')
@@ -423,9 +423,9 @@
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            if (!config.notifHidden) {
+            if (!config.notifHidden)
                 notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
-            } for (const id of menuIDs) GM_unregisterMenuCommand(id) ; registerMenu() // refresh menu
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when switching modes
@@ -434,8 +434,7 @@
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifHidden', !config.notifHidden)
             notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
-            for (let i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
-            registerMenu() // serve fresh one
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to change refresh interval
