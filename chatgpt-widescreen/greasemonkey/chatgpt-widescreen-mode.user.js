@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.17
+// @version             2023.7.17.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -549,7 +549,7 @@
     const you = {
         isLoaded: function() {
             return new Promise(resolve => {
-                var intervalId = setInterval(() => {
+                const intervalId = setInterval(() => {
                     if (document.querySelector('div[data-testid="youchat-input"]')) {
                         clearInterval(intervalId) ; resolve()
         }}, 100)})},
