@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.19
+// @version             2023.7.19.1
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -443,9 +443,9 @@
                 const replyLanguage = prompt(`${ messages.prompt_updateReplyLang }:`, config.replyLanguage)
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
-                    saveSetting('replyLanguage', replyLanguage ? replyLanguage : config.userLanguage)
+                    saveSetting('replyLanguage', replyLanguage || config.userLanguage)
                     alert(messages.alert_replyLangUpdated + '!', messages.alert_willReplyIn + ' '
-                        + ( replyLanguage ? replyLanguage : messages.alert_yourSysLang ) + '.')
+                        + ( replyLanguage || messages.alert_yourSysLang ) + '.')
                     if (config.infinityMode) restartInNewChat() // using new reply language                        
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
