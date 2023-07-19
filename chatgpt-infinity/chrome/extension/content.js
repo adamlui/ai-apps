@@ -96,7 +96,7 @@
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
-            shadow ? shadow : ( chatgpt.isDarkMode() ? '' : 'shadow' ))
+            shadow || chatgpt.isDarkMode() ? '' : 'shadow' )
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {

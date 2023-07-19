@@ -80,10 +80,10 @@
             const replyLanguage = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyLang') }:`, config.replyLanguage)
             if (replyLanguage === null) break // user cancelled so do nothing
             else if (!/\d/.test(replyLanguage)) {
-                settings.save('replyLanguage', replyLanguage ? replyLanguage : config.userLanguage)
+                settings.save('replyLanguage', replyLanguage || config.userLanguage)
                 window.close() // popup
                 alert(chrome.i18n.getMessage('alert_replyLangUpdated') + '!', chrome.i18n.getMessage('alert_willReplyIn') + ' '
-                    + ( replyLanguage ? replyLanguage : chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
+                    + ( replyLanguage || chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
                     if (new URL(tabs[0].url).hostname === 'chat.openai.com' && config.infinityMode) { // reboot active session
                         chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
@@ -164,7 +164,7 @@
     function notify(msg, position) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'notify', msg: msg, position: position ? position : 'bottom-right' })
+                action: 'notify', msg: msg, position: position || 'bottom-right' })
     })}
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
