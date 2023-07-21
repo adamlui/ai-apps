@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.19
+// @version             2023.7.20
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @compatible          chrome
@@ -449,8 +449,7 @@
                         chatgpt.autoRefresh.deactivate()
                         chatgpt.autoRefresh.activate(refreshInterval)
                     }
-                    for (let i = 0 ; i < menuIDs.length ; i++) GM_unregisterMenuCommand(menuIDs[i]) // remove all cmd's
-                    registerMenu() // serve fresh one
+                    for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     const minInterval = Math.max(2, config.refreshInterval - 10)
                     const maxInterval = config.refreshInterval + 10
                     alert('Interval updated!', `${ messages.alert_intUpdated } ${ minInterval }–${ maxInterval } secs`)
