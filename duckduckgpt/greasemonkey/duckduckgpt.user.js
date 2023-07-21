@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.20.2
+// @version             2023.7.21
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -199,7 +199,7 @@
             /waiting|loading/i.test(msg) ? // if alert involves loading, add class
                 '<p class="loading">' : '<p>') + ddgptAlerts[msg]
             + (ddgptAlerts[msg].includes('@') ? // if msg needs login link, add it
-                '<a href="https://chat.openai.com" target="_blank">chat.openai.com</a> (If issue persists, try activating Proxy Mode)</p>' : '</p>')
+                '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> (If issue persists, try activating Proxy Mode)</p>' : '</p>')
     }
 
     // Define DDG UI functions
@@ -226,7 +226,7 @@
 
     function getOpenAItoken() {
         return new Promise((resolve) => {
-            const accessToken = GM_getValue('openAItoken')
+            const accessToken = GM_getValue(config.prefix + '_openAItoken')
             ddgptConsole.info('OpenAI access token: ' + accessToken)
             if (!accessToken) {
                 GM.xmlHttpRequest({ url: chatGPTsessURL, onload: (response) => {
@@ -234,7 +234,7 @@
                         ddgptAlert('checkCloudflare') ; return }
                     try {
                         const newAccessToken = JSON.parse(response.responseText).accessToken
-                        GM_setValue('openAItoken', newAccessToken)
+                        GM_setValue(config.prefix + '_openAItoken', newAccessToken)
                         resolve(newAccessToken)
                     } catch { ddgptAlert('login') ; return }
                 }})
@@ -243,8 +243,8 @@
 
     function getAIGCFkey() {
         return new Promise((resolve) => {
-            const publicKey = GM_getValue('aigcfKey')
-            if (!publicKey) {         
+            const publicKey = GM_getValue(config.prefix + '_aigcfKey')
+            if (!publicKey) {
                 GM.xmlHttpRequest({ method: 'GET', url: 'https://api.aigcfun.com/fc/key',
                     headers: {
                         'Content-Type': 'application/json',
@@ -253,7 +253,7 @@
                     onload: (response) => {
                         const newPublicKey = JSON.parse(response.responseText).data
                         if (!newPublicKey) { ddgptConsole.error('Failed to get AIGCFun public key') ; return }
-                        GM_setValue('aigcfKey', newPublicKey)
+                        GM_setValue(config.prefix + '_aigcfKey', newPublicKey)
                         console.info('AIGCFun public key set: ' + newPublicKey)
                         resolve(newPublicKey)
                 }})
@@ -341,7 +341,7 @@
                     if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpointMap.length)
                         retryDiffHost()
                     else if (event.status === 401 && !config.proxyAPIenabled) {
-                        GM_deleteValue('accessToken') ; ddgptAlert('login') }
+                        GM_deleteValue(config.prefix + '_openAItoken') ; ddgptAlert('login') }
                     else if (event.status === 403)
                         ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
                     else if (event.status === 429) ddgptAlert('tooManyRequests')
@@ -367,7 +367,7 @@
                             ddgptConsole.info('Response: ' + event.responseText)
 
                             if (event.responseText.includes('finish_reason')) { // if AIGCF error encountered
-                                GM_setValue('aigcfKey', false) // clear GM key for fresh getAIGCFkey()
+                                GM_setValue(config.prefix + '_aigcfKey', false) // clear GM key for fresh getAIGCFkey()
 
                                 // Determine index of AIGCF in endpoint map
                                 let aigcfMapIndex = -1
@@ -394,7 +394,7 @@
     }
 
     function ddgptShow(answer) {
-        ddgptDiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank">DuckDuckGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="ddgpt-reply-box" rows="1" placeholder="Send reply..."></textarea></div></form></section>'
+        ddgptDiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank" rel="noopener">DuckDuckGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="ddgpt-reply-box" rows="1" placeholder="Send reply..."></textarea></div></form></section>'
         ddgptDiv.querySelector('pre').textContent = answer
 
         // Render math
@@ -572,7 +572,7 @@
     const ddgptFooter = document.createElement('div')
     ddgptFooter.className = 'feedback-prompt chatgpt-feedback'
     ddgptFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose"'
-        + ' class="feedback-prompt__link" target="_blank">Share Feedback</a>'
+        + ' class="feedback-prompt__link" target="_blank" rel="noopener">Share Feedback</a>'
 
     // Activate promo campaign if active
     GM.xmlHttpRequest({
@@ -588,7 +588,7 @@
             // Create feedback footer & add classes/HTML
             const pcFooter = document.createElement('div')
             pcFooter.className = 'feedback-prompt chatgpt-feedback'
-            pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank">Share Feedback</a>'
+            pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank" rel="noopener">Share Feedback</a>'
 
             // Inject in sidebar
             ddgptFooter.insertAdjacentElement('afterend', pcDiv)
