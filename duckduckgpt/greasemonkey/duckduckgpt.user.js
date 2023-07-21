@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.21
+// @version             2023.7.21.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -511,8 +511,10 @@
     const ddgptAlerts = {
         waitingResponse: 'Waiting for ChatGPT response...',
         login: 'Please login @ ',
-        tooManyRequests: `ChatGPT is flooded with too many requests. Try switching ${ config.proxyAPIenabled ? 'off' : 'on' } Proxy Mode in toolbar`,
-        parseFailed: `Failed to parse response JSON. Try switching ${ config.proxyAPIenabled ? 'off' : 'on' } Proxy Mode in toolbar`,
+        tooManyRequests: 'ChatGPT is flooded with too many requests. Try switching '
+            + ( config.proxyAPIenabled ? 'off' : 'on' ) + ' Proxy Mode in toolbar',
+        parseFailed: 'Failed to parse response JSON. Try switching '
+            + ( config.proxyAPIenabled ? 'off' : 'on' ) + ' Proxy Mode in toolbar',
         checkCloudflare: 'Please pass Cloudflare security check @ ',
         suggestProxy: 'OpenAI API is not working. Try switching on Proxy Mode in toolbar',
         suggestOpenAI: 'Proxy API is not working. Try switching off Proxy Mode in toolbar'
