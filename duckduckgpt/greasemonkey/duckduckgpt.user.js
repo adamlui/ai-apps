@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.20
+// @version             2023.7.20.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -221,7 +221,7 @@
         if (getUserscriptManager() !== 'Tampermonkey') return
         GM_cookie.list({ url: openAIauthDomain }, (cookies, error) => {
             if (!error) { for (const cookie of cookies) {
-                GM_cookie.delete({ url: openAIauthDomain, name: cookies[i].name })
+                GM_cookie.delete({ url: openAIauthDomain, name: cookie.name })
     }}})}
 
     function getOpenAItoken() {
