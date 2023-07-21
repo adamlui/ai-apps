@@ -114,6 +114,7 @@ This script exists thanks to code, translations, issues & ideas from the followi
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23-css-readability&h=50&w=50&mask=circle&maxage=7d "@AliAlSarre")](https://github.com/AliAlSarre)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/42227673?first-contrib=2023.06.26-poe-support-idea&h=50&w=50&mask=circle&maxage=7d "@wheregone")](https://github.com/wheregone)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
 ## More ChatGPT apps
