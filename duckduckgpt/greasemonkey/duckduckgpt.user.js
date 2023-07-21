@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.20.1
+// @version             2023.7.20.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -166,9 +166,9 @@
                 const replyLanguage = prompt('Update reply language:', config.replyLanguage)
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
-                    saveSetting('replyLanguage', replyLanguage ? replyLanguage : config.userLanguage)
+                    saveSetting('replyLanguage', replyLanguage || config.userLanguage)
                     alert('Language updated!', 'DuckDuckGPT will reply in '
-                        + ( replyLanguage ? replyLanguage : 'your system language' ) + '.')
+                        + ( replyLanguage || 'your system language' ) + '.')
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
@@ -182,7 +182,7 @@
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
-            shadow ? shadow : ( isDarkMode() ? '' : 'shadow'))
+            shadow || ( isDarkMode() ? '' : 'shadow'))
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
