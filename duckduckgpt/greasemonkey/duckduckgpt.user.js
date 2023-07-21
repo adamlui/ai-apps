@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.17
+// @version             2023.7.20
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -34,7 +34,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@09e429363da222312c22ff7b67e3cc0fa08c4665/dist/chatgpt-2.0.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@b9b8ac236a8795b56691bf3dc10a8a1a928d2e8f/dist/chatgpt-2.0.1.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -219,8 +219,8 @@
 
     function deleteOpenAIcookies() {
         if (getUserscriptManager() !== 'Tampermonkey') return
-        GM_cookie.list({ url: openAIauthDomain }, function(cookies, error) {
-            if (!error) { for (let i = 0; i < cookies.length; i++) {
+        GM_cookie.list({ url: openAIauthDomain }, (cookies, error) => {
+            if (!error) { for (const cookie of cookies) {
                 GM_cookie.delete({ url: openAIauthDomain, name: cookies[i].name })
     }}})}
 
@@ -273,7 +273,7 @@
         if (config.proxyAPIenabled) { // randomize proxy API
             const untriedEndpoints = proxyEndpointMap.filter((entry) => {
                 return !getShowReply.triedEndpoints?.includes(entry[0]) })
-            const entry = untriedEndpoints[Math.floor(Math.random() * untriedEndpoints.length)]
+            const entry = untriedEndpoints[Math.floor(chatgpt.randomFloat() * untriedEndpoints.length)]
             endpoint = entry[0] ; accessKey = entry[1] ; model = entry[2]
         } else { // use OpenAI API
             endpoint = openAIchatEndpoint
