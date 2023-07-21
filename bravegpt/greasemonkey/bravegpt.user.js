@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.21
+// @version             2023.7.21.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -284,9 +284,9 @@
 
     function deleteOpenAIcookies() {
         if (getUserscriptManager() !== 'Tampermonkey') return
-        GM_cookie.list({ url: openAIauthDomain }, (cookies, error) => {
+        GM_cookie.list({ url: openAIendpoints.auth }, (cookies, error) => {
             if (!error) { for (const cookie of cookies) {
-                GM_cookie.delete({ url: openAIauthDomain, name: cookie.name })
+                GM_cookie.delete({ url: openAIendpoints.auth, name: cookie.name })
     }}})}
 
     function getOpenAItoken() {
@@ -294,7 +294,7 @@
             const accessToken = GM_getValue(config.prefix + '_openAItoken')
             braveGPTconsole.info('OpenAI access token: ' + accessToken)
             if (!accessToken) {
-                GM.xmlHttpRequest({ url: chatGPTsessURL, onload: (response) => {
+                GM.xmlHttpRequest({ url: openAIendpoints.session, onload: (response) => {
                     if (isBlockedbyCloudflare(response.responseText)) {
                         braveGPTalert('checkCloudflare') ; return }
                     try {
@@ -336,12 +336,12 @@
         // Pick API
         let endpoint, accessKey, model
         if (config.proxyAPIenabled) { // randomize proxy API
-            const untriedEndpoints = proxyEndpointMap.filter((entry) => {
+            const untriedEndpoints = proxyEndpoints.filter((entry) => {
                 return !getShowReply.triedEndpoints?.includes(entry[0]) })
             const entry = untriedEndpoints[Math.floor(chatgpt.randomFloat() * untriedEndpoints.length)]
             endpoint = entry[0] ; accessKey = entry[1] ; model = entry[2]
         } else { // use OpenAI API
-            endpoint = openAIchatEndpoint
+            endpoint = openAIendpoints.chat
             const timeoutPromise = new Promise((resolve, reject) => {
                 setTimeout(() => { reject(new Error('Timeout occurred')) }, 3000) })
             accessKey = await Promise.race([getOpenAItoken(), timeoutPromise])
@@ -362,7 +362,7 @@
                 braveGPTconsole.error(error)
                 if (!config.proxyAPIenabled) braveGPTalert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
-                    if (getShowReply.attemptCnt < proxyEndpointMap.length) retryDiffHost()
+                    if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
                     else braveGPTalert('suggestOpenAI')
             }}
         })
@@ -403,7 +403,7 @@
                 if (event.status !== 200) {
                     braveGPTconsole.error('Event status: ' + event.status)
                     braveGPTconsole.info('Event response: ' + event.responseText)
-                    if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpointMap.length)
+                    if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpoints.length)
                         retryDiffHost()
                     else if (event.status === 401 && !config.proxyAPIenabled) {
                         GM_deleteValue(config.prefix + '_openAItoken') ; braveGPTalert('login') }
@@ -436,22 +436,22 @@
 
                                 // Determine index of AIGCF in endpoint map
                                 let aigcfMapIndex = -1
-                                for (let i = 0 ; i < proxyEndpointMap.length ; i++) {
-                                    const endpoint = proxyEndpointMap[i]
+                                for (let i = 0 ; i < proxyEndpoints.length ; i++) {
+                                    const endpoint = proxyEndpoints[i]
                                     if (endpoint.some(item => item.includes('aigcfun'))) {
                                         aigcfMapIndex = i ; break
                                 }}
 
                                 // Updated AIGCF endpoint w/ fresh key (using fresh IP)
                                 (async () => { // IIFE to use await
-                                    proxyEndpointMap[aigcfMapIndex][0] = (
+                                    proxyEndpoints[aigcfMapIndex][0] = (
                                         'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey())
                                     getShowReply(messages, callback) // re-fetch reply
                                 })()
 
                             } else { // use different endpoint or suggest OpenAI
                                 braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + error)
-                                if (getShowReply.attemptCnt < proxyEndpointMap.length) retryDiffHost()
+                                if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
                                 else braveGPTalert('suggestOpenAI')
                             }
                         }
@@ -562,10 +562,11 @@
             return }
 
     // Init endpoints
-    const openAIauthDomain = 'https://auth0.openai.com'
-    const chatGPTsessURL = 'https://chat.openai.com/api/auth/session'
-    const openAIchatEndpoint = 'https://chat.openai.com/backend-api/conversation'
-    const proxyEndpointMap = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
+    const openAIendpoints = {
+        auth: 'https://auth0.openai.com',
+        session: 'https://chat.openai.com/api/auth/session',
+        chat: 'https://chat.openai.com/backend-api/conversation' }
+    const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
     const braveGPTalerts = {
         login: 'Please login @ ',
