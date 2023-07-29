@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.7.29.1
+// @version             2023.7.29.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -270,7 +270,7 @@
                     function leaveAReview() {
                         const reviewAlertID = chatgpt.alert('Choose a platform:', '',
                             [ function greasyFork() { safeWindowOpen(
-                                'https://greasyfork.org/en/scripts/462440-bravegpt/feedback#post-discussion') },
+                                'https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion') },
                               function productHunt() { safeWindowOpen(
                                   'https://www.producthunt.com/products/bravegpt/reviews/new') },
                               function futurepedia() { safeWindowOpen(
