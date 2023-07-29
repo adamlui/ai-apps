@@ -112,9 +112,9 @@
 // @description:zh-SG   将 ChatGPT 答案添加到 Brave Search 侧边栏 (由 GPT-4 提供支持!)
 // @description:zh-TW   將 ChatGPT 答案添加到 Brave Search 側邊欄 (由 GPT-4 提供支持!)
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
-// @author              Adam Lui
-// @namespace           https://github.com/adamlui
-// @version             2023.7.28
+// @author              KudoAI
+// @namespace           https://kudoai.com
+// @version             2023.7.28.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
