@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.7.29.4
+// @version             2023.7.29.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -184,7 +184,7 @@
                         alert('Update available! 🚀',
                             `An update to BraveGPT (v${ latestVer }) is available!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
-                                    + 'href="' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
                                     + '>' + messages.link_viewChanges + '</a>',
                             function update() { // button
@@ -266,11 +266,11 @@
                     + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ),
                 [ // buttons
                     function checkForUpdates() { updateCheck.fromMenu = true ; updateCheck() },
-                    function githubSource() { safeWindowOpen(config.ghRepoURL) },
+                    function githubSource() { safeWindowOpen(config.gitHubURL) },
                     function leaveAReview() {
                         const reviewAlertID = chatgpt.alert('Choose a platform:', '',
                             [ function greasyFork() { safeWindowOpen(
-                                  'https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion') },
+                                  config.greasyForkURL + '/feedback#post-discussion') },
                               function productHunt() { safeWindowOpen(
                                   'https://www.producthunt.com/products/bravegpt/reviews/new') },
                               function futurepedia() { safeWindowOpen(
@@ -587,9 +587,10 @@
     // Init config/messages/menu
     const config = {
         prefix: 'braveGPT', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
-        ghRepoURL: 'https://github.com/kudoai/bravegpt',
-        updateURL: 'https://greasyfork.org/scripts/466789/code/bravegpt.meta.js' }
-    config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
+        gitHubURL: 'https://github.com/kudoai/bravegpt',
+        greasyForkURL: 'https://greasyfork.org/scripts/466789-bravegpt' }
+    config.updateURL = config.greasyForkURL + '/code/script.meta.js'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
     const messages = [] ; registerMenu()
 
