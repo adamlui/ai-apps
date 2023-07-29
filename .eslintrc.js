@@ -2,13 +2,7 @@ module.exports  = {
     'extends': ['eslint:recommended'],
     'ignorePatterns': ['**/*.md', '**/*.min.js'],
     'rules': {
-        'indent': ['error', 4, { 'ignoredNodes': [ // enforce 4-space indentation, except for...
-            'TemplateLiteral > *', // template literal children
-            'ConditionalExpression', // ternarys
-            'BinaryExpression', // string concatenations, math, comparison, etc.
-            'BlockStatement', 'SwitchCase', // closing braces
-            'ArrayExpression', 'FunctionExpression', 'ObjectExpression' // array/object literals + function expressions
-        ]}],
+        'indent': 'off',
         'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }], // enforce single quotes for string literals
         'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }], // enforce spacing in object properties
         'comma-dangle': ['error', 'never'], // enforce no trailing commas in arrays or objects
