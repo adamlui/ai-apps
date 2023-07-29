@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.29
+// @version             2023.7.29.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -263,9 +263,10 @@
     // Init config
     const config = {
         prefix: 'chatgptAutoclear', appSymbol: '🕶️', userLanguage: chatgpt.getUserLanguage(),
-        ghRepoURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
-        updateURL: 'https://greasyfork.org/scripts/460805/code/autoclear-chatgpt-history.meta.js' }
-    config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
+        gitHubURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
+        greasyForkURL: 'https://greasyfork.org/en/scripts/460805-autoclear-chatgpt-history' }
+    config.updateURL = config.greasyForkURL + '/code/script.meta.js'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('autoclear', 'buttonHidden', 'lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
 
     // Define messages
@@ -387,7 +388,7 @@
                         alert('Update available! 🚀', // title
                             `An update to ${ messages.appName } (v${ latestVer }) is available!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
-                                    + 'href="' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
                                     + '>' + messages.link_viewChanges + '</a>',
                             function update() { // button
@@ -463,14 +464,13 @@
                     + `<span style="${ pStyle }"><a href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                     + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
                 + `<span style="${ headingStyle }"><b>Source code</b>:</span>\n`
-                    + `<span style="${ pBrStyle }"><a href="${ config.ghRepoURL }" target="_blank" rel="nopener">`
-                    + config.ghRepoURL + '</a></span>',
+                    + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
+                    + config.gitHubURL + '</a></span>',
                 [ // buttons
                     function checkForUpdates() { updateCheck.fromMenu = true ; updateCheck() },
                     function leaveAReview() { // show new modal
                         const reviewAlertID = chatgpt.alert('Choose a platform:', '',
-                            [ function greasyFork() { safeWindowOpen(
-                                  'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history/feedback#post-discussion') },
+                            [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                               function futurepedia() { safeWindowOpen(
                                   'https://www.futurepedia.io/tool/autoclear-chatgpt-history#autoclear-chatgpt-history-review') }])
                         document.getElementById(reviewAlertID).querySelector('button')
