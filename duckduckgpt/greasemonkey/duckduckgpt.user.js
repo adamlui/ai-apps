@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.7.29.6
+// @version             2023.7.29.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -85,7 +85,7 @@
                         alert('Update available! 🚀',
                             `An update to DuckDuckGPT (v${ latestVer }) is available!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
-                                    + 'href="' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
                                     + '>' + messages.link_viewChanges + '</a>',
                             function update() { // button
@@ -192,11 +192,11 @@
                     + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ),
                 [ // buttons
                     function checkForUpdates() { updateCheck.fromMenu = true ; updateCheck() },
-                    function githubSource() { safeWindowOpen(config.ghRepoURL) },
+                    function githubSource() { safeWindowOpen(config.gitHubURL) },
                     function leaveAReview() {
                         const reviewAlertID = chatgpt.alert('Choose a platform:', '',
                             [ function greasyFork() { safeWindowOpen(
-                                  'https://greasyfork.org/scripts/459849-duckduckgpt/feedback#post-discussion') },
+                                  config.greasyForkURL + '/feedback#post-discussion') },
                               function productHunt() { safeWindowOpen(
                                   'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
                               function futurepedia() { safeWindowOpen(
@@ -525,9 +525,10 @@
     // Init config/messages/menu
     const config = {
         prefix: 'ddgpt', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
-        ghRepoURL: 'https://github.com/kudoai/duckduckgpt',
-        updateURL: 'https://greasyfork.org/scripts/459849/code/duckduckgpt.meta.js' }
-    config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
+        gitHubURL: 'https://github.com/kudoai/duckduckgpt',
+        greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt' }
+    config.updateURL = config.greasyForkURL + '/code/script.meta.js'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'replyLanguage',
         'fatterSidebar', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
