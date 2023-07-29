@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.7.29.5
+// @version             2023.7.29.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -588,7 +588,7 @@
     const config = {
         prefix: 'braveGPT', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/bravegpt',
-        greasyForkURL: 'https://greasyfork.org/scripts/466789-bravegpt' }
+        greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt' }
     config.updateURL = config.greasyForkURL + '/code/script.meta.js'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
