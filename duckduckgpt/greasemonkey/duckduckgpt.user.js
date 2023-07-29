@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.7.29.4
+// @version             2023.7.29.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -201,7 +201,7 @@
                                   'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
                               function futurepedia() { safeWindowOpen(
                                   'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review') }])
-                        document.getElementById(reviewAlertID).querySelectorAll('button')[0]
+                        document.getElementById(reviewAlertID).querySelector('button')
                             .style.display = 'none' } // hide Dismiss button
                 ], '', 524) // About modal width
 
