@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.7.28.1
+// @version             2023.7.29
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -159,8 +159,9 @@
 
     function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
     function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
+    function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
 
-    function checkForUpdates() {
+    function updateCheck() {
 
         // Fetch latest meta
         const currentVer = GM_info.script.version
@@ -169,14 +170,14 @@
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
-                if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
+                if (!updateCheck.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
                     const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
                     const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
-                        if (!checkForUpdates.fromMenu) // if auto-alert...
+                        if (!updateCheck.fromMenu) // if auto-alert...
                             saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
@@ -190,7 +191,7 @@
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
                                 ).onclose = () => location.reload() },
-                            !checkForUpdates.fromMenu ? // checkbox if auto-alert
+                            !updateCheck.fromMenu ? // checkbox if auto-alert
                                 function skipThisVersion() {
                                     saveSetting('skipNextUpdate', !config.skipNextUpdate)
                                     saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false)
@@ -199,7 +200,7 @@
                         return
                 }}
 
-                if (checkForUpdates.fromMenu) // alert to no update found
+                if (updateCheck.fromMenu) // alert to no update found
                     alert('Up-to-date!', `BraveGPT (v${ currentVer }) is up-to-date!`)
     }})}
 
@@ -247,9 +248,45 @@
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
-        // Add command to check for updates
-        const ucLabel = '🚀 Check for Updates'
-        menuIDs.push(GM_registerMenuCommand(ucLabel, () => { checkForUpdates.fromMenu = true ; checkForUpdates() }))
+        // Add command to launch About modal
+        menuIDs.push(GM_registerMenuCommand('💡 About BraveGPT', async () => {
+
+            // Get chatgpt.js version
+            const scriptMeta = await new Promise(resolve => {
+                GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+                    headers: { 'Cache-Control': 'no-cache' }, onload: resolve
+            })})
+            const chatgptJSver = /chatgpt-([\d\.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
+
+            // Show alert
+            const aboutAlertID = alert(
+                'BraveGPT', // title
+                ' Version: ' + GM_info.script.version + '\n Powered by: ' // msg
+                    + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
+                    + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ),
+                [ // buttons
+                    function checkForUpdates() { updateCheck.fromMenu = true ; updateCheck() },
+                    function githubSource() { safeWindowOpen(config.ghRepoURL) },
+                    function leaveAReview() {
+                        reviewAlertID = chatgpt.alert('Choose a platform:', '',
+                            [ function greasyFork() { safeWindowOpen(
+                                'https://greasyfork.org/en/scripts/462440-bravegpt/feedback#post-discussion') },
+                              function productHunt() { safeWindowOpen(
+                                  'https://www.producthunt.com/products/bravegpt/reviews/new') },
+                              function futurepedia() { safeWindowOpen(
+                                  'https://www.futurepedia.io/tool/bravegpt#bravegpt-review') }])
+                        document.getElementById(reviewAlertID).querySelectorAll('button')[0]
+                            .style.display = 'none' } // hide Dismiss button
+                ], '', 593) // About modal width
+
+            // Re-format buttons to include emojis + re-case + hide 'Dismiss'
+            for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
+                if (/updates/i.test(button.textContent)) button.textContent = '🚀 Check for Updates'
+                else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
+                else if (/github/i.test(button.textContent)) button.textContent = '🖥️ GitHub source'
+                else button.style.display = 'none' // hide Dismiss button
+            }
+        }))
     }
 
     // Define FEEDBACK functions
@@ -580,7 +617,7 @@
     }
 
     // Check for updates (1x/1w)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) updateCheck()
 
     // Stylize elements
     const braveGPTstyle = document.createElement('style')
@@ -619,6 +656,9 @@
         + '.kudo-ai a { color: #aaa ; text-decoration: none } '
         + '.kudo-ai a:hover { color: black ; text-decoration: none } '
         + '.katex-html { display: none } ' // hide unrendered math
+        + '.chatgpt-modal p { font-size: 1.115rem ; margin-left: 4px } ' // chatgpt.alert() msg
+        + '.chatgpt-modal button { ' // chatgpt.alert() buttons
+            + 'padding: 8px 15px !important ; border-radius: 0 !important ; border: 2px solid black !important } '
     document.head.appendChild(braveGPTstyle) // append style to <head>
 
     // Create BraveGPT container & add id/classes
