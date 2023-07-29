@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.0.3
+// This library is a condensed version of chatgpt.js v2.0.4
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -334,7 +334,7 @@ const chatgpt = {
     },
 
     scrollToBottom: function() {
-        try { document.querySelector('button[class*="cursor"]').click(); }
+        try { document.querySelector('button[class*="cursor"][class*="bottom"]').click(); }
         catch (error) { console.error('🤖 chatgpt.js >> ', error); }
     },
 
