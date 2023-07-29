@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.7.28.5
+// @version             2023.7.28.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -60,7 +60,7 @@
 
     function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
     function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
-    function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') }
+    function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
 
     function updateCheck() {
 
@@ -199,14 +199,17 @@
                               'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
                           function futurepedia() { safeWindowOpen(
                               'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review') }],
-                    '', 500) } // width
-                ]
-            )
+                    '', 500) }, // Review modal width
+                    function githubSource() { safeWindowOpen(config.ghRepoURL) },
+                ], '', 519) // About modal width
 
-            // Re-format buttons to include emojis
+            // Re-format buttons to include emojis + re-case + hide 'Dismiss'
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
                 if (/updates/i.test(button.textContent)) button.textContent = '🚀 Check for Updates'
-                else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review' }
+                else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
+                else if (/github/i.test(button.textContent)) button.textContent = '🖥️ GitHub source'
+                else button.style.display = 'none' // hide Dismiss button
+            }
         }))
     }
 
