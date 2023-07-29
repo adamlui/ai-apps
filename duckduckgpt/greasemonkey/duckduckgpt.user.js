@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.7.28.4
+// @version             2023.7.28.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -60,6 +60,7 @@
 
     function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
     function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
+    function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') }
 
     function updateCheck() {
 
@@ -192,12 +193,12 @@
                 [ // buttons
                     function checkForUpdates() { updateCheck.fromMenu = true ; updateCheck() },
                     function leaveAReview() { chatgpt.alert('Choose a platform:', '',
-                        [ function greasyFork() { window.open(
-                              'https://duckduckgpt.com/userscript/review', '_blank', 'noopener') },
-                          function productHunt() { window.open(
-                              'https://www.producthunt.com/products/duckduckgpt/reviews/new', '_blank', 'noopener') },
-                          function futurepedia() { window.open(
-                              'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review', '_blank', 'noopener') }],
+                        [ function greasyFork() { safeWindowOpen(
+                            'https://duckduckgpt.com/userscript/review') },
+                          function productHunt() { safeWindowOpen(
+                              'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
+                          function futurepedia() { safeWindowOpen(
+                              'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review') }],
                     '', 500) } // width
                 ]
             )
