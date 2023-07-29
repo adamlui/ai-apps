@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.29
+// @version             2023.7.29.1
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -248,7 +248,7 @@
     const config = {
         prefix: 'chatgptAutoContinue', appSymbol: '≫', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-continue',
-        greasyForkURL: 'https://greasyfork.org/en/scripts/466789-chatgpt-auto-continue' }
+        greasyForkURL: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue' }
     config.updateURL = config.greasyForkURL + '/code/script.meta.js'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer')
