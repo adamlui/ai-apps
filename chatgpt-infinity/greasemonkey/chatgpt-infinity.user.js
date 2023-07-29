@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.28
+// @version             2023.7.29
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -237,9 +237,10 @@
     // Init config
     const config = {
         prefix: 'chatgptInfinity', appSymbol: '∞', userLanguage: chatgpt.getUserLanguage(),
-        ghRepoURL: 'https://github.com/adamlui/chatgpt-infinity',
-        updateURL: 'https://greasyfork.org/scripts/465051/code/chatgpt-infinity.meta.js' }
-    config.assetHostURL = config.ghRepoURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
+        gitHubURL: 'https://github.com/adamlui/chatgpt-infinity',
+        greasyForkURL: 'https://greasyfork.org/scripts/465051-chatgpt-infinity' }
+    config.updateURL = config.greasyForkURL + '/code/script.meta.js'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('autoScrollDisabled', 'lastCheckTime', 'replyInterval', 'replyLanguage',
         'replyTopic', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
@@ -281,7 +282,7 @@
     } else registerMenu() // create functional menu
 
     // Check for updates (1x/1w)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) updateCheck()
 
     // Add listener to auto-disable Infinity Mode
     if (document.hidden !== undefined) { // ...if Page Visibility API supported
@@ -341,8 +342,9 @@
 
     function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
     function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
+    function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
 
-    function checkForUpdates() {
+    function updateCheck() {
 
         // Fetch latest meta
         const currentVer = GM_info.script.version
@@ -351,28 +353,28 @@
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
-                if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
+                if (!updateCheck.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
                     const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
                     const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
-                        if (!checkForUpdates.fromMenu) // if auto-alert...
+                        if (!updateCheck.fromMenu) // if auto-alert...
                             saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
                         const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`, // title
                             `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
-                                    + 'href="' + config.ghRepoURL + '/commits/main/greasemonkey/'
+                                    + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
                                     + '>' + messages.link_viewChanges + '</a>',
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
                                 ).onclose = () => location.reload() },
-                            !checkForUpdates.fromMenu ? // checkbox if auto-alert
+                            !updateCheck.fromMenu ? // checkbox if auto-alert
                                 function dontShowAgainUntilNextUpdate() {
                                     saveSetting('skipNextUpdate', !config.skipNextUpdate)
                                     saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false)
@@ -391,7 +393,7 @@
                         return
                 }}
 
-                if (checkForUpdates.fromMenu) { // alert to no update found
+                if (updateCheck.fromMenu) { // alert to no update found
                     alert(`${ messages.alert_upToDate }!`, // title
                         `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
     }}})}
@@ -490,9 +492,50 @@
                     break
         }}}))
 
-        // Add command to check for updates
-        const ucLabel = '🚀 ' + messages.menuLabel_updateCheck
-        menuIDs.push(GM_registerMenuCommand(ucLabel, () => { checkForUpdates.fromMenu = true ; checkForUpdates() }))
+        // Add command to launch About modal
+        menuIDs.push(GM_registerMenuCommand('💡 About ' + messages.appName, async () => {
+
+            // Get chatgpt.js version
+            const scriptMeta = await new Promise(resolve => {
+                GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+                    headers: { 'Cache-Control': 'no-cache' }, onload: resolve
+            })})
+            const chatgptJSver = /chatgpt-([\d\.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
+
+            // Show alert
+            const headingStyle = 'font-size: 1.25rem ; font-style: italic'
+            const pStyle = 'position: relative ; left: 3px'
+            const pBrStyle = 'position: relative ; left: 12px'
+            const aboutAlertID = alert(
+                messages.appName, // title
+                `<span style="${ headingStyle }"><b>Version</b>: </span>`
+                    + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
+                + `<span style="${ headingStyle }"><b>Powered by</b>: </span>`
+                    + `<span style="${ pStyle }"><a href="https://chatgpt.js.org" target="_blank" rel="noopener">`
+                    + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
+                + `<span style="${ headingStyle }"><b>Source code</b>:</span>\n`
+                    + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
+                    + config.gitHubURL + '</a></span>',
+                [ // buttons
+                    function checkForUpdates() { updateCheck.fromMenu = true ; updateCheck() },
+                    function leaveAReview() { // show new modal
+                        const reviewAlertID = chatgpt.alert('Choose a platform:', '',
+                            [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
+                              function productHunt() { safeWindowOpen(
+                                  'https://www.producthunt.com/products/chatgpt-infinity/reviews/new') }])
+                        document.getElementById(reviewAlertID).querySelector('button')
+                            .style.display = 'none' } // hide Dismiss button
+                ]
+            )
+
+            // Re-format buttons to include emojis + re-case + hide Dismiss button
+            for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
+                if (/updates/i.test(button.textContent)) button.textContent = '🚀 Check for Updates'
+                else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
+                else if (/github/i.test(button.textContent)) button.textContent = '🖥️ GitHub source'
+                else button.style.display = 'none' // hide Dismiss button
+            }
+        }))
 
     }
 
