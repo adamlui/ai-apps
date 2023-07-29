@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.26
+// @version             2023.7.28
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -61,7 +61,7 @@
     function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
     function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
 
-    function checkForUpdates() {
+    function updateCheck() {
 
         // Fetch latest meta
         const currentVer = GM_info.script.version
@@ -70,14 +70,14 @@
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
-                if (!checkForUpdates.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
+                if (!updateCheck.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
                     return // exit comparison if past auto-alert hidden
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
                     const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
                     const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
-                        if (!checkForUpdates.fromMenu) // if auto-alert...
+                        if (!updateCheck.fromMenu) // if auto-alert...
                             saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
@@ -91,7 +91,7 @@
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
                                 ).onclose = () => location.reload() },
-                            !checkForUpdates.fromMenu ? // checkbox if auto-alert
+                            !updateCheck.fromMenu ? // checkbox if auto-alert
                                 function skipThisVersion() {
                                     saveSetting('skipNextUpdate', !config.skipNextUpdate)
                                     saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false)
@@ -100,7 +100,7 @@
                         return
                 }}
 
-                if (checkForUpdates.fromMenu) // alert to no update found
+                if (updateCheck.fromMenu) // alert to no update found
                     alert('Up-to-date!', `DuckDuckGPT (v${ currentVer }) is up-to-date!`)
     }})}
 
@@ -173,9 +173,37 @@
                     break
         }}}))
 
-        // Add command to check for updates
-        const ucLabel = '🚀 Check for Updates'
-        menuIDs.push(GM_registerMenuCommand(ucLabel, function() { checkForUpdates.fromMenu = true ; checkForUpdates() }))
+        // Add command to launch About modal
+        menuIDs.push(GM_registerMenuCommand('💡 About DuckDuckGPT', async () => {
+
+            // Get chatgpt.js version
+            const scriptMeta = await new Promise(resolve => {
+                GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+                    headers: { 'Cache-Control': 'no-cache' }, onload: resolve
+            })})
+            const chatgptVer = /chaweftgpt-([\d\.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
+
+            // Show alert
+            const aboutAlertID = chatgpt.alert(
+                '🤖 DuckDuckGPT', // title
+                'Version: ' + GM_info.script.version + '\nPowered by: ' // msg
+                    + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
+                    + ( chatgptVer ? ( ' v' + chatgptVer ) : '' ),
+                [ // buttons
+                    function checkForUpdates() { updateCheck.fromMenu = true ; updateCheck() },
+                    function leaveAReview() { chatgpt.alert('Choose a platform', '',
+                        [ function greasyFork() { window.open(
+                            'https://duckduckgpt.com/userscript/review', '_blank', 'noopener') },
+                          function productHunt() { window.open(
+                            'https://www.producthunt.com/products/duckduckgpt/reviews/new', '_blank', 'noopener') }])}
+                ]
+            )
+
+            // Re-format buttons to include emojis
+            for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
+                if (/updates/i.test(button.textContent)) button.textContent = '🚀 Check for Updates'
+                else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review' }
+        }))
     }
 
     // Define FEEDBACK functions
@@ -522,7 +550,7 @@
     }
 
     // Check for updates (1x/1w)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) checkForUpdates()
+    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) updateCheck()
 
     // Create DDG style tweaks
     const tweaksStyle = document.createElement('style')
@@ -561,7 +589,8 @@
         + '.katex-html { display: none } ' // hide unrendered math
         + '.chatgpt-modal h2 { margin: 0 ; padding: 0 } ' // shrink margin/padding around update alert title
         + '.chatgpt-modal p { margin: -8px 0 -9px ; font-size: 1.25rem } ' // position/size update alert msg
-        + '.chatgpt-modal button { cursor: pointer } ' // add finger to update alert button hovers
+        + '.chatgpt-modal button { ' +  // chatgpt.alert() buttons
+            'padding: 8px 15px !important ; cursor: pointer ; border-radius: 0 !important ; text-transform: uppercase } '
         + '.chatgpt-modal button:hover { color: white !important } ' // color text white on update alert button hovers
         + '.chatgpt-modal div[class*=checkbox] label { position: relative ; bottom: -0.1857rem ; left: -2px } ' // position skip update checkbox
     )
