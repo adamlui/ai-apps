@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.28.1
+// @version             2023.7.28.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -34,7 +34,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@452481712beb19004cdee26124beec7a6d7ce24f/dist/chatgpt-2.0.2.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@85755473273d5b746dcae1200f29c50c852586f7/dist/chatgpt-2.0.3.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -191,11 +191,14 @@
                     + ( chatgptVer ? ( ' v' + chatgptVer ) : '' ),
                 [ // buttons
                     function checkForUpdates() { updateCheck.fromMenu = true ; updateCheck() },
-                    function leaveAReview() { chatgpt.alert('Choose a platform', '',
+                    function leaveAReview() { chatgpt.alert('Choose a platform:', '',
                         [ function greasyFork() { window.open(
                               'https://duckduckgpt.com/userscript/review', '_blank', 'noopener') },
                           function productHunt() { window.open(
-                              'https://www.producthunt.com/products/duckduckgpt/reviews/new', '_blank', 'noopener') }])}
+                              'https://www.producthunt.com/products/duckduckgpt/reviews/new', '_blank', 'noopener') },
+                          function futurepedia() { window.open(
+                              'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review', '_blank', 'noopener') }],
+                    '', 500) } // width
                 ]
             )
 
