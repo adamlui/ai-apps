@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.7.29.1
+// @version             2023.7.29.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -185,23 +185,25 @@
             const chatgptJSver = /chatgpt-([\d\.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
 
             // Show alert
-            const aboutAlertID = chatgpt.alert(
-                '🤖 DuckDuckGPT', // title
-                'Version: ' + GM_info.script.version + '\nPowered by: ' // msg
+            const aboutAlertID = alert(
+                'DuckDuckGPT', // title
+                ' Version: ' + GM_info.script.version + '\n Powered by: ' // msg
                     + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                     + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ),
                 [ // buttons
                     function checkForUpdates() { updateCheck.fromMenu = true ; updateCheck() },
                     function githubSource() { safeWindowOpen(config.ghRepoURL) },
-                    function leaveAReview() { chatgpt.alert('Choose a platform:', '',
-                        [ function greasyFork() { safeWindowOpen(
-                            'https://duckduckgpt.com/userscript/review') },
-                          function productHunt() { safeWindowOpen(
-                              'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
-                          function futurepedia() { safeWindowOpen(
-                              'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review') }],
-                    '', 500) }], // Review modal width
-                '', 519) // About modal width
+                    function leaveAReview() {
+                        reviewAlertID = chatgpt.alert('Choose a platform:', '',
+                            [ function greasyFork() { safeWindowOpen(
+                                'https://duckduckgpt.com/userscript/review') },
+                              function productHunt() { safeWindowOpen(
+                                  'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
+                              function futurepedia() { safeWindowOpen(
+                                  'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review') }])
+                        document.getElementById(reviewAlertID).querySelectorAll('button')[0]
+                            .style.display = 'none' } // hide Dismiss button
+                ], '', 524) // About modal width
 
             // Re-format buttons to include emojis + re-case + hide 'Dismiss'
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
@@ -595,9 +597,10 @@
         + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
         + '.katex-html { display: none } ' // hide unrendered math
         + '.chatgpt-modal h2 { margin: 0 ; padding: 0 } ' // shrink margin/padding around update alert title
-        + '.chatgpt-modal p { margin: -8px 0 -9px ; font-size: 1.25rem } ' // position/size update alert msg
-        + '.chatgpt-modal button { ' +  // chatgpt.alert() buttons
-            'padding: 8px 15px !important ; cursor: pointer ; border-radius: 0 !important ; text-transform: uppercase } '
+        + '.chatgpt-modal p { margin: -8px 0 -9px 4px ; font-size: 1.55rem } ' // position/size update alert msg
+        + '.chatgpt-modal button { ' // chatgpt.alert() buttons
+            + 'padding: 8px 15px !important ; cursor: pointer ; border-radius: 0 !important ; '
+            + 'text-transform: uppercase ; border: 2px solid black !important } '
         + '.chatgpt-modal button:hover { color: white !important } ' // color text white on update alert button hovers
         + '.chatgpt-modal div[class*=checkbox] label { position: relative ; bottom: -0.1857rem ; left: -2px } ' // position skip update checkbox
     )
