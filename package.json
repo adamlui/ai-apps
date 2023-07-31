@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "eslint": "^8.45.0"
+    "eslint": "^8.46.0"
   },
   "dependencies": {
     "husky": "^8.0.3"
