@@ -145,8 +145,27 @@ If you've tested the userscript to work in a browser not listed above, simply cr
 
 <div align="center">
 
-<a href="https://chatgptwidescreen.com/chrome"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a><a href="https://chatgptwidescreen.com/edge"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-edge-button.png"></a><a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-userscript-button.png"></a>
+<a href="https://chatgptwidescreen.com/chrome">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.webp">
+        <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png">
+    </picture>
+</a>
+<a href="https://chatgptwidescreen.com/edge">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-edge-button.webp">
+        <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-edge-button.png">
+    </picture>
+</a>
+<a href="https://chatgptwidescreen.com/greasyfork">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-userscript-button.webp">
+        <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-userscript-button.png">
+    </picture>
+</a>
+
 <br>
+
 [Discuss](https://chatgptwidescreen.com/discussions) / 
 [More ChatGPT add-ons](https://github.com/adamlui/chatgpt-apps)
 
