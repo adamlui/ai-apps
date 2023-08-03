@@ -219,12 +219,12 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.31
+// @version             2023.8.2
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@794614321da08c1a577090bfe3f3c88291357ca9/dist/chatgpt-2.0.5.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@0ccfc9e6acfcc24f864b233199f811316cfcd136/dist/chatgpt-2.0.6.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -286,13 +286,14 @@
     if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) updateCheck()
 
     // Observe DOM for need to continue generating response
-    const continueObserver = new MutationObserver((mutationsList) => {
-        for (const mutation of mutationsList) {
-            if (mutation.type === 'childList') {
-                for (const addedNode of mutation.addedNodes) {
-                    if (addedNode.nodeName === 'BUTTON' && addedNode.innerHTML.includes('Continue generating')) {
-                        addedNode.click()
-    }}}}}) ; continueObserver.observe(document, { childList: true, subtree: true })
+    const continueObserver = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            if (mutation.attributeName === 'style' && mutation.target.style.opacity === '1') {
+                document.querySelectorAll('button').forEach(button => {
+                    if (button.textContent.includes('Continue generating')) {
+                        button.click(); notify('Chat Auto-Continued', 'bottom-right')
+    }})}})})
+    continueObserver.observe(document, { attributes: true, subtree: true })
 
     // Notify of status on load
     if (!config.notifHidden) notify(messages.mode_autoContinue + ': ON')
