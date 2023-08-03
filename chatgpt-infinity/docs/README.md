@@ -2,7 +2,12 @@
 <h5>English | <a href="zh-cn#readme">简体中文</a></h5>
 </div>
 
-![](../chrome/media/images/tiles/marquee-promo-tile-1400x560.png)
+<picture>
+    <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
+    <img src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+</picture>
+
+<p>
 
 <div align="center">
 
@@ -16,9 +21,24 @@
 
 <br>
 
-<a href="https://chatgptinfinity.com/chrome" target="_blank"><img height=60 width=auto src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-square-light.png"></a>
-<a href="https://chatgptinfinity.com/edge" target="_blank"><img height=60 width=auto src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png" height=44px width=auto></a>
-<a href="https://chatgptinfinity.com/greasyfork"><img height=60 width=auto src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
+<a href="https://chatgptinfinity.com/chrome" target="_blank">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.webp">
+        <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png">
+    </picture>
+</a>
+<a href="https://chatgptinfinity.com/edge" target="_blank">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.webp">
+        <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png">
+    </picture>
+</a>
+<a href="https://chatgptinfinity.com/greasyfork" target="_blank">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.webp">
+        <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png">
+    </picture>
+</a>
 
 </div>
 
@@ -28,7 +48,10 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-on-ss-zoomed-out.png">
+<picture>
+    <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-on-ss-zoomed-out.webp">
+    <img src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-on-ss-zoomed-out.png">
+</picture>
 
 </div>
 
@@ -54,8 +77,14 @@
 
 <div align="center">
 
-<img width=268 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/chrome-extension-pin-instructions.png">
-<img width=268 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/chrome-extension-menu.png">
+<picture>
+    <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/chrome-extension-pin-instructions.webp">
+    <img width=268 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/chrome-extension-pin-instructions.png">
+</picture>
+<picture>
+    <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/chrome-extension-menu.webp">
+    <img width=268 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/chrome-extension-menu.png">
+</picture>
 
 </div>
 
@@ -69,7 +98,12 @@
 
 <div align="center">
 
-![](https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-toggle.jpg)
+<picture>
+    <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-toggle.webp">
+    <img src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-toggle.jpg">
+</picture>
+
+<p>
 
 *NOTE: Additional settings can be accessed by clicking your userscript manager's toolbar icon*
 
@@ -83,7 +117,9 @@
 
 <a href="https://chatgpt.js.org">
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
+    <source type="image/webp" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.webp">
+    <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.webp">
+    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
     <img width=546 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
 </picture></a>
 <br /><br />
@@ -109,8 +145,27 @@ ChatGPT Infinity is compatible w/ the following browsers:
 
 <div align="center">
 
-<a href="https://chatgptinfinity.com/chrome"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-chrome-button.png"></a><a href="https://chatgptinfinity.com/edge"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-edge-button.png"></a><a href="https://chatgptinfinity.com/greasyfork"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-userscript-button.png"></a>
+<a href="https://chatgptinfinity.com/chrome">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-chrome-button.webp">
+        <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-chrome-button.png">
+    </picture>
+</a>
+<a href="https://chatgptinfinity.com/edge">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-edge-button.webp">
+        <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-edge-button.png">
+    </picture>
+</a>
+<a href="https://chatgptinfinity.com/greasyfork">
+    <picture>
+        <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-userscript-button.webp">
+        <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-userscript-button.png">
+    </picture>
+</a>
+
 <br>
+
 [Discuss](https://chatgptinfinity.com/discuss) / 
 [More ChatGPT add-ons](https://github.com/adamlui/chatgpt-apps)
 
