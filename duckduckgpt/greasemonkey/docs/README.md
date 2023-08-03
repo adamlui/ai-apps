@@ -11,7 +11,7 @@
 [![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/duckduckgpt?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/duckduckgpt/commits/main)
 [![](https://img.shields.io/codefactor/grade/github/kudoai/duckduckgpt?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/duckduckgpt)
-[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
+[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgpt.js.org)
 [![](https://img.shields.io/badge/Mentioned_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 
 <h3><b>DuckDuckGPT</b> brings the magic of ChatGPT to search results (powered by GPT-4!)</h3>
