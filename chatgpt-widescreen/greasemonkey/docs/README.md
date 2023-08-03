@@ -1,6 +1,6 @@
 <picture>
-    <source type="image/webp" srcset="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
-    <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+    <source type="image/webp" srcset="../../chrome/media/images/tiles/marquee-promo-tile-1400x560.webp">
+    <img src="../../chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
 </picture>
 
 <p>
