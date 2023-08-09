@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.9
+// @version             2023.8.9.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -367,8 +367,8 @@
         // Fetch latest meta
         const currentVer = GM_info.script.version
         GM.xmlHttpRequest({
-        	method: 'GET', url: config.updateURL + '?t=' + Date.now(),
-        	headers: { 'Cache-Control': 'no-cache' },
+            method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+            headers: { 'Cache-Control': 'no-cache' },
             onload: (response) => {
 
                 // Compare versions                
