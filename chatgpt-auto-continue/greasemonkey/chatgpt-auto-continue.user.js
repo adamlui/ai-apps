@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.2
+// @version             2023.8.9
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -249,9 +249,9 @@
         prefix: 'chatgptAutoContinue', appSymbol: '≫', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-continue',
         greasyForkURL: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue' }
-    config.updateURL = config.greasyForkURL + '/code/script.meta.js'
+    config.updateURL = config.greasyForkURL + '/code/chatgpt-auto-continue.meta.js'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer')
+    loadSetting('notifHidden')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -281,11 +281,8 @@
                                 separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     registerMenu() // create browser toolbar menu
 
-    // Check for updates (1x/1w)
-    await chatgpt.isLoaded()
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) updateCheck()
-
     // Observe DOM for need to continue generating response
+    await chatgpt.isLoaded()
     const continueObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             if (mutation.attributeName === 'style' && mutation.target.style.opacity === '1') {
@@ -308,20 +305,18 @@
 
         // Fetch latest meta
         const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => { saveSetting('lastCheckTime', Date.now())
+        GM.xmlHttpRequest({
+            method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+            headers: { 'Cache-Control': 'no-cache' },
+            onload: (response) => {
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
-                if (!updateCheck.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
-                    return // exit comparison if past auto-alert hidden
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
                     const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
                     const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
-                        if (!updateCheck.fromMenu) // if auto-alert...
-                            saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
                         const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`, // title
@@ -333,28 +328,12 @@
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
-                                ).onclose = () => location.reload() },
-                            !updateCheck.fromMenu ? // checkbox if auto-alert
-                                function dontShowAgainUntilNextUpdate() {
-                                    saveSetting('skipNextUpdate', !config.skipNextUpdate)
-                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false)
-                                } : ''
+                                ).onclose = () => location.reload() }
                         )
-
-                        // Localize button/checkbox labels if needed
-                        if (!config.userLanguage.startsWith('en')) {
-                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
-                            updateAlert.querySelector('label').textContent = ( // checkbox label
-                                `${ messages.alert_dontShowAgain } ${ messages.alert_untilNextVer }`)
-                            updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
-                            updateAlert.querySelectorAll('button')[0].textContent = messages.buttonLabel_dismiss
-                        }
-
                         return
                 }}
 
-                if (updateCheck.fromMenu) // alert to no update found
-                    alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
+                alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
     }})}
 
     // Define MENU functions
