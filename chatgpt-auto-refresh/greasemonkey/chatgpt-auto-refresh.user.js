@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.9
+// @version             2023.8.9.1
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @compatible          chrome
@@ -364,8 +364,8 @@
         // Fetch latest meta
         const currentVer = GM_info.script.version
         GM.xmlHttpRequest({
-        	method: 'GET', url: config.updateURL + '?t=' + Date.now(),
-        	headers: { 'Cache-Control': 'no-cache' },
+            method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+            headers: { 'Cache-Control': 'no-cache' },
             onload: (response) => {
 
                 // Compare versions
