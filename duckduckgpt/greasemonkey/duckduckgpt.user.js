@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.8.4
+// @version             2023.8.9
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -66,20 +66,18 @@
 
         // Fetch latest meta
         const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => { saveSetting('lastCheckTime', Date.now())
+        GM.xmlHttpRequest({
+            method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+            headers: { 'Cache-Control': 'no-cache' },
+            onload: (response) => {
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
-                if (!updateCheck.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
-                    return // exit comparison if past auto-alert hidden
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
                     const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
                     const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
-                        if (!updateCheck.fromMenu) // if auto-alert...
-                            saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
                         alert('Update available! 🚀',
@@ -87,22 +85,17 @@
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + '>' + messages.link_viewChanges + '</a>',
+                                    + '>View changes</a>',
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
                                 ).onclose = () => location.reload() },
-                            !updateCheck.fromMenu ? // checkbox if auto-alert
-                                function skipThisVersion() {
-                                    saveSetting('skipNextUpdate', !config.skipNextUpdate)
-                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false)
-                                } : '', 328 // width
+                            '', 328 // width
                         )
                         return
                 }}
 
-                if (updateCheck.fromMenu) // alert to no update found
-                    alert('Up-to-date!', `DuckDuckGPT (v${ currentVer }) is up-to-date!`)
+                alert('Up-to-date!', `DuckDuckGPT (v${ currentVer }) is up-to-date!`)
     }})}
 
     // Define MENU functions
@@ -191,7 +184,7 @@
                     + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                     + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ),
                 [ // buttons
-                    function checkForUpdates() { updateCheck.fromMenu = true ; updateCheck() },
+                    function checkForUpdates() { updateCheck() },
                     function githubSource() { safeWindowOpen(config.gitHubURL) },
                     function leaveAReview() {
                         const reviewAlertID = chatgpt.alert('Choose a platform:', '',
@@ -527,10 +520,9 @@
         prefix: 'ddgpt', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/duckduckgpt',
         greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt' }
-    config.updateURL = config.greasyForkURL + '/code/script.meta.js'
+    config.updateURL = config.greasyForkURL + '/code/duckduckgpt.meta.js'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('lastCheckTime', 'proxyAPIenabled', 'prefixEnabled', 'replyLanguage',
-        'fatterSidebar', 'skipNextUpdate', 'skippedVer', 'suffixEnabled')
+    loadSetting('proxyAPIenabled', 'prefixEnabled', 'replyLanguage', 'fatterSidebar', 'skippedVer', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const messages = [] ; registerMenu()
 
@@ -558,9 +550,6 @@
         suggestProxy: 'OpenAI API is not working. Try switching on Proxy Mode in toolbar',
         suggestOpenAI: 'Proxy API is not working. Try switching off Proxy Mode in toolbar'
     }
-
-    // Check for updates (1x/1w)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) updateCheck()
 
     // Create DDG style tweaks
     const tweaksStyle = document.createElement('style')
