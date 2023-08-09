@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.7.31.1
+// @version             2023.8.9
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -265,9 +265,9 @@
         prefix: 'chatgptAutoclear', appSymbol: '🕶️', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
         greasyForkURL: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history' }
-    config.updateURL = config.greasyForkURL + '/code/script.meta.js'
+    config.updateURL = config.greasyForkURL + '/code/autoclear-chatgpt-history.meta.js'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('autoclear', 'buttonHidden', 'lastCheckTime', 'notifHidden', 'skipNextUpdate', 'skippedVer', 'toggleHidden')
+    loadSetting('autoclear', 'buttonHidden', 'notifHidden', 'toggleHidden')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -297,9 +297,6 @@
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     let menuIDs = [] ; registerMenu() // create browser toolbar menu
-
-    // Check for updates (1x/1w)
-    if (!config.lastCheckTime || Date.now() - config.lastCheckTime > 4032000000) updateCheck()
 
     // Auto-clear chats if activated // 自动清除聊天是否激活
     await chatgpt.isLoaded()
@@ -369,20 +366,18 @@
 
         // Fetch latest meta
         const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(), headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => { saveSetting('lastCheckTime', Date.now())
+        GM.xmlHttpRequest({
+        	method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+        	headers: { 'Cache-Control': 'no-cache' },
+            onload: (response) => {
 
                 // Compare versions                
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
-                if (!updateCheck.fromMenu && config.skipNextUpdate && latestVer === config.skippedVer)
-                    return // exit comparison if past auto-alert hidden
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
                     const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
                     const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
-                        if (!updateCheck.fromMenu) // if auto-alert...
-                            saveSetting('skipNextUpdate', false) // ...reset hidden alert setting for fresh decision
 
                         // Alert to update
                         alert('Update available! 🚀', // title
@@ -390,23 +385,17 @@
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + '>' + messages.link_viewChanges + '</a>',
+                                    + '>View changes</a>',
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
-                                ).onclose = () => location.reload() },
-                            !updateCheck.fromMenu ? // checkbox if auto-alert
-                                function dontShowAgainUntilNextUpdate() {
-                                    saveSetting('skipNextUpdate', !config.skipNextUpdate)
-                                    saveSetting('skippedVer', config.skipNextUpdate ? latestVer : false)
-                                } : ''
+                                ).onclose = () => location.reload() }
                         )
                         return
                 }}
 
-                if (updateCheck.fromMenu) { // alert to no update found
-                    alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
-    }}})}
+                alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
+    }})}
 
     // Define MENU functions
 
@@ -467,7 +456,7 @@
                     + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                     + config.gitHubURL + '</a></span>',
                 [ // buttons
-                    function checkForUpdates() { updateCheck.fromMenu = true ; updateCheck() },
+                    function checkForUpdates() { updateCheck() },
                     function leaveAReview() { // show new modal
                         const reviewAlertID = chatgpt.alert('Choose a platform:', '',
                             [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
