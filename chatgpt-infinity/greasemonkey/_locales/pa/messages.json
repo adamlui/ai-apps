@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "ਕੋਈ ਵੇਰਵਾ ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ" },
   "alert_newerVer": { "message": "ਨੂੰ ਅੱਪਡੇਟ" },
   "alert_isAvail": { "message": "ਉਪਲੱਬਧ ਹੈ" },
-  "alert_dontShowAgain": { "message": "ਮੁੜ ਨਾ ਵੇਖਾਓ" },
-  "alert_untilNextVer": { "message": "ਅਗਲੇ ਅੱਪਡੇਟ ਤੱਕ" },
   "alert_upToDate": { "message": "ਨਵੀਨੀਕਰਨ" },
   "alert_isUpToDate": { "message": "ਨਵੀਨੀਕਰਨ" },
   "buttonLabel_update": { "message": "ਅੱਪਡੇਟ ਕਰੋ" },

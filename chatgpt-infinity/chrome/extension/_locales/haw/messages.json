@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "Loaʻa ka hōʻano hou" },
   "alert_newerVer": { "message": "He mea hou i" },
   "alert_isAvail": { "message": "loaʻa" },
-  "alert_dontShowAgain": { "message": "Mai hōʻike hou" },
-  "alert_untilNextVer": { "message": "a hiki i ka mea hou hou" },
   "alert_upToDate": { "message": "ʻikepili hou āpau" },
   "alert_isUpToDate": { "message": "he mea hou" },
   "buttonLabel_update": { "message": "Hōʻano hou" },

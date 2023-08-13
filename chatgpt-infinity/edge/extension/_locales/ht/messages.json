@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "Mizajou ki disponib" },
   "alert_newerVer": { "message": "Yon ajou nan" },
   "alert_isAvail": { "message": "ki disponib/à votre disposition/sont disponibles" },
-  "alert_dontShowAgain": { "message": "Pa Montre Ankò" },
-  "alert_untilNextVer": { "message": "jiskaske pwochen aktyalizasyon/jusqu 'à" },
   "alert_upToDate": { "message": "Mizajou/ajou/a jou/alamòd /monte a dat/le plus récent /à jour /moderne" },
   "alert_isUpToDate": { "message": "se mete ajou/est à jour" },
   "buttonLabel_update": { "message": "Update" },

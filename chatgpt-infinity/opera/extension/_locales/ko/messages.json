@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "업데이트 사용 가능" },
   "alert_newerVer": { "message": "업데이트 대상:" },
   "alert_isAvail": { "message": "사용가능" },
-  "alert_dontShowAgain": { "message": "다시 보지 않기" },
-  "alert_untilNextVer": { "message": "다음 업데이트까지" },
   "alert_upToDate": { "message": "최신 버전입니다" },
   "alert_isUpToDate": { "message": "최신판입니다." },
   "buttonLabel_update": { "message": "업데이트" },

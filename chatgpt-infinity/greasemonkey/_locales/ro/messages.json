@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "Actualizare disponibilă" },
   "alert_newerVer": { "message": "Actualizare" },
   "alert_isAvail": { "message": "este disponibil" },
-  "alert_dontShowAgain": { "message": "Nu mai afișa" },
-  "alert_untilNextVer": { "message": "până la următoarea actualizare" },
   "alert_upToDate": { "message": "Actualizat" },
   "alert_isUpToDate": { "message": "Actualizat" },
   "buttonLabel_update": { "message": "Actualizare" },

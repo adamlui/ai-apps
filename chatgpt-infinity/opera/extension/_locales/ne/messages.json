@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "कुनै अपडेट उपलब्ध छैन।" },
   "alert_newerVer": { "message": "यसमा अद्यावधिक गर्नुहोस्" },
   "alert_isAvail": { "message": "उपलब्ध छ" },
-  "alert_dontShowAgain": { "message": "फेरि नदेखाउनुहोस्" },
-  "alert_untilNextVer": { "message": "अर्को अद्यावधिक नभएसम्म" },
   "alert_upToDate": { "message": "अद्यावधिक गर्नुहोस्" },
   "alert_isUpToDate": { "message": "अद्यावधिक गर्नुहोस्" },
   "buttonLabel_update": { "message": "अद्यावधिक" },

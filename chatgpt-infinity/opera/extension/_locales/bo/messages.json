@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "རིམ་སྤར་བྱེད་རྒྱུ་འདུག" },
   "alert_newerVer": { "message": "རིམ་སྤར་བྱེད་བཞིན་པ" },
   "alert_isAvail": { "message": "ནང་འཇུག" },
-  "alert_dontShowAgain": { "message": "ནམ་ཡང་སྨྲ་མི་བྱ ། །" },
-  "alert_untilNextVer": { "message": "ཐེངས་རྗེས་མའི་བཟོ་བཅོས་ཟླ་ཚེས" },
   "alert_upToDate": { "message": "སྤོར་བ །" },
   "alert_isUpToDate": { "message": "ཡར་ངོའི་ཚེས་བཅུའི་དུས་སུ་" },
   "buttonLabel_update": { "message": "གསར་བསྒྱུར" },

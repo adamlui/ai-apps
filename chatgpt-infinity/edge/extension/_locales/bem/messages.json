@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "Update bali" },
   "alert_newerVer": { "message": "Update ku ya" },
   "alert_isAvail": { "message": "ifintu tafilipo" },
-  "alert_dontShowAgain": { "message": "Mwila show bio" },
-  "alert_untilNextVer": { "message": "shikakonka update" },
   "alert_upToDate": { "message": "Up--date ukulele" },
   "alert_isUpToDate": { "message": "shine shine up-date shine" },
   "buttonLabel_update": { "message": "Ica Update" },

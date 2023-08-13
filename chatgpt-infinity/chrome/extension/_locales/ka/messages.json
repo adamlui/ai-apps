@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "ხელმისაწვდომია განახლება" },
   "alert_newerVer": { "message": "Განახლება" },
   "alert_isAvail": { "message": "არ არის ხელმისაწვდომი" },
-  "alert_dontShowAgain": { "message": "მეორედ არ მაჩვენო" },
-  "alert_untilNextVer": { "message": "შემდეგ განახლებამდე" },
   "alert_upToDate": { "message": "განახლებულია" },
   "alert_isUpToDate": { "message": "არის განახლებული" },
   "buttonLabel_update": { "message": "განახლება" },
