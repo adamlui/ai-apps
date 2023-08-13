@@ -7,8 +7,6 @@
   "alert_updateAvail": { "message": "有可用更新" },
   "alert_newerVer": { "message": "有新版本可用" },
   "alert_isAvail": { "message": "可用" },
-  "alert_dontShowAgain": { "message": "不再显示" },
-  "alert_untilNextVer": { "message": "直到下次更新" },
   "buttonLabel_update": { "message": "更新" },
   "buttonLabel_dismiss": { "message": "忽略" },
   "link_viewChanges": { "message": "查看更改" }

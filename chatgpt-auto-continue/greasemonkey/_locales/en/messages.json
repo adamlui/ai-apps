@@ -7,8 +7,6 @@
   "alert_updateAvail": { "message": "Update available" },
   "alert_newerVer": { "message": "An update to" },
   "alert_isAvail": { "message": "is available" },
-  "alert_dontShowAgain": { "message": "Don't show again" },
-  "alert_untilNextVer": { "message": "until next update" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "View changes" }
