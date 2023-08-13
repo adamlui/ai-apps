@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.8.13
+// @version             2023.8.13.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -191,7 +191,7 @@
                 GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(),
                     headers: { 'Cache-Control': 'no-cache' }, onload: resolve
             })})
-            const chatgptJSver = /chatgpt-([\d\.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
+            const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
 
             // Show alert
             const aboutAlertID = alert(
