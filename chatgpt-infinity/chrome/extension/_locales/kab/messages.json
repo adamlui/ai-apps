@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Yella lqem" },
   "alert_newerVer": { "message": "Aleqqem i" },
   "alert_isAvail": { "message": "yella" },
+  "alert_dontShowAgain": { "message": "Ur y-id-sutur ara tikelt-nniḍen" },
+  "alert_untilNextVer": { "message": "almi d lqem i d-iteddun" },
   "alert_upToDate": { "message": "Leqqem" },
   "alert_isUpToDate": { "message": "yes, it 's update" },
   "buttonLabel_update": { "message": "Leqqem" },

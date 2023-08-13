@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Cusboonaysiinta waa la heli karaa" },
   "alert_newerVer": { "message": "Cusboonaysiinta" },
   "alert_isAvail": { "message": "waa la heli karaa" },
+  "alert_dontShowAgain": { "message": "Mar dambe ha soo bandhigin." },
+  "alert_untilNextVer": { "message": "ilaa update soo socda" },
   "alert_upToDate": { "message": "Ilaa taariiqda" },
   "alert_isUpToDate": { "message": "waa updated" },
   "buttonLabel_update": { "message": "Cusboonaysiinta" },

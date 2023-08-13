@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Достапна надградба" },
   "alert_newerVer": { "message": "Ажурирање на" },
   "alert_isAvail": { "message": "е достапен" },
+  "alert_dontShowAgain": { "message": "Не се појавувај повторно" },
+  "alert_untilNextVer": { "message": "до следното ажурирање" },
   "alert_upToDate": { "message": "Ажурираj" },
   "alert_isUpToDate": { "message": "е ажуриран" },
   "buttonLabel_update": { "message": "Ажурирај" },

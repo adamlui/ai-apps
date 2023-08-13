@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "اپڈیٹ دستیاب ہے" },
   "alert_newerVer": { "message": "کو اپ ڈیٹ کریں:" },
   "alert_isAvail": { "message": "دستیاب ہے." },
+  "alert_dontShowAgain": { "message": "اسے دوبارہ مت دکھائیں۔" },
+  "alert_untilNextVer": { "message": "اگلے اپ ڈیٹ تک:" },
   "alert_upToDate": { "message": "تازہ ترین" },
   "alert_isUpToDate": { "message": "uP TO DATE (اپ ٹو ڈیٹ)" },
   "buttonLabel_update": { "message": "اپ ڈیٹ " },

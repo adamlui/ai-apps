@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "آپدیت موجود است" },
   "alert_newerVer": { "message": "بروز رسانی" },
   "alert_isAvail": { "message": "موجوده" },
+  "alert_dontShowAgain": { "message": "دوباره نشان ندهید" },
+  "alert_untilNextVer": { "message": "تا آپدیت بعدی" },
   "alert_upToDate": { "message": "بروزرسانی" },
   "alert_isUpToDate": { "message": "به روز است" },
   "buttonLabel_update": { "message": "به‌روز‌رسانی" },

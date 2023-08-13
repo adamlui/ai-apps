@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "نوێکردنەوە بەردەستە" },
   "alert_newerVer": { "message": "Nûvekirinek ji bo" },
   "alert_isAvail": { "message": "heye" },
+  "alert_dontShowAgain": { "message": "Dubare nîşan nede" },
+  "alert_untilNextVer": { "message": "heta nûvekirina din" },
   "alert_upToDate": { "message": "نوێ، ھاوچەرخ، نو، تازە" },
   "alert_isUpToDate": { "message": "rojane ye" },
   "buttonLabel_update": { "message": "Rojane Bike" },

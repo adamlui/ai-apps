@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Aye so asi laso" },
   "alert_newerVer": { "message": "Yet ti be Update" },
   "alert_isAvail": { "message": "a yeke wara ni" },
+  "alert_dontShowAgain": { "message": "Don 't show me again na na na na" },
+  "alert_untilNextVer": { "message": "ti si na ngoi so a yeke sara tënë ti aye so" },
   "alert_upToDate": { "message": "A yeke sara si a yeke nzoni ti tene azo" },
   "alert_isUpToDate": { "message": "a yeke sara si aye ni aga nzoni" },
   "buttonLabel_update": { "message": "Aye so asi na yâ ti fini dunia" },

@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Azo atao ny manova" },
   "alert_newerVer": { "message": "Hanova ny vaovao" },
   "alert_isAvail": { "message": "azo atao" },
+  "alert_dontShowAgain": { "message": "Aza manaraka indray" },
+  "alert_untilNextVer": { "message": "hanohy amin'ny manaraka" },
   "alert_upToDate": { "message": "Famaritana" },
   "alert_isUpToDate": { "message": "mampihena" },
   "buttonLabel_update": { "message": "Vaovao farany" },

@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Päivitys saatavilla" },
   "alert_newerVer": { "message": "Päivitä" },
   "alert_isAvail": { "message": "on käytettävissä" },
+  "alert_dontShowAgain": { "message": "Älä näytä uudestaan" },
+  "alert_untilNextVer": { "message": "seuraavaan päivitykseen asti" },
   "alert_upToDate": { "message": "Ajan tasalla" },
   "alert_isUpToDate": { "message": "Ajan tasalla" },
   "buttonLabel_update": { "message": "Päivitä" },

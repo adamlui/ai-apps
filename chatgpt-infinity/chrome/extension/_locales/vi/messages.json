@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Cập nhật có sẵn" },
   "alert_newerVer": { "message": "bản cập nhật" },
   "alert_isAvail": { "message": "is available" },
+  "alert_dontShowAgain": { "message": "Đừng hiển thị lại" },
+  "alert_untilNextVer": { "message": "cho đê ́ n lâ ̀ n câ ̣ p" },
   "alert_upToDate": { "message": "cập nhật" },
   "alert_isUpToDate": { "message": "Cập nhật" },
   "buttonLabel_update": { "message": "Cập nhật" },

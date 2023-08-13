@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Frissítés érhető el" },
   "alert_newerVer": { "message": "Frissítés" },
   "alert_isAvail": { "message": "elérhető" },
+  "alert_dontShowAgain": { "message": "Ne mutasd meg újra" },
+  "alert_untilNextVer": { "message": "a következő frissítésig" },
   "alert_upToDate": { "message": "Aktuális" },
   "alert_isUpToDate": { "message": "naprakész" },
   "buttonLabel_update": { "message": "Frissítés" },

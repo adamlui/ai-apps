@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Ngā whakahōu e wātea ana" },
   "alert_newerVer": { "message": "He whakahou ki" },
   "alert_isAvail": { "message": "kei te wātea ahau" },
+  "alert_dontShowAgain": { "message": "Kaua e whakaatu ano" },
+  "alert_untilNextVer": { "message": "tae noa ki te whakahou e whai ake nei" },
   "alert_upToDate": { "message": "Ki runga ki te rā" },
   "alert_isUpToDate": { "message": "kei a koe i tenei wa" },
   "buttonLabel_update": { "message": "Whakahou" },

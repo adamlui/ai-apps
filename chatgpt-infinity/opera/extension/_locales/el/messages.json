@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Υπάρχει διαθέσιμη ενημέρωση" },
   "alert_newerVer": { "message": "Ενημέρωση" },
   "alert_isAvail": { "message": "Μη διαθέσιμο" },
+  "alert_dontShowAgain": { "message": "Να μην εμφανιστεί ξανά" },
+  "alert_untilNextVer": { "message": "μέχρι την επόμενη ενημέρωση" },
   "alert_upToDate": { "message": "Ενημερωμένο" },
   "alert_isUpToDate": { "message": " είναι ενήμερο." },
   "buttonLabel_update": { "message": "Ενημέρωση" },

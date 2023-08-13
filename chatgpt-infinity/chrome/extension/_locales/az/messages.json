@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Mövcud Güncelle" },
   "alert_newerVer": { "message": "Yenilənmə" },
   "alert_isAvail": { "message": "mövcud deyil" },
+  "alert_dontShowAgain": { "message": "Yenidən göstərmə" },
+  "alert_untilNextVer": { "message": "növbəti yeniləməyə qədər" },
   "alert_upToDate": { "message": "Güncəllə" },
   "alert_isUpToDate": { "message": "hər şey güncəldir" },
   "buttonLabel_update": { "message": "Yenilə" },

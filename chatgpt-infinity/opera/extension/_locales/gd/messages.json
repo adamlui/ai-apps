@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Chan eil ùrachadh ri fhaighinn" },
   "alert_newerVer": { "message": "Ùrachadh air" },
   "alert_isAvail": { "message": "ri fhaighinn" },
+  "alert_dontShowAgain": { "message": "Na seall seo a-rithist" },
+  "alert_untilNextVer": { "message": "gus an ath ùrachadh" },
   "alert_upToDate": { "message": "Up to date" },
   "alert_isUpToDate": { "message": "tha Updates" },
   "buttonLabel_update": { "message": "Ùraich" },

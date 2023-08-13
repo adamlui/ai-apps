@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "ការអាប់ដេតមាន" },
   "alert_newerVer": { "message": "អាប់ដេតទៅ" },
   "alert_isAvail": { "message": "មាន" },
+  "alert_dontShowAgain": { "message": "កុំបង្ហាញម្តងទៀត" },
+  "alert_untilNextVer": { "message": "រហូតដល់អាប់ដេតបន្ទាប់" },
   "alert_upToDate": { "message": "ធ្វើឲ្យ​ទាន់​សម័យ" },
   "alert_isUpToDate": { "message": "កំពុងអាប់ដេត" },
   "buttonLabel_update": { "message": "ធ្វើបច្ចុប្បន្នភាព" },

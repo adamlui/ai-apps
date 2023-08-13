@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Шинэчлэх (update) боломжтой" },
   "alert_newerVer": { "message": "Шинэчлэх" },
   "alert_isAvail": { "message": "нэвтрэх боломжтой" },
+  "alert_dontShowAgain": { "message": "Үгүй ээ" },
+  "alert_untilNextVer": { "message": "дараагийн шинэчлэх" },
   "alert_upToDate": { "message": "Дагалдах" },
   "alert_isUpToDate": { "message": "зорилго" },
   "buttonLabel_update": { "message": "Шинэчлэх" },

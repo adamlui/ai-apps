@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Mavjud yangilanishlar" },
   "alert_newerVer": { "message": "Yangilash" },
   "alert_isAvail": { "message": "mavjud." },
+  "alert_dontShowAgain": { "message": "Boshqa ko&#39;rsatma" },
+  "alert_untilNextVer": { "message": "keyingi yangilanishgacha" },
   "alert_upToDate": { "message": "Yangilash" },
   "alert_isUpToDate": { "message": "dolzarb hisoblanadi" },
   "buttonLabel_update": { "message": "Yangilash" },

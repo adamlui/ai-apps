@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "အသစ်မထွက်သေး" },
   "alert_newerVer": { "message": "သို့ အပ်ဒိတ်လုပ်ရန်" },
   "alert_isAvail": { "message": "ရရှိနိုင်ပါသည်" },
+  "alert_dontShowAgain": { "message": "ထပ်မပြပါနဲ့" },
+  "alert_untilNextVer": { "message": "နောက်ထပ် အပ်ဒိတ်မလုပ်မီအထိ" },
   "alert_upToDate": { "message": "အပ်ဒိတ်လုပ်ရန်" },
   "alert_isUpToDate": { "message": "up - to - date ဖြစ်သည်" },
   "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },

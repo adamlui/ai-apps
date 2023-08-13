@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "ಹೊಸ ಅಪ್ಡೇಟ್ ಲಭ್ಯವಿದೆ." },
   "alert_newerVer": { "message": "ಗೆ ಅಪ್ ‌ ಡೇಟ್ ಮಾಡಿ" },
   "alert_isAvail": { "message": "ಲಭ್ಯವಿದೆ" },
+  "alert_dontShowAgain": { "message": "“ಪುನಃ ತೋರಿಸಬೇಡಿ”" },
+  "alert_untilNextVer": { "message": "ಮುಂದಿನ ಅಪ್ ‌ ಡೇಟ್ ತನಕ" },
   "alert_upToDate": { "message": "ಅಪ್ ‌ ಡೇಟ್" },
   "alert_isUpToDate": { "message": "ಅಪ್ ಡೇಟ್" },
   "buttonLabel_update": { "message": "ನವೀಕರಿಸಿ" },

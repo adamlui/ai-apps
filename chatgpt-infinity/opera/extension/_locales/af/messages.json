@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Opdatering beskikbaar" },
   "alert_newerVer": { "message": "'n Opdatering na" },
   "alert_isAvail": { "message": "is beskikbaar" },
+  "alert_dontShowAgain": { "message": "moenie dit weer wys nie" },
+  "alert_untilNextVer": { "message": "tot die volgende opdatering" },
   "alert_upToDate": { "message": "Op datum" },
   "alert_isUpToDate": { "message": "die is up-to-date" },
   "buttonLabel_update": { "message": "Opdateer" },

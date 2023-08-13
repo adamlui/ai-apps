@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "ʻOku lava ke maʻu e fakamatala fakamuimuitaha" },
   "alert_newerVer": { "message": "Ko ha fakamatala fakamuimuitaha ki he" },
   "alert_isAvail": { "message": "ʻoku lava ke maʻu" },
+  "alert_dontShowAgain": { "message": "ʻOua ʻe toe ʻasi" },
+  "alert_untilNextVer": { "message": "kae ʻoua kuo maʻu e fakamatala fakamuimuitaha" },
   "alert_upToDate": { "message": "ʻO aʻu mai ki he ʻaho ni" },
   "alert_isUpToDate": { "message": "ʻOku aʻu ki he ʻaho ni" },
   "buttonLabel_update": { "message": "Fakamatala Fakamuimuitahá" },

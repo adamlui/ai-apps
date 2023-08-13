@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Der er en tilgængelig opdatering" },
   "alert_newerVer": { "message": "En opdatering til" },
   "alert_isAvail": { "message": "er tilgængelig" },
+  "alert_dontShowAgain": { "message": "Vis ikke dette igen" },
+  "alert_untilNextVer": { "message": "indtil næste opdatering" },
   "alert_upToDate": { "message": "Opdateret" },
   "alert_isUpToDate": { "message": "er opdateret" },
   "buttonLabel_update": { "message": "Opdatér" },

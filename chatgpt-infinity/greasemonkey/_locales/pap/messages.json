@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Update Disponibel" },
   "alert_newerVer": { "message": "Un update pa" },
   "alert_isAvail": { "message": "ta disponibel" },
+  "alert_dontShowAgain": { "message": "No mustra un biaha mas" },
+  "alert_untilNextVer": { "message": "te ku e próksimo update" },
   "alert_upToDate": { "message": "UPDATE" },
   "alert_isUpToDate": { "message": "tabata Update" },
   "buttonLabel_update": { "message": "Update" },

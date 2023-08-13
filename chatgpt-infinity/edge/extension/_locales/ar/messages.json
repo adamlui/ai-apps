@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "تحديث متوفر" },
   "alert_newerVer": { "message": "تحديث لـ" },
   "alert_isAvail": { "message": "متوفر" },
+  "alert_dontShowAgain": { "message": "لا تعرضه مجددًا" },
+  "alert_untilNextVer": { "message": "حتى التحديث التالي" },
   "alert_upToDate": { "message": "حديث، منته من أعماله، حتى تاريخه" },
   "alert_isUpToDate": { "message": "مُحدَّث" },
   "buttonLabel_update": { "message": "تحديث" },

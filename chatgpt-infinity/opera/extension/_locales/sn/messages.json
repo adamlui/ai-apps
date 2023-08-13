@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Kugadziridza kunowanikwa" },
   "alert_newerVer": { "message": "Update to kuti" },
   "alert_isAvail": { "message": "inowanika" },
+  "alert_dontShowAgain": { "message": "Usambofa wakazviratidza zvakare" },
+  "alert_untilNextVer": { "message": "kusvikira pakuvandudzwa kunotevera" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "yajaira Update" },
   "buttonLabel_update": { "message": "Gadzirisa" },

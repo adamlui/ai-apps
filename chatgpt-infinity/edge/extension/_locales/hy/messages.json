@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Թարմացումը հասանելի է" },
   "alert_newerVer": { "message": "Թարմացում ՝" },
   "alert_isAvail": { "message": "առկա է" },
+  "alert_dontShowAgain": { "message": "Այլևս ցույց մի տվեք" },
+  "alert_untilNextVer": { "message": "մինչև հաջորդ թարմացումը" },
   "alert_upToDate": { "message": "Թարմացված է" },
   "alert_isUpToDate": { "message": "այն արդիական է" },
   "buttonLabel_update": { "message": "Այժմեականացնել / Արդիականացնել" },

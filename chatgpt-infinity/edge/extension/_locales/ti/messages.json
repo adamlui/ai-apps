@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "ዝርከብ ምምሕያሽ" },
   "alert_newerVer": { "message": "ምምሕያሽ ናብ" },
   "alert_isAvail": { "message": "ክርከብ ይከኣል እዩ" },
+  "alert_dontShowAgain": { "message": "ደጊምካ ኣይትርአ" },
+  "alert_untilNextVer": { "message": "ክሳዕ ዚቕጽል ምምሕያሽ" },
   "alert_upToDate": { "message": "ኣቐዲምካ ምምሕያሽ" },
   "alert_isUpToDate": { "message": "እዋናዊ ትሕዝቶ" },
   "buttonLabel_update": { "message": "ኣሐድስ" },

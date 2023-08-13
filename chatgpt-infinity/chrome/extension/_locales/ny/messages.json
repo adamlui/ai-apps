@@ -26,6 +26,8 @@
   "alert_updateAvail": { "message": "Zosintha zilipo" },
   "alert_newerVer": { "message": "Zosintha kuti" },
   "alert_isAvail": { "message": "ipezeka" },
+  "alert_dontShowAgain": { "message": "Osaonanso zimenezo" },
+  "alert_untilNextVer": { "message": "mpaka zosintha zotsatirazi" },
   "alert_upToDate": { "message": "Zosintha Zatsopano" },
   "alert_isUpToDate": { "message": "patuakhali Patuakhali" },
   "buttonLabel_update": { "message": "Mfundo zazinsinsi" },
