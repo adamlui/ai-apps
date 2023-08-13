@@ -1,6 +1,6 @@
 '''
 Script:       translate-en-messages.py
-Version:      2023.7.14
+Version:      2023.8.13
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 URL:          https://github.com/adamlui/python-utils
@@ -20,8 +20,14 @@ def print_trunc(msg) : print(msg if len(msg) < terminal_width else msg[0:termina
 
 print('')
 
+# Prompt user for keys to ignore
+keys_to_ignore = []
+while True:
+    key = input('Enter key to ignore (or ENTER if done): ')
+    if not key : break ; keys_to_ignore.append(key)
+
 # Determine closest locales dir
-print_trunc(f'Searching for { locales_folder }...')
+print_trunc(f'\nSearching for { locales_folder }...')
 script_dir = os.path.abspath(os.path.dirname(__file__))
 for root, dirs, files in os.walk(script_dir): # search script dir recursively
     if locales_folder in dirs:
@@ -86,7 +92,11 @@ for lang_code in output_langs:
     stdout.flush()
     en_keys = list(en_messages.keys())
     fail_flags = ['INVALID TARGET LANGUAGE', 'MYMEMORY']
-    for key in en_keys:
+    for key in en_keys:        
+        if key in keys_to_ignore:            
+            translated_msg = en_messages[key]['message']
+            translated_msgs[key] = { 'message': translated_msg }
+            continue
         if key not in messages:
             original_msg = translated_msg = en_messages[key]['message']
             try:
