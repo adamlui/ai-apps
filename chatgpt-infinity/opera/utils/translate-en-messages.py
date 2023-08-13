@@ -1,6 +1,6 @@
 '''
 Script:       translate-en-messages.py
-Version:      2023.8.13
+Version:      2023.8.13.1
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 URL:          https://github.com/adamlui/python-utils
@@ -24,7 +24,8 @@ print('')
 keys_to_ignore = []
 while True:
     key = input('Enter key to ignore (or ENTER if done): ')
-    if not key : break ; keys_to_ignore.append(key)
+    if not key : break
+    keys_to_ignore.append(key)
 
 # Determine closest locales dir
 print_trunc(f'\nSearching for { locales_folder }...')
