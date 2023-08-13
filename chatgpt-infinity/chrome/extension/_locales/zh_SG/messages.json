@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "有可用的更新" },
   "alert_newerVer": { "message": "有一个更新版本" },
   "alert_isAvail": { "message": "可用" },
-  "alert_dontShowAgain": { "message": "不再显示" },
-  "alert_untilNextVer": { "message": "直到下次更新" },
   "alert_upToDate": { "message": "已更新" },
   "alert_isUpToDate": { "message": "是最新版本" },
   "buttonLabel_update": { "message": "更新" },

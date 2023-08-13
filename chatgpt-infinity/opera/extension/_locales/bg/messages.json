@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "Налице е актуализация" },
   "alert_newerVer": { "message": "Обнови" },
   "alert_isAvail": { "message": "е налична" },
-  "alert_dontShowAgain": { "message": "Не показвай това отново" },
-  "alert_untilNextVer": { "message": "до следващата актуализация" },
   "alert_upToDate": { "message": "Обновен" },
   "alert_isUpToDate": { "message": "е актуален" },
   "buttonLabel_update": { "message": "Актуализация" },

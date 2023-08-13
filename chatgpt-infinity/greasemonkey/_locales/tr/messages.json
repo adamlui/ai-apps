@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "Güncelleme uygun" },
   "alert_newerVer": { "message": "Güncelleme tarih" },
   "alert_isAvail": { "message": "geçerli" },
-  "alert_dontShowAgain": { "message": "Bir daha gösterme" },
-  "alert_untilNextVer": { "message": "%s sonraki güncellemeye kadar." },
   "alert_upToDate": { "message": "Güncel" },
   "alert_isUpToDate": { "message": "Güncel" },
   "buttonLabel_update": { "message": "Update" },

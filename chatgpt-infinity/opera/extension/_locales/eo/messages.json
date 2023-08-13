@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "Neniu priskribo disponebla" },
   "alert_newerVer": { "message": "Ĝisdatigo al" },
   "alert_isAvail": { "message": "estas disponebla" },
-  "alert_dontShowAgain": { "message": "Ne montri denove" },
-  "alert_untilNextVer": { "message": "ĝis la sekva ĝisdatigo" },
   "alert_upToDate": { "message": "Aktuala" },
   "alert_isUpToDate": { "message": "estas ĝisdata" },
   "buttonLabel_update": { "message": "Ĝisdatigi" },

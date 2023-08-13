@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "利用可能なアップデート" },
   "alert_newerVer": { "message": "に更新します" },
   "alert_isAvail": { "message": "利用可能" },
-  "alert_dontShowAgain": { "message": "ドント・ショー・アーゲイン" },
-  "alert_untilNextVer": { "message": "次回のアップデートまで" },
   "alert_upToDate": { "message": "最新" },
   "alert_isUpToDate": { "message": "最新だ" },
   "buttonLabel_update": { "message": "更新情報" },

@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "Ez dago azalpenik erabilgarri." },
   "alert_newerVer": { "message": "Eguneratze bat" },
   "alert_isAvail": { "message": "eskuragarri dago" },
-  "alert_dontShowAgain": { "message": "Ez erakutsi berriro" },
-  "alert_untilNextVer": { "message": "hurrengo eguneraketa arte" },
   "alert_upToDate": { "message": "Eguneratu" },
   "alert_isUpToDate": { "message": "Eguneratu" },
   "buttonLabel_update": { "message": "Eguneratu" },

@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "Avete il presente" },
   "alert_newerVer": { "message": "Un invito a un nuovo" },
   "alert_isAvail": { "message": "existimat" },
-  "alert_dontShowAgain": { "message": "Non inveniunt" },
-  "alert_untilNextVer": { "message": "un anno sfuggire" },
   "alert_upToDate": { "message": "Phyllus" },
   "alert_isUpToDate": { "message": "l 'est-" },
   "buttonLabel_update": { "message": "opus" },

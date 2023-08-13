@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "Sasisho lipo" },
   "alert_newerVer": { "message": "Taarifa ya" },
   "alert_isAvail": { "message": "inapatikana" },
-  "alert_dontShowAgain": { "message": "Usinionyeshe hii tena" },
-  "alert_untilNextVer": { "message": "hadi sasisho lijalo" },
   "alert_upToDate": { "message": "Imesasishwa" },
   "alert_isUpToDate": { "message": "imesasishwa" },
   "buttonLabel_update": { "message": "Sasisho" },

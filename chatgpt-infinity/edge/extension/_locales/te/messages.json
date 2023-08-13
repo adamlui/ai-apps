@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "ఎటువంటి నవీకరణ అందుబాటులోలేదు" },
   "alert_newerVer": { "message": "కు అప్ ‌ డేట్ చేయండి" },
   "alert_isAvail": { "message": "అందుబాటులో ఉంది" },
-  "alert_dontShowAgain": { "message": "మళ్లీ చూపించకు" },
-  "alert_untilNextVer": { "message": "తదుపరి అప్ ‌ డేట్ వరకు" },
   "alert_upToDate": { "message": "అప్ ‌ డేట్" },
   "alert_isUpToDate": { "message": "అప్ డేట్" },
   "buttonLabel_update": { "message": "అప్‌డేట్" },

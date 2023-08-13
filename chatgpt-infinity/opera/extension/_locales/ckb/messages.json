@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "نوێکردنەوە بەردەستە" },
   "alert_newerVer": { "message": "نوێکردنەوە بۆ" },
   "alert_isAvail": { "message": "بەردەستە" },
-  "alert_dontShowAgain": { "message": "جارێکی تر پیشانی مەدەنەوە.." },
-  "alert_untilNextVer": { "message": "تا دواین نوێکردنەوە" },
   "alert_upToDate": { "message": "نوێ، ھاوچەرخ، نو، تازە" },
   "alert_isUpToDate": { "message": "نوێ، ھاوچەرخ، نو، تازە" },
   "buttonLabel_update": { "message": "نوێکردنەوە" },

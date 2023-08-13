@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "Okwakamuva Kuyatholakala!" },
   "alert_newerVer": { "message": "Okwakamuva kokuthi" },
   "alert_isAvail": { "message": "iyatholakala" },
-  "alert_dontShowAgain": { "message": "Ungaphinde ubonise" },
-  "alert_untilNextVer": { "message": "kuze kube yisibuyekezo esilandelayo" },
   "alert_upToDate": { "message": "Okwakamuva" },
   "alert_isUpToDate": { "message": "isesikhathini" },
   "buttonLabel_update": { "message": "Buyekeza" },

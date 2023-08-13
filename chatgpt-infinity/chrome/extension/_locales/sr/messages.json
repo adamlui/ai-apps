@@ -26,8 +26,6 @@
   "alert_updateAvail": { "message": "Dostupna nadogradnja" },
   "alert_newerVer": { "message": "Ažuriranje za" },
   "alert_isAvail": { "message": "je dostupna" },
-  "alert_dontShowAgain": { "message": "Ne prikazuj opet" },
-  "alert_untilNextVer": { "message": "do sledećeg ažuriranja" },
   "alert_upToDate": { "message": "U toku" },
   "alert_isUpToDate": { "message": "je ažuran" },
   "buttonLabel_update": { "message": "Ažuriraj" },
