@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "अद्यतन उपलब्ध है" },
   "alert_newerVer": { "message": "एक अद्यतन उपलब्ध है" },
   "alert_isAvail": { "message": "उपलब्ध है" },
-  "alert_dontShowAgain": { "message": "फिर से न दिखाएं" },
-  "alert_untilNextVer": { "message": "अगले अद्यतन तक" },
   "alert_upToDate": { "message": "अद्यतित" },
   "alert_isUpToDate": { "message": "अद्यतित है" },
   "buttonLabel_update": { "message": "अद्यतन करें" },

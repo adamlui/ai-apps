@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Update None None" },
   "alert_newerVer": { "message": "Update to Nimbahera" },
   "alert_isAvail": { "message": "none None available." },
-  "alert_dontShowAgain": { "message": "Ntuzongere kugaragara." },
-  "alert_untilNextVer": { "message": "kino kino update" },
   "alert_upToDate": { "message": "Nimbahera To Dharuhera" },
   "alert_isUpToDate": { "message": "iki dunya arasinda" },
   "buttonLabel_update": { "message": "Update None None" },

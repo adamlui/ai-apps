@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "TSHEDIMOSETSO E E LENG" },
   "alert_newerVer": { "message": "Update kwa" },
   "alert_isAvail": { "message": "e teng" },
-  "alert_dontShowAgain": { "message": "O se di bontshe gape." },
-  "alert_untilNextVer": { "message": "go fitlha ka diphetogo tse di latelang" },
   "alert_upToDate": { "message": "Feleletše" },
   "alert_isUpToDate": { "message": "se ntse se le teng kajeno." },
   "buttonLabel_update": { "message": "Ntshwafatso" },

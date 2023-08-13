@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "アップデートが利用可能です" },
   "alert_newerVer": { "message": "次のアップデートが利用可能です" },
   "alert_isAvail": { "message": "が利用可能です" },
-  "alert_dontShowAgain": { "message": "次回のアップデートまで表示しない" },
-  "alert_untilNextVer": { "message": "次のアップデートまで" },
   "alert_upToDate": { "message": "最新です" },
   "alert_isUpToDate": { "message": "が最新です" },
   "buttonLabel_update": { "message": "アップデート" },

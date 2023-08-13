@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Доступне оновлення" },
   "alert_newerVer": { "message": "Доступне оновлення для" },
   "alert_isAvail": { "message": "доступно" },
-  "alert_dontShowAgain": { "message": "Більше не показувати" },
-  "alert_untilNextVer": { "message": "до наступного оновлення" },
   "alert_upToDate": { "message": "Актуально" },
   "alert_isUpToDate": { "message": "актуально" },
   "buttonLabel_update": { "message": "Оновити" },

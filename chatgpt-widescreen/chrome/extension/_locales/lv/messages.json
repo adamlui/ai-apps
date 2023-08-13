@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Pieejams jauninājums" },
   "alert_newerVer": { "message": "Atjauninājums uz" },
   "alert_isAvail": { "message": "ir pieejams!" },
-  "alert_dontShowAgain": { "message": "Vairs nerādīt" },
-  "alert_untilNextVer": { "message": "līdz nākamajai atjaunināšanai" },
   "alert_upToDate": { "message": "Aktuāls" },
   "alert_isUpToDate": { "message": "Aktuāls" },
   "buttonLabel_update": { "message": "Atjauninināt" },

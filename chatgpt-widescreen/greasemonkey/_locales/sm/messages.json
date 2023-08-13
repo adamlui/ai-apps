@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Fa'afouga o lo'o avanoa" },
   "alert_newerVer": { "message": "O se faafouga" },
   "alert_isAvail": { "message": "e avanoa" },
-  "alert_dontShowAgain": { "message": "Aua le toe faaali mai" },
-  "alert_untilNextVer": { "message": "seʻia oʻo i le isi faʻafouga" },
   "alert_upToDate": { "message": "Up i le taimi nei" },
   "alert_isUpToDate": { "message": "o loo i ai i le taimi nei" },
   "buttonLabel_update": { "message": "Fa'afouga" },

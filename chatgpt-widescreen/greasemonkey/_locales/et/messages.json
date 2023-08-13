@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Saadaval on uuendus" },
   "alert_newerVer": { "message": "Uuendus kuni" },
   "alert_isAvail": { "message": "on saadaval" },
-  "alert_dontShowAgain": { "message": "Ära kuva uuesti" },
-  "alert_untilNextVer": { "message": "kuni järgmise värskenduseni" },
   "alert_upToDate": { "message": "ajakohane" },
   "alert_isUpToDate": { "message": "ajakohane" },
   "buttonLabel_update": { "message": "Uuenda" },

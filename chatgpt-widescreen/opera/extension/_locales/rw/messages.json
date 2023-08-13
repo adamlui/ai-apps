@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Bihari" },
   "alert_newerVer": { "message": "Update ko bye bye" },
   "alert_isAvail": { "message": "bihari" },
-  "alert_dontShowAgain": { "message": "Kanda hano wongere ugaragaze" },
-  "alert_untilNextVer": { "message": "kugeza ubutaha" },
   "alert_upToDate": { "message": "Ibigezweho" },
   "alert_isUpToDate": { "message": "ni bigezweho" },
   "buttonLabel_update": { "message": "Kuvugurura" },

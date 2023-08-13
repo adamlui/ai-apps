@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Magamit ang pag-update" },
   "alert_newerVer": { "message": "Usa ka update alang sa" },
   "alert_isAvail": { "message": "available Ang" },
-  "alert_dontShowAgain": { "message": "Ayaw na usab pagpakita" },
-  "alert_untilNextVer": { "message": "hangtud sa sunod nga update" },
   "alert_upToDate": { "message": "UPDATE" },
   "alert_isUpToDate": { "message": "uPDATE Kini" },
   "buttonLabel_update": { "message": "Update" },

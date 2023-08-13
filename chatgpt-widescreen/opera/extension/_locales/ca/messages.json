@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Nova versió disponible!" },
   "alert_newerVer": { "message": "Una actualització a" },
   "alert_isAvail": { "message": "està disponible" },
-  "alert_dontShowAgain": { "message": "No volver a mostrar" },
-  "alert_untilNextVer": { "message": "fins a la propera actualització" },
   "alert_upToDate": { "message": "Actualitzat" },
   "alert_isUpToDate": { "message": "està actualitzat" },
   "buttonLabel_update": { "message": "Actualització" },

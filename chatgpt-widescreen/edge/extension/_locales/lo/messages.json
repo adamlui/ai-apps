@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "ອັບເດດທີ່ມີຢູ່" },
   "alert_newerVer": { "message": "ການປັບປຸງ" },
   "alert_isAvail": { "message": "ມີ" },
-  "alert_dontShowAgain": { "message": "ຢ່າສະແດງມັນອີກເທື່ອ ຫນຶ່ງ" },
-  "alert_untilNextVer": { "message": "ຈົນກວ່າການອັບເດດຕໍ່ໄປ" },
   "alert_upToDate": { "message": "ອັບເດດຫຼ້າສຸດ" },
   "alert_isUpToDate": { "message": "ແມ່ນ up-to-date" },
   "buttonLabel_update": { "message": "ອັບເດດ" },

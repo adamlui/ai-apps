@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "સુધારો ઉપલબ્ધ" },
   "alert_newerVer": { "message": "માં સુધારો" },
   "alert_isAvail": { "message": "ઉપલબ્ધ છે" },
-  "alert_dontShowAgain": { "message": "ફરીથા બતાવો નહિં (_D)" },
-  "alert_untilNextVer": { "message": "આગળના સુધારા સુધી" },
   "alert_upToDate": { "message": "સુધારો" },
   "alert_isUpToDate": { "message": "સુધારો" },
   "buttonLabel_update": { "message": "અદ્યતન બનાવો" },

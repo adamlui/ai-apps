@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "דערהייַנטיקן בנימצא" },
   "alert_newerVer": { "message": "אַ דערהייַנטיקן צו" },
   "alert_isAvail": { "message": "איז בנימצא" },
-  "alert_dontShowAgain": { "message": "צי ניט ווייַזן ווידער" },
-  "alert_untilNextVer": { "message": "ביז ווייַטער דערהייַנטיקן" },
   "alert_upToDate": { "message": "היינטצייטיג" },
   "alert_isUpToDate": { "message": "איז דערהייַנטיקט" },
   "buttonLabel_update": { "message": "דערהייַנטיקן" },

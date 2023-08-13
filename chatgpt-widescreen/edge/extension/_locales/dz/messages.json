@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "ད་ལྟོ་མཐུན་བཟོ་ནི།" },
   "alert_newerVer": { "message": "གསལ་བཀོད་འབད་ཡོད་པའི་ཐོ་ཡིག་ཚུ།" },
   "alert_isAvail": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
-  "alert_dontShowAgain": { "message": "བསྐྱར་བཀྲམ་སྟོན་འབད།" },
-  "alert_untilNextVer": { "message": "ཤུལ་མའི་ཐོ་ཡིག་འདི་ དུས་མཐུན་བཟོ་མ་ཚུགས།" },
   "alert_upToDate": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
   "alert_isUpToDate": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
   "buttonLabel_update": { "message": "གསར་བསྐྲུན་འབད་མ་ཚུགས།" },

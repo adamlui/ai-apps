@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Elýeterli ýygnaýyş" },
   "alert_newerVer": { "message": "Täzelen" },
   "alert_isAvail": { "message": "elýeterli" },
-  "alert_dontShowAgain": { "message": "Täze görkezme" },
-  "alert_untilNextVer": { "message": "ýene ýüklemege gerek" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "ýagtylyk" },
   "buttonLabel_update": { "message": "Häzirleşdir" },

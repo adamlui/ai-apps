@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Kemas kini tersedia" },
   "alert_newerVer": { "message": "Kemas kini kepada" },
   "alert_isAvail": { "message": "tersedia" },
-  "alert_dontShowAgain": { "message": "Jangan papar lagi" },
-  "alert_untilNextVer": { "message": "sehingga kemas kini seterusnya" },
   "alert_upToDate": { "message": "Kemas kini" },
   "alert_isUpToDate": { "message": "Kemas kini" },
   "buttonLabel_update": { "message": "Saya ingin membuat susulan" },

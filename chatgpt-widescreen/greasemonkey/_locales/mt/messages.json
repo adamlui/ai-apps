@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Aġġorna disponibbli" },
   "alert_newerVer": { "message": "Aġġornament għal" },
   "alert_isAvail": { "message": "huwa disponibbli" },
-  "alert_dontShowAgain": { "message": "Turihiex iktar." },
-  "alert_untilNextVer": { "message": "sal-aġġornament li jmiss" },
   "alert_upToDate": { "message": "ŻOMM RUĦEK AĠĠORNAT" },
   "alert_isUpToDate": { "message": "huwa aġġornat" },
   "buttonLabel_update": { "message": "Aġġornament" },

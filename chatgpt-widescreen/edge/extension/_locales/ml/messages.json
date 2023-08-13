@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "%d അപ്‌ഡേറ്റ് ലഭ്യമാണ്" },
   "alert_newerVer": { "message": "ഒരു അപ്‌ഡേറ്റ്" },
   "alert_isAvail": { "message": "ലഭ്യമാണ്" },
-  "alert_dontShowAgain": { "message": "ഇനി കാണിക്കരുത്" },
-  "alert_untilNextVer": { "message": "അടുത്ത അപ്ഡേറ്റ് വരെ" },
   "alert_upToDate": { "message": "ഇന്നുവരെയുള്ള_മാറ്റങ്ങള്‍_വരുത്തിയത്" },
   "alert_isUpToDate": { "message": "ഇന്നുവരെയുള്ള_മാറ്റങ്ങള്‍_വരുത്തിയത്" },
   "buttonLabel_update": { "message": "അപ്ഡേറ്റ് ചെയ്യുക" },

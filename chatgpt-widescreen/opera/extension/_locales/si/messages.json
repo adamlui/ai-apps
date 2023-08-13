@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "යාවත්කාලීන කිරීම ලබා ගත හැක" },
   "alert_newerVer": { "message": "වෙත යාවත්කාලීන කිරීමක්" },
   "alert_isAvail": { "message": "ලබා ගත හැක" },
-  "alert_dontShowAgain": { "message": "නැවත පෙන්වන්න එපා" },
-  "alert_untilNextVer": { "message": "ඊළඟ යාවත්කාලීන කිරීම දක්වා" },
   "alert_upToDate": { "message": "යාවත් කාළීන:" },
   "alert_isUpToDate": { "message": "යාවත් කාළීන:" },
   "buttonLabel_update": { "message": "යාවත් කාළීන:" },

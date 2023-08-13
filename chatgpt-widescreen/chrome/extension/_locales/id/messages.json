@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Pembaruan tersedia" },
   "alert_newerVer": { "message": "Pembaruan untuk" },
   "alert_isAvail": { "message": "Install package not available." },
-  "alert_dontShowAgain": { "message": "Jangan Perlihatkan Lagi" },
-  "alert_untilNextVer": { "message": "sampai pembaruan berikutnya" },
   "alert_upToDate": { "message": "Up - to - date" },
   "alert_isUpToDate": { "message": "sudah mutakhir" },
   "buttonLabel_update": { "message": "Pembaruan" },

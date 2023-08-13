@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "اوسمهالیزې شته" },
   "alert_newerVer": { "message": "تازه کولو لپاره تازه کړئ" },
   "alert_isAvail": { "message": "شتون لري" },
-  "alert_dontShowAgain": { "message": "بيا مه ورکوئ" },
-  "alert_untilNextVer": { "message": "تازه کړئ" },
   "alert_upToDate": { "message": "اوسمهالیز دي" },
   "alert_isUpToDate": { "message": "د پورته کولو وړ دی" },
   "buttonLabel_update": { "message": "تازه کړئ" },

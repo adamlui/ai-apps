@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "புதிய புதுப்பிப்பு கிடைக்கிறது!" },
   "alert_newerVer": { "message": "-க்கு ஒரு புதுப்பிப்பு" },
   "alert_isAvail": { "message": "கிடைக்கிறது" },
-  "alert_dontShowAgain": { "message": "மீண்டும் காண்பிக்க வேண்டாம்" },
-  "alert_untilNextVer": { "message": "அடுத்த புதுப்பிப்பு வரை" },
   "alert_upToDate": { "message": "அதனை இன் று வரை" },
   "alert_isUpToDate": { "message": "up-to-date" },
   "buttonLabel_update": { "message": "புதுப்பிக்கவும்" },

@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "עדכון זמין" },
   "alert_newerVer": { "message": "עדכון ל -" },
   "alert_isAvail": { "message": "%s זמין" },
-  "alert_dontShowAgain": { "message": "אל תציגי שוב" },
-  "alert_untilNextVer": { "message": "עד העדכון הבא" },
   "alert_upToDate": { "message": "מעודכן" },
   "alert_isUpToDate": { "message": "מעודכן" },
   "buttonLabel_update": { "message": "עדכון" },

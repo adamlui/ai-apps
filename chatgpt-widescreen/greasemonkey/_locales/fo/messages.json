@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Dagføring er klár" },
   "alert_newerVer": { "message": "Ein dagføring til" },
   "alert_isAvail": { "message": "er tøkt" },
-  "alert_dontShowAgain": { "message": "Sýn ikki aftur" },
-  "alert_untilNextVer": { "message": "til næsta uppdatering" },
   "alert_upToDate": { "message": "UPDATE" },
   "alert_isUpToDate": { "message": "uPDATE Sí Sí" },
   "buttonLabel_update": { "message": "Dagfør" },

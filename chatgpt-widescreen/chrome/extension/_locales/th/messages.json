@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "มีอัพเดตให้ใช้งาน" },
   "alert_newerVer": { "message": "อัพเดทไปยัง" },
   "alert_isAvail": { "message": "มี   ให้ใช้งานแล้ว" },
-  "alert_dontShowAgain": { "message": "อย่าแสดงอีก" },
-  "alert_untilNextVer": { "message": "จนกว่าจะอัพเดทครั้งต่อไป" },
   "alert_upToDate": { "message": "ถึงวันที่    .........................................  …………….." },
   "alert_isUpToDate": { "message": "เป็นปัจจุบัน" },
   "buttonLabel_update": { "message": "อัปเดต" },

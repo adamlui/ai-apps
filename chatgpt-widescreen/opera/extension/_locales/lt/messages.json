@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Yra naujinys" },
   "alert_newerVer": { "message": "Atnaujinimas į" },
   "alert_isAvail": { "message": "yra prieinama" },
-  "alert_dontShowAgain": { "message": "Daugiau neberodyti" },
-  "alert_untilNextVer": { "message": "iki kito atnaujinimo" },
   "alert_upToDate": { "message": "Naujausias" },
   "alert_isUpToDate": { "message": "atnaujintas" },
   "buttonLabel_update": { "message": "Naujinti" },

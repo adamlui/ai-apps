@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Güncelleme uygun" },
   "alert_newerVer": { "message": "Updaten naar" },
   "alert_isAvail": { "message": "is beschikbaar" },
-  "alert_dontShowAgain": { "message": "Niet meer tonen" },
-  "alert_untilNextVer": { "message": "Tot de volgende update!" },
   "alert_upToDate": { "message": "Bijgewerkt" },
   "alert_isUpToDate": { "message": "<PROTECTED> is geactualiseerd" },
   "buttonLabel_update": { "message": "Update" },

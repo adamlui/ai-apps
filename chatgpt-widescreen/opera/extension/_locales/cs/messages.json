@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Aktualizace k dispozici" },
   "alert_newerVer": { "message": "Aktualizace na" },
   "alert_isAvail": { "message": "je k dispozici" },
-  "alert_dontShowAgain": { "message": "Znovu nezobrazovat" },
-  "alert_untilNextVer": { "message": "do další aktualizace" },
   "alert_upToDate": { "message": "aktuální" },
   "alert_isUpToDate": { "message": "jenž se vyzná" },
   "buttonLabel_update": { "message": "Aktualizovat" },

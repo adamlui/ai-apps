@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "ލިބެން ހުރި އަޕްޑޭޓް" },
   "alert_newerVer": { "message": "އަޕްޑޭޓެއް" },
   "alert_isAvail": { "message": "ލިބެން ހުންނާނެ" },
-  "alert_dontShowAgain": { "message": "ދެން ނުދައްކާ" },
-  "alert_untilNextVer": { "message": "ދެން އަންނަ އަޕްޑޭޓާ ޖެހެންދެން" },
   "alert_upToDate": { "message": "އެންމެ ފަހުގެ ތާރީޚް" },
   "alert_isUpToDate": { "message": "އެންމެ ފަހުގެ" },
   "buttonLabel_update": { "message": "އަޕްޑޭޓް" },

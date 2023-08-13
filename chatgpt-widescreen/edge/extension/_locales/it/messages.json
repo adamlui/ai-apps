@@ -22,8 +22,6 @@
   "alert_updateAvail": { "message": "Aggiornamento disponibile" },
   "alert_newerVer": { "message": "Un aggiornamento per" },
   "alert_isAvail": { "message": "è disponibile" },
-  "alert_dontShowAgain": { "message": "Non mostrare più" },
-  "alert_untilNextVer": { "message": "fino al prossimo aggiornamento" },
   "alert_upToDate": { "message": "Aggiornato" },
   "alert_isUpToDate": { "message": "è aggiornato" },
   "buttonLabel_update": { "message": "Aggiorna" },
