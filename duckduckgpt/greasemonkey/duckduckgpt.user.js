@@ -14,7 +14,7 @@
 // @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4 提供支持!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.8.12
+// @version             2023.8.13
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -80,8 +80,9 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        alert('Update available! 🚀',
-                            `An update to DuckDuckGPT (v${ latestVer }) is available!   `
+                        alert(messages.alert_updateAvail + '! 🚀', // title
+                            messages.alert_newerVer + ' DuckDuckGPT v' + latestVer + ' '
+                                + messages.alert_isAvail + '!   '
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
@@ -95,7 +96,8 @@
                         return
                 }}
 
-                alert('Up-to-date!', `DuckDuckGPT (v${ currentVer }) is up-to-date!`)
+                alert(`${ messages.alert_upToDate }!`, // title
+                        `DuckDuckGPT (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
     }})}
 
     // Define MENU functions
@@ -105,70 +107,84 @@
     function registerMenu() {
         const menuIDs = [] // to store registered commands for removal while preserving order
         const state = {
-            symbol: ['✔️', '❌'], word: ['ON', 'OFF'], notifWord: ['Enabled', 'Disabled'],
+            symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
             separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
 
         // Add command to toggle proxy API mode
-        const pamLabel = state.symbol[+!config.proxyAPIenabled] + ' Proxy API Mode '
+        const pamLabel = state.symbol[+!config.proxyAPIenabled]
+                       + ' ' + messages.menuLabel_proxyAPImode + ' '
                        + state.separator + state.word[+!config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-            notify('Proxy Mode ' + state.notifWord[+!config.proxyAPIenabled])
+            notify(messages.menuLabel_proxyAPImode + ' '
+                + messages['state_' + ( config.proxyAPIenabled ? 'enabled' : 'disabled' )])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             location.reload() // re-send query using new endpoint
         }))
 
         // Add command to toggle prefix mode
-        const pmLabel = state.symbol[+!config.prefixEnabled] + ' Require "/" before query '
+        const pmLabel = state.symbol[+!config.prefixEnabled] + ' '
+                      + messages.menuLabel_require + ' "/" '
+                      + messages.menuLabel_beforeQuery + ' '
                       + state.separator + state.word[+!config.prefixEnabled]
         menuIDs.push(GM_registerMenuCommand(pmLabel, function() {
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
-            notify('Prefix Mode ' + state.notifWord[+!config.prefixEnabled])
+            notify(messages.alert_prefixMode + ' '
+                + messages['state_' + ( config.prefixEnabled ? 'enabled' : 'disabled' )])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
 
         // Add command to toggle suffix mode
-        const smLabel = state.symbol[+!config.suffixEnabled] + ' Require "?" after query '
+        const smLabel = state.symbol[+!config.suffixEnabled] + ' '
+                      + messages.menuLabel_require + ' "?" '
+                      + messages.menuLabel_afterQuery + ' '
                       + state.separator + state.word[+!config.suffixEnabled]
         menuIDs.push(GM_registerMenuCommand(smLabel, function() {
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify('Suffix Mode ' + state.notifWord[+!config.suffixEnabled])
+            notify(messages.alert_suffixMode + ' '
+                + messages['state_' + ( config.suffixEnabled ? 'enabled' : 'disabled' )])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
         // Add command to toggle fatter sidebar
-        const fsbLabel = ( config.fatterSidebar ? '🔛' : '↔️' ) + ' Fatter Sidebar'
+        const fsbLabel = ( config.fatterSidebar ? '🔛' : '↔️' ) + ' '
+                       + messages.menuLabel_fatterSidebar
                        + state.separator + state.word[+!config.fatterSidebar]
         menuIDs.push(GM_registerMenuCommand(fsbLabel, () => {
             saveSetting('fatterSidebar', !config.fatterSidebar)
             updateTweaksStyle()
             if (!config.notifHidden)
-                notify(`Fatter Sidebar: ${ state.word[+!config.fatterSidebar] }`)
+                notify(messages.menuLabel_fatterSidebar + ' '
+                    + messages['state_' + ( config.fatterSidebar ? 'enabled' : 'disabled' )])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to set reply language
-        const rlLabel = '🌐 Reply Language' + state.separator + config.replyLanguage
+        const rlLabel = '🌐 ' + messages.menuLabel_replyLanguage
+                      + state.separator + config.replyLanguage
         menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
             while (true) {
-                const replyLanguage = prompt('Update reply language:', config.replyLanguage)
+                const replyLanguage = prompt(
+                    messages.prompt_updateReplyLang + ':', config.replyLanguage)
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                    alert('Language updated!', 'DuckDuckGPT will reply in '
-                        + ( replyLanguage || 'your system language' ) + '.')
+                    alert(messages.alert_langUpdated + '!', // title
+                        'DuckDuckGPT ' + messages.alert_willReplyIn + ' '
+                            + ( replyLanguage || messages.alert_yourSysLang ) + '.')
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
 
         // Add command to launch About modal
-        menuIDs.push(GM_registerMenuCommand('💡 About DuckDuckGPT', async () => {
+        const aboutLabel = '💡 ' + messages.menuLabel_about + ' DuckDuckGPT'
+        menuIDs.push(GM_registerMenuCommand(aboutLabel, async () => {
 
             // Get chatgpt.js version
             const scriptMeta = await new Promise(resolve => {
@@ -180,14 +196,15 @@
             // Show alert
             const aboutAlertID = alert(
                 'DuckDuckGPT', // title
-                ' Version: ' + GM_info.script.version + '\n Powered by: ' // msg
+                ' ' + messages.alert_version + ': ' + GM_info.script.version + '\n '
+                    + messages.alert_poweredBy + ': '
                     + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                     + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ),
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
                     function githubSource() { safeWindowOpen(config.gitHubURL) },
                     function leaveAReview() {
-                        const reviewAlertID = chatgpt.alert('Choose a platform:', '',
+                        const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
                             [ function greasyFork() { safeWindowOpen(
                                   config.greasyForkURL + '/feedback#post-discussion') },
                               function productHunt() { safeWindowOpen(
@@ -200,9 +217,12 @@
 
             // Re-format buttons to include emojis + re-case + hide 'Dismiss'
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-                if (/updates/i.test(button.textContent)) button.textContent = '🚀 Check for Updates'
-                else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
-                else if (/github/i.test(button.textContent)) button.textContent = '🖥️ GitHub source'
+                if (/updates/i.test(button.textContent))
+                    button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+                else if (/review/i.test(button.textContent))
+                    button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+                else if (/github/i.test(button.textContent))
+                    button.textContent = '🖥️ ' + messages.buttonLabel_githubSrc
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
@@ -219,8 +239,8 @@
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     const ddgptConsole = {
-        info: function(msg) {console.info(config.appSymbol + ' DuckDuckGPT >> ' + msg)},
-        error: function(msg) {console.error(config.appSymbol + ' DuckDuckGPT >> ERROR: ' + msg)}
+        info: function(msg) { console.info(config.appSymbol + ' DuckDuckGPT >> ' + msg) },
+        error: function(msg) { console.error(config.appSymbol + ' DuckDuckGPT >> ERROR: ' + msg) }
     }
 
     function ddgptAlert(msg) {
@@ -229,7 +249,8 @@
             /waiting|loading/i.test(msg) ? // if alert involves loading, add class
                 '<p class="loading">' : '<p>') + ddgptAlerts[msg]
             + (ddgptAlerts[msg].includes('@') ? // if msg needs login link, add it
-                '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> (If issue persists, try activating Proxy Mode)</p>' : '</p>')
+                '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
+                    + '(' + messages.alert_ifIssuePersists + ')</p>' : '</p>')
     }
 
     // Define DDG UI functions
@@ -243,7 +264,7 @@
         try {
             const html = new DOMParser().parseFromString(resp, 'text/html')
             const title = html.querySelector('title')
-            return title.innerText === 'Just a moment...'
+            return title.innerText === messages.alert_justAmoment + '...'
         } catch (error) { return false }
     }
 
@@ -292,7 +313,7 @@
 
     // Define ANSWER functions
 
-    async function getShowReply(messages, callback) {
+    async function getShowReply(convo, callback) {
 
         // Initialize attempt properties
         if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []
@@ -316,8 +337,8 @@
 
         // Get answer from ChatGPT
         const data = JSON.stringify(
-            config.proxyAPIenabled ? { messages: messages, model: model }
-                                   : { action: 'next', messages: messages, model: model,
+            config.proxyAPIenabled ? { messages: convo, model: model }
+                                   : { action: 'next', messages: convo, model: model,
                                        parent_message_id: chatgpt.uuidv4(), max_tokens: 4000 })
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
@@ -339,7 +360,7 @@
             ddgptConsole.error(`Error calling ${ endpoint }. Trying another endpoint...`)
             getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
             getShowReply.attemptCnt++
-            getShowReply(messages, callback)
+            getShowReply(convo, callback)
         }
 
         function onLoadStart() { // process streams for unproxied TM users
@@ -411,7 +432,7 @@
                                 (async () => { // IIFE to use await
                                     proxyEndpoints[aigcfMapIndex][0] = (
                                         'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey())
-                                    getShowReply(messages, callback) // re-fetch reply
+                                    getShowReply(convo, callback) // re-fetch reply
                                 })()
 
                             } else { // use different endpoint or suggest OpenAI
@@ -460,16 +481,16 @@
 
         function handleSubmit(event) {
             event.preventDefault()
-            if (messages.length > 2) messages.splice(0, 2) // keep token usage maintainable
+            if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
             const prevReplyTrimmed = ddgptDiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length)
             const yourReply = replyBox.value + ' / Answer in ' + config.replyLanguage
             if (!config.proxyAPIenabled) {
-                messages.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
-                messages.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [yourReply] } })
+                convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
+                convo.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [yourReply] } })
             } else {
-                messages.push({ role: 'assistant', content: prevReplyTrimmed })
-                messages.push({ role: 'user', content: yourReply })
-            } getShowReply(messages)
+                convo.push({ role: 'assistant', content: prevReplyTrimmed })
+                convo.push({ role: 'user', content: yourReply })
+            } getShowReply(convo)
 
             // Remove listeners since they're re-added
             replyBox.removeEventListener('input', autosizeBox)
@@ -498,11 +519,11 @@
         const hostContainer = document.querySelector(isCenteredMode() ? '[data-area*="mainline"]' : '[class*="sidebar"]')
         hostContainer.prepend(ddgptDiv, ddgptFooter)
         const query = new URL(location.href).searchParams.get('q') + ' / Answer in ' + config.replyLanguage
-        messages.push(
+        convo.push(
             config.proxyAPIenabled ? { role: 'user', content: query }
                                    : { role: 'user', id: chatgpt.uuidv4(),
                                        content: { content_type: 'text', parts: [query] }})
-        getShowReply(messages)
+        getShowReply(convo)
     }
 
     // Define SYNC function
@@ -515,7 +536,7 @@
 
     // Run MAIN routine
 
-    // Init config/messages/menu
+    // Init config/convo/menu
     const config = {
         prefix: 'ddgpt', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/duckduckgpt',
@@ -524,12 +545,37 @@
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'replyLanguage', 'fatterSidebar', 'skippedVer', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    const messages = [] ; registerMenu()
+    const convo = []
 
     // Exit if prefix/suffix required but not present
     if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
         ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
             return }
+
+    // Define messages
+    const msgsLoaded = new Promise(resolve => {
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/'
+        const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
+        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        function onLoad(response) {
+            try { // to return localized messages.json
+                const messages = new Proxy(JSON.parse(response.responseText), {
+                    get(target, prop) { // remove need to ref nested keys
+                        if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
+                            return target[prop].message
+                }}}) ; resolve(messages)
+            } catch (error) { // if 404
+                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                    msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
+                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+            }
+        }
+    }) ; const messages = await msgsLoaded
+
+    registerMenu()
 
     // Init endpoints
     const openAIendpoints = {
@@ -540,15 +586,15 @@
 
     // Init alerts
     const ddgptAlerts = {
-        waitingResponse: 'Waiting for ChatGPT response...',
-        login: 'Please login @ ',
-        tooManyRequests: 'ChatGPT is flooded with too many requests. Try switching '
-            + ( config.proxyAPIenabled ? 'off' : 'on' ) + ' Proxy Mode in toolbar',
-        parseFailed: 'Failed to parse response JSON. Try switching '
-            + ( config.proxyAPIenabled ? 'off' : 'on' ) + ' Proxy Mode in toolbar',
-        checkCloudflare: 'Please pass Cloudflare security check @ ',
-        suggestProxy: 'OpenAI API is not working. Try switching on Proxy Mode in toolbar',
-        suggestOpenAI: 'Proxy API is not working. Try switching off Proxy Mode in toolbar'
+        waitingResponse: messages.alert_waitingResponse + '...',
+        login: messages.alert_login + ' @ ',
+        tooManyRequests: messages.alert_tooManyRequests + '. '
+            + messages['alert_suggest' + ( config.proxyAPIenabled ? 'OpenAI' : 'Proxy' )],
+        parseFailed: messages.alert_parseFailed + '. '
+            + messages['alert_suggest' + ( config.proxyAPIenabled ? 'OpenAI' : 'Proxy' )],
+        checkCloudflare: messages.alert_checkCloudflare + ' @ ',
+        suggestProxy: messages.alert_openAInotWorking + '. ' + messages.alert_suggestProxy,
+        suggestOpenAI: messages.alert_proxyNotWorking + '. ' + messages.alert_suggestOpenAI
     }
 
     // Create DDG style tweaks
@@ -604,7 +650,7 @@
     const ddgptFooter = document.createElement('div')
     ddgptFooter.className = 'feedback-prompt chatgpt-feedback'
     ddgptFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose"'
-        + ' class="feedback-prompt__link" target="_blank" rel="noopener">Share Feedback</a>'
+        + ' class="feedback-prompt__link" target="_blank" rel="noopener">' + messages.link_shareFeedback +'</a>'
 
     // Activate promo campaign if active
     GM.xmlHttpRequest({
@@ -620,7 +666,7 @@
             // Create feedback footer & add classes/HTML
             const pcFooter = document.createElement('div')
             pcFooter.className = 'feedback-prompt chatgpt-feedback'
-            pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank" rel="noopener">Share Feedback</a>'
+            pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank" rel="noopener">' + messages.link_shareFeedback +'</a>'
 
             // Inject in sidebar
             ddgptFooter.insertAdjacentElement('afterend', pcDiv)
