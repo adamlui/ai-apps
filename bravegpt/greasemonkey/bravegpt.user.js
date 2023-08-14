@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.8.14
+// @version             2023.8.14.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -275,7 +275,7 @@
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
                 if (/updates/i.test(button.textContent)) button.textContent = '🚀 Check for Updates'
                 else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
-                else if (/github/i.test(button.textContent)) button.textContent = '🖥️ GitHub source'
+                else if (/github/i.test(button.textContent)) button.textContent = '📜 GitHub source'
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
