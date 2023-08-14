@@ -34,17 +34,25 @@ jobs:
           path: adamlui/chatgpt-widescreen
 
       - name: Sync /chatgpt-widescreen/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
-        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
+        run: |
+          rsync -avhr --delete \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
 
       - name: Sync /chatgpt-widescreen/greasemonkey/_locales/ to /chatgpt-widescreen/(chrome|edge|opera)/extension/_locales/
         run: |
           for browser in chrome edge opera
           do
-            rsync -avhr --delete "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/_locales/" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/$browser/extension/_locales/"
+            rsync -avhr --delete \
+              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/_locales/" \
+              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/$browser/extension/_locales/"
           done
 
       - name: Sync /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
-        run: rsync -avhr ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/
+        run: |
+          rsync -avhr \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ \
+            ${{ github.workspace }}/adamlui/chatgpt-widescreen/
 
       - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
