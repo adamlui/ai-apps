@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.14
+// @version             2023.8.14.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -444,7 +444,7 @@
             // Show alert
             const headingStyle = 'font-size: 1.15rem',
                   pStyle = 'position: relative ; left: 3px',
-                  pBrStyle = 'position: relative ; left: -1px ; top: 1px '
+                  pBrStyle = 'position: relative ; left: -1px ; top: 1px ',
                   aStyle = 'color: #8325c4' // purple
             const aboutAlertID = alert(
                 messages.appName, // title
