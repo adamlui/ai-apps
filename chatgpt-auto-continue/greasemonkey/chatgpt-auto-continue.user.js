@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.13.1
+// @version             2023.8.14
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -255,8 +255,8 @@
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/'
-        const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
@@ -313,8 +313,8 @@
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
-                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
+                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0,
+                          latestSubVer = parseInt(latestVer.split('.')[i]) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
 
@@ -353,7 +353,7 @@
 
         // Add command to hide/show notifications on load
         const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
-                    + state.separator + state.word[+config.notifHidden]
+                      + state.separator + state.word[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifHidden', !config.notifHidden)
             notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
@@ -371,17 +371,18 @@
             const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
 
             // Show alert
-            const headingStyle = 'font-size: 1.25rem ; font-style: italic'
-            const pStyle = 'position: relative ; left: 3px'
-            const pBrStyle = 'position: relative ; left: 12px'
+            const headingStyle = 'font-size: 1.15rem',
+                  pStyle = 'position: relative ; left: 3px',
+                  pBrStyle = 'position: relative ; left: 4px ',
+                  aStyle = 'color: #8325c4' // purple
             const aboutAlertID = alert(
                 messages.appName, // title
-                `<span style="${ headingStyle }"><b>Version</b>: </span>`
+                `<span style="${ headingStyle }"><b>🏷️ <i>Version</i></b>: </span>`
                     + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-                + `<span style="${ headingStyle }"><b>Powered by</b>: </span>`
-                    + `<span style="${ pStyle }"><a href="https://chatgpt.js.org" target="_blank" rel="noopener">`
+                + `<span style="${ headingStyle }"><b>⚡ <i>Powered by</i></b>: </span>`
+                    + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                     + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                + `<span style="${ headingStyle }"><b>Source code</b>:</span>\n`
+                + `<span style="${ headingStyle }"><b>💻 <i>Source code</i></b>:</span>\n`
                     + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                     + config.gitHubURL + '</a></span>',
                 [ // buttons
