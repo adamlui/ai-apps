@@ -68,7 +68,7 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> 以更赏心悦目的形式欣赏原创歌词、诗歌、散文或作曲
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> 适用于: **openai.com**, **poe.com** + **you.com**
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> 适用于: **openai.com** + **poe.com**
 
 ## 用户反馈
 
@@ -97,7 +97,7 @@
 
 2. 安装 [ChatGPT 宽屏模式](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) userscript (will load in userscript manager installed above)
 
-3. 访问 [chat.openai.com](https://chat.openai.com), [poe.com](https://poe.com) 或 [you.com/youchat](https://you.com/youchat)，聊天栏已添加模式切换！
+3. 访问 [chat.openai.com](https://chat.openai.com) 或 [poe.com](https://poe.com)，聊天栏已添加模式切换！
 
 <div align="center">
 

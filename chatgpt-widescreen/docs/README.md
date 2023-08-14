@@ -68,7 +68,7 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> Enjoy original lyrics, poetry, essays, or compositions in a more visually pleasing format
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> Works with: **openai.com**, **poe.com** + **you.com**
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> Works with: **openai.com** + **poe.com**
 
 ## User feedback
 
@@ -97,7 +97,7 @@
 
 2. Install [ChatGPT Widescreen Mode](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) userscript (will load in userscript manager installed above)
 
-3. Visit [chat.openai.com](https://chat.openai.com), [poe.com](https://poe.com) or [you.com/youchat](https://you.com/youchat) & mode toggles are added to chatbar!
+3. Visit [chat.openai.com](https://chat.openai.com) or [poe.com](https://poe.com) & mode toggles are added to chatbar!
 
 <div align="center">
 
