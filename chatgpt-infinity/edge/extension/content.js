@@ -8,8 +8,8 @@
     document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
     // Import libs
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
-    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
+          { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
     // Add Chrome msg listener
     chrome.runtime.onMessage.addListener((request) => {
@@ -121,8 +121,8 @@
     // Define TOGGLE functions
 
     function insertToggle() {
-        const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {}
-        const firstButton = chatHistoryNav.querySelector('a') || {}
+        const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
+              firstButton = chatHistoryNav.querySelector('a') || {}
         if (chatgpt.history.isOff()) // hide enable-history spam div
             try { firstButton.parentNode.nextElementSibling.style.display = 'none' } catch (error) {}
         if (!chatHistoryNav.contains(toggleLabel)) // insert toggle
@@ -140,14 +140,16 @@
                 while (toggleLabel.firstChild) toggleLabel.firstChild.remove()
 
                 // Create elements
-                const navicon = document.createElement('img') ; navicon.width = 18
-                navicon.src = config.assetHostURL + 'media/images/icons/infinity-symbol/white/icon64.png'
-                const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'infToggleLabel'
-                const labelText = document.createTextNode(chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
-                    + chrome.i18n.getMessage('state_' + ( config.infinityMode ? 'enabled' : 'disabled' )))
-                const input = document.createElement('input') ; input.id = 'infToggleInput'
-                input.type = 'checkbox' ; input.checked = config.infinityMode ; input.disabled = true
-                const span = document.createElement('span') ; span.className = 'slider'
+                const navicon = document.createElement('img'),
+                      label = document.createElement('label'),
+                      labelText = document.createTextNode(chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
+                          + chrome.i18n.getMessage('state_' + ( config.infinityMode ? 'enabled' : 'disabled' ))),
+                      input = document.createElement('input'),
+                      span = document.createElement('span')
+                navicon.src = config.assetHostURL + 'media/images/icons/infinity-symbol/white/icon64.png' ; navicon.width = 18
+                label.id = 'infToggleLabel' ; label.className = 'switch'
+                input.id = 'infToggleInput' ; input.type = 'checkbox' ; input.checked = config.infinityMode ; input.disabled = true
+                span.className = 'slider'
 
                 // Append elements
                 label.appendChild(input) ; label.appendChild(span)
