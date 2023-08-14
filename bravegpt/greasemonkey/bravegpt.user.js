@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.8.13
+// @version             2023.8.14
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -173,8 +173,8 @@
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
-                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
+                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0,
+                          latestSubVer = parseInt(latestVer.split('.')[i]) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
 
@@ -305,8 +305,8 @@
 
     function isBlockedbyCloudflare(resp) {
         try {
-            const html = new DOMParser().parseFromString(resp, 'text/html')
-            const title = html.querySelector('title')
+            const html = new DOMParser().parseFromString(resp, 'text/html'),
+                  title = html.querySelector('title')
             return title.innerText === 'Just a moment...'
         } catch (error) { return false }
     }
@@ -356,7 +356,7 @@
 
     // Define ANSWER functions
 
-    async function getShowReply(messages, callback) {
+    async function getShowReply(convo, callback) {
 
         // Initialize attempt properties
         if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []
@@ -380,8 +380,8 @@
 
         // Get answer from ChatGPT
         const data = JSON.stringify(
-            config.proxyAPIenabled ? { messages: messages, model: model }
-                                   : { action: 'next', messages: messages, model: model,
+            config.proxyAPIenabled ? { messages: convo, model: model }
+                                   : { action: 'next', messages: convo, model: model,
                                        parent_message_id: chatgpt.uuidv4(), max_tokens: 4000 })
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
@@ -403,7 +403,7 @@
             braveGPTconsole.error(`Error calling ${ endpoint }. Trying another endpoint...`)
             getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
             getShowReply.attemptCnt++
-            getShowReply(messages, callback)
+            getShowReply(convo, callback)
         }
 
         function onLoadStart() { // process streams for unproxied TM users
@@ -475,7 +475,7 @@
                                 (async () => { // IIFE to use await
                                     proxyEndpoints[aigcfMapIndex][0] = (
                                         'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey())
-                                    getShowReply(messages, callback) // re-fetch reply
+                                    getShowReply(convo, callback) // re-fetch reply
                                 })()
 
                             } else { // use different endpoint or suggest OpenAI
@@ -511,8 +511,8 @@
         })
 
         // Init variables for listeners
-        const form = braveGPTdiv.querySelector('form')
-        const replyBox = document.getElementById('bravegpt-reply-box')
+        const form = braveGPTdiv.querySelector('form'),
+              replyBox = document.getElementById('bravegpt-reply-box')
         let prevLength = replyBox.value.length
 
         // Add listeners
@@ -525,15 +525,15 @@
 
         function handleSubmit(event) {
             event.preventDefault()
-            if (messages.length > 2) messages.splice(0, 2) // keep token usage maintainable
+            if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
             const prevReplyTrimmed = braveGPTdiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length)
             if (!config.proxyAPIenabled) {
-                messages.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
-                messages.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [replyBox.value] } })
+                convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
+                convo.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [replyBox.value] } })
             } else {
-                messages.push({ role: 'assistant', content: prevReplyTrimmed })
-                messages.push({ role: 'user', content: replyBox.value })
-            } getShowReply(messages)
+                convo.push({ role: 'assistant', content: prevReplyTrimmed })
+                convo.push({ role: 'user', content: replyBox.value })
+            } getShowReply(convo)
 
             // Remove listeners since they're re-added
             replyBox.removeEventListener('input', autosizeBox)
@@ -567,16 +567,16 @@
         const siderbarContainer = document.querySelector('#side-right')
         siderbarContainer.prepend(braveGPTdiv) // inject BraveGPT container
         const query = new URL(location.href).searchParams.get('q')
-        messages.push(
+        convo.push(
             config.proxyAPIenabled ? { role: 'user', content: query }
                                    : { role: 'user', id: chatgpt.uuidv4(),
                                        content: { content_type: 'text', parts: [query] }})
-        getShowReply(messages)
+        getShowReply(convo)
     }
 
     // Run MAIN routine
 
-    // Init config/messages/menu
+    // Init config/convo/menu
     const config = {
         prefix: 'braveGPT', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/bravegpt',
@@ -584,7 +584,7 @@
     config.updateURL = config.greasyForkURL + '/code/bravegpt.meta.js'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
-    const messages = [] ; registerMenu()
+    const convo = [] ; registerMenu()
 
     // Exit if prefix/suffix required but not present
     if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
