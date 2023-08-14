@@ -38,18 +38,30 @@ jobs:
           shopt -s globstar
           for file in "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/"**/*.md; do
             relative_path=${file#"${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/"}
-            if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/docs/$relative_path")" ]; then
-              cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/$relative_path" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/docs/$relative_path"
-            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/hatgpt-auto-refresh/docs/$relative_path")" ]; then
-              cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/docs/$relative_path" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/$relative_path"
+            if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/$relative_path")" > \
+                 "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/docs/$relative_path")" ]; then
+              cp -f \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/$relative_path" \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/docs/$relative_path"
+            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/docs/$relative_path")" > \
+                   "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/hatgpt-auto-refresh/docs/$relative_path")" ]; then
+              cp -f \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/docs/$relative_path" \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/$relative_path"
             fi
           done
 
       - name: Sync chatgpt-infinity/ to adamlui/chatgpt-infinity/
-        run: rsync -avhr ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/ ${{ github.workspace }}/adamlui/chatgpt-infinity/
+        run: |
+          rsync -avhr \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/ \
+            ${{ github.workspace }}/adamlui/chatgpt-infinity/
 
       - name: Sync chatgpt-infinity/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-infinity/
-        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-infinity/
+        run: |
+          rsync -avhr --delete \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-infinity/
 
       - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
