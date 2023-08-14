@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.8.13.2
+// @version             2023.8.14
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -212,8 +212,8 @@
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
-                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
+                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0,
+                          latestSubVer = parseInt(latestVer.split('.')[i]) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
 
@@ -400,8 +400,8 @@
 
     function isBlockedbyCloudflare(resp) {
         try {
-            const html = new DOMParser().parseFromString(resp, 'text/html')
-            const title = html.querySelector('title')
+            const html = new DOMParser().parseFromString(resp, 'text/html'),
+                  title = html.querySelector('title')
             return title.innerText === messages.alert_justAmoment + '...'
         } catch (error) { return false }
     }
@@ -604,10 +604,10 @@
         })
 
         // Init variables for listeners
-        const form = ddgptDiv.querySelector('form')
-        const replyBox = document.getElementById('ddgpt-reply-box')
-        const { paddingTop, paddingBottom } = getComputedStyle(replyBox)
-        const vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
+        const form = ddgptDiv.querySelector('form'),
+              replyBox = document.getElementById('ddgpt-reply-box'),
+              { paddingTop, paddingBottom } = getComputedStyle(replyBox),
+              vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
         let prevLength = replyBox.value.length
 
         // Add listeners
@@ -620,8 +620,8 @@
         function handleSubmit(event) {
             event.preventDefault()
             if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
-            const prevReplyTrimmed = ddgptDiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length)
-            const yourReply = replyBox.value + ' / Answer in ' + config.replyLanguage
+            const prevReplyTrimmed = ddgptDiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length),
+                  yourReply = replyBox.value + ' / Answer in ' + config.replyLanguage
             if (!config.proxyAPIenabled) {
                 convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
                 convo.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [yourReply] } })
@@ -692,8 +692,8 @@
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/'
-        const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
@@ -736,9 +736,9 @@
     }
 
     // Create DDG style tweaks
-    const tweaksStyle = document.createElement('style')
-    const fsbStyle = 'section[data-area="sidebar"], section[data-area="mainline"] '
-        + '{ flex-basis: 560px !important ; max-width: 560px !important }'
+    const tweaksStyle = document.createElement('style'),
+          fsbStyle = 'section[data-area="sidebar"], section[data-area="mainline"] '
+                       + '{ flex-basis: 560px !important ; max-width: 560px !important }'
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Stylize elements
