@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.14.4
+// @version             2023.8.14.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -391,17 +391,18 @@
             const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
 
             // Show alert
-            const headingStyle = 'font-size: 1.25rem ; font-style: italic',
+            const headingStyle = 'font-size: 1.15rem',
                   pStyle = 'position: relative ; left: 3px',
-                  pBrStyle = 'position: relative ; left: 12px'
+                  pBrStyle = 'position: relative ; left: -1px ; top: 1px '
+                  aStyle = 'color: #8325c4' // purple
             const aboutAlertID = alert(
                 messages.appName, // title
-                `<span style="${ headingStyle }"><b>Version</b>: </span>`
+                `<span style="${ headingStyle }"><b>🏷️ <i>Version</i></b>: </span>`
                     + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-                + `<span style="${ headingStyle }"><b>Powered by</b>: </span>`
-                    + `<span style="${ pStyle }"><a href="https://chatgpt.js.org" target="_blank" rel="noopener">`
+                + `<span style="${ headingStyle }"><b>⚡ <i>Powered by</i></b>: </span>`
+                    + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                     + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                + `<span style="${ headingStyle }"><b>Source code</b>:</span>\n`
+                + `<span style="${ headingStyle }"><b>💻 <i>Source code</i></b>:</span>\n`
                     + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                     + config.gitHubURL + '</a></span>',
                 [ // buttons
@@ -593,9 +594,9 @@
     }
 
     function syncFullerWindows(fullWindowState) {
-        if (fullWindowState && config.fullerWindows && !config.wideScreen) { // activate fuller window
+        if (fullWindowState && config.fullerWindows && !config.wideScreen) { // activate fuller windows
             document.head.appendChild(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
-        } else if (!fullWindowState) {
+        } else if (!fullWindowState) { // de-activate fuller windows
             try { document.head.removeChild(fullWindowStyle) } catch (err) {} // to remove style too so sidebar shows
             if (!config.wideScreen) { // disable widescreen if result of fuller window
                 try { document.head.removeChild(wideScreenStyle) } catch (err) {}
