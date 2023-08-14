@@ -358,7 +358,7 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        alert(`${ messages.alert_updateAvail }! 🚀`, // title
+                        const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`, // title
                             `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
@@ -369,6 +369,13 @@
                                     { active: true, insert: true } // focus, make adjacent
                                 ).onclose = () => location.reload() }
                         )
+
+                        // Localize button labels if needed
+                        if (!config.userLanguage.startsWith('en')) {
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
+                            updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
+                            updateAlert.querySelectorAll('button')[0].textContent = messages.buttonLabel_dismiss
+                        }
                         return
                 }}
 
@@ -508,7 +515,8 @@
 
             // Re-format buttons to include emojis + re-case + hide Dismiss button
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-                if (/updates/i.test(button.textContent)) button.textContent = '🚀 Check for Updates'
+                if (/updates/i.test(button.textContent))
+                	button.textContent = '🚀 ' + messages.menuLabel_updateCheck
                 else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
                 else if (/github/i.test(button.textContent)) button.textContent = '🖥️ GitHub source'
                 else button.style.display = 'none' // hide Dismiss button
