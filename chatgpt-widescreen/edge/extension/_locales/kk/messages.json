@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Толық экранға" },
   "tooltip_fullScreenOFF": { "message": "Толық экранға" },
   "tooltip_newChat": { "message": "Жаңа чат" },
-  "tooltip_sendMsg": { "message": "Хабарлама жіберу" },
   "alert_pressF11": { "message": "Толық экраннан шығу үшін F11 пернесін басыңыз" },
   "alert_f11reason": { "message": "F11 толық экранды енгізу үшін пайдаланылды, және браузердің қауіпсіздігіне байланысты, оны шығу үшін сол кілтті пайдалану керек" },
   "alert_updateAvail": { "message": "Қолжетімді жаңарту" },

@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Screen kakato" },
   "tooltip_fullScreenOFF": { "message": "Hu ki tuʻa mei he screen kakato" },
   "tooltip_newChat": { "message": "Talanoa foʻou" },
-  "tooltip_sendMsg": { "message": "ʻAve ʻa e pōpoakí" },
   "alert_pressF11": { "message": "Lomiʻi ʻa e K11 ke hu ki tuʻa mei he screen kakato" },
   "alert_f11reason": { "message": "Naʻe fakaʻaongaʻi ʻa e K11 ke fakahu kakato ʻa e screen, pea koeʻuhi ko e ngaahi ʻuhinga maluʻi ʻo e browser, kuo pau ke fakaʻaongaʻi ʻa e ki tatau ke hu ki tuʻa mei ai" },
   "alert_updateAvail": { "message": "ʻOku lava ke maʻu e fakamatala fakamuimuitaha" },

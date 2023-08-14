@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Dîmender tijî" },
   "tooltip_fullScreenOFF": { "message": "Ji Moda Dîmendera Tijî Derkeve" },
   "tooltip_newChat": { "message": "Sohbeta nû" },
-  "tooltip_sendMsg": { "message": "Peyamek bişînin" },
   "alert_pressF11": { "message": "F11 bikirtînin da ku ji ekrana tevahî derkevin" },
   "alert_f11reason": { "message": "F11 ji bo têketina ekrana tevahî hate bikar anîn, û ji ber sedemên ewlehiya gerokê, divê heman mifteyê were bikar anîn da ku jê derkeve" },
   "alert_updateAvail": { "message": "نوێکردنەوە بەردەستە" },

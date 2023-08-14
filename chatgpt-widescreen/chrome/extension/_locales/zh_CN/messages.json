@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "全屏模式" },
   "tooltip_fullScreenOFF": { "message": "退出全屏模式" },
   "tooltip_newChat": { "message": "新对话" },
-  "tooltip_sendMsg": { "message": "发送消息" },
   "alert_pressF11": { "message": "按下F11键退出全屏模式" },
   "alert_f11reason": { "message": "使用F11键进入全屏模式，由于浏览器安全原因，必须使用同样的按键退出全屏模式" },
   "alert_updateAvail": { "message": "有可用更新" },

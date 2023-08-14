@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Lau atoa" },
   "tooltip_fullScreenOFF": { "message": "Tuua le lau atoa" },
   "tooltip_newChat": { "message": "Chat fou" },
-  "tooltip_sendMsg": { "message": "Auina atu le feau" },
   "alert_pressF11": { "message": "Press F11 e alu i fafo le lau atoa" },
   "alert_f11reason": { "message": "F11 na faʻaaogaina e ulufale ai i le atoa lau, ma ona o le saogalemu o le browser, e tatau ona faʻaaogaina le ki lava e tasi e alu ese ai." },
   "alert_updateAvail": { "message": "Fa'afouga o lo'o avanoa" },

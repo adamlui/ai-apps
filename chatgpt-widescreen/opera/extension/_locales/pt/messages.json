@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Tela Cheia" },
   "tooltip_fullScreenOFF": { "message": "Sair da Tela Cheia" },
   "tooltip_newChat": { "message": "Novo Chat" },
-  "tooltip_sendMsg": { "message": "Enviar Mensagem" },
   "alert_pressF11": { "message": "Pressione F11 para sair do modo de Tela Cheia" },
   "alert_f11reason": { "message": "F11 foi usado para entrar no modo de Tela Cheia e, por razões de segurança do navegador, a mesma tecla deve ser usada para sair" },
   "alert_updateAvail": { "message": "Atualização Disponível" },

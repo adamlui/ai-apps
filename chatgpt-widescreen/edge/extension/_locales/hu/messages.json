@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Teljes képernyő" },
   "tooltip_fullScreenOFF": { "message": "Kilépés a teljes nézetből" },
   "tooltip_newChat": { "message": "Új csevegés" },
-  "tooltip_sendMsg": { "message": "Üzenet küldése" },
   "alert_pressF11": { "message": "Kilépés a teljes képernyős módból: F11" },
   "alert_f11reason": { "message": "Az F11-et teljes képernyős belépésre használták, és a böngésző biztonsági okokból ugyanazt a kulcsot kell használni a kilépéshez" },
   "alert_updateAvail": { "message": "Frissítés érhető el" },

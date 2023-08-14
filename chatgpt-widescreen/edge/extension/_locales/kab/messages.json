@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Agdil Ačaran" },
   "tooltip_fullScreenOFF": { "message": "Ffeɣ seg ugdil aččuran" },
   "tooltip_newChat": { "message": "Adiwenni amaynut" },
-  "tooltip_sendMsg": { "message": "Azen izen" },
   "alert_pressF11": { "message": "Sit ɣef F11 i wakken ad teffɣeḍ seg ugdil aččuran" },
   "alert_f11reason": { "message": "F11 yettuseqdac i unekcum γer ugdil aččuran, s ssebba n tγellist n yiminig, yessefk ad yettuseqdec tasarut-nniḍen akken ad teffɣeḍ seg-s." },
   "alert_updateAvail": { "message": "Yella lqem" },

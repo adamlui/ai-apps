@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "_Толук экран" },
   "tooltip_fullScreenOFF": { "message": "Толук экрандан чыгуу" },
   "tooltip_newChat": { "message": "Жаңы чат" },
-  "tooltip_sendMsg": { "message": "Кат жолдоо" },
   "alert_pressF11": { "message": "Толук экрандан чыгуу үчүн F11 баскычын басыңыз" },
   "alert_f11reason": { "message": "F11 толук экранды киргизүү үчүн колдонулган жана браузердин коопсуздугуна байланыштуу ошол эле ачкыч аны чыгаруу үчүн колдонулушу керек." },
   "alert_updateAvail": { "message": "Баяндалмасы табылган жок" },

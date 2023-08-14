@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Sekerini se se tletseng" },
   "tooltip_fullScreenOFF": { "message": "Go tswa mo sekerining ka botlalo" },
   "tooltip_newChat": { "message": "PATLISISO E NTSHWA" },
-  "tooltip_sendMsg": { "message": "Go romela molaetsa" },
   "alert_pressF11": { "message": "Tobetsa F11 go tswa mo sekirining ka botlalo" },
   "alert_f11reason": { "message": "F11 e dirisitswe go tsenya sekirini ka botlalo, mme ka ntlha ya mabaka a pabalesego a browser, selo sa konokono se se tshwanang se tshwanetse go dirisiwa go tswa mo sekerining" },
   "alert_updateAvail": { "message": "TSHEDIMOSETSO E E LENG" },

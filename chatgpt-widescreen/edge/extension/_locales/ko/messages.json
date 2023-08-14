@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "전체 화면" },
   "tooltip_fullScreenOFF": { "message": "전체 화면 모드 종료" },
   "tooltip_newChat": { "message": "새로운 채팅" },
-  "tooltip_sendMsg": { "message": "메시지 보내기" },
   "alert_pressF11": { "message": "전체 화면 모드에서 나가려면 F11을 누르세요" },
   "alert_f11reason": { "message": "F11을 사용하여 전체 화면 모드로 전환한 후 브라우저 보안상의 이유로 동일한 키를 사용하여 종료해야 합니다" },
   "alert_updateAvail": { "message": "업데이트 가능" },

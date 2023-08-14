@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Chidzitiro chakazara" },
   "tooltip_fullScreenOFF": { "message": "Pinda chidzitiro chakazara" },
   "tooltip_newChat": { "message": "Nezvedu" },
-  "tooltip_sendMsg": { "message": "Tumira meseji" },
   "alert_pressF11": { "message": "Press F11 kubuda zvizere chidzitiro" },
   "alert_f11reason": { "message": "F11 yakashandiswa kupinda chidzitiro chakazara, uye nekuda kwezvikonzero zvekuchengetedza bhurawuza, kiyi imwechete inofanira kushandiswa kubuda mairi" },
   "alert_updateAvail": { "message": "Kugadziridza kunowanikwa" },

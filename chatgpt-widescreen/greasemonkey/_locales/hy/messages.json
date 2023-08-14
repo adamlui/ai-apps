@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Լրիվ Ցուցանակը" },
   "tooltip_fullScreenOFF": { "message": "Encodings menu" },
   "tooltip_newChat": { "message": "Նոր զրուցարան" },
-  "tooltip_sendMsg": { "message": "Ուղարկել Հաղորդագրությունը" },
   "alert_pressF11": { "message": "Սեղմեք F11 ՝ ամբողջ էկրանից դուրս գալու համար" },
   "alert_f11reason": { "message": "F11 - ը օգտագործվել է ամբողջական էկրան մուտք գործելու համար, եւ բրաուզերի անվտանգության նկատառումներից ելնելով, նույն բանալին պետք է օգտագործվի այն դուրս գալու համար" },
   "alert_updateAvail": { "message": "Թարմացումը հասանելի է" },

@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Mugaragaza Yuzuye" },
   "tooltip_fullScreenOFF": { "message": "Mugaragaza Yuzuye" },
   "tooltip_newChat": { "message": "Gishya" },
-  "tooltip_sendMsg": { "message": "Kohereza Ubutumwa" },
   "alert_pressF11": { "message": "Kuri Gusohoka Mugaragaza" },
   "alert_f11reason": { "message": "F11 yakoreshejwe mu kwinjira mugaragaza yuzuye, kandi kubera impamvu z'umutekano wa mushakisha, urufunguzo rugomba gukoreshwa kugirango usohoke" },
   "alert_updateAvail": { "message": "Bihari" },

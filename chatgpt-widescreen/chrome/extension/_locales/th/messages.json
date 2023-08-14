@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "เต็มหน้าจอ" },
   "tooltip_fullScreenOFF": { "message": "ออกจากเต็มหน้าจอ" },
   "tooltip_newChat": { "message": "แชทใหม่" },
-  "tooltip_sendMsg": { "message": "ส่งข้อความ" },
   "alert_pressF11": { "message": "กด F11 เพื่อออกจากโหมดเต็มหน้าจอ" },
   "alert_f11reason": { "message": "F11 ถูกใช้เพื่อเข้าสู่แบบเต็มหน้าจอและเนื่องจากเหตุผลด้านความปลอดภัยของเบราว์เซอร์จึงต้องใช้คีย์เดียวกันเพื่อออกจากหน้าจอ" },
   "alert_updateAvail": { "message": "มีอัพเดตให้ใช้งาน" },

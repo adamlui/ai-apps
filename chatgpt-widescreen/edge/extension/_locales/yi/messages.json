@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "גאנצע סקרין" },
   "tooltip_fullScreenOFF": { "message": "אַרויסגאַנג פול פאַרשטעלן" },
   "tooltip_newChat": { "message": "נייַ שמועס" },
-  "tooltip_sendMsg": { "message": "שיק א מעסעדזש" },
   "alert_pressF11": { "message": "דרוק F11 צו אַרויסגאַנג פול פאַרשטעלן" },
   "alert_f11reason": { "message": "F11 איז געניצט צו אַרייַן פול פאַרשטעלן, און רעכט צו בלעטערער זיכערהייט סיבות, דער זעלביקער שליסל מוזן זיין געוויינט צו אַרויסגאַנג עס" },
   "alert_updateAvail": { "message": "דערהייַנטיקן בנימצא" },

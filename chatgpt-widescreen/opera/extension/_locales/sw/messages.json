@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Skrini kamili" },
   "tooltip_fullScreenOFF": { "message": "Toka kwenye skrini nzima" },
   "tooltip_newChat": { "message": "New chat" },
-  "tooltip_sendMsg": { "message": "Tuma ujumbe" },
   "alert_pressF11": { "message": "Bonyeza F11 ili utoke kwenye skrini kamili" },
   "alert_f11reason": { "message": "F11 ilitumiwa kuingia skrini kamili, na kutokana na sababu za usalama wa kivinjari, ufunguo huo lazima utumike kuiondoa" },
   "alert_updateAvail": { "message": "Sasisho lipo" },

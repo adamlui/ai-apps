@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Rasiri na celi ekran" },
   "tooltip_fullScreenOFF": { "message": "Напусти ц‹ ио екранEncodings menu" },
   "tooltip_newChat": { "message": "Novo ćaskanje" },
-  "tooltip_sendMsg": { "message": "Pošalji poruku" },
   "alert_pressF11": { "message": "Pritisnite F11 da biste izašli iz celog ekrana" },
   "alert_f11reason": { "message": "F11 je korišćen za ulazak preko celog ekrana, a zbog bezbednosnih razloga pregledača, isti ključ mora biti korišćen za izlazak iz njega" },
   "alert_updateAvail": { "message": "Dostupna nadogradnja" },

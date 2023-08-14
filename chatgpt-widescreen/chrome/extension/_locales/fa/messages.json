@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "تمام صفحه" },
   "tooltip_fullScreenOFF": { "message": "خروج از تمام صفحه" },
   "tooltip_newChat": { "message": "چت جدید" },
-  "tooltip_sendMsg": { "message": "ارسال پیام" },
   "alert_pressF11": { "message": "برای خروج از حالت تمام صفحه ، Esc را فشار دهید" },
   "alert_f11reason": { "message": "برای ورود به حالت تمام صفحه از F11 استفاده شد و به دلایل امنیتی مرورگر باید از همان کلید برای خروج از آن استفاده کرد" },
   "alert_updateAvail": { "message": "آپدیت موجود است" },

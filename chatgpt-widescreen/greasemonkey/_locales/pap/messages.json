@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Pantaya yen" },
   "tooltip_fullScreenOFF": { "message": "Exit Screenshot Completo" },
   "tooltip_newChat": { "message": "Chat nobo" },
-  "tooltip_sendMsg": { "message": "Manda un mensahe" },
   "alert_pressF11": { "message": "Impresora F11 Para Sublimacion" },
   "alert_f11reason": { "message": "F11 a wordo uza pa drenta pantaya completo, y pa motibo di siguridad di e navegador, mester uza e mesun yabi pa sali for di dje." },
   "alert_updateAvail": { "message": "Update Disponibel" },

@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Fullskärm" },
   "tooltip_fullScreenOFF": { "message": "Avsluta fullskärmsläge" },
   "tooltip_newChat": { "message": "Ny chatt" },
-  "tooltip_sendMsg": { "message": "Skicka meddelande" },
   "alert_pressF11": { "message": "Tryck på F11 för att avsluta helskärmsläge" },
   "alert_f11reason": { "message": "F11 användes för att komma in i helskärm, och på grund av webbläsarens säkerhetsskäl måste samma nyckel användas för att avsluta den" },
   "alert_updateAvail": { "message": "Uppdatering tillgänglig" },

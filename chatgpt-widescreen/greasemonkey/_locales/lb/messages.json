@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Vollbildmodus" },
   "tooltip_fullScreenOFF": { "message": "Aus dem & Vollbildmodus erausgoen" },
   "tooltip_newChat": { "message": "Nei Chat" },
-  "tooltip_sendMsg": { "message": "Noriicht verschécken" },
   "alert_pressF11": { "message": "Press F11 fir komplett Bildschierm ze verloossen" },
   "alert_f11reason": { "message": "F11 gouf benotzt fir voll Écran ze gitt, a wéinst Browser Sécherheetsgrënn muss de selwechte Schlëssel benotzt ginn fir se auszeginn" },
   "alert_updateAvail": { "message": "Aktualiséierung verfügbar" },

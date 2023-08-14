@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "ምሉእ ስክሪን" },
   "tooltip_fullScreenOFF": { "message": "ምሉእ ስክሪን ወጻኢ" },
   "tooltip_newChat": { "message": "ሓድሽ ዝርርብ" },
-  "tooltip_sendMsg": { "message": "መልእኽቲ ልኣኽ" },
   "alert_pressF11": { "message": "ምሉእ ስክሪን ንምውጻእ F11 ጸቕጢ ግበር" },
   "alert_f11reason": { "message": "F11 ምሉእ ስክሪን ንምእታው ተጠቒሙ ነይሩ ፣ ብሰንኪ ናይ ኣሳሽ ውሕስነት ምኽንያታት ድማ ሓደ ዓይነት መፍትሕ ንምውጻእ ኣብ ጥቕሚ ክውዕል ኣለዎ" },
   "alert_updateAvail": { "message": "ዝርከብ ምምሕያሽ" },

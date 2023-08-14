@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Full-Screen" },
   "tooltip_fullScreenOFF": { "message": "Oħroġ mill-Full-Screen" },
   "tooltip_newChat": { "message": "Chat ġdida" },
-  "tooltip_sendMsg": { "message": "Ibgħat messaġġ" },
   "alert_pressF11": { "message": "Agħfas F11 biex toħroġ mill-iskrin sħiħ" },
   "alert_f11reason": { "message": "F11 intuża biex jidħol l-iskrin sħiħ, u minħabba raġunijiet ta 'sigurtà tal-browser, l-istess ċavetta trid tintuża biex toħroġha" },
   "alert_updateAvail": { "message": "Aġġorna disponibbli" },

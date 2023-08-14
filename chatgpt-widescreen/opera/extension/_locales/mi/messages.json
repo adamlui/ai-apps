@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Mata tonu" },
   "tooltip_fullScreenOFF": { "message": "Puta atu mata tonu" },
   "tooltip_newChat": { "message": "Kōrerorero hou" },
-  "tooltip_sendMsg": { "message": "Tukua karere" },
   "alert_pressF11": { "message": "Patohia te F11 ki te puta mata tonu" },
   "alert_f11reason": { "message": "I whakamahia te F11 ki te whakauru i te mata katoa, na te take o te haumarutanga o te tirotiro, me whakamahi te ki ano ki te puta atu" },
   "alert_updateAvail": { "message": "Ngā whakahōu e wātea ana" },

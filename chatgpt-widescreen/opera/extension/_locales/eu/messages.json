@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Pantaila osoa" },
   "tooltip_fullScreenOFF": { "message": "Familia" },
   "tooltip_newChat": { "message": "Txat berria" },
-  "tooltip_sendMsg": { "message": "Bidali mezua" },
   "alert_pressF11": { "message": "Sakatu F11 pantaila osotik irteteko" },
   "alert_f11reason": { "message": "F11 pantaila osoan sartzeko erabili zen, eta arakatzailearen segurtasun arrazoiak direla eta, gako bera erabili behar da bertatik irteteko" },
   "alert_updateAvail": { "message": "Ez dago azalpenik erabilgarri." },

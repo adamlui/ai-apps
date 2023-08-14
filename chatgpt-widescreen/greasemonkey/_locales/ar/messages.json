@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "وضع ملء الشاشة" },
   "tooltip_fullScreenOFF": { "message": "خروج من عرض ملء الشاشة" },
   "tooltip_newChat": { "message": "محادثة جديدة" },
-  "tooltip_sendMsg": { "message": "إرسال الرسالة" },
   "alert_pressF11": { "message": "اضغط على F11 للخروج من وضع ملء الشاشة" },
   "alert_f11reason": { "message": "تم استخدام F11 للدخول إلى وضع ملء الشاشة، وبسبب أسباب أمنية في المتصفح، يجب استخدام نفس المفتاح للخروج منه" },
   "alert_updateAvail": { "message": "تحديث متوفر" },

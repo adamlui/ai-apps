@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "全螢幕" },
   "tooltip_fullScreenOFF": { "message": "退出全螢幕" },
   "tooltip_newChat": { "message": "新對話" },
-  "tooltip_sendMsg": { "message": "發送訊息" },
   "alert_pressF11": { "message": "按下F11退出全螢幕" },
   "alert_f11reason": { "message": "使用F11進入全螢幕，由於瀏覽器安全原因，必須使用同樣的按鍵退出全螢幕" },
   "alert_updateAvail": { "message": "有可用更新" },

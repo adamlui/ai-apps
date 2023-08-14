@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Full screen" },
   "tooltip_fullScreenOFF": { "message": "Exit full screen" },
   "tooltip_newChat": { "message": "New chat" },
-  "tooltip_sendMsg": { "message": "Send message" },
   "alert_pressF11": { "message": "Press F11 to exit full screen" },
   "alert_f11reason": { "message": "F11 was used to enter full screen, and due to browser security reasons, the same key must be used to exit it" },
   "alert_updateAvail": { "message": "Update available" },

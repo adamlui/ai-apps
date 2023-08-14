@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Fult skjal" },
   "tooltip_fullScreenOFF": { "message": "Útgáva fullskránna" },
   "tooltip_newChat": { "message": "Nýtt chat" },
-  "tooltip_sendMsg": { "message": "Send boð" },
   "alert_pressF11": { "message": "Press F11 til at fara út fullan skíggja" },
   "alert_f11reason": { "message": "F11 var brúkt til at koma inn í fulla skjalið, og av tí at flogfarið er tryggjað, eigur tað at verða brúkt til at fara út úr henni." },
   "alert_updateAvail": { "message": "Dagføring er klár" },

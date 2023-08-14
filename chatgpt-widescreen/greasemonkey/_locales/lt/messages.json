@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Visas ekranas" },
   "tooltip_fullScreenOFF": { "message": "Palikti viso ekrano veiksenąEncodings menu" },
   "tooltip_newChat": { "message": "Naujas pokalbis" },
-  "tooltip_sendMsg": { "message": "Siųsti žinutę" },
   "alert_pressF11": { "message": "Paspauskite F11, kad išeitumėte iš viso ekrano" },
   "alert_f11reason": { "message": "F11 buvo naudojamas patekti į visą ekraną, ir dėl naršyklės saugumo priežasčių, tas pats raktas turi būti naudojamas jį išeiti" },
   "alert_updateAvail": { "message": "Yra naujinys" },

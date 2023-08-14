@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Täisekraan" },
   "tooltip_fullScreenOFF": { "message": "Välju täisekraanist" },
   "tooltip_newChat": { "message": "Uus vestlus" },
-  "tooltip_sendMsg": { "message": "Saatma sõnumit" },
   "alert_pressF11": { "message": "Täisekraanilt väljumiseks vajutage klahvi F11" },
   "alert_f11reason": { "message": "F11 kasutati täisekraanile sisenemiseks ja brauseri turvalisuse huvides tuleb selle väljumiseks kasutada sama võtit" },
   "alert_updateAvail": { "message": "Saadaval on uuendus" },

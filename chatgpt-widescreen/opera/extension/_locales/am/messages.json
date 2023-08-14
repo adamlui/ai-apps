@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "ሙሉ እስክሪን" },
   "tooltip_fullScreenOFF": { "message": "ከሙሉ ማያ ገጽ ውጣ" },
   "tooltip_newChat": { "message": "አዲስ ውይይት" },
-  "tooltip_sendMsg": { "message": "መልዕክትን ላክ" },
   "alert_pressF11": { "message": "ይጫኑ F11 ሙሉ ማያ ገጽ ለመውጣት" },
   "alert_f11reason": { "message": "F11 ሙሉ ማያ ገጽ ለማስገባት ጥቅም ላይ ውሏል ፣ እና በአሳሽ ደህንነት ምክንያቶች ምክንያት ተመሳሳይ ቁልፍ እሱን ለመውጣት ጥቅም ላይ መዋል አለበት" },
   "alert_updateAvail": { "message": "ዝመና ይገኛል!" },

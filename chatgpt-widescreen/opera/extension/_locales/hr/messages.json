@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Cijeli zaslon" },
   "tooltip_fullScreenOFF": { "message": "Izlaz preko cijelog zaslona" },
   "tooltip_newChat": { "message": "Novi chat!" },
-  "tooltip_sendMsg": { "message": "Pošalji poruku" },
   "alert_pressF11": { "message": "Pritisnite F11 za izlaz." },
   "alert_f11reason": { "message": "F11 je korišten za ulazak preko cijelog zaslona, a zbog sigurnosnih razloga preglednika, isti ključ mora se koristiti za izlazak iz njega" },
   "alert_updateAvail": { "message": "Ažuriranje je dostupno" },

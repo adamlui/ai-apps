@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Sgrìn slàn" },
   "tooltip_fullScreenOFF": { "message": "Fàg an làn - sgrìn" },
   "tooltip_newChat": { "message": "Cabadaich ùr" },
-  "tooltip_sendMsg": { "message": "Cuir teachdaireachd" },
   "alert_pressF11": { "message": "Brùth F11 gus an làn - sgrìn fhàgail" },
   "alert_f11reason": { "message": "Chaidh F11 a chleachdadh gus làn sgrion a chuir a - steach, agus air sgàth adhbharan tèarainteachd brabhsair, feumar an aon iuchair a chleachdadh airson a leigeil a - mach." },
   "alert_updateAvail": { "message": "Chan eil ùrachadh ri fhaighinn" },

@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Ð¡Ð¾Ð´Ð´Ð°" },
   "tooltip_fullScreenOFF": { "message": "Хомӯшсозии экрани васеъEncodings menu" },
   "tooltip_newChat": { "message": "Чати нав" },
-  "tooltip_sendMsg": { "message": "Фиристодани & ахборот..." },
   "alert_pressF11": { "message": "Фишурдани F11 барои баромадан аз экрани пурра" },
   "alert_f11reason": { "message": "F11 барои ворид кардани экрани пурра истифода мешуд ва бо сабабҳои амниятӣ браузер бояд барои баромадан аз он ҳамон калидро истифода барад." },
   "alert_updateAvail": { "message": "Навсозӣ дастрас аст" },

@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Cel zaslon" },
   "tooltip_fullScreenOFF": { "message": "Izhod iz celozaslonskega načina" },
   "tooltip_newChat": { "message": "Nov klepet" },
-  "tooltip_sendMsg": { "message": "Pošlji sporočilo" },
   "alert_pressF11": { "message": "Pritisnite F11 za izhod iz celozaslonskega načina." },
   "alert_f11reason": { "message": "F11 je bil uporabljen za vstop v celozaslonski način, zaradi varnostnih razlogov brskalnika pa je treba za izhod iz njega uporabiti isti ključ" },
   "alert_updateAvail": { "message": "Posodobitev na voljo" },

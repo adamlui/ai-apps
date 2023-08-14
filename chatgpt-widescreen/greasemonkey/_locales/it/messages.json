@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Schermo intero" },
   "tooltip_fullScreenOFF": { "message": "Esci dalla modalità schermo intero" },
   "tooltip_newChat": { "message": "Nuova chat" },
-  "tooltip_sendMsg": { "message": "Invia messaggio" },
   "alert_pressF11": { "message": "Premi F11 per uscire dalla modalità schermo intero" },
   "alert_f11reason": { "message": "È stato utilizzato F11 per entrare nella modalità schermo intero e, per motivi di sicurezza del browser, la stessa combinazione di tasti deve essere utilizzata per uscirne" },
   "alert_updateAvail": { "message": "Aggiornamento disponibile" },

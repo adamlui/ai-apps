@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Sgrin llawn" },
   "tooltip_fullScreenOFF": { "message": "Gadael sgrin llawn" },
   "tooltip_newChat": { "message": "Sgwrs newydd" },
-  "tooltip_sendMsg": { "message": "Danfon neges" },
   "alert_pressF11": { "message": "Gwasgwch F11 i adael y sgrin lawn" },
   "alert_f11reason": { "message": "Defnyddiwyd F11 i fynd i mewn i'r sgrin lawn, ac oherwydd rhesymau diogelwch porwr, rhaid defnyddio'r un allwedd i'w adael" },
   "alert_updateAvail": { "message": "Diweddariad ar gael" },

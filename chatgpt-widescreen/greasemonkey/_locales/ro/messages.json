@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Ecran complet" },
   "tooltip_fullScreenOFF": { "message": "Ieşire din modul ecran plin" },
   "tooltip_newChat": { "message": "Chat nou" },
-  "tooltip_sendMsg": { "message": "Trimiteți mesajul" },
   "alert_pressF11": { "message": "Apăsați F11 pentru a ieși din ecranul complet." },
   "alert_f11reason": { "message": "F11 a fost utilizat pentru a intra pe ecran complet și, din motive de securitate a browserului, aceeași cheie trebuie utilizată pentru a ieși din acesta" },
   "alert_updateAvail": { "message": "Actualizare disponibilă" },

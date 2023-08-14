@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Mode plein écran" },
   "tooltip_fullScreenOFF": { "message": "Quitter le mode plein écran" },
   "tooltip_newChat": { "message": "Nouveau chat" },
-  "tooltip_sendMsg": { "message": "Envoyer un message" },
   "alert_pressF11": { "message": "Appuyez sur F11 pour quitter le mode plein écran" },
   "alert_f11reason": { "message": "F11 a été utilisé pour entrer en mode plein écran et, pour des raisons de sécurité du navigateur, la même touche doit être utilisée pour en sortir" },
   "alert_updateAvail": { "message": "Mise à jour disponible" },

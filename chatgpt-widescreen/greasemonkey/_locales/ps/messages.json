@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "بشپړه صفحه" },
   "tooltip_fullScreenOFF": { "message": "ټوله پرده بندولEncodings menu" },
   "tooltip_newChat": { "message": "نوی chat" },
-  "tooltip_sendMsg": { "message": "پېغام استول" },
   "alert_pressF11": { "message": "د F1111 ته ورتلل" },
   "alert_f11reason": { "message": "کور ته اړتیا لري، او د دې لپاره چې د کورني حالت ته ورسیږي، دا باید د دوی د کارولو وړ وي." },
   "alert_updateAvail": { "message": "اوسمهالیزې شته" },

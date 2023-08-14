@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "მთელ ეკრანზე" },
   "tooltip_fullScreenOFF": { "message": "სრული ეკრანიდან გამოსვლა" },
   "tooltip_newChat": { "message": "Ახალი ჩატი" },
-  "tooltip_sendMsg": { "message": "შეტყობინების გაგზავნა" },
   "alert_pressF11": { "message": "Სრული ეკრანიდან გამოსასვლელად დააჭირეთ ღილაკს F11" },
   "alert_f11reason": { "message": "F11 გამოიყენება სრულ ეკრანზე შესასვლელად და ბრაუზერის უსაფრთხოების მიზეზების გამო, იგივე გასაღები უნდა იქნას გამოყენებული გასასვლელად" },
   "alert_updateAvail": { "message": "ხელმისაწვდომია განახლება" },

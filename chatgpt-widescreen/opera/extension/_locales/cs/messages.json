@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Celá obrazovka" },
   "tooltip_fullScreenOFF": { "message": "Ukončit celou obrazovku" },
   "tooltip_newChat": { "message": "Nový chat" },
-  "tooltip_sendMsg": { "message": "Odeslat zprávu" },
   "alert_pressF11": { "message": "Stisknutím klávesy F11 ukončíte celou obrazovku." },
   "alert_f11reason": { "message": "F11 byl použit pro vstup na celou obrazovku a z bezpečnostních důvodů prohlížeče musí být stejný klíč použit pro jeho ukončení" },
   "alert_updateAvail": { "message": "Aktualizace k dispozici" },

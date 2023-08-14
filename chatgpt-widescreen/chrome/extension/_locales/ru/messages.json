@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Полный экран" },
   "tooltip_fullScreenOFF": { "message": "Выйти из полноэкранного режима" },
   "tooltip_newChat": { "message": "Новый чат" },
-  "tooltip_sendMsg": { "message": "Отправить сообщение" },
   "alert_pressF11": { "message": "Нажмите F11, чтобы выйти из полноэкранного режима" },
   "alert_f11reason": { "message": "F11 была использована для входа в полноэкранный режим, и по соображениям безопасности браузера для выхода из него также необходимо использовать ту же клавишу" },
   "alert_updateAvail": { "message": "Доступно обновление" },

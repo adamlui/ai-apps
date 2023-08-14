@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "પૂર્ણ સ્ક્રીન" },
   "tooltip_fullScreenOFF": { "message": "પૂર્ણ સ્ક્રીનમાંથી બહાર નીકળો" },
   "tooltip_newChat": { "message": "નવી વાર્તાલાપ" },
-  "tooltip_sendMsg": { "message": "સંદેશાને મોકલો" },
   "alert_pressF11": { "message": "પૂર્ણ સ્ક્રીનથી બહાર નીકળવા માટે F11 દબાવો" },
   "alert_f11reason": { "message": "F11 નો ઉપયોગ સંપૂર્ણ સ્ક્રીન દાખલ કરવા માટે કરવામાં આવ્યો હતો, અને બ્રાઉઝર સુરક્ષા કારણોસર, તે જ કીનો ઉપયોગ તેમાંથી બહાર નીકળવા માટે કરવો આવશ્યક છે" },
   "alert_updateAvail": { "message": "સુધારો ઉપલબ્ધ" },

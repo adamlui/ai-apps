@@ -16,7 +16,6 @@
   "tooltip_fullScreenON": { "message": "Fultaim Screen" },
   "tooltip_fullScreenOFF": { "message": "Rausim olgeta piksa" },
   "tooltip_newChat": { "message": "Nupela chat" },
-  "tooltip_sendMsg": { "message": "Yu salim tok i go" },
   "alert_pressF11": { "message": "Tap tap tap tap tap full screen" },
   "alert_f11reason": { "message": "F11 i bin yusim long go insait long olgeta piksa, na long wanem, man i mas yusim wankain ki bilong lusim dispela piksa." },
   "alert_updateAvail": { "message": "Tok pisin i go pinis" },
