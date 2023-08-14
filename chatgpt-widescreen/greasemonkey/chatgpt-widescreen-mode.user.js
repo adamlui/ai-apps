@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.14.2
+// @version             2023.8.14.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -281,7 +281,7 @@
                         if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
                 }}}) ; resolve(messages)
-            } catch (error) { // if 404
+            } catch (err) { // if 404
                 msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
                 msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
                     msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
@@ -343,7 +343,7 @@
 
     // Define MENU functions
 
-    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
     function registerMenu() {
         const menuIDs = [] // empty to store newly registered cmds for removal while preserving order
@@ -557,15 +557,20 @@
     }
 
     function deactivateMode(mode) {
-        if (mode == 'wideScreen') try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (error) {}
-        else if (mode == 'fullWindow') {
-            try { document.head.removeChild(fullWindowStyle) } catch (error) {}
+        if (mode == 'wideScreen') {
+            try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') }
+            catch (err) { console.error(config.appSymbol + ' >>', err) }
+        } else if (mode == 'fullWindow') {
+            try { document.head.removeChild(fullWindowStyle) }
+            catch (err) { console.error(config.appSymbol + ' >>', err) }
             if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.show()
         } else if (mode == 'fullScreen') {
             if (config.f11)
                 alert(messages.alert_pressF11, messages.alert_f11reason + '.')
-            document.exitFullscreen().catch(error => { console.error(config.appSymbol + ' >> Failed to exit fullscreen', error) })
-    }}
+            document.exitFullscreen().catch(err => {
+                console.error(config.appSymbol + ' >> Failed to exit fullscreen', err) })
+        }
+    }
 
     function toggleMode(mode, state = '') {
         switch (state.toUpperCase()) {
@@ -593,9 +598,12 @@
         if (fullWindowState && config.fullerWindows && !config.wideScreen) { // activate fuller window
             document.head.appendChild(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
         } else if (!fullWindowState) {
-            try { document.head.removeChild(fullWindowStyle) } catch (error) {} // remove style too so sidebar shows
+            try { document.head.removeChild(fullWindowStyle) } // to remove style too so sidebar shows
+            catch (err) { console.error(config.appSymbol + ' >>', err) }
             if (!config.wideScreen) { // disable widescreen if result of fuller window
-                try { document.head.removeChild(wideScreenStyle) } catch (error) {} updateBtnSVG('wideScreen', 'off')
+                try { document.head.removeChild(wideScreenStyle) }
+                catch (err) { console.error(config.appSymbol + ' >>', err) }
+                updateBtnSVG('wideScreen', 'off')
     }}}
 
     function updateTweaksStyle() {
