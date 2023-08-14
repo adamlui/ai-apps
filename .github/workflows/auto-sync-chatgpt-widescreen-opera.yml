@@ -37,17 +37,28 @@ jobs:
         run: |
           for browser in chrome edge
           do
-            rsync -avhr --delete "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/opera/extension/" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/$browser/extension/"
+            rsync -avhr --delete \
+              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/opera/extension/" \
+              "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/$browser/extension/"
           done
 
       - name: Sync /chatgpt-widescreen/opera/extension/_locales/ to /chatgpt-widescreen/greasemonkey/_locales/
-        run: rsync -avhr --delete "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/opera/extension/_locales/" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/_locales"
+        run: |
+          rsync -avhr --delete \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/opera/extension/_locales/" \
+            "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/_locales"
 
       - name: Sync /chatgpt-widescreen/ to adamlui/chatgpt-widescreen/
-        run: rsync -avhr ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ ${{ github.workspace }}/adamlui/chatgpt-widescreen/
+        run: |
+          rsync -avhr \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/ \
+            ${{ github.workspace }}/adamlui/chatgpt-widescreen/
 
       - name: Sync /chatgpt-widescreen/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-widescreen/
-        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
+        run: |
+          rsync -avhr --delete \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-widescreen/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-widescreen/
 
       - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
