@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.14.5
+// @version             2023.8.14.6
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -393,7 +393,7 @@
             // Show alert
             const headingStyle = 'font-size: 1.15rem',
                   pStyle = 'position: relative ; left: 3px',
-                  pBrStyle = 'position: relative ; left: -1px ; top: 1px '
+                  pBrStyle = 'position: relative ; left: -1px ; top: 1px ',
                   aStyle = 'color: #8325c4' // purple
             const aboutAlertID = alert(
                 messages.appName, // title
