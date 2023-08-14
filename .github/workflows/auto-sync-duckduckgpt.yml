@@ -35,17 +35,29 @@ jobs:
 
       - name: Sync README.md between directories
         run: |
-          if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/README.md")" ]; then
-            cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/README.md" "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/README.md"
-          elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/README.md")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/README.md")" ]; then
-            cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/README.md" "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/README.md"
+          if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/README.md")" > \
+               "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/README.md")" ]; then
+            cp -f \
+              "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/README.md" \
+              "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/README.md"
+          elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/README.md")" > \
+                 "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/README.md")" ]; then
+            cp -f \
+              "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/README.md" \
+              "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/README.md"
           fi
 
       - name: Sync duckduckgpt/ to kudoai/duckduckgpt/
-        run: rsync -avhr ${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/ ${{ github.workspace }}/kudoai/duckduckgpt/
+        run: |
+          rsync -avhr \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/ \
+            ${{ github.workspace }}/kudoai/duckduckgpt/
 
       - name: Sync duckduckgpt/greasemonkey/ to adamlui/userscripts/chatgpt/duckduckgpt/
-        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/duckduckgpt/
+        run: |
+          rsync -avhr --delete \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/userscripts/chatgpt/duckduckgpt/
 
       - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
