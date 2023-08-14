@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.13
+// @version             2023.8.14
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -271,8 +271,8 @@
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/'
-        const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
@@ -374,8 +374,8 @@
                 // Compare versions                
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
-                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
+                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0,
+                          latestSubVer = parseInt(latestVer.split('.')[i]) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
 
@@ -442,17 +442,18 @@
             const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
 
             // Show alert
-            const headingStyle = 'font-size: 1.25rem ; font-style: italic'
-            const pStyle = 'position: relative ; left: 3px'
-            const pBrStyle = 'position: relative ; left: 12px'
+            const headingStyle = 'font-size: 1.15rem',
+                  pStyle = 'position: relative ; left: 3px',
+                  pBrStyle = 'position: relative ; left: -1px ; top: 1px '
+                  aStyle = 'color: #8325c4' // purple
             const aboutAlertID = alert(
                 messages.appName, // title
-                `<span style="${ headingStyle }"><b>Version</b>: </span>`
+                `<span style="${ headingStyle }"><b>🏷️ <i>Version</i></b>: </span>`
                     + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-                + `<span style="${ headingStyle }"><b>Powered by</b>: </span>`
-                    + `<span style="${ pStyle }"><a href="https://chatgpt.js.org" target="_blank" rel="noopener">`
+                + `<span style="${ headingStyle }"><b>⚡ <i>Powered by</i></b>: </span>`
+                    + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                     + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                + `<span style="${ headingStyle }"><b>Source code</b>:</span>\n`
+                + `<span style="${ headingStyle }"><b>💻 <i>Source code</i></b>:</span>\n`
                     + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                     + config.gitHubURL + '</a></span>',
                 [ // buttons
@@ -488,8 +489,8 @@
     // Define TOGGLE functions
 
     function insertToggle() {
-        const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {}
-        const firstButton = chatHistoryNav.querySelector('a') || {}
+        const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
+              firstButton = chatHistoryNav.querySelector('a') || {}
         if (chatgpt.history.isOff()) try { firstButton.parentNode.nextElementSibling.style.display = 'none' } catch (error) {} // hide enable-history spam div
         if (!chatHistoryNav.contains(toggleLabel)) try { chatHistoryNav.insertBefore(toggleLabel, firstButton.parentNode) } catch (error) {} // insert toggle
     }
@@ -498,13 +499,15 @@
         while (toggleLabel.firstChild) toggleLabel.firstChild.remove() // clear old content
 
         // Create elements
-        const navicon = document.createElement('img') ; navicon.width = 18
-        navicon.src = config.assetHostURL + 'media/images/icons/navicon.png'
-        const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'acToggleLabel'
-        const labelText = document.createTextNode('Auto-clear ' + ( config.autoclear ? 'enabled' : 'disabled' ))
-        const input = document.createElement('input') ; input.id = 'acToggleInput'
-        input.type = 'checkbox' ; input.disabled = true ; input.checked = config.autoclear
-        const span = document.createElement('span') ; span.className = 'slider'
+        const navicon = document.createElement('img'),
+              label = document.createElement('label'),
+              labelText = document.createTextNode('Auto-clear ' + ( config.autoclear ? 'enabled' : 'disabled' )),
+              input = document.createElement('input'),
+              span = document.createElement('span')
+        navicon.src = config.assetHostURL + 'media/images/icons/navicon.png' ; navicon.width = 18
+        label.id = 'acToggleLabel' ; label.className = 'switch'
+        input.id = 'acToggleInput' ; input.type = 'checkbox' ; input.disabled = true ; input.checked = config.autoclear
+        span.className = 'slider'
 
         // Append elements
         label.appendChild(input) ; label.appendChild(span)
