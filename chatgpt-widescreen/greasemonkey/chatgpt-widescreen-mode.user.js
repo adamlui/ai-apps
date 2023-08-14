@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.14.1
+// @version             2023.8.14.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -235,7 +235,6 @@
 // @compatible          qq
 // @match               https://chat.openai.com/*
 // @match               https://poe.com/*
-// @match               https://you.com/*youchat*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon64.png
 // @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@315fc8e62d4d3e82276fbb641128774a0d1c5219/dist/chatgpt-2.1.0.min.js
@@ -446,7 +445,6 @@
 
     function insertBtns() {
         const chatbar = site == 'poe' ? document.querySelector('div[class*="inputContainer"]')
-                      : site == 'you' ? document.querySelector('div[data-testid="youchat-input"]')
                                       : document.querySelector('form button[class*="bottom"]').parentNode;
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
         const leftMostBtn = chatbar.querySelector('button')
@@ -463,11 +461,9 @@
         // Define SVG viewbox + elems
         const svgViewBox = (
             // move to XY coords to crop whitespace
-            mode == 'newChat' ? '11 6 ' : mode == 'wideScreen' ? '8 8 ' : mode == 'fullWindow' ? '0 0 '
-                : ( site == 'you' ? '10 10 ' : '8 8 ' )) // fullscreen
+            ( mode == 'newChat' ? '11 6 ' : mode == 'wideScreen' ? '8 8 ' : mode == 'fullWindow' ? '0 0 ' : '8 8 ' )
             // shrink to fit size
-            + ( mode == 'newChat' ? '13 13' : mode == 'wideScreen' ? '20 20 ' : mode == 'fullWindow' ? '24 24'
-                : ( site == 'you' ? '17 17' : '20 20' )) // fullscreen
+          + ( mode == 'newChat' ? '13 13' : mode == 'wideScreen' ? '20 20 ' : mode == 'fullWindow' ? '24 24' : '20 20' ))
         const fullScreenONelems = [
             createSVGelem('path', { fill: buttonColor, d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
             createSVGelem('path', { fill: buttonColor, d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
@@ -505,8 +501,8 @@
             buttonSVG.setAttribute('stroke', buttonColor)
             buttonSVG.setAttribute('fill', 'none')
             buttonSVG.setAttribute('stroke-width', '2')
-            buttonSVG.setAttribute('height', site == 'poe' ? '2em' : site == 'you' ? '1.35em' : '1em')
-            buttonSVG.setAttribute('width', site == 'poe' ? '2em' : site == 'you' ? '1.35em' : '1em')
+            buttonSVG.setAttribute('height', site == 'poe' ? '2em' : '1em')
+            buttonSVG.setAttribute('width', site == 'poe' ? '2em' : '1em')
         }
         buttonSVG.setAttribute('class', sendImgClasses) // assign borrowed classes
         buttonSVG.setAttribute( // center oerlay + prevent triggering tooltips twice
@@ -556,7 +552,7 @@
         if (mode == 'wideScreen') { document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
         else if (mode == 'fullWindow') {
             document.head.appendChild(fullWindowStyle)
-            if (site == 'poe') syncMode('fullWindow') ; else if (site == 'you') you.sidebar.hide() ; else chatgpt.sidebar.hide()
+            if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.hide()
         } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
     }
 
@@ -564,7 +560,7 @@
         if (mode == 'wideScreen') try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (error) {}
         else if (mode == 'fullWindow') {
             try { document.head.removeChild(fullWindowStyle) } catch (error) {}
-            if (site == 'poe') syncMode('fullWindow') ; else if (site == 'you') you.sidebar.show() ; else chatgpt.sidebar.show()
+            if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.show()
         } else if (mode == 'fullScreen') {
             if (config.f11)
                 alert(messages.alert_pressF11, messages.alert_f11reason + '.')
@@ -579,35 +575,12 @@
         }
     }
 
-    // Define YOU functions
-
-    const you = {
-        isLoaded: function() {
-            return new Promise(resolve => {
-                const intervalId = setInterval(() => {
-                    if (document.querySelector('div[data-testid="youchat-input"]')) {
-                        clearInterval(intervalId) ; resolve()
-        }}, 100)})},
-
-        sidebar: {
-            isOff: function() { return document.querySelector('main > div').style.width == '100%' },
-            isOn: function() { return document.querySelector('main > div').style.width != '100%' },
-            hide: function() { this.isOn() ? this.toggle() : console.info(config.appSymbol + ' >> Sidebar already hidden!') },
-            show: function() { this.isOff() ? this.toggle() : console.info(config.appSymbol + ' >> Sidebar already shown!') },
-
-            toggle: function() {
-                const toggleSVG = document.querySelector('[data-testid$="toggle-web-results-panel"] svg')
-                toggleSVG.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }))
-            }
-        }
-    }
-
     // Define SYNC functions
 
     function syncMode(mode) { // setting + icon + tooltip
         const state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
                       : mode === 'fullWindow' ? ( site == 'poe' ? !!document.querySelector('#fullWindow-mode')
-                                                : site == 'you' ? you.sidebar.isOff() : chatgpt.sidebar.isOff() )
+                                                                : chatgpt.sidebar.isOff() )
                                               : chatgpt.isFullScreen() )
         saveSetting(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
         if (mode === 'fullWindow') syncFullerWindows(state)
@@ -629,8 +602,7 @@
         tweaksStyle.innerText = (
               site == 'openai' ? inputSelector + ' { padding-right: 145px } '  // narrow input to accomdate buttons
                                + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
-                                   + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
-            : site == 'you' ? ' div[id$="-button"]::before { background-color: transparent }' : '' ) // remove circular background
+                                   + 'position: relative ; left: 54px ; top: 7px } ' : '' ) // ...below avatar to avoid cropping
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
     }
 
@@ -639,29 +611,27 @@
     // Create browser toolbar menu or disable script if extension installed
     const state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
                     separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
-    if (site == 'openai') await chatgpt.isLoaded() ; if (site == 'you') await you.isLoaded()
+    if (site == 'openai') await chatgpt.isLoaded()
     if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
         GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return }) // disable menu
         return // exit script
     } else registerMenu() // create functional menu
 
     // Save full-window + full screen states
-    config.fullWindow = site == 'openai' ? chatgpt.sidebar.isOff() : site == 'you' ? you.sidebar.isOff() : config.fullWindow
+    config.fullWindow = site == 'openai' ? chatgpt.sidebar.isOff() : config.fullWindow
     config.fullScreen = chatgpt.isFullScreen()
 
     // Collect button classes
-    const sendButtonClasses = (document.querySelector(
-        site == 'you' ? 'button[data-eventactionname="submit_question"]' : 'form button[class*="bottom"]' ) || {}).classList || []
-    const sendImgClasses = (document.querySelector(
-        site == 'you' ? 'button[data-eventactionname="submit_question"] img' : 'form button[class*="bottom"] svg') || {}).classList || []
+    const sendButtonClasses = (document.querySelector('form button[class*="bottom"]' ) || {}).classList || [],
+          sendImgClasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
 
     // Define UI element selectors
-    const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' :
-                          site == 'you' ? '[data-testid="youchat-input-textarea"]' : 'form textarea[id*="prompt"]',
-          sidebarSelector = site == 'poe' ? 'aside[class*="leftSidebar"]' : site == 'you' ? '[data-testid="youchat-web-results-panel"]'
+    const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after'
+                                        : 'form textarea[id*="prompt"]',
+          sidebarSelector = site == 'poe' ? 'aside[class*="leftSidebar"]'
                                           : '#__next > div > div.dark',
           sidepadSelector = '#__next > div > div',
-          textContainerSelector = site == 'poe' ? '[class*="mainSection"]' : site == 'you' ? '#chatHistory'
+          textContainerSelector = site == 'poe' ? '[class*="mainSection"]'
                                                 : '.text-base, main > div > div > div > div > div'
     // Create/stylize tooltip div
     const tooltipDiv = document.createElement('div')
@@ -686,8 +656,6 @@
     wideScreenStyle.innerText = textContainerSelector + ' { max-width: 93% !important } '
         + ( site == 'poe' ? // stretch inner container
             ' [class*="ChatPageMain_container"] { max-width: 100% !important } ' : '' )
-        + ( site == 'you' ? // stretch outer container
-            ' main div[data-testid="YouChat-app"] { max-width: 85vw ; width: 85vw } ' : '' )
         + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
             '#__next > div > div.flex { width: 100px }' : '' )
 
@@ -700,7 +668,7 @@
 
     // Create/insert chatbar buttons
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
-          rOffset = site == 'you' ? -0.1 : 2.57, bOffset = site == 'you' ? -0.25 : 1.77
+          rOffset = 2.57, bOffset = 1.77
     let buttonColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         ((buttonType) => { // enclose in IIFE to separately capture button type for async listeners
@@ -751,7 +719,7 @@
     // Monitor sidebar to update full-window setting
     if (site != 'poe') {
         const sidebarObserver = new MutationObserver(() => {
-            const fullWindowState = site == 'you' ? you.sidebar.isOff() : chatgpt.sidebar.isOff()
+            const fullWindowState = chatgpt.sidebar.isOff()
             if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
                 if (!config.modeSynced) syncMode('fullWindow')
         })
