@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.13.1
+// @version             2023.8.14
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -684,7 +684,7 @@
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     wideScreenStyle.innerText = textContainerSelector + ' { max-width: 93% !important } '
         + ( site == 'poe' ? // stretch inner container
-            ' [class*="ChatMessages"] { max-width: 100% !important } ' : '' )
+            ' [class*="ChatPageMain_container"] { max-width: 100% !important } ' : '' )
         + ( site == 'you' ? // stretch outer container
             ' main div[data-testid="YouChat-app"] { max-width: 85vw ; width: 85vw } ' : '' )
         + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
