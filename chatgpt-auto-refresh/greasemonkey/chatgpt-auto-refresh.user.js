@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.14
+// @version             2023.8.14.1
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @compatible          chrome
@@ -469,7 +469,7 @@
                 + `<span style="${ headingStyle }"><b>⚡ <i>Powered by</i></b>: </span>`
                     + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                     + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                + `<span style="${ headingStyle }"><b>💻 <i>Source code</i></b>:</span>\n`
+                + `<span style="${ headingStyle }"><b>📜 <i>Source code</i></b>:</span>\n`
                     + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                     + config.gitHubURL + '</a></span>',
                 [ // buttons
