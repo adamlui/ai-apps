@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "__MSG_appName__",
     "description": "__MSG_appDesc__",
-    "version": "2023.8.13",
+    "version": "2023.8.14",
     "author": "Adam Lui",
     "default_locale": "en",
     "icons": {
@@ -20,7 +20,7 @@
         "resources": ["lib/settings-utils.js", "lib/chatgpt.js"]
     }],
     "content_scripts": [{
-        "matches": ["https://chat.openai.com/*"],
+        "matches": ["https://chat.openai.com/*", "https://poe.com/*"],
         "js": ["content.js"]
     }],
     "background": { "service_worker": "background.js" }

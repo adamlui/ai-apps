@@ -5,11 +5,12 @@
 
 (async () => {
 
+    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2]
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
     // Import libs
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
-    const { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
+          { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
     // Add Chrome action msg listener
     chrome.runtime.onMessage.addListener((request) => {
@@ -23,17 +24,24 @@
         return true
     })
 
-    // Store full screen state for listeners
-    await chatgpt.isLoaded() ; config.fullScreen = chatgpt.isFullScreen()
+    if (site == 'openai') await chatgpt.isLoaded()
 
-    // Collect OpenAI classes
-    const sendButtonClasses = (document.querySelector('form button[class*="bottom"]') || {}).classList || []
-    const sendSVGclasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
-    const inputTextAreaClasses = (document.querySelector("form button[class*='bottom']") || {}).previousSibling.classList || []
-    const mainDivClasses = (document.querySelector('#__next > div > div.flex') || {}).classList || []
-    const sidepadClasses = (document.querySelector('#__next > div > div') || {}).classList || []
-    const sidebarClasses = (document.querySelector('#__next > div > div.dark') || {}).classList || []
+    // Save full-window + full screen states
+    config.fullWindow = site == 'openai' ? chatgpt.sidebar.isOff() : settings.load('fullWindow')
+    config.fullScreen = chatgpt.isFullScreen()
 
+    // Collect button classes
+    const sendButtonClasses = (document.querySelector('form button[class*="bottom"]' ) || {}).classList || [],
+          sendImgClasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
+
+    // Define UI element selectors
+    const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after'
+                                        : 'form textarea[id*="prompt"]',
+          sidebarSelector = site == 'poe' ? 'aside[class*="leftSidebar"]'
+                                          : '#__next > div > div.dark',
+          sidepadSelector = '#__next > div > div',
+          textContainerSelector = site == 'poe' ? '[class*="mainSection"]'
+                                                : '.text-base, main > div > div > div > div > div'
     // Create/stylize tooltip div
     const tooltipDiv = document.createElement('div')
     tooltipDiv.classList.add('toggle-tooltip')
@@ -47,35 +55,42 @@
     document.head.appendChild(tooltipStyle)
 
     // Create general style tweaks
-    const tweaksStyle = document.createElement('style')
-    const tcbStyle = 'form > div > div:nth-child(2), form textarea { max-height: 68vh !important } '
+    const tweaksStyle = document.createElement('style'),
+          tcbStyle = inputSelector + ' { max-height: 68vh !important } '
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create wide screen style
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
-    wideScreenStyle.innerText = '.text-base, main > div > div > div > div > div { max-width: 93% !important } '
-        + 'div' + classListToCSS(mainDivClasses) + '{ width: 100px }' // prevent sidebar shrinking when zoomed
+    wideScreenStyle.innerText = textContainerSelector + ' { max-width: 93% !important } '
+        + ( site == 'poe' ? // stretch inner container
+            ' [class*="ChatPageMain_container"] { max-width: 100% !important } ' : '' )
+        + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
+            '#__next > div > div.flex { width: 100px }' : '' )
 
     // Create full-window style
     const fullWindowStyle = document.createElement('style')
     fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
-    fullWindowStyle.innerText = classListToCSS(sidebarClasses) + '{ display: none }' // hide sidebar
-        + classListToCSS(sidepadClasses) + '{ padding-left: 0px }' // remove side padding
-
-    let buttonColor = setBtnColor()
+    fullWindowStyle.innerText = (
+          sidebarSelector + ' { display: none } ' // hide sidebar
+        + sidepadSelector + ' { padding-left: 0px }' ) // remove side padding
 
     // Create/insert chatbar buttons
-    const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
+    const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
+          rOffset = 2.57, bOffset = 1.77
+    let buttonColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         ((buttonType) => { // enclose in IIFE to separately capture button type for async listeners
             const buttonName = buttonType + 'Button'
             window[buttonName] = document.createElement('div') // create button
             window[buttonName].id = buttonType + '-button' // for toggleTooltip()
             updateBtnSVG(buttonType); // insert icon
-            window[buttonName].setAttribute('class', sendButtonClasses) // assign borrowed classes
-            window[buttonName].style.cssText = `right: ${2.57 + i * 1.77}rem` // position left of prev button
+            window[buttonName].style.cssText = `right: ${ rOffset + i * bOffset }rem` // position left of prev button
             window[buttonName].style.cursor = 'pointer' // add finger cursor // 添加鼠标手势为手指
+            if (site != 'poe') // assign borrowed classes
+                window[buttonName].setAttribute('class', sendButtonClasses)
+            else if (site == 'poe') // lift buttons slightly
+                window[buttonName].style.cssText += '; margin-bottom: 0.2rem '
             window[buttonName].addEventListener('click', () => { // add click listeners
                 if (buttonType === 'newChat') chatgpt.startNewChat() ; else toggleMode(buttonType) })
             window[buttonName].addEventListener('mouseover', toggleTooltip)
@@ -91,17 +106,17 @@
         if (type === 'childList' && addedNodes.length) {
 
             // Restore previous session's state + manage toggles
-            settings.load(['wideScreen', 'fullWindow', 'fullerWindows', 'tcbDisabled', 'notifHidden', 'extensionDisabled'])
+            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'notifHidden', 'extensionDisabled'])
                 .then(() => { if (!config.extensionDisabled) {                    
                     if (!prevSessionChecked) { // restore previous session's state
                         if (config.wideScreen) toggleMode('wideScreen', 'ON')
                         if (config.fullWindow) { toggleMode('fullWindow', 'ON')
-                            syncFullerWindows(true) // also sync Fuller Windows...
-                            if (!config.notifHidden) // ... + notify since sidebar observer doesn't trigger
-                                notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
-                        }
-                        if (config.tcbDisabled) updateTweaksStyle()
-                        prevSessionChecked = true
+                            if (site == 'openai') { // sidebar observer doesn't trigger
+                                syncFullerWindows(true) // so sync Fuller Windows...
+                                if (!config.notifHidden) // ... + notify
+                                    notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
+                        }}
+                        if (config.tcbDisabled) updateTweaksStyle() ; prevSessionChecked = true
                     }
                     insertBtns()
                 } prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
@@ -120,15 +135,17 @@
     }})}) ; schemeObserver.observe(document.documentElement, { attributes: true })
 
     // Monitor sidebar button to update full-window setting
-    const sidebarObserver = new MutationObserver(() => {
-        settings.load(['extensionDisabled']).then(() => {
-            if (!config.extensionDisabled) {
-                const fullWindowState = chatgpt.sidebar.isOff()
-                if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
-                    if (!config.modeSynced) syncMode('fullWindow')
-    }})})
-    setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
-        sidebarObserver.observe(document.body, { childList: true, subtree: true })}, 500)
+    if (site != 'poe') {
+        const sidebarObserver = new MutationObserver(() => {
+            settings.load(['extensionDisabled']).then(() => {
+                if (!config.extensionDisabled) {
+                    const fullWindowState = chatgpt.sidebar.isOff()
+                    if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
+                        if (!config.modeSynced) syncMode('fullWindow')
+        }})})
+        setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
+            sidebarObserver.observe(document.body, { childList: true, subtree: true })}, 500)
+    }
 
     // Add full screen listeners to update setting/button + set F11 flag
     window.addEventListener('resize', () => { // sync full screen settings/button
@@ -179,9 +196,16 @@
     function setBtnColor() { return chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' }
 
     function insertBtns() {
-        const chatbar = document.querySelector("form button[class*='bottom']").parentNode
-        if (chatbar.contains(fullWindowButton)) return // if buttons aren't missing, exit
-        else { chatbar.append(newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv) }
+        const chatbar = site == 'poe' ? document.querySelector('div[class*="inputContainer"]')
+                                      : document.querySelector('form button[class*="bottom"]').parentNode;
+        if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
+        const leftMostBtn = chatbar.querySelector('button')
+        chatbar.insertBefore(leftMostBtn, chatbar.lastChild); // elevate to chatbar if nested
+        if (site == 'openai') chatbar.insertBefore(newChatButton, leftMostBtn)
+        chatbar.insertBefore(wideScreenButton, leftMostBtn)
+        chatbar.insertBefore(fullWindowButton, leftMostBtn)
+        chatbar.insertBefore(fullScreenButton, leftMostBtn)
+        chatbar.insertBefore(tooltipDiv, leftMostBtn)
     }
 
     function removeBtns() {
@@ -226,8 +250,7 @@
                                  : [newChatButton, newChatElems, newChatElems])
 
         // Initialize rem margin offset vs. OpenAI's .mr-1 for hover overlay centeredness
-        const lMargin = mode == 'wideScreen' ? .11 : .12
-        const rMargin = (.25 - lMargin)
+        const lMargin = mode == 'wideScreen' ? .11 : .12, rMargin = (.25 - lMargin)
 
         // Set SVG attributes
         const buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
@@ -235,10 +258,10 @@
             buttonSVG.setAttribute('stroke', buttonColor)
             buttonSVG.setAttribute('fill', 'none')
             buttonSVG.setAttribute('stroke-width', '2')
-            buttonSVG.setAttribute('height', '1em')
-            buttonSVG.setAttribute('width', '1em')
+            buttonSVG.setAttribute('height', site == 'poe' ? '2em' : '1em')
+            buttonSVG.setAttribute('width', site == 'poe' ? '2em' : '1em')
         }
-        buttonSVG.setAttribute('class', sendSVGclasses) // assign borrowed classes
+        buttonSVG.setAttribute('class', sendImgClasses) // assign borrowed classes
         buttonSVG.setAttribute( // center oerlay + prevent triggering tooltips twice
             'style', `margin: 0 ${rMargin}rem 0 ${lMargin}rem ; pointer-events: none`)
         buttonSVG.setAttribute('viewBox', svgViewBox) // set pre-tweaked viewbox
@@ -270,35 +293,41 @@
     }
 
     function updateTooltip(buttonType) { // text & position
-
         tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON')))
-        const ctrAddend = 25, overlayWidth = 30
-        const iniRoffset = overlayWidth * (
-              buttonType.includes('fullScreen') ? 1
-            : buttonType.includes('fullWindow') ? 2
-            : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
+        const ctrAddend = 25 + ( site == 'poe' ? 42 : 0 ),
+              overlayWidth = site == 'poe' ? 42 : 30,
+              iniRoffset = overlayWidth * (
+                  buttonType.includes('fullScreen') ? 1
+                : buttonType.includes('fullWindow') ? 2
+                : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
         tooltipDiv.style.right = `${ // horizontal position
-            iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
+            iniRoffset - tooltipDiv.getBoundingClientRect().width / 2}px`
     }
 
     // Define TOGGLE functions
 
     function activateMode(mode) {
         if (mode == 'wideScreen') { document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
-        else if (mode == 'fullWindow') { document.head.appendChild(fullWindowStyle) ; chatgpt.sidebar.hide() }
-        else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
+        else if (mode == 'fullWindow') {
+            document.head.appendChild(fullWindowStyle)
+            if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.hide()
+        } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
     }
 
     function deactivateMode(mode) {
-        if (mode == 'wideScreen') try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (error) {}
+        if (mode == 'wideScreen')
+            try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (err) {}
         else if (mode == 'fullWindow') {
-            try { document.head.removeChild(fullWindowStyle) } catch (error) { console.error(error) } chatgpt.sidebar.show() }
-        else if (mode == 'fullScreen') {
+            try { document.head.removeChild(fullWindowStyle) } catch (err) {}
+            if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.show()
+        } else if (mode == 'fullScreen') {
             if (config.f11)
                 alert(chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
-            document.exitFullscreen().catch(error => { console.error(config.appSymbol + ' >> Failed to exit fullscreen', error) })
-    }}
+            document.exitFullscreen().catch(err => {
+                console.error(config.appSymbol + ' >> Failed to exit fullscreen', err) })
+        }
+    }
 
     function toggleMode(mode, state = '') {
         switch (state.toUpperCase()) {
@@ -312,7 +341,8 @@
 
     function syncMode(mode) { // setting + icon + tooltip
         const state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
-                      : mode === 'fullWindow' ? !!chatgpt.sidebar.isOff()
+                      : mode === 'fullWindow' ? ( site == 'poe' ? !!document.querySelector('#fullWindow-mode')
+                                                                : chatgpt.sidebar.isOff() )
                                               : chatgpt.isFullScreen() )
         settings.save(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
         if (mode === 'fullWindow') syncFullerWindows(state)
@@ -327,25 +357,26 @@
         if (fullWindowState && config.fullerWindows && !config.wideScreen) { // activate fuller windows
             document.head.appendChild(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
         } else if (!fullWindowState) { // de-activate fuller windows
-            try { document.head.removeChild(fullWindowStyle) } catch (error) {} // remove style too so sidebar shows
+            try { document.head.removeChild(fullWindowStyle) } catch (err) {} // to remove style too so sidebar shows
             if (!config.wideScreen) { // disable widescreen if result of fuller window
-                try { document.head.removeChild(wideScreenStyle) } catch (error) {} updateBtnSVG('wideScreen', 'off')
+                try { document.head.removeChild(wideScreenStyle) } catch (err) {}                
+                updateBtnSVG('wideScreen', 'off')
     }}}
 
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
-               classListToCSS(inputTextAreaClasses) + ' { padding-right: 145px } ' // make input text area accomdate buttons
-            + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
-                + 'position: relative ; left: 54px ; top: 7px } ' // ...below avatar to avoid cropping
-            + ( !config.tcbDisabled ? tcbStyle : '' )) // expand text input vertically        
+              site == 'openai' ? inputSelector + ' { padding-right: 145px } '  // narrow input to accomdate buttons
+                               + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
+                                   + 'position: relative ; left: 54px ; top: 7px } ' : '' ) // ...below avatar to avoid cropping
+        + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
     }
 
     syncExtension = () => { // settings, then disable modes or sync taller chatbox
         settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'notifHidden')
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
-                    try { document.head.removeChild(wideScreenStyle) } catch {}
-                    try { document.head.removeChild(fullWindowStyle) ; chatgpt.sidebar.show() } catch {}
+                    try { document.head.removeChild(wideScreenStyle) } catch (err) {}
+                    try { document.head.removeChild(fullWindowStyle) ; chatgpt.sidebar.show() } catch (err) {}
                     tweaksStyle.innerText = tweaksStyle.innerText.replace(tcbStyle, '')
                     removeBtns()
                 } else {
