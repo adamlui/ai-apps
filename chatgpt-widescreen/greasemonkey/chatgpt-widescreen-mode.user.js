@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.14.3
+// @version             2023.8.14.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -557,12 +557,10 @@
     }
 
     function deactivateMode(mode) {
-        if (mode == 'wideScreen') {
-            try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') }
-            catch (err) { console.error(config.appSymbol + ' >>', err) }
-        } else if (mode == 'fullWindow') {
-            try { document.head.removeChild(fullWindowStyle) }
-            catch (err) { console.error(config.appSymbol + ' >>', err) }
+        if (mode == 'wideScreen')
+            try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (err) {}
+        else if (mode == 'fullWindow') {
+            try { document.head.removeChild(fullWindowStyle) } catch (err) {}
             if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.show()
         } else if (mode == 'fullScreen') {
             if (config.f11)
@@ -598,11 +596,9 @@
         if (fullWindowState && config.fullerWindows && !config.wideScreen) { // activate fuller window
             document.head.appendChild(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
         } else if (!fullWindowState) {
-            try { document.head.removeChild(fullWindowStyle) } // to remove style too so sidebar shows
-            catch (err) { console.error(config.appSymbol + ' >>', err) }
+            try { document.head.removeChild(fullWindowStyle) } catch (err) {} // to remove style too so sidebar shows
             if (!config.wideScreen) { // disable widescreen if result of fuller window
-                try { document.head.removeChild(wideScreenStyle) }
-                catch (err) { console.error(config.appSymbol + ' >>', err) }
+                try { document.head.removeChild(wideScreenStyle) } catch (err) {}
                 updateBtnSVG('wideScreen', 'off')
     }}}
 
