@@ -38,18 +38,30 @@ jobs:
           shopt -s globstar
           for file in "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/"**/*.md; do
             relative_path=${file#"${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/"}
-            if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path")" ]; then
-              cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path"
-            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path")" > "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path")" ]; then
-              cp -f "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path" "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path"
+            if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path")" > \
+                 "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path")" ]; then
+              cp -f \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path" \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path"
+            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path")" > \
+                   "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path")" ]; then
+              cp -f \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/docs/$relative_path" \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/docs/$relative_path"
             fi
           done
 
       - name: Sync chatgpt-auto-refresh/ to adamlui/chatgpt-auto-refresh/
-        run: rsync -avhr ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/ ${{ github.workspace }}/adamlui/chatgpt-auto-refresh/
+        run: |
+          rsync -avhr \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/ \
+            ${{ github.workspace }}/adamlui/chatgpt-auto-refresh/
 
       - name: Sync chatgpt-auto-refresh/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-auto-refresh/
-        run: rsync -avhr --delete ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/ ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-auto-refresh/
+        run: |
+          rsync -avhr --delete \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-refresh/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-auto-refresh/
 
       - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
