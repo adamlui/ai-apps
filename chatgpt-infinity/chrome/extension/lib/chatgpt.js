@@ -1,5 +1,5 @@
 // This library is a condensed version of chatgpt.js v2.1.0
-// (c) 2023 KudoAI & contributors under the MIT license
+// (c) 2023 KudoAI & contributors under the MIT license.
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
 
