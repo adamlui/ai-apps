@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.13
+// @version             2023.8.14
 // @license             MIT
 // @match               https://chat.openai.com/*
 // @compatible          chrome
@@ -268,8 +268,8 @@
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/'
-        const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
@@ -371,8 +371,8 @@
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
-                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
+                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0,
+                          latestSubVer = parseInt(latestVer.split('.')[i]) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
 
@@ -441,8 +441,8 @@
                         chatgpt.autoRefresh.activate(refreshInterval)
                     }
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-                    const minInterval = Math.max(2, config.refreshInterval - 10)
-                    const maxInterval = config.refreshInterval + 10
+                    const minInterval = Math.max(2, config.refreshInterval - 10),
+                          maxInterval = config.refreshInterval + 10
                     alert('Interval updated!', `${ messages.alert_intUpdated } ${ minInterval }–${ maxInterval } secs`)
                     break
         }}}))
@@ -458,17 +458,18 @@
             const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
 
             // Show alert
-            const headingStyle = 'font-size: 1.25rem ; font-style: italic'
-            const pStyle = 'position: relative ; left: 3px'
-            const pBrStyle = 'position: relative ; left: 12px'
+            const headingStyle = 'font-size: 1.15rem',
+                  pStyle = 'position: relative ; left: 3px',
+                  pBrStyle = 'position: relative ; left: 4px ',
+                  aStyle = 'color: #8325c4' // purple
             const aboutAlertID = alert(
                 messages.appName, // title
-                `<span style="${ headingStyle }"><b>Version</b>: </span>`
+                `<span style="${ headingStyle }"><b>🏷️ <i>Version</i></b>: </span>`
                     + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-                + `<span style="${ headingStyle }"><b>Powered by</b>: </span>`
-                    + `<span style="${ pStyle }"><a href="https://chatgpt.js.org" target="_blank" rel="noopener">`
+                + `<span style="${ headingStyle }"><b>⚡ <i>Powered by</i></b>: </span>`
+                    + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                     + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                + `<span style="${ headingStyle }"><b>Source code</b>:</span>\n`
+                + `<span style="${ headingStyle }"><b>💻 <i>Source code</i></b>:</span>\n`
                     + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                     + config.gitHubURL + '</a></span>',
                 [ // buttons
@@ -504,8 +505,8 @@
     // Define TOGGLE functions
 
     function insertToggle() {
-        const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {}
-        const firstButton = chatHistoryNav.querySelector('a') || {}
+        const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
+              firstButton = chatHistoryNav.querySelector('a') || {}
         if (chatgpt.history.isOff()) // hide enable-history spam div
             try { firstButton.parentNode.nextElementSibling.style.display = 'none' } catch (error) {}
         if (!chatHistoryNav.contains(toggleLabel)) // insert toggle
@@ -516,14 +517,16 @@
         while (toggleLabel.firstChild) toggleLabel.firstChild.remove() // clear old content
 
         // Create elements
-        const navicon = document.createElement('img') ; navicon.width = 18
-        navicon.src = config.assetHostURL + 'media/images/icons/auto-refresh-navicon-light-155.png'
-        const label = document.createElement('label') ; label.className = 'switch' ; label.id = 'arToggleLabel'
-        const labelText = document.createTextNode(messages.menuLabel_autoRefresh + ' '
-            + ( messages['state_' + ( config.arDisabled ? 'disabled' : 'enabled' )]))
-        const input = document.createElement('input') ; input.id = 'arToggleInput'
-        input.type = 'checkbox' ; input.disabled = true ; input.checked = !config.arDisabled
-        const span = document.createElement('span') ; span.className = 'slider'
+        const navicon = document.createElement('img'),
+              label = document.createElement('label'),
+              labelText = document.createTextNode(messages.menuLabel_autoRefresh + ' '
+                  + ( messages['state_' + ( config.arDisabled ? 'disabled' : 'enabled' )])),
+              input = document.createElement('input'),
+              span = document.createElement('span')
+        navicon.src = config.assetHostURL + 'media/images/icons/auto-refresh-navicon-light-155.png' ; navicon.width = 18
+        label.id = 'arToggleLabel' ; label.className = 'switch'
+        input.id = 'arToggleInput' ; input.type = 'checkbox' ; input.disabled = true ; input.checked = !config.arDisabled
+        span.className = 'slider'
 
         // Append elements
         label.appendChild(input) ; label.appendChild(span)
