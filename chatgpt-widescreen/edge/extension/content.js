@@ -184,13 +184,6 @@
                     + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!' )
     }}
 
-    // Define CSS function
-
-    function classListToCSS(classList) { // convert DOM classList to single CSS selector
-        return '.' + [...classList].join('.') // prepend dot to dot-separated string
-            .replaceAll(/([:\[\]])/g, '\\$1') // escape CSS special chars
-    }
-
     // Define BUTTON functions
 
     function setBtnColor() { return chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' }
