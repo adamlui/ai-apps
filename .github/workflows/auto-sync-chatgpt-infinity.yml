@@ -1,10 +1,12 @@
-name: Sync (chatgpt-infinity/ to adamlui/chatgpt-infinity/) && (chatgpt-infinity/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-infinity/)
+name: Sync /chatgpt-infinity/* to adamlui/chatgpt-infinity/*
 
 on:
   push:
     branches: [ master, main ]
     paths:
-      - 'chatgpt-infinity/**'
+      - 'chatgpt-infinity/*'
+      - 'chatgpt-infinity/docs/**'
+      - 'chatgpt-infinity/media/**'
 
 jobs:
   build:
@@ -26,52 +28,11 @@ jobs:
           repository: adamlui/chatgpt-infinity
           path: adamlui/chatgpt-infinity
 
-      - name: Checkout adamlui/userscripts
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: adamlui/userscripts
-          path: adamlui/userscripts
-
-      - name: Sync docs between root & /greasemonkey
-        run: |
-          shopt -s globstar
-          for file in "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/"**/*.md; do
-            relative_path=${file#"${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/"}
-            if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/$relative_path")" > \
-                 "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/docs/$relative_path")" ]; then
-              cp -f \
-                "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/$relative_path" \
-                "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/docs/$relative_path"
-            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/docs/$relative_path")" > \
-                   "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/hatgpt-auto-refresh/docs/$relative_path")" ]; then
-              cp -f \
-                "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/docs/$relative_path" \
-                "${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/docs/$relative_path"
-            fi
-          done
-
-      - name: Sync chatgpt-infinity/ to adamlui/chatgpt-infinity/
+      - name: Sync /chatgpt-infinity/* to adamlui/chatgpt-infinity/*
         run: |
           rsync -avhr \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/ \
             ${{ github.workspace }}/adamlui/chatgpt-infinity/
-
-      - name: Sync chatgpt-infinity/greasemonkey/ to adamlui/userscripts/chatgpt/chatgpt-infinity/
-        run: |
-          rsync -avhr --delete \
-            ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-infinity/greasemonkey/ \
-            ${{ github.workspace }}/adamlui/userscripts/chatgpt/chatgpt-infinity/
-
-      - name: Push to adamlui/chatgpt-apps
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: '--force'
-          add_options: '--all'
-          commit_user_email: auto-sync@kudoai.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
-          file_pattern: 'chatgpt-infinity/**'
-          repository: adamlui/chatgpt-apps
 
       - name: Push to adamlui/chatgpt-infinity
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -82,13 +43,3 @@ jobs:
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: '**'
           repository: adamlui/chatgpt-infinity
-
-      - name: Push to adamlui/userscripts
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: '--force'
-          add_options: '--all'
-          commit_user_email: auto-sync@kudoai.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
-          file_pattern: 'chatgpt/chatgpt-infinity/**'
-          repository: adamlui/userscripts
