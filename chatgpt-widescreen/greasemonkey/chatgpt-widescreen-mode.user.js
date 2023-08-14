@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.14
+// @version             2023.8.14.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -271,8 +271,8 @@
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/'
-        const msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(response) {
@@ -310,8 +310,8 @@
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0
-                    const latestSubVer = parseInt(latestVer.split('.')[i]) || 0
+                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0,
+                          latestSubVer = parseInt(latestVer.split('.')[i]) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
 
@@ -392,9 +392,9 @@
             const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
 
             // Show alert
-            const headingStyle = 'font-size: 1.25rem ; font-style: italic'
-            const pStyle = 'position: relative ; left: 3px'
-            const pBrStyle = 'position: relative ; left: 12px'
+            const headingStyle = 'font-size: 1.25rem ; font-style: italic',
+                  pStyle = 'position: relative ; left: 3px',
+                  pBrStyle = 'position: relative ; left: 12px'
             const aboutAlertID = alert(
                 messages.appName, // title
                 `<span style="${ headingStyle }"><b>Version</b>: </span>`
@@ -433,7 +433,9 @@
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
-        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow') }
+        chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
+            shadow || chatgpt.isDarkMode() ? '' : 'shadow')
+    }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
@@ -495,8 +497,7 @@
                                  : [newChatButton, newChatElems, newChatElems])
 
         // Initialize rem margin offset vs. OpenAI's .mr-1 for hover overlay centeredness
-        const lMargin = mode == 'wideScreen' ? .11 : .12
-        const rMargin = (.25 - lMargin)
+        const lMargin = mode == 'wideScreen' ? .11 : .12, rMargin = (.25 - lMargin)
 
         // Set SVG attributes
         const buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
@@ -539,12 +540,12 @@
     function updateTooltip(buttonType) { // text & position
         tooltipDiv.innerText = messages['tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON'))]
-        const ctrAddend = 25 + ( site == 'poe' ? 42 : 0 )
-        const overlayWidth = site == 'poe' ? 42 : 30
-        const iniRoffset = overlayWidth * (
-              buttonType.includes('fullScreen') ? 1
-            : buttonType.includes('fullWindow') ? 2
-            : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
+        const ctrAddend = 25 + ( site == 'poe' ? 42 : 0 ),
+              overlayWidth = site == 'poe' ? 42 : 30,
+              iniRoffset = overlayWidth * (
+                  buttonType.includes('fullScreen') ? 1
+                : buttonType.includes('fullWindow') ? 2
+                : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
         tooltipDiv.style.right = `${ // horizontal position
             iniRoffset - tooltipDiv.getBoundingClientRect().width / 2}px`
     }
@@ -656,11 +657,11 @@
 
     // Define UI element selectors
     const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' :
-                          site == 'you' ? '[data-testid="youchat-input-textarea"]' : 'form textarea[id*="prompt"]'
-    const sidebarSelector = site == 'poe' ? 'aside[class*="leftSidebar"]' : site == 'you' ? '[data-testid="youchat-web-results-panel"]'
-                                          : '#__next > div > div.dark'
-    const sidepadSelector = '#__next > div > div'
-    const textContainerSelector = site == 'poe' ? '[class*="mainSection"]' : site == 'you' ? '#chatHistory'
+                          site == 'you' ? '[data-testid="youchat-input-textarea"]' : 'form textarea[id*="prompt"]',
+          sidebarSelector = site == 'poe' ? 'aside[class*="leftSidebar"]' : site == 'you' ? '[data-testid="youchat-web-results-panel"]'
+                                          : '#__next > div > div.dark',
+          sidepadSelector = '#__next > div > div',
+          textContainerSelector = site == 'poe' ? '[class*="mainSection"]' : site == 'you' ? '#chatHistory'
                                                 : '.text-base, main > div > div > div > div > div'
     // Create/stylize tooltip div
     const tooltipDiv = document.createElement('div')
@@ -675,8 +676,8 @@
     document.head.appendChild(tooltipStyle)
 
     // Create general style tweaks
-    const tweaksStyle = document.createElement('style')
-    const tcbStyle = inputSelector + ' { max-height: 68vh !important } '
+    const tweaksStyle = document.createElement('style'),
+          tcbStyle = inputSelector + ' { max-height: 68vh !important } '
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create wide screen style
@@ -698,8 +699,8 @@
         + sidepadSelector + ' { padding-left: 0px }' ) // remove side padding
 
     // Create/insert chatbar buttons
-    const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-    const rOffset = site == 'you' ? -0.1 : 2.57, bOffset = site == 'you' ? -0.25 : 1.77
+    const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
+          rOffset = site == 'you' ? -0.1 : 2.57, bOffset = site == 'you' ? -0.25 : 1.77
     let buttonColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         ((buttonType) => { // enclose in IIFE to separately capture button type for async listeners
