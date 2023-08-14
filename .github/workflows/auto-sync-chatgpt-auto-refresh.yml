@@ -18,6 +18,7 @@ jobs:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
+          fetch-depth: 2
 
       - name: Checkout adamlui/chatgpt-auto-refresh
         uses: actions/checkout@v2
