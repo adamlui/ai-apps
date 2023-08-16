@@ -24,7 +24,7 @@
   "alert_newerVer": { "message": "En opdatering til" },
   "alert_isAvail": { "message": "er tilgængelig" },
   "alert_upToDate": { "message": "Opdateret" },
-  "alert_isUpToDate": { "message": "{ 0 } er opdateret" },
+  "alert_isUpToDate": { "message": "er opdateret" },
   "alert_ifIssuePersists": { "message": "Hvis problemet fortsætter, kan du prøve at aktivere proxytilstand" },
   "alert_justAmoment": { "message": "Lige et øjeblik..." },
   "alert_waitingResponse": { "message": "Venter på ChatGPT-svar" },

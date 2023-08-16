@@ -14,7 +14,7 @@
   "prompt_updateReplyLang": { "message": "Актуализиране на езика за отговор" },
   "alert_prefixMode": { "message": "Режим на префикс" },
   "alert_suffixMode": { "message": "Режим на суфикс" },
-  "alert_langUpdated": { "message": "{  } езикът е актуализиран" },
+  "alert_langUpdated": { "message": "Езикът е актуализиран" },
   "alert_willReplyIn": { "message": "ще отговори след" },
   "alert_yourSysLang": { "message": "вашия системен език" },
   "alert_version": { "message": "Версия" },
