@@ -13,7 +13,7 @@
 
 ### 聊天中断时自动继续生成 ChatGPT 响应。
 
-<a href="https://greasyfork.org/scripts/466789-chatgpt-auto-continue"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#安装"><img alt="如何安装" height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/466789-chatgpt-auto-continue"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#安装"><img height=42 title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [讨论](https://chatgptevo.com/autocontinue/discussions) /
 [审查](https://greasyfork.org/scripts/466789-chatgpt-auto-continue/feedback#post-discussion) /
