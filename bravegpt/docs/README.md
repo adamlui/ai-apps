@@ -17,7 +17,7 @@
 
 <h3><b>BraveGPT</b> brings the magic of ChatGPT to search results (powered by GPT-4!)</h3>
 
-<a href="https://greasyfork.org/en/scripts/462440-bravegpt"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/en/scripts/462440-bravegpt"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.bravegpt.com/discussions) / 
 [Review](https://greasyfork.org/en/scripts/462440-bravegpt/feedback#post-discussion) / 
@@ -106,9 +106,9 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <a href="https://technodon.org/@bravegpt" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/110077227154250890?domain=https%3A%2F%2Ftechnodon.org&style=social" title="Mastodon">
 [![Follow @adamlui on GitHub](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "GitHub")](https://github.com/adamlui)
-[![Follow @AdamLuiTube on YouTube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social)](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
+[![Follow @AdamLuiTube on YouTube](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social "YouTube")](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 <a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" title="Mastodon">
-[![](https://img.shields.io/twitter/follow/adamllui?style=social)](https://twitter.com/adamllui)
+[![](https://img.shields.io/twitter/follow/adamllui?style=social "X")](https://x.com/adamllui)
 
 ## Contributors
 
