@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.16
+// @version             2023.8.19
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -238,7 +238,7 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
-// @match               https://chat.openai.com/*
+// @match               *://chat.openai.com/*
 // @run-at              document-end
 // @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@315fc8e62d4d3e82276fbb641128774a0d1c5219/dist/chatgpt-2.1.0.min.js
 // @connect             raw.githubusercontent.com
@@ -373,7 +373,7 @@
             headers: { 'Cache-Control': 'no-cache' },
             onload: (response) => {
 
-                // Compare versions                
+                // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
                     const currentSubVer = parseInt(currentVer.split('.')[i]) || 0,
