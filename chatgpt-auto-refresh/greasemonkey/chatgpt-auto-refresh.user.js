@@ -221,9 +221,9 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.16
+// @version             2023.8.19
 // @license             MIT
-// @match               https://chat.openai.com/*
+// @match               *://chat.openai.com/*
 // @compatible          chrome
 // @compatible          firefox
 // @compatible          edge
