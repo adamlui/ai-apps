@@ -33,19 +33,23 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync README.md between directories
+      - name: Sync docs between root & /greasemonkey
         run: |
-          if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/README.md")" > \
-               "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/greasemonkey/README.md")" ]; then
-            cp -f \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/README.md" \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/greasemonkey/README.md"
-          elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/greasemonkey/README.md")" > \
-                 "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/README.md")" ]; then
-            cp -f \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/greasemonkey/README.md" \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/README.md"
-          fi
+          shopt -s globstar
+          for file in "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/docs/"**/*.md; do
+            relative_path=${file#"${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/docs/"}
+            if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/docs/$relative_path")" > \
+                 "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/greasemonkey/docs/$relative_path")" ]; then
+              cp -f \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/docs/$relative_path" \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/greasemonkey/docs/$relative_path"
+            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/greasemonkey/docs/$relative_path")" > \
+                   "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/docs/$relative_path")" ]; then
+              cp -f \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/greasemonkey/docs/$relative_path" \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/docs/$relative_path"
+            fi
+          done
 
       - name: Sync bravegpt/ to kudoai/bravegpt/
         run: |
