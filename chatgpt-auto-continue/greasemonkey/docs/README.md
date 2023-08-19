@@ -2,7 +2,7 @@
 <h5>English | <a href="zh-cn#readme">简体中文</a></h5>
 </div>
 
-# <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Auto-Continue ⏩ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Automatically%20continue%20the%20conversation%20from%20multiple%20ChatGPT%20responses%20w%2F%20this%20plug-in%21T&url=https://chatgptevo.com/autocontinue&hashtags=javascript,openai,chatgpt)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Auto-Continue ⏩ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Automatically%20continue%20the%20conversation%20from%20multiple%20ChatGPT%20responses%20w%2F%20this%20plug-in%21T&url=https://chatgptautocontinue.com&hashtags=javascript,openai,chatgpt)
 
 ![](https://img.shields.io/greasyfork/dt/466789?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)
 [![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
@@ -15,7 +15,7 @@
 
 <a href="https://greasyfork.org/scripts/466789-chatgpt-auto-continue"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
-[Discuss](https://chatgptevo.com/autocontinue/discussions) /
+[Discuss](https://chatgptautocontinue.com/discussions) /
 [Review](https://greasyfork.org/scripts/466789-chatgpt-auto-continue/feedback#post-discussion) /
 [Contact author](https://github.com/adamlui)
 

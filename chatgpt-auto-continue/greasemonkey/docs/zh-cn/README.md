@@ -2,7 +2,7 @@
 <h5>简体中文 | <a href="../../#readme">English</a></h5>
 </div>
 
-# <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT 自动继续 ⏩ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=%E4%BD%BF%E7%94%A8%E6%AD%A4%E6%8F%92%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BB%8E%E5%A4%9A%E4%B8%AA%20ChatGPT%20%E5%93%8D%E5%BA%94%E7%BB%A7%E7%BB%AD%E5%AF%B9%E8%AF%9D%EF%BC%81&url=https://chatgptevo.com/autocontinue&hashtags=javascript,openai,chatgpt)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT 自动继续 ⏩ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=%E4%BD%BF%E7%94%A8%E6%AD%A4%E6%8F%92%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BB%8E%E5%A4%9A%E4%B8%AA%20ChatGPT%20%E5%93%8D%E5%BA%94%E7%BB%A7%E7%BB%AD%E5%AF%B9%E8%AF%9D%EF%BC%81&url=https://chatgptautocontinue.com&hashtags=javascript,openai,chatgpt)
 
 ![](https://img.shields.io/greasyfork/dt/466789?label=安装&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)
 [![](https://img.shields.io/badge/许可证-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
@@ -15,7 +15,7 @@
 
 <a href="https://greasyfork.org/scripts/466789-chatgpt-auto-continue"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#安装"><img height=42 title="如何安装" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
-[讨论](https://chatgptevo.com/autocontinue/discussions) /
+[讨论](https://chatgptautocontinue.com/discussions) /
 [审查](https://greasyfork.org/scripts/466789-chatgpt-auto-continue/feedback#post-discussion) /
 [联系作者](https://github.com/adamlui)
 
