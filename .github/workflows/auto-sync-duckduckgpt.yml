@@ -33,19 +33,23 @@ jobs:
           repository: adamlui/userscripts
           path: adamlui/userscripts
 
-      - name: Sync README.md between directories
+      - name: Sync docs between root & /greasemonkey
         run: |
-          if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/README.md")" > \
-               "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/README.md")" ]; then
-            cp -f \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/README.md" \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/README.md"
-          elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/README.md")" > \
-                 "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/README.md")" ]; then
-            cp -f \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/README.md" \
-              "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/README.md"
-          fi
+          shopt -s globstar
+          for file in "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/docs/"**/*.md; do
+            relative_path=${file#"${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/docs/"}
+            if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/docs/$relative_path")" > \
+                 "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/docs/$relative_path")" ]; then
+              cp -f \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/docs/$relative_path" \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/docs/$relative_path"
+            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/docs/$relative_path")" > \
+                   "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/docs/$relative_path")" ]; then
+              cp -f \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/docs/$relative_path" \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/docs/$relative_path"
+            fi
+          done
 
       - name: Sync duckduckgpt/ to kudoai/duckduckgpt/
         run: |
