@@ -58,7 +58,7 @@
 
 ## 🗨️ 用户反馈
 
-<img width=535 src="https://i.imgur.com/JX3u7Yz.png">
+<img width=535 src="https://i.imgur.com/8ega2Y9.png">
 
 ## ⚡ 如何安装
 
