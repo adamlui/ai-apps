@@ -23,6 +23,7 @@
 
 ![](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/zh-cn/tm-menu-toggle.png)
 ![](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/zh-cn/mode-notification-on.png)
+<br><br>
 
 ## ❓ 它能做什么
 
@@ -53,6 +54,7 @@
 &nbsp;&nbsp;&nbsp;⌛ <strong>省时间</strong> — 不再仅仅因为几分钟的不活动而不断复制/粘贴/刷新！
 
 &nbsp;&nbsp;&nbsp;🤯 作品 <mark>***即使在背景选项卡中！***</mark>
+<br><br>
 
 ## 🗨️ 用户反馈
 
@@ -68,7 +70,8 @@
 
 <div align="center">
 
-![自动刷新 启用](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/zh-cn/mode-toggle-on.jpg)    
+![自动刷新 启用](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/zh-cn/mode-toggle-on.jpg)
+<br><br>
 
 </div>
 
@@ -85,12 +88,14 @@
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
     <img width=546 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
 </picture></a>
-<br /><br />
+<br><br>
 
 ChatGPT 自動刷新依賴於強大的 [chatgpt.js](https://github.com/kudoai/chatgpt.js) 庫 (c) 2023 KudoAI 和 MIT 許可下的貢獻者。
 
 </div>
 </h6>
+
+<br>
 
 ## 🌐 兼容性
 
@@ -114,6 +119,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [讨论](https://github.com/adamlui/chatgpt-auto-refresh/discussions) / 
 [发表评论](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
 [更多 ChatGPT 用户脚本](https://github.com/adamlui/userscripts/tree/master/chatgpt)
+<br><br>
 
 ## 🧠 贡献者
 
@@ -136,9 +142,9 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
+<br><br>
 
 ## 🤖 更多 ChatGPT 应用
-<br><br>
 
 如需更多史诗般的 ChatGPT 应用程序，请访问此处：[https://github.com/adamlui/chatgpt-apps](https://github.com/adamlui/chatgpt-apps)
 <br><br>
