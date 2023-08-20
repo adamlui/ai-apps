@@ -53,6 +53,7 @@
 &nbsp;&nbsp;&nbsp;⌛ <strong>Time-saver</strong> — No more constant copy/paste/refresh just from minutes of inactivity!
 
 &nbsp;&nbsp;&nbsp;🤯 <mark>Works ***even in background tabs!***</mark>
+<br><br>
 
 ## 🗨️ User feedback
 
@@ -69,6 +70,7 @@
 <div align="center">
     
 ![](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/mode-toggle-on.jpg)
+<br><br>
 
 </div>
 
@@ -85,12 +87,14 @@
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
     <img width=546 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
 </picture></a>
-<br /><br />
+<br><br>
 
 ChatGPT Auto Refresh relies on code from the powerful [chatgpt.js](https://github.com/kudoai/chatgpt.js) library (c) 2023 KudoAI & contributors under the MIT license.
 
 </div>
 </h6>
+
+<br>
 
 ## 🌐 Compatibility
 
@@ -114,6 +118,7 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions) / 
 [Leave a review](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
+<br><br>
 
 ## 🧠 Contributors
 
