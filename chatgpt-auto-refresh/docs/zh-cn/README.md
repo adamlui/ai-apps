@@ -24,7 +24,7 @@
 ![](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/zh-cn/tm-menu-toggle.png)
 ![](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/zh-cn/mode-notification-on.png)
 
-## 它能做什么
+## ❓ 它能做什么
 
 - #### 摆脱烦人的 Cloudflare 检查:
 
@@ -44,7 +44,7 @@
     
 </div>
 
-## 好处
+## 💊 好处
 
 &nbsp;&nbsp;&nbsp;🛡️ <strong>安全的</strong> — 没有发送不必要的帐户相关请求
 
@@ -54,11 +54,11 @@
 
 &nbsp;&nbsp;&nbsp;🤯 作品 <mark>***即使在背景选项卡中！***</mark>
 
-## 用户反馈
+## 🗨️ 用户反馈
 
 <img width=535 src="https://i.imgur.com/JX3u7Yz.png">
 
-## 如何安装
+## ⚡ 如何安装
 
 1. 安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) 或者 Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
@@ -72,7 +72,7 @@
 
 </div>
 
-## 依赖关系
+## 🚀 依赖关系
 
 <h6>
 <div align="center">
@@ -92,7 +92,7 @@ ChatGPT 自動刷新依賴於強大的 [chatgpt.js](https://github.com/kudoai/ch
 </div>
 </h6>
 
-## 兼容性
+## 🌐 兼容性
 
 ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.net/) 或 [Violentmonkey](https://violentmonkey.github.io/) 的浏览器:
 
@@ -115,7 +115,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [发表评论](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
 [更多 ChatGPT 用户脚本](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
-## 贡献者
+## 🧠 贡献者
 
 该项目的存在归功于以下贡献者的代码、翻译、问题和想法:
 
@@ -137,12 +137,13 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
-## 更多 ChatGPT 应用
+## 🤖 更多 ChatGPT 应用
+<br><br>
 
 如需更多史诗般的 ChatGPT 应用程序，请访问此处：[https://github.com/adamlui/chatgpt-apps](https://github.com/adamlui/chatgpt-apps)
 <br><br>
 
-## 相关脚本
+## 📜 相关脚本
 
 ### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://chatgptwidescreen.com/github) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
 
