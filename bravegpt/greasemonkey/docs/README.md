@@ -106,7 +106,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 [![](https://img.shields.io/github/followers/kudoai?label=Follow%20%40kudoai&style=social "Follow @kudoai on GitHub")](https://github.com/kudoai)
 [![](https://img.shields.io/youtube/channel/subscribers/UCdwQlbPJW3RbkLcHh_DGb0g?label=Follow%20%40kudoailabs&style=social "Follow @kudoailabs on YouTube")](https://www.youtube.com/@kudoailabs?sub_confirmation=1)
-<a href="https://technodon.org/@bravegpt" target="_blank"><img src="https://img.shields.io/mastodon/follow/110077227154250890?domain=https%3A%2F%2Ftechnodon.org&style=social" title="Follow @duckduckgpt on Mastodon">
+<a href="https://technodon.org/@bravegpt" target="_blank"><img src="https://img.shields.io/mastodon/follow/110077227154250890?domain=https%3A%2F%2Ftechnodon.org&style=social" title="Follow @bravegpt on Mastodon">
 [![](https://img.shields.io/badge/Follow%20company%2fkudoai-7-blue?logo=linkedin&style=social "Follow company/kudoai on LinkedIn")](https://linkedin.com/company/kudoai)
 <br>[![](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "Follow @adamlui on GitHub")](https://github.com/adamlui)
 [![](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social "Follow @adamluitube on YouTube")](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
