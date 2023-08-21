@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.8.19
+// @version             2023.8.21
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -372,8 +372,8 @@
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    const currentSubVer = parseInt(currentVer.split('.')[i]) || 0,
-                          latestSubVer = parseInt(latestVer.split('.')[i]) || 0
+                    const currentSubVer = parseInt(currentVer.split('.')[i], 10) || 0,
+                          latestSubVer = parseInt(latestVer.split('.')[i], 10) || 0
                     if (currentSubVer > latestSubVer) break // out of comparison since not outdated
                     else if (latestSubVer > currentSubVer) { // if outdated
 
