@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.8.24
+// @version             2023.8.27
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -218,19 +218,27 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        alert(messages.alert_updateAvail + '! 🚀', // title
+                        const updateAlertID = alert(messages.alert_updateAvail + '! 🚀', // title
                             messages.alert_newerVer + ' DuckDuckGPT v' + latestVer + ' '
                                 + messages.alert_isAvail + '!   '
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + '>View changes</a>',
+                                    + '>' + messages.link_viewChanges + '</a>',
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
                                 ).onclose = () => location.reload() },
                             '', 328 // width
                         )
+
+                        // Localize button labels if needed
+                        if (!config.userLanguage.startsWith('en')) {
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
+                            updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
+                            updateAlert.querySelectorAll('button')[0].textContent = messages.buttonLabel_dismiss
+                        }
+
                         return
                 }}
 
