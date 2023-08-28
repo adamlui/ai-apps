@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Tsy mandeha ny API proxy" },
   "alert_suggestProxy": { "message": "Manandrama manova ny fomba proxy anatin'ny tsipiky ny fitaovana" },
   "alert_suggestOpenAI": { "message": "Andramo vonoy ny fomba proxy anatin'ny tsipiky ny fitaovana" },
+  "buttonLabel_update": { "message": "Vaovao farany" },
+  "buttonLabel_dismiss": { "message": "Hiditra" },
+  "link_viewChanges": { "message": "Hijery ireo fanovana" },
   "link_shareFeedback": { "message": "Mizara Feedback" },
   "state_enabled": { "message": "Mampandeha" },
   "state_disabled": { "message": "Natsahatra ; Najanona" }

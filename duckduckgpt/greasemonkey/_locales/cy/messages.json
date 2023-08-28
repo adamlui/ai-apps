@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Nid yw ap dirprwy yn gweithio" },
   "alert_suggestProxy": { "message": "Ceisiwch droi Modd Dirprwy ymlaen yn y bar offer" },
   "alert_suggestOpenAI": { "message": "Ceisiwch ddiffodd y modd dirprwy yn y bar offer" },
+  "buttonLabel_update": { "message": "Diweddaru" },
+  "buttonLabel_dismiss": { "message": "Cau" },
+  "link_viewChanges": { "message": "Gweld newidiadau" },
   "link_shareFeedback": { "message": "Rhannu adborth" },
   "state_enabled": { "message": "wedi’i alluogi" },
   "state_disabled": { "message": "analluogwyd" }

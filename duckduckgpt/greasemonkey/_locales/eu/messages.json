@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy APIa ez dabil" },
   "alert_suggestProxy": { "message": "Saiatu tresna-barran Proxy modua aktibatzen" },
   "alert_suggestOpenAI": { "message": "Saiatu tresna-barrako proxy modua desaktibatzen" },
+  "buttonLabel_update": { "message": "Eguneratu" },
+  "buttonLabel_dismiss": { "message": "Bistatik kendu" },
+  "link_viewChanges": { "message": "Ikusi aldaketak" },
   "link_shareFeedback": { "message": "Partekatu Iritzia" },
   "state_enabled": { "message": "gaituta" },
   "state_disabled": { "message": "ezgaituta" }

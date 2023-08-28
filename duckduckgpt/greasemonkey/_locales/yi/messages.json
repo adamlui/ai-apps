@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "פּראָקסי אַפּי איז נישט ארבעטן" },
   "alert_suggestProxy": { "message": "פּרוּווט באַשטימען אויף פּראָקסי מאָדע אין דעם מכשיר" },
   "alert_suggestOpenAI": { "message": "פּרוּווט באַשטימען אַוועק פּראַקסי מאָדע אין מכשיר" },
+  "buttonLabel_update": { "message": "דערהייַנטיקן" },
+  "buttonLabel_dismiss": { "message": "אָפּזאָגן" },
+  "link_viewChanges": { "message": "קוק ענדערונגען" },
   "link_shareFeedback": { "message": "ייַנטיילן באַמערקונגען" },
   "state_enabled": { "message": "ערמעגליכט" },
   "state_disabled": { "message": "input-mode" }

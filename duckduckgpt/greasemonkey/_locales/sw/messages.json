@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "API mbadala haifanyi kazi" },
   "alert_suggestProxy": { "message": "Jaribu kuwasha Modi Mbadala katika upau wa zana" },
   "alert_suggestOpenAI": { "message": "Jaribu kuzima Hali ya Wakala katika upau wa zana" },
+  "buttonLabel_update": { "message": "Sasisho" },
+  "buttonLabel_dismiss": { "message": "Puuza" },
+  "link_viewChanges": { "message": "Angalia mabadiliko" },
   "link_shareFeedback": { "message": "Toa maoni yako" },
   "state_enabled": { "message": "Imewezeshwa" },
   "state_disabled": { "message": "disabled" }

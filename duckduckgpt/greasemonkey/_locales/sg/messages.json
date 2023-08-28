@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Arc-en-ciel ayeke dabe ti e na ni pëpe" },
   "alert_suggestProxy": { "message": "Tara ti changé na mode Proxy na yâ ti toolbar" },
   "alert_suggestOpenAI": { "message": "Tara ti zia lege ti kode ti proxy na yâ ti toolbar" },
+  "buttonLabel_update": { "message": "Nduru tënëModifier" },
+  "buttonLabel_dismiss": { "message": "Gbenga Akinnagbe" },
+  "link_viewChanges": { "message": "Bâ achangement" },
   "link_shareFeedback": { "message": "Share Feedback na na" },
   "state_enabled": { "message": "enable awe" },
   "state_disabled": { "message": "disable awe" }

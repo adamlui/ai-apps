@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy API nefunguje" },
   "alert_suggestProxy": { "message": "Skúste zapnúť režim proxy na paneli s nástrojmi" },
   "alert_suggestOpenAI": { "message": "Skúste vypnúť režim proxy na paneli s nástrojmi" },
+  "buttonLabel_update": { "message": "Aktualizovať" },
+  "buttonLabel_dismiss": { "message": "Odmietnuť" },
+  "link_viewChanges": { "message": "Zobraziť zmeny" },
   "link_shareFeedback": { "message": "Zdieľajte spätnú väzbu s" },
   "state_enabled": { "message": "povolené" },
   "state_disabled": { "message": "nepovolené" }

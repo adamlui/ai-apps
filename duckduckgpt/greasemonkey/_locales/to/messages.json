@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "ʻOku ʻikai ngaue ʻa e API fakafofonga" },
   "alert_suggestProxy": { "message": "Feinga liliu ʻi he Mode fakafofonga ʻi he toolbar" },
   "alert_suggestOpenAI": { "message": "Feinga ke liliu ʻa e Mode fakafofonga ʻi he toolbar" },
+  "buttonLabel_update": { "message": "Fakamatala Fakamuimuitahá" },
+  "buttonLabel_dismiss": { "message": "Tukuange" },
+  "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" },
   "link_shareFeedback": { "message": "Vahevahe ʻa e Fakamatala" },
   "state_enabled": { "message": "Faka'ataa" },
   "state_disabled": { "message": "Tapui" }

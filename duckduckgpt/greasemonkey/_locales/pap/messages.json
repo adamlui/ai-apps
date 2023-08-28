@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "AZV no ta trahando" },
   "alert_suggestProxy": { "message": "Traslochi E Trasporti Di Proxy Mode In Toolbar" },
   "alert_suggestOpenAI": { "message": "Traslochi E Trasporti Di Proxy Mode In Toolbar" },
+  "buttonLabel_update": { "message": "Aktualidat" },
+  "buttonLabel_dismiss": { "message": "Disimulashon" },
+  "link_viewChanges": { "message": "Bista riba kambionan" },
   "link_shareFeedback": { "message": "Kompartí Kompartí" },
   "state_enabled": { "message": "pèrmití" },
   "state_disabled": { "message": "desabilidat" }

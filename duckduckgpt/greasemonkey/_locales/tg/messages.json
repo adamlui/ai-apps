@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy API is not working" },
   "alert_suggestProxy": { "message": "Try switching on Proxy Mode in toolbar" },
   "alert_suggestOpenAI": { "message": "Try switching off Proxy Mode in toolbar" },
+  "buttonLabel_update": { "message": "Навсозӣ кардан" },
+  "buttonLabel_dismiss": { "message": "Рад кардан" },
+  "link_viewChanges": { "message": "Tingnan ang mga pagbabago" },
   "link_shareFeedback": { "message": "Share Feedback" },
   "state_enabled": { "message": "enabled" },
   "state_disabled": { "message": "disabled" }

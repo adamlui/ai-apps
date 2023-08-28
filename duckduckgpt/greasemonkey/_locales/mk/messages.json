@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "API за прокси не работи" },
   "alert_suggestProxy": { "message": "Обидете се да го вклучите режимот за прокси во лентата со алатки" },
   "alert_suggestOpenAI": { "message": "Обидете се да го исклучите режимот на прокси во лентата со алатки" },
+  "buttonLabel_update": { "message": "Ажурирај" },
+  "buttonLabel_dismiss": { "message": "Отфрли" },
+  "link_viewChanges": { "message": "Прикажи ги промените" },
   "link_shareFeedback": { "message": "Споделете повратен коментар" },
   "state_enabled": { "message": "овозможено" },
   "state_disabled": { "message": "оневозможено" }

@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proksi API-si işləmir" },
   "alert_suggestProxy": { "message": "Alətlər panelində Proksi Rejimində dəyişməyi sınayın" },
   "alert_suggestOpenAI": { "message": "Alətlər panelində Proksi Rejimini söndürməyi sınayın" },
+  "buttonLabel_update": { "message": "Yenilə" },
+  "buttonLabel_dismiss": { "message": "Bağla" },
+  "link_viewChanges": { "message": "Dəyişikliklərə bax" },
   "link_shareFeedback": { "message": "Məxfi rəy paylaşın" },
   "state_enabled": { "message": "Aktivdir" },
   "state_disabled": { "message": "kilitlidir" }

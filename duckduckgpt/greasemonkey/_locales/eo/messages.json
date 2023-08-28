@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy API ne funkcias" },
   "alert_suggestProxy": { "message": "Provu ŝalti Proxy Mode en ilobreto" },
   "alert_suggestOpenAI": { "message": "Provi malŝalti prokurreĝimon en ilobreto" },
+  "buttonLabel_update": { "message": "Ĝisdatigi" },
+  "buttonLabel_dismiss": { "message": "Malakcepti" },
+  "link_viewChanges": { "message": "Montri ŝanĝojn" },
   "link_shareFeedback": { "message": "@ info: whatsthis" },
   "state_enabled": { "message": "Ebligita" },
   "state_disabled": { "message": "(nekonata)" }

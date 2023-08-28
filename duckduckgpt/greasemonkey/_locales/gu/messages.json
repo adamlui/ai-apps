@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "પ્રોક્સી API કામ કરી રહ્યું નથી" },
   "alert_suggestProxy": { "message": "ટૂલબારમાં પ્રોક્સી મોડ પર સ્વિચ કરવાનો પ્રયાસ કરો" },
   "alert_suggestOpenAI": { "message": "ટૂલબારમાં પ્રોક્સી મોડ બંધ કરવાનો પ્રયાસ કરો" },
+  "buttonLabel_update": { "message": "અદ્યતન બનાવો" },
+  "buttonLabel_dismiss": { "message": "કાઢી મૂકવું" },
+  "link_viewChanges": { "message": "ફેરફારો જુઓ" },
   "link_shareFeedback": { "message": "પ્રતિસાદ શેર કરો" },
   "state_enabled": { "message": "સક્રિય" },
   "state_disabled": { "message": "નિષ્ક્રિય" }

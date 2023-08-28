@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy API Kashiwabara" },
   "alert_suggestProxy": { "message": "Iyesha Proxy Mode In Toolbar" },
   "alert_suggestOpenAI": { "message": "Iyesha Proxy Mode In Toolbar" },
+  "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_dismiss": { "message": "Ukufumishiwapo" },
+  "link_viewChanges": { "message": "Moneni ifyo ifintu fyayaluka" },
   "link_shareFeedback": { "message": "Share Feedback" },
   "state_enabled": { "message": "Ukusuminisha Ukubomba" },
   "state_disabled": { "message": "Ukukanya Ukubomba" }

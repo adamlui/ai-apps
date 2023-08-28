@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Ckbwiki کارناکات" },
   "alert_suggestProxy": { "message": "هه وڵبده شێوازی پرۆکسی بگۆڕیت له toolbar" },
   "alert_suggestOpenAI": { "message": "سڕینەوەی شێوازی پرۆکسی لە Toolbar" },
+  "buttonLabel_update": { "message": "نوێکردنەوە" },
+  "buttonLabel_dismiss": { "message": "پشتگوێخستن" },
+  "link_viewChanges": { "message": "بینینی گۆڕانکارییەکان" },
   "link_shareFeedback": { "message": "فیدباکی هاوبەش" },
   "state_enabled": { "message": "چالاکە، تواناپێدراو" },
   "state_disabled": { "message": "پەککەوتە، بێ توانا، نەتوانا، ناچالاککراو، کوژاوەتەوە، کەنەفت، پەککەوت، کەم ئەندام، لێکەوتە، کەنفت" }

@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "API прокси не работает" },
   "alert_suggestProxy": { "message": "Попробуйте включить режим прокси на панели инструментов" },
   "alert_suggestOpenAI": { "message": "Попробуйте выключить режим прокси на панели инструментов" },
+  "buttonLabel_update": { "message": "Обновить" },
+  "buttonLabel_dismiss": { "message": "Пропустить" },
+  "link_viewChanges": { "message": "Просмотреть изменения" },
   "link_shareFeedback": { "message": "Поделиться отзывом" },
   "state_enabled": { "message": "включено" },
   "state_disabled": { "message": "отключено" }

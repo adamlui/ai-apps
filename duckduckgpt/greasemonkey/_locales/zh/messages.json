@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "代理API不起作用" },
   "alert_suggestProxy": { "message": "尝试在工具栏中打开代理模式" },
   "alert_suggestOpenAI": { "message": "尝试在工具栏中关闭代理模式" },
+  "buttonLabel_update": { "message": "更新" },
+  "buttonLabel_dismiss": { "message": "撤消" },
+  "link_viewChanges": { "message": "查看修改" },
   "link_shareFeedback": { "message": "分享反馈" },
   "state_enabled": { "message": "启用" },
   "state_disabled": { "message": "禁用" }

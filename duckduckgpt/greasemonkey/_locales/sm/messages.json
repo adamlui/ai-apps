@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy API e le o galue" },
   "alert_suggestProxy": { "message": "Taumafai e sui i le Proxy Mode i toolbar" },
   "alert_suggestOpenAI": { "message": "Taumafai e aveese le Proxy Mode i toolbar" },
+  "buttonLabel_update": { "message": "Fa'afouga" },
+  "buttonLabel_dismiss": { "message": "Dismiss" },
+  "link_viewChanges": { "message": "Vaʻai suiga" },
   "link_shareFeedback": { "message": "Faasoa atu Feedback" },
   "state_enabled": { "message": "faatagaina" },
   "state_disabled": { "message": "faaletonu" }

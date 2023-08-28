@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Volmag-API werk nie" },
   "alert_suggestProxy": { "message": "Probeer om instaanmodus in nutsbalk aan te skakel" },
   "alert_suggestOpenAI": { "message": "Probeer om Volmagmodus in nutsbalk af te skakel" },
+  "buttonLabel_update": { "message": "Opdateer" },
+  "buttonLabel_dismiss": { "message": "Laat vaar" },
+  "link_viewChanges": { "message": "Besigtig veranderinge" },
   "link_shareFeedback": { "message": "Deel terugvoer" },
   "state_enabled": { "message": "Blou" },
   "state_disabled": { "message": "gedeaktiveer" }

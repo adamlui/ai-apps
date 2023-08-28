@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "ʻAʻole holo ka Proxy API" },
   "alert_suggestProxy": { "message": "E ho&#39;āʻo e hoʻololi i ke ʻano Proxy ma ka pahu hana" },
   "alert_suggestOpenAI": { "message": "E ho&#39;āʻo e hoʻopau i ke ʻano Proxy ma ka pahu hana" },
+  "buttonLabel_update": { "message": "Hōʻano hou" },
+  "buttonLabel_dismiss": { "message": "Hoʻokuʻu" },
+  "link_viewChanges": { "message": "Nānā i nā hoʻololi" },
   "link_shareFeedback": { "message": "Kaʻana Manaʻo" },
   "state_enabled": { "message": "hiki" },
   "state_disabled": { "message": "kino kīnā" }

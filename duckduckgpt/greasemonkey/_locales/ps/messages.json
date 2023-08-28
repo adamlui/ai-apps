@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "پراکسي API کار نه کوي" },
   "alert_suggestProxy": { "message": "په توکپټه کې د پراکسي حالت بدلولو هڅه وکړئ" },
   "alert_suggestOpenAI": { "message": "په توکپټه کې د پراکسي حالت بندولو هڅه وکړئ" },
+  "buttonLabel_update": { "message": "تازه کړئ" },
+  "buttonLabel_dismiss": { "message": "رد کردن" },
+  "link_viewChanges": { "message": "بدلونونه وګورئ" },
   "link_shareFeedback": { "message": "نظرونه شریک کړئ" },
   "state_enabled": { "message": "فعال شوی" },
   "state_disabled": { "message": "غیر فعال شوی" }

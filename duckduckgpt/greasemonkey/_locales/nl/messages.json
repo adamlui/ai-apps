@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy-API werkt niet" },
   "alert_suggestProxy": { "message": "Probeer de proxymodus in de werkbalk in te schakelen" },
   "alert_suggestOpenAI": { "message": "Probeer de proxymodus in de werkbalk uit te schakelen" },
+  "buttonLabel_update": { "message": "Bijwerken" },
+  "buttonLabel_dismiss": { "message": "Afwijzen" },
+  "link_viewChanges": { "message": "Wijzigingen weergeven" },
   "link_shareFeedback": { "message": "Deel feedback" },
   "state_enabled": { "message": "enabled" },
   "state_disabled": { "message": "etkinleştirilmemiş" }

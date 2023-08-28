@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Το API διακομιστή μεσολάβησης δεν λειτουργεί" },
   "alert_suggestProxy": { "message": "Δοκιμάστε να ενεργοποιήσετε τη λειτουργία διακομιστή μεσολάβησης στη γραμμή εργαλείων" },
   "alert_suggestOpenAI": { "message": "Δοκιμάστε να απενεργοποιήσετε τη λειτουργία διακομιστή μεσολάβησης στη γραμμή εργαλείων" },
+  "buttonLabel_update": { "message": "Ενημέρωση" },
+  "buttonLabel_dismiss": { "message": " Κλείσιμο" },
+  "link_viewChanges": { "message": "Εμφάνιση αλλαγών" },
   "link_shareFeedback": { "message": "Κοινοποίηση προτάσεων βελτίωσης" },
   "state_enabled": { "message": "ενεργό" },
   "state_disabled": { "message": "απενεργοποιημένο" }

@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy API None None None" },
   "alert_suggestProxy": { "message": "Gerageza guhinduranya uburyo bwa Proxy muri Toolbar" },
   "alert_suggestOpenAI": { "message": "Gerageza guhinduranya uburyo bwa Proxy muri Toolbar" },
+  "buttonLabel_update": { "message": "Update None None" },
+  "buttonLabel_dismiss": { "message": "Ukwirukana" },
+  "link_viewChanges": { "message": "Kubona impinduka" },
   "link_shareFeedback": { "message": "Gira ico ushikirije" },
   "state_enabled": { "message": "uwufise ububasha kw'isanamu" },
   "state_disabled": { "message": "ubumuga" }

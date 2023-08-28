@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "API milliþjóns virkar ekki" },
   "alert_suggestProxy": { "message": "Prófaðu að kveikja á milliþjónsham í tækjastikunni" },
   "alert_suggestOpenAI": { "message": "Prófaðu að slökkva á milliþjónsham í tækjastikunni" },
+  "buttonLabel_update": { "message": "Uppfæra" },
+  "buttonLabel_dismiss": { "message": "Hafna" },
+  "link_viewChanges": { "message": "Skoða breytingar" },
   "link_shareFeedback": { "message": "Deildu athugasemdum" },
   "state_enabled": { "message": "Lag" },
   "state_disabled": { "message": "óvirkt" }

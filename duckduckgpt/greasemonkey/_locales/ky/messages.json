@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Прокси API иштебей жатат" },
   "alert_suggestProxy": { "message": "Toolbar" },
   "alert_suggestOpenAI": { "message": "Аспаптар панелинде прокси режимин өчүрүп көрүңүз" },
+  "buttonLabel_update": { "message": "Жаңыртуу" },
+  "buttonLabel_dismiss": { "message": "Иштен бошотуу" },
+  "link_viewChanges": { "message": "Өзгөрүүлөрдү көрүү" },
   "link_shareFeedback": { "message": "Пикирлерди бөлүшүү" },
   "state_enabled": { "message": "Күйгүзүлдү" },
   "state_disabled": { "message": "Өчүрүлгөн" }

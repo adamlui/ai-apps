@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy API funktionnéiert net" },
   "alert_suggestProxy": { "message": "Probéiert de Proxy Modus an der Toolbar auszeschalten" },
   "alert_suggestOpenAI": { "message": "Probéiert de Proxy Modus an der Toolbar auszeschalten" },
+  "buttonLabel_update": { "message": "Aktualiséieren" },
+  "buttonLabel_dismiss": { "message": "Ofginn" },
+  "link_viewChanges": { "message": "Ännerungen uweisen" },
   "link_shareFeedback": { "message": "Feedback deelen" },
   "state_enabled": { "message": "Aktiviert" },
   "state_disabled": { "message": "Deaktivéiert" }

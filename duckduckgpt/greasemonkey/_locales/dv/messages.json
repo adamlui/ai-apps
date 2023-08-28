@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "ޕްރޮކްސީ އޭޕީއައި މަސައްކަތް ނުކުރޭ" },
   "alert_suggestProxy": { "message": "ޓޫލްބާގައި ޕްރޮކްސީ މޯޑް އޮން ކުރަން މަސައްކަތް ކުރޭ" },
   "alert_suggestOpenAI": { "message": "ޓޫލްބާގައި ޕްރޮކްސީ މޯޑް ނިއްވާލަން މަސައްކަތް ކުރޭ" },
+  "buttonLabel_update": { "message": "އަޕްޑޭޓް" },
+  "buttonLabel_dismiss": { "message": "މަގާމުން ވަކިކުރުން" },
+  "link_viewChanges": { "message": "ވިއު ޗޭންޖްސް" },
   "link_shareFeedback": { "message": "ފީޑްބެކް ޝެއާ ކުރޭ" },
   "state_enabled": { "message": "އެނޭބަލްކޮށްފައި" },
   "state_disabled": { "message": "ބޭނުންނުކުރެވޭ ގޮތަށް ހަދާފައި" }

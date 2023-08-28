@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Kaore te API Proxy e mahi" },
   "alert_suggestProxy": { "message": "Whakamātauria te huri i runga i Proxy Mode i roto i toolbar" },
   "alert_suggestOpenAI": { "message": "Whakamātauria te whakakore i te Proxy Mode i roto i te toolbar" },
+  "buttonLabel_update": { "message": "Whakahou" },
+  "buttonLabel_dismiss": { "message": "Te whakahawea" },
+  "link_viewChanges": { "message": "Tirohia nga huringa" },
   "link_shareFeedback": { "message": "Whakawhitiwhiti kōrero" },
   "state_enabled": { "message": "Kua whakakāngia" },
   "state_disabled": { "message": "Kua whakawetoa" }

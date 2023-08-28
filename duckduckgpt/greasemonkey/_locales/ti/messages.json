@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy API ኣይሰርሕን" },
   "alert_suggestProxy": { "message": "ኣብ ናይ መሳርሒ ባር ኣብ Proxy Mode ክትቅይር ፈትን" },
   "alert_suggestOpenAI": { "message": "Proxy Mode ኣብ toolbar ክትሰርዝ ፈትን" },
+  "buttonLabel_update": { "message": "ኣሐድስ" },
+  "buttonLabel_dismiss": { "message": "ምጥፋእ" },
+  "link_viewChanges": { "message": "ለውጢ ርአ" },
   "link_shareFeedback": { "message": "ግብረ መልሲ ምዝርጋሕ" },
   "state_enabled": { "message": "ከምዝሰርሕ ዝተገብረ" },
   "state_disabled": { "message": "ከምዘይሰርሕ ዝተገብረ" }

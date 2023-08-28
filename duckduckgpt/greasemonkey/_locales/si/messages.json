@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "ප් ‍ රොක්සි API ක් ‍ රියා නොකරයි" },
   "alert_suggestProxy": { "message": "මෙවලම් තීරුවේ ප් ‍ රොක්සි ප් ‍ රකාරය ක් ‍ රියාත්මක කිරීමට උත්සාහ කරන්න" },
   "alert_suggestOpenAI": { "message": "මෙවලම් තීරුවේ ප් ‍ රොක්සි ප් ‍ රකාරය ක් ‍ රියා විරහිත කිරීමට උත්සාහ කරන්න" },
+  "buttonLabel_update": { "message": "යාවත් කාළීන:" },
+  "buttonLabel_dismiss": { "message": "ඉවතලන්න" },
+  "link_viewChanges": { "message": "වෙනස්කම් බලන්න" },
   "link_shareFeedback": { "message": "ප්‍රතිපෝෂණය බෙදා ගන්න" },
   "state_enabled": { "message": "සක්‍රීය කල" },
   "state_disabled": { "message": "අක්‍රීය කල" }

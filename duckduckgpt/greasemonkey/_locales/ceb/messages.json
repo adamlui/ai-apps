@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Ang Proxy API dili molihok" },
   "alert_suggestProxy": { "message": "Sulayi ang pagbalhin sa Proxy Mode sa toolbar" },
   "alert_suggestOpenAI": { "message": "Sulayi ang pagbalhin sa Proxy Mode sa toolbar" },
+  "buttonLabel_update": { "message": "I-update" },
+  "buttonLabel_dismiss": { "message": "I-dismiss" },
+  "link_viewChanges": { "message": "Tan-awa ang mga kausaban" },
   "link_shareFeedback": { "message": "Ipakigbahin ang Feedback" },
   "state_enabled": { "message": "Mipahimo" },
   "state_disabled": { "message": "Baldado" }

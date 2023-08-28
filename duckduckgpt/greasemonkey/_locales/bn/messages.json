@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "প্রক্সি API কাজ করছে না" },
   "alert_suggestProxy": { "message": "টুলবারে প্রক্সি মোড চালু করার চেষ্টা করুন" },
   "alert_suggestOpenAI": { "message": "টুলবারে প্রক্সি মোড বন্ধ করার চেষ্টা করুন" },
+  "buttonLabel_update": { "message": "আপডেট করুন" },
+  "buttonLabel_dismiss": { "message": "খারিজ করুন" },
+  "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" },
   "link_shareFeedback": { "message": "ফিডব্যাক শেয়ার করুন" },
   "state_enabled": { "message": "সক্রিয়।" },
   "state_disabled": { "message": "নিস্ক্রিয়" }

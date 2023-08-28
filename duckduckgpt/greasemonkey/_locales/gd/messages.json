@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Chan eil proxy api ag obair" },
   "alert_suggestProxy": { "message": "Feuch ri tionndadh air am modh progsaidh sa bhàr - inneal" },
   "alert_suggestOpenAI": { "message": "Feuch ri Modh Proxy a chur dheth sa bhàr - inneal" },
+  "buttonLabel_update": { "message": "Ùraich" },
+  "buttonLabel_dismiss": { "message": "Cuir air falbh" },
+  "link_viewChanges": { "message": "Seall na h - atharraichean" },
   "link_shareFeedback": { "message": "Share Feedback" },
   "state_enabled": { "message": "An comas" },
   "state_disabled": { "message": "Gun dòigh" }

@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy API အလုပ်မလုပ်ပါ" },
   "alert_suggestProxy": { "message": "ကိရိယာဘားတွင် Proxy Mode ကိုဖွင့်ရန်ကြိုးစားပါ" },
   "alert_suggestOpenAI": { "message": "ကိရိယာဘားတွင် Proxy Mode ကိုပိတ်ရန်ကြိုးစားပါ" },
+  "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
+  "buttonLabel_dismiss": { "message": "ထုတ်ပယ်ပါ" },
+  "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ရန်" },
   "link_shareFeedback": { "message": "ဝေမျှရန် တုံ့ပြန်ချက်" },
   "state_enabled": { "message": "ဖွင့်ထားသည်" },
   "state_disabled": { "message": "ပိတ်ထားသည်" }

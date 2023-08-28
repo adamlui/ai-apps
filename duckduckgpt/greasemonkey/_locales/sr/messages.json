@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "API proksija ne radi" },
   "alert_suggestProxy": { "message": "Pokušajte da uključite proksi režim na traci sa alatkama" },
   "alert_suggestOpenAI": { "message": "Pokušajte da isključite proksi režim na traci sa alatkama" },
+  "buttonLabel_update": { "message": "Ažuriraj" },
+  "buttonLabel_dismiss": { "message": "Odbaci" },
+  "link_viewChanges": { "message": "Prikaži promjene" },
   "link_shareFeedback": { "message": "Deljenje povratnih informacija" },
   "state_enabled": { "message": "Omoguceno" },
   "state_disabled": { "message": "onemogućen" }

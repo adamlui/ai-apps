@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "ប្រូកស៊ី API មិន ដំណើរការ" },
   "alert_suggestProxy": { "message": "ព្យាយាម ប្ដូរ របៀប ប្រូកស៊ី នៅ ក្នុង របារ ឧបករណ៍" },
   "alert_suggestOpenAI": { "message": "ព្យាយាមបិទម៉ូដប្រូកស៊ីនៅក្នុងរបារឧបករណ៍" },
+  "buttonLabel_update": { "message": "ធ្វើបច្ចុប្បន្នភាព" },
+  "buttonLabel_dismiss": { "message": "បោះបង់" },
+  "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" },
   "link_shareFeedback": { "message": "ចែករំលែកមតិកែលម្អ" },
   "state_enabled": { "message": "បាន​ជ្រើស" },
   "state_disabled": { "message": "បានបិទ" }

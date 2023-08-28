@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Aapki ye bata dijiye" },
   "alert_suggestProxy": { "message": "Ku in Umwanyabikoresho" },
   "alert_suggestOpenAI": { "message": "Bidakora in Umwanyabikoresho" },
+  "buttonLabel_update": { "message": "Kuvugurura" },
+  "buttonLabel_dismiss": { "message": "Kureka" },
+  "link_viewChanges": { "message": "Amahinduka" },
   "link_shareFeedback": { "message": "Gusangiza" },
   "state_enabled": { "message": "Birafunguye" },
   "state_disabled": { "message": "Yahagaritswe" }

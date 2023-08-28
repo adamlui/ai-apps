@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Starpniekservera API nedarbojas" },
   "alert_suggestProxy": { "message": "Mēģiniet ieslēgt starpniekservera režīmu rīkjoslā" },
   "alert_suggestOpenAI": { "message": "Mēģiniet izslēgt starpniekservera režīmu rīkjoslā" },
+  "buttonLabel_update": { "message": "Atjauninināt" },
+  "buttonLabel_dismiss": { "message": "Noraidīt" },
+  "link_viewChanges": { "message": "Skatīt izmaiņas" },
   "link_shareFeedback": { "message": "Dalieties savās atsauksmēs!" },
   "state_enabled": { "message": "iespējots" },
   "state_disabled": { "message": "Izslēgt" }

@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy API virker ikke" },
   "alert_suggestProxy": { "message": "Prøv at aktivere proxy-tilstand på værktøjslinjen" },
   "alert_suggestOpenAI": { "message": "Prøv at slå proxy-tilstand fra på værktøjslinjen" },
+  "buttonLabel_update": { "message": "Opdatér" },
+  "buttonLabel_dismiss": { "message": "Afvis" },
+  "link_viewChanges": { "message": "Se ændringer" },
   "link_shareFeedback": { "message": "Del din feedback!" },
   "state_enabled": { "message": "aktiveret" },
   "state_disabled": { "message": "deaktiveret" }

@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Interfejs API serwera proxy nie działa" },
   "alert_suggestProxy": { "message": "Spróbuj włączyć tryb proxy na pasku narzędzi" },
   "alert_suggestOpenAI": { "message": "Spróbuj wyłączyć tryb proxy na pasku narzędzi" },
+  "buttonLabel_update": { "message": "Aktualizuj" },
+  "buttonLabel_dismiss": { "message": "Odrzuć" },
+  "link_viewChanges": { "message": "Przegląd zmian" },
   "link_shareFeedback": { "message": "Podziel się swoją opinią" },
   "state_enabled": { "message": "włączony" },
   "state_disabled": { "message": "wyłączone" }

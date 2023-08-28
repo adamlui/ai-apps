@@ -36,6 +36,9 @@
   "alert_proxyNotWorking": { "message": "Proxy API pa ap travay" },
   "alert_suggestProxy": { "message": "Eseye chanje sou mòd Proxy nan ba zouti" },
   "alert_suggestOpenAI": { "message": "Eseye chanje mòd Proxy nan ba zouti" },
+  "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_dismiss": { "message": "Demisyon" },
+  "link_viewChanges": { "message": "Gade chanjman yo" },
   "link_shareFeedback": { "message": "Pataje kòmantè ou yo/Pataje fidbak ou yo/Faites part de vos commentaires" },
   "state_enabled": { "message": "pèmèt" },
   "state_disabled": { "message": "andikape/enfim/antrave/antravè " }
