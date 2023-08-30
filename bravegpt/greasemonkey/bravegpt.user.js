@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.8.29
+// @version             2023.8.29.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -460,7 +460,10 @@
                         } catch (error) {
                             braveGPTconsole.info('Response: ' + event.responseText)
 
-                            if (event.responseText.includes('finish_reason')) { // if AIGCF error encountered
+                            if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
+                                braveGPTshow('Sorry, according to our product rules, we cannot provide you with an answer to this question, please try another question.')
+
+                            else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
                                 GM_setValue(config.prefix + '_aigcfKey', false) // clear GM key for fresh getAIGCFkey()
 
                                 // Determine index of AIGCF in endpoint map
