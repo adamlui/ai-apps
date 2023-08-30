@@ -36,6 +36,7 @@
   "alert_proxyNotWorking": { "message": "प्रोक्सी API ले काम गरिरहेको छैन" },
   "alert_suggestProxy": { "message": "उपकरणपट्टीमा प्रोक्सी मोडमा स्विच गर्ने प्रयास गर्नुहोस्" },
   "alert_suggestOpenAI": { "message": "उपकरणपट्टीमा प्रोक्सी मोड बन्द गर्ने प्रयास गर्नुहोस्" },
+  "alert_censored": { "message": "माफ गर्नुहोस्, हाम्रो उत्पादन नियमहरू अनुसार, हामी तपाईंलाई यस प्रश्नको उत्तर प्रदान गर्न सक्दैनौं, कृपया अन्य प्रश्नहरू प्रयास गर्नुहोस् ।" },
   "buttonLabel_update": { "message": "अद्यावधिक" },
   "buttonLabel_dismiss": { "message": "खारेज गर्नुहोस्" },
   "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" },

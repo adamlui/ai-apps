@@ -36,6 +36,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API ບໍ່ເຮັດວຽກ" },
   "alert_suggestProxy": { "message": "ພະຍາຍາມປ່ຽນໂໝດໂປຣແກຣມໃນແຖບເຄື່ອງມື" },
   "alert_suggestOpenAI": { "message": "ພະຍາຍາມປິດໂໝດໂປຣແກຣມໃນແຖບເຄື່ອງມື" },
+  "alert_censored": { "message": "ຂໍອະໄພ, ຕາມກົດລະບຽບຂອງຜະລິດຕະພັນຂອງພວກເຮົາ, ພວກເຮົາບໍ່ສາມາດຕອບ ຄໍາ ຖາມນີ້ໄດ້, ກະລຸນາພະຍາຍາມ ຄໍາ ຖາມອື່ນໆ." },
   "buttonLabel_update": { "message": "ອັບເດດ" },
   "buttonLabel_dismiss": { "message": "ຂ້າມໄປ" },
   "link_viewChanges": { "message": "ເບິ່ງການປ່ຽນແປງ" },

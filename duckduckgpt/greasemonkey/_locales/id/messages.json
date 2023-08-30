@@ -36,6 +36,7 @@
   "alert_proxyNotWorking": { "message": "Api Proxy tidak berfungsi" },
   "alert_suggestProxy": { "message": "Coba aktifkan Mode Proxy di bilah alat" },
   "alert_suggestOpenAI": { "message": "Coba nonaktifkan Mode Proxy di bilah alat" },
+  "alert_censored": { "message": "Maaf, sesuai dengan aturan produk kami, kami tidak dapat memberi Anda jawaban atas pertanyaan ini, silakan coba pertanyaan lain." },
   "buttonLabel_update": { "message": "Pembaruan" },
   "buttonLabel_dismiss": { "message": "Tutup" },
   "link_viewChanges": { "message": "Lihat perubahan" },

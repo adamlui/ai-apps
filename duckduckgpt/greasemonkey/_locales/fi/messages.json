@@ -36,6 +36,7 @@
   "alert_proxyNotWorking": { "message": "Välityspalvelimen sovellusliittymä ei toimi" },
   "alert_suggestProxy": { "message": "Yritä kytkeä välityspalvelintila päälle työkalupalkissa" },
   "alert_suggestOpenAI": { "message": "Yritä poistaa välityspalvelintila käytöstä työkalupalkista" },
+  "alert_censored": { "message": "Valitettavasti tuotesääntöjemme mukaan emme voi antaa sinulle vastausta tähän kysymykseen, kokeile muita kysymyksiä." },
   "buttonLabel_update": { "message": "Päivitä" },
   "buttonLabel_dismiss": { "message": "Hylkää" },
   "link_viewChanges": { "message": "Näytä muutokset" },

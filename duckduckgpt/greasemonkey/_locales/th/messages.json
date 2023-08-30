@@ -36,6 +36,7 @@
   "alert_proxyNotWorking": { "message": "API พร็อกซีไม่ทำงาน" },
   "alert_suggestProxy": { "message": "ลองเปิดโหมดพร็อกซีในแถบเครื่องมือ" },
   "alert_suggestOpenAI": { "message": "ลองปิดโหมดพร็อกซีในแถบเครื่องมือ" },
+  "alert_censored": { "message": "ขออภัยตามกฎของผลิตภัณฑ์ของเราเราไม่สามารถให้คำตอบสำหรับคำถามนี้โปรดลองคำถามอื่นๆ" },
   "buttonLabel_update": { "message": "อัปเดต" },
   "buttonLabel_dismiss": { "message": "ยกเลิก" },
   "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" },

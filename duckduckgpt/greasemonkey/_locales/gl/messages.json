@@ -36,6 +36,7 @@
   "alert_proxyNotWorking": { "message": "API de proxy no funciona" },
   "alert_suggestProxy": { "message": "Proba a activar o modo Proxy na barra de ferramentas" },
   "alert_suggestOpenAI": { "message": "Tenta desactivar o modo proxy na barra de ferramentas" },
+  "alert_censored": { "message": "Sentímolo, de acordo coas nosas regras de produtos, non podemos proporcionarlle unha resposta a esta pregunta, por favor, tente outras preguntas." },
   "buttonLabel_update": { "message": "Actualizar" },
   "buttonLabel_dismiss": { "message": "Rexeitar" },
   "link_viewChanges": { "message": "Ver cambios" },

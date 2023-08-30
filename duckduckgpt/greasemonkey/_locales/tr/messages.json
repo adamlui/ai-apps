@@ -36,6 +36,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API'si çalışmıyor" },
   "alert_suggestProxy": { "message": "Araç çubuğunda Proxy Modunu açmayı deneyin" },
   "alert_suggestOpenAI": { "message": "Araç çubuğundan Proxy Modunu kapatmayı deneyin" },
+  "alert_censored": { "message": "Üzgünüz, ürün kurallarımıza göre bu soruya cevap veremiyoruz, lütfen diğer soruları deneyin." },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Yok say" },
   "link_viewChanges": { "message": "Değişen Dosyalar" },

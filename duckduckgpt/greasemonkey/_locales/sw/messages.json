@@ -36,6 +36,7 @@
   "alert_proxyNotWorking": { "message": "API mbadala haifanyi kazi" },
   "alert_suggestProxy": { "message": "Jaribu kuwasha Modi Mbadala katika upau wa zana" },
   "alert_suggestOpenAI": { "message": "Jaribu kuzima Hali ya Wakala katika upau wa zana" },
+  "alert_censored": { "message": "Samahani, kulingana na sheria zetu za bidhaa, hatuwezi kukupa jibu la swali hili, tafadhali jaribu maswali mengine." },
   "buttonLabel_update": { "message": "Sasisho" },
   "buttonLabel_dismiss": { "message": "Puuza" },
   "link_viewChanges": { "message": "Angalia mabadiliko" },

@@ -36,6 +36,7 @@
   "alert_proxyNotWorking": { "message": "ፕሮክሲ ኤፒአይ አይሰራም" },
   "alert_suggestProxy": { "message": "መሣሪያ አሞሌ ውስጥ Proxy ሁነታ ላይ መቀየር ይሞክሩ" },
   "alert_suggestOpenAI": { "message": "መሣሪያ አሞሌ ውስጥ Proxy ሁነታ ማጥፋት ይሞክሩ" },
+  "alert_censored": { "message": "ይቅርታ ፣ በምርታችን ህጎች መሠረት ለዚህ ጥያቄ መልስ ልንሰጥዎ አንችልም ፣ እባክዎ ሌሎች ጥያቄዎችን ይሞክሩ ።" },
   "buttonLabel_update": { "message": "አዘምን" },
   "buttonLabel_dismiss": { "message": "መደምሰሻ" },
   "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" },

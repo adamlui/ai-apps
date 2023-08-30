@@ -36,6 +36,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API ma shaqeynayo" },
   "alert_suggestProxy": { "message": "Isku day inaad ku beddesho Proxy Mode ee toolbar" },
   "alert_suggestOpenAI": { "message": "Isku day inaad ka baxdo Proxy Mode ee toolbar" },
+  "alert_censored": { "message": "Waan ka xumahay, sida ku xusan xeerarkayaga wax soo saarka, ma ku siin karno jawaab su 'aashan, fadlan isku day su' aalo kale." },
   "buttonLabel_update": { "message": "Cusboonaysiinta" },
   "buttonLabel_dismiss": { "message": "Xil ka qaad" },
   "link_viewChanges": { "message": "Eeg isbeddellada" },

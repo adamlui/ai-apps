@@ -36,6 +36,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API fungerer ikke" },
   "alert_suggestProxy": { "message": "Prøv å slå på proxy-modus i verktøylinjen" },
   "alert_suggestOpenAI": { "message": "Prøv å slå av proxy-modus i verktøylinjen" },
+  "alert_censored": { "message": "Beklager, i henhold til produktreglene våre kan vi ikke gi deg svar på dette spørsmålet, prøv andre spørsmål." },
   "buttonLabel_update": { "message": "Oppdater" },
   "buttonLabel_dismiss": { "message": "Ignorer" },
   "link_viewChanges": { "message": "Vis endringer" },
