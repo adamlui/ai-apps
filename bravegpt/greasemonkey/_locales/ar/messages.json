@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "واجهة برمجة تطبيقات الوكيل لا تعمل" },
   "alert_suggestProxy": { "message": "حاول تشغيل وضع الوكيل في شريط الأدوات" },
   "alert_suggestOpenAI": { "message": "حاول إيقاف تشغيل وضع الوكيل في شريط الأدوات" },
+  "alert_censored": { "message": "عذرًا، وفقًا لقواعد منتجاتنا، لا يمكننا تزويدك بإجابة على هذا السؤال، يرجى تجربة أسئلة أخرى." },
   "buttonLabel_update": { "message": "تحديث" },
   "buttonLabel_dismiss": { "message": "‫رفض‬" },
   "link_viewChanges": { "message": "عرض سجل التغييرات" },

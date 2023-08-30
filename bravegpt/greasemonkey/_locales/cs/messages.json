@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API nefunguje" },
   "alert_suggestProxy": { "message": "Zkuste zapnout režim proxy v panelu nástrojů" },
   "alert_suggestOpenAI": { "message": "Zkuste vypnout režim proxy v panelu nástrojů" },
+  "alert_censored": { "message": "Je nám líto, ale podle našich produktových pravidel vám nemůžeme poskytnout odpověď na tuto otázku, zkuste prosím jiné otázky." },
   "buttonLabel_update": { "message": "Aktualizovat" },
   "buttonLabel_dismiss": { "message": "Zamítnout" },
   "link_viewChanges": { "message": "Zobrazit změny" },

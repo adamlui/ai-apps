@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "L'API del servidor intermediari no funciona" },
   "alert_suggestProxy": { "message": "Prova a activar el mode intermediari a la barra d'eines" },
   "alert_suggestOpenAI": { "message": "Prova de desactivar el mode intermediari a la barra d'eines" },
+  "alert_censored": { "message": "Ho sentim, d'acord amb les nostres normes de producte, no podem proporcionar-te una resposta a aquesta pregunta, prova-ho amb altres preguntes." },
   "buttonLabel_update": { "message": "Actualització" },
   "buttonLabel_dismiss": { "message": "Descarta" },
   "link_viewChanges": { "message": "Mostra els canvis" },
