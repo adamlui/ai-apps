@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.8.29
+// @version             2023.8.29.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -562,8 +562,9 @@
                             ddgptShow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (error) {
                             ddgptConsole.info('Response: ' + event.responseText)
-
-                            if (event.responseText.includes('finish_reason')) { // if AIGCF error encountered
+                            if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
+                            	ddgptShow('Sorry, according to our product rules, we cannot provide you with an answer to this question, please try another question.')
+                            else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
                                 GM_setValue(config.prefix + '_aigcfKey', false) // clear GM key for fresh getAIGCFkey()
 
                                 // Determine index of AIGCF in endpoint map
