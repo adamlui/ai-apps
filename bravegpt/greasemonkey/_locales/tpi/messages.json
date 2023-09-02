@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API i no wok" },
   "alert_suggestProxy": { "message": "Try long senisim proxy mode long toolbar" },
   "alert_suggestOpenAI": { "message": "Try long senisim proxy mode long toolbar" },
+  "alert_censored": { "message": "Mi sori, long wanem, long ol lo bilong mipela, mipela i no inap bekim dispela askim long yu, olsem na traim ol narapela askim." },
   "buttonLabel_update": { "message": "UPDATE" },
   "buttonLabel_dismiss": { "message": "Lusim" },
   "link_viewChanges": { "message": "Lukim ol senis" },

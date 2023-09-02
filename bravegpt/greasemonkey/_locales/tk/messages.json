@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API işläp bilmeýär" },
   "alert_suggestProxy": { "message": "Esbaplar zolagynda Proxy Mode-i üýtgetmäge synanyň" },
   "alert_suggestOpenAI": { "message": "Esbap zolakda Proxy Mode-i söndürmäge synanyň" },
+  "alert_censored": { "message": "Biz bu soraga jogap berip bilmeýäris, başga soraglary sorap görüň." },
   "buttonLabel_update": { "message": "Täzele" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "Özgertmeleri Gör" },

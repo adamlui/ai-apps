@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Puhverserveri API ei tööta" },
   "alert_suggestProxy": { "message": "Proovi tööriistaribal puhverserveri režiimi sisse lülitada" },
   "alert_suggestOpenAI": { "message": "Proovi puhverrežiim tööriistaribal välja lülitada" },
+  "alert_censored": { "message": "Vabandame, meie tootereeglite kohaselt ei saa me teile sellele küsimusele vastust anda, proovige muid küsimusi." },
   "buttonLabel_update": { "message": "Uuenda" },
   "buttonLabel_dismiss": { "message": "Loobu" },
   "link_viewChanges": { "message": "Vaata muudatusi" },

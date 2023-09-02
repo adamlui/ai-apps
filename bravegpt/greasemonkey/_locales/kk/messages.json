@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Прокси API жұмыс істемейді" },
   "alert_suggestProxy": { "message": "Құралдар тақтасында Прокси режимін қосып көріңіз" },
   "alert_suggestOpenAI": { "message": "Құралдар тақтасында Прокси режимін өшіріп көріңіз" },
+  "alert_censored": { "message": "Кешіріңіз, біздің өнім ережелерімізге сәйкес, біз сізге осы сұраққа жауап бере алмаймыз, басқа сұрақтарды көріңіз." },
   "buttonLabel_update": { "message": "Жаңарту" },
   "buttonLabel_dismiss": { "message": "Жұмыстан шығару" },
   "link_viewChanges": { "message": "Өзгерістерді көру" },

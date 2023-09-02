@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API nexebite" },
   "alert_suggestProxy": { "message": "Biceribînin ku moda Proxy di darikê amûran de vekin" },
   "alert_suggestOpenAI": { "message": "Biceribînin ku moda Proxy di darikê amûran de vekin" },
+  "alert_censored": { "message": "Mixabin, li gorî qaîdeyên hilberê me, em nikarin bersiva vê pirsê bidin we, ji kerema xwe pirsên din biceribînin." },
   "buttonLabel_update": { "message": "Rojane Bike" },
   "buttonLabel_dismiss": { "message": "دەردەکات، دەرکردن، ڕێ پێنەدان، دەر کردن، رەدکردنەوەی گازندە(دادخوازی)\n[مافناسی]: دەر کردن، رەد کردنەوەی گازندە (دادخوازی)" },
   "link_viewChanges": { "message": "Guhertinan bibînin" },

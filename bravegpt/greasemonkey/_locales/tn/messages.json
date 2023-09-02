@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API ga e bereke" },
   "alert_suggestProxy": { "message": "Leka go tshuba Proxy Mode mo bareng ya didirisiwa" },
   "alert_suggestOpenAI": { "message": "Leka go tima Proxy Mode mo bareng ya didirisiwa" },
+  "alert_censored": { "message": "Ke maswabi, go ya ka ditaolo tsa kumo ya rona, ga re kake ra go fa karabo ya potso eno, tsweetswee leka dipotso tse dingwe." },
   "buttonLabel_update": { "message": "Ntshwafatso" },
   "buttonLabel_dismiss": { "message": "TLOGELA" },
   "link_viewChanges": { "message": "Leba diphetogo" },

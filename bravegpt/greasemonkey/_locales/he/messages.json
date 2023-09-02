@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "ממשק ה - API של שרת ה - Proxy" },
   "alert_suggestProxy": { "message": "נסה להפעיל את מצב ה - Proxy בסרגל הכלים" },
   "alert_suggestOpenAI": { "message": "נסה לכבות את מצב ה - Proxy בסרגל הכלים" },
+  "alert_censored": { "message": "מצטערים, בהתאם לכללי המוצר שלנו, אין באפשרותנו לספק לך תשובה לשאלה זו, אנא נסה שאלות אחרות." },
   "buttonLabel_update": { "message": "עדכון" },
   "buttonLabel_dismiss": { "message": "שחרור" },
   "link_viewChanges": { "message": "הצגת השינויים" },

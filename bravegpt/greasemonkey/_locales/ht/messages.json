@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API pa ap travay" },
   "alert_suggestProxy": { "message": "Eseye chanje sou mòd Proxy nan ba zouti" },
   "alert_suggestOpenAI": { "message": "Eseye chanje mòd Proxy nan ba zouti" },
+  "alert_censored": { "message": "Padon, dapre règleman pwodwi nou yo, nou pa ka ba ou yon repons a kesyon sa a, tanpri eseye lòt kesyon." },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Demisyon" },
   "link_viewChanges": { "message": "Gade chanjman yo" },

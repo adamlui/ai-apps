@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API virkar ikki" },
   "alert_suggestProxy": { "message": "Royn at broyta proxy-tilfar í amboðsbarnum" },
   "alert_suggestOpenAI": { "message": "Royn at sløkkja Proxy Mode í amboðsbarnum" },
+  "alert_censored": { "message": "Tað er óheppið, at vit ikki kunnu geva tær svar á henda spurningin í samsvar við okkara vørureglur, so royn onnur spurningar." },
   "buttonLabel_update": { "message": "Dagfør" },
   "buttonLabel_dismiss": { "message": "Avrita" },
   "link_viewChanges": { "message": "Sí broytingar" },

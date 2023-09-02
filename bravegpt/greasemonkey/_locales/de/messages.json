@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Proxy-API funktioniert nicht" },
   "alert_suggestProxy": { "message": "Versuchen Sie, den Proxy-Modus in der Symbolleiste zu aktivieren" },
   "alert_suggestOpenAI": { "message": "Versuchen Sie, den Proxy-Modus in der Symbolleiste auszuschalten" },
+  "alert_censored": { "message": "Leider können wir Ihnen gemäß unseren Produktregeln keine Antwort auf diese Frage geben. Bitte versuchen Sie es mit anderen Fragen." },
   "buttonLabel_update": { "message": "Aktualisieren" },
   "buttonLabel_dismiss": { "message": "Verwerfen" },
   "link_viewChanges": { "message": "Änderungen anzeigen" },

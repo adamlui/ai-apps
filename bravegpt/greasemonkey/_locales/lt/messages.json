@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Tarpinio serverio API neveikia" },
   "alert_suggestProxy": { "message": "Įrankių juostoje pabandykite įjungti tarpinio serverio režimą" },
   "alert_suggestOpenAI": { "message": "Pabandykite išjungti tarpinio serverio režimą įrankių juostoje" },
+  "alert_censored": { "message": "Atsiprašome, pagal mūsų produktų taisykles negalime jums pateikti atsakymo į šį klausimą. Pabandykite atsakyti į kitus klausimus." },
   "buttonLabel_update": { "message": "Naujinti" },
   "buttonLabel_dismiss": { "message": "Atšaukti" },
   "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" },

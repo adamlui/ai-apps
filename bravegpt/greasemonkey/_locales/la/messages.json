@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API کار نه کوي" },
   "alert_suggestProxy": { "message": "Modus proxy in toolbar" },
   "alert_suggestOpenAI": { "message": "Modus proxycis in toolbar" },
+  "alert_censored": { "message": "Quaeso, secundum nostrum producendo, non potest tuum responsi a question, quaeso aliquam questiones." },
   "buttonLabel_update": { "message": "opus" },
   "buttonLabel_dismiss": { "message": "dimitto" },
   "link_viewChanges": { "message": "Vedi anche l 'accendenza" },

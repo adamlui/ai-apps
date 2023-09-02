@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Proksi API ishlamayapti" },
   "alert_suggestProxy": { "message": "Asboblar panelida Proksi rejimini yoqishga harakat qiling" },
   "alert_suggestOpenAI": { "message": "Asboblar panelida Proksi rejimini o&#39;chirib ko&#39;ring" },
+  "alert_censored": { "message": "Kechirasiz, mahsulot qoidalariga ko&#39;ra, biz sizga bu savolga javob bera olmaymiz, iltimos, boshqa savollarni sinab ko&#39;ring." },
   "buttonLabel_update": { "message": "Yangilash" },
   "buttonLabel_dismiss": { "message": "Rad etish" },
   "link_viewChanges": { "message": "O&#39;zgarishlarni ko&#39;rish" },

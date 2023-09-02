@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "L'API proxy ne fonctionne pas" },
   "alert_suggestProxy": { "message": "Essayez d'activer le mode proxy dans la barre d'outils" },
   "alert_suggestOpenAI": { "message": "Essayez de désactiver le mode proxy dans la barre d'outils" },
+  "alert_censored": { "message": "Désolé, conformément à nos règles relatives aux produits, nous ne pouvons pas vous fournir de réponse à cette question, veuillez essayer d'autres questions." },
   "buttonLabel_update": { "message": "Mise à jour" },
   "buttonLabel_dismiss": { "message": "Ignorer" },
   "link_viewChanges": { "message": "Afficher les modifications" },

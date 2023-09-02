@@ -35,6 +35,7 @@
   "alert_proxyNotWorking": { "message": "Api proksi tidak berfungsi" },
   "alert_suggestProxy": { "message": "Cuba hidupkan Mod Proksi dalam bar alat" },
   "alert_suggestOpenAI": { "message": "Cuba matikan Mod Proksi dalam bar alat" },
+  "alert_censored": { "message": "Maaf, mengikut peraturan produk kami, kami tidak dapat memberikan anda jawapan kepada soalan ini, sila cuba soalan lain." },
   "buttonLabel_update": { "message": "Saya ingin membuat susulan" },
   "buttonLabel_dismiss": { "message": "Singkir" },
   "link_viewChanges": { "message": "Lihat perubahan" },
