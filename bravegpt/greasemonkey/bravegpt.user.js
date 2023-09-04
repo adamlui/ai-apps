@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.3
+// @version             2023.9.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -571,10 +571,10 @@
                   yourReply = replyBox.value + ' / Answer in ' + config.replyLanguage
             if (!config.proxyAPIenabled) {
                 convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
-                convo.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [replyBox.value] } })
+                convo.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [yourReply] } })
             } else {
                 convo.push({ role: 'assistant', content: prevReplyTrimmed })
-                convo.push({ role: 'user', content: replyBox.value })
+                convo.push({ role: 'user', content: yourReply })
             } getShowReply(convo)
 
             // Remove listeners since they're re-added
