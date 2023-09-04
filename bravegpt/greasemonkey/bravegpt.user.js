@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.8.29.1
+// @version             2023.9.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -179,21 +179,30 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        alert('Update available! 🚀',
-                            `An update to BraveGPT (v${ latestVer }) is available!   `
+                        const updateAlertID = alert(messages.alert_updateAvail + '! 🚀', // title
+                            messages.alert_newerVer + ' BraveGPT v' + latestVer + ' '
+                                + messages.alert_isAvail + '!   '
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + '>View changes</a>',
+                                    + '>' + messages.link_viewChanges + '</a>',
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
                                 ).onclose = () => location.reload() }
                         )
+
+                        // Localize button labels if needed
+                        if (!config.userLanguage.startsWith('en')) {
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
+                            updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
+                            updateAlert.querySelectorAll('button')[0].textContent = messages.buttonLabel_dismiss
+                        }
                         return
                 }}
 
-                alert('Up-to-date!', `BraveGPT (v${ currentVer }) is up-to-date!`)
+                alert(`${ messages.alert_upToDate }!`, // title
+                        `BraveGPT (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
     }})}
 
     // Define MENU functions
@@ -203,45 +212,71 @@
     function registerMenu() {
         const menuIDs = [] // to store registered commands for removal while preserving order
         const state = {
-            symbol: ['✔️', '❌'], word: ['ON', 'OFF'], notifWord: ['Enabled', 'Disabled'],
+            symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
             separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
 
         // Add command to toggle proxy API mode
-        const pamLabel = state.symbol[+!config.proxyAPIenabled] + ' Proxy API Mode '
+        const pamLabel = state.symbol[+!config.proxyAPIenabled]
+                       + ' ' + messages.menuLabel_proxyAPImode + ' '
                        + state.separator + state.word[+!config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-            notify('Proxy Mode ' + state.notifWord[+!config.proxyAPIenabled], '', '', 'shadow')
+            notify(messages.menuLabel_proxyAPImode + ' '
+                + messages['state_' + ( config.proxyAPIenabled ? 'enabled' : 'disabled' )])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             location.reload() // re-send query using new endpoint
         }))
 
         // Add command to toggle prefix mode
-        const pmLabel = state.symbol[+!config.prefixEnabled] + ' Require "/" before query '
+        const pmLabel = state.symbol[+!config.prefixEnabled] + ' '
+                      + messages.menuLabel_require + ' "/" '
+                      + messages.menuLabel_beforeQuery + ' '
                       + state.separator + state.word[+!config.prefixEnabled]
         menuIDs.push(GM_registerMenuCommand(pmLabel, function() {
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
-            notify('Prefix Mode ' + state.notifWord[+!config.prefixEnabled], '', '', 'shadow')
+            notify(messages.alert_prefixMode + ' '
+                + messages['state_' + ( config.prefixEnabled ? 'enabled' : 'disabled' )])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
 
         // Add command to toggle suffix mode
-        const smLabel = state.symbol[+!config.suffixEnabled] + ' Require "?" after query '
+        const smLabel = state.symbol[+!config.suffixEnabled] + ' '
+                      + messages.menuLabel_require + ' "?" '
+                      + messages.menuLabel_afterQuery + ' '
                       + state.separator + state.word[+!config.suffixEnabled]
         menuIDs.push(GM_registerMenuCommand(smLabel, function() {
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify(config.appSymbol + ' Suffix Mode ' + state.notifWord[+!config.suffixEnabled], '', '', 'shadow')
+            notify(messages.alert_suffixMode + ' '
+                + messages['state_' + ( config.suffixEnabled ? 'enabled' : 'disabled' )])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
+        // Add command to set reply language
+        const rlLabel = '🌐 ' + messages.menuLabel_replyLanguage
+                      + state.separator + config.replyLanguage
+        menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
+            while (true) {
+                const replyLanguage = prompt(
+                    messages.prompt_updateReplyLang + ':', config.replyLanguage)
+                if (replyLanguage === null) break // user cancelled so do nothing
+                else if (!/\d/.test(replyLanguage)) {
+                    saveSetting('replyLanguage', replyLanguage || config.userLanguage)
+                    alert(messages.alert_langUpdated + '!', // title
+                        'BraveGPT ' + messages.alert_willReplyIn + ' '
+                            + ( replyLanguage || messages.alert_yourSysLang ) + '.')
+                    for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+                    break
+        }}}))
+
         // Add command to launch About modal
-        menuIDs.push(GM_registerMenuCommand('💡 About BraveGPT', async () => {
+        const aboutLabel = '💡 ' + messages.menuLabel_about + ' BraveGPT'
+        menuIDs.push(GM_registerMenuCommand(aboutLabel, async () => {
 
             // Get chatgpt.js version
             const scriptMeta = await new Promise(resolve => {
@@ -253,14 +288,15 @@
             // Show alert
             const aboutAlertID = alert(
                 'BraveGPT', // title
-                ' Version: ' + GM_info.script.version + '\n Powered by: ' // msg
+                ' ' + messages.alert_version + ': ' + GM_info.script.version + '\n '
+                    + messages.alert_poweredBy + ': '
                     + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                     + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ),
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
                     function githubSource() { safeWindowOpen(config.gitHubURL) },
                     function leaveAReview() {
-                        const reviewAlertID = chatgpt.alert('Choose a platform:', '',
+                        const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
                             [ function greasyFork() { safeWindowOpen(
                                   config.greasyForkURL + '/feedback#post-discussion') },
                               function productHunt() { safeWindowOpen(
@@ -273,9 +309,12 @@
 
             // Re-format buttons to include emojis + re-case + hide 'Dismiss'
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-                if (/updates/i.test(button.textContent)) button.textContent = '🚀 Check for Updates'
-                else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
-                else if (/github/i.test(button.textContent)) button.textContent = '📜 GitHub source'
+                if (/updates/i.test(button.textContent))
+                    button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+                else if (/review/i.test(button.textContent))
+                    button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+                else if (/github/i.test(button.textContent))
+                    button.textContent = '📜 ' + messages.buttonLabel_githubSrc
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
@@ -283,7 +322,7 @@
 
     // Define FEEDBACK functions
 
-    function notify(msg, position = '', notifDuration = '', shadow = '') {
+    function notify(msg, position = '', notifDuration = '', shadow = 'shadow') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration, shadow) }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
@@ -298,7 +337,8 @@
         if (msg.includes('login')) deleteOpenAIcookies()
         braveGPTdiv.innerHTML = braveGPTalerts[msg]
             + (braveGPTalerts[msg].includes('@') ? // if msg needs login link, add it
-                '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> (If issue persists, try activating Proxy Mode)</p>' : '</p>')
+                '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
+                    + '(' + messages.alert_ifIssuePersists + ')</p>' : '</p>')
     }
 
     // Define SESSION functions
@@ -307,7 +347,7 @@
         try {
             const html = new DOMParser().parseFromString(resp, 'text/html'),
                   title = html.querySelector('title')
-            return title.innerText === 'Just a moment...'
+            return title.innerText === messages.alert_justAmoment + '...'
         } catch (error) { return false }
     }
 
@@ -459,10 +499,8 @@
                             braveGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (error) {
                             braveGPTconsole.info('Response: ' + event.responseText)
-
                             if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
-                                braveGPTshow('Sorry, according to our product rules, we cannot provide you with an answer to this question, please try another question.')
-
+                                braveGPTshow(messages.alert_censored)
                             else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
                                 GM_setValue(config.prefix + '_aigcfKey', false) // clear GM key for fresh getAIGCFkey()
 
@@ -529,7 +567,8 @@
         function handleSubmit(event) {
             event.preventDefault()
             if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
-            const prevReplyTrimmed = braveGPTdiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length)
+            const prevReplyTrimmed = braveGPTdiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length),
+                  yourReply = replyBox.value + ' / Answer in ' + config.replyLanguage
             if (!config.proxyAPIenabled) {
                 convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
                 convo.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [replyBox.value] } })
@@ -569,7 +608,7 @@
         braveGPTdiv.innerHTML = '<p class="loading"></p>' // give BraveGPT container spinning loader
         const siderbarContainer = document.querySelector('#side-right')
         siderbarContainer.prepend(braveGPTdiv) // inject BraveGPT container
-        const query = new URL(location.href).searchParams.get('q')
+        const query = new URL(location.href).searchParams.get('q') + ' / Answer in ' + config.replyLanguage
         convo.push(
             config.proxyAPIenabled ? { role: 'user', content: query }
                                    : { role: 'user', id: chatgpt.uuidv4(),
@@ -586,13 +625,39 @@
         greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt' }
     config.updateURL = config.greasyForkURL + '/code/bravegpt.meta.js'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('proxyAPIenabled', 'prefixEnabled', 'suffixEnabled')
-    const convo = [] ; registerMenu()
+    loadSetting('proxyAPIenabled', 'prefixEnabled', 'replyLanguage', 'suffixEnabled')
+    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
+    const convo = []
 
     // Exit if prefix/suffix required but not present
     if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
         ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
             return }
+
+    // Define messages
+    const msgsLoaded = new Promise(resolve => {
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
+        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        function onLoad(response) {
+            try { // to return localized messages.json
+                const messages = new Proxy(JSON.parse(response.responseText), {
+                    get(target, prop) { // remove need to ref nested keys
+                        if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
+                            return target[prop].message
+                }}}) ; resolve(messages)
+            } catch (error) { // if 404
+                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                    msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
+                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+            }
+        }
+    }) ; const messages = await msgsLoaded
+
+    registerMenu()
 
     // Init endpoints
     const openAIendpoints = {
@@ -601,15 +666,16 @@
         chat: 'https://chat.openai.com/backend-api/conversation' }
     const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
+    // Init alerts
     const braveGPTalerts = {
-        login: 'Please login @ ',
-        tooManyRequests: 'ChatGPT is flooded with too many requests. Try switching '
-            + ( config.proxyAPIenabled ? 'off' : 'on' ) + ' Proxy Mode in toolbar',
-        parseFailed: 'Failed to parse response JSON. Try switching '
-            + ( config.proxyAPIenabled ? 'off' : 'on' ) + ' Proxy Mode in toolbar',
-        checkCloudflare: 'Please pass Cloudflare security check @ ',
-        suggestProxy: 'OpenAI API is not working. Try switching on Proxy Mode in toolbar',
-        suggestOpenAI: 'Proxy API is not working. Try switching off Proxy Mode in toolbar'
+        login: messages.alert_login + ' @ ',
+        tooManyRequests: messages.alert_tooManyRequests + '. '
+            + messages['alert_suggest' + ( config.proxyAPIenabled ? 'OpenAI' : 'Proxy' )],
+        parseFailed: messages.alert_parseFailed + '. '
+            + messages['alert_suggest' + ( config.proxyAPIenabled ? 'OpenAI' : 'Proxy' )],
+        checkCloudflare: messages.alert_checkCloudflare + ' @ ',
+        suggestProxy: messages.alert_openAInotWorking + '. ' + messages.alert_suggestProxy,
+        suggestOpenAI: messages.alert_proxyNotWorking + '. ' + messages.alert_suggestOpenAI
     }
 
     // Stylize elements
