@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.4
+// @version             2023.9.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -335,7 +335,9 @@
 
     function braveGPTalert(msg) {
         if (msg.includes('login')) deleteOpenAIcookies()
-        braveGPTdiv.innerHTML = braveGPTalerts[msg]
+        braveGPTdiv.innerHTML = (
+            /waiting|loading/i.test(msg) ? // if alert involves loading, add class
+                '<p class="loading">' : '<p>') + braveGPTalerts[msg]
             + (braveGPTalerts[msg].includes('@') ? // if msg needs login link, add it
                 '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
                     + '(' + messages.alert_ifIssuePersists + ')</p>' : '</p>')
@@ -529,7 +531,7 @@
     }
 
     function braveGPTshow(answer) {
-        braveGPTdiv.innerHTML = '<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank" rel="noopener">BraveGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre><section style="margin-bottom: -47px"><form><div class="continue-chat"><textarea id="bravegpt-reply-box" rows="1" placeholder="Send reply..."></textarea><button title="Send reply"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>'
+        braveGPTdiv.innerHTML = '<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank" rel="noopener">BraveGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre><section style="margin-bottom: -10px"><form><div class="continue-chat"><textarea id="bravegpt-reply-box" rows="1" placeholder="Send reply..."></textarea><button title="Send reply"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>'
         braveGPTdiv.querySelector('pre').textContent = answer
         fillBraveGPTfooter() ; braveGPTfooter.style.height = 'inherit' // (re-)init (after loading replies)
         braveGPTdiv.appendChild(braveGPTfooter) // append feedback link
@@ -584,8 +586,9 @@
 
             // Show loading status
             const replySection = braveGPTdiv.querySelector('section')
-            replySection.classList.add('loading') ; replySection.innerHTML = ''
-            braveGPTfooter.innerHTML = '' ; braveGPTfooter.style.height = '51px'
+            replySection.classList.add('loading')
+            replySection.innerHTML = braveGPTalerts.waitingResponse
+            braveGPTfooter.innerHTML = '' ; braveGPTfooter.style.height = '32px'
         }
 
         function autosizeBox() {
@@ -605,8 +608,8 @@
     }
 
     async function loadBraveGPT() {
-        braveGPTdiv.innerHTML = '<p class="loading"></p>' // give BraveGPT container spinning loader
-        const siderbarContainer = document.querySelector('#side-right')
+        braveGPTalert('waitingResponse')
+        const siderbarContainer = document.querySelector('.sidebar')
         siderbarContainer.prepend(braveGPTdiv) // inject BraveGPT container
         const query = new URL(location.href).searchParams.get('q') + ' / Answer in ' + config.replyLanguage
         convo.push(
@@ -668,6 +671,7 @@
 
     // Init alerts
     const braveGPTalerts = {
+        waitingResponse: messages.alert_waitingResponse + '...',
         login: messages.alert_login + ' @ ',
         tooManyRequests: messages.alert_tooManyRequests + '. '
             + messages['alert_suggest' + ( config.proxyAPIenabled ? 'OpenAI' : 'Proxy' )],
@@ -681,12 +685,16 @@
     // Stylize elements
     const braveGPTstyle = document.createElement('style')
     braveGPTstyle.innerText = `
-        .bravegpt-container { word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px }
+        .bravegpt-container {
+            word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px ; background: white ;
+            border-radius: 7px ; padding: 19px }
         .bravegpt-container p { margin: 0 }
         .bravegpt-container .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }
         .bravegpt-container .prefix { font-size: 20px ; font-family: var(--brand-font) }
         .bravegpt-container .prefix > a { color: inherit }
         .bravegpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }
+        @keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}
+        .bravegpt-container section.loading { padding-left: 5px ; font-size: 90% }
         .bravegpt-container pre { /* ChatGPT output box */
             /* text spacing */ white-space: pre-wrap ; line-height: 21px ;
             font-family: Consolas, Menlo, Monaco, monospace ;
@@ -694,11 +702,11 @@
             background-color: #eaeaea
         }
         .bravegpt-container .footer {
-            margin: 7px 0 -26px 0 ; padding: 14px -1 !important ; font-size: var(--text-sm-2)
+            margin: 2px 0 -26px 0 ; padding: 14px -1 !important ; font-size: var(--text-sm-2)
             justify-content: right !important ; border-top: none !important
         }
         .bravegpt-container .feedback { font-family: var(--brand-font) ; color: var(--search-text-06);
-            font-size: .65rem ; letter-spacing: .02em ; line-height: 1; position: relative ; left: 222px }
+            font-size: .65rem ; letter-spacing: .02em ; line-height: 1; position: relative ; left: 243px ; bottom: 24px }
         .bravegpt-container .feedback .icon { fill: currentColor ; color: currentColor ; --size:15px ; position: relative ; top: 3px ; right: 3px }
         .bravegpt-container .footer a:hover { color: black }
         @keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }} `
@@ -707,9 +715,9 @@
         + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem } '
         + '.chatgpt-js > a { color: inherit ; top: .054rem } '
         + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px } '
-        + '.continue-chat > textarea { border: none ; border-radius: 15px 16px 15px 0 ; margin: -6px 0 5px 0 ;  padding: 9px 0 5px 10px ; '
+        + '.continue-chat > textarea { border: none ; border-radius: 15px 16px 15px 0 ; margin: -6px 0 5px 0 ;  padding: 14px 0 5px 10px ; '
             + 'background: #eeeeee70 ; height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ;  } '
-        + '.continue-chat > button { position: relative ; bottom: 54px; left: 299px; border: none ; margin: 13px 4px 0 0 ; '
+        + '.continue-chat > button { position: relative ; bottom: 54px; left: 299px; border: none ; margin: 18px 4px 0 0 ; '
             + 'background: none ; color: lightgrey ; cursor: pointer } '
         + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
         + '.kudo-ai a { color: #aaa ; text-decoration: none } '
