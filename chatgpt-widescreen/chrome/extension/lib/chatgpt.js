@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.1.0
+// This library is a condensed version of chatgpt.js v2.2.0
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -202,8 +202,8 @@ const chatgpt = {
 
     notify: function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-        const fadeDuration = 0.6; // sec duration of fade-out
-        const vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
+        const fadeDuration = 0.6, // sec duration of fade-out
+              vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
         // Make/stylize/insert div
         const notificationDiv = document.createElement('div'); // make div
@@ -237,12 +237,12 @@ const chatgpt = {
         if (thisQuadrantDivIDs.length > 1) {
             try { // to move old notifications
                 for (const divId of thisQuadrantDivIDs.slice(0, -1)) { // exclude new div
-                    const oldDiv = document.getElementById(divId);
-                    const offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
-                    const vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
+                    const oldDiv = document.getElementById(divId),
+                          offsetProp = oldDiv.style.top ? 'top' : 'bottom', // pick property to change
+                          vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
                 }
-            } catch (error) {}
+            } catch (err) {}
         }
 
         // Show notification
@@ -270,6 +270,74 @@ const chatgpt = {
         }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
     },
 
+    obfuscate: function() { chatgpt.code.obfuscate(); },
+
+    printAllFunctions: function() {
+
+        // Define colors
+        const colors = { // element: [light, dark]
+            cmdPrompt: ['#ff00ff', '#00ff00'], // pink, green
+            objName: ['#0611e9', '#f9ee16'], // blue, yellow
+            methodName: ['#005aff', '#ffa500'], // blue, orange
+            entryType: ['#467e06', '#b981f9'], // green, purple
+            srcMethod: ['#ff0000', '#00ffff'] // red, cyan
+        };
+        Object.keys(colors).forEach(element => { // populate dark scheme colors if missing
+            colors[element][1] = colors[element][1] ||
+                '#' + (Number(`0x1${ colors[element][0].replace(/^#/, '') }`) ^ 0xFFFFFF)
+                    .toString(16).substring(1).toUpperCase(); // convert to hex
+        });
+
+        // Create [functionNames]
+        const functionNames = [];
+        for (const prop in this) {
+            if (typeof this[prop] === 'function') {
+                const chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name)),
+                      functionParent = chatgptIsParent ? 'chatgpt' : 'other';
+                functionNames.push([functionParent, prop]);
+            } else if (typeof this[prop] === 'object') {
+                for (const nestedProp in this[prop]) {
+                    if (typeof this[prop][nestedProp] === 'function') {
+                        functionNames.push([prop, nestedProp]);
+        }}}}
+        functionNames.sort(function(a, b) { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
+
+        // Print methods
+        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches,
+              baseFontStyles = 'font-family: monospace ; font-size: larger ; ';
+        console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
+        for (const functionName of functionNames) {
+            const isChatGptObjParent = /chatgpt|other/.test(functionName[0]),
+                  rootFunction = ( functionName[0] === 'chatgpt' ? this[functionName[1]].name
+                    : functionName[0] !== 'other' ? functionName[0] + '.' + functionName[1]
+                    : (( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' )
+                        + this[functionName[1]].name )),
+                  isAsync = this[functionName[1]]?.constructor.name === 'AsyncFunction';
+            console.log('%c>> %c' + ( isChatGptObjParent ? '' : `${ functionName[0] }.%c`) + functionName[1]
+                    + ' - https://chatgptjs.org/userguide/' + /(?:.*\.)?(.*)/.exec(rootFunction)[1].toLowerCase() + ( isAsync ? '-async' : '' ) + '\n%c[%c'
+                + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
+                    !isChatGptObjParent) // parent is chatgpt.obj
+                        ? 'Function' : 'Alias of' ) + '%c: %c'
+                + rootFunction + '%c]',
+
+                // Styles
+                baseFontStyles + 'font-weight: bold ; color:' + colors.cmdPrompt[+isDarkMode],
+                baseFontStyles + 'font-weight: bold ;'
+                    + 'color:' + colors[isChatGptObjParent ? 'methodName' : 'objName'][+isDarkMode],
+                baseFontStyles + 'font-weight: ' + ( isChatGptObjParent ? 'initial' : 'bold' ) + ';'
+                    + 'color:' + ( isChatGptObjParent ? 'initial' : colors.methodName[+isDarkMode] ),
+                baseFontStyles + 'font-weight: ' + ( isChatGptObjParent ? 'bold' : 'initial' ) + ';'
+                    + 'color:' + ( isChatGptObjParent ? colors.entryType[+isDarkMode] : 'initial' ),
+                baseFontStyles + 'font-weight: ' + ( isChatGptObjParent ? 'initial' : 'bold' ) + ';'
+                    + 'color:' + ( isChatGptObjParent ? 'initial' : colors.entryType[+isDarkMode] ),
+                baseFontStyles + ( isChatGptObjParent ? 'font-style: italic' : 'font-weight: initial' ) + ';'
+                    + 'color:' + ( isChatGptObjParent ? colors.srcMethod[+isDarkMode] : 'initial' ),
+                baseFontStyles + ( isChatGptObjParent ? 'font-weight: initial' : 'font-style: italic' ) + ';'
+                    + 'color:' + ( isChatGptObjParent ? 'initial' : colors.srcMethod[+isDarkMode] ),
+                isChatGptObjParent ? '' : ( baseFontStyles + 'color: initial ; font-weight: initial' ));
+        }
+    },
+
     randomFloat: function() {
     // * Generates a random, cryptographically secure value between 0 (inclusive) & 1 (exclusive)
         const crypto = window.crypto || window.msCrypto;
@@ -277,9 +345,9 @@ const chatgpt = {
     },
 
     renderHTML: function(node) {
-        const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g;
-        const reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+(?:\S+)=|[>']))+.)['"]?/g;
-        const nodeContent = node.childNodes;
+        const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
+              reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+(?:\S+)=|[>']))+.)['"]?/g,
+              nodeContent = node.childNodes;
 
         // Preserve consecutive spaces + line breaks
         if (!this.renderHTML.preWrapSet) {
@@ -292,14 +360,14 @@ const chatgpt = {
 
             // Process text node
             if (childNode.nodeType === Node.TEXT_NODE) {
-                const text = childNode.nodeValue;
-                const elems = Array.from(text.matchAll(reTags));
+                const text = childNode.nodeValue,
+                      elems = Array.from(text.matchAll(reTags));
 
                 // Process 1st element to render
                 if (elems.length > 0) {
-                    const elem = elems[0];
-                    const [tagContent, tagName, tagAttributes, tagText] = elem.slice(0, 4);
-                    const tagNode = document.createElement(tagName); tagNode.textContent = tagText;
+                    const elem = elems[0],
+                          [tagContent, tagName, tagAttributes, tagText] = elem.slice(0, 4),
+                          tagNode = document.createElement(tagName); tagNode.textContent = tagText;
 
                     // Extract/set attributes
                     const attributes = Array.from(tagAttributes.matchAll(reAttributes));
@@ -311,8 +379,8 @@ const chatgpt = {
                     const renderedNode = this.renderHTML(tagNode); // render child elements of newly created node
 
                     // Insert newly rendered node
-                    const beforeTextNode = document.createTextNode(text.substring(0, elem.index));
-                    const afterTextNode = document.createTextNode(text.substring(elem.index + tagContent.length));
+                    const beforeTextNode = document.createTextNode(text.substring(0, elem.index)),
+                          afterTextNode = document.createTextNode(text.substring(elem.index + tagContent.length));
 
                     // Replace text node with processed nodes
                     node.replaceChild(beforeTextNode, childNode);
@@ -330,8 +398,8 @@ const chatgpt = {
     sidebar: {
         isOn: function() { return !document.querySelector('button[aria-label*="Open sidebar"]'); },
         isOff: function() { return !!document.querySelector('button[aria-label*="Open sidebar"]'); },
-        hide: function() { this.isOn() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already hidden!'); },
-        show: function() { this.isOff() ? this.toggle() : console.info( '🤖 chatgpt.js >> Sidebar already shown!'); },
+        hide: function() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
+        show: function() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
         toggle: function() {
             for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (/close sidebar/i.test(navLink.text)) {
@@ -345,6 +413,17 @@ const chatgpt = {
                 navLink.click(); return;
     }}}
 
+};
+
+// Prefix console logs w/ '🤖 chatgpt.js >> '
+const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info;
+console.error = (...args) => {
+    if (!args[0].startsWith(consolePrefix)) ogError(consolePrefix + args[0], ...args.slice(1)); 
+    else ogError(...args);
+};
+console.info = (msg) => {
+    if (!msg.startsWith(consolePrefix)) ogInfo(consolePrefix + msg);
+    else ogInfo(msg);
 };
 
 export { chatgpt }
