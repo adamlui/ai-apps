@@ -62,7 +62,7 @@
     // Create wide screen style
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
-    wideScreenStyle.innerText = textContainerSelector + ' { max-width: 93% !important } '
+    wideScreenStyle.innerText = textContainerSelector + ' { max-width: 98% !important } '
         + ( site == 'poe' ? // stretch inner container
             ' [class*="ChatPageMain_container"] { max-width: 100% !important } ' : '' )
         + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
@@ -359,8 +359,8 @@
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
               site == 'openai' ? inputSelector + ' { padding-right: 145px } '  // narrow input to accomdate buttons
-                               + 'div.group > div > div:first-child > div:nth-child(2) { ' // move response paginator
-                                   + 'position: relative ; left: 54px ; top: 7px } ' : '' ) // ...below avatar to avoid cropping
+                               + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
+                                   + 'position: relative ; left: 66px ; top: 7px } ' : '' ) // ...below avatar to avoid cropping
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
     }
 
