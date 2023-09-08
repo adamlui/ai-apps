@@ -2,7 +2,7 @@
 <h5>English | <a href="zh-cn#readme">简体中文</a></h5>
 </div>
 
-<img src="../chrome/media/images/tiles/marquee-promo-tile-1400x560.png">
+<a href="https://chatgptwidescreen.com"><img src="../chrome/media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
 <p>
 
