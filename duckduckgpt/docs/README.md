@@ -109,7 +109,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 <br>[![](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "Follow @adamlui on GitHub")](https://github.com/adamlui)
 [![](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social "Follow @adamluitube on YouTube")](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 <a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" title="Follow @adam on Mastodon"></a>
-[![](https://img.shields.io/twitter/follow/adamllui?style=social "Follow @adamllui on X")](https://x.com/adamllui)
+[![](https://img.shields.io/badge/Follow%20@adamllui-2.1k-blue?logo=x&style=social "Follow @adamllui on X")](https://x.com/adamllui)
 [![](https://img.shields.io/badge/Follow%20in%2fadamlui-434-blue?logo=linkedin&style=social "Follow in/adamlui on LinkedIn")](https://linkedin.com/in/adamlui)
 
 ## Contributors
