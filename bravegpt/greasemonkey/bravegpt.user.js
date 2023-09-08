@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.6
+// @version             2023.9.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -342,6 +342,10 @@
                 '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
                     + '(' + messages.alert_ifIssuePersists + ')</p>' : '</p>')
     }
+
+    // Define UI function
+
+    function isDarkMode() { return document.documentElement.classList.toString().includes('dark') }
 
     // Define SESSION functions
 
@@ -684,48 +688,53 @@
 
     // Stylize elements
     const braveGPTstyle = document.createElement('style')
-    braveGPTstyle.innerText = `
-        .bravegpt-container {
-            word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px ; background: white ;
-            border-radius: 7px ; padding: 19px }
-        .bravegpt-container p { margin: 0 }
+    braveGPTstyle.innerText = (
+        '.bravegpt-container {'
+            + 'word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px ;'
+            + 'border-radius: 7px ; padding: 19px ; background: '
+                + ( isDarkMode() ? '#282828' : 'white' ) + '}'
+        + `.bravegpt-container p { margin: 0 }
         .bravegpt-container .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }
         .bravegpt-container .prefix { font-size: 20px ; font-family: var(--brand-font) }
         .bravegpt-container .prefix > a { color: inherit }
-        .bravegpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }
+        .bravegpt-container .loading {
+            color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;
+            -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }
         @keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}
-        .bravegpt-container section.loading { padding-left: 5px ; font-size: 90% }
-        .bravegpt-container pre { /* ChatGPT output box */
-            /* text spacing */ white-space: pre-wrap ; line-height: 21px ;
-            font-family: Consolas, Menlo, Monaco, monospace ;
-            /* box spacing */ padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;
-            background-color: #eaeaea
-        }
-        .bravegpt-container .footer {
+        .bravegpt-container section.loading {
+            padding-left: 5px ; font-size: 90% ;
+            -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }`
+        + '.bravegpt-container pre {'
+            + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
+            + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;'
+            + ( isDarkMode() ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 } ' )
+        + `.bravegpt-container .footer {
             margin: 2px 0 -26px 0 ; padding: 14px -1 !important ; font-size: var(--text-sm-2)
             justify-content: right !important ; border-top: none !important
         }
         .bravegpt-container .feedback { font-family: var(--brand-font) ; color: var(--search-text-06);
             font-size: .65rem ; letter-spacing: .02em ; line-height: 1; position: relative ; left: 243px ; bottom: 24px }
-        .bravegpt-container .feedback .icon { fill: currentColor ; color: currentColor ; --size:15px ; position: relative ; top: 3px ; right: 3px }
-        .bravegpt-container .footer a:hover { color: black }
-        @keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }} `
+        .bravegpt-container .feedback .icon { fill: currentColor ; color: currentColor ; --size:15px ; position: relative ; top: 3px ; right: 3px }`
+        + `.bravegpt-container .footer a:hover { color: ${ isDarkMode() ? 'white' : 'black' } ; text-decoration: none }`
+        + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.balloon-tip { content: "" ; position: relative ; top: 0.25em ; right: 9.64rem ; border: 7px solid transparent ;'
-            + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-bottom-color: #eaeaea ; border-top: 0 } '
+            + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color: '
+                + ( isDarkMode() ? '#3a3a3a' : '#eaeaea' ) + '}'
         + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem } '
         + '.chatgpt-js > a { color: inherit ; top: .054rem } '
         + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px } '
         + '.continue-chat > textarea { border: none ; border-radius: 15px 16px 15px 0 ; margin: -6px 0 5px 0 ;  padding: 14px 0 5px 10px ; '
-            + 'background: #eeeeee70 ; height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ;  } '
+            + 'height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ; background: '
+                + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + '}'
         + '.continue-chat > button { position: relative ; bottom: 54px; left: 299px; border: none ; margin: 18px 4px 0 0 ; '
             + 'background: none ; color: lightgrey ; cursor: pointer } '
         + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
         + '.kudo-ai a { color: #aaa ; text-decoration: none } '
-        + '.kudo-ai a:hover { color: black ; text-decoration: none } '
+        + `.kudo-ai a:hover { color: ${ isDarkMode() ? 'white' : 'black' } ; text-decoration: none }`
         + '.katex-html { display: none } ' // hide unrendered math
         + '.chatgpt-modal p { font-size: 1.115rem ; margin-left: 4px } ' // chatgpt.alert() msg
         + '.chatgpt-modal button { ' // chatgpt.alert() buttons
-            + 'padding: 8px 15px !important ; border-radius: 0 !important ; border: 2px solid black !important } '
+            + 'padding: 8px 15px !important ; border-radius: 0 !important ; border: 2px solid black !important } ')
     document.head.appendChild(braveGPTstyle) // append style to <head>
 
     // Create BraveGPT container & add id/classes
