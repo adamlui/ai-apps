@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Обидете се да го вклучите режимот за прокси во лентата со алатки" },
   "alert_suggestOpenAI": { "message": "Обидете се да го исклучите режимот на прокси во лентата со алатки" },
   "alert_censored": { "message": "За жал, според нашите правила за производи, не можеме да ви дадеме одговор на ова прашање. Обидете се со други прашања." },
+  "alert_maintenance": { "message": "Систем за вештачка интелигенција во фаза на" },
   "buttonLabel_update": { "message": "Ажурирај" },
   "buttonLabel_dismiss": { "message": "Отфрли" },
   "link_viewChanges": { "message": "Прикажи ги промените" },

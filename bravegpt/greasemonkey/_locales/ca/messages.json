@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Prova a activar el mode intermediari a la barra d'eines" },
   "alert_suggestOpenAI": { "message": "Prova de desactivar el mode intermediari a la barra d'eines" },
   "alert_censored": { "message": "Ho sentim, d'acord amb les nostres normes de producte, no podem proporcionar-te una resposta a aquesta pregunta, prova-ho amb altres preguntes." },
+  "alert_maintenance": { "message": "Sistema d'IA en manteniment" },
   "buttonLabel_update": { "message": "Actualització" },
   "buttonLabel_dismiss": { "message": "Descarta" },
   "link_viewChanges": { "message": "Mostra els canvis" },

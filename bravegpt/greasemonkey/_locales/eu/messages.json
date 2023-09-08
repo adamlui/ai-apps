@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Saiatu tresna-barran Proxy modua aktibatzen" },
   "alert_suggestOpenAI": { "message": "Saiatu tresna-barrako proxy modua desaktibatzen" },
   "alert_censored": { "message": "Sentitzen dugu, gure produktuen arauen arabera, ezin dizugu galdera honi erantzunik eman, saiatu beste galdera batzuk." },
+  "alert_maintenance": { "message": "AI sistema mantentzen" },
   "buttonLabel_update": { "message": "Eguneratu" },
   "buttonLabel_dismiss": { "message": "Bistatik kendu" },
   "link_viewChanges": { "message": "Ikusi aldaketak" },

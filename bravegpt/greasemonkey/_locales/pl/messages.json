@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Spróbuj włączyć tryb proxy na pasku narzędzi" },
   "alert_suggestOpenAI": { "message": "Spróbuj wyłączyć tryb proxy na pasku narzędzi" },
   "alert_censored": { "message": "Przepraszamy, zgodnie z naszymi zasadami dotyczącymi produktów nie możemy udzielić odpowiedzi na to pytanie. Spróbuj użyć innych pytań." },
+  "alert_maintenance": { "message": "System AI w trakcie konserwacji" },
   "buttonLabel_update": { "message": "Aktualizuj" },
   "buttonLabel_dismiss": { "message": "Odrzuć" },
   "link_viewChanges": { "message": "Przegląd zmian" },

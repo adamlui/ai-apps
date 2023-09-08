@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Skúste zapnúť režim proxy na paneli s nástrojmi" },
   "alert_suggestOpenAI": { "message": "Skúste vypnúť režim proxy na paneli s nástrojmi" },
   "alert_censored": { "message": "Ľutujeme, podľa našich produktových pravidiel vám nemôžeme poskytnúť odpoveď na túto otázku, skúste iné otázky." },
+  "alert_maintenance": { "message": "Systém umelej inteligencie je v údržbe" },
   "buttonLabel_update": { "message": "Aktualizovať" },
   "buttonLabel_dismiss": { "message": "Odmietnuť" },
   "link_viewChanges": { "message": "Zobraziť zmeny" },

@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "嘗試在工具列中開啟Proxy模式" },
   "alert_suggestOpenAI": { "message": "嘗試在工具列中關閉Proxy模式" },
   "alert_censored": { "message": "很抱歉，根據我們的產品規則，我們無法為您提供此問題的答案，請嘗試其他問題。" },
+  "alert_maintenance": { "message": "AI系統維護中" },
   "buttonLabel_update": { "message": "更新" },
   "buttonLabel_dismiss": { "message": "關閉" },
   "link_viewChanges": { "message": "查看變更" },

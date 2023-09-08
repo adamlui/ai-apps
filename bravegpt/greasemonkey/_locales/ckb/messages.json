@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "هه وڵبده شێوازی پرۆکسی بگۆڕیت له toolbar" },
   "alert_suggestOpenAI": { "message": "سڕینەوەی شێوازی پرۆکسی لە Toolbar" },
   "alert_censored": { "message": "ببوره، به گوێره ی یاساکانی به رهه مه که مان، ناتوانین وه ڵامێکت بۆ ئه م پرسیاره بده ینه وه، تکایه پرسیاری تر تاقی بکه وه." },
+  "alert_maintenance": { "message": "سیستەم لە ژێر پاراستندایە" },
   "buttonLabel_update": { "message": "نوێکردنەوە" },
   "buttonLabel_dismiss": { "message": "پشتگوێخستن" },
   "link_viewChanges": { "message": "بینینی گۆڕانکارییەکان" },

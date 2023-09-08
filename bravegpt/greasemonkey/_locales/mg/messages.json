@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Manandrama manova ny fomba proxy anatin'ny tsipiky ny fitaovana" },
   "alert_suggestOpenAI": { "message": "Andramo vonoy ny fomba proxy anatin'ny tsipiky ny fitaovana" },
   "alert_censored": { "message": "Miala tsiny, araka ny lalàna ny vokatra, fa tsy afaka manome anao ny valin 'io fanontaniana io, azafady manandrana fanontaniana hafa." },
+  "alert_maintenance": { "message": "AI rafitra eo ambany fikojakojana" },
   "buttonLabel_update": { "message": "Vaovao farany" },
   "buttonLabel_dismiss": { "message": "Hiditra" },
   "link_viewChanges": { "message": "Hijery ireo fanovana" },

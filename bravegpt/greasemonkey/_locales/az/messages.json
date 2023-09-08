@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Alətlər panelində Proksi Rejimində dəyişməyi sınayın" },
   "alert_suggestOpenAI": { "message": "Alətlər panelində Proksi Rejimini söndürməyi sınayın" },
   "alert_censored": { "message": "Üzr istəyirik, məhsul qaydalarımıza əsasən, sizə bu suala cavab verə bilmərik, başqa sualları sınayın." },
+  "alert_maintenance": { "message": "AI sistemi texniki baxışdan keçirilir" },
   "buttonLabel_update": { "message": "Yenilə" },
   "buttonLabel_dismiss": { "message": "Bağla" },
   "link_viewChanges": { "message": "Dəyişikliklərə bax" },

@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "په توکپټه کې د پراکسي حالت بدلولو هڅه وکړئ" },
   "alert_suggestOpenAI": { "message": "په توکپټه کې د پراکسي حالت بندولو هڅه وکړئ" },
   "alert_censored": { "message": "بخښنه غواړو، زموږ د محصول مقرراتو سره سم، موږ نشو کولی تاسو ته دې پوښتنې ته ځواب درکړو، مهرباني وکړئ د نورو پوښتنو هڅه وکړئ." },
+  "alert_maintenance": { "message": "د ساتنې لاندې د AI سیسټم" },
   "buttonLabel_update": { "message": "تازه کړئ" },
   "buttonLabel_dismiss": { "message": "رد کردن" },
   "link_viewChanges": { "message": "بدلونونه وګورئ" },

@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Próbálja meg bekapcsolni a Proxy módot az eszköztáron" },
   "alert_suggestOpenAI": { "message": "Próbálja meg kikapcsolni a Proxy módot az eszköztáron" },
   "alert_censored": { "message": "Sajnáljuk, a termékszabályzatunk szerint nem tudunk választ adni erre a kérdésre, kérjük, próbáljon meg más kérdéseket." },
+  "alert_maintenance": { "message": "AI rendszer karbantartás alatt" },
   "buttonLabel_update": { "message": "Frissítés" },
   "buttonLabel_dismiss": { "message": "Elvetés" },
   "link_viewChanges": { "message": "Módosítások megtekintése" },

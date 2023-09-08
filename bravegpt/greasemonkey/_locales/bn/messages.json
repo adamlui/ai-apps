@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "টুলবারে প্রক্সি মোড চালু করার চেষ্টা করুন" },
   "alert_suggestOpenAI": { "message": "টুলবারে প্রক্সি মোড বন্ধ করার চেষ্টা করুন" },
   "alert_censored": { "message": "দুঃখিত, আমাদের পণ্য নিয়ম অনুযায়ী, আমরা আপনাকে এই প্রশ্নের উত্তর দিতে পারছি না, অনুগ্রহ করে অন্য প্রশ্নগুলি চেষ্টা করুন ।" },
+  "alert_maintenance": { "message": "রক্ষণাবেক্ষণাধীন AI সিস্টেম" },
   "buttonLabel_update": { "message": "আপডেট করুন" },
   "buttonLabel_dismiss": { "message": "খারিজ করুন" },
   "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" },

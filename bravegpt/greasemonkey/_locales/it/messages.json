@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Prova ad attivare la modalità Proxy nella barra degli strumenti" },
   "alert_suggestOpenAI": { "message": "Prova a disattivare la modalità Proxy nella barra degli strumenti" },
   "alert_censored": { "message": "Siamo spiacenti, in base alle nostre regole del prodotto, non possiamo fornirti una risposta a questa domanda, prova con altre domande." },
+  "alert_maintenance": { "message": "Sistema in manutenzione" },
   "buttonLabel_update": { "message": "Aggiorna" },
   "buttonLabel_dismiss": { "message": "Ignora" },
   "link_viewChanges": { "message": "Visualizza modifiche" },

@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Try switching on Proxy Mode in toolbar" },
   "alert_suggestOpenAI": { "message": "Try switching off Proxy Mode in toolbar" },
   "alert_censored": { "message": "క్షమించండి, మా ఉత్పత్తి నియమాల ప్రకారం, మేము ఈ ప్రశ్నకు సమాధానాన్ని మీకు అందించలేము, దయచేసి ఇతర ప్రశ్నలను ప్రయత్నించండి." },
+  "alert_maintenance": { "message": "నిర్వహణలో ఉన్న AI వ్యవస్థ" },
   "buttonLabel_update": { "message": "అప్‌డేట్" },
   "buttonLabel_dismiss": { "message": "తీసివేయండి" },
   "link_viewChanges": { "message": "మార్పులను చూడండి" },

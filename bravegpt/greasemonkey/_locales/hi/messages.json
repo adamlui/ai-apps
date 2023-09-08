@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "टूलबार में प्रॉक्सी मोड पर स्विच करने का प्रयास करें" },
   "alert_suggestOpenAI": { "message": "टूलबार में प्रॉक्सी मोड बंद करके देखें" },
   "alert_censored": { "message": "माफ़ करें, हमारे उत्पाद नियमों के अनुसार, हम आपको इस सवाल का जवाब नहीं दे सकते, कृपया और सवाल आज़माएँ।" },
+  "alert_maintenance": { "message": "रखरखाव के तहत एआई सिस्टम" },
   "buttonLabel_update": { "message": "अपडेट करें" },
   "buttonLabel_dismiss": { "message": "खारिज करना" },
   "link_viewChanges": { "message": "बदलाव देखें" },

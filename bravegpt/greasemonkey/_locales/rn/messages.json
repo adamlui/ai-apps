@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Gerageza guhinduranya uburyo bwa Proxy muri Toolbar" },
   "alert_suggestOpenAI": { "message": "Gerageza guhinduranya uburyo bwa Proxy muri Toolbar" },
   "alert_censored": { "message": "Turababajwe n'uko tudashobora kuguha inyishu y'iki kibazo, turakwinginze ugerageze ibindi bibazo." },
+  "alert_maintenance": { "message": "Sisitemu ya AI iri mu kubungabunga" },
   "buttonLabel_update": { "message": "Update None None" },
   "buttonLabel_dismiss": { "message": "Ukwirukana" },
   "link_viewChanges": { "message": "Kubona impinduka" },

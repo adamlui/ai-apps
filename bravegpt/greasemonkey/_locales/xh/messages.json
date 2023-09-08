@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Zama ukuvula iMowudi yeProxy kwibar yezixhobo" },
   "alert_suggestOpenAI": { "message": "Zama ukucima i-Proxy Mode kwibar yezixhobo" },
   "alert_censored": { "message": "Uxolo, ngokwemithetho yethu yemveliso, asikwazi ukukunika impendulo yalo mbuzo, nceda uzame eminye imibuzo." },
+  "alert_maintenance": { "message": "Inkqubo yeAI iyalungiswa" },
   "buttonLabel_update": { "message": "Lungisa" },
   "buttonLabel_dismiss": { "message": "Gxotha" },
   "link_viewChanges": { "message": "Jonga izinto ezitshintshiweyo" },

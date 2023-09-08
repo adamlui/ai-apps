@@ -36,6 +36,7 @@
   "alert_suggestProxy": { "message": "Pokušajte uključiti proxy način rada na alatnoj traci" },
   "alert_suggestOpenAI": { "message": "Pokušajte isključiti proxy način rada na alatnoj traci" },
   "alert_censored": { "message": "Žao nam je, prema našim pravilima o proizvodima, ne možemo vam dati odgovor na ovo pitanje, pokušajte s drugim pitanjima." },
+  "alert_maintenance": { "message": "Sustav umjetne inteligencije u održavanju" },
   "buttonLabel_update": { "message": "Ažuriraj" },
   "buttonLabel_dismiss": { "message": "Odbaci" },
   "link_viewChanges": { "message": "Pregledaj promjene" },
