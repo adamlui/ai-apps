@@ -62,7 +62,7 @@
     // Create wide screen style
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
-    wideScreenStyle.innerText = textContainerSelector + ' { max-width: 97% !important } '
+    wideScreenStyle.innerText = textContainerSelector + ' { max-width: 98% !important } '
         + ( site == 'poe' ? // stretch inner container
             ' [class*="ChatPageMain_container"] { max-width: 100% !important } ' : '' )
         + ( site == 'openai' ? // prevent sidebar shrinking when zoomed

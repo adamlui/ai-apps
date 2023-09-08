@@ -1,4 +1,4 @@
-<img src="../media/images/tiles/marquee-promo-tile-1400x560.png">
+<a href="https://chatgptwidescreen.com"><img src="../media/images/tiles/marquee-promo-tile-1400x560.png"></a>
 
 <p>
 
