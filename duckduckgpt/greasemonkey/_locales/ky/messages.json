@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "Toolbar" },
   "alert_suggestOpenAI": { "message": "Аспаптар панелинде прокси режимин өчүрүп көрүңүз" },
   "alert_censored": { "message": "Кечиресиз, биздин өнүмдүн эрежелерине ылайык, сизге бул суроого жооп бере албайбыз, башка суроолорду байкап көрүңүз." },
+  "alert_maintenance": { "message": "Техникалык тейлөө астында AI системасы" },
   "buttonLabel_update": { "message": "Жаңыртуу" },
   "buttonLabel_dismiss": { "message": "Иштен бошотуу" },
   "link_viewChanges": { "message": "Өзгөрүүлөрдү көрүү" },

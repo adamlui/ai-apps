@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "Feinga liliu ʻi he Mode fakafofonga ʻi he toolbar" },
   "alert_suggestOpenAI": { "message": "Feinga ke liliu ʻa e Mode fakafofonga ʻi he toolbar" },
   "alert_censored": { "message": "Kataki, fakatatau ki heʻetau ngaahi lao ki he koloa, he ʻikai ke mau lava ʻo ʻoatu ha tali ki he fehuʻi ko ʻeni, kataki ʻo ʻahiʻahiʻi ha ngaahi fehuʻi kehe." },
+  "alert_maintenance": { "message": "ʻI ai ha polokalama ʻi hono tokangaʻi" },
   "buttonLabel_update": { "message": "Fakamatala Fakamuimuitahá" },
   "buttonLabel_dismiss": { "message": "Tukuange" },
   "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" },

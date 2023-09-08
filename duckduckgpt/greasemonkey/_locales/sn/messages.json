@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "Edza kuvhenekera Proxy Mode mu toolbar" },
   "alert_suggestOpenAI": { "message": "Edza kudzima Proxy Mode mu toolbar" },
   "alert_censored": { "message": "Tine urombo, maererano nemitemo yedu yezvigadzirwa, hatigone kukupa mhinduro kumubvunzo uyu, tapota edza mimwe mibvunzo." },
+  "alert_maintenance": { "message": "AI hurongwa pasi Nokuraramisa" },
   "buttonLabel_update": { "message": "Kugadziridza" },
   "buttonLabel_dismiss": { "message": "Dzinga" },
   "link_viewChanges": { "message": "Vonanyi cinjo" },

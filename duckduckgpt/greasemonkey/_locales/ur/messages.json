@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "ٹول بار میں پراکسی موڈ پر سوئچ کرنے کی کوشش کریں" },
   "alert_suggestOpenAI": { "message": "ٹول بار میں پراکسی موڈ کو آف کرنے کی کوشش کریں" },
   "alert_censored": { "message": "معذرت، ہمارے پروڈکٹ کے قواعد کے مطابق، ہم آپ کو اس سوال کا جواب فراہم نہیں کر سکتے، براہ کرم دیگر سوالات آزمائیں ۔" },
+  "alert_maintenance": { "message": "مصنوعی ذہانت کا نظام زیرِ دیکھ بھال" },
   "buttonLabel_update": { "message": "اپ ڈیٹ " },
   "buttonLabel_dismiss": { "message": "برخاست" },
   "link_viewChanges": { "message": "تبدیلیاں دیکھیں" },

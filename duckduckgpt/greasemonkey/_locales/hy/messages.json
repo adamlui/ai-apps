@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "Փորձեք միացնել վստահված ռեժիմը գործիքագոտում" },
   "alert_suggestOpenAI": { "message": "Փորձեք անջատել վստահված ռեժիմը գործիքագոտում" },
   "alert_censored": { "message": "Ներեցեք, մեր արտադրանքի կանոնների համաձայն ՝ մենք չենք կարող ձեզ պատասխան տալ այս հարցին, խնդրում ենք փորձել այլ հարցեր:" },
+  "alert_maintenance": { "message": "Սպասարկման մեջ գտնվող AI համակարգ" },
   "buttonLabel_update": { "message": "Այժմեականացնել / Արդիականացնել" },
   "buttonLabel_dismiss": { "message": "Փակել" },
   "link_viewChanges": { "message": "Դիտել փոփոխությունները" },

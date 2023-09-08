@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "ព្យាយាម ប្ដូរ របៀប ប្រូកស៊ី នៅ ក្នុង របារ ឧបករណ៍" },
   "alert_suggestOpenAI": { "message": "ព្យាយាមបិទម៉ូដប្រូកស៊ីនៅក្នុងរបារឧបករណ៍" },
   "alert_censored": { "message": "ខ្ញុំ អត់ មាន ការ អៀនខ្មាស ទេ តាម ច្បាប់ ផលិតផល របស់ យើង យើង មិន អាច ឆ្លើយ នឹង សំណួរ នេះ បាន ទេ សូម សាកល្បង សំណួរ ផ្សេង ទៀត ។" },
+  "alert_maintenance": { "message": "ប្រព័ន្ធ AI ដែលស្ថិតនៅក្រោមការថែទាំ" },
   "buttonLabel_update": { "message": "ធ្វើបច្ចុប្បន្នភាព" },
   "buttonLabel_dismiss": { "message": "បោះបង់" },
   "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" },

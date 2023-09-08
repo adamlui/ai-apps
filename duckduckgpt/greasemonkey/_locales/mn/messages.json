@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "Хэрэгслийн мөрөнд прокси горимыг асаахыг оролдоорой" },
   "alert_suggestOpenAI": { "message": "Хэрэгслийн мөрөнд Прокси горимыг унтраахыг оролдоорой" },
   "alert_censored": { "message": "Уучлаарай, манай бүтээгдэхүүний дүрмийн дагуу бид танд энэ асуултад хариулж чадахгүй тул бусад асуултуудыг туршиж үзнэ үү." },
+  "alert_maintenance": { "message": "Засвар үйлчилгээний доор хиймэл оюун санааны систем" },
   "buttonLabel_update": { "message": "Шинэчлэх" },
   "buttonLabel_dismiss": { "message": "Дуусах" },
   "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" },

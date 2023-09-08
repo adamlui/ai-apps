@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "Thử bật Chế độ Proxy trong thanh công cụ" },
   "alert_suggestOpenAI": { "message": "Thử tắt Chế độ Proxy trong thanh công cụ" },
   "alert_censored": { "message": "Rất tiếc, theo quy tắc sản phẩm của chúng tôi, chúng tôi không thể cung cấp cho bạn câu trả lời cho câu hỏi này, vui lòng thử các câu hỏi khác." },
+  "alert_maintenance": { "message": "Hệ thống đang được bảo trì" },
   "buttonLabel_update": { "message": "Cập nhật" },
   "buttonLabel_dismiss": { "message": "Bỏ qua" },
   "link_viewChanges": { "message": "Xem thay đổi" },

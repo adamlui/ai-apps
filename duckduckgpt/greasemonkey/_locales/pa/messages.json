@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "ਟੂਲਬਾਰ ਵਿੱਚ ਪਰਾਕਸੀ ਮੋਡ ਚਾਲੂ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ" },
   "alert_suggestOpenAI": { "message": "ਟੂਲਬਾਰ ਵਿੱਚ ਪਰਾਕਸੀ ਮੋਡ ਬੰਦ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ" },
   "alert_censored": { "message": "ਮੁਆਫ ਕਰਨਾ, ਸਾਡੇ ਉਤਪਾਦ ਨਿਯਮਾਂ ਦੇ ਅਨੁਸਾਰ, ਅਸੀਂ ਤੁਹਾਨੂੰ ਇਸ ਪ੍ਰਸ਼ਨ ਦਾ ਉੱਤਰ ਪ੍ਰਦਾਨ ਨਹੀਂ ਕਰ ਸਕਦੇ, ਕਿਰਪਾ ਕਰਕੇ ਹੋਰ ਪ੍ਰਸ਼ਨਾਂ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ." },
+  "alert_maintenance": { "message": "ਏਆਈ ਸਿਸਟਮ ਰੱਖ-ਰਖਾਅ ਅਧੀਨ" },
   "buttonLabel_update": { "message": "ਅੱਪਡੇਟ ਕਰੋ" },
   "buttonLabel_dismiss": { "message": "ਖਾਰਜ ਕਰੋ" },
   "link_viewChanges": { "message": "ਤਬਦੀਲੀਆਂ ਵੇਖੋ" },

@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "Ɛreḍ ad tbeddleḍ ɣef Proxy Mode deg toolbar" },
   "alert_suggestOpenAI": { "message": "Ɛreḍ ad tekkseḍ amiḍan n Proxy deg ufaylu n ufaylu" },
   "alert_censored": { "message": "Suref-aɣ, akken iwata, ur nezmir ara ad ak-nerr tiririt ɣef tuttra-yagi, ma ulac aɣilif ɛreḍ isteqsiyen nniḍen." },
+  "alert_maintenance": { "message": "A la recherche d 'un plan cul" },
   "buttonLabel_update": { "message": "Leqqem" },
   "buttonLabel_dismiss": { "message": "Agi" },
   "link_viewChanges": { "message": "Wali ibeddilen" },

@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "Ceisiwch droi Modd Dirprwy ymlaen yn y bar offer" },
   "alert_suggestOpenAI": { "message": "Ceisiwch ddiffodd y modd dirprwy yn y bar offer" },
   "alert_censored": { "message": "Mae'n ddrwg gennym, yn unol â'n rheolau cynnyrch, ni allwn roi ateb i chi i'r cwestiwn hwn, rhowch gynnig ar gwestiynau eraill." },
+  "alert_maintenance": { "message": "Systemau cynnal a chadw dan oruchwyliaeth" },
   "buttonLabel_update": { "message": "Diweddaru" },
   "buttonLabel_dismiss": { "message": "Cau" },
   "link_viewChanges": { "message": "Gweld newidiadau" },

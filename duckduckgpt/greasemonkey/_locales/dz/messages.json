@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "Toolbarནང་ལུ་ Proxy Mode བསྒྱུར་བཅོས་འབད་ནིའི་ དཔའ་བཅམ་ပါ။" },
   "alert_suggestOpenAI": { "message": "Proxy Modeའདི་ Toolbarནང་ལུ་སེལ་འཐུ་འབད་ནིའི་ དཔའ་བཅམ་" },
   "alert_censored": { "message": "བཀའ་དྲིན་བསམ་བཞེས། ང་བཅས་ཀྱི་ཐོན་སྐྱེད་ཀྱི་ཁྲིམས་ལུགས་དང་འཁྲིལ་བ་ཅིན་ ང་བཅས་ཀྱིས་ནཱ་གི་དྲི་བ་ལུ་ལན་སླབ་མ་ཚུགསཔ་ལས་ དྲི་བ་གཞན་ཡང་ཞུ་ནིའི་ དཔའ་བཅམ་ཚུགས།" },
+  "alert_maintenance": { "message": "བལྟ་སྐྱོང་གི་ལམ་ལུགས་" },
   "buttonLabel_update": { "message": "ད་ལྟོའི་དུས་ཚོད།" },
   "buttonLabel_dismiss": { "message": "ཁ་འབྱལ་བ།" },
   "link_viewChanges": { "message": "བསྒྱུར་བཅོས་ཚུ་བལྟ་" },

@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "Try switching on Proxy Mode in toolbar" },
   "alert_suggestOpenAI": { "message": "Try switching off Proxy Mode in toolbar" },
   "alert_censored": { "message": "Sorry, according to our product rules, we cannot provide you with an answer to this question, please try other questions." },
+  "alert_maintenance": { "message": "AI system under maintenance" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "View changes" },

@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "Intente activar el modo proxy en la barra de herramientas" },
   "alert_suggestOpenAI": { "message": "Intente desactivar el modo proxy en la barra de herramientas" },
   "alert_censored": { "message": "Lo sentimos, de acuerdo con las reglas de nuestros productos, no podemos proporcionarle una respuesta a esta pregunta. Por favor, intente con otras preguntas." },
+  "alert_maintenance": { "message": "Sistema de IA en mantenimiento" },
   "buttonLabel_update": { "message": "Actualizar" },
   "buttonLabel_dismiss": { "message": "Descartar" },
   "link_viewChanges": { "message": "Ver cambios" },

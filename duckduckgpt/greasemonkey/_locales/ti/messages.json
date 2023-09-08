@@ -37,6 +37,7 @@
   "alert_suggestProxy": { "message": "ኣብ ናይ መሳርሒ ባር ኣብ Proxy Mode ክትቅይር ፈትን" },
   "alert_suggestOpenAI": { "message": "Proxy Mode ኣብ toolbar ክትሰርዝ ፈትን" },
   "alert_censored": { "message": "ይቕረታ ፡ ብመሰረት ሕጊ ፍርያትና ፡ መልሲ እዛ ሕቶ እዚኣ ክንህበካ ኣይንኽእልን ኢና ፡ ካልእ ሕቶታት ፈትኖ ።" },
+  "alert_maintenance": { "message": "ኣብ ትሕቲ ምዕቃብ ዘሎ ስርዓት AI" },
   "buttonLabel_update": { "message": "ኣሐድስ" },
   "buttonLabel_dismiss": { "message": "ምጥፋእ" },
   "link_viewChanges": { "message": "ለውጢ ርአ" },
