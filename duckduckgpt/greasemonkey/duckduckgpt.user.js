@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.3
+// @version             2023.9.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -760,12 +760,16 @@
         + ( isDarkMode() ? '.ddgpt-container a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
         + '.ddgpt-container .prefix { font-size: 1.5rem ; font-weight: 700 }'
         + '.ddgpt-container .prefix > a { color: ' + ( isDarkMode() ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
-        + '.ddgpt-container .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
+        + '.ddgpt-container .loading {'
+            + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
+            + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.ddgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
         + '.ddgpt-container pre { font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 12px 0 0 0 ; line-height: 21px ; padding: 1.25em ; border-radius: 10px ; '
             + ( isDarkMode() ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' } ' )
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-        + '.ddgpt-container section.loading { padding-left: 5px } ' // left-pad loading status when sending replies
+        + '.ddgpt-container section.loading {'
+            + 'padding-left: 5px ;' // left-pad loading status when sending replies
+            + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.chatgpt-feedback { margin: 2px 0 25px }'
         + '.balloon-tip { content: "" ; position: relative ; top: 5px ; right: 16.5em ; border: 7px solid transparent ;'
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
