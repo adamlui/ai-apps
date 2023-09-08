@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.7
+// @version             2023.9.7.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -507,6 +507,8 @@
                             braveGPTconsole.info('Response: ' + event.responseText)
                             if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
                                 braveGPTshow(messages.alert_censored)
+                            else if (event.responseText.includes('维护'))
+                                braveGPTshow(messages.alert_maintenance + '. ' + messages.alert_suggestOpenAI)
                             else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
                                 GM_setValue(config.prefix + '_aigcfKey', false) // clear GM key for fresh getAIGCFkey()
 
