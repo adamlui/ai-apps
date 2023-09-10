@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.9.1
+// @version             2023.9.9.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -616,13 +616,15 @@
     async function loadBraveGPT() {
         braveGPTalert('waitingResponse')
         const siderbarContainer = document.querySelector('.sidebar')
-        siderbarContainer.prepend(braveGPTdiv) // inject BraveGPT container
-        const query = new URL(location.href).searchParams.get('q') + ' / Answer in ' + config.replyLanguage
-        convo.push(
-            config.proxyAPIenabled ? { role: 'user', content: query }
-                                   : { role: 'user', id: chatgpt.uuidv4(),
-                                       content: { content_type: 'text', parts: [query] }})
-        getShowReply(convo)
+        setTimeout(() => { 
+            siderbarContainer.prepend(braveGPTdiv) // inject BraveGPT container
+            const query = new URL(location.href).searchParams.get('q') + ' / Answer in ' + config.replyLanguage
+            convo.push(
+                config.proxyAPIenabled ? { role: 'user', content: query }
+                                       : { role: 'user', id: chatgpt.uuidv4(),
+                                           content: { content_type: 'text', parts: [query] }})
+            getShowReply(convo)
+        }, 100)
     }
 
     // Run MAIN routine
