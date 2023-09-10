@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.9
+// @version             2023.9.9.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -337,7 +337,7 @@
         if (msg.includes('login')) deleteOpenAIcookies()
         braveGPTdiv.innerHTML = (
             /waiting|loading/i.test(msg) ? // if alert involves loading, add class
-                '<p class="loading">' : '<p>') + braveGPTalerts[msg]
+                '<p class="loading">' : '<p style="padding: 19px">') + braveGPTalerts[msg]
             + (braveGPTalerts[msg].includes('@') ? // if msg needs login link, add it
                 '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
                     + '(' + messages.alert_ifIssuePersists + ')</p>' : '</p>')
