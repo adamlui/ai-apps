@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.10.1
+// @version             2023.9.10.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -633,7 +633,7 @@
     // Define UI element selectors
     const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after'
                                         : 'form textarea[id*="prompt"]',
-          sidebarSelector = site == 'poe' ? 'aside[class*="leftSidebar"]'
+          sidebarSelector = site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]'
                                           : '#__next > div > div.dark',
           sidepadSelector = '#__next > div > div',
           textContainerSelector = site == 'poe' ? '[class*="ChatPageMain_container"]'
