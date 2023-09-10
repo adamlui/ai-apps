@@ -62,7 +62,7 @@
     // Create wide screen style
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
-    wideScreenStyle.innerText = textContainerSelector + ' { max-width: 98% !important } '
+    wideScreenStyle.innerText = textContainerSelector + ' { max-width: 97% !important } '
         + ( site == 'poe' ? // stretch inner container
             ' [class*="ChatPageMain_container"] { max-width: 100% !important } ' : '' )
         + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
@@ -189,7 +189,7 @@
     function setBtnColor() { return chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' }
 
     function insertBtns() {
-        const chatbar = site == 'poe' ? document.querySelector('div[class*="inputContainer"]')
+        const chatbar = site == 'poe' ? document.querySelector('div[class*="ChatMessageInputContainer"]')
                                       : document.querySelector('form button[class*="bottom"]').parentNode;
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
         const leftMostBtn = chatbar.querySelector('button')

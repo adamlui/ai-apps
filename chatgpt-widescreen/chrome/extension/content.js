@@ -189,7 +189,7 @@
     function setBtnColor() { return chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' }
 
     function insertBtns() {
-        const chatbar = site == 'poe' ? document.querySelector('div[class*="inputContainer"]')
+        const chatbar = site == 'poe' ? document.querySelector('div[class*="ChatMessageInputContainer"]')
                                       : document.querySelector('form button[class*="bottom"]').parentNode;
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
         const leftMostBtn = chatbar.querySelector('button')
