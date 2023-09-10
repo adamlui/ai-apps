@@ -40,7 +40,7 @@
           sidebarSelector = site == 'poe' ? 'aside[class*="leftSidebar"]'
                                           : '#__next > div > div.dark',
           sidepadSelector = '#__next > div > div',
-          textContainerSelector = site == 'poe' ? '[class*="mainSection"]'
+          textContainerSelector = site == 'poe' ? '[class*="ChatPageMain_container"]'
                                                 : '.text-base, main > div > div > div > div > div'
     // Create/stylize tooltip div
     const tooltipDiv = document.createElement('div')
@@ -63,8 +63,8 @@
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     wideScreenStyle.innerText = textContainerSelector + ' { max-width: 97% !important } '
-        + ( site == 'poe' ? // stretch inner container
-            ' [class*="ChatPageMain_container"] { max-width: 100% !important } ' : '' )
+        + ( site == 'poe' ? // stretch outer container
+            ' [class^="MainColumn_column"] { width: 100% !important } ' : '' )
         + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
             '#__next > div > div.flex { width: 100px }' : '' )
 
