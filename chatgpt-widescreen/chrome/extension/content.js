@@ -37,7 +37,7 @@
     // Define UI element selectors
     const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after'
                                         : 'form textarea[id*="prompt"]',
-          sidebarSelector = site == 'poe' ? 'aside[class*="leftSidebar"]'
+          sidebarSelector = site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]'
                                           : '#__next > div > div.dark',
           sidepadSelector = '#__next > div > div',
           textContainerSelector = site == 'poe' ? '[class*="ChatPageMain_container"]'
