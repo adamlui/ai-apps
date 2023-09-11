@@ -135,28 +135,31 @@ For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-app
 
 ## Related scripts
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://github.com/adamlui/chatgpt-auto-refresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks.
-<br>[Install](https://greasyfork.org/en/scripts/462422-chatgpt-auto-refresh) / 
-[Readme](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey/README.md) / 
-[Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
+> Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks.
 
-### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com/greasemonkey) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+[Install](https://github.com/adamlui/chatgpt-auto-refresh#-installation) //
+[Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) //
+[Discuss](https://chatgptautorefresh.com/discuss)
 
-Display ChatGPT answers in DuckDuckGo sidebar.
-<br>[Install](https://greasyfork.org/en/scripts/459849-duckduckgpt) / 
-[Readme](https://duckduckgpt.com/greasemonkey/README.md) / 
-[Discuss](https://github.duckduckgpt.com/discussions)
+### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> [ChatGPT Widescreen Mode 🖥️](https://github.com/adamlui/chatgpt-widescreen/tree/main/greasemonkey) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 3px;" width="auto" height="24" />
+> Display ChatGPT answers in DuckDuckGo sidebar.
 
-Adds Widescren + Fullscreen modes to ChatGPT for reduced scrolling.
-<br>[Install](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode) / 
-[Readme](https://github.com/adamlui/chatgpt-widescreen/tree/main/greasemonkey/README.md) / 
-[Discuss](https://github.com/adamlui/chatgpt-widescreen/discussions)
+[Install](https://github.ddgpt.com/#installation) //
+[Readme]([https://github.ddgpt.com/#readme) //
+[Discuss](https://github.ddgpt.com/discussions)
+
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> [ChatGPT Widescreen Mode 🖥️](https://chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 3px;" width="auto" height="24" />
+
+> Adds Widescren + Fullscreen modes to ChatGPT for reduced scrolling.
+
+[Install](https://github.com/adamlui/chatgpt-widescreen#installation) //
+[Readme](https://github.com/adamlui/chatgpt-widescreen#readme) //
+[Discuss](https://chatgptwidescreen.com/discuss)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
-<a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
+<a href="https://github.com/adamlui/userscripts">**More userscripts**</a> /
 <a href="#----------------">Back to top ↑</a>
