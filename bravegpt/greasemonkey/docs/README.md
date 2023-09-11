@@ -148,7 +148,7 @@ For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-app
 > Display ChatGPT answers in DuckDuckGo sidebar.
 
 [Install](https://github.ddgpt.com/#installation) //
-[Readme]([https://github.ddgpt.com/#readme) //
+[Readme](https://github.ddgpt.com/#readme) //
 [Discuss](https://github.ddgpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> [ChatGPT Widescreen Mode 🖥️](https://chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 3px;" width="auto" height="24" />
