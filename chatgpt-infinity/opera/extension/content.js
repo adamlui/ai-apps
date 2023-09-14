@@ -167,10 +167,10 @@
             infinityMode.fromMsg = false
             try { chatgpt.startNewChat() } catch (error) { return }
             settings.load('replyLanguage', 'replyTopic', 'replyInterval').then(() => setTimeout(() => {
-                chatgpt.send('Generate a single random Q&A'
+                chatgpt.send('Generate a single random question'
                     + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
                     + ( ' on ' + ( config.replyTopic === 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
-                    + '. Don\'t type anything else.')
+                    + ' then answer it. Don\'t type anything else.')
             }, 500))
             await chatgpt.isIdle()
             if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
