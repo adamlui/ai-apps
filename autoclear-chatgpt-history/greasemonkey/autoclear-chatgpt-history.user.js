@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.15
+// @version             2023.9.15.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -436,15 +436,9 @@
         // Add command to launch About modal
         menuIDs.push(GM_registerMenuCommand('💡 About ' + messages.appName, async () => {
 
-            // Get chatgpt.js version
-            const scriptMeta = await new Promise(resolve => {
-                GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(),
-                    headers: { 'Cache-Control': 'no-cache' }, onload: resolve
-            })})
-            const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
-
             // Show alert
-            const headingStyle = 'font-size: 1.15rem',
+            const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(GM_info.script.header)?.[1] || '',
+                  headingStyle = 'font-size: 1.15rem',
                   pStyle = 'position: relative ; left: 3px',
                   pBrStyle = 'position: relative ; left: 4px ',
                   aStyle = 'color: #8325c4' // purple
