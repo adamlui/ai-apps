@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.13
+// @version             2023.9.15
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -214,7 +214,7 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@ef097b79d8396a1a421b95abe75fa4ae7ffb9dd4/dist/chatgpt-2.3.1.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@b3192595ebef3c59235eaa238a4a62cf4dd7b6bf/dist/chatgpt-2.3.2.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -481,15 +481,9 @@
         // Add command to launch About modal
         menuIDs.push(GM_registerMenuCommand('💡 About ' + messages.appName, async () => {
 
-            // Get chatgpt.js version
-            const scriptMeta = await new Promise(resolve => {
-                GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(),
-                    headers: { 'Cache-Control': 'no-cache' }, onload: resolve
-            })})
-            const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
-
             // Show alert
-            const headingStyle = 'font-size: 1.15rem',
+            const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(GM_info.script.header)[1] || '',
+                  headingStyle = 'font-size: 1.15rem',
                   pStyle = 'position: relative ; left: 3px',
                   pBrStyle = 'position: relative ; left: 4px ',
                   aStyle = 'color: #8325c4' // purple
