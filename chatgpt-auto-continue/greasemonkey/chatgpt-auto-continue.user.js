@@ -219,12 +219,12 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.9
+// @version             2023.9.15
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@c861cce87568a226eb765e63fa33a5125742415a/dist/chatgpt-2.3.1.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@b3192595ebef3c59235eaa238a4a62cf4dd7b6bf/dist/chatgpt-2.3.2.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -363,15 +363,9 @@
         // Add command to launch About modal
         menuIDs.push(GM_registerMenuCommand('💡 About ' + messages.appName, async () => {
 
-            // Get chatgpt.js version
-            const scriptMeta = await new Promise(resolve => {
-                GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(),
-                    headers: { 'Cache-Control': 'no-cache' }, onload: resolve
-            })})
-            const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
-
             // Show alert
-            const headingStyle = 'font-size: 1.15rem',
+            const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(GM_info.script.header)[1] || '',
+                  headingStyle = 'font-size: 1.15rem',
                   pStyle = 'position: relative ; left: 3px',
                   pBrStyle = 'position: relative ; left: 4px ',
                   aStyle = 'color: #8325c4' // purple
