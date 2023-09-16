@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.9
+// @version             2023.9.15
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -172,7 +172,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@ef097b79d8396a1a421b95abe75fa4ae7ffb9dd4/dist/chatgpt-2.3.1.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@b3192595ebef3c59235eaa238a4a62cf4dd7b6bf/dist/chatgpt-2.3.2.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -332,14 +332,8 @@
         const aboutLabel = '💡 ' + messages.menuLabel_about + ' DuckDuckGPT'
         menuIDs.push(GM_registerMenuCommand(aboutLabel, async () => {
 
-            // Get chatgpt.js version
-            const scriptMeta = await new Promise(resolve => {
-                GM.xmlHttpRequest({ method: 'GET', url: config.updateURL + '?t=' + Date.now(),
-                    headers: { 'Cache-Control': 'no-cache' }, onload: resolve
-            })})
-            const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(scriptMeta.responseText)?.[1] || ''
-
             // Show alert
+            const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(GM_info.script.header)[1] || ''
             const aboutAlertID = alert(
                 'DuckDuckGPT', // title
                 ' ' + messages.alert_version + ': ' + GM_info.script.version + '\n '
