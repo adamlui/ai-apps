@@ -358,7 +358,7 @@
 
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
-              site == 'openai' ? inputSelector + ' { padding-right: 145px } '  // narrow input to accomdate buttons
+              site == 'openai' ? inputSelector + ' { padding-right: 148px } '  // narrow input to accomdate buttons
                                + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
                                    + 'position: relative ; left: 66px ; top: 7px } ' : '' ) // ...below avatar to avoid cropping
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
