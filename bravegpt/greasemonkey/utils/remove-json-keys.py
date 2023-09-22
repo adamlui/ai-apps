@@ -1,13 +1,12 @@
 '''
 Script:       remove-json-keys.py
-Version:      2023.8.28
+Version:      2023.9.21
 Description:  Remove key/value pairs from json_folder/**.json
 Author:       Adam Lui
 URL:          https://github.com/adamlui/python-utils
 '''
 
 import os, re
-from sys import stdout # for dynamic prints
 
 json_folder = '_locales'
 
