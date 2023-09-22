@@ -4,7 +4,7 @@
 
 # MIT License
 
-Copyright (c) 2023 [KudoAI](https://kuduoai.com) & [contributors](.#contributors)
+Copyright (c) 2023 [KudoAI](https://kuduoai.com) & [contributors](https://github.ddgpt.com/#contributors)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
