@@ -1,6 +1,6 @@
 '''
 Script:       translate-en-messages.py
-Version:      2023.8.13.1
+Version:      2023.9.21
 Description:  Translate msg's from en/messages.json to [[output_langs]/messages.json]
 Author:       Adam Lui
 URL:          https://github.com/adamlui/python-utils
@@ -86,15 +86,15 @@ for lang_code in output_langs:
     msgs_path = os.path.join(folder_path, msgs_filename)
     if os.path.exists(msgs_path):
         with open(msgs_path, 'r', encoding='utf-8') as messages_file : messages = json.load(messages_file)
-    else : messages = {}    
+    else : messages = {}
 
     # Attempt translations
     stdout.write(f"{ 'Adding' if not messages else 'Updating' } { folder }/messages.json...\r")
     stdout.flush()
     en_keys = list(en_messages.keys())
     fail_flags = ['INVALID TARGET LANGUAGE', 'MYMEMORY']
-    for key in en_keys:        
-        if key in keys_to_ignore:            
+    for key in en_keys:
+        if key in keys_to_ignore:
             translated_msg = en_messages[key]['message']
             translated_msgs[key] = { 'message': translated_msg }
             continue
