@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.23
+// @version             2023.9.23.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -429,8 +429,8 @@
             method: 'POST', url: endpoint,
             headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
             responseType: responseType(), data: data, onloadstart: onLoadStart(), onload: onLoad(),
-            onerror: (error) => {
-                braveGPTconsole.error(error)
+            onerror: (err) => {
+                braveGPTconsole.error(err)
                 if (!config.proxyAPIenabled) braveGPTalert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
                     if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
@@ -473,7 +473,7 @@
             return (event) => {
                 if (event.status !== 200) {
                     braveGPTconsole.error('Event status: ' + event.status)
-                    braveGPTconsole.info('Event response: ' + event.responseText)
+                    braveGPTconsole.error('Event response: ' + event.responseText)
                     if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpoints.length)
                         retryDiffHost()
                     else if (event.status === 401 && !config.proxyAPIenabled) {
@@ -489,9 +489,9 @@
                                   finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
                                   answer = finalResponse.message.content.parts[0]
                             braveGPTshow(answer)
-                        } catch (error) {
-                            braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + error)
-                            braveGPTconsole.info('Response: ' + event.response)
+                        } catch (err) {
+                            braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + err)
+                            braveGPTconsole.error('Response: ' + event.response)
                             braveGPTalert('suggestProxy')
                         }
                     }
@@ -500,7 +500,7 @@
                         try { // to parse txt response from proxy endpoints
                             const answer = JSON.parse(event.responseText).choices[0].message.content
                             braveGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
-                        } catch (error) {
+                        } catch (err) {
                             braveGPTconsole.info('Response: ' + event.responseText)
                             if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
                                 braveGPTshow(messages.alert_censored)
@@ -525,7 +525,7 @@
                                 })()
 
                             } else { // use different endpoint or suggest OpenAI
-                                braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + error)
+                                braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + err)
                                 if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
                                 else braveGPTalert('suggestOpenAI')
                             }
