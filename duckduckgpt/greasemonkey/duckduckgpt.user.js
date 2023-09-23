@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.15
+// @version             2023.9.23
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -540,8 +540,9 @@
                 } else if (!config.proxyAPIenabled && getUserscriptManager() !== 'Tampermonkey') {
                     if (event.response) {
                         try { // to parse txt response from OpenAI endpoint for non-TM users
-                            const answer = JSON.parse(event.response
-                                .split('\n\n').slice(-3, -2)[0].slice(6)).message.content.parts[0]
+                            const responseParts = event.response.split('\n\n'),
+                                  finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
+                                  answer = finalResponse.message.content.parts[0]
                             ddgptShow(answer)
                         } catch (error) {
                             ddgptConsole.error(ddgptAlerts.parseFailed + ': ' + error)
