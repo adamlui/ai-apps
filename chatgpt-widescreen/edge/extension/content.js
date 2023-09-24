@@ -107,7 +107,7 @@
         if (type === 'childList' && addedNodes.length) {
 
             // Restore previous session's state + manage toggles
-            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'wcbDisabled', 'notifHidden', 'extensionDisabled'])
+            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'wcbDisabled', 'hiddenFooter', 'notifHidden', 'extensionDisabled'])
                 .then(() => { if (!config.extensionDisabled) {                    
                     if (!prevSessionChecked) { // restore previous session's state
                         if (config.wideScreen) toggleMode('wideScreen', 'ON')

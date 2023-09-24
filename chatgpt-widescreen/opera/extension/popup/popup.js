@@ -10,6 +10,7 @@
             fullerWinToggle.checked = config.fullerWindows
             tallerChatboxToggle.checked = !config.tcbDisabled
             widerChatboxToggle.checked = !config.wcbDisabled
+            hiddenFooterToggle.checked = config.hiddenFooter
             notificationsToggle.checked = !config.notifHidden
             updateGreyness()
         })
@@ -19,16 +20,16 @@
         elem.innerText = chrome.i18n.getMessage(elem.dataset.locale) })
 
     // Add main toggle click-listener
-    const toggles = document.querySelectorAll('input')
-    const mainToggle = toggles[0]
+    const toggles = document.querySelectorAll('input'),
+          mainToggle = toggles[0]
     mainToggle.addEventListener('change', function() {    
         settings.save('extensionDisabled', !this.checked)
         syncExtension() ; updateGreyness()
     })
 
     // Add Fuller Windows toggle label click-listeners
-    const fullerWinToggle = toggles[1]
-    const fullerWinLabel = fullerWinToggle.parentNode.parentNode
+    const fullerWinToggle = toggles[1],
+          fullerWinLabel = fullerWinToggle.parentNode.parentNode
     fullerWinToggle.addEventListener('change', () => {
         settings.save('fullerWindows', !config.fullerWindows)
         syncExtension()
@@ -43,8 +44,8 @@
     })
 
     // Add Taller Chatbox toggle label click-listeners
-    const tallerChatboxToggle = toggles[2]
-    const tallerChatboxLabel = tallerChatboxToggle.parentNode.parentNode
+    const tallerChatboxToggle = toggles[2],
+          tallerChatboxLabel = tallerChatboxToggle.parentNode.parentNode
     tallerChatboxToggle.addEventListener('change', () => {
         settings.save('tcbDisabled', !config.tcbDisabled)
         syncExtension()
@@ -59,14 +60,14 @@
     })
 
     // Add Wider Chatbox toggle label click-listeners
-    const widerChatboxToggle = toggles[3]
-    const widerChatboxLabel = widerChatboxToggle.parentNode.parentNode
+    const widerChatboxToggle = toggles[3],
+          widerChatboxLabel = widerChatboxToggle.parentNode.parentNode
     widerChatboxToggle.addEventListener('change', () => {
         settings.save('wcbDisabled', !config.wcbDisabled)
         syncExtension()
         settings.load('notifHidden').then(() => {
             if (!config.notifHidden) { // show mode notification if enabled
-                notify('Wider Chatbox ' + (config.wcbDisabled ? 'OFF' : 'ON'))
+                notify(chrome.i18n.getMessage('menuLabel_widerChatbox') + ' ' + (config.wcbDisabled ? 'OFF' : 'ON'))
         }})
     })
     widerChatboxLabel.addEventListener('click', (event) => {
@@ -75,8 +76,8 @@
     })
 
     // Add Hidden Footer toggle label click-listeners
-    const hiddenFooterToggle = toggles[4]
-    const hiddenFooterLabel = hiddenFooterToggle.parentNode.parentNode
+    const hiddenFooterToggle = toggles[4],
+          hiddenFooterLabel = hiddenFooterToggle.parentNode.parentNode
     hiddenFooterToggle.addEventListener('change', () => {
         settings.save('hiddenFooter', !config.hiddenFooter)
         syncExtension()
@@ -91,8 +92,8 @@
     })
 
     // Add notifications toggle label click-listeners
-    const notificationsToggle = toggles[5]
-    const notificationsLabel = notificationsToggle.parentNode.parentNode
+    const notificationsToggle = toggles[5],
+          notificationsLabel = notificationsToggle.parentNode.parentNode
     notificationsToggle.addEventListener('change', function toggleNotifications() {
         settings.save('notifHidden', !config.notifHidden)
         notify(chrome.i18n.getMessage('menuLabel_modeNotifs') + ' ' + ( config.notifHidden ? 'OFF' : 'ON' ))
@@ -111,22 +112,22 @@
     })})
 
     // Add Support span click-listener
-    const supportLink = document.querySelector('a[title*="support" i]')
-    const supportSpan = supportLink.parentNode 
+    const supportLink = document.querySelector('a[title*="support" i]'),
+          supportSpan = supportLink.parentNode 
     supportSpan.addEventListener('click', (event) => {
         if (event.target == supportSpan) supportLink.click() // to avoid double-toggle
     })
 
     // Add More Add-ons span click-listener
-    const moreAddOnsLink = document.querySelector('a[title*="more" i]')
-    const moreAddOnsSpan = moreAddOnsLink.parentNode 
+    const moreAddOnsLink = document.querySelector('a[title*="more" i]'),
+          moreAddOnsSpan = moreAddOnsLink.parentNode 
     moreAddOnsSpan.addEventListener('click', (event) => {
         if (event.target == moreAddOnsSpan) moreAddOnsLink.click() // to avoid double-toggle
     })
 
     // Add Powered by chatgpt.js hover-listener
-    const chatGPTjsHostPath = 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/badges/'
-    const chatGPTjsImg = document.querySelector('.chatgpt-js img')
+    const chatGPTjsHostPath = 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/badges/',
+          chatGPTjsImg = document.querySelector('.chatgpt-js img')
     chatGPTjsImg.addEventListener('mouseover', function() {
         chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png' })
     chatGPTjsImg.addEventListener('mouseout', function() {
