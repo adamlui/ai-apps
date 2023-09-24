@@ -59,9 +59,11 @@
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create widescreen style
-    const wideScreenStyle = document.createElement('style'),
-          wcbStyle = 'div[class*="bottom"] form { max-width: 96% }'
+    const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
+    const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
+        site === 'openai' ? 'div[class*="bottom"] form { max-width: 96% }'
+      : site === 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }' : '' )
     updateWidescreenStyle()
 
     // Create full-window style
@@ -112,7 +114,9 @@
                                 if (!config.notifHidden) // ... + notify
                                     notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                         }}
-                        if (config.tcbDisabled) updateTweaksStyle() ; prevSessionChecked = true
+                        if (config.tcbDisabled) updateTweaksStyle()
+                        if (config.wcbDisabled) updateWidescreenStyle()
+                        prevSessionChecked = true
                     }
                     insertBtns()
                 } prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
@@ -369,7 +373,8 @@
             : site === 'poe' ? (
                   '[class^="MainColumn_column"] { width: 100% !important }' // widen outer container
                 + '[class*="ChatPageMain_container"] { max-width: 97% !important }' // widen inner container
-                + '[class^="Message"] { max-width: 100% !important }' ) // widen speech bubbles
+                + '[class^="Message"] { max-width: 100% !important }' // widen speech bubbles
+                + '[class^="ChatMessageInputFooter"] { max-width: 618px ; margin: auto }' ) // preserve chatbar width
             : '' )
         if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle        
     }
