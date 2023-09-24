@@ -156,6 +156,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 [![@Zin6969](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.27-doc-translations&h=50&w=50&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
 [![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23-css-readability&h=50&w=50&mask=circle&maxage=7d "@AliAlSarre")](https://github.com/AliAlSarre)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/42227673?first-contrib=2023.06.26-poe-support-idea&h=50&w=50&mask=circle&maxage=7d "@wheregone")](https://github.com/wheregone)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/58298118?first-contrib=2023.09.23-wider-chatbox-idea&h=50&w=50&mask=circle&maxage=7d "@Aubermean")](https://github.com/Aubermean)
 [![ChatGPT](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
 ## 更多 ChatGPT 应用
