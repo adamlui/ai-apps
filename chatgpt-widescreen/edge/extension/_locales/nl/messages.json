@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Vollere vensters" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Bredere chatbox" },
+  "menuLabel_hiddenFooter": { "message": "Verborgen voettekst" },
   "menuLabel_modeNotifs": { "message": "Modusmeldingen" },
   "menuLabel_updateCheck": { "message": "Controleer op updates" },
   "menuLabel_disabled": { "message": "Uitgeschakeld (extensie geïnstalleerd)" },

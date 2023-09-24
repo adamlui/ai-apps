@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Uzun Chatbox" },
   "menuLabel_widerChatbox": { "message": "Daha Geniş Sohbet Kutusu" },
+  "menuLabel_hiddenFooter": { "message": "Gizli Alt Bilgi" },
   "menuLabel_modeNotifs": { "message": "Mod Bildirimleri" },
   "menuLabel_updateCheck": { "message": "Güncellemeleri Kontrol Et" },
   "menuLabel_disabled": { "message": "Devre dışı (uzantı yüklü)" },

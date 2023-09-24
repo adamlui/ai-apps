@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "نوافذ أكمل" },
   "menuLabel_tallerChatbox": { "message": "أطول مربع الدردشة" },
   "menuLabel_widerChatbox": { "message": "صندوق دردشة أوسع" },
+  "menuLabel_hiddenFooter": { "message": "تذييل مخفي" },
   "menuLabel_modeNotifs": { "message": "إشعارات الوضع" },
   "menuLabel_updateCheck": { "message": "مرابة التحديثات" },
   "menuLabel_disabled": { "message": "معطل (تم تثبيت الإضافة)" },

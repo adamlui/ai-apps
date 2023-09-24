@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "צ'טבוקס גבוה יותר" },
   "menuLabel_widerChatbox": { "message": "תיבת צ'אט רחבה יותר" },
+  "menuLabel_hiddenFooter": { "message": "פוטר נסתר" },
   "menuLabel_modeNotifs": { "message": "התראות מצב" },
   "menuLabel_updateCheck": { "message": "חפש עדכונים" },
   "menuLabel_disabled": { "message": "מושבת (תוסף מותקן)" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "より広いウィンドウ" },
   "menuLabel_tallerChatbox": { "message": "より高いチャットボックス" },
   "menuLabel_widerChatbox": { "message": "ワイドチャットボックス" },
+  "menuLabel_hiddenFooter": { "message": "非表示のフッター" },
   "menuLabel_modeNotifs": { "message": "モードの通知" },
   "menuLabel_updateCheck": { "message": "アップデートの確認" },
   "menuLabel_disabled": { "message": "無効化（拡張機能がインストールされています）" },

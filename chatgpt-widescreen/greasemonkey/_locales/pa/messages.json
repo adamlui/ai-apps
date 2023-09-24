@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "ਫੁਲਰ ਵਿੰਡੋਜ਼" },
   "menuLabel_tallerChatbox": { "message": "ਚੈਟਬਾਕਸ ਚੈਟਬਾਕਸ" },
   "menuLabel_widerChatbox": { "message": "ਚੌੜਾ ਚੈਟਬਾਕਸ" },
+  "menuLabel_hiddenFooter": { "message": "ਲੁਕਵਾਂ ਫੁੱਟਰ" },
   "menuLabel_modeNotifs": { "message": "ਮੋਡ ਨੋਟੀਫਿਕੇਸ਼ਨ" },
   "menuLabel_updateCheck": { "message": "ਨਵੇਂ ਐਪੀਸੋਡ ਲਈ ਚੈੱਕ ਕਰੋ" },
   "menuLabel_disabled": { "message": "ਆਯੋਗ (ਇਕਸਟੈਨਸ਼ਨ ਇੰਸਟਾਲ)" },

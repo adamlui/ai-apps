@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "ကျယ်ပြန့်သော Chatbox" },
+  "menuLabel_hiddenFooter": { "message": "ဖုံးကွယ်ထားသော Footer" },
   "menuLabel_modeNotifs": { "message": "Mode အသိပေးချက်များ" },
   "menuLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "menuLabel_disabled": { "message": "ပိတ်ထားသည် (တိုးချဲ့မှု တပ်ဆင်ထားသည်)" },

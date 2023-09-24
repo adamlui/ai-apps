@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "په ‌ نجه ‌ ره ‌ ی ته ‌ واو" },
   "menuLabel_tallerChatbox": { "message": "تەلەر چات بۆکس" },
   "menuLabel_widerChatbox": { "message": "چات بۆکسێکی فراوانتر" },
+  "menuLabel_hiddenFooter": { "message": "پێڵاوی شاراوه" },
   "menuLabel_modeNotifs": { "message": "ئاگادارکردنه ‌ وه ‌ کانی مۆده ‌ ی" },
   "menuLabel_updateCheck": { "message": "چێکی نوێکردنەوە بکە" },
   "menuLabel_disabled": { "message": "ناچالاککراوە (درێژکراوەی دامەزراندن)" },

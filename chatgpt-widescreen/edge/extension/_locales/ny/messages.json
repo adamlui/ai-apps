@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Mawindo" },
   "menuLabel_tallerChatbox": { "message": "Zambiri zaife" },
   "menuLabel_widerChatbox": { "message": "Lumikizanani nafe" },
+  "menuLabel_hiddenFooter": { "message": "ZOKHUDZA" },
   "menuLabel_modeNotifs": { "message": "Mfundo zazinsinsi" },
   "menuLabel_updateCheck": { "message": "Onani Zosintha" },
   "menuLabel_disabled": { "message": "Olemala (Extension anaikidwa)" },

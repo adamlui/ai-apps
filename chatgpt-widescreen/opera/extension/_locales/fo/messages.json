@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Hægri Chatbox" },
   "menuLabel_widerChatbox": { "message": "Breiðari chatbox" },
+  "menuLabel_hiddenFooter": { "message": "Skjult fótaskrivi" },
   "menuLabel_modeNotifs": { "message": "Modus kunningarskriv" },
   "menuLabel_updateCheck": { "message": "Hygg eftir UPDATE" },
   "menuLabel_disabled": { "message": "Broytingar í innsavningini (innsavning)" },

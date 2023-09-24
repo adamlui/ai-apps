@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "A yeke sara kua na Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "A yeke na yâ ti mbeni kete kete kete kete kete kete kete kete" },
+  "menuLabel_hiddenFooter": { "message": "A honde ni na yâ ti mbeni kete kete kete kete kete kete kete" },
   "menuLabel_modeNotifs": { "message": "Akode ti fango tënë" },
   "menuLabel_updateCheck": { "message": "Gbu li ti mo na ndo ti aye so asi laso" },
   "menuLabel_disabled": { "message": "A yeke na lege ti kode ti fango tënë ti mbeni zo so ayeke na yâ ti mbeni kete" },

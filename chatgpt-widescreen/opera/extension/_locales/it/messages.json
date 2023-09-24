@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Finestre più ampie" },
   "menuLabel_tallerChatbox": { "message": "Chatbox più alta" },
   "menuLabel_widerChatbox": { "message": "Chatbox più ampia" },
+  "menuLabel_hiddenFooter": { "message": "Nascondi Footer" },
   "menuLabel_modeNotifs": { "message": "Notifiche di modalità" },
   "menuLabel_updateCheck": { "message": "Verifica aggiornamenti" },
   "menuLabel_disabled": { "message": "Disabilitato (estensione installata)" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Толтырғыш терезелер" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Кеңірек чат жәшігі" },
+  "menuLabel_hiddenFooter": { "message": "Жасырын төменгі аяқ киім" },
   "menuLabel_modeNotifs": { "message": "Режим туралы хабарландырулар" },
   "menuLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
   "menuLabel_disabled": { "message": "Өшірілген (кеңейтім орнатылған)" },

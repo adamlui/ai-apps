@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Windows aktar sħaħ" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Kaxxa taċ-chat usa'" },
+  "menuLabel_hiddenFooter": { "message": "Footer moħbija" },
   "menuLabel_modeNotifs": { "message": "Notifiki tal-Modalità" },
   "menuLabel_updateCheck": { "message": "Iċċekkja għall-aġġornamenti?" },
   "menuLabel_disabled": { "message": "Diżattivat (estensjoni installata)" },

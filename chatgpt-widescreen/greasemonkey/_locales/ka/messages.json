@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Უფრო ფართო ჩატბოქსი" },
+  "menuLabel_hiddenFooter": { "message": "Ფარული ქვესართი" },
   "menuLabel_modeNotifs": { "message": "Რეჟიმის გაფრთხილებები" },
   "menuLabel_updateCheck": { "message": "განახლებების შემოწმება" },
   "menuLabel_disabled": { "message": "Გამორთულია (დამონტაჟებულია გაფართოება)" },

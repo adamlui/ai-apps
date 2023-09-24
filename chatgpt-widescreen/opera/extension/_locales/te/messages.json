@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "పూర్తి విండోస్" },
   "menuLabel_tallerChatbox": { "message": "పొడవైన చాట్‌బాక్స్" },
   "menuLabel_widerChatbox": { "message": "విస్తృత చాట్ ‌ బాక్స్" },
+  "menuLabel_hiddenFooter": { "message": "దాచిన ఫుటర్" },
   "menuLabel_modeNotifs": { "message": "మోడ్ నోటిఫికేషన్ ‌ లు" },
   "menuLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "menuLabel_disabled": { "message": "డిసేబుల్ చేయబడింది (పొడిగింపు ఇన్స్టాల్ చేయబడింది)" },

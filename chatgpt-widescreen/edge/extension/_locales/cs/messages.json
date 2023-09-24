@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Širší chatbox" },
+  "menuLabel_hiddenFooter": { "message": "Skrytá zápatí" },
   "menuLabel_modeNotifs": { "message": "Oznámení o režimu" },
   "menuLabel_updateCheck": { "message": "Zjistit novější verzi" },
   "menuLabel_disabled": { "message": "Zakázáno (rozšíření nainstalováno)" },

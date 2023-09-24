@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Aukštesnė pokalbių dėžutė" },
   "menuLabel_widerChatbox": { "message": "Platesnė pokalbių dėžutė" },
+  "menuLabel_hiddenFooter": { "message": "Paslėpta poraštė" },
   "menuLabel_modeNotifs": { "message": "Režimo pranešimai" },
   "menuLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
   "menuLabel_disabled": { "message": "Išjungta (įdiegtas plėtinys)" },

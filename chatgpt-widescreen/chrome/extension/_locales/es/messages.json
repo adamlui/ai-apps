@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Ventanas más amplias" },
   "menuLabel_tallerChatbox": { "message": "Chatbox más alta" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
+  "menuLabel_hiddenFooter": { "message": "Ocultar pie de página" },
   "menuLabel_modeNotifs": { "message": "Notificaciones de modo" },
   "menuLabel_updateCheck": { "message": "Buscar actualizaciones" },
   "menuLabel_disabled": { "message": "Deshabilitado (extensión instalada)" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "फुलर सञ्झ्याल" },
   "menuLabel_tallerChatbox": { "message": "टालर कुराकानी बाकस" },
   "menuLabel_widerChatbox": { "message": "फराकिलो च्याटबक्स" },
+  "menuLabel_hiddenFooter": { "message": "लुकेको फुटर" },
   "menuLabel_modeNotifs": { "message": "मोड सूचनाहरू" },
   "menuLabel_updateCheck": { "message": "अद्यावधिकका लागि जाँच गर्नुहोस्" },
   "menuLabel_disabled": { "message": "अक्षम पारियो (विस्तार स्थापना गरियो)" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
+  "menuLabel_hiddenFooter": { "message": "Hidden Footer" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
   "menuLabel_updateCheck": { "message": "Check for Updates" },
   "menuLabel_disabled": { "message": "Disabled (extension installed)" },

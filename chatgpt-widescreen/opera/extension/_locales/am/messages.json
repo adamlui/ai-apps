@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "ሙሉ ዊንዶውስ" },
   "menuLabel_tallerChatbox": { "message": "ታለር ቻትቦክስ" },
   "menuLabel_widerChatbox": { "message": "ሰፋ ያለ የውይይት ሳጥን" },
+  "menuLabel_hiddenFooter": { "message": "የተደበቀ እግር" },
   "menuLabel_modeNotifs": { "message": "የቃለ መጠይቂያ" },
   "menuLabel_updateCheck": { "message": "ዝማኔዎችን ይፈትሹ" },
   "menuLabel_disabled": { "message": "የተጠናከረ (የተጫነ)" },

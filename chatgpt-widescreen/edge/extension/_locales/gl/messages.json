@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Caixa de chat máis alta" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
+  "menuLabel_hiddenFooter": { "message": "Rodapé acochado" },
   "menuLabel_modeNotifs": { "message": "Notificacións de modo" },
   "menuLabel_updateCheck": { "message": "Check for updates" },
   "menuLabel_disabled": { "message": "Desactivado (extensión instalada)" },

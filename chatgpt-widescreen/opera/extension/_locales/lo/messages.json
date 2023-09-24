@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "ກ່ອງສົນທະນາທີ່ກວ້າງຂວາງ" },
+  "menuLabel_hiddenFooter": { "message": "ຕີນເຊື່ອງໄວ້" },
   "menuLabel_modeNotifs": { "message": "ການແຈ້ງເຕືອນໂໝດ" },
   "menuLabel_updateCheck": { "message": "ກວດສອບການອັບເດດ" },
   "menuLabel_disabled": { "message": "ປິດໃຊ້ງານ (ຕິດຕັ້ງຂະຫຍາຍ)" },
