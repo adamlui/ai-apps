@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.23.1
+// @version             2023.9.24
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -364,22 +364,20 @@
                        + state.separator + state.word[+config.tcbDisabled]
         menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
             saveSetting('tcbDisabled', !config.tcbDisabled)
-            tweaksStyle.innerText = config.tcbDisabled ? tweaksStyle.innerText.replace(tcbStyle, '')
-                                                       : tweaksStyle.innerText + tcbStyle
+            updateTweaksStyle()
             if (!config.notifHidden)
                 notify(`${ messages.menuLabel_tallerChatbox }: ${ state.word[+config.tcbDisabled] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle wider OpenAI chatboxes with widescreen mode
-        const wcbLabel = '↔️ Wider Chatbox'
+        const wcbLabel = '↔️ ' + messages.menuLabel_widerChatbox
                        + state.separator + state.word[+config.wcbDisabled]
         menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
             saveSetting('wcbDisabled', !config.wcbDisabled)
-            wideScreenStyle.innerText = config.wcbDisabled ? wideScreenStyle.innerText.replace(wcbStyle, '')
-                                                           : wideScreenStyle.innerText + wcbStyle
+            updateWidescreenStyle()
             if (!config.notifHidden)
-                notify(`Wider Chatbox: ${ state.word[+config.wcbDisabled] }`)
+                notify(`${ messages.menuLabel_widerChatbox }: ${ state.word[+config.wcbDisabled] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -617,6 +615,15 @@
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
     }
 
+    function updateWidescreenStyle() {
+        wideScreenStyle.innerText = textContainerSelector + ' { max-width: 97% !important } '
+            + ( site == 'poe' ? // stretch outer container
+                ' [class^="MainColumn_column"] { width: 100% !important } ' : '' )
+            + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
+                '#__next > div > div.flex { width: 100px }' : '' )
+        if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle
+    }
+
     // Run MAIN routine
 
     // Create browser toolbar menu or disable script if extension installed
@@ -656,21 +663,16 @@
         + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }' // disable select
     document.head.appendChild(tooltipStyle)
 
-    // Create general style tweaks
+    // Create/apply general style tweaks
     const tweaksStyle = document.createElement('style'),
           tcbStyle = inputSelector + ' { max-height: 68vh !important } '
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
-    // Create wide screen style
+    // Create widescreen style
     const wideScreenStyle = document.createElement('style'),
           wcbStyle = 'div[class*="bottom"] form { max-width: 96% }'
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
-    wideScreenStyle.innerText = textContainerSelector + ' { max-width: 97% !important } '
-        + ( site == 'poe' ? // stretch outer container
-            ' [class^="MainColumn_column"] { width: 100% !important } ' : '' )
-        + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
-            '#__next > div > div.flex { width: 100px }' : '' )
-    if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle
+    updateWidescreenStyle()
 
     // Create full-window style
     const fullWindowStyle = document.createElement('style')
