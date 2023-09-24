@@ -3,6 +3,7 @@
   "appDesc": { "message": "Add Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling" },
   "menuLabel_fullerWins": { "message": "Fuller Window" },
   "menuLabel_tallerChatbox": { "message": "Tik tok chatbox" },
+  "menuLabel_widerChatbox": { "message": "Ol bikpela bokis bilong toktok" },
   "menuLabel_modeNotifs": { "message": "Samting ol i no save long en" },
   "menuLabel_updateCheck": { "message": "Lukim ol eleksen" },
   "menuLabel_disabled": { "message": "Disable (long long int)" },

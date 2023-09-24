@@ -3,6 +3,7 @@
   "appDesc": { "message": "Adaugă moduri Widescreen + Fullscreen la ChatGPT pentru vizualizare îmbunătățită + derulare redusă" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Cutie de chat mai înaltă" },
+  "menuLabel_widerChatbox": { "message": "Casetă de chat mai largă" },
   "menuLabel_modeNotifs": { "message": "Notificări de mod" },
   "menuLabel_updateCheck": { "message": "Caută actualizări" },
   "menuLabel_disabled": { "message": "Dezactivat (extensie instalată)" },

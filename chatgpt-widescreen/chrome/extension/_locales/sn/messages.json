@@ -3,6 +3,7 @@
   "appDesc": { "message": "Inowedzera Widescreen + Fullscreen modes kuChatGPT yekuvandudzwa kwekuona + kuderedzwa kupurinda" },
   "menuLabel_fullerWins": { "message": "Mahwindo akazara" },
   "menuLabel_tallerChatbox": { "message": "Yakareba Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Taura nesu" },
   "menuLabel_modeNotifs": { "message": "Ziviso dzeModhi" },
   "menuLabel_updateCheck": { "message": "Ongorora Updates" },
   "menuLabel_disabled": { "message": "Akaremara (kuwedzera yakaiswa)" },

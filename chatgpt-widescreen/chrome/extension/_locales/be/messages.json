@@ -3,6 +3,7 @@
   "appDesc": { "message": "Дадае Шырокі экран + рэжымы поўнага экрана ў ChatGPT для пашырэння прагляду + паменшаная прагортка" },
   "menuLabel_fullerWins": { "message": "Поўны Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Шырэйшая чат-бокс" },
   "menuLabel_modeNotifs": { "message": "Рэжым апавяшчэнняў" },
   "menuLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
   "menuLabel_disabled": { "message": "Адключаны (усталяваны пашырэнне)" },

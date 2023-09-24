@@ -3,6 +3,7 @@
   "appDesc": { "message": "Кеңейтілген қарау үшін ChatGPT-ке Widecreen + Fullscreen режимдерін қосады + төмен жылжыту" },
   "menuLabel_fullerWins": { "message": "Толтырғыш терезелер" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Кеңірек чат жәшігі" },
   "menuLabel_modeNotifs": { "message": "Режим туралы хабарландырулар" },
   "menuLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
   "menuLabel_disabled": { "message": "Өшірілген (кеңейтім орнатылған)" },

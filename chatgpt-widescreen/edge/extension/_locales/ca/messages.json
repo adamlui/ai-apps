@@ -3,6 +3,7 @@
   "appDesc": { "message": "Afegeix modes de pantalla ampla + pantalla completa al XatGPT per millorar la visualització + reduir el desplaçament" },
   "menuLabel_fullerWins": { "message": "Finestres més completes" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Bústia de xat més àmplia" },
   "menuLabel_modeNotifs": { "message": "Notificacions de mode" },
   "menuLabel_updateCheck": { "message": "Comprova si hi ha actualitzacions" },
   "menuLabel_disabled": { "message": "Desactivat (extensió instal·lada)" },

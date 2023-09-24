@@ -3,6 +3,7 @@
   "appDesc": { "message": "Adiciona modos de Tela Ampla e Tela Cheia ao ChatGPT para uma visualização aprimorada e redução de rolagem" },
   "menuLabel_fullerWins": { "message": "Janelas Amplas" },
   "menuLabel_tallerChatbox": { "message": "Caixa de Chat Maior" },
+  "menuLabel_widerChatbox": { "message": "Caixa de chat mais ampla" },
   "menuLabel_modeNotifs": { "message": "Notificações de Modo" },
   "menuLabel_updateCheck": { "message": "Verificar Atualizações" },
   "menuLabel_disabled": { "message": "Desativado (extensão instalada)" },

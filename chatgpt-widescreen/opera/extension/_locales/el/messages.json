@@ -3,6 +3,7 @@
   "appDesc": { "message": "Προσθέτει λειτουργίες ευρείας οθόνης + πλήρους οθόνης στο ChatGPT για βελτιωμένη προβολή + μειωμένη κύλιση" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Ευρύτερο πλαίσιο συνομιλίας" },
   "menuLabel_modeNotifs": { "message": "Ειδοποιήσεις λειτουργίας" },
   "menuLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
   "menuLabel_disabled": { "message": "Απενεργοποιημένο (εγκατεστημένη επέκταση)" },

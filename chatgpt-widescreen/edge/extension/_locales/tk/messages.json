@@ -3,6 +3,7 @@
   "appDesc": { "message": "Gowy görkezilen görkezme üçin Widecreen + Fullscreen rejimlerini ChatGPT 'ye ekle" },
   "menuLabel_fullerWins": { "message": "Doly Windows" },
   "menuLabel_tallerChatbox": { "message": "Uzyn söhbetdeşlik gutusy" },
+  "menuLabel_widerChatbox": { "message": "Beýik Çat kutusu" },
   "menuLabel_modeNotifs": { "message": "Moda Häzirleşdirmeleri" },
   "menuLabel_updateCheck": { "message": "Täzelenmeleri barla" },
   "menuLabel_disabled": { "message": "Öçürilen (giňeltme gurnalan)" },

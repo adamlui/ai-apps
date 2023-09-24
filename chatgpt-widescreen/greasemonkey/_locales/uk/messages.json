@@ -3,6 +3,7 @@
   "appDesc": { "message": "Додає режими Широкого Екрану та Повноекранного режиму в ChatGPT для покращеного перегляду та зменшення прокрутки" },
   "menuLabel_fullerWins": { "message": "Більш Широкі Вікна" },
   "menuLabel_tallerChatbox": { "message": "Вища Чат-коробка" },
+  "menuLabel_widerChatbox": { "message": "Ширше вікно чату" },
   "menuLabel_modeNotifs": { "message": "Сповіщення про Режим" },
   "menuLabel_updateCheck": { "message": "Перевірити Оновлення" },
   "menuLabel_disabled": { "message": "Вимкнено (розширення встановлено)" },

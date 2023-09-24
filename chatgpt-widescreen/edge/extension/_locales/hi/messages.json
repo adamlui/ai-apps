@@ -3,6 +3,7 @@
   "appDesc": { "message": "ChatGPT को वाइडस्क्रीन + फुलस्क्रीन मोड जोड़ता है ताकि देखने में आराम हो और स्क्रॉलिंग कम हो" },
   "menuLabel_fullerWins": { "message": "बड़ी विंडोज़" },
   "menuLabel_tallerChatbox": { "message": "लंबी चैटबॉक्स" },
+  "menuLabel_widerChatbox": { "message": "व्यापक चैटबॉक्स" },
   "menuLabel_modeNotifs": { "message": "मोड अधिसूचनाएँ" },
   "menuLabel_updateCheck": { "message": "अद्यतन की जांच करें" },
   "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन स्थापित है)" },

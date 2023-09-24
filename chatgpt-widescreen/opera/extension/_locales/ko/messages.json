@@ -3,6 +3,7 @@
   "appDesc": { "message": "ChatGPT에 와이드스크린 및 풀스크린 모드를 추가하여 시청 경험을 향상시키고 스크롤을 줄입니다" },
   "menuLabel_fullerWins": { "message": "더 큰 창" },
   "menuLabel_tallerChatbox": { "message": "더 높은 채팅 상자" },
+  "menuLabel_widerChatbox": { "message": "더 넓은 채팅 상자" },
   "menuLabel_modeNotifs": { "message": "모드 알림" },
   "menuLabel_updateCheck": { "message": "업데이트 확인" },
   "menuLabel_disabled": { "message": "사용 중지됨 (확장 설치됨)" },

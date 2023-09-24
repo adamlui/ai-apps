@@ -3,6 +3,7 @@
   "appDesc": { "message": "Adds Widescreen + Fullscreen modes to ChatGPT Ukulola + ukucefyako" },
   "menuLabel_fullerWins": { "message": "Ica Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox Tukwila" },
+  "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications Tukwila" },
   "menuLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
   "menuLabel_disabled": { "message": "Malema (maile)" },

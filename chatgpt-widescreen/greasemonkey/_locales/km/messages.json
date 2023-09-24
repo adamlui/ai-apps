@@ -3,6 +3,7 @@
   "appDesc": { "message": "បន្ថែមម៉ូដ Widescreen + Fullscreen ទៅ ChatGPT សម្រាប់ការមើលកាន់តែប្រសើរឡើង + កាត់បន្ថយការរមូរ" },
   "menuLabel_fullerWins": { "message": "បង្អួច ពេញ" },
   "menuLabel_tallerChatbox": { "message": "ប្រអប់ជជែកកំសាន្តដែលមានកម្ពស់ខ្ពស់" },
+  "menuLabel_widerChatbox": { "message": "ប្រអប់ជជែកទូលំទូលាយ" },
   "menuLabel_modeNotifs": { "message": "ការជូនដំណឹងអំពីម៉ូដ" },
   "menuLabel_updateCheck": { "message": "ពិនិត្យរកអាប់ដេត" },
   "menuLabel_disabled": { "message": "បានបិទ (បានបញ្ចូលផ្នែកបន្ថែម)" },

@@ -3,6 +3,7 @@
   "appDesc": { "message": "Add Widescreen + Full Screen Mode to ChatGPT بۆ بینینی باشتر + کەمکردنەوەی ڕێڕەوی" },
   "menuLabel_fullerWins": { "message": "په ‌ نجه ‌ ره ‌ ی ته ‌ واو" },
   "menuLabel_tallerChatbox": { "message": "تەلەر چات بۆکس" },
+  "menuLabel_widerChatbox": { "message": "چات بۆکسێکی فراوانتر" },
   "menuLabel_modeNotifs": { "message": "ئاگادارکردنه ‌ وه ‌ کانی مۆده ‌ ی" },
   "menuLabel_updateCheck": { "message": "چێکی نوێکردنەوە بکە" },
   "menuLabel_disabled": { "message": "ناچالاککراوە (درێژکراوەی دامەزراندن)" },

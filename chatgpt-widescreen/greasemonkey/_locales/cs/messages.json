@@ -3,6 +3,7 @@
   "appDesc": { "message": "Přidává režimy Širokoúhlý + Celá obrazovka do ChatGPT pro lepší prohlížení + snížené posouvání" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Širší chatbox" },
   "menuLabel_modeNotifs": { "message": "Oznámení o režimu" },
   "menuLabel_updateCheck": { "message": "Zjistit novější verzi" },
   "menuLabel_disabled": { "message": "Zakázáno (rozšíření nainstalováno)" },

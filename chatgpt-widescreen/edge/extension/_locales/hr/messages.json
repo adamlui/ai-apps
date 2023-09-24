@@ -3,6 +3,7 @@
   "appDesc": { "message": "Dodaje načine rada na širokom zaslonu + preko cijelog zaslona u ChatGPT za poboljšano gledanje + smanjeno pomicanje" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Viši Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Širi okvir za razgovor" },
   "menuLabel_modeNotifs": { "message": "Obavijesti o načinu rada" },
   "menuLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
   "menuLabel_disabled": { "message": "Onemogućeno (proširenje instalirano)" },

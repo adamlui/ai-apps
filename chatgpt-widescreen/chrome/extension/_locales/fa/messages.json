@@ -3,6 +3,7 @@
   "appDesc": { "message": "حالت های عریض + تمام صفحه را به ChatGPT برای مشاهده بهتر + اسکرول کاهش می دهد" },
   "menuLabel_fullerWins": { "message": "ویندوز کاملتر" },
   "menuLabel_tallerChatbox": { "message": "چت باکس بلندتر" },
+  "menuLabel_widerChatbox": { "message": "چت باکس گسترده تر" },
   "menuLabel_modeNotifs": { "message": "اعلان‌های حالت" },
   "menuLabel_updateCheck": { "message": "بررسی به روز رسانی" },
   "menuLabel_disabled": { "message": "غیرفعال (برنامه افزودنی نصب شده)" },

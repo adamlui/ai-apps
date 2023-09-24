@@ -3,6 +3,7 @@
   "appDesc": { "message": "වැඩිදියුණු කළ නැරඹීම + අඩු අනුචලනය සඳහා Widescreen + Fullscreen මාදිලි ChatGPT වෙත එක් කරයි" },
   "menuLabel_fullerWins": { "message": "Fuller වින්ඩෝස්" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "පුළුල් චැට්බොක්ස්" },
   "menuLabel_modeNotifs": { "message": "ප්‍රකාර දැනුම්දීම්" },
   "menuLabel_updateCheck": { "message": "යාවත්කාලීන සඳහා පරීක්ෂා කරන්න" },
   "menuLabel_disabled": { "message": "අක්‍රීය කර ඇත (දීර්ඝ කිරීම ස්ථාපනය කර ඇත)" },

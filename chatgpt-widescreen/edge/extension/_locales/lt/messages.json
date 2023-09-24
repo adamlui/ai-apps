@@ -3,6 +3,7 @@
   "appDesc": { "message": "Įtraukia plačiaekranius + viso ekrano režimus į „ChatGPT“, kad būtų galima geriau peržiūrėti ir sumažinti slinkimą" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Aukštesnė pokalbių dėžutė" },
+  "menuLabel_widerChatbox": { "message": "Platesnė pokalbių dėžutė" },
   "menuLabel_modeNotifs": { "message": "Režimo pranešimai" },
   "menuLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
   "menuLabel_disabled": { "message": "Išjungta (įdiegtas plėtinys)" },

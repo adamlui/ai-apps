@@ -3,6 +3,7 @@
   "appDesc": { "message": "Dodaje tryby szerokoekranowe + pełnoekranowe do ChatGPT dla lepszego oglądania + zmniejszone przewijanie" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Szersze okno czatu" },
   "menuLabel_modeNotifs": { "message": "Powiadomienia o trybie" },
   "menuLabel_updateCheck": { "message": "Sprawdzanie aktualizacji" },
   "menuLabel_disabled": { "message": "Wyłączone (zainstalowane rozszerzenie)" },

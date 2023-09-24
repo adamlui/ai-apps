@@ -3,6 +3,7 @@
   "appDesc": { "message": "Menambah Widescreen + mod skrin penuh untuk ChatGPT untuk tontonan dipertingkatkan + mengurangkan menatal" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Kotak Sembang Lebih Tinggi" },
+  "menuLabel_widerChatbox": { "message": "Kotak Sembang Lebih Luas" },
   "menuLabel_modeNotifs": { "message": "Pemberitahuan Mod" },
   "menuLabel_updateCheck": { "message": "Semak Kemaskini" },
   "menuLabel_disabled": { "message": "Dilumpuhkan (sambungan dipasang)" },

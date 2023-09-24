@@ -3,6 +3,7 @@
   "appDesc": { "message": "Aggiunge le modalità Schermo Largo e Schermo Intero a ChatGPT per una visualizzazione ottimizzata e una riduzione dello scrolling" },
   "menuLabel_fullerWins": { "message": "Finestre più ampie" },
   "menuLabel_tallerChatbox": { "message": "Chatbox più alta" },
+  "menuLabel_widerChatbox": { "message": "Chatbox più ampia" },
   "menuLabel_modeNotifs": { "message": "Notifiche di modalità" },
   "menuLabel_updateCheck": { "message": "Verifica aggiornamenti" },
   "menuLabel_disabled": { "message": "Disabilitato (estensione installata)" },

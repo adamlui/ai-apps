@@ -3,6 +3,7 @@
   "appDesc": { "message": "Adds Widescreen + Fullscreen modes to ChatGPT + Kubona kwongerekana + kugabanya uburozi" },
   "menuLabel_fullerWins": { "message": "Fuller Windows None None" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox None None" },
+  "menuLabel_widerChatbox": { "message": "Wider Chatbox None None" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications None None" },
   "menuLabel_updateCheck": { "message": "Raba Raba Updates" },
   "menuLabel_disabled": { "message": "Narumugaiye (extension)" },

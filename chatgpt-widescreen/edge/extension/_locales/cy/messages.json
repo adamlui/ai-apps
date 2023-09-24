@@ -3,6 +3,7 @@
   "appDesc": { "message": "Yn ychwanegu moddau sgrin lydan + sgrin lawn i ChatGPT ar gyfer gwylio gwell + llai o sgrolio" },
   "menuLabel_fullerWins": { "message": "Ffenestri Lawn" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Blwch Sgwrsio Ehangach" },
   "menuLabel_modeNotifs": { "message": "Hysbysiadau Modd" },
   "menuLabel_updateCheck": { "message": "Dango_s diweddariadau" },
   "menuLabel_disabled": { "message": "Analluogwyd (estyniad wedi'i osod)" },

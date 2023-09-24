@@ -3,6 +3,7 @@
   "appDesc": { "message": "Ավելացնում է Widescreen + Fullscreen ռեժիմներ ChatGPT - ին ուժեղացված դիտման համար + նվազեցված ոլորում" },
   "menuLabel_fullerWins": { "message": "Ֆուլեր Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Ավելի լայն չաթ - արկղ" },
   "menuLabel_modeNotifs": { "message": "Ռեժիմի ծանուցումներ" },
   "menuLabel_updateCheck": { "message": "Ստուգել թարմացումները" },
   "menuLabel_disabled": { "message": "Անջատված է (երկարաձգումը տեղադրված է)" },

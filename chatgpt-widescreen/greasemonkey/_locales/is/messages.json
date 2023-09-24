@@ -3,6 +3,7 @@
   "appDesc": { "message": "Bætir Widescreen + Fullscreen stillingar til ChatGPT til að auka útsýni + minni rolla" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Hávaxnari Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Víðari spjallhólf" },
   "menuLabel_modeNotifs": { "message": "Tilkynningar um ham" },
   "menuLabel_updateCheck": { "message": "Leita að uppfærslum" },
   "menuLabel_disabled": { "message": "Óvirkt (viðbót uppsett)" },

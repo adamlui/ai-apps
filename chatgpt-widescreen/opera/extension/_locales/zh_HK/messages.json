@@ -3,6 +3,7 @@
   "appDesc": { "message": "為ChatGPT新增寬螢幕+全螢幕模式，提供增強的視覺體驗和減少滾動" },
   "menuLabel_fullerWins": { "message": "更寬的視窗" },
   "menuLabel_tallerChatbox": { "message": "更高的聊天框" },
+  "menuLabel_widerChatbox": { "message": "更廣泛的聊天室" },
   "menuLabel_modeNotifs": { "message": "模式通知" },
   "menuLabel_updateCheck": { "message": "檢查更新" },
   "menuLabel_disabled": { "message": "已禁用（擴展已安裝）" },

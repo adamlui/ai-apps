@@ -3,6 +3,7 @@
   "appDesc": { "message": "Yongeza iindlela ze-Widecreen + ezipheleleyo kwi-ChatGPT yokujonga okuphuculiweyo + ukuncitshiswa kokuskrola" },
   "menuLabel_fullerWins": { "message": "Iifestile Ezipheleleyo" },
   "menuLabel_tallerChatbox": { "message": "Ibhokisi Yengxoxo Ende" },
+  "menuLabel_widerChatbox": { "message": "Ibhokisi Yencoko Ebanzi" },
   "menuLabel_modeNotifs": { "message": "Imiyalezo Yendlela" },
   "menuLabel_updateCheck": { "message": "Jonga Izinto Ezihlaziyiweyo" },
   "menuLabel_disabled": { "message": "Ikhubazekile (isandiso sifakiweyo)" },

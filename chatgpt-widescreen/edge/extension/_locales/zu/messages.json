@@ -3,6 +3,7 @@
   "appDesc": { "message": "Yengeza isikrini esibanzi + amamodi esikrini esigcwele ku-ChatGPT ukuze uthole ukubukwa okuthuthukisiwe + nokuskrola okuncishisiwe" },
   "menuLabel_fullerWins": { "message": "Amafasitela agcwele" },
   "menuLabel_tallerChatbox": { "message": "Ibhokisi lokuxoxa elide" },
+  "menuLabel_widerChatbox": { "message": "Ibhokisi lengxoxo elibanzi" },
   "menuLabel_modeNotifs": { "message": "Izaziso Zendlela" },
   "menuLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
   "menuLabel_disabled": { "message": "Khubaza (isandiso sifakiwe)" },

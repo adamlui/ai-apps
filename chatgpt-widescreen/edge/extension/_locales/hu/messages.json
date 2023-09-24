@@ -3,6 +3,7 @@
   "appDesc": { "message": "Szélesvásznú + teljes képernyős módok hozzáadása a ChatGPT-hez a jobb megjelenítéshez + csökkentett görgetés" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Magasabb chatbox" },
+  "menuLabel_widerChatbox": { "message": "Szélesebb chatbox" },
   "menuLabel_modeNotifs": { "message": "Üzemmód értesítések" },
   "menuLabel_updateCheck": { "message": "Frissítések keresése" },
   "menuLabel_disabled": { "message": "Letiltva (bővítmény telepítve)" },

@@ -3,6 +3,7 @@
   "appDesc": { "message": "Ajoute les modes Plein écran et Plein écran total à ChatGPT pour une expérience de visualisation améliorée et moins de défilement" },
   "menuLabel_fullerWins": { "message": "Fenêtres plus larges" },
   "menuLabel_tallerChatbox": { "message": "Boîte de chat plus haute" },
+  "menuLabel_widerChatbox": { "message": "Boîte de discussion plus large" },
   "menuLabel_modeNotifs": { "message": "Notifications de mode" },
   "menuLabel_updateCheck": { "message": "Vérifier les mises à jour" },
   "menuLabel_disabled": { "message": "Désactivé (extension installée)" },

@@ -3,6 +3,7 @@
   "appDesc": { "message": "Დაამატებს Widescreen + Fullscreen რეჟიმები ChatGPT გაძლიერებული ნახვის + შემცირებული scrolling" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Უფრო ფართო ჩატბოქსი" },
   "menuLabel_modeNotifs": { "message": "Რეჟიმის გაფრთხილებები" },
   "menuLabel_updateCheck": { "message": "განახლებების შემოწმება" },
   "menuLabel_disabled": { "message": "Გამორთულია (დამონტაჟებულია გაფართოება)" },

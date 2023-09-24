@@ -3,6 +3,7 @@
   "appDesc": { "message": "Voeg Widescreen + Volskermmodusse by ChatGPT vir verbeterde besigtiging + verminderde blaai" },
   "menuLabel_fullerWins": { "message": "Voller Vensters" },
   "menuLabel_tallerChatbox": { "message": "Langer Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Wyer Chatbox" },
   "menuLabel_modeNotifs": { "message": "Modus Kennisgewings" },
   "menuLabel_updateCheck": { "message": "_Kontroleer vir bywerkings: " },
   "menuLabel_disabled": { "message": "Gestremde (uitbreiding geïnstalleer)" },

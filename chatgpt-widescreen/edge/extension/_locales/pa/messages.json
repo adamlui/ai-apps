@@ -3,6 +3,7 @@
   "appDesc": { "message": "ਵਿਸਤ੍ਰਿਤ ਦੇਖਣ + ਘਟੀ ਹੋਈ ਸਕ੍ਰੌਲਿੰਗ ਲਈ ਚੈਟਜੀਪੀਟੀ ਵਿੱਚ ਵਾਈਡਸਕ੍ਰੀਨ + ਫੁੱਲਸਕ੍ਰੀਨ ਮੋਡ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ" },
   "menuLabel_fullerWins": { "message": "ਫੁਲਰ ਵਿੰਡੋਜ਼" },
   "menuLabel_tallerChatbox": { "message": "ਚੈਟਬਾਕਸ ਚੈਟਬਾਕਸ" },
+  "menuLabel_widerChatbox": { "message": "ਚੌੜਾ ਚੈਟਬਾਕਸ" },
   "menuLabel_modeNotifs": { "message": "ਮੋਡ ਨੋਟੀਫਿਕੇਸ਼ਨ" },
   "menuLabel_updateCheck": { "message": "ਨਵੇਂ ਐਪੀਸੋਡ ਲਈ ਚੈੱਕ ਕਰੋ" },
   "menuLabel_disabled": { "message": "ਆਯੋਗ (ਇਕਸਟੈਨਸ਼ਨ ਇੰਸਟਾਲ)" },

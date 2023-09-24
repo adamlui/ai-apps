@@ -3,6 +3,7 @@
   "appDesc": { "message": "Dodaje režima širokog ekrana + preko celog ekrana u ChatGPT za poboljšano gledanje + smanjeno pomeranje" },
   "menuLabel_fullerWins": { "message": "Fuller Vindovs" },
   "menuLabel_tallerChatbox": { "message": "Viši Chatbok" },
+  "menuLabel_widerChatbox": { "message": "Šire ćaskanje" },
   "menuLabel_modeNotifs": { "message": "Obaveštenja o režimu" },
   "menuLabel_updateCheck": { "message": "Провери допуне" },
   "menuLabel_disabled": { "message": "Onemogućeno (ekstenzija instalirana)" },

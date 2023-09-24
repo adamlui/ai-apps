@@ -3,6 +3,7 @@
   "appDesc": { "message": "เพิ่มหน้าจอกว้าง + โหมดเต็มหน้าจอเพื่อ ChatGPT สำหรับการดูที่ดีขึ้น + ลดการเลื่อน" },
   "menuLabel_fullerWins": { "message": "ฟูลเลอร์วินโดวส์" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "แชทบ็อกซ์ที่กว้างขึ้น" },
   "menuLabel_modeNotifs": { "message": "การแจ้งเตือนโหมด" },
   "menuLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
   "menuLabel_disabled": { "message": "ปิดการใช้งาน (ติดตั้งส่วนขยายแล้ว)" },

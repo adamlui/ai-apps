@@ -3,6 +3,7 @@
   "appDesc": { "message": "ເພີ່ມ Widescreen + Fullscreen ໂຫມດ ChatGPT ສໍາ ລັບການເບິ່ງທີ່ເພີ່ມຂື້ນ + ຫຼຸດຜ່ອນການເລື່ອນ" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "ກ່ອງສົນທະນາທີ່ກວ້າງຂວາງ" },
   "menuLabel_modeNotifs": { "message": "ການແຈ້ງເຕືອນໂໝດ" },
   "menuLabel_updateCheck": { "message": "ກວດສອບການອັບເດດ" },
   "menuLabel_disabled": { "message": "ປິດໃຊ້ງານ (ຕິດຕັ້ງຂະຫຍາຍ)" },

@@ -3,6 +3,7 @@
   "appDesc": { "message": "Tadiavo ny fomba hamoronana ny gtcc" },
   "menuLabel_fullerWins": { "message": "Full Windows" },
   "menuLabel_tallerChatbox": { "message": "Tamy_ts's chat" },
+  "menuLabel_widerChatbox": { "message": "Tamy_tss Chatbox" },
   "menuLabel_modeNotifs": { "message": "Famaritana" },
   "menuLabel_updateCheck": { "message": "Jereo ny vaovao momba ny famerenana" },
   "menuLabel_disabled": { "message": "Famaritana (sanda)" },

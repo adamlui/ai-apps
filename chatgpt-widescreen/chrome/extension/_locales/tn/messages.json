@@ -3,6 +3,7 @@
   "appDesc": { "message": "E tsenya Mefuta e e Tletseng ya Sekirini + e e Tletseng go ChatGPT go e bogela e e tokafaditsweng + e e fokoditsweng" },
   "menuLabel_fullerWins": { "message": "Difensetere tse di Tletseng" },
   "menuLabel_tallerChatbox": { "message": "Lebokoso la Dipuisano le Legolo" },
+  "menuLabel_widerChatbox": { "message": "Lebokoso le Legolo la Dipuisano" },
   "menuLabel_modeNotifs": { "message": "Dikitsiso tsa Mofuta" },
   "menuLabel_updateCheck": { "message": "Go Batla Diphetogo" },
   "menuLabel_disabled": { "message": "Disable (extension installed)" },

@@ -3,6 +3,7 @@
   "appDesc": { "message": "Izegrar Widescreen + Askar n ugdil aččuṛan γer ChatGPT i usnerni n tmuγli + asenqed yettwageẓmen" },
   "menuLabel_fullerWins": { "message": "Asfaylu aččuran" },
   "menuLabel_tallerChatbox": { "message": "Akarḍa n udiwenni n udiwenni n" },
+  "menuLabel_widerChatbox": { "message": "Asebter n teqbaylit meqqren" },
   "menuLabel_modeNotifs": { "message": "Ilɣa n tγawsa" },
   "menuLabel_updateCheck": { "message": "Senqed ma llan ileqman" },
   "menuLabel_disabled": { "message": "Yettwakkes (asiγzef yebna)" },

@@ -3,6 +3,7 @@
   "appDesc": { "message": "Ka taapirihia nga momo mata whanui + mata-katoa ki te ChatGPT mo te tirohanga pai ake + te whakaheke haere" },
   "menuLabel_fullerWins": { "message": "Matapihi tonu" },
   "menuLabel_tallerChatbox": { "message": "Pouaka Kōrerorero Taller" },
+  "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
   "menuLabel_modeNotifs": { "message": "Nga whakamohiotanga aratau" },
   "menuLabel_updateCheck": { "message": "Tirohia ngā whakahōu" },
   "menuLabel_disabled": { "message": "Kua monokia (kua oti te whakauru)" },

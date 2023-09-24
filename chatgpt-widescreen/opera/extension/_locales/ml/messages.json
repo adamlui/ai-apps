@@ -3,6 +3,7 @@
   "appDesc": { "message": "മെച്ചപ്പെടുത്തിയ കാഴ്ച + കുറയ്ക്കുന്ന സ്ക്രോളിംഗിനായി ചാറ്റ്ജിപിടിയിലേക്ക് വൈഡ്സ്ക്രീൻ + ഫുൾസ്ക്രീൻ മോഡുകൾ ചേർക്കുന്നു" },
   "menuLabel_fullerWins": { "message": "പൂരിപ്പിക്കൽ വിൻഡോകൾ" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "വിശാലമായ ചാറ്റ്ബോക്സ്" },
   "menuLabel_modeNotifs": { "message": "മോഡ് അറിയിപ്പുകൾ" },
   "menuLabel_updateCheck": { "message": "അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക" },
   "menuLabel_disabled": { "message": "അപ്രാപ്തമാക്കി (വിപുലീകരണം ഇൻസ്റ്റാൾ ചെയ്തിരിക്കുന്നു)" },

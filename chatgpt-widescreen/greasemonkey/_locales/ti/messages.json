@@ -3,6 +3,7 @@
   "appDesc": { "message": "እተመሓየሸ ምርኢት ንምርካብ ናብ ChatGPT ሰፊሕ ስክሪን + ናይ ምሉእ ስክሪን ኣገባባት ወስኽ + እተቐነሰ ስክሪን" },
   "menuLabel_fullerWins": { "message": "መስኮታት ምሉእ" },
   "menuLabel_tallerChatbox": { "message": "Undo-type" },
+  "menuLabel_widerChatbox": { "message": "ሰፊሕ ቻትቦክስ" },
   "menuLabel_modeNotifs": { "message": "ሓበሬታታት ኣገባብ" },
   "menuLabel_updateCheck": { "message": "ምምሕያሻት መርምር" },
   "menuLabel_disabled": { "message": "ኣገልግሎት ከም ዘይህብ ምግባር (እተኸልከለ ምንቅስቓስ)" },

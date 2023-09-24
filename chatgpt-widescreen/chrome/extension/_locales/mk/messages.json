@@ -3,6 +3,7 @@
   "appDesc": { "message": "Додава широк екран + режими на цел екран на ChatGPT за подобрено гледање + намалено лизгање" },
   "menuLabel_fullerWins": { "message": "Фулер Виндоус" },
   "menuLabel_tallerChatbox": { "message": "Повисоки Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Пошироко поле за разговор" },
   "menuLabel_modeNotifs": { "message": "Известувања за режим" },
   "menuLabel_updateCheck": { "message": "Провери за нова верзија" },
   "menuLabel_disabled": { "message": "Оневозможено (наставката е инсталирана)" },

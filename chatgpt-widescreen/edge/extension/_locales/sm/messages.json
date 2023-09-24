@@ -3,6 +3,7 @@
   "appDesc": { "message": "Faʻaopopo le Widescreen + Fullscreen mode i le ChatGPT mo le faʻaleleia atili o le maimoaina + faʻaititia o tusi" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
   "menuLabel_modeNotifs": { "message": "FA'AMATALAGA FA'AMATALAGA" },
   "menuLabel_updateCheck": { "message": "Siaki mo faʻafouga" },
   "menuLabel_disabled": { "message": "Lē atoatoa le malosi (Extended faapipiiina)" },

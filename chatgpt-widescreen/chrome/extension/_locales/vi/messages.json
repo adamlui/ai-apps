@@ -3,6 +3,7 @@
   "appDesc": { "message": "Thêm chế độ Màn hình rộng + Toàn màn hình vào ChatGPT để xem nâng cao + giảm cuộn" },
   "menuLabel_fullerWins": { "message": "Cửa sổ Fuller" },
   "menuLabel_tallerChatbox": { "message": "Hộp trò chuyện cao hơn" },
+  "menuLabel_widerChatbox": { "message": "Hộp trò chuyện rộng hơn" },
   "menuLabel_modeNotifs": { "message": "Thông báo chế độ" },
   "menuLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
   "menuLabel_disabled": { "message": "Đa ̃ tă ́ t (đa ̃ ca ̀ i đă ̣ t phâ ̀" },

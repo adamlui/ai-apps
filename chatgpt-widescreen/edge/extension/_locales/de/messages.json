@@ -3,6 +3,7 @@
   "appDesc": { "message": "Fügt ChatGPT den Breitbild- und Vollbildmodus hinzu, um die Ansicht zu verbessern und das Scrollen zu reduzieren" },
   "menuLabel_fullerWins": { "message": "Breitere Fenster" },
   "menuLabel_tallerChatbox": { "message": "Höhere Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Breitere Chatbox" },
   "menuLabel_modeNotifs": { "message": "Modusbenachrichtigungen" },
   "menuLabel_updateCheck": { "message": "Nach Updates suchen" },
   "menuLabel_disabled": { "message": "Deaktiviert (Erweiterung installiert)" },

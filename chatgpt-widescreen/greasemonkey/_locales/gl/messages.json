@@ -3,6 +3,7 @@
   "appDesc": { "message": "Engade pantalla ancha + modos de pantalla completa a ChatGPT para unha visualización mellorada + desprazamento reducido" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Caixa de chat máis alta" },
+  "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
   "menuLabel_modeNotifs": { "message": "Notificacións de modo" },
   "menuLabel_updateCheck": { "message": "Check for updates" },
   "menuLabel_disabled": { "message": "Desactivado (extensión instalada)" },

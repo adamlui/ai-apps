@@ -3,6 +3,7 @@
   "appDesc": { "message": "Көбүрөөк көрүү үчүн ChatGPT үчүн Widecreen + Full Screen режимдерин кошот + кыскартылган жылдыруу" },
   "menuLabel_fullerWins": { "message": "Толтурулган Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Кеңирирээк баарлашуу кутучасы" },
   "menuLabel_modeNotifs": { "message": "Режим билдирүүлөрү" },
   "menuLabel_updateCheck": { "message": "Жаңы чыгаруулар бар экендигин текшерүү" },
   "menuLabel_disabled": { "message": "Өчүрүлгөн (кеңейтилген орнотулган)" },

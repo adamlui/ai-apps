@@ -3,6 +3,7 @@
   "appDesc": { "message": "Keng ekran + Toʻliq ekran rejimlarini ChatGPT-ga kengaytirilgan koʻrish + qisqartirilgan aylantirish uchun qoʻshadi" },
   "menuLabel_fullerWins": { "message": "To&#39;liq Windows" },
   "menuLabel_tallerChatbox": { "message": "Uzunroq suhbat qutisi" },
+  "menuLabel_widerChatbox": { "message": "Kengroq chat qutisi" },
   "menuLabel_modeNotifs": { "message": "Rejim bildirishnomalari" },
   "menuLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
   "menuLabel_disabled": { "message": "O&#39;chirilgan (kengaytma o&#39;rnatilgan)" },

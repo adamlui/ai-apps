@@ -3,6 +3,7 @@
   "appDesc": { "message": "Aldonas larĝekranajn + plenekranajn modojn al ChatGPT por plibonigita spektado + reduktita rulumado" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Pli larĝa retbabilejo" },
   "menuLabel_modeNotifs": { "message": "@ info: whatsthis" },
   "menuLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
   "menuLabel_disabled": { "message": "Malŝaltita (etendo instalita)" },

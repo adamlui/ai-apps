@@ -3,6 +3,7 @@
   "appDesc": { "message": "మెరుగైన వీక్షణ + తగ్గిన స్క్రోలింగ్ కోసం చాట్‌జిపిటికి వైడ్ స్క్రీన్ + ఫుల్‌స్క్రీన్ మోడ్‌లను జోడిస్తుంది" },
   "menuLabel_fullerWins": { "message": "పూర్తి విండోస్" },
   "menuLabel_tallerChatbox": { "message": "పొడవైన చాట్‌బాక్స్" },
+  "menuLabel_widerChatbox": { "message": "విస్తృత చాట్ ‌ బాక్స్" },
   "menuLabel_modeNotifs": { "message": "మోడ్ నోటిఫికేషన్ ‌ లు" },
   "menuLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "menuLabel_disabled": { "message": "డిసేబుల్ చేయబడింది (పొడిగింపు ఇన్స్టాల్ చేయబడింది)" },

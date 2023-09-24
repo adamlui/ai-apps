@@ -3,6 +3,7 @@
   "appDesc": { "message": "Pantaila zabaleko + Pantaila osoko moduak gehitzen ditu ChatGPT-i, ikusteko + korritze murrizteko" },
   "menuLabel_fullerWins": { "message": "Windows osoagoak" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Chatbox zabalagoa" },
   "menuLabel_modeNotifs": { "message": "Moduaren jakinarazpenak" },
   "menuLabel_updateCheck": { "message": "Begiratu _eguneraketak: " },
   "menuLabel_disabled": { "message": "Desgaituta (luzapena instalatuta)" },

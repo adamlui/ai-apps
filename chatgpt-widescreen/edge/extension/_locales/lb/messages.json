@@ -3,6 +3,7 @@
   "appDesc": { "message": "Adds Widescreen + Fullscreen modes to ChatGPT for enhanced viewing + reduzéiert Scrollen" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Méi Chatbox" },
+  "menuLabel_widerChatbox": { "message": "CAA -" },
   "menuLabel_modeNotifs": { "message": "Modus Notifikatiounen" },
   "menuLabel_updateCheck": { "message": "Fakten an Erënnerungen" },
   "menuLabel_disabled": { "message": "Deaktivéiert (Extensioun installéiert)" },

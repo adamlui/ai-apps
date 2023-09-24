@@ -3,6 +3,7 @@
   "appDesc": { "message": "Nagdugang sa Widescreen + Fullscreen mode sa ChatGPT alang sa gipaayo nga pagtan-aw + pagkunhod sa pag-scroll" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Mas lapad nga Chatbox" },
   "menuLabel_modeNotifs": { "message": "Mga Notipikasyon sa Mode" },
   "menuLabel_updateCheck": { "message": "Susiha alang sa Mga Update" },
   "menuLabel_disabled": { "message": "Disabled (mga sumpay_usba)" },

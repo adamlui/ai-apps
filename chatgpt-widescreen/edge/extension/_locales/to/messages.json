@@ -3,6 +3,7 @@
   "appDesc": { "message": "Tanaki atu ʻa e Widescreen + Fullscreen ki he ChatGPT ke toe fakalahi atu hono mamataʻi + fakasiʻisiʻi e scroll" },
   "menuLabel_fullerWins": { "message": "Ngaahi matapa sioʻata ʻo e kau foo" },
   "menuLabel_tallerChatbox": { "message": "Maʻolunga ange Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Lahi ange Chatbox" },
   "menuLabel_modeNotifs": { "message": "Fanongonongo ki he Mode" },
   "menuLabel_updateCheck": { "message": "Vakaiʻi e Ngaahi Fakamatala Fakamuimuitahá" },
   "menuLabel_disabled": { "message": "Faingataʻaʻia fakaesino (fokotuʻu e extension)" },

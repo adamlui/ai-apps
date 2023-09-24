@@ -3,6 +3,7 @@
   "appDesc": { "message": "Hoʻohui i ka Widescreen + Fullscreen modes i ChatGPT no ka hoʻonui ʻia ʻana o ka nānā ʻana + hoʻemi i ka ʻōwili ʻana" },
   "menuLabel_fullerWins": { "message": "Windows piha" },
   "menuLabel_tallerChatbox": { "message": "ʻO ka pahu kamaʻilio kiʻekiʻe" },
+  "menuLabel_widerChatbox": { "message": "Pahu kamaʻilio ākea" },
   "menuLabel_modeNotifs": { "message": "Hoʻolaha Kūlana" },
   "menuLabel_updateCheck": { "message": "E nānā i nā mea hou" },
   "menuLabel_disabled": { "message": "Hoʻopaʻa ʻia (kau ʻia ka hoʻonui)" },

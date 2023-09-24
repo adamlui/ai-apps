@@ -3,6 +3,7 @@
   "appDesc": { "message": "د کابینې په پایله کې د ټابلیټونو لپاره د بټاپونه" },
   "menuLabel_fullerWins": { "message": "بشپړ Windows" },
   "menuLabel_tallerChatbox": { "message": "د Valler" },
+  "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
   "menuLabel_modeNotifs": { "message": "خبرتیاوې" },
   "menuLabel_updateCheck": { "message": "د تازه معلوماتو لپاره وګورئ" },
   "menuLabel_disabled": { "message": "لګول شوی (لګول شوی)" },

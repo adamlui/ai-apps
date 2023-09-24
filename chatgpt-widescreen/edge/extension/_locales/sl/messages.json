@@ -3,6 +3,7 @@
   "appDesc": { "message": "Dodaja širokozaslonske + celozaslonske načine v ChatGPT za izboljšano gledanje + zmanjšano drsenje" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Višji Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Širše polje za klepet" },
   "menuLabel_modeNotifs": { "message": "Obvestila o načinu" },
   "menuLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
   "menuLabel_disabled": { "message": "Onemogočeno (razširitev nameščena)" },

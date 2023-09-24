@@ -3,6 +3,7 @@
   "appDesc": { "message": "Inaongeza Widescreen + Njia kamili za skrini kwa ChatGPT kwa ajili ya kutazama kuimarishwa + kupunguzwa kwa scrolling" },
   "menuLabel_fullerWins": { "message": "Madirisha Fuller" },
   "menuLabel_tallerChatbox": { "message": "Kikasha cha Kuchati cha Muda Mrefu" },
+  "menuLabel_widerChatbox": { "message": "Sanduku pana la Gumzo" },
   "menuLabel_modeNotifs": { "message": "Arifa za Modi" },
   "menuLabel_updateCheck": { "message": "Angalia Masasisho" },
   "menuLabel_disabled": { "message": "Imezimwa (kiendelezi kimewekwa)" },

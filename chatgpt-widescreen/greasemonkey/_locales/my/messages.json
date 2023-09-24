@@ -3,6 +3,7 @@
   "appDesc": { "message": "တိုးမြှင့်မြင်ကွင်း + လျှော့ချ scrolling များအတွက် ChatGPT မှ Widescreen + အပြည့်အဝမျက်နှာပြင် mode ကိုထည့်သွင်း" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "ကျယ်ပြန့်သော Chatbox" },
   "menuLabel_modeNotifs": { "message": "Mode အသိပေးချက်များ" },
   "menuLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "menuLabel_disabled": { "message": "ပိတ်ထားသည် (တိုးချဲ့မှု တပ်ဆင်ထားသည်)" },

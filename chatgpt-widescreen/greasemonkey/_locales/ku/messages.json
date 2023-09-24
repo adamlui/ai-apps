@@ -3,6 +3,7 @@
   "appDesc": { "message": "Ji bo dîtina pêşkeftî + gerok kêm kirin modên Widescreen + Fullscreen li ChatGPT zêde dike" },
   "menuLabel_fullerWins": { "message": "Windows Fuller" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Berfirehtir Chatbox" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
   "menuLabel_updateCheck": { "message": "Ji bo Nûvekirinan kontrol bikin" },
   "menuLabel_disabled": { "message": "Neçalakkirî (berfireh hate saz kirin)" },

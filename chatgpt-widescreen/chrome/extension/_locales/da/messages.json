@@ -3,6 +3,7 @@
   "appDesc": { "message": "Tilføjer Widescreen + Fullscreen tilstande til ChatGPT for forbedret visning + reduceret rulning" },
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Højere Chatbox" },
+  "menuLabel_widerChatbox": { "message": "Bredere chatboks" },
   "menuLabel_modeNotifs": { "message": "Tilstandsmeddelelser" },
   "menuLabel_updateCheck": { "message": "Tjek for Opdateringer" },
   "menuLabel_disabled": { "message": "Deaktiveret (udvidelse installeret)" },
