@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.23
+// @version             2023.9.23.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -266,7 +266,7 @@
         greasyForkURL: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode' }
     config.updateURL = config.greasyForkURL + '/code/chatgpt-widescreen-mode.meta.js'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'wideScreen')
+    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'wcbDisabled', 'wideScreen')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -360,7 +360,7 @@
         }))
 
         // Add command to toggle taller OpenAI chatboxes when typing
-        const tcbLabel = state.symbol[+config.tcbDisabled] + ' ' + messages.menuLabel_tallerChatbox
+        const tcbLabel = '↕️ ' + messages.menuLabel_tallerChatbox
                        + state.separator + state.word[+config.tcbDisabled]
         menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
             saveSetting('tcbDisabled', !config.tcbDisabled)
@@ -368,6 +368,18 @@
                                                        : tweaksStyle.innerText + tcbStyle
             if (!config.notifHidden)
                 notify(`${ messages.menuLabel_tallerChatbox }: ${ state.word[+config.tcbDisabled] }`)
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to toggle wider OpenAI chatboxes with widescreen mode
+        const wcbLabel = '↔️ Wider Chatbox'
+                       + state.separator + state.word[+config.wcbDisabled]
+        menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
+            saveSetting('wcbDisabled', !config.wcbDisabled)
+            wideScreenStyle.innerText = config.wcbDisabled ? wideScreenStyle.innerText.replace(wcbStyle, '')
+                                                           : wideScreenStyle.innerText + wcbStyle
+            if (!config.notifHidden)
+                notify(`Wider Chatbox: ${ state.word[+config.wcbDisabled] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -649,16 +661,16 @@
           tcbStyle = inputSelector + ' { max-height: 68vh !important } '
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
-    // Create widescreen style
-    const wideScreenStyle = document.createElement('style')
+    // Create wide screen style
+    const wideScreenStyle = document.createElement('style'),
+          wcbStyle = 'div[class*="bottom"] form { max-width: 96% }'
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     wideScreenStyle.innerText = textContainerSelector + ' { max-width: 97% !important } '
         + ( site == 'poe' ? // stretch outer container
             ' [class^="MainColumn_column"] { width: 100% !important } ' : '' )
-        + ( site == 'openai' ?
-            ( '#__next > div > div.flex { width: 100px }' // prevent sidebar shrinking when zoomed
-                + 'div[class*="bottom"] form { max-width: 96% }' ) // expand chatbar
-            : '' )
+        + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
+            '#__next > div > div.flex { width: 100px }' : '' )
+    if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle
 
     // Create full-window style
     const fullWindowStyle = document.createElement('style')
