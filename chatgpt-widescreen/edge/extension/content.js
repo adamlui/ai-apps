@@ -39,9 +39,8 @@
                                         : 'form textarea[id*="prompt"]',
           sidebarSelector = site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]'
                                           : '#__next > div > div.dark',
-          sidepadSelector = '#__next > div > div',
-          textContainerSelector = site == 'poe' ? '[class*="ChatPageMain_container"]'
-                                                : '.text-base, main > div > div > div > div > div'
+          sidepadSelector = '#__next > div > div'
+
     // Create/stylize tooltip div
     const tooltipDiv = document.createElement('div')
     tooltipDiv.classList.add('toggle-tooltip')
@@ -362,12 +361,17 @@
     }
 
     function updateWidescreenStyle() {
-        wideScreenStyle.innerText = textContainerSelector + ' { max-width: 97% !important } '
-            + ( site == 'poe' ? // stretch outer container
-                ' [class^="MainColumn_column"] { width: 100% !important } ' : '' )
-            + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
-                '#__next > div > div.flex { width: 100px }' : '' )
-        if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle
+        wideScreenStyle.innerText = (
+              site === 'openai' ? (
+                  '.text-base { max-width: 100% !important }' // widen outer container
+                + '.text-base:nth-of-type(2) { max-width: 97% !important }' // widen inner container
+                + '#__next > div > div.flex { width: 100px }' ) // prevent sidebar shrinking when zoomed
+            : site === 'poe' ? (
+                  '[class^="MainColumn_column"] { width: 100% !important }' // widen outer container
+                + '[class*="ChatPageMain_container"] { max-width: 97% !important }' // widen inner container
+                + '[class^="Message"] { max-width: 100% !important }' ) // widen speech bubbles
+            : '' )
+        if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle        
     }
 
     syncExtension = () => { // settings, then disable modes or sync taller/wider chatbox

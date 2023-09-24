@@ -368,7 +368,8 @@
                 + '#__next > div > div.flex { width: 100px }' ) // prevent sidebar shrinking when zoomed
             : site === 'poe' ? (
                   '[class^="MainColumn_column"] { width: 100% !important }' // widen outer container
-                + '[class*="ChatPageMain_container"] { max-width: 97% !important }' ) // widen inner container
+                + '[class*="ChatPageMain_container"] { max-width: 97% !important }' // widen inner container
+                + '[class^="Message"] { max-width: 100% !important }' ) // widen speech bubbles
             : '' )
         if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle        
     }

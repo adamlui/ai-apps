@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.24.1
+// @version             2023.9.24.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -623,7 +623,8 @@
                 + '#__next > div > div.flex { width: 100px }' ) // prevent sidebar shrinking when zoomed
             : site === 'poe' ? (
                   '[class^="MainColumn_column"] { width: 100% !important }' // widen outer container
-                + '[class*="ChatPageMain_container"] { max-width: 97% !important }' ) // widen inner container
+                + '[class*="ChatPageMain_container"] { max-width: 97% !important }' // widen inner container
+                + '[class^="Message"] { max-width: 100% !important }' ) // widen speech bubbles
             : '' )
         if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle        
     }
