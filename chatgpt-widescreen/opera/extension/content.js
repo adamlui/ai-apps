@@ -54,19 +54,16 @@
         + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }' // disable select
     document.head.appendChild(tooltipStyle)
 
-    // Create general style tweaks
+    // Create/apply general style tweaks
     const tweaksStyle = document.createElement('style'),
           tcbStyle = inputSelector + ' { max-height: 68vh !important } '
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
-    // Create wide screen style
-    const wideScreenStyle = document.createElement('style')
+    // Create widescreen style
+    const wideScreenStyle = document.createElement('style'),
+          wcbStyle = 'div[class*="bottom"] form { max-width: 96% }'
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
-    wideScreenStyle.innerText = textContainerSelector + ' { max-width: 97% !important } '
-        + ( site == 'poe' ? // stretch outer container
-            ' [class^="MainColumn_column"] { width: 100% !important } ' : '' )
-        + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
-            '#__next > div > div.flex { width: 100px }' : '' )
+    updateWidescreenStyle()
 
     // Create full-window style
     const fullWindowStyle = document.createElement('style')
@@ -106,7 +103,7 @@
         if (type === 'childList' && addedNodes.length) {
 
             // Restore previous session's state + manage toggles
-            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'notifHidden', 'extensionDisabled'])
+            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'wcbDisabled', 'notifHidden', 'extensionDisabled'])
                 .then(() => { if (!config.extensionDisabled) {                    
                     if (!prevSessionChecked) { // restore previous session's state
                         if (config.wideScreen) toggleMode('wideScreen', 'ON')
@@ -364,8 +361,17 @@
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
     }
 
-    syncExtension = () => { // settings, then disable modes or sync taller chatbox
-        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'notifHidden')
+    function updateWidescreenStyle() {
+        wideScreenStyle.innerText = textContainerSelector + ' { max-width: 97% !important } '
+            + ( site == 'poe' ? // stretch outer container
+                ' [class^="MainColumn_column"] { width: 100% !important } ' : '' )
+            + ( site == 'openai' ? // prevent sidebar shrinking when zoomed
+                '#__next > div > div.flex { width: 100px }' : '' )
+        if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle
+    }
+
+    syncExtension = () => { // settings, then disable modes or sync taller/wider chatbox
+        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'wcbDisabled', 'notifHidden')
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
                     try { document.head.removeChild(wideScreenStyle) } catch (err) {}
@@ -375,6 +381,7 @@
                 } else {
                     syncFullerWindows(config.fullWindow)
                     updateTweaksStyle() // sync taller chatbox
+                    updateWidescreenStyle() // sync wider chatbox
     }})}
 
 })()

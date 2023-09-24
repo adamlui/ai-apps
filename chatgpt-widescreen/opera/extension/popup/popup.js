@@ -4,11 +4,12 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
     // Initialize popup toggles
-    settings.load('fullerWindows', 'tcbDisabled', 'notifHidden', 'extensionDisabled')
+    settings.load('fullerWindows', 'tcbDisabled', 'wcbDisabled', 'notifHidden', 'extensionDisabled')
         .then(function() { // restore extension/toggle states
             mainToggle.checked = !config.extensionDisabled
             fullerWinToggle.checked = config.fullerWindows
             tallerChatboxToggle.checked = !config.tcbDisabled
+            widerChatboxToggle.checked = !config.wcbDisabled
             notificationsToggle.checked = !config.notifHidden
             updateGreyness()
         })
@@ -57,8 +58,24 @@
             tallerChatboxToggle.click() 
     })
 
+    // Add Wider Chatbox toggle label click-listeners
+    const widerChatboxToggle = toggles[3]
+    const widerChatboxLabel = widerChatboxToggle.parentNode.parentNode
+    widerChatboxToggle.addEventListener('change', () => {
+        settings.save('wcbDisabled', !config.wcbDisabled)
+        syncExtension()
+        settings.load('notifHidden').then(() => {
+            if (!config.notifHidden) { // show mode notification if enabled
+                notify('Wider Chatbox ' + (config.wcbDisabled ? 'OFF' : 'ON'))
+        }})
+    })
+    widerChatboxLabel.addEventListener('click', (event) => {
+        if ([widerChatboxLabel, document.querySelector('[data-locale*="widerChatbox"]')].includes(event.target))
+            widerChatboxToggle.click() 
+    })
+
     // Add notifications toggle label click-listeners
-    const notificationsToggle = toggles[3]
+    const notificationsToggle = toggles[4]
     const notificationsLabel = notificationsToggle.parentNode.parentNode
     notificationsToggle.addEventListener('change', function toggleNotifications() {
         settings.save('notifHidden', !config.notifHidden)
