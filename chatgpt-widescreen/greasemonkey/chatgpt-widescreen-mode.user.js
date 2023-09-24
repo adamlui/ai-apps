@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.24.3
+// @version             2023.9.24.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -266,7 +266,7 @@
         greasyForkURL: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode' }
     config.updateURL = config.greasyForkURL + '/code/chatgpt-widescreen-mode.meta.js'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'wcbDisabled', 'wideScreen')
+    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'wcbDisabled', 'hiddenFooter', 'wideScreen')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -359,7 +359,7 @@
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
-        // Add command to toggle taller OpenAI chatboxes when typing
+        // Add command to toggle taller chatbox when typing
         const tcbLabel = '↕️ ' + messages.menuLabel_tallerChatbox
                        + state.separator + state.word[+config.tcbDisabled]
         menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
@@ -370,7 +370,7 @@
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
-        // Add command to toggle wider OpenAI chatboxes with widescreen mode
+        // Add command to toggle wider chatbox with widescreen mode
         const wcbLabel = '↔️ ' + messages.menuLabel_widerChatbox
                        + state.separator + state.word[+config.wcbDisabled]
         menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
@@ -378,6 +378,17 @@
             updateWidescreenStyle()
             if (!config.notifHidden)
                 notify(`${ messages.menuLabel_widerChatbox }: ${ state.word[+config.wcbDisabled] }`)
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to toggle hidden OpenAI footer
+        const hfLabel = state.symbol[+!config.hiddenFooter] + ' ' + messages.menuLabel_hiddenFooter
+                      + state.separator + state.word[+!config.hiddenFooter]
+        menuIDs.push(GM_registerMenuCommand(hfLabel, () => {
+            saveSetting('hiddenFooter', !config.hiddenFooter)
+            updateTweaksStyle()
+            if (!config.notifHidden)
+                notify(`${ messages.menuLabel_hiddenFooter }: ${ state.word[+!config.hiddenFooter] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -609,9 +620,11 @@
 
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
-              site == 'openai' ? inputSelector + ' { padding-right: 148px } '  // narrow input to accomdate buttons
-                               + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
-                                   + 'position: relative ; left: 66px ; top: 7px } ' : '' ) // ...below avatar to avoid cropping
+              site === 'openai' ? (
+                  inputSelector + ' { padding-right: 148px } '  // narrow input to accomdate buttons
+                + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
+                    + 'position: relative ; left: 66px ; top: 7px } ' // ...below avatar to avoid cropping
+                + ( config.hiddenFooter ? hfStyle : '' )) : '' ) // hide footer
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
     }
 
@@ -670,7 +683,10 @@
 
     // Create/apply general style tweaks
     const tweaksStyle = document.createElement('style'),
-          tcbStyle = inputSelector + ' { max-height: 68vh !important } '
+          tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
+          hfStyle = 'div[class*="bottom"] > div { padding: .8rem 0 0 }' // reduce footer v-padding
+                  + 'div[class*="bottom"] > div > span,' // hide footer text...
+                      + ' div[class*="bottom"] button[id*="menu-button"] { display: none }' // ...and help button
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create widescreen style

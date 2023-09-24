@@ -55,7 +55,10 @@
 
     // Create/apply general style tweaks
     const tweaksStyle = document.createElement('style'),
-          tcbStyle = inputSelector + ' { max-height: 68vh !important } '
+          tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
+          hfStyle = 'div[class*="bottom"] > div { padding: .8rem 0 0 }' // reduce footer v-padding
+                  + 'div[class*="bottom"] > div > span,' // hide footer text...
+                      + ' div[class*="bottom"] button[id*="menu-button"] { display: none }' // ...and help button
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create widescreen style
@@ -358,9 +361,11 @@
 
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
-              site == 'openai' ? inputSelector + ' { padding-right: 148px } '  // narrow input to accomdate buttons
-                               + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
-                                   + 'position: relative ; left: 66px ; top: 7px } ' : '' ) // ...below avatar to avoid cropping
+              site === 'openai' ? (
+                  inputSelector + ' { padding-right: 148px } '  // narrow input to accomdate buttons
+                + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
+                    + 'position: relative ; left: 66px ; top: 7px } ' // ...below avatar to avoid cropping
+                + ( config.hiddenFooter ? hfStyle : '' )) : '' ) // hide footer
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
     }
 
@@ -380,7 +385,7 @@
     }
 
     syncExtension = () => { // settings, then disable modes or sync taller/wider chatbox
-        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'wcbDisabled', 'notifHidden')
+        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'wcbDisabled', 'hiddenFooter', 'notifHidden')
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
                     try { document.head.removeChild(wideScreenStyle) } catch (err) {}
@@ -389,7 +394,7 @@
                     removeBtns()
                 } else {
                     syncFullerWindows(config.fullWindow)
-                    updateTweaksStyle() // sync taller chatbox
+                    updateTweaksStyle() // sync taller chatbox + hidden footer
                     updateWidescreenStyle() // sync wider chatbox
     }})}
 

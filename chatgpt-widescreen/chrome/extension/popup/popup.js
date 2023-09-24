@@ -4,7 +4,7 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
     // Initialize popup toggles
-    settings.load('fullerWindows', 'tcbDisabled', 'wcbDisabled', 'notifHidden', 'extensionDisabled')
+    settings.load('fullerWindows', 'tcbDisabled', 'wcbDisabled', 'hiddenFooter', 'notifHidden', 'extensionDisabled')
         .then(function() { // restore extension/toggle states
             mainToggle.checked = !config.extensionDisabled
             fullerWinToggle.checked = config.fullerWindows
@@ -74,8 +74,24 @@
             widerChatboxToggle.click() 
     })
 
+    // Add Hidden Footer toggle label click-listeners
+    const hiddenFooterToggle = toggles[4]
+    const hiddenFooterLabel = hiddenFooterToggle.parentNode.parentNode
+    hiddenFooterToggle.addEventListener('change', () => {
+        settings.save('hiddenFooter', !config.hiddenFooter)
+        syncExtension()
+        settings.load('notifHidden').then(() => {
+            if (!config.notifHidden) { // show mode notification if enabled
+                notify(chrome.i18n.getMessage('menuLabel_hiddenFooter') + ' ' + (config.hiddenFooter ? 'ON' : 'OFF'))
+        }})
+    })
+    hiddenFooterLabel.addEventListener('click', (event) => {
+        if ([hiddenFooterLabel, document.querySelector('[data-locale*="hiddenFooter"]')].includes(event.target))
+            hiddenFooterToggle.click() 
+    })
+
     // Add notifications toggle label click-listeners
-    const notificationsToggle = toggles[4]
+    const notificationsToggle = toggles[5]
     const notificationsLabel = notificationsToggle.parentNode.parentNode
     notificationsToggle.addEventListener('change', function toggleNotifications() {
         settings.save('notifHidden', !config.notifHidden)
