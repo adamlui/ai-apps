@@ -4,14 +4,14 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
     // Locate settings elements
-    const mainToggle = document.querySelector('input')
-    const menuItems = document.querySelectorAll('.menu-item')
-    const infinityModeDiv = menuItems[0], infinityModeToggle = infinityModeDiv.querySelector('input')
-    const toggleVisDiv = menuItems[1], toggleVisToggle = toggleVisDiv.querySelector('input')
-    const autoScrollDiv = menuItems[2], autoScrollToggle = autoScrollDiv.querySelector('input')
-    const replyLangDiv = menuItems[3], replyLangLabel = replyLangDiv.querySelector('span')
-    const replyTopicDiv = menuItems[4], replyTopicLabel = replyTopicDiv.querySelector('span')
-    const replyIntervalDiv = menuItems[5], replyIntervalLabel = replyIntervalDiv.querySelector('span')
+    const mainToggle = document.querySelector('input'),
+          menuItems = document.querySelectorAll('.menu-item'),
+          infinityModeDiv = menuItems[0], infinityModeToggle = infinityModeDiv.querySelector('input'),
+          toggleVisDiv = menuItems[1], toggleVisToggle = toggleVisDiv.querySelector('input'),
+          autoScrollDiv = menuItems[2], autoScrollToggle = autoScrollDiv.querySelector('input'),
+          replyLangDiv = menuItems[3], replyLangLabel = replyLangDiv.querySelector('span'),
+          replyTopicDiv = menuItems[4], replyTopicLabel = replyTopicDiv.querySelector('span'),
+          replyIntervalDiv = menuItems[5], replyIntervalLabel = replyIntervalDiv.querySelector('span')
 
     // Sync toggle states
     const re_all = new RegExp('^(' + chrome.i18n.getMessage('menuLabel_all') + '|all|any|every)$', 'i')
@@ -138,22 +138,22 @@
     })})
 
     // Add Support span click-listener
-    const supportLink = document.querySelector('a[title*="support" i]')
-    const supportSpan = supportLink.parentNode 
+    const supportLink = document.querySelector('a[title*="support" i]'),
+          supportSpan = supportLink.parentNode 
     supportSpan.addEventListener('click', (event) => {
         if (event.target == supportSpan) supportLink.click() // to avoid double-toggle
     })
 
     // Add More Add-ons span click-listener
-    const moreAddOnsLink = document.querySelector('a[title*="more" i]')
-    const moreAddOnsSpan = moreAddOnsLink.parentNode 
+    const moreAddOnsLink = document.querySelector('a[title*="more" i]'),
+          moreAddOnsSpan = moreAddOnsLink.parentNode 
     moreAddOnsSpan.addEventListener('click', (event) => {
         if (event.target == moreAddOnsSpan) moreAddOnsLink.click() // to avoid double-toggle
     })
 
     // Add Powered by chatgpt.js hover-listener
-    const chatGPTjsHostPath = 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/badges/'
-    const chatGPTjsImg = document.querySelector('.chatgpt-js img')
+    const chatGPTjsHostPath = 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/badges/',
+          chatGPTjsImg = document.querySelector('.chatgpt-js img')
     chatGPTjsImg.addEventListener('mouseover', function() {
         chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png' })
     chatGPTjsImg.addEventListener('mouseout', function() {
