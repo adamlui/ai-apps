@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.15
+// @version             2023.9.27
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -503,9 +503,13 @@
                         const reviewAlertID = chatgpt.alert('Choose a platform:', '',
                             [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                               function productHunt() { safeWindowOpen(
-                                  'https://www.producthunt.com/products/chatgpt-infinity/reviews/new') }])
-                        document.getElementById(reviewAlertID).querySelector('button')
-                            .style.display = 'none' } // hide Dismiss button
+                                  'https://www.producthunt.com/products/chatgpt-infinity/reviews/new') },
+                              function alternativeTo() { safeWindowOpen(
+                                  'https://alternativeto.net/software/chatgpt-infinity/about/') }])
+                        const reviewButtons = document.getElementById(reviewAlertID).querySelectorAll('button')
+                        reviewButtons[0].style.display = 'none' // hide Dismiss button
+                        reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
+                            reviewButtons[1].textContent.replace(/\s/g, '')) }
                 ]
             )
 
