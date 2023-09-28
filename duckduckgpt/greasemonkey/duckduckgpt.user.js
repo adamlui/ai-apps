@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.23.1
+// @version             2023.9.27
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -350,9 +350,13 @@
                               function productHunt() { safeWindowOpen(
                                   'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
                               function futurepedia() { safeWindowOpen(
-                                  'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review') }])
-                        document.getElementById(reviewAlertID).querySelector('button')
-                            .style.display = 'none' } // hide Dismiss button
+                                  'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review') },
+                              function alternativeTo() { safeWindowOpen(
+                                  'https://alternativeto.net/software/duckduckgpt/about/') }])
+                        const reviewButtons = document.getElementById(reviewAlertID).querySelectorAll('button')
+                        reviewButtons[0].style.display = 'none' // hide Dismiss button
+                        reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
+                            reviewButtons[1].textContent.replace(/\s/g, '')) }
                 ], '', 524) // About modal width
 
             // Re-format buttons to include emojis + re-case + hide 'Dismiss'
