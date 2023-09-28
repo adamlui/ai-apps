@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.23.1
+// @version             2023.9.27
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -296,9 +296,13 @@
                               function productHunt() { safeWindowOpen(
                                   'https://www.producthunt.com/products/bravegpt/reviews/new') },
                               function futurepedia() { safeWindowOpen(
-                                  'https://www.futurepedia.io/tool/bravegpt#bravegpt-review') }])
-                        document.getElementById(reviewAlertID).querySelector('button')
-                            .style.display = 'none' } // hide Dismiss button
+                                  'https://www.futurepedia.io/tool/bravegpt#bravegpt-review') },
+                              function alternativeTo() { safeWindowOpen(
+                                  'https://alternativeto.net/software/bravegpt/about/') }])
+                        const reviewButtons = document.getElementById(reviewAlertID).querySelectorAll('button')
+                        reviewButtons[0].style.display = 'none' // hide Dismiss button
+                        reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
+                            reviewButtons[1].textContent.replace(/\s/g, '')) }
                 ], '', 593) // About modal width
 
             // Re-format buttons to include emojis + re-case + hide 'Dismiss'
@@ -735,7 +739,8 @@
         + '.katex-html { display: none } ' // hide unrendered math
         + '.chatgpt-modal p { font-size: 1.115rem ; margin-left: 4px } ' // chatgpt.alert() msg
         + '.chatgpt-modal button { ' // chatgpt.alert() buttons
-            + 'padding: 8px 15px !important ; border-radius: 0 !important ; border: 2px solid black !important } ')
+            + 'padding: 8px 15px !important ; margin-left: 0 !important ;'
+            + 'border-radius: 0 !important ; border: 2px solid black !important } ')
     document.head.appendChild(braveGPTstyle) // append style to <head>
 
     // Create BraveGPT container & add id/classes
