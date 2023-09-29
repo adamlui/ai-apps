@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "ਫੁਲਰ ਵਿੰਡੋਜ਼" },
   "menuLabel_tallerChatbox": { "message": "ਚੈਟਬਾਕਸ ਚੈਟਬਾਕਸ" },
   "menuLabel_widerChatbox": { "message": "ਚੌੜਾ ਚੈਟਬਾਕਸ" },
+  "menuLabel_hiddenHeader": { "message": "ਓਹਲੇ ਹੈੱਡਰ" },
   "menuLabel_hiddenFooter": { "message": "ਲੁਕਵਾਂ ਫੁੱਟਰ" },
   "menuLabel_modeNotifs": { "message": "ਮੋਡ ਨੋਟੀਫਿਕੇਸ਼ਨ" },
   "menuLabel_about": { "message": "ਇਸ ਬਾਰੇ" },

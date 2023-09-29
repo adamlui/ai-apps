@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Тирезаҳои пурра" },
   "menuLabel_tallerChatbox": { "message": "Чат қуттии баландтар" },
   "menuLabel_widerChatbox": { "message": "Блоки чати васеътар" },
+  "menuLabel_hiddenHeader": { "message": "Сарлавҳаи пинҳоншуда" },
   "menuLabel_hiddenFooter": { "message": "Пинҳонии Пойгоҳи Пинҳон" },
   "menuLabel_modeNotifs": { "message": "Огоҳиномаҳо" },
   "menuLabel_about": { "message": "_Дар бораи" },

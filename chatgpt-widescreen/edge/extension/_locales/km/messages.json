@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "បង្អួច ពេញ" },
   "menuLabel_tallerChatbox": { "message": "ប្រអប់ជជែកកំសាន្តដែលមានកម្ពស់ខ្ពស់" },
   "menuLabel_widerChatbox": { "message": "ប្រអប់ជជែកទូលំទូលាយ" },
+  "menuLabel_hiddenHeader": { "message": "បឋមកថា ដែល លាក់" },
   "menuLabel_hiddenFooter": { "message": "បាតកថា ដែល បាន លាក់" },
   "menuLabel_modeNotifs": { "message": "ការជូនដំណឹងអំពីម៉ូដ" },
   "menuLabel_about": { "message": "អំពី" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Ֆուլեր Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Ավելի լայն չաթ - արկղ" },
+  "menuLabel_hiddenHeader": { "message": "Թաքնված վերնագիր" },
   "menuLabel_hiddenFooter": { "message": "Թաքնված ստորագիր" },
   "menuLabel_modeNotifs": { "message": "Ռեժիմի ծանուցումներ" },
   "menuLabel_about": { "message": "Մանրամասն" },

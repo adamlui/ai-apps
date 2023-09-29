@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Толтурулган Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Кеңирирээк баарлашуу кутучасы" },
+  "menuLabel_hiddenHeader": { "message": "Undo-type" },
   "menuLabel_hiddenFooter": { "message": "Жашыруун Footer" },
   "menuLabel_modeNotifs": { "message": "Режим билдирүүлөрү" },
   "menuLabel_about": { "message": "_Апплет жөнүндө" },

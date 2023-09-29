@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Ngaahi matapa sioʻata ʻo e kau foo" },
   "menuLabel_tallerChatbox": { "message": "Maʻolunga ange Chatbox" },
   "menuLabel_widerChatbox": { "message": "Lahi ange Chatbox" },
+  "menuLabel_hiddenHeader": { "message": "ʻUluʻi fakamatala ʻoku fufuuʻi" },
   "menuLabel_hiddenFooter": { "message": "Footer ʻoku fufuuʻi" },
   "menuLabel_modeNotifs": { "message": "Fanongonongo ki he Mode" },
   "menuLabel_about": { "message": "Fekauʻaki mo e" },

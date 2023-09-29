@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Mahwindo akazara" },
   "menuLabel_tallerChatbox": { "message": "Yakareba Chatbox" },
   "menuLabel_widerChatbox": { "message": "Taura nesu" },
+  "menuLabel_hiddenHeader": { "message": "Musoro wakavanzwa" },
   "menuLabel_hiddenFooter": { "message": "Yakavanzwa Footer" },
   "menuLabel_modeNotifs": { "message": "Ziviso dzeModhi" },
   "menuLabel_about": { "message": "Nezvedu" },

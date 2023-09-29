@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "更宽的窗口" },
   "menuLabel_tallerChatbox": { "message": "更高的聊天框" },
   "menuLabel_widerChatbox": { "message": "更宽的聊天室" },
+  "menuLabel_hiddenHeader": { "message": "隐藏页眉" },
   "menuLabel_hiddenFooter": { "message": "隐藏页脚" },
   "menuLabel_modeNotifs": { "message": "模式通知" },
   "menuLabel_about": { "message": "关于" },

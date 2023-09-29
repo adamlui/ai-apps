@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "முழு சாளரங்கள்" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "பரந்த அரட்டைப்பெட்டி" },
+  "menuLabel_hiddenHeader": { "message": "மறைக்கப்பட்ட தலைப்பு" },
   "menuLabel_hiddenFooter": { "message": "மறைக்கப்பட்ட அடிக்குறிப்பு" },
   "menuLabel_modeNotifs": { "message": "பயன்முறை அறிவிப்புகள்" },
   "menuLabel_about": { "message": "பற்றி" },

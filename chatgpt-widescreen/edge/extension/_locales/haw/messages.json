@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Windows piha" },
   "menuLabel_tallerChatbox": { "message": "ʻO ka pahu kamaʻilio kiʻekiʻe" },
   "menuLabel_widerChatbox": { "message": "Pahu kamaʻilio ākea" },
+  "menuLabel_hiddenHeader": { "message": "Poʻo huna" },
   "menuLabel_hiddenFooter": { "message": "Wae huna" },
   "menuLabel_modeNotifs": { "message": "Hoʻolaha Kūlana" },
   "menuLabel_about": { "message": "Ho‘ākāka" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Aukštesnė pokalbių dėžutė" },
   "menuLabel_widerChatbox": { "message": "Platesnė pokalbių dėžutė" },
+  "menuLabel_hiddenHeader": { "message": "Paslėpta antraštė" },
   "menuLabel_hiddenFooter": { "message": "Paslėpta poraštė" },
   "menuLabel_modeNotifs": { "message": "Režimo pranešimai" },
   "menuLabel_about": { "message": "Apie" },

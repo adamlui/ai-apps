@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "መስኮታት ምሉእ" },
   "menuLabel_tallerChatbox": { "message": "Undo-type" },
   "menuLabel_widerChatbox": { "message": "ሰፊሕ ቻትቦክስ" },
+  "menuLabel_hiddenHeader": { "message": "እተሓብአ ርእሲ" },
   "menuLabel_hiddenFooter": { "message": "እተሓብአ ፉተር" },
   "menuLabel_modeNotifs": { "message": "ሓበሬታታት ኣገባብ" },
   "menuLabel_about": { "message": "ብዛዕባ" },

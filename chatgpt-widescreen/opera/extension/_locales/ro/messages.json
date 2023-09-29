@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Cutie de chat mai înaltă" },
   "menuLabel_widerChatbox": { "message": "Casetă de chat mai largă" },
+  "menuLabel_hiddenHeader": { "message": "Antet ascuns" },
   "menuLabel_hiddenFooter": { "message": "Subsol ascuns" },
   "menuLabel_modeNotifs": { "message": "Notificări de mod" },
   "menuLabel_about": { "message": "Despre" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Daha geniş söhbət qutusu" },
+  "menuLabel_hiddenHeader": { "message": "Gizli Başlıq" },
   "menuLabel_hiddenFooter": { "message": "Gizli Altbilgi" },
   "menuLabel_modeNotifs": { "message": "Rejim Bildirişləri" },
   "menuLabel_about": { "message": "Haqqında" },

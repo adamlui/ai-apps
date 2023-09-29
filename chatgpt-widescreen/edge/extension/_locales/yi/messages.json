@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "פולער Windows" },
   "menuLabel_tallerChatbox": { "message": "העכער טשאַטבאָקס" },
   "menuLabel_widerChatbox": { "message": "ווידער טשאַטבאָקס" },
+  "menuLabel_hiddenHeader": { "message": "פאַרבאָרגן כעדער" },
   "menuLabel_hiddenFooter": { "message": "פאַרבאָרגן פאָאָטער" },
   "menuLabel_modeNotifs": { "message": "מאָדע נאָטיפיקאַטיאָנס" },
   "menuLabel_about": { "message": "dialogs-action" },

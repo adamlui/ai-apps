@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Ffenestri Lawn" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Blwch Sgwrsio Ehangach" },
+  "menuLabel_hiddenHeader": { "message": "Pennawd Cudd" },
   "menuLabel_hiddenFooter": { "message": "Troedyn Cudd" },
   "menuLabel_modeNotifs": { "message": "Hysbysiadau Modd" },
   "menuLabel_about": { "message": "Gwybodaeth" },

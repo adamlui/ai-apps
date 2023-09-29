@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "སྒོ་སྒྲིག་གི་རྒྱ་ཚད།" },
   "menuLabel_tallerChatbox": { "message": "ཊེམ་པེལེཊི།" },
   "menuLabel_widerChatbox": { "message": "སྦྲེལ་མཐུད།" },
+  "menuLabel_hiddenHeader": { "message": "གསང་བའི་མགུ་ཏོ་" },
   "menuLabel_hiddenFooter": { "message": "གསང་བཞག་མི་རྐང་པ་" },
   "menuLabel_modeNotifs": { "message": "གསལ་བཀོད་འབད་ཡོད་པའི་ཐོ་ཡིག་ཚུ་" },
   "menuLabel_about": { "message": "སྐོར་ལས་" },

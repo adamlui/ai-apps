@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fullere Windows" },
   "menuLabel_tallerChatbox": { "message": "Høyere Chatbox" },
   "menuLabel_widerChatbox": { "message": "Bredere chatboks" },
+  "menuLabel_hiddenHeader": { "message": "Skjult Toppfelt" },
   "menuLabel_hiddenFooter": { "message": "Skjult bunntekst" },
   "menuLabel_modeNotifs": { "message": "Modusvarsler" },
   "menuLabel_about": { "message": "Om" },

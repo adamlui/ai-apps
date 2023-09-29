@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Hávaxnari Chatbox" },
   "menuLabel_widerChatbox": { "message": "Víðari spjallhólf" },
+  "menuLabel_hiddenHeader": { "message": "Falinn haus" },
   "menuLabel_hiddenFooter": { "message": "Falinn fótur" },
   "menuLabel_modeNotifs": { "message": "Tilkynningar um ham" },
   "menuLabel_about": { "message": "Um" },

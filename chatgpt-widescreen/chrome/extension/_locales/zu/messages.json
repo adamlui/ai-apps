@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Amafasitela agcwele" },
   "menuLabel_tallerChatbox": { "message": "Ibhokisi lokuxoxa elide" },
   "menuLabel_widerChatbox": { "message": "Ibhokisi lengxoxo elibanzi" },
+  "menuLabel_hiddenHeader": { "message": "Isihloko Esifihliwe" },
   "menuLabel_hiddenFooter": { "message": "I-Footer Efihliwe" },
   "menuLabel_modeNotifs": { "message": "Izaziso Zendlela" },
   "menuLabel_about": { "message": "Mayelana" },

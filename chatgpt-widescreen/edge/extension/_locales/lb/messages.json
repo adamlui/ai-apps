@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Méi Chatbox" },
   "menuLabel_widerChatbox": { "message": "CAA -" },
+  "menuLabel_hiddenHeader": { "message": "Verstoppt Header" },
   "menuLabel_hiddenFooter": { "message": "CAA -" },
   "menuLabel_modeNotifs": { "message": "Modus Notifikatiounen" },
   "menuLabel_about": { "message": "Iwwer Qt" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Leveämpi keskusteluruutu" },
+  "menuLabel_hiddenHeader": { "message": "Piilotettu ylätunniste" },
   "menuLabel_hiddenFooter": { "message": "Piilotettu alatunniste" },
   "menuLabel_modeNotifs": { "message": "Tilailmoitukset" },
   "menuLabel_about": { "message": "Tietoa" },

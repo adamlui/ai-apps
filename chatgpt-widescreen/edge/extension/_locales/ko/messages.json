@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "더 큰 창" },
   "menuLabel_tallerChatbox": { "message": "더 높은 채팅 상자" },
   "menuLabel_widerChatbox": { "message": "더 넓은 채팅 상자" },
+  "menuLabel_hiddenHeader": { "message": "숨겨진 헤더" },
   "menuLabel_hiddenFooter": { "message": "숨겨진 바닥글" },
   "menuLabel_modeNotifs": { "message": "모드 알림" },
   "menuLabel_about": { "message": "소개" },

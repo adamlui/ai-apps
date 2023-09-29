@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Более Широкие Окна" },
   "menuLabel_tallerChatbox": { "message": "Высокий Чатбокс" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
+  "menuLabel_hiddenHeader": { "message": "Скрытый заголовок страницы" },
   "menuLabel_hiddenFooter": { "message": "Скрытый подвал" },
   "menuLabel_modeNotifs": { "message": "Уведомления о Режиме" },
   "menuLabel_about": { "message": "Шифр." },

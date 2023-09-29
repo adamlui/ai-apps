@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Толтырғыш терезелер" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Кеңірек чат жәшігі" },
+  "menuLabel_hiddenHeader": { "message": "Жасырын айдар" },
   "menuLabel_hiddenFooter": { "message": "Жасырын төменгі аяқ киім" },
   "menuLabel_modeNotifs": { "message": "Режим туралы хабарландырулар" },
   "menuLabel_about": { "message": "Туралы" },

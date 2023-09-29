@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Szersze okno czatu" },
+  "menuLabel_hiddenHeader": { "message": "Ukryty nagłówek" },
   "menuLabel_hiddenFooter": { "message": "Ukryta stopka" },
   "menuLabel_modeNotifs": { "message": "Powiadomienia o trybie" },
   "menuLabel_about": { "message": "Około" },

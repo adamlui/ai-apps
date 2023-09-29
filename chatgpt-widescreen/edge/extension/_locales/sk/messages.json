@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Širší chatbox" },
+  "menuLabel_hiddenHeader": { "message": "Skrytá hlavička" },
   "menuLabel_hiddenFooter": { "message": "Skrytá päta" },
   "menuLabel_modeNotifs": { "message": "Oznámenia o režime" },
   "menuLabel_about": { "message": "O nás " },
