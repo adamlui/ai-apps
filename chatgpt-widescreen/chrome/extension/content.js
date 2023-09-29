@@ -122,7 +122,7 @@
                                 if (!config.notifHidden) // ... + notify
                                     notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                         }}
-                        if (config.tcbDisabled) updateTweaksStyle()
+                        if (!config.tcbDisabled || config.hiddenFooter) updateTweaksStyle()
                         if (config.wcbDisabled) updateWidescreenStyle()
                         prevSessionChecked = true
                     }

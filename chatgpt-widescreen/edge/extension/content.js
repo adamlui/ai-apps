@@ -122,7 +122,7 @@
                                 if (!config.notifHidden) // ... + notify
                                     notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                         }}
-                        if (config.tcbDisabled) updateTweaksStyle()
+                        if (!config.tcbDisabled || config.hiddenFooter) updateTweaksStyle()
                         if (config.wcbDisabled) updateWidescreenStyle()
                         prevSessionChecked = true
                     }
@@ -179,7 +179,7 @@
                 chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
                     + ' v' + version + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
                     + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
-                        + 'href="' + config.ghRepoURL + '/commits/main/chrome/extension" '
+                        + 'href="' + config.githubURL + '/commits/main/chrome/extension" '
                         + '>' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
                 function reloadChrome() { chrome.runtime.reload() } // update button
             )
