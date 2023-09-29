@@ -20,7 +20,7 @@
         "resources": ["lib/settings-utils.js", "lib/chatgpt.js"]
     }],
     "content_scripts": [{
-        "matches": ["https://chat.openai.com/*", "https://poe.com/*"],
+        "matches": ["<all_urls>"],
         "js": ["content.js"]
     }],
     "background": { "service_worker": "background.js" }
