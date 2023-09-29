@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.29
+// @version             2023.9.29.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -266,7 +266,7 @@
         greasyForkURL: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode' }
     config.updateURL = config.greasyForkURL + '/code/chatgpt-widescreen-mode.meta.js'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'wcbDisabled', 'hiddenFooter', 'wideScreen')
+    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'wcbDisabled', 'hiddenHeader', 'hiddenFooter', 'wideScreen')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -379,6 +379,17 @@
             updateWidescreenStyle()
             if (!config.notifHidden)
                 notify(`${ messages.menuLabel_widerChatbox }: ${ state.word[+config.wcbDisabled] }`)
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to toggle hidden OpenAI header
+        const hhLabel = state.symbol[+!config.hiddenHeader] + ' Hidden Header'
+                      + state.separator + state.word[+!config.hiddenHeader]
+        menuIDs.push(GM_registerMenuCommand(hhLabel, () => {
+            saveSetting('hiddenHeader', !config.hiddenHeader)
+            updateTweaksStyle()
+            if (!config.notifHidden)
+                notify(`Hidden Header: ${ state.word[+!config.hiddenHeader] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -625,6 +636,7 @@
                   inputSelector + ' { padding-right: 148px } '  // narrow input to accomdate buttons
                 + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
                     + 'position: relative ; left: 66px ; top: 7px } ' // ...below avatar to avoid cropping
+                + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) : '' ) // hide footer
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
     }
@@ -685,6 +697,7 @@
     // Create/apply general style tweaks
     const tweaksStyle = document.createElement('style'),
           tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
+          hhStyle = 'header { display: none !important }'
           hfStyle = 'div[class*="bottom"] > div { padding: .8rem 0 0 }' // reduce footer v-padding
                   + 'div[class*="bottom"] > div > span,' // hide footer text...
                       + ' div[class*="bottom"] button[id*="menu-button"] { display: none }' // ...and help button
