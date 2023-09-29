@@ -32,7 +32,10 @@
 
     // Localize labels
     document.querySelectorAll('[data-locale]').forEach(elem => {
-        elem.innerText = chrome.i18n.getMessage(elem.dataset.locale) })
+        const localeKeys = elem.dataset.locale.split(' '),
+              translatedText = localeKeys.map(key => chrome.i18n.getMessage(key)).join(' ');
+        elem.innerText = translatedText;
+    });
 
     // Add main toggle click-listener
     mainToggle.addEventListener('change', () => {
