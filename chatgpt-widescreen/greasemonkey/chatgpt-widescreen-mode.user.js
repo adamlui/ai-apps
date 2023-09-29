@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.28
+// @version             2023.9.28.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -329,9 +329,10 @@
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
-                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`)
-                            updateAlert.querySelectorAll('button')[1].textContent = messages.buttonLabel_update
-                            updateAlert.querySelectorAll('button')[0].textContent = messages.buttonLabel_dismiss
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
+                                  updateButtons = updateAlert.querySelectorAll('button')
+                            updateButtons[1].textContent = messages.buttonLabel_update
+                            updateButtons[0].textContent = messages.buttonLabel_dismiss
                         }
 
                         return
