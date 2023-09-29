@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Шырэйшая чат-бокс" },
   "menuLabel_hiddenFooter": { "message": "Схаваны ніжні калантытул" },
   "menuLabel_modeNotifs": { "message": "Рэжым апавяшчэнняў" },
+  "menuLabel_about": { "message": "Пра нас" },
   "menuLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
   "menuLabel_disabled": { "message": "Адключаны (усталяваны пашырэнне)" },
   "mode_wideScreen": { "message": "Шырокі экран" },

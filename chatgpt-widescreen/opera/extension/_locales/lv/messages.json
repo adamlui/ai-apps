@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Plašāka tērzētava" },
   "menuLabel_hiddenFooter": { "message": "Slēptā kājene" },
   "menuLabel_modeNotifs": { "message": "Režīma paziņojumi" },
+  "menuLabel_about": { "message": "Par produktu" },
   "menuLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi." },
   "menuLabel_disabled": { "message": "Atspējots (paplašinājums instalēts)" },
   "mode_wideScreen": { "message": "Platekrāns" },

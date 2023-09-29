@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Mas lapad nga Chatbox" },
   "menuLabel_hiddenFooter": { "message": "Natago nga Footer" },
   "menuLabel_modeNotifs": { "message": "Mga Notipikasyon sa Mode" },
+  "menuLabel_about": { "message": "Mahitungod" },
   "menuLabel_updateCheck": { "message": "Susiha alang sa Mga Update" },
   "menuLabel_disabled": { "message": "Disabled (mga sumpay_usba)" },
   "mode_wideScreen": { "message": "Hapit nalukop sa kaumahan ang" },

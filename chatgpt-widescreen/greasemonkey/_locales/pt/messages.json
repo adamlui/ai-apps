@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Caixa de chat mais ampla" },
   "menuLabel_hiddenFooter": { "message": "Rodapé oculto" },
   "menuLabel_modeNotifs": { "message": "Notificações de Modo" },
+  "menuLabel_about": { "message": "Quem somos" },
   "menuLabel_updateCheck": { "message": "Verificar Atualizações" },
   "menuLabel_disabled": { "message": "Desativado (extensão instalada)" },
   "mode_wideScreen": { "message": "Tela Ampla" },

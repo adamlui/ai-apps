@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Beýik Çat kutusu" },
   "menuLabel_hiddenFooter": { "message": "Gizlin aýak" },
   "menuLabel_modeNotifs": { "message": "Moda Häzirleşdirmeleri" },
+  "menuLabel_about": { "message": "_Barada" },
   "menuLabel_updateCheck": { "message": "Täzelenmeleri barla" },
   "menuLabel_disabled": { "message": "Öçürilen (giňeltme gurnalan)" },
   "mode_wideScreen": { "message": "Keng Ekran" },

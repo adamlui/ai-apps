@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "وسیع تر چیٹ باکس" },
   "menuLabel_hiddenFooter": { "message": "پوشیدہ فوٹر" },
   "menuLabel_modeNotifs": { "message": "موڈ نوٹیفکیشنز (Mode Notifications)" },
+  "menuLabel_about": { "message": "متعلق" },
   "menuLabel_updateCheck": { "message": "اپ ڈیٹس کی پڑتال کریں" },
   "menuLabel_disabled": { "message": "غیر فعال (توسیع انسٹال ہے)" },
   "mode_wideScreen": { "message": "Wide screen" },

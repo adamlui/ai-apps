@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "По - широка чат кутия" },
   "menuLabel_hiddenFooter": { "message": "Скрит долен колонтитул" },
   "menuLabel_modeNotifs": { "message": "Известия за режим" },
+  "menuLabel_about": { "message": "Относно" },
   "menuLabel_updateCheck": { "message": "Проверка за обновяване" },
   "menuLabel_disabled": { "message": "Деактивирано (разширението е инсталирано)" },
   "mode_wideScreen": { "message": "Широк екран" },

@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Szélesebb chatbox" },
   "menuLabel_hiddenFooter": { "message": "Rejtett lábléc" },
   "menuLabel_modeNotifs": { "message": "Üzemmód értesítések" },
+  "menuLabel_about": { "message": "A" },
   "menuLabel_updateCheck": { "message": "Frissítések keresése" },
   "menuLabel_disabled": { "message": "Letiltva (bővítmény telepítve)" },
   "mode_wideScreen": { "message": "Szélesképernyő" },

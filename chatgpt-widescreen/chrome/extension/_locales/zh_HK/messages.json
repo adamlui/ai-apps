@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "更廣泛的聊天室" },
   "menuLabel_hiddenFooter": { "message": "隱藏頁尾" },
   "menuLabel_modeNotifs": { "message": "模式通知" },
+  "menuLabel_about": { "message": "關於我們" },
   "menuLabel_updateCheck": { "message": "檢查更新" },
   "menuLabel_disabled": { "message": "已禁用（擴展已安裝）" },
   "mode_wideScreen": { "message": "寬螢幕" },

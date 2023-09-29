@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "چت باکس گسترده تر" },
   "menuLabel_hiddenFooter": { "message": "پاورقی پنهان" },
   "menuLabel_modeNotifs": { "message": "اعلان‌های حالت" },
+  "menuLabel_about": { "message": "درباره" },
   "menuLabel_updateCheck": { "message": "بررسی به روز رسانی" },
   "menuLabel_disabled": { "message": "غیرفعال (برنامه افزودنی نصب شده)" },
   "mode_wideScreen": { "message": "تمام صفحه" },

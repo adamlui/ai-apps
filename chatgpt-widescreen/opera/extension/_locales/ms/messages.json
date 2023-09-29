@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Kotak Sembang Lebih Luas" },
   "menuLabel_hiddenFooter": { "message": "Pengaki Tersembunyi" },
   "menuLabel_modeNotifs": { "message": "Pemberitahuan Mod" },
+  "menuLabel_about": { "message": "" },
   "menuLabel_updateCheck": { "message": "Semak Kemaskini" },
   "menuLabel_disabled": { "message": "Dilumpuhkan (sambungan dipasang)" },
   "mode_wideScreen": { "message": "Skrin lebar" },

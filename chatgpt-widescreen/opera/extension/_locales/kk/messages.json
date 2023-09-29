@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Кеңірек чат жәшігі" },
   "menuLabel_hiddenFooter": { "message": "Жасырын төменгі аяқ киім" },
   "menuLabel_modeNotifs": { "message": "Режим туралы хабарландырулар" },
+  "menuLabel_about": { "message": "Туралы" },
   "menuLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
   "menuLabel_disabled": { "message": "Өшірілген (кеңейтім орнатылған)" },
   "mode_wideScreen": { "message": "Кең экран" },

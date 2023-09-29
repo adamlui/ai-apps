@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Videtur Chatbox" },
   "menuLabel_hiddenFooter": { "message": "Footerus Auxilium" },
   "menuLabel_modeNotifs": { "message": "Notre sécurité" },
+  "menuLabel_about": { "message": "De Hac Re" },
   "menuLabel_updateCheck": { "message": "Votre mail pour notre newsletter" },
   "menuLabel_disabled": { "message": "Votre nom (nécessaire)" },
   "mode_wideScreen": { "message": "Screen screen screen" },

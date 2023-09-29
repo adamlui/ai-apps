@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Breitere Chatbox" },
   "menuLabel_hiddenFooter": { "message": "Ausgeblendete Fußzeile" },
   "menuLabel_modeNotifs": { "message": "Modusbenachrichtigungen" },
+  "menuLabel_about": { "message": "Über" },
   "menuLabel_updateCheck": { "message": "Nach Updates suchen" },
   "menuLabel_disabled": { "message": "Deaktiviert (Erweiterung installiert)" },
   "mode_wideScreen": { "message": "Breitbildmodus" },

@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Kengroq chat qutisi" },
   "menuLabel_hiddenFooter": { "message": "Yashirin altbilgi" },
   "menuLabel_modeNotifs": { "message": "Rejim bildirishnomalari" },
+  "menuLabel_about": { "message": "Qisqacha ma'lumot" },
   "menuLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
   "menuLabel_disabled": { "message": "O&#39;chirilgan (kengaytma o&#39;rnatilgan)" },
   "mode_wideScreen": { "message": "Keng ekran" },

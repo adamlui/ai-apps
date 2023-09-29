@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Širší chatbox" },
   "menuLabel_hiddenFooter": { "message": "Skrytá päta" },
   "menuLabel_modeNotifs": { "message": "Oznámenia o režime" },
+  "menuLabel_about": { "message": "O nás " },
   "menuLabel_updateCheck": { "message": "Zistiť novú verziu" },
   "menuLabel_disabled": { "message": "Zakázané (rozšírenie nainštalované)" },
   "mode_wideScreen": { "message": "Širokouhlá obrazovka" },

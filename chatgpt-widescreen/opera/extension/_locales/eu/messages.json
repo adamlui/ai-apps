@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Chatbox zabalagoa" },
   "menuLabel_hiddenFooter": { "message": "Ezkutuko orri-oina" },
   "menuLabel_modeNotifs": { "message": "Moduaren jakinarazpenak" },
+  "menuLabel_about": { "message": "Egileari Buruz" },
   "menuLabel_updateCheck": { "message": "Begiratu _eguneraketak: " },
   "menuLabel_disabled": { "message": "Desgaituta (luzapena instalatuta)" },
   "mode_wideScreen": { "message": "Pantaila zabala" },

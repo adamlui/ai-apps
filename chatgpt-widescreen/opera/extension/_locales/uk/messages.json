@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Ширше вікно чату" },
   "menuLabel_hiddenFooter": { "message": "Прихований нижній колонтитул" },
   "menuLabel_modeNotifs": { "message": "Сповіщення про Режим" },
+  "menuLabel_about": { "message": "Про нас" },
   "menuLabel_updateCheck": { "message": "Перевірити Оновлення" },
   "menuLabel_disabled": { "message": "Вимкнено (розширення встановлено)" },
   "mode_wideScreen": { "message": "Широкий екран" },

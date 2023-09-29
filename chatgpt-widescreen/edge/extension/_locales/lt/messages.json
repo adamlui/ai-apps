@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Platesnė pokalbių dėžutė" },
   "menuLabel_hiddenFooter": { "message": "Paslėpta poraštė" },
   "menuLabel_modeNotifs": { "message": "Režimo pranešimai" },
+  "menuLabel_about": { "message": "Apie" },
   "menuLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
   "menuLabel_disabled": { "message": "Išjungta (įdiegtas plėtinys)" },
   "mode_wideScreen": { "message": "plačiaekranis" },

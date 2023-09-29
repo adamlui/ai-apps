@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Daha geniş söhbət qutusu" },
   "menuLabel_hiddenFooter": { "message": "Gizli Altbilgi" },
   "menuLabel_modeNotifs": { "message": "Rejim Bildirişləri" },
+  "menuLabel_about": { "message": "Haqqında" },
   "menuLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
   "menuLabel_disabled": { "message": "Deaktiv edildi (genişlənmə quraşdırıldı)" },
   "mode_wideScreen": { "message": "Geniş ekran" },

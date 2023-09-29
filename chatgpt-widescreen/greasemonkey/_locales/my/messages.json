@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "ကျယ်ပြန့်သော Chatbox" },
   "menuLabel_hiddenFooter": { "message": "ဖုံးကွယ်ထားသော Footer" },
   "menuLabel_modeNotifs": { "message": "Mode အသိပေးချက်များ" },
+  "menuLabel_about": { "message": "အကြောင်း" },
   "menuLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "menuLabel_disabled": { "message": "ပိတ်ထားသည် (တိုးချဲ့မှု တပ်ဆင်ထားသည်)" },
   "mode_wideScreen": { "message": "ကျယ်ပြန့်သောမျက်နှာပြင်" },

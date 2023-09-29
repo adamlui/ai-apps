@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Lahi ange Chatbox" },
   "menuLabel_hiddenFooter": { "message": "Footer ʻoku fufuuʻi" },
   "menuLabel_modeNotifs": { "message": "Fanongonongo ki he Mode" },
+  "menuLabel_about": { "message": "Fekauʻaki mo e" },
   "menuLabel_updateCheck": { "message": "Vakaiʻi e Ngaahi Fakamatala Fakamuimuitahá" },
   "menuLabel_disabled": { "message": "Faingataʻaʻia fakaesino (fokotuʻu e extension)" },
   "mode_wideScreen": { "message": "Screen falahi" },

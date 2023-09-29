@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Pi laj Chatbox" },
   "menuLabel_hiddenFooter": { "message": "Footer Hidden" },
   "menuLabel_modeNotifs": { "message": "Notifikasyon Mode" },
+  "menuLabel_about": { "message": "Apwopo" },
   "menuLabel_updateCheck": { "message": "Tcheke pou Updates" },
   "menuLabel_disabled": { "message": "Andikape (ekstansyon enstale)" },
   "mode_wideScreen": { "message": "Wide ekran" },

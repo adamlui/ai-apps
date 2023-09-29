@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "더 넓은 채팅 상자" },
   "menuLabel_hiddenFooter": { "message": "숨겨진 바닥글" },
   "menuLabel_modeNotifs": { "message": "모드 알림" },
+  "menuLabel_about": { "message": "소개" },
   "menuLabel_updateCheck": { "message": "업데이트 확인" },
   "menuLabel_disabled": { "message": "사용 중지됨 (확장 설치됨)" },
   "mode_wideScreen": { "message": "와이드 스크린" },

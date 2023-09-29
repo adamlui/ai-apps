@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "更宽的聊天室" },
   "menuLabel_hiddenFooter": { "message": "隐藏页脚" },
   "menuLabel_modeNotifs": { "message": "模式通知" },
+  "menuLabel_about": { "message": "关于" },
   "menuLabel_updateCheck": { "message": "检查更新" },
   "menuLabel_disabled": { "message": "已禁用（扩展已安装）" },
   "mode_wideScreen": { "message": "宽屏模式" },

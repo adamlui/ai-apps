@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Víðari spjallhólf" },
   "menuLabel_hiddenFooter": { "message": "Falinn fótur" },
   "menuLabel_modeNotifs": { "message": "Tilkynningar um ham" },
+  "menuLabel_about": { "message": "Um" },
   "menuLabel_updateCheck": { "message": "Leita að uppfærslum" },
   "menuLabel_disabled": { "message": "Óvirkt (viðbót uppsett)" },
   "mode_wideScreen": { "message": "Breiður skjár" },

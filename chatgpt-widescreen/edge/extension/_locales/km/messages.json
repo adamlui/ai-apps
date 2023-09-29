@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "ប្រអប់ជជែកទូលំទូលាយ" },
   "menuLabel_hiddenFooter": { "message": "បាតកថា ដែល បាន លាក់" },
   "menuLabel_modeNotifs": { "message": "ការជូនដំណឹងអំពីម៉ូដ" },
+  "menuLabel_about": { "message": "អំពី" },
   "menuLabel_updateCheck": { "message": "ពិនិត្យរកអាប់ដេត" },
   "menuLabel_disabled": { "message": "បានបិទ (បានបញ្ចូលផ្នែកបន្ថែម)" },
   "mode_wideScreen": { "message": "អេក្រង់ធំទូលាយ" },

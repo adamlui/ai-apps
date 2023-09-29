@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "વિશાળ ચેટબોક્સ" },
   "menuLabel_hiddenFooter": { "message": "છુપાયેલ ફુટર" },
   "menuLabel_modeNotifs": { "message": "સ્થિતિ સૂચનાઓ" },
+  "menuLabel_about": { "message": "માહિતી " },
   "menuLabel_updateCheck": { "message": "નવાં ભાગ(ઓ) માટે ચકાસો" },
   "menuLabel_disabled": { "message": "અક્ષમ (એક્સટેન્શન સ્થાપિત)" },
   "mode_wideScreen": { "message": "વિશાળ સ્ક્રીન" },

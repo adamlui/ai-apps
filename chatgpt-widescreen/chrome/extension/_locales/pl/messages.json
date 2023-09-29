@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Szersze okno czatu" },
   "menuLabel_hiddenFooter": { "message": "Ukryta stopka" },
   "menuLabel_modeNotifs": { "message": "Powiadomienia o trybie" },
+  "menuLabel_about": { "message": "Około" },
   "menuLabel_updateCheck": { "message": "Sprawdzanie aktualizacji" },
   "menuLabel_disabled": { "message": "Wyłączone (zainstalowane rozszerzenie)" },
   "mode_wideScreen": { "message": "Ekran panoramiczny" },

@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "སྦྲེལ་མཐུད།" },
   "menuLabel_hiddenFooter": { "message": "གསང་བཞག་མི་རྐང་པ་" },
   "menuLabel_modeNotifs": { "message": "གསལ་བཀོད་འབད་ཡོད་པའི་ཐོ་ཡིག་ཚུ་" },
+  "menuLabel_about": { "message": "སྐོར་ལས་" },
   "menuLabel_updateCheck": { "message": "བརྟག་ཞིབ་སྣོད་འཛིན་ཚུ་ དུས་མཐུན་བཟོ་ནི་ཨིན་ན?" },
   "menuLabel_disabled": { "message": "ནུས་མེད་བཀྲམ་གཏང་། (_F)" },
   "mode_wideScreen": { "message": "གཟུགས་བརྙན།" },

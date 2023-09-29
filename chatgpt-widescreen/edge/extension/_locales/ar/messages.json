@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "صندوق دردشة أوسع" },
   "menuLabel_hiddenFooter": { "message": "تذييل مخفي" },
   "menuLabel_modeNotifs": { "message": "إشعارات الوضع" },
+  "menuLabel_about": { "message": "عن وزارة الثقافة" },
   "menuLabel_updateCheck": { "message": "مرابة التحديثات" },
   "menuLabel_disabled": { "message": "معطل (تم تثبيت الإضافة)" },
   "mode_wideScreen": { "message": "شاشة عريضة" },

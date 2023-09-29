@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "फराकिलो च्याटबक्स" },
   "menuLabel_hiddenFooter": { "message": "लुकेको फुटर" },
   "menuLabel_modeNotifs": { "message": "मोड सूचनाहरू" },
+  "menuLabel_about": { "message": "बारेमा" },
   "menuLabel_updateCheck": { "message": "अद्यावधिकका लागि जाँच गर्नुहोस्" },
   "menuLabel_disabled": { "message": "अक्षम पारियो (विस्तार स्थापना गरियो)" },
   "mode_wideScreen": { "message": "फराकिलो पर्दा" },

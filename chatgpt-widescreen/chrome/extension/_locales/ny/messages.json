@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Lumikizanani nafe" },
   "menuLabel_hiddenFooter": { "message": "ZOKHUDZA" },
   "menuLabel_modeNotifs": { "message": "Mfundo zazinsinsi" },
+  "menuLabel_about": { "message": "Zokhudza" },
   "menuLabel_updateCheck": { "message": "Onani Zosintha" },
   "menuLabel_disabled": { "message": "Olemala (Extension anaikidwa)" },
   "mode_wideScreen": { "message": "Chithunzi chazitali" },

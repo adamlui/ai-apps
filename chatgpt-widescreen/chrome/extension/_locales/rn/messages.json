@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Wider Chatbox None None" },
   "menuLabel_hiddenFooter": { "message": "Umurenge uhishijwe" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications None None" },
+  "menuLabel_about": { "message": "Ku vyerekeye" },
   "menuLabel_updateCheck": { "message": "Raba Raba Updates" },
   "menuLabel_disabled": { "message": "Narumugaiye (extension)" },
   "mode_wideScreen": { "message": "Wide screen None None" },

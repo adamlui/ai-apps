@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "ווידער טשאַטבאָקס" },
   "menuLabel_hiddenFooter": { "message": "פאַרבאָרגן פאָאָטער" },
   "menuLabel_modeNotifs": { "message": "מאָדע נאָטיפיקאַטיאָנס" },
+  "menuLabel_about": { "message": "dialogs-action" },
   "menuLabel_updateCheck": { "message": "זוך נייע ווערסיעס" },
   "menuLabel_disabled": { "message": "פאַרקריפּלט (פאַרלענגערונג אינסטאַלירן)" },
   "mode_wideScreen": { "message": "ברייט פאַרשטעלן" },

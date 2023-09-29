@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Ibhokisi Yencoko Ebanzi" },
   "menuLabel_hiddenFooter": { "message": "Umbhalo Ongezantsi Ofihliweyo" },
   "menuLabel_modeNotifs": { "message": "Imiyalezo Yendlela" },
+  "menuLabel_about": { "message": "Malunga" },
   "menuLabel_updateCheck": { "message": "Jonga Izinto Ezihlaziyiweyo" },
   "menuLabel_disabled": { "message": "Ikhubazekile (isandiso sifakiweyo)" },
   "mode_wideScreen": { "message": "Iskrini esibanzi" },

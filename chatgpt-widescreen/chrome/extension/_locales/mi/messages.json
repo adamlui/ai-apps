@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
   "menuLabel_hiddenFooter": { "message": "Ko te waewae huna" },
   "menuLabel_modeNotifs": { "message": "Nga whakamohiotanga aratau" },
+  "menuLabel_about": { "message": "Mō" },
   "menuLabel_updateCheck": { "message": "Tirohia ngā whakahōu" },
   "menuLabel_disabled": { "message": "Kua monokia (kua oti te whakauru)" },
   "mode_wideScreen": { "message": "Mata Whānui" },

@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Laiem vestluskast" },
   "menuLabel_hiddenFooter": { "message": "Peidetud jalus" },
   "menuLabel_modeNotifs": { "message": "Režiimi teated" },
+  "menuLabel_about": { "message": "Info" },
   "menuLabel_updateCheck": { "message": "Kontrolli uuendusi" },
   "menuLabel_disabled": { "message": "Keelatud (laiend installitud)" },
   "mode_wideScreen": { "message": "Laiekraan" },

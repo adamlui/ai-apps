@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Chatbox più ampia" },
   "menuLabel_hiddenFooter": { "message": "Nascondi Footer" },
   "menuLabel_modeNotifs": { "message": "Notifiche di modalità" },
+  "menuLabel_about": { "message": "Informazioni generali" },
   "menuLabel_updateCheck": { "message": "Verifica aggiornamenti" },
   "menuLabel_disabled": { "message": "Disabilitato (estensione installata)" },
   "mode_wideScreen": { "message": "Schermo largo" },

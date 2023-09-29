@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Casetă de chat mai largă" },
   "menuLabel_hiddenFooter": { "message": "Subsol ascuns" },
   "menuLabel_modeNotifs": { "message": "Notificări de mod" },
+  "menuLabel_about": { "message": "Despre" },
   "menuLabel_updateCheck": { "message": "Caută actualizări" },
   "menuLabel_disabled": { "message": "Dezactivat (extensie instalată)" },
   "mode_wideScreen": { "message": "Ecran lat" },

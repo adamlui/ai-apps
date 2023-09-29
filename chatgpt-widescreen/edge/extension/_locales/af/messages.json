@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Wyer Chatbox" },
   "menuLabel_hiddenFooter": { "message": "Versteekte Voetskrif" },
   "menuLabel_modeNotifs": { "message": "Modus Kennisgewings" },
+  "menuLabel_about": { "message": "Omtrent" },
   "menuLabel_updateCheck": { "message": "_Kontroleer vir bywerkings: " },
   "menuLabel_disabled": { "message": "Gestremde (uitbreiding geïnstalleer)" },
   "mode_wideScreen": { "message": "Wye skerm" },

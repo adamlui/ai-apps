@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "แชทบ็อกซ์ที่กว้างขึ้น" },
   "menuLabel_hiddenFooter": { "message": "ส่วนท้ายที่ซ่อนอยู่" },
   "menuLabel_modeNotifs": { "message": "การแจ้งเตือนโหมด" },
+  "menuLabel_about": { "message": "เกี่ยวกับ" },
   "menuLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
   "menuLabel_disabled": { "message": "ปิดการใช้งาน (ติดตั้งส่วนขยายแล้ว)" },
   "mode_wideScreen": { "message": "หน้าจอกว้าง" },

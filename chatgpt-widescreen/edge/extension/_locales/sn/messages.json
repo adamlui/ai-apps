@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Taura nesu" },
   "menuLabel_hiddenFooter": { "message": "Yakavanzwa Footer" },
   "menuLabel_modeNotifs": { "message": "Ziviso dzeModhi" },
+  "menuLabel_about": { "message": "Nezvedu" },
   "menuLabel_updateCheck": { "message": "Ongorora Updates" },
   "menuLabel_disabled": { "message": "Akaremara (kuwedzera yakaiswa)" },
   "mode_wideScreen": { "message": "Wide chidzitiro" },

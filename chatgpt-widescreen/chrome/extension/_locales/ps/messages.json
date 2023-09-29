@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
   "menuLabel_hiddenFooter": { "message": "پټ پښۍ" },
   "menuLabel_modeNotifs": { "message": "خبرتیاوې" },
+  "menuLabel_about": { "message": "په هکله" },
   "menuLabel_updateCheck": { "message": "د تازه معلوماتو لپاره وګورئ" },
   "menuLabel_disabled": { "message": "لګول شوی (لګول شوی)" },
   "mode_wideScreen": { "message": "پرده پرده پرده" },

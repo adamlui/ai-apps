@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Agasanduku k'ibiganiro kagutse" },
   "menuLabel_hiddenFooter": { "message": "Imperampangano" },
   "menuLabel_modeNotifs": { "message": "Kumenyesha Uburyo" },
+  "menuLabel_about": { "message": "Bigyanye" },
   "menuLabel_updateCheck": { "message": "Kugirango" },
   "menuLabel_disabled": { "message": "Umugereka" },
   "mode_wideScreen": { "message": "Mugaragaza" },

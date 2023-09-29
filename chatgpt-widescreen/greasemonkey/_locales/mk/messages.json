@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Пошироко поле за разговор" },
   "menuLabel_hiddenFooter": { "message": "Скриена подножје" },
   "menuLabel_modeNotifs": { "message": "Известувања за режим" },
+  "menuLabel_about": { "message": "За" },
   "menuLabel_updateCheck": { "message": "Провери за нова верзија" },
   "menuLabel_disabled": { "message": "Оневозможено (наставката е инсталирана)" },
   "mode_wideScreen": { "message": "Широк екран" },

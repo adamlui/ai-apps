@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Širše polje za klepet" },
   "menuLabel_hiddenFooter": { "message": "Skrita noga" },
   "menuLabel_modeNotifs": { "message": "Obvestila o načinu" },
+  "menuLabel_about": { "message": "Vizitka" },
   "menuLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
   "menuLabel_disabled": { "message": "Onemogočeno (razširitev nameščena)" },
   "mode_wideScreen": { "message": "Širok zaslon" },

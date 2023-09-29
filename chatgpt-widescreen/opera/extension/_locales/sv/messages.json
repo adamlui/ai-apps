@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Bredare chattruta" },
   "menuLabel_hiddenFooter": { "message": "Dölj sidfot" },
   "menuLabel_modeNotifs": { "message": "Lägesaviseringar" },
+  "menuLabel_about": { "message": "Om" },
   "menuLabel_updateCheck": { "message": "Kolla efter uppdateringar" },
   "menuLabel_disabled": { "message": "Inaktiverad (tillägg installerat)" },
   "mode_wideScreen": { "message": "bredbildsformat" },

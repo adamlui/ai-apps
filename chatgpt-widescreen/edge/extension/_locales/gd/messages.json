@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Bocs cabadaich nas fharsainge" },
   "menuLabel_hiddenFooter": { "message": "Buntàta falaichte" },
   "menuLabel_modeNotifs": { "message": "Brathan Modh" },
+  "menuLabel_about": { "message": "Mar deidhinn" },
   "menuLabel_updateCheck": { "message": "Thoir sùil airson ùrachaidhean" },
   "menuLabel_disabled": { "message": "Cuir à comas (leudachan stàlaichte)" },
   "mode_wideScreen": { "message": "Sgrìn fharsaing" },

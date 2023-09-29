@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Kaxxa taċ-chat usa'" },
   "menuLabel_hiddenFooter": { "message": "Footer moħbija" },
   "menuLabel_modeNotifs": { "message": "Notifiki tal-Modalità" },
+  "menuLabel_about": { "message": "Dwar" },
   "menuLabel_updateCheck": { "message": "Iċċekkja għall-aġġornamenti?" },
   "menuLabel_disabled": { "message": "Diżattivat (estensjoni installata)" },
   "mode_wideScreen": { "message": "Skrin wiesa'" },

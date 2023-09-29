@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Širi okvir za razgovor" },
   "menuLabel_hiddenFooter": { "message": "Skriveno podnožje" },
   "menuLabel_modeNotifs": { "message": "Obavijesti o načinu rada" },
+  "menuLabel_about": { "message": "O nama" },
   "menuLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
   "menuLabel_disabled": { "message": "Onemogućeno (proširenje instalirano)" },
   "mode_wideScreen": { "message": "Široki zaslon" },

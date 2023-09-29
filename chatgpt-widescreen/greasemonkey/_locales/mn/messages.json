@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
   "menuLabel_hiddenFooter": { "message": "Нуусан хөл" },
   "menuLabel_modeNotifs": { "message": "Үгүй Тайлбар" },
+  "menuLabel_about": { "message": "Бидний тухай" },
   "menuLabel_updateCheck": { "message": "Шинэчлэлтийг шинэчлэх" },
   "menuLabel_disabled": { "message": "Тохиргоо (Дэмжлэг)" },
   "mode_wideScreen": { "message": "Цонхны дэлгэц" },

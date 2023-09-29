@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "Bústia de xat més àmplia" },
   "menuLabel_hiddenFooter": { "message": "Peu de pàgina amagat" },
   "menuLabel_modeNotifs": { "message": "Notificacions de mode" },
+  "menuLabel_about": { "message": "Quant a" },
   "menuLabel_updateCheck": { "message": "Comprova si hi ha actualitzacions" },
   "menuLabel_disabled": { "message": "Desactivat (extensió instal·lada)" },
   "mode_wideScreen": { "message": "Pantalla ampla" },

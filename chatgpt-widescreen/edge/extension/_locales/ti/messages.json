@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "ሰፊሕ ቻትቦክስ" },
   "menuLabel_hiddenFooter": { "message": "እተሓብአ ፉተር" },
   "menuLabel_modeNotifs": { "message": "ሓበሬታታት ኣገባብ" },
+  "menuLabel_about": { "message": "ብዛዕባ" },
   "menuLabel_updateCheck": { "message": "ምምሕያሻት መርምር" },
   "menuLabel_disabled": { "message": "ኣገልግሎት ከም ዘይህብ ምግባር (እተኸልከለ ምንቅስቓስ)" },
   "mode_wideScreen": { "message": "ሰፊሕ ስክሪን" },

@@ -6,6 +6,7 @@
   "menuLabel_widerChatbox": { "message": "విస్తృత చాట్ ‌ బాక్స్" },
   "menuLabel_hiddenFooter": { "message": "దాచిన ఫుటర్" },
   "menuLabel_modeNotifs": { "message": "మోడ్ నోటిఫికేషన్ ‌ లు" },
+  "menuLabel_about": { "message": "గురించి" },
   "menuLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "menuLabel_disabled": { "message": "డిసేబుల్ చేయబడింది (పొడిగింపు ఇన్స్టాల్ చేయబడింది)" },
   "mode_wideScreen": { "message": "వెడల్పు స్క్రీన్" },
