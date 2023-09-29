@@ -4,12 +4,14 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
     // Initialize popup toggles
-    settings.load('fullerWindows', 'tcbDisabled', 'wcbDisabled', 'hiddenFooter', 'notifHidden', 'extensionDisabled')
-        .then(function() { // restore extension/toggle states
+    settings.load('fullerWindows', 'tcbDisabled', 'wcbDisabled',
+                  'hiddenHeader', 'hiddenFooter', 'notifHidden', 'extensionDisabled')
+        .then(() => { // restore extension/toggle states
             mainToggle.checked = !config.extensionDisabled
             fullerWinToggle.checked = config.fullerWindows
             tallerChatboxToggle.checked = !config.tcbDisabled
             widerChatboxToggle.checked = !config.wcbDisabled
+            hiddenHeaderToggle.checked = config.hiddenHeader
             hiddenFooterToggle.checked = config.hiddenFooter
             notificationsToggle.checked = !config.notifHidden
             updateGreyness()
@@ -78,8 +80,24 @@
             widerChatboxToggle.click() 
     })
 
+    // Add Hidden Header toggle label click-listeners
+    const hiddenHeaderToggle = toggles[4],
+          hiddenHeaderLabel = hiddenHeaderToggle.parentNode.parentNode
+    hiddenHeaderToggle.addEventListener('change', () => {
+        settings.save('hiddenHeader', !config.hiddenHeader)
+        syncExtension()
+        settings.load('hiddenHeader').then(() => {
+            if (!config.notifHidden) { // show mode notification if enabled
+                notify('Hidden Header ' + (config.hiddenHeader ? 'ON' : 'OFF'))
+        }})
+    })
+    hiddenHeaderLabel.addEventListener('click', (event) => {
+        if ([hiddenHeaderLabel, document.querySelector('[data-locale*="hiddenHeader"]')].includes(event.target))
+            hiddenHeaderToggle.click() 
+    })
+
     // Add Hidden Footer toggle label click-listeners
-    const hiddenFooterToggle = toggles[4],
+    const hiddenFooterToggle = toggles[5],
           hiddenFooterLabel = hiddenFooterToggle.parentNode.parentNode
     hiddenFooterToggle.addEventListener('change', () => {
         settings.save('hiddenFooter', !config.hiddenFooter)
@@ -95,7 +113,7 @@
     })
 
     // Add notifications toggle label click-listeners
-    const notificationsToggle = toggles[5],
+    const notificationsToggle = toggles[6],
           notificationsLabel = notificationsToggle.parentNode.parentNode
     notificationsToggle.addEventListener('change', function toggleNotifications() {
         settings.save('notifHidden', !config.notifHidden)

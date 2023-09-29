@@ -61,6 +61,7 @@
     // Create/apply general style tweaks
     const tweaksStyle = document.createElement('style'),
           tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
+          hhStyle = 'header { display: none !important }', // hide header
           hfStyle = 'div[class*="bottom"] > div { padding: .8rem 0 0 }' // reduce footer v-padding
                   + 'div[class*="bottom"] > div > span,' // hide footer text...
                       + ' div[class*="bottom"] button[id*="menu-button"] { display: none }' // ...and help button
@@ -112,7 +113,8 @@
         if (type === 'childList' && addedNodes.length) {
 
             // Restore previous session's state + manage toggles
-            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'wcbDisabled', 'hiddenFooter', 'notifHidden', 'extensionDisabled'])
+            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'wcbDisabled',
+                           'hiddenHeader', 'hiddenFooter', 'notifHidden', 'extensionDisabled'])
                 .then(() => { if (!config.extensionDisabled) {                    
                     if (!prevSessionChecked) { // restore previous session's state
                         if (config.wideScreen) toggleMode('wideScreen', 'ON')
@@ -122,7 +124,7 @@
                                 if (!config.notifHidden) // ... + notify
                                     notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                         }}
-                        if (!config.tcbDisabled || config.hiddenFooter) updateTweaksStyle()
+                        if (!config.tcbDisabled || config.hiddenHeader || config.hiddenFooter) updateTweaksStyle()
                         if (config.wcbDisabled) updateWidescreenStyle()
                         prevSessionChecked = true
                     }
@@ -367,6 +369,7 @@
                   inputSelector + ' { padding-right: 148px } '  // narrow input to accomdate buttons
                 + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
                     + 'position: relative ; left: 66px ; top: 7px } ' // ...below avatar to avoid cropping
+                + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) : '' ) // hide footer
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
     }
@@ -387,7 +390,8 @@
     }
 
     syncExtension = () => { // settings, then disable modes or sync taller/wider chatbox
-        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'wcbDisabled', 'hiddenFooter', 'notifHidden')
+        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'wcbDisabled',
+                      'hiddenHeader', 'hiddenFooter', 'notifHidden')
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
                     try { document.head.removeChild(wideScreenStyle) } catch (err) {}
@@ -396,7 +400,7 @@
                     removeBtns()
                 } else {
                     syncFullerWindows(config.fullWindow)
-                    updateTweaksStyle() // sync taller chatbox + hidden footer
+                    updateTweaksStyle() // sync taller chatbox + hidden header/footer
                     updateWidescreenStyle() // sync wider chatbox
     }})}
 
