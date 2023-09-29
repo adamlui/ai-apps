@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.2.0
+// This library is a condensed version of chatgpt.js v2.3.4
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -18,9 +18,9 @@ const chatgpt = {
         const modalContainer = document.createElement('div');
         modalContainer.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         modalContainer.classList.add('chatgpt-modal'); // add class to main div
-        const modal = document.createElement('div');
-        const modalTitle = document.createElement('h2');
-        const modalMessage = document.createElement('p');
+        const modal = document.createElement('div'),
+              modalTitle = document.createElement('h2'),
+              modalMessage = document.createElement('p');
 
         // Select or crate/append style
         let modalStyle;
@@ -42,11 +42,14 @@ const chatgpt = {
 
             // Alert styles
             + '.chatgpt-modal > div {'
+                + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ;'
+                + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
                 + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
                 + ( width ? `width: ${ width }px` : 'max-width: 458px ') + ' ;'
                 + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) }'
             + '.chatgpt-modal h2 { margin-bottom: 9px }'
             + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
+            + '.chatgpt-modal.animated > div { opacity: 1 ; transform: translateX(0) translateY(0) }'
 
             // Button styles
             + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
@@ -105,8 +108,8 @@ const chatgpt = {
         const checkboxDiv = document.createElement('div');
         if (checkbox) { // is supplied
             checkboxDiv.classList.add('checkbox-group');
-            const checkboxFn = checkbox; // assign the named function to checkboxFn
-            const checkboxInput = document.createElement('input');
+            const checkboxFn = checkbox, // assign the named function to checkboxFn
+                  checkboxInput = document.createElement('input');
             checkboxInput.type = 'checkbox';
             checkboxInput.addEventListener('change', checkboxFn);
 
@@ -139,7 +142,11 @@ const chatgpt = {
             if (event.target === modalContainer) destroyAlert(); });
 
         // Show alert if none active
-        modalContainer.style.display = (alertQueue.length === 1) ? '' : 'none';
+        modalContainer.style.display = 'none';
+        if (alertQueue.length === 1) {
+            modalContainer.style.display = '';
+            setTimeout(() => { modalContainer.classList.add('animated'); }, 100);
+        }
 
         function destroyAlert() {
             modalContainer.remove(); // remove from DOM
@@ -155,7 +162,10 @@ const chatgpt = {
             // Check for pending alerts in queue
             if (alertQueue.length > 0) {
                 const nextAlert = document.getElementById(alertQueue[0]);
-                setTimeout(() => { nextAlert.style.display = 'flex'; }, 500 );
+                setTimeout(() => {
+                    nextAlert.style.display = '';
+                    setTimeout(() => { nextAlert.classList.add('animated'); }, 100);
+                }, 500 );
             }
         }
 
@@ -270,74 +280,6 @@ const chatgpt = {
         }, Math.max(fadeDuration, notifDuration) * 1000); // ...after notification hid
     },
 
-    obfuscate: function() { chatgpt.code.obfuscate(); },
-
-    printAllFunctions: function() {
-
-        // Define colors
-        const colors = { // element: [light, dark]
-            cmdPrompt: ['#ff00ff', '#00ff00'], // pink, green
-            objName: ['#0611e9', '#f9ee16'], // blue, yellow
-            methodName: ['#005aff', '#ffa500'], // blue, orange
-            entryType: ['#467e06', '#b981f9'], // green, purple
-            srcMethod: ['#ff0000', '#00ffff'] // red, cyan
-        };
-        Object.keys(colors).forEach(element => { // populate dark scheme colors if missing
-            colors[element][1] = colors[element][1] ||
-                '#' + (Number(`0x1${ colors[element][0].replace(/^#/, '') }`) ^ 0xFFFFFF)
-                    .toString(16).substring(1).toUpperCase(); // convert to hex
-        });
-
-        // Create [functionNames]
-        const functionNames = [];
-        for (const prop in this) {
-            if (typeof this[prop] === 'function') {
-                const chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name)),
-                      functionParent = chatgptIsParent ? 'chatgpt' : 'other';
-                functionNames.push([functionParent, prop]);
-            } else if (typeof this[prop] === 'object') {
-                for (const nestedProp in this[prop]) {
-                    if (typeof this[prop][nestedProp] === 'function') {
-                        functionNames.push([prop, nestedProp]);
-        }}}}
-        functionNames.sort(function(a, b) { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
-
-        // Print methods
-        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches,
-              baseFontStyles = 'font-family: monospace ; font-size: larger ; ';
-        console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
-        for (const functionName of functionNames) {
-            const isChatGptObjParent = /chatgpt|other/.test(functionName[0]),
-                  rootFunction = ( functionName[0] === 'chatgpt' ? this[functionName[1]].name
-                    : functionName[0] !== 'other' ? functionName[0] + '.' + functionName[1]
-                    : (( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' )
-                        + this[functionName[1]].name )),
-                  isAsync = this[functionName[1]]?.constructor.name === 'AsyncFunction';
-            console.log('%c>> %c' + ( isChatGptObjParent ? '' : `${ functionName[0] }.%c`) + functionName[1]
-                    + ' - https://chatgptjs.org/userguide/' + /(?:.*\.)?(.*)/.exec(rootFunction)[1].toLowerCase() + ( isAsync ? '-async' : '' ) + '\n%c[%c'
-                + ((( functionName[0] === 'chatgpt' && functionName[1] === this[functionName[1]].name ) || // parent is chatgpt + names match or
-                    !isChatGptObjParent) // parent is chatgpt.obj
-                        ? 'Function' : 'Alias of' ) + '%c: %c'
-                + rootFunction + '%c]',
-
-                // Styles
-                baseFontStyles + 'font-weight: bold ; color:' + colors.cmdPrompt[+isDarkMode],
-                baseFontStyles + 'font-weight: bold ;'
-                    + 'color:' + colors[isChatGptObjParent ? 'methodName' : 'objName'][+isDarkMode],
-                baseFontStyles + 'font-weight: ' + ( isChatGptObjParent ? 'initial' : 'bold' ) + ';'
-                    + 'color:' + ( isChatGptObjParent ? 'initial' : colors.methodName[+isDarkMode] ),
-                baseFontStyles + 'font-weight: ' + ( isChatGptObjParent ? 'bold' : 'initial' ) + ';'
-                    + 'color:' + ( isChatGptObjParent ? colors.entryType[+isDarkMode] : 'initial' ),
-                baseFontStyles + 'font-weight: ' + ( isChatGptObjParent ? 'initial' : 'bold' ) + ';'
-                    + 'color:' + ( isChatGptObjParent ? 'initial' : colors.entryType[+isDarkMode] ),
-                baseFontStyles + ( isChatGptObjParent ? 'font-style: italic' : 'font-weight: initial' ) + ';'
-                    + 'color:' + ( isChatGptObjParent ? colors.srcMethod[+isDarkMode] : 'initial' ),
-                baseFontStyles + ( isChatGptObjParent ? 'font-weight: initial' : 'font-style: italic' ) + ';'
-                    + 'color:' + ( isChatGptObjParent ? 'initial' : colors.srcMethod[+isDarkMode] ),
-                isChatGptObjParent ? '' : ( baseFontStyles + 'color: initial ; font-weight: initial' ));
-        }
-    },
-
     randomFloat: function() {
     // * Generates a random, cryptographically secure value between 0 (inclusive) & 1 (exclusive)
         const crypto = window.crypto || window.msCrypto;
@@ -403,7 +345,7 @@ const chatgpt = {
         toggle: function() {
             for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
                 if (/close sidebar/i.test(navLink.text)) {
-                    navLink.click(); return;                
+                    navLink.click(); return;
         }}}
     },
 
