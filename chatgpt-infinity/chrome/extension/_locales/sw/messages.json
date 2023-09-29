@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Jibu Mada" },
   "menuLabel_all": { "message": "ZOTE" },
   "menuLabel_replyInt": { "message": "Jibu Kipindi" },
+  "menuLabel_about": { "message": "Kuhusu" },
   "menuLabel_updateCheck": { "message": "Angalia Masasisho" },
   "menuLabel_disabled": { "message": "Imezimwa (kiendelezi kimewekwa)" },
   "prompt_updateReplyLang": { "message": "Sasisha lugha ya kujibu" },

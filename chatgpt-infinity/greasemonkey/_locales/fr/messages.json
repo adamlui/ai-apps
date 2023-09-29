@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Sujet   Réponse" },
   "menuLabel_all": { "message": "TOUT" },
   "menuLabel_replyInt": { "message": "Intervalle de réponse" },
+  "menuLabel_about": { "message": "À propos de" },
   "menuLabel_updateCheck": { "message": "Vérifier les Mises à jour" },
   "menuLabel_disabled": { "message": "Désactivé (extension installée)" },
   "prompt_updateReplyLang": { "message": "Mettre à jour la langue de réponse" },

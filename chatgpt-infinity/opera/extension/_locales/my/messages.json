@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "အဖြေခေါင်းစဉ်" },
   "menuLabel_all": { "message": "အားလုံး" },
   "menuLabel_replyInt": { "message": "စာပြန်ကြားကာလ" },
+  "menuLabel_about": { "message": "အကြောင်း" },
   "menuLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "menuLabel_disabled": { "message": "ပိတ်ထားသည် (တိုးချဲ့တပ်ဆင်ထားသည်)" },
   "prompt_updateReplyLang": { "message": "ပြန်ကြားရေးဘာသာစကားကို အပ်ဒိတ်လုပ်ပါ" },

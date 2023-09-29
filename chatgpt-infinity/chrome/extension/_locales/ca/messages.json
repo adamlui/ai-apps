@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Tema de resposta" },
   "menuLabel_all": { "message": "TOT" },
   "menuLabel_replyInt": { "message": "Interval de resposta" },
+  "menuLabel_about": { "message": "Quant a" },
   "menuLabel_updateCheck": { "message": "Comprova si hi ha actualitzacions" },
   "menuLabel_disabled": { "message": "Desactivat (extensió instal·lada)" },
   "prompt_updateReplyLang": { "message": "Actualitza l'idioma de resposta" },

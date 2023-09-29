@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "വിഷയം പ്രതികരിക്കുക" },
   "menuLabel_all": { "message": "എല്ലാം" },
   "menuLabel_replyInt": { "message": "പ്രതികരണ ഇന്റർവൽ" },
+  "menuLabel_about": { "message": "സംബന്ധിച്ച്" },
   "menuLabel_updateCheck": { "message": "അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക" },
   "menuLabel_disabled": { "message": "അപ്രാപ്തമാക്കിയിരിക്കുന്നു (വിപുലീകരണം ഇൻസ്റ്റാൾ ചെയ്തിരിക്കുന്നു)" },
   "prompt_updateReplyLang": { "message": "പ്രതികരണ ഭാഷ അപ്ഡേറ്റ് ചെയ്യുക" },

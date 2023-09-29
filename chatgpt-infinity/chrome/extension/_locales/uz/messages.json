@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Mavzuga javob berish" },
   "menuLabel_all": { "message": "Barchasi " },
   "menuLabel_replyInt": { "message": "Javob oralig&#39;i" },
+  "menuLabel_about": { "message": "Qisqacha ma'lumot" },
   "menuLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
   "menuLabel_disabled": { "message": "O&#39;chirilgan (kengaytma o&#39;rnatilgan)" },
   "prompt_updateReplyLang": { "message": "Javob berish tilini yangilang" },

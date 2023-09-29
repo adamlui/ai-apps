@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "נושא תגובה" },
   "menuLabel_all": { "message": "הכל" },
   "menuLabel_replyInt": { "message": "מרווח זמן לתגובה" },
+  "menuLabel_about": { "message": "אודות" },
   "menuLabel_updateCheck": { "message": "חפש עדכונים" },
   "menuLabel_disabled": { "message": "מנוטרל (הרחבה מותקנת)" },
   "prompt_updateReplyLang": { "message": "עדכן שפת תגובה" },

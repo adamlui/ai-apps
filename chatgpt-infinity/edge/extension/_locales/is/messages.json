@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Svara umræðuefni" },
   "menuLabel_all": { "message": "ALLT" },
   "menuLabel_replyInt": { "message": "Bilið á milli svara" },
+  "menuLabel_about": { "message": "Um" },
   "menuLabel_updateCheck": { "message": "Leita að uppfærslum" },
   "menuLabel_disabled": { "message": "Óvirkt (viðbót uppsett)" },
   "prompt_updateReplyLang": { "message": "Uppfæra tungumál svars" },

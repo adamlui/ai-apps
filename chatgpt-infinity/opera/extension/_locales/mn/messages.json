@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Төгсгөл" },
   "menuLabel_all": { "message": "Бүгд" },
   "menuLabel_replyInt": { "message": "Аудит" },
+  "menuLabel_about": { "message": "Бидний тухай" },
   "menuLabel_updateCheck": { "message": "Шинэчлэлтийг шинэчлэх" },
   "menuLabel_disabled": { "message": "Тохиргоо (Дэмжлэг)" },
   "prompt_updateReplyLang": { "message": "Шинэчлэх" },

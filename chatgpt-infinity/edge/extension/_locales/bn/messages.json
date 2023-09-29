@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "উত্তর টপিক" },
   "menuLabel_all": { "message": "সবগুলি" },
   "menuLabel_replyInt": { "message": "জবাব ইন্টারভাল" },
+  "menuLabel_about": { "message": "সম্বন্ধে" },
   "menuLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
   "menuLabel_disabled": { "message": "নিষ্ক্রিয় (এক্সটেনশন ইনস্টল করা হয়েছে)" },
   "prompt_updateReplyLang": { "message": "জবাব ভাষা আপডেট করুন" },

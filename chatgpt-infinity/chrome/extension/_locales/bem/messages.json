@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Response Topic" },
   "menuLabel_all": { "message": "Alya ALL" },
   "menuLabel_replyInt": { "message": "Interval Mwakitwile" },
+  "menuLabel_about": { "message": "pafya" },
   "menuLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
   "menuLabel_disabled": { "message": "Malema (maile)" },
   "prompt_updateReplyLang": { "message": "Update response ululimi" },

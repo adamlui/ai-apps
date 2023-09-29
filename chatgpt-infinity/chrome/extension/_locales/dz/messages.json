@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "སྒྲ་སྐད་བརྡ་བཀོད་ཚུ།" },
   "menuLabel_all": { "message": "ཆ་མཉམ་སེལ་འཐུ་འབད།" },
   "menuLabel_replyInt": { "message": "ལན་ཚུ།" },
+  "menuLabel_about": { "message": "སྐོར་ལས་" },
   "menuLabel_updateCheck": { "message": "བརྟག་ཞིབ་སྣོད་འཛིན་ཚུ་ དུས་མཐུན་བཟོ་ནི་ཨིན་ན?" },
   "menuLabel_disabled": { "message": "ནུས་མེད་བཀྲམ་གཏང་། (_F)" },
   "prompt_updateReplyLang": { "message": "ངོ་འཕྲད་གསརཔ་ཅིག་ གསར་བསྐྲུན་འབད།" },

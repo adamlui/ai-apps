@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Reply Topic" },
   "menuLabel_all": { "message": "ALL" },
   "menuLabel_replyInt": { "message": "Reply Interval" },
+  "menuLabel_about": { "message": "About" },
   "menuLabel_updateCheck": { "message": "Check for Updates" },
   "menuLabel_disabled": { "message": "Disabled (extension installed)" },
   "prompt_updateReplyLang": { "message": "Update reply language" },

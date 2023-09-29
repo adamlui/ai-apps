@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "موضوع الرد" },
   "menuLabel_all": { "message": "الكل" },
   "menuLabel_replyInt": { "message": "فترة الرد" },
+  "menuLabel_about": { "message": "عن وزارة الثقافة" },
   "menuLabel_updateCheck": { "message": "مرابة التحديثات" },
   "menuLabel_disabled": { "message": "معطل (تم تثبيت الإضافة)" },
   "prompt_updateReplyLang": { "message": "تحديث لغة الرد" },

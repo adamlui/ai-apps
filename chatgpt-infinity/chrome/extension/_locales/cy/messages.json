@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Pwnc Ateb" },
   "menuLabel_all": { "message": "I BAWB" },
   "menuLabel_replyInt": { "message": "Ysbaid Ateb" },
+  "menuLabel_about": { "message": "Gwybodaeth" },
   "menuLabel_updateCheck": { "message": "Dango_s diweddariadau" },
   "menuLabel_disabled": { "message": "Analluogwyd (estyniad wedi'i osod)" },
   "prompt_updateReplyLang": { "message": "Diweddaru'r iaith ymateb" },

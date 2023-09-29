@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Atsakymo tema" },
   "menuLabel_all": { "message": "VISI" },
   "menuLabel_replyInt": { "message": "Atsakymų intervalas" },
+  "menuLabel_about": { "message": "Apie" },
   "menuLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
   "menuLabel_disabled": { "message": "Išjungta (įdiegtas plėtinys)" },
   "prompt_updateReplyLang": { "message": "Atnaujinti atsakymo kalbą" },

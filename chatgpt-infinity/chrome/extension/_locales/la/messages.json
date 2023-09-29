@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Una lettera di un commento" },
   "menuLabel_all": { "message": "aut non" },
   "menuLabel_replyInt": { "message": "Interrogatio" },
+  "menuLabel_about": { "message": "De Hac Re" },
   "menuLabel_updateCheck": { "message": "Votre mail pour notre newsletter" },
   "menuLabel_disabled": { "message": "Votre nom (nécessaire)" },
   "prompt_updateReplyLang": { "message": "Próximo Blog" },

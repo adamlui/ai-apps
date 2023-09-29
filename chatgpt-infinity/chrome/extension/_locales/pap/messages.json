@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Kontestá e tópiko" },
   "menuLabel_all": { "message": "Tur" },
   "menuLabel_replyInt": { "message": "Replika Interval" },
+  "menuLabel_about": { "message": "About About" },
   "menuLabel_updateCheck": { "message": "Revisá las actualizaciones" },
   "menuLabel_disabled": { "message": "Disabilitá (Extended)" },
   "prompt_updateReplyLang": { "message": "Idioma di Resúmen Update" },

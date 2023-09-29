@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Bekim Topic" },
   "menuLabel_all": { "message": "Olgeta samting" },
   "menuLabel_replyInt": { "message": "Bekim Interval" },
+  "menuLabel_about": { "message": "About" },
   "menuLabel_updateCheck": { "message": "Lukim ol eleksen" },
   "menuLabel_disabled": { "message": "Disable (long long int)" },
   "prompt_updateReplyLang": { "message": "Toksave long tokples" },

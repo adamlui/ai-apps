@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "ޖަވާބު ގެ މައުޟޫޢު" },
   "menuLabel_all": { "message": "ހުރިހާ" },
   "menuLabel_replyInt": { "message": "ޖަވާބު އިންޓަވަލް" },
+  "menuLabel_about": { "message": "މިއާއި ބެހޭ" },
   "menuLabel_updateCheck": { "message": "އަޕްޑޭޓްތައް ބަލާށެވެ" },
   "menuLabel_disabled": { "message": "ނުކުޅެދުންތެރިކަން ހުންނަ މީހުން (އެކްސްޓެންޝަން އިންސްޓޯލްކޮށްފައި)" },
   "prompt_updateReplyLang": { "message": "ރިޕްލައި ލެންގުއޭޖް އަޕްޑޭޓް ކުރޭ" },

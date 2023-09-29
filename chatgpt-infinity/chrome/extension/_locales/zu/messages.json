@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Phendula Isihloko" },
   "menuLabel_all": { "message": "Bonke" },
   "menuLabel_replyInt": { "message": "Phendula Isikhathi" },
+  "menuLabel_about": { "message": "Mayelana" },
   "menuLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
   "menuLabel_disabled": { "message": "Khubaza (isandiso sifakiwe)" },
   "prompt_updateReplyLang": { "message": "Buyekeza ulimi lokuphendula" },

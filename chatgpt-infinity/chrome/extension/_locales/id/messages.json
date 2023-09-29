@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Topik Balasan" },
   "menuLabel_all": { "message": "ALL" },
   "menuLabel_replyInt": { "message": "Interval Balasan" },
+  "menuLabel_about": { "message": "Ihwal" },
   "menuLabel_updateCheck": { "message": "Periksa Pemutakhiran" },
   "menuLabel_disabled": { "message": "Dinonaktifkan (ekstensi terpasang)" },
   "prompt_updateReplyLang": { "message": "Perbarui bahasa balasan" },

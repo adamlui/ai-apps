@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Topic Topic" },
   "menuLabel_all": { "message": "Izy rehetra" },
   "menuLabel_replyInt": { "message": "Arovy" },
+  "menuLabel_about": { "message": "Mikasika ny" },
   "menuLabel_updateCheck": { "message": "Jereo ny vaovao momba ny famerenana" },
   "menuLabel_disabled": { "message": "Famaritana (sanda)" },
   "prompt_updateReplyLang": { "message": "Hanova ny teny fanalahidy" },

@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "பதில் தலைப்பு" },
   "menuLabel_all": { "message": "Please, specify two different languages" },
   "menuLabel_replyInt": { "message": "பதில் இடைவெளி" },
+  "menuLabel_about": { "message": "பற்றி" },
   "menuLabel_updateCheck": { "message": "புதுப்பிப்புகளைத் தேடவும்" },
   "menuLabel_disabled": { "message": "முடக்கப்பட்டது (நீட்டிப்பு நிறுவப்பட்டது)" },
   "prompt_updateReplyLang": { "message": "பதில் மொழியை புதுப்பிக்கவும்" },

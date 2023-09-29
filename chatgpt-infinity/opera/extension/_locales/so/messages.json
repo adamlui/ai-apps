@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Mawduuca Jawaabta" },
   "menuLabel_all": { "message": "DHAMMAAN" },
   "menuLabel_replyInt": { "message": "Dhexdhexaadinta Jawaabta" },
+  "menuLabel_about": { "message": "Jabuuti" },
   "menuLabel_updateCheck": { "message": "Hubi Cusbooneysiinta" },
   "menuLabel_disabled": { "message": "Naafo (kordhin la rakibay)" },
   "prompt_updateReplyLang": { "message": "Cusbooneysii luqadda jawaabta" },

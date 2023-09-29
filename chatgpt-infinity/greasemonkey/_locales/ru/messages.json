@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Ответить на тему" },
   "menuLabel_all": { "message": "ВСЕ" },
   "menuLabel_replyInt": { "message": "Интервал ответа" },
+  "menuLabel_about": { "message": "Шифр." },
   "menuLabel_updateCheck": { "message": "Проверить наличие обновлений" },
   "menuLabel_disabled": { "message": "Отключено (расширение установлено)" },
   "prompt_updateReplyLang": { "message": "Обновить язык ответа" },

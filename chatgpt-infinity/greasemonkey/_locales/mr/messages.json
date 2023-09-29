@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "प्रतिसादाचा विषय" },
   "menuLabel_all": { "message": "सर्व" },
   "menuLabel_replyInt": { "message": "उत्तर अंतराल" },
+  "menuLabel_about": { "message": "झुमे बद्दल अधिक" },
   "menuLabel_updateCheck": { "message": "Check for Updates" },
   "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन स्थापित)" },
   "prompt_updateReplyLang": { "message": "उत्तर भाषा अद्यतनित करा" },

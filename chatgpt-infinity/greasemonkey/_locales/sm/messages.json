@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Itulau o le Tali" },
   "menuLabel_all": { "message": "Sa'o uma" },
   "menuLabel_replyInt": { "message": "Taimi o le tali" },
+  "menuLabel_about": { "message": "E uiga i" },
   "menuLabel_updateCheck": { "message": "Siaki mo faʻafouga" },
   "menuLabel_disabled": { "message": "Lē atoatoa le malosi (Extended faapipiiina)" },
   "prompt_updateReplyLang": { "message": "Fa'afouga o le Gagana Tali" },

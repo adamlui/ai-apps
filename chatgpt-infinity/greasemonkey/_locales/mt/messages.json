@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Wieġeb Suġġett" },
   "menuLabel_all": { "message": "Kollha" },
   "menuLabel_replyInt": { "message": "Intervall ta' Risposta" },
+  "menuLabel_about": { "message": "Dwar" },
   "menuLabel_updateCheck": { "message": "Iċċekkja għall-aġġornamenti?" },
   "menuLabel_disabled": { "message": "Diżattivat (estensjoni installata)" },
   "prompt_updateReplyLang": { "message": "Aġġorna l-lingwa tat-tweġibiet" },

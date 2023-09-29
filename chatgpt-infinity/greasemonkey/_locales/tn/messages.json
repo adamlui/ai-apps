@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Araba Setlhogo" },
   "menuLabel_all": { "message": "Ka moka" },
   "menuLabel_replyInt": { "message": "Answer Interval" },
+  "menuLabel_about": { "message": "Kaga" },
   "menuLabel_updateCheck": { "message": "Go Batla Diphetogo" },
   "menuLabel_disabled": { "message": "Disable (extension installed)" },
   "prompt_updateReplyLang": { "message": "Ntshwafatsa puo ya go araba" },

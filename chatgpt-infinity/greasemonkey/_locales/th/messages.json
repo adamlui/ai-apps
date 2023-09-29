@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "ตอบกลับหัวข้อ" },
   "menuLabel_all": { "message": "ทั้งหมด" },
   "menuLabel_replyInt": { "message": "ช่วงเวลาตอบกลับ" },
+  "menuLabel_about": { "message": "เกี่ยวกับ" },
   "menuLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
   "menuLabel_disabled": { "message": "ปิดใช้งาน (ติดตั้งส่วนเสริมแล้ว)" },
   "prompt_updateReplyLang": { "message": "อัปเดตภาษาตอบกลับ" },

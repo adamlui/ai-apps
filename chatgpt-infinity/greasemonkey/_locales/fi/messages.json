@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Vastaa aiheeseen" },
   "menuLabel_all": { "message": "KAIKKI" },
   "menuLabel_replyInt": { "message": "Vastausväli" },
+  "menuLabel_about": { "message": "Tietoa" },
   "menuLabel_updateCheck": { "message": "Tarkista päivitykset" },
   "menuLabel_disabled": { "message": "Poissa käytöstä (laajennus asennettu)" },
   "prompt_updateReplyLang": { "message": "Päivitä vastauskieli" },

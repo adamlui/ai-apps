@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Отговор на тема" },
   "menuLabel_all": { "message": "ВСИЧКО" },
   "menuLabel_replyInt": { "message": "Интервал за отговор" },
+  "menuLabel_about": { "message": "Относно" },
   "menuLabel_updateCheck": { "message": "Проверка за обновяване" },
   "menuLabel_disabled": { "message": "Деактивирано (разширението е инсталирано)" },
   "prompt_updateReplyLang": { "message": "Актуализиране на езика за отговор" },

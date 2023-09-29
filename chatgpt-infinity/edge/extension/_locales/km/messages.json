@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "ឆ្លើយតប ប្រធានបទ" },
   "menuLabel_all": { "message": "ទាំងអស់" },
   "menuLabel_replyInt": { "message": "ចន្លោះពេលឆ្លើយតប" },
+  "menuLabel_about": { "message": "អំពី" },
   "menuLabel_updateCheck": { "message": "ពិនិត្យរកអាប់ដេត" },
   "menuLabel_disabled": { "message": "បានបិទ (បានបញ្ចូលផ្នែកបន្ថែម)" },
   "prompt_updateReplyLang": { "message": "អាប់ដេតភាសាឆ្លើយតប" },

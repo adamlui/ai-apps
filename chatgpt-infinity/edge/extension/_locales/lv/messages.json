@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Atbildes tēma" },
   "menuLabel_all": { "message": "VISS" },
   "menuLabel_replyInt": { "message": "Atbildes intervāls" },
+  "menuLabel_about": { "message": "Par produktu" },
   "menuLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi." },
   "menuLabel_disabled": { "message": "Atspējots (paplašinājums instalēts)" },
   "prompt_updateReplyLang": { "message": "Atjaunināt atbildes valodu" },

@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Жооп темасы" },
   "menuLabel_all": { "message": "Баары" },
   "menuLabel_replyInt": { "message": "Жооп берүү аралыгы" },
+  "menuLabel_about": { "message": "_Апплет жөнүндө" },
   "menuLabel_updateCheck": { "message": "Жаңы чыгаруулар бар экендигин текшерүү" },
   "menuLabel_disabled": { "message": "Өчүрүлгөн (кеңейтилген орнотулган)" },
   "prompt_updateReplyLang": { "message": "Жооп тилин жаңыртуу" },

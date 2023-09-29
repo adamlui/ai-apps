@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Subiect de răspuns" },
   "menuLabel_all": { "message": "Toate" },
   "menuLabel_replyInt": { "message": "Interval de răspuns" },
+  "menuLabel_about": { "message": "Despre" },
   "menuLabel_updateCheck": { "message": "Caută actualizări" },
   "menuLabel_disabled": { "message": "Dezactivat (extensie instalată)" },
   "prompt_updateReplyLang": { "message": "Actualizați limba de răspuns" },

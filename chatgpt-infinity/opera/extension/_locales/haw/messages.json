@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Pane Kumuhana" },
   "menuLabel_all": { "message": "ALL" },
   "menuLabel_replyInt": { "message": "Pane Interval" },
+  "menuLabel_about": { "message": "Ho‘ākāka" },
   "menuLabel_updateCheck": { "message": "E nānā i nā mea hou" },
   "menuLabel_disabled": { "message": "Hoʻopaʻa ʻia (kau ʻia ka hoʻonui)" },
   "prompt_updateReplyLang": { "message": "Hōʻano hou i ka ʻōlelo pane" },

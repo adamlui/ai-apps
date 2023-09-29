@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "පිළිතුර මාතෘකාව" },
   "menuLabel_all": { "message": "අනේ.." },
   "menuLabel_replyInt": { "message": "ප්‍රතිචාර අන්තර්ගතය" },
+  "menuLabel_about": { "message": "සම්බන්ධව" },
   "menuLabel_updateCheck": { "message": "යාවත්කාලීන සඳහා පරීක්ෂා කරන්න" },
   "menuLabel_disabled": { "message": "අක්‍රීය කර ඇත (දීර්ඝ කිරීම ස්ථාපනය කර ඇත)" },
   "prompt_updateReplyLang": { "message": "ප්‍රතිචාර භාෂාව යාවත්කාලීන කරන්න" },

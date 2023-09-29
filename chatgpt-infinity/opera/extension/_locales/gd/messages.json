@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Freagairt air a 'chuspair" },
   "menuLabel_all": { "message": "Uile" },
   "menuLabel_replyInt": { "message": "Eadar - ama freagairt" },
+  "menuLabel_about": { "message": "Mar deidhinn" },
   "menuLabel_updateCheck": { "message": "Thoir sùil airson ùrachaidhean" },
   "menuLabel_disabled": { "message": "Cuir à comas (leudachan stàlaichte)" },
   "prompt_updateReplyLang": { "message": "Ùraich an cànan freagairt" },

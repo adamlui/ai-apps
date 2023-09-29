@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Antwoord Onderwerp" },
   "menuLabel_all": { "message": "Alle" },
   "menuLabel_replyInt": { "message": "Antwoord Interval" },
+  "menuLabel_about": { "message": "Omtrent" },
   "menuLabel_updateCheck": { "message": "_Kontroleer vir bywerkings:" },
   "menuLabel_disabled": { "message": "Gestremde (uitbreiding geïnstalleer)" },
   "prompt_updateReplyLang": { "message": "Dateer antwoordtaal op" },

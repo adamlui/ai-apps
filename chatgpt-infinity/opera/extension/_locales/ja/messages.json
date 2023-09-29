@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "返信トピック" },
   "menuLabel_all": { "message": "すべて" },
   "menuLabel_replyInt": { "message": "返信間隔" },
+  "menuLabel_about": { "message": "詳細" },
   "menuLabel_updateCheck": { "message": "更新を確認" },
   "menuLabel_disabled": { "message": "無効になっています（拡張機能がインストールされています）" },
   "prompt_updateReplyLang": { "message": "返信言語を更新する" },

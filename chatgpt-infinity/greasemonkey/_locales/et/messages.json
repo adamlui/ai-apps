@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Vastuse teema" },
   "menuLabel_all": { "message": "KÕIK" },
   "menuLabel_replyInt": { "message": "Vastuse intervall" },
+  "menuLabel_about": { "message": "Info" },
   "menuLabel_updateCheck": { "message": "Kontrolli uuendusi" },
   "menuLabel_disabled": { "message": "Keelatud (laiend installitud)" },
   "prompt_updateReplyLang": { "message": "Uuenda vastuse keelt" },

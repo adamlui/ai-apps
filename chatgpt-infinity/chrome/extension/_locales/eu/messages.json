@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Erantzun gaia" },
   "menuLabel_all": { "message": "Dena" },
   "menuLabel_replyInt": { "message": "Erantzun tartea" },
+  "menuLabel_about": { "message": "Egileari Buruz" },
   "menuLabel_updateCheck": { "message": "Begiratu _eguneraketak:" },
   "menuLabel_disabled": { "message": "Desgaituta (luzapena instalatuta)" },
   "prompt_updateReplyLang": { "message": "Eguneratu erantzunen hizkuntza" },

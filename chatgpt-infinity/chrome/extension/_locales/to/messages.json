@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Tefito ʻo e Talí" },
   "menuLabel_all": { "message": "KOTOA" },
   "menuLabel_replyInt": { "message": "Tali ʻi he vahaʻa taimi" },
+  "menuLabel_about": { "message": "Fekauʻaki mo e" },
   "menuLabel_updateCheck": { "message": "Vakaiʻi e Ngaahi Fakamatala Fakamuimuitahá" },
   "menuLabel_disabled": { "message": "Faingataʻaʻia fakaesino (fokotuʻu e extension)" },
   "prompt_updateReplyLang": { "message": "Fakatonutonu e tali ʻi he lea fakafonua" },

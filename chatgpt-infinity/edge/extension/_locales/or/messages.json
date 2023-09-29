@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "ଉତ୍ତର ବିଷୟ" },
   "menuLabel_all": { "message": "ସବୁକିଛି" },
   "menuLabel_replyInt": { "message": "ଜବା ଅନୁପାତ" },
+  "menuLabel_about": { "message": "ବିଷୟ" },
   "menuLabel_updateCheck": { "message": "Check for Updates" },
   "menuLabel_disabled": { "message": "ଅସ୍ଥାୟୀଭାବରେ ଅକ୍ଷମ (ଏକ୍ସଟେନସନ ଇନସ୍ଟଲ୍ କରାଗଲା)" },
   "prompt_updateReplyLang": { "message": "ଜବା ଭାଷା ଅପଡେଟ କରନ୍ତୁ" },

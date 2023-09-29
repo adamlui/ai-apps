@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "థీమ్ ‌ కు ప్రత్యుత్తరం ఇవ్వండి" },
   "menuLabel_all": { "message": "అన్ని" },
   "menuLabel_replyInt": { "message": "ఇంటర్వాల్ ‌ కు ప్రత్యుత్తరం ఇవ్వండి" },
+  "menuLabel_about": { "message": "గురించి" },
   "menuLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "menuLabel_disabled": { "message": "డిసేబుల్ చేయబడింది (పొడిగింపు ఇన్స్టాల్ చేయబడింది)" },
   "prompt_updateReplyLang": { "message": "ప్రత్యుత్తరం భాషను అప్ ‌ డేట్ చేయండి" },

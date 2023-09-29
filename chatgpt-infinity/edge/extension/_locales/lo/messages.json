@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "ຕອບກັບ ຫົວຂໍ້" },
   "menuLabel_all": { "message": "ທັງໝົດ" },
   "menuLabel_replyInt": { "message": "ໄລຍະເວລາຕອບ" },
+  "menuLabel_about": { "message": "ກ່ຽວກັບ" },
   "menuLabel_updateCheck": { "message": "ກວດສອບການອັບເດດ" },
   "menuLabel_disabled": { "message": "ປິດໃຊ້ງານ (ຕິດຕັ້ງຂະຫຍາຍ)" },
   "prompt_updateReplyLang": { "message": "ອັບເດດພາສາຕອບ" },

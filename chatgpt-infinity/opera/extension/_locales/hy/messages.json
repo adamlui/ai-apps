@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Պատասխանել թեմային" },
   "menuLabel_all": { "message": "Բոլորը" },
   "menuLabel_replyInt": { "message": "Պատասխանել ինտերվալով" },
+  "menuLabel_about": { "message": "Մանրամասն" },
   "menuLabel_updateCheck": { "message": "Ստուգել թարմացումները" },
   "menuLabel_disabled": { "message": "Անջատված է (երկարաձգումը տեղադրված է)" },
   "prompt_updateReplyLang": { "message": "Թարմացնել պատասխանի լեզուն" },

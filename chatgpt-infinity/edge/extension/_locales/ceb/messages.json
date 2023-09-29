@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Hapit nalukop sa kaumahan ang" },
   "menuLabel_all": { "message": "TANAN" },
   "menuLabel_replyInt": { "message": "Interval sa Tubag" },
+  "menuLabel_about": { "message": "Mahitungod" },
   "menuLabel_updateCheck": { "message": "Susiha alang sa Mga Update" },
   "menuLabel_disabled": { "message": "Disabled (mga sumpay_usba)" },
   "prompt_updateReplyLang": { "message": "Tubag sa Lenguahe" },

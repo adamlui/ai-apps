@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "ځواب" },
   "menuLabel_all": { "message": "ټول" },
   "menuLabel_replyInt": { "message": "ځواب ورکړه" },
+  "menuLabel_about": { "message": "په هکله" },
   "menuLabel_updateCheck": { "message": "د تازه معلوماتو لپاره وګورئ" },
   "menuLabel_disabled": { "message": "لګول شوی (لګول شوی)" },
   "prompt_updateReplyLang": { "message": "نوې ژبه تازه کړئ" },

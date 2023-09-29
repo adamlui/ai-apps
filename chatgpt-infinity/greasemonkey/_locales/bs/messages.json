@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Odgovori na temu" },
   "menuLabel_all": { "message": "SVE " },
   "menuLabel_replyInt": { "message": "Interval odgovora" },
+  "menuLabel_about": { "message": "O nama" },
   "menuLabel_updateCheck": { "message": "Provjeri ima li ažuriranja" },
   "menuLabel_disabled": { "message": "Onemogućeno (ekstenzija instalirana)" },
   "prompt_updateReplyLang": { "message": "Ažuriraj jezik odgovora" },

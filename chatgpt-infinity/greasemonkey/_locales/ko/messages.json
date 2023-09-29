@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "게시글에 답글 달기" },
   "menuLabel_all": { "message": "모든" },
   "menuLabel_replyInt": { "message": "응답 간격" },
+  "menuLabel_about": { "message": "소개" },
   "menuLabel_updateCheck": { "message": "업데이트 확인" },
   "menuLabel_disabled": { "message": "비활성화됨 (확장이 설치됨)" },
   "prompt_updateReplyLang": { "message": "응답 언어 업데이트" },

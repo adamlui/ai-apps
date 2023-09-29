@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Тема за одговор" },
   "menuLabel_all": { "message": "СИТЕ" },
   "menuLabel_replyInt": { "message": "Интервал на одговор" },
+  "menuLabel_about": { "message": "За" },
   "menuLabel_updateCheck": { "message": "Провери за нова верзија" },
   "menuLabel_disabled": { "message": "Оневозможено (наставката е инсталирана)" },
   "prompt_updateReplyLang": { "message": "Ажурирај јазик за одговор" },

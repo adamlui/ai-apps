@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Odgovori na temo" },
   "menuLabel_all": { "message": "VSE" },
   "menuLabel_replyInt": { "message": "Interval odgovora" },
+  "menuLabel_about": { "message": "Vizitka" },
   "menuLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
   "menuLabel_disabled": { "message": "Onemogočeno (razširitev nameščena)" },
   "prompt_updateReplyLang": { "message": "Posodobi jezik odgovora" },

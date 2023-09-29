@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Ahundango tënë" },
   "menuLabel_all": { "message": "Ala kue" },
   "menuLabel_replyInt": { "message": "Répondre Interval" },
+  "menuLabel_about": { "message": "About sara" },
   "menuLabel_updateCheck": { "message": "Gbu li ti mo na ndo ti aye so asi laso" },
   "menuLabel_disabled": { "message": "A yeke na lege ti kode ti fango tënë ti mbeni zo so ayeke na yâ ti mbeni kete" },
   "prompt_updateReplyLang": { "message": "Tënë ti yanga ti kodoro niModifier" },

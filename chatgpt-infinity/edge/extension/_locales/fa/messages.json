@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "موضوع پاسخ" },
   "menuLabel_all": { "message": "همه" },
   "menuLabel_replyInt": { "message": "فاصله پاسخ" },
+  "menuLabel_about": { "message": "درباره" },
   "menuLabel_updateCheck": { "message": "بررسی به روز رسانی" },
   "menuLabel_disabled": { "message": "غیرفعال (برنامه افزودنی نصب شده)" },
   "prompt_updateReplyLang": { "message": "زبان پاسخ را به روز کنید" },

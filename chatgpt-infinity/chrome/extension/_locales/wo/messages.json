@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Jawaab Topic" },
   "menuLabel_all": { "message": "löppë" },
   "menuLabel_replyInt": { "message": "Xët yi lëkkalook wii \"'Interval\"'" },
+  "menuLabel_about": { "message": "Sobre" },
   "menuLabel_updateCheck": { "message": "Xët yi lëkkalook wii" },
   "menuLabel_disabled": { "message": "Xët yi lëkkalook wii (ñiiñ)" },
   "prompt_updateReplyLang": { "message": "Xët yi lëkkalook wii \"'Langue réponse\"'" },

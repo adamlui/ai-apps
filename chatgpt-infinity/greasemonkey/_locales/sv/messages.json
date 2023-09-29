@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Svara på ämne" },
   "menuLabel_all": { "message": "ALLT" },
   "menuLabel_replyInt": { "message": "Svarsintervall" },
+  "menuLabel_about": { "message": "Om" },
   "menuLabel_updateCheck": { "message": "Kolla efter uppdateringar" },
   "menuLabel_disabled": { "message": "Inaktiverad (tillägg installerat)" },
   "prompt_updateReplyLang": { "message": "Uppdatera svarsspråk" },

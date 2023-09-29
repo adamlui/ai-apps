@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "وه ڵامدانه وه ی بابه ت" },
   "menuLabel_all": { "message": "حه‌موو" },
   "menuLabel_replyInt": { "message": "ماوەی وەڵامدانەوە" },
+  "menuLabel_about": { "message": "دەربارە" },
   "menuLabel_updateCheck": { "message": "چێکی نوێکردنەوە بکە" },
   "menuLabel_disabled": { "message": "ناچالاککراوە (درێژکراوەی دامەزراندن)" },
   "prompt_updateReplyLang": { "message": "زمانی وەڵام نوێ بکەوە" },

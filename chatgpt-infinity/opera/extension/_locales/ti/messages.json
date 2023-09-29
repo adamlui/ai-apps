@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "ኣርእስቲ ምላሽ" },
   "menuLabel_all": { "message": "ኵሉ " },
   "menuLabel_replyInt": { "message": "ናይ መልሲ ፍልልይ" },
+  "menuLabel_about": { "message": "ብዛዕባ" },
   "menuLabel_updateCheck": { "message": "ምምሕያሻት መርምር" },
   "menuLabel_disabled": { "message": "ኣገልግሎት ከም ዘይህብ ምግባር (እተኸልከለ ምንቅስቓስ)" },
   "prompt_updateReplyLang": { "message": "ቋንቋ መልሲ ኣመሓይሽ" },

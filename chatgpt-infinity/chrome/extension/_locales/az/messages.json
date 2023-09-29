@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Cavab Mövzusu" },
   "menuLabel_all": { "message": "Hamısı" },
   "menuLabel_replyInt": { "message": "Cavab ver İnterval" },
+  "menuLabel_about": { "message": "Haqqında" },
   "menuLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
   "menuLabel_disabled": { "message": "Deaktiv edildi (genişlənmə quraşdırıldı)" },
   "prompt_updateReplyLang": { "message": "Cavab dilini yenilə" },

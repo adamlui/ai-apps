@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Адказаць на тэму" },
   "menuLabel_all": { "message": "Усе" },
   "menuLabel_replyInt": { "message": "Інтэрвал адказу" },
+  "menuLabel_about": { "message": "Пра нас" },
   "menuLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
   "menuLabel_disabled": { "message": "Адключаны (усталяваны пашырэнне)" },
   "prompt_updateReplyLang": { "message": "Абнавіць мову адказу" },

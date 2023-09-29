@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Phendula isihloko" },
   "menuLabel_all": { "message": "Konke" },
   "menuLabel_replyInt": { "message": "Ikhefu lokuphendula" },
+  "menuLabel_about": { "message": "Malunga" },
   "menuLabel_updateCheck": { "message": "Jonga Izinto Ezihlaziyiweyo" },
   "menuLabel_disabled": { "message": "Ikhubazekile (isandiso sifakiweyo)" },
   "prompt_updateReplyLang": { "message": "Hlaziya ulwimi lokuphendula" },

@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten" },
   "menuLabel_all": { "message": "All" },
   "menuLabel_replyInt": { "message": "Interval äntweren" },
+  "menuLabel_about": { "message": "Iwwer Qt" },
   "menuLabel_updateCheck": { "message": "Fakten an Erënnerungen" },
   "menuLabel_disabled": { "message": "Deaktivéiert (Extensioun installéiert)" },
   "prompt_updateReplyLang": { "message": "Äntwertsprooch aktualiséieren" },

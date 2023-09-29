@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "პასუხი თემაზე" },
   "menuLabel_all": { "message": "ყველა" },
   "menuLabel_replyInt": { "message": "პასუხის ინტერვალი" },
+  "menuLabel_about": { "message": "პროგრამის შესახებ" },
   "menuLabel_updateCheck": { "message": "განახლებების შემოწმება" },
   "menuLabel_disabled": { "message": "გაუქმებულია (გაფართოება დაყენებულია)" },
   "prompt_updateReplyLang": { "message": "განახლება პასუხის ენა" },

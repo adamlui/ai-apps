@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "ಥೀಮ್ ‌ ಗೆ ಪ್ರತ್ಯುತ್ತರಿಸಿ" },
   "menuLabel_all": { "message": "ಎಲ್ಲಾ" },
   "menuLabel_replyInt": { "message": "ಉತ್ತರ ಅಂತರಾಲ" },
+  "menuLabel_about": { "message": "ಕುರಿತಾಗಿ" },
   "menuLabel_updateCheck": { "message": "ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ" },
   "menuLabel_disabled": { "message": "ಅಕ್ಷಮ (ವಿಸ್ತರಣ ಸ್ಥಾಪಿಸಲಾಗಿದೆ)" },
   "prompt_updateReplyLang": { "message": "ಉತ್ತರ ಭಾಷೆಯನ್ನು ಅದಾಯವಿಸಿ" },

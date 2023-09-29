@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Θέμα απάντησης" },
   "menuLabel_all": { "message": "ALL" },
   "menuLabel_replyInt": { "message": "Διάστημα Απάντησης" },
+  "menuLabel_about": { "message": "Σχετικά" },
   "menuLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
   "menuLabel_disabled": { "message": "Απενεργοποιημένο (επέκταση εγκατεστημένη)" },
   "prompt_updateReplyLang": { "message": "Ενημέρωση γλώσσας απάντησης" },

@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "जवाब का विषय" },
   "menuLabel_all": { "message": "सभी" },
   "menuLabel_replyInt": { "message": "जवाब अंतराल" },
+  "menuLabel_about": { "message": "परिचय" },
   "menuLabel_updateCheck": { "message": "अद्यतन के लिए जाँचें" },
   "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन इंस्टॉल हुआ है)" },
   "prompt_updateReplyLang": { "message": "जवाब भाषा अपडेट करें" },

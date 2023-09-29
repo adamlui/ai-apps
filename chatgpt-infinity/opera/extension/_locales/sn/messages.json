@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Pindura Musoro" },
   "menuLabel_all": { "message": "Zvese" },
   "menuLabel_replyInt": { "message": "Nguva yekupindura" },
+  "menuLabel_about": { "message": "Nezvedu" },
   "menuLabel_updateCheck": { "message": "Ongorora Updates" },
   "menuLabel_disabled": { "message": "Akaremara (kuwedzera yakaiswa)" },
   "prompt_updateReplyLang": { "message": "Kuvandudza mutauro wekupindura" },

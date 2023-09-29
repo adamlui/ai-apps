@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Масъалаи ҷавоб" },
   "menuLabel_all": { "message": "Ҳамаbookmarks" },
   "menuLabel_replyInt": { "message": "Фосилаи ҷавоб" },
+  "menuLabel_about": { "message": "_Дар бораи" },
   "menuLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
   "menuLabel_disabled": { "message": "Ғайрифаъол (тавсеаи насбшуда)" },
   "prompt_updateReplyLang": { "message": "Забони ҷавобро навсозӣ кунед" },

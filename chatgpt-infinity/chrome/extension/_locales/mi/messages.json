@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Kaupapa Whakautu" },
   "menuLabel_all": { "message": "bookmarks" },
   "menuLabel_replyInt": { "message": "Tauhohenga whakautu" },
+  "menuLabel_about": { "message": "Mō" },
   "menuLabel_updateCheck": { "message": "Tirohia ngā whakahōu" },
   "menuLabel_disabled": { "message": "Kua monokia (kua oti te whakauru)" },
   "prompt_updateReplyLang": { "message": "Whakahōu reo whakautu" },

@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Ich mag das." },
   "menuLabel_all": { "message": "ALLE" },
   "menuLabel_replyInt": { "message": "Antwortintervall" },
+  "menuLabel_about": { "message": "Über" },
   "menuLabel_updateCheck": { "message": "Nach Updates suchen" },
   "menuLabel_disabled": { "message": "Deaktiviert (Erweiterung installiert)" },
   "prompt_updateReplyLang": { "message": "Antwortsprache aktualisieren" },

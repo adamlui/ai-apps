@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Mijara bersivê" },
   "menuLabel_all": { "message": "Hemû" },
   "menuLabel_replyInt": { "message": "Nava bersivê" },
+  "menuLabel_about": { "message": "Derbarê de..." },
   "menuLabel_updateCheck": { "message": "Ji bo Nûvekirinan kontrol bikin" },
   "menuLabel_disabled": { "message": "Neçalak (berfireh hate sazkirin)" },
   "prompt_updateReplyLang": { "message": "Zimanê bersivê nûve bike" },

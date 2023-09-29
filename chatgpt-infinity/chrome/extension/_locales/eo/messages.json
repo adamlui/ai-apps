@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Respondi al temo" },
   "menuLabel_all": { "message": "Ĉio" },
   "menuLabel_replyInt": { "message": "Responda Intervalo" },
+  "menuLabel_about": { "message": "Alproksimigas" },
   "menuLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
   "menuLabel_disabled": { "message": "Malŝaltita (etendaĵo instalita)" },
   "prompt_updateReplyLang": { "message": "Ĝisdatigu responda lingvo" },

@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Svar emne" },
   "menuLabel_all": { "message": "ALLE" },
   "menuLabel_replyInt": { "message": "Svarintervall" },
+  "menuLabel_about": { "message": "Om" },
   "menuLabel_updateCheck": { "message": "Se etter oppdateringer" },
   "menuLabel_disabled": { "message": "Deaktivert (utvidelse installert)" },
   "prompt_updateReplyLang": { "message": "Oppdater svarspråk" },

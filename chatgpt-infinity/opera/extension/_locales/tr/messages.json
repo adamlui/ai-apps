@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Yanıt Konusu" },
   "menuLabel_all": { "message": "TÜMÜ" },
   "menuLabel_replyInt": { "message": "Cevap Aralığı" },
+  "menuLabel_about": { "message": "Hakkımızda" },
   "menuLabel_updateCheck": { "message": "Güncellemeleri Kontrol Et" },
   "menuLabel_disabled": { "message": "Devre dışı (uzantı yüklü)" },
   "prompt_updateReplyLang": { "message": "Cevap dili güncelle" },

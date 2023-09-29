@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Subiza Insanganyamatsiko" },
   "menuLabel_all": { "message": "BYOSE" },
   "menuLabel_replyInt": { "message": "Intera" },
+  "menuLabel_about": { "message": "Bigyanye" },
   "menuLabel_updateCheck": { "message": "Kugirango" },
   "menuLabel_disabled": { "message": "Umugereka" },
   "prompt_updateReplyLang": { "message": "Subiza Ururimi" },

@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Saýlawy Gaýd Et" },
   "menuLabel_all": { "message": "Ehlisi" },
   "menuLabel_replyInt": { "message": "Gaýd edilen aralyk" },
+  "menuLabel_about": { "message": "_Barada" },
   "menuLabel_updateCheck": { "message": "Updates üçin täzelendir" },
   "menuLabel_disabled": { "message": "Disabled (enjam gurnalýan)" },
   "prompt_updateReplyLang": { "message": "Cevap Tilini Gaýd Et" },

@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "የምላሽ ርዕስ" },
   "menuLabel_all": { "message": "ሁሉም" },
   "menuLabel_replyInt": { "message": "የምላሽ ክፍተት" },
+  "menuLabel_about": { "message": "ስለ" },
   "menuLabel_updateCheck": { "message": "ዝማኔዎችን ይፈትሹ" },
   "menuLabel_disabled": { "message": "የተጠናከረ (የተጫነ)" },
   "prompt_updateReplyLang": { "message": "የምላሽ ቋንቋን ያዘምኑ" },

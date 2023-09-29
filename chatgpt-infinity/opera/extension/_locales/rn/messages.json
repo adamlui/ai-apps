@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Ashura Topic" },
   "menuLabel_all": { "message": "Bose Akinwande" },
   "menuLabel_replyInt": { "message": "Ashura Interval" },
+  "menuLabel_about": { "message": "Ku vyerekeye" },
   "menuLabel_updateCheck": { "message": "Raba Raba Updates" },
   "menuLabel_disabled": { "message": "Narumugaiye (extension)" },
   "prompt_updateReplyLang": { "message": "Update Ashura Ururimi" },

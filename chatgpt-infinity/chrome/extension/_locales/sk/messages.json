@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "Téma odpovede" },
   "menuLabel_all": { "message": "KAŽDÝ &#10;" },
   "menuLabel_replyInt": { "message": "Interval odpovede" },
+  "menuLabel_about": { "message": "O nás " },
   "menuLabel_updateCheck": { "message": "Zistiť novú verziu" },
   "menuLabel_disabled": { "message": "Vypnuté (rozšírenie nainštalované)" },
   "prompt_updateReplyLang": { "message": "Aktualizovať jazyk odpovede" },

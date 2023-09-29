@@ -8,6 +8,7 @@
   "menuLabel_replyTopic": { "message": "回复主题" },
   "menuLabel_all": { "message": "全部" },
   "menuLabel_replyInt": { "message": "回复间隔" },
+  "menuLabel_about": { "message": "关于" },
   "menuLabel_updateCheck": { "message": "检查更新" },
   "menuLabel_disabled": { "message": "禁用（扩展已安装）" },
   "prompt_updateReplyLang": { "message": "更新回复语言" },
