@@ -5,9 +5,6 @@
 
 (async () => {
 
-    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2]
-    document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
-
     // Import libs
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
@@ -23,6 +20,14 @@
         }
         return true
     })
+
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
+
+    // Selectively disable content or user script
+    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2]
+    if (!['openai', 'poe'].includes(site)) return
+    document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
     if (site == 'openai') await chatgpt.isLoaded()
 
@@ -167,9 +172,6 @@
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
             shadow || chatgpt.isDarkMode() ? '' : 'shadow' )}
-
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     alertToUpdate = (version) => { // eslint-disable-line no-undef
         if (version) {
