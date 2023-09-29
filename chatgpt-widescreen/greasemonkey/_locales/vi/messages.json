@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Chân trang bị ẩn" },
   "menuLabel_modeNotifs": { "message": "Thông báo chế độ" },
   "menuLabel_about": { "message": "Giới thiệu" },
-  "menuLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
   "menuLabel_disabled": { "message": "Đa ̃ tă ́ t (đa ̃ ca ̀ i đă ̣ t phâ ̀" },
   "mode_wideScreen": { "message": "Màn Hình Rộng" },
   "mode_fullWindow": { "message": "Cửa sổ đầy đủ" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "is available" },
   "alert_upToDate": { "message": "cập nhật" },
   "alert_isUpToDate": { "message": "Cập nhật" },
+  "buttonLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
   "buttonLabel_update": { "message": "Cập nhật" },
   "buttonLabel_dismiss": { "message": "Bỏ qua" },
   "link_viewChanges": { "message": "Xem thay đổi" }

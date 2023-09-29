@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "پټ پښۍ" },
   "menuLabel_modeNotifs": { "message": "خبرتیاوې" },
   "menuLabel_about": { "message": "په هکله" },
-  "menuLabel_updateCheck": { "message": "د تازه معلوماتو لپاره وګورئ" },
   "menuLabel_disabled": { "message": "لګول شوی (لګول شوی)" },
   "mode_wideScreen": { "message": "پرده پرده پرده" },
   "mode_fullWindow": { "message": "بشپړول" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "شتون لري" },
   "alert_upToDate": { "message": "اوسمهالیز دي" },
   "alert_isUpToDate": { "message": "د پورته کولو وړ دی" },
+  "buttonLabel_updateCheck": { "message": "د تازه معلوماتو لپاره وګورئ" },
   "buttonLabel_update": { "message": "تازه کړئ" },
   "buttonLabel_dismiss": { "message": "رد کردن" },
   "link_viewChanges": { "message": "بدلون وګورئ" }

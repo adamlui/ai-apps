@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "እተሓብአ ፉተር" },
   "menuLabel_modeNotifs": { "message": "ሓበሬታታት ኣገባብ" },
   "menuLabel_about": { "message": "ብዛዕባ" },
-  "menuLabel_updateCheck": { "message": "ምምሕያሻት መርምር" },
   "menuLabel_disabled": { "message": "ኣገልግሎት ከም ዘይህብ ምግባር (እተኸልከለ ምንቅስቓስ)" },
   "mode_wideScreen": { "message": "ሰፊሕ ስክሪን" },
   "mode_fullWindow": { "message": "ምሉእ ዊንዶው" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "ክርከብ ይከኣል እዩ" },
   "alert_upToDate": { "message": "ኣቐዲምካ ምምሕያሽ" },
   "alert_isUpToDate": { "message": "እዋናዊ ትሕዝቶ" },
+  "buttonLabel_updateCheck": { "message": "ምምሕያሻት መርምር" },
   "buttonLabel_update": { "message": "ኣሐድስ" },
   "buttonLabel_dismiss": { "message": "ምጥፋእ" },
   "link_viewChanges": { "message": "ለውጢ ርአ" }

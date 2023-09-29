@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "CAA -" },
   "menuLabel_modeNotifs": { "message": "Modus Notifikatiounen" },
   "menuLabel_about": { "message": "Iwwer Qt" },
-  "menuLabel_updateCheck": { "message": "Fakten an Erënnerungen" },
   "menuLabel_disabled": { "message": "Deaktivéiert (Extensioun installéiert)" },
   "mode_wideScreen": { "message": "Breet Bildschierm" },
   "mode_fullWindow": { "message": "Full-Window" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "ass verfügbar" },
   "alert_upToDate": { "message": "Aktualiséiert" },
   "alert_isUpToDate": { "message": "hie/si, hatt/et gëtt aktualiséiert" },
+  "buttonLabel_updateCheck": { "message": "Fakten an Erënnerungen" },
   "buttonLabel_update": { "message": "Aktualiséieren" },
   "buttonLabel_dismiss": { "message": "Entloossen" },
   "link_viewChanges": { "message": "Ännerungen uweisen" }

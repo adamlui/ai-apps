@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "লুকানো ফুটার" },
   "menuLabel_modeNotifs": { "message": "মোড বিজ্ঞপ্তি" },
   "menuLabel_about": { "message": "সম্বন্ধে" },
-  "menuLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
   "menuLabel_disabled": { "message": "নিষ্ক্রিয় (এক্সটেনশন ইনস্টল করা হয়েছে)" },
   "mode_wideScreen": { "message": "ওয়াইড স্ক্রিন" },
   "mode_fullWindow": { "message": "সম্পূর্ণ উইণ্ডো" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "সহজলভ্য" },
   "alert_upToDate": { "message": "হালনাগাদ" },
   "alert_isUpToDate": { "message": "আপ টু ডেট" },
+  "buttonLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
   "buttonLabel_update": { "message": "আপডেট করুন" },
   "buttonLabel_dismiss": { "message": "খারিজ করুন" },
   "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" }

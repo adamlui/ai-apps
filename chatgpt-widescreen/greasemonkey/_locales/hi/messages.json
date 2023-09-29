@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "छिपे हुए पाद लेख" },
   "menuLabel_modeNotifs": { "message": "मोड अधिसूचनाएँ" },
   "menuLabel_about": { "message": "परिचय" },
-  "menuLabel_updateCheck": { "message": "अद्यतन की जांच करें" },
   "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन स्थापित है)" },
   "mode_wideScreen": { "message": "वाइडस्क्रीन मोड" },
   "mode_fullWindow": { "message": "फुल विंडो मोड" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "उपलब्ध है" },
   "alert_upToDate": { "message": "अद्यतित" },
   "alert_isUpToDate": { "message": "अद्यतित है" },
+  "buttonLabel_updateCheck": { "message": "अद्यतन की जांच करें" },
   "buttonLabel_update": { "message": "अद्यतन करें" },
   "buttonLabel_dismiss": { "message": "खारिज करें" },
   "link_viewChanges": { "message": "परिवर्तन देखें" }

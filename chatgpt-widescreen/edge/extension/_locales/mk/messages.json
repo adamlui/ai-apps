@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Скриена подножје" },
   "menuLabel_modeNotifs": { "message": "Известувања за режим" },
   "menuLabel_about": { "message": "За" },
-  "menuLabel_updateCheck": { "message": "Провери за нова верзија" },
   "menuLabel_disabled": { "message": "Оневозможено (наставката е инсталирана)" },
   "mode_wideScreen": { "message": "Широк екран" },
   "mode_fullWindow": { "message": "Целосен прозорец" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "е достапен" },
   "alert_upToDate": { "message": "Ажурираj" },
   "alert_isUpToDate": { "message": "е ажуриран" },
+  "buttonLabel_updateCheck": { "message": "Провери за нова верзија" },
   "buttonLabel_update": { "message": "Ажурирај" },
   "buttonLabel_dismiss": { "message": "Отфрли" },
   "link_viewChanges": { "message": "Прикажи ги промените" }

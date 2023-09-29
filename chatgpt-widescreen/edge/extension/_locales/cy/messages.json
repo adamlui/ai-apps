@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Troedyn Cudd" },
   "menuLabel_modeNotifs": { "message": "Hysbysiadau Modd" },
   "menuLabel_about": { "message": "Gwybodaeth" },
-  "menuLabel_updateCheck": { "message": "Dango_s diweddariadau" },
   "menuLabel_disabled": { "message": "Analluogwyd (estyniad wedi'i osod)" },
   "mode_wideScreen": { "message": "Sgrîn lydan" },
   "mode_fullWindow": { "message": "Ffenestr - lawn" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "ar gael" },
   "alert_upToDate": { "message": "cyfredol" },
   "alert_isUpToDate": { "message": "yn up - to - date" },
+  "buttonLabel_updateCheck": { "message": "Dango_s diweddariadau" },
   "buttonLabel_update": { "message": "Diweddaru" },
   "buttonLabel_dismiss": { "message": "Cau" },
   "link_viewChanges": { "message": "Gweld newidiadau" }

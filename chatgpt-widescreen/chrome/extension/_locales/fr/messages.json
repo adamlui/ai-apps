@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Pied de page caché" },
   "menuLabel_modeNotifs": { "message": "Notifications de mode" },
   "menuLabel_about": { "message": "À propos de" },
-  "menuLabel_updateCheck": { "message": "Vérifier les mises à jour" },
   "menuLabel_disabled": { "message": "Désactivé (extension installée)" },
   "mode_wideScreen": { "message": "Mode écran large" },
   "mode_fullWindow": { "message": "Mode fenêtre complète" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "est disponible" },
   "alert_upToDate": { "message": "À jour" },
   "alert_isUpToDate": { "message": "est à jour" },
+  "buttonLabel_updateCheck": { "message": "Vérifier les mises à jour" },
   "buttonLabel_update": { "message": "Mettre à jour" },
   "buttonLabel_dismiss": { "message": "Ignorer" },
   "link_viewChanges": { "message": "Voir les modifications" }

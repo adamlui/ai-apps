@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "છુપાયેલ ફુટર" },
   "menuLabel_modeNotifs": { "message": "સ્થિતિ સૂચનાઓ" },
   "menuLabel_about": { "message": "માહિતી " },
-  "menuLabel_updateCheck": { "message": "નવાં ભાગ(ઓ) માટે ચકાસો" },
   "menuLabel_disabled": { "message": "અક્ષમ (એક્સટેન્શન સ્થાપિત)" },
   "mode_wideScreen": { "message": "વિશાળ સ્ક્રીન" },
   "mode_fullWindow": { "message": "પૂર્ણ - વિન્ડો" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "ઉપલબ્ધ છે" },
   "alert_upToDate": { "message": "સુધારો" },
   "alert_isUpToDate": { "message": "સુધારો" },
+  "buttonLabel_updateCheck": { "message": "નવાં ભાગ(ઓ) માટે ચકાસો" },
   "buttonLabel_update": { "message": "અદ્યતન બનાવો" },
   "buttonLabel_dismiss": { "message": "કાઢી મૂકવું" },
   "link_viewChanges": { "message": "ફેરફારો જુઓ" }

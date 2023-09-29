@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "लुकेको फुटर" },
   "menuLabel_modeNotifs": { "message": "मोड सूचनाहरू" },
   "menuLabel_about": { "message": "बारेमा" },
-  "menuLabel_updateCheck": { "message": "अद्यावधिकका लागि जाँच गर्नुहोस्" },
   "menuLabel_disabled": { "message": "अक्षम पारियो (विस्तार स्थापना गरियो)" },
   "mode_wideScreen": { "message": "फराकिलो पर्दा" },
   "mode_fullWindow": { "message": "पूरा सञ्झ्याल" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "उपलब्ध छ" },
   "alert_upToDate": { "message": "अद्यावधिक गर्नुहोस्" },
   "alert_isUpToDate": { "message": "अद्यावधिक गर्नुहोस्" },
+  "buttonLabel_updateCheck": { "message": "अद्यावधिकका लागि जाँच गर्नुहोस्" },
   "buttonLabel_update": { "message": "अद्यावधिक" },
   "buttonLabel_dismiss": { "message": "खारेज गर्नुहोस्" },
   "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" }

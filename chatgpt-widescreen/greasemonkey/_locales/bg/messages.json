@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Скрит долен колонтитул" },
   "menuLabel_modeNotifs": { "message": "Известия за режим" },
   "menuLabel_about": { "message": "Относно" },
-  "menuLabel_updateCheck": { "message": "Проверка за обновяване" },
   "menuLabel_disabled": { "message": "Деактивирано (разширението е инсталирано)" },
   "mode_wideScreen": { "message": "Широк екран" },
   "mode_fullWindow": { "message": "Цял прозорец" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "е налична" },
   "alert_upToDate": { "message": "Обновен" },
   "alert_isUpToDate": { "message": "е актуален" },
+  "buttonLabel_updateCheck": { "message": "Проверка за обновяване" },
   "buttonLabel_update": { "message": "Актуализация" },
   "buttonLabel_dismiss": { "message": "Отхвърли" },
   "link_viewChanges": { "message": "Вижте Промените" }

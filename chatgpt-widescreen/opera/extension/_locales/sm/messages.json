@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Faalilolilo vae" },
   "menuLabel_modeNotifs": { "message": "FA'AMATALAGA FA'AMATALAGA" },
   "menuLabel_about": { "message": "E uiga i" },
-  "menuLabel_updateCheck": { "message": "Siaki mo faʻafouga" },
   "menuLabel_disabled": { "message": "Lē atoatoa le malosi (Extended faapipiiina)" },
   "mode_wideScreen": { "message": "Screen lautele" },
   "mode_fullWindow": { "message": "Faumuina Faumuina Full" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "e avanoa" },
   "alert_upToDate": { "message": "Up i le taimi nei" },
   "alert_isUpToDate": { "message": "o loo i ai i le taimi nei" },
+  "buttonLabel_updateCheck": { "message": "Siaki mo faʻafouga" },
   "buttonLabel_update": { "message": "Fa'afouga" },
   "buttonLabel_dismiss": { "message": "Faate'a" },
   "link_viewChanges": { "message": "Vaʻai Suiga" }

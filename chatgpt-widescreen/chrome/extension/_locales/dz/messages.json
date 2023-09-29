@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "གསང་བཞག་མི་རྐང་པ་" },
   "menuLabel_modeNotifs": { "message": "གསལ་བཀོད་འབད་ཡོད་པའི་ཐོ་ཡིག་ཚུ་" },
   "menuLabel_about": { "message": "སྐོར་ལས་" },
-  "menuLabel_updateCheck": { "message": "བརྟག་ཞིབ་སྣོད་འཛིན་ཚུ་ དུས་མཐུན་བཟོ་ནི་ཨིན་ན?" },
   "menuLabel_disabled": { "message": "ནུས་མེད་བཀྲམ་གཏང་། (_F)" },
   "mode_wideScreen": { "message": "གཟུགས་བརྙན།" },
   "mode_fullWindow": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
   "alert_upToDate": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
   "alert_isUpToDate": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
+  "buttonLabel_updateCheck": { "message": "བརྟག་ཞིབ་སྣོད་འཛིན་ཚུ་ དུས་མཐུན་བཟོ་ནི་ཨིན་ན?" },
   "buttonLabel_update": { "message": "གསར་བསྐྲུན་འབད་མ་ཚུགས།" },
   "buttonLabel_dismiss": { "message": "ཌིསིཊི།" },
   "link_viewChanges": { "message": "བསྒྱུར་བཅོས་ཚུ་རྩ་བསྐྲད་གཏང་།" }

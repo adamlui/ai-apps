@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Ukufisama Footer" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications Tukwila" },
   "menuLabel_about": { "message": "pafya" },
-  "menuLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
   "menuLabel_disabled": { "message": "Malema (maile)" },
   "mode_wideScreen": { "message": "Wide screen ukulele" },
   "mode_fullWindow": { "message": "Mulyati Mulyati Full" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "ifintu tafilipo" },
   "alert_upToDate": { "message": "Up--date ukulele" },
   "alert_isUpToDate": { "message": "shine shine up-date shine" },
+  "buttonLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
   "buttonLabel_update": { "message": "Ica Update" },
   "buttonLabel_dismiss": { "message": "Dismiss Fela Kuti" },
   "link_viewChanges": { "message": "View ayaluka" }

@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Umurenge uhishijwe" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications None None" },
   "menuLabel_about": { "message": "Ku vyerekeye" },
-  "menuLabel_updateCheck": { "message": "Raba Raba Updates" },
   "menuLabel_disabled": { "message": "Narumugaiye (extension)" },
   "mode_wideScreen": { "message": "Wide screen None None" },
   "mode_fullWindow": { "message": "Umwimbu ukwiye" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "none None available." },
   "alert_upToDate": { "message": "Nimbahera To Dharuhera" },
   "alert_isUpToDate": { "message": "iki dunya arasinda" },
+  "buttonLabel_updateCheck": { "message": "Raba Raba Updates" },
   "buttonLabel_update": { "message": "Update None None" },
   "buttonLabel_dismiss": { "message": "Dismiss None None" },
   "link_viewChanges": { "message": "Kubona impinduka" }

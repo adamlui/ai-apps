@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Gizlin aýak" },
   "menuLabel_modeNotifs": { "message": "Moda Häzirleşdirmeleri" },
   "menuLabel_about": { "message": "_Barada" },
-  "menuLabel_updateCheck": { "message": "Täzelenmeleri barla" },
   "menuLabel_disabled": { "message": "Öçürilen (giňeltme gurnalan)" },
   "mode_wideScreen": { "message": "Keng Ekran" },
   "mode_fullWindow": { "message": "Tam pencere" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "elýeterli" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "ýagtylyk" },
+  "buttonLabel_updateCheck": { "message": "Täzelenmeleri barla" },
   "buttonLabel_update": { "message": "Häzirleşdir" },
   "buttonLabel_dismiss": { "message": "Işden aýyrmak" },
   "link_viewChanges": { "message": "Ýygnaýyşy görkez" }

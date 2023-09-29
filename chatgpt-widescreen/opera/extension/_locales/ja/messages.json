@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "非表示のフッター" },
   "menuLabel_modeNotifs": { "message": "モードの通知" },
   "menuLabel_about": { "message": "詳細" },
-  "menuLabel_updateCheck": { "message": "アップデートの確認" },
   "menuLabel_disabled": { "message": "無効化（拡張機能がインストールされています）" },
   "mode_wideScreen": { "message": "ワイドスクリーンモード" },
   "mode_fullWindow": { "message": "フルウィンドウモード" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "が利用可能です" },
   "alert_upToDate": { "message": "最新です" },
   "alert_isUpToDate": { "message": "が最新です" },
+  "buttonLabel_updateCheck": { "message": "アップデートの確認" },
   "buttonLabel_update": { "message": "アップデート" },
   "buttonLabel_dismiss": { "message": "解散" },
   "link_viewChanges": { "message": "ビューの変更" }

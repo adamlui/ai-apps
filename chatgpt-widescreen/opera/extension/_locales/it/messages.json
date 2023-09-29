@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Nascondi Footer" },
   "menuLabel_modeNotifs": { "message": "Notifiche di modalità" },
   "menuLabel_about": { "message": "Informazioni generali" },
-  "menuLabel_updateCheck": { "message": "Verifica aggiornamenti" },
   "menuLabel_disabled": { "message": "Disabilitato (estensione installata)" },
   "mode_wideScreen": { "message": "Schermo largo" },
   "mode_fullWindow": { "message": "Modalità finestra completa" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "è disponibile" },
   "alert_upToDate": { "message": "Aggiornato" },
   "alert_isUpToDate": { "message": "è aggiornato" },
+  "buttonLabel_updateCheck": { "message": "Verifica aggiornamenti" },
   "buttonLabel_update": { "message": "Aggiorna" },
   "buttonLabel_dismiss": { "message": "Annulla" },
   "link_viewChanges": { "message": "Visualizza le modifiche" }

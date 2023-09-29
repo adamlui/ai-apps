@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Slēptā kājene" },
   "menuLabel_modeNotifs": { "message": "Režīma paziņojumi" },
   "menuLabel_about": { "message": "Par produktu" },
-  "menuLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi." },
   "menuLabel_disabled": { "message": "Atspējots (paplašinājums instalēts)" },
   "mode_wideScreen": { "message": "Platekrāns" },
   "mode_fullWindow": { "message": "Pilns logs" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "ir pieejams!" },
   "alert_upToDate": { "message": "Aktuāls" },
   "alert_isUpToDate": { "message": "Aktuāls" },
+  "buttonLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi." },
   "buttonLabel_update": { "message": "Atjauninināt" },
   "buttonLabel_dismiss": { "message": "Noraidīt" },
   "link_viewChanges": { "message": "Skatīt izmaiņas" }

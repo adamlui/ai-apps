@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Ezkutuko orri-oina" },
   "menuLabel_modeNotifs": { "message": "Moduaren jakinarazpenak" },
   "menuLabel_about": { "message": "Egileari Buruz" },
-  "menuLabel_updateCheck": { "message": "Begiratu _eguneraketak: " },
   "menuLabel_disabled": { "message": "Desgaituta (luzapena instalatuta)" },
   "mode_wideScreen": { "message": "Pantaila zabala" },
   "mode_fullWindow": { "message": "Leiho osoa" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "eskuragarri dago" },
   "alert_upToDate": { "message": "Eguneratu" },
   "alert_isUpToDate": { "message": "Eguneratu" },
+  "buttonLabel_updateCheck": { "message": "Begiratu _eguneraketak: " },
   "buttonLabel_update": { "message": "Eguneratu" },
   "buttonLabel_dismiss": { "message": "Bistatik kendu" },
   "link_viewChanges": { "message": "Ikusi aldaketak" }

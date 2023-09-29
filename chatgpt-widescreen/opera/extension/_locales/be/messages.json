@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Схаваны ніжні калантытул" },
   "menuLabel_modeNotifs": { "message": "Рэжым апавяшчэнняў" },
   "menuLabel_about": { "message": "Пра нас" },
-  "menuLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
   "menuLabel_disabled": { "message": "Адключаны (усталяваны пашырэнне)" },
   "mode_wideScreen": { "message": "Шырокі экран" },
   "mode_fullWindow": { "message": "Поўнае акно" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "даступны" },
   "alert_upToDate": { "message": "Аднаўленне не патрабуецца" },
   "alert_isUpToDate": { "message": "у цяперашні час Up-to-date" },
+  "buttonLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
   "buttonLabel_update": { "message": "Абноўлена " },
   "buttonLabel_dismiss": { "message": "Адхіліць" },
   "link_viewChanges": { "message": "Прагледзець змены" }

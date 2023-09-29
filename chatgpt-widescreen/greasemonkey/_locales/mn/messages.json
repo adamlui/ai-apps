@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Нуусан хөл" },
   "menuLabel_modeNotifs": { "message": "Үгүй Тайлбар" },
   "menuLabel_about": { "message": "Бидний тухай" },
-  "menuLabel_updateCheck": { "message": "Шинэчлэлтийг шинэчлэх" },
   "menuLabel_disabled": { "message": "Тохиргоо (Дэмжлэг)" },
   "mode_wideScreen": { "message": "Цонхны дэлгэц" },
   "mode_fullWindow": { "message": "Хоолойн" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "нэвтрэх боломжтой" },
   "alert_upToDate": { "message": "Дагалдах" },
   "alert_isUpToDate": { "message": "зорилго" },
+  "buttonLabel_updateCheck": { "message": "Шинэчлэлтийг шинэчлэх" },
   "buttonLabel_update": { "message": "Шинэчлэх" },
   "buttonLabel_dismiss": { "message": "Дуусах" },
   "link_viewChanges": { "message": "Хүмүүсийг харах" }

@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Ukryta stopka" },
   "menuLabel_modeNotifs": { "message": "Powiadomienia o trybie" },
   "menuLabel_about": { "message": "Około" },
-  "menuLabel_updateCheck": { "message": "Sprawdzanie aktualizacji" },
   "menuLabel_disabled": { "message": "Wyłączone (zainstalowane rozszerzenie)" },
   "mode_wideScreen": { "message": "Ekran panoramiczny" },
   "mode_fullWindow": { "message": "Pełne okno" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "jest dostępna" },
   "alert_upToDate": { "message": "Aktualne" },
   "alert_isUpToDate": { "message": "jest aktualny" },
+  "buttonLabel_updateCheck": { "message": "Sprawdzanie aktualizacji" },
   "buttonLabel_update": { "message": "Aktualizuj" },
   "buttonLabel_dismiss": { "message": "Odrzuć" },
   "link_viewChanges": { "message": "Przegląd zmian" }

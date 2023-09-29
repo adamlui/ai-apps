@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Skrytá zápatí" },
   "menuLabel_modeNotifs": { "message": "Oznámení o režimu" },
   "menuLabel_about": { "message": "O" },
-  "menuLabel_updateCheck": { "message": "Zjistit novější verzi" },
   "menuLabel_disabled": { "message": "Zakázáno (rozšíření nainstalováno)" },
   "mode_wideScreen": { "message": "Širokoúhlá obrazovka" },
   "mode_fullWindow": { "message": "Celé okno" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "je k dispozici" },
   "alert_upToDate": { "message": "aktuální" },
   "alert_isUpToDate": { "message": "jenž se vyzná" },
+  "buttonLabel_updateCheck": { "message": "Zjistit novější verzi" },
   "buttonLabel_update": { "message": "Aktualizovat" },
   "buttonLabel_dismiss": { "message": "Zamítnout" },
   "link_viewChanges": { "message": "Zobrazit změny" }

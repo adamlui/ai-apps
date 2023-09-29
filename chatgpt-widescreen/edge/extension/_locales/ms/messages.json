@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Pengaki Tersembunyi" },
   "menuLabel_modeNotifs": { "message": "Pemberitahuan Mod" },
   "menuLabel_about": { "message": "" },
-  "menuLabel_updateCheck": { "message": "Semak Kemaskini" },
   "menuLabel_disabled": { "message": "Dilumpuhkan (sambungan dipasang)" },
   "mode_wideScreen": { "message": "Skrin lebar" },
   "mode_fullWindow": { "message": "Tetingkap penuh" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "tersedia" },
   "alert_upToDate": { "message": "Kemas kini" },
   "alert_isUpToDate": { "message": "Kemas kini" },
+  "buttonLabel_updateCheck": { "message": "Semak Kemaskini" },
   "buttonLabel_update": { "message": "Saya ingin membuat susulan" },
   "buttonLabel_dismiss": { "message": "Singkir" },
   "link_viewChanges": { "message": "Lihat perubahan" }

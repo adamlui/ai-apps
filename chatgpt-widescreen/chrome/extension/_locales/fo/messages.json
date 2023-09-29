@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Skjult fótaskrivi" },
   "menuLabel_modeNotifs": { "message": "Modus kunningarskriv" },
   "menuLabel_about": { "message": "Um" },
-  "menuLabel_updateCheck": { "message": "Hygg eftir UPDATE" },
   "menuLabel_disabled": { "message": "Broytingar í innsavningini (innsavning)" },
   "mode_wideScreen": { "message": "Breiddarskrá" },
   "mode_fullWindow": { "message": "Full-window" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "er tøkt" },
   "alert_upToDate": { "message": "UPDATE" },
   "alert_isUpToDate": { "message": "uPDATE Sí Sí" },
+  "buttonLabel_updateCheck": { "message": "Hygg eftir UPDATE" },
   "buttonLabel_update": { "message": "Dagfør" },
   "buttonLabel_dismiss": { "message": "Avrita" },
   "link_viewChanges": { "message": "Sýn broytingar" }

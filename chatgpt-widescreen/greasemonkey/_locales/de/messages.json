@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Ausgeblendete Fußzeile" },
   "menuLabel_modeNotifs": { "message": "Modusbenachrichtigungen" },
   "menuLabel_about": { "message": "Über" },
-  "menuLabel_updateCheck": { "message": "Nach Updates suchen" },
   "menuLabel_disabled": { "message": "Deaktiviert (Erweiterung installiert)" },
   "mode_wideScreen": { "message": "Breitbildmodus" },
   "mode_fullWindow": { "message": "Vollfenstermodus" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "ist verfügbar" },
   "alert_upToDate": { "message": "Aktuell" },
   "alert_isUpToDate": { "message": "ist aktuell" },
+  "buttonLabel_updateCheck": { "message": "Nach Updates suchen" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Schließen" },
   "link_viewChanges": { "message": "Änderungen anzeigen" }

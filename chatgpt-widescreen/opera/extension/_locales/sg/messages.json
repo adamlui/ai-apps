@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "A honde ni na yâ ti mbeni kete kete kete kete kete kete kete" },
   "menuLabel_modeNotifs": { "message": "Akode ti fango tënë" },
   "menuLabel_about": { "message": "About sara" },
-  "menuLabel_updateCheck": { "message": "Gbu li ti mo na ndo ti aye so asi laso" },
   "menuLabel_disabled": { "message": "A yeke na lege ti kode ti fango tënë ti mbeni zo so ayeke na yâ ti mbeni kete" },
   "mode_wideScreen": { "message": "Wide Image brochure" },
   "mode_fullWindow": { "message": "A yeke na yâ ti fenêtre kue" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "a yeke wara ni" },
   "alert_upToDate": { "message": "A yeke sara si a yeke nzoni ti tene azo" },
   "alert_isUpToDate": { "message": "a yeke sara si aye ni aga nzoni" },
+  "buttonLabel_updateCheck": { "message": "Gbu li ti mo na ndo ti aye so asi laso" },
   "buttonLabel_update": { "message": "Aye so asi na yâ ti fini dunia" },
   "buttonLabel_dismiss": { "message": "Dessin ti amo" },
   "link_viewChanges": { "message": "Bingo Bango Change" }

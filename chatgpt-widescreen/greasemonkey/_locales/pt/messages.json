@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Rodapé oculto" },
   "menuLabel_modeNotifs": { "message": "Notificações de Modo" },
   "menuLabel_about": { "message": "Quem somos" },
-  "menuLabel_updateCheck": { "message": "Verificar Atualizações" },
   "menuLabel_disabled": { "message": "Desativado (extensão instalada)" },
   "mode_wideScreen": { "message": "Tela Ampla" },
   "mode_fullWindow": { "message": "Modo Janela Completa" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "está disponível" },
   "alert_upToDate": { "message": "Atualizado" },
   "alert_isUpToDate": { "message": "está atualizado" },
+  "buttonLabel_updateCheck": { "message": "Verificar Atualizações" },
   "buttonLabel_update": { "message": "Atualizar" },
   "buttonLabel_dismiss": { "message": "Ignorar" },
   "link_viewChanges": { "message": "Ver Alterações" }

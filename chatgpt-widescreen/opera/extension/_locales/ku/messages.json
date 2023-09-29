@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "429 TOO MANY REQUESTS: {  \"ERROR\":{  \"ROOT_CAUSE\":[{  \"TYPE\":\"CIRCUIT_BREAKING_EXCEPTION\",\"REASON\":\"[PARENT] DATA TOO LARGE, DATA FOR [<HTTP_REQUEST>] WOULD BE [257557972/245.6MB], WHICH IS LARGER THAN THE LIMIT OF [255013683/243.1MB], REAL USAGE: [257557568/245.6MB], NEW BYTES RESERVED: [404/404B], USAGES [MODEL_INFERENCE=0/0B, INFLIGHT_REQUESTS=404/404B, REQUEST=0/0B, FIELDDATA=3320/3.2KB, EQL_SEQUENCE=0/0B]\",\"BYTES_WANTED\":257557972,\"BYTES_LIMIT\":255013683,\"DURABILITY\":\"PERMANENT\"  }],\"TYPE\":\"CIRCUIT_BREAKING_EXCEPTION\",\"REASON\":\"[PARENT] DATA TOO LARGE, DATA FOR [<HTTP_REQUEST>] WOULD BE [257557972/245.6MB], WHICH IS LARGER THAN THE LIMIT OF [255013683/243.1MB], REAL USAGE: [257557568/245.6MB], NEW BYTES RESERVED: [404/404B], USAGES [MODEL_INFERENCE=0/0B, INFLIGHT_REQUESTS=404/404B, REQUEST=0/0B, FIELDDATA=3320/3.2KB, EQL_SEQUENCE=0/0B]\",\"BYTES_WANTED\":257557972,\"BYTES_LIMIT\":255013683,\"DURABILITY\":\"PERMANENT\"  },\"STATUS\":429  }" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
   "menuLabel_about": { "message": "Derbarê de..." },
-  "menuLabel_updateCheck": { "message": "Ji bo Nûvekirinan kontrol bikin" },
   "menuLabel_disabled": { "message": "Neçalakkirî (berfireh hate saz kirin)" },
   "mode_wideScreen": { "message": "ekrana fireh" },
   "mode_fullWindow": { "message": "Pencere tije" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "heye" },
   "alert_upToDate": { "message": "نوێ، ھاوچەرخ، نو، تازە" },
   "alert_isUpToDate": { "message": "rojane ye" },
+  "buttonLabel_updateCheck": { "message": "Ji bo Nûvekirinan kontrol bikin" },
   "buttonLabel_update": { "message": "Rojane Bike" },
   "buttonLabel_dismiss": { "message": "دەردەکات، دەرکردن، ڕێ پێنەدان، دەر کردن، رەدکردنەوەی گازندە(دادخوازی)\n[مافناسی]: دەر کردن، رەد کردنەوەی گازندە (دادخوازی)" },
   "link_viewChanges": { "message": "Guhertinan bibînin" }

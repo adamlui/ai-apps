@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Прихований нижній колонтитул" },
   "menuLabel_modeNotifs": { "message": "Сповіщення про Режим" },
   "menuLabel_about": { "message": "Про нас" },
-  "menuLabel_updateCheck": { "message": "Перевірити Оновлення" },
   "menuLabel_disabled": { "message": "Вимкнено (розширення встановлено)" },
   "mode_wideScreen": { "message": "Широкий екран" },
   "mode_fullWindow": { "message": "Повноекранний режим" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "доступно" },
   "alert_upToDate": { "message": "Актуально" },
   "alert_isUpToDate": { "message": "актуально" },
+  "buttonLabel_updateCheck": { "message": "Перевірити Оновлення" },
   "buttonLabel_update": { "message": "Оновити" },
   "buttonLabel_dismiss": { "message": "Відмінити" },
   "link_viewChanges": { "message": "Переглянути зміни" }

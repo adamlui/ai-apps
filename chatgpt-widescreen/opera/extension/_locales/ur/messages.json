@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "پوشیدہ فوٹر" },
   "menuLabel_modeNotifs": { "message": "موڈ نوٹیفکیشنز (Mode Notifications)" },
   "menuLabel_about": { "message": "متعلق" },
-  "menuLabel_updateCheck": { "message": "اپ ڈیٹس کی پڑتال کریں" },
   "menuLabel_disabled": { "message": "غیر فعال (توسیع انسٹال ہے)" },
   "mode_wideScreen": { "message": "Wide screen" },
   "mode_fullWindow": { "message": "مکمل ونڈو (full - window)" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "دستیاب ہے." },
   "alert_upToDate": { "message": "تازہ ترین" },
   "alert_isUpToDate": { "message": "uP TO DATE (اپ ٹو ڈیٹ)" },
+  "buttonLabel_updateCheck": { "message": "اپ ڈیٹس کی پڑتال کریں" },
   "buttonLabel_update": { "message": "اپ ڈیٹ " },
   "buttonLabel_dismiss": { "message": "برخاست" },
   "link_viewChanges": { "message": "تبدیلیاں دیکھیں:" }

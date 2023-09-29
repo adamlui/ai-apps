@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "숨겨진 바닥글" },
   "menuLabel_modeNotifs": { "message": "모드 알림" },
   "menuLabel_about": { "message": "소개" },
-  "menuLabel_updateCheck": { "message": "업데이트 확인" },
   "menuLabel_disabled": { "message": "사용 중지됨 (확장 설치됨)" },
   "mode_wideScreen": { "message": "와이드 스크린" },
   "mode_fullWindow": { "message": "전체 창" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "사용 가능합니다" },
   "alert_upToDate": { "message": "최신 상태입니다" },
   "alert_isUpToDate": { "message": "최신 버전입니다" },
+  "buttonLabel_updateCheck": { "message": "업데이트 확인" },
   "buttonLabel_update": { "message": "업데이트" },
   "buttonLabel_dismiss": { "message": "무시" },
   "link_viewChanges": { "message": "변경 내용 보기" }

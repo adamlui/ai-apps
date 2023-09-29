@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Hidden Footer" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
   "menuLabel_about": { "message": "About" },
-  "menuLabel_updateCheck": { "message": "Check for Updates" },
   "menuLabel_disabled": { "message": "Disabled (extension installed)" },
   "mode_wideScreen": { "message": "Wide screen" },
   "mode_fullWindow": { "message": "Full-window" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "is available" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "is up-to-date" },
+  "buttonLabel_updateCheck": { "message": "Check for Updates" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "View changes" }

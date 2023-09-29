@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Piksa i stap hait" },
   "menuLabel_modeNotifs": { "message": "Samting ol i no save long en" },
   "menuLabel_about": { "message": "About" },
-  "menuLabel_updateCheck": { "message": "Lukim ol eleksen" },
   "menuLabel_disabled": { "message": "Disable (long long int)" },
   "mode_wideScreen": { "message": "Wrap long screen" },
   "mode_fullWindow": { "message": "Long Window Long Window" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "em i kamap pinis" },
   "alert_upToDate": { "message": "UPDATE long" },
   "alert_isUpToDate": { "message": "em i stap up-to-date" },
+  "buttonLabel_updateCheck": { "message": "Lukim ol eleksen" },
   "buttonLabel_update": { "message": "Toksave" },
   "buttonLabel_dismiss": { "message": "Rausim" },
   "link_viewChanges": { "message": "Lukim ol senis" }

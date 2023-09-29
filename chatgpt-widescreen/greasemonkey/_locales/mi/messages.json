@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Ko te waewae huna" },
   "menuLabel_modeNotifs": { "message": "Nga whakamohiotanga aratau" },
   "menuLabel_about": { "message": "Mō" },
-  "menuLabel_updateCheck": { "message": "Tirohia ngā whakahōu" },
   "menuLabel_disabled": { "message": "Kua monokia (kua oti te whakauru)" },
   "mode_wideScreen": { "message": "Mata Whānui" },
   "mode_fullWindow": { "message": "Whakakiia i roto i te katoa" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "kei te wātea ahau" },
   "alert_upToDate": { "message": "Ki runga ki te rā" },
   "alert_isUpToDate": { "message": "kei a koe i tenei wa" },
+  "buttonLabel_updateCheck": { "message": "Tirohia ngā whakahōu" },
   "buttonLabel_update": { "message": "Whakahou" },
   "buttonLabel_dismiss": { "message": "Muku" },
   "link_viewChanges": { "message": "Tirohia ngā panoni" }

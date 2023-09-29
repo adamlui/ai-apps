@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "ဖုံးကွယ်ထားသော Footer" },
   "menuLabel_modeNotifs": { "message": "Mode အသိပေးချက်များ" },
   "menuLabel_about": { "message": "အကြောင်း" },
-  "menuLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "menuLabel_disabled": { "message": "ပိတ်ထားသည် (တိုးချဲ့မှု တပ်ဆင်ထားသည်)" },
   "mode_wideScreen": { "message": "ကျယ်ပြန့်သောမျက်နှာပြင်" },
   "mode_fullWindow": { "message": "Window အပြည့်အစုံ" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "ရရှိနိုင်ပါသည်" },
   "alert_upToDate": { "message": "အပ်ဒိတ်လုပ်ရန်" },
   "alert_isUpToDate": { "message": "up - to - date ဖြစ်သည်" },
+  "buttonLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
   "buttonLabel_dismiss": { "message": "ပယ်ဖျက်မည်" },
   "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ပါ" }

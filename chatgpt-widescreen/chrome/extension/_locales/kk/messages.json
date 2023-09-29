@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Жасырын төменгі аяқ киім" },
   "menuLabel_modeNotifs": { "message": "Режим туралы хабарландырулар" },
   "menuLabel_about": { "message": "Туралы" },
-  "menuLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
   "menuLabel_disabled": { "message": "Өшірілген (кеңейтім орнатылған)" },
   "mode_wideScreen": { "message": "Кең экран" },
   "mode_fullWindow": { "message": "Толық терезе" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "қолжетімді" },
   "alert_upToDate": { "message": "Жаңарту" },
   "alert_isUpToDate": { "message": "up Up Up - қазіргі заманғы" },
+  "buttonLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
   "buttonLabel_update": { "message": "Жаңарту" },
   "buttonLabel_dismiss": { "message": "Дисплейлер" },
   "link_viewChanges": { "message": "Өзгерістерді көру" }

@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Жашыруун Footer" },
   "menuLabel_modeNotifs": { "message": "Режим билдирүүлөрү" },
   "menuLabel_about": { "message": "_Апплет жөнүндө" },
-  "menuLabel_updateCheck": { "message": "Жаңы чыгаруулар бар экендигин текшерүү" },
   "menuLabel_disabled": { "message": "Өчүрүлгөн (кеңейтилген орнотулган)" },
   "mode_wideScreen": { "message": "Кең экран" },
   "mode_fullWindow": { "message": "Толук терезе" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "жеткиликтүү" },
   "alert_upToDate": { "message": "Учурдагы" },
   "alert_isUpToDate": { "message": "бугунги кунгача" },
+  "buttonLabel_updateCheck": { "message": "Жаңы чыгаруулар бар экендигин текшерүү" },
   "buttonLabel_update": { "message": "Жаңыртуу" },
   "buttonLabel_dismiss": { "message": "Дисплейлер" },
   "link_viewChanges": { "message": "Өзгөрүүлөрдү көрүү" }

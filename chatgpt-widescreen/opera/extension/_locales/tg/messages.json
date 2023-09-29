@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Пинҳонии Пойгоҳи Пинҳон" },
   "menuLabel_modeNotifs": { "message": "Огоҳиномаҳо" },
   "menuLabel_about": { "message": "_Дар бораи" },
-  "menuLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
   "menuLabel_disabled": { "message": "Ғайрифаъол (тавсеаи насбшуда)" },
   "mode_wideScreen": { "message": "Экрани васеъ" },
   "mode_fullWindow": { "message": "Равзанаи пурра" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "дастрас аст" },
   "alert_upToDate": { "message": "Ба рӯз расонӣ" },
   "alert_isUpToDate": { "message": "карты для навител андроид" },
+  "buttonLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
   "buttonLabel_update": { "message": "Навсозӣ кардан" },
   "buttonLabel_dismiss": { "message": "Рад кардан" },
   "link_viewChanges": { "message": "Tingnan ang mga pagbab" }

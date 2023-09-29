@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Скрытый подвал" },
   "menuLabel_modeNotifs": { "message": "Уведомления о Режиме" },
   "menuLabel_about": { "message": "Шифр." },
-  "menuLabel_updateCheck": { "message": "Проверить Обновления" },
   "menuLabel_disabled": { "message": "Отключено (расширение установлено)" },
   "mode_wideScreen": { "message": "Широкий экран" },
   "mode_fullWindow": { "message": "Полноэкранный режим" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "доступно" },
   "alert_upToDate": { "message": "Актуально" },
   "alert_isUpToDate": { "message": "актуально" },
+  "buttonLabel_updateCheck": { "message": "Проверить Обновления" },
   "buttonLabel_update": { "message": "Обновить" },
   "buttonLabel_dismiss": { "message": "Отмена" },
   "link_viewChanges": { "message": "Посмотреть изменения" }

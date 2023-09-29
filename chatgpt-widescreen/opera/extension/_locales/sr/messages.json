@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Skriveno podnožje" },
   "menuLabel_modeNotifs": { "message": "Obaveštenja o režimu" },
   "menuLabel_about": { "message": "O nama" },
-  "menuLabel_updateCheck": { "message": "Провери допуне" },
   "menuLabel_disabled": { "message": "Onemogućeno (ekstenzija instalirana)" },
   "mode_wideScreen": { "message": "Širok ekran" },
   "mode_fullWindow": { "message": "Puni prozor" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "je dostupna" },
   "alert_upToDate": { "message": "U toku" },
   "alert_isUpToDate": { "message": "je ažuran" },
+  "buttonLabel_updateCheck": { "message": "Провери допуне" },
   "buttonLabel_update": { "message": "Ažuriraj" },
   "buttonLabel_dismiss": { "message": "Odbaci" },
   "link_viewChanges": { "message": "Prikaži promjene" }

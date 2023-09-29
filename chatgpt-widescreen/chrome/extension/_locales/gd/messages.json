@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Buntàta falaichte" },
   "menuLabel_modeNotifs": { "message": "Brathan Modh" },
   "menuLabel_about": { "message": "Mar deidhinn" },
-  "menuLabel_updateCheck": { "message": "Thoir sùil airson ùrachaidhean" },
   "menuLabel_disabled": { "message": "Cuir à comas (leudachan stàlaichte)" },
   "mode_wideScreen": { "message": "Sgrìn fharsaing" },
   "mode_fullWindow": { "message": "Làn - uinneag" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "ri fhaighinn" },
   "alert_upToDate": { "message": "Up to date" },
   "alert_isUpToDate": { "message": "tha Updates" },
+  "buttonLabel_updateCheck": { "message": "Thoir sùil airson ùrachaidhean" },
   "buttonLabel_update": { "message": "Ùraich" },
   "buttonLabel_dismiss": { "message": "Cuir air falbh" },
   "link_viewChanges": { "message": "Seall na h - atharraichean" }

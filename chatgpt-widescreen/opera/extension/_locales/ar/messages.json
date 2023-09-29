@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "تذييل مخفي" },
   "menuLabel_modeNotifs": { "message": "إشعارات الوضع" },
   "menuLabel_about": { "message": "عن وزارة الثقافة" },
-  "menuLabel_updateCheck": { "message": "مرابة التحديثات" },
   "menuLabel_disabled": { "message": "معطل (تم تثبيت الإضافة)" },
   "mode_wideScreen": { "message": "شاشة عريضة" },
   "mode_fullWindow": { "message": "النافذة كاملة" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "متوفر" },
   "alert_upToDate": { "message": "حديث، منته من أعماله، حتى تاريخه" },
   "alert_isUpToDate": { "message": "مُحدَّث" },
+  "buttonLabel_updateCheck": { "message": "مرابة التحديثات" },
   "buttonLabel_update": { "message": "تحديث" },
   "buttonLabel_dismiss": { "message": "رفض" },
   "link_viewChanges": { "message": "عرض سجل التغييرات" }

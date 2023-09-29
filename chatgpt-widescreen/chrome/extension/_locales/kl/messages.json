@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Hidden Footer" },
   "menuLabel_modeNotifs": { "message": "Nalunngisaqarluartutut" },
   "menuLabel_about": { "message": "Qaujimaqujijuq aniguqsimajuq" },
-  "menuLabel_updateCheck": { "message": "mappingmappingrerouting" },
   "menuLabel_disabled": { "message": "Disabled (extension installed)" },
   "mode_wideScreen": { "message": "Iserfissaq" },
   "mode_fullWindow": { "message": "family" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "is available" },
   "alert_upToDate": { "message": "Nutaarsiassaatigut emailikkut pisartagarilikkit." },
   "alert_isUpToDate": { "message": "is up-to-date" },
+  "buttonLabel_updateCheck": { "message": "mappingmappingrerouting" },
   "buttonLabel_update": { "message": "Diskimit driveria nutarterlugu atoruk" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "View changes" }

@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Yakavanzwa Footer" },
   "menuLabel_modeNotifs": { "message": "Ziviso dzeModhi" },
   "menuLabel_about": { "message": "Nezvedu" },
-  "menuLabel_updateCheck": { "message": "Ongorora Updates" },
   "menuLabel_disabled": { "message": "Akaremara (kuwedzera yakaiswa)" },
   "mode_wideScreen": { "message": "Wide chidzitiro" },
   "mode_fullWindow": { "message": "Hwindo rakazara" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "inowanika" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "yajaira Update" },
+  "buttonLabel_updateCheck": { "message": "Ongorora Updates" },
   "buttonLabel_update": { "message": "Gadzirisa" },
   "buttonLabel_dismiss": { "message": "Bvisa" },
   "link_viewChanges": { "message": "Ona shanduko" }

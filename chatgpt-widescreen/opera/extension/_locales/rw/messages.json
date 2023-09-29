@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Imperampangano" },
   "menuLabel_modeNotifs": { "message": "Kumenyesha Uburyo" },
   "menuLabel_about": { "message": "Bigyanye" },
-  "menuLabel_updateCheck": { "message": "Kugirango" },
   "menuLabel_disabled": { "message": "Umugereka" },
   "mode_wideScreen": { "message": "Mugaragaza" },
   "mode_fullWindow": { "message": "Idirishya" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "bihari" },
   "alert_upToDate": { "message": "Ibigezweho" },
   "alert_isUpToDate": { "message": "ni bigezweho" },
+  "buttonLabel_updateCheck": { "message": "Kugirango" },
   "buttonLabel_update": { "message": "Kuvugurura" },
   "buttonLabel_dismiss": { "message": "Gusiba" },
   "link_viewChanges": { "message": "Amahinduka" }

@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Rejtett lábléc" },
   "menuLabel_modeNotifs": { "message": "Üzemmód értesítések" },
   "menuLabel_about": { "message": "A" },
-  "menuLabel_updateCheck": { "message": "Frissítések keresése" },
   "menuLabel_disabled": { "message": "Letiltva (bővítmény telepítve)" },
   "mode_wideScreen": { "message": "Szélesképernyő" },
   "mode_fullWindow": { "message": "Teljes ablak" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "elérhető" },
   "alert_upToDate": { "message": "Aktuális" },
   "alert_isUpToDate": { "message": "naprakész" },
+  "buttonLabel_updateCheck": { "message": "Frissítések keresése" },
   "buttonLabel_update": { "message": "Frissítés" },
   "buttonLabel_dismiss": { "message": "Elvetés" },
   "link_viewChanges": { "message": "Módosítások megtekintése" }

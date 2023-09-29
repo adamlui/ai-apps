@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Ocultar pie de página" },
   "menuLabel_modeNotifs": { "message": "Notificaciones de modo" },
   "menuLabel_about": { "message": "Acerca de" },
-  "menuLabel_updateCheck": { "message": "Buscar actualizaciones" },
   "menuLabel_disabled": { "message": "Deshabilitado (extensión instalada)" },
   "mode_wideScreen": { "message": "Pantalla amplia" },
   "mode_fullWindow": { "message": "Modo de ventana completa" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "está disponible" },
   "alert_upToDate": { "message": "Actualizado" },
   "alert_isUpToDate": { "message": "está actualizado" },
+  "buttonLabel_updateCheck": { "message": "Buscar actualizaciones" },
   "buttonLabel_update": { "message": "Actualizar" },
   "buttonLabel_dismiss": { "message": "Descartar" },
   "link_viewChanges": { "message": "Ver cambios" }

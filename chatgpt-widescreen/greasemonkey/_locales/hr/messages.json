@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Skriveno podnožje" },
   "menuLabel_modeNotifs": { "message": "Obavijesti o načinu rada" },
   "menuLabel_about": { "message": "O nama" },
-  "menuLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
   "menuLabel_disabled": { "message": "Onemogućeno (proširenje instalirano)" },
   "mode_wideScreen": { "message": "Široki zaslon" },
   "mode_fullWindow": { "message": "Cijeli prozor" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "je dostupna" },
   "alert_upToDate": { "message": "Ažuriraj" },
   "alert_isUpToDate": { "message": "Ažuriraj" },
+  "buttonLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
   "buttonLabel_update": { "message": "Ažurirana " },
   "buttonLabel_dismiss": { "message": "Odbaci" },
   "link_viewChanges": { "message": "Pregledaj promjene" }

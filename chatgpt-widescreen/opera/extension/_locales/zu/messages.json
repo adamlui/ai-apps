@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "I-Footer Efihliwe" },
   "menuLabel_modeNotifs": { "message": "Izaziso Zendlela" },
   "menuLabel_about": { "message": "Mayelana" },
-  "menuLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
   "menuLabel_disabled": { "message": "Khubaza (isandiso sifakiwe)" },
   "mode_wideScreen": { "message": "Ubuso besiga-nyezi obubanzi" },
   "mode_fullWindow": { "message": "Iwindi eligcwele" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "iyatholakala" },
   "alert_upToDate": { "message": "Okwakamuva" },
   "alert_isUpToDate": { "message": "isesikhathini" },
+  "buttonLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
   "buttonLabel_update": { "message": "Buyekeza" },
   "buttonLabel_dismiss": { "message": "Susa" },
   "link_viewChanges": { "message": "Buka izinguquko" }

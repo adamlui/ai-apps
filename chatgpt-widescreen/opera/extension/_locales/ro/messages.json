@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Subsol ascuns" },
   "menuLabel_modeNotifs": { "message": "Notificări de mod" },
   "menuLabel_about": { "message": "Despre" },
-  "menuLabel_updateCheck": { "message": "Caută actualizări" },
   "menuLabel_disabled": { "message": "Dezactivat (extensie instalată)" },
   "mode_wideScreen": { "message": "Ecran lat" },
   "mode_fullWindow": { "message": "Fereastră completă" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "este disponibil" },
   "alert_upToDate": { "message": "Actualizat" },
   "alert_isUpToDate": { "message": "Actualizat" },
+  "buttonLabel_updateCheck": { "message": "Caută actualizări" },
   "buttonLabel_update": { "message": "Actualizare" },
   "buttonLabel_dismiss": { "message": "Respingeți" },
   "link_viewChanges": { "message": "Vizualizează modificările" }

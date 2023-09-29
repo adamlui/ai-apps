@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Κρυφό υποσέλιδο" },
   "menuLabel_modeNotifs": { "message": "Ειδοποιήσεις λειτουργίας" },
   "menuLabel_about": { "message": "Σχετικά" },
-  "menuLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
   "menuLabel_disabled": { "message": "Απενεργοποιημένο (εγκατεστημένη επέκταση)" },
   "mode_wideScreen": { "message": "Ευρεία οθόνη" },
   "mode_fullWindow": { "message": "Πλήρες παράθυρο" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "Μη διαθέσιμο" },
   "alert_upToDate": { "message": "Ενημερωμένο" },
   "alert_isUpToDate": { "message": " είναι ενήμερο." },
+  "buttonLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
   "buttonLabel_update": { "message": "Ενημέρωση" },
   "buttonLabel_dismiss": { "message": " Κλείσιμο" },
   "link_viewChanges": { "message": "Εμφάνιση αλλαγών" }

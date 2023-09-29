@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Peu de pàgina amagat" },
   "menuLabel_modeNotifs": { "message": "Notificacions de mode" },
   "menuLabel_about": { "message": "Quant a" },
-  "menuLabel_updateCheck": { "message": "Comprova si hi ha actualitzacions" },
   "menuLabel_disabled": { "message": "Desactivat (extensió instal·lada)" },
   "mode_wideScreen": { "message": "Pantalla ampla" },
   "mode_fullWindow": { "message": "Finestra completa" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "està disponible" },
   "alert_upToDate": { "message": "Actualitzat" },
   "alert_isUpToDate": { "message": "està actualitzat" },
+  "buttonLabel_updateCheck": { "message": "Comprova si hi ha actualitzacions" },
   "buttonLabel_update": { "message": "Actualització" },
   "buttonLabel_dismiss": { "message": "Descarta" },
   "link_viewChanges": { "message": "Mostra els canvis" }

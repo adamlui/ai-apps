@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Umbhalo Ongezantsi Ofihliweyo" },
   "menuLabel_modeNotifs": { "message": "Imiyalezo Yendlela" },
   "menuLabel_about": { "message": "Malunga" },
-  "menuLabel_updateCheck": { "message": "Jonga Izinto Ezihlaziyiweyo" },
   "menuLabel_disabled": { "message": "Ikhubazekile (isandiso sifakiweyo)" },
   "mode_wideScreen": { "message": "Iskrini esibanzi" },
   "mode_fullWindow": { "message": "Ifestile epheleleyo" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "iyafumaneka" },
   "alert_upToDate": { "message": "Eyangoku" },
   "alert_isUpToDate": { "message": "ihlaziyiwe" },
+  "buttonLabel_updateCheck": { "message": "Jonga Izinto Ezihlaziyiweyo" },
   "buttonLabel_update": { "message": "Hlaziya" },
   "buttonLabel_dismiss": { "message": "Gxotha" },
   "link_viewChanges": { "message": "Jonga izinto ezitshintshiweyo" }

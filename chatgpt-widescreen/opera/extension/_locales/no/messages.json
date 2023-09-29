@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Skjult bunntekst" },
   "menuLabel_modeNotifs": { "message": "Modusvarsler" },
   "menuLabel_about": { "message": "Om" },
-  "menuLabel_updateCheck": { "message": "Se etter oppdateringer" },
   "menuLabel_disabled": { "message": "Deaktivert (utvidelse installert)" },
   "mode_wideScreen": { "message": "Bred skjerm" },
   "mode_fullWindow": { "message": "Fullvindu" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "tilgjengelig" },
   "alert_upToDate": { "message": "Oppdatert" },
   "alert_isUpToDate": { "message": "er oppdatert" },
+  "buttonLabel_updateCheck": { "message": "Se etter oppdateringer" },
   "buttonLabel_update": { "message": "Oppdater" },
   "buttonLabel_dismiss": { "message": "Ignorer" },
   "link_viewChanges": { "message": "Vis endringer" }

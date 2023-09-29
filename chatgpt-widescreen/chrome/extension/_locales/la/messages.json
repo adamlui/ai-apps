@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Footerus Auxilium" },
   "menuLabel_modeNotifs": { "message": "Notre sécurité" },
   "menuLabel_about": { "message": "De Hac Re" },
-  "menuLabel_updateCheck": { "message": "Votre mail pour notre newsletter" },
   "menuLabel_disabled": { "message": "Votre nom (nécessaire)" },
   "mode_wideScreen": { "message": "Screen screen screen" },
   "mode_fullWindow": { "message": "Phyllus spp." },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "existimat" },
   "alert_upToDate": { "message": "Phyllus" },
   "alert_isUpToDate": { "message": "l 'est-" },
+  "buttonLabel_updateCheck": { "message": "Votre mail pour notre newsletter" },
   "buttonLabel_update": { "message": "opus" },
   "buttonLabel_dismiss": { "message": "dimitto" },
   "link_viewChanges": { "message": "Vedi anche l 'accendenza" }

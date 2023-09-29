@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Peidetud jalus" },
   "menuLabel_modeNotifs": { "message": "Režiimi teated" },
   "menuLabel_about": { "message": "Info" },
-  "menuLabel_updateCheck": { "message": "Kontrolli uuendusi" },
   "menuLabel_disabled": { "message": "Keelatud (laiend installitud)" },
   "mode_wideScreen": { "message": "Laiekraan" },
   "mode_fullWindow": { "message": "Täisaken" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "on saadaval" },
   "alert_upToDate": { "message": "ajakohane" },
   "alert_isUpToDate": { "message": "ajakohane" },
+  "buttonLabel_updateCheck": { "message": "Kontrolli uuendusi" },
   "buttonLabel_update": { "message": "Uuenda" },
   "buttonLabel_dismiss": { "message": "Loobu" },
   "link_viewChanges": { "message": "Kuva muudatused" }

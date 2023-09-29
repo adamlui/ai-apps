@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Wae huna" },
   "menuLabel_modeNotifs": { "message": "Hoʻolaha Kūlana" },
   "menuLabel_about": { "message": "Ho‘ākāka" },
-  "menuLabel_updateCheck": { "message": "E nānā i nā mea hou" },
   "menuLabel_disabled": { "message": "Hoʻopaʻa ʻia (kau ʻia ka hoʻonui)" },
   "mode_wideScreen": { "message": "Palena laula" },
   "mode_fullWindow": { "message": "pukaaniani piha" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "loaʻa" },
   "alert_upToDate": { "message": "ʻikepili hou āpau" },
   "alert_isUpToDate": { "message": "he mea hou" },
+  "buttonLabel_updateCheck": { "message": "E nānā i nā mea hou" },
   "buttonLabel_update": { "message": "Hōʻano hou" },
   "buttonLabel_dismiss": { "message": "Hoʻokuʻu" },
   "link_viewChanges": { "message": "Nānā i nā hoʻololi" }

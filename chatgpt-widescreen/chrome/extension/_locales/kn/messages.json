@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "ಅಡಗಿದ ಅಡಿಟಿಪ್ಪಣಿ" },
   "menuLabel_modeNotifs": { "message": "ಮೋಡ್ ಅಧಿಸೂಚನೆಗಳು" },
   "menuLabel_about": { "message": "ಕುರಿತಾಗಿ" },
-  "menuLabel_updateCheck": { "message": "ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ" },
   "menuLabel_disabled": { "message": "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ (ವಿಸ್ತರಣೆಯನ್ನು ಸ್ಥಾಪಿಸಲಾಗಿದೆ)" },
   "mode_wideScreen": { "message": "ಅಗಲ ಸ್ಕ್ರೀನ್" },
   "mode_fullWindow": { "message": "ಪೂರ್ಣ ವಿಂಡೋ" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "ಲಭ್ಯವಿದೆ" },
   "alert_upToDate": { "message": "ಅಪ್-ಟು-ಡೇಟ್" },
   "alert_isUpToDate": { "message": "ಅಪ್ ಡೇಟ್" },
+  "buttonLabel_updateCheck": { "message": "ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ" },
   "buttonLabel_update": { "message": "ನವೀಕರಿಸಿ" },
   "buttonLabel_dismiss": { "message": "ವಜಾಗೊಳಿಸಿ" },
   "link_viewChanges": { "message": "ಬದಲಾವಣೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ" }

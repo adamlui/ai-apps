@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Footer Qarsoon" },
   "menuLabel_modeNotifs": { "message": "Ogeysiisyada Habka" },
   "menuLabel_about": { "message": "Jabuuti" },
-  "menuLabel_updateCheck": { "message": "Hubi Cusbooneysiinta" },
   "menuLabel_disabled": { "message": "Naafo (kordhin la rakibay)" },
   "mode_wideScreen": { "message": "Shaashad ballaaran" },
   "mode_fullWindow": { "message": "Daaqad buuxda" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "waa la heli karaa" },
   "alert_upToDate": { "message": "Ilaa taariiqda" },
   "alert_isUpToDate": { "message": "waa updated" },
+  "buttonLabel_updateCheck": { "message": "Hubi Cusbooneysiinta" },
   "buttonLabel_update": { "message": "Cusboonaysiinta" },
   "buttonLabel_dismiss": { "message": "Xil ka qaad" },
   "link_viewChanges": { "message": "Eeg isbeddelada" }

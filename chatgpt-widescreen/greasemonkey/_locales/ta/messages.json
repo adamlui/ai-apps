@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "மறைக்கப்பட்ட அடிக்குறிப்பு" },
   "menuLabel_modeNotifs": { "message": "பயன்முறை அறிவிப்புகள்" },
   "menuLabel_about": { "message": "பற்றி" },
-  "menuLabel_updateCheck": { "message": "புதுப்பிப்புகளைத் தேடவும்" },
   "menuLabel_disabled": { "message": "முடக்கப்பட்டது (நீட்டிப்பு நிறுவப்பட்டது)" },
   "mode_wideScreen": { "message": "பரந்த திரை" },
   "mode_fullWindow": { "message": "முழு-வடிவம்" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "கிடைக்கிறது" },
   "alert_upToDate": { "message": "அதனை இன் று வரை" },
   "alert_isUpToDate": { "message": "up-to-date" },
+  "buttonLabel_updateCheck": { "message": "புதுப்பிப்புகளைத் தேடவும்" },
   "buttonLabel_update": { "message": "புதுப்பிக்கவும்" },
   "buttonLabel_dismiss": { "message": "நிராகரிக்கவும்" },
   "link_viewChanges": { "message": "மாற்றங்களைக் காண்க" }

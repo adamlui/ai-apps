@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "פוטר נסתר" },
   "menuLabel_modeNotifs": { "message": "התראות מצב" },
   "menuLabel_about": { "message": "אודות" },
-  "menuLabel_updateCheck": { "message": "חפש עדכונים" },
   "menuLabel_disabled": { "message": "מושבת (תוסף מותקן)" },
   "mode_wideScreen": { "message": "מסך רחב" },
   "mode_fullWindow": { "message": "חלון מלא" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "%s זמין" },
   "alert_upToDate": { "message": "מעודכן" },
   "alert_isUpToDate": { "message": "מעודכן" },
+  "buttonLabel_updateCheck": { "message": "חפש עדכונים" },
   "buttonLabel_update": { "message": "עדכון" },
   "buttonLabel_dismiss": { "message": "שחרור" },
   "link_viewChanges": { "message": "הצגת השינויים" }

@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Footer ʻoku fufuuʻi" },
   "menuLabel_modeNotifs": { "message": "Fanongonongo ki he Mode" },
   "menuLabel_about": { "message": "Fekauʻaki mo e" },
-  "menuLabel_updateCheck": { "message": "Vakaiʻi e Ngaahi Fakamatala Fakamuimuitahá" },
   "menuLabel_disabled": { "message": "Faingataʻaʻia fakaesino (fokotuʻu e extension)" },
   "mode_wideScreen": { "message": "Screen falahi" },
   "mode_fullWindow": { "message": "Matapa sioʻata kakato" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "ʻoku lava ke maʻu" },
   "alert_upToDate": { "message": "ʻO aʻu mai ki he ʻaho ni" },
   "alert_isUpToDate": { "message": "ʻOku aʻu ki he ʻaho ni" },
+  "buttonLabel_updateCheck": { "message": "Vakaiʻi e Ngaahi Fakamatala Fakamuimuitahá" },
   "buttonLabel_update": { "message": "Fakamatala Fakamuimuitahá" },
   "buttonLabel_dismiss": { "message": "Tukuange" },
   "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" }

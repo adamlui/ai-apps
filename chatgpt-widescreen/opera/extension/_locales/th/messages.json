@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "ส่วนท้ายที่ซ่อนอยู่" },
   "menuLabel_modeNotifs": { "message": "การแจ้งเตือนโหมด" },
   "menuLabel_about": { "message": "เกี่ยวกับ" },
-  "menuLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
   "menuLabel_disabled": { "message": "ปิดการใช้งาน (ติดตั้งส่วนขยายแล้ว)" },
   "mode_wideScreen": { "message": "หน้าจอกว้าง" },
   "mode_fullWindow": { "message": "หน้าต่างเต็มบาน" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "มี   ให้ใช้งานแล้ว" },
   "alert_upToDate": { "message": "ถึงวันที่    .........................................  …………….." },
   "alert_isUpToDate": { "message": "เป็นปัจจุบัน" },
+  "buttonLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
   "buttonLabel_update": { "message": "อัปเดต" },
   "buttonLabel_dismiss": { "message": "ยกเลิก" },
   "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" }

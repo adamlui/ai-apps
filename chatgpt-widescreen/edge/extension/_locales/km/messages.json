@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "បាតកថា ដែល បាន លាក់" },
   "menuLabel_modeNotifs": { "message": "ការជូនដំណឹងអំពីម៉ូដ" },
   "menuLabel_about": { "message": "អំពី" },
-  "menuLabel_updateCheck": { "message": "ពិនិត្យរកអាប់ដេត" },
   "menuLabel_disabled": { "message": "បានបិទ (បានបញ្ចូលផ្នែកបន្ថែម)" },
   "mode_wideScreen": { "message": "អេក្រង់ធំទូលាយ" },
   "mode_fullWindow": { "message": "បង្អួច ពេញ" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "មាន" },
   "alert_upToDate": { "message": "ធ្វើឲ្យ​ទាន់​សម័យ" },
   "alert_isUpToDate": { "message": "កំពុងអាប់ដេត" },
+  "buttonLabel_updateCheck": { "message": "ពិនិត្យរកអាប់ដេត" },
   "buttonLabel_update": { "message": "ធ្វើបច្ចុប្បន្នភាព" },
   "buttonLabel_dismiss": { "message": "បោះបង់" },
   "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" }

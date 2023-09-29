@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Gizli Alt Bilgi" },
   "menuLabel_modeNotifs": { "message": "Mod Bildirimleri" },
   "menuLabel_about": { "message": "Hakkımızda" },
-  "menuLabel_updateCheck": { "message": "Güncellemeleri Kontrol Et" },
   "menuLabel_disabled": { "message": "Devre dışı (uzantı yüklü)" },
   "mode_wideScreen": { "message": "-Geniş ekran" },
   "mode_fullWindow": { "message": "Tam Pencere" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "geçerli" },
   "alert_upToDate": { "message": "Güncel" },
   "alert_isUpToDate": { "message": "Güncel" },
+  "buttonLabel_updateCheck": { "message": "Güncellemeleri Kontrol Et" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Yok say" },
   "link_viewChanges": { "message": "Değişen Dosyalar" }

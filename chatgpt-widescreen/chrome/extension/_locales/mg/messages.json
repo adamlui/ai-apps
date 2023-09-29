@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Zavatra Miafina Footer" },
   "menuLabel_modeNotifs": { "message": "Famaritana" },
   "menuLabel_about": { "message": "Mikasika ny" },
-  "menuLabel_updateCheck": { "message": "Jereo ny vaovao momba ny famerenana" },
   "menuLabel_disabled": { "message": "Famaritana (sanda)" },
   "mode_wideScreen": { "message": "Screen efijery" },
   "mode_fullWindow": { "message": "Full feno" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "azo atao" },
   "alert_upToDate": { "message": "Famaritana" },
   "alert_isUpToDate": { "message": "mampihena" },
+  "buttonLabel_updateCheck": { "message": "Jereo ny vaovao momba ny famerenana" },
   "buttonLabel_update": { "message": "Vaovao farany" },
   "buttonLabel_dismiss": { "message": "Hiditra" },
   "link_viewChanges": { "message": "Jereo ny fiovana" }

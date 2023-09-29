@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Hidratacion Footer" },
   "menuLabel_modeNotifs": { "message": "Notifikashon di Mode" },
   "menuLabel_about": { "message": "About About" },
-  "menuLabel_updateCheck": { "message": "Revisá las actualizaciones" },
   "menuLabel_disabled": { "message": "Disabilitá (Extended)" },
   "mode_wideScreen": { "message": "Pantaya amplio" },
   "mode_fullWindow": { "message": "Kompletná kompletná komple" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "ta disponibel" },
   "alert_upToDate": { "message": "UPDATE" },
   "alert_isUpToDate": { "message": "tabata Update" },
+  "buttonLabel_updateCheck": { "message": "Revisá las actualizaciones" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Desaprobashon" },
   "link_viewChanges": { "message": "Wak kambio" }

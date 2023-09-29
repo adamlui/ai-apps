@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Natago nga Footer" },
   "menuLabel_modeNotifs": { "message": "Mga Notipikasyon sa Mode" },
   "menuLabel_about": { "message": "Mahitungod" },
-  "menuLabel_updateCheck": { "message": "Susiha alang sa Mga Update" },
   "menuLabel_disabled": { "message": "Disabled (mga sumpay_usba)" },
   "mode_wideScreen": { "message": "Hapit nalukop sa kaumahan ang" },
   "mode_fullWindow": { "message": "Full-Window (suba sa Tinipong Bansa)" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "available Ang" },
   "alert_upToDate": { "message": "UPDATE" },
   "alert_isUpToDate": { "message": "uPDATE Kini" },
+  "buttonLabel_updateCheck": { "message": "Susiha alang sa Mga Update" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Hapit nalukop sa kaumahan ang palibot sa" },
   "link_viewChanges": { "message": "Tan-awa ang mga kausaban" }

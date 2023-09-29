@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "దాచిన ఫుటర్" },
   "menuLabel_modeNotifs": { "message": "మోడ్ నోటిఫికేషన్ ‌ లు" },
   "menuLabel_about": { "message": "గురించి" },
-  "menuLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "menuLabel_disabled": { "message": "డిసేబుల్ చేయబడింది (పొడిగింపు ఇన్స్టాల్ చేయబడింది)" },
   "mode_wideScreen": { "message": "వెడల్పు స్క్రీన్" },
   "mode_fullWindow": { "message": "పూర్తి-వైన్ ‌ డో" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "అందుబాటులో ఉంది" },
   "alert_upToDate": { "message": "అప్ ‌ డేట్" },
   "alert_isUpToDate": { "message": "అప్ డేట్" },
+  "buttonLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "buttonLabel_update": { "message": "అప్‌డేట్" },
   "buttonLabel_dismiss": { "message": "తీసివేయండి" },
   "link_viewChanges": { "message": "మార్పులను చూడండి" }

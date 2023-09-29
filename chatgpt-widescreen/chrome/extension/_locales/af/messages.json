@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Versteekte Voetskrif" },
   "menuLabel_modeNotifs": { "message": "Modus Kennisgewings" },
   "menuLabel_about": { "message": "Omtrent" },
-  "menuLabel_updateCheck": { "message": "_Kontroleer vir bywerkings: " },
   "menuLabel_disabled": { "message": "Gestremde (uitbreiding geïnstalleer)" },
   "mode_wideScreen": { "message": "Wye skerm" },
   "mode_fullWindow": { "message": "Vol-venster" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "is beskikbaar" },
   "alert_upToDate": { "message": "Op datum" },
   "alert_isUpToDate": { "message": "die is up-to-date" },
+  "buttonLabel_updateCheck": { "message": "_Kontroleer vir bywerkings: " },
   "buttonLabel_update": { "message": "Opdateer" },
   "buttonLabel_dismiss": { "message": "Laat vaar" },
   "link_viewChanges": { "message": "Besigtig veranderinge" }

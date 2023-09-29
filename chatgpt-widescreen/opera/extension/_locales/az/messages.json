@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Gizli Altbilgi" },
   "menuLabel_modeNotifs": { "message": "Rejim Bildirişləri" },
   "menuLabel_about": { "message": "Haqqında" },
-  "menuLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
   "menuLabel_disabled": { "message": "Deaktiv edildi (genişlənmə quraşdırıldı)" },
   "mode_wideScreen": { "message": "Geniş ekran" },
   "mode_fullWindow": { "message": "Tam pəncərəli" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "mövcud deyil" },
   "alert_upToDate": { "message": "Güncəllə" },
   "alert_isUpToDate": { "message": "hər şey güncəldir" },
+  "buttonLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
   "buttonLabel_update": { "message": "Yenilə" },
   "buttonLabel_dismiss": { "message": "Bağla" },
   "link_viewChanges": { "message": "Dəyişikliklərə bax" }

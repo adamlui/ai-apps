@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Kichapuzi Kilichofichwa" },
   "menuLabel_modeNotifs": { "message": "Arifa za Modi" },
   "menuLabel_about": { "message": "Kuhusu" },
-  "menuLabel_updateCheck": { "message": "Angalia Masasisho" },
   "menuLabel_disabled": { "message": "Imezimwa (kiendelezi kimewekwa)" },
   "mode_wideScreen": { "message": "Skrini pana" },
   "mode_fullWindow": { "message": "Dirisha kamili" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "inapatikana" },
   "alert_upToDate": { "message": "Imesasishwa" },
   "alert_isUpToDate": { "message": "imesasishwa" },
+  "buttonLabel_updateCheck": { "message": "Angalia Masasisho" },
   "buttonLabel_update": { "message": "Sasisho" },
   "buttonLabel_dismiss": { "message": "Puuza" },
   "link_viewChanges": { "message": "Angalia mabadiliko" }

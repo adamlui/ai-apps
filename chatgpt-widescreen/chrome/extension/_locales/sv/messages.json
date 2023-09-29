@@ -7,7 +7,6 @@
   "menuLabel_hiddenFooter": { "message": "Dölj sidfot" },
   "menuLabel_modeNotifs": { "message": "Lägesaviseringar" },
   "menuLabel_about": { "message": "Om" },
-  "menuLabel_updateCheck": { "message": "Kolla efter uppdateringar" },
   "menuLabel_disabled": { "message": "Inaktiverad (tillägg installerat)" },
   "mode_wideScreen": { "message": "bredbildsformat" },
   "mode_fullWindow": { "message": "Fullfönster" },
@@ -26,6 +25,7 @@
   "alert_isAvail": { "message": "är tillgänglig" },
   "alert_upToDate": { "message": "Aktualisering" },
   "alert_isUpToDate": { "message": "är aktuell" },
+  "buttonLabel_updateCheck": { "message": "Kolla efter uppdateringar" },
   "buttonLabel_update": { "message": "Uppdatera" },
   "buttonLabel_dismiss": { "message": "Avfärda" },
   "link_viewChanges": { "message": "Visa ändringar" }
