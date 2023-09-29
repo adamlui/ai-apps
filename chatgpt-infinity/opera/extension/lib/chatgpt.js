@@ -1,11 +1,12 @@
-// This library is a condensed version of chatgpt.js v2.1.0
+// This library is a condensed version of chatgpt.js v2.3.4
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
 
 // Init queues for feedback methods
-var alertQueue = []; localStorage.alertQueue = JSON.stringify(alertQueue);
-var notifyQueue = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
+var alertQueue = [],
+    notifyQueue = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
+localStorage.alertQueue = JSON.stringify(alertQueue);
 localStorage.notifyQueue = JSON.stringify(notifyQueue);
 
 const chatgpt = {
@@ -18,9 +19,9 @@ const chatgpt = {
         const modalContainer = document.createElement('div');
         modalContainer.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         modalContainer.classList.add('chatgpt-modal'); // add class to main div
-        const modal = document.createElement('div');
-        const modalTitle = document.createElement('h2');
-        const modalMessage = document.createElement('p');
+        const modal = document.createElement('div'),
+              modalTitle = document.createElement('h2'),
+              modalMessage = document.createElement('p');
 
         // Select or crate/append style
         let modalStyle;
@@ -42,11 +43,14 @@ const chatgpt = {
 
             // Alert styles
             + '.chatgpt-modal > div {'
+                + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ;'
+                + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
                 + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
                 + ( width ? `width: ${ width }px` : 'max-width: 458px ') + ' ;'
                 + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) }'
             + '.chatgpt-modal h2 { margin-bottom: 9px }'
             + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
+            + '.chatgpt-modal.animated > div { opacity: 1 ; transform: translateX(0) translateY(0) }'
 
             // Button styles
             + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
@@ -105,8 +109,8 @@ const chatgpt = {
         const checkboxDiv = document.createElement('div');
         if (checkbox) { // is supplied
             checkboxDiv.classList.add('checkbox-group');
-            const checkboxFn = checkbox; // assign the named function to checkboxFn
-            const checkboxInput = document.createElement('input');
+            const checkboxFn = checkbox, // assign the named function to checkboxFn
+                  checkboxInput = document.createElement('input');
             checkboxInput.type = 'checkbox';
             checkboxInput.addEventListener('change', checkboxFn);
 
@@ -139,7 +143,11 @@ const chatgpt = {
             if (event.target === modalContainer) destroyAlert(); });
 
         // Show alert if none active
-        modalContainer.style.display = (alertQueue.length === 1) ? '' : 'none';
+        modalContainer.style.display = 'none';
+        if (alertQueue.length === 1) {
+            modalContainer.style.display = '';
+            setTimeout(() => { modalContainer.classList.add('animated'); }, 100);
+        }
 
         function destroyAlert() {
             modalContainer.remove(); // remove from DOM
@@ -155,7 +163,10 @@ const chatgpt = {
             // Check for pending alerts in queue
             if (alertQueue.length > 0) {
                 const nextAlert = document.getElementById(alertQueue[0]);
-                setTimeout(() => { nextAlert.style.display = 'flex'; }, 500 );
+                setTimeout(() => {
+                    nextAlert.style.display = '';
+                    setTimeout(() => { nextAlert.classList.add('animated'); }, 100);
+                }, 500 );
             }
         }
 
@@ -208,8 +219,8 @@ const chatgpt = {
 
     notify: function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
-        const fadeDuration = 0.6; // sec duration of fade-out
-        const vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
+        const fadeDuration = 0.6, // sec duration of fade-out
+              vpYoffset = 23, vpXoffset = 27; // px offset from viewport border
 
         // Make/stylize/insert div
         const notificationDiv = document.createElement('div'); // make div
@@ -243,12 +254,12 @@ const chatgpt = {
         if (thisQuadrantDivIDs.length > 1) {
             try { // to move old notifications
                 for (const divId of thisQuadrantDivIDs.slice(0, -1)) { // exclude new div
-                    const oldDiv = document.getElementById(divId);
-                    const offsetProp = oldDiv.style.top ? 'top' : 'bottom'; // pick property to change
-                    const vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
+                    const oldDiv = document.getElementById(divId),
+                          offsetProp = oldDiv.style.top ? 'top' : 'bottom', // pick property to change
+                          vOffset = +/\d+/.exec(oldDiv.style[offsetProp])[0] + 5 + oldDiv.getBoundingClientRect().height;
                     oldDiv.style[offsetProp] = `${vOffset}px`; // change prop
                 }
-            } catch (error) {}
+            } catch (err) {}
         }
 
         // Show notification
@@ -283,9 +294,9 @@ const chatgpt = {
     },
 
     renderHTML: function(node) {
-        const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g;
-        const reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+(?:\S+)=|[>']))+.)['"]?/g;
-        const nodeContent = node.childNodes;
+        const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
+              reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+(?:\S+)=|[>']))+.)['"]?/g,
+              nodeContent = node.childNodes;
 
         // Preserve consecutive spaces + line breaks
         if (!this.renderHTML.preWrapSet) {
@@ -298,14 +309,14 @@ const chatgpt = {
 
             // Process text node
             if (childNode.nodeType === Node.TEXT_NODE) {
-                const text = childNode.nodeValue;
-                const elems = Array.from(text.matchAll(reTags));
+                const text = childNode.nodeValue,
+                      elems = Array.from(text.matchAll(reTags));
 
                 // Process 1st element to render
                 if (elems.length > 0) {
-                    const elem = elems[0];
-                    const [tagContent, tagName, tagAttributes, tagText] = elem.slice(0, 4);
-                    const tagNode = document.createElement(tagName); tagNode.textContent = tagText;
+                    const elem = elems[0],
+                          [tagContent, tagName, tagAttributes, tagText] = elem.slice(0, 4),
+                          tagNode = document.createElement(tagName); tagNode.textContent = tagText;
 
                     // Extract/set attributes
                     const attributes = Array.from(tagAttributes.matchAll(reAttributes));
@@ -317,8 +328,8 @@ const chatgpt = {
                     const renderedNode = this.renderHTML(tagNode); // render child elements of newly created node
 
                     // Insert newly rendered node
-                    const beforeTextNode = document.createTextNode(text.substring(0, elem.index));
-                    const afterTextNode = document.createTextNode(text.substring(elem.index + tagContent.length));
+                    const beforeTextNode = document.createTextNode(text.substring(0, elem.index)),
+                          afterTextNode = document.createTextNode(text.substring(elem.index + tagContent.length));
 
                     // Replace text node with processed nodes
                     node.replaceChild(beforeTextNode, childNode);
@@ -335,12 +346,14 @@ const chatgpt = {
 
     scrollToBottom: function() {
         try { document.querySelector('button[class*="cursor"][class*="bottom"]').click(); }
-        catch (error) { console.error('🤖 chatgpt.js >> ', error); }
+        catch (err) { console.error('', err); }
     },
 
     send: function(msg, method='') {
-        const textArea = document.querySelector('form textarea');
-        const sendButton = document.querySelector('form button[class*="bottom"]');
+        for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
+            return console.error(`Argument ${ i + 1 } must be a string!`);
+        const textArea = document.querySelector('form textarea'),
+              sendButton = document.querySelector('form button[class*="bottom"]');
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
         const delaySend = setInterval(() => {
@@ -364,6 +377,17 @@ const chatgpt = {
                 formButton.click(); return;
     }}}
 
+};
+
+// Prefix console logs w/ '🤖 chatgpt.js >> '
+const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info;
+console.error = (...args) => {
+    if (!args[0].startsWith(consolePrefix)) ogError(consolePrefix + args[0], ...args.slice(1)); 
+    else ogError(...args);
+};
+console.info = (msg) => {
+    if (!msg.startsWith(consolePrefix)) ogInfo(consolePrefix + msg);
+    else ogInfo(msg);
 };
 
 export { chatgpt }
