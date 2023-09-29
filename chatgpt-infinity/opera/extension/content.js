@@ -160,7 +160,7 @@
                 toggleLabel.appendChild(navicon) ; toggleLabel.appendChild(label) ; toggleLabel.appendChild(labelText)
 
                 // Show toggle
-                toggleLabel.style.display = 'flex' ; console.log('hi')
+                toggleLabel.style.display = 'flex'
     }})}
 
     const infinityMode = {
