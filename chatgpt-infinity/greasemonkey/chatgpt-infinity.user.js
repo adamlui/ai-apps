@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.27.1
+// @version             2023.9.28
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -479,7 +479,7 @@
         }}}))
 
         // Add command to launch About modal
-        menuIDs.push(GM_registerMenuCommand('💡 About ' + messages.appName, async () => {
+        menuIDs.push(GM_registerMenuCommand(`💡 ${ messages.menuLabel_about } ${ messages.appName }`, async () => {
 
             // Show alert
             const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(GM_info.script.header)[1] || '',
