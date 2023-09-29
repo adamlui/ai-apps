@@ -28,7 +28,7 @@
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
-    // Disable content or user script if off/on ChatGPT
+    // Selectively disable content or user script
     if (!window.location.href.startsWith('https://chat.openai.com')) return
     document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
@@ -112,7 +112,7 @@
                 chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
                     + ' v' + version.toString() + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
                     + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
-                        + 'href="' + config.ghRepoURL + '/commits/main/chrome/extension" '
+                        + 'href="' + config.githubURL + '/commits/main/chrome/extension" '
                         + '>' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
                 function reloadChrome() { chrome.runtime.reload() } // update button
             )
