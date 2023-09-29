@@ -5,15 +5,14 @@
 
 (async () => {
 
-    document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
-
     // Import libs
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
     // Add Chrome msg listener
+    let fromMsg = false // to prevent double notifications blocked by popup
     chrome.runtime.onMessage.addListener((request) => {
-        infinityMode.fromMsg = true
+        fromMsg = true
         if (request.action === 'notify') notify(request.msg, request.position)
         else if (request.action === 'alert') alert(request.title, request.msg, request.btns)
         else if (request.action === 'updateToggleHTML') updateToggleHTML()
@@ -25,6 +24,13 @@
         }
         return true
     })
+
+    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
+
+    // Disable content or user script if off/on ChatGPT
+    if (!window.location.href.startsWith('https://chat.openai.com')) return
+    document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
     // Init settings
     settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
@@ -100,9 +106,6 @@
             shadow || chatgpt.isDarkMode() ? '' : 'shadow' )
     }
 
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
-
     alertToUpdate = (version) => { // eslint-disable-line no-undef
         if (version) {
             alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
@@ -163,8 +166,8 @@
     const infinityMode = {
 
         activate: async () => {
-            if (!infinityMode.fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
-            infinityMode.fromMsg = false
+            if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
+            fromMsg = false
             try { chatgpt.startNewChat() } catch (error) { return }
             settings.load('replyLanguage', 'replyTopic', 'replyInterval').then(() => setTimeout(() => {
                 chatgpt.send('Generate a single random question'
@@ -186,8 +189,8 @@
         },
 
         deactivate: () => {
-            if (!infinityMode.fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': OFF')
-            infinityMode.fromMsg = false
+            if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': OFF')
+            fromMsg = false
             chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
             document.querySelector('#infToggleInput').checked = false // for window listener
             settings.save('infinityMode', false) // in case toggled by PV listener
