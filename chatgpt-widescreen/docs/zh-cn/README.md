@@ -47,7 +47,7 @@
 
 ## 好处
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> 通过适当的缩进体验更清晰的编程代码显示
+<picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> 自定义功能，例如更大的聊天框和隐藏的页脚，以便更轻松地查看文本
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> 在单个页面上查看多步骤说明或长食谱，以便于参考
 
