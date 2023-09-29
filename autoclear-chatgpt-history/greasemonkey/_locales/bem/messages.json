@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Leloton Visibility" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications Tukwila" },
   "menuLabel_disabled": { "message": "Malema (maile)" },
-  "buttonLabel_clearChats": { "message": "Ukulansanshanya Ukwa Kaseebanya" },
-  "buttonLabel_confirm": { "message": "Amana Amana" },
   "mode_autoClear": { "message": "Ica Auto-Clear" }
 }

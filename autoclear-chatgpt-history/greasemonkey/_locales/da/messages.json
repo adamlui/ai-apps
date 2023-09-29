@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Knappernes synlighed" },
   "menuLabel_modeNotifs": { "message": "Tilstandsmeddelelser" },
   "menuLabel_disabled": { "message": "Deaktiveret (udvidelse installeret)" },
-  "buttonLabel_clearChats": { "message": "Ryd samtaler" },
-  "buttonLabel_confirm": { "message": "Bekræft" },
   "mode_autoClear": { "message": "Ryd automatisk" }
 }

@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Button Visibility None None" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications None None" },
   "menuLabel_disabled": { "message": "Narumugaiye (extension)" },
-  "buttonLabel_clearChats": { "message": "Ibiyago biribonekeza" },
-  "buttonLabel_confirm": { "message": "Kwikiriza Eugene" },
   "mode_autoClear": { "message": "Auto-Clear None None" }
 }

@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Knappsynlighet" },
   "menuLabel_modeNotifs": { "message": "Modusvarsler" },
   "menuLabel_disabled": { "message": "Deaktivert (utvidelse installert)" },
-  "buttonLabel_clearChats": { "message": "Tydelige samtaler" },
-  "buttonLabel_confirm": { "message": "Bekreft" },
   "mode_autoClear": { "message": "Auto-tøm" }
 }

@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "बटन दृश्यता" },
   "menuLabel_modeNotifs": { "message": "मोड सूचनाएं" },
   "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन इंस्टॉल किया गया)" },
-  "buttonLabel_clearChats": { "message": "बातचीत साफ़ करें" },
-  "buttonLabel_confirm": { "message": "पक्‍क " },
   "mode_autoClear": { "message": "ऑटो - क्लियर" }
 }

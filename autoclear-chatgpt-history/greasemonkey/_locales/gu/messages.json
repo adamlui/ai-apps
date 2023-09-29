@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "બટન દૃશ્યતા" },
   "menuLabel_modeNotifs": { "message": "સ્થિતિ સૂચનાઓ" },
   "menuLabel_disabled": { "message": "અક્ષમ (એક્સટેન્શન સ્થાપિત)" },
-  "buttonLabel_clearChats": { "message": "વાર્તાલાપો સાફ કરો" },
-  "buttonLabel_confirm": { "message": "ખાતરી" },
   "mode_autoClear": { "message": "સ્વયં સાફ કરો" }
 }

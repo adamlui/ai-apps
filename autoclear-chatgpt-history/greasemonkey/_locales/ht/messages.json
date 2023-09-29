@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Vizibilite bouton" },
   "menuLabel_modeNotifs": { "message": "Notifikasyon Mode" },
   "menuLabel_disabled": { "message": "Andikape (ekstansyon enstale)" },
-  "buttonLabel_clearChats": { "message": "Konvèsasyon Klè" },
-  "buttonLabel_confirm": { "message": "KONFIMEN" },
   "mode_autoClear": { "message": "Auto-Klear" }
 }

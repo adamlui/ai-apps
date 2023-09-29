@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "ಬಟನ್ ಗೋಚರತೆ" },
   "menuLabel_modeNotifs": { "message": "ಮೋಡ್ ಅಧಿಸೂಚನೆಗಳು" },
   "menuLabel_disabled": { "message": "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ (ವಿಸ್ತರಣೆಯನ್ನು ಸ್ಥಾಪಿಸಲಾಗಿದೆ)" },
-  "buttonLabel_clearChats": { "message": "ಸಂಭಾಷಣೆಗಳನ್ನು ತೆರವುಗೊಳಿಸಿ" },
-  "buttonLabel_confirm": { "message": "ಖಚಿತಪಡಿಸಿ" },
   "mode_autoClear": { "message": "ಸ್ವಯಂಚಾಲಿತ ಕಲಿಕೆ" }
 }

@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "زر الرؤية" },
   "menuLabel_modeNotifs": { "message": "إشعارات الوضع" },
   "menuLabel_disabled": { "message": "معطل (تم تثبيت الإضافة)" },
-  "buttonLabel_clearChats": { "message": "محادثة واضحة" },
-  "buttonLabel_confirm": { "message": "‫تأكيد‬" },
   "mode_autoClear": { "message": "مسح آلي" }
 }

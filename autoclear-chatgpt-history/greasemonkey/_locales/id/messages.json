@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Visibilitas Tombol" },
   "menuLabel_modeNotifs": { "message": "Notifikasi Mode" },
   "menuLabel_disabled": { "message": "Dinonaktifkan (ekstensi terpasang)" },
-  "buttonLabel_clearChats": { "message": "Hapus Percakapan" },
-  "buttonLabel_confirm": { "message": "Konfirmasi" },
   "mode_autoClear": { "message": "Bersihkan Otomatis" }
 }

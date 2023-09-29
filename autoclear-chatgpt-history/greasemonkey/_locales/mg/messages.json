@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Button" },
   "menuLabel_modeNotifs": { "message": "Famaritana" },
   "menuLabel_disabled": { "message": "Famaritana (sanda)" },
-  "buttonLabel_clearChats": { "message": "Resaka" },
-  "buttonLabel_confirm": { "message": "Famaritana" },
   "mode_autoClear": { "message": "Auto Auto Auto" }
 }

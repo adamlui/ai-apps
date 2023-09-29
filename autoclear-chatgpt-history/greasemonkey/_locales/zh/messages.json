@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "按钮可见性" },
   "menuLabel_modeNotifs": { "message": "模式通知" },
   "menuLabel_disabled": { "message": "已禁用（已安装扩展程序）" },
-  "buttonLabel_clearChats": { "message": "清除对话" },
-  "buttonLabel_confirm": { "message": "确认" },
   "mode_autoClear": { "message": "自动清除" }
 }

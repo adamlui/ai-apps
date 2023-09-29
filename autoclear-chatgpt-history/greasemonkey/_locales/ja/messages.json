@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "ボタン表示" },
   "menuLabel_modeNotifs": { "message": "モード通知" },
   "menuLabel_disabled": { "message": "無効（拡張機能がインストールされています）" },
-  "buttonLabel_clearChats": { "message": "会話をクリア" },
-  "buttonLabel_confirm": { "message": "確認する" },
   "mode_autoClear": { "message": "自動クリアモード" }
 }

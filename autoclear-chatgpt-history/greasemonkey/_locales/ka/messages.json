@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Ღილაკის ხილვადობა" },
   "menuLabel_modeNotifs": { "message": "Რეჟიმის გაფრთხილებები" },
   "menuLabel_disabled": { "message": "Გამორთულია (დამონტაჟებულია გაფართოება)" },
-  "buttonLabel_clearChats": { "message": "Მიმოწერების გასუფთავება" },
-  "buttonLabel_confirm": { "message": "დადასტურება" },
   "mode_autoClear": { "message": "Ავტომატური გასუფთავება" }
 }

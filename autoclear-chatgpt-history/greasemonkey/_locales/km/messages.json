@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "ភាពមើលឃើញនៃប៊ូតុង" },
   "menuLabel_modeNotifs": { "message": "ការជូនដំណឹងអំពីម៉ូដ" },
   "menuLabel_disabled": { "message": "បានបិទ (បានបញ្ចូលផ្នែកបន្ថែម)" },
-  "buttonLabel_clearChats": { "message": "ជម្រះការសន្ទនា" },
-  "buttonLabel_confirm": { "message": "បញ្ជាក់" },
   "mode_autoClear": { "message": "រៀនដោយស្វ័យប្រវត្តិ" }
 }

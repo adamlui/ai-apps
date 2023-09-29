@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "የአዝራር ታይነት" },
   "menuLabel_modeNotifs": { "message": "የቃለ መጠይቂያ" },
   "menuLabel_disabled": { "message": "የተጠናከረ (የተጫነ)" },
-  "buttonLabel_clearChats": { "message": "ውይይቶችን ያጽዱ" },
-  "buttonLabel_confirm": { "message": "ያረጋግጡ" },
   "mode_autoClear": { "message": "ራስ-ግልጽ" }
 }

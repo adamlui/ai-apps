@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Видливост на копчето" },
   "menuLabel_modeNotifs": { "message": "Известувања за режим" },
   "menuLabel_disabled": { "message": "Оневозможено (наставката е инсталирана)" },
-  "buttonLabel_clearChats": { "message": "Исчисти разговори" },
-  "buttonLabel_confirm": { "message": "Потврди" },
   "mode_autoClear": { "message": "Автоматско чистење" }
 }

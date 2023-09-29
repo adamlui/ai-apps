@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "قابلیت مشاهده را فعال کنید" },
   "menuLabel_modeNotifs": { "message": "اعلان‌های حالت" },
   "menuLabel_disabled": { "message": "غیرفعال (برنامه افزودنی نصب شده)" },
-  "buttonLabel_clearChats": { "message": "پاک کردن مکالمات" },
-  "buttonLabel_confirm": { "message": "ایمیل" },
   "mode_autoClear": { "message": "پاک کردن خودکار" }
 }

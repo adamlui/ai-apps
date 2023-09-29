@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Widoczność przycisku" },
   "menuLabel_modeNotifs": { "message": "Powiadomienia o trybie" },
   "menuLabel_disabled": { "message": "Wyłączone (zainstalowane rozszerzenie)" },
-  "buttonLabel_clearChats": { "message": "Wyczyść konwersacje" },
-  "buttonLabel_confirm": { "message": "Potwierdź" },
   "mode_autoClear": { "message": "Automatyczne czyszczenie" }
 }

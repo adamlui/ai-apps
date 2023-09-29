@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Vidljivost dugmeta" },
   "menuLabel_modeNotifs": { "message": "Obavještenja o režimu" },
   "menuLabel_disabled": { "message": "Onemogućeno (ekstenzija instalirana)" },
-  "buttonLabel_clearChats": { "message": "Izbriši razgovore" },
-  "buttonLabel_confirm": { "message": "Potvrdite" },
   "mode_autoClear": { "message": "Automatsko brisanje" }
 }

@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Nozelenn" },
   "menuLabel_modeNotifs": { "message": "Kemennoù" },
   "menuLabel_disabled": { "message": "Disabled (extension installed)" },
-  "buttonLabel_clearChats": { "message": "Claro" },
-  "buttonLabel_confirm": { "message": "Kadarnaat" },
   "mode_autoClear": { "message": "Claro" }
 }

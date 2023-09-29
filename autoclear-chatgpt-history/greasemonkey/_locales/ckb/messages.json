@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "بینینه ‌ ی په ‌ نجه ‌ ره ‌" },
   "menuLabel_modeNotifs": { "message": "ئاگادارکردنه ‌ وه ‌ کانی مۆده ‌ ی" },
   "menuLabel_disabled": { "message": "ناچالاککراوە (درێژکراوەی دامەزراندن)" },
-  "buttonLabel_clearChats": { "message": "دیالۆگەکان ڕوون بکەرەوە" },
-  "buttonLabel_confirm": { "message": "دووپاتکردنەوە" },
   "mode_autoClear": { "message": "ده ‌ ستنیشانكردنی ئۆتۆماتیکی" }
 }

@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Visibilità del pulsante" },
   "menuLabel_modeNotifs": { "message": "Notifiche modalità" },
   "menuLabel_disabled": { "message": "Disabilitato (estensione installata)" },
-  "buttonLabel_clearChats": { "message": "Cancella Conversazioni" },
-  "buttonLabel_confirm": { "message": "Conferma" },
   "mode_autoClear": { "message": "Cancellazione automatica" }
 }

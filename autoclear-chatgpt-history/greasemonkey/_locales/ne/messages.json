@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "बटन दृश्यात्मकता" },
   "menuLabel_modeNotifs": { "message": "मोड सूचनाहरू" },
   "menuLabel_disabled": { "message": "अक्षम पारियो (विस्तार स्थापना गरियो)" },
-  "buttonLabel_clearChats": { "message": "वार्तालाप खाली गर्नुहोस्" },
-  "buttonLabel_confirm": { "message": "पुष्टि गर्नुहोस्" },
   "mode_autoClear": { "message": "स्वत: खाली गर्नुहोस्" }
 }

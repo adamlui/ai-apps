@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Düymə Görünməsi" },
   "menuLabel_modeNotifs": { "message": "Rejim Bildirişləri" },
   "menuLabel_disabled": { "message": "Deaktiv edildi (genişlənmə quraşdırıldı)" },
-  "buttonLabel_clearChats": { "message": "Aydın Söhbətlər" },
-  "buttonLabel_confirm": { "message": "Təsdiq et" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

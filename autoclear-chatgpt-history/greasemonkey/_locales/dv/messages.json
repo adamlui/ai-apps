@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "ބަޓަން ވިޒިބިލިޓީ" },
   "menuLabel_modeNotifs": { "message": "މޯޑް ނޮޓިފިކޭޝަންސް" },
   "menuLabel_disabled": { "message": "ނުކުޅެދުންތެރިކަން ހުންނަ މީހުން (އެކްސްޓެންޝަން އިންސްޓޯލްކޮށްފައި)" },
-  "buttonLabel_clearChats": { "message": "ބަޔާންވެގެންވާ ވާހަކަތައް" },
-  "buttonLabel_confirm": { "message": "ކަށަވަރުކުރުން" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

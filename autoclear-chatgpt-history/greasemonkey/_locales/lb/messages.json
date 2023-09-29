@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Knäppchenvisibilitéit" },
   "menuLabel_modeNotifs": { "message": "Modus Notifikatiounen" },
   "menuLabel_disabled": { "message": "Deaktivéiert (Extensioun installéiert)" },
-  "buttonLabel_clearChats": { "message": "Gespréicher läschen" },
-  "buttonLabel_confirm": { "message": "Bestätegen" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

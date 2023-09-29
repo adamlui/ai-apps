@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Visibilitat del botó" },
   "menuLabel_modeNotifs": { "message": "Notificacions de mode" },
   "menuLabel_disabled": { "message": "Desactivat (extensió instal·lada)" },
-  "buttonLabel_clearChats": { "message": "Neteja les converses" },
-  "buttonLabel_confirm": { "message": "Confirma" },
   "mode_autoClear": { "message": "Esborra automàticament" }
 }

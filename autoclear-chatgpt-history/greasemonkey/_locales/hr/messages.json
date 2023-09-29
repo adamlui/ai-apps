@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Vidljivost tipaka" },
   "menuLabel_modeNotifs": { "message": "Obavijesti o načinu rada" },
   "menuLabel_disabled": { "message": "Onemogućeno (proširenje instalirano)" },
-  "buttonLabel_clearChats": { "message": "Očisti razgovore" },
-  "buttonLabel_confirm": { "message": "Potvrdi" },
   "mode_autoClear": { "message": "automatsko �i��enje" }
 }

@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Видимост на бутона" },
   "menuLabel_modeNotifs": { "message": "Известия за режим" },
   "menuLabel_disabled": { "message": "Деактивирано (разширението е инсталирано)" },
-  "buttonLabel_clearChats": { "message": "Изчистване на разговорите" },
-  "buttonLabel_confirm": { "message": "Потвърди" },
   "mode_autoClear": { "message": "Автоматично изчистване" }
 }

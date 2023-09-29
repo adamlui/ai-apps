@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "ʻIke ʻike pihi" },
   "menuLabel_modeNotifs": { "message": "Hoʻolaha Kūlana" },
   "menuLabel_disabled": { "message": "Hoʻopaʻa ʻia (kau ʻia ka hoʻonui)" },
-  "buttonLabel_clearChats": { "message": "Kamaʻilio maopopo" },
-  "buttonLabel_confirm": { "message": "E hōʻoia" },
   "mode_autoClear": { "message": "Holoʻokoʻa" }
 }

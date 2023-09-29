@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "נראות הלחצן" },
   "menuLabel_modeNotifs": { "message": "התראות מצב" },
   "menuLabel_disabled": { "message": "מושבת (תוסף מותקן)" },
-  "buttonLabel_clearChats": { "message": "נקה שיחות" },
-  "buttonLabel_confirm": { "message": "אישור" },
   "mode_autoClear": { "message": "ניקוי אוטומטי" }
 }

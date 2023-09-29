@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "ਬਟਨ ਦਿਖਣਯੋਗਤਾ" },
   "menuLabel_modeNotifs": { "message": "ਮੋਡ ਨੋਟੀਫਿਕੇਸ਼ਨ" },
   "menuLabel_disabled": { "message": "ਆਯੋਗ (ਇਕਸਟੈਨਸ਼ਨ ਇੰਸਟਾਲ)" },
-  "buttonLabel_clearChats": { "message": "ਗੱਲਬਾਤ ਸਾਫ਼ ਕਰੋ" },
-  "buttonLabel_confirm": { "message": "ਪੁਸ਼ਟੀQSql" },
   "mode_autoClear": { "message": "ਆਟੋ - ਸਾਫ਼" }
 }

@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Viżibilità tal-Buttuna" },
   "menuLabel_modeNotifs": { "message": "Notifiki tal-Modalità" },
   "menuLabel_disabled": { "message": "Diżattivat (estensjoni installata)" },
-  "buttonLabel_clearChats": { "message": "Neħħi l-Konverżazzjonijiet" },
-  "buttonLabel_confirm": { "message": "Ikkonferma" },
   "mode_autoClear": { "message": "Neħħi l-Awtomatikament" }
 }

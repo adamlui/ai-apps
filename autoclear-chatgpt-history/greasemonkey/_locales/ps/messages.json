@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "د امستنې لیدنه" },
   "menuLabel_modeNotifs": { "message": "خبرتیاوې" },
   "menuLabel_disabled": { "message": "لګول شوی (لګول شوی)" },
-  "buttonLabel_clearChats": { "message": "خبرې اترې" },
-  "buttonLabel_confirm": { "message": "رښتینی کړه " },
   "mode_autoClear": { "message": "اتومات لارموندنه" }
 }

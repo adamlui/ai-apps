@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "ຄວາມເຫັນຂອງປຸ່ມ" },
   "menuLabel_modeNotifs": { "message": "ການແຈ້ງເຕືອນໂໝດ" },
   "menuLabel_disabled": { "message": "ປິດໃຊ້ງານ (ຕິດຕັ້ງຂະຫຍາຍ)" },
-  "buttonLabel_clearChats": { "message": "ການສົນທະນາທີ່ຊັດເຈນ" },
-  "buttonLabel_confirm": { "message": "ຮັບຮູ້" },
   "mode_autoClear": { "message": "ອັດຕະໂນມັດ-ການຮຽນຮູ້" }
 }

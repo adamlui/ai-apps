@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "མ་ཤེས་པའི་ཡལ་ཐོ་ཡིག་ཚུ།" },
   "menuLabel_modeNotifs": { "message": "གསལ་བཀོད་འབད་ཡོད་པའི་ཐོ་ཡིག་ཚུ་" },
   "menuLabel_disabled": { "message": "ནུས་མེད་བཀྲམ་གཏང་། (_F)" },
-  "buttonLabel_clearChats": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
-  "buttonLabel_confirm": { "message": "སྙན་ཞུ། (_S)" },
   "mode_autoClear": { "message": "རང་བཞིན་གྱི་མིང་" }
 }

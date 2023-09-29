@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Ukugaragara kwa Buto" },
   "menuLabel_modeNotifs": { "message": "&lt; Uburemere UTSINDAGIYE" },
   "menuLabel_disabled": { "message": "Umugereka" },
-  "buttonLabel_clearChats": { "message": "Gusiba ibiganiro" },
-  "buttonLabel_confirm": { "message": "Emeza" },
   "mode_autoClear": { "message": "&lt; Uburemere UTSINDAGIYE" }
 }

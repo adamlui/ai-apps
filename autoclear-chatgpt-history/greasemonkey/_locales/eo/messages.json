@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Butonvidebleco" },
   "menuLabel_modeNotifs": { "message": "@ info: whatsthis" },
   "menuLabel_disabled": { "message": "Malŝaltita (etendo instalita)" },
-  "buttonLabel_clearChats": { "message": "Forviŝi konversaciojn" },
-  "buttonLabel_confirm": { "message": "Konfirmi" },
   "mode_autoClear": { "message": "Aŭtomate purigi" }
 }

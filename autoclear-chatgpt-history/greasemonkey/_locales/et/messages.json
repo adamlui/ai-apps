@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Nupu nähtavus" },
   "menuLabel_modeNotifs": { "message": "Režiimi teated" },
   "menuLabel_disabled": { "message": "Keelatud (laiend installitud)" },
-  "buttonLabel_clearChats": { "message": "Tühjenda vestlused" },
-  "buttonLabel_confirm": { "message": "Kinnita" },
   "mode_autoClear": { "message": "Automaatne tühjendamine" }
 }

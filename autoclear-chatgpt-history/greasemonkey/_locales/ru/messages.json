@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Видимость кнопки" },
   "menuLabel_modeNotifs": { "message": "Уведомления о режиме" },
   "menuLabel_disabled": { "message": "Отключено (установленное расширение)" },
-  "buttonLabel_clearChats": { "message": "Очистить беседы" },
-  "buttonLabel_confirm": { "message": "Подтвердить" },
   "mode_autoClear": { "message": "Автоматическая очистка" }
 }

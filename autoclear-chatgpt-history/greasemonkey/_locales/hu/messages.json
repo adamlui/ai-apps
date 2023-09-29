@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Gomb láthatósága" },
   "menuLabel_modeNotifs": { "message": "Üzemmód értesítések" },
   "menuLabel_disabled": { "message": "Letiltva (bővítmény telepítve)" },
-  "buttonLabel_clearChats": { "message": "Beszélgetések törlése" },
-  "buttonLabel_confirm": { "message": "Megerősítés" },
   "mode_autoClear": { "message": "Automatikus törlés" }
 }

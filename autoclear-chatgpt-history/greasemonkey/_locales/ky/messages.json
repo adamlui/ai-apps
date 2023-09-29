@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Баскычтын көрүнүшү" },
   "menuLabel_modeNotifs": { "message": "Режим билдирүүлөрү" },
   "menuLabel_disabled": { "message": "Өчүрүлгөн (кеңейтилген орнотулган)" },
-  "buttonLabel_clearChats": { "message": "Сүйлөшүүлөрдү тазалоо" },
-  "buttonLabel_confirm": { "message": "Ырастоо" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

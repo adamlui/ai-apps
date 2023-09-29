@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Mygtuko matomumas" },
   "menuLabel_modeNotifs": { "message": "Režimo pranešimai" },
   "menuLabel_disabled": { "message": "Išjungta (įdiegtas plėtinys)" },
-  "buttonLabel_clearChats": { "message": "Išvalyti pokalbius" },
-  "buttonLabel_confirm": { "message": "Patvirtinti" },
   "mode_autoClear": { "message": "Automatinis valymas" }
 }

@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Կոճակի տեսանելիություն" },
   "menuLabel_modeNotifs": { "message": "Ռեժիմի ծանուցումներ" },
   "menuLabel_disabled": { "message": "Անջատված է (երկարաձգումը տեղադրված է)" },
-  "buttonLabel_clearChats": { "message": "Ջնջել նամակագրությունները" },
-  "buttonLabel_confirm": { "message": "Հաստատել" },
   "mode_autoClear": { "message": "Ավտոմատ մաքրում" }
 }

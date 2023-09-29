@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Zichtbaarheid van de knop" },
   "menuLabel_modeNotifs": { "message": "Modusmeldingen" },
   "menuLabel_disabled": { "message": "Uitgeschakeld (extensie geïnstalleerd)" },
-  "buttonLabel_clearChats": { "message": "Gesprekken wissen" },
-  "buttonLabel_confirm": { "message": "Bevestigen" },
   "mode_autoClear": { "message": "Auto-opruiming" }
 }

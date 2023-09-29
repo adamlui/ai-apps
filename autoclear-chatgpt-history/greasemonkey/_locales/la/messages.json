@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Sed quaeritur" },
   "menuLabel_modeNotifs": { "message": "Notre sécurité" },
   "menuLabel_disabled": { "message": "Votre nom (nécessaire)" },
-  "buttonLabel_clearChats": { "message": "Una lettera" },
-  "buttonLabel_confirm": { "message": "Verbum" },
   "mode_autoClear": { "message": "Carpe" }
 }

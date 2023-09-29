@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Бачнасць кнопак" },
   "menuLabel_modeNotifs": { "message": "Рэжым апавяшчэнняў" },
   "menuLabel_disabled": { "message": "Адключаны (усталяваны пашырэнне)" },
-  "buttonLabel_clearChats": { "message": "Ачысціць размовы" },
-  "buttonLabel_confirm": { "message": "Пацвердзіць" },
   "mode_autoClear": { "message": "Аўтаачыстка" }
 }

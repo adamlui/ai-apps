@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Тооцоолох" },
   "menuLabel_modeNotifs": { "message": "Үгүй Тайлбар" },
   "menuLabel_disabled": { "message": "Тохиргоо (Дэмжлэг)" },
-  "buttonLabel_clearChats": { "message": "Тохируулах" },
-  "buttonLabel_confirm": { "message": "Баталгаажуулах" },
   "mode_autoClear": { "message": "Авто Авто" }
 }

@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "ബട്ടൺ ദൃശ്യപരത" },
   "menuLabel_modeNotifs": { "message": "മോഡ് അറിയിപ്പുകൾ" },
   "menuLabel_disabled": { "message": "അപ്രാപ്തമാക്കി (വിപുലീകരണം ഇൻസ്റ്റാൾ ചെയ്തിരിക്കുന്നു)" },
-  "buttonLabel_clearChats": { "message": "സംഭാഷണങ്ങൾ വ്യക്തമാക്കുക" },
-  "buttonLabel_confirm": { "message": "സ്ഥിരീകരിക്കുക" },
   "mode_autoClear": { "message": "ഓട്ടോ-ക്ലിയർ" }
 }

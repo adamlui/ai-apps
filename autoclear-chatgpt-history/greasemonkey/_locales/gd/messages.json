@@ -6,7 +6,5 @@
   "menuLabel_buttonVis": { "message": "Faicsinneachd a 'phutan" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
   "menuLabel_disabled": { "message": "Cuir à comas (leudachan stàlaichte)" },
-  "buttonLabel_clearChats": { "message": "Clear Conversations" },
-  "buttonLabel_confirm": { "message": "&Dearbhaich" },
   "mode_autoClear": { "message": "Glan gu fèin - obrachail" }
 }
