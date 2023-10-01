@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.29
+// @version             2023.10.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -382,21 +382,31 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        alert('Update available! 🚀', // title
-                            `An update to ${ messages.appName } (v${ latestVer }) is available!   `
+                        alert(messages.alert_updateAvail + '! 🚀', // title
+                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ alert_isAvail }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + '>View changes</a>',
+                                    + `> ${ link_viewChanges }</a>`,
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
                                 ).onclose = () => location.reload() }
                         )
+
+                        // Localize button labels if needed
+                        if (!config.userLanguage.startsWith('en')) {
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
+                                  updateButtons = updateAlert.querySelectorAll('button')
+                            updateButtons[1].textContent = messages.buttonLabel_update
+                            updateButtons[0].textContent = messages.buttonLabel_dismiss
+                        }
+
                         return
                 }}
 
-                alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
+                alert(messages.alert_upToDate + '!', // title
+                    `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
     }})}
 
     // Define MENU functions
@@ -434,7 +444,7 @@
         }))
 
         // Add command to launch About modal
-        menuIDs.push(GM_registerMenuCommand('💡 About ' + messages.appName, async () => {
+        menuIDs.push(GM_registerMenuCommand(`💡 ${ messages.menuLabel_about } ${ messages.appName }`, async () => {
 
             // Show alert
             const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(GM_info.script.header)[1] || '',
@@ -464,10 +474,10 @@
                 ]
             )
 
-            // Re-format buttons to include emojis + re-case + hide Dismiss button
+            // Re-format buttons to include emoji + localized label + hide Dismiss button
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-                if (/updates/i.test(button.textContent)) button.textContent = '🚀 Check for Updates'
-                else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
+                if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+                else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
                 else if (/github/i.test(button.textContent)) button.textContent = '🖥️ GitHub source'
                 else button.style.display = 'none' // hide Dismiss button
             }
