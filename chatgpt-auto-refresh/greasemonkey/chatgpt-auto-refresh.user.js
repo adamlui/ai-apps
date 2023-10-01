@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.29
+// @version             2023.10.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -483,7 +483,6 @@
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
                 if (/updates/i.test(button.textContent)) button.textContent = '🚀 Check for Updates'
                 else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
-                else if (/github/i.test(button.textContent)) button.textContent = '🖥️ GitHub source'
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
