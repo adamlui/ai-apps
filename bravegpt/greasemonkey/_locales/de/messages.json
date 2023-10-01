@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Fügt ChatGPT-Antworten zur BraveGPT-Seitenleiste hinzu (unterstützt von GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy-API-Modus" },
   "menuLabel_require": { "message": "Erfordern" },
   "menuLabel_beforeQuery": { "message": "vor der Abfrage" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "Proxy-API funktioniert nicht" },
   "alert_suggestProxy": { "message": "Versuchen Sie, den Proxy-Modus in der Symbolleiste zu aktivieren" },
   "alert_suggestOpenAI": { "message": "Versuchen Sie, den Proxy-Modus in der Symbolleiste auszuschalten" },
-  "alert_censored": { "message": "Leider können wir Ihnen gemäß unseren Produktregeln keine Antwort auf diese Frage geben. Bitte versuchen Sie es mit anderen Fragen." },
+  "alert_censored": { "message": "Leider können wir Ihnen gemäß unseren Produktregeln keine Antwort auf diese Frage geben. Bitte versuchen Sie es mit anderen Fragen" },
   "alert_maintenance": { "message": "KI-System wird gewartet" },
   "buttonLabel_update": { "message": "Aktualisieren" },
   "buttonLabel_updateCheck": { "message": "Nach Updates suchen" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Yn ychwanegu atebion ChatGPT at far ochr BraveGPT (wedi'i bweru gan GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Modd API Dirprwy" },
   "menuLabel_require": { "message": "Angen" },
   "menuLabel_beforeQuery": { "message": "cyn ymholiad" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "Nid yw ap dirprwy yn gweithio" },
   "alert_suggestProxy": { "message": "Ceisiwch droi Modd Dirprwy ymlaen yn y bar offer" },
   "alert_suggestOpenAI": { "message": "Ceisiwch ddiffodd y modd dirprwy yn y bar offer" },
-  "alert_censored": { "message": "Mae'n ddrwg gennym, yn unol â'n rheolau cynnyrch, ni allwn roi ateb i chi i'r cwestiwn hwn, rhowch gynnig ar gwestiynau eraill." },
+  "alert_censored": { "message": "Mae'n ddrwg gennym, yn unol â'n rheolau cynnyrch, ni allwn roi ateb i chi i'r cwestiwn hwn, rhowch gynnig ar gwestiynau eraill" },
   "alert_maintenance": { "message": "Systemau cynnal a chadw dan oruchwyliaeth" },
   "buttonLabel_update": { "message": "Diweddaru" },
   "buttonLabel_updateCheck": { "message": "Dango_s diweddariadau" },

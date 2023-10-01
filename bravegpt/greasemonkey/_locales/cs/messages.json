@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Přidejte odpovědi ChatGPT na postranní panel BraveGPT (využívá GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Režim proxy API" },
   "menuLabel_require": { "message": "Vyžadovat" },
   "menuLabel_beforeQuery": { "message": "před dotazem" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API nefunguje" },
   "alert_suggestProxy": { "message": "Zkuste zapnout režim proxy v panelu nástrojů" },
   "alert_suggestOpenAI": { "message": "Zkuste vypnout režim proxy v panelu nástrojů" },
-  "alert_censored": { "message": "Je nám líto, ale podle našich produktových pravidel vám nemůžeme poskytnout odpověď na tuto otázku, zkuste prosím jiné otázky." },
+  "alert_censored": { "message": "Je nám líto, ale podle našich produktových pravidel vám nemůžeme poskytnout odpověď na tuto otázku, zkuste prosím jiné otázky" },
   "alert_maintenance": { "message": "Systém AI v údržbě" },
   "buttonLabel_update": { "message": "Aktualizovat" },
   "buttonLabel_updateCheck": { "message": "Zjistit novější verzi" },
