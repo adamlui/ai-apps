@@ -1,7 +1,7 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
-  "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
+  "appDesc": { "message": "ބްރޭވްޖީޕީޓީ ސައިޑްބާއަށް ޗެޓްޖީޕީޓީ ޖަވާބުތައް އިތުރުކުރެއެވެ (ޖީޕީޓީ-4 އިން ޕަވަރޑް!)" },
+  "menuLabel_proxyAPImode": { "message": "ޕްރޮކްސީ އެޕީއައި މޯޑެވެ" },
   "menuLabel_require": { "message": "ބޭނުންވާ" },
   "menuLabel_beforeQuery": { "message": "ސުވާލު ކުރުމުގެ ކުރިން" },
   "menuLabel_afterQuery": { "message": "ސުވާލުކުރުމަށްފަހު" },
@@ -11,7 +11,7 @@
   "about_poweredBy": { "message": "ބާރުވެރި ކުރުވާފައިވަނީ" },
   "about_sourceCode": { "message": "ސޯސް ކޯޑް" },
   "prompt_updateReplyLang": { "message": "ރިޕްލައި ލެންގުއޭޖް އަޕްޑޭޓް ކުރޭ" },
-  "alert_prefixMode": { "message": "Prefix Mode" },
+  "alert_prefixMode": { "message": "ޕްރިފިކްސް މޯޑް" },
   "alert_suffixMode": { "message": "ޕްރެފިކްޓް މޯޑް" },
   "alert_langUpdated": { "message": "ބަހުރުވަ އަޕްޑޭޓްކޮށްފި" },
   "alert_willReplyIn": { "message": "ޖަވާބު ދެއްވާނެއެވެ." },
