@@ -1,7 +1,7 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
-  "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
+  "appDesc": { "message": "Ajoute repons ChatGPT nan ba BraveGPT (powered by GPT-4!)" },
+  "menuLabel_proxyAPImode": { "message": "Mòd API proxy" },
   "menuLabel_require": { "message": "Obligatwa" },
   "menuLabel_beforeQuery": { "message": "anvan rechèch/avant de demander" },
   "menuLabel_afterQuery": { "message": "apre rechèch/après la question" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API pa ap travay" },
   "alert_suggestProxy": { "message": "Eseye chanje sou mòd Proxy nan ba zouti" },
   "alert_suggestOpenAI": { "message": "Eseye chanje mòd Proxy nan ba zouti" },
-  "alert_censored": { "message": "Padon, dapre règleman pwodwi nou yo, nou pa ka ba ou yon repons a kesyon sa a, tanpri eseye lòt kesyon." },
+  "alert_censored": { "message": "Padon, dapre règleman pwodwi nou yo, nou pa ka ba ou yon repons a kesyon sa a, tanpri eseye lòt kesyon" },
   "alert_maintenance": { "message": "Sistèm AI anba antretyen" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_updateCheck": { "message": "Tcheke pou Updates" },

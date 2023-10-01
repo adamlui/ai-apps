@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "BraveGPT साइडबार में ChatGPT उत्तर जोड़ता है (GPT-4 द्वारा संचालित!)" },
   "menuLabel_proxyAPImode": { "message": "प्रॉक्सी एपीआई मोड" },
   "menuLabel_require": { "message": "ज़रूरी है" },
   "menuLabel_beforeQuery": { "message": "क्वेरी से पहले" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "प्रॉक्सी API काम नहीं कर रहा है" },
   "alert_suggestProxy": { "message": "टूलबार में प्रॉक्सी मोड पर स्विच करने का प्रयास करें" },
   "alert_suggestOpenAI": { "message": "टूलबार में प्रॉक्सी मोड बंद करके देखें" },
-  "alert_censored": { "message": "माफ़ करें, हमारे उत्पाद नियमों के अनुसार, हम आपको इस सवाल का जवाब नहीं दे सकते, कृपया और सवाल आज़माएँ।" },
+  "alert_censored": { "message": "माफ़ करें, हमारे उत्पाद नियमों के अनुसार, हम आपको इस सवाल का जवाब नहीं दे सकते, कृपया और सवाल आज़माएँ" },
   "alert_maintenance": { "message": "रखरखाव के तहत एआई सिस्टम" },
   "buttonLabel_update": { "message": "अपडेट करें" },
   "buttonLabel_updateCheck": { "message": "अद्यतन के लिए जाँचें" },

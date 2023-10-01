@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "ChatGPT-ի պատասխաններն ավելացնում է BraveGPT կողագոտին (սնուցվում է GPT-4-ով):" },
   "menuLabel_proxyAPImode": { "message": "Proxy API ռեժիմ" },
   "menuLabel_require": { "message": "Պահանջել" },
   "menuLabel_beforeQuery": { "message": "նախքան հարցումը" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "Վստահված անձի API - ն չի աշխատում" },
   "alert_suggestProxy": { "message": "Փորձեք միացնել վստահված ռեժիմը գործիքագոտում" },
   "alert_suggestOpenAI": { "message": "Փորձեք անջատել վստահված ռեժիմը գործիքագոտում" },
-  "alert_censored": { "message": "Ներեցեք, մեր արտադրանքի կանոնների համաձայն ՝ մենք չենք կարող ձեզ պատասխան տալ այս հարցին, խնդրում ենք փորձել այլ հարցեր:" },
+  "alert_censored": { "message": "Ներեցեք, մեր արտադրանքի կանոնների համաձայն ՝ մենք չենք կարող ձեզ պատասխան տալ այս հարցին, խնդրում ենք փորձել այլ հարցեր" },
   "alert_maintenance": { "message": "Սպասարկման մեջ գտնվող AI համակարգ" },
   "buttonLabel_update": { "message": "Այժմեականացնել / Արդիականացնել" },
   "buttonLabel_updateCheck": { "message": "Ստուգել թարմացումները" },

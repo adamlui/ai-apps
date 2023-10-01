@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Hozzáadja a ChatGPT válaszokat a BraveGPT oldalsávhoz (a GPT-4 segítségével!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API mód" },
   "menuLabel_require": { "message": "Kötelező" },
   "menuLabel_beforeQuery": { "message": "Lekérdezés előtt" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "A Proxy API nem működik" },
   "alert_suggestProxy": { "message": "Próbálja meg bekapcsolni a Proxy módot az eszköztáron" },
   "alert_suggestOpenAI": { "message": "Próbálja meg kikapcsolni a Proxy módot az eszköztáron" },
-  "alert_censored": { "message": "Sajnáljuk, a termékszabályzatunk szerint nem tudunk választ adni erre a kérdésre, kérjük, próbáljon meg más kérdéseket." },
+  "alert_censored": { "message": "Sajnáljuk, a termékszabályzatunk szerint nem tudunk választ adni erre a kérdésre, kérjük, próbáljon meg más kérdéseket" },
   "alert_maintenance": { "message": "AI rendszer karbantartás alatt" },
   "buttonLabel_update": { "message": "Frissítés" },
   "buttonLabel_updateCheck": { "message": "Frissítések keresése" },
