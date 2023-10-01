@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "Интерфейси ChatGPT" },
+  "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Ҷавобҳои беохирро аз ChatGPT (дар ҳама забонҳо) ба даст оред!" },
   "menuLabel_infinityMode": { "message": "Ҳолати беохир" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
