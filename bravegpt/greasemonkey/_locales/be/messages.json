@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Дадае адказы ChatGPT на бакавую панэль BraveGPT (на базе GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Рэжым API-проксі" },
   "menuLabel_require": { "message": "Патрабаванне" },
   "menuLabel_beforeQuery": { "message": "перад запытам" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "API проксі не працуе" },
   "alert_suggestProxy": { "message": "Паспрабуйце ўключыць рэжым проксі ў панэлі інструментаў" },
   "alert_suggestOpenAI": { "message": "Паспрабуйце выключыць рэжым проксі ў панэлі інструментаў" },
-  "alert_censored": { "message": "На жаль, у адпаведнасці з нашымі правіламі прадукцыі, мы не можам даць вам адказ на гэтае пытанне, калі ласка, паспрабуйце іншыя пытанні." },
+  "alert_censored": { "message": "На жаль, у адпаведнасці з нашымі правіламі прадукцыі, мы не можам даць вам адказ на гэтае пытанне, калі ласка, паспрабуйце іншыя пытанні" },
   "alert_maintenance": { "message": "Сістэма штучнага інтэлекту ў абслугоўванні" },
   "buttonLabel_update": { "message": "Абноўлена " },
   "buttonLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
@@ -41,6 +41,6 @@
   "buttonLabel_dismiss": { "message": "Адхіліць" },
   "link_viewChanges": { "message": "Праглядзець змены" },
   "link_shareFeedback": { "message": "Падзяліцца зваротнай сувяззю" },
-  "state_enabled": { "message": "XYZ/ альфа- канал" },
+  "state_enabled": { "message": "уключаны" },
   "state_disabled": { "message": "адключаны" }
 }
