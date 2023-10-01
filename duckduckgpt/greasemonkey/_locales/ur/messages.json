@@ -14,7 +14,7 @@
   "prompt_updateReplyLang": { "message": "جواب کی زبان اپ ڈیٹ کریں" },
   "alert_prefixMode": { "message": "سابقہ موڈ" },
   "alert_suffixMode": { "message": "صفت وضع" },
-  "alert_langUpdated": { "message": "LANGUAGE تازہ کاری" },
+  "alert_langUpdated": { "message": "زبان کو اپ ڈیٹ کر دیا گیا۔" },
   "alert_willReplyIn": { "message": "میں جواب دیں گے" },
   "alert_yourSysLang": { "message": "آپ کے سسٹم کی زبان" },
   "alert_choosePlatform": { "message": "ایک پلیٹ فارم منتخب کریں" },
