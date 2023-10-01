@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "ამატებს ChatGPT პასუხებს BraveGPT გვერდითა ზოლში (მოწყობილია GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Პროქსი API რეჟიმი" },
   "menuLabel_require": { "message": "Მოთხოვნა" },
   "menuLabel_beforeQuery": { "message": "მოთხოვნამდე" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "Პროქსის API არ მუშაობს" },
   "alert_suggestProxy": { "message": "Სცადეთ ხელსაწყოთა პანელში პროქსი რეჟიმის ჩართვა" },
   "alert_suggestOpenAI": { "message": "Სცადეთ პროქსი რეჟიმის გამორთვა ხელსაწყოთა პანელში" },
-  "alert_censored": { "message": "Სამწუხაროდ, ჩვენი პროდუქტის წესების თანახმად, ამ კითხვაზე პასუხს ვერ გაგცემთ. გთხოვთ, სცადოთ სხვა შეკითხვები." },
+  "alert_censored": { "message": "Სამწუხაროდ, ჩვენი პროდუქტის წესების თანახმად, ამ კითხვაზე პასუხს ვერ გაგცემთ. გთხოვთ, სცადოთ სხვა შეკითხვები" },
   "alert_maintenance": { "message": "Მოვლა-პატრონობის პროცესში მყოფი AI სისტემა" },
   "buttonLabel_update": { "message": "განახლება" },
   "buttonLabel_updateCheck": { "message": "განახლებების შემოწმება" },
