@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "يضيف إجابات ChatGPT إلى الشريط الجانبي لـ BraveGPT (مدعوم من GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "وضع واجهة برمجة التطبيقات للوكيل" },
   "menuLabel_require": { "message": "مطلوب" },
   "menuLabel_beforeQuery": { "message": "قبل الاستعلام" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "واجهة برمجة تطبيقات الوكيل لا تعمل" },
   "alert_suggestProxy": { "message": "حاول تشغيل وضع الوكيل في شريط الأدوات" },
   "alert_suggestOpenAI": { "message": "حاول إيقاف تشغيل وضع الوكيل في شريط الأدوات" },
-  "alert_censored": { "message": "عذرًا، وفقًا لقواعد منتجاتنا، لا يمكننا تزويدك بإجابة على هذا السؤال، يرجى تجربة أسئلة أخرى." },
+  "alert_censored": { "message": "عذرًا، وفقًا لقواعد منتجاتنا، لا يمكننا تزويدك بإجابة على هذا السؤال، يرجى تجربة أسئلة أخرى" },
   "alert_maintenance": { "message": "النظام تحت الصيانة." },
   "buttonLabel_update": { "message": "تحديث" },
   "buttonLabel_updateCheck": { "message": "مرابة التحديثات" },

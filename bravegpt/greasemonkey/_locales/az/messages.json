@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "ChatGPT cavablarını BraveGPT yan panelinə əlavə edir (GPT-4 ilə işləyir!)" },
   "menuLabel_proxyAPImode": { "message": "Proksi API Rejimi" },
   "menuLabel_require": { "message": "Tələb et" },
   "menuLabel_beforeQuery": { "message": "sorğudan əvvəl" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "Proksi API-si işləmir" },
   "alert_suggestProxy": { "message": "Alətlər panelində Proksi Rejimində dəyişməyi sınayın" },
   "alert_suggestOpenAI": { "message": "Alətlər panelində Proksi Rejimini söndürməyi sınayın" },
-  "alert_censored": { "message": "Üzr istəyirik, məhsul qaydalarımıza əsasən, sizə bu suala cavab verə bilmərik, başqa sualları sınayın." },
+  "alert_censored": { "message": "Üzr istəyirik, məhsul qaydalarımıza əsasən, sizə bu suala cavab verə bilmərik, başqa sualları sınayın" },
   "alert_maintenance": { "message": "AI sistemi texniki baxışdan keçirilir" },
   "buttonLabel_update": { "message": "Yenilə" },
   "buttonLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
