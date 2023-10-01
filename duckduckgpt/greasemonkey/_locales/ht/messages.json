@@ -1,7 +1,7 @@
 {
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Ajoute repons ChatGPT nan bar bò DuckDuckGo (patrone pa GPT-4!)" },
-  "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
+  "menuLabel_proxyAPImode": { "message": "Mòd API proxy" },
   "menuLabel_require": { "message": "Obligatwa" },
   "menuLabel_beforeQuery": { "message": "anvan rechèch/avant de demander" },
   "menuLabel_afterQuery": { "message": "apre rechèch/après la question" },
