@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Bersivên ChatGPT li kêleka BraveGPT zêde dike (ji hêla GPT-4 ve hatî hêzdar kirin!)" },
   "menuLabel_proxyAPImode": { "message": "Moda API-a Proxy" },
   "menuLabel_require": { "message": "پێویست دەکات، پێویستبون، پێویستی پێ بوون، داوالێکردن، پێویستبوون، پێویستی پێبوون، داواکردن، ویستن، داوای لێدەکا، بەسەری دەسەپێنێ، فەرمانی دەدات بە\n[کۆمپیوتەر]: پێویستبوون" },
   "menuLabel_beforeQuery": { "message": "berî pirsê" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API nexebite" },
   "alert_suggestProxy": { "message": "Biceribînin ku moda Proxy di darikê amûran de vekin" },
   "alert_suggestOpenAI": { "message": "Biceribînin ku moda Proxy di darikê amûran de vekin" },
-  "alert_censored": { "message": "Mixabin, li gorî qaîdeyên hilberê me, em nikarin bersiva vê pirsê bidin we, ji kerema xwe pirsên din biceribînin." },
+  "alert_censored": { "message": "Mixabin, li gorî qaîdeyên hilberê me, em nikarin bersiva vê pirsê bidin we, ji kerema xwe pirsên din biceribînin" },
   "alert_maintenance": { "message": "Pergala AI-ê di bin parastinê de ye" },
   "buttonLabel_update": { "message": "Rojane Bike" },
   "buttonLabel_updateCheck": { "message": "Ji bo Nûvekirinan kontrol bikin" },
