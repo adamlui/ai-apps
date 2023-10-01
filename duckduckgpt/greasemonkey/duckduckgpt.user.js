@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.1
+// @version             2023.10.1.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -787,13 +787,14 @@
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
         + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
         + '.katex-html { display: none } ' // hide unrendered math
+        + ( isDarkMode() ? '.chatgpt-modal > div { background-color: black !important ; color: white }' : '' )
         + '.chatgpt-modal h2 { margin: 0 ; padding: 0 } ' // shrink margin/padding around update alert title
         + '.chatgpt-modal p { margin: -8px 0 -9px 4px ; font-size: 1.55rem } ' // position/size update alert msg
         + '.chatgpt-modal button { ' // chatgpt.alert() buttons
             + 'padding: 8px 15px !important ; cursor: pointer ; border-radius: 0 !important ; '
             + 'text-transform: uppercase ; border: 2px solid black !important } '
         + '.chatgpt-modal button:hover { color: white !important } ' // color text white on update alert button hovers
-        + '.chatgpt-modal div[class*=checkbox] label { position: relative ; bottom: -0.1857rem ; left: -2px } ' // position skip update checkbox
+        + ( isDarkMode() ? '.chatgpt-modal button:hover { background-color: #00cfff !important }' : '' )
     )
     document.head.appendChild(ddgptStyle) // append style to <head>
 
