@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.9.29
+// @version             2023.10.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -337,13 +337,15 @@
             const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(GM_info.script.header)[1] || ''
             const aboutAlertID = alert(
                 'DuckDuckGPT', // title
-                ' ' + messages.alert_version + ': ' + GM_info.script.version + '\n '
-                    + messages.alert_poweredBy + ': '
-                    + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
-                    + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ),
+                '🏷️ ' + messages.alert_version + ': ' + GM_info.script.version + '\n'
+                    + '⚡ ' + messages.alert_poweredBy + ': '
+                        + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
+                        + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
+                    + '📜 ' + messages.buttonLabel_githubSrc + ':\n '
+                        + `<a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
+                            + config.gitHubURL + '</a>',
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
-                    function githubSource() { safeWindowOpen(config.gitHubURL) },
                     function leaveAReview() {
                         const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
                             [ function greasyFork() { safeWindowOpen(
@@ -358,7 +360,7 @@
                         reviewButtons[0].style.display = 'none' // hide Dismiss button
                         reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
                             reviewButtons[1].textContent.replace(/\s/g, '')) }
-                ], '', 524) // About modal width
+                ], '', 420) // About modal width
 
             // Re-format buttons to include emojis + re-case + hide 'Dismiss'
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
