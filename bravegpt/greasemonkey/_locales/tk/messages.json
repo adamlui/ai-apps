@@ -1,7 +1,7 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
-  "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
+  "appDesc": { "message": "BraveGPT gapdal paneline ChatGPT jogaplaryny goşýar (GPT-4 bilen işleýär!)" },
+  "menuLabel_proxyAPImode": { "message": "Proxy API tertibi" },
   "menuLabel_require": { "message": "Kerek" },
   "menuLabel_beforeQuery": { "message": "öňki sorag" },
   "menuLabel_afterQuery": { "message": "çykyşdan soň" },
@@ -38,7 +38,7 @@
   "buttonLabel_update": { "message": "Täzele" },
   "buttonLabel_updateCheck": { "message": "Updates üçin täzelendir" },
   "buttonLabel_leaveReview": { "message": "Çykyş goý" },
-  "buttonLabel_dismiss": { "message": "Dismiss" },
+  "buttonLabel_dismiss": { "message": "Işden aýyrmak" },
   "link_viewChanges": { "message": "Özgertmeleri Gör" },
   "link_shareFeedback": { "message": "Öwrenme paýlaş" },
   "state_enabled": { "message": "Jawany Mümkin Et" },
