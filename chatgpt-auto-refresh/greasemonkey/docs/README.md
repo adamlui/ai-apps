@@ -88,12 +88,10 @@
 </picture></a>
 <br><br>
 
-ChatGPT Auto Refresh relies on code from the powerful [chatgpt.js](https://github.com/kudoai/chatgpt.js) library (c) 2023 KudoAI & contributors under the MIT license.
+ChatGPT Auto Refresh relies on code from the powerful <a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a> library (c) 2023 <a href="https://www.kudoai.com">KudoAI</a> & contributors under the MIT license.
 
 </div>
 </h6>
-
-<br>
 
 ## 🌐 Compatibility
 
@@ -110,9 +108,7 @@ ChatGPT Auto Refresh is compatible w/ the following browsers using [Tampermonkey
 - Ghost
 - QQ
 
-If you've tested it to work in a browser not listed, create a [pull request](https://github.com/adamlui/chatgpt-auto-refresh/pulls) to become a contributor!
-
-<a href="https://greasyfork.org/scripts/462422-chatgpt-auto-refresh"><img src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="-#installation"><img title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462422-chatgpt-auto-refresh"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="-#installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions) / 
 [Leave a review](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
