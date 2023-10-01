@@ -1,7 +1,7 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
-  "menuLabel_proxyAPImode": { "message": "Proxy ኤፒአይ ሁነታ" },
+  "appDesc": { "message": "የChatGPT መልሶችን ወደ BraveGPT የጎን አሞሌ ያክላል (በ GPT-4 የተጎላበተ!)" },
+  "menuLabel_proxyAPImode": { "message": "ተኪ ኤፒአይ ሁነታ" },
   "menuLabel_require": { "message": "ያስፈልጋል" },
   "menuLabel_beforeQuery": { "message": "ከመጠየቁ በፊት" },
   "menuLabel_afterQuery": { "message": "መጠይቅ በኋላ" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "ፕሮክሲ ኤፒአይ አይሰራም" },
   "alert_suggestProxy": { "message": "መሣሪያ አሞሌ ውስጥ Proxy ሁነታ ላይ መቀየር ይሞክሩ" },
   "alert_suggestOpenAI": { "message": "መሣሪያ አሞሌ ውስጥ Proxy ሁነታ ማጥፋት ይሞክሩ" },
-  "alert_censored": { "message": "ይቅርታ ፣ በምርታችን ህጎች መሠረት ለዚህ ጥያቄ መልስ ልንሰጥዎ አንችልም ፣ እባክዎ ሌሎች ጥያቄዎችን ይሞክሩ ።" },
+  "alert_censored": { "message": "ይቅርታ፣ በእኛ ምርት ህግ መሰረት፣ ለዚህ ጥያቄ መልስ ልንሰጥዎ አንችልም፣ እባክዎን ሌሎች ጥያቄዎችን ይሞክሩ" },
   "alert_maintenance": { "message": "AI ስርዓት በጥገና ስር" },
   "buttonLabel_update": { "message": "አዘምን" },
   "buttonLabel_updateCheck": { "message": "ዝማኔዎችን ይመልከቱ" },
