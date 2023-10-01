@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.9.29.3
+// @version             2023.10.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -451,7 +451,6 @@
                 if (/updates/i.test(button.textContent))
                     button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
                 else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
-                else if (/github/i.test(button.textContent)) button.textContent = '🖥️ GitHub source'
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
