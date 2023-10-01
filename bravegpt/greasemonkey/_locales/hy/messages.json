@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "ChatGPT-ի պատասխաններն ավելացնում է BraveGPT կողագոտին (սնուցվում է GPT-4-ով):" },
+  "appDesc": { "message": "Ավելացնում է ChatGPT - ի պատասխանները «Խիզախ որոնում» կողագոտում (սնուցվում է GPT -4 - ով)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API ռեժիմ" },
   "menuLabel_require": { "message": "Պահանջել" },
   "menuLabel_beforeQuery": { "message": "նախքան հարցումը" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "A’ cur freagairtean ChatGPT ri bàr-taobh BraveGPT (le cumhachd bho GPT-4!)" },
+  "appDesc": { "message": "A 'cur fhreagairtean ChatGPT gu bàr - taoibh Rannsachadh Brave (air a stiùireadh le GPT -4!)" },
   "menuLabel_proxyAPImode": { "message": "Modh API Proxy" },
   "menuLabel_require": { "message": "A 'cur feum air" },
   "menuLabel_beforeQuery": { "message": "roimhe a 'Phuist \"An clàr roimhe" },

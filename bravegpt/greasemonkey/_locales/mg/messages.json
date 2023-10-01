@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Addds ChatGPT valiny ny Brave Search sidebar (Powered by GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Fomba API'ny proxy" },
   "menuLabel_require": { "message": "FEPETRA" },
   "menuLabel_beforeQuery": { "message": "alohan'ny QUERY" },

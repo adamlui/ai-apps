@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "د Brave Search sidebar ته د ChatGPT ځوابونه اضافه کوي (د GPT -4 لخوا پرمخ وړل شوی!)" },
   "menuLabel_proxyAPImode": { "message": "د پراکسي API حالت" },
   "menuLabel_require": { "message": "اړتیا" },
   "menuLabel_beforeQuery": { "message": "د پوښتنې دمخه" },

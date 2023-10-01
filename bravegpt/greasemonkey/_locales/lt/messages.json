@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Prideda „ChatGPT“ atsakymus į „Drąsios paieškos“ šoninę juostą (sukurta GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Tarpinio serverio API režimas" },
   "menuLabel_require": { "message": "Privalomas laukas" },
   "menuLabel_beforeQuery": { "message": "prieš užklausą" },

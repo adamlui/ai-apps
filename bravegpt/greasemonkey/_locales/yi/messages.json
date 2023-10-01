@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "לייגט ChatGPT ענטפֿערס צו BraveGPT סיידבאַר (פּאַוערד דורך GPT-4!)" },
+  "appDesc": { "message": "לייגט ChatGPT ענטפֿערס צו העלדיש זוך סיידבאַר (פּאַוערד דורך GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "פּראָקסי אַפּי מאָדע" },
   "menuLabel_require": { "message": "דאַרפן" },
   "menuLabel_beforeQuery": { "message": "איידער אָנפֿרעג" },

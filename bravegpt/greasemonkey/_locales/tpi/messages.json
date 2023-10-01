@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Ol i save putim ol bekim bilong ChatGPT long Brave Search sidebar (GPT-4 i save mekim wok long en!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API modus" },
   "menuLabel_require": { "message": "Askim" },
   "menuLabel_beforeQuery": { "message": "taim ol i askim" },

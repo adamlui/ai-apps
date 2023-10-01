@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Inaongeza majibu ya ChatGPT kwenye upau wa kando wa Utafutaji wa Ujasiri (unaendeshwa na GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Hali Mbadala ya API" },
   "menuLabel_require": { "message": "Inahitaji" },
   "menuLabel_beforeQuery": { "message": "kabla ya QUERY" },

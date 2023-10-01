@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Přidejte odpovědi ChatGPT na postranní panel BraveGPT (využívá GPT-4!)" },
+  "appDesc": { "message": "Přidá odpovědi ChatGPT na boční panel Brave Search (poháněný GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Režim proxy API" },
   "menuLabel_require": { "message": "Vyžadovat" },
   "menuLabel_beforeQuery": { "message": "před dotazem" },

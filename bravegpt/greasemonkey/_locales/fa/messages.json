@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "پاسخ‌های ChatGPT را به نوار کناری BraveGPT اضافه می‌کند (با GPT-4!)" },
+  "appDesc": { "message": "پاسخ‌های ChatGPT را به نوار کناری Brave Search اضافه می‌کند (با GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "حالت API پروکسی" },
   "menuLabel_require": { "message": "الزامی" },
   "menuLabel_beforeQuery": { "message": "قبل از پرس و جو" },

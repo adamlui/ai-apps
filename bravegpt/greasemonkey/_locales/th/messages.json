@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "เพิ่มคำตอบ ChatGPT ให้กับแถบด้านข้าง BraveGPT (ขับเคลื่อนโดย GPT-4!)" },
+  "appDesc": { "message": "เพิ่มคำตอบ ChatGPT ในแถบด้านข้าง Brave Search (ขับเคลื่อนโดย GPT -4!)" },
   "menuLabel_proxyAPImode": { "message": "โหมด API พร็อกซี" },
   "menuLabel_require": { "message": "ต้องกรอก" },
   "menuLabel_beforeQuery": { "message": "ก่อนการสอบถาม" },

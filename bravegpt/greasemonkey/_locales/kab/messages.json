@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Ad yessiwḍen ChatGPT d wid yeẓwernan n BraveGPT (sdawan seg GPT-4!)" },
+  "appDesc": { "message": "Add ChatGPT answers to Brave Search sidebar (izdayen s GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Aɣewwaṛ n API Proxy" },
   "menuLabel_require": { "message": "Teḥwaǧeḍ" },
   "menuLabel_beforeQuery": { "message": "uqbel aseqsi" },

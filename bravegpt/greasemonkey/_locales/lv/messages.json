@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Pievieno ChatGPT atbildes Brave Search sānjoslai (nodrošina GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Starpniekservera API režīms" },
   "menuLabel_require": { "message": "Nepieciešams" },
   "menuLabel_beforeQuery": { "message": "pirms vaicājuma" },

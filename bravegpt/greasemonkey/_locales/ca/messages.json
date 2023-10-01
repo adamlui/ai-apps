@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Afegeix respostes de ChatGPT a la barra lateral de BraveGPT (amb la tecnologia GPT-4!)" },
+  "appDesc": { "message": "Afegeix les respostes de ChatGPT a la barra lateral de Brave Search (amb tecnologia GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Mode API de servidor intermediari" },
   "menuLabel_require": { "message": "Requerit" },
   "menuLabel_beforeQuery": { "message": "abans de la consulta" },

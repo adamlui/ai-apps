@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Bersivên ChatGPT li kêleka BraveGPT zêde dike (ji hêla GPT-4 ve hatî hêzdar kirin!)" },
+  "appDesc": { "message": "Bersivên ChatGPT li kêleka Brave Search zêde dike (ji hêla GPT-4 ve hatî hêzdar kirin!)" },
   "menuLabel_proxyAPImode": { "message": "Moda API-a Proxy" },
   "menuLabel_require": { "message": "پێویست دەکات، پێویستبون، پێویستی پێ بوون، داوالێکردن، پێویستبوون، پێویستی پێبوون، داواکردن، ویستن، داوای لێدەکا، بەسەری دەسەپێنێ، فەرمانی دەدات بە\n[کۆمپیوتەر]: پێویستبوون" },
   "menuLabel_beforeQuery": { "message": "berî pirsê" },

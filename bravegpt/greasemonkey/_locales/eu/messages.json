@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "ChatGPT erantzunak gehitzen ditu BraveGPT alboko barran (GPT-4-k bultzatuta!)" },
+  "appDesc": { "message": "ChatGPT erantzunak gehitzen ditu Brave Search alboko barran (GPT-4-k bultzatuta!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API modua" },
   "menuLabel_require": { "message": "Eskatu" },
   "menuLabel_beforeQuery": { "message": "kontsultaren aurretik" },

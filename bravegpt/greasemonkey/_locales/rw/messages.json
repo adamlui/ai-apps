@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Kuri Umurongo wo ku mpande (ku 4.)" },
   "menuLabel_proxyAPImode": { "message": "Ubwoko" },
   "menuLabel_require": { "message": "Bisabwa" },
   "menuLabel_beforeQuery": { "message": "mbere Ikibazo #" },

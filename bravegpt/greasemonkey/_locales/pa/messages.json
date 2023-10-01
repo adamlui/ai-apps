@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Brave Search ਬਾਹੀ ਵਿੱਚ ChatGPT ਜਵਾਬ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ (GPT-4 ਦੁਆਰਾ ਸੰਚਾਲਿਤ!)" },
   "menuLabel_proxyAPImode": { "message": "ਪਰਾਕਸੀ API ਮੋਡ" },
   "menuLabel_require": { "message": "à¨²à©à©à©à¨¦à¨¾:" },
   "menuLabel_beforeQuery": { "message": "ਪੁੱਛਗਿੱਛ ਤੋਂ ਪਹਿਲਾਂ" },

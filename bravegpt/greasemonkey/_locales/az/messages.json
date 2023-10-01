@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "ChatGPT cavablarını BraveGPT yan panelinə əlavə edir (GPT-4 ilə işləyir!)" },
+  "appDesc": { "message": "Cəsur Axtarış yan panelinə ChatGPT cavabları əlavə edir (GPT-4 ilə təchiz edilmişdir!)" },
   "menuLabel_proxyAPImode": { "message": "Proksi API Rejimi" },
   "menuLabel_require": { "message": "Tələb et" },
   "menuLabel_beforeQuery": { "message": "sorğudan əvvəl" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "將 ChatGPT 答案添加到 BraveGPT 側邊欄（由 GPT-4 提供支援！）" },
+  "appDesc": { "message": "將ChatGPT答案添加到Brave Search側邊欄（由GPT-4提供支持！ ）" },
   "menuLabel_proxyAPImode": { "message": "代理API模式" },
   "menuLabel_require": { "message": "需要" },
   "menuLabel_beforeQuery": { "message": "查詢前" },

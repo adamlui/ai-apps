@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Ба панели паҳлӯии BraveGPT ҷавобҳои ChatGPT-ро илова мекунад (бо GPT-4 кор мекунад!)" },
+  "appDesc": { "message": "Ҷавоби ChatGPT-ро ба панели паҳлӯии ҷасуронаи ҷустуҷӯ илова мекунад (бо GPT-4 идора карда мешавад!)" },
   "menuLabel_proxyAPImode": { "message": "Усули API Proxy" },
   "menuLabel_require": { "message": "Талаб кардан" },
   "menuLabel_beforeQuery": { "message": "пеш аз пурсиш" },

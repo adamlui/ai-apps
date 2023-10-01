@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Ajoute repons ChatGPT nan ba BraveGPT (powered by GPT-4!)" },
+  "appDesc": { "message": "Ajoute repons ChatGPT nan ankadre rechèch brav (patrone pa GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Mòd API proxy" },
   "menuLabel_require": { "message": "Obligatwa" },
   "menuLabel_beforeQuery": { "message": "anvan rechèch/avant de demander" },

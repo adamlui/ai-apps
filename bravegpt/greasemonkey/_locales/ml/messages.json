@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "ധൈര്യമുള്ള തിരയൽ സൈഡ്‌ബാറിലേക്ക് ChatGPT ഉത്തരങ്ങൾ ചേർക്കുന്നു (GPT-4 നാൽ നയിക്കപ്പെടുന്നു!)" },
   "menuLabel_proxyAPImode": { "message": "പ്രോക്സി API മോഡ്" },
   "menuLabel_require": { "message": "ആവശ്യമാണ്" },
   "menuLabel_beforeQuery": { "message": "ചോദ്യത്തിന് മുമ്പ്" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "BraveGPT பக்கப்பட்டியில் ChatGPT பதில்களைச் சேர்க்கிறது (GPT-4 மூலம் இயக்கப்படுகிறது!)" },
+  "appDesc": { "message": "தைரியமான தேடல் பக்கப்பட்டியில் ChatGPT பதில்களைச் சேர்க்கிறது (GPT-4 ஆல் இயக்கப்படுகிறது!)" },
   "menuLabel_proxyAPImode": { "message": "ப்ராக்ஸி API பயன்முறை" },
   "menuLabel_require": { "message": "தேவை" },
   "menuLabel_beforeQuery": { "message": "வினவலுக்கு முன்" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Dodaje ChatGPT odgovore na bočnu traku Hrabre pretrage (pokreće GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "API režim proksija" },
   "menuLabel_require": { "message": "Obavezno" },
   "menuLabel_beforeQuery": { "message": "pre upita" },

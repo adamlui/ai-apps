@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Lägger till ChatGPT-svar i sidofältet Brave Search (drivs av GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API-läge" },
   "menuLabel_require": { "message": "Krävs" },
   "menuLabel_beforeQuery": { "message": "före förfrågan" },

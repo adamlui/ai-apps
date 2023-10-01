@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Hoʻohui i nā pane ChatGPT i ka ʻaoʻao ʻaoʻao BraveGPT (hoʻohana ʻia e GPT-4!)" },
+  "appDesc": { "message": "Hoʻohui i nā pane ChatGPT i ka ʻaoʻao ʻaoʻao Brave Search (hoʻohana ʻia e GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Kūlana API Kūlana" },
   "menuLabel_require": { "message": "Koi" },
   "menuLabel_beforeQuery": { "message": "mamua o ka ninau ana" },

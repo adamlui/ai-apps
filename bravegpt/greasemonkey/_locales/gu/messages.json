@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "BraveGPT સાઇડબારમાં ChatGPT જવાબો ઉમેરે છે (GPT-4 દ્વારા સંચાલિત!)" },
+  "appDesc": { "message": "બહાદુર શોધ સાઇડબારમાં ChatGPT જવાબો ઉમેરે છે (GPT-4 દ્વારા સંચાલિત!)" },
   "menuLabel_proxyAPImode": { "message": "પ્રોક્સી API મોડ" },
   "menuLabel_require": { "message": "આવશ્યક" },
   "menuLabel_beforeQuery": { "message": "ક્વેરી પહેલાં" },

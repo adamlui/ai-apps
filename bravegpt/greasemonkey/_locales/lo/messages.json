@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "ເພີ່ມ ຄໍາ ຕອບ ChatGPT ໃສ່ແຖບຂ້າງ Brave Search (ຂັບເຄື່ອນໂດຍ GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "ໂໝດໂປຣແກຣມ API" },
   "menuLabel_require": { "message": "ຮຽກຮ້ອງຕ້ອງການ" },
   "menuLabel_beforeQuery": { "message": "ກ່ອນການສອບຖາມ" },

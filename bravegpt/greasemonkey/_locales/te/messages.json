@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "BraveGPT సైడ్‌బార్‌కు ChatGPT సమాధానాలను జోడిస్తుంది (GPT-4 ద్వారా ఆధారితం!)" },
+  "appDesc": { "message": "బ్రేవ్ సెర్చ్ సైడ్ ‌ బార్ ‌ కు ChatGPT సమాధానాలను జోడిస్తుంది (GPT-4 ద్వారా ఆధారితం!)" },
   "menuLabel_proxyAPImode": { "message": "ప్రాక్సీ API మోడ్" },
   "menuLabel_require": { "message": "అవసరం" },
   "menuLabel_beforeQuery": { "message": "ప్రశ్నకు ముందు" },

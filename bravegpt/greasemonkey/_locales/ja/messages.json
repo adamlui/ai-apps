@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "ChatGPT の回答を BraveGPT サイドバーに追加します (GPT-4 を搭載!)" },
+  "appDesc": { "message": "Brave SearchサイドバーにChatGPT回答を追加（ GPT -4搭載！ ）" },
   "menuLabel_proxyAPImode": { "message": "プロキシAPIモード" },
   "menuLabel_require": { "message": "必須" },
   "menuLabel_beforeQuery": { "message": "クエリの前" },

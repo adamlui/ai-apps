@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "ናብ BraveGPT ጎናዊ መስመር (ብGPT-4 ዝሰርሕ!) ናይ ChatGPT መልስታት ይውስኽ" },
+  "appDesc": { "message": "ChatGPT መልሲ ናብ Brave Search sidebar (ብ GPT-4 ዝተሰርሐ) ኣክሎ" },
   "menuLabel_proxyAPImode": { "message": "ፕሮክሲ ኤፒአይ ሞድ" },
   "menuLabel_require": { "message": "ኣድላይነት" },
   "menuLabel_beforeQuery": { "message": "ቅድሚ ሕቶ" },

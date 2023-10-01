@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Aldonas respondojn de ChatGPT al BraveGPT-flankbreto (funkciigita de GPT-4!)" },
+  "appDesc": { "message": "Aldonas ChatGPT respondoj al Kuraĝa Serĉo sidebar (funkciigita de GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Prokura API-Reĝimo" },
   "menuLabel_require": { "message": "Postuli" },
   "menuLabel_beforeQuery": { "message": "antaŭ pridemandado" },

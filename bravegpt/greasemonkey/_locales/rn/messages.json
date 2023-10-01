@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Asobi ni Iku yo (Asobi ni Iku yo!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode None None" },
   "menuLabel_require": { "message": "Ibisabwa" },
   "menuLabel_beforeQuery": { "message": "imbere yo kubaza ibibazo" },

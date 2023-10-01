@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "ChatGPT adiungit responsiones ad BraveGPT pars (motum per GPT-4!)" },
+  "appDesc": { "message": "Addsa chatGPT verba Brave Search sidebar (powered by GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Modus" },
   "menuLabel_require": { "message": "Requirere" },
   "menuLabel_beforeQuery": { "message": "ante query" },
