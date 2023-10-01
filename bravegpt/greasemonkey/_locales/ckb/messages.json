@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "وەڵامەکانی ChatGPT زیاد دەکات بۆ BraveGPT sidebar (بە GPT-4 کاردەکات!)" },
   "menuLabel_proxyAPImode": { "message": "شێوازی APIی پرۆکسی" },
   "menuLabel_require": { "message": "پێویست دەکات، پێویستبون، پێویستی پێ بوون، داوالێکردن، پێویستبوون، پێویستی پێبوون، داواکردن، ویستن، داوای لێدەکا، بەسەری دەسەپێنێ، فەرمانی دەدات بە\n[کۆمپیوتەر]: پێویستبوون" },
   "menuLabel_beforeQuery": { "message": "پێش پرسیارکردن" },
@@ -11,8 +11,8 @@
   "about_poweredBy": { "message": "به ‌ کاره ‌اتووه ‌ له ‌ لایه ‌" },
   "about_sourceCode": { "message": "کۆدی سەرچاوە" },
   "prompt_updateReplyLang": { "message": "زمانی وەڵام نوێ بکەوە" },
-  "alert_prefixMode": { "message": "Prefix mode" },
-  "alert_suffixMode": { "message": "Suffix mode" },
+  "alert_prefixMode": { "message": "دۆخی پێشگر" },
+  "alert_suffixMode": { "message": "دۆخی پاشگر" },
   "alert_langUpdated": { "message": "زمان نوێ کرایەوە" },
   "alert_willReplyIn": { "message": "وەڵام دەداتەوە لە" },
   "alert_yourSysLang": { "message": "زمانی سیستەمەکەت" },
