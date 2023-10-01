@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Toggle Visibilya" },
   "menuLabel_buttonVis": { "message": "Leloton Visibility" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications Tukwila" },
+  "menuLabel_about": { "message": "pafya" },
   "menuLabel_disabled": { "message": "Malema (maile)" },
+  "alert_updateAvail": { "message": "Update Pali Pali" },
+  "alert_newerVer": { "message": "Update kuli kuli" },
+  "alert_isAvail": { "message": "alipo" },
+  "alert_upToDate": { "message": "Fela Kuti Up-to-date" },
+  "alert_isUpToDate": { "message": "shine shine up-date shine" },
+  "buttonLabel_leaveReview": { "message": "Lekisha Review" },
+  "buttonLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
+  "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_dismiss": { "message": "Ukufumishiwapo" },
+  "link_viewChanges": { "message": "Moneni ifyo ifintu fyayaluka" },
   "mode_autoClear": { "message": "Ica Auto-Clear" }
 }

@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Autoclear ChatGPT-historik" },
+  "appDesc": { "message": "Automatisk rensar chatthistorik när du besöker chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear chattar" },
+  "menuLabel_toggleVis": { "message": "Växla synlighet" },
+  "menuLabel_buttonVis": { "message": "Knappsynlighet" },
+  "menuLabel_modeNotifs": { "message": "Lägesaviseringar" },
+  "menuLabel_about": { "message": "Om" },
+  "menuLabel_disabled": { "message": "Inaktiverad (tillägg installerat)" },
+  "alert_updateAvail": { "message": "Uppdatering tillgänglig" },
+  "alert_newerVer": { "message": "Uppdatera till" },
+  "alert_isAvail": { "message": "är tillgänglig" },
+  "alert_upToDate": { "message": "Aktualisering" },
+  "alert_isUpToDate": { "message": "är uppdaterad" },
+  "buttonLabel_leaveReview": { "message": "Lämna en recension" },
+  "buttonLabel_updateCheck": { "message": "Kolla efter uppdateringar" },
+  "buttonLabel_update": { "message": "Uppdatera" },
+  "buttonLabel_dismiss": { "message": "Avfärda" },
+  "link_viewChanges": { "message": "Visa ändringar" },
+  "mode_autoClear": { "message": "Automatisk rensning" }
+}

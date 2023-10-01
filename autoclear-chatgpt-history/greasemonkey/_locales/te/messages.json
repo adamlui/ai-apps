@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ఆటోక్లియర్ చాట్ GPT చరిత్ర" },
+  "appDesc": { "message": "Chat.openai.com ని సందర్శించినప్పుడు చాట్ చరిత్రను స్వయంచాలకంగా క్లియర్ చేస్తుంది" },
+  "menuLabel_autoClear": { "message": "ఆటోక్లియర్ చాట్ ‌ లు" },
+  "menuLabel_toggleVis": { "message": "దృశ్యమానతను టోగుల్ చేయండి" },
+  "menuLabel_buttonVis": { "message": "బటన్ దృశ్యమానత" },
+  "menuLabel_modeNotifs": { "message": "మోడ్ నోటిఫికేషన్ ‌ లు" },
+  "menuLabel_about": { "message": "గురించి" },
+  "menuLabel_disabled": { "message": "నిలిపివేయబడింది (పొడిగింపు ఇన్ ‌ స్టాల్ చేయబడింది)" },
+  "alert_updateAvail": { "message": "ఎటువంటి నవీకరణ అందుబాటులోలేదు" },
+  "alert_newerVer": { "message": "కు అప్ ‌ డేట్" },
+  "alert_isAvail": { "message": "అందుబాటులో ఉంది" },
+  "alert_upToDate": { "message": "అప్-టు-డేట్" },
+  "alert_isUpToDate": { "message": "తాజాగా ఉంది" },
+  "buttonLabel_leaveReview": { "message": "సమీక్షను వదిలివేయండి" },
+  "buttonLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
+  "buttonLabel_update": { "message": "అప్‌డేట్" },
+  "buttonLabel_dismiss": { "message": "తీసివేయండి" },
+  "link_viewChanges": { "message": "మార్పులను చూడండి" },
+  "mode_autoClear": { "message": "ఆటో-క్లియర్" }
+}

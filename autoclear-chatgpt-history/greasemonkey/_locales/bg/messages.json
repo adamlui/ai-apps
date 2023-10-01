@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Превключване на видимостта" },
   "menuLabel_buttonVis": { "message": "Видимост на бутона" },
   "menuLabel_modeNotifs": { "message": "Известия за режим" },
+  "menuLabel_about": { "message": "Относно" },
   "menuLabel_disabled": { "message": "Деактивирано (разширението е инсталирано)" },
+  "alert_updateAvail": { "message": "Налице е актуализация" },
+  "alert_newerVer": { "message": "Обнови" },
+  "alert_isAvail": { "message": "е налична" },
+  "alert_upToDate": { "message": "Обновен" },
+  "alert_isUpToDate": { "message": "е актуален" },
+  "buttonLabel_leaveReview": { "message": "Оставете коментар" },
+  "buttonLabel_updateCheck": { "message": "Проверка за обновяване" },
+  "buttonLabel_update": { "message": "Актуализация" },
+  "buttonLabel_dismiss": { "message": "Отхвърли" },
+  "link_viewChanges": { "message": "Вижте Промените" },
   "mode_autoClear": { "message": "Автоматично изчистване" }
 }

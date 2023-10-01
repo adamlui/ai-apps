@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Conmutar a visibilidade" },
   "menuLabel_buttonVis": { "message": "Visibilidade do botón" },
   "menuLabel_modeNotifs": { "message": "Notificacións de modo" },
+  "menuLabel_about": { "message": "Acerca de" },
   "menuLabel_disabled": { "message": "Desactivado (extensión instalada)" },
+  "alert_updateAvail": { "message": "Actualización dispoñíbel" },
+  "alert_newerVer": { "message": "Unha actualización de" },
+  "alert_isAvail": { "message": "Esta dispoñibel" },
+  "alert_upToDate": { "message": "Ao día" },
+  "alert_isUpToDate": { "message": "está actualizado" },
+  "buttonLabel_leaveReview": { "message": "Deixa unha opinión" },
+  "buttonLabel_updateCheck": { "message": "Check for updates" },
+  "buttonLabel_update": { "message": "Actualizar" },
+  "buttonLabel_dismiss": { "message": "Rexeitar" },
+  "link_viewChanges": { "message": "Ver cambios" },
   "mode_autoClear": { "message": "Aceleración automática" }
 }

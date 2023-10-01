@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_buttonVis": { "message": "ބަޓަން ވިޒިބިލިޓީ" },
   "menuLabel_modeNotifs": { "message": "މޯޑް ނޮޓިފިކޭޝަންސް" },
+  "menuLabel_about": { "message": "މިއާއި ބެހޭ" },
   "menuLabel_disabled": { "message": "ނުކުޅެދުންތެރިކަން ހުންނަ މީހުން (އެކްސްޓެންޝަން އިންސްޓޯލްކޮށްފައި)" },
+  "alert_updateAvail": { "message": "ލިބެން ހުރި އަޕްޑޭޓް" },
+  "alert_newerVer": { "message": "އަޕްޑޭޓެއް" },
+  "alert_isAvail": { "message": "ލިބެން ހުންނާނެ" },
+  "alert_upToDate": { "message": "އެންމެ ފަހުގެ ތާރީޚް" },
+  "alert_isUpToDate": { "message": "އެންމެ ފަހުގެ" },
+  "buttonLabel_leaveReview": { "message": "ލީވް އަ ރިވިއު" },
+  "buttonLabel_updateCheck": { "message": "އަޕްޑޭޓްތައް ބަލާށެވެ" },
+  "buttonLabel_update": { "message": "އަޕްޑޭޓް" },
+  "buttonLabel_dismiss": { "message": "މަގާމުން ވަކިކުރުން" },
+  "link_viewChanges": { "message": "ވިއު ޗޭންޖްސް" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

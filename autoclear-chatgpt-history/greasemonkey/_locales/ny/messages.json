@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Kuwonekera kwa Toggle" },
   "menuLabel_buttonVis": { "message": "Maonekedwe a Button" },
   "menuLabel_modeNotifs": { "message": "Mfundo zazinsinsi" },
+  "menuLabel_about": { "message": "Zokhudza" },
   "menuLabel_disabled": { "message": "Olemala (Extension anaikidwa)" },
+  "alert_updateAvail": { "message": "Sinthani likupezeka" },
+  "alert_newerVer": { "message": "An pomwe kuti" },
+  "alert_isAvail": { "message": "likupezeka" },
+  "alert_upToDate": { "message": "Zaposachedwa" },
+  "alert_isUpToDate": { "message": "ndi up-to-date" },
+  "buttonLabel_leaveReview": { "message": "Siyani ndemanga" },
+  "buttonLabel_updateCheck": { "message": "Fufuzani Zosintha" },
+  "buttonLabel_update": { "message": "Sinthani" },
+  "buttonLabel_dismiss": { "message": "Mfundo zazinsinsi" },
+  "link_viewChanges": { "message": "Onani zosintha" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

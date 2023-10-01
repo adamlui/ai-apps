@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Umlando We-ChatGPT Ocacile Ngokuzenzakalelayo" },
+  "appDesc": { "message": "Umlando wengxoxo ocacisa ngokuzenzakalelayo lapho uvakashela i-chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Ukuxoxa Okuzenzakalelayo" },
+  "menuLabel_toggleVis": { "message": "Guqula Ukubonakala" },
+  "menuLabel_buttonVis": { "message": "Ukubonakala Kwenkinobho" },
+  "menuLabel_modeNotifs": { "message": "Izaziso Zendlela" },
+  "menuLabel_about": { "message": "Mayelana" },
+  "menuLabel_disabled": { "message": "Ikhutshaziwe (isandiso sifakiwe)" },
+  "alert_updateAvail": { "message": "Okwakamuva Kuyatholakala!" },
+  "alert_newerVer": { "message": "Izilungiso eziya ku-" },
+  "alert_isAvail": { "message": "iyatholakala" },
+  "alert_upToDate": { "message": "Okwakamuva" },
+  "alert_isUpToDate": { "message": "isesikhathini" },
+  "buttonLabel_leaveReview": { "message": "Shiya Okushiwo Abanye" },
+  "buttonLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
+  "buttonLabel_update": { "message": "Lungisa" },
+  "buttonLabel_dismiss": { "message": "Susa" },
+  "link_viewChanges": { "message": "Buka ushintsho" },
+  "mode_autoClear": { "message": "I-Automatic-Clear" }
+}

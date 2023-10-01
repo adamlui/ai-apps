@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Láthatóság ki- be kapcsolása" },
   "menuLabel_buttonVis": { "message": "Gomb láthatósága" },
   "menuLabel_modeNotifs": { "message": "Üzemmód értesítések" },
+  "menuLabel_about": { "message": "A" },
   "menuLabel_disabled": { "message": "Letiltva (bővítmény telepítve)" },
+  "alert_updateAvail": { "message": "Frissítés érhető el" },
+  "alert_newerVer": { "message": "Frissítés" },
+  "alert_isAvail": { "message": "elérhető" },
+  "alert_upToDate": { "message": "Aktuális" },
+  "alert_isUpToDate": { "message": "naprakész" },
+  "buttonLabel_leaveReview": { "message": "Írjál egy véleményt" },
+  "buttonLabel_updateCheck": { "message": "Frissítések keresése" },
+  "buttonLabel_update": { "message": "Frissítés" },
+  "buttonLabel_dismiss": { "message": "Elvetés" },
+  "link_viewChanges": { "message": "Módosítások megtekintése" },
   "mode_autoClear": { "message": "Automatikus törlés" }
 }

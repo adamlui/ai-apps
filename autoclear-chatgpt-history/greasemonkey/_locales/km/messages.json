@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "បិទ/បើក ភាព មើល ឃើញ" },
   "menuLabel_buttonVis": { "message": "ភាពមើលឃើញនៃប៊ូតុង" },
   "menuLabel_modeNotifs": { "message": "ការជូនដំណឹងអំពីម៉ូដ" },
+  "menuLabel_about": { "message": "អំពី" },
   "menuLabel_disabled": { "message": "បានបិទ (បានបញ្ចូលផ្នែកបន្ថែម)" },
+  "alert_updateAvail": { "message": "ការអាប់ដេតមាន" },
+  "alert_newerVer": { "message": "អាប់ដេតទៅ" },
+  "alert_isAvail": { "message": "មាន" },
+  "alert_upToDate": { "message": "ធ្វើឲ្យ​ទាន់​សម័យ" },
+  "alert_isUpToDate": { "message": "បានធ្វើបច្ចុប្បន្នភាព" },
+  "buttonLabel_leaveReview": { "message": "ទុកការពិនិត្យឡើងវិញ" },
+  "buttonLabel_updateCheck": { "message": "ពិនិត្យរកអាប់ដេត" },
+  "buttonLabel_update": { "message": "ធ្វើបច្ចុប្បន្នភាព" },
+  "buttonLabel_dismiss": { "message": "បោះបង់" },
+  "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" },
   "mode_autoClear": { "message": "រៀនដោយស្វ័យប្រវត្តិ" }
 }

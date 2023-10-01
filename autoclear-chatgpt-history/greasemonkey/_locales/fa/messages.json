@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "تغییر نمایانی" },
   "menuLabel_buttonVis": { "message": "قابلیت مشاهده را فعال کنید" },
   "menuLabel_modeNotifs": { "message": "اعلان‌های حالت" },
+  "menuLabel_about": { "message": "درباره" },
   "menuLabel_disabled": { "message": "غیرفعال (برنامه افزودنی نصب شده)" },
+  "alert_updateAvail": { "message": "آپدیت موجود است" },
+  "alert_newerVer": { "message": "بروز رسانی" },
+  "alert_isAvail": { "message": "موجوده" },
+  "alert_upToDate": { "message": "بروزرسانی" },
+  "alert_isUpToDate": { "message": "به روز است" },
+  "buttonLabel_leaveReview": { "message": "نظر بدهید" },
+  "buttonLabel_updateCheck": { "message": "بررسی به روز رسانی" },
+  "buttonLabel_update": { "message": "به‌روز‌رسانی" },
+  "buttonLabel_dismiss": { "message": "مخفی شود" },
+  "link_viewChanges": { "message": "نمایش تغییرات" },
   "mode_autoClear": { "message": "پاک کردن خودکار" }
 }

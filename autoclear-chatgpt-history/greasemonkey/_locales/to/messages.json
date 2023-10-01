@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Autoclear ChatGPT hisitolia" },
+  "appDesc": { "message": "Hisitolia ʻo e meʻalele ʻi he taimi ʻoku ʻaʻahi ai ki chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear talanoa tauʻataina" },
+  "menuLabel_toggleVis": { "message": "Tuʻu maʻu ʻi hono fakaʻasi" },
+  "menuLabel_buttonVis": { "message": "Meʻa lomi fakaʻasi" },
+  "menuLabel_modeNotifs": { "message": "Fanongonongo ki he Mode" },
+  "menuLabel_about": { "message": "Fekauʻaki mo e" },
+  "menuLabel_disabled": { "message": "Faingataʻaʻia fakaesino (fokotuʻu e extension)" },
+  "alert_updateAvail": { "message": "ʻOku lava ke maʻu e fakamatala fakamuimuitaha" },
+  "alert_newerVer": { "message": "Ko ha fakamatala fakamuimuitaha ki he" },
+  "alert_isAvail": { "message": "ʻoku lava ke maʻu" },
+  "alert_upToDate": { "message": "ʻO aʻu mai ki he ʻaho ni" },
+  "alert_isUpToDate": { "message": "ʻOku aʻu ki he ʻaho ni" },
+  "buttonLabel_leaveReview": { "message": "Tuku ha Toe Vakaiʻi" },
+  "buttonLabel_updateCheck": { "message": "Vakaiʻi e Ngaahi Fakamatala Fakamuimuitahá" },
+  "buttonLabel_update": { "message": "Fakamatala Fakamuimuitahá" },
+  "buttonLabel_dismiss": { "message": "Tukuange" },
+  "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" },
+  "mode_autoClear": { "message": "Meʻalele-fakaʻataʻata" }
+}

@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ChatGPT tarixini avtomatik tozalash" },
+  "appDesc": { "message": "Chat.openai.com saytiga tashrif buyurganingizda chat tarixini avtomatik tozalaydi" },
+  "menuLabel_autoClear": { "message": "Chatlarni avtomatik tozalash" },
+  "menuLabel_toggleVis": { "message": "Koʻrinishni oʻzgartirish" },
+  "menuLabel_buttonVis": { "message": "Tugma ko&#39;rinishi" },
+  "menuLabel_modeNotifs": { "message": "Rejim bildirishnomalari" },
+  "menuLabel_about": { "message": "Qisqacha ma'lumot" },
+  "menuLabel_disabled": { "message": "O&#39;chirilgan (kengaytma o&#39;rnatilgan)" },
+  "alert_updateAvail": { "message": "Mavjud yangilanishlar" },
+  "alert_newerVer": { "message": "Yangilash" },
+  "alert_isAvail": { "message": "mavjud." },
+  "alert_upToDate": { "message": "Yangilash" },
+  "alert_isUpToDate": { "message": "dolzarb hisoblanadi" },
+  "buttonLabel_leaveReview": { "message": "Sharh qoldiring" },
+  "buttonLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
+  "buttonLabel_update": { "message": "Yangilash" },
+  "buttonLabel_dismiss": { "message": "Rad etish" },
+  "link_viewChanges": { "message": "O&#39;zgarishlarni ko&#39;rish" },
+  "mode_autoClear": { "message": "Avtomatik tozalash" }
+}

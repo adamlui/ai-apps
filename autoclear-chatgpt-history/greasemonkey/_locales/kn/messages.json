@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "ಗೋಚರತೆಯನ್ನು ಟಾಗಲ್ ಮಾಡಿ" },
   "menuLabel_buttonVis": { "message": "ಬಟನ್ ಗೋಚರತೆ" },
   "menuLabel_modeNotifs": { "message": "ಮೋಡ್ ಅಧಿಸೂಚನೆಗಳು" },
+  "menuLabel_about": { "message": "ಕುರಿತಾಗಿ" },
   "menuLabel_disabled": { "message": "ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ (ವಿಸ್ತರಣೆಯನ್ನು ಸ್ಥಾಪಿಸಲಾಗಿದೆ)" },
+  "alert_updateAvail": { "message": "ಹೊಸ ಅಪ್ಡೇಟ್ ಲಭ್ಯವಿದೆ." },
+  "alert_newerVer": { "message": "ಗೆ ಅಪ್ ‌ ಡೇಟ್ ಮಾಡಿ" },
+  "alert_isAvail": { "message": "ಲಭ್ಯವಿದೆ" },
+  "alert_upToDate": { "message": "ಅಪ್ ‌ ಟು ಡೇಟ್" },
+  "alert_isUpToDate": { "message": "ಅಪ್ ‌ ಟು ಡೇಟ್ ಆಗಿದೆ" },
+  "buttonLabel_leaveReview": { "message": "ವಿಮರ್ಶೆಯನ್ನು ಬಿಡಿ" },
+  "buttonLabel_updateCheck": { "message": "ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ" },
+  "buttonLabel_update": { "message": "ನವೀಕರಿಸಿ" },
+  "buttonLabel_dismiss": { "message": "ವಜಾಗೊಳಿಸಿ" },
+  "link_viewChanges": { "message": "ಬದಲಾವಣೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ" },
   "mode_autoClear": { "message": "ಸ್ವಯಂಚಾಲಿತ ಕಲಿಕೆ" }
 }

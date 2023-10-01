@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Görünüşü dəyişdir" },
   "menuLabel_buttonVis": { "message": "Düymə Görünməsi" },
   "menuLabel_modeNotifs": { "message": "Rejim Bildirişləri" },
+  "menuLabel_about": { "message": "Haqqında" },
   "menuLabel_disabled": { "message": "Deaktiv edildi (genişlənmə quraşdırıldı)" },
+  "alert_updateAvail": { "message": "Mövcud Güncelle" },
+  "alert_newerVer": { "message": "Yenilənmə" },
+  "alert_isAvail": { "message": "mövcuddur" },
+  "alert_upToDate": { "message": "Güncəllə" },
+  "alert_isUpToDate": { "message": "yenilənir" },
+  "buttonLabel_leaveReview": { "message": "Rəy bildirin" },
+  "buttonLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
+  "buttonLabel_update": { "message": "Yenilə" },
+  "buttonLabel_dismiss": { "message": "Bağla" },
+  "link_viewChanges": { "message": "Dəyişikliklərə bax" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Lịch sử ChatGPT tự động xóa" },
+  "appDesc": { "message": "Tự động xóa lịch sử trò chuyện khi truy cập chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Trò chuyện tự động xóa" },
+  "menuLabel_toggleVis": { "message": "Bật/tắt tính ẩn/hiện" },
+  "menuLabel_buttonVis": { "message": "Hiển thị nút" },
+  "menuLabel_modeNotifs": { "message": "Thông báo chế độ" },
+  "menuLabel_about": { "message": "Giới thiệu" },
+  "menuLabel_disabled": { "message": "Đã tắt (đã cài đặt tiện ích mở rộng)" },
+  "alert_updateAvail": { "message": "Cập nhật có sẵn" },
+  "alert_newerVer": { "message": "bản cập nhật" },
+  "alert_isAvail": { "message": "is available" },
+  "alert_upToDate": { "message": "cập nhật" },
+  "alert_isUpToDate": { "message": "Cập nhật" },
+  "buttonLabel_leaveReview": { "message": "Đánh giá" },
+  "buttonLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
+  "buttonLabel_update": { "message": "Cập nhật" },
+  "buttonLabel_dismiss": { "message": "Bỏ qua" },
+  "link_viewChanges": { "message": "Xem thay đổi" },
+  "mode_autoClear": { "message": "Tự động xóa" }
+}

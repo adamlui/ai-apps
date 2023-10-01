@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "မြင်ကွင်းကို ထိန်းကျောင်းပါ" },
   "menuLabel_buttonVis": { "message": "ခလုတ်မြင်နိုင်မှု" },
   "menuLabel_modeNotifs": { "message": "Mode အသိပေးချက်များ" },
+  "menuLabel_about": { "message": "အကြောင်း" },
   "menuLabel_disabled": { "message": "ပိတ်ထားသည် (တိုးချဲ့မှု တပ်ဆင်ထားသည်)" },
+  "alert_updateAvail": { "message": "အသစ်မထွက်သေး" },
+  "alert_newerVer": { "message": "သို့ အပ်ဒိတ်တစ်ခု" },
+  "alert_isAvail": { "message": "ရရှိနိုင်ပါသည်" },
+  "alert_upToDate": { "message": "နောက်ဆုံးရ" },
+  "alert_isUpToDate": { "message": "up-to-date ဖြစ်အောင်နေပါ" },
+  "buttonLabel_leaveReview": { "message": "တစ်ဦးပြန်လည်ဆန်းစစ်ခြင်း Leave" },
+  "buttonLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
+  "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
+  "buttonLabel_dismiss": { "message": "ထုတ်ပယ်ပါ" },
+  "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ရန်" },
   "mode_autoClear": { "message": "အလိုအလျောက်ရှင်းလင်းခြင်း" }
 }

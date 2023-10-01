@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Přepnout viditelnost" },
   "menuLabel_buttonVis": { "message": "Viditelnost tlačítek" },
   "menuLabel_modeNotifs": { "message": "Oznámení o režimu" },
+  "menuLabel_about": { "message": "O" },
   "menuLabel_disabled": { "message": "Zakázáno (rozšíření nainstalováno)" },
+  "alert_updateAvail": { "message": "Aktualizace k dispozici" },
+  "alert_newerVer": { "message": "Aktualizace na" },
+  "alert_isAvail": { "message": "je k dispozici" },
+  "alert_upToDate": { "message": "aktuální" },
+  "alert_isUpToDate": { "message": "jenž se vyzná" },
+  "buttonLabel_leaveReview": { "message": "Napsat hodnocení" },
+  "buttonLabel_updateCheck": { "message": "Zjistit novější verzi" },
+  "buttonLabel_update": { "message": "Aktualizovat" },
+  "buttonLabel_dismiss": { "message": "Zamítnout" },
+  "link_viewChanges": { "message": "Zobrazit změny" },
   "mode_autoClear": { "message": "Automatické vymazání" }
 }

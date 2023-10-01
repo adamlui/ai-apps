@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Automatické vymazanie histórie ChatGPT" },
+  "appDesc": { "message": "Automatické vymazanie histórie chatu pri návšteve chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Automatické čety" },
+  "menuLabel_toggleVis": { "message": "Prepnúť viditeľnosť" },
+  "menuLabel_buttonVis": { "message": "Viditeľnosť tlačidla" },
+  "menuLabel_modeNotifs": { "message": "Upozornenia režimu" },
+  "menuLabel_about": { "message": "O nás " },
+  "menuLabel_disabled": { "message": "Zakázané (nainštalované rozšírenie)" },
+  "alert_updateAvail": { "message": "Aktualizácia k dispozícii" },
+  "alert_newerVer": { "message": "Aktualizujte na" },
+  "alert_isAvail": { "message": "k dispozícii" },
+  "alert_upToDate": { "message": "Aktuálny." },
+  "alert_isUpToDate": { "message": "sú aktuálne" },
+  "buttonLabel_leaveReview": { "message": "Napísať referenciu" },
+  "buttonLabel_updateCheck": { "message": "Zistiť novú verziu" },
+  "buttonLabel_update": { "message": "Aktualizovať" },
+  "buttonLabel_dismiss": { "message": "Odmietnuť" },
+  "link_viewChanges": { "message": "Zobraziť zmeny" },
+  "mode_autoClear": { "message": "Automatické vymazanie" }
+}

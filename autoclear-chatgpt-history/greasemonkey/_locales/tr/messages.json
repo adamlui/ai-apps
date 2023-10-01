@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Sohbeti Otomatik TemizleGPT Geçmişi" },
+  "appDesc": { "message": "Chat.openai.com adresini ziyaret ederken sohbet geçmişini otomatik olarak temizler" },
+  "menuLabel_autoClear": { "message": "Sohbetleri Otomatik Temizle" },
+  "menuLabel_toggleVis": { "message": "Görünürlüğü Aç/Kapat" },
+  "menuLabel_buttonVis": { "message": "Düğme görünürlüğü" },
+  "menuLabel_modeNotifs": { "message": "Mod Bildirimleri" },
+  "menuLabel_about": { "message": "Hakkımızda" },
+  "menuLabel_disabled": { "message": "Devre dışı (uzantı yüklendi)" },
+  "alert_updateAvail": { "message": "Güncelleme uygun" },
+  "alert_newerVer": { "message": "Güncelleme tarih" },
+  "alert_isAvail": { "message": "geçerli" },
+  "alert_upToDate": { "message": "Güncel" },
+  "alert_isUpToDate": { "message": "Güncel" },
+  "buttonLabel_leaveReview": { "message": "Bir Yorum Bırakın" },
+  "buttonLabel_updateCheck": { "message": "Güncellemeleri Kontrol Et" },
+  "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_dismiss": { "message": "Yok say" },
+  "link_viewChanges": { "message": "Değişen Dosyalar" },
+  "mode_autoClear": { "message": "Otomatik Temizle" }
+}

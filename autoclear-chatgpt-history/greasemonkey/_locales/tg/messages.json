@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Таърихи Autoclear ChatGPT" },
+  "appDesc": { "message": "Auto-clears таърихи чат ҳангоми боздид аз chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Сӯҳбатҳои худкор" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_buttonVis": { "message": "Намоиши тугмаҳо" },
+  "menuLabel_modeNotifs": { "message": "Огоҳинома дар бораи ҳолат" },
+  "menuLabel_about": { "message": "_Дар бораи" },
+  "menuLabel_disabled": { "message": "Ғайрифаъол (васеъкунӣ насб шудааст)" },
+  "alert_updateAvail": { "message": "I-update ang magagamit" },
+  "alert_newerVer": { "message": "Ang isang pag-update sa" },
+  "alert_isAvail": { "message": "дастрас аст" },
+  "alert_upToDate": { "message": "Ба рӯз расонӣ" },
+  "alert_isUpToDate": { "message": "up-to-date аст" },
+  "buttonLabel_leaveReview": { "message": "Тафсирро тарк кунед" },
+  "buttonLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
+  "buttonLabel_update": { "message": "Навсозӣ кардан" },
+  "buttonLabel_dismiss": { "message": "Рад кардан" },
+  "link_viewChanges": { "message": "Tingnan ang mga pagbabago" },
+  "mode_autoClear": { "message": "Поксозии худкор" }
+}

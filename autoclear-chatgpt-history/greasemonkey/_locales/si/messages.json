@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Autoclear ChatGPT ඉතිහාසය" },
+  "appDesc": { "message": "Chat.openai.com වෙත පිවිසෙන විට ස්වයංක්රීය පැහැදිලි චැට් ඉතිහාසය" },
+  "menuLabel_autoClear": { "message": "ස්වයංක් ‍ රීය කතාබස්" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_buttonVis": { "message": "බොත්තමේ දෘශ් ‍ යතාව" },
+  "menuLabel_modeNotifs": { "message": "ප් ‍ රකාර දැනුම්දීම්" },
+  "menuLabel_about": { "message": "සම්බන්ධව" },
+  "menuLabel_disabled": { "message": "අක්‍රීය කර ඇත (දීර්ඝ කිරීම ස්ථාපනය කර ඇත)" },
+  "alert_updateAvail": { "message": "යාවත්කාලීනය තිබේ" },
+  "alert_newerVer": { "message": "වෙත යාවත්කාලීන කිරීමක්" },
+  "alert_isAvail": { "message": "ලබා ගත හැක" },
+  "alert_upToDate": { "message": "යාවත් කාළීන:" },
+  "alert_isUpToDate": { "message": "යාවත් කාළීන:" },
+  "buttonLabel_leaveReview": { "message": "සමාලෝචනයක් එක් කරන්න" },
+  "buttonLabel_updateCheck": { "message": "යාවත්කාලීන සඳහා පරීක් ‍ ෂා කරන්න" },
+  "buttonLabel_update": { "message": "යාවත් කාළීන:" },
+  "buttonLabel_dismiss": { "message": "ඉවතලන්න" },
+  "link_viewChanges": { "message": "වෙනස්කම් බලන්න" },
+  "mode_autoClear": { "message": "ස්වයංක් ‍ රීය ක්ලියර්" }
+}

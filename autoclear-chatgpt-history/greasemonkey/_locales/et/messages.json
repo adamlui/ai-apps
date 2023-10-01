@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Nähtavuse lülitamine" },
   "menuLabel_buttonVis": { "message": "Nupu nähtavus" },
   "menuLabel_modeNotifs": { "message": "Režiimi teated" },
+  "menuLabel_about": { "message": "Info" },
   "menuLabel_disabled": { "message": "Keelatud (laiend installitud)" },
+  "alert_updateAvail": { "message": "Saadaval on uuendus" },
+  "alert_newerVer": { "message": "Uuendus kuni" },
+  "alert_isAvail": { "message": "on saadaval" },
+  "alert_upToDate": { "message": "ajakohane" },
+  "alert_isUpToDate": { "message": "ajakohane" },
+  "buttonLabel_leaveReview": { "message": "Jäta arvustus" },
+  "buttonLabel_updateCheck": { "message": "Kontrolli uuendusi" },
+  "buttonLabel_update": { "message": "Uuenda" },
+  "buttonLabel_dismiss": { "message": "Loobu" },
+  "link_viewChanges": { "message": "Vaata muudatusi" },
   "mode_autoClear": { "message": "Automaatne tühjendamine" }
 }

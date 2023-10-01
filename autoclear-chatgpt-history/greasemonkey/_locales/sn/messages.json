@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ZVINOKOSHA ZVINOKOSHAGPT N" },
+  "appDesc": { "message": "Auto-inojekesa chat nhoroondo kana uchishanyira chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Taura nesu" },
+  "menuLabel_toggleVis": { "message": "Toggle Kuonekwa" },
+  "menuLabel_buttonVis": { "message": "Kuonekwa kwebhatani" },
+  "menuLabel_modeNotifs": { "message": "Mode Notifications" },
+  "menuLabel_about": { "message": "Nezvedu" },
+  "menuLabel_disabled": { "message": "Akaremara (kuwedzerwa kwakaiswa)" },
+  "alert_updateAvail": { "message": "Zadzisa zviripo" },
+  "alert_newerVer": { "message": "An update kuti" },
+  "alert_isAvail": { "message": "inowanika" },
+  "alert_upToDate": { "message": "Up-to-date" },
+  "alert_isUpToDate": { "message": "is up-to-date" },
+  "buttonLabel_leaveReview": { "message": "Taura nesu" },
+  "buttonLabel_updateCheck": { "message": "Ongorora nokuti Updates" },
+  "buttonLabel_update": { "message": "Kugadziridza" },
+  "buttonLabel_dismiss": { "message": "Dzinga" },
+  "link_viewChanges": { "message": "Vonanyi cinjo" },
+  "mode_autoClear": { "message": "Auto-yakavharwa" }
+}

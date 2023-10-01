@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Toggle Visibility None None" },
   "menuLabel_buttonVis": { "message": "Button Visibility None None" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications None None" },
+  "menuLabel_about": { "message": "Ku vyerekeye" },
   "menuLabel_disabled": { "message": "Narumugaiye (extension)" },
+  "alert_updateAvail": { "message": "Amakuru agezweho" },
+  "alert_newerVer": { "message": "Update None None" },
+  "alert_isAvail": { "message": "none None available." },
+  "alert_upToDate": { "message": "Update None None" },
+  "alert_isUpToDate": { "message": "yamaho Yama - Update" },
+  "buttonLabel_leaveReview": { "message": "Leave a Review None None" },
+  "buttonLabel_updateCheck": { "message": "Raba amakuru agezweho" },
+  "buttonLabel_update": { "message": "Update None None" },
+  "buttonLabel_dismiss": { "message": "Ukwirukana" },
+  "link_viewChanges": { "message": "Kubona impinduka" },
   "mode_autoClear": { "message": "Auto-Clear None None" }
 }

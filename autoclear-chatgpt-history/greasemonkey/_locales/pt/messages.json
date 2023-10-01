@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Alternar Visibilidade" },
   "menuLabel_buttonVis": { "message": "Visibilidade do Botão" },
   "menuLabel_modeNotifs": { "message": "Notificações do Modo" },
+  "menuLabel_about": { "message": "Quem somos" },
   "menuLabel_disabled": { "message": "Desativado (extensão instalada)" },
+  "alert_updateAvail": { "message": "Actualização disponível" },
+  "alert_newerVer": { "message": "Uma actualização para" },
+  "alert_isAvail": { "message": "está disponível" },
+  "alert_upToDate": { "message": "Moderno" },
+  "alert_isUpToDate": { "message": "está actualizado" },
+  "buttonLabel_leaveReview": { "message": "Deixe um comentário" },
+  "buttonLabel_updateCheck": { "message": "Verificar se há atualizações" },
+  "buttonLabel_update": { "message": "Atualizar" },
+  "buttonLabel_dismiss": { "message": "Ignorar" },
+  "link_viewChanges": { "message": "Ver Alterações" },
   "mode_autoClear": { "message": "Limpeza Automática" }
 }

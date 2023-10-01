@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "દૃશ્યમાનતાને દબાણ કરો" },
   "menuLabel_buttonVis": { "message": "બટન દૃશ્યતા" },
   "menuLabel_modeNotifs": { "message": "સ્થિતિ સૂચનાઓ" },
+  "menuLabel_about": { "message": "માહિતી " },
   "menuLabel_disabled": { "message": "અક્ષમ (એક્સટેન્શન સ્થાપિત)" },
+  "alert_updateAvail": { "message": "સુધારો ઉપલબ્ધ" },
+  "alert_newerVer": { "message": "આ માટે એક અપડેટ" },
+  "alert_isAvail": { "message": "ઉપલબ્ધ છે" },
+  "alert_upToDate": { "message": "સુધારો" },
+  "alert_isUpToDate": { "message": "સુધારો" },
+  "buttonLabel_leaveReview": { "message": "સમીક્ષા મૂકો" },
+  "buttonLabel_updateCheck": { "message": "નવાં ભાગ(ઓ) માટે ચકાસો" },
+  "buttonLabel_update": { "message": "અદ્યતન બનાવો" },
+  "buttonLabel_dismiss": { "message": "કાઢી મૂકવું" },
+  "link_viewChanges": { "message": "ફેરફારો જુઓ" },
   "mode_autoClear": { "message": "સ્વયં સાફ કરો" }
 }

@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "(Diw)Gweredekaat an hewelderdrawable-action" },
   "menuLabel_buttonVis": { "message": "Nozelenn" },
   "menuLabel_modeNotifs": { "message": "Kemennoù" },
+  "menuLabel_about": { "message": "A-zivout" },
   "menuLabel_disabled": { "message": "Disabled (extension installed)" },
+  "alert_updateAvail": { "message": "Deskrivadur hegerz ebet" },
+  "alert_newerVer": { "message": "Bremañaat da & HEAD" },
+  "alert_isAvail": { "message": "Sell ouzh ar c&apos; hiz" },
+  "alert_upToDate": { "message": "Mont d'an deiziad" },
+  "alert_isUpToDate": { "message": "Mont d'an deiziad" },
+  "buttonLabel_leaveReview": { "message": "Leave a Review" },
+  "buttonLabel_updateCheck": { "message": "Klask chabistroù _nevez :" },
+  "buttonLabel_update": { "message": "Hizivaat" },
+  "buttonLabel_dismiss": { "message": "Disteurel" },
+  "link_viewChanges": { "message": "Kemmoù" },
   "mode_autoClear": { "message": "Claro" }
 }

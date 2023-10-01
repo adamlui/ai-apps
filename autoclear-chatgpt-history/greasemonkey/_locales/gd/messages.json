@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Toglaich an fhaicsinneachdrawable-action" },
   "menuLabel_buttonVis": { "message": "Faicsinneachd a 'phutan" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
+  "menuLabel_about": { "message": "Mar deidhinn" },
   "menuLabel_disabled": { "message": "Cuir à comas (leudachan stàlaichte)" },
+  "alert_updateAvail": { "message": "Chan eil ùrachadh ri fhaighinn" },
+  "alert_newerVer": { "message": "An update to" },
+  "alert_isAvail": { "message": "tha e ri fhaotainn" },
+  "alert_upToDate": { "message": "Up to date" },
+  "alert_isUpToDate": { "message": "tha Updates" },
+  "buttonLabel_leaveReview": { "message": "Leave a Review" },
+  "buttonLabel_updateCheck": { "message": "Thoir sùil airson ùrachaidhean" },
+  "buttonLabel_update": { "message": "Ùraich" },
+  "buttonLabel_dismiss": { "message": "Cuir air falbh" },
+  "link_viewChanges": { "message": "Seall na h - atharraichean" },
   "mode_autoClear": { "message": "Glan gu fèin - obrachail" }
 }

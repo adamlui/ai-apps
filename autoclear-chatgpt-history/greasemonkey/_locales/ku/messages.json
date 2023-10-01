@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Veguheztina Dîtinê" },
   "menuLabel_buttonVis": { "message": "Bişkojka Visibility" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
+  "menuLabel_about": { "message": "Derbarê de..." },
   "menuLabel_disabled": { "message": "Neçalakkirî (berfireh hate saz kirin)" },
+  "alert_updateAvail": { "message": "نوێکردنەوە بەردەستە" },
+  "alert_newerVer": { "message": "Nûvekirinek ji bo" },
+  "alert_isAvail": { "message": "heye" },
+  "alert_upToDate": { "message": "نوێ، ھاوچەرخ، نو، تازە" },
+  "alert_isUpToDate": { "message": "rojane ye" },
+  "buttonLabel_leaveReview": { "message": "Leave a Review" },
+  "buttonLabel_updateCheck": { "message": "Ji bo Nûvekirinan kontrol bikin" },
+  "buttonLabel_update": { "message": "Rojane Bike" },
+  "buttonLabel_dismiss": { "message": "دەردەکات، دەرکردن، ڕێ پێنەدان، دەر کردن، رەدکردنەوەی گازندە(دادخوازی)\n[مافناسی]: دەر کردن، رەد کردنەوەی گازندە (دادخوازی)" },
+  "link_viewChanges": { "message": "Guhertinan bibînin" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "切换可见性" },
   "menuLabel_buttonVis": { "message": "按钮可见性" },
   "menuLabel_modeNotifs": { "message": "模式通知" },
+  "menuLabel_about": { "message": "关于" },
   "menuLabel_disabled": { "message": "已禁用（已安装扩展程序）" },
+  "alert_updateAvail": { "message": "更新可用" },
+  "alert_newerVer": { "message": "以下内容的更新：" },
+  "alert_isAvail": { "message": "是可用的" },
+  "alert_upToDate": { "message": "已最新" },
+  "alert_isUpToDate": { "message": "是最新的" },
+  "buttonLabel_leaveReview": { "message": "发表评论" },
+  "buttonLabel_updateCheck": { "message": "检查更新" },
+  "buttonLabel_update": { "message": "更新" },
+  "buttonLabel_dismiss": { "message": "撤消" },
+  "link_viewChanges": { "message": "查看修改" },
   "mode_autoClear": { "message": "自动清除" }
 }

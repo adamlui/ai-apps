@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Przełącz widoczność" },
   "menuLabel_buttonVis": { "message": "Widoczność przycisku" },
   "menuLabel_modeNotifs": { "message": "Powiadomienia o trybie" },
+  "menuLabel_about": { "message": "Około" },
   "menuLabel_disabled": { "message": "Wyłączone (zainstalowane rozszerzenie)" },
+  "alert_updateAvail": { "message": "Aktualizacja dostępna" },
+  "alert_newerVer": { "message": "Aktualizuj" },
+  "alert_isAvail": { "message": "jest dostępna" },
+  "alert_upToDate": { "message": "Aktualne" },
+  "alert_isUpToDate": { "message": "jest aktualny" },
+  "buttonLabel_leaveReview": { "message": "Dodaj opinię" },
+  "buttonLabel_updateCheck": { "message": "Sprawdzanie aktualizacji" },
+  "buttonLabel_update": { "message": "Aktualizuj" },
+  "buttonLabel_dismiss": { "message": "Odrzuć" },
+  "link_viewChanges": { "message": "Przegląd zmian" },
   "mode_autoClear": { "message": "Automatyczne czyszczenie" }
 }

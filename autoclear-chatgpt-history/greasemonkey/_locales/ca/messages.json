@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Commuta la visibilitat" },
   "menuLabel_buttonVis": { "message": "Visibilitat del botó" },
   "menuLabel_modeNotifs": { "message": "Notificacions de mode" },
+  "menuLabel_about": { "message": "Quant a" },
   "menuLabel_disabled": { "message": "Desactivat (extensió instal·lada)" },
+  "alert_updateAvail": { "message": "Nova versió disponible!" },
+  "alert_newerVer": { "message": "Una actualització a" },
+  "alert_isAvail": { "message": "està disponible" },
+  "alert_upToDate": { "message": "Actualitzat" },
+  "alert_isUpToDate": { "message": "està actualitzat" },
+  "buttonLabel_leaveReview": { "message": "Deixa una ressenya" },
+  "buttonLabel_updateCheck": { "message": "Comprova si hi ha actualitzacions" },
+  "buttonLabel_update": { "message": "Actualització" },
+  "buttonLabel_dismiss": { "message": "Descarta" },
+  "link_viewChanges": { "message": "Mostra els canvis" },
   "mode_autoClear": { "message": "Esborra automàticament" }
 }

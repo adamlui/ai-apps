@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Переключить видимость" },
   "menuLabel_buttonVis": { "message": "Видимость кнопки" },
   "menuLabel_modeNotifs": { "message": "Уведомления о режиме" },
+  "menuLabel_about": { "message": "Шифр." },
   "menuLabel_disabled": { "message": "Отключено (установленное расширение)" },
+  "alert_updateAvail": { "message": "Доступны обновления" },
+  "alert_newerVer": { "message": "Обновление для" },
+  "alert_isAvail": { "message": "доступно" },
+  "alert_upToDate": { "message": "Up-to-date" },
+  "alert_isUpToDate": { "message": "<PROG_NAME> в актуальном состоянии!" },
+  "buttonLabel_leaveReview": { "message": "Оставьте отзыв" },
+  "buttonLabel_updateCheck": { "message": "Проверить наличие обновлений" },
+  "buttonLabel_update": { "message": "Обновить" },
+  "buttonLabel_dismiss": { "message": "Пропустить" },
+  "link_viewChanges": { "message": "Просмотреть изменения" },
   "mode_autoClear": { "message": "Автоматическая очистка" }
 }

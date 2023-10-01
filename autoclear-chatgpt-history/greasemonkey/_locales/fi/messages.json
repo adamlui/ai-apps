@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Vaihda näkyvyyttä" },
   "menuLabel_buttonVis": { "message": "Painikkeen näkyvyys" },
   "menuLabel_modeNotifs": { "message": "Tilailmoitukset" },
+  "menuLabel_about": { "message": "Tietoa" },
   "menuLabel_disabled": { "message": "Poistettu käytöstä (laajennus asennettu)" },
+  "alert_updateAvail": { "message": "Päivitys saatavilla" },
+  "alert_newerVer": { "message": "Päivitä" },
+  "alert_isAvail": { "message": "on käytettävissä" },
+  "alert_upToDate": { "message": "Ajan tasalla" },
+  "alert_isUpToDate": { "message": "Ajan tasalla" },
+  "buttonLabel_leaveReview": { "message": "Jätä arvostelu" },
+  "buttonLabel_updateCheck": { "message": "Tarkista päivitykset" },
+  "buttonLabel_update": { "message": "Päivitä" },
+  "buttonLabel_dismiss": { "message": "Hylkää" },
+  "link_viewChanges": { "message": "Näytä muutokset" },
   "mode_autoClear": { "message": "Automaattinen tyhjennys" }
 }

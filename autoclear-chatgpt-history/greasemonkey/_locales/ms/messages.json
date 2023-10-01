@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Kejelasan Item" },
   "menuLabel_buttonVis": { "message": "Kebolehlihatan Butang" },
   "menuLabel_modeNotifs": { "message": "Pemberitahuan Mod" },
+  "menuLabel_about": { "message": "" },
   "menuLabel_disabled": { "message": "Dilumpuhkan (sambungan dipasang)" },
+  "alert_updateAvail": { "message": "Kemas kini tersedia" },
+  "alert_newerVer": { "message": "Pengemaskinian kepada" },
+  "alert_isAvail": { "message": "tersedia" },
+  "alert_upToDate": { "message": "Kemas kini" },
+  "alert_isUpToDate": { "message": "Kemas kini" },
+  "buttonLabel_leaveReview": { "message": "Tinggalkan ulasan" },
+  "buttonLabel_updateCheck": { "message": "Semak Kemaskini" },
+  "buttonLabel_update": { "message": "Saya ingin membuat susulan" },
+  "buttonLabel_dismiss": { "message": "Singkir" },
+  "link_viewChanges": { "message": "Lihat perubahan" },
   "mode_autoClear": { "message": "Kosongkan-sendiri" }
 }

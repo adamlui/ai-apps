@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Historia ya Gumzo la Kiotomatiki ya GPT" },
+  "appDesc": { "message": "Inasafisha kiotomatiki historia ya gumzo unapotembelea chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Gumzo za Kiotomatiki" },
+  "menuLabel_toggleVis": { "message": "Washa Mwonekano" },
+  "menuLabel_buttonVis": { "message": "Kuonekana kwa Kitufe" },
+  "menuLabel_modeNotifs": { "message": "Arifa za Hali" },
+  "menuLabel_about": { "message": "Kuhusu" },
+  "menuLabel_disabled": { "message": "Imezimwa (kiendelezi kimewekwa)" },
+  "alert_updateAvail": { "message": "Sasisho lipo" },
+  "alert_newerVer": { "message": "Sasisho kwa" },
+  "alert_isAvail": { "message": "inapatikana" },
+  "alert_upToDate": { "message": "Imesasishwa" },
+  "alert_isUpToDate": { "message": "imesasishwa" },
+  "buttonLabel_leaveReview": { "message": "Acha Tathmini" },
+  "buttonLabel_updateCheck": { "message": "Angalia Masasisho" },
+  "buttonLabel_update": { "message": "Sasisho" },
+  "buttonLabel_dismiss": { "message": "Puuza" },
+  "link_viewChanges": { "message": "Angalia mabadiliko" },
+  "mode_autoClear": { "message": "Zima Kiotomatiki" }
+}

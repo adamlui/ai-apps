@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "تبديل الرؤية" },
   "menuLabel_buttonVis": { "message": "زر الرؤية" },
   "menuLabel_modeNotifs": { "message": "إشعارات الوضع" },
+  "menuLabel_about": { "message": "عن وزارة الثقافة" },
   "menuLabel_disabled": { "message": "معطل (تم تثبيت الإضافة)" },
+  "alert_updateAvail": { "message": "تحديث متوفر" },
+  "alert_newerVer": { "message": "تحديث إلى" },
+  "alert_isAvail": { "message": "متوفر" },
+  "alert_upToDate": { "message": "حديث، منته من أعماله، حتى تاريخه" },
+  "alert_isUpToDate": { "message": "محدث" },
+  "buttonLabel_leaveReview": { "message": "اترك تقييماً" },
+  "buttonLabel_updateCheck": { "message": "مرابة التحديثات" },
+  "buttonLabel_update": { "message": "تحديث" },
+  "buttonLabel_dismiss": { "message": "‫رفض‬" },
+  "link_viewChanges": { "message": "عرض سجل التغييرات" },
   "mode_autoClear": { "message": "مسح آلي" }
 }

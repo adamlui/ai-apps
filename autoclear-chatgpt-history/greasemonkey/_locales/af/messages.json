@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Wissel Sigbaarheid" },
   "menuLabel_buttonVis": { "message": "Knoppie Sigbaarheid" },
   "menuLabel_modeNotifs": { "message": "Modus Kennisgewings" },
+  "menuLabel_about": { "message": "Omtrent" },
   "menuLabel_disabled": { "message": "Gestremde (uitbreiding geïnstalleer)" },
+  "alert_updateAvail": { "message": "Opdatering beskikbaar" },
+  "alert_newerVer": { "message": "'n Opdatering na" },
+  "alert_isAvail": { "message": "is beskikbaar" },
+  "alert_upToDate": { "message": "Op datum" },
+  "alert_isUpToDate": { "message": "die is up-to-date" },
+  "buttonLabel_leaveReview": { "message": "Los Kommentaar" },
+  "buttonLabel_updateCheck": { "message": "_Kontroleer vir bywerkings:" },
+  "buttonLabel_update": { "message": "Opdateer" },
+  "buttonLabel_dismiss": { "message": "Laat vaar" },
+  "link_viewChanges": { "message": "Besigtig veranderinge" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

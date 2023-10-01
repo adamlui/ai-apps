@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ታሪኽ ChatGPT Autoclear" },
+  "appDesc": { "message": "Chat.openai.com ክትበጽሕ ከለኻ ናይ ኣውቶ-ክሌራት ናይ ዝርርብ ታሪኽ" },
+  "menuLabel_autoClear": { "message": "ናይ ኣውቶክሌር ቻትታት" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_buttonVis": { "message": "ናይ መትከሊ ምርኣይ" },
+  "menuLabel_modeNotifs": { "message": "ናይ ሞድ ኣፍልጦታት" },
+  "menuLabel_about": { "message": "ብዛዕባ" },
+  "menuLabel_disabled": { "message": "ስንክልና (ስፍሓት ተተኺሉ)" },
+  "alert_updateAvail": { "message": "ዝዘመነ" },
+  "alert_newerVer": { "message": "ዝዘመነ" },
+  "alert_isAvail": { "message": "ተዳልዩ ኣሎ" },
+  "alert_upToDate": { "message": "ኣቐዲምካ ምምሕያሽ" },
+  "alert_isUpToDate": { "message": "ዝዘመነ" },
+  "buttonLabel_leaveReview": { "message": "ግምገማ ሓዲግካ" },
+  "buttonLabel_updateCheck": { "message": "ዝቕጽል ሓበሬታ ርአ" },
+  "buttonLabel_update": { "message": "ኣሐድስ" },
+  "buttonLabel_dismiss": { "message": "ምጥፋእ" },
+  "link_viewChanges": { "message": "ለውጢ ርአ" },
+  "mode_autoClear": { "message": "ኣውቶ-ትምህርቲ" }
+}

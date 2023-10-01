@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Praefectio" },
   "menuLabel_buttonVis": { "message": "Sed quaeritur" },
   "menuLabel_modeNotifs": { "message": "Notre sécurité" },
+  "menuLabel_about": { "message": "De Hac Re" },
   "menuLabel_disabled": { "message": "Votre nom (nécessaire)" },
+  "alert_updateAvail": { "message": "Updateis available" },
+  "alert_newerVer": { "message": "Omnia ad" },
+  "alert_isAvail": { "message": "est disponibus" },
+  "alert_upToDate": { "message": "Up-to-date" },
+  "alert_isUpToDate": { "message": "est up-to-date" },
+  "buttonLabel_leaveReview": { "message": "Retinere" },
+  "buttonLabel_updateCheck": { "message": "Check for Updates" },
+  "buttonLabel_update": { "message": "opus" },
+  "buttonLabel_dismiss": { "message": "dimitto" },
+  "link_viewChanges": { "message": "Vedi anche l 'accendenza" },
   "mode_autoClear": { "message": "Carpe" }
 }

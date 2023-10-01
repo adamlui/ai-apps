@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "החלף מצב ניראות" },
   "menuLabel_buttonVis": { "message": "נראות הלחצן" },
   "menuLabel_modeNotifs": { "message": "התראות מצב" },
+  "menuLabel_about": { "message": "אודות" },
   "menuLabel_disabled": { "message": "מושבת (תוסף מותקן)" },
+  "alert_updateAvail": { "message": "עדכון זמין" },
+  "alert_newerVer": { "message": "עדכון ל -" },
+  "alert_isAvail": { "message": "%s זמין" },
+  "alert_upToDate": { "message": "מעודכן" },
+  "alert_isUpToDate": { "message": "מעודכן" },
+  "buttonLabel_leaveReview": { "message": "כתבי חוות דעת" },
+  "buttonLabel_updateCheck": { "message": "חפש עדכונים" },
+  "buttonLabel_update": { "message": "עדכון" },
+  "buttonLabel_dismiss": { "message": "שחרור" },
+  "link_viewChanges": { "message": "הצגת השינויים" },
   "mode_autoClear": { "message": "ניקוי אוטומטי" }
 }

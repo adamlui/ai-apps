@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Attiva/Disattiva visibilità" },
   "menuLabel_buttonVis": { "message": "Visibilità del pulsante" },
   "menuLabel_modeNotifs": { "message": "Notifiche modalità" },
+  "menuLabel_about": { "message": "Informazioni generali" },
   "menuLabel_disabled": { "message": "Disabilitato (estensione installata)" },
+  "alert_updateAvail": { "message": "Aggiornamento disponibile" },
+  "alert_newerVer": { "message": "Invia aggiornamento a:" },
+  "alert_isAvail": { "message": "è disponibile" },
+  "alert_upToDate": { "message": "Aggiornato" },
+  "alert_isUpToDate": { "message": "è aggiornato" },
+  "buttonLabel_leaveReview": { "message": "Aggiungi una Valutazione" },
+  "buttonLabel_updateCheck": { "message": "Cerca aggiornamenti" },
+  "buttonLabel_update": { "message": "Aggiorna" },
+  "buttonLabel_dismiss": { "message": "Ignora" },
+  "link_viewChanges": { "message": "Visualizza modifiche" },
   "mode_autoClear": { "message": "Cancellazione automatica" }
 }

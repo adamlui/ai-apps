@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "خود بخود چیٹ جی پی ٹی کی سرگزشت" },
+  "appDesc": { "message": "Chat.openai.com ملاحظہ کرتے وقت چیٹ کی سرگزشت کو خود بخود صاف کرتا ہے" },
+  "menuLabel_autoClear": { "message": "آٹو کلیئر چیٹس" },
+  "menuLabel_toggleVis": { "message": "مرئیت ٹوگل کریں" },
+  "menuLabel_buttonVis": { "message": "بٹن کی مرئیت" },
+  "menuLabel_modeNotifs": { "message": "موڈ نوٹیفکیشنز" },
+  "menuLabel_about": { "message": "متعلق" },
+  "menuLabel_disabled": { "message": "غیر فعال (ایکسٹینشن انسٹال ہے)" },
+  "alert_updateAvail": { "message": "اپڈیٹ دستیاب ہے" },
+  "alert_newerVer": { "message": "پر ایک اپ ڈیٹ" },
+  "alert_isAvail": { "message": "دستیاب ہے" },
+  "alert_upToDate": { "message": "تازہ ترین" },
+  "alert_isUpToDate": { "message": "تازہ ترین ہے" },
+  "buttonLabel_leaveReview": { "message": "جائزہ دیں" },
+  "buttonLabel_updateCheck": { "message": "اپ ڈیٹس کی پڑتال کریں" },
+  "buttonLabel_update": { "message": "اپ ڈیٹ " },
+  "buttonLabel_dismiss": { "message": "برخاست" },
+  "link_viewChanges": { "message": "تبدیلیاں دیکھیں" },
+  "mode_autoClear": { "message": "خود بخود صاف کریں" }
+}

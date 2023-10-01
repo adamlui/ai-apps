@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_buttonVis": { "message": "ബട്ടൺ ദൃശ്യപരത" },
   "menuLabel_modeNotifs": { "message": "മോഡ് അറിയിപ്പുകൾ" },
+  "menuLabel_about": { "message": "സംബന്ധിച്ച്" },
   "menuLabel_disabled": { "message": "അപ്രാപ്തമാക്കി (വിപുലീകരണം ഇൻസ്റ്റാൾ ചെയ്തിരിക്കുന്നു)" },
+  "alert_updateAvail": { "message": "%d അപ്‌ഡേറ്റ് ലഭ്യമാണ്" },
+  "alert_newerVer": { "message": "ഇതിലേക്കുള്ള ഒരു അപ്‌ഡേറ്റ്" },
+  "alert_isAvail": { "message": "ലഭ്യമാണ്" },
+  "alert_upToDate": { "message": "ഇന്നുവരെയുള്ള_മാറ്റങ്ങള്‍_വരുത്തിയത്" },
+  "alert_isUpToDate": { "message": "ഇന്നുവരെയുള്ള_മാറ്റങ്ങള്‍_വരുത്തിയത്" },
+  "buttonLabel_leaveReview": { "message": "ഒരു അവലോകനം ഉപേക്ഷിക്കുക" },
+  "buttonLabel_updateCheck": { "message": "അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക" },
+  "buttonLabel_update": { "message": "അപ്ഡേറ്റ് ചെയ്യുക" },
+  "buttonLabel_dismiss": { "message": "നിരസിക്കുക" },
+  "link_viewChanges": { "message": "മാറ്റങ്ങൾ കാണുക" },
   "mode_autoClear": { "message": "ഓട്ടോ-ക്ലിയർ" }
 }

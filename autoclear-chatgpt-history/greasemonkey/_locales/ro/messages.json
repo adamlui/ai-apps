@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "comutați vizibilitatea" },
   "menuLabel_buttonVis": { "message": "Vizibilitatea butonului" },
   "menuLabel_modeNotifs": { "message": "Notificări de mod" },
+  "menuLabel_about": { "message": "Despre" },
   "menuLabel_disabled": { "message": "Dezactivat (extensie instalată)" },
+  "alert_updateAvail": { "message": "Actualizare disponibilă" },
+  "alert_newerVer": { "message": "Actualizare" },
+  "alert_isAvail": { "message": "este disponibil" },
+  "alert_upToDate": { "message": "Actualizat" },
+  "alert_isUpToDate": { "message": "Actualizat" },
+  "buttonLabel_leaveReview": { "message": "Lasă-ne o recenzie" },
+  "buttonLabel_updateCheck": { "message": "Caută actualizări" },
+  "buttonLabel_update": { "message": "Actualizare" },
+  "buttonLabel_dismiss": { "message": "Respingeți" },
+  "link_viewChanges": { "message": "Vizualizează modificările" },
   "mode_autoClear": { "message": "Curățare automată" }
 }

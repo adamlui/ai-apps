@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Baskuligi videblecon" },
   "menuLabel_buttonVis": { "message": "Butonvidebleco" },
   "menuLabel_modeNotifs": { "message": "@ info: whatsthis" },
+  "menuLabel_about": { "message": "Alproksimigas" },
   "menuLabel_disabled": { "message": "Malŝaltita (etendo instalita)" },
+  "alert_updateAvail": { "message": "Neniu priskribo disponebla" },
+  "alert_newerVer": { "message": "Ĝisdatigo al" },
+  "alert_isAvail": { "message": "estas disponebla" },
+  "alert_upToDate": { "message": "Aktuala" },
+  "alert_isUpToDate": { "message": "estas ĝisdata" },
+  "buttonLabel_leaveReview": { "message": "Lasi revizion" },
+  "buttonLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
+  "buttonLabel_update": { "message": "Ĝisdatigi" },
+  "buttonLabel_dismiss": { "message": "Malakcepti" },
+  "link_viewChanges": { "message": "Montri ŝanĝojn" },
   "mode_autoClear": { "message": "Aŭtomate purigi" }
 }

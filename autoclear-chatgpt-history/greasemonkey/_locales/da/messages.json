@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Slå synlighed til og fra" },
   "menuLabel_buttonVis": { "message": "Knappernes synlighed" },
   "menuLabel_modeNotifs": { "message": "Tilstandsmeddelelser" },
+  "menuLabel_about": { "message": "Om" },
   "menuLabel_disabled": { "message": "Deaktiveret (udvidelse installeret)" },
+  "alert_updateAvail": { "message": "Der er en tilgængelig opdatering" },
+  "alert_newerVer": { "message": "En opdatering til" },
+  "alert_isAvail": { "message": "er tilgængelig" },
+  "alert_upToDate": { "message": "Opdateret" },
+  "alert_isUpToDate": { "message": "{  0  } er opdateret" },
+  "buttonLabel_leaveReview": { "message": "Skriv en anmeldelse" },
+  "buttonLabel_updateCheck": { "message": "Tjek for Opdateringer" },
+  "buttonLabel_update": { "message": "Opdatér" },
+  "buttonLabel_dismiss": { "message": "Afvis" },
+  "link_viewChanges": { "message": "Se ændringer" },
   "mode_autoClear": { "message": "Ryd automatisk" }
 }

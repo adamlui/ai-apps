@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Rnu tamuɣli" },
   "menuLabel_buttonVis": { "message": "Tamuɣli n tqeffalt" },
   "menuLabel_modeNotifs": { "message": "Ilɣa n tγawsa" },
+  "menuLabel_about": { "message": "Talɣut ɣef" },
   "menuLabel_disabled": { "message": "Yettwakkes (asiγzef yebna)" },
+  "alert_updateAvail": { "message": "Yella lqem" },
+  "alert_newerVer": { "message": "Aneggaru ɣer" },
+  "alert_isAvail": { "message": "yella" },
+  "alert_upToDate": { "message": "Aneggaru n uzegrir" },
+  "alert_isUpToDate": { "message": "yesssss up-to-date" },
+  "buttonLabel_leaveReview": { "message": "Eǧǧ amagrad" },
+  "buttonLabel_updateCheck": { "message": "Senqed ma llan ileqman" },
+  "buttonLabel_update": { "message": "Leqqem" },
+  "buttonLabel_dismiss": { "message": "Agi" },
+  "link_viewChanges": { "message": "Wali ibeddilen" },
   "mode_autoClear": { "message": "Tazelɣa tawurmant" }
 }

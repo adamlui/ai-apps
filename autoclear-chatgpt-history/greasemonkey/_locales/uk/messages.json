@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Історія автоматичного очищення чату ChatGPT" },
+  "appDesc": { "message": "Автоматичне очищення історії чату під час відвідування chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Автоматичне очищення чатів" },
+  "menuLabel_toggleVis": { "message": "Перемкнути видимість" },
+  "menuLabel_buttonVis": { "message": "Видимість кнопок" },
+  "menuLabel_modeNotifs": { "message": "Сповіщення про режим" },
+  "menuLabel_about": { "message": "Про нас" },
+  "menuLabel_disabled": { "message": "Вимкнено (розширення встановлено)" },
+  "alert_updateAvail": { "message": "Доступне оновлення" },
+  "alert_newerVer": { "message": "Оновлення для" },
+  "alert_isAvail": { "message": "не доступно" },
+  "alert_upToDate": { "message": "Up-to-date" },
+  "alert_isUpToDate": { "message": "оновлено" },
+  "buttonLabel_leaveReview": { "message": "Залишити відгук" },
+  "buttonLabel_updateCheck": { "message": "Перевірка оновлень" },
+  "buttonLabel_update": { "message": "Оновити" },
+  "buttonLabel_dismiss": { "message": "Відхиляти" },
+  "link_viewChanges": { "message": "Переглянути зміни" },
+  "mode_autoClear": { "message": "Автоматичне очищення" }
+}

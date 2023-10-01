@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ล้างประวัติ ChatGPT อัตโนมัติ" },
+  "appDesc": { "message": "ล้างประวัติการแชทอัตโนมัติเมื่อไปที่ chat.openai.com" },
+  "menuLabel_autoClear": { "message": "แชทแบบเคลียร์อัตโนมัติ" },
+  "menuLabel_toggleVis": { "message": "เปิด/ปิดการมองเห็น" },
+  "menuLabel_buttonVis": { "message": "การมองเห็นปุ่ม" },
+  "menuLabel_modeNotifs": { "message": "การแจ้งเตือนโหมด" },
+  "menuLabel_about": { "message": "เกี่ยวกับ" },
+  "menuLabel_disabled": { "message": "ปิดใช้งาน (ติดตั้งส่วนขยายแล้ว)" },
+  "alert_updateAvail": { "message": "มีอัพเดตให้ใช้งาน" },
+  "alert_newerVer": { "message": "อัพเดทไปยัง" },
+  "alert_isAvail": { "message": "มี   ให้ใช้งานแล้ว" },
+  "alert_upToDate": { "message": "ปัจจุบัน" },
+  "alert_isUpToDate": { "message": "อัพเดทแล้ว" },
+  "buttonLabel_leaveReview": { "message": "ออกจากการรีวิว" },
+  "buttonLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
+  "buttonLabel_update": { "message": "อัปเดต" },
+  "buttonLabel_dismiss": { "message": "ยกเลิก" },
+  "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" },
+  "mode_autoClear": { "message": "ล้างอัตโนมัติ" }
+}

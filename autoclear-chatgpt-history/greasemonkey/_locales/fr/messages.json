@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Basculer la visibilité" },
   "menuLabel_buttonVis": { "message": "Visibilité du bouton" },
   "menuLabel_modeNotifs": { "message": "Notifications du mode" },
+  "menuLabel_about": { "message": "À propos de" },
   "menuLabel_disabled": { "message": "Désactivé (extension installée)" },
+  "alert_updateAvail": { "message": "mise à jour disponible" },
+  "alert_newerVer": { "message": "Une mise à jour de" },
+  "alert_isAvail": { "message": "est disponible" },
+  "alert_upToDate": { "message": "À jour" },
+  "alert_isUpToDate": { "message": "Elle est à jour" },
+  "buttonLabel_leaveReview": { "message": "Laisser un Avis" },
+  "buttonLabel_updateCheck": { "message": "Vérifier les Mises à jour" },
+  "buttonLabel_update": { "message": "Mise à jour" },
+  "buttonLabel_dismiss": { "message": "Ignorer" },
+  "link_viewChanges": { "message": "Afficher les modifications" },
   "mode_autoClear": { "message": "Effacement automatique" }
 }

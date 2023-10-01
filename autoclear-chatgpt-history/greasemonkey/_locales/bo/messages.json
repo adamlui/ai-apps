@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "མཐོང་ནུས་ཀྱི་རྣམ་པ" },
   "menuLabel_buttonVis": { "message": "ཡིད་རྟོན་རུང་བའི་རྣམ་པ །" },
   "menuLabel_modeNotifs": { "message": "མ་དབྱིབས་སྒྲིག་བཀོད །" },
+  "menuLabel_about": { "message": "མྱུར་ཨང་སྐོར།" },
   "menuLabel_disabled": { "message": "སྒྲིག་འཇུག་སྣོད་སྒྲིག་འཇུག་བྱེད་པ (_T)" },
+  "alert_updateAvail": { "message": "རིམ་སྤར་བྱེད་རྒྱུ་འདུག" },
+  "alert_newerVer": { "message": "རིམ་སྤར་བྱེད་བཞིན་པ" },
+  "alert_isAvail": { "message": "ནང་འཇུག" },
+  "alert_upToDate": { "message": "སྤོར་བ །" },
+  "alert_isUpToDate": { "message": "ཡར་ངོའི་ཚེས་བཅུའི་དུས་སུ་" },
+  "buttonLabel_leaveReview": { "message": "དཔྱད་རྩོམ །" },
+  "buttonLabel_updateCheck": { "message": "ད་ལྟའི་གནས་ཚུལ་འཚོལ་བ །" },
+  "buttonLabel_update": { "message": "གསར་བསྒྱུར" },
+  "buttonLabel_dismiss": { "message": "འདོར་བ།" },
+  "link_viewChanges": { "message": "འགྱུར་བ་མཐོང་བ" },
   "mode_autoClear": { "message": "རང་མོས་སྒྲིག་བཀོད ། (_O)" }
 }

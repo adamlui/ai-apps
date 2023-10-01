@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Uključi/isključi vidljivost" },
   "menuLabel_buttonVis": { "message": "Vidljivost tipaka" },
   "menuLabel_modeNotifs": { "message": "Obavijesti o načinu rada" },
+  "menuLabel_about": { "message": "O nama" },
   "menuLabel_disabled": { "message": "Onemogućeno (proširenje instalirano)" },
+  "alert_updateAvail": { "message": "Ažuriranje je dostupno" },
+  "alert_newerVer": { "message": "Novosti" },
+  "alert_isAvail": { "message": "je dostupna" },
+  "alert_upToDate": { "message": "Ažuriraj" },
+  "alert_isUpToDate": { "message": "Ažuriraj" },
+  "buttonLabel_leaveReview": { "message": "Ostavi recenziju" },
+  "buttonLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
+  "buttonLabel_update": { "message": "Ažuriraj" },
+  "buttonLabel_dismiss": { "message": "Odbaci" },
+  "link_viewChanges": { "message": "Pregledaj promjene" },
   "mode_autoClear": { "message": "automatsko �i��enje" }
 }

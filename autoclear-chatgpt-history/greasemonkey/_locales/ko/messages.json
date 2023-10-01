@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "가시성 전환" },
   "menuLabel_buttonVis": { "message": "버튼 가시성" },
   "menuLabel_modeNotifs": { "message": "모드 알림" },
+  "menuLabel_about": { "message": "소개" },
   "menuLabel_disabled": { "message": "비활성화됨 (확장 프로그램 설치됨)" },
+  "alert_updateAvail": { "message": "업데이트 사용 가능" },
+  "alert_newerVer": { "message": "다음으로 업데이트" },
+  "alert_isAvail": { "message": "사용가능" },
+  "alert_upToDate": { "message": "최신 버전입니다" },
+  "alert_isUpToDate": { "message": "최신판입니다." },
+  "buttonLabel_leaveReview": { "message": "상품 후기를 남겨주세요" },
+  "buttonLabel_updateCheck": { "message": "업데이트 확인" },
+  "buttonLabel_update": { "message": "업데이트" },
+  "buttonLabel_dismiss": { "message": "무시하기" },
+  "link_viewChanges": { "message": "변경 보기" },
   "mode_autoClear": { "message": "자동 삭제 모드" }
 }

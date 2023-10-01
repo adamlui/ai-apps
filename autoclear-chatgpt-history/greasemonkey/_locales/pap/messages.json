@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Togel Visibilitá" },
   "menuLabel_buttonVis": { "message": "Button Visibilitá" },
   "menuLabel_modeNotifs": { "message": "Notifikashon di Mode" },
+  "menuLabel_about": { "message": "About About" },
   "menuLabel_disabled": { "message": "Disabilitá (Extended)" },
+  "alert_updateAvail": { "message": "Actualizacion Disponible" },
+  "alert_newerVer": { "message": "Un update pa" },
+  "alert_isAvail": { "message": "ta disponibel" },
+  "alert_upToDate": { "message": "UPDATE" },
+  "alert_isUpToDate": { "message": "tabata up-to-date" },
+  "buttonLabel_leaveReview": { "message": "Leave a Testimonial" },
+  "buttonLabel_updateCheck": { "message": "Verificá las actualizaciones" },
+  "buttonLabel_update": { "message": "Aktualidat" },
+  "buttonLabel_dismiss": { "message": "Disimulashon" },
+  "link_viewChanges": { "message": "Bista riba kambionan" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

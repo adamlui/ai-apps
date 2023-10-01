@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "بینینه ‌ وه ‌ ی گۆشه ‌ كراو" },
   "menuLabel_buttonVis": { "message": "بینینه ‌ ی په ‌ نجه ‌ ره ‌" },
   "menuLabel_modeNotifs": { "message": "ئاگادارکردنه ‌ وه ‌ کانی مۆده ‌ ی" },
+  "menuLabel_about": { "message": "دەربارە" },
   "menuLabel_disabled": { "message": "ناچالاککراوە (درێژکراوەی دامەزراندن)" },
+  "alert_updateAvail": { "message": "نوێکردنەوە بەردەستە" },
+  "alert_newerVer": { "message": "نوێکردنەوە بۆ" },
+  "alert_isAvail": { "message": "بەردەستە" },
+  "alert_upToDate": { "message": "نوێ، ھاوچەرخ، نو، تازە" },
+  "alert_isUpToDate": { "message": "نوێ، ھاوچەرخ، نو، تازە" },
+  "buttonLabel_leaveReview": { "message": "پێداچوونەوە بەجێبهێڵە" },
+  "buttonLabel_updateCheck": { "message": "چێکی نوێکردنەوە بکە" },
+  "buttonLabel_update": { "message": "نوێکردنەوە" },
+  "buttonLabel_dismiss": { "message": "پشتگوێخستن" },
+  "link_viewChanges": { "message": "بینینی گۆڕانکارییەکان" },
   "mode_autoClear": { "message": "ده ‌ ستنیشانكردنی ئۆتۆماتیکی" }
 }

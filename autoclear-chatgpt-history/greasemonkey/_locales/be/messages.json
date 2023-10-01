@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Пераключыць бачнасць" },
   "menuLabel_buttonVis": { "message": "Бачнасць кнопак" },
   "menuLabel_modeNotifs": { "message": "Рэжым апавяшчэнняў" },
+  "menuLabel_about": { "message": "Пра нас" },
   "menuLabel_disabled": { "message": "Адключаны (усталяваны пашырэнне)" },
+  "alert_updateAvail": { "message": "Ёсць абнаўленне" },
+  "alert_newerVer": { "message": "Абнаўленне да" },
+  "alert_isAvail": { "message": "даступны" },
+  "alert_upToDate": { "message": "Аднаўленне не патрабуецца" },
+  "alert_isUpToDate": { "message": "абноўлена" },
+  "buttonLabel_leaveReview": { "message": "Пакінуць водгук" },
+  "buttonLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
+  "buttonLabel_update": { "message": "Абноўлена " },
+  "buttonLabel_dismiss": { "message": "Адхіліць" },
+  "link_viewChanges": { "message": "Праглядзець змены" },
   "mode_autoClear": { "message": "Аўтаачыстка" }
 }

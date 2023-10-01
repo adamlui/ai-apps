@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Txandakatu ikusgaitasuna" },
   "menuLabel_buttonVis": { "message": "Botoiaren ikusgarritasuna" },
   "menuLabel_modeNotifs": { "message": "Moduaren jakinarazpenak" },
+  "menuLabel_about": { "message": "Egileari Buruz" },
   "menuLabel_disabled": { "message": "Desgaituta (luzapena instalatuta)" },
+  "alert_updateAvail": { "message": "Ez dago azalpenik erabilgarri." },
+  "alert_newerVer": { "message": "Eguneratze bat" },
+  "alert_isAvail": { "message": "eskuragarri dago" },
+  "alert_upToDate": { "message": "Eguneratu" },
+  "alert_isUpToDate": { "message": "Eguneratu" },
+  "buttonLabel_leaveReview": { "message": "Utzi Iritzia" },
+  "buttonLabel_updateCheck": { "message": "Begiratu _eguneraketak:" },
+  "buttonLabel_update": { "message": "Eguneratu" },
+  "buttonLabel_dismiss": { "message": "Bistatik kendu" },
+  "link_viewChanges": { "message": "Ikusi aldaketak" },
   "mode_autoClear": { "message": "Automatikoki garbitu" }
 }

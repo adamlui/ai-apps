@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Autoclear ChatGPT Talafaasolopito" },
+  "appDesc": { "message": "Auto-clears talatalanoaga talafaasolopito pe a asiasi i talatalanoaga.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear Chats" },
+  "menuLabel_toggleVis": { "message": "Toggle Vaaiga" },
+  "menuLabel_buttonVis": { "message": "Button Visibility" },
+  "menuLabel_modeNotifs": { "message": "FA'AMATALAGA FA'AMATALAGA" },
+  "menuLabel_about": { "message": "E uiga i" },
+  "menuLabel_disabled": { "message": "Faʻaletonu (faʻaopoopoga faʻapipiʻiina)" },
+  "alert_updateAvail": { "message": "Fa'afouga o lo'o avanoa" },
+  "alert_newerVer": { "message": "Faʻafouga" },
+  "alert_isAvail": { "message": "o loo maua" },
+  "alert_upToDate": { "message": "Faʻafouina i le taimi nei" },
+  "alert_isUpToDate": { "message": "o loo i ai i le taimi nei" },
+  "buttonLabel_leaveReview": { "message": "Tuu se Toe Iloiloga" },
+  "buttonLabel_updateCheck": { "message": "Siaki mo Faʻafouga" },
+  "buttonLabel_update": { "message": "Fa'afouga" },
+  "buttonLabel_dismiss": { "message": "Dismiss" },
+  "link_viewChanges": { "message": "Vaʻai suiga" },
+  "mode_autoClear": { "message": "Auto-Clear" }
+}

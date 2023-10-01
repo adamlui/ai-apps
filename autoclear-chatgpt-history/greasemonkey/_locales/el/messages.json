@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Εναλλαγή ορατότητας" },
   "menuLabel_buttonVis": { "message": "Ορατότητα κουμπιού" },
   "menuLabel_modeNotifs": { "message": "Ειδοποιήσεις λειτουργίας" },
+  "menuLabel_about": { "message": "Σχετικά" },
   "menuLabel_disabled": { "message": "Απενεργοποιημένο (εγκατεστημένη επέκταση)" },
+  "alert_updateAvail": { "message": "Υπάρχει διαθέσιμη ενημέρωση" },
+  "alert_newerVer": { "message": "Ενημέρωση" },
+  "alert_isAvail": { "message": "Μη διαθέσιμο" },
+  "alert_upToDate": { "message": "Ενημερωμένο" },
+  "alert_isUpToDate": { "message": " είναι ενήμερο." },
+  "buttonLabel_leaveReview": { "message": "Κάντε μία κριτική" },
+  "buttonLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
+  "buttonLabel_update": { "message": "Ενημέρωση" },
+  "buttonLabel_dismiss": { "message": " Κλείσιμο" },
+  "link_viewChanges": { "message": "Εμφάνιση αλλαγών" },
   "mode_autoClear": { "message": "Αυτόματος καθαρισμός" }
 }

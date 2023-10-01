@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Ukugaragara" },
   "menuLabel_buttonVis": { "message": "Ukugaragara kwa Buto" },
   "menuLabel_modeNotifs": { "message": "&lt; Uburemere UTSINDAGIYE" },
+  "menuLabel_about": { "message": "Bigyanye" },
   "menuLabel_disabled": { "message": "Umugereka" },
+  "alert_updateAvail": { "message": "Bihari" },
+  "alert_newerVer": { "message": "Kuri" },
+  "alert_isAvail": { "message": "bihari" },
+  "alert_upToDate": { "message": "Kuvugurura" },
+  "alert_isUpToDate": { "message": "Kuvugurura" },
+  "buttonLabel_leaveReview": { "message": "A" },
+  "buttonLabel_updateCheck": { "message": "Kugirango" },
+  "buttonLabel_update": { "message": "Kuvugurura" },
+  "buttonLabel_dismiss": { "message": "Kureka" },
+  "link_viewChanges": { "message": "Amahinduka" },
   "mode_autoClear": { "message": "&lt; Uburemere UTSINDAGIYE" }
 }

@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Autoclear ChatGPT History" },
+  "appDesc": { "message": "Tlhalosa hisitori ya motlotlo ka go ipolokela dilo fa o etela chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear Chats" },
+  "menuLabel_toggleVis": { "message": "Toggle Visibility" },
+  "menuLabel_buttonVis": { "message": "Go Bonala ga Konopo" },
+  "menuLabel_modeNotifs": { "message": "Dikitsiso tsa Mode" },
+  "menuLabel_about": { "message": "Kaga" },
+  "menuLabel_disabled": { "message": "Ke golafetse (extension installed)" },
+  "alert_updateAvail": { "message": "Diphetogo tse di leng teng" },
+  "alert_newerVer": { "message": "Update kwa" },
+  "alert_isAvail": { "message": "e teng" },
+  "alert_upToDate": { "message": "Feleletše" },
+  "alert_isUpToDate": { "message": "e mo nakong" },
+  "buttonLabel_leaveReview": { "message": "Leave a Review" },
+  "buttonLabel_updateCheck": { "message": "Tlhatlhoba Diphetogo" },
+  "buttonLabel_update": { "message": "Ntshwafatso" },
+  "buttonLabel_dismiss": { "message": "TLOGELA" },
+  "link_viewChanges": { "message": "Leba diphetogo" },
+  "mode_autoClear": { "message": "Auto-Clear" }
+}

@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Хариулт" },
   "menuLabel_buttonVis": { "message": "Тооцоолох" },
   "menuLabel_modeNotifs": { "message": "Үгүй Тайлбар" },
+  "menuLabel_about": { "message": "Бидний тухай" },
   "menuLabel_disabled": { "message": "Тохиргоо (Дэмжлэг)" },
+  "alert_updateAvail": { "message": "Шинэчлэх (update) боломжтой" },
+  "alert_newerVer": { "message": "Шинэчлэлт" },
+  "alert_isAvail": { "message": "авах боломжтой" },
+  "alert_upToDate": { "message": "Шинэчлэгдсэн" },
+  "alert_isUpToDate": { "message": "одоогийн байдлаар" },
+  "buttonLabel_leaveReview": { "message": "Сэтгэгдэл үлдээх" },
+  "buttonLabel_updateCheck": { "message": "Шинэчлэлтүүдийг шалгана уу" },
+  "buttonLabel_update": { "message": "Шинэчлэх" },
+  "buttonLabel_dismiss": { "message": "Дуусах" },
+  "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" },
   "mode_autoClear": { "message": "Авто Авто" }
 }

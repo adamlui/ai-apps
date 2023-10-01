@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Toggle Visibility" },
   "menuLabel_buttonVis": { "message": "Button Visibility" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
+  "menuLabel_about": { "message": "About" },
   "menuLabel_disabled": { "message": "Disabled (extension installed)" },
+  "alert_updateAvail": { "message": "Update available" },
+  "alert_newerVer": { "message": "An update to" },
+  "alert_isAvail": { "message": "is available" },
+  "alert_upToDate": { "message": "Up-to-date" },
+  "alert_isUpToDate": { "message": "is up-to-date" },
+  "buttonLabel_leaveReview": { "message": "Leave a Review" },
+  "buttonLabel_updateCheck": { "message": "Check for Updates" },
+  "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_dismiss": { "message": "Dismiss" },
+  "link_viewChanges": { "message": "View changes" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

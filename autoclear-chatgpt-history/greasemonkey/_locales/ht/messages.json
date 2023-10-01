@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Toggle vizibilite" },
   "menuLabel_buttonVis": { "message": "Vizibilite bouton" },
   "menuLabel_modeNotifs": { "message": "Notifikasyon Mode" },
+  "menuLabel_about": { "message": "Apwopo" },
   "menuLabel_disabled": { "message": "Andikape (ekstansyon enstale)" },
+  "alert_updateAvail": { "message": "Mizajou ki disponib" },
+  "alert_newerVer": { "message": "Yon aktyalizasyon pou" },
+  "alert_isAvail": { "message": "ki disponib/à votre disposition/sont disponibles" },
+  "alert_upToDate": { "message": "Mizajou/ajou/a jou/alamòd /monte a dat/le plus récent /à jour /moderne" },
+  "alert_isUpToDate": { "message": "se monte-a-dat/est" },
+  "buttonLabel_leaveReview": { "message": "Kite yon Revizyon" },
+  "buttonLabel_updateCheck": { "message": "Tcheke pou Mizajou" },
+  "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_dismiss": { "message": "Demisyon" },
+  "link_viewChanges": { "message": "Gade chanjman yo" },
   "mode_autoClear": { "message": "Auto-Klear" }
 }

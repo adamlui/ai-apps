@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "दृश्यता टॉगल करें" },
   "menuLabel_buttonVis": { "message": "बटन दृश्यता" },
   "menuLabel_modeNotifs": { "message": "मोड सूचनाएं" },
+  "menuLabel_about": { "message": "परिचय" },
   "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन इंस्टॉल किया गया)" },
+  "alert_updateAvail": { "message": "अद्यतन उपलब्ध है" },
+  "alert_newerVer": { "message": "पर एक अपडेट" },
+  "alert_isAvail": { "message": "उपलब्ध है।" },
+  "alert_upToDate": { "message": "अद्यतन" },
+  "alert_isUpToDate": { "message": "अप - टू - डेट है" },
+  "buttonLabel_leaveReview": { "message": "समीक्षा लिखें" },
+  "buttonLabel_updateCheck": { "message": "अद्यतन के लिए जाँचें" },
+  "buttonLabel_update": { "message": "अपडेट करें" },
+  "buttonLabel_dismiss": { "message": "खारिज करना" },
+  "link_viewChanges": { "message": "बदलाव देखें" },
   "mode_autoClear": { "message": "ऑटो - क्लियर" }
 }

@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Famaritana ny famintinana" },
   "menuLabel_buttonVis": { "message": "Button" },
   "menuLabel_modeNotifs": { "message": "Famaritana" },
+  "menuLabel_about": { "message": "Mikasika ny" },
   "menuLabel_disabled": { "message": "Famaritana (sanda)" },
+  "alert_updateAvail": { "message": "Ny fanavaozana azo alaina" },
+  "alert_newerVer": { "message": "Vaovao farany ho" },
+  "alert_isAvail": { "message": "azo atao" },
+  "alert_upToDate": { "message": "Up-to-daty" },
+  "alert_isUpToDate": { "message": "zava-nitranga farany" },
+  "buttonLabel_leaveReview": { "message": "Mametraha fanamarihana" },
+  "buttonLabel_updateCheck": { "message": "Mitadiava fanavaozana" },
+  "buttonLabel_update": { "message": "Vaovao farany" },
+  "buttonLabel_dismiss": { "message": "Hiditra" },
+  "link_viewChanges": { "message": "Hijery ireo fanovana" },
   "mode_autoClear": { "message": "Auto Auto Auto" }
 }

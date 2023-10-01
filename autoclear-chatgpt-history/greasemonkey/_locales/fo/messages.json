@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Goym eygleiðing" },
   "menuLabel_buttonVis": { "message": "Knøttleysur sjónleiki" },
   "menuLabel_modeNotifs": { "message": "Modus kunningarskriv" },
+  "menuLabel_about": { "message": "Um" },
   "menuLabel_disabled": { "message": "Broytingar í innsavningini (innsavning)" },
+  "alert_updateAvail": { "message": "Dagføring er klár" },
+  "alert_newerVer": { "message": "Núverandi tíðindi" },
+  "alert_isAvail": { "message": "tað er tøkt" },
+  "alert_upToDate": { "message": "Uppdaterað" },
+  "alert_isUpToDate": { "message": "núverandi tíðindi" },
+  "buttonLabel_leaveReview": { "message": "Skriva eina gjøgnumgongd" },
+  "buttonLabel_updateCheck": { "message": "Gev gætur eftir dagføringum" },
+  "buttonLabel_update": { "message": "Dagfør" },
+  "buttonLabel_dismiss": { "message": "Avrita" },
+  "link_viewChanges": { "message": "Sí broytingar" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

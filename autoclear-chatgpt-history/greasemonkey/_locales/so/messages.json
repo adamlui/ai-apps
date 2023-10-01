@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Taariikhda ChatGPT Autoclear" },
+  "appDesc": { "message": "Auto-clears sheekaysiga taariikhda marka booqashada chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Wadahadalada Autoclear" },
+  "menuLabel_toggleVis": { "message": "Muuqaalka Toggle" },
+  "menuLabel_buttonVis": { "message": "Muuqaalka Button" },
+  "menuLabel_modeNotifs": { "message": "Ogeysiisyada Mode" },
+  "menuLabel_about": { "message": "Jabuuti" },
+  "menuLabel_disabled": { "message": "Naafada (kordhinta la rakibay)" },
+  "alert_updateAvail": { "message": "Cusboonaysiinta la heli karo" },
+  "alert_newerVer": { "message": "Cusbooneysiin ku socota" },
+  "alert_isAvail": { "message": "waa la heli karaa" },
+  "alert_upToDate": { "message": "Ilaa taariiqda" },
+  "alert_isUpToDate": { "message": "waa up-to-date" },
+  "buttonLabel_leaveReview": { "message": "Ka tag dib u eegis" },
+  "buttonLabel_updateCheck": { "message": "Hubi Cusbooneysiinta" },
+  "buttonLabel_update": { "message": "Cusboonaysiinta" },
+  "buttonLabel_dismiss": { "message": "Xil ka qaad" },
+  "link_viewChanges": { "message": "Eeg isbeddellada" },
+  "mode_autoClear": { "message": "Auto-Clear" }
+}

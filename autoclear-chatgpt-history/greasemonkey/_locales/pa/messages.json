@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "ਦਿੱਖ ਬਦਲੋ" },
   "menuLabel_buttonVis": { "message": "ਬਟਨ ਦਿਖਣਯੋਗਤਾ" },
   "menuLabel_modeNotifs": { "message": "ਮੋਡ ਨੋਟੀਫਿਕੇਸ਼ਨ" },
+  "menuLabel_about": { "message": "ਇਸ ਬਾਰੇ" },
   "menuLabel_disabled": { "message": "ਆਯੋਗ (ਇਕਸਟੈਨਸ਼ਨ ਇੰਸਟਾਲ)" },
+  "alert_updateAvail": { "message": "ਕੋਈ ਵੇਰਵਾ ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ" },
+  "alert_newerVer": { "message": "ਨੂੰ ਇੱਕ ਅੱਪਡੇਟ" },
+  "alert_isAvail": { "message": "ਉਪਲੱਬਧ ਹੈ" },
+  "alert_upToDate": { "message": "ਨਵੀਨੀਕਰਨ" },
+  "alert_isUpToDate": { "message": "ਨਵੀਨੀਕਰਨ" },
+  "buttonLabel_leaveReview": { "message": "ਇੱਕ ਸਮੀਖਿਆ ਛੱਡੋ" },
+  "buttonLabel_updateCheck": { "message": "ਨਵੇਂ ਐਪੀਸੋਡ ਲਈ ਚੈੱਕ ਕਰੋ" },
+  "buttonLabel_update": { "message": "ਅੱਪਡੇਟ ਕਰੋ" },
+  "buttonLabel_dismiss": { "message": "ਖਾਰਜ ਕਰੋ" },
+  "link_viewChanges": { "message": "ਤਬਦੀਲੀਆਂ ਵੇਖੋ" },
   "mode_autoClear": { "message": "ਆਟੋ - ਸਾਫ਼" }
 }

@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Samodejno očisti zgodovino klepetaGPT" },
+  "appDesc": { "message": "Samodejno počisti zgodovino klepeta, ko obiščeš chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Samodejno brisanje klepetov" },
+  "menuLabel_toggleVis": { "message": "Preklopi vidnost" },
+  "menuLabel_buttonVis": { "message": "Vidnost gumba" },
+  "menuLabel_modeNotifs": { "message": "Obvestila o načinu" },
+  "menuLabel_about": { "message": "Vizitka" },
+  "menuLabel_disabled": { "message": "Onemogočeno (nameščena razširitev)" },
+  "alert_updateAvail": { "message": "Posodobitev na voljo" },
+  "alert_newerVer": { "message": "Posodobitev na" },
+  "alert_isAvail": { "message": "je na voljo" },
+  "alert_upToDate": { "message": "najnovejši" },
+  "alert_isUpToDate": { "message": "najnovejši" },
+  "buttonLabel_leaveReview": { "message": "Podaj mnenje" },
+  "buttonLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
+  "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_dismiss": { "message": "Opusti" },
+  "link_viewChanges": { "message": "Poglej spremembe" },
+  "mode_autoClear": { "message": "Samodejno čiščenje" }
+}

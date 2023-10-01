@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "Autoklear ChatGPT Stori" },
+  "appDesc": { "message": "Auto-clears chat history taim yu go long chat.openai.com" },
+  "menuLabel_autoClear": { "message": "Autoclear chats" },
+  "menuLabel_toggleVis": { "message": "Toksave long ol samting" },
+  "menuLabel_buttonVis": { "message": "Toksave long bot" },
+  "menuLabel_modeNotifs": { "message": "Modus Toksave" },
+  "menuLabel_about": { "message": "About" },
+  "menuLabel_disabled": { "message": "Disable (i stap long en)" },
+  "alert_updateAvail": { "message": "Tok pisin i go pinis" },
+  "alert_newerVer": { "message": "Ol nupela tok" },
+  "alert_isAvail": { "message": "em i kamap pinis" },
+  "alert_upToDate": { "message": "UPDATE" },
+  "alert_isUpToDate": { "message": "ol i save mekim ol samting i kamap" },
+  "buttonLabel_leaveReview": { "message": "Leave a review" },
+  "buttonLabel_updateCheck": { "message": "Lukim ol nupela tok" },
+  "buttonLabel_update": { "message": "UPDATE" },
+  "buttonLabel_dismiss": { "message": "Lusim" },
+  "link_viewChanges": { "message": "Lukim ol senis" },
+  "mode_autoClear": { "message": "Autoklear" }
+}

@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Perjungti matomumą" },
   "menuLabel_buttonVis": { "message": "Mygtuko matomumas" },
   "menuLabel_modeNotifs": { "message": "Režimo pranešimai" },
+  "menuLabel_about": { "message": "Apie" },
   "menuLabel_disabled": { "message": "Išjungta (įdiegtas plėtinys)" },
+  "alert_updateAvail": { "message": "Yra naujinys" },
+  "alert_newerVer": { "message": "Atnaujinta į" },
+  "alert_isAvail": { "message": "yra prieinama" },
+  "alert_upToDate": { "message": "Naujausias" },
+  "alert_isUpToDate": { "message": "atnaujintas" },
+  "buttonLabel_leaveReview": { "message": "Palikite apžvalgą" },
+  "buttonLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
+  "buttonLabel_update": { "message": "Naujinti" },
+  "buttonLabel_dismiss": { "message": "Atšaukti" },
+  "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" },
   "mode_autoClear": { "message": "Automatinis valymas" }
 }

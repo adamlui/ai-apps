@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "দৃশ্যমানতা টগল করুন" },
   "menuLabel_buttonVis": { "message": "বাটন দৃশ্যমানতা" },
   "menuLabel_modeNotifs": { "message": "মোড বিজ্ঞপ্তি" },
+  "menuLabel_about": { "message": "সম্বন্ধে" },
   "menuLabel_disabled": { "message": "নিষ্ক্রিয় (এক্সটেনশন ইনস্টল করা হয়েছে)" },
+  "alert_updateAvail": { "message": "আপডেট উপলব্ধ" },
+  "alert_newerVer": { "message": "-এ একটি আপডেট" },
+  "alert_isAvail": { "message": "সহজলভ্য" },
+  "alert_upToDate": { "message": "হালনাগাদ" },
+  "alert_isUpToDate": { "message": "আপ-টু-ডেট" },
+  "buttonLabel_leaveReview": { "message": "একটি রিভিউ লিখুন" },
+  "buttonLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
+  "buttonLabel_update": { "message": "আপডেট করুন" },
+  "buttonLabel_dismiss": { "message": "খারিজ করুন" },
+  "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" },
   "mode_autoClear": { "message": "অটো- ক্লিয়ার" }
 }

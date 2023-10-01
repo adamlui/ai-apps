@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "表示切替" },
   "menuLabel_buttonVis": { "message": "ボタン表示" },
   "menuLabel_modeNotifs": { "message": "モード通知" },
+  "menuLabel_about": { "message": "詳細" },
   "menuLabel_disabled": { "message": "無効（拡張機能がインストールされています）" },
+  "alert_updateAvail": { "message": "利用可能なアップデート" },
+  "alert_newerVer": { "message": "に更新します" },
+  "alert_isAvail": { "message": "利用可能" },
+  "alert_upToDate": { "message": "最新" },
+  "alert_isUpToDate": { "message": "最新だ" },
+  "buttonLabel_leaveReview": { "message": "レビューを書く" },
+  "buttonLabel_updateCheck": { "message": "更新を確認" },
+  "buttonLabel_update": { "message": "更新情報" },
+  "buttonLabel_dismiss": { "message": "解散" },
+  "link_viewChanges": { "message": "変更を表示" },
   "mode_autoClear": { "message": "自動クリアモード" }
 }

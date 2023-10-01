@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Synleg bokmerke" },
   "menuLabel_buttonVis": { "message": "Knappsynlighet" },
   "menuLabel_modeNotifs": { "message": "Modusvarsler" },
+  "menuLabel_about": { "message": "Om" },
   "menuLabel_disabled": { "message": "Deaktivert (utvidelse installert)" },
+  "alert_updateAvail": { "message": "Oppdatering tilgjengelig" },
+  "alert_newerVer": { "message": "En oppdatering til" },
+  "alert_isAvail": { "message": "tilgjengelig" },
+  "alert_upToDate": { "message": "Oppdatert" },
+  "alert_isUpToDate": { "message": "er oppdatert" },
+  "buttonLabel_leaveReview": { "message": "Legg igjen en anmeldelse" },
+  "buttonLabel_updateCheck": { "message": "Se etter oppdateringer" },
+  "buttonLabel_update": { "message": "Oppdater" },
+  "buttonLabel_dismiss": { "message": "Ignorer" },
+  "link_viewChanges": { "message": "Vis endringer" },
   "mode_autoClear": { "message": "Auto-tøm" }
 }

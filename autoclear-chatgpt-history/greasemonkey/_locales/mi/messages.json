@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Tiro Toggle" },
   "menuLabel_buttonVis": { "message": "Tiro tānga Pātene" },
   "menuLabel_modeNotifs": { "message": "Notifications" },
+  "menuLabel_about": { "message": "Mō" },
   "menuLabel_disabled": { "message": "Kua monokia (kua oti te whakauru)" },
+  "alert_updateAvail": { "message": "Ngā whakahōu e wātea ana" },
+  "alert_newerVer": { "message": "He whakahoutanga" },
+  "alert_isAvail": { "message": "kei te wātea ahau" },
+  "alert_upToDate": { "message": "Whakahoutia" },
+  "alert_isUpToDate": { "message": "kei te whakahoutia" },
+  "buttonLabel_leaveReview": { "message": "Waiho he arotake" },
+  "buttonLabel_updateCheck": { "message": "Tirohia nga whakahoutanga" },
+  "buttonLabel_update": { "message": "Whakahou" },
+  "buttonLabel_dismiss": { "message": "Te whakahawea" },
+  "link_viewChanges": { "message": "Tirohia nga huringa" },
   "mode_autoClear": { "message": "Auto-Clear" }
 }

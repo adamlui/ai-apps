@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Көрінуін терістеу" },
   "menuLabel_buttonVis": { "message": "Түйменің көрінісі" },
   "menuLabel_modeNotifs": { "message": "Режим туралы хабарландырулар" },
+  "menuLabel_about": { "message": "Туралы" },
   "menuLabel_disabled": { "message": "Өшірілген (кеңейтім орнатылған)" },
+  "alert_updateAvail": { "message": "Қолжетімді жаңарту" },
+  "alert_newerVer": { "message": "Жаңарту" },
+  "alert_isAvail": { "message": "қолжетімді" },
+  "alert_upToDate": { "message": "Жаңартылған" },
+  "alert_isUpToDate": { "message": "жаңартылған" },
+  "buttonLabel_leaveReview": { "message": "Пікір қалдыру" },
+  "buttonLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
+  "buttonLabel_update": { "message": "Жаңарту" },
+  "buttonLabel_dismiss": { "message": "Жұмыстан шығару" },
+  "link_viewChanges": { "message": "Өзгерістерді көру" },
   "mode_autoClear": { "message": "Автоматты тазалау" }
 }

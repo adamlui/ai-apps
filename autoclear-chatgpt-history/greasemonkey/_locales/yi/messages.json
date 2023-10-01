@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "אַוטאָקלעאַר טשאַטגפּט געשיכטע" },
+  "appDesc": { "message": "אַוטאָ-קלירז שמועס געשיכטע ווען איר באַזוכן chat.openai.com" },
+  "menuLabel_autoClear": { "message": "אַוטאָקלעאַר טשאַץ" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_buttonVis": { "message": "קנעפּל וויסיביליטי" },
+  "menuLabel_modeNotifs": { "message": "מאָדע נאָטיפיקאַטיאָנס" },
+  "menuLabel_about": { "message": "dialogs-action" },
+  "menuLabel_disabled": { "message": "פאַרקריפּלט (פאַרלענגערונג אינסטאַלירן)" },
+  "alert_updateAvail": { "message": "דערהייַנטיקן בנימצא" },
+  "alert_newerVer": { "message": "אַ דערהייַנטיקן צו" },
+  "alert_isAvail": { "message": "איז בנימצא" },
+  "alert_upToDate": { "message": "היינטצייטיג" },
+  "alert_isUpToDate": { "message": "איז דערהייַנטיקט" },
+  "buttonLabel_leaveReview": { "message": "לאָזן אַ רעצענזיע" },
+  "buttonLabel_updateCheck": { "message": "זוך נייע ווערסיעס" },
+  "buttonLabel_update": { "message": "דערהייַנטיקן" },
+  "buttonLabel_dismiss": { "message": "אָפּזאָגן" },
+  "link_viewChanges": { "message": "קוק ענדערונגען" },
+  "mode_autoClear": { "message": "אַוטאָ-קלאָר" }
+}

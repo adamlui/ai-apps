@@ -5,6 +5,17 @@
   "menuLabel_toggleVis": { "message": "Միացնել տեսանելիությունը" },
   "menuLabel_buttonVis": { "message": "Կոճակի տեսանելիություն" },
   "menuLabel_modeNotifs": { "message": "Ռեժիմի ծանուցումներ" },
+  "menuLabel_about": { "message": "Մանրամասն" },
   "menuLabel_disabled": { "message": "Անջատված է (երկարաձգումը տեղադրված է)" },
+  "alert_updateAvail": { "message": "Թարմացումը հասանելի է" },
+  "alert_newerVer": { "message": "Թարմացում" },
+  "alert_isAvail": { "message": "առկա է" },
+  "alert_upToDate": { "message": "Թարմացված" },
+  "alert_isUpToDate": { "message": "այն արդիական է" },
+  "buttonLabel_leaveReview": { "message": "Թողնել ակնարկ" },
+  "buttonLabel_updateCheck": { "message": "Ստուգել թարմացումները" },
+  "buttonLabel_update": { "message": "Այժմեականացնել / Արդիականացնել" },
+  "buttonLabel_dismiss": { "message": "Փակել" },
+  "link_viewChanges": { "message": "Դիտել փոփոխությունները" },
   "mode_autoClear": { "message": "Ավտոմատ մաքրում" }
 }

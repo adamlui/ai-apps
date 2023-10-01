@@ -1,0 +1,21 @@
+{
+  "appName": { "message": "ÇatGPT Taryhyny Awtomatik Aç" },
+  "appDesc": { "message": "Çat.openai.com-a baranyňyzda, özbaşdak arassalaýan gürrüň taryhy" },
+  "menuLabel_autoClear": { "message": "Çatlary Awtomatik Aç" },
+  "menuLabel_toggleVis": { "message": "Görnüşi toggle" },
+  "menuLabel_buttonVis": { "message": "Buton Görnüşi" },
+  "menuLabel_modeNotifs": { "message": "Mod bildirişleri" },
+  "menuLabel_about": { "message": "_Barada" },
+  "menuLabel_disabled": { "message": "Saýlan (uzynlyk goýuldy)" },
+  "alert_updateAvail": { "message": "Täzeleşdir" },
+  "alert_newerVer": { "message": "Täzeleşdirmek" },
+  "alert_isAvail": { "message": "häzir bar" },
+  "alert_upToDate": { "message": "Up-to-date" },
+  "alert_isUpToDate": { "message": "häzirki döwürde" },
+  "buttonLabel_leaveReview": { "message": "Çykyş goý" },
+  "buttonLabel_updateCheck": { "message": "Updates üçin täzelendir" },
+  "buttonLabel_update": { "message": "Täzele" },
+  "buttonLabel_dismiss": { "message": "Dismiss" },
+  "link_viewChanges": { "message": "Özgertmeleri Gör" },
+  "mode_autoClear": { "message": "Ehlisini Saýla" }
+}
