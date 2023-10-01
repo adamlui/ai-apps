@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "ChatGPT erantzunak gehitzen ditu BraveGPT alboko barran (GPT-4-k bultzatuta!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API modua" },
   "menuLabel_require": { "message": "Eskatu" },
   "menuLabel_beforeQuery": { "message": "kontsultaren aurretik" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "Proxy APIa ez dabil" },
   "alert_suggestProxy": { "message": "Saiatu tresna-barran Proxy modua aktibatzen" },
   "alert_suggestOpenAI": { "message": "Saiatu tresna-barrako proxy modua desaktibatzen" },
-  "alert_censored": { "message": "Sentitzen dugu, gure produktuen arauen arabera, ezin dizugu galdera honi erantzunik eman, saiatu beste galdera batzuk." },
+  "alert_censored": { "message": "Sentitzen dugu, gure produktuen arauen arabera, ezin dizugu galdera honi erantzunik eman, saiatu beste galdera batzuk" },
   "alert_maintenance": { "message": "AI sistema mantentzen" },
   "buttonLabel_update": { "message": "Eguneratu" },
   "buttonLabel_updateCheck": { "message": "Begiratu _eguneraketak:" },
