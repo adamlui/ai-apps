@@ -5,7 +5,7 @@
   "menuLabel_require": { "message": "Патрабаванне" },
   "menuLabel_beforeQuery": { "message": "перад запытам" },
   "menuLabel_afterQuery": { "message": "пасля запыту" },
-  "menuLabel_fatterSidebar": { "message": "Бакавая панэль Fatter" },
+  "menuLabel_fatterSidebar": { "message": "Тлустая бакавая панэль" },
   "menuLabel_replyLanguage": { "message": "Мова адказу" },
   "menuLabel_about": { "message": "Пра нас" },
   "about_version": { "message": "Версія" },
@@ -34,7 +34,7 @@
   "alert_proxyNotWorking": { "message": "API проксі не працуе" },
   "alert_suggestProxy": { "message": "Паспрабуйце ўключыць рэжым проксі ў панэлі інструментаў" },
   "alert_suggestOpenAI": { "message": "Паспрабуйце выключыць рэжым проксі ў панэлі інструментаў" },
-  "alert_censored": { "message": "На жаль, у адпаведнасці з нашымі правіламі прадукцыі, мы не можам даць вам адказ на гэтае пытанне, калі ласка, паспрабуйце іншыя пытанні." },
+  "alert_censored": { "message": "На жаль, у адпаведнасці з нашымі правіламі прадукцыі, мы не можам даць вам адказ на гэтае пытанне, калі ласка, паспрабуйце іншыя пытанні" },
   "alert_maintenance": { "message": "Сістэма штучнага інтэлекту ў абслугоўванні" },
   "buttonLabel_update": { "message": "Абноўлена " },
   "buttonLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
@@ -42,6 +42,6 @@
   "buttonLabel_dismiss": { "message": "Адхіліць" },
   "link_viewChanges": { "message": "Праглядзець змены" },
   "link_shareFeedback": { "message": "Падзяліцца зваротнай сувяззю" },
-  "state_enabled": { "message": "XYZ/ альфа- канал" },
+  "state_enabled": { "message": "уключаны" },
   "state_disabled": { "message": "адключаны" }
 }
