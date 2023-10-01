@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "માહિતી " },
   "about_version": { "message": "આવૃત્તિ" },
   "about_poweredBy": { "message": "દ્વારા સંચાલિત" },
-  "about_sourceCode": { "message": "GitHub સ્ત્રોત" },
+  "about_sourceCode": { "message": "સ્ત્રોત કોડ" },
   "prompt_updateReplyLang": { "message": "જવાબની ભાષા અપડેટ કરો" },
   "alert_prefixMode": { "message": "ઉપસર્ગ સ્થિતિ" },
   "alert_suffixMode": { "message": "પ્રત્યય સ્થિતિ" },

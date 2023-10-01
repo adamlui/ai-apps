@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "സംബന്ധിച്ച്" },
   "about_version": { "message": "പതിപ്പ്" },
   "about_poweredBy": { "message": "നയിച്ചത്" },
-  "about_sourceCode": { "message": "GitHub ഉറവിടം" },
+  "about_sourceCode": { "message": "സോഴ്സ് കോഡ്" },
   "prompt_updateReplyLang": { "message": "മറുപടി ഭാഷ അപ്‌ഡേറ്റ് ചെയ്യുക" },
   "alert_prefixMode": { "message": "പ്രിഫിക്സ് മോഡ്" },
   "alert_suffixMode": { "message": "സഫിക്സ് മോഡ്" },

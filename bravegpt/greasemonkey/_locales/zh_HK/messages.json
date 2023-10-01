@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "關於我們" },
   "about_version": { "message": "版本" },
   "about_poweredBy": { "message": "技術支持" },
-  "about_sourceCode": { "message": "GitHub源" },
+  "about_sourceCode": { "message": "原始碼" },
   "prompt_updateReplyLang": { "message": "更新回覆語言" },
   "alert_prefixMode": { "message": "前綴模式" },
   "alert_suffixMode": { "message": "後綴模式" },

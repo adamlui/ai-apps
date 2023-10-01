@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Пра нас" },
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Пры падтрымцы" },
-  "about_sourceCode": { "message": "Крыніца GitHub" },
+  "about_sourceCode": { "message": "Зыходнікі" },
   "prompt_updateReplyLang": { "message": "Абнавіць мову адказаў" },
   "alert_prefixMode": { "message": "Рэжым прэфікса" },
   "alert_suffixMode": { "message": "Рэжым суфікса" },

@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Kaga" },
   "about_version": { "message": "VERSION" },
   "about_poweredBy": { "message": "E tsamaisiwa ke" },
-  "about_sourceCode": { "message": "Motswedi wa GitHub" },
+  "about_sourceCode": { "message": "Source code" },
   "prompt_updateReplyLang": { "message": "UPDATE ANSWER LANGUO" },
   "alert_prefixMode": { "message": "Prefix Mode" },
   "alert_suffixMode": { "message": "Suffix Mode" },

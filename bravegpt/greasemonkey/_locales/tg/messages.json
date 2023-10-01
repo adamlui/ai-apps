@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "About" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Powered by" },
-  "about_sourceCode": { "message": "GitHub source" },
+  "about_sourceCode": { "message": "Рамзи манбаъ" },
   "prompt_updateReplyLang": { "message": "Update reply language" },
   "alert_prefixMode": { "message": "Prefix Mode" },
   "alert_suffixMode": { "message": "Suffix Mode" },

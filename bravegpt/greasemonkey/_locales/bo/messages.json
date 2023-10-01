@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "མྱུར་ཨང་སྐོར།" },
   "about_version": { "message": "པར་གཞི།" },
   "about_poweredBy": { "message": "དྲ་ཚིག་བཟོ་མཁན།" },
-  "about_sourceCode": { "message": "GitHub ཐོན་ཁུངས་" },
+  "about_sourceCode": { "message": "འབྱུང་ཁུངས །" },
   "prompt_updateReplyLang": { "message": "སྐད་ཡིག་གསར་འགྱུར །" },
   "alert_prefixMode": { "message": "སྔོན་སྒྲིག" },
   "alert_suffixMode": { "message": "Suffix Mode" },

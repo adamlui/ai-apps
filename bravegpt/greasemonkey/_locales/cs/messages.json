@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "O" },
   "about_version": { "message": "Verze" },
   "about_poweredBy": { "message": "Běží na" },
-  "about_sourceCode": { "message": "Zdroj GitHubu" },
+  "about_sourceCode": { "message": "Zdrojový kód" },
   "prompt_updateReplyLang": { "message": "Aktualizovat jazyk odpovědi" },
   "alert_prefixMode": { "message": "Režim předpony" },
   "alert_suffixMode": { "message": "Přípona" },

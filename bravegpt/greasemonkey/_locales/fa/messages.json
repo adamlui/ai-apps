@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "درباره" },
   "about_version": { "message": "نسخه برنامه" },
   "about_poweredBy": { "message": "قدرت گرفته توسط" },
-  "about_sourceCode": { "message": "منبع GitHub" },
+  "about_sourceCode": { "message": "سورس کد" },
   "prompt_updateReplyLang": { "message": "زبان پاسخ را به روز کنید" },
   "alert_prefixMode": { "message": "حالت پیشوند" },
   "alert_suffixMode": { "message": "حالت پسوند" },

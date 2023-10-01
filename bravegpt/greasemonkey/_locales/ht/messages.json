@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Apwopo" },
   "about_version": { "message": "Vèsyon" },
   "about_poweredBy": { "message": "Powered by" },
-  "about_sourceCode": { "message": "Sous GitHub" },
+  "about_sourceCode": { "message": "kòd sous/ code source / le code source mis à jour/code en langage source" },
   "prompt_updateReplyLang": { "message": "MIZAJOU REPONS LANG" },
   "alert_prefixMode": { "message": "Mòd Prefiks" },
   "alert_suffixMode": { "message": "Mòd Suffix" },

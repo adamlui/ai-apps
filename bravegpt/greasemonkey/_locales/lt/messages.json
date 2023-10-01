@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Apie" },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Įgalino Proneta" },
-  "about_sourceCode": { "message": "GitHub šaltinis" },
+  "about_sourceCode": { "message": "Pradinis kodas" },
   "prompt_updateReplyLang": { "message": "Atnaujinti atsakymo kalbą" },
   "alert_prefixMode": { "message": "Priešdėlio režimas" },
   "alert_suffixMode": { "message": "Priesagos režimas" },

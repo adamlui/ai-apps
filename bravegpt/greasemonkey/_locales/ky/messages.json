@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "_Апплет жөнүндө" },
   "about_version": { "message": "Версиясы" },
   "about_poweredBy": { "message": "Тарабынан иштелип чыккан" },
-  "about_sourceCode": { "message": "GitHub булагы" },
+  "about_sourceCode": { "message": "Баштапкы код" },
   "prompt_updateReplyLang": { "message": "Жооп тилин жаңыртуу" },
   "alert_prefixMode": { "message": "Prefix режими" },
   "alert_suffixMode": { "message": "Suffix режими" },

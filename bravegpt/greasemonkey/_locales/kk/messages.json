@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Туралы" },
   "about_version": { "message": "Нұсқа" },
   "about_poweredBy": { "message": "Сайтты жасаған" },
-  "about_sourceCode": { "message": "GitHub көзі" },
+  "about_sourceCode": { "message": "Бастапқы код" },
   "prompt_updateReplyLang": { "message": "Жауап тілін жаңарту" },
   "alert_prefixMode": { "message": "Префикс режимі" },
   "alert_suffixMode": { "message": "Suffix режимі" },

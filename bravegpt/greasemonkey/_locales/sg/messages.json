@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "About sara" },
   "about_version": { "message": "Yângâ tî kodoro" },
   "about_poweredBy": { "message": "A yeke sara kua na ni" },
-  "about_sourceCode": { "message": "GitHub so ayeke na gunda ni" },
+  "about_sourceCode": { "message": "Source code ti" },
   "prompt_updateReplyLang": { "message": "Tënë ti yanga ti kodoro niModifier" },
   "alert_prefixMode": { "message": "Prefix Mode" },
   "alert_suffixMode": { "message": "A yeke nzoni ti tene zo asara ye na lege ni" },

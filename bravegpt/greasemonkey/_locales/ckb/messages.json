@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "دەربارە" },
   "about_version": { "message": "وشان" },
   "about_poweredBy": { "message": "به ‌ کاره ‌اتووه ‌ له ‌ لایه ‌" },
-  "about_sourceCode": { "message": "سەرچاوەی GitHub" },
+  "about_sourceCode": { "message": "کۆدی سەرچاوە" },
   "prompt_updateReplyLang": { "message": "زمانی وەڵام نوێ بکەوە" },
   "alert_prefixMode": { "message": "Prefix mode" },
   "alert_suffixMode": { "message": "Suffix mode" },

@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "সম্বন্ধে" },
   "about_version": { "message": "সংস্করণ" },
   "about_poweredBy": { "message": "নিবেদন করছেন" },
-  "about_sourceCode": { "message": "গিটহাবের উৎস" },
+  "about_sourceCode": { "message": "সোর্স কোড" },
   "prompt_updateReplyLang": { "message": "উত্তর ভাষা আপডেট করুন" },
   "alert_prefixMode": { "message": "উপসর্গ মোড" },
   "alert_suffixMode": { "message": "সাফিক্স মোড" },

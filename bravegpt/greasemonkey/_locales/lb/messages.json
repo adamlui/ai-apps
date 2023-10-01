@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Iwwer Qt" },
   "about_version": { "message": "Versioun" },
   "about_poweredBy": { "message": "Bereetgestallt vun" },
-  "about_sourceCode": { "message": "GitHub Quell" },
+  "about_sourceCode": { "message": "Quellcode" },
   "prompt_updateReplyLang": { "message": "Äntwertssprooch aktualiséieren" },
   "alert_prefixMode": { "message": "Viraussetzungsmodus" },
   "alert_suffixMode": { "message": "Suffix-Modus" },

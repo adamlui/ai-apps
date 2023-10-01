@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Mahitungod" },
   "about_version": { "message": "Bersyon:" },
   "about_poweredBy": { "message": "Gipadagan sa" },
-  "about_sourceCode": { "message": "Gigikanan sa GitHub" },
+  "about_sourceCode": { "message": "Gigikana sa kodigo" },
   "prompt_updateReplyLang": { "message": "Tubag sa Lenguahe" },
   "alert_prefixMode": { "message": "Prefix Mode" },
   "alert_suffixMode": { "message": "Suffix Mode" },

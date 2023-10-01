@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Um" },
   "about_version": { "message": "Útgáfa" },
   "about_poweredBy": { "message": "Knúið af" },
-  "about_sourceCode": { "message": "GitHub uppspretta" },
+  "about_sourceCode": { "message": "Upprunakóði@ info: whatsthis" },
   "prompt_updateReplyLang": { "message": "Uppfæra tungumál svars" },
   "alert_prefixMode": { "message": "Forskeytahamur" },
   "alert_suffixMode": { "message": "Viðskeytahamur" },

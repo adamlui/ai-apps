@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Om" },
   "about_version": { "message": "Versjon" },
   "about_poweredBy": { "message": "Drevet av" },
-  "about_sourceCode": { "message": "GitHub-kilde" },
+  "about_sourceCode": { "message": "Kildekode" },
   "prompt_updateReplyLang": { "message": "Oppdater svarspråk" },
   "alert_prefixMode": { "message": "Prefiksmodus" },
   "alert_suffixMode": { "message": "Suffiksmodus" },

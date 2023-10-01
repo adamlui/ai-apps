@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "ກ່ຽວກັບ" },
   "about_version": { "message": "ຮຸ່ນ" },
   "about_poweredBy": { "message": "ຂັບເຄື່ອນໂດຍ" },
-  "about_sourceCode": { "message": "ແຫຼ່ງຂໍ້ມູນ GitHub" },
+  "about_sourceCode": { "message": "ຊອດສ໌ໂຄດ" },
   "prompt_updateReplyLang": { "message": "ອັບເດດພາສາຕອບ" },
   "alert_prefixMode": { "message": "ໂໝດອຳນວຍຄວາມສະດວກ" },
   "alert_suffixMode": { "message": "ໂໝດ Suffix" },

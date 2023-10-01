@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Про нас" },
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Працює на" },
-  "about_sourceCode": { "message": "Джерело GitHub" },
+  "about_sourceCode": { "message": "Джерельний код" },
   "prompt_updateReplyLang": { "message": "Оновити мову відповіді" },
   "alert_prefixMode": { "message": "Режим префікса" },
   "alert_suffixMode": { "message": "Режим суфіксу" },

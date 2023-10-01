@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Omtrent" },
   "about_version": { "message": "Weergawe" },
   "about_poweredBy": { "message": "Aangedryf deur" },
-  "about_sourceCode": { "message": "GitHub-bron" },
+  "about_sourceCode": { "message": "Oorsprong Kode" },
   "prompt_updateReplyLang": { "message": "Dateer antwoordtaal op" },
   "alert_prefixMode": { "message": "Voorvoegsel Modus" },
   "alert_suffixMode": { "message": "Agtervoegsel Modus" },

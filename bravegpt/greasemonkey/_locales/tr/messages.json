@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Hakkımızda" },
   "about_version": { "message": "Versiyon" },
   "about_poweredBy": { "message": "Destek" },
-  "about_sourceCode": { "message": "GitHub kaynağı" },
+  "about_sourceCode": { "message": "Kaynak Kodu" },
   "prompt_updateReplyLang": { "message": "Yanıt dilini güncelleyin" },
   "alert_prefixMode": { "message": "Önek Modu" },
   "alert_suffixMode": { "message": "Sonek Modu" },

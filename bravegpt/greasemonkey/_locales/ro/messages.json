@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Despre" },
   "about_version": { "message": "Versiune " },
   "about_poweredBy": { "message": "Operat de" },
-  "about_sourceCode": { "message": "Sursă GitHub" },
+  "about_sourceCode": { "message": "Codul sursă" },
   "prompt_updateReplyLang": { "message": "Actualizează limba răspunsului" },
   "alert_prefixMode": { "message": "Mod prefix" },
   "alert_suffixMode": { "message": "Mod sufix" },

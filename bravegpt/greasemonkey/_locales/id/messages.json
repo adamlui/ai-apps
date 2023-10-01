@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Ihwal" },
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Didukung oleh " },
-  "about_sourceCode": { "message": "Sumber GitHub" },
+  "about_sourceCode": { "message": "Kode sumber" },
   "prompt_updateReplyLang": { "message": "Perbarui bahasa balasan" },
   "alert_prefixMode": { "message": "Mode Prefiks" },
   "alert_suffixMode": { "message": "Mode Akhiran" },

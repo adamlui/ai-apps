@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "परिचय" },
   "about_version": { "message": "संस्करण" },
   "about_poweredBy": { "message": "...द्वारा पावरशुदा" },
-  "about_sourceCode": { "message": "GitHub स्रोत" },
+  "about_sourceCode": { "message": "सोर्स कोड" },
   "prompt_updateReplyLang": { "message": "उत्तर भाषा अपडेट करें" },
   "alert_prefixMode": { "message": "उपसर्ग मोड" },
   "alert_suffixMode": { "message": "प्रत्यय मोड" },

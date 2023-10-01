@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "אודות" },
   "about_version": { "message": "גירסה" },
   "about_poweredBy": { "message": "באמצעות " },
-  "about_sourceCode": { "message": "מקור GitHub" },
+  "about_sourceCode": { "message": "קוד מקור" },
   "prompt_updateReplyLang": { "message": "עדכון שפת התגובה" },
   "alert_prefixMode": { "message": "מצב קידומת" },
   "alert_suffixMode": { "message": "מצב סיומת" },

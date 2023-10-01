@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "About" },
   "about_version": { "message": "Tok Pisin" },
   "about_poweredBy": { "message": "Em i gat bikpela strong" },
-  "about_sourceCode": { "message": "GitHub Source" },
+  "about_sourceCode": { "message": "Kod bilong as" },
   "prompt_updateReplyLang": { "message": "Tokples" },
   "alert_prefixMode": { "message": "Prefix mode" },
   "alert_suffixMode": { "message": "Suffix mode" },

@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Malunga" },
   "about_version": { "message": "Inguqulelo" },
   "about_poweredBy": { "message": "Ixhaswa ngu" },
-  "about_sourceCode": { "message": "Umthombo weGitHub" },
+  "about_sourceCode": { "message": "Ikhowudi engumthombo" },
   "prompt_updateReplyLang": { "message": "Hlaziya ulwimi lwempendulo" },
   "alert_prefixMode": { "message": "Imowudi Yesimaphambili" },
   "alert_suffixMode": { "message": "Imowudi Ye-suffix" },

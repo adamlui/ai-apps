@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Ho‘ākāka" },
   "about_version": { "message": "Manao" },
   "about_poweredBy": { "message": "Hoʻāmana ʻia e" },
-  "about_sourceCode": { "message": "Puna GitHub" },
+  "about_sourceCode": { "message": "Hoʻopā&#39;ālua" },
   "prompt_updateReplyLang": { "message": "Hōʻano hou i ka ʻōlelo pane" },
   "alert_prefixMode": { "message": "Ke ano prefix" },
   "alert_suffixMode": { "message": "ʻAno Suffix" },

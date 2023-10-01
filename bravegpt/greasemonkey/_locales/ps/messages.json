@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "په هکله" },
   "about_version": { "message": ":نسخه" },
   "about_poweredBy": { "message": "طراحی شده توسط" },
-  "about_sourceCode": { "message": "د GitHub سرچینه" },
+  "about_sourceCode": { "message": "سرچينه كوډه" },
   "prompt_updateReplyLang": { "message": "د ځواب ژبه تازه کړئ" },
   "alert_prefixMode": { "message": "د مختاړي اکر" },
   "alert_suffixMode": { "message": "وروستنی حالت" },

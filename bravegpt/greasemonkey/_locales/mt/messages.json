@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Dwar" },
   "about_version": { "message": "Verżjoni" },
   "about_poweredBy": { "message": "Imħaddem minn" },
-  "about_sourceCode": { "message": "Sors ta' GitHub" },
+  "about_sourceCode": { "message": "Kodiċi tas-sors" },
   "prompt_updateReplyLang": { "message": "Aġġorna l-lingwa tat-tweġibiet" },
   "alert_prefixMode": { "message": "Modalità Prefiss" },
   "alert_suffixMode": { "message": "Modalità Suffix" },

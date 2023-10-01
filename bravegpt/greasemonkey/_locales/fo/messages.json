@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Um" },
   "about_version": { "message": "Útgáva:" },
   "about_poweredBy": { "message": "Powered by SFX" },
-  "about_sourceCode": { "message": "GitHub keldur" },
+  "about_sourceCode": { "message": "Ada keldukota" },
   "prompt_updateReplyLang": { "message": "Uppdatering av málinum" },
   "alert_prefixMode": { "message": "Præfiksmodus" },
   "alert_suffixMode": { "message": "Eftirfylgjandi standi" },

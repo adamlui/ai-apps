@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Mikasika ny" },
   "about_version": { "message": "Kinova" },
   "about_poweredBy": { "message": "Ampandehanin'i" },
-  "about_sourceCode": { "message": "Loharano GitHub" },
+  "about_sourceCode": { "message": "Kaody niaingana" },
   "prompt_updateReplyLang": { "message": "Avao ny fiteny valiana" },
   "alert_prefixMode": { "message": "Fomban'ny tovona" },
   "alert_suffixMode": { "message": "Fomba Suffix" },

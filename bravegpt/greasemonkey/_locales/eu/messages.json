@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Egileari Buruz" },
   "about_version": { "message": "Bertsioa" },
   "about_poweredBy": { "message": "Teknologia: " },
-  "about_sourceCode": { "message": "GitHub iturria" },
+  "about_sourceCode": { "message": "Iturburu kode" },
   "prompt_updateReplyLang": { "message": "Eguneratu erantzunen hizkuntza" },
   "alert_prefixMode": { "message": "Aurrizkien modua" },
   "alert_suffixMode": { "message": "Atzizki modua" },

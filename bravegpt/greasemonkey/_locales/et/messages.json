@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Info" },
   "about_version": { "message": "Versioon" },
   "about_poweredBy": { "message": "Powered by" },
-  "about_sourceCode": { "message": "GitHubi allikas" },
+  "about_sourceCode": { "message": "Lähtekood" },
   "prompt_updateReplyLang": { "message": "Uuenda vastuse keelt" },
   "alert_prefixMode": { "message": "Eesliite režiim" },
   "alert_suffixMode": { "message": "Järelliite režiim" },

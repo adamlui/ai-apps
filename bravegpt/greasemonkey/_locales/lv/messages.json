@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Par produktu" },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Izstrādāts" },
-  "about_sourceCode": { "message": "GitHub avots" },
+  "about_sourceCode": { "message": "Avots:" },
   "prompt_updateReplyLang": { "message": "Atjaunināt atbildes valodu" },
   "alert_prefixMode": { "message": "Prefiksa režīms" },
   "alert_suffixMode": { "message": "Sufiksa režīms" },

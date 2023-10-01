@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "About About" },
   "about_version": { "message": "Vershon" },
   "about_poweredBy": { "message": "Potenciá por" },
-  "about_sourceCode": { "message": "GitHub Fuente" },
+  "about_sourceCode": { "message": "Kódigo di fuente" },
   "prompt_updateReplyLang": { "message": "Actualizacion Idioma" },
   "alert_prefixMode": { "message": "Pre-escucha Mode" },
   "alert_suffixMode": { "message": "Suffisante Moda" },

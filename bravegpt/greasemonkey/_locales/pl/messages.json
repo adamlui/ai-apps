@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Około" },
   "about_version": { "message": "Wersja" },
   "about_poweredBy": { "message": "Obsługiwane przez" },
-  "about_sourceCode": { "message": "Źródło: GitHub&#10;&#10; " },
+  "about_sourceCode": { "message": "Kod źródłowy" },
   "prompt_updateReplyLang": { "message": "Zaktualizuj język odpowiedzi" },
   "alert_prefixMode": { "message": "Tryb prefiksu" },
   "alert_suffixMode": { "message": "Tryb przyrostka" },

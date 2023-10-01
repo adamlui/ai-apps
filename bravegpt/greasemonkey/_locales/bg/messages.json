@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Относно" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Създадено от" },
-  "about_sourceCode": { "message": "Източник на GitHub" },
+  "about_sourceCode": { "message": "Изходен код" },
   "prompt_updateReplyLang": { "message": "Актуализиране на езика за отговор" },
   "alert_prefixMode": { "message": "Режим на префикс" },
   "alert_suffixMode": { "message": "Режим на суфикс" },

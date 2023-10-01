@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Gwybodaeth" },
   "about_version": { "message": "Fersiwn" },
   "about_poweredBy": { "message": "Wedi'i gynnal gan" },
-  "about_sourceCode": { "message": "Ffynhonnell GitHub" },
+  "about_sourceCode": { "message": "Cod ffynhonnell" },
   "prompt_updateReplyLang": { "message": "Diweddaru iaith ateb" },
   "alert_prefixMode": { "message": "Modd Rhagddodiad" },
   "alert_suffixMode": { "message": "Modd Ôl - ddodiad" },

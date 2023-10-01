@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Alproksimigas" },
   "about_version": { "message": "Versio" },
   "about_poweredBy": { "message": "funkciigita de" },
-  "about_sourceCode": { "message": "Fonto de GitHub" },
+  "about_sourceCode": { "message": "Fontkodo" },
   "prompt_updateReplyLang": { "message": "Ĝisdatigi respondan lingvon" },
   "alert_prefixMode": { "message": "Prefiksa moduso" },
   "alert_suffixMode": { "message": "Suffix Mode" },

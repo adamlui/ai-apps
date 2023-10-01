@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "အကြောင်း" },
   "about_version": { "message": "မူ -" },
   "about_poweredBy": { "message": "စွမ်းဆောင်ရည် -" },
-  "about_sourceCode": { "message": "GitHub အရင်းအမြစ်" },
+  "about_sourceCode": { "message": "ပင္မကုဒ္" },
   "prompt_updateReplyLang": { "message": "ပြန်ကြားချက်ဘာသာစကားကို အပ်ဒိတ်လုပ်ပါ" },
   "alert_prefixMode": { "message": "ရှေ့ဆက်မုဒ်" },
   "alert_suffixMode": { "message": "နောက်ဆက်တွဲ မုဒ်" },

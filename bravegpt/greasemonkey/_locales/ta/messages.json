@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "BraveGPT பக்கப்பட்டியில் ChatGPT பதில்களைச் சேர்க்கிறது (GPT-4 மூலம் இயக்கப்படுகிறது!)" },
   "menuLabel_proxyAPImode": { "message": "ப்ராக்ஸி API பயன்முறை" },
   "menuLabel_require": { "message": "தேவை" },
   "menuLabel_beforeQuery": { "message": "வினவலுக்கு முன்" },
@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "பற்றி" },
   "about_version": { "message": "பதிப்பு" },
   "about_poweredBy": { "message": "மூலம் இயக்கப்படுகிறது" },
-  "about_sourceCode": { "message": "GitHub மூலம்" },
+  "about_sourceCode": { "message": "மூல குறியீடு" },
   "prompt_updateReplyLang": { "message": "பதில் மொழியைப் புதுப்பிக்கவும்" },
   "alert_prefixMode": { "message": "முன்னொட்டு முறை" },
   "alert_suffixMode": { "message": "பின்னிணைப்பு முறை" },

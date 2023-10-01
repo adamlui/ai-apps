@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Quant a" },
   "about_version": { "message": "Versió" },
   "about_poweredBy": { "message": "Desenvolupat per" },
-  "about_sourceCode": { "message": "Origen del GitHub" },
+  "about_sourceCode": { "message": "Codi font" },
   "prompt_updateReplyLang": { "message": "Actualitza l'idioma de la resposta" },
   "alert_prefixMode": { "message": "Mode de prefix" },
   "alert_suffixMode": { "message": "Mode de sufix" },

@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "O nama" },
   "about_version": { "message": "Verzija" },
   "about_poweredBy": { "message": "Pokreće" },
-  "about_sourceCode": { "message": "GitHub izvor" },
+  "about_sourceCode": { "message": "Izvorni kod" },
   "prompt_updateReplyLang": { "message": "Ažurirajte jezik odgovora" },
   "alert_prefixMode": { "message": "Način rada prefiksa" },
   "alert_suffixMode": { "message": "Način sufiksa" },

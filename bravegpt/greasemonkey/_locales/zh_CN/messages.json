@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "关于" },
   "about_version": { "message": "版本" },
   "about_poweredBy": { "message": "数据来源：" },
-  "about_sourceCode": { "message": "GitHub源" },
+  "about_sourceCode": { "message": "源代码" },
   "prompt_updateReplyLang": { "message": "更新回复语言" },
   "alert_prefixMode": { "message": "前缀模式" },
   "alert_suffixMode": { "message": "后缀模式" },

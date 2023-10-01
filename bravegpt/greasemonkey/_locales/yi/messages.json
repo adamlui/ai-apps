@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "dialogs-action" },
   "about_version": { "message": "ווערסיע" },
   "about_poweredBy": { "message": "פּאַוערד דורך" },
-  "about_sourceCode": { "message": "גיטהוב מקור" },
+  "about_sourceCode": { "message": "מקור קאָד" },
   "prompt_updateReplyLang": { "message": "דערהייַנטיקן ענטפער שפּראַך" },
   "alert_prefixMode": { "message": "פּרעפיקס מאָדע" },
   "alert_suffixMode": { "message": "סאַפיקס מאָדע" },

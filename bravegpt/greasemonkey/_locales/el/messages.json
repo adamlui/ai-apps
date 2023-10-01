@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Σχετικά" },
   "about_version": { "message": "Έκδοση" },
   "about_poweredBy": { "message": "Με την υποστήριξη" },
-  "about_sourceCode": { "message": "Πηγή GitHub" },
+  "about_sourceCode": { "message": "Source code" },
   "prompt_updateReplyLang": { "message": "Ενημέρωση γλώσσας απάντησης" },
   "alert_prefixMode": { "message": "Λειτουργία προθέματος" },
   "alert_suffixMode": { "message": "Λειτουργία επιθέματος" },

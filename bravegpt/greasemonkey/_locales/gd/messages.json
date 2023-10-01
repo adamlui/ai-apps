@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Mar deidhinn" },
   "about_version": { "message": "Tionndadh" },
   "about_poweredBy": { "message": "Powered by" },
-  "about_sourceCode": { "message": "Tùs GitHub" },
+  "about_sourceCode": { "message": "Bun-tùs a' chod" },
   "prompt_updateReplyLang": { "message": "Ùraich an cànan freagairt" },
   "alert_prefixMode": { "message": "Modh an ro - leasachaidh" },
   "alert_suffixMode": { "message": "Modh an iar - leasachaidh" },

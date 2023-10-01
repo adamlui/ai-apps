@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Nezvedu" },
   "about_version": { "message": "Vhezheni" },
   "about_poweredBy": { "message": "Inofambiswa ne" },
-  "about_sourceCode": { "message": "GitHub mabviro" },
+  "about_sourceCode": { "message": "Kunobva kodhi" },
   "prompt_updateReplyLang": { "message": "Zivisa mutauro wekupindura" },
   "alert_prefixMode": { "message": "Prefix Mode" },
   "alert_suffixMode": { "message": "Suffix Mode" },

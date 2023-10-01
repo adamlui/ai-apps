@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Ku vyerekeye" },
   "about_version": { "message": "Traduzione" },
   "about_poweredBy": { "message": "Yashizwe mu ngiro na" },
-  "about_sourceCode": { "message": "GitHub source None None" },
+  "about_sourceCode": { "message": "Ikodi y'isôko" },
   "prompt_updateReplyLang": { "message": "Réponse de la langue nouveau" },
   "alert_prefixMode": { "message": "Prefix Mode None None" },
   "alert_suffixMode": { "message": "Uburyo buhagije" },

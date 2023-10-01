@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "ಕುರಿತಾಗಿ" },
   "about_version": { "message": "ಆವೃತ್ತಿ" },
   "about_poweredBy": { "message": "ಸಾಮರ್ಥ್ಯ ಇವರಿಂದ " },
-  "about_sourceCode": { "message": "ಗಿಟ್ ‌ ಹಬ್ ಮೂಲ" },
+  "about_sourceCode": { "message": "ಮೂಲ ಕೋಡ್" },
   "prompt_updateReplyLang": { "message": "ಪ್ರತ್ಯುತ್ತರ ಭಾಷೆಯನ್ನು ನವೀಕರಿಸಿ" },
   "alert_prefixMode": { "message": "ಪೂರ್ವಪ್ರತ್ಯಯ ಮೋಡ್" },
   "alert_suffixMode": { "message": "ಉತ್ತರ ಪ್ರತ್ಯಯ ಮೋಡ್" },

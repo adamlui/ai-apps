@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "소개" },
   "about_version": { "message": "버전" },
   "about_poweredBy": { "message": "Powered by" },
-  "about_sourceCode": { "message": "GitHub 소스" },
+  "about_sourceCode": { "message": "원본 코드" },
   "prompt_updateReplyLang": { "message": "답변 언어 업데이트" },
   "alert_prefixMode": { "message": "접두사 모드" },
   "alert_suffixMode": { "message": "접미사 모드" },

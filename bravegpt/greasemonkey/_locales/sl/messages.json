@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Vizitka" },
   "about_version": { "message": "Različica" },
   "about_poweredBy": { "message": "Poganja" },
-  "about_sourceCode": { "message": "Vir GitHub" },
+  "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode:" },
   "prompt_updateReplyLang": { "message": "Posodobi jezik odgovora" },
   "alert_prefixMode": { "message": "Način predpone" },
   "alert_suffixMode": { "message": "Način pripone" },

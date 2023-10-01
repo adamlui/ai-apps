@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "ብዛዕባ" },
   "about_version": { "message": "መበል" },
   "about_poweredBy": { "message": "ብ" },
-  "about_sourceCode": { "message": "ምንጪ GitHub" },
+  "about_sourceCode": { "message": "ምንጪ ኮድ" },
   "prompt_updateReplyLang": { "message": "ቋንቋ መልሲ ኣዘምነሉ" },
   "alert_prefixMode": { "message": "Prefix Mode" },
   "alert_suffixMode": { "message": "ሱፊክስ ሞድ" },

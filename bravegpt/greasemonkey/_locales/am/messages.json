@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "ስለ" },
   "about_version": { "message": "እትም" },
   "about_poweredBy": { "message": "የተጎለበተው በ" },
-  "about_sourceCode": { "message": "GitHub ምንጭ" },
+  "about_sourceCode": { "message": "የምንጭ ኮድ" },
   "prompt_updateReplyLang": { "message": "የምላሽ ቋንቋን ያዘምኑ" },
   "alert_prefixMode": { "message": "Prefix ሁነታ" },
   "alert_suffixMode": { "message": "Suffix ሁነታ" },

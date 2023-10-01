@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Quem somos" },
   "about_version": { "message": "Versão" },
   "about_poweredBy": { "message": "Distribuído pela" },
-  "about_sourceCode": { "message": "Fonte do GitHub" },
+  "about_sourceCode": { "message": "Código-fonte" },
   "prompt_updateReplyLang": { "message": "Atualizar idioma de resposta" },
   "alert_prefixMode": { "message": "Modo de prefixo" },
   "alert_suffixMode": { "message": "Modo Sufixo" },

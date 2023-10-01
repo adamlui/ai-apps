@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Mō" },
   "about_version": { "message": "Whakaaturanga" },
   "about_poweredBy": { "message": "Te mana o te mana" },
-  "about_sourceCode": { "message": "Pūtake GitHub" },
+  "about_sourceCode": { "message": "Waehere puna" },
   "prompt_updateReplyLang": { "message": "Whakahōu reo whakautu" },
   "alert_prefixMode": { "message": "Momo Prefix" },
   "alert_suffixMode": { "message": "Mode Suffix" },

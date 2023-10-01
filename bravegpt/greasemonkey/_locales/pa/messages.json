@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "ਇਸ ਬਾਰੇ" },
   "about_version": { "message": "ਵਰਜਨ" },
   "about_poweredBy": { "message": "ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },
-  "about_sourceCode": { "message": "GitHub ਸਰੋਤ" },
+  "about_sourceCode": { "message": "ਸਰੋਤ ਕੋਡ@ info: whatsthis" },
   "prompt_updateReplyLang": { "message": "ਜਵਾਬ ਭਾਸ਼ਾ ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ" },
   "alert_prefixMode": { "message": "ਅਗੇਤਰ ਮੋਡ" },
   "alert_suffixMode": { "message": "ਪਿਛੇਤਰ ਮੋਡ" },

@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "詳細" },
   "about_version": { "message": "バージョン" },
   "about_poweredBy": { "message": "Powered by" },
-  "about_sourceCode": { "message": "GitHubソース" },
+  "about_sourceCode": { "message": "ソースコード" },
   "prompt_updateReplyLang": { "message": "返信言語を更新" },
   "alert_prefixMode": { "message": "プレフィックスモード" },
   "alert_suffixMode": { "message": "接尾辞モード" },

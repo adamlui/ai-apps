@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Om" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Drevet af" },
-  "about_sourceCode": { "message": "GitHub-kilde" },
+  "about_sourceCode": { "message": "Kildekode" },
   "prompt_updateReplyLang": { "message": "Opdater svarsprog" },
   "alert_prefixMode": { "message": "Præfikstilstand" },
   "alert_suffixMode": { "message": "Suffikstilstand" },

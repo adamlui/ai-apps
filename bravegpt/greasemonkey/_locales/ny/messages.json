@@ -9,7 +9,7 @@
   "menuLabel_about": { "message": "Zokhudza" },
   "about_version": { "message": "Lumikizanani nafe" },
   "about_poweredBy": { "message": "Mothandizidwa ndi" },
-  "about_sourceCode": { "message": "Gwero la GitHub" },
+  "about_sourceCode": { "message": "Gwero kachidindo" },
   "prompt_updateReplyLang": { "message": "Sinthani Chilankhulo cha Yankho" },
   "alert_prefixMode": { "message": "Mchitidwe wa Prefix" },
   "alert_suffixMode": { "message": "Lumikizanani nafe" },
