@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Προσθήκη απαντήσεων ChatGPT στην πλαϊνή γραμμή BraveGPT (Με την υποστήριξη του GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Λειτουργία API διακομιστή μεσολάβησης" },
   "menuLabel_require": { "message": "Απαιτείται" },
   "menuLabel_beforeQuery": { "message": "πριν από το ερώτημα" },
@@ -33,7 +33,7 @@
   "alert_proxyNotWorking": { "message": "Το API διακομιστή μεσολάβησης δεν λειτουργεί" },
   "alert_suggestProxy": { "message": "Δοκιμάστε να ενεργοποιήσετε τη λειτουργία διακομιστή μεσολάβησης στη γραμμή εργαλείων" },
   "alert_suggestOpenAI": { "message": "Δοκιμάστε να απενεργοποιήσετε τη λειτουργία διακομιστή μεσολάβησης στη γραμμή εργαλείων" },
-  "alert_censored": { "message": "Δυστυχώς, σύμφωνα με τους κανόνες προϊόντων μας, δεν μπορούμε να σας δώσουμε απάντηση σε αυτήν την ερώτηση. Δοκιμάστε άλλες ερωτήσεις." },
+  "alert_censored": { "message": "Δυστυχώς, σύμφωνα με τους κανόνες προϊόντων μας, δεν μπορούμε να σας δώσουμε απάντηση σε αυτήν την ερώτηση. Δοκιμάστε άλλες ερωτήσεις" },
   "alert_maintenance": { "message": "Σύστημα τεχνητής νοημοσύνης υπό συντήρηση" },
   "buttonLabel_update": { "message": "Ενημέρωση" },
   "buttonLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
