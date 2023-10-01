@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Ka taapirihia nga whakautu a ChatGPT ki te paetaha BraveGPT (whakamahia e GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "API Mode fakafofonga" },
   "menuLabel_require": { "message": "Fie maʻu" },
   "menuLabel_beforeQuery": { "message": "kimuʻa he fehuʻi" },
