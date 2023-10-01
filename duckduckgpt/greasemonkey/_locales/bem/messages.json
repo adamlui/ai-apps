@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Yasosa ChatGPT amano kuboko ku DuckDuckGo sidebar (ifukwa GPT-4!)" },
+  "appDesc": { "message": "Yasosa ChatGPT amano kuboko ku DuckDuckGo insoselo (ifukwa GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Indoshi ya API ya Mbofyo" },
   "menuLabel_require": { "message": "Ifingakwafwa" },
   "menuLabel_beforeQuery": { "message": "ilyo tushilaipusha" },
@@ -11,7 +11,7 @@
   "about_version": { "message": "Ukupilibula" },
   "about_poweredBy": { "message": "Amapola by Amapola" },
   "about_sourceCode": { "message": "Ifyebo fyaba mu cipande ca kubalilapo" },
-  "prompt_updateReplyLang": { "message": "Update Mwakitwile language" },
+  "prompt_updateReplyLang": { "message": "Ubulasanshi ukubika citako" },
   "alert_prefixMode": { "message": "Mu Moda wa Cishinka" },
   "alert_suffixMode": { "message": "Mu Moda wa Sufikisi" },
   "alert_langUpdated": { "message": "Ludimi lwa lwa Tumama updated" },
