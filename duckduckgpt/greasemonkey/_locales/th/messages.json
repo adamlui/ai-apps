@@ -21,7 +21,7 @@
   "alert_updateAvail": { "message": "มีอัพเดตให้ใช้งาน" },
   "alert_newerVer": { "message": "อัพเดทไปยัง" },
   "alert_isAvail": { "message": "มี   ให้ใช้งานแล้ว" },
-  "alert_upToDate": { "message": "ถึงวันที่    .........................................  …………….." },
+  "alert_upToDate": { "message": "ปัจจุบัน" },
   "alert_isUpToDate": { "message": "เป็นปัจจุบัน" },
   "alert_ifIssuePersists": { "message": "หากปัญหายังคงอยู่ให้ลองเปิดใช้งานโหมดพร็อกซี" },
   "alert_justAmoment": { "message": "\"รอก่อน...\"" },
