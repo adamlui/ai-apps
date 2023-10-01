@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Adds ChatGPT answers to BraveGPT sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "לייגט ChatGPT ענטפֿערס צו BraveGPT סיידבאַר (פּאַוערד דורך GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "פּראָקסי אַפּי מאָדע" },
   "menuLabel_require": { "message": "דאַרפן" },
   "menuLabel_beforeQuery": { "message": "איידער אָנפֿרעג" },
@@ -42,5 +42,5 @@
   "link_viewChanges": { "message": "קוק ענדערונגען" },
   "link_shareFeedback": { "message": "ייַנטיילן באַמערקונגען" },
   "state_enabled": { "message": "ערמעגליכט" },
-  "state_disabled": { "message": "input-mode" }
+  "state_disabled": { "message": "פאַרקריפּלט" }
 }
