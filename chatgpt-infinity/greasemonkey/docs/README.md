@@ -5,6 +5,7 @@
 <div align="center">
 
 ![](https://img.shields.io/badge/Installs-10,000+-2bbbd8?logo=docusign&logoColor=white&labelColor=464646&style=for-the-badge)
+[![](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=Stars&color=yellow&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/stargazers)
 [![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/commits/main)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)
