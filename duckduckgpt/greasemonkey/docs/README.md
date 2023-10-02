@@ -103,7 +103,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 ## Social links
 
-[![](https://img.shields.io/mastodon/follow/109876284007792895?domain=https%3A%2F%2Ftechnodon.org&style=social "Follow @duckduckgpt on Mastodon (technodon.org)")](https://technodon.org/@duckduckgpt)
+[![](https://img.shields.io/mastodon/follow/111075576869014999?domain=https%3A%2F%2Ftechnodon.org&style=social "Follow @kudoai on Mastodon (technodon.org)")](https://technodon.org/@kudoai)
 [![](https://img.shields.io/github/followers/kudoai?label=Follow%20%40kudoai&style=social "Follow @kudoai on GitHub")](https://github.com/kudoai)
 [![](https://img.shields.io/youtube/channel/subscribers/UCdwQlbPJW3RbkLcHh_DGb0g?label=Follow%20%40kudoailabs&style=social "Follow @kudoailabs on YouTube")](https://www.youtube.com/@kudoailabs?sub_confirmation=1)
 <br>[![](https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social "Follow @adam on Mastodon (elonsucks.org)")](https://elonsucks.org/@adam)
