@@ -20,7 +20,7 @@
 ![](https://user-images.githubusercontent.com/10906554/223881135-dacad119-a10a-4f7c-9ca1-e5286691003f.png)
 <br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
 
 ## 🚀 Installation
 
@@ -36,7 +36,7 @@
 
 </div>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
 
 ## ⚡ Dependencies
 
@@ -56,7 +56,7 @@ Autoclear ChatGPT History relies on code from the powerful <a href="https://gith
 </div>
 </h6>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
 
 ## 🌐 Compatibility
 
@@ -80,7 +80,7 @@ Autoclear ChatGPT History is compatible w/ the following browsers using [Tamperm
 [Leave a review](https://greasyfork.org/scripts/460805-autoclear-chatgpt-history/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
 
 ## 🧠 Contributors
 
@@ -98,14 +98,14 @@ This project exists thanks to code, translations, issues & ideas from the follow
 
 </div><br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
 
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-<img height=8px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
 
 ## 📜 Related scripts
 
@@ -127,7 +127,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://github.com/adamlui/chatgpt-widescreen#readme) / 
 [Discuss](https://chatgptwidescreen.com/discuss)
 
-<img height=3px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
 <a href="#-autoclear-chatgpt-history-">Back to top ↑</a>
