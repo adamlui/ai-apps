@@ -23,7 +23,7 @@
 
 </div>
 
-## About
+## 💡 About
 
 **ChatGPT Infinity** is your ultimate chat companion: a free (yet powerful) add-on that makes ChatGPT generate infinite answers on *any* topic!
 
@@ -33,7 +33,7 @@
 
 </div>
 
-## Benefits
+## 💊 Benefits
 
 🧠 **Customizable Topic Selection** — Take control of your learning by choosing the specific topic you want ChatGPT to generate answers for
 
@@ -43,7 +43,7 @@
 
 📜 **Auto-Scroll** — Enjoy a seamless chat experience with the auto-scroll feature, ensuring that you never miss a single response
 
-## Installation
+## 🚀 Installation
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
@@ -54,7 +54,7 @@
 ![](https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-toggle.jpg)
 ![](https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-tm-menu.png)
 
-## Dependencies
+## ⚡ Dependencies
 
 <h6>
 <div align="center">
@@ -72,7 +72,7 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 </div>
 </h6>
 
-## Compatibility 
+## 🌐 Compatibility 
 
 ChatGPT Infinity is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/):
 
@@ -95,7 +95,7 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
 [Leave a review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) / 
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
-## Contributors
+## 🧠 Contributors
 
 This project exists thanks to code, translations, issues & ideas from the following contributors:
 
@@ -105,12 +105,12 @@ This project exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
-## More ChatGPT apps
+## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-## Related apps
+## 📜 Related apps
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://chatgptevo.com/autorefresh/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 > Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks.
