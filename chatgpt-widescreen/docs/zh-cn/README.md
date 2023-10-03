@@ -31,11 +31,11 @@
 
 </div>
 
-## 關於
+## 💡 關於
 
 **ChatGPT 宽屏模式** 向 ChatGPT 添加了宽屏 + 全屏模式，通过减少滚动并创造更身临其境的观看体验来增强您的聊天会话。
 
-## 演示
+## 📺 演示
 
 <div align="center">
 
@@ -45,7 +45,7 @@
 
 </div>
 
-## 好处
+## 💊 好处
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> 自定义功能，例如更大的聊天框和隐藏的页眉/页脚，以获得更宽敞的视图
 
@@ -55,11 +55,11 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> 适用于: **openai.com** + **poe.com**
 
-## 用户反馈
+## 🗨️ 用户反馈
 
 <img width=999 src="https://i.imgur.com/DXS1ew7.png">
 
-## 安装
+## 🚀 安装
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"><img style="margin: 0 2px -1px 0" height=16 src="https://i.imgur.com/0wUsChU.png"> 浏览器扩展:
 
@@ -92,7 +92,7 @@
 
 </div>
 
-## 依赖关系
+## ⚡ 依赖关系
 
 <h6>
 <div align="center">
@@ -110,7 +110,7 @@ ChatGPT 寬屏模式依賴於強大的 [chatgpt.js](https://github.com/kudoai/ch
 </div>
 </h6>
 
-## 兼容性
+## 🌐 兼容性
 
 ChatGPT 宽屏模式与以下浏览器兼容:
 
@@ -145,7 +145,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 </div>
 
-## 贡献者
+## 🧠 贡献者
 
 该项目的存在归功于以下贡献者的代码、翻译、问题和想法:
 
@@ -159,12 +159,12 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/58298118?first-contrib=2023.09.23-wider-chatbox-idea&h=50&w=50&mask=circle&maxage=7d "@Aubermean")](https://github.com/Aubermean)
 [![ChatGPT](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
-## 更多 ChatGPT 应用
+## 🤖 更多 ChatGPT 应用
 
 如需更多史诗般的 ChatGPT 应用程序，请访问此处: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-## 相关插件
+## 📜 相关插件
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
