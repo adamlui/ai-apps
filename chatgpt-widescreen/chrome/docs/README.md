@@ -50,16 +50,6 @@
 
 <img width=999 src="https://i.imgur.com/DXS1ew7.png">
 
-## Demo
-
-<div align="center">
-
-<a href="https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1">
-    <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/widescreen-mode-video-thumbnail.png">
-</a>
-
-</div>
-
 ## 🚀 Installation
 
 1. Install [ChatGPT Widescreen Mode](https://chatgptwidescreen.com/chrome) Chrome extension
