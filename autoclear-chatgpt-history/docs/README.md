@@ -74,9 +74,9 @@ Autoclear ChatGPT History is compatible w/ the following browsers using [Tamperm
 
 <br>
 
-<a href="https://greasyfork.org/scripts/460805-autoclear-chatgpt-history"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/460805-autoclear-chatgpt-history"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#-installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
-[Discuss](https://github.com/adamlui/autoclear-chatgpt-history/discussions) / 
+[Discuss](https://autoclearchatgpt.com/discuss) / 
 [Leave a review](https://greasyfork.org/scripts/460805-autoclear-chatgpt-history/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
