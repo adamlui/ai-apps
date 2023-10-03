@@ -31,7 +31,7 @@
 
 </div>
 
-## 关于
+## 💡 关于
 
 **ChatGPT 无限** 是您的终极聊天伴侣：一个免费（但功能强大）的附加组件，使 ChatGPT 在*任何*主题上生成无限答案！
 
@@ -41,7 +41,7 @@
 
 </div>
 
-## 好处
+## 💊 好处
 
 🧠 **可自定义主题选择** — 通过选择您希望 ChatGPT 生成答案的特定主题来控制您的学习
 
@@ -51,7 +51,7 @@
 
 📜 **自动滚动** — 通过自动滚动功能享受无缝聊天体验，确保您不会错过任何一个回复
 
-## 安装
+## 🚀 安装
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://i.imgur.com/SATGr8j.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey 用户脚本:
 
@@ -86,7 +86,7 @@
 
 </div>
 
-## 依赖关系
+## ⚡ 依赖关系
 
 <h6>
 <div align="center">
@@ -104,7 +104,7 @@ ChatGPT 无穷 依赖于强大的 [chatgpt.js](https://github.com/kudoai/chatgpt
 </div>
 </h6>
 
-## 兼容性
+## 🌐 兼容性
 
 ChatGPT 无穷 与以下浏览器兼容:
 
@@ -137,7 +137,7 @@ ChatGPT 无穷 与以下浏览器兼容:
 
 </div>
 
-## 贡献者
+## 🧠 贡献者
 
 该项目的存在得益于以下贡献者的代码、翻译、问题和想法:
 
@@ -147,12 +147,12 @@ ChatGPT 无穷 与以下浏览器兼容:
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
-## 更多 ChatGPT 应用
+## 🤖 更多 ChatGPT 应用
 
 如需更多精彩的 ChatGPT 应用程序，请访问此处: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-## 相关应用
+## 📜 相关应用
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](https://chatgptevo.com/autorefresh/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
 > 保持 ChatGPT 会话最新以消除网络错误 + Cloudflare 检查.
