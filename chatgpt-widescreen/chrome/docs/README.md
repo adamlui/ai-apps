@@ -87,7 +87,7 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 </div>
 </h6>
 
-## 🌐 Ports
+## 🌐 Compatibility
 
 ChatGPT Widescreen Mode is also available as an [Edge add-on](https://chatgptwidescreen.com/edge) and a [Greasemonkey userscript](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode) (via [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/)).
 
