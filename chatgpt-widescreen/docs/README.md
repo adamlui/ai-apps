@@ -31,11 +31,11 @@
 
 </div>
 
-## About
+## 💡 About
 
 **ChatGPT Widescreen Mode** adds widescreen + fullscreen modes to ChatGPT, enhancing your chat sessions by reducing scrolling & creating a more immersive viewing experience.
 
-## Demo
+## 📺 Demo
 
 <div align="center">
 
@@ -45,7 +45,7 @@
 
 </div>
 
-## Benefits
+## 💊 Benefits
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> Customize features like larger chatbox & hidden header/footer for more spacious view
 
@@ -55,11 +55,11 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> Works with: **openai.com** + **poe.com**
 
-## User feedback
+## 🗨️ User feedback
 
 <img width=999 src="https://i.imgur.com/DXS1ew7.png">
 
-## Installation
+## 🚀 Installation
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"><img style="margin: 0 2px -1px 0" height=16 src="https://i.imgur.com/0wUsChU.png"> Browser extension:
 
@@ -92,7 +92,7 @@
 
 </div>
 
-## Dependencies
+## ⚡ Dependencies
 
 <h6>
 <div align="center">
@@ -110,7 +110,7 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 </div>
 </h6>
 
-## Compatibility
+## 🌐 Compatibility
 
 ChatGPT Widescreen Mode is compatible w/ the following browsers:
 
@@ -145,7 +145,7 @@ If you've tested the userscript to work in a browser not listed above, simply cr
 
 </div>
 
-## Contributors
+## 🧠 Contributors
 
 This project exists thanks to code, translations, issues & ideas from the following contributors:
 
@@ -161,12 +161,12 @@ This project exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
-## More ChatGPT apps
+## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-## Related add-ons
+## 📜 Related add-ons
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://github.com/adamlui/chatgpt-auto-refresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
