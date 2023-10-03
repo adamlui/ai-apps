@@ -19,7 +19,7 @@
 
 ![](https://user-images.githubusercontent.com/10906554/223881135-dacad119-a10a-4f7c-9ca1-e5286691003f.png)
 
-## ⚡ Installation
+## 🚀 Installation
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
@@ -33,7 +33,7 @@
 
 </div>
 
-## 🚀 Dependencies
+## ⚡ Dependencies
 
 <h6>
 <div align="center">
