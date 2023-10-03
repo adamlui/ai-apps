@@ -130,22 +130,19 @@ For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-app
 ## 📜 Related scripts
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://chatgptautorefresh.com/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
-
-Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks. // 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
+> Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks. // 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
 <br>[Install](https://github.com/adamlui/chatgpt-auto-refresh#installation) / 
 [Readme](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/greasemonkey/docs/README.md) / 
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com/github) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
-
-Display ChatGPT answers in Brave Search sidebar. // 在 Brave Search 侧边栏中显示 ChatGPT 答案。
+> Display ChatGPT answers in Brave Search sidebar. // 在 Brave Search 侧边栏中显示 ChatGPT 答案。
 <br>[Install](https://greasyfork.org/en/scripts/462440-bravegpt) / 
 [Readme](https://github.bravegpt.com/blob/main/greasemonkey/README.md) / 
 [Discuss](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](https://chatgptinfinity.com/github)
-
-Generate endless answers from all-knowing ChatGPT (in any language!)
+> Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
 [Readme](https://github.com/adamlui/chatgpt-infinity#readme) / 
 [Discuss](https://chatgptinfinity.com/discussions)
