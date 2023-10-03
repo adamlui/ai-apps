@@ -18,6 +18,7 @@
 #
 
 ![](https://user-images.githubusercontent.com/10906554/223881135-dacad119-a10a-4f7c-9ca1-e5286691003f.png)
+<br><br>
 
 ## 🚀 Installation
 
@@ -32,6 +33,8 @@
 ![](https://user-images.githubusercontent.com/10906554/222903818-b621f0eb-74c2-4dff-ae1a-010305da327b.png)
 
 </div>
+
+<img height=8px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
 
 ## ⚡ Dependencies
 
@@ -50,6 +53,8 @@ Autoclear ChatGPT History relies on code from the powerful <a href="https://gith
 
 </div>
 </h6>
+
+<img height=8px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
 
 ## 🌐 Compatibility
 
@@ -72,11 +77,14 @@ Autoclear ChatGPT History is compatible w/ the following browsers using [Tamperm
 [Discuss](https://github.com/adamlui/autoclear-chatgpt-history/discussions) / 
 [Leave a review](https://greasyfork.org/scripts/460805-autoclear-chatgpt-history/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
-<br><br>
+
+<img height=8px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
 
 ## 🧠 Contributors
 
 This project exists thanks to code, translations, issues & ideas from the following contributors:
+
+<div align="center">
 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.02.26&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/102437240?first-contrib=2023.02.25-autoclear-idea&h=50&w=50&mask=circle&maxage=7d "@Tripp1e")](https://github.com/Tripp1e)
@@ -85,12 +93,17 @@ This project exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
-<br><br>
+
+</div><br>
+
+<img height=8px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
 
 ## 🤖 More ChatGPT apps
 
-For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
+For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br><br>
+
+<img height=8px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
 
 ## 📜 Related scripts
 
