@@ -26,6 +26,16 @@
 
 **ChatGPT Widescreen Mode** adds widescreen + fullscreen modes to ChatGPT, enhancing your chat sessions by reducing scrolling & creating a more immersive viewing experience.
 
+## Demo
+
+<div align="center">
+
+<a href="https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1">
+    <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/widescreen-mode-video-thumbnail.png">
+</a>
+
+</div>
+
 ## Benefits
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> Customize features like larger chatbox & hidden header/footer for more spacious view
@@ -39,16 +49,6 @@
 ## User feedback
 
 <img width=999 src="https://i.imgur.com/DXS1ew7.png">
-
-## Demo
-
-<div align="center">
-
-<a href="https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1">
-    <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/widescreen-mode-video-thumbnail.png">
-</a>
-
-</div>
 
 ## Installation
 
