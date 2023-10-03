@@ -24,8 +24,9 @@
 
 ![](https://user-images.githubusercontent.com/10906554/234756105-cf367acc-644a-49ee-8586-43c51d43e359.png)
 <img width=355 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/mode-notification-on.png">
+<br><br>
 
-## ❓ What it does
+## 💡 What it does
 
 - #### Get rid of annoying Cloudflare checks:
 
