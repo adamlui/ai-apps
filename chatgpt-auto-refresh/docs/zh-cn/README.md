@@ -26,7 +26,7 @@
 ![](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/zh-cn/mode-notification-on.png)
 <br><br>
 
-## ❓ 它能做什么
+## 💡 它能做什么
 
 - #### 摆脱烦人的 Cloudflare 检查:
 
