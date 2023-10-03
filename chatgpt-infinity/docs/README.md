@@ -31,7 +31,7 @@
 
 </div>
 
-## About
+## 💡 About
 
 **ChatGPT Infinity** is your ultimate chat companion: a free (yet powerful) add-on that makes ChatGPT generate infinite answers on *any* topic!
 
@@ -41,7 +41,7 @@
 
 </div>
 
-## Benefits
+## 💊 Benefits
 
 🧠 **Customizable Topic Selection** — Take control of your learning by choosing the specific topic you want ChatGPT to generate answers for
 
@@ -51,7 +51,7 @@
 
 📜 **Auto-Scroll** — Enjoy a seamless chat experience with the auto-scroll feature, ensuring that you never miss a single response
 
-## Installation
+## 🚀 Installation
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"><img style="margin: 0 2px -1px 0" height=16 src="https://i.imgur.com/0wUsChU.png"> Browser extension:
 
@@ -86,7 +86,7 @@
 
 </div>
 
-## Dependencies
+## ⚡ Dependencies
 
 <h6>
 <div align="center">
@@ -104,7 +104,7 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 </div>
 </h6>
 
-## Compatibility
+## 🌐 Compatibility
 
 ChatGPT Infinity is compatible w/ the following browsers:
 
@@ -137,7 +137,7 @@ ChatGPT Infinity is compatible w/ the following browsers:
 
 </div>
 
-## Contributors
+## 🧠 Contributors
 
 This project exists thanks to code, translations, issues & ideas from the following contributors:
 
@@ -147,12 +147,12 @@ This project exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
-## More ChatGPT apps
+## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-## Related apps
+## 📜 Related apps
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://chatgptevo.com/autorefresh/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 > Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks.
