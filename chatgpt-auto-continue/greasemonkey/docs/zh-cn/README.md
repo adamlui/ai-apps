@@ -27,7 +27,7 @@
 
 </div>
 
-## 安装
+## 🚀 安装
 
 1. 安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) 或者 Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
@@ -35,7 +35,7 @@
 
 3. 正常访问 [chat.openai.com](https://chat.openai.com)，多条回复对话中断时会自动继续生成!
 
-## 依赖关系
+## ⚡ 依赖关系
 
 <h6>
 <div align="center">
@@ -53,7 +53,7 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/ku
 </div>
 </h6>
 
-## 贡献者
+## 🧠 贡献者
 
 该项目的存在归功于以下贡献者的代码、翻译、问题和想法:
 
@@ -63,12 +63,12 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/ku
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
-## 更多 ChatGPT 应用
+## 🤖 更多 ChatGPT 应用
 
 如需更多史诗般的 ChatGPT 应用程序，请访问此处: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-## 相关脚本
+## 📜 相关脚本
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](https://chatgptautorefresh.com/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 > 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。<br>
