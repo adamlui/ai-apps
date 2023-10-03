@@ -27,7 +27,7 @@
 
 <img src="https://raw.githubusercontent.com/kudoai/bravegpt/master/media/images/screenshots/brave-ai.png">
 
-## Installation
+## 🚀 Installation
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
@@ -41,7 +41,7 @@
 
 </div>
 
-## Dependencies
+## ⚡ Dependencies
 
 <h6>
 <div align="center">
@@ -63,7 +63,7 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/kudoai
 </div>
 </h6>
 
-## Compatibility
+## 🌐 Compatibility
 
 **BraveGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/):
 
@@ -79,7 +79,7 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/kudoai
 
 If you've tested it to work in a browser not listed, create a [pull request](https://github.bravegpt.com/pulls) to become a contributor!
 
-## Proxy Mode
+## 🕵️ Proxy Mode
 
 Proxy API Mode (disabled by default) returns text responses using GPT-4, without the need for a chat.openai.com account.
 
@@ -102,7 +102,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 [Leave a review](https://greasyfork.org/en/scripts/462440-bravegpt/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
-## Social links
+## 📣 Social links
 
 [![](https://img.shields.io/mastodon/follow/111075576869014999?domain=https%3A%2F%2Ftechnodon.org&style=social "Follow @kudoai on Mastodon (technodon.org)")](https://technodon.org/@kudoai)
 [![](https://img.shields.io/github/followers/kudoai?label=Follow%20%40kudoai&style=social "Follow @kudoai on GitHub")](https://github.com/kudoai)
@@ -114,7 +114,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 [![](https://img.shields.io/badge/Follow%20in%2fadamlui-484-blue?logo=linkedin&style=social "Follow in/adamlui on LinkedIn")](https://linkedin.com/in/adamlui)
 [![](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "Follow @adamlui on GitHub")](https://github.com/adamlui)
 
-## Contributors
+## 🧠 Contributors
 
 This app exists thanks to code, translations, issues & ideas from the following contributors:
 
@@ -129,12 +129,12 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
-## More ChatGPT apps
+## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-## Related scripts
+## 📜 Related scripts
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://github.com/adamlui/chatgpt-auto-refresh) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 > Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks.
