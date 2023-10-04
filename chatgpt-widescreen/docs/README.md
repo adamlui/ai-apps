@@ -140,7 +140,7 @@ If you've tested the userscript to work in a browser not listed above, simply cr
 
 <br>
 
-[Discuss](https://chatgptwidescreen.com/discussions) / 
+[Discuss](https://chatgptwidescreen.com/discuss) / 
 [More ChatGPT add-ons](https://github.com/adamlui/chatgpt-apps)
 
 </div>
@@ -172,7 +172,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 > Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks.
 <br>[Install](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) / 
 [Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) / 
-[Discuss](https://chatgptevo.com/autorefresh/discussions)
+[Discuss](https://chatgptautorefresh.com/discuss)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 > Display ChatGPT answers in Brave Search sidebar.
@@ -184,7 +184,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 > Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
 [Readme](https://github.com/adamlui/chatgpt-infinity#readme) / 
-[Discuss](https://chatgptevo.com/infinity/discussions)
+[Discuss](https://chatgptinfinity.com/discuss)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
