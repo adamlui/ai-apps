@@ -124,7 +124,7 @@ This script exists thanks to code, translations, issues & ideas from the followi
 
 ## 🤖 More ChatGPT apps
 
-For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
+For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
 ## 📜 Related scripts
