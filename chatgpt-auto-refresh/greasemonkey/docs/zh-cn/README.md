@@ -90,7 +90,7 @@
 <div align="center">
 <br />
 
-<a href="https://chatgpt.js.org">
+<a href="https://chatgpt.js.org/#/zh-cn/">
 <picture>
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
     <img width=546 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
