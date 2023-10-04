@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.2
+// @version             2023.10.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -266,7 +266,7 @@
         greasyForkURL: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode' }
     config.updateURL = config.greasyForkURL + '/code/chatgpt-widescreen-mode.meta.js'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'wcbDisabled', 'hiddenHeader', 'hiddenFooter', 'wideScreen')
+    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'widerChatbox', 'hiddenHeader', 'hiddenFooter', 'wideScreen')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -373,12 +373,12 @@
 
         // Add command to toggle wider chatbox with widescreen mode
         const wcbLabel = '↔️ ' + messages.menuLabel_widerChatbox
-                       + state.separator + state.word[+config.wcbDisabled]
+                       + state.separator + state.word[+!config.widerChatbox]
         menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
-            saveSetting('wcbDisabled', !config.wcbDisabled)
+            saveSetting('widerChatbox', !config.widerChatbox)
             updateWidescreenStyle()
             if (!config.notifHidden)
-                notify(`${ messages.menuLabel_widerChatbox }: ${ state.word[+config.wcbDisabled] }`)
+                notify(`${ messages.menuLabel_widerChatbox }: ${ state.word[+!config.widerChatbox] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -652,7 +652,7 @@
                 + '[class^="Message"] { max-width: 100% !important }' // widen speech bubbles
                 + '[class^="ChatMessageInputFooter"] { max-width: 618px ; margin: auto }' ) // preserve chatbar width
             : '' )
-        if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle        
+        if (config.widerChatbox) wideScreenStyle.innerText += wcbStyle        
     }
 
     // Run MAIN routine
