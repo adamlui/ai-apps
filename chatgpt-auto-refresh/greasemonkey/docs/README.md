@@ -168,14 +168,14 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptwidescreen.com/github) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
-<br>[Install](https://github.com/adamlui/chatgpt-widescreen#-installation) / 
-[Readme](https://github.com/adamlui/chatgpt-widescreen#readme) / 
+<br>[Install](https://github.com/adamlui/chatgpt-widescreen#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-widescreen#readme) /
 [Discuss](https://chatgptwidescreen.com/discuss)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continue ⏩](https://chatgptautocontinue.com/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 > Automatically continue generating multiple ChatGPT responses.<br>
-[Install](https://github.com/adamlui/chatgpt-auto-continue#-installation) / 
-[Readme](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
+[Install](https://github.com/adamlui/chatgpt-auto-continue#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-auto-continue#readme) /
 [Discuss](https://chatgptautocontinue.com/discuss)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](https://chatgptinfinity.com/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
