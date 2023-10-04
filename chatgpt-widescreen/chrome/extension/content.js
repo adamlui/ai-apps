@@ -113,7 +113,7 @@
         if (type === 'childList' && addedNodes.length) {
 
             // Restore previous session's state + manage toggles
-            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'wcbDisabled',
+            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'widerChatbox',
                            'hiddenHeader', 'hiddenFooter', 'notifHidden', 'extensionDisabled'])
                 .then(() => { if (!config.extensionDisabled) {                    
                     if (!prevSessionChecked) { // restore previous session's state
@@ -125,7 +125,7 @@
                                     notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                         }}
                         if (!config.tcbDisabled || config.hiddenHeader || config.hiddenFooter) updateTweaksStyle()
-                        if (config.wcbDisabled) updateWidescreenStyle()
+                        if (config.widerChatbox) updateWidescreenStyle()
                         prevSessionChecked = true
                     }
                     insertBtns()
@@ -386,11 +386,11 @@
                 + '[class^="Message"] { max-width: 100% !important }' // widen speech bubbles
                 + '[class^="ChatMessageInputFooter"] { max-width: 618px ; margin: auto }' ) // preserve chatbar width
             : '' )
-        if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle        
+        if (config.widerChatbox) wideScreenStyle.innerText += wcbStyle        
     }
 
     syncExtension = () => { // settings, then disable modes or sync taller/wider chatbox
-        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'wcbDisabled',
+        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'widerChatbox',
                       'hiddenHeader', 'hiddenFooter', 'notifHidden')
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
