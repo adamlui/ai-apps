@@ -128,9 +128,9 @@ This extension exists thanks to code, translations, issues & ideas from the foll
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
-## 🤖 More ChatGPT add-ons
+## 🤖 More ChatGPT apps
 
-For even more epic ChatGPT add-ons, go here: https://github.com/adamlui/chatgpt-addons
+For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
 ## 📜 Related add-ons
