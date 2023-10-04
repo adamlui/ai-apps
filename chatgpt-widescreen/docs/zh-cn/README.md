@@ -164,7 +164,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 如需更多精彩的 ChatGPT 应用程序，请访问: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-## 📜 相关插件
+## 📜 相关应用
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/greasemonkey) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 > 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
