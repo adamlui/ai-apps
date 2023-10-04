@@ -170,23 +170,23 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://chatgptautorefresh.com/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 > Keeps ChatGPT sessions fresh to eliminate network errors + Cloudflare checks.
-<br>[Install](https://github.com/adamlui/chatgpt-auto-refresh#-installation) / 
-[Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) / 
+<br>[Install](https://github.com/adamlui/chatgpt-auto-refresh#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) /
 [Discuss](https://chatgptautorefresh.com/discuss)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://github.bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 > Display ChatGPT answers in Brave Search sidebar.
-<br>[Install](https://github.bravegpt.com/#-installation) / 
-[Readme](https://github.bravegpt.com/#readme) / 
+<br>[Install](https://github.bravegpt.com/#-installation) /
+[Readme](https://github.bravegpt.com/#readme) /
 [Discuss](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](https://chatgptinfinity.com/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 4px"></a>
 > Generate endless answers from all-knowing ChatGPT (in any language!)
-<br>[Install](https://github.com/adamlui/chatgpt-infinity#-installation) / 
-[Readme](https://github.com/adamlui/chatgpt-infinity#readme) / 
+<br>[Install](https://github.com/adamlui/chatgpt-infinity#-installation) /
+[Readme](https://github.com/adamlui/chatgpt-infinity#readme) /
 [Discuss](https://chatgptinfinity.com/discuss)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
-<a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT add-ons**</a> / 
+<a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT add-ons**</a> /
 <a href="#english--%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">Back to top ↑</a>
