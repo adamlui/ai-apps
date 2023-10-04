@@ -155,5 +155,5 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
-<a href="https://github.com/adamlui/chatgpt-addons">**More ChatGPT add-ons**</a> / 
+<a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT add-ons**</a> / 
 <a href="https://github.com/adamlui/chatgpt-widescreen#readme">Back to top ↑</a>
