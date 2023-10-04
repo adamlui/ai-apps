@@ -51,7 +51,7 @@
 
 📜 **自动滚动** — 通过自动滚动功能享受无缝聊天体验，确保您不会错过任何一个回复
 
-## 🚀 安装
+## 🚀 如何安装
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://i.imgur.com/SATGr8j.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey 用户脚本:
 
