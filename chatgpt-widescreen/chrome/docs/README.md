@@ -102,7 +102,7 @@ The userscript is compatible w/ the following browsers:
 - **LibreWolf**
 - **QQ**
 
-If you've tested the userscript to work in a browser not listed above, simply create a [pull request](https://github.com/adamlui/chatgpt-widescreen/pulls) to become a contributor!
+<br>
 
 <div align="center">
 
