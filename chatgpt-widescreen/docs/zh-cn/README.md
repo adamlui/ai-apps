@@ -59,7 +59,7 @@
 
 <img width=999 src="https://i.imgur.com/DXS1ew7.png">
 
-## 🚀 安装
+## 🚀 如何安装
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"><img style="margin: 0 2px -1px 0" height=16 src="https://i.imgur.com/0wUsChU.png"> 浏览器扩展:
 
