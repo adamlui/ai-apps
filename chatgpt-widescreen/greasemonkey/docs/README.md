@@ -98,7 +98,7 @@ ChatGPT Widescreen Mode is compatible w/ the following browsers (via [Tampermonk
 - Ghost
 - QQ
 
-If you've tested it to work in a browser not listed above, simply create a [pull request](https://github.com/adamlui/chatgpt-widescreen/pulls) to become a contributor!
+<br>
 
 <a href="https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#-installation"><img title="How to install" height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
