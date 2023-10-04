@@ -140,7 +140,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 <br>
 
-[讨论](https://chatgptwidescreen.com/discussions) / 
+[讨论](https://chatgptwidescreen.com/discuss) / 
 [更多 ChatGPT 插件](https://github.com/adamlui/chatgpt-apps)
 
 </div>
@@ -170,7 +170,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 > 保持 ChatGPT 会话新鲜以消除网络错误 + Cloudflare 检查。
 <br>[安装](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) / 
 [自述文件](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/docs/zh-cn/README.md) / 
-[讨论](https://chatgptevo.com/autorefresh//discussions)
+[讨论](https://chatgptautorefresh.com/discuss)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 > 在 Brave Search 侧边栏中显示 ChatGPT 答案。
@@ -182,7 +182,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何語言!)
 <br>[安装](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
 [自述文件](https://github.com/adamlui/chatgpt-infinity/blob/main/docs/zh-cn/README.md) / 
-[讨论](https://chatgptevo.com/infinity/discussions)
+[讨论](https://chatgptinfinity.com/discuss)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
