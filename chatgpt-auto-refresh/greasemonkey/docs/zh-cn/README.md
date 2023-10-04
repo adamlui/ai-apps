@@ -159,7 +159,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 
 ## 🤖 更多 ChatGPT 应用
 
-如需更多史诗般的 ChatGPT 应用程序，请访问此处：[https://github.com/adamlui/chatgpt-apps](https://github.com/adamlui/chatgpt-apps)
+如需更多精彩的 ChatGPT 应用程序，请访问：https://github.com/adamlui/chatgpt-apps
 <br><br>
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
