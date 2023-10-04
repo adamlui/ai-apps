@@ -24,7 +24,9 @@
 
 ![](https://user-images.githubusercontent.com/10906554/234756105-cf367acc-644a-49ee-8586-43c51d43e359.png)
 <img width=355 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/mode-notification-on.png">
-<br><br>
+<br>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
 
 ## 💡 What it does
 
@@ -46,6 +48,8 @@
     
 </div>
 
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
+
 ## 💊 Benefits
 
 &nbsp;&nbsp;&nbsp;🛡️ <strong>Safe</strong> — No unnecessary account-related requests sent
@@ -55,11 +59,14 @@
 &nbsp;&nbsp;&nbsp;⌛ <strong>Time-saver</strong> — No more constant copy/paste/refresh just from minutes of inactivity!
 
 &nbsp;&nbsp;&nbsp;🤯 <mark>Works ***even in background tabs!***</mark>
-<br><br>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
 
 ## 🗨️ User feedback
 
-<img width=535 src="https://i.imgur.com/8ega2Y9.png">
+<img width=535 src="https://i.imgur.com/nbwAQ1e.png">
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
 
 ## 🚀 Installation
 
@@ -72,9 +79,10 @@
 <div align="center">
     
 ![](https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/screenshots/mode-toggle-on.jpg)
-<br><br>
 
 </div>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
 
 ## ⚡ Dependencies
 
@@ -93,6 +101,8 @@ ChatGPT Auto Refresh relies on code from the powerful <a href="https://github.co
 
 </div>
 </h6>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
 
 ## 🌐 Compatibility
 
@@ -116,11 +126,14 @@ ChatGPT Auto Refresh is compatible w/ the following browsers using [Tampermonkey
 [Discuss](https://github.com/adamlui/chatgpt-auto-refresh/discussions) / 
 [Leave a review](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
-<br><br>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
 
 ## 🧠 Contributors
 
 This project exists thanks to code, translations, issues & ideas from the following contributors:
+
+<div align="center">
 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.23&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/26111796?first-contrib=2023.04.02&h=50&w=50&mask=circle&maxage=7d "@Camouflager")](https://github.com/Camouflager)
@@ -139,12 +152,17 @@ This project exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110?h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
-<br><br>
+
+</div></br>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
 
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
 <br><br>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
 
 ## 📜 Related scripts
 
@@ -166,7 +184,7 @@ For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-app
 [Readme](https://github.com/adamlui/chatgpt-infinity#readme) / 
 [Discuss](https://chatgptinfinity.com/discussions)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
 <a href="#english--%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">Back to top ↑</a>
