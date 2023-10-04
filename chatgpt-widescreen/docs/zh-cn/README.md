@@ -124,7 +124,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 - **Ghost** (通过 [Chrome 扩展程序](https://chatgptwidescreen.com/chrome) 或者 [Greasemonkey 用户脚本](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 - **QQ** (通过 [Chrome 扩展程序](https://chatgptwidescreen.com/chrome) 或者 [Greasemonkey 用户脚本](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 
-如果您已经测试用户脚本在上面未列出的浏览器中工作，只需创建一个[拉取请求](https://github.com/adamlui/chatgpt-widescreen/pulls) (欢迎各种贡献!)
+<br>
 
 <div align="center">
 
