@@ -168,23 +168,23 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 
 ### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://chatgptwidescreen.com/github) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
 > 向 ChatGPT 添加宽屏 + 全窗口模式以增强查看效果 + 减少滚动。<br>
-[安装](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#%E5%AE%89%E8%A3%85) / 
-[自述文件](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#readme) / 
+[安装](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#-安装) /
+[自述文件](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#readme) /
 [讨论](https://chatgptwidescreen.com/discuss)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动继续 ⏩](https://chatgptautocontinue.com/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 > 自动继续生成多个 ChatGPT 响应。<br>
-[安装](https://greasyfork.org/scripts/466789-chatgpt-auto-continue) / 
-[自述文件](https://github.com/adamlui/chatgpt-auto-continue#readme) / 
+[安装](https://github.com/adamlui/chatgpt-auto-continue/tree/main/docs/zh-cn#-安装) /
+[自述文件](https://github.com/adamlui/chatgpt-auto-continue#readme) /
 [讨论](https://chatgptautocontinue.com/discuss)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](https://chatgptinfinity.com/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 4px"></a>
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
-<br>[安装](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
-[自述文件](https://github.com/adamlui/chatgpt-infinity/tree/main/docs/zh-cn#readme) / 
+<br>[安装](https://github.com/adamlui/chatgpt-infinity/tree/main/docs/zh-cn#-安装) /
+[自述文件](https://github.com/adamlui/chatgpt-infinity/tree/main/docs/zh-cn#readme) /
 [讨论](https://chatgptinfinity.com/discuss)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
   
-<a href="https://github.com/adamlui/userscripts">**更多用户脚本**</a> / 
+<a href="https://github.com/adamlui/userscripts">**更多用户脚本**</a> /
 <a href="#%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87--english">回到顶部↑</a>
