@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Ёсць абнаўленне" },
   "alert_newerVer": { "message": "Новая версія" },
   "alert_isAvail": { "message": "даступны" },
-  "alert_dontShowAgain": { "message": "Не паказваць зноў" },
-  "alert_untilNextVer": { "message": "да наступнага абнаўлення" },
   "alert_intUpdated": { "message": "Сеанс ChatGPT будзе аўтаматычна абнаўляцца кожны" },
   "unit_secs": { "message": "сек" },
   "state_enabled": { "message": "XYZ/ альфа- канал" },

@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Sinthani likupezeka" },
   "alert_newerVer": { "message": "Baibulo latsopano la" },
   "alert_isAvail": { "message": "likupezeka" },
-  "alert_dontShowAgain": { "message": "Musasonyezenso" },
-  "alert_untilNextVer": { "message": "mpaka pomwe lotsatira" },
   "alert_intUpdated": { "message": "ChatGPT gawo adzakhala basi kutsitsimutsa aliyense" },
   "unit_secs": { "message": "mfundo zazinsinsi" },
   "state_enabled": { "message": "Utheketsa" },

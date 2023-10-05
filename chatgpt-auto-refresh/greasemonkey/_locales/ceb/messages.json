@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Magamit ang pag-update" },
   "alert_newerVer": { "message": "Usa ka Bag-ong Bersyon" },
   "alert_isAvail": { "message": "available Ang" },
-  "alert_dontShowAgain": { "message": "Ayaw na usab pagpakita" },
-  "alert_untilNextVer": { "message": "hangtud sa sunod nga update" },
   "alert_intUpdated": { "message": "Ang sesyon sa ChatGPT mag-refresh sa matag usa" },
   "unit_secs": { "message": "espesye sa alindanaw" },
   "state_enabled": { "message": "Mipahimo" },

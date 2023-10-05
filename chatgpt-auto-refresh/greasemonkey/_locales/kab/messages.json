@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Yella lqem" },
   "alert_newerVer": { "message": "Amaynut n usefru n" },
   "alert_isAvail": { "message": "yella" },
-  "alert_dontShowAgain": { "message": "Ur ttɛawad ara a d-sbeggnen" },
-  "alert_untilNextVer": { "message": "alamma d aneggaru i d-iteddun" },
   "alert_intUpdated": { "message": "Agraw n ChatGPT ad d-yessiwel yal" },
   "unit_secs": { "message": "sECS" },
   "state_enabled": { "message": "yermed" },

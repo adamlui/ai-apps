@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Update verfügbar" },
   "alert_newerVer": { "message": "Eine neuere Version von" },
   "alert_isAvail": { "message": "ist verfügbar" },
-  "alert_dontShowAgain": { "message": "Nicht mehr anzeigen" },
-  "alert_untilNextVer": { "message": "bis zum nächsten Update" },
   "alert_intUpdated": { "message": "ChatGPT-Sitzung wird alle" },
   "unit_secs": { "message": "Sekunden" },
   "state_enabled": { "message": "aktiviert" },

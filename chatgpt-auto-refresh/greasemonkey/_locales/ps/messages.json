@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "اوسمهالیزې شته" },
   "alert_newerVer": { "message": "نوې نسخه" },
   "alert_isAvail": { "message": "شتون لري" },
-  "alert_dontShowAgain": { "message": "بیا مه ښکاره کوئ" },
-  "alert_untilNextVer": { "message": "تر راتلونکي تازه کولو پورې" },
   "alert_intUpdated": { "message": "د ChatGPT ناسته به هر یو په اوتومات ډول تازه شي" },
   "unit_secs": { "message": "ثانیې" },
   "state_enabled": { "message": "فعال شوی" },

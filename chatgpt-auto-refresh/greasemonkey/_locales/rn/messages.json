@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Amakuru agezweho" },
   "alert_newerVer": { "message": "Nouveau version de" },
   "alert_isAvail": { "message": "none None available." },
-  "alert_dontShowAgain": { "message": "Ntusubire kugaragaza" },
-  "alert_untilNextVer": { "message": "gushika ku musi ukurikira" },
   "alert_intUpdated": { "message": "Ikiganiro co guhanahana amakuru kigiye gusubirwamwo buri kanya" },
   "unit_secs": { "message": "sECs" },
   "state_enabled": { "message": "uwufise ububasha kw'isanamu" },

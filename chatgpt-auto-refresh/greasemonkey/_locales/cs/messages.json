@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Aktualizace k dispozici" },
   "alert_newerVer": { "message": "Novější verze" },
   "alert_isAvail": { "message": "je k dispozici" },
-  "alert_dontShowAgain": { "message": "Znovu nezobrazovat" },
-  "alert_untilNextVer": { "message": "do další aktualizace" },
   "alert_intUpdated": { "message": "ChatGPT sezení se bude automaticky obnovovat každých" },
   "unit_secs": { "message": "sekund" },
   "state_enabled": { "message": "povoleno" },

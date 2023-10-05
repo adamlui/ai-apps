@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Dagføring er klár" },
   "alert_newerVer": { "message": "Nýggjar avbjóðingar" },
   "alert_isAvail": { "message": "er tøkt" },
-  "alert_dontShowAgain": { "message": "Sýn ikki aftur" },
-  "alert_untilNextVer": { "message": "til næsta uppdatering" },
   "alert_intUpdated": { "message": "Tvøroyrar Kommuna skal avgera hvørjar avleiðingarnar verða" },
   "unit_secs": { "message": "sek" },
   "state_enabled": { "message": "Virkið" },

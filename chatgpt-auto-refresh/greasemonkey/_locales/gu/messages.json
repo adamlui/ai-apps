@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "સુધારો ઉપલબ્ધ" },
   "alert_newerVer": { "message": "નવી આવૃત્તિ" },
   "alert_isAvail": { "message": "ઉપલબ્ધ છે" },
-  "alert_dontShowAgain": { "message": "ફરીથા બતાવો નહિં (_D)" },
-  "alert_untilNextVer": { "message": "આગળના સુધારા સુધી" },
   "alert_intUpdated": { "message": "ChatGPT સેશન પ્રત્યેક" },
   "unit_secs": { "message": "સેકન્ડ" },
   "state_enabled": { "message": "સક્રિય" },

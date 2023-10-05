@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "अपडेट उपलब्ध" },
   "alert_newerVer": { "message": "नवीन संस्करण" },
   "alert_isAvail": { "message": "उपलब्ध आहे" },
-  "alert_dontShowAgain": { "message": "पुन्हा दाखवू नका" },
-  "alert_untilNextVer": { "message": "पुढील अपडेटपर्यंत" },
   "alert_intUpdated": { "message": "चॅटजीपीटी सत्र स्वयंचलित रिफ्रेश होईल प्रत्येक" },
   "unit_secs": { "message": "सेकंद" },
   "state_enabled": { "message": "सक्षम" },

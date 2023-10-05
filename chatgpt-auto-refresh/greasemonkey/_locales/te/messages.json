@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "ఎటువంటి నవీకరణ అందుబాటులోలేదు" },
   "alert_newerVer": { "message": "యొక్క కొత్త వెర్షన్" },
   "alert_isAvail": { "message": "అందుబాటులో ఉంది" },
-  "alert_dontShowAgain": { "message": "మళ్లీ చూపించవద్దు" },
-  "alert_untilNextVer": { "message": "తదుపరి అప్ ‌ డేట్ వరకు" },
   "alert_intUpdated": { "message": "ChatGPT సెషన్ ప్రతి ఒక్కటి ఆటో-రిఫ్రెష్ అవుతుంది" },
   "unit_secs": { "message": "సెకన్లు" },
   "state_enabled": { "message": "చేతనంచేసిన" },

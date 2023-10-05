@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "I-update ang magagamit" },
   "alert_newerVer": { "message": "Ang isang bagong bersyon ng" },
   "alert_isAvail": { "message": "дастрас аст" },
-  "alert_dontShowAgain": { "message": "Huwag ipakita muli" },
-  "alert_untilNextVer": { "message": "то навсозии навбатӣ" },
   "alert_intUpdated": { "message": "Сессияи ChatGPT ҳар якро худкор навсозӣ мекунад" },
   "unit_secs": { "message": "_: дуюм дюмsecond" },
   "state_enabled": { "message": "ÐÐ°Ð±ÑÐ´" },

@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Saadaval on uuendus" },
   "alert_newerVer": { "message": "Uuem versioon" },
   "alert_isAvail": { "message": "on saadaval" },
-  "alert_dontShowAgain": { "message": "Ära kuva uuesti" },
-  "alert_untilNextVer": { "message": "kuni järgmise värskenduseni" },
   "alert_intUpdated": { "message": "ChatGPT seanssi värskendatakse automaatselt iga" },
   "unit_secs": { "message": "sek" },
   "state_enabled": { "message": "lubatud" },

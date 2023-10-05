@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "ອັບເດດທີ່ມີຢູ່" },
   "alert_newerVer": { "message": "ສະບັບໃຫມ່ຂອງ" },
   "alert_isAvail": { "message": "ມີ" },
-  "alert_dontShowAgain": { "message": "ຢ່າສະແດງອີກເທື່ອ ຫນຶ່ງ" },
-  "alert_untilNextVer": { "message": "ຈົນກ່ວາການອັບເດດຕໍ່ໄປ" },
   "alert_intUpdated": { "message": "ກອງປະຊຸມສົນທະນາGPT ຈະອັບເດດອັດຕະໂນມັດທຸກໆຄັ້ງ" },
   "unit_secs": { "message": "ວິນາທີ" },
   "state_enabled": { "message": "ເປີດໃຊ້ງານ" },

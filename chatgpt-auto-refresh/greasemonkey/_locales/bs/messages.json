@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Ažuriranje dostupno" },
   "alert_newerVer": { "message": "Novija verzija" },
   "alert_isAvail": { "message": "dostupno je" },
-  "alert_dontShowAgain": { "message": "Ne prikazuj više" },
-  "alert_untilNextVer": { "message": "do sljedećeg ažuriranja" },
   "alert_intUpdated": { "message": "ChatGPT sesija će se automatski osvježavati svakih" },
   "unit_secs": { "message": "sek." },
   "state_enabled": { "message": "Omogućeno" },

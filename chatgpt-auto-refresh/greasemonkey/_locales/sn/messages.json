@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Zadzisa zviripo" },
   "alert_newerVer": { "message": "Shanduro itsva ye" },
   "alert_isAvail": { "message": "inowanika" },
-  "alert_dontShowAgain": { "message": "Usambofa wakazviratidza zvakare" },
-  "alert_untilNextVer": { "message": "kusvikira inotevera update" },
   "alert_intUpdated": { "message": "ChatGPT musangano achaita auto-kuzorodza ose" },
   "unit_secs": { "message": "masekonzi" },
   "state_enabled": { "message": "inogoneswa" },

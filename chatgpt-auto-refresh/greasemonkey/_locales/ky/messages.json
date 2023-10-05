@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Баяндалмасы табылган жок" },
   "alert_newerVer": { "message": "Жаңы версиясы" },
   "alert_isAvail": { "message": "жеткиликтүү" },
-  "alert_dontShowAgain": { "message": "Мындан ары көрсөтпөө" },
-  "alert_untilNextVer": { "message": "кийинки жаңыртууга чейин" },
   "alert_intUpdated": { "message": "ChatGPT сессиясы ар бирин автоматтык түрдө жаңыртат" },
   "unit_secs": { "message": "СЕК" },
   "state_enabled": { "message": "Күйгүзүлдү" },

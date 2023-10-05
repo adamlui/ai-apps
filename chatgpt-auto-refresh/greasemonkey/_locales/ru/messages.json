@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Update available" },
   "alert_newerVer": { "message": "A newer version of" },
   "alert_isAvail": { "message": "is available" },
-  "alert_dontShowAgain": { "message": "Don't show again" },
-  "alert_untilNextVer": { "message": "until next update" },
   "alert_intUpdated": { "message": "Сессия ChatGPT будет автоматически обновляться каждые" },
   "unit_secs": { "message": "секунд" },
   "state_enabled": { "message": "включено" },

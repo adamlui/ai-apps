@@ -10,8 +10,6 @@
   "alert_updateAvail": { "message":  "更新可用" },
   "alert_newerVer": { "message":  "较新版本的" },
   "alert_isAvail": { "message":  "是可用的" },
-  "alert_dontShowAgain": { "message":  "不再显示" },
-  "alert_untilNextVer": { "message":  "%s次更新" },
   "alert_intUpdated": { "message":  "ChatGPT 会话将自动刷新每" },
   "unit_secs": { "message":  "秒" },
   "state_enabled": { "message":  "已启用" },

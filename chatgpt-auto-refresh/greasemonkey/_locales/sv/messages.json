@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Uppdatering tillgänglig" },
   "alert_newerVer": { "message": "En nyare version av" },
   "alert_isAvail": { "message": "är tillgänglig" },
-  "alert_dontShowAgain": { "message": "Visa inte igen" },
-  "alert_untilNextVer": { "message": "tills nästa uppdatering" },
   "alert_intUpdated": { "message": "ChatGPT-sessionen uppdateras automatiskt varje" },
   "unit_secs": { "message": "sekunder" },
   "state_enabled": { "message": "aktiverad" },

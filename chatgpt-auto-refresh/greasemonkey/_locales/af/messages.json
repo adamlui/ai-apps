@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Opdatering beskikbaar" },
   "alert_newerVer": { "message": "Newer Versie of" },
   "alert_isAvail": { "message": "is beskikbaar" },
-  "alert_dontShowAgain": { "message": "moenie dit weer wys nie" },
-  "alert_untilNextVer": { "message": "tot die volgende opdatering" },
   "alert_intUpdated": { "message": "ChatGPT sessie sal outomaties elke" },
   "unit_secs": { "message": "sekondessecond" },
   "state_enabled": { "message": "Blou" },

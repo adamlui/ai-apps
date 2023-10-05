@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Fa'afouga o lo'o avanoa" },
   "alert_newerVer": { "message": "O se lomiga fou o" },
   "alert_isAvail": { "message": "o loo maua" },
-  "alert_dontShowAgain": { "message": "Aua le toe faaali atu" },
-  "alert_untilNextVer": { "message": "seia oo i le isi faafouga" },
   "alert_intUpdated": { "message": "ChatGPT sauniga o le a toefuataiina taavale uma" },
   "unit_secs": { "message": "sECS" },
   "state_enabled": { "message": "faatagaina" },

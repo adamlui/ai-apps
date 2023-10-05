@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Updateis available" },
   "alert_newerVer": { "message": "Datum novaque versiona" },
   "alert_isAvail": { "message": "est disponibus" },
-  "alert_dontShowAgain": { "message": "Nunquamquere" },
-  "alert_untilNextVer": { "message": "nunquam novitatis" },
   "alert_intUpdated": { "message": "ChatGPT UNIVERSITATIS autem refresh" },
   "unit_secs": { "message": "secs" },
   "state_enabled": { "message": "Actiosus" },

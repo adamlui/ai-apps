@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Cusboonaysiinta la heli karo" },
   "alert_newerVer": { "message": "Version cusub oo ka mid ah" },
   "alert_isAvail": { "message": "waa la heli karaa" },
-  "alert_dontShowAgain": { "message": "Mar dambe ha soo bandhigin." },
-  "alert_untilNextVer": { "message": "ilaa cusbooneysiinta xiga" },
   "alert_intUpdated": { "message": "Kalfadhiga ChatGPT wuxuu si otomaatig ah u cusbooneysiin doonaa mid kasta" },
   "unit_secs": { "message": "sECS" },
   "state_enabled": { "message": "La daaray" },

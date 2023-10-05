@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Nova versió disponible!" },
   "alert_newerVer": { "message": "Una nova versió de" },
   "alert_isAvail": { "message": "està disponible" },
-  "alert_dontShowAgain": { "message": "No volver a mostrar" },
-  "alert_untilNextVer": { "message": "fins a la propera actualització" },
   "alert_intUpdated": { "message": "La sessió del XatGPT s'actualitzarà automàticament cada" },
   "unit_secs": { "message": "segons" },
   "state_enabled": { "message": "habilitat" },

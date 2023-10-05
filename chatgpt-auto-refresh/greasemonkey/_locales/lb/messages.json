@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Aktualiséierung verfügbar" },
   "alert_newerVer": { "message": "Eng nei Versioun vun" },
   "alert_isAvail": { "message": "ass verfügbar" },
-  "alert_dontShowAgain": { "message": "Weist net nach eng Kéier" },
-  "alert_untilNextVer": { "message": "bis zum nächsten UPDATE" },
   "alert_intUpdated": { "message": "ChatGPT Session wäert all Auto-Refresh" },
   "unit_secs": { "message": "cAA -" },
   "state_enabled": { "message": "Aktiviert" },

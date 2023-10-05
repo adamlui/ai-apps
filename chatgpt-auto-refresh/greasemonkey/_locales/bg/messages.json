@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Налице е актуализация" },
   "alert_newerVer": { "message": "По - нова версия на" },
   "alert_isAvail": { "message": "е налична" },
-  "alert_dontShowAgain": { "message": "Не показвай това отново" },
-  "alert_untilNextVer": { "message": "до следващата актуализация" },
   "alert_intUpdated": { "message": "Сесията на ChatGPT ще се опреснява автоматично на всеки" },
   "unit_secs": { "message": "секунди" },
   "state_enabled": { "message": "Активирано" },

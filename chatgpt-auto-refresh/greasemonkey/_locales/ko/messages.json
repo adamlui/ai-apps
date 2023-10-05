@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Update available" },
   "alert_newerVer": { "message": "A newer version of" },
   "alert_isAvail": { "message": "is available" },
-  "alert_dontShowAgain": { "message": "Don't show again" },
-  "alert_untilNextVer": { "message": "until next update" },
   "alert_intUpdated": { "message": "ChatGPT 세션이 다음 간격으로 자동 새로고침됩니다." },
   "unit_secs": { "message": "초" },
   "state_enabled": { "message": "활성화됨" },

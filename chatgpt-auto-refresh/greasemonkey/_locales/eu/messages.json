@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Ez dago azalpenik erabilgarri." },
   "alert_newerVer": { "message": "-ren bertsio berriagoa" },
   "alert_isAvail": { "message": "eskuragarri dago" },
-  "alert_dontShowAgain": { "message": "Ez erakutsi berriro" },
-  "alert_untilNextVer": { "message": "hurrengo eguneraketa arte" },
   "alert_intUpdated": { "message": "ChatGPT saioa automatikoki freskatuko da guztietan" },
   "unit_secs": { "message": "segsecond" },
   "state_enabled": { "message": "gaituta" },

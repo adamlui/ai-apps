@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Mövcud Güncelle" },
   "alert_newerVer": { "message": "Daha yeni versiya" },
   "alert_isAvail": { "message": "mövcud deyil" },
-  "alert_dontShowAgain": { "message": "Yenidən göstərmə" },
-  "alert_untilNextVer": { "message": "növbəti yeniləməyə qədər" },
   "alert_intUpdated": { "message": "ChatGPT sessiyası hər gün avtomatik olaraq bərpa olunacaq" },
   "unit_secs": { "message": "San" },
   "state_enabled": { "message": "Aktivdir" },

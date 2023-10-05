@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Nduru tënë so ayeke dä" },
   "alert_newerVer": { "message": "Mbeni fini version ti" },
   "alert_isAvail": { "message": "yeke available" },
-  "alert_dontShowAgain": { "message": "You won 't have me again na na na na na" },
-  "alert_untilNextVer": { "message": "a yeke nzoni e sara kua na aye so e lingbi ti" },
   "alert_intUpdated": { "message": "ChatGPT session ayeke kiri na peko ti aye kue" },
   "unit_secs": { "message": "yeke siks" },
   "state_enabled": { "message": "enable awe" },

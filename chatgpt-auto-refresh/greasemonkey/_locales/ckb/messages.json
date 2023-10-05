@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "نوێکردنەوە بەردەستە" },
   "alert_newerVer": { "message": "ڤێرژنێکی نوێ" },
   "alert_isAvail": { "message": "بەردەستە" },
-  "alert_dontShowAgain": { "message": "جارێکی تر پیشانی مەدەنەوە.." },
-  "alert_untilNextVer": { "message": "تا دواین نوێکردنەوە" },
   "alert_intUpdated": { "message": "Ckbwiki خۆکارانە نوێکردنەوە" },
   "unit_secs": { "message": "secs" },
   "state_enabled": { "message": "چالاکە، تواناپێدراو" },

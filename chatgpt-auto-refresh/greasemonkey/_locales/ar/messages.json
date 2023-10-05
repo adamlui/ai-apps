@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "تحديث متوفر" },
   "alert_newerVer": { "message": "إصدار أحدث من" },
   "alert_isAvail": { "message": "متوفر" },
-  "alert_dontShowAgain": { "message": "لا تعرضه مجددًا" },
-  "alert_untilNextVer": { "message": "حتى التحديث التالي" },
   "alert_intUpdated": { "message": "سيتم تحديث جلسة ChatGPT تلقائيًا كل" },
   "unit_secs": { "message": "ثوانٍ" },
   "state_enabled": { "message": "مُمكّن" },

@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "ዝመና ይገኛል!" },
   "alert_newerVer": { "message": "አዲስ ስሪት" },
   "alert_isAvail": { "message": "ሊገኝ ይችላል" },
-  "alert_dontShowAgain": { "message": "እንደገና አትመልከቱ" },
-  "alert_untilNextVer": { "message": "እስከሚቀጥለው ዝማኔ ድረስ" },
   "alert_intUpdated": { "message": "SiteGroundTrans በየዕለቱ ይዘጋል" },
   "unit_secs": { "message": "ሴራሚክ" },
   "state_enabled": { "message": "የነቃ" },

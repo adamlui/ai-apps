@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Täzeleşdir" },
   "alert_newerVer": { "message": "Täze görnüş" },
   "alert_isAvail": { "message": "häzir bar" },
-  "alert_dontShowAgain": { "message": "Gaýtalaň" },
-  "alert_untilNextVer": { "message": "täze gün tertibine çenli" },
   "alert_intUpdated": { "message": "ÇatGPT sessiýasy her gezek özara täzelener" },
   "unit_secs": { "message": "unit-format" },
   "state_enabled": { "message": "Jawany Mümkin Et" },

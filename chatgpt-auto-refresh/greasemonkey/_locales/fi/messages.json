@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Päivitys saatavilla" },
   "alert_newerVer": { "message": "Uudempi versio" },
   "alert_isAvail": { "message": "on käytettävissä" },
-  "alert_dontShowAgain": { "message": "Älä näytä uudestaan" },
-  "alert_untilNextVer": { "message": "seuraavaan päivitykseen asti" },
   "alert_intUpdated": { "message": "ChatGPT-istunto päivittyy automaattisesti joka" },
   "unit_secs": { "message": "sekuntia" },
   "state_enabled": { "message": "käytössä" },

@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Update available" },
   "alert_newerVer": { "message": "A newer version of" },
   "alert_isAvail": { "message": "is available" },
-  "alert_dontShowAgain": { "message": "Don't show again" },
-  "alert_untilNextVer": { "message": "until next update" },
   "alert_intUpdated": { "message": "ChatGPT സെഷൻ ഓട്ടോ പുതുക്കുന്നതിന് പുതിയ ഇൻറർവൽ." },
   "unit_secs": { "message": "സെക്കൻഡ്" },
   "state_enabled": { "message": "പ്രവർത്തിക്കുന്നു" },

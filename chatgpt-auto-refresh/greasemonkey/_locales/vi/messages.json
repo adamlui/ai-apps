@@ -10,8 +10,6 @@
   "alert_updateAvail": { "message":  "Cập nhật có sẵn" },
   "alert_newerVer": { "message":  "Phiên bản mới hơn của" },
   "alert_isAvail": { "message":  "is available" },
-  "alert_dontShowAgain": { "message":  "Đừng hiển thị lại" },
-  "alert_untilNextVer": { "message":  "cho đê ́ n lâ ̀ n câ ̣ p" },
   "alert_intUpdated": { "message":  "Phiên ChatGPT sẽ được làm mới tự động mỗi" },
   "unit_secs": { "message":  "giây" },
   "state_enabled": { "message":  "đã bật" },

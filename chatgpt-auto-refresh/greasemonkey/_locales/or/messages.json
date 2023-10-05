@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "ଅଦ୍ୟତନ ଉପଲବ୍ଧ" },
   "alert_newerVer": { "message": "ଏହାର ଏକ ନୂତନ ସଂସ୍କରଣ" },
   "alert_isAvail": { "message": "ଉପଲବ୍ଧ ଅଛି" },
-  "alert_dontShowAgain": { "message": "ପୁଣିଥରେ ଦେଖାନ୍ତୁ ନାହିଁ" },
-  "alert_untilNextVer": { "message": "ପରବର୍ତ୍ତୀ ଅଦ୍ୟତନ ପର୍ଯ୍ୟନ୍ତ" },
   "alert_intUpdated": { "message": "ଚାଟ୍ ଜିପିଟି ଅଧିବେଶନ ପ୍ରତ୍ୟେକକୁ ସ୍ auto ତ - ସତେଜ କରିବ |" },
   "unit_secs": { "message": "ସେକେଣ୍ଡ୍" },
   "state_enabled": { "message": "ସକ୍ଷମ" },

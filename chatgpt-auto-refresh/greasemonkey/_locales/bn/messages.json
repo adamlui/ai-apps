@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "আপডেট উপলব্ধ" },
   "alert_newerVer": { "message": "নতুন সংস্করণ" },
   "alert_isAvail": { "message": "সহজলভ্য" },
-  "alert_dontShowAgain": { "message": "আবার দেখাবেন না" },
-  "alert_untilNextVer": { "message": "পরবর্তী আপডেট পর্যন্ত" },
   "alert_intUpdated": { "message": "চ্যাটজিপিটি সেশন স্বয়ংক্রিয় ভাবে পুনরায় রিফ্রেশ হবে প্রতি" },
   "unit_secs": { "message": "সেকেন্ড" },
   "state_enabled": { "message": "সক্ষম" },

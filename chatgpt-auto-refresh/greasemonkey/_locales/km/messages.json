@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "ការអាប់ដេតមាន" },
   "alert_newerVer": { "message": "ការបកប្រែថ្មីនៃ" },
   "alert_isAvail": { "message": "មាន" },
-  "alert_dontShowAgain": { "message": "កុំបង្ហាញម្តងទៀត" },
-  "alert_untilNextVer": { "message": "រហូតដល់អាប់ដេតបន្ទាប់" },
   "alert_intUpdated": { "message": "សម័យ ChatGPT នឹង ធ្វើ ឲ្យ ស្រស់ ដោយ ស្វ័យ ប្រវត្តិ រៀង រាល់" },
   "unit_secs": { "message": "វិនាទី" },
   "state_enabled": { "message": "បាន​ជ្រើស" },

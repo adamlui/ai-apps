@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Update available" },
   "alert_newerVer": { "message": "A newer version of" },
   "alert_isAvail": { "message": "is available" },
-  "alert_dontShowAgain": { "message": "Don't show again" },
-  "alert_untilNextVer": { "message": "until next update" },
   "alert_intUpdated": { "message": "ChatGPT ਸੈਸ਼ਨ ਆਟੋ ਰੀਫਰੈਸ਼ ਹੋਵੇਗਾ" },
   "unit_secs": { "message": "ਸਕਿੰਟ" },
   "state_enabled": { "message": "ਸਕ੍ਰਿਆ ਕੀਤਾ ਗਿਆ" },

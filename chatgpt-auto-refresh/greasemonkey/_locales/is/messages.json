@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Ný uppfærsla í boði" },
   "alert_newerVer": { "message": "Nýrri útgáfa af" },
   "alert_isAvail": { "message": "er í boði" },
-  "alert_dontShowAgain": { "message": "Ekki sýna þetta aftur" },
-  "alert_untilNextVer": { "message": "fram að næstu uppfærslu" },
   "alert_intUpdated": { "message": "ChatGPT-lota mun sjálfkrafa endurhlaða hverja einustu" },
   "unit_secs": { "message": "sek." },
   "state_enabled": { "message": "Lag" },

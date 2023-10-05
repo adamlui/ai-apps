@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Қолжетімді жаңарту" },
   "alert_newerVer": { "message": "Жаңа нұсқасы" },
   "alert_isAvail": { "message": "қолжетімді" },
-  "alert_dontShowAgain": { "message": "Қайта көрсетпеңіз" },
-  "alert_untilNextVer": { "message": "келесі жаңартуға дейін" },
   "alert_intUpdated": { "message": "ChatGPT сеансы әрқайсысын автоматты түрде жаңартады" },
   "unit_secs": { "message": "секsecond" },
   "state_enabled": { "message": "рұқсат етілген" },

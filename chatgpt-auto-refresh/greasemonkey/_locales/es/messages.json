@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Actualización disponible" },
   "alert_newerVer": { "message": "Una versión más reciente de" },
   "alert_isAvail": { "message": "está disponible" },
-  "alert_dontShowAgain": { "message": "No volver a mostrar" },
-  "alert_untilNextVer": { "message": "Hasta la próxima!" },
   "alert_intUpdated": { "message": "La sesión de ChatGPT se actualizará automáticamente cada" },
   "unit_secs": { "message": "segundos" },
   "state_enabled": { "message": "habilitado" },

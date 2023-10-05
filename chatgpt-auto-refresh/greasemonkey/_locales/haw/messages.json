@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Loaʻa ka hōʻano hou" },
   "alert_newerVer": { "message": "He mana hou o" },
   "alert_isAvail": { "message": "loaʻa" },
-  "alert_dontShowAgain": { "message": "Mai hōʻike hou" },
-  "alert_untilNextVer": { "message": "a hiki i ka mea hou hou" },
   "alert_intUpdated": { "message": "E hōʻano hou ka manawa ChatGPT i kēlā me kēia" },
   "unit_secs": { "message": "kekona" },
   "state_enabled": { "message": "hiki" },

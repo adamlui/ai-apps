@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Update available" },
   "alert_newerVer": { "message": "A newer version of" },
   "alert_isAvail": { "message": "is available" },
-  "alert_dontShowAgain": { "message": "Don't show again" },
-  "alert_untilNextVer": { "message": "until next update" },
   "alert_intUpdated": { "message": "ChatGPT セッションは自動的に更新されます。更新間隔は" },
   "unit_secs": { "message": "秒" },
   "state_enabled": { "message": "有効化" },

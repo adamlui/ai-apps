@@ -14,8 +14,6 @@
   "alert_updateAvail": { "message": "Actualizacion Disponible" },
   "alert_newerVer": { "message": "New Version Of" },
   "alert_isAvail": { "message": "ta disponibel" },
-  "alert_dontShowAgain": { "message": "No mustra un biaha mas" },
-  "alert_untilNextVer": { "message": "siguiente Actualizacion" },
   "alert_intUpdated": { "message": "Reunionnan di CAFT lo cuminsa automatisa tur" },
   "unit_secs": { "message": "seks" },
   "state_enabled": { "message": "pèrmití" },
