@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ifintu tafilipo" },
   "alert_upToDate": { "message": "Fela Kuti Up-to-date" },
   "alert_isUpToDate": { "message": "shine shine up-date shine" },
-  "alert_intUpdated": { "message": "ChatGPT session baka auto-refresh cila mwaka" },
+  "alert_willRefresh": { "message": "ChatGPT session baka auto-refresh cila mwaka" },
   "unit_secs": { "message": "ica secs" },
   "state_enabled": { "message": "Ukusuminisha Ukubomba" },
   "state_disabled": { "message": "Ukukanya Ukubomba" }

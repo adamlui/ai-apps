@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "er tilgjengelig" },
   "alert_upToDate": { "message": "Oppdatert" },
   "alert_isUpToDate": { "message": "er oppdatert" },
-  "alert_intUpdated": { "message": "ChatGPT-sesjon vil automatisk oppdateres hver" },
+  "alert_willRefresh": { "message": "ChatGPT-sesjon vil automatisk oppdateres hver" },
   "unit_secs": { "message": "sekunder" },
   "state_enabled": { "message": "aktivert" },
   "state_disabled": { "message": "deaktivert" }

@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "está disponible" },
   "alert_upToDate": { "message": "Al día" },
   "alert_isUpToDate": { "message": "está actualizada" },
-  "alert_intUpdated": { "message": "La sesión de ChatGPT se actualizará automáticamente cada" },
+  "alert_willRefresh": { "message": "La sesión de ChatGPT se actualizará automáticamente cada" },
   "unit_secs": { "message": "segundos" },
   "state_enabled": { "message": "habilitado" },
   "state_disabled": { "message": "deshabilitado" }

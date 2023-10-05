@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
   "alert_upToDate": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
   "alert_isUpToDate": { "message": "ད་ལྟོའི་བར་ན་ཡང་" },
-  "alert_intUpdated": { "message": "ཀེར་ཐིག་གི་རྒྱབ་སྐྱོར་འབད་ནིའི་དོན་ལུ་ དུས་ཡུན་སྐར་དོ།" },
+  "alert_willRefresh": { "message": "ཀེར་ཐིག་གི་རྒྱབ་སྐྱོར་འབད་ནིའི་དོན་ལུ་ དུས་ཡུན་སྐར་དོ།" },
   "unit_secs": { "message": "སི་ཀིསི། (_S)" },
   "state_enabled": { "message": "གྲོགས་རམ་ཡོད།" },
   "state_disabled": { "message": "སེལ་འཐུ་འབད་ཡོད་པའི་བརྡ་བཀོད་" }

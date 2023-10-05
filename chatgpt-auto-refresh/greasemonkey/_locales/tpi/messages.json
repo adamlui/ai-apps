@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "em i kamap pinis" },
   "alert_upToDate": { "message": "Sapos" },
   "alert_isUpToDate": { "message": "Em i sapos" },
-  "alert_intUpdated": { "message": "Ol man i save mekim pasin nogut long ol arapela man, ol i save mekim pasin nogut long ol arapela man." },
+  "alert_willRefresh": { "message": "Ol man i save mekim pasin nogut long ol arapela man, ol i save mekim pasin nogut long ol arapela man." },
   "unit_secs": { "message": "ol seken" },
   "state_enabled": { "message": "em i bin mekim olsem" },
   "state_disabled": { "message": "pasim" }

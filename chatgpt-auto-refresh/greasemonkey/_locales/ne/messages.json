@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "उपलब्ध छ" },
   "alert_upToDate": { "message": "अपडेट भएको छ" },
   "alert_isUpToDate": { "message": "अपडेट भएको छ" },
-  "alert_intUpdated": { "message": "च्याटजीपीटी सेशनलाई स्वत: पुनरावलोकन हुनेछ प्रत्येक" },
+  "alert_willRefresh": { "message": "च्याटजीपीटी सेशनलाई स्वत: पुनरावलोकन हुनेछ प्रत्येक" },
   "unit_secs": { "message": "सेकेन्ड" },
   "state_enabled": { "message": "सक्षम गरिएको छ" },
   "state_disabled": { "message": "निष्क्रिय गरिएको छ" }

@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ནང་འཇུག" },
   "alert_upToDate": { "message": "སྤོར་བ །" },
   "alert_isUpToDate": { "message": "ཡར་ངོའི་ཚེས་བཅུའི་དུས་སུ་" },
-  "alert_intUpdated": { "message": "SBS Language_ཡོངས་འཛིན་པར་རིས །" },
+  "alert_willRefresh": { "message": "SBS Language_ཡོངས་འཛིན་པར་རིས །" },
   "unit_secs": { "message": "གསང་གྲངས །" },
   "state_enabled": { "message": "སྤྱོད་སྒོ་ཕྱེས།" },
   "state_disabled": { "message": "སྤྱོད་སྒོ་བཀག" }

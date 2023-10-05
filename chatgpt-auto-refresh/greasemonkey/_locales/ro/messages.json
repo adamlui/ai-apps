@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "este disponibil" },
   "alert_upToDate": { "message": "Actualizat" },
   "alert_isUpToDate": { "message": "Actualizat" },
-  "alert_intUpdated": { "message": "Sesiunea ChatGPT va fi reîmprospătată automat la fiecare" },
+  "alert_willRefresh": { "message": "Sesiunea ChatGPT va fi reîmprospătată automat la fiecare" },
   "unit_secs": { "message": "secunde" },
   "state_enabled": { "message": "activat" },
   "state_disabled": { "message": "dezactivat" }

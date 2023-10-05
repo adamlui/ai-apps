@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "o loo maua" },
   "alert_upToDate": { "message": "Faʻafouina i le taimi nei" },
   "alert_isUpToDate": { "message": "o loo i ai i le taimi nei" },
-  "alert_intUpdated": { "message": "ChatGPT sauniga o le a toefuataiina taavale uma" },
+  "alert_willRefresh": { "message": "ChatGPT sauniga o le a toefuataiina taavale uma" },
   "unit_secs": { "message": "sECS" },
   "state_enabled": { "message": "faatagaina" },
   "state_disabled": { "message": "faaletonu" }

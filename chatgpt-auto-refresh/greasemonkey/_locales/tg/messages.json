@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "дастрас аст" },
   "alert_upToDate": { "message": "Навшуда" },
   "alert_isUpToDate": { "message": "замонавӣ аст" },
-  "alert_intUpdated": { "message": "Сессияи ChatGPT ҳар якро худкор навсозӣ мекунад" },
+  "alert_willRefresh": { "message": "Сессияи ChatGPT ҳар якро худкор навсозӣ мекунад" },
   "unit_secs": { "message": "_: дуюм дюмsecond" },
   "state_enabled": { "message": "фаъол шуд" },
   "state_disabled": { "message": "маъюб" }

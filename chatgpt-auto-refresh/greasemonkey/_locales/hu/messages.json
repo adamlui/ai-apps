@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "elérhető" },
   "alert_upToDate": { "message": "Aktuális" },
   "alert_isUpToDate": { "message": "naprakész" },
-  "alert_intUpdated": { "message": "A ChatGPT munkamenet automatikusan frissül minden" },
+  "alert_willRefresh": { "message": "A ChatGPT munkamenet automatikusan frissül minden" },
   "unit_secs": { "message": "másodperc" },
   "state_enabled": { "message": "engedélyezve" },
   "state_disabled": { "message": "letiltva" }

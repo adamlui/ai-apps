@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "Μη διαθέσιμο" },
   "alert_upToDate": { "message": "Ενημερωμένο" },
   "alert_isUpToDate": { "message": " είναι ενήμερο." },
-  "alert_intUpdated": { "message": "Η συνεδρία ChatGPT θα ανανεώνεται αυτόματα κάθε" },
+  "alert_willRefresh": { "message": "Η συνεδρία ChatGPT θα ανανεώνεται αυτόματα κάθε" },
   "unit_secs": { "message": "δευτερόλεπτα" },
   "state_enabled": { "message": "ενεργοποιημένο" },
   "state_disabled": { "message": "απενεργοποιημένο" }

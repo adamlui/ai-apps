@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "je k dispozícii" },
   "alert_upToDate": { "message": "Aktuálny" },
   "alert_isUpToDate": { "message": "sú aktuálne" },
-  "alert_intUpdated": { "message": "Relácia ChatGPT sa bude automaticky obnovovať každých" },
+  "alert_willRefresh": { "message": "Relácia ChatGPT sa bude automaticky obnovovať každých" },
   "unit_secs": { "message": "sekúnd" },
   "state_enabled": { "message": "zapnuté" },
   "state_disabled": { "message": "vypnuté" }

@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "สามารถใช้ได้" },
   "alert_upToDate": { "message": "ปัจจุบัน" },
   "alert_isUpToDate": { "message": "อัพเดทแล้ว" },
-  "alert_intUpdated": { "message": "เซสชั่น ChatGPT จะรีเฟรชโดยอัตโนมัติทุก" },
+  "alert_willRefresh": { "message": "เซสชั่น ChatGPT จะรีเฟรชโดยอัตโนมัติทุก" },
   "unit_secs": { "message": "วินาที" },
   "state_enabled": { "message": "เปิดใช้งานแล้ว" },
   "state_disabled": { "message": "ปิดใช้งานแล้ว" }

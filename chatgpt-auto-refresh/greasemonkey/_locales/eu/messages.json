@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "eskuragarri dago" },
   "alert_upToDate": { "message": "Eguneratu" },
   "alert_isUpToDate": { "message": "Eguneratu" },
-  "alert_intUpdated": { "message": "ChatGPT saioa automatikoki freskatuko da guztietan" },
+  "alert_willRefresh": { "message": "ChatGPT saioa automatikoki freskatuko da guztietan" },
   "unit_secs": { "message": "segsecond" },
   "state_enabled": { "message": "gaituta" },
   "state_disabled": { "message": "ezgaituta" }

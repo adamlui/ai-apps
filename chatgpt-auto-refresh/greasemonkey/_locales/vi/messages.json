@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "đang có sẵn" },
   "alert_upToDate": { "message": "Đã cập nhật" },
   "alert_isUpToDate": { "message": "đã được cập nhật" },
-  "alert_intUpdated": { "message": "Phiên ChatGPT sẽ tự động làm mới mỗi" },
+  "alert_willRefresh": { "message": "Phiên ChatGPT sẽ tự động làm mới mỗi" },
   "unit_secs": { "message": "giây" },
   "state_enabled": { "message": "đã bật" },
   "state_disabled": { "message": "đã tắt" }

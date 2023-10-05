@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "kely ato" },
   "alert_upToDate": { "message": "Voaray" },
   "alert_isUpToDate": { "message": "voaray farany" },
-  "alert_intUpdated": { "message": "Ny ChatGPT dia hanova ny sehatra amin'ny alalan'ny famindrampotoana amin'ny" },
+  "alert_willRefresh": { "message": "Ny ChatGPT dia hanova ny sehatra amin'ny alalan'ny famindrampotoana amin'ny" },
   "unit_secs": { "message": "segondra" },
   "state_enabled": { "message": "voafaritra" },
   "state_disabled": { "message": "tsy voafaritra" }

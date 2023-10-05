@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "likupezeka" },
   "alert_upToDate": { "message": "Zaposachedwa" },
   "alert_isUpToDate": { "message": "ndi zaposachedwa" },
-  "alert_intUpdated": { "message": "ChatGPT gawo adzakhala basi kutsitsimutsa aliyense" },
+  "alert_willRefresh": { "message": "ChatGPT gawo adzakhala basi kutsitsimutsa aliyense" },
   "unit_secs": { "message": "mfundo zazinsinsi" },
   "state_enabled": { "message": "Utheketsa" },
   "state_disabled": { "message": "Usatheketsa" }

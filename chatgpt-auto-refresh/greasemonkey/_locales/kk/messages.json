@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "қолжетімді" },
   "alert_upToDate": { "message": "Жаңартылған" },
   "alert_isUpToDate": { "message": "жаңартылған" },
-  "alert_intUpdated": { "message": "ChatGPT сеансы әрқайсысын автоматты түрде жаңартады" },
+  "alert_willRefresh": { "message": "ChatGPT сеансы әрқайсысын автоматты түрде жаңартады" },
   "unit_secs": { "message": "секsecond" },
   "state_enabled": { "message": "рұқсат етілген" },
   "state_disabled": { "message": "рұқсат етілмеген" }

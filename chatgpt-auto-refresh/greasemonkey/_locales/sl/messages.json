@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "je na voljo" },
   "alert_upToDate": { "message": "najnovejši" },
   "alert_isUpToDate": { "message": "najnovejši" },
-  "alert_intUpdated": { "message": "Seja ChatGPT se samodejno osveži vsakih" },
+  "alert_willRefresh": { "message": "Seja ChatGPT se samodejno osveži vsakih" },
   "unit_secs": { "message": "sekund" },
   "state_enabled": { "message": "omogočeno" },
   "state_disabled": { "message": "onemogočeno" }

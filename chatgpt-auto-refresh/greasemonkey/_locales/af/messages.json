@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "is beskikbaar" },
   "alert_upToDate": { "message": "Op datum" },
   "alert_isUpToDate": { "message": "die is up-to-date" },
-  "alert_intUpdated": { "message": "ChatGPT sessie sal outomaties elke" },
+  "alert_willRefresh": { "message": "ChatGPT sessie sal outomaties elke" },
   "unit_secs": { "message": "sekondessecond" },
   "state_enabled": { "message": "Blou" },
   "state_disabled": { "message": "gedeaktiveer" }

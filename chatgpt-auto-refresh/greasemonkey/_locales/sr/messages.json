@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "је доступан" },
   "alert_upToDate": { "message": "U toku" },
   "alert_isUpToDate": { "message": "je ažuran" },
-  "alert_intUpdated": { "message": "ЦхатГПТ сесија ће се аутоматски освежавати сваке" },
+  "alert_willRefresh": { "message": "ЦхатГПТ сесија ће се аутоматски освежавати сваке" },
   "unit_secs": { "message": "сецс" },
   "state_enabled": { "message": "енаблед" },
   "state_disabled": { "message": "дисаблед" }

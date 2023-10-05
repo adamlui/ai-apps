@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "دستیاب ہے" },
   "alert_upToDate": { "message": "اپ ٹو ڈیٹ ہے" },
   "alert_isUpToDate": { "message": "اپ ٹو ڈیٹ ہے" },
-  "alert_intUpdated": { "message": "چیٹ جی پی ٹی سیشن خود بخود ہر" },
+  "alert_willRefresh": { "message": "چیٹ جی پی ٹی سیشن خود بخود ہر" },
   "unit_secs": { "message": "سیکنڈز" },
   "state_enabled": { "message": "چالو" },
   "state_disabled": { "message": "معطل" }

@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ଉପଲବ୍ଧ ଅଛି" },
   "alert_upToDate": { "message": "ଅଦ୍ୟତନ" },
   "alert_isUpToDate": { "message": "ଅଦ୍ୟତନ ହୋଇଛି" },
-  "alert_intUpdated": { "message": "ଚାଟ୍ ଜିପିଟି ଅଧିବେଶନ ପ୍ରତ୍ୟେକକୁ ସ୍ auto ତ - ସତେଜ କରିବ |" },
+  "alert_willRefresh": { "message": "ଚାଟ୍ ଜିପିଟି ଅଧିବେଶନ ପ୍ରତ୍ୟେକକୁ ସ୍ auto ତ - ସତେଜ କରିବ |" },
   "unit_secs": { "message": "ସେକେଣ୍ଡ୍" },
   "state_enabled": { "message": "ସକ୍ଷମ" },
   "state_disabled": { "message": "ଅକ୍ଷମ" }

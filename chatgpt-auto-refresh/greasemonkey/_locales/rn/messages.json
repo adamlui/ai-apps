@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "bifashishwa" },
   "alert_upToDate": { "message": "Ibintu bitangiriye" },
   "alert_isUpToDate": { "message": "bifitanye" },
-  "alert_intUpdated": { "message": "ChatGPT ishingiye umubare w'igiciro kugiciro kuri kumwe" },
+  "alert_willRefresh": { "message": "ChatGPT ishingiye umubare w'igiciro kugiciro kuri kumwe" },
   "unit_secs": { "message": "mumisekunde" },
   "state_enabled": { "message": "afasha" },
   "state_disabled": { "message": "gukoreshwa" }

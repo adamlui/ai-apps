@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ხელმისაწვდომია" },
   "alert_upToDate": { "message": "განახლებულია" },
   "alert_isUpToDate": { "message": "განახლებულია" },
-  "alert_intUpdated": { "message": "ChatGPT სესია ავტომატურად განახლდება ყოველი" },
+  "alert_willRefresh": { "message": "ChatGPT სესია ავტომატურად განახლდება ყოველი" },
   "unit_secs": { "message": "წამებში" },
   "state_enabled": { "message": "ჩართულია" },
   "state_disabled": { "message": "ინვალიდი" }

@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "is available" },
   "alert_upToDate": { "message": "מעודכן" },
   "alert_isUpToDate": { "message": "מעודכן" },
-  "alert_intUpdated": { "message": "הפעלת ChatGPT תרענן אוטומטית כל" },
+  "alert_willRefresh": { "message": "הפעלת ChatGPT תרענן אוטומטית כל" },
   "unit_secs": { "message": "שניות" },
   "state_enabled": { "message": "מופעל" },
   "state_disabled": { "message": "נָכֶה" }

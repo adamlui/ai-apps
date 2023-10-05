@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "gecerli" },
   "alert_upToDate": { "message": "Güncel" },
   "alert_isUpToDate": { "message": "Güncel" },
-  "alert_intUpdated": { "message": "ChatGPT oturumu otomatik olarak yenilenecek her" },
+  "alert_willRefresh": { "message": "ChatGPT oturumu otomatik olarak yenilenecek her" },
   "unit_secs": { "message": "sn" },
   "state_enabled": { "message": "etkin" },
   "state_disabled": { "message": "devre dışı" }

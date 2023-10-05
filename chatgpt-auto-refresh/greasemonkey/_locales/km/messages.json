@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "មាន" },
   "alert_upToDate": { "message": "ធ្វើឲ្យ​ទាន់​សម័យ" },
   "alert_isUpToDate": { "message": "បានធ្វើបច្ចុប្បន្នភាព" },
-  "alert_intUpdated": { "message": "សម័យ ChatGPT នឹង ធ្វើ ឲ្យ ស្រស់ ដោយ ស្វ័យ ប្រវត្តិ រៀង រាល់" },
+  "alert_willRefresh": { "message": "សម័យ ChatGPT នឹង ធ្វើ ឲ្យ ស្រស់ ដោយ ស្វ័យ ប្រវត្តិ រៀង រាល់" },
   "unit_secs": { "message": "វិនាទី" },
   "state_enabled": { "message": "បាន​ជ្រើស" },
   "state_disabled": { "message": "បានបិទ" }

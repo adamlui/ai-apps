@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ir pieejams" },
   "alert_upToDate": { "message": "Ir aktuāls" },
   "alert_isUpToDate": { "message": "ir aktuāls" },
-  "alert_intUpdated": { "message": "ChatGPT sesija automātiski atjauninās katras" },
+  "alert_willRefresh": { "message": "ChatGPT sesija automātiski atjauninās katras" },
   "unit_secs": { "message": "sekundes" },
   "state_enabled": { "message": "aktivizēts" },
   "state_disabled": { "message": "izslēgts" }

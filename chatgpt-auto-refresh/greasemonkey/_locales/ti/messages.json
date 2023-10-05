@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ተዳልዩ ኣሎ" },
   "alert_upToDate": { "message": "ኣቐዲምካ ምምሕያሽ" },
   "alert_isUpToDate": { "message": "ዝዘመነ" },
-  "alert_intUpdated": { "message": "ChatGPT ክፍለ-ጊዜ ንነፍሲ ወከፍ ብገዛእ ርእሱ ይሓድሶ" },
+  "alert_willRefresh": { "message": "ChatGPT ክፍለ-ጊዜ ንነፍሲ ወከፍ ብገዛእ ርእሱ ይሓድሶ" },
   "unit_secs": { "message": "sECS" },
   "state_enabled": { "message": "ከምዝሰርሕ ዝተገብረ" },
   "state_disabled": { "message": "ከምዘይሰርሕ ዝተገብረ" }

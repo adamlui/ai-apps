@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "kei te wātea" },
   "alert_upToDate": { "message": "Tūnga Ki Raro" },
   "alert_isUpToDate": { "message": "kei te whakakore" },
-  "alert_intUpdated": { "message": "Ka whakahōuna aunoa te kōrero o ChatGPT ia" },
+  "alert_willRefresh": { "message": "Ka whakahōuna aunoa te kōrero o ChatGPT ia" },
   "unit_secs": { "message": "hēkona" },
   "state_enabled": { "message": "whakahohea" },
   "state_disabled": { "message": "whakakore" }

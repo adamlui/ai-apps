@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "huwa disponibbli" },
   "alert_upToDate": { "message": "F'dawl" },
   "alert_isUpToDate": { "message": "huwa f'dawl" },
-  "alert_intUpdated": { "message": "Is-sessjoni tal-ChatGPT se tirrifreża awtomatikament kull" },
+  "alert_willRefresh": { "message": "Is-sessjoni tal-ChatGPT se tirrifreża awtomatikament kull" },
   "unit_secs": { "message": "sekondi" },
   "state_enabled": { "message": "attivat" },
   "state_disabled": { "message": "disabbiltat" }

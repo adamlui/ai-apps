@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ri fhaighinn" },
   "alert_upToDate": { "message": "Làn-fhiosrach" },
   "alert_isUpToDate": { "message": "tha ùr-nodha" },
-  "alert_intUpdated": { "message": "Bidh an seisean ChatGPT ag ùrachadh gu fèin - obrachail gach" },
+  "alert_willRefresh": { "message": "Bidh an seisean ChatGPT ag ùrachadh gu fèin - obrachail gach" },
   "unit_secs": { "message": "soidhnichean" },
   "state_enabled": { "message": "An comas" },
   "state_disabled": { "message": "Gun dòigh" }

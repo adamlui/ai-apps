@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "شتون لري" },
   "alert_upToDate": { "message": "اوسمهالیز دي" },
   "alert_isUpToDate": { "message": "تازه دی" },
-  "alert_intUpdated": { "message": "د ChatGPT ناسته به هر یو په اوتومات ډول تازه شي" },
+  "alert_willRefresh": { "message": "د ChatGPT ناسته به هر یو په اوتومات ډول تازه شي" },
   "unit_secs": { "message": "ثانیې" },
   "state_enabled": { "message": "فعال شوی" },
   "state_disabled": { "message": "غیر فعال شوی" }

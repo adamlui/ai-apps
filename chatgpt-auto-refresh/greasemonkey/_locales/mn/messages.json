@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "байна" },
   "alert_upToDate": { "message": "Шинэ" },
   "alert_isUpToDate": { "message": "шинэ байна" },
-  "alert_intUpdated": { "message": "ChatGPT сэсээ автоматаар шинэчлэгдэх болно" },
+  "alert_willRefresh": { "message": "ChatGPT сэсээ автоматаар шинэчлэгдэх болно" },
   "unit_secs": { "message": "секунд" },
   "state_enabled": { "message": "Идэвхтэй" },
   "state_disabled": { "message": "Идэвхигүй" }

@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "estas disponebla" },
   "alert_upToDate": { "message": "Aktuala" },
   "alert_isUpToDate": { "message": "estas ĝisdata" },
-  "alert_intUpdated": { "message": "La ChatGPT-sesio reŝarĝos aŭtomate ĉiujn" },
+  "alert_willRefresh": { "message": "La ChatGPT-sesio reŝarĝos aŭtomate ĉiujn" },
   "unit_secs": { "message": "sekundoj" },
   "state_enabled": { "message": "kapabligita" },
   "state_disabled": { "message": "malŝaltita" }

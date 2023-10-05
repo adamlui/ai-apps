@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ist verfügbar" },
   "alert_upToDate": { "message": "Auf dem Laufenden" },
   "alert_isUpToDate": { "message": "ist auf dem laufenden" },
-  "alert_intUpdated": { "message": "ChatGPT-Sitzung wird alle" },
+  "alert_willRefresh": { "message": "ChatGPT-Sitzung wird alle" },
   "unit_secs": { "message": "Sekunden" },
   "state_enabled": { "message": "aktiviert" },
   "state_disabled": { "message": "deaktiviert" }

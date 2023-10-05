@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ʻoku lava ke maʻu" },
   "alert_upToDate": { "message": "ʻO aʻu mai ki he ʻaho ni" },
   "alert_isUpToDate": { "message": "ʻOku aʻu ki he ʻaho ni" },
-  "alert_intUpdated": { "message": "ʻE fakafoʻou ʻe he fakataha ChatGPT ʻa e meʻalele kotoa pe" },
+  "alert_willRefresh": { "message": "ʻE fakafoʻou ʻe he fakataha ChatGPT ʻa e meʻalele kotoa pe" },
   "unit_secs": { "message": "THF" },
   "state_enabled": { "message": "Faka'ataa" },
   "state_disabled": { "message": "Tapui" }

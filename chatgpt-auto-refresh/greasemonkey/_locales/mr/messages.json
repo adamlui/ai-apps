@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "उपलब्ध आहे" },
   "alert_upToDate": { "message": "अद्ययावत आहे" },
   "alert_isUpToDate": { "message": "अद्ययावत आहे" },
-  "alert_intUpdated": { "message": "चॅटजीपीटी सत्र स्वयंचलित रिफ्रेश होईल प्रत्येक" },
+  "alert_willRefresh": { "message": "चॅटजीपीटी सत्र स्वयंचलित रिफ्रेश होईल प्रत्येक" },
   "unit_secs": { "message": "सेकंद" },
   "state_enabled": { "message": "सक्षम" },
   "state_disabled": { "message": "अक्षम" }

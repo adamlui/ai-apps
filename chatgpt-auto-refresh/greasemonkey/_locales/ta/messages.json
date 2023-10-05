@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "கிடைக்கும்" },
   "alert_upToDate": { "message": "அப்-டு-டேட்" },
   "alert_isUpToDate": { "message": "புதுப்பித்த நிலையில் உள்ளது" },
-  "alert_intUpdated": { "message": "ChatGPT அமர்வு ஒவ்வொன்றும் தானாக புதுப்பிக்கப்படும்" },
+  "alert_willRefresh": { "message": "ChatGPT அமர்வு ஒவ்வொன்றும் தானாக புதுப்பிக்கப்படும்" },
   "unit_secs": { "message": "நொடிக்குள்" },
   "state_enabled": { "message": "இயக்கப்பட்டது" },
   "state_disabled": { "message": "முடக்கப்பட்டது" }

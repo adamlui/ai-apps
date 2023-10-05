@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "даступны" },
   "alert_upToDate": { "message": "Аднаўленне не патрабуецца" },
   "alert_isUpToDate": { "message": "абноўлена" },
-  "alert_intUpdated": { "message": "Сеанс ChatGPT будзе аўтаматычна абнаўляцца кожны" },
+  "alert_willRefresh": { "message": "Сеанс ChatGPT будзе аўтаматычна абнаўляцца кожны" },
   "unit_secs": { "message": "сек" },
   "state_enabled": { "message": "XYZ/ альфа- канал" },
   "state_disabled": { "message": "адключаны" }

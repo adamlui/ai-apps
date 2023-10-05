@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "häzir bar" },
   "alert_upToDate": { "message": "Döwrebap" },
   "alert_isUpToDate": { "message": "häzirki döwürde" },
-  "alert_intUpdated": { "message": "ChatGPT sessiýasy her gezek özara täzelener" },
+  "alert_willRefresh": { "message": "ChatGPT sessiýasy her gezek özara täzelener" },
   "unit_secs": { "message": "sekunt" },
   "state_enabled": { "message": "açyk" },
   "state_disabled": { "message": "maýyp" }

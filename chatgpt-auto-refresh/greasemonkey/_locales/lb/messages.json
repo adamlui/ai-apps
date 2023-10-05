@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ass verfügbar" },
   "alert_upToDate": { "message": "Op dem neiste Stand" },
   "alert_isUpToDate": { "message": "ass op dem neiste stand" },
-  "alert_intUpdated": { "message": "ChatGPT Sessioun wäert all automatesch erfrëschen" },
+  "alert_willRefresh": { "message": "ChatGPT Sessioun wäert all automatesch erfrëschen" },
   "unit_secs": { "message": "sekonnen" },
   "state_enabled": { "message": "aktiviert" },
   "state_disabled": { "message": "deaktivéiert" }

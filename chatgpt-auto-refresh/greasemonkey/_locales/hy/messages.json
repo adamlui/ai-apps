@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "առկա է" },
   "alert_upToDate": { "message": "Թարմացված" },
   "alert_isUpToDate": { "message": "այն արդիական է" },
-  "alert_intUpdated": { "message": "ChatGPT նիստը ամեն անգամ ավտոմատ կթարմացվի" },
+  "alert_willRefresh": { "message": "ChatGPT նիստը ամեն անգամ ավտոմատ կթարմացվի" },
   "unit_secs": { "message": "վայրկյան" },
   "state_enabled": { "message": "միացված է" },
   "state_disabled": { "message": "անաշխատունակ" }

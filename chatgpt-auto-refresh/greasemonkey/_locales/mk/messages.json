@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "е достапно" },
   "alert_upToDate": { "message": "Ажурно" },
   "alert_isUpToDate": { "message": "е ажурно" },
-  "alert_intUpdated": { "message": "Сесијата на ChatGPT ќе се освежува автоматски на секои" },
+  "alert_willRefresh": { "message": "Сесијата на ChatGPT ќе се освежува автоматски на секои" },
   "unit_secs": { "message": "секунди" },
   "state_enabled": { "message": "овозможено" },
   "state_disabled": { "message": "оневозможено" }

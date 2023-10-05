@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "সহজলভ্য" },
   "alert_upToDate": { "message": "হালনাগাদ" },
   "alert_isUpToDate": { "message": "আপ-টু-ডেট" },
-  "alert_intUpdated": { "message": "চ্যাটজিপিটি সেশন স্বয়ংক্রিয় ভাবে পুনরায় রিফ্রেশ হবে প্রতি" },
+  "alert_willRefresh": { "message": "চ্যাটজিপিটি সেশন স্বয়ংক্রিয় ভাবে পুনরায় রিফ্রেশ হবে প্রতি" },
   "unit_secs": { "message": "সেকেন্ড" },
   "state_enabled": { "message": "সক্ষম" },
   "state_disabled": { "message": "নিষ্ক্রিয়" }

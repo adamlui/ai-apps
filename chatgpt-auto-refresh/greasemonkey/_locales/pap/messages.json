@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ta disponibel" },
   "alert_upToDate": { "message": "Aktual" },
   "alert_isUpToDate": { "message": "ta aktual" },
-  "alert_intUpdated": { "message": "Sesion di ChatGPT lo aktualisá automátikamente kada" },
+  "alert_willRefresh": { "message": "Sesion di ChatGPT lo aktualisá automátikamente kada" },
   "unit_secs": { "message": "segedonan" },
   "state_enabled": { "message": "habilitá" },
   "state_disabled": { "message": "desabilitá" }

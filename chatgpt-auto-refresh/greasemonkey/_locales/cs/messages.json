@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "je k dispozici" },
   "alert_upToDate": { "message": "aktuální" },
   "alert_isUpToDate": { "message": "jenž se vyzná" },
-  "alert_intUpdated": { "message": "ChatGPT sezení se bude automaticky obnovovat každých" },
+  "alert_willRefresh": { "message": "ChatGPT sezení se bude automaticky obnovovat každých" },
   "unit_secs": { "message": "sekund" },
   "state_enabled": { "message": "povoleno" },
   "state_disabled": { "message": "zakázáno" }

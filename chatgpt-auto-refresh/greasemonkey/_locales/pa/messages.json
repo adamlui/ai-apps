@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ਉਪਲਬਧ ਹੈ" },
   "alert_upToDate": { "message": "ਨਵੀਨੀਕਰਨ" },
   "alert_isUpToDate": { "message": "ਨਵੀਨੀਕਰਨ" },
-  "alert_intUpdated": { "message": "ChatGPT ਸੈਸ਼ਨ ਆਟੋ ਰੀਫਰੈਸ਼ ਹੋਵੇਗਾ" },
+  "alert_willRefresh": { "message": "ChatGPT ਸੈਸ਼ਨ ਆਟੋ ਰੀਫਰੈਸ਼ ਹੋਵੇਗਾ" },
   "unit_secs": { "message": "ਸਕਿੰਟ" },
   "state_enabled": { "message": "ਸਕ੍ਰਿਆ ਕੀਤਾ ਗਿਆ" },
   "state_disabled": { "message": "ਅਯੋਗ ਕੀਤਾ ਗਿਆ" }

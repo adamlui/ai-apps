@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "waa la heli karaa" },
   "alert_upToDate": { "message": "Ilaa taariiqda" },
   "alert_isUpToDate": { "message": "waa up-to-date" },
-  "alert_intUpdated": { "message": "Kalfadhiga ChatGPT wuxuu si otomaatig ah u cusbooneysiin doonaa mid kasta" },
+  "alert_willRefresh": { "message": "Kalfadhiga ChatGPT wuxuu si otomaatig ah u cusbooneysiin doonaa mid kasta" },
   "unit_secs": { "message": "sECS" },
   "state_enabled": { "message": "La daaray" },
   "state_disabled": { "message": "La damiyay" }

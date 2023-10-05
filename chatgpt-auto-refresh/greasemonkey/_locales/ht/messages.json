@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ki disponib" },
   "alert_upToDate": { "message": "Ajou" },
   "alert_isUpToDate": { "message": "se ajou" },
-  "alert_intUpdated": { "message": "Sesyon ChatGPT pral oto-rafrechi chak" },
+  "alert_willRefresh": { "message": "Sesyon ChatGPT pral oto-rafrechi chak" },
   "unit_secs": { "message": "segonn" },
   "state_enabled": { "message": "pèmèt" },
   "state_disabled": { "message": "andikape" }

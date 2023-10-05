@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ມີ" },
   "alert_upToDate": { "message": "ອັບເດດ" },
   "alert_isUpToDate": { "message": "ທັນສະໄຫມ" },
-  "alert_intUpdated": { "message": "ກອງປະຊຸມສົນທະນາGPT ຈະອັບເດດອັດຕະໂນມັດທຸກໆຄັ້ງ" },
+  "alert_willRefresh": { "message": "ກອງປະຊຸມສົນທະນາGPT ຈະອັບເດດອັດຕະໂນມັດທຸກໆຄັ້ງ" },
   "unit_secs": { "message": "ວິນາທີ" },
   "state_enabled": { "message": "ເປີດໃຊ້ງານ" },
   "state_disabled": { "message": "ພິການ" }

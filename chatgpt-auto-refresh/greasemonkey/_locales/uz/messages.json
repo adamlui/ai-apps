@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "mavjud." },
   "alert_upToDate": { "message": "Yangilash" },
   "alert_isUpToDate": { "message": "dolzarb hisoblanadi" },
-  "alert_intUpdated": { "message": "ChatGPT sessiyasi har safar avtomatik yangilanadi" },
+  "alert_willRefresh": { "message": "ChatGPT sessiyasi har safar avtomatik yangilanadi" },
   "unit_secs": { "message": "Секунд" },
   "state_enabled": { "message": "yoqilgan" },
   "state_disabled": { "message": "o'chirilgan" }

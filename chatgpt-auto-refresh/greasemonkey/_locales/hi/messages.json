@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "उपलब्ध है" },
   "alert_upToDate": { "message": "अद्यतन" },
   "alert_isUpToDate": { "message": "अप - टू - डेट है" },
-  "alert_intUpdated": { "message": "चैटजीपीटी सत्र हर" },
+  "alert_willRefresh": { "message": "चैटजीपीटी सत्र हर" },
   "unit_secs": { "message": "सेकंड" },
   "state_enabled": { "message": "सक्षम" },
   "state_disabled": { "message": "अक्षम" }

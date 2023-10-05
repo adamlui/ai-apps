@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "tersedia" },
   "alert_upToDate": { "message": "Terbaru" },
   "alert_isUpToDate": { "message": "terbaru" },
-  "alert_intUpdated": { "message": "Sesi ChatGPT akan disegarkan secara otomatis setiap kali" },
+  "alert_willRefresh": { "message": "Sesi ChatGPT akan disegarkan secara otomatis setiap kali" },
   "unit_secs": { "message": "detik" },
   "state_enabled": { "message": "diaktifkan" },
   "state_disabled": { "message": "dengan disabilitas" }

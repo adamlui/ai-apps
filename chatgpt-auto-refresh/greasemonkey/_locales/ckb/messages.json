@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "بەردەستە" },
   "alert_upToDate": { "message": "نوێ، ھاوچەرخ، نو، تازە" },
   "alert_isUpToDate": { "message": "نوێ، ھاوچەرخ، نو، تازە" },
-  "alert_intUpdated": { "message": "Ckbwiki خۆکارانە نوێکردنەوە" },
+  "alert_willRefresh": { "message": "Ckbwiki خۆکارانە نوێکردنەوە" },
   "unit_secs": { "message": "secs" },
   "state_enabled": { "message": "چالاکە، تواناپێدراو" },
   "state_disabled": { "message": "پەککەوتە، بێ توانا، نەتوانا، ناچالاککراو، کوژاوەتەوە، کەنەفت، پەککەوت، کەم ئەندام، لێکەوتە، کەنفت" }

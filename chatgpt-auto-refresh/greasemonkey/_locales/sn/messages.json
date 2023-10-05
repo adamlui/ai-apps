@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "iriko pedyo" },
   "alert_upToDate": { "message": "Kuenda kunosangana" },
   "alert_isUpToDate": { "message": "iri kunosangana" },
-  "alert_intUpdated": { "message": "Mishandiso yeChatGPT ichaunganisa kuzoratidzwa kwese" },
+  "alert_willRefresh": { "message": "Mishandiso yeChatGPT ichaunganisa kuzoratidzwa kwese" },
   "unit_secs": { "message": "masekondi" },
   "state_enabled": { "message": "inogadzirwa" },
   "state_disabled": { "message": "hapana kukanganwirwa" }

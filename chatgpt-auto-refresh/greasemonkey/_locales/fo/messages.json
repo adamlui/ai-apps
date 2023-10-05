@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "er tøkt" },
   "alert_upToDate": { "message": "Uppdaterað" },
   "alert_isUpToDate": { "message": "núverandi tíðindi" },
-  "alert_intUpdated": { "message": "Tvøroyrar Kommuna skal avgera hvørjar avleiðingarnar verða" },
+  "alert_willRefresh": { "message": "Tvøroyrar Kommuna skal avgera hvørjar avleiðingarnar verða" },
   "unit_secs": { "message": "sek" },
   "state_enabled": { "message": "Virkið" },
   "state_disabled": { "message": "Óvirkið" }

@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "איז בנימצא" },
   "alert_upToDate": { "message": "היינטצייטיג" },
   "alert_isUpToDate": { "message": "איז דערהייַנטיקט" },
-  "alert_intUpdated": { "message": "ChatGPT סעסיע וועט אויטאָמאַטיש דערפרישן יעדער" },
+  "alert_willRefresh": { "message": "ChatGPT סעסיע וועט אויטאָמאַטיש דערפרישן יעדער" },
   "unit_secs": { "message": "סעק" },
   "state_enabled": { "message": "ערמעגליכט" },
   "state_disabled": { "message": "פאַרקריפּלט" }

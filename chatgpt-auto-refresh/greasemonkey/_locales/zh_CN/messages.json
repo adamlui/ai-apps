@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "是可用的" },
   "alert_upToDate": { "message": "已最新" },
   "alert_isUpToDate": { "message": "是最新的" },
-  "alert_intUpdated": { "message": "ChatGPT 会话将自动刷新每" },
+  "alert_willRefresh": { "message": "ChatGPT 会话将自动刷新每" },
   "unit_secs": { "message": "秒" },
   "state_enabled": { "message": "已启用" },
   "state_disabled": { "message": "已禁用" }

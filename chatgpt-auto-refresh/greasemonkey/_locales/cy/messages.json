@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "ar gael" },
   "alert_upToDate": { "message": "Yn gyfoes" },
   "alert_isUpToDate": { "message": "yn gyfoes" },
-  "alert_intUpdated": { "message": "Bydd sesiwn ChatGPT yn awto - adnewyddu bob" },
+  "alert_willRefresh": { "message": "Bydd sesiwn ChatGPT yn awto - adnewyddu bob" },
   "unit_secs": { "message": "eiliadau" },
   "state_enabled": { "message": "wedi’i alluogi" },
   "state_disabled": { "message": "analluogwyd" }

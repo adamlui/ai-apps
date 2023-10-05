@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "anaa sa dili" },
   "alert_upToDate": { "message": "Sama sa kasamtangang petsa" },
   "alert_isUpToDate": { "message": "kasamtangang petsa na" },
-  "alert_intUpdated": { "message": "Ang sesyon sa ChatGPT mag-refresh og kaugalingon matag" },
+  "alert_willRefresh": { "message": "Ang sesyon sa ChatGPT mag-refresh og kaugalingon matag" },
   "unit_secs": { "message": "segundo" },
   "state_enabled": { "message": "Mipahimo" },
   "state_disabled": { "message": "Baldado" }

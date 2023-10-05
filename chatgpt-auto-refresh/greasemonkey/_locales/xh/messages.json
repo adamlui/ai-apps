@@ -16,7 +16,7 @@
   "alert_isAvail": { "message": "iyafumaneka" },
   "alert_upToDate": { "message": "Eyangoku" },
   "alert_isUpToDate": { "message": "isexesheni" },
-  "alert_intUpdated": { "message": "Iseshoni yeChatGPT iza kuhlaziya ngokuzenzekelayo qho" },
+  "alert_willRefresh": { "message": "Iseshoni yeChatGPT iza kuhlaziya ngokuzenzekelayo qho" },
   "unit_secs": { "message": "imizuzwanasecond" },
   "state_enabled": { "message": "Ayikwazi ukuvula Ovakalayo- Umncedisi (Alib)!" },
   "state_disabled": { "message": "Igama Lokuvakalayo" }
