@@ -157,6 +157,23 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
 
+<div align="center">
+
+<br>
+
+<a href="https://star-history.com/#adamlui/chatgpt-auto-refresh&Timeline">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=adamlui/chatgpt-auto-refresh&type=Timeline&theme=dark" />
+        <img width=665 src="https://api.star-history.com/svg?repos=adamlui/chatgpt-auto-refresh&type=Timeline" />
+    </picture>
+</a>
+
+<br>_如果这个仓库对您有帮助，请考虑给它一个 ⭐！_
+
+</div>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
+
 ## 🤖 更多 ChatGPT 应用
 
 如需更多精彩的 ChatGPT 应用程序，请访问：https://github.com/adamlui/chatgpt-apps
@@ -185,27 +202,6 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [讨论](https://chatgptinfinity.com/discuss)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
-
-<div align="center">
-
-<br>
-
-<a href="https://star-history.com/#adamlui/chatgpt-auto-refresh&Timeline">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=adamlui/chatgpt-auto-refresh&type=Timeline&theme=dark" />
-        <img width=665 src="https://api.star-history.com/svg?repos=adamlui/chatgpt-auto-refresh&type=Timeline" />
-    </picture>
-</a>
-
-<br>_如果这个仓库对您有帮助，请考虑给它一个 ⭐！_
-
-</div>
-
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
-
-<div align="center">
   
 <a href="https://github.com/adamlui/userscripts">**更多用户脚本**</a> /
 <a href="#%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87--english">回到顶部↑</a>
-
-</div>
