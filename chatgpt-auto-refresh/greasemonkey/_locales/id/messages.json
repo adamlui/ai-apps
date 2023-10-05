@@ -2,7 +2,7 @@
   "appName": { "message": "Penyegaran Otomatis ChatGPT" },
   "appDesc": { "message": "*AMAN* menjaga sesi ChatGPT tetap segar, menghilangkan kesalahan jaringan yang konstan + pemeriksaan Cloudflare (semuanya dari latar belakang!)" },
   "menuLabel_autoRefresh": { "message": "Penyegaran Otomatis" },
-  "menuLabel_toggleVis": { "message": "Alihkan Visibilitas" ,
+  "menuLabel_toggleVis": { "message": "Alihkan Visibilitas" },
   "menuLabel_modeNotifs": { "message": "Notifikasi Modus" },
   "menuLabel_refreshInt": { "message": "Interval Pembaruan" },
   "menuLabel_disabled": { "message": "Nonaktifkan (ekstensi terpasang)" },
