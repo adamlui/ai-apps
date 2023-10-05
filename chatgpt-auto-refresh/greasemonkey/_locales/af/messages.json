@@ -20,7 +20,7 @@
   "alert_upToDate": { "message": "Op datum" },
   "alert_isUpToDate": { "message": "die is up-to-date" },
   "buttonLabel_update": { "message": "Opdateer" },
-  "buttonLabel_updateCheck": { "message": "_Kontroleer vir bywerkings:" },
+  "buttonLabel_updateCheck": { "message": "Kontroleer vir bywerkings" },
   "buttonLabel_leaveReview": { "message": "Los Kommentaar" },
   "buttonLabel_dismiss": { "message": "Laat vaar" },
   "link_viewChanges": { "message": "Besigtig veranderinge" },
