@@ -157,6 +157,23 @@ This project exists thanks to code, translations, issues & ideas from the follow
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
 
+<div align="center">
+
+<br>
+
+<a href="https://star-history.com/#adamlui/chatgpt-auto-refresh&Timeline">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=adamlui/chatgpt-auto-refresh&type=Timeline&theme=dark" />
+        <img width=665 src="https://api.star-history.com/svg?repos=adamlui/chatgpt-auto-refresh&type=Timeline" />
+    </picture>
+</a>
+
+<br>_Consider giving this repo a ⭐ if it helped you!_
+
+</div>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
+
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
@@ -183,23 +200,6 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br>[Install](https://github.com/adamlui/chatgpt-infinity#-installation) / 
 [Readme](https://github.com/adamlui/chatgpt-infinity#readme) / 
 [Discuss](https://chatgptinfinity.com/discuss)
-
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
-
-<div align="center">
-
-<br>
-
-<a href="https://star-history.com/#adamlui/chatgpt-auto-refresh&Timeline">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=adamlui/chatgpt-auto-refresh&type=Timeline&theme=dark" />
-        <img width=665 src="https://api.star-history.com/svg?repos=adamlui/chatgpt-auto-refresh&type=Timeline" />
-    </picture>
-</a>
-
-<br>_Consider giving this repo a ⭐ if it helped you!_
-
-</div>
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
 
