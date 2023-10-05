@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "طراحی شده توسط" },
   "about_sourceCode": { "message": "سرچينه كوډه" },
   "prompt_updateInt": { "message": "د تازه کولو وقفه تازه کړئ (په ثانیو کې)" },
+  "alert_willRefresh": { "message": "د ChatGPT ناسته به هر یو په اوتومات ډول تازه شي" },
   "alert_updateAvail": { "message": "اوسمهالیزې شته" },
   "alert_newerVer": { "message": "ته تازه معلومات" },
   "alert_isAvail": { "message": "شتون لري" },
   "alert_upToDate": { "message": "اوسمهالیز دي" },
   "alert_isUpToDate": { "message": "تازه دی" },
-  "alert_willRefresh": { "message": "د ChatGPT ناسته به هر یو په اوتومات ډول تازه شي" },
   "unit_secs": { "message": "ثانیې" },
   "state_enabled": { "message": "فعال شوی" },
   "state_disabled": { "message": "غیر فعال شوی" }

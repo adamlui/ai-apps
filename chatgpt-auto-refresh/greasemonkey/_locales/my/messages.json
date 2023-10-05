@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "စွမ်းဆောင်ရည် -" },
   "about_sourceCode": { "message": "ပင္မကုဒ္" },
   "prompt_updateInt": { "message": "ပြန်လည်စတင်ချိန်ကာလ (စက္ကန့်အတွင်း) အပ်ဒိတ်လုပ်ပါ" },
+  "alert_willRefresh": { "message": "ChatGPT စက်ရှင်သည် တိုင်းတွင် အလိုအလျောက် ပြန်လည်စတင်မည်ဖြစ်သည်။" },
   "alert_updateAvail": { "message": "အပ်ဒိတ်ရနိုင်သည်။" },
   "alert_newerVer": { "message": "သို့ အပ်ဒိတ်တစ်ခု" },
   "alert_isAvail": { "message": "ရနိုင်သည်။" },
   "alert_upToDate": { "message": "နောက်ဆုံးရ" },
   "alert_isUpToDate": { "message": "နောက်ဆုံးရ ဖြစ်အောင်နေပါ" },
-  "alert_willRefresh": { "message": "ChatGPT စက်ရှင်သည် တိုင်းတွင် အလိုအလျောက် ပြန်လည်စတင်မည်ဖြစ်သည်။" },
   "unit_secs": { "message": "စက္ကန့်" },
   "state_enabled": { "message": "ဖွင့်ထားသည်။" },
   "state_disabled": { "message": "မသန်စွမ်း" }

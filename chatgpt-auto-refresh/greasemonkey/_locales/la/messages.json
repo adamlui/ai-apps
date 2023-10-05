@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Motum per" },
   "about_sourceCode": { "message": "Codex Originis" },
   "prompt_updateInt": { "message": "Intervalum Renovationis (in secundis)" },
+  "alert_willRefresh": { "message": "ChatGPT sessionem voluntas auto- refice omnes" },
   "alert_updateAvail": { "message": "Novitas Disponibilis" },
   "alert_newerVer": { "message": "Omnia ad" },
   "alert_isAvail": { "message": "est disponibus" },
   "alert_upToDate": { "message": "Sursum-ad-date" },
   "alert_isUpToDate": { "message": "est sursum-ad-date" },
-  "alert_willRefresh": { "message": "ChatGPT sessionem voluntas auto- refice omnes" },
   "unit_secs": { "message": "secs" },
   "state_enabled": { "message": "Actiosus" },
   "state_disabled": { "message": "Invaliditas" }

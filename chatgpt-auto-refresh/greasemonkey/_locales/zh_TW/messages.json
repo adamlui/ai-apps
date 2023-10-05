@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "技術提供" },
   "about_sourceCode": { "message": "原始程式碼" },
   "prompt_updateInt": { "message": "更新重新整理間隔（以秒為單位）" },
+  "alert_willRefresh": { "message": "ChatGPT 會話將自動重新整理每" },
   "alert_updateAvail": { "message": "有可用的更新" },
   "alert_newerVer": { "message": "更新到" },
   "alert_isAvail": { "message": "可用" },
   "alert_upToDate": { "message": "最新的" },
   "alert_isUpToDate": { "message": "是最新的" },
-  "alert_willRefresh": { "message": "ChatGPT 會話將自動重新整理每" },
   "unit_secs": { "message": "秒" },
   "state_enabled": { "message": "已啟用" },
   "state_disabled": { "message": "已停用" }

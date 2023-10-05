@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Ondersteund door" },
   "about_sourceCode": { "message": "Broncode" },
   "prompt_updateInt": { "message": "Verversingsinterval bijwerken (in seconden)" },
+  "alert_willRefresh": { "message": "ChatGPT-sessie wordt automatisch vernieuwd om de" },
   "alert_updateAvail": { "message": "Update beschikbaar" },
   "alert_newerVer": { "message": "Updaten naar" },
   "alert_isAvail": { "message": "is beschikbaar" },
   "alert_upToDate": { "message": "Actueel" },
   "alert_isUpToDate": { "message": "is actueel" },
-  "alert_willRefresh": { "message": "ChatGPT-sessie wordt automatisch vernieuwd om de" },
   "unit_secs": { "message": "seconden" },
   "state_enabled": { "message": "ingeschakeld" },
   "state_disabled": { "message": "uitgeschakeld" }

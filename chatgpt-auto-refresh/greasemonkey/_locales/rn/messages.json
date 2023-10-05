@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Kuboneka kubona" },
   "about_sourceCode": { "message": "Ikimenyetso cy'ibikoresho" },
   "prompt_updateInt": { "message": "Guhindura umubare w'igiciro kugiciro (mumisekunde)" },
+  "alert_willRefresh": { "message": "ChatGPT ishingiye umubare w'igiciro kugiciro kuri kumwe" },
   "alert_updateAvail": { "message": "Ibindi bifashishwa" },
   "alert_newerVer": { "message": "Amuhindura kwa" },
   "alert_isAvail": { "message": "bifashishwa" },
   "alert_upToDate": { "message": "Ibintu bitangiriye" },
   "alert_isUpToDate": { "message": "bifitanye" },
-  "alert_willRefresh": { "message": "ChatGPT ishingiye umubare w'igiciro kugiciro kuri kumwe" },
   "unit_secs": { "message": "mumisekunde" },
   "state_enabled": { "message": "afasha" },
   "state_disabled": { "message": "gukoreshwa" }

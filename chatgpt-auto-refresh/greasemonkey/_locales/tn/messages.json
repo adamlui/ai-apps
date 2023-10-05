@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "E tsamaisiwa ke" },
   "about_sourceCode": { "message": "Tshwanelo ya Boitshwaro" },
   "prompt_updateInt": { "message": "Bakaya setlhare sa boitlhotlho (mefuta)" },
+  "alert_willRefresh": { "message": "Thulaganyo ya ChatGPT e tlile go ntšhwafatsa nako le nako" },
   "alert_updateAvail": { "message": "Diphetogo tse di leng teng" },
   "alert_newerVer": { "message": "Koketlho ya" },
   "alert_isAvail": { "message": "e teng" },
   "alert_upToDate": { "message": "Feleletše" },
   "alert_isUpToDate": { "message": "e mo nakong" },
-  "alert_willRefresh": { "message": "Thulaganyo ya ChatGPT e tlile go ntšhwafatsa nako le nako" },
   "unit_secs": { "message": "mefuta" },
   "state_enabled": { "message": "e kgontshiwe" },
   "state_disabled": { "message": "golafetse" }

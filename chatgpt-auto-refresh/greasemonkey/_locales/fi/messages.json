@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Lähdekoodi" },
   "prompt_updateInt": { "message": "Päivitä päivitysväli (sekunneissa)" },
+  "alert_willRefresh": { "message": "ChatGPT-istunto päivittyy automaattisesti joka" },
   "alert_updateAvail": { "message": "Päivitys saatavilla" },
   "alert_newerVer": { "message": "Päivitä" },
   "alert_isAvail": { "message": "on käytettävissä" },
   "alert_upToDate": { "message": "Ajan tasalla" },
   "alert_isUpToDate": { "message": "Ajan tasalla" },
-  "alert_willRefresh": { "message": "ChatGPT-istunto päivittyy automaattisesti joka" },
   "unit_secs": { "message": "sekuntia" },
   "state_enabled": { "message": "käytössä" },
   "state_disabled": { "message": "poistettu käytöstä" }

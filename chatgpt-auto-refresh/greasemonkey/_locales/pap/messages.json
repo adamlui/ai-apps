@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Potenshá pa" },
   "about_sourceCode": { "message": "Kòdigu di Fuente" },
   "prompt_updateInt": { "message": "Aktualisá intervalo di refresko (den segedonan)" },
+  "alert_willRefresh": { "message": "Sesion di ChatGPT lo aktualisá automátikamente kada" },
   "alert_updateAvail": { "message": "Aktualisashon ta disponibel" },
   "alert_newerVer": { "message": "Un aktualisashon pa" },
   "alert_isAvail": { "message": "ta disponibel" },
   "alert_upToDate": { "message": "Aktual" },
   "alert_isUpToDate": { "message": "ta aktual" },
-  "alert_willRefresh": { "message": "Sesion di ChatGPT lo aktualisá automátikamente kada" },
   "unit_secs": { "message": "segedonan" },
   "state_enabled": { "message": "habilitá" },
   "state_disabled": { "message": "desabilitá" }

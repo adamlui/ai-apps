@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Drevet av" },
   "about_sourceCode": { "message": "Kildekode" },
   "prompt_updateInt": { "message": "Oppdater oppdateringsintervallet (i sekunder)" },
+  "alert_willRefresh": { "message": "ChatGPT-sesjon vil automatisk oppdateres hver" },
   "alert_updateAvail": { "message": "Oppdatering tilgjengelig" },
   "alert_newerVer": { "message": "En oppdatering til" },
   "alert_isAvail": { "message": "er tilgjengelig" },
   "alert_upToDate": { "message": "Oppdatert" },
   "alert_isUpToDate": { "message": "er oppdatert" },
-  "alert_willRefresh": { "message": "ChatGPT-sesjon vil automatisk oppdateres hver" },
   "unit_secs": { "message": "sekunder" },
   "state_enabled": { "message": "aktivert" },
   "state_disabled": { "message": "deaktivert" }

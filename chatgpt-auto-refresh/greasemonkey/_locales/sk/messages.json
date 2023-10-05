@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Beží na" },
   "about_sourceCode": { "message": "Zdrojový kód" },
   "prompt_updateInt": { "message": "Aktualizovať interval obnovy (v sekundách)" },
+  "alert_willRefresh": { "message": "Relácia ChatGPT sa bude automaticky obnovovať každých" },
   "alert_updateAvail": { "message": "Aktualizácia je dostupná" },
   "alert_newerVer": { "message": "Aktualizujte na" },
   "alert_isAvail": { "message": "je k dispozícii" },
   "alert_upToDate": { "message": "Aktuálny" },
   "alert_isUpToDate": { "message": "sú aktuálne" },
-  "alert_willRefresh": { "message": "Relácia ChatGPT sa bude automaticky obnovovať každých" },
   "unit_secs": { "message": "sekúnd" },
   "state_enabled": { "message": "zapnuté" },
   "state_disabled": { "message": "vypnuté" }

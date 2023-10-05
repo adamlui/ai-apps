@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "དྲ་ཚིག་བཟོ་མཁན།" },
   "about_sourceCode": { "message": "འབྱུང་ཁུངས །" },
   "prompt_updateInt": { "message": "བསྒྱུར་བཅོས་དུས་ཚོད ། (ཞར་བཀོད་གཅིག)" },
+  "alert_willRefresh": { "message": "SBS Language_ཡོངས་འཛིན་པར་རིས །" },
   "alert_updateAvail": { "message": "རིམ་སྤར་བྱེད་རྒྱུ་འདུག" },
   "alert_newerVer": { "message": "རིམ་སྤར་བྱེད་བཞིན་པ" },
   "alert_isAvail": { "message": "ནང་འཇུག" },
   "alert_upToDate": { "message": "སྤོར་བ །" },
   "alert_isUpToDate": { "message": "ཡར་ངོའི་ཚེས་བཅུའི་དུས་སུ་" },
-  "alert_willRefresh": { "message": "SBS Language_ཡོངས་འཛིན་པར་རིས །" },
   "unit_secs": { "message": "གསང་གྲངས །" },
   "state_enabled": { "message": "སྤྱོད་སྒོ་ཕྱེས།" },
   "state_disabled": { "message": "སྤྱོད་སྒོ་བཀག" }

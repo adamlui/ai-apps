@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Pareleki" },
   "about_sourceCode": { "message": "Koda çavkanî" },
   "prompt_updateInt": { "message": "Navbera nûvekirinê nûve bike (di çirkeyan de)" },
+  "alert_willRefresh": { "message": "Danişîna ChatGPT dê her carê bixweber nûve bike" },
   "alert_updateAvail": { "message": "Nûve hatiye naskirin" },
   "alert_newerVer": { "message": "Nûvekirinek ji bo" },
   "alert_isAvail": { "message": "hate dîtin" },
   "alert_upToDate": { "message": "Bêrawar" },
   "alert_isUpToDate": { "message": "nawê" },
-  "alert_willRefresh": { "message": "Danişîna ChatGPT dê her carê bixweber nûve bike" },
   "unit_secs": { "message": "çirke" },
   "state_enabled": { "message": "çalakkiraw" },
   "state_disabled": { "message": "bêmecel" }

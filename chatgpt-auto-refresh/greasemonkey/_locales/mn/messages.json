@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Тодорхойлолтын зорилгоор" },
   "about_sourceCode": { "message": "Эх бичсэн код" },
   "prompt_updateInt": { "message": "Сэсээ шинэчлэх хугацааг шинэчлэх (секундээр)" },
+  "alert_willRefresh": { "message": "ChatGPT сэсээ автоматаар шинэчлэгдэх болно" },
   "alert_updateAvail": { "message": "Шинэчлэлт байна" },
   "alert_newerVer": { "message": "Шинэчлэлт" },
   "alert_isAvail": { "message": "байна" },
   "alert_upToDate": { "message": "Шинэ" },
   "alert_isUpToDate": { "message": "шинэ байна" },
-  "alert_willRefresh": { "message": "ChatGPT сэсээ автоматаар шинэчлэгдэх болно" },
   "unit_secs": { "message": "секунд" },
   "state_enabled": { "message": "Идэвхтэй" },
   "state_disabled": { "message": "Идэвхигүй" }

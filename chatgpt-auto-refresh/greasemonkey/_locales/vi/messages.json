@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Được hỗ trợ bởi" },
   "about_sourceCode": { "message": "Mã nguồn" },
   "prompt_updateInt": { "message": "Cập nhật khoảng thời gian làm mới (tính bằng giây)" },
+  "alert_willRefresh": { "message": "Phiên ChatGPT sẽ tự động làm mới mỗi" },
   "alert_updateAvail": { "message": "Có bản cập nhật mới" },
   "alert_newerVer": { "message": "Có bản cập nhật đến" },
   "alert_isAvail": { "message": "đang có sẵn" },
   "alert_upToDate": { "message": "Đã cập nhật" },
   "alert_isUpToDate": { "message": "đã được cập nhật" },
-  "alert_willRefresh": { "message": "Phiên ChatGPT sẽ tự động làm mới mỗi" },
   "unit_secs": { "message": "giây" },
   "state_enabled": { "message": "đã bật" },
   "state_disabled": { "message": "đã tắt" }

@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Kiszolgálja:" },
   "about_sourceCode": { "message": "Forráskód" },
   "prompt_updateInt": { "message": "Frissítési időköz frissítése (másodpercben)" },
+  "alert_willRefresh": { "message": "A ChatGPT munkamenet automatikusan frissül minden" },
   "alert_updateAvail": { "message": "Frissítés elérhető" },
   "alert_newerVer": { "message": "Frissítés" },
   "alert_isAvail": { "message": "elérhető" },
   "alert_upToDate": { "message": "Aktuális" },
   "alert_isUpToDate": { "message": "naprakész" },
-  "alert_willRefresh": { "message": "A ChatGPT munkamenet automatikusan frissül minden" },
   "unit_secs": { "message": "másodperc" },
   "state_enabled": { "message": "engedélyezve" },
   "state_disabled": { "message": "letiltva" }

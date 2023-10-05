@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Ixhaswa yi-" },
   "about_sourceCode": { "message": "Ikhodi yomthombo" },
   "prompt_updateInt": { "message": "Buyekeza isikhawu sokuvuselela (ngemizuzwana)" },
+  "alert_willRefresh": { "message": "Iseshini ye-ChatGPT izovuselela ngokuzenzakalelayo njalo" },
   "alert_updateAvail": { "message": "Okwakamuva Kuyatholakala!" },
   "alert_newerVer": { "message": "Izilungiso eziya ku-" },
   "alert_isAvail": { "message": "iyatholakala" },
   "alert_upToDate": { "message": "Okwakamuva" },
   "alert_isUpToDate": { "message": "isesikhathini" },
-  "alert_willRefresh": { "message": "Iseshini ye-ChatGPT izovuselela ngokuzenzakalelayo njalo" },
   "unit_secs": { "message": "imizuzwana" },
   "state_enabled": { "message": "Inikwe amandla" },
   "state_disabled": { "message": "Ivaliwe" }

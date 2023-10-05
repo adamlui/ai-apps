@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Dijana oleh" },
   "about_sourceCode": { "message": "Kod sumber" },
   "prompt_updateInt": { "message": "Kemas kini selang penyegaran (dalam saat)" },
+  "alert_willRefresh": { "message": "Sesi ChatGPT akan dikemas kini secara auto-segar setiap" },
   "alert_updateAvail": { "message": "Kemaskini ada" },
   "alert_newerVer": { "message": "Pengemaskinian kepada" },
   "alert_isAvail": { "message": "boleh didapati" },
   "alert_upToDate": { "message": "Kemas kini" },
   "alert_isUpToDate": { "message": "Kemas kini" },
-  "alert_willRefresh": { "message": "Sesi ChatGPT akan dikemas kini secara auto-segar setiap" },
   "unit_secs": { "message": "saat" },
   "state_enabled": { "message": "diaktifkan" },
   "state_disabled": { "message": "dilumpuhkan" }

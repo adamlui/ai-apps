@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Darbināts ar" },
   "about_sourceCode": { "message": "Pirmkods" },
   "prompt_updateInt": { "message": "Atjaunināt atjaunināšanas intervālu (sekundēs)" },
+  "alert_willRefresh": { "message": "ChatGPT sesija automātiski atjauninās katras" },
   "alert_updateAvail": { "message": "Atjauninājums pieejams" },
   "alert_newerVer": { "message": "Ir pieejams atjauninājums" },
   "alert_isAvail": { "message": "ir pieejams" },
   "alert_upToDate": { "message": "Ir aktuāls" },
   "alert_isUpToDate": { "message": "ir aktuāls" },
-  "alert_willRefresh": { "message": "ChatGPT sesija automātiski atjauninās katras" },
   "unit_secs": { "message": "sekundes" },
   "state_enabled": { "message": "aktivizēts" },
   "state_disabled": { "message": "izslēgts" }

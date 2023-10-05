@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Працює на" },
   "about_sourceCode": { "message": "Джерельний код" },
   "prompt_updateInt": { "message": "Оновити інтервал оновлення (в секундах)" },
+  "alert_willRefresh": { "message": "ChatGPT-сесія буде автоматично оновлюватися кожні" },
   "alert_updateAvail": { "message": "Update available" },
   "alert_newerVer": { "message": "Оновлення для" },
   "alert_isAvail": { "message": "доступний" },
   "alert_upToDate": { "message": "Актуальний" },
   "alert_isUpToDate": { "message": "оновлено" },
-  "alert_willRefresh": { "message": "ChatGPT-сесія буде автоматично оновлюватися кожні" },
   "unit_secs": { "message": "с" },
   "state_enabled": { "message": "увімкнено" },
   "state_disabled": { "message": "вимкнено" }

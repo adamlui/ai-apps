@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Teknologia: " },
   "about_sourceCode": { "message": "Iturburu kode" },
   "prompt_updateInt": { "message": "Eguneratu freskatze tartea (segundotan)" },
+  "alert_willRefresh": { "message": "ChatGPT saioa automatikoki freskatuko da guztietan" },
   "alert_updateAvail": { "message": "Ez dago azalpenik erabilgarri." },
   "alert_newerVer": { "message": "Eguneratze bat" },
   "alert_isAvail": { "message": "eskuragarri dago" },
   "alert_upToDate": { "message": "Eguneratu" },
   "alert_isUpToDate": { "message": "Eguneratu" },
-  "alert_willRefresh": { "message": "ChatGPT saioa automatikoki freskatuko da guztietan" },
   "unit_secs": { "message": "segsecond" },
   "state_enabled": { "message": "gaituta" },
   "state_disabled": { "message": "ezgaituta" }

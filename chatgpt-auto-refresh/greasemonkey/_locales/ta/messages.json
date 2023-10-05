@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "மூலம் இயக்கப்படுகிறது" },
   "about_sourceCode": { "message": "மூல குறியீடு" },
   "prompt_updateInt": { "message": "புதுப்பிக்கும் இடம் மேம்படுத்து (செக் லிஸ்டில்)" },
+  "alert_willRefresh": { "message": "ChatGPT அமர்வு ஒவ்வொன்றும் தானாக புதுப்பிக்கப்படும்" },
   "alert_updateAvail": { "message": "புதுப்பிப்பு கிடைக்கிறது" },
   "alert_newerVer": { "message": "-க்கு ஒரு புதுப்பிப்பு" },
   "alert_isAvail": { "message": "கிடைக்கும்" },
   "alert_upToDate": { "message": "அப்-டு-டேட்" },
   "alert_isUpToDate": { "message": "புதுப்பித்த நிலையில் உள்ளது" },
-  "alert_willRefresh": { "message": "ChatGPT அமர்வு ஒவ்வொன்றும் தானாக புதுப்பிக்கப்படும்" },
   "unit_secs": { "message": "நொடிக்குள்" },
   "state_enabled": { "message": "இயக்கப்பட்டது" },
   "state_disabled": { "message": "முடக்கப்பட்டது" }

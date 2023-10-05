@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Овозможено од" },
   "about_sourceCode": { "message": "Изворен код" },
   "prompt_updateInt": { "message": "Ажурирајте го интервалот за освежување (во секунди)" },
+  "alert_willRefresh": { "message": "Сесијата на ChatGPT ќе се освежува автоматски на секои" },
   "alert_updateAvail": { "message": "Достапно е ажурирање" },
   "alert_newerVer": { "message": "Ажурирање на" },
   "alert_isAvail": { "message": "е достапно" },
   "alert_upToDate": { "message": "Ажурно" },
   "alert_isUpToDate": { "message": "е ажурно" },
-  "alert_willRefresh": { "message": "Сесијата на ChatGPT ќе се освежува автоматски на секои" },
   "unit_secs": { "message": "секунди" },
   "state_enabled": { "message": "овозможено" },
   "state_disabled": { "message": "оневозможено" }

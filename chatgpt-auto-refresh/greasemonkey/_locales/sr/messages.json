@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Покреће га" },
   "about_sourceCode": { "message": "Izvorni kod" },
   "prompt_updateInt": { "message": "Интервал освежавања ажурирања (у секундама)" },
+  "alert_willRefresh": { "message": "ЦхатГПТ сесија ће се аутоматски освежавати сваке" },
   "alert_updateAvail": { "message": "Располагању новија верзија" },
   "alert_newerVer": { "message": "Ažuriranje za" },
   "alert_isAvail": { "message": "је доступан" },
   "alert_upToDate": { "message": "U toku" },
   "alert_isUpToDate": { "message": "je ažuran" },
-  "alert_willRefresh": { "message": "ЦхатГПТ сесија ће се аутоматски освежавати сваке" },
   "unit_secs": { "message": "сецс" },
   "state_enabled": { "message": "енаблед" },
   "state_disabled": { "message": "дисаблед" }

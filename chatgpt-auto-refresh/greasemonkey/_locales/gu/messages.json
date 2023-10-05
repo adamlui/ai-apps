@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "દ્વારા સંચાલિત" },
   "about_sourceCode": { "message": "સ્ત્રોત કોડ" },
   "prompt_updateInt": { "message": "રિફ્રેશ અંતરાળ અપડેટ કરો (સેકન્ડમાં)" },
+  "alert_willRefresh": { "message": "ChatGPT સેશન પ્રત્યેક" },
   "alert_updateAvail": { "message": "સુધારો ઉપલબ્ધ" },
   "alert_newerVer": { "message": "આ માટે એક અપડેટ" },
   "alert_isAvail": { "message": "ઉપલબ્ધ છે" },
   "alert_upToDate": { "message": "સુધારો" },
   "alert_isUpToDate": { "message": "સુધારો" },
-  "alert_willRefresh": { "message": "ChatGPT સેશન પ્રત્યેક" },
   "unit_secs": { "message": "સેકન્ડ" },
   "state_enabled": { "message": "સક્રિય" },
   "state_disabled": { "message": "નિષ્ક્રિય" }

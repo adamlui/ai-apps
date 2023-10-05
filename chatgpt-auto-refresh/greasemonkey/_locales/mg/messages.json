@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Manolotra ny herinandro" },
   "about_sourceCode": { "message": "Kaody fantsona" },
   "prompt_updateInt": { "message": "Hanavao ny antso amin'ny famindrampotoana (ahoana ny segondra)" },
+  "alert_willRefresh": { "message": "Ny ChatGPT dia hanova ny sehatra amin'ny alalan'ny famindrampotoana amin'ny" },
   "alert_updateAvail": { "message": "Misy vaovao" },
   "alert_newerVer": { "message": "Vaovao farany ho" },
   "alert_isAvail": { "message": "kely ato" },
   "alert_upToDate": { "message": "Voaray" },
   "alert_isUpToDate": { "message": "voaray farany" },
-  "alert_willRefresh": { "message": "Ny ChatGPT dia hanova ny sehatra amin'ny alalan'ny famindrampotoana amin'ny" },
   "unit_secs": { "message": "segondra" },
   "state_enabled": { "message": "voafaritra" },
   "state_disabled": { "message": "tsy voafaritra" }

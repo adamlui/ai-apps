@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Yettunefk-d sɣur" },
   "about_sourceCode": { "message": "Tangalt aγbalu" },
   "prompt_updateInt": { "message": "Asebded n usebter (in SECs)" },
+  "alert_willRefresh": { "message": "Agraw n ChatGPT ad d-yessiwel yal" },
   "alert_updateAvail": { "message": "Yella lqem" },
   "alert_newerVer": { "message": "Aneggaru ɣer" },
   "alert_isAvail": { "message": "yella" },
   "alert_upToDate": { "message": "Aneggaru n uzegrir" },
   "alert_isUpToDate": { "message": "yesssss up-to-date" },
-  "alert_willRefresh": { "message": "Agraw n ChatGPT ad d-yessiwel yal" },
   "unit_secs": { "message": "sECS" },
   "state_enabled": { "message": "yermed" },
   "state_disabled": { "message": "ittwasens" }

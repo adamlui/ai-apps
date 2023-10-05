@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "የተጎለበተው በ" },
   "about_sourceCode": { "message": "የምንጭ ኮድ" },
   "prompt_updateInt": { "message": "ዳግም አስገባ (ወዲህም የሚያያዝ_አርም)" },
+  "alert_willRefresh": { "message": "SiteGroundTrans በየዕለቱ ይዘጋል" },
   "alert_updateAvail": { "message": "ዝመና ይገኛል!" },
   "alert_newerVer": { "message": "አንድ ዝማኔ ወደ" },
   "alert_isAvail": { "message": "ሊገኝ ይችላል" },
   "alert_upToDate": { "message": "ወቅታዊ" },
   "alert_isUpToDate": { "message": "እስከ-ወደ-ቀን ነው" },
-  "alert_willRefresh": { "message": "SiteGroundTrans በየዕለቱ ይዘጋል" },
   "unit_secs": { "message": "ሴራሚክ" },
   "state_enabled": { "message": "የነቃ" },
   "state_disabled": { "message": "የተሰናከለ" }

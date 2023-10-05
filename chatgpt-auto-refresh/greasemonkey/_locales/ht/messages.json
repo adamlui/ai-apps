@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Patrone pa" },
   "about_sourceCode": { "message": "Kòd sous" },
   "prompt_updateInt": { "message": "Mete ajou entèval rafrechisman (an segonn)" },
+  "alert_willRefresh": { "message": "Sesyon ChatGPT pral oto-rafrechi chak" },
   "alert_updateAvail": { "message": "Mizajou disponib" },
   "alert_newerVer": { "message": "Yon aktyalizasyon pou" },
   "alert_isAvail": { "message": "ki disponib" },
   "alert_upToDate": { "message": "Ajou" },
   "alert_isUpToDate": { "message": "se ajou" },
-  "alert_willRefresh": { "message": "Sesyon ChatGPT pral oto-rafrechi chak" },
   "unit_secs": { "message": "segonn" },
   "state_enabled": { "message": "pèmèt" },
   "state_disabled": { "message": "andikape" }

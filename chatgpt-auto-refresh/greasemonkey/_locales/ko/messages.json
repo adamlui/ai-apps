@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "제공" },
   "about_sourceCode": { "message": "원본 코드" },
   "prompt_updateInt": { "message": "새로고침 간격을 업데이트하세요 (초 단위)" },
+  "alert_willRefresh": { "message": "ChatGPT 세션이 다음 간격으로 자동 새로고침됩니다." },
   "alert_updateAvail": { "message": "업데이트 가능" },
   "alert_newerVer": { "message": "다음으로 업데이트" },
   "alert_isAvail": { "message": "사용할 수 있습니다" },
   "alert_upToDate": { "message": "최신 버전입니다" },
   "alert_isUpToDate": { "message": "최신판입니다." },
-  "alert_willRefresh": { "message": "ChatGPT 세션이 다음 간격으로 자동 새로고침됩니다." },
   "unit_secs": { "message": "초" },
   "state_enabled": { "message": "활성화됨" },
   "state_disabled": { "message": "비활성화됨" }

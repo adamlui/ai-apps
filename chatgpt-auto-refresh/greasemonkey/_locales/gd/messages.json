@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Le cumhachd" },
   "about_sourceCode": { "message": "Bun-tùs a' chod" },
   "prompt_updateInt": { "message": "Ùraich an t - eadar - ama ùrachaidh (ann an soidhnichean)" },
+  "alert_willRefresh": { "message": "Bidh an seisean ChatGPT ag ùrachadh gu fèin - obrachail gach" },
   "alert_updateAvail": { "message": "Chan eil ùrachadh ri fhaighinn" },
   "alert_newerVer": { "message": "Ùrachadh gu" },
   "alert_isAvail": { "message": "ri fhaighinn" },
   "alert_upToDate": { "message": "Làn-fhiosrach" },
   "alert_isUpToDate": { "message": "tha ùr-nodha" },
-  "alert_willRefresh": { "message": "Bidh an seisean ChatGPT ag ùrachadh gu fèin - obrachail gach" },
   "unit_secs": { "message": "soidhnichean" },
   "state_enabled": { "message": "An comas" },
   "state_disabled": { "message": "Gun dòigh" }

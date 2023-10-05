@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Tomonidan qo&#39;llab-quvvatlanadi" },
   "about_sourceCode": { "message": "Ochiq kod" },
   "prompt_updateInt": { "message": "Yangilash oralig&#39;i (sekundlarda)" },
+  "alert_willRefresh": { "message": "ChatGPT sessiyasi har safar avtomatik yangilanadi" },
   "alert_updateAvail": { "message": "Mavjud yangilanishlar" },
   "alert_newerVer": { "message": "Yangilash" },
   "alert_isAvail": { "message": "mavjud." },
   "alert_upToDate": { "message": "Yangilash" },
   "alert_isUpToDate": { "message": "dolzarb hisoblanadi" },
-  "alert_willRefresh": { "message": "ChatGPT sessiyasi har safar avtomatik yangilanadi" },
   "unit_secs": { "message": "Секунд" },
   "state_enabled": { "message": "yoqilgan" },
   "state_disabled": { "message": "o'chirilgan" }

@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Пры падтрымцы" },
   "about_sourceCode": { "message": "Зыходнікі" },
   "prompt_updateInt": { "message": "Абнавіць інтэрвал абнаўлення (у сек)" },
+  "alert_willRefresh": { "message": "Сеанс ChatGPT будзе аўтаматычна абнаўляцца кожны" },
   "alert_updateAvail": { "message": "Ёсць абнаўленне" },
   "alert_newerVer": { "message": "Абнаўленне да" },
   "alert_isAvail": { "message": "даступны" },
   "alert_upToDate": { "message": "Аднаўленне не патрабуецца" },
   "alert_isUpToDate": { "message": "абноўлена" },
-  "alert_willRefresh": { "message": "Сеанс ChatGPT будзе аўтаматычна абнаўляцца кожны" },
   "unit_secs": { "message": "сек" },
   "state_enabled": { "message": "XYZ/ альфа- канал" },
   "state_disabled": { "message": "адключаны" }

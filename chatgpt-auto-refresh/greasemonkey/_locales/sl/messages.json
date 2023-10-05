@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Poganja" },
   "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode:" },
   "prompt_updateInt": { "message": "Posodobite interval osveževanja (v sekundah)" },
+  "alert_willRefresh": { "message": "Seja ChatGPT se samodejno osveži vsakih" },
   "alert_updateAvail": { "message": "Posodobitev na voljo" },
   "alert_newerVer": { "message": "Posodobitev na" },
   "alert_isAvail": { "message": "je na voljo" },
   "alert_upToDate": { "message": "najnovejši" },
   "alert_isUpToDate": { "message": "najnovejši" },
-  "alert_willRefresh": { "message": "Seja ChatGPT se samodejno osveži vsakih" },
   "unit_secs": { "message": "sekund" },
   "state_enabled": { "message": "omogočeno" },
   "state_disabled": { "message": "onemogočeno" }

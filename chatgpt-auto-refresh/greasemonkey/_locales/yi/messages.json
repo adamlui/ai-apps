@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "פּאַוערד דורך" },
   "about_sourceCode": { "message": "מקור קאָד" },
   "prompt_updateInt": { "message": "דערהייַנטיקן דערפרישן מעהאַלעך (אין סעק)" },
+  "alert_willRefresh": { "message": "ChatGPT סעסיע וועט אויטאָמאַטיש דערפרישן יעדער" },
   "alert_updateAvail": { "message": "דערהייַנטיקן בנימצא" },
   "alert_newerVer": { "message": "אַ דערהייַנטיקן צו" },
   "alert_isAvail": { "message": "איז בנימצא" },
   "alert_upToDate": { "message": "היינטצייטיג" },
   "alert_isUpToDate": { "message": "איז דערהייַנטיקט" },
-  "alert_willRefresh": { "message": "ChatGPT סעסיע וועט אויטאָמאַטיש דערפרישן יעדער" },
   "unit_secs": { "message": "סעק" },
   "state_enabled": { "message": "ערמעגליכט" },
   "state_disabled": { "message": "פאַרקריפּלט" }

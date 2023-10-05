@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Destek" },
   "about_sourceCode": { "message": "Kaynak Kodu" },
   "prompt_updateInt": { "message": "Yenileme aralığını güncelle (saniye cinsinden)" },
+  "alert_willRefresh": { "message": "ChatGPT oturumu otomatik olarak yenilenecek her" },
   "alert_updateAvail": { "message": "Güncelleme uygun" },
   "alert_newerVer": { "message": "Güncelleme tarih" },
   "alert_isAvail": { "message": "gecerli" },
   "alert_upToDate": { "message": "Güncel" },
   "alert_isUpToDate": { "message": "Güncel" },
-  "alert_willRefresh": { "message": "ChatGPT oturumu otomatik olarak yenilenecek her" },
   "unit_secs": { "message": "sn" },
   "state_enabled": { "message": "etkin" },
   "state_disabled": { "message": "devre dışı" }

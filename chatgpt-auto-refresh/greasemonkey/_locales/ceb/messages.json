@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Gipadagan sa" },
   "about_sourceCode": { "message": "Gigikana sa kodigo" },
   "prompt_updateInt": { "message": "Awhag sa Intibalo sa Pag-refresh (sa segundos)" },
+  "alert_willRefresh": { "message": "Ang sesyon sa ChatGPT mag-refresh og kaugalingon matag" },
   "alert_updateAvail": { "message": "May bag-ong update nga anaa" },
   "alert_newerVer": { "message": "Usa ka update ngadto sa" },
   "alert_isAvail": { "message": "anaa sa dili" },
   "alert_upToDate": { "message": "Sama sa kasamtangang petsa" },
   "alert_isUpToDate": { "message": "kasamtangang petsa na" },
-  "alert_willRefresh": { "message": "Ang sesyon sa ChatGPT mag-refresh og kaugalingon matag" },
   "unit_secs": { "message": "segundo" },
   "state_enabled": { "message": "Mipahimo" },
   "state_disabled": { "message": "Baldado" }

@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "کی طرف سے چلایا جاتا ہے" },
   "about_sourceCode": { "message": "سورس کوڈ" },
   "prompt_updateInt": { "message": "ریفریش انٹروال کو اپ ڈیٹ کریں (سیکنڈز میں)" },
+  "alert_willRefresh": { "message": "چیٹ جی پی ٹی سیشن خود بخود ہر" },
   "alert_updateAvail": { "message": "اپ ڈیٹ دستیاب ہے" },
   "alert_newerVer": { "message": "ایک اپ ڈیٹ ہوا ہے" },
   "alert_isAvail": { "message": "دستیاب ہے" },
   "alert_upToDate": { "message": "اپ ٹو ڈیٹ ہے" },
   "alert_isUpToDate": { "message": "اپ ٹو ڈیٹ ہے" },
-  "alert_willRefresh": { "message": "چیٹ جی پی ٹی سیشن خود بخود ہر" },
   "unit_secs": { "message": "سیکنڈز" },
   "state_enabled": { "message": "چالو" },
   "state_disabled": { "message": "معطل" }

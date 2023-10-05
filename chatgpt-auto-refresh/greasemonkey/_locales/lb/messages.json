@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Bereetgestallt vun" },
   "about_sourceCode": { "message": "Quellcode" },
   "prompt_updateInt": { "message": "Aktualiséieren Erfrëschungsintervall (a Sekonnen)" },
+  "alert_willRefresh": { "message": "ChatGPT Sessioun wäert all automatesch erfrëschen" },
   "alert_updateAvail": { "message": "Aktualiséierung verfügbar" },
   "alert_newerVer": { "message": "En update zu" },
   "alert_isAvail": { "message": "ass verfügbar" },
   "alert_upToDate": { "message": "Op dem neiste Stand" },
   "alert_isUpToDate": { "message": "ass op dem neiste stand" },
-  "alert_willRefresh": { "message": "ChatGPT Sessioun wäert all automatesch erfrëschen" },
   "unit_secs": { "message": "sekonnen" },
   "state_enabled": { "message": "aktiviert" },
   "state_disabled": { "message": "deaktivéiert" }

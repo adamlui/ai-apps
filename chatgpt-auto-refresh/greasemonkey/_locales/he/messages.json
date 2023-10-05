@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "באמצעות " },
   "about_sourceCode": { "message": "קוד מקור" },
   "prompt_updateInt": { "message": "מרווח רענון עדכון (בשניות)" },
+  "alert_willRefresh": { "message": "הפעלת ChatGPT תרענן אוטומטית כל" },
   "alert_updateAvail": { "message": "עדכון זמין" },
   "alert_newerVer": { "message": "עדכון ל -" },
   "alert_isAvail": { "message": "is available" },
   "alert_upToDate": { "message": "מעודכן" },
   "alert_isUpToDate": { "message": "מעודכן" },
-  "alert_willRefresh": { "message": "הפעלת ChatGPT תרענן אוטומטית כל" },
   "unit_secs": { "message": "שניות" },
   "state_enabled": { "message": "מופעל" },
   "state_disabled": { "message": "נָכֶה" }

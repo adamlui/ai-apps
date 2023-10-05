@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "...द्वारा पावरशुदा" },
   "about_sourceCode": { "message": "सोर्स कोड" },
   "prompt_updateInt": { "message": "रिफ्रेश अंतराल अपडेट करें (सेकंड में)" },
+  "alert_willRefresh": { "message": "चैटजीपीटी सत्र हर" },
   "alert_updateAvail": { "message": "उपलब्ध अद्यतन" },
   "alert_newerVer": { "message": "पर एक अपडेट" },
   "alert_isAvail": { "message": "उपलब्ध है" },
   "alert_upToDate": { "message": "अद्यतन" },
   "alert_isUpToDate": { "message": "अप - टू - डेट है" },
-  "alert_willRefresh": { "message": "चैटजीपीटी सत्र हर" },
   "unit_secs": { "message": "सेकंड" },
   "state_enabled": { "message": "सक्षम" },
   "state_disabled": { "message": "अक्षम" }

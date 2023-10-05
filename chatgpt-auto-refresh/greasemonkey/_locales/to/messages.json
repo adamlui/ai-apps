@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Fakalele ʻe he" },
   "about_sourceCode": { "message": "Maʻuʻanga fakamatala" },
   "prompt_updateInt": { "message": "Fakatonutonu ʻa e refresh (ʻi he THF)" },
+  "alert_willRefresh": { "message": "ʻE fakafoʻou ʻe he fakataha ChatGPT ʻa e meʻalele kotoa pe" },
   "alert_updateAvail": { "message": "ʻOku lava ke maʻu e fakamatala fakamuimuitaha" },
   "alert_newerVer": { "message": "Ko ha fakamatala fakamuimuitaha ki he" },
   "alert_isAvail": { "message": "ʻoku lava ke maʻu" },
   "alert_upToDate": { "message": "ʻO aʻu mai ki he ʻaho ni" },
   "alert_isUpToDate": { "message": "ʻOku aʻu ki he ʻaho ni" },
-  "alert_willRefresh": { "message": "ʻE fakafoʻou ʻe he fakataha ChatGPT ʻa e meʻalele kotoa pe" },
   "unit_secs": { "message": "THF" },
   "state_enabled": { "message": "Faka'ataa" },
   "state_disabled": { "message": "Tapui" }

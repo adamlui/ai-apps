@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Με την υποστήριξη" },
   "about_sourceCode": { "message": "Source code" },
   "prompt_updateInt": { "message": "Ενημερώστε το διάστημα ανανέωσης (σε δευτερόλεπτα)" },
+  "alert_willRefresh": { "message": "Η συνεδρία ChatGPT θα ανανεώνεται αυτόματα κάθε" },
   "alert_updateAvail": { "message": "Υπάρχει διαθέσιμη ενημέρωση" },
   "alert_newerVer": { "message": "Ενημέρωση" },
   "alert_isAvail": { "message": "Μη διαθέσιμο" },
   "alert_upToDate": { "message": "Ενημερωμένο" },
   "alert_isUpToDate": { "message": " είναι ενήμερο." },
-  "alert_willRefresh": { "message": "Η συνεδρία ChatGPT θα ανανεώνεται αυτόματα κάθε" },
   "unit_secs": { "message": "δευτερόλεπτα" },
   "state_enabled": { "message": "ενεργοποιημένο" },
   "state_disabled": { "message": "απενεργοποιημένο" }

@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Нерӯмандшуда аз тарафи" },
   "about_sourceCode": { "message": "Рамзи манбаъ" },
   "prompt_updateInt": { "message": "Фосилаи навсозӣ (дар сонияҳо)" },
+  "alert_willRefresh": { "message": "Сессияи ChatGPT ҳар якро худкор навсозӣ мекунад" },
   "alert_updateAvail": { "message": "Навсозии дастрас" },
   "alert_newerVer": { "message": "Навсозӣ ба" },
   "alert_isAvail": { "message": "дастрас аст" },
   "alert_upToDate": { "message": "Навшуда" },
   "alert_isUpToDate": { "message": "замонавӣ аст" },
-  "alert_willRefresh": { "message": "Сессияи ChatGPT ҳар якро худкор навсозӣ мекунад" },
   "unit_secs": { "message": "_: дуюм дюмsecond" },
   "state_enabled": { "message": "фаъол шуд" },
   "state_disabled": { "message": "маъюб" }

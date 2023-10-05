@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Güýçli" },
   "about_sourceCode": { "message": "Çykgyt kodu" },
   "prompt_updateInt": { "message": "Täzelenme aralygyny täzeläň (sekuntlarda)" },
+  "alert_willRefresh": { "message": "ChatGPT sessiýasy her gezek özara täzelener" },
   "alert_updateAvail": { "message": "Täzeleşdir" },
   "alert_newerVer": { "message": "Täzeleşdirmek" },
   "alert_isAvail": { "message": "häzir bar" },
   "alert_upToDate": { "message": "Döwrebap" },
   "alert_isUpToDate": { "message": "häzirki döwürde" },
-  "alert_willRefresh": { "message": "ChatGPT sessiýasy her gezek özara täzelener" },
   "unit_secs": { "message": "sekunt" },
   "state_enabled": { "message": "açyk" },
   "state_disabled": { "message": "maýyp" }

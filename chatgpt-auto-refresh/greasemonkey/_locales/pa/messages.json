@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },
   "about_sourceCode": { "message": "ਸਰੋਤ ਕੋਡ@ info: whatsthis" },
   "prompt_updateInt": { "message": "ਰੀਫਰੈਸ਼ ਅੰਤਰਾਲ ਅੱਪਡੇਟ ਕਰੋ (ਸਕਿੰਟਾਂ ਵਿੱਚ)" },
+  "alert_willRefresh": { "message": "ChatGPT ਸੈਸ਼ਨ ਆਟੋ ਰੀਫਰੈਸ਼ ਹੋਵੇਗਾ" },
   "alert_updateAvail": { "message": "ਅੱਪਡੇਟ ਉਪਲਬਧ ਹੈ" },
   "alert_newerVer": { "message": "ਨੂੰ ਇੱਕ ਅੱਪਡੇਟ" },
   "alert_isAvail": { "message": "ਉਪਲਬਧ ਹੈ" },
   "alert_upToDate": { "message": "ਨਵੀਨੀਕਰਨ" },
   "alert_isUpToDate": { "message": "ਨਵੀਨੀਕਰਨ" },
-  "alert_willRefresh": { "message": "ChatGPT ਸੈਸ਼ਨ ਆਟੋ ਰੀਫਰੈਸ਼ ਹੋਵੇਗਾ" },
   "unit_secs": { "message": "ਸਕਿੰਟ" },
   "state_enabled": { "message": "ਸਕ੍ਰਿਆ ਕੀਤਾ ਗਿਆ" },
   "state_disabled": { "message": "ਅਯੋਗ ਕੀਤਾ ਗਿਆ" }

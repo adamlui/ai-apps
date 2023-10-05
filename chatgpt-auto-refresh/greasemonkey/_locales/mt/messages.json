@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "Powered b'daqs" },
   "about_sourceCode": { "message": "Kodiċi Sors" },
   "prompt_updateInt": { "message": "Aġġorna l-interval ta' rifreżar (fi sekondi)" },
+  "alert_willRefresh": { "message": "Is-sessjoni tal-ChatGPT se tirrifreża awtomatikament kull" },
   "alert_updateAvail": { "message": "Aġġornament disponibbli" },
   "alert_newerVer": { "message": "Aġġornament għall" },
   "alert_isAvail": { "message": "huwa disponibbli" },
   "alert_upToDate": { "message": "F'dawl" },
   "alert_isUpToDate": { "message": "huwa f'dawl" },
-  "alert_willRefresh": { "message": "Is-sessjoni tal-ChatGPT se tirrifreża awtomatikament kull" },
   "unit_secs": { "message": "sekondi" },
   "state_enabled": { "message": "attivat" },
   "state_disabled": { "message": "disabbiltat" }

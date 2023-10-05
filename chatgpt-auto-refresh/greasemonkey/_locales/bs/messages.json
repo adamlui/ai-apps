@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "omogućio" },
   "about_sourceCode": { "message": "Izvorni kod" },
   "prompt_updateInt": { "message": "Ažuriraj interval osvježavanja (u sekundama)" },
+  "alert_willRefresh": { "message": "ChatGPT sesija će se automatski osvježavati svakih" },
   "alert_updateAvail": { "message": "Ažuriranje dostupno" },
   "alert_newerVer": { "message": "Ažuriranje za" },
   "alert_isAvail": { "message": "dostupno je" },
   "alert_upToDate": { "message": "Up to date" },
   "alert_isUpToDate": { "message": "je ažuran" },
-  "alert_willRefresh": { "message": "ChatGPT sesija će se automatski osvježavati svakih" },
   "unit_secs": { "message": "sek." },
   "state_enabled": { "message": "Omogućeno" },
   "state_disabled": { "message": "onemogućen" }

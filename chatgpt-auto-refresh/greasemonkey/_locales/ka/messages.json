@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "აგებულია KDE-ზე" },
   "about_sourceCode": { "message": "საწყისი კოდი" },
   "prompt_updateInt": { "message": "განახლების ინტერვალის განახლება (წამებში)" },
+  "alert_willRefresh": { "message": "ChatGPT სესია ავტომატურად განახლდება ყოველი" },
   "alert_updateAvail": { "message": "Განახლება შესაძლებელია" },
   "alert_newerVer": { "message": "Განახლება:" },
   "alert_isAvail": { "message": "ხელმისაწვდომია" },
   "alert_upToDate": { "message": "განახლებულია" },
   "alert_isUpToDate": { "message": "განახლებულია" },
-  "alert_willRefresh": { "message": "ChatGPT სესია ავტომატურად განახლდება ყოველი" },
   "unit_secs": { "message": "წამებში" },
   "state_enabled": { "message": "ჩართულია" },
   "state_disabled": { "message": "ინვალიდი" }

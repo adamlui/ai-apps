@@ -11,12 +11,12 @@
   "about_poweredBy": { "message": "🇦🇲" },
   "about_sourceCode": { "message": "Ծրագրային կոդ" },
   "prompt_updateInt": { "message": "Թարմացնել թարմացման միջակայքը (վայրկյաններով)" },
+  "alert_willRefresh": { "message": "ChatGPT նիստը ամեն անգամ ավտոմատ կթարմացվի" },
   "alert_updateAvail": { "message": "Թարմացումը հասանելի է" },
   "alert_newerVer": { "message": "Թարմացում" },
   "alert_isAvail": { "message": "առկա է" },
   "alert_upToDate": { "message": "Թարմացված" },
   "alert_isUpToDate": { "message": "այն արդիական է" },
-  "alert_willRefresh": { "message": "ChatGPT նիստը ամեն անգամ ավտոմատ կթարմացվի" },
   "unit_secs": { "message": "վայրկյան" },
   "state_enabled": { "message": "միացված է" },
   "state_disabled": { "message": "անաշխատունակ" }
