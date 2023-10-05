@@ -1,0 +1,19 @@
+{
+  "appName": { "message":  "ChatGPT Auto Refresh" },
+  "appDesc": { "message":  "*Luwas* nagpadayon sa mga sesyon sa ChatGPT nga lab-as, gitangtang ang kanunay nga mga sayup sa network + Mga pagsusi sa Cloudflare (tanan gikan sa background!)" },
+  "menuLabel_autoRefresh": { "message":  "Autoplay Loop" },
+  "menuLabel_toggleVis": { "message":  "Toggle visibility" },
+  "menuLabel_modeNotifs": { "message":  "Mga Notipikasyon sa Mode" },
+  "menuLabel_refreshInt": { "message":  "Refresh Interval" },
+  "menuLabel_disabled": { "message":  "Disabled (mga sumpay_usba)" },
+  "prompt_updateInt": { "message":  "Pag-update sa agwat sa pag-refresh (sa mga SEC)" },
+  "alert_updateAvail": { "message":  "Magamit ang pag-update" },
+  "alert_newerVer": { "message":  "Usa ka Bag-ong Bersyon" },
+  "alert_isAvail": { "message":  "available Ang" },
+  "alert_dontShowAgain": { "message":  "Ayaw na usab pagpakita" },
+  "alert_untilNextVer": { "message":  "hangtud sa sunod nga update" },
+  "alert_intUpdated": { "message":  "Ang sesyon sa ChatGPT mag-refresh sa matag usa" },
+  "unit_secs": { "message":  "espesye sa alindanaw" },
+  "state_enabled": { "message":  "Mipahimo" },
+  "state_disabled": { "message":  "Baldado" }
+}

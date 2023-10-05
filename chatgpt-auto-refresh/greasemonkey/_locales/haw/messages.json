@@ -1,0 +1,19 @@
+{
+  "appName": { "message":  "ʻO ChatGPT hōʻano hou" },
+  "appDesc": { "message":  "Mālama ʻo * SAFELY * i nā manawa hou o ChatGPT, e hoʻopau ana i nā hewa pūnaewele mau + nā mākaʻikaʻi Cloudflare (mai ke kua!)" },
+  "menuLabel_autoRefresh": { "message":  "Hoʻohou-Aunoa" },
+  "menuLabel_toggleVis": { "message":  "Hoʻololi i ka ʻike" },
+  "menuLabel_modeNotifs": { "message":  "Hoʻolaha Kūlana" },
+  "menuLabel_refreshInt": { "message":  "Hoʻomaʻamaʻa manawa" },
+  "menuLabel_disabled": { "message":  "Hoʻopaʻa ʻia (kau ʻia ka hoʻonui)" },
+  "prompt_updateInt": { "message":  "Hoʻohou i ka wā hōʻano hou (i kekona)" },
+  "alert_updateAvail": { "message":  "Loaʻa ka hōʻano hou" },
+  "alert_newerVer": { "message":  "He mana hou o" },
+  "alert_isAvail": { "message":  "loaʻa" },
+  "alert_dontShowAgain": { "message":  "Mai hōʻike hou" },
+  "alert_untilNextVer": { "message":  "a hiki i ka mea hou hou" },
+  "alert_intUpdated": { "message":  "E hōʻano hou ka manawa ChatGPT i kēlā me kēia" },
+  "unit_secs": { "message":  "kekona" },
+  "state_enabled": { "message":  "hiki" },
+  "state_disabled": { "message":  "kino kīnā" }
+}

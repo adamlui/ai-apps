@@ -1,0 +1,19 @@
+{
+  "appName": { "message":  "ChatGPT Auto Refresh" },
+  "appDesc": { "message":  "*Sàbhailte* a 'cumail seiseanan ChatGPT ùr, a' cur às do mhearachdan lìonra cunbhalach + sgrùdaidhean Cloudflare (uile bhon chùl - raon!)" },
+  "menuLabel_autoRefresh": { "message":  "Ath - nuadhaich gu fèin - obrachail" },
+  "menuLabel_toggleVis": { "message":  "Toglaich an fhaicsinneachdrawable-action" },
+  "menuLabel_modeNotifs": { "message":  "Mode Notifications" },
+  "menuLabel_refreshInt": { "message":  "Eadar - ama ùrachaidh" },
+  "menuLabel_disabled": { "message":  "Cuir à comas (leudachan stàlaichte)" },
+  "prompt_updateInt": { "message":  "Ùraich an t - eadar - ama ùrachaidh (ann an soidhnichean)" },
+  "alert_updateAvail": { "message":  "Chan eil ùrachadh ri fhaighinn" },
+  "alert_newerVer": { "message":  "Tha New Version Of" },
+  "alert_isAvail": { "message":  "ri fhaighinn" },
+  "alert_dontShowAgain": { "message":  "Na seall seo a-rithist" },
+  "alert_untilNextVer": { "message":  "gus an ath ùrachadh" },
+  "alert_intUpdated": { "message":  "Bidh an seisean ChatGPT ag ùrachadh gu fèin - obrachail gach" },
+  "unit_secs": { "message":  "soidhnichean" },
+  "state_enabled": { "message":  "An comas" },
+  "state_disabled": { "message":  "Gun dòigh" }
+}

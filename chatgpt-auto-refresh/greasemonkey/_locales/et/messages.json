@@ -1,0 +1,19 @@
+{
+  "appName": { "message":  "ChatGPT automaatvärskendus" },
+  "appDesc": { "message":  "*OHUTULT* hoiab ChatGPT seansid värskena, kõrvaldades pidevad võrgutõrked + Cloudflare kontrollid (kõik taustalt!)" },
+  "menuLabel_autoRefresh": { "message":  "Automaatne uuendamineComment" },
+  "menuLabel_toggleVis": { "message":  "Nähtavuse lülitamine" },
+  "menuLabel_modeNotifs": { "message":  "Režiimi teated" },
+  "menuLabel_refreshInt": { "message":  "Värskendamise intervall" },
+  "menuLabel_disabled": { "message":  "Keelatud (laiend installitud)" },
+  "prompt_updateInt": { "message":  "Värskendusintervalli värskendamine (sekundites)" },
+  "alert_updateAvail": { "message":  "Saadaval on uuendus" },
+  "alert_newerVer": { "message":  "Uuem versioon" },
+  "alert_isAvail": { "message":  "on saadaval" },
+  "alert_dontShowAgain": { "message":  "Ära kuva uuesti" },
+  "alert_untilNextVer": { "message":  "kuni järgmise värskenduseni" },
+  "alert_intUpdated": { "message":  "ChatGPT seanssi värskendatakse automaatselt iga" },
+  "unit_secs": { "message":  "sek" },
+  "state_enabled": { "message":  "lubatud" },
+  "state_disabled": { "message":  "välja lülitatud" }
+}

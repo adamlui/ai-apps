@@ -1,0 +1,19 @@
+{
+  "appName": { "message":  "ཨའི་ཌི་ཨར་སི་གི་རྒྱབ་སྐྱོར།" },
+  "appDesc": { "message":  "ཐུམ་སྒྲིལ་ཚུ་རྩ་བསྐྲད་གཏང་ནིའི་དོན་ལུ་ ཐོ་བཀྲམ་གཏངམ་ཨིན་ (!)" },
+  "menuLabel_autoRefresh": { "message":  "རང་བཞིན་-བརྡ་བརྡ་བཀོད་" },
+  "menuLabel_toggleVis": { "message":  "མ་ཤེས་པའི་བརྡ་དོན།" },
+  "menuLabel_modeNotifs": { "message":  "གསལ་བཀོད་འབད་ཡོད་པའི་ཐོ་ཡིག་ཚུ་" },
+  "menuLabel_refreshInt": { "message":  "དུས་མཐུན་བཟོ་ནིའི་དུས་མཐུན་བཟོ་ནི།" },
+  "menuLabel_disabled": { "message":  "ནུས་མེད་བཀྲམ་གཏང་། (_F)" },
+  "prompt_updateInt": { "message":  "དུས་མཐུན་བཟོ་ཡོད། (_S)" },
+  "alert_updateAvail": { "message":  "ད་ལྟོ་མཐུན་བཟོ་ནི།" },
+  "alert_newerVer": { "message":  "ཏ་སེ་གསརཔ་ཅིག་བཀྲམ།" },
+  "alert_isAvail": { "message":  "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
+  "alert_dontShowAgain": { "message":  "བསྐྱར་བཀྲམ་སྟོན་འབད།" },
+  "alert_untilNextVer": { "message":  "ཤུལ་མའི་ཐོ་ཡིག་འདི་ དུས་མཐུན་བཟོ་མ་ཚུགས།" },
+  "alert_intUpdated": { "message":  "ཀེར་ཐིག་གི་རྒྱབ་སྐྱོར་འབད་ནིའི་དོན་ལུ་ དུས་ཡུན་སྐར་དོ།" },
+  "unit_secs": { "message":  "སི་ཀིསི། (_S)" },
+  "state_enabled": { "message":  "གྲོགས་རམ་ཡོད།" },
+  "state_disabled": { "message":  "སེལ་འཐུ་འབད་ཡོད་པའི་བརྡ་བཀོད་" }
+}

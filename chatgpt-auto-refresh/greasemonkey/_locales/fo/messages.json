@@ -1,0 +1,19 @@
+{
+  "appName": { "message":  "ChatGPT Auto Frysta" },
+  "appDesc": { "message":  "*trygt* heldur ChatGPT sessir nýtt, við at broyta konstantar netsamrøður + Cloudflare kjakir (allir frá bakgrundini!)" },
+  "menuLabel_autoRefresh": { "message":  "Auto-Refresh" },
+  "menuLabel_toggleVis": { "message":  "Goym eygleiðing" },
+  "menuLabel_modeNotifs": { "message":  "Modus kunningarskriv" },
+  "menuLabel_refreshInt": { "message":  "Endurskoðað Interval" },
+  "menuLabel_disabled": { "message":  "Broytingar í innsavningini (innsavning)" },
+  "prompt_updateInt": { "message":  "Endurvinna tíðarskeið (í sekum)" },
+  "alert_updateAvail": { "message":  "Dagføring er klár" },
+  "alert_newerVer": { "message":  "Nýggjar avbjóðingar" },
+  "alert_isAvail": { "message":  "er tøkt" },
+  "alert_dontShowAgain": { "message":  "Sýn ikki aftur" },
+  "alert_untilNextVer": { "message":  "til næsta uppdatering" },
+  "alert_intUpdated": { "message":  "Tvøroyrar Kommuna skal avgera hvørjar avleiðingarnar verða" },
+  "unit_secs": { "message":  "sek" },
+  "state_enabled": { "message":  "Virkið" },
+  "state_disabled": { "message":  "Óvirkið" }
+}

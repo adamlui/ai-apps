@@ -1,0 +1,19 @@
+{
+  "appName": { "message":  "ChatGPT Аўтаматычнае абнаўленне" },
+  "appDesc": { "message":  "*бяспечна* захоўвае сеансы ChatGPT свежымі, ухіляючы пастаянныя сеткавыя памылкі + праверкі Cloudflare (усё з фону!)" },
+  "menuLabel_autoRefresh": { "message":  "Comment" },
+  "menuLabel_toggleVis": { "message":  "Пераключыць бачнасць" },
+  "menuLabel_modeNotifs": { "message":  "Рэжым апавяшчэнняў" },
+  "menuLabel_refreshInt": { "message":  "ÐÐ½ÑÑÑÐ²Ð°Ð» Ð°Ð±Ð½Ð°ÑÐ»ÐµÐ½Ð½Ñ" },
+  "menuLabel_disabled": { "message":  "Адключаны (усталяваны пашырэнне)" },
+  "prompt_updateInt": { "message":  "Абнавіць інтэрвал абнаўлення (у сек)" },
+  "alert_updateAvail": { "message":  "Ёсць абнаўленне" },
+  "alert_newerVer": { "message":  "Новая версія" },
+  "alert_isAvail": { "message":  "даступны" },
+  "alert_dontShowAgain": { "message":  "Не паказваць зноў" },
+  "alert_untilNextVer": { "message":  "да наступнага абнаўлення" },
+  "alert_intUpdated": { "message":  "Сеанс ChatGPT будзе аўтаматычна абнаўляцца кожны" },
+  "unit_secs": { "message":  "сек" },
+  "state_enabled": { "message":  "XYZ/ альфа- канал" },
+  "state_disabled": { "message":  "адключаны" }
+}

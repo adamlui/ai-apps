@@ -1,0 +1,19 @@
+{
+  "appName": { "message":  "Actualització automàtica del xatGPT" },
+  "appDesc": { "message":  "*SEGUR* manté les sessions de ChatGPT fresques, eliminant errors de xarxa constants + comprovacions Cloudflare (tot des del fons!)" },
+  "menuLabel_autoRefresh": { "message":  "Refresc automàticComment" },
+  "menuLabel_toggleVis": { "message":  "Commuta la visibilitat" },
+  "menuLabel_modeNotifs": { "message":  "Notificacions de mode" },
+  "menuLabel_refreshInt": { "message":  "Interval de refresc" },
+  "menuLabel_disabled": { "message":  "Desactivat (extensió instal·lada)" },
+  "prompt_updateInt": { "message":  "Actualitza l'interval d'actualització (en segons)" },
+  "alert_updateAvail": { "message":  "Nova versió disponible!" },
+  "alert_newerVer": { "message":  "Una nova versió de" },
+  "alert_isAvail": { "message":  "està disponible" },
+  "alert_dontShowAgain": { "message":  "No volver a mostrar" },
+  "alert_untilNextVer": { "message":  "fins a la propera actualització" },
+  "alert_intUpdated": { "message":  "La sessió del XatGPT s'actualitzarà automàticament cada" },
+  "unit_secs": { "message":  "segons" },
+  "state_enabled": { "message":  "habilitat" },
+  "state_disabled": { "message":  "inhabilitat" }
+}

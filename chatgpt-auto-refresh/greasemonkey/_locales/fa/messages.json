@@ -1,0 +1,19 @@
+{
+  "appName": { "message":  "بازخوانی خودکار ChatGPT" },
+  "appDesc": { "message":  "*ایمن* جلسات ChatGPT را تازه نگه می دارد، خطاهای ثابت شبکه + بررسی های Cloudflare را حذف می کند (همه از پس زمینه!)" },
+  "menuLabel_autoRefresh": { "message":  "رفرش خودکار" },
+  "menuLabel_toggleVis": { "message":  "تغییر نمایانی" },
+  "menuLabel_modeNotifs": { "message":  "اعلان‌های حالت" },
+  "menuLabel_refreshInt": { "message":  "بازخوانی فاصله" },
+  "menuLabel_disabled": { "message":  "غیرفعال (برنامه افزودنی نصب شده)" },
+  "prompt_updateInt": { "message":  "فاصله بازخوانی به‌روزرسانی (در ثانیه)" },
+  "alert_updateAvail": { "message":  "آپدیت موجود است" },
+  "alert_newerVer": { "message":  "نسخه جدیدتر از" },
+  "alert_isAvail": { "message":  "موجوده" },
+  "alert_dontShowAgain": { "message":  "دوباره نشان ندهید" },
+  "alert_untilNextVer": { "message":  "تا آپدیت بعدی" },
+  "alert_intUpdated": { "message":  "جلسه ChatGPT هر بار به طور خودکار بازخوانی می شود" },
+  "unit_secs": { "message":  "ثانیه" },
+  "state_enabled": { "message":  "فعال" },
+  "state_disabled": { "message":  "غیر فعال کردن" }
+}
