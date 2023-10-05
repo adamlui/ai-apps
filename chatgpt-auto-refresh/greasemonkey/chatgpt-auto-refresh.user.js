@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.2
+// @version             2023.1.5
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -378,21 +378,30 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        alert('Update available! 🚀', // title
-                            `An update to ${ messages.appName } (v${ latestVer }) is available!   `
+                        const updateAlertID = alert(messages.alert_updateAvail + '! 🚀', // title
+                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + '>View changes</a>',
+                                    + `>${ messages.link_viewChanges }</a>`,
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
                                 ).onclose = () => location.reload() }
                         )
+
+                        // Localize button labels if needed
+                        if (!config.userLanguage.startsWith('en')) {
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
+                                  updateButtons = updateAlert.querySelectorAll('button')
+                            updateButtons[1].textContent = messages.buttonLabel_update
+                            updateButtons[0].textContent = messages.buttonLabel_dismiss
+                        }
+
                         return
                 }}
 
-                alert('Up-to-date!', `${ messages.appName } (v${ currentVer }) is up-to-date!`)
+                alert(messages.alert_upToDate + '!', `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`)
     }})}
 
     // Define MENU functions
@@ -444,7 +453,8 @@
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     const minInterval = Math.max(2, config.refreshInterval - 10),
                           maxInterval = config.refreshInterval + 10
-                    alert('Interval updated!', `${ messages.alert_intUpdated } ${ minInterval }–${ maxInterval } secs`)
+                    alert(messages.alert_intUpdated + '!',
+                        `${ messages.alert_willRefresh } ${ minInterval }–${ maxInterval } secs`)
                     break
         }}}))
 
@@ -459,12 +469,12 @@
                   aStyle = 'color: #8325c4' // purple
             const aboutAlertID = alert(
                 messages.appName, // title
-                `<span style="${ headingStyle }"><b>🏷️ <i>Version</i></b>: </span>`
+                `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
                     + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-                + `<span style="${ headingStyle }"><b>⚡ <i>Powered by</i></b>: </span>`
+                + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
                     + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                     + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                + `<span style="${ headingStyle }"><b>📜 <i>Source code</i></b>:</span>\n`
+                + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
                     + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                     + config.gitHubURL + '</a></span>',
                 [ // buttons
@@ -481,8 +491,8 @@
 
             // Re-format buttons to include emojis + re-case + hide Dismiss button
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-                if (/updates/i.test(button.textContent)) button.textContent = '🚀 Check for Updates'
-                else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
+                if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+                else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
