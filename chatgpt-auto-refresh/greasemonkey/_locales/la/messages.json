@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "Refresh Tabularia" },
+  "appDesc": { "message": "*SAFE* habetur ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (omnes de backgrounde!)" },
+  "menuLabel_autoRefresh": { "message": "Autocatus-Refresh" },
+  "menuLabel_toggleVis": { "message": "Visibility" },
+  "menuLabel_modeNotifs": { "message": "Modus Notificationes" },
+  "menuLabel_refreshInt": { "message": "Intervalus refresh" },
+  "menuLabel_disabled": { "message": "Votre nom (nécessaire)" },
+  "menuLabel_about": { "message": "De Hac Re" },
+  "about_version": { "message": "Versio" },
+  "about_poweredBy": { "message": "Powered by" },
+  "about_sourceCode": { "message": "Codex Originis" },
+  "prompt_updateInt": { "message": "Refresh interval (in secs)" },
+  "alert_updateAvail": { "message": "Updateis available" },
+  "alert_newerVer": { "message": "Datum novaque versiona" },
+  "alert_isAvail": { "message": "est disponibus" },
+  "alert_dontShowAgain": { "message": "Nunquamquere" },
+  "alert_untilNextVer": { "message": "nunquam novitatis" },
+  "alert_intUpdated": { "message": "ChatGPT UNIVERSITATIS autem refresh" },
+  "unit_secs": { "message": "secs" },
+  "state_enabled": { "message": "Actiosus" },
+  "state_disabled": { "message": "Invaliditas" }
+}

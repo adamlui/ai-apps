@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "Cusboonaysiinta Gawaarida ee ChatGPT" },
+  "appDesc": { "message": "* nabadgelyada * sii fadhiyada ChatGPT cusub, baabi 'inta khaladaadka shabakadda joogtada ah + Hubinta Cloudflare (oo dhan laga bilaabo asalka!)" },
+  "menuLabel_autoRefresh": { "message": "Dib-u-cusboonaysiinta Gawaarida" },
+  "menuLabel_toggleVis": { "message": "Muuqaalka Toggle" },
+  "menuLabel_modeNotifs": { "message": "Ogeysiisyada Mode" },
+  "menuLabel_refreshInt": { "message": "Dib-u-cusboonaysiin Dhexdhexaad ah" },
+  "menuLabel_disabled": { "message": "Naafada (kordhinta la rakibay)" },
+  "menuLabel_about": { "message": "Jabuuti" },
+  "about_version": { "message": "Version" },
+  "about_poweredBy": { "message": "Waxa fudaydiyay:" },
+  "about_sourceCode": { "message": "Koodhka isha" },
+  "prompt_updateInt": { "message": "Cusbooneysii waqtiga cusboonaysiinta (ee SECs)" },
+  "alert_updateAvail": { "message": "Cusboonaysiinta la heli karo" },
+  "alert_newerVer": { "message": "Version cusub oo ka mid ah" },
+  "alert_isAvail": { "message": "waa la heli karaa" },
+  "alert_dontShowAgain": { "message": "Mar dambe ha soo bandhigin." },
+  "alert_untilNextVer": { "message": "ilaa cusbooneysiinta xiga" },
+  "alert_intUpdated": { "message": "Kalfadhiga ChatGPT wuxuu si otomaatig ah u cusbooneysiin doonaa mid kasta" },
+  "unit_secs": { "message": "sECS" },
+  "state_enabled": { "message": "La daaray" },
+  "state_disabled": { "message": "La damiyay" }
+}

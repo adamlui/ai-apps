@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ອັບໂຫຼດ ChatGPT ອັດຕະໂນມັດ" },
+  "appDesc": { "message": "*ປອດໄພ* ຮັກສາກອງປະຊຸມ ChatGPT ສົດ, ກໍາ ຈັດຂໍ້ຜິດພາດຂອງເຄືອຂ່າຍຄົງທີ່ + ການກວດສອບ Cloudflare (ທັງ ຫມົດ ຈາກພື້ນຫລັງ!)" },
+  "menuLabel_autoRefresh": { "message": "ຟື້ນຟູອັດຕະໂນມັດ" },
+  "menuLabel_toggleVis": { "message": "ປິດການເບິ່ງເຫັນ" },
+  "menuLabel_modeNotifs": { "message": "ການແຈ້ງເຕືອນໂໝດ" },
+  "menuLabel_refreshInt": { "message": "ຊ່ວງເວລາໂຫຼດຂໍ້ມູນຄືນໃໝ່" },
+  "menuLabel_disabled": { "message": "ປິດໃຊ້ງານ (ຕິດຕັ້ງສ່ວນຂະຫຍາຍ)" },
+  "menuLabel_about": { "message": "ກ່ຽວກັບ" },
+  "about_version": { "message": "ຮຸ່ນ" },
+  "about_poweredBy": { "message": "ຂັບເຄື່ອນໂດຍ" },
+  "about_sourceCode": { "message": "ຊອດສ໌ໂຄດ" },
+  "prompt_updateInt": { "message": "ອັບເດດໄລຍະເວລາໂຫຼດຂໍ້ມູນຄືນໃໝ່ (ເປັນວິນາທີ)" },
+  "alert_updateAvail": { "message": "ອັບເດດທີ່ມີຢູ່" },
+  "alert_newerVer": { "message": "ສະບັບໃຫມ່ຂອງ" },
+  "alert_isAvail": { "message": "ມີ" },
+  "alert_dontShowAgain": { "message": "ຢ່າສະແດງອີກເທື່ອ ຫນຶ່ງ" },
+  "alert_untilNextVer": { "message": "ຈົນກ່ວາການອັບເດດຕໍ່ໄປ" },
+  "alert_intUpdated": { "message": "ກອງປະຊຸມສົນທະນາGPT ຈະອັບເດດອັດຕະໂນມັດທຸກໆຄັ້ງ" },
+  "unit_secs": { "message": "ວິນາທີ" },
+  "state_enabled": { "message": "ເປີດໃຊ້ງານ" },
+  "state_disabled": { "message": "ພິການ" }
+}

@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "చాట్ జిపిటి ఆటో రిఫ్రెష్" },
+  "appDesc": { "message": "*సురక్షితంగా* ChatGPT సెషన్ ‌ లను తాజాగా ఉంచుతుంది, స్థిరమైన నెట్ ‌ వర్క్ లోపాలను తొలగిస్తుంది + క్లౌడ్ ‌ ఫ్లేర్ తనిఖీలు (అన్నీ బ్యాక్ ‌ గ్రౌండ్ నుండి!)" },
+  "menuLabel_autoRefresh": { "message": "ఆటో-రీఫ్రెష్" },
+  "menuLabel_toggleVis": { "message": "దృశ్యమానతను టోగుల్ చేయండి" },
+  "menuLabel_modeNotifs": { "message": "మోడ్ నోటిఫికేషన్ ‌ లు" },
+  "menuLabel_refreshInt": { "message": "విరామం రిఫ్రెష్ చేయండి" },
+  "menuLabel_disabled": { "message": "నిలిపివేయబడింది (పొడిగింపు ఇన్ ‌ స్టాల్ చేయబడింది)" },
+  "menuLabel_about": { "message": "గురించి" },
+  "about_version": { "message": "వివరణం" },
+  "about_poweredBy": { "message": "ద్వారా ఆధారితం" },
+  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "prompt_updateInt": { "message": "రిఫ్రెష్ విరామం అప్ ‌ డేట్ చేయండి (సెకన్లలో)" },
+  "alert_updateAvail": { "message": "ఎటువంటి నవీకరణ అందుబాటులోలేదు" },
+  "alert_newerVer": { "message": "యొక్క కొత్త వెర్షన్" },
+  "alert_isAvail": { "message": "అందుబాటులో ఉంది" },
+  "alert_dontShowAgain": { "message": "మళ్లీ చూపించవద్దు" },
+  "alert_untilNextVer": { "message": "తదుపరి అప్ ‌ డేట్ వరకు" },
+  "alert_intUpdated": { "message": "ChatGPT సెషన్ ప్రతి ఒక్కటి ఆటో-రిఫ్రెష్ అవుతుంది" },
+  "unit_secs": { "message": "సెకన్లు" },
+  "state_enabled": { "message": "చేతనంచేసిన" },
+  "state_disabled": { "message": "వికలాంగులు" }
+}

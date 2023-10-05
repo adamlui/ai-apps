@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ChatGPT Авто жаңарту" },
+  "appDesc": { "message": "*Қауіпсіз* ChatGPT сеанстарын жаңартады, тұрақты желілік қателерді жояды + Cloudflare тексерулері (барлығы фоннан!)" },
+  "menuLabel_autoRefresh": { "message": "& Автожаңарту" },
+  "menuLabel_toggleVis": { "message": "Көріністі терістеу" },
+  "menuLabel_modeNotifs": { "message": "Режим хабарландырулары" },
+  "menuLabel_refreshInt": { "message": "ÐÐ°Ò£Ð°ÑÑÑ Ð°ÑÐ°Ð»ÑÒÑ" },
+  "menuLabel_disabled": { "message": "Өшірілген (кеңейтім орнатылған)" },
+  "menuLabel_about": { "message": "Туралы" },
+  "about_version": { "message": "Нұсқа" },
+  "about_poweredBy": { "message": "Сайтты жасаған" },
+  "about_sourceCode": { "message": "Бастапқы код" },
+  "prompt_updateInt": { "message": "Жаңарту аралығы (секундтарда)" },
+  "alert_updateAvail": { "message": "Қолжетімді жаңарту" },
+  "alert_newerVer": { "message": "Жаңа нұсқасы" },
+  "alert_isAvail": { "message": "қолжетімді" },
+  "alert_dontShowAgain": { "message": "Қайта көрсетпеңіз" },
+  "alert_untilNextVer": { "message": "келесі жаңартуға дейін" },
+  "alert_intUpdated": { "message": "ChatGPT сеансы әрқайсысын автоматты түрде жаңартады" },
+  "unit_secs": { "message": "секsecond" },
+  "state_enabled": { "message": "рұқсат етілген" },
+  "state_disabled": { "message": "рұқсат етілмеген" }
+}

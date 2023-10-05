@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ChatGPT sjálfvirk uppfærsla" },
+  "appDesc": { "message": "*ÖRUGGLEGA* heldur ChatGPT fundum ferskum og útrýmir stöðugum netvillum + Cloudflare athugunum (allt frá bakgrunni!)" },
+  "menuLabel_autoRefresh": { "message": "Uppfæra sjálfkrafaComment" },
+  "menuLabel_toggleVis": { "message": "Víxla sýnileika" },
+  "menuLabel_modeNotifs": { "message": "Tilkynningar um ham" },
+  "menuLabel_refreshInt": { "message": "Endurlestrarbil" },
+  "menuLabel_disabled": { "message": "Óvirkt (viðbót uppsett)" },
+  "menuLabel_about": { "message": "Um" },
+  "about_version": { "message": "Útgáfa" },
+  "about_poweredBy": { "message": "Knúið af" },
+  "about_sourceCode": { "message": "Upprunakóði@ info: whatsthis" },
+  "prompt_updateInt": { "message": "Uppfæra endurhleðslutímabil (í sekúndum)" },
+  "alert_updateAvail": { "message": "Ný uppfærsla í boði" },
+  "alert_newerVer": { "message": "Nýrri útgáfa af" },
+  "alert_isAvail": { "message": "er í boði" },
+  "alert_dontShowAgain": { "message": "Ekki sýna þetta aftur" },
+  "alert_untilNextVer": { "message": "fram að næstu uppfærslu" },
+  "alert_intUpdated": { "message": "ChatGPT-lota mun sjálfkrafa endurhlaða hverja einustu" },
+  "unit_secs": { "message": "sek." },
+  "state_enabled": { "message": "Lag" },
+  "state_disabled": { "message": "óvirkt" }
+}

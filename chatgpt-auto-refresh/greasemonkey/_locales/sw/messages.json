@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "Onesha upya kiotomatiki ChatGPT" },
+  "appDesc": { "message": "*SALAMA* huweka vipindi vya ChatGPT safi, kuondoa makosa ya mara kwa mara ya mtandao + ukaguzi wa Cloudflare (yote kutoka nyuma!)" },
+  "menuLabel_autoRefresh": { "message": "Weka upya kiotomatiki" },
+  "menuLabel_toggleVis": { "message": "Washa Mwonekano" },
+  "menuLabel_modeNotifs": { "message": "Arifa za Hali" },
+  "menuLabel_refreshInt": { "message": "Onyesha Upya Muda" },
+  "menuLabel_disabled": { "message": "Imezimwa (kiendelezi kimewekwa)" },
+  "menuLabel_about": { "message": "Kuhusu" },
+  "about_version": { "message": "Toleo" },
+  "about_poweredBy": { "message": "Imewezeshwa na" },
+  "about_sourceCode": { "message": "Msimbo wa chanzo" },
+  "prompt_updateInt": { "message": "Sasisha muda wa upya (kwa sekunde)" },
+  "alert_updateAvail": { "message": "Sasisho lipo" },
+  "alert_newerVer": { "message": "Toleo jipya la" },
+  "alert_isAvail": { "message": "inapatikana" },
+  "alert_dontShowAgain": { "message": "Usinionyeshe hii tena" },
+  "alert_untilNextVer": { "message": "hadi sasisho lijalo" },
+  "alert_intUpdated": { "message": "Kipindi cha ChatGPT kitarejesha kiotomatiki kila" },
+  "unit_secs": { "message": "sekunde" },
+  "state_enabled": { "message": "Imewezeshwa" },
+  "state_disabled": { "message": "disabled" }
+}

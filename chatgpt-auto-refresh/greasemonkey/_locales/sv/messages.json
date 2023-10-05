@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ChatGPT Automatisk uppdatering" },
+  "appDesc": { "message": "*SÄKERT* håller ChatGPT-sessioner fräscha, vilket eliminerar konstanta nätverksfel + Cloudflare-kontroller (allt från bakgrunden!)" },
+  "menuLabel_autoRefresh": { "message": "Uppdatera automatiskt" },
+  "menuLabel_toggleVis": { "message": "Växla synlighet" },
+  "menuLabel_modeNotifs": { "message": "Lägesaviseringar" },
+  "menuLabel_refreshInt": { "message": "Ladda om interval" },
+  "menuLabel_disabled": { "message": "Inaktiverad (tillägg installerat)" },
+  "menuLabel_about": { "message": "Om" },
+  "about_version": { "message": "Version" },
+  "about_poweredBy": { "message": "Drivs av" },
+  "about_sourceCode": { "message": "Källkod" },
+  "prompt_updateInt": { "message": "Uppdatera uppdateringsintervall (i sekunder)" },
+  "alert_updateAvail": { "message": "Uppdatering tillgänglig" },
+  "alert_newerVer": { "message": "En nyare version av" },
+  "alert_isAvail": { "message": "är tillgänglig" },
+  "alert_dontShowAgain": { "message": "Visa inte igen" },
+  "alert_untilNextVer": { "message": "tills nästa uppdatering" },
+  "alert_intUpdated": { "message": "ChatGPT-sessionen uppdateras automatiskt varje" },
+  "unit_secs": { "message": "sekunder" },
+  "state_enabled": { "message": "aktiverad" },
+  "state_disabled": { "message": "inaktiverad" }
+}

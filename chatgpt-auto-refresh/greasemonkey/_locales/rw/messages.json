@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "Kugira gishya" },
+  "appDesc": { "message": "* * Imikoro, urusobe Amakosa + (Byose Kuva: i Mbuganyuma!)" },
+  "menuLabel_autoRefresh": { "message": "Kongera Kuringaniza" },
+  "menuLabel_toggleVis": { "message": "Ukugaragara" },
+  "menuLabel_modeNotifs": { "message": "< B B" },
+  "menuLabel_refreshInt": { "message": "Intera" },
+  "menuLabel_disabled": { "message": "Umugereka" },
+  "menuLabel_about": { "message": "Bigyanye" },
+  "about_version": { "message": "Umukoro" },
+  "about_poweredBy": { "message": "Ku" },
+  "about_sourceCode": { "message": "C Inkomoko ITEGEKONGENGA" },
+  "prompt_updateInt": { "message": "Kugira gishya Intera in amasogonda" },
+  "alert_updateAvail": { "message": "Bihari" },
+  "alert_newerVer": { "message": "Bye Bye New Version" },
+  "alert_isAvail": { "message": "bihari" },
+  "alert_dontShowAgain": { "message": "Ntuzongere kwigaragaza" },
+  "alert_untilNextVer": { "message": "& Kugeza Komeza > > Kuvugurura" },
+  "alert_intUpdated": { "message": "Umukoro Ikiyega - Kugira gishya buri" },
+  "unit_secs": { "message": "amasogonda" },
+  "state_enabled": { "message": "Birafunguye" },
+  "state_disabled": { "message": "Yahagaritswe" }
+}

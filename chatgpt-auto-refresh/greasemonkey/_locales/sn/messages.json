@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "Taura nesu" },
+  "appDesc": { "message": "*zvakanaka* anochengeta ChatGPT zvikamu zvitsva, kubvisa nguva dzose network zvikanganiso + Cloudflare macheki (zvose kubva kumashure!)" },
+  "menuLabel_autoRefresh": { "message": "Auto kumutsidzira" },
+  "menuLabel_toggleVis": { "message": "Toggle Kuonekwa" },
+  "menuLabel_modeNotifs": { "message": "Mode Notifications" },
+  "menuLabel_refreshInt": { "message": "Zorodza Nguva" },
+  "menuLabel_disabled": { "message": "Akaremara (kuwedzerwa kwakaiswa)" },
+  "menuLabel_about": { "message": "Nezvedu" },
+  "about_version": { "message": "Vhezheni" },
+  "about_poweredBy": { "message": "Inofambiswa ne" },
+  "about_sourceCode": { "message": "Kunobva kodhi" },
+  "prompt_updateInt": { "message": "Update kuzorodza nguva (mu secs)" },
+  "alert_updateAvail": { "message": "Zadzisa zviripo" },
+  "alert_newerVer": { "message": "Shanduro itsva ye" },
+  "alert_isAvail": { "message": "inowanika" },
+  "alert_dontShowAgain": { "message": "Usambofa wakazviratidza zvakare" },
+  "alert_untilNextVer": { "message": "kusvikira inotevera update" },
+  "alert_intUpdated": { "message": "ChatGPT musangano achaita auto-kuzorodza ose" },
+  "unit_secs": { "message": "masekonzi" },
+  "state_enabled": { "message": "inogoneswa" },
+  "state_disabled": { "message": "chakaremara" }
+}

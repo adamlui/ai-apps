@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "Samodejno osveževanje ChatGPT" },
+  "appDesc": { "message": "*VARNO* ohranja seje ChatGPT sveže, odpravlja stalne napake v omrežju + preglede Cloudflare (vse iz ozadja!)" },
+  "menuLabel_autoRefresh": { "message": "Samodejno osveževanje" },
+  "menuLabel_toggleVis": { "message": "Preklopi vidnost" },
+  "menuLabel_modeNotifs": { "message": "Obvestila o načinu" },
+  "menuLabel_refreshInt": { "message": "Interval osveÅ¾evanja" },
+  "menuLabel_disabled": { "message": "Onemogočeno (nameščena razširitev)" },
+  "menuLabel_about": { "message": "Vizitka" },
+  "about_version": { "message": "Različica" },
+  "about_poweredBy": { "message": "Poganja" },
+  "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode:" },
+  "prompt_updateInt": { "message": "Posodobite interval osveževanja (v sekundah)" },
+  "alert_updateAvail": { "message": "Posodobitev na voljo" },
+  "alert_newerVer": { "message": "Novejša različica" },
+  "alert_isAvail": { "message": "je na voljo" },
+  "alert_dontShowAgain": { "message": "Ne prikaži več" },
+  "alert_untilNextVer": { "message": "do naslednje posodobitve" },
+  "alert_intUpdated": { "message": "Seja ChatGPT se samodejno osveži vsakih" },
+  "unit_secs": { "message": "sekund" },
+  "state_enabled": { "message": "omogočeno" },
+  "state_disabled": { "message": "onemogočeno" }
+}

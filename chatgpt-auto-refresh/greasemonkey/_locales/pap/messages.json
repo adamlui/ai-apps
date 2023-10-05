@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "Kit Refrescante Auto" },
+  "appDesc": { "message": "*Seguro* Mantene sesionnan di ChatGPT fresco, eliminando erornan di red constante + chèk di Cloudflare (tur for di background!)" },
+  "menuLabel_autoRefresh": { "message": "Auto Refrescante" },
+  "menuLabel_toggleVis": { "message": "Topi Visibilitá" },
+  "menuLabel_modeNotifs": { "message": "Notifikashon di Mode" },
+  "menuLabel_refreshInt": { "message": "Intervalo Refrescante" },
+  "menuLabel_disabled": { "message": "Desabilidad (Extension Instalada)" },
+  "menuLabel_about": { "message": "About About" },
+  "about_version": { "message": "Vershon" },
+  "about_poweredBy": { "message": "Potenciá por" },
+  "about_sourceCode": { "message": "Kódigo di fuente" },
+  "prompt_updateInt": { "message": "Intervalo di Refresh (in secs)" },
+  "alert_updateAvail": { "message": "Actualizacion Disponible" },
+  "alert_newerVer": { "message": "New Version Of" },
+  "alert_isAvail": { "message": "ta disponibel" },
+  "alert_dontShowAgain": { "message": "No mustra un biaha mas" },
+  "alert_untilNextVer": { "message": "siguiente Actualizacion" },
+  "alert_intUpdated": { "message": "Reunionnan di CAFT lo cuminsa automatisa tur" },
+  "unit_secs": { "message": "seks" },
+  "state_enabled": { "message": "pèrmití" },
+  "state_disabled": { "message": "desabilidat" }
+}

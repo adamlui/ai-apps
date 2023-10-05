@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ChatGPT Auto ti kiri na peko" },
+  "appDesc": { "message": "*nzoni* bata afini session ti ChatGPT, zi lakue afaute ti réseau + Cloudflare check (aye kue na peko!)" },
+  "menuLabel_autoRefresh": { "message": "Auto rouge" },
+  "menuLabel_toggleVis": { "message": "A yeke bâ ni na lê ti azo" },
+  "menuLabel_modeNotifs": { "message": "Nduru tënë ti mode" },
+  "menuLabel_refreshInt": { "message": "A yeke na yâ ti mbeni ngoi so a yeke sara si azo ayeke" },
+  "menuLabel_disabled": { "message": "Sous réserve (reapprovisionnement so a zia ni na place ni" },
+  "menuLabel_about": { "message": "About sara" },
+  "about_version": { "message": "Yângâ tî kodoro" },
+  "about_poweredBy": { "message": "A yeke sara kua na ni" },
+  "about_sourceCode": { "message": "Source code ti" },
+  "prompt_updateInt": { "message": "Ngbene ye na ngoi ni so, a yeke wara mbeni kota ye ti tene a sara tënë ti aye so ayeke na yâ ti Bible" },
+  "alert_updateAvail": { "message": "Nduru tënë so ayeke dä" },
+  "alert_newerVer": { "message": "Mbeni fini version ti" },
+  "alert_isAvail": { "message": "yeke available" },
+  "alert_dontShowAgain": { "message": "You won 't have me again na na na na na" },
+  "alert_untilNextVer": { "message": "a yeke nzoni e sara kua na aye so e lingbi ti" },
+  "alert_intUpdated": { "message": "ChatGPT session ayeke kiri na peko ti aye kue" },
+  "unit_secs": { "message": "yeke siks" },
+  "state_enabled": { "message": "enable awe" },
+  "state_disabled": { "message": "disable awe" }
+}

@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ChatGPT Auto Refresh" },
+  "appDesc": { "message": "*ብደሓን* ChatGPT ክፍለ-ጊዜታት ሓዱሽ ኮይኑ ፡ ቀጻሊ ናይ መርበብ ጌጋታት + Cloudflare ቼክታት (ኩሉ ካብ ድሕረ ባይታ!" },
+  "menuLabel_autoRefresh": { "message": "Auto-Refresh" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_modeNotifs": { "message": "ናይ ሞድ ኣፍልጦታት" },
+  "menuLabel_refreshInt": { "message": "ግዜ ምሕዳስ" },
+  "menuLabel_disabled": { "message": "ስንክልና (ስፍሓት ተተኺሉ)" },
+  "menuLabel_about": { "message": "ብዛዕባ" },
+  "about_version": { "message": "መበል" },
+  "about_poweredBy": { "message": "ብ" },
+  "about_sourceCode": { "message": "ምንጪ ኮድ" },
+  "prompt_updateInt": { "message": "ዝተሓድሶ ግዜ (ኣብ SECs)" },
+  "alert_updateAvail": { "message": "ዝዘመነ" },
+  "alert_newerVer": { "message": "ሓድሽ ቅጅል" },
+  "alert_isAvail": { "message": "ተዳልዩ ኣሎ" },
+  "alert_dontShowAgain": { "message": "ደጊም ኣይትርእዩ" },
+  "alert_untilNextVer": { "message": "ክሳብ ዝቕጽል ዝቕጽል ዝቕጽል ሓበሬታ" },
+  "alert_intUpdated": { "message": "ChatGPT ክፍለ-ጊዜ ንነፍሲ ወከፍ ብገዛእ ርእሱ ይሓድሶ" },
+  "unit_secs": { "message": "sECS" },
+  "state_enabled": { "message": "ከምዝሰርሕ ዝተገብረ" },
+  "state_disabled": { "message": "ከምዘይሰርሕ ዝተገብረ" }
+}

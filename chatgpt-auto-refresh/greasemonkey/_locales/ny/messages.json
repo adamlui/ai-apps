@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ChatGPT Auto Kutsitsimula" },
+  "appDesc": { "message": "*mosatekeseka* amasunga ChatGPT magawo atsopano, kuthetsa zolakwa zonse za netiweki + Kuwunika kwa Cloudflare (zonse kuchokera kumbuyo!)" },
+  "menuLabel_autoRefresh": { "message": "Auto-Kutsitsimutsa" },
+  "menuLabel_toggleVis": { "message": "Kuwoneka kwa Toggle" },
+  "menuLabel_modeNotifs": { "message": "Mode Zidziwitso" },
+  "menuLabel_refreshInt": { "message": "Nthawi Yotsitsimutsa" },
+  "menuLabel_disabled": { "message": "Kulemala (kuwonjezera anaika)" },
+  "menuLabel_about": { "message": "Zokhudza" },
+  "about_version": { "message": "Lumikizanani nafe" },
+  "about_poweredBy": { "message": "Mothandizidwa ndi" },
+  "about_sourceCode": { "message": "Gwero kachidindo" },
+  "prompt_updateInt": { "message": "Sinthani nthawi yotsitsimutsa (mu secs)" },
+  "alert_updateAvail": { "message": "Sinthani likupezeka" },
+  "alert_newerVer": { "message": "Baibulo latsopano la" },
+  "alert_isAvail": { "message": "likupezeka" },
+  "alert_dontShowAgain": { "message": "Musasonyezenso" },
+  "alert_untilNextVer": { "message": "mpaka pomwe lotsatira" },
+  "alert_intUpdated": { "message": "ChatGPT gawo adzakhala basi kutsitsimutsa aliyense" },
+  "unit_secs": { "message": "mfundo zazinsinsi" },
+  "state_enabled": { "message": "Utheketsa" },
+  "state_disabled": { "message": "Usatheketsa" }
+}

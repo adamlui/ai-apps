@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "Навсозии худкори ChatGPT" },
+  "appDesc": { "message": "*бехатар* сессияҳои ChatGPT-ро тоза нигоҳ медорад, хатогиҳои доимии шабакаро бартараф мекунад + Тафтиши Cloudflare (ҳама аз замина!)" },
+  "menuLabel_autoRefresh": { "message": "ХуднавсозӣComment" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_modeNotifs": { "message": "Огоҳинома дар бораи ҳолат" },
+  "menuLabel_refreshInt": { "message": "Фосилаи бозсозӣ" },
+  "menuLabel_disabled": { "message": "Ғайрифаъол (васеъкунӣ насб шудааст)" },
+  "menuLabel_about": { "message": "_Дар бораи" },
+  "about_version": { "message": "Версия" },
+  "about_poweredBy": { "message": "Нерӯмандшуда аз тарафи" },
+  "about_sourceCode": { "message": "Рамзи манбаъ" },
+  "prompt_updateInt": { "message": "Фосилаи навсозӣ (дар сонияҳо)" },
+  "alert_updateAvail": { "message": "I-update ang magagamit" },
+  "alert_newerVer": { "message": "Ang isang bagong bersyon ng" },
+  "alert_isAvail": { "message": "дастрас аст" },
+  "alert_dontShowAgain": { "message": "Huwag ipakita muli" },
+  "alert_untilNextVer": { "message": "то навсозии навбатӣ" },
+  "alert_intUpdated": { "message": "Сессияи ChatGPT ҳар якро худкор навсозӣ мекунад" },
+  "unit_secs": { "message": "_: дуюм дюмsecond" },
+  "state_enabled": { "message": "ÐÐ°Ð±ÑÐ´" },
+  "state_disabled": { "message": "хомӯш аст" }
+}

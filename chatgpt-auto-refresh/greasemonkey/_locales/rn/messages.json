@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ChatGPT Auto Fresh None None None" },
+  "appDesc": { "message": "* Nkurunziza * agumiza imbonerakure zitagira akanenge + Imbonerakure zitagira akanenge (zitagira akanenge!)" },
+  "menuLabel_autoRefresh": { "message": "Auto-Refresh None None" },
+  "menuLabel_toggleVis": { "message": "Ikebukuro Toggle Visibility" },
+  "menuLabel_modeNotifs": { "message": "Amanota yo mu buryo" },
+  "menuLabel_refreshInt": { "message": "Ikebukuro Interval" },
+  "menuLabel_disabled": { "message": "Nusantara (nusantara)" },
+  "menuLabel_about": { "message": "Ku vyerekeye" },
+  "about_version": { "message": "Traduzione" },
+  "about_poweredBy": { "message": "Yashizwe mu ngiro na" },
+  "about_sourceCode": { "message": "Ikodi y'isôko" },
+  "prompt_updateInt": { "message": "Nouvelle nouvelle nouvelle (in cs)" },
+  "alert_updateAvail": { "message": "Amakuru agezweho" },
+  "alert_newerVer": { "message": "Nouveau version de" },
+  "alert_isAvail": { "message": "none None available." },
+  "alert_dontShowAgain": { "message": "Ntusubire kugaragaza" },
+  "alert_untilNextVer": { "message": "gushika ku musi ukurikira" },
+  "alert_intUpdated": { "message": "Ikiganiro co guhanahana amakuru kigiye gusubirwamwo buri kanya" },
+  "unit_secs": { "message": "sECs" },
+  "state_enabled": { "message": "uwufise ububasha kw'isanamu" },
+  "state_disabled": { "message": "ubumuga" }
+}

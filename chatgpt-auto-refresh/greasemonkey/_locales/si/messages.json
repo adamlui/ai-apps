@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ChatGPT ස්වයංක් ‍ රීය නැවුම් කිරීම" },
+  "appDesc": { "message": "*ආරක්ෂිතව* ChatGPT සැසි නැවුම් තබා, නිරන්තර ජාල දෝෂ ඉවත් + Cloudflare චෙක්පත් (පසුබිම සිට සියලු!)" },
+  "menuLabel_autoRefresh": { "message": "ස්වයංක් ‍ රීය නැවුම් කිරීම" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_modeNotifs": { "message": "ප් ‍ රකාර දැනුම්දීම්" },
+  "menuLabel_refreshInt": { "message": "කාලසීමාව නැවුම් කරන්න" },
+  "menuLabel_disabled": { "message": "අක්‍රීය කර ඇත (දීර්ඝ කිරීම ස්ථාපනය කර ඇත)" },
+  "menuLabel_about": { "message": "සම්බන්ධව" },
+  "about_version": { "message": "වෙළුම" },
+  "about_poweredBy": { "message": "විසින් බල ගැන්වී ඇත" },
+  "about_sourceCode": { "message": "මූලාශ්‍ර කේතය" },
+  "prompt_updateInt": { "message": "නැවුම් කිරීමේ පරතරය යාවත්කාලීන කරන්න (තත්පර වලින්)" },
+  "alert_updateAvail": { "message": "යාවත්කාලීනය තිබේ" },
+  "alert_newerVer": { "message": "නව සංස්කරණය" },
+  "alert_isAvail": { "message": "ලබා ගත හැක" },
+  "alert_dontShowAgain": { "message": "නැවත පෙන්වන්න එපා" },
+  "alert_untilNextVer": { "message": "ඊළඟ යාවත්කාලීනය තෙක්" },
+  "alert_intUpdated": { "message": "ChatGPT සැසිය සෑම එකක්ම ස්වයංක් ‍ රීයව නැවුම් කරනු ඇත" },
+  "unit_secs": { "message": "second" },
+  "state_enabled": { "message": "සක්‍රීය කල" },
+  "state_disabled": { "message": "අක්‍රීය කල" }
+}
