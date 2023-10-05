@@ -10,6 +10,7 @@
   "about_version": { "message": "Útgáfa" },
   "about_poweredBy": { "message": "Knúið af" },
   "about_sourceCode": { "message": "Upprunakóði@ info: whatsthis" },
+  "alert_choosePlatform": { "message": "Veldu verkvang" },
   "alert_updateAvail": { "message": "Ný uppfærsla í boði" },
   "alert_newerVer": { "message": "Breyting á" },
   "alert_isAvail": { "message": "er í boði" },

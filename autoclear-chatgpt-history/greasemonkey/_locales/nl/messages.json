@@ -10,6 +10,7 @@
   "about_version": { "message": "Versie" },
   "about_poweredBy": { "message": "Ondersteund door" },
   "about_sourceCode": { "message": "Broncode" },
+  "alert_choosePlatform": { "message": "Kies een platform" },
   "alert_updateAvail": { "message": "Güncelleme uygun" },
   "alert_newerVer": { "message": "Updaten naar" },
   "alert_isAvail": { "message": "is beschikbaar" },

@@ -10,6 +10,7 @@
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Įgalino Proneta" },
   "about_sourceCode": { "message": "Pradinis kodas" },
+  "alert_choosePlatform": { "message": "Pasirinkti platformą" },
   "alert_updateAvail": { "message": "Yra naujinys" },
   "alert_newerVer": { "message": "Atnaujinta į" },
   "alert_isAvail": { "message": "yra prieinama" },

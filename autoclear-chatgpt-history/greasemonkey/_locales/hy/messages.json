@@ -10,6 +10,7 @@
   "about_version": { "message": "Ստանալ պրեմիում տարբերակը" },
   "about_poweredBy": { "message": "🇦🇲" },
   "about_sourceCode": { "message": "Ծրագրային կոդ" },
+  "alert_choosePlatform": { "message": "Ընտրեք հարթակ" },
   "alert_updateAvail": { "message": "Թարմացումը հասանելի է" },
   "alert_newerVer": { "message": "Թարմացում" },
   "alert_isAvail": { "message": "առկա է" },

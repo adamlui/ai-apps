@@ -10,6 +10,7 @@
   "about_version": { "message": "Ukupilibula" },
   "about_poweredBy": { "message": "Amapola by Amapola" },
   "about_sourceCode": { "message": "Ifyebo fyaba mu cipande ca kubalilapo" },
+  "alert_choosePlatform": { "message": "Saleni icikuulwa" },
   "alert_updateAvail": { "message": "Update Pali Pali" },
   "alert_newerVer": { "message": "Update kuli kuli" },
   "alert_isAvail": { "message": "alipo" },

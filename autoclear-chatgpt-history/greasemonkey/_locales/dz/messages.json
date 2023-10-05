@@ -10,6 +10,7 @@
   "about_version": { "message": "ཐོན་རིམ།" },
   "about_poweredBy": { "message": "དབང་ཤུགས་ཀྱི་ཐོག་ལས་" },
   "about_sourceCode": { "message": "ཐོན་ཁུངས་ཀོཌ་" },
+  "alert_choosePlatform": { "message": "ས་གོ་ཅིག་བཟོ།" },
   "alert_updateAvail": { "message": "ད་ལྟོ་མཐུན་བཟོ་ནི།" },
   "alert_newerVer": { "message": "ད་ལྟོའི་དུས་ཚོད། བསྒྱུར་བཅོས་འབད་" },
   "alert_isAvail": { "message": "འཐོབ་ཚུགས་" },

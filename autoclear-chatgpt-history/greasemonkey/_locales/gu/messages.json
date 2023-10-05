@@ -10,6 +10,7 @@
   "about_version": { "message": "આવૃત્તિ" },
   "about_poweredBy": { "message": "દ્વારા સંચાલિત" },
   "about_sourceCode": { "message": "સ્ત્રોત કોડ" },
+  "alert_choosePlatform": { "message": "એક પ્લેટફોર્મ પસંદ કરો" },
   "alert_updateAvail": { "message": "સુધારો ઉપલબ્ધ" },
   "alert_newerVer": { "message": "આ માટે એક અપડેટ" },
   "alert_isAvail": { "message": "ઉપલબ્ધ છે" },

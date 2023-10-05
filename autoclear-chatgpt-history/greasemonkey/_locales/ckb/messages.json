@@ -10,6 +10,7 @@
   "about_version": { "message": "وشان" },
   "about_poweredBy": { "message": "به ‌ کاره ‌اتووه ‌ له ‌ لایه ‌" },
   "about_sourceCode": { "message": "کۆدی سەرچاوە" },
+  "alert_choosePlatform": { "message": "پلاتفۆرمێک هەڵبژێرە" },
   "alert_updateAvail": { "message": "نوێکردنەوە بەردەستە" },
   "alert_newerVer": { "message": "نوێکردنەوە بۆ" },
   "alert_isAvail": { "message": "بەردەستە" },

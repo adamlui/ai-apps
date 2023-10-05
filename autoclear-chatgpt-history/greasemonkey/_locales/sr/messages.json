@@ -10,6 +10,7 @@
   "about_version": { "message": "Verzija" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Izvorni kod" },
+  "alert_choosePlatform": { "message": "Izaberite platformu" },
   "alert_updateAvail": { "message": "Dostupna nadogradnja" },
   "alert_newerVer": { "message": "Ažuriranje za" },
   "alert_isAvail": { "message": "je dostupna" },

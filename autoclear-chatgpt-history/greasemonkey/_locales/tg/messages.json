@@ -10,6 +10,7 @@
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Нерӯмандшуда аз тарафи" },
   "about_sourceCode": { "message": "Рамзи манбаъ" },
+  "alert_choosePlatform": { "message": "Интихоб кардани платформа" },
   "alert_updateAvail": { "message": "I-update ang magagamit" },
   "alert_newerVer": { "message": "Ang isang pag-update sa" },
   "alert_isAvail": { "message": "дастрас аст" },

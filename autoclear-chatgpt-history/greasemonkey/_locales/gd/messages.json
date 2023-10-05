@@ -10,6 +10,7 @@
   "about_version": { "message": "Tionndadh" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Bun-tùs a' chod" },
+  "alert_choosePlatform": { "message": "Tagh àrd - ùrlar" },
   "alert_updateAvail": { "message": "Chan eil ùrachadh ri fhaighinn" },
   "alert_newerVer": { "message": "An update to" },
   "alert_isAvail": { "message": "tha e ri fhaotainn" },

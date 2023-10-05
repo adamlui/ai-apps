@@ -10,6 +10,7 @@
   "about_version": { "message": "Verżjoni" },
   "about_poweredBy": { "message": "Imħaddem minn" },
   "about_sourceCode": { "message": "Kodiċi tas-sors" },
+  "alert_choosePlatform": { "message": "AGĦŻEL PJATTAFORMA" },
   "alert_updateAvail": { "message": "Aġġornament disponibbli" },
   "alert_newerVer": { "message": "Aġġornament għal" },
   "alert_isAvail": { "message": "huwa disponibbli" },

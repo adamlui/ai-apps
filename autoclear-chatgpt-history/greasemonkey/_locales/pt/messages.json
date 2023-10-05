@@ -10,6 +10,7 @@
   "about_version": { "message": "Versão" },
   "about_poweredBy": { "message": "Distribuído pela" },
   "about_sourceCode": { "message": "Código-fonte" },
+  "alert_choosePlatform": { "message": "Escolha uma plataforma" },
   "alert_updateAvail": { "message": "Actualização disponível" },
   "alert_newerVer": { "message": "Uma actualização para" },
   "alert_isAvail": { "message": "está disponível" },

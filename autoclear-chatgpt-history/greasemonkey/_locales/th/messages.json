@@ -10,6 +10,7 @@
   "about_version": { "message": "เวอร์ชัน" },
   "about_poweredBy": { "message": "สนับสนุนโดย" },
   "about_sourceCode": { "message": "รหัสต้นฉบับ" },
+  "alert_choosePlatform": { "message": "เลือกแพลตฟอร์ม" },
   "alert_updateAvail": { "message": "มีอัพเดตให้ใช้งาน" },
   "alert_newerVer": { "message": "อัพเดทไปยัง" },
   "alert_isAvail": { "message": "มี   ให้ใช้งานแล้ว" },

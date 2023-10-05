@@ -10,6 +10,7 @@
   "about_version": { "message": ":نسخه" },
   "about_poweredBy": { "message": "طراحی شده توسط" },
   "about_sourceCode": { "message": "سرچينه كوډه" },
+  "alert_choosePlatform": { "message": "یو پلیټ فارم غوره کړئ" },
   "alert_updateAvail": { "message": "اوسمهالیزې شته" },
   "alert_newerVer": { "message": "ته تازه معلومات" },
   "alert_isAvail": { "message": "شتون لري" },

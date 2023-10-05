@@ -10,6 +10,7 @@
   "about_version": { "message": "వివరణం" },
   "about_poweredBy": { "message": "ద్వారా ఆధారితం" },
   "about_sourceCode": { "message": "సోర్స్ కోడ్" },
+  "alert_choosePlatform": { "message": "ప్లాట్ ‌ ఫారమ్ ‌ ను ఎంచుకోండి" },
   "alert_updateAvail": { "message": "ఎటువంటి నవీకరణ అందుబాటులోలేదు" },
   "alert_newerVer": { "message": "ఒక నవీకరణ" },
   "alert_isAvail": { "message": "అందుబాటులో ఉంది" },

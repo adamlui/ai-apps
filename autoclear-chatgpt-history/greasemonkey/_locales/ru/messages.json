@@ -10,6 +10,7 @@
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "На базе технологии" },
   "about_sourceCode": { "message": "Исходный код" },
+  "alert_choosePlatform": { "message": "Выберите платформу" },
   "alert_updateAvail": { "message": "Доступны обновления" },
   "alert_newerVer": { "message": "Обновление для" },
   "alert_isAvail": { "message": "доступно" },

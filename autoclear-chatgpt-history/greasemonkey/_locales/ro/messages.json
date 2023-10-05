@@ -10,6 +10,7 @@
   "about_version": { "message": "Versiune " },
   "about_poweredBy": { "message": "Operat de" },
   "about_sourceCode": { "message": "Codul sursă" },
+  "alert_choosePlatform": { "message": "Alegeți o platformă" },
   "alert_updateAvail": { "message": "Actualizare disponibilă" },
   "alert_newerVer": { "message": "Actualizare" },
   "alert_isAvail": { "message": "este disponibil" },

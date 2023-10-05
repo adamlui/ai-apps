@@ -10,6 +10,7 @@
   "about_version": { "message": "Útgáva:" },
   "about_poweredBy": { "message": "Powered by SFX" },
   "about_sourceCode": { "message": "Ada keldukota" },
+  "alert_choosePlatform": { "message": "Vel eina platform" },
   "alert_updateAvail": { "message": "Dagføring er klár" },
   "alert_newerVer": { "message": "Núverandi tíðindi" },
   "alert_isAvail": { "message": "tað er tøkt" },

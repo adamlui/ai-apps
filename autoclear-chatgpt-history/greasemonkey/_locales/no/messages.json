@@ -10,6 +10,7 @@
   "about_version": { "message": "Versjon" },
   "about_poweredBy": { "message": "Drevet av" },
   "about_sourceCode": { "message": "Kildekode" },
+  "alert_choosePlatform": { "message": "Velg en plattform" },
   "alert_updateAvail": { "message": "Oppdatering tilgjengelig" },
   "alert_newerVer": { "message": "En oppdatering til" },
   "alert_isAvail": { "message": "tilgjengelig" },

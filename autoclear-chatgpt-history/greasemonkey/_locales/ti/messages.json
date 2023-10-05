@@ -10,6 +10,7 @@
   "about_version": { "message": "መበል" },
   "about_poweredBy": { "message": "ብ" },
   "about_sourceCode": { "message": "ምንጪ ኮድ" },
+  "alert_choosePlatform": { "message": "መድረኽ ምረጽ" },
   "alert_updateAvail": { "message": "ዝዘመነ" },
   "alert_newerVer": { "message": "ዝዘመነ" },
   "alert_isAvail": { "message": "ተዳልዩ ኣሎ" },

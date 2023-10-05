@@ -10,6 +10,7 @@
   "about_version": { "message": "גירסה" },
   "about_poweredBy": { "message": "באמצעות " },
   "about_sourceCode": { "message": "קוד מקור" },
+  "alert_choosePlatform": { "message": "בחירת פלטפורמה" },
   "alert_updateAvail": { "message": "עדכון זמין" },
   "alert_newerVer": { "message": "עדכון ל -" },
   "alert_isAvail": { "message": "%s זמין" },

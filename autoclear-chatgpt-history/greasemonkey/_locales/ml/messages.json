@@ -10,6 +10,7 @@
   "about_version": { "message": "പതിപ്പ്" },
   "about_poweredBy": { "message": "നയിച്ചത്" },
   "about_sourceCode": { "message": "സോഴ്സ് കോഡ്" },
+  "alert_choosePlatform": { "message": "ഒരു പ്ലാറ്റ്ഫോം തിരഞ്ഞെടുക്കുക" },
   "alert_updateAvail": { "message": "%d അപ്‌ഡേറ്റ് ലഭ്യമാണ്" },
   "alert_newerVer": { "message": "ഇതിലേക്കുള്ള ഒരു അപ്‌ഡേറ്റ്" },
   "alert_isAvail": { "message": "ലഭ്യമാണ്" },

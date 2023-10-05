@@ -10,6 +10,7 @@
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Waxa fudaydiyay:" },
   "about_sourceCode": { "message": "Koodhka isha" },
+  "alert_choosePlatform": { "message": "Dooro barxad" },
   "alert_updateAvail": { "message": "Cusboonaysiinta la heli karo" },
   "alert_newerVer": { "message": "Cusbooneysiin ku socota" },
   "alert_isAvail": { "message": "waa la heli karaa" },

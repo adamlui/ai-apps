@@ -10,6 +10,7 @@
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Пры падтрымцы" },
   "about_sourceCode": { "message": "Зыходнікі" },
+  "alert_choosePlatform": { "message": "Выберыце платформу" },
   "alert_updateAvail": { "message": "Ёсць абнаўленне" },
   "alert_newerVer": { "message": "Абнаўленне да" },
   "alert_isAvail": { "message": "даступны" },

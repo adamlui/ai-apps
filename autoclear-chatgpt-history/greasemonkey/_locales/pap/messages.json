@@ -10,6 +10,7 @@
   "about_version": { "message": "Vershon" },
   "about_poweredBy": { "message": "Potenciá por" },
   "about_sourceCode": { "message": "Kódigo di fuente" },
+  "alert_choosePlatform": { "message": "Elegí un plataforma" },
   "alert_updateAvail": { "message": "Actualizacion Disponible" },
   "alert_newerVer": { "message": "Un update pa" },
   "alert_isAvail": { "message": "ta disponibel" },

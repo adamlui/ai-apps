@@ -10,6 +10,7 @@
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Didukung oleh " },
   "about_sourceCode": { "message": "Kode sumber" },
+  "alert_choosePlatform": { "message": "Pilih platform" },
   "alert_updateAvail": { "message": "Pembaruan tersedia" },
   "alert_newerVer": { "message": "Pembaruan untuk" },
   "alert_isAvail": { "message": "Install package not available." },

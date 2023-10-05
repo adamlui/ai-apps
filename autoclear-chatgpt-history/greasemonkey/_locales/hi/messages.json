@@ -10,6 +10,7 @@
   "about_version": { "message": "संस्करण" },
   "about_poweredBy": { "message": "...द्वारा पावरशुदा" },
   "about_sourceCode": { "message": "सोर्स कोड" },
+  "alert_choosePlatform": { "message": "कोई प्लैटफ़ॉर्म चुनें" },
   "alert_updateAvail": { "message": "अद्यतन उपलब्ध है" },
   "alert_newerVer": { "message": "पर एक अपडेट" },
   "alert_isAvail": { "message": "उपलब्ध है।" },

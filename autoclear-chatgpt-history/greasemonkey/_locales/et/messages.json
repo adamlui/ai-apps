@@ -10,6 +10,7 @@
   "about_version": { "message": "Versioon" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Lähtekood" },
+  "alert_choosePlatform": { "message": "Vali platvorm" },
   "alert_updateAvail": { "message": "Saadaval on uuendus" },
   "alert_newerVer": { "message": "Uuendus kuni" },
   "alert_isAvail": { "message": "on saadaval" },

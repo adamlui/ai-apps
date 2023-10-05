@@ -10,6 +10,7 @@
   "about_version": { "message": "VERSION" },
   "about_poweredBy": { "message": "E tsamaisiwa ke" },
   "about_sourceCode": { "message": "Source code" },
+  "alert_choosePlatform": { "message": "Tlhopha polateforomo ya thelebišene" },
   "alert_updateAvail": { "message": "Diphetogo tse di leng teng" },
   "alert_newerVer": { "message": "Update kwa" },
   "alert_isAvail": { "message": "e teng" },

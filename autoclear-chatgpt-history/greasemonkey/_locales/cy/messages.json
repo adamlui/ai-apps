@@ -10,6 +10,7 @@
   "about_version": { "message": "Fersiwn" },
   "about_poweredBy": { "message": "Wedi'i gynnal gan" },
   "about_sourceCode": { "message": "Cod ffynhonnell" },
+  "alert_choosePlatform": { "message": "Dewiswch blatfform" },
   "alert_updateAvail": { "message": "Diweddariad ar gael" },
   "alert_newerVer": { "message": "Diweddariad i" },
   "alert_isAvail": { "message": "ar gael" },

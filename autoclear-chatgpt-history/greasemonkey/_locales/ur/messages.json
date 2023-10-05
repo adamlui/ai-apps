@@ -10,6 +10,7 @@
   "about_version": { "message": "ورژن" },
   "about_poweredBy": { "message": "تقویت یافتہ از" },
   "about_sourceCode": { "message": "کۆسی سەرچاوە" },
+  "alert_choosePlatform": { "message": "ایک پلیٹ فارم منتخب کریں" },
   "alert_updateAvail": { "message": "اپڈیٹ دستیاب ہے" },
   "alert_newerVer": { "message": "پر ایک اپ ڈیٹ" },
   "alert_isAvail": { "message": "دستیاب ہے" },

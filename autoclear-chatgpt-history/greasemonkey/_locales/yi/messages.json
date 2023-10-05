@@ -10,6 +10,7 @@
   "about_version": { "message": "ווערסיע" },
   "about_poweredBy": { "message": "פּאַוערד דורך" },
   "about_sourceCode": { "message": "מקור קאָד" },
+  "alert_choosePlatform": { "message": "קלייַבן אַ פּלאַטפאָרמע" },
   "alert_updateAvail": { "message": "דערהייַנטיקן בנימצא" },
   "alert_newerVer": { "message": "אַ דערהייַנטיקן צו" },
   "alert_isAvail": { "message": "איז בנימצא" },

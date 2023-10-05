@@ -10,6 +10,7 @@
   "about_version": { "message": "Versiya" },
   "about_poweredBy": { "message": "Tomonidan qo&#39;llab-quvvatlanadi" },
   "about_sourceCode": { "message": "Ochiq kod" },
+  "alert_choosePlatform": { "message": "Platformani tanlang" },
   "alert_updateAvail": { "message": "Mavjud yangilanishlar" },
   "alert_newerVer": { "message": "Yangilash" },
   "alert_isAvail": { "message": "mavjud." },

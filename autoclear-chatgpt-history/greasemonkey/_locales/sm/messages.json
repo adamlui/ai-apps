@@ -10,6 +10,7 @@
   "about_version": { "message": "Faaliliuga" },
   "about_poweredBy": { "message": "Malosiaga e ala i" },
   "about_sourceCode": { "message": "Punaoa code" },
+  "alert_choosePlatform": { "message": "Filifili se tulaga" },
   "alert_updateAvail": { "message": "Fa'afouga o lo'o avanoa" },
   "alert_newerVer": { "message": "Faʻafouga" },
   "alert_isAvail": { "message": "o loo maua" },

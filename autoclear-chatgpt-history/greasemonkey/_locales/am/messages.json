@@ -10,6 +10,7 @@
   "about_version": { "message": "እትም" },
   "about_poweredBy": { "message": "የተጎለበተው በ" },
   "about_sourceCode": { "message": "የምንጭ ኮድ" },
+  "alert_choosePlatform": { "message": "መድረክ ይምረጡ" },
   "alert_updateAvail": { "message": "ዝመና ይገኛል!" },
   "alert_newerVer": { "message": "አንድ ዝማኔ ወደ" },
   "alert_isAvail": { "message": "ይገኛል" },

@@ -10,6 +10,7 @@
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Izstrādāts" },
   "about_sourceCode": { "message": "Avots:" },
+  "alert_choosePlatform": { "message": "Izvēlieties platformu" },
   "alert_updateAvail": { "message": "Pieejams jauninājums" },
   "alert_newerVer": { "message": "Atjauninājums uz" },
   "alert_isAvail": { "message": "ir pieejams!" },

@@ -10,6 +10,7 @@
   "about_version": { "message": "မူ -" },
   "about_poweredBy": { "message": "စွမ်းဆောင်ရည် -" },
   "about_sourceCode": { "message": "ပင္မကုဒ္" },
+  "alert_choosePlatform": { "message": "ပလက်ဖောင်းကို ရွေးပါ" },
   "alert_updateAvail": { "message": "အသစ်မထွက်သေး" },
   "alert_newerVer": { "message": "သို့ အပ်ဒိတ်တစ်ခု" },
   "alert_isAvail": { "message": "ရရှိနိုင်ပါသည်" },

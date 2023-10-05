@@ -10,6 +10,7 @@
   "about_version": { "message": "Toleo" },
   "about_poweredBy": { "message": "Imewezeshwa na" },
   "about_sourceCode": { "message": "Msimbo wa chanzo" },
+  "alert_choosePlatform": { "message": "Chagua tovuti" },
   "alert_updateAvail": { "message": "Sasisho lipo" },
   "alert_newerVer": { "message": "Sasisho kwa" },
   "alert_isAvail": { "message": "inapatikana" },

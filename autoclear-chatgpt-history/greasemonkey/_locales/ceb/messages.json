@@ -10,6 +10,7 @@
   "about_version": { "message": "Bersyon:" },
   "about_poweredBy": { "message": "Gipadagan sa" },
   "about_sourceCode": { "message": "Gigikana sa kodigo" },
+  "alert_choosePlatform": { "message": "Pagpili usa ka plataporma" },
   "alert_updateAvail": { "message": "Magamit ang pag-update" },
   "alert_newerVer": { "message": "Usa ka update sa" },
   "alert_isAvail": { "message": "mao available" },

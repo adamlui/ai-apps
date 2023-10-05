@@ -10,6 +10,7 @@
   "about_version": { "message": "Phiên bản" },
   "about_poweredBy": { "message": "Cung cấp bởi " },
   "about_sourceCode": { "message": "Mã nguồn" },
+  "alert_choosePlatform": { "message": "Chọn một nền tảng" },
   "alert_updateAvail": { "message": "Cập nhật có sẵn" },
   "alert_newerVer": { "message": "bản cập nhật" },
   "alert_isAvail": { "message": "is available" },

@@ -10,6 +10,7 @@
   "about_version": { "message": "Inguqulelo" },
   "about_poweredBy": { "message": "Ixhaswa ngu" },
   "about_sourceCode": { "message": "Ikhowudi engumthombo" },
+  "alert_choosePlatform": { "message": "Khetha iwebhusayithi" },
   "alert_updateAvail": { "message": "Uhlaziyo luyafumaneka" },
   "alert_newerVer": { "message": "Inkcazelo ehlaziyiweyo" },
   "alert_isAvail": { "message": "iyafumaneka" },

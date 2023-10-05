@@ -10,6 +10,7 @@
   "about_version": { "message": "Manao" },
   "about_poweredBy": { "message": "Hoʻāmana ʻia e" },
   "about_sourceCode": { "message": "Hoʻopā&#39;ālua" },
+  "alert_choosePlatform": { "message": "E koho i kahi paepae" },
   "alert_updateAvail": { "message": "Loaʻa ka hōʻano hou" },
   "alert_newerVer": { "message": "He mea hou i" },
   "alert_isAvail": { "message": "loaʻa" },

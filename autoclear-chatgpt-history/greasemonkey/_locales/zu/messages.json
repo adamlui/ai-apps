@@ -10,6 +10,7 @@
   "about_version": { "message": "Uhlelo" },
   "about_poweredBy": { "message": "Ixhaswa yi-" },
   "about_sourceCode": { "message": "Ikhodi yomthombo" },
+  "alert_choosePlatform": { "message": "Khetha inkundla" },
   "alert_updateAvail": { "message": "Okwakamuva Kuyatholakala!" },
   "alert_newerVer": { "message": "Izilungiso eziya ku-" },
   "alert_isAvail": { "message": "iyatholakala" },

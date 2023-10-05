@@ -10,6 +10,7 @@
   "about_version": { "message": "លេខជំនាន់កម្មវិធី" },
   "about_poweredBy": { "message": "ដំណើរការ​ដោយ" },
   "about_sourceCode": { "message": "កូដ​ដើម" },
+  "alert_choosePlatform": { "message": "ជ្រើសរើសវេទិកា" },
   "alert_updateAvail": { "message": "ការអាប់ដេតមាន" },
   "alert_newerVer": { "message": "អាប់ដេតទៅ" },
   "alert_isAvail": { "message": "មាន" },

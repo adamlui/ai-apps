@@ -10,6 +10,7 @@
   "about_version": { "message": "Handelv" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "@ info: whatsthis" },
+  "alert_choosePlatform": { "message": "Dibabit ur restr" },
   "alert_updateAvail": { "message": "Deskrivadur hegerz ebet" },
   "alert_newerVer": { "message": "Bremañaat da & HEAD" },
   "alert_isAvail": { "message": "Sell ouzh ar c&apos; hiz" },

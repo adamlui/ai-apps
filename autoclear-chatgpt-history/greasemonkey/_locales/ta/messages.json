@@ -10,6 +10,7 @@
   "about_version": { "message": "பதிப்பு" },
   "about_poweredBy": { "message": "மூலம் இயக்கப்படுகிறது" },
   "about_sourceCode": { "message": "@ info: whatsthis" },
+  "alert_choosePlatform": { "message": "ஒரு தளத்தைத் தேர்வுசெய்க" },
   "alert_updateAvail": { "message": "புதிய புதுப்பிப்பு கிடைக்கிறது!" },
   "alert_newerVer": { "message": "-க்கு ஒரு புதுப்பிப்பு" },
   "alert_isAvail": { "message": "கிடைக்கிறது" },

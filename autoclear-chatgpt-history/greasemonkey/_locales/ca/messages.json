@@ -10,6 +10,7 @@
   "about_version": { "message": "Versió" },
   "about_poweredBy": { "message": "Desenvolupat per" },
   "about_sourceCode": { "message": "Codi font" },
+  "alert_choosePlatform": { "message": "Tria una plataforma" },
   "alert_updateAvail": { "message": "Nova versió disponible!" },
   "alert_newerVer": { "message": "Una actualització a" },
   "alert_isAvail": { "message": "està disponible" },

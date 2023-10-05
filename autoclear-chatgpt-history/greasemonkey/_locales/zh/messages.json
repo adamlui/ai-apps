@@ -10,6 +10,7 @@
   "about_version": { "message": "版本" },
   "about_poweredBy": { "message": "技术支持方" },
   "about_sourceCode": { "message": "源代码" },
+  "alert_choosePlatform": { "message": "选择平台" },
   "alert_updateAvail": { "message": "更新可用" },
   "alert_newerVer": { "message": "以下内容的更新：" },
   "alert_isAvail": { "message": "是可用的" },

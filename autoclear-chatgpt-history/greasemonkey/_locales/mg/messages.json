@@ -10,6 +10,7 @@
   "about_version": { "message": "Kinova" },
   "about_poweredBy": { "message": "Ampandehanin'i" },
   "about_sourceCode": { "message": "Kaody niaingana" },
+  "alert_choosePlatform": { "message": "Misafidiana sehatra iray" },
   "alert_updateAvail": { "message": "Ny fanavaozana azo alaina" },
   "alert_newerVer": { "message": "Vaovao farany ho" },
   "alert_isAvail": { "message": "azo atao" },

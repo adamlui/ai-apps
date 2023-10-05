@@ -10,6 +10,7 @@
   "about_version": { "message": "Vhezheni" },
   "about_poweredBy": { "message": "Inofambiswa ne" },
   "about_sourceCode": { "message": "Kunobva kodhi" },
+  "alert_choosePlatform": { "message": "Sarudza chikuva" },
   "alert_updateAvail": { "message": "Zadzisa zviripo" },
   "alert_newerVer": { "message": "An update kuti" },
   "alert_isAvail": { "message": "inowanika" },

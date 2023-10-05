@@ -10,6 +10,7 @@
   "about_version": { "message": "Bertsioa" },
   "about_poweredBy": { "message": "Teknologia: " },
   "about_sourceCode": { "message": "Iturburu kode" },
+  "alert_choosePlatform": { "message": "Aukeratu plataforma bat" },
   "alert_updateAvail": { "message": "Ez dago azalpenik erabilgarri." },
   "alert_newerVer": { "message": "Eguneratze bat" },
   "alert_isAvail": { "message": "eskuragarri dago" },

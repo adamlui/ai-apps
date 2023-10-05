@@ -10,6 +10,7 @@
   "about_version": { "message": "ຮຸ່ນ" },
   "about_poweredBy": { "message": "ຂັບເຄື່ອນໂດຍ" },
   "about_sourceCode": { "message": "ຊອດສ໌ໂຄດ" },
+  "alert_choosePlatform": { "message": "ເລືອກແພລະຕະຟອມ" },
   "alert_updateAvail": { "message": "ອັບເດດທີ່ມີຢູ່" },
   "alert_newerVer": { "message": "ການອັບເດດ" },
   "alert_isAvail": { "message": "ມີ" },

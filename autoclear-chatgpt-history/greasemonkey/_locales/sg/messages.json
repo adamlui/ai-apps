@@ -10,6 +10,7 @@
   "about_version": { "message": "Yângâ tî kodoro" },
   "about_poweredBy": { "message": "A yeke sara kua na ni" },
   "about_sourceCode": { "message": "Source code ti" },
+  "alert_choosePlatform": { "message": "Soro mbeni platforme" },
   "alert_updateAvail": { "message": "Nduru tënë so ayeke dä" },
   "alert_newerVer": { "message": "Mbeni ye so a sara na yâ ti fini dunia" },
   "alert_isAvail": { "message": "yeke available" },

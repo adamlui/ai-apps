@@ -10,6 +10,7 @@
   "about_version": { "message": "버전" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "원본 코드" },
+  "alert_choosePlatform": { "message": "플랫폼 선택" },
   "alert_updateAvail": { "message": "업데이트 사용 가능" },
   "alert_newerVer": { "message": "다음으로 업데이트" },
   "alert_isAvail": { "message": "사용가능" },

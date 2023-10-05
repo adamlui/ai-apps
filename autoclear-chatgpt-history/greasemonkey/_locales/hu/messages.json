@@ -10,6 +10,7 @@
   "about_version": { "message": "Verzió" },
   "about_poweredBy": { "message": "Kiszolgálja:" },
   "about_sourceCode": { "message": "Forráskód" },
+  "alert_choosePlatform": { "message": "Válasszon platformot" },
   "alert_updateAvail": { "message": "Frissítés érhető el" },
   "alert_newerVer": { "message": "Frissítés" },
   "alert_isAvail": { "message": "elérhető" },

@@ -10,6 +10,7 @@
   "about_version": { "message": "Umukoro" },
   "about_poweredBy": { "message": "Ku" },
   "about_sourceCode": { "message": "C Inkomoko ITEGEKONGENGA" },
+  "alert_choosePlatform": { "message": "A" },
   "alert_updateAvail": { "message": "Bihari" },
   "alert_newerVer": { "message": "Kuri" },
   "alert_isAvail": { "message": "bihari" },

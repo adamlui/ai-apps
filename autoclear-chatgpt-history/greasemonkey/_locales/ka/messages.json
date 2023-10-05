@@ -10,6 +10,7 @@
   "about_version": { "message": "ვერსია" },
   "about_poweredBy": { "message": "აგებულია KDE-ზე" },
   "about_sourceCode": { "message": "საწყისი კოდი" },
+  "alert_choosePlatform": { "message": "Აირჩიეთ პლატფორმა" },
   "alert_updateAvail": { "message": "ხელმისაწვდომია განახლება" },
   "alert_newerVer": { "message": "Განახლება:" },
   "alert_isAvail": { "message": "თავისუფალია" },

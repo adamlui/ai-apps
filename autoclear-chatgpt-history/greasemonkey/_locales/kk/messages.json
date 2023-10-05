@@ -10,6 +10,7 @@
   "about_version": { "message": "Нұсқа" },
   "about_poweredBy": { "message": "Сайтты жасаған" },
   "about_sourceCode": { "message": "Бастапқы код" },
+  "alert_choosePlatform": { "message": "Платформаны таңдау" },
   "alert_updateAvail": { "message": "Қолжетімді жаңарту" },
   "alert_newerVer": { "message": "Жаңарту" },
   "alert_isAvail": { "message": "қолжетімді" },

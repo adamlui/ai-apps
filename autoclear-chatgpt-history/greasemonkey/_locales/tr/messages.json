@@ -10,6 +10,7 @@
   "about_version": { "message": "Versiyon" },
   "about_poweredBy": { "message": "Destek" },
   "about_sourceCode": { "message": "Kaynak Kodu" },
+  "alert_choosePlatform": { "message": "Bir platform seçin" },
   "alert_updateAvail": { "message": "Güncelleme uygun" },
   "alert_newerVer": { "message": "Güncelleme tarih" },
   "alert_isAvail": { "message": "geçerli" },

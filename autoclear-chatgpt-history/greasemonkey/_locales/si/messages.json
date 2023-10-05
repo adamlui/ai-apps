@@ -10,6 +10,7 @@
   "about_version": { "message": "වෙළුම" },
   "about_poweredBy": { "message": "විසින් බල ගැන්වී ඇත" },
   "about_sourceCode": { "message": "මූලාශ්‍ර කේතය" },
+  "alert_choosePlatform": { "message": "වේදිකාවක් තෝරන්න" },
   "alert_updateAvail": { "message": "යාවත්කාලීනය තිබේ" },
   "alert_newerVer": { "message": "වෙත යාවත්කාලීන කිරීමක්" },
   "alert_isAvail": { "message": "ලබා ගත හැක" },

@@ -10,6 +10,7 @@
   "about_version": { "message": "Verze" },
   "about_poweredBy": { "message": "Běží na" },
   "about_sourceCode": { "message": "Zdrojový kód" },
+  "alert_choosePlatform": { "message": "Vyberte platformu" },
   "alert_updateAvail": { "message": "Aktualizace k dispozici" },
   "alert_newerVer": { "message": "Aktualizace na" },
   "alert_isAvail": { "message": "je k dispozici" },

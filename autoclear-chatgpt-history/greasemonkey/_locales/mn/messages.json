@@ -10,6 +10,7 @@
   "about_version": { "message": "Хувилбар" },
   "about_poweredBy": { "message": "ИЛЧЛЭГЧ" },
   "about_sourceCode": { "message": "ᠰᠣᠷᠪᠤᠯᠵᠢ ᠺᠣᠳ᠋ " },
+  "alert_choosePlatform": { "message": "Платформыг сонгоно уу" },
   "alert_updateAvail": { "message": "Шинэчлэх (update) боломжтой" },
   "alert_newerVer": { "message": "Шинэчлэлт" },
   "alert_isAvail": { "message": "авах боломжтой" },

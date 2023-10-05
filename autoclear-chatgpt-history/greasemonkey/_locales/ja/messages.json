@@ -10,6 +10,7 @@
   "about_version": { "message": "バージョン" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "ソースコード" },
+  "alert_choosePlatform": { "message": "プラットフォームを選択" },
   "alert_updateAvail": { "message": "利用可能なアップデート" },
   "alert_newerVer": { "message": "に更新します" },
   "alert_isAvail": { "message": "利用可能" },
