@@ -25,14 +25,14 @@
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](../../bravegpt) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > 在 Brave Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4 驱动!)
-<br>[安装](../../bravegpt#installation) /
+<br>[安装](../../bravegpt#-installation) /
 [自述文件](../../bravegpt#readme) /
 [讨论](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动继续 ⏩](../../chatgpt-auto-continue) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
 
 > 自动继续生成多个 ChatGPT 响应。
-<br>[安装](../../chatgpt-auto-continue/docs/zh-cn#%E5%AE%89%E8%A3%85) /
+<br>[安装](../../chatgpt-auto-continue/docs/zh-cn#-如何安装) /
 [自述文件](../../chatgpt-auto-continue/docs/zh-cn#readme) /
 [讨论](https://chatgptautocontinue.com/discuss)
 
@@ -46,21 +46,21 @@
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](../../chatgpt-infinity) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 4px"></a>
 
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
-<br>[安装](../../chatgpt-infinity/docs/zh-cn#%E5%AE%89%E8%A3%85) /
+<br>[安装](../../chatgpt-infinity/docs/zh-cn#-如何安装) /
 [自述文件](../../chatgpt-infinity/docs/zh-cn#readme) /
 [讨论](https://chatgptinfinity.com/discuss)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 宽屏模式 🖥️](../../chatgpt-widescreen) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 3px;" width="auto" height="24" />
 
 > 向 ChatGPT 添加宽屏 + 全屏模式以增强查看效果 + 减少滚动。
-<br>[安装](../../chatgpt-widescreen/docs/zh-cn#%E5%AE%89%E8%A3%85) /
+<br>[安装](../../chatgpt-widescreen/docs/zh-cn#-如何安装) /
 [自述文件](../../chatgpt-widescreen/docs/zh-cn#readme) /
 [讨论](https://chatgptwidescreen.com/discuss)
 
 ### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](../../duckduckgpt) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > 在 DuckDuckGo 侧边栏中显示 ChatGPT 答案 (由 GPT-4 驱动!)
-<br>[安装](../../duckduckgpt#installation) /
+<br>[安装](../../duckduckgpt#-installation) /
 [自述文件](../../duckduckgpt#readme) /
 [讨论](https://github.duckduckgpt.com/discussions)
 
