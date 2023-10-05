@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ChatGPT Auto Refresh" },
+  "appDesc": { "message": "*Pabalesego* e dira gore dithulaganyo tsa ChatGPT di nne di le foreše, di tlosa diphoso tse di sa kgaotseng tsa mafaratlhatlha a difounu + ditlhatlhobo tsa Cloudflare (tsotlhe di tswa kafa morago!)" },
+  "menuLabel_autoRefresh": { "message": "Auto-Refresh" },
+  "menuLabel_toggleVis": { "message": "Bontsha Tlhaloganyo" },
+  "menuLabel_modeNotifs": { "message": "Dikitsiso tsa Mode" },
+  "menuLabel_refreshInt": { "message": "Setlhare sa Boitlhotlho" },
+  "menuLabel_disabled": { "message": "Ke golafetse (extension installed)" },
+  "menuLabel_about": { "message": "Kaga" },
+  "about_version": { "message": "Tshedimo" },
+  "about_poweredBy": { "message": "E tsamaisiwa ke" },
+  "about_sourceCode": { "message": "Tshwanelo ya Boitshwaro" },
+  "prompt_updateInt": { "message": "Bakaya setlhare sa boitlhotlho (mefuta)" },
+  "alert_updateAvail": { "message": "Diphetogo tse di leng teng" },
+  "alert_newerVer": { "message": "Koketlho ya" },
+  "alert_isAvail": { "message": "e teng" },
+  "alert_upToDate": { "message": "Feleletše" },
+  "alert_isUpToDate": { "message": "e mo nakong" },
+  "alert_intUpdated": { "message": "Thulaganyo ya ChatGPT e tlile go ntšhwafatsa nako le nako" },
+  "unit_secs": { "message": "mefuta" },
+  "state_enabled": { "message": "e kgontshiwe" },
+  "state_disabled": { "message": "golafetse" }
+}

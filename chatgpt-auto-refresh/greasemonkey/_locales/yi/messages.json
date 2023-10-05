@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ChatGPT Auto Refresh" },
+  "appDesc": { "message": "* זיכער * האלט טשאַטגפּט סעשאַנז פריש, ילימאַנייטינג קעסיידערדיק נעץ ערראָרס + קלאָודפלאַרע טשעקס (אַלע פֿון דער הינטערגרונט!)" },
+  "menuLabel_autoRefresh": { "message": "אַוטאָ-דערפרישן" },
+  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_modeNotifs": { "message": "מאָדע נאָטיפיקאַטיאָנס" },
+  "menuLabel_refreshInt": { "message": "דערפרישן ינטערוואַל" },
+  "menuLabel_disabled": { "message": "פאַרקריפּלט (פאַרלענגערונג אינסטאַלירן)" },
+  "menuLabel_about": { "message": "dialogs-action" },
+  "about_version": { "message": "ווערסיע" },
+  "about_poweredBy": { "message": "פּאַוערד דורך" },
+  "about_sourceCode": { "message": "מקור קאָד" },
+  "prompt_updateInt": { "message": "דערהייַנטיקן דערפרישן מעהאַלעך (אין סעק)" },
+  "alert_updateAvail": { "message": "דערהייַנטיקן בנימצא" },
+  "alert_newerVer": { "message": "אַ דערהייַנטיקן צו" },
+  "alert_isAvail": { "message": "איז בנימצא" },
+  "alert_upToDate": { "message": "היינטצייטיג" },
+  "alert_isUpToDate": { "message": "איז דערהייַנטיקט" },
+  "alert_intUpdated": { "message": "ChatGPT סעסיע וועט אויטאָמאַטיש דערפרישן יעדער" },
+  "unit_secs": { "message": "סעק" },
+  "state_enabled": { "message": "ערמעגליכט" },
+  "state_disabled": { "message": "פאַרקריפּלט" }
+}

@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ChatGPT fakafoʻou ʻo e meʻalele" },
+  "appDesc": { "message": "* ʻOku tauhi ʻe he malu * ʻa e ngaahi fakataha ChatGPT foʻou, ʻo toʻo maʻu pe ʻa e ngaahi fehalaaki ʻi he netiueka + Cloudflare sieke (mei mui!)" },
+  "menuLabel_autoRefresh": { "message": "Meʻalele-fakafoʻou" },
+  "menuLabel_toggleVis": { "message": "Tuʻu maʻu ʻi hono fakaʻasi" },
+  "menuLabel_modeNotifs": { "message": "Fanongonongo ki he Mode" },
+  "menuLabel_refreshInt": { "message": "Fakafoʻou ʻo e vahaʻa taimi" },
+  "menuLabel_disabled": { "message": "Faingataʻaʻia fakaesino (fokotuʻu e extension)" },
+  "menuLabel_about": { "message": "Fekauʻaki mo e" },
+  "about_version": { "message": "Tatau" },
+  "about_poweredBy": { "message": "Fakalele ʻe he" },
+  "about_sourceCode": { "message": "Maʻuʻanga fakamatala" },
+  "prompt_updateInt": { "message": "Fakatonutonu ʻa e refresh (ʻi he THF)" },
+  "alert_updateAvail": { "message": "ʻOku lava ke maʻu e fakamatala fakamuimuitaha" },
+  "alert_newerVer": { "message": "Ko ha fakamatala fakamuimuitaha ki he" },
+  "alert_isAvail": { "message": "ʻoku lava ke maʻu" },
+  "alert_upToDate": { "message": "ʻO aʻu mai ki he ʻaho ni" },
+  "alert_isUpToDate": { "message": "ʻOku aʻu ki he ʻaho ni" },
+  "alert_intUpdated": { "message": "ʻE fakafoʻou ʻe he fakataha ChatGPT ʻa e meʻalele kotoa pe" },
+  "unit_secs": { "message": "THF" },
+  "state_enabled": { "message": "Faka'ataa" },
+  "state_disabled": { "message": "Tapui" }
+}

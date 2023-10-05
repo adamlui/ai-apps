@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "ChatGPT Otomatik Ripim" },
+  "appDesc": { "message": "*Saving* i save mekim ChatGPT sesen i kamap nupela, na dispela i pinisim olgeta pasin kranki bilong ret + Cloudflare (olgeta samting i stap long baksait!)" },
+  "menuLabel_autoRefresh": { "message": "Otomatik-Ripim" },
+  "menuLabel_toggleVis": { "message": "Toksave long ol samting" },
+  "menuLabel_modeNotifs": { "message": "Modus Toksave" },
+  "menuLabel_refreshInt": { "message": "Ripim taim" },
+  "menuLabel_disabled": { "message": "Pasim (extension istap)" },
+  "menuLabel_about": { "message": "About" },
+  "about_version": { "message": "Tok Pisin" },
+  "about_poweredBy": { "message": "Em i gat bikpela strong" },
+  "about_sourceCode": { "message": "Kod bilong as" },
+  "prompt_updateInt": { "message": "Wokim nupela taim (long seken)" },
+  "alert_updateAvail": { "message": "Tok pisin i go pinis" },
+  "alert_newerVer": { "message": "Ol nupela tok" },
+  "alert_isAvail": { "message": "em i kamap pinis" },
+  "alert_upToDate": { "message": "Sapos" },
+  "alert_isUpToDate": { "message": "Em i sapos" },
+  "alert_intUpdated": { "message": "Ol man i save mekim pasin nogut long ol arapela man, ol i save mekim pasin nogut long ol arapela man." },
+  "unit_secs": { "message": "ol seken" },
+  "state_enabled": { "message": "em i bin mekim olsem" },
+  "state_disabled": { "message": "pasim" }
+}

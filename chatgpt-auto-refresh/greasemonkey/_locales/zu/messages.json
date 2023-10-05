@@ -1,0 +1,23 @@
+{
+  "appName": { "message": "Ukuvuselela Okuzenzakalelayo kwe-ChatGPT" },
+  "appDesc": { "message": "*NGOKUPHEPHA* kugcina amaseshini e-ChatGPT esha, kususwa amaphutha angaguquki enethiwekhi + ukuhlolwa kwe-Cloudflare (konke kuvela ngemuva!)" },
+  "menuLabel_autoRefresh": { "message": "Ukuvuselela Okuzenzakalelayo" },
+  "menuLabel_toggleVis": { "message": "Guqula Ukubonakala" },
+  "menuLabel_modeNotifs": { "message": "Izaziso Zendlela" },
+  "menuLabel_refreshInt": { "message": "Vuselela Isikhawu" },
+  "menuLabel_disabled": { "message": "Ikhutshaziwe (isandiso sifakiwe)" },
+  "menuLabel_about": { "message": "Mayelana" },
+  "about_version": { "message": "Uhlelo" },
+  "about_poweredBy": { "message": "Ixhaswa yi-" },
+  "about_sourceCode": { "message": "Ikhodi yomthombo" },
+  "prompt_updateInt": { "message": "Buyekeza isikhawu sokuvuselela (ngemizuzwana)" },
+  "alert_updateAvail": { "message": "Okwakamuva Kuyatholakala!" },
+  "alert_newerVer": { "message": "Izilungiso eziya ku-" },
+  "alert_isAvail": { "message": "iyatholakala" },
+  "alert_upToDate": { "message": "Okwakamuva" },
+  "alert_isUpToDate": { "message": "isesikhathini" },
+  "alert_intUpdated": { "message": "Iseshini ye-ChatGPT izovuselela ngokuzenzakalelayo njalo" },
+  "unit_secs": { "message": "imizuzwana" },
+  "state_enabled": { "message": "Inikwe amandla" },
+  "state_disabled": { "message": "Ivaliwe" }
+}
