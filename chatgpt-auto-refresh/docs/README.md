@@ -202,10 +202,6 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Discuss](https://chatgptinfinity.com/discuss)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-refresh/main/media/images/separators/aqua.png">
-
-<div align="center">
   
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> /
 <a href="#english--%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">Back to top ↑</a>
-
-</div>
