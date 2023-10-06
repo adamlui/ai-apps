@@ -13,7 +13,7 @@
           replyTopicDiv = menuItems[4], replyTopicLabel = replyTopicDiv.querySelector('span'),
           replyIntervalDiv = menuItems[5], replyIntervalLabel = replyIntervalDiv.querySelector('span')
 
-    // Sync toggle states
+    // Sync toggle states + menu labels
     const re_all = new RegExp('^(' + chrome.i18n.getMessage('menuLabel_all') + '|all|any|every)$', 'i')
     settings.load(['extensionDisabled', 'infinityMode', 'toggleHidden', 'autoScrollDisabled',
                    'replyInterval', 'replyTopic', 'replyLanguage', 'userLanguage'])
@@ -33,9 +33,9 @@
     // Localize labels
     document.querySelectorAll('[data-locale]').forEach(elem => {
         const localeKeys = elem.dataset.locale.split(' '),
-              translatedText = localeKeys.map(key => chrome.i18n.getMessage(key)).join(' ');
-        elem.innerText = translatedText;
-    });
+              translatedText = localeKeys.map(key => chrome.i18n.getMessage(key)).join(' ')
+        elem.innerText = translatedText
+    })
 
     // Add main toggle click-listener
     mainToggle.addEventListener('change', () => {
@@ -44,7 +44,7 @@
         syncExtension() ; updateGreyness()
     })
 
-    // Add Infinity Mode click-listeners
+    // Add 'Infinity Mode' click-listeners
     infinityModeToggle.addEventListener('change', () => {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             if (new URL(tabs[0].url).hostname !== 'chat.openai.com') return // do nothing if not on ChatGPT
@@ -57,7 +57,7 @@
             infinityModeToggle.click() 
     })
 
-    // Add Toggle Visibility click-listeners
+    // Add 'Toggle Visibility' click-listeners
     toggleVisToggle.addEventListener('change', () => {
         settings.save('toggleHidden', !config.toggleHidden) ; syncExtension()
         notify(chrome.i18n.getMessage('menuLabel_toggleVis') + ' ' + ( !config.toggleHidden ? 'ON' : 'OFF' ))
@@ -67,7 +67,7 @@
             toggleVisToggle.click() 
     })
 
-    // Add Auto-Scroll click-listeners
+    // Add 'Auto-Scroll' click-listeners
     autoScrollToggle.addEventListener('change', () => {
         settings.save('autoScrollDisabled', !config.autoScrollDisabled) ; syncExtension()        
         notify(chrome.i18n.getMessage('menuLabel_autoScroll') + ' ' + ( !config.autoScrollDisabled ? 'ON' : 'OFF' ))
@@ -77,7 +77,7 @@
             autoScrollToggle.click() 
     })
 
-    // Add Reply Language click-listener
+    // Add 'Reply Language' click-listener
     replyLangDiv.addEventListener('click', () => {
         while (true) {
             const replyLanguage = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyLang') }:`, config.replyLanguage)
@@ -85,7 +85,8 @@
             else if (!/\d/.test(replyLanguage)) {
                 settings.save('replyLanguage', replyLanguage || config.userLanguage)
                 window.close() // popup
-                alert(chrome.i18n.getMessage('alert_replyLangUpdated') + '!', chrome.i18n.getMessage('alert_willReplyIn') + ' '
+                alert(chrome.i18n.getMessage('alert_replyLangUpdated') + '!',
+                    chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyIn') + ' '
                     + ( replyLanguage || chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
                     if (new URL(tabs[0].url).hostname === 'chat.openai.com' && config.infinityMode) { // reboot active session
@@ -94,7 +95,7 @@
                 break
     }}})
 
-    // Add Reply Topic click-listener
+    // Add 'Reply Topic' click-listener
     replyTopicDiv.addEventListener('click', () => {
         while (true) {
             const replyTopic = prompt(chrome.i18n.getMessage('prompt_updateReplyTopic')
@@ -115,7 +116,7 @@
                 break
     }}})
 
-    // Add Reply Interval click-listener
+    // Add 'Reply Interval' click-listener
     replyIntervalDiv.addEventListener('click', () => {
         while (true) {
             const replyInterval = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyInt') }:`, config.replyInterval)
@@ -123,7 +124,8 @@
             else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
                 settings.save('replyInterval', parseInt(replyInterval))
                 window.close() // popup
-                alert(chrome.i18n.getMessage('alert_replyIntUpdated') + '!', chrome.i18n.getMessage('alert_willReplyEvery')
+                alert(chrome.i18n.getMessage('alert_replyIntUpdated') + '!',
+                    chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyEvery')
                     + ' ' + replyInterval + ' ' + chrome.i18n.getMessage('unit_seconds') + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
                     if (new URL(tabs[0].url).hostname !== 'chat.openai.com' && config.infinityMode) // reboot active session
@@ -166,7 +168,7 @@
 
     function notify(msg, position) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            chrome.tabs.sendMessage(tabs[0].id, { 
+            chrome.tabs.sendMessage(tabs[0].id, {
                 action: 'notify', msg: msg, position: position || 'bottom-right' })
     })}
 
@@ -178,7 +180,7 @@
     
     function alertToUpdate(version) {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            chrome.tabs.sendMessage(tabs[0].id, { 
+            chrome.tabs.sendMessage(tabs[0].id, {
                 action: 'alertToUpdate', args: version
     })})}
 
