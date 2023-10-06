@@ -22,7 +22,7 @@
   "alert_onTopicOf": { "message": "on the topic of" },
   "alert_onAllTopics": { "message": "on ALL topics" },
   "alert_replyIntUpdated": { "message": "Interval updated" },
-  "alert_willReplyEvery": { "message": "ChatGPT Infinity will reply every" },
+  "alert_willReplyEvery": { "message": "will reply every" },
   "alert_updateAvail": { "message": "Update available" },
   "alert_newerVer": { "message": "An update to" },
   "alert_isAvail": { "message": "is available" },
