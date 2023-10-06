@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.2
+// @version             2023.10.6
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -433,7 +433,8 @@
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                    alert(messages.alert_replyLangUpdated + '!', messages.alert_willReplyIn + ' '
+                    alert(messages.alert_replyLangUpdated + '!',
+                        messages.appName + ' ' + messages.alert_willReplyIn + ' '
                         + ( replyLanguage || messages.alert_yourSysLang ) + '.')
                     if (config.infinityMode) restartInNewChat() // using new reply language                        
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -472,8 +473,9 @@
                 if (replyInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
                     saveSetting('replyInterval', parseInt(replyInterval))
-                    alert(messages.alert_replyIntUpdated + '!', messages.alert_willReplyEvery + ' '
-                        + replyInterval + ' ' + messages.unit_seconds + '.')
+                    alert(messages.alert_replyIntUpdated + '!',
+                        messages.appName + ' ' + messages.alert_willReplyEvery + ' '
+                         + replyInterval + ' ' + messages.unit_seconds + '.')
                     if (config.infinityMode) resetInSameChat() // using new reply interval                    
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
