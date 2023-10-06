@@ -1,8 +1,8 @@
 {
   "appName": { "message": "ޗެޓްޖީޕީޓީ އޮޓޯ ރިފްރެޝް" },
   "appDesc": { "message": "*ސޭފްލީ* ޗެޓްޖީޕީޓީ ސެޝަންތައް ތާޒާކޮށް ބަހައްޓައި، ކޮންސްޓެންޓް ނެޓްވޯކް އެރަރސް + ކްލައުޑްފްލޭއާ ޗެކް (ބެކްގްރައުންޑުން ހުރިހާ އެއްޗެއް!)" },
-  "menuLabel_autoRefresh": { "message": "Auto-ތާޒާކަން" },
-  "menuLabel_toggleVis": { "message": "drawable-action" },
+  "menuLabel_autoRefresh": { "message": "އޮޓޯ ރިފްރެޝް ކޮށްލާށެވެ" },
+  "menuLabel_toggleVis": { "message": "ޓޮގްލް ވިޒިބިލިޓީ" },
   "menuLabel_modeNotifs": { "message": "މޯޑް ނޮޓިފިކޭޝަންސް" },
   "menuLabel_refreshInt": { "message": "ރިފްރެޝް އިންޓަވަލް" },
   "menuLabel_about": { "message": "މިއާއި ބެހޭ" },
@@ -24,7 +24,7 @@
   "buttonLabel_update": { "message": "އަޕްޑޭޓް" },
   "buttonLabel_dismiss": { "message": "މަގާމުން ވަކިކުރުން" },
   "link_viewChanges": { "message": "ވިއު ޗޭންޖްސް" },
-  "unit_secs": { "message": "secs secs" },
+  "unit_secs": { "message": "ސިކުންތުކޮޅެކެވެ" },
   "state_enabled": { "message": "އެނޭބަލްކޮށްފައި" },
   "state_disabled": { "message": "ބޭނުންނުކުރެވޭ ގޮތަށް ހަދާފައި" }
 }
