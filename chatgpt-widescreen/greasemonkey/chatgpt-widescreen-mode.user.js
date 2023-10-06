@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.4
+// @version             2023.10.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -383,13 +383,13 @@
         }))
 
         // Add command to toggle hidden OpenAI header
-        const hhLabel = state.symbol[+!config.hiddenHeader] + ' Hidden Header'
+        const hhLabel = state.symbol[+!config.hiddenHeader] + ' ' + messages.menuLabel_hiddenHeader
                       + state.separator + state.word[+!config.hiddenHeader]
         menuIDs.push(GM_registerMenuCommand(hhLabel, () => {
             saveSetting('hiddenHeader', !config.hiddenHeader)
             updateTweaksStyle()
             if (!config.notifHidden)
-                notify(`Hidden Header: ${ state.word[+!config.hiddenHeader] }`)
+                notify(`${ messages.menuLabel_hiddenHeader }: ${ state.word[+!config.hiddenHeader] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -426,16 +426,16 @@
                 messages.appName, // title
                 `<span style="${ headingStyle }"><b>🏷️ <i>Version</i></b>: </span>`
                     + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-                + `<span style="${ headingStyle }"><b>⚡ <i>Powered by</i></b>: </span>`
+                + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
                     + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                     + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                + `<span style="${ headingStyle }"><b>📜 <i>Source code</i></b>:</span>\n`
+                + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
                     + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                     + config.gitHubURL + '</a></span>',
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
                     function leaveAReview() { // show new modal
-                        const reviewAlertID = chatgpt.alert('Choose a platform:', '',
+                        const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
                             [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                               function productHunt() { safeWindowOpen(
                                   'https://www.producthunt.com/products/chatgpt-widescreen-mode/reviews/new') },
@@ -450,7 +450,7 @@
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
                 if (/updates/i.test(button.textContent))
                     button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-                else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
+                else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
