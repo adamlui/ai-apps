@@ -22,7 +22,7 @@
   "alert_onTopicOf": { "message": "по темата за" },
   "alert_onAllTopics": { "message": "по ВСИЧКИ ТЕМИ" },
   "alert_replyIntUpdated": { "message": "Интервалът е актуализиран" },
-  "alert_willReplyEvery": { "message": "ЧатДжиПиТи Инфинити ще отговаря на всеки" },
+  "alert_willReplyEvery": { "message": "ще отговаря на всеки" },
   "alert_updateAvail": { "message": "Налице е актуализация" },
   "alert_newerVer": { "message": "Обнови" },
   "alert_isAvail": { "message": "е налична" },
