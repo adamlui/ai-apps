@@ -22,7 +22,7 @@
   "alert_onTopicOf": { "message": "በሚለው ጉዳይ ላይ" },
   "alert_onAllTopics": { "message": "በሁሉም ርዕሰ ጉዳዮች ላይ" },
   "alert_replyIntUpdated": { "message": "ክፍተት ዘምኗል" },
-  "alert_willReplyEvery": { "message": "ChatGPT Infinity እያንዳንዱን ይመልሳል" },
+  "alert_willReplyEvery": { "message": "እያንዳንዱን ይመልሳል" },
   "alert_updateAvail": { "message": "ዝመና ይገኛል!" },
   "alert_newerVer": { "message": "ዝመና ለ" },
   "alert_isAvail": { "message": "ሊገኝ ይችላል" },
