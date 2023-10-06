@@ -15,14 +15,14 @@
   "prompt_orEnter": { "message": "lub wpisz z" },
   "prompt_updateReplyInt": { "message": "Zaktualizuj interwał odpowiedzi (minimum 5 sekund)" },
   "alert_replyLangUpdated": { "message": "Język został zaktualizowany." },
-  "alert_willReplyIn": { "message": "ChatGPT Infinity odpowie za" },
+  "alert_willReplyIn": { "message": "odpowie za" },
   "alert_yourSysLang": { "message": "twój język systemowy" },
   "alert_replyTopicUpdated": { "message": "Temat zaktualizowany." },
   "alert_willAnswer": { "message": "Odpowiem na wszystkie pytania." },
   "alert_onTopicOf": { "message": "na temat" },
   "alert_onAllTopics": { "message": "Wszystkie tematy" },
   "alert_replyIntUpdated": { "message": "Zaktualizowano interwał" },
-  "alert_willReplyEvery": { "message": "ChatGPT Infinity będzie odpowiadał co" },
+  "alert_willReplyEvery": { "message": "będzie odpowiadał co" },
   "alert_updateAvail": { "message": "Aktualizacja dostępna" },
   "alert_newerVer": { "message": "Aktualizuj" },
   "alert_isAvail": { "message": "jest dostępna" },
@@ -33,6 +33,6 @@
   "buttonLabel_dismiss": { "message": "Odrzuć" },
   "link_viewChanges": { "message": "Przegląd zmian" },
   "unit_seconds": { "message": "sekund" },
-  "state_enabled": { "message": "włączone" },
-  "state_disabled": { "message": "wyłączone" }
+  "state_enabled": { "message": "włączony" },
+  "state_disabled": { "message": "wyłączony" }
 }
