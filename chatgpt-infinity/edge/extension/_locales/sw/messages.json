@@ -15,14 +15,14 @@
   "prompt_orEnter": { "message": "au ingiza" },
   "prompt_updateReplyInt": { "message": "Sasisha muda wa kujibu (chini ya sekunde 5)" },
   "alert_replyLangUpdated": { "message": "Lugha imesasishwa" },
-  "alert_willReplyIn": { "message": "ChatGPT Infinity atajibu katika" },
+  "alert_willReplyIn": { "message": "atajibu katika" },
   "alert_yourSysLang": { "message": "lugha ya mfumo wako" },
   "alert_replyTopicUpdated": { "message": "Mada imesasishwa" },
   "alert_willAnswer": { "message": "atajibu maswali" },
   "alert_onTopicOf": { "message": "juu ya mada ya" },
   "alert_onAllTopics": { "message": "Mada Zote" },
   "alert_replyIntUpdated": { "message": "Muda umesasishwa" },
-  "alert_willReplyEvery": { "message": "ChatGPT Infinity atajibu kila" },
+  "alert_willReplyEvery": { "message": "atajibu kila" },
   "alert_updateAvail": { "message": "Sasisho lipo" },
   "alert_newerVer": { "message": "Taarifa ya" },
   "alert_isAvail": { "message": "inapatikana" },
@@ -33,6 +33,6 @@
   "buttonLabel_dismiss": { "message": "Puuza" },
   "link_viewChanges": { "message": "Angalia mabadiliko" },
   "unit_seconds": { "message": "sekunde" },
-  "state_enabled": { "message": "Imewezeshwa" },
-  "state_disabled": { "message": "disabled" }
+  "state_enabled": { "message": "imewezeshwa" },
+  "state_disabled": { "message": "walemavu" }
 }
