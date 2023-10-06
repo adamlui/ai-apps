@@ -1,5 +1,5 @@
 {
-  "appName": { "message": "చాట్GPT ఇన్ఫినిటీ" },
+  "appName": { "message": "ChatGPT ఇన్ఫినిటీ" },
   "appDesc": { "message": "అన్ని తెలిసిన చాట్పిటి నుండి అంతులేని సమాధానాలను సృష్టించండి (ఏ భాషలోనైనా!" },
   "menuLabel_infinityMode": { "message": "ఇన్ఫినిటీ మోడ్" },
   "menuLabel_toggleVis": { "message": "దృశ్యమానతను టోగుల్ చెయ్యి" },
@@ -15,14 +15,14 @@
   "prompt_orEnter": { "message": "లేదా ఎంటర్ చేయండి" },
   "prompt_updateReplyInt": { "message": "ప్రతిస్పందన వ్యవధిని అప్ ‌ డేట్ చేయండి (కనీస 5 సెకన్లు)" },
   "alert_replyLangUpdated": { "message": "భాష అప్ ‌ డేట్ చేయబడింది" },
-  "alert_willReplyIn": { "message": "చాట్GPT ఇన్ఫినిటీ లో ప్రత్యుత్తరం ఇస్తుంది" },
+  "alert_willReplyIn": { "message": "లో ప్రత్యుత్తరం ఇస్తుంది" },
   "alert_yourSysLang": { "message": "మీ సిస్టమ్ భాష" },
   "alert_replyTopicUpdated": { "message": "అంశం అప్ ‌ డేట్ చేయబడింది" },
   "alert_willAnswer": { "message": "ప్రశ్నలకు సమాధానం ఇస్తుంది" },
   "alert_onTopicOf": { "message": "ఈ అంశంపై" },
   "alert_onAllTopics": { "message": "అన్ని అంశాలపై" },
   "alert_replyIntUpdated": { "message": "విరామం అప్ ‌ డేట్ చేయబడింది" },
-  "alert_willReplyEvery": { "message": "చాట్GPT ఇన్ఫినిటీ ప్రతిదానికి ప్రత్యుత్తరం ఇస్తుంది" },
+  "alert_willReplyEvery": { "message": "ప్రతిదానికి ప్రత్యుత్తరం ఇస్తుంది" },
   "alert_updateAvail": { "message": "ఎటువంటి నవీకరణ అందుబాటులోలేదు" },
   "alert_newerVer": { "message": "కు అప్ ‌ డేట్ చేయండి" },
   "alert_isAvail": { "message": "అందుబాటులో ఉంది" },
@@ -32,7 +32,7 @@
   "buttonLabel_update": { "message": "అప్‌డేట్" },
   "buttonLabel_dismiss": { "message": "తీసివేయండి" },
   "link_viewChanges": { "message": "మార్పులను చూడండి" },
-  "unit_seconds": { "message": "సెకనులుparts" },
+  "unit_seconds": { "message": "సెకన్లు" },
   "state_enabled": { "message": "చేతనంచేసిన" },
   "state_disabled": { "message": "వికలాంగులు" }
 }
