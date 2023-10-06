@@ -15,7 +15,7 @@
   "prompt_orEnter": { "message": "или въведете" },
   "prompt_updateReplyInt": { "message": "Актуализиране на интервала за отговор (минимум 5 секунди)" },
   "alert_replyLangUpdated": { "message": "Езикът е актуализиран" },
-  "alert_willReplyIn": { "message": "ЧатДжиПиТи Инфинити ще отговори в" },
+  "alert_willReplyIn": { "message": "ще отговори в" },
   "alert_yourSysLang": { "message": "вашето системно езиково настройки" },
   "alert_replyTopicUpdated": { "message": "Темата е актуализирана" },
   "alert_willAnswer": { "message": "ще отговаря на въпроси" },

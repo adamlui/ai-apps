@@ -15,7 +15,7 @@
   "prompt_orEnter": { "message": "або ўвесці" },
   "prompt_updateReplyInt": { "message": "Абнаўленне інтэрвалу адказу (мінімум 5 сек)" },
   "alert_replyLangUpdated": { "message": "Мова абноўлена" },
-  "alert_willReplyIn": { "message": "ChatGPT Infinity адкажа ў" },
+  "alert_willReplyIn": { "message": "адкажа ў" },
   "alert_yourSysLang": { "message": "Мова сістэмы" },
   "alert_replyTopicUpdated": { "message": "Тэма абноўлена" },
   "alert_willAnswer": { "message": "адкажыце на пытанні" },

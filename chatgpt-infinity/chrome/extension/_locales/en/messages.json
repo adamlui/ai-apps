@@ -15,7 +15,7 @@
   "prompt_orEnter": { "message": "or enter" },
   "prompt_updateReplyInt": { "message": "Update reply interval (minimum 5 secs)" },
   "alert_replyLangUpdated": { "message": "Language updated" },
-  "alert_willReplyIn": { "message": "ChatGPT Infinity will reply in" },
+  "alert_willReplyIn": { "message": "will reply in" },
   "alert_yourSysLang": { "message": "your system language" },
   "alert_replyTopicUpdated": { "message": "Topic updated" },
   "alert_willAnswer": { "message": "will answer questions" },

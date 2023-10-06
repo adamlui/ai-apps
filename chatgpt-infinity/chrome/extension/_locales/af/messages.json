@@ -15,7 +15,7 @@
   "prompt_orEnter": { "message": "of gaan in" },
   "prompt_updateReplyInt": { "message": "Dateer antwoordinterval op (minimum 5 sekondes)" },
   "alert_replyLangUpdated": { "message": "Taal opgedateer" },
-  "alert_willReplyIn": { "message": "ChatGPT Infinity sal antwoord in" },
+  "alert_willReplyIn": { "message": "sal antwoord in" },
   "alert_yourSysLang": { "message": "jou stelsel taal" },
   "alert_replyTopicUpdated": { "message": "Onderwerp opgedateer" },
   "alert_willAnswer": { "message": "sal vrae beantwoord" },

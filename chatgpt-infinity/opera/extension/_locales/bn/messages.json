@@ -15,7 +15,7 @@
   "prompt_orEnter": { "message": "অথবা প্রবেশ করুন" },
   "prompt_updateReplyInt": { "message": "জবাব ইন্টারভাল আপডেট করুন (সর্বনিম্ন ৫ সেকেন্ড)" },
   "alert_replyLangUpdated": { "message": "ভাষা আপডেট করা হয়েছে" },
-  "alert_willReplyIn": { "message": "চ্যাটজিপিটি ইনফিনিটি উত্তর দেবে" },
+  "alert_willReplyIn": { "message": "উত্তর দেবে" },
   "alert_yourSysLang": { "message": "আপনার সিস্টেম ভাষা নির্বাচন করা হয়েছে" },
   "alert_replyTopicUpdated": { "message": "বিষয় আপডেট করা হয়েছে" },
   "alert_willAnswer": { "message": "প্রশ্নের উত্তর দেবে" },
