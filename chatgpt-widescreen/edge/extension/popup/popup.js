@@ -88,7 +88,7 @@
         syncExtension()
         settings.load('hiddenHeader').then(() => {
             if (!config.notifHidden) { // show mode notification if enabled
-                notify('Hidden Header ' + (config.hiddenHeader ? 'ON' : 'OFF'))
+                notify(chrome.i18n.getMessage(menuLabel_hiddenHeader) + ' ' + (config.hiddenHeader ? 'ON' : 'OFF'))
         }})
     })
     hiddenHeaderLabel.addEventListener('click', (event) => {
