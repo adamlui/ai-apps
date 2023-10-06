@@ -22,7 +22,7 @@
   "alert_onTopicOf": { "message": "بشأن موضوع" },
   "alert_onAllTopics": { "message": "جميع المواضيع" },
   "alert_replyIntUpdated": { "message": "تم تحديث الفاصل الزمني" },
-  "alert_willReplyEvery": { "message": "سيقوم تشات جي بي تي إنفينيتي بالرد كل" },
+  "alert_willReplyEvery": { "message": "سيتم الرد على كل" },
   "alert_updateAvail": { "message": "تحديث متوفر" },
   "alert_newerVer": { "message": "تحديث لـ" },
   "alert_isAvail": { "message": "متوفر" },
