@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "ഇന്നുവരെയുള്ള_മാറ്റങ്ങള്‍_വരുത്തിയത്" },
   "alert_pressF11": { "message": "പൂർണ്ണ സ്ക്രീനിൽ നിന്ന് പുറത്തുകടക്കാൻ F11 അമർത്തുക" },
   "alert_f11reason": { "message": "പൂർണ്ണ സ്ക്രീനിൽ പ്രവേശിക്കാൻ F11 ഉപയോഗിച്ചു, ബ്രൌസർ സുരക്ഷാ കാരണങ്ങളാൽ, അത് പുറത്തുകടക്കാൻ അതേ കീ ഉപയോഗിക്കണം." },
-  "buttonLabel_updateCheck": { "message": "അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക" },
   "buttonLabel_update": { "message": "അപ്ഡേറ്റ് ചെയ്യുക" },
+  "buttonLabel_updateCheck": { "message": "അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക" },
   "buttonLabel_dismiss": { "message": "ഡിസ്മിസ്" },
   "link_viewChanges": { "message": "മാറ്റങ്ങള്‍ കാണുക" }
 }

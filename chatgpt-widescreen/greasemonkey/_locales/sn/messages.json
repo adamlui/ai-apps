@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "yajaira Update" },
   "alert_pressF11": { "message": "Press F11 kubuda zvizere chidzitiro" },
   "alert_f11reason": { "message": "F11 yakashandiswa kupinda chidzitiro chakazara, uye nekuda kwezvikonzero zvekuchengetedza bhurawuza, kiyi imwechete inofanira kushandiswa kubuda mairi" },
-  "buttonLabel_updateCheck": { "message": "Ongorora Updates" },
   "buttonLabel_update": { "message": "Gadzirisa" },
+  "buttonLabel_updateCheck": { "message": "Ongorora Updates" },
   "buttonLabel_dismiss": { "message": "Bvisa" },
   "link_viewChanges": { "message": "Ona shanduko" }
 }

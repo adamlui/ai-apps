@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "up - to - date ဖြစ်သည်" },
   "alert_pressF11": { "message": "ဖန်သားပြင်အပြည့်မှ ထွက်ရန် F11 ကို နှိပ်ပါ" },
   "alert_f11reason": { "message": "F11 ကို screen အပြည့်အစုံထဲသို့ဝင်ရန်အသုံးပြုခဲ့ပြီး browser လုံခြုံရေးအကြောင်းပြချက်များကြောင့် ၎ င်းကိုထွက်ခွာရန်တူညီသောကီးကိုအသုံးပြုရမည် ။" },
-  "buttonLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
+  "buttonLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "buttonLabel_dismiss": { "message": "ပယ်ဖျက်မည်" },
   "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ပါ" }
 }

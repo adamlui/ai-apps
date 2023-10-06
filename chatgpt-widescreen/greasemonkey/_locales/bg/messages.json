@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "е актуален" },
   "alert_pressF11": { "message": "Натиснете F11, за да излезете от цял екран" },
   "alert_f11reason": { "message": "F11 се използва за влизане на цял екран и поради причини, свързани със сигурността на браузъра, същият ключ трябва да се използва за излизане от него" },
-  "buttonLabel_updateCheck": { "message": "Проверка за обновяване" },
   "buttonLabel_update": { "message": "Актуализация" },
+  "buttonLabel_updateCheck": { "message": "Проверка за обновяване" },
   "buttonLabel_dismiss": { "message": "Отхвърли" },
   "link_viewChanges": { "message": "Вижте Промените" }
 }

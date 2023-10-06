@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "patuakhali Patuakhali" },
   "alert_pressF11": { "message": "Press F11 kuti atuluke zonse chophimba" },
   "alert_f11reason": { "message": "F11 idagwiritsidwa ntchito kulowa pazenera lonse, ndipo chifukwa cha zifukwa za chitetezo cha asakatuli, kiyi yomweyo iyenera kugwiritsidwa ntchito kuti ituluke." },
-  "buttonLabel_updateCheck": { "message": "Onani Zosintha" },
   "buttonLabel_update": { "message": "Mfundo zazinsinsi" },
+  "buttonLabel_updateCheck": { "message": "Onani Zosintha" },
   "buttonLabel_dismiss": { "message": "Mfundo zazinsinsi" },
   "link_viewChanges": { "message": "Onani zosintha" }
 }

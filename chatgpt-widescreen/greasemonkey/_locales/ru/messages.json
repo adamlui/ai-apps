@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "актуально" },
   "alert_pressF11": { "message": "Нажмите F11, чтобы выйти из полноэкранного режима" },
   "alert_f11reason": { "message": "F11 была использована для входа в полноэкранный режим, и по соображениям безопасности браузера для выхода из него также необходимо использовать ту же клавишу" },
-  "buttonLabel_updateCheck": { "message": "Проверить Обновления" },
   "buttonLabel_update": { "message": "Обновить" },
+  "buttonLabel_updateCheck": { "message": "Проверить Обновления" },
   "buttonLabel_dismiss": { "message": "Отмена" },
   "link_viewChanges": { "message": "Посмотреть изменения" }
 }

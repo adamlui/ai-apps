@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "<PROTECTED> is geactualiseerd" },
   "alert_pressF11": { "message": "Druk op F11 om het volledige scherm af te sluiten." },
   "alert_f11reason": { "message": "F11 werd gebruikt om volledig scherm in te voeren, en vanwege browserbeveiligingsredenen moet dezelfde sleutel worden gebruikt om het te verlaten" },
-  "buttonLabel_updateCheck": { "message": "Controleer op updates" },
   "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_updateCheck": { "message": "Controleer op updates" },
   "buttonLabel_dismiss": { "message": "Afwijzen" },
   "link_viewChanges": { "message": "Wijzigingen weergeven" }
 }

@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "Actualizat" },
   "alert_pressF11": { "message": "Apăsați F11 pentru a ieși din ecranul complet." },
   "alert_f11reason": { "message": "F11 a fost utilizat pentru a intra pe ecran complet și, din motive de securitate a browserului, aceeași cheie trebuie utilizată pentru a ieși din acesta" },
-  "buttonLabel_updateCheck": { "message": "Caută actualizări" },
   "buttonLabel_update": { "message": "Actualizare" },
+  "buttonLabel_updateCheck": { "message": "Caută actualizări" },
   "buttonLabel_dismiss": { "message": "Respingeți" },
   "link_viewChanges": { "message": "Vizualizează modificările" }
 }

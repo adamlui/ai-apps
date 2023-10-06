@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "Kemas kini" },
   "alert_pressF11": { "message": "Tekan F11 untuk keluar dari skrin penuh" },
   "alert_f11reason": { "message": "F11 telah digunakan untuk memasuki skrin penuh, dan atas sebab-sebab keselamatan pelayar, kunci yang sama mesti digunakan untuk keluar daripadanya" },
-  "buttonLabel_updateCheck": { "message": "Semak Kemaskini" },
   "buttonLabel_update": { "message": "Saya ingin membuat susulan" },
+  "buttonLabel_updateCheck": { "message": "Semak Kemaskini" },
   "buttonLabel_dismiss": { "message": "Singkir" },
   "link_viewChanges": { "message": "Lihat perubahan" }
 }

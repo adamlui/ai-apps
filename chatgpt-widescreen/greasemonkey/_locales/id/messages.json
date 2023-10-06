@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "sudah mutakhir" },
   "alert_pressF11": { "message": "Tekan F11 untuk keluar dari layar penuh" },
   "alert_f11reason": { "message": "F11 digunakan untuk memasuki layar penuh, dan karena alasan keamanan browser, kunci yang sama harus digunakan untuk keluar." },
-  "buttonLabel_updateCheck": { "message": "Periksa Pemutakhiran" },
   "buttonLabel_update": { "message": "Pembaruan" },
+  "buttonLabel_updateCheck": { "message": "Periksa Pemutakhiran" },
   "buttonLabel_dismiss": { "message": "Tutup" },
   "link_viewChanges": { "message": "Lihat perubahan" }
 }

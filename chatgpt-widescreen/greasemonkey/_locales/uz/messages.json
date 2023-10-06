@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "dolzarb hisoblanadi" },
   "alert_pressF11": { "message": "To&#39;liq ekrandan chiqish uchun F11 tugmasini bosing" },
   "alert_f11reason": { "message": "F11 toʻliq ekranga kirish uchun ishlatilgan va brauzer xavfsizligi sababli undan chiqish uchun xuddi shu kalitdan foydalanish kerak." },
-  "buttonLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
   "buttonLabel_update": { "message": "Yangilash" },
+  "buttonLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
   "buttonLabel_dismiss": { "message": "Rad etish" },
   "link_viewChanges": { "message": "O&#39;zgarishlarni ko&#39;rish" }
 }

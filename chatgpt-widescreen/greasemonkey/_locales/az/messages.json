@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "hər şey güncəldir" },
   "alert_pressF11": { "message": "Tam ekrandan çıxmaq üçün F11 düyməsini basın" },
   "alert_f11reason": { "message": "F11 tam ekrana daxil olmaq üçün istifadə edildi və brauzer təhlükəsizliyi səbəbilə eyni düymə ondan çıxmaq üçün istifadə edilməlidir" },
-  "buttonLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
   "buttonLabel_update": { "message": "Yenilə" },
+  "buttonLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
   "buttonLabel_dismiss": { "message": "Bağla" },
   "link_viewChanges": { "message": "Dəyişikliklərə bax" }
 }

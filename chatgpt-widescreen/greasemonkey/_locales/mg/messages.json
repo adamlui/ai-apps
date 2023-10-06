@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "mampihena" },
   "alert_pressF11": { "message": "Fitoerana F11" },
   "alert_f11reason": { "message": "Ny fampiasana ny tranonkala dia tsy maintsy ampiasaina, ary tsy maintsy ampiasaina ho an'ny rehetra." },
-  "buttonLabel_updateCheck": { "message": "Jereo ny vaovao momba ny famerenana" },
   "buttonLabel_update": { "message": "Vaovao farany" },
+  "buttonLabel_updateCheck": { "message": "Jereo ny vaovao momba ny famerenana" },
   "buttonLabel_dismiss": { "message": "Hiditra" },
   "link_viewChanges": { "message": "Jereo ny fiovana" }
 }

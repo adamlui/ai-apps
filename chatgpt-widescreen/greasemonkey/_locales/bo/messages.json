@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "ཡར་ངོའི་ཚེས་བཅུའི་དུས་སུ་" },
   "alert_pressF11": { "message": "Vol 11 ཁ་གསང་སྔགས་རྙིང་མ་" },
   "alert_f11reason": { "message": "FTP དེ་ནི་དྲ་བ་སྤྱད་ནས་དྲ་བ་སྤྱད་ནས་སྤྱོད་མཁན་ཡོངས་རྫོགས་ཀྱི་ཡོད །" },
-  "buttonLabel_updateCheck": { "message": "ད་ལྟ་རིམ་སྤར་བྱེད་བཞིན་པ །" },
   "buttonLabel_update": { "message": "གསར་བསྒྱུར" },
+  "buttonLabel_updateCheck": { "message": "ད་ལྟ་རིམ་སྤར་བྱེད་བཞིན་པ །" },
   "buttonLabel_dismiss": { "message": "འདོར་བ།" },
   "link_viewChanges": { "message": "ཐེངས་རྗེས་མའི་བཟོ་བཅོས །" }
 }

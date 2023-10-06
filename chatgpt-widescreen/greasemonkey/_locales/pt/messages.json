@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "está atualizado" },
   "alert_pressF11": { "message": "Pressione F11 para sair do modo de Tela Cheia" },
   "alert_f11reason": { "message": "F11 foi usado para entrar no modo de Tela Cheia e, por razões de segurança do navegador, a mesma tecla deve ser usada para sair" },
-  "buttonLabel_updateCheck": { "message": "Verificar Atualizações" },
   "buttonLabel_update": { "message": "Atualizar" },
+  "buttonLabel_updateCheck": { "message": "Verificar Atualizações" },
   "buttonLabel_dismiss": { "message": "Ignorar" },
   "link_viewChanges": { "message": "Ver Alterações" }
 }

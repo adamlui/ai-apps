@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "مُحدَّث" },
   "alert_pressF11": { "message": "اضغط على F11 للخروج من وضع ملء الشاشة" },
   "alert_f11reason": { "message": "تم استخدام F11 للدخول إلى وضع ملء الشاشة، وبسبب أسباب أمنية في المتصفح، يجب استخدام نفس المفتاح للخروج منه" },
-  "buttonLabel_updateCheck": { "message": "مرابة التحديثات" },
   "buttonLabel_update": { "message": "تحديث" },
+  "buttonLabel_updateCheck": { "message": "مرابة التحديثات" },
   "buttonLabel_dismiss": { "message": "رفض" },
   "link_viewChanges": { "message": "عرض سجل التغييرات" }
 }

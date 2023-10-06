@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "är aktuell" },
   "alert_pressF11": { "message": "Tryck på F11 för att avsluta helskärmsläge" },
   "alert_f11reason": { "message": "F11 användes för att komma in i helskärm, och på grund av webbläsarens säkerhetsskäl måste samma nyckel användas för att avsluta den" },
-  "buttonLabel_updateCheck": { "message": "Kolla efter uppdateringar" },
   "buttonLabel_update": { "message": "Uppdatera" },
+  "buttonLabel_updateCheck": { "message": "Kolla efter uppdateringar" },
   "buttonLabel_dismiss": { "message": "Avfärda" },
   "link_viewChanges": { "message": "Visa ändringar" }
 }

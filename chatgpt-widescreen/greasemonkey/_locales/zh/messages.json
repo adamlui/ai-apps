@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "已更新" },
   "alert_pressF11": { "message": "按下F11键退出全屏模式" },
   "alert_f11reason": { "message": "使用F11键进入全屏模式，由于浏览器安全原因，必须使用同样的按键退出全屏模式" },
-  "buttonLabel_updateCheck": { "message": "检查更新" },
   "buttonLabel_update": { "message": "更新" },
+  "buttonLabel_updateCheck": { "message": "检查更新" },
   "buttonLabel_dismiss": { "message": "关闭" },
   "link_viewChanges": { "message": "查看更改" }
 }

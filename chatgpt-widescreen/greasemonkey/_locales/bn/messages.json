@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "আপ টু ডেট" },
   "alert_pressF11": { "message": "সম্পূর্ণ পর্দা থেকে প্রস্থান করতে F11 চাপুন" },
   "alert_f11reason": { "message": "F11 পূর্ণ পর্দায় প্রবেশ করতে ব্যবহৃত হয়, এবং ব্রাউজার নিরাপত্তা কারণে, এটি প্রস্থান করার জন্য একই কী ব্যবহার করা আবশ্যক" },
-  "buttonLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
   "buttonLabel_update": { "message": "আপডেট করুন" },
+  "buttonLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
   "buttonLabel_dismiss": { "message": "খারিজ করুন" },
   "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" }
 }

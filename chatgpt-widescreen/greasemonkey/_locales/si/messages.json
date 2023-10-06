@@ -29,8 +29,8 @@
   "alert_isUpToDate": { "message": "යාවත් කාළීන:" },
   "alert_pressF11": { "message": "සම්පූර්ණ තිරයෙන් පිටවීමට F11 ඔබන්න" },
   "alert_f11reason": { "message": "F11 පූර්ණ තිරය ඇතුළු කිරීමට භාවිතා කරන ලද අතර, බ්රවුසරයේ ආරක්ෂක හේතූන් නිසා, එය පිටවීම සඳහා එකම යතුර භාවිතා කළ යුතුය." },
-  "buttonLabel_updateCheck": { "message": "යාවත්කාලීන සඳහා පරීක්ෂා කරන්න" },
   "buttonLabel_update": { "message": "යාවත් කාළීන:" },
+  "buttonLabel_updateCheck": { "message": "යාවත්කාලීන සඳහා පරීක්ෂා කරන්න" },
   "buttonLabel_dismiss": { "message": "ඉවතලන්න" },
   "link_viewChanges": { "message": "වෙනස්කම් බලන්න" }
 }
