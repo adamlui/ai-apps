@@ -22,7 +22,7 @@
   "alert_onTopicOf": { "message": "па тэме" },
   "alert_onAllTopics": { "message": "па ўсіх тэмах" },
   "alert_replyIntUpdated": { "message": "Інтэрвал абноўлены" },
-  "alert_willReplyEvery": { "message": "ChatGPT Infinity адкажа кожнаму" },
+  "alert_willReplyEvery": { "message": "адкажа кожнаму" },
   "alert_updateAvail": { "message": "Ёсць абнаўленне" },
   "alert_newerVer": { "message": "Абнаўленне да" },
   "alert_isAvail": { "message": "даступны" },
@@ -33,6 +33,6 @@
   "buttonLabel_dismiss": { "message": "Адхіліць" },
   "link_viewChanges": { "message": "Прагледзець змены" },
   "unit_seconds": { "message": "секунд" },
-  "state_enabled": { "message": "XYZ/ альфа- канал" },
+  "state_enabled": { "message": "уключаны" },
   "state_disabled": { "message": "адключаны" }
 }
