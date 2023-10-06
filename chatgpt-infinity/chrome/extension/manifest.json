@@ -18,7 +18,7 @@
         "resources": ["lib/settings-utils.js", "lib/chatgpt.js"]
     }],
     "content_scripts": [{
-        "matches": ["<all_urls>"],
+        "matches": ["https://chat.openai.com/*"],
         "js": ["content.js"]
     }],
     "background": { "service_worker": "background.js" }
