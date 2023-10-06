@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Celá obrazovka" },
   "tooltip_fullScreenOFF": { "message": "Ukončit celou obrazovku" },
   "tooltip_newChat": { "message": "Nový chat" },
+  "alert_choosePlatform": { "message": "Vyberte platformu" },
   "alert_updateAvail": { "message": "Aktualizace k dispozici" },
   "alert_newerVer": { "message": "Aktualizace na" },
   "alert_isAvail": { "message": "je k dispozici" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 byl použit pro vstup na celou obrazovku a z bezpečnostních důvodů prohlížeče musí být stejný klíč použit pro jeho ukončení" },
   "buttonLabel_update": { "message": "Aktualizovat" },
   "buttonLabel_updateCheck": { "message": "Zjistit novější verzi" },
+  "buttonLabel_leaveReview": { "message": "Napsat hodnocení" },
   "buttonLabel_dismiss": { "message": "Zamítnout" },
   "link_viewChanges": { "message": "Zobrazit změny" }
 }

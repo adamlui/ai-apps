@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Clara" },
   "tooltip_fullScreenOFF": { "message": "Próximo Full Screen" },
   "tooltip_newChat": { "message": "New chat" },
+  "alert_choosePlatform": { "message": "Mutare platform" },
   "alert_updateAvail": { "message": "Avete il presente" },
   "alert_newerVer": { "message": "Un invito a un nuovo" },
   "alert_isAvail": { "message": "existimat" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "Recte, utrumque, utrumque sit, et" },
   "buttonLabel_update": { "message": "opus" },
   "buttonLabel_updateCheck": { "message": "Votre mail pour notre newsletter" },
+  "buttonLabel_leaveReview": { "message": "Retinere" },
   "buttonLabel_dismiss": { "message": "dimitto" },
   "link_viewChanges": { "message": "Vedi anche l 'accendenza" }
 }

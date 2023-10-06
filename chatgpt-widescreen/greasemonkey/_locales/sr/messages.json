@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Rasiri na celi ekran" },
   "tooltip_fullScreenOFF": { "message": "Напусти ц‹ ио екранEncodings menu" },
   "tooltip_newChat": { "message": "Novo ćaskanje" },
+  "alert_choosePlatform": { "message": "Izaberite platformu" },
   "alert_updateAvail": { "message": "Dostupna nadogradnja" },
   "alert_newerVer": { "message": "Ažuriranje za" },
   "alert_isAvail": { "message": "je dostupna" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 je korišćen za ulazak preko celog ekrana, a zbog bezbednosnih razloga pregledača, isti ključ mora biti korišćen za izlazak iz njega" },
   "buttonLabel_update": { "message": "Ažuriraj" },
   "buttonLabel_updateCheck": { "message": "Провери допуне" },
+  "buttonLabel_leaveReview": { "message": "Ostavite komentar i ocenite turu." },
   "buttonLabel_dismiss": { "message": "Odbaci" },
   "link_viewChanges": { "message": "Prikaži promjene" }
 }

@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Pantalla completa" },
   "tooltip_fullScreenOFF": { "message": "Surt de la pantalla completa" },
   "tooltip_newChat": { "message": "Nou xat" },
+  "alert_choosePlatform": { "message": "Tria una plataforma" },
   "alert_updateAvail": { "message": "Nova versió disponible!" },
   "alert_newerVer": { "message": "Una actualització a" },
   "alert_isAvail": { "message": "està disponible" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 es va utilitzar per entrar a pantalla completa, i a causa de raons de seguretat del navegador, s'ha d'utilitzar la mateixa clau per sortir-ne" },
   "buttonLabel_update": { "message": "Actualització" },
   "buttonLabel_updateCheck": { "message": "Comprova si hi ha actualitzacions" },
+  "buttonLabel_leaveReview": { "message": "Deixa una ressenya" },
   "buttonLabel_dismiss": { "message": "Descarta" },
   "link_viewChanges": { "message": "Mostra els canvis" }
 }

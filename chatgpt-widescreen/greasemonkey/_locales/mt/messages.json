@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Full-Screen" },
   "tooltip_fullScreenOFF": { "message": "Oħroġ mill-Full-Screen" },
   "tooltip_newChat": { "message": "Chat ġdida" },
+  "alert_choosePlatform": { "message": "AGĦŻEL PJATTAFORMA" },
   "alert_updateAvail": { "message": "Aġġorna disponibbli" },
   "alert_newerVer": { "message": "Aġġornament għal" },
   "alert_isAvail": { "message": "huwa disponibbli" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 intuża biex jidħol l-iskrin sħiħ, u minħabba raġunijiet ta 'sigurtà tal-browser, l-istess ċavetta trid tintuża biex toħroġha" },
   "buttonLabel_update": { "message": "Aġġornament" },
   "buttonLabel_updateCheck": { "message": "Iċċekkja għall-aġġornamenti?" },
+  "buttonLabel_leaveReview": { "message": "Ħalli Review" },
   "buttonLabel_dismiss": { "message": "Tagħtix kas" },
   "link_viewChanges": { "message": "Ara l-bidliet" }
 }

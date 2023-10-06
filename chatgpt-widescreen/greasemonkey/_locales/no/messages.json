@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Fullskjerm" },
   "tooltip_fullScreenOFF": { "message": "Avslutt full skjerm" },
   "tooltip_newChat": { "message": "Ny chat" },
+  "alert_choosePlatform": { "message": "Velg en plattform" },
   "alert_updateAvail": { "message": "Oppdatering tilgjengelig" },
   "alert_newerVer": { "message": "En oppdatering til" },
   "alert_isAvail": { "message": "tilgjengelig" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 ble brukt til å gå inn i fullskjerm, og på grunn av nettlesersikkerhetsårsaker må samme nøkkel brukes for å avslutte den" },
   "buttonLabel_update": { "message": "Oppdater" },
   "buttonLabel_updateCheck": { "message": "Se etter oppdateringer" },
+  "buttonLabel_leaveReview": { "message": "Legg igjen en anmeldelse" },
   "buttonLabel_dismiss": { "message": "Ignorer" },
   "link_viewChanges": { "message": "Vis endringer" }
 }

@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Full screen" },
   "tooltip_fullScreenOFF": { "message": "Exit full screen" },
   "tooltip_newChat": { "message": "New chat" },
+  "alert_choosePlatform": { "message": "Choose a platform" },
   "alert_updateAvail": { "message": "Update available" },
   "alert_newerVer": { "message": "An update to" },
   "alert_isAvail": { "message": "is available" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 was used to enter full screen, and due to browser security reasons, the same key must be used to exit it" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_updateCheck": { "message": "Check for Updates" },
+  "buttonLabel_leaveReview": { "message": "Leave a Review" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "View changes" }
 }

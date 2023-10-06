@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Tam ekran" },
   "tooltip_fullScreenOFF": { "message": "Tam ekrandan çıxın" },
   "tooltip_newChat": { "message": "Yeni söhbət" },
+  "alert_choosePlatform": { "message": "Platforma seçin" },
   "alert_updateAvail": { "message": "Mövcud Güncelle" },
   "alert_newerVer": { "message": "Yenilənmə" },
   "alert_isAvail": { "message": "mövcud deyil" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 tam ekrana daxil olmaq üçün istifadə edildi və brauzer təhlükəsizliyi səbəbilə eyni düymə ondan çıxmaq üçün istifadə edilməlidir" },
   "buttonLabel_update": { "message": "Yenilə" },
   "buttonLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
+  "buttonLabel_leaveReview": { "message": "Rəy bildirin" },
   "buttonLabel_dismiss": { "message": "Bağla" },
   "link_viewChanges": { "message": "Dəyişikliklərə bax" }
 }

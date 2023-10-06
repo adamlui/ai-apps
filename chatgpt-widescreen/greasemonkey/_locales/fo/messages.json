@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Fult skjal" },
   "tooltip_fullScreenOFF": { "message": "Útgáva fullskránna" },
   "tooltip_newChat": { "message": "Nýtt chat" },
+  "alert_choosePlatform": { "message": "Vel eina platform" },
   "alert_updateAvail": { "message": "Dagføring er klár" },
   "alert_newerVer": { "message": "Ein dagføring til" },
   "alert_isAvail": { "message": "er tøkt" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 var brúkt til at koma inn í fulla skjalið, og av tí at flogfarið er tryggjað, eigur tað at verða brúkt til at fara út úr henni." },
   "buttonLabel_update": { "message": "Dagfør" },
   "buttonLabel_updateCheck": { "message": "Hygg eftir UPDATE" },
+  "buttonLabel_leaveReview": { "message": "Skriva eina gjøgnumgongd" },
   "buttonLabel_dismiss": { "message": "Avrita" },
   "link_viewChanges": { "message": "Sýn broytingar" }
 }

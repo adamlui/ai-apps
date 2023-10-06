@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Mata tonu" },
   "tooltip_fullScreenOFF": { "message": "Puta atu mata tonu" },
   "tooltip_newChat": { "message": "Kōrerorero hou" },
+  "alert_choosePlatform": { "message": "Kōwhiri i tētahi papa" },
   "alert_updateAvail": { "message": "Ngā whakahōu e wātea ana" },
   "alert_newerVer": { "message": "He whakahou ki" },
   "alert_isAvail": { "message": "kei te wātea ahau" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "I whakamahia te F11 ki te whakauru i te mata katoa, na te take o te haumarutanga o te tirotiro, me whakamahi te ki ano ki te puta atu" },
   "buttonLabel_update": { "message": "Whakahou" },
   "buttonLabel_updateCheck": { "message": "Tirohia ngā whakahōu" },
+  "buttonLabel_leaveReview": { "message": "Waiho he arotake" },
   "buttonLabel_dismiss": { "message": "Muku" },
   "link_viewChanges": { "message": "Tirohia ngā panoni" }
 }

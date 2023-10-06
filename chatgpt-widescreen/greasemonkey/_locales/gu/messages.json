@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "પૂર્ણ સ્ક્રીન" },
   "tooltip_fullScreenOFF": { "message": "પૂર્ણ સ્ક્રીનમાંથી બહાર નીકળો" },
   "tooltip_newChat": { "message": "નવી વાર્તાલાપ" },
+  "alert_choosePlatform": { "message": "એક પ્લેટફોર્મ પસંદ કરો" },
   "alert_updateAvail": { "message": "સુધારો ઉપલબ્ધ" },
   "alert_newerVer": { "message": "માં સુધારો" },
   "alert_isAvail": { "message": "ઉપલબ્ધ છે" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 નો ઉપયોગ સંપૂર્ણ સ્ક્રીન દાખલ કરવા માટે કરવામાં આવ્યો હતો, અને બ્રાઉઝર સુરક્ષા કારણોસર, તે જ કીનો ઉપયોગ તેમાંથી બહાર નીકળવા માટે કરવો આવશ્યક છે" },
   "buttonLabel_update": { "message": "અદ્યતન બનાવો" },
   "buttonLabel_updateCheck": { "message": "નવાં ભાગ(ઓ) માટે ચકાસો" },
+  "buttonLabel_leaveReview": { "message": "સમીક્ષા મૂકો" },
   "buttonLabel_dismiss": { "message": "કાઢી મૂકવું" },
   "link_viewChanges": { "message": "ફેરફારો જુઓ" }
 }

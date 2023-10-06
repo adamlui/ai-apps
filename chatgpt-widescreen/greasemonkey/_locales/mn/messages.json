@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Цонхны дэлгэц" },
   "tooltip_fullScreenOFF": { "message": "Бүтэн дэлгэцийн горимоос гарах" },
   "tooltip_newChat": { "message": "Шинэ чат" },
+  "alert_choosePlatform": { "message": "Платформыг сонгоно уу" },
   "alert_updateAvail": { "message": "Шинэчлэх (update) боломжтой" },
   "alert_newerVer": { "message": "Шинэчлэх" },
   "alert_isAvail": { "message": "нэвтрэх боломжтой" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "FF11, Тохируулах, аюулгүй байдал, аюулгүй байдал, аюулгүй байдал, аюулгүй байдал, аюулгүй байдал, аюулгүй байдал, аюулгүй байдал" },
   "buttonLabel_update": { "message": "Шинэчлэх" },
   "buttonLabel_updateCheck": { "message": "Шинэчлэлтийг шинэчлэх" },
+  "buttonLabel_leaveReview": { "message": "Сэтгэгдэл үлдээх" },
   "buttonLabel_dismiss": { "message": "Дуусах" },
   "link_viewChanges": { "message": "Хүмүүсийг харах" }
 }

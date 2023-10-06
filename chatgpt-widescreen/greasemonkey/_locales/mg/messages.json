@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Mameno efijery" },
   "tooltip_fullScreenOFF": { "message": "Mameno efijery" },
   "tooltip_newChat": { "message": "Tamy_ts chat" },
+  "alert_choosePlatform": { "message": "Misafidiana sehatra iray" },
   "alert_updateAvail": { "message": "Azo atao ny manova" },
   "alert_newerVer": { "message": "Hanova ny vaovao" },
   "alert_isAvail": { "message": "azo atao" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "Ny fampiasana ny tranonkala dia tsy maintsy ampiasaina, ary tsy maintsy ampiasaina ho an'ny rehetra." },
   "buttonLabel_update": { "message": "Vaovao farany" },
   "buttonLabel_updateCheck": { "message": "Jereo ny vaovao momba ny famerenana" },
+  "buttonLabel_leaveReview": { "message": "Mametraha fanamarihana" },
   "buttonLabel_dismiss": { "message": "Hiditra" },
   "link_viewChanges": { "message": "Jereo ny fiovana" }
 }

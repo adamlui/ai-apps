@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Pilnekrāna režīms" },
   "tooltip_fullScreenOFF": { "message": "Iziet no pilnekrāna režīma" },
   "tooltip_newChat": { "message": "Jauns čats" },
+  "alert_choosePlatform": { "message": "Izvēlieties platformu" },
   "alert_updateAvail": { "message": "Pieejams jauninājums" },
   "alert_newerVer": { "message": "Atjauninājums uz" },
   "alert_isAvail": { "message": "ir pieejams!" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 tika izmantots, lai ieietu pilnekrāna režīmā, un pārlūkprogrammas drošības apsvērumu dēļ, lai to izietu, ir jāizmanto tā pati atslēga" },
   "buttonLabel_update": { "message": "Atjauninināt" },
   "buttonLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi." },
+  "buttonLabel_leaveReview": { "message": "Atstāt atsauksmi?" },
   "buttonLabel_dismiss": { "message": "Noraidīt" },
   "link_viewChanges": { "message": "Skatīt izmaiņas" }
 }

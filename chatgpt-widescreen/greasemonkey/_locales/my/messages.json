@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "မျက်နှာပြင်အပြည့်အစုံ" },
   "tooltip_fullScreenOFF": { "message": "မျက်နှာပြင်အပြည့်မှ ထွက်ပါ" },
   "tooltip_newChat": { "message": "စကားပြောဆိုမှုအသစ်" },
+  "alert_choosePlatform": { "message": "ပလက်ဖောင်းကို ရွေးပါ" },
   "alert_updateAvail": { "message": "အသစ်မထွက်သေး" },
   "alert_newerVer": { "message": "သို့ အပ်ဒိတ်လုပ်ရန်" },
   "alert_isAvail": { "message": "ရရှိနိုင်ပါသည်" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 ကို screen အပြည့်အစုံထဲသို့ဝင်ရန်အသုံးပြုခဲ့ပြီး browser လုံခြုံရေးအကြောင်းပြချက်များကြောင့် ၎ င်းကိုထွက်ခွာရန်တူညီသောကီးကိုအသုံးပြုရမည် ။" },
   "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
   "buttonLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
+  "buttonLabel_leaveReview": { "message": "တစ်ဦးပြန်လည်ဆန်းစစ်ခြင်း Leave" },
   "buttonLabel_dismiss": { "message": "ပယ်ဖျက်မည်" },
   "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ပါ" }
 }

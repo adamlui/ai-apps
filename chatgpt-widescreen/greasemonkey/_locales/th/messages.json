@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "เต็มหน้าจอ" },
   "tooltip_fullScreenOFF": { "message": "ออกจากเต็มหน้าจอ" },
   "tooltip_newChat": { "message": "แชทใหม่" },
+  "alert_choosePlatform": { "message": "เลือกแพลตฟอร์ม" },
   "alert_updateAvail": { "message": "มีอัพเดตให้ใช้งาน" },
   "alert_newerVer": { "message": "อัพเดทไปยัง" },
   "alert_isAvail": { "message": "มี   ให้ใช้งานแล้ว" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 ถูกใช้เพื่อเข้าสู่แบบเต็มหน้าจอและเนื่องจากเหตุผลด้านความปลอดภัยของเบราว์เซอร์จึงต้องใช้คีย์เดียวกันเพื่อออกจากหน้าจอ" },
   "buttonLabel_update": { "message": "อัปเดต" },
   "buttonLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
+  "buttonLabel_leaveReview": { "message": "ออกจากการรีวิว" },
   "buttonLabel_dismiss": { "message": "ยกเลิก" },
   "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" }
 }

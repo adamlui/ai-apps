@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Skrini kamili" },
   "tooltip_fullScreenOFF": { "message": "Toka kwenye skrini nzima" },
   "tooltip_newChat": { "message": "New chat" },
+  "alert_choosePlatform": { "message": "Chagua tovuti" },
   "alert_updateAvail": { "message": "Sasisho lipo" },
   "alert_newerVer": { "message": "Taarifa ya" },
   "alert_isAvail": { "message": "inapatikana" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 ilitumiwa kuingia skrini kamili, na kutokana na sababu za usalama wa kivinjari, ufunguo huo lazima utumike kuiondoa" },
   "buttonLabel_update": { "message": "Sasisho" },
   "buttonLabel_updateCheck": { "message": "Angalia Masasisho" },
+  "buttonLabel_leaveReview": { "message": "Acha Tathmini" },
   "buttonLabel_dismiss": { "message": "Puuza" },
   "link_viewChanges": { "message": "Angalia mabadiliko" }
 }

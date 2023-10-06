@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Fultaim Screen" },
   "tooltip_fullScreenOFF": { "message": "Rausim olgeta piksa" },
   "tooltip_newChat": { "message": "Nupela chat" },
+  "alert_choosePlatform": { "message": "Piksaim wanpela platform" },
   "alert_updateAvail": { "message": "Tok pisin i go pinis" },
   "alert_newerVer": { "message": "I wan update" },
   "alert_isAvail": { "message": "em i kamap pinis" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 i bin yusim long go insait long olgeta piksa, na long wanem, man i mas yusim wankain ki bilong lusim dispela piksa." },
   "buttonLabel_update": { "message": "Toksave" },
   "buttonLabel_updateCheck": { "message": "Lukim ol eleksen" },
+  "buttonLabel_leaveReview": { "message": "Leave a review" },
   "buttonLabel_dismiss": { "message": "Rausim" },
   "link_viewChanges": { "message": "Lukim ol senis" }
 }

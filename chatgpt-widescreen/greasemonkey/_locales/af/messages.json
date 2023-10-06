@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Volskerm" },
   "tooltip_fullScreenOFF": { "message": "Verlaat Volskerm Modus" },
   "tooltip_newChat": { "message": "Nuwe geselsie" },
+  "alert_choosePlatform": { "message": "Kies 'n platform" },
   "alert_updateAvail": { "message": "Opdatering beskikbaar" },
   "alert_newerVer": { "message": "'n Opdatering na" },
   "alert_isAvail": { "message": "is beskikbaar" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 is gebruik om volle skerm in te voer, en as gevolg van die leser sekuriteit redes, moet dieselfde sleutel gebruik word om dit te verlaat" },
   "buttonLabel_update": { "message": "Opdateer" },
   "buttonLabel_updateCheck": { "message": "Kontroleer vir bywerkings" },
+  "buttonLabel_leaveReview": { "message": "Los Kommentaar" },
   "buttonLabel_dismiss": { "message": "Laat vaar" },
   "link_viewChanges": { "message": "Besigtig veranderinge" }
 }

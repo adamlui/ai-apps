@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "ምሉእ ስክሪን" },
   "tooltip_fullScreenOFF": { "message": "ምሉእ ስክሪን ወጻኢ" },
   "tooltip_newChat": { "message": "ሓድሽ ዝርርብ" },
+  "alert_choosePlatform": { "message": "መድረኽ ምረጽ" },
   "alert_updateAvail": { "message": "ዝርከብ ምምሕያሽ" },
   "alert_newerVer": { "message": "ምምሕያሽ ናብ" },
   "alert_isAvail": { "message": "ክርከብ ይከኣል እዩ" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 ምሉእ ስክሪን ንምእታው ተጠቒሙ ነይሩ ፣ ብሰንኪ ናይ ኣሳሽ ውሕስነት ምኽንያታት ድማ ሓደ ዓይነት መፍትሕ ንምውጻእ ኣብ ጥቕሚ ክውዕል ኣለዎ" },
   "buttonLabel_update": { "message": "ኣሐድስ" },
   "buttonLabel_updateCheck": { "message": "ምምሕያሻት መርምር" },
+  "buttonLabel_leaveReview": { "message": "ግምገማ ሓዲግካ" },
   "buttonLabel_dismiss": { "message": "ምጥፋእ" },
   "link_viewChanges": { "message": "ለውጢ ርአ" }
 }

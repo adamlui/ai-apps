@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "फुलस्क्रीन मोड" },
   "tooltip_fullScreenOFF": { "message": "फुलस्क्रीन से बाहर निकलें" },
   "tooltip_newChat": { "message": "नया चैट" },
+  "alert_choosePlatform": { "message": "कोई प्लैटफ़ॉर्म चुनें" },
   "alert_updateAvail": { "message": "अद्यतन उपलब्ध है" },
   "alert_newerVer": { "message": "एक अद्यतन उपलब्ध है" },
   "alert_isAvail": { "message": "उपलब्ध है" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "फुलस्क्रीन मोड में जाने के लिए F11 का उपयोग किया गया था, और ब्राउज़र सुरक्षा कारणों से, उसी कुंजी का उपयोग करके बाहर निकलना चाहिए" },
   "buttonLabel_update": { "message": "अद्यतन करें" },
   "buttonLabel_updateCheck": { "message": "अद्यतन की जांच करें" },
+  "buttonLabel_leaveReview": { "message": "समीक्षा लिखें" },
   "buttonLabel_dismiss": { "message": "खारिज करें" },
   "link_viewChanges": { "message": "परिवर्तन देखें" }
 }

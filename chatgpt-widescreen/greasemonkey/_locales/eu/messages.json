@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Pantaila osoa" },
   "tooltip_fullScreenOFF": { "message": "Familia" },
   "tooltip_newChat": { "message": "Txat berria" },
+  "alert_choosePlatform": { "message": "Aukeratu plataforma bat" },
   "alert_updateAvail": { "message": "Ez dago azalpenik erabilgarri." },
   "alert_newerVer": { "message": "Eguneratze bat" },
   "alert_isAvail": { "message": "eskuragarri dago" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 pantaila osoan sartzeko erabili zen, eta arakatzailearen segurtasun arrazoiak direla eta, gako bera erabili behar da bertatik irteteko" },
   "buttonLabel_update": { "message": "Eguneratu" },
   "buttonLabel_updateCheck": { "message": "Begiratu _eguneraketak: " },
+  "buttonLabel_leaveReview": { "message": "Utzi Iritzia" },
   "buttonLabel_dismiss": { "message": "Bistatik kendu" },
   "link_viewChanges": { "message": "Ikusi aldaketak" }
 }

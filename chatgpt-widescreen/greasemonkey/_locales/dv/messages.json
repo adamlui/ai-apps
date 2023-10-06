@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "ފުލް ސްކްރީން" },
   "tooltip_fullScreenOFF": { "message": "ފުލް ސްކްރީނުން ނިކުންނަނީ" },
   "tooltip_newChat": { "message": "އާ ޗެޓް" },
+  "alert_choosePlatform": { "message": "ޕްލެޓްފޯމެއް އިޚްތިޔާރު ކުރޭ" },
   "alert_updateAvail": { "message": "ލިބެން ހުރި އަޕްޑޭޓް" },
   "alert_newerVer": { "message": "އަޕްޑޭޓެއް" },
   "alert_isAvail": { "message": "ލިބެން ހުންނާނެ" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "ފުލް ސްކްރީނަށް ވަނުމަށް އެފް11 ބޭނުންކުރި އިރު، ބްރައުޒާ ސެކިއުރިޓީ ސަބަބުތަކާ ހުރެ، އެ ތަޅުދަނޑިން ނުކުތުމަށް ބޭނުންކުރަން ޖެހެނީ ހަމަ ތަޅުދަނޑި" },
   "buttonLabel_update": { "message": "އަޕްޑޭޓް" },
   "buttonLabel_updateCheck": { "message": "އަޕްޑޭޓްތައް ބަލާށެވެ" },
+  "buttonLabel_leaveReview": { "message": "ލީވް އަ ރިވިއު" },
   "buttonLabel_dismiss": { "message": "މަގާމުން ވަކިކުރުން" },
   "link_viewChanges": { "message": "ވިއު ޗޭންޖްސް" }
 }

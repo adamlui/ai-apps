@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Plenekrano" },
   "tooltip_fullScreenOFF": { "message": "Forlasi tutekranan manieronEncodings menu" },
   "tooltip_newChat": { "message": "Nova babilejo" },
+  "alert_choosePlatform": { "message": "Elekti platformon" },
   "alert_updateAvail": { "message": "Neniu priskribo disponebla" },
   "alert_newerVer": { "message": "Ĝisdatigo al" },
   "alert_isAvail": { "message": "estas disponebla" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 kutimis eniri plenan ekranon, kaj pro retumilaj sekureckialoj, la sama ŝlosilo devas esti utiligita por forlasi ĝin." },
   "buttonLabel_update": { "message": "Ĝisdatigi" },
   "buttonLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
+  "buttonLabel_leaveReview": { "message": "Lasi revizion" },
   "buttonLabel_dismiss": { "message": "Malakcepti" },
   "link_viewChanges": { "message": "Montri ŝanĝojn" }
 }

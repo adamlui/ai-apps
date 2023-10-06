@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Tele screen ya fy full screen" },
   "tooltip_fullScreenOFF": { "message": "Exit fy full screen" },
   "tooltip_newChat": { "message": "Lesha chat" },
+  "alert_choosePlatform": { "message": "Saleni icikuulwa" },
   "alert_updateAvail": { "message": "Update bali" },
   "alert_newerVer": { "message": "Update ku ya" },
   "alert_isAvail": { "message": "ifintu tafilipo" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "(src) = \"10\" &gt; Ba F11 balibomfeshe pa kuti baingila mu cifulo conse, kabili pa mulandu wa kuti bacingililwe pa mulandu wa kucingililwa, e lyo ne mulandu wine mufwile ukubomfya ifyebo." },
   "buttonLabel_update": { "message": "Ica Update" },
   "buttonLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
+  "buttonLabel_leaveReview": { "message": "Lekisha Review" },
   "buttonLabel_dismiss": { "message": "Dismiss Fela Kuti" },
   "link_viewChanges": { "message": "View ayaluka" }
 }

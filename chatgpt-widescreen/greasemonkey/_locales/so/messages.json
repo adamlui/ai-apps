@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Shaashad buuxda" },
   "tooltip_fullScreenOFF": { "message": "Ka bax shaashadda oo dhan" },
   "tooltip_newChat": { "message": "Wadahadal cusub" },
+  "alert_choosePlatform": { "message": "Dooro barxad" },
   "alert_updateAvail": { "message": "Cusboonaysiinta waa la heli karaa" },
   "alert_newerVer": { "message": "Cusboonaysiinta" },
   "alert_isAvail": { "message": "waa la heli karaa" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 waxaa loo isticmaalay in lagu galo shaashad buuxda, sababo la xiriira amniga biraawsarka, isla furaha waa in loo adeegsadaa inuu ka baxo." },
   "buttonLabel_update": { "message": "Cusboonaysiinta" },
   "buttonLabel_updateCheck": { "message": "Hubi Cusbooneysiinta" },
+  "buttonLabel_leaveReview": { "message": "Ka tag dib u eegis" },
   "buttonLabel_dismiss": { "message": "Xil ka qaad" },
   "link_viewChanges": { "message": "Eeg isbeddelada" }
 }

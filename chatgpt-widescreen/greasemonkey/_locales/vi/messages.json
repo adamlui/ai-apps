@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Toàn màn hình" },
   "tooltip_fullScreenOFF": { "message": "Thoát toàn màn hình" },
   "tooltip_newChat": { "message": "Obrolan baru" },
+  "alert_choosePlatform": { "message": "Chọn một nền tảng" },
   "alert_updateAvail": { "message": "Cập nhật có sẵn" },
   "alert_newerVer": { "message": "bản cập nhật" },
   "alert_isAvail": { "message": "is available" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 được sử dụng để vào chế độ toàn màn hình và vì lý do bảo mật trình duyệt, khóa tương tự phải được sử dụng để thoát khỏi nó." },
   "buttonLabel_update": { "message": "Cập nhật" },
   "buttonLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
+  "buttonLabel_leaveReview": { "message": "Đánh giá" },
   "buttonLabel_dismiss": { "message": "Bỏ qua" },
   "link_viewChanges": { "message": "Xem thay đổi" }
 }

@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Повний екран" },
   "tooltip_fullScreenOFF": { "message": "Вийти з повноекранного режиму" },
   "tooltip_newChat": { "message": "Новий чат" },
+  "alert_choosePlatform": { "message": "Виберіть платформу" },
   "alert_updateAvail": { "message": "Доступне оновлення" },
   "alert_newerVer": { "message": "Доступне оновлення для" },
   "alert_isAvail": { "message": "доступно" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 була використана для входу в повноекранний режим, і з міркувань безпеки браузера для виходу з нього також потрібно використовувати ту саму клавішу" },
   "buttonLabel_update": { "message": "Оновити" },
   "buttonLabel_updateCheck": { "message": "Перевірити Оновлення" },
+  "buttonLabel_leaveReview": { "message": "Залишити відгук" },
   "buttonLabel_dismiss": { "message": "Відмінити" },
   "link_viewChanges": { "message": "Переглянути зміни" }
 }

@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Tela Cheia" },
   "tooltip_fullScreenOFF": { "message": "Sair da Tela Cheia" },
   "tooltip_newChat": { "message": "Novo Chat" },
+  "alert_choosePlatform": { "message": "Escolha uma plataforma" },
   "alert_updateAvail": { "message": "Atualização Disponível" },
   "alert_newerVer": { "message": "Uma atualização para" },
   "alert_isAvail": { "message": "está disponível" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 foi usado para entrar no modo de Tela Cheia e, por razões de segurança do navegador, a mesma tecla deve ser usada para sair" },
   "buttonLabel_update": { "message": "Atualizar" },
   "buttonLabel_updateCheck": { "message": "Verificar Atualizações" },
+  "buttonLabel_leaveReview": { "message": "Deixe um comentário" },
   "buttonLabel_dismiss": { "message": "Ignorar" },
   "link_viewChanges": { "message": "Ver Alterações" }
 }

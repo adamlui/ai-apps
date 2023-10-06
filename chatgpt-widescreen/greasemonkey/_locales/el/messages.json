@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Πλήρης οθόνη" },
   "tooltip_fullScreenOFF": { "message": "Έξοδος από πλήρη οθόνη" },
   "tooltip_newChat": { "message": "Νέα συνομιλία" },
+  "alert_choosePlatform": { "message": "Επιλέξτε μια πλατφόρμα" },
   "alert_updateAvail": { "message": "Υπάρχει διαθέσιμη ενημέρωση" },
   "alert_newerVer": { "message": "Ενημέρωση" },
   "alert_isAvail": { "message": "Μη διαθέσιμο" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "Το F11 χρησιμοποιήθηκε για την είσοδο σε πλήρη οθόνη και για λόγους ασφαλείας του προγράμματος περιήγησης, πρέπει να χρησιμοποιηθεί το ίδιο κλειδί για την έξοδο από αυτό" },
   "buttonLabel_update": { "message": "Ενημέρωση" },
   "buttonLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
+  "buttonLabel_leaveReview": { "message": "Κάντε μία κριτική" },
   "buttonLabel_dismiss": { "message": " Κλείσιμο" },
   "link_viewChanges": { "message": "Εμφάνιση αλλαγών" }
 }

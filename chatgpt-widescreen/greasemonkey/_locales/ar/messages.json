@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "وضع ملء الشاشة" },
   "tooltip_fullScreenOFF": { "message": "خروج من عرض ملء الشاشة" },
   "tooltip_newChat": { "message": "محادثة جديدة" },
+  "alert_choosePlatform": { "message": "اختر منصة" },
   "alert_updateAvail": { "message": "تحديث متوفر" },
   "alert_newerVer": { "message": "تحديث لـ" },
   "alert_isAvail": { "message": "متوفر" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "تم استخدام F11 للدخول إلى وضع ملء الشاشة، وبسبب أسباب أمنية في المتصفح، يجب استخدام نفس المفتاح للخروج منه" },
   "buttonLabel_update": { "message": "تحديث" },
   "buttonLabel_updateCheck": { "message": "مرابة التحديثات" },
+  "buttonLabel_leaveReview": { "message": "اترك تقييماً" },
   "buttonLabel_dismiss": { "message": "رفض" },
   "link_viewChanges": { "message": "عرض سجل التغييرات" }
 }

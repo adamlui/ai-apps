@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "بشپړه صفحه" },
   "tooltip_fullScreenOFF": { "message": "ټوله پرده بندولEncodings menu" },
   "tooltip_newChat": { "message": "نوی chat" },
+  "alert_choosePlatform": { "message": "یو پلیټ فارم غوره کړئ" },
   "alert_updateAvail": { "message": "اوسمهالیزې شته" },
   "alert_newerVer": { "message": "تازه کولو لپاره تازه کړئ" },
   "alert_isAvail": { "message": "شتون لري" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "کور ته اړتیا لري، او د دې لپاره چې د کورني حالت ته ورسیږي، دا باید د دوی د کارولو وړ وي." },
   "buttonLabel_update": { "message": "تازه کړئ" },
   "buttonLabel_updateCheck": { "message": "د تازه معلوماتو لپاره وګورئ" },
+  "buttonLabel_leaveReview": { "message": "بیاکتنه پریږدئ" },
   "buttonLabel_dismiss": { "message": "رد کردن" },
   "link_viewChanges": { "message": "بدلون وګورئ" }
 }

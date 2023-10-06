@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Vollbildmodus" },
   "tooltip_fullScreenOFF": { "message": "Vollbildmodus beenden" },
   "tooltip_newChat": { "message": "Neuer Chat" },
+  "alert_choosePlatform": { "message": "Wählen Sie eine Plattform" },
   "alert_updateAvail": { "message": "Update verfügbar" },
   "alert_newerVer": { "message": "Ein Update für" },
   "alert_isAvail": { "message": "ist verfügbar" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 wurde verwendet, um den Vollbildmodus zu aktivieren. Aus Sicherheitsgründen muss derselbe Schlüssel verwendet werden, um ihn zu beenden." },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_updateCheck": { "message": "Nach Updates suchen" },
+  "buttonLabel_leaveReview": { "message": "Bewertung hinterlassen" },
   "buttonLabel_dismiss": { "message": "Schließen" },
   "link_viewChanges": { "message": "Änderungen anzeigen" }
 }

@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Lau atoa" },
   "tooltip_fullScreenOFF": { "message": "Tuua le lau atoa" },
   "tooltip_newChat": { "message": "Chat fou" },
+  "alert_choosePlatform": { "message": "Filifili se tulaga" },
   "alert_updateAvail": { "message": "Fa'afouga o lo'o avanoa" },
   "alert_newerVer": { "message": "O se faafouga" },
   "alert_isAvail": { "message": "e avanoa" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 na faʻaaogaina e ulufale ai i le atoa lau, ma ona o le saogalemu o le browser, e tatau ona faʻaaogaina le ki lava e tasi e alu ese ai." },
   "buttonLabel_update": { "message": "Fa'afouga" },
   "buttonLabel_updateCheck": { "message": "Siaki mo faʻafouga" },
+  "buttonLabel_leaveReview": { "message": "Tuu se Toe Iloiloga" },
   "buttonLabel_dismiss": { "message": "Faate'a" },
   "link_viewChanges": { "message": "Vaʻai Suiga" }
 }

@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "A yeke na yâ ti écran ni kue" },
   "tooltip_fullScreenOFF": { "message": "Ti bâ ndo na ndo ti écran ni kue" },
   "tooltip_newChat": { "message": "Ti nouveau chat" },
+  "alert_choosePlatform": { "message": "Soro mbeni platforme" },
   "alert_updateAvail": { "message": "Aye so asi laso" },
   "alert_newerVer": { "message": "Yet ti be Update" },
   "alert_isAvail": { "message": "a yeke wara ni" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "A yeke sara kua na F11 ti lï na yâ ti mbeni écran so ayeke na yâ ni kue, na ndali ti aye so asara si azo ayeke na nzoni lege ti bâ ndo, a lingbi ti sara kua na oko clé ni ti sigigi na yâ ni." },
   "buttonLabel_update": { "message": "Aye so asi na yâ ti fini dunia" },
   "buttonLabel_updateCheck": { "message": "Gbu li ti mo na ndo ti aye so asi laso" },
+  "buttonLabel_leaveReview": { "message": "Gbu li ti mo na ndo ti mbeni ye so mo bâ" },
   "buttonLabel_dismiss": { "message": "Dessin ti amo" },
   "link_viewChanges": { "message": "Bingo Bango Change" }
 }

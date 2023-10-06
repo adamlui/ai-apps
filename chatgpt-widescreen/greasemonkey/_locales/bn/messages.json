@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "পুরো স্ক্রীন জুড়ে" },
   "tooltip_fullScreenOFF": { "message": "ফুল স্ক্রীণ থেকে বেরোওEncodings menu" },
   "tooltip_newChat": { "message": "নতুন চ্যাট" },
+  "alert_choosePlatform": { "message": "একটি প্ল্যাটফর্ম বেছে নিন" },
   "alert_updateAvail": { "message": "আপডেট উপলব্ধ" },
   "alert_newerVer": { "message": "-এ একটি আপডেট" },
   "alert_isAvail": { "message": "সহজলভ্য" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 পূর্ণ পর্দায় প্রবেশ করতে ব্যবহৃত হয়, এবং ব্রাউজার নিরাপত্তা কারণে, এটি প্রস্থান করার জন্য একই কী ব্যবহার করা আবশ্যক" },
   "buttonLabel_update": { "message": "আপডেট করুন" },
   "buttonLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
+  "buttonLabel_leaveReview": { "message": "একটি রিভিউ লিখুন" },
   "buttonLabel_dismiss": { "message": "খারিজ করুন" },
   "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" }
 }

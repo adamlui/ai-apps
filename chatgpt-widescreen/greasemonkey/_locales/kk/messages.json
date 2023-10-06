@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Толық экранға" },
   "tooltip_fullScreenOFF": { "message": "Толық экранға" },
   "tooltip_newChat": { "message": "Жаңа чат" },
+  "alert_choosePlatform": { "message": "Платформаны таңдау" },
   "alert_updateAvail": { "message": "Қолжетімді жаңарту" },
   "alert_newerVer": { "message": "Жаңарту" },
   "alert_isAvail": { "message": "қолжетімді" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 толық экранды енгізу үшін пайдаланылды, және браузердің қауіпсіздігіне байланысты, оны шығу үшін сол кілтті пайдалану керек" },
   "buttonLabel_update": { "message": "Жаңарту" },
   "buttonLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
+  "buttonLabel_leaveReview": { "message": "Пікір қалдыру" },
   "buttonLabel_dismiss": { "message": "Дисплейлер" },
   "link_viewChanges": { "message": "Өзгерістерді көру" }
 }

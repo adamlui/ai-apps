@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "_Isihenqo esigcwele" },
   "tooltip_fullScreenOFF": { "message": "Phuma esikrinini esigcwele" },
   "tooltip_newChat": { "message": "Ingxoxo entsha" },
+  "alert_choosePlatform": { "message": "Khetha inkundla" },
   "alert_updateAvail": { "message": "Okwakamuva Kuyatholakala" },
   "alert_newerVer": { "message": "Okwakamuva kokuthi" },
   "alert_isAvail": { "message": "iyatholakala" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "I-F11 yayisetshenziselwa ukufaka isikrini esigcwele, futhi ngenxa yezizathu zokuphepha zesiphequluli, inkinombho efanayo kufanele isetshenziswe ukuyikhipha" },
   "buttonLabel_update": { "message": "Buyekeza" },
   "buttonLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
+  "buttonLabel_leaveReview": { "message": "Shiya Okushiwo Abanye" },
   "buttonLabel_dismiss": { "message": "Susa" },
   "link_viewChanges": { "message": "Buka izinguquko" }
 }

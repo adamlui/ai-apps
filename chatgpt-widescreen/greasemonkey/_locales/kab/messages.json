@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Agdil Ačaran" },
   "tooltip_fullScreenOFF": { "message": "Ffeɣ seg ugdil aččuran" },
   "tooltip_newChat": { "message": "Adiwenni amaynut" },
+  "alert_choosePlatform": { "message": "Fren asebter" },
   "alert_updateAvail": { "message": "Yella lqem" },
   "alert_newerVer": { "message": "Aleqqem i" },
   "alert_isAvail": { "message": "yella" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 yettuseqdac i unekcum γer ugdil aččuran, s ssebba n tγellist n yiminig, yessefk ad yettuseqdec tasarut-nniḍen akken ad teffɣeḍ seg-s." },
   "buttonLabel_update": { "message": "Leqqem" },
   "buttonLabel_updateCheck": { "message": "Senqed ma llan ileqman" },
+  "buttonLabel_leaveReview": { "message": "Eǧǧ amagrad" },
   "buttonLabel_dismiss": { "message": "Agi" },
   "link_viewChanges": { "message": "Wali ibeddilen" }
 }

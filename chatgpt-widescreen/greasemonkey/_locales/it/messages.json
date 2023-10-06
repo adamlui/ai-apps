@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Schermo intero" },
   "tooltip_fullScreenOFF": { "message": "Esci dalla modalità schermo intero" },
   "tooltip_newChat": { "message": "Nuova chat" },
+  "alert_choosePlatform": { "message": "Scegli una piattaforma" },
   "alert_updateAvail": { "message": "Aggiornamento disponibile" },
   "alert_newerVer": { "message": "Un aggiornamento per" },
   "alert_isAvail": { "message": "è disponibile" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "È stato utilizzato F11 per entrare nella modalità schermo intero e, per motivi di sicurezza del browser, la stessa combinazione di tasti deve essere utilizzata per uscirne" },
   "buttonLabel_update": { "message": "Aggiorna" },
   "buttonLabel_updateCheck": { "message": "Verifica aggiornamenti" },
+  "buttonLabel_leaveReview": { "message": "Aggiungi una Valutazione" },
   "buttonLabel_dismiss": { "message": "Annulla" },
   "link_viewChanges": { "message": "Visualizza le modifiche" }
 }

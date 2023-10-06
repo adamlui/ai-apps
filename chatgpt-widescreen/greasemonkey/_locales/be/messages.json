@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Увесь экран" },
   "tooltip_fullScreenOFF": { "message": "Выйсці з поўнаэкраннага рэжыму" },
   "tooltip_newChat": { "message": "Новы чат" },
+  "alert_choosePlatform": { "message": "Выберыце платформу" },
   "alert_updateAvail": { "message": "Ёсць абнаўленне" },
   "alert_newerVer": { "message": "Абнаўленне да" },
   "alert_isAvail": { "message": "даступны" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 быў выкарыстаны для ўваходу на поўны экран, і з-за прычын бяспекі браўзэра, той жа ключ павінен быць выкарыстаны для выхаду з яго." },
   "buttonLabel_update": { "message": "Абноўлена " },
   "buttonLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
+  "buttonLabel_leaveReview": { "message": "Пакінуць водгук" },
   "buttonLabel_dismiss": { "message": "Адхіліць" },
   "link_viewChanges": { "message": "Прагледзець змены" }
 }

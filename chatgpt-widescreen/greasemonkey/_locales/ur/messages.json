@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "مکمل سکرین" },
   "tooltip_fullScreenOFF": { "message": "مکمل سکرین" },
   "tooltip_newChat": { "message": "نئی چیٹ (New chat)" },
+  "alert_choosePlatform": { "message": "ایک پلیٹ فارم منتخب کریں" },
   "alert_updateAvail": { "message": "اپڈیٹ دستیاب ہے" },
   "alert_newerVer": { "message": "کو اپ ڈیٹ کریں:" },
   "alert_isAvail": { "message": "دستیاب ہے." },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 مکمل اسکرین میں داخل ہونے کے لئے استعمال کیا گیا تھا، اور براؤزر سیکورٹی وجوہات کی وجہ سے، اسی کلید کو اس سے باہر نکلنے کے لئے استعمال کیا جانا چاہئے." },
   "buttonLabel_update": { "message": "اپ ڈیٹ " },
   "buttonLabel_updateCheck": { "message": "اپ ڈیٹس کی پڑتال کریں" },
+  "buttonLabel_leaveReview": { "message": "جائزہ دیں" },
   "buttonLabel_dismiss": { "message": "برخاست" },
   "link_viewChanges": { "message": "تبدیلیاں دیکھیں:" }
 }

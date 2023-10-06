@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Zobraziť na celú obrazovku" },
   "tooltip_fullScreenOFF": { "message": "Ukončiť režim celej obrazovky" },
   "tooltip_newChat": { "message": "Nový chat" },
+  "alert_choosePlatform": { "message": "Vyberte platformu" },
   "alert_updateAvail": { "message": "Aktualizácia k dispozícii" },
   "alert_newerVer": { "message": "Aktualizujte na" },
   "alert_isAvail": { "message": "k dispozícii" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 bol použitý na vstup na celú obrazovku a z bezpečnostných dôvodov prehliadača musí byť použitý rovnaký kľúč na jeho ukončenie" },
   "buttonLabel_update": { "message": "Aktualizovať" },
   "buttonLabel_updateCheck": { "message": "Zistiť novú verziu" },
+  "buttonLabel_leaveReview": { "message": "Napísať referenciu" },
   "buttonLabel_dismiss": { "message": "Odmietnuť" },
   "link_viewChanges": { "message": "Zobraziť zmeny" }
 }

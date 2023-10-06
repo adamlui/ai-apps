@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Tout ekran" },
   "tooltip_fullScreenOFF": { "message": "Sòti ekran plen" },
   "tooltip_newChat": { "message": "AnabellaSanti chat" },
+  "alert_choosePlatform": { "message": "Chwazi yon platfòm" },
   "alert_updateAvail": { "message": "Mizajou ki disponib" },
   "alert_newerVer": { "message": "Yon ajou nan" },
   "alert_isAvail": { "message": "ki disponib/à votre disposition/sont disponibles" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 te itilize pou antre nan ekran plen, e akòz rezon sekirite navigatè, menm kle a dwe itilize pou sòti li." },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_updateCheck": { "message": "Tcheke pou Updates" },
+  "buttonLabel_leaveReview": { "message": "Kite yon Revizyon" },
   "buttonLabel_dismiss": { "message": "Demisyon" },
   "link_viewChanges": { "message": "Gade chanjman yo" }
 }

@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "ሙሉ እስክሪን" },
   "tooltip_fullScreenOFF": { "message": "ከሙሉ ማያ ገጽ ውጣ" },
   "tooltip_newChat": { "message": "አዲስ ውይይት" },
+  "alert_choosePlatform": { "message": "መድረክ ይምረጡ" },
   "alert_updateAvail": { "message": "ዝመና ይገኛል!" },
   "alert_newerVer": { "message": "ዝመና ለ" },
   "alert_isAvail": { "message": "ሊገኝ ይችላል" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 ሙሉ ማያ ገጽ ለማስገባት ጥቅም ላይ ውሏል ፣ እና በአሳሽ ደህንነት ምክንያቶች ምክንያት ተመሳሳይ ቁልፍ እሱን ለመውጣት ጥቅም ላይ መዋል አለበት" },
   "buttonLabel_update": { "message": "አዘምን" },
   "buttonLabel_updateCheck": { "message": "ዝማኔዎችን ይፈትሹ" },
+  "buttonLabel_leaveReview": { "message": "ግምገማ ይተው" },
   "buttonLabel_dismiss": { "message": "መደምሰሻ" },
   "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" }
 }

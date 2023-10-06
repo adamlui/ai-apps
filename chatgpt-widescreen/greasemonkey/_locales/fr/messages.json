@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Mode plein écran" },
   "tooltip_fullScreenOFF": { "message": "Quitter le mode plein écran" },
   "tooltip_newChat": { "message": "Nouveau chat" },
+  "alert_choosePlatform": { "message": "Choisir une plateforme" },
   "alert_updateAvail": { "message": "Mise à jour disponible" },
   "alert_newerVer": { "message": "Une mise à jour est disponible pour" },
   "alert_isAvail": { "message": "est disponible" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 a été utilisé pour entrer en mode plein écran et, pour des raisons de sécurité du navigateur, la même touche doit être utilisée pour en sortir" },
   "buttonLabel_update": { "message": "Mettre à jour" },
   "buttonLabel_updateCheck": { "message": "Vérifier les mises à jour" },
+  "buttonLabel_leaveReview": { "message": "Laisser un Avis" },
   "buttonLabel_dismiss": { "message": "Ignorer" },
   "link_viewChanges": { "message": "Voir les modifications" }
 }

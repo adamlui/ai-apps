@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Cijeli ekran" },
   "tooltip_fullScreenOFF": { "message": "Izlaz" },
   "tooltip_newChat": { "message": "Novo ćaskanje" },
+  "alert_choosePlatform": { "message": "Odaberite platformu" },
   "alert_updateAvail": { "message": "Ažuriranje dostupno" },
   "alert_newerVer": { "message": "Ažuriranje za" },
   "alert_isAvail": { "message": "dostupno je" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 je korišten za ulazak preko cijelog ekrana, a zbog sigurnosnih razloga preglednika, isti ključ mora biti korišten za izlazak iz njega" },
   "buttonLabel_update": { "message": "Nadogradi" },
   "buttonLabel_updateCheck": { "message": "Provjeri ima li ažuriranja" },
+  "buttonLabel_leaveReview": { "message": "Napiši recenziju" },
   "buttonLabel_dismiss": { "message": "Otkaži" },
   "link_viewChanges": { "message": "Vidi promjene" }
 }

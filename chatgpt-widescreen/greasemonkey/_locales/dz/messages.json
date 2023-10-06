@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "གཟུགས་བརྙན།" },
   "tooltip_fullScreenOFF": { "message": "གསལ་གཞི་གངམ།" },
   "tooltip_newChat": { "message": "ཏ་སེ་གསརཔ་ཅིག་ གསར་བསྐྲུན་འབད།" },
+  "alert_choosePlatform": { "message": "ས་གོ་ཅིག་བཟོ།" },
   "alert_updateAvail": { "message": "ད་ལྟོ་མཐུན་བཟོ་ནི།" },
   "alert_newerVer": { "message": "གསལ་བཀོད་འབད་ཡོད་པའི་ཐོ་ཡིག་ཚུ།" },
   "alert_isAvail": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "ཐུམ་སྒྲིལ་ཚུ་གི་དོན་ལུ་ ཨེབ་གཏང་ནིའི་དོན་ལུ་ ཨེབ་གཏང་ནིའི་དོན་ལུ་ ཨེབ་གཏང་འབད།" },
   "buttonLabel_update": { "message": "གསར་བསྐྲུན་འབད་མ་ཚུགས།" },
   "buttonLabel_updateCheck": { "message": "བརྟག་ཞིབ་སྣོད་འཛིན་ཚུ་ དུས་མཐུན་བཟོ་ནི་ཨིན་ན?" },
+  "buttonLabel_leaveReview": { "message": "བསྐྱར་ཞིབ་འབད་" },
   "buttonLabel_dismiss": { "message": "ཌིསིཊི།" },
   "link_viewChanges": { "message": "བསྒྱུར་བཅོས་ཚུ་རྩ་བསྐྲད་གཏང་།" }
 }

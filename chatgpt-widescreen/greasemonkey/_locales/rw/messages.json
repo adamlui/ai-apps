@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Mugaragaza Yuzuye" },
   "tooltip_fullScreenOFF": { "message": "Mugaragaza Yuzuye" },
   "tooltip_newChat": { "message": "Gishya" },
+  "alert_choosePlatform": { "message": "A" },
   "alert_updateAvail": { "message": "Bihari" },
   "alert_newerVer": { "message": "Update ko bye bye" },
   "alert_isAvail": { "message": "bihari" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 yakoreshejwe mu kwinjira mugaragaza yuzuye, kandi kubera impamvu z'umutekano wa mushakisha, urufunguzo rugomba gukoreshwa kugirango usohoke" },
   "buttonLabel_update": { "message": "Kuvugurura" },
   "buttonLabel_updateCheck": { "message": "Kugirango" },
+  "buttonLabel_leaveReview": { "message": "A" },
   "buttonLabel_dismiss": { "message": "Gusiba" },
   "link_viewChanges": { "message": "Amahinduka" }
 }

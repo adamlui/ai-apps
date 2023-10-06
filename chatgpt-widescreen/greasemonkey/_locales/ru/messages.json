@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Полный экран" },
   "tooltip_fullScreenOFF": { "message": "Выйти из полноэкранного режима" },
   "tooltip_newChat": { "message": "Новый чат" },
+  "alert_choosePlatform": { "message": "Выберите платформу" },
   "alert_updateAvail": { "message": "Доступно обновление" },
   "alert_newerVer": { "message": "Доступно обновление для" },
   "alert_isAvail": { "message": "доступно" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 была использована для входа в полноэкранный режим, и по соображениям безопасности браузера для выхода из него также необходимо использовать ту же клавишу" },
   "buttonLabel_update": { "message": "Обновить" },
   "buttonLabel_updateCheck": { "message": "Проверить Обновления" },
+  "buttonLabel_leaveReview": { "message": "Оставьте отзыв" },
   "buttonLabel_dismiss": { "message": "Отмена" },
   "link_viewChanges": { "message": "Посмотреть изменения" }
 }

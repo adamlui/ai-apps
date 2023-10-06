@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "സ്ക്രീന്‍ പരമാവധി വലിപ്പത്തില്‍ കാണുക" },
   "tooltip_fullScreenOFF": { "message": "പൂര്‍ണ്ണവലിപ്പത്തിലുള്ള സ്ക്രീനില്‍ നിന്നും പുറത്ത് കടക്കുകEncodings menu" },
   "tooltip_newChat": { "message": "പുതിയ ചാറ്റ്" },
+  "alert_choosePlatform": { "message": "ഒരു പ്ലാറ്റ്ഫോം തിരഞ്ഞെടുക്കുക" },
   "alert_updateAvail": { "message": "%d അപ്‌ഡേറ്റ് ലഭ്യമാണ്" },
   "alert_newerVer": { "message": "ഒരു അപ്‌ഡേറ്റ്" },
   "alert_isAvail": { "message": "ലഭ്യമാണ്" },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "പൂർണ്ണ സ്ക്രീനിൽ പ്രവേശിക്കാൻ F11 ഉപയോഗിച്ചു, ബ്രൌസർ സുരക്ഷാ കാരണങ്ങളാൽ, അത് പുറത്തുകടക്കാൻ അതേ കീ ഉപയോഗിക്കണം." },
   "buttonLabel_update": { "message": "അപ്ഡേറ്റ് ചെയ്യുക" },
   "buttonLabel_updateCheck": { "message": "അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക" },
+  "buttonLabel_leaveReview": { "message": "ഒരു അവലോകനം ഉപേക്ഷിക്കുക" },
   "buttonLabel_dismiss": { "message": "ഡിസ്മിസ്" },
   "link_viewChanges": { "message": "മാറ്റങ്ങള്‍ കാണുക" }
 }

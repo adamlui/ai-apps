@@ -22,6 +22,7 @@
   "tooltip_fullScreenON": { "message": "Halaman penuh" },
   "tooltip_fullScreenOFF": { "message": "Keluar dari layar penuh" },
   "tooltip_newChat": { "message": "Obrolan baru" },
+  "alert_choosePlatform": { "message": "Pilih platform" },
   "alert_updateAvail": { "message": "Pembaruan tersedia" },
   "alert_newerVer": { "message": "Pembaruan untuk" },
   "alert_isAvail": { "message": "Install package not available." },
@@ -31,6 +32,7 @@
   "alert_f11reason": { "message": "F11 digunakan untuk memasuki layar penuh, dan karena alasan keamanan browser, kunci yang sama harus digunakan untuk keluar." },
   "buttonLabel_update": { "message": "Pembaruan" },
   "buttonLabel_updateCheck": { "message": "Periksa Pemutakhiran" },
+  "buttonLabel_leaveReview": { "message": "Buat Ulasan" },
   "buttonLabel_dismiss": { "message": "Tutup" },
   "link_viewChanges": { "message": "Lihat perubahan" }
 }
