@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Leqqem" },
   "buttonLabel_dismiss": { "message": "Agi" },
   "link_viewChanges": { "message": "Wali ibeddilen" },
-  "link_shareFeedback": { "message": "Tikti" },
-  "state_enabled": { "message": "yermed" },
-  "state_disabled": { "message": "ittwasens" }
+  "link_shareFeedback": { "message": "Tikti" }
 }

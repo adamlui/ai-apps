@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "View changes" },
-  "link_shareFeedback": { "message": "Feedback" },
-  "state_enabled": { "message": "enabled" },
-  "state_disabled": { "message": "disabled" }
+  "link_shareFeedback": { "message": "Feedback" }
 }

@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Atjauninināt" },
   "buttonLabel_dismiss": { "message": "Noraidīt" },
   "link_viewChanges": { "message": "Skatīt izmaiņas" },
-  "link_shareFeedback": { "message": "Atsauksme" },
-  "state_enabled": { "message": "iespējots" },
-  "state_disabled": { "message": "Izslēgt" }
+  "link_shareFeedback": { "message": "Atsauksme" }
 }

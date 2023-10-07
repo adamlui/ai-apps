@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Uuenda" },
   "buttonLabel_dismiss": { "message": "Loobu" },
   "link_viewChanges": { "message": "Vaata muudatusi" },
-  "link_shareFeedback": { "message": "Tagasiside" },
-  "state_enabled": { "message": "lubatud" },
-  "state_disabled": { "message": "välja lülitatud" }
+  "link_shareFeedback": { "message": "Tagasiside" }
 }

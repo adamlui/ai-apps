@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Навсозӣ кардан" },
   "buttonLabel_dismiss": { "message": "Рад кардан" },
   "link_viewChanges": { "message": "Тағиротро дидан" },
-  "link_shareFeedback": { "message": "Mga Feedback" },
-  "state_enabled": { "message": "фаъол шуд" },
-  "state_disabled": { "message": "маъюб" }
+  "link_shareFeedback": { "message": "Mga Feedback" }
 }

@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "अपडेट करें" },
   "buttonLabel_dismiss": { "message": "खारिज करना" },
   "link_viewChanges": { "message": "बदलाव देखें" },
-  "link_shareFeedback": { "message": "फ़ीडबैक" },
-  "state_enabled": { "message": "(अज्ञात)" },
-  "state_disabled": { "message": "अक्षम" }
+  "link_shareFeedback": { "message": "फ़ीडबैक" }
 }

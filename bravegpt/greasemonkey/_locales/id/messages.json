@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Pembaruan" },
   "buttonLabel_dismiss": { "message": "Tutup" },
   "link_viewChanges": { "message": "Lihat perubahan" },
-  "link_shareFeedback": { "message": "Umpan Balik" },
-  "state_enabled": { "message": "difungsikan" },
-  "state_disabled": { "message": "dinonaktifkan" }
+  "link_shareFeedback": { "message": "Umpan Balik" }
 }

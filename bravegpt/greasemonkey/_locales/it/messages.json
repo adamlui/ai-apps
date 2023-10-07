@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Aggiorna" },
   "buttonLabel_dismiss": { "message": "Ignora" },
   "link_viewChanges": { "message": "Visualizza modifiche" },
-  "link_shareFeedback": { "message": "Riscontro" },
-  "state_enabled": { "message": "abilitata" },
-  "state_disabled": { "message": "disabilitata" }
+  "link_shareFeedback": { "message": "Riscontro" }
 }

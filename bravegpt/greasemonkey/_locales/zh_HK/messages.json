@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "更新" },
   "buttonLabel_dismiss": { "message": "返回" },
   "link_viewChanges": { "message": "查看變更" },
-  "link_shareFeedback": { "message": "反饋意見" },
-  "state_enabled": { "message": "啟用" },
-  "state_disabled": { "message": "禁用" }
+  "link_shareFeedback": { "message": "反饋意見" }
 }

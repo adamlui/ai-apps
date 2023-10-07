@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "อัปเดต" },
   "buttonLabel_dismiss": { "message": "ยกเลิก" },
   "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" },
-  "link_shareFeedback": { "message": "ข้อเสนอแนะ" },
-  "state_enabled": { "message": "เปิดการใช้งาน" },
-  "state_disabled": { "message": "ปิดใช้งาน" }
+  "link_shareFeedback": { "message": "ข้อเสนอแนะ" }
 }

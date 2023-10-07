@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "업데이트" },
   "buttonLabel_dismiss": { "message": "무시하기" },
   "link_viewChanges": { "message": "변경 보기" },
-  "link_shareFeedback": { "message": "피드백" },
-  "state_enabled": { "message": "활성화" },
-  "state_disabled": { "message": "비활성화됨" }
+  "link_shareFeedback": { "message": "피드백" }
 }

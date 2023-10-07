@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Kuvugurura" },
   "buttonLabel_dismiss": { "message": "Kureka" },
   "link_viewChanges": { "message": "Amahinduka" },
-  "link_shareFeedback": { "message": "Isubiramo" },
-  "state_enabled": { "message": "Birafunguye" },
-  "state_disabled": { "message": "Yahagaritswe" }
+  "link_shareFeedback": { "message": "Isubiramo" }
 }

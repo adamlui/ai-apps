@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Actualització" },
   "buttonLabel_dismiss": { "message": "Descarta" },
   "link_viewChanges": { "message": "Mostra els canvis" },
-  "link_shareFeedback": { "message": "Dóna’ns la teva opinió" },
-  "state_enabled": { "message": "habilitat" },
-  "state_disabled": { "message": "inhabilitat" }
+  "link_shareFeedback": { "message": "Dóna’ns la teva opinió" }
 }

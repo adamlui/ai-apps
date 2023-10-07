@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Оновити" },
   "buttonLabel_dismiss": { "message": "Відхиляти" },
   "link_viewChanges": { "message": "Переглянути зміни" },
-  "link_shareFeedback": { "message": "Зворотний зв'язок" },
-  "state_enabled": { "message": "активовано" },
-  "state_disabled": { "message": "вимкнено" }
+  "link_shareFeedback": { "message": "Зворотний зв'язок" }
 }

@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Aktualiséieren" },
   "buttonLabel_dismiss": { "message": "Ofginn" },
   "link_viewChanges": { "message": "Ännerungen uweisen" },
-  "link_shareFeedback": { "message": "Feedback" },
-  "state_enabled": { "message": "Aktiviert" },
-  "state_disabled": { "message": "Deaktivéiert" }
+  "link_shareFeedback": { "message": "Feedback" }
 }

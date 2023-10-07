@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Fa'afouga" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "Vaʻai suiga" },
-  "link_shareFeedback": { "message": "Manatu Fa‘afautuaga" },
-  "state_enabled": { "message": "faatagaina" },
-  "state_disabled": { "message": "faaletonu" }
+  "link_shareFeedback": { "message": "Manatu Fa‘afautuaga" }
 }

@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "అప్‌డేట్" },
   "buttonLabel_dismiss": { "message": "తీసివేయండి" },
   "link_viewChanges": { "message": "మార్పులను చూడండి" },
-  "link_shareFeedback": { "message": "ఫీడ్‌బ్యాక్" },
-  "state_enabled": { "message": "ప్రారంభించబడింది" },
-  "state_disabled": { "message": "వికలాంగుడు" }
+  "link_shareFeedback": { "message": "ఫీడ్‌బ్యాక్" }
 }

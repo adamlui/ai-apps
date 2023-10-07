@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "نوێ بکەرەوە" },
   "buttonLabel_dismiss": { "message": "پارێزگا بکە" },
   "link_viewChanges": { "message": "گۆڕانکاریەکان بینەرە" },
-  "link_shareFeedback": { "message": "پارساوی" },
-  "state_enabled": { "message": "چالاککراو" },
-  "state_disabled": { "message": "ناچالاککراو" }
+  "link_shareFeedback": { "message": "پارساوی" }
 }

@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Sasisho" },
   "buttonLabel_dismiss": { "message": "Puuza" },
   "link_viewChanges": { "message": "Angalia mabadiliko" },
-  "link_shareFeedback": { "message": "Maoni" },
-  "state_enabled": { "message": "Imewezeshwa" },
-  "state_disabled": { "message": "disabled" }
+  "link_shareFeedback": { "message": "Maoni" }
 }

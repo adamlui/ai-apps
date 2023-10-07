@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Aktualizovať" },
   "buttonLabel_dismiss": { "message": "Odmietnuť" },
   "link_viewChanges": { "message": "Zobraziť zmeny" },
-  "link_shareFeedback": { "message": "Spätná väzba" },
-  "state_enabled": { "message": "povolené" },
-  "state_disabled": { "message": "nepovolené" }
+  "link_shareFeedback": { "message": "Spätná väzba" }
 }

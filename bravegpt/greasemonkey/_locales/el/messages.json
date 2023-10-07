@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Ενημέρωση" },
   "buttonLabel_dismiss": { "message": " Κλείσιμο" },
   "link_viewChanges": { "message": "Εμφάνιση αλλαγών" },
-  "link_shareFeedback": { "message": "Ανατροφοδότηση" },
-  "state_enabled": { "message": "ενεργό" },
-  "state_disabled": { "message": "απενεργοποιημένο" }
+  "link_shareFeedback": { "message": "Ανατροφοδότηση" }
 }

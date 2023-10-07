@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Այժմեականացնել / Արդիականացնել" },
   "buttonLabel_dismiss": { "message": "Փակել" },
   "link_viewChanges": { "message": "Դիտել փոփոխությունները" },
-  "link_shareFeedback": { "message": "Отзыв" },
-  "state_enabled": { "message": "Թույլատրվա՞ծ է" },
-  "state_disabled": { "message": "անջատված է" }
+  "link_shareFeedback": { "message": "Отзыв" }
 }

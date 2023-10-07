@@ -40,7 +40,5 @@
   "buttonLabel_update": { "message": "Lungisa" },
   "buttonLabel_dismiss": { "message": "Gxotha" },
   "link_viewChanges": { "message": "Jonga izinto ezitshintshiweyo" },
-  "link_shareFeedback": { "message": "Impendulo" },
-  "state_enabled": { "message": "Ayikwazi ukuvula Ovakalayo- Umncedisi (Alib)!" },
-  "state_disabled": { "message": "Igama Lokuvakalayo" }
+  "link_shareFeedback": { "message": "Impendulo" }
 }
