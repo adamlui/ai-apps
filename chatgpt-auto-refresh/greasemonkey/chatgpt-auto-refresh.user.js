@@ -221,7 +221,7 @@
 // @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.1.5
+// @version             2023.10.6
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -454,12 +454,12 @@
                     const minInterval = Math.max(2, config.refreshInterval - 10),
                           maxInterval = config.refreshInterval + 10
                     alert(messages.alert_intUpdated + '!',
-                        `${ messages.alert_willRefresh } ${ minInterval }–${ maxInterval } secs`)
+                        `${ messages.alert_willRefresh } ${ minInterval }–${ maxInterval } ${ messages.unit_secs }`)
                     break
         }}}))
 
         // Add command to launch About modal
-        menuIDs.push(GM_registerMenuCommand('💡 About ' + messages.appName, async () => {
+        menuIDs.push(GM_registerMenuCommand(`💡 ${ messages.menuLabel_about } ${ messages.appName }`, async () => {
 
             // Show alert
             const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(GM_info.script.header)[1] || '',
@@ -480,7 +480,7 @@
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
                     function leaveAReview() { // show new modal
-                        const reviewAlertID = chatgpt.alert('Choose a platform:', '',
+                        const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
                             [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                               function futurepedia() { safeWindowOpen(
                                   'https://www.futurepedia.io/tool/chatgpt-auto-refresh#chatgpt-auto-refresh-review') }])
