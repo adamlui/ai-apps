@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Aktualisieren" },
   "buttonLabel_dismiss": { "message": "Verwerfen" },
   "link_viewChanges": { "message": "Änderungen anzeigen" },
-  "link_shareFeedback": { "message": "Feedback teilen" },
-  "state_enabled": { "message": "aktiviert" },
-  "state_disabled": { "message": "deaktiviert" }
+  "link_shareFeedback": { "message": "Feedback teilen" }
 }

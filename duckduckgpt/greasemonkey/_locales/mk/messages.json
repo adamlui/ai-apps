@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Ажурирај" },
   "buttonLabel_dismiss": { "message": "Отфрли" },
   "link_viewChanges": { "message": "Прикажи ги промените" },
-  "link_shareFeedback": { "message": "Споделете повратен коментар" },
-  "state_enabled": { "message": "овозможено" },
-  "state_disabled": { "message": "оневозможено" }
+  "link_shareFeedback": { "message": "Споделете повратен коментар" }
 }

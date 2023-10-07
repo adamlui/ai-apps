@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Ntshwafatso" },
   "buttonLabel_dismiss": { "message": "Go leleka" },
   "link_viewChanges": { "message": "Leba diphetogo" },
-  "link_shareFeedback": { "message": "Go Abelana Tshedimosetso ya Kgakololo" },
-  "state_enabled": { "message": "e kgontshiwe" },
-  "state_disabled": { "message": "golafetse" }
+  "link_shareFeedback": { "message": "Go Abelana Tshedimosetso ya Kgakololo" }
 }

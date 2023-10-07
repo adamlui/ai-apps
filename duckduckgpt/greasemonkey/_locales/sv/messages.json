@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Uppdatera" },
   "buttonLabel_dismiss": { "message": "Avfärda" },
   "link_viewChanges": { "message": "Visa ändringar" },
-  "link_shareFeedback": { "message": "Dela feedback" },
-  "state_enabled": { "message": "aktiverad" },
-  "state_disabled": { "message": "inaktiverad" }
+  "link_shareFeedback": { "message": "Dela feedback" }
 }

@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Yenilə" },
   "buttonLabel_dismiss": { "message": "Bağla" },
   "link_viewChanges": { "message": "Dəyişikliklərə bax" },
-  "link_shareFeedback": { "message": "Məxfi rəy paylaşın" },
-  "state_enabled": { "message": "Aktivdir" },
-  "state_disabled": { "message": "kilitlidir" }
+  "link_shareFeedback": { "message": "Məxfi rəy paylaşın" }
 }

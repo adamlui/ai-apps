@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Nadogradi" },
   "buttonLabel_dismiss": { "message": "Otkaži" },
   "link_viewChanges": { "message": "Vidi promjene" },
-  "link_shareFeedback": { "message": "Podijelite povratne informacije" },
-  "state_enabled": { "message": "Omogućeno" },
-  "state_disabled": { "message": "onemogućen" }
+  "link_shareFeedback": { "message": "Podijelite povratne informacije" }
 }

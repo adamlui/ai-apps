@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "עדכון" },
   "buttonLabel_dismiss": { "message": "שחרור" },
   "link_viewChanges": { "message": "הצגת השינויים" },
-  "link_shareFeedback": { "message": "שתפי משוב" },
-  "state_enabled": { "message": "מופעל" },
-  "state_disabled": { "message": "מושבת" }
+  "link_shareFeedback": { "message": "שתפי משוב" }
 }

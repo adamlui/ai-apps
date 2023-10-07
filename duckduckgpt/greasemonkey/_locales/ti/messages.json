@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "ኣሐድስ" },
   "buttonLabel_dismiss": { "message": "ምጥፋእ" },
   "link_viewChanges": { "message": "ለውጢ ርአ" },
-  "link_shareFeedback": { "message": "ግብረ መልሲ ምዝርጋሕ" },
-  "state_enabled": { "message": "ከምዝሰርሕ ዝተገብረ" },
-  "state_disabled": { "message": "ከምዘይሰርሕ ዝተገብረ" }
+  "link_shareFeedback": { "message": "ግብረ መልሲ ምዝርጋሕ" }
 }

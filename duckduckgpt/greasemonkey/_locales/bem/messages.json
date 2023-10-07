@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Chilanda" },
   "buttonLabel_dismiss": { "message": "Ukufumishiwapo" },
   "link_viewChanges": { "message": "Moneni ifyo ifintu fyayaluka" },
-  "link_shareFeedback": { "message": "Sangizani Ukufwaya" },
-  "state_enabled": { "message": "Ukusuminisha Ukubomba" },
-  "state_disabled": { "message": "Ukukanya Ukubomba" }
+  "link_shareFeedback": { "message": "Sangizani Ukufwaya" }
 }

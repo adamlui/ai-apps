@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "به‌روز‌رسانی" },
   "buttonLabel_dismiss": { "message": "مخفی شود" },
   "link_viewChanges": { "message": "نمایش تغییرات" },
-  "link_shareFeedback": { "message": "نظرات خود را به اشتراک بگذارید" },
-  "state_enabled": { "message": "فعال" },
-  "state_disabled": { "message": "غیر فعال کردن" }
+  "link_shareFeedback": { "message": "نظرات خود را به اشتراک بگذارید" }
 }

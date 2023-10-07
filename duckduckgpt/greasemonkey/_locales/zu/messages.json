@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Lungisa" },
   "buttonLabel_dismiss": { "message": "Susa" },
   "link_viewChanges": { "message": "Buka ushintsho" },
-  "link_shareFeedback": { "message": "Yabelana Ngombiko" },
-  "state_enabled": { "message": "Inikwe amandla" },
-  "state_disabled": { "message": "Ivaliwe" }
+  "link_shareFeedback": { "message": "Yabelana Ngombiko" }
 }

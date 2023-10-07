@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
   "buttonLabel_dismiss": { "message": "ထုတ်ပယ်ပါ" },
   "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ရန်" },
-  "link_shareFeedback": { "message": "ဝေမျှရန် တုံ့ပြန်ချက်" },
-  "state_enabled": { "message": "ဖွင့်ထားသည်" },
-  "state_disabled": { "message": "ပိတ်ထားသည်" }
+  "link_shareFeedback": { "message": "ဝေမျှရန် တုံ့ပြန်ချက်" }
 }

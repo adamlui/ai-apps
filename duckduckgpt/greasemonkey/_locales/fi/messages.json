@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Päivitä" },
   "buttonLabel_dismiss": { "message": "Hylkää" },
   "link_viewChanges": { "message": "Näytä muutokset" },
-  "link_shareFeedback": { "message": "Anna palautetta" },
-  "state_enabled": { "message": "käytössä" },
-  "state_disabled": { "message": "pois käytöstä" }
+  "link_shareFeedback": { "message": "Anna palautetta" }
 }

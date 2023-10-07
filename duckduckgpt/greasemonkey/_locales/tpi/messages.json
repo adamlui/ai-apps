@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "UPDATE" },
   "buttonLabel_dismiss": { "message": "Lusim" },
   "link_viewChanges": { "message": "Lukim ol senis" },
-  "link_shareFeedback": { "message": "Toksave long ol samting" },
-  "state_enabled": { "message": "em i bin mekim olsem" },
-  "state_disabled": { "message": "disable" }
+  "link_shareFeedback": { "message": "Toksave long ol samting" }
 }

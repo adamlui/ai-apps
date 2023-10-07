@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Ùraich" },
   "buttonLabel_dismiss": { "message": "Cuir air falbh" },
   "link_viewChanges": { "message": "Seall na h - atharraichean" },
-  "link_shareFeedback": { "message": "Share Feedback" },
-  "state_enabled": { "message": "An comas" },
-  "state_disabled": { "message": "Gun dòigh" }
+  "link_shareFeedback": { "message": "Share Feedback" }
 }

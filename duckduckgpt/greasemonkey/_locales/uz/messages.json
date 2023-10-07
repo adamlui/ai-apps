@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Yangilash" },
   "buttonLabel_dismiss": { "message": "Rad etish" },
   "link_viewChanges": { "message": "O'zgarishlarni ko'rish" },
-  "link_shareFeedback": { "message": "Fikr-mulohazangizni baham ko'ring" },
-  "state_enabled": { "message": "yoqilgan" },
-  "state_disabled": { "message": "o'chirilgan" }
+  "link_shareFeedback": { "message": "Fikr-mulohazangizni baham ko'ring" }
 }

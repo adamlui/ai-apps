@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Актуализация" },
   "buttonLabel_dismiss": { "message": "Отхвърли" },
   "link_viewChanges": { "message": "Вижте Промените" },
-  "link_shareFeedback": { "message": "Споделяне на отзиви" },
-  "state_enabled": { "message": "разрешен" },
-  "state_disabled": { "message": "изключен" }
+  "link_shareFeedback": { "message": "Споделяне на отзиви" }
 }

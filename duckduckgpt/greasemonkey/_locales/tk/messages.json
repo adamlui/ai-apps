@@ -41,7 +41,5 @@
   "buttonLabel_update": { "message": "Täzele" },
   "buttonLabel_dismiss": { "message": "Işden aýyrmak" },
   "link_viewChanges": { "message": "Özgertmeleri Gör" },
-  "link_shareFeedback": { "message": "Öwrenme paýlaş" },
-  "state_enabled": { "message": "Jawany Mümkin Et" },
-  "state_disabled": { "message": "Mümkin edigili" }
+  "link_shareFeedback": { "message": "Öwrenme paýlaş" }
 }
