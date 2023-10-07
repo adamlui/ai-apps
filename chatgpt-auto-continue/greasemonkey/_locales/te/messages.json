@@ -5,7 +5,7 @@
   "menuLabel_about": { "message": "గురించి" },
   "about_version": { "message": "వివరణం" },
   "about_poweredBy": { "message": "ద్వారా ఆధారితం" },
-  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "about_sourceCode": { "message": "సోర్స్ కోడ్" },
   "mode_autoContinue": { "message": "స్వయంచాలకంగా కొనసాగించు" },
   "alert_updateAvail": { "message": "ఎటువంటి నవీకరణ అందుబాటులోలేదు" },
   "alert_newerVer": { "message": "కు అప్ ‌ డేట్" },
