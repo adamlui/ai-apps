@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "ແມ່ນ up-to-date" },
   "alert_pressF11": { "message": "ກົດ F11 ເພື່ອອອກຈາກ ຫນ້າ ຈໍເຕັມ" },
   "alert_f11reason": { "message": "F11 ຖືກ ນໍາ ໃຊ້ເພື່ອໃສ່ ຫນ້າ ຈໍເຕັມ, ແລະຍ້ອນເຫດຜົນຄວາມປອດໄພຂອງຕົວທ່ອງເວັບ, ປຸ່ມດຽວກັນຕ້ອງຖືກ ນໍາ ໃຊ້ເພື່ອອອກຈາກມັນ." },
-  "buttonLabel_update": { "message": "ອັບເດດ" },
   "buttonLabel_updateCheck": { "message": "ກວດສອບການອັບເດດ" },
   "buttonLabel_leaveReview": { "message": "ໃຫ້ການທົບທວນຄືນ" },
+  "buttonLabel_update": { "message": "ອັບເດດ" },
   "buttonLabel_dismiss": { "message": "ຂ້າມໄປ" },
   "link_viewChanges": { "message": "ເບິ່ງການປ່ຽນແປງ" }
 }

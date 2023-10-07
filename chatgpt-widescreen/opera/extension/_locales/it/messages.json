@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "è aggiornato" },
   "alert_pressF11": { "message": "Premi F11 per uscire dalla modalità schermo intero" },
   "alert_f11reason": { "message": "È stato utilizzato F11 per entrare nella modalità schermo intero e, per motivi di sicurezza del browser, la stessa combinazione di tasti deve essere utilizzata per uscirne" },
-  "buttonLabel_update": { "message": "Aggiorna" },
   "buttonLabel_updateCheck": { "message": "Verifica aggiornamenti" },
   "buttonLabel_leaveReview": { "message": "Aggiungi una Valutazione" },
+  "buttonLabel_update": { "message": "Aggiorna" },
   "buttonLabel_dismiss": { "message": "Annulla" },
   "link_viewChanges": { "message": "Visualizza le modifiche" }
 }

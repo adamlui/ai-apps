@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "uPDATE Sí Sí" },
   "alert_pressF11": { "message": "Press F11 til at fara út fullan skíggja" },
   "alert_f11reason": { "message": "F11 var brúkt til at koma inn í fulla skjalið, og av tí at flogfarið er tryggjað, eigur tað at verða brúkt til at fara út úr henni." },
-  "buttonLabel_update": { "message": "Dagfør" },
   "buttonLabel_updateCheck": { "message": "Hygg eftir UPDATE" },
   "buttonLabel_leaveReview": { "message": "Skriva eina gjøgnumgongd" },
+  "buttonLabel_update": { "message": "Dagfør" },
   "buttonLabel_dismiss": { "message": "Avrita" },
   "link_viewChanges": { "message": "Sýn broytingar" }
 }

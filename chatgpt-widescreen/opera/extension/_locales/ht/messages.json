@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "se mete ajou/est à jour" },
   "alert_pressF11": { "message": "Peze F11 pou sòti ekran plen" },
   "alert_f11reason": { "message": "F11 te itilize pou antre nan ekran plen, e akòz rezon sekirite navigatè, menm kle a dwe itilize pou sòti li." },
-  "buttonLabel_update": { "message": "Update" },
   "buttonLabel_updateCheck": { "message": "Tcheke pou Updates" },
   "buttonLabel_leaveReview": { "message": "Kite yon Revizyon" },
+  "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Demisyon" },
   "link_viewChanges": { "message": "Gade chanjman yo" }
 }

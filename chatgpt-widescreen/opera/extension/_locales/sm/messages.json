@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "o loo i ai i le taimi nei" },
   "alert_pressF11": { "message": "Press F11 e alu i fafo le lau atoa" },
   "alert_f11reason": { "message": "F11 na faʻaaogaina e ulufale ai i le atoa lau, ma ona o le saogalemu o le browser, e tatau ona faʻaaogaina le ki lava e tasi e alu ese ai." },
-  "buttonLabel_update": { "message": "Fa'afouga" },
   "buttonLabel_updateCheck": { "message": "Siaki mo faʻafouga" },
   "buttonLabel_leaveReview": { "message": "Tuu se Toe Iloiloga" },
+  "buttonLabel_update": { "message": "Fa'afouga" },
   "buttonLabel_dismiss": { "message": "Faate'a" },
   "link_viewChanges": { "message": "Vaʻai Suiga" }
 }

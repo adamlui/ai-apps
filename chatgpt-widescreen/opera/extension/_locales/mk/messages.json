@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "е ажуриран" },
   "alert_pressF11": { "message": "Притиснете F11 за да излезете од цел екран" },
   "alert_f11reason": { "message": "F11 беше искористен за влез на цел екран, а поради безбедносни причини на прелистувачот, истиот клуч мора да се искористи за да се излезе од него" },
-  "buttonLabel_update": { "message": "Ажурирај" },
   "buttonLabel_updateCheck": { "message": "Провери за нова верзија" },
   "buttonLabel_leaveReview": { "message": "Остави еден преглед" },
+  "buttonLabel_update": { "message": "Ажурирај" },
   "buttonLabel_dismiss": { "message": "Отфрли" },
   "link_viewChanges": { "message": "Прикажи ги промените" }
 }

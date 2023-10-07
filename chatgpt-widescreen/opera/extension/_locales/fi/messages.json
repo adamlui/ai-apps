@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "Ajan tasalla" },
   "alert_pressF11": { "message": "Paina F11 poistuaksesi koko näytöstä" },
   "alert_f11reason": { "message": "F11: tä käytettiin siirtymään koko näytölle, ja selaimen turvallisuussyistä samaa avainta on käytettävä poistumaan siitä" },
-  "buttonLabel_update": { "message": "Päivitä" },
   "buttonLabel_updateCheck": { "message": "Tarkista päivitykset" },
   "buttonLabel_leaveReview": { "message": "Jätä arvostelu" },
+  "buttonLabel_update": { "message": "Päivitä" },
   "buttonLabel_dismiss": { "message": "Hylkää" },
   "link_viewChanges": { "message": "Näytä muutokset" }
 }

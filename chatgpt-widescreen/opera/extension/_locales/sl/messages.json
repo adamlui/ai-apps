@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "najnovejši" },
   "alert_pressF11": { "message": "Pritisnite F11 za izhod iz celozaslonskega načina." },
   "alert_f11reason": { "message": "F11 je bil uporabljen za vstop v celozaslonski način, zaradi varnostnih razlogov brskalnika pa je treba za izhod iz njega uporabiti isti ključ" },
-  "buttonLabel_update": { "message": "Update" },
   "buttonLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
   "buttonLabel_leaveReview": { "message": "Podaj mnenje" },
+  "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Opusti" },
   "link_viewChanges": { "message": "Poglej spremembe" }
 }

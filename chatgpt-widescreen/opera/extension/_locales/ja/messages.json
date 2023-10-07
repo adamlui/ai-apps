@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "が最新です" },
   "alert_pressF11": { "message": "フルスクリーンモードを終了するにはF11キーを押してください" },
   "alert_f11reason": { "message": "F11キーを使用してフルスクリーンモードに入力したため、同じキーを使用して終了する必要があります（ブラウザのセキュリティ上の理由による）" },
-  "buttonLabel_update": { "message": "アップデート" },
   "buttonLabel_updateCheck": { "message": "アップデートの確認" },
   "buttonLabel_leaveReview": { "message": "レビューを書く" },
+  "buttonLabel_update": { "message": "アップデート" },
   "buttonLabel_dismiss": { "message": "解散" },
   "link_viewChanges": { "message": "ビューの変更" }
 }
