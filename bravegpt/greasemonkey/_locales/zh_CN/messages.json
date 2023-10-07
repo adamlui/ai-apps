@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "更新" },
   "buttonLabel_dismiss": { "message": "撤消" },
   "link_viewChanges": { "message": "查看修改" },
-  "link_shareFeedback": { "message": "分享反馈" },
+  "link_shareFeedback": { "message": "反馈。" },
   "state_enabled": { "message": "启用" },
   "state_disabled": { "message": "禁用" }
 }

@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "আপডেট করুন" },
   "buttonLabel_dismiss": { "message": "খারিজ করুন" },
   "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" },
-  "link_shareFeedback": { "message": "ফিডব্যাক শেয়ার করুন" },
+  "link_shareFeedback": { "message": "মতামত" },
   "state_enabled": { "message": "সক্রিয়।" },
   "state_disabled": { "message": "নিস্ক্রিয়" }
 }

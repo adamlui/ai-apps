@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "Шинэчлэх" },
   "buttonLabel_dismiss": { "message": "Дуусах" },
   "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" },
-  "link_shareFeedback": { "message": "Санал хүсэлтийг хуваалцах" },
+  "link_shareFeedback": { "message": "Санал хүсэлт" },
   "state_enabled": { "message": "Идэвхжүүлсэн" },
   "state_disabled": { "message": "Идэвхгүй" }
 }

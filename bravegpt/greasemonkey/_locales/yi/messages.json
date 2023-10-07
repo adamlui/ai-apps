@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "דערהייַנטיקן" },
   "buttonLabel_dismiss": { "message": "אָפּזאָגן" },
   "link_viewChanges": { "message": "קוק ענדערונגען" },
-  "link_shareFeedback": { "message": "ייַנטיילן באַמערקונגען" },
+  "link_shareFeedback": { "message": "באַמערקונגען" },
   "state_enabled": { "message": "ערמעגליכט" },
   "state_disabled": { "message": "פאַרקריפּלט" }
 }

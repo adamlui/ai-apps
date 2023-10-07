@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "Aktualidat" },
   "buttonLabel_dismiss": { "message": "Disimulashon" },
   "link_viewChanges": { "message": "Bista riba kambionan" },
-  "link_shareFeedback": { "message": "Kompartí Kompartí" },
+  "link_shareFeedback": { "message": "Feedback" },
   "state_enabled": { "message": "pèrmití" },
   "state_disabled": { "message": "desabilidat" }
 }

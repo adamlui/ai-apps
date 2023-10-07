@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "Aktualizovat" },
   "buttonLabel_dismiss": { "message": "Zamítnout" },
   "link_viewChanges": { "message": "Zobrazit změny" },
-  "link_shareFeedback": { "message": "Podělte se o svůj názor" },
+  "link_shareFeedback": { "message": "Zpětná vazba" },
   "state_enabled": { "message": "povoleno" },
   "state_disabled": { "message": "vypnuto" }
 }

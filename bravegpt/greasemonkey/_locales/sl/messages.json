@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Opusti" },
   "link_viewChanges": { "message": "Poglej spremembe" },
-  "link_shareFeedback": { "message": "Delite povratne informacije" },
+  "link_shareFeedback": { "message": "Povratne informacije" },
   "state_enabled": { "message": "omogočeno" },
   "state_disabled": { "message": "onemogočeno" }
 }

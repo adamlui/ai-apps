@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "Diweddaru" },
   "buttonLabel_dismiss": { "message": "Cau" },
   "link_viewChanges": { "message": "Gweld newidiadau" },
-  "link_shareFeedback": { "message": "Rhannu adborth" },
+  "link_shareFeedback": { "message": "Adborth" },
   "state_enabled": { "message": "wedi’i alluogi" },
   "state_disabled": { "message": "analluogwyd" }
 }

@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "עדכון" },
   "buttonLabel_dismiss": { "message": "שחרור" },
   "link_viewChanges": { "message": "הצגת השינויים" },
-  "link_shareFeedback": { "message": "שתפי משוב" },
+  "link_shareFeedback": { "message": "משוב" },
   "state_enabled": { "message": "מופעל" },
   "state_disabled": { "message": "מושבת" }
 }

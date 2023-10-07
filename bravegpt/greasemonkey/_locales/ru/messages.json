@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "Обновить" },
   "buttonLabel_dismiss": { "message": "Пропустить" },
   "link_viewChanges": { "message": "Просмотреть изменения" },
-  "link_shareFeedback": { "message": "Поделиться отзывом" },
+  "link_shareFeedback": { "message": "Отзыв" },
   "state_enabled": { "message": "включено" },
   "state_disabled": { "message": "отключено" }
 }

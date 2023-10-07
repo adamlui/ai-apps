@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "Cusboonaysiinta" },
   "buttonLabel_dismiss": { "message": "Xil ka qaad" },
   "link_viewChanges": { "message": "Eeg isbeddellada" },
-  "link_shareFeedback": { "message": "Nala wadaag war-celintaada." },
+  "link_shareFeedback": { "message": "Jawaab Celin" },
   "state_enabled": { "message": "La daaray" },
   "state_disabled": { "message": "La damiyay" }
 }

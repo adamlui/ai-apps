@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "Bijwerken" },
   "buttonLabel_dismiss": { "message": "Afwijzen" },
   "link_viewChanges": { "message": "Wijzigingen weergeven" },
-  "link_shareFeedback": { "message": "Deel feedback" },
+  "link_shareFeedback": { "message": "Feedback" },
   "state_enabled": { "message": "enabled" },
   "state_disabled": { "message": "etkinleştirilmemiş" }
 }

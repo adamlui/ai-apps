@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "opus" },
   "buttonLabel_dismiss": { "message": "dimitto" },
   "link_viewChanges": { "message": "Vedi anche l 'accendenza" },
-  "link_shareFeedback": { "message": "Partes Feedes" },
+  "link_shareFeedback": { "message": "Feedback" },
   "state_enabled": { "message": "Actiosus" },
   "state_disabled": { "message": "Invaliditas" }
 }

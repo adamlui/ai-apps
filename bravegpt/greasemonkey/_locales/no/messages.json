@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "Oppdater" },
   "buttonLabel_dismiss": { "message": "Ignorer" },
   "link_viewChanges": { "message": "Vis endringer" },
-  "link_shareFeedback": { "message": "Gi en tilbakemelding" },
+  "link_shareFeedback": { "message": "Tilbakemeldinger" },
   "state_enabled": { "message": "aktivert" },
   "state_disabled": { "message": "deaktivert" }
 }

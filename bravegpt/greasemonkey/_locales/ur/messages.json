@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "اپ ڈیٹ " },
   "buttonLabel_dismiss": { "message": "برخاست" },
   "link_viewChanges": { "message": "تبدیلیاں دیکھیں" },
-  "link_shareFeedback": { "message": "تاثرات شیئر کریں" },
+  "link_shareFeedback": { "message": "تاثرات" },
   "state_enabled": { "message": "فعال" },
   "state_disabled": { "message": "غیر فعال" }
 }

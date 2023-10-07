@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "Actualizare" },
   "buttonLabel_dismiss": { "message": "Respingeți" },
   "link_viewChanges": { "message": "Vizualizează modificările" },
-  "link_shareFeedback": { "message": "Trimite feedback" },
+  "link_shareFeedback": { "message": "Feedback&amp;nbsp;" },
   "state_enabled": { "message": "Activat" },
   "state_disabled": { "message": "Dezactivat" }
 }

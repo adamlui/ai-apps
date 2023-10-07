@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "Ĝisdatigi" },
   "buttonLabel_dismiss": { "message": "Malakcepti" },
   "link_viewChanges": { "message": "Montri ŝanĝojn" },
-  "link_shareFeedback": { "message": "@ info: whatsthis" },
+  "link_shareFeedback": { "message": "Retrosciigo" },
   "state_enabled": { "message": "Ebligita" },
   "state_disabled": { "message": "(nekonata)" }
 }

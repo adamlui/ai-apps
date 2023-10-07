@@ -40,7 +40,7 @@
   "buttonLabel_update": { "message": "Dagfør" },
   "buttonLabel_dismiss": { "message": "Avrita" },
   "link_viewChanges": { "message": "Sí broytingar" },
-  "link_shareFeedback": { "message": "Deil afturmelding" },
+  "link_shareFeedback": { "message": "Viðmerkingar" },
   "state_enabled": { "message": "Virkið" },
   "state_disabled": { "message": "Óvirkið" }
 }
