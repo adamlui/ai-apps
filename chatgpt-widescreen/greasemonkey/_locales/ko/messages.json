@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "최신 버전입니다" },
   "alert_pressF11": { "message": "전체 화면 모드에서 나가려면 F11을 누르세요" },
   "alert_f11reason": { "message": "F11을 사용하여 전체 화면 모드로 전환한 후 브라우저 보안상의 이유로 동일한 키를 사용하여 종료해야 합니다" },
-  "buttonLabel_update": { "message": "업데이트" },
   "buttonLabel_updateCheck": { "message": "업데이트 확인" },
   "buttonLabel_leaveReview": { "message": "상품 후기를 남겨주세요" },
+  "buttonLabel_update": { "message": "업데이트" },
   "buttonLabel_dismiss": { "message": "무시" },
   "link_viewChanges": { "message": "변경 내용 보기" }
 }

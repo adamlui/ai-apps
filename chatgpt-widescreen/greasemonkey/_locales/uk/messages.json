@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "актуально" },
   "alert_pressF11": { "message": "Натисніть F11, щоб вийти з повноекранного режиму" },
   "alert_f11reason": { "message": "F11 була використана для входу в повноекранний режим, і з міркувань безпеки браузера для виходу з нього також потрібно використовувати ту саму клавішу" },
-  "buttonLabel_update": { "message": "Оновити" },
   "buttonLabel_updateCheck": { "message": "Перевірити Оновлення" },
   "buttonLabel_leaveReview": { "message": "Залишити відгук" },
+  "buttonLabel_update": { "message": "Оновити" },
   "buttonLabel_dismiss": { "message": "Відмінити" },
   "link_viewChanges": { "message": "Переглянути зміни" }
 }

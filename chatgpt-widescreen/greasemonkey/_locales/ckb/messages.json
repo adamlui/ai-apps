@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "نوێ، ھاوچەرخ، نو، تازە" },
   "alert_pressF11": { "message": "F11 بۆ دەرچوون لە شاشەی تەواو" },
   "alert_f11reason": { "message": "F11 بۆ چوونە ناو شاشەی تەواو بەکار دەھێنرا، و لەبەر ھۆکارەکانی ئاسایشی وێبگەڕەکە، پێویستە ھەمان کلیل بەکاربھێنرێت بۆ دەرچوون لە شاشەکە." },
-  "buttonLabel_update": { "message": "نوێکردنەوە" },
   "buttonLabel_updateCheck": { "message": "چێکی نوێکردنەوە بکە" },
   "buttonLabel_leaveReview": { "message": "پێداچوونەوە بەجێبهێڵە" },
+  "buttonLabel_update": { "message": "نوێکردنەوە" },
   "buttonLabel_dismiss": { "message": "پشتگوێخستن" },
   "link_viewChanges": { "message": "بینینی گۆڕانکارییەکان" }
 }

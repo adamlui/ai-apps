@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "Eguneratu" },
   "alert_pressF11": { "message": "Sakatu F11 pantaila osotik irteteko" },
   "alert_f11reason": { "message": "F11 pantaila osoan sartzeko erabili zen, eta arakatzailearen segurtasun arrazoiak direla eta, gako bera erabili behar da bertatik irteteko" },
-  "buttonLabel_update": { "message": "Eguneratu" },
   "buttonLabel_updateCheck": { "message": "Begiratu _eguneraketak: " },
   "buttonLabel_leaveReview": { "message": "Utzi Iritzia" },
+  "buttonLabel_update": { "message": "Eguneratu" },
   "buttonLabel_dismiss": { "message": "Bistatik kendu" },
   "link_viewChanges": { "message": "Ikusi aldaketak" }
 }

@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "સુધારો" },
   "alert_pressF11": { "message": "પૂર્ણ સ્ક્રીનથી બહાર નીકળવા માટે F11 દબાવો" },
   "alert_f11reason": { "message": "F11 નો ઉપયોગ સંપૂર્ણ સ્ક્રીન દાખલ કરવા માટે કરવામાં આવ્યો હતો, અને બ્રાઉઝર સુરક્ષા કારણોસર, તે જ કીનો ઉપયોગ તેમાંથી બહાર નીકળવા માટે કરવો આવશ્યક છે" },
-  "buttonLabel_update": { "message": "અદ્યતન બનાવો" },
   "buttonLabel_updateCheck": { "message": "નવાં ભાગ(ઓ) માટે ચકાસો" },
   "buttonLabel_leaveReview": { "message": "સમીક્ષા મૂકો" },
+  "buttonLabel_update": { "message": "અદ્યતન બનાવો" },
   "buttonLabel_dismiss": { "message": "કાઢી મૂકવું" },
   "link_viewChanges": { "message": "ફેરફારો જુઓ" }
 }

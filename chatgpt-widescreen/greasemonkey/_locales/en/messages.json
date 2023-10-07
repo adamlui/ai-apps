@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "is up-to-date" },
   "alert_pressF11": { "message": "Press F11 to exit full screen" },
   "alert_f11reason": { "message": "F11 was used to enter full screen, and due to browser security reasons, the same key must be used to exit it" },
-  "buttonLabel_update": { "message": "Update" },
   "buttonLabel_updateCheck": { "message": "Check for Updates" },
   "buttonLabel_leaveReview": { "message": "Leave a Review" },
+  "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "View changes" }
 }

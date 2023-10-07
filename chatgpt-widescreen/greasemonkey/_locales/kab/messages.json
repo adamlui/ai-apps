@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "yes, it 's update" },
   "alert_pressF11": { "message": "Sit ɣef F11 i wakken ad teffɣeḍ seg ugdil aččuran" },
   "alert_f11reason": { "message": "F11 yettuseqdac i unekcum γer ugdil aččuran, s ssebba n tγellist n yiminig, yessefk ad yettuseqdec tasarut-nniḍen akken ad teffɣeḍ seg-s." },
-  "buttonLabel_update": { "message": "Leqqem" },
   "buttonLabel_updateCheck": { "message": "Senqed ma llan ileqman" },
   "buttonLabel_leaveReview": { "message": "Eǧǧ amagrad" },
+  "buttonLabel_update": { "message": "Leqqem" },
   "buttonLabel_dismiss": { "message": "Agi" },
   "link_viewChanges": { "message": "Wali ibeddilen" }
 }

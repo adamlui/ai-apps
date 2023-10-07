@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "ʻOku aʻu ki he ʻaho ni" },
   "alert_pressF11": { "message": "Lomiʻi ʻa e K11 ke hu ki tuʻa mei he screen kakato" },
   "alert_f11reason": { "message": "Naʻe fakaʻaongaʻi ʻa e K11 ke fakahu kakato ʻa e screen, pea koeʻuhi ko e ngaahi ʻuhinga maluʻi ʻo e browser, kuo pau ke fakaʻaongaʻi ʻa e ki tatau ke hu ki tuʻa mei ai" },
-  "buttonLabel_update": { "message": "Fakamatala Fakamuimuitahá" },
   "buttonLabel_updateCheck": { "message": "Vakaiʻi e Ngaahi Fakamatala Fakamuimuitahá" },
   "buttonLabel_leaveReview": { "message": "Tuku ha Toe Vakaiʻi" },
+  "buttonLabel_update": { "message": "Fakamatala Fakamuimuitahá" },
   "buttonLabel_dismiss": { "message": "Tukuange" },
   "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" }
 }
