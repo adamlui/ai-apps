@@ -8,7 +8,7 @@
   "menuLabel_about": { "message": "గురించి" },
   "about_version": { "message": "వివరణం" },
   "about_poweredBy": { "message": "ద్వారా ఆధారితం" },
-  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "about_sourceCode": { "message": "సోర్స్ కోడ్" },
   "prompt_updateInt": { "message": "రిఫ్రెష్ విరామం అప్ ‌ డేట్ చేయండి (సెకన్లలో)" },
   "alert_intUpdated": { "message": "విరామం అప్ ‌ డేట్ చేయబడింది" },
   "alert_willRefresh": { "message": "ChatGPT సెషన్ ప్రతి ఒక్కటి ఆటో-రిఫ్రెష్ అవుతుంది" },
