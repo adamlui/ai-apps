@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.6
+// @version             2023.10.7
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -492,18 +492,18 @@
                   aStyle = 'color: #8325c4' // purple
             const aboutAlertID = alert(
                 messages.appName, // title
-                `<span style="${ headingStyle }"><b>🏷️ <i>Version</i></b>: </span>`
+                `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
                     + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-                + `<span style="${ headingStyle }"><b>⚡ <i>Powered by</i></b>: </span>`
+                + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
                     + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                     + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                + `<span style="${ headingStyle }"><b>📜 <i>Source code</i></b>:</span>\n`
+                + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
                     + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                     + config.gitHubURL + '</a></span>',
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
                     function leaveAReview() { // show new modal
-                        const reviewAlertID = chatgpt.alert('Choose a platform:', '',
+                        const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
                             [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                               function productHunt() { safeWindowOpen(
                                   'https://www.producthunt.com/products/chatgpt-infinity/reviews/new') },
@@ -520,7 +520,7 @@
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
                 if (/updates/i.test(button.textContent))
                     button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-                else if (/review/i.test(button.textContent)) button.textContent = '⭐ Leave a Review'
+                else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
