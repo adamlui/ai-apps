@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT Endelea Kiotomatiki" },
+  "appDesc": { "message": "Endelea kutoa majibu mengi ya ChatGPT kiotomatiki" },
+  "menuLabel_modeNotifs": { "message": "Arifa za Hali" },
+  "menuLabel_about": { "message": "Kuhusu" },
+  "menuLabel_disabled": { "message": "Imezimwa (kiendelezi kimewekwa)" },
+  "about_version": { "message": "Toleo" },
+  "about_poweredBy": { "message": "Imewezeshwa na" },
+  "about_sourceCode": { "message": "Msimbo wa chanzo" },
+  "mode_autoContinue": { "message": "Endelea Kiotomatiki" },
+  "alert_choosePlatform": { "message": "Chagua tovuti" },
+  "alert_updateAvail": { "message": "Sasisho lipo" },
+  "alert_newerVer": { "message": "Sasisho kwa" },
+  "alert_isAvail": { "message": "inapatikana" },
+  "alert_upToDate": { "message": "Imesasishwa" },
+  "alert_isUpToDate": { "message": "imesasishwa" },
+  "buttonLabel_leaveReview": { "message": "Acha Tathmini" },
+  "buttonLabel_updateCheck": { "message": "Angalia Masasisho" },
+  "buttonLabel_update": { "message": "Sasisho" },
+  "buttonLabel_dismiss": { "message": "Puuza" },
+  "link_viewChanges": { "message": "Angalia mabadiliko" }
+}

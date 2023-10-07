@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT automaatne jätkamine" },
+  "appDesc": { "message": "Jätka automaatselt mitme ChatGPT vastuse loomist" },
+  "menuLabel_modeNotifs": { "message": "Režiimi teavitused" },
+  "menuLabel_about": { "message": "Info" },
+  "menuLabel_disabled": { "message": "Keelatud (laiend on installitud)" },
+  "about_version": { "message": "Versioon" },
+  "about_poweredBy": { "message": "Powered by" },
+  "about_sourceCode": { "message": "Lähtekood" },
+  "mode_autoContinue": { "message": "Automaatne jätkamine" },
+  "alert_choosePlatform": { "message": "Vali platvorm" },
+  "alert_updateAvail": { "message": "Saadaval on uuendus" },
+  "alert_newerVer": { "message": "Uuendus kuni" },
+  "alert_isAvail": { "message": "on saadaval" },
+  "alert_upToDate": { "message": "ajakohane" },
+  "alert_isUpToDate": { "message": "ajakohane" },
+  "buttonLabel_leaveReview": { "message": "Jäta arvustus" },
+  "buttonLabel_updateCheck": { "message": "Kontrolli uuendusi" },
+  "buttonLabel_update": { "message": "Uuenda" },
+  "buttonLabel_dismiss": { "message": "Loobu" },
+  "link_viewChanges": { "message": "Vaata muudatusi" }
+}

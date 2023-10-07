@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT स्वतः जारी राख्नुहोस्" },
+  "appDesc": { "message": "धेरै ChatGPT प्रतिक्रियाहरू स्वचालित रूपमा उत्पन्न गर्न जारी राख्नुहोस्" },
+  "menuLabel_modeNotifs": { "message": "मोड सूचनाहरू" },
+  "menuLabel_about": { "message": "बारेमा" },
+  "menuLabel_disabled": { "message": "अक्षम पारिएको (विस्तार स्थापना गरिएको)" },
+  "about_version": { "message": "संस्करण " },
+  "about_poweredBy": { "message": "समर्थनकर्ता " },
+  "about_sourceCode": { "message": "स्रोत सङ्केत" },
+  "mode_autoContinue": { "message": "स्वत: जारी राख्नुहोस्" },
+  "alert_choosePlatform": { "message": "प्लेटफर्म छान्नुहोस्" },
+  "alert_updateAvail": { "message": "कुनै अपडेट उपलब्ध छैन।" },
+  "alert_newerVer": { "message": "यसमा अद्यावधिक गर्नुहोस्" },
+  "alert_isAvail": { "message": "<x id=\"1\"/>\"<x id=\"2\"/>\" उपलब्ध<x id=\"3\"/> छ" },
+  "alert_upToDate": { "message": "अद्यावधिक गर्नुहोस्" },
+  "alert_isUpToDate": { "message": "अद्यावधिक गर्नुहोस्" },
+  "buttonLabel_leaveReview": { "message": "समीक्षा छोड्नुहोस्" },
+  "buttonLabel_updateCheck": { "message": "अद्यावधिकका लागि जाँच गर्नुहोस्" },
+  "buttonLabel_update": { "message": "अद्यावधिक" },
+  "buttonLabel_dismiss": { "message": "खारेज गर्नुहोस्" },
+  "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" }
+}

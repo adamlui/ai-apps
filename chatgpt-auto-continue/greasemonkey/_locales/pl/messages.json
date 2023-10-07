@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "Automatyczna kontynuacja czatu GPT" },
+  "appDesc": { "message": "Automatycznie kontynuuj generowanie wielu odpowiedzi ChatGPT" },
+  "menuLabel_modeNotifs": { "message": "Powiadomienia o trybie" },
+  "menuLabel_about": { "message": "Około" },
+  "menuLabel_disabled": { "message": "Wyłączone (zainstalowano rozszerzenie)" },
+  "about_version": { "message": "Wersja" },
+  "about_poweredBy": { "message": "Obsługiwane przez" },
+  "about_sourceCode": { "message": "Kod źródłowy" },
+  "mode_autoContinue": { "message": "Automatycznie kontynuuj" },
+  "alert_choosePlatform": { "message": "Wybierz platformę" },
+  "alert_updateAvail": { "message": "Aktualizacja dostępna" },
+  "alert_newerVer": { "message": "Aktualizuj" },
+  "alert_isAvail": { "message": "jest dostępna" },
+  "alert_upToDate": { "message": "Aktualne" },
+  "alert_isUpToDate": { "message": "jest aktualny" },
+  "buttonLabel_leaveReview": { "message": "Dodaj opinię" },
+  "buttonLabel_updateCheck": { "message": "Sprawdzanie aktualizacji" },
+  "buttonLabel_update": { "message": "Aktualizuj" },
+  "buttonLabel_dismiss": { "message": "Odrzuć" },
+  "link_viewChanges": { "message": "Przegląd zmian" }
+}

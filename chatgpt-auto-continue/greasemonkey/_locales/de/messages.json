@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT Auto-Fortsetzen" },
+  "appDesc": { "message": "Automatisch mit der Generierung mehrerer ChatGPT-Antworten fortfahren" },
+  "menuLabel_modeNotifs": { "message": "Modus-Benachrichtigungen" },
+  "menuLabel_about": { "message": "Über" },
+  "menuLabel_disabled": { "message": "Deaktiviert (Erweiterung installiert)" },
+  "about_version": { "message": "Version" },
+  "about_poweredBy": { "message": "Unterstützt von" },
+  "about_sourceCode": { "message": "Quellcode" },
+  "mode_autoContinue": { "message": "Automatisch fortsetzen" },
+  "alert_choosePlatform": { "message": "Wählen Sie eine Plattform" },
+  "alert_updateAvail": { "message": "Update verfügbar" },
+  "alert_newerVer": { "message": "Ein Update zu" },
+  "alert_isAvail": { "message": "ist verfügbar" },
+  "alert_upToDate": { "message": "Up-to-date" },
+  "alert_isUpToDate": { "message": "ist auf dem aktuellen Stand" },
+  "buttonLabel_leaveReview": { "message": "Bewertung hinterlassen" },
+  "buttonLabel_updateCheck": { "message": "Nach Updates suchen" },
+  "buttonLabel_update": { "message": "Aktualisieren" },
+  "buttonLabel_dismiss": { "message": "Verwerfen" },
+  "link_viewChanges": { "message": "Änderungen anzeigen" }
+}

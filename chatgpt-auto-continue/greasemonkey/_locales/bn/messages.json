@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT অটো-কন্টিনিউ" },
+  "appDesc": { "message": "স্বয়ংক্রিয়ভাবে একাধিক ChatGPT প্রতিক্রিয়া তৈরি করা চালিয়ে যান" },
+  "menuLabel_modeNotifs": { "message": "মোড বিজ্ঞপ্তি" },
+  "menuLabel_about": { "message": "সম্বন্ধে" },
+  "menuLabel_disabled": { "message": "নিষ্ক্রিয় (এক্সটেনশন ইনস্টল করা হয়েছে)" },
+  "about_version": { "message": "সংস্করণ" },
+  "about_poweredBy": { "message": "নিবেদন করছেন" },
+  "about_sourceCode": { "message": "সোর্স কোড" },
+  "mode_autoContinue": { "message": "স্বয়ংক্রিয়ভাবে চালিয়ে যান" },
+  "alert_choosePlatform": { "message": "একটি প্ল্যাটফর্ম বেছে নিন" },
+  "alert_updateAvail": { "message": "আপডেট উপলব্ধ" },
+  "alert_newerVer": { "message": "-এ একটি আপডেট" },
+  "alert_isAvail": { "message": "সহজলভ্য" },
+  "alert_upToDate": { "message": "হালনাগাদ" },
+  "alert_isUpToDate": { "message": "আপ-টু-ডেট" },
+  "buttonLabel_leaveReview": { "message": "একটি রিভিউ লিখুন" },
+  "buttonLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
+  "buttonLabel_update": { "message": "আপডেট করুন" },
+  "buttonLabel_dismiss": { "message": "খারিজ করুন" },
+  "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" }
+}

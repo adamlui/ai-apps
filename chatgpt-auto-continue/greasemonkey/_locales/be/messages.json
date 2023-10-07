@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "Аўтаматычны працяг чатаGPT" },
+  "appDesc": { "message": "Аўтаматычна працягваць генерацыю некалькіх адказаў ChatGPT" },
+  "menuLabel_modeNotifs": { "message": "Апавяшчэнні аб рэжыме" },
+  "menuLabel_about": { "message": "Пра нас" },
+  "menuLabel_disabled": { "message": "Адключана (усталявана пашырэнне)" },
+  "about_version": { "message": "Версія" },
+  "about_poweredBy": { "message": "Пры падтрымцы" },
+  "about_sourceCode": { "message": "Зыходнікі" },
+  "mode_autoContinue": { "message": "Аўтаматычны працяг" },
+  "alert_choosePlatform": { "message": "Выберыце платформу" },
+  "alert_updateAvail": { "message": "Ёсць абнаўленне" },
+  "alert_newerVer": { "message": "Абнаўленне да" },
+  "alert_isAvail": { "message": "даступны" },
+  "alert_upToDate": { "message": "Аднаўленне не патрабуецца" },
+  "alert_isUpToDate": { "message": "абноўлена" },
+  "buttonLabel_leaveReview": { "message": "Пакінуць водгук" },
+  "buttonLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
+  "buttonLabel_update": { "message": "Абноўлена " },
+  "buttonLabel_dismiss": { "message": "Адхіліць" },
+  "link_viewChanges": { "message": "Праглядзець змены" }
+}

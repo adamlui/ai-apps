@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT Auto-Continue" },
+  "appDesc": { "message": "Automaticky pokračovať v generovaní viacerých odpovedí ChatGPT" },
+  "menuLabel_modeNotifs": { "message": "Upozornenia režimu" },
+  "menuLabel_about": { "message": "O nás " },
+  "menuLabel_disabled": { "message": "Zakázané (nainštalované rozšírenie)" },
+  "about_version": { "message": "Verzia" },
+  "about_poweredBy": { "message": "Beží na" },
+  "about_sourceCode": { "message": "Zdrojový kód" },
+  "mode_autoContinue": { "message": "Automatické pokračovanie" },
+  "alert_choosePlatform": { "message": "Vyberte platformu" },
+  "alert_updateAvail": { "message": "Aktualizácia k dispozícii" },
+  "alert_newerVer": { "message": "Aktualizujte na" },
+  "alert_isAvail": { "message": "k dispozícii" },
+  "alert_upToDate": { "message": "Aktuálny." },
+  "alert_isUpToDate": { "message": "sú aktuálne" },
+  "buttonLabel_leaveReview": { "message": "Napísať referenciu" },
+  "buttonLabel_updateCheck": { "message": "Zistiť novú verziu" },
+  "buttonLabel_update": { "message": "Aktualizovať" },
+  "buttonLabel_dismiss": { "message": "Odmietnuť" },
+  "link_viewChanges": { "message": "Zobraziť zmeny" }
+}

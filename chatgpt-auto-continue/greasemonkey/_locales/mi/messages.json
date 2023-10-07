@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT Auto-Continue" },
+  "appDesc": { "message": "Ka haere tonu te whakaputa i nga whakautu ChatGPT maha" },
+  "menuLabel_modeNotifs": { "message": "Ngā tohu aratau" },
+  "menuLabel_about": { "message": "Mō" },
+  "menuLabel_disabled": { "message": "Whakakorea (whakanuia tāuta)" },
+  "about_version": { "message": "Whakaaturanga" },
+  "about_poweredBy": { "message": "Te mana o te mana" },
+  "about_sourceCode": { "message": "Waehere puna" },
+  "mode_autoContinue": { "message": "Auto-Continue" },
+  "alert_choosePlatform": { "message": "Kōwhiri i tētahi papa" },
+  "alert_updateAvail": { "message": "Ngā whakahōu e wātea ana" },
+  "alert_newerVer": { "message": "He whakahoutanga" },
+  "alert_isAvail": { "message": "kei te wātea ahau" },
+  "alert_upToDate": { "message": "Whakahoutia" },
+  "alert_isUpToDate": { "message": "kei te whakahoutia" },
+  "buttonLabel_leaveReview": { "message": "Waiho he arotake" },
+  "buttonLabel_updateCheck": { "message": "Tirohia nga whakahoutanga" },
+  "buttonLabel_update": { "message": "Whakahou" },
+  "buttonLabel_dismiss": { "message": "Te whakahawea" },
+  "link_viewChanges": { "message": "Tirohia nga huringa" }
+}

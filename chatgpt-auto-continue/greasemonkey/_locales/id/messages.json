@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT Lanjutkan Otomatis" },
+  "appDesc": { "message": "Secara otomatis terus menghasilkan beberapa respons ChatGPT" },
+  "menuLabel_modeNotifs": { "message": "Pemberitahuan Mode" },
+  "menuLabel_about": { "message": "Ihwal" },
+  "menuLabel_disabled": { "message": "Dinonaktifkan (ekstensi terpasang)" },
+  "about_version": { "message": "Versi" },
+  "about_poweredBy": { "message": "Didukung oleh " },
+  "about_sourceCode": { "message": "Kode sumber" },
+  "mode_autoContinue": { "message": "Lanjutkan Otomatis" },
+  "alert_choosePlatform": { "message": "Pilih platform" },
+  "alert_updateAvail": { "message": "Pembaruan tersedia" },
+  "alert_newerVer": { "message": "Pembaruan untuk" },
+  "alert_isAvail": { "message": "Install package not available." },
+  "alert_upToDate": { "message": "Terbaru" },
+  "alert_isUpToDate": { "message": "terbaru" },
+  "buttonLabel_leaveReview": { "message": "Buat Ulasan" },
+  "buttonLabel_updateCheck": { "message": "Periksa Pemutakhiran" },
+  "buttonLabel_update": { "message": "Pembaruan" },
+  "buttonLabel_dismiss": { "message": "Tutup" },
+  "link_viewChanges": { "message": "Lihat perubahan" }
+}

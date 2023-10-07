@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT automatikus folytatása" },
+  "appDesc": { "message": "Több ChatGPT-válasz automatikus generálásának folytatása" },
+  "menuLabel_modeNotifs": { "message": "Üzemmód értesítések" },
+  "menuLabel_about": { "message": "A" },
+  "menuLabel_disabled": { "message": "Letiltva (bővítmény telepítve)" },
+  "about_version": { "message": "Verzió" },
+  "about_poweredBy": { "message": "Kiszolgálja:" },
+  "about_sourceCode": { "message": "Forráskód" },
+  "mode_autoContinue": { "message": "Automatikus folytatás" },
+  "alert_choosePlatform": { "message": "Válasszon platformot" },
+  "alert_updateAvail": { "message": "Frissítés érhető el" },
+  "alert_newerVer": { "message": "Frissítés" },
+  "alert_isAvail": { "message": "elérhető" },
+  "alert_upToDate": { "message": "Aktuális" },
+  "alert_isUpToDate": { "message": "naprakész" },
+  "buttonLabel_leaveReview": { "message": "Írjál egy véleményt" },
+  "buttonLabel_updateCheck": { "message": "Frissítések keresése" },
+  "buttonLabel_update": { "message": "Frissítés" },
+  "buttonLabel_dismiss": { "message": "Elvetés" },
+  "link_viewChanges": { "message": "Módosítások megtekintése" }
+}

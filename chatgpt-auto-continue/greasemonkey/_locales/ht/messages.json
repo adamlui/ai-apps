@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT Auto-Continue" },
+  "appDesc": { "message": "Otomatikman kontinye jenere plizyè repons ChatGPT" },
+  "menuLabel_modeNotifs": { "message": "Notifikasyon Mòd" },
+  "menuLabel_about": { "message": "Apwopo" },
+  "menuLabel_disabled": { "message": "Andikape (ekstansyon enstale)" },
+  "about_version": { "message": "Vèsyon" },
+  "about_poweredBy": { "message": "Powered by" },
+  "about_sourceCode": { "message": "kòd sous/ code source / le code source mis à jour/code en langage source" },
+  "mode_autoContinue": { "message": "Oto-kontinye" },
+  "alert_choosePlatform": { "message": "Chwazi yon platfòm" },
+  "alert_updateAvail": { "message": "Mizajou ki disponib" },
+  "alert_newerVer": { "message": "Yon aktyalizasyon pou" },
+  "alert_isAvail": { "message": "ki disponib/à votre disposition/sont disponibles" },
+  "alert_upToDate": { "message": "Mizajou/ajou/a jou/alamòd /monte a dat/le plus récent /à jour /moderne" },
+  "alert_isUpToDate": { "message": "se monte-a-dat/est" },
+  "buttonLabel_leaveReview": { "message": "Kite yon Revizyon" },
+  "buttonLabel_updateCheck": { "message": "Tcheke pou Mizajou" },
+  "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_dismiss": { "message": "Demisyon" },
+  "link_viewChanges": { "message": "Gade chanjman yo" }
+}

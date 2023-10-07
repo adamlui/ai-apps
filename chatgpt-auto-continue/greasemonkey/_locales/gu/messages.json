@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT આપોઆપ- ચાલુ રાખો" },
+  "appDesc": { "message": "આપમેળે બહુવિધ ChatGPT જવાબો જનરેટ કરવાનું ચાલુ રાખો" },
+  "menuLabel_modeNotifs": { "message": "મોડ સૂચનાઓ" },
+  "menuLabel_about": { "message": "માહિતી " },
+  "menuLabel_disabled": { "message": "અક્ષમ (એક્સ્ટેંશન ઇન્સ્ટોલ કરેલું)" },
+  "about_version": { "message": "આવૃત્તિ" },
+  "about_poweredBy": { "message": "દ્વારા સંચાલિત" },
+  "about_sourceCode": { "message": "સ્ત્રોત કોડ" },
+  "mode_autoContinue": { "message": "આપમેળે ચાલુ રાખો" },
+  "alert_choosePlatform": { "message": "એક પ્લેટફોર્મ પસંદ કરો" },
+  "alert_updateAvail": { "message": "સુધારો ઉપલબ્ધ" },
+  "alert_newerVer": { "message": "આ માટે એક અપડેટ" },
+  "alert_isAvail": { "message": "ઉપલબ્ધ છે" },
+  "alert_upToDate": { "message": "સુધારો" },
+  "alert_isUpToDate": { "message": "સુધારો" },
+  "buttonLabel_leaveReview": { "message": "સમીક્ષા મૂકો" },
+  "buttonLabel_updateCheck": { "message": "નવાં ભાગ(ઓ) માટે ચકાસો" },
+  "buttonLabel_update": { "message": "અદ્યતન બનાવો" },
+  "buttonLabel_dismiss": { "message": "કાઢી મૂકવું" },
+  "link_viewChanges": { "message": "ફેરફારો જુઓ" }
+}

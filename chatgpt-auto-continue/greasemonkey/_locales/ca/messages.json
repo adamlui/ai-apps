@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "Continua automàticament amb el ChatGPT" },
+  "appDesc": { "message": "Continuar generant automàticament diverses respostes de ChatGPT" },
+  "menuLabel_modeNotifs": { "message": "Notificacions de mode" },
+  "menuLabel_about": { "message": "Quant a" },
+  "menuLabel_disabled": { "message": "Desactivat (extensió instal·lada)" },
+  "about_version": { "message": "Versió" },
+  "about_poweredBy": { "message": "Desenvolupat per" },
+  "about_sourceCode": { "message": "Codi font" },
+  "mode_autoContinue": { "message": "Continua automàticament" },
+  "alert_choosePlatform": { "message": "Tria una plataforma" },
+  "alert_updateAvail": { "message": "Nova versió disponible!" },
+  "alert_newerVer": { "message": "Una actualització a" },
+  "alert_isAvail": { "message": "està disponible" },
+  "alert_upToDate": { "message": "Actualitzat" },
+  "alert_isUpToDate": { "message": "està actualitzat" },
+  "buttonLabel_leaveReview": { "message": "Deixa una ressenya" },
+  "buttonLabel_updateCheck": { "message": "Comprova si hi ha actualitzacions" },
+  "buttonLabel_update": { "message": "Actualització" },
+  "buttonLabel_dismiss": { "message": "Descarta" },
+  "link_viewChanges": { "message": "Mostra els canvis" }
+}

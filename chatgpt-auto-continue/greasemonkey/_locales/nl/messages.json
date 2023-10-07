@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT automatisch doorgaan" },
+  "appDesc": { "message": "Ga automatisch door met het genereren van meerdere ChatGPT-reacties" },
+  "menuLabel_modeNotifs": { "message": "Modusmeldingen" },
+  "menuLabel_about": { "message": "Over" },
+  "menuLabel_disabled": { "message": "Uitgeschakeld (extensie geïnstalleerd)" },
+  "about_version": { "message": "Versie" },
+  "about_poweredBy": { "message": "Ondersteund door" },
+  "about_sourceCode": { "message": "Broncode" },
+  "mode_autoContinue": { "message": "Automatisch doorgaan" },
+  "alert_choosePlatform": { "message": "Kies een platform" },
+  "alert_updateAvail": { "message": "Güncelleme uygun" },
+  "alert_newerVer": { "message": "Updaten naar" },
+  "alert_isAvail": { "message": "is beschikbaar" },
+  "alert_upToDate": { "message": "Bijgewerkt" },
+  "alert_isUpToDate": { "message": "<PROTECTED> is geactualiseerd" },
+  "buttonLabel_leaveReview": { "message": "Recensie achterlaten" },
+  "buttonLabel_updateCheck": { "message": "Controleer op updates" },
+  "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_dismiss": { "message": "Afwijzen" },
+  "link_viewChanges": { "message": "Wijzigingen weergeven" }
+}

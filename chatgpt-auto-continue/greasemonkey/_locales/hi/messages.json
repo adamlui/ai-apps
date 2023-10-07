@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT ऑटो - कंटिन्यू" },
+  "appDesc": { "message": "कई ChatGPT प्रतिक्रियाओं को स्वचालित रूप से जनरेट करना जारी रखें" },
+  "menuLabel_modeNotifs": { "message": "मोड नोटिफ़िकेशन" },
+  "menuLabel_about": { "message": "परिचय" },
+  "menuLabel_disabled": { "message": "अक्षम (एक्सटेंशन इंस्टॉल किया गया)" },
+  "about_version": { "message": "संस्करण" },
+  "about_poweredBy": { "message": "...द्वारा पावरशुदा" },
+  "about_sourceCode": { "message": "सोर्स कोड" },
+  "mode_autoContinue": { "message": "अपने आप जारी रखें" },
+  "alert_choosePlatform": { "message": "कोई प्लैटफ़ॉर्म चुनें" },
+  "alert_updateAvail": { "message": "अद्यतन उपलब्ध है" },
+  "alert_newerVer": { "message": "पर एक अपडेट" },
+  "alert_isAvail": { "message": "उपलब्ध है।" },
+  "alert_upToDate": { "message": "अद्यतन" },
+  "alert_isUpToDate": { "message": "अप - टू - डेट है" },
+  "buttonLabel_leaveReview": { "message": "समीक्षा लिखें" },
+  "buttonLabel_updateCheck": { "message": "अद्यतन के लिए जाँचें" },
+  "buttonLabel_update": { "message": "अपडेट करें" },
+  "buttonLabel_dismiss": { "message": "खारिज करना" },
+  "link_viewChanges": { "message": "बदलाव देखें" }
+}

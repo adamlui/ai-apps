@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT Auto-Continue" },
+  "appDesc": { "message": "Automatesch weider Multiple ChatGPT Äntwerten generéieren" },
+  "menuLabel_modeNotifs": { "message": "Modus-Noriichten" },
+  "menuLabel_about": { "message": "Iwwer Qt" },
+  "menuLabel_disabled": { "message": "Disabled (Verlängerung installéiert)" },
+  "about_version": { "message": "Versioun" },
+  "about_poweredBy": { "message": "Bereetgestallt vun" },
+  "about_sourceCode": { "message": "Quellcode" },
+  "mode_autoContinue": { "message": "Auto-Kontinuitéit" },
+  "alert_choosePlatform": { "message": "Wielt eng Plattform" },
+  "alert_updateAvail": { "message": "Aktualiséierung verfügbar" },
+  "alert_newerVer": { "message": "An UPDATE fir" },
+  "alert_isAvail": { "message": "ass verfügbar" },
+  "alert_upToDate": { "message": "Aktualiséiert" },
+  "alert_isUpToDate": { "message": "hie/si, hatt/et gëtt aktualiséiert" },
+  "buttonLabel_leaveReview": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten in de" },
+  "buttonLabel_updateCheck": { "message": "Kuckt no Aktualiséierungen" },
+  "buttonLabel_update": { "message": "Aktualiséieren" },
+  "buttonLabel_dismiss": { "message": "Ofginn" },
+  "link_viewChanges": { "message": "Ännerungen uweisen" }
+}

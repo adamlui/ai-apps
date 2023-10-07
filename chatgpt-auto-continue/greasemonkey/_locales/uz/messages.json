@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT Avtomatik Davom etish" },
+  "appDesc": { "message": "Avtomatik ravishda bir nechta ChatGPT javoblarini yaratishda davom eting" },
+  "menuLabel_modeNotifs": { "message": "Rejim bildirishnomalari" },
+  "menuLabel_about": { "message": "Qisqacha ma'lumot" },
+  "menuLabel_disabled": { "message": "O&#39;chirilgan (kengaytma o&#39;rnatilgan)" },
+  "about_version": { "message": "Versiya" },
+  "about_poweredBy": { "message": "Tomonidan qo&#39;llab-quvvatlanadi" },
+  "about_sourceCode": { "message": "Ochiq kod" },
+  "mode_autoContinue": { "message": "Avtomatik Davom etish" },
+  "alert_choosePlatform": { "message": "Platformani tanlang" },
+  "alert_updateAvail": { "message": "Mavjud yangilanishlar" },
+  "alert_newerVer": { "message": "Yangilash" },
+  "alert_isAvail": { "message": "mavjud." },
+  "alert_upToDate": { "message": "Yangilash" },
+  "alert_isUpToDate": { "message": "dolzarb hisoblanadi" },
+  "buttonLabel_leaveReview": { "message": "Sharh qoldiring" },
+  "buttonLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
+  "buttonLabel_update": { "message": "Yangilash" },
+  "buttonLabel_dismiss": { "message": "Rad etish" },
+  "link_viewChanges": { "message": "O&#39;zgarishlarni ko&#39;rish" }
+}

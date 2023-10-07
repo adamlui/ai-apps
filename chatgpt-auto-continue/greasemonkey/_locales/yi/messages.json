@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT אַוטאָ-פאָרזעצן" },
+  "appDesc": { "message": "אָטאַמאַטיק פאָרזעצן צו דזשענערייט קייפל ChatGPT רעספּאָנסעס" },
+  "menuLabel_modeNotifs": { "message": "מאָדע נאָטיפיקאַטיאָנס" },
+  "menuLabel_about": { "message": "dialogs-action" },
+  "menuLabel_disabled": { "message": "פאַרקריפּלט (פאַרלענגערונג אינסטאַלירן)" },
+  "about_version": { "message": "ווערסיע" },
+  "about_poweredBy": { "message": "פּאַוערד דורך" },
+  "about_sourceCode": { "message": "מקור קאָד" },
+  "mode_autoContinue": { "message": "אַוטאָ-פאָרזעצן" },
+  "alert_choosePlatform": { "message": "קלייַבן אַ פּלאַטפאָרמע" },
+  "alert_updateAvail": { "message": "דערהייַנטיקן בנימצא" },
+  "alert_newerVer": { "message": "אַ דערהייַנטיקן צו" },
+  "alert_isAvail": { "message": "איז בנימצא" },
+  "alert_upToDate": { "message": "היינטצייטיג" },
+  "alert_isUpToDate": { "message": "איז דערהייַנטיקט" },
+  "buttonLabel_leaveReview": { "message": "לאָזן אַ רעצענזיע" },
+  "buttonLabel_updateCheck": { "message": "זוך נייע ווערסיעס" },
+  "buttonLabel_update": { "message": "דערהייַנטיקן" },
+  "buttonLabel_dismiss": { "message": "אָפּזאָגן" },
+  "link_viewChanges": { "message": "קוק ענדערונגען" }
+}

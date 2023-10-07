@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT Auto-Continue" },
+  "appDesc": { "message": "A yeke ngbâ ti sara si azo mingi akiri tënë na ndo ti tënë ti ChatGPT" },
+  "menuLabel_modeNotifs": { "message": "Nduru tënë ti mode" },
+  "menuLabel_about": { "message": "About sara" },
+  "menuLabel_disabled": { "message": "Sous réserve (reapprovisionnement so a zia ni na place ni" },
+  "about_version": { "message": "Yângâ tî kodoro" },
+  "about_poweredBy": { "message": "A yeke sara kua na ni" },
+  "about_sourceCode": { "message": "Source code ti" },
+  "mode_autoContinue": { "message": "Auto article" },
+  "alert_choosePlatform": { "message": "Soro mbeni platforme" },
+  "alert_updateAvail": { "message": "Nduru tënë so ayeke dä" },
+  "alert_newerVer": { "message": "Mbeni ye so a sara na yâ ti fini dunia" },
+  "alert_isAvail": { "message": "yeke available" },
+  "alert_upToDate": { "message": "Upgrade na" },
+  "alert_isUpToDate": { "message": "a yeke ti laso" },
+  "buttonLabel_leaveReview": { "message": "Gbu li ti mo na ndo ti mbeni ye so mo bâ" },
+  "buttonLabel_updateCheck": { "message": "Gbu li ti mo na ndo ti aye so asi laso" },
+  "buttonLabel_update": { "message": "Nduru tënëModifier" },
+  "buttonLabel_dismiss": { "message": "Gbenga Akinnagbe" },
+  "link_viewChanges": { "message": "Bâ achangement" }
+}

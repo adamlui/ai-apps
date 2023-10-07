@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT རང་བཞིན་འབྱུང་ཁུངས།" },
+  "appDesc": { "message": "ChatGPTགི་ལན་ཐེངས་མང་རབས་ཅིག་ རང་བཞིན་གྱིས་བཟོ་ནི་ འཕྲོ་མཐུད་འབད་" },
+  "menuLabel_modeNotifs": { "message": "ཐབས་ལམ་བརྡ་ཚུ།" },
+  "menuLabel_about": { "message": "སྐོར་ལས་" },
+  "menuLabel_disabled": { "message": "ནུས་མེད་བཀྲམ་གཏང་། (_F)" },
+  "about_version": { "message": "ཐོན་རིམ།" },
+  "about_poweredBy": { "message": "དབང་ཤུགས་ཀྱི་ཐོག་ལས་" },
+  "about_sourceCode": { "message": "ཐོན་ཁུངས་ཀོཌ་" },
+  "mode_autoContinue": { "message": "རང་མགོ་རང་འདྲོངས་འབད་" },
+  "alert_choosePlatform": { "message": "ས་གོ་ཅིག་བཟོ།" },
+  "alert_updateAvail": { "message": "ད་ལྟོ་མཐུན་བཟོ་ནི།" },
+  "alert_newerVer": { "message": "ད་ལྟོའི་དུས་ཚོད། བསྒྱུར་བཅོས་འབད་" },
+  "alert_isAvail": { "message": "འཐོབ་ཚུགས་" },
+  "alert_upToDate": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
+  "alert_isUpToDate": { "message": "ད་ལྟོའི་བར་ན་ཡང་" },
+  "buttonLabel_leaveReview": { "message": "བསྐྱར་ཞིབ་འབད་" },
+  "buttonLabel_updateCheck": { "message": "ད་ལྟོའི་དུས་ཚོད། བསྒྱུར་བཅོས་འབད་" },
+  "buttonLabel_update": { "message": "ད་ལྟོའི་དུས་ཚོད།" },
+  "buttonLabel_dismiss": { "message": "ཁ་འབྱལ་བ།" },
+  "link_viewChanges": { "message": "བསྒྱུར་བཅོས་ཚུ་བལྟ་" }
+}

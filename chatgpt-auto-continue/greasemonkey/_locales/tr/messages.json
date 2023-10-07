@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT Otomatik Devam" },
+  "appDesc": { "message": "Birden fazla ChatGPT yanıtı oluşturmaya otomatik olarak devam edin" },
+  "menuLabel_modeNotifs": { "message": "Mod Bildirimleri" },
+  "menuLabel_about": { "message": "Hakkımızda" },
+  "menuLabel_disabled": { "message": "Devre dışı (uzantı yüklendi)" },
+  "about_version": { "message": "Versiyon" },
+  "about_poweredBy": { "message": "Destek" },
+  "about_sourceCode": { "message": "Kaynak Kodu" },
+  "mode_autoContinue": { "message": "Otomatik Devam" },
+  "alert_choosePlatform": { "message": "Bir platform seçin" },
+  "alert_updateAvail": { "message": "Güncelleme uygun" },
+  "alert_newerVer": { "message": "Güncelleme tarih" },
+  "alert_isAvail": { "message": "geçerli" },
+  "alert_upToDate": { "message": "Güncel" },
+  "alert_isUpToDate": { "message": "Güncel" },
+  "buttonLabel_leaveReview": { "message": "Bir Yorum Bırakın" },
+  "buttonLabel_updateCheck": { "message": "Güncellemeleri Kontrol Et" },
+  "buttonLabel_update": { "message": "Update" },
+  "buttonLabel_dismiss": { "message": "Yok say" },
+  "link_viewChanges": { "message": "Değişen Dosyalar" }
+}

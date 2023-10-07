@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "Автопродовження чату ChatGPT" },
+  "appDesc": { "message": "Автоматично продовжувати генерувати кілька відповідей ChatGPT" },
+  "menuLabel_modeNotifs": { "message": "Сповіщення про режим" },
+  "menuLabel_about": { "message": "Про нас" },
+  "menuLabel_disabled": { "message": "Вимкнено (розширення встановлено)" },
+  "about_version": { "message": "Версія" },
+  "about_poweredBy": { "message": "Працює на" },
+  "about_sourceCode": { "message": "Джерельний код" },
+  "mode_autoContinue": { "message": "Автопродовження" },
+  "alert_choosePlatform": { "message": "Виберіть платформу" },
+  "alert_updateAvail": { "message": "Доступне оновлення" },
+  "alert_newerVer": { "message": "Оновлення для" },
+  "alert_isAvail": { "message": "не доступно" },
+  "alert_upToDate": { "message": "Up-to-date" },
+  "alert_isUpToDate": { "message": "оновлено" },
+  "buttonLabel_leaveReview": { "message": "Залишити відгук" },
+  "buttonLabel_updateCheck": { "message": "Перевірка оновлень" },
+  "buttonLabel_update": { "message": "Оновити" },
+  "buttonLabel_dismiss": { "message": "Відхиляти" },
+  "link_viewChanges": { "message": "Переглянути зміни" }
+}

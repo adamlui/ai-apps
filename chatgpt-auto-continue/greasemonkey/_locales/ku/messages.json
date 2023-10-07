@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT خودکار پێشکراو" },
+  "appDesc": { "message": "بە شێوەیەکی خودکار پەیوەندیدانی چەندین واژۆی ChatGPT" },
+  "menuLabel_modeNotifs": { "message": "ئاگاداریە کردن لە هەرێم" },
+  "menuLabel_about": { "message": "دەربارەی" },
+  "menuLabel_disabled": { "message": "ناچالاککراو (پەرەپێدەیشن دامەزرابرا)" },
+  "about_version": { "message": "وەرژن" },
+  "about_poweredBy": { "message": "ڕاگرتن لە لای" },
+  "about_sourceCode": { "message": "کۆدی سەرچاوە" },
+  "mode_autoContinue": { "message": "خۆکارانە پەیشکرابێت" },
+  "alert_choosePlatform": { "message": "پلاتفۆرمێک هەڵبژێرە" },
+  "alert_updateAvail": { "message": "نوێکردنەوە بەردەستە" },
+  "alert_newerVer": { "message": "نوێکردنەوەی بۆ" },
+  "alert_isAvail": { "message": "بەردەستە" },
+  "alert_upToDate": { "message": "نوێکردنەوەی تایبەتی" },
+  "alert_isUpToDate": { "message": "تایبەتی نوێکردنەوەی" },
+  "buttonLabel_leaveReview": { "message": "راي بنێرە" },
+  "buttonLabel_updateCheck": { "message": "بچۆڕە بۆ نوێکردنەوەکان" },
+  "buttonLabel_update": { "message": "نوێ بکەرەوە" },
+  "buttonLabel_dismiss": { "message": "پارێزگا بکە" },
+  "link_viewChanges": { "message": "گۆڕانکاریەکان بینەرە" }
+}

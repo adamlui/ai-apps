@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT automātiska turpināšana" },
+  "appDesc": { "message": "Automātiski turpināt ģenerēt vairākas ChatGPT atbildes" },
+  "menuLabel_modeNotifs": { "message": "Režīma paziņojumi" },
+  "menuLabel_about": { "message": "Par produktu" },
+  "menuLabel_disabled": { "message": "Atspējots (paplašinājums instalēts)" },
+  "about_version": { "message": "Versija" },
+  "about_poweredBy": { "message": "Izstrādāts" },
+  "about_sourceCode": { "message": "Avots:" },
+  "mode_autoContinue": { "message": "Automātiski turpināt" },
+  "alert_choosePlatform": { "message": "Izvēlieties platformu" },
+  "alert_updateAvail": { "message": "Pieejams jauninājums" },
+  "alert_newerVer": { "message": "Atjauninājums uz" },
+  "alert_isAvail": { "message": "ir pieejams!" },
+  "alert_upToDate": { "message": "Aktuāls" },
+  "alert_isUpToDate": { "message": "Aktuāls" },
+  "buttonLabel_leaveReview": { "message": "Atstāt atsauksmi?" },
+  "buttonLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi." },
+  "buttonLabel_update": { "message": "Atjauninināt" },
+  "buttonLabel_dismiss": { "message": "Noraidīt" },
+  "link_viewChanges": { "message": "Skatīt izmaiņas" }
+}

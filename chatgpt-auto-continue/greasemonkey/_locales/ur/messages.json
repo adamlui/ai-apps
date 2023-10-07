@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "ChatGPT خودکار طور پر جاری رکھیں" },
+  "appDesc": { "message": "خود بخود متعدد ChatGPT جوابات جنریٹ کرنا جاری رکھیں" },
+  "menuLabel_modeNotifs": { "message": "موڈ نوٹیفکیشنز" },
+  "menuLabel_about": { "message": "متعلق" },
+  "menuLabel_disabled": { "message": "غیر فعال (ایکسٹینشن انسٹال ہے)" },
+  "about_version": { "message": "ورژن" },
+  "about_poweredBy": { "message": "تقویت یافتہ از" },
+  "about_sourceCode": { "message": "کۆسی سەرچاوە" },
+  "mode_autoContinue": { "message": "خودکار طور پر جاری رکھیں" },
+  "alert_choosePlatform": { "message": "ایک پلیٹ فارم منتخب کریں" },
+  "alert_updateAvail": { "message": "اپڈیٹ دستیاب ہے" },
+  "alert_newerVer": { "message": "پر ایک اپ ڈیٹ" },
+  "alert_isAvail": { "message": "دستیاب ہے" },
+  "alert_upToDate": { "message": "تازہ ترین" },
+  "alert_isUpToDate": { "message": "تازہ ترین ہے" },
+  "buttonLabel_leaveReview": { "message": "جائزہ دیں" },
+  "buttonLabel_updateCheck": { "message": "اپ ڈیٹس کی پڑتال کریں" },
+  "buttonLabel_update": { "message": "اپ ڈیٹ " },
+  "buttonLabel_dismiss": { "message": "برخاست" },
+  "link_viewChanges": { "message": "تبدیلیاں دیکھیں" }
+}

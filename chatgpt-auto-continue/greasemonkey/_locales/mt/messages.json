@@ -1,0 +1,22 @@
+{
+  "appName": { "message": "Ikompli bil-Kumplament Awtomatiku taċ-ChatGPT" },
+  "appDesc": { "message": "Kompli awtomatikament jiġġenera diversi tweġibiet taċ-ChatGPT" },
+  "menuLabel_modeNotifs": { "message": "Notifiki tal-Modalità" },
+  "menuLabel_about": { "message": "Dwar" },
+  "menuLabel_disabled": { "message": "Diżattivat (estensjoni installata)" },
+  "about_version": { "message": "Verżjoni" },
+  "about_poweredBy": { "message": "Imħaddem minn" },
+  "about_sourceCode": { "message": "Kodiċi tas-sors" },
+  "mode_autoContinue": { "message": "Kompli Awtomatikament" },
+  "alert_choosePlatform": { "message": "AGĦŻEL PJATTAFORMA" },
+  "alert_updateAvail": { "message": "Aġġornament disponibbli" },
+  "alert_newerVer": { "message": "Aġġornament għal" },
+  "alert_isAvail": { "message": "huwa disponibbli" },
+  "alert_upToDate": { "message": "ŻOMM RUĦEK AĠĠORNAT" },
+  "alert_isUpToDate": { "message": "huwa aġġornat" },
+  "buttonLabel_leaveReview": { "message": "Ħalli Review" },
+  "buttonLabel_updateCheck": { "message": "Iċċekkja għall-aġġornamenti?" },
+  "buttonLabel_update": { "message": "Aġġornament" },
+  "buttonLabel_dismiss": { "message": "Neħħi" },
+  "link_viewChanges": { "message": "Ara l-bidliet" }
+}
