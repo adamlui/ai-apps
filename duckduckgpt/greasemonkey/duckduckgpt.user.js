@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.5.1
+// @version             2023.10.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -263,8 +263,7 @@
                        + state.separator + state.word[+!config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(messages.menuLabel_proxyAPImode + ' '
-                + messages['state_' + ( config.proxyAPIenabled ? 'enabled' : 'disabled' )])
+            notify(messages.menuLabel_proxyAPImode + ' ' + state.word[+!config.proxyAPIenabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             location.reload() // re-send query using new endpoint
         }))
@@ -278,8 +277,7 @@
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
-            notify(messages.mode_prefix + ' '
-                + messages['state_' + ( config.prefixEnabled ? 'enabled' : 'disabled' )])
+            notify(messages.mode_prefix + ' ' + state.word[+!config.prefixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
@@ -293,8 +291,7 @@
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify(messages.mode_suffix + ' '
-                + messages['state_' + ( config.suffixEnabled ? 'enabled' : 'disabled' )])
+            notify(messages.mode_suffix + ' ' + state.word[+!config.suffixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
@@ -307,8 +304,7 @@
             saveSetting('fatterSidebar', !config.fatterSidebar)
             updateTweaksStyle()
             if (!config.notifHidden)
-                notify(messages.menuLabel_fatterSidebar + ' '
-                    + messages['state_' + ( config.fatterSidebar ? 'enabled' : 'disabled' )])
+                notify(messages.menuLabel_fatterSidebar + ' ' + state.word[+!config.fatterSidebar])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
