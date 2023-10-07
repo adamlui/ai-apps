@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "loaʻa" },
   "alert_upToDate": { "message": "ʻikepili hou āpau" },
   "alert_isUpToDate": { "message": "he mea hou" },
+  "notif_chatAutoContinued": { "message": "Ua hoʻomau ʻia ke kamaʻilio ʻana" },
   "buttonLabel_leaveReview": { "message": "E waiho i kahi loiloi" },
   "buttonLabel_updateCheck": { "message": "E nānā i nā mea hou" },
   "buttonLabel_update": { "message": "Hōʻano hou" },

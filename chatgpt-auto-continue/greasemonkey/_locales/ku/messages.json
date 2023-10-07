@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "بەردەستە" },
   "alert_upToDate": { "message": "نوێکردنەوەی تایبەتی" },
   "alert_isUpToDate": { "message": "تایبەتی نوێکردنەوەی" },
+  "notif_chatAutoContinued": { "message": "Chat Oto-Bedewam bû" },
   "buttonLabel_leaveReview": { "message": "راي بنێرە" },
   "buttonLabel_updateCheck": { "message": "بچۆڕە بۆ نوێکردنەوەکان" },
   "buttonLabel_update": { "message": "نوێ بکەرەوە" },

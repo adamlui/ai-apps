@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "alipo" },
   "alert_upToDate": { "message": "Fela Kuti Up-to-date" },
   "alert_isUpToDate": { "message": "shine shine up-date shine" },
+  "notif_chatAutoContinued": { "message": "Chat Auto Ukulele" },
   "buttonLabel_leaveReview": { "message": "Lekisha Review" },
   "buttonLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
   "buttonLabel_update": { "message": "Update" },

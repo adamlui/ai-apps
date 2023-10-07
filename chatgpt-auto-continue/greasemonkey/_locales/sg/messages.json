@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "yeke available" },
   "alert_upToDate": { "message": "Upgrade na" },
   "alert_isUpToDate": { "message": "a yeke ti laso" },
+  "notif_chatAutoContinued": { "message": "Auto brochure auto brochures" },
   "buttonLabel_leaveReview": { "message": "Gbu li ti mo na ndo ti mbeni ye so mo bâ" },
   "buttonLabel_updateCheck": { "message": "Gbu li ti mo na ndo ti aye so asi laso" },
   "buttonLabel_update": { "message": "Nduru tënëModifier" },

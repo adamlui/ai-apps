@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "<x id=\"1\"/>\"<x id=\"2\"/>\" उपलब्ध<x id=\"3\"/> छ" },
   "alert_upToDate": { "message": "अद्यावधिक गर्नुहोस्" },
   "alert_isUpToDate": { "message": "अद्यावधिक गर्नुहोस्" },
+  "notif_chatAutoContinued": { "message": "कुराकानी स्वतः जारी छ" },
   "buttonLabel_leaveReview": { "message": "समीक्षा छोड्नुहोस्" },
   "buttonLabel_updateCheck": { "message": "अद्यावधिकका लागि जाँच गर्नुहोस्" },
   "buttonLabel_update": { "message": "अद्यावधिक" },

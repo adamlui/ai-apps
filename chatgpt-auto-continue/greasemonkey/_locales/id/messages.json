@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "Install package not available." },
   "alert_upToDate": { "message": "Terbaru" },
   "alert_isUpToDate": { "message": "terbaru" },
+  "notif_chatAutoContinued": { "message": "Obrolan Disambung Otomatis" },
   "buttonLabel_leaveReview": { "message": "Buat Ulasan" },
   "buttonLabel_updateCheck": { "message": "Periksa Pemutakhiran" },
   "buttonLabel_update": { "message": "Pembaruan" },

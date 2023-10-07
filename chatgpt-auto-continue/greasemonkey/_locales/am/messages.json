@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ይገኛል" },
   "alert_upToDate": { "message": "ወቅታዊ" },
   "alert_isUpToDate": { "message": "እስከ-ወደ-ቀን ነው" },
+  "notif_chatAutoContinued": { "message": "የውይይት ራስ-ሰር-ቁጥጥር" },
   "buttonLabel_leaveReview": { "message": "ግምገማ ይተው" },
   "buttonLabel_updateCheck": { "message": "ዝማኔዎችን ይመልከቱ" },
   "buttonLabel_update": { "message": "አዘምን" },

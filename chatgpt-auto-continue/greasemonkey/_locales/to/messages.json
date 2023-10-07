@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ʻoku lava ke maʻu" },
   "alert_upToDate": { "message": "ʻO aʻu mai ki he ʻaho ni" },
   "alert_isUpToDate": { "message": "ʻOku aʻu ki he ʻaho ni" },
+  "notif_chatAutoContinued": { "message": "Chat-hoko atu" },
   "buttonLabel_leaveReview": { "message": "Tuku ha Toe Vakaiʻi" },
   "buttonLabel_updateCheck": { "message": "Vakaiʻi e Ngaahi Fakamatala Fakamuimuitahá" },
   "buttonLabel_update": { "message": "Fakamatala Fakamuimuitahá" },

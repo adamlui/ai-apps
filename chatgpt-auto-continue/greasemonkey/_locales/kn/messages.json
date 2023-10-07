@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ಲಭ್ಯವಿದೆ" },
   "alert_upToDate": { "message": "ಅಪ್ ‌ ಟು ಡೇಟ್" },
   "alert_isUpToDate": { "message": "ಅಪ್ ‌ ಟು ಡೇಟ್ ಆಗಿದೆ" },
+  "notif_chatAutoContinued": { "message": "ಚಾಟ್ ಸ್ವಯಂ-ಕಾಂಟಿನೆಂಟ್ ಮಾಡಲಾಗಿದೆ" },
   "buttonLabel_leaveReview": { "message": "ವಿಮರ್ಶೆಯನ್ನು ಬಿಡಿ" },
   "buttonLabel_updateCheck": { "message": "ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ" },
   "buttonLabel_update": { "message": "ನವೀಕರಿಸಿ" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "inapatikana" },
   "alert_upToDate": { "message": "Imesasishwa" },
   "alert_isUpToDate": { "message": "imesasishwa" },
+  "notif_chatAutoContinued": { "message": "Ongea Kiotomatiki" },
   "buttonLabel_leaveReview": { "message": "Acha Tathmini" },
   "buttonLabel_updateCheck": { "message": "Angalia Masasisho" },
   "buttonLabel_update": { "message": "Sasisho" },

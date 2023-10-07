@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "жеткиликтүү" },
   "alert_upToDate": { "message": "Учурдагы" },
   "alert_isUpToDate": { "message": "актуалдуулугу" },
+  "notif_chatAutoContinued": { "message": "Чат Auto-Continued" },
   "buttonLabel_leaveReview": { "message": "Сын-пикир калтыруу" },
   "buttonLabel_updateCheck": { "message": "Жаңы чыгаруулар бар экендигин текшерүү" },
   "buttonLabel_update": { "message": "Жаңыртуу" },

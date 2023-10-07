@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "est disponibus" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "est up-to-date" },
+  "notif_chatAutoContinued": { "message": "Chate Auto-Continato" },
   "buttonLabel_leaveReview": { "message": "Retinere" },
   "buttonLabel_updateCheck": { "message": "Check for Updates" },
   "buttonLabel_update": { "message": "opus" },

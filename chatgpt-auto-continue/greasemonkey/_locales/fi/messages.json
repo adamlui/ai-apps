@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "on käytettävissä" },
   "alert_upToDate": { "message": "Ajan tasalla" },
   "alert_isUpToDate": { "message": "Ajan tasalla" },
+  "notif_chatAutoContinued": { "message": "Chat jatkuu automaattisesti" },
   "buttonLabel_leaveReview": { "message": "Jätä arvostelu" },
   "buttonLabel_updateCheck": { "message": "Tarkista päivitykset" },
   "buttonLabel_update": { "message": "Päivitä" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "elérhető" },
   "alert_upToDate": { "message": "Aktuális" },
   "alert_isUpToDate": { "message": "naprakész" },
+  "notif_chatAutoContinued": { "message": "Csevegés automatikusan folytatva" },
   "buttonLabel_leaveReview": { "message": "Írjál egy véleményt" },
   "buttonLabel_updateCheck": { "message": "Frissítések keresése" },
   "buttonLabel_update": { "message": "Frissítés" },

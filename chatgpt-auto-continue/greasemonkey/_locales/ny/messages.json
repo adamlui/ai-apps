@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "likupezeka" },
   "alert_upToDate": { "message": "Zaposachedwa" },
   "alert_isUpToDate": { "message": "ndi up-to-date" },
+  "notif_chatAutoContinued": { "message": "Chat Auto-Continued" },
   "buttonLabel_leaveReview": { "message": "Siyani ndemanga" },
   "buttonLabel_updateCheck": { "message": "Fufuzani Zosintha" },
   "buttonLabel_update": { "message": "Sinthani" },

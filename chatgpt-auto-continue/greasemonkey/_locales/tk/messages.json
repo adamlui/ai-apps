@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "häzir bar" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "häzirki döwürde" },
+  "notif_chatAutoContinued": { "message": "Çat Auto-Continued" },
   "buttonLabel_leaveReview": { "message": "Çykyş goý" },
   "buttonLabel_updateCheck": { "message": "Updates üçin täzelendir" },
   "buttonLabel_update": { "message": "Täzele" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ലഭ്യമാണ്" },
   "alert_upToDate": { "message": "ഇന്നുവരെയുള്ള_മാറ്റങ്ങള്‍_വരുത്തിയത്" },
   "alert_isUpToDate": { "message": "ഇന്നുവരെയുള്ള_മാറ്റങ്ങള്‍_വരുത്തിയത്" },
+  "notif_chatAutoContinued": { "message": "ചാറ്റ് സ്വപ്രേരിതമായി തുടരുന്നു" },
   "buttonLabel_leaveReview": { "message": "ഒരു അവലോകനം ഉപേക്ഷിക്കുക" },
   "buttonLabel_updateCheck": { "message": "അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക" },
   "buttonLabel_update": { "message": "അപ്ഡേറ്റ് ചെയ്യുക" },

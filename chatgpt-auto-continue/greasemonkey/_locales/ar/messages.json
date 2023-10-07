@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "متوفر" },
   "alert_upToDate": { "message": "حديث، منته من أعماله، حتى تاريخه" },
   "alert_isUpToDate": { "message": "محدث" },
+  "notif_chatAutoContinued": { "message": "متابعة تلقائية للدردشة" },
   "buttonLabel_leaveReview": { "message": "اترك تقييماً" },
   "buttonLabel_updateCheck": { "message": "مرابة التحديثات" },
   "buttonLabel_update": { "message": "تحديث" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ir pieejams!" },
   "alert_upToDate": { "message": "Aktuāls" },
   "alert_isUpToDate": { "message": "Aktuāls" },
+  "notif_chatAutoContinued": { "message": "Automātiska tērzēšanas turpināšana" },
   "buttonLabel_leaveReview": { "message": "Atstāt atsauksmi?" },
   "buttonLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi." },
   "buttonLabel_update": { "message": "Atjauninināt" },

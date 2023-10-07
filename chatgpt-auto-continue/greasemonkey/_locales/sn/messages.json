@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "inowanika" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "is up-to-date" },
+  "notif_chatAutoContinued": { "message": "Kukurukurirana Auto-Continued" },
   "buttonLabel_leaveReview": { "message": "Taura nesu" },
   "buttonLabel_updateCheck": { "message": "Ongorora nokuti Updates" },
   "buttonLabel_update": { "message": "Kugadziridza" },

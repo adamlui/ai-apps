@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "e teng" },
   "alert_upToDate": { "message": "Feleletše" },
   "alert_isUpToDate": { "message": "e mo nakong" },
+  "notif_chatAutoContinued": { "message": "Chat Auto-Continued" },
   "buttonLabel_leaveReview": { "message": "Leave a Review" },
   "buttonLabel_updateCheck": { "message": "Tlhatlhoba Diphetogo" },
   "buttonLabel_update": { "message": "Ntshwafatso" },

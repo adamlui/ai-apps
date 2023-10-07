@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "azo atao" },
   "alert_upToDate": { "message": "Up-to-daty" },
   "alert_isUpToDate": { "message": "zava-nitranga farany" },
+  "notif_chatAutoContinued": { "message": "Karajia Auto-nametraka" },
   "buttonLabel_leaveReview": { "message": "Mametraha fanamarihana" },
   "buttonLabel_updateCheck": { "message": "Mitadiava fanavaozana" },
   "buttonLabel_update": { "message": "Vaovao farany" },

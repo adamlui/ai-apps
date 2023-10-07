@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "не доступно" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "оновлено" },
+  "notif_chatAutoContinued": { "message": "Автопродовження чату" },
   "buttonLabel_leaveReview": { "message": "Залишити відгук" },
   "buttonLabel_updateCheck": { "message": "Перевірка оновлень" },
   "buttonLabel_update": { "message": "Оновити" },

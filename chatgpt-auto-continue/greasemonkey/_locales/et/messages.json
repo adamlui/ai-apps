@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "on saadaval" },
   "alert_upToDate": { "message": "ajakohane" },
   "alert_isUpToDate": { "message": "ajakohane" },
+  "notif_chatAutoContinued": { "message": "Vestlus jätkub automaatselt" },
   "buttonLabel_leaveReview": { "message": "Jäta arvustus" },
   "buttonLabel_updateCheck": { "message": "Kontrolli uuendusi" },
   "buttonLabel_update": { "message": "Uuenda" },

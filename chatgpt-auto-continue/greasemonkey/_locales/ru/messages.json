@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "доступно" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "<PROG_NAME> в актуальном состоянии!" },
+  "notif_chatAutoContinued": { "message": "Автопродление чата" },
   "buttonLabel_leaveReview": { "message": "Оставьте отзыв" },
   "buttonLabel_updateCheck": { "message": "Проверить наличие обновлений" },
   "buttonLabel_update": { "message": "Обновить" },

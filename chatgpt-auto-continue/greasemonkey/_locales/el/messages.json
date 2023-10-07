@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "Μη διαθέσιμο" },
   "alert_upToDate": { "message": "Ενημερωμένο" },
   "alert_isUpToDate": { "message": " είναι ενήμερο." },
+  "notif_chatAutoContinued": { "message": "Αυτόματη συνέχιση συνομιλίας" },
   "buttonLabel_leaveReview": { "message": "Κάντε μία κριτική" },
   "buttonLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
   "buttonLabel_update": { "message": "Ενημέρωση" },

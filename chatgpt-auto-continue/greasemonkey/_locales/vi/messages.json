@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "is available" },
   "alert_upToDate": { "message": "cập nhật" },
   "alert_isUpToDate": { "message": "Cập nhật" },
+  "notif_chatAutoContinued": { "message": "Trò chuyện tự động tiếp tục" },
   "buttonLabel_leaveReview": { "message": "Đánh giá" },
   "buttonLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
   "buttonLabel_update": { "message": "Cập nhật" },

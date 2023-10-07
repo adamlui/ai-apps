@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "k dispozícii" },
   "alert_upToDate": { "message": "Aktuálny." },
   "alert_isUpToDate": { "message": "sú aktuálne" },
+  "notif_chatAutoContinued": { "message": "Automatické pokračovanie rozhovoru" },
   "buttonLabel_leaveReview": { "message": "Napísať referenciu" },
   "buttonLabel_updateCheck": { "message": "Zistiť novú verziu" },
   "buttonLabel_update": { "message": "Aktualizovať" },

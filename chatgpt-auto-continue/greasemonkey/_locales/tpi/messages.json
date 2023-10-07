@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "em i kamap pinis" },
   "alert_upToDate": { "message": "UPDATE" },
   "alert_isUpToDate": { "message": "ol i save mekim ol samting i kamap" },
+  "notif_chatAutoContinued": { "message": "Ol i save mekim ol samting long rot bilong ol yet" },
   "buttonLabel_leaveReview": { "message": "Leave a review" },
   "buttonLabel_updateCheck": { "message": "Lukim ol nupela tok" },
   "buttonLabel_update": { "message": "UPDATE" },

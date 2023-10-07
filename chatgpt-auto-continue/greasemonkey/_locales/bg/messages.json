@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "е налична" },
   "alert_upToDate": { "message": "Обновен" },
   "alert_isUpToDate": { "message": "е актуален" },
+  "notif_chatAutoContinued": { "message": "Автоматично продължаване на чата" },
   "buttonLabel_leaveReview": { "message": "Оставете коментар" },
   "buttonLabel_updateCheck": { "message": "Проверка за обновяване" },
   "buttonLabel_update": { "message": "Актуализация" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "je na voljo" },
   "alert_upToDate": { "message": "najnovejši" },
   "alert_isUpToDate": { "message": "najnovejši" },
+  "notif_chatAutoContinued": { "message": "Samodejno nadaljevanje klepeta" },
   "buttonLabel_leaveReview": { "message": "Podaj mnenje" },
   "buttonLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
   "buttonLabel_update": { "message": "Update" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ມີ" },
   "alert_upToDate": { "message": "ອັບເດດ" },
   "alert_isUpToDate": { "message": "up-to-date" },
+  "notif_chatAutoContinued": { "message": "ສົນທະນາຕໍ່ເນື່ອງໂດຍອັດຕະໂນມັດ" },
   "buttonLabel_leaveReview": { "message": "ໃຫ້ການທົບທວນຄືນ" },
   "buttonLabel_updateCheck": { "message": "ກວດເບິ່ງການອັບເດດ" },
   "buttonLabel_update": { "message": "ອັບເດດ" },

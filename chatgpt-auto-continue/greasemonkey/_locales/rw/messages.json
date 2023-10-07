@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "bihari" },
   "alert_upToDate": { "message": "Kuvugurura" },
   "alert_isUpToDate": { "message": "Kuvugurura" },
+  "notif_chatAutoContinued": { "message": "Komeza > >" },
   "buttonLabel_leaveReview": { "message": "A" },
   "buttonLabel_updateCheck": { "message": "Kugirango" },
   "buttonLabel_update": { "message": "Kuvugurura" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ලබා ගත හැක" },
   "alert_upToDate": { "message": "යාවත් කාළීන:" },
   "alert_isUpToDate": { "message": "යාවත් කාළීන:" },
+  "notif_chatAutoContinued": { "message": "චැට් ස්වයංක් ‍ රීයව ක් ‍ රියාවිරහිතයි" },
   "buttonLabel_leaveReview": { "message": "සමාලෝචනයක් එක් කරන්න" },
   "buttonLabel_updateCheck": { "message": "යාවත්කාලීන සඳහා පරීක් ‍ ෂා කරන්න" },
   "buttonLabel_update": { "message": "යාවත් කාළීන:" },

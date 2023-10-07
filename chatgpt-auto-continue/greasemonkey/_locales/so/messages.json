@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "waa la heli karaa" },
   "alert_upToDate": { "message": "Ilaa taariiqda" },
   "alert_isUpToDate": { "message": "waa up-to-date" },
+  "notif_chatAutoContinued": { "message": "Wada sheekaysiga Auto-Continued" },
   "buttonLabel_leaveReview": { "message": "Ka tag dib u eegis" },
   "buttonLabel_updateCheck": { "message": "Hubi Cusbooneysiinta" },
   "buttonLabel_update": { "message": "Cusboonaysiinta" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ލިބެން ހުންނާނެ" },
   "alert_upToDate": { "message": "އެންމެ ފަހުގެ ތާރީޚް" },
   "alert_isUpToDate": { "message": "އެންމެ ފަހުގެ" },
+  "notif_chatAutoContinued": { "message": "ޗެޓް އޮޓޯ-ކޮންޓިނިއުޑް" },
   "buttonLabel_leaveReview": { "message": "ލީވް އަ ރިވިއު" },
   "buttonLabel_updateCheck": { "message": "އަޕްޑޭޓްތައް ބަލާށެވެ" },
   "buttonLabel_update": { "message": "އަޕްޑޭޓް" },

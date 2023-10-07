@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "شتون لري" },
   "alert_upToDate": { "message": "اوسمهالیز دي" },
   "alert_isUpToDate": { "message": "تازه دی" },
+  "notif_chatAutoContinued": { "message": "چیټ په اوتومات ډول بند شو" },
   "buttonLabel_leaveReview": { "message": "بیاکتنه پریږدئ" },
   "buttonLabel_updateCheck": { "message": "د تازه معلوماتو لپاره وګورئ" },
   "buttonLabel_update": { "message": "تازه کړئ" },

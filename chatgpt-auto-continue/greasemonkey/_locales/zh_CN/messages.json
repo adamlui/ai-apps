@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "可用" },
   "alert_upToDate": { "message": "已最新" },
   "alert_isUpToDate": { "message": "是最新的" },
+  "notif_chatAutoContinued": { "message": "聊天自动继续" },
   "buttonLabel_leaveReview": { "message": "发表评论" },
   "buttonLabel_updateCheck": { "message": "检查更新" },
   "buttonLabel_update": { "message": "更新" },

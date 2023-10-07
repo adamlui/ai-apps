@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "mao available" },
   "alert_upToDate": { "message": "UPDATE" },
   "alert_isUpToDate": { "message": "uPDATE kini" },
+  "notif_chatAutoContinued": { "message": "Chat Auto-Pagpadayon" },
   "buttonLabel_leaveReview": { "message": "Magbilin usa ka Pagrepaso" },
   "buttonLabel_updateCheck": { "message": "Susiha ang mga Update" },
   "buttonLabel_update": { "message": "I-update" },

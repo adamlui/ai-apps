@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "eskuragarri dago" },
   "alert_upToDate": { "message": "Eguneratu" },
   "alert_isUpToDate": { "message": "Eguneratu" },
+  "notif_chatAutoContinued": { "message": "Txata automatikoki jarraitu da" },
   "buttonLabel_leaveReview": { "message": "Utzi Iritzia" },
   "buttonLabel_updateCheck": { "message": "Begiratu _eguneraketak:" },
   "buttonLabel_update": { "message": "Eguneratu" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ass verfügbar" },
   "alert_upToDate": { "message": "Aktualiséiert" },
   "alert_isUpToDate": { "message": "hie/si, hatt/et gëtt aktualiséiert" },
+  "notif_chatAutoContinued": { "message": "Chat Auto-Continue" },
   "buttonLabel_leaveReview": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten in de" },
   "buttonLabel_updateCheck": { "message": "Kuckt no Aktualiséierungen" },
   "buttonLabel_update": { "message": "Aktualiséieren" },

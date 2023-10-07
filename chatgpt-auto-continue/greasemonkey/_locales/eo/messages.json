@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "estas disponebla" },
   "alert_upToDate": { "message": "Aktuala" },
   "alert_isUpToDate": { "message": "estas ĝisdata" },
+  "notif_chatAutoContinued": { "message": "@ info: whatsthis" },
   "buttonLabel_leaveReview": { "message": "Lasi revizion" },
   "buttonLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
   "buttonLabel_update": { "message": "Ĝisdatigi" },

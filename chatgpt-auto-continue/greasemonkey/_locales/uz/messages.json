@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "mavjud." },
   "alert_upToDate": { "message": "Yangilash" },
   "alert_isUpToDate": { "message": "dolzarb hisoblanadi" },
+  "notif_chatAutoContinued": { "message": "Chat avtomatik davom etadi" },
   "buttonLabel_leaveReview": { "message": "Sharh qoldiring" },
   "buttonLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
   "buttonLabel_update": { "message": "Yangilash" },

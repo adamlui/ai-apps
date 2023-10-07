@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "is beschikbaar" },
   "alert_upToDate": { "message": "Bijgewerkt" },
   "alert_isUpToDate": { "message": "<PROTECTED> is geactualiseerd" },
+  "notif_chatAutoContinued": { "message": "Chat automatisch voortgezet" },
   "buttonLabel_leaveReview": { "message": "Recensie achterlaten" },
   "buttonLabel_updateCheck": { "message": "Controleer op updates" },
   "buttonLabel_update": { "message": "Update" },

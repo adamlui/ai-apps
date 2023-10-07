@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "iyatholakala" },
   "alert_upToDate": { "message": "Okwakamuva" },
   "alert_isUpToDate": { "message": "isesikhathini" },
+  "notif_chatAutoContinued": { "message": "Ukuxoxa Kuyaqhubeka Ngokuzenzakalelayo" },
   "buttonLabel_leaveReview": { "message": "Shiya Okushiwo Abanye" },
   "buttonLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
   "buttonLabel_update": { "message": "Lungisa" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "yra prieinama" },
   "alert_upToDate": { "message": "Naujausias" },
   "alert_isUpToDate": { "message": "atnaujintas" },
+  "notif_chatAutoContinued": { "message": "Automatinis pokalbio tęsimas" },
   "buttonLabel_leaveReview": { "message": "Palikite apžvalgą" },
   "buttonLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
   "buttonLabel_update": { "message": "Naujinti" },

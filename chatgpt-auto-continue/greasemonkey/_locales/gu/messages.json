@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ઉપલબ્ધ છે" },
   "alert_upToDate": { "message": "સુધારો" },
   "alert_isUpToDate": { "message": "સુધારો" },
+  "notif_chatAutoContinued": { "message": "આપમેળે ચાલુ ચેટ કરો" },
   "buttonLabel_leaveReview": { "message": "સમીક્ષા મૂકો" },
   "buttonLabel_updateCheck": { "message": "નવાં ભાગ(ઓ) માટે ચકાસો" },
   "buttonLabel_update": { "message": "અદ્યતન બનાવો" },

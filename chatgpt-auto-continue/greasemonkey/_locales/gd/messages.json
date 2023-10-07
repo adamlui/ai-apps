@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "tha e ri fhaotainn" },
   "alert_upToDate": { "message": "Up to date" },
   "alert_isUpToDate": { "message": "tha Updates" },
+  "notif_chatAutoContinued": { "message": "Chat Auto - Started" },
   "buttonLabel_leaveReview": { "message": "Leave a Review" },
   "buttonLabel_updateCheck": { "message": "Thoir sùil airson ùrachaidhean" },
   "buttonLabel_update": { "message": "Ùraich" },

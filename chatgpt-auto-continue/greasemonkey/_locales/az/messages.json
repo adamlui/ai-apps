@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "mövcuddur" },
   "alert_upToDate": { "message": "Güncəllə" },
   "alert_isUpToDate": { "message": "yenilənir" },
+  "notif_chatAutoContinued": { "message": "Söhbət avtomatik dayandırıldı" },
   "buttonLabel_leaveReview": { "message": "Rəy bildirin" },
   "buttonLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
   "buttonLabel_update": { "message": "Yenilə" },

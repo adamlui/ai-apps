@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "est disponible" },
   "alert_upToDate": { "message": "À jour" },
   "alert_isUpToDate": { "message": "Elle est à jour" },
+  "notif_chatAutoContinued": { "message": "Chat Auto-Continued" },
   "buttonLabel_leaveReview": { "message": "Laisser un Avis" },
   "buttonLabel_updateCheck": { "message": "Vérifier les Mises à jour" },
   "buttonLabel_update": { "message": "Mise à jour" },

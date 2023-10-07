@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "авах боломжтой" },
   "alert_upToDate": { "message": "Шинэчлэгдсэн" },
   "alert_isUpToDate": { "message": "одоогийн байдлаар" },
+  "notif_chatAutoContinued": { "message": "Чатын автоматаар холбогдсон" },
   "buttonLabel_leaveReview": { "message": "Сэтгэгдэл үлдээх" },
   "buttonLabel_updateCheck": { "message": "Шинэчлэлтүүдийг шалгана уу" },
   "buttonLabel_update": { "message": "Шинэчлэх" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "उपलब्ध है।" },
   "alert_upToDate": { "message": "अद्यतन" },
   "alert_isUpToDate": { "message": "अप - टू - डेट है" },
+  "notif_chatAutoContinued": { "message": "चैट ऑटो - कॉन्टिन्यूड" },
   "buttonLabel_leaveReview": { "message": "समीक्षा लिखें" },
   "buttonLabel_updateCheck": { "message": "अद्यतन के लिए जाँचें" },
   "buttonLabel_update": { "message": "अपडेट करें" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "มี   ให้ใช้งานแล้ว" },
   "alert_upToDate": { "message": "ถึงวันที่    .........................................  …………….." },
   "alert_isUpToDate": { "message": "อัพเดทแล้ว" },
+  "notif_chatAutoContinued": { "message": "แชทออโต้ - ดำเนินการต่อ" },
   "buttonLabel_leaveReview": { "message": "ออกจากการรีวิว" },
   "buttonLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
   "buttonLabel_update": { "message": "อัปเดต" },

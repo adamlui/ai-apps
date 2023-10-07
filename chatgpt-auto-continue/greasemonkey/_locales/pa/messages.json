@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ਉਪਲੱਬਧ ਹੈ" },
   "alert_upToDate": { "message": "ਨਵੀਨੀਕਰਨ" },
   "alert_isUpToDate": { "message": "ਨਵੀਨੀਕਰਨ" },
+  "notif_chatAutoContinued": { "message": "ਗੱਲਬਾਤ ਆਟੋ-ਬੰਦ" },
   "buttonLabel_leaveReview": { "message": "ਇੱਕ ਸਮੀਖਿਆ ਛੱਡੋ" },
   "buttonLabel_updateCheck": { "message": "ਨਵੇਂ ਐਪੀਸੋਡ ਲਈ ਚੈੱਕ ਕਰੋ" },
   "buttonLabel_update": { "message": "ਅੱਪਡੇਟ ਕਰੋ" },

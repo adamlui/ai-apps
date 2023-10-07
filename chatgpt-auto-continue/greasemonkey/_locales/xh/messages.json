@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "iyafumaneka" },
   "alert_upToDate": { "message": "Eyangoku" },
   "alert_isUpToDate": { "message": "isexesheni" },
+  "notif_chatAutoContinued": { "message": "Ukuncokola Kuqhutywa Ngokuzenzekelayo" },
   "buttonLabel_leaveReview": { "message": "Shiya Uluvo" },
   "buttonLabel_updateCheck": { "message": "Jonga Izinto Ezihlaziyiweyo" },
   "buttonLabel_update": { "message": "Lungisa" },

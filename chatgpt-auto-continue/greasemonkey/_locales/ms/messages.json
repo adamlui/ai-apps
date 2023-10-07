@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "tersedia" },
   "alert_upToDate": { "message": "Kemas kini" },
   "alert_isUpToDate": { "message": "Kemas kini" },
+  "notif_chatAutoContinued": { "message": "Sembang Diteruskan Secara Automatik" },
   "buttonLabel_leaveReview": { "message": "Tinggalkan ulasan" },
   "buttonLabel_updateCheck": { "message": "Semak Kemaskini" },
   "buttonLabel_update": { "message": "Saya ingin membuat susulan" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "موجوده" },
   "alert_upToDate": { "message": "بروزرسانی" },
   "alert_isUpToDate": { "message": "به روز است" },
+  "notif_chatAutoContinued": { "message": "چت به صورت خودکار ادامه یافت" },
   "buttonLabel_leaveReview": { "message": "نظر بدهید" },
   "buttonLabel_updateCheck": { "message": "بررسی به روز رسانی" },
   "buttonLabel_update": { "message": "به‌روز‌رسانی" },

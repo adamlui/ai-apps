@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "tað er tøkt" },
   "alert_upToDate": { "message": "Uppdaterað" },
   "alert_isUpToDate": { "message": "núverandi tíðindi" },
+  "notif_chatAutoContinued": { "message": "Spjalla sjálvvirkandi" },
   "buttonLabel_leaveReview": { "message": "Skriva eina gjøgnumgongd" },
   "buttonLabel_updateCheck": { "message": "Gev gætur eftir dagføringum" },
   "buttonLabel_update": { "message": "Dagfør" },

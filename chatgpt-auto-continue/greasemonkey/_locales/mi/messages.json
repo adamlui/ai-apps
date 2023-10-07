@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "kei te wātea ahau" },
   "alert_upToDate": { "message": "Whakahoutia" },
   "alert_isUpToDate": { "message": "kei te whakahoutia" },
+  "notif_chatAutoContinued": { "message": "Kōrerorero Auto-Continued" },
   "buttonLabel_leaveReview": { "message": "Waiho he arotake" },
   "buttonLabel_updateCheck": { "message": "Tirohia nga whakahoutanga" },
   "buttonLabel_update": { "message": "Whakahou" },

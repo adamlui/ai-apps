@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "თავისუფალია" },
   "alert_upToDate": { "message": "განახლებულია" },
   "alert_isUpToDate": { "message": "განახლებულია" },
+  "notif_chatAutoContinued": { "message": "Ჩატი ავტომატურად შეწყვეტილი" },
   "buttonLabel_leaveReview": { "message": "შეფასების დატოვება" },
   "buttonLabel_updateCheck": { "message": "განახლებების შემოწმება" },
   "buttonLabel_update": { "message": "განახლება" },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "دستیاب ہے" },
   "alert_upToDate": { "message": "تازہ ترین" },
   "alert_isUpToDate": { "message": "تازہ ترین ہے" },
+  "notif_chatAutoContinued": { "message": "خودکار طور پر جاری چیٹ کریں" },
   "buttonLabel_leaveReview": { "message": "جائزہ دیں" },
   "buttonLabel_updateCheck": { "message": "اپ ڈیٹس کی پڑتال کریں" },
   "buttonLabel_update": { "message": "اپ ڈیٹ " },

@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ተዳልዩ ኣሎ" },
   "alert_upToDate": { "message": "ኣቐዲምካ ምምሕያሽ" },
   "alert_isUpToDate": { "message": "ዝዘመነ" },
+  "notif_chatAutoContinued": { "message": "ናይ ኣውቶ-ኮንትራት ቻት" },
   "buttonLabel_leaveReview": { "message": "ግምገማ ሓዲግካ" },
   "buttonLabel_updateCheck": { "message": "ዝቕጽል ሓበሬታ ርአ" },
   "buttonLabel_update": { "message": "ኣሐድስ" },

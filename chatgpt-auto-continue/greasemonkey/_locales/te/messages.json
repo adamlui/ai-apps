@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "అందుబాటులో ఉంది" },
   "alert_upToDate": { "message": "అప్-టు-డేట్" },
   "alert_isUpToDate": { "message": "తాజాగా ఉంది" },
+  "notif_chatAutoContinued": { "message": "చాట్ స్వయంచాలకంగా కొనసాగించబడింది" },
   "buttonLabel_leaveReview": { "message": "సమీక్షను వదిలివేయండి" },
   "buttonLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "buttonLabel_update": { "message": "అప్‌డేట్" },

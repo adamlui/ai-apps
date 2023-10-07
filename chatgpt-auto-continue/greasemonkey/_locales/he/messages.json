@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "%s זמין" },
   "alert_upToDate": { "message": "מעודכן" },
   "alert_isUpToDate": { "message": "מעודכן" },
+  "notif_chatAutoContinued": { "message": "הצ'אט הופסק אוטומטית" },
   "buttonLabel_leaveReview": { "message": "כתבי חוות דעת" },
   "buttonLabel_updateCheck": { "message": "חפש עדכונים" },
   "buttonLabel_update": { "message": "עדכון" },

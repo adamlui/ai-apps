@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "ki disponib/à votre disposition/sont disponibles" },
   "alert_upToDate": { "message": "Mizajou/ajou/a jou/alamòd /monte a dat/le plus récent /à jour /moderne" },
   "alert_isUpToDate": { "message": "se monte-a-dat/est" },
+  "notif_chatAutoContinued": { "message": "Chat Auto-Kontinye" },
   "buttonLabel_leaveReview": { "message": "Kite yon Revizyon" },
   "buttonLabel_updateCheck": { "message": "Tcheke pou Mizajou" },
   "buttonLabel_update": { "message": "Update" },

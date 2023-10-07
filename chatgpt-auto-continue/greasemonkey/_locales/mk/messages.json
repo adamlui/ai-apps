@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "е достапен" },
   "alert_upToDate": { "message": "Ажурираj" },
   "alert_isUpToDate": { "message": "е ажуриран" },
+  "notif_chatAutoContinued": { "message": "Разговорот автоматски продолжува" },
   "buttonLabel_leaveReview": { "message": "Остави еден преглед" },
   "buttonLabel_updateCheck": { "message": "Провери за нова верзија" },
   "buttonLabel_update": { "message": "Ажурирај" },

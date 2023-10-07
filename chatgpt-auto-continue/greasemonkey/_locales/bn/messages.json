@@ -14,6 +14,7 @@
   "alert_isAvail": { "message": "সহজলভ্য" },
   "alert_upToDate": { "message": "হালনাগাদ" },
   "alert_isUpToDate": { "message": "আপ-টু-ডেট" },
+  "notif_chatAutoContinued": { "message": "চ্যাট অটো-অনুমোদিত" },
   "buttonLabel_leaveReview": { "message": "একটি রিভিউ লিখুন" },
   "buttonLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
   "buttonLabel_update": { "message": "আপডেট করুন" },
