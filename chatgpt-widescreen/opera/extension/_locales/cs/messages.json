@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "jenž se vyzná" },
   "alert_pressF11": { "message": "Stisknutím klávesy F11 ukončíte celou obrazovku." },
   "alert_f11reason": { "message": "F11 byl použit pro vstup na celou obrazovku a z bezpečnostních důvodů prohlížeče musí být stejný klíč použit pro jeho ukončení" },
-  "buttonLabel_updateCheck": { "message": "Zjistit novější verzi" },
   "buttonLabel_leaveReview": { "message": "Napsat hodnocení" },
+  "buttonLabel_updateCheck": { "message": "Zjistit novější verzi" },
   "buttonLabel_update": { "message": "Aktualizovat" },
   "buttonLabel_dismiss": { "message": "Zamítnout" },
   "link_viewChanges": { "message": "Zobrazit změny" }

@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "tabata Update" },
   "alert_pressF11": { "message": "Impresora F11 Para Sublimacion" },
   "alert_f11reason": { "message": "F11 a wordo uza pa drenta pantaya completo, y pa motibo di siguridad di e navegador, mester uza e mesun yabi pa sali for di dje." },
-  "buttonLabel_updateCheck": { "message": "Revisá las actualizaciones" },
   "buttonLabel_leaveReview": { "message": "Leave a Testimonial" },
+  "buttonLabel_updateCheck": { "message": "Revisá las actualizaciones" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Desaprobashon" },
   "link_viewChanges": { "message": "Wak kambio" }

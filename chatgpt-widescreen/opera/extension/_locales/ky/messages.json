@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "бугунги кунгача" },
   "alert_pressF11": { "message": "Толук экрандан чыгуу үчүн F11 баскычын басыңыз" },
   "alert_f11reason": { "message": "F11 толук экранды киргизүү үчүн колдонулган жана браузердин коопсуздугуна байланыштуу ошол эле ачкыч аны чыгаруу үчүн колдонулушу керек." },
-  "buttonLabel_updateCheck": { "message": "Жаңы чыгаруулар бар экендигин текшерүү" },
   "buttonLabel_leaveReview": { "message": "Сын-пикир калтыруу" },
+  "buttonLabel_updateCheck": { "message": "Жаңы чыгаруулар бар экендигин текшерүү" },
   "buttonLabel_update": { "message": "Жаңыртуу" },
   "buttonLabel_dismiss": { "message": "Дисплейлер" },
   "link_viewChanges": { "message": "Өзгөрүүлөрдү көрүү" }

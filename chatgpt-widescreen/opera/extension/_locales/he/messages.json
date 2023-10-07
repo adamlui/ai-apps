@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "מעודכן" },
   "alert_pressF11": { "message": "יש להקיש ESC כדי לצאת ממסך מלא." },
   "alert_f11reason": { "message": "F11 שימש לכניסה למסך מלא, ובשל סיבות אבטחה של הדפדפן, יש להשתמש באותו מפתח כדי לצאת ממנו." },
-  "buttonLabel_updateCheck": { "message": "חפש עדכונים" },
   "buttonLabel_leaveReview": { "message": "כתבי חוות דעת" },
+  "buttonLabel_updateCheck": { "message": "חפש עדכונים" },
   "buttonLabel_update": { "message": "עדכון" },
   "buttonLabel_dismiss": { "message": "שחרור" },
   "link_viewChanges": { "message": "הצגת השינויים" }

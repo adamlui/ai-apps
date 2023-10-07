@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "up Up Up - қазіргі заманғы" },
   "alert_pressF11": { "message": "Толық экраннан шығу үшін F11 пернесін басыңыз" },
   "alert_f11reason": { "message": "F11 толық экранды енгізу үшін пайдаланылды, және браузердің қауіпсіздігіне байланысты, оны шығу үшін сол кілтті пайдалану керек" },
-  "buttonLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
   "buttonLabel_leaveReview": { "message": "Пікір қалдыру" },
+  "buttonLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
   "buttonLabel_update": { "message": "Жаңарту" },
   "buttonLabel_dismiss": { "message": "Дисплейлер" },
   "link_viewChanges": { "message": "Өзгерістерді көру" }

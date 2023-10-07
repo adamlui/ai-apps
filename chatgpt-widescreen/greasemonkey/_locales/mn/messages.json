@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "зорилго" },
   "alert_pressF11": { "message": "F1111 Тавтай морилно уу" },
   "alert_f11reason": { "message": "FF11, Тохируулах, аюулгүй байдал, аюулгүй байдал, аюулгүй байдал, аюулгүй байдал, аюулгүй байдал, аюулгүй байдал, аюулгүй байдал" },
-  "buttonLabel_updateCheck": { "message": "Шинэчлэлтийг шинэчлэх" },
   "buttonLabel_leaveReview": { "message": "Сэтгэгдэл үлдээх" },
+  "buttonLabel_updateCheck": { "message": "Шинэчлэлтийг шинэчлэх" },
   "buttonLabel_update": { "message": "Шинэчлэх" },
   "buttonLabel_dismiss": { "message": "Дуусах" },
   "link_viewChanges": { "message": "Хүмүүсийг харах" }

@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "huwa aġġornat" },
   "alert_pressF11": { "message": "Agħfas F11 biex toħroġ mill-iskrin sħiħ" },
   "alert_f11reason": { "message": "F11 intuża biex jidħol l-iskrin sħiħ, u minħabba raġunijiet ta 'sigurtà tal-browser, l-istess ċavetta trid tintuża biex toħroġha" },
-  "buttonLabel_updateCheck": { "message": "Iċċekkja għall-aġġornamenti?" },
   "buttonLabel_leaveReview": { "message": "Ħalli Review" },
+  "buttonLabel_updateCheck": { "message": "Iċċekkja għall-aġġornamenti?" },
   "buttonLabel_update": { "message": "Aġġornament" },
   "buttonLabel_dismiss": { "message": "Tagħtix kas" },
   "link_viewChanges": { "message": "Ara l-bidliet" }

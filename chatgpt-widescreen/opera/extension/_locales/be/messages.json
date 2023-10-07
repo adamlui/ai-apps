@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "у цяперашні час Up-to-date" },
   "alert_pressF11": { "message": "Націсніце F11, каб выйсці з поўнага экрана" },
   "alert_f11reason": { "message": "F11 быў выкарыстаны для ўваходу на поўны экран, і з-за прычын бяспекі браўзэра, той жа ключ павінен быць выкарыстаны для выхаду з яго." },
-  "buttonLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
   "buttonLabel_leaveReview": { "message": "Пакінуць водгук" },
+  "buttonLabel_updateCheck": { "message": "Праверыць абнаўленьні" },
   "buttonLabel_update": { "message": "Абноўлена " },
   "buttonLabel_dismiss": { "message": "Адхіліць" },
   "link_viewChanges": { "message": "Прагледзець змены" }

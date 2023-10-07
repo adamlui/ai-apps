@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "imesasishwa" },
   "alert_pressF11": { "message": "Bonyeza F11 ili utoke kwenye skrini kamili" },
   "alert_f11reason": { "message": "F11 ilitumiwa kuingia skrini kamili, na kutokana na sababu za usalama wa kivinjari, ufunguo huo lazima utumike kuiondoa" },
-  "buttonLabel_updateCheck": { "message": "Angalia Masasisho" },
   "buttonLabel_leaveReview": { "message": "Acha Tathmini" },
+  "buttonLabel_updateCheck": { "message": "Angalia Masasisho" },
   "buttonLabel_update": { "message": "Sasisho" },
   "buttonLabel_dismiss": { "message": "Puuza" },
   "link_viewChanges": { "message": "Angalia mabadiliko" }

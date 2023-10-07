@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "está actualizado" },
   "alert_pressF11": { "message": "Presiona F11 para salir a pantalla completa" },
   "alert_f11reason": { "message": "F11 utilizouse para entrar en pantalla completa, e debido a razóns de seguridade do navegador, debe usarse a mesma chave para saír dela" },
-  "buttonLabel_updateCheck": { "message": "Check for updates" },
   "buttonLabel_leaveReview": { "message": "Deixa unha opinión" },
+  "buttonLabel_updateCheck": { "message": "Check for updates" },
   "buttonLabel_update": { "message": "Actualizar" },
   "buttonLabel_dismiss": { "message": "Rexeitar" },
   "link_viewChanges": { "message": "Ver cambios" }

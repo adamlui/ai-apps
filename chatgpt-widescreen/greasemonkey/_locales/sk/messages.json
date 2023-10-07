@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "sú aktuálne" },
   "alert_pressF11": { "message": "Stlačte F11 na opustenie plnej obrazovky." },
   "alert_f11reason": { "message": "F11 bol použitý na vstup na celú obrazovku a z bezpečnostných dôvodov prehliadača musí byť použitý rovnaký kľúč na jeho ukončenie" },
-  "buttonLabel_updateCheck": { "message": "Zistiť novú verziu" },
   "buttonLabel_leaveReview": { "message": "Napísať referenciu" },
+  "buttonLabel_updateCheck": { "message": "Zistiť novú verziu" },
   "buttonLabel_update": { "message": "Aktualizovať" },
   "buttonLabel_dismiss": { "message": "Odmietnuť" },
   "link_viewChanges": { "message": "Zobraziť zmeny" }

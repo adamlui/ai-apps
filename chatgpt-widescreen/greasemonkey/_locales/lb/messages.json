@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "hie/si, hatt/et gëtt aktualiséiert" },
   "alert_pressF11": { "message": "Press F11 fir komplett Bildschierm ze verloossen" },
   "alert_f11reason": { "message": "F11 gouf benotzt fir voll Écran ze gitt, a wéinst Browser Sécherheetsgrënn muss de selwechte Schlëssel benotzt ginn fir se auszeginn" },
-  "buttonLabel_updateCheck": { "message": "Fakten an Erënnerungen" },
   "buttonLabel_leaveReview": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten in de" },
+  "buttonLabel_updateCheck": { "message": "Fakten an Erënnerungen" },
   "buttonLabel_update": { "message": "Aktualiséieren" },
   "buttonLabel_dismiss": { "message": "Entloossen" },
   "link_viewChanges": { "message": "Ännerungen uweisen" }

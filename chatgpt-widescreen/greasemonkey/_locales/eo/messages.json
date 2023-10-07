@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "estas ĝisdata" },
   "alert_pressF11": { "message": "Premu F11 por forlasi la tutan ekranon" },
   "alert_f11reason": { "message": "F11 kutimis eniri plenan ekranon, kaj pro retumilaj sekureckialoj, la sama ŝlosilo devas esti utiligita por forlasi ĝin." },
-  "buttonLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
   "buttonLabel_leaveReview": { "message": "Lasi revizion" },
+  "buttonLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
   "buttonLabel_update": { "message": "Ĝisdatigi" },
   "buttonLabel_dismiss": { "message": "Malakcepti" },
   "link_viewChanges": { "message": "Montri ŝanĝojn" }

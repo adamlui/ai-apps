@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
   "alert_pressF11": { "message": "ཌི་ཨར་ཨར་ཨར་ཨེལ་སི་པི་ལུ་མཐུད་འབད་ནིའི་དོན་ལུ་ ཨེབ་གཏང་འབད།" },
   "alert_f11reason": { "message": "ཐུམ་སྒྲིལ་ཚུ་གི་དོན་ལུ་ ཨེབ་གཏང་ནིའི་དོན་ལུ་ ཨེབ་གཏང་ནིའི་དོན་ལུ་ ཨེབ་གཏང་འབད།" },
-  "buttonLabel_updateCheck": { "message": "བརྟག་ཞིབ་སྣོད་འཛིན་ཚུ་ དུས་མཐུན་བཟོ་ནི་ཨིན་ན?" },
   "buttonLabel_leaveReview": { "message": "བསྐྱར་ཞིབ་འབད་" },
+  "buttonLabel_updateCheck": { "message": "བརྟག་ཞིབ་སྣོད་འཛིན་ཚུ་ དུས་མཐུན་བཟོ་ནི་ཨིན་ན?" },
   "buttonLabel_update": { "message": "གསར་བསྐྲུན་འབད་མ་ཚུགས།" },
   "buttonLabel_dismiss": { "message": "ཌིསིཊི།" },
   "link_viewChanges": { "message": "བསྒྱུར་བཅོས་ཚུ་རྩ་བསྐྲད་གཏང་།" }

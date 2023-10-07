@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "Cập nhật" },
   "alert_pressF11": { "message": "Nhấn Esc để thoát khỏi chế độ toàn màn hình" },
   "alert_f11reason": { "message": "F11 được sử dụng để vào chế độ toàn màn hình và vì lý do bảo mật trình duyệt, khóa tương tự phải được sử dụng để thoát khỏi nó." },
-  "buttonLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
   "buttonLabel_leaveReview": { "message": "Đánh giá" },
+  "buttonLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
   "buttonLabel_update": { "message": "Cập nhật" },
   "buttonLabel_dismiss": { "message": "Bỏ qua" },
   "link_viewChanges": { "message": "Xem thay đổi" }

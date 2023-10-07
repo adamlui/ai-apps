@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "ist aktuell" },
   "alert_pressF11": { "message": "Drücken Sie F11, um den Vollbildmodus zu beenden" },
   "alert_f11reason": { "message": "F11 wurde verwendet, um den Vollbildmodus zu aktivieren. Aus Sicherheitsgründen muss derselbe Schlüssel verwendet werden, um ihn zu beenden." },
-  "buttonLabel_updateCheck": { "message": "Nach Updates suchen" },
   "buttonLabel_leaveReview": { "message": "Bewertung hinterlassen" },
+  "buttonLabel_updateCheck": { "message": "Nach Updates suchen" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Schließen" },
   "link_viewChanges": { "message": "Änderungen anzeigen" }

@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "እስከ-ወደ-ቀን ነው" },
   "alert_pressF11": { "message": "ይጫኑ F11 ሙሉ ማያ ገጽ ለመውጣት" },
   "alert_f11reason": { "message": "F11 ሙሉ ማያ ገጽ ለማስገባት ጥቅም ላይ ውሏል ፣ እና በአሳሽ ደህንነት ምክንያቶች ምክንያት ተመሳሳይ ቁልፍ እሱን ለመውጣት ጥቅም ላይ መዋል አለበት" },
-  "buttonLabel_updateCheck": { "message": "ዝማኔዎችን ይፈትሹ" },
   "buttonLabel_leaveReview": { "message": "ግምገማ ይተው" },
+  "buttonLabel_updateCheck": { "message": "ዝማኔዎችን ይፈትሹ" },
   "buttonLabel_update": { "message": "አዘምን" },
   "buttonLabel_dismiss": { "message": "መደምሰሻ" },
   "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" }

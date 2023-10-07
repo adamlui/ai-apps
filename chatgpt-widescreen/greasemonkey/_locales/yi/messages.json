@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "איז דערהייַנטיקט" },
   "alert_pressF11": { "message": "דרוק F11 צו אַרויסגאַנג פול פאַרשטעלן" },
   "alert_f11reason": { "message": "F11 איז געניצט צו אַרייַן פול פאַרשטעלן, און רעכט צו בלעטערער זיכערהייט סיבות, דער זעלביקער שליסל מוזן זיין געוויינט צו אַרויסגאַנג עס" },
-  "buttonLabel_updateCheck": { "message": "זוך נייע ווערסיעס" },
   "buttonLabel_leaveReview": { "message": "לאָזן אַ רעצענזיע" },
+  "buttonLabel_updateCheck": { "message": "זוך נייע ווערסיעס" },
   "buttonLabel_update": { "message": "דערהייַנטיקן" },
   "buttonLabel_dismiss": { "message": "אָפּזאָגן" },
   "link_viewChanges": { "message": "קוק ענדערונגען" }

@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "అప్ డేట్" },
   "alert_pressF11": { "message": "పూర్తి స్క్రీన్ ‌ ను నిష్క్రమించడానికి F11 నొక్కండి" },
   "alert_f11reason": { "message": "పూర్తి స్క్రీన్ను ఎంటర్ చేయడానికి F11 ఉపయోగించబడింది, మరియు బ్రౌజర్ భద్రతా కారణాల వల్ల, అదే కీని దానిని నిష్క్రమించడానికి ఉపయోగించాలి." },
-  "buttonLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "buttonLabel_leaveReview": { "message": "సమీక్షను వదిలివేయండి" },
+  "buttonLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "buttonLabel_update": { "message": "అప్‌డేట్" },
   "buttonLabel_dismiss": { "message": "తీసివేయండి" },
   "link_viewChanges": { "message": "మార్పులను చూడండి" }

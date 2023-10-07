@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "em i stap up-to-date" },
   "alert_pressF11": { "message": "Tap tap tap tap tap full screen" },
   "alert_f11reason": { "message": "F11 i bin yusim long go insait long olgeta piksa, na long wanem, man i mas yusim wankain ki bilong lusim dispela piksa." },
-  "buttonLabel_updateCheck": { "message": "Lukim ol eleksen" },
   "buttonLabel_leaveReview": { "message": "Leave a review" },
+  "buttonLabel_updateCheck": { "message": "Lukim ol eleksen" },
   "buttonLabel_update": { "message": "Toksave" },
   "buttonLabel_dismiss": { "message": "Rausim" },
   "link_viewChanges": { "message": "Lukim ol senis" }

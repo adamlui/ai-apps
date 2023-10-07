@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "Aktuāls" },
   "alert_pressF11": { "message": "Nospiediet F11, lai izietu no pilnekrāna režīma" },
   "alert_f11reason": { "message": "F11 tika izmantots, lai ieietu pilnekrāna režīmā, un pārlūkprogrammas drošības apsvērumu dēļ, lai to izietu, ir jāizmanto tā pati atslēga" },
-  "buttonLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi." },
   "buttonLabel_leaveReview": { "message": "Atstāt atsauksmi?" },
+  "buttonLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi." },
   "buttonLabel_update": { "message": "Atjauninināt" },
   "buttonLabel_dismiss": { "message": "Noraidīt" },
   "link_viewChanges": { "message": "Skatīt izmaiņas" }

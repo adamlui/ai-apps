@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "Ažuriraj" },
   "alert_pressF11": { "message": "Pritisnite F11 za izlaz." },
   "alert_f11reason": { "message": "F11 je korišten za ulazak preko cijelog zaslona, a zbog sigurnosnih razloga preglednika, isti ključ mora se koristiti za izlazak iz njega" },
-  "buttonLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
   "buttonLabel_leaveReview": { "message": "Ostavi recenziju" },
+  "buttonLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
   "buttonLabel_update": { "message": "Ažurirana " },
   "buttonLabel_dismiss": { "message": "Odbaci" },
   "link_viewChanges": { "message": "Pregledaj promjene" }

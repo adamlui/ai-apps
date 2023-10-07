@@ -30,8 +30,8 @@
   "alert_isUpToDate": { "message": "shine shine up-date shine" },
   "alert_pressF11": { "message": "Press F11 Ukufuma Full screen" },
   "alert_f11reason": { "message": "(src) = \"10\" &gt; Ba F11 balibomfeshe pa kuti baingila mu cifulo conse, kabili pa mulandu wa kuti bacingililwe pa mulandu wa kucingililwa, e lyo ne mulandu wine mufwile ukubomfya ifyebo." },
-  "buttonLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
   "buttonLabel_leaveReview": { "message": "Lekisha Review" },
+  "buttonLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
   "buttonLabel_update": { "message": "Ica Update" },
   "buttonLabel_dismiss": { "message": "Dismiss Fela Kuti" },
   "link_viewChanges": { "message": "View ayaluka" }
