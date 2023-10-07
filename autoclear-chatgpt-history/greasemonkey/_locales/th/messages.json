@@ -8,6 +8,7 @@
   "about_version": { "message": "เวอร์ชัน" },
   "about_poweredBy": { "message": "สนับสนุนโดย" },
   "about_sourceCode": { "message": "รหัสต้นฉบับ" },
+  "mode_autoClear": { "message": "ล้างอัตโนมัติ" },
   "alert_choosePlatform": { "message": "เลือกแพลตฟอร์ม" },
   "alert_updateAvail": { "message": "มีอัพเดตให้ใช้งาน" },
   "alert_newerVer": { "message": "อัพเดทไปยัง" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "ตรวจสอบหาอัปเดต" },
   "buttonLabel_update": { "message": "อัปเดต" },
   "buttonLabel_dismiss": { "message": "ยกเลิก" },
-  "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" },
-  "mode_autoClear": { "message": "ล้างอัตโนมัติ" }
+  "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" }
 }

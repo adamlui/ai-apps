@@ -8,6 +8,7 @@
   "about_version": { "message": "Versiya" },
   "about_poweredBy": { "message": "Ərsəyə gətirən" },
   "about_sourceCode": { "message": "Mənbə kodu" },
+  "mode_autoClear": { "message": "Auto-Clear" },
   "alert_choosePlatform": { "message": "Platforma seçin" },
   "alert_updateAvail": { "message": "Mövcud Güncelle" },
   "alert_newerVer": { "message": "Yenilənmə" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
   "buttonLabel_update": { "message": "Yenilə" },
   "buttonLabel_dismiss": { "message": "Bağla" },
-  "link_viewChanges": { "message": "Dəyişikliklərə bax" },
-  "mode_autoClear": { "message": "Auto-Clear" }
+  "link_viewChanges": { "message": "Dəyişikliklərə bax" }
 }

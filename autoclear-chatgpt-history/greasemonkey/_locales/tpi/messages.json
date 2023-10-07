@@ -8,6 +8,7 @@
   "about_version": { "message": "Tok Pisin" },
   "about_poweredBy": { "message": "Em i gat bikpela strong" },
   "about_sourceCode": { "message": "Kod bilong as" },
+  "mode_autoClear": { "message": "Autoklear" },
   "alert_choosePlatform": { "message": "Piksaim wanpela platform" },
   "alert_updateAvail": { "message": "Tok pisin i go pinis" },
   "alert_newerVer": { "message": "Ol nupela tok" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Lukim ol nupela tok" },
   "buttonLabel_update": { "message": "UPDATE" },
   "buttonLabel_dismiss": { "message": "Lusim" },
-  "link_viewChanges": { "message": "Lukim ol senis" },
-  "mode_autoClear": { "message": "Autoklear" }
+  "link_viewChanges": { "message": "Lukim ol senis" }
 }

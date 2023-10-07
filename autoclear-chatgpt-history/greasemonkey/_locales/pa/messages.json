@@ -8,6 +8,7 @@
   "about_version": { "message": "ਵਰਜਨ" },
   "about_poweredBy": { "message": "ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },
   "about_sourceCode": { "message": "ਸਰੋਤ ਕੋਡ@ info: whatsthis" },
+  "mode_autoClear": { "message": "ਆਟੋ - ਸਾਫ਼" },
   "alert_choosePlatform": { "message": "ਇੱਕ ਪਲੇਟਫਾਰਮ ਚੁਣੋ" },
   "alert_updateAvail": { "message": "ਕੋਈ ਵੇਰਵਾ ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ" },
   "alert_newerVer": { "message": "ਨੂੰ ਇੱਕ ਅੱਪਡੇਟ" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "ਨਵੇਂ ਐਪੀਸੋਡ ਲਈ ਚੈੱਕ ਕਰੋ" },
   "buttonLabel_update": { "message": "ਅੱਪਡੇਟ ਕਰੋ" },
   "buttonLabel_dismiss": { "message": "ਖਾਰਜ ਕਰੋ" },
-  "link_viewChanges": { "message": "ਤਬਦੀਲੀਆਂ ਵੇਖੋ" },
-  "mode_autoClear": { "message": "ਆਟੋ - ਸਾਫ਼" }
+  "link_viewChanges": { "message": "ਤਬਦੀਲੀਆਂ ਵੇਖੋ" }
 }

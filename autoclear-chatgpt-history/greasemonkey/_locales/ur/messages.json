@@ -8,6 +8,7 @@
   "about_version": { "message": "ورژن" },
   "about_poweredBy": { "message": "تقویت یافتہ از" },
   "about_sourceCode": { "message": "کۆسی سەرچاوە" },
+  "mode_autoClear": { "message": "خود بخود صاف کریں" },
   "alert_choosePlatform": { "message": "ایک پلیٹ فارم منتخب کریں" },
   "alert_updateAvail": { "message": "اپڈیٹ دستیاب ہے" },
   "alert_newerVer": { "message": "پر ایک اپ ڈیٹ" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "اپ ڈیٹس کی پڑتال کریں" },
   "buttonLabel_update": { "message": "اپ ڈیٹ " },
   "buttonLabel_dismiss": { "message": "برخاست" },
-  "link_viewChanges": { "message": "تبدیلیاں دیکھیں" },
-  "mode_autoClear": { "message": "خود بخود صاف کریں" }
+  "link_viewChanges": { "message": "تبدیلیاں دیکھیں" }
 }

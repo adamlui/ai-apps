@@ -8,6 +8,7 @@
   "about_version": { "message": "संस्करण" },
   "about_poweredBy": { "message": "...द्वारा पावरशुदा" },
   "about_sourceCode": { "message": "सोर्स कोड" },
+  "mode_autoClear": { "message": "ऑटो - क्लियर" },
   "alert_choosePlatform": { "message": "कोई प्लैटफ़ॉर्म चुनें" },
   "alert_updateAvail": { "message": "अद्यतन उपलब्ध है" },
   "alert_newerVer": { "message": "पर एक अपडेट" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "अद्यतन के लिए जाँचें" },
   "buttonLabel_update": { "message": "अपडेट करें" },
   "buttonLabel_dismiss": { "message": "खारिज करना" },
-  "link_viewChanges": { "message": "बदलाव देखें" },
-  "mode_autoClear": { "message": "ऑटो - क्लियर" }
+  "link_viewChanges": { "message": "बदलाव देखें" }
 }

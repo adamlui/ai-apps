@@ -8,6 +8,7 @@
   "about_version": { "message": "Versio" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Codex Originis" },
+  "mode_autoClear": { "message": "Carpe" },
   "alert_choosePlatform": { "message": "Mutare platform" },
   "alert_updateAvail": { "message": "Updateis available" },
   "alert_newerVer": { "message": "Omnia ad" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Check for Updates" },
   "buttonLabel_update": { "message": "opus" },
   "buttonLabel_dismiss": { "message": "dimitto" },
-  "link_viewChanges": { "message": "Vedi anche l 'accendenza" },
-  "mode_autoClear": { "message": "Carpe" }
+  "link_viewChanges": { "message": "Vedi anche l 'accendenza" }
 }

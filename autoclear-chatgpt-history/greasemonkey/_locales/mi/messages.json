@@ -8,6 +8,7 @@
   "about_version": { "message": "Whakaaturanga" },
   "about_poweredBy": { "message": "Te mana o te mana" },
   "about_sourceCode": { "message": "Waehere puna" },
+  "mode_autoClear": { "message": "Auto-Clear" },
   "alert_choosePlatform": { "message": "Kōwhiri i tētahi papa" },
   "alert_updateAvail": { "message": "Ngā whakahōu e wātea ana" },
   "alert_newerVer": { "message": "He whakahoutanga" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Tirohia nga whakahoutanga" },
   "buttonLabel_update": { "message": "Whakahou" },
   "buttonLabel_dismiss": { "message": "Te whakahawea" },
-  "link_viewChanges": { "message": "Tirohia nga huringa" },
-  "mode_autoClear": { "message": "Auto-Clear" }
+  "link_viewChanges": { "message": "Tirohia nga huringa" }
 }

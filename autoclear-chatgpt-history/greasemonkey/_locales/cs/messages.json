@@ -8,6 +8,7 @@
   "about_version": { "message": "Verze" },
   "about_poweredBy": { "message": "Běží na" },
   "about_sourceCode": { "message": "Zdrojový kód" },
+  "mode_autoClear": { "message": "Automatické vymazání" },
   "alert_choosePlatform": { "message": "Vyberte platformu" },
   "alert_updateAvail": { "message": "Aktualizace k dispozici" },
   "alert_newerVer": { "message": "Aktualizace na" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Zjistit novější verzi" },
   "buttonLabel_update": { "message": "Aktualizovat" },
   "buttonLabel_dismiss": { "message": "Zamítnout" },
-  "link_viewChanges": { "message": "Zobrazit změny" },
-  "mode_autoClear": { "message": "Automatické vymazání" }
+  "link_viewChanges": { "message": "Zobrazit změny" }
 }

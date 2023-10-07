@@ -8,6 +8,7 @@
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Dijana oleh" },
   "about_sourceCode": { "message": "Kod sumber" },
+  "mode_autoClear": { "message": "Kosongkan-sendiri" },
   "alert_choosePlatform": { "message": "Pilih platform" },
   "alert_updateAvail": { "message": "Kemas kini tersedia" },
   "alert_newerVer": { "message": "Pengemaskinian kepada" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Semak Kemaskini" },
   "buttonLabel_update": { "message": "Saya ingin membuat susulan" },
   "buttonLabel_dismiss": { "message": "Singkir" },
-  "link_viewChanges": { "message": "Lihat perubahan" },
-  "mode_autoClear": { "message": "Kosongkan-sendiri" }
+  "link_viewChanges": { "message": "Lihat perubahan" }
 }

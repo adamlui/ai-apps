@@ -8,6 +8,7 @@
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Waxa fudaydiyay:" },
   "about_sourceCode": { "message": "Koodhka isha" },
+  "mode_autoClear": { "message": "Auto-Clear" },
   "alert_choosePlatform": { "message": "Dooro barxad" },
   "alert_updateAvail": { "message": "Cusboonaysiinta la heli karo" },
   "alert_newerVer": { "message": "Cusbooneysiin ku socota" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Hubi Cusbooneysiinta" },
   "buttonLabel_update": { "message": "Cusboonaysiinta" },
   "buttonLabel_dismiss": { "message": "Xil ka qaad" },
-  "link_viewChanges": { "message": "Eeg isbeddellada" },
-  "mode_autoClear": { "message": "Auto-Clear" }
+  "link_viewChanges": { "message": "Eeg isbeddellada" }
 }

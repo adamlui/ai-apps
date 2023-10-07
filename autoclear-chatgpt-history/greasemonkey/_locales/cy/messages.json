@@ -8,6 +8,7 @@
   "about_version": { "message": "Fersiwn" },
   "about_poweredBy": { "message": "Wedi'i gynnal gan" },
   "about_sourceCode": { "message": "Cod ffynhonnell" },
+  "mode_autoClear": { "message": "Clirio 'n Awtomatig" },
   "alert_choosePlatform": { "message": "Dewiswch blatfform" },
   "alert_updateAvail": { "message": "Diweddariad ar gael" },
   "alert_newerVer": { "message": "Diweddariad i" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Dango_s diweddariadau" },
   "buttonLabel_update": { "message": "Diweddaru" },
   "buttonLabel_dismiss": { "message": "Cau" },
-  "link_viewChanges": { "message": "Gweld newidiadau" },
-  "mode_autoClear": { "message": "Clirio 'n Awtomatig" }
+  "link_viewChanges": { "message": "Gweld newidiadau" }
 }

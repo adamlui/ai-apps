@@ -8,6 +8,7 @@
   "about_version": { "message": "Нұсқа" },
   "about_poweredBy": { "message": "Сайтты жасаған" },
   "about_sourceCode": { "message": "Бастапқы код" },
+  "mode_autoClear": { "message": "Автоматты тазалау" },
   "alert_choosePlatform": { "message": "Платформаны таңдау" },
   "alert_updateAvail": { "message": "Қолжетімді жаңарту" },
   "alert_newerVer": { "message": "Жаңарту" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Ережелерді жаңартып алу" },
   "buttonLabel_update": { "message": "Жаңарту" },
   "buttonLabel_dismiss": { "message": "Жұмыстан шығару" },
-  "link_viewChanges": { "message": "Өзгерістерді көру" },
-  "mode_autoClear": { "message": "Автоматты тазалау" }
+  "link_viewChanges": { "message": "Өзгерістерді көру" }
 }

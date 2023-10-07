@@ -8,6 +8,7 @@
   "about_version": { "message": "Verzija" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Izvorni kod" },
+  "mode_autoClear": { "message": "Automatsko čišćenje" },
   "alert_choosePlatform": { "message": "Izaberite platformu" },
   "alert_updateAvail": { "message": "Dostupna nadogradnja" },
   "alert_newerVer": { "message": "Ažuriranje za" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Провери допуне" },
   "buttonLabel_update": { "message": "Ažuriraj" },
   "buttonLabel_dismiss": { "message": "Odbaci" },
-  "link_viewChanges": { "message": "Prikaži promjene" },
-  "mode_autoClear": { "message": "Automatsko čišćenje" }
+  "link_viewChanges": { "message": "Prikaži promjene" }
 }

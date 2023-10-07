@@ -8,6 +8,7 @@
   "about_version": { "message": "Versiyon" },
   "about_poweredBy": { "message": "Destek" },
   "about_sourceCode": { "message": "Kaynak Kodu" },
+  "mode_autoClear": { "message": "Otomatik Temizle" },
   "alert_choosePlatform": { "message": "Bir platform seçin" },
   "alert_updateAvail": { "message": "Güncelleme uygun" },
   "alert_newerVer": { "message": "Güncelleme tarih" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Güncellemeleri Kontrol Et" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Yok say" },
-  "link_viewChanges": { "message": "Değişen Dosyalar" },
-  "mode_autoClear": { "message": "Otomatik Temizle" }
+  "link_viewChanges": { "message": "Değişen Dosyalar" }
 }

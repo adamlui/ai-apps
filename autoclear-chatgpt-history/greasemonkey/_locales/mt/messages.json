@@ -8,6 +8,7 @@
   "about_version": { "message": "Verżjoni" },
   "about_poweredBy": { "message": "Imħaddem minn" },
   "about_sourceCode": { "message": "Kodiċi tas-sors" },
+  "mode_autoClear": { "message": "Neħħi l-Awtomatikament" },
   "alert_choosePlatform": { "message": "AGĦŻEL PJATTAFORMA" },
   "alert_updateAvail": { "message": "Aġġornament disponibbli" },
   "alert_newerVer": { "message": "Aġġornament għal" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Iċċekkja għall-aġġornamenti?" },
   "buttonLabel_update": { "message": "Aġġornament" },
   "buttonLabel_dismiss": { "message": "Neħħi" },
-  "link_viewChanges": { "message": "Ara l-bidliet" },
-  "mode_autoClear": { "message": "Neħħi l-Awtomatikament" }
+  "link_viewChanges": { "message": "Ara l-bidliet" }
 }

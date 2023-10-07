@@ -8,6 +8,7 @@
   "about_version": { "message": "Versión" },
   "about_poweredBy": { "message": "Desarrollado por" },
   "about_sourceCode": { "message": "Código fuente" },
+  "mode_autoClear": { "message": "Borrar automáticamente" },
   "alert_choosePlatform": { "message": "Elija una plataforma" },
   "alert_updateAvail": { "message": "Actualización disponible" },
   "alert_newerVer": { "message": "Una actualización a" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Buscar actualizaciones" },
   "buttonLabel_update": { "message": "Actualizar" },
   "buttonLabel_dismiss": { "message": "Descartar" },
-  "link_viewChanges": { "message": "Ver cambios" },
-  "mode_autoClear": { "message": "Borrar automáticamente" }
+  "link_viewChanges": { "message": "Ver cambios" }
 }

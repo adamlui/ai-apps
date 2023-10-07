@@ -8,6 +8,7 @@
   "about_version": { "message": "Έκδοση" },
   "about_poweredBy": { "message": "Με την υποστήριξη" },
   "about_sourceCode": { "message": "Source code" },
+  "mode_autoClear": { "message": "Αυτόματος καθαρισμός" },
   "alert_choosePlatform": { "message": "Επιλέξτε μια πλατφόρμα" },
   "alert_updateAvail": { "message": "Υπάρχει διαθέσιμη ενημέρωση" },
   "alert_newerVer": { "message": "Ενημέρωση" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
   "buttonLabel_update": { "message": "Ενημέρωση" },
   "buttonLabel_dismiss": { "message": " Κλείσιμο" },
-  "link_viewChanges": { "message": "Εμφάνιση αλλαγών" },
-  "mode_autoClear": { "message": "Αυτόματος καθαρισμός" }
+  "link_viewChanges": { "message": "Εμφάνιση αλλαγών" }
 }

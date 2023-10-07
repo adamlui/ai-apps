@@ -8,6 +8,7 @@
   "about_version": { "message": "Inguqulelo" },
   "about_poweredBy": { "message": "Ixhaswa ngu" },
   "about_sourceCode": { "message": "Ikhowudi engumthombo" },
+  "mode_autoClear": { "message": "Zikhuphe Ngokuzenzekelayo" },
   "alert_choosePlatform": { "message": "Khetha iwebhusayithi" },
   "alert_updateAvail": { "message": "Uhlaziyo luyafumaneka" },
   "alert_newerVer": { "message": "Inkcazelo ehlaziyiweyo" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Jonga Izinto Ezihlaziyiweyo" },
   "buttonLabel_update": { "message": "Lungisa" },
   "buttonLabel_dismiss": { "message": "Gxotha" },
-  "link_viewChanges": { "message": "Jonga izinto ezitshintshiweyo" },
-  "mode_autoClear": { "message": "Zikhuphe Ngokuzenzekelayo" }
+  "link_viewChanges": { "message": "Jonga izinto ezitshintshiweyo" }
 }

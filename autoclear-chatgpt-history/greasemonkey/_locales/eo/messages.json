@@ -8,6 +8,7 @@
   "about_version": { "message": "Versio" },
   "about_poweredBy": { "message": "funkciigita de" },
   "about_sourceCode": { "message": "Fontkodo" },
+  "mode_autoClear": { "message": "Aŭtomate purigi" },
   "alert_choosePlatform": { "message": "Elekti platformon" },
   "alert_updateAvail": { "message": "Neniu priskribo disponebla" },
   "alert_newerVer": { "message": "Ĝisdatigo al" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
   "buttonLabel_update": { "message": "Ĝisdatigi" },
   "buttonLabel_dismiss": { "message": "Malakcepti" },
-  "link_viewChanges": { "message": "Montri ŝanĝojn" },
-  "mode_autoClear": { "message": "Aŭtomate purigi" }
+  "link_viewChanges": { "message": "Montri ŝanĝojn" }
 }

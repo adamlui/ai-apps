@@ -8,6 +8,7 @@
   "about_version": { "message": "Lqem" },
   "about_poweredBy": { "message": "Yettunefk-d sɣur" },
   "about_sourceCode": { "message": "Tangalt aγbalu" },
+  "mode_autoClear": { "message": "Tazelɣa tawurmant" },
   "alert_choosePlatform": { "message": "Fren asebter" },
   "alert_updateAvail": { "message": "Yella lqem" },
   "alert_newerVer": { "message": "Aneggaru ɣer" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Senqed ma llan ileqman" },
   "buttonLabel_update": { "message": "Leqqem" },
   "buttonLabel_dismiss": { "message": "Agi" },
-  "link_viewChanges": { "message": "Wali ibeddilen" },
-  "mode_autoClear": { "message": "Tazelɣa tawurmant" }
+  "link_viewChanges": { "message": "Wali ibeddilen" }
 }

@@ -8,6 +8,7 @@
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Réaliser par" },
   "about_sourceCode": { "message": "Code source" },
+  "mode_autoClear": { "message": "Effacement automatique" },
   "alert_choosePlatform": { "message": "Choisir une plateforme" },
   "alert_updateAvail": { "message": "mise à jour disponible" },
   "alert_newerVer": { "message": "Une mise à jour de" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Vérifier les Mises à jour" },
   "buttonLabel_update": { "message": "Mise à jour" },
   "buttonLabel_dismiss": { "message": "Ignorer" },
-  "link_viewChanges": { "message": "Afficher les modifications" },
-  "mode_autoClear": { "message": "Effacement automatique" }
+  "link_viewChanges": { "message": "Afficher les modifications" }
 }

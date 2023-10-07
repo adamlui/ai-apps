@@ -8,6 +8,7 @@
   "about_version": { "message": "பதிப்பு" },
   "about_poweredBy": { "message": "மூலம் இயக்கப்படுகிறது" },
   "about_sourceCode": { "message": "@ info: whatsthis" },
+  "mode_autoClear": { "message": "தானியங்கு கிளியர்" },
   "alert_choosePlatform": { "message": "ஒரு தளத்தைத் தேர்வுசெய்க" },
   "alert_updateAvail": { "message": "புதிய புதுப்பிப்பு கிடைக்கிறது!" },
   "alert_newerVer": { "message": "-க்கு ஒரு புதுப்பிப்பு" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "புதுப்பிப்புகளைத் தேடவும்" },
   "buttonLabel_update": { "message": "புதுப்பிக்கவும்" },
   "buttonLabel_dismiss": { "message": "நிராகரிக்கவும்" },
-  "link_viewChanges": { "message": "மாற்றங்களைக் காண்க" },
-  "mode_autoClear": { "message": "தானியங்கு கிளியர்" }
+  "link_viewChanges": { "message": "மாற்றங்களைக் காண்க" }
 }

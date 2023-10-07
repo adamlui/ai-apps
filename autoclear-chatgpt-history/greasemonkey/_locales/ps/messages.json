@@ -8,6 +8,7 @@
   "about_version": { "message": ":نسخه" },
   "about_poweredBy": { "message": "طراحی شده توسط" },
   "about_sourceCode": { "message": "سرچينه كوډه" },
+  "mode_autoClear": { "message": "اتومات لارموندنه" },
   "alert_choosePlatform": { "message": "یو پلیټ فارم غوره کړئ" },
   "alert_updateAvail": { "message": "اوسمهالیزې شته" },
   "alert_newerVer": { "message": "ته تازه معلومات" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "د تازه معلوماتو لپاره وګورئ" },
   "buttonLabel_update": { "message": "تازه کړئ" },
   "buttonLabel_dismiss": { "message": "رد کردن" },
-  "link_viewChanges": { "message": "بدلونونه وګورئ" },
-  "mode_autoClear": { "message": "اتومات لارموندنه" }
+  "link_viewChanges": { "message": "بدلونونه وګورئ" }
 }

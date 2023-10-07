@@ -8,6 +8,7 @@
   "about_version": { "message": "వివరణం" },
   "about_poweredBy": { "message": "ద్వారా ఆధారితం" },
   "about_sourceCode": { "message": "సోర్స్ కోడ్" },
+  "mode_autoClear": { "message": "ఆటో-క్లియర్" },
   "alert_choosePlatform": { "message": "ప్లాట్ ‌ ఫారమ్ ‌ ను ఎంచుకోండి" },
   "alert_updateAvail": { "message": "ఎటువంటి నవీకరణ అందుబాటులోలేదు" },
   "alert_newerVer": { "message": "ఒక నవీకరణ" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "buttonLabel_update": { "message": "నవీకరించు" },
   "buttonLabel_dismiss": { "message": "తీసివేయండి" },
-  "link_viewChanges": { "message": "మార్పులను చూడండి" },
-  "mode_autoClear": { "message": "ఆటో-క్లియర్" }
+  "link_viewChanges": { "message": "మార్పులను చూడండి" }
 }

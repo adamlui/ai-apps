@@ -8,6 +8,7 @@
   "about_version": { "message": "Bertsioa" },
   "about_poweredBy": { "message": "Teknologia: " },
   "about_sourceCode": { "message": "Iturburu kode" },
+  "mode_autoClear": { "message": "Automatikoki garbitu" },
   "alert_choosePlatform": { "message": "Aukeratu plataforma bat" },
   "alert_updateAvail": { "message": "Ez dago azalpenik erabilgarri." },
   "alert_newerVer": { "message": "Eguneratze bat" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Begiratu _eguneraketak:" },
   "buttonLabel_update": { "message": "Eguneratu" },
   "buttonLabel_dismiss": { "message": "Bistatik kendu" },
-  "link_viewChanges": { "message": "Ikusi aldaketak" },
-  "mode_autoClear": { "message": "Automatikoki garbitu" }
+  "link_viewChanges": { "message": "Ikusi aldaketak" }
 }

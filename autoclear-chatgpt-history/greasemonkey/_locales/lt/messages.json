@@ -8,6 +8,7 @@
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Įgalino Proneta" },
   "about_sourceCode": { "message": "Pradinis kodas" },
+  "mode_autoClear": { "message": "Automatinis valymas" },
   "alert_choosePlatform": { "message": "Pasirinkti platformą" },
   "alert_updateAvail": { "message": "Yra naujinys" },
   "alert_newerVer": { "message": "Atnaujinta į" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
   "buttonLabel_update": { "message": "Naujinti" },
   "buttonLabel_dismiss": { "message": "Atšaukti" },
-  "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" },
-  "mode_autoClear": { "message": "Automatinis valymas" }
+  "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" }
 }

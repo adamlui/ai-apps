@@ -8,6 +8,7 @@
   "about_version": { "message": "እትም" },
   "about_poweredBy": { "message": "የተጎለበተው በ" },
   "about_sourceCode": { "message": "የምንጭ ኮድ" },
+  "mode_autoClear": { "message": "ራስ-ግልጽ" },
   "alert_choosePlatform": { "message": "መድረክ ይምረጡ" },
   "alert_updateAvail": { "message": "ዝመና ይገኛል!" },
   "alert_newerVer": { "message": "አንድ ዝማኔ ወደ" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "ዝማኔዎችን ይመልከቱ" },
   "buttonLabel_update": { "message": "አዘምን" },
   "buttonLabel_dismiss": { "message": "መደምሰሻ" },
-  "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" },
-  "mode_autoClear": { "message": "ራስ-ግልጽ" }
+  "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" }
 }

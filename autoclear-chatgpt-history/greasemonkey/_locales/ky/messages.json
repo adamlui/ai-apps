@@ -8,6 +8,7 @@
   "about_version": { "message": "Версиясы" },
   "about_poweredBy": { "message": "Тарабынан иштелип чыккан" },
   "about_sourceCode": { "message": "Баштапкы код" },
+  "mode_autoClear": { "message": "Auto-Clear" },
   "alert_choosePlatform": { "message": "Платформаны тандоо" },
   "alert_updateAvail": { "message": "Баяндалмасы табылган жок" },
   "alert_newerVer": { "message": "Жаңыртуу" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Жаңы чыгаруулар бар экендигин текшерүү" },
   "buttonLabel_update": { "message": "Жаңыртуу" },
   "buttonLabel_dismiss": { "message": "Иштен бошотуу" },
-  "link_viewChanges": { "message": "Өзгөрүүлөрдү көрүү" },
-  "mode_autoClear": { "message": "Auto-Clear" }
+  "link_viewChanges": { "message": "Өзгөрүүлөрдү көрүү" }
 }

@@ -8,6 +8,7 @@
   "about_version": { "message": "Yângâ tî kodoro" },
   "about_poweredBy": { "message": "A yeke sara kua na ni" },
   "about_sourceCode": { "message": "Source code ti" },
+  "mode_autoClear": { "message": "Auto brochure" },
   "alert_choosePlatform": { "message": "Soro mbeni platforme" },
   "alert_updateAvail": { "message": "Nduru tënë so ayeke dä" },
   "alert_newerVer": { "message": "Mbeni ye so a sara na yâ ti fini dunia" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Gbu li ti mo na ndo ti aye so asi laso" },
   "buttonLabel_update": { "message": "Nduru tënëModifier" },
   "buttonLabel_dismiss": { "message": "Gbenga Akinnagbe" },
-  "link_viewChanges": { "message": "Bâ achangement" },
-  "mode_autoClear": { "message": "Auto brochure" }
+  "link_viewChanges": { "message": "Bâ achangement" }
 }

@@ -8,6 +8,7 @@
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Izstrādāts" },
   "about_sourceCode": { "message": "Avots:" },
+  "mode_autoClear": { "message": "Automātiskā dzēšana" },
   "alert_choosePlatform": { "message": "Izvēlieties platformu" },
   "alert_updateAvail": { "message": "Pieejams jauninājums" },
   "alert_newerVer": { "message": "Atjauninājums uz" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Pārbaudīt vai nav jauni atjauninājumi." },
   "buttonLabel_update": { "message": "Atjauninināt" },
   "buttonLabel_dismiss": { "message": "Noraidīt" },
-  "link_viewChanges": { "message": "Skatīt izmaiņas" },
-  "mode_autoClear": { "message": "Automātiskā dzēšana" }
+  "link_viewChanges": { "message": "Skatīt izmaiņas" }
 }

@@ -8,6 +8,7 @@
   "about_version": { "message": "Versioon" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Lähtekood" },
+  "mode_autoClear": { "message": "Automaatne tühjendamine" },
   "alert_choosePlatform": { "message": "Vali platvorm" },
   "alert_updateAvail": { "message": "Saadaval on uuendus" },
   "alert_newerVer": { "message": "Uuendus kuni" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Kontrolli uuendusi" },
   "buttonLabel_update": { "message": "Uuenda" },
   "buttonLabel_dismiss": { "message": "Loobu" },
-  "link_viewChanges": { "message": "Vaata muudatusi" },
-  "mode_autoClear": { "message": "Automaatne tühjendamine" }
+  "link_viewChanges": { "message": "Vaata muudatusi" }
 }

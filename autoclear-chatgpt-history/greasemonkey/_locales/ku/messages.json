@@ -8,6 +8,7 @@
   "about_version": { "message": "وەرژن" },
   "about_poweredBy": { "message": "ڕاگرتن لە لای" },
   "about_sourceCode": { "message": "کۆدی سەرچاوە" },
+  "mode_autoClear": { "message": "خۆکارانە پاک بکە" },
   "alert_choosePlatform": { "message": "پلاتفۆرمێک هەڵبژێرە" },
   "alert_updateAvail": { "message": "نوێکردنەوە بەردەستە" },
   "alert_newerVer": { "message": "نوێکردنەوەی بۆ" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "بچۆڕە بۆ نوێکردنەوەکان" },
   "buttonLabel_update": { "message": "نوێ بکەرەوە" },
   "buttonLabel_dismiss": { "message": "پارێزگا بکە" },
-  "link_viewChanges": { "message": "گۆڕانکاریەکان بینەرە" },
-  "mode_autoClear": { "message": "خۆکارانە پاک بکە" }
+  "link_viewChanges": { "message": "گۆڕانکاریەکان بینەرە" }
 }

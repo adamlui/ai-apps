@@ -8,6 +8,7 @@
   "about_version": { "message": "ຮຸ່ນ" },
   "about_poweredBy": { "message": "ຂັບເຄື່ອນໂດຍ" },
   "about_sourceCode": { "message": "ຊອດສ໌ໂຄດ" },
+  "mode_autoClear": { "message": "ອັດຕະໂນມັດ-ການຮຽນຮູ້" },
   "alert_choosePlatform": { "message": "ເລືອກແພລະຕະຟອມ" },
   "alert_updateAvail": { "message": "ອັບເດດທີ່ມີຢູ່" },
   "alert_newerVer": { "message": "ການອັບເດດ" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "ກວດເບິ່ງການອັບເດດ" },
   "buttonLabel_update": { "message": "ອັບເດດ" },
   "buttonLabel_dismiss": { "message": "ຂ້າມໄປ" },
-  "link_viewChanges": { "message": "ເບິ່ງການປ່ຽນແປງ" },
-  "mode_autoClear": { "message": "ອັດຕະໂນມັດ-ການຮຽນຮູ້" }
+  "link_viewChanges": { "message": "ເບິ່ງການປ່ຽນແປງ" }
 }

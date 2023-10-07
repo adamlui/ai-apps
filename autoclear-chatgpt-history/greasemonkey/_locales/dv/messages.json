@@ -8,6 +8,7 @@
   "about_version": { "message": "ވާރޝަން" },
   "about_poweredBy": { "message": "ބާރުވެރި ކުރުވާފައިވަނީ" },
   "about_sourceCode": { "message": "ސޯސް ކޯޑް" },
+  "mode_autoClear": { "message": "އޮޓޯ ކްލިއަރ ކުރުން" },
   "alert_choosePlatform": { "message": "ޕްލެޓްފޯމެއް އިޚްތިޔާރު ކުރޭ" },
   "alert_updateAvail": { "message": "ލިބެން ހުރި އަޕްޑޭޓް" },
   "alert_newerVer": { "message": "އަޕްޑޭޓެއް" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "އަޕްޑޭޓްތައް ބަލާށެވެ" },
   "buttonLabel_update": { "message": "އަޕްޑޭޓް" },
   "buttonLabel_dismiss": { "message": "މަގާމުން ވަކިކުރުން" },
-  "link_viewChanges": { "message": "ވިއު ޗޭންޖްސް" },
-  "mode_autoClear": { "message": "އޮޓޯ ކްލިއަރ ކުރުން" }
+  "link_viewChanges": { "message": "ވިއު ޗޭންޖްސް" }
 }

@@ -8,6 +8,7 @@
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Създадено от" },
   "about_sourceCode": { "message": "Изходен код" },
+  "mode_autoClear": { "message": "Автоматично изчистване" },
   "alert_choosePlatform": { "message": "Избор на платформа" },
   "alert_updateAvail": { "message": "Налице е актуализация" },
   "alert_newerVer": { "message": "Обнови" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Проверка за обновяване" },
   "buttonLabel_update": { "message": "Актуализация" },
   "buttonLabel_dismiss": { "message": "Отхвърли" },
-  "link_viewChanges": { "message": "Вижте Промените" },
-  "mode_autoClear": { "message": "Автоматично изчистване" }
+  "link_viewChanges": { "message": "Вижте Промените" }
 }

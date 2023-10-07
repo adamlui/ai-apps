@@ -8,6 +8,7 @@
   "about_version": { "message": "ཐོན་རིམ།" },
   "about_poweredBy": { "message": "དབང་ཤུགས་ཀྱི་ཐོག་ལས་" },
   "about_sourceCode": { "message": "ཐོན་ཁུངས་ཀོཌ་" },
+  "mode_autoClear": { "message": "རང་བཞིན་གྱི་མིང་" },
   "alert_choosePlatform": { "message": "ས་གོ་ཅིག་བཟོ།" },
   "alert_updateAvail": { "message": "ད་ལྟོ་མཐུན་བཟོ་ནི།" },
   "alert_newerVer": { "message": "ད་ལྟོའི་དུས་ཚོད། བསྒྱུར་བཅོས་འབད་" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "ད་ལྟོའི་དུས་ཚོད། བསྒྱུར་བཅོས་འབད་" },
   "buttonLabel_update": { "message": "ད་ལྟོའི་དུས་ཚོད།" },
   "buttonLabel_dismiss": { "message": "ཁ་འབྱལ་བ།" },
-  "link_viewChanges": { "message": "བསྒྱུར་བཅོས་ཚུ་བལྟ་" },
-  "mode_autoClear": { "message": "རང་བཞིན་གྱི་མིང་" }
+  "link_viewChanges": { "message": "བསྒྱུར་བཅོས་ཚུ་བལྟ་" }
 }

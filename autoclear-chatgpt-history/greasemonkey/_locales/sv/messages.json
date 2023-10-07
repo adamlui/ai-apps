@@ -8,6 +8,7 @@
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Drivs av" },
   "about_sourceCode": { "message": "Källkod" },
+  "mode_autoClear": { "message": "Automatisk rensning" },
   "alert_choosePlatform": { "message": "Välj en plattform" },
   "alert_updateAvail": { "message": "Uppdatering tillgänglig" },
   "alert_newerVer": { "message": "Uppdatera till" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Kolla efter uppdateringar" },
   "buttonLabel_update": { "message": "Uppdatera" },
   "buttonLabel_dismiss": { "message": "Avfärda" },
-  "link_viewChanges": { "message": "Visa ändringar" },
-  "mode_autoClear": { "message": "Automatisk rensning" }
+  "link_viewChanges": { "message": "Visa ändringar" }
 }

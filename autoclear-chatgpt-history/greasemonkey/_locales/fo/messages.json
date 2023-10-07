@@ -8,6 +8,7 @@
   "about_version": { "message": "Útgáva:" },
   "about_poweredBy": { "message": "Powered by SFX" },
   "about_sourceCode": { "message": "Ada keldukota" },
+  "mode_autoClear": { "message": "Auto-Clear" },
   "alert_choosePlatform": { "message": "Vel eina platform" },
   "alert_updateAvail": { "message": "Dagføring er klár" },
   "alert_newerVer": { "message": "Núverandi tíðindi" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Gev gætur eftir dagføringum" },
   "buttonLabel_update": { "message": "Dagfør" },
   "buttonLabel_dismiss": { "message": "Avrita" },
-  "link_viewChanges": { "message": "Sí broytingar" },
-  "mode_autoClear": { "message": "Auto-Clear" }
+  "link_viewChanges": { "message": "Sí broytingar" }
 }

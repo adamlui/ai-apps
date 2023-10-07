@@ -8,6 +8,7 @@
   "about_version": { "message": "Veržen" },
   "about_poweredBy": { "message": "Güýçli" },
   "about_sourceCode": { "message": "Çykgyt kodu" },
+  "mode_autoClear": { "message": "Ehlisini Saýla" },
   "alert_choosePlatform": { "message": "Bir platforma girmek" },
   "alert_updateAvail": { "message": "Täzeleşdir" },
   "alert_newerVer": { "message": "Täzeleşdirmek" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Updates üçin täzelendir" },
   "buttonLabel_update": { "message": "Täzele" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
-  "link_viewChanges": { "message": "Özgertmeleri Gör" },
-  "mode_autoClear": { "message": "Ehlisini Saýla" }
+  "link_viewChanges": { "message": "Özgertmeleri Gör" }
 }

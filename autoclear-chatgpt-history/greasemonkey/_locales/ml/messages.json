@@ -8,6 +8,7 @@
   "about_version": { "message": "പതിപ്പ്" },
   "about_poweredBy": { "message": "നയിച്ചത്" },
   "about_sourceCode": { "message": "സോഴ്സ് കോഡ്" },
+  "mode_autoClear": { "message": "ഓട്ടോ-ക്ലിയർ" },
   "alert_choosePlatform": { "message": "ഒരു പ്ലാറ്റ്ഫോം തിരഞ്ഞെടുക്കുക" },
   "alert_updateAvail": { "message": "%d അപ്‌ഡേറ്റ് ലഭ്യമാണ്" },
   "alert_newerVer": { "message": "ഇതിലേക്കുള്ള ഒരു അപ്‌ഡേറ്റ്" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "അപ്ഡേറ്റുകൾക്കായി പരിശോധിക്കുക" },
   "buttonLabel_update": { "message": "അപ്ഡേറ്റ് ചെയ്യുക" },
   "buttonLabel_dismiss": { "message": "നിരസിക്കുക" },
-  "link_viewChanges": { "message": "മാറ്റങ്ങൾ കാണുക" },
-  "mode_autoClear": { "message": "ഓട്ടോ-ക്ലിയർ" }
+  "link_viewChanges": { "message": "മാറ്റങ്ങൾ കാണുക" }
 }

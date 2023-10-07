@@ -8,6 +8,7 @@
   "about_version": { "message": "Хувилбар" },
   "about_poweredBy": { "message": "ИЛЧЛЭГЧ" },
   "about_sourceCode": { "message": "ᠰᠣᠷᠪᠤᠯᠵᠢ ᠺᠣᠳ᠋ " },
+  "mode_autoClear": { "message": "Авто Авто" },
   "alert_choosePlatform": { "message": "Платформыг сонгоно уу" },
   "alert_updateAvail": { "message": "Шинэчлэх (update) боломжтой" },
   "alert_newerVer": { "message": "Шинэчлэлт" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Шинэчлэлтүүдийг шалгана уу" },
   "buttonLabel_update": { "message": "Шинэчлэх" },
   "buttonLabel_dismiss": { "message": "Дуусах" },
-  "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" },
-  "mode_autoClear": { "message": "Авто Авто" }
+  "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" }
 }

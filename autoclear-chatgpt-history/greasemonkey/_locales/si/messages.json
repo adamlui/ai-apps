@@ -8,6 +8,7 @@
   "about_version": { "message": "වෙළුම" },
   "about_poweredBy": { "message": "විසින් බල ගැන්වී ඇත" },
   "about_sourceCode": { "message": "මූලාශ්‍ර කේතය" },
+  "mode_autoClear": { "message": "ස්වයංක් ‍ රීය ක්ලියර්" },
   "alert_choosePlatform": { "message": "වේදිකාවක් තෝරන්න" },
   "alert_updateAvail": { "message": "යාවත්කාලීනය තිබේ" },
   "alert_newerVer": { "message": "වෙත යාවත්කාලීන කිරීමක්" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "යාවත්කාලීන සඳහා පරීක් ‍ ෂා කරන්න" },
   "buttonLabel_update": { "message": "යාවත් කාළීන:" },
   "buttonLabel_dismiss": { "message": "ඉවතලන්න" },
-  "link_viewChanges": { "message": "වෙනස්කම් බලන්න" },
-  "mode_autoClear": { "message": "ස්වයංක් ‍ රීය ක්ලියර්" }
+  "link_viewChanges": { "message": "වෙනස්කම් බලන්න" }
 }

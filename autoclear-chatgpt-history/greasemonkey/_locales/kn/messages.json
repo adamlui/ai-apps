@@ -8,6 +8,7 @@
   "about_version": { "message": "ಆವೃತ್ತಿ" },
   "about_poweredBy": { "message": "ಸಾಮರ್ಥ್ಯ ಇವರಿಂದ " },
   "about_sourceCode": { "message": "ಮೂಲ ಕೋಡ್" },
+  "mode_autoClear": { "message": "ಸ್ವಯಂಚಾಲಿತ ಕಲಿಕೆ" },
   "alert_choosePlatform": { "message": "ಪ್ಲಾಟ್ ‌ ಫಾರ್ಮ್ ಆಯ್ಕೆಮಾಡಿ" },
   "alert_updateAvail": { "message": "ಹೊಸ ಅಪ್ಡೇಟ್ ಲಭ್ಯವಿದೆ." },
   "alert_newerVer": { "message": "ಗೆ ಅಪ್ ‌ ಡೇಟ್ ಮಾಡಿ" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ" },
   "buttonLabel_update": { "message": "ನವೀಕರಿಸಿ" },
   "buttonLabel_dismiss": { "message": "ವಜಾಗೊಳಿಸಿ" },
-  "link_viewChanges": { "message": "ಬದಲಾವಣೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ" },
-  "mode_autoClear": { "message": "ಸ್ವಯಂಚಾಲಿತ ಕಲಿಕೆ" }
+  "link_viewChanges": { "message": "ಬದಲಾವಣೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ" }
 }

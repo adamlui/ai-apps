@@ -8,6 +8,7 @@
   "about_version": { "message": "Toleo" },
   "about_poweredBy": { "message": "Imewezeshwa na" },
   "about_sourceCode": { "message": "Msimbo wa chanzo" },
+  "mode_autoClear": { "message": "Zima Kiotomatiki" },
   "alert_choosePlatform": { "message": "Chagua tovuti" },
   "alert_updateAvail": { "message": "Sasisho lipo" },
   "alert_newerVer": { "message": "Sasisho kwa" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Angalia Masasisho" },
   "buttonLabel_update": { "message": "Sasisho" },
   "buttonLabel_dismiss": { "message": "Puuza" },
-  "link_viewChanges": { "message": "Angalia mabadiliko" },
-  "mode_autoClear": { "message": "Zima Kiotomatiki" }
+  "link_viewChanges": { "message": "Angalia mabadiliko" }
 }

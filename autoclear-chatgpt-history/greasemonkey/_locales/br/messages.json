@@ -8,6 +8,7 @@
   "about_version": { "message": "Handelv" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "@ info: whatsthis" },
+  "mode_autoClear": { "message": "Claro" },
   "alert_choosePlatform": { "message": "Dibabit ur restr" },
   "alert_updateAvail": { "message": "Deskrivadur hegerz ebet" },
   "alert_newerVer": { "message": "Bremañaat da & HEAD" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Klask chabistroù _nevez :" },
   "buttonLabel_update": { "message": "Hizivaat" },
   "buttonLabel_dismiss": { "message": "Disteurel" },
-  "link_viewChanges": { "message": "Kemmoù" },
-  "mode_autoClear": { "message": "Claro" }
+  "link_viewChanges": { "message": "Kemmoù" }
 }

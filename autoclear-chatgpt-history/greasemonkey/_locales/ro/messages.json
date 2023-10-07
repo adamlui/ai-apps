@@ -8,6 +8,7 @@
   "about_version": { "message": "Versiune " },
   "about_poweredBy": { "message": "Operat de" },
   "about_sourceCode": { "message": "Codul sursă" },
+  "mode_autoClear": { "message": "Curățare automată" },
   "alert_choosePlatform": { "message": "Alegeți o platformă" },
   "alert_updateAvail": { "message": "Actualizare disponibilă" },
   "alert_newerVer": { "message": "Actualizare" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Caută actualizări" },
   "buttonLabel_update": { "message": "Actualizare" },
   "buttonLabel_dismiss": { "message": "Respingeți" },
-  "link_viewChanges": { "message": "Vizualizează modificările" },
-  "mode_autoClear": { "message": "Curățare automată" }
+  "link_viewChanges": { "message": "Vizualizează modificările" }
 }

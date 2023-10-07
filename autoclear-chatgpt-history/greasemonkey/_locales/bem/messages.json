@@ -8,6 +8,7 @@
   "about_version": { "message": "Ukupilibula" },
   "about_poweredBy": { "message": "Amapola by Amapola" },
   "about_sourceCode": { "message": "Ifyebo fyaba mu cipande ca kubalilapo" },
+  "mode_autoClear": { "message": "Ica Auto-Clear" },
   "alert_choosePlatform": { "message": "Saleni icikuulwa" },
   "alert_updateAvail": { "message": "Update Pali Pali" },
   "alert_newerVer": { "message": "Update kuli kuli" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Check Kuli Kuli Updates" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Ukufumishiwapo" },
-  "link_viewChanges": { "message": "Moneni ifyo ifintu fyayaluka" },
-  "mode_autoClear": { "message": "Ica Auto-Clear" }
+  "link_viewChanges": { "message": "Moneni ifyo ifintu fyayaluka" }
 }

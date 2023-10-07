@@ -8,6 +8,7 @@
   "about_version": { "message": "版本" },
   "about_poweredBy": { "message": "技术支持方" },
   "about_sourceCode": { "message": "源代码" },
+  "mode_autoClear": { "message": "自动清除" },
   "alert_choosePlatform": { "message": "选择平台" },
   "alert_updateAvail": { "message": "更新可用" },
   "alert_newerVer": { "message": "以下内容的更新：" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "检查更新" },
   "buttonLabel_update": { "message": "更新" },
   "buttonLabel_dismiss": { "message": "撤消" },
-  "link_viewChanges": { "message": "查看修改" },
-  "mode_autoClear": { "message": "自动清除" }
+  "link_viewChanges": { "message": "查看修改" }
 }

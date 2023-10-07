@@ -8,6 +8,7 @@
   "about_version": { "message": "Vhezheni" },
   "about_poweredBy": { "message": "Inofambiswa ne" },
   "about_sourceCode": { "message": "Kunobva kodhi" },
+  "mode_autoClear": { "message": "Auto-yakavharwa" },
   "alert_choosePlatform": { "message": "Sarudza chikuva" },
   "alert_updateAvail": { "message": "Zadzisa zviripo" },
   "alert_newerVer": { "message": "An update kuti" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Ongorora nokuti Updates" },
   "buttonLabel_update": { "message": "Kugadziridza" },
   "buttonLabel_dismiss": { "message": "Dzinga" },
-  "link_viewChanges": { "message": "Vonanyi cinjo" },
-  "mode_autoClear": { "message": "Auto-yakavharwa" }
+  "link_viewChanges": { "message": "Vonanyi cinjo" }
 }

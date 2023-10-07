@@ -8,6 +8,7 @@
   "about_version": { "message": "Weergawe" },
   "about_poweredBy": { "message": "Aangedryf deur" },
   "about_sourceCode": { "message": "Oorsprong Kode" },
+  "mode_autoClear": { "message": "Auto-Clear" },
   "alert_choosePlatform": { "message": "Kies 'n platform" },
   "alert_updateAvail": { "message": "Opdatering beskikbaar" },
   "alert_newerVer": { "message": "'n Opdatering na" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "_Kontroleer vir bywerkings:" },
   "buttonLabel_update": { "message": "Opdateer" },
   "buttonLabel_dismiss": { "message": "Laat vaar" },
-  "link_viewChanges": { "message": "Besigtig veranderinge" },
-  "mode_autoClear": { "message": "Auto-Clear" }
+  "link_viewChanges": { "message": "Besigtig veranderinge" }
 }

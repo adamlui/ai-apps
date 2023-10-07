@@ -8,6 +8,7 @@
   "about_version": { "message": "Phiên bản" },
   "about_poweredBy": { "message": "Cung cấp bởi " },
   "about_sourceCode": { "message": "Mã nguồn" },
+  "mode_autoClear": { "message": "Tự động xóa" },
   "alert_choosePlatform": { "message": "Chọn một nền tảng" },
   "alert_updateAvail": { "message": "Cập nhật có sẵn" },
   "alert_newerVer": { "message": "bản cập nhật" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Kiểm tra cập nhật" },
   "buttonLabel_update": { "message": "Cập nhật" },
   "buttonLabel_dismiss": { "message": "Bỏ qua" },
-  "link_viewChanges": { "message": "Xem thay đổi" },
-  "mode_autoClear": { "message": "Tự động xóa" }
+  "link_viewChanges": { "message": "Xem thay đổi" }
 }

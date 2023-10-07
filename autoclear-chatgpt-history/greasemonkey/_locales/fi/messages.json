@@ -8,6 +8,7 @@
   "about_version": { "message": "Versio" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Lähdekoodi" },
+  "mode_autoClear": { "message": "Automaattinen tyhjennys" },
   "alert_choosePlatform": { "message": "Valitse alusta" },
   "alert_updateAvail": { "message": "Päivitys saatavilla" },
   "alert_newerVer": { "message": "Päivitä" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Tarkista päivitykset" },
   "buttonLabel_update": { "message": "Päivitä" },
   "buttonLabel_dismiss": { "message": "Hylkää" },
-  "link_viewChanges": { "message": "Näytä muutokset" },
-  "mode_autoClear": { "message": "Automaattinen tyhjennys" }
+  "link_viewChanges": { "message": "Näytä muutokset" }
 }

@@ -8,6 +8,7 @@
   "about_version": { "message": "Uhlelo" },
   "about_poweredBy": { "message": "Ixhaswa yi-" },
   "about_sourceCode": { "message": "Ikhodi yomthombo" },
+  "mode_autoClear": { "message": "I-Automatic-Clear" },
   "alert_choosePlatform": { "message": "Khetha inkundla" },
   "alert_updateAvail": { "message": "Okwakamuva Kuyatholakala!" },
   "alert_newerVer": { "message": "Izilungiso eziya ku-" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
   "buttonLabel_update": { "message": "Lungisa" },
   "buttonLabel_dismiss": { "message": "Susa" },
-  "link_viewChanges": { "message": "Buka ushintsho" },
-  "mode_autoClear": { "message": "I-Automatic-Clear" }
+  "link_viewChanges": { "message": "Buka ushintsho" }
 }

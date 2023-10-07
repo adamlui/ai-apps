@@ -8,6 +8,7 @@
   "about_version": { "message": "မူ -" },
   "about_poweredBy": { "message": "စွမ်းဆောင်ရည် -" },
   "about_sourceCode": { "message": "ပင္မကုဒ္" },
+  "mode_autoClear": { "message": "အလိုအလျောက်ရှင်းလင်းခြင်း" },
   "alert_choosePlatform": { "message": "ပလက်ဖောင်းကို ရွေးပါ" },
   "alert_updateAvail": { "message": "အသစ်မထွက်သေး" },
   "alert_newerVer": { "message": "သို့ အပ်ဒိတ်တစ်ခု" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
   "buttonLabel_dismiss": { "message": "ထုတ်ပယ်ပါ" },
-  "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ရန်" },
-  "mode_autoClear": { "message": "အလိုအလျောက်ရှင်းလင်းခြင်း" }
+  "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ရန်" }
 }

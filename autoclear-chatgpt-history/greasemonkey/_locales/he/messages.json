@@ -8,6 +8,7 @@
   "about_version": { "message": "גירסה" },
   "about_poweredBy": { "message": "באמצעות " },
   "about_sourceCode": { "message": "קוד מקור" },
+  "mode_autoClear": { "message": "ניקוי אוטומטי" },
   "alert_choosePlatform": { "message": "בחירת פלטפורמה" },
   "alert_updateAvail": { "message": "עדכון זמין" },
   "alert_newerVer": { "message": "עדכון ל -" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "חפש עדכונים" },
   "buttonLabel_update": { "message": "עדכון" },
   "buttonLabel_dismiss": { "message": "שחרור" },
-  "link_viewChanges": { "message": "הצגת השינויים" },
-  "mode_autoClear": { "message": "ניקוי אוטומטי" }
+  "link_viewChanges": { "message": "הצגת השינויים" }
 }

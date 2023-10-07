@@ -8,6 +8,7 @@
   "about_version": { "message": "Tatau" },
   "about_poweredBy": { "message": "Fakalele ʻe he" },
   "about_sourceCode": { "message": "Maʻuʻanga fakamatala" },
+  "mode_autoClear": { "message": "Meʻalele-fakaʻataʻata" },
   "alert_choosePlatform": { "message": "Fili ha fakavaʻe" },
   "alert_updateAvail": { "message": "ʻOku lava ke maʻu e fakamatala fakamuimuitaha" },
   "alert_newerVer": { "message": "Ko ha fakamatala fakamuimuitaha ki he" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Vakaiʻi e Ngaahi Fakamatala Fakamuimuitahá" },
   "buttonLabel_update": { "message": "Fakamatala Fakamuimuitahá" },
   "buttonLabel_dismiss": { "message": "Tukuange" },
-  "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" },
-  "mode_autoClear": { "message": "Meʻalele-fakaʻataʻata" }
+  "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" }
 }

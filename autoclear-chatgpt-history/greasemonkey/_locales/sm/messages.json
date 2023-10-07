@@ -8,6 +8,7 @@
   "about_version": { "message": "Faaliliuga" },
   "about_poweredBy": { "message": "Malosiaga e ala i" },
   "about_sourceCode": { "message": "Punaoa code" },
+  "mode_autoClear": { "message": "Auto-Clear" },
   "alert_choosePlatform": { "message": "Filifili se tulaga" },
   "alert_updateAvail": { "message": "Fa'afouga o lo'o avanoa" },
   "alert_newerVer": { "message": "Faʻafouga" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Siaki mo Faʻafouga" },
   "buttonLabel_update": { "message": "Fa'afouga" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
-  "link_viewChanges": { "message": "Vaʻai suiga" },
-  "mode_autoClear": { "message": "Auto-Clear" }
+  "link_viewChanges": { "message": "Vaʻai suiga" }
 }

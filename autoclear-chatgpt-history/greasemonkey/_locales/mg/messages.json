@@ -8,6 +8,7 @@
   "about_version": { "message": "Kinova" },
   "about_poweredBy": { "message": "Ampandehanin'i" },
   "about_sourceCode": { "message": "Kaody niaingana" },
+  "mode_autoClear": { "message": "Auto Auto Auto" },
   "alert_choosePlatform": { "message": "Misafidiana sehatra iray" },
   "alert_updateAvail": { "message": "Ny fanavaozana azo alaina" },
   "alert_newerVer": { "message": "Vaovao farany ho" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Mitadiava fanavaozana" },
   "buttonLabel_update": { "message": "Vaovao farany" },
   "buttonLabel_dismiss": { "message": "Hiditra" },
-  "link_viewChanges": { "message": "Hijery ireo fanovana" },
-  "mode_autoClear": { "message": "Auto Auto Auto" }
+  "link_viewChanges": { "message": "Hijery ireo fanovana" }
 }

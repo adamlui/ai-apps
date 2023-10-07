@@ -8,6 +8,7 @@
   "about_version": { "message": "លេខជំនាន់កម្មវិធី" },
   "about_poweredBy": { "message": "ដំណើរការ​ដោយ" },
   "about_sourceCode": { "message": "កូដ​ដើម" },
+  "mode_autoClear": { "message": "រៀនដោយស្វ័យប្រវត្តិ" },
   "alert_choosePlatform": { "message": "ជ្រើសរើសវេទិកា" },
   "alert_updateAvail": { "message": "ការអាប់ដេតមាន" },
   "alert_newerVer": { "message": "អាប់ដេតទៅ" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "ពិនិត្យរកអាប់ដេត" },
   "buttonLabel_update": { "message": "ធ្វើបច្ចុប្បន្នភាព" },
   "buttonLabel_dismiss": { "message": "បោះបង់" },
-  "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" },
-  "mode_autoClear": { "message": "រៀនដោយស្វ័យប្រវត្តិ" }
+  "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" }
 }

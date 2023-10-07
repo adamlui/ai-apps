@@ -8,6 +8,7 @@
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Нерӯмандшуда аз тарафи" },
   "about_sourceCode": { "message": "Рамзи манбаъ" },
+  "mode_autoClear": { "message": "Поксозии худкор" },
   "alert_choosePlatform": { "message": "Интихоб кардани платформа" },
   "alert_updateAvail": { "message": "I-update ang magagamit" },
   "alert_newerVer": { "message": "Ang isang pag-update sa" },
@@ -18,6 +19,5 @@
   "buttonLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
   "buttonLabel_update": { "message": "Навсозӣ кардан" },
   "buttonLabel_dismiss": { "message": "Рад кардан" },
-  "link_viewChanges": { "message": "Tingnan ang mga pagbabago" },
-  "mode_autoClear": { "message": "Поксозии худкор" }
+  "link_viewChanges": { "message": "Tingnan ang mga pagbabago" }
 }
