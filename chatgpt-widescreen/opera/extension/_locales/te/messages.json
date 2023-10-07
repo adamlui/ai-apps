@@ -11,7 +11,7 @@
   "menuLabel_disabled": { "message": "డిసేబుల్ చేయబడింది (పొడిగింపు ఇన్స్టాల్ చేయబడింది)" },
   "about_version": { "message": "వివరణం" },
   "about_poweredBy": { "message": "ద్వారా ఆధారితం" },
-  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "about_sourceCode": { "message": "సోర్స్ కోడ్" },
   "mode_wideScreen": { "message": "వెడల్పు స్క్రీన్" },
   "mode_fullWindow": { "message": "పూర్తి-వైన్ ‌ డో" },
   "mode_fullScreen": { "message": "పూర్తి తెర" },

@@ -11,7 +11,7 @@
   "menuLabel_disabled": { "message": "డిసేబుల్ చేయబడింది (పొడిగింపు ఇన్స్టాల్ చేయబడింది)" },
   "about_version": { "message": "వివరణం" },
   "about_poweredBy": { "message": "ద్వారా ఆధారితం" },
-  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "about_sourceCode": { "message": "సోర్స్ కోడ్" },
   "mode_wideScreen": { "message": "వెడల్పు స్క్రీన్" },
   "mode_fullWindow": { "message": "పూర్తి-వైన్ ‌ డో" },
   "mode_fullScreen": { "message": "పూర్తి తెర" },
@@ -30,9 +30,9 @@
   "alert_isUpToDate": { "message": "అప్ డేట్" },
   "alert_pressF11": { "message": "పూర్తి స్క్రీన్ ‌ ను నిష్క్రమించడానికి F11 నొక్కండి" },
   "alert_f11reason": { "message": "పూర్తి స్క్రీన్ను ఎంటర్ చేయడానికి F11 ఉపయోగించబడింది, మరియు బ్రౌజర్ భద్రతా కారణాల వల్ల, అదే కీని దానిని నిష్క్రమించడానికి ఉపయోగించాలి." },
-  "buttonLabel_update": { "message": "అప్‌డేట్" },
   "buttonLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "buttonLabel_leaveReview": { "message": "సమీక్షను వదిలివేయండి" },
+  "buttonLabel_update": { "message": "అప్‌డేట్" },
   "buttonLabel_dismiss": { "message": "తీసివేయండి" },
   "link_viewChanges": { "message": "మార్పులను చూడండి" }
 }
