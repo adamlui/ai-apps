@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "የቃለ መጠይቂያ" },
   "menuLabel_refreshInt": { "message": "ዳግም አስጀምር" },
   "menuLabel_about": { "message": "ስለ" },
-  "menuLabel_disabled": { "message": "የተጠናከረ (የተጫነ)" },
   "about_version": { "message": "እትም" },
   "about_poweredBy": { "message": "የተጎለበተው በ" },
   "about_sourceCode": { "message": "የምንጭ ኮድ" },

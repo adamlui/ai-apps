@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "ਮੋਡ ਨੋਟੀਫਿਕੇਸ਼ਨਸ" },
   "menuLabel_refreshInt": { "message": "ਰੀਫਰੈਸ਼ ਅੰਤਰਾਲ" },
   "menuLabel_about": { "message": "ਇਸ ਬਾਰੇ" },
-  "menuLabel_disabled": { "message": "ਅਯੋਗ ਕੀਤਾ (ਐਕਸਟੈਂਸ਼ਨ ਇੰਸਟਾਲ ਕੀਤਾ)" },
   "about_version": { "message": "ਵਰਜਨ" },
   "about_poweredBy": { "message": "ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },
   "about_sourceCode": { "message": "ਸਰੋਤ ਕੋਡ@ info: whatsthis" },

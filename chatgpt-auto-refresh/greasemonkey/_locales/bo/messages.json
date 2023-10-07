@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "མ་དབྱིབས་སྒྲིག་བཀོད །" },
   "menuLabel_refreshInt": { "message": "དུས་འཁོར་གྱི་སྒྲོན་མེ །" },
   "menuLabel_about": { "message": "མྱུར་ཨང་སྐོར།" },
-  "menuLabel_disabled": { "message": "སྒྲིག་འཇུག་སྣོད་སྒྲིག་འཇུག་བྱེད་པ (_T)" },
   "about_version": { "message": "པར་གཞི།" },
   "about_poweredBy": { "message": "དྲ་ཚིག་བཟོ་མཁན།" },
   "about_sourceCode": { "message": "འབྱུང་ཁུངས །" },

@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Obvestila o načinu" },
   "menuLabel_refreshInt": { "message": "Interval osveÅ¾evanja" },
   "menuLabel_about": { "message": "Vizitka" },
-  "menuLabel_disabled": { "message": "Onemogočeno (nameščena razširitev)" },
   "about_version": { "message": "Različica" },
   "about_poweredBy": { "message": "Poganja" },
   "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode:" },

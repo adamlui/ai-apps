@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Mód értesítések" },
   "menuLabel_refreshInt": { "message": "Frissítési időköz" },
   "menuLabel_about": { "message": "A" },
-  "menuLabel_disabled": { "message": "Letiltva (bővítmény telepítve)" },
   "about_version": { "message": "Verzió" },
   "about_poweredBy": { "message": "Kiszolgálja:" },
   "about_sourceCode": { "message": "Forráskód" },

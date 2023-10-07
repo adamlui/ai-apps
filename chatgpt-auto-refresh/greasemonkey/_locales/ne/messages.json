@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "मोड सूचनाहरू" },
   "menuLabel_refreshInt": { "message": "रिफ्रेश अन्तराल" },
   "menuLabel_about": { "message": "बारेमा" },
-  "menuLabel_disabled": { "message": "निष्क्रिय (एक्सटेन्शन स्थापित गरिएको छ)" },
   "about_version": { "message": "संस्करण" },
   "about_poweredBy": { "message": "द्वारा संचालित" },
   "about_sourceCode": { "message": "स्रोत कोड" },

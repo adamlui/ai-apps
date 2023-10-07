@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "മോഡ് അറിയിപ്പ്" },
   "menuLabel_refreshInt": { "message": "പുതുക്കം ഇൻറർവൽ" },
   "menuLabel_about": { "message": "സംബന്ധിച്ച്" },
-  "menuLabel_disabled": { "message": "അപ്രാപ്തമാക്കി (വിപുലീകരണം സ്ഥാപിക്കപ്പെട്ടു)" },
   "about_version": { "message": "പതിപ്പ്" },
   "about_poweredBy": { "message": "നയിച്ചത്" },
   "about_sourceCode": { "message": "സോഴ്സ് കോഡ്" },

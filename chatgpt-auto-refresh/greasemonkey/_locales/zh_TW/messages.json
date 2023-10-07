@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "模式通知" },
   "menuLabel_refreshInt": { "message": "重新整理間隔" },
   "menuLabel_about": { "message": "關於" },
-  "menuLabel_disabled": { "message": "已停用（擴展已安裝）" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "技術提供" },
   "about_sourceCode": { "message": "原始程式碼" },

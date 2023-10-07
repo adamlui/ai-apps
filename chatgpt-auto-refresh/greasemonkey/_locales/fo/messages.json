@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Modus kunningarskriv" },
   "menuLabel_refreshInt": { "message": "Endurskoðað Interval" },
   "menuLabel_about": { "message": "Um" },
-  "menuLabel_disabled": { "message": "Broytingar í innsavningini (innsavning)" },
   "about_version": { "message": "Útgáva:" },
   "about_poweredBy": { "message": "Powered by SFX" },
   "about_sourceCode": { "message": "Ada keldukota" },

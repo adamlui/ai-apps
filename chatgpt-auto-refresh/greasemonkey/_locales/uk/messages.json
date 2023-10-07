@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Сповіщення режиму" },
   "menuLabel_refreshInt": { "message": "Інтервал оновлення" },
   "menuLabel_about": { "message": "Про нас" },
-  "menuLabel_disabled": { "message": "Вимкнено (розширення встановлено)" },
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Працює на" },
   "about_sourceCode": { "message": "Джерельний код" },

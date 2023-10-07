@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },
   "menuLabel_refreshInt": { "message": "Refresh Interval" },
   "menuLabel_about": { "message": "A-zivout" },
-  "menuLabel_disabled": { "message": "Disabled (extension installed)" },
   "about_version": { "message": "Handelv" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "@ info: whatsthis" },

@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Pranešimai apie režimą" },
   "menuLabel_refreshInt": { "message": "Vaizdo atnaujinimo intervalas" },
   "menuLabel_about": { "message": "Apie" },
-  "menuLabel_disabled": { "message": "Išjungta (plėtinys įdiegtas)" },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Įgalino Proneta" },
   "about_sourceCode": { "message": "Pradinis kodas" },

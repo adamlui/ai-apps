@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Maitiro eMode" },
   "menuLabel_refreshInt": { "message": "Kupinda KweChengetedzo" },
   "menuLabel_about": { "message": "Kuhusu" },
-  "menuLabel_disabled": { "message": "Paralyzed (extension yakaitiswa)" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Inoratidzwa na" },
   "about_sourceCode": { "message": "Source code" },

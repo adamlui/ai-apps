@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Notificaciones de Modo" },
   "menuLabel_refreshInt": { "message": "Intervalo de Actualización" },
   "menuLabel_about": { "message": "Acerca de" },
-  "menuLabel_disabled": { "message": "Desactivado (extensión instalada)" },
   "about_version": { "message": "Versión" },
   "about_poweredBy": { "message": "Desarrollado por" },
   "about_sourceCode": { "message": "Código fuente" },

@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Modusmeldingen" },
   "menuLabel_refreshInt": { "message": "Verversingsinterval" },
   "menuLabel_about": { "message": "Over" },
-  "menuLabel_disabled": { "message": "Uitgeschakeld (extensie geïnstalleerd)" },
   "about_version": { "message": "Versie" },
   "about_poweredBy": { "message": "Ondersteund door" },
   "about_sourceCode": { "message": "Broncode" },

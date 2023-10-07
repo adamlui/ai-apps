@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Горимын мэдэгдэл" },
   "menuLabel_refreshInt": { "message": "Сэсээ шинэчлэх хугацаа" },
   "menuLabel_about": { "message": "Тухай" },
-  "menuLabel_disabled": { "message": "Идэвхгүй (сунгасан)" },
   "about_version": { "message": "Хувилбар" },
   "about_poweredBy": { "message": "Тодорхойлолтын зорилгоор" },
   "about_sourceCode": { "message": "Эх бичсэн код" },

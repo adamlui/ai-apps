@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "মোড বিজ্ঞপ্তি" },
   "menuLabel_refreshInt": { "message": "রিফ্রেশ ইন্টারভাল" },
   "menuLabel_about": { "message": "সম্বন্ধে" },
-  "menuLabel_disabled": { "message": "নিষ্ক্রিয় (এক্সটেনশন ইনস্টল করা হয়েছে)" },
   "about_version": { "message": "সংস্করণ" },
   "about_poweredBy": { "message": "নিবেদন করছেন" },
   "about_sourceCode": { "message": "সোর্স কোড" },

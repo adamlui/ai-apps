@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Режим за Известувања" },
   "menuLabel_refreshInt": { "message": "Интервал на Освежување" },
   "menuLabel_about": { "message": "За" },
-  "menuLabel_disabled": { "message": "Оневозможено (инсталирана екстензија)" },
   "about_version": { "message": "Верзија" },
   "about_poweredBy": { "message": "Овозможено од" },
   "about_sourceCode": { "message": "Изворен код" },

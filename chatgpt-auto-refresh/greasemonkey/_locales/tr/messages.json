@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Mod Bildirimleri" },
   "menuLabel_refreshInt": { "message": "Yenileme Aralığı" },
   "menuLabel_about": { "message": "Hakkımızda" },
-  "menuLabel_disabled": { "message": "Devre Dışı (uzantı yüklü)" },
   "about_version": { "message": "Versiyon" },
   "about_poweredBy": { "message": "Destek" },
   "about_sourceCode": { "message": "Kaynak Kodu" },

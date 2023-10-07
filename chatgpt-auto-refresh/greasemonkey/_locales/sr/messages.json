@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Обавештења о режиму" },
   "menuLabel_refreshInt": { "message": "Интервал освежавања" },
   "menuLabel_about": { "message": "O nama" },
-  "menuLabel_disabled": { "message": "Онемогућено (инсталирано проширење)" },
   "about_version": { "message": "Verzija" },
   "about_poweredBy": { "message": "Покреће га" },
   "about_sourceCode": { "message": "Izvorni kod" },

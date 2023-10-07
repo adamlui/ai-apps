@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Уведомления о режиме" },
   "menuLabel_refreshInt": { "message": "Интервал обновления" },
   "menuLabel_about": { "message": "Шифр" },
-  "menuLabel_disabled": { "message": "Отключено (расширение установлено)" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "На базе технологии" },
   "about_sourceCode": { "message": "Исходный код" },

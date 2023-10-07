@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "ການແຈ້ງເຕືອນໂໝດ" },
   "menuLabel_refreshInt": { "message": "ຊ່ວງເວລາໂຫຼດຂໍ້ມູນຄືນໃໝ່" },
   "menuLabel_about": { "message": "ກ່ຽວກັບ" },
-  "menuLabel_disabled": { "message": "ປິດໃຊ້ງານ (ຕິດຕັ້ງສ່ວນຂະຫຍາຍ)" },
   "about_version": { "message": "ຮຸ່ນ" },
   "about_poweredBy": { "message": "ຂັບເຄື່ອນໂດຍ" },
   "about_sourceCode": { "message": "ຊອດສ໌ໂຄດ" },

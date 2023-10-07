@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Režīma Paziņojumi" },
   "menuLabel_refreshInt": { "message": "Atjaunināšanas Intervāls" },
   "menuLabel_about": { "message": "Par" },
-  "menuLabel_disabled": { "message": "Izslēgts (paplašinājums ir uzstādīts)" },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Darbināts ar" },
   "about_sourceCode": { "message": "Pirmkods" },

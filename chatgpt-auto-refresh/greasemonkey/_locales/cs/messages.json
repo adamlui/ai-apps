@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Upozornění na režim" },
   "menuLabel_refreshInt": { "message": "Interval obnovování" },
   "menuLabel_about": { "message": "O" },
-  "menuLabel_disabled": { "message": "Zakázáno (rozšíření nainstalováno)" },
   "about_version": { "message": "Verze" },
   "about_poweredBy": { "message": "Běží na" },
   "about_sourceCode": { "message": "Zdrojový kód" },

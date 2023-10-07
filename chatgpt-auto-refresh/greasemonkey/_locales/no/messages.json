@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Modusvarsler" },
   "menuLabel_refreshInt": { "message": "Oppdateringsintervall" },
   "menuLabel_about": { "message": "Om" },
-  "menuLabel_disabled": { "message": "Deaktivert (utvidelse installert)" },
   "about_version": { "message": "Versjon" },
   "about_poweredBy": { "message": "Drevet av" },
   "about_sourceCode": { "message": "Kildekode" },

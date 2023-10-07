@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "რეჟიმის შეტყობინებები" },
   "menuLabel_refreshInt": { "message": "განახლების ინტერვალი" },
   "menuLabel_about": { "message": "პროგრამის შესახებ" },
-  "menuLabel_disabled": { "message": "გამორთულია (გაფართოება დაყენებულია)" },
   "about_version": { "message": "ვერსია" },
   "about_poweredBy": { "message": "აგებულია KDE-ზე" },
   "about_sourceCode": { "message": "საწყისი კოდი" },

@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "د حالت خبرتیاوې" },
   "menuLabel_refreshInt": { "message": "وقفه تازه کړئ" },
   "menuLabel_about": { "message": "په هکله" },
-  "menuLabel_disabled": { "message": "غیر فعال شوی (شاتاړی انسټال شوی)" },
   "about_version": { "message": ":نسخه" },
   "about_poweredBy": { "message": "طراحی شده توسط" },
   "about_sourceCode": { "message": "سرچينه كوډه" },

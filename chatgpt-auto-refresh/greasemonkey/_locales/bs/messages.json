@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Obavještenja o režimu" },
   "menuLabel_refreshInt": { "message": "Interval osvježavanja" },
   "menuLabel_about": { "message": "O nama" },
-  "menuLabel_disabled": { "message": "Onemogućeno (ekstenzija instalirana)" },
   "about_version": { "message": "Verzija" },
   "about_poweredBy": { "message": "omogućio" },
   "about_sourceCode": { "message": "Izvorni kod" },

@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Mga Notipikasyon sa Mode" },
   "menuLabel_refreshInt": { "message": "Intibalo sa Pag-refresh" },
   "menuLabel_about": { "message": "Mahitungod" },
-  "menuLabel_disabled": { "message": "Gibutang sa Disabled (nasudlan ang ekstensyon)" },
   "about_version": { "message": "Bersyon" },
   "about_poweredBy": { "message": "Gipadagan sa" },
   "about_sourceCode": { "message": "Gigikana sa kodigo" },

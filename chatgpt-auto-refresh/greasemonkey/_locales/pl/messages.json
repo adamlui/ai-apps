@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Powiadomienia trybu" },
   "menuLabel_refreshInt": { "message": "Interwał odświeżania" },
   "menuLabel_about": { "message": "Około" },
-  "menuLabel_disabled": { "message": "Wyłączone (rozszerzenie zainstalowane)" },
   "about_version": { "message": "Wersja" },
   "about_poweredBy": { "message": "Obsługiwane przez" },
   "about_sourceCode": { "message": "Kod źródłowy" },

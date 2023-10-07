@@ -6,7 +6,6 @@
   "menuLabel_modeNotifs": { "message": "Режим билдирүүлөрү" },
   "menuLabel_refreshInt": { "message": "Аралыкты жаңыртуу" },
   "menuLabel_about": { "message": "_Апплет жөнүндө" },
-  "menuLabel_disabled": { "message": "Өчүрүлгөн (кеңейтилген орнотулган)" },
   "about_version": { "message": "Версиясы" },
   "about_poweredBy": { "message": "Тарабынан иштелип чыккан" },
   "about_sourceCode": { "message": "Баштапкы код" },
