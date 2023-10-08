@@ -65,7 +65,7 @@
 
 ## 🗨️ User feedback
 
-<img width=999 src="https://i.imgur.com/REOL5Cq.png">
+<img width=999 src="https://i.imgur.com/DXS1ew7.png">
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
@@ -208,7 +208,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br>[Install](https://github.com/adamlui/chatgpt-infinity#-installation) /
 [Readme](https://github.com/adamlui/chatgpt-infinity#readme) /
 [Discuss](https://chatgptinfinity.com/discuss)
-> 
+
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT add-ons**</a> /
