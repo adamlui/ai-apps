@@ -35,6 +35,8 @@
 
 **ChatGPT 宽屏模式** 向 ChatGPT 添加了宽屏 + 全屏模式，通过减少滚动并创造更身临其境的观看体验来增强您的聊天会话。
 
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+
 ## 📺 演示
 
 <div align="center">
@@ -43,7 +45,9 @@
     <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/widescreen-mode-video-thumbnail.png">
 </a>
 
-</div>
+</div><br>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
 ## 💊 好处
 
@@ -57,9 +61,13 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/4ziDKXr.png"><img width=38 src="https://i.imgur.com/li7Svn5.png"></picture> 适用于: **openai.com** + **poe.com**
 
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+
 ## 🗨️ 用户反馈
 
 <img width=999 src="https://i.imgur.com/DXS1ew7.png">
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
 ## 🚀 如何安装
 
@@ -78,6 +86,8 @@
 
 </div>
 
+#
+
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://i.imgur.com/SATGr8j.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey 用户脚本:
 
 1. 安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) 或者 Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
@@ -93,6 +103,8 @@
 *注意：由于全窗口模式隐藏了侧边栏，请按“+”开始新的聊天*
 
 </div>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
 ## ⚡ 依赖关系
 
@@ -112,6 +124,8 @@ ChatGPT 寬屏模式依賴於強大的 [chatgpt.js](https://github.com/kudoai/ch
 
 </div>
 </h6>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
 ## 🌐 兼容性
 
@@ -148,6 +162,8 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 </div>
 
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+
 ## 🧠 贡献者
 
 该项目的存在归功于以下贡献者的代码、翻译、问题和想法:
@@ -162,10 +178,14 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/58298118?first-contrib=2023.09.23-wider-chatbox-idea&h=50&w=50&mask=circle&maxage=7d "@Aubermean")](https://github.com/Aubermean)
 [![ChatGPT](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+
 ## 🤖 更多 ChatGPT 应用
 
 如需更多精彩的 ChatGPT 应用程序，请访问: https://github.com/adamlui/chatgpt-apps
 <br><br>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
 ## 📜 相关应用
 
@@ -187,7 +207,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 [自述文件](https://github.com/adamlui/chatgpt-infinity/blob/main/docs/zh-cn/README.md) /
 [讨论](https://chatgptinfinity.com/discuss)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-addons">**更多 ChatGPT 插件**</a> /
 <a href="#%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87--english">回到顶部 ↑</a>
