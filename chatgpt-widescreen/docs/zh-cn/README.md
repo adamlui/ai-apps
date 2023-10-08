@@ -106,6 +106,7 @@
         <img width=546 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
     </picture>
 </a>
+<br><br>
 
 ChatGPT 寬屏模式依賴於強大的 [chatgpt.js](https://github.com/kudoai/chatgpt.js) 庫 (c) 2023 KudoAI 和 MIT 許可下的貢獻者。
 
