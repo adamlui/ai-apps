@@ -41,6 +41,8 @@
 
 </div>
 
+<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+
 ## ⚡ Dependencies
 
 <h6>
@@ -64,6 +66,8 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/kudoai
 </div>
 </h6>
 
+<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+
 ## 🌐 Compatibility
 
 **BraveGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/):
@@ -79,6 +83,8 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/kudoai
 - QQ
 
 If you've tested it to work in a browser not listed, create a [pull request](https://github.bravegpt.com/pulls) to become a contributor!
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
 
 ## 🕵️ Proxy Mode
 
@@ -103,6 +109,8 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 [Leave a review](https://greasyfork.org/en/scripts/462440-bravegpt/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
+<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+
 ## 📣 Social links
 
 [![](https://img.shields.io/mastodon/follow/111075576869014999?domain=https%3A%2F%2Ftechnodon.org&style=social "Follow @kudoai on Mastodon (technodon.org)")](https://technodon.org/@kudoai)
@@ -114,6 +122,8 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 [![](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social "Follow @adamluitube on YouTube")](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 [![](https://img.shields.io/badge/Follow%20in%2fadamlui-484-blue?logo=linkedin&style=social "Follow in/adamlui on LinkedIn")](https://linkedin.com/in/adamlui)
 [![](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "Follow @adamlui on GitHub")](https://github.com/adamlui)
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
 
 ## 🧠 Contributors
 
@@ -130,10 +140,14 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
+<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
 <br><br>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
 
 ## 📜 Related scripts
 
@@ -155,7 +169,7 @@ For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-app
 [Readme](https://github.com/adamlui/chatgpt-widescreen#readme) /
 [Discuss](https://chatgptwidescreen.com/discuss)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> /
 <a href="#----------------">Back to top ↑</a>
