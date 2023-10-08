@@ -42,14 +42,15 @@
 
 <h6>
 <div align="center">
-<br />
+<br>
 
 <a href="https://chatgpt.js.org">
-<picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
-    <img width=546 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
-</picture></a>
-<br /><br />
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
+        <img width=546 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
+    </picture>
+</a>
+<br><br>
 
 Autoclear ChatGPT History relies on code from the powerful <a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a> library (c) 2023 <a href="https://www.kudoai.com">KudoAI</a> & contributors under the MIT license.
 
