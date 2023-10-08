@@ -98,14 +98,14 @@
 
 <h6>
 <div align="center">
-<br />
+<br>
 
 <a href="https://chatgpt.js.org/#/zh-cn/">
-<picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
-    <img width=546 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
-</picture></a>
-<br /><br />
+    <picture>
+        <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
+        <img width=546 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
+    </picture>
+</a>
 
 ChatGPT 寬屏模式依賴於強大的 [chatgpt.js](https://github.com/kudoai/chatgpt.js) 庫 (c) 2023 KudoAI 和 MIT 許可下的貢獻者。
 
