@@ -45,17 +45,18 @@
 
 <h6>
 <div align="center">
-<br />
+<br>
 
 <a href="https://chatgpt.js.org">
-<picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
-    <img width=455 style="margin: 0 0 -13px 18px" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
-</picture></a>
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
+        <img width=455 style="margin: 0 0 -13px 18px" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
+    </picture>
+</a>
 <a href="https://katex.org">
     <img width=175 style="margin: 0 0 -13px 24px" src="https://i.imgur.com/3FBdSCi.png">
 </a>
-<br /><br />
+<br><br>
 
 BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/kudoai/chatgpt.js) library (c) 2023 KudoAI & contributors under the MIT license
 <br>...and the [KaTeX](https://github.com/KaTeX/KaTeX) library (c) 2013–2020 Khan Academy & contributors under the MIT license.
