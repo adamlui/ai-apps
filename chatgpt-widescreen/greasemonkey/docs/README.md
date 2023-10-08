@@ -80,6 +80,7 @@
         <img width=546 src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
     </picture>
 </a>
+<br><br>
 
 ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://github.com/kudoai/chatgpt.js) library (c) 2023 KudoAI & contributors under the MIT license.
 
