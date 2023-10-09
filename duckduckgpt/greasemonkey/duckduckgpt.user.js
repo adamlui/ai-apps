@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.6
+// @version             2023.10.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -488,11 +488,10 @@
 
         // Get answer from ChatGPT
         await pickAPI()
-        const data = createPayload(convo)
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
             headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
-            responseType: responseType(), data: data, onloadstart: onLoadStart(), onload: onLoad(),
+            responseType: responseType(), data: createPayload(convo), onloadstart: onLoadStart(), onload: onLoad(),
             onerror: (err) => {
                 ddgptConsole.error(err)
                 if (!config.proxyAPIenabled) ddgptAlert(!accessKey ? 'login' : 'suggestProxy')
