@@ -30,9 +30,9 @@
 
 ## 💡 What it does
 
-- #### Removes 10-minute time limit from conversations (when Chat History is disabled)
+- Removes **10-minute time limit** from conversations (when Chat History is disabled)
 
-- #### Get rid of annoying Cloudflare checks:
+- Get rid of annoying **Cloudflare checks**:
 
 <div align="center">
     
@@ -40,7 +40,7 @@
 
 </div>
 
-- #### Get rid of annoying ChatGPT network errors:
+- Get rid of annoying **ChatGPT network errors**:
 
 <div align="center">
 
