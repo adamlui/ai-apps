@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.8
+// @version             2023.10.8.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -400,6 +400,20 @@
             } else resolve(publicKey)
     })}
 
+    async function refreshAIGCFendpoint() {
+        GM_setValue(config.prefix + '_aigcfKey', false) // clear GM key
+        // Determine index of AIGCF in endpoint map
+        let aigcfMapIndex = -1
+        for (let i = 0 ; i < proxyEndpoints.length ; i++) {
+            const endpoint = proxyEndpoints[i]
+            if (endpoint.some(item => item.includes('aigcfun'))) {
+                aigcfMapIndex = i ; break
+        }}
+        // Update AIGCF endpoint w/ fresh key (using fresh IP)
+        proxyEndpoints[aigcfMapIndex][0] = (
+            'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey())
+    }
+
     // Define ANSWER functions
 
     let endpoint, accessKey, model
@@ -479,7 +493,7 @@
         })}}}
 
         function onLoad() {
-            return (event) => {
+            return async (event) => {
                 if (event.status !== 200) {
                     braveGPTconsole.error('Event status: ' + event.status)
                     braveGPTconsole.error('Event response: ' + event.responseText)
@@ -516,23 +530,7 @@
                             else if (event.responseText.includes('维护'))
                                 braveGPTshow(messages.alert_maintenance + '. ' + messages.alert_suggestOpenAI)
                             else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
-                                GM_setValue(config.prefix + '_aigcfKey', false) // clear GM key for fresh getAIGCFkey()
-
-                                // Determine index of AIGCF in endpoint map
-                                let aigcfMapIndex = -1
-                                for (let i = 0 ; i < proxyEndpoints.length ; i++) {
-                                    const endpoint = proxyEndpoints[i]
-                                    if (endpoint.some(item => item.includes('aigcfun'))) {
-                                        aigcfMapIndex = i ; break
-                                }}
-
-                                // Updated AIGCF endpoint w/ fresh key (using fresh IP)
-                                (async () => { // IIFE to use await
-                                    proxyEndpoints[aigcfMapIndex][0] = (
-                                        'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey())
-                                    getShowReply(convo, callback) // re-fetch reply
-                                })()
-
+                                await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
                             } else { // use different endpoint or suggest OpenAI
                                 braveGPTconsole.error(braveGPTalerts.parseFailed + ': ' + err)
                                 if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
