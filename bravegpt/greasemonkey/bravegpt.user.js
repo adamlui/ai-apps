@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.6.1
+// @version             2023.10.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -434,11 +434,10 @@
 
         // Get answer from ChatGPT
         await pickAPI()
-        const data = createPayload(convo)
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
             headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
-            responseType: responseType(), data: data, onloadstart: onLoadStart(), onload: onLoad(),
+            responseType: responseType(), data: createPayload(convo), onloadstart: onLoadStart(), onload: onLoad(),
             onerror: (err) => {
                 braveGPTconsole.error(err)
                 if (!config.proxyAPIenabled) braveGPTalert(!accessKey ? 'login' : 'suggestProxy')
