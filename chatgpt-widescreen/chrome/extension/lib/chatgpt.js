@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.3.4
+// This library is a condensed version of chatgpt.js v2.3.6
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -222,6 +222,7 @@ const chatgpt = {
               ' background-color: black ; padding: 10px ; border-radius: 8px ; ' // box style
             + ' opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; ' // visibility
             + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; ' // disable selection
+            + ' transform: translateX(35px) ; ' // init off-screen for transition fx
             + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ));
         document.body.appendChild(notificationDiv); // insert into DOM
 
@@ -257,8 +258,11 @@ const chatgpt = {
 
         // Show notification
         notificationDiv.innerText = msg; // insert msg
-        notificationDiv.style.transition = 'none'; // remove fade effect
-        notificationDiv.style.opacity = 1; // show msg
+        setTimeout(() => {
+            notificationDiv.style.opacity = 1; // show msg
+            notificationDiv.style.transform = 'translateX(0)'; // bring from off-screen
+            notificationDiv.style.transition = 'transform 0.05s ease, opacity 0.1s ease';
+        }, 10);
 
         // Hide notification
         const hideDelay = ( // set delay before fading
