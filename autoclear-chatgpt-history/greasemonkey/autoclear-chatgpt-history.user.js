@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.5
+// @version             2023.10.9
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -240,7 +240,7 @@
 // @compatible          qq
 // @match               *://chat.openai.com/*
 // @run-at              document-end
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@2535c87dc1204a4dbe464b69450bfff6197d3d99/dist/chatgpt-2.3.5.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@023d0bde2761ae57d2fd6ef485e8add560155c61/dist/chatgpt-2.3.6.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
