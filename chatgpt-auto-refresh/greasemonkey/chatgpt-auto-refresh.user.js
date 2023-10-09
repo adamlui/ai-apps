@@ -107,121 +107,120 @@
 // @name:zh-SG          ChatGPT 自动刷新 ↻
 // @name:zh-TW          ChatGPT 自動刷新 ↻
 // @name:zu             ChatGPT Ukusasaza Ngokuzenzakalelayo ↻
-// @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating constant network errors + Cloudflare checks (all from the background!)
-// @description:af      *VEILIG* hou ChatGPT-sessies vars deur konstante netwerkfoute en Cloudflare-kontrole uit die agtergrond te verwyder!
-// @description:am      *ባርማ* ብለው የኮንስትንት እስካሁን ጠፍተኛ እንዲያሳይ እና ክላይንት ፓስያንትን የሚያስተማሩበትን!
-// @description:ar      *بأمان* يحافظ على جلسات ChatGPT منتعشة، ويزيل أخطاء الشبكة المستمرة وفحوصات Cloudflare (كل ذلك من الخلفية)!
-// @description:az      *TƏHLÜKƏSİZ* olaraq ChatGPT seanslarını təzə tutaraq daimi şəbəkə səhvlərini və Cloudflare yoxlamalarını aradan qaldırır!
-// @description:be      *БЯСПЕКА* заўсёды падтрымлівае сеансы ChatGPT, выдаляючы пастаянныя сеткавыя памылкі і праверкі Cloudflare (усё гэта з фону)!
-// @description:bem     *SAFELY* ikalilesha imiseko yakasankha ya ChatGPT, yosinthika ma interneti osangalala ndi kupeza ndondomeko za Cloudflare (zikuchitika lonse lomwe m'gulu!)
-// @description:bg      *БЕЗОПАСНО* задържа свежите сесии на ChatGPT, като отстранява постоянните мрежови грешки и проверки на Cloudflare (всичко това от фона)!
-// @description:bn      *নিরাপদে* ChatGPT সেশনগুলিকে পুরোগামী রাখে, স্থায়ী নেটওয়ার্ক ত্রুটি ও ক্লাউডফ্লেয়ার পরীক্ষাগুলি সরায়। (সব এটা ব্যাকগ্রাউন্ড থেকে!)
-// @description:bo      *རྒྱབ་བཞིན་པའི་* ChatGPT གསརཔ་གཞི་སེལ་མཐོང་། མིན་འདུག་འདྲི་བརྡ་བསྐོར་འདོན་བརྡའི་ནུས་འཛིན་ལག་རིག་རེ་གནས་སྐབས་མངགས་འཛིན་པའི་སྐབས་ལེ།!
-// @description:bs      *SIGURNO* održava ChatGPT sesije svježima, eliminirajući stalne mrežne greške i Cloudflare provjere (sve iz pozadine)!
-// @description:ca      *SEGUR* manté les sessions de ChatGPT fresques, eliminant els errors constants de xarxa i les comprovacions de Cloudflare (tot des del fons)!
-// @description:ceb     *KANUNAYON* nagapabilin nga magbinuligay ang mga ChatGPT nga sesyon nga bag-o, nagapadayon nga mga network nga mga sayop + Cloudflare checks (tanang gikan sa background!)
-// @description:ckb     *بەبێ پەیمانە* بڵاو دەکە چاوانگە پەیوەندیکراوەکانی ChatGPT، هەڵەی شبکەیی کەسیی و بڵاودەکردنەوەکانی Cloudflare-ی دەستبکات (هەموو لە پشتەکە!)
-// @description:cs      *BEZPEČNĚ* udržuje sezení ChatGPT svěží, odstraňuje neustálé síťové chyby a kontroly Cloudflare (všechno z pozadí)!
-// @description:cy      *YN DIOGEL* yn cadw sesiynau ChatGPT yn ffres, gan ddileu gwallau rhwydwaith cyson a phrawfion Cloudflare (cyd-destun y cyfan hwn o'r cefndir!)
-// @description:da      *SIKKERT* holder ChatGPT-sessioner friske ved at fjerne konstante netværksfejl og Cloudflare-checks (det hele i baggrunden!)
-// @description:de      *SICHER* hält ChatGPT-Sitzungen frisch, indem ständige Netzwerkfehler und Cloudflare-Überprüfungen beseitigt werden (alles im Hintergrund!)
-// @description:dv      *ލައިންވެފަ* ހުރިމާލުން ތެރޭގުން ބޭނުންވާނީ ChatGPT ޝެޑިޔާ ކޮންފައިން ދެންވަރުކޮށް ފުރައިވާ ދިބުމުގެ ސެއްޕަންތައް (މިކަންކިފައިން!)
-// @description:dz      *དགའ་བསྐྱིད་བཞུགས་བརྡ* ChatGPT སེལ་ཐུབ་རྐྱངས་རྫོགས་དང་ Cloudflare བཤད་པ་བཟོ་བ་འདི་རེ་འཛིན་པའི་དཀར་ཆག་ལེབ་བྱེད་པ། (འདི་གཉེན་བྱིན་དགོངས་དང་གྲངས་ཀའི་སྒོ་དང་སྒྲིག་སྒྲིག་རྩོམ་ཡིན་པ།!)
-// @description:el      *ΜΕ ΑΣΦΑΛΕΙΑ* διατηρεί τις συνεδρίες ChatGPT φρέσκες, εξαλείφοντας συνεχείς σφάλματα δικτύου και ελέγχους Cloudflare (όλα από το παρασκήνιο!)
-// @description:eo      *SEKURE* tenas fresajn ChatGPT-sesiojn, forigante konstantajn reto-erarojn kaj Cloudflare-ekzamenojn (ĉio el la fono!)
-// @description:es      *SEGURO* mantiene las sesiones de ChatGPT frescas, eliminando constantes errores de red y verificaciones de Cloudflare (¡todo desde el fondo!)
-// @description:et      *TURVALISELT* hoiab ChatGPT seansid värskena, kõrvaldades pidevad võrguvead ja Cloudflare kontrollid (kõik taustal!)
-// @description:eu      *SEGUROA* ChatGPT saioak berrituak mantentzen ditu, sareko akats konstanteak eta Cloudflare egiaztapenak kentzen dituenez (dena hondartzatik!)
-// @description:fa      *به طور ایمن* جلسات ChatGPT را تازه نگه می دارد، با حذف خطاهای مداوم شبکه و بررسی های Cloudflare (همه اینها از پشت صحنه است!)
-// @description:fi      *TURVALLISESTI* pitää ChatGPT-istunnot tuoreina poistamalla jatkuvat verkkovirheet ja Cloudflare-tarkistukset (kaikki taustalla!)
-// @description:fo      *TRYGT* heldur ChatGPT-samrøður ferskar við at útrýma støðugum nettverksumbeinum og Cloudflare-próvtøkum (alt frá bakgrundini!)
-// @description:fr      *EN TOUTE SÉCURITÉ* maintient les sessions ChatGPT fraîches, en éliminant les erreurs réseau constantes et les vérifications Cloudflare (tout cela en arrière-plan!)
-// @description:fr-CA   *EN TOUTE SÉCURITÉ* maintient les sessions ChatGPT fraîches, en éliminant les erreurs réseau constantes et les vérifications Cloudflare (tout cela en arrière-plan!)
-// @description:gd      *LEANTAINNEACH* a' cumail seiseanan ChatGPT tioram, a' sgriosadh mearachdan làitheil sa chòmhdachd agus sgrùdadh Cloudflare (uile seo à taobh a-staigh!)
-// @description:gl      *SEGURO* mantén as sesións ChatGPT frescas, eliminando erros constantes de rede e verificacións de Cloudflare (todo desde o fondo!)
-// @description:gu      *સુરક્ષિતપણે* ChatGPT સેશન્સ ફ્રેશ રાખે છે, નેટવર્ક તરફથી સતત ત્રુટિઓ અને ક્લાઉડફ્લેર ચકાસોને દૂર કરે છે (આ સર્વો બૅકગ્રાઉન્ડમાંથી!)
-// @description:haw     *KUHIAO* e mālama ai i nā helu hōʻāpono ChatGPT maikaʻi, e hoʻopau ana i nā hewa kūʻokoʻa pūnaewele a me nā hōʻikeʻike Cloudflare (a pau mai ka hōʻāpono!)
-// @description:he      *בטחון* מחזיק את ההתוויות של ChatGPT טריות, מסיר שגיאות רשת קבועות ובדיקות Cloudflare (הכול מהרקע!)
-// @description:hi      *सुरक्षित रूप से* ChatGPT सत्रों को ताजगी बनाए रखता है, सतत नेटवर्क त्रुटियों और Cloudflare जांचों को खत्म करता है (सब कुछ पीछे से!)
-// @description:hr      *SIGURNO* održava ChatGPT sesije svježima, eliminirajući konstantne mrežne pogreške i Cloudflare provjere (sve iz pozadine!)
-// @description:ht      *AN SEKIRITE* kenbe sesyon ChatGPT fre, elimine erè sou rezo a ki konstan ak tcheke Cloudflare yo (tout sa soti nan fon an!)
-// @description:hu      *BIZTONSÁGOSAN* friss ChatGPT munkameneteket biztosít, megszünteti a folyamatos hálózati hibákat és a Cloudflare ellenőrzéseket (mindet a háttérből!)
-// @description:hy      *ԱՆՎԵՐՈՒԹՅՈՒՆ ՀԱՅՏԱՑՈՒՄՈՒՆ՝* պարտադրում է զբաղվող ChatGPT սեսիաներ, նշանակում է անվտանգ ցանցային սխալները և Cloudflare-ի ստուգումները (ամենը շարունակականորեն!)
-// @description:id      *AMAN* menjaga sesi ChatGPT tetap segar, menghilangkan kesalahan jaringan konstan dan pemeriksaan Cloudflare (semuanya dari latar belakang!)
-// @description:is      *ÖRUGGLIGT* heldur ChatGPT-samræður ferskar með því að eyða stöðugum netvilla og Cloudflare prófum (allt þetta úr bakgrunninum!)
-// @description:it      *IN SICUREZZA* mantiene le sessioni di ChatGPT fresche, eliminando gli errori di rete costanti e i controlli Cloudflare (tutto dallo sfondo!)
-// @description:ja      *安全に* ChatGPTセッションを新鮮に保ち、常に発生するネットワークエラーやCloudflareのチェックを排除します（すべてバックグラウンドで！）
-// @description:jv      *AMAN* ngadegake sesi ChatGPT tetep anyar, ngilangi kesalahan jaringan kang konstan lan pérangkat Cloudflare (kabeh saka latar belakang!)
-// @description:ka      *უსაფრთხოდ* ინახავს ChatGPT სესიებს ხარვეზებგან გამოცემულ ქსელურ შეცდომებსა და Cloudflare-ს შემოწმებას (ყველა ფონიდან!)
-// @description:kab     *ASGAS* yefka d iseklalen n t-sekhsis ChatGPT, yettunefken ad yeḥbes aḍris n yemgayan akked wudem n Cloudflare (imeslayen yerna meqqren!)
-// @description:kk      *ҚОРҒАУЛЫ* ChatGPT сессияларын жаңа қылатып, желі қателері мен Cloudflare тексерулерін жою (барлығы аркастан!)
-// @description:km      *ដោយសុខភាព* ការបកប្រែកម្មវិធី ChatGPT ជាស្ថានភាពថ្មីគ្រប់គ្រងដែលលុះត្រាតែកើតឡើងវិញជាមួយកំហុសបណ្ដាញទីនេះ!
-// @description:kn      *ಆಸ್ತಿಯಾಗಿ* ಚಾಟ್‌ಜಿಪಿಟಿ ಸತ್ರಗಳನ್ನು ಹೊತ್ತು ಉಳಿಸುವುದು, ನೇಟ್‌ವರ್ಕ್ ದೋಷಗಳನ್ನು ಮತ್ತು ಕ್ಲೌಡ್‌ಫ್ಲೇರ್ ಪರಿಶೀಲನೆಗಳನ್ನು ತೆಗೆದುಹಾಕುವುದು (ಎಲ್ಲವೂ ಹಿಂಬಾಲಕದಿಂದ!)
-// @description:ko      *안전하게* ChatGPT 세션을 신선하게 유지하며, 지속적인 네트워크 오류와 Cloudflare 검사를 제거합니다 (모두 백그라운드에서!)
-// @description:ku      *BEŞELE* seansên ChatGPT hilberînera, sêwiranên têkiliyên Cloudflare û têkiliyên têkiliyan ji bilî wê heye (her tişt ji arkaşê!)
-// @description:ky      *АКЫРКЫЛЫКТАН* ChatGPT сессияларын жаңыртып, туруктуу түзмөктөгө четте катааларды жана Cloudflare текшерүүлөрүн жок коондуруп (баарын аркадан!)
-// @description:la      *TUTA* ChatGPT sessiones recentes conservat, errores perennibus retis et Cloudflare inspectiones eliminans (omnia e fundo!)
-// @description:lb      *SIICHER* halt ChatGPT-Sessions frësch, dëstduerch dauerhaft Netzwierder an Cloudflare Checks z'erof ze huelen (all dat vum Hannergrond!)
-// @description:lo      *ດັດສະນັ່ງ* ສົບຜົນການ ChatGPT ປົດກະທົບເພື່ອສະຫຼັບທີ່ສະຫນອງ, ລຶບຂໍ້ຜິດພາດເຄື່ອງໝາຍເຊີ່ງໂພດແລະການກວດ Cloudflare (ທັງຫມົດຈາກພວກຫມາຍ!)
-// @description:lt      *SAUGIAI* išlaiko ChatGPT sesijas šviežias, pašalindamas nuolatinius tinklo klaidas ir Cloudflare patikrinimus (viską iš fono!)
-// @description:lv      *DROŠI* uztur ChatGPT sesijas svaigas, izslēdzot pastāvīgas tīkla kļūdas un Cloudflare pārbaudes (viss no fona!)
-// @description:mg      *MIANDRY ARA-KIRA* manamafy ny sesiny ChatGPT, manoloana ny diso amin'ny tambajotra sy ny fanamarinana anaty Cloudflare (rehetra avy amin'ny eny amin'ny hazofijaliana!)
-// @description:mi      *KAIRANGA KI TE WHAKATIKA* e tiakina ana e te ChatGPT nga huinga, e whakakore ana i nga hapa whatunga koreutu + nga whakamatautau Cloudflare (katoa mai i te taha!)
-// @description:mk      *БЕЗБЕДНО* ги задржува ChatGPT сесиите свежи, и ги отстранува константните мрежни грешки и Cloudflare проверките (сè од позадина!)
-// @description:ml      *സുരക്ഷിതമായി* ChatGPT സെഷനുകൾ പുതുമയിക്കുന്നു, സ്ഥിരമായ നെറ്റ് വർക്ക് പിശകുകൾ + Cloudflare പരിശോധനകൾ നീക്കുന്നു (എല്ലാം പിന്തുണയ്ക്കുന്നത്!)
-// @description:mn      *БАЙНГАШИН* ChatGPT сессийг анхны байхаар авах, сүлжээний алдааг хасах + Cloudflare шалгуурнуудыг (бүхий л дэлхийгээс!)
-// @description:ms      *DENGAN SELAMAT* mengekalkan sesi ChatGPT yang segar, menghapuskan ralat rangkaian yang berterusan + pemeriksaan Cloudflare (semuanya dari latar belakang!)
-// @description:mt      *B'JINNAR* jżomm is-sessjonijiet ChatGPT friski, jeliminaw l-ħsarat kostanti tal-netwerk + il-kontrolli Cloudflare (kollha minn wara l-kaxxa!)
-// @description:my      *လုံးဝ* ChatGPT စကားများကို အရမ်းကိုင်းစွာထုတ်လုပ်နိုင်သည်, အမြဲတမ်းတို့ကို မှတ်သားစွာကိုင်နိုင်သည်မှာဖြစ် (ထိုင်နေရာမှာအလွန်အသတ်များတိုက်!)
-// @description:ne      *सुरक्षित रूपमा* ChatGPT सत्रहरूलाई ताजा राख्छ, सञ्चालनमा गतिशील नेटवर्क त्रुटिहरू + Cloudflare जाँचहरूलाई निकाल्छ (सबै पछाडि!)
-// @description:nl      *VEILIG* houdt ChatGPT-sessies fris, elimineert constante netwerkfouten + Cloudflare-controles (allemaal op de achtergrond!)
-// @description:no      *SIKKERT* holder ChatGPT-økter friske, eliminerer konstante nettverksfeil + Cloudflare-sjekker (alt i bakgrunnen!)
-// @description:ny      *NDIWOYIMILIRENI* yatsikira mayiko a ChatGPT yonse, yosunga mafayilo opanda ntchito m'mtundu wa intaneti + mafunso a Cloudflare (zedi zonse kumtundu wosatha!)
-// @description:pa      *ਸੁਰੱਖਿਅਤ ਤਰੀਕੇ ਨਾਲ* ChatGPT ਸੈਸ਼ਨਾਂ ਨੂੰ ਤਾਜਗੀ ਬਖ਼ਸ਼ਦਾ ਹੈ, ਲਗਾਤਾਰ ਨੈੱਟਵਰਕ ਗਲਤੀਆਂ + Cloudflare ਜਾਂਚਾਂ ਨੂੰ ਮਿਟਾਉਂਦਾ ਹੈ (ਸਭ ਪਿੱਛੋਂ ਦੋਖ਼ੇ!)
-// @description:pap      *SEGURO* ta mantene sesionnan di ChatGPT fresku, eliminando erornan di red konstante + kontrolnan di Cloudflare (tur for di tras di fondu!)
-// @description:pl      *BEZPIECZNIE* utrzymuje świeżość sesji ChatGPT, eliminując stałe błędy sieciowe + kontrole Cloudflare (wszystko z tła!)
-// @description:ps      *د تورول* ChatGPT د سیشنونه راکړ کوي، د ګټورې مرستې شوي انټرنیټ اشتباهونه + د Cloudflare څټکي (ټول د پسوند په پښتو د څټکي!)
-// @description:pt      *COM SEGURANÇA* mantém as sessões do ChatGPT atualizadas, eliminando erros constantes de rede + verificações do Cloudflare (tudo em segundo plano!)
-// @description:pt-BR   *COM SEGURANÇA* mantém as sessões do ChatGPT atualizadas, eliminando erros constantes de rede + verificações do Cloudflare (tudo em segundo plano!)
-// @description:rn      *UBUHINZI* busimbura ibijanye n'amasessyoni za ChatGPT, azira inyongeramusaruro z'umuhoro + ibikorwa bya Cloudflare (byose binyuranye n'ijoro!)
-// @description:ro      *ÎN SIGURANȚĂ* menține sesiunile ChatGPT proaspete, eliminând erori constante de rețea + verificări Cloudflare (toate în fundal!)
-// @description:ru      *БЕЗОПАСНО* сохраняет актуальность сеансов ChatGPT, устраняет постоянные ошибки сети + проверки Cloudflare (все из фона!)
-// @description:rw      *MU BUNYAMINE* yategereza ibijanye n'amasomo ya ChatGPT, yakoresheje amakosa y'igikoresho + ikarangozwa ry'umuhato wa Cloudflare (byose mu ndango!)
-// @description:sg      *SẸNIMET* siimasi laðírì jəbbərə-jəbbərə ChatGPT, alu ńńúlè yìíhànì jìtìròlò fẹfẹ kàn ní ìtìjú bí ọ̀nà + àtòjọ ìgbà àkóbí yìí (gbogbo fún ọwọ!)
-// @description:si      *ආරක්ෂකයෙන්* ChatGPT සැසියන් නොරිවටවූ කාලීනවාදී, නිර්මාණවක්‍යා බොහෝ ජීවිත දෝෂ ඉවත් කරයි + Cloudflare පරීක්ෂක පරීක්ෂකයි (සියළුම පසුවෙනි!)
-// @description:sk      *BEZPEČNE* udržiava ChatGPT relácie čerstvé, eliminuje konštantné sieťové chyby + Cloudflare kontroly (všetko zo pozadia!)
-// @description:sl      *VARNOSTNO* ohranja sveže seje ChatGPT, odpravlja stalne napake v omrežju + preverjanja Cloudflare (vse iz ozadja!)
-// @description:sm      *SAFELY* faʻapea i ai le tusi tusitusi o le ChatGPT, faʻateʻilaina fautuaga a le tulaga e leʻi faʻaigoaina i le taimi nei + tulafono a le Cloudflare (uma mai le tafaʻilagi!)
-// @description:sn      *NEKUTAMBA* kugadzira sesi zveChatGPT fresh, kunyangadzora kusaziva kwevhanhu + kupindura Cloudflare (zvese pakugadziridzwa!)
-// @description:so      *KU GUULEEYSTO* wuxuu abuureen sessions ChatGPT cusub, ka saaray jilayaasha shabakadda qalad ah + dib-u-furidka Cloudflare (dhamaan ku dhex jira!)
-// @description:sr      *BEZBEDNO* održava sveže ChatGPT sesije, eliminiše konstantne mrežne greške + Cloudflare provere (sve iz pozadine!)
-// @description:sv      *SÄKERT* håller ChatGPT-sessioner fräscha, eliminerar konstanta nätverksfel + Cloudflare-kontroller (allt i bakgrunden!)
-// @description:sw      *KWA USAWA* inahifadhi vikao vya ChatGPT vikiwa safi, inaondoa makosa ya mtandao ya mara kwa mara + uchunguzi wa Cloudflare (yote kutoka nyuma!)
-// @description:ta      *பாதுகாப்பாக* ChatGPT அமர்வைப் பாதுகாக்குகின்றது, தானாகவே பிழைகளை நேரடியாக போக்குகின்றது + Cloudflare சோதனைகளை (அனைத்தும் பின்னர்!)
-// @description:te      *ఆంతరవిధిత* ప్రతిపాదించేందుకు ChatGPT సెషన్‌లను తాజాగా ఉంచుతుంది, నెట్‌వర్క్ లోపాలను + Cloudflare పరీక్షలను తొలగిస్తుంది (అన్నింటినీ నేపథ్యంలో!)
-// @description:tg      *БОДИДАР* сесияҳои ChatGPT-ро тоза медорад, хатоҳои почтаи пайвастагии танаффусанда + текширишҳои Cloudflare (ҳамаи манзаро аз писар!)
-// @description:th      *อย่างปลอดภัย* รักษาเซสชัน ChatGPT ให้เป็นรุ่นล่าสุด ป้องกันข้อผิดพลาดในเครือข่ายตลอดเวลา + ตรวจสอบ Cloudflare (ทั้งหมดจากพื้นหลัง!)
-// @description:ti      *ናይ ትንሽ ውልጥ* ይጠበቃል ChatGPT ሰማዕታት ጥራሕ ኣብዚ ሓደ ድምፂልካ + Cloudflare ግልባልካዊ መሰሪያዎት (ሓድሽ!)
-// @description:tk      *GÜWAGÖR* ChatGPT baýramly, täzedenet hatasyndan + Cloudflare barlama kontrolüni aýyrýar (ählisindän!)
-// @description:tn      *KA NAKANNA* kubeka izinsuku zobudlelwano be-ChatGPT ezinqe, ibuyisela amaphutha wokusesha i-Cloudflare (konke kusuka emphephandabeni!)
-// @description:to      *FAINGAMALIE* nau fakatupu e ngaahi hausi Falelotu 'oe ChatGPT, ngaue'aki e ngoueke siʻisiʻi netiuteki + ngaahi vavekapakilolo 'o e Cloudflare (kotoa 'i he tefito!')
-// @description:tpi     *SAFELY* iet i kamapim ChatGPT sesen bilong taim, em i helpim long pundaunim netwok error + kalamapim long Cloudflare (olsem oli kamap long bekgraon!)
-// @description:tr      *GÜVENLİ BİR ŞEKİLDE* ChatGPT oturumlarını taze tutarak sürekli ağ hatalarını ve Cloudflare kontrollerini ortadan kaldırır (hepsi arka planda!)
-// @description:uk      *БЕЗПЕКОВО* зберігає актуальність сеансів ChatGPT, усуває постійні мережеві помилки + перевірки Cloudflare (все з фону!)
-// @description:ur      *خوشحالی سے* ChatGPT سیشنز کو تازہ رکھتا ہے ، مستقل نیٹ ورک خرابیوں + کلاڈ فلیر کی چیکس کو ختم کرتا ہے (سب کچھ پس منظر سے!)
-// @description:uz      *XAVFSIZ* ChatGPT sessiyalarini yangi tutsa, doimiy tarmoq xatoliklarini + Cloudflare tekshiruvlarini bartaraf qiladi (hammasi orqasidan!)
-// @description:vi      *AN TOÀN* giữ cho các phiên ChatGPT luôn tươi mới, loại bỏ lỗi mạng liên tục + kiểm tra Cloudflare (tất cả từ phía nền!)
-// @description:xh      *NGOXOLO* izimvo zocingo zezichatGPT zingathunyelwa, zikhanjiswa imikhomba yezenkolo engakaze kuswela + ukuhlola ka-Cloudflare (konke kusaphelene!)
-// @description:yi      *פֿאַר זיכערהייט* העלט די ChatGPT סעסיעס פֿריש, אַלימינאַטינג קאָנסטאַנט נעטוואָרק פֿעהלער + קלאַודפֿלאַרע קאָנטראָלן (אַלע פֿון די קעשענען!)
-// @description:zh      *安全地* 保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查（全部来自后台！）
-// @description:zh-CN   *安全地* 保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查（全部来自后台！）
-// @description:zh-HK   *安全地* 保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查（全部來自背景！）
-// @description:zh-SG   *安全地* 保持 ChatGPT 会话新鲜，消除持续的网络错误 + Cloudflare 检查（全部来自后台！）
-// @description:zh-TW   *安全地* 保持 ChatGPT 會話新鮮，消除持續的網絡錯誤 + Cloudflare 檢查（全部來自背景！）
-// @description:zu      *NGOKUQINISEKILE* iyi phrofayili iyangenisa izinhlelo ze-ChatGPT zibe zimhlophe, ibulala iziphutha zomqondo ohlwini + izingxenye zika-Cloudflare (zimhlophe sonke!)
+// @description         *SAFELY* keeps ChatGPT sessions fresh, eliminating 10-minute chat limits + constant network errors + Cloudflare checks
+// @description:af      *VEILIG* hou ChatGPT-sessies vars deur 10-minuut-gesprekslimiete + konstante netwerkfoute en Cloudflare-kontrole te verwyder!
+// @description:am      *ባርማ* ያደርጋል በ10 ደቂቃ መካከለኛ ገጽታ መድረስን፣ በተጠቃሚ እንዲያሳይ እና ክላይንት ፓስያንትን በሚያስተማሩበት!
+// @description:ar      *بأمان* يحافظ على جلسات ChatGPT منتعشة من خلال القضاء على حدود الدردشة لمدة 10 دقائق + أخطاء الشبكة المستمرة + فحوصات Cloudflare!
+// @description:az      *TƏHLÜKƏSİZ* 10 dəqiqəlik söhbət limitlərini, daimi şəbəkə səhvlərini və Cloudflare yoxlamalarını aradan qaldıraraq ChatGPT seanslarını təzə tutur!
+// @description:be      *БЯСПЕКА* заўсёды захоўвае свежасць сэансаў ChatGPT, выдаляючы 10-хвілінныя абмежаванні размоў, пастаянныя сеткавыя памылкі і праверкі Cloudflare!
+// @description:bem     *SAFELY* ikalilesha mayiko a ChatGPT ndi kusintha ma limits ogawana pa mapeto 10 ndi ma interneti osangalala + mapeza ndondomeko za Cloudflare! 
+// @description:bg      *БЕЗОПАСНО* поддържа пряснота на сесиите в ChatGPT чрез премахване на 10-минутни лимити за чат, постоянни мрежови грешки и проверки на Cloudflare!
+// @description:bn      *নিরাপদে* ১০ মিনিটের কথোপকথন সীমা, স্থায়ী নেটওয়ার্ক ত্রুটি এবং ক্লাউডফ্লেয়ার পরীক্ষা সরিয়ে ChatGPT সেশনগুলিকে তাজা রাখে!
+// @description:bo      *རྒྱབ་བཞིན་པའི་* 10 ཟའ་གྲགས་བརྡ་བཀོད་རིམ་རྒྱུན་མིན་འདུག་འདྲི་བརྡ་བསྐོར་སེལ་མཐོང་གླུ་Cloudflare་རེ་དགོངས་འཕྲུལ་ཐོབ་མི་འདུག་པ་འཛིན་འབད་དགོས་པ། 
+// @description:bs      *SIGURNO* održava ChatGPT sesije svježima, eliminišući 10-minutna ograničenja ćaska, stalne greške mreže i Cloudflare provjere!
+// @description:ca      *SEGUR* manté les sessions de ChatGPT fresques, eliminant els límits de xat de 10 minuts + errors de xarxa constants i comprovacions de Cloudflare!
+// @description:ceb     *KANUNAYON* nagapabilin nga magbinuligay ang mga ChatGPT nga sesyon pinaagi sa pagpahawa sa 10-minuto nga limitasyon sa chat + nagpadayon nga network nga mga sayop + Cloudflare checks!
+// @description:ckb     *بەبێ پەیمانە* پشوودانی سنووری ١٠ خولەکی چات، هەڵەی شبکەیی کەسیی و بڵاودەکردنەوەکانی Cloudflare بۆ چاوانگە پەیوەندیکراوەکانی ChatGPT بڵاو دەکاتەوە!
+// @description:cs      *BEZPEČNĚ* udržuje relace ChatGPT čerstvé odstraněním 10minutových limitů chatu, trvalých síťových chyb a kontrol Cloudflare!
+// @description:cy      *YN DIOGEL* yn cadw sesiynau ChatGPT yn ffres trwy gael gwared ar gyfyngiadau sgwrs 10 munud + gwallau parhaus ar y rhwydwaith + gwiriadau Cloudflare!
+// @description:da      *SIKKERT* holder ChatGPT-sessioner friske ved at fjerne 10-minutters chat-begrænsninger, konstante netværksfejl og Cloudflare-tjek!
+// @description:de      *SICHER* hält ChatGPT-Sitzungen frisch, indem 10-Minuten-Chatbeschränkungen, ständige Netzwerkfehler und Cloudflare-Überprüfungen beseitigt werden!
+// @description:dv      *ލައިންވެފަ* 10 މިނެޓުގެ ވާހަކަދެއްކުމުގެ މަގުތައް ބާތިލްކުރުމާއެކު ތެރޭގުން ChatGPT ޝެޑިޔާ ކޮންފައިން ދެންވަރުކޮށް ChatGPT ފުރައިވާ ދިބުމުގެ ސެއްޕަންތައް ކަމުގައި ބޭނުންވާނެއެވެ.
+// @description:dz      *དགའ་བསྐྱིད་བཞུགས་བརྡ* 10 སྐར་མ་གི་ཟའ་གྲགས་རིམ་ལེབ་དག་ངོས་འཛིན་ལ་ཕྱིར་ ChatGPT སེལ་ཐུབ་རྐྱངས་རྫོགས་དང་ Cloudflare བཤད་པ་བཟོ་བ་འདི་རེ་འཛིན་པའི་དཀར་ཆག་ལེབ་བྱེད་པ།
+// @description:el      *ΜΕ ΑΣΦΑΛΕΙΑ* διατηρεί τις συνεδρίες ChatGPT φρέσκιες, εξαλείφοντας περιορισμούς συνομιλίας 10 λεπτών + συνεχείς σφάλματα δικτύου και ελέγχους Cloudflare!
+// @description:eo      *SEKURE* konservas freŝajn ChatGPT-sesiojn, forigante babiletajajn 10-minutajn limigojn + konstantajn reto-erarojn kaj Cloudflare-kontrolojn!
+// @description:es      *SEGURO* mantiene las sesiones de ChatGPT frescas, eliminando los límites de chat de 10 minutos + errores de red constantes y verificaciones de Cloudflare!
+// @description:et      *TURVALISELT* hoiab ChatGPT seansid värskena, eemaldades 10-minutilised vestluspiirangud, püsivad võrguvead ja Cloudflare'i kontrollid!
+// @description:eu      *SEGUROA* ChatGPT saioak berrituak mantentzen ditu, 10 minutuko txat mugak kenduz, + sareko akats konstanteak eta Cloudflare egiaztapenak ezabatuz!
+// @description:fa      *به طور ایمن* جلسات ChatGPT را تازه نگه می دارد، با حذف محدودیت چت ۱۰ دقیقه ای + خطاهای مداوم شبکه و بررسی های Cloudflare!
+// @description:fi      *TURVALLISESTI* pitää ChatGPT-istunnot tuoreina poistamalla 10 minuutin chat-rajat + jatkuvat verkkovirheet ja Cloudflare-tarkistukset!
+// @description:fo      *TRYGT* heldur ChatGPT-samrøður ferskar við at fjarstilla 10 minutta samrøðutakmarkanir + støðugar nettverksumbeinir og Cloudflare-próvtøkur!
+// @description:fr      *EN TOUTE SÉCURITÉ* maintient les sessions ChatGPT fraîches, en éliminant les limites de chat de 10 minutes + les erreurs réseau constantes et les vérifications Cloudflare !
+// @description:fr-CA   *EN TOUTE SÉCURITÉ* maintient les sessions ChatGPT fraîches, en éliminant les limites de chat de 10 minutes + les erreurs réseau constantes et les vérifications Cloudflare !
+// @description:gd      *LEANTAINNEACH* a' cumail seiseanan ChatGPT tioram le bhith a' toirt air falbh cunartaichean còmhraidh 10 mionaidean + mearachdan làitheil sa chòmhdachd + sgrùdaidhean Cloudflare!
+// @description:gl      *SEGURO* mantén as sesións de ChatGPT frescas, eliminando os límites de conversa de 10 minutos + erros constantes de rede e verificacións de Cloudflare!
+// @description:gu      *સુરક્ષિતપણે* ChatGPT સેશનો તાજી રાખે છે, 10 મિનિટની વાતચીત મર્યાદા, સ્થાયી નેટવર્ક ભૂલો અને ક્લાઉડફ્લેર તપાસો કાઢી નાખીને!
+// @description:haw     *KUHIAO* e mālama i nā helu hōʻāpono ChatGPT maikaʻi ma o ka lawe ʻana aku i nā palena kūkākūkā 10 minuke + mau ʻano hihia pūnaewele + nā hoʻokolokolo Cloudflare!
+// @description:he      *בטחון* שומר על התחברויות ChatGPT טריות על ידי הסרת מגבלות שיחה של 10 דקות + שגיאות 
+// @description:hi      *सुरक्षित रूप से* ChatGPT सत्रों को ताज़ा रखता है, 10 मिनट की चैट सीमाओं, सतत नेटवर्क त्रुटियों और क्लाउडफ़्लेयर जांच को दूर करते हुए।
+// @description:hr      *SIGURNO* drži ChatGPT sesije svježima, uklanjajući 10-minutna ograničenja chata, stalne mrežne pogreške i Cloudflare provjere.
+// @description:ht      *AN SEKIRITE* kenbe sesyon ChatGPT fre, lè li elimine limit chat 10 minit yo, erè sou rezo ki konstan epi tchèk Cloudflare yo.
+// @description:hu      *BIZTONSÁGOSAN* frissíti a ChatGPT munkameneteket a 10 perces csevegési korlátozások, a folyamatos hálózati hibák és a Cloudflare ellenőrzések megszüntetésével.  
+// @description:hy      *ԱՆՎՏԱՆԳՈՒԹՅՈՒՆ ՀԱՍԿԱՑՈՒՄԸ`* պահպանում է ChatGPT նիստերը թարմ, վերացնելով 10 րոպե չատի սահմանափակումները, մշտական ցանցային սխալները եւ Cloudflare ստուգումները:
+// @description:id      *AMAN* menjaga sesi ChatGPT tetap segar, menghilangkan batas obrolan 10 menit, kesalahan jaringan yang konstan, dan pemeriksaan Cloudflare.
+// @description:is      *ÖRUGGLEGA* heldur ChatGPT-spjallþáttum ferskum með því að eyða 10 mínútna spjalltakmörkunum, sífelldum netvillum og Cloudflare prófunum.
+// @description:it      *IN SICUREZZA* mantiene fresche le sessioni ChatGPT, eliminando i limiti di chat di 10 minuti, gli errori di rete costanti e i controlli Cloudflare.
+// @description:ja      *安全に*10分のチャット制限、定常的なネットワークエラー、Cloudflareチェックを排除することで、ChatGPTのセッションをフレッシュに保ちます。
+// @description:jv      *AMAN* njaga sesi ChatGPT tetep anyar, ngilangi wates obrolan 10 menit, kesalahan jaringan sing konstan, lan pemeriksaan Cloudflare.
+// @description:ka      *უსაფრთხოდ* ინარჩუნებს ChatGPT სესიების სიმცხვარეს, მოცილებულია 10 წუთიანი ჩეთის ლიმიტები, მუდმივი ქსელური შეცდომები და Cloudflare შემოწმებები.
+// @description:kk      *ҚАУІПСІЗ* ChatGPT сессияларын жаңартып тұрады, 10 минуттық чат шектеулерін, тұрақты желі қателерін және Cloudflare тексерістерін жояды.
+// @description:km      *ដោយសុវត្ថិភាព* រក្សាសម្ថភាពសន្ទនាថ្មីៗនៃសម័យ ChatGPT ដោយលុបចោលដែនកំណត់សន្ទនា 10 នាទី + កំហុសបណ្តាញជាប្រចាំ + ការពិនិត្យរបស់ Cloudflare។
+// @description:kn      *ಸುರಕ್ಷಿತವಾಗಿ* 10 ನಿಮಿಷಗಳ ಚಾಟ್ ಮಿತಿಗಳು, ನಿರಂತರ ನೆಟ್‌ವರ್ಕ್ ದೋಷಗಳು ಮತ್ತು ಕ್ಲೌಡ್‌ಫ್ಲೇರ್ ಪರಿಶೀಲನೆಗಳನ್ನು ತೆಗೆದುಹಾಕುವ ಮೂಲಕ ChatGPT ಸತ್ರಗಳನ್ನು ಹೊಸದಾಗಿರಿಸುತ್ತದೆ.
+// @description:ko      *안전하게* 10분 채팅 제한, 지속적인 네트워크 오류, 클라우드플레어 검사를 제거하여 ChatGPT 세션을 신선하게 유지합니다.
+// @description:ku      *بە ئاسایی* بڵاویی چاتی دیمەنی ١٠ خولەکی، کێشەی شبکەیی ڕاستەوخۆ و دیاریکردنی چاودێریی کلاڵدفلەر باش دەکاتەوە، بە تازەکردنەوەی پەیوەندییەکانی چاتجیپیتی.
+// @description:ky      *КООПСУЗДУК МЕНЕН* ChatGPT сессияларын жаңылап турат, 10 мүнөттүк чат чектөөлөрүн, туруктуу тармак каталарын жана Cloudflare текшерүүлөрүн алып салат.
+// @description:la      *TUTO* sermones ChatGPT recentes servat, eliminans limitiones colloquii decem minutarum, errores crebros retis et inspectiones Cloudflare.
+// @description:lb      *SÉCHER* hält d'ChatGPT-Sessiounen frësch, andeems d'10 Minutte Chat-Limitten, bestänneg Netzwierker an d'Cloudflare-Iwwerpréifungen ewech geholl ginn.
+// @description:lo      *ດ້ວຍຄວາມປອດໄພ* ຮັກສາການສົນທະນາຂອງ ChatGPT ໃຫມ່ໂດຍ ລຶບກໍານົດເວລາແຊັດ 10 ນາທີ + ຂໍ້ຜິດພາດເຄືອຂ່າຍປະຈໍາ + ການກວດສອບຂອງ Cloudflare.
+// @description:lt      *SAUGIAI* palaiko ChatGPT sesijas šviežias, pašalindama 10 minučių pokalbių apribojimus, nuolatinius tinklo trikdžius ir Cloudflare patikras.
+// @description:lv      *DROŠI* uztur ChatGPT sesijas svaigas, noņemot 10 minūšu čata ierobežojumus, pastāvīgās tīkla kļūdas un Cloudflare pārbaudes.
+// @description:mg      *MIANDRY ARA-KIRA* manamafy ny hetsika ChatGPT, manala ny fepetra fisalasana 10 minitra, ny diso amin'ny tambajotra mandritra ary ny fanamarinana amin'ny Cloudflare.
+// @description:mi      *KA TŪTURU* e pupuri ana ngā poti ChatGPT mā te whakakore i ngā herenga kōrero 10 meneti, hapa whatunga rāroto + ngā aroturuki Cloudflare.   
+// @description:mk      *БЕЗБЕДНО* ги одржува ChatGPT сесиите свежи, отстранувајќи 10-минутни ограничувања за ќерка, константни мрежни грешки и проверки на Cloudflare.
+// @description:ml      *സുരക്ഷിതമായി* 10 മിനിറ്റ് ചാറ്റ് പരിധികൾ, തുടർച്ചയായ നെറ്റ്‌വർക്ക് പിശകുകൾ, ക്ലൗഡ്ഫ്ലെയർ പരിശോധനകൾ എന്നിവ ഒഴിവാക്കി ChatGPT സെഷനുകൾ പുതുമ നിലനിർത്തുന്നു.
+// @description:mn      *АЮУЛГҮЙ БОЛОВЧ* 10 минутын чат хязгаарлыг, үргэлжилсэн сүлжээний алдаа, Cloudflare-ийн шалгалтуудыг хасаж ChatGPT-ийн сэшнүүдийг шинэчлэнд авна.
+// @description:mr      *सुरक्षितपणे* १० मिनिटे गप्पामर्यादा, नित्य नेटवर्क त्रुटी आणि क्लाउडफ्लेअर तपासण्या दूर करून ChatGPT सत्र ताजे ठेवते.
+// @description:ms      *DENGAN SELAMAT* mengekalkan sesi ChatGPT yang segar dengan menyingkirkan had sembang 10 minit, kesalahan rangkaian yang kerap, dan semakan Cloudflare.
+// @description:mt      *B'SIGURTÀ* iżżomm sessjonijiet ChatGPT friski billi tneħħi l-limiti ta' ċavettaġġ ta' 10 minuti, żbalji fil-network persistenti, u kontrolli ta' Cloudflare.
+// @description:my      *လုံးဝ လုံခြုံစွာ* ၁၀ မိနစ် စကားပြောချိန် ကန့်သတ်မှုများ၊ မြောက်မြောက် ကွန်ရက် ပြၚအမှားများနှင့် Cloudflare စစ်ဆေးမှုများကို ဖယ်ရှားကာ ChatGPT လေ့လာသင်ယူမှုများကို ပြန်လည်နောင်တင်ပေးသည်။   
+// @description:ne      *सुरक्षितरूपमा* १० मिनेटको च्याट सीमा, निरन्तर नेटवर्क त्रुटि र क्लाउडफ्लेयर जाँचलाई हटाउँदै ChatGPT सत्रलाई ताजा राख्छ।
+// @description:nl      *VEILIG* houdt ChatGPT-sessies vers door het elimineren van 10-minuten chatlimieten + constante netwerkfouten + Cloudflare-controles.
+// @description:no      *TRYGT* holder ChatGPT-økter friske ved å fjerne 10-minutters chattebegrensninger + konstante nettverksfeil + Cloudflare-sjekker.
+// @description:ny      *NDIWOYIMILIRENI* yatsikira mayiko a ChatGPT masophenya ndi kuchotsa malire ogawana pa maola makumi apamodzi + zolakwika zopusazozopa pa intaneti + zolingalira za Cloudflare.
+// @description:pa      *ਸੁਰੱਖਿਅਤ* ChatGPT ਸੈਸ਼ਨਾਂ ਨੂੰ ਤਾਜ਼ਾ ਰੱਖਦਾ ਹੈ, 10 ਮਿੰਟ ਦੀਆਂ ਚੈਟ ਸੀਮਾਵਾਂ ਖ਼ਤਮ ਕਰਕੇ + ਲਗਾਤਾਰ ਨੈੱਟਵਰਕ ਗਲਤੀਆਂ + ਕਲਾਉਡਫਲੇਅਰ ਚੈੱਕ। 
+// @description:pap     *SEGURO* ta mantene seshonnan di ChatGPT fresku dor di eliminá limitenan di 10 minüt di chèt + faltanan di red kontínuo + kontròlnan di Cloudflare.
+// @description:pl      *BEZPIECZNIE* utrzymuje świeżość sesji ChatGPT, eliminując 10-minutowe ograniczenia czatu + stałe błędy sieciowe + kontrole Cloudflare.
+// @description:ps      *په امنه* توګه د ChatGPT د سیشنونو تازګی ساتي، د ۱۰ دقیقو چت محدودیتونه، دوامداره شبکي غلطي او Cloudflare بررسۍ له منځه وړي.
+// @description:pt      *COM SEGURANÇA* mantém as sessões do ChatGPT frescas, eliminando limites de chat de 10 minutos + erros de rede constantes + verificações do Cloudflare.
+// @description:pt-BR   *COM SEGURANÇA* mantém as sessões do ChatGPT frescas, eliminando limites de chat de 10 minutos + erros de rede frequentes + checagens do Cloudflare.
+// @description:rn      *MU BUNYAMINE* igasimburana ibijanye n'amasessyoni za ChatGPT zitanyuzwe, ikurwaho imipaka y'ugusegura imyumvire icumico + amakosa akomeye yo mu murongo w'ubucuruzi + igenzura rya Cloudflare.  
+// @description:ro      *ÎN SIGURANȚĂ* menține sesiunile ChatGPT proaspete, eliminând limitele de chat de 10 minute + erorile constante de rețea + verificările Cloudflare.
+// @description:ru      *БЕЗОПАСНО* поддерживает свежесть сеансов ChatGPT, устраняя 10-минутные ограничения чата + постоянные сетевые ошибки + проверки Cloudflare.
+// @description:rw      *MU BUNYAMINE* ibikanika ibijanye n’amasesyoni ya ChatGPT bashya, ikuraho imipaka y’iseswa ry’iminota 10 + amakosa akomeje kw’itumanaho + igenzura rya Cloudflare.
+// @description:sg      *NI ÌTỌJU* ṣiṣeda àwọn ìgbéṣẹ̀ ChatGPT tuntun nipa pari awọn ipò ìpolongo ọrọ̀lọ̀wọ́ 10 Onimẹji + awọn ṣiṣe ilana oníranlọ̀wọ́ + awọn adánilọ́jọ́ Cloudflare.
+// @description:si      *ආරක්ෂිතව* ChatGPT සංසද නවීකරණය කරයි, මිනිත්තු 10 ක චැට් සීමා ඉවත් කරමින් + ස්ථිර ජාල දෝෂ + Cloudflare පරීක්ෂණ ඉවත් කරයි.
+// @description:sk      *BEZPEČNE* udržiava relácie ChatGPT čerstvé odstránením 10-minútových limitov chatu + neustálych sieťových chýb + kontrol Cloudflare.
+// @description:sl      *VARNO* ohranja sveže seje ChatGPT z odstranitvijo 10-minutnih omejitev klepetanja + nenehnih napak v omrežju + preverjanj Cloudflare.
+// @description:sm      *MA FA'AMANUIAGA* e tiakina la'ia nei vaega o le fa'asalalauga, e masani ona fa'amalosi e 10 minute + tala esemanuuga nei i le polokalama asiasia + nisi'i Cloudflare.
+// @description:sn      *KANA KUTAMBA WAKAWANDA* kugadzira matambudziko eChatGPT magariro nokudzinga mamwe maonero echirongwa che10min + zvivi zvisingakoni nekupera + ruzivo rweCloudflare.  
+// @description:so      *SI AMMAAN* waxay xireynaysaa kulamadaha ChatGPT cusub, ka saaraysa xadka 10-daqiiqo ee wada-xadgudubka + xatooyinka shaabka waqti-dheer + baaritaan Cloudflare.
+// @description:sr      *BEZBEDNO* održava sveže sesije ChatGPT eliminišući 10-minutna ograničenja ćaska, konstantne mrežne greške i Cloudflare provere.
+// @description:sv      *SÄKERT* håller ChatGPT-sessioner fräscha genom att eliminera 10-minuters chattgränser + konstanta nätverksfel + Cloudflare-kontroller.
+// @description:sw      *KWA USALAMA* huhifadhi mijadala ya ChatGPT ikiwa safi, ikiondoa mipaka ya mazungumzo ya dakika 10 + hitilafu za mtandao endelevu + ukaguzi wa Cloudflare.  
+// @description:ta      *பாதுகாப்பாக* காப்பு செயலி காத்து வைக்கிறது. 10 நிமிட உரையாடல் வரம்புகள் + தொடர்ச்சியான வலையமைப்பு பிழைகள் + மேகக்கம்பெனி சோதனைகள் அகற்றப்படுகிறது. 
+// @description:te      *సురక్షితంగా* 10 నిమిషాల చాట్ పరిమితులు, నిరంతర నెట్‌వర్క్ లోపాలు + క్లౌడ్‌ఫ్లేర్ తనిఖీలను తొలగించి ChatGPT సెషన్‌లను కొత్తగా ఉంచుతుంది.
+// @description:tg      *БО ҲИФЗИ АМНИЯТ* ҷаласаҳои гуфтугӯи ChatGPT-ро тоза нигоҳ медорад, маҳдудияти 10-дақиқагии гуфтугӯро бартараф намуда, хатогиҳои доимии шабака ва санҷиши Cloudflare-ро аз байн мебарад.
+// @description:th      *อย่างปลอดภัย* รักษาการเชื่อมต่อ ChatGPT ใหม่โดยการกําจัดขีด จํากัด การแชท 10 นาที + ข้อผิดพลาดของเครือข่ายตลอดเวลา + การตรวจสอบของ Cloudflare
+// @description:ti      *ብናይ ደሞዝ* ኣብ ግዜ 10 ደቂቕ ድምጺ ገዚፍካ ክውዓል፡ ናብ ሕፅይቲ ምእታይን + ናይ Cloudflare ፍልጠትን ብምንምዓም ንገልጽነት ዝገበሮ ChatGPT ይቕይር።
+// @description:tk      *HOWPSUZLYK BILEN* 10 minutly çekmeleri, durnukly internet ýalňyşlaryny we Cloudflare barlagyny aýyrmagyň üsti bilen ChatGPT mejlislerini täze saklaýar.
+// @description:tn      *KA POLAOKEHI* e boloka dikopano tsa ChatGPT di ntšha ka ho tloša thekiso ya pocisano ya metsotso e 10 + diphoso tsa neteweke tse kileng + dipatlisiso tsa Cloudflare.
+// @description:to      *'I HE FA'A'EA'EA'ANGA* 'oku ne papa'i 'a e ngaahi 'aofaki ki he ChatGPT 'i he fou, 'aki 'a e ngaahi ta'u kehekehe chatí ki he meniti 'e 10 + hili pea 'o e ngaahi me'angaue'aki 'a e néétuiaki + ngaahi sivi 'o e Cloudflare.
+// @description:tr      *GÜVENLİ BİR ŞEKİLDE* 10 dakikalık sohbet sınırlarını, sürekli ağ hatalarını ve Cloudflare kontrollerini ortadan kaldırarak ChatGPT oturumlarını taze tutar.
+// @description:uk      *БЕЗПЕЧНО* підтримує свіжість сеансів ChatGPT, усуваючи 10-хвилинні обмеження чату, постійні мережеві помилки та перевірки Cloudflare.
+// @description:ur      *محفوظ* ChatGPT سیشنز کو تازہ رکھتا ہے، 10 منٹ کی چیٹ لمٹس، مستقل نیٹ ورک نقص + کلاڈ فلیئر چیکس ختم کرکے۔
+// @description:uz      *XAVFSIZ* 10 daqiqa suhbat chegaralarini, doimiy tarmoq xatoliklarini va Cloudflare tekshiruvlarini yo‘qotish orqali ChatGPT sessiyalarini yangilab turadi.
+// @description:vi      *AN TOÀN* giữ các phiên ChatGPT mới bằng cách loại bỏ giới hạn trò chuyện 10 phút + lỗi mạng liên tục + kiểm tra Cloudflare.
+// @description:xh      *NGEKONAKALIYO* igcina amaseshoni we-ChatGPT entsha ngokususa imida yokuxoxa yemizuzu eli-10 + amathuba olu hlulekileyo womeli + ukuhlolwa kuka-Cloudflare.
+// @description:yi      *זיכער* האלט ChatGPT סעסיעס פֿריש, דורך אַוועקנעמען 10 מינוט רעד גרעניצן, שטענדיק נעץ פֿעלערן + קלוידפֿלאַרע באַשעקן.
+// @description:zh      *安全* 保持 ChatGPT 会话新鲜，消除 10 分钟聊天限制 + 持续的网络错误 + Cloudflare 检查
+// @description:zh-CN   *安全* 保持 ChatGPT 会话新鲜，消除 10 分钟聊天限制 + 持续的网络错误 + Cloudflare 检查
+// @description:zh-HK   *安全* 保持 ChatGPT 會話新鮮，消除 10 分鐘聊天限制 + 持續的網路錯誤 + Cloudflare 檢查
+// @description:zh-SG   *安全* 保持 ChatGPT 会话新鲜，消除 10 分钟聊天限制 + 持续的网络错误 + Cloudflare 检查
+// @description:zh-TW   *安全* 保持 ChatGPT 會話新鮮，消除 10 分鐘聊天限制 + 持續的網路錯誤 + Cloudflare 檢查
+// @description:zu      *SAFELY* igcina izikhathi ze-ChatGPT zizintsha, isusa imikhawulo yengxoxo eyimizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + nokuhlola kwe-Cloudflare
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.6
+// @version             2023.10.9
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -245,6 +244,7 @@
 // @grant               GM_unregisterMenuCommand
 // @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
+// @run-at              document-start
 // @noframes
 // @updateURL           https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.meta.js
 // @downloadURL         https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.user.js
@@ -265,6 +265,22 @@
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('arDisabled', 'notifHidden', 'refreshInterval', 'toggleHidden')
     if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
+
+    // Prevent sporadic convo resets
+    const ogAEL = EventTarget.prototype.addEventListener
+    EventTarget.prototype.addEventListener = function(type, listener, optionsOrUseCapture) {
+        let calledByOpenAI = false
+        if (type === 'focus' && this === unsafeWindow || type === 'visibilitychange') {
+            const callStack = new Error().stack + '\n',
+                  aelCaller = callStack.match(/-extension:\/\/.*\n(.+)/)?.[1]
+            calledByOpenAI = !aelCaller?.includes('-extension://')
+            if (calledByOpenAI && type === 'visibilitychange') {
+                ogAEL.call(this, type, function(event) {
+                    if (document.visibilityState !== 'visible') listener.call(this, event)
+                }, optionsOrUseCapture)
+        }}
+        if (!calledByOpenAI) ogAEL.apply(this, arguments)
+    }
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
