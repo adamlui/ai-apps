@@ -30,6 +30,8 @@
 
 ## 💡 What it does
 
+- #### Removes 10-minute time limit from conversations (when Chat History is disabled)
+
 - #### Get rid of annoying Cloudflare checks:
 
 <div align="center">
