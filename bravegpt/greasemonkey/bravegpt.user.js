@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.9
+// @version             2023.10.10
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -289,7 +289,7 @@
                             + config.gitHubURL + '</a>',
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
-                    function githubSource() { safeWindowOpen(config.gitHubURL) },
+                    function getSupport() { safeWindowOpen(config.supportURL) },
                     function leaveAReview() {
                         const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
                             [ function greasyFork() { safeWindowOpen(
@@ -304,15 +304,16 @@
                         const reviewButtons = document.getElementById(reviewAlertID).querySelectorAll('button')
                         reviewButtons[0].style.display = 'none' // hide Dismiss button
                         reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
-                            reviewButtons[1].textContent.replace(/\s/g, '')) }
-                ], '', 515) // About modal width
+                            reviewButtons[1].textContent.replace(/\s/g, '')) },
+                    function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                ], '', 577) // About modal width
 
             // Re-format buttons to include emojis + re-case + hide 'Dismiss'
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-                if (/updates/i.test(button.textContent))
-                    button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-                else if (/review/i.test(button.textContent))
-                    button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+                if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+                else if (/support/i.test(button.textContent)) button.textContent = '🧠 ' + messages.buttonLabel_getSupport
+                else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+                else if (/apps/i.test(button.textContent)) button.textContent = '🤖 ' + messages.buttonLabel_moreApps
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
@@ -663,6 +664,7 @@
         gitHubURL: 'https://github.com/kudoai/bravegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt' }
     config.updateURL = config.greasyForkURL + '/code/bravegpt.meta.js'
+    config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'replyLanguage', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
@@ -766,8 +768,9 @@
         + '.katex-html { display: none } ' // hide unrendered math
         + '.chatgpt-modal p { font-size: 1.115rem ; margin-left: 4px } ' // chatgpt.alert() msg
         + '.chatgpt-modal button { ' // chatgpt.alert() buttons
-            + 'font-size: 0.75rem ; text-transform: uppercase ;'
-            + ' padding: 8px 15px !important ; border-radius: 0 !important ; border: 2px solid black !important } '
+            + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ;'
+            + ' padding: 5px !important ; border-radius: 0 !important ; border: 1px solid '
+                + ( isDarkMode() ? 'white' : 'black' ) + ' !important } '
         + '.chatgpt-modal button:hover { color: white !important } ' // color text white on alert button hovers
         + ( isDarkMode() ? '.chatgpt-modal button:hover { background-color: #00cfff !important }' : '' ))
     document.head.appendChild(braveGPTstyle) // append style to <head>
