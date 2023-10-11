@@ -48,23 +48,25 @@
     })}
 
     // Stylize toggle switch
-    const switchStyle = document.createElement('style')
-    switchStyle.innerText = '.switch { position: absolute ; left: 208px ; width: 34px ; height: 18px } '
-        + '.switch input { opacity: 0 ; width: 0 ; height: 0 } ' // hide checkbox
-        + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ; '
-            + 'background-color: #ccc ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px } '
-        + '.slider:before { position: absolute ; content: "" ; height: 14px ; width: 14px ; left: 3px ; bottom: 2px ; '
-            + 'background-color: white ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px } '
+    if (!document.getElementById('chatgpt-switch-style')) {
+        const switchStyle = document.createElement('style')
+        switchStyle.innerText = '.switch { position: absolute ; left: 208px ; width: 34px ; height: 18px } '
+            + '.switch input { opacity: 0 ; width: 0 ; height: 0 } ' // hide checkbox
+            + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ; '
+                + 'background-color: #ccc ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px } '
+            + '.slider:before { position: absolute ; content: "" ; height: 14px ; width: 14px ; left: 3px ; bottom: 2px ; '
+                + 'background-color: white ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px } '
 
-        // Position/color ON-state
-        + 'input:checked { position: absolute ; right: 3px } '
-        + 'input:checked + .slider { background-color: #42B4BF } '
-        + 'input:checked + .slider:before { '
-            + '-webkit-transform: translateX(14px) translateY(1px) ; '
-            + '-ms-transform: translateX(14px) translateY(1px) ; '
-            + 'transform: translateX(14px) }'
+            // Position/color ON-state
+            + 'input:checked { position: absolute ; right: 3px } '
+            + 'input:checked + .slider { background-color: #42B4BF } '
+            + 'input:checked + .slider:before { '
+                + '-webkit-transform: translateX(14px) translateY(1px) ; '
+                + '-ms-transform: translateX(14px) translateY(1px) ; '
+                + 'transform: translateX(14px) }'
 
-    document.head.appendChild(switchStyle)
+        document.head.appendChild(switchStyle)
+    }
 
     // Create sidebar toggle, add styles/classes/listener/HTML
     const toggleLabel = document.createElement('div') // create label div
