@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.9
+// @version             2023.10.11
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -250,6 +250,7 @@
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-continue',
         greasyForkURL: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue' }
     config.updateURL = config.greasyForkURL + '/code/chatgpt-auto-continue.meta.js'
+    config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('notifHidden')
 
@@ -280,6 +281,19 @@
     let menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
                                 separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     registerMenu() // create browser toolbar menu
+
+    // Stylize alerts
+    if (!document.getElementById('chatgpt-alert-override-style')) {
+        const chatgptAlertStyle = document.createElement('style')
+        chatgptAlertStyle.id = 'chatgpt-alert-override-style'
+        chatgptAlertStyle.innerText = '.chatgpt-modal button {'
+                + 'font-size: 0.77rem ; text-transform: uppercase ;'
+                + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+            + '.chatgpt-modal button:hover { color: white !important ;'
+                + ( 'background-color: ' + ( chatgpt.isDarkMode() ? '#00cfff' : '#1e9ebb' ) + '!important }'
+            + '.modal-buttons { margin-left: -13px !important }')
+        document.head.appendChild(chatgptAlertStyle)
+    }
 
     // Observe DOM for need to continue generating response
     await chatgpt.isLoaded()
@@ -369,7 +383,7 @@
                   headingStyle = 'font-size: 1.15rem',
                   pStyle = 'position: relative ; left: 3px',
                   pBrStyle = 'position: relative ; left: 4px ',
-                  aStyle = 'color: #8325c4' // purple
+                  aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
             const aboutAlertID = alert(
                 messages.appName, // title
                 `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
@@ -382,14 +396,22 @@
                     + config.gitHubURL + '</a></span>',
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
-                    function leaveAReview() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') }
-                ]
+                    function getSupport() { safeWindowOpen(config.supportURL) },
+                    function leaveAReview() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
+                    function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                ], '', 485 // set width
             )
 
             // Re-format buttons to include emojis + re-case + hide Dismiss button
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-                if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-                else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+                if (/updates/i.test(button.textContent))
+                    button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+                else if (/support/i.test(button.textContent))
+                    button.textContent = '🧠 ' + messages.buttonLabel_getSupport
+                else if (/review/i.test(button.textContent))
+                    button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+                else if (/apps/i.test(button.textContent))
+                    button.textContent = '🤖 ' + messages.buttonLabel_moreApps
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
