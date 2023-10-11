@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.9
+// @version             2023.10.10
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -342,6 +342,7 @@
                             + config.gitHubURL + '</a>',
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
+                    function getSupport() { safeWindowOpen(config.supportURL) },
                     function leaveAReview() {
                         const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
                             [ function greasyFork() { safeWindowOpen(
@@ -355,17 +356,20 @@
                         const reviewButtons = document.getElementById(reviewAlertID).querySelectorAll('button')
                         reviewButtons[0].style.display = 'none' // hide Dismiss button
                         reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
-                            reviewButtons[1].textContent.replace(/\s/g, '')) }
-                ], '', 420) // About modal width
+                            reviewButtons[1].textContent.replace(/\s/g, '')) },
+                    function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                ], '', 527) // About modal width
 
             // Re-format buttons to include emojis + re-case + hide 'Dismiss'
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
                 if (/updates/i.test(button.textContent))
                     button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+                else if (/support/i.test(button.textContent))
+                    button.textContent = '🧠 ' + messages.buttonLabel_getSupport
                 else if (/review/i.test(button.textContent))
                     button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
-                else if (/github/i.test(button.textContent))
-                    button.textContent = '📜 ' + messages.buttonLabel_githubSrc
+                else if (/apps/i.test(button.textContent))
+                    button.textContent = '🤖 ' + messages.buttonLabel_moreApps
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
@@ -695,6 +699,7 @@
         gitHubURL: 'https://github.com/kudoai/duckduckgpt',
         greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt' }
     config.updateURL = config.greasyForkURL + '/code/duckduckgpt.meta.js'
+    config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'replyLanguage', 'fatterSidebar', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
@@ -793,8 +798,10 @@
         + '.chatgpt-modal h2 { margin: 0 ; padding: 0 } ' // shrink margin/padding around update alert title
         + '.chatgpt-modal p { margin: -8px 0 -9px 4px ; font-size: 1.55rem } ' // position/size update alert msg
         + '.chatgpt-modal button { ' // chatgpt.alert() buttons
-            + 'padding: 8px 15px !important ; cursor: pointer ; border-radius: 0 !important ; '
-            + 'text-transform: uppercase ; border: 2px solid black !important } '
+            + 'padding: 7px !important ; cursor: pointer ; border-radius: 0 !important ;'
+            + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ; margin: 0 0 10px 10px ;'
+            + 'border: 1px solid ' + ( isDarkMode() ? 'white' : 'black' ) + '!important ;'
+            + ( isDarkMode() ? 'background: none ; color: white' : '') + '}'
         + '.chatgpt-modal button:hover { color: white !important } ' // color text white on update alert button hovers
         + ( isDarkMode() ? '.chatgpt-modal button:hover { background-color: #00cfff !important }' : '' )
     )
