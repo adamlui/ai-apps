@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.9
+// @version             2023.10.11
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -240,6 +240,7 @@
         gitHubURL: 'https://github.com/adamlui/chatgpt-infinity',
         greasyForkURL: 'https://greasyfork.org/scripts/465051-chatgpt-infinity' }
     config.updateURL = config.greasyForkURL + '/code/chatgpt-infinity.meta.js'
+    config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('autoScrollDisabled', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
@@ -287,24 +288,39 @@
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     })}
 
+    // Stylize alerts
+    if (!document.getElementById('chatgpt-alert-override-style')) {
+        const chatgptAlertStyle = document.createElement('style')
+        chatgptAlertStyle.id = 'chatgpt-alert-override-style'
+        chatgptAlertStyle.innerText = '.chatgpt-modal button {'
+                + 'font-size: 0.77rem ; text-transform: uppercase ;'
+                + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+            + '.chatgpt-modal button:hover { color: white !important ;'
+                + ( 'background-color: ' + ( chatgpt.isDarkMode() ? '#00cfff' : '#1e9ebb' ) + '!important }'
+            + '.modal-buttons { margin-left: -13px !important }')
+        document.head.appendChild(chatgptAlertStyle)
+    }
+
     // Stylize toggle switch
-    const switchStyle = document.createElement('style')
-    switchStyle.innerText = '.switch { position: absolute ; left: 208px ; width: 34px ; height: 18px } '
-        + '.switch input { opacity: 0 ; width: 0 ; height: 0 } ' // hide checkbox
-        + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ; '
-            + 'background-color: #ccc ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px } '
-        + '.slider:before { position: absolute ; content: "" ; height: 14px ; width: 14px ; left: 3px ; bottom: 2px ; '
-            + 'background-color: white ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px } '
+    if (!document.getElementById('chatgpt-switch-style')) {
+        const switchStyle = document.createElement('style')
+        switchStyle.innerText = '.switch { position: absolute ; left: 208px ; width: 34px ; height: 18px } '
+            + '.switch input { opacity: 0 ; width: 0 ; height: 0 } ' // hide checkbox
+            + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ; '
+                + 'background-color: #ccc ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px } '
+            + '.slider:before { position: absolute ; content: "" ; height: 14px ; width: 14px ; left: 3px ; bottom: 2px ; '
+                + 'background-color: white ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px } '
 
-        // Position/color ON-state
-        + 'input:checked { position: absolute ; right: 3px } '
-        + 'input:checked + .slider { background-color: #42B4BF } '
-        + 'input:checked + .slider:before { '
-            + '-webkit-transform: translateX(14px) translateY(1px) ; '
-            + '-ms-transform: translateX(14px) translateY(1px) ; '
-            + 'transform: translateX(14px) }'
+            // Position/color ON-state
+            + 'input:checked { position: absolute ; right: 3px } '
+            + 'input:checked + .slider { background-color: #42B4BF } '
+            + 'input:checked + .slider:before { '
+                + '-webkit-transform: translateX(14px) translateY(1px) ; '
+                + '-ms-transform: translateX(14px) translateY(1px) ; '
+                + 'transform: translateX(14px) }'
 
-    document.head.appendChild(switchStyle)
+        document.head.appendChild(switchStyle)
+    }
 
     // Create toggle label, add styles//classes/listener/HTML
     const toggleLabel = document.createElement('div') // create label div
@@ -489,7 +505,7 @@
                   headingStyle = 'font-size: 1.15rem',
                   pStyle = 'position: relative ; left: 3px',
                   pBrStyle = 'position: relative ; left: 4px ',
-                  aStyle = 'color: #8325c4' // purple
+                  aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
             const aboutAlertID = alert(
                 messages.appName, // title
                 `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
@@ -502,6 +518,7 @@
                     + config.gitHubURL + '</a></span>',
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
+                    function getSupport() { safeWindowOpen(config.supportURL) },
                     function leaveAReview() { // show new modal
                         const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
                             [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
@@ -512,15 +529,21 @@
                         const reviewButtons = document.getElementById(reviewAlertID).querySelectorAll('button')
                         reviewButtons[0].style.display = 'none' // hide Dismiss button
                         reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
-                            reviewButtons[1].textContent.replace(/\s/g, '')) }
-                ]
+                            reviewButtons[1].textContent.replace(/\s/g, '')) },
+                    function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                ], '', 485 // set width
             )
 
             // Re-format buttons to include emojis + re-case + hide Dismiss button
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
                 if (/updates/i.test(button.textContent))
                     button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-                else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+                else if (/support/i.test(button.textContent))
+                    button.textContent = '🧠 ' + messages.buttonLabel_getSupport
+                else if (/review/i.test(button.textContent))
+                    button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+                else if (/apps/i.test(button.textContent))
+                    button.textContent = '🤖 ' + messages.buttonLabel_moreApps
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
