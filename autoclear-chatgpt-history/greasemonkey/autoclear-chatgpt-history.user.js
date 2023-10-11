@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.9
+// @version             2023.10.10
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -266,6 +266,7 @@
         gitHubURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
         greasyForkURL: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history' }
     config.updateURL = config.greasyForkURL + '/code/autoclear-chatgpt-history.meta.js'
+    config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('autoclear', 'buttonHidden', 'notifHidden', 'toggleHidden')
 
@@ -298,15 +299,17 @@
         separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     let menuIDs = [] ; registerMenu() // create browser toolbar menu
 
-    // Auto-clear chats if activated // 自动清除聊天是否激活
+
+    // Auto-clear chats if activated
     await chatgpt.isLoaded()
     setTimeout(() => { if (config.autoclear) chatgpt.clearChats() }, 250)
 
     // Notify of mode if enabled
     if (!config.notifHidden && config.autoclear) notify(messages.mode_autoClear + ': ON')
 
-    // Stylize/insert toggle switch
+    // Stylize toggle switch
     const switchStyle = document.createElement('style')
+    switchStyle.id = 'chatgpt-switch-style'
     switchStyle.innerText = '.switch { position:absolute ; left: 208px ; width: 34px ; height: 18px } '
         + '.switch input { opacity: 0 ; width: 0 ; height: 0 } ' // hide checkbox
         + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ; '
@@ -322,7 +325,17 @@
             + '-ms-transform: translateX(14px) translateY(1px) ; '
             + 'transform: translateX(14px) }'
 
-    document.head.appendChild(switchStyle)
+    if (!document.getElementById('chatgpt-switch-style')) document.head.appendChild(switchStyle)
+
+    // Stylize alerts    
+    const chatgptAlertStyle = document.createElement('style')
+    chatgptAlertStyle.id = 'chatgpt-alert-override-style'
+    chatgptAlertStyle.innerText = '.chatgpt-modal button {'
+            + 'font-size: 0.7rem ; text-transform: uppercase ;'
+            + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+        + '.chatgpt-modal button:hover { color: white !important ;'
+            + ( 'background-color: ' + ( chatgpt.isDarkMode() ? '#00cfff' : '#1e9ebb' ) + '!important }' )
+    if (!document.getElementById('chatgpt-alert-override-style')) document.head.appendChild(chatgptAlertStyle)
 
     // Create toggle label, add styles/classes/listener/HTML
     const toggleLabel = document.createElement('div') // create label div
@@ -451,7 +464,7 @@
                   headingStyle = 'font-size: 1.15rem',
                   pStyle = 'position: relative ; left: 3px',
                   pBrStyle = 'position: relative ; left: 4px ',
-                  aStyle = 'color: #8325c4' // purple
+                  aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
             const aboutAlertID = alert(
                 messages.appName, // title
                 `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
@@ -464,20 +477,24 @@
                     + config.gitHubURL + '</a></span>',
                 [ // buttons
                     function checkForUpdates() { updateCheck() },
+                    function getSupport() { safeWindowOpen(config.supportURL) },
                     function leaveAReview() { // show new modal
                         const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
                             [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                               function futurepedia() { safeWindowOpen(
                                   'https://www.futurepedia.io/tool/autoclear-chatgpt-history#autoclear-chatgpt-history-review') }])
                         document.getElementById(reviewAlertID).querySelector('button')
-                            .style.display = 'none' } // hide Dismiss button
-                ]
+                            .style.display = 'none' }, // hide Dismiss button
+                    function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                ], '', 485 // set width
             )
 
             // Re-format buttons to include emoji + localized label + hide Dismiss button
             for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
                 if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+                else if (/support/i.test(button.textContent)) button.textContent = '🧠 ' + messages.buttonLabel_getSupport
                 else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+                else if (/apps/i.test(button.textContent)) button.textContent = '🤖 ' + messages.buttonLabel_moreApps
                 else button.style.display = 'none' // hide Dismiss button
             }
         }))
