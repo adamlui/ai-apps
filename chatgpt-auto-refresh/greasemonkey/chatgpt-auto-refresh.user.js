@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.10.1
+// @version             2023.10.11
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -338,10 +338,11 @@
         const chatgptAlertStyle = document.createElement('style')
         chatgptAlertStyle.id = 'chatgpt-alert-override-style'
         chatgptAlertStyle.innerText = '.chatgpt-modal button {'
-                + 'font-size: 0.7rem ; text-transform: uppercase ;'
+                + 'font-size: 0.77rem ; text-transform: uppercase ;'
                 + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
             + '.chatgpt-modal button:hover { color: white !important ;'
-                + ( 'background-color: ' + ( chatgpt.isDarkMode() ? '#00cfff' : '#1e9ebb' ) + '!important }' )
+                + ( 'background-color: ' + ( chatgpt.isDarkMode() ? '#00cfff' : '#1e9ebb' ) + '!important }'
+            + '.modal-buttons { margin-left: -13px !important }')
         document.head.appendChild(chatgptAlertStyle)
     }
 
