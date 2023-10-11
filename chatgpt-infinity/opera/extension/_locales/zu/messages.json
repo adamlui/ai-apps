@@ -11,7 +11,7 @@
   "menuLabel_about": { "message": "Mayelana" },
   "menuLabel_disabled": { "message": "Khubaza (isandiso sifakiwe)" },
   "about_version": { "message": "Uhlelo" },
-  "about_poweredBy": { "message": "Ixhaswa yi-" },
+  "about_poweredBy": { "message": "Ixhaswa yi" },
   "about_sourceCode": { "message": "Ikhodi yomthombo" },
   "prompt_updateReplyLang": { "message": "Buyekeza ulimi lokuphendula" },
   "prompt_updateReplyTopic": { "message": "Buyekeza isihloko sokuphendula" },
