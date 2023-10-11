@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.10
+// @version             2023.10.11
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -674,6 +674,19 @@
     config.fullWindow = site == 'openai' ? chatgpt.sidebar.isOff() : config.fullWindow
     config.fullScreen = chatgpt.isFullScreen()
 
+    // Stylize alerts
+    if (!document.getElementById('chatgpt-alert-override-style')) {
+        const chatgptAlertStyle = document.createElement('style')
+        chatgptAlertStyle.id = 'chatgpt-alert-override-style'
+        chatgptAlertStyle.innerText = '.chatgpt-modal button {'
+                + 'font-size: 0.77rem ; text-transform: uppercase ;'
+                + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+            + '.chatgpt-modal button:hover { color: white !important ;'
+                + ( 'background-color: ' + ( chatgpt.isDarkMode() ? '#00cfff' : '#1e9ebb' ) + '!important }'
+            + '.modal-buttons { margin-left: -13px !important }')
+        document.head.appendChild(chatgptAlertStyle)
+    }
+
     // Collect button classes
     const sendButtonClasses = (document.querySelector('form button[class*="bottom"]' ) || {}).classList || [],
           sendImgClasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
@@ -720,18 +733,6 @@
     fullWindowStyle.innerText = (
           sidebarSelector + ' { display: none } ' // hide sidebar
         + sidepadSelector + ' { padding-left: 0px }' ) // remove side padding
-
-    // Stylize alerts
-    if (!document.getElementById('chatgpt-alert-override-style')) {
-        const chatgptAlertStyle = document.createElement('style')
-        chatgptAlertStyle.id = 'chatgpt-alert-override-style'
-        chatgptAlertStyle.innerText = '.chatgpt-modal button {'
-                + 'font-size: 0.7rem ; text-transform: uppercase ;'
-                + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-            + '.chatgpt-modal button:hover { color: white !important ;'
-                + ( 'background-color: ' + ( chatgpt.isDarkMode() ? '#00cfff' : '#1e9ebb' ) + '!important }' )
-         document.head.appendChild(chatgptAlertStyle)
-     }
 
     // Create/insert chatbar buttons
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
