@@ -19,7 +19,7 @@
   "tooltip_wideScreenOFF": { "message": "Phuma esikrinini esibanzi" },
   "tooltip_fullWindowON": { "message": "Imodi yewindi eligcwele" },
   "tooltip_fullWindowOFF": { "message": "Phuma efasiteleni eligcwele" },
-  "tooltip_fullScreenON": { "message": "_Isihenqo esigcwele" },
+  "tooltip_fullScreenON": { "message": "Isihenqo esigcwele" },
   "tooltip_fullScreenOFF": { "message": "Phuma esikrinini esigcwele" },
   "tooltip_newChat": { "message": "Ingxoxo entsha" },
   "alert_choosePlatform": { "message": "Khetha inkundla" },
