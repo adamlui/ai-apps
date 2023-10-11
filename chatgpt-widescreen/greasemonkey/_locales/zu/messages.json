@@ -10,7 +10,7 @@
   "menuLabel_about": { "message": "Mayelana" },
   "menuLabel_disabled": { "message": "Khubaza (isandiso sifakiwe)" },
   "about_version": { "message": "Uhlelo" },
-  "about_poweredBy": { "message": "Ixhaswa yi" },
+  "about_poweredBy": { "message": "Ixhaswa yi-" },
   "about_sourceCode": { "message": "Ikhodi yomthombo" },
   "mode_wideScreen": { "message": "Ubuso besiga-nyezi obubanzi" },
   "mode_fullWindow": { "message": "Iwindi eligcwele" },
