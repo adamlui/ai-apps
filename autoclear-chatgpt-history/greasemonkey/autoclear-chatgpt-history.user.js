@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.11
+// @version             2023.10.11.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -307,6 +307,19 @@
     // Notify of mode if enabled
     if (!config.notifHidden && config.autoclear) notify(messages.mode_autoClear + ': ON')
 
+    // Stylize alerts
+    if (!document.getElementById('chatgpt-alert-override-style')) {
+        const chatgptAlertStyle = document.createElement('style')
+        chatgptAlertStyle.id = 'chatgpt-alert-override-style'
+        chatgptAlertStyle.innerText = '.chatgpt-modal button {'
+                + 'font-size: 0.77rem ; text-transform: uppercase ;'
+                + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+            + '.chatgpt-modal button:hover { color: white !important ;'
+                + ( 'background-color: ' + ( chatgpt.isDarkMode() ? '#00cfff' : '#1e9ebb' ) + '!important }'
+            + '.modal-buttons { margin-left: -13px !important }')
+        document.head.appendChild(chatgptAlertStyle)
+    }
+
     // Stylize toggle switch
     if (!document.getElementById('chatgpt-switch-style')) {
         const switchStyle = document.createElement('style')
@@ -327,19 +340,6 @@
                 + 'transform: translateX(14px) }'
 
         document.head.appendChild(switchStyle)
-    }
-
-    // Stylize alerts
-    if (!document.getElementById('chatgpt-alert-override-style')) {
-        const chatgptAlertStyle = document.createElement('style')
-        chatgptAlertStyle.id = 'chatgpt-alert-override-style'
-        chatgptAlertStyle.innerText = '.chatgpt-modal button {'
-                + 'font-size: 0.77rem ; text-transform: uppercase ;'
-                + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-            + '.chatgpt-modal button:hover { color: white !important ;'
-                + ( 'background-color: ' + ( chatgpt.isDarkMode() ? '#00cfff' : '#1e9ebb' ) + '!important }'
-            + '.modal-buttons { margin-left: -13px !important }')
-        document.head.appendChild(chatgptAlertStyle)
     }
 
     // Create toggle label, add styles/classes/listener/HTML
