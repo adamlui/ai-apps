@@ -27,7 +27,7 @@
   "alert_replyIntUpdated": { "message": "Isikhala sibuyekeziwe" },
   "alert_willReplyEvery": { "message": "izophendula njalo" },
   "alert_choosePlatform": { "message": "Khetha inkundla" },
-  "alert_updateAvail": { "message": "Okwakamuva Kuyatholakala!" },
+  "alert_updateAvail": { "message": "Okwakamuva Kuyatholakala" },
   "alert_newerVer": { "message": "Okwakamuva kokuthi" },
   "alert_isAvail": { "message": "iyatholakala" },
   "alert_upToDate": { "message": "Okwakamuva" },
