@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.12
+// @version             2023.10.13
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -399,7 +399,7 @@
                     function getSupport() { safeWindowOpen(config.supportURL) },
                     function leaveAReview() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                     function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                ], '', 485 // set width
+                ], '', 478 // set width
             )
 
             // Re-format buttons to include emojis + re-case + hide Dismiss button
