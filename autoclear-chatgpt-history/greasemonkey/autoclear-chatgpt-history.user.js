@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.12
+// @version             2023.10.13
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -491,7 +491,7 @@
                         document.getElementById(reviewAlertID).querySelector('button')
                             .style.display = 'none' }, // hide Dismiss button
                     function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                ], '', 485 // set width
+                ], '', 478 // set width
             )
 
             // Re-format buttons to include emoji + localized label + hide Dismiss button
