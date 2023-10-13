@@ -1,12 +1,12 @@
-// This library is a condensed version of chatgpt.js v2.3.6
+// This library is a condensed version of chatgpt.js v2.3.8
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
 
-// Init queues for feedback methods
-var alertQueue = []; localStorage.alertQueue = JSON.stringify(alertQueue);
-var notifyQueue = { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }};
-localStorage.notifyQueue = JSON.stringify(notifyQueue);
+// Init feedback queues
+localStorage.alertQueue = JSON.stringify([]);
+localStorage.notifyQueue = JSON.stringify(
+    { quadrants: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
 
 const chatgpt = {
 
@@ -22,7 +22,7 @@ const chatgpt = {
               modalTitle = document.createElement('h2'),
               modalMessage = document.createElement('p');
 
-        // Select or crate/append style
+        // Select or create/append style
         let modalStyle;
         if (!document.querySelector('#chatgpt-alert-style')) {
             modalStyle = document.createElement('style');
@@ -46,7 +46,8 @@ const chatgpt = {
                 + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
                 + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
                 + ( width ? `width: ${ width }px` : 'max-width: 458px ') + ' ;'
-                + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) }'
+                + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) ;'
+                + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }' // disable selection
             + '.chatgpt-modal h2 { margin-bottom: 9px }'
             + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
             + '.chatgpt-modal.animated > div { opacity: 1 ; transform: translateX(0) translateY(0) }'
@@ -61,6 +62,7 @@ const chatgpt = {
                 + `background: ${ scheme == 'dark' ? 'white' : 'black' } ;`
                 + `color: ${ scheme == 'dark' ? 'black' : 'white' }}`
             + '.chatgpt-modal button:hover { background-color: #42B4BF ; border-color: #42B4BF ; color: black }'
+            + '.modal-close-btn { cursor: pointer ; float: right ; position: relative ; right: -2px }'
 
             /* Checkbox styles */
             + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
@@ -90,7 +92,7 @@ const chatgpt = {
                     .replace(/[_-]\w/g, match => match.slice(1).toUpperCase()) // convert snake/kebab to camel case
                     .replace(/([A-Z])/g, ' $1') // insert spaces
                     .replace(/^\w/, firstChar => firstChar.toUpperCase()); // capitalize first letter
-                button.addEventListener('click', () => { destroyAlert(); buttonFn(); });
+                button.addEventListener('click', () => { dismissAlert(); buttonFn(); });
                 modalButtons.insertBefore(button, modalButtons.firstChild); // insert button to left
             });
         }
@@ -98,7 +100,6 @@ const chatgpt = {
         // Create/append OK/dismiss button to buttons div
         const dismissBtn = document.createElement('button');
         dismissBtn.textContent = btns ? 'Dismiss' : 'OK';
-        dismissBtn.addEventListener('click', destroyAlert);
         modalButtons.insertBefore(dismissBtn, modalButtons.firstChild);
 
         // Highlight primary button
@@ -115,7 +116,7 @@ const chatgpt = {
 
             // Create/show label
             const checkboxLabel = document.createElement('label');
-            checkboxLabel.addEventListener('click', function() {
+            checkboxLabel.addEventListener('click', () => {
                 checkboxInput.checked = !checkboxInput.checked; checkboxFn(); });
             checkboxLabel.textContent = checkboxFn.name.charAt(0).toUpperCase() // capitalize first char
                 + checkboxFn.name.slice(1) // format remaining chars
@@ -126,38 +127,57 @@ const chatgpt = {
             checkboxDiv.appendChild(checkboxInput); checkboxDiv.appendChild(checkboxLabel);
         }
 
+        // Create close button
+        const closeBtn = document.createElement('div');
+        closeBtn.classList.add('modal-close-btn');
+        const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        closeSVG.setAttribute('height', '10px');
+        closeSVG.setAttribute('viewBox', '0 0 14 14');
+        closeSVG.setAttribute('fill', 'none');
+        const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        closeSVGpath.setAttribute('fill-rule', 'evenodd');
+        closeSVGpath.setAttribute('clip-rule', 'evenodd');
+        closeSVGpath.setAttribute('fill', 'black');
+        closeSVGpath.setAttribute('d', 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z');
+        closeSVG.appendChild(closeSVGpath); closeBtn.appendChild(closeSVG);
+
         // Assemble/append div
-        const elements = [modalTitle, modalMessage, modalButtons, checkboxDiv];
-        elements.forEach((element) => { modal.appendChild(element); });
+        const modalElems = [closeBtn, modalTitle, modalMessage, modalButtons, checkboxDiv];
+        modalElems.forEach((elem) => { modal.appendChild(elem); });
         modalContainer.appendChild(modal); document.body.appendChild(modalContainer); 
 
         // Enqueue alert
-        alertQueue = JSON.parse(localStorage.alertQueue);
+        let alertQueue = JSON.parse(localStorage.alertQueue);
         alertQueue.push(modalContainer.id);
         localStorage.alertQueue = JSON.stringify(alertQueue);
 
-        // Add listeners
-        document.addEventListener('keydown', keyHandler);
-        modalContainer.addEventListener('click', (event) => {
-            if (event.target === modalContainer) destroyAlert(); });
+        // Define handlers
+        const clickHandler = event => { // explicitly defined to support removal post-dismissal
+            if (event.target === event.currentTarget || event.target instanceof SVGPathElement) dismissAlert(); };
+        const keyHandler = event => { // to dismiss active alert
+            const dismissKeys = [13, 27]; // enter/esc
+            if (dismissKeys.includes(event.keyCode)) {
+                for (const alertId of alertQueue) { // look to handle only if triggering alert is active
+                    const alert = document.getElementById(alertId);
+                    if (alert && alert.style.display !== 'none') { // active alert found
+                        if (event.keyCode === 27) dismissAlert(); // if esc pressed, dismiss alert & do nothing
+                        else if (event.keyCode === 13) { // else if enter pressed
+                            const mainButton = alert.querySelector('.modal-buttons').lastChild; // look for main button
+                            if (mainButton) { mainButton.click(); event.preventDefault(); } // click if found
+                        } return;
+        }}}};
 
-        // Show alert if none active
-        modalContainer.style.display = 'none';
-        if (alertQueue.length === 1) {
-            modalContainer.style.display = '';
-            setTimeout(() => { modalContainer.classList.add('animated'); }, 100);
-        }
-
-        function destroyAlert() {
+        // Define alert dismisser
+        const dismissAlert = () => {
             modalContainer.remove(); // remove from DOM
             alertQueue = JSON.parse(localStorage.alertQueue);
             alertQueue.shift(); // + memory
             localStorage.alertQueue = JSON.stringify(alertQueue); // + storage
 
-            // Prevent memory leaks
-            modalContainer.removeEventListener('click', destroyAlert);
+            // Remove all listeners to prevent memory leaks
+            dismissElems.forEach(elem => {
+                elem.removeEventListener('click', clickHandler); });
             document.removeEventListener('keydown', keyHandler);
-            dismissBtn.removeEventListener('click', destroyAlert);
 
             // Check for pending alerts in queue
             if (alertQueue.length > 0) {
@@ -167,22 +187,22 @@ const chatgpt = {
                     setTimeout(() => { nextAlert.classList.add('animated'); }, 100);
                 }, 500 );
             }
+        };
+
+        // Add listeners to dismiss alert
+        const dismissElems = [modalContainer, closeSVG, dismissBtn];
+        dismissElems.forEach(elem => {
+            elem.addEventListener('click', clickHandler); });
+        document.addEventListener('keydown', keyHandler);
+
+        // Show alert if none active
+        modalContainer.style.display = 'none';
+        if (alertQueue.length === 1) {
+            modalContainer.style.display = '';
+            setTimeout(() => { modalContainer.classList.add('animated'); }, 100);
         }
 
-        function keyHandler(event) {
-            const dismissKeys = [13, 27]; // enter/esc
-            if (dismissKeys.includes(event.keyCode)) {
-                for (const alertId of alertQueue) { // look to handle only if triggering alert is active
-                    const alert = document.getElementById(alertId);
-                    if (alert && alert.style.display !== 'none') { // active alert found
-                        if (event.keyCode === 27) destroyAlert(); // if esc pressed, dismiss alert & do nothing
-                        else if (event.keyCode === 13) { // else if enter pressed
-                            const mainButton = alert.querySelector('.modal-buttons').lastChild; // look for main button
-                            if (mainButton) { mainButton.click(); event.preventDefault(); } // click if found
-                        } return;
-        }}}}
-
-        return modalContainer.id;
+        return modalContainer.id; // if assignment used
     },
 
     history: {
@@ -219,7 +239,7 @@ const chatgpt = {
         const notificationDiv = document.createElement('div'); // make div
         notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         notificationDiv.style.cssText = ( // stylize it
-              ' background-color: black ; padding: 10px ; border-radius: 8px ; ' // box style
+              ' background-color: black ; padding: 10px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
             + ' opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ; ' // visibility
             + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; ' // disable selection
             + ' transform: translateX(35px) ; ' // init off-screen for transition fx
@@ -233,7 +253,7 @@ const chatgpt = {
             + (notificationDiv.isRight ? 'Right' : 'Left');
 
         // Store div
-        notifyQueue = JSON.parse(localStorage.notifyQueue);
+        let notifyQueue = JSON.parse(localStorage.notifyQueue);
         notifyQueue.quadrants[notificationDiv.quadrant].push(notificationDiv.id);
         localStorage.notifyQueue = JSON.stringify(notifyQueue);
 
