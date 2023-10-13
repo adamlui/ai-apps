@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.12
+// @version             2023.10.13
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -446,7 +446,7 @@
                         document.getElementById(reviewAlertID).querySelector('button')
                             .style.display = 'none' }, // hide Dismiss button
                     function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                ], '', 485 // set width
+                ], '', 478 // set width
             )
 
             // Re-format buttons to include emojis + re-case + hide Dismiss button
