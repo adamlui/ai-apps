@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.12
+// @version             2023.10.13
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -531,7 +531,7 @@
                         reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
                             reviewButtons[1].textContent.replace(/\s/g, '')) },
                     function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                ], '', 485 // set width
+                ], '', 478 // set width
             )
 
             // Re-format buttons to include emojis + re-case + hide Dismiss button
