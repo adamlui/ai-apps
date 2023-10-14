@@ -107,18 +107,21 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 ## 📜 Related scripts
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://chatgptautorefresh.com/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+
 > Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.
 <br>[Install](https://github.com/adamlui/chatgpt-auto-refresh#-installation) / 
 [Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) / 
 [Discuss](https://chatgptautorefresh.com/discuss)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com/github) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+
 > Display ChatGPT answers in Brave Search sidebar (powered by GPT-4!)
 <br>[Install](https://github.bravegpt.com/#-installation) / 
 [Readme](https://github.bravegpt.com/#readme) / 
 [Discuss](https://github.bravegpt.com/discussions)
 
 ### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptwidescreen.com/github) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
+
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing & reduced scrolling.
 <br>[Install](https://github.com/adamlui/chatgpt-widescreen#-installation) / 
 [Readme](https://github.com/adamlui/chatgpt-widescreen#readme) / 
