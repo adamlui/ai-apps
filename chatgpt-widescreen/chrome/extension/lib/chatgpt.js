@@ -3,6 +3,9 @@
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
 
+// Init data endpoints
+const endpoints = { assets: 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main' }
+
 // Init feedback queues
 localStorage.alertQueue = JSON.stringify([]);
 localStorage.notifyQueue = JSON.stringify(
