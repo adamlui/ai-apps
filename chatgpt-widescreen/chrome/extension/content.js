@@ -204,7 +204,7 @@
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
         const leftMostBtn = chatbar.querySelector('button')
         chatbar.insertBefore(leftMostBtn, chatbar.lastChild); // elevate to chatbar if nested
-        if (site == 'openai') chatbar.insertBefore(newChatButton, leftMostBtn)
+        chatbar.insertBefore(newChatButton, leftMostBtn)
         chatbar.insertBefore(wideScreenButton, leftMostBtn)
         chatbar.insertBefore(fullWindowButton, leftMostBtn)
         chatbar.insertBefore(fullScreenButton, leftMostBtn)
