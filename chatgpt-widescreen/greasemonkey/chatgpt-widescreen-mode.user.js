@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.16.1
+// @version             2023.10.16.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -480,7 +480,7 @@
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
         const leftMostBtn = chatbar.querySelector('button')
         chatbar.insertBefore(leftMostBtn, chatbar.lastChild); // elevate to chatbar if nested
-        if (site == 'openai') chatbar.insertBefore(newChatButton, leftMostBtn)
+        chatbar.insertBefore(newChatButton, leftMostBtn)
         chatbar.insertBefore(wideScreenButton, leftMostBtn)
         chatbar.insertBefore(fullWindowButton, leftMostBtn)
         chatbar.insertBefore(fullScreenButton, leftMostBtn)
