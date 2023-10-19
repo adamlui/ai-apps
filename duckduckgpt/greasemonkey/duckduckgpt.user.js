@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.16
+// @version             2023.10.19
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -630,11 +630,13 @@
         let prevLength = replyBox.value.length
 
         // Add listeners
-        form.addEventListener('keydown', enterToSubmit)
+        form.addEventListener('keydown', handleEnter)
         replyBox.addEventListener('input', autosizeBox)
 
-        function enterToSubmit(event) {
-            if (event.key === 'Enter' && event.target.nodeName === 'TEXTAREA') handleSubmit(event) }
+        function handleEnter(event) {
+            if (event.key === 'Enter' && !event.shiftKey && event.target.nodeName === 'TEXTAREA')
+                handleSubmit(event)
+        }
 
         function handleSubmit(event) {
             event.preventDefault()
@@ -651,7 +653,7 @@
 
             // Remove listeners since they're re-added
             replyBox.removeEventListener('input', autosizeBox)
-            replyBox.removeEventListener('keydown', enterToSubmit)
+            replyBox.removeEventListener('keydown', handleEnter)
 
             // Show loading status
             const replySection = ddgptDiv.querySelector('section')
