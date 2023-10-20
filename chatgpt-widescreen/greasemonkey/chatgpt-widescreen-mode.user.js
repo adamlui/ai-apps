@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.16.2
+// @version             2023.10.20
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -418,7 +418,7 @@
         menuIDs.push(GM_registerMenuCommand(`💡 ${ messages.menuLabel_about } ${ messages.appName }`, async () => {
 
             // Show alert
-            const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(GM_info.script.header)[1] || '',
+            const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1],
                   headingStyle = 'font-size: 1.15rem',
                   pStyle = 'position: relative ; left: 3px',
                   pBrStyle = 'position: relative ; left: 4px ',
