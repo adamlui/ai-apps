@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.20.1
+// @version             2023.10.20.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -133,7 +133,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@8e2cdd86eb71f3b19b55928c01b33ec235d26809/dist/chatgpt-2.3.10.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@5d59b49dfec37e7f9c49e52441d125402a5ca10c/dist/chatgpt-2.3.11.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -277,7 +277,7 @@
         menuIDs.push(GM_registerMenuCommand(aboutLabel, async () => {
 
             // Show alert
-            const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1];
+            const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
             const aboutAlertID = alert(
                 'BraveGPT', // title
                 '🏷️ ' + messages.about_version + ': ' + GM_info.script.version + '\n'
@@ -773,10 +773,8 @@
         + '.chatgpt-modal button { ' // chatgpt.alert() buttons
             + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ; padding: 5px !important ;'
             + 'border-radius: 0 !important ; border: 1px solid ' + ( isDarkMode() ? 'white' : 'black' ) + ' !important } '
-        + '.chatgpt-modal button:hover { color: white !important } ' // color text white on alert button hovers
         + '.modal-buttons { margin: 20px -5px -3px -10px !important }'
-        + '.modal-close-btn { top: -7px } ' // raise alert close button
-        + ( isDarkMode() ? '.chatgpt-modal button:hover { background-color: #00cfff !important }' : '' ))
+        + '.modal-close-btn { top: -7px } ') // raise alert close button
     document.head.appendChild(braveGPTstyle) // append style to <head>
 
     // Create BraveGPT container & add id/classes
