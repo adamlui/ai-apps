@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.20
+// @version             2023.10.20.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -237,7 +237,7 @@
 // @match               *://poe.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon64.png
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@8e2cdd86eb71f3b19b55928c01b33ec235d26809/dist/chatgpt-2.3.10.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@5d59b49dfec37e7f9c49e52441d125402a5ca10c/dist/chatgpt-2.3.11.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -681,9 +681,7 @@
         chatgptAlertStyle.innerText = '.chatgpt-modal button {'
                 + 'font-size: 0.77rem ; text-transform: uppercase ;'
                 + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-            + '.chatgpt-modal button:hover { color: white !important ;'
-                + ( 'background-color: ' + ( chatgpt.isDarkMode() ? '#00cfff' : '#1e9ebb' ) + '!important }'
-            + '.modal-buttons { margin-left: -13px !important }')
+            + '.modal-buttons { margin-left: -13px !important }'
         document.head.appendChild(chatgptAlertStyle)
     }
 
