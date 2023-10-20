@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.19
+// @version             2023.10.20
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -330,7 +330,7 @@
         menuIDs.push(GM_registerMenuCommand(aboutLabel, async () => {
 
             // Show alert
-            const chatgptJSver = /chatgpt-([\d.]+)\.min/.exec(GM_info.script.header)[1] || ''
+            const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
             const aboutAlertID = alert(
                 'DuckDuckGPT', // title
                 '🏷️ ' + messages.about_version + ': ' + GM_info.script.version + '\n'
