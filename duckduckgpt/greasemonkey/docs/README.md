@@ -16,7 +16,7 @@
 
 <h3><b>DuckDuckGPT</b> brings the magic of ChatGPT to search results (powered by GPT-4!)</h3>
 
-<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#-installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.duckduckgpt.com/discussions) /
 [Review](https://duckduckgpt.com/userscript/review) /
@@ -96,7 +96,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <br>
 
-<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#-installation"><img title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.duckduckgpt.com/discussions) /
 [Leave a review](https://duckduckgpt.com/userscript/review) /
@@ -142,19 +142,19 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](https://chatgptinfinity.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 4px"></a>
 > Generate endless answers from all-knowing ChatGPT (in any language!)
-<br>[Install](https://github.com/adamlui/chatgpt-infinity#installation) / 
+<br>[Install](https://github.com/adamlui/chatgpt-infinity#-installation) / 
 [Readme](https://github.com/adamlui/chatgpt-infinity#readme) / 
 [Discuss](https://chatgptinfinity.com/discuss)
 
 ### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 > Display ChatGPT answers in Brave Search sidebar.
-<br>[Install](https://github.bravegpt.com/#installation) /
+<br>[Install](https://github.bravegpt.com/#-installation) /
 [Readme](https://github.bravegpt.com/#readme) /
 [Discuss](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> [ChatGPT Widescreen Mode 🖥️](https://chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 3px;" width="auto" height="24" />
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing.
-<br>[Install](https://github.com/adamlui/chatgpt-widescreen#installation) /
+<br>[Install](https://github.com/adamlui/chatgpt-widescreen#-installation) /
 [Readme](https://github.com/adamlui/chatgpt-widescreen#readme) /
 [Discuss](https://chatgptwidescreen.com/discuss)
 
