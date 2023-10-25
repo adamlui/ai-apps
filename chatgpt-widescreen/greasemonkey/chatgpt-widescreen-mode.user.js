@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.25.1
+// @version             2023.10.25.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -547,8 +547,8 @@
             buttonSVG.setAttribute('stroke', buttonColor)
             buttonSVG.setAttribute('fill', 'none')
             buttonSVG.setAttribute('stroke-width', '2')
-            buttonSVG.setAttribute('height', site == 'poe' ? '2em' : 18 )
-            buttonSVG.setAttribute('width', site == 'poe' ? '2em' : 18 )
+            buttonSVG.setAttribute('height', site == 'poe' ? '2em' : 18)
+            buttonSVG.setAttribute('width', site == 'poe' ? '2em' : 18)
         }
         buttonSVG.setAttribute('class', sendImgClasses) // assign borrowed classes
         buttonSVG.setAttribute( // center oerlay + prevent triggering tooltips twice
@@ -718,7 +718,7 @@
                           : /* poe */ 'menu[class*="sidebar"], aside[class*="sidebar"]',
           sidepadSelector = '#__next > div > div',
           headerSelector = site === 'openai' ? 'header'
-                          : site === 'aivvm' ? 'div[class*="top"][class*="sticky"]' : '',
+                         : site === 'aivvm' ? 'div[class*="top"][class*="sticky"]' : '',
           footerSelector = site === 'openai' ? 'div[class*="bottom"] > div'
                          : site === 'aivvm' ? 'div[class*="bottom"] > div:nth-of-type(2)' : ''
 
