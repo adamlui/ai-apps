@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.25
+// @version             2023.10.25.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -599,7 +599,7 @@
         else if (mode == 'fullWindow') {
             if (site === 'openai') chatgpt.sidebar.hide()
             else if (site === 'aivvm') {
-                for (side of ['left', 'right']) {
+                for (const side of ['left', 'right']) {
                     const attrSelector = `[class*="fixed"][class*="top"][class*="${ side }"]`
                     if (document.querySelector('div' + attrSelector)) // if ${side}bar is open
                         document.querySelector('button' + attrSelector).click() // close it
@@ -616,7 +616,7 @@
             try { document.head.removeChild(fullWindowStyle) } catch (err) {}
             if (site === 'openai') chatgpt.sidebar.show()
             else if (site === 'aivvm') {
-                for (side of ['left', 'right']) {
+                for (const side of ['left', 'right']) {
                     const attrSelector = `[class*="fixed"][class*="top"][class*="${ side }"]`
                     if (!document.querySelector('div' + attrSelector)) // if ${side}bar is closed
                         document.querySelector('button' + attrSelector).click() // open it
