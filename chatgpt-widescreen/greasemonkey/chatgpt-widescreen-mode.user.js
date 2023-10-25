@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.20.2
+// @version             2023.10.25
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -235,6 +235,7 @@
 // @compatible          qq
 // @match               *://chat.openai.com/*
 // @match               *://poe.com/*
+// @match               *://chat.aivvm.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon64.png
 // @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@5d59b49dfec37e7f9c49e52441d125402a5ca10c/dist/chatgpt-2.3.11.min.js
@@ -267,7 +268,7 @@
     config.updateURL = config.greasyForkURL + '/code/chatgpt-widescreen-mode.meta.js'
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'widerChatbox', 'hiddenHeader', 'hiddenFooter', 'wideScreen')
+    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'wcbDisabled', 'hiddenHeader', 'hiddenFooter', 'wideScreen')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -294,8 +295,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
-    function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(`${ config.prefix }_${ site }_${ key }`, false) })}
+    function saveSetting(key, value) { GM_setValue(`${ config.prefix }_${ site }_${ key }`, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
 
     function updateCheck() {
@@ -305,7 +306,7 @@
         GM.xmlHttpRequest({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
+            onload: response => {
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
@@ -374,36 +375,40 @@
 
         // Add command to toggle wider chatbox with widescreen mode
         const wcbLabel = '↔️ ' + messages.menuLabel_widerChatbox
-                       + state.separator + state.word[+!config.widerChatbox]
+                       + state.separator + state.word[+config.wcbDisabled]
         menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
-            saveSetting('widerChatbox', !config.widerChatbox)
+            saveSetting('wcbDisabled', !config.wcbDisabled)
             updateWidescreenStyle()
             if (!config.notifHidden)
-                notify(`${ messages.menuLabel_widerChatbox }: ${ state.word[+!config.widerChatbox] }`)
+                notify(`${ messages.menuLabel_widerChatbox }: ${ state.word[+config.wcbDisabled] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
-        // Add command to toggle hidden OpenAI header
-        const hhLabel = state.symbol[+!config.hiddenHeader] + ' ' + messages.menuLabel_hiddenHeader
-                      + state.separator + state.word[+!config.hiddenHeader]
-        menuIDs.push(GM_registerMenuCommand(hhLabel, () => {
-            saveSetting('hiddenHeader', !config.hiddenHeader)
-            updateTweaksStyle()
-            if (!config.notifHidden)
-                notify(`${ messages.menuLabel_hiddenHeader }: ${ state.word[+!config.hiddenHeader] }`)
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
+        
+        if (['openai', 'aivvm'].includes(site)) {
 
-        // Add command to toggle hidden OpenAI footer
-        const hfLabel = state.symbol[+!config.hiddenFooter] + ' ' + messages.menuLabel_hiddenFooter
-                      + state.separator + state.word[+!config.hiddenFooter]
-        menuIDs.push(GM_registerMenuCommand(hfLabel, () => {
-            saveSetting('hiddenFooter', !config.hiddenFooter)
-            updateTweaksStyle()
-            if (!config.notifHidden)
-                notify(`${ messages.menuLabel_hiddenFooter }: ${ state.word[+!config.hiddenFooter] }`)
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
+            // Add command to toggle hidden header
+            const hhLabel = state.symbol[+!config.hiddenHeader] + ' ' + messages.menuLabel_hiddenHeader
+                          + state.separator + state.word[+!config.hiddenHeader]
+            menuIDs.push(GM_registerMenuCommand(hhLabel, () => {
+                saveSetting('hiddenHeader', !config.hiddenHeader)
+                updateTweaksStyle()
+                if (!config.notifHidden)
+                    notify(`${ messages.menuLabel_hiddenHeader }: ${ state.word[+!config.hiddenHeader] }`)
+                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            }))
+
+            // Add command to toggle hidden footer
+            const hfLabel = state.symbol[+!config.hiddenFooter] + ' ' + messages.menuLabel_hiddenFooter
+                          + state.separator + state.word[+!config.hiddenFooter]
+            menuIDs.push(GM_registerMenuCommand(hfLabel, () => {
+                saveSetting('hiddenFooter', !config.hiddenFooter)
+                updateTweaksStyle()
+                if (!config.notifHidden)
+                    notify(`${ messages.menuLabel_hiddenFooter }: ${ state.word[+!config.hiddenFooter] }`)
+                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            }))
+        }
 
         // Add command to show notifications when switching modes
         const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
@@ -422,7 +427,7 @@
                   headingStyle = 'font-size: 1.15rem',
                   pStyle = 'position: relative ; left: 3px',
                   pBrStyle = 'position: relative ; left: 4px ',
-                  aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
+                  aStyle = 'color: ' + ( isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
             const aboutAlertID = alert(
                 messages.appName, // title
                 `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
@@ -460,11 +465,18 @@
         }))
     }
 
+    // Define SCHEME function
+
+    function isDarkMode() { return (
+        site === ['openai', 'poe'].includes(site) ? document.documentElement.classList.contains('dark')
+      : site === 'aivvm' ? !!document.querySelector('main[class*="dark"]') : false )
+    }
+
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
-            shadow || chatgpt.isDarkMode() ? '' : 'shadow')
+            shadow || isDarkMode() ? '' : 'shadow')
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
@@ -472,13 +484,15 @@
 
     // Define BUTTON functions
 
-    function setBtnColor() { return chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' }
+    function setBtnColor() { return (
+        site === 'openai' ? ( chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' ) : 'currentColor' )}
 
     function insertBtns() {
-        const chatbar = site == 'poe' ? document.querySelector('div[class*="ChatMessageInputContainer"]')
-                                      : document.querySelector('form button[class*="bottom"]').parentNode;
+        const chatbar = ( site === 'poe' ? document.querySelector('div[class*="ChatMessageInputContainer"]')
+                        : site === 'aivvm' ? document.querySelector('svg[class*="send"]').parentNode.parentNode
+                        : document.querySelector('form button[class*="bottom"]').parentNode )
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
-        const leftMostBtn = chatbar.querySelector('button')
+        const leftMostBtn = chatbar.querySelector('button' + ( site === 'aivvm' ? '[class*="right"]' : ''))
         chatbar.insertBefore(leftMostBtn, chatbar.lastChild); // elevate to chatbar if nested
         chatbar.insertBefore(newChatButton, leftMostBtn)
         chatbar.insertBefore(wideScreenButton, leftMostBtn)
@@ -528,12 +542,13 @@
 
         // Set SVG attributes
         const buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        buttonSVG.setAttribute('height', 18)
         if (mode == 'fullWindow') { // stylize full-window button
             buttonSVG.setAttribute('stroke', buttonColor)
             buttonSVG.setAttribute('fill', 'none')
             buttonSVG.setAttribute('stroke-width', '2')
-            buttonSVG.setAttribute('height', site == 'poe' ? '2em' : '1em')
-            buttonSVG.setAttribute('width', site == 'poe' ? '2em' : '1em')
+            buttonSVG.setAttribute('height', site == 'poe' ? '2em' : 18 )
+            buttonSVG.setAttribute('width', site == 'poe' ? '2em' : 18 )
         }
         buttonSVG.setAttribute('class', sendImgClasses) // assign borrowed classes
         buttonSVG.setAttribute( // center oerlay + prevent triggering tooltips twice
@@ -582,8 +597,15 @@
     function activateMode(mode) {
         if (mode == 'wideScreen') { document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
         else if (mode == 'fullWindow') {
+            if (site === 'openai') chatgpt.sidebar.hide()
+            else if (site === 'aivvm') {
+                for (side of ['left', 'right']) {
+                    const attrSelector = `[class*="fixed"][class*="top"][class*="${ side }"]`
+                    if (document.querySelector('div' + attrSelector)) // if ${side}bar is open
+                        document.querySelector('button' + attrSelector).click() // close it
+                }
+            } else /* poe */ syncMode('fullWindow') // since not sidebarObserve()'d
             document.head.appendChild(fullWindowStyle)
-            if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.hide()
         } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
     }
 
@@ -592,7 +614,14 @@
             try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (err) {}
         else if (mode == 'fullWindow') {
             try { document.head.removeChild(fullWindowStyle) } catch (err) {}
-            if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.show()
+            if (site === 'openai') chatgpt.sidebar.show()
+            else if (site === 'aivvm') {
+                for (side of ['left', 'right']) {
+                    const attrSelector = `[class*="fixed"][class*="top"][class*="${ side }"]`
+                    if (!document.querySelector('div' + attrSelector)) // if ${side}bar is closed
+                        document.querySelector('button' + attrSelector).click() // open it
+                }                
+            } else /* poe */ syncMode('fullWindow') // since not sidebarObserve()'d
         } else if (mode == 'fullScreen') {
             if (config.f11)
                 alert(messages.alert_pressF11, messages.alert_f11reason + '.')
@@ -611,10 +640,15 @@
 
     // Define SYNC functions
 
+    function isFullWindow() {
+        return ( site === 'openai' ? chatgpt.sidebar.isOff()
+               : site === 'aivvm' ? document.querySelectorAll(sidebarSelector).length === 0
+               : /* poe */ !!document.querySelector('#fullWindow-mode') )
+    }
+
     function syncMode(mode) { // setting + icon + tooltip
         const state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
-                      : mode === 'fullWindow' ? ( site == 'poe' ? !!document.querySelector('#fullWindow-mode')
-                                                                : chatgpt.sidebar.isOff() )
+                      : mode === 'fullWindow' ? isFullWindow()
                                               : chatgpt.isFullScreen() )
         saveSetting(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
         if (mode === 'fullWindow') syncFullerWindows(state)
@@ -635,7 +669,7 @@
 
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
-              site === 'openai' ? (
+              ['openai', 'aivvm'].includes(site) ? (
                   inputSelector + ' { padding-right: 148px } '  // narrow input to accomdate buttons
                 + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
                     + 'position: relative ; left: 66px ; top: 7px } ' // ...below avatar to avoid cropping
@@ -655,8 +689,13 @@
                 + '[class*="ChatPageMain_container"] { max-width: 97% !important }' // widen inner container
                 + '[class^="Message"] { max-width: 100% !important }' // widen speech bubbles
                 + '[class^="ChatMessageInputFooter"] { max-width: 618px ; margin: auto }' ) // preserve chatbar width
-            : '' )
-        if (config.widerChatbox) wideScreenStyle.innerText += wcbStyle        
+            : site === 'aivvm' ? (
+                  'div[class*="group"], div[class*="group"] > div { max-width: 98% !important }' // widen outer containers
+                + 'div[class*="group"] > div > div:nth-of-type(2),' // widen inner containers
+                        + 'div[class*="group"] > div > div:nth-of-type(2) > div > div:nth-of-type(1)'
+                    + '{ max-width: 100% !important }' )
+            : '')
+        if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle
     }
 
     // Run MAIN routine
@@ -664,14 +703,27 @@
     // Create browser toolbar menu or disable script if extension installed
     const state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
                     separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
-    if (site == 'openai') await chatgpt.isLoaded()
+    if (site === 'openai') await chatgpt.isLoaded()
     if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
         GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return }) // disable menu
         return // exit script
     } else registerMenu() // create functional menu
 
+    // Define UI element selectors
+    const inputSelector = site === 'openai' ? 'form textarea[id*="prompt"]'
+                        : site === 'aivvm' ? 'textarea[placeholder^="Type"]'
+                        : /* poe */ '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after',
+          sidebarSelector = site === 'openai' ? '#__next > div > div.dark'
+                          : site === 'aivvm' ? 'main > div[class*="flex"] > div:not([class*="flex"])'
+                          : /* poe */ 'menu[class*="sidebar"], aside[class*="sidebar"]',
+          sidepadSelector = '#__next > div > div',
+          headerSelector = site === 'openai' ? 'header'
+                          : site === 'aivvm' ? 'div[class*="top"][class*="sticky"]' : '',
+          footerSelector = site === 'openai' ? 'div[class*="bottom"] > div'
+                         : site === 'aivvm' ? 'div[class*="bottom"] > div:nth-of-type(2)' : ''
+
     // Save full-window + full screen states
-    config.fullWindow = site == 'openai' ? chatgpt.sidebar.isOff() : config.fullWindow
+    config.fullWindow = ['openai', 'aivvm'].includes(site) ? isFullWindow() : config.fullWindow
     config.fullScreen = chatgpt.isFullScreen()
 
     // Stylize alerts
@@ -686,15 +738,11 @@
     }
 
     // Collect button classes
-    const sendButtonClasses = (document.querySelector('form button[class*="bottom"]' ) || {}).classList || [],
+    const sendBtnSelector = (
+        site === 'openai' ? 'form button[class*="bottom"]'
+      : site === 'aivvm' ? 'textarea ~ button[class*="right"]' : null)
+    const sendButtonClasses = (document.querySelector(sendBtnSelector) || {}).classList || [],
           sendImgClasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
-
-    // Define UI element selectors
-    const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after'
-                                        : 'form textarea[id*="prompt"]',
-          sidebarSelector = site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]'
-                                          : '#__next > div > div.dark',
-          sidepadSelector = '#__next > div > div'
 
     // Create/stylize tooltip div
     const tooltipDiv = document.createElement('div')
@@ -711,10 +759,8 @@
     // Create/apply general style tweaks
     const tweaksStyle = document.createElement('style'),
           tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
-          hhStyle = 'header { display: none !important }', // hide header
-          hfStyle = 'div[class*="bottom"] > div { padding: .8rem 0 0 }' // reduce footer v-padding
-                  + 'div[class*="bottom"] > div > span,' // hide footer text...
-                      + ' div[class*="bottom"] button[id*="menu-button"] { display: none }' // ...and help button
+          hhStyle = headerSelector + '{ display: none !important }', // hide header
+          hfStyle = footerSelector + '{ color: transparent ; padding: .8rem 0 0 }' // hide footer text, reduce v-padding
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create widescreen style
@@ -722,39 +768,56 @@
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
         site === 'openai' ? 'div[class*="bottom"] form { max-width: 96% }'
-      : site === 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }' : '' )
+      : site === 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }'
+      : site === 'aivvm' ? 'div[class*="stretch"] { max-width: 98% }' : '' )
     updateWidescreenStyle()
 
     // Create full-window style
     const fullWindowStyle = document.createElement('style')
     fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
     fullWindowStyle.innerText = (
-          sidebarSelector + ' { display: none } ' // hide sidebar
-        + sidepadSelector + ' { padding-left: 0px }' ) // remove side padding
+          sidebarSelector + '{ display: none }' // hide sidebar
+        + sidepadSelector + '{ padding-left: 0px }' ) // remove side padding
 
     // Create/insert chatbar buttons
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
-          rOffset = 2.57, bOffset = 1.77
+          bOffset = 1.77, // rem between buttons
+          rOffset = ( // rem from right edge of chatbar
+              site === 'openai' ? 2.57
+            : site === 'aivvm' ? 2.15 : '' )
     let buttonColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
-        ((buttonType) => { // enclose in IIFE to separately capture button type for async listeners
+        (buttonType => { // enclose in IIFE to separately capture button type for async listeners
             const buttonName = buttonType + 'Button'
             window[buttonName] = document.createElement('div') // create button
             window[buttonName].id = buttonType + '-button' // for toggleTooltip()
-            updateBtnSVG(buttonType); // insert icon
+            updateBtnSVG(buttonType) // insert icon
             window[buttonName].style.cssText = `right: ${ rOffset + i * bOffset }rem` // position left of prev button
-            window[buttonName].style.cursor = 'pointer' // add finger cursor // 添加鼠标手势为手指
-            if (site != 'poe') // assign borrowed classes
+            window[buttonName].style.cursor = 'pointer' // add finger cursor
+            if (site !== 'poe') // assign borrowed classes
                 window[buttonName].setAttribute('class', sendButtonClasses)
-            else if (site == 'poe') // lift buttons slightly
-                window[buttonName].style.cssText += '; margin-bottom: 0.2rem '
-            window[buttonName].addEventListener('click', () => { // add click listeners
+            else if (site === 'poe') // lift buttons slightly
+                window[buttonName].style.cssText += '; margin-bottom: 0.2rem'
+
+            // Add click/hover listeners
+            window[buttonName].addEventListener('click', () => {
                 if (buttonType === 'newChat') {
                     if (site === 'openai') chatgpt.startNewChat()
-                    else if (site === 'poe') document.querySelector('header a[class*="button"]').click()
+                    else if (site === 'poe') document.querySelector('header a[class*="button"]')?.click()
+                    else if (site === 'aivvm') {
+                        (function startNewAIVVMchat() {
+                            const newChatBtn = document.querySelector('button[class*="sidebar"]')
+                            if (newChatBtn) newChatBtn.click()
+                            else { // toggle leftbar before/after
+                                document.querySelector('button[class*="left"]')?.click()
+                                setTimeout(() => { startNewAIVVMchat() ; setTimeout(() =>
+                                    document.querySelector('button[class*="left"]')?.click(), 10) }, 10)
+                        }})()
+                    }
                 } else toggleMode(buttonType) })
             window[buttonName].addEventListener('mouseover', toggleTooltip)
             window[buttonName].addEventListener('mouseout', toggleTooltip)
+
         })(buttonTypes[i])
     } insertBtns()
 
@@ -768,7 +831,7 @@
             if (!prevSessionChecked) {
                 if (config.wideScreen) toggleMode('wideScreen', 'ON')
                 if (config.fullWindow) { toggleMode('fullWindow', 'ON')
-                    if (site == 'openai') { // sidebar observer doesn't trigger
+                    if (['openai', 'aivvm'].includes(site)) { // sidebar observer doesn't trigger
                         syncFullerWindows(true) // so sync Fuller Windows...
                         if (!config.notifHidden) // ... + notify
                             notify(messages.mode_fullWindow + ' ON')
@@ -786,9 +849,9 @@
     }}) ; schemeObserver.observe(document.documentElement, { attributes: true })
 
     // Monitor sidebar to update full-window setting
-    if (site != 'poe') {
+    if (['chatgpt', 'aivvm'].includes(site)) {
         const sidebarObserver = new MutationObserver(() => {
-            const fullWindowState = chatgpt.sidebar.isOff()
+            const fullWindowState = isFullWindow()
             if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
                 if (!config.modeSynced) syncMode('fullWindow')
         })
