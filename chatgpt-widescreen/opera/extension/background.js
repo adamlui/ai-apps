@@ -1,4 +1,4 @@
-const allowedHosts = ['chat.openai.com']
+const allowedHosts = ['chat.openai.com', 'poe.com']
 
 // Add install/update actions
 chrome.runtime.onInstalled.addListener((details) => {
