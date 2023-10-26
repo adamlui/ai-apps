@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.25.4
+// @version             2023.10.26
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -849,7 +849,7 @@
     }}) ; schemeObserver.observe(document.documentElement, { attributes: true })
 
     // Monitor sidebar to update full-window setting
-    if (['chatgpt', 'aivvm'].includes(site)) {
+    if (['openai', 'aivvm'].includes(site)) {
         const sidebarObserver = new MutationObserver(() => {
             const fullWindowState = isFullWindow()
             if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
