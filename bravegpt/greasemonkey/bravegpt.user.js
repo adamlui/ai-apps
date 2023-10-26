@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.26
+// @version             2023.10.26.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -344,12 +344,14 @@
                     + '(' + messages.alert_ifIssuePersists + ')</p>' : '</p>')
     }
 
-    // Define UI function
+    // Define UI functions
 
     function isDarkMode() {
         return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
             || document.documentElement.classList.toString().includes('dark')
     }
+
+    function isChromium() { return navigator.userAgent.includes('Chrome') }
 
     // Define SESSION functions
 
@@ -765,8 +767,9 @@
         + '.continue-chat > textarea { border: none ; border-radius: 15px 16px 15px 0 ; margin: -6px 0 5px 0 ;  padding: 14px 0 5px 10px ; '
             + 'height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ; background: '
                 + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + '}'
-        + '.continue-chat > button { position: relative ; bottom: 54px; left: 299px; border: none ; margin: 18px 4px 0 0 ; '
-            + `background: none ; color: ${ isDarkMode() ? '#aaa' : 'lightgrey' } ; cursor: pointer } `
+        + '.continue-chat > button { border: none ; margin: 18px 4px 0 0 ;'
+            + `position: relative ; bottom: ${ isChromium() ? 58 : 54 }px; left: ${ isChromium() ? 303 : 302 }px;`
+            + `background: none ; color: ${ isDarkMode() ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.continue-chat > button:hover { color: ${ isDarkMode() ? 'white' : 'black' } }`
         + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
         + '.kudo-ai a { color: #aaa ; text-decoration: none } '
