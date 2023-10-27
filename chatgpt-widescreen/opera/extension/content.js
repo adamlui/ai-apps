@@ -62,7 +62,7 @@
     const tweaksStyle = document.createElement('style'),
           tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
           hhStyle = 'header { display: none !important }', // hide header
-          hfStyle = 'div[class*="bottom"] > div { padding: .8rem 0 0 }' // reduce footer v-padding
+          hfStyle = 'div[class*="bottom"] > div { padding: .1rem 0 0 }' // reduce footer v-padding
                   + 'div[class*="bottom"] > div > span,' // hide footer text...
                       + ' div[class*="bottom"] button[id*="menu-button"] { display: none }' // ...and help button
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
@@ -203,12 +203,13 @@
                                       : document.querySelector('form button[class*="bottom"]').parentNode;
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
         const leftMostBtn = chatbar.querySelector('button')
-        chatbar.insertBefore(leftMostBtn, chatbar.lastChild); // elevate to chatbar if nested
+        chatbar.insertBefore(leftMostBtn, chatbar.lastChild) // elevate to chatbar if nested
         chatbar.insertBefore(newChatButton, leftMostBtn)
         chatbar.insertBefore(wideScreenButton, leftMostBtn)
         chatbar.insertBefore(fullWindowButton, leftMostBtn)
         chatbar.insertBefore(fullScreenButton, leftMostBtn)
         chatbar.insertBefore(tooltipDiv, leftMostBtn)
+        if (site === 'openai') chatbar.classList.remove('overflow-hidden') // for tooltips to overflow
     }
 
     function removeBtns() {
@@ -266,7 +267,7 @@
         }
         buttonSVG.setAttribute('class', sendImgClasses) // assign borrowed classes
         buttonSVG.setAttribute( // center oerlay + prevent triggering tooltips twice
-            'style', `margin: 0 ${rMargin}rem 0 ${lMargin}rem ; pointer-events: none`)
+            'style', `margin: 0 ${ rMargin }rem 0 ${ lMargin }rem ; pointer-events: none`)
         buttonSVG.setAttribute('viewBox', svgViewBox) // set pre-tweaked viewbox
 
         // Update SVG elements
