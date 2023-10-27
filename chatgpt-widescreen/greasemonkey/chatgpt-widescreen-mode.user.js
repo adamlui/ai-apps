@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.26.1
+// @version             2023.10.27
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -493,12 +493,13 @@
                         : document.querySelector('form button[class*="bottom"]').parentNode )
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
         const leftMostBtn = chatbar.querySelector('button' + ( site === 'aivvm' ? '[class*="right"]' : ''))
-        chatbar.insertBefore(leftMostBtn, chatbar.lastChild); // elevate to chatbar if nested
+        chatbar.insertBefore(leftMostBtn, chatbar.lastChild) // elevate to chatbar if nested
         chatbar.insertBefore(newChatButton, leftMostBtn)
         chatbar.insertBefore(wideScreenButton, leftMostBtn)
         chatbar.insertBefore(fullWindowButton, leftMostBtn)
         chatbar.insertBefore(fullScreenButton, leftMostBtn)
         chatbar.insertBefore(tooltipDiv, leftMostBtn)
+        chatbar.classList.remove('overflow-hidden') // for tooltips to overflow
     }
 
     function updateBtnSVG(mode, state = '') {
@@ -552,7 +553,7 @@
         }
         buttonSVG.setAttribute('class', sendImgClasses) // assign borrowed classes
         buttonSVG.setAttribute( // center oerlay + prevent triggering tooltips twice
-            'style', `margin: 0 ${rMargin}rem 0 ${lMargin}rem ; pointer-events: none`)
+            'style', `margin: 0 ${ rMargin }rem 0 ${ lMargin }rem ; pointer-events: none`)
         buttonSVG.setAttribute('viewBox', svgViewBox) // set pre-tweaked viewbox
 
         // Update SVG elements
