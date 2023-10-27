@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.26
+// @version             2023.10.26.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -319,8 +319,9 @@
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
                     alert(messages.alert_langUpdated + '!', // title
-                        'DuckDuckGPT ' + messages.alert_willReplyIn + ' '
-                            + ( replyLanguage || messages.alert_yourSysLang ) + '.')
+                        'DuckDuckGPT ' + messages.alert_willReplyIn + ' ' // msg
+                            + ( replyLanguage || messages.alert_yourSysLang ) + '.',
+                         '', '', 330) // width
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
