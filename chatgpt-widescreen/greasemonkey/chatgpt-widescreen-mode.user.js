@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.27
+// @version             2023.10.27.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -499,7 +499,7 @@
         chatbar.insertBefore(fullWindowButton, leftMostBtn)
         chatbar.insertBefore(fullScreenButton, leftMostBtn)
         chatbar.insertBefore(tooltipDiv, leftMostBtn)
-        chatbar.classList.remove('overflow-hidden') // for tooltips to overflow
+        if (site === 'openai') chatbar.classList.remove('overflow-hidden') // for tooltips to overflow
     }
 
     function updateBtnSVG(mode, state = '') {
