@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.26.1
+// @version             2023.10.29
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -207,7 +207,7 @@
         GM.xmlHttpRequest({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
+            onload: response => {
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
@@ -427,11 +427,11 @@
     }}})}
 
     function getOpenAItoken() {
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             const accessToken = GM_getValue(config.prefix + '_openAItoken')
             ddgptConsole.info('OpenAI access token: ' + accessToken)
             if (!accessToken) {
-                GM.xmlHttpRequest({ url: openAIendpoints.session, onload: (response) => {
+                GM.xmlHttpRequest({ url: openAIendpoints.session, onload: response => {
                     if (isBlockedbyCloudflare(response.responseText)) {
                         ddgptAlert('checkCloudflare') ; return }
                     try {
@@ -444,7 +444,7 @@
     })}
 
     function getAIGCFkey() {
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             const publicKey = GM_getValue(config.prefix + '_aigcfKey')
             if (!publicKey) {
                 GM.xmlHttpRequest({ method: 'GET', url: 'https://api.aigcfun.com/fc/key',
@@ -452,7 +452,7 @@
                         'Content-Type': 'application/json',
                         'Referer': 'https://aigcfun.com/',
                         'X-Forwarded-For': chatgpt.generateRandomIP() },
-                    onload: (response) => {
+                    onload: response => {
                         const newPublicKey = JSON.parse(response.responseText).data
                         if (!newPublicKey) { ddgptConsole.error('Failed to get AIGCFun public key') ; return }
                         GM_setValue(config.prefix + '_aigcfKey', newPublicKey)
@@ -483,7 +483,7 @@
     let endpoint, accessKey, model
     async function pickAPI() {
         if (config.proxyAPIenabled) { // randomize proxy API
-            const untriedEndpoints = proxyEndpoints.filter((entry) => {
+            const untriedEndpoints = proxyEndpoints.filter(entry => {
                 return !getShowReply.triedEndpoints?.includes(entry[0]) })
             const entry = untriedEndpoints[Math.floor(chatgpt.randomFloat() * untriedEndpoints.length)]
             endpoint = entry[0] ; accessKey = entry[1] ; model = entry[2]
@@ -516,7 +516,7 @@
             method: 'POST', url: endpoint,
             headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
             responseType: responseType(), data: createPayload(convo), onloadstart: onLoadStart(), onload: onLoad(),
-            onerror: (err) => {
+            onerror: err => {
                 ddgptConsole.error(err)
                 if (!config.proxyAPIenabled) ddgptAlert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
@@ -538,7 +538,7 @@
         function onLoadStart() { // process streams for unproxied TM users
             ddgptConsole.info('Endpoint used: ' + endpoint)
             if (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') {
-                return (stream) => {
+                return stream => {
                     const reader = stream.response.getReader()
                     reader.read().then(function processText({ done, value }) {
                         if (done) return
@@ -557,7 +557,7 @@
         })}}}
 
         function onLoad() {
-            return async (event) => {
+            return async event => {
                 if (event.status !== 200) {
                     ddgptConsole.error('Event status: ' + event.status)
                     ddgptConsole.error('Event response: ' + event.responseText)
@@ -825,7 +825,7 @@
     // Activate promo campaign if active
     GM.xmlHttpRequest({
         method: 'GET', url: config.assetHostURL + 'ads/live/creative.html',
-        onload: (response) => { if (response.status == 200) {
+        onload: response => { if (response.status == 200) {
 
             // Create campaign div & add class/style/HTML
             const pcDiv = document.createElement('div')
