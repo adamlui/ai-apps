@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.25
+// @version             2023.10.30
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -276,10 +276,12 @@
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     await chatgpt.isLoaded()
-    if (document.documentElement.getAttribute('cif-extension-installed')) { // if extension installed, disable script/menu
-        GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return })
-        return // exit script
-    } else registerMenu() // create functional menu
+    setTimeout(() => { // add trivial delay for Chrome extension load to beat VM
+      if (document.documentElement.getAttribute('cif-extension-installed')) { // if extension installed, disable script/menu
+          GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return })
+          return // exit script
+      } else registerMenu() // create functional menu
+    }, 5)
 
     // Add listener to auto-disable Infinity Mode
     if (document.hidden !== undefined) { // ...if Page Visibility API supported
