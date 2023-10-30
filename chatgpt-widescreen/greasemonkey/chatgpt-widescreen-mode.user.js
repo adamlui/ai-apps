@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.10.27.1
+// @version             2023.10.30
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -705,10 +705,12 @@
     const state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
                     separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     if (site === 'openai') await chatgpt.isLoaded()
-    if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
-        GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return }) // disable menu
-        return // exit script
-    } else registerMenu() // create functional menu
+    setTimeout(() => { // add trivial delay for Chrome extension load to beat VM
+        if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
+            GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return }) // disable menu
+            return // exit script
+        } else registerMenu() // create functional menu
+    }, 5)
 
     // Define UI element selectors
     const inputSelector = site === 'openai' ? 'form textarea[id*="prompt"]'
