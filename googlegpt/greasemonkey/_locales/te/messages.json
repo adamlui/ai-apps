@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "@ info: whatsthis" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
+  "tooltip_sendReply": { "message": "ప్రత్యుత్తరం పంపండి" },
   "prompt_updateReplyLang": { "message": "Update reply language" },
   "alert_langUpdated": { "message": "Language updated" },
   "alert_willReplyIn": { "message": "will reply in" },

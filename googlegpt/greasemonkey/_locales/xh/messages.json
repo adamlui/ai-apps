@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Ikhowudi engumthombo" },
   "mode_prefix": { "message": "Imowudi Yesimaphambili" },
   "mode_suffix": { "message": "Imowudi Ye-suffix" },
+  "tooltip_sendReply": { "message": "Thumela impendulo" },
   "prompt_updateReplyLang": { "message": "Hlaziya ulwimi lwempendulo" },
   "alert_langUpdated": { "message": "Ulwimi luhlaziyiwe" },
   "alert_willReplyIn": { "message": "iza kuphendula ingekapheli" },

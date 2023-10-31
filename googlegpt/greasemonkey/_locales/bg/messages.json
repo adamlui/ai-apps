@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Изходен код" },
   "mode_prefix": { "message": "Режим на префикс" },
   "mode_suffix": { "message": "Режим на суфикс" },
+  "tooltip_sendReply": { "message": "За отговор" },
   "prompt_updateReplyLang": { "message": "Актуализиране на езика за отговор" },
   "alert_langUpdated": { "message": "Езикът е актуализиран" },
   "alert_willReplyIn": { "message": "ще отговори след" },

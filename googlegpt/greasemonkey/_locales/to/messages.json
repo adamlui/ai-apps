@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Maʻuʻanga fakamatala" },
   "mode_prefix": { "message": "Muʻa cata Mode" },
   "mode_suffix": { "message": "Founga tanaki atu" },
+  "tooltip_sendReply": { "message": "ʻAve ʻa e talí" },
   "prompt_updateReplyLang": { "message": "Fakatonutonu e tali ʻi he lea fakafonua" },
   "alert_langUpdated": { "message": "Fakatonutonu ʻo e Lea Fakafonuá" },
   "alert_willReplyIn": { "message": "ʻe tali mai ʻi he" },

@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Codul sursă" },
   "mode_prefix": { "message": "Mod prefix" },
   "mode_suffix": { "message": "Mod sufix" },
+  "tooltip_sendReply": { "message": "Trimite un răspuns" },
   "prompt_updateReplyLang": { "message": "Actualizează limba răspunsului" },
   "alert_langUpdated": { "message": "Limbă actualizată" },
   "alert_willReplyIn": { "message": "va răspunde în" },

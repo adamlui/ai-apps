@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Zdrojový kód" },
   "mode_prefix": { "message": "Režim predpony" },
   "mode_suffix": { "message": "Režim prípony" },
+  "tooltip_sendReply": { "message": "Odpovedať" },
   "prompt_updateReplyLang": { "message": "Aktualizovať jazyk odpovede" },
   "alert_langUpdated": { "message": "Jazyk bol aktualizovaný" },
   "alert_willReplyIn": { "message": "odpovie v" },

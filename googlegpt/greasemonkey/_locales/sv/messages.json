@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Källkod" },
   "mode_prefix": { "message": "Prefixläge" },
   "mode_suffix": { "message": "Suffixläge" },
+  "tooltip_sendReply": { "message": "Skicka svar" },
   "prompt_updateReplyLang": { "message": "Uppdatera svarsspråk" },
   "alert_langUpdated": { "message": "Språk uppdaterat" },
   "alert_willReplyIn": { "message": "kommer att svara i" },

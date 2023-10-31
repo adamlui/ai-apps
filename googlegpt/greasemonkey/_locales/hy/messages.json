@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Ծրագրային կոդ" },
   "mode_prefix": { "message": "Նախադիտման ռեժիմ" },
   "mode_suffix": { "message": "Սուֆիքսային ռեժիմ" },
+  "tooltip_sendReply": { "message": "Ուղարկել պատասխան" },
   "prompt_updateReplyLang": { "message": "Թարմացնել պատասխանների լեզուն" },
   "alert_langUpdated": { "message": "Լեզուն թարմացվել է" },
   "alert_willReplyIn": { "message": "կպատասխանի" },

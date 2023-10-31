@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Gigikana sa kodigo" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
+  "tooltip_sendReply": { "message": "Ipadala ang tubag" },
   "prompt_updateReplyLang": { "message": "Tubag sa Lenguahe" },
   "alert_langUpdated": { "message": "Gi-update ang sinultian" },
   "alert_willReplyIn": { "message": "motubag diha" },

@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "මූලාශ්‍ර කේතය" },
   "mode_prefix": { "message": "මනාප ප් ‍ රකාරය" },
   "mode_suffix": { "message": "ප් ‍ රමාණාත්මක ප් ‍ රකාරය" },
+  "tooltip_sendReply": { "message": "ඊ-මේල් මගින් පිලිතුරු දෙන්න" },
   "prompt_updateReplyLang": { "message": "ප්‍රතිචාර භාෂාව යාවත්කාලීන කරන්න" },
   "alert_langUpdated": { "message": "භාෂාව යාවත්කාලීන කරන ලදි" },
   "alert_willReplyIn": { "message": "ප් ‍ රතිචාර දක්වනු ඇත" },

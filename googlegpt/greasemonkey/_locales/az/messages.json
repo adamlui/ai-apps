@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Mənbə kodu" },
   "mode_prefix": { "message": "Prefiks Rejimi" },
   "mode_suffix": { "message": "Suffiks Rejimi" },
+  "tooltip_sendReply": { "message": "Göndər" },
   "prompt_updateReplyLang": { "message": "Cavab dilini yenilə" },
   "alert_langUpdated": { "message": "Dil yeniləndi" },
   "alert_willReplyIn": { "message": "cavab verəcək:" },

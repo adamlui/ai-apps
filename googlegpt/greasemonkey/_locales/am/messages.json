@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "የምንጭ ኮድ" },
   "mode_prefix": { "message": "Prefix ሁነታ" },
   "mode_suffix": { "message": "Suffix ሁነታ" },
+  "tooltip_sendReply": { "message": "መልስ ላክ" },
   "prompt_updateReplyLang": { "message": "የምላሽ ቋንቋን ያዘምኑ" },
   "alert_langUpdated": { "message": "ቋንቋ ዘምኗል" },
   "alert_willReplyIn": { "message": "ውስጥ መልስ ይሆናል" },

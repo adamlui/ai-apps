@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Avots:" },
   "mode_prefix": { "message": "Prefiksa režīms" },
   "mode_suffix": { "message": "Sufiksa režīms" },
+  "tooltip_sendReply": { "message": "Sūtīt atbildi" },
   "prompt_updateReplyLang": { "message": "Atjaunināt atbildes valodu" },
   "alert_langUpdated": { "message": "Valoda atjaunināta" },
   "alert_willReplyIn": { "message": "atbildēs pēc" },

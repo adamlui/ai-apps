@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Kod sumber" },
   "mode_prefix": { "message": "Mod Awalan" },
   "mode_suffix": { "message": "Mod Akhiran" },
+  "tooltip_sendReply": { "message": "Balas" },
   "prompt_updateReplyLang": { "message": "Kemas kini bahasa balasan" },
   "alert_langUpdated": { "message": "Bahasa dikemas kini" },
   "alert_willReplyIn": { "message": "akan membalas dalam" },

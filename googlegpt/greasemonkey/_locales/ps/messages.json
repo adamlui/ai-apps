@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "سرچينه كوډه" },
   "mode_prefix": { "message": "د مختاړي اکر" },
   "mode_suffix": { "message": "وروستنی حالت" },
+  "tooltip_sendReply": { "message": "ځواب وليږه" },
   "prompt_updateReplyLang": { "message": "د ځواب ژبه تازه کړئ" },
   "alert_langUpdated": { "message": "نوی ژبه تازه کړئ" },
   "alert_willReplyIn": { "message": "به ځواب ورکړي" },

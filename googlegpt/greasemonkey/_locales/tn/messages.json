@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Source code" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
+  "tooltip_sendReply": { "message": "SEND ANSWER" },
   "prompt_updateReplyLang": { "message": "UPDATE ANSWER LANGUO" },
   "alert_langUpdated": { "message": "Puo e ntshwafaditswe" },
   "alert_willReplyIn": { "message": "o tlile go araba ka" },

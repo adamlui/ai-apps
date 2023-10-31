@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "ᠰᠣᠷᠪᠤᠯᠵᠢ ᠺᠣᠳ᠋ " },
   "mode_prefix": { "message": "Угтварын Горим" },
   "mode_suffix": { "message": "Дагаварын Горим" },
+  "tooltip_sendReply": { "message": "Хариулт илгээх" },
   "prompt_updateReplyLang": { "message": "Хариултын хэлийг шинэчлэх" },
   "alert_langUpdated": { "message": "Хэл шинэчилсэн" },
   "alert_willReplyIn": { "message": "хариулт өгөх болно" },

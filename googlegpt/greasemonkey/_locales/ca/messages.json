@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Codi font" },
   "mode_prefix": { "message": "Mode de prefix" },
   "mode_suffix": { "message": "Mode de sufix" },
+  "tooltip_sendReply": { "message": "Enviar resposta" },
   "prompt_updateReplyLang": { "message": "Actualitza l'idioma de la resposta" },
   "alert_langUpdated": { "message": "Idioma actualitzat" },
   "alert_willReplyIn": { "message": "respondrà en" },

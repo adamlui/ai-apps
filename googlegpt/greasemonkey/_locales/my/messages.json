@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "ပင္မကုဒ္" },
   "mode_prefix": { "message": "ရှေ့ဆက်မုဒ်" },
   "mode_suffix": { "message": "နောက်ဆက်တွဲ မုဒ်" },
+  "tooltip_sendReply": { "message": "ပြန်စာပို့ရန်" },
   "prompt_updateReplyLang": { "message": "ပြန်ကြားချက်ဘာသာစကားကို အပ်ဒိတ်လုပ်ပါ" },
   "alert_langUpdated": { "message": "ဘာသာစကားကို အပ်ဒိတ်လုပ်ထားသည်" },
   "alert_willReplyIn": { "message": "ဖြေကြားပေးပါမည် ။" },

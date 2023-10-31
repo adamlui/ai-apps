@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Ikhodi yomthombo" },
   "mode_prefix": { "message": "Imodi Yesimaphambili" },
   "mode_suffix": { "message": "Imodi Ye-suffix" },
+  "tooltip_sendReply": { "message": "Thumela impendulo" },
   "prompt_updateReplyLang": { "message": "Buyekeza ulimi lokuphendula" },
   "alert_langUpdated": { "message": "Ulimi lubuyekeziwe" },
   "alert_willReplyIn": { "message": "uzophendula ku-" },

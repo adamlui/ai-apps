@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "ソースコード" },
   "mode_prefix": { "message": "プレフィックスモード" },
   "mode_suffix": { "message": "接尾辞モード" },
+  "tooltip_sendReply": { "message": "要返信" },
   "prompt_updateReplyLang": { "message": "返信言語を更新" },
   "alert_langUpdated": { "message": "言語が更新されました。" },
   "alert_willReplyIn": { "message": "あとで返信します" },

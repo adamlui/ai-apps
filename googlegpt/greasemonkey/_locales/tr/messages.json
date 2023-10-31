@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Kaynak Kodu" },
   "mode_prefix": { "message": "Önek Modu" },
   "mode_suffix": { "message": "Sonek Modu" },
+  "tooltip_sendReply": { "message": "Yanıt Gönder" },
   "prompt_updateReplyLang": { "message": "Yanıt dilini güncelleyin" },
   "alert_langUpdated": { "message": "Dil güncelleme." },
   "alert_willReplyIn": { "message": "cevap verecek" },

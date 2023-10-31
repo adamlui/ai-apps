@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Code source" },
   "mode_prefix": { "message": "Mode préfixe" },
   "mode_suffix": { "message": "Mode suffixe" },
+  "tooltip_sendReply": { "message": "Envoyer une&#10; réponse" },
   "prompt_updateReplyLang": { "message": "Mettre à jour la langue de réponse" },
   "alert_langUpdated": { "message": "Langue mise à jour" },
   "alert_willReplyIn": { "message": "répondra dans" },
