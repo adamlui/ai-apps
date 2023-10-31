@@ -1,0 +1,94 @@
+name: Sync (googlegpt/ to kudoai/googlegpt/) && (googlegpt/greasemonkey/ to adamlui/userscripts/chatgpt/googlegpt/)
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'googlegpt/**'
+
+jobs:
+  build:
+    if: github.event.commits[0].committer.username != 'kudo-sync-bot'
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout adamlui/chatgpt-apps
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/chatgpt-apps
+          path: adamlui/chatgpt-apps
+
+      - name: Checkout kudoai/googlegpt
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: kudoai/googlegpt
+          path: kudoai/googlegpt
+
+      - name: Checkout adamlui/userscripts
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/userscripts
+          path: adamlui/userscripts
+
+      - name: Sync docs between root & /greasemonkey
+        run: |
+          shopt -s globstar
+          for file in "${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/docs/"**/*.md; do
+            relative_path=${file#"${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/docs/"}
+            if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/docs/$relative_path")" > \
+                 "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/greasemonkey/docs/$relative_path")" ]; then
+              cp -f \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/docs/$relative_path" \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/greasemonkey/docs/$relative_path"
+            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/greasemonkey/docs/$relative_path")" > \
+                   "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/docs/$relative_path")" ]; then
+              cp -f \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/greasemonkey/docs/$relative_path" \
+                "${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/docs/$relative_path"
+            fi
+          done
+
+      - name: Sync googlegpt/ to kudoai/googlegpt/
+        run: |
+          rsync -avhr \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/ \
+            ${{ github.workspace }}/kudoai/googlegpt/
+
+      - name: Sync googlegpt/greasemonkey/ to adamlui/userscripts/chatgpt/googlegpt/
+        run: |
+          rsync -avhr --delete \
+            ${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/greasemonkey/ \
+            ${{ github.workspace }}/adamlui/userscripts/chatgpt/googlegpt/
+
+      - name: Push to adamlui/chatgpt-apps
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
+          file_pattern: 'googlegpt/**'
+          repository: adamlui/chatgpt-apps
+
+      - name: Push to kudoai/googlegpt
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
+          file_pattern: '**'
+          repository: kudoai/googlegpt
+
+      - name: Push to adamlui/userscripts
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: '--force'
+          add_options: '--all'
+          commit_user_email: auto-sync@kudoai.com
+          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
+          file_pattern: 'chatgpt/googlegpt/**'
+          repository: adamlui/userscripts
