@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.31
+// @version             2023.10.31.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @match               *://*.google.com/search*
@@ -749,7 +749,7 @@
     }
 
     function googleGPTshow(answer) {
-        googleGPTdiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://googlegpt.kudoai.com" target="_blank" rel="noopener">GoogleGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="googlegpt-reply-box" rows="1" placeholder="Send reply..."></textarea><button title="Send reply" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>'
+        googleGPTdiv.innerHTML = `<p><span class="prefix">🤖  <a href="https://googlegpt.kudoai.com" target="_blank" rel="noopener">GoogleGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="googlegpt-reply-box" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="${ messages.tooltip_sendReply }" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
         googleGPTdiv.querySelector('pre').textContent = answer
 
         // Render math
