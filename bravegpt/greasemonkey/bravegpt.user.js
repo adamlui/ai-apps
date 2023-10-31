@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.31
+// @version             2023.10.31.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -327,7 +327,7 @@
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width)}
 
     const braveGPTconsole = {
         info: function(msg) {console.info(config.appSymbol + ' BraveGPT >> ' + msg)},
@@ -547,7 +547,7 @@
     }
 
     function braveGPTshow(answer) {
-        braveGPTdiv.innerHTML = `<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank" rel="noopener">BraveGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre><section style="margin-bottom: -10px"><form><div class="continue-chat"><textarea id="bravegpt-reply-box" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="Send reply"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
+        braveGPTdiv.innerHTML = `<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank" rel="noopener">BraveGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre><section style="margin-bottom: -10px"><form><div class="continue-chat"><textarea id="bravegpt-reply-box" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="${ messages.tooltip_sendReply }" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
         braveGPTdiv.querySelector('pre').textContent = answer
         fillBraveGPTfooter() ; braveGPTfooter.style.height = 'inherit' // (re-)init (after loading replies)
         braveGPTdiv.appendChild(braveGPTfooter) // append feedback link
@@ -576,7 +576,7 @@
 
         // Add listeners
         form.addEventListener('keydown', handleEnter)
-        form.addEventListener('submit', handleSubmit )
+        form.addEventListener('submit', handleSubmit)
         replyBox.addEventListener('input', autosizeBox)
 
         function handleEnter(event) {
@@ -767,10 +767,10 @@
         + '.continue-chat > textarea { border: none ; border-radius: 15px 16px 15px 0 ; margin: -6px 0 5px 0 ;  padding: 14px 0 5px 10px ; '
             + 'height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ; background: '
                 + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + '}'
-        + '.continue-chat > button { border: none ; margin: 18px 4px 0 0 ;'
+        + '.send-button { border: none ; margin: 18px 4px 0 0 ;'
             + `position: relative ; bottom: ${ isChromium() ? 58 : 54 }px; left: ${ isChromium() ? 303 : 302 }px;`
             + `background: none ; color: ${ isDarkMode() ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
-        + `.continue-chat > button:hover { color: ${ isDarkMode() ? 'white' : 'black' } }`
+        + `.send-button:hover { color: ${ isDarkMode() ? 'white' : 'black' } }`
         + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
         + '.kudo-ai a { color: #aaa ; text-decoration: none } '
         + `.kudo-ai a:hover { color: ${ isDarkMode() ? 'white' : 'black' } ; text-decoration: none }`
