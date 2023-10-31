@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.10.30.4
+// @version             2023.10.31
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @match               *://*.google.com/search*
@@ -550,9 +550,10 @@
                     + '(' + messages.alert_ifIssuePersists + ')</p>' : '</p>')
     }
 
-    // Define UI function
+    // Define UI functions
 
     function isDarkMode() { return document.querySelector('[data-darkmode="true"]') }
+    function isChromium() { return navigator.userAgent.includes('Chrome') }
 
     // Define SESSION functions
 
@@ -748,7 +749,7 @@
     }
 
     function googleGPTshow(answer) {
-        googleGPTdiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://googlegpt.kudoai.com" target="_blank" rel="noopener">GoogleGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="googlegpt-reply-box" rows="1" placeholder="Send reply..."></textarea></div></form></section>'
+        googleGPTdiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://googlegpt.kudoai.com" target="_blank" rel="noopener">GoogleGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="googlegpt-reply-box" rows="1" placeholder="Send reply..."></textarea><button title="Send reply" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>'
         googleGPTdiv.querySelector('pre').textContent = answer
 
         // Render math
@@ -777,6 +778,7 @@
 
         // Add listeners
         form.addEventListener('keydown', handleEnter)
+        form.addEventListener('submit', handleSubmit)
         replyBox.addEventListener('input', autosizeBox)
 
         function handleEnter(event) {
@@ -799,6 +801,7 @@
 
             // Remove listeners since they're re-added
             replyBox.removeEventListener('input', autosizeBox)
+            form.removeEventListener('submit', handleSubmit)
             replyBox.removeEventListener('keydown', handleEnter)
 
             // Show loading status
@@ -932,10 +935,15 @@
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
             + ( isDarkMode() ? '#3a3a3a' : '#eaeaea' ) + ' }'
         + '.continue-chat > textarea {'
-            + 'border: none ; border-radius: 12px 13px 12px 0 ; '
-            + 'height: 1.55rem ; width: 97.6% ; max-height: 200px ;resize: none ; '
-            + 'margin: 13px 0 15px 0 ; padding: 13px 0 2px 10px ; '
-            + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' } '
+            + 'border: none ; border-radius: 12px 13px 12px 0 ;'
+            + 'height: 1.55rem ; width: 97.6% ; max-height: 200px ; resize: none ;'
+            + 'margin: 13px 0 15px 0 ; padding: 13px 0 2px 10px ;'
+            + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' }'
+        + ( isDarkMode() ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
+        + '.send-button { border: none ; float: right ;'
+            + `position: relative ; bottom: ${ isChromium() ? 45 : 42 }px ; right: 4px ;`
+            + `background: none ; color: ${ isDarkMode() ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
+        + `.send-button:hover { color: ${ isDarkMode() ? 'white' : 'black' } }`
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
         + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
