@@ -68,7 +68,7 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
 > Display ChatGPT answers in Google Search sidebar (powered by GPT-4!)
 <br>[Install](https://greasyfork.org/scripts/478597-googlegpt) /
-[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt/googlegpt#readme) /
+[Readme](https://github.com/adamlui/chatgpt-apps/tree/main/googlegpt#readme) /
 [Discuss](https://github.com/KudoAI/googlegpt/discussions)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
