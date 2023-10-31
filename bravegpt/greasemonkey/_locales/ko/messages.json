@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "원본 코드" },
   "mode_prefix": { "message": "접두사 모드" },
   "mode_suffix": { "message": "접미사 모드" },
+  "tooltip_sendReply": { "message": "답변 필요" },
   "prompt_updateReplyLang": { "message": "답변 언어 업데이트" },
   "alert_langUpdated": { "message": "언어 업데이트됨" },
   "alert_willReplyIn": { "message": "님이 다음으로 회신할 예정입니다." },

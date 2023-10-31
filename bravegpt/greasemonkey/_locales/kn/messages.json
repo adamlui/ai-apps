@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "ಮೂಲ ಕೋಡ್" },
   "mode_prefix": { "message": "ಪೂರ್ವಪ್ರತ್ಯಯ ಮೋಡ್" },
   "mode_suffix": { "message": "ಉತ್ತರ ಪ್ರತ್ಯಯ ಮೋಡ್" },
+  "tooltip_sendReply": { "message": "ಪ್ರತ್ಯುತ್ತರ ಕಳುಹಿಸಿ" },
   "prompt_updateReplyLang": { "message": "ಪ್ರತ್ಯುತ್ತರ ಭಾಷೆಯನ್ನು ನವೀಕರಿಸಿ" },
   "alert_langUpdated": { "message": "ಭಾಷೆ ನವೀಕರಿಸಲಾಗಿದೆ" },
   "alert_willReplyIn": { "message": "ರಲ್ಲಿ ಪ್ರತ್ಯುತ್ತರಿಸುತ್ತಾರೆ" },

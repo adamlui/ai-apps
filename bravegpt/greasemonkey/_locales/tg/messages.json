@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Рамзи манбаъ" },
   "mode_prefix": { "message": "Ҳолати префикс" },
   "mode_suffix": { "message": "Ҳолати суффикс" },
+  "tooltip_sendReply": { "message": "Фиристодани ҷавоб" },
   "prompt_updateReplyLang": { "message": "Забони ҷавобро навсозӣ кунед" },
   "alert_langUpdated": { "message": "Забон нав карда шуд" },
   "alert_willReplyIn": { "message": "ҷавоб хоҳад дод" },

@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Hoʻopā&#39;ālua" },
   "mode_prefix": { "message": "Ke ano prefix" },
   "mode_suffix": { "message": "ʻAno Suffix" },
+  "tooltip_sendReply": { "message": "Hoʻouna pane" },
   "prompt_updateReplyLang": { "message": "Hōʻano hou i ka ʻōlelo pane" },
   "alert_langUpdated": { "message": "Hōʻano hou ʻia ka ʻōlelo" },
   "alert_willReplyIn": { "message": "e pane mai" },

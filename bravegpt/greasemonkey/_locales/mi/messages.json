@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Waehere puna" },
   "mode_prefix": { "message": "Momo Prefix" },
   "mode_suffix": { "message": "Mode Suffix" },
+  "tooltip_sendReply": { "message": "Tukua mai he whakautu" },
   "prompt_updateReplyLang": { "message": "Whakahōu reo whakautu" },
   "alert_langUpdated": { "message": "Reo whakahoutia" },
   "alert_willReplyIn": { "message": "ka whakahoki ahau i roto i" },

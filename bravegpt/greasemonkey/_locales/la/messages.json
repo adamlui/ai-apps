@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Codex Originis" },
   "mode_prefix": { "message": "Modus prefix" },
   "mode_suffix": { "message": "Modus Sufix" },
+  "tooltip_sendReply": { "message": "Opportuna" },
   "prompt_updateReplyLang": { "message": "Renova responsio lingua" },
   "alert_langUpdated": { "message": "Lingua renovata" },
   "alert_willReplyIn": { "message": "et respondeo" },

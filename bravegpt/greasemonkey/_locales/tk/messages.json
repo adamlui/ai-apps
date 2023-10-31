@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Çykgyt kodu" },
   "mode_prefix": { "message": "Prefiks Modu" },
   "mode_suffix": { "message": "Suffix Modu" },
+  "tooltip_sendReply": { "message": "Jawap iber" },
   "prompt_updateReplyLang": { "message": "Jawap diliniň täzelenmegi" },
   "alert_langUpdated": { "message": "Til ýygnaýarlanýar" },
   "alert_willReplyIn": { "message": "biz hem jogap berip bileris" },

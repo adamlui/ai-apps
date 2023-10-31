@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Ifyebo fyaba mu cipande ca kubalilapo" },
   "mode_prefix": { "message": "Mu Moda wa Cishinka" },
   "mode_suffix": { "message": "Mu Moda wa Sufikisi" },
+  "tooltip_sendReply": { "message": "Tuma Mwakitwile" },
   "prompt_updateReplyLang": { "message": "Ubulasanshi ukubika citako" },
   "alert_langUpdated": { "message": "Ludimi lwa lwa Tumama updated" },
   "alert_willReplyIn": { "message": "asuka Iwashita" },

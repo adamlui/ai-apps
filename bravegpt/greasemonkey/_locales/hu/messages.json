@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Forráskód" },
   "mode_prefix": { "message": "Előtag mód" },
   "mode_suffix": { "message": "Utótag mód" },
+  "tooltip_sendReply": { "message": "Válasz elküldése" },
   "prompt_updateReplyLang": { "message": "Válasz nyelvének frissítése" },
   "alert_langUpdated": { "message": "Nyelv frissítve." },
   "alert_willReplyIn": { "message": "válaszolni fog a következőben:" },

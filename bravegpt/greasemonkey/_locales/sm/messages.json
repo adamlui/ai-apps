@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Punaoa code" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
+  "tooltip_sendReply": { "message": "Auina atu se tali" },
   "prompt_updateReplyLang": { "message": "Fa'afouga o le Gagana Tali" },
   "alert_langUpdated": { "message": "Gagana faʻafouina" },
   "alert_willReplyIn": { "message": "o le a ou tali atu i" },

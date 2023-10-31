@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Kunobva kodhi" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
+  "tooltip_sendReply": { "message": "Tumira mhinduro" },
   "prompt_updateReplyLang": { "message": "Zivisa mutauro wekupindura" },
   "alert_langUpdated": { "message": "Mutauro wakagadziridzwa" },
   "alert_willReplyIn": { "message": "achapindura mukati" },

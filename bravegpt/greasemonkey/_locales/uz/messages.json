@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Ochiq kod" },
   "mode_prefix": { "message": "Prefiks rejimi" },
   "mode_suffix": { "message": "Suffiks rejimi" },
+  "tooltip_sendReply": { "message": "Javob yuboring" },
   "prompt_updateReplyLang": { "message": "Javob berish tilini yangilang" },
   "alert_langUpdated": { "message": "Til yangilandi" },
   "alert_willReplyIn": { "message": "javob beradi" },

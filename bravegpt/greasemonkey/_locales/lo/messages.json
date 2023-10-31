@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "ຊອດສ໌ໂຄດ" },
   "mode_prefix": { "message": "ໂໝດອຳນວຍຄວາມສະດວກ" },
   "mode_suffix": { "message": "ໂໝດ Suffix" },
+  "tooltip_sendReply": { "message": "ຕອບ ຕອບ" },
   "prompt_updateReplyLang": { "message": "ອັບເດດພາສາຕອບ" },
   "alert_langUpdated": { "message": "ພາສາອັບເດດ" },
   "alert_willReplyIn": { "message": "ຕອບກັບ" },

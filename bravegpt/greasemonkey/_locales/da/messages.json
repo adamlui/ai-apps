@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Kildekode" },
   "mode_prefix": { "message": "Præfikstilstand" },
   "mode_suffix": { "message": "Suffikstilstand" },
+  "tooltip_sendReply": { "message": "Send svar" },
   "prompt_updateReplyLang": { "message": "Opdater svarsprog" },
   "alert_langUpdated": { "message": "Sprog opdateret" },
   "alert_willReplyIn": { "message": "vil svare om" },

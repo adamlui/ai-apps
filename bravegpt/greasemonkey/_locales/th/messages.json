@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "รหัสต้นฉบับ" },
   "mode_prefix": { "message": "โหมดคำนำหน้า" },
   "mode_suffix": { "message": "โหมดคำต่อท้าย" },
+  "tooltip_sendReply": { "message": "ส่งข้อความ" },
   "prompt_updateReplyLang": { "message": "อัพเดทภาษาของการตอบกลับ" },
   "alert_langUpdated": { "message": "อัปเดตภาษาแล้ว" },
   "alert_willReplyIn": { "message": "จะตอบกลับใน" },

@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Quellcode" },
   "mode_prefix": { "message": "Viraussetzungsmodus" },
   "mode_suffix": { "message": "Suffix-Modus" },
+  "tooltip_sendReply": { "message": "Äntwert schécken" },
   "prompt_updateReplyLang": { "message": "Äntwertssprooch aktualiséieren" },
   "alert_langUpdated": { "message": "Sprooch aktualiséiert" },
   "alert_willReplyIn": { "message": "wäert äntweren an" },

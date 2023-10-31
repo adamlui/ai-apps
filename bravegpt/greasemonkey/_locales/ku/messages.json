@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "کۆدی سەرچاوە" },
   "mode_prefix": { "message": "مۆدی پێشنیشان" },
   "mode_suffix": { "message": "مۆدی پاشنیشان" },
+  "tooltip_sendReply": { "message": "وەڵام بنێرە" },
   "prompt_updateReplyLang": { "message": "زمانی وەڵام نوێ بکەرەوە" },
   "alert_langUpdated": { "message": "زمان نوێکرایەوە" },
   "alert_willReplyIn": { "message": "وەڵام دەدات لە" },

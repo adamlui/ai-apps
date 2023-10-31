@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Khoutu ya motswedi" },
   "mode_prefix": { "message": "Mokgwa wa go Kopa" },
   "mode_suffix": { "message": "Mokgwa wa Seeletswa" },
+  "tooltip_sendReply": { "message": "SEND ANSWER" },
   "prompt_updateReplyLang": { "message": "Puo e e tlhabolotsweng ya karabo" },
   "alert_langUpdated": { "message": "Puo e ntshwafaditswe" },
   "alert_willReplyIn": { "message": "o tlile go araba ka" },

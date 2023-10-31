@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Gwero kachidindo" },
   "mode_prefix": { "message": "Mchitidwe wa Prefix" },
   "mode_suffix": { "message": "Lumikizanani nafe" },
+  "tooltip_sendReply": { "message": "Tumizani yankho" },
   "prompt_updateReplyLang": { "message": "Sinthani Chilankhulo cha Yankho" },
   "alert_langUpdated": { "message": "Chilankhulo kusinthidwa" },
   "alert_willReplyIn": { "message": "adzayankha mu" },

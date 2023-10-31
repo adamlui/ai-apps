@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Kódigo di fuente" },
   "mode_prefix": { "message": "Pre-escucha Mode" },
   "mode_suffix": { "message": "Suffisante Moda" },
+  "tooltip_sendReply": { "message": "Envoyer un Réponse" },
   "prompt_updateReplyLang": { "message": "Actualizacion Idioma" },
   "alert_langUpdated": { "message": "Idioma Actualizacion" },
   "alert_willReplyIn": { "message": "lo responde den" },

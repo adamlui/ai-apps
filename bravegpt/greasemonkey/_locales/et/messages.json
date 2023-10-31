@@ -12,6 +12,7 @@
   "about_sourceCode": { "message": "Lähtekood" },
   "mode_prefix": { "message": "Eesliite režiim" },
   "mode_suffix": { "message": "Järelliite režiim" },
+  "tooltip_sendReply": { "message": "Saada vastus" },
   "prompt_updateReplyLang": { "message": "Uuenda vastuse keelt" },
   "alert_langUpdated": { "message": "Keel uuendatud" },
   "alert_willReplyIn": { "message": "vastab pärast" },
