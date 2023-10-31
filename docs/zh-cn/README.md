@@ -64,7 +64,7 @@
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/duckduckgpt#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <img style="margin-bottom:-1px" src="https://www.google.com/s2/favicons?sz=64&domain=google.com" width=18> [GoogleGPT](../../googlegpt)
+### <img src="https://www.google.com/s2/favicons?sz=64&domain=google.com" width=19> [GoogleGPT](../../googlegpt)
 
 > 在 Google Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4 驱动!)
 <br>[安装](https://greasyfork.org/scripts/478597-googlegpt) /
