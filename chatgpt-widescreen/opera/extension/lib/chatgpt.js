@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.3.12
+// This library is a condensed version of chatgpt.js v2.3.13
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -10,6 +10,43 @@ const endpoints = { assets: 'https://raw.githubusercontent.com/KudoAI/chatgpt.js
 localStorage.alertQueue = JSON.stringify([]);
 localStorage.notifyProps = JSON.stringify({
     queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
+
+// Init GM environment flags
+const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
+      isFFuserScript = navigator.userAgent.includes('Firefox') && typeof GM_info != 'undefined',
+      isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
+
+// Define messages
+let cjsMessages;
+if (!isChromeUserScript && !(isFFuserScript && !isFFtmScript)) { (async () => {
+    const cjsMsgsLoaded = new Promise(resolve => {
+        const userLanguage = navigator.languages[0] || navigator.language || navigator.browserLanguage ||
+                             navigator.systemLanguage || navigator.userLanguage || '',
+              msgHostDir = endpoints.assets + '/data/_locales/',
+              msgLocaleDir = ( userLanguage ? userLanguage.replace('-', '_') : 'en' ) + '/';
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0;
+        (function loadMsgs() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', msgHref); xhr.send();
+            xhr.onload = () => {
+                try { // to return localized messages.json
+                    const messages = new Proxy(JSON.parse(xhr.responseText), {
+                        get(target, prop) { // remove need to ref nested keys
+                            if (typeof target[prop] == 'object' && target[prop] !== null && 'message' in target[prop]) {
+                                return target[prop].message;
+                    }}}); resolve(messages);
+                } catch (err) {
+                    msgXHRtries++; if (msgXHRtries === 3) resolve({}); // try up to 3X (original/region-stripped/EN) only
+                    msgHref = userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
+                        msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
+                            : ( msgHostDir + 'en/messages.json' ); // else use default English messages
+                    loadMsgs();
+                }
+            };
+            xhr.onerror = () => { resolve({}); };
+        })();
+    }); cjsMessages = await cjsMsgsLoaded;
+})();}
 
 const chatgpt = {
 
@@ -42,12 +79,11 @@ const chatgpt = {
                 + '.chatgpt-modal > div {'
                     + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ;'
                     + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
-                    + `background-color: ${ scheme === 'dark' ? 'black' : 'white' } ;`
-                    + ( width ? `width: ${ width }px` : 'max-width: 458px ') + ' ;'
+                    + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
                     + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) ;'
                     + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }' // disable selection
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
-                + `.chatgpt-modal a { color: ${ scheme === 'dark' ? '#00cfff' : '#1e9ebb' }}`
+                + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
                 + '.chatgpt-modal.animated > div { opacity: 1 ; transform: translateX(0) translateY(0) }'
                 + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
                     + '50% { opacity: 0.25 ; transform: scale(1.35) }'
@@ -57,25 +93,25 @@ const chatgpt = {
                 + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
                 + '.chatgpt-modal button {'
                     + 'margin-left: 10px ; padding: 4px 18px ; border-radius: 15px ;'
-                    + `border: 1px solid ${ scheme === 'dark' ? 'white' : 'black' }}`
+                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
                 + '.primary-modal-btn {'
-                    + `border: 1px solid ${ scheme === 'dark' ? 'white' : 'black' } ;`
-                    + `background: ${ scheme === 'dark' ? 'white' : 'black' } ;`
-                    + `color: ${ scheme === 'dark' ? 'black' : 'white' }}`
+                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                    + `background: ${ scheme == 'dark' ? 'white' : 'black' } ;`
+                    + `color: ${ scheme == 'dark' ? 'black' : 'white' }}`
                 + '.chatgpt-modal button:hover { color: #3d5d71 ; border-color: #6d9cb9 ;'
-                    + 'background-color: ' + ( scheme === 'dark' ? '#00cfff' : '#9cdaff' ) + ';'
-                    + 'box-shadow: 2px 1px ' + ( scheme === 'dark' ? '54px #00cfff' : '30px #9cdaff' ) + '}'
+                    + 'background-color: ' + ( scheme == 'dark' ? '#00cfff' : '#9cdaff' ) + ';'
+                    + 'box-shadow: 2px 1px ' + ( scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' ) + '}'
                 + '.modal-close-btn { cursor: pointer ; float: right ; position: relative ; right: -2px }'
 
                 /* Checkbox styles */
                 + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
                 + '.chatgpt-modal .checkbox-group label {'
                     + 'font-size: .7rem ; margin: -.04rem 0 0px .3rem ;'
-                    + `color: ${ scheme === 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
+                    + `color: ${ scheme == 'dark' ? '#e1e1e1' : '#1e1e1e' }}`
                 + '.chatgpt-modal input[type="checkbox"] { transform: scale(0.7) ;'
-                    + `border: 1px solid ${ scheme === 'dark' ? 'white' : 'black' }}`
+                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
                 + '.chatgpt-modal input[type="checkbox"]:checked {'
-                    + `border: 1px solid ${ scheme === 'dark' ? 'white' : 'black' } ;`
+                    + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
                     + 'background-color: black ; position: inherit }'
                 + '.chatgpt-modal input[type="checkbox"]:focus { outline: none ; box-shadow: none }'
             );
@@ -134,7 +170,7 @@ const chatgpt = {
 
         // Create close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = 'Close'; closeBtn.classList.add('modal-close-btn');
+        closeBtn.title = cjsMessages?.tooltip_close || 'Close'; closeBtn.classList.add('modal-close-btn');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '10px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
@@ -149,6 +185,7 @@ const chatgpt = {
         // Assemble/append div
         const modalElems = [closeBtn, modalTitle, modalMessage, modalButtons, checkboxDiv];
         modalElems.forEach((elem) => { modal.appendChild(elem); });
+        modal.style.width = `${ width || 458 }px`;
         modalContainer.appendChild(modal); document.body.appendChild(modalContainer); 
 
         // Enqueue alert
@@ -158,7 +195,7 @@ const chatgpt = {
 
         // Define handlers
         const clickHandler = event => { // explicitly defined to support removal post-dismissal
-            if (event.target === event.currentTarget || event.target instanceof SVGPathElement) dismissAlert(); };
+            if (event.target == event.currentTarget || event.target instanceof SVGPathElement) dismissAlert(); };
         const keyHandler = event => { // to dismiss active alert
             const dismissKeys = [13, 27]; // enter/esc
             if (dismissKeys.includes(event.keyCode)) {
@@ -255,9 +292,9 @@ const chatgpt = {
 
         // Create/append close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn');
+        closeBtn.title = cjsMessages?.tooltip_dismiss || 'Dismiss'; closeBtn.classList.add('notif-close-btn');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        closeSVG.setAttribute('height', '7px');
+        closeSVG.setAttribute('height', '8px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
         closeSVG.setAttribute('fill', 'none');
         const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -284,7 +321,7 @@ const chatgpt = {
                 + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;' // disable selection
                 + `transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ;` // init off-screen for transition fx
                 + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
-            + '.notif-close-btn { cursor: pointer ; float: right ; position: relative ; right: -7px ; margin-left: -3px ;'
+            + '.notif-close-btn { cursor: pointer ; float: right ; position: relative ; right: -4px ; margin-left: -3px ;'
                 + 'display: grid }' // top-align for non-OpenAI sites
             + '@keyframes notif-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }' // transition out keyframes
                 + '15% { opacity: 0.35 ; transform: rotateX(-27deg) scale(1.05) }'
@@ -330,8 +367,7 @@ const chatgpt = {
 
         // Init/schedule audio feedback
         let dismissAudio, dismissAudioTID; // be accessible to `dismissNotif()`
-        if (!/Chrome/.test(navigator.userAgent)) { // if not Chromium due to Google's hardcore stance on CSP + autoplay
-
+        if (isFFtmScript) {
             // Init base audio index
             let nthAudio; do nthAudio = Math.floor(Math.random() * 3) + 1; // randomize  between 1-3...
             while (nthAudio === notifyProps.lastNthAudio); // ...until distinct from prev index (for variety)
@@ -349,7 +385,7 @@ const chatgpt = {
         // Add notification dismissal to timeout schedule + button clicks
         const dismissNotif = () => {
             notificationDiv.style.animation = `notif-zoom-fade-out ${ fadeDuration }s ease-out`;
-            if (!/Chrome/.test(navigator.userAgent)) dismissAudio.play().catch(() => {});
+            if (isFFtmScript) dismissAudio?.play().catch(() => {});
             clearTimeout(dismissFuncTID); clearTimeout(dismissAudioTID);
         };
         const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000); // maintain visibility for `hideDelay` secs, then dismiss     
