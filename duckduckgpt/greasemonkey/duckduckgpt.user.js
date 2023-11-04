@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.3
+// @version             2023.11.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -543,6 +543,7 @@
                     reader.read().then(function processText({ done, value }) {
                         if (done) return
                         let responseItem = String.fromCharCode(...Array.from(value))
+                        if (responseItem.includes('unusual activity')) { ddgptAlert('suggestProxy') ; return }
                         const items = responseItem.split('\n\n')
                         if (items.length > 2) {
                             const lastItem = items.slice(-3, -2)[0]
@@ -646,7 +647,7 @@
             event.preventDefault()
             if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
             const prevReplyTrimmed = ddgptDiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length),
-                  yourReply = replyBox.value + ' / Answer in ' + config.replyLanguage
+                  yourReply = `${ replyBox.value } (reply in ${ config.replyLanguage })`
             if (!config.proxyAPIenabled) {
                 convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
                 convo.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [yourReply] } })
@@ -681,7 +682,7 @@
         ddgptAlert('waitingResponse')
         const hostContainer = document.querySelector(isCenteredMode() ? '[data-area*="mainline"]' : '[class*="sidebar"]')
         hostContainer.prepend(ddgptDiv, ddgptFooter)
-        const query = new URL(location.href).searchParams.get('q') + ' / Answer in ' + config.replyLanguage
+        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
         convo.push(
             config.proxyAPIenabled ? { role: 'user', content: query }
                                    : { role: 'user', id: chatgpt.uuidv4(),
