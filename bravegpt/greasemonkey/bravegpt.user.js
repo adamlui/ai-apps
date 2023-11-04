@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.4
+// @version             2023.11.4.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -485,7 +485,7 @@
                     reader.read().then(function processText({ done, value }) {
                         if (done) return
                         let responseItem = String.fromCharCode(...Array.from(value))
-                        if (responseItem.includes('unusual activity')) braveGPTalert('suggestProxy') ; return
+                        if (responseItem.includes('unusual activity')) { braveGPTalert('suggestProxy') ; return }
                         const items = responseItem.split('\n\n')
                         if (items.length > 2) {
                             const lastItem = items.slice(-3, -2)[0]
