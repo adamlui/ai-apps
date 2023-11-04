@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.4.1
+// @version             2023.11.4.2
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @match               *://*.google.com/search*
@@ -652,13 +652,46 @@
                 parent_message_id: chatgpt.uuidv4(), max_tokens: 4000 })
     }
 
+    function getRelatedQueries(query) {
+        return new Promise((resolve, reject) => {
+            const relatedQueriesQuery = 'Show a numbered list of queries related to this one:\n\n' + query
+            GM.xmlHttpRequest({
+                method: 'POST', url: endpoint, responseType: 'text',
+                headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
+                data: createPayload([
+                    config.proxyAPIenabled ? { role: 'user', content: relatedQueriesQuery }
+                                           : { role: 'user', id: chatgpt.uuidv4(),
+                                               content: { content_type: 'text', parts: [relatedQueriesQuery] }}]),
+                onload: event => {
+                    let str_relatedQueries = ''
+                    if (!config.proxyAPIenabled && event.response) {
+                        try { // to parse txt response from OpenAI API
+                            const responseParts = event.response.split('\n\n'),
+                                  finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6))
+                            str_relatedQueries = finalResponse.message.content.parts[0]
+                        } catch (err) { googleGPTconsole.error(err) ; reject(err) }
+                    } else if (config.proxyAPIenabled && event.responseText) {
+                        try { // to parse txt response from proxy API
+                            str_relatedQueries = JSON.parse(event.responseText).choices[0].message.content
+                        } catch (err) { googleGPTconsole.error(err) ; reject(err) }
+                    }
+                    const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
+                        .slice(0, 5) // limit to 1st 5
+                        .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
+                    resolve(arr_relatedQueries)
+                },
+                onerror: (err) => { googleGPTconsole.error('Related queries error: ', err) ; reject(err) }
+            })
+        })
+    }
+
     async function getShowReply(convo, callback) {
 
         // Initialize attempt properties
         if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []
         if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 0
 
-        // Get answer from ChatGPT
+        // Get/show answer from ChatGPT
         await pickAPI()
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
@@ -671,6 +704,48 @@
                     if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
                     else googleGPTalert('suggestOpenAI')
             }}
+        })
+
+        // Get/show related queries
+        getRelatedQueries(convo[convo.length - 1].content).then(relatedQueries => {
+            if (relatedQueries && googleGPTdiv.querySelector('textarea')) {
+
+                // Create/classify/append parent div
+                const relatedQueriesDiv = document.createElement('div')
+                relatedQueriesDiv.className = 'related-queries'
+                googleGPTdiv.appendChild(relatedQueriesDiv)
+
+                const clickHandler = (event) => {
+
+                    // Remove divs/listeners
+                    const relatedQueriesDiv = document.querySelector('.related-queries')
+                    Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
+                        relatedQueryDiv.removeEventListener('click', clickHandler) })
+                    relatedQueriesDiv.remove()
+
+                    // Send related query
+                    const chatbar = googleGPTdiv.querySelector('textarea')
+                    if (chatbar) {
+                        chatbar.value = event.target.textContent
+                        const enterEvent = new KeyboardEvent('keydown', {
+                            key: 'Enter', bubbles: true, cancelable: true })
+                        chatbar.dispatchEvent(enterEvent)
+                    }
+                }
+
+                // Fill each child div, add fade + listener
+                relatedQueries.forEach((relatedQuery, index) => {
+                    console.log(`index: ${ index } // ${ relatedQuery }`)
+                    const relatedQueryDiv = document.createElement('div')
+                    relatedQueryDiv.className = 'related-query fade-in'
+                    relatedQueryDiv.textContent = relatedQuery
+                    relatedQueriesDiv.appendChild(relatedQueryDiv)
+                    setTimeout(() => {
+                        relatedQueryDiv.classList.add('active')
+                        relatedQueryDiv.addEventListener('click', clickHandler)
+                    }, index * 100)
+                })
+            }
         })
 
         function responseType() {
@@ -945,6 +1020,14 @@
             + 'margin: 13px 0 15px 0 ; padding: 13px 0 2px 10px ;'
             + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' }'
         + ( isDarkMode() ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
+        + '.related-queries { display: flex ; flex-wrap: wrap }'
+        + '.related-query { font-size: 0.9em ; cursor: pointer ; padding: 8px ; margin: 4px 4px 4px 0 ;'
+            + `color: ${ isDarkMode() ? '#f2f2f2' : '#424242' } ; background: ${ isDarkMode() ? '#424242' : '#dadada70' } ;`
+            + 'border-radius: 12px 13px 12px 0 ; width: fit-content ; flex: 0 0 auto ;'
+            + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+        + '.related-query:hover { background: #a2a2a270 }'
+        + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
+        + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button { border: none ; float: right ;'
             + `position: relative ; bottom: ${ isChromium() ? 45 : 42 }px ; right: 4px ;`
             + `background: none ; color: ${ isDarkMode() ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
