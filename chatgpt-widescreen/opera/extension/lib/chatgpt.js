@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.3.13
+// This library is a condensed version of chatgpt.js v2.3.15
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -13,7 +13,7 @@ localStorage.notifyProps = JSON.stringify({
 
 // Init GM environment flags
 const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
-      isFFuserScript = navigator.userAgent.includes('Firefox') && typeof GM_info != 'undefined',
+      isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
       isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
 
 // Define messages
@@ -101,9 +101,12 @@ const chatgpt = {
                 + '.chatgpt-modal button:hover { color: #3d5d71 ; border-color: #6d9cb9 ;'
                     + 'background-color: ' + ( scheme == 'dark' ? '#00cfff' : '#9cdaff' ) + ';'
                     + 'box-shadow: 2px 1px ' + ( scheme == 'dark' ? '54px #00cfff' : '30px #9cdaff' ) + '}'
-                + '.modal-close-btn { cursor: pointer ; float: right ; position: relative ; right: -2px }'
+                + '.modal-close-btn {'
+                    + 'cursor: pointer ; width: 20px ; height: 20px ; float: right ; position: relative ; right: -2px }'
+                + '.modal-close-btn svg { margin: 5px 5px }' // center SVG for hover overlay
+                + '.modal-close-btn:hover { background-color: #dfdfdf }'
 
-                /* Checkbox styles */
+                // Checkbox styles
                 + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
                 + '.chatgpt-modal .checkbox-group label {'
                     + 'font-size: .7rem ; margin: -.04rem 0 0px .3rem ;'
@@ -238,7 +241,7 @@ const chatgpt = {
         };
 
         // Add listeners to dismiss alert
-        const dismissElems = [modalContainer, closeSVG, dismissBtn];
+        const dismissElems = [modalContainer, closeBtn, closeSVG, dismissBtn];
         dismissElems.forEach(elem => {
             elem.addEventListener('click', clickHandler); });
         document.addEventListener('keydown', keyHandler);
