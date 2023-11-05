@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Koi" },
   "menuLabel_beforeQuery": { "message": "mamua o ka ninau ana" },
   "menuLabel_afterQuery": { "message": "mahope o ka ninau" },
-  "menuLabel_showRelatedQueries": { "message": "Hōʻike i nā nīnau pili" },
   "menuLabel_replyLanguage": { "message": "Pane ʻŌlelo" },
   "menuLabel_about": { "message": "Ho‘ākāka" },
   "about_version": { "message": "Manao" },

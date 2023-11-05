@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Obavezno" },
   "menuLabel_beforeQuery": { "message": "pre upita" },
   "menuLabel_afterQuery": { "message": "nakon upita" },
-  "menuLabel_showRelatedQueries": { "message": "Prikaži povezane upite" },
   "menuLabel_replyLanguage": { "message": "Jezik odgovora" },
   "menuLabel_about": { "message": "O nama" },
   "about_version": { "message": "Verzija" },

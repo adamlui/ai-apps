@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Panginahanglan" },
   "menuLabel_beforeQuery": { "message": "sa wala pa ang pagpangutana" },
   "menuLabel_afterQuery": { "message": "human sa pangutana" },
-  "menuLabel_showRelatedQueries": { "message": "Ipakita ang May Kalabutan nga mga Pangutana" },
   "menuLabel_replyLanguage": { "message": "Tubag Pinulongan" },
   "menuLabel_about": { "message": "Mahitungod" },
   "about_version": { "message": "Bersyon:" },

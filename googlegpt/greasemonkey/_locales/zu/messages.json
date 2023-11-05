@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Kudingeka" },
   "menuLabel_beforeQuery": { "message": "ngaphambi kombuzo" },
   "menuLabel_afterQuery": { "message": "ngemva kombuzo" },
-  "menuLabel_showRelatedQueries": { "message": "Bonisa Imibuzo Ehlobene" },
   "menuLabel_replyLanguage": { "message": "Phendula Ulimi" },
   "menuLabel_about": { "message": "Mayelana" },
   "about_version": { "message": "Uhlelo" },

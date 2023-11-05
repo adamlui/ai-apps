@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "需要" },
   "menuLabel_beforeQuery": { "message": "查询前" },
   "menuLabel_afterQuery": { "message": "查询到记录后" },
-  "menuLabel_showRelatedQueries": { "message": "显示相关查询" },
   "menuLabel_replyLanguage": { "message": "回复语言" },
   "menuLabel_about": { "message": "关于" },
   "about_version": { "message": "版本" },

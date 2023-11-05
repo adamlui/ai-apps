@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "必須" },
   "menuLabel_beforeQuery": { "message": "クエリの前" },
   "menuLabel_afterQuery": { "message": "クエリの後" },
-  "menuLabel_showRelatedQueries": { "message": "関連するクエリを表示" },
   "menuLabel_replyLanguage": { "message": "返信言語" },
   "menuLabel_about": { "message": "詳細" },
   "about_version": { "message": "バージョン" },

@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Kerek" },
   "menuLabel_beforeQuery": { "message": "öňki sorag" },
   "menuLabel_afterQuery": { "message": "çykyşdan soň" },
-  "menuLabel_showRelatedQueries": { "message": "Baglanyşykly soraglar" },
   "menuLabel_replyLanguage": { "message": "Dilde jogap beriň" },
   "menuLabel_about": { "message": "_Barada" },
   "about_version": { "message": "Veržen" },

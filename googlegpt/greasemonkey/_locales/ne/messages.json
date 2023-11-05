@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "आवश्यक" },
   "menuLabel_beforeQuery": { "message": "क्वेरी अघि" },
   "menuLabel_afterQuery": { "message": "क्वेरी पछि" },
-  "menuLabel_showRelatedQueries": { "message": "सम्बन्धित प्रश्नहरू देखाउनुहोस्" },
   "menuLabel_replyLanguage": { "message": "जवाफ भाषा" },
   "menuLabel_about": { "message": "बारेमा" },
   "about_version": { "message": "संस्करण " },

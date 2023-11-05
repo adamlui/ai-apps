@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Nesesidat" },
   "menuLabel_beforeQuery": { "message": "pre-escucha Query" },
   "menuLabel_afterQuery": { "message": "despues di a pidi" },
-  "menuLabel_showRelatedQueries": { "message": "Pregunta Relacionada" },
   "menuLabel_replyLanguage": { "message": "Idioma Responsivo" },
   "menuLabel_about": { "message": "About About" },
   "about_version": { "message": "Vershon" },

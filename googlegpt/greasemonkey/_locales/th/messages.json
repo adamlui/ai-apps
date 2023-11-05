@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "ต้องกรอก" },
   "menuLabel_beforeQuery": { "message": "ก่อนการสอบถาม" },
   "menuLabel_afterQuery": { "message": "หลังการสอบถาม" },
-  "menuLabel_showRelatedQueries": { "message": "แสดงคำค้นหาที่เกี่ยวข้อง" },
   "menuLabel_replyLanguage": { "message": "ตอบกลับภาษา" },
   "menuLabel_about": { "message": "เกี่ยวกับ" },
   "about_version": { "message": "เวอร์ชัน" },

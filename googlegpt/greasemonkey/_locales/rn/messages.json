@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Ibisabwa" },
   "menuLabel_beforeQuery": { "message": "imbere yo kubaza ibibazo" },
   "menuLabel_afterQuery": { "message": "inyuma y'ikibazo" },
-  "menuLabel_showRelatedQueries": { "message": "Erekana ibibazo bifitaniye isano" },
   "menuLabel_replyLanguage": { "message": "Musubize Ururimi" },
   "menuLabel_about": { "message": "Ku vyerekeye" },
   "about_version": { "message": "Traduzione" },

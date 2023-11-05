@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Gerekli" },
   "menuLabel_beforeQuery": { "message": "Sorgudan Önce" },
   "menuLabel_afterQuery": { "message": "sorgudan sonra" },
-  "menuLabel_showRelatedQueries": { "message": "İlgili Sorguları Göster" },
   "menuLabel_replyLanguage": { "message": "Cevap Dili" },
   "menuLabel_about": { "message": "Hakkımızda" },
   "about_version": { "message": "Versiyon" },

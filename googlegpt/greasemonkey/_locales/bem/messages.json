@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Ifingakwafwa" },
   "menuLabel_beforeQuery": { "message": "ilyo tushilaipusha" },
   "menuLabel_afterQuery": { "message": "pa numa ya kwipusha" },
-  "menuLabel_showRelatedQueries": { "message": "Ipusheni ifipusho ifikumine" },
   "menuLabel_replyLanguage": { "message": "Reply Ludimi lwa Tumama" },
   "menuLabel_about": { "message": "pafya" },
   "about_version": { "message": "Ukupilibula" },

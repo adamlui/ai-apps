@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Obligatorio" },
   "menuLabel_beforeQuery": { "message": "antes de la consulta" },
   "menuLabel_afterQuery": { "message": "DespuÃ©s de la Ãºltima consulta: " },
-  "menuLabel_showRelatedQueries": { "message": "Mostrar consultas relacionadas" },
   "menuLabel_replyLanguage": { "message": "Idioma de respuesta" },
   "menuLabel_about": { "message": "Acerca de" },
   "about_version": { "message": "Versión" },

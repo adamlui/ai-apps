@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "ຮຽກຮ້ອງຕ້ອງການ" },
   "menuLabel_beforeQuery": { "message": "ກ່ອນການສອບຖາມ" },
   "menuLabel_afterQuery": { "message": "ຫຼັງຈາກການສອບຖາມ" },
-  "menuLabel_showRelatedQueries": { "message": "ສະແດງຄຳຖາມທີ່ກ່ຽວຂ້ອງ" },
   "menuLabel_replyLanguage": { "message": "ຕອບສະໜອງພາສາ" },
   "menuLabel_about": { "message": "ກ່ຽວກັບ" },
   "about_version": { "message": "ຮຸ່ນ" },

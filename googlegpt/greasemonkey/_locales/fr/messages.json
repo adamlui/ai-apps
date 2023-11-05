@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Requis" },
   "menuLabel_beforeQuery": { "message": "avant la requête" },
   "menuLabel_afterQuery": { "message": "après la requête" },
-  "menuLabel_showRelatedQueries": { "message": "Afficher les requêtes associées" },
   "menuLabel_replyLanguage": { "message": "Langue de réponse" },
   "menuLabel_about": { "message": "À propos de" },
   "about_version": { "message": "Version" },

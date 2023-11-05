@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Require" },
   "menuLabel_beforeQuery": { "message": "before query" },
   "menuLabel_afterQuery": { "message": "after query" },
-  "menuLabel_showRelatedQueries": { "message": "సంబంధిత ప్రశ్నలను చూపించండి" },
   "menuLabel_replyLanguage": { "message": "Reply Language" },
   "menuLabel_about": { "message": "About" },
   "about_version": { "message": "Version" },

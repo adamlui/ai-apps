@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "ZVINODZIDZA" },
   "menuLabel_beforeQuery": { "message": "pamberi nomubvunzo" },
   "menuLabel_afterQuery": { "message": "pashure query" },
-  "menuLabel_showRelatedQueries": { "message": "Ratidza Mibvunzo Yakabatana" },
   "menuLabel_replyLanguage": { "message": "Pindura Mutauro" },
   "menuLabel_about": { "message": "Nezvedu" },
   "about_version": { "message": "Vhezheni" },

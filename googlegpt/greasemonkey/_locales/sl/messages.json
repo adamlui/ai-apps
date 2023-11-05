@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Zahtevaj" },
   "menuLabel_beforeQuery": { "message": "pred poizvedbo" },
   "menuLabel_afterQuery": { "message": "po poizvedbi" },
-  "menuLabel_showRelatedQueries": { "message": "Prikaži povezane poizvedbe" },
   "menuLabel_replyLanguage": { "message": "Jezik odgovora" },
   "menuLabel_about": { "message": "Vizitka" },
   "about_version": { "message": "Različica" },

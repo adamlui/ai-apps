@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "આવશ્યક" },
   "menuLabel_beforeQuery": { "message": "ક્વેરી પહેલાં" },
   "menuLabel_afterQuery": { "message": "ક્વેરી પછી" },
-  "menuLabel_showRelatedQueries": { "message": "સંબંધિત પ્રશ્નો બતાવો" },
   "menuLabel_replyLanguage": { "message": "જવાબની ભાષા" },
   "menuLabel_about": { "message": "માહિતી " },
   "about_version": { "message": "આવૃત્તિ" },

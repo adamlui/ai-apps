@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "E a batlega" },
   "menuLabel_beforeQuery": { "message": "pele ga QUERY" },
   "menuLabel_afterQuery": { "message": "after query" },
-  "menuLabel_showRelatedQueries": { "message": "SHOW Related Queries" },
   "menuLabel_replyLanguage": { "message": "Karabo ya Puo" },
   "menuLabel_about": { "message": "Kaga" },
   "about_version": { "message": "VERSION" },

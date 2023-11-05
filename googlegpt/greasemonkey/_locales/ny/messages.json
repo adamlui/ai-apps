@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Zofunika" },
   "menuLabel_beforeQuery": { "message": "musanafunse" },
   "menuLabel_afterQuery": { "message": "pambuyo kufunsa" },
-  "menuLabel_showRelatedQueries": { "message": "Onetsani Mafunso Okhudzana" },
   "menuLabel_replyLanguage": { "message": "Yankhani Chilankhulo" },
   "menuLabel_about": { "message": "Zokhudza" },
   "about_version": { "message": "Lumikizanani nafe" },

@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Privalomas laukas" },
   "menuLabel_beforeQuery": { "message": "prieš užklausą" },
   "menuLabel_afterQuery": { "message": "po užklausos" },
-  "menuLabel_showRelatedQueries": { "message": "Rodyti susijusias užklausas" },
   "menuLabel_replyLanguage": { "message": "Atsakymo kalba" },
   "menuLabel_about": { "message": "Apie" },
   "about_version": { "message": "Versija" },

@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Vyžadovat" },
   "menuLabel_beforeQuery": { "message": "před dotazem" },
   "menuLabel_afterQuery": { "message": "po dotazu" },
-  "menuLabel_showRelatedQueries": { "message": "Zobrazit související dotazy" },
   "menuLabel_replyLanguage": { "message": "Jazyk odpovědi" },
   "menuLabel_about": { "message": "O" },
   "about_version": { "message": "Verze" },

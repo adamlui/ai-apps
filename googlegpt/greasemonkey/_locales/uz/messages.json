@@ -5,7 +5,6 @@
   "menuLabel_require": { "message": "Talab qilish" },
   "menuLabel_beforeQuery": { "message": "so&#39;rovdan oldin" },
   "menuLabel_afterQuery": { "message": "so&#39;rovdan keyin" },
-  "menuLabel_showRelatedQueries": { "message": "Tegishli so&#39;rovlarni ko&#39;rsatish" },
   "menuLabel_replyLanguage": { "message": "Javob berish tili" },
   "menuLabel_about": { "message": "Qisqacha ma'lumot" },
   "about_version": { "message": "Versiya" },
