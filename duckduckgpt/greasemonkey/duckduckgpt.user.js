@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.10
+// @version             2023.11.5.11
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -570,9 +570,7 @@
                 chatbar.value = event.target.textContent
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
                     key: 'Enter', bubbles: true, cancelable: true }))
-            }
-        }
-    }
+    }}}
 
     async function getShowReply(convo, callback) {
 
@@ -755,6 +753,16 @@
             // Remove listeners since they're re-added
             chatbar.removeEventListener('input', autosizeChatbar)
             chatbar.removeEventListener('keydown', handleEnter)
+
+            // Remove related queries
+            try {
+                const relatedQueriesDiv = document.querySelector('.related-queries')
+                Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
+                    relatedQueryDiv.removeEventListener('click', rqEventHandler)
+                    relatedQueryDiv.removeEventListener('keydown', rqEventHandler)
+                })
+                relatedQueriesDiv.remove()
+            } catch (err) {}
 
             // Show loading status
             const replySection = ddgptDiv.querySelector('section')
