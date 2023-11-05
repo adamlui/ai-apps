@@ -202,7 +202,7 @@
         const chatbar = site == 'poe' ? document.querySelector('div[class*="ChatMessageInputContainer"]')
                                       : document.querySelector('form button[class*="bottom"]').parentNode;
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
-        const leftMostBtn = chatbar.querySelector('button')
+        const leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : ''))
         chatbar.insertBefore(leftMostBtn, chatbar.lastChild) // elevate to chatbar if nested
         chatbar.insertBefore(newChatButton, leftMostBtn)
         chatbar.insertBefore(wideScreenButton, leftMostBtn)
