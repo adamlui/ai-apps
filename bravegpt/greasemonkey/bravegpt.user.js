@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.4.2
+// @version             2023.11.4.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -220,7 +220,7 @@
         const pamLabel = state.symbol[+!config.proxyAPIenabled]
                        + ' ' + messages.menuLabel_proxyAPImode + ' '
                        + state.separator + state.word[+!config.proxyAPIenabled]
-        menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(pamLabel, () => {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify(messages.menuLabel_proxyAPImode + ' ' + state.word[+!config.proxyAPIenabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -232,7 +232,7 @@
                       + messages.menuLabel_require + ' "/" '
                       + messages.menuLabel_beforeQuery + ' '
                       + state.separator + state.word[+!config.prefixEnabled]
-        menuIDs.push(GM_registerMenuCommand(pmLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(pmLabel, () => {
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
@@ -246,7 +246,7 @@
                       + messages.menuLabel_require + ' "?" '
                       + messages.menuLabel_afterQuery + ' '
                       + state.separator + state.word[+!config.suffixEnabled]
-        menuIDs.push(GM_registerMenuCommand(smLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(smLabel, () => {
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
