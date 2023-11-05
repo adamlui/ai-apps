@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.4.3
+// @version             2023.11.4.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -548,7 +548,7 @@
     }
 
     function braveGPTshow(answer) {
-        braveGPTdiv.innerHTML = `<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank" rel="noopener">BraveGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre><section style="margin-bottom: -10px"><form><div class="continue-chat"><textarea id="bravegpt-reply-box" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="${ messages.tooltip_sendReply }" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
+        braveGPTdiv.innerHTML = `<span class="prefix">🤖  <a href="https://www.bravegpt.com" target="_blank" rel="noopener">BraveGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://www.kudoai.com" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre><section style="margin-bottom: -10px"><form><div class="continue-chat"><textarea id="bravegpt-reply-box" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="${ messages.tooltip_sendReply }" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
         braveGPTdiv.querySelector('pre').textContent = answer
         fillBraveGPTfooter() ; braveGPTfooter.style.height = 'inherit' // (re-)init (after loading replies)
         braveGPTdiv.appendChild(braveGPTfooter) // append feedback link
