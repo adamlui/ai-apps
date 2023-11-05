@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.4.4
+// @version             2023.11.4.5
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @match               *://*.google.com/search*
@@ -439,7 +439,7 @@
         const pamLabel = state.symbol[+!config.proxyAPIenabled]
                        + ' ' + messages.menuLabel_proxyAPImode + ' '
                        + state.separator + state.word[+!config.proxyAPIenabled]
-        menuIDs.push(GM_registerMenuCommand(pamLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(pamLabel, () => {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify(messages.menuLabel_proxyAPImode + ' ' + state.word[+!config.proxyAPIenabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -451,7 +451,7 @@
                       + messages.menuLabel_require + ' "/" '
                       + messages.menuLabel_beforeQuery + ' '
                       + state.separator + state.word[+!config.prefixEnabled]
-        menuIDs.push(GM_registerMenuCommand(pmLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(pmLabel, () => {
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
@@ -465,13 +465,27 @@
                       + messages.menuLabel_require + ' "?" '
                       + messages.menuLabel_afterQuery + ' '
                       + state.separator + state.word[+!config.suffixEnabled]
-        menuIDs.push(GM_registerMenuCommand(smLabel, function() {
+        menuIDs.push(GM_registerMenuCommand(smLabel, () => {
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
             notify(messages.mode_suffix + ' ' + state.word[+!config.suffixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
+        }))
+
+        // Add command to toggle showing related queries
+        const rqLabel = state.symbol[+config.relatedQueriesDisabled] + ' '
+                      + `${ messages.menuLabel_show } ${ messages.menuLabel_relatedQueries } `
+                      + state.separator + state.word[+config.relatedQueriesDisabled]
+        menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
+            saveSetting('relatedQueriesDisabled', !config.relatedQueriesDisabled)
+            try { // to update visibility based on latest setting
+                const relatedQueriesDiv = document.querySelector('.related-queries')
+                relatedQueriesDiv.style.display = config.relatedQueriesDisabled ? 'none' : 'flex'
+            } catch (err) {}
+            notify(messages.menuLabel_relatedQueries + ' ' + state.word[+config.relatedQueriesDisabled])
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to set reply language
@@ -707,46 +721,47 @@
         })
 
         // Get/show related queries
-        getRelatedQueries(convo[convo.length - 1].content).then(relatedQueries => {
-            if (relatedQueries && googleGPTdiv.querySelector('textarea')) {
+        if (!config.relatedQueriesDisabled) {
+            getRelatedQueries(convo[convo.length - 1].content).then(relatedQueries => {
+                console.log('related queries fetched')
+                if (relatedQueries && googleGPTdiv.querySelector('textarea')) {
 
-                // Create/classify/append parent div
-                const relatedQueriesDiv = document.createElement('div')
-                relatedQueriesDiv.className = 'related-queries'
-                googleGPTdiv.appendChild(relatedQueriesDiv)
+                    // Create/classify/append parent div
+                    const relatedQueriesDiv = document.createElement('div')
+                    relatedQueriesDiv.className = 'related-queries'
+                    googleGPTdiv.appendChild(relatedQueriesDiv)
 
-                const clickHandler = (event) => {
+                    const clickHandler = (event) => {
 
-                    // Remove divs/listeners
-                    const relatedQueriesDiv = document.querySelector('.related-queries')
-                    Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                        relatedQueryDiv.removeEventListener('click', clickHandler) })
-                    relatedQueriesDiv.remove()
+                        // Remove divs/listeners
+                        const relatedQueriesDiv = document.querySelector('.related-queries')
+                        Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
+                            relatedQueryDiv.removeEventListener('click', clickHandler) })
+                        relatedQueriesDiv.remove()
 
-                    // Send related query
-                    const chatbar = googleGPTdiv.querySelector('textarea')
-                    if (chatbar) {
-                        chatbar.value = event.target.textContent
-                        const enterEvent = new KeyboardEvent('keydown', {
-                            key: 'Enter', bubbles: true, cancelable: true })
-                        chatbar.dispatchEvent(enterEvent)
+                        // Send related query
+                        const chatbar = googleGPTdiv.querySelector('textarea')
+                        if (chatbar) {
+                            chatbar.value = event.target.textContent
+                            const enterEvent = new KeyboardEvent('keydown', {
+                                key: 'Enter', bubbles: true, cancelable: true })
+                            chatbar.dispatchEvent(enterEvent)
+                        }
                     }
-                }
 
-                // Fill each child div, add fade + listener
-                relatedQueries.forEach((relatedQuery, index) => {
-                    console.log(`index: ${ index } // ${ relatedQuery }`)
-                    const relatedQueryDiv = document.createElement('div')
-                    relatedQueryDiv.className = 'related-query fade-in'
-                    relatedQueryDiv.textContent = relatedQuery
-                    relatedQueriesDiv.appendChild(relatedQueryDiv)
-                    setTimeout(() => {
-                        relatedQueryDiv.classList.add('active')
-                        relatedQueryDiv.addEventListener('click', clickHandler)
-                    }, index * 100)
-                })
-            }
-        })
+                    // Fill each child div, add fade + listener
+                    relatedQueries.forEach((relatedQuery, index) => {
+                        const relatedQueryDiv = document.createElement('div')
+                        relatedQueryDiv.title = messages.tooltip_sendRelatedQuery
+                        relatedQueryDiv.className = 'related-query fade-in'
+                        relatedQueryDiv.textContent = relatedQuery
+                        relatedQueriesDiv.appendChild(relatedQueryDiv)
+                        setTimeout(() => {
+                            relatedQueryDiv.classList.add('active')
+                            relatedQueryDiv.addEventListener('click', clickHandler)
+                        }, index * 100)
+                    })
+        }})}
 
         function responseType() {
             return (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') ? 'stream' : 'text' }
@@ -829,7 +844,7 @@
     }
 
     function googleGPTshow(answer) {
-        googleGPTdiv.innerHTML = `<p><span class="prefix">🤖  <a href="https://googlegpt.kudoai.com" target="_blank" rel="noopener">GoogleGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="googlegpt-reply-box" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="${ messages.tooltip_sendReply }" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
+        googleGPTdiv.innerHTML = `<p><span class="prefix">🤖  <a href="https://googlegpt.kudoai.com" target="_blank" rel="noopener">GoogleGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://www.kudoai.com" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="googlegpt-reply-box" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="${ messages.tooltip_sendReply }" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
         googleGPTdiv.querySelector('pre').textContent = answer
 
         // Render math
@@ -934,7 +949,7 @@
     config.updateURL = config.greasyForkURL + '/code/googlegpt.meta.js'
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('proxyAPIenabled', 'prefixEnabled', 'replyLanguage', 'suffixEnabled')
+    loadSetting('proxyAPIenabled', 'prefixEnabled', 'relatedQueriesDisabled', 'replyLanguage', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = []
 
@@ -1015,8 +1030,8 @@
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
             + ( isDarkMode() ? '#3a3a3a' : '#eaeaea' ) + ' }'
         + '.continue-chat > textarea {'
-            + 'border: none ; border-radius: 12px 13px 12px 0 ;'
-            + 'height: 1.55rem ; width: 97.6% ; max-height: 200px ; resize: none ;'
+            + `border: solid 1px ${ isDarkMode() ? '#aaa' : 'lightgrey' } ; border-radius: 12px 13px 12px 0 ;`
+            + 'height: 1.55rem ; width: 96.2% ; max-height: 200px ; resize: none ;'
             + 'margin: 13px 0 15px 0 ; padding: 13px 0 2px 10px ;'
             + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' }'
         + ( isDarkMode() ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
@@ -1029,7 +1044,7 @@
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button { border: none ; float: right ;'
-            + `position: relative ; bottom: ${ isChromium() ? 45 : 42 }px ; right: 4px ;`
+            + `position: relative ; bottom: ${ isChromium() ? 50 : 42 }px ; right: 4px ;`
             + `background: none ; color: ${ isDarkMode() ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.send-button:hover { color: ${ isDarkMode() ? 'white' : 'black' } }`
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
