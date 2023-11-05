@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.9
+// @version             2023.11.5.10
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -552,20 +552,25 @@
             })
     })}
 
-    function rqClickHandler(event) { // for addition/removal in `getShowReply()` + `ddgptShow(answer).handleSubmit()`
+    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `ddgptShow(answer).handleSubmit()`
+        if ([' ', 'Enter'].includes(event.key) || event.type == 'click') {
+            event.preventDefault() // prevent scroll on space taps
 
-        // Remove divs/listeners
-        const relatedQueriesDiv = document.querySelector('.related-queries')
-        Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-            relatedQueryDiv.removeEventListener('click', rqClickHandler) })
-        relatedQueriesDiv.remove()
+            // Remove divs/listeners
+            const relatedQueriesDiv = document.querySelector('.related-queries')
+            Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
+                relatedQueryDiv.removeEventListener('click', rqEventHandler)
+                relatedQueryDiv.removeEventListener('keydown', rqEventHandler)
+            })
+            relatedQueriesDiv.remove()
 
-        // Send related query
-        const chatbar = ddgptDiv.querySelector('textarea')
-        if (chatbar) {
-            chatbar.value = event.target.textContent
-            chatbar.dispatchEvent(new KeyboardEvent('keydown', {
-                key: 'Enter', bubbles: true, cancelable: true }))
+            // Send related query
+            const chatbar = ddgptDiv.querySelector('textarea')
+            if (chatbar) {
+                chatbar.value = event.target.textContent
+                chatbar.dispatchEvent(new KeyboardEvent('keydown', {
+                    key: 'Enter', bubbles: true, cancelable: true }))
+            }
         }
     }
 
@@ -600,16 +605,18 @@
                     relatedQueriesDiv.className = 'related-queries'
                     ddgptDiv.appendChild(relatedQueriesDiv)
 
-                    // Fill each child div, add fade + listener
+                    // Fill each child div, add fade + tabindex + listener
                     relatedQueries.forEach((relatedQuery, index) => {
                         const relatedQueryDiv = document.createElement('div')
                         relatedQueryDiv.title = messages.tooltip_sendRelatedQuery
                         relatedQueryDiv.className = 'related-query fade-in'
+                        relatedQueryDiv.setAttribute('tabindex', 0)
                         relatedQueryDiv.textContent = relatedQuery
                         relatedQueriesDiv.appendChild(relatedQueryDiv)
                         setTimeout(() => {
                             relatedQueryDiv.classList.add('active')
-                            relatedQueryDiv.addEventListener('click', rqClickHandler)
+                            relatedQueryDiv.addEventListener('click', rqEventHandler)
+                            relatedQueryDiv.addEventListener('keydown', rqEventHandler)
                         }, index * 100)
                     })
         }})}
