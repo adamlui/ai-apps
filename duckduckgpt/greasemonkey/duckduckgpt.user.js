@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.11
+// @version             2023.11.5.12
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -270,7 +270,7 @@
 
         // Add command to toggle showing related queries
         const rqLabel = state.symbol[+config.relatedQueriesDisabled] + ' '
-                      + `${ messages.menuLabel_show } ${ messages.menuLabel_relatedQueries } `
+                      + messages.menuLabel_relatedQueries + ' '
                       + state.separator + state.word[+config.relatedQueriesDisabled]
         menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
             saveSetting('relatedQueriesDisabled', !config.relatedQueriesDisabled)
