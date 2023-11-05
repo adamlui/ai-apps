@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.2
+// @version             2023.11.5.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -227,6 +227,20 @@
             location.reload() // re-send query using new endpoint
         }))
 
+        // Add command to toggle showing related queries
+        const rqLabel = state.symbol[+config.relatedQueriesDisabled] + ' '
+                      + `${ messages.menuLabel_show } ${ messages.menuLabel_relatedQueries } `
+                      + state.separator + state.word[+config.relatedQueriesDisabled]
+        menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
+            saveSetting('relatedQueriesDisabled', !config.relatedQueriesDisabled)
+            try { // to update visibility based on latest setting
+                const relatedQueriesDiv = document.querySelector('.related-queries')
+                relatedQueriesDiv.style.display = config.relatedQueriesDisabled ? 'none' : 'flex'
+            } catch (err) {}
+            notify(messages.menuLabel_relatedQueries + ' ' + state.word[+config.relatedQueriesDisabled])
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
         // Add command to toggle prefix mode
         const pmLabel = state.symbol[+!config.prefixEnabled] + ' '
                       + messages.menuLabel_require + ' "/" '
@@ -253,20 +267,6 @@
             notify(messages.mode_suffix + ' ' + state.word[+!config.suffixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
-        }))
-
-        // Add command to toggle showing related queries
-        const rqLabel = state.symbol[+config.relatedQueriesDisabled] + ' '
-                      + `${ messages.menuLabel_show } ${ messages.menuLabel_relatedQueries } `
-                      + state.separator + state.word[+config.relatedQueriesDisabled]
-        menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
-            saveSetting('relatedQueriesDisabled', !config.relatedQueriesDisabled)
-            try { // to update visibility based on latest setting
-                const relatedQueriesDiv = document.querySelector('.related-queries')
-                relatedQueriesDiv.style.display = config.relatedQueriesDisabled ? 'none' : 'flex'
-            } catch (err) {}
-            notify(messages.menuLabel_relatedQueries + ' ' + state.word[+config.relatedQueriesDisabled])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to set reply language
