@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5
+// @version             2023.11.5.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -607,7 +607,7 @@
     }
 
     function ddgptShow(answer) {
-        ddgptDiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank" rel="noopener">DuckDuckGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="ddgpt-reply-box" rows="1" placeholder="Send reply..."></textarea></div></form></section>'
+        ddgptDiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank" rel="noopener">DuckDuckGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://github.com/kudoai" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="ddgpt-chatbar" rows="1" placeholder="Send reply..."></textarea></div></form></section>'
         ddgptDiv.querySelector('pre').textContent = answer
 
         // Render math
@@ -629,14 +629,14 @@
 
         // Init variables for listeners
         const form = ddgptDiv.querySelector('form'),
-              replyBox = document.getElementById('ddgpt-reply-box'),
-              { paddingTop, paddingBottom } = getComputedStyle(replyBox),
+              chatbar = document.getElementById('ddgpt-chatbar'),
+              { paddingTop, paddingBottom } = getComputedStyle(chatbar),
               vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
-        let prevLength = replyBox.value.length
+        let prevLength = chatbar.value.length
 
         // Add listeners
         form.addEventListener('keydown', handleEnter)
-        replyBox.addEventListener('input', autosizeBox)
+        chatbar.addEventListener('input', autosizeChatbar)
 
         function handleEnter(event) {
             if (event.key === 'Enter' && !event.shiftKey && event.target.nodeName === 'TEXTAREA')
@@ -646,8 +646,8 @@
         function handleSubmit(event) {
             event.preventDefault()
             if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
-            const prevReplyTrimmed = ddgptDiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length),
-                  yourReply = `${ replyBox.value } (reply in ${ config.replyLanguage })`
+            const prevReplyTrimmed = ddgptDiv.querySelector('pre').textContent.substring(0, 250 - chatbar.value.length),
+                  yourReply = `${ chatbar.value } (reply in ${ config.replyLanguage })`
             if (!config.proxyAPIenabled) {
                 convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
                 convo.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [yourReply] } })
@@ -657,8 +657,8 @@
             } getShowReply(convo)
 
             // Remove listeners since they're re-added
-            replyBox.removeEventListener('input', autosizeBox)
-            replyBox.removeEventListener('keydown', handleEnter)
+            chatbar.removeEventListener('input', autosizeChatbar)
+            chatbar.removeEventListener('keydown', handleEnter)
 
             // Show loading status
             const replySection = ddgptDiv.querySelector('section')
@@ -666,14 +666,14 @@
             replySection.innerHTML = ddgptAlerts.waitingResponse
         }
 
-        function autosizeBox() {
-            const newLength = replyBox.value.length
+        function autosizeChatbar() {
+            const newLength = chatbar.value.length
             if (newLength < prevLength) { // if deleting txt
-                replyBox.style.height = 'auto' // ...auto-fit height
-                if (parseInt(getComputedStyle(replyBox).height) < 35) { // if down to one line
-                    replyBox.style.height = '1.55rem' } // ...reset to original height
+                chatbar.style.height = 'auto' // ...auto-fit height
+                if (parseInt(getComputedStyle(chatbar).height) < 35) { // if down to one line
+                    chatbar.style.height = '1.55rem' } // ...reset to original height
             }
-            replyBox.style.height = replyBox.scrollHeight - vOffset + 'px'
+            chatbar.style.height = chatbar.scrollHeight - vOffset + 'px'
             prevLength = newLength
         }
     }
