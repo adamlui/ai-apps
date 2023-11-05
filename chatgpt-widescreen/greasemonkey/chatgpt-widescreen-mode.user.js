@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.4
+// @version             2023.11.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -492,7 +492,7 @@
                         : site === 'aivvm' ? document.querySelector('svg[class*="send"]').parentNode.parentNode
                         : document.querySelector('form button[class*="bottom"]').parentNode )
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
-        const leftMostBtn = chatbar.querySelector('button' + ( site === 'aivvm' ? '[class*="right"]' : ''))
+        const leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : ''))
         chatbar.insertBefore(leftMostBtn, chatbar.lastChild) // elevate to chatbar if nested
         chatbar.insertBefore(newChatButton, leftMostBtn)
         chatbar.insertBefore(wideScreenButton, leftMostBtn)
