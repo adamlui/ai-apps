@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.5
+// @version             2023.11.5.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -666,7 +666,7 @@
         // Add listeners
         form.addEventListener('keydown', handleEnter)
         form.addEventListener('submit', handleSubmit)
-        chatbar.addEventListener('input', autosizeBox)
+        chatbar.addEventListener('input', autosizeChatbar)
 
         function handleEnter(event) {
             if (event.key === 'Enter' && !event.shiftKey && event.target.nodeName === 'TEXTAREA')
@@ -687,7 +687,7 @@
             } getShowReply(convo)
 
             // Remove listeners since they're re-added
-            chatbar.removeEventListener('input', autosizeBox)
+            chatbar.removeEventListener('input', autosizeChatbar)
             form.removeEventListener('submit', handleSubmit)
             chatbar.removeEventListener('keydown', handleEnter)
 
@@ -698,7 +698,7 @@
             braveGPTfooter.innerHTML = '' ; braveGPTfooter.style.height = '32px'
         }
 
-        function autosizeBox() {
+        function autosizeChatbar() {
             const newLength = chatbar.value.length
             if (newLength < prevLength) { // if deleting txt
                 chatbar.style.height = 'auto' // ...auto-fit height
