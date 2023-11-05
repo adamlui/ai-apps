@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.7
+// @version             2023.11.5.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -266,6 +266,20 @@
             notify(messages.menuLabel_proxyAPImode + ' ' + state.word[+!config.proxyAPIenabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             location.reload() // re-send query using new endpoint
+        }))
+
+        // Add command to toggle showing related queries
+        const rqLabel = state.symbol[+config.relatedQueriesDisabled] + ' '
+                      + `${ messages.menuLabel_show } ${ messages.menuLabel_relatedQueries } `
+                      + state.separator + state.word[+config.relatedQueriesDisabled]
+        menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
+            saveSetting('relatedQueriesDisabled', !config.relatedQueriesDisabled)
+            try { // to update visibility based on latest setting
+                const relatedQueriesDiv = document.querySelector('.related-queries')
+                relatedQueriesDiv.style.display = config.relatedQueriesDisabled ? 'none' : 'flex'
+            } catch (err) {}
+            notify(messages.menuLabel_relatedQueries + ' ' + state.word[+config.relatedQueriesDisabled])
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle prefix mode
@@ -403,7 +417,9 @@
 
     // Define DDG UI functions
 
+    function isChromium() { return navigator.userAgent.includes('Chrome') }
     function isCenteredMode() { return document.querySelector('html').classList.toString().includes('center') }
+
     function isDarkMode() {
         return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
             || document.documentElement.classList.toString().includes('dark')
@@ -504,13 +520,62 @@
                 parent_message_id: chatgpt.uuidv4(), max_tokens: 4000 })
     }
 
+    function getRelatedQueries(query) {
+        return new Promise((resolve, reject) => {
+            const relatedQueriesQuery = 'Show a numbered list of queries related to this one:\n\n' + query
+            GM.xmlHttpRequest({
+                method: 'POST', url: endpoint, responseType: 'text',
+                headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
+                data: createPayload([
+                    config.proxyAPIenabled ? { role: 'user', content: relatedQueriesQuery }
+                                           : { role: 'user', id: chatgpt.uuidv4(),
+                                               content: { content_type: 'text', parts: [relatedQueriesQuery] }}]),
+                onload: event => {
+                    let str_relatedQueries = ''
+                    if (!config.proxyAPIenabled && event.response) {
+                        try { // to parse txt response from OpenAI API
+                            const responseParts = event.response.split('\n\n'),
+                                  finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6))
+                            str_relatedQueries = finalResponse.message.content.parts[0]
+                        } catch (err) { ddgptConsole.error(err) ; reject(err) }
+                    } else if (config.proxyAPIenabled && event.responseText) {
+                        try { // to parse txt response from proxy API
+                            str_relatedQueries = JSON.parse(event.responseText).choices[0].message.content
+                        } catch (err) { ddgptConsole.error(err) ; reject(err) }
+                    }
+                    const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
+                        .slice(0, 5) // limit to 1st 5
+                        .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
+                    resolve(arr_relatedQueries)
+                },
+                onerror: err => { ddgptConsole.error(err) ; reject(err) }
+            })
+    })}
+
+    function rqClickHandler(event) { // for addition/removal in `getShowReply()` + `ddgptShow(answer).handleSubmit()`
+
+        // Remove divs/listeners
+        const relatedQueriesDiv = document.querySelector('.related-queries')
+        Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
+            relatedQueryDiv.removeEventListener('click', rqClickHandler) })
+        relatedQueriesDiv.remove()
+
+        // Send related query
+        const chatbar = ddgptDiv.querySelector('textarea')
+        if (chatbar) {
+            chatbar.value = event.target.textContent
+            chatbar.dispatchEvent(new KeyboardEvent('keydown', {
+                key: 'Enter', bubbles: true, cancelable: true }))
+        }
+    }
+
     async function getShowReply(convo, callback) {
 
         // Initialize attempt properties
         if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []
         if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 0
 
-        // Get answer from ChatGPT
+        // Get/show answer from ChatGPT
         await pickAPI()
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
@@ -524,6 +589,30 @@
                     else ddgptAlert('suggestOpenAI')
             }}
         })
+
+        // Get/show related queries
+        if (!config.relatedQueriesDisabled) {
+            getRelatedQueries(convo[convo.length - 1].content).then(relatedQueries => {
+                if (relatedQueries && ddgptDiv.querySelector('textarea')) {
+
+                    // Create/classify/append parent div
+                    const relatedQueriesDiv = document.createElement('div')
+                    relatedQueriesDiv.className = 'related-queries'
+                    ddgptDiv.appendChild(relatedQueriesDiv)
+
+                    // Fill each child div, add fade + listener
+                    relatedQueries.forEach((relatedQuery, index) => {
+                        const relatedQueryDiv = document.createElement('div')
+                        relatedQueryDiv.title = messages.tooltip_sendRelatedQuery
+                        relatedQueryDiv.className = 'related-query fade-in'
+                        relatedQueryDiv.textContent = relatedQuery
+                        relatedQueriesDiv.appendChild(relatedQueryDiv)
+                        setTimeout(() => {
+                            relatedQueryDiv.classList.add('active')
+                            relatedQueryDiv.addEventListener('click', rqClickHandler)
+                        }, index * 100)
+                    })
+        }})}
 
         function responseType() {
             return (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') ? 'stream' : 'text' }
@@ -708,7 +797,7 @@
     config.updateURL = config.greasyForkURL + '/code/duckduckgpt.meta.js'
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('proxyAPIenabled', 'prefixEnabled', 'replyLanguage', 'fatterSidebar', 'suffixEnabled')
+    loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled', 'replyLanguage', 'fatterSidebar', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = []
 
@@ -797,6 +886,16 @@
             + 'height: 1.55rem ; width: 94.6% ; max-height: 200px ;resize: none ; '
             + 'margin: 3px 0 15px 0 ; padding: 9px 10px 5px 10px ; '
             + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' } '
+        + `.related-queries { display: flex ; flex-wrap: wrap ; margin: ${ isChromium() ? -7 : -3 }px 0 7px }`
+        + '.related-query { font-size: 0.93em ; cursor: pointer ; padding: 8px ; margin: 4px 4px 4px 0 ;'
+            + `color: ${ isDarkMode() ? '#f2f2f2' : '#424242' } ; background: ${ isDarkMode() ? '#424242' : '#dadada70' } ;`
+            + `border: 1px solid ${ isDarkMode() ? '#545353' : '#e1e1e1' } ;`
+            + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
+            + `box-shadow: 3px 3px ${ isDarkMode() ? '12px -9px white' : '13px -6px rgba(169,169,169,0.75)' } ;`
+            + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+        + '.related-query:hover { background: #a2a2a270 }'
+        + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
+        + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
         + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
