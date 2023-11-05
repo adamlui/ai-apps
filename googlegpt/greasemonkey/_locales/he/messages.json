@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "חובה" },
   "menuLabel_beforeQuery": { "message": "לפני השאילתה" },
   "menuLabel_afterQuery": { "message": "לאחר שאילתה" },
+  "menuLabel_showRelatedQueries": { "message": "הצג שאילתות קשורות" },
   "menuLabel_replyLanguage": { "message": "שפת מענה" },
   "menuLabel_about": { "message": "אודות" },
   "about_version": { "message": "גירסה" },

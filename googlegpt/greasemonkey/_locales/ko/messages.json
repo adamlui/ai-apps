@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Require" },
   "menuLabel_beforeQuery": { "message": "질의 전" },
   "menuLabel_afterQuery": { "message": "질의 후" },
+  "menuLabel_showRelatedQueries": { "message": "관련 쿼리 표시" },
   "menuLabel_replyLanguage": { "message": "회신 언어" },
   "menuLabel_about": { "message": "소개" },
   "about_version": { "message": "버전" },

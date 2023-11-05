@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Ngā whakaritenga" },
   "menuLabel_beforeQuery": { "message": "i mua i te pātai" },
   "menuLabel_afterQuery": { "message": "i muri i te pātai" },
+  "menuLabel_showRelatedQueries": { "message": "Whakaaturanga e pā ana ki ngā pātai" },
   "menuLabel_replyLanguage": { "message": "Reo Whakautu" },
   "menuLabel_about": { "message": "Mō" },
   "about_version": { "message": "Whakaaturanga" },

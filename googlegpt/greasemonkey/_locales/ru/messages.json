@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Требова" },
   "menuLabel_beforeQuery": { "message": "перед запросом" },
   "menuLabel_afterQuery": { "message": "после запроса" },
+  "menuLabel_showRelatedQueries": { "message": "маркетинга" },
   "menuLabel_replyLanguage": { "message": "Язык ответа" },
   "menuLabel_about": { "message": "Шифр." },
   "about_version": { "message": "Версия" },

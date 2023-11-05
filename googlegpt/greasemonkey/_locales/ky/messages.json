@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Талап кылуу" },
   "menuLabel_beforeQuery": { "message": "суроо алдында" },
   "menuLabel_afterQuery": { "message": "суроо кийин" },
+  "menuLabel_showRelatedQueries": { "message": "Байланыштуу сурамдарды көрсөтүү" },
   "menuLabel_replyLanguage": { "message": "Тилге жооп берүү" },
   "menuLabel_about": { "message": "_Апплет жөнүндө" },
   "about_version": { "message": "Версиясы" },

@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "ಅಗತ್ಯವಿದೆ" },
   "menuLabel_beforeQuery": { "message": "ಪ್ರಶ್ನೆಯ ಮೊದಲು" },
   "menuLabel_afterQuery": { "message": "ಪ್ರಶ್ನೆಯ ನಂತರ" },
+  "menuLabel_showRelatedQueries": { "message": "ಸಂಬಂಧಿತ ಪ್ರಶ್ನೆಗಳನ್ನು ತೋರಿಸಿ" },
   "menuLabel_replyLanguage": { "message": "ಪ್ರತ್ಯುತ್ತರ ಭಾಷೆ" },
   "menuLabel_about": { "message": "ಕುರಿತಾಗಿ" },
   "about_version": { "message": "ಆವೃತ್ತಿ" },

@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Requirere" },
   "menuLabel_beforeQuery": { "message": "ante query" },
   "menuLabel_afterQuery": { "message": "post query" },
+  "menuLabel_showRelatedQueries": { "message": "QUAE PRAESES ET SOCII" },
   "menuLabel_replyLanguage": { "message": "Respondere Linguae" },
   "menuLabel_about": { "message": "De" },
   "about_version": { "message": "Versio" },

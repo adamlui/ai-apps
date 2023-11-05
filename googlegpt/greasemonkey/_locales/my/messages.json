@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "လိုအပ်သည်" },
   "menuLabel_beforeQuery": { "message": "qUERY မတိုင်မီ" },
   "menuLabel_afterQuery": { "message": "qUERY ပြီးနောက်" },
+  "menuLabel_showRelatedQueries": { "message": "ဆက်စပ်မေးမြန်းချက်များကို ပြသပါ" },
   "menuLabel_replyLanguage": { "message": "ပြန်ကြားချက်ဘာသာစကား" },
   "menuLabel_about": { "message": "အကြောင်း" },
   "about_version": { "message": "မူ -" },

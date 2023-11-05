@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Tələb et" },
   "menuLabel_beforeQuery": { "message": "sorğudan əvvəl" },
   "menuLabel_afterQuery": { "message": "sorğudan sonra" },
+  "menuLabel_showRelatedQueries": { "message": "Əlaqədar sorğuları göstər" },
   "menuLabel_replyLanguage": { "message": "Cavab Dili" },
   "menuLabel_about": { "message": "Haqqında" },
   "about_version": { "message": "Versiya" },

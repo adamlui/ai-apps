@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "задължително" },
   "menuLabel_beforeQuery": { "message": "преди заявката" },
   "menuLabel_afterQuery": { "message": "след заявка" },
+  "menuLabel_showRelatedQueries": { "message": "Показване на свързани заявки" },
   "menuLabel_replyLanguage": { "message": "Език на отговора" },
   "menuLabel_about": { "message": "Относно" },
   "about_version": { "message": "Версия" },

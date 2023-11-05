@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Bisabwa" },
   "menuLabel_beforeQuery": { "message": "mbere Ikibazo #" },
   "menuLabel_afterQuery": { "message": "nyuma Ikibazo #" },
+  "menuLabel_showRelatedQueries": { "message": "Kwerekana ibibazo bijyanye" },
   "menuLabel_replyLanguage": { "message": "Subiza Ururimi" },
   "menuLabel_about": { "message": "Bigyanye" },
   "about_version": { "message": "Umukoro" },

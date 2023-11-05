@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Krever" },
   "menuLabel_beforeQuery": { "message": "før forespørsel" },
   "menuLabel_afterQuery": { "message": "etter forespørsel" },
+  "menuLabel_showRelatedQueries": { "message": "Vis relaterte søk" },
   "menuLabel_replyLanguage": { "message": "Svar Språk" },
   "menuLabel_about": { "message": "Om" },
   "about_version": { "message": "Versjon" },

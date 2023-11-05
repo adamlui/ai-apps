@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "membutuhkan" },
   "menuLabel_beforeQuery": { "message": "sebelum kueri" },
   "menuLabel_afterQuery": { "message": "setelah kueri" },
+  "menuLabel_showRelatedQueries": { "message": "Tampilkan Kueri Terkait" },
   "menuLabel_replyLanguage": { "message": "Bahasa Balas" },
   "menuLabel_about": { "message": "Ihwal" },
   "about_version": { "message": "Versi" },

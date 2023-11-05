@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Eskatu" },
   "menuLabel_beforeQuery": { "message": "kontsultaren aurretik" },
   "menuLabel_afterQuery": { "message": "kontsultaren ondoren" },
+  "menuLabel_showRelatedQueries": { "message": "Erakutsi erlazionatutako kontsultak" },
   "menuLabel_replyLanguage": { "message": "Erantzun hizkuntza" },
   "menuLabel_about": { "message": "Egileari Buruz" },
   "about_version": { "message": "Bertsioa" },

@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Krävs" },
   "menuLabel_beforeQuery": { "message": "före förfrågan" },
   "menuLabel_afterQuery": { "message": "efter förfrågan" },
+  "menuLabel_showRelatedQueries": { "message": "Visa relaterade frågor" },
   "menuLabel_replyLanguage": { "message": "Svarsspråk" },
   "menuLabel_about": { "message": "Om" },
   "about_version": { "message": "Version" },

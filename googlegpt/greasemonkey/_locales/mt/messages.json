@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "jesiġi li jkun hemm" },
   "menuLabel_beforeQuery": { "message": "qabel it-talba" },
   "menuLabel_afterQuery": { "message": "wara t-talba" },
+  "menuLabel_showRelatedQueries": { "message": "Uri Mistoqsijiet Relatati" },
   "menuLabel_replyLanguage": { "message": "Lingwa tat-Tweġibiet" },
   "menuLabel_about": { "message": "Dwar" },
   "about_version": { "message": "Verżjoni" },

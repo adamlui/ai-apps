@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Vaaditaan" },
   "menuLabel_beforeQuery": { "message": "ennen kyselyä" },
   "menuLabel_afterQuery": { "message": "kyselyn jälkeen" },
+  "menuLabel_showRelatedQueries": { "message": "Näytä liittyvät kyselyt" },
   "menuLabel_replyLanguage": { "message": "Vastauskieli" },
   "menuLabel_about": { "message": "Tietoa" },
   "about_version": { "message": "Versio" },

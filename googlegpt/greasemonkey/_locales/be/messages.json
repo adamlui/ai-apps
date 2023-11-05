@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Патрабаванне" },
   "menuLabel_beforeQuery": { "message": "перад запытам" },
   "menuLabel_afterQuery": { "message": "пасля запыту" },
+  "menuLabel_showRelatedQueries": { "message": "Паказваць адпаведныя запыты" },
   "menuLabel_replyLanguage": { "message": "Мова адказу" },
   "menuLabel_about": { "message": "Пра нас" },
   "about_version": { "message": "Версія" },

@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "A 'cur feum air" },
   "menuLabel_beforeQuery": { "message": "roimhe a 'Phuist \"An clàr roimhe" },
   "menuLabel_afterQuery": { "message": "'S toil'S toil" },
+  "menuLabel_showRelatedQueries": { "message": "Seall ceistean co - cheangailte" },
   "menuLabel_replyLanguage": { "message": "Cànan freagairt" },
   "menuLabel_about": { "message": "Mar deidhinn" },
   "about_version": { "message": "Tionndadh" },

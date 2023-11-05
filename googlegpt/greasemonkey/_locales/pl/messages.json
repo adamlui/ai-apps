@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Wymagane" },
   "menuLabel_beforeQuery": { "message": "przed zapytaniem" },
   "menuLabel_afterQuery": { "message": "po zapytaniu" },
+  "menuLabel_showRelatedQueries": { "message": "Pokaż powiązane zapytania" },
   "menuLabel_replyLanguage": { "message": "Język odpowiedzi" },
   "menuLabel_about": { "message": "Około" },
   "about_version": { "message": "Wersja" },

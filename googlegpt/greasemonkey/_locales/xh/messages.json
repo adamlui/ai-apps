@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Iyafuneka" },
   "menuLabel_beforeQuery": { "message": "ngaphambi kokubuza" },
   "menuLabel_afterQuery": { "message": "emva kombuzo" },
+  "menuLabel_showRelatedQueries": { "message": "Bonisa Imibuzo Ehlobene Nayo" },
   "menuLabel_replyLanguage": { "message": "Phendula Ulwimi" },
   "menuLabel_about": { "message": "Malunga" },
   "about_version": { "message": "Inguqulelo" },

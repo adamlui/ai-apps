@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "ያስፈልጋል" },
   "menuLabel_beforeQuery": { "message": "ከመጠየቁ በፊት" },
   "menuLabel_afterQuery": { "message": "መጠይቅ በኋላ" },
+  "menuLabel_showRelatedQueries": { "message": "ተዛማጅ ጥያቄዎችን ያሳዩ" },
   "menuLabel_replyLanguage": { "message": "የምላሽ ቋንቋ" },
   "menuLabel_about": { "message": "ስለ" },
   "about_version": { "message": "እትም" },

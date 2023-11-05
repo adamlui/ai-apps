@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Талап ету" },
   "menuLabel_beforeQuery": { "message": "сұраудан бұрын" },
   "menuLabel_afterQuery": { "message": "сұраныстан кейін" },
+  "menuLabel_showRelatedQueries": { "message": "Тиісті сұрауларды көрсету" },
   "menuLabel_replyLanguage": { "message": "Жауап беру тілі" },
   "menuLabel_about": { "message": "Туралы" },
   "about_version": { "message": "Нұсқа" },

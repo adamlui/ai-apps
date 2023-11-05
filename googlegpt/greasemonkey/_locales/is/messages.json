@@ -5,6 +5,7 @@
   "menuLabel_require": { "message": "Ãarfnast:" },
   "menuLabel_beforeQuery": { "message": "fyrir fyrirspurn" },
   "menuLabel_afterQuery": { "message": "eftir fyrirspurn" },
+  "menuLabel_showRelatedQueries": { "message": "Sýna tengdar fyrirspurnir" },
   "menuLabel_replyLanguage": { "message": "Tungumál svars" },
   "menuLabel_about": { "message": "Um" },
   "about_version": { "message": "Útgáfa" },
