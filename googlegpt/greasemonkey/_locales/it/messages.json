@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Modalità prefisso" },
   "mode_suffix": { "message": "Suffisso" },
   "tooltip_sendReply": { "message": "Invia risposta" },
+  "tooltip_sendRelatedQuery": { "message": "Invia query correlata" },
   "prompt_updateReplyLang": { "message": "Aggiorna la lingua della risposta" },
   "alert_langUpdated": { "message": "Lingua aggiornata" },
   "alert_willReplyIn": { "message": "risponderà tra" },

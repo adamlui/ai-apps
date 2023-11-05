@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Aurrizkien modua" },
   "mode_suffix": { "message": "Atzizki modua" },
   "tooltip_sendReply": { "message": "Erantzuna bidali" },
+  "tooltip_sendRelatedQuery": { "message": "Bidali erlazionatutako kontsulta" },
   "prompt_updateReplyLang": { "message": "Eguneratu erantzunen hizkuntza" },
   "alert_langUpdated": { "message": "Hizkuntza eguneratua" },
   "alert_willReplyIn": { "message": "erantzungo du" },

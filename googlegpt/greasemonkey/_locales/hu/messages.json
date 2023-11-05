@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Előtag mód" },
   "mode_suffix": { "message": "Utótag mód" },
   "tooltip_sendReply": { "message": "Válasz elküldése" },
+  "tooltip_sendRelatedQuery": { "message": "Kapcsolódó lekérdezés küldése" },
   "prompt_updateReplyLang": { "message": "Válasz nyelvének frissítése" },
   "alert_langUpdated": { "message": "Nyelv frissítve." },
   "alert_willReplyIn": { "message": "válaszolni fog a következőben:" },

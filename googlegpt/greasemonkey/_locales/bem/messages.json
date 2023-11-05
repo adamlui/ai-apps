@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Fela Kuti - Suffix Mode" },
   "tooltip_sendReply": { "message": "Tuma Mwakitwile" },
+  "tooltip_sendRelatedQuery": { "message": "Tumineni ifipusho ifilanda pali ili lyashi" },
   "prompt_updateReplyLang": { "message": "Update Mwakitwile language" },
   "alert_langUpdated": { "message": "Ludimi lwa lwa Tumama updated" },
   "alert_willReplyIn": { "message": "asuka Iwashita" },

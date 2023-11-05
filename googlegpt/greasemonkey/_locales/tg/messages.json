@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
   "tooltip_sendReply": { "message": "Фиристодани ҷавоб" },
+  "tooltip_sendRelatedQuery": { "message": "Фиристодани дархости марбута" },
   "prompt_updateReplyLang": { "message": "Update reply language" },
   "alert_langUpdated": { "message": "Language updated" },
   "alert_willReplyIn": { "message": "will reply in" },

@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Პრეფიქსული რეჟიმი" },
   "mode_suffix": { "message": "Სუფიქსური რეჟიმი" },
   "tooltip_sendReply": { "message": "გადაუგზავნე" },
+  "tooltip_sendRelatedQuery": { "message": "Შესაბამისი მოთხოვნის გაგზავნა" },
   "prompt_updateReplyLang": { "message": "Განაახლეთ პასუხის ენა" },
   "alert_langUpdated": { "message": "Ენა განახლებულია" },
   "alert_willReplyIn": { "message": "უპასუხებს" },

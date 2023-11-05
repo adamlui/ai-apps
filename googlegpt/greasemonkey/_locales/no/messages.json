@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Prefiksmodus" },
   "mode_suffix": { "message": "Suffiksmodus" },
   "tooltip_sendReply": { "message": "Send svar" },
+  "tooltip_sendRelatedQuery": { "message": "Send relatert forespørsel" },
   "prompt_updateReplyLang": { "message": "Oppdater svarspråk" },
   "alert_langUpdated": { "message": "Språket er oppdatert" },
   "alert_willReplyIn": { "message": "vil svare inn" },

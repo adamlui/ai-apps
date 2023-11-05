@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Voorvoegsel Modus" },
   "mode_suffix": { "message": "Agtervoegsel Modus" },
   "tooltip_sendReply": { "message": "Stuur antwoord" },
+  "tooltip_sendRelatedQuery": { "message": "Stuur verwante navraag" },
   "prompt_updateReplyLang": { "message": "Dateer antwoordtaal op" },
   "alert_langUpdated": { "message": "Taal opgedateer" },
   "alert_willReplyIn": { "message": "die antwoord in" },

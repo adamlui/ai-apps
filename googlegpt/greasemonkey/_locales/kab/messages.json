@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Aγewwaṛ amezwaru" },
   "mode_suffix": { "message": "Aγewwaṛ n Suffix" },
   "tooltip_sendReply": { "message": "Azen tiririt" },
+  "tooltip_sendRelatedQuery": { "message": "Azen asteqsi yettwaxedmen" },
   "prompt_updateReplyLang": { "message": "Snifel tutlayt n tiririt" },
   "alert_langUpdated": { "message": "Idioma deg xinag - AmawalAma" },
   "alert_willReplyIn": { "message": "ad d-yerr deg" },

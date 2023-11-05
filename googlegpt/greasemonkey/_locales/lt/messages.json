@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Priešdėlio režimas" },
   "mode_suffix": { "message": "Priesagos režimas" },
   "tooltip_sendReply": { "message": "Siųsti atsakymą" },
+  "tooltip_sendRelatedQuery": { "message": "Siųsti susijusią užklausą" },
   "prompt_updateReplyLang": { "message": "Atnaujinti atsakymo kalbą" },
   "alert_langUpdated": { "message": "Kalba atnaujinta" },
   "alert_willReplyIn": { "message": "atsakys po" },

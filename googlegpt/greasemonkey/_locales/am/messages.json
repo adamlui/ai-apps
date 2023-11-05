@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Prefix ሁነታ" },
   "mode_suffix": { "message": "Suffix ሁነታ" },
   "tooltip_sendReply": { "message": "መልስ ላክ" },
+  "tooltip_sendRelatedQuery": { "message": "ተዛማጅ ጥያቄ ይላኩ" },
   "prompt_updateReplyLang": { "message": "የምላሽ ቋንቋን ያዘምኑ" },
   "alert_langUpdated": { "message": "ቋንቋ ዘምኗል" },
   "alert_willReplyIn": { "message": "ውስጥ መልስ ይሆናል" },

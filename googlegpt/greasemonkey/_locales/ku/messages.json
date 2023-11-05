@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "شێوەی پێشوو" },
   "mode_suffix": { "message": "شێوەی پاشوو" },
   "tooltip_sendReply": { "message": "وەڵام بنێرە" },
+  "tooltip_sendRelatedQuery": { "message": "پرسیاری پەیوەندیدار بنێرە" },
   "prompt_updateReplyLang": { "message": "نوێکردنەوەی زمانی وەرزیی پاسخ" },
   "alert_langUpdated": { "message": "زمان نوێکرایەوە" },
   "alert_willReplyIn": { "message": "پاسخ بدۆزێنرێت لە" },

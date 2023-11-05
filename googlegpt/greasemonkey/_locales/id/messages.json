@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Mode Prefiks" },
   "mode_suffix": { "message": "Mode Akhiran" },
   "tooltip_sendReply": { "message": "Kirim balasan" },
+  "tooltip_sendRelatedQuery": { "message": "Kirim kueri terkait" },
   "prompt_updateReplyLang": { "message": "Perbarui bahasa balasan" },
   "alert_langUpdated": { "message": "Bahasa diperbarui" },
   "alert_willReplyIn": { "message": "akan membalas dalam" },

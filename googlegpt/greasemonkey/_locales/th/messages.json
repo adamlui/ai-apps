@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "โหมดคำนำหน้า" },
   "mode_suffix": { "message": "โหมดคำต่อท้าย" },
   "tooltip_sendReply": { "message": "ส่งข้อความ" },
+  "tooltip_sendRelatedQuery": { "message": "ส่งคำค้นหาที่เกี่ยวข้อง" },
   "prompt_updateReplyLang": { "message": "อัพเดทภาษาของการตอบกลับ" },
   "alert_langUpdated": { "message": "อัปเดตภาษาแล้ว" },
   "alert_willReplyIn": { "message": "จะตอบกลับใน" },

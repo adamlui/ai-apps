@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Momo Prefix" },
   "mode_suffix": { "message": "Mode Suffix" },
   "tooltip_sendReply": { "message": "Tukua mai he whakautu" },
+  "tooltip_sendRelatedQuery": { "message": "Tukua mai he pātai e pā ana" },
   "prompt_updateReplyLang": { "message": "Whakahōu reo whakautu" },
   "alert_langUpdated": { "message": "Reo whakahoutia" },
   "alert_willReplyIn": { "message": "ka whakahoki ahau i roto i" },

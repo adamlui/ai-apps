@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Forskeytahamur" },
   "mode_suffix": { "message": "Viðskeytahamur" },
   "tooltip_sendReply": { "message": "Senda svar" },
+  "tooltip_sendRelatedQuery": { "message": "Senda tengda fyrirspurn" },
   "prompt_updateReplyLang": { "message": "Uppfæra tungumál svars" },
   "alert_langUpdated": { "message": "Tungumál uppfært" },
   "alert_willReplyIn": { "message": "mun svara í" },

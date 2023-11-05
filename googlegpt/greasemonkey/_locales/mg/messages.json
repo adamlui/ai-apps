@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Fomban'ny tovona" },
   "mode_suffix": { "message": "Fomba Suffix" },
   "tooltip_sendReply": { "message": "Alefaso ny valiny" },
+  "tooltip_sendRelatedQuery": { "message": "Handefa fangataham-panazavana mifandraika amin'izany" },
   "prompt_updateReplyLang": { "message": "Avao ny fiteny valiana" },
   "alert_langUpdated": { "message": "Teny vaovao" },
   "alert_willReplyIn": { "message": "ny valiny eto" },

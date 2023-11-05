@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Režim predpony" },
   "mode_suffix": { "message": "Režim prípony" },
   "tooltip_sendReply": { "message": "Odpovedať" },
+  "tooltip_sendRelatedQuery": { "message": "Odoslať súvisiacu otázku" },
   "prompt_updateReplyLang": { "message": "Aktualizovať jazyk odpovede" },
   "alert_langUpdated": { "message": "Jazyk bol aktualizovaný" },
   "alert_willReplyIn": { "message": "odpovie v" },

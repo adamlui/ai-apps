@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Modd Rhagddodiad" },
   "mode_suffix": { "message": "Modd Ôl - ddodiad" },
   "tooltip_sendReply": { "message": "Anfon Ateb" },
+  "tooltip_sendRelatedQuery": { "message": "Anfon ymholiad cysylltiedig" },
   "prompt_updateReplyLang": { "message": "Diweddaru iaith ateb" },
   "alert_langUpdated": { "message": "Diweddarwyd yr iaith" },
   "alert_willReplyIn": { "message": "bydd yn ymateb i mewn" },

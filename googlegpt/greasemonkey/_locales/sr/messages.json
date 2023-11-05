@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Režim prefiksa" },
   "mode_suffix": { "message": "Režim sufiksa" },
   "tooltip_sendReply": { "message": "Одговорити" },
+  "tooltip_sendRelatedQuery": { "message": "Pošaljite povezani upit" },
   "prompt_updateReplyLang": { "message": "Ažurirajte jezik odgovora" },
   "alert_langUpdated": { "message": "Jezik je ažuriran" },
   "alert_willReplyIn": { "message": "će odgovoriti u" },

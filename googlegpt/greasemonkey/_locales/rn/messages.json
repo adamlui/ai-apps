@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Prefix Mode None None" },
   "mode_suffix": { "message": "Uburyo buhagije" },
   "tooltip_sendReply": { "message": "Rungika Rungika" },
+  "tooltip_sendRelatedQuery": { "message": "Rungika Rungika Ibibazo bifitaniye isano" },
   "prompt_updateReplyLang": { "message": "Réponse de la langue nouveau" },
   "alert_langUpdated": { "message": "Ururimi Updated" },
   "alert_willReplyIn": { "message": "ashura In" },

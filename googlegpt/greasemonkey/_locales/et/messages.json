@@ -13,6 +13,7 @@
   "mode_prefix": { "message": "Eesliite režiim" },
   "mode_suffix": { "message": "Järelliite režiim" },
   "tooltip_sendReply": { "message": "Saada vastus" },
+  "tooltip_sendRelatedQuery": { "message": "Saada seotud päring" },
   "prompt_updateReplyLang": { "message": "Uuenda vastuse keelt" },
   "alert_langUpdated": { "message": "Keel uuendatud" },
   "alert_willReplyIn": { "message": "vastab pärast" },
