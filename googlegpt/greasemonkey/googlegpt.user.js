@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.13
+// @version             2023.11.5.14
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -914,7 +914,9 @@
             try {
                 const relatedQueriesDiv = document.querySelector('.related-queries')
                 Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                    relatedQueryDiv.removeEventListener('click', rqEventHandler) })
+                    relatedQueryDiv.removeEventListener('click', rqEventHandler)
+                    relatedQueryDiv.removeEventListener('keydown', rqEventHandler)
+                })
                 relatedQueriesDiv.remove()
             } catch (err) {}
 
