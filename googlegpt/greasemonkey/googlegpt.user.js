@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.7
+// @version             2023.11.5.8
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @match               *://*.google.com/search*
@@ -1014,14 +1014,14 @@
         + '.googlegpt-container .prefix { font-size: 1.5rem ; font-weight: 700 }'
         + '.googlegpt-container .prefix > a { color: ' + ( isDarkMode() ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
         + '.googlegpt-container .loading {'
-            + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
+            + 'padding-bottom: 22px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.googlegpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
         + '.googlegpt-container pre { font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ; line-height: 22px ; padding: 1.25em ; border-radius: 10px ;'
             + ( isDarkMode() ? 'background: #3a3a3a ; color: #f2f2f2 } ' : 'background: #eaeaea } ' )
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.googlegpt-container section.loading {'
-            + 'padding: 15px 0 0 5px ;' // left/top-pad loading status when sending replies
+            + 'padding: 15px 0 14px 5px ;' // left/top-pad loading status when sending replies
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.chatgpt-feedback { margin: 2px 0 25px }'
         + '.balloon-tip { content: "" ; border: 7px solid transparent ; position: relative ; top: 5px ;'
@@ -1034,7 +1034,7 @@
             + 'margin: 13px 0 15px 0 ; padding: 13px 25px 2px 10px ;'
             + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' }'
         + ( isDarkMode() ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
-        + '.related-queries { display: flex ; flex-wrap: wrap }'
+        + '.related-queries { display: flex ; flex-wrap: wrap ; margin-bottom: 33px }'
         + '.related-query { font-size: 0.9em ; cursor: pointer ; padding: 8px ; margin: 4px 4px 4px 0 ;'
             + `color: ${ isDarkMode() ? '#f2f2f2' : '#424242' } ; background: ${ isDarkMode() ? '#424242' : '#dadada70' } ;`
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
