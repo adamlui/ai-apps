@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.6
+// @version             2023.11.5.7
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @match               *://*.google.com/search*
@@ -871,7 +871,7 @@
         // Add listeners
         form.addEventListener('keydown', handleEnter)
         form.addEventListener('submit', handleSubmit)
-        chatbar.addEventListener('input', autosizeBox)
+        chatbar.addEventListener('input', autosizeChatbar)
 
         function handleEnter(event) {
             if (event.key === 'Enter' && !event.shiftKey && event.target.nodeName === 'TEXTAREA')
@@ -892,7 +892,7 @@
             } getShowReply(convo)
 
             // Remove listeners since they're re-added
-            chatbar.removeEventListener('input', autosizeBox)
+            chatbar.removeEventListener('input', autosizeChatbar)
             form.removeEventListener('submit', handleSubmit)
             chatbar.removeEventListener('keydown', handleEnter)
 
@@ -902,7 +902,7 @@
             replySection.innerHTML = googleGPTalerts.waitingResponse
         }
 
-        function autosizeBox() {
+        function autosizeChatbar() {
             const newLength = chatbar.value.length
             if (newLength < prevLength) { // if deleting txt
                 chatbar.style.height = 'auto' // ...auto-fit height
