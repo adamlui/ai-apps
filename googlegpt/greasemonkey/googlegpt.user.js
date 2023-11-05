@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.5
+// @version             2023.11.5.6
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @match               *://*.google.com/search*
@@ -841,7 +841,7 @@
     }
 
     function googleGPTshow(answer) {
-        googleGPTdiv.innerHTML = `<p><span class="prefix">🤖  <a href="https://googlegpt.kudoai.com" target="_blank" rel="noopener">GoogleGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://www.kudoai.com" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="googlegpt-reply-box" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="${ messages.tooltip_sendReply }" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
+        googleGPTdiv.innerHTML = `<p><span class="prefix">🤖  <a href="https://googlegpt.kudoai.com" target="_blank" rel="noopener">GoogleGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://www.kudoai.com" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="googlegpt-chatbar" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="${ messages.tooltip_sendReply }" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
         googleGPTdiv.querySelector('pre').textContent = answer
 
         // Render math
@@ -863,15 +863,15 @@
 
         // Init variables for listeners
         const form = googleGPTdiv.querySelector('form'),
-              replyBox = document.getElementById('googlegpt-reply-box'),
-              { paddingTop, paddingBottom } = getComputedStyle(replyBox),
+              chatbar = document.getElementById('googlegpt-chatbar'),
+              { paddingTop, paddingBottom } = getComputedStyle(chatbar),
               vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
-        let prevLength = replyBox.value.length
+        let prevLength = chatbar.value.length
 
         // Add listeners
         form.addEventListener('keydown', handleEnter)
         form.addEventListener('submit', handleSubmit)
-        replyBox.addEventListener('input', autosizeBox)
+        chatbar.addEventListener('input', autosizeBox)
 
         function handleEnter(event) {
             if (event.key === 'Enter' && !event.shiftKey && event.target.nodeName === 'TEXTAREA')
@@ -881,8 +881,8 @@
         function handleSubmit(event) {
             event.preventDefault()
             if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
-            const prevReplyTrimmed = googleGPTdiv.querySelector('pre').textContent.substring(0, 250 - replyBox.value.length),
-                  yourReply = `${ replyBox.value } (reply in ${ config.replyLanguage })`
+            const prevReplyTrimmed = googleGPTdiv.querySelector('pre').textContent.substring(0, 250 - chatbar.value.length),
+                  yourReply = `${ chatbar.value } (reply in ${ config.replyLanguage })`
             if (!config.proxyAPIenabled) {
                 convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
                 convo.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [yourReply] } })
@@ -892,9 +892,9 @@
             } getShowReply(convo)
 
             // Remove listeners since they're re-added
-            replyBox.removeEventListener('input', autosizeBox)
+            chatbar.removeEventListener('input', autosizeBox)
             form.removeEventListener('submit', handleSubmit)
-            replyBox.removeEventListener('keydown', handleEnter)
+            chatbar.removeEventListener('keydown', handleEnter)
 
             // Show loading status
             const replySection = googleGPTdiv.querySelector('section')
@@ -903,14 +903,14 @@
         }
 
         function autosizeBox() {
-            const newLength = replyBox.value.length
+            const newLength = chatbar.value.length
             if (newLength < prevLength) { // if deleting txt
-                replyBox.style.height = 'auto' // ...auto-fit height
-                if (parseInt(getComputedStyle(replyBox).height) < 35) { // if down to one line
-                    replyBox.style.height = '1.55rem' } // ...reset to original height
+                chatbar.style.height = 'auto' // ...auto-fit height
+                if (parseInt(getComputedStyle(chatbar).height) < 35) { // if down to one line
+                    chatbar.style.height = '1.55rem' } // ...reset to original height
             }
-            const unpaddedHeight = replyBox.scrollHeight - vOffset
-            replyBox.style.height = unpaddedHeight > 35 ? unpaddedHeight + 'px' : '1.55rem'
+            const unpaddedHeight = chatbar.scrollHeight - vOffset
+            chatbar.style.height = unpaddedHeight > 35 ? unpaddedHeight + 'px' : '1.55rem'
             prevLength = newLength
         }
     }
