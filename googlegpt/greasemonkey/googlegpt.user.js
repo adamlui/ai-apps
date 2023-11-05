@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.8
+// @version             2023.11.5.9
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @match               *://*.google.com/search*
@@ -698,6 +698,23 @@
             })
     })}
 
+    function rqClickHandler(event) {
+
+        // Remove divs/listeners
+        const relatedQueriesDiv = document.querySelector('.related-queries')
+        Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
+            relatedQueryDiv.removeEventListener('click', rqClickHandler) })
+        relatedQueriesDiv.remove()
+
+        // Send related query
+        const chatbar = googleGPTdiv.querySelector('textarea')
+        if (chatbar) {
+            chatbar.value = event.target.textContent
+            chatbar.dispatchEvent(new KeyboardEvent('keydown', {
+                key: 'Enter', bubbles: true, cancelable: true }))
+        }
+    }
+
     async function getShowReply(convo, callback) {
 
         // Initialize attempt properties
@@ -729,23 +746,6 @@
                     relatedQueriesDiv.className = 'related-queries'
                     googleGPTdiv.appendChild(relatedQueriesDiv)
 
-                    const clickHandler = (event) => {
-
-                        // Remove divs/listeners
-                        const relatedQueriesDiv = document.querySelector('.related-queries')
-                        Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                            relatedQueryDiv.removeEventListener('click', clickHandler) })
-                        relatedQueriesDiv.remove()
-
-                        // Send related query
-                        const chatbar = googleGPTdiv.querySelector('textarea')
-                        if (chatbar) {
-                            chatbar.value = event.target.textContent
-                            chatbar.dispatchEvent(new KeyboardEvent('keydown', {
-                                key: 'Enter', bubbles: true, cancelable: true }))
-                        }
-                    }
-
                     // Fill each child div, add fade + listener
                     relatedQueries.forEach((relatedQuery, index) => {
                         const relatedQueryDiv = document.createElement('div')
@@ -755,7 +755,7 @@
                         relatedQueriesDiv.appendChild(relatedQueryDiv)
                         setTimeout(() => {
                             relatedQueryDiv.classList.add('active')
-                            relatedQueryDiv.addEventListener('click', clickHandler)
+                            relatedQueryDiv.addEventListener('click', rqClickHandler)
                         }, index * 100)
                     })
         }})}
@@ -896,6 +896,14 @@
             form.removeEventListener('submit', handleSubmit)
             chatbar.removeEventListener('keydown', handleEnter)
 
+            // Remove related queries
+            try {
+                const relatedQueriesDiv = document.querySelector('.related-queries')
+                Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
+                    relatedQueryDiv.removeEventListener('click', rqClickHandler) })
+                relatedQueriesDiv.remove()
+            } catch (err) {}
+
             // Show loading status
             const replySection = googleGPTdiv.querySelector('section')
             replySection.classList.add('loading')
@@ -1034,7 +1042,7 @@
             + 'margin: 13px 0 15px 0 ; padding: 13px 25px 2px 10px ;'
             + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' }'
         + ( isDarkMode() ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
-        + '.related-queries { display: flex ; flex-wrap: wrap ; margin-bottom: 33px }'
+        + `.related-queries { display: flex ; flex-wrap: wrap ; margin-bottom: ${ isChromium() ? 28 : 23 }px }`
         + '.related-query { font-size: 0.9em ; cursor: pointer ; padding: 8px ; margin: 4px 4px 4px 0 ;'
             + `color: ${ isDarkMode() ? '#f2f2f2' : '#424242' } ; background: ${ isDarkMode() ? '#424242' : '#dadada70' } ;`
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
