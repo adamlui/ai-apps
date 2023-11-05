@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.12
+// @version             2023.11.5.13
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -707,22 +707,25 @@
             })
     })}
 
-    function rqClickHandler(event) { // for addition/removal in `getShowReply()` + `googleGPTshow(answer).handleSubmit()`
+    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `googleGPTshow(answer).handleSubmit()`
+        if ([' ', 'Enter'].includes(event.key) || event.type == 'click') {
+            event.preventDefault() // prevent scroll on space taps
 
-        // Remove divs/listeners
-        const relatedQueriesDiv = document.querySelector('.related-queries')
-        Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-            relatedQueryDiv.removeEventListener('click', rqClickHandler) })
-        relatedQueriesDiv.remove()
+            // Remove divs/listeners
+            const relatedQueriesDiv = document.querySelector('.related-queries')
+            Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
+                relatedQueryDiv.removeEventListener('click', rqEventHandler)
+                relatedQueryDiv.removeEventListener('keydown', rqEventHandler)
+            })
+            relatedQueriesDiv.remove()
 
-        // Send related query
-        const chatbar = googleGPTdiv.querySelector('textarea')
-        if (chatbar) {
-            chatbar.value = event.target.textContent
-            chatbar.dispatchEvent(new KeyboardEvent('keydown', {
-                key: 'Enter', bubbles: true, cancelable: true }))
-        }
-    }
+            // Send related query
+            const chatbar = googleGPTdiv.querySelector('textarea')
+            if (chatbar) {
+                chatbar.value = event.target.textContent
+                chatbar.dispatchEvent(new KeyboardEvent('keydown', {
+                    key: 'Enter', bubbles: true, cancelable: true }))
+    }}}
 
     async function getShowReply(convo, callback) {
 
@@ -755,16 +758,18 @@
                     relatedQueriesDiv.className = 'related-queries'
                     googleGPTdiv.appendChild(relatedQueriesDiv)
 
-                    // Fill each child div, add fade + listener
+                    // Fill each child div, add fade + tabindex + listener
                     relatedQueries.forEach((relatedQuery, index) => {
                         const relatedQueryDiv = document.createElement('div')
                         relatedQueryDiv.title = messages.tooltip_sendRelatedQuery
                         relatedQueryDiv.className = 'related-query fade-in'
+                        relatedQueryDiv.setAttribute('tabindex', 0)
                         relatedQueryDiv.textContent = relatedQuery
                         relatedQueriesDiv.appendChild(relatedQueryDiv)
                         setTimeout(() => {
                             relatedQueryDiv.classList.add('active')
-                            relatedQueryDiv.addEventListener('click', rqClickHandler)
+                            relatedQueryDiv.addEventListener('click', rqEventHandler)
+                            relatedQueryDiv.addEventListener('keydown', rqEventHandler)
                         }, index * 100)
                     })
         }})}
@@ -909,7 +914,7 @@
             try {
                 const relatedQueriesDiv = document.querySelector('.related-queries')
                 Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                    relatedQueryDiv.removeEventListener('click', rqClickHandler) })
+                    relatedQueryDiv.removeEventListener('click', rqEventHandler) })
                 relatedQueriesDiv.remove()
             } catch (err) {}
 
