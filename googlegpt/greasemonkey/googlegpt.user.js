@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.4
+// @version             2023.11.5.5
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @match               *://*.google.com/search*
@@ -1004,9 +1004,10 @@
     // Stylize elements
     const googleGPTstyle = document.createElement('style')
     googleGPTstyle.innerText = (
-        '.googlegpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 16px 26px ; flex-basis: 0 ;'
-            + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ; '
-            + 'margin: 0 0 30px 20px ; height: fit-content;'
+        '.googlegpt-container {'
+            + 'border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
+            + `padding: ${ isChromium() ? 22 : 20 }px 26px 0 26px ; margin: 0 0 30px 20px ;`
+            + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
             + ( isDarkMode() ? ' border: none ; background: #282828 } ' : ' } ' )
         + '.googlegpt-container p { margin: 0 ; ' + ( isDarkMode() ? 'color: #ccc } ' : ' } ' )
         + ( isDarkMode() ? '.googlegpt-container a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
@@ -1029,8 +1030,8 @@
             + ( isDarkMode() ? '#3a3a3a' : '#eaeaea' ) + ' }'
         + '.continue-chat > textarea {'
             + `border: solid 1px ${ isDarkMode() ? '#aaa' : 'lightgrey' } ; border-radius: 12px 13px 12px 0 ;`
-            + 'height: 1.55rem ; width: 96.2% ; max-height: 200px ; resize: none ;'
-            + 'margin: 13px 0 15px 0 ; padding: 13px 0 2px 10px ;'
+            + 'height: 1.55rem ; width: 89% ; max-height: 200px ; resize: none ;'
+            + 'margin: 13px 0 15px 0 ; padding: 13px 25px 2px 10px ;'
             + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' }'
         + ( isDarkMode() ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
         + '.related-queries { display: flex ; flex-wrap: wrap }'
@@ -1042,7 +1043,7 @@
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button { border: none ; float: right ;'
-            + `position: relative ; bottom: ${ isChromium() ? 50 : 42 }px ; right: 4px ;`
+            + `position: relative ; bottom: ${ isChromium() ? 46 : 43 }px ; right: 5px ;`
             + `background: none ; color: ${ isDarkMode() ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.send-button:hover { color: ${ isDarkMode() ? 'white' : 'black' } }`
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
