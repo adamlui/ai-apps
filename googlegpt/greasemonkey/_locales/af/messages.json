@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Vereis" },
   "menuLabel_beforeQuery": { "message": "voor navraag" },
   "menuLabel_afterQuery": { "message": "na navraag" },
+  "menuLabel_show": { "message": "Wys" },
+  "menuLabel_relatedQueries": { "message": "Verwante navrae" },
   "menuLabel_replyLanguage": { "message": "Beantwoord Taal" },
   "menuLabel_about": { "message": "Omtrent" },
   "about_version": { "message": "Weergawe" },

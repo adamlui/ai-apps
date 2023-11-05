@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "à¨²à©à©à©à¨¦à¨¾:" },
   "menuLabel_beforeQuery": { "message": "ਪੁੱਛਗਿੱਛ ਤੋਂ ਪਹਿਲਾਂ" },
   "menuLabel_afterQuery": { "message": "ਪੁੱਛਗਿੱਛ ਤੋਂ ਬਾਅਦ" },
+  "menuLabel_show": { "message": "ਵਿਖਾਉ" },
+  "menuLabel_relatedQueries": { "message": "ਸੰਬੰਧਿਤ ਪੁੱਛਗਿੱਛ" },
   "menuLabel_replyLanguage": { "message": "ਜਵਾਬ ਭਾਸ਼ਾ" },
   "menuLabel_about": { "message": "ਇਸ ਬਾਰੇ" },
   "about_version": { "message": "ਵਰਜਨ" },

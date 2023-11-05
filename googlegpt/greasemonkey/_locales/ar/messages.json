@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "مطلوب" },
   "menuLabel_beforeQuery": { "message": "قبل الاستعلام" },
   "menuLabel_afterQuery": { "message": "بعد الاستعلام الثاني" },
+  "menuLabel_show": { "message": "البرنامج" },
+  "menuLabel_relatedQueries": { "message": "الاستفسارات ذات الصلة" },
   "menuLabel_replyLanguage": { "message": "لغة الرد" },
   "menuLabel_about": { "message": "عن وزارة الثقافة" },
   "about_version": { "message": "الإصدار" },

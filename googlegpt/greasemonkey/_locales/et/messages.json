@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Jaapani jeen" },
   "menuLabel_beforeQuery": { "message": "enne päringut" },
   "menuLabel_afterQuery": { "message": "pärast päringut" },
+  "menuLabel_show": { "message": "Näita" },
+  "menuLabel_relatedQueries": { "message": "Seotud päringud" },
   "menuLabel_replyLanguage": { "message": "Vastuse keel" },
   "menuLabel_about": { "message": "Info" },
   "about_version": { "message": "Versioon" },

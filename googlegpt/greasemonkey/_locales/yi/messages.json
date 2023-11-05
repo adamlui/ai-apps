@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "דאַרפן" },
   "menuLabel_beforeQuery": { "message": "איידער אָנפֿרעג" },
   "menuLabel_afterQuery": { "message": "נאָך אָנפֿרעג" },
+  "menuLabel_show": { "message": "ווייַזן" },
+  "menuLabel_relatedQueries": { "message": "Related Queries" },
   "menuLabel_replyLanguage": { "message": "ענטפער שפּראַך" },
   "menuLabel_about": { "message": "dialogs-action" },
   "about_version": { "message": "ווערסיע" },

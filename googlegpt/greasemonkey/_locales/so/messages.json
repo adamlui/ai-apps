@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Baahida" },
   "menuLabel_beforeQuery": { "message": "su 'aal ka hor" },
   "menuLabel_afterQuery": { "message": "su 'aal ka dib" },
+  "menuLabel_show": { "message": "bandhig" },
+  "menuLabel_relatedQueries": { "message": "Su 'aalaha la xiriira" },
   "menuLabel_replyLanguage": { "message": "Luqadda Jawaabta" },
   "menuLabel_about": { "message": "Jabuuti" },
   "about_version": { "message": "Version" },

@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Require" },
   "menuLabel_beforeQuery": { "message": "before query" },
   "menuLabel_afterQuery": { "message": "after query" },
+  "menuLabel_show": { "message": "Намоиш додан" },
+  "menuLabel_relatedQueries": { "message": "Саволҳои марбута" },
   "menuLabel_replyLanguage": { "message": "Reply Language" },
   "menuLabel_about": { "message": "About" },
   "about_version": { "message": "Version" },

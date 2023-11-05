@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Kræv" },
   "menuLabel_beforeQuery": { "message": "før forespørgsel" },
   "menuLabel_afterQuery": { "message": "efter forespørgsel" },
+  "menuLabel_show": { "message": "Vis" },
+  "menuLabel_relatedQueries": { "message": "Relaterede forespørgsler" },
   "menuLabel_replyLanguage": { "message": "Svarsprog" },
   "menuLabel_about": { "message": "Om" },
   "about_version": { "message": "Version" },

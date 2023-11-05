@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Απαιτείται" },
   "menuLabel_beforeQuery": { "message": "πριν από το ερώτημα" },
   "menuLabel_afterQuery": { "message": "κατόπιν ερωτήματος" },
+  "menuLabel_show": { "message": "Εμφάνιση" },
+  "menuLabel_relatedQueries": { "message": "Σχετικά ερωτήματα" },
   "menuLabel_replyLanguage": { "message": "Γλώσσα απάντησης" },
   "menuLabel_about": { "message": "Σχετικά" },
   "about_version": { "message": "Έκδοση" },

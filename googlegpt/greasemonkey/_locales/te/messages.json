@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Require" },
   "menuLabel_beforeQuery": { "message": "before query" },
   "menuLabel_afterQuery": { "message": "after query" },
+  "menuLabel_show": { "message": "చూపు" },
+  "menuLabel_relatedQueries": { "message": "సంబంధిత ప్రశ్నలు" },
   "menuLabel_replyLanguage": { "message": "Reply Language" },
   "menuLabel_about": { "message": "About" },
   "about_version": { "message": "Version" },

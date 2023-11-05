@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "d dcr" },
   "menuLabel_beforeQuery": { "message": "înainte de interogare" },
   "menuLabel_afterQuery": { "message": "după interogare" },
+  "menuLabel_show": { "message": "Spectacol" },
+  "menuLabel_relatedQueries": { "message": "Interogări conexe" },
   "menuLabel_replyLanguage": { "message": "Limbă răspuns" },
   "menuLabel_about": { "message": "Despre" },
   "about_version": { "message": "Versiune " },

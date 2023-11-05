@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "需要" },
   "menuLabel_beforeQuery": { "message": "查詢前" },
   "menuLabel_afterQuery": { "message": "查詢後" },
+  "menuLabel_show": { "message": "顯示 " },
+  "menuLabel_relatedQueries": { "message": "相關查詢" },
   "menuLabel_replyLanguage": { "message": "回覆語言" },
   "menuLabel_about": { "message": "關於我們" },
   "about_version": { "message": "版本" },

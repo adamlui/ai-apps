@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Kravið" },
   "menuLabel_beforeQuery": { "message": "áðrenn spurningurin" },
   "menuLabel_afterQuery": { "message": "eftir at hava spurt" },
+  "menuLabel_show": { "message": "Vís" },
+  "menuLabel_relatedQueries": { "message": "Viðkomandi spurningar" },
   "menuLabel_replyLanguage": { "message": "Svar á mál" },
   "menuLabel_about": { "message": "Um" },
   "about_version": { "message": "Útgáva:" },

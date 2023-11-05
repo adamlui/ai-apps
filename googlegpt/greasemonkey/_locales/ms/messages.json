@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "mewajibkan" },
   "menuLabel_beforeQuery": { "message": "sebelum pertanyaan" },
   "menuLabel_afterQuery": { "message": "selepas pertanyaan" },
+  "menuLabel_show": { "message": "Papar" },
+  "menuLabel_relatedQueries": { "message": "Pertanyaan Berkaitan" },
   "menuLabel_replyLanguage": { "message": "Bahasa Balasan" },
   "menuLabel_about": { "message": "" },
   "about_version": { "message": "Versi" },

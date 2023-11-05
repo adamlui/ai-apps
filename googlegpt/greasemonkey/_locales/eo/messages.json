@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "necesi" },
   "menuLabel_beforeQuery": { "message": "antaŭ pridemandado" },
   "menuLabel_afterQuery": { "message": "post pridemandado" },
+  "menuLabel_show": { "message": "Montri" },
+  "menuLabel_relatedQueries": { "message": "Rilataj demandoj" },
   "menuLabel_replyLanguage": { "message": "Responda lingvo" },
   "menuLabel_about": { "message": "Alproksimigas" },
   "about_version": { "message": "Versio" },

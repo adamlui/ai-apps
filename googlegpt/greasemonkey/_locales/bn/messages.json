@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "প্রয়োজন" },
   "menuLabel_beforeQuery": { "message": "কোয়েরির আগে" },
   "menuLabel_afterQuery": { "message": "কোয়েরির পরে" },
+  "menuLabel_show": { "message": "প্রদর্শন" },
+  "menuLabel_relatedQueries": { "message": "সম্পর্কিত জিজ্ঞাসা" },
   "menuLabel_replyLanguage": { "message": "উত্তর ভাষা" },
   "menuLabel_about": { "message": "সম্বন্ধে" },
   "about_version": { "message": "সংস্করণ" },

@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Inahitaji" },
   "menuLabel_beforeQuery": { "message": "kabla ya QUERY" },
   "menuLabel_afterQuery": { "message": "baada ya swali" },
+  "menuLabel_show": { "message": "Onyesha" },
+  "menuLabel_relatedQueries": { "message": "Maswali Yanayohusiana" },
   "menuLabel_replyLanguage": { "message": "Jibu Lugha" },
   "menuLabel_about": { "message": "Kuhusu" },
   "about_version": { "message": "Toleo" },

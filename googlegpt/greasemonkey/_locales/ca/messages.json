@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Requerit" },
   "menuLabel_beforeQuery": { "message": "abans de la consulta" },
   "menuLabel_afterQuery": { "message": "després de la consulta" },
+  "menuLabel_show": { "message": "Mostra" },
+  "menuLabel_relatedQueries": { "message": "Consultes relacionades" },
   "menuLabel_replyLanguage": { "message": "Idioma de la resposta" },
   "menuLabel_about": { "message": "Quant a" },
   "about_version": { "message": "Versió" },

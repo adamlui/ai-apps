@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Вимагають" },
   "menuLabel_beforeQuery": { "message": "перед запитом" },
   "menuLabel_afterQuery": { "message": "після запиту" },
+  "menuLabel_show": { "message": "Показати" },
+  "menuLabel_relatedQueries": { "message": "Пов 'язані запити" },
   "menuLabel_replyLanguage": { "message": "Мова відповіді" },
   "menuLabel_about": { "message": "Про нас" },
   "about_version": { "message": "Версія" },

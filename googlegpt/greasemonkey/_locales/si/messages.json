@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "අවශ් ‍ යයි" },
   "menuLabel_beforeQuery": { "message": "විමසුමට පෙර" },
   "menuLabel_afterQuery": { "message": "විමසුමට පසු" },
+  "menuLabel_show": { "message": "පෙන්වනු" },
+  "menuLabel_relatedQueries": { "message": "ආශ් ‍ රිත විමසුම්" },
   "menuLabel_replyLanguage": { "message": "පිළිතුරු භාෂාව" },
   "menuLabel_about": { "message": "සම්බන්ධව" },
   "about_version": { "message": "වෙළුම" },

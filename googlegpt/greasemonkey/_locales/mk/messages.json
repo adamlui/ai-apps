@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Задолжително" },
   "menuLabel_beforeQuery": { "message": "пред барањето" },
   "menuLabel_afterQuery": { "message": "по барањето" },
+  "menuLabel_show": { "message": "Прикажи" },
+  "menuLabel_relatedQueries": { "message": "Поврзани прашања" },
   "menuLabel_replyLanguage": { "message": "Јазик на одговор" },
   "menuLabel_about": { "message": "За" },
   "about_version": { "message": "Верзија" },

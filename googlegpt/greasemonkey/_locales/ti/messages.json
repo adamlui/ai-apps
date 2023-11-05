@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "ኣድላይነት" },
   "menuLabel_beforeQuery": { "message": "ቅድሚ ሕቶ" },
   "menuLabel_afterQuery": { "message": "ድሕሪ ሕቶ" },
+  "menuLabel_show": { "message": "ምር" },
+  "menuLabel_relatedQueries": { "message": "ተዛማዲ ሕቶታት" },
   "menuLabel_replyLanguage": { "message": "መልሲ ቋንቋ" },
   "menuLabel_about": { "message": "ብዛዕባ" },
   "about_version": { "message": "መበል" },

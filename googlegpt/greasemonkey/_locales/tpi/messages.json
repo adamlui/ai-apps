@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Askim" },
   "menuLabel_beforeQuery": { "message": "taim ol i askim" },
   "menuLabel_afterQuery": { "message": "bihain long askim" },
+  "menuLabel_show": { "message": "Toksave" },
+  "menuLabel_relatedQueries": { "message": "Ol askim" },
   "menuLabel_replyLanguage": { "message": "Tokples" },
   "menuLabel_about": { "message": "About" },
   "about_version": { "message": "Tok Pisin" },

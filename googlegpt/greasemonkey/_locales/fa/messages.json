@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "الزامی" },
   "menuLabel_beforeQuery": { "message": "قبل از پرس و جو" },
   "menuLabel_afterQuery": { "message": "پس از پرس و جو" },
+  "menuLabel_show": { "message": "نمایش" },
+  "menuLabel_relatedQueries": { "message": "پرس و جوهای مرتبط" },
   "menuLabel_replyLanguage": { "message": "زبان پاسخ" },
   "menuLabel_about": { "message": "درباره" },
   "about_version": { "message": "نسخه برنامه" },

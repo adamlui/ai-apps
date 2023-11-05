@@ -5,6 +5,8 @@
   "menuLabel_require": { "message": "Manaʻoga" },
   "menuLabel_beforeQuery": { "message": "i luma o le fesili" },
   "menuLabel_afterQuery": { "message": "ina ua uma ona fesiligia" },
+  "menuLabel_show": { "message": "Faaali atu" },
+  "menuLabel_relatedQueries": { "message": "Fesili" },
   "menuLabel_replyLanguage": { "message": "Tali i le Gagana" },
   "menuLabel_about": { "message": "E uiga i" },
   "about_version": { "message": "Faaliliuga" },
