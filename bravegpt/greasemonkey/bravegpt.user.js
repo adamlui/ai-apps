@@ -492,6 +492,23 @@
             })
     })}
 
+    function rqClickHandler(event) { // for addition/removal in `getShowReply()` + `braveGPTshow().handleSubmit()`
+
+        // Remove divs/listeners
+        const relatedQueriesDiv = document.querySelector('.related-queries')
+        Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
+            relatedQueryDiv.removeEventListener('click', rqClickHandler) })
+        relatedQueriesDiv.remove()
+
+        // Send related query
+        const chatbar = braveGPTdiv.querySelector('textarea')
+        if (chatbar) {
+            chatbar.value = event.target.textContent
+            chatbar.dispatchEvent(new KeyboardEvent('keydown', {
+                key: 'Enter', bubbles: true, cancelable: true }))
+        }
+    }
+
     async function getShowReply(convo, callback) {
 
         // Initialize attempt properties
@@ -524,23 +541,6 @@
                     braveGPTdiv.insertBefore(relatedQueriesDiv, braveGPTdiv.childNodes[
                         braveGPTdiv.childNodes.length - 1]) // footer div
 
-                    const clickHandler = (event) => {
-
-                        // Remove divs/listeners
-                        const relatedQueriesDiv = document.querySelector('.related-queries')
-                        Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                            relatedQueryDiv.removeEventListener('click', clickHandler) })
-                        relatedQueriesDiv.remove()
-
-                        // Send related query
-                        const chatbar = braveGPTdiv.querySelector('textarea')
-                        if (chatbar) {
-                            chatbar.value = event.target.textContent
-                            chatbar.dispatchEvent(new KeyboardEvent('keydown', {
-                                key: 'Enter', bubbles: true, cancelable: true }))
-                        }
-                    }
-
                     // Fill each child div, add fade + listener
                     relatedQueries.forEach((relatedQuery, index) => {
                         const relatedQueryDiv = document.createElement('div')
@@ -550,7 +550,7 @@
                         relatedQueriesDiv.appendChild(relatedQueryDiv)
                         setTimeout(() => {
                             relatedQueryDiv.classList.add('active')
-                            relatedQueryDiv.addEventListener('click', clickHandler)
+                            relatedQueryDiv.addEventListener('click', rqClickHandler)
                         }, index * 100)
                     })
         }})}
@@ -690,6 +690,14 @@
             chatbar.removeEventListener('input', autosizeChatbar)
             form.removeEventListener('submit', handleSubmit)
             chatbar.removeEventListener('keydown', handleEnter)
+
+            // Remove related queries
+            try {
+                const relatedQueriesDiv = document.querySelector('.related-queries')
+                Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
+                    relatedQueryDiv.removeEventListener('click', rqClickHandler) })
+                relatedQueriesDiv.remove()
+            } catch (err) {}
 
             // Show loading status
             const replySection = braveGPTdiv.querySelector('section')
