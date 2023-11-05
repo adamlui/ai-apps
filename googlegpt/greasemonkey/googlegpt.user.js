@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.5.14
+// @version             2023.11.5.15
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -457,7 +457,7 @@
 
         // Add command to toggle showing related queries
         const rqLabel = state.symbol[+config.relatedQueriesDisabled] + ' '
-                      + `${ messages.menuLabel_show } ${ messages.menuLabel_relatedQueries } `
+                      + messages.menuLabel_relatedQueries + ' '
                       + state.separator + state.word[+config.relatedQueriesDisabled]
         menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
             saveSetting('relatedQueriesDisabled', !config.relatedQueriesDisabled)
