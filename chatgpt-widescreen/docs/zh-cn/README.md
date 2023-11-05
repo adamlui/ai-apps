@@ -176,6 +176,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 [![@AliAlSarre](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/129722778?first-contrib=2023.05.23-css-readability&h=50&w=50&mask=circle&maxage=7d "@AliAlSarre")](https://github.com/AliAlSarre)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/42227673?first-contrib=2023.06.26-poe-support-idea&h=50&w=50&mask=circle&maxage=7d "@wheregone")](https://github.com/wheregone)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/58298118?first-contrib=2023.09.23-wider-chatbox-idea&h=50&w=50&mask=circle&maxage=7d "@Aubermean")](https://github.com/Aubermean)
+[![](https://images.weserv.nl/?url=https://greasyfork.org/vite/assets/blacklogo96-e0c2c761.png?first-contrib=2023.11.5-plus-buttons-distorted-bug-report&h=50&w=50&mask=circle&maxage=7d "大聪明 (H4Ha）")](https://greasyfork.org/users/1210535-%E5%A4%A7%E8%81%AA%E6%98%8E-h4ha)
 [![ChatGPT](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
