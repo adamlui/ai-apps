@@ -66,7 +66,7 @@
 
 2. Install [ChatGPT Widescreen Mode](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode) (will load in userscript manager installed above)
 
-3. Visit [chat.openai.com](https://chat.openai.com) or [poe.com](https://poe.com) & mode toggles are added to chatbar!
+3. Visit [chat.openai.com](https://chat.openai.com), [poe.com](https://poe.com) or [chat.aivvm.com](https://chat.aivvm.com) & mode toggles are added to chatbar!
 
 <div align="center">
 

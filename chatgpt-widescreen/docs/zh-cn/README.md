@@ -94,7 +94,7 @@
 
 2. 安装 [ChatGPT 宽屏模式](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) userscript (will load in userscript manager installed above)
 
-3. 访问 [chat.openai.com](https://chat.openai.com) 或 [poe.com](https://poe.com)，聊天栏已添加模式切换！
+3. 访问 [chat.openai.com](https://chat.openai.com), [poe.com](https://poe.com) 或 [chat.aivvm.com](https://chat.aivvm.com)，聊天栏已添加模式切换！
 
 <div align="center">
 
