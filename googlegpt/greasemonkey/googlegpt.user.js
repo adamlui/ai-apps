@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.6
+// @version             2023.11.6.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1059,13 +1059,14 @@
             + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' }'
         + ( isDarkMode() ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
         + `.related-queries { display: flex ; flex-wrap: wrap ; margin-bottom: ${ isChromium() ? 28 : 23 }px }`
-        + '.related-query { font-size: 0.9em ; cursor: pointer ; padding: 8px ; margin: 4px 4px 4px 0 ;'
-            + `color: ${ isDarkMode() ? '#f2f2f2' : '#424242' } ; background: ${ isDarkMode() ? '#424242' : '#dadada70' } ;`
-            + `border: 1px solid ${ isDarkMode() ? '#545353' : '#e1e1e1' } ;`
+        + '.related-query {'
+            + `margin: 4px 4px ${ isDarkMode() ? 5 : 2 }px 0 ; padding: 8px 11px 8px 17px ;`
+            + `color: ${ isDarkMode() ? '#f2f2f2' : '#767676' } ; background: ${ isDarkMode() ? '#424242' : '#dadada12' } ;`
+            + `border: 1px solid ${ isDarkMode() ? '#777' : '#e1e1e1' } ; font-size: 0.9em ; cursor: pointer ;`
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
-            + `box-shadow: 3px 3px ${ isDarkMode() ? '12px -9px white' : '13px -6px rgba(169,169,169,0.75)' } ;`
+            + `box-shadow: 1px 3px ${ isDarkMode() ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' } ;`
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-        + '.related-query:hover { background: #a2a2a270 }'
+        + `.related-query:hover { background: #${ isDarkMode() ? 'a2a2a270' : 'a2a2a240 ; color: #000000a8' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button { border: none ; float: right ;'
