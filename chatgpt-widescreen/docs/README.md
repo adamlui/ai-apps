@@ -100,7 +100,7 @@
 
 ![Full-Window toggle](https://i.imgur.com/wdoxZuh.png)
 
-*NOTE: On openai.com, since full-window mode hides the sidebar, press '+' to start new chats*
+*NOTE: Since full-window mode hides the sidebar, press '+' to start new chats*
 
 </div>
 
