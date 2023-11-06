@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.3.15
+// This library is a condensed version of chatgpt.js v2.3.16
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -72,7 +72,7 @@ const chatgpt = {
                 // Background styles
                 '.chatgpt-modal {' 
                     + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
-                    + 'background-color: rgba(67, 70, 72, 0.75) ;' // dim bg
+                    + `background-color: rgba(67, 70, 72, ${ chatgpt.isDarkMode() ? 0.62 : 0.18 }) ;` // dim bg
                     + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
 
                 // Alert styles
@@ -80,7 +80,7 @@ const chatgpt = {
                     + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ;'
                     + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
-                    + 'padding: 20px ; margin: 12px 23px ; border-radius: 5px ; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) ;'
+                    + 'padding: 20px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0,0,0,.12) ;'
                     + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }' // disable selection
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
                 + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
@@ -104,7 +104,7 @@ const chatgpt = {
                 + '.modal-close-btn {'
                     + 'cursor: pointer ; width: 20px ; height: 20px ; float: right ; position: relative ; right: -2px }'
                 + '.modal-close-btn svg { margin: 5px 5px }' // center SVG for hover overlay
-                + '.modal-close-btn:hover { background-color: #dfdfdf }'
+                + `.modal-close-btn:hover { background-color: #f2f2f2${ chatgpt.isDarkMode() ? '00' : '' }}`
 
                 // Checkbox styles
                 + '.chatgpt-modal .checkbox-group { display: flex ; margin-top: -18px }'
@@ -181,7 +181,7 @@ const chatgpt = {
         const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         closeSVGpath.setAttribute('fill-rule', 'evenodd');
         closeSVGpath.setAttribute('clip-rule', 'evenodd');
-        closeSVGpath.setAttribute('fill', 'black');
+        closeSVGpath.setAttribute('fill', chatgpt.isDarkMode() ? 'white' : 'black');
         closeSVGpath.setAttribute('d', 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z');
         closeSVG.appendChild(closeSVGpath); closeBtn.appendChild(closeSVG);
 
@@ -278,7 +278,7 @@ const chatgpt = {
         return new Promise(resolve => {
             const intervalId = setInterval(() => {
                 if (document.querySelector('nav button[id*="menu"]')) {
-                    clearInterval(intervalId); resolve();
+                    clearInterval(intervalId); setTimeout(() => { resolve(); }, 500);
     }}, 100);});},
 
     notify: async function(msg, position, notifDuration, shadow) {
@@ -300,6 +300,7 @@ const chatgpt = {
         closeSVG.setAttribute('height', '8px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
         closeSVG.setAttribute('fill', 'none');
+        closeSVG.style.height = closeSVG.style.width = '8px'; // override SVG styles on non-OpenAI sites
         const closeSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         closeSVGpath.setAttribute('fill-rule', 'evenodd');
         closeSVGpath.setAttribute('clip-rule', 'evenodd');
@@ -359,7 +360,7 @@ const chatgpt = {
 
         // Show notification
         setTimeout(() => {
-            notificationDiv.style.opacity = 1; // show msg
+            notificationDiv.style.opacity = 0.8; // show msg
             notificationDiv.style.transform = 'translateX(0)'; // bring from off-screen
             notificationDiv.style.transition = 'transform 0.15s ease, opacity 0.15s ease';
         }, 10);
