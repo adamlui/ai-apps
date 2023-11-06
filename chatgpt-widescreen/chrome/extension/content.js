@@ -262,8 +262,8 @@
             buttonSVG.setAttribute('stroke', buttonColor)
             buttonSVG.setAttribute('fill', 'none')
             buttonSVG.setAttribute('stroke-width', '2')
-            buttonSVG.setAttribute('height', site == 'poe' ? '2em' : '1em')
-            buttonSVG.setAttribute('width', site == 'poe' ? '2em' : '1em')
+            buttonSVG.setAttribute('height', site == 'poe' ? '2em' : 18)
+            buttonSVG.setAttribute('width', site == 'poe' ? '2em' : 18)
         }
         buttonSVG.setAttribute('class', sendImgClasses) // assign borrowed classes
         buttonSVG.setAttribute( // center oerlay + prevent triggering tooltips twice
