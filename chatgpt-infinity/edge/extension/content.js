@@ -59,7 +59,7 @@
 
             // Position/color ON-state
             + 'input:checked { position: absolute ; right: 3px } '
-            + 'input:checked + .slider { background-color: #A057F8 ; box-shadow: 2px 1px 20px #D8A9FF } '
+            + 'input:checked + .slider { background-color: #AD68FF ; box-shadow: 2px 1px 20px #D8A9FF } '
             + 'input:checked + .slider:before { '
                 + '-webkit-transform: translateX(14px) translateY(1px) ; '
                 + '-ms-transform: translateX(14px) translateY(1px) ; '
@@ -67,6 +67,8 @@
 
         document.head.appendChild(switchStyle)
     }
+
+    await chatgpt.isLoaded()
 
     // Create sidebar toggle, add styles/classes/listener/HTML
     const toggleLabel = document.createElement('div') // create label div
@@ -89,7 +91,6 @@
     updateToggleHTML()
 
     // Insert full toggle on page load
-    await chatgpt.isLoaded()
     settings.load(['extensionDisabled']).then(() => {
         if (!config.extensionDisabled) insertToggle() })
 

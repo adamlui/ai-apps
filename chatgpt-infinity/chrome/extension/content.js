@@ -68,6 +68,8 @@
         document.head.appendChild(switchStyle)
     }
 
+    await chatgpt.isLoaded()
+
     // Create sidebar toggle, add styles/classes/listener/HTML
     const toggleLabel = document.createElement('div') // create label div
     toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
@@ -89,7 +91,6 @@
     updateToggleHTML()
 
     // Insert full toggle on page load
-    await chatgpt.isLoaded()
     settings.load(['extensionDisabled']).then(() => {
         if (!config.extensionDisabled) insertToggle() })
 
