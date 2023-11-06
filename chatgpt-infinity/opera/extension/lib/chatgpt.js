@@ -285,7 +285,7 @@ const chatgpt = {
             const intervalId = setInterval(() => {
                 if (document.querySelector('nav button[id*="menu"]')) {
                     clearInterval(intervalId); setTimeout(() => { resolve(); }, 500);
-    }}, 100);});}
+    }}, 100);});},
 
     notify: async function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
