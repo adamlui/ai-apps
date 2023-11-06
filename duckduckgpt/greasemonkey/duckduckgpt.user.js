@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.6
+// @version             2023.11.6.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -901,14 +901,15 @@
             + 'height: 1.55rem ; width: 94.6% ; max-height: 200px ;resize: none ; '
             + 'margin: 3px 0 15px 0 ; padding: 9px 10px 5px 10px ; '
             + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' } '
-        + `.related-queries { display: flex ; flex-wrap: wrap ; margin: ${ isChromium() ? -7 : -3 }px 0 7px }`
-        + '.related-query { font-size: 0.98em ; cursor: pointer ; padding: 8px ; margin: 4px 4px 4px 0 ;'
-            + `color: ${ isDarkMode() ? '#f2f2f2' : '#424242' } ; background: ${ isDarkMode() ? '#424242' : '#dadada70' } ;`
-            + `border: 1px solid ${ isDarkMode() ? '#545353' : '#e1e1e1' } ;`
+        + `.related-queries { display: flex ; flex-wrap: wrap ; margin: ${ isChromium() ? -7 : -3 }px 0 10px }`
+        + '.related-query {'
+            + `margin: 4px 4px ${ isDarkMode() ? 7 : 2 }px 0 ; padding: 8px 11px 8px 17px ;`
+            + `color: ${ isDarkMode() ? '#f2f2f2' : '#767676' } ; background: ${ isDarkMode() ? '#424242' : '#dadada12' } ;`
+            + `border: 1px solid ${ isDarkMode() ? '#777' : '#e1e1e1' } ; font-size: 0.98em ; cursor: pointer ;`
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
-            + `box-shadow: 3px 3px ${ isDarkMode() ? '12px -9px white' : '13px -6px rgba(169,169,169,0.75)' } ;`
+            + `box-shadow: 1px 3px ${ isDarkMode() ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' } ;`
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-        + '.related-query:hover { background: #a2a2a270 }'
+        + `.related-query:hover { background: #${ isDarkMode() ? 'a2a2a270' : 'a2a2a240 ; color: #000000a8' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
