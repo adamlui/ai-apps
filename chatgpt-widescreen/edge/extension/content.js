@@ -71,8 +71,8 @@
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
-        site === 'openai' ? 'div[class*="bottom"] form { max-width: 96% }'
-      : site === 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }' : '' )
+        site == 'openai' ? 'div[class*="bottom"] form { max-width: 96% }'
+      : site == 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }' : '' )
     updateWidescreenStyle()
 
     // Create full-window style
@@ -100,8 +100,8 @@
                 window[buttonName].style.cssText += '; margin-bottom: 0.2rem '
             window[buttonName].addEventListener('click', () => { // add click listeners
                 if (buttonType === 'newChat') {
-                    if (site === 'openai') chatgpt.startNewChat()
-                    else if (site === 'poe') document.querySelector('header a[class*="button"]').click()
+                    if (site == 'openai') chatgpt.startNewChat()
+                    else if (site == 'poe') document.querySelector('header a[class*="button"]').click()
                 } else toggleMode(buttonType) })
             window[buttonName].addEventListener('mouseover', toggleTooltip)
             window[buttonName].addEventListener('mouseout', toggleTooltip)
@@ -209,7 +209,7 @@
         chatbar.insertBefore(fullWindowButton, leftMostBtn)
         chatbar.insertBefore(fullScreenButton, leftMostBtn)
         chatbar.insertBefore(tooltipDiv, leftMostBtn)
-        if (site === 'openai') chatbar.classList.remove('overflow-hidden') // for tooltips to overflow
+        if (site == 'openai') chatbar.classList.remove('overflow-hidden') // for tooltips to overflow
     }
 
     function removeBtns() {
@@ -369,7 +369,7 @@
 
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
-              site === 'openai' ? (
+              site == 'openai' ? (
                   inputSelector + ' { padding-right: 148px } '  // narrow input to accomdate buttons
                 + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
                     + 'position: relative ; left: 66px ; top: 7px } ' // ...below avatar to avoid cropping
@@ -380,11 +380,11 @@
 
     function updateWidescreenStyle() {
         wideScreenStyle.innerText = (
-              site === 'openai' ? (
+              site == 'openai' ? (
                   '.text-base { max-width: 100% !important }' // widen outer container
                 + '.text-base:nth-of-type(2) { max-width: 97% !important }' // widen inner container
                 + '#__next > div > div.flex { width: 100px }' ) // prevent sidebar shrinking when zoomed
-            : site === 'poe' ? (
+            : site == 'poe' ? (
                   '[class^="MainColumn_column"] { width: 100% !important }' // widen outer container
                 + '[class*="ChatPageMain_container"] { max-width: 97% !important }' // widen inner container
                 + '[class^="Message"] { max-width: 100% !important }' // widen speech bubbles
