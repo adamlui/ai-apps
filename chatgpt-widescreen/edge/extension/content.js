@@ -203,7 +203,7 @@
                                       : document.querySelector('form button[class*="bottom"]').parentNode;
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
         const leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : ''))
-        chatbar.insertBefore(leftMostBtn, chatbar.lastChild) // elevate to chatbar if nested
+        if (site == 'poe') chatbar.insertBefore(leftMostBtn, chatbar.lastChild) // elevate nested non-send button to chatbar
         chatbar.insertBefore(newChatButton, leftMostBtn)
         chatbar.insertBefore(wideScreenButton, leftMostBtn)
         chatbar.insertBefore(fullWindowButton, leftMostBtn)
