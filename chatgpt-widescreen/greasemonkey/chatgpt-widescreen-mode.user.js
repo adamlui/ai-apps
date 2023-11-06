@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.5.2
+// @version             2023.11.5.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -486,11 +486,11 @@
     // Define BUTTON functions
 
     function setBtnColor() { return (
-        site === 'openai' ? ( chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' ) : 'currentColor' )}
+        site == 'openai' ? ( chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' ) : 'currentColor' )}
 
     function insertBtns() {
-        const chatbar = ( site === 'poe' ? document.querySelector('div[class*="ChatMessageInputContainer"]')
-                        : site === 'aivvm' ? document.querySelector('svg[class*="send"]').parentNode.parentNode
+        const chatbar = ( site == 'poe' ? document.querySelector('div[class*="ChatMessageInputContainer"]')
+                        : site == 'aivvm' ? document.querySelector('svg[class*="send"]').parentNode.parentNode
                         : document.querySelector('form button[class*="bottom"]').parentNode )
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
         const leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : ''))
@@ -500,7 +500,7 @@
         chatbar.insertBefore(fullWindowButton, leftMostBtn)
         chatbar.insertBefore(fullScreenButton, leftMostBtn)
         chatbar.insertBefore(tooltipDiv, leftMostBtn)
-        if (site === 'openai') chatbar.classList.remove('overflow-hidden') // for tooltips to overflow
+        if (site == 'openai') chatbar.classList.remove('overflow-hidden') // for tooltips to overflow
     }
 
     function updateBtnSVG(mode, state = '') {
@@ -599,8 +599,8 @@
     function activateMode(mode) {
         if (mode == 'wideScreen') { document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
         else if (mode == 'fullWindow') {
-            if (site === 'openai') chatgpt.sidebar.hide()
-            else if (site === 'aivvm') {
+            if (site == 'openai') chatgpt.sidebar.hide()
+            else if (site == 'aivvm') {
                 for (const side of ['left', 'right']) {
                     const attrSelector = `[class*="fixed"][class*="top"][class*="${ side }"]`
                     if (document.querySelector('div' + attrSelector)) // if ${side}bar is open
@@ -616,8 +616,8 @@
             try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (err) {}
         else if (mode == 'fullWindow') {
             try { document.head.removeChild(fullWindowStyle) } catch (err) {}
-            if (site === 'openai') chatgpt.sidebar.show()
-            else if (site === 'aivvm') {
+            if (site == 'openai') chatgpt.sidebar.show()
+            else if (site == 'aivvm') {
                 for (const side of ['left', 'right']) {
                     const attrSelector = `[class*="fixed"][class*="top"][class*="${ side }"]`
                     if (!document.querySelector('div' + attrSelector)) // if ${side}bar is closed
@@ -643,8 +643,8 @@
     // Define SYNC functions
 
     function isFullWindow() {
-        return ( site === 'openai' ? chatgpt.sidebar.isOff()
-               : site === 'aivvm' ? document.querySelectorAll(sidebarSelector).length === 0
+        return ( site == 'openai' ? chatgpt.sidebar.isOff()
+               : site == 'aivvm' ? document.querySelectorAll(sidebarSelector).length === 0
                : /* poe */ !!document.querySelector('#fullWindow-mode') )
     }
 
@@ -682,16 +682,16 @@
 
     function updateWidescreenStyle() {
         wideScreenStyle.innerText = (
-              site === 'openai' ? (
+              site == 'openai' ? (
                   '.text-base { max-width: 100% !important }' // widen outer container
                 + '.text-base:nth-of-type(2) { max-width: 97% !important }' // widen inner container
                 + '#__next > div > div.flex { width: 100px }' ) // prevent sidebar shrinking when zoomed
-            : site === 'poe' ? (
+            : site == 'poe' ? (
                   '[class^="MainColumn_column"] { width: 100% !important }' // widen outer container
                 + '[class*="ChatPageMain_container"] { max-width: 97% !important }' // widen inner container
                 + '[class^="Message"] { max-width: 100% !important }' // widen speech bubbles
                 + '[class^="ChatMessageInputFooter"] { max-width: 618px ; margin: auto }' ) // preserve chatbar width
-            : site === 'aivvm' ? (
+            : site == 'aivvm' ? (
                   'div[class*="group"], div[class*="group"] > div { max-width: 98% !important }' // widen outer containers
                 + 'div[class*="group"] > div > div:nth-of-type(2),' // widen inner containers
                         + 'div[class*="group"] > div > div:nth-of-type(2) > div > div:nth-of-type(1)'
@@ -705,7 +705,7 @@
     // Create browser toolbar menu or disable script if extension installed
     const state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
                     separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
-    if (site === 'openai') await chatgpt.isLoaded()
+    if (site == 'openai') await chatgpt.isLoaded()
     setTimeout(() => { // add trivial delay for Chrome extension load to beat VM
         if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
             GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return }) // disable menu
@@ -714,17 +714,17 @@
     }, 5)
 
     // Define UI element selectors
-    const inputSelector = site === 'openai' ? 'form textarea[id*="prompt"]'
-                        : site === 'aivvm' ? 'textarea[placeholder^="Type"]'
+    const inputSelector = site == 'openai' ? 'form textarea[id*="prompt"]'
+                        : site == 'aivvm' ? 'textarea[placeholder^="Type"]'
                         : /* poe */ '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after',
-          sidebarSelector = site === 'openai' ? '#__next > div > div.dark'
-                          : site === 'aivvm' ? 'main > div[class*="flex"] > div:not([class*="flex"])'
+          sidebarSelector = site == 'openai' ? '#__next > div > div.dark'
+                          : site == 'aivvm' ? 'main > div[class*="flex"] > div:not([class*="flex"])'
                           : /* poe */ 'menu[class*="sidebar"], aside[class*="sidebar"]',
           sidepadSelector = '#__next > div > div',
-          headerSelector = site === 'openai' ? 'header'
-                         : site === 'aivvm' ? 'div[class*="top"][class*="sticky"]' : '',
-          footerSelector = site === 'openai' ? 'div[class*="bottom"] > div'
-                         : site === 'aivvm' ? 'div[class*="bottom"] > div:nth-of-type(2)' : ''
+          headerSelector = site == 'openai' ? 'header'
+                         : site == 'aivvm' ? 'div[class*="top"][class*="sticky"]' : '',
+          footerSelector = site == 'openai' ? 'div[class*="bottom"] > div'
+                         : site == 'aivvm' ? 'div[class*="bottom"] > div:nth-of-type(2)' : ''
 
     // Save full-window + full screen states
     config.fullWindow = ['openai', 'aivvm'].includes(site) ? isFullWindow() : config.fullWindow
@@ -743,8 +743,8 @@
 
     // Collect button classes
     const sendBtnSelector = (
-        site === 'openai' ? 'form button[class*="bottom"]'
-      : site === 'aivvm' ? 'textarea ~ button[class*="right"]' : null)
+        site == 'openai' ? 'form button[class*="bottom"]'
+      : site == 'aivvm' ? 'textarea ~ button[class*="right"]' : null)
     const sendButtonClasses = (document.querySelector(sendBtnSelector) || {}).classList || [],
           sendImgClasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
 
@@ -771,9 +771,9 @@
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
-        site === 'openai' ? 'div[class*="bottom"] form { max-width: 96% }'
-      : site === 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }'
-      : site === 'aivvm' ? 'div[class*="stretch"] { max-width: 98% }' : '' )
+        site == 'openai' ? 'div[class*="bottom"] form { max-width: 96% }'
+      : site == 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }'
+      : site == 'aivvm' ? 'div[class*="stretch"] { max-width: 98% }' : '' )
     updateWidescreenStyle()
 
     // Create full-window style
@@ -787,8 +787,8 @@
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
           bOffset = 1.77, // rem between buttons
           rOffset = ( // rem from right edge of chatbar
-              site === 'openai' ? 2.57
-            : site === 'aivvm' ? 2.15 : '' )
+              site == 'openai' ? 2.57
+            : site == 'aivvm' ? 2.15 : '' )
     let buttonColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
@@ -800,15 +800,15 @@
             window[buttonName].style.cursor = 'pointer' // add finger cursor
             if (site !== 'poe') // assign borrowed classes
                 window[buttonName].setAttribute('class', sendButtonClasses)
-            else if (site === 'poe') // lift buttons slightly
+            else if (site == 'poe') // lift buttons slightly
                 window[buttonName].style.cssText += '; margin-bottom: 0.2rem'
 
             // Add click/hover listeners
             window[buttonName].addEventListener('click', () => {
                 if (buttonType === 'newChat') {
-                    if (site === 'openai') chatgpt.startNewChat()
-                    else if (site === 'poe') document.querySelector('header a[class*="button"]')?.click()
-                    else if (site === 'aivvm') {
+                    if (site == 'openai') chatgpt.startNewChat()
+                    else if (site == 'poe') document.querySelector('header a[class*="button"]')?.click()
+                    else if (site == 'aivvm') {
                         (function startNewAIVVMchat() {
                             const newChatBtn = document.querySelector('button[class*="sidebar"]')
                             if (newChatBtn) newChatBtn.click()
