@@ -59,7 +59,7 @@
 
 ⚙️ 自定义功能，例如更大的聊天框和隐藏的页眉/页脚，以获得更宽敞的视图
 
-🌐 适用于: **openai.com** + **poe.com**
+🌐 适用于: **chat.openai.com** + **poe.com** + **chat.aivvm.com**
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 

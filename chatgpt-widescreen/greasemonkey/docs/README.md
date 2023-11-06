@@ -50,7 +50,7 @@
 
 ⚙️ Customize features like larger chatbox & hidden header/footer for more spacious view
 
-🌐 Works with: **openai.com** + **poe.com**
+🌐 Works with: **chat.openai.com** + **poe.com** + **chat.aivvm.com**
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
