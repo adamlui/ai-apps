@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.6.1
+// @version             2023.11.7
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -378,58 +378,9 @@
     function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
     function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
-
-    function updateCheck() {
-
-        // Fetch latest meta
-        const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({
-            method: 'GET', url: config.updateURL + '?t=' + Date.now(),
-            headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
-
-                // Compare versions
-                const latestVer = /@version +(.*)/.exec(response.responseText)[1]
-                for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    const currentSubVer = parseInt(currentVer.split('.')[i], 10) || 0,
-                          latestSubVer = parseInt(latestVer.split('.')[i], 10) || 0
-                    if (currentSubVer > latestSubVer) break // out of comparison since not outdated
-                    else if (latestSubVer > currentSubVer) { // if outdated
-
-                        // Alert to update
-                        const updateAlertID = alert(messages.alert_updateAvail + '! 🚀', // title
-                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
-                                + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
-                                    + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
-                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + `> ${ messages.link_viewChanges }</a>`,
-                            function update() { // button
-                                GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
-                                    { active: true, insert: true } // focus, make adjacent
-                                ).onclose = () => location.reload() }
-                        )
-
-                        // Localize button labels if needed
-                        if (!config.userLanguage.startsWith('en')) {
-                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
-                                  updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss
-                        }
-
-                        return
-                }}
-
-                // Alert to no update, return to About alert
-                alert(messages.alert_upToDate + '!', // title
-                    `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!` // msg
-                )
-                launchAboutModal()
-    }})}
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
     // Define MENU functions
-
-    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
     function registerMenu() {
         menuIDs = [] // empty to store newly registered cmds for removal while preserving order
@@ -509,6 +460,54 @@
             else button.style.display = 'none' // hide Dismiss button
         }
     }
+
+    function updateCheck() {
+
+        // Fetch latest meta
+        const currentVer = GM_info.script.version
+        GM.xmlHttpRequest({
+            method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+            headers: { 'Cache-Control': 'no-cache' },
+            onload: (response) => {
+
+                // Compare versions
+                const latestVer = /@version +(.*)/.exec(response.responseText)[1]
+                for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
+                    const currentSubVer = parseInt(currentVer.split('.')[i], 10) || 0,
+                          latestSubVer = parseInt(latestVer.split('.')[i], 10) || 0
+                    if (currentSubVer > latestSubVer) break // out of comparison since not outdated
+                    else if (latestSubVer > currentSubVer) { // if outdated
+
+                        // Alert to update
+                        const updateAlertID = alert(messages.alert_updateAvail + '! 🚀', // title
+                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
+                                + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
+                                    + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
+                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
+                                    + `> ${ messages.link_viewChanges }</a>`,
+                            function update() { // button
+                                GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
+                                    { active: true, insert: true } // focus, make adjacent
+                                ).onclose = () => location.reload() }
+                        )
+
+                        // Localize button labels if needed
+                        if (!config.userLanguage.startsWith('en')) {
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
+                                  updateButtons = updateAlert.querySelectorAll('button')
+                            updateButtons[1].textContent = messages.buttonLabel_update
+                            updateButtons[0].textContent = messages.buttonLabel_dismiss
+                        }
+
+                        return
+                }}
+
+                // Alert to no update, return to About alert
+                alert(messages.alert_upToDate + '!', // title
+                    `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!` // msg
+                )
+                launchAboutModal()
+    }})}
 
     // Define FEEDBACK functions
 
