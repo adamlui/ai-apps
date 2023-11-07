@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.7.1
+// @version             2023.11.7.2
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -909,9 +909,9 @@
             } getShowReply(convo)
 
             // Remove listeners since they're re-added
-            chatbar.removeEventListener('input', autosizeChatbar)
+            form.removeEventListener('keydown', handleEnter)
             form.removeEventListener('submit', handleSubmit)
-            chatbar.removeEventListener('keydown', handleEnter)
+            chatbar.removeEventListener('input', autosizeChatbar)
 
             // Remove related queries
             try {
