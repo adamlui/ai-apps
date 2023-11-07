@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.6.1
+// @version             2023.11.6.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -314,7 +314,7 @@
                                   'https://www.futurepedia.io/tool/bravegpt#bravegpt-review') },
                               function alternativeTo() { safeWindowOpen(
                                   'https://alternativeto.net/software/bravegpt/about/') }],
-                            '', 511) // Review modal width
+                            '', 571) // Review modal width
                         const reviewButtons = document.getElementById(reviewAlertID).querySelectorAll('button')
                         reviewButtons[0].style.display = 'none' // hide Dismiss button
                         reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
@@ -891,13 +891,15 @@
         + '.kudo-ai a { color: #aaa ; text-decoration: none } '
         + `.kudo-ai a:hover { color: ${ isDarkMode() ? 'white' : 'black' } ; text-decoration: none }`
         + '.katex-html { display: none } ' // hide unrendered math
-        + '.chatgpt-modal p { font-size: 1.115rem ; margin-left: 4px } ' // chatgpt.alert() msg
-        + '.chatgpt-modal button { ' // chatgpt.alert() buttons
+        + '.chatgpt-modal > div { padding: 24px 20px 24px 20px !important }' // increase alert padding
+        + '.chatgpt-modal p { margin-left: 4px ; font-size: 1.115rem }' // position/size alert msg
+        + '.chatgpt-modal button { ' // alert buttons
             + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ; padding: 5px !important ;'
-            + 'border-radius: 0 !important ; border: 1px solid ' + ( isDarkMode() ? 'white' : 'black' ) + ' !important } '
-        + '.modal-buttons { margin: 20px -5px -3px -10px !important }'
-        + '.modal-close-btn { top: -7px } ') // raise alert close button
-    document.head.appendChild(braveGPTstyle) // append style to <head>
+            + 'border-radius: 0 !important ; border: 1px solid ' + ( isDarkMode() ? 'white' : 'black' ) + ' !important }'
+        + '.modal-buttons { margin: 20px 0px -3px -7px !important }' // position alert buttons
+        + '.modal-close-btn { top: -7px }' // raise alert close button
+    )
+    document.head.appendChild(braveGPTstyle)
 
     // Create BraveGPT container & add id/classes
     const braveGPTdiv = document.createElement('div') // create container div
