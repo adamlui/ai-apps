@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.6.1
+// @version             2023.11.6.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -367,7 +367,7 @@
                               function futurepedia() { safeWindowOpen(
                                   'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review') },
                               function alternativeTo() { safeWindowOpen(
-                                  'https://alternativeto.net/software/duckduckgpt/about/') }])
+                                  'https://alternativeto.net/software/duckduckgpt/about/') }], '', 523)
                         const reviewButtons = document.getElementById(reviewAlertID).querySelectorAll('button')
                         reviewButtons[0].style.display = 'none' // hide Dismiss button
                         reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
@@ -917,14 +917,15 @@
         + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
         + '.katex-html { display: none } ' // hide unrendered math
         + ( isDarkMode() ? '.chatgpt-modal > div { background-color: black !important ; color: white }' : '' )
-        + '.chatgpt-modal h2 { margin: 0 ; padding: 0 } ' // shrink margin/padding around update alert title
-        + '.chatgpt-modal p { margin: -8px 0 -9px 4px ; font-size: 1.55rem } ' // position/size update alert msg
-        + '.chatgpt-modal button { ' // chatgpt.alert() buttons
+        + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important }' // increase alert padding
+        + '.chatgpt-modal h2 { margin: 0 ; padding: 0 }' // shrink margin/padding around alert titles
+        + '.chatgpt-modal p { margin: -8px 0 -9px 4px ; font-size: 1.55rem }' // position/size update alert msg
+        + '.chatgpt-modal button {' // alert buttons
             + 'padding: 7px !important ; cursor: pointer ; border-radius: 0 !important ;'
             + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
             + 'border: 1px solid ' + ( isDarkMode() ? 'white' : 'black' ) + '!important ;'
             + ( isDarkMode() ? 'background: none ; color: white' : '') + '}'
-        + '.modal-buttons { margin: 20px -5px -3px -12px !important }' // position modal buttons
+        + '.modal-buttons { margin: 20px -5px -3px -15px !important }' // position alert buttons
     )
     document.head.appendChild(ddgptStyle) // append style to <head>
 
