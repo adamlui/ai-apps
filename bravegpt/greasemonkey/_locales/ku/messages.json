@@ -2,7 +2,6 @@
   "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "جوابەکانی ChatGPT بۆ شێوەی ئامادەکراوی تایبەتی بەشی تایبەتی (پارێزراوە لەلایەن GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "مۆدی پرۆکسی API" },
-  "menuLabel_show": { "message": "نیشاندان" },
   "menuLabel_relatedQueries": { "message": "پرسیارە پەیوەندیدارەکان" },
   "menuLabel_require": { "message": "پێویستی" },
   "menuLabel_beforeQuery": { "message": "پارێزگا بکە" },

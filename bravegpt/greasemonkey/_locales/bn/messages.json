@@ -2,7 +2,6 @@
   "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "সাহসী অনুসন্ধান সাইডবারে চ্যাটজিপিটি উত্তর যোগ করে (জিপিটি -4 দ্বারা চালিত!)" },
   "menuLabel_proxyAPImode": { "message": "প্রক্সি API মোড" },
-  "menuLabel_show": { "message": "প্রদর্শন" },
   "menuLabel_relatedQueries": { "message": "সম্পর্কিত জিজ্ঞাসা" },
   "menuLabel_require": { "message": "প্রয়োজন" },
   "menuLabel_beforeQuery": { "message": "কোয়েরির আগে" },

@@ -2,7 +2,6 @@
   "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Ավելացնում է ChatGPT - ի պատասխանները «Խիզախ որոնում» կողագոտում (սնուցվում է GPT -4 - ով)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API ռեժիմ" },
-  "menuLabel_show": { "message": "Ցուցադրել" },
   "menuLabel_relatedQueries": { "message": "Առնչվող հարցումներ" },
   "menuLabel_require": { "message": "Պահանջել" },
   "menuLabel_beforeQuery": { "message": "նախքան հարցումը" },

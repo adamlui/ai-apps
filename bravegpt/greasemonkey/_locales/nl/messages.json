@@ -2,7 +2,6 @@
   "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Voegt ChatGPT-antwoorden toe aan Brave Search-zijbalk (mogelijk gemaakt door GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy-API-modus" },
-  "menuLabel_show": { "message": "Weergeven" },
   "menuLabel_relatedQueries": { "message": "Gerelateerde query 's" },
   "menuLabel_require": { "message": "Vereisen" },
   "menuLabel_beforeQuery": { "message": "voor query" },

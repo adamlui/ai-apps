@@ -2,7 +2,6 @@
   "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Add ChatGPT answers to Brave Search sidebar (so GPT-4 ayeke sara kua na ni!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API mode na na na" },
-  "menuLabel_show": { "message": "Yekpare show" },
   "menuLabel_relatedQueries": { "message": "Ahundango tënë so andu tënë ni" },
   "menuLabel_require": { "message": "A hunda ti tene a sara tongaso" },
   "menuLabel_beforeQuery": { "message": "kozo ti hunda" },

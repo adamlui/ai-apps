@@ -2,7 +2,6 @@
   "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Yn ychwanegu atebion ChatGPT at far ochr Dewr Chwilio (wedi'i bweru gan GPT -4!)" },
   "menuLabel_proxyAPImode": { "message": "Modd API Dirprwy" },
-  "menuLabel_show": { "message": "Dangos" },
   "menuLabel_relatedQueries": { "message": "Ymholiadau Perthnasol" },
   "menuLabel_require": { "message": "Angen" },
   "menuLabel_beforeQuery": { "message": "cyn ymholiad" },

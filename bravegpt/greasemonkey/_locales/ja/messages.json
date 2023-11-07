@@ -2,7 +2,6 @@
   "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Brave SearchサイドバーにChatGPT回答を追加（ GPT -4搭載！ ）" },
   "menuLabel_proxyAPImode": { "message": "プロキシAPIモード" },
-  "menuLabel_show": { "message": "表示" },
   "menuLabel_relatedQueries": { "message": "関連するクエリ" },
   "menuLabel_require": { "message": "必須" },
   "menuLabel_beforeQuery": { "message": "クエリの前" },

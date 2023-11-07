@@ -2,7 +2,6 @@
   "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Fela Anikulapo Kuti ChatGPT Reply to Fela Anikulapo Kuti (Fela Anikulapo Kuti)" },
   "menuLabel_proxyAPImode": { "message": "Indoshi ya API ya Mbofyo" },
-  "menuLabel_show": { "message": "Ukulanga" },
   "menuLabel_relatedQueries": { "message": "Ifyakwipusha ifilukubuulishisha" },
   "menuLabel_require": { "message": "Ifingakwafwa" },
   "menuLabel_beforeQuery": { "message": "ilyo tushilaipusha" },

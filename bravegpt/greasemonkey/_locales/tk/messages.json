@@ -2,7 +2,6 @@
   "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "ÇatGPT jogaplaryny goş (GPT-4 bilen işleýän!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API tertibi" },
-  "menuLabel_show": { "message": "Göster" },
   "menuLabel_relatedQueries": { "message": "Baglanyşykly soraglar" },
   "menuLabel_require": { "message": "Kerek" },
   "menuLabel_beforeQuery": { "message": "öňki sorag" },

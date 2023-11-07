@@ -2,7 +2,6 @@
   "appName": { "message": "BraveGPT" },
   "appDesc": { "message": "Кошуу ChatGPT Brave Издөө капталында жооп (GPT-4 менен иштейт!)" },
   "menuLabel_proxyAPImode": { "message": "Прокси API режими" },
-  "menuLabel_show": { "message": "Көрсөтүү" },
   "menuLabel_relatedQueries": { "message": "Байланыштуу суроолор" },
   "menuLabel_require": { "message": "Талап кылуу" },
   "menuLabel_beforeQuery": { "message": "суроо алдында" },
