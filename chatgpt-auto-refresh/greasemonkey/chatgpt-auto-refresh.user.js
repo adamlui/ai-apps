@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.6
+// @version             2023.11.7
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -390,54 +390,9 @@
     function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
     function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
-
-    function updateCheck() {
-
-        // Fetch latest meta
-        const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({
-            method: 'GET', url: config.updateURL + '?t=' + Date.now(),
-            headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
-
-                // Compare versions
-                const latestVer = /@version +(.*)/.exec(response.responseText)[1]
-                for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
-                    const currentSubVer = parseInt(currentVer.split('.')[i], 10) || 0,
-                          latestSubVer = parseInt(latestVer.split('.')[i], 10) || 0
-                    if (currentSubVer > latestSubVer) break // out of comparison since not outdated
-                    else if (latestSubVer > currentSubVer) { // if outdated
-
-                        // Alert to update
-                        const updateAlertID = alert(messages.alert_updateAvail + '! 🚀', // title
-                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
-                                + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
-                                    + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
-                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + `>${ messages.link_viewChanges }</a>`,
-                            function update() { // button
-                                GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
-                                    { active: true, insert: true } // focus, make adjacent
-                                ).onclose = () => location.reload() }
-                        )
-
-                        // Localize button labels if needed
-                        if (!config.userLanguage.startsWith('en')) {
-                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
-                                  updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss
-                        }
-
-                        return
-                }}
-
-                alert(messages.alert_upToDate + '!', `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`)
-    }})}
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
     // Define MENU functions
-
-    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
 
     function registerMenu() {
         menuIDs = [] // empty to store newly registered cmds for removal while preserving order
@@ -490,48 +445,100 @@
         }}}))
 
         // Add command to launch About modal
-        menuIDs.push(GM_registerMenuCommand(`💡 ${ messages.menuLabel_about } ${ messages.appName }`, async () => {
-
-            // Show alert
-            const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1],
-                  headingStyle = 'font-size: 1.15rem',
-                  pStyle = 'position: relative ; left: 3px',
-                  pBrStyle = 'position: relative ; left: 4px ',
-                  aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
-            const aboutAlertID = alert(
-                messages.appName, // title
-                `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
-                    + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-                + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
-                    + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
-                    + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
-                    + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
-                    + config.gitHubURL + '</a></span>',
-                [ // buttons
-                    function checkForUpdates() { updateCheck() },
-                    function getSupport() { safeWindowOpen(config.supportURL) },
-                    function leaveAReview() { // show new modal
-                        const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
-                            [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
-                              function futurepedia() { safeWindowOpen(
-                                  'https://www.futurepedia.io/tool/chatgpt-auto-refresh#chatgpt-auto-refresh-review') }])
-                        document.getElementById(reviewAlertID).querySelector('button')
-                            .style.display = 'none' }, // hide Dismiss button
-                    function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                ], '', 478 // set width
-            )
-
-            // Re-format buttons to include emojis + re-case + hide Dismiss button
-            for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-                if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-                else if (/support/i.test(button.textContent)) button.textContent = '🧠 ' + messages.buttonLabel_getSupport
-                else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
-                else if (/apps/i.test(button.textContent)) button.textContent = '🤖 ' + messages.buttonLabel_moreApps
-                else button.style.display = 'none' // hide Dismiss button
-            }
-        }))
+        const amLabel = `💡 ${ messages.menuLabel_about } ${ messages.appName }`
+        menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
     }
+
+    function launchAboutModal() {
+
+        // Init data/styles
+        const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1],
+              headingStyle = 'font-size: 1.15rem',
+              pStyle = 'position: relative ; left: 3px',
+              pBrStyle = 'position: relative ; left: 4px ',
+              aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
+
+        // Show modal
+        const aboutAlertID = alert(
+            messages.appName, // title
+            `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
+                + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
+            + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
+                + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
+                + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
+            + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
+                + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
+                + config.gitHubURL + '</a></span>',
+            [ // buttons
+                function checkForUpdates() { updateCheck() },
+                function getSupport() { safeWindowOpen(config.supportURL) },
+                function leaveAReview() { // show new modal
+                    const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
+                        [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
+                          function futurepedia() { safeWindowOpen(
+                              'https://www.futurepedia.io/tool/chatgpt-auto-refresh#chatgpt-auto-refresh-review') }])
+                    document.getElementById(reviewAlertID).querySelector('button')
+                        .style.display = 'none' }, // hide Dismiss button
+                function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+            ], '', 478 // set width
+        )
+
+        // Re-format buttons to include emojis + re-case + hide dismiss button
+        for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
+            if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+            else if (/support/i.test(button.textContent)) button.textContent = '🧠 ' + messages.buttonLabel_getSupport
+            else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+            else if (/apps/i.test(button.textContent)) button.textContent = '🤖 ' + messages.buttonLabel_moreApps
+            else button.style.display = 'none' // hide dismiss button
+        }
+    }
+
+    function updateCheck() {
+
+        // Fetch latest meta
+        const currentVer = GM_info.script.version
+        GM.xmlHttpRequest({
+            method: 'GET', url: config.updateURL + '?t=' + Date.now(),
+            headers: { 'Cache-Control': 'no-cache' },
+            onload: response => {
+
+                // Compare versions
+                const latestVer = /@version +(.*)/.exec(response.responseText)[1]
+                for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
+                    const currentSubVer = parseInt(currentVer.split('.')[i], 10) || 0,
+                          latestSubVer = parseInt(latestVer.split('.')[i], 10) || 0
+                    if (currentSubVer > latestSubVer) break // out of comparison since not outdated
+                    else if (latestSubVer > currentSubVer) { // if outdated
+
+                        // Alert to update
+                        const updateAlertID = alert(messages.alert_updateAvail + '! 🚀', // title
+                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
+                                + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
+                                    + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
+                                    + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
+                                    + `>${ messages.link_viewChanges }</a>`,
+                            function update() { // button
+                                GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
+                                    { active: true, insert: true } // focus, make adjacent
+                                ).onclose = () => location.reload() }
+                        )
+
+                        // Localize button labels if needed
+                        if (!config.userLanguage.startsWith('en')) {
+                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
+                                  updateButtons = updateAlert.querySelectorAll('button')
+                            updateButtons[1].textContent = messages.buttonLabel_update
+                            updateButtons[0].textContent = messages.buttonLabel_dismiss
+                        }
+
+                        return
+                }}
+
+                // Alert to no update, nav back
+                alert(messages.alert_upToDate + '!',
+                    `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`)
+                launchAboutModal()
+    }})}
 
     // Define FEEDBACK functions
 
