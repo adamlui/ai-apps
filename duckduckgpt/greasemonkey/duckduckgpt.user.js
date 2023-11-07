@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.7.2
+// @version             2023.11.7.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -705,7 +705,7 @@
     }
 
     function ddgptShow(answer) {
-        ddgptDiv.innerHTML = '<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank" rel="noopener">DuckDuckGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://www.kudoai.com" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="ddgpt-chatbar" rows="1" placeholder="Send reply..."></textarea></div></form></section>'
+        ddgptDiv.innerHTML = `<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank" rel="noopener">DuckDuckGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://www.kudoai.com" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="ddgpt-chatbar" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="${ messages.tooltip_sendReply }" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
         ddgptDiv.querySelector('pre').textContent = answer
 
         // Render math
@@ -728,6 +728,7 @@
         // Init variables for listeners
         const form = ddgptDiv.querySelector('form'),
               chatbar = document.getElementById('ddgpt-chatbar'),
+              sendBtn = document.querySelector('.continue-chat button'),
               { paddingTop, paddingBottom } = getComputedStyle(chatbar),
               vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
         let prevLength = chatbar.value.length
@@ -735,6 +736,7 @@
         // Add listeners
         form.addEventListener('keydown', handleEnter)
         chatbar.addEventListener('input', autosizeChatbar)
+        sendBtn.addEventListener('click', handleSubmit)
 
         function handleEnter(event) {
             if (event.key === 'Enter' && !event.shiftKey && event.target.nodeName === 'TEXTAREA')
@@ -755,8 +757,9 @@
             } getShowReply(convo)
 
             // Remove listeners since they're re-added
+            form.removeEventListener('keydown', handleEnter)
             chatbar.removeEventListener('input', autosizeChatbar)
-            chatbar.removeEventListener('keydown', handleEnter)
+            sendBtn.removeEventListener('click', handleSubmit)
 
             // Remove related queries
             try {
@@ -910,7 +913,7 @@
             + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' } '
         + '.related-queries {'
             + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ;'
-            + `top: -2px ; margin: ${ isChromium() ? -7 : -3 }px 0 8px }`
+            + `top: -25px ; margin: ${ isChromium() ? -7 : -3 }px 0 -15px }`
         + '.related-query {'
             + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 8px 11px 8px 17px ;`
             + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
@@ -922,6 +925,10 @@
         + `.related-query:hover { background: #${ scheme == 'dark' ? 'a2a2a270' : 'a2a2a240 ; color: #000000a8' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
+        + '.send-button { border: none ; float: right ;'
+            + `position: relative ; bottom: ${ isChromium() ? 49 : 44 }px ; right: ${ isChromium() ? 6 : 8 }px ;`
+            + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
+        + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } }`
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
         + '.kudo-ai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
