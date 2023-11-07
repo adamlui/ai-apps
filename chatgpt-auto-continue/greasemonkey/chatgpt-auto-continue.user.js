@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.6
+// @version             2023.11.7
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -312,6 +312,66 @@
     function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
     function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
+
+    // Define MENU functions
+
+    function registerMenu() {
+        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
+
+        // Add command to hide/show notifications on load
+        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
+                      + state.separator + state.word[+config.notifHidden]
+        menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
+            saveSetting('notifHidden', !config.notifHidden)
+            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to launch About modal
+        const aboutLabel = `💡 ${ messages.menuLabel_about } ${ messages.appName }`
+        menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
+    }
+
+    function launchAboutModal() {
+
+        // Show alert
+        const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1],
+              headingStyle = 'font-size: 1.15rem',
+              pStyle = 'position: relative ; left: 3px',
+              pBrStyle = 'position: relative ; left: 4px ',
+              aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
+        const aboutAlertID = alert(
+            messages.appName, // title
+            `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
+                + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
+            + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
+                + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
+                + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
+            + `<span style="${ headingStyle }"><b>💻 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
+                + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
+                + config.gitHubURL + '</a></span>',
+            [ // buttons
+                function checkForUpdates() { updateCheck() },
+                function getSupport() { safeWindowOpen(config.supportURL) },
+                function leaveAReview() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
+                function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+            ], '', 478 // set width
+        )
+
+        // Re-format buttons to include emojis + re-case + hide dismiss button
+        for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
+            if (/updates/i.test(button.textContent))
+                button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+            else if (/support/i.test(button.textContent))
+                button.textContent = '🧠 ' + messages.buttonLabel_getSupport
+            else if (/review/i.test(button.textContent))
+                button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+            else if (/apps/i.test(button.textContent))
+                button.textContent = '🤖 ' + messages.buttonLabel_moreApps
+            else button.style.display = 'none' // hide dismiss button
+        }
+    }
 
     function updateCheck() {
 
@@ -354,66 +414,11 @@
                         return
                 }}
 
-                alert(messages.alert_upToDate + '!', `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`)
+                // Alert to no update found, nav back
+                alert(messages.alert_upToDate + '!',
+                    `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`)
+                launchAboutModal()
     }})}
-
-    // Define MENU functions
-
-    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
-
-    function registerMenu() {
-        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
-
-        // Add command to hide/show notifications on load
-        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
-                      + state.separator + state.word[+config.notifHidden]
-        menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
-            saveSetting('notifHidden', !config.notifHidden)
-            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
-
-        // Add command to launch About modal
-        menuIDs.push(GM_registerMenuCommand(`💡 ${ messages.menuLabel_about } ${ messages.appName }`, async () => {
-
-            // Show alert
-            const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1],
-                  headingStyle = 'font-size: 1.15rem',
-                  pStyle = 'position: relative ; left: 3px',
-                  pBrStyle = 'position: relative ; left: 4px ',
-                  aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
-            const aboutAlertID = alert(
-                messages.appName, // title
-                `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
-                    + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-                + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
-                    + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
-                    + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                + `<span style="${ headingStyle }"><b>💻 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
-                    + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
-                    + config.gitHubURL + '</a></span>',
-                [ // buttons
-                    function checkForUpdates() { updateCheck() },
-                    function getSupport() { safeWindowOpen(config.supportURL) },
-                    function leaveAReview() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
-                    function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                ], '', 478 // set width
-            )
-
-            // Re-format buttons to include emojis + re-case + hide Dismiss button
-            for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-                if (/updates/i.test(button.textContent))
-                    button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-                else if (/support/i.test(button.textContent))
-                    button.textContent = '🧠 ' + messages.buttonLabel_getSupport
-                else if (/review/i.test(button.textContent))
-                    button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
-                else if (/apps/i.test(button.textContent))
-                    button.textContent = '🤖 ' + messages.buttonLabel_moreApps
-                else button.style.display = 'none' // hide Dismiss button
-            }
-        }))
-    }
 
     // Define FEEDBACK functions
 
