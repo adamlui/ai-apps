@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "ChatGPT erantzunak gehitzen ditu DuckDuckGo alboko barran (GPT-4-k bultzatuta!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API modua" },
-  "menuLabel_show": { "message": "Erakutsi" },
   "menuLabel_relatedQueries": { "message": "Erlazionatutako kontsultak" },
   "menuLabel_require": { "message": "Eskatu" },
   "menuLabel_beforeQuery": { "message": "kontsultaren aurretik" },

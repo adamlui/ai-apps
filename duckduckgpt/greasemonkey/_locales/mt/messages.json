@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Żid it-tweġibiet taċ-ChatGPT mal-ġenb ta' DuckDuckGo (imħaddem minn GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Modalità API Proxy" },
-  "menuLabel_show": { "message": "Uri" },
   "menuLabel_relatedQueries": { "message": "Mistoqsijiet Relatati" },
   "menuLabel_require": { "message": "jesiġi li jkun hemm" },
   "menuLabel_beforeQuery": { "message": "qabel it-talba" },

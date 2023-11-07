@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Დაამატეთ ChatGPT-ის პასუხები DuckDuckGo-ს გვერდით ზოლში (GPT-4-ის მეშვეობით!)" },
   "menuLabel_proxyAPImode": { "message": "Პროქსი API რეჟიმი" },
-  "menuLabel_show": { "message": "ჩვენება" },
   "menuLabel_relatedQueries": { "message": "Მსგავსი შეკითხვები" },
   "menuLabel_require": { "message": "Მოთხოვნა" },
   "menuLabel_beforeQuery": { "message": "მოთხოვნამდე" },

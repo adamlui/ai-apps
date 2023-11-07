@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Add ChatGPT answers to DuckDuckGo sidebar (izdayen s GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Aɣewwaṛ n API Proxy" },
-  "menuLabel_show": { "message": "Sken" },
   "menuLabel_relatedQueries": { "message": "Isteqsiyen yettwaxedmen" },
   "menuLabel_require": { "message": "Teḥwaǧeḍ" },
   "menuLabel_beforeQuery": { "message": "uqbel aseqsi" },

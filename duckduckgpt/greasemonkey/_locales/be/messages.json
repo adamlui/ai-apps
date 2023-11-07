@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Дадае адказы ChatGPT на бакавую панэль DuckDuckGo (харчаванне ад GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Рэжым API-проксі" },
-  "menuLabel_show": { "message": "Паказаць" },
   "menuLabel_relatedQueries": { "message": "Звязаныя запыты" },
   "menuLabel_require": { "message": "Патрабаванне" },
   "menuLabel_beforeQuery": { "message": "перад запытам" },

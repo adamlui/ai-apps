@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "ChatGPT yanıtlarını DuckDuckGo kenar çubuğuna ekler (GPT -4 tarafından desteklenmektedir!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Modu" },
-  "menuLabel_show": { "message": "Göster" },
   "menuLabel_relatedQueries": { "message": "İlgili Sorgular" },
   "menuLabel_require": { "message": "Gerekli" },
   "menuLabel_beforeQuery": { "message": "Sorgudan Önce" },

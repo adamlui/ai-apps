@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "DuckDuckGo хажуугийн мөрөнд ChatGPT хариулт нэмнэ (GPT-4 зайтай!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API горим" },
-  "menuLabel_show": { "message": "Үзүүлэх" },
   "menuLabel_relatedQueries": { "message": "Холбогдох асуултууд" },
   "menuLabel_require": { "message": "Шаардлага" },
   "menuLabel_beforeQuery": { "message": "асуулга эхлэхээс өмнө" },

@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Προσθέτει απαντήσεις ChatGPT στην πλαϊνή μπάρα DuckDuckGo (τροφοδοτείται από GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Λειτουργία API διακομιστή μεσολάβησης" },
-  "menuLabel_show": { "message": "Εμφάνιση" },
   "menuLabel_relatedQueries": { "message": "Σχετικά ερωτήματα" },
   "menuLabel_require": { "message": "Απαιτείται" },
   "menuLabel_beforeQuery": { "message": "πριν από το ερώτημα" },

@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Lägger till ChatGPT-svar till DuckDuckGo-sidofältet (drivs av GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API-läge" },
-  "menuLabel_show": { "message": "Visa" },
   "menuLabel_relatedQueries": { "message": "Relaterade frågor" },
   "menuLabel_require": { "message": "Krävs" },
   "menuLabel_beforeQuery": { "message": "före förfrågan" },

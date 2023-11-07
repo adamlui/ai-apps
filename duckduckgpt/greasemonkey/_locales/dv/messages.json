@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "ޑަކްޑަކްގޯ ސައިޑްބާ (ޖީޕީޓީ-4 އިން ޕަވާޑް!) އަށް ޗެޓްޖީޕީޓީ ގެ ޖަވާބުތައް އިތުރުކުރޭ!" },
   "menuLabel_proxyAPImode": { "message": "ޕްރޮކްސީ އެޕީއައި މޯޑެވެ" },
-  "menuLabel_show": { "message": "ދެއްކާށެވެ" },
   "menuLabel_relatedQueries": { "message": "ގުޅުންހުރި ސުވާލުތައް" },
   "menuLabel_require": { "message": "ބޭނުންވާ" },
   "menuLabel_beforeQuery": { "message": "ސުވާލު ކުރުމުގެ ކުރިން" },

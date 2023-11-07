@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Hoʻohui i nā pane ChatGPT i ka ʻaoʻao ʻaoʻao DuckDuckGo (hoʻohana ʻia e GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Kūlana API Kūlana" },
-  "menuLabel_show": { "message": "Hōʻike" },
   "menuLabel_relatedQueries": { "message": "Nā nīnau pili" },
   "menuLabel_require": { "message": "Koi" },
   "menuLabel_beforeQuery": { "message": "mamua o ka ninau ana" },

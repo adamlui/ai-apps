@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "DuckDuckGo sidebar ကို ChatGPT အဖြေများထည့်သွင်း (GPT-4 အားဖြင့် powered!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API ကို Mode ကို" },
-  "menuLabel_show": { "message": "ပြသည်" },
   "menuLabel_relatedQueries": { "message": "ဆက်စပ်မေးခွန်းများ" },
   "menuLabel_require": { "message": "လိုအပ်သည်" },
   "menuLabel_beforeQuery": { "message": "qUERY မတိုင်မီ" },

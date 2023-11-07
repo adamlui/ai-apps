@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Кошуу ChatGPT жооптор DuckDuckGo sidebar (GPT-4 менен иштейт!)" },
   "menuLabel_proxyAPImode": { "message": "Прокси API режими" },
-  "menuLabel_show": { "message": "Көрсөтүү" },
   "menuLabel_relatedQueries": { "message": "Байланыштуу суроолор" },
   "menuLabel_require": { "message": "Талап кылуу" },
   "menuLabel_beforeQuery": { "message": "суроо алдында" },

@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Legg ChatGPT svar til DuckDuckGo sidebar (drivið av GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API standi" },
-  "menuLabel_show": { "message": "Vís" },
   "menuLabel_relatedQueries": { "message": "Viðkomandi spurningar" },
   "menuLabel_require": { "message": "Kravið" },
   "menuLabel_beforeQuery": { "message": "áðrenn spurningurin" },

@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "DuckDuckGo 사이드바에 ChatGPT 답변 추가 (GPT-4 제공!)" },
   "menuLabel_proxyAPImode": { "message": "프록시 API 모드" },
-  "menuLabel_show": { "message": "비라즈" },
   "menuLabel_relatedQueries": { "message": "관련 문의" },
   "menuLabel_require": { "message": "필요하다" },
   "menuLabel_beforeQuery": { "message": "질의 전" },

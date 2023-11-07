@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Добавляет ответы ChatGPT на боковую панель DuckDuckGo (работает на GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Режим API прокси-сервера" },
-  "menuLabel_show": { "message": "Показ" },
   "menuLabel_relatedQueries": { "message": "маркетинга" },
   "menuLabel_require": { "message": "Требова" },
   "menuLabel_beforeQuery": { "message": "перед запросом" },

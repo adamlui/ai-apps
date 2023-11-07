@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Dodaje ChatGPT odgovore na DuckDuckGo bočnu traku (pokreće GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API režim" },
-  "menuLabel_show": { "message": "Prikaži" },
   "menuLabel_relatedQueries": { "message": "Povezani upiti" },
   "menuLabel_require": { "message": "Zahtjev" },
   "menuLabel_beforeQuery": { "message": "prije upita" },

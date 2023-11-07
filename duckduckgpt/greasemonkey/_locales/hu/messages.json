@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "ChatGPT válaszokat ad a DuckDuckGo oldalsávhoz (GPT-4 motorral!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API mód" },
-  "menuLabel_show": { "message": "Megjelenítés" },
   "menuLabel_relatedQueries": { "message": "Kapcsolódó kérdések" },
   "menuLabel_require": { "message": "Kötelező" },
   "menuLabel_beforeQuery": { "message": "Lekérdezés előtt" },

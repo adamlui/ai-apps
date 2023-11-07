@@ -2,7 +2,6 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "د DuckDuckGo سایډ بار ته د ChatGPT ځوابونه اضافه کوي (د GPT -4 لخوا پرمخ وړل شوی!)" },
   "menuLabel_proxyAPImode": { "message": "د پراکسي API حالت" },
-  "menuLabel_show": { "message": "ښوول" },
   "menuLabel_relatedQueries": { "message": "اړونده پوښتنې" },
   "menuLabel_require": { "message": "اړتیا" },
   "menuLabel_beforeQuery": { "message": "د پوښتنې دمخه" },
