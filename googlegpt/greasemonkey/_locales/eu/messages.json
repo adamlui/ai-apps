@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "ChatGPT erantzunak gehitzen ditu Google Bilaketa-n (GPT-4-ren bidez!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API modua" },
-  "menuLabel_show": { "message": "Erakutsi" },
   "menuLabel_relatedQueries": { "message": "Erlazionatutako kontsultak" },
   "menuLabel_require": { "message": "Eskatu" },
   "menuLabel_beforeQuery": { "message": "kontsultaren aurretik" },

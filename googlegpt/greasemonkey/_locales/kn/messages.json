@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google ಹುಡುಕಾಟಕ್ಕೆ ChatGPT ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ (GPT-4 ನಿಂದ ಚಾಲಿತವಾಗಿದೆ!)" },
   "menuLabel_proxyAPImode": { "message": "ಪ್ರಾಕ್ಸಿ API ಮೋಡ್" },
-  "menuLabel_show": { "message": "ತೋರಿಸು" },
   "menuLabel_relatedQueries": { "message": "ಸಂಬಂಧಿತ ಪ್ರಶ್ನೆಗಳು" },
   "menuLabel_require": { "message": "ಅಗತ್ಯವಿದೆ" },
   "menuLabel_beforeQuery": { "message": "ಪ್ರಶ್ನೆಯ ಮೊದಲು" },

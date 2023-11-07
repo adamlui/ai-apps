@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Füügt ChatGPT Äntwerten op Google Sich (ugedriwwen duerch GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy-API-Modus" },
-  "menuLabel_show": { "message": "Uweisen" },
   "menuLabel_relatedQueries": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten in de comments" },
   "menuLabel_require": { "message": "Fuerderen" },
   "menuLabel_beforeQuery": { "message": "virun der Query" },

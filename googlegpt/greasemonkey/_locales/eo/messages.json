@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Aldonas ChatGPT-respondojn al Google Search (funkciigita de GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
-  "menuLabel_show": { "message": "Montri" },
   "menuLabel_relatedQueries": { "message": "Rilataj demandoj" },
   "menuLabel_require": { "message": "necesi" },
   "menuLabel_beforeQuery": { "message": "antaŭ pridemandado" },

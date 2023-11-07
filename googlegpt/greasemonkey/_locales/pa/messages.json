@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "ਚੈਟਜੀਪੀਟੀ ਦੇ ਜਵਾਬ ਗੂਗਲ ਸਰਚ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ (ਜੀਪੀਟੀ -4 ਦੁਆਰਾ ਸੰਚਾਲਿਤ!" },
   "menuLabel_proxyAPImode": { "message": "ਪਰਾਕਸੀ API ਮੋਡ" },
-  "menuLabel_show": { "message": "ਵਿਖਾਉ" },
   "menuLabel_relatedQueries": { "message": "ਸੰਬੰਧਿਤ ਪੁੱਛਗਿੱਛ" },
   "menuLabel_require": { "message": "à¨²à©à©à©à¨¦à¨¾:" },
   "menuLabel_beforeQuery": { "message": "ਪੁੱਛਗਿੱਛ ਤੋਂ ਪਹਿਲਾਂ" },

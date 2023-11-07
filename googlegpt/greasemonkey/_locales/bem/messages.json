@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Ukulele Tabs for Google Search (ukulele tabs4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
-  "menuLabel_show": { "message": "Ukulanga" },
   "menuLabel_relatedQueries": { "message": "Ifyakwipusha ifilukubuulishisha" },
   "menuLabel_require": { "message": "Ifingakwafwa" },
   "menuLabel_beforeQuery": { "message": "ilyo tushilaipusha" },

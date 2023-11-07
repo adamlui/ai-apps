@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "E tsenya dikarabo tsa ChatGPT mo Patlisisong ya Google (e e dirisiwang ke GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
-  "menuLabel_show": { "message": "SHOW" },
   "menuLabel_relatedQueries": { "message": "Dipotšišo tšeo di sepelel" },
   "menuLabel_require": { "message": "E a batlega" },
   "menuLabel_beforeQuery": { "message": "pele ga QUERY" },

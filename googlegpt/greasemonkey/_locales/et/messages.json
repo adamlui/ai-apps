@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Lisab ChatGPT vastused Google 'i otsingusse (toetab GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Puhverserveri API-režiim" },
-  "menuLabel_show": { "message": "Näita" },
   "menuLabel_relatedQueries": { "message": "Seotud päringud" },
   "menuLabel_require": { "message": "Jaapani jeen" },
   "menuLabel_beforeQuery": { "message": "enne päringut" },

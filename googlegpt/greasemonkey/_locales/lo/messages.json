@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "ເພີ່ມ ຄໍາ ຕອບ ChatGPT ເຂົ້າໃນ Google Search (ຂັບເຄື່ອນໂດຍ GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "ໂໝດໂປຣແກຣມ API" },
-  "menuLabel_show": { "message": "ສະແດງ" },
   "menuLabel_relatedQueries": { "message": "ການສອບຖາມທີ່ກ່ຽວຂ້ອງ" },
   "menuLabel_require": { "message": "ຮຽກຮ້ອງຕ້ອງການ" },
   "menuLabel_beforeQuery": { "message": "ກ່ອນການສອບຖາມ" },

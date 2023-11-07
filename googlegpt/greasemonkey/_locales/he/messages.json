@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "מוסיף תשובות ChatGPT לחיפוש Google (מופעל על ידי GPT -4!)" },
   "menuLabel_proxyAPImode": { "message": "מצב API של שרת Proxy" },
-  "menuLabel_show": { "message": "הצג" },
   "menuLabel_relatedQueries": { "message": "שאילתות קשורות" },
   "menuLabel_require": { "message": "חובה" },
   "menuLabel_beforeQuery": { "message": "לפני השאילתה" },

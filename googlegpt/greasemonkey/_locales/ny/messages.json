@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Amawonjezera mayankho a ChatGPT ku Google Search (yoyendetsedwa ndi GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Njira ya Proxy API" },
-  "menuLabel_show": { "message": "Lumikizanani nafe" },
   "menuLabel_relatedQueries": { "message": "Mafunso Okhudzana" },
   "menuLabel_require": { "message": "Zofunika" },
   "menuLabel_beforeQuery": { "message": "musanafunse" },

@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google खोजमा ChatGPT उत्तरहरू थप्दछ (GPT -4 द्वारा संचालित!)" },
   "menuLabel_proxyAPImode": { "message": "प्रोक्सी API मोड" },
-  "menuLabel_show": { "message": "देखाउनुहोस्" },
   "menuLabel_relatedQueries": { "message": "सम्बन्धित प्रश्नहरू" },
   "menuLabel_require": { "message": "आवश्यक" },
   "menuLabel_beforeQuery": { "message": "क्वेरी अघि" },

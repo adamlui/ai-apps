@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "ChatGPT javoblarini Google Qidiruvga qo&#39;shadi (GPT-4 tomonidan quvvatlanadi!)" },
   "menuLabel_proxyAPImode": { "message": "Proksi API rejimi" },
-  "menuLabel_show": { "message": "Ko’rsatish" },
   "menuLabel_relatedQueries": { "message": "Tegishli so&#39;rovlar" },
   "menuLabel_require": { "message": "Talab qilish" },
   "menuLabel_beforeQuery": { "message": "so&#39;rovdan oldin" },

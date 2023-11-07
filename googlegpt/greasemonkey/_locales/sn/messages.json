@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Inowedzera mhinduro dzeChatGPT kuGoogle Search (inofambiswa neGPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
-  "menuLabel_show": { "message": "Ratidza" },
   "menuLabel_relatedQueries": { "message": "Mibvunzo yakabatana" },
   "menuLabel_require": { "message": "ZVINODZIDZA" },
   "menuLabel_beforeQuery": { "message": "pamberi nomubvunzo" },

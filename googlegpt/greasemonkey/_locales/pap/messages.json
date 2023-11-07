@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Agregá una foto_Promocioná Google Search (Powered by GPT-4)" },
   "menuLabel_proxyAPImode": { "message": "Propiedad Api Moda" },
-  "menuLabel_show": { "message": "Show" },
   "menuLabel_relatedQueries": { "message": "Preguntanan relashoná" },
   "menuLabel_require": { "message": "Nesesidat" },
   "menuLabel_beforeQuery": { "message": "pre-escucha Query" },

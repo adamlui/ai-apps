@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Thêm câu trả lời ChatGPT vào Tìm kiếm của Google (được cung cấp bởi GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Chế độ API proxy" },
-  "menuLabel_show": { "message": "Hiển thị" },
   "menuLabel_relatedQueries": { "message": "Truy vấn liên quan" },
   "menuLabel_require": { "message": "Cần thiết" },
   "menuLabel_beforeQuery": { "message": "trước truy vấn" },

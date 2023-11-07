@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search ནང་ChatGPT ལན་འདེབས་སྣོན་བྱེད ། (GPT-4 ཀྱིས་དབང་བསྒྱུར་བྱེད །)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
-  "menuLabel_show": { "message": "སྟོན།" },
   "menuLabel_relatedQueries": { "message": "འབྲེལ་མཐུད་ཀྱི་དྲི་བ་" },
   "menuLabel_require": { "message": "དགོས་མཁོ །" },
   "menuLabel_beforeQuery": { "message": "དྲི་བའི་སྔོན་དུ་" },

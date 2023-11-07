@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Magdagdag ng mga tugon sa ChatGPT sa Paghahanap ng Google (naaalaga ng GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
-  "menuLabel_show": { "message": "Намоиш додан" },
   "menuLabel_relatedQueries": { "message": "Саволҳои марбута" },
   "menuLabel_require": { "message": "Require" },
   "menuLabel_beforeQuery": { "message": "before query" },

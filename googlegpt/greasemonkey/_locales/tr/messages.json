@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "ChatGPT yanıtlarını Google Arama'ya ekler (GPT -4 tarafından desteklenmektedir!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Modu" },
-  "menuLabel_show": { "message": "Göster" },
   "menuLabel_relatedQueries": { "message": "İlgili Sorgular" },
   "menuLabel_require": { "message": "Gerekli" },
   "menuLabel_beforeQuery": { "message": "Sorgudan Önce" },

@@ -2,7 +2,6 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Ifaka izimpendulo ze-ChatGPT ku-Google Search (inikwe amandla yi-GPT-4!)" },
   "menuLabel_proxyAPImode": { "message": "Imodi ye-API Yombambeli" },
-  "menuLabel_show": { "message": "Bonisa" },
   "menuLabel_relatedQueries": { "message": "Imibuzo Ehlobene" },
   "menuLabel_require": { "message": "Kudingeka" },
   "menuLabel_beforeQuery": { "message": "ngaphambi kombuzo" },
