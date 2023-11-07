@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.7
+// @version             2023.11.7.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1029,23 +1029,26 @@
     }
 
     // Stylize elements
-    const googleGPTstyle = document.createElement('style')
+    const googleGPTstyle = document.createElement('style'),
+          scheme = isDarkMode() ? 'dark' : 'light'
     googleGPTstyle.innerText = (
         '.googlegpt-container {'
             + 'border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
             + `padding: ${ isChromium() ? 22 : 20 }px 26px 6px 26px ; margin: 0 0 30px 20px ;`
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
-            + ( isDarkMode() ? ' border: none ; background: #282828 } ' : ' } ' )
-        + '.googlegpt-container p { margin: 0 ; ' + ( isDarkMode() ? 'color: #ccc } ' : ' } ' )
-        + ( isDarkMode() ? '.googlegpt-container a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
+            + ( scheme == 'dark' ? ' border: none ; background: #282828 } ' : ' } ' )
+        + '.googlegpt-container p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
+        + ( scheme == 'dark' ? '.googlegpt-container a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
         + '.googlegpt-container .prefix { font-size: 1.5rem ; font-weight: 700 }'
-        + '.googlegpt-container .prefix > a { color: ' + ( isDarkMode() ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
+        + '.googlegpt-container .prefix > a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
         + '.googlegpt-container .loading {'
-            + 'padding-bottom: 22px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
+            + 'padding-bottom: 17px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.googlegpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
-        + '.googlegpt-container pre { font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ; line-height: 22px ; padding: 1.25em ; border-radius: 10px ;'
-            + ( isDarkMode() ? 'background: #3a3a3a ; color: #f2f2f2 } ' : 'background: #eaeaea } ' )
+        + '.googlegpt-container pre {'
+            + 'font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ;'
+            + ' line-height: 22px ; padding: 1.25em ; border-radius: 10px ;'
+            + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : 'background: #eaeaea } ' )
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.googlegpt-container section.loading {'
             + 'padding: 15px 0 14px 5px ;' // left/top-pad loading status when sending replies
@@ -1054,43 +1057,43 @@
         + '.balloon-tip { content: "" ; border: 7px solid transparent ; position: relative ; top: 5px ;'
             + `right: ${ navigator.userAgent.includes('Firefox') ? 16.62 : 15.89 }em ;`
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
-            + ( isDarkMode() ? '#3a3a3a' : '#eaeaea' ) + ' }'
+            + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' }'
         + '.continue-chat > textarea {'
-            + `border: solid 1px ${ isDarkMode() ? '#aaa' : 'lightgrey' } ; border-radius: 12px 13px 12px 0 ;`
+            + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; border-radius: 12px 13px 12px 0 ;`
             + 'height: 1.55rem ; width: 89% ; max-height: 200px ; resize: none ;'
             + 'margin: 13px 0 15px 0 ; padding: 13px 25px 2px 10px ;'
-            + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' }'
-        + ( isDarkMode() ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
+            + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' }'
+        + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
         + `.related-queries { display: flex ; flex-wrap: wrap ; margin-bottom: ${ isChromium() ? 28 : 23 }px }`
         + '.related-query {'
-            + `margin: 4px 4px ${ isDarkMode() ? 5 : 2 }px 0 ; padding: 8px 11px 8px 17px ;`
-            + `color: ${ isDarkMode() ? '#f2f2f2' : '#767676' } ; background: ${ isDarkMode() ? '#424242' : '#dadada12' } ;`
-            + `border: 1px solid ${ isDarkMode() ? '#777' : '#e1e1e1' } ; font-size: 0.9em ; cursor: pointer ;`
+            + `margin: 4px 4px ${ scheme == 'dark' ? 5 : 2 }px 0 ; padding: 8px 11px 8px 17px ;`
+            + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ; background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
+            + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.9em ; cursor: pointer ;`
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
-            + `box-shadow: 1px 3px ${ isDarkMode() ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' } ;`
+            + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' } ;`
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-        + `.related-query:hover { background: #${ isDarkMode() ? 'a2a2a270' : 'a2a2a240 ; color: #000000a8' }}`
+        + `.related-query:hover { background: #${ scheme == 'dark' ? 'a2a2a270' : 'a2a2a240 ; color: #000000a8' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button { border: none ; float: right ;'
             + `position: relative ; bottom: ${ isChromium() ? 46 : 43 }px ; right: 5px ;`
-            + `background: none ; color: ${ isDarkMode() ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
-        + `.send-button:hover { color: ${ isDarkMode() ? 'white' : 'black' } }`
+            + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
+        + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } }`
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
-        + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
+        + '.kudo-ai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
         + '.katex-html { display: none } ' // hide unrendered math
-        + ( isDarkMode() ? '.chatgpt-modal > div { background-color: black !important ; color: white }' : '' )
+        + ( scheme == 'dark' ? '.chatgpt-modal > div { background-color: black !important ; color: white }' : '' )
         + '.chatgpt-modal > div { 17px 20px 24px 20px !important }' // increase alert padding
         + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
         + '.chatgpt-modal p { margin: 0 0 -9px 4px ; font-size: 1.2rem ; line-height: 1.45 }' // position/size alert msg
         + '.chatgpt-modal button {' // alert buttons
             + 'font-size: 0.84rem ; text-transform: uppercase ; min-width: 113px ; padding: 5px !important ;'
             + 'cursor: pointer ; border-radius: 0 !important ;'
-            + 'border: 1px solid ' + ( isDarkMode() ? 'white' : 'black' ) + ' !important }'
+            + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
         + '.modal-buttons { margin: 28px 4px -3px -4px !important }' // position alert buttons
     )
-    document.head.appendChild(googleGPTstyle) // append style to <head>
+    document.head.appendChild(googleGPTstyle)
 
     // Create DDGPT container & add class
     const googleGPTdiv = document.createElement('div') // create container div
