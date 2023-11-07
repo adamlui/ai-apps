@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.6
+// @version             2023.11.6.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -298,7 +298,6 @@
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     let menuIDs = [] ; registerMenu() // create browser toolbar menu
-
 
     // Auto-clear chats if activated
     await chatgpt.isLoaded()
@@ -421,8 +420,11 @@
                         return
                 }}
 
+                // Alert to no update, return to About alert
                 alert(messages.alert_upToDate + '!', // title
-                    `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
+                    `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!` // msg
+                )
+                launchAboutModal()
     }})}
 
     // Define MENU functions
@@ -460,47 +462,52 @@
         }))
 
         // Add command to launch About modal
-        menuIDs.push(GM_registerMenuCommand(`💡 ${ messages.menuLabel_about } ${ messages.appName }`, async () => {
+        const amLabel = `💡 ${ messages.menuLabel_about } ${ messages.appName }`
+        menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
+    }
 
-            // Show alert
-            const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1],
-                  headingStyle = 'font-size: 1.15rem',
-                  pStyle = 'position: relative ; left: 3px',
-                  pBrStyle = 'position: relative ; left: 4px ',
-                  aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
-            const aboutAlertID = alert(
-                messages.appName, // title
-                `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
-                    + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-                + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
-                    + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
-                    + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
-                    + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
-                    + config.gitHubURL + '</a></span>',
-                [ // buttons
-                    function checkForUpdates() { updateCheck() },
-                    function getSupport() { safeWindowOpen(config.supportURL) },
-                    function leaveAReview() { // show new modal
-                        const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
-                            [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
-                              function futurepedia() { safeWindowOpen(
-                                  'https://www.futurepedia.io/tool/autoclear-chatgpt-history#autoclear-chatgpt-history-review') }])
-                        document.getElementById(reviewAlertID).querySelector('button')
-                            .style.display = 'none' }, // hide Dismiss button
-                    function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                ], '', 478 // set width
-            )
+    function launchAboutModal() {
 
-            // Re-format buttons to include emoji + localized label + hide Dismiss button
-            for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-                if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-                else if (/support/i.test(button.textContent)) button.textContent = '🧠 ' + messages.buttonLabel_getSupport
-                else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
-                else if (/apps/i.test(button.textContent)) button.textContent = '🤖 ' + messages.buttonLabel_moreApps
-                else button.style.display = 'none' // hide Dismiss button
-            }
-        }))
+        // Init data/styles
+        const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1],
+              headingStyle = 'font-size: 1.15rem',
+              pStyle = 'position: relative ; left: 3px',
+              pBrStyle = 'position: relative ; left: 4px ',
+              aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
+
+        // Show alert
+        const aboutAlertID = alert(
+            messages.appName, // title
+            `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
+                + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
+            + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
+                + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
+                + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
+            + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
+                + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
+                + config.gitHubURL + '</a></span>',
+            [ // buttons
+                function checkForUpdates() { updateCheck() },
+                function getSupport() { safeWindowOpen(config.supportURL) },
+                function leaveAReview() { // show review modal
+                    const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
+                        [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
+                          function futurepedia() { safeWindowOpen(
+                              'https://www.futurepedia.io/tool/autoclear-chatgpt-history#autoclear-chatgpt-history-review') }])
+                    document.getElementById(reviewAlertID).querySelector('button')
+                        .style.display = 'none' }, // hide dismiss button
+                function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+            ], '', 478 // set width
+        )
+
+        // Re-format buttons to include emoji + localized label + hide Dismiss button
+        for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
+            if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+            else if (/support/i.test(button.textContent)) button.textContent = '🧠 ' + messages.buttonLabel_getSupport
+            else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+            else if (/apps/i.test(button.textContent)) button.textContent = '🤖 ' + messages.buttonLabel_moreApps
+            else button.style.display = 'none' // hide Dismiss button
+        }
     }
 
     // Define FEEDBACK functions
