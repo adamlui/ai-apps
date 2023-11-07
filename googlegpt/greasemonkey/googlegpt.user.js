@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.6.2
+// @version             2023.11.6.3
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1078,13 +1078,14 @@
         + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
         + '.katex-html { display: none } ' // hide unrendered math
         + ( isDarkMode() ? '.chatgpt-modal > div { background-color: black !important ; color: white }' : '' )
-        + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 } ' // shrink margin/padding around alert title + enlarge it
-        + '.chatgpt-modal p { margin: 0 0 -9px 4px ; font-size: 1.2rem ; line-height: 1.45 } ' // position/size update alert msg
-        + '.chatgpt-modal button { ' // chatgpt.alert() buttons
+        + '.chatgpt-modal > div { 17px 20px 24px 20px !important }' // increase alert padding
+        + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
+        + '.chatgpt-modal p { margin: 0 0 -9px 4px ; font-size: 1.2rem ; line-height: 1.45 }' // position/size alert msg
+        + '.chatgpt-modal button {' // alert buttons
             + 'font-size: 0.84rem ; text-transform: uppercase ; min-width: 113px ; padding: 5px !important ;'
-            + 'cursor: pointer ; border-radius: 0 !important ; '
-            + 'border: 1px solid ' + ( isDarkMode() ? 'white' : 'black' ) + ' !important } '
-        + '.modal-buttons { margin: 20px -5px -3px -10px !important }' // position modal buttons
+            + 'cursor: pointer ; border-radius: 0 !important ;'
+            + 'border: 1px solid ' + ( isDarkMode() ? 'white' : 'black' ) + ' !important }'
+        + '.modal-buttons { margin: 28px 4px -3px -4px !important }' // position alert buttons
     )
     document.head.appendChild(googleGPTstyle) // append style to <head>
 
