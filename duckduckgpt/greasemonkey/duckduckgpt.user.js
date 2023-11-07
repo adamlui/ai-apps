@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.7.3
+// @version             2023.11.7.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -728,15 +728,14 @@
         // Init variables for listeners
         const form = ddgptDiv.querySelector('form'),
               chatbar = document.getElementById('ddgpt-chatbar'),
-              sendBtn = document.querySelector('.continue-chat button'),
               { paddingTop, paddingBottom } = getComputedStyle(chatbar),
               vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
         let prevLength = chatbar.value.length
 
         // Add listeners
         form.addEventListener('keydown', handleEnter)
+        form.addEventListener('submit', handleSubmit)
         chatbar.addEventListener('input', autosizeChatbar)
-        sendBtn.addEventListener('click', handleSubmit)
 
         function handleEnter(event) {
             if (event.key === 'Enter' && !event.shiftKey && event.target.nodeName === 'TEXTAREA')
@@ -758,8 +757,8 @@
 
             // Remove listeners since they're re-added
             form.removeEventListener('keydown', handleEnter)
+            form.removeEventListener('submit', handleSubmit)
             chatbar.removeEventListener('input', autosizeChatbar)
-            sendBtn.removeEventListener('click', handleSubmit)
 
             // Remove related queries
             try {
@@ -913,7 +912,7 @@
             + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' } '
         + '.related-queries {'
             + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ;'
-            + `top: -25px ; margin: ${ isChromium() ? -7 : -3 }px 0 -15px }`
+            + ( isChromium() ? 'top: -25px ; margin: -7px 0 -15px' : 'top: -20px ; margin: -3px 0 -10px') + '}'
         + '.related-query {'
             + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 8px 11px 8px 17px ;`
             + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
