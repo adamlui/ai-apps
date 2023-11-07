@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Бастапқы код" },
   "mode_prefix": { "message": "Префикс режимі" },
   "mode_suffix": { "message": "Suffix режимі" },
+  "tooltip_sendReply": { "message": "Жауап жіберу" },
   "tooltip_sendRelatedQuery": { "message": "Тиісті сұранысты жіберу" },
   "prompt_updateReplyLang": { "message": "Жауап тілін жаңарту" },
   "alert_langUpdated": { "message": "Тіл жаңартылды" },

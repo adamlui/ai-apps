@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "स्रोत सङ्केत" },
   "mode_prefix": { "message": "उपसर्ग मोड" },
   "mode_suffix": { "message": "प्रत्यय मोड" },
+  "tooltip_sendReply": { "message": "जवाफ पठाउनुहोस्" },
   "tooltip_sendRelatedQuery": { "message": "सम्बन्धित क्वेरी पठाउनुहोस्" },
   "prompt_updateReplyLang": { "message": "जवाफ भाषा अद्यावधिक गर्नुहोस्" },
   "alert_langUpdated": { "message": "भाषा अद्यावधिक गरियो" },

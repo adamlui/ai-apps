@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "源代码" },
   "mode_prefix": { "message": "前缀模式" },
   "mode_suffix": { "message": "后缀模式" },
+  "tooltip_sendReply": { "message": "回复" },
   "tooltip_sendRelatedQuery": { "message": "发送相关查询" },
   "prompt_updateReplyLang": { "message": "更新回复语言" },
   "alert_langUpdated": { "message": "语言已更新" },

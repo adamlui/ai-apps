@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Джерельний код" },
   "mode_prefix": { "message": "Режим префікса" },
   "mode_suffix": { "message": "Режим суфіксу" },
+  "tooltip_sendReply": { "message": "Надіслати відповідь" },
   "tooltip_sendRelatedQuery": { "message": "Надіслати пов 'язаний запит" },
   "prompt_updateReplyLang": { "message": "Оновити мову відповіді" },
   "alert_langUpdated": { "message": "Мову оновлено" },

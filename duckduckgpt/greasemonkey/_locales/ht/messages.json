@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "kòd sous/ code source / le code source mis à jour/code en langage source" },
   "mode_prefix": { "message": "Mòd Prefiks" },
   "mode_suffix": { "message": "Mòd Suffix" },
+  "tooltip_sendReply": { "message": "Voye repons" },
   "tooltip_sendRelatedQuery": { "message": "Voye demann ki gen rapò" },
   "prompt_updateReplyLang": { "message": "MIZAJOU REPONS LANG" },
   "alert_langUpdated": { "message": "Lang mete ajou" },

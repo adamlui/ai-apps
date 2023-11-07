@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Исходный код" },
   "mode_prefix": { "message": "Режим префикса" },
   "mode_suffix": { "message": "Режим суффикса" },
+  "tooltip_sendReply": { "message": "Отправить ответ" },
   "tooltip_sendRelatedQuery": { "message": "Отправить связанный запрос" },
   "prompt_updateReplyLang": { "message": "Обновить язык ответа" },
   "alert_langUpdated": { "message": "Язык обновлен." },

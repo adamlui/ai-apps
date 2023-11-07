@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Zdrojový kód" },
   "mode_prefix": { "message": "Režim předpony" },
   "mode_suffix": { "message": "Přípona" },
+  "tooltip_sendReply": { "message": "Odeslat odpověď" },
   "tooltip_sendRelatedQuery": { "message": "Odeslat související dotaz" },
   "prompt_updateReplyLang": { "message": "Aktualizovat jazyk odpovědi" },
   "alert_langUpdated": { "message": "Jazyk aktualizován." },

@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Gigikana sa kodigo" },
   "mode_prefix": { "message": "Modo sa Unang Bahin" },
   "mode_suffix": { "message": "Modo sa Hulagway" },
+  "tooltip_sendReply": { "message": "Ipadala ang tubag" },
   "tooltip_sendRelatedQuery": { "message": "Ipadala ang may kalabutan nga pangutana" },
   "prompt_updateReplyLang": { "message": "Tubag sa Lenguahe" },
   "alert_langUpdated": { "message": "Gi-update ang sinultian" },

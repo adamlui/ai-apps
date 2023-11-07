@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Source code" },
   "mode_prefix": { "message": "Λειτουργία προθέματος" },
   "mode_suffix": { "message": "Λειτουργία επιθέματος" },
+  "tooltip_sendReply": { "message": "Αποστολή απάντησης" },
   "tooltip_sendRelatedQuery": { "message": "Αποστολή σχετικού ερωτήματος" },
   "prompt_updateReplyLang": { "message": "Ενημέρωση γλώσσας απάντησης" },
   "alert_langUpdated": { "message": "Η γλώσσα ενημερώθηκε" },

@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Kod bilong as" },
   "mode_prefix": { "message": "Prefix mode" },
   "mode_suffix": { "message": "Suffix mode" },
+  "tooltip_sendReply": { "message": "Kirap bekim" },
   "tooltip_sendRelatedQuery": { "message": "Send a related query" },
   "prompt_updateReplyLang": { "message": "Tokples" },
   "alert_langUpdated": { "message": "Tokples i go bek" },

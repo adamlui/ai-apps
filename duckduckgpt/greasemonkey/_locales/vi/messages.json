@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Mã nguồn" },
   "mode_prefix": { "message": "Chế độ Tiền tố" },
   "mode_suffix": { "message": "Chế độ Hậu tố" },
+  "tooltip_sendReply": { "message": "Trả lời" },
   "tooltip_sendRelatedQuery": { "message": "Gửi truy vấn liên quan" },
   "prompt_updateReplyLang": { "message": "Cập nhật ngôn ngữ trả lời" },
   "alert_langUpdated": { "message": "Đã cập nhật ngôn ngữ" },

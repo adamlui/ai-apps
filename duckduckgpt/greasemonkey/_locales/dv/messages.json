@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "ސޯސް ކޯޑް" },
   "mode_prefix": { "message": "ޕްރިފިކްސް މޯޑް" },
   "mode_suffix": { "message": "ޕްރެފިކްޓް މޯޑް" },
+  "tooltip_sendReply": { "message": "ޖަވާބު ފޮނުއްވާ" },
   "tooltip_sendRelatedQuery": { "message": "ގުޅުންހުރި ސުވާލު ތައް ފޮނުވުން" },
   "prompt_updateReplyLang": { "message": "ރިޕްލައި ލެންގުއޭޖް އަޕްޑޭޓް ކުރޭ" },
   "alert_langUpdated": { "message": "ބަހުރުވަ އަޕްޑޭޓްކޮށްފި" },

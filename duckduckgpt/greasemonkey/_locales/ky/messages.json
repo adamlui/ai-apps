@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Баштапкы код" },
   "mode_prefix": { "message": "Prefix режими" },
   "mode_suffix": { "message": "Suffix режими" },
+  "tooltip_sendReply": { "message": "Жооп жөнөтүү" },
   "tooltip_sendRelatedQuery": { "message": "Тиешелүү сурам жөнөтүү" },
   "prompt_updateReplyLang": { "message": "Жооп тилин жаңыртуу" },
   "alert_langUpdated": { "message": "Тил жаңыртылды" },

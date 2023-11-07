@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Bun-tùs a' chod" },
   "mode_prefix": { "message": "Modh an ro - leasachaidh" },
   "mode_suffix": { "message": "Modh an iar - leasachaidh" },
+  "tooltip_sendReply": { "message": "Cuir freagairt" },
   "tooltip_sendRelatedQuery": { "message": "Cuir a 'cheist co - cheangailte ris" },
   "prompt_updateReplyLang": { "message": "Ùraich an cànan freagairt" },
   "alert_langUpdated": { "message": "Cànan air ùrachadh" },

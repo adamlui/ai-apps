@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "קוד מקור" },
   "mode_prefix": { "message": "מצב קידומת" },
   "mode_suffix": { "message": "מצב סיומת" },
+  "tooltip_sendReply": { "message": "שלח תגובה" },
   "tooltip_sendRelatedQuery": { "message": "שלח שאילתה קשורה" },
   "prompt_updateReplyLang": { "message": "עדכון שפת התגובה" },
   "alert_langUpdated": { "message": "השפה עודכנה" },

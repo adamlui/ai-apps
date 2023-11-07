@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "ຊອດສ໌ໂຄດ" },
   "mode_prefix": { "message": "ໂໝດອຳນວຍຄວາມສະດວກ" },
   "mode_suffix": { "message": "ໂໝດ Suffix" },
+  "tooltip_sendReply": { "message": "ຕອບ ຕອບ" },
   "tooltip_sendRelatedQuery": { "message": "ສົ່ງຄຳຖາມທີ່ກ່ຽວຂ້ອງ" },
   "prompt_updateReplyLang": { "message": "ອັບເດດພາສາຕອບ" },
   "alert_langUpdated": { "message": "ພາສາອັບເດດ" },

@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Lähdekoodi" },
   "mode_prefix": { "message": "Etuliitteen tila" },
   "mode_suffix": { "message": "Jälkiliite-tila" },
+  "tooltip_sendReply": { "message": "Vastaa" },
   "tooltip_sendRelatedQuery": { "message": "Lähetä liittyvä kysely" },
   "prompt_updateReplyLang": { "message": "Päivitä vastauskieli" },
   "alert_langUpdated": { "message": "Kieli päivitetty" },

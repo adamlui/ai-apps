@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "ਸਰੋਤ ਕੋਡ@ info: whatsthis" },
   "mode_prefix": { "message": "ਅਗੇਤਰ ਮੋਡ" },
   "mode_suffix": { "message": "ਪਿਛੇਤਰ ਮੋਡ" },
+  "tooltip_sendReply": { "message": "ਜਵਾਬ ਭੇਜੋ" },
   "tooltip_sendRelatedQuery": { "message": "ਸੰਬੰਧਿਤ ਪੁੱਛਗਿੱਛ ਭੇਜੋ" },
   "prompt_updateReplyLang": { "message": "ਜਵਾਬ ਭਾਸ਼ਾ ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ" },
   "alert_langUpdated": { "message": "ਭਾਸ਼ਾ ਅੱਪਡੇਟ ਕੀਤੀ ਗਈ" },

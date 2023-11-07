@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "מקור קאָד" },
   "mode_prefix": { "message": "פּרעפיקס מאָדע" },
   "mode_suffix": { "message": "סאַפיקס מאָדע" },
+  "tooltip_sendReply": { "message": "שיקן ענטפער" },
   "tooltip_sendRelatedQuery": { "message": "שיקן פֿאַרבונדענע אָנפֿרעג" },
   "prompt_updateReplyLang": { "message": "דערהייַנטיקן ענטפער שפּראַך" },
   "alert_langUpdated": { "message": "שפּראַך דערהייַנטיקט" },

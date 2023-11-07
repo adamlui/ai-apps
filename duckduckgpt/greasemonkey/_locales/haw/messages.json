@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Hoʻopā&#39;ālua" },
   "mode_prefix": { "message": "Ke ano prefix" },
   "mode_suffix": { "message": "ʻAno Suffix" },
+  "tooltip_sendReply": { "message": "Hoʻouna pane" },
   "tooltip_sendRelatedQuery": { "message": "E hoʻouna i ka nīnau pili" },
   "prompt_updateReplyLang": { "message": "Hōʻano hou i ka ʻōlelo pane" },
   "alert_langUpdated": { "message": "Hōʻano hou ʻia ka ʻōlelo" },
