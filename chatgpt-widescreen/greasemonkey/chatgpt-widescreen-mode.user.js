@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.6
+// @version             2023.11.7
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -298,6 +298,128 @@
     function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(`${ config.prefix }_${ site }_${ key }`, false) })}
     function saveSetting(key, value) { GM_setValue(`${ config.prefix }_${ site }_${ key }`, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
+    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
+
+    // Define MENU functions
+
+    function registerMenu() {
+        const menuIDs = [] // empty to store newly registered cmds for removal while preserving order
+
+        // Add command to also activate wide screen in full-window
+        const fwLabel = state.symbol[+!config.fullerWindows] + ' ' + messages.menuLabel_fullerWins
+                      + state.separator + state.word[+!config.fullerWindows]
+        menuIDs.push(GM_registerMenuCommand(fwLabel, () => {
+            saveSetting('fullerWindows', !config.fullerWindows)
+            syncFullerWindows(config.fullerWindows) // live update on click
+            if (!config.notifHidden)
+                notify(`${ messages.menuLabel_fullerWins }: ${ state.word[+!config.fullerWindows] }`)
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to toggle taller chatbox when typing
+        const tcbLabel = '↕️ ' + messages.menuLabel_tallerChatbox
+                       + state.separator + state.word[+config.tcbDisabled]
+        menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
+            saveSetting('tcbDisabled', !config.tcbDisabled)
+            updateTweaksStyle()
+            if (!config.notifHidden)
+                notify(`${ messages.menuLabel_tallerChatbox }: ${ state.word[+config.tcbDisabled] }`)
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to toggle wider chatbox with widescreen mode
+        const wcbLabel = '↔️ ' + messages.menuLabel_widerChatbox
+                       + state.separator + state.word[+config.wcbDisabled]
+        menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
+            saveSetting('wcbDisabled', !config.wcbDisabled)
+            updateWidescreenStyle()
+            if (!config.notifHidden)
+                notify(`${ messages.menuLabel_widerChatbox }: ${ state.word[+config.wcbDisabled] }`)
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        if (['openai', 'aivvm'].includes(site)) {
+
+            // Add command to toggle hidden header
+            const hhLabel = state.symbol[+!config.hiddenHeader] + ' ' + messages.menuLabel_hiddenHeader
+                          + state.separator + state.word[+!config.hiddenHeader]
+            menuIDs.push(GM_registerMenuCommand(hhLabel, () => {
+                saveSetting('hiddenHeader', !config.hiddenHeader)
+                updateTweaksStyle()
+                if (!config.notifHidden)
+                    notify(`${ messages.menuLabel_hiddenHeader }: ${ state.word[+!config.hiddenHeader] }`)
+                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            }))
+
+            // Add command to toggle hidden footer
+            const hfLabel = state.symbol[+!config.hiddenFooter] + ' ' + messages.menuLabel_hiddenFooter
+                          + state.separator + state.word[+!config.hiddenFooter]
+            menuIDs.push(GM_registerMenuCommand(hfLabel, () => {
+                saveSetting('hiddenFooter', !config.hiddenFooter)
+                updateTweaksStyle()
+                if (!config.notifHidden)
+                    notify(`${ messages.menuLabel_hiddenFooter }: ${ state.word[+!config.hiddenFooter] }`)
+                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            }))
+        }
+
+        // Add command to show notifications when switching modes
+        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
+                      + state.separator + state.word[+config.notifHidden]
+        menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
+            saveSetting('notifHidden', !config.notifHidden)
+            notify(`${ messages.menuLabel_modeNotifs }: ${ state.word[+config.notifHidden] }`)
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to launch About modal
+        const amLabel = `💡 ${ messages.menuLabel_about } ${ messages.appName }`
+        menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
+    }
+
+    function launchAboutModal() {
+
+        // Show alert
+        const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1],
+              headingStyle = 'font-size: 1.15rem',
+              pStyle = 'position: relative ; left: 3px',
+              pBrStyle = 'position: relative ; left: 4px ',
+              aStyle = 'color: ' + ( isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
+        const aboutAlertID = alert(
+            messages.appName, // title
+            `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
+                + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
+            + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
+                + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
+                + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
+            + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
+                + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
+                + config.gitHubURL + '</a></span>',
+            [ // buttons
+                function checkForUpdates() { updateCheck() },
+                function getSupport() { safeWindowOpen(config.supportURL) },
+                function leaveAReview() { // show new modal
+                    const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
+                        [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
+                          function productHunt() { safeWindowOpen(
+                              'https://www.producthunt.com/products/chatgpt-widescreen-mode/reviews/new') },
+                          function futurepedia() { safeWindowOpen(
+                              'https://www.futurepedia.io/tool/chatgpt-widescreen-mode#chatgpt-widescreen-mode-review') }])
+                    document.getElementById(reviewAlertID).querySelector('button')
+                        .style.display = 'none' }, // hide dismiss button
+                function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+            ], '', 478 // set width
+        )
+
+        // Re-format buttons to include emojis + re-case + hide dismiss button
+        for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
+            if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
+            else if (/support/i.test(button.textContent)) button.textContent = '🧠 ' + messages.buttonLabel_getSupport
+            else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
+            else if (/apps/i.test(button.textContent)) button.textContent = '🤖 ' + messages.buttonLabel_moreApps
+            else button.style.display = 'none' // hide dismiss button
+        }
+    }
 
     function updateCheck() {
 
@@ -340,130 +462,11 @@
                         return
                 }}
 
+                // Alert to no update found, nav back
                 alert(`${ messages.alert_upToDate }!`, // title
                     `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
+                launchAboutModal()
     }})}
-
-    // Define MENU functions
-
-    function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
-
-    function registerMenu() {
-        const menuIDs = [] // empty to store newly registered cmds for removal while preserving order
-
-        // Add command to also activate wide screen in full-window
-        const fwLabel = state.symbol[+!config.fullerWindows] + ' ' + messages.menuLabel_fullerWins
-                      + state.separator + state.word[+!config.fullerWindows]
-        menuIDs.push(GM_registerMenuCommand(fwLabel, () => {
-            saveSetting('fullerWindows', !config.fullerWindows)
-            syncFullerWindows(config.fullerWindows) // live update on click
-            if (!config.notifHidden)
-                notify(`${ messages.menuLabel_fullerWins }: ${ state.word[+!config.fullerWindows] }`)
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
-
-        // Add command to toggle taller chatbox when typing
-        const tcbLabel = '↕️ ' + messages.menuLabel_tallerChatbox
-                       + state.separator + state.word[+config.tcbDisabled]
-        menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
-            saveSetting('tcbDisabled', !config.tcbDisabled)
-            updateTweaksStyle()
-            if (!config.notifHidden)
-                notify(`${ messages.menuLabel_tallerChatbox }: ${ state.word[+config.tcbDisabled] }`)
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
-
-        // Add command to toggle wider chatbox with widescreen mode
-        const wcbLabel = '↔️ ' + messages.menuLabel_widerChatbox
-                       + state.separator + state.word[+config.wcbDisabled]
-        menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
-            saveSetting('wcbDisabled', !config.wcbDisabled)
-            updateWidescreenStyle()
-            if (!config.notifHidden)
-                notify(`${ messages.menuLabel_widerChatbox }: ${ state.word[+config.wcbDisabled] }`)
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
-
-        
-        if (['openai', 'aivvm'].includes(site)) {
-
-            // Add command to toggle hidden header
-            const hhLabel = state.symbol[+!config.hiddenHeader] + ' ' + messages.menuLabel_hiddenHeader
-                          + state.separator + state.word[+!config.hiddenHeader]
-            menuIDs.push(GM_registerMenuCommand(hhLabel, () => {
-                saveSetting('hiddenHeader', !config.hiddenHeader)
-                updateTweaksStyle()
-                if (!config.notifHidden)
-                    notify(`${ messages.menuLabel_hiddenHeader }: ${ state.word[+!config.hiddenHeader] }`)
-                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-            }))
-
-            // Add command to toggle hidden footer
-            const hfLabel = state.symbol[+!config.hiddenFooter] + ' ' + messages.menuLabel_hiddenFooter
-                          + state.separator + state.word[+!config.hiddenFooter]
-            menuIDs.push(GM_registerMenuCommand(hfLabel, () => {
-                saveSetting('hiddenFooter', !config.hiddenFooter)
-                updateTweaksStyle()
-                if (!config.notifHidden)
-                    notify(`${ messages.menuLabel_hiddenFooter }: ${ state.word[+!config.hiddenFooter] }`)
-                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-            }))
-        }
-
-        // Add command to show notifications when switching modes
-        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
-                      + state.separator + state.word[+config.notifHidden]
-        menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
-            saveSetting('notifHidden', !config.notifHidden)
-            notify(`${ messages.menuLabel_modeNotifs }: ${ state.word[+config.notifHidden] }`)
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
-
-        // Add command to launch About modal
-        menuIDs.push(GM_registerMenuCommand(`💡 ${ messages.menuLabel_about } ${ messages.appName }`, async () => {
-
-            // Show alert
-            const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1],
-                  headingStyle = 'font-size: 1.15rem',
-                  pStyle = 'position: relative ; left: 3px',
-                  pBrStyle = 'position: relative ; left: 4px ',
-                  aStyle = 'color: ' + ( isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
-            const aboutAlertID = alert(
-                messages.appName, // title
-                `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
-                    + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-                + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
-                    + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
-                    + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-                + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
-                    + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
-                    + config.gitHubURL + '</a></span>',
-                [ // buttons
-                    function checkForUpdates() { updateCheck() },
-                    function getSupport() { safeWindowOpen(config.supportURL) },
-                    function leaveAReview() { // show new modal
-                        const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
-                            [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
-                              function productHunt() { safeWindowOpen(
-                                  'https://www.producthunt.com/products/chatgpt-widescreen-mode/reviews/new') },
-                              function futurepedia() { safeWindowOpen(
-                                  'https://www.futurepedia.io/tool/chatgpt-widescreen-mode#chatgpt-widescreen-mode-review') }])
-                        document.getElementById(reviewAlertID).querySelector('button')
-                            .style.display = 'none' }, // hide Dismiss button
-                    function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-                ], '', 478 // set width
-            )
-
-            // Re-format buttons to include emojis + re-case + hide Dismiss button
-            for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-                if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-                else if (/support/i.test(button.textContent)) button.textContent = '🧠 ' + messages.buttonLabel_getSupport
-                else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
-                else if (/apps/i.test(button.textContent)) button.textContent = '🤖 ' + messages.buttonLabel_moreApps
-                else button.style.display = 'none' // hide Dismiss button
-            }
-        }))
-    }
 
     // Define SCHEME function
 
