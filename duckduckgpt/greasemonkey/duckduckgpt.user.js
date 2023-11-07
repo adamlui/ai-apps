@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.7
+// @version             2023.11.7.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -877,21 +877,24 @@
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Stylize elements
-    const ddgptStyle = document.createElement('style')
+    const ddgptStyle = document.createElement('style'),
+          scheme = isDarkMode() ? 'dark' : 'light'
     ddgptStyle.innerText = (
         '.ddgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 16px 26px ; flex-basis: 0 ;'
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ; '
-            + ( isDarkMode() ? ' border: none ; background: #282828 } ' : ' } ' )
-        + '.ddgpt-container p { margin: 0 ; ' + ( isDarkMode() ? 'color: #ccc } ' : ' } ' )
-        + ( isDarkMode() ? '.ddgpt-container a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
+            + ( scheme == 'dark' ? ' border: none ; background: #282828 } ' : ' } ' )
+        + '.ddgpt-container p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
+        + ( scheme == 'dark' ? '.ddgpt-container a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
         + '.ddgpt-container .prefix { font-size: 1.5rem ; font-weight: 700 }'
-        + '.ddgpt-container .prefix > a { color: ' + ( isDarkMode() ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
+        + '.ddgpt-container .prefix > a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
         + '.ddgpt-container .loading {'
             + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.ddgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
-        + '.ddgpt-container pre { font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 12px 0 0 0 ; line-height: 21px ; padding: 1.25em ; border-radius: 10px ; '
-            + ( isDarkMode() ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' } ' )
+        + '.ddgpt-container pre {'
+            + 'font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 12px 0 0 0 ; padding: 1.25em ;'
+            + 'border-radius: 10px ; line-height: 21px ;'
+            + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2' : '' ) + '}'
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.ddgpt-container section.loading {'
             + 'padding-left: 5px ;' // left-pad loading status when sending replies
@@ -899,36 +902,37 @@
         + '.chatgpt-feedback { margin: 2px 0 25px }'
         + '.balloon-tip { content: "" ; position: relative ; top: 5px ; right: 16.5em ; border: 7px solid transparent ;'
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
-            + ( isDarkMode() ? '#3a3a3a' : '#eaeaea' ) + ' } '
+            + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' } '
         + '.continue-chat > textarea {'
-            + `border: solid 1px ${ isDarkMode() ? '#aaa' : 'lightgrey' } ; border-radius: 12px 13px 12px 0 ;`
+            + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; border-radius: 12px 13px 12px 0 ;`
             + 'height: 1.55rem ; width: 94.6% ; max-height: 200px ;resize: none ; '
             + 'margin: 3px 0 15px 0 ; padding: 9px 10px 5px 10px ; '
-            + 'background: ' + ( isDarkMode() ? '#515151' : '#eeeeee70' ) + ' } '
+            + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' } '
         + `.related-queries { display: flex ; flex-wrap: wrap ; margin: ${ isChromium() ? -7 : -3 }px 0 10px }`
         + '.related-query {'
-            + `margin: 4px 4px ${ isDarkMode() ? 7 : 2 }px 0 ; padding: 8px 11px 8px 17px ;`
-            + `color: ${ isDarkMode() ? '#f2f2f2' : '#767676' } ; background: ${ isDarkMode() ? '#424242' : '#dadada12' } ;`
-            + `border: 1px solid ${ isDarkMode() ? '#777' : '#e1e1e1' } ; font-size: 0.98em ; cursor: pointer ;`
+            + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 8px 11px 8px 17px ;`
+            + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
+            + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
+            + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.98em ; cursor: pointer ;`
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
-            + `box-shadow: 1px 3px ${ isDarkMode() ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' } ;`
+            + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' } ;`
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-        + `.related-query:hover { background: #${ isDarkMode() ? 'a2a2a270' : 'a2a2a240 ; color: #000000a8' }}`
+        + `.related-query:hover { background: #${ scheme == 'dark' ? 'a2a2a270' : 'a2a2a240 ; color: #000000a8' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
-        + '.kudo-ai a:hover { color: ' + ( isDarkMode() ? 'white' : 'black' ) + ' ; text-decoration: none } '
+        + '.kudo-ai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
         + '.katex-html { display: none } ' // hide unrendered math
-        + ( isDarkMode() ? '.chatgpt-modal > div { background-color: black !important ; color: white }' : '' )
+        + ( scheme == 'dark' ? '.chatgpt-modal > div { background-color: black !important ; color: white }' : '' )
         + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important }' // increase alert padding
         + '.chatgpt-modal h2 { margin: 0 ; padding: 0 }' // shrink margin/padding around alert titles
         + '.chatgpt-modal p { margin: -8px 0 -9px 4px ; font-size: 1.55rem }' // position/size update alert msg
         + '.chatgpt-modal button {' // alert buttons
             + 'padding: 7px !important ; cursor: pointer ; border-radius: 0 !important ;'
             + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
-            + 'border: 1px solid ' + ( isDarkMode() ? 'white' : 'black' ) + '!important ;'
-            + ( isDarkMode() ? 'background: none ; color: white' : '') + '}'
+            + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + '!important ;'
+            + ( scheme == 'dark' ? 'background: none ; color: white' : '') + '}'
         + '.modal-buttons { margin: 20px -5px -3px -15px !important }' // position alert buttons
     )
     document.head.appendChild(ddgptStyle) // append style to <head>
