@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.7.6
+// @version             2023.11.7.7
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -449,6 +449,18 @@
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
+        // Add command to toggle fatter sidebar
+        const fsbLabel = ( config.fatterSidebar ? '🔛' : '↔️' ) + ' '
+                       + 'Fatter Sidebar'
+                       + state.separator + state.word[+!config.fatterSidebar]
+        menuIDs.push(GM_registerMenuCommand(fsbLabel, () => {
+            saveSetting('fatterSidebar', !config.fatterSidebar)
+            updateTweaksStyle()
+            if (!config.notifHidden)
+                notify(messages.menuLabel_fatterSidebar + ' ' + state.word[+!config.fatterSidebar])
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
         // Add command to set reply language
         const rlLabel = '🌐 ' + messages.menuLabel_replyLanguage
                       + state.separator + config.replyLanguage
@@ -584,6 +596,7 @@
     }
 
     function isChromium() { return navigator.userAgent.includes('Chrome') }
+    function updateTweaksStyle() { tweaksStyle.innerText = config.fatterSidebar ? fsbStyle : '' }
 
     // Define SESSION functions
 
@@ -974,7 +987,7 @@
     config.updateURL = config.greasyForkURL + '/code/googlegpt.meta.js'
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('proxyAPIenabled', 'prefixEnabled', 'relatedQueriesDisabled', 'replyLanguage', 'suffixEnabled')
+    loadSetting('proxyAPIenabled', 'prefixEnabled', 'relatedQueriesDisabled', 'replyLanguage', 'fatterSidebar', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = []
 
@@ -1027,6 +1040,11 @@
         suggestProxy: messages.alert_openAInotWorking + '. ' + messages.alert_suggestProxy,
         suggestOpenAI: messages.alert_proxyNotWorking + '. ' + messages.alert_suggestOpenAI
     }
+
+    // Create Google style tweaks
+    const tweaksStyle = document.createElement('style'),
+          fsbStyle = '#center_col { max-width: 560px !important }'
+    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Stylize elements
     const googleGPTstyle = document.createElement('style'),
@@ -1101,7 +1119,7 @@
     )
     document.head.appendChild(googleGPTstyle)
 
-    // Create DDGPT container & add class
+    // Create GoogleGPT container & add class
     const googleGPTdiv = document.createElement('div') // create container div
     googleGPTdiv.className = 'googlegpt-container'
 
