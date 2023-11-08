@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.8.4
+// @version             2023.11.8.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -669,7 +669,7 @@
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               scheme = isDarkMode() ? 'dark' : 'light'
-        speakSpan.className = 'speak'
+        speakSpan.className = 'speak' ; speakSpan.title = messages.tooltip_playAnswer
         speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32')
         speakSVG.setAttributeNS(null, 'width', '22')
         const speakSVGpaths = [
