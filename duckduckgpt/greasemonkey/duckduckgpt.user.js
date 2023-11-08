@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.7.8
+// @version             2023.11.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -705,7 +705,7 @@
     }
 
     function ddgptShow(answer) {
-        ddgptDiv.innerHTML = `<p><span class="prefix">🤖  <a href="https://duckduckgpt.com" target="_blank" rel="noopener">DuckDuckGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://www.kudoai.com" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="ddgpt-chatbar" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="${ messages.tooltip_sendReply }" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
+        ddgptDiv.innerHTML = `<p><span class="app-name">🤖  <a href="https://duckduckgpt.com" target="_blank" rel="noopener">DuckDuckGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://www.kudoai.com" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="ddgpt-chatbar" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="${ messages.tooltip_sendReply }" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
         ddgptDiv.querySelector('pre').textContent = answer
 
         // Render math
@@ -887,8 +887,8 @@
             + ( scheme == 'dark' ? ' border: none ; background: #282828 } ' : ' } ' )
         + '.ddgpt-container p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
         + ( scheme == 'dark' ? '.ddgpt-container a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
-        + '.ddgpt-container .prefix { font-size: 1.5rem ; font-weight: 700 }'
-        + '.ddgpt-container .prefix > a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
+        + '.app-name { font-size: 1.5rem ; font-weight: 700 }'
+        + '.app-name a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
         + '.ddgpt-container .loading {'
             + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
