@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "سرچينه كوډه" },
   "mode_prefix": { "message": "د مختاړي اکر" },
   "mode_suffix": { "message": "وروستنی حالت" },
+  "tooltip_playAnswer": { "message": "ځواب ولوبیږئ" },
   "tooltip_sendReply": { "message": "ځواب وليږه" },
   "tooltip_sendRelatedQuery": { "message": "اړونده پوښتنې ولیږئ" },
   "prompt_updateReplyLang": { "message": "د ځواب ژبه تازه کړئ" },

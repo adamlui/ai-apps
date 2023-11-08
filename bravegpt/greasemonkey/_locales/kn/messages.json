@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "ಮೂಲ ಕೋಡ್" },
   "mode_prefix": { "message": "ಪೂರ್ವಪ್ರತ್ಯಯ ಮೋಡ್" },
   "mode_suffix": { "message": "ಉತ್ತರ ಪ್ರತ್ಯಯ ಮೋಡ್" },
+  "tooltip_playAnswer": { "message": "ಪ್ಲೇ ಉತ್ತರ" },
   "tooltip_sendReply": { "message": "ಪ್ರತ್ಯುತ್ತರ ಕಳುಹಿಸಿ" },
   "tooltip_sendRelatedQuery": { "message": "ಸಂಬಂಧಿತ ಪ್ರಶ್ನೆಯನ್ನು ಕಳುಹಿಸಿ" },
   "prompt_updateReplyLang": { "message": "ಪ್ರತ್ಯುತ್ತರ ಭಾಷೆಯನ್ನು ನವೀಕರಿಸಿ" },

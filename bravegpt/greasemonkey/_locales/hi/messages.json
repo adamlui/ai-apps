@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "सोर्स कोड" },
   "mode_prefix": { "message": "उपसर्ग मोड" },
   "mode_suffix": { "message": "प्रत्यय मोड" },
+  "tooltip_playAnswer": { "message": "जवाब खेलें" },
   "tooltip_sendReply": { "message": "जवाब भेजें" },
   "tooltip_sendRelatedQuery": { "message": "संबंधित क्वेरी भेजें" },
   "prompt_updateReplyLang": { "message": "उत्तर भाषा अपडेट करें" },

@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Izvorni kod" },
   "mode_prefix": { "message": "Režim prefiksa" },
   "mode_suffix": { "message": "Režim sufiksa" },
+  "tooltip_playAnswer": { "message": "Reproduciraj odgovor" },
   "tooltip_sendReply": { "message": "Pošalji odgovor" },
   "tooltip_sendRelatedQuery": { "message": "Pošaljite povezani upit" },
   "prompt_updateReplyLang": { "message": "Ažuriraj jezik odgovora" },

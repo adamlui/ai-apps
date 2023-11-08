@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Зыходнікі" },
   "mode_prefix": { "message": "Рэжым прэфікса" },
   "mode_suffix": { "message": "Рэжым суфікса" },
+  "tooltip_playAnswer": { "message": "Прайграць адказ" },
   "tooltip_sendReply": { "message": "Даслаць адказ" },
   "tooltip_sendRelatedQuery": { "message": "Даслаць адпаведны запыт" },
   "prompt_updateReplyLang": { "message": "Абнавіць мову адказаў" },

@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Msimbo wa chanzo" },
   "mode_prefix": { "message": "Hali ya Kiambishi awali" },
   "mode_suffix": { "message": "Hali ya Suffix" },
+  "tooltip_playAnswer": { "message": "Jibu la mchezo" },
   "tooltip_sendReply": { "message": "Tuma jibu" },
   "tooltip_sendRelatedQuery": { "message": "Tuma swali linalohusiana" },
   "prompt_updateReplyLang": { "message": "Sasisha lugha ya kujibu" },

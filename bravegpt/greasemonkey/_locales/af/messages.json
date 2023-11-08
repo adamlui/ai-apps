@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Oorsprong Kode" },
   "mode_prefix": { "message": "Voorvoegsel Modus" },
   "mode_suffix": { "message": "Agtervoegsel Modus" },
+  "tooltip_playAnswer": { "message": "Speel antwoord" },
   "tooltip_sendReply": { "message": "Stuur antwoord" },
   "tooltip_sendRelatedQuery": { "message": "Stuur verwante navraag" },
   "prompt_updateReplyLang": { "message": "Dateer antwoordtaal op" },

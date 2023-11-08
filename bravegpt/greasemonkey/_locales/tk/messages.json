@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Çykgyt kodu" },
   "mode_prefix": { "message": "Prefiks Modu" },
   "mode_suffix": { "message": "Suffix Modu" },
+  "tooltip_playAnswer": { "message": "Jawap oýna" },
   "tooltip_sendReply": { "message": "Jawap iber" },
   "tooltip_sendRelatedQuery": { "message": "Baglanyşykly soragy iber" },
   "prompt_updateReplyLang": { "message": "Jawap diliniň täzelenmegi" },

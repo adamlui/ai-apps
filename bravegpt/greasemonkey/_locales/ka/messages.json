@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "საწყისი კოდი" },
   "mode_prefix": { "message": "Პრეფიქსული რეჟიმი" },
   "mode_suffix": { "message": "Სუფიქსური რეჟიმი" },
+  "tooltip_playAnswer": { "message": "Პასუხის დაკვრა" },
   "tooltip_sendReply": { "message": "გადაუგზავნე" },
   "tooltip_sendRelatedQuery": { "message": "Შესაბამისი მოთხოვნის გაგზავნა" },
   "prompt_updateReplyLang": { "message": "Განაახლეთ პასუხის ენა" },

@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Quellcode" },
   "mode_prefix": { "message": "Viraussetzungsmodus" },
   "mode_suffix": { "message": "Suffix-Modus" },
+  "tooltip_playAnswer": { "message": "Antwort abspielen" },
   "tooltip_sendReply": { "message": "Äntwert schécken" },
   "tooltip_sendRelatedQuery": { "message": "Zesummenhang Ufro schécken" },
   "prompt_updateReplyLang": { "message": "Äntwertssprooch aktualiséieren" },

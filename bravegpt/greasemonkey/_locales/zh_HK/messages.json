@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "原始碼" },
   "mode_prefix": { "message": "前綴模式" },
   "mode_suffix": { "message": "後綴模式" },
+  "tooltip_playAnswer": { "message": "播放答案" },
   "tooltip_sendReply": { "message": "發送回覆" },
   "tooltip_sendRelatedQuery": { "message": "傳送相關查詢" },
   "prompt_updateReplyLang": { "message": "更新回覆語言" },

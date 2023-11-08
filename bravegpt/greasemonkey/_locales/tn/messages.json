@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Khoutu ya motswedi" },
   "mode_prefix": { "message": "Mokgwa wa go Kopa" },
   "mode_suffix": { "message": "Mokgwa wa Seeletswa" },
+  "tooltip_playAnswer": { "message": "PLAY ANSWER" },
   "tooltip_sendReply": { "message": "SEND ANSWER" },
   "tooltip_sendRelatedQuery": { "message": "ROMELA DIPOTSO TSE DI AMAN" },
   "prompt_updateReplyLang": { "message": "Puo e e tlhabolotsweng ya karabo" },

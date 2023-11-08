@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Lähtekood" },
   "mode_prefix": { "message": "Eesliite režiim" },
   "mode_suffix": { "message": "Järelliite režiim" },
+  "tooltip_playAnswer": { "message": "Mängi / Vasta" },
   "tooltip_sendReply": { "message": "Saada vastus" },
   "tooltip_sendRelatedQuery": { "message": "Saada seotud päring" },
   "prompt_updateReplyLang": { "message": "Uuenda vastuse keelt" },

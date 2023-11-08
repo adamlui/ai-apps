@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "کۆسی سەرچاوە" },
   "mode_prefix": { "message": "سابقہ موڈ" },
   "mode_suffix": { "message": "صفت وضع" },
+  "tooltip_playAnswer": { "message": "جواب پلے کریں" },
   "tooltip_sendReply": { "message": "جواب بھیجیں" },
   "tooltip_sendRelatedQuery": { "message": "متعلقہ استفسار بھیجیں" },
   "prompt_updateReplyLang": { "message": "جواب کی زبان اپ ڈیٹ کریں" },

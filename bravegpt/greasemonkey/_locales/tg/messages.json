@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Рамзи манбаъ" },
   "mode_prefix": { "message": "Ҳолати префикс" },
   "mode_suffix": { "message": "Ҳолати суффикс" },
+  "tooltip_playAnswer": { "message": "Пахш кардани ҷавоб" },
   "tooltip_sendReply": { "message": "Фиристодани ҷавоб" },
   "tooltip_sendRelatedQuery": { "message": "Фиристодани дархости марбута" },
   "prompt_updateReplyLang": { "message": "Забони ҷавобро навсозӣ кунед" },

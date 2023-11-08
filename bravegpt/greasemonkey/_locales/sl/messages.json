@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode:" },
   "mode_prefix": { "message": "Način predpone" },
   "mode_suffix": { "message": "Način pripone" },
+  "tooltip_playAnswer": { "message": "Predvajaj odgovor" },
   "tooltip_sendReply": { "message": "Odgovori" },
   "tooltip_sendRelatedQuery": { "message": "Pošlji povezano poizvedbo" },
   "prompt_updateReplyLang": { "message": "Posodobi jezik odgovora" },

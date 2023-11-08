@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Fontkodo" },
   "mode_prefix": { "message": "Prefiksa moduso" },
   "mode_suffix": { "message": "Suffix Mode" },
+  "tooltip_playAnswer": { "message": "Ludi respondon" },
   "tooltip_sendReply": { "message": "Sendi  La Respondo" },
   "tooltip_sendRelatedQuery": { "message": "Sendi rilatan peton" },
   "prompt_updateReplyLang": { "message": "Ĝisdatigi respondan lingvon" },

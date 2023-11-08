@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Source code ti" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "A yeke nzoni ti tene zo asara ye na lege ni" },
+  "tooltip_playAnswer": { "message": "Répondre PLAY Répondre" },
   "tooltip_sendReply": { "message": "Répondre Répondre" },
   "tooltip_sendRelatedQuery": { "message": "Ti tokua mbeni hundango tënë so andu tënë ni" },
   "prompt_updateReplyLang": { "message": "Tënë ti yanga ti kodoro niModifier" },

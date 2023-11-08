@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "کۆدی سەرچاوە" },
   "mode_prefix": { "message": "دۆخی پێشگر" },
   "mode_suffix": { "message": "دۆخی پاشگر" },
+  "tooltip_playAnswer": { "message": "وەڵام یاری بکە" },
   "tooltip_sendReply": { "message": "وەڵام بنێرە" },
   "tooltip_sendRelatedQuery": { "message": "پرسگەی پەیوەندیدار بنێرە" },
   "prompt_updateReplyLang": { "message": "زمانی وەڵام نوێ بکەوە" },

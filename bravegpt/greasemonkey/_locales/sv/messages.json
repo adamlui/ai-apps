@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Källkod" },
   "mode_prefix": { "message": "Prefixläge" },
   "mode_suffix": { "message": "Suffixläge" },
+  "tooltip_playAnswer": { "message": "Spela svar" },
   "tooltip_sendReply": { "message": "Skicka svar" },
   "tooltip_sendRelatedQuery": { "message": "Skicka relaterad fråga" },
   "prompt_updateReplyLang": { "message": "Uppdatera svarsspråk" },

@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "원본 코드" },
   "mode_prefix": { "message": "접두사 모드" },
   "mode_suffix": { "message": "접미사 모드" },
+  "tooltip_playAnswer": { "message": "답변 재생" },
   "tooltip_sendReply": { "message": "답변 필요" },
   "tooltip_sendRelatedQuery": { "message": "관련 쿼리 보내기" },
   "prompt_updateReplyLang": { "message": "답변 언어 업데이트" },

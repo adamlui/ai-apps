@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Codi font" },
   "mode_prefix": { "message": "Mode de prefix" },
   "mode_suffix": { "message": "Mode de sufix" },
+  "tooltip_playAnswer": { "message": "Reprodueix la resposta" },
   "tooltip_sendReply": { "message": "Enviar resposta" },
   "tooltip_sendRelatedQuery": { "message": "Envia una consulta relacionada" },
   "prompt_updateReplyLang": { "message": "Actualitza l'idioma de la resposta" },

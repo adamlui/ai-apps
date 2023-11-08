@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "የምንጭ ኮድ" },
   "mode_prefix": { "message": "Prefix ሁነታ" },
   "mode_suffix": { "message": "Suffix ሁነታ" },
+  "tooltip_playAnswer": { "message": "መልስ አጫውት" },
   "tooltip_sendReply": { "message": "መልስ ላክ" },
   "tooltip_sendRelatedQuery": { "message": "ተዛማጅ ጥያቄ ይላኩ" },
   "prompt_updateReplyLang": { "message": "የምላሽ ቋንቋን ያዘምኑ" },

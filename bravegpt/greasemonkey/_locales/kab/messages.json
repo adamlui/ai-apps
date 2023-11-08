@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Tangalt aγbalu" },
   "mode_prefix": { "message": "Aγewwaṛ amezwaru" },
   "mode_suffix": { "message": "Aγewwaṛ n Suffix" },
+  "tooltip_playAnswer": { "message": "Urar tiririt" },
   "tooltip_sendReply": { "message": "Azen tiririt" },
   "tooltip_sendRelatedQuery": { "message": "Azen asteqsi yettwaxedmen" },
   "prompt_updateReplyLang": { "message": "Snifel tutlayt n tiririt" },

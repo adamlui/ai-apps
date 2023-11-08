@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "源代码" },
   "mode_prefix": { "message": "前缀模式" },
   "mode_suffix": { "message": "后缀模式" },
+  "tooltip_playAnswer": { "message": "播放答案" },
   "tooltip_sendReply": { "message": "回复" },
   "tooltip_sendRelatedQuery": { "message": "发送相关查询" },
   "prompt_updateReplyLang": { "message": "更新回复语言" },

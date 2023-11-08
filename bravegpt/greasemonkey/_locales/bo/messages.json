@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "འབྱུང་ཁུངས །" },
   "mode_prefix": { "message": "སྔོན་སྒྲིག" },
   "mode_suffix": { "message": "སུའིཕེཅ་ མོདེ" },
+  "tooltip_playAnswer": { "message": "ལན་འདེབས །" },
   "tooltip_sendReply": { "message": "ལན་སློག ལན་སློག" },
   "tooltip_sendRelatedQuery": { "message": "འབྲེལ་བ་ཡོད་པའི་དྲི་བ་གཏོང་བ" },
   "prompt_updateReplyLang": { "message": "སྐད་ཡིག་གསར་འགྱུར །" },

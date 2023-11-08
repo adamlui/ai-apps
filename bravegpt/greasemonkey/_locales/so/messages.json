@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Koodhka isha" },
   "mode_prefix": { "message": "Habka Prefix" },
   "mode_suffix": { "message": "Suffix Mode" },
+  "tooltip_playAnswer": { "message": "Jawaabta ciyaar" },
   "tooltip_sendReply": { "message": "Jawaab u dir" },
   "tooltip_sendRelatedQuery": { "message": "U dir su 'aalaha la xiriira" },
   "prompt_updateReplyLang": { "message": "Cusboonaysii Luuqadda Jawaabta" },

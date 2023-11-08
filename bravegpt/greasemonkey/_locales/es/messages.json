@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Código fuente" },
   "mode_prefix": { "message": "Modo de prefijo" },
   "mode_suffix": { "message": "Modo sufijo" },
+  "tooltip_playAnswer": { "message": "Reproducir respuesta" },
   "tooltip_sendReply": { "message": "Enviar respuesta" },
   "tooltip_sendRelatedQuery": { "message": "Enviar consulta relacionada" },
   "prompt_updateReplyLang": { "message": "Actualizar el idioma de la respuesta" },

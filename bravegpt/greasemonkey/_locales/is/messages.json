@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Upprunakóði@ info: whatsthis" },
   "mode_prefix": { "message": "Forskeytahamur" },
   "mode_suffix": { "message": "Viðskeytahamur" },
+  "tooltip_playAnswer": { "message": "Spila svar" },
   "tooltip_sendReply": { "message": "Senda svar" },
   "tooltip_sendRelatedQuery": { "message": "Senda tengda fyrirspurn" },
   "prompt_updateReplyLang": { "message": "Uppfæra tungumál svars" },

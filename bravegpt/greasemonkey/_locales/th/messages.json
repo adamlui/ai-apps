@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "รหัสต้นฉบับ" },
   "mode_prefix": { "message": "โหมดคำนำหน้า" },
   "mode_suffix": { "message": "โหมดคำต่อท้าย" },
+  "tooltip_playAnswer": { "message": "เล่นคำตอบ" },
   "tooltip_sendReply": { "message": "ส่งข้อความ" },
   "tooltip_sendRelatedQuery": { "message": "ส่งคำค้นหาที่เกี่ยวข้อง" },
   "prompt_updateReplyLang": { "message": "อัพเดทภาษาของการตอบกลับ" },

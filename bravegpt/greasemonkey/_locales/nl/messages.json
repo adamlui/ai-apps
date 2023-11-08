@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "Broncode" },
   "mode_prefix": { "message": "Voorvoegsel modus" },
   "mode_suffix": { "message": "Achtervoegselmodus" },
+  "tooltip_playAnswer": { "message": "Antwoord afspelen" },
   "tooltip_sendReply": { "message": "Reactie versturen" },
   "tooltip_sendRelatedQuery": { "message": "Verwante query verzenden" },
   "prompt_updateReplyLang": { "message": "Antwoordtaal bijwerken" },

@@ -13,6 +13,7 @@
   "about_sourceCode": { "message": "ምንጪ ኮድ" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "ሱፊክስ ሞድ" },
+  "tooltip_playAnswer": { "message": "መልሲ ተጻወት" },
   "tooltip_sendReply": { "message": "መልሲ ልኣኽ" },
   "tooltip_sendRelatedQuery": { "message": "ምስዚ ዚተሓሓዝ ሕቶ ልኣኽ" },
   "prompt_updateReplyLang": { "message": "ቋንቋ መልሲ ኣዘምነሉ" },
