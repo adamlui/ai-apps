@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "সোর্স কোড" },
   "mode_prefix": { "message": "উপসর্গ মোড" },
   "mode_suffix": { "message": "সাফিক্স মোড" },
+  "tooltip_playAnswer": { "message": "উত্তর খেলুন" },
   "tooltip_sendReply": { "message": "উত্তর পাঠান" },
   "tooltip_sendRelatedQuery": { "message": "সম্পর্কিত ক্যোয়ারী পাঠান" },
   "prompt_updateReplyLang": { "message": "উত্তর ভাষা আপডেট করুন" },

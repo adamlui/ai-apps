@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Codul sursă" },
   "mode_prefix": { "message": "Mod prefix" },
   "mode_suffix": { "message": "Mod sufix" },
+  "tooltip_playAnswer": { "message": "Redați răspunsul" },
   "tooltip_sendReply": { "message": "Trimite un răspuns" },
   "tooltip_sendRelatedQuery": { "message": "Trimitere interogare asociată" },
   "prompt_updateReplyLang": { "message": "Actualizează limba răspunsului" },

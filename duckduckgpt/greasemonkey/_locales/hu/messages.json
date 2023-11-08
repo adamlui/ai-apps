@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Forráskód" },
   "mode_prefix": { "message": "Előtag mód" },
   "mode_suffix": { "message": "Utótag mód" },
+  "tooltip_playAnswer": { "message": "Válasz lejátszása" },
   "tooltip_sendReply": { "message": "Válasz elküldése" },
   "tooltip_sendRelatedQuery": { "message": "Kapcsolódó lekérdezés küldése" },
   "prompt_updateReplyLang": { "message": "Válasz nyelvének frissítése" },

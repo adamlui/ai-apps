@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Ifyebo fyaba mu cipande ca kubalilapo" },
   "mode_prefix": { "message": "Mu Moda wa Cishinka" },
   "mode_suffix": { "message": "Mu Moda wa Sufikisi" },
+  "tooltip_playAnswer": { "message": "Tinikeni pa kwasuka" },
   "tooltip_sendReply": { "message": "Tuma Mwakitwile" },
   "tooltip_sendRelatedQuery": { "message": "Tumineni ifipusho ifilanda pali ili lyashi" },
   "prompt_updateReplyLang": { "message": "Ubulasanshi ukubika citako" },

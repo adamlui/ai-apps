@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "ソースコード" },
   "mode_prefix": { "message": "プレフィックスモード" },
   "mode_suffix": { "message": "接尾辞モード" },
+  "tooltip_playAnswer": { "message": "回答を再生" },
   "tooltip_sendReply": { "message": "要返信" },
   "tooltip_sendRelatedQuery": { "message": "関連するクエリを送信" },
   "prompt_updateReplyLang": { "message": "返信言語を更新" },

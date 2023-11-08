@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Codex Originis" },
   "mode_prefix": { "message": "Modus prefix" },
   "mode_suffix": { "message": "Modus Sufix" },
+  "tooltip_playAnswer": { "message": "Reperire" },
   "tooltip_sendReply": { "message": "Opportuna" },
   "tooltip_sendRelatedQuery": { "message": "Quaeso relatum" },
   "prompt_updateReplyLang": { "message": "Renova responsio lingua" },

@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "මූලාශ්‍ර කේතය" },
   "mode_prefix": { "message": "මනාප ප් ‍ රකාරය" },
   "mode_suffix": { "message": "ප් ‍ රමාණාත්මක ප් ‍ රකාරය" },
+  "tooltip_playAnswer": { "message": "ප් ‍ රතිචාරය වාදනය කරන්න" },
   "tooltip_sendReply": { "message": "ඊ-මේල් මගින් පිලිතුරු දෙන්න" },
   "tooltip_sendRelatedQuery": { "message": "අදාළ විමසුම යවන්න" },
   "prompt_updateReplyLang": { "message": "ප්‍රතිචාර භාෂාව යාවත්කාලීන කරන්න" },

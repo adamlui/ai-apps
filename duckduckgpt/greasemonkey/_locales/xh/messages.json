@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Ikhowudi engumthombo" },
   "mode_prefix": { "message": "Imowudi Yesimaphambili" },
   "mode_suffix": { "message": "Imowudi Ye-suffix" },
+  "tooltip_playAnswer": { "message": "Dlala impendulo" },
   "tooltip_sendReply": { "message": "Thumela impendulo" },
   "tooltip_sendRelatedQuery": { "message": "Thumela umbuzo onento yokwenza noko" },
   "prompt_updateReplyLang": { "message": "Hlaziya ulwimi lwempendulo" },

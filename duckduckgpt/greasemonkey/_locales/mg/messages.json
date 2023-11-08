@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Kaody niaingana" },
   "mode_prefix": { "message": "Fomban'ny tovona" },
   "mode_suffix": { "message": "Fomba Suffix" },
+  "tooltip_playAnswer": { "message": "Mamaky valiny" },
   "tooltip_sendReply": { "message": "Alefaso ny valiny" },
   "tooltip_sendRelatedQuery": { "message": "Handefa fangataham-panazavana mifandraika amin'izany" },
   "prompt_updateReplyLang": { "message": "Avao ny fiteny valiana" },

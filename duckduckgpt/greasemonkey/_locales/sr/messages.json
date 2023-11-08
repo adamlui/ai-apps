@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Izvorni kod" },
   "mode_prefix": { "message": "Režim prefiksa" },
   "mode_suffix": { "message": "Režim sufiksa" },
+  "tooltip_playAnswer": { "message": "Reprodukuj odgovor" },
   "tooltip_sendReply": { "message": "Одговорити" },
   "tooltip_sendRelatedQuery": { "message": "Pošaljite povezani upit" },
   "prompt_updateReplyLang": { "message": "Ažurirajte jezik odgovora" },

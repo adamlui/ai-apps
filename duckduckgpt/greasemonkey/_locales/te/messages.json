@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "సోర్స్ కోడ్" },
   "mode_prefix": { "message": "ఉపసర్గ మోడ్" },
   "mode_suffix": { "message": "ప్రత్యయం మోడ్" },
+  "tooltip_playAnswer": { "message": "సమాధానం ప్లే చేయండి" },
   "tooltip_sendReply": { "message": "ప్రత్యుత్తరం పంపండి" },
   "tooltip_sendRelatedQuery": { "message": "సంబంధిత ప్రశ్నను పంపండి" },
   "prompt_updateReplyLang": { "message": "ప్రత్యుత్తర భాషను నవీకరించండి" },

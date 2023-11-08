@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "@ info: whatsthis" },
   "mode_prefix": { "message": "முன்னொட்டு முறை" },
   "mode_suffix": { "message": "பின்னிணைப்பு முறை" },
+  "tooltip_playAnswer": { "message": "பதிலை இயக்கவும்" },
   "tooltip_sendReply": { "message": "பதில் அனுப்பு" },
   "tooltip_sendRelatedQuery": { "message": "தொடர்புடைய வினவலை அனுப்பவும்" },
   "prompt_updateReplyLang": { "message": "பதில் மொழியைப் புதுப்பிக்கவும்" },

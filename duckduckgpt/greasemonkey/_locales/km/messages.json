@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "កូដ​ដើម" },
   "mode_prefix": { "message": "របៀប បុព្វបទ" },
   "mode_suffix": { "message": "របៀប បច្ច័យ" },
+  "tooltip_playAnswer": { "message": "ចាក់ចម្លើយ" },
   "tooltip_sendReply": { "message": "ផ្ញើការឆ្លើយតប" },
   "tooltip_sendRelatedQuery": { "message": "ផ្ញើសំណួរដែលពាក់ព័ន្ធ" },
   "prompt_updateReplyLang": { "message": "ធ្វើបច្ចុប្បន្នភាពភាសាឆ្លើយតប" },
