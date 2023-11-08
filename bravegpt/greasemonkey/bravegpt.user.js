@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.7.4
+// @version             2023.11.7.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -877,11 +877,11 @@
             + 'height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ; background: '
                 + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + '}'
         + '.related-queries { display: flex ; flex-wrap: wrap ; margin-bottom: 33px ;'
-            + ( isChromium() ? 'margin-top: -37px' : '' ) + '}'
-        + '.related-query { margin: 4px 4px 2px 0 ; padding: 8px 11px 8px 17px ;'
+            + ( isChromium() ? 'margin-top: -31px' : '' ) + '}'
+        + '.related-query { margin: 4px 4px 2px 0 ; padding: 8px 13px 7px 14px ;'
             + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
             + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
-            + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.75em ; cursor: pointer ;`
+            + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.77em ; cursor: pointer ;`
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
             + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' } ;`
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
