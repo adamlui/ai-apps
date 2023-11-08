@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.8
+// @version             2023.11.8.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -871,8 +871,87 @@
     }
 
     function googleGPTshow(answer) {
-        googleGPTdiv.innerHTML = `<p><span class="app-name">🤖  <a href="https://googlegpt.kudoai.com" target="_blank" rel="noopener">GoogleGPT</a></span><span class="kudo-ai">by <a target="_blank" href="https://www.kudoai.com" rel="noopener">KudoAI</a></span><span class="balloon-tip"></span><pre></pre></p><div></div><section><form><div class="continue-chat"><textarea id="googlegpt-chatbar" rows="1" placeholder="${ messages.tooltip_sendReply }..."></textarea><button title="${ messages.tooltip_sendReply }" class="send-button"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></form></section>`
-        googleGPTdiv.querySelector('pre').textContent = answer
+        while (googleGPTdiv.firstChild) // clear all children
+            googleGPTdiv.removeChild(googleGPTdiv.firstChild)
+
+        // Create/append '🤖 GoogleGPT'
+        const appNameSpan = document.createElement('span')
+        appNameSpan.className = 'app-name' ; appNameSpan.innerText = '🤖  '
+        const googleGPTlink = document.createElement('a')
+        googleGPTlink.href = 'https://googlegpt.kudoai.com'
+        googleGPTlink.target = '_blank' ; googleGPTlink.rel = 'noopener'
+        googleGPTlink.textContent = 'GoogleGPT'
+        appNameSpan.appendChild(googleGPTlink) ; googleGPTdiv.appendChild(appNameSpan)
+
+        // Create/append 'by KudoAI'
+        const kudoAIspan = document.createElement('span')
+        kudoAIspan.className = 'kudo-ai' ; kudoAIspan.textContent = 'by '
+        const kudoAIlink = document.createElement('a')
+        kudoAIlink.href = 'https://www.kudoai.com'
+        kudoAIlink.target = '_blank' ; kudoAIlink.rel = 'noopener'
+        kudoAIlink.textContent = 'KudoAI'
+        kudoAIspan.appendChild(kudoAIlink) ; googleGPTdiv.appendChild(kudoAIspan)
+
+        // Create/append speak button
+        const speakSpan = document.createElement('span'),
+              speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+              scheme = isDarkMode() ? 'dark' : 'light'
+        speakSpan.className = 'speak'
+        speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32')
+        speakSVG.setAttributeNS(null, 'width', '22')
+        const speakSVGpaths = [
+            { d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10',
+              stroke: scheme == 'dark' ? 'white' : '#000', strokeWidth: '2px' },
+            { d: 'M22,20.847c1.281,-1.306 2,-3.077 2,-4.924c0,-1.846 -0.719,-3.617 -2,-4.923',
+              stroke: scheme == 'dark' ? 'white' : '#000', strokeWidth: '2px' },
+            { d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z',
+              fill: scheme == 'dark' ? 'white' : '#000' }
+        ]
+        speakSVGpaths.forEach(pathData => {
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+            path.setAttributeNS(null, 'd', pathData.d)
+            path.setAttributeNS(null, 'stroke', pathData.stroke || 'none')
+            path.setAttributeNS(null, 'stroke-width', pathData.strokeWidth || 'none')
+            path.setAttributeNS(null, 'fill', pathData.fill || 'none')
+            speakSVG.appendChild(path)
+        })
+        speakSpan.appendChild(speakSVG) ; googleGPTdiv.appendChild(speakSpan)
+
+        // Create/append ChatGPT response
+        const balloonTip = document.createElement('span'),
+              pre = document.createElement('pre')
+        balloonTip.className = 'balloon-tip' ; pre.textContent = answer
+        googleGPTdiv.appendChild(balloonTip) ; googleGPTdiv.appendChild(pre)
+
+        // Create/append reply section/elements
+        const replySection = document.createElement('section'),
+              form = document.createElement('form'),
+              continueChatDiv = document.createElement('div'),
+              chatTextarea = document.createElement('textarea')
+        continueChatDiv.className = 'continue-chat'
+        chatTextarea.id = 'googlegpt-chatbar' ; chatTextarea.rows = '1'
+        chatTextarea.placeholder = messages.tooltip_sendReply + '...'
+        continueChatDiv.appendChild(chatTextarea)
+        form.appendChild(continueChatDiv) ; replySection.appendChild(form)
+        googleGPTdiv.appendChild(replySection)
+
+        // Create/append send button
+        const sendButton = document.createElement('button'),
+              sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+              sendSVGline = document.createElementNS('http://www.w3.org/2000/svg', 'line'),
+              sendSVGpolygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon')
+        sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply
+        sendSVG.classList.add('h-4', 'w-4', 'mr-1')
+        sendSVG.setAttribute('viewBox', '0 0 24 24')
+        sendSVG.setAttribute('fill', 'none')
+        sendSVG.setAttribute('stroke', 'currentColor') ; sendSVG.setAttribute('stroke-width', '2')
+        sendSVG.setAttribute('stroke-linecap', 'round') ; sendSVG.setAttribute('stroke-linejoin', 'round')
+        sendSVG.setAttribute('height', '1em') ; sendSVG.setAttribute('width', '1em')
+        sendSVGline.setAttribute('x1', '22') ; sendSVGline.setAttribute('y1', '2')
+        sendSVGline.setAttribute('x2', '11') ; sendSVGline.setAttribute('y2', '13')
+        sendSVGpolygon.setAttribute('points', '22 2 15 22 11 13 2 9 22 2')
+        sendSVG.appendChild(sendSVGline) ; sendSVG.appendChild(sendSVGpolygon)
+        sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
         // Render math
         renderMathInElement(googleGPTdiv.querySelector('pre'), { // eslint-disable-line no-undef
@@ -891,17 +970,12 @@
             throwOnError: false
         })
 
-        // Init variables for listeners
-        const form = googleGPTdiv.querySelector('form'),
-              chatbar = document.getElementById('googlegpt-chatbar'),
-              { paddingTop, paddingBottom } = getComputedStyle(chatbar),
-              vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
-        let prevLength = chatbar.value.length
-
         // Add listeners
+        speakSVG.addEventListener('click', () => {
+            chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
         form.addEventListener('keydown', handleEnter)
         form.addEventListener('submit', handleSubmit)
-        chatbar.addEventListener('input', autosizeChatbar)
+        chatTextarea.addEventListener('input', autosizeChatbar)
 
         function handleEnter(event) {
             if (event.key === 'Enter' && !event.shiftKey && event.target.nodeName === 'TEXTAREA')
@@ -911,8 +985,8 @@
         function handleSubmit(event) {
             event.preventDefault()
             if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
-            const prevReplyTrimmed = googleGPTdiv.querySelector('pre').textContent.substring(0, 250 - chatbar.value.length),
-                  yourReply = `${ chatbar.value } (reply in ${ config.replyLanguage })`
+            const prevReplyTrimmed = googleGPTdiv.querySelector('pre').textContent.substring(0, 250 - chatTextarea.value.length),
+                  yourReply = `${ chatTextarea.value } (reply in ${ config.replyLanguage })`
             if (!config.proxyAPIenabled) {
                 convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
                 convo.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [yourReply] } })
@@ -924,7 +998,7 @@
             // Remove listeners since they're re-added
             form.removeEventListener('keydown', handleEnter)
             form.removeEventListener('submit', handleSubmit)
-            chatbar.removeEventListener('input', autosizeChatbar)
+            chatTextarea.removeEventListener('input', autosizeChatbar)
 
             // Remove related queries
             try {
@@ -942,15 +1016,19 @@
             replySection.innerHTML = googleGPTalerts.waitingResponse
         }
 
+        // Autosize chatbar function
+        const { paddingTop, paddingBottom } = getComputedStyle(chatTextarea),
+              vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
+        let prevLength = chatTextarea.value.length
         function autosizeChatbar() {
-            const newLength = chatbar.value.length
+            const newLength = chatTextarea.value.length
             if (newLength < prevLength) { // if deleting txt
-                chatbar.style.height = 'auto' // ...auto-fit height
-                if (parseInt(getComputedStyle(chatbar).height) < 35) { // if down to one line
-                    chatbar.style.height = '1.55rem' } // ...reset to original height
+                chatTextarea.style.height = 'auto' // ...auto-fit height
+                if (parseInt(getComputedStyle(chatTextarea).height) < 35) { // if down to one line
+                    chatTextarea.style.height = '1.55rem' } // ...reset to original height
             }
-            const unpaddedHeight = chatbar.scrollHeight - vOffset
-            chatbar.style.height = unpaddedHeight > 35 ? unpaddedHeight + 'px' : '1.55rem'
+            const unpaddedHeight = chatTextarea.scrollHeight - vOffset
+            chatTextarea.style.height = unpaddedHeight > 35 ? unpaddedHeight + 'px' : '1.55rem'
             prevLength = newLength
         }
     }
@@ -1059,6 +1137,7 @@
         + ( scheme == 'dark' ? '.googlegpt-container a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
         + '.app-name { font-size: 1.5rem ; font-weight: 700 }'
         + '.app-name a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
+        + '.speak { float: right ; cursor: pointer ; position: relative ; top: 4px }'
         + '.googlegpt-container .loading {'
             + 'padding-bottom: 17px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
@@ -1071,9 +1150,8 @@
         + '.googlegpt-container section.loading {'
             + 'padding: 15px 0 14px 5px ;' // left/top-pad loading status when sending replies
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-        + '.chatgpt-feedback { margin: 2px 0 25px }'
-        + '.balloon-tip { content: "" ; border: 7px solid transparent ; position: relative ; top: 5px ;'
-            + `right: ${ navigator.userAgent.includes('Firefox') ? 16.62 : 15.89 }em ;`
+        + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ; '
+            + ( isChromium() ? 'top: 2px ; right: 7.89em ;' : 'top: 5px ; right: 16.62em ;' )
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
             + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' }'
         + '.continue-chat > textarea {'
@@ -1119,15 +1197,9 @@
     )
     document.head.appendChild(googleGPTstyle)
 
-    // Create GoogleGPT container & add class
-    const googleGPTdiv = document.createElement('div') // create container div
+    // Create/classify GoogleGPT container
+    const googleGPTdiv = document.createElement('div')
     googleGPTdiv.className = 'googlegpt-container'
-
-    // Create feedback footer & add classes/HTML
-    const googleGPTfooter = document.createElement('div')
-    googleGPTfooter.className = 'feedback-prompt chatgpt-feedback'
-    googleGPTfooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose"'
-        + ' class="feedback-prompt__link" target="_blank" rel="noopener">' + messages.link_shareFeedback +'</a>'
 
     loadGoogleGPT()
 
