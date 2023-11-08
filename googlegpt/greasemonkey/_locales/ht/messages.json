@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "Obligatwa" },
   "menuLabel_beforeQuery": { "message": "anvan rechèch/avant de demander" },
   "menuLabel_afterQuery": { "message": "apre rechèch/après la question" },
+  "menuLabel_fatterSidebar": { "message": "Pi gra Sidebar" },
   "menuLabel_replyLanguage": { "message": "Lang Repons" },
   "menuLabel_about": { "message": "Apwopo" },
   "about_version": { "message": "Vèsyon" },

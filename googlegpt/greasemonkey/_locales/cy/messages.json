@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "Angen" },
   "menuLabel_beforeQuery": { "message": "cyn ymholiad" },
   "menuLabel_afterQuery": { "message": "ar ôl ymholiad" },
+  "menuLabel_fatterSidebar": { "message": "Bar Ochr Brasterach" },
   "menuLabel_replyLanguage": { "message": "Iaith Ateb" },
   "menuLabel_about": { "message": "Gwybodaeth" },
   "about_version": { "message": "Fersiwn" },

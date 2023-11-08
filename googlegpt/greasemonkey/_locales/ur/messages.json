@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "تقاضہ کرنا" },
   "menuLabel_beforeQuery": { "message": "استفسار سے پہلے" },
   "menuLabel_afterQuery": { "message": "استفسار کے بعد" },
+  "menuLabel_fatterSidebar": { "message": "موٹی سائڈبار" },
   "menuLabel_replyLanguage": { "message": "جواب کی زبان" },
   "menuLabel_about": { "message": "متعلق" },
   "about_version": { "message": "ورژن" },

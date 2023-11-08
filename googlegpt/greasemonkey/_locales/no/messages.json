@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "Krever" },
   "menuLabel_beforeQuery": { "message": "før forespørsel" },
   "menuLabel_afterQuery": { "message": "etter forespørsel" },
+  "menuLabel_fatterSidebar": { "message": "Fettere sidefelt" },
   "menuLabel_replyLanguage": { "message": "Svar Språk" },
   "menuLabel_about": { "message": "Om" },
   "about_version": { "message": "Versjon" },

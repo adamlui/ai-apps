@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "mewajibkan" },
   "menuLabel_beforeQuery": { "message": "sebelum pertanyaan" },
   "menuLabel_afterQuery": { "message": "selepas pertanyaan" },
+  "menuLabel_fatterSidebar": { "message": "Bar Sisi Lebih Gemuk" },
   "menuLabel_replyLanguage": { "message": "Bahasa Balasan" },
   "menuLabel_about": { "message": "" },
   "about_version": { "message": "Versi" },

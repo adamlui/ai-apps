@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "தேவை" },
   "menuLabel_beforeQuery": { "message": "வினவலுக்கு முன்" },
   "menuLabel_afterQuery": { "message": "வினவலுக்குப் பிறகு" },
+  "menuLabel_fatterSidebar": { "message": "ஃபாட்டர் சைடுபார்" },
   "menuLabel_replyLanguage": { "message": "பதில் மொழி" },
   "menuLabel_about": { "message": "பற்றி" },
   "about_version": { "message": "பதிப்பு" },
