@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.8.1
+// @version             2023.11.8.2
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -941,7 +941,6 @@
               sendSVGline = document.createElementNS('http://www.w3.org/2000/svg', 'line'),
               sendSVGpolygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon')
         sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply
-        sendSVG.classList.add('h-4', 'w-4', 'mr-1')
         sendSVG.setAttribute('viewBox', '0 0 24 24')
         sendSVG.setAttribute('fill', 'none')
         sendSVG.setAttribute('stroke', 'currentColor') ; sendSVG.setAttribute('stroke-width', '2')
