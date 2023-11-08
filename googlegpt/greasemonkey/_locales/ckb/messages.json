@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "کۆدی سەرچاوە" },
   "mode_prefix": { "message": "Prefix mode" },
   "mode_suffix": { "message": "Suffix mode" },
+  "tooltip_playAnswer": { "message": "وەڵام یاری بکە" },
   "tooltip_sendReply": { "message": "وەڵام بنێرە" },
   "tooltip_sendRelatedQuery": { "message": "پرسگەی پەیوەندیدار بنێرە" },
   "prompt_updateReplyLang": { "message": "زمانی وەڵام نوێ بکەوە" },

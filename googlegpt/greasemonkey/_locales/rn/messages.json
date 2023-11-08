@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Ikodi y'isôko" },
   "mode_prefix": { "message": "Prefix Mode None None" },
   "mode_suffix": { "message": "Uburyo buhagije" },
+  "tooltip_playAnswer": { "message": "Kwinana Reply" },
   "tooltip_sendReply": { "message": "Rungika Rungika" },
   "tooltip_sendRelatedQuery": { "message": "Rungika Rungika Ibibazo bifitaniye isano" },
   "prompt_updateReplyLang": { "message": "Réponse de la langue nouveau" },

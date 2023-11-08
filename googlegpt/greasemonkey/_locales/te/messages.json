@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "@ info: whatsthis" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
+  "tooltip_playAnswer": { "message": "సమాధానం ప్లే చేయండి" },
   "tooltip_sendReply": { "message": "ప్రత్యుత్తరం పంపండి" },
   "tooltip_sendRelatedQuery": { "message": "సంబంధిత ప్రశ్నను పంపండి" },
   "prompt_updateReplyLang": { "message": "Update reply language" },

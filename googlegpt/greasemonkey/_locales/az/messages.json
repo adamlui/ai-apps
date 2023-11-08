@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Mənbə kodu" },
   "mode_prefix": { "message": "Prefiks Rejimi" },
   "mode_suffix": { "message": "Suffiks Rejimi" },
+  "tooltip_playAnswer": { "message": "Cavabı oxut" },
   "tooltip_sendReply": { "message": "Göndər" },
   "tooltip_sendRelatedQuery": { "message": "Əlaqəli sorğu göndərin" },
   "prompt_updateReplyLang": { "message": "Cavab dilini yenilə" },

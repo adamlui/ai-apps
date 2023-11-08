@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Рамзи манбаъ" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
+  "tooltip_playAnswer": { "message": "Пахш кардани ҷавоб" },
   "tooltip_sendReply": { "message": "Фиристодани ҷавоб" },
   "tooltip_sendRelatedQuery": { "message": "Фиристодани дархости марбута" },
   "prompt_updateReplyLang": { "message": "Update reply language" },

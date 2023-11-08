@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Waehere puna" },
   "mode_prefix": { "message": "Momo Prefix" },
   "mode_suffix": { "message": "Mode Suffix" },
+  "tooltip_playAnswer": { "message": "Whakautu Play" },
   "tooltip_sendReply": { "message": "Tukua mai he whakautu" },
   "tooltip_sendRelatedQuery": { "message": "Tukua mai he pātai e pā ana" },
   "prompt_updateReplyLang": { "message": "Whakahōu reo whakautu" },

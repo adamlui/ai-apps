@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Kunobva kodhi" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
+  "tooltip_playAnswer": { "message": "Tamba mhinduro" },
   "tooltip_sendReply": { "message": "Tumira mhinduro" },
   "tooltip_sendRelatedQuery": { "message": "Tumira mubvunzo wakabatana" },
   "prompt_updateReplyLang": { "message": "Zivisa mutauro wekupindura" },

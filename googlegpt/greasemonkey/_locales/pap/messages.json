@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Kódigo di fuente" },
   "mode_prefix": { "message": "Pre-escucha Mode" },
   "mode_suffix": { "message": "Suffisante Moda" },
+  "tooltip_playAnswer": { "message": "Spiel Response" },
   "tooltip_sendReply": { "message": "Envoyer un Réponse" },
   "tooltip_sendRelatedQuery": { "message": "Envoyer un message a Konan" },
   "prompt_updateReplyLang": { "message": "Actualizacion Idioma" },

@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Cod ffynhonnell" },
   "mode_prefix": { "message": "Modd Rhagddodiad" },
   "mode_suffix": { "message": "Modd Ôl - ddodiad" },
+  "tooltip_playAnswer": { "message": "Chwarae'r ateb" },
   "tooltip_sendReply": { "message": "Anfon Ateb" },
   "tooltip_sendRelatedQuery": { "message": "Anfon ymholiad cysylltiedig" },
   "prompt_updateReplyLang": { "message": "Diweddaru iaith ateb" },

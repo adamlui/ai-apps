@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Código fonte" },
   "mode_prefix": { "message": "Modo de prefixo" },
   "mode_suffix": { "message": "Modo de sufixo" },
+  "tooltip_playAnswer": { "message": "Reproducir resposta" },
   "tooltip_sendReply": { "message": "Enviar resposta" },
   "tooltip_sendRelatedQuery": { "message": "Enviar consulta relacionada" },
   "prompt_updateReplyLang": { "message": "Actualizar idioma de resposta" },

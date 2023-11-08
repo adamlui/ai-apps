@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "سورس کد" },
   "mode_prefix": { "message": "حالت پیشوند" },
   "mode_suffix": { "message": "حالت پسوند" },
+  "tooltip_playAnswer": { "message": "پاسخ را پخش کنید" },
   "tooltip_sendReply": { "message": "ارسال پاسخ" },
   "tooltip_sendRelatedQuery": { "message": "ارسال درخواست مرتبط" },
   "prompt_updateReplyLang": { "message": "زبان پاسخ را به روز کنید" },

@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "સ્ત્રોત કોડ" },
   "mode_prefix": { "message": "ઉપસર્ગ સ્થિતિ" },
   "mode_suffix": { "message": "પ્રત્યય સ્થિતિ" },
+  "tooltip_playAnswer": { "message": "જવાબ રમો" },
   "tooltip_sendReply": { "message": "જવાબ મોકલો" },
   "tooltip_sendRelatedQuery": { "message": "સંબંધિત ક્વેરી મોકલો" },
   "prompt_updateReplyLang": { "message": "જવાબની ભાષા અપડેટ કરો" },

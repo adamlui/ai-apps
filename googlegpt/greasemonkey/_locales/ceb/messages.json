@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "Gigikana sa kodigo" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
+  "tooltip_playAnswer": { "message": "Tubag sa pagdula" },
   "tooltip_sendReply": { "message": "Ipadala ang tubag" },
   "tooltip_sendRelatedQuery": { "message": "Ipadala ang may kalabutan nga pangutana" },
   "prompt_updateReplyLang": { "message": "Tubag sa Lenguahe" },

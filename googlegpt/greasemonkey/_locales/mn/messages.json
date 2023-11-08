@@ -14,6 +14,7 @@
   "about_sourceCode": { "message": "ᠰᠣᠷᠪᠤᠯᠵᠢ ᠺᠣᠳ᠋ " },
   "mode_prefix": { "message": "Угтварын Горим" },
   "mode_suffix": { "message": "Дагаварын Горим" },
+  "tooltip_playAnswer": { "message": "Хариултыг тоглуулах" },
   "tooltip_sendReply": { "message": "Хариулт илгээх" },
   "tooltip_sendRelatedQuery": { "message": "Холбогдох асуулга илгээх" },
   "prompt_updateReplyLang": { "message": "Хариултын хэлийг шинэчлэх" },
