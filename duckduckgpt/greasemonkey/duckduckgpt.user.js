@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.8.2
+// @version             2023.11.8.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -775,7 +775,6 @@
               sendSVGline = document.createElementNS('http://www.w3.org/2000/svg', 'line'),
               sendSVGpolygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon')
         sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply
-        sendSVG.classList.add('h-4', 'w-4', 'mr-1')
         sendSVG.setAttribute('viewBox', '0 0 24 24')
         sendSVG.setAttribute('fill', 'none')
         sendSVG.setAttribute('stroke', 'currentColor') ; sendSVG.setAttribute('stroke-width', '2')
