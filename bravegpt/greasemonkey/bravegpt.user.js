@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.8.3
+// @version             2023.11.8.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -668,7 +668,7 @@
         // Create/append speak button
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-              scheme = isDarkMode() ? 'dark' : 'light' 
+              scheme = isDarkMode() ? 'dark' : 'light'
         speakSpan.className = 'speak'
         speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32')
         speakSVG.setAttributeNS(null, 'width', '22')
@@ -700,7 +700,7 @@
         const replySection = document.createElement('section'),
               form = document.createElement('form'),
               continueChatDiv = document.createElement('div'),
-              chatTextarea = document.createElement('textarea')              
+              chatTextarea = document.createElement('textarea')
         replySection.style.marginBottom = '-31px'
         continueChatDiv.className = 'continue-chat'
         chatTextarea.id = 'bravegpt-chatbar' ; chatTextarea.rows = '1'
@@ -715,7 +715,6 @@
               sendSVGline = document.createElementNS('http://www.w3.org/2000/svg', 'line'),
               sendSVGpolygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon')
         sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply
-        sendSVG.classList.add('h-4', 'w-4', 'mr-1')
         sendSVG.setAttribute('viewBox', '0 0 24 24')
         sendSVG.setAttribute('fill', 'none')
         sendSVG.setAttribute('stroke', 'currentColor') ; sendSVG.setAttribute('stroke-width', '2')
@@ -926,10 +925,10 @@
         + '.bravegpt-container .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }'
         + '.app-name { font-size: 20px ; font-family: var(--brand-font) }'
         + '.app-name a { color: inherit ; text-decoration: none }'
+        + '.speak { float: right ; cursor: pointer ; position: relative ; top: 4px }'
         + '.bravegpt-container .loading {'
             + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-        + '.speak { float: right ; cursor: pointer ; position: relative ; top: 4px }'
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.bravegpt-container section.loading { padding-left: 5px ; font-size: 90% }'
         + '.bravegpt-container pre {'
