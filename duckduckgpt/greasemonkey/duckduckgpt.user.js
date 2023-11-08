@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.7.7
+// @version             2023.11.7.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -914,7 +914,7 @@
             + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ;'
             + ( isChromium() ? 'top: -25px ; margin: -7px 0 -15px' : 'top: -20px ; margin: -3px 0 -10px') + '}'
         + '.related-query {'
-            + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 8px 11px 8px 17px ;`
+            + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 6px 7px 6px 13px ;`
             + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
             + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
             + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.98em ; cursor: pointer ;`
