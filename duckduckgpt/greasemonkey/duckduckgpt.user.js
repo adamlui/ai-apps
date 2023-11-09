@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.8.6
+// @version             2023.11.8.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -761,21 +761,21 @@
         speakSpan.appendChild(speakSVG) ; ddgptDiv.appendChild(speakSpan)
 
         // Create/append ChatGPT response
-        const balloonTip = document.createElement('span'),
-              pre = document.createElement('pre')
-        balloonTip.className = 'balloon-tip' ; pre.textContent = answer
-        ddgptDiv.appendChild(balloonTip) ; ddgptDiv.appendChild(pre)
+        const balloonTipSpan = document.createElement('span'),
+              answerPre = document.createElement('pre')
+        balloonTipSpan.className = 'balloon-tip' ; answerPre.textContent = answer
+        ddgptDiv.appendChild(balloonTipSpan) ; ddgptDiv.appendChild(answerPre)
 
         // Create/append reply section/elements
         const replySection = document.createElement('section'),
-              form = document.createElement('form'),
+              replyForm = document.createElement('form'),
               continueChatDiv = document.createElement('div'),
               chatTextarea = document.createElement('textarea')
         continueChatDiv.className = 'continue-chat'
         chatTextarea.id = 'ddgpt-chatbar' ; chatTextarea.rows = '1'
         chatTextarea.placeholder = messages.tooltip_sendReply + '...'
         continueChatDiv.appendChild(chatTextarea)
-        form.appendChild(continueChatDiv) ; replySection.appendChild(form)
+        replyForm.appendChild(continueChatDiv) ; replySection.appendChild(replyForm)
         ddgptDiv.appendChild(replySection)
 
         // Create/append send button
@@ -795,7 +795,7 @@
         sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
         // Render math
-        renderMathInElement(ddgptDiv.querySelector('pre'), { // eslint-disable-line no-undef
+        renderMathInElement(answerPre, { // eslint-disable-line no-undef
             delimiters: [
                 {left: '$$', right: '$$', display: true},
                 {left: '$', right: '$', display: false},
@@ -815,8 +815,8 @@
         speakSVG.addEventListener('click', () => {
             chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
         aboutSVG.addEventListener('click', launchAboutModal)
-        form.addEventListener('keydown', handleEnter)
-        form.addEventListener('submit', handleSubmit)
+        replyForm.addEventListener('keydown', handleEnter)
+        replyForm.addEventListener('submit', handleSubmit)
         chatTextarea.addEventListener('input', autosizeChatbar)
 
         function handleEnter(event) {
@@ -838,8 +838,8 @@
             } getShowReply(convo)
 
             // Remove re-added listeners
-            form.removeEventListener('keydown', handleEnter)
-            form.removeEventListener('submit', handleSubmit)
+            replyForm.removeEventListener('keydown', handleEnter)
+            replyForm.removeEventListener('submit', handleSubmit)
             chatTextarea.removeEventListener('input', autosizeChatbar)
 
             // Remove related queries
