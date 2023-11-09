@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.9.3
+// @version             2023.11.9.4
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -534,8 +534,8 @@
                         // Alert to update
                         const updateAlertID = alert(messages.alert_updateAvail + '! 🚀', // title
                             messages.alert_newerVer + ' GoogleGPT v' + latestVer + ' '
-                                + messages.alert_isAvail + '!   '
-                                + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
+                                + messages.alert_isAvail + '!  '
+                                + '<a target="_blank" rel="noopener" style="font-size: 1rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
                                     + '>' + messages.link_viewChanges + '</a>',
