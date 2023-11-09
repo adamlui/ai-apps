@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.9.1
+// @version             2023.11.9.2
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -985,9 +985,17 @@
         chatTextarea.addEventListener('input', autosizeChatbar)
 
         function handleEnter(event) {
-            if (event.key === 'Enter' && !event.shiftKey && event.target.nodeName === 'TEXTAREA')
-                handleSubmit(event)
-        }
+            if (event.key === 'Enter') {     
+                if (event.ctrlKey) { // add newline
+                    const chatTextarea = document.querySelector('#googlegpt-chatbar'),
+                          cursorPos = chatTextarea.selectionStart,
+                          textBefore = chatTextarea.value.substring(0, cursorPos),
+                          textAfter = chatTextarea.value.substring(cursorPos)                    
+                    chatTextarea.value = textBefore + '\n' + textAfter // add newline
+                    chatTextarea.selectionStart = chatTextarea.selectionEnd = cursorPos + 1 // preserve ibeam pos
+                    autosizeChatbar()
+                } else if (!event.shiftKey) handleSubmit(event)
+        }}
 
         function handleSubmit(event) {
             event.preventDefault()
