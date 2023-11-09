@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "Vereisen" },
   "menuLabel_beforeQuery": { "message": "voor query" },
   "menuLabel_afterQuery": { "message": "na query" },
+  "menuLabel_fatterSidebar": { "message": "Dikker zijbalk" },
   "menuLabel_replyLanguage": { "message": "Antwoord taal" },
   "menuLabel_about": { "message": "Over" },
   "about_version": { "message": "Versie" },

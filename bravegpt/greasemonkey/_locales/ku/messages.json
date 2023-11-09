@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "پێویستی" },
   "menuLabel_beforeQuery": { "message": "پارێزگا بکە" },
   "menuLabel_afterQuery": { "message": "پاش پارێزگا" },
+  "menuLabel_fatterSidebar": { "message": "سایدباری قه‌ڵه‌و" },
   "menuLabel_replyLanguage": { "message": "زمانی وەڵام" },
   "menuLabel_about": { "message": "دەربارەی" },
   "about_version": { "message": "وەرژن" },

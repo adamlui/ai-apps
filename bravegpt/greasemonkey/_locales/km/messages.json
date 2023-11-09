@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "តម្រូវ" },
   "menuLabel_beforeQuery": { "message": "មុនពេលសួរ" },
   "menuLabel_afterQuery": { "message": "បន្ទាប់ពីសំណួរ" },
+  "menuLabel_fatterSidebar": { "message": "របារចំហៀងខ្លាញ់" },
   "menuLabel_replyLanguage": { "message": "ឆ្លើយតប ភាសា" },
   "menuLabel_about": { "message": "អំពី" },
   "about_version": { "message": "លេខជំនាន់កម្មវិធី" },

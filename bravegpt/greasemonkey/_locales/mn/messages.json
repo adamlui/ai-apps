@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "Шаардлага" },
   "menuLabel_beforeQuery": { "message": "асуулга эхлэхээс өмнө" },
   "menuLabel_afterQuery": { "message": "асуулга хийсний дараа" },
+  "menuLabel_fatterSidebar": { "message": "Өөхлөгийн хажуу цэс" },
   "menuLabel_replyLanguage": { "message": "Хариулах Хэл" },
   "menuLabel_about": { "message": "Бидний тухай" },
   "about_version": { "message": "Хувилбар" },

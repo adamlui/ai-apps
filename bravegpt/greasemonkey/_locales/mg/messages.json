@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "FEPETRA" },
   "menuLabel_beforeQuery": { "message": "alohan'ny QUERY" },
   "menuLabel_afterQuery": { "message": "aorian'ny fangatahana" },
+  "menuLabel_fatterSidebar": { "message": "Fatter Sidebar" },
   "menuLabel_replyLanguage": { "message": "Fiteny" },
   "menuLabel_about": { "message": "Mikasika ny" },
   "about_version": { "message": "Kinova" },

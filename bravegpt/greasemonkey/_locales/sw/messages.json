@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "Inahitaji" },
   "menuLabel_beforeQuery": { "message": "kabla ya QUERY" },
   "menuLabel_afterQuery": { "message": "baada ya swali" },
+  "menuLabel_fatterSidebar": { "message": "Ubao wa Pembeni wenye Mafuta" },
   "menuLabel_replyLanguage": { "message": "Jibu Lugha" },
   "menuLabel_about": { "message": "Kuhusu" },
   "about_version": { "message": "Toleo" },

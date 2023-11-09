@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "E a batlega" },
   "menuLabel_beforeQuery": { "message": "pele ga potso" },
   "menuLabel_afterQuery": { "message": "morago ga potso" },
+  "menuLabel_fatterSidebar": { "message": "Fatter Sidebar" },
   "menuLabel_replyLanguage": { "message": "Puo ya go araba" },
   "menuLabel_about": { "message": "Ka" },
   "about_version": { "message": "Thanolo" },

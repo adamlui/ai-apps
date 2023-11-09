@@ -6,6 +6,7 @@
   "menuLabel_require": { "message": "ބޭނުންވާ" },
   "menuLabel_beforeQuery": { "message": "ސުވާލު ކުރުމުގެ ކުރިން" },
   "menuLabel_afterQuery": { "message": "ސުވާލުކުރުމަށްފަހު" },
+  "menuLabel_fatterSidebar": { "message": "Fatter Sidebar" },
   "menuLabel_replyLanguage": { "message": "ޖަވާބުދޭ ބަހުރުވަ" },
   "menuLabel_about": { "message": "މިއާއި ބެހޭ" },
   "about_version": { "message": "ވާރޝަން" },
