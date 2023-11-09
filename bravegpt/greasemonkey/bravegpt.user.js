@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.8.7
+// @version             2023.11.8.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -221,6 +221,18 @@
             notify(messages.mode_suffix + ' ' + state.word[+!config.suffixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
+        }))
+
+        // Add command to toggle fatter sidebar
+        const fsbLabel = ( config.fatterSidebar ? '🔛' : '↔️' ) + ' '
+                       + messages.menuLabel_fatterSidebar
+                       + state.separator + state.word[+!config.fatterSidebar]
+        menuIDs.push(GM_registerMenuCommand(fsbLabel, () => {
+            saveSetting('fatterSidebar', !config.fatterSidebar)
+            updateTweaksStyle()
+            if (!config.notifHidden)
+                notify(messages.menuLabel_fatterSidebar + ' ' + state.word[+!config.fatterSidebar])
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to set reply language
@@ -369,6 +381,7 @@
     }
 
     function isChromium() { return navigator.userAgent.includes('Chrome') }
+    function updateTweaksStyle() { tweaksStyle.innerText = config.fatterSidebar ? fsbStyle : '' }
 
     // Define SESSION functions
 
@@ -544,8 +557,7 @@
                     // Create/classify/append parent div
                     const relatedQueriesDiv = document.createElement('div')
                     relatedQueriesDiv.className = 'related-queries'
-                    braveGPTdiv.insertBefore(relatedQueriesDiv, braveGPTdiv.childNodes[
-                        braveGPTdiv.childNodes.length - 1]) // footer div
+                    braveGPTdiv.appendChild(relatedQueriesDiv)
 
                     // Fill each child div, add fade + tabindex + listener
                     relatedQueries.forEach((relatedQuery, index) => {
@@ -714,7 +726,6 @@
               form = document.createElement('form'),
               continueChatDiv = document.createElement('div'),
               chatTextarea = document.createElement('textarea')
-        replySection.style.marginBottom = '-31px'
         continueChatDiv.className = 'continue-chat'
         chatTextarea.id = 'bravegpt-chatbar' ; chatTextarea.rows = '1'
         chatTextarea.placeholder = messages.tooltip_sendReply + '...'
@@ -872,7 +883,8 @@
     config.updateURL = config.greasyForkURL + '/code/bravegpt.meta.js'
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('proxyAPIenabled', 'prefixEnabled', 'relatedQueriesDisabled', 'replyLanguage', 'suffixEnabled')
+    loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled',
+        'suffixEnabled', 'fatterSidebar', 'replyLanguage')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = []
 
@@ -926,13 +938,18 @@
         suggestOpenAI: messages.alert_proxyNotWorking + '. ' + messages.alert_suggestOpenAI
     }
 
+    // Create Brave Search style tweaks
+    const tweaksStyle = document.createElement('style'),
+          fsbStyle = 'main.main-column, aside.sidebar { max-width: 521px !important }'
+    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
+
     // Stylize elements
     const braveGPTstyle = document.createElement('style'),
           scheme = isDarkMode() ? 'dark' : 'light'
     braveGPTstyle.innerText = (
         '.bravegpt-container {'
             + 'word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px ;'
-            + 'border-radius: 7px ; padding: 19px ; background: '
+            + 'border-radius: 7px ; padding: 19px 19px 45px 19px ; background:'
                 + ( scheme == 'dark' ? '#282828' : 'white' ) + '}'
         + '.bravegpt-container p { margin: 0 }'
         + '.bravegpt-container .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }'
@@ -940,6 +957,7 @@
         + '.app-name a { color: inherit ; text-decoration: none }'
         + '.about-btn, .speak-btn { float: right ; cursor: pointer ; position: relative ; top: 4px }'
         + '.bravegpt-container .loading {'
+            + 'margin-bottom: -55px ;' // offset vs. `.bravegpt-container` bottom-padding footer accomodation
             + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
@@ -948,12 +966,10 @@
             + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
             + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;'
             + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 } ' )
-        + '.bravegpt-container .footer {'
-            + `margin: ${ isChromium() ? 19 : 24 }px 0 -26px 0 ; font-size: var(--text-sm-2) ;`
-            + 'justify-content: right !important ; border-top: none !important }'
+        + `.bravegpt-container .footer { margin: ${ isChromium() ? 19 : 24 }px 0 -26px 0 ; border-top: none !important }`
         + '.bravegpt-container .feedback {'
-            + 'font-family: var(--brand-font) ; font-size: .55rem ; color: var(--search-text-06) ;'
-            + 'letter-spacing: .02em ; line-height: 1; position: relative ; left: 254px ; bottom: 24px }'
+            + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem ; color: var(--search-text-06) ;'
+            + 'letter-spacing: .02em ; line-height: 1; position: relative ; right: -10px ; bottom: 15px }'
         + '.bravegpt-container .feedback .icon {'
             + ' fill: currentColor ; color: currentColor ; --size: 12px ; position: relative ; top: 0.19em ; right: 2px }'
         + `.bravegpt-container .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
@@ -969,7 +985,8 @@
             + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 5px 0 ;  padding: 14px 22px 5px 10px ;'
             + 'height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ; background: '
                 + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + '}'
-        + '.related-queries { display: flex ; flex-wrap: wrap ; margin-bottom: 33px ;'
+        + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
+            + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
             + ( isChromium() ? 'margin-top: -31px' : '' ) + '}'
         + '.related-query { margin: 4px 4px 2px 0 ; padding: 8px 13px 7px 14px ;'
             + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
@@ -983,8 +1000,9 @@
             + 'cursor: url("data:image/svg+xml;base64,PHN2ZyBzdHJva2U9ImxpZ2h0Z3JleSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9ImgtNCB3LTQgbXItMSIgaGVpZ2h0PSIxZW0iIHdpZHRoPSIxZW0iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGxpbmUgeDE9IjIyIiB5MT0iMiIgeDI9IjExIiB5Mj0iMTMiPjwvbGluZT48cG9seWdvbiBwb2ludHM9IjIyIDIgMTUgMjIgMTEgMTMgMiA5IDIyIDIiPjwvcG9seWdvbj48L3N2Zz4="), auto }'
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
-        + '.send-button { border: none ; margin: 18px 4px 0 0 ;'
-            + `position: relative ; bottom: ${ isChromium() ? 58 : 54 }px; left: ${ isChromium() ? 303 : 302 }px;`
+        + '.send-button {'
+            + 'float: right ; border: none ; margin: 18px 4px 0 0 ;'
+            + `position: relative ; bottom: ${ isChromium() ? 58 : 54 }px; right: 12px;`
             + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
         + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
