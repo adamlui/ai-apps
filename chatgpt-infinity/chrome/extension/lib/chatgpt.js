@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.3.17
+// This library is a condensed version of chatgpt.js v2.3.18
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -65,9 +65,10 @@ const chatgpt = {
               modalMessage = document.createElement('p');
 
         // Create/append modal style (if missing)
-        if (!document.querySelector('#chatgpt-alert-style')) {
-            const modalStyle = document.createElement('style');                                 
-            modalStyle.id = 'chatgpt-alert-style';
+        const lastUpdated = 20231118;
+        if (!document.querySelector(`#chatgpt-modal-style-${ lastUpdated }`)) {
+            const modalStyle = document.createElement('style');
+            modalStyle.id = `chatgpt-modal-style-${ lastUpdated }`;
             modalStyle.innerText = (
 
                 // Background styles
@@ -277,7 +278,10 @@ const chatgpt = {
         isOff: function() { return !this.isOn(); }
     },
 
-    isDarkMode: function() { return document.documentElement.classList.contains('dark'); },
+    isDarkMode: function() {
+        return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
+            || document.documentElement.classList.toString().includes('dark');
+    },
 
     isIdle: function() {
         return new Promise(resolve => {
@@ -327,10 +331,10 @@ const chatgpt = {
                                  + (notificationDiv.isRight ? 'Right' : 'Left');
 
         // Create/append notification style (if missing)
-        const lastEditDate = 20231025;
-        if (!document.querySelector(`#chatgpt-notif-style-${ lastEditDate }`)) {
+        const lastUpdated = 20231025;
+        if (!document.querySelector(`#chatgpt-notif-style-${ lastUpdated }`)) {
             const notifStyle = document.createElement('style');
-            notifStyle.id = `chatgpt-notif-style-${ lastEditDate }`;
+            notifStyle.id = `chatgpt-notif-style-${ lastUpdated }`;
             notifStyle.innerText = '.chatgpt-notif {'
                 + 'background-color: black ; padding: 10px 13px 10px 18px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
                 + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
@@ -372,7 +376,7 @@ const chatgpt = {
 
         // Show notification
         setTimeout(() => {
-            notificationDiv.style.opacity = 0.67; // show msg
+            notificationDiv.style.opacity = chatgpt.isDarkMode() ? 0.8 : 0.67; // show msg
             notificationDiv.style.transform = 'translateX(0)'; // bring from off-screen
             notificationDiv.style.transition = 'transform 0.15s ease, opacity 0.15s ease';
         }, 10);
