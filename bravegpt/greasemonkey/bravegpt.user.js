@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.8.8
+// @version             2023.11.8.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -974,7 +974,8 @@
             + ' fill: currentColor ; color: currentColor ; --size: 12px ; position: relative ; top: 0.19em ; right: 2px }'
         + `.bravegpt-container .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-        + '.balloon-tip { content: "" ; position: relative ; top: 0.25em ; right: 9.78rem ; border: 7px solid transparent ;'
+        + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
+            + ( isChromium() ? 'top: 0.16em ; right: 4.9rem;' : 'top: 0.25em ; right: 9.78rem;' )
             + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color: '
                 + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
         + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem } '
