@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.8
+// @version             2023.11.9
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -472,7 +472,7 @@
 
     function isDarkMode() {
         return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
-            || ['openai', 'poe'].includes(site) ? document.documentElement.classList.contains('dark')
+            || ['openai', 'poe'].includes(site) ? document.documentElement.classList.toString().includes('dark')
                                     /* aivvm */ : !!document.querySelector('main[class*="dark"]')
     }
 
