@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.8.6
+// @version             2023.11.8.7
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -927,21 +927,21 @@
         speakSpan.appendChild(speakSVG) ; googleGPTdiv.appendChild(speakSpan)
 
         // Create/append ChatGPT response
-        const balloonTip = document.createElement('span'),
-              pre = document.createElement('pre')
-        balloonTip.className = 'balloon-tip' ; pre.textContent = answer
-        googleGPTdiv.appendChild(balloonTip) ; googleGPTdiv.appendChild(pre)
+        const balloonTipSpan = document.createElement('span'),
+              answerPre = document.createElement('pre')
+        balloonTipSpan.className = 'balloon-tip' ; answerPre.textContent = answer
+        googleGPTdiv.appendChild(balloonTipSpan) ; googleGPTdiv.appendChild(answerPre)
 
         // Create/append reply section/elements
         const replySection = document.createElement('section'),
-              form = document.createElement('form'),
+              replyForm = document.createElement('form'),
               continueChatDiv = document.createElement('div'),
               chatTextarea = document.createElement('textarea')
         continueChatDiv.className = 'continue-chat'
         chatTextarea.id = 'googlegpt-chatbar' ; chatTextarea.rows = '1'
         chatTextarea.placeholder = messages.tooltip_sendReply + '...'
         continueChatDiv.appendChild(chatTextarea)
-        form.appendChild(continueChatDiv) ; replySection.appendChild(form)
+        replyForm.appendChild(continueChatDiv) ; replySection.appendChild(replyForm)
         googleGPTdiv.appendChild(replySection)
 
         // Create/append send button
@@ -961,7 +961,7 @@
         sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
         // Render math
-        renderMathInElement(googleGPTdiv.querySelector('pre'), { // eslint-disable-line no-undef
+        renderMathInElement(answerPre, { // eslint-disable-line no-undef
             delimiters: [
                 { left: '$$', right: '$$', display: true },
                 { left: '$', right: '$', display: false },
@@ -981,8 +981,8 @@
         speakSVG.addEventListener('click', () => {
             chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
         aboutSVG.addEventListener('click', launchAboutModal)
-        form.addEventListener('keydown', handleEnter)
-        form.addEventListener('submit', handleSubmit)
+        replyForm.addEventListener('keydown', handleEnter)
+        replyForm.addEventListener('submit', handleSubmit)
         chatTextarea.addEventListener('input', autosizeChatbar)
 
         function handleEnter(event) {
@@ -1004,8 +1004,8 @@
             } getShowReply(convo)
 
             // Remove listeners since they're re-added
-            form.removeEventListener('keydown', handleEnter)
-            form.removeEventListener('submit', handleSubmit)
+            replyForm.removeEventListener('keydown', handleEnter)
+            replyForm.removeEventListener('submit', handleSubmit)
             chatTextarea.removeEventListener('input', autosizeChatbar)
 
             // Remove related queries
@@ -1019,7 +1019,6 @@
             } catch (err) {}
 
             // Show loading status
-            const replySection = googleGPTdiv.querySelector('section')
             replySection.classList.add('loading')
             replySection.innerHTML = googleGPTalerts.waitingResponse
         }
