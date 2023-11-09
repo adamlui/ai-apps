@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.8.7
+// @version             2023.11.8.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -742,7 +742,7 @@
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         speakSpan.className = 'speak-btn' ; speakSpan.title = messages.tooltip_playAnswer
-        speakSpan.style.margin = '-0.085em 14px 0px' // fine-tune position
+        speakSpan.style.margin = '-0.01em 14px 0px' // fine-tune position
         speakSVG.setAttributeNS(null, 'width', '22') ; speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32')
         const speakSVGpaths = [
             { d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10', stroke: fillColor, strokeWidth: '2px' },
@@ -1002,10 +1002,10 @@
             + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ;'
             + ( isChromium() ? 'top: -25px ; margin: -7px 0 -15px' : 'top: -20px ; margin: -3px 0 -10px') + '}'
         + '.related-query {'
-            + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 6px 7px 6px 13px ;`
+            + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 4px 10px 5px 10px ;`
             + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
             + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
-            + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.98em ; cursor: pointer ;`
+            + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.88em ; cursor: pointer ;`
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
             + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' } ;`
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
