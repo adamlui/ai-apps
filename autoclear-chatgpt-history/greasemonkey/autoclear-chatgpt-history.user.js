@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.10
+// @version             2023.11.10.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -556,14 +556,6 @@
 
     // Define TOGGLE functions
 
-    function chatHistoryIsLoaded() {
-        return new Promise(resolve => {
-            (function checkChatHistory() {
-                if (document.querySelector('nav[aria-label="Chat history"]')) resolve()
-                else setTimeout(checkChatHistory, 100)
-            })()
-    })}
-
     async function insertToggle() {
 
         // Select sidebar elems
@@ -622,5 +614,13 @@
         // Update visibility
         navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
     }
+
+    function chatHistoryIsLoaded() {
+        return new Promise(resolve => {
+            (function checkChatHistory() {
+                if (document.querySelector('nav[aria-label="Chat history"]')) resolve()
+                else setTimeout(checkChatHistory, 100)
+            })()
+    })}
 
 })()
