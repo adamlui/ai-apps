@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.10
+// @version             2023.11.10.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -311,11 +311,11 @@
 
     // Stylize toggle switch (if style missing or outdated)
     const switchStyleUpdated = 20231110; // datestamp of last edit for this file's `switchStyle` 
-    let switchStyle = document.getElementById('chatgpt-switch-style'); // try to select existing style
+    let switchStyle = document.getElementById('chatgpt-switch-style') // try to select existing style
     if (!switchStyle || parseInt(switchStyle.getAttribute('last-updated'), 10) < switchStyleUpdated) { // if missing or outdated
         if (!switchStyle) { // outright missing, create/id/attr/append it first
-            switchStyle = document.createElement('style'); switchStyle.id = 'chatgpt-switch-style';
-            switchStyle.setAttribute('last-updated', switchStyleUpdated.toString());
+            switchStyle = document.createElement('style') ; switchStyle.id = 'chatgpt-switch-style'
+            switchStyle.setAttribute('last-updated', switchStyleUpdated.toString())
             document.head.appendChild(switchStyle);
         }
         const knobWidth = isGizmoUI ? 13 : 14
