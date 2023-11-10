@@ -5,4 +5,4 @@ Bring the magic of ChatGPT to Google Search (powered by GPT-4!)
 
 <br>
 
-Install link: https://greasyfork.org/scripts/478597-googlegpt
+🚀 Install link: https://greasyfork.org/scripts/478597-googlegpt
