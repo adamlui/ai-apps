@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.9
+// @version             2023.11.10
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -214,7 +214,7 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@1a4dd2c052e91bcae40bc2b4dd4ec5849a31cbd5/dist/chatgpt-2.3.18.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@f1af1ba2d9e80cd64c1283627c1310ae13d31a47/dist/chatgpt-2.3.19.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -270,18 +270,20 @@
         }
     }) ; const messages = await msgsLoaded
 
+    // Wait for site load + determine UI for toggle routines    
+    await chatgpt.isLoaded() ; const isGizmoUI = chatgpt.isGizmoUI()
+
     // Create browser toolbar menu or disable script if extension installed 
-    let menuIDs = []
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
-    await chatgpt.isLoaded()
-    setTimeout(() => { // add trivial delay for Chrome extension load to beat VM
+    let menuIDs = []
+    setTimeout(() => {
       if (document.documentElement.getAttribute('cif-extension-installed')) { // if extension installed, disable script/menu
           GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return })
           return // exit script
       } else registerMenu() // create functional menu
-    }, 5)
+    }, 5) // add trivial delay for Chrome extension load to beat VM
 
     // Add listener to auto-disable Infinity Mode
     if (document.hidden !== undefined) { // ...if Page Visibility API supported
@@ -290,50 +292,84 @@
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     })}
 
-    // Stylize alerts
-    if (!document.getElementById('chatgpt-alert-override-style')) {
-        const chatgptAlertStyle = document.createElement('style')
-        chatgptAlertStyle.id = 'chatgpt-alert-override-style'
-        chatgptAlertStyle.innerText = '.chatgpt-modal button {'
-                + 'font-size: 0.77rem ; text-transform: uppercase ;'
-                + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-            + '.modal-buttons { margin-left: -13px !important }'
-        document.head.appendChild(chatgptAlertStyle)
+    // Stylize alerts (if style missing or outdated)
+    const alertStyleUpdated = 20231110; // datestamp of last edit for this file's `chatgptAlertStyle` 
+    let chatgptAlertStyle = document.getElementById('chatgpt-alert-override-style'); // try to select existing style
+    if (!chatgptAlertStyle || parseInt(chatgptAlertStyle.getAttribute('last-updated'), 10) < alertStyleUpdated) { // if missing or outdated
+        if (!chatgptAlertStyle) { // outright missing, create/id/attr/append it first
+            chatgptAlertStyle = document.createElement('style'); chatgptAlertStyle.id = 'chatgpt-alert-override-style';
+            chatgptAlertStyle.setAttribute('last-updated', alertStyleUpdated.toString());
+            document.head.appendChild(chatgptAlertStyle);
+        }
+        chatgptAlertStyle.innerText = (
+            '.chatgpt-modal button {'
+              + 'font-size: 0.77rem ; text-transform: uppercase ;'
+              + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+          + '.modal-buttons { margin-left: -13px !important }'
+        )
     }
 
-    // Stylize toggle switch
-    if (!document.getElementById('chatgpt-switch-style')) {
-        const switchStyle = document.createElement('style')
-        switchStyle.innerText = '.switch { position: absolute ; left: 208px ; width: 34px ; height: 18px } '
-            + '.switch input { opacity: 0 ; width: 0 ; height: 0 } ' // hide checkbox
-            + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ; '
-                + 'background-color: #ccc ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px } '
-            + '.slider:before { position: absolute ; content: "" ; height: 14px ; width: 14px ; left: 3px ; bottom: 2px ; '
-                + 'background-color: white ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px } '
+    // Stylize toggle switch (if style missing or outdated)
+    const switchStyleUpdated = 20231110; // datestamp of last edit for this file's `switchStyle` 
+    let switchStyle = document.getElementById('chatgpt-switch-style'); // try to select existing style
+    if (!switchStyle || parseInt(switchStyle.getAttribute('last-updated'), 10) < switchStyleUpdated) { // if missing or outdated
+        if (!switchStyle) { // outright missing, create/id/attr/append it first
+            switchStyle = document.createElement('style'); switchStyle.id = 'chatgpt-switch-style';
+            switchStyle.setAttribute('last-updated', switchStyleUpdated.toString());
+            document.head.appendChild(switchStyle);
+        }
+        const knobWidth = isGizmoUI ? 13 : 14
+        switchStyle.innerText = (
+            '.switch { position: absolute ; left: 208px ;'
+              + `width: ${ isGizmoUI ? 32 : 34 }px ; height: ${ isGizmoUI ? 16 : 18 }px }`
+          + '.switch input { opacity: 0 ; width: 0 ; height: 0 }' // hide checkbox
+          + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ;'
+              + 'background-color: #ccc ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px }'
+          + '.slider:before { position: absolute ; content: "" ; left: 3px ;'
+              + `width: ${ knobWidth }px ; height: ${ knobWidth }px ; bottom: ${ isGizmoUI ? '0.1em' : '2px' } ;`
+              + 'background-color: white ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px }'
 
-            // Position/color ON-state
-            + 'input:checked { position: absolute ; right: 3px } '
-            + 'input:checked + .slider { background-color: #AD68FF ; box-shadow: 2px 1px 20px #D8A9FF } '
-            + 'input:checked + .slider:before { '
-                + '-webkit-transform: translateX(14px) translateY(1px) ; '
-                + '-ms-transform: translateX(14px) translateY(1px) ; '
-                + 'transform: translateX(14px) }'
-
-        document.head.appendChild(switchStyle)
+          // Position/color ON-state
+          + 'input:checked { position: absolute ; right: 3px }'
+          + 'input:checked + .slider { background-color: #AD68FF ; box-shadow: 2px 1px 20px #D8A9FF }'
+          + 'input:checked + .slider:before {'
+              + `-webkit-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
+              + `-ms-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
+              + `transform: translateX(${ knobWidth }px) }`
+        )
     }
 
-    // Create toggle label, add styles//classes/listener/HTML
-    const toggleLabel = document.createElement('div') // create label div
-    toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
-    toggleLabel.style.margin = '2px 0' // add v-margins
-    toggleLabel.style.userSelect = 'none' // prevent highlighting
-    for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
-        if (/(new|clear) chat/i.test(navLink.text)) { // focus on new/clear chat button
-            toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
-            navLink.parentNode.style.margin = '2px 0' // add v-margins
-            break // stop looping since class assignment is done
-    }}
-    toggleLabel.addEventListener('click', () => {
+    // Create nav toggle div, add styles
+    const navToggleDiv = document.createElement('div')
+    navToggleDiv.style.maxHeight = '44px' // prevent flex overgrowth
+    navToggleDiv.style.margin = '2px 0' // add v-margins
+    navToggleDiv.style.userSelect = 'none' // prevent highlighting
+    navToggleDiv.style.cursor = 'pointer' // add finger cursor
+    updateToggleHTML() // create children
+
+    // Borrow classes from sidebar div
+    const chatHistorySelector = 'nav[aria-label="Chat history"]'
+    if (isGizmoUI) {
+        chatHistoryIsLoaded().then(setTimeout(() => { 
+            const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
+                  navLinks = chatHistoryNav.querySelectorAll('a'),
+                  firstLink = [...navLinks].find(link => link.textContent.includes(
+                      chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT')) || {},
+                  firstIcon = firstLink.querySelector('div:first-child'),
+                  firstLabel = firstLink.querySelector('div:nth-child(2)')
+            navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
+            navToggleDiv.querySelector('img').classList.add(...firstIcon.classList)
+        }, 100))
+    } else {
+        for (const navLink of document.querySelectorAll(chatHistorySelector + ' a')) {
+            if (/(new|clear) chat/i.test(navLink.text)) { // focus on new/clear chat button
+                navToggleDiv.setAttribute('class', navLink.classList) // borrow link classes
+                navLink.parentNode.style.margin = '2px 0' // add v-margins
+                break // stop looping since class assignment is done
+    }}}
+
+    // Add listener to toggle switch/label/config/menu
+    navToggleDiv.addEventListener('click', () => {
         const toggleInput = document.querySelector('#infToggleInput')
         toggleInput.checked = !toggleInput.checked
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
@@ -341,12 +377,11 @@
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         infinityMode.toggle()
     })
-    updateToggleHTML()
 
-    // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
+    // Insert full toggle on page load + during navigation
     insertToggle()
-    const nodeObserver = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
+    const nodeObserver = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 insertToggle()
     }})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
@@ -375,7 +410,7 @@
                       + state.separator + state.word[+config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
-            toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
+            navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
@@ -507,7 +542,7 @@
         GM.xmlHttpRequest({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
+            onload: response => {
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
@@ -563,37 +598,73 @@
 
     // Define TOGGLE functions
 
-    function insertToggle() {
+    async function insertToggle() {
+
+        // Select sidebar elems
+        if (isGizmoUI) await chatHistoryIsLoaded()
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
-              firstButton = chatHistoryNav.querySelector('a') || {}
-        if (chatgpt.history.isOff()) // hide enable-history spam div
-            try { firstButton.parentNode.nextElementSibling.style.display = 'none' } catch (error) {}
-        if (!chatHistoryNav.contains(toggleLabel)) // insert toggle
-            try { chatHistoryNav.insertBefore(toggleLabel, firstButton.parentNode) } catch (error) {}
+              navButtons = chatHistoryNav.querySelectorAll('a'),
+              firstButton = ( isGizmoUI ? [...navButtons].find(button => button.textContent.includes(
+                                  chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT'))
+                                        : chatHistoryNav.querySelector('a') ) || {}
+        // Hide 'Enable History' div
+        if (chatgpt.history.isOff())
+            try {
+                const enableHistoryDiv = isGizmoUI
+                  ? firstButton.parentNode.parentNode.nextElementSibling
+                  : firstButton.parentNode.nextElementSibling
+                enableHistoryDiv.style.display = 'none'
+                if (isGizmoUI) enableHistoryDiv.parentNode.style.width = '100%'
+            } catch (err) {}
+
+        // Insert toggle
+        const parentToInsertInto = isGizmoUI ? firstButton.parentNode.parentNode.parentNode : chatHistoryNav,
+              childToInsertBefore = isGizmoUI ? firstButton.parentNode.parentNode.nextElementSibling : firstButton.parentNode
+        if (!parentToInsertInto.contains(navToggleDiv))
+            try { parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore) } catch (err) {}
+
+        // Tweak styles
+        if (isGizmoUI) {
+            firstButton.parentNode.parentNode.style.paddingBottom = '0'
+            navToggleDiv.style.display = 'flex' // remove forced cloaking
+            navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
+        }
     }
 
     function updateToggleHTML() {
-        while (toggleLabel.firstChild) toggleLabel.firstChild.remove() // clear old content
+        while (navToggleDiv.firstChild) navToggleDiv.firstChild.remove() // clear old content
 
         // Create elements
         const navicon = document.createElement('img'),
               label = document.createElement('label'),
               labelText = document.createTextNode(messages.menuLabel_infinityMode + ' '
-                  + messages['state_' + ( config.infinityMode ? 'enabled' : 'disabled' )]),
+                  + ( messages['state_' + ( config.infinityMode ? 'enabled' : 'disabled' )])),
               input = document.createElement('input'),
               span = document.createElement('span')
-        navicon.src = config.assetHostURL + 'media/images/icons/infinity-symbol/white/icon64.png' ; navicon.width = 18
+        navicon.src = config.assetHostURL + 'media/images/icons/infinity-symbol/white/icon64.png'
+        if (isGizmoUI) {
+            navicon.style.width = navicon.style.height = '1.25rem'
+            navicon.style.marginLeft = navicon.style.marginRight = '4px'
+        } else navicon.width = 18
         label.id = 'infToggleLabel' ; label.className = 'switch'
-        input.id = 'infToggleInput' ; input.type = 'checkbox' ; input.checked = config.infinityMode ; input.disabled = true
+        input.id = 'infToggleInput' ; input.type = 'checkbox' ; input.disabled = true ; input.checked = config.infinityMode
         span.className = 'slider'
 
         // Append elements
         label.appendChild(input) ; label.appendChild(span)
-        toggleLabel.appendChild(navicon) ; toggleLabel.appendChild(label) ; toggleLabel.appendChild(labelText)
+        navToggleDiv.appendChild(navicon) ; navToggleDiv.appendChild(label) ; navToggleDiv.appendChild(labelText)
 
         // Update visibility
-        toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
+        navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
     }
+
+    function chatHistoryIsLoaded() {
+        return new Promise(resolve => {
+            (function checkChatHistory() {
+                if (document.querySelector('nav[aria-label="Chat history"]')) resolve()
+                else setTimeout(checkChatHistory, 100)
+            })()
+    })}
 
     const infinityMode = {
 
