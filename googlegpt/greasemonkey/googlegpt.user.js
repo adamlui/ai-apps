@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name                GoogleGPT 🤖
+// @name:zh-CN          GoogleGPT 🤖
 // @description         Adds ChatGPT answers to Google Search sidebar (powered by GPT-4!)
 // @description:af      Voeg ChatGPT-antwoorde by Google Soek kantbalk by (aangedryf deur GPT-4!)
 // @description:am      የChatGPT መልስናወርቃለች እርስዎን በGoogle የተወሰኑ ገጽታዎችን (ተግባር በGPT-4!) ይጨምሩ
@@ -152,7 +153,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.10.1
+// @version             2023.11.10.2
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
