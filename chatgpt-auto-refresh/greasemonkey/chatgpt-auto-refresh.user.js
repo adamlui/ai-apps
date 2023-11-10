@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.10.1
+// @version             2023.11.10.2
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -316,13 +316,13 @@
     await chatgpt.isLoaded() ; const isGizmoUI = chatgpt.isGizmoUI()
 
     // Stylize alerts (if style missing or outdated)
-    const alertStyleUpdated = 20231110; // datestamp of last edit for this file's `chatgptAlertStyle` 
-    let chatgptAlertStyle = document.getElementById('chatgpt-alert-override-style'); // try to select existing style
+    const alertStyleUpdated = 20231110 // datestamp of last edit for this file's `chatgptAlertStyle` 
+    let chatgptAlertStyle = document.getElementById('chatgpt-alert-override-style') // try to select existing style
     if (!chatgptAlertStyle || parseInt(chatgptAlertStyle.getAttribute('last-updated'), 10) < alertStyleUpdated) { // if missing or outdated
         if (!chatgptAlertStyle) { // outright missing, create/id/attr/append it first
-            chatgptAlertStyle = document.createElement('style'); chatgptAlertStyle.id = 'chatgpt-alert-override-style';
-            chatgptAlertStyle.setAttribute('last-updated', alertStyleUpdated.toString());
-            document.head.appendChild(chatgptAlertStyle);
+            chatgptAlertStyle = document.createElement('style') ; chatgptAlertStyle.id = 'chatgpt-alert-override-style'
+            chatgptAlertStyle.setAttribute('last-updated', alertStyleUpdated.toString())
+            document.head.appendChild(chatgptAlertStyle)
         }
         chatgptAlertStyle.innerText = (
             '.chatgpt-modal button {'
@@ -333,13 +333,13 @@
     }
 
     // Stylize toggle switch (if style missing or outdated)
-    const switchStyleUpdated = 20231110; // datestamp of last edit for this file's `switchStyle` 
-    let switchStyle = document.getElementById('chatgpt-switch-style'); // try to select existing style
+    const switchStyleUpdated = 202311101 // datestamp of last edit for this file's `switchStyle` 
+    let switchStyle = document.getElementById('chatgpt-switch-style') // try to select existing style
     if (!switchStyle || parseInt(switchStyle.getAttribute('last-updated'), 10) < switchStyleUpdated) { // if missing or outdated
         if (!switchStyle) { // outright missing, create/id/attr/append it first
-            switchStyle = document.createElement('style'); switchStyle.id = 'chatgpt-switch-style';
-            switchStyle.setAttribute('last-updated', switchStyleUpdated.toString());
-            document.head.appendChild(switchStyle);
+            switchStyle = document.createElement('style') ; switchStyle.id = 'chatgpt-switch-style'
+            switchStyle.setAttribute('last-updated', switchStyleUpdated.toString())
+            document.head.appendChild(switchStyle)
         }
         const knobWidth = isGizmoUI ? 13 : 14
         switchStyle.innerText = (
@@ -354,7 +354,7 @@
 
           // Position/color ON-state
           + 'input:checked { position: absolute ; right: 3px }'
-          + 'input:checked + .slider { background-color: #AD68FF }'
+          + 'input:checked + .slider { background-color: #AD68FF ; box-shadow: 2px 1px 20px #D8A9FF}'
           + 'input:checked + .slider:before {'
               + `-webkit-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
               + `-ms-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
