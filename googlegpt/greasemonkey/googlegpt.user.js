@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.9.5
+// @version             2023.11.10
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1056,11 +1056,13 @@
                           newDiv = document.createElement('div')
                     centerCol.style.paddingRight = '45px'
                     newDiv.style.display = 'contents'
+                    newDiv.id ='newHostContainer'
                     centerCol.insertAdjacentElement('afterend', newDiv)
                     return newDiv
                 })()
         )
         hostContainer.prepend(googleGPTdiv)
+        if (document.querySelector('#newHostContainer')) googleGPTdiv.marginLeft = '20px'
         const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
         convo.push(
             config.proxyAPIenabled ? { role: 'user', content: query }
@@ -1135,7 +1137,8 @@
 
     // Create Google style tweaks
     const tweaksStyle = document.createElement('style'),
-          fsbStyle = '#center_col { max-width: 560px !important }'
+          fsbStyle = '#center_col, #center_col div { max-width: 560px !important }'
+                   + '#googlegpt-chatbar { width: 92% !important }'
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Stylize elements
@@ -1144,7 +1147,7 @@
     googleGPTstyle.innerText = (
         '.googlegpt-container {'
             + 'border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
-            + `padding: ${ isChromium() ? 22 : 20 }px 26px 6px 26px ; margin: 0 0 30px 20px ;`
+            + `padding: ${ isChromium() ? 22 : 20 }px 26px 6px 26px ; margin: 0 0 30px 0 ;`
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
             + ( scheme == 'dark' ? ' border: none ; background: #282828 } ' : ' } ' )
         + '.googlegpt-container p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
