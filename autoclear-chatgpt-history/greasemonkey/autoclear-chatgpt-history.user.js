@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.9
+// @version             2023.11.9.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -240,7 +240,7 @@
 // @compatible          qq
 // @match               *://chat.openai.com/*
 // @run-at              document-end
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@1a4dd2c052e91bcae40bc2b4dd4ec5849a31cbd5/dist/chatgpt-2.3.18.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@f1af1ba2d9e80cd64c1283627c1310ae13d31a47/dist/chatgpt-2.3.19.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -299,58 +299,87 @@
         separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     let menuIDs = [] ; registerMenu() // create browser toolbar menu
 
-    // Auto-clear chats if activated
-    await chatgpt.isLoaded()
-    setTimeout(() => { if (config.autoclear) chatgpt.clearChats() }, 250)
+    // Wait for site load + determine UI for toggle routines
+    await chatgpt.isLoaded() ; const isGizmoUI = chatgpt.isGizmoUI()
 
-    // Notify of mode if enabled
-    if (!config.notifHidden && config.autoclear) notify(messages.mode_autoClear + ': ON')
-
-    // Stylize alerts
-    if (!document.getElementById('chatgpt-alert-override-style')) {
-        const chatgptAlertStyle = document.createElement('style')
-        chatgptAlertStyle.id = 'chatgpt-alert-override-style'
-        chatgptAlertStyle.innerText = '.chatgpt-modal button {'
-                + 'font-size: 0.77rem ; text-transform: uppercase ;'
-                + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-            + '.modal-buttons { margin-left: -13px !important }'
-        document.head.appendChild(chatgptAlertStyle)
+    // Stylize alerts (if style missing or outdated)
+    const alertStyleUpdated = 20231110; // datestamp of last edit for this file's `chatgptAlertStyle` 
+    let chatgptAlertStyle = document.getElementById('chatgpt-alert-override-style'); // try to select existing style
+    if (!chatgptAlertStyle || parseInt(chatgptAlertStyle.getAttribute('last-updated'), 10) < alertStyleUpdated) { // if missing or outdated
+        if (!chatgptAlertStyle) { // outright missing, create/id/attr/append it first
+            chatgptAlertStyle = document.createElement('style'); chatgptAlertStyle.id = 'chatgpt-alert-override-style';
+            chatgptAlertStyle.setAttribute('last-updated', alertStyleUpdated.toString());
+            document.head.appendChild(chatgptAlertStyle);
+        }
+        chatgptAlertStyle.innerText = (
+            '.chatgpt-modal button {'
+              + 'font-size: 0.77rem ; text-transform: uppercase ;'
+              + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+          + '.modal-buttons { margin-left: -13px !important }'
+        )
     }
 
-    // Stylize toggle switch
-    if (!document.getElementById('chatgpt-switch-style')) {
-        const switchStyle = document.createElement('style')
-        switchStyle.id = 'chatgpt-switch-style'
-        switchStyle.innerText = '.switch { position:absolute ; left: 208px ; width: 34px ; height: 18px } '
-            + '.switch input { opacity: 0 ; width: 0 ; height: 0 } ' // hide checkbox
-            + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ; '
-                + 'background-color: #ccc ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px } '
-            + '.slider:before { position: absolute ; content: "" ; height: 14px ; width: 14px ; left: 3px ; bottom: 2px ; '
-                + 'background-color: white ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px } '
+    // Create/append/update toggle switch style (if missing or outdated)
+    const switchStyleUpdated = 20231110; // datestamp of last edit for this file's `switchStyle` 
+    let switchStyle = document.getElementById('chatgpt-switch-style'); // try to select existing style
+    if (!switchStyle || parseInt(switchStyle.getAttribute('last-updated'), 10) < switchStyleUpdated) { // if missing or outdated
+        if (!switchStyle) { // outright missing, create/id/attr/append it first
+            switchStyle = document.createElement('style'); switchStyle.id = 'chatgpt-switch-style';
+            switchStyle.setAttribute('last-updated', switchStyleUpdated.toString());
+            document.head.appendChild(switchStyle);
+        }
+        const knobWidth = isGizmoUI ? 13 : 14
+        switchStyle.innerText = (
+            '.switch { position: absolute ; left: 208px ;'
+              + `width: ${ isGizmoUI ? 32 : 34 }px ; height: ${ isGizmoUI ? 16 : 18 }px }`
+          + '.switch input { opacity: 0 ; width: 0 ; height: 0 }' // hide checkbox
+          + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ;'
+              + 'background-color: #ccc ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px }'
+          + '.slider:before { position: absolute ; content: "" ; left: 3px ;'
+              + `width: ${ knobWidth }px ; height: ${ knobWidth }px ; bottom: ${ isGizmoUI ? '0.1em' : '2px' } ;`
+              + 'background-color: white ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px }'
 
-            // Position/color ON-state
-            + 'input:checked { position: absolute ; right: 3px } '
-            + 'input:checked + .slider { background-color: #AD68FF ; box-shadow: 2px 1px 20px #D8A9FF } '
-            + 'input:checked + .slider:before { '
-                + '-webkit-transform: translateX(14px) translateY(1px) ; '
-                + '-ms-transform: translateX(14px) translateY(1px) ; '
-                + 'transform: translateX(14px) }'
-
-        document.head.appendChild(switchStyle)
+          // Position/color ON-state
+          + 'input:checked { position: absolute ; right: 3px }'
+          + 'input:checked + .slider { background-color: #AD68FF ; box-shadow: 2px 1px 20px #D8A9FF}'
+          + 'input:checked + .slider:before {'
+              + `-webkit-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
+              + `-ms-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
+              + `transform: translateX(${ knobWidth }px) }`
+        )
     }
 
-    // Create toggle label, add styles/classes/listener/HTML
-    const toggleLabel = document.createElement('div') // create label div
-    toggleLabel.style.maxHeight = '44px' // prevent flex overgrowth
-    toggleLabel.style.margin = '2px 0' // add v-margins
-    toggleLabel.style.userSelect = 'none' // prevent highlighting
-    for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) { // inspect sidebar for classes to borrow
-        if (/(new|clear) chat/i.test(navLink.text)) { // focus on new/clear chat button
-            toggleLabel.setAttribute('class', navLink.classList) // borrow link classes
-            navLink.parentNode.style.margin = '2px 0' // add v-margins
-            break // stop looping since class assignment is done
-    }}
-    toggleLabel.addEventListener('click', () => { // add listener to toggle switch/label/config/menu + auto-clear
+    // Create nav toggle div, add styles
+    const navToggleDiv = document.createElement('div')
+    navToggleDiv.style.maxHeight = '44px' // prevent flex overgrowth
+    navToggleDiv.style.margin = '2px 0' // add v-margins
+    navToggleDiv.style.userSelect = 'none' // prevent highlighting
+    navToggleDiv.style.cursor = 'pointer' // add finger cursor
+    updateToggleHTML() // create children
+
+    // Borrow classes from sidebar div
+    const chatHistorySelector = 'nav[aria-label="Chat history"]'
+    if (isGizmoUI) {
+        chatHistoryIsLoaded().then(setTimeout(() => { 
+            const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
+                  navLinks = chatHistoryNav.querySelectorAll('a'),
+                  firstLink = [...navLinks].find(link => link.textContent.includes(
+                      chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT')) || {}
+                  firstIcon = firstLink.querySelector('div:first-child'),
+                  firstLabel = firstLink.querySelector('div:nth-child(2)')
+            navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
+            navToggleDiv.querySelector('img').classList.add(...firstIcon.classList)
+        }, 100))
+    } else {
+        for (const navLink of document.querySelectorAll(chatHistorySelector + ' a')) {
+            if (/(new|clear) chat/i.test(navLink.text)) { // focus on new/clear chat button
+                navToggleDiv.setAttribute('class', navLink.classList) // borrow link classes
+                navLink.parentNode.style.margin = '2px 0' // add v-margins
+                break // stop looping since class assignment is done
+    }}}
+
+    // Add listener to toggle switch/label/config/menu + auto-clear
+    navToggleDiv.addEventListener('click', () => {
         const toggleInput = document.querySelector('#acToggleInput')
         toggleInput.checked = !toggleInput.checked
         setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
@@ -363,15 +392,23 @@
             if (!config.notifHidden) notify(messages.mode_autoClear + ': OFF')
         saveSetting('autoclear', config.autoclear)
     })
-    updateToggleHTML()
 
-    // Insert full toggle on page load + during navigation // 在导航期间插入页面加载 + 的完整切换
+    // Insert full toggle on page load + during navigation
     insertToggle()
-    const nodeObserver = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
+    const nodeObserver = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
             if (mutation.type === 'childList' && mutation.addedNodes.length) {
                 insertToggle()
     }})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
+
+    // Auto-clear on first visit if enabled
+    if (config.autoclear) {
+        if (chatgpt.history.isOn()) {
+            if (isGizmoUI) await chatHistoryIsLoaded()
+            setTimeout(() => { chatgpt.clearChats() }, 250)
+        }
+        if (!config.notifHidden) notify(messages.mode_autoClear + ': ON')
+    }
 
     // Define SCRIPT functions
 
@@ -387,17 +424,17 @@
 
         // Add command to toggle auto-clear
         const acLabel = state.symbol[+!config.autoclear] + ' ' + messages.menuLabel_autoClear
-                    + state.separator + state.word[+!config.autoclear]
-        menuIDs.push(GM_registerMenuCommand(acLabel, function() {
+                      + state.separator + state.word[+!config.autoclear]
+        menuIDs.push(GM_registerMenuCommand(acLabel, () => {
             document.querySelector('#acToggleLabel').click()
         }))
 
         // Add 'Toggle Visibility' command
         const tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
-                    + state.separator + state.word[+config.toggleHidden]
-        menuIDs.push(GM_registerMenuCommand(tvLabel, function() {
+                      + state.separator + state.word[+config.toggleHidden]
+        menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
-            toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
+            navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden) {
                 notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
             } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -405,8 +442,8 @@
 
         // Add command to show notifications when changing settings/modes
         const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
-                    + state.separator + state.word[+config.notifHidden]
-        menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
+                      + state.separator + state.word[+config.notifHidden]
+        menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifHidden', !config.notifHidden)
             notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -519,15 +556,49 @@
 
     // Define TOGGLE functions
 
-    function insertToggle() {
+    function chatHistoryIsLoaded() {
+        return new Promise(resolve => {
+            (function checkChatHistory() {
+                if (!!document.querySelector('nav[aria-label="Chat history"]')) resolve()
+                else setTimeout(checkChatHistory, 100)
+            })()
+    })}
+
+    async function insertToggle() {
+
+        // Select sidebar elems
+        if (isGizmoUI) await chatHistoryIsLoaded()
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
-              firstButton = chatHistoryNav.querySelector('a') || {}
-        if (chatgpt.history.isOff()) try { firstButton.parentNode.nextElementSibling.style.display = 'none' } catch (error) {} // hide enable-history spam div
-        if (!chatHistoryNav.contains(toggleLabel)) try { chatHistoryNav.insertBefore(toggleLabel, firstButton.parentNode) } catch (error) {} // insert toggle
+              navButtons = chatHistoryNav.querySelectorAll('a'),
+              firstButton = ( isGizmoUI ? [...navButtons].find(button => button.textContent.includes(
+                                  chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT'))
+                                        : chatHistoryNav.querySelector('a') ) || {}
+        // Hide 'Enable History' div
+        if (chatgpt.history.isOff())
+            try {
+                const enableHistoryDiv = isGizmoUI
+                  ? firstButton.parentNode.parentNode.nextElementSibling
+                  : firstButton.parentNode.nextElementSibling
+                enableHistoryDiv.style.display = 'none'
+                if (isGizmoUI) enableHistoryDiv.parentNode.style.width = '100%'
+            } catch (err) {}
+
+        // Insert toggle
+        const parentToInsertInto = isGizmoUI ? firstButton.parentNode.parentNode.parentNode : chatHistoryNav,
+              childToInsertBefore = isGizmoUI ? firstButton.parentNode.parentNode.nextElementSibling : firstButton.parentNode
+        if (!parentToInsertInto.contains(navToggleDiv))
+            try { parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore) } catch (err) {}
+
+        // Tweak styles
+        if (isGizmoUI) {
+            firstButton.parentNode.parentNode.style.paddingBottom = '0'
+            navToggleDiv.style.display = 'flex' // remove forced cloaking
+            navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
+        }
     }
 
     function updateToggleHTML() {
-        while (toggleLabel.firstChild) toggleLabel.firstChild.remove() // clear old content
+        while (navToggleDiv.firstChild) navToggleDiv.firstChild.remove() // clear old content
 
         // Create elements
         const navicon = document.createElement('img'),
@@ -535,17 +606,21 @@
               labelText = document.createTextNode('Auto-clear ' + ( config.autoclear ? 'enabled' : 'disabled' )),
               input = document.createElement('input'),
               span = document.createElement('span')
-        navicon.src = config.assetHostURL + 'media/images/icons/navicon.png' ; navicon.width = 18
+        navicon.src = config.assetHostURL + 'media/images/icons/navicon.png'
+        if (isGizmoUI) {
+            navicon.style.width = navicon.style.height = '1.25rem'
+            navicon.style.marginLeft = navicon.style.marginRight = '4px'
+        } else navicon.width = 18
         label.id = 'acToggleLabel' ; label.className = 'switch'
         input.id = 'acToggleInput' ; input.type = 'checkbox' ; input.disabled = true ; input.checked = config.autoclear
         span.className = 'slider'
 
         // Append elements
         label.appendChild(input) ; label.appendChild(span)
-        toggleLabel.appendChild(navicon) ; toggleLabel.appendChild(label) ; toggleLabel.appendChild(labelText)
+        navToggleDiv.appendChild(navicon) ; navToggleDiv.appendChild(label) ; navToggleDiv.appendChild(labelText)
 
         // Update visibility
-        toggleLabel.style.display = config.toggleHidden ? 'none' : 'flex'
+        navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
     }
 
 })()
