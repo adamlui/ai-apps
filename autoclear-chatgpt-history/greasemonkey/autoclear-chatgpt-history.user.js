@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.9.1
+// @version             2023.11.10
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -364,7 +364,7 @@
             const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
                   navLinks = chatHistoryNav.querySelectorAll('a'),
                   firstLink = [...navLinks].find(link => link.textContent.includes(
-                      chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT')) || {}
+                      chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT')) || {},
                   firstIcon = firstLink.querySelector('div:first-child'),
                   firstLabel = firstLink.querySelector('div:nth-child(2)')
             navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
@@ -559,7 +559,7 @@
     function chatHistoryIsLoaded() {
         return new Promise(resolve => {
             (function checkChatHistory() {
-                if (!!document.querySelector('nav[aria-label="Chat history"]')) resolve()
+                if (document.querySelector('nav[aria-label="Chat history"]')) resolve()
                 else setTimeout(checkChatHistory, 100)
             })()
     })}
