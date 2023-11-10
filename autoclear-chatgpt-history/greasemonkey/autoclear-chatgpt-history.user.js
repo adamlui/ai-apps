@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.10.1
+// @version             2023.11.10.2
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -320,13 +320,13 @@
     }
 
     // Create/append/update toggle switch style (if missing or outdated)
-    const switchStyleUpdated = 20231110; // datestamp of last edit for this file's `switchStyle` 
-    let switchStyle = document.getElementById('chatgpt-switch-style'); // try to select existing style
+    const switchStyleUpdated = 20231110 // datestamp of last edit for this file's `switchStyle` 
+    let switchStyle = document.getElementById('chatgpt-switch-style') // try to select existing style
     if (!switchStyle || parseInt(switchStyle.getAttribute('last-updated'), 10) < switchStyleUpdated) { // if missing or outdated
         if (!switchStyle) { // outright missing, create/id/attr/append it first
-            switchStyle = document.createElement('style'); switchStyle.id = 'chatgpt-switch-style';
-            switchStyle.setAttribute('last-updated', switchStyleUpdated.toString());
-            document.head.appendChild(switchStyle);
+            switchStyle = document.createElement('style') ; switchStyle.id = 'chatgpt-switch-style'
+            switchStyle.setAttribute('last-updated', switchStyleUpdated.toString())
+            document.head.appendChild(switchStyle)
         }
         const knobWidth = isGizmoUI ? 13 : 14
         switchStyle.innerText = (
@@ -341,7 +341,7 @@
 
           // Position/color ON-state
           + 'input:checked { position: absolute ; right: 3px }'
-          + 'input:checked + .slider { background-color: #AD68FF ; box-shadow: 2px 1px 20px #D8A9FF}'
+          + 'input:checked + .slider { background-color: #AD68FF ; box-shadow: 2px 1px 20px #D8A9FF }'
           + 'input:checked + .slider:before {'
               + `-webkit-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
               + `-ms-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
@@ -505,7 +505,7 @@
         GM.xmlHttpRequest({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: (response) => {
+            onload: response => {
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
