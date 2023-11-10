@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.9.3
+// @version             2023.11.9.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -776,14 +776,14 @@
         chatTextarea.addEventListener('input', autosizeChatbar)
 
         function handleEnter(event) {
-            if (event.key === 'Enter') {     
+            if (event.key === 'Enter') {
                 if (event.ctrlKey) { // add newline
                     const chatTextarea = document.querySelector('#bravegpt-chatbar'),
-                          cursorPos = chatTextarea.selectionStart,
-                          textBefore = chatTextarea.value.substring(0, cursorPos),
-                          textAfter = chatTextarea.value.substring(cursorPos)                    
+                          caretPos = chatTextarea.selectionStart,
+                          textBefore = chatTextarea.value.substring(0, caretPos),
+                          textAfter = chatTextarea.value.substring(caretPos)
                     chatTextarea.value = textBefore + '\n' + textAfter // add newline
-                    chatTextarea.selectionStart = chatTextarea.selectionEnd = cursorPos + 1 // preserve ibeam pos
+                    chatTextarea.selectionStart = chatTextarea.selectionEnd = caretPos + 1 // preserve caret pos
                     autosizeChatbar()
                 } else if (!event.shiftKey) handleSubmit(event)
         }}
