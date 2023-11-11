@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.11.3
+// @version             2023.11.11.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -326,8 +326,8 @@
                         // Alert to update
                         const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             ( messages.alert_newerVer || 'An update to' ) + ' BraveGPT '
-                                + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!   `
-                                + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
+                                + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!  `
+                                + '<a target="_blank" rel="noopener" style="font-size: 0.93rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
                                     + `> ${ messages.link_viewChanges || 'View changes' }</a>`,
