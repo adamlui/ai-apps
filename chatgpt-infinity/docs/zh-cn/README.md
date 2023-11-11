@@ -19,10 +19,10 @@
 
 <br>
 
-<a href="https://chatgptinfinity.com/chrome" target="_blank">
+<a href="https://chrome.chatgptinfinity.com" target="_blank">
     <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png">
 </a>
-<a href="https://chatgptinfinity.com/edge" target="_blank">
+<a href="https://edge.chatgptinfinity.com" target="_blank">
     <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png">
 </a>
 <a href="https://chatgptinfinity.com/greasyfork" target="_blank">
@@ -55,7 +55,7 @@
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://i.imgur.com/SATGr8j.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey 用户脚本:
 
-1. 安装 ChatGPT 无限 扩展程序 ([Chrome](https://chatgptinfinity.com/chrome), [Edge](https://chatgptinfinity.com/edge))
+1. 安装 ChatGPT 无限 扩展程序 ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com))
 
 2. 正常访问 [chat.openai.com](https://chat.openai.com) & 侧边栏添加无限切换!
 
@@ -109,22 +109,22 @@ ChatGPT 无穷 依赖于强大的 [chatgpt.js](https://github.com/kudoai/chatgpt
 
 ChatGPT 无穷 与以下浏览器兼容:
 
-- **Google Chrome** (通过 [Chrome 扩大](https://chatgptinfinity.com/chrome) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **Google Chrome** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
 - **Mozilla Firefox** (通过 [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Microsoft Edge** (通过 [Edge 扩大](https://chatgptinfinity.com/edge) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
-- **Opera** (通过 [Chrome 扩大](https://chatgptinfinity.com/chrome) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
-- **Brave** (通过 [Chrome 扩大](https://chatgptinfinity.com/chrome) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
-- **Vivaldi** (通过 [Chrome 扩大](https://chatgptinfinity.com/chrome) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **Microsoft Edge** (通过 [Edge 扩大](https://edge.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **Opera** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **Brave** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **Vivaldi** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
 - **LibreWolf** (通过 [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
-- **Ghost** (通过 [Chrome 扩大](https://chatgptinfinity.com/chrome) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
-- **QQ** (通过 [Chrome 扩大](https://chatgptinfinity.com/chrome) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **Ghost** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **QQ** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
 
 <div align="center">
 
-<a href="https://chatgptinfinity.com/chrome">
+<a href="https://chrome.chatgptinfinity.com">
     <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-chrome-button.png">
 </a>
-<a href="https://chatgptinfinity.com/edge">
+<a href="https://edge.chatgptinfinity.com">
     <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-edge-button.png">
 </a>
 <a href="https://chatgptinfinity.com/greasyfork">

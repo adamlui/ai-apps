@@ -19,10 +19,10 @@
 
 <br>
 
-<a href="https://chatgptinfinity.com/chrome" target="_blank">
+<a href="https://chrome.chatgptinfinity.com" target="_blank">
     <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png">
 </a>
-<a href="https://chatgptinfinity.com/edge" target="_blank">
+<a href="https://edge.chatgptinfinity.com" target="_blank">
     <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png">
 </a>
 <a href="https://chatgptinfinity.com/greasyfork" target="_blank">
@@ -55,7 +55,7 @@
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"><img style="margin: 0 2px -1px 0" height=16 src="https://i.imgur.com/0wUsChU.png"> Browser extension:
 
-1. Install ChatGPT Infinity extension ([Chrome](https://chatgptinfinity.com/chrome), [Edge](https://chatgptinfinity.com/edge))
+1. Install ChatGPT Infinity extension ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com))
 
 2. Visit [chat.openai.com](https://chat.openai.com) as normal & Infinity toggle is added to sidebar!
 
@@ -109,22 +109,22 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 
 ChatGPT Infinity is compatible w/ the following browsers:
 
-- **Google Chrome** (via [Chrome extension](https://chatgptinfinity.com/chrome) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **Google Chrome** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
 - **Mozilla Firefox** (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Microsoft Edge** (via [Edge add-on](https://chatgptinfinity.com/edge) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Opera** (via [Chrome extension](https://chatgptinfinity.com/chrome) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Brave** (via [Chrome extension](https://chatgptinfinity.com/chrome) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Vivaldi** (via [Chrome extension](https://chatgptinfinity.com/chrome) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **Microsoft Edge** (via [Edge add-on](https://edge.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **Opera** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **Brave** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **Vivaldi** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
 - **LibreWolf** (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Ghost** (via [Chrome extension](https://chatgptinfinity.com/chrome) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **QQ** (via [Chrome extension](https://chatgptinfinity.com/chrome) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **Ghost** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **QQ** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
 
 <div align="center">
 
-<a href="https://chatgptinfinity.com/chrome">
+<a href="https://chrome.chatgptinfinity.com">
     <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-chrome-button.png">
 </a>
-<a href="https://chatgptinfinity.com/edge">
+<a href="https://edge.chatgptinfinity.com">
     <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-edge-button.png">
 </a>
 <a href="https://chatgptinfinity.com/greasyfork">
