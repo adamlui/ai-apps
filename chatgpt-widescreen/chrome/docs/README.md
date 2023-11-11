@@ -14,7 +14,7 @@
  
 <br>
 
-<a href="https://chatgptwidescreen.com/chrome"><img height=70 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a>
+<a href="https://chrome.chatgptwidescreen.com"><img height=70 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
 [Review](https://chrome.google.com/webstore/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm) / 
@@ -62,7 +62,7 @@
 
 ## 🚀 Installation
 
-1. Install [ChatGPT Widescreen Mode](https://chatgptwidescreen.com/chrome) Chrome extension
+1. Install [ChatGPT Widescreen Mode](https://chrome.chatgptwidescreen.com) Chrome extension
 
 2. Visit [chat.openai.com](https://chat.openai.com) as normal & mode toggles are added to chatbar!
 
@@ -104,7 +104,7 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 
 ## 🌐 Compatibility
 
-ChatGPT Widescreen Mode is also available as an [Edge add-on](https://chatgptwidescreen.com/edge) and a [Greasemonkey userscript](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode) (via [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/)).
+ChatGPT Widescreen Mode is also available as an [Edge add-on](https://edge.chatgptwidescreen.com) and a [Greasemonkey userscript](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode) (via [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/)).
 
 The userscript is compatible w/ the following browsers:
 
@@ -121,7 +121,7 @@ The userscript is compatible w/ the following browsers:
 
 <div align="center">
 
-<a href="https://chatgptwidescreen.com/chrome"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a><a href="https://chatgptwidescreen.com/edge">
+<a href="https://chrome.chatgptwidescreen.com"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a><a href="https://edge.chatgptwidescreen.com">
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
 [Review](https://chrome.google.com/webstore/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm) / 

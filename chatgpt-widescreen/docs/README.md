@@ -19,10 +19,10 @@
 
 <br>
 
-<a href="https://chatgptwidescreen.com/chrome" target="_blank">
+<a href="https://chrome.chatgptwidescreen.com" target="_blank">
     <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png">
 </a>
-<a href="https://chatgptwidescreen.com/edge" target="_blank">
+<a href="https://edge.chatgptwidescreen.com" target="_blank">
     <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png">
 </a>
 <a href="https://chatgptwidescreen.com/greasyfork" target="_blank">
@@ -73,7 +73,7 @@
 
 ### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"><img style="margin: 0 2px -1px 0" height=16 src="https://i.imgur.com/0wUsChU.png"> Browser extension:
 
-1. Install ChatGPT Widescreen Mode extension ([Chrome](https://chatgptwidescreen.com/chrome), [Edge](https://chatgptwidescreen.com/edge))
+1. Install ChatGPT Widescreen Mode extension ([Chrome](https://chrome.chatgptwidescreen.com), [Edge](https://edge.chatgptwidescreen.com))
 
 2. Visit [chat.openai.com](https://chat.openai.com) as normal & mode toggles are added to chatbar!
 
@@ -131,24 +131,24 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 
 ChatGPT Widescreen Mode is compatible w/ the following browsers:
 
-- **Google Chrome** (via [Chrome extension](https://chatgptwidescreen.com/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Google Chrome** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 - **Mozilla Firefox** (via [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **Microsoft Edge** (via [Edge add-on](https://chatgptwidescreen.com/edge) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **Opera** (via [Chrome extension](https://chatgptwidescreen.com/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **Brave** (via [Chrome extension](https://chatgptwidescreen.com/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **Vivaldi** (via [Chrome extension](https://chatgptwidescreen.com/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Microsoft Edge** (via [Edge add-on](https://edge.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Opera** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Brave** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Vivaldi** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 - **LibreWolf** (via [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **Ghost** (via [Chrome extension](https://chatgptwidescreen.com/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **QQ** (via [Chrome extension](https://chatgptwidescreen.com/chrome) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **Ghost** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **QQ** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 
 <div align="center">
 
 <br>
 
-<a href="https://chatgptwidescreen.com/chrome">
+<a href="https://chrome.chatgptwidescreen.com">
     <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png">
 </a>
-<a href="https://chatgptwidescreen.com/edge">
+<a href="https://edge.chatgptwidescreen.com">
     <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-edge-button.png">
 </a>
 <a href="https://chatgptwidescreen.com/greasyfork">
