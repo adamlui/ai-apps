@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.11.4
+// @version             2023.11.11.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -313,7 +313,7 @@
         GM.xmlHttpRequest({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: response => {
+            onload: response => { const updateAlertWidth = 489
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
@@ -334,7 +334,8 @@
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
-                                ).onclose = () => location.reload() }
+                                ).onclose = () => location.reload() },
+                            '', updateAlertWidth
                         )
 
                         // Localize button labels if needed
@@ -349,7 +350,8 @@
 
                 // Alert to no update found, nav back
                 alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
-                        `BraveGPT (v${ currentVer }) ${ messages.alert_isUpToDate || 'is up-to-date' }!`) // msg
+                    `BraveGPT (v${ currentVer }) ${ messages.alert_isUpToDate || 'is up-to-date' }!`, // msg
+                        '', '', updateAlertWidth)
                 launchAboutModal()
     }})}
 
