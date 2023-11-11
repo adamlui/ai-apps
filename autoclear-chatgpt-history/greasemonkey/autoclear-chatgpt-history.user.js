@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.11.2
+// @version             2023.11.11.3
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -513,7 +513,7 @@
         GM.xmlHttpRequest({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: response => {
+            onload: response => { const updateAlertWidth = 377
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
@@ -525,7 +525,7 @@
 
                         // Alert to update
                         const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
-                            ( messages.alert_newerVer || 'An update to' ) + ' '
+                            ( messages.alert_newerVer || 'An update to' ) + ' ' // msg
                                 + ( messages.appName || 'Autoclear ChatGPT History' ) + ' '
                                 + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
@@ -535,7 +535,8 @@
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
-                                ).onclose = () => location.reload() }
+                                ).onclose = () => location.reload() },
+                            '', updateAlertWidth
                         )
 
                         // Localize button labels if needed
@@ -552,7 +553,8 @@
                 // Alert to no update, return to About alert
                 alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
                     `${ messages.appName || 'Autoclear ChatGPT History' } (v${ currentVer }) ` // msg
-                    + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!'
+                        + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!',
+                    '', '', updateAlertWidth
                 )
                 launchAboutModal()
     }})}
