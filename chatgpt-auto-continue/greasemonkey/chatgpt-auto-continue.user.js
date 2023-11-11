@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.11
+// @version             2023.11.11.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -381,7 +381,7 @@
         GM.xmlHttpRequest({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: response => {
+            onload: response => { const updateAlertWidth = 377
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
@@ -403,7 +403,8 @@
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
-                                ).onclose = () => location.reload() }
+                                ).onclose = () => location.reload() },
+                            '', updateAlertWidth
                         )
 
                         // Localize button labels if needed
@@ -420,7 +421,8 @@
                 // Alert to no update, return to About alert
                 alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
                     `${ messages.appName || 'ChatGPT Widescreen Mode' } (v${ currentVer }) ` // msg
-                        + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!'
+                        + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!',
+                    '', '', updateAlertWidth
                 )
                 launchAboutModal()
     }})}
