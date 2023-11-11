@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.11.1
+// @version             2023.11.11.2
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -527,7 +527,7 @@
                         const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             ( messages.alert_newerVer || 'An update to' ) + ' '
                                 + ( messages.appName || 'Autoclear ChatGPT History' ) + ' '
-                                + `(v ${ latsetVer }) ${ messages.alert_isAvail || 'is available' }!   `
+                                + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
