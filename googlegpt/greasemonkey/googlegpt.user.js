@@ -145,15 +145,15 @@
 // @description:yi      צוגעפיגט אַנטוואָרטן פון טשאַטגפּט אין גוגל זוכן זייַטבאַר (געשטיצט דורכן גפּט-4!)
 // @description:yo      Fi awọn iwe itumọ ChatGPT si abala iwoye Google (ṣiṣe ni GPT-4!)
 // @description:za      Ngozv yi ChatGPT nv nqgozv ya Google Search (dqvliuzgozv ngel GPT-4!)
-// @description:zh      将 ChatGPT 答案添加到 Google 侧边栏 (由 GPT-4 提供支持!)
-// @description:zh-CN   将 ChatGPT 答案添加到 Google 侧边栏 (由 GPT-4 提供支持!)
-// @description:zh-HK   將 ChatGPT 答案添加到 Google 側邊欄 (由 GPT-4 提供支持!)
-// @description:zh-SG   将 ChatGPT 答案添加到 Google 侧边栏 (由 GPT-4 提供支持!)
-// @description:zh-TW   將 ChatGPT 答案添加到 Google 側邊欄 (由 GPT-4 提供支持!)
+// @description:zh      将 ChatGPT 答案添加到 Google 侧边栏 （由 GPT-4 提供支持，无需注册！）
+// @description:zh-CN   将 ChatGPT 答案添加到 Google 侧边栏 （由 GPT-4 提供支持，无需注册！）
+// @description:zh-HK   將 ChatGPT 答案添加到 Google 側邊欄 （由 GPT-4 提供支持，無需註冊！）
+// @description:zh-SG   将 ChatGPT 答案添加到 Google 侧边栏 （由 GPT-4 提供支持，无需注册！）
+// @description:zh-TW   將 ChatGPT 答案添加到 Google 側邊欄 （由 GPT-4 提供支持，無需註冊！）
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.10.2
+// @version             2023.11.10.3
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
