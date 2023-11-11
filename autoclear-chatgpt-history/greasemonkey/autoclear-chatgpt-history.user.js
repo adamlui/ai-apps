@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.11
+// @version             2023.11.11.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -387,9 +387,9 @@
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         if (config.autoclear) {
             setTimeout(chatgpt.clearChats, 250)
-            if (!config.notifHidden) notify(messages.mode_autoClear + ': ON')
+            if (!config.notifHidden) notify(( messages.mode_autoClear || 'Auto-Clear' ) + ': ON')
         } else if (!config.autoclear)
-            if (!config.notifHidden) notify(messages.mode_autoClear + ': OFF')
+            if (!config.notifHidden) notify(( messages.mode_autoClear || 'Auto-Clear' ) + ': OFF')
         saveSetting('autoclear', config.autoclear)
     })
 
@@ -407,7 +407,7 @@
             if (isGizmoUI) await chatHistoryIsLoaded()
             setTimeout(() => { chatgpt.clearChats() }, 250)
         }
-        if (!config.notifHidden) notify(messages.mode_autoClear + ': ON')
+        if (!config.notifHidden) notify(( messages.mode_autoClear || 'Auto-Clear' ) + ': ON')
     }
 
     // Define SCRIPT functions
@@ -423,34 +423,38 @@
         menuIDs = [] // empty to store newly registered cmds for removal while preserving order
 
         // Add command to toggle auto-clear
-        const acLabel = state.symbol[+!config.autoclear] + ' ' + messages.menuLabel_autoClear
+        const acLabel = state.symbol[+!config.autoclear] + ' '
+                      + ( messages.menuLabel_autoClear || 'Autoclear Chats' )
                       + state.separator + state.word[+!config.autoclear]
         menuIDs.push(GM_registerMenuCommand(acLabel, () => {
             document.querySelector('#acToggleLabel').click()
         }))
 
         // Add 'Toggle Visibility' command
-        const tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
+        const tvLabel = state.symbol[+config.toggleHidden] + ' '
+                      + ( messages.menuLabel_toggleVis || 'Toggle Visibility' )
                       + state.separator + state.word[+config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden) {
-                notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
+                notify(( messages.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+config.toggleHidden])
             } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when changing settings/modes
-        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
+        const mnLabel = state.symbol[+config.notifHidden] + ' '
+                      + ( messages.menuLabel_modeNotifs || 'Mode Notifications' )
                       + state.separator + state.word[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifHidden', !config.notifHidden)
-            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
+            notify(( messages.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + state.word[+config.notifHidden])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to launch About modal
-        const amLabel = `💡 ${ messages.menuLabel_about } ${ messages.appName }`
+        const amLabel = '💡 ' + ( messages.menuLabel_about || 'About' ) + ' '
+                      + ( messages.appName || 'Autoclear ChatGPT History' )
         menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
     }
 
@@ -465,20 +469,20 @@
 
         // Show alert
         const aboutAlertID = alert(
-            messages.appName, // title
-            `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
+            messages.appName || 'Autoclear ChatGPT History', // title
+            `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-            + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
+            + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy || 'Powered by' }</i></b>: </span>`
                 + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                 + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-            + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
+            + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode || 'Source code' }</i></b>:</span>\n`
                 + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                 + config.gitHubURL + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
                 function getSupport() { safeWindowOpen(config.supportURL) },
                 function leaveAReview() { // show review modal
-                    const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
+                    const reviewAlertID = chatgpt.alert(( messages.alert_choosePlatform || 'Choose a platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                           function futurepedia() { safeWindowOpen(
                               'https://www.futurepedia.io/tool/autoclear-chatgpt-history#autoclear-chatgpt-history-review') }])
@@ -490,10 +494,14 @@
 
         // Re-format buttons to include emoji + localized label + hide Dismiss button
         for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-            if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-            else if (/support/i.test(button.textContent)) button.textContent = '🧠 ' + messages.buttonLabel_getSupport
-            else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
-            else if (/apps/i.test(button.textContent)) button.textContent = '🤖 ' + messages.buttonLabel_moreApps
+            if (/updates/i.test(button.textContent)) button.textContent = (
+                '🚀 ' + ( messages.buttonLabel_updateCheck || 'Check for Updates' ))
+            else if (/support/i.test(button.textContent)) button.textContent = (
+                '🧠 ' + ( messages.buttonLabel_getSupport || 'Get Support' ))
+            else if (/review/i.test(button.textContent)) button.textContent = (
+                '⭐ ' + ( messages.buttonLabel_leaveReview || 'Leave a Review' ))
+            else if (/apps/i.test(button.textContent)) button.textContent = (
+                '🤖 ' + ( messages.buttonLabel_moreApps || 'More ChatGPT Apps' ))
             else button.style.display = 'none' // hide Dismiss button
         }
     }
@@ -516,12 +524,14 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateAlertID = alert(messages.alert_updateAvail + '! 🚀', // title
-                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
+                        const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                            ( messages.alert_newerVer || 'An update to' ) + ' '
+                                + ( messages.appName || 'Autoclear ChatGPT History' ) + ' '
+                                + `(v ${ latsetVer }) ${ messages.alert_isAvail || 'is available' }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + `> ${ messages.link_viewChanges }</a>`,
+                                    + `> ${ messages.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
@@ -532,16 +542,17 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
                                   updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss
+                            updateButtons[1].textContent = messages.buttonLabel_update || 'Update'
+                            updateButtons[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
                         }
 
                         return
                 }}
 
                 // Alert to no update, return to About alert
-                alert(messages.alert_upToDate + '!', // title
-                    `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!` // msg
+                alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
+                    `${ messages.appName || 'Autoclear ChatGPT History' } (v${ currentVer }) ` // msg
+                    + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!'
                 )
                 launchAboutModal()
     }})}
