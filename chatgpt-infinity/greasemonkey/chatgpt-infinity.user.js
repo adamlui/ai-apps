@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.10.2
+// @version             2023.11.11
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -279,10 +279,11 @@
         separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
     let menuIDs = []
     setTimeout(() => {
-      if (document.documentElement.getAttribute('cif-extension-installed')) { // if extension installed, disable script/menu
-          GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return })
-          return // exit script
-      } else registerMenu() // create functional menu
+        if (document.documentElement.getAttribute('cif-extension-installed')) { // if extension installed, disable script/menu
+            GM_registerMenuCommand(state.symbol[1] + ' ' + ( messages.menuLabel_disabled || 'Disabled (extension installed)' ),
+                () => { return }) // disable menu
+            return // exit script
+        } else registerMenu() // create functional menu
     }, 5) // add trivial delay for Chrome extension load to beat VM
 
     // Add listener to auto-disable Infinity Mode
@@ -399,64 +400,73 @@
         menuIDs = [] // empty to store newly registered cmds for removal while preserving order
 
         // Add command to toggle Infinity Mode
-        const imLabel = state.symbol[+!config.infinityMode] + ' ' + messages.menuLabel_infinityMode + ' ∞ '
+        const imLabel = state.symbol[+!config.infinityMode] + ' '
+                      + ( messages.menuLabel_infinityMode || 'Infinity Mode' ) + ' ∞ '
                       + state.separator + state.word[+!config.infinityMode]
         menuIDs.push(GM_registerMenuCommand(imLabel, () => {
             document.querySelector('#infToggleLabel').click()
         }))
 
         // Add command to toggle visibility of toggle
-        const tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
+        const tvLabel = state.symbol[+config.toggleHidden] + ' '
+                      + ( messages.menuLabel_toggleVis || 'Toggle Visibility' )
                       + state.separator + state.word[+config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
+            notify(( messages.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+config.toggleHidden])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle auto-scroll
-        const asLabel = state.symbol[+config.autoScrollDisabled] + ' ' + messages.menuLabel_autoScroll
+        const asLabel = state.symbol[+config.autoScrollDisabled] + ' '
+                      + ( messages.menuLabel_autoScroll || 'Auto-Scroll' )
                       + state.separator + state.word[+config.autoScrollDisabled]
         menuIDs.push(GM_registerMenuCommand(asLabel, () => {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
-            notify(messages.menuLabel_autoScroll + ': '+ state.word[+config.autoScrollDisabled])
+            notify(( messages.menuLabel_autoScroll || 'Auto-Scroll' ) + ': '+ state.word[+config.autoScrollDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to set reply language
-        const rlLabel = '🌐 ' + messages.menuLabel_replyLang + state.separator + config.replyLanguage
+        const rlLabel = '🌐 ' + ( messages.menuLabel_replyLang || 'Reply Language' )
+                      + state.separator + config.replyLanguage
         menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
             while (true) {
-                const replyLanguage = prompt(`${ messages.prompt_updateReplyLang }:`, config.replyLanguage)
+                const replyLanguage = prompt(
+                    `${ messages.prompt_updateReplyLang || 'Update reply language' }:`, config.replyLanguage)
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                    alert(messages.alert_replyLangUpdated + '!',
-                        messages.appName + ' ' + messages.alert_willReplyIn + ' '
-                        + ( replyLanguage || messages.alert_yourSysLang ) + '.')
+                    alert(( messages.alert_replyLangUpdated || 'Language updated' ) + '!', // title
+                        ( messages.appName || 'ChatGPT Infinity' ) + ' ' // msg
+                            + ( messages.alert_willReplyIn || 'will reply in' ) + ' '
+                            + ( replyLanguage || messages.alert_yourSysLang || 'your system language') + '.')
                     if (config.infinityMode) restartInNewChat() // using new reply language                        
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
 
         // Add command to set reply topic
-        const re_all = new RegExp('^(' + messages.menuLabel_all + '|all|any|every)$', 'i'),
-              rtLabel = '🧠 ' + messages.menuLabel_replyTopic + state.separator
-                      + ( re_all.test(config.replyTopic) ? messages.menuLabel_all
+        const re_all = new RegExp('^(' + ( messages.menuLabel_all || 'all' ) + '|all|any|every)$', 'i'),
+              rtLabel = '🧠 ' + ( messages.menuLabel_replyTopic || 'Reply Topic' ) + state.separator
+                      + ( re_all.test(config.replyTopic) ? ( messages.menuLabel_all || 'all' )
                                                          : toTitleCase(config.replyTopic) )
         menuIDs.push(GM_registerMenuCommand(rtLabel, () => {
             while (true) {
-                const replyTopic = prompt(messages.prompt_updateReplyTopic
-                                 + ' (' + messages.prompt_orEnter + ' \'ALL\'):', config.replyTopic)
+                const replyTopic = prompt(( messages.prompt_updateReplyTopic || 'Update reply topic' )
+                                 + ' (' + ( messages.prompt_orEnter || 'or enter' ) + ' \'ALL\'):', config.replyTopic)
                 if (replyTopic === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyTopic)) {
                     saveSetting('replyTopic', !replyTopic || re_all.test(replyTopic) ? 'ALL' : replyTopic)
-                    alert(messages.alert_replyTopicUpdated + '!',
-                        messages.appName + ' ' + messages.alert_willAnswer + ' '
-                            + ( !replyTopic || re_all.test(replyTopic) ? messages.alert_onAllTopics
-                                                                       : messages.alert_onTopicOf + ' ' + replyTopic )
-                            + '!')
+                    alert(( messages.alert_replyTopicUpdated || 'Topic updated' ) + '!',
+                        ( messages.appName || 'ChatGPT Infinity' ) + ' '
+                            + ( messages.alert_willAnswer || 'will answer questions' ) + ' '
+                            + ( !replyTopic || re_all.test(replyTopic)
+                                  ? messages.alert_onAllTopics || 'on ALL topics'
+                                  : (( messages.alert_onTopicOf || 'on the topic of' ) + ' ' + replyTopic ))
+                            + '!'
+                    )
                     if (config.infinityMode) { // restart session using new reply topic
                         chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
                         setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) } // toggle on
@@ -465,23 +475,26 @@
         }}}))
 
         // Add command to change reply interval
-        const riLabel = '⌚ ' + messages.menuLabel_replyInt + state.separator + config.replyInterval + 's'
+        const riLabel = '⌚ ' + ( messages.menuLabel_replyInt || 'Reply Interval' )
+                      + state.separator + config.replyInterval + 's'
         menuIDs.push(GM_registerMenuCommand(riLabel, async () => {
             while (true) {
-                const replyInterval = prompt(`${ messages.prompt_updateReplyInt }:`, config.replyInterval)
+                const replyInterval = prompt(
+                    `${ messages.prompt_updateReplyInt || 'Update reply interval (minimum 5 secs)' }:`, config.replyInterval)
                 if (replyInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
                     saveSetting('replyInterval', parseInt(replyInterval))
-                    alert(messages.alert_replyIntUpdated + '!',
-                        messages.appName + ' ' + messages.alert_willReplyEvery + ' '
-                         + replyInterval + ' ' + messages.unit_seconds + '.')
+                    alert(( messages.alert_replyIntUpdated || 'Interval updated' ) + '!', // title
+                        ( messages.appName || 'ChatGPT Infinity' ) + ' ' // msg
+                            + ( messages.alert_willReplyEvery || 'will reply every' ) + ' '
+                            + replyInterval + ' ' + ( messages.unit_seconds || 'seconds' ) + '.')
                     if (config.infinityMode) resetInSameChat() // using new reply interval                    
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
 
         // Add command to launch About modal
-        const aboutLabel = `💡 ${ messages.menuLabel_about } ${ messages.appName }`
+        const aboutLabel = `💡 ${ messages.menuLabel_about || 'About' } ${ messages.appName || 'ChatGPT Infinity' }`
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
 
@@ -494,20 +507,20 @@
               pBrStyle = 'position: relative ; left: 4px ',
               aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
         const aboutAlertID = alert(
-            messages.appName, // title
-            `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
+            messages.appName || 'ChatGPT Infinity', // title
+            `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-            + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
+            + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy || 'Powered by' }</i></b>: </span>`
                 + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                 + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-            + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
+            + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode || 'Source code' }</i></b>:</span>\n`
                 + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                 + config.gitHubURL + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
                 function getSupport() { safeWindowOpen(config.supportURL) },
                 function leaveAReview() { // show new modal
-                    const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
+                    const reviewAlertID = chatgpt.alert(( messages.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                           function productHunt() { safeWindowOpen(
                               'https://www.producthunt.com/products/chatgpt-infinity/reviews/new') },
@@ -521,17 +534,17 @@
             ], '', 478 // set width
         )
 
-        // Re-format buttons to include emojis + re-case + hide dismiss button
+        // Re-format buttons to include emoji + localized label + hide Dismiss button
         for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-            if (/updates/i.test(button.textContent))
-                button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-            else if (/support/i.test(button.textContent))
-                button.textContent = '🧠 ' + messages.buttonLabel_getSupport
-            else if (/review/i.test(button.textContent))
-                button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
-            else if (/apps/i.test(button.textContent))
-                button.textContent = '🤖 ' + messages.buttonLabel_moreApps
-            else button.style.display = 'none' // hide dismiss button
+            if (/updates/i.test(button.textContent)) button.textContent = (
+                '🚀 ' + ( messages.buttonLabel_updateCheck || 'Check for Updates' ))
+            else if (/support/i.test(button.textContent)) button.textContent = (
+                '🧠 ' + ( messages.buttonLabel_getSupport || 'Get Support' ))
+            else if (/review/i.test(button.textContent)) button.textContent = (
+                '⭐ ' + ( messages.buttonLabel_leaveReview || 'Leave a Review' ))
+            else if (/apps/i.test(button.textContent)) button.textContent = (
+                '🤖 ' + ( messages.buttonLabel_moreApps || 'More ChatGPT Apps' ))
+            else button.style.display = 'none' // hide Dismiss button
         }
     }
 
@@ -553,12 +566,14 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateAlertID = alert(`${ messages.alert_updateAvail }! 🚀`, // title
-                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
+                        const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                            ( messages.alert_newerVer || 'An update to' ) + ' '
+                                + ( messages.appName || 'ChatGPT Infinity' ) + ' '
+                                + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + '>' + messages.link_viewChanges + '</a>',
+                                    + `> ${ messages.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
@@ -569,15 +584,18 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
                                   updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss
+                            updateButtons[1].textContent = messages.buttonLabel_update || 'Update'
+                            updateButtons[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
                         }
+
                         return
                 }}
 
-                // Alert to no update found, nav back
-                alert(`${ messages.alert_upToDate }!`, // title
-                        `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
+                // Alert to no update, return to About alert
+                alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
+                    `${ messages.appName || 'ChatGPT Infinity' } (v${ currentVer }) ` // msg
+                    + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!'
+                )
                 launchAboutModal()
     }})}
 
@@ -637,8 +655,9 @@
         // Create elements
         const navicon = document.createElement('img'),
               label = document.createElement('label'),
-              labelText = document.createTextNode(messages.menuLabel_infinityMode + ' '
-                  + ( messages['state_' + ( config.infinityMode ? 'enabled' : 'disabled' )])),
+              labelText = document.createTextNode(( messages.menuLabel_infinityMode || 'Infinity Mode' ) + ' '
+                  + ( config.infinityMode ? ( messages.state_enabled || 'enabled' )
+                                        : ( messages.state_disabled || 'disabled' ))),
               input = document.createElement('input'),
               span = document.createElement('span')
         navicon.src = config.assetHostURL + 'media/images/icons/infinity-symbol/white/icon64.png'
@@ -669,7 +688,7 @@
     const infinityMode = {
 
         activate: async () => {
-            notify(messages.menuLabel_infinityMode + ': ON')
+            notify(( messages.menuLabel_infinityMode || 'Infinity Mode' ) + ': ON')
             try { chatgpt.startNewChat() } catch (error) { return }
             setTimeout(() => {
                 chatgpt.send('Generate a single random question'
@@ -693,7 +712,7 @@
         deactivate: () => {
             chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
             document.querySelector('#infToggleInput').checked = false // for window listener
-            notify(messages.menuLabel_infinityMode + ': OFF')
+            notify(( messages.menuLabel_infinityMode || 'Infinity Mode' ) + ': OFF')
             config.infinityMode = false // in case toggled by PV listener
         },
 
