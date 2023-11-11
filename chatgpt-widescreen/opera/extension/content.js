@@ -10,7 +10,7 @@
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
     // Add Chrome action msg listener
-    chrome.runtime.onMessage.addListener((request) => {
+    chrome.runtime.onMessage.addListener(request => {
         if (request.action === 'notify') notify(request.msg, request.position)
         else if (request.action === 'alert') alert(request.title, request.msg, request.btns)
         else if (typeof window[request.action] === 'function') {
@@ -29,7 +29,14 @@
     if (!['openai', 'poe'].includes(site)) return
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
-    if (site == 'openai') await chatgpt.isLoaded()
+    // Wait for OpenAI site load + determine UI for style selectors/tweaks
+    let isGizmoUI
+    if (site == 'openai') {
+        await chatgpt.isLoaded() ; isGizmoUI = chatgpt.isGizmoUI() }
+
+    // Define UI element selectors
+    const headerSelector = isGizmoUI ? 'main .sticky' : 'header',
+          footerSelector = isGizmoUI ? 'main form ~ div' : 'div[class*="bottom"] > div'
 
     // Save full-window + full screen states
     config.fullWindow = site == 'openai' ? chatgpt.sidebar.isOff() : settings.load('fullWindow')
@@ -61,10 +68,10 @@
     // Create/apply general style tweaks
     const tweaksStyle = document.createElement('style'),
           tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
-          hhStyle = 'header { display: none !important }', // hide header
-          hfStyle = 'div[class*="bottom"] > div { padding: .1rem 0 0 }' // reduce footer v-padding
-                  + 'div[class*="bottom"] > div > span,' // hide footer text...
-                      + ' div[class*="bottom"] button[id*="menu-button"] { display: none }' // ...and help button
+          hhStyle = headerSelector + '{ display: none !important }', // hide header
+          hfStyle = footerSelector + '{ color: transparent !important ;' // hide footer text
+                                   + '  padding: .1rem 0 0 !important }' //reduce v-padding
+
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create widescreen style
@@ -87,7 +94,7 @@
           rOffset = 2.57, bOffset = 1.77
     let buttonColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
-        ((buttonType) => { // enclose in IIFE to separately capture button type for async listeners
+        (buttonType => { // enclose in IIFE to separately capture button type for async listeners
             const buttonName = buttonType + 'Button'
             window[buttonName] = document.createElement('div') // create button
             window[buttonName].id = buttonType + '-button' // for toggleTooltip()
@@ -98,13 +105,21 @@
                 window[buttonName].setAttribute('class', sendButtonClasses)
             else if (site == 'poe') // lift buttons slightly
                 window[buttonName].style.cssText += '; margin-bottom: 0.2rem '
-            window[buttonName].addEventListener('click', () => { // add click listeners
+            if (isGizmoUI) { // style tweaks for OpenAI Gizmo UI
+                window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
+                window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
+                window[buttonName].style.bottom = '0.91rem' // nudge up for flushness w/ send button
+            }
+
+            // Add click/hover listeners
+            window[buttonName].addEventListener('click', () => {
                 if (buttonType === 'newChat') {
                     if (site == 'openai') chatgpt.startNewChat()
                     else if (site == 'poe') document.querySelector('header a[class*="button"]').click()
                 } else toggleMode(buttonType) })
             window[buttonName].addEventListener('mouseover', toggleTooltip)
             window[buttonName].addEventListener('mouseout', toggleTooltip)
+
         })(buttonTypes[i])
     } settings.load('extensionDisabled').then(() => {
         if (!config.extensionDisabled) insertBtns()
@@ -168,7 +183,7 @@
                 if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
                 else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     }})})
-    window.addEventListener('keydown', (event) => { // set F11 flag for toggleMode() disabled warning
+    window.addEventListener('keydown', event => { // set F11 flag for toggleMode() disabled warning
         if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true
     })
 
@@ -178,7 +193,7 @@
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
             shadow || chatgpt.isDarkMode() ? '' : 'shadow' )}
 
-    alertToUpdate = (version) => { // eslint-disable-line no-undef
+    alertToUpdate = version => { // eslint-disable-line no-undef
         if (version) {
             alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
                 chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')

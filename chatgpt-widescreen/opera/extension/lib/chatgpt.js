@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.3.18
+// This library is a condensed version of chatgpt.js v2.4.0
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -11,7 +11,7 @@ localStorage.alertQueue = JSON.stringify([]);
 localStorage.notifyProps = JSON.stringify({
     queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
 
-// Init GM environment flags
+// Init environment flags & functions
 const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
       isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
       isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
@@ -265,11 +265,17 @@ const chatgpt = {
 
     history: {
         isOn: function() {
-            for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (/clear chat/i.test(navLink.text)) return false;
-            } return true;
+            if (chatgpt.isGizmoUI()) {
+                const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
+                offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
+                return offDiv.classList.toString().includes('invisible');
+            } else {
+                for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+                    if (/clear chat/i.test(navLink.text)) return false;
+                } return true;
+            }
         },
-        isOff: function() { return !this.isOn(); }
+        isOff: function() { return !this.isOn(); },
     },
 
     isDarkMode: function() {
@@ -283,6 +289,8 @@ const chatgpt = {
              : userAgentStr.includes('Firefox') ? window.fullScreen
              : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
     },
+
+    isGizmoUI: function () { return document.documentElement.classList.toString().includes('gizmo'); },
 
     isLoaded: function() {
         return new Promise(resolve => {
@@ -472,15 +480,24 @@ const chatgpt = {
     },
 
     sidebar: {
-        isOn: function() { return !document.querySelector('button[aria-label*="Open sidebar"]'); },
-        isOff: function() { return !!document.querySelector('button[aria-label*="Open sidebar"]'); },
         hide: function() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
         show: function() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
+        isOff: function() { return !this.isOn(); },
+        isOn: function() {
+            return chatgpt.isGizmoUI()
+              ? document.querySelector('#__next > div > div').style.visibility != 'hidden'
+              : !document.querySelector('button[aria-label*="Open sidebar"]');
+        },
+
         toggle: function() {
-            for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                if (/close sidebar/i.test(navLink.text)) {
-                    navLink.click(); return;
-        }}}
+            const isGizmoUI = chatgpt.isGizmoUI(),
+                  navBtnSelector = isGizmoUI ? 'main button' : 'nav[aria-label="Chat history"] a',
+                  isToggleBtn = isGizmoUI
+                    ? btn => Array.from(btn.querySelectorAll('*')).some(child => child.style.transform.includes('translateY'))
+                    : btn => /close sidebar/i.test(btn.text);
+            for (const btn of document.querySelectorAll(navBtnSelector))
+                if (isToggleBtn(btn)) { btn.click(); return; }
+        }
     },
 
     startNewChat: function() {
