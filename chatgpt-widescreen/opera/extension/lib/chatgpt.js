@@ -275,7 +275,8 @@ const chatgpt = {
                 } return true;
             }
         },
-        isOff: function() { return !this.isOn(); },
+
+        isOff: function() { return !this.isOn(); }
     },
 
     isDarkMode: function() {
