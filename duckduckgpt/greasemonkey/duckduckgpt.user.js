@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.11
+// @version             2023.11.11.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -210,19 +210,19 @@
             separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
 
         // Add command to toggle proxy API mode
-        const pamLabel = state.symbol[+!config.proxyAPIenabled]
-                       + ' ' + messages.menuLabel_proxyAPImode + ' '
+        const pamLabel = state.symbol[+!config.proxyAPIenabled] + ' '
+                       + ( messages.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
                        + state.separator + state.word[+!config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, () => {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(messages.menuLabel_proxyAPImode + ' ' + state.word[+!config.proxyAPIenabled])
+            notify(( messages.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+!config.proxyAPIenabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             location.reload() // re-send query using new endpoint
         }))
 
         // Add command to toggle showing related queries
         const rqLabel = state.symbol[+config.relatedQueriesDisabled] + ' '
-                      + messages.menuLabel_relatedQueries + ' '
+                      + ( messages.menuLabel_relatedQueries || 'Related Queries' ) + ' '
                       + state.separator + state.word[+config.relatedQueriesDisabled]
         menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
             saveSetting('relatedQueriesDisabled', !config.relatedQueriesDisabled)
@@ -230,70 +230,71 @@
                 const relatedQueriesDiv = document.querySelector('.related-queries')
                 relatedQueriesDiv.style.display = config.relatedQueriesDisabled ? 'none' : 'flex'
             } catch (err) {}
-            notify(messages.menuLabel_relatedQueries + ' ' + state.word[+config.relatedQueriesDisabled])
+            notify(( messages.menuLabel_relatedQueries || 'Related Queries' ) + ' '
+                + state.word[+config.relatedQueriesDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle prefix mode
         const pmLabel = state.symbol[+!config.prefixEnabled] + ' '
-                      + messages.menuLabel_require + ' "/" '
-                      + messages.menuLabel_beforeQuery + ' '
+                      + ( messages.menuLabel_require || 'Require' ) + ' "/" '
+                      + ( messages.menuLabel_beforeQuery || 'before query' ) + ' '
                       + state.separator + state.word[+!config.prefixEnabled]
         menuIDs.push(GM_registerMenuCommand(pmLabel, () => {
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
-            notify(messages.mode_prefix + ' ' + state.word[+!config.prefixEnabled])
+            notify(( messages.mode_prefix || 'Prefix Mode' ) + ' ' + state.word[+!config.prefixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
 
         // Add command to toggle suffix mode
         const smLabel = state.symbol[+!config.suffixEnabled] + ' '
-                      + messages.menuLabel_require + ' "?" '
-                      + messages.menuLabel_afterQuery + ' '
+                      + ( messages.menuLabel_require || 'Require' ) + ' "?" '
+                      + ( messages.menuLabel_afterQuery || 'after query' ) + ' '
                       + state.separator + state.word[+!config.suffixEnabled]
         menuIDs.push(GM_registerMenuCommand(smLabel, () => {
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify(messages.mode_suffix + ' ' + state.word[+!config.suffixEnabled])
+            notify(( messages.mode_suffix || 'Suffix Mode' ) + ' ' + state.word[+!config.suffixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
         // Add command to toggle fatter sidebar
         const fsbLabel = ( config.fatterSidebar ? '🔛' : '↔️' ) + ' '
-                       + messages.menuLabel_fatterSidebar
+                       + ( messages.menuLabel_fatterSidebar || 'Fatter Sidebar' )
                        + state.separator + state.word[+!config.fatterSidebar]
         menuIDs.push(GM_registerMenuCommand(fsbLabel, () => {
             saveSetting('fatterSidebar', !config.fatterSidebar)
             updateTweaksStyle()
             if (!config.notifHidden)
-                notify(messages.menuLabel_fatterSidebar + ' ' + state.word[+!config.fatterSidebar])
+                notify(( messages.menuLabel_fatterSidebar || 'Fatter Sidebar' ) + ' ' + state.word[+!config.fatterSidebar])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to set reply language
-        const rlLabel = '🌐 ' + messages.menuLabel_replyLanguage
+        const rlLabel = '🌐 ' + ( messages.menuLabel_replyLanguage || 'Reply Language' )
                       + state.separator + config.replyLanguage
         menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
             while (true) {
                 const replyLanguage = prompt(
-                    messages.prompt_updateReplyLang + ':', config.replyLanguage)
+                    ( messages.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                    alert(messages.alert_langUpdated + '!', // title
-                        'DuckDuckGPT ' + messages.alert_willReplyIn + ' ' // msg
-                            + ( replyLanguage || messages.alert_yourSysLang ) + '.',
-                         '', '', 330) // width
+                    alert(( messages.alert_langUpdated || 'Language updated' ) + '!', // title
+                        'DuckDuckGPT ' + ( messages.alert_willReplyIn || 'will reply in' ) + ' '
+                            + ( replyLanguage || messages.alert_yourSysLang || 'your system language' ) + '.',
+                        '', '', 330) // width
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
 
         // Add command to launch About modal
-        const aboutLabel = '💡 ' + messages.menuLabel_about + ' DuckDuckGPT'
+        const aboutLabel = '💡 ' + ( messages.menuLabel_about || 'About' ) + ' DuckDuckGPT'
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
 
@@ -303,18 +304,18 @@
         const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
         const aboutAlertID = alert(
             'DuckDuckGPT', // title
-            '🏷️ ' + messages.about_version + ': ' + GM_info.script.version + '\n'
-                + '⚡ ' + messages.about_poweredBy + ': '
+            '🏷️ ' + ( messages.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
+                + '⚡ ' + ( messages.about_poweredBy || 'Powered by' ) + ': '
                     + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                     + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
-                + '📜 ' + messages.about_sourceCode + ':\n '
+                + '📜 ' + ( messages.about_sourceCode || 'Source code' ) + ':\n '
                     + `<a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                         + config.gitHubURL + '</a>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
                 function getSupport() { safeWindowOpen(config.supportURL) },
                 function leaveAReview() {
-                    const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
+                    const reviewAlertID = chatgpt.alert(( messages.alert_choosePlatform || 'Choose a platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(
                               config.greasyForkURL + '/feedback#post-discussion') },
                           function productHunt() { safeWindowOpen(
@@ -331,17 +332,17 @@
                 function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
             ], '', 527) // About modal width
 
-        // Re-format buttons to include emojis + re-case + hide 'Dismiss'
+        // Re-format buttons to include emoji + localized label + hide Dismiss button
         for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-            if (/updates/i.test(button.textContent))
-                button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-            else if (/support/i.test(button.textContent))
-                button.textContent = '🧠 ' + messages.buttonLabel_getSupport
-            else if (/review/i.test(button.textContent))
-                button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
-            else if (/apps/i.test(button.textContent))
-                button.textContent = '🤖 ' + messages.buttonLabel_moreApps
-            else button.style.display = 'none' // hide dismiss button
+            if (/updates/i.test(button.textContent)) button.textContent = (
+                '🚀 ' + ( messages.buttonLabel_updateCheck || 'Check for Updates' ))
+            else if (/support/i.test(button.textContent)) button.textContent = (
+                '🧠 ' + ( messages.buttonLabel_getSupport || 'Get Support' ))
+            else if (/review/i.test(button.textContent)) button.textContent = (
+                '⭐ ' + ( messages.buttonLabel_leaveReview || 'Leave a Review' ))
+            else if (/apps/i.test(button.textContent)) button.textContent = (
+                '🤖 ' + ( messages.buttonLabel_moreApps || 'More ChatGPT Apps' ))
+            else button.style.display = 'none' // hide Dismiss button
         }
     }
 
@@ -352,7 +353,7 @@
         GM.xmlHttpRequest({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: response => {
+            onload: response => { const updateAlertWidth = 409
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
@@ -363,34 +364,35 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateAlertID = alert(messages.alert_updateAvail + '! 🚀', // title
-                            messages.alert_newerVer + ' DuckDuckGPT v' + latestVer + ' '
-                                + messages.alert_isAvail + '!   '
-                                + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
+                        const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                            ( messages.alert_newerVer || 'An update to' ) + ' DuckDuckGPT '
+                                + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }! `
+                                + '<a target="_blank" rel="noopener" style="font-size: 1.1rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + '>' + messages.link_viewChanges + '</a>',
+                                    + `> ${ messages.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
                                 ).onclose = () => location.reload() },
-                            '', 409 // width
+                            '', updateAlertWidth
                         )
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
                                   updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss
+                            updateButtons[1].textContent = messages.buttonLabel_update || 'Update'
+                            updateButtons[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
                         }
 
                         return
                 }}
 
-                // Alert to no update, nav back
-                alert(`${ messages.alert_upToDate }!`, // title
-                        `DuckDuckGPT (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
+                // Alert to no update found, nav back
+                alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
+                    `DuckDuckGPT (v${ currentVer }) ${ messages.alert_isUpToDate || 'is up-to-date' }!`, // msg
+                        '', '', updateAlertWidth)
                 launchAboutModal()
     }})}
 
@@ -416,7 +418,8 @@
                 '<p class="loading">' : '<p>') + ddgptAlerts[msg]
             + (ddgptAlerts[msg].includes('@') ? // if msg needs login link, add it
                 '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
-                    + '(' + messages.alert_ifIssuePersists + ')</p>' : '</p>')
+                    + '(' + ( messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode' )
+                     + ')</p>' : '</p>')
     }
 
     // Define DDG UI functions
@@ -435,7 +438,7 @@
         try {
             const html = new DOMParser().parseFromString(resp, 'text/html'),
                   title = html.querySelector('title')
-            return title.innerText === messages.alert_justAmoment + '...'
+            return title.innerText === ( messages.alert_justAmoment || 'Just a moment' ) + '...'
         } catch (error) { return false }
     }
 
@@ -610,7 +613,7 @@
                     // Fill each child div, add fade + tabindex + listener
                     relatedQueries.forEach((relatedQuery, index) => {
                         const relatedQueryDiv = document.createElement('div')
-                        relatedQueryDiv.title = messages.tooltip_sendRelatedQuery
+                        relatedQueryDiv.title = messages.tooltip_sendRelatedQuery || 'Send related query'
                         relatedQueryDiv.className = 'related-query fade-in'
                         relatedQueryDiv.setAttribute('tabindex', 0)
                         relatedQueryDiv.textContent = relatedQuery
@@ -689,9 +692,11 @@
                         } catch (err) {
                             ddgptConsole.info('Response: ' + event.responseText)
                             if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
-                                ddgptShow(messages.alert_censored)
+                                ddgptShow(messages.alert_censored || 'Sorry, according to our product rules, '
+                                + 'we cannot provide you with an answer to this question, please try other questions')
                             else if (event.responseText.includes('维护'))
-                                ddgptShow(messages.alert_maintenance + '. ' + messages.alert_suggestOpenAI)
+                                ddgptShow(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
+                                + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
                             else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
                                 await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
 
@@ -730,7 +735,7 @@
         const aboutSpan = document.createElement('span'),
               aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
-        aboutSpan.className = 'corner-btn' ; aboutSpan.title = messages.menuLabel_about
+        aboutSpan.className = 'corner-btn' ; aboutSpan.title = messages.menuLabel_about || 'About'
         aboutSVG.setAttribute('width', '17') ; aboutSVG.setAttribute('viewBox', '0 0 56.693 56.693')
         aboutSVGpath.setAttribute('d',
             'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z')
@@ -740,7 +745,7 @@
         // Create/append speak button
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-        speakSpan.className = 'corner-btn' ; speakSpan.title = messages.tooltip_playAnswer
+        speakSpan.className = 'corner-btn' ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
         speakSpan.style.margin = '-0.17em 14px 0px' // fine-tune position
         speakSVG.setAttributeNS(null, 'width', '22') ; speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32')
         const speakSVGpaths = [
@@ -782,7 +787,7 @@
               sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               sendSVGline = document.createElementNS('http://www.w3.org/2000/svg', 'line'),
               sendSVGpolygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon')
-        sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply
+        sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
         sendSVG.setAttribute('viewBox', '0 0 24 24') ; sendSVG.setAttribute('fill', 'none')
         sendSVG.setAttribute('stroke', 'currentColor') ; sendSVG.setAttribute('stroke-width', '2')
         sendSVG.setAttribute('stroke-linecap', 'round') ; sendSVG.setAttribute('stroke-linejoin', 'round')
@@ -954,15 +959,19 @@
 
     // Init alerts
     const ddgptAlerts = {
-        waitingResponse: messages.alert_waitingResponse + '...',
-        login: messages.alert_login + ' @ ',
-        tooManyRequests: messages.alert_tooManyRequests + '. '
-            + messages['alert_suggest' + ( config.proxyAPIenabled ? 'OpenAI' : 'Proxy' )],
-        parseFailed: messages.alert_parseFailed + '. '
-            + messages['alert_suggest' + ( config.proxyAPIenabled ? 'OpenAI' : 'Proxy' )],
-        checkCloudflare: messages.alert_checkCloudflare + ' @ ',
-        suggestProxy: messages.alert_openAInotWorking + '. ' + messages.alert_suggestProxy,
-        suggestOpenAI: messages.alert_proxyNotWorking + '. ' + messages.alert_suggestOpenAI
+        waitingResponse: ( messages.alert_waitingResponse || 'Waiting for ChatGPT response' ) + '...',
+        login: ( messages.alert_login || 'Please login' ) + ' @ ',
+        tooManyRequests: ( messages.alert_tooManyRequests || 'ChatGPT is flooded with too many requests' ) + '. '
+            + ( config.proxyAPIenabled ? ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
+                                       : ( messages.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' )),
+        parseFailed: ( messages.alert_parseFailed || 'Failed to parse response JSON' ) + '. '
+            + ( config.proxyAPIenabled ? ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
+                                       : ( messages.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' )),
+        checkCloudflare: ( messages.alert_checkCloudflare || 'Please pass Cloudflare security check' ) + ' @ ',
+        suggestProxy: ( messages.alert_openAInotWorking || 'OpenAI API is not working' ) + '. '
+            + ( messages.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' ),
+        suggestOpenAI: ( messages.alert_proxyNotWorking || 'Proxy API is not working' ) + '. '
+            + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
     }
 
     // Create DDG style tweaks
@@ -1054,7 +1063,7 @@
     const ddgptFooter = document.createElement('div')
     ddgptFooter.className = 'feedback-prompt chatgpt-feedback'
     ddgptFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose"'
-        + ' class="feedback-prompt__link" target="_blank" rel="noopener">' + messages.link_shareFeedback +'</a>'
+        + ' class="feedback-prompt__link" target="_blank" rel="noopener">' + ( messages.link_shareFeedback || 'Share Feedback' ) + '</a>'
 
     // Activate promo campaign if active
     GM.xmlHttpRequest({
@@ -1070,7 +1079,7 @@
             // Create feedback footer & add classes/HTML
             const pcFooter = document.createElement('div')
             pcFooter.className = 'feedback-prompt chatgpt-feedback'
-            pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank" rel="noopener">' + messages.link_shareFeedback +'</a>'
+            pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank" rel="noopener">' + ( messages.link_shareFeedback || 'Share Feedback' ) +'</a>'
 
             // Inject in sidebar
             ddgptFooter.insertAdjacentElement('afterend', pcDiv)
