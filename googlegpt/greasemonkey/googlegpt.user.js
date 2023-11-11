@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.11.3
+// @version             2023.11.11.4
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -529,7 +529,7 @@
         GM.xmlHttpRequest({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: response => { const updateAlertWidth = 370
+            onload: response => { const updateAlertWidth = 377
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
@@ -550,7 +550,8 @@
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
-                                ).onclose = () => location.reload() }
+                                ).onclose = () => location.reload() },
+                            '', updateAlertWidth
                         )
 
                         // Localize button labels if needed
@@ -566,7 +567,8 @@
 
                 // Alert to no update found, nav back
                 alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
-                        `GoogleGPT (v${ currentVer }) ${ messages.alert_isUpToDate || 'is up-to-date' }!`) // msg
+                    `GoogleGPT (v${ currentVer }) ${ messages.alert_isUpToDate || 'is up-to-date' }!`, // msg
+                        '', '', updateAlertWidth)
                 launchAboutModal()
     }})}
 
