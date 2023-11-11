@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.11
+// @version             2023.11.11.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -400,10 +400,10 @@
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.activate(config.refreshInterval)
-            if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': ON')
+            if (!config.notifHidden) notify(( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': ON')
         } else if (config.arDisabled && chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.deactivate()
-            if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': OFF')
+            if (!config.notifHidden) notify(( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': OFF')
         } saveSetting('arDisabled', config.arDisabled)
     })
 
@@ -418,7 +418,7 @@
     // Activate auto-refresh on first visit if enabled
     if (!config.arDisabled) {
         chatgpt.autoRefresh.activate(config.refreshInterval)
-        if (!config.notifHidden) notify(messages.menuLabel_autoRefresh + ': ON')
+        if (!config.notifHidden) notify(( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': ON')
     }
 
     // Define SCRIPT functions
@@ -434,37 +434,42 @@
         menuIDs = [] // empty to store newly registered cmds for removal while preserving order
 
         // Add command to toggle auto-refresh
-        const arLabel = state.symbol[+config.arDisabled] + ' ' + messages.menuLabel_autoRefresh + ' ↻ '
+        const arLabel = state.symbol[+config.arDisabled] + ' '
+                      + ( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' ↻ '
                       + state.separator + state.word[+config.arDisabled]
         menuIDs.push(GM_registerMenuCommand(arLabel, () => {
             document.querySelector('#arToggleLabel').click()
         }))
 
         // Add command to toggle visibility of toggle
-        const tvLabel = state.symbol[+config.toggleHidden] + ' ' + messages.menuLabel_toggleVis
+        const tvLabel = state.symbol[+config.toggleHidden] + ' '
+                      + ( messages.menuLabel_toggleVis || 'Toggle Visibility' )
                       + state.separator + state.word[+config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifHidden)
-                notify(messages.menuLabel_toggleVis + ': '+ state.word[+config.toggleHidden])
+                notify(( messages.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+config.toggleHidden])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when switching modes
-        const mnLabel = state.symbol[+config.notifHidden] + ' ' + messages.menuLabel_modeNotifs
+        const mnLabel = state.symbol[+config.notifHidden] + ' '
+                      + ( messages.menuLabel_modeNotifs || 'Mode Notifications' )
                       + state.separator + state.word[+config.notifHidden]
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifHidden', !config.notifHidden)
-            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
+            notify(( messages.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + state.word[+config.notifHidden])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to change refresh interval
-        const riLabel = '⌚ ' + messages.menuLabel_refreshInt + ' ' + state.separator + config.refreshInterval + 's'
+        const riLabel = '⌚ ' + ( messages.menuLabel_refreshInt || 'Refresh Interval' ) + ' '
+                      + state.separator + config.refreshInterval + 's'
         menuIDs.push(GM_registerMenuCommand(riLabel, () => {
             while (true) {
-                const refreshInterval = prompt(`${ messages.prompt_updateInt }:`, config.refreshInterval)
+                const refreshInterval = prompt(
+                    `${ messages.prompt_updateInt || 'Update refresh interval (in secs)' }:`, config.refreshInterval)
                 if (refreshInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(refreshInterval)) && parseInt(refreshInterval) > 0) { // valid int set
                     saveSetting('refreshInterval', parseInt(refreshInterval))
@@ -475,13 +480,15 @@
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     const minInterval = Math.max(2, config.refreshInterval - 10),
                           maxInterval = config.refreshInterval + 10
-                    alert(messages.alert_intUpdated + '!',
-                        `${ messages.alert_willRefresh } ${ minInterval }–${ maxInterval } ${ messages.unit_secs }`)
+                    alert(( messages.alert_intUpdated || 'Interval updated' ) + '!',
+                          ( messages.alert_willRefresh || 'ChatGPT session will auto-refresh every' )
+                            + `${ minInterval }–${ maxInterval } ${ messages.unit_secs || 'secs' }`
+                    )
                     break
         }}}))
 
         // Add command to launch About modal
-        const amLabel = `💡 ${ messages.menuLabel_about } ${ messages.appName }`
+        const amLabel = `💡 ${ messages.menuLabel_about || 'About' } ${ messages.appName || 'ChatGPT Auto Refresh' }`
         menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
     }
 
@@ -496,20 +503,20 @@
 
         // Show modal
         const aboutAlertID = alert(
-            messages.appName, // title
-            `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version }</i></b>: </span>`
+            messages.appName || 'ChatGPT Auto Refresh', // title
+            `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-            + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy }</i></b>: </span>`
+            + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy || 'Powered by' }</i></b>: </span>`
                 + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                 + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-            + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode }</i></b>:</span>\n`
+            + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode || 'Source code' }</i></b>:</span>\n`
                 + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                 + config.gitHubURL + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
                 function getSupport() { safeWindowOpen(config.supportURL) },
                 function leaveAReview() { // show new modal
-                    const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
+                    const reviewAlertID = chatgpt.alert(( messages.alert_choosePlatform || 'Choose a platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                           function futurepedia() { safeWindowOpen(
                               'https://www.futurepedia.io/tool/chatgpt-auto-refresh#chatgpt-auto-refresh-review') }])
@@ -519,13 +526,17 @@
             ], '', 478 // set width
         )
 
-        // Re-format buttons to include emojis + re-case + hide dismiss button
+        // Re-format buttons to include emoji + localized label + hide Dismiss button
         for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-            if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-            else if (/support/i.test(button.textContent)) button.textContent = '🧠 ' + messages.buttonLabel_getSupport
-            else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
-            else if (/apps/i.test(button.textContent)) button.textContent = '🤖 ' + messages.buttonLabel_moreApps
-            else button.style.display = 'none' // hide dismiss button
+            if (/updates/i.test(button.textContent)) button.textContent = (
+                '🚀 ' + ( messages.buttonLabel_updateCheck || 'Check for Updates' ))
+            else if (/support/i.test(button.textContent)) button.textContent = (
+                '🧠 ' + ( messages.buttonLabel_getSupport || 'Get Support' ))
+            else if (/review/i.test(button.textContent)) button.textContent = (
+                '⭐ ' + ( messages.buttonLabel_leaveReview || 'Leave a Review' ))
+            else if (/apps/i.test(button.textContent)) button.textContent = (
+                '🤖 ' + ( messages.buttonLabel_moreApps || 'More ChatGPT Apps' ))
+            else button.style.display = 'none' // hide Dismiss button
         }
     }
 
@@ -547,12 +558,14 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateAlertID = alert(messages.alert_updateAvail + '! 🚀', // title
-                            `${ messages.alert_newerVer } ${ messages.appName } (v${ latestVer }) ${ messages.alert_isAvail }!   `
+                        const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                            ( messages.alert_newerVer || 'An update to' ) + ' '
+                                + ( messages.appName || 'ChatGPT Auto Refresh' ) + ' '
+                                + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + `>${ messages.link_viewChanges }</a>`,
+                                    + `> ${ messages.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
@@ -563,16 +576,18 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
                                   updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss
+                            updateButtons[1].textContent = messages.buttonLabel_update || 'Update'
+                            updateButtons[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
                         }
 
                         return
                 }}
 
-                // Alert to no update, nav back
-                alert(messages.alert_upToDate + '!',
-                    `${ messages.appName } (v${ currentVer }) ${ messages.alert_isUpToDate }!`)
+                // Alert to no update, return to About alert
+                alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
+                    `${ messages.appName || 'ChatGPT Auto Refresh' } (v${ currentVer }) ` // msg
+                    + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!'
+                )
                 launchAboutModal()
     }})}
 
@@ -625,8 +640,9 @@
         // Create elements
         const navicon = document.createElement('img'),
               label = document.createElement('label'),
-              labelText = document.createTextNode(messages.menuLabel_autoRefresh + ' '
-                  + ( messages['state_' + ( config.arDisabled ? 'disabled' : 'enabled' )])),
+              labelText = document.createTextNode(( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' '
+                  + ( config.arDisabled ? ( messages.state_disabled || 'disabled' )
+                                        : ( messages.state_enabled || 'enabled' ))),
               input = document.createElement('input'),
               span = document.createElement('span')
         navicon.src = config.assetHostURL + 'media/images/icons/auto-refresh-navicon-light-155.png'
