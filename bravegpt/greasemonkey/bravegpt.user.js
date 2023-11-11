@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.11.1
+// @version             2023.11.11.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -171,19 +171,19 @@
             separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
 
         // Add command to toggle proxy API mode
-        const pamLabel = state.symbol[+!config.proxyAPIenabled]
-                       + ' ' + messages.menuLabel_proxyAPImode + ' '
+        const pamLabel = state.symbol[+!config.proxyAPIenabled] + ' '
+                       + ( messages.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
                        + state.separator + state.word[+!config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, () => {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(messages.menuLabel_proxyAPImode + ' ' + state.word[+!config.proxyAPIenabled])
+            notify(( messages.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+!config.proxyAPIenabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             location.reload() // re-send query using new endpoint
         }))
 
         // Add command to toggle showing related queries
         const rqLabel = state.symbol[+config.relatedQueriesDisabled] + ' '
-                      + messages.menuLabel_relatedQueries + ' '
+                      + ( messages.menuLabel_relatedQueries || 'Related Queries' ) + ' '
                       + state.separator + state.word[+config.relatedQueriesDisabled]
         menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
             saveSetting('relatedQueriesDisabled', !config.relatedQueriesDisabled)
@@ -191,90 +191,91 @@
                 const relatedQueriesDiv = document.querySelector('.related-queries')
                 relatedQueriesDiv.style.display = config.relatedQueriesDisabled ? 'none' : 'flex'
             } catch (err) {}
-            notify(messages.menuLabel_relatedQueries + ' ' + state.word[+config.relatedQueriesDisabled])
+            notify(( messages.menuLabel_relatedQueries || 'Related Queries' ) + ' '
+                + state.word[+config.relatedQueriesDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle prefix mode
         const pmLabel = state.symbol[+!config.prefixEnabled] + ' '
-                      + messages.menuLabel_require + ' "/" '
-                      + messages.menuLabel_beforeQuery + ' '
+                      + ( messages.menuLabel_require || 'Require' ) + ' "/" '
+                      + ( messages.menuLabel_beforeQuery || 'before query' ) + ' '
                       + state.separator + state.word[+!config.prefixEnabled]
         menuIDs.push(GM_registerMenuCommand(pmLabel, () => {
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
-            notify(messages.mode_prefix + ' ' + state.word[+!config.prefixEnabled])
+            notify(( messages.mode_prefix || 'Prefix Mode' ) + ' ' + state.word[+!config.prefixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
 
         // Add command to toggle suffix mode
         const smLabel = state.symbol[+!config.suffixEnabled] + ' '
-                      + messages.menuLabel_require + ' "?" '
-                      + messages.menuLabel_afterQuery + ' '
+                      + ( messages.menuLabel_require || 'Require' ) + ' "?" '
+                      + ( messages.menuLabel_afterQuery || 'after query' ) + ' '
                       + state.separator + state.word[+!config.suffixEnabled]
         menuIDs.push(GM_registerMenuCommand(smLabel, () => {
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify(messages.mode_suffix + ' ' + state.word[+!config.suffixEnabled])
+            notify(( messages.mode_suffix || 'Suffix Mode' ) + ' ' + state.word[+!config.suffixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
         // Add command to toggle fatter sidebar
         const fsbLabel = ( config.fatterSidebar ? '🔛' : '↔️' ) + ' '
-                       + messages.menuLabel_fatterSidebar
+                       + ( messages.menuLabel_fatterSidebar || 'Fatter Sidebar' )
                        + state.separator + state.word[+!config.fatterSidebar]
         menuIDs.push(GM_registerMenuCommand(fsbLabel, () => {
             saveSetting('fatterSidebar', !config.fatterSidebar)
             updateTweaksStyle()
             if (!config.notifHidden)
-                notify(messages.menuLabel_fatterSidebar + ' ' + state.word[+!config.fatterSidebar])
+                notify(( messages.menuLabel_fatterSidebar || 'Fatter Sidebar' ) + ' ' + state.word[+!config.fatterSidebar])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to set reply language
-        const rlLabel = '🌐 ' + messages.menuLabel_replyLanguage
+        const rlLabel = '🌐 ' + ( messages.menuLabel_replyLanguage || 'Reply Language' )
                       + state.separator + config.replyLanguage
         menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
             while (true) {
                 const replyLanguage = prompt(
-                    messages.prompt_updateReplyLang + ':', config.replyLanguage)
+                    ( messages.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                    alert(messages.alert_langUpdated + '!', // title
-                        'BraveGPT ' + messages.alert_willReplyIn + ' '
-                            + ( replyLanguage || messages.alert_yourSysLang ) + '.')
+                    alert(( messages.alert_langUpdated || 'Language updated' ) + '!', // title
+                        'BraveGPT ' + ( messages.alert_willReplyIn || 'will reply in' ) + ' '
+                            + ( replyLanguage || messages.alert_yourSysLang || 'your system language' ) + '.')
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
 
         // Add command to launch About modal
-        const aboutLabel = '💡 ' + messages.menuLabel_about + ' BraveGPT'
+        const aboutLabel = '💡 ' + ( messages.menuLabel_about || 'About' ) + ' BraveGPT'
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
 
     function launchAboutModal() {
 
-        // Show alert
+        // Show modal
         const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
         const aboutAlertID = alert(
             'BraveGPT', // title
-            '🏷️ ' + messages.about_version + ': ' + GM_info.script.version + '\n'
-                + '⚡ ' + messages.about_poweredBy + ': '
+            '🏷️ ' + ( messages.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
+                + '⚡ ' + ( messages.about_poweredBy || 'Powered by' ) + ': '
                     + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
                     + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
-                + '📜 ' + messages.about_sourceCode + ':\n   '
+                + '📜 ' + ( messages.about_sourceCode || 'Source code' ) + ':\n   '
                     + `<a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                         + config.gitHubURL + '</a>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
                 function getSupport() { safeWindowOpen(config.supportURL) },
                 function leaveAReview() {
-                    const reviewAlertID = chatgpt.alert(messages.alert_choosePlatform + ':', '',
+                    const reviewAlertID = chatgpt.alert(( messages.alert_choosePlatform || 'Choose a platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(
                               config.greasyForkURL + '/feedback#post-discussion') },
                           function productHunt() { safeWindowOpen(
@@ -291,13 +292,17 @@
                 function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
             ], '', 577) // About modal width
 
-        // Re-format buttons to include emojis + re-case + hide 'Dismiss'
+        // Re-format buttons to include emoji + localized label + hide Dismiss button
         for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-            if (/updates/i.test(button.textContent)) button.textContent = '🚀 ' + messages.buttonLabel_updateCheck
-            else if (/support/i.test(button.textContent)) button.textContent = '🧠 ' + messages.buttonLabel_getSupport
-            else if (/review/i.test(button.textContent)) button.textContent = '⭐ ' + messages.buttonLabel_leaveReview
-            else if (/apps/i.test(button.textContent)) button.textContent = '🤖 ' + messages.buttonLabel_moreApps
-            else button.style.display = 'none' // hide dismiss button
+            if (/updates/i.test(button.textContent)) button.textContent = (
+                '🚀 ' + ( messages.buttonLabel_updateCheck || 'Check for Updates' ))
+            else if (/support/i.test(button.textContent)) button.textContent = (
+                '🧠 ' + ( messages.buttonLabel_getSupport || 'Get Support' ))
+            else if (/review/i.test(button.textContent)) button.textContent = (
+                '⭐ ' + ( messages.buttonLabel_leaveReview || 'Leave a Review' ))
+            else if (/apps/i.test(button.textContent)) button.textContent = (
+                '🤖 ' + ( messages.buttonLabel_moreApps || 'More ChatGPT Apps' ))
+            else button.style.display = 'none' // hide Dismiss button
         }
     }
 
@@ -319,13 +324,13 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateAlertID = alert(messages.alert_updateAvail + '! 🚀', // title
-                            messages.alert_newerVer + ' BraveGPT v' + latestVer + ' '
-                                + messages.alert_isAvail + '!   '
+                        const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                            ( messages.alert_newerVer || 'An update to' ) + ' BraveGPT '
+                                + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + '>' + messages.link_viewChanges + '</a>',
+                                    + `> ${ messages.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
@@ -336,15 +341,15 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
                                   updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss
+                            updateButtons[1].textContent = messages.buttonLabel_update || 'Update'
+                            updateButtons[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
                         }
                         return
                 }}
 
                 // Alert to no update found, nav back
-                alert(`${ messages.alert_upToDate }!`, // title
-                        `BraveGPT (v${ currentVer }) ${ messages.alert_isUpToDate }!`) // msg
+                alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
+                        `BraveGPT (v${ currentVer }) ${ messages.alert_isUpToDate || 'is up-to-date' }!`) // msg
                 launchAboutModal()
     }})}
 
@@ -370,7 +375,8 @@
                 '<p class="loading">' : '<p style="padding: 19px">') + braveGPTalerts[msg]
             + (braveGPTalerts[msg].includes('@') ? // if msg needs login link, add it
                 '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
-                    + '(' + messages.alert_ifIssuePersists + ')</p>' : '</p>')
+                    + '(' + ( messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode' )
+                     + ')</p>' : '</p>')
     }
 
     // Define UI functions
@@ -389,7 +395,7 @@
         try {
             const html = new DOMParser().parseFromString(resp, 'text/html'),
                   title = html.querySelector('title')
-            return title.innerText === messages.alert_justAmoment + '...'
+            return title.innerText === ( messages.alert_justAmoment || 'Just a moment' ) + '...'
         } catch (error) { return false }
     }
 
@@ -562,7 +568,7 @@
                     // Fill each child div, add fade + tabindex + listener
                     relatedQueries.forEach((relatedQuery, index) => {
                         const relatedQueryDiv = document.createElement('div')
-                        relatedQueryDiv.title = messages.tooltip_sendRelatedQuery
+                        relatedQueryDiv.title = messages.tooltip_sendRelatedQuery || 'Send related query'
                         relatedQueryDiv.className = 'related-query fade-in'
                         relatedQueryDiv.setAttribute('tabindex', 0)
                         relatedQueryDiv.textContent = relatedQuery
@@ -641,9 +647,11 @@
                         } catch (err) {
                             braveGPTconsole.info('Response: ' + event.responseText)
                             if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
-                                braveGPTshow(messages.alert_censored)
+                                braveGPTshow(messages.alert_censored || 'Sorry, according to our product rules, '
+                                    + 'we cannot provide you with an answer to this question, please try other questions' )
                             else if (event.responseText.includes('维护'))
-                                braveGPTshow(messages.alert_maintenance + '. ' + messages.alert_suggestOpenAI)
+                                braveGPTshow(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
+                                    + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
                             else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
                                 await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
                             } else { // use different endpoint or suggest OpenAI
@@ -681,7 +689,7 @@
         const aboutSpan = document.createElement('span'),
               aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
-        aboutSpan.className = 'corner-btn' ; aboutSpan.title = messages.menuLabel_about
+        aboutSpan.className = 'corner-btn' ; aboutSpan.title = messages.menuLabel_about || 'About'
         aboutSVG.setAttribute('width', '17') ; aboutSVG.setAttribute('height', '17')
         aboutSVG.setAttribute('viewBox', '0 0 56.693 56.693')
         aboutSVGpath.setAttribute('d',
@@ -692,7 +700,7 @@
         // Create/append speak button
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-        speakSpan.className = 'corner-btn' ; speakSpan.title = messages.tooltip_playAnswer
+        speakSpan.className = 'corner-btn' ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
         speakSpan.style.margin = '-0.025em 14px 0px' // fine-tune position
         speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32')
         speakSVG.setAttributeNS(null, 'width', '22')
@@ -725,7 +733,7 @@
               chatTextarea = document.createElement('textarea')
         continueChatDiv.className = 'continue-chat'
         chatTextarea.id = 'bravegpt-chatbar' ; chatTextarea.rows = '1'
-        chatTextarea.placeholder = messages.tooltip_sendReply + '...'
+        chatTextarea.placeholder = ( messages.tooltip_sendReply || 'Send reply' ) + '...'
         continueChatDiv.appendChild(chatTextarea)
         replyForm.appendChild(continueChatDiv) ; replySection.appendChild(replyForm)
         braveGPTdiv.appendChild(replySection)
@@ -735,7 +743,7 @@
               sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               sendSVGline = document.createElementNS('http://www.w3.org/2000/svg', 'line'),
               sendSVGpolygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon')
-        sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply
+        sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
         sendSVG.setAttribute('viewBox', '0 0 24 24') ; sendSVG.setAttribute('fill', 'none')
         sendSVG.setAttribute('stroke', 'currentColor') ; sendSVG.setAttribute('stroke-width', '2')
         sendSVG.setAttribute('stroke-linecap', 'round') ; sendSVG.setAttribute('stroke-linejoin', 'round')
@@ -857,7 +865,7 @@
         // Assemble feedback link
         feedbackSVG.appendChild(feedbackSVGpath)
         feedbackAnchor.appendChild(feedbackSVG)
-        feedbackAnchor.appendChild(document.createTextNode(' ' + messages.link_shareFeedback))
+        feedbackAnchor.appendChild(document.createTextNode(' ' + ( messages.link_shareFeedback || 'Feedback' )))
 
         // Fill footer
         braveGPTfooter.innerHTML = '' ; braveGPTfooter.appendChild(feedbackAnchor)
@@ -931,15 +939,19 @@
 
     // Init alerts
     const braveGPTalerts = {
-        waitingResponse: messages.alert_waitingResponse + '...',
-        login: messages.alert_login + ' @ ',
-        tooManyRequests: messages.alert_tooManyRequests + '. '
-            + messages['alert_suggest' + ( config.proxyAPIenabled ? 'OpenAI' : 'Proxy' )],
-        parseFailed: messages.alert_parseFailed + '. '
-            + messages['alert_suggest' + ( config.proxyAPIenabled ? 'OpenAI' : 'Proxy' )],
-        checkCloudflare: messages.alert_checkCloudflare + ' @ ',
-        suggestProxy: messages.alert_openAInotWorking + '. ' + messages.alert_suggestProxy,
-        suggestOpenAI: messages.alert_proxyNotWorking + '. ' + messages.alert_suggestOpenAI
+        waitingResponse: ( messages.alert_waitingResponse || 'Waiting for ChatGPT response' ) + '...',
+        login: ( messages.alert_login || 'Please login' ) + ' @ ',
+        tooManyRequests: ( messages.alert_tooManyRequests || 'ChatGPT is flooded with too many requests' ) + '. '
+            + ( config.proxyAPIenabled ? ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
+                                       : ( messages.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' )),
+        parseFailed: ( messages.alert_parseFailed || 'Failed to parse response JSON' ) + '. '
+            + ( config.proxyAPIenabled ? ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
+                                       : ( messages.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' )),
+        checkCloudflare: ( messages.alert_checkCloudflare || 'Please pass Cloudflare security check' ) + ' @ ',
+        suggestProxy: ( messages.alert_openAInotWorking || 'OpenAI API is not working' ) + '. '
+            + ( messages.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' ),
+        suggestOpenAI: ( messages.alert_proxyNotWorking || 'Proxy API is not working' ) + '. '
+            + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
     }
 
     // Create Brave Search style tweaks
