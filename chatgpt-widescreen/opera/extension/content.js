@@ -108,6 +108,7 @@
             if (isGizmoUI) { // style tweaks for OpenAI Gizmo UI
                 window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
                 window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
+                window[buttonName].querySelector('svg').setAttribute('width', 18) // fix disappearing width in dark mode
                 window[buttonName].style.bottom = '0.91rem' // nudge up for flushness w/ send button
             }
 
