@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.11.5
+// @version             2023.11.11.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -345,6 +345,7 @@
                             updateButtons[1].textContent = messages.buttonLabel_update || 'Update'
                             updateButtons[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
                         }
+
                         return
                 }}
 
@@ -378,7 +379,7 @@
             + (braveGPTalerts[msg].includes('@') ? // if msg needs login link, add it
                 '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
                     + '(' + ( messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode' )
-                     + ')</p>' : '</p>')
+                    + ')</p>' : '</p>')
     }
 
     // Define UI functions
