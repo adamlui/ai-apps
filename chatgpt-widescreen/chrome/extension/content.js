@@ -70,7 +70,8 @@
           tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
           hhStyle = headerSelector + '{ display: none !important }', // hide header
           hfStyle = footerSelector + '{ color: transparent !important ;' // hide footer text
-                                   + '  padding: .1rem 0 0 !important }' //reduce v-padding
+                                   + '  padding: .1rem 0 0 !important ;' //reduce v-padding
+                                   + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }'
 
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
