@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.9.1
+// @version             2023.11.11
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -238,7 +238,7 @@
 // @match               *://poe.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon64.png
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@1a4dd2c052e91bcae40bc2b4dd4ec5849a31cbd5/dist/chatgpt-2.3.18.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@6a3270f61b12d1e66a8a058ac394f0876a2c17f6/dist/chatgpt-2.4.0.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -705,10 +705,14 @@
 
     // Run MAIN routine
 
+    // Wait for OpenAI site load + determine UI for []
+    let isGizmoUI
+    if (site == 'openai') {
+        await chatgpt.isLoaded() ; isGizmoUI = chatgpt.isGizmoUI() }
+
     // Create browser toolbar menu or disable script if extension installed
     const state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
                     separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
-    if (site == 'openai') await chatgpt.isLoaded()
     setTimeout(() => { // add trivial delay for Chrome extension load to beat VM
         if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
             GM_registerMenuCommand(state.symbol[1] + ' ' + messages.menuLabel_disabled, () => { return }) // disable menu
@@ -724,9 +728,9 @@
                           : site == 'aivvm' ? 'main > div[class*="flex"] > div:not([class*="flex"])'
                           : /* poe */ 'menu[class*="sidebar"], aside[class*="sidebar"]',
           sidepadSelector = '#__next > div > div',
-          headerSelector = site == 'openai' ? 'header'
+          headerSelector = site == 'openai' ? ( isGizmoUI ? 'main .sticky' : 'header')
                          : site == 'aivvm' ? 'div[class*="top"][class*="sticky"]' : '',
-          footerSelector = site == 'openai' ? 'div[class*="bottom"] > div'
+          footerSelector = site == 'openai' ? ( isGizmoUI ? 'main form ~ div' : 'div[class*="bottom"] > div' )
                          : site == 'aivvm' ? 'div[class*="bottom"] > div:nth-of-type(2)' : ''
 
     // Save full-window + full screen states
@@ -767,14 +771,16 @@
     const tweaksStyle = document.createElement('style'),
           tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
           hhStyle = headerSelector + '{ display: none !important }', // hide header
-          hfStyle = footerSelector + '{ color: transparent ; padding: .1rem 0 0 }' // hide footer text, reduce v-padding
+          hfStyle = footerSelector + '{ color: transparent !important ;' // hide footer text
+                                   + '  padding: .1rem 0 0 !important }' //reduce v-padding
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create widescreen style
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
+    console.log(isGizmoUI)
     const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
-        site == 'openai' ? 'div[class*="bottom"] form { max-width: 96% }'
+        site == 'openai' ? (( isGizmoUI ? 'main form' : 'div[class*="bottom"] form' ) + '{ max-width: 96% !important }' )
       : site == 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }'
       : site == 'aivvm' ? 'div[class*="stretch"] { max-width: 98% }' : '' )
     updateWidescreenStyle()
@@ -805,6 +811,11 @@
                 window[buttonName].setAttribute('class', sendButtonClasses)
             else if (site == 'poe') // lift buttons slightly
                 window[buttonName].style.cssText += '; margin-bottom: 0.2rem'
+            if (isGizmoUI) { // style tweaks for OpenAI Gizmo UI
+                window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
+                window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
+                window[buttonName].style.bottom = '0.91rem' // nudge up for flushness w/ send button
+            }
 
             // Add click/hover listeners
             window[buttonName].addEventListener('click', () => {
@@ -872,7 +883,7 @@
         if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
         else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     })
-    window.addEventListener('keydown', (event) => { // set F11 flag for toggleMode() disabled warning
+    window.addEventListener('keydown', event => { // set F11 flag for toggleMode() disabled warning
         if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true // set flag if entering full screen via F11
     })
 
