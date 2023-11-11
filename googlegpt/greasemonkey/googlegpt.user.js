@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.11
+// @version             2023.11.11.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -474,8 +474,9 @@
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
                     alert(messages.alert_langUpdated + '!', // title
-                        'GoogleGPT ' + messages.alert_willReplyIn + ' '
-                            + ( replyLanguage || messages.alert_yourSysLang ) + '.')
+                        'GoogleGPT ' + messages.alert_willReplyIn + ' ' // msg
+                            + ( replyLanguage || messages.alert_yourSysLang ) + '.',
+                         '', '', 335) // width
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
