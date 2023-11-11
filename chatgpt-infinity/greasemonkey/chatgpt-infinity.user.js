@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.11
+// @version             2023.11.11.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -555,7 +555,7 @@
         GM.xmlHttpRequest({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: response => {
+            onload: response => { const updateAlertWidth = 377
 
                 // Compare versions
                 const latestVer = /@version +(.*)/.exec(response.responseText)[1]
@@ -567,7 +567,7 @@
 
                         // Alert to update
                         const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
-                            ( messages.alert_newerVer || 'An update to' ) + ' '
+                            ( messages.alert_newerVer || 'An update to' ) + ' ' // msg
                                 + ( messages.appName || 'ChatGPT Infinity' ) + ' '
                                 + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
@@ -577,7 +577,8 @@
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
-                                ).onclose = () => location.reload() }
+                                ).onclose = () => location.reload() },
+                            '', updateAlertWidth
                         )
 
                         // Localize button labels if needed
@@ -594,7 +595,8 @@
                 // Alert to no update, return to About alert
                 alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
                     `${ messages.appName || 'ChatGPT Infinity' } (v${ currentVer }) ` // msg
-                    + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!'
+                        + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!',
+                    '', '', updateAlertWidth
                 )
                 launchAboutModal()
     }})}
