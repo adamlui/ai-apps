@@ -136,6 +136,7 @@ This script exists thanks to code, translations, issues & ideas from the followi
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/42227673?first-contrib=2023.06.26-poe-support-idea&h=50&w=50&mask=circle&maxage=7d "@wheregone")](https://github.com/wheregone)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/58298118?first-contrib=2023.09.23-wider-chatbox-idea&h=50&w=50&mask=circle&maxage=7d "@Aubermean")](https://github.com/Aubermean)
 [![](https://images.weserv.nl/?url=https://greasyfork.org/vite/assets/blacklogo96-e0c2c761.png?first-contrib=2023.11.5-plus-buttons-distorted-bug-report&h=50&w=50&mask=circle&maxage=7d "大聪明 (H4Ha）")](https://greasyfork.org/users/1210535-%E5%A4%A7%E8%81%AA%E6%98%8E-h4ha)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/76943037?first-contrib=2023.11.10-gizmo-ui-dark-mode-button-colors-broken-bug-report&h=50&w=50&mask=circle&maxage=7d "@comonetso")](https://github.com/comonetso)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
