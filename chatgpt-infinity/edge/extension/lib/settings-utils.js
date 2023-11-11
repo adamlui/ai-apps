@@ -1,6 +1,5 @@
 const config = {
     prefix: 'chatgptInfinity', appSymbol: '∞',
-    chromeURL: 'https://chatgptinfinity.com/chrome',
     gitHubURL: 'https://github.com/adamlui/chatgpt-infinity' }
 config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
 
