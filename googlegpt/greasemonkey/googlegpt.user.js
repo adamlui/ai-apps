@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name                GoogleGPT 🤖
 // @name:zh-CN          GoogleGPT 🤖
+// @name:zh-TW          GoogleGPT 🤖
 // @description         Adds ChatGPT answers to Google Search sidebar (powered by GPT-4!)
 // @description:af      Voeg ChatGPT-antwoorde by Google Soek kantbalk by (aangedryf deur GPT-4!)
 // @description:am      የChatGPT መልስናወርቃለች እርስዎን በGoogle የተወሰኑ ገጽታዎችን (ተግባር በGPT-4!) ይጨምሩ
@@ -153,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.10.3
+// @version             2023.11.11
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -360,7 +361,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@1a4dd2c052e91bcae40bc2b4dd4ec5849a31cbd5/dist/chatgpt-2.3.18.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@6a3270f61b12d1e66a8a058ac394f0876a2c17f6/dist/chatgpt-2.4.0.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
