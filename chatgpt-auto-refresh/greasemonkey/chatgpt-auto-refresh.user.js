@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.11.2
+// @version             2023.11.12
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -373,7 +373,7 @@
     // Borrow classes from sidebar div
     const chatHistorySelector = 'nav[aria-label="Chat history"]'
     if (isGizmoUI) {
-        chatHistoryIsLoaded().then(setTimeout(() => { 
+        chatgpt.history.isLoaded().then(setTimeout(() => { 
             const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
                   navLinks = chatHistoryNav.querySelectorAll('a'),
                   firstLink = [...navLinks].find(link => link.textContent.includes(
@@ -606,7 +606,7 @@
     async function insertToggle() {
 
         // Select sidebar elems
-        if (isGizmoUI) await chatHistoryIsLoaded()
+        if (isGizmoUI) await chatgpt.history.isLoaded()
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = ( isGizmoUI ? [...navButtons].find(button => button.textContent.includes(
@@ -664,7 +664,7 @@
         navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
     }
 
-    function chatHistoryIsLoaded() {
+    function chatgpt.history.isLoaded() {
         return new Promise(resolve => {
             (function checkChatHistory() {
                 if (document.querySelector('nav[aria-label="Chat history"]')) resolve()
