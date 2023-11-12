@@ -8,7 +8,7 @@
 
 <div align="center">
 
-![](https://img.shields.io/badge/安装-30,000+-2bbbd8?logo=docusign&logoColor=white&labelColor=464646&style=for-the-badge)
+![](https://img.shields.io/badge/安装-40,000+-2bbbd8?logo=docusign&logoColor=white&labelColor=464646&style=for-the-badge)
 [![](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=星星&color=yellow&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/stargazers)
 [![](https://img.shields.io/badge/许可证-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=提交&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/commits/main)
