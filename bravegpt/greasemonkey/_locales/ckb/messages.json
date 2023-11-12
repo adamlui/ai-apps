@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "پێویست دەکات، پێویستبون، پێویستی پێ بوون، داوالێکردن، پێویستبوون، پێویستی پێبوون، داواکردن، ویستن، داوای لێدەکا، بەسەری دەسەپێنێ، فەرمانی دەدات بە\n[کۆمپیوتەر]: پێویستبوون" },
   "menuLabel_beforeQuery": { "message": "پێش پرسیارکردن" },
   "menuLabel_afterQuery": { "message": "دوای پرسیارکردن" },
-  "menuLabel_fatterSidebar": { "message": "په ‌ ڕگه ‌ ی لا په ‌ نجه ‌ ره ‌" },
+  "menuLabel_widerSidebar": { "message": "به ‌ ره ‌ و په ‌ نجه ‌ ره ‌ فراوانتر" },
   "menuLabel_replyLanguage": { "message": "زمانی وەڵامدانەوە" },
   "menuLabel_about": { "message": "دەربارە" },
   "about_version": { "message": "وشان" },

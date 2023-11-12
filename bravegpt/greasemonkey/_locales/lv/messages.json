@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Nepieciešams" },
   "menuLabel_beforeQuery": { "message": "pirms vaicājuma" },
   "menuLabel_afterQuery": { "message": "pēc vaicājuma" },
-  "menuLabel_fatterSidebar": { "message": "Resnāka sānjosla" },
+  "menuLabel_widerSidebar": { "message": "Plašāka sānjosla" },
   "menuLabel_replyLanguage": { "message": "Atbildes valoda" },
   "menuLabel_about": { "message": "Par produktu" },
   "about_version": { "message": "Versija" },

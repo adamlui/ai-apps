@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Gerekli" },
   "menuLabel_beforeQuery": { "message": "Sorgudan Önce" },
   "menuLabel_afterQuery": { "message": "sorgudan sonra" },
-  "menuLabel_fatterSidebar": { "message": "Fatter Sidebar" },
+  "menuLabel_widerSidebar": { "message": "Daha Geniş Kenar Çubuğu" },
   "menuLabel_replyLanguage": { "message": "Cevap Dili" },
   "menuLabel_about": { "message": "Hakkımızda" },
   "about_version": { "message": "Versiyon" },

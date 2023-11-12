@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "ആവശ്യമാണ്" },
   "menuLabel_beforeQuery": { "message": "ചോദ്യത്തിന് മുമ്പ്" },
   "menuLabel_afterQuery": { "message": "ചോദ്യത്തിന് ശേഷം" },
-  "menuLabel_fatterSidebar": { "message": "ഫാറ്റര്‍ സൈഡ്ബാര്‍" },
+  "menuLabel_widerSidebar": { "message": "വിശാലമായ സൈഡ്ബാർ" },
   "menuLabel_replyLanguage": { "message": "മറുപടി ഭാഷ" },
   "menuLabel_about": { "message": "സംബന്ധിച്ച്" },
   "about_version": { "message": "പതിപ്പ്" },

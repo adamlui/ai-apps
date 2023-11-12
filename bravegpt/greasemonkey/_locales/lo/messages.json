@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "ຮຽກຮ້ອງຕ້ອງການ" },
   "menuLabel_beforeQuery": { "message": "ກ່ອນການສອບຖາມ" },
   "menuLabel_afterQuery": { "message": "ຫຼັງຈາກການສອບຖາມ" },
-  "menuLabel_fatterSidebar": { "message": "ແຖບຂ້າງໄຂມັນ" },
+  "menuLabel_widerSidebar": { "message": "ແຖບຂ້າງກວ້າງ" },
   "menuLabel_replyLanguage": { "message": "ຕອບສະໜອງພາສາ" },
   "menuLabel_about": { "message": "ກ່ຽວກັບ" },
   "about_version": { "message": "ຮຸ່ນ" },

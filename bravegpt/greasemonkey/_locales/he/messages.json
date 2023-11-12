@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "חובה" },
   "menuLabel_beforeQuery": { "message": "לפני השאילתה" },
   "menuLabel_afterQuery": { "message": "לאחר שאילתה" },
-  "menuLabel_fatterSidebar": { "message": "סרגל צדדי שמן יותר" },
+  "menuLabel_widerSidebar": { "message": "סרגל צדדי רחב יותר" },
   "menuLabel_replyLanguage": { "message": "שפת מענה" },
   "menuLabel_about": { "message": "אודות" },
   "about_version": { "message": "גירסה" },

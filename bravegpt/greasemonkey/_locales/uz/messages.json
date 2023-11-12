@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Talab qilish" },
   "menuLabel_beforeQuery": { "message": "so'rovdan oldin" },
   "menuLabel_afterQuery": { "message": "so'rovdan keyin" },
-  "menuLabel_fatterSidebar": { "message": "Semizroq yon panel" },
+  "menuLabel_widerSidebar": { "message": "Kengroq yon panel" },
   "menuLabel_replyLanguage": { "message": "Javob berish tili" },
   "menuLabel_about": { "message": "Qisqacha ma'lumot" },
   "about_version": { "message": "Versiya" },

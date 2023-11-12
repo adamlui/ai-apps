@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Askim" },
   "menuLabel_beforeQuery": { "message": "taim ol i askim" },
   "menuLabel_afterQuery": { "message": "bihain long askim" },
-  "menuLabel_fatterSidebar": { "message": "Fatter Sidebar" },
+  "menuLabel_widerSidebar": { "message": "Wider Sidebar" },
   "menuLabel_replyLanguage": { "message": "Tokples" },
   "menuLabel_about": { "message": "About" },
   "about_version": { "message": "Tok Pisin" },

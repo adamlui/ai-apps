@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Iyafuneka" },
   "menuLabel_beforeQuery": { "message": "ngaphambi kokubuza" },
   "menuLabel_afterQuery": { "message": "emva kombuzo" },
-  "menuLabel_fatterSidebar": { "message": "Ibar esecaleni Enamafutha" },
+  "menuLabel_widerSidebar": { "message": "Ibar esecaleni ebanzi" },
   "menuLabel_replyLanguage": { "message": "Phendula Ulwimi" },
   "menuLabel_about": { "message": "Malunga" },
   "about_version": { "message": "Inguqulelo" },
