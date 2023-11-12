@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.12.1
+// @version             2023.11.12.2
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -224,8 +224,8 @@
 // @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
 // @noframes
-// @updateURL           https://greasyfork.org/scripts/465051/code/chatgpt-infinity.meta.js
-// @downloadURL         https://greasyfork.org/scripts/465051/code/chatgpt-infinity.user.js
+// @downloadURL         https://update.greasyfork.org/scripts/465051.user.js
+// @updateURL           https://update.greasyfork.org/scripts/465051.meta.js
 // @homepageURL         https://chatgptinfinity.com
 // @supportURL          https://chatgptinfinity.com/support
 // ==/UserScript==
@@ -239,7 +239,7 @@
         prefix: 'chatgptInfinity', appSymbol: '∞', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/chatgpt-infinity',
         greasyForkURL: 'https://greasyfork.org/scripts/465051-chatgpt-infinity' }
-    config.updateURL = config.greasyForkURL + '/code/chatgpt-infinity.meta.js'
+    config.updateURL = `https://update.greasyfork.org/scripts/${ config.greasyForkURL.match(/\d+/)[0] }.meta.js`
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('autoScrollDisabled', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden')
