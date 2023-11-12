@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.11.6
+// @version             2023.11.12
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -144,8 +144,8 @@
 // @grant               GM_unregisterMenuCommand
 // @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
-// @downloadURL         https://greasyfork.org/scripts/462440/code/bravegpt.user.js
-// @updateURL           https://greasyfork.org/scripts/462440/code/bravegpt.meta.js
+// @downloadURL         https://update.greasyfork.org/scripts/462440.user.js
+// @updateURL           https://update.greasyfork.org/scripts/462440.meta.js
 // @homepageURL         https://www.bravegpt.com
 // @supportURL          https://github.bravegpt.com/issues
 // ==/UserScript==
@@ -895,7 +895,7 @@
         prefix: 'braveGPT', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/bravegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt' }
-    config.updateURL = config.greasyForkURL + '/code/bravegpt.meta.js'
+    config.updateURL = `https://update.greasyfork.org/scripts/${ config.greasyForkURL.match(/\d+/)[0] }.meta.js`
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled',
