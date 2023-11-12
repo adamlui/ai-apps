@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.12
+// @version             2023.11.12.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1090,7 +1090,7 @@
         prefix: 'googlegpt', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/googlegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt' }
-    config.updateURL = `https://update.greasyfork.org/scripts/${ config.greasyForkURL.match(/\d+/)[0] }.meta.js`
+    config.updateURL = `https://update.greasyfork.org/scripts/${ /\d+/.exec(config.greasyForkURL) }.meta.js`
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'relatedQueriesDisabled', 'replyLanguage', 'fatterSidebar', 'suffixEnabled')
