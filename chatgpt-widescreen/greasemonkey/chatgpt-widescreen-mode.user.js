@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.11.4
+// @version             2023.11.12
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -248,8 +248,8 @@
 // @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
 // @noframes
-// @downloadURL         https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.user.js
-// @updateURL           https://greasyfork.org/scripts/461473/code/chatgpt-widescreen-mode.meta.js
+// @updateURL           https://update.greasyfork.org/scripts/461473.meta.js
+// @downloadURL         https://update.greasyfork.org/scripts/461473.user.js
 // @homepageURL         https://chatgptwidescreen.com
 // @supportURL          https://chatgptwidescreen.com/support
 // ==/UserScript==
@@ -265,7 +265,7 @@
         prefix: site + 'Widescreen', appSymbol: '🖥️', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/chatgpt-widescreen',
         greasyForkURL: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode' }
-    config.updateURL = config.greasyForkURL + '/code/chatgpt-widescreen-mode.meta.js'
+    config.updateURL = `https://update.greasyfork.org/scripts/${ config.greasyForkURL.match(/\d+/)[0] }.meta.js`
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'wcbDisabled', 'hiddenHeader', 'hiddenFooter', 'wideScreen')
