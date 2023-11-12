@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "d dcr" },
   "menuLabel_beforeQuery": { "message": "înainte de interogare" },
   "menuLabel_afterQuery": { "message": "după interogare" },
-  "menuLabel_fatterSidebar": { "message": "Bara laterală Fatter" },
+  "menuLabel_widerSidebar": { "message": "Bară laterală mai lată" },
   "menuLabel_replyLanguage": { "message": "Limbă răspuns" },
   "menuLabel_about": { "message": "Despre" },
   "about_version": { "message": "Versiune " },

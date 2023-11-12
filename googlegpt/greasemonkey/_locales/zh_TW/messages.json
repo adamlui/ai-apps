@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "需要" },
   "menuLabel_beforeQuery": { "message": "查詢前" },
   "menuLabel_afterQuery": { "message": "查詢後" },
-  "menuLabel_fatterSidebar": { "message": "較胖側邊欄" },
+  "menuLabel_widerSidebar": { "message": "更寬的側邊欄" },
   "menuLabel_replyLanguage": { "message": "回覆語言" },
   "menuLabel_about": { "message": "關於我們" },
   "about_version": { "message": "版本" },

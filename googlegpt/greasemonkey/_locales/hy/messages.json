@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Պահանջել" },
   "menuLabel_beforeQuery": { "message": "նախքան հարցումը" },
   "menuLabel_afterQuery": { "message": "հարցումից հետո" },
-  "menuLabel_fatterSidebar": { "message": "Ճարպոտ կողագոտի" },
+  "menuLabel_widerSidebar": { "message": "Ավելի լայն կողագոտի" },
   "menuLabel_replyLanguage": { "message": "Պատասխանելու լեզու" },
   "menuLabel_about": { "message": "Մանրամասն" },
   "about_version": { "message": "Ստանալ պրեմիում տարբերակը" },

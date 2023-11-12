@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "اړتیا" },
   "menuLabel_beforeQuery": { "message": "د پوښتنې دمخه" },
   "menuLabel_afterQuery": { "message": "د پوښتنې وروسته" },
-  "menuLabel_fatterSidebar": { "message": "Fatter Sidebar" },
+  "menuLabel_widerSidebar": { "message": "پراخ اړخپټه" },
   "menuLabel_replyLanguage": { "message": "د ځواب ژبه" },
   "menuLabel_about": { "message": "په هکله" },
   "about_version": { "message": ":نسخه" },

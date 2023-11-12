@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "задължително" },
   "menuLabel_beforeQuery": { "message": "преди заявката" },
   "menuLabel_afterQuery": { "message": "след заявка" },
-  "menuLabel_fatterSidebar": { "message": "По - дебела странична лента" },
+  "menuLabel_widerSidebar": { "message": "По - широка странична лента" },
   "menuLabel_replyLanguage": { "message": "Език на отговора" },
   "menuLabel_about": { "message": "Относно" },
   "about_version": { "message": "Версия" },
