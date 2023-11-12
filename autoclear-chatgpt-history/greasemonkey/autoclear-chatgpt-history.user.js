@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.11.3
+// @version             2023.11.12
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -360,7 +360,7 @@
     // Borrow classes from sidebar div
     const chatHistorySelector = 'nav[aria-label="Chat history"]'
     if (isGizmoUI) {
-        chatHistoryIsLoaded().then(setTimeout(() => { 
+        chatgpt.history.isLoaded().then(setTimeout(() => { 
             const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
                   navLinks = chatHistoryNav.querySelectorAll('a'),
                   firstLink = [...navLinks].find(link => link.textContent.includes(
@@ -404,7 +404,7 @@
     // Auto-clear on first visit if enabled
     if (config.autoclear) {
         if (chatgpt.history.isOn()) {
-            if (isGizmoUI) await chatHistoryIsLoaded()
+            if (isGizmoUI) await chatgpt.history.isLoaded()
             setTimeout(() => { chatgpt.clearChats() }, 250)
         }
         if (!config.notifHidden) notify(( messages.mode_autoClear || 'Auto-Clear' ) + ': ON')
@@ -572,7 +572,7 @@
     async function insertToggle() {
 
         // Select sidebar elems
-        if (isGizmoUI) await chatHistoryIsLoaded()
+        if (isGizmoUI) await chatgpt.history.isLoaded()
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = ( isGizmoUI ? [...navButtons].find(button => button.textContent.includes(
@@ -627,13 +627,5 @@
         // Update visibility
         navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
     }
-
-    function chatHistoryIsLoaded() {
-        return new Promise(resolve => {
-            (function checkChatHistory() {
-                if (document.querySelector('nav[aria-label="Chat history"]')) resolve()
-                else setTimeout(checkChatHistory, 100)
-            })()
-    })}
 
 })()
