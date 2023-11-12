@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.12
+// @version             2023.11.12.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -403,10 +403,7 @@
 
     // Auto-clear on first visit if enabled
     if (config.autoclear) {
-        if (chatgpt.history.isOn()) {
-            if (isGizmoUI) await chatgpt.history.isLoaded()
-            setTimeout(() => { chatgpt.clearChats() }, 250)
-        }
+        if (chatgpt.history.isOn()) setTimeout(() => { chatgpt.clearChats() }, 250)
         if (!config.notifHidden) notify(( messages.mode_autoClear || 'Auto-Clear' ) + ': ON')
     }
 
@@ -572,7 +569,6 @@
     async function insertToggle() {
 
         // Select sidebar elems
-        if (isGizmoUI) await chatgpt.history.isLoaded()
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = ( isGizmoUI ? [...navButtons].find(button => button.textContent.includes(
