@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.12.1
+// @version             2023.11.12.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -264,14 +264,14 @@
         }))
 
         // Add command to toggle fatter sidebar
-        const fsbLabel = ( config.fatterSidebar ? '🔛' : '↔️' ) + ' '
-                       + ( messages.menuLabel_fatterSidebar || 'Fatter Sidebar' )
-                       + state.separator + state.word[+!config.fatterSidebar]
-        menuIDs.push(GM_registerMenuCommand(fsbLabel, () => {
-            saveSetting('fatterSidebar', !config.fatterSidebar)
+        const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
+                       + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
+                       + state.separator + state.word[+!config.widerSidebar]
+        menuIDs.push(GM_registerMenuCommand(wsbLabel, () => {
+            saveSetting('widerSidebar', !config.widerSidebar)
             updateTweaksStyle()
             if (!config.notifHidden)
-                notify(( messages.menuLabel_fatterSidebar || 'Fatter Sidebar' ) + ' ' + state.word[+!config.fatterSidebar])
+                notify(( messages.menuLabel_widerSidebar || 'Wider Sidebar' ) + ' ' + state.word[+!config.widerSidebar])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -901,7 +901,7 @@
     // Define SYNC function
 
     function updateTweaksStyle() {
-        tweaksStyle.innerText = config.fatterSidebar ? fsbStyle : (
+        tweaksStyle.innerText = config.widerSidebar ? wsbStyle : (
             'section[data-area="sidebar"] { flex-basis: 448px ; max-width: 448px } '
           + 'section[data-area="mainline"] { flex-basis: 672px ; max-width: 672px } ')
     }
@@ -916,7 +916,7 @@
     config.updateURL = `https://update.greasyfork.org/scripts/${ /\d+/.exec(config.greasyForkURL) }.meta.js`
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled', 'replyLanguage', 'fatterSidebar', 'suffixEnabled')
+    loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled', 'replyLanguage', 'widerSidebar', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = []
 
@@ -976,7 +976,7 @@
 
     // Create DDG style tweaks
     const tweaksStyle = document.createElement('style'),
-          fsbStyle = 'section[data-area="sidebar"], section[data-area="mainline"] '
+          wsbStyle = 'section[data-area="sidebar"], section[data-area="mainline"] '
                        + '{ flex-basis: 560px !important ; max-width: 560px !important }'
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
