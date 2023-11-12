@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.12
+// @version             2023.11.12.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -606,7 +606,6 @@
     async function insertToggle() {
 
         // Select sidebar elems
-        if (isGizmoUI) await chatgpt.history.isLoaded()
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = ( isGizmoUI ? [...navButtons].find(button => button.textContent.includes(
@@ -663,13 +662,5 @@
         // Update visibility
         navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
     }
-
-    function chatgpt.history.isLoaded() {
-        return new Promise(resolve => {
-            (function checkChatHistory() {
-                if (document.querySelector('nav[aria-label="Chat history"]')) resolve()
-                else setTimeout(checkChatHistory, 100)
-            })()
-    })}
 
 })()
