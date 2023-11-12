@@ -91,7 +91,7 @@
     // Borrow classes from sidebar div
     const chatHistorySelector = 'nav[aria-label="Chat history"]'
     if (isGizmoUI) {
-        chatHistoryIsLoaded().then(setTimeout(() => { 
+        chatgpt.history.isLoaded().then(setTimeout(() => { 
             const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
                   navLinks = chatHistoryNav.querySelectorAll('a'),
                   firstLink = [...navLinks].find(link => link.textContent.includes(
@@ -158,7 +158,7 @@
     async function insertToggle() {
 
         // Select sidebar elems
-        if (isGizmoUI) await chatHistoryIsLoaded()
+        if (isGizmoUI) await chatgpt.history.isLoaded()
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = ( isGizmoUI ? [...navButtons].find(button => button.textContent.includes(
@@ -221,14 +221,6 @@
                 // Show toggle
                 navToggleDiv.style.display = 'flex'
     }})}
-
-    function chatHistoryIsLoaded() {
-        return new Promise(resolve => {
-            (function checkChatHistory() {
-                if (document.querySelector('nav[aria-label="Chat history"]')) resolve()
-                else setTimeout(checkChatHistory, 100)
-            })()
-    })}
 
     const infinityMode = {
 
