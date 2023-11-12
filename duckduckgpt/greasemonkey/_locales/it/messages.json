@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Richiesto" },
   "menuLabel_beforeQuery": { "message": "prima della query" },
   "menuLabel_afterQuery": { "message": "dopo la query" },
-  "menuLabel_fatterSidebar": { "message": "Barra laterale più grande" },
+  "menuLabel_widerSidebar": { "message": "Barra laterale più ampia" },
   "menuLabel_replyLanguage": { "message": "Lingua della risposta" },
   "menuLabel_about": { "message": "Informazioni generali" },
   "about_version": { "message": "Versione" },

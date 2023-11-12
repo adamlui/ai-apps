@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Zadano" },
   "menuLabel_beforeQuery": { "message": "prije upita" },
   "menuLabel_afterQuery": { "message": "nakon upita" },
-  "menuLabel_fatterSidebar": { "message": "Deblja bočna traka" },
+  "menuLabel_widerSidebar": { "message": "Šira bočna traka" },
   "menuLabel_replyLanguage": { "message": "Jezik odgovora" },
   "menuLabel_about": { "message": "O nama" },
   "about_version": { "message": "Verzija" },

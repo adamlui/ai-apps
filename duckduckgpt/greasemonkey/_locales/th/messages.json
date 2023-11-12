@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "ต้องกรอก" },
   "menuLabel_beforeQuery": { "message": "ก่อนการสอบถาม" },
   "menuLabel_afterQuery": { "message": "หลังการสอบถาม" },
-  "menuLabel_fatterSidebar": { "message": "แถบด้านข้าง Fatter" },
+  "menuLabel_widerSidebar": { "message": "แถบด้านข้างที่กว้างขึ้น" },
   "menuLabel_replyLanguage": { "message": "ตอบกลับภาษา" },
   "menuLabel_about": { "message": "เกี่ยวกับ" },
   "about_version": { "message": "เวอร์ชัน" },

@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Tələb et" },
   "menuLabel_beforeQuery": { "message": "sorğudan əvvəl" },
   "menuLabel_afterQuery": { "message": "sorğudan sonra" },
-  "menuLabel_fatterSidebar": { "message": "Daha Yağlı Kənar Çubuq" },
+  "menuLabel_widerSidebar": { "message": "Daha geniş yan panel" },
   "menuLabel_replyLanguage": { "message": "Cavab Dili" },
   "menuLabel_about": { "message": "Haqqında" },
   "about_version": { "message": "Versiya" },

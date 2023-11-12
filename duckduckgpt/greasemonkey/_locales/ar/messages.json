@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "مطلوب" },
   "menuLabel_beforeQuery": { "message": "قبل الاستعلام" },
   "menuLabel_afterQuery": { "message": "بعد الاستعلام الثاني" },
-  "menuLabel_fatterSidebar": { "message": "الشريط الجانبي أكثر سمنة" },
+  "menuLabel_widerSidebar": { "message": "الشريط الجانبي الأوسع" },
   "menuLabel_replyLanguage": { "message": "لغة الرد" },
   "menuLabel_about": { "message": "عن وزارة الثقافة" },
   "about_version": { "message": "الإصدار" },

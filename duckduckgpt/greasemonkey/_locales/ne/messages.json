@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "आवश्यक" },
   "menuLabel_beforeQuery": { "message": "क्वेरी अघि" },
   "menuLabel_afterQuery": { "message": "क्वेरी पछि" },
-  "menuLabel_fatterSidebar": { "message": "फ्याटर साइडबार" },
+  "menuLabel_widerSidebar": { "message": "फराकिलो साइडबार" },
   "menuLabel_replyLanguage": { "message": "जवाफ भाषा" },
   "menuLabel_about": { "message": "बारेमा" },
   "about_version": { "message": "संस्करण " },

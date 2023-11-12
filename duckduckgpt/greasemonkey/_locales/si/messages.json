@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "අවශ් ‍ යයි" },
   "menuLabel_beforeQuery": { "message": "විමසුමට පෙර" },
   "menuLabel_afterQuery": { "message": "විමසුමට පසු" },
-  "menuLabel_fatterSidebar": { "message": "Fatter SidebarComment" },
+  "menuLabel_widerSidebar": { "message": "පුළුල් පැති පුවරුව" },
   "menuLabel_replyLanguage": { "message": "පිළිතුරු භාෂාව" },
   "menuLabel_about": { "message": "සම්බන්ධව" },
   "about_version": { "message": "වෙළුම" },

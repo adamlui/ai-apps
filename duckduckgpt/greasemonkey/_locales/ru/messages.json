@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Требова" },
   "menuLabel_beforeQuery": { "message": "перед запросом" },
   "menuLabel_afterQuery": { "message": "после запроса" },
-  "menuLabel_fatterSidebar": { "message": "Более толстая боковая панель" },
+  "menuLabel_widerSidebar": { "message": "Более широкая боковая панель" },
   "menuLabel_replyLanguage": { "message": "Язык ответа" },
   "menuLabel_about": { "message": "Шифр." },
   "about_version": { "message": "Версия" },

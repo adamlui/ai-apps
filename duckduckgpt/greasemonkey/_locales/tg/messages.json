@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Талаб кардан" },
   "menuLabel_beforeQuery": { "message": "пеш аз пурсиш" },
   "menuLabel_afterQuery": { "message": "пас аз пурсиш" },
-  "menuLabel_fatterSidebar": { "message": "Панели паҳлӯии фарбеҳ" },
+  "menuLabel_widerSidebar": { "message": "Панели васеи канорӣ" },
   "menuLabel_replyLanguage": { "message": "Забони ҷавоб" },
   "menuLabel_about": { "message": "Дар бораи" },
   "about_version": { "message": "Версия" },

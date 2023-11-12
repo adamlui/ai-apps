@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Jaapani jeen" },
   "menuLabel_beforeQuery": { "message": "enne päringut" },
   "menuLabel_afterQuery": { "message": "pärast päringut" },
-  "menuLabel_fatterSidebar": { "message": "Rasvam külgriba" },
+  "menuLabel_widerSidebar": { "message": "Laiem külgriba" },
   "menuLabel_replyLanguage": { "message": "Vastuse keel" },
   "menuLabel_about": { "message": "Umbes" },
   "about_version": { "message": "Versioon" },

@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "Requirere" },
   "menuLabel_beforeQuery": { "message": "ante query" },
   "menuLabel_afterQuery": { "message": "post query" },
-  "menuLabel_fatterSidebar": { "message": "Pinguior Sidebar" },
+  "menuLabel_widerSidebar": { "message": "Sidebar" },
   "menuLabel_replyLanguage": { "message": "Respondere Linguae" },
   "menuLabel_about": { "message": "De" },
   "about_version": { "message": "Versio" },

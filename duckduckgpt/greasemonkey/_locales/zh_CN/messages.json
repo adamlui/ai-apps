@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "需要" },
   "menuLabel_beforeQuery": { "message": "查询前" },
   "menuLabel_afterQuery": { "message": "查询到记录后" },
-  "menuLabel_fatterSidebar": { "message": "较胖侧边栏" },
+  "menuLabel_widerSidebar": { "message": "更宽的侧边栏" },
   "menuLabel_replyLanguage": { "message": "回复语言" },
   "menuLabel_about": { "message": "关于" },
   "about_version": { "message": "版本" },

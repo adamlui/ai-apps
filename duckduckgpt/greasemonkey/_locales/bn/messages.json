@@ -6,7 +6,7 @@
   "menuLabel_require": { "message": "প্রয়োজন" },
   "menuLabel_beforeQuery": { "message": "কোয়েরির আগে" },
   "menuLabel_afterQuery": { "message": "কোয়েরির পরে" },
-  "menuLabel_fatterSidebar": { "message": "ফ্যাটার সাইডবার" },
+  "menuLabel_widerSidebar": { "message": "ওয়াইডার সাইডবার" },
   "menuLabel_replyLanguage": { "message": "উত্তর ভাষা" },
   "menuLabel_about": { "message": "সম্বন্ধে" },
   "about_version": { "message": "সংস্করণ" },
