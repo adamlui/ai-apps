@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.12
+// @version             2023.11.12.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -265,7 +265,7 @@
         prefix: site + 'Widescreen', appSymbol: '🖥️', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/chatgpt-widescreen',
         greasyForkURL: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode' }
-    config.updateURL = `https://update.greasyfork.org/scripts/${ config.greasyForkURL.match(/\d+/)[0] }.meta.js`
+    config.updateURL = `https://update.greasyfork.org/scripts/${ /\d+/.exec(config.greasyForkURL) }.meta.js`
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'wcbDisabled', 'hiddenHeader', 'hiddenFooter', 'wideScreen')
