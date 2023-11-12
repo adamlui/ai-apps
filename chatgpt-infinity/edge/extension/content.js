@@ -158,7 +158,6 @@
     async function insertToggle() {
 
         // Select sidebar elems
-        if (isGizmoUI) await chatgpt.history.isLoaded()
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = ( isGizmoUI ? [...navButtons].find(button => button.textContent.includes(
