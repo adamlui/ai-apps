@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.12
+// @version             2023.11.12.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -913,7 +913,7 @@
         prefix: 'ddgpt', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/duckduckgpt',
         greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt' }
-    config.updateURL = `https://update.greasyfork.org/scripts/${ config.greasyForkURL.match(/\d+/)[0] }.meta.js`
+    config.updateURL = `https://update.greasyfork.org/scripts/${ /\d+/.exec(config.greasyForkURL) }.meta.js`
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled', 'replyLanguage', 'fatterSidebar', 'suffixEnabled')
