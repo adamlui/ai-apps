@@ -62,7 +62,7 @@
         + 'font-size: 0.7rem ; color: white ; ' // font style
         + 'position: absolute ; bottom: 50px ; ' // v-position
         + 'opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 ; ' // visibility
-        + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }' // disable select
+        + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
     document.head.appendChild(tooltipStyle)
 
     // Create/apply general style tweaks
@@ -174,7 +174,8 @@
                         if (!config.modeSynced) syncMode('fullWindow')
         }})})
         setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
-            sidebarObserver.observe(document.body, { childList: true, subtree: true })}, 500)
+            sidebarObserver.observe(document.body, {
+                subtree: true, childList: isGizmoUI ? false : true, attributes: isGizmoUI ? true : false })}, 500)
     }
 
     // Add full screen listeners to update setting/button + set F11 flag
