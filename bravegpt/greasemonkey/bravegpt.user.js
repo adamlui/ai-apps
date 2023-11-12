@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.12.1
+// @version             2023.11.12.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -225,14 +225,14 @@
         }))
 
         // Add command to toggle fatter sidebar
-        const fsbLabel = ( config.fatterSidebar ? '🔛' : '↔️' ) + ' '
-                       + ( messages.menuLabel_fatterSidebar || 'Fatter Sidebar' )
-                       + state.separator + state.word[+!config.fatterSidebar]
-        menuIDs.push(GM_registerMenuCommand(fsbLabel, () => {
-            saveSetting('fatterSidebar', !config.fatterSidebar)
+        const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
+                       + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
+                       + state.separator + state.word[+!config.widerSidebar]
+        menuIDs.push(GM_registerMenuCommand(wsbLabel, () => {
+            saveSetting('widerSidebar', !config.widerSidebar)
             updateTweaksStyle()
             if (!config.notifHidden)
-                notify(( messages.menuLabel_fatterSidebar || 'Fatter Sidebar' ) + ' ' + state.word[+!config.fatterSidebar])
+                notify(( messages.menuLabel_widerSidebar || 'Wider Sidebar' ) + ' ' + state.word[+!config.widerSidebar])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -390,7 +390,7 @@
     }
 
     function isChromium() { return navigator.userAgent.includes('Chrome') }
-    function updateTweaksStyle() { tweaksStyle.innerText = config.fatterSidebar ? fsbStyle : '' }
+    function updateTweaksStyle() { tweaksStyle.innerText = config.widerSidebar ? wsbStyle : '' }
 
     // Define SESSION functions
 
@@ -651,7 +651,7 @@
                             braveGPTconsole.info('Response: ' + event.responseText)
                             if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
                                 braveGPTshow(messages.alert_censored || 'Sorry, according to our product rules, '
-                                    + 'we cannot provide you with an answer to this question, please try other questions' )
+                                    + 'we cannot provide you with an answer to this question, please try other questions')
                             else if (event.responseText.includes('维护'))
                                 braveGPTshow(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
                                     + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
@@ -899,7 +899,7 @@
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled',
-        'suffixEnabled', 'fatterSidebar', 'replyLanguage')
+        'suffixEnabled', 'widerSidebar', 'replyLanguage')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = []
 
@@ -959,7 +959,7 @@
 
     // Create Brave Search style tweaks
     const tweaksStyle = document.createElement('style'),
-          fsbStyle = 'main.main-column, aside.sidebar { max-width: 521px !important }'
+          wsbStyle = 'main.main-column, aside.sidebar { max-width: 521px !important }'
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Stylize elements
