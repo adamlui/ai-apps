@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.12.1
+// @version             2023.11.12.2
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -246,8 +246,8 @@
 // @grant               GM.xmlHttpRequest
 // @run-at              document-start
 // @noframes
-// @updateURL           https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.meta.js
-// @downloadURL         https://greasyfork.org/scripts/462422/code/chatgpt-auto-refresh.user.js
+// @updateURL           https://update.greasyfork.org/scripts/462422.meta.js
+// @downloadURL         https://update.greasyfork.org/scripts/462422.user.js
 // @homepageURL         https://github.com/adamlui/chatgpt-auto-refresh
 // @supportURL          https://github.com/adamlui/chatgpt-auto-refresh/issues
 // ==/UserScript==
@@ -261,7 +261,7 @@
         prefix: 'chatgptAutoRefresh', appSymbol: '↻', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-refresh',
         greasyForkURL: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh' }
-    config.updateURL = config.greasyForkURL + '/code/chatgpt-auto-refresh.meta.js'
+    config.updateURL = `https://update.greasyfork.org/scripts/${ config.greasyForkURL.match(/\d+/)[0] }.meta.js`
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('arDisabled', 'notifHidden', 'refreshInterval', 'toggleHidden')
