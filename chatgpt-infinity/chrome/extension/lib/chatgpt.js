@@ -278,6 +278,15 @@ const chatgpt = {
     }}},
 
     history: {
+        isLoaded: function() {
+            return new Promise(resolve => {
+                const checkChatHistory = () => {
+                    if (document.querySelector('nav[aria-label="Chat history"]')) resolve();
+                    else setTimeout(checkChatHistory, 100);
+                };
+                checkChatHistory();
+        });},
+
         isOn: function() {
             if (chatgpt.isGizmoUI()) {
                 const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
