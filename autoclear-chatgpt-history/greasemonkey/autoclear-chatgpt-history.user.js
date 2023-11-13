@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.12.3
+// @version             2023.11.12.4
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -250,8 +250,8 @@
 // @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
 // @noframes
-// @updateURL           https://update.greasyfork.org/scripts/460805.meta.js
-// @downloadURL         https://update.greasyfork.org/scripts/460805.user.js
+// @downloadURL         https://update.greasyfork.org/scripts/460805/autoclear-chatgpt-history.user.js
+// @updateURL           https://update.greasyfork.org/scripts/460805/autoclear-chatgpt-history.meta.js
 // @homepageURL         https://github.com/adamlui/autoclear-chatgpt-history
 // @supportURL          https://github.com/adamlui/autoclear-chatgpt-history/issues
 // ==/UserScript==
@@ -265,7 +265,7 @@
         prefix: 'chatgptAutoclear', appSymbol: '🕶️', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
         greasyForkURL: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history' }
-    config.updateURL = `https://update.greasyfork.org/scripts/${ /\d+/.exec(config.greasyForkURL) }.meta.js`
+    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.').replace(/(\d+)-(.+)$/, '$1/$2.meta.js')
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('autoclear', 'buttonHidden', 'notifHidden', 'toggleHidden')
