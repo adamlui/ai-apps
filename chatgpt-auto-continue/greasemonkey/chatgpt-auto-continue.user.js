@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.12.1
+// @version             2023.11.12.2
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -234,8 +234,8 @@
 // @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
 // @noframes
-// @downloadURL         https://update.greasyfork.org/scripts/466789.user.js
-// @updateURL           https://update.greasyfork.org/scripts/466789.meta.js
+// @downloadURL         https://update.greasyfork.org/scripts/466789/chatgpt-auto-continue.user.js
+// @updateURL           https://update.greasyfork.org/scripts/466789/chatgpt-auto-continue.meta.js
 // @homepageURL         https://github.com/adamlui/chatgpt-auto-continue
 // @supportURL          https://github.com/adamlui/chatgpt-auto-continue/issues
 // ==/UserScript==
@@ -249,7 +249,8 @@
         prefix: 'chatgptAutoContinue', appSymbol: '≫', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-continue',
         greasyForkURL: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue' }
-    config.updateURL = `https://update.greasyfork.org/scripts/${ /\d+/.exec(config.greasyForkURL) }.meta.js`
+    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
+        .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('notifHidden')
