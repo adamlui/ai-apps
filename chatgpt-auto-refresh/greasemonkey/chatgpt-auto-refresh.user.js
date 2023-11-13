@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.12.4
+// @version             2023.11.13
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -605,6 +605,7 @@
     // Define TOGGLE functions
 
     async function insertToggle() {
+        if (isGizmoUI) await chatgpt.history.isLoaded()
 
         // Select sidebar elems
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
