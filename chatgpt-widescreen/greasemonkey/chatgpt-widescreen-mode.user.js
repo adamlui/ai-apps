@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.12.3
+// @version             2023.11.12.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -770,7 +770,7 @@
     const sendBtnSelector = (
         site == 'openai' ? 'form button[class*="bottom"]'
       : site == 'aivvm' ? 'textarea ~ button[class*="right"]' : null)
-    const sendButtonClasses = (document.querySelector(sendBtnSelector) || {}).classList || [],
+    const sendBtnClasses = document.querySelector(sendBtnSelector)?.classList || [],
           sendImgClasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
 
     // Create/stylize tooltip div
@@ -826,7 +826,7 @@
             window[buttonName].style.cssText = `right: ${ rOffset + i * bOffset }rem` // position left of prev button
             window[buttonName].style.cursor = 'pointer' // add finger cursor
             if (site !== 'poe') // assign borrowed classes
-                window[buttonName].setAttribute('class', sendButtonClasses)
+                window[buttonName].setAttribute('class', sendBtnClasses)
             else if (site == 'poe') // lift buttons slightly
                 window[buttonName].style.cssText += '; margin-bottom: 0.2rem'
             if (isGizmoUI) { // style tweaks for OpenAI Gizmo UI
