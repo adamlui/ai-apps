@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.12.3
+// @version             2023.11.13
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -165,10 +165,6 @@
     // Define MENU functions
 
     function registerMenu() {
-        const menuIDs = [] // to store registered commands for removal while preserving order
-        const state = {
-            symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-            separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
 
         // Add command to toggle proxy API mode
         const pamLabel = state.symbol[+!config.proxyAPIenabled] + ' '
@@ -228,13 +224,7 @@
         const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
                        + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                        + state.separator + state.word[+!config.widerSidebar]
-        menuIDs.push(GM_registerMenuCommand(wsbLabel, () => {
-            saveSetting('widerSidebar', !config.widerSidebar)
-            updateTweaksStyle()
-            if (!config.notifHidden)
-                notify(( messages.menuLabel_widerSidebar || 'Wider Sidebar' ) + ' ' + state.word[+!config.widerSidebar])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
+        menuIDs.push(GM_registerMenuCommand(wsbLabel, toggleWiderSidebar))
 
         // Add command to set reply language
         const rlLabel = '🌐 ' + ( messages.menuLabel_replyLanguage || 'Reply Language' )
@@ -390,7 +380,46 @@
     }
 
     function isChromium() { return navigator.userAgent.includes('Chrome') }
+
+    function toggleWiderSidebar() {
+        saveSetting('widerSidebar', !config.widerSidebar)
+        updateTweaksStyle()
+        if (document.querySelector('.corner-btn')) updateWSBsvg()
+        if (!config.notifHidden)
+            notify(( messages.menuLabel_widerSidebar || 'Wider Sidebar' ) + ' ' + state.word[+!config.widerSidebar])
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+    }
+
     function updateTweaksStyle() { tweaksStyle.innerText = config.widerSidebar ? wsbStyle : '' }
+
+    function updateWSBsvg() {
+
+        // Init span/SVG/paths
+        const wsbSpan = braveGPTdiv.querySelector('#wsb-btn'),
+              wsbSVG = wsbSpan.querySelector('svg')
+        const wsbONelems = [
+            createSVGelem('path', { fill: '', 'fill-rule': 'evenodd',
+                d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
+        const wsbOFFelems = [
+            createSVGelem('path', { fill: '', 'fill-rule': 'evenodd',
+                d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ]
+
+        // Set SVG attributes            
+        wsbSVG.setAttribute('height', 18) ; wsbSVG.setAttribute('viewBox', '8 8 20 20')
+        wsbSpan.title = ( config.widerSidebar ? 'Exit ' :  '' ) + messages.menuLabel_widerSidebar || 'Wider Sidebar'
+
+        // Update SVG elements
+        while (wsbSVG.firstChild) { wsbSVG.removeChild(wsbSVG.firstChild) }
+        const wsbSVGelems = config.widerSidebar ? wsbONelems : wsbOFFelems
+        wsbSVGelems.forEach(elem => { wsbSVG.appendChild(elem) })
+        if (!wsbSpan.contains(wsbSVG)) wsbSpan.appendChild(wsbSVG)
+    }
+
+    function createSVGelem(tagName, attributes) {
+        const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
+        for (const attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])
+        return elem
+    }
 
     // Define SESSION functions
 
@@ -704,7 +733,7 @@
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         speakSpan.className = 'corner-btn' ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
-        speakSpan.style.margin = '-0.025em 14px 0px' // fine-tune position
+        speakSpan.style.margin = '-0.007em 8px 0 12px' // fine-tune position
         speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32')
         speakSVG.setAttributeNS(null, 'width', '22')
         const speakSVGpaths = [
@@ -722,6 +751,13 @@
             speakSVG.appendChild(path)
         })
         speakSpan.appendChild(speakSVG) ; braveGPTdiv.appendChild(speakSpan)
+
+        // Create/append Wider Sidebar button
+        const wsbSpan = document.createElement('span'),
+              wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        wsbSpan.id = 'wsb-btn' ; wsbSpan.className = 'corner-btn'
+        wsbSpan.style.marginTop = '0.11rem' // fine-tune position
+        wsbSpan.appendChild(wsbSVG) ; braveGPTdiv.appendChild(wsbSpan) ; updateWSBsvg()
 
         // Create/append ChatGPT response
         const balloonTipSpan = document.createElement('span'),
@@ -782,6 +818,7 @@
         speakSVG.addEventListener('click', () => {
             chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
         aboutSVG.addEventListener('click', launchAboutModal)
+        wsbSVG.addEventListener('click', toggleWiderSidebar)
         replyForm.addEventListener('keydown', handleEnter)
         replyForm.addEventListener('submit', handleSubmit)
         chatTextarea.addEventListener('input', autosizeChatbar)
@@ -902,7 +939,10 @@
     loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled',
         'suffixEnabled', 'widerSidebar', 'replyLanguage')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    const convo = []
+    const convo = [], menuIDs = []
+    const state = {
+        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+        separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
