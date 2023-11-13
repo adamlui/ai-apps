@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.12.4
+// @version             2023.11.13
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -620,6 +620,7 @@
     // Define TOGGLE functions
 
     async function insertToggle() {
+        if (isGizmoUI) await chatgpt.history.isLoaded()
 
         // Select sidebar elems
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
