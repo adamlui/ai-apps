@@ -14,6 +14,7 @@
 [![](https://img.shields.io/codefactor/grade/github/kudoai/bravegpt?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/kudoai/bravegpt)
 [![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgpt.js.org)
 [![](https://img.shields.io/badge/Mentioned_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
+[![](https://img.shields.io/badge/Built_by-KudoAI-9146ff?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.kudoai.com)
 
 <h3><b>BraveGPT</b> brings the magic of ChatGPT to search results (powered by GPT-4!)</h3>
 
