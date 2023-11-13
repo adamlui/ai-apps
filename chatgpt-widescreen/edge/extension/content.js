@@ -43,7 +43,7 @@
     config.fullScreen = chatgpt.isFullScreen()
 
     // Collect button classes
-    const sendBtnClasses = document.querySelector(sendBtnSelector)?.classList || [],
+    const sendBtnClasses = document.querySelector('form button[class*="bottom"]')?.classList || [],
           sendImgClasses = document.querySelector('form button[class*="bottom"] svg')?.classList || []
 
     // Define UI element selectors
