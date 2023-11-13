@@ -175,7 +175,7 @@
         }})})
         setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
             sidebarObserver.observe(document.body, {
-                subtree: true, childList: isGizmoUI ? false : true, attributes: isGizmoUI ? true : false })}, 500)
+                subtree: true, childList: !isGizmoUI, attributes: !!isGizmoUI })}, 500)
     }
 
     // Add full screen listeners to update setting/button + set F11 flag
