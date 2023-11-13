@@ -43,8 +43,8 @@
     config.fullScreen = chatgpt.isFullScreen()
 
     // Collect button classes
-    const sendButtonClasses = (document.querySelector('form button[class*="bottom"]' ) || {}).classList || [],
-          sendImgClasses = (document.querySelector('form button[class*="bottom"] svg') || {}).classList || []
+    const sendBtnClasses = document.querySelector(sendBtnSelector)?.classList || [],
+          sendImgClasses = document.querySelector('form button[class*="bottom"] svg')?.classList || []
 
     // Define UI element selectors
     const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after'
@@ -103,7 +103,7 @@
             window[buttonName].style.cssText = `right: ${ rOffset + i * bOffset }rem` // position left of prev button
             window[buttonName].style.cursor = 'pointer' // add finger cursor // 添加鼠标手势为手指
             if (site != 'poe') // assign borrowed classes
-                window[buttonName].setAttribute('class', sendButtonClasses)
+                window[buttonName].setAttribute('class', sendBtnClasses)
             else if (site == 'poe') // lift buttons slightly
                 window[buttonName].style.cssText += '; margin-bottom: 0.2rem '
             if (isGizmoUI) { // style tweaks for OpenAI Gizmo UI
