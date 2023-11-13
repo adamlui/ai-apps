@@ -3,7 +3,20 @@
     <img src="https://i.imgur.com/knADLVh.png">
 </picture>
 
-## Bring the magic of ChatGPT to Google Search (powered by GPT-4!)
+<div align="center">
+    
+<h3>Bring the magic of ChatGPT to Google Search (powered by GPT-4!)</h3>
+<a href="https://www.codefactor.io/repository/github/kudoai/googlegpt"><img height=34 src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+&nbsp;
+<a href="https://chatgpt.js.org"><img height=34 src="https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+&nbsp;
+<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img height=34 src="https://img.shields.io/badge/Mentioned_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+&nbsp;
+<a href="https://www.kudoai.com"><img height=34 src="https://img.shields.io/badge/Built_by-KudoAI-9146ff?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+    
+</div>
+
+<br>
 
 [![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/meaning-of-life-dark-demo.png)](https://greasyfork.org/scripts/478597-googlegpt)
 
