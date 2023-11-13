@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.12.2
+// @version             2023.11.12.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -183,8 +183,8 @@
 // @grant               GM_unregisterMenuCommand
 // @grant               GM_openInTab
 // @grant               GM.xmlHttpRequest
-// @downloadURL         https://update.greasyfork.org/scripts/459849.user.js
-// @updateURL           https://update.greasyfork.org/scripts/459849.meta.js
+// @downloadURL         https://update.greasyfork.org/scripts/459849/duckduckgpt.user.js
+// @updateURL           https://update.greasyfork.org/scripts/459849/duckduckgpt.meta.js
 // @homepageURL         https://www.duckduckgpt.com
 // @supportURL          https://github.duckduckgpt.com/issues
 // ==/UserScript==
@@ -913,7 +913,8 @@
         prefix: 'ddgpt', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/duckduckgpt',
         greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt' }
-    config.updateURL = `https://update.greasyfork.org/scripts/${ /\d+/.exec(config.greasyForkURL) }.meta.js`
+    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
+        .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled', 'replyLanguage', 'widerSidebar', 'suffixEnabled')
