@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.9
+// @version             2023.11.14
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1171,28 +1171,28 @@
     const googleGPTstyle = document.createElement('style'),
           scheme = isDarkMode() ? 'dark' : 'light'
     googleGPTstyle.innerText = (
-        '.googlegpt-container {'
+        '.googlegpt {'
             + 'border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
             + `padding: ${ isChromium() ? 22 : 20 }px 26px 6px 26px ; margin: 0 0 30px 0 ;`
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
             + ( scheme == 'dark' ? ' border: none ; background: #282828 } ' : ' } ' )
-        + '.googlegpt-container p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
-        + ( scheme == 'dark' ? '.googlegpt-container a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
+        + '.googlegpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
+        + ( scheme == 'dark' ? '.googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
         + '.app-name { font-size: 1.5rem ; font-weight: 700 }'
         + '.app-name a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
         + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
             + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
-        + '.googlegpt-container .loading {'
+        + '.googlegpt .loading {'
             + 'padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-        + '.googlegpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
-        + '.googlegpt-container pre {'
+        + '.googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
+        + '.googlegpt pre {'
             + 'font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ;'
             + ' line-height: 22px ; padding: 1.25em ; border-radius: 10px ;'
             + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : 'background: #eaeaea } ' )
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-        + '.googlegpt-container section.loading {'
+        + '.googlegpt section.loading {'
             + 'padding: 15px 0 14px 5px ;' // left/top-pad loading status when sending replies
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ; '
@@ -1240,7 +1240,7 @@
 
     // Create/classify/fill GoogleGPT container
     const googleGPTdiv = document.createElement('div')
-    googleGPTdiv.className = 'googlegpt-container'
+    googleGPTdiv.className = 'googlegpt'
     googleGPTalert('waitingResponse')
 
     // Append to Google
