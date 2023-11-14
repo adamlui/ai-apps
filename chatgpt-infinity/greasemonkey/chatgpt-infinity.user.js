@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.13.1
+// @version             2023.11.13.2
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -457,7 +457,7 @@
                                  + ' (' + ( messages.prompt_orEnter || 'or enter' ) + ' \'ALL\'):', config.replyTopic)
                 if (replyTopic === null) break // user cancelled so do nothing
                 else {
-                    str_replyTopic = replyTopic.toString()
+                    const str_replyTopic = replyTopic.toString()
                     saveSetting('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
                     alert(( messages.alert_replyTopicUpdated || 'Topic updated' ) + '!',
                         ( messages.appName || 'ChatGPT Infinity' ) + ' '
