@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.8
+// @version             2023.11.13.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -411,8 +411,8 @@
 
         // Update SVG elements
         while (wsbSVG.firstChild) { wsbSVG.removeChild(wsbSVG.firstChild) }
-        const wsbSVGelems = config.widerSidebar ? wsbONpaths : wsbOFFpaths
-        wsbSVGelems.forEach(elem => { wsbSVG.appendChild(elem) })
+        const wsbSVGpaths = config.widerSidebar ? wsbONpaths : wsbOFFpaths
+        wsbSVGpaths.forEach(path => { wsbSVG.appendChild(path) })
         if (!wsbSpan.contains(wsbSVG)) wsbSpan.appendChild(wsbSVG)
     }
 
