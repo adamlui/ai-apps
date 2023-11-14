@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.6
+// @version             2023.11.13.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -776,18 +776,14 @@
         // Create/append send button
         const sendButton = document.createElement('button'),
               sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-              sendSVGline = document.createElementNS('http://www.w3.org/2000/svg', 'line'),
-              sendSVGpolygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon')
+              sendSVGpath = createSVGelem('path', { stroke: '', 'stroke-width': '2', linecap: 'round',
+                  'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
         sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
-        sendSVG.setAttribute('viewBox', '0 0 24 24') ; sendSVG.setAttribute('fill', 'none')
+        sendSVG.setAttribute('viewBox', '4 2 16 16') ; sendSVG.setAttribute('fill', 'none')
+        sendSVG.setAttribute('height', '16') ; sendSVG.setAttribute('width', '16')
         sendSVG.setAttribute('stroke', 'currentColor') ; sendSVG.setAttribute('stroke-width', '2')
         sendSVG.setAttribute('stroke-linecap', 'round') ; sendSVG.setAttribute('stroke-linejoin', 'round')
-        sendSVG.setAttribute('height', '1em') ; sendSVG.setAttribute('width', '1em')
-        sendSVGline.setAttribute('x1', '22') ; sendSVGline.setAttribute('y1', '2')
-        sendSVGline.setAttribute('x2', '11') ; sendSVGline.setAttribute('y2', '13')
-        sendSVGpolygon.setAttribute('points', '22 2 15 22 11 13 2 9 22 2')
-        sendSVG.appendChild(sendSVGline) ; sendSVG.appendChild(sendSVGpolygon)
-        sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
+        sendSVG.appendChild(sendSVGpath) ; sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
         // Create/append footer
         fillBraveGPTfooter() ; braveGPTfooter.style.height = 'inherit' // (re-)init (after loading replies)
@@ -1063,7 +1059,7 @@
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button {'
             + 'float: right ; border: none ; margin: 18px 4px 0 0 ;'
-            + `position: relative ; bottom: ${ isChromium() ? 58 : 54 }px; right: 12px;`
+            + `position: relative ; bottom: ${ isChromium() ? 61 : 57 }px; right: 10px;`
             + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
         + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
