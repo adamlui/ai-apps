@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.6
+// @version             2023.11.13.7
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -627,8 +627,8 @@
 
         // Update SVG elements
         while (wsbSVG.firstChild) { wsbSVG.removeChild(wsbSVG.firstChild) }
-        const wsbSVGelems = config.widerSidebar ? wsbONpaths : wsbOFFpaths
-        wsbSVGelems.forEach(elem => { wsbSVG.appendChild(elem) })
+        const wsbSVGpaths = config.widerSidebar ? wsbONpaths : wsbOFFpaths
+        wsbSVGpaths.forEach(path => { wsbSVG.appendChild(path) })
         if (!wsbSpan.contains(wsbSVG)) wsbSpan.appendChild(wsbSVG)
     }
 
