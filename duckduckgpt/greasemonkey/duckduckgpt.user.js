@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.8
+// @version             2023.11.13.9
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -920,18 +920,6 @@
         }
     }
 
-    async function loadDDGPT() {
-        ddgptAlert('waitingResponse')
-        const hostContainer = document.querySelector(isCenteredMode() ? '[data-area*="mainline"]' : '[class*="sidebar"]')
-        hostContainer.prepend(ddgptDiv, ddgptFooter)
-        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-        convo.push(
-            config.proxyAPIenabled ? { role: 'user', content: query }
-                                   : { role: 'user', id: chatgpt.uuidv4(),
-                                       content: { content_type: 'text', parts: [query] }})
-        getShowReply(convo)
-    }
-
     // Run MAIN routine
 
     // Init config/convo/menu
@@ -1081,17 +1069,18 @@
     )
     document.head.appendChild(ddgptStyle) // append style to <head>
 
-    // Create DDGPT container & add class
+    // Create/classify/fill DDGPT container
     const ddgptDiv = document.createElement('div') // create container div
     ddgptDiv.className = 'ddgpt-container'
+    ddgptAlert('waitingResponse')
 
-    // Create feedback footer & add classes/HTML
+    // Create/classify/fill feedback footer
     const ddgptFooter = document.createElement('div')
     ddgptFooter.className = 'feedback-prompt chatgpt-feedback'
     ddgptFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose"'
         + ' class="feedback-prompt__link" target="_blank" rel="noopener">' + ( messages.link_shareFeedback || 'Share Feedback' ) + '</a>'
 
-    // Activate promo campaign if active
+    // Activate ad campaign if active
     GM.xmlHttpRequest({
         method: 'GET', url: config.assetHostURL + 'ads/live/creative.html',
         onload: response => { if (response.status == 200) {
@@ -1112,6 +1101,16 @@
             pcDiv.insertAdjacentElement('afterend', pcFooter)
     }}})
 
-    loadDDGPT()
+    // Append DDGPT + footer to DDG
+    const hostContainer = document.querySelector(isCenteredMode() ? '[data-area*="mainline"]' : '[class*="sidebar"]')
+    hostContainer.prepend(ddgptDiv, ddgptFooter)
+
+    // Get answer
+    const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
+    convo.push(
+        config.proxyAPIenabled ? { role: 'user', content: query }
+                               : { role: 'user', id: chatgpt.uuidv4(),
+                                   content: { content_type: 'text', parts: [query] }})
+    getShowReply(convo)
 
 })()
