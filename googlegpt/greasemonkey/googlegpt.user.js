@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.3
+// @version             2023.11.13.4
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -990,18 +990,14 @@
         // Create/append send button
         const sendButton = document.createElement('button'),
               sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-              sendSVGline = document.createElementNS('http://www.w3.org/2000/svg', 'line'),
-              sendSVGpolygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon')
+              sendSVGpath = createSVGelem('path', { stroke: '', 'stroke-width': '2', linecap: 'round',
+                  'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
         sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
-        sendSVG.setAttribute('viewBox', '0 0 24 24') ; sendSVG.setAttribute('fill', 'none')
+        sendSVG.setAttribute('viewBox', '4 2 16 16') ; sendSVG.setAttribute('fill', 'none')
+        sendSVG.setAttribute('height', '16') ; sendSVG.setAttribute('width', '16')
         sendSVG.setAttribute('stroke', 'currentColor') ; sendSVG.setAttribute('stroke-width', '2')
         sendSVG.setAttribute('stroke-linecap', 'round') ; sendSVG.setAttribute('stroke-linejoin', 'round')
-        sendSVG.setAttribute('height', '1em') ; sendSVG.setAttribute('width', '1em')
-        sendSVGline.setAttribute('x1', '22') ; sendSVGline.setAttribute('y1', '2')
-        sendSVGline.setAttribute('x2', '11') ; sendSVGline.setAttribute('y2', '13')
-        sendSVGpolygon.setAttribute('points', '22 2 15 22 11 13 2 9 22 2')
-        sendSVG.appendChild(sendSVGline) ; sendSVG.appendChild(sendSVGpolygon)
-        sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
+        sendSVG.appendChild(sendSVGpath) ; sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
         // Render math
         renderMathInElement(answerPre, { // eslint-disable-line no-undef
@@ -1251,7 +1247,7 @@
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button { border: none ; float: right ;'
-            + `position: relative ; ${ isChromium() ? 'bottom: 46px ; right: 7px ;' : 'bottom: 43px ; right: 8px ;' }`
+            + `position: relative ; ${ isChromium() ? 'bottom: 49px ; right: 7px ;' : 'bottom: 46px ; right: 8px ;' }`
             + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
