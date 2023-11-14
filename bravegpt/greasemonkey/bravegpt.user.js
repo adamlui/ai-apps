@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.11
+// @version             2023.11.14
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -985,34 +985,34 @@
     const braveGPTstyle = document.createElement('style'),
           scheme = isDarkMode() ? 'dark' : 'light'
     braveGPTstyle.innerText = (
-        '.bravegpt-container {'
+        '.bravegpt {'
             + 'word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px ;'
             + 'border-radius: 18px ; padding: 24px 23px 45px 23px ; background:'
                 + ( scheme == 'dark' ? '#282828' : 'white' ) + '}'
-        + '.bravegpt-container p { margin: 0 }'
-        + '.bravegpt-container .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }'
+        + '.bravegpt p { margin: 0 }'
+        + '.bravegpt .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }'
         + '.app-name { font-size: 20px ; font-family: var(--brand-font) }'
         + '.app-name a { color: inherit ; text-decoration: none }'
         + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
             + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
-        + '.bravegpt-container .loading {'
-            + 'margin-bottom: -55px ;' // offset vs. `.bravegpt-container` bottom-padding footer accomodation
+        + '.bravegpt .loading {'
+            + 'margin-bottom: -55px ;' // offset vs. `.bravegpt` bottom-padding footer accomodation
             + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-        + '.bravegpt-container section.loading { padding-left: 5px ; font-size: 90% }'
-        + '.bravegpt-container pre {'
+        + '.bravegpt section.loading { padding-left: 5px ; font-size: 90% }'
+        + '.bravegpt pre {'
             + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
             + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;'
             + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 } ' )
-        + `.bravegpt-container .footer { margin: ${ isChromium() ? 19 : 24 }px 0 -26px 0 ; border-top: none !important }`
-        + '.bravegpt-container .feedback {'
+        + `.bravegpt .footer { margin: ${ isChromium() ? 19 : 24 }px 0 -26px 0 ; border-top: none !important }`
+        + '.bravegpt .feedback {'
             + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem ; color: var(--search-text-06) ;'
             + 'letter-spacing: .02em ; line-height: 1; position: relative ; right: -10px ; bottom: 15px }'
-        + '.bravegpt-container .feedback .icon {'
+        + '.bravegpt .feedback .icon {'
             + ' fill: currentColor ; color: currentColor ; --size: 12px ; position: relative ; top: 0.19em ; right: 2px }'
-        + `.bravegpt-container .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
+        + `.bravegpt .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
             + ( isChromium() ? 'top: 0.16em ; right: 4.9rem;' : 'top: 0.25em ; right: 9.78rem;' )
@@ -1061,7 +1061,7 @@
     // Create/classify/fill BraveGPT container
     const braveGPTdiv = document.createElement('div') // create container div
     braveGPTdiv.setAttribute( // assign Brave's .snippet + custom class
-        'class', 'snippet bravegpt-container')
+        'class', 'snippet bravegpt')
     braveGPTalert('waitingResponse')
 
     // Create/classify feedback footer
@@ -1076,7 +1076,7 @@
             // Create campaign div & add class/style/HTML
             const pcDiv = document.createElement('div')
             pcDiv.setAttribute( // assign Brave's .snippet + custom class
-                'class', 'snippet bravegpt-container')
+                'class', 'snippet bravegpt')
             pcDiv.style.display = 'flex'
             pcDiv.style.padding = '17px 19px 21px 23px'
             pcDiv.innerHTML = response.responseText
