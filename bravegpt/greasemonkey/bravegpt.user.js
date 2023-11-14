@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.2
+// @version             2023.11.13.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -738,19 +738,14 @@
         speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32')
         speakSVG.setAttributeNS(null, 'width', '22')
         const speakSVGpaths = [
-            { d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10', stroke: true, strokeWidth: '2px' },
-            { d: 'M22,20.847c1.281,-1.306 2,-3.077 2,-4.924c0,-1.846 -0.719,-3.617 -2,-4.923', stroke: true, strokeWidth: '2px' },
-            { d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z',
-              fill: true }
+            createSVGelem('path', { stroke: '', 'stroke-width': '2px', fill: 'none',
+                d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10' }),
+            createSVGelem('path', { stroke: '', 'stroke-width': '2px', fill: 'none',
+                d: 'M22,20.847c1.281,-1.306 2,-3.077 2,-4.924c0,-1.846 -0.719,-3.617 -2,-4.923' }),
+            createSVGelem('path', { stroke: 'none', fill: '',
+                d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
         ]
-        speakSVGpaths.forEach(pathData => {
-            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-            path.setAttributeNS(null, 'd', pathData.d)
-            path.setAttributeNS(null, 'stroke', pathData.stroke ? '' : 'none')
-            path.setAttributeNS(null, 'stroke-width', pathData.strokeWidth || 'none')
-            path.setAttributeNS(null, 'fill', pathData.fill ? '' : 'none')
-            speakSVG.appendChild(path)
-        })
+        speakSVGpaths.forEach(path => { speakSVG.appendChild(path) })
         speakSpan.appendChild(speakSVG) ; braveGPTdiv.appendChild(speakSpan)
 
         // Create/append Wider Sidebar button
