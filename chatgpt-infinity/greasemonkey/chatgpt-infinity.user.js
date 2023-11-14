@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.13.2
+// @version             2023.11.13.3
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -452,27 +452,24 @@
                       + ( re_all.test(config.replyTopic) ? ( messages.menuLabel_all || 'all' )
                                                          : toTitleCase(config.replyTopic) )
         menuIDs.push(GM_registerMenuCommand(rtLabel, () => {
-            while (true) {
-                const replyTopic = prompt(( messages.prompt_updateReplyTopic || 'Update reply topic' )
-                                 + ' (' + ( messages.prompt_orEnter || 'or enter' ) + ' \'ALL\'):', config.replyTopic)
-                if (replyTopic === null) break // user cancelled so do nothing
-                else {
-                    const str_replyTopic = replyTopic.toString()
-                    saveSetting('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
-                    alert(( messages.alert_replyTopicUpdated || 'Topic updated' ) + '!',
-                        ( messages.appName || 'ChatGPT Infinity' ) + ' '
-                            + ( messages.alert_willAnswer || 'will answer questions' ) + ' '
-                            + ( !replyTopic || re_all.test(str_replyTopic)
-                                  ? messages.alert_onAllTopics || 'on ALL topics'
-                                  : (( messages.alert_onTopicOf || 'on the topic of' ) + ' ' + str_replyTopic ))
-                            + '!'
-                    )
-                    if (config.infinityMode) { // restart session using new reply topic
-                        chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
-                        setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) } // toggle on
-                    for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-                    break
-        }}}))
+            const replyTopic = prompt(( messages.prompt_updateReplyTopic || 'Update reply topic' )
+                             + ' (' + ( messages.prompt_orEnter || 'or enter' ) + ' \'ALL\'):', config.replyTopic)
+            if (replyTopic !== null) { // user didn't cancel
+                const str_replyTopic = replyTopic.toString()
+                saveSetting('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
+                alert(( messages.alert_replyTopicUpdated || 'Topic updated' ) + '!',
+                    ( messages.appName || 'ChatGPT Infinity' ) + ' '
+                        + ( messages.alert_willAnswer || 'will answer questions' ) + ' '
+                        + ( !replyTopic || re_all.test(str_replyTopic)
+                              ? messages.alert_onAllTopics || 'on ALL topics'
+                              : (( messages.alert_onTopicOf || 'on the topic of' ) + ' ' + str_replyTopic ))
+                        + '!'
+                )
+                if (config.infinityMode) { // restart session using new reply topic
+                    chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
+                    setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) } // toggle on
+                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }}))
 
         // Add command to change reply interval
         const riLabel = '⌚ ' + ( messages.menuLabel_replyInt || 'Reply Interval' )
