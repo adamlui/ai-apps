@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.3
+// @version             2023.11.13.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -397,10 +397,10 @@
         // Init span/SVG/paths
         const wsbSpan = braveGPTdiv.querySelector('#wsb-btn'),
               wsbSVG = wsbSpan.querySelector('svg')
-        const wsbONelems = [
+        const wsbONpaths = [
             createSVGelem('path', { fill: '', 'fill-rule': 'evenodd',
                 d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
-        const wsbOFFelems = [
+        const wsbOFFpaths = [
             createSVGelem('path', { fill: '', 'fill-rule': 'evenodd',
                 d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ]
 
@@ -411,7 +411,7 @@
 
         // Update SVG elements
         while (wsbSVG.firstChild) { wsbSVG.removeChild(wsbSVG.firstChild) }
-        const wsbSVGelems = config.widerSidebar ? wsbONelems : wsbOFFelems
+        const wsbSVGelems = config.widerSidebar ? wsbONpaths : wsbOFFpaths
         wsbSVGelems.forEach(elem => { wsbSVG.appendChild(elem) })
         if (!wsbSpan.contains(wsbSVG)) wsbSpan.appendChild(wsbSVG)
     }
