@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.14
+// @version             2023.11.14.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1002,26 +1002,26 @@
     const ddgptStyle = document.createElement('style'),
           scheme = chatgpt.isDarkMode() ? 'dark' : 'light'
     ddgptStyle.innerText = (
-        '.ddgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 17px 26px 16px ; flex-basis: 0 ;'
+        '.ddgpt { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 17px 26px 16px ; flex-basis: 0 ;'
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ; '
             + ( scheme == 'dark' ? ' border: none ; background: #282828 } ' : ' } ' )
-        + '.ddgpt-container p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
-        + ( scheme == 'dark' ? '.ddgpt-container a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
+        + '.ddgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
+        + ( scheme == 'dark' ? '.ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
         + '.app-name { font-size: 1.5rem ; font-weight: 700 }'
         + '.app-name a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
         + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
             + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
-        + '.ddgpt-container .loading {'
+        + '.ddgpt .loading {'
             + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-        + '.ddgpt-container.sidebar-free { margin-left: 60px ; height: fit-content }'
-        + '.ddgpt-container pre {'
+        + '.ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
+        + '.ddgpt pre {'
             + 'font-size: 1.14rem ; white-space: pre-wrap ; margin: .85rem 0 7px 0 ; padding: 1.25em ;'
             + 'border-radius: 10px ; line-height: 21px ; min-width: 0 ;'
             + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2' : '' ) + '}'
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-        + '.ddgpt-container section.loading {'
+        + '.ddgpt section.loading {'
             + 'padding-left: 5px ;' // left-pad loading status when sending replies
             + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.chatgpt-feedback { margin: 2px 0 25px }'
@@ -1072,7 +1072,7 @@
 
     // Create/classify/fill DDGPT container
     const ddgptDiv = document.createElement('div') // create container div
-    ddgptDiv.className = 'ddgpt-container'
+    ddgptDiv.className = 'ddgpt'
     ddgptAlert('waitingResponse')
 
     // Create/classify/fill feedback footer
@@ -1088,7 +1088,7 @@
 
             // Create campaign div & add class/style/HTML
             const pcDiv = document.createElement('div')
-            pcDiv.className = 'ddgpt-container'
+            pcDiv.className = 'ddgpt'
             pcDiv.style.display = 'flex'
             pcDiv.innerHTML = response.responseText
 
