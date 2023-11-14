@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.12.3
+// @version             2023.11.13
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -204,10 +204,6 @@
     // Define MENU functions
 
     function registerMenu() {
-        const menuIDs = [] // to store registered commands for removal while preserving order
-        const state = {
-            symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-            separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
 
         // Add command to toggle proxy API mode
         const pamLabel = state.symbol[+!config.proxyAPIenabled] + ' '
@@ -263,17 +259,13 @@
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
-        // Add command to toggle fatter sidebar
-        const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
-                       + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
-                       + state.separator + state.word[+!config.widerSidebar]
-        menuIDs.push(GM_registerMenuCommand(wsbLabel, () => {
-            saveSetting('widerSidebar', !config.widerSidebar)
-            updateTweaksStyle()
-            if (!config.notifHidden)
-                notify(( messages.menuLabel_widerSidebar || 'Wider Sidebar' ) + ' ' + state.word[+!config.widerSidebar])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
+        // Add command to toggle wider sidebar
+        if (!isCenteredMode()) {
+            const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
+                           + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
+                           + state.separator + state.word[+!config.widerSidebar]
+            menuIDs.push(GM_registerMenuCommand(wsbLabel, toggleWiderSidebar))
+        }
 
         // Add command to set reply language
         const rlLabel = '🌐 ' + ( messages.menuLabel_replyLanguage || 'Reply Language' )
@@ -400,7 +392,7 @@
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
-            shadow || ( isDarkMode() ? '' : 'shadow'))
+            shadow || ( chatgpt.isDarkMode() ? '' : 'shadow'))
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
@@ -425,11 +417,51 @@
     // Define DDG UI functions
 
     function isChromium() { return navigator.userAgent.includes('Chrome') }
-    function isCenteredMode() { return document.querySelector('html').classList.toString().includes('center') }
 
-    function isDarkMode() {
-        return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
-            || document.documentElement.classList.toString().includes('dark')
+    function isCenteredMode() { return document.documentElement.classList.toString().includes('center') }
+
+    function toggleWiderSidebar() {
+        saveSetting('widerSidebar', !config.widerSidebar)
+        updateTweaksStyle()
+        if (document.querySelector('.corner-btn')) updateWSBsvg()
+        if (!config.notifHidden)
+            notify(( messages.menuLabel_widerSidebar || 'Wider Sidebar' ) + ' ' + state.word[+!config.widerSidebar])
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+    }
+
+    function updateTweaksStyle() {
+        tweaksStyle.innerText = config.widerSidebar ? wsbStyle : (
+            'section[data-area="sidebar"] { flex-basis: 448px ; max-width: 448px } '
+          + 'section[data-area="mainline"] { flex-basis: 672px ; max-width: 672px } ')
+    }
+
+    function updateWSBsvg() {
+
+        // Init span/SVG/paths
+        const wsbSpan = ddgptDiv.querySelector('#wsb-btn'),
+              wsbSVG = wsbSpan.querySelector('svg')
+        const wsbONelems = [
+            createSVGelem('path', { fill: '', 'fill-rule': 'evenodd',
+                d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
+        const wsbOFFelems = [
+            createSVGelem('path', { fill: '', 'fill-rule': 'evenodd',
+                d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ]
+
+        // Set SVG attributes            
+        wsbSVG.setAttribute('height', 18) ; wsbSVG.setAttribute('viewBox', '8 8 20 20')
+        wsbSpan.title = ( config.widerSidebar ? 'Exit ' :  '' ) + messages.menuLabel_widerSidebar || 'Wider Sidebar'
+
+        // Update SVG elements
+        while (wsbSVG.firstChild) { wsbSVG.removeChild(wsbSVG.firstChild) }
+        const wsbSVGelems = config.widerSidebar ? wsbONelems : wsbOFFelems
+        wsbSVGelems.forEach(elem => { wsbSVG.appendChild(elem) })
+        if (!wsbSpan.contains(wsbSVG)) wsbSpan.appendChild(wsbSVG)
+    }
+
+    function createSVGelem(tagName, attributes) {
+        const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
+        for (const attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])
+        return elem
     }
 
     // Define SESSION functions
@@ -746,7 +778,7 @@
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         speakSpan.className = 'corner-btn' ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
-        speakSpan.style.margin = '-0.17em 14px 0px' // fine-tune position
+        speakSpan.style.margin = '-0.117em 9px 0px 13px' // fine-tune position
         speakSVG.setAttributeNS(null, 'width', '22') ; speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32')
         const speakSVGpaths = [
             { d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10', stroke: true, strokeWidth: '2px' },
@@ -763,6 +795,15 @@
             speakSVG.appendChild(path)
         })
         speakSpan.appendChild(speakSVG) ; ddgptDiv.appendChild(speakSpan)
+
+        // Create/append Wider Sidebar button
+        if (!isCenteredMode()) {
+            var wsbSpan = document.createElement('span'),
+                wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            wsbSpan.id = 'wsb-btn' ; wsbSpan.className = 'corner-btn'
+            wsbSpan.style.marginTop = '0.05rem' // fine-tune position
+            wsbSpan.appendChild(wsbSVG) ; ddgptDiv.appendChild(wsbSpan) ; updateWSBsvg()
+        }
 
         // Create/append ChatGPT response
         const balloonTipSpan = document.createElement('span'),
@@ -816,6 +857,7 @@
         })
 
         // Add listeners
+        wsbSVG.addEventListener('click', toggleWiderSidebar)
         speakSVG.addEventListener('click', () => {
             chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
         aboutSVG.addEventListener('click', launchAboutModal)
@@ -898,14 +940,6 @@
         getShowReply(convo)
     }
 
-    // Define SYNC function
-
-    function updateTweaksStyle() {
-        tweaksStyle.innerText = config.widerSidebar ? wsbStyle : (
-            'section[data-area="sidebar"] { flex-basis: 448px ; max-width: 448px } '
-          + 'section[data-area="mainline"] { flex-basis: 672px ; max-width: 672px } ')
-    }
-
     // Run MAIN routine
 
     // Init config/convo/menu
@@ -919,7 +953,10 @@
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled', 'replyLanguage', 'widerSidebar', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    const convo = []
+    const convo = [], menuIDs = []
+    const state = {
+        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+        separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -977,13 +1014,13 @@
 
     // Create DDG style tweaks
     const tweaksStyle = document.createElement('style'),
-          wsbStyle = 'section[data-area="sidebar"], section[data-area="mainline"] '
-                       + '{ flex-basis: 560px !important ; max-width: 560px !important }'
+          wsbStyle = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
+                   + 'section[data-area="sidebar"] { max-width: 531px !important ; flex-basis: 531px !important }'
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Stylize elements
     const ddgptStyle = document.createElement('style'),
-          scheme = isDarkMode() ? 'dark' : 'light'
+          scheme = chatgpt.isDarkMode() ? 'dark' : 'light'
     ddgptStyle.innerText = (
         '.ddgpt-container { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 17px 26px 16px ; flex-basis: 0 ;'
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ; '
