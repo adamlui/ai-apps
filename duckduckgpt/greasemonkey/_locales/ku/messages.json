@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "نوێکردنەوە" },
   "buttonLabel_dismiss": { "message": "ردکردنەوە" },
   "link_viewChanges": { "message": "گۆرانی بینینەکان" },
-  "link_shareFeedback": { "message": "پەیامی ئەزموون بگرە" }
+  "link_shareFeedback": { "message": "پەیامی ئەزموون بگرە" },
+  "prefix_exit": { "message": "دەرچوون" }
 }

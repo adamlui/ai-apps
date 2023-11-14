@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "업데이트" },
   "buttonLabel_dismiss": { "message": "무시하기" },
   "link_viewChanges": { "message": "변경 보기" },
-  "link_shareFeedback": { "message": "피드백 공유하기" }
+  "link_shareFeedback": { "message": "피드백 공유하기" },
+  "prefix_exit": { "message": "나가기" }
 }

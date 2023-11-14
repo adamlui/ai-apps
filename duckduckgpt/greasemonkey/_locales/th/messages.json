@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "อัปเดต" },
   "buttonLabel_dismiss": { "message": "ยกเลิก" },
   "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" },
-  "link_shareFeedback": { "message": "แชร์ข้อเสนอแนะ" }
+  "link_shareFeedback": { "message": "แชร์ข้อเสนอแนะ" },
+  "prefix_exit": { "message": "ออก" }
 }

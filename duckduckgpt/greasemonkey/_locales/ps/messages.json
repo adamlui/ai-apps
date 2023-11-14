@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "تازه کړئ" },
   "buttonLabel_dismiss": { "message": "رد کردن" },
   "link_viewChanges": { "message": "بدلونونه وګورئ" },
-  "link_shareFeedback": { "message": "نظرونه شریک کړئ" }
+  "link_shareFeedback": { "message": "نظرونه شریک کړئ" },
+  "prefix_exit": { "message": "وتون" }
 }

@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "ኣሐድስ" },
   "buttonLabel_dismiss": { "message": "ምጥፋእ" },
   "link_viewChanges": { "message": "ለውጢ ርአ" },
-  "link_shareFeedback": { "message": "ግብረ መልሲ ምዝርጋሕ" }
+  "link_shareFeedback": { "message": "ግብረ መልሲ ምዝርጋሕ" },
+  "prefix_exit": { "message": "ውጻእ" }
 }

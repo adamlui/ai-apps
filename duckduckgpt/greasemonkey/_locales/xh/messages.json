@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Lungisa" },
   "buttonLabel_dismiss": { "message": "Gxotha" },
   "link_viewChanges": { "message": "Jonga izinto ezitshintshiweyo" },
-  "link_shareFeedback": { "message": "Yabelana ngengxelo yakho." }
+  "link_shareFeedback": { "message": "Yabelana ngengxelo yakho." },
+  "prefix_exit": { "message": "Phuma" }
 }

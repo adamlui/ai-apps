@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Fa'afouga" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "Vaʻai suiga" },
-  "link_shareFeedback": { "message": "Faasoa atu Feedback" }
+  "link_shareFeedback": { "message": "Faasoa atu Feedback" },
+  "prefix_exit": { "message": "Alu'ese" }
 }

@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Pembaruan" },
   "buttonLabel_dismiss": { "message": "Tutup" },
   "link_viewChanges": { "message": "Lihat perubahan" },
-  "link_shareFeedback": { "message": "Bagikan umpan balik" }
+  "link_shareFeedback": { "message": "Bagikan umpan balik" },
+  "prefix_exit": { "message": "Keluar" }
 }

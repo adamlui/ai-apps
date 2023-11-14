@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Eguneratu" },
   "buttonLabel_dismiss": { "message": "Bistatik kendu" },
   "link_viewChanges": { "message": "Ikusi aldaketak" },
-  "link_shareFeedback": { "message": "Partekatu Iritzia" }
+  "link_shareFeedback": { "message": "Partekatu Iritzia" },
+  "prefix_exit": { "message": "Irten" }
 }

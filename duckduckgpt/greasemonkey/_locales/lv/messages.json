@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Atjauninināt" },
   "buttonLabel_dismiss": { "message": "Noraidīt" },
   "link_viewChanges": { "message": "Skatīt izmaiņas" },
-  "link_shareFeedback": { "message": "Dalieties savās atsauksmēs!" }
+  "link_shareFeedback": { "message": "Dalieties savās atsauksmēs!" },
+  "prefix_exit": { "message": "Iziet" }
 }

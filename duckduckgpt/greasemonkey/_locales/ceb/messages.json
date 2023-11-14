@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Pag-update" },
   "buttonLabel_dismiss": { "message": "Papas" },
   "link_viewChanges": { "message": "Tan-awa ang mga kausaban" },
-  "link_shareFeedback": { "message": "Ipakigbahin ang Feedback" }
+  "link_shareFeedback": { "message": "Ipakigbahin ang Feedback" },
+  "prefix_exit": { "message": "Mogawas" }
 }

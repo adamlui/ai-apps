@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Güncelleme" },
   "buttonLabel_dismiss": { "message": "Yok say" },
   "link_viewChanges": { "message": "Değişen Dosyalar" },
-  "link_shareFeedback": { "message": "Geri Bildirim Paylaş" }
+  "link_shareFeedback": { "message": "Geri Bildirim Paylaş" },
+  "prefix_exit": { "message": "Çık" }
 }

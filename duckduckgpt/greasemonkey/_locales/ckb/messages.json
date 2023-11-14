@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "نوێکردنەوە" },
   "buttonLabel_dismiss": { "message": "پشتگوێخستن" },
   "link_viewChanges": { "message": "بینینی گۆڕانکارییەکان" },
-  "link_shareFeedback": { "message": "فیدباکی هاوبەش" }
+  "link_shareFeedback": { "message": "فیدباکی هاوبەش" },
+  "prefix_exit": { "message": "دەرچوون" }
 }

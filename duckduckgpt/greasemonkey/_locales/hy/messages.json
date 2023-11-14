@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Այժմեականացնել / Արդիականացնել" },
   "buttonLabel_dismiss": { "message": "Փակել" },
   "link_viewChanges": { "message": "Դիտել փոփոխությունները" },
-  "link_shareFeedback": { "message": "Կիսվել կարծիքներով" }
+  "link_shareFeedback": { "message": "Կիսվել կարծիքներով" },
+  "prefix_exit": { "message": "Exit" }
 }

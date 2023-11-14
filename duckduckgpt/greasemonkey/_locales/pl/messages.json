@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Aktualizuj" },
   "buttonLabel_dismiss": { "message": "Odrzuć" },
   "link_viewChanges": { "message": "Przegląd zmian" },
-  "link_shareFeedback": { "message": "Podziel się swoją opinią" }
+  "link_shareFeedback": { "message": "Podziel się swoją opinią" },
+  "prefix_exit": { "message": "Wyjście" }
 }
