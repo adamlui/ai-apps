@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Actualizar" },
   "buttonLabel_dismiss": { "message": "Rexeitar" },
   "link_viewChanges": { "message": "Ver cambios" },
-  "link_shareFeedback": { "message": "Compartir a retroalimentación" }
+  "link_shareFeedback": { "message": "Compartir a retroalimentación" },
+  "prefix_exit": { "message": "Sair" }
 }

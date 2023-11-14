@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Cập nhật" },
   "buttonLabel_dismiss": { "message": "Bỏ qua" },
   "link_viewChanges": { "message": "Xem thay đổi" },
-  "link_shareFeedback": { "message": "Chia sẻ phản hồi của bạn" }
+  "link_shareFeedback": { "message": "Chia sẻ phản hồi của bạn" },
+  "prefix_exit": { "message": "Thoát" }
 }

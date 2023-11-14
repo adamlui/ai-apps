@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "View changes" },
-  "link_shareFeedback": { "message": "Share Feedback" }
+  "link_shareFeedback": { "message": "Share Feedback" },
+  "prefix_exit" : { "message": "Exit" }
 }

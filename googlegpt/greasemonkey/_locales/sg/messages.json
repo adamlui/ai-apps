@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Nduru tënëModifier" },
   "buttonLabel_dismiss": { "message": "Gbenga Akinnagbe" },
   "link_viewChanges": { "message": "Bâ achangement" },
-  "link_shareFeedback": { "message": "Share Feedback na na" }
+  "link_shareFeedback": { "message": "Share Feedback na na" },
+  "prefix_exit": { "message": "A yeke sigigi na ni" }
 }

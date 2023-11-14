@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "അപ്ഡേറ്റ് ചെയ്യുക" },
   "buttonLabel_dismiss": { "message": "നിരസിക്കുക" },
   "link_viewChanges": { "message": "മാറ്റങ്ങൾ കാണുക" },
-  "link_shareFeedback": { "message": "ഫീഡ്‌ബാക്ക് പങ്കിടുക" }
+  "link_shareFeedback": { "message": "ഫീഡ്‌ബാക്ക് പങ്കിടുക" },
+  "prefix_exit": { "message": "പുറത്തു് കടക്കുക" }
 }

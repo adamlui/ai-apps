@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Opdateer" },
   "buttonLabel_dismiss": { "message": "Laat vaar" },
   "link_viewChanges": { "message": "Besigtig veranderinge" },
-  "link_shareFeedback": { "message": "Deel terugvoer" }
+  "link_shareFeedback": { "message": "Deel terugvoer" },
+  "prefix_exit": { "message": "Gaan uit" }
 }

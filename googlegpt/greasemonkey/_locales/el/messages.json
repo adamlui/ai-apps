@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Ενημέρωση" },
   "buttonLabel_dismiss": { "message": " Κλείσιμο" },
   "link_viewChanges": { "message": "Εμφάνιση αλλαγών" },
-  "link_shareFeedback": { "message": "Κοινοποίηση προτάσεων βελτίωσης" }
+  "link_shareFeedback": { "message": "Κοινοποίηση προτάσεων βελτίωσης" },
+  "prefix_exit": { "message": "Έξοδος" }
 }

@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Ažuriraj" },
   "buttonLabel_dismiss": { "message": "Odbaci" },
   "link_viewChanges": { "message": "Prikaži promjene" },
-  "link_shareFeedback": { "message": "Deljenje povratnih informacija" }
+  "link_shareFeedback": { "message": "Deljenje povratnih informacija" },
+  "prefix_exit": { "message": "Izlaz" }
 }

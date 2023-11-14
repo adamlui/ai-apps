@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "అప్‌డేట్" },
   "buttonLabel_dismiss": { "message": "తీసివేయండి" },
   "link_viewChanges": { "message": "మార్పులను చూడండి" },
-  "link_shareFeedback": { "message": "Share Feedback" }
+  "link_shareFeedback": { "message": "Share Feedback" },
+  "prefix_exit": { "message": "నిష్క్రమించండి" }
 }

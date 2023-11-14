@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Vaovao farany" },
   "buttonLabel_dismiss": { "message": "Hiditra" },
   "link_viewChanges": { "message": "Hijery ireo fanovana" },
-  "link_shareFeedback": { "message": "Mizara Feedback" }
+  "link_shareFeedback": { "message": "Mizara Feedback" },
+  "prefix_exit": { "message": "Mivoaka" }
 }

@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Update None None" },
   "buttonLabel_dismiss": { "message": "Ukwirukana" },
   "link_viewChanges": { "message": "Kubona impinduka" },
-  "link_shareFeedback": { "message": "Gira ico ushikirije" }
+  "link_shareFeedback": { "message": "Gira ico ushikirije" },
+  "prefix_exit": { "message": "Gusohoka" }
 }

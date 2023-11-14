@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Naujinti" },
   "buttonLabel_dismiss": { "message": "Atšaukti" },
   "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" },
-  "link_shareFeedback": { "message": "Išsakykite savo nuomonę" }
+  "link_shareFeedback": { "message": "Išsakykite savo nuomonę" },
+  "prefix_exit": { "message": "Išeiti" }
 }

@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Actualització" },
   "buttonLabel_dismiss": { "message": "Descarta" },
   "link_viewChanges": { "message": "Mostra els canvis" },
-  "link_shareFeedback": { "message": "Compartir comentaris" }
+  "link_shareFeedback": { "message": "Compartir comentaris" },
+  "prefix_exit": { "message": "Surt" }
 }

@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Aktualizovať" },
   "buttonLabel_dismiss": { "message": "Odmietnuť" },
   "link_viewChanges": { "message": "Zobraziť zmeny" },
-  "link_shareFeedback": { "message": "Zdieľajte spätnú väzbu s" }
+  "link_shareFeedback": { "message": "Zdieľajte spätnú väzbu s" },
+  "prefix_exit": { "message": "Odísť" }
 }

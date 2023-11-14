@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Frissítés" },
   "buttonLabel_dismiss": { "message": "Elvetés" },
   "link_viewChanges": { "message": "Módosítások megtekintése" },
-  "link_shareFeedback": { "message": "Ossza meg visszajelzését" }
+  "link_shareFeedback": { "message": "Ossza meg visszajelzését" },
+  "prefix_exit": { "message": "Kilépés" }
 }

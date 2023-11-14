@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Обновить" },
   "buttonLabel_dismiss": { "message": "Пропустить" },
   "link_viewChanges": { "message": "Просмотреть изменения" },
-  "link_shareFeedback": { "message": "Поделиться отзывом" }
+  "link_shareFeedback": { "message": "Поделиться отзывом" },
+  "prefix_exit": { "message": "Выход" }
 }

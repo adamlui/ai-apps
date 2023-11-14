@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Diweddaru" },
   "buttonLabel_dismiss": { "message": "Cau" },
   "link_viewChanges": { "message": "Gweld newidiadau" },
-  "link_shareFeedback": { "message": "Rhannu adborth" }
+  "link_shareFeedback": { "message": "Rhannu adborth" },
+  "prefix_exit": { "message": "Man gadael" }
 }

@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Whakahou" },
   "buttonLabel_dismiss": { "message": "Te whakahawea" },
   "link_viewChanges": { "message": "Tirohia nga huringa" },
-  "link_shareFeedback": { "message": "Whakawhitiwhiti kōrero" }
+  "link_shareFeedback": { "message": "Whakawhitiwhiti kōrero" },
+  "prefix_exit": { "message": "Whakawhiti" }
 }

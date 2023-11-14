@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Жаңарту" },
   "buttonLabel_dismiss": { "message": "Жұмыстан шығару" },
   "link_viewChanges": { "message": "Өзгерістерді көру" },
-  "link_shareFeedback": { "message": "Кері байланыспен бөлісу" }
+  "link_shareFeedback": { "message": "Кері байланыспен бөлісу" },
+  "prefix_exit": { "message": "Шығу" }
 }

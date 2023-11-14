@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Ntshwafatso" },
   "buttonLabel_dismiss": { "message": "TLOGELA" },
   "link_viewChanges": { "message": "Leba diphetogo" },
-  "link_shareFeedback": { "message": "Share Feedback" }
+  "link_shareFeedback": { "message": "Share Feedback" },
+  "prefix_exit": { "message": "Tswa" }
 }

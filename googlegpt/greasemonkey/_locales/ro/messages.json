@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Actualizare" },
   "buttonLabel_dismiss": { "message": "Respingeți" },
   "link_viewChanges": { "message": "Vizualizează modificările" },
-  "link_shareFeedback": { "message": "Trimite feedback" }
+  "link_shareFeedback": { "message": "Trimite feedback" },
+  "prefix_exit": { "message": "Ieșire" }
 }

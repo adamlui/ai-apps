@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Opdatér" },
   "buttonLabel_dismiss": { "message": "Afvis" },
   "link_viewChanges": { "message": "Se ændringer" },
-  "link_shareFeedback": { "message": "Del din feedback!" }
+  "link_shareFeedback": { "message": "Del din feedback!" },
+  "prefix_exit": { "message": "Afslut" }
 }

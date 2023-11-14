@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
   "buttonLabel_dismiss": { "message": "ထုတ်ပယ်ပါ" },
   "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ရန်" },
-  "link_shareFeedback": { "message": "ဝေမျှရန် တုံ့ပြန်ချက်" }
+  "link_shareFeedback": { "message": "ဝေမျှရန် တုံ့ပြန်ချက်" },
+  "prefix_exit": { "message": "ထြက္ရန္" }
 }

@@ -46,5 +46,6 @@
   "buttonLabel_update": { "message": "Fakamatala Fakamuimuitahá" },
   "buttonLabel_dismiss": { "message": "Tukuange" },
   "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" },
-  "link_shareFeedback": { "message": "Vahevahe ʻa e Fakamatala" }
+  "link_shareFeedback": { "message": "Vahevahe ʻa e Fakamatala" },
+  "prefix_exit": { "message": "Hū ki tu’a" }
 }
