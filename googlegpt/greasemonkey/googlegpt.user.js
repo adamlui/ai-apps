@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.12.3
+// @version             2023.11.13
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -393,10 +393,6 @@
     // Define MENU functions
 
     function registerMenu() {
-        const menuIDs = [] // to store registered commands for removal while preserving order
-        const state = {
-            symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-            separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
 
         // Add command to toggle proxy API mode
         const pamLabel = state.symbol[+!config.proxyAPIenabled] + ' '
@@ -452,17 +448,11 @@
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
-        // Add command to toggle fatter sidebar
+        // Add command to toggle wider sidebar
         const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
                        + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                        + state.separator + state.word[+!config.widerSidebar]
-        menuIDs.push(GM_registerMenuCommand(wsbLabel, () => {
-            saveSetting('widerSidebar', !config.widerSidebar)
-            updateTweaksStyle()
-            if (!config.notifHidden)
-                notify(( messages.menuLabel_widerSidebar || 'Wider Sidebar' ) + ' ' + state.word[+!config.widerSidebar])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
+        menuIDs.push(GM_registerMenuCommand(wsbLabel, toggleWiderSidebar))
 
         // Add command to set reply language
         const rlLabel = '🌐 ' + ( messages.menuLabel_replyLanguage || 'Reply Language' )
@@ -600,13 +590,52 @@
 
     // Define UI functions
 
+    function isChromium() { return navigator.userAgent.includes('Chrome') }
+
     function isDarkMode() {
         return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
             || !!document.querySelector('[data-darkmode="true"]')
     }
 
-    function isChromium() { return navigator.userAgent.includes('Chrome') }
+    function toggleWiderSidebar() {
+        saveSetting('widerSidebar', !config.widerSidebar)
+        updateTweaksStyle()
+        if (document.querySelector('.corner-btn')) updateWSBsvg()
+        if (!config.notifHidden)
+            notify(( messages.menuLabel_widerSidebar || 'Wider Sidebar' ) + ' ' + state.word[+!config.widerSidebar])
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+    }
+
     function updateTweaksStyle() { tweaksStyle.innerText = config.widerSidebar ? wsbStyle : '' }
+
+    function updateWSBsvg() {
+
+        // Init span/SVG/paths
+        const wsbSpan = googleGPTdiv.querySelector('#wsb-btn'),
+              wsbSVG = wsbSpan.querySelector('svg')
+        const wsbONelems = [
+            createSVGelem('path', { fill: '', 'fill-rule': 'evenodd',
+                d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
+        const wsbOFFelems = [
+            createSVGelem('path', { fill: '', 'fill-rule': 'evenodd',
+                d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ]
+
+        // Set SVG attributes            
+        wsbSVG.setAttribute('height', 18) ; wsbSVG.setAttribute('viewBox', '8 8 20 20')
+        wsbSpan.title = ( config.widerSidebar ? 'Exit ' :  '' ) + messages.menuLabel_widerSidebar || 'Wider Sidebar'
+
+        // Update SVG elements
+        while (wsbSVG.firstChild) { wsbSVG.removeChild(wsbSVG.firstChild) }
+        const wsbSVGelems = config.widerSidebar ? wsbONelems : wsbOFFelems
+        wsbSVGelems.forEach(elem => { wsbSVG.appendChild(elem) })
+        if (!wsbSpan.contains(wsbSVG)) wsbSpan.appendChild(wsbSVG)
+    }
+
+    function createSVGelem(tagName, attributes) {
+        const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
+        for (const attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])
+        return elem
+    }
 
     // Define SESSION functions
 
@@ -919,7 +948,7 @@
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         speakSpan.className = 'corner-btn' ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
-        speakSpan.style.margin = '-0.099em 14px 0px' // fine-tune position
+        speakSpan.style.margin = '-0.095rem 6px 0 10px' // fine-tune position
         speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32') ; speakSVG.setAttributeNS(null, 'width', '22')
         const speakSVGpaths = [
             { d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10', stroke: true, strokeWidth: '2px' },
@@ -936,6 +965,13 @@
             speakSVG.appendChild(path)
         })
         speakSpan.appendChild(speakSVG) ; googleGPTdiv.appendChild(speakSpan)
+
+        // Create/append Wider Sidebar button
+        var wsbSpan = document.createElement('span'),
+            wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        wsbSpan.id = 'wsb-btn' ; wsbSpan.className = 'corner-btn'
+        wsbSpan.style.marginTop = '0.05rem' // fine-tune position
+        wsbSpan.appendChild(wsbSVG) ; googleGPTdiv.appendChild(wsbSpan) ; updateWSBsvg()
 
         // Create/append ChatGPT response
         const balloonTipSpan = document.createElement('span'),
@@ -989,6 +1025,7 @@
         })
 
         // Add listeners
+        wsbSVG.addEventListener('click', toggleWiderSidebar)
         speakSVG.addEventListener('click', () => {
             chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
         aboutSVG.addEventListener('click', launchAboutModal)
@@ -1096,7 +1133,11 @@
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'relatedQueriesDisabled', 'replyLanguage', 'widerSidebar', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    const convo = []
+    const convo = [], // to store queries + answers for contextual replies
+          menuIDs = [] // to store registered commands for removal while preserving order
+    const state = {
+        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+        separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
