@@ -101,14 +101,15 @@
             const replyTopic = prompt(chrome.i18n.getMessage('prompt_updateReplyTopic')
                 + ' (' + chrome.i18n.getMessage('prompt_orEnter') + ' \'ALL\'):', config.replyTopic)
             if (replyTopic === null) break // user cancelled so do nothing
-            else if (!/\d/.test(replyTopic)) {
-                settings.save('replyTopic', !replyTopic || re_all.test(replyTopic) ? 'ALL' : replyTopic)
+            else {
+                const str_replyTopic = replyTopic.toString()
+                settings.save('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
                 window.close() // popup
                 alert(chrome.i18n.getMessage('alert_replyTopicUpdated') + '!',
                     chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willAnswer') + ' '
-                        + ( !replyTopic || re_all.test(replyTopic) ? chrome.i18n.getMessage('alert_onAllTopics')
-                                                                   : chrome.i18n.getMessage('alert_onTopicOf')
-                                                                       + ' ' + replyTopic ) + '!')
+                        + ( !replyTopic || re_all.test(str_replyTopic) ? chrome.i18n.getMessage('alert_onAllTopics')
+                                                                       : chrome.i18n.getMessage('alert_onTopicOf')
+                                                                           + ' ' + str_replyTopic ) + '!')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
                     if (new URL(tabs[0].url).hostname === 'chat.openai.com' && config.infinityMode) { // reboot active session
                         chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
