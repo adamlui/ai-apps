@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.5
+// @version             2023.11.13.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -1082,7 +1082,6 @@
 
     // Create BraveGPT container & add id/classes
     const braveGPTdiv = document.createElement('div') // create container div
-    braveGPTdiv.setAttribute('id', 'infobox')
     braveGPTdiv.setAttribute( // assign Brave's .snippet + custom class
         'class', 'snippet bravegpt-container')
 
