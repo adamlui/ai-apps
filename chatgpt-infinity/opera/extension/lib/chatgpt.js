@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.4.0
+// This library is a condensed version of chatgpt.js v2.4.1
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -303,8 +303,8 @@ const chatgpt = {
     },
 
     isDarkMode: function() {
-        return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
-            || document.documentElement.classList.toString().includes('dark');
+        return !document.documentElement.classList.toString().includes('dark') ? false
+             : window.matchMedia?.('(prefers-color-scheme: dark)')?.matches;
     },
 
     isGizmoUI: function () { return document.documentElement.classList.toString().includes('gizmo'); },
