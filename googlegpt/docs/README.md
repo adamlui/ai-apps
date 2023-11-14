@@ -8,7 +8,7 @@
 <h3>Bring the magic of ChatGPT to Google Search (powered by GPT-4!)</h3>
 <a href="https://greasyfork.org/scripts/478597-googlegpt"><img height=33 src="https://img.shields.io/greasyfork/dt/478597?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge"></a>
 <a href="../LICENSE.md"><img height=33 src="https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.com/kudoai/googlegpt/commits/main"><img height=33 src="https://img.shields.io/github/commit-activity/m/kudoai/duckduckgpt?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://github.com/kudoai/googlegpt/commits/main"><img height=33 src="https://img.shields.io/github/commit-activity/m/kudoai/googlegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/kudoai/googlegpt"><img height=33 src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://chatgpt.js.org"><img height=33 src="https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img height=33 src="https://img.shields.io/badge/Mentioned_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
