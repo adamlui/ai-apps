@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.3
+// @version             2023.11.13.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -779,7 +779,7 @@
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         speakSpan.className = 'corner-btn' ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
-        speakSpan.style.margin = '-0.117em 9px 0px 13px' // fine-tune position
+        speakSpan.style.margin = '-0.117em 9px 0 12px' // fine-tune position
         speakSVG.setAttributeNS(null, 'width', '22') ; speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32')
         const speakSVGpaths = [
             createSVGelem('path', { stroke: '', 'stroke-width': '2px', fill: 'none',
