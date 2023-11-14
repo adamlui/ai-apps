@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Cusboonaysiinta" },
   "buttonLabel_dismiss": { "message": "Xil ka qaad" },
   "link_viewChanges": { "message": "Eeg isbeddellada" },
-  "link_shareFeedback": { "message": "Jawaab Celin" }
+  "link_shareFeedback": { "message": "Jawaab Celin" },
+  "prefix_exit": { "message": "Bixid" }
 }

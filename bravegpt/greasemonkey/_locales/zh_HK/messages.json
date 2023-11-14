@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "更新" },
   "buttonLabel_dismiss": { "message": "返回" },
   "link_viewChanges": { "message": "查看變更" },
-  "link_shareFeedback": { "message": "反饋意見" }
+  "link_shareFeedback": { "message": "反饋意見" },
+  "prefix_exit": { "message": "退出" }
 }

@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Oppdater" },
   "buttonLabel_dismiss": { "message": "Ignorer" },
   "link_viewChanges": { "message": "Vis endringer" },
-  "link_shareFeedback": { "message": "Tilbakemeldinger" }
+  "link_shareFeedback": { "message": "Tilbakemeldinger" },
+  "prefix_exit": { "message": "Utgang" }
 }

@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Saya ingin membuat susulan" },
   "buttonLabel_dismiss": { "message": "Singkir" },
   "link_viewChanges": { "message": "Lihat perubahan" },
-  "link_shareFeedback": { "message": "Maklum balas" }
+  "link_shareFeedback": { "message": "Maklum balas" },
+  "prefix_exit": { "message": "Keluar" }
 }

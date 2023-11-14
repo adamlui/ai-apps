@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Yusim" },
   "buttonLabel_dismiss": { "message": "Lusim" },
   "link_viewChanges": { "message": "Lukim ol senis" },
-  "link_shareFeedback": { "message": "Toksave" }
+  "link_shareFeedback": { "message": "Toksave" },
+  "prefix_exit": { "message": "Kisim" }
 }

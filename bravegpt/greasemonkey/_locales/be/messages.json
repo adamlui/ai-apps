@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Абноўлена " },
   "buttonLabel_dismiss": { "message": "Адхіліць" },
   "link_viewChanges": { "message": "Праглядзець змены" },
-  "link_shareFeedback": { "message": "Зваротная сувязь" }
+  "link_shareFeedback": { "message": "Зваротная сувязь" },
+  "prefix_exit": { "message": "Выйсьці" }
 }

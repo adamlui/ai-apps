@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "ອັບເດດ" },
   "buttonLabel_dismiss": { "message": "ຂ້າມໄປ" },
   "link_viewChanges": { "message": "ເບິ່ງການປ່ຽນແປງ" },
-  "link_shareFeedback": { "message": "ການໃຫ້ຄຳເຫັນສະທ້ອນຄືນ" }
+  "link_shareFeedback": { "message": "ການໃຫ້ຄຳເຫັນສະທ້ອນຄືນ" },
+  "prefix_exit": { "message": "ອອກ" }
 }

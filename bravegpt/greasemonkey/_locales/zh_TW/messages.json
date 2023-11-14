@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "更新" },
   "buttonLabel_dismiss": { "message": "關閉" },
   "link_viewChanges": { "message": "檢視變更紀錄" },
-  "link_shareFeedback": { "message": "提供回饋" }
+  "link_shareFeedback": { "message": "提供回饋" },
+  "prefix_exit": { "message": "退出" }
 }

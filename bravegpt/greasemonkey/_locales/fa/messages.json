@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "به‌روز‌رسانی" },
   "buttonLabel_dismiss": { "message": "مخفی شود" },
   "link_viewChanges": { "message": "نمایش تغییرات" },
-  "link_shareFeedback": { "message": "بازخورد" }
+  "link_shareFeedback": { "message": "بازخورد" },
+  "prefix_exit": { "message": "خروج" }
 }

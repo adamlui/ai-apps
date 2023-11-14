@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Aktualizovat" },
   "buttonLabel_dismiss": { "message": "Zamítnout" },
   "link_viewChanges": { "message": "Zobrazit změny" },
-  "link_shareFeedback": { "message": "Zpětná vazba" }
+  "link_shareFeedback": { "message": "Zpětná vazba" },
+  "prefix_exit": { "message": "Východ/výjezd" }
 }

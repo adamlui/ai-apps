@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Actualizar" },
   "buttonLabel_dismiss": { "message": "Descartar" },
   "link_viewChanges": { "message": "Ver cambios" },
-  "link_shareFeedback": { "message": "Comentarios" }
+  "link_shareFeedback": { "message": "Comentarios" },
+  "prefix_exit": { "message": "Salida" }
 }

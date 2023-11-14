@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Täzele" },
   "buttonLabel_dismiss": { "message": "Işden aýyrmak" },
   "link_viewChanges": { "message": "Özgertmeleri Gör" },
-  "link_shareFeedback": { "message": "Jikme-jik" }
+  "link_shareFeedback": { "message": "Jikme-jik" },
+  "prefix_exit": { "message": "Çyk" }
 }

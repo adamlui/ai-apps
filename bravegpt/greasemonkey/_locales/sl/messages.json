@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Opusti" },
   "link_viewChanges": { "message": "Poglej spremembe" },
-  "link_shareFeedback": { "message": "Povratne informacije" }
+  "link_shareFeedback": { "message": "Povratne informacije" },
+  "prefix_exit": { "message": "Izhod" }
 }

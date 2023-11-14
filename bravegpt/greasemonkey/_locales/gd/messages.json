@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Ùraich" },
   "buttonLabel_dismiss": { "message": "Cuir air falbh" },
   "link_viewChanges": { "message": "Seall na h - atharraichean" },
-  "link_shareFeedback": { "message": "Aiseolas" }
+  "link_shareFeedback": { "message": "Aiseolas" },
+  "prefix_exit": { "message": "Slighe a-mach" }
 }

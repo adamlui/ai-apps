@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "ធ្វើបច្ចុប្បន្នភាព" },
   "buttonLabel_dismiss": { "message": "បោះបង់" },
   "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" },
-  "link_shareFeedback": { "message": "មតិត្រឡប់" }
+  "link_shareFeedback": { "message": "មតិត្រឡប់" },
+  "prefix_exit": { "message": "ច្រកចេញ" }
 }

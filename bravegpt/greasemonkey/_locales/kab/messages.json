@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Leqqem" },
   "buttonLabel_dismiss": { "message": "Agi" },
   "link_viewChanges": { "message": "Wali ibeddilen" },
-  "link_shareFeedback": { "message": "Tikti" }
+  "link_shareFeedback": { "message": "Tikti" },
+  "prefix_exit": { "message": "Ffeγ" }
 }

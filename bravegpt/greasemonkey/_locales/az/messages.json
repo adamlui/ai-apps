@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Yenilə" },
   "buttonLabel_dismiss": { "message": "Bağla" },
   "link_viewChanges": { "message": "Dəyişikliklərə bax" },
-  "link_shareFeedback": { "message": "Əlaqə saxlamaq" }
+  "link_shareFeedback": { "message": "Əlaqə saxlamaq" },
+  "prefix_exit": { "message": "Çıxmaq" }
 }

@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "አዘምን" },
   "buttonLabel_dismiss": { "message": "መደምሰሻ" },
   "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" },
-  "link_shareFeedback": { "message": "አስተያየት" }
+  "link_shareFeedback": { "message": "አስተያየት" },
+  "prefix_exit": { "message": "ይውጡ" }
 }

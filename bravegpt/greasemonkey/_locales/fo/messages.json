@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Dagfør" },
   "buttonLabel_dismiss": { "message": "Avrita" },
   "link_viewChanges": { "message": "Sí broytingar" },
-  "link_shareFeedback": { "message": "Viðmerkingar" }
+  "link_shareFeedback": { "message": "Viðmerkingar" },
+  "prefix_exit": { "message": "Útgangur" }
 }

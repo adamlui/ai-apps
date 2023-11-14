@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "আপডেট করুন" },
   "buttonLabel_dismiss": { "message": "খারিজ করুন" },
   "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" },
-  "link_shareFeedback": { "message": "মতামত" }
+  "link_shareFeedback": { "message": "মতামত" },
+  "prefix_exit": { "message": "বের হয়ে যান" }
 }

@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "تحديث" },
   "buttonLabel_dismiss": { "message": "‫رفض‬" },
   "link_viewChanges": { "message": "عرض سجل التغييرات" },
-  "link_shareFeedback": { "message": "الآراء" }
+  "link_shareFeedback": { "message": "الآراء" },
+  "prefix_exit": { "message": "خروج" }
 }

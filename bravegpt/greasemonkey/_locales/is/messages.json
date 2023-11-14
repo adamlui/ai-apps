@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Uppfæra" },
   "buttonLabel_dismiss": { "message": "Hafna" },
   "link_viewChanges": { "message": "Skoða breytingar" },
-  "link_shareFeedback": { "message": "Svar" }
+  "link_shareFeedback": { "message": "Svar" },
+  "prefix_exit": { "message": "Hætta" }
 }

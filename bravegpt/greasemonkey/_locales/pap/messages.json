@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Aktualidat" },
   "buttonLabel_dismiss": { "message": "Disimulashon" },
   "link_viewChanges": { "message": "Bista riba kambionan" },
-  "link_shareFeedback": { "message": "Feedback" }
+  "link_shareFeedback": { "message": "Feedback" },
+  "prefix_exit": { "message": "Salida" }
 }

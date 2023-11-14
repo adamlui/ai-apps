@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "އަޕްޑޭޓް" },
   "buttonLabel_dismiss": { "message": "މަގާމުން ވަކިކުރުން" },
   "link_viewChanges": { "message": "ވިއު ޗޭންޖްސް" },
-  "link_shareFeedback": { "message": "ފީޑްބެކް" }
+  "link_shareFeedback": { "message": "ފީޑްބެކް" },
+  "prefix_exit": { "message": "ނުކުތުން" }
 }

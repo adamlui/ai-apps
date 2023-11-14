@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Жаңыртуу" },
   "buttonLabel_dismiss": { "message": "Иштен бошотуу" },
   "link_viewChanges": { "message": "Өзгөрүүлөрдү көрүү" },
-  "link_shareFeedback": { "message": "Пикир" }
+  "link_shareFeedback": { "message": "Пикир" },
+  "prefix_exit": { "message": "Чыгуу" }
 }

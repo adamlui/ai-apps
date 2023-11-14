@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "अपडेट करें" },
   "buttonLabel_dismiss": { "message": "खारिज करना" },
   "link_viewChanges": { "message": "बदलाव देखें" },
-  "link_shareFeedback": { "message": "फ़ीडबैक" }
+  "link_shareFeedback": { "message": "फ़ीडबैक" },
+  "prefix_exit": { "message": "बाहर निकलें" }
 }

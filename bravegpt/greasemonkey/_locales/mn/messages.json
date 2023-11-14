@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Шинэчлэх" },
   "buttonLabel_dismiss": { "message": "Дуусах" },
   "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" },
-  "link_shareFeedback": { "message": "Санал хүсэлт" }
+  "link_shareFeedback": { "message": "Санал хүсэлт" },
+  "prefix_exit": { "message": "Гарах" }
 }

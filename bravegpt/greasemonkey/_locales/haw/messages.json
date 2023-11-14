@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Hōʻano hou" },
   "buttonLabel_dismiss": { "message": "Hoʻokuʻu" },
   "link_viewChanges": { "message": "Nānā i nā hoʻololi" },
-  "link_shareFeedback": { "message": "Manaʻo manaʻo" }
+  "link_shareFeedback": { "message": "Manaʻo manaʻo" },
+  "prefix_exit": { "message": "Puka" }
 }

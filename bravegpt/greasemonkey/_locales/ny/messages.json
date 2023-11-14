@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Sinthani" },
   "buttonLabel_dismiss": { "message": "Mfundo zazinsinsi" },
   "link_viewChanges": { "message": "Onani zosintha" },
-  "link_shareFeedback": { "message": "ZOKHUDZA" }
+  "link_shareFeedback": { "message": "ZOKHUDZA" },
+  "prefix_exit": { "message": "Lumikizanani nafe" }
 }

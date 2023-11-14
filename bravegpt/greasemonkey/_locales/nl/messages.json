@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Bijwerken" },
   "buttonLabel_dismiss": { "message": "Afwijzen" },
   "link_viewChanges": { "message": "Wijzigingen weergeven" },
-  "link_shareFeedback": { "message": "Feedback" }
+  "link_shareFeedback": { "message": "Feedback" },
+  "prefix_exit": { "message": "Exit" }
 }

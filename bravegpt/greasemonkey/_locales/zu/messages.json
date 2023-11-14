@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Lungisa" },
   "buttonLabel_dismiss": { "message": "Susa" },
   "link_viewChanges": { "message": "Buka ushintsho" },
-  "link_shareFeedback": { "message": "Skill" }
+  "link_shareFeedback": { "message": "Skill" },
+  "prefix_exit": { "message": "Phuma" }
 }

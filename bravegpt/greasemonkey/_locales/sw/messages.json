@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Sasisho" },
   "buttonLabel_dismiss": { "message": "Puuza" },
   "link_viewChanges": { "message": "Angalia mabadiliko" },
-  "link_shareFeedback": { "message": "Maoni" }
+  "link_shareFeedback": { "message": "Maoni" },
+  "prefix_exit": { "message": "Ondoka" }
 }

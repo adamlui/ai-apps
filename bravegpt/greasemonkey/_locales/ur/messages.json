@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "اپ ڈیٹ " },
   "buttonLabel_dismiss": { "message": "برخاست" },
   "link_viewChanges": { "message": "تبدیلیاں دیکھیں" },
-  "link_shareFeedback": { "message": "تاثرات" }
+  "link_shareFeedback": { "message": "تاثرات" },
+  "prefix_exit": { "message": "خارج ہوں" }
 }

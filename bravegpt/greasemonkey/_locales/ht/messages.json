@@ -47,5 +47,6 @@
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Demisyon" },
   "link_viewChanges": { "message": "Gade chanjman yo" },
-  "link_shareFeedback": { "message": "Fidbak" }
+  "link_shareFeedback": { "message": "Fidbak" },
+  "prefix_exit": { "message": "SÒTI" }
 }
