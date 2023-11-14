@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.13
+// @version             2023.11.13.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -404,9 +404,7 @@
         const imLabel = state.symbol[+!config.infinityMode] + ' '
                       + ( messages.menuLabel_infinityMode || 'Infinity Mode' ) + ' ∞ '
                       + state.separator + state.word[+!config.infinityMode]
-        menuIDs.push(GM_registerMenuCommand(imLabel, () => {
-            document.querySelector('#infToggleLabel').click()
-        }))
+        menuIDs.push(GM_registerMenuCommand(imLabel, () => { document.querySelector('#infToggleLabel').click() }))
 
         // Add command to toggle visibility of toggle
         const tvLabel = state.symbol[+config.toggleHidden] + ' '
@@ -458,14 +456,15 @@
                 const replyTopic = prompt(( messages.prompt_updateReplyTopic || 'Update reply topic' )
                                  + ' (' + ( messages.prompt_orEnter || 'or enter' ) + ' \'ALL\'):', config.replyTopic)
                 if (replyTopic === null) break // user cancelled so do nothing
-                else if (!/\d/.test(replyTopic)) {
-                    saveSetting('replyTopic', !replyTopic || re_all.test(replyTopic) ? 'ALL' : replyTopic)
+                else {
+                    str_replyTopic = replyTopic.toString()
+                    saveSetting('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
                     alert(( messages.alert_replyTopicUpdated || 'Topic updated' ) + '!',
                         ( messages.appName || 'ChatGPT Infinity' ) + ' '
                             + ( messages.alert_willAnswer || 'will answer questions' ) + ' '
-                            + ( !replyTopic || re_all.test(replyTopic)
+                            + ( !replyTopic || re_all.test(str_replyTopic)
                                   ? messages.alert_onAllTopics || 'on ALL topics'
-                                  : (( messages.alert_onTopicOf || 'on the topic of' ) + ' ' + replyTopic ))
+                                  : (( messages.alert_onTopicOf || 'on the topic of' ) + ' ' + str_replyTopic ))
                             + '!'
                     )
                     if (config.infinityMode) { // restart session using new reply topic
