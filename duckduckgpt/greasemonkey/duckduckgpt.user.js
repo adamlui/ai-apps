@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.7
+// @version             2023.11.13.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -454,8 +454,8 @@
 
         // Update SVG elements
         while (wsbSVG.firstChild) { wsbSVG.removeChild(wsbSVG.firstChild) }
-        const wsbSVGelems = config.widerSidebar ? wsbONpaths : wsbOFFpaths
-        wsbSVGelems.forEach(elem => { wsbSVG.appendChild(elem) })
+        const wsbSVGpaths = config.widerSidebar ? wsbONpaths : wsbOFFpaths
+        wsbSVGpaths.forEach(path => { wsbSVG.appendChild(path) })
         if (!wsbSpan.contains(wsbSVG)) wsbSpan.appendChild(wsbSVG)
     }
 
