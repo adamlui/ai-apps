@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.13.7
+// @version             2023.11.13.8
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1088,30 +1088,6 @@
         }
     }
 
-    async function loadGoogleGPT() {
-        googleGPTalert('waitingResponse')
-        const hostContainer = (
-            document.querySelector('#center_col + div > div') ||
-                (() => {
-                    const centerCol = document.querySelector('#center_col'),
-                          newDiv = document.createElement('div')
-                    centerCol.style.paddingRight = '45px'
-                    newDiv.style.display = 'contents'
-                    newDiv.id ='newHostContainer'
-                    centerCol.insertAdjacentElement('afterend', newDiv)
-                    return newDiv
-                })()
-        )
-        hostContainer.prepend(googleGPTdiv)
-        if (document.querySelector('#newHostContainer')) googleGPTdiv.marginLeft = '20px'
-        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-        convo.push(
-            config.proxyAPIenabled ? { role: 'user', content: query }
-                                   : { role: 'user', id: chatgpt.uuidv4(),
-                                       content: { content_type: 'text', parts: [query] }})
-        getShowReply(convo)
-    }
-
     // Run MAIN routine
 
     // Init config/convo/menu
@@ -1262,10 +1238,33 @@
     )
     document.head.appendChild(googleGPTstyle)
 
-    // Create/classify GoogleGPT container
+    // Create/classify/fill GoogleGPT container
     const googleGPTdiv = document.createElement('div')
     googleGPTdiv.className = 'googlegpt-container'
+    googleGPTalert('waitingResponse')
 
-    loadGoogleGPT()
+    // Append to Google
+    const hostContainer = (
+        document.querySelector('#center_col + div > div') ||
+            (() => {
+                const centerCol = document.querySelector('#center_col'),
+                      newDiv = document.createElement('div')
+                centerCol.style.paddingRight = '45px'
+                newDiv.style.display = 'contents'
+                newDiv.id ='newHostContainer'
+                centerCol.insertAdjacentElement('afterend', newDiv)
+                return newDiv
+            })()
+    )
+    hostContainer.prepend(googleGPTdiv)
+    if (document.querySelector('#newHostContainer')) googleGPTdiv.marginLeft = '20px'
+
+    // Get answer
+    const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
+    convo.push(
+        config.proxyAPIenabled ? { role: 'user', content: query }
+                               : { role: 'user', id: chatgpt.uuidv4(),
+                                   content: { content_type: 'text', parts: [query] }})
+    getShowReply(convo)
 
 })()
