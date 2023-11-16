@@ -51,7 +51,7 @@
     })}
 
     // Stylize toggle switch (if style missing or outdated)
-    const switchStyleUpdated = 20231110; // datestamp of last edit for this file's `switchStyle` 
+    const switchStyleUpdated = 202311161; // datestamp of last edit for this file's `switchStyle` 
     let switchStyle = document.getElementById('chatgpt-switch-style') // try to select existing style
     if (!switchStyle || parseInt(switchStyle.getAttribute('last-updated'), 10) < switchStyleUpdated) { // if missing or outdated
         if (!switchStyle) { // outright missing, create/id/attr/append it first
@@ -61,19 +61,19 @@
         }
         const knobWidth = isGizmoUI ? 13 : 14
         switchStyle.innerText = (
-            '.switch { position: absolute ; left: 208px ;'
-              + `width: ${ isGizmoUI ? 32 : 34 }px ; height: ${ isGizmoUI ? 16 : 18 }px }`
-          + '.switch input { opacity: 0 ; width: 0 ; height: 0 }' // hide checkbox
-          + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ;'
+            '.switch {'
+              + `position: relative ; left: ${ isMobileDevice() && isGizmoUI ? 110 : 50 }px ;`
+              + `width: ${ isGizmoUI ? 32 : 34 }px ; height: ${ isGizmoUI ? 16 : 18 }px ;`
               + 'background-color: #ccc ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px }'
-          + '.slider:before { position: absolute ; content: "" ; left: 3px ;'
+          + '.switch input { opacity: 0 ; width: 0 ; height: 0 }' // hide checkbox
+          + '.switch:before { position: absolute ; content: "" ; left: 3px ;'
               + `width: ${ knobWidth }px ; height: ${ knobWidth }px ; bottom: ${ isGizmoUI ? '0.1em' : '2px' } ;`
               + 'background-color: white ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px }'
 
           // Position/color ON-state
           + 'input:checked { position: absolute ; right: 3px }'
-          + 'input:checked + .slider { background-color: #AD68FF ; box-shadow: 2px 1px 20px #D8A9FF }'
-          + 'input:checked + .slider:before {'
+          + 'input:checked + .switch { background-color: #AD68FF ; box-shadow: 2px 1px 20px #D8A9FF }'
+          + 'input:checked + .switch:before {'
               + `-webkit-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
               + `-ms-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
               + `transform: translateX(${ knobWidth }px) }`
@@ -129,6 +129,11 @@
                 settings.load(['extensionDisabled']).then(() => {
                     if (!config.extensionDisabled) insertToggle()
     })}})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
+
+    // Define UI function
+
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) }
 
     // Define FEEDBACK functions
 
@@ -212,11 +217,10 @@
                 } else navicon.width = 18
                 label.id = 'infToggleLabel' ; label.classList.add('switch')
                 input.id = 'infToggleInput' ; input.type = 'checkbox' ; input.disabled = true ; input.checked = config.infinityMode
-                label.classList.add('slider')
 
                 // Append elements
                 label.appendChild(input) ; label.appendChild(span)
-                navToggleDiv.appendChild(navicon) ; navToggleDiv.appendChild(label) ; navToggleDiv.appendChild(labelText)
+                navToggleDiv.appendChild(navicon) ; navToggleDiv.appendChild(labelText) ; navToggleDiv.appendChild(label)
 
                 // Show toggle
                 navToggleDiv.style.display = 'flex'
