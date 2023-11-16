@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.15.2
+// @version             2023.11.15.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -594,14 +594,14 @@
 
                     // Create/classify/append parent div
                     const relatedQueriesDiv = document.createElement('div')
-                    relatedQueriesDiv.className = 'related-queries'
+                    relatedQueriesDiv.classList.add('related-queries')
                     braveGPTdiv.appendChild(relatedQueriesDiv)
 
                     // Fill each child div, add fade + tabindex + listener
                     relatedQueries.forEach((relatedQuery, index) => {
                         const relatedQueryDiv = document.createElement('div')
                         relatedQueryDiv.title = messages.tooltip_sendRelatedQuery || 'Send related query'
-                        relatedQueryDiv.className = 'related-query fade-in no-user-select'
+                        relatedQueryDiv.classList.add('related-query', 'fade-in', 'no-user-select')
                         relatedQueryDiv.setAttribute('tabindex', 0)
                         relatedQueryDiv.textContent = relatedQuery
                         relatedQueriesDiv.appendChild(relatedQueryDiv)
@@ -701,7 +701,7 @@
 
         // Create/append '🤖 BraveGPT'
         const appNameSpan = document.createElement('span')
-        appNameSpan.className = 'app-name no-user-select' ; appNameSpan.innerText = '🤖  '
+        appNameSpan.classList.add('app-name', 'no-user-select') ; appNameSpan.innerText = '🤖  '
         const braveGPTlink = document.createElement('a')
         braveGPTlink.href = 'https://www.bravegpt.com'
         braveGPTlink.target = '_blank' ; braveGPTlink.rel = 'noopener'
@@ -710,7 +710,7 @@
 
         // Create/append 'by KudoAI'
         const kudoAIspan = document.createElement('span')
-        kudoAIspan.className = 'kudo-ai no-user-select' ; kudoAIspan.textContent = 'by '
+        kudoAIspan.classList.add('kudo-ai', 'no-user-select') ; kudoAIspan.textContent = 'by '
         const kudoAIlink = document.createElement('a')
         kudoAIlink.href = 'https://www.kudoai.com'
         kudoAIlink.target = '_blank' ; kudoAIlink.rel = 'noopener'
@@ -721,7 +721,7 @@
         const aboutSpan = document.createElement('span'),
               aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
-        aboutSpan.className = 'corner-btn' ; aboutSpan.title = messages.menuLabel_about || 'About'
+        aboutSpan.classList.add('corner-btn') ; aboutSpan.title = messages.menuLabel_about || 'About'
         aboutSVG.setAttribute('width', '17') ; aboutSVG.setAttribute('height', '17')
         aboutSVG.setAttribute('viewBox', '0 0 56.693 56.693')
         aboutSVGpath.setAttribute('d',
@@ -732,7 +732,7 @@
         // Create/append speak button
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-        speakSpan.className = 'corner-btn' ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
+        speakSpan.classList.add('corner-btn') ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
         speakSpan.style.margin = '-0.007em 8px 0 11px' // fine-tune position
         speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32')
         speakSVG.setAttributeNS(null, 'width', '22')
@@ -750,14 +750,14 @@
         // Create/append Wider Sidebar button
         const wsbSpan = document.createElement('span'),
               wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-        wsbSpan.id = 'wsb-btn' ; wsbSpan.className = 'corner-btn'
+        wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
         wsbSpan.style.marginTop = '0.06rem' // fine-tune position
         wsbSpan.appendChild(wsbSVG) ; braveGPTdiv.appendChild(wsbSpan) ; updateWSBsvg()
 
         // Create/append ChatGPT response
         const balloonTipSpan = document.createElement('span'),
               answerPre = document.createElement('pre')
-        balloonTipSpan.className = 'balloon-tip' ; answerPre.textContent = answer
+        balloonTipSpan.classList.add('balloon-tip') ; answerPre.textContent = answer
         braveGPTdiv.appendChild(balloonTipSpan) ; braveGPTdiv.appendChild(answerPre)
 
         // Create/append reply section/elements
@@ -765,7 +765,7 @@
               replyForm = document.createElement('form'),
               continueChatDiv = document.createElement('div'),
               chatTextarea = document.createElement('textarea')
-        continueChatDiv.className = 'continue-chat'
+        continueChatDiv.classList.add('continue-chat')
         chatTextarea.id = 'bravegpt-chatbar' ; chatTextarea.rows = '1'
         chatTextarea.placeholder = ( messages.tooltip_sendReply || 'Send reply' ) + '...'
         continueChatDiv.appendChild(chatTextarea)
@@ -777,7 +777,7 @@
               sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               sendSVGpath = createSVGelem('path', { stroke: '', 'stroke-width': '2', linecap: 'round',
                   'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
-        sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
+        sendButton.classList.add('send-button') ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
         sendSVG.setAttribute('viewBox', '4 2 16 16') ; sendSVG.setAttribute('fill', 'none')
         sendSVG.setAttribute('height', '16') ; sendSVG.setAttribute('width', '16')
         sendSVG.setAttribute('stroke', 'currentColor') ; sendSVG.setAttribute('stroke-width', '2')
@@ -1065,7 +1065,7 @@
 
     // Create/classify feedback footer
     const braveGPTfooter = document.createElement('div') // create footer div
-    braveGPTfooter.className = 'footer'
+    braveGPTfooter.classList.add('footer')
 
     // Activate ad campaign if active
     GM.xmlHttpRequest({
