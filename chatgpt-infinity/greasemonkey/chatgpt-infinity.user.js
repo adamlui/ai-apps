@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.15
+// @version             2023.11.15.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -664,9 +664,9 @@
             navicon.style.width = navicon.style.height = '1.25rem'
             navicon.style.marginLeft = navicon.style.marginRight = '4px'
         } else navicon.width = 18
-        label.id = 'infToggleLabel' ; label.className = 'switch'
+        label.id = 'infToggleLabel' ; label.classList.add('switch')
         input.id = 'infToggleInput' ; input.type = 'checkbox' ; input.disabled = true ; input.checked = config.infinityMode
-        span.className = 'slider'
+        span.classList.add('slider')
 
         // Append elements
         label.appendChild(input) ; label.appendChild(span)
