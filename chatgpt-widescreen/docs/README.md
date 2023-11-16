@@ -9,7 +9,7 @@
 <div align="center">
 
 ![](https://img.shields.io/badge/Installs-5,000+-eb7bfc?logo=docusign&logoColor=white&labelColor=464646&style=for-the-badge)
-[![](https://img.shields.io/chrome-web-store/stars/jgnjpnmofkalfliddjelaciggjgnphgm?logo=googlechrome&logoColor=white&labelColor=464646&color=gold&label=Rating&style=for-the-badge)](https://chrome.google.com/webstore/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews)
+[![](https://img.shields.io/chrome-web-store/stars/jgnjpnmofkalfliddjelaciggjgnphgm?logo=googlechrome&logoColor=white&labelColor=464646&color=b5fc7b&label=Rating&style=for-the-badge)](https://chrome.google.com/webstore/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews)
 [![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
