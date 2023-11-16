@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Check for Updates" },
   "buttonLabel_update": { "message": "opus" },
   "buttonLabel_dismiss": { "message": "dimitto" },
-  "link_viewChanges": { "message": "Vedi anche l 'accendenza" }
+  "link_viewChanges": { "message": "Vedi anche l 'accendenza" },
+  "state_enabled": { "message": "Actiosus" },
+  "state_disabled": { "message": "Invaliditas" }
 }

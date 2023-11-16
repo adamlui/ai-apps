@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "अद्यावधिकका लागि जाँच गर्नुहोस्" },
   "buttonLabel_update": { "message": "अद्यावधिक" },
   "buttonLabel_dismiss": { "message": "खारेज गर्नुहोस्" },
-  "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" }
+  "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" },
+  "state_enabled": { "message": "MHz" },
+  "state_disabled": { "message": "अक्षम" }
 }

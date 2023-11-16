@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Buscar actualizaciones" },
   "buttonLabel_update": { "message": "Actualizar" },
   "buttonLabel_dismiss": { "message": "Descartar" },
-  "link_viewChanges": { "message": "Ver cambios" }
+  "link_viewChanges": { "message": "Ver cambios" },
+  "state_enabled": { "message": "habilitado" },
+  "state_disabled": { "message": "desactivado" }
 }

@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Lukim ol nupela tok" },
   "buttonLabel_update": { "message": "UPDATE" },
   "buttonLabel_dismiss": { "message": "Lusim" },
-  "link_viewChanges": { "message": "Lukim ol senis" }
+  "link_viewChanges": { "message": "Lukim ol senis" },
+  "state_enabled": { "message": "em i bin mekim olsem" },
+  "state_disabled": { "message": "disable" }
 }

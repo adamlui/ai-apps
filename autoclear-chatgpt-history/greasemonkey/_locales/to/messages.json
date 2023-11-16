@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Vakaiʻi e Ngaahi Fakamatala Fakamuimuitahá" },
   "buttonLabel_update": { "message": "Fakamatala Fakamuimuitahá" },
   "buttonLabel_dismiss": { "message": "Tukuange" },
-  "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" }
+  "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" },
+  "state_enabled": { "message": "Faka'ataa" },
+  "state_disabled": { "message": "Tapui" }
 }

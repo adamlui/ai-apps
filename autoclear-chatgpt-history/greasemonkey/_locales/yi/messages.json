@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "זוך נייע ווערסיעס" },
   "buttonLabel_update": { "message": "דערהייַנטיקן" },
   "buttonLabel_dismiss": { "message": "אָפּזאָגן" },
-  "link_viewChanges": { "message": "קוק ענדערונגען" }
+  "link_viewChanges": { "message": "קוק ענדערונגען" },
+  "state_enabled": { "message": "ערמעגליכט" },
+  "state_disabled": { "message": "input-mode" }
 }

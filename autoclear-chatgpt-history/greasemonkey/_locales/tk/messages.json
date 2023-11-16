@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Updates üçin täzelendir" },
   "buttonLabel_update": { "message": "Täzele" },
   "buttonLabel_dismiss": { "message": "Dismiss" },
-  "link_viewChanges": { "message": "Özgertmeleri Gör" }
+  "link_viewChanges": { "message": "Özgertmeleri Gör" },
+  "state_enabled": { "message": "Jawany Mümkin Et" },
+  "state_disabled": { "message": "Mümkin edigili" }
 }

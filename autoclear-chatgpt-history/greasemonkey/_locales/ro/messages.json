@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Caută actualizări" },
   "buttonLabel_update": { "message": "Actualizare" },
   "buttonLabel_dismiss": { "message": "Respingeți" },
-  "link_viewChanges": { "message": "Vizualizează modificările" }
+  "link_viewChanges": { "message": "Vizualizează modificările" },
+  "state_enabled": { "message": "Activat" },
+  "state_disabled": { "message": "Dezactivat" }
 }

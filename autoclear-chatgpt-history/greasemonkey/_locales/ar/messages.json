@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "مرابة التحديثات" },
   "buttonLabel_update": { "message": "تحديث" },
   "buttonLabel_dismiss": { "message": "‫رفض‬" },
-  "link_viewChanges": { "message": "عرض سجل التغييرات" }
+  "link_viewChanges": { "message": "عرض سجل التغييرات" },
+  "state_enabled": { "message": "تمكين" },
+  "state_disabled": { "message": "معطّل" }
 }

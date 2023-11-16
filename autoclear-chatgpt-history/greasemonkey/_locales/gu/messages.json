@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "નવાં ભાગ(ઓ) માટે ચકાસો" },
   "buttonLabel_update": { "message": "અદ્યતન બનાવો" },
   "buttonLabel_dismiss": { "message": "કાઢી મૂકવું" },
-  "link_viewChanges": { "message": "ફેરફારો જુઓ" }
+  "link_viewChanges": { "message": "ફેરફારો જુઓ" },
+  "state_enabled": { "message": "સક્રિય" },
+  "state_disabled": { "message": "નિષ્ક્રિય" }
 }

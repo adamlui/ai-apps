@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "چێکی نوێکردنەوە بکە" },
   "buttonLabel_update": { "message": "نوێکردنەوە" },
   "buttonLabel_dismiss": { "message": "پشتگوێخستن" },
-  "link_viewChanges": { "message": "بینینی گۆڕانکارییەکان" }
+  "link_viewChanges": { "message": "بینینی گۆڕانکارییەکان" },
+  "state_enabled": { "message": "چالاکە، تواناپێدراو" },
+  "state_disabled": { "message": "پەککەوتە، بێ توانا، نەتوانا، ناچالاککراو، کوژاوەتەوە، کەنەفت، پەککەوت، کەم ئەندام، لێکەوتە، کەنفت" }
 }

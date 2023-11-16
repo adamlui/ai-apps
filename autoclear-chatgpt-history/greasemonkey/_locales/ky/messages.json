@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Жаңы чыгаруулар бар экендигин текшерүү" },
   "buttonLabel_update": { "message": "Жаңыртуу" },
   "buttonLabel_dismiss": { "message": "Иштен бошотуу" },
-  "link_viewChanges": { "message": "Өзгөрүүлөрдү көрүү" }
+  "link_viewChanges": { "message": "Өзгөрүүлөрдү көрүү" },
+  "state_enabled": { "message": "Күйгүзүлдү" },
+  "state_disabled": { "message": "Өчүрүлгөн" }
 }

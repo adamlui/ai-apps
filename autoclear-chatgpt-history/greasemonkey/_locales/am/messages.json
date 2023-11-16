@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "ዝማኔዎችን ይመልከቱ" },
   "buttonLabel_update": { "message": "አዘምን" },
   "buttonLabel_dismiss": { "message": "መደምሰሻ" },
-  "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" }
+  "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" },
+  "state_enabled": { "message": "የነቃ" },
+  "state_disabled": { "message": "የተሰናከለ" }
 }

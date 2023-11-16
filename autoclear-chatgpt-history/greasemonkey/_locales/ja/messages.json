@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "更新を確認" },
   "buttonLabel_update": { "message": "更新情報" },
   "buttonLabel_dismiss": { "message": "解散" },
-  "link_viewChanges": { "message": "変更を表示" }
+  "link_viewChanges": { "message": "変更を表示" },
+  "state_enabled": { "message": "有効" },
+  "state_disabled": { "message": "無効" }
 }

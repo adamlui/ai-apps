@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Yeniləmələri yoxla" },
   "buttonLabel_update": { "message": "Yenilə" },
   "buttonLabel_dismiss": { "message": "Bağla" },
-  "link_viewChanges": { "message": "Dəyişikliklərə bax" }
+  "link_viewChanges": { "message": "Dəyişikliklərə bax" },
+  "state_enabled": { "message": "Aktivdir" },
+  "state_disabled": { "message": "kilitlidir" }
 }

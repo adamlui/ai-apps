@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Hlola Izibuyekezo" },
   "buttonLabel_update": { "message": "Lungisa" },
   "buttonLabel_dismiss": { "message": "Susa" },
-  "link_viewChanges": { "message": "Buka ushintsho" }
+  "link_viewChanges": { "message": "Buka ushintsho" },
+  "state_enabled": { "message": "Inikwe amandla" },
+  "state_disabled": { "message": "Ivaliwe" }
 }

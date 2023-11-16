@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
   "buttonLabel_dismiss": { "message": "ထုတ်ပယ်ပါ" },
-  "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ရန်" }
+  "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ရန်" },
+  "state_enabled": { "message": "ဖွင့်ထားသည်" },
+  "state_disabled": { "message": "ပိတ်ထားသည်" }
 }

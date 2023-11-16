@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Leita að uppfærslum" },
   "buttonLabel_update": { "message": "Uppfæra" },
   "buttonLabel_dismiss": { "message": "Hafna" },
-  "link_viewChanges": { "message": "Skoða breytingar" }
+  "link_viewChanges": { "message": "Skoða breytingar" },
+  "state_enabled": { "message": "Lag" },
+  "state_disabled": { "message": "óvirkt" }
 }

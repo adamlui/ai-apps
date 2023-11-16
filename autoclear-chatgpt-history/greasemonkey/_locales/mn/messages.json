@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Шинэчлэлтүүдийг шалгана уу" },
   "buttonLabel_update": { "message": "Шинэчлэх" },
   "buttonLabel_dismiss": { "message": "Дуусах" },
-  "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" }
+  "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" },
+  "state_enabled": { "message": "Идэвхжүүлсэн" },
+  "state_disabled": { "message": "Идэвхгүй" }
 }

@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "నవీకరణల కోసం పరిశీలించు" },
   "buttonLabel_update": { "message": "నవీకరించు" },
   "buttonLabel_dismiss": { "message": "తీసివేయండి" },
-  "link_viewChanges": { "message": "మార్పులను చూడండి" }
+  "link_viewChanges": { "message": "మార్పులను చూడండి" },
+  "state_enabled": { "message": "చేతనంచేసిన" },
+  "state_disabled": { "message": "వికలాంగులు" }
 }

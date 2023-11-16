@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
   "buttonLabel_update": { "message": "Naujinti" },
   "buttonLabel_dismiss": { "message": "Atšaukti" },
-  "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" }
+  "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" },
+  "state_enabled": { "message": "įjungtas" },
+  "state_disabled": { "message": "išjungta" }
 }

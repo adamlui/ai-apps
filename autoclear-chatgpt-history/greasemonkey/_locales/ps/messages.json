@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "د تازه معلوماتو لپاره وګورئ" },
   "buttonLabel_update": { "message": "تازه کړئ" },
   "buttonLabel_dismiss": { "message": "رد کردن" },
-  "link_viewChanges": { "message": "بدلونونه وګورئ" }
+  "link_viewChanges": { "message": "بدلونونه وګورئ" },
+  "state_enabled": { "message": "فعال شوی" },
+  "state_disabled": { "message": "غیر فعال شوی" }
 }

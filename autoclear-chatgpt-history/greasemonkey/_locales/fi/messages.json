@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Tarkista päivitykset" },
   "buttonLabel_update": { "message": "Päivitä" },
   "buttonLabel_dismiss": { "message": "Hylkää" },
-  "link_viewChanges": { "message": "Näytä muutokset" }
+  "link_viewChanges": { "message": "Näytä muutokset" },
+  "state_enabled": { "message": "käytössä" },
+  "state_disabled": { "message": "pois käytöstä" }
 }

@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "ད་ལྟོའི་དུས་ཚོད། བསྒྱུར་བཅོས་འབད་" },
   "buttonLabel_update": { "message": "ད་ལྟོའི་དུས་ཚོད།" },
   "buttonLabel_dismiss": { "message": "ཁ་འབྱལ་བ།" },
-  "link_viewChanges": { "message": "བསྒྱུར་བཅོས་ཚུ་བལྟ་" }
+  "link_viewChanges": { "message": "བསྒྱུར་བཅོས་ཚུ་བལྟ་" },
+  "state_enabled": { "message": "སེལ་འཐུ་འབད།" },
+  "state_disabled": { "message": "ཆ་མེད་བཏང་ཡོདཔ།" }
 }

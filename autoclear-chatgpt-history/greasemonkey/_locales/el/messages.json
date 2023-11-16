@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Έλεγχος για ενημερώσεις" },
   "buttonLabel_update": { "message": "Ενημέρωση" },
   "buttonLabel_dismiss": { "message": " Κλείσιμο" },
-  "link_viewChanges": { "message": "Εμφάνιση αλλαγών" }
+  "link_viewChanges": { "message": "Εμφάνιση αλλαγών" },
+  "state_enabled": { "message": "ενεργό" },
+  "state_disabled": { "message": "απενεργοποιημένο" }
 }

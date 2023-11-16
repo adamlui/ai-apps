@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ" },
   "buttonLabel_update": { "message": "ನವೀಕರಿಸಿ" },
   "buttonLabel_dismiss": { "message": "ವಜಾಗೊಳಿಸಿ" },
-  "link_viewChanges": { "message": "ಬದಲಾವಣೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ" }
+  "link_viewChanges": { "message": "ಬದಲಾವಣೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ" },
+  "state_enabled": { "message": "à²à²¶à²à³à²¤à²à³à²³à²¿à²¸à²²à²¾à²à²¿à²¦à³" },
+  "state_disabled": { "message": "à²¸à²à²à³à²¯à²¾à²¤à³à²®à² à²¸à²¹ à²¸à²à²¸à³à²à²¾à²°à² (FPU)" }
 }

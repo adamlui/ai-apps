@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "E nānā i nā mea hou" },
   "buttonLabel_update": { "message": "Hōʻano hou" },
   "buttonLabel_dismiss": { "message": "Hoʻokuʻu" },
-  "link_viewChanges": { "message": "Nānā i nā hoʻololi" }
+  "link_viewChanges": { "message": "Nānā i nā hoʻololi" },
+  "state_enabled": { "message": "hiki" },
+  "state_disabled": { "message": "kino kīnā" }
 }

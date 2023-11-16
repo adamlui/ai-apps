@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Angalia Masasisho" },
   "buttonLabel_update": { "message": "Sasisho" },
   "buttonLabel_dismiss": { "message": "Puuza" },
-  "link_viewChanges": { "message": "Angalia mabadiliko" }
+  "link_viewChanges": { "message": "Angalia mabadiliko" },
+  "state_enabled": { "message": "Imewezeshwa" },
+  "state_disabled": { "message": "disabled" }
 }

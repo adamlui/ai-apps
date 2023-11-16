@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Güncellemeleri Kontrol Et" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Yok say" },
-  "link_viewChanges": { "message": "Değişen Dosyalar" }
+  "link_viewChanges": { "message": "Değişen Dosyalar" },
+  "state_enabled": { "message": "etkinleştirilmiş" },
+  "state_disabled": { "message": "etkinleştirilmemiş" }
 }

@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Preveri stanje posodobitev" },
   "buttonLabel_update": { "message": "Update" },
   "buttonLabel_dismiss": { "message": "Opusti" },
-  "link_viewChanges": { "message": "Poglej spremembe" }
+  "link_viewChanges": { "message": "Poglej spremembe" },
+  "state_enabled": { "message": "omogočeno" },
+  "state_disabled": { "message": "onemogočeno" }
 }

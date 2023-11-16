@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "ពិនិត្យរកអាប់ដេត" },
   "buttonLabel_update": { "message": "ធ្វើបច្ចុប្បន្នភាព" },
   "buttonLabel_dismiss": { "message": "បោះបង់" },
-  "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" }
+  "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" },
+  "state_enabled": { "message": "បាន​ជ្រើស" },
+  "state_disabled": { "message": "បានបិទ" }
 }

@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Перевірка оновлень" },
   "buttonLabel_update": { "message": "Оновити" },
   "buttonLabel_dismiss": { "message": "Відхиляти" },
-  "link_viewChanges": { "message": "Переглянути зміни" }
+  "link_viewChanges": { "message": "Переглянути зміни" },
+  "state_enabled": { "message": "активовано" },
+  "state_disabled": { "message": "вимкнено" }
 }

@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Тафтиш кардан барои қоидаҳои ҳозира" },
   "buttonLabel_update": { "message": "Навсозӣ кардан" },
   "buttonLabel_dismiss": { "message": "Рад кардан" },
-  "link_viewChanges": { "message": "Tingnan ang mga pagbabago" }
+  "link_viewChanges": { "message": "Tingnan ang mga pagbabago" },
+  "state_enabled": { "message": "ÐÐ°Ð±ÑÐ´" },
+  "state_disabled": { "message": "хомӯш аст" }
 }

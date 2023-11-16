@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "_Kontroleer vir bywerkings:" },
   "buttonLabel_update": { "message": "Opdateer" },
   "buttonLabel_dismiss": { "message": "Laat vaar" },
-  "link_viewChanges": { "message": "Besigtig veranderinge" }
+  "link_viewChanges": { "message": "Besigtig veranderinge" },
+  "state_enabled": { "message": "Blou" },
+  "state_disabled": { "message": "gedeaktiveer" }
 }

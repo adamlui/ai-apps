@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "檢查更新" },
   "buttonLabel_update": { "message": "更新" },
   "buttonLabel_dismiss": { "message": "關閉" },
-  "link_viewChanges": { "message": "查看變更" }
+  "link_viewChanges": { "message": "查看變更" },
+  "state_enabled": { "message": "啟用" },
+  "state_disabled": { "message": "禁用" }
 }

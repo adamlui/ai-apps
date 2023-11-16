@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Проверить наличие обновлений" },
   "buttonLabel_update": { "message": "Обновить" },
   "buttonLabel_dismiss": { "message": "Пропустить" },
-  "link_viewChanges": { "message": "Просмотреть изменения" }
+  "link_viewChanges": { "message": "Просмотреть изменения" },
+  "state_enabled": { "message": "включено" },
+  "state_disabled": { "message": "отключено" }
 }

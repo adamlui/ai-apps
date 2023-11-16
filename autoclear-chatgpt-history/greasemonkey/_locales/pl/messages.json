@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Sprawdzanie aktualizacji" },
   "buttonLabel_update": { "message": "Aktualizuj" },
   "buttonLabel_dismiss": { "message": "Odrzuć" },
-  "link_viewChanges": { "message": "Przegląd zmian" }
+  "link_viewChanges": { "message": "Przegląd zmian" },
+  "state_enabled": { "message": "włączony" },
+  "state_disabled": { "message": "wyłączone" }
 }

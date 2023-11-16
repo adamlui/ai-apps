@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Kontrolli uuendusi" },
   "buttonLabel_update": { "message": "Uuenda" },
   "buttonLabel_dismiss": { "message": "Loobu" },
-  "link_viewChanges": { "message": "Vaata muudatusi" }
+  "link_viewChanges": { "message": "Vaata muudatusi" },
+  "state_enabled": { "message": "lubatud" },
+  "state_disabled": { "message": "välja lülitatud" }
 }

@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "اپ ڈیٹس کی پڑتال کریں" },
   "buttonLabel_update": { "message": "اپ ڈیٹ " },
   "buttonLabel_dismiss": { "message": "برخاست" },
-  "link_viewChanges": { "message": "تبدیلیاں دیکھیں" }
+  "link_viewChanges": { "message": "تبدیلیاں دیکھیں" },
+  "state_enabled": { "message": "فعال" },
+  "state_disabled": { "message": "غیر فعال" }
 }

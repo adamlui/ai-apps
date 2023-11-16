@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Semak Kemaskini" },
   "buttonLabel_update": { "message": "Saya ingin membuat susulan" },
   "buttonLabel_dismiss": { "message": "Singkir" },
-  "link_viewChanges": { "message": "Lihat perubahan" }
+  "link_viewChanges": { "message": "Lihat perubahan" },
+  "state_enabled": { "message": "dibenarkan" },
+  "state_disabled": { "message": "dilumpuhkan" }
 }

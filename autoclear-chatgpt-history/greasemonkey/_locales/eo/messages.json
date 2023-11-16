@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Kontroli por novaj epizodoj" },
   "buttonLabel_update": { "message": "Ĝisdatigi" },
   "buttonLabel_dismiss": { "message": "Malakcepti" },
-  "link_viewChanges": { "message": "Montri ŝanĝojn" }
+  "link_viewChanges": { "message": "Montri ŝanĝojn" },
+  "state_enabled": { "message": "Ebligita" },
+  "state_disabled": { "message": "(nekonata)" }
 }

@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Kugirango" },
   "buttonLabel_update": { "message": "Kuvugurura" },
   "buttonLabel_dismiss": { "message": "Kureka" },
-  "link_viewChanges": { "message": "Amahinduka" }
+  "link_viewChanges": { "message": "Amahinduka" },
+  "state_enabled": { "message": "Birafunguye" },
+  "state_disabled": { "message": "Yahagaritswe" }
 }

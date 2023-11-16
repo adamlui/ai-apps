@@ -14,12 +14,14 @@
   "alert_newerVer": { "message": "En opdatering til" },
   "alert_isAvail": { "message": "er tilgængelig" },
   "alert_upToDate": { "message": "Opdateret" },
-  "alert_isUpToDate": { "message": "{     0     } er opdateret" },
+  "alert_isUpToDate": { "message": "{      0      } er opdateret" },
   "buttonLabel_moreApps": { "message": "Flere ChatGPT-apps" },
   "buttonLabel_leaveReview": { "message": "Skriv en anmeldelse" },
   "buttonLabel_getSupport": { "message": "Få hjælp" },
   "buttonLabel_updateCheck": { "message": "Tjek for Opdateringer" },
   "buttonLabel_update": { "message": "Opdatér" },
   "buttonLabel_dismiss": { "message": "Afvis" },
-  "link_viewChanges": { "message": "Se ændringer" }
+  "link_viewChanges": { "message": "Se ændringer" },
+  "state_enabled": { "message": "aktiveret" },
+  "state_disabled": { "message": "deaktiveret" }
 }

@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "އަޕްޑޭޓްތައް ބަލާށެވެ" },
   "buttonLabel_update": { "message": "އަޕްޑޭޓް" },
   "buttonLabel_dismiss": { "message": "މަގާމުން ވަކިކުރުން" },
-  "link_viewChanges": { "message": "ވިއު ޗޭންޖްސް" }
+  "link_viewChanges": { "message": "ވިއު ޗޭންޖްސް" },
+  "state_enabled": { "message": "އެނޭބަލްކޮށްފައި" },
+  "state_disabled": { "message": "ބޭނުންނުކުރެވޭ ގޮތަށް ހަދާފައި" }
 }

@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Kuckt no Aktualiséierungen" },
   "buttonLabel_update": { "message": "Aktualiséieren" },
   "buttonLabel_dismiss": { "message": "Ofginn" },
-  "link_viewChanges": { "message": "Ännerungen uweisen" }
+  "link_viewChanges": { "message": "Ännerungen uweisen" },
+  "state_enabled": { "message": "Aktiviert" },
+  "state_disabled": { "message": "Deaktivéiert" }
 }

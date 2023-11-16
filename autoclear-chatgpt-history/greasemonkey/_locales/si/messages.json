@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "යාවත්කාලීන සඳහා පරීක් ‍ ෂා කරන්න" },
   "buttonLabel_update": { "message": "යාවත් කාළීන:" },
   "buttonLabel_dismiss": { "message": "ඉවතලන්න" },
-  "link_viewChanges": { "message": "වෙනස්කම් බලන්න" }
+  "link_viewChanges": { "message": "වෙනස්කම් බලන්න" },
+  "state_enabled": { "message": "සක්‍රීය කල" },
+  "state_disabled": { "message": "අක්‍රීය කල" }
 }

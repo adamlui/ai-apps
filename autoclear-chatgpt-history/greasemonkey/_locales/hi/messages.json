@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "अद्यतन के लिए जाँचें" },
   "buttonLabel_update": { "message": "अपडेट करें" },
   "buttonLabel_dismiss": { "message": "खारिज करना" },
-  "link_viewChanges": { "message": "बदलाव देखें" }
+  "link_viewChanges": { "message": "बदलाव देखें" },
+  "state_enabled": { "message": "(अज्ञात)" },
+  "state_disabled": { "message": "अक्षम" }
 }

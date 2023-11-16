@@ -21,5 +21,7 @@
   "buttonLabel_updateCheck": { "message": "হালনাগাদের জন্য চেক করুন" },
   "buttonLabel_update": { "message": "আপডেট করুন" },
   "buttonLabel_dismiss": { "message": "খারিজ করুন" },
-  "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" }
+  "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" },
+  "state_enabled": { "message": "সক্রিয়।" },
+  "state_disabled": { "message": "নিস্ক্রিয়" }
 }
