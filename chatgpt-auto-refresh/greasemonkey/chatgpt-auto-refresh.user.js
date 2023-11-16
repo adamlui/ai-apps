@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.16.2
+// @version             2023.11.16.3
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -654,10 +654,9 @@
         toggleLabel.id = 'arToggleLabel'
         toggleLabel.style.marginLeft = '-41px' // left-shift to navicon
         toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
-        toggleLabel.innerText = // init opposite final label text
-            ( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' '
-          + ( config.arDisabled ? ( messages.state_disabled || 'enabled' )
-                                : ( messages.state_enabled  || 'disabled' ))
+        toggleLabel.innerText = ( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' '
+                              + ( toggleInput.checked ? ( messages.state_enabled  || 'enabled' )
+                                                      : ( messages.state_disabled || 'disabled' ))
         // Append elements
         for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.appendChild(elem)
 
@@ -673,11 +672,6 @@
                 switchSpan.style.boxShadow = 'none'
                 knobSpan.style.transform = `translateX(0)`
             }
-            setTimeout(() => { // sync final label text w/ switch movement
-                toggleLabel.innerText = ( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' '
-                                      + ( config.arDisabled ? ( messages.state_disabled || 'disabled' )
-                                                            : ( messages.state_enabled  || 'enabled' ))
-            }, 200)
         }, 1) // min delay to trigger transition fx
     }
 
