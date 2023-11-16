@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.15
+// @version             2023.11.15.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -614,9 +614,9 @@
             navicon.style.width = navicon.style.height = '1.25rem'
             navicon.style.marginLeft = navicon.style.marginRight = '4px'
         } else navicon.width = 18
-        label.id = 'acToggleLabel' ; label.className = 'switch'
+        label.id = 'acToggleLabel' ; label.classList.add('switch')
         input.id = 'acToggleInput' ; input.type = 'checkbox' ; input.disabled = true ; input.checked = config.autoclear
-        span.className = 'slider'
+        span.classList.add('slider')
 
         // Append elements
         label.appendChild(input) ; label.appendChild(span)
