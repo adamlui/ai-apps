@@ -210,9 +210,9 @@
                     navicon.style.width = navicon.style.height = '1.25rem'
                     navicon.style.marginLeft = navicon.style.marginRight = '4px'
                 } else navicon.width = 18
-                label.id = 'infToggleLabel' ; label.className = 'switch'
+                label.id = 'infToggleLabel' ; label.classList.add('switch')
                 input.id = 'infToggleInput' ; input.type = 'checkbox' ; input.disabled = true ; input.checked = config.infinityMode
-                span.className = 'slider'
+                label.classList.add('slider')
 
                 // Append elements
                 label.appendChild(input) ; label.appendChild(span)
