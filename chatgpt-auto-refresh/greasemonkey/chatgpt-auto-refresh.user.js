@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.15
+// @version             2023.11.15.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -653,9 +653,9 @@
             navicon.style.width = navicon.style.height = '1.25rem'
             navicon.style.marginLeft = navicon.style.marginRight = '4px'
         } else navicon.width = 18
-        label.id = 'arToggleLabel' ; label.className = 'switch'
+        label.id = 'arToggleLabel' ; label.classList.add('switch')
         input.id = 'arToggleInput' ; input.type = 'checkbox' ; input.disabled = true ; input.checked = !config.arDisabled
-        span.className = 'slider'
+        span.classList.add('slider')
 
         // Append elements
         label.appendChild(input) ; label.appendChild(span)
