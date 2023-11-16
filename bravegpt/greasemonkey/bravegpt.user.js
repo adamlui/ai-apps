@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.15.1
+// @version             2023.11.15.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -365,7 +365,7 @@
         if (msg.includes('login')) deleteOpenAIcookies()
         braveGPTdiv.innerHTML = (
             /waiting|loading/i.test(msg) ? // if alert involves loading, add class
-                '<p class="loading">' : '<p style="padding: 19px">') + braveGPTalerts[msg]
+                '<p class="loading no-user-select">' : '<p style="padding: 19px">') + braveGPTalerts[msg]
             + (braveGPTalerts[msg].includes('@') ? // if msg needs login link, add it
                 '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
                     + '(' + ( messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode' )
@@ -601,7 +601,7 @@
                     relatedQueries.forEach((relatedQuery, index) => {
                         const relatedQueryDiv = document.createElement('div')
                         relatedQueryDiv.title = messages.tooltip_sendRelatedQuery || 'Send related query'
-                        relatedQueryDiv.className = 'related-query fade-in'
+                        relatedQueryDiv.className = 'related-query fade-in no-user-select'
                         relatedQueryDiv.setAttribute('tabindex', 0)
                         relatedQueryDiv.textContent = relatedQuery
                         relatedQueriesDiv.appendChild(relatedQueryDiv)
@@ -701,7 +701,7 @@
 
         // Create/append '🤖 BraveGPT'
         const appNameSpan = document.createElement('span')
-        appNameSpan.className = 'app-name' ; appNameSpan.innerText = '🤖  '
+        appNameSpan.className = 'app-name no-user-select' ; appNameSpan.innerText = '🤖  '
         const braveGPTlink = document.createElement('a')
         braveGPTlink.href = 'https://www.bravegpt.com'
         braveGPTlink.target = '_blank' ; braveGPTlink.rel = 'noopener'
@@ -710,7 +710,7 @@
 
         // Create/append 'by KudoAI'
         const kudoAIspan = document.createElement('span')
-        kudoAIspan.className = 'kudo-ai' ; kudoAIspan.textContent = 'by '
+        kudoAIspan.className = 'kudo-ai no-user-select' ; kudoAIspan.textContent = 'by '
         const kudoAIlink = document.createElement('a')
         kudoAIlink.href = 'https://www.kudoai.com'
         kudoAIlink.target = '_blank' ; kudoAIlink.rel = 'noopener'
@@ -856,7 +856,7 @@
             } catch (err) {}
 
             // Show loading status
-            replySection.classList.add('loading')
+            replySection.classList.add('loading', 'no-user-select')
             replySection.innerHTML = braveGPTalerts.waitingResponse
             braveGPTfooter.innerHTML = '' ; braveGPTfooter.style.height = '32px'
         }
@@ -984,7 +984,8 @@
     const braveGPTstyle = document.createElement('style'),
           scheme = isDarkMode() ? 'dark' : 'light'
     braveGPTstyle.innerText = (
-        '.bravegpt {'
+          '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+        + '.bravegpt {'
             + 'word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px ;'
             + 'border-radius: 18px ; padding: 24px 23px 45px 23px ; background:'
                 + ( scheme == 'dark' ? '#282828' : 'white' ) + '}'
@@ -997,8 +998,7 @@
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
         + '.bravegpt .loading {'
             + 'margin-bottom: -55px ;' // offset vs. `.bravegpt` bottom-padding footer accomodation
-            + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
-            + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+            + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.bravegpt section.loading { padding-left: 5px ; font-size: 90% }'
         + '.bravegpt pre {'
@@ -1034,8 +1034,7 @@
             + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
             + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.77em ; cursor: pointer ;`
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
-            + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' } ;`
-            + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+            + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' }}`
         + `.related-query:hover { background: #${ scheme == 'dark' ? 'a2a2a270' : 'a2a2a240 ; color: #000000a8' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
