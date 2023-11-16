@@ -7,7 +7,7 @@
   <a href="https://twitter.com/intent/tweet?text=Want%20%23ChatGPT%20answers%20right%20alongside%20DuckDuckGo%20results%3F%20This%20%23userscript%20does%20just%20that%21&url=https://duckduckgpt.com&hashtags=greasemonkey,javascript,ai"><img style="margin:0 0 14px 5px;" src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
 </h1>
 
-![](https://img.shields.io/greasyfork/dt/459849?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)
+[![](https://img.shields.io/greasyfork/dt/459849?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/scripts/459849-duckduckgpt)
 [![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/duckduckgpt?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/duckduckgpt/commits/main)
 [![](https://img.shields.io/codacy/grade/660eef2b75644cad992111be29434c51?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=1acc6c&style=for-the-badge)](https://app.codacy.com/gh/KudoAI/duckduckgpt/commits)
