@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.15.3
+// @version             2023.11.15.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -998,7 +998,7 @@
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
         + '.bravegpt .loading {'
             + 'margin-bottom: -55px ;' // offset vs. `.bravegpt` bottom-padding footer accomodation
-            + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
+            + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.bravegpt section.loading { padding-left: 5px ; font-size: 90% }'
         + '.bravegpt pre {'
@@ -1034,7 +1034,7 @@
             + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
             + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.77em ; cursor: pointer ;`
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
-            + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' }}`
+            + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' }}`
         + `.related-query:hover { background: #${ scheme == 'dark' ? 'a2a2a270' : 'a2a2a240 ; color: #000000a8' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
