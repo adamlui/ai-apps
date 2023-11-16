@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.15.1
+// @version             2023.11.15.2
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -606,7 +606,8 @@
         // Create elements
         const navicon = document.createElement('img'),
               label = document.createElement('label'),
-              labelText = document.createTextNode('Auto-clear ' + ( config.autoclear ? 'enabled' : 'disabled' )),
+              labelText = document.createTextNode(( messages.mode_autoClear || 'Auto-clear ' )
+                  + ( config.autoclear ? messages.state_enabled || 'enabled' : messages.state_disabled || 'disabled' )),
               input = document.createElement('input'),
               span = document.createElement('span')
         navicon.src = config.assetHostURL + 'media/images/icons/navicon.png'
