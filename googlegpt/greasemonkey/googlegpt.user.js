@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.15.1
+// @version             2023.11.15.2
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -581,7 +581,7 @@
         if (msg.includes('login')) deleteOpenAIcookies()
         googleGPTdiv.innerHTML = (
             /waiting|loading/i.test(msg) ? // if alert involves loading, add class
-                '<p class="loading">' : '<p>') + googleGPTalerts[msg]
+                '<p class="loading no-user-select">' : '<p>') + googleGPTalerts[msg]
             + (googleGPTalerts[msg].includes('@') ? // if msg needs login link, add it
                 '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
                 + '(' + ( messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode' )
@@ -817,7 +817,7 @@
                     relatedQueries.forEach((relatedQuery, index) => {
                         const relatedQueryDiv = document.createElement('div')
                         relatedQueryDiv.title = messages.tooltip_sendRelatedQuery || 'Send related query'
-                        relatedQueryDiv.className = 'related-query fade-in'
+                        relatedQueryDiv.className = 'related-query fade-in no-user-select'
                         relatedQueryDiv.setAttribute('tabindex', 0)
                         relatedQueryDiv.textContent = relatedQuery
                         relatedQueriesDiv.appendChild(relatedQueryDiv)
@@ -917,7 +917,7 @@
 
         // Create/append '🤖 GoogleGPT'
         const appNameSpan = document.createElement('span')
-        appNameSpan.className = 'app-name' ; appNameSpan.innerText = '🤖  '
+        appNameSpan.className = 'app-name no-user-select' ; appNameSpan.innerText = '🤖  '
         const googleGPTlink = document.createElement('a')
         googleGPTlink.href = 'https://googlegpt.kudoai.com'
         googleGPTlink.target = '_blank' ; googleGPTlink.rel = 'noopener'
@@ -926,7 +926,7 @@
 
         // Create/append 'by KudoAI'
         const kudoAIspan = document.createElement('span')
-        kudoAIspan.className = 'kudo-ai' ; kudoAIspan.textContent = 'by '
+        kudoAIspan.className = 'kudo-ai no-user-select' ; kudoAIspan.textContent = 'by '
         const kudoAIlink = document.createElement('a')
         kudoAIlink.href = 'https://www.kudoai.com'
         kudoAIlink.target = '_blank' ; kudoAIlink.rel = 'noopener'
@@ -1066,7 +1066,7 @@
             } catch (err) {}
 
             // Show loading status
-            replySection.classList.add('loading')
+            replySection.classList.add('loading no-user-select')
             replySection.innerHTML = googleGPTalerts.waitingResponse
         }
 
@@ -1170,7 +1170,8 @@
     const googleGPTstyle = document.createElement('style'),
           scheme = isDarkMode() ? 'dark' : 'light'
     googleGPTstyle.innerText = (
-        '.googlegpt {'
+          '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+        + '.googlegpt {'
             + 'border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
             + `padding: ${ isChromium() ? 22 : 20 }px 26px 6px 26px ; margin: 0 0 30px 0 ;`
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
@@ -1182,18 +1183,14 @@
         + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
             + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
-        + '.googlegpt .loading {'
-            + 'padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite ;'
-            + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+        + '.googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(.4,0,.6,1) infinite }'
         + '.googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
         + '.googlegpt pre {'
             + 'font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ;'
             + ' line-height: 22px ; padding: 1.25em ; border-radius: 10px ;'
             + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : 'background: #eaeaea } ' )
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-        + '.googlegpt section.loading {'
-            + 'padding: 15px 0 14px 5px ;' // left/top-pad loading status when sending replies
-            + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+        + '.googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
         + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ; '
             + ( isChromium() ? 'top: 2px ; right: 7.89em ;' : 'top: 5px ; right: 16.62em ;' )
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
@@ -1212,8 +1209,7 @@
             + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ; background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
             + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.9em ; cursor: pointer ;`
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
-            + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' } ;`
-            + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+            + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169,169,169,0.75)' }}`
         + `.related-query:hover { background: #${ scheme == 'dark' ? 'a2a2a270' : 'a2a2a240 ; color: #000000a8' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
