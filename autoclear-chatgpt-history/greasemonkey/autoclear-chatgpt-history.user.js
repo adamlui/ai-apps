@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.15.2
+// @version             2023.11.16
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -331,7 +331,8 @@
         }
         const knobWidth = isGizmoUI ? 13 : 14
         switchStyle.innerText = (
-            '.switch { position: absolute ; left: 208px ;'
+            '.switch { position: absolute ; '
+              + `left: ${ isMobileDevice() && isGIzmoUI ? 268 : 208 }px ;`
               + `width: ${ isGizmoUI ? 32 : 34 }px ; height: ${ isGizmoUI ? 16 : 18 }px }`
           + '.switch input { opacity: 0 ; width: 0 ; height: 0 }' // hide checkbox
           + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ;'
@@ -414,6 +415,8 @@
     function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (error) { return 'other' }}
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) }
 
     // Define MENU functions
 
@@ -606,7 +609,7 @@
         // Create elements
         const navicon = document.createElement('img'),
               label = document.createElement('label'),
-              labelText = document.createTextNode(( messages.mode_autoClear || 'Auto-clear ' )
+              labelText = document.createTextNode(( messages.mode_autoClear || 'Auto-clear' ) + ' '
                   + ( config.autoclear ? messages.state_enabled || 'enabled' : messages.state_disabled || 'disabled' )),
               input = document.createElement('input'),
               span = document.createElement('span')
