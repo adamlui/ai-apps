@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.16
+// @version             2023.11.16.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -333,37 +333,6 @@
         )
     }
 
-    // Stylize toggle switch (if style missing or outdated)
-    const switchStyleUpdated = 20231116 // datestamp of last edit for this file's `switchStyle` 
-    let switchStyle = document.getElementById('chatgpt-switch-style') // try to select existing style
-    if (!switchStyle || parseInt(switchStyle.getAttribute('last-updated'), 10) < switchStyleUpdated) { // if missing or outdated
-        if (!switchStyle) { // outright missing, create/id/attr/append it first
-            switchStyle = document.createElement('style') ; switchStyle.id = 'chatgpt-switch-style'
-            switchStyle.setAttribute('last-updated', switchStyleUpdated.toString())
-            document.head.appendChild(switchStyle)
-        }
-        const knobWidth = isGizmoUI ? 13 : 14
-        switchStyle.innerText = (
-            '.switch { position: absolute ; '
-              + `left: ${ isMobileDevice() && isGizmoUI ? 268 : 208 }px ;`
-              + `width: ${ isGizmoUI ? 32 : 34 }px ; height: ${ isGizmoUI ? 16 : 18 }px }`
-          + '.switch input { opacity: 0 ; width: 0 ; height: 0 }' // hide checkbox
-          + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ;'
-              + 'background-color: #ccc ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px }'
-          + '.slider:before { position: absolute ; content: "" ; left: 3px ;'
-              + `width: ${ knobWidth }px ; height: ${ knobWidth }px ; bottom: ${ isGizmoUI ? '0.1em' : '2px' } ;`
-              + 'background-color: white ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px }'
-
-          // Position/color ON-state
-          + 'input:checked { position: absolute ; right: 3px }'
-          + 'input:checked + .slider { background-color: #AD68FF ; box-shadow: 2px 1px 20px #D8A9FF}'
-          + 'input:checked + .slider:before {'
-              + `-webkit-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
-              + `-ms-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
-              + `transform: translateX(${ knobWidth }px) }`
-        )
-    }
-
     // Create nav toggle div, add styles
     const navToggleDiv = document.createElement('div')
     navToggleDiv.style.maxHeight = '44px' // prevent flex overgrowth
@@ -397,8 +366,8 @@
     navToggleDiv.addEventListener('click', () => {
         const toggleInput = document.querySelector('#arToggleInput')
         toggleInput.checked = !toggleInput.checked
-        setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.arDisabled = !toggleInput.checked
+        updateToggleHTML()
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.activate(config.refreshInterval)
@@ -442,7 +411,7 @@
                       + ( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' ↻ '
                       + state.separator + state.word[+config.arDisabled]
         menuIDs.push(GM_registerMenuCommand(arLabel, () => {
-            document.querySelector('#arToggleLabel').click()
+            document.querySelector('#arSwitchSpan').click()
         }))
 
         // Add command to toggle visibility of toggle
@@ -641,31 +610,75 @@
     }
 
     function updateToggleHTML() {
-        while (navToggleDiv.firstChild) navToggleDiv.firstChild.remove() // clear old content
 
-        // Create elements
-        const navicon = document.createElement('img'),
-              label = document.createElement('label'),
-              labelText = document.createTextNode(( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' '
-                  + ( config.arDisabled ? ( messages.state_disabled || 'disabled' )
-                                        : ( messages.state_enabled || 'enabled' ))),
-              input = document.createElement('input'),
-              span = document.createElement('span')
+        // Create/size/position navicon
+        const navicon = document.querySelector('#arToggleFavicon') || document.createElement('img')
+        navicon.id = 'arToggleFavicon'
         navicon.src = config.assetHostURL + 'media/images/icons/auto-refresh-navicon-light-155.png'
         if (isGizmoUI) {
             navicon.style.width = navicon.style.height = '1.25rem'
             navicon.style.marginLeft = navicon.style.marginRight = '4px'
         } else navicon.width = 18
-        label.id = 'arToggleLabel' ; label.classList.add('switch')
-        input.id = 'arToggleInput' ; input.type = 'checkbox' ; input.disabled = true ; input.checked = !config.arDisabled
-        span.classList.add('slider')
 
+        // Create/ID/disable/hide/update checkbox
+        const toggleInput = document.querySelector('#arToggleInput') || document.createElement('input')
+        toggleInput.id = 'arToggleInput' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
+        toggleInput.style.display = 'none' ; toggleInput.checked = !config.arDisabled
+
+        // Create/ID/stylize switch
+        const switchSpan = document.querySelector('#arSwitchSpan') || document.createElement('span')
+        switchSpan.id = 'arSwitchSpan'
+        const switchStyles = {
+            position: 'relative', left: `${ isMobileDevice() && isGizmoUI ? 211 : 152 }px`,
+            width: `${ isGizmoUI ? 32 : 34 }px`, height: `${ isGizmoUI ? 16 : 18 }px`,
+            backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
+            '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
+        }
+        Object.assign(switchSpan.style, switchStyles)
+
+        // Create/stylize knob, append to switch
+        const knobSpan = document.querySelector('#arToggleKnobSpan') || document.createElement('span')
+        knobSpan.id = 'arToggleKnobSpan'
+        const knobWidth = isGizmoUI ? 13 : 14
+        const knobStyles = {
+            position: 'absolute', left: '3px', bottom: `${ isGizmoUI ? '0.1em' : '2px' }`,
+            width: `${ knobWidth }px`, height: `${ knobWidth }px`, content: '""', borderRadius: '28px',
+            transform: toggleInput.checked ? // init opposite final pos
+                'translateX(0)' : `translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px)`,
+            backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s',
+        }
+        Object.assign(knobSpan.style, knobStyles) ; switchSpan.appendChild(knobSpan)
+
+        // Create/stylize/fill label
+        const toggleLabel = document.querySelector('#arToggleLabel') || document.createElement('label')
+        toggleLabel.id = 'arToggleLabel'
+        toggleLabel.style.marginLeft = '-41px' // left-shift to navicon
+        toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
+        toggleLabel.innerText = // init opposite final label text
+            ( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' '
+          + ( config.arDisabled ? ( messages.state_disabled || 'enabled' )
+                                : ( messages.state_enabled  || 'disabled' ))
         // Append elements
-        label.appendChild(input) ; label.appendChild(span)
-        navToggleDiv.appendChild(navicon) ; navToggleDiv.appendChild(label) ; navToggleDiv.appendChild(labelText)
+        for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.appendChild(elem)
 
-        // Update visibility
+        // Update visual state
         navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
+        setTimeout(() => {
+            if (toggleInput.checked) {
+                switchSpan.style.backgroundColor = '#AD68FF'
+                switchSpan.style.boxShadow = '2px 1px 20px #D8A9FF'
+                knobSpan.style.transform = `translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px)`
+            } else {
+                switchSpan.style.backgroundColor = '#CCC'
+                switchSpan.style.boxShadow = 'none'
+                knobSpan.style.transform = `translateX(0)`
+            }
+            setTimeout(() => { // sync final label text w/ switch movement
+                toggleLabel.innerText = ( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' '
+                                      + ( config.arDisabled ? ( messages.state_disabled || 'disabled' )
+                                                            : ( messages.state_enabled  || 'enabled' ))
+            }, 200)
+        }, 1) // min delay to trigger transition fx
     }
 
 })()
