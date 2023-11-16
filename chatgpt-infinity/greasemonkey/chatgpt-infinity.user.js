@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.16.1
+// @version             2023.11.16.2
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -311,36 +311,6 @@
         )
     }
 
-    // Stylize toggle switch (if style missing or outdated)
-    const switchStyleUpdated = 202311161; // datestamp of last edit for this file's `switchStyle` 
-    let switchStyle = document.getElementById('chatgpt-switch-style') // try to select existing style
-    if (!switchStyle || parseInt(switchStyle.getAttribute('last-updated'), 10) < switchStyleUpdated) { // if missing or outdated
-        if (!switchStyle) { // outright missing, create/id/attr/append it first
-            switchStyle = document.createElement('style') ; switchStyle.id = 'chatgpt-switch-style'
-            switchStyle.setAttribute('last-updated', switchStyleUpdated.toString())
-            document.head.appendChild(switchStyle);
-        }
-        const knobWidth = isGizmoUI ? 13 : 14
-        switchStyle.innerText = (
-            '.switch {'
-              + `position: relative ; left: ${ isMobileDevice() && isGizmoUI ? 110 : ( isFirefox() ? 7 : 50 ) }px ;`
-              + `width: ${ isGizmoUI ? 32 : 34 }px ; height: ${ isGizmoUI ? 16 : 18 }px ;`
-              + 'background-color: #ccc ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px }'
-          + '.switch input { opacity: 0 ; width: 0 ; height: 0 }' // hide checkbox
-          + '.switch:before { position: absolute ; content: "" ; left: 3px ;'
-              + `width: ${ knobWidth }px ; height: ${ knobWidth }px ; bottom: ${ isGizmoUI ? '0.1em' : '2px' } ;`
-              + 'background-color: white ; -webkit-transition: .4s ; transition: .4s ; border-radius: 28px }'
-
-          // Position/color ON-state
-          + 'input:checked { position: absolute ; right: 3px }'
-          + 'input:checked + .switch { background-color: #AD68FF ; box-shadow: 2px 1px 20px #D8A9FF }'
-          + 'input:checked + .switch:before {'
-              + `-webkit-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
-              + `-ms-transform: translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px) ;`
-              + `transform: translateX(${ knobWidth }px) }`
-        )
-    }
-
     // Create nav toggle div, add styles
     const navToggleDiv = document.createElement('div')
     navToggleDiv.style.maxHeight = '44px' // prevent flex overgrowth
@@ -374,8 +344,8 @@
     navToggleDiv.addEventListener('click', () => {
         const toggleInput = document.querySelector('#infToggleInput')
         toggleInput.checked = !toggleInput.checked
-        setTimeout(updateToggleHTML, 200) // sync label change w/ switch movement
         config.infinityMode = toggleInput.checked
+        updateToggleHTML()
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         infinityMode.toggle()
     })
@@ -652,30 +622,69 @@
     }
 
     function updateToggleHTML() {
-        while (navToggleDiv.firstChild) navToggleDiv.firstChild.remove() // clear old content
 
-        // Create elements
-        const navicon = document.createElement('img'),
-              label = document.createElement('label'),
-              labelText = document.createTextNode(( messages.menuLabel_infinityMode || 'Infinity Mode' ) + ' '
-                  + ( config.infinityMode ? ( messages.state_enabled || 'enabled' )
-                                        : ( messages.state_disabled || 'disabled' ))),
-              input = document.createElement('input'),
-              span = document.createElement('span')
+        // Create/size/position navicon
+        const navicon = document.querySelector('#infToggleFavicon') || document.createElement('img')
+        navicon.id = 'infToggleFavicon'
         navicon.src = config.assetHostURL + 'media/images/icons/infinity-symbol/white/icon64.png'
         if (isGizmoUI) {
             navicon.style.width = navicon.style.height = '1.25rem'
             navicon.style.marginLeft = navicon.style.marginRight = '4px'
         } else navicon.width = 18
-        label.id = 'infToggleLabel' ; label.classList.add('switch')
-        input.id = 'infToggleInput' ; input.type = 'checkbox' ; input.disabled = true ; input.checked = config.infinityMode
 
+        // Create/ID/disable/hide/update checkbox
+        const toggleInput = document.querySelector('#infToggleInput') || document.createElement('input')
+        toggleInput.id = 'infToggleInput' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
+        toggleInput.style.display = 'none' ; toggleInput.checked = config.infinityMode
+
+        // Create/ID/stylize switch
+        const switchSpan = document.querySelector('#infSwitchSpan') || document.createElement('span')
+        switchSpan.id = 'infSwitchSpan'
+        const switchStyles = {
+            position: 'relative', left: `${ isMobileDevice() && isGizmoUI ? 211 : 152 }px`,
+            width: `${ isGizmoUI ? 32 : 34 }px`, height: `${ isGizmoUI ? 16 : 18 }px`,
+            backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
+            '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
+        }
+        Object.assign(switchSpan.style, switchStyles)
+
+        // Create/stylize knob, append to switch
+        const knobSpan = document.querySelector('#infToggleKnobSpan') || document.createElement('span')
+        knobSpan.id = 'infToggleKnobSpan'
+        const knobWidth = isGizmoUI ? 13 : 14
+        const knobStyles = {
+            position: 'absolute', left: '3px', bottom: `${ isGizmoUI ? '0.1em' : '2px' }`,
+            width: `${ knobWidth }px`, height: `${ knobWidth }px`, content: '""', borderRadius: '28px',
+            transform: toggleInput.checked ? // init opposite final pos
+                'translateX(0)' : `translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px)`,
+            backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
+        }
+        Object.assign(knobSpan.style, knobStyles) ; switchSpan.appendChild(knobSpan)
+
+        // Create/stylize/fill label
+        const toggleLabel = document.querySelector('#infToggleLabel') || document.createElement('label')
+        toggleLabel.id = 'infToggleLabel'
+        toggleLabel.style.marginLeft = '-41px' // left-shift to navicon
+        toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
+        toggleLabel.innerText = ( messages.menuLabel_infinityMode || 'Infinity Mode' ) + ' '
+                              + ( toggleInput.checked ? ( messages.state_enabled  || 'enabled' )
+                                                      : ( messages.state_disabled || 'disabled' ))
         // Append elements
-        label.appendChild(input) ; label.appendChild(span)
-        navToggleDiv.appendChild(navicon) ; navToggleDiv.appendChild(labelText) ; navToggleDiv.appendChild(label)
+        for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.appendChild(elem)
 
-        // Update visibility
+        // Update visual state
         navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
+        setTimeout(() => {
+            if (toggleInput.checked) {
+                switchSpan.style.backgroundColor = '#AD68FF'
+                switchSpan.style.boxShadow = '2px 1px 20px #D8A9FF'
+                knobSpan.style.transform = `translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px)`
+            } else {
+                switchSpan.style.backgroundColor = '#CCC'
+                switchSpan.style.boxShadow = 'none'
+                knobSpan.style.transform = `translateX(0)`
+            }
+        }, 1) // min delay to trigger transition fx
     }
 
     const infinityMode = {
