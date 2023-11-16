@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.4.1
+// This library is a condensed version of chatgpt.js v2.4.2
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -64,12 +64,16 @@ const chatgpt = {
               modalTitle = document.createElement('h2'),
               modalMessage = document.createElement('p');
 
-        // Create/append modal style (if missing)
-        const lastUpdated = 20231118;
-        if (!document.querySelector(`#chatgpt-modal-style-${ lastUpdated }`)) {
-            const modalStyle = document.createElement('style');
-            modalStyle.id = `chatgpt-modal-style-${ lastUpdated }`;
-            modalStyle.innerText = (
+        // Create/append/update modal style (if missing or outdated)
+        const thisUpdated = 20231110; // datestamp of last edit for this file's `modalStyle` 
+        let modalStyle = document.querySelector('#chatgpt-modal-style'); // try to select existing style
+        if (!modalStyle || parseInt(modalStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
+            if (!modalStyle) { // outright missing, create/id/attr/append it first
+                modalStyle = document.createElement('style'); modalStyle.id = 'chatgpt-modal-style';
+                modalStyle.setAttribute('last-updated', thisUpdated.toString());
+                document.head.appendChild(modalStyle);
+            }
+            modalStyle.innerText = ( // update prev/new style contents
 
                 // Background styles
                 '.chatgpt-modal {' 
@@ -84,7 +88,7 @@ const chatgpt = {
                     + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
                     + ( scheme != 'dark' ? 'border: 1px solid rgba(0, 0, 0, 0.3) ;' : '' )
-                    + 'padding: 20px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0,0,0,.12) ;'
+                    + 'padding: 20px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
                     + ' -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ; }'
                 + '.chatgpt-modal h2 { margin-bottom: 9px }'
                 + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
@@ -121,8 +125,7 @@ const chatgpt = {
                     + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
                     + 'background-color: black ; position: inherit }'
                 + '.chatgpt-modal input[type="checkbox"]:focus { outline: none ; box-shadow: none }'
-            );
-            document.head.appendChild(modalStyle);
+            );            
         }
 
         // Insert text into elements
@@ -206,7 +209,7 @@ const chatgpt = {
             modalContainer.style.display = '';
             setTimeout(() => { // delay non-0 opacity's for transition fx
                 modalContainer.style.backgroundColor = ( 
-                    `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.18 })`);
+                    `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0 })`);
                 modalContainer.classList.add('animated'); }, 100);
         }
 
