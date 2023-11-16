@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.4.2
+// This library is a condensed version of chatgpt.js v2.4.3
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -269,7 +269,7 @@ const chatgpt = {
     getRegenerateButton: function() {
         if (chatgpt.isGizmoUI()) {        
             for (const mainSVG of document.querySelectorAll('main svg')) {
-                if (mainSVG.querySelector('path[d*="10.8763C3.62354"]')) // regen icon found
+                if (mainSVG.querySelector('path[d*="M4.5 2.5C5.05228"]')) // regen icon found
                     return mainSVG.parentNode.parentNode;
         }} else {
             for (const formButton of document.querySelectorAll('form button')) {
