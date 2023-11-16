@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.16
+// @version             2023.11.16.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -321,7 +321,7 @@
     }
 
     // Create/append/update toggle switch style (if missing or outdated)
-    const switchStyleUpdated = 20231110 // datestamp of last edit for this file's `switchStyle` 
+    const switchStyleUpdated = 20231116 // datestamp of last edit for this file's `switchStyle` 
     let switchStyle = document.getElementById('chatgpt-switch-style') // try to select existing style
     if (!switchStyle || parseInt(switchStyle.getAttribute('last-updated'), 10) < switchStyleUpdated) { // if missing or outdated
         if (!switchStyle) { // outright missing, create/id/attr/append it first
@@ -332,7 +332,7 @@
         const knobWidth = isGizmoUI ? 13 : 14
         switchStyle.innerText = (
             '.switch { position: absolute ; '
-              + `left: ${ isMobileDevice() && isGIzmoUI ? 268 : 208 }px ;`
+              + `left: ${ isMobileDevice() && isGizmoUI ? 268 : 208 }px ;`
               + `width: ${ isGizmoUI ? 32 : 34 }px ; height: ${ isGizmoUI ? 16 : 18 }px }`
           + '.switch input { opacity: 0 ; width: 0 ; height: 0 }' // hide checkbox
           + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ;'
