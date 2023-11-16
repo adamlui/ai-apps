@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.15.2
+// @version             2023.11.16
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -312,7 +312,7 @@
     }
 
     // Stylize toggle switch (if style missing or outdated)
-    const switchStyleUpdated = 20231110; // datestamp of last edit for this file's `switchStyle` 
+    const switchStyleUpdated = 20231116; // datestamp of last edit for this file's `switchStyle` 
     let switchStyle = document.getElementById('chatgpt-switch-style') // try to select existing style
     if (!switchStyle || parseInt(switchStyle.getAttribute('last-updated'), 10) < switchStyleUpdated) { // if missing or outdated
         if (!switchStyle) { // outright missing, create/id/attr/append it first
@@ -322,7 +322,8 @@
         }
         const knobWidth = isGizmoUI ? 13 : 14
         switchStyle.innerText = (
-            '.switch { position: absolute ; left: 208px ;'
+            '.switch {'
+              + `position: absolute ; left: ${ isMobileDevice() && isGizmoUI ? 268 : 208 }px ;`
               + `width: ${ isGizmoUI ? 32 : 34 }px ; height: ${ isGizmoUI ? 16 : 18 }px }`
           + '.switch input { opacity: 0 ; width: 0 ; height: 0 }' // hide checkbox
           + '.slider { position: absolute ; cursor: pointer ; top: 0 ; left: 0 ; right: 0 ; bottom: 0 ;'
@@ -394,6 +395,8 @@
     function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch(error) { return 'other' }}
+    function isMobileDevice() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) }
 
     // Define MENU functions
 
