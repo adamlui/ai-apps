@@ -214,8 +214,7 @@
                 toggleLabel.style.marginLeft = '-41px' // left-shift to navicon
                 toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
                 toggleLabel.innerText = chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
-                                      + ( toggleInput.checked ? chrome.i18n.getMessage('state_enabled')
-                                                              : chrome.i18n.getMessage('state_disabled') )
+                                      + chrome.i18n.getMessage('state_' + ( toggleInput.checked ? 'enabled' : 'disabled' ))
                 // Append elements
                 for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.appendChild(elem)
 
