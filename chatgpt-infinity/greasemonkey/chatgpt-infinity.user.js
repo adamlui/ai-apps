@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.18
+// @version             2023.11.18.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -214,7 +214,7 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@20e555cd51b70f4d9429f73e7ddddaa37ca0bda4/dist/chatgpt-2.5.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@4d8cba38add56c4885aced685d93754f60e69d73/dist/chatgpt-2.5.1.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -637,7 +637,7 @@
         const switchSpan = document.querySelector('#infSwitchSpan') || document.createElement('span')
         switchSpan.id = 'infSwitchSpan'
         const switchStyles = {
-            position: 'relative', left: `${ chatgpt.browser.isMobile() && isGizmoUI ? 206 : 152 }px`,
+            position: 'relative', left: `${ chatgpt.browser.isMobile() && isGizmoUI ? 211 : 152 }px`,
             width: `${ isGizmoUI ? 32 : 34 }px`, height: `${ isGizmoUI ? 16 : 18 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
             '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
@@ -687,6 +687,7 @@
 
         activate: async () => {
             notify(( messages.menuLabel_infinityMode || 'Infinity Mode' ) + ': ON')
+            try { chatgpt.sidebar.hide() } catch (err) {}
             try { chatgpt.startNewChat() } catch (err) { return }
             setTimeout(() => {
                 chatgpt.send('Generate a single random question'
