@@ -47,7 +47,7 @@
     // Add 'Infinity Mode' click-listeners
     infinityModeToggle.addEventListener('change', () => {
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            if (new URL(tabs[0].url).hostname !== 'chat.openai.com') return // do nothing if not on ChatGPT
+            if (new URL(tabs[0].url).hostname != 'chat.openai.com') return // do nothing if not on ChatGPT
             chrome.tabs.sendMessage(tabs[0].id, { action: 'clickToggle' }) // else click sidebar toggle
         })
         notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ' ' + (infinityModeToggle.checked ? 'ON' : 'OFF'));
@@ -89,7 +89,7 @@
                     chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyIn') + ' '
                     + ( replyLanguage || chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
-                    if (new URL(tabs[0].url).hostname === 'chat.openai.com' && config.infinityMode) { // reboot active session
+                    if (new URL(tabs[0].url).hostname == 'chat.openai.com' && config.infinityMode) { // reboot active session
                         chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
                 })
                 break
@@ -109,7 +109,7 @@
                                                                    : chrome.i18n.getMessage('alert_onTopicOf')
                                                                        + ' ' + str_replyTopic ) + '!')
             chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
-                if (new URL(tabs[0].url).hostname === 'chat.openai.com' && config.infinityMode) { // reboot active session
+                if (new URL(tabs[0].url).hostname == 'chat.openai.com' && config.infinityMode) { // reboot active session
                     chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
             })
     }})
@@ -126,7 +126,7 @@
                     chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyEvery')
                     + ' ' + replyInterval + ' ' + chrome.i18n.getMessage('unit_seconds') + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
-                    if (new URL(tabs[0].url).hostname !== 'chat.openai.com' && config.infinityMode) // reboot active session
+                    if (new URL(tabs[0].url).hostname != 'chat.openai.com' && config.infinityMode) // reboot active session
                         chrome.tabs.sendMessage(tabs[0].id, { action: 'resetInSameChat' })
                 })
                 break
@@ -137,7 +137,7 @@
     updateSpan.addEventListener('click', () => {
         window.close() // popup
         chrome.runtime.requestUpdateCheck((status, details) => {
-            alertToUpdate(status === 'update_available' ? details.version : '')
+            alertToUpdate(status == 'update_available' ? details.version : '')
     })})
 
     // Add Support span click-listener
