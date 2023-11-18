@@ -238,7 +238,7 @@
         activate: async () => {
             if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
             fromMsg = false
-            try { chatgpt.startNewChat() } catch (error) { return }
+            try { chatgpt.startNewChat() } catch (err) { return }
             settings.load('replyLanguage', 'replyTopic', 'replyInterval').then(() => setTimeout(() => {
                 chatgpt.send('Generate a single random question'
                     + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
@@ -252,7 +252,7 @@
 
         continue: async () => {
             chatgpt.send('Do it again.')
-            if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(error) {}
+            if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(err) {}
             await chatgpt.isIdle() // before starting delay till next iteration
             if (infinityMode.isActive) // replace timer
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
