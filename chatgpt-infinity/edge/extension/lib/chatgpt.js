@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.5.0
+// This library is a condensed version of chatgpt.js v2.5.1
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -531,6 +531,32 @@ const chatgpt = {
                 clearInterval(delaySend);
             }
         }, 25);
+    },
+
+    sidebar: {
+        hide: function() { this.isOn() ? this.toggle() : console.info('Sidebar already hidden!'); },
+        show: function() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
+        isOff: function() { return !this.isOn(); },
+        isOn: function() {
+            return chatgpt.isGizmoUI()
+              ? ( chatgpt.browser.isMobile() ? document.documentElement.style.overflow == 'hidden'
+                                             : document.querySelector('#__next > div > div').style.visibility != 'hidden' )
+              : !document.querySelector('button[aria-label*="Open sidebar"]');
+        },
+
+        toggle: function() {
+            const isGizmoUI = chatgpt.isGizmoUI(),
+                  isMobileDevice = chatgpt.browser.isMobile(),
+                  navBtnSelector = isMobileDevice ? '#__next button'
+                                 : isGizmoUI ? 'main button' 
+                                             : 'nav[aria-label="Chat history"] a',
+                  isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
+                              : isGizmoUI ? btn => Array.from(btn.querySelectorAll('*'))
+                                                        .some(child => child.style.transform.includes('translateY'))
+                                          : btn => /close sidebar/i.test(btn.text);
+            for (const btn of document.querySelectorAll(navBtnSelector))
+                if (isToggleBtn(btn)) { btn.click(); return; }
+        }
     },
 
     startNewChat: function() {
