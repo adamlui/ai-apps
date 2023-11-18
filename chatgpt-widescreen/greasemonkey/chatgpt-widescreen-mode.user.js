@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.17
+// @version             2023.11.17.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -281,12 +281,12 @@
             try { // to return localized messages.json
                 const messages = new Proxy(JSON.parse(response.responseText), {
                     get(target, prop) { // remove need to ref nested keys
-                        if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
+                        if (typeof target[prop] == 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
                 }}}) ; resolve(messages)
             } catch (err) { // if 404
-                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                msgXHRtries++ ; if (msgXHRtries === 3) return // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
                     msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
@@ -577,7 +577,7 @@
 
         // Update SVG elements
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
-        const svgElems = config[mode] || state.toLowerCase() === 'on' ? ONelems : OFFelems
+        const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
         svgElems.forEach(elem => { buttonSVG.appendChild(elem) })
         if (!button.contains(buttonSVG)) button.appendChild(buttonSVG)
     }
@@ -596,7 +596,7 @@
             event.target.id.includes('fullWindow') ? 'fullWindow' :
             event.target.id.includes('wide') ? 'wideScreen' : 'newChat')
         updateTooltip(buttonType) // since mouseover's can indicate button change
-        tooltipDiv.style.opacity = event.type === 'mouseover' ? '0.8' : '0' // toggle visibility
+        tooltipDiv.style.opacity = event.type == 'mouseover' ? '0.8' : '0' // toggle visibility
     }
 
     function updateTooltip(buttonType) { // text & position
@@ -669,11 +669,11 @@
     }
 
     function syncMode(mode) { // setting + icon + tooltip
-        const state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
-                      : mode === 'fullWindow' ? isFullWindow()
-                                              : chatgpt.isFullScreen() )
+        const state = ( mode == 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
+                      : mode == 'fullWindow' ? isFullWindow()
+                                             : chatgpt.isFullScreen() )
         saveSetting(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
-        if (mode === 'fullWindow') syncFullerWindows(state)
+        if (mode == 'fullWindow') syncFullerWindows(state)
         if (!config.notifHidden) { // notify synced state
             notify(`${ messages['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`) }
         config.modeSynced = true ; setTimeout(() => { config.modeSynced = false }, 100) // prevent repetition
@@ -729,7 +729,7 @@
 
     // Create browser toolbar menu or disable script if extension installed
     const state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-                    separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
+                    separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
     setTimeout(() => { // add trivial delay for Chrome extension load to beat VM
         if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
             GM_registerMenuCommand(state.symbol[1] + ' ' + ( messages.menuLabel_disabled || 'Disabled (extension installed)' ),
@@ -825,7 +825,7 @@
             updateBtnSVG(buttonType) // insert icon
             window[buttonName].style.cssText = `right: ${ rOffset + i * bOffset }rem` // position left of prev button
             window[buttonName].style.cursor = 'pointer' // add finger cursor
-            if (site !== 'poe') // assign borrowed classes
+            if (site != 'poe') // assign borrowed classes
                 window[buttonName].setAttribute('class', sendBtnClasses)
             else if (site == 'poe') // lift buttons slightly
                 window[buttonName].style.cssText += '; margin-bottom: 0.2rem'
@@ -837,7 +837,7 @@
 
             // Add click/hover listeners
             window[buttonName].addEventListener('click', () => {
-                if (buttonType === 'newChat') {
+                if (buttonType == 'newChat') {
                     if (site == 'openai') chatgpt.startNewChat()
                     else if (site == 'poe') document.querySelector('header a[class*="button"]')?.click()
                     else if (site == 'aivvm') {
@@ -860,7 +860,7 @@
     // Monitor node changes to maintain button visibility + auto-toggle once + manage send button's tooltip
     let prevSessionChecked = false
     const nodeObserver = new MutationObserver(([{ addedNodes, type }]) => {
-        if (type === 'childList' && addedNodes.length) {
+        if (type == 'childList' && addedNodes.length) {
             insertBtns() // again or they constantly disappear
 
             // Check loaded keys to restore previous session's state
@@ -879,7 +879,7 @@
 
     // Monitor scheme changes to update button colors
     const schemeObserver = new MutationObserver(([{ type, target }]) => {
-        if (target === document.documentElement && type === 'attributes' && target.getAttribute('class')) {
+        if (target === document.documentElement && type == 'attributes' && target.getAttribute('class')) {
             buttonColor = setBtnColor()
             updateBtnSVG('fullScreen') ; updateBtnSVG('fullWindow') ; updateBtnSVG('wideScreen') ; updateBtnSVG('newChat')
     }}) ; schemeObserver.observe(document.documentElement, { attributes: true })
@@ -903,7 +903,7 @@
         else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     })
     window.addEventListener('keydown', event => { // set F11 flag for toggleMode() disabled warning
-        if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true // set flag if entering full screen via F11
+        if ((event.key == 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true // set flag if entering full screen via F11
     })
 
 })()
