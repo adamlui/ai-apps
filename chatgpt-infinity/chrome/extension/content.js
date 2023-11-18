@@ -13,11 +13,11 @@
     let fromMsg = false // to prevent double notifications blocked by popup
     chrome.runtime.onMessage.addListener(request => {
         fromMsg = true
-        if (request.action === 'notify') notify(request.msg, request.position)
-        else if (request.action === 'alert') alert(request.title, request.msg, request.btns)
-        else if (request.action === 'updateToggleHTML') updateToggleHTML()
-        else if (request.action === 'clickToggle') document.querySelector('#infToggleLabel').click()        
-        else if (typeof window[request.action] === 'function') {
+        if (request.action == 'notify') notify(request.msg, request.position)
+        else if (request.action == 'alert') alert(request.title, request.msg, request.btns)
+        else if (request.action == 'updateToggleHTML') updateToggleHTML()
+        else if (request.action == 'clickToggle') document.querySelector('#infToggleLabel').click()        
+        else if (typeof window[request.action] == 'function') {
             const args = Array.isArray(request.args) ? request.args // preserve array if supplied
                        : request.args !== undefined ? [request.args] : [] // convert to array if single or no arg
             window[request.action](...args) // call expression functions
@@ -95,7 +95,7 @@
     // Monitor node changes to update toggle visibility
     const nodeObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
-            if (mutation.type === 'childList' && mutation.addedNodes.length) {
+            if (mutation.type == 'childList' && mutation.addedNodes.length) {
                 settings.load(['extensionDisabled']).then(() => {
                     if (!config.extensionDisabled) insertToggle()
     })}})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
@@ -242,7 +242,7 @@
             settings.load('replyLanguage', 'replyTopic', 'replyInterval').then(() => setTimeout(() => {
                 chatgpt.send('Generate a single random question'
                     + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
-                    + ( ' on ' + ( config.replyTopic === 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
+                    + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
                     + ' then answer it. Don\'t type anything else.')
             }, 500))
             await chatgpt.isIdle()
