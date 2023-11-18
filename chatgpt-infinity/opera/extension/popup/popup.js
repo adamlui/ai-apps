@@ -46,13 +46,13 @@
 
     // Add 'Infinity Mode' click-listeners
     infinityModeToggle.addEventListener('change', () => {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
             if (new URL(tabs[0].url).hostname != 'chat.openai.com') return // do nothing if not on ChatGPT
             chrome.tabs.sendMessage(tabs[0].id, { action: 'clickToggle' }) // else click sidebar toggle
         })
         notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ' ' + (infinityModeToggle.checked ? 'ON' : 'OFF'));
     })
-    infinityModeDiv.addEventListener('click', (event) => {
+    infinityModeDiv.addEventListener('click', event => {
         if ([infinityModeDiv, document.querySelector('[data-locale*="infinityMode"]')].includes(event.target))
             infinityModeToggle.click() 
     })
@@ -62,7 +62,7 @@
         settings.save('toggleHidden', !config.toggleHidden) ; syncExtension()
         notify(chrome.i18n.getMessage('menuLabel_toggleVis') + ' ' + ( !config.toggleHidden ? 'ON' : 'OFF' ))
     })
-    toggleVisDiv.addEventListener('click', (event) => {
+    toggleVisDiv.addEventListener('click', event => {
         if ([toggleVisDiv, document.querySelector('[data-locale*="toggleVis"]')].includes(event.target))
             toggleVisToggle.click() 
     })
@@ -72,7 +72,7 @@
         settings.save('autoScrollDisabled', !config.autoScrollDisabled) ; syncExtension()        
         notify(chrome.i18n.getMessage('menuLabel_autoScroll') + ' ' + ( !config.autoScrollDisabled ? 'ON' : 'OFF' ))
     })
-    autoScrollDiv.addEventListener('click', (event) => {
+    autoScrollDiv.addEventListener('click', event => {
         if ([autoScrollDiv, document.querySelector('[data-locale*="autoScroll"]')].includes(event.target))
             autoScrollToggle.click() 
     })
@@ -88,7 +88,7 @@
                 alert(chrome.i18n.getMessage('alert_replyLangUpdated') + '!',
                     chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyIn') + ' '
                     + ( replyLanguage || chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
-                chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
+                chrome.tabs.query({ active: true, currentWindow: true }, tabs => { // check active tab
                     if (new URL(tabs[0].url).hostname == 'chat.openai.com' && config.infinityMode) { // reboot active session
                         chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
                 })
@@ -108,7 +108,7 @@
                     + ( !replyTopic || re_all.test(str_replyTopic) ? chrome.i18n.getMessage('alert_onAllTopics')
                                                                    : chrome.i18n.getMessage('alert_onTopicOf')
                                                                        + ' ' + str_replyTopic ) + '!')
-            chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
+            chrome.tabs.query({ active: true, currentWindow: true }, tabs => { // check active tab
                 if (new URL(tabs[0].url).hostname == 'chat.openai.com' && config.infinityMode) { // reboot active session
                     chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
             })
@@ -125,7 +125,7 @@
                 alert(chrome.i18n.getMessage('alert_replyIntUpdated') + '!',
                     chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyEvery')
                     + ' ' + replyInterval + ' ' + chrome.i18n.getMessage('unit_seconds') + '.')
-                chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => { // check active tab
+                chrome.tabs.query({ active: true, currentWindow: true }, tabs => { // check active tab
                     if (new URL(tabs[0].url).hostname != 'chat.openai.com' && config.infinityMode) // reboot active session
                         chrome.tabs.sendMessage(tabs[0].id, { action: 'resetInSameChat' })
                 })
@@ -143,14 +143,14 @@
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]'),
           supportSpan = supportLink.parentNode 
-    supportSpan.addEventListener('click', (event) => {
+    supportSpan.addEventListener('click', event => {
         if (event.target == supportSpan) supportLink.click() // to avoid double-toggle
     })
 
     // Add More Add-ons span click-listener
     const moreAddOnsLink = document.querySelector('a[title*="more" i]'),
           moreAddOnsSpan = moreAddOnsLink.parentNode 
-    moreAddOnsSpan.addEventListener('click', (event) => {
+    moreAddOnsSpan.addEventListener('click', event => {
         if (event.target == moreAddOnsSpan) moreAddOnsLink.click() // to avoid double-toggle
     })
 
@@ -165,19 +165,19 @@
     // Define FEEDBACK functions
 
     function notify(msg, position) {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, {
                 action: 'notify', msg: msg, position: position || 'bottom-right' })
     })}
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width
     })})}
     
     function alertToUpdate(version) {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, {
                 action: 'alertToUpdate', args: version
     })})}
@@ -194,7 +194,7 @@
     // Define SYNC functions
 
     function syncExtension() {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, { action: 'syncExtension' })
     })}
 
@@ -202,7 +202,7 @@
 
         // Updated toolbar icon
         const iconDimensions = [16, 32, 64, 128], iconPaths = {}
-        iconDimensions.forEach((dimension) => {
+        iconDimensions.forEach(dimension => {
             iconPaths[dimension] = '../icons/'
                 + (config.extensionDisabled ? 'faded/' : '')
                 + 'icon' + dimension + '.png'
@@ -211,7 +211,7 @@
 
         // Update menu contents
         document.querySelectorAll('div.logo, div.menu-title, div.menu')
-            .forEach((elem) => {
+            .forEach(elem => {
                 elem.classList.remove(mainToggle.checked ? 'disabled' : 'enabled')
                 elem.classList.add(mainToggle.checked ? 'enabled' : 'disabled')
             })
