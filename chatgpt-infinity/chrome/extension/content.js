@@ -69,7 +69,7 @@
                   firstIcon = firstLink.querySelector('div:first-child'),
                   firstLabel = firstLink.querySelector('div:nth-child(2)')
             navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
-            navToggleDiv.querySelector('img').classList.add(...firstIcon.classList)
+            navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
         }, 100))
     } else {
         for (const navLink of document.querySelectorAll(chatHistorySelector + ' a')) {
@@ -156,6 +156,7 @@
             navToggleDiv.style.display = 'flex' // remove forced cloaking
             navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
         }
+        settings.load('toggleHidden').then(() => { if (config.toggleHidden) navToggleDiv.style.display = 'none' })
     }
 
     function updateToggleHTML() {
