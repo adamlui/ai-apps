@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.17.4
+// @version             2023.11.17.5
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -352,7 +352,7 @@
                   firstIcon = firstLink.querySelector('div:first-child'),
                   firstLabel = firstLink.querySelector('div:nth-child(2)')
             navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
-            navToggleDiv.querySelector('img').classList.add(...firstIcon.classList)
+            navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
         }, 100))
     } else {
         for (const navLink of document.querySelectorAll(chatHistorySelector + ' a')) {
