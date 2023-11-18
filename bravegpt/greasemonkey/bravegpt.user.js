@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.17.4
+// @version             2023.11.17.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -425,7 +425,7 @@
         try {
             const html = new DOMParser().parseFromString(resp, 'text/html'),
                   title = html.querySelector('title')
-            return title.innerText == ( messages.alert_justAmoment || 'Just a moment' ) + '...'
+            return title.innerText == 'Just a moment...'
         } catch (error) { return false }
     }
 
