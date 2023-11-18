@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.17.3
+// @version             2023.11.17.4
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -330,7 +330,7 @@
                   firstIcon = firstLink.querySelector('div:first-child'),
                   firstLabel = firstLink.querySelector('div:nth-child(2)')
             navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
-            navToggleDiv.querySelector('img').classList.add(...firstIcon.classList)
+            navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
         }, 100))
     } else {
         for (const navLink of document.querySelectorAll(chatHistorySelector + ' a')) {
