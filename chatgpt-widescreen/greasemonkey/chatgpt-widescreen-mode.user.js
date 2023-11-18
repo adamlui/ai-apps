@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.18
+// @version             2023.11.18.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -722,10 +722,15 @@
 
     // Run MAIN routine
 
-    // Wait for OpenAI site load + determine UI for []
+    // Wait for OpenAI site load + determine UI for style selectors/tweaks + `sidebarObserver` scope
     let isGizmoUI
     if (site == 'openai') {
-        await chatgpt.isLoaded() ; isGizmoUI = chatgpt.isGizmoUI() }
+        await chatgpt.isLoaded() ; isGizmoUI = chatgpt.isGizmoUI()
+    } else if (site == 'aivvm') {
+        await new Promise(resolve => { const intervalId = setInterval(() => {
+            if (document.querySelector('svg[class*="send"]')) {
+                clearInterval(intervalId) ; setTimeout(() => { resolve() }, 500)
+    }})})}
 
     // Create browser toolbar menu or disable script if extension installed
     const state = {
