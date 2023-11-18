@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.4.2
+// This library is a condensed version of chatgpt.js v2.5.1
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -266,6 +266,20 @@ const chatgpt = {
         return modalContainer.id; // if assignment used
     },
 
+    browser: {
+        isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
+
+        isFullScreen: function() {
+            const userAgentStr = navigator.userAgent;
+            return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
+                 : userAgentStr.includes('Firefox') ? window.fullScreen
+                 : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
+        },
+
+        isMobile: function() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
+    },
+
     history: {
         isOn: function() {
             if (chatgpt.isGizmoUI()) {
@@ -282,18 +296,8 @@ const chatgpt = {
         isOff: function() { return !this.isOn(); }
     },
 
-    isDarkMode: function() {
-        return !document.documentElement.classList.toString().includes('dark') ? false
-             : window.matchMedia?.('(prefers-color-scheme: dark)')?.matches;
-    },
-
-    isFullScreen: function() {
-        const userAgentStr = navigator.userAgent;
-        return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
-             : userAgentStr.includes('Firefox') ? window.fullScreen
-             : /MSIE|rv:/.test(userAgentStr) ? document.msFullscreenElement : document.webkitIsFullScreen;
-    },
-
+    isDarkMode: function() { return chatgpt.browser.isDarkMode(); },
+    isFullScreen: function() { return chatgpt.browser.isFullScreen(); },
     isGizmoUI: function () { return document.documentElement.classList.toString().includes('gizmo'); },
 
     isLoaded: function() {
@@ -336,24 +340,29 @@ const chatgpt = {
         notificationDiv.quadrant = (notificationDiv.isTop ? 'top' : 'bottom')
                                  + (notificationDiv.isRight ? 'Right' : 'Left');
 
-        // Create/append notification style (if missing)
-        const lastUpdated = 20231025;
-        if (!document.querySelector(`#chatgpt-notif-style-${ lastUpdated }`)) {
-            const notifStyle = document.createElement('style');
-            notifStyle.id = `chatgpt-notif-style-${ lastUpdated }`;
-            notifStyle.innerText = '.chatgpt-notif {'
-                + 'background-color: black ; padding: 10px 13px 10px 18px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
-                + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
-                + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;'
-                + `transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ;` // init off-screen for transition fx
-                + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
-            + '.notif-close-btn { cursor: pointer ; float: right ; position: relative ; right: -4px ; margin-left: -3px ;'
-                + 'display: grid }' // top-align for non-OpenAI sites
-            + '@keyframes notif-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }' // transition out keyframes
-                + '15% { opacity: 0.35 ; transform: rotateX(-27deg) scale(1.05) }'
-                + '45% { opacity: 0.05 ; transform: rotateX(-81deg) }'
-                + '100% { opacity: 0 ; transform: rotateX(-180deg) scale(1.15) }}';
-            document.head.appendChild(notifStyle);
+        // Create/append/update notification style (if missing or outdated)
+        const thisUpdated = 20231110; // datestamp of last edit for this file's `notifStyle` 
+        let notifStyle = document.querySelector('#chatgpt-notif-style'); // try to select existing style
+        if (!notifStyle || parseInt(notifStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
+            if (!notifStyle) { // outright missing, create/id/attr/append it first
+                notifStyle = document.createElement('style'); notifStyle.id = 'chatgpt-notif-style';
+                notifStyle.setAttribute('last-updated', thisUpdated.toString());
+                document.head.appendChild(notifStyle);
+            }
+            notifStyle.innerText = ( // update prev/new style contents
+                '.chatgpt-notif {'
+                    + 'background-color: black ; padding: 10px 13px 10px 18px ; border-radius: 11px ; border: 1px solid #f5f5f7 ;' // bubble style
+                    + 'opacity: 0 ; position: fixed ; z-index: 9999 ; font-size: 1.8rem ; color: white ;' // visibility
+                    + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;'
+                    + `transform: translateX(${ !notificationDiv.isRight ? '-' : '' }35px) ;` // init off-screen for transition fx
+                    + ( shadow ? ( 'box-shadow: -8px 13px 25px 0 ' + ( /\b(shadow|on)\b/gi.test(shadow) ? 'gray' : shadow )) : '' ) + '}'
+                + '.notif-close-btn { cursor: pointer ; float: right ; position: relative ; right: -4px ; margin-left: -3px ;'
+                    + 'display: grid }' // top-align for non-OpenAI sites
+                + '@keyframes notif-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }' // transition out keyframes
+                    + '15% { opacity: 0.35 ; transform: rotateX(-27deg) scale(1.05) }'
+                    + '45% { opacity: 0.05 ; transform: rotateX(-81deg) }'
+                    + '100% { opacity: 0 ; transform: rotateX(-180deg) scale(1.15) }}'
+            );
         } 
 
         // Enqueue notification
@@ -489,16 +498,21 @@ const chatgpt = {
         isOff: function() { return !this.isOn(); },
         isOn: function() {
             return chatgpt.isGizmoUI()
-              ? document.querySelector('#__next > div > div').style.visibility != 'hidden'
+              ? ( chatgpt.browser.isMobile() ? document.documentElement.style.overflow == 'hidden'
+                                             : document.querySelector('#__next > div > div').style.visibility != 'hidden' )
               : !document.querySelector('button[aria-label*="Open sidebar"]');
         },
 
         toggle: function() {
             const isGizmoUI = chatgpt.isGizmoUI(),
-                  navBtnSelector = isGizmoUI ? 'main button' : 'nav[aria-label="Chat history"] a',
-                  isToggleBtn = isGizmoUI
-                    ? btn => Array.from(btn.querySelectorAll('*')).some(child => child.style.transform.includes('translateY'))
-                    : btn => /close sidebar/i.test(btn.text);
+                  isMobileDevice = chatgpt.browser.isMobile(),
+                  navBtnSelector = isMobileDevice ? '#__next button'
+                                 : isGizmoUI ? 'main button' 
+                                             : 'nav[aria-label="Chat history"] a',
+                  isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
+                              : isGizmoUI ? btn => Array.from(btn.querySelectorAll('*'))
+                                                        .some(child => child.style.transform.includes('translateY'))
+                                          : btn => /close sidebar/i.test(btn.text);
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
         }
