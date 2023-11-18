@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.17.5
+// @version             2023.11.17.6
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -361,7 +361,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@a7ee1c09e651ee4c4f43d647698cc7d6b6eeaf8f/dist/chatgpt-2.4.3.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@70905dcc82868c9043ae9f83fd5882dc543eebb8/dist/chatgpt-2.5.0.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -588,7 +588,6 @@
 
     // Define UI functions
 
-    function isChromium() { return navigator.userAgent.includes('Chrome') }
     function isDarkMode() { return !!document.querySelector('[data-darkmode="true"]') }
 
     function toggleWiderSidebar() {
@@ -1162,12 +1161,13 @@
 
     // Stylize elements
     const googleGPTstyle = document.createElement('style'),
-          scheme = isDarkMode() ? 'dark' : 'light'
+          scheme = isDarkMode() ? 'dark' : 'light',
+          isChromium = chatgpt.browser.isChromium()
     googleGPTstyle.innerText = (
           '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.googlegpt {'
             + 'border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
-            + `padding: ${ isChromium() ? 22 : 20 }px 26px 6px 26px ; margin: 0 0 30px 0 ;`
+            + `padding: ${ isChromium ? 22 : 20 }px 26px 6px 26px ; margin: 0 0 30px 0 ;`
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
             + ( scheme == 'dark' ? ' border: none ; background: #282828 } ' : ' } ' )
         + '.googlegpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
@@ -1186,7 +1186,7 @@
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
         + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ; '
-            + ( isChromium() ? 'top: 2px ; right: 7.89em ;' : 'top: 5px ; right: 16.62em ;' )
+            + ( isChromium ? 'top: 2px ; right: 7.89em ;' : 'top: 5px ; right: 16.62em ;' )
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
             + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' }'
         + '.continue-chat > textarea {'
@@ -1197,7 +1197,7 @@
         + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
         + '.related-queries {'
             + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ;'
-            + ( isChromium() ? 'top: -19px ; margin-bottom: 0' : 'top: -15px ; margin-bottom: 4px' ) + '}'
+            + ( isChromium ? 'top: -19px ; margin-bottom: 0' : 'top: -15px ; margin-bottom: 4px' ) + '}'
         + '.related-query {'
             + `margin: 4px 4px ${ scheme == 'dark' ? 5 : 2 }px 0 ; padding: 8px 12px 8px 13px ;`
             + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ; background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
@@ -1208,7 +1208,7 @@
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button { border: none ; float: right ;'
-            + `position: relative ; ${ isChromium() ? 'bottom: 49px ; right: 7px ;' : 'bottom: 46px ; right: 8px ;' }`
+            + `position: relative ; ${ isChromium ? 'bottom: 49px ; right: 7px ;' : 'bottom: 46px ; right: 8px ;' }`
             + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
