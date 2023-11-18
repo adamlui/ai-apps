@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.17
+// @version             2023.11.17.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -272,13 +272,13 @@
     const ogAEL = EventTarget.prototype.addEventListener
     EventTarget.prototype.addEventListener = function(type, listener, optionsOrUseCapture) {
         let calledByOpenAI = false
-        if (type === 'focus' && this === unsafeWindow || type === 'visibilitychange') {
+        if (type == 'focus' && this === unsafeWindow || type == 'visibilitychange') {
             const callStack = new Error().stack + '\n',
                   aelCaller = callStack.match(/-extension:\/\/.*\n(.+)/)?.[1]
             calledByOpenAI = !aelCaller?.includes('-extension://')
-            if (calledByOpenAI && type === 'visibilitychange') {
+            if (calledByOpenAI && type == 'visibilitychange') {
                 ogAEL.call(this, type, function(event) {
-                    if (document.visibilityState !== 'visible') listener.call(this, event)
+                    if (document.visibilityState != 'visible') listener.call(this, event)
                 }, optionsOrUseCapture)
         }}
         if (!calledByOpenAI) ogAEL.apply(this, arguments)
@@ -294,12 +294,12 @@
             try { // to return localized messages.json
                 const messages = new Proxy(JSON.parse(response.responseText), {
                     get(target, prop) { // remove need to ref nested keys
-                        if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
+                        if (typeof target[prop] == 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
                 }}}) ; resolve(messages)
             } catch (error) { // if 404
-                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                msgXHRtries++ ; if (msgXHRtries === 3) return // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
                     msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
@@ -310,7 +310,7 @@
     // Init/register menu
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-        separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
+        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
     let menuIDs = [] ; registerMenu() // create browser toolbar menu
 
     // Wait for site load + determine UI for toggle routines
@@ -382,7 +382,7 @@
     insertToggle()
     const nodeObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
-            if (mutation.type === 'childList' && mutation.addedNodes.length) {
+            if (mutation.type == 'childList' && mutation.addedNodes.length) {
                 insertToggle()
     }})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
