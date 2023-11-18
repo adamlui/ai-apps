@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.16.3
+// @version             2023.11.17
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -258,12 +258,12 @@
             try { // to return localized messages.json
                 const messages = new Proxy(JSON.parse(response.responseText), {
                     get(target, prop) { // remove need to ref nested keys
-                        if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
+                        if (typeof target[prop] == 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
                 }}}) ; resolve(messages)
             } catch (error) { // if 404
-                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                msgXHRtries++ ; if (msgXHRtries === 3) return // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
                     msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
@@ -277,7 +277,7 @@
     // Create browser toolbar menu or disable script if extension installed 
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-        separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
+        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
     let menuIDs = []
     setTimeout(() => {
         if (document.documentElement.getAttribute('cif-extension-installed')) { // if extension installed, disable script/menu
@@ -354,7 +354,7 @@
     insertToggle()
     const nodeObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
-            if (mutation.type === 'childList' && mutation.addedNodes.length) {
+            if (mutation.type == 'childList' && mutation.addedNodes.length) {
                 insertToggle()
     }})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
@@ -694,7 +694,7 @@
             setTimeout(() => {
                 chatgpt.send('Generate a single random question'
                     + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
-                    + ( ' on ' + ( config.replyTopic === 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
+                    + ( ' on ' + ( config.replyTopic == 'ALL' ? 'ALL topics' : 'the topic of ' + config.replyTopic ))
                     + ' then answer it. Don\'t type anything else.')
             }, 500)
             await chatgpt.isIdle()
