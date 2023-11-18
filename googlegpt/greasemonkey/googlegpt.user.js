@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.17
+// @version             2023.11.17.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -572,11 +572,6 @@
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
-    const googleGPTconsole = {
-        info: function(msg) { console.info(config.appSymbol + ' GoogleGPT >> ' + msg) },
-        error: function(msg) { console.error(config.appSymbol + ' GoogleGPT >> ERROR: ' + msg) }
-    }
-
     function googleGPTalert(msg) {
         if (msg.includes('login')) deleteOpenAIcookies()
         googleGPTdiv.innerHTML = (
@@ -587,6 +582,9 @@
                 + '(' + ( messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode' )
                 + ')</p>' : '</p>')
     }
+
+    function googleGPTinfo(msg) { console.info(config.appSymbol + ' GoogleGPT >> ' + msg) }
+    function googleGPTerror(msg) { console.error(config.appSymbol + ' GoogleGPT >> ERROR: ' + msg) }
 
     // Define UI functions
 
@@ -657,7 +655,7 @@
     function getOpenAItoken() {
         return new Promise(resolve => {
             const accessToken = GM_getValue(config.prefix + '_openAItoken')
-            googleGPTconsole.info('OpenAI access token: ' + accessToken)
+            googleGPTinfo('OpenAI access token: ' + accessToken)
             if (!accessToken) {
                 GM.xmlHttpRequest({ url: openAIendpoints.session, onload: response => {
                     if (isBlockedbyCloudflare(response.responseText)) {
@@ -682,7 +680,7 @@
                         'X-Forwarded-For': chatgpt.generateRandomIP() },
                     onload: response => {
                         const newPublicKey = JSON.parse(response.responseText).data
-                        if (!newPublicKey) { googleGPTconsole.error('Failed to get AIGCFun public key') ; return }
+                        if (!newPublicKey) { googleGPTerror('Failed to get AIGCFun public key') ; return }
                         GM_setValue(config.prefix + '_aigcfKey', newPublicKey)
                         console.info('AIGCFun public key set: ' + newPublicKey)
                         resolve(newPublicKey)
@@ -747,18 +745,18 @@
                             const responseParts = event.response.split('\n\n'),
                                   finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6))
                             str_relatedQueries = finalResponse.message.content.parts[0]
-                        } catch (err) { googleGPTconsole.error(err) ; reject(err) }
+                        } catch (err) { googleGPTerror(err) ; reject(err) }
                     } else if (config.proxyAPIenabled && event.responseText) {
                         try { // to parse txt response from proxy API
                             str_relatedQueries = JSON.parse(event.responseText).choices[0].message.content
-                        } catch (err) { googleGPTconsole.error(err) ; reject(err) }
+                        } catch (err) { googleGPTerror(err) ; reject(err) }
                     }
                     const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
                         .slice(0, 5) // limit to 1st 5
                         .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
                     resolve(arr_relatedQueries)
                 },
-                onerror: err => { googleGPTconsole.error(err) ; reject(err) }
+                onerror: err => { googleGPTerror(err) ; reject(err) }
             })
     })}
 
@@ -795,7 +793,7 @@
             headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
             responseType: responseType(), data: createPayload(convo), onloadstart: onLoadStart(), onload: onLoad(),
             onerror: err => {
-                googleGPTconsole.error(err)
+                googleGPTerror(err)
                 if (!config.proxyAPIenabled) googleGPTalert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
                     if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
@@ -833,14 +831,14 @@
             return (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') ? 'stream' : 'text' }
 
         function retryDiffHost() {
-            googleGPTconsole.error(`Error calling ${ endpoint }. Trying another endpoint...`)
+            googleGPTerror(`Error calling ${ endpoint }. Trying another endpoint...`)
             getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
             getShowReply.attemptCnt++
             getShowReply(convo, callback)
         }
 
         function onLoadStart() { // process streams for unproxied TM users
-            googleGPTconsole.info('Endpoint used: ' + endpoint)
+            googleGPTinfo('Endpoint used: ' + endpoint)
             if (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') {
                 return stream => {
                     const reader = stream.response.getReader()
@@ -864,8 +862,8 @@
         function onLoad() {
             return async event => {
                 if (event.status !== 200) {
-                    googleGPTconsole.error('Event status: ' + event.status)
-                    googleGPTconsole.error('Event response: ' + event.responseText)
+                    googleGPTerror('Event status: ' + event.status)
+                    googleGPTerror('Event response: ' + event.responseText)
                     if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpoints.length)
                         retryDiffHost()
                     else if (event.status === 401 && !config.proxyAPIenabled) {
@@ -882,8 +880,8 @@
                                   answer = finalResponse.message.content.parts[0]
                             googleGPTshow(answer)
                         } catch (err) {
-                            googleGPTconsole.error(googleGPTalerts.parseFailed + ': ' + err)
-                            googleGPTconsole.error('Response: ' + event.response)
+                            googleGPTerror(googleGPTalerts.parseFailed + ': ' + err)
+                            googleGPTerror('Response: ' + event.response)
                             googleGPTalert('suggestProxy')
                         }
                     }
@@ -893,7 +891,7 @@
                             const answer = JSON.parse(event.responseText).choices[0].message.content
                             googleGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (err) {
-                            googleGPTconsole.info('Response: ' + event.responseText)
+                            googleGPTinfo('Response: ' + event.responseText)
                             if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
                                 googleGPTshow(messages.alert_censored || 'Sorry, according to our product rules, '
                                     + 'we cannot provide you with an answer to this question, please try other questions')
@@ -903,7 +901,7 @@
                             else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
                                 await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
                             } else { // use different endpoint or suggest OpenAI
-                                googleGPTconsole.error(googleGPTalerts.parseFailed + ': ' + err)
+                                googleGPTerror(googleGPTalerts.parseFailed + ': ' + err)
                                 if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
                                 else googleGPTalert('suggestOpenAI')
                             }
