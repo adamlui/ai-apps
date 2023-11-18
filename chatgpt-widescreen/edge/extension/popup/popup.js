@@ -43,7 +43,7 @@
                 notify(chrome.i18n.getMessage('menuLabel_fullerWins') + ' ' + ( config.fullerWindows ? 'ON' : 'OFF' ))
         }})
     })
-    fullerWinLabel.addEventListener('click', (event) => {
+    fullerWinLabel.addEventListener('click', event => {
         if ([fullerWinLabel, document.querySelector('[data-locale*="fullerWins"]')].includes(event.target))
             fullerWinToggle.click() 
     })
@@ -59,7 +59,7 @@
                 notify(chrome.i18n.getMessage('menuLabel_tallerChatbox') + ' ' + (config.tcbDisabled ? 'OFF' : 'ON'))
         }})
     })
-    tallerChatboxLabel.addEventListener('click', (event) => {
+    tallerChatboxLabel.addEventListener('click', event => {
         if ([tallerChatboxLabel, document.querySelector('[data-locale*="tallerChatbox"]')].includes(event.target))
             tallerChatboxToggle.click() 
     })
@@ -75,7 +75,7 @@
                 notify(chrome.i18n.getMessage('menuLabel_widerChatbox') + ' ' + (config.widerChatbox ? 'ON' : 'OFF'))
         }})
     })
-    widerChatboxLabel.addEventListener('click', (event) => {
+    widerChatboxLabel.addEventListener('click', event => {
         if ([widerChatboxLabel, document.querySelector('[data-locale*="widerChatbox"]')].includes(event.target))
             widerChatboxToggle.click() 
     })
@@ -91,7 +91,7 @@
                 notify(chrome.i18n.getMessage('menuLabel_hiddenHeader') + ' ' + (config.hiddenHeader ? 'ON' : 'OFF'))
         }})
     })
-    hiddenHeaderLabel.addEventListener('click', (event) => {
+    hiddenHeaderLabel.addEventListener('click', event => {
         if ([hiddenHeaderLabel, document.querySelector('[data-locale*="hiddenHeader"]')].includes(event.target))
             hiddenHeaderToggle.click() 
     })
@@ -107,7 +107,7 @@
                 notify(chrome.i18n.getMessage('menuLabel_hiddenFooter') + ' ' + (config.hiddenFooter ? 'ON' : 'OFF'))
         }})
     })
-    hiddenFooterLabel.addEventListener('click', (event) => {
+    hiddenFooterLabel.addEventListener('click', event => {
         if ([hiddenFooterLabel, document.querySelector('[data-locale*="hiddenFooter"]')].includes(event.target))
             hiddenFooterToggle.click() 
     })
@@ -119,7 +119,7 @@
         settings.save('notifHidden', !config.notifHidden)
         notify(chrome.i18n.getMessage('menuLabel_modeNotifs') + ' ' + ( config.notifHidden ? 'OFF' : 'ON' ))
     })
-    notificationsLabel.addEventListener('click', (event) => {
+    notificationsLabel.addEventListener('click', event => {
         if ([notificationsLabel, document.querySelector('[data-locale*="modeNotifs"]')].includes(event.target))
             notificationsToggle.click()
     })
@@ -135,14 +135,14 @@
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]'),
           supportSpan = supportLink.parentNode 
-    supportSpan.addEventListener('click', (event) => {
+    supportSpan.addEventListener('click', event => {
         if (event.target === supportSpan) supportLink.click() // to avoid double-toggle
     })
 
     // Add More Add-ons span click-listener
     const moreAddOnsLink = document.querySelector('a[title*="more" i]'),
           moreAddOnsSpan = moreAddOnsLink.parentNode 
-    moreAddOnsSpan.addEventListener('click', (event) => {
+    moreAddOnsSpan.addEventListener('click', event => {
         if (event.target === moreAddOnsSpan) moreAddOnsLink.click() // to avoid double-toggle
     })
 
@@ -157,13 +157,13 @@
     // Define FEEDBACK functions
 
     function notify(msg, position) {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'notify', msg: msg, position: position || 'bottom-right' })
     })}
     
     function alertToUpdate(version) {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'alertToUpdate', args: version
     })})}
@@ -171,7 +171,7 @@
     // Define SYNC functions
 
     function syncExtension() {
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, { action: 'syncExtension' })
     })}
 
@@ -179,7 +179,7 @@
 
         // Updated toolbar icon
         const iconDimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}
-        iconDimensions.forEach((dimension) => {
+        iconDimensions.forEach(dimension => {
             iconPaths[dimension] = '../icons/'
                 + (config.extensionDisabled ? 'faded/' : '')
                 + 'icon' + dimension + '.png'
@@ -188,7 +188,7 @@
 
         // Update menu contents
         document.querySelectorAll('div.logo, div.menu-title, div.menu')
-            .forEach((elem) => {
+            .forEach(elem => {
                 elem.classList.remove(mainToggle.checked ? 'disabled' : 'enabled')
                 elem.classList.add(mainToggle.checked ? 'enabled' : 'disabled')
             })
