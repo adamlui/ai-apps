@@ -129,21 +129,21 @@
     updateSpan.addEventListener('click', () => {
         window.close() // popup
         chrome.runtime.requestUpdateCheck((status, details) => {
-            alertToUpdate(status === 'update_available' ? details.version : '')
+            alertToUpdate(status == 'update_available' ? details.version : '')
     })})
 
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]'),
           supportSpan = supportLink.parentNode 
     supportSpan.addEventListener('click', (event) => {
-        if (event.target == supportSpan) supportLink.click() // to avoid double-toggle
+        if (event.target === supportSpan) supportLink.click() // to avoid double-toggle
     })
 
     // Add More Add-ons span click-listener
     const moreAddOnsLink = document.querySelector('a[title*="more" i]'),
           moreAddOnsSpan = moreAddOnsLink.parentNode 
     moreAddOnsSpan.addEventListener('click', (event) => {
-        if (event.target == moreAddOnsSpan) moreAddOnsLink.click() // to avoid double-toggle
+        if (event.target === moreAddOnsSpan) moreAddOnsLink.click() // to avoid double-toggle
     })
 
     // Add Powered by chatgpt.js hover-listener
