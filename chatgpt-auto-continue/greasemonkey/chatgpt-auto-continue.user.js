@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.17
+// @version             2023.11.17.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -265,12 +265,12 @@
             try { // to return localized messages.json
                 const messages = new Proxy(JSON.parse(response.responseText), {
                     get(target, prop) { // remove need to ref nested keys
-                        if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
+                        if (typeof target[prop] == 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
                 }}}) ; resolve(messages)
             } catch (error) { // if 404
-                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                msgXHRtries++ ; if (msgXHRtries === 3) return // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
                     msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
@@ -280,7 +280,7 @@
 
     // Init/register menu
     let menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-                                separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
+                                separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
     registerMenu() // create browser toolbar menu
 
     // Stylize alerts
@@ -298,7 +298,7 @@
     await chatgpt.isLoaded()
     const continueObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
-            if (mutation.attributeName === 'style' && mutation.target.style.opacity === '1') {
+            if (mutation.attributeName == 'style' && mutation.target.style.opacity == '1') {
                 document.querySelectorAll('button').forEach(button => {
                     if (button.textContent.includes('Continue generating')) {
                         button.click(); notify(messages.notif_chatAutoContinued || 'Chat Auto-Continued', 'bottom-right')
