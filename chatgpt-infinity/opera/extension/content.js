@@ -100,11 +100,6 @@
                     if (!config.extensionDisabled) insertToggle()
     })}})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
-    // Define UI function
-
-    function isMobileDevice() {
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) }
-
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
@@ -188,7 +183,7 @@
                 const switchSpan = document.querySelector('#infSwitchSpan') || document.createElement('span')
                 switchSpan.id = 'infSwitchSpan'
                 const switchStyles = {
-                    position: 'relative', left: `${ isMobileDevice() && isGizmoUI ? 211 : 152 }px`,
+                    position: 'relative', left: `${ chatgpt.browser.isMobile() && isGizmoUI ? 206 : 152 }px`,
                     width: `${ isGizmoUI ? 32 : 34 }px`, height: `${ isGizmoUI ? 16 : 18 }px`,
                     backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
                     '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
