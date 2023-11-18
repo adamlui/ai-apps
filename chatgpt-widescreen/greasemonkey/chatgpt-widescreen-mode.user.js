@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.17.1
+// @version             2023.11.18
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -728,15 +728,14 @@
         await chatgpt.isLoaded() ; isGizmoUI = chatgpt.isGizmoUI() }
 
     // Create browser toolbar menu or disable script if extension installed
-    const state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-                    separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
-    setTimeout(() => { // add trivial delay for Chrome extension load to beat VM
-        if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
-            GM_registerMenuCommand(state.symbol[1] + ' ' + ( messages.menuLabel_disabled || 'Disabled (extension installed)' ),
-                () => { return }) // disable menu
-            return // exit script
-        } else registerMenu() // create functional menu
-    }, 5)
+    const state = {
+        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
+    if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
+        GM_registerMenuCommand(state.symbol[1] + ' ' + ( messages.menuLabel_disabled || 'Disabled (extension installed)' ),
+            () => { return }) // disable menu
+        return // exit script
+    } else registerMenu() // create functional menu
 
     // Define UI element selectors
     const inputSelector = site == 'openai' ? 'form textarea[id*="prompt"]'
