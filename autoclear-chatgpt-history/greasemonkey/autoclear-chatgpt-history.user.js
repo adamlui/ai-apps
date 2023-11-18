@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.17.5
+// @version             2023.11.17.6
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -565,7 +565,8 @@
         // Tweak styles
         if (isGizmoUI) {
             firstButton.parentNode.parentNode.style.paddingBottom = '0'
-            navToggleDiv.style.display = 'flex' // remove forced cloaking
+            if (chatgpt.history.isOff() && !config.toggleHidden)
+                navToggleDiv.style.display = 'flex' // remove forced cloaking
             navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
         }
     }
