@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.17.7
+// @version             2023.11.17.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -133,7 +133,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@a7ee1c09e651ee4c4f43d647698cc7d6b6eeaf8f/dist/chatgpt-2.4.3.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@70905dcc82868c9043ae9f83fd5882dc543eebb8/dist/chatgpt-2.5.0.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @grant               GM_getValue
@@ -376,8 +376,6 @@
         return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
             || document.documentElement.classList.toString().includes('dark')
     }
-
-    function isChromium() { return navigator.userAgent.includes('Chrome') }
 
     function toggleWiderSidebar() {
         saveSetting('widerSidebar', !config.widerSidebar)
@@ -981,6 +979,7 @@
     // Stylize elements
     const braveGPTstyle = document.createElement('style'),
           scheme = isDarkMode() ? 'dark' : 'light'
+          isChromium = chatgpt.browser.isChromium()
     braveGPTstyle.innerText = (
           '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.bravegpt {'
@@ -1003,7 +1002,7 @@
             + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
             + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;'
             + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 } ' )
-        + `.bravegpt .footer { margin: ${ isChromium() ? 19 : 24 }px 0 -26px 0 ; border-top: none !important }`
+        + `.bravegpt .footer { margin: ${ isChromium ? 19 : 24 }px 0 -26px 0 ; border-top: none !important }`
         + '.bravegpt .feedback {'
             + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem ;'
             + 'letter-spacing: .02em ; line-height: 1; position: relative ; right: -10px ; bottom: 15px ;'
@@ -1013,7 +1012,7 @@
         + `.bravegpt .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-            + ( isChromium() ? 'top: 0.16em ; right: 4.9rem;' : 'top: 0.25em ; right: 9.78rem;' )
+            + ( isChromium ? 'top: 0.16em ; right: 4.9rem;' : 'top: 0.25em ; right: 9.78rem;' )
             + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color: '
                 + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
         + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem } '
@@ -1026,7 +1025,7 @@
                 + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + '}'
         + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
             + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
-            + ( isChromium() ? 'margin-top: -31px' : '' ) + '}'
+            + ( isChromium ? 'margin-top: -31px' : '' ) + '}'
         + '.related-query { margin: 4px 4px 2px 0 ; padding: 8px 13px 7px 14px ;'
             + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
             + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
@@ -1039,7 +1038,7 @@
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button {'
             + 'float: right ; border: none ; margin: 18px 4px 0 0 ;'
-            + `position: relative ; bottom: ${ isChromium() ? 61 : 57 }px; right: 10px;`
+            + `position: relative ; bottom: ${ isChromium ? 61 : 57 }px; right: 10px;`
             + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
         + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
