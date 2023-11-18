@@ -5,12 +5,12 @@
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Auto Refresh ↻ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20constant%20interruptions%20on%20ChatGPT%3F%20Auto-refresh%20your%20sessions%20w%2F%20this%20plug-in%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt)
 
 [![](https://img.shields.io/greasyfork/dt/462422?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh)
-[![](https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=Stars&color=yellow&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/stargazers)
-[![](https://img.shields.io/badge/License-MIT-green.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
-[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=Commits&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
-[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh)
+[![](https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=Stars&color=fcf67b&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/stargazers)
+[![](https://img.shields.io/badge/License-MIT-fca87b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
+[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
+[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh)
 [![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgpt.js.org)
-[![](https://img.shields.io/badge/Mentioned_in-Awesome-cca8c4?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
+[![](https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 
 ### Keeps ChatGPT sessions fresh via background requests to eliminate network errors + Cloudflare checks.
 
