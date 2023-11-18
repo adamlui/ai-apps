@@ -234,6 +234,7 @@
         activate: async () => {
             if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
             fromMsg = false
+            if (chatgpt.browser.isMobile() && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             try { chatgpt.startNewChat() } catch (err) { return }
             settings.load('replyLanguage', 'replyTopic', 'replyInterval').then(() => setTimeout(() => {
                 chatgpt.send('Generate a single random question'

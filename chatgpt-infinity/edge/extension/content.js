@@ -184,7 +184,7 @@
                 const switchSpan = document.querySelector('#infSwitchSpan') || document.createElement('span')
                 switchSpan.id = 'infSwitchSpan'
                 const switchStyles = {
-                    position: 'relative', left: `${ chatgpt.browser.isMobile() && isGizmoUI ? 206 : 152 }px`,
+                    position: 'relative', left: `${ chatgpt.browser.isMobile() && isGizmoUI ? 211 : 152 }px`,
                     width: `${ isGizmoUI ? 32 : 34 }px`, height: `${ isGizmoUI ? 16 : 18 }px`,
                     backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
                     '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
@@ -234,6 +234,7 @@
         activate: async () => {
             if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
             fromMsg = false
+            if (chatgpt.browser.isMobile() && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             try { chatgpt.startNewChat() } catch (err) { return }
             settings.load('replyLanguage', 'replyTopic', 'replyInterval').then(() => setTimeout(() => {
                 chatgpt.send('Generate a single random question'
