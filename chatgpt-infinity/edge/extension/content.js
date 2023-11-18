@@ -153,10 +153,10 @@
         // Tweak styles
         if (isGizmoUI) {
             firstButton.parentNode.parentNode.style.paddingBottom = '0'
-            navToggleDiv.style.display = 'flex' // remove forced cloaking
+            if (chatgpt.history.isOff() && !config.toggleHidden)
+                navToggleDiv.style.display = 'flex' // remove forced cloaking
             navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
         }
-        settings.load('toggleHidden').then(() => { if (config.toggleHidden) navToggleDiv.style.display = 'none' })
     }
 
     function updateToggleHTML() {
