@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.17.1
+// @version             2023.11.17.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -468,12 +468,12 @@
         try {
             const html = new DOMParser().parseFromString(resp, 'text/html'),
                   title = html.querySelector('title')
-            return title.innerText === ( messages.alert_justAmoment || 'Just a moment' ) + '...'
+            return title.innerText == ( messages.alert_justAmoment || 'Just a moment' ) + '...'
         } catch (error) { return false }
     }
 
     function deleteOpenAIcookies() {
-        if (getUserscriptManager() !== 'Tampermonkey') return
+        if (getUserscriptManager() != 'Tampermonkey') return
         GM_cookie.list({ url: openAIendpoints.auth }, (cookies, error) => {
             if (!error) { for (const cookie of cookies) {
                 GM_cookie.delete({ url: openAIendpoints.auth, name: cookie.name })
@@ -657,7 +657,7 @@
         }})}
 
         function responseType() {
-            return (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') ? 'stream' : 'text' }
+            return (!config.proxyAPIenabled && getUserscriptManager() == 'Tampermonkey') ? 'stream' : 'text' }
 
         function retryDiffHost() {
             ddgptError(`Error calling ${ endpoint }. Trying another endpoint...`)
@@ -668,7 +668,7 @@
 
         function onLoadStart() { // process streams for unproxied TM users
             ddgptInfo('Endpoint used: ' + endpoint)
-            if (!config.proxyAPIenabled && getUserscriptManager() === 'Tampermonkey') {
+            if (!config.proxyAPIenabled && getUserscriptManager() == 'Tampermonkey') {
                 return stream => {
                     const reader = stream.response.getReader()
                     reader.read().then(function processText({ done, value }) {
@@ -701,7 +701,7 @@
                         ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
                     else if (event.status === 429) ddgptAlert('tooManyRequests')
                     else ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
-                } else if (!config.proxyAPIenabled && getUserscriptManager() !== 'Tampermonkey') {
+                } else if (!config.proxyAPIenabled && getUserscriptManager() != 'Tampermonkey') {
                     if (event.response) {
                         try { // to parse txt response from OpenAI endpoint for non-TM users
                             const responseParts = event.response.split('\n\n'),
@@ -855,7 +855,7 @@
         chatTextarea.addEventListener('input', autosizeChatbar)
 
         function handleEnter(event) {
-            if (event.key === 'Enter') {
+            if (event.key == 'Enter') {
                 if (event.ctrlKey) { // add newline
                     const chatTextarea = document.querySelector('#ddgpt-chatbar'),
                           caretPos = chatTextarea.selectionStart,
@@ -933,7 +933,7 @@
     const convo = [], menuIDs = []
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-        separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
+        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -945,12 +945,12 @@
             try { // to return localized messages.json
                 const messages = new Proxy(JSON.parse(response.responseText), {
                     get(target, prop) { // remove need to ref nested keys
-                        if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
+                        if (typeof target[prop] == 'object' && target[prop] !== null && 'message' in target[prop]) {
                             return target[prop].message
                 }}}) ; resolve(messages)
             } catch (error) { // if 404
-                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                msgXHRtries++ ; if (msgXHRtries === 3) return // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
                     msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
@@ -1078,7 +1078,7 @@
     // Activate ad campaign if active
     GM.xmlHttpRequest({
         method: 'GET', url: config.assetHostURL + 'ads/live/creative.html',
-        onload: response => { if (response.status == 200) {
+        onload: response => { if (response.status === 200) {
 
             // Create campaign div & add class/style/HTML
             const pcDiv = document.createElement('div')
