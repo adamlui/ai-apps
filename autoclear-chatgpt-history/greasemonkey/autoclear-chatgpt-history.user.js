@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.17.4
+// @version             2023.11.17.5
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -339,7 +339,7 @@
                   firstIcon = firstLink.querySelector('div:first-child'),
                   firstLabel = firstLink.querySelector('div:nth-child(2)')
             navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
-            navToggleDiv.querySelector('img').classList.add(...firstIcon.classList)
+            navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
         }, 100))
     } else {
         for (const navLink of document.querySelectorAll(chatHistorySelector + ' a')) {
