@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.17.1
+// @version             2023.11.17.2
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -214,7 +214,7 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@a7ee1c09e651ee4c4f43d647698cc7d6b6eeaf8f/dist/chatgpt-2.4.3.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@70905dcc82868c9043ae9f83fd5882dc543eebb8/dist/chatgpt-2.5.0.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -364,8 +364,6 @@
     function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch(err) { return 'other' }}
-    function isMobileDevice() {
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) }
 
     // Define MENU functions
 
@@ -640,7 +638,7 @@
         const switchSpan = document.querySelector('#infSwitchSpan') || document.createElement('span')
         switchSpan.id = 'infSwitchSpan'
         const switchStyles = {
-            position: 'relative', left: `${ isMobileDevice() && isGizmoUI ? 211 : 152 }px`,
+            position: 'relative', left: `${ chatgpt.browser.isMobile() && isGizmoUI ? 206 : 152 }px`,
             width: `${ isGizmoUI ? 32 : 34 }px`, height: `${ isGizmoUI ? 16 : 18 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
             '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
