@@ -11,9 +11,9 @@
 
     // Add Chrome action msg listener
     chrome.runtime.onMessage.addListener(request => {
-        if (request.action === 'notify') notify(request.msg, request.position)
-        else if (request.action === 'alert') alert(request.title, request.msg, request.btns)
-        else if (typeof window[request.action] === 'function') {
+        if (request.action == 'notify') notify(request.msg, request.position)
+        else if (request.action == 'alert') alert(request.title, request.msg, request.btns)
+        else if (typeof window[request.action] == 'function') {
             const args = Array.isArray(request.args) ? request.args // preserve array if supplied
                        : request.args !== undefined ? [request.args] : [] // convert to array if single or no arg
             window[request.action](...args) // call expression functions
@@ -115,7 +115,7 @@
 
             // Add click/hover listeners
             window[buttonName].addEventListener('click', () => {
-                if (buttonType === 'newChat') {
+                if (buttonType == 'newChat') {
                     if (site == 'openai') chatgpt.startNewChat()
                     else if (site == 'poe') document.querySelector('header a[class*="button"]').click()
                 } else toggleMode(buttonType) })
@@ -130,7 +130,7 @@
     // Monitor node changes to update button visibility + auto-toggle once
     let prevSessionChecked = false
     const nodeObserver = new MutationObserver(([{ addedNodes, type }]) => {
-        if (type === 'childList' && addedNodes.length) {
+        if (type == 'childList' && addedNodes.length) {
 
             // Restore previous session's state + manage toggles
             settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'widerChatbox',
@@ -156,7 +156,7 @@
 
     // Monitor scheme changes to update button colors
     const schemeObserver = new MutationObserver(([{ type, target }]) => {
-        if (target === document.documentElement && type === 'attributes' && target.getAttribute('class'))
+        if (target === document.documentElement && type == 'attributes' && target.getAttribute('class'))
             settings.load(['extensionDisabled']).then(() => {
                 if (!config.extensionDisabled) {
                     buttonColor = setBtnColor()
@@ -187,7 +187,7 @@
                 else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     }})})
     window.addEventListener('keydown', event => { // set F11 flag for toggleMode() disabled warning
-        if ((event.key === 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true
+        if ((event.key == 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true
     })
 
     // Define FEEDBACK functions
@@ -290,7 +290,7 @@
 
         // Update SVG elements
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
-        const svgElems = config[mode] || state.toLowerCase() === 'on' ? ONelems : OFFelems
+        const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
         svgElems.forEach(elem => { buttonSVG.appendChild(elem) })
 
         // Update SVG
@@ -311,7 +311,7 @@
             event.target.id.includes('fullWindow') ? 'fullWindow' :
             event.target.id.includes('wide') ? 'wideScreen' : 'newChat')
         updateTooltip(buttonType) // since mouseover's can indicate button change
-        tooltipDiv.style.opacity = event.type === 'mouseover' ? '0.8' : '0' // toggle visibility
+        tooltipDiv.style.opacity = event.type == 'mouseover' ? '0.8' : '0' // toggle visibility
     }
 
     function updateTooltip(buttonType) { // text & position
@@ -362,12 +362,12 @@
     // Define SYNC functions
 
     function syncMode(mode) { // setting + icon + tooltip
-        const state = ( mode === 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
-                      : mode === 'fullWindow' ? ( site == 'poe' ? !!document.querySelector('#fullWindow-mode')
-                                                                : chatgpt.sidebar.isOff() )
-                                              : chatgpt.isFullScreen() )
+        const state = ( mode == 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
+                      : mode == 'fullWindow' ? ( site == 'poe' ? !!document.querySelector('#fullWindow-mode')
+                                                               : chatgpt.sidebar.isOff() )
+                                             : chatgpt.isFullScreen() )
         settings.save(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
-        if (mode === 'fullWindow') syncFullerWindows(state)
+        if (mode == 'fullWindow') syncFullerWindows(state)
         settings.load('notifHidden').then(() => {
             if (!config.notifHidden) { // notify synced state
                 notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
