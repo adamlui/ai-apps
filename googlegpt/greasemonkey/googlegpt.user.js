@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.17.1
+// @version             2023.11.17.2
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -589,11 +589,7 @@
     // Define UI functions
 
     function isChromium() { return navigator.userAgent.includes('Chrome') }
-
-    function isDarkMode() {
-        return !document.querySelector('[data-darkmode="true"]') ? false
-               : window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
-    }
+    function isDarkMode() { return !!document.querySelector('[data-darkmode="true"]') }
 
     function toggleWiderSidebar() {
         saveSetting('widerSidebar', !config.widerSidebar)
