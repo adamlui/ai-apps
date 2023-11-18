@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.17.1
+// @version             2023.11.17.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -154,6 +154,199 @@
 // ...and KaTeX, the fastest math typesetting library @ https://katex.org (c) 2013–2020 Khan Academy & contributors under the MIT license
 
 (async () => {
+
+    // Init config/convo/menu
+    const config = {
+        prefix: 'braveGPT', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
+        gitHubURL: 'https://github.com/kudoai/bravegpt',
+        greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt' }
+    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
+        .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
+    config.supportURL = config.gitHubURL + '/issues/new'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
+    loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled',
+        'suffixEnabled', 'widerSidebar', 'replyLanguage')
+    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
+    const convo = [], menuIDs = []
+    const state = {
+        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+        separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
+
+    // Define messages
+    const msgsLoaded = new Promise(resolve => {
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
+        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        function onLoad(response) {
+            try { // to return localized messages.json
+                const messages = new Proxy(JSON.parse(response.responseText), {
+                    get(target, prop) { // remove need to ref nested keys
+                        if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
+                            return target[prop].message
+                }}}) ; resolve(messages)
+            } catch (error) { // if 404
+                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                    msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
+                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+            }
+        }
+    }) ; const messages = await msgsLoaded
+
+    registerMenu()
+
+    // Exit if prefix/suffix required but not present
+    if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
+        ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
+            return }
+
+    // Init endpoints
+    const openAIendpoints = {
+        auth: 'https://auth0.openai.com',
+        session: 'https://chat.openai.com/api/auth/session',
+        chat: 'https://chat.openai.com/backend-api/conversation' }
+    const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
+
+    // Init alerts
+    const braveGPTalerts = {
+        waitingResponse: ( messages.alert_waitingResponse || 'Waiting for ChatGPT response' ) + '...',
+        login: ( messages.alert_login || 'Please login' ) + ' @ ',
+        tooManyRequests: ( messages.alert_tooManyRequests || 'ChatGPT is flooded with too many requests' ) + '. '
+            + ( config.proxyAPIenabled ? ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
+                                       : ( messages.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' )),
+        parseFailed: ( messages.alert_parseFailed || 'Failed to parse response JSON' ) + '. '
+            + ( config.proxyAPIenabled ? ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
+                                       : ( messages.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' )),
+        checkCloudflare: ( messages.alert_checkCloudflare || 'Please pass Cloudflare security check' ) + ' @ ',
+        suggestProxy: ( messages.alert_openAInotWorking || 'OpenAI API is not working' ) + '. '
+            + ( messages.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' ),
+        suggestOpenAI: ( messages.alert_proxyNotWorking || 'Proxy API is not working' ) + '. '
+            + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
+    }
+
+    // Create Brave Search style tweaks
+    const tweaksStyle = document.createElement('style'),
+          wsbStyle = 'main.main-column, aside.sidebar { max-width: 521px !important }'
+    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
+
+    // Stylize elements
+    const braveGPTstyle = document.createElement('style'),
+          scheme = isDarkMode() ? 'dark' : 'light'
+    braveGPTstyle.innerText = (
+          '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+        + '.bravegpt {'
+            + 'word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px ;'
+            + 'border-radius: 18px ; padding: 24px 23px 45px 23px ; background:'
+                + ( scheme == 'dark' ? '#282828' : 'white' ) + '}'
+        + '.bravegpt p { margin: 0 }'
+        + '.bravegpt .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }'
+        + '.app-name { font-size: 20px ; font-family: var(--brand-font) }'
+        + '.app-name a { color: inherit ; text-decoration: none }'
+        + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
+            + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
+        + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
+        + '.bravegpt .loading {'
+            + 'margin-bottom: -55px ;' // offset vs. `.bravegpt` bottom-padding footer accomodation
+            + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
+        + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
+        + '.bravegpt section.loading { padding-left: 5px ; font-size: 90% }'
+        + '.bravegpt pre {'
+            + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
+            + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;'
+            + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 } ' )
+        + `.bravegpt .footer { margin: ${ isChromium() ? 19 : 24 }px 0 -26px 0 ; border-top: none !important }`
+        + '.bravegpt .feedback {'
+            + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem ;'
+            + 'letter-spacing: .02em ; line-height: 1; position: relative ; right: -10px ; bottom: 15px ;'
+            + `color: ${ scheme == 'dark' ? '#aaa' : 'var(--search-text-06)' }}`
+        + '.bravegpt .feedback .icon {'
+            + ' fill: currentColor ; color: currentColor ; --size: 12px ; position: relative ; top: 0.19em ; right: 2px }'
+        + `.bravegpt .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
+        + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
+        + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
+            + ( isChromium() ? 'top: 0.16em ; right: 4.9rem;' : 'top: 0.25em ; right: 9.78rem;' )
+            + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color: '
+                + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
+        + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem } '
+        + '.chatgpt-js > a { color: inherit ; top: .054rem } '
+        + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px } '
+        + '.continue-chat > textarea {'
+            + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
+            + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 5px 0 ;  padding: 14px 22px 5px 10px ;'
+            + 'height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ; background: '
+                + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + '}'
+        + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
+            + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
+            + ( isChromium() ? 'margin-top: -31px' : '' ) + '}'
+        + '.related-query { margin: 4px 4px 2px 0 ; padding: 8px 13px 7px 14px ;'
+            + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
+            + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
+            + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.77em ; cursor: pointer ;`
+            + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
+            + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' }}`
+        + '.related-query:hover {'
+            + `background: ${ scheme == 'dark' ? '#a2a2a270': '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
+        + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
+        + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
+        + '.send-button {'
+            + 'float: right ; border: none ; margin: 18px 4px 0 0 ;'
+            + `position: relative ; bottom: ${ isChromium() ? 61 : 57 }px; right: 10px;`
+            + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
+        + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
+        + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
+        + '.kudo-ai a { color: #aaa ; text-decoration: none } '
+        + `.kudo-ai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
+        + '.katex-html { display: none } ' // hide unrendered math
+        + '.chatgpt-modal > div { padding: 24px 20px 24px 20px !important }' // increase alert padding
+        + '.chatgpt-modal p { margin-left: 4px ; font-size: 1.115rem }' // position/size alert msg
+        + '.chatgpt-modal button { ' // alert buttons
+            + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ; padding: 5px !important ;'
+            + 'border-radius: 0 !important ; border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
+        + '.modal-buttons { margin: 20px 0px -3px -7px !important }' // position alert buttons
+        + '.modal-close-btn { top: -7px }' // raise alert close button
+    )
+    document.head.appendChild(braveGPTstyle)
+
+    // Create/classify/fill BraveGPT container
+    const braveGPTdiv = document.createElement('div') // create container div
+    braveGPTdiv.setAttribute( // assign Brave's .snippet + custom class
+        'class', 'snippet bravegpt')
+    braveGPTalert('waitingResponse')
+
+    // Create/classify feedback footer
+    const braveGPTfooter = document.createElement('div') // create footer div
+    braveGPTfooter.classList.add('footer')
+
+    // Activate ad campaign if active
+    GM.xmlHttpRequest({
+        method: 'GET', url: config.assetHostURL + 'ads/live/creative.html',
+        onload: response => { if (response.status == 200) {
+
+            // Create campaign div & add class/style/HTML
+            const pcDiv = document.createElement('div')
+            pcDiv.setAttribute( // assign Brave's .snippet + custom class
+                'class', 'snippet bravegpt')
+            pcDiv.style.display = 'flex'
+            pcDiv.style.padding = '17px 19px 21px 23px'
+            pcDiv.innerHTML = response.responseText
+
+            // Inject in sidebar
+            braveGPTdiv.insertAdjacentElement('afterend', pcDiv)
+    }}})
+
+    // Append to Brave, get answer
+    const siderbarContainer = document.querySelector('.sidebar')
+    setTimeout(() => { 
+        siderbarContainer.prepend(braveGPTdiv) // inject BraveGPT container
+        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
+        convo.push(
+            config.proxyAPIenabled ? { role: 'user', content: query }
+                                   : { role: 'user', id: chatgpt.uuidv4(),
+                                       content: { content_type: 'text', parts: [query] }})
+        getShowReply(convo)
+    }, 100)
 
     // Define SCRIPT functions
 
@@ -899,200 +1092,5 @@
         // Fill footer
         braveGPTfooter.innerHTML = '' ; braveGPTfooter.appendChild(feedbackAnchor)
     }
-
-    // Run MAIN routine
-
-    // Init config/convo/menu
-    const config = {
-        prefix: 'braveGPT', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
-        gitHubURL: 'https://github.com/kudoai/bravegpt',
-        greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt' }
-    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
-        .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
-    config.supportURL = config.gitHubURL + '/issues/new'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled',
-        'suffixEnabled', 'widerSidebar', 'replyLanguage')
-    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    const convo = [], menuIDs = []
-    const state = {
-        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-        separator: getUserscriptManager() === 'Tampermonkey' ? ' — ' : ': ' }
-
-    // Define messages
-    const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
-              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
-        function onLoad(response) {
-            try { // to return localized messages.json
-                const messages = new Proxy(JSON.parse(response.responseText), {
-                    get(target, prop) { // remove need to ref nested keys
-                        if (typeof target[prop] === 'object' && target[prop] !== null && 'message' in target[prop]) {
-                            return target[prop].message
-                }}}) ; resolve(messages)
-            } catch (error) { // if 404
-                msgXHRtries++ ; if (msgXHRtries == 3) return // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
-                    msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
-                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
-            }
-        }
-    }) ; const messages = await msgsLoaded
-
-    registerMenu()
-
-    // Exit if prefix/suffix required but not present
-    if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
-        ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
-            return }
-
-    // Init endpoints
-    const openAIendpoints = {
-        auth: 'https://auth0.openai.com',
-        session: 'https://chat.openai.com/api/auth/session',
-        chat: 'https://chat.openai.com/backend-api/conversation' }
-    const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
-
-    // Init alerts
-    const braveGPTalerts = {
-        waitingResponse: ( messages.alert_waitingResponse || 'Waiting for ChatGPT response' ) + '...',
-        login: ( messages.alert_login || 'Please login' ) + ' @ ',
-        tooManyRequests: ( messages.alert_tooManyRequests || 'ChatGPT is flooded with too many requests' ) + '. '
-            + ( config.proxyAPIenabled ? ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
-                                       : ( messages.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' )),
-        parseFailed: ( messages.alert_parseFailed || 'Failed to parse response JSON' ) + '. '
-            + ( config.proxyAPIenabled ? ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
-                                       : ( messages.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' )),
-        checkCloudflare: ( messages.alert_checkCloudflare || 'Please pass Cloudflare security check' ) + ' @ ',
-        suggestProxy: ( messages.alert_openAInotWorking || 'OpenAI API is not working' ) + '. '
-            + ( messages.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' ),
-        suggestOpenAI: ( messages.alert_proxyNotWorking || 'Proxy API is not working' ) + '. '
-            + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
-    }
-
-    // Create Brave Search style tweaks
-    const tweaksStyle = document.createElement('style'),
-          wsbStyle = 'main.main-column, aside.sidebar { max-width: 521px !important }'
-    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
-
-    // Stylize elements
-    const braveGPTstyle = document.createElement('style'),
-          scheme = isDarkMode() ? 'dark' : 'light'
-    braveGPTstyle.innerText = (
-          '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-        + '.bravegpt {'
-            + 'word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px ;'
-            + 'border-radius: 18px ; padding: 24px 23px 45px 23px ; background:'
-                + ( scheme == 'dark' ? '#282828' : 'white' ) + '}'
-        + '.bravegpt p { margin: 0 }'
-        + '.bravegpt .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }'
-        + '.app-name { font-size: 20px ; font-family: var(--brand-font) }'
-        + '.app-name a { color: inherit ; text-decoration: none }'
-        + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
-            + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
-        + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
-        + '.bravegpt .loading {'
-            + 'margin-bottom: -55px ;' // offset vs. `.bravegpt` bottom-padding footer accomodation
-            + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
-        + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-        + '.bravegpt section.loading { padding-left: 5px ; font-size: 90% }'
-        + '.bravegpt pre {'
-            + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
-            + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;'
-            + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 } ' )
-        + `.bravegpt .footer { margin: ${ isChromium() ? 19 : 24 }px 0 -26px 0 ; border-top: none !important }`
-        + '.bravegpt .feedback {'
-            + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem ;'
-            + 'letter-spacing: .02em ; line-height: 1; position: relative ; right: -10px ; bottom: 15px ;'
-            + `color: ${ scheme == 'dark' ? '#aaa' : 'var(--search-text-06)' }}`
-        + '.bravegpt .feedback .icon {'
-            + ' fill: currentColor ; color: currentColor ; --size: 12px ; position: relative ; top: 0.19em ; right: 2px }'
-        + `.bravegpt .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
-        + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-        + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-            + ( isChromium() ? 'top: 0.16em ; right: 4.9rem;' : 'top: 0.25em ; right: 9.78rem;' )
-            + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color: '
-                + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
-        + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem } '
-        + '.chatgpt-js > a { color: inherit ; top: .054rem } '
-        + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px } '
-        + '.continue-chat > textarea {'
-            + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
-            + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 5px 0 ;  padding: 14px 22px 5px 10px ;'
-            + 'height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ; background: '
-                + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + '}'
-        + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
-            + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
-            + ( isChromium() ? 'margin-top: -31px' : '' ) + '}'
-        + '.related-query { margin: 4px 4px 2px 0 ; padding: 8px 13px 7px 14px ;'
-            + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
-            + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
-            + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.77em ; cursor: pointer ;`
-            + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
-            + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' }}`
-        + '.related-query:hover {'
-            + `background: ${ scheme == 'dark' ? '#a2a2a270': '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
-        + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
-        + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
-        + '.send-button {'
-            + 'float: right ; border: none ; margin: 18px 4px 0 0 ;'
-            + `position: relative ; bottom: ${ isChromium() ? 61 : 57 }px; right: 10px;`
-            + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
-        + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
-        + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
-        + '.kudo-ai a { color: #aaa ; text-decoration: none } '
-        + `.kudo-ai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
-        + '.katex-html { display: none } ' // hide unrendered math
-        + '.chatgpt-modal > div { padding: 24px 20px 24px 20px !important }' // increase alert padding
-        + '.chatgpt-modal p { margin-left: 4px ; font-size: 1.115rem }' // position/size alert msg
-        + '.chatgpt-modal button { ' // alert buttons
-            + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ; padding: 5px !important ;'
-            + 'border-radius: 0 !important ; border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
-        + '.modal-buttons { margin: 20px 0px -3px -7px !important }' // position alert buttons
-        + '.modal-close-btn { top: -7px }' // raise alert close button
-    )
-    document.head.appendChild(braveGPTstyle)
-
-    // Create/classify/fill BraveGPT container
-    const braveGPTdiv = document.createElement('div') // create container div
-    braveGPTdiv.setAttribute( // assign Brave's .snippet + custom class
-        'class', 'snippet bravegpt')
-    braveGPTalert('waitingResponse')
-
-    // Create/classify feedback footer
-    const braveGPTfooter = document.createElement('div') // create footer div
-    braveGPTfooter.classList.add('footer')
-
-    // Activate ad campaign if active
-    GM.xmlHttpRequest({
-        method: 'GET', url: config.assetHostURL + 'ads/live/creative.html',
-        onload: response => { if (response.status == 200) {
-
-            // Create campaign div & add class/style/HTML
-            const pcDiv = document.createElement('div')
-            pcDiv.setAttribute( // assign Brave's .snippet + custom class
-                'class', 'snippet bravegpt')
-            pcDiv.style.display = 'flex'
-            pcDiv.style.padding = '17px 19px 21px 23px'
-            pcDiv.innerHTML = response.responseText
-
-            // Inject in sidebar
-            braveGPTdiv.insertAdjacentElement('afterend', pcDiv)
-    }}})
-
-    // Append to Brave, get answer
-    const siderbarContainer = document.querySelector('.sidebar')
-    setTimeout(() => { 
-        siderbarContainer.prepend(braveGPTdiv) // inject BraveGPT container
-        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-        convo.push(
-            config.proxyAPIenabled ? { role: 'user', content: query }
-                                   : { role: 'user', id: chatgpt.uuidv4(),
-                                       content: { content_type: 'text', parts: [query] }})
-        getShowReply(convo)
-    }, 100)
 
 })()
