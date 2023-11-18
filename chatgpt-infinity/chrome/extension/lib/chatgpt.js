@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.4.3
+// This library is a condensed version of chatgpt.js v2.5.0
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -266,6 +266,13 @@ const chatgpt = {
         return modalContainer.id; // if assignment used
     },
 
+    browser: {
+        isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
+
+        isMobile: function() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
+    },
+
     getRegenerateButton: function() {
         if (chatgpt.isGizmoUI()) {        
             for (const mainSVG of document.querySelectorAll('main svg')) {
@@ -302,10 +309,7 @@ const chatgpt = {
         isOff: function() { return !this.isOn(); }
     },
 
-    isDarkMode: function() {
-        return !document.documentElement.classList.toString().includes('dark') ? false
-             : window.matchMedia?.('(prefers-color-scheme: dark)')?.matches;
-    },
+    isDarkMode: function() { return chatgpt.browser.isDarkMode(); },
 
     isGizmoUI: function () { return document.documentElement.classList.toString().includes('gizmo'); },
 
@@ -522,7 +526,7 @@ const chatgpt = {
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
         const delaySend = setInterval(() => {
             if (!sendButton.hasAttribute('disabled')) { // send msg
-                method.toLowerCase() == 'click' ? sendButton.click()
+                method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendButton.click()
                     : textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
                 clearInterval(delaySend);
             }
