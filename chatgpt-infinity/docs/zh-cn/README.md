@@ -156,18 +156,21 @@ ChatGPT 无穷 与以下浏览器兼容:
 ## 📜 相关应用
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](https://github.chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
+
 > 保持 ChatGPT 会话最新以消除网络错误 + Cloudflare 检查.
 <br>[安装](https://github.chatgptautorefresh.com/tree/main/docs/zh-cn#-如何安装) / 
 [自述文件](https://github.chatgptautorefresh.com/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptautorefresh.com/discuss)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动继续 ⏩](https://github.chatgptautocontinue.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
+
 > Automatically continue generating multiple ChatGPT responses.<br>
 [安装](https://github.chatgptautocontinue.com/tree/main/docs/zh-cn#-如何安装) / 
 [自述文件](https://github.chatgptautocontinue.com/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptautocontinue.com/discuss)
 
 ### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
+
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
 <br>[安装](https://github.chatgptwidescreen.com/tree/main/docs/zh-cn#-如何安装) / 
 [自述文件](https://github.chatgptwidescreen.com/tree/main/docs/zh-cn#readme) / 
