@@ -28,7 +28,7 @@
     // Add main toggle click-listener
     const toggles = document.querySelectorAll('input'),
           mainToggle = toggles[0]
-    mainToggle.addEventListener('change', function() {    
+    mainToggle.addEventListener('change', () => {    
         settings.save('extensionDisabled', !this.checked)
         syncExtension() ; updateGreyness()
     })
@@ -132,7 +132,7 @@
     // Add notifications toggle label click-listeners
     const notificationsToggle = toggles[7],
           notificationsLabel = notificationsToggle.parentNode.parentNode
-    notificationsToggle.addEventListener('change', function toggleNotifications() {
+    notificationsToggle.addEventListener('change', () => {
         settings.save('notifHidden', !config.notifHidden)
         notify(chrome.i18n.getMessage('menuLabel_modeNotifs') + ' ' + ( config.notifHidden ? 'OFF' : 'ON' ))
     })
@@ -166,9 +166,9 @@
     // Add Powered by chatgpt.js hover-listener
     const chatGPTjsHostPath = 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/badges/',
           chatGPTjsImg = document.querySelector('.chatgpt-js img')
-    chatGPTjsImg.addEventListener('mouseover', function() {
+    chatGPTjsImg.addEventListener('mouseover', () => {
         chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png' })
-    chatGPTjsImg.addEventListener('mouseout', function() {
+    chatGPTjsImg.addEventListener('mouseout', () => {
       chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png' })
 
     // Define FEEDBACK functions
