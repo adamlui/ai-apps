@@ -133,7 +133,7 @@
         if (type == 'childList' && addedNodes.length) {
 
             // Restore previous session's state + manage toggles
-            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbHidden',
+            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
                            'hiddenHeader', 'hiddenFooter', 'notifHidden', 'extensionDisabled'])
                 .then(() => { if (!config.extensionDisabled) {                    
                     if (!prevSessionChecked) { // restore previous session's state
@@ -144,7 +144,7 @@
                                 if (!config.notifHidden) // ... + notify
                                     notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                         }}
-                        if (!config.tcbDisabled || config.ncbHidden || config.hiddenHeader || config.hiddenFooter)
+                        if (!config.tcbDisabled || config.ncbDisabled || config.hiddenHeader || config.hiddenFooter)
                             updateTweaksStyle()
                         if (config.widerChatbox) updateWidescreenStyle()
                         prevSessionChecked = true
@@ -389,13 +389,13 @@
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
               site == 'openai' ? (
-                  inputSelector + `{ padding-right: ${ config.ncbHidden ? 126 : 152 }px }` // narrow input to accomodate btns
+                  inputSelector + `{ padding-right: ${ config.ncbDisabled ? 126 : 152 }px }` // narrow input to accomodate btns
                 + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
                     + 'position: relative ; left: 66px ; top: 7px } ' // ...below avatar to avoid cropping
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) : '' ) // hide footer
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
-        + `#newChat-button { display: ${ config.ncbHidden ? 'none' : 'flex' }}`
+        + `#newChat-button { display: ${ config.ncbDisabled ? 'none' : 'flex' }}`
     }
 
     function updateWidescreenStyle() {
@@ -414,7 +414,7 @@
     }
 
     syncExtension = () => { // settings, then disable modes or sync taller/wider chatbox
-        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbHidden',
+        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
                       'hiddenHeader', 'hiddenFooter', 'notifHidden')
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes

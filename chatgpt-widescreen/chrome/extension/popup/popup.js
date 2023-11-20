@@ -4,14 +4,14 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
     // Initialize popup toggles
-    settings.load('fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbHidden',
+    settings.load('fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
                   'hiddenHeader', 'hiddenFooter', 'notifHidden', 'extensionDisabled')
         .then(() => { // restore extension/toggle states
             mainToggle.checked = !config.extensionDisabled
             fullerWinToggle.checked = config.fullerWindows
             tallerChatboxToggle.checked = !config.tcbDisabled
             widerChatboxToggle.checked = config.widerChatbox
-            newChatBtnToggle.checked = !config.ncbHidden
+            newChatBtnToggle.checked = !config.ncbDisabled
             hiddenHeaderToggle.checked = config.hiddenHeader
             hiddenFooterToggle.checked = config.hiddenFooter
             notificationsToggle.checked = !config.notifHidden
@@ -85,11 +85,11 @@
     const newChatBtnToggle = toggles[4],
           newChatBtnLabel = newChatBtnToggle.parentNode.parentNode
     newChatBtnToggle.addEventListener('change', () => {
-        settings.save('ncbHidden', !config.ncbHidden)
+        settings.save('ncbDisabled', !config.ncbDisabled)
         syncExtension()
         settings.load('notifHidden').then(() => {
             if (!config.notifHidden) { // show mode notification if enabled
-                notify(chrome.i18n.getMessage('menuLabel_newChatBtn') + ' ' + (config.ncbHidden ? 'OFF' : 'ON'))
+                notify(chrome.i18n.getMessage('menuLabel_newChatBtn') + ' ' + (config.ncbDisabled ? 'OFF' : 'ON'))
         }})
     })
     newChatBtnLabel.addEventListener('click', event => {
