@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.520.5
+// @version             2023.11.520.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -175,6 +175,7 @@
 // @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@4d8cba38add56c4885aced685d93754f60e69d73/dist/chatgpt-2.5.1.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
+// @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
@@ -850,7 +851,18 @@
         // Add listeners
         wsbSVG.addEventListener('click', toggleWiderSidebar)
         speakSVG.addEventListener('click', () => {
-            chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
+            const payload = {
+                text: answer, rate: '2', curTime: Date.now(),
+                spokenDialect: /chinese|^zh/i.test(config.replyLanguage) ? 'zh-CHS' : 'en'
+            }
+            const key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
+                  iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
+            const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
+                iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
+            const speakAudio = new Audio('https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
+                + encodeURIComponent(securePayload))
+            speakAudio.play().catch((err) => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
+        })
         aboutSVG.addEventListener('click', launchAboutModal)
         replyForm.addEventListener('keydown', handleEnter)
         replyForm.addEventListener('submit', handleSubmit)
