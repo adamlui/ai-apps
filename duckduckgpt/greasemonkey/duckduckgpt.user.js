@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.519.3
+// @version             2023.11.519.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -424,11 +424,7 @@
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     }
 
-    function updateTweaksStyle() {
-        tweaksStyle.innerText = config.widerSidebar ? wsbStyle : (
-            'section[data-area="sidebar"] { flex-basis: 448px ; max-width: 448px } '
-          + 'section[data-area="mainline"] { flex-basis: 672px ; max-width: 672px } ')
-    }
+    function updateTweaksStyle() { tweaksStyle.innerText = config.widerSidebar ? wsbStyle : '' }
 
     function updateWSBsvg() {
 
@@ -990,7 +986,8 @@
     // Create DDG style tweaks
     const tweaksStyle = document.createElement('style'),
           wsbStyle = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
-                   + 'section[data-area="sidebar"] { max-width: 531px !important ; flex-basis: 531px !important }'
+                   + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
+                   + '#ddgpt-chatbar { width: 95.6% }'
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Stylize elements
