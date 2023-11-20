@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.19.1
+// @version             2023.11.19.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -1001,7 +1001,7 @@
         + '.bravegpt pre {'
             + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
             + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;'
-            + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 } ' )
+            + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 }' )
         + `.bravegpt .footer { margin: ${ isChromium ? 19 : 24 }px 0 -26px 0 ; border-top: none !important }`
         + '.bravegpt .feedback {'
             + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem ;'
@@ -1012,16 +1012,16 @@
         + `.bravegpt .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-            + ( isChromium ? 'top: 0.16em ; right: 4.9rem;' : 'top: 0.25em ; right: 9.78rem;' )
-            + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color: '
+            + ( isChromium ? 'top: 0.16em ; right: 4.9rem;' : 'top: 0.25em ; right: 9.78rem ;' )
+            + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color:'
                 + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
-        + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem } '
-        + '.chatgpt-js > a { color: inherit ; top: .054rem } '
-        + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px } '
+        + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem }'
+        + '.chatgpt-js > a { color: inherit ; top: .054rem }'
+        + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px }'
         + '.continue-chat > textarea {'
             + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
             + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 5px 0 ;  padding: 14px 22px 5px 10px ;'
-            + 'height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ; background: '
+            + 'height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ; background:'
                 + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + '}'
         + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
             + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
@@ -1041,13 +1041,13 @@
             + `position: relative ; bottom: ${ isChromium ? 61 : 57 }px; right: 10px;`
             + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
-        + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa } '
-        + '.kudo-ai a { color: #aaa ; text-decoration: none } '
+        + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa }'
+        + '.kudo-ai a { color: #aaa ; text-decoration: none }'
         + `.kudo-ai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
         + '.katex-html { display: none } ' // hide unrendered math
         + '.chatgpt-modal > div { padding: 24px 20px 24px 20px !important }' // increase alert padding
         + '.chatgpt-modal p { margin-left: 4px ; font-size: 1.115rem }' // position/size alert msg
-        + '.chatgpt-modal button { ' // alert buttons
+        + '.chatgpt-modal button {' // alert buttons
             + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ; padding: 5px !important ;'
             + 'border-radius: 0 !important ; border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
         + '.modal-buttons { margin: 20px 0px -3px -7px !important }' // position alert buttons
