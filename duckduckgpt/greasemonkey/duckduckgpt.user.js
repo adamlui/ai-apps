@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.520.4
+// @version             2023.11.520.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -412,7 +412,7 @@
     function ddgptInfo(msg) { console.info(config.appSymbol + ' DuckDuckGPT >> ' + msg) }
     function ddgptError(msg) { console.error(config.appSymbol + ' DuckDuckGPT >> ERROR: ' + msg) }
 
-    // Define DDG UI functions
+    // Define UI functions
 
     function isCenteredMode() { return document.documentElement.classList.toString().includes('center') }
 
@@ -721,7 +721,7 @@
                         }
                     } else if (endpoint.includes('aigcf')) {
                         if (event.responseText) {
-                            try { // to parse txt response from proxy endpoints
+                            try { // to parse txt response from AIGCF endpoint
                                 const answer = JSON.parse(event.responseText).choices[0].message.content
                                 ddgptShow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                             } catch (err) {
