@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20.2
+// @version             2023.11.20.3
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -794,7 +794,7 @@
         await pickAPI()
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint, headers: createHeaders(endpoint),
-            responseType: responseType(), data: createPayload(endpoint, convo), onloadstart: onLoadStart(), onload: onLoad(),
+            responseType: responseType(endpoint), data: createPayload(endpoint, convo), onloadstart: onLoadStart(), onload: onLoad(),
             onerror: err => {
                 googleGPTerror(err)
                 if (!config.proxyAPIenabled) googleGPTalert(!accessKey ? 'login' : 'suggestProxy')
@@ -830,8 +830,8 @@
                     })
         }})}
 
-        function responseType() {
-            return (!config.proxyAPIenabled && getUserscriptManager() == 'Tampermonkey') ? 'stream' : 'text' }
+        function responseType(api) {
+            return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
 
         function retryDiffHost() {
             googleGPTerror(`Error calling ${ endpoint }. Trying another endpoint...`)
