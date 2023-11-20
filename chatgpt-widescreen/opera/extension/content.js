@@ -389,7 +389,7 @@
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
               site == 'openai' ? (
-                  inputSelector + ' { padding-right: 148px } '  // narrow input to accomdate buttons
+                  inputSelector + `{ padding-right: ${ config.ncbHidden ? 126 : 152 }px }` // narrow input to accomodate btns
                 + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
                     + 'position: relative ; left: 66px ; top: 7px } ' // ...below avatar to avoid cropping
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
