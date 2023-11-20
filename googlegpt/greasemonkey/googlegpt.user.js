@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.19.5
+// @version             2023.11.20
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -716,6 +716,12 @@
         }
     }
 
+    function createHeaders(api) {
+        let headers = { 'Content-Type': 'application/json' }
+        if (api.includes('openai.com')) headers.Authorization = 'Bearer ' + accessKey
+        return headers
+    }
+
     function createPayload(msgs) {
         return JSON.stringify(config.proxyAPIenabled
             ? { messages: msgs, model: model }
@@ -727,8 +733,7 @@
         return new Promise((resolve, reject) => {
             const relatedQueriesQuery = 'Show a numbered list of queries related to this one:\n\n' + query
             GM.xmlHttpRequest({
-                method: 'POST', url: endpoint, responseType: 'text',
-                headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
+                method: 'POST', url: endpoint, responseType: 'text', headers: createHeaders(endpoint),
                 data: createPayload([
                     config.proxyAPIenabled ? { role: 'user', content: relatedQueriesQuery }
                                            : { role: 'user', id: chatgpt.uuidv4(),
@@ -784,8 +789,7 @@
         // Get/show answer from ChatGPT
         await pickAPI()
         GM.xmlHttpRequest({
-            method: 'POST', url: endpoint,
-            headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
+            method: 'POST', url: endpoint, headers: createHeaders(endpoint),
             responseType: responseType(), data: createPayload(convo), onloadstart: onLoadStart(), onload: onLoad(),
             onerror: err => {
                 googleGPTerror(err)
