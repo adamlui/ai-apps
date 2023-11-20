@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    if: github.event.commits[0].committer.username != 'kudo-sync-bot'
+    if: (github.repository == 'adamlui/chatgpt-apps') && (github.event.commits[0].committer.username != 'kudo-sync-bot')
     runs-on: ubuntu-latest
     steps:
 
