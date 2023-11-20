@@ -4,7 +4,7 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
     // Locate settings elements
-    const mainToggle = document.querySelector('input'),
+    const masterToggle = document.querySelector('input'),
           menuItems = document.querySelectorAll('.menu-item'),
           infinityModeDiv = menuItems[0], infinityModeToggle = infinityModeDiv.querySelector('input'),
           toggleVisDiv = menuItems[1], toggleVisToggle = toggleVisDiv.querySelector('input'),
@@ -18,7 +18,7 @@
     settings.load(['extensionDisabled', 'infinityMode', 'toggleHidden', 'autoScrollDisabled',
                    'replyInterval', 'replyTopic', 'replyLanguage', 'userLanguage'])
         .then(() => { // restore toggle states
-            mainToggle.checked = !config.extensionDisabled
+            masterToggle.checked = !config.extensionDisabled
             infinityModeToggle.checked = config.infinityMode
             toggleVisToggle.checked = !config.toggleHidden
             autoScrollToggle.checked = !config.autoScrollDisabled
@@ -38,7 +38,7 @@
     })
 
     // Add main toggle click-listener
-    mainToggle.addEventListener('change', () => {
+    masterToggle.addEventListener('change', () => {
         settings.save('extensionDisabled', !config.extensionDisabled)
         infinityModeToggle.checked = false // always disable Infinity Mode on main toggle
         syncExtension() ; updateGreyness()
@@ -212,8 +212,8 @@
         // Update menu contents
         document.querySelectorAll('div.logo, div.menu-title, div.menu')
             .forEach(elem => {
-                elem.classList.remove(mainToggle.checked ? 'disabled' : 'enabled')
-                elem.classList.add(mainToggle.checked ? 'enabled' : 'disabled')
+                elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
+                elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
             })
     }
 
