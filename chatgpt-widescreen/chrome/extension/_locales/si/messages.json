@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller වින්ඩෝස්" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "පුළුල් චැට්බොක්ස්" },
+  "menuLabel_newChatBtn": { "message": "නව කතාබස් බොත්තම" },
   "menuLabel_hiddenHeader": { "message": "සැඟවුණු ශීර්ෂකය" },
   "menuLabel_hiddenFooter": { "message": "සැඟවුණු පාදකය" },
   "menuLabel_modeNotifs": { "message": "ප්‍රකාර දැනුම්දීම්" },

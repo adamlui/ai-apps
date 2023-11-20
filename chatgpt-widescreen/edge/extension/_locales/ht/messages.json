@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Pi laj Chatbox" },
+  "menuLabel_newChatBtn": { "message": "Nouvo bouton Chat" },
   "menuLabel_hiddenHeader": { "message": "Tèt Kache" },
   "menuLabel_hiddenFooter": { "message": "Footer Hidden" },
   "menuLabel_modeNotifs": { "message": "Notifikasyon Mode" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "फुलर सञ्झ्याल" },
   "menuLabel_tallerChatbox": { "message": "टालर कुराकानी बाकस" },
   "menuLabel_widerChatbox": { "message": "फराकिलो च्याटबक्स" },
+  "menuLabel_newChatBtn": { "message": "नयाँ कुराकानी बटन" },
   "menuLabel_hiddenHeader": { "message": "लुकेको हेडर" },
   "menuLabel_hiddenFooter": { "message": "लुकेको फुटर" },
   "menuLabel_modeNotifs": { "message": "मोड सूचनाहरू" },

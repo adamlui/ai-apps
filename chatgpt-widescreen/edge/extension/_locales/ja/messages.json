@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "より広いウィンドウ" },
   "menuLabel_tallerChatbox": { "message": "より高いチャットボックス" },
   "menuLabel_widerChatbox": { "message": "ワイドチャットボックス" },
+  "menuLabel_newChatBtn": { "message": "新しいチャットボタン" },
   "menuLabel_hiddenHeader": { "message": "ヘッダーを隠す" },
   "menuLabel_hiddenFooter": { "message": "非表示のフッター" },
   "menuLabel_modeNotifs": { "message": "モードの通知" },

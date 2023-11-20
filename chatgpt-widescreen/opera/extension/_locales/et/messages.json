@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Pikem vestluskast" },
   "menuLabel_widerChatbox": { "message": "Laiem vestluskast" },
+  "menuLabel_newChatBtn": { "message": "Uus vestlusnupp" },
   "menuLabel_hiddenHeader": { "message": "Peidetud päis" },
   "menuLabel_hiddenFooter": { "message": "Peidetud jalus" },
   "menuLabel_modeNotifs": { "message": "Režiimi teated" },

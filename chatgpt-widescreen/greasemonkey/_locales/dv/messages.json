@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "ފުލަރ ވިންޑޯޒް" },
   "menuLabel_tallerChatbox": { "message": "ދިގު ޗެޓްބޮކްސް" },
   "menuLabel_widerChatbox": { "message": "ފުޅާ ޗެޓްބޮކްސް" },
+  "menuLabel_newChatBtn": { "message": "ނިއު ޗެޓް ބަޓަން" },
   "menuLabel_hiddenHeader": { "message": "ފޮރުވިފައި ހުންނަ ހެޑާ" },
   "menuLabel_hiddenFooter": { "message": "ފޮރުވިފައި ހުރި ފޫޓަރ" },
   "menuLabel_modeNotifs": { "message": "މޯޑް ނޮޓިފިކޭޝަންސް" },

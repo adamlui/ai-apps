@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "ફુલર વિન્ડો" },
   "menuLabel_tallerChatbox": { "message": "ઊંચા ચેટબોક્સ" },
   "menuLabel_widerChatbox": { "message": "વિશાળ ચેટબોક્સ" },
+  "menuLabel_newChatBtn": { "message": "નવું ચેટ બટન" },
   "menuLabel_hiddenHeader": { "message": "છુપાયેલ હેડર" },
   "menuLabel_hiddenFooter": { "message": "છુપાયેલ ફુટર" },
   "menuLabel_modeNotifs": { "message": "સ્થિતિ સૂચનાઓ" },

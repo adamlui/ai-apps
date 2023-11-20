@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Viši Chatbox" },
   "menuLabel_widerChatbox": { "message": "Širi okvir za razgovor" },
+  "menuLabel_newChatBtn": { "message": "Novi gumb za razgovor" },
   "menuLabel_hiddenHeader": { "message": "Skriveno zaglavlje" },
   "menuLabel_hiddenFooter": { "message": "Skriveno podnožje" },
   "menuLabel_modeNotifs": { "message": "Obavijesti o načinu rada" },

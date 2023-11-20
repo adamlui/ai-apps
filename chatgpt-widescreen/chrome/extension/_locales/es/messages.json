@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Ventanas más amplias" },
   "menuLabel_tallerChatbox": { "message": "Chatbox más alta" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
+  "menuLabel_newChatBtn": { "message": "botón de chat" },
   "menuLabel_hiddenHeader": { "message": "Cabecera Oculta" },
   "menuLabel_hiddenFooter": { "message": "Ocultar pie de página" },
   "menuLabel_modeNotifs": { "message": "Notificaciones de modo" },

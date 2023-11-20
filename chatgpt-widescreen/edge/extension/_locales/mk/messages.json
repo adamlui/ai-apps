@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Фулер Виндоус" },
   "menuLabel_tallerChatbox": { "message": "Повисоки Chatbox" },
   "menuLabel_widerChatbox": { "message": "Пошироко поле за разговор" },
+  "menuLabel_newChatBtn": { "message": "Копче за нов разговор" },
   "menuLabel_hiddenHeader": { "message": "Скриено заглавие" },
   "menuLabel_hiddenFooter": { "message": "Скриена подножје" },
   "menuLabel_modeNotifs": { "message": "Известувања за режим" },

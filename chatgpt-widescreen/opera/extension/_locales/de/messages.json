@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Breitere Fenster" },
   "menuLabel_tallerChatbox": { "message": "Höhere Chatbox" },
   "menuLabel_widerChatbox": { "message": "Breitere Chatbox" },
+  "menuLabel_newChatBtn": { "message": "Chat-Button" },
   "menuLabel_hiddenHeader": { "message": "Ausgeblendete Kopfzeile" },
   "menuLabel_hiddenFooter": { "message": "Ausgeblendete Fußzeile" },
   "menuLabel_modeNotifs": { "message": "Modusbenachrichtigungen" },

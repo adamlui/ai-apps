@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Plašāka tērzētava" },
+  "menuLabel_newChatBtn": { "message": "Jauna tērzēšanas poga" },
   "menuLabel_hiddenHeader": { "message": "Slēptā galvene" },
   "menuLabel_hiddenFooter": { "message": "Slēptā kājene" },
   "menuLabel_modeNotifs": { "message": "Režīma paziņojumi" },

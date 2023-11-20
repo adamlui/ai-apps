@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "بشپړ Windows" },
   "menuLabel_tallerChatbox": { "message": "د Valler" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
+  "menuLabel_newChatBtn": { "message": "د نوي چټ تڼۍ" },
   "menuLabel_hiddenHeader": { "message": "پټ سری" },
   "menuLabel_hiddenFooter": { "message": "پټ پښۍ" },
   "menuLabel_modeNotifs": { "message": "خبرتیاوې" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Უფრო ფართო ჩატბოქსი" },
+  "menuLabel_newChatBtn": { "message": "Ახალი ჩატის ღილაკი" },
   "menuLabel_hiddenHeader": { "message": "Დამალული სათაური" },
   "menuLabel_hiddenFooter": { "message": "Ფარული ქვესართი" },
   "menuLabel_modeNotifs": { "message": "Რეჟიმის გაფრთხილებები" },

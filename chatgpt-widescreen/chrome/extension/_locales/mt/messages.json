@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Windows aktar sħaħ" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Kaxxa taċ-chat usa'" },
+  "menuLabel_newChatBtn": { "message": "Buttuna taċ-chat ġdida" },
   "menuLabel_hiddenHeader": { "message": "Intestatura Moħbija" },
   "menuLabel_hiddenFooter": { "message": "Footer moħbija" },
   "menuLabel_modeNotifs": { "message": "Notifiki tal-Modalità" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "बड़ी विंडोज़" },
   "menuLabel_tallerChatbox": { "message": "लंबी चैटबॉक्स" },
   "menuLabel_widerChatbox": { "message": "व्यापक चैटबॉक्स" },
+  "menuLabel_newChatBtn": { "message": "नया चैट बटन" },
   "menuLabel_hiddenHeader": { "message": "छिपे हुए हेडर" },
   "menuLabel_hiddenFooter": { "message": "छिपे हुए पाद लेख" },
   "menuLabel_modeNotifs": { "message": "मोड अधिसूचनाएँ" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Windows-ийн Windows" },
   "menuLabel_tallerChatbox": { "message": "Chater" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
+  "menuLabel_newChatBtn": { "message": "Шинэ чат товчлуур" },
   "menuLabel_hiddenHeader": { "message": "Далд Толгой" },
   "menuLabel_hiddenFooter": { "message": "Нуусан хөл" },
   "menuLabel_modeNotifs": { "message": "Үгүй Тайлбар" },

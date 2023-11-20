@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Ica Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox Tukwila" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
+  "menuLabel_newChatBtn": { "message": "New Chat Button" },
   "menuLabel_hiddenHeader": { "message": "Umutwe uwafisama" },
   "menuLabel_hiddenFooter": { "message": "Ukufisama Footer" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications Tukwila" },

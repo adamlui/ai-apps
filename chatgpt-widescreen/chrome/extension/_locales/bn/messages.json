@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "ফুলার উইন্ডোজ" },
   "menuLabel_tallerChatbox": { "message": "লম্বা চ্যাটবক্স" },
   "menuLabel_widerChatbox": { "message": "চওড়া চ্যাটবক্স" },
+  "menuLabel_newChatBtn": { "message": "নতুন চ্যাট বোতাম" },
   "menuLabel_hiddenHeader": { "message": "লুকানো হেডার" },
   "menuLabel_hiddenFooter": { "message": "লুকানো ফুটার" },
   "menuLabel_modeNotifs": { "message": "মোড বিজ্ঞপ্তি" },

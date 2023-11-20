@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Matapihi tonu" },
   "menuLabel_tallerChatbox": { "message": "Pouaka Kōrerorero Taller" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
+  "menuLabel_newChatBtn": { "message": "New Chat Button" },
   "menuLabel_hiddenHeader": { "message": "Header huna" },
   "menuLabel_hiddenFooter": { "message": "Ko te waewae huna" },
   "menuLabel_modeNotifs": { "message": "Nga whakamohiotanga aratau" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "FULLER ونڈوز" },
   "menuLabel_tallerChatbox": { "message": "Taller چیٹ باکس" },
   "menuLabel_widerChatbox": { "message": "وسیع تر چیٹ باکس" },
+  "menuLabel_newChatBtn": { "message": "نیا چیٹ بٹن" },
   "menuLabel_hiddenHeader": { "message": "پوشیدہ ہیڈر" },
   "menuLabel_hiddenFooter": { "message": "پوشیدہ فوٹر" },
   "menuLabel_modeNotifs": { "message": "موڈ نوٹیفکیشنز (Mode Notifications)" },

@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Mas lapad nga Chatbox" },
+  "menuLabel_newChatBtn": { "message": "Bag-ong Button sa Chat" },
   "menuLabel_hiddenHeader": { "message": "Natago nga Header" },
   "menuLabel_hiddenFooter": { "message": "Natago nga Footer" },
   "menuLabel_modeNotifs": { "message": "Mga Notipikasyon sa Mode" },

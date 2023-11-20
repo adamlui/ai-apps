@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Bentananan mas yen" },
   "menuLabel_tallerChatbox": { "message": "Tiernan Chatbox" },
   "menuLabel_widerChatbox": { "message": "Un chatbox mas largo" },
+  "menuLabel_newChatBtn": { "message": "Neuester Beitrag Di Button" },
   "menuLabel_hiddenHeader": { "message": "Hidratacion Header" },
   "menuLabel_hiddenFooter": { "message": "Hidratacion Footer" },
   "menuLabel_modeNotifs": { "message": "Notifikashon di Mode" },

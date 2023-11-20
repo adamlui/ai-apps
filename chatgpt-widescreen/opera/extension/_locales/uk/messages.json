@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Більш Широкі Вікна" },
   "menuLabel_tallerChatbox": { "message": "Вища Чат-коробка" },
   "menuLabel_widerChatbox": { "message": "Ширше вікно чату" },
+  "menuLabel_newChatBtn": { "message": "Нова кнопка чату" },
   "menuLabel_hiddenHeader": { "message": "Прихований заголовок" },
   "menuLabel_hiddenFooter": { "message": "Прихований нижній колонтитул" },
   "menuLabel_modeNotifs": { "message": "Сповіщення про Режим" },

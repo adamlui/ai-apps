@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Wider Chatbox" },
+  "menuLabel_newChatBtn": { "message": "New Chat Button" },
   "menuLabel_hiddenHeader": { "message": "Hidden Header" },
   "menuLabel_hiddenFooter": { "message": "Hidden Footer" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },

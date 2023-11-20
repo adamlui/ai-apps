@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Vindovs" },
   "menuLabel_tallerChatbox": { "message": "Viši Chatbok" },
   "menuLabel_widerChatbox": { "message": "Šire ćaskanje" },
+  "menuLabel_newChatBtn": { "message": "Novo dugme za ćaskanje" },
   "menuLabel_hiddenHeader": { "message": "Skriveno zaglavlje" },
   "menuLabel_hiddenFooter": { "message": "Skriveno podnožje" },
   "menuLabel_modeNotifs": { "message": "Obaveštenja o režimu" },

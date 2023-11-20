@@ -4,6 +4,7 @@
   "menuLabel_fullerWins": { "message": "Fuller Windows" },
   "menuLabel_tallerChatbox": { "message": "По - висок Chatbox" },
   "menuLabel_widerChatbox": { "message": "По - широка чат кутия" },
+  "menuLabel_newChatBtn": { "message": "Нов бутон за чат" },
   "menuLabel_hiddenHeader": { "message": "Скрит Хедър" },
   "menuLabel_hiddenFooter": { "message": "Скрит долен колонтитул" },
   "menuLabel_modeNotifs": { "message": "Известия за режим" },
