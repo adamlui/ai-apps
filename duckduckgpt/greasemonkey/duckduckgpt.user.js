@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.520.2
+// @version             2023.11.520.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -624,7 +624,7 @@
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
             headers: createHeaders(endpoint),
-            responseType: responseType(), data: createPayload(endpoint, convo), onloadstart: onLoadStart(), onload: onLoad(),
+            responseType: responseType(endpoint), data: createPayload(endpoint, convo), onloadstart: onLoadStart(), onload: onLoad(),
             onerror: err => {
                 ddgptError(err)
                 if (!config.proxyAPIenabled) ddgptAlert(!accessKey ? 'login' : 'suggestProxy')
@@ -660,8 +660,8 @@
                     })
         }})}
 
-        function responseType() {
-            return (!config.proxyAPIenabled && getUserscriptManager() == 'Tampermonkey') ? 'stream' : 'text' }
+        function responseType(api) {
+            return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
 
         function retryDiffHost() {
             ddgptError(`Error calling ${ endpoint }. Trying another endpoint...`)
@@ -733,7 +733,6 @@
                                 + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
                             else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
                                 await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
-
                             } else { // use different endpoint or suggest OpenAI
                                 ddgptError(ddgptAlerts.parseFailed + ': ' + err)
                                 if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
