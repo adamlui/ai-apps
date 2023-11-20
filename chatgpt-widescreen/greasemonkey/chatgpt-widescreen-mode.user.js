@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.18.1
+// @version             2023.11.19
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -269,7 +269,8 @@
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled', 'wcbDisabled', 'hiddenHeader', 'hiddenFooter', 'wideScreen')
+    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled',
+        'wcbDisabled', 'hiddenHeader', 'hiddenFooter', 'ncbHidden', 'wideScreen')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -337,6 +338,17 @@
             updateWidescreenStyle()
             if (!config.notifHidden)
                 notify(`${ messages.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ state.word[+config.wcbDisabled] }`)
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to hide New Chat button
+        const hncLabel = state.symbol[+config.ncbHidden] + ' '
+                       + ( messages.menuLabel_newChatBtn || 'New Chat Button' )
+                       + state.separator + state.word[+config.ncbHidden]
+        menuIDs.push(GM_registerMenuCommand(hncLabel, () => {
+            saveSetting('ncbHidden', !config.ncbHidden)
+            updateTweaksStyle()
+            notify(`${ messages.menuLabel_newChatBtn || 'New Chat Button' }: ${ state.word[+config.ncbHidden] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -698,6 +710,7 @@
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) : '' ) // hide footer
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
+        + `#newChat-button { display: ${ config.ncbHidden ? 'none' : 'flex' }}`
     }
 
     function updateWidescreenStyle() {
