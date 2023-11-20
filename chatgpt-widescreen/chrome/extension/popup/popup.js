@@ -5,7 +5,7 @@
 
     // Initialize popup toggles
     settings.load('fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
-                  'hiddenHeader', 'hiddenFooter', 'notifHidden', 'extensionDisabled')
+                  'hiddenHeader', 'hiddenFooter', 'notifDisabled', 'extensionDisabled')
         .then(() => { // restore extension/toggle states
             mainToggle.checked = !config.extensionDisabled
             fullerWinToggle.checked = config.fullerWindows
@@ -14,7 +14,7 @@
             newChatBtnToggle.checked = !config.ncbDisabled
             hiddenHeaderToggle.checked = config.hiddenHeader
             hiddenFooterToggle.checked = config.hiddenFooter
-            notificationsToggle.checked = !config.notifHidden
+            notificationsToggle.checked = !config.notifDisabled
             updateGreyness()
         })
 
@@ -39,8 +39,8 @@
     fullerWinToggle.addEventListener('change', () => {
         settings.save('fullerWindows', !config.fullerWindows)
         syncExtension()
-        settings.load('notifHidden').then(() => {
-            if (!config.notifHidden) { // show mode notification if enabled
+        settings.load('notifDisabled').then(() => {
+            if (!config.notifDisabled) { // show mode notification if enabled
                 notify(chrome.i18n.getMessage('menuLabel_fullerWins') + ' ' + ( config.fullerWindows ? 'ON' : 'OFF' ))
         }})
     })
@@ -55,8 +55,8 @@
     tallerChatboxToggle.addEventListener('change', () => {
         settings.save('tcbDisabled', !config.tcbDisabled)
         syncExtension()
-        settings.load('notifHidden').then(() => {
-            if (!config.notifHidden) { // show mode notification if enabled
+        settings.load('notifDisabled').then(() => {
+            if (!config.notifDisabled) { // show mode notification if enabled
                 notify(chrome.i18n.getMessage('menuLabel_tallerChatbox') + ' ' + (config.tcbDisabled ? 'OFF' : 'ON'))
         }})
     })
@@ -71,8 +71,8 @@
     widerChatboxToggle.addEventListener('change', () => {
         settings.save('widerChatbox', !config.widerChatbox)
         syncExtension()
-        settings.load('notifHidden').then(() => {
-            if (!config.notifHidden) { // show mode notification if enabled
+        settings.load('notifDisabled').then(() => {
+            if (!config.notifDisabled) { // show mode notification if enabled
                 notify(chrome.i18n.getMessage('menuLabel_widerChatbox') + ' ' + (config.widerChatbox ? 'ON' : 'OFF'))
         }})
     })
@@ -87,8 +87,8 @@
     newChatBtnToggle.addEventListener('change', () => {
         settings.save('ncbDisabled', !config.ncbDisabled)
         syncExtension()
-        settings.load('notifHidden').then(() => {
-            if (!config.notifHidden) { // show mode notification if enabled
+        settings.load('notifDisabled').then(() => {
+            if (!config.notifDisabled) { // show mode notification if enabled
                 notify(chrome.i18n.getMessage('menuLabel_newChatBtn') + ' ' + (config.ncbDisabled ? 'OFF' : 'ON'))
         }})
     })
@@ -104,7 +104,7 @@
         settings.save('hiddenHeader', !config.hiddenHeader)
         syncExtension()
         settings.load('hiddenHeader').then(() => {
-            if (!config.notifHidden) { // show mode notification if enabled
+            if (!config.notifDisabled) { // show mode notification if enabled
                 notify(chrome.i18n.getMessage('menuLabel_hiddenHeader') + ' ' + (config.hiddenHeader ? 'ON' : 'OFF'))
         }})
     })
@@ -119,8 +119,8 @@
     hiddenFooterToggle.addEventListener('change', () => {
         settings.save('hiddenFooter', !config.hiddenFooter)
         syncExtension()
-        settings.load('notifHidden').then(() => {
-            if (!config.notifHidden) { // show mode notification if enabled
+        settings.load('notifDisabled').then(() => {
+            if (!config.notifDisabled) { // show mode notification if enabled
                 notify(chrome.i18n.getMessage('menuLabel_hiddenFooter') + ' ' + (config.hiddenFooter ? 'ON' : 'OFF'))
         }})
     })
@@ -133,8 +133,8 @@
     const notificationsToggle = toggles[7],
           notificationsLabel = notificationsToggle.parentNode.parentNode
     notificationsToggle.addEventListener('change', () => {
-        settings.save('notifHidden', !config.notifHidden)
-        notify(chrome.i18n.getMessage('menuLabel_modeNotifs') + ' ' + ( config.notifHidden ? 'OFF' : 'ON' ))
+        settings.save('notifDisabled', !config.notifDisabled)
+        notify(chrome.i18n.getMessage('menuLabel_modeNotifs') + ' ' + ( config.notifDisabled ? 'OFF' : 'ON' ))
     })
     notificationsLabel.addEventListener('click', event => {
         if ([notificationsLabel, document.querySelector('[data-locale*="modeNotifs"]')].includes(event.target))

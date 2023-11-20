@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.19.2
+// @version             2023.11.19.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -269,7 +269,7 @@
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled',
+    loadSetting('fullerWindows', 'fullWindow', 'notifDisabled', 'tcbDisabled',
         'wcbDisabled', 'hiddenHeader', 'hiddenFooter', 'ncbDisabled', 'wideScreen')
 
     // Define messages
@@ -314,7 +314,7 @@
         menuIDs.push(GM_registerMenuCommand(fwLabel, () => {
             saveSetting('fullerWindows', !config.fullerWindows)
             syncFullerWindows(config.fullerWindows) // live update on click
-            if (!config.notifHidden)
+            if (!config.notifDisabled)
                 notify(`${ ( messages.menuLabel_fullerWins || 'Fuller Windows' ) }: ${ state.word[+!config.fullerWindows] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
@@ -325,7 +325,7 @@
         menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
             saveSetting('tcbDisabled', !config.tcbDisabled)
             updateTweaksStyle()
-            if (!config.notifHidden)
+            if (!config.notifDisabled)
                 notify(`${ messages.menuLabel_tallerChatbox || 'Taller Chatbox' }: ${ state.word[+config.tcbDisabled] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
@@ -336,7 +336,7 @@
         menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
             saveSetting('wcbDisabled', !config.wcbDisabled)
             updateWidescreenStyle()
-            if (!config.notifHidden)
+            if (!config.notifDisabled)
                 notify(`${ messages.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ state.word[+config.wcbDisabled] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
@@ -361,7 +361,7 @@
             menuIDs.push(GM_registerMenuCommand(hhLabel, () => {
                 saveSetting('hiddenHeader', !config.hiddenHeader)
                 updateTweaksStyle()
-                if (!config.notifHidden)
+                if (!config.notifDisabled)
                     notify(`${ messages.menuLabel_hiddenHeader || 'Hidden Header' }: ${ state.word[+!config.hiddenHeader] }`)
                 for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             }))
@@ -373,19 +373,19 @@
             menuIDs.push(GM_registerMenuCommand(hfLabel, () => {
                 saveSetting('hiddenFooter', !config.hiddenFooter)
                 updateTweaksStyle()
-                if (!config.notifHidden)
+                if (!config.notifDisabled)
                     notify(`${ messages.menuLabel_hiddenFooter || 'Hidden Footer' }: ${ state.word[+!config.hiddenFooter] }`)
                 for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             }))
         }
 
         // Add command to show notifications when switching modes
-        const mnLabel = state.symbol[+config.notifHidden] + ' '
+        const mnLabel = state.symbol[+config.notifDisabled] + ' '
                       + ( messages.menuLabel_modeNotifs || 'Mode Notifications' )
-                      + state.separator + state.word[+config.notifHidden]
+                      + state.separator + state.word[+config.notifDisabled]
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
-            saveSetting('notifHidden', !config.notifHidden)
-            notify(`${ messages.menuLabel_modeNotifs || 'Mode Notifications' }: ${ state.word[+config.notifHidden] }`)
+            saveSetting('notifDisabled', !config.notifDisabled)
+            notify(`${ messages.menuLabel_modeNotifs || 'Mode Notifications' }: ${ state.word[+config.notifDisabled] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -686,7 +686,7 @@
                                              : chatgpt.isFullScreen() )
         saveSetting(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
         if (mode == 'fullWindow') syncFullerWindows(state)
-        if (!config.notifHidden) { // notify synced state
+        if (!config.notifDisabled) { // notify synced state
             notify(`${ messages['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`) }
         config.modeSynced = true ; setTimeout(() => { config.modeSynced = false }, 100) // prevent repetition
     }
@@ -886,7 +886,7 @@
                 if (config.fullWindow) { toggleMode('fullWindow', 'ON')
                     if (['openai', 'aivvm'].includes(site)) { // sidebar observer doesn't trigger
                         syncFullerWindows(true) // so sync Fuller Windows...
-                        if (!config.notifHidden) // ... + notify
+                        if (!config.notifDisabled) // ... + notify
                             notify(( messages.mode_fullWindow || 'Full-window' ) + ' ON')
                 }}
                 if (config.tcbDisabled) updateTweaksStyle() ; prevSessionChecked = true

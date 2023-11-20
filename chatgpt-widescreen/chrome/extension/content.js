@@ -134,14 +134,14 @@
 
             // Restore previous session's state + manage toggles
             settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
-                           'hiddenHeader', 'hiddenFooter', 'notifHidden', 'extensionDisabled'])
+                           'hiddenHeader', 'hiddenFooter', 'notifDisabled', 'extensionDisabled'])
                 .then(() => { if (!config.extensionDisabled) {                    
                     if (!prevSessionChecked) { // restore previous session's state
                         if (config.wideScreen) toggleMode('wideScreen', 'ON')
                         if (config.fullWindow) { toggleMode('fullWindow', 'ON')
                             if (site == 'openai') { // sidebar observer doesn't trigger
                                 syncFullerWindows(true) // so sync Fuller Windows...
-                                if (!config.notifHidden) // ... + notify
+                                if (!config.notifDisabled) // ... + notify
                                     notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                         }}
                         if (!config.tcbDisabled || config.ncbDisabled || config.hiddenHeader || config.hiddenFooter)
@@ -369,8 +369,8 @@
                                              : chatgpt.isFullScreen() )
         settings.save(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
         if (mode == 'fullWindow') syncFullerWindows(state)
-        settings.load('notifHidden').then(() => {
-            if (!config.notifHidden) { // notify synced state
+        settings.load('notifDisabled').then(() => {
+            if (!config.notifDisabled) { // notify synced state
                 notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
         }})
         config.modeSynced = true ; setTimeout(() => { config.modeSynced = false }, 100) // prevent repetition
@@ -415,7 +415,7 @@
 
     syncExtension = () => { // settings, then disable modes or sync taller/wider chatbox
         settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
-                      'hiddenHeader', 'hiddenFooter', 'notifHidden')
+                      'hiddenHeader', 'hiddenFooter', 'notifDisabled')
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
                     try { document.head.removeChild(wideScreenStyle) } catch (err) {}
