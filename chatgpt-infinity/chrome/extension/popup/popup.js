@@ -10,9 +10,19 @@
         elem.innerText = translatedText
     })
 
+    // Init master toggle
+    const toggles = document.querySelectorAll('input'),
+          masterToggle = toggles[0]
+    settings.load('extensionDisabled').then(() => { // init toggle state, update greyness
+        masterToggle.checked = !config.extensionDisabled ; updateGreyness() })
+    masterToggle.addEventListener('change', () => {    
+        settings.save('extensionDisabled', !config.extensionDisabled)
+        infinityModeToggle.checked = false // always disable Infinity Mode on main toggle
+        syncExtension() ; updateGreyness()
+    })
+
     // Locate settings elements
-    const masterToggle = document.querySelector('input'),
-          menuItems = document.querySelectorAll('.menu-item'),
+    const menuItems = document.querySelectorAll('.menu-item'),
           infinityModeDiv = menuItems[0], infinityModeToggle = infinityModeDiv.querySelector('input'),
           toggleVisDiv = menuItems[1], toggleVisToggle = toggleVisDiv.querySelector('input'),
           autoScrollDiv = menuItems[2], autoScrollToggle = autoScrollDiv.querySelector('input'),
@@ -22,10 +32,9 @@
 
     // Sync toggle states + menu labels
     const re_all = new RegExp('^(' + chrome.i18n.getMessage('menuLabel_all') + '|all|any|every)$', 'i')
-    settings.load(['extensionDisabled', 'infinityMode', 'toggleHidden', 'autoScrollDisabled',
+    settings.load(['infinityMode', 'toggleHidden', 'autoScrollDisabled',
                    'replyInterval', 'replyTopic', 'replyLanguage', 'userLanguage'])
         .then(() => { // restore toggle states
-            masterToggle.checked = !config.extensionDisabled
             infinityModeToggle.checked = config.infinityMode
             toggleVisToggle.checked = !config.toggleHidden
             autoScrollToggle.checked = !config.autoScrollDisabled
@@ -34,15 +43,7 @@
                 + ( re_all.test(config.replyTopic) ? chrome.i18n.getMessage('menuLabel_all')
                                                     : toTitleCase(config.replyTopic) )
             replyIntervalLabel.innerText += ` — ${ config.replyInterval }s`
-            updateGreyness()
         })
-
-    // Add main toggle click-listener
-    masterToggle.addEventListener('change', () => {
-        settings.save('extensionDisabled', !config.extensionDisabled)
-        infinityModeToggle.checked = false // always disable Infinity Mode on main toggle
-        syncExtension() ; updateGreyness()
-    })
 
     // Add 'Infinity Mode' click-listeners
     infinityModeToggle.addEventListener('change', () => {
