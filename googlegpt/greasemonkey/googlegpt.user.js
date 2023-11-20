@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20.3
+// @version             2023.11.20.4
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -840,9 +840,9 @@
             getShowReply(convo, callback)
         }
 
-        function onLoadStart() { // process streams for unproxied TM users
+        function onLoadStart() { // process streams
             googleGPTinfo('Endpoint used: ' + endpoint)
-            if (!config.proxyAPIenabled && getUserscriptManager() == 'Tampermonkey') {
+            if (responseType(endpoint) == 'stream') {
                 return stream => {
                     const reader = stream.response.getReader()
                     reader.read().then(function processText({ done, value }) {
@@ -862,7 +862,7 @@
                         return reader.read().then(processText)
         })}}}
 
-        function onLoad() {
+        function onLoad() { // process text
             return async event => {
                 if (event.status !== 200) {
                     googleGPTerror('Event status: ' + event.status)
@@ -875,41 +875,40 @@
                         googleGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
                     else if (event.status === 429) googleGPTalert('tooManyRequests')
                     else googleGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
-                } else if (!config.proxyAPIenabled && getUserscriptManager() != 'Tampermonkey') {
-                    if (event.response) {
-                        try { // to parse txt response from OpenAI endpoint for non-TM users
-                            const responseParts = event.response.split('\n\n'),
-                                  finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
-                                  answer = finalResponse.message.content.parts[0]
-                            googleGPTshow(answer)
-                        } catch (err) {
-                            googleGPTerror(googleGPTalerts.parseFailed + ': ' + err)
-                            googleGPTerror('Response: ' + event.response)
-                            googleGPTalert('suggestProxy')
-                        }
-                    }
-                } else if (config.proxyAPIenabled) {
-                    if (event.responseText) {
-                        try { // to parse txt response from proxy endpoints
-                            const answer = JSON.parse(event.responseText).choices[0].message.content
-                            googleGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
-                        } catch (err) {
-                            googleGPTinfo('Response: ' + event.responseText)
-                            if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
-                                googleGPTshow(messages.alert_censored || 'Sorry, according to our product rules, '
-                                    + 'we cannot provide you with an answer to this question, please try other questions')
-                            else if (event.responseText.includes('维护'))
-                                googleGPTshow(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
-                                    + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
-                            else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
-                                await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
-                            } else { // use different endpoint or suggest OpenAI
+                } else if (responseType(endpoint) == 'text') {
+                    if (endpoint.includes('openai')) {
+                        if (event.response) {
+                            try { // to parse txt response from OpenAI endpoint for non-TM users
+                                const responseParts = event.response.split('\n\n'),
+                                      finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
+                                      answer = finalResponse.message.content.parts[0]
+                                googleGPTshow(answer)
+                            } catch (err) {
                                 googleGPTerror(googleGPTalerts.parseFailed + ': ' + err)
-                                if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-                                else googleGPTalert('suggestOpenAI')
+                                googleGPTerror('Response: ' + event.response)
+                                googleGPTalert('suggestProxy')
                             }
                         }
-        }}}}
+                    } else if (endpoint.includes('aigcf')) {
+                        if (event.responseText) {
+                            try { // to parse txt response from AIGCF endpoint
+                                const answer = JSON.parse(event.responseText).choices[0].message.content
+                                googleGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                            } catch (err) {
+                                googleGPTinfo('Response: ' + event.responseText)
+                                if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
+                                    googleGPTshow(messages.alert_censored || 'Sorry, according to our product rules, '
+                                        + 'we cannot provide you with an answer to this question, please try other questions')
+                                else if (event.responseText.includes('维护'))
+                                    googleGPTshow(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
+                                        + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
+                                else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
+                                    await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
+                                } else { // use different endpoint or suggest OpenAI
+                                    googleGPTerror(googleGPTalerts.parseFailed + ': ' + err)
+                                    if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
+                                    else googleGPTalert('suggestOpenAI')
+        }}}}}}}
     }
 
     function googleGPTshow(answer) {
