@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.19
+// @version             2023.11.19.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -269,7 +269,7 @@
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('autoclear', 'buttonHidden', 'notifHidden', 'toggleHidden')
+    loadSetting('autoclear', 'buttonHidden', 'notifDisabled', 'toggleHidden')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -358,9 +358,9 @@
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         if (config.autoclear) {
             setTimeout(chatgpt.clearChats, 250)
-            if (!config.notifHidden) notify(( messages.mode_autoClear || 'Auto-Clear' ) + ': ON')
+            if (!config.notifDisabled) notify(( messages.mode_autoClear || 'Auto-Clear' ) + ': ON')
         } else if (!config.autoclear)
-            if (!config.notifHidden) notify(( messages.mode_autoClear || 'Auto-Clear' ) + ': OFF')
+            if (!config.notifDisabled) notify(( messages.mode_autoClear || 'Auto-Clear' ) + ': OFF')
         saveSetting('autoclear', config.autoclear)
     })
 
@@ -375,7 +375,7 @@
     // Auto-clear on first visit if enabled
     if (config.autoclear) {
         if (chatgpt.history.isOn()) setTimeout(() => { chatgpt.clearChats() }, 250)
-        if (!config.notifHidden) notify(( messages.mode_autoClear || 'Auto-Clear' ) + ': ON')
+        if (!config.notifDisabled) notify(( messages.mode_autoClear || 'Auto-Clear' ) + ': ON')
     }
 
     // Define SCRIPT functions
@@ -405,18 +405,18 @@
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            if (!config.notifHidden) {
+            if (!config.notifDisabled) {
                 notify(( messages.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+config.toggleHidden])
             } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when changing settings/modes
-        const mnLabel = state.symbol[+config.notifHidden] + ' '
+        const mnLabel = state.symbol[+config.notifDisabled] + ' '
                       + ( messages.menuLabel_modeNotifs || 'Mode Notifications' )
-                      + state.separator + state.word[+config.notifHidden]
+                      + state.separator + state.word[+config.notifDisabled]
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
-            saveSetting('notifHidden', !config.notifHidden)
-            notify(( messages.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + state.word[+config.notifHidden])
+            saveSetting('notifDisabled', !config.notifDisabled)
+            notify(( messages.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + state.word[+config.notifDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
