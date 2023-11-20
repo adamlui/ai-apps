@@ -285,7 +285,7 @@
     syncExtension = () => { // settings + sidebar toggle visibility
         settings.load(['extensionDisabled', 'toggleHidden', 'autoScrollDisabled',
                        'replyTopic', 'replyInterval', 'replyLanguage'])
-            .then(() => { updateToggleHTML() // hide/show sidebar toggle based on latest setting
+            .then(() => { insertToggle() ; updateToggleHTML() // hide/show sidebar toggle based on latest setting
     })}
 
 })()
