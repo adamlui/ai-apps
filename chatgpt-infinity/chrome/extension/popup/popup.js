@@ -11,8 +11,7 @@
     })
 
     // Init master toggle
-    const toggles = document.querySelectorAll('input'),
-          masterToggle = toggles[0]
+    const masterToggle = document.querySelector('input')
     settings.load('extensionDisabled').then(() => { // init toggle state, update greyness
         masterToggle.checked = !config.extensionDisabled ; updateGreyness() })
     masterToggle.addEventListener('change', () => {    
@@ -51,7 +50,7 @@
             if (new URL(tabs[0].url).hostname != 'chat.openai.com') return // do nothing if not on ChatGPT
             chrome.tabs.sendMessage(tabs[0].id, { action: 'clickToggle' }) // else click sidebar toggle
         })
-        notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ' ' + (infinityModeToggle.checked ? 'ON' : 'OFF'));
+        notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ' ' + (infinityModeToggle.checked ? 'ON' : 'OFF'))
     })
     infinityModeDiv.addEventListener('click', event => {
         if ([infinityModeDiv, document.querySelector('[data-locale*="infinityMode"]')].includes(event.target))
