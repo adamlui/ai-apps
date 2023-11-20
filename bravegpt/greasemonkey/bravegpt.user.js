@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20
+// @version             2023.11.20.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -509,11 +509,15 @@
         return headers
     }
 
-    function createPayload(msgs) {
-        return JSON.stringify(config.proxyAPIenabled
-            ? { messages: msgs, model: model }
-            : { action: 'next', messages: msgs, model: model,
-                parent_message_id: chatgpt.uuidv4(), max_tokens: 4000 })
+    function createPayload(api, msgs) {
+        let payload = {}
+        if (api.includes('openai.com')) {
+            payload.action = 'next' ; payload.messages = msgs ; payload.model = model
+            payload.parent_message_id = chatgpt.uuidv4() ; payload.max_tokens = 4000
+        } else if (api.includes('aigcfun.com')) {
+            payload.messages = msgs ; payload.model = model
+        }
+        return JSON.stringify(payload)
     }
 
     function getRelatedQueries(query) {
@@ -521,7 +525,7 @@
             const relatedQueriesQuery = 'Show a numbered list of queries related to this one:\n\n' + query
             GM.xmlHttpRequest({
                 method: 'POST', url: endpoint, responseType: 'text', headers: createHeaders(endpoint),
-                data: createPayload([
+                data: createPayload(endpoint, [
                     config.proxyAPIenabled ? { role: 'user', content: relatedQueriesQuery }
                                            : { role: 'user', id: chatgpt.uuidv4(),
                                                content: { content_type: 'text', parts: [relatedQueriesQuery] }}]),
@@ -577,7 +581,7 @@
         await pickAPI()
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint, headers: createHeaders(endpoint),
-            responseType: responseType(), data: createPayload(convo), onloadstart: onLoadStart(), onload: onLoad(),
+            responseType: responseType(), data: createPayload(endpoint, convo), onloadstart: onLoadStart(), onload: onLoad(),
             onerror: err => {
                 braveGPTerror(err)
                 if (!config.proxyAPIenabled) braveGPTalert(!accessKey ? 'login' : 'suggestProxy')
