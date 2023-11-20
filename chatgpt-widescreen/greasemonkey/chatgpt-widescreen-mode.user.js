@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.19.1
+// @version             2023.11.19.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -270,7 +270,7 @@
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('fullerWindows', 'fullWindow', 'notifHidden', 'tcbDisabled',
-        'wcbDisabled', 'hiddenHeader', 'hiddenFooter', 'ncbHidden', 'wideScreen')
+        'wcbDisabled', 'hiddenHeader', 'hiddenFooter', 'ncbDisabled', 'wideScreen')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -342,13 +342,13 @@
         }))
 
         // Add command to hide New Chat button
-        const hncLabel = state.symbol[+config.ncbHidden] + ' '
+        const hncLabel = state.symbol[+config.ncbDisabled] + ' '
                        + ( messages.menuLabel_newChatBtn || 'New Chat Button' )
-                       + state.separator + state.word[+config.ncbHidden]
+                       + state.separator + state.word[+config.ncbDisabled]
         menuIDs.push(GM_registerMenuCommand(hncLabel, () => {
-            saveSetting('ncbHidden', !config.ncbHidden)
+            saveSetting('ncbDisabled', !config.ncbDisabled)
             updateTweaksStyle()
-            notify(`${ messages.menuLabel_newChatBtn || 'New Chat Button' }: ${ state.word[+config.ncbHidden] }`)
+            notify(`${ messages.menuLabel_newChatBtn || 'New Chat Button' }: ${ state.word[+config.ncbDisabled] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -704,13 +704,13 @@
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
               ['openai', 'aivvm'].includes(site) ? (
-                  inputSelector + `{ padding-right: ${ config.ncbHidden ? 126 : 152 }px }` // narrow input to accomodate btns
+                  inputSelector + `{ padding-right: ${ config.ncbDisabled ? 126 : 152 }px }` // narrow input to accomodate btns
                 + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
                     + 'position: relative ; left: 66px ; top: 7px } ' // ...below avatar to avoid cropping
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) : '' ) // hide footer
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
-        + `#newChat-button { display: ${ config.ncbHidden ? 'none' : 'flex' }}`
+        + `#newChat-button { display: ${ config.ncbDisabled ? 'none' : 'flex' }}`
     }
 
     function updateWidescreenStyle() {
