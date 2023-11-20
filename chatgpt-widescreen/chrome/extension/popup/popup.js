@@ -1,145 +1,33 @@
 (async () => {
 
     // Import settings-utils.js
-    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
-
-    // Initialize popup toggles
-    settings.load('fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
-                  'hiddenHeader', 'hiddenFooter', 'notifDisabled', 'extensionDisabled')
-        .then(() => { // restore extension/toggle states
-            mainToggle.checked = !config.extensionDisabled
-            fullerWinToggle.checked = config.fullerWindows
-            tallerChatboxToggle.checked = !config.tcbDisabled
-            widerChatboxToggle.checked = config.widerChatbox
-            newChatBtnToggle.checked = !config.ncbDisabled
-            hiddenHeaderToggle.checked = config.hiddenHeader
-            hiddenFooterToggle.checked = config.hiddenFooter
-            notificationsToggle.checked = !config.notifDisabled
-            updateGreyness()
-        })
+    const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))    
 
     // Localize labels
     document.querySelectorAll('[data-locale]').forEach(elem => {
         const localeKeys = elem.dataset.locale.split(' '),
-              translatedText = localeKeys.map(key => chrome.i18n.getMessage(key)).join(' ');
-        elem.innerText = translatedText;
-    });
+              translatedText = localeKeys.map(key => chrome.i18n.getMessage(key)).join(' ')
+        elem.innerText = translatedText
+    })
 
-    // Add main toggle click-listener
+    // Init master toggle
     const toggles = document.querySelectorAll('input'),
-          mainToggle = toggles[0]
-    mainToggle.addEventListener('change', () => {    
+          masterToggle = toggles[0]
+    settings.load('extensionDisabled').then(() => { // init toggle state, update greyness
+        masterToggle.checked = !config.extensionDisabled ; updateGreyness() })
+    masterToggle.addEventListener('change', () => {    
         settings.save('extensionDisabled', !this.checked)
         syncExtension() ; updateGreyness()
     })
 
-    // Add Fuller Windows toggle label click-listeners
-    const fullerWinToggle = toggles[1],
-          fullerWinLabel = fullerWinToggle.parentNode.parentNode
-    fullerWinToggle.addEventListener('change', () => {
-        settings.save('fullerWindows', !config.fullerWindows)
-        syncExtension()
-        settings.load('notifDisabled').then(() => {
-            if (!config.notifDisabled) { // show mode notification if enabled
-                notify(chrome.i18n.getMessage('menuLabel_fullerWins') + ' ' + ( config.fullerWindows ? 'ON' : 'OFF' ))
-        }})
-    })
-    fullerWinLabel.addEventListener('click', event => {
-        if ([fullerWinLabel, document.querySelector('[data-locale*="fullerWins"]')].includes(event.target))
-            fullerWinToggle.click() 
-    })
-
-    // Add Taller Chatbox toggle label click-listeners
-    const tallerChatboxToggle = toggles[2],
-          tallerChatboxLabel = tallerChatboxToggle.parentNode.parentNode
-    tallerChatboxToggle.addEventListener('change', () => {
-        settings.save('tcbDisabled', !config.tcbDisabled)
-        syncExtension()
-        settings.load('notifDisabled').then(() => {
-            if (!config.notifDisabled) { // show mode notification if enabled
-                notify(chrome.i18n.getMessage('menuLabel_tallerChatbox') + ' ' + (config.tcbDisabled ? 'OFF' : 'ON'))
-        }})
-    })
-    tallerChatboxLabel.addEventListener('click', event => {
-        if ([tallerChatboxLabel, document.querySelector('[data-locale*="tallerChatbox"]')].includes(event.target))
-            tallerChatboxToggle.click() 
-    })
-
-    // Add Wider Chatbox toggle label click-listeners
-    const widerChatboxToggle = toggles[3],
-          widerChatboxLabel = widerChatboxToggle.parentNode.parentNode
-    widerChatboxToggle.addEventListener('change', () => {
-        settings.save('widerChatbox', !config.widerChatbox)
-        syncExtension()
-        settings.load('notifDisabled').then(() => {
-            if (!config.notifDisabled) { // show mode notification if enabled
-                notify(chrome.i18n.getMessage('menuLabel_widerChatbox') + ' ' + (config.widerChatbox ? 'ON' : 'OFF'))
-        }})
-    })
-    widerChatboxLabel.addEventListener('click', event => {
-        if ([widerChatboxLabel, document.querySelector('[data-locale*="widerChatbox"]')].includes(event.target))
-            widerChatboxToggle.click() 
-    })
-
-    // Add New Chat Button toggle label click-listeners
-    const newChatBtnToggle = toggles[4],
-          newChatBtnLabel = newChatBtnToggle.parentNode.parentNode
-    newChatBtnToggle.addEventListener('change', () => {
-        settings.save('ncbDisabled', !config.ncbDisabled)
-        syncExtension()
-        settings.load('notifDisabled').then(() => {
-            if (!config.notifDisabled) { // show mode notification if enabled
-                notify(chrome.i18n.getMessage('menuLabel_newChatBtn') + ' ' + (config.ncbDisabled ? 'OFF' : 'ON'))
-        }})
-    })
-    newChatBtnLabel.addEventListener('click', event => {
-        if ([newChatBtnLabel, document.querySelector('[data-locale*="newChatBtn"]')].includes(event.target))
-            newChatBtnToggle.click() 
-    })
-
-    // Add Hidden Header toggle label click-listeners
-    const hiddenHeaderToggle = toggles[5],
-          hiddenHeaderLabel = hiddenHeaderToggle.parentNode.parentNode
-    hiddenHeaderToggle.addEventListener('change', () => {
-        settings.save('hiddenHeader', !config.hiddenHeader)
-        syncExtension()
-        settings.load('hiddenHeader').then(() => {
-            if (!config.notifDisabled) { // show mode notification if enabled
-                notify(chrome.i18n.getMessage('menuLabel_hiddenHeader') + ' ' + (config.hiddenHeader ? 'ON' : 'OFF'))
-        }})
-    })
-    hiddenHeaderLabel.addEventListener('click', event => {
-        if ([hiddenHeaderLabel, document.querySelector('[data-locale*="hiddenHeader"]')].includes(event.target))
-            hiddenHeaderToggle.click() 
-    })
-
-    // Add Hidden Footer toggle label click-listeners
-    const hiddenFooterToggle = toggles[6],
-          hiddenFooterLabel = hiddenFooterToggle.parentNode.parentNode
-    hiddenFooterToggle.addEventListener('change', () => {
-        settings.save('hiddenFooter', !config.hiddenFooter)
-        syncExtension()
-        settings.load('notifDisabled').then(() => {
-            if (!config.notifDisabled) { // show mode notification if enabled
-                notify(chrome.i18n.getMessage('menuLabel_hiddenFooter') + ' ' + (config.hiddenFooter ? 'ON' : 'OFF'))
-        }})
-    })
-    hiddenFooterLabel.addEventListener('click', event => {
-        if ([hiddenFooterLabel, document.querySelector('[data-locale*="hiddenFooter"]')].includes(event.target))
-            hiddenFooterToggle.click() 
-    })
-
-    // Add notifications toggle label click-listeners
-    const notificationsToggle = toggles[7],
-          notificationsLabel = notificationsToggle.parentNode.parentNode
-    notificationsToggle.addEventListener('change', () => {
-        settings.save('notifDisabled', !config.notifDisabled)
-        notify(chrome.i18n.getMessage('menuLabel_modeNotifs') + ' ' + ( config.notifDisabled ? 'OFF' : 'ON' ))
-    })
-    notificationsLabel.addEventListener('click', event => {
-        if ([notificationsLabel, document.querySelector('[data-locale*="modeNotifs"]')].includes(event.target))
-            notificationsToggle.click()
-    })
+    // Init sub-toggles
+    initToggle(toggles[1], 'fullerWindows', 'menuLabel_fullerWins')
+    initToggle(toggles[2], 'tcbDisabled', 'menuLabel_tallerChatbox')
+    initToggle(toggles[3], 'widerChatbox', 'menuLabel_widerChatbox')
+    initToggle(toggles[4], 'ncbDisabled', 'menuLabel_newChatBtn')
+    initToggle(toggles[5], 'hiddenHeader', 'menuLabel_hiddenHeader')
+    initToggle(toggles[6], 'hiddenFooter', 'menuLabel_hiddenFooter')
+    initToggle(toggles[7], 'notifDisabled', 'menuLabel_modeNotifs')
 
     // Add update-check span click-listener
     const updateSpan = document.querySelector('span[title*="update" i]')
@@ -170,6 +58,31 @@
         chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png' })
     chatGPTjsImg.addEventListener('mouseout', () => {
       chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png' })
+
+    // Define TOGGLE INIT function
+
+    function initToggle(toggleInput, settingKey, notifMsgKey) {
+
+        // Init toggle state
+        settings.load(settingKey).then(() => {
+            toggleInput.checked = /disabled/i.test(settingKey) !== config[settingKey] })
+
+        // Add click-listener to toggle input
+        toggleInput.addEventListener('change', () => {
+            settings.save(settingKey, !config[settingKey]) ; syncExtension()
+            settings.load('notifDisabled').then(() => { // show mode notification
+                if (!config.notifDisabled || /notif/i.test(settingKey) || /notif/i.test(settingKey)) // ...if enabled or notif-related setting
+                    notify(chrome.i18n.getMessage(notifMsgKey) + ' '
+                        + (/disabled/i.test(settingKey) !== config[settingKey] ? 'ON' : 'OFF'))
+        })})
+
+        // Add click listener to toggle input's parent label
+        const toggleLabel = toggleInput.parentNode.parentNode
+        toggleLabel.addEventListener('click', event => {
+            if ([toggleLabel, document.querySelector(`[data-locale*="${ notifMsgKey }"]`)].includes(event.target))
+                toggleInput.click()
+        })
+    }
 
     // Define FEEDBACK functions
 
@@ -206,8 +119,8 @@
         // Update menu contents
         document.querySelectorAll('div.logo, div.menu-title, div.menu')
             .forEach(elem => {
-                elem.classList.remove(mainToggle.checked ? 'disabled' : 'enabled')
-                elem.classList.add(mainToggle.checked ? 'enabled' : 'disabled')
+                elem.classList.remove(masterToggle.checked ? 'disabled' : 'enabled')
+                elem.classList.add(masterToggle.checked ? 'enabled' : 'disabled')
             })
     }
 
