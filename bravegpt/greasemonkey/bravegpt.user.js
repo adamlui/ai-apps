@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20.2
+// @version             2023.11.20.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -627,9 +627,9 @@
             getShowReply(convo, callback)
         }
 
-        function onLoadStart() { // process streams for unproxied TM users
+        function onLoadStart() { // process streams
             braveGPTinfo('Endpoint used: ' + endpoint)
-            if (!config.proxyAPIenabled && getUserscriptManager() == 'Tampermonkey') {
+            if (responseType(endpoint) == 'stream') {
                 return stream => {
                     const reader = stream.response.getReader()
                     reader.read().then(function processText({ done, value }) {
@@ -649,7 +649,7 @@
                         return reader.read().then(processText)
         })}}}
 
-        function onLoad() {
+        function onLoad() { // process text
             return async event => {
                 if (event.status !== 200) {
                     braveGPTerror('Event status: ' + event.status)
@@ -662,41 +662,40 @@
                         braveGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
                     else if (event.status === 429) braveGPTalert('tooManyRequests')
                     else braveGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
-                } else if (!config.proxyAPIenabled && getUserscriptManager() != 'Tampermonkey') {
-                    if (event.response) {
-                        try { // to parse txt response from OpenAI endpoint for non-TM users
-                            const responseParts = event.response.split('\n\n'),
-                                  finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
-                                  answer = finalResponse.message.content.parts[0]
-                            braveGPTshow(answer)
-                        } catch (err) {
-                            braveGPTerror(braveGPTalerts.parseFailed + ': ' + err)
-                            braveGPTerror('Response: ' + event.response)
-                            braveGPTalert('suggestProxy')
-                        }
-                    }
-                } else if (config.proxyAPIenabled) {
-                    if (event.responseText) {
-                        try { // to parse txt response from proxy endpoints
-                            const answer = JSON.parse(event.responseText).choices[0].message.content
-                            braveGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
-                        } catch (err) {
-                            braveGPTinfo('Response: ' + event.responseText)
-                            if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
-                                braveGPTshow(messages.alert_censored || 'Sorry, according to our product rules, '
-                                    + 'we cannot provide you with an answer to this question, please try other questions')
-                            else if (event.responseText.includes('维护'))
-                                braveGPTshow(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
-                                    + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
-                            else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
-                                await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
-                            } else { // use different endpoint or suggest OpenAI
+                } else if (responseType(endpoint) == 'text') {
+                    if (endpoint.includes('openai')) {
+                        if (event.response) {
+                            try { // to parse txt response from OpenAI endpoint for non-TM users
+                                const responseParts = event.response.split('\n\n'),
+                                      finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
+                                      answer = finalResponse.message.content.parts[0]
+                                braveGPTshow(answer)
+                            } catch (err) {
                                 braveGPTerror(braveGPTalerts.parseFailed + ': ' + err)
-                                if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-                                else braveGPTalert('suggestOpenAI')
+                                braveGPTerror('Response: ' + event.response)
+                                braveGPTalert('suggestProxy')
                             }
                         }
-        }}}}
+                    } else if (endpoint.includes('aigcf')) {
+                        if (event.responseText) {
+                            try { // to parse txt response from proxy endpoints
+                                const answer = JSON.parse(event.responseText).choices[0].message.content
+                                braveGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                            } catch (err) {
+                                braveGPTinfo('Response: ' + event.responseText)
+                                if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
+                                    braveGPTshow(messages.alert_censored || 'Sorry, according to our product rules, '
+                                        + 'we cannot provide you with an answer to this question, please try other questions')
+                                else if (event.responseText.includes('维护'))
+                                    braveGPTshow(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
+                                        + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
+                                else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
+                                    await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
+                                } else { // use different endpoint or suggest OpenAI
+                                    braveGPTerror(braveGPTalerts.parseFailed + ': ' + err)
+                                    if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
+                                    else braveGPTalert('suggestOpenAI')
+        }}}}}}}
     }
 
     function braveGPTshow(answer) {
