@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.19
+// @version             2023.11.19.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -253,7 +253,7 @@
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('notifHidden')
+    loadSetting('notifDisabled')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -306,7 +306,7 @@
     continueObserver.observe(document.querySelector('main'), { attributes: true, subtree: true })
 
     // Notify of status on load
-    if (!config.notifHidden) notify(( messages.mode_autoContinue || 'Auto-Continue' ) + ': ON')
+    if (!config.notifDisabled) notify(( messages.mode_autoContinue || 'Auto-Continue' ) + ': ON')
 
     // Define SCRIPT functions
 
@@ -321,12 +321,12 @@
         menuIDs = [] // empty to store newly registered cmds for removal while preserving order
 
         // Add command to hide/show notifications on load
-        const mnLabel = state.symbol[+config.notifHidden] + ' '
+        const mnLabel = state.symbol[+config.notifDisabled] + ' '
                       + ( messages.menuLabel_modeNotifs || 'Mode Notifications' )
-                      + state.separator + state.word[+config.notifHidden]
+                      + state.separator + state.word[+config.notifDisabled]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
-            saveSetting('notifHidden', !config.notifHidden)
-            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifHidden])
+            saveSetting('notifDisabled', !config.notifDisabled)
+            notify(messages.menuLabel_modeNotifs + ': ' + state.word[+config.notifDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
