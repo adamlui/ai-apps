@@ -176,7 +176,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 > Bring the magic of ChatGPT to Google Search (powered by GPT-4!)
 <br>[Install](https://greasyfork.org/scripts/478597-googlegpt) /
-[Readme](https://googlegpt.kudoai.com/#readme) /
+[Readme](https://github.kudoai.com/googlegpt/#readme) /
 [Discuss](https://github.kudoai.com/googlegpt/discussions)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
