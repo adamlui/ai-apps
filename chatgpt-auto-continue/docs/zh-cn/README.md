@@ -74,22 +74,25 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/ku
 
 ## 📜 相关脚本
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](https://chatgptautorefresh.com/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](https://github.chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+
 > 保持 ChatGPT 会话新鲜，消除聊天时间限制 + 网络错误 + Cloudflare 检查。<br>
-[安装](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) / 
-[自述文件](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/docs/zh-cn#readme) / 
+[安装](https://github.chatgptautorefresh.com/tree/main/docs/zh-cn#-如何安装) / 
+[自述文件](https://github.chatgptautorefresh.com/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptautorefresh.com/discuss)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](https://chatgptinfinity.com/github) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 4px"></a>
-> 从无所不知的 ChatGPT (任何语言!) 生成无穷无尽的答案<br>
-[安装](https://greasyfork.org/scripts/465051-chatgpt-infinity) / 
-[自述文件](https://github.com/adamlui/chatgpt-infinity/tree/main/docs/zh-cn#readme) / 
-[讨论](https://chatgptinfinity.com/discussions)
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](https://github.chatgptinfinity.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 4px"></a>
 
-### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://chatgptwidescreen.com/github) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
+> 从无所不知的 ChatGPT (任何语言!) 生成无穷无尽的答案。<br>
+[安装](https://github.chatgptinfinity.com/tree/main/docs/zh-cn#-如何安装) / 
+[自述文件](https://github.chatgptinfinity.com/tree/main/docs/zh-cn#readme) / 
+[讨论](https://chatgptinfinity.com/discuss)
+
+### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
+
 > 向 ChatGPT 添加宽屏 + 全屏模式以减少滚动。<br>
-[安装](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#%E5%AE%89%E8%A3%85) / 
-[自述文件](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#readme) / 
+[安装](https://github.chatgptwidescreen.com/tree/main/docs/zh-cn#-如何安装) / 
+[自述文件](https://github.chatgptwidescreen.com/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptwidescreen.com/discuss)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
