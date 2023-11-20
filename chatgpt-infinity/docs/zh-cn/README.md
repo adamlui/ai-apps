@@ -157,7 +157,7 @@ ChatGPT 无穷 与以下浏览器兼容:
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动刷新 ↻](https://github.chatgptautorefresh.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
 
-> 保持 ChatGPT 会话最新以消除网络错误 + Cloudflare 检查.
+> 保持 ChatGPT 会话最新以消除网络错误 + Cloudflare 检查。
 <br>[安装](https://github.chatgptautorefresh.com/tree/main/docs/zh-cn#-如何安装) / 
 [自述文件](https://github.chatgptautorefresh.com/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptautorefresh.com/discuss)
