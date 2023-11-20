@@ -133,7 +133,7 @@
         if (type == 'childList' && addedNodes.length) {
 
             // Restore previous session's state + manage toggles
-            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'widerChatbox',
+            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbHidden',
                            'hiddenHeader', 'hiddenFooter', 'notifHidden', 'extensionDisabled'])
                 .then(() => { if (!config.extensionDisabled) {                    
                     if (!prevSessionChecked) { // restore previous session's state
@@ -144,7 +144,8 @@
                                 if (!config.notifHidden) // ... + notify
                                     notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
                         }}
-                        if (!config.tcbDisabled || config.hiddenHeader || config.hiddenFooter) updateTweaksStyle()
+                        if (!config.tcbDisabled || config.ncbHidden || config.hiddenHeader || config.hiddenFooter)
+                            updateTweaksStyle()
                         if (config.widerChatbox) updateWidescreenStyle()
                         prevSessionChecked = true
                     }
@@ -394,6 +395,7 @@
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) : '' ) // hide footer
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
+        + `#newChat-button { display: ${ config.ncbHidden ? 'none' : 'flex' }}`
     }
 
     function updateWidescreenStyle() {
@@ -412,7 +414,7 @@
     }
 
     syncExtension = () => { // settings, then disable modes or sync taller/wider chatbox
-        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'widerChatbox',
+        settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbHidden',
                       'hiddenHeader', 'hiddenFooter', 'notifHidden')
             .then(() => {
                 if (config.extensionDisabled) { // try to disable modes
