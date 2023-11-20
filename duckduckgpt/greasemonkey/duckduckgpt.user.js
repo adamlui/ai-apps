@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.519.4
+// @version             2023.11.520
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -544,6 +544,8 @@
         }
     }
 
+    function createHeaders() { return { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey }}
+
     function createPayload(msgs) {
         return JSON.stringify(config.proxyAPIenabled
             ? { messages: msgs, model: model }
@@ -556,7 +558,7 @@
             const relatedQueriesQuery = 'Show a numbered list of queries related to this one:\n\n' + query
             GM.xmlHttpRequest({
                 method: 'POST', url: endpoint, responseType: 'text',
-                headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
+                headers: createHeaders(),
                 data: createPayload([
                     config.proxyAPIenabled ? { role: 'user', content: relatedQueriesQuery }
                                            : { role: 'user', id: chatgpt.uuidv4(),
@@ -613,7 +615,7 @@
         await pickAPI()
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint,
-            headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + accessKey },
+            headers: createHeaders(),
             responseType: responseType(), data: createPayload(convo), onloadstart: onLoadStart(), onload: onLoad(),
             onerror: err => {
                 ddgptError(err)
