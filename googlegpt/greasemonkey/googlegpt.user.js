@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.19.2
+// @version             2023.11.19.3
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1234,16 +1234,17 @@
 
     // Append to Google
     const hostContainer = (
-        document.querySelector('#center_col + div > div') ||
-            (() => {
-                const centerCol = document.querySelector('#center_col'),
-                      newDiv = document.createElement('div')
-                centerCol.style.paddingRight = '45px'
-                newDiv.style.display = 'contents'
-                newDiv.id ='newHostContainer'
-                centerCol.insertAdjacentElement('afterend', newDiv)
-                return newDiv
-            })()
+        chatgpt.browser.isMobile() ? document.querySelector('#center_col')
+            : document.querySelector('#center_col + div > div') ||
+                (() => { // create new one if no side snippets
+                    const centerCol = document.querySelector('#center_col'),
+                          newDiv = document.createElement('div')
+                    centerCol.style.paddingRight = '45px'
+                    newDiv.style.display = 'contents'
+                    newDiv.id ='newHostContainer'
+                    centerCol.insertAdjacentElement('afterend', newDiv)
+                    return newDiv
+                })()
     )
     hostContainer.prepend(googleGPTdiv)
     if (document.querySelector('#newHostContainer')) googleGPTdiv.marginLeft = '20px'
