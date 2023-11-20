@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.19.1
+// @version             2023.11.19.2
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -941,7 +941,7 @@
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         speakSpan.classList.add('corner-btn') ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
-        speakSpan.style.margin = '-0.095rem 6px 0 10px' // fine-tune position
+        speakSpan.style.margin = '-0.095rem 8px 0 12px' // fine-tune position
         speakSVG.setAttributeNS(null, 'viewBox', '0 0 32 32') ; speakSVG.setAttributeNS(null, 'width', '22')
         const speakSVGpaths = [
             createSVGelem('path', { stroke: '', 'stroke-width': '2px', fill: 'none',
