@@ -3,6 +3,13 @@
     // Import settings-utils.js
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))
 
+    // Localize labels
+    document.querySelectorAll('[data-locale]').forEach(elem => {
+        const localeKeys = elem.dataset.locale.split(' '),
+              translatedText = localeKeys.map(key => chrome.i18n.getMessage(key)).join(' ')
+        elem.innerText = translatedText
+    })
+
     // Locate settings elements
     const masterToggle = document.querySelector('input'),
           menuItems = document.querySelectorAll('.menu-item'),
@@ -29,13 +36,6 @@
             replyIntervalLabel.innerText += ` — ${ config.replyInterval }s`
             updateGreyness()
         })
-
-    // Localize labels
-    document.querySelectorAll('[data-locale]').forEach(elem => {
-        const localeKeys = elem.dataset.locale.split(' '),
-              translatedText = localeKeys.map(key => chrome.i18n.getMessage(key)).join(' ')
-        elem.innerText = translatedText
-    })
 
     // Add main toggle click-listener
     masterToggle.addEventListener('change', () => {
