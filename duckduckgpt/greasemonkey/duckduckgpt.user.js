@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.520.3
+// @version             2023.11.520.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -661,7 +661,7 @@
         }})}
 
         function responseType(api) {
-            return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
+            return getUserscriptManager() == 'Tampermonkey' && api.includes('openai') ? 'stream' : 'text' }
 
         function retryDiffHost() {
             ddgptError(`Error calling ${ endpoint }. Trying another endpoint...`)
@@ -670,9 +670,9 @@
             getShowReply(convo, callback)
         }
 
-        function onLoadStart() { // process streams for unproxied TM users
+        function onLoadStart() { // process streams
             ddgptInfo('Endpoint used: ' + endpoint)
-            if (!config.proxyAPIenabled && getUserscriptManager() == 'Tampermonkey') {
+            if (responseType(endpoint) == 'stream') {
                 return stream => {
                     const reader = stream.response.getReader()
                     reader.read().then(function processText({ done, value }) {
@@ -692,7 +692,7 @@
                         return reader.read().then(processText)
         })}}}
 
-        function onLoad() {
+        function onLoad() { // process text
             return async event => {
                 if (event.status !== 200) {
                     ddgptError('Event status: ' + event.status)
@@ -705,41 +705,40 @@
                         ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
                     else if (event.status === 429) ddgptAlert('tooManyRequests')
                     else ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
-                } else if (!config.proxyAPIenabled && getUserscriptManager() != 'Tampermonkey') {
-                    if (event.response) {
-                        try { // to parse txt response from OpenAI endpoint for non-TM users
-                            const responseParts = event.response.split('\n\n'),
-                                  finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
-                                  answer = finalResponse.message.content.parts[0]
-                            ddgptShow(answer)
-                        } catch (err) {
-                            ddgptError(ddgptAlerts.parseFailed + ': ' + err)
-                            ddgptError('Response: ' + event.response)
-                            ddgptAlert('suggestProxy')
-                        }
-                    }
-                } else if (config.proxyAPIenabled) {
-                    if (event.responseText) {
-                        try { // to parse txt response from proxy endpoints
-                            const answer = JSON.parse(event.responseText).choices[0].message.content
-                            ddgptShow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
-                        } catch (err) {
-                            ddgptInfo('Response: ' + event.responseText)
-                            if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
-                                ddgptShow(messages.alert_censored || 'Sorry, according to our product rules, '
-                                + 'we cannot provide you with an answer to this question, please try other questions')
-                            else if (event.responseText.includes('维护'))
-                                ddgptShow(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
-                                + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
-                            else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
-                                await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
-                            } else { // use different endpoint or suggest OpenAI
+                } else if (responseType(endpoint) == 'text') {
+                    if (endpoint.includes('openai')) {
+                        if (event.response) {
+                            try { // to parse txt response from OpenAI endpoint for non-TM users
+                                const responseParts = event.response.split('\n\n'),
+                                      finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
+                                      answer = finalResponse.message.content.parts[0]
+                                ddgptShow(answer)
+                            } catch (err) {
                                 ddgptError(ddgptAlerts.parseFailed + ': ' + err)
-                                if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-                                else ddgptAlert('suggestOpenAI')
+                                ddgptError('Response: ' + event.response)
+                                ddgptAlert('suggestProxy')
                             }
                         }
-        }}}}
+                    } else if (endpoint.includes('aigcf')) {
+                        if (event.responseText) {
+                            try { // to parse txt response from proxy endpoints
+                                const answer = JSON.parse(event.responseText).choices[0].message.content
+                                ddgptShow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                            } catch (err) {
+                                ddgptInfo('Response: ' + event.responseText)
+                                if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
+                                    ddgptShow(messages.alert_censored || 'Sorry, according to our product rules, '
+                                    + 'we cannot provide you with an answer to this question, please try other questions')
+                                else if (event.responseText.includes('维护'))
+                                    ddgptShow(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
+                                    + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
+                                else if (event.responseText.includes('finish_reason')) { // if other AIGCF error
+                                    await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
+                                } else { // use different endpoint or suggest OpenAI
+                                    ddgptError(ddgptAlerts.parseFailed + ': ' + err)
+                                    if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
+                                    else ddgptAlert('suggestOpenAI')
+        }}}}}}}
     }
 
     function ddgptShow(answer) {
