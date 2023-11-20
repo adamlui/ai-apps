@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.19.4
+// @version             2023.11.19.5
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1169,8 +1169,8 @@
             + 'border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
             + `padding: ${ isChromium ? 22 : 20 }px 26px 6px 26px ; margin: 0 0 30px 0 ;`
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
-            + ( scheme == 'dark' ? ' border: none ; background: #282828 } ' : ' } ' )
-        + '.googlegpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
+            + ( scheme == 'dark' ? ' border: none ; background: #282828 }' : '}' )
+        + '.googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
         + ( scheme == 'dark' ? '.googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
         + '.app-name { font-size: 1.5rem ; font-weight: 700 }'
         + '.app-name a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
@@ -1182,13 +1182,13 @@
         + '.googlegpt pre {'
             + 'font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ;'
             + ' line-height: 22px ; padding: 1.25em ; border-radius: 10px ;'
-            + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : 'background: #eaeaea } ' )
+            + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 }' : 'background: #eaeaea }' )
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
-        + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ; '
+        + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
             + ( isChromium ? 'top: 2px ; right: 7.89em ;' : 'top: 5px ; right: 16.62em ;' )
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
-            + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' }'
+                + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' }'
         + '.continue-chat > textarea {'
             + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
             + 'height: 1.55rem ; width: 89.6% ; max-height: 200px ; resize: none ;'
@@ -1211,10 +1211,10 @@
             + `position: relative ; ${ isChromium ? 'bottom: 49px ; right: 7px ;' : 'bottom: 46px ; right: 8px ;' }`
             + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
-        + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
-        + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
-        + '.kudo-ai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
-        + '.katex-html { display: none } ' // hide unrendered math
+        + '.kudo-ai { position: relative ; left: 6px ; color: #aaa }'
+        + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none }'
+        + '.kudo-ai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
+        + '.katex-html { display: none }' // hide unrendered math
         + ( scheme == 'dark' ? '.chatgpt-modal > div { background-color: black !important ; color: white }' : '' )
         + '.chatgpt-modal > div { 17px 20px 24px 20px !important }' // increase alert padding
         + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
