@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20.5
+// @version             2023.11.20.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -812,20 +812,17 @@
         // Add listeners
         aboutSVG.addEventListener('click', launchAboutModal)
         speakSVG.addEventListener('click', () => {
-            try { // using web API
-                const payload = {
-                    text: answer, rate: '2', curTime: Date.now(),
-                    spokenDialect: /chinese|^zh/i.test(config.replyLanguage) ? 'zh-CHS' : 'en'
-                }
-                const key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
-                      iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
-                const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
-                    iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
-                const speakAudio = new Audio('https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
-                    + encodeURIComponent(securePayload))
-                speakAudio.play()
-            } catch (err) { // use system API
-                chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })}
+            const payload = {
+                text: answer, rate: '2', curTime: Date.now(),
+                spokenDialect: /chinese|^zh/i.test(config.replyLanguage) ? 'zh-CHS' : 'en'
+            }
+            const key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
+                  iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
+            const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
+                iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
+            const speakAudio = new Audio('https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
+                + encodeURIComponent(securePayload))
+            speakAudio.play().catch(() => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
         })
         wsbSVG.addEventListener('click', toggleWiderSidebar)
         replyForm.addEventListener('keydown', handleEnter)
