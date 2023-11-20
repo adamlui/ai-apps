@@ -11,7 +11,7 @@ module.exports  = {
         'no-empty': 'off', // allow empty blocks
         'no-useless-escape': 'off' // allow all escape chars cause ESLint sucks at detecting truly useless ones
     },
-    'globals': { '$': 'readonly', 'chatgpt': 'readonly', 'chrome': 'readonly', 'syncExtension': 'writable',
+    'globals': { '$': 'readonly', 'chatgpt': 'readonly', 'chrome': 'readonly', 'CryptoJS': 'readonly', 'syncExtension': 'writable',
                  'global_module': 'readonly', 'GM_cookie': 'readonly', 'fullScreenButton': 'readonly',
                  'fullWindowButton': 'readonly', 'newChatButton': 'readonly', 'wideScreenButton': 'readonly' },
     'parserOptions': { 'ecmaVersion': 2022, 'sourceType': 'script' },
