@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.520.6
+// @version             2023.11.520.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -861,7 +861,7 @@
                 iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
             const speakAudio = new Audio('https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
                 + encodeURIComponent(securePayload))
-            speakAudio.play().catch((err) => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
+            speakAudio.play().catch(() => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
         })
         aboutSVG.addEventListener('click', launchAboutModal)
         replyForm.addEventListener('keydown', handleEnter)
