@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.21.5
+// @version             2023.11.21.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -222,7 +222,7 @@
         }))
 
         // Add command to toggle fatter sidebar
-        if (!chatgpt.browser.isMobile()) {
+        if (!isMobile) {
             const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
                            + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                            + state.separator + state.word[+!config.widerSidebar]
@@ -754,7 +754,7 @@
         speakSpan.appendChild(speakSVG) ; braveGPTdiv.appendChild(speakSpan)
 
         // Create/append Wider Sidebar button, attach listener
-        if (!chatgpt.browser.isMobile()) {
+        if (!isMobile) {
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
@@ -961,6 +961,11 @@
         }
     }) ; const messages = await msgsLoaded
 
+    // Init UI flags
+    const scheme = isDarkMode() ? 'dark' : 'light',
+          isChromium = chatgpt.browser.isChromium(),
+          isMobile = chatgpt.browser.isMobile()
+
     registerMenu()
 
     // Exit if prefix/suffix required but not present
@@ -993,9 +998,7 @@
     }
 
     // Stylize elements
-    const braveGPTstyle = document.createElement('style'),
-          scheme = isDarkMode() ? 'dark' : 'light',
-          isChromium = chatgpt.browser.isChromium()
+    const braveGPTstyle = document.createElement('style')
     braveGPTstyle.innerText = (
           '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.bravegpt {'
