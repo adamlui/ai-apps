@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20.9
+// @version             2023.11.20.10
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -576,12 +576,12 @@
     function googleGPTalert(msg) {
         if (msg.includes('login')) deleteOpenAIcookies()
         googleGPTdiv.innerHTML = (
-            /waiting|loading/i.test(msg) ? // if alert involves loading, add class
-                '<p class="loading no-user-select" style="padding-bottom: 18px">' : '<p>') + googleGPTalerts[msg]
-            + (googleGPTalerts[msg].includes('@') ? // if msg needs login link, add it
-                '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
-                + '(' + ( messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode' )
-                + ')</p>' : '</p>')
+            `<p style="padding-bottom: 15px" ${ /waiting|loading/i.test(msg) ? 'class="loading no-user-select"' : '' }>`
+                + googleGPTalerts[msg] + ( googleGPTalerts[msg].includes('@') ? // if msg needs login link, add it
+                    '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
+                        + '(' + ( messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode' ) + ')'
+                    : '' )
+          + '</p>' )
     }
 
     function googleGPTinfo(msg) { console.info(config.appSymbol + ' GoogleGPT >> ' + msg) }
