@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20.12
+// @version             2023.11.20.13
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -981,7 +981,7 @@
         googleGPTdiv.appendChild(balloonTipSpan)
 
         // Create/append ChatGPT response
-        answerPre = document.createElement('pre')
+        const answerPre = document.createElement('pre')
         answerPre.textContent = answer ; googleGPTdiv.appendChild(answerPre)
 
         // Create/append reply section/elements
