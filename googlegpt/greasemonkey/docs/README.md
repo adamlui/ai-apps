@@ -19,7 +19,7 @@
 
 ### Desktop
 
-[![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/meaning-of-life-dark-demo.png)]((https://greasyfork.org/scripts/478597-googlegpt))
+[![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/meaning-of-life-dark-demo.png)](https://greasyfork.org/scripts/478597-googlegpt)
 
 ### Mobile
 
