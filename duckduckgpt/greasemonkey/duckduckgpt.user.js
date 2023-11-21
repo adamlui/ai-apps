@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.521.1
+// @version             2023.11.521.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -261,7 +261,7 @@
         }))
 
         // Add command to toggle wider sidebar
-        if (!isCenteredMode() && !chatgpt.browser.isMobile()) {
+        if (!isCentered && !isMobile) {
             const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
                            + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                            + state.separator + state.word[+!config.widerSidebar]
@@ -793,7 +793,7 @@
         speakSpan.appendChild(speakSVG) ; ddgptDiv.appendChild(speakSpan)
 
         // Create/append Wider Sidebar button
-        if (!isCenteredMode() && !chatgpt.browser.isMobile()) {
+        if (!isCentered && !isMobile) {
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
@@ -972,6 +972,12 @@
         }
     }) ; const messages = await msgsLoaded
 
+    // Init UI flags
+    const scheme = chatgpt.isDarkMode() ? 'dark' : 'light',
+          isChromium = chatgpt.browser.isChromium(),
+          isMobile = chatgpt.browser.isMobile(),
+          isCentered = isCenteredMode()
+
     registerMenu()
 
     // Exit if prefix/suffix required but not present
@@ -1004,9 +1010,7 @@
     }
 
     // Stylize elements
-    const ddgptStyle = document.createElement('style'),
-          scheme = chatgpt.isDarkMode() ? 'dark' : 'light',
-          isChromium = chatgpt.browser.isChromium()
+    const ddgptStyle = document.createElement('style')
     ddgptStyle.innerText = (
           '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.ddgpt { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 17px 26px 16px ; flex-basis: 0 ;'
@@ -1114,7 +1118,7 @@
 
     // Append DDGPT + footer to DDG
     const hostContainer = document.querySelector(
-        chatgpt.browser.isMobile() || isCenteredMode() ? '[data-area*="mainline"]' : '[class*="sidebar"]')
+        isMobile || isCentered ? '[data-area*="mainline"]' : '[class*="sidebar"]')
     hostContainer.prepend(ddgptDiv, ddgptFooter)
 
     // Get answer
