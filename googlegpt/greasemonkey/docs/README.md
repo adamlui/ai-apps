@@ -36,7 +36,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
-## More ChatGPT apps
+## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-apps
 <br><br>
