@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.21.7
+// @version             2023.11.21.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -814,7 +814,7 @@
         feedbackAnchor.appendChild(feedbackSVG)
         feedbackAnchor.appendChild(document.createTextNode(' ' + ( messages.link_shareFeedback || 'Feedback' )))
 
-        // Create/classify/fill footer
+        // Create/classify/fill/append footer
         const braveGPTfooter = document.createElement('div')
         braveGPTfooter.classList.add('footer')
         braveGPTfooter.appendChild(feedbackAnchor) ; braveGPTdiv.appendChild(braveGPTfooter)
@@ -1002,7 +1002,7 @@
     braveGPTstyle.innerText = (
           '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.bravegpt {'
-            + 'word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: 20px ;'
+            + `word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: ${ isMobile ? -29 : 20}px ;`
             + 'border-radius: 18px ; padding: 24px 23px 45px 23px ; background:'
                 + ( scheme == 'dark' ? '#282828' : 'white' ) + '}'
         + '.bravegpt p { margin: 0 }'
@@ -1103,15 +1103,15 @@
     }}})
 
     // Append to Brave, get answer
-    const siderbarContainer = document.querySelector('.sidebar')
+    const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
     setTimeout(() => { 
-        siderbarContainer.prepend(braveGPTdiv) // inject BraveGPT container
+        hostContainer.prepend(braveGPTdiv) // inject BraveGPT container
         const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
         convo.push(
             config.proxyAPIenabled ? { role: 'user', content: query }
                                    : { role: 'user', id: chatgpt.uuidv4(),
                                        content: { content_type: 'text', parts: [query] }})
         getShowReply(convo)
-    }, 100)
+    }, isMobile ? 500 : 100)
 
 })()
