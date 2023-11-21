@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.520.7
+// @version             2023.11.520.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1003,13 +1003,6 @@
             + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
     }
 
-    // Create DDG style tweaks
-    const tweaksStyle = document.createElement('style'),
-          wsbStyle = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
-                   + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
-                   + '#ddgpt-chatbar { width: 95.6% }'
-    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
-
     // Stylize elements
     const ddgptStyle = document.createElement('style'),
           scheme = chatgpt.isDarkMode() ? 'dark' : 'light',
@@ -1078,7 +1071,14 @@
             + ( scheme == 'dark' ? 'background: none ; color: white' : '') + '}'
         + '.modal-buttons { margin: 20px -5px -3px -15px !important }' // position alert buttons
     )
-    document.head.appendChild(ddgptStyle) // append style to <head>
+    document.head.appendChild(ddgptStyle)
+
+    // Create DDG style tweaks
+    const tweaksStyle = document.createElement('style'),
+          wsbStyle = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
+                   + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
+                   + '#ddgpt-chatbar { width: 95.6% }'
+    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create/classify/fill DDGPT container
     const ddgptDiv = document.createElement('div') // create container div
