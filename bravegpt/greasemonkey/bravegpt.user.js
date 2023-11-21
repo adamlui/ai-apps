@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.21.4
+// @version             2023.11.21.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -814,9 +814,9 @@
         feedbackAnchor.appendChild(feedbackSVG)
         feedbackAnchor.appendChild(document.createTextNode(' ' + ( messages.link_shareFeedback || 'Feedback' )))
 
-        // Fill/append footer
-        while (braveGPTfooter.firstChild) // clear all children
-            braveGPTfooter.removeChild(braveGPTfooter.firstChild)
+        // Create/classify/fill footer
+        const braveGPTfooter = document.createElement('div')
+        braveGPTfooter.classList.add('footer')
         braveGPTfooter.appendChild(feedbackAnchor) ; braveGPTdiv.appendChild(braveGPTfooter)
 
         // Render math
@@ -1081,10 +1081,6 @@
     braveGPTdiv.setAttribute( // assign Brave's .snippet + custom class
         'class', 'snippet bravegpt')
     braveGPTalert('waitingResponse')
-
-    // Create/classify feedback footer
-    const braveGPTfooter = document.createElement('div') // create footer div
-    braveGPTfooter.classList.add('footer')
 
     // Activate ad campaign if active
     GM.xmlHttpRequest({
