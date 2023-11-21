@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20.6
+// @version             2023.11.20.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -990,11 +990,6 @@
             + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
     }
 
-    // Create Brave Search style tweaks
-    const tweaksStyle = document.createElement('style'),
-          wsbStyle = 'main.main-column, aside.sidebar { max-width: 521px !important }'
-    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
-
     // Stylize elements
     const braveGPTstyle = document.createElement('style'),
           scheme = isDarkMode() ? 'dark' : 'light',
@@ -1073,6 +1068,11 @@
         + '.modal-close-btn { top: -7px }' // raise alert close button
     )
     document.head.appendChild(braveGPTstyle)
+
+    // Create Brave Search style tweaks
+    const tweaksStyle = document.createElement('style'),
+          wsbStyle = 'main.main-column, aside.sidebar { max-width: 521px !important }'
+    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create/classify/fill BraveGPT container
     const braveGPTdiv = document.createElement('div') // create container div
