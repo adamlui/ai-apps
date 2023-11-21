@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20.16
+// @version             2023.11.21
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -450,10 +450,12 @@
         }))
 
         // Add command to toggle wider sidebar
-        const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
-                       + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
-                       + state.separator + state.word[+!config.widerSidebar]
-        menuIDs.push(GM_registerMenuCommand(wsbLabel, toggleWiderSidebar))
+        if (!chatgpt.browser.isMobile()) {
+            const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
+                           + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
+                           + state.separator + state.word[+!config.widerSidebar]
+            menuIDs.push(GM_registerMenuCommand(wsbLabel, toggleWiderSidebar))
+        }
 
         // Add command to set reply language
         const rlLabel = '🌐 ' + ( messages.menuLabel_replyLanguage || 'Reply Language' )
@@ -963,11 +965,13 @@
         speakSpan.appendChild(speakSVG) ; googleGPTdiv.appendChild(speakSpan)
 
         // Create/append Wider Sidebar button
-        var wsbSpan = document.createElement('span'),
-            wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-        wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
-        wsbSpan.style.marginTop = '0.05rem' // fine-tune position
-        wsbSpan.appendChild(wsbSVG) ; googleGPTdiv.appendChild(wsbSpan) ; updateWSBsvg()
+        if (!chatgpt.browser.isMobile()) {
+            var wsbSpan = document.createElement('span'),
+                wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
+            wsbSpan.style.marginTop = '0.05rem' // fine-tune position
+            wsbSpan.appendChild(wsbSVG) ; googleGPTdiv.appendChild(wsbSpan) ; updateWSBsvg()
+        }
 
         // Create/append speech balloon tip
         const balloonTipSpan = document.createElement('span')
@@ -1027,7 +1031,7 @@
         })
 
         // Add listeners
-        wsbSVG.addEventListener('click', toggleWiderSidebar)
+        aboutSVG.addEventListener('click', launchAboutModal)
         speakSVG.addEventListener('click', () => {
             const payload = {
                 text: answer, rate: '2', curTime: Date.now(),
@@ -1041,7 +1045,7 @@
                 + encodeURIComponent(securePayload))
             speakAudio.play().catch(() => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
         })
-        aboutSVG.addEventListener('click', launchAboutModal)
+        wsbSVG?.addEventListener('click', toggleWiderSidebar)
         replyForm.addEventListener('keydown', handleEnter)
         replyForm.addEventListener('submit', handleSubmit)
         chatTextarea.addEventListener('input', autosizeChatbar)
