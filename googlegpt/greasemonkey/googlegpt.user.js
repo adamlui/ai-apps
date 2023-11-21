@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.21.3
+// @version             2023.11.21.4
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -450,7 +450,7 @@
         }))
 
         // Add command to toggle wider sidebar
-        if (!chatgpt.browser.isMobile()) {
+        if (!isMobile) {
             const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
                            + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                            + state.separator + state.word[+!config.widerSidebar]
@@ -965,7 +965,7 @@
         speakSpan.appendChild(speakSVG) ; googleGPTdiv.appendChild(speakSpan)
 
         // Create/append Wider Sidebar button
-        if (!chatgpt.browser.isMobile()) {
+        if (!isMobile) {
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
@@ -1155,6 +1155,12 @@
         }
     }) ; const messages = await msgsLoaded
 
+    // Init UI flags
+    const scheme = isDarkMode() ? 'dark' : 'light',
+          isChromium = chatgpt.browser.isChromium(),
+          isMobile = chatgpt.browser.isMobile(),
+          hasSidebar = document.querySelector('[class*="kp-"]')
+
     registerMenu()
 
     // Exit if prefix/suffix required but not present
@@ -1187,15 +1193,12 @@
     }
 
     // Stylize elements
-    const googleGPTstyle = document.createElement('style'),
-          scheme = isDarkMode() ? 'dark' : 'light',
-          isChromium = chatgpt.browser.isChromium(),
-          hasSidebar = document.querySelector('[class*="kp-"]')
+    const googleGPTstyle = document.createElement('style')
     googleGPTstyle.innerText = (
           '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.googlegpt {'
             + 'border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
-            + `padding: ${ isChromium ? 22 : 20 }px 26px 6px 26px ; margin: ${ chatgpt.browser.isMobile() ? 20 : 0 }px 0 30px 0 ;`
+            + `padding: ${ isChromium ? 22 : 20 }px 26px 6px 26px ; margin: ${ isMobile ? 20 : 0 }px 0 30px 0 ;`
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
             + ( scheme == 'dark' ? ' border: none ; background: #282828 }' : ' background: white }' )
         + '.googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
@@ -1269,7 +1272,7 @@
 
     // Append to Google
     const hostContainer = (
-        chatgpt.browser.isMobile() ? document.querySelector('#center_col')
+        isMobile ? document.querySelector('#center_col')
             : document.querySelector('#center_col + div > div') ||
                 (() => { // create new one if no side snippets
                     const centerCol = document.querySelector('#center_col'),
