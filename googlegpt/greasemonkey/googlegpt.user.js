@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20.14
+// @version             2023.11.20.15
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -407,17 +407,17 @@
         }))
 
         // Add command to toggle showing related queries
-        const rqLabel = state.symbol[+config.relatedQueriesDisabled] + ' '
+        const rqLabel = state.symbol[+config.rqDisabled] + ' '
                       + ( messages.menuLabel_relatedQueries || 'Related Queries' ) + ' '
-                      + state.separator + state.word[+config.relatedQueriesDisabled]
+                      + state.separator + state.word[+config.rqDisabled]
         menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
-            saveSetting('relatedQueriesDisabled', !config.relatedQueriesDisabled)
+            saveSetting('rqDisabled', !config.rqDisabled)
             try { // to update visibility based on latest setting
                 const relatedQueriesDiv = document.querySelector('.related-queries')
-                relatedQueriesDiv.style.display = config.relatedQueriesDisabled ? 'none' : 'flex'
+                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
             } catch (err) {}
             notify(( messages.menuLabel_relatedQueries || 'Related Queries' ) + ' '
-                + state.word[+config.relatedQueriesDisabled])
+                + state.word[+config.rqDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -806,7 +806,7 @@
         })
 
         // Get/show related queries
-        if (!config.relatedQueriesDisabled) {
+        if (!config.rqDisabled) {
             getRelatedQueries(convo[convo.length - 1].content).then(relatedQueries => {
                 if (relatedQueries && googleGPTdiv.querySelector('textarea')) {
 
@@ -915,7 +915,7 @@
     function googleGPTshow(answer) {
         while (googleGPTdiv.firstChild) // clear all children
             googleGPTdiv.removeChild(googleGPTdiv.firstChild)
-        const hasSidebar = document.querySelector('#center_col + div > div')
+        const hasSidebar = document.querySelector('[class*="kp-"]')
 
         // Create/append '🤖 GoogleGPT'
         const appNameSpan = document.createElement('span')
@@ -973,8 +973,7 @@
         // Create/append speech balloon tip
         const balloonTipSpan = document.createElement('span')
         balloonTipSpan.classList.add('balloon-tip')
-        balloonTipSpan.style.right = (
-            chatgpt.browser.isFirefox() ? '15.35em' : ( hasSidebar ? '7.26em' : '15.65em' ))
+        balloonTipSpan.style.right = chatgpt.browser.isFirefox() ? '15.35em' : '7.26em'
         balloonTipSpan.style.top = (
             chatgpt.browser.isFirefox() ? ( hasSidebar ? '7px' : '5px' )
                                         : ( hasSidebar ? '4px' : '2px' ))
@@ -1002,6 +1001,8 @@
               sendSVGpath = createSVGelem('path', { stroke: '', 'stroke-width': '2', linecap: 'round',
                   'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
         sendButton.classList.add('send-button') ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
+        sendButton.style.right = chatgpt.browser.isFirefox() ? '8px' : '7px'
+        sendButton.style.bottom = `${( chatgpt.browser.isFirefox() ? 46 : 49 ) + ( hasSidebar ? 3 : 0 )}px`
         sendSVG.setAttribute('viewBox', '4 2 16 16') ; sendSVG.setAttribute('fill', 'none')
         sendSVG.setAttribute('height', '16') ; sendSVG.setAttribute('width', '16')
         sendSVG.setAttribute('stroke', 'currentColor') ; sendSVG.setAttribute('stroke-width', '2')
@@ -1119,7 +1120,7 @@
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('proxyAPIenabled', 'prefixEnabled', 'relatedQueriesDisabled', 'replyLanguage', 'widerSidebar', 'suffixEnabled')
+    loadSetting('proxyAPIenabled', 'prefixEnabled', 'rqDisabled', 'replyLanguage', 'widerSidebar', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = [], // to store queries + answers for contextual replies
           menuIDs = [] // to store registered commands for removal while preserving order
@@ -1236,9 +1237,8 @@
         + `.related-query:hover { background: ${ scheme == 'dark' ? '#a2a2a270' : '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
-        + '.send-button { border: none ; float: right ;'
-            + `position: relative ; ${ isChromium ? 'bottom: 49px ; right: 7px ;' : 'bottom: 46px ; right: 8px ;' }`
-            + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
+        + '.send-button { border: none ; float: right ; position: relative ; background: none ;'
+            + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
         + '.app-name a { margin-left: -5px }' // shift app name closer to icon
         + '.kudo-ai { font-size: 0.75rem ; position: relative ; left: 6px ; color: #aaa }'
