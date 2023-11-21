@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.521
+// @version             2023.11.521.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -849,7 +849,7 @@
         })
 
         // Add listeners
-        wsbSVG.addEventListener('click', toggleWiderSidebar)
+        wsbSVG?.addEventListener('click', toggleWiderSidebar)
         speakSVG.addEventListener('click', () => {
             const payload = {
                 text: answer, rate: '2', curTime: Date.now(),
