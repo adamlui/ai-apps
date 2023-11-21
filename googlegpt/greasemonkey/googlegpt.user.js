@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20.15
+// @version             2023.11.20.16
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -915,7 +915,6 @@
     function googleGPTshow(answer) {
         while (googleGPTdiv.firstChild) // clear all children
             googleGPTdiv.removeChild(googleGPTdiv.firstChild)
-        const hasSidebar = document.querySelector('[class*="kp-"]')
 
         // Create/append '🤖 GoogleGPT'
         const appNameSpan = document.createElement('span')
@@ -991,6 +990,7 @@
         continueChatDiv.classList.add('continue-chat')
         chatTextarea.id = 'googlegpt-chatbar' ; chatTextarea.rows = '1'
         chatTextarea.placeholder = ( messages.tooltip_sendReply || 'Send reply' ) + '...'
+        chatTextarea.style.width = hasSidebar ? '88.8%' : '89.5%'
         continueChatDiv.appendChild(chatTextarea)
         replyForm.appendChild(continueChatDiv) ; replySection.appendChild(replyForm)
         googleGPTdiv.appendChild(replySection)
@@ -1182,18 +1182,11 @@
             + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
     }
 
-    // Create Google style tweaks
-    const tweaksStyle = document.createElement('style'),
-          wsbStyle = '#center_col, #center_col div { max-width: 560px !important }' // shrink center column
-                   + '.googlegpt { width: 411px }' // expand GoogleGPT when in limiting Google host container
-                   + '.googlegpt ~ div { width: 464px }' // expand side snippets
-                   + '#googlegpt-chatbar { width: 91.8% !important }'
-    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
-
     // Stylize elements
     const googleGPTstyle = document.createElement('style'),
           scheme = isDarkMode() ? 'dark' : 'light',
-          isChromium = chatgpt.browser.isChromium()
+          isChromium = chatgpt.browser.isChromium(),
+          hasSidebar = document.querySelector('[class*="kp-"]')
     googleGPTstyle.innerText = (
           '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.googlegpt {'
@@ -1221,7 +1214,7 @@
                 + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' }'
         + '.continue-chat > textarea {'
             + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
-            + 'height: 1.55rem ; width: 89.5% ; max-height: 200px ; resize: none ;'
+            + 'height: 1.55rem ; max-height: 200px ; resize: none ;'
             + 'margin: 13px 0 15px 0 ; padding: 13px 25px 2px 10px ;'
             + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' }'
         + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
@@ -1256,6 +1249,14 @@
         + '.modal-buttons { margin: 28px 4px -3px -4px !important }' // position alert buttons
     )
     document.head.appendChild(googleGPTstyle)
+
+    // Create Google style tweaks
+    const tweaksStyle = document.createElement('style'),
+          wsbStyle = '#center_col, #center_col div { max-width: 560px !important }' // shrink center column
+                   + '.googlegpt { width: 25.65rem }' // expand GoogleGPT when in limiting Google host container
+                   + '.googlegpt ~ div { width: 464px }' // expand side snippets
+                   + `#googlegpt-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`
+    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create/classify/fill GoogleGPT container
     const googleGPTdiv = document.createElement('div')
