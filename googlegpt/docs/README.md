@@ -23,7 +23,7 @@
 
 ### Mobile
 
-[![](https://github.com/KudoAI/googlegpt/blob/main/media/images/screenshots/googlegpt-mobile-greeting.png)](https://greasyfork.org/scripts/478597-googlegpt)
+[![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/googlegpt-mobile-greeting.png)](https://greasyfork.org/scripts/478597-googlegpt)
 
 🚀 Install link: https://greasyfork.org/scripts/478597-googlegpt
 
