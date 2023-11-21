@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20.8
+// @version             2023.11.20.9
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1191,7 +1191,7 @@
             + ( scheme == 'dark' ? ' border: none ; background: #282828 }' : '}' )
         + '.googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
         + ( scheme == 'dark' ? '.googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
-        + '.app-name { font-size: 1.5rem ; font-weight: 700 }'
+        + '.app-name { font-size: 1.45rem ; font-weight: 700 }'
         + '.app-name a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
         + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 8px ;'
             + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
@@ -1205,7 +1205,7 @@
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
         + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-            + ( isChromium ? 'top: 2px ; right: 7.89em ;' : 'top: 5px ; right: 16.62em ;' )
+            + ( isChromium ? 'top: 2px ; right: 15.65em ;' : 'top: 5px ; right: 16.62em ;' )
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
                 + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' }'
         + '.continue-chat > textarea {'
@@ -1230,7 +1230,7 @@
             + `position: relative ; ${ isChromium ? 'bottom: 49px ; right: 7px ;' : 'bottom: 46px ; right: 8px ;' }`
             + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
-        + '.kudo-ai { position: relative ; left: 6px ; color: #aaa }'
+        + '.kudo-ai { font-size: 0.75rem ; position: relative ; left: 6px ; color: #aaa }'
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none }'
         + '.kudo-ai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
         + '.katex-html { display: none }' // hide unrendered math
@@ -1266,7 +1266,7 @@
                 })()
     )
     hostContainer.prepend(googleGPTdiv)
-    if (document.querySelector('#newHostContainer')) googleGPTdiv.marginLeft = '20px'
+    if (document.querySelector('#newHostContainer')) googleGPTdiv.style.marginLeft = '20px'
 
     // Get answer
     const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
