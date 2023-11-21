@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.520.8
+// @version             2023.11.521
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -261,7 +261,7 @@
         }))
 
         // Add command to toggle wider sidebar
-        if (!isCenteredMode()) {
+        if (!isCenteredMode() && !chatgpt.browser.isMobile()) {
             const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
                            + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                            + state.separator + state.word[+!config.widerSidebar]
@@ -793,7 +793,7 @@
         speakSpan.appendChild(speakSVG) ; ddgptDiv.appendChild(speakSpan)
 
         // Create/append Wider Sidebar button
-        if (!isCenteredMode()) {
+        if (!isCenteredMode() && !chatgpt.browser.isMobile()) {
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
