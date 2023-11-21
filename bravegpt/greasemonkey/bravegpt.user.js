@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.21.8
+// @version             2023.11.21.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -822,16 +822,16 @@
         // Render math
         renderMathInElement(answerPre, { // eslint-disable-line no-undef
             delimiters: [
-                {left: '$$', right: '$$', display: true},
-                {left: '$', right: '$', display: false},
-                {left: '\\(', right: '\\)', display: false},
-                {left: '\\[', right: '\\]', display: true},
-                {left: '\\begin{equation}', right: '\\end{equation}', display: true},
-                {left: '\\begin{align}', right: '\\end{align}', display: true},
-                {left: '\\begin{alignat}', right: '\\end{alignat}', display: true},
-                {left: '\\begin{gather}', right: '\\end{gather}', display: true},
-                {left: '\\begin{CD}', right: '\\end{CD}', display: true},
-                {left: '\\[', right: '\\]', display: true}
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false },
+                { left: '\\(', right: '\\)', display: false },
+                { left: '\\[', right: '\\]', display: true },
+                { left: '\\begin{equation}', right: '\\end{equation}', display: true },
+                { left: '\\begin{align}', right: '\\end{align}', display: true },
+                { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
+                { left: '\\begin{gather}', right: '\\end{gather}', display: true },
+                { left: '\\begin{CD}', right: '\\end{CD}', display: true },
+                { left: '\\[', right: '\\]', display: true }
             ],
             throwOnError: false
         })
