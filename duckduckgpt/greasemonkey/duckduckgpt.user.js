@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.521.2
+// @version             2023.11.521.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -393,7 +393,7 @@
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
-            shadow || ( chatgpt.isDarkMode() ? '' : 'shadow'))
+            shadow || ( scheme == 'dark' ? '' : 'shadow'))
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
