@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.21.2
+// @version             2023.11.21.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -753,13 +753,14 @@
         speakSVGpaths.forEach(path => { speakSVG.appendChild(path) })
         speakSpan.appendChild(speakSVG) ; braveGPTdiv.appendChild(speakSpan)
 
-        // Create/append Wider Sidebar button
+        // Create/append Wider Sidebar button, attach listener
         if (!chatgpt.browser.isMobile()) {
             const wsbSpan = document.createElement('span'),
                   wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
             wsbSpan.style.marginTop = '0.06rem' // fine-tune position
             wsbSpan.appendChild(wsbSVG) ; braveGPTdiv.appendChild(wsbSpan) ; updateWSBsvg()
+            wsbSVG.addEventListener('click', toggleWiderSidebar)
         }
 
         // Create/append ChatGPT response
@@ -851,7 +852,6 @@
                 + encodeURIComponent(securePayload))
             speakAudio.play().catch(() => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
         })
-        wsbSVG.addEventListener('click', toggleWiderSidebar)
         replyForm.addEventListener('keydown', handleEnter)
         replyForm.addEventListener('submit', handleSubmit)
         chatTextarea.addEventListener('input', autosizeChatbar)
