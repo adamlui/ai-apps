@@ -19,7 +19,13 @@
 
 <br>
 
-[![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/meaning-of-life-dark-demo.png)](https://greasyfork.org/scripts/478597-googlegpt)
+### Desktop
+
+![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/meaning-of-life-dark-demo.png)
+
+### Mobile
+
+[[![](https://github.com/KudoAI/googlegpt/blob/main/media/images/screenshots/googlegpt-mobile-greeting.png)](https://greasyfork.org/scripts/478597-googlegpt)](https://greasyfork.org/scripts/478597-googlegpt)
 
 🚀 Install link: https://greasyfork.org/scripts/478597-googlegpt
 
