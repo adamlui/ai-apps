@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.20.13
+// @version             2023.11.20.14
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1184,7 +1184,7 @@
     // Create Google style tweaks
     const tweaksStyle = document.createElement('style'),
           wsbStyle = '#center_col, #center_col div { max-width: 560px !important }' // shrink center column
-                   + '.googlegpt { width: 410px }' // expand GoogleGPT when in limiting Google host container
+                   + '.googlegpt { width: 411px }' // expand GoogleGPT when in limiting Google host container
                    + '.googlegpt ~ div { width: 464px }' // expand side snippets
                    + '#googlegpt-chatbar { width: 91.8% !important }'
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
@@ -1220,7 +1220,7 @@
                 + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' }'
         + '.continue-chat > textarea {'
             + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
-            + 'height: 1.55rem ; width: 89.6% ; max-height: 200px ; resize: none ;'
+            + 'height: 1.55rem ; width: 89.5% ; max-height: 200px ; resize: none ;'
             + 'margin: 13px 0 15px 0 ; padding: 13px 25px 2px 10px ;'
             + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' }'
         + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
