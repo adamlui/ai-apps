@@ -7,7 +7,7 @@
   "menuLabel_about": { "message": "Par produktu" },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Izstrādāts" },
-  "about_sourceCode": { "message": "Avots" },
+  "about_sourceCode": { "message": "Pirmkods" },
   "mode_autoClear": { "message": "Automātiskā dzēšana" },
   "alert_choosePlatform": { "message": "Izvēlieties platformu" },
   "alert_updateAvail": { "message": "Pieejams jauninājums" },
