@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.21.13
+// @version             2023.11.21.14
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1040,7 +1040,7 @@
 
         // Assemble CTA link
         ctaAnchor.appendChild(
-            document.createTextNode('Share feedback'))
+            document.createTextNode(messages.link_shareFeedback || 'Share feedback'))
 
         // Create/classify/fill/append footer
         const googleGPTfooter = document.createElement('div')
