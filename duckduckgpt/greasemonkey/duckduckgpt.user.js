@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.521.5
+// @version             2023.11.521.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -646,14 +646,31 @@
                     relatedQueriesDiv.classList.add('related-queries')
                     ddgptDiv.appendChild(relatedQueriesDiv)
 
-                    // Fill each child div, add fade + tabindex + listener
+                    // Fill each child div, add attributes + icon + listener
                     relatedQueries.forEach((relatedQuery, index) => {
-                        const relatedQueryDiv = document.createElement('div')
+                        const relatedQueryDiv = document.createElement('div'),
+                              relatedQuerySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                              relatedQuerySVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
+
+                        // Add attributes
                         relatedQueryDiv.title = messages.tooltip_sendRelatedQuery || 'Send related query'
                         relatedQueryDiv.classList.add('related-query', 'fade-in', 'no-user-select')
                         relatedQueryDiv.setAttribute('tabindex', 0)
                         relatedQueryDiv.textContent = relatedQuery
+
+                        // Create icon
+                        relatedQuerySVG.setAttribute('viewBox', '0 0 24 24')
+                        relatedQuerySVG.setAttribute('height', 18)
+                        relatedQuerySVG.setAttribute('fill', 'currentColor')
+                        relatedQuerySVGpath.setAttribute('d',
+                            'M16 10H6.83L9 7.83l1.41-1.41L9 5l-6 6 6 6 1.41-1.41L9 14.17 6.83 12H16c1.65 0 3 1.35 3 3v4h2v-4c0-2.76-2.24-5-5-5z')
+                        relatedQuerySVG.style.transform = 'rotate(180deg)' // flip arrow upside down
+
+                        // Assemble/insert elements
+                        relatedQuerySVG.appendChild(relatedQuerySVGpath) ; relatedQueryDiv.prepend(relatedQuerySVG)
                         relatedQueriesDiv.appendChild(relatedQueryDiv)
+
+                        // Add fade + listeners
                         setTimeout(() => {
                             relatedQueryDiv.classList.add('active')
                             relatedQueryDiv.addEventListener('click', rqEventHandler)
@@ -1055,6 +1072,8 @@
             + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' }}`
         + '.related-query:hover {'
             + `background: ${ scheme == 'dark' ? '#a2a2a270': '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
+        + '.related-query svg { position: relative ; top: 4px ; margin-right: 6px ;'
+            + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' }}` // related query icon
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button { border: none ; float: right ;'
