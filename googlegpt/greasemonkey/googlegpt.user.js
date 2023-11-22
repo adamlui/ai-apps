@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.21.10
+// @version             2023.11.21.12
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -842,7 +842,7 @@
                         relatedQuerySVG.appendChild(relatedQuerySVGpath) ; relatedQueryDiv.prepend(relatedQuerySVG)
                         relatedQueriesDiv.appendChild(relatedQueryDiv)
 
-                        // Add listeners
+                        // Add fade + listeners
                         setTimeout(() => {
                             relatedQueryDiv.classList.add('active')
                             relatedQueryDiv.addEventListener('click', rqEventHandler)
@@ -1271,8 +1271,8 @@
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
             + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' }}`
         + `.related-query:hover { background: ${ scheme == 'dark' ? '#a2a2a270' : '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
-        + '.related-query svg { float: left ; margin: -0.09em 6px 0 0 ;'
-            + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' }}` // related query icon
+        + '.related-query svg { float: left ; margin: -0.09em 6px 0 0 ;' // related query icon
+            + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button { border: none ; float: right ; position: relative ; background: none ;'
