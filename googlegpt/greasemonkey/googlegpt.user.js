@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.21.14
+// @version             2023.11.22
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -852,6 +852,48 @@
                     })
         }})}
 
+        // Init footer CTA to share feedback
+        const footerLink = document.createElement('a')
+        footerLink.setAttribute('target', '_blank')
+        footerLink.setAttribute('rel', 'noopener')
+        footerLink.setAttribute('href', 'https://github.kudoai.com/googlegpt/discussions/new/choose')
+        footerLink.appendChild(
+            document.createTextNode(messages.link_shareFeedback || 'Share feedback'))
+
+        // Check for active campaigns to replace CTA with
+        fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers.json',
+            (err, advertisersData) => { if (err) return
+
+                // Pick an advertiser
+                let chosenAdvertiser
+                for (const [advertiser, details] of Object.entries(advertisersData))
+                    if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
+
+                // Fetch a random creative
+                if (chosenAdvertiser) {
+                    console.log('chosen advertiser is ' + chosenAdvertiser)
+                    const adsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/'
+                                 + chosenAdvertiser + '/text-ads.json'
+                    fetchJSON(adsURL, (err, adsData) => { if (err) { console.error(err) ; return }
+
+                        // Pick a random ad
+                        const adGroups = Object.keys(adsData),
+                              chosenAdGroup = adsData[adGroups[Math.floor(Math.random() * adGroups.length)]],
+                              chosenAd = chosenAdGroup.ads[Math.floor(Math.random() * chosenAdGroup.ads.length)]
+
+                        // Replace `footerLink` w/ chosen ad
+                        footerLink.textContent = chosenAd.text
+                        footerLink.setAttribute('href', chosenAd.url)
+        })}})
+
+        function fetchJSON(url, callback) {
+            GM.xmlHttpRequest({ method: 'GET', url: url, onload: response => {
+                if (response.status >= 200 && response.status < 300) {
+                    try { const data = JSON.parse(response.responseText) ; callback(null, data) }
+                    catch (err) { callback(err, null) }
+                } else callback(new Error('Failed to load data: ' + response.statusText), null)
+        }})}
+
         function responseType(api) {
             return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
 
@@ -879,7 +921,7 @@
                         }
                         if (responseItem.startsWith('data: {')) {
                             const answer = JSON.parse(responseItem.slice(6)).message.content.parts[0]
-                            googleGPTshow(answer)
+                            googleGPTshow(answer, footerLink)
                         } else if (responseItem.startsWith('data: [DONE]')) return
                         return reader.read().then(processText)
         })}}}
@@ -904,7 +946,7 @@
                                 const responseParts = event.response.split('\n\n'),
                                       finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
                                       answer = finalResponse.message.content.parts[0]
-                                googleGPTshow(answer)
+                                googleGPTshow(answer, footerLink)
                             } catch (err) {
                                 googleGPTerror(googleGPTalerts.parseFailed + ': ' + err)
                                 googleGPTerror('Response: ' + event.response)
@@ -915,7 +957,7 @@
                         if (event.responseText) {
                             try { // to parse txt response from AIGCF endpoint
                                 const answer = JSON.parse(event.responseText).choices[0].message.content
-                                googleGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                                googleGPTshow(answer, footerLink) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                             } catch (err) {
                                 googleGPTinfo('Response: ' + event.responseText)
                                 if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
@@ -933,7 +975,7 @@
         }}}}}}}
     }
 
-    function googleGPTshow(answer) {
+    function googleGPTshow(answer, footerLink) {
         while (googleGPTdiv.firstChild) // clear all children
             googleGPTdiv.removeChild(googleGPTdiv.firstChild)
 
@@ -1032,20 +1074,10 @@
         sendSVG.setAttribute('stroke-linecap', 'round') ; sendSVG.setAttribute('stroke-linejoin', 'round')
         sendSVG.appendChild(sendSVGpath) ; sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
-        // Create CTA anchor + set attributes
-        const ctaAnchor = document.createElement('a')
-        ctaAnchor.setAttribute('target', '_blank')
-        ctaAnchor.setAttribute('rel', 'noopener')
-        ctaAnchor.setAttribute('href', 'https://github.kudoai.com/googlegpt/discussions/new/choose')
-
-        // Assemble CTA link
-        ctaAnchor.appendChild(
-            document.createTextNode(messages.link_shareFeedback || 'Share feedback'))
-
         // Create/classify/fill/append footer
         const googleGPTfooter = document.createElement('div')
         googleGPTfooter.classList.add('footer')
-        googleGPTfooter.appendChild(ctaAnchor) ; googleGPTdiv.appendChild(googleGPTfooter)
+        googleGPTfooter.appendChild(footerLink) ; googleGPTdiv.appendChild(googleGPTfooter)
 
         // Render math
         renderMathInElement(answerPre, { // eslint-disable-line no-undef
