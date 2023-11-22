@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.21.7
+// @version             2023.11.21.8
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -817,14 +817,31 @@
                     relatedQueriesDiv.classList.add('related-queries')
                     googleGPTdiv.appendChild(relatedQueriesDiv)
 
-                    // Fill each child div, add fade + tabindex + listener
+                    // Fill each child div, add attributes + icon + listener
                     relatedQueries.forEach((relatedQuery, index) => {
-                        const relatedQueryDiv = document.createElement('div')
+                        const relatedQueryDiv = document.createElement('div'),
+                              relatedQuerySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                              relatedQuerySVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
+
+                        // Add attributes
                         relatedQueryDiv.title = messages.tooltip_sendRelatedQuery || 'Send related query'
                         relatedQueryDiv.classList.add('related-query', 'fade-in', 'no-user-select')
                         relatedQueryDiv.setAttribute('tabindex', 0)
                         relatedQueryDiv.textContent = relatedQuery
+
+                        // Create icon
+                        relatedQuerySVG.setAttribute('viewBox', '0 0 24 24')
+                        relatedQuerySVG.setAttribute('height', 18)
+                        relatedQuerySVG.setAttribute('fill', 'currentColor')
+                        relatedQuerySVGpath.setAttribute('d',
+                            'M16 10H6.83L9 7.83l1.41-1.41L9 5l-6 6 6 6 1.41-1.41L9 14.17 6.83 12H16c1.65 0 3 1.35 3 3v4h2v-4c0-2.76-2.24-5-5-5z')
+                        relatedQuerySVG.style.transform = 'rotate(180deg)' // flip arrow upside down
+
+                        // Assemble/insert elements
+                        relatedQuerySVG.appendChild(relatedQuerySVGpath) ; relatedQueryDiv.prepend(relatedQuerySVG)
                         relatedQueriesDiv.appendChild(relatedQueryDiv)
+
+                        // Add listeners
                         setTimeout(() => {
                             relatedQueryDiv.classList.add('active')
                             relatedQueryDiv.addEventListener('click', rqEventHandler)
@@ -1013,6 +1030,21 @@
         sendSVG.setAttribute('stroke-linecap', 'round') ; sendSVG.setAttribute('stroke-linejoin', 'round')
         sendSVG.appendChild(sendSVGpath) ; sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
+        // Create CTA anchor + set attributes
+        const ctaAnchor = document.createElement('a')
+        ctaAnchor.setAttribute('target', '_blank')
+        ctaAnchor.setAttribute('rel', 'noopener')
+        ctaAnchor.setAttribute('href', 'https://github.kudoai.com/googlegpt/discussions/new/choose')
+
+        // Assemble CTA link
+        ctaAnchor.appendChild(
+            document.createTextNode('Share feedback'))
+
+        // Create/classify/fill/append footer
+        const googleGPTfooter = document.createElement('div')
+        googleGPTfooter.classList.add('footer')
+        googleGPTfooter.appendChild(ctaAnchor) ; googleGPTdiv.appendChild(googleGPTfooter)
+
         // Render math
         renderMathInElement(answerPre, { // eslint-disable-line no-undef
             delimiters: [
@@ -1090,6 +1122,10 @@
                 })
                 relatedQueriesDiv.remove()
             } catch (err) {}
+
+            // Clear footer
+            while (googleGPTfooter.firstChild) // clear all children
+                googleGPTfooter.removeChild(googleGPTfooter.firstChild)
 
             // Show loading status
             replySection.classList.add('loading', 'no-user-select')
@@ -1226,16 +1262,16 @@
             + 'margin: 13px 0 15px 0 ; padding: 13px 25px 2px 10px ;'
             + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' }'
         + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
-        + '.related-queries {'
-            + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ;'
-            + ( isChromium ? 'top: -19px ; margin-bottom: 0' : 'top: -15px ; margin-bottom: 4px' ) + '}'
+        + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: 19px }'
         + '.related-query {'
-            + `margin: 4px 4px ${ scheme == 'dark' ? 5 : 2 }px 0 ; padding: 8px 12px 8px 13px ;`
+            + `margin: 5px 4px ${ scheme == 'dark' ? 5 : 2 }px 0 ; padding: 8px 12px 8px 13px ;`
             + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ; background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
             + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.9em ; cursor: pointer ;`
             + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
             + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' }}`
         + `.related-query:hover { background: ${ scheme == 'dark' ? '#a2a2a270' : '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
+        + '.related-query svg { float: left ; margin: -0.09em 6px 0 0 ;'
+            + `color: ${ scheme == 'dark' ? '#aaa' : '#6e6e6e' }}` // related query icon
         + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button { border: none ; float: right ; position: relative ; background: none ;'
@@ -1255,6 +1291,10 @@
             + 'cursor: pointer ; border-radius: 0 !important ;'
             + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
         + '.modal-buttons { margin: 28px 4px -3px -4px !important }' // position alert buttons
+        + '.googlegpt .footer { position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ;'
+            + `margin: ${ chatgpt.browser.isFirefox() ? '3px' : 0 } -32px 13px }`
+        + '.googlegpt .footer a { color: #aaa ; text-decoration: none }'
+        + `.googlegpt .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
     )
     document.head.appendChild(googleGPTstyle)
 
