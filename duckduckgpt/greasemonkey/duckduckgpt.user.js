@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.521.4
+// @version             2023.11.521.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -166,6 +166,7 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
+// @compatible          kiwi
 // @match               *://duckduckgo.com/?*
 // @include             https://auth0.openai.com
 // @connect             raw.githubusercontent.com
@@ -982,8 +983,8 @@
 
     // Exit if prefix/suffix required but not present
     if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
-        ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
-            console.log('ddgpt quittin') ; return }
+        ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) // or suffix required but not present
+            return
 
     // Init endpoints
     const openAIendpoints = {
