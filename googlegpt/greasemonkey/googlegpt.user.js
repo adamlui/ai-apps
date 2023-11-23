@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.22
+// @version             2023.11.22.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -860,31 +860,41 @@
         footerLink.appendChild(
             document.createTextNode(messages.link_shareFeedback || 'Share feedback'))
 
-        // Check for active campaigns to replace CTA with
-        fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers.json',
+        // Check for active text campaigns to replace CTA
+        fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
             (err, advertisersData) => { if (err) return
 
-                // Pick an advertiser
-                let chosenAdvertiser
-                for (const [advertiser, details] of Object.entries(advertisersData))
+                // Pick random advertiser w/ active text campaigns
+                let chosenAdvertiser, adSelected
+                const shuffle = list => list.sort(() => 0.5 - Math.random())
+                for (const [advertiser, details] of shuffle(Object.entries(advertisersData)))
                     if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
 
-                // Fetch a random creative
+                // Fetch a random, active creative
                 if (chosenAdvertiser) {
-                    console.log('chosen advertiser is ' + chosenAdvertiser)
-                    const adsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/'
-                                 + chosenAdvertiser + '/text-ads.json'
-                    fetchJSON(adsURL, (err, adsData) => { if (err) { console.error(err) ; return }
+                    const campaignsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/'
+                                       + chosenAdvertiser + '/text-campaigns.json'
+                    fetchJSON(campaignsURL, (err, campaignsData) => { if (err) { return }
+                        for (const campaign of shuffle(Object.values(campaignsData))) {
+                            if (!campaign.active) continue // to next campaign since campaign inactive
+                            for (const [groupName, adGroup] of shuffle(Object.entries(campaign.adGroups))) {
+                                if (adGroup.active === false) continue // to next group since explicitly inactive
 
-                        // Pick a random ad
-                        const adGroups = Object.keys(adsData),
-                              chosenAdGroup = adsData[adGroups[Math.floor(Math.random() * adGroups.length)]],
-                              chosenAd = chosenAdGroup.ads[Math.floor(Math.random() * chosenAdGroup.ads.length)]
+                                // Filter out inactive ads, pick random active one
+                                const activeAds = adGroup.ads.filter(ad => ad.active !== false)
+                                if (activeAds.length === 0) continue // to next group since no ads active
+                                const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
 
-                        // Replace `footerLink` w/ chosen ad
-                        footerLink.textContent = chosenAd.text
-                        footerLink.setAttribute('href', chosenAd.url)
-        })}})
+                                // Replace `footerLink` w/ chosen ad
+                                footerLink.textContent = chosenAd.text
+                                footerLink.setAttribute('href',
+                                    chosenAd.destinationURL || adGroup.destinationURL || campaign.destinationURL
+                                        || 'mailto:ads@kudoai.com') // no destination URL set
+                                adSelected = true ; break // out of group loop after ad selection
+                            }
+                            if (adSelected) break // out of campaign loop after ad selection
+                }})}
+        })
 
         function fetchJSON(url, callback) {
             GM.xmlHttpRequest({ method: 'GET', url: url, onload: response => {
