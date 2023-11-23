@@ -17,7 +17,7 @@
   "alert_newerVer": { "message": "'n Opdatering na" },
   "alert_isAvail": { "message": "is beskikbaar" },
   "alert_upToDate": { "message": "Op datum" },
-  "alert_isUpToDate": { "message": "die is up-to-date" },
+  "alert_isUpToDate": { "message": "is op datum" },
   "buttonLabel_moreApps": { "message": "Meer ChatGPT-programme" },
   "buttonLabel_leaveReview": { "message": "Los Kommentaar" },
   "buttonLabel_getSupport": { "message": "Kry Ondersteuning" },
