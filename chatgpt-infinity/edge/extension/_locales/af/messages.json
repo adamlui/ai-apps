@@ -3,7 +3,7 @@
   "appDesc": { "message": "Genereer eindelose antwoorde van alwetende ChatGPT (in enige taal!)" },
   "menuLabel_infinityMode": { "message": "Oneindige modus" },
   "menuLabel_toggleVis": { "message": "Wissel Sigbaarheid" },
-  "menuLabel_autoScroll": { "message": "Outo- Rol" },
+  "menuLabel_autoScroll": { "message": "Outo-Rol" },
   "menuLabel_replyLang": { "message": "Antwoord Taal" },
   "menuLabel_replyTopic": { "message": "Antwoord Onderwerp" },
   "menuLabel_all": { "message": "Alle" },
@@ -40,6 +40,6 @@
   "buttonLabel_dismiss": { "message": "Laat vaar" },
   "link_viewChanges": { "message": "Besigtig veranderinge" },
   "unit_seconds": { "message": "sekondes" },
-  "state_enabled": { "message": "Blou" },
+  "state_enabled": { "message": "blou" },
   "state_disabled": { "message": "gedeaktiveer" }
 }
