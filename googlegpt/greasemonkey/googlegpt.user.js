@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.22.3
+// @version             2023.11.22.4
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -876,9 +876,11 @@
                                        + chosenAdvertiser + '/text-campaigns.json'
                     fetchJSON(campaignsURL, (err, campaignsData) => { if (err) { return }
                         for (const [campaignName, campaign] of shuffle(Object.entries(campaignsData))) {
-                            if (!campaign.active || /googlegpt/i.test(campaignName)) continue // to next campaign since campaign inactive
-                            for (const adGroup of shuffle(Object.entries(campaign.adGroups))) {
-                                if (adGroup.active === false) continue // to next group since explicitly inactive
+                            if (!campaign.active) continue // to next campaign since campaign inactive
+                            for (const [groupName, adGroup] of shuffle(Object.entries(campaign.adGroups)))  {
+                                if (/^self$/i.test(groupName) && !/googlegpt/i.test(campaignName) // self-group for other apps
+                                    || adGroup.active === false) // or group explicitly inactive
+                                        continue // to next group
 
                                 // Filter out inactive ads, pick random active one
                                 const activeAds = adGroup.ads.filter(ad => ad.active !== false)
