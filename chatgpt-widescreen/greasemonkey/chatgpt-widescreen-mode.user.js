@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.19.3
+// @version             2023.11.22
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -270,7 +270,7 @@
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('fullerWindows', 'fullWindow', 'notifDisabled', 'tcbDisabled',
-        'wcbDisabled', 'hiddenHeader', 'hiddenFooter', 'ncbDisabled', 'wideScreen')
+        'widerChatbox', 'hiddenHeader', 'hiddenFooter', 'ncbDisabled', 'wideScreen')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -332,12 +332,12 @@
 
         // Add command to toggle wider chatbox with widescreen mode
         const wcbLabel = '↔️ ' + ( messages.menuLabel_widerChatbox || 'Wider Chatbox' )
-                       + state.separator + state.word[+config.wcbDisabled]
+                       + state.separator + state.word[+!config.widerChatbox]
         menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
-            saveSetting('wcbDisabled', !config.wcbDisabled)
+            saveSetting('widerChatbox', !config.widerChatbox)
             updateWidescreenStyle()
             if (!config.notifDisabled)
-                notify(`${ messages.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ state.word[+config.wcbDisabled] }`)
+                notify(`${ messages.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ state.word[+!config.widerChatbox] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -730,7 +730,7 @@
                         + 'div[class*="group"] > div > div:nth-of-type(2) > div > div:nth-of-type(1)'
                     + '{ max-width: 100% !important }' )
             : '')
-        if (!config.wcbDisabled) wideScreenStyle.innerText += wcbStyle
+        if (config.widerChatbox) wideScreenStyle.innerText += wcbStyle
     }
 
     // Run MAIN routine
