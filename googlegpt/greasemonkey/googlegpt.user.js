@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.22.4
+// @version             2023.11.23
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -873,7 +873,7 @@
                 // Fetch a random, active creative
                 if (chosenAdvertiser) {
                     const campaignsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/'
-                                       + chosenAdvertiser + '/text-campaigns.json'
+                                       + chosenAdvertiser + '/text/campaigns.json'
                     fetchJSON(campaignsURL, (err, campaignsData) => { if (err) { return }
                         for (const [campaignName, campaign] of shuffle(Object.entries(campaignsData))) {
                             if (!campaign.active) continue // to next campaign since campaign inactive
