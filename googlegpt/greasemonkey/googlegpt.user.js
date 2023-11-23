@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.23
+// @version             2023.11.23.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -887,11 +887,19 @@
                                 if (activeAds.length === 0) continue // to next group since no ads active
                                 const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
 
-                                // Replace `footerLink` w/ chosen ad
+                                // Build destination URL
+                                let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
+                                    || campaign.destinationURL || 'mailto:ads@kudoai.com'
+                                if (destinationURL.includes('http')) { // insert utm_source
+                                    const [baseURL, queryString] = destinationURL.split('?'),
+                                          queryParams = new URLSearchParams(queryString || '')
+                                    queryParams.set('utm_source', 'googlegpt')
+                                    destinationURL = baseURL + '?' + queryParams.toString()
+                                }
+
+                                // Replace `footerLink` w/ new text/href
                                 footerLink.textContent = chosenAd.text
-                                footerLink.setAttribute('href',
-                                    chosenAd.destinationURL || adGroup.destinationURL || campaign.destinationURL
-                                        || 'mailto:ads@kudoai.com') // no destination URL set
+                                footerLink.setAttribute('href', destinationURL)
                                 adSelected = true ; break // out of group loop after ad selection
                             }
                             if (adSelected) break // out of campaign loop after ad selection
