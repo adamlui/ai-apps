@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.21.13
+// @version             2023.11.24.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -404,8 +404,9 @@
             createSVGelem('path', { fill: '', 'fill-rule': 'evenodd',
                 d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ]
 
-        // Set SVG attributes            
-        wsbSVG.setAttribute('height', 18) ; wsbSVG.setAttribute('viewBox', '8 8 20 20')
+        // Set SVG attributes
+        for (const [attr, value] of [['width', 18], ['height', 18], ['viewBox', '8 8 20 20']])
+            wsbSVG.setAttribute(attr, value)
         wsbSpan.title = ( config.widerSidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
                       + messages.menuLabel_widerSidebar || 'Wider Sidebar'
 
@@ -619,9 +620,9 @@
                         relatedQueryDiv.textContent = relatedQuery
 
                         // Create icon
-                        relatedQuerySVG.setAttribute('viewBox', '0 0 24 24')
-                        relatedQuerySVG.setAttribute('height', 18)
-                        relatedQuerySVG.setAttribute('fill', 'currentColor')
+                        for (const [attr, value] of [
+                            ['viewBox', '0 0 24 24'], ['width', 18], ['height', 18], ['fill', 'currentColor']
+                        ]) relatedQuerySVG.setAttribute(attr, value)
                         relatedQuerySVGpath.setAttribute('d',
                             'M16 10H6.83L9 7.83l1.41-1.41L9 5l-6 6 6 6 1.41-1.41L9 14.17 6.83 12H16c1.65 0 3 1.35 3 3v4h2v-4c0-2.76-2.24-5-5-5z')
                         relatedQuerySVG.style.transform = 'rotate(180deg)' // flip arrow upside down
@@ -747,8 +748,8 @@
               aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
         aboutSpan.classList.add('corner-btn') ; aboutSpan.title = messages.menuLabel_about || 'About'
-        aboutSVG.setAttribute('width', '17') ; aboutSVG.setAttribute('height', '17')
-        aboutSVG.setAttribute('viewBox', '0 0 56.693 56.693')
+        for (const [attr, value] of [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']])
+            aboutSVG.setAttribute(attr, value)
         aboutSVGpath.setAttribute('d',
             'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z')
         aboutSVGpath.setAttribute('stroke', 'none')
@@ -805,26 +806,25 @@
               sendSVGpath = createSVGelem('path', { stroke: '', 'stroke-width': '2', linecap: 'round',
                   'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
         sendButton.classList.add('send-button') ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
-        sendSVG.setAttribute('viewBox', '4 2 16 16') ; sendSVG.setAttribute('fill', 'none')
-        sendSVG.setAttribute('height', '16') ; sendSVG.setAttribute('width', '16')
-        sendSVG.setAttribute('stroke', 'currentColor') ; sendSVG.setAttribute('stroke-width', '2')
-        sendSVG.setAttribute('stroke-linecap', 'round') ; sendSVG.setAttribute('stroke-linejoin', 'round')
+        for (const [attr, value] of [
+            ['viewBox', '4 2 16 16'], ['fill', 'none'], ['height', 16], ['width', 16],
+            ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
+        ]) sendSVG.setAttribute(attr, value)
         sendSVG.appendChild(sendSVGpath) ; sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
         // Create feedback anchor + set attributes
         const feedbackAnchor = document.createElement('a')
-        feedbackAnchor.setAttribute('class', 'feedback svelte-8js1iq')
-        feedbackAnchor.setAttribute('target', '_blank')
-        feedbackAnchor.setAttribute('rel', 'noopener')
-        feedbackAnchor.setAttribute('href', 'https://github.bravegpt.com/discussions/new/choose')
+        for (const [attr, value] of [
+            ['class', 'feedback svelte-8js1iq'], ['target', '_blank'], ['rel', 'noopener'],
+            ['href', 'https://github.bravegpt.com/discussions/new/choose']
+        ]) feedbackAnchor.setAttribute(attr, value)
 
         // Create feedback icon + set attributes
         const feedbackSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               feedbackSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-        feedbackSVG.setAttribute('class', 'icon')
-        feedbackSVG.setAttribute('width', '15')
-        feedbackSVG.setAttribute('height', '15')
-        feedbackSVG.setAttribute('viewBox', '0 0 15 15')
+        for (const [attr, value] of [
+            ['class', 'icon'], ['width', 15], ['height', 15], ['viewBox', '0 0 15 15']
+        ]) feedbackSVG.setAttribute(attr, value)
         feedbackSVGpath.setAttribute('fill-rule', 'evenodd')
         feedbackSVGpath.setAttribute('d', 'M.577 6.23a.577.577 0 1 1 0-1.153H1.5a.577.577 0 0 1 0 1.154H.577ZM2.83 8.939a.576.576 0 0 1 0 .816l-1.385 1.385a.573.573 0 0 1-.816 0 .576.576 0 0 1 0-.816l1.385-1.385a.577.577 0 0 1 .816 0ZM.63.985a.576.576 0 1 1 .815-.816L2.83 1.553a.576.576 0 1 1-.816.816L.63.985ZM15 5.654a.577.577 0 0 1-.577.577H13.5a.577.577 0 0 1 0-1.154h.923c.319 0 .577.258.577.577Zm-.631 4.669a.576.576 0 1 1-.816.816l-1.385-1.385a.576.576 0 1 1 .816-.816l1.385 1.385Zm-2.2-7.954a.576.576 0 0 1 0-.816L13.553.17a.577.577 0 0 1 .816.816l-1.385 1.384a.575.575 0 0 1-.816 0ZM9.3 9.09a.579.579 0 0 0-.045.038c-.45.417-.486 1.23-.486 1.47v.238c-1.045.45-2.053.177-2.537-.013v-.226c0-.24-.036-1.053-.487-1.469a.687.687 0 0 0-.044-.037c-.81-.609-1.777-1.667-1.777-3.253 0-2.073 1.604-3.76 3.576-3.76s3.577 1.687 3.577 3.76c0 1.586-.967 2.644-1.777 3.252Zm-1.8 4.757c-.995 0-1.223-.623-1.27-.814v-.997a4.83 4.83 0 0 0 1.343.197c.374 0 .78-.057 1.195-.18v.978c-.05.202-.282.816-1.269.816ZM7.5.923c-2.609 0-4.73 2.204-4.73 4.914 0 1.616.757 3.047 2.192 4.141.058.094.114.39.115.618v2.494c0 .03.003.06.007.09.1.63.732 1.82 2.416 1.82s2.316-1.19 2.416-1.82a.674.674 0 0 0 .006-.09v-2.494c0-.206.054-.525.11-.613 1.438-1.096 2.198-2.528 2.198-4.146 0-2.71-2.121-4.914-4.73-4.914Z')
         
