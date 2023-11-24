@@ -38,7 +38,7 @@
   "alert_proxyNotWorking": { "message": "L-API Proxy mhux qed jaħdem" },
   "alert_suggestProxy": { "message": "Ipprova ixgħel il-Modalità Proxy fit-toolbar" },
   "alert_suggestOpenAI": { "message": "Ipprova itfi l-Modalità Proxy fit-toolbar" },
-  "alert_censored": { "message": "Jiddispjaċina, skont ir-regoli tal-prodott tagħna, ma nistgħux nipprovdulek tweġiba għal din il-mistoqsija, jekk jogħġbok ipprova mistoqsijiet oħra." },
+  "alert_censored": { "message": "Jiddispjaċina, skont ir-regoli tal-prodott tagħna, ma nistgħux nipprovdulek tweġiba għal din il-mistoqsija, jekk jogħġbok ipprova mistoqsijiet oħra" },
   "alert_maintenance": { "message": "Sistema tal-IA taħt manutenzjoni" },
   "buttonLabel_moreApps": { "message": "Iktar Apps taċ-ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Ħalli Review" },
