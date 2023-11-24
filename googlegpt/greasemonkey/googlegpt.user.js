@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.24.3
+// @version             2023.11.24.4
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -636,6 +636,14 @@
         return elem
     }
 
+    function createAnchor(linkHref, displayText) {
+        const anchor = document.createElement('a')
+        for (const [attr, value] of [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']])
+            anchor.setAttribute(attr, value)
+        anchor.textContent = displayText
+        return anchor
+    }
+
     // Define SESSION functions
 
     function isBlockedbyCloudflare(resp) {
@@ -854,10 +862,7 @@
         }})}
 
         // Init footer CTA to share feedback
-        const footerLink = document.createElement('a')
-        for (const [attr, value] of [['href', config.feedbackURL], ['target', '_blank'], ['rel', 'noopener']])
-            footerLink.setAttribute(attr, value)
-        footerLink.textContent = messages.link_shareFeedback || 'Share feedback'
+        const footerLink = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
 
         // Check for active text campaigns to replace CTA
         fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
@@ -1002,19 +1007,13 @@
         // Create/append '🤖 GoogleGPT'
         const appNameSpan = document.createElement('span')
         appNameSpan.classList.add('app-name', 'no-user-select') ; appNameSpan.innerText = '🤖  '
-        const googleGPTlink = document.createElement('a')
-        googleGPTlink.href = 'https://googlegpt.kudoai.com'
-        googleGPTlink.target = '_blank' ; googleGPTlink.rel = 'noopener'
-        googleGPTlink.textContent = 'GoogleGPT'
+        const googleGPTlink = createAnchor('https://googlegpt.kudoai.com', 'GoogleGPT')
         appNameSpan.appendChild(googleGPTlink) ; googleGPTdiv.appendChild(appNameSpan)
 
         // Create/append 'by KudoAI'
         const kudoAIspan = document.createElement('span')
         kudoAIspan.classList.add('kudo-ai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-        const kudoAIlink = document.createElement('a')
-        kudoAIlink.href = 'https://www.kudoai.com'
-        kudoAIlink.target = '_blank' ; kudoAIlink.rel = 'noopener'
-        kudoAIlink.textContent = 'KudoAI'
+        const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
         kudoAIspan.appendChild(kudoAIlink) ; googleGPTdiv.appendChild(kudoAIspan)
 
         // Create/append about button
