@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.24.2
+// @version             2023.11.24.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -813,11 +813,11 @@
         sendSVG.appendChild(sendSVGpath) ; sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
         // Create feedback anchor + set attributes
-        const feedbackAnchor = document.createElement('a')
+        const footerLink = document.createElement('a')
         for (const [attr, value] of [
             ['class', 'feedback svelte-8js1iq'], ['target', '_blank'], ['rel', 'noopener'],
             ['href', 'https://github.bravegpt.com/discussions/new/choose']
-        ]) feedbackAnchor.setAttribute(attr, value)
+        ]) footerLink.setAttribute(attr, value)
 
         // Create feedback icon + set attributes
         const feedbackSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
@@ -830,13 +830,13 @@
         
         // Assemble feedback link
         feedbackSVG.appendChild(feedbackSVGpath)
-        feedbackAnchor.appendChild(feedbackSVG)
-        feedbackAnchor.appendChild(document.createTextNode(' ' + ( messages.link_shareFeedback || 'Feedback' )))
+        footerLink.appendChild(feedbackSVG)
+        footerLink.appendChild(document.createTextNode(' ' + ( messages.link_shareFeedback || 'Feedback' )))
 
         // Create/classify/fill/append footer
         const braveGPTfooter = document.createElement('div')
         braveGPTfooter.classList.add('footer')
-        braveGPTfooter.appendChild(feedbackAnchor) ; braveGPTdiv.appendChild(braveGPTfooter)
+        braveGPTfooter.appendChild(footerLink) ; braveGPTdiv.appendChild(braveGPTfooter)
 
         // Render math
         renderMathInElement(answerPre, { // eslint-disable-line no-undef
