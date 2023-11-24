@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.524
+// @version             2023.11.524.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -659,9 +659,9 @@
                         relatedQueryDiv.textContent = relatedQuery
 
                         // Create icon
-                        relatedQuerySVG.setAttribute('viewBox', '0 0 24 24')
-                        relatedQuerySVG.setAttribute('height', 18)
-                        relatedQuerySVG.setAttribute('fill', 'currentColor')
+                        for (const [attr, value] of [
+                            ['viewBox', '0 0 24 24'], ['height', 18], ['fill', 'currentColor']
+                        ]) relatedQuerySVG.setAttribute(attr, value)
                         relatedQuerySVGpath.setAttribute('d',
                             'M16 10H6.83L9 7.83l1.41-1.41L9 5l-6 6 6 6 1.41-1.41L9 14.17 6.83 12H16c1.65 0 3 1.35 3 3v4h2v-4c0-2.76-2.24-5-5-5z')
                         relatedQuerySVG.style.transform = 'rotate(180deg)' // flip arrow upside down
@@ -843,10 +843,10 @@
               sendSVGpath = createSVGelem('path', { stroke: '', 'stroke-width': '2', linecap: 'round',
                   'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
         sendButton.classList.add('send-button') ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
-        sendSVG.setAttribute('viewBox', '4 2 16 16') ; sendSVG.setAttribute('fill', 'none')
-        sendSVG.setAttribute('height', '16') ; sendSVG.setAttribute('width', '16')
-        sendSVG.setAttribute('stroke', 'currentColor') ; sendSVG.setAttribute('stroke-width', '2')
-        sendSVG.setAttribute('stroke-linecap', 'round') ; sendSVG.setAttribute('stroke-linejoin', 'round')
+        for (const [attr, value] of [
+            ['viewBox', '4 2 16 16'], ['fill', 'none'], ['height', '16'], ['width', '16'],
+            ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
+        ]) sendSVG.setAttribute(attr, value)
         sendSVG.appendChild(sendSVGpath) ; sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
         // Render math
