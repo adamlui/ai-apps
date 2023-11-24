@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.24.4
+// @version             2023.11.24.5
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -640,7 +640,7 @@
         const anchor = document.createElement('a')
         for (const [attr, value] of [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']])
             anchor.setAttribute(attr, value)
-        anchor.textContent = displayText
+        if (displayText) anchor.textContent = displayText
         return anchor
     }
 
