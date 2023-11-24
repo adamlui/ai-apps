@@ -1,6 +1,6 @@
 module.exports = {
     'extends': ['eslint:recommended'],
-    'ignorePatterns': ['**/*.md', '**/*.min.js'],
+    'ignorePatterns': ['**/*.md'],
     'rules': {
         'indent': 'off',
         'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }], // enforce single quotes for string literals
