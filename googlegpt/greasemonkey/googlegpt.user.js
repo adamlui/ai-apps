@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.24.1
+// @version             2023.11.24.2
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -855,12 +855,9 @@
 
         // Init footer CTA to share feedback
         const footerLink = document.createElement('a')
-        for (const [attr, value] of [
-            ['href', 'https://github.kudoai.com/googlegpt/discussions/new/choose'],
-            ['target', '_blank'], ['rel', 'noopener']
-        ]) footerLink.setAttribute(attr, value)
-        footerLink.appendChild(
-            document.createTextNode(messages.link_shareFeedback || 'Share feedback'))
+        for (const [attr, value] of [['href', config.feedbackURL], ['target', '_blank'], ['rel', 'noopener']])
+            footerLink.setAttribute(attr, value)
+        footerLink.textContent = messages.link_shareFeedback || 'Share feedback'
 
         // Check for active text campaigns to replace CTA
         fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
@@ -1218,6 +1215,7 @@
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
+    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'rqDisabled', 'replyLanguage', 'widerSidebar', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
