@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.24.3
+// @version             2023.11.24.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -814,9 +814,8 @@
 
         // Create feedback anchor + set attributes
         const footerLink = document.createElement('a')
-        for (const [attr, value] of [
-            ['class', 'feedback svelte-8js1iq'], ['target', '_blank'], ['rel', 'noopener'],
-            ['href', 'https://github.bravegpt.com/discussions/new/choose']
+        for (const [attr, value] of [['class', 'feedback svelte-8js1iq'], 
+            ['href', config.feedbackURL], ['target', '_blank'], ['rel', 'noopener']
         ]) footerLink.setAttribute(attr, value)
 
         // Create feedback icon + set attributes
@@ -948,6 +947,7 @@
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
+    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled',
         'suffixEnabled', 'widerSidebar', 'replyLanguage')
