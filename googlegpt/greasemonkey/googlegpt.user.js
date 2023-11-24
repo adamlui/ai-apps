@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.24.2
+// @version             2023.11.24.3
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -630,9 +630,9 @@
         if (!wsbSpan.contains(wsbSVG)) wsbSpan.appendChild(wsbSVG)
     }
 
-    function createSVGelem(tagName, attributes) {
+    function createSVGelem(tagName, attrs) {
         const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
-        for (const attr in attributes) elem.setAttributeNS(null, attr, attributes[attr])
+        for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
         return elem
     }
 
