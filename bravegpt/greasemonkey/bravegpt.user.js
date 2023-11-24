@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.24.5
+// @version             2023.11.24.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -423,6 +423,14 @@
         return elem
     }
 
+    function createAnchor(linkHref, displayText) {
+        const anchor = document.createElement('a')
+        for (const [attr, value] of [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']])
+            anchor.setAttribute(attr, value)
+        if (displayText) anchor.textContent = displayText
+        return anchor
+    }
+
     // Define SESSION functions
 
     function isBlockedbyCloudflare(resp) {
@@ -728,19 +736,13 @@
         // Create/append '🤖 BraveGPT'
         const appNameSpan = document.createElement('span')
         appNameSpan.classList.add('app-name', 'no-user-select') ; appNameSpan.innerText = '🤖  '
-        const braveGPTlink = document.createElement('a')
-        braveGPTlink.href = 'https://www.bravegpt.com'
-        braveGPTlink.target = '_blank' ; braveGPTlink.rel = 'noopener'
-        braveGPTlink.textContent = 'BraveGPT'
+        const braveGPTlink = createAnchor('https://www.bravegpt.com', 'BraveGPT')
         appNameSpan.appendChild(braveGPTlink) ; braveGPTdiv.appendChild(appNameSpan)
 
         // Create/append 'by KudoAI'
         const kudoAIspan = document.createElement('span')
         kudoAIspan.classList.add('kudo-ai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-        const kudoAIlink = document.createElement('a')
-        kudoAIlink.href = 'https://www.kudoai.com'
-        kudoAIlink.target = '_blank' ; kudoAIlink.rel = 'noopener'
-        kudoAIlink.textContent = 'KudoAI'
+        const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
         kudoAIspan.appendChild(kudoAIlink) ; braveGPTdiv.appendChild(kudoAIspan)
 
         // Create/append about button
@@ -813,10 +815,8 @@
         sendSVG.appendChild(sendSVGpath) ; sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
         // Create feedback anchor + set attributes
-        const footerLink = document.createElement('a')
-        for (const [attr, value] of [['class', 'feedback svelte-8js1iq'], 
-            ['href', config.feedbackURL], ['target', '_blank'], ['rel', 'noopener']
-        ]) footerLink.setAttribute(attr, value)
+        const footerLink = createAnchor(config.feedbackURL)
+        footerLink.classList.add('feedback', 'svelte-8js1iq')
 
         // Create feedback icon + set attributes
         const feedbackSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
