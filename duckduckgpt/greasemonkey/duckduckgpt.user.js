@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.524.3
+// @version             2023.11.524.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -962,6 +962,7 @@
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
+    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled', 'replyLanguage', 'widerSidebar', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
@@ -1114,12 +1115,10 @@
 
     // Init footer CTA to share feedback
     const footerLink = document.createElement('a')
-    for (const [attr, value] of [
-        ['href', 'https://github.kudoai.com/duckduckgpt/discussions/new/choose'],
-        ['target', '_blank'], ['rel', 'noopener'], ['class', 'feedback-prompt__link']
+    for (const [attr, value] of [['class', 'feedback-prompt__link'],
+        ['href', config.feedbackURL], ['target', '_blank'], ['rel', 'noopener']
     ]) footerLink.setAttribute(attr, value)
-    footerLink.appendChild(
-        document.createTextNode(messages.link_shareFeedback || 'Share feedback'))
+    footerLink.textContent = messages.link_shareFeedback || 'Share feedback'
 
     // Create/classify/fill feedback footer
     const ddgptFooter = document.createElement('div')
