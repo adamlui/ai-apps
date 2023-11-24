@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.524.6
+// @version             2023.11.524.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -457,6 +457,14 @@
         const elem = document.createElementNS('http://www.w3.org/2000/svg', tagName)
         for (const attr in attrs) elem.setAttributeNS(null, attr, attrs[attr])
         return elem
+    }
+
+    function createAnchor(linkHref, displayText) {
+        const anchor = document.createElement('a')
+        for (const [attr, value] of [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']])
+            anchor.setAttribute(attr, value)
+        if (displayText) anchor.textContent = displayText
+        return anchor
     }
 
     // Define SESSION functions
@@ -768,19 +776,13 @@
         // Create/append '🤖 DuckDuckGPT'
         const appNameSpan = document.createElement('span')
         appNameSpan.classList.add('app-name', 'no-user-select') ; appNameSpan.innerText = '🤖  '
-        const ddgptLink = document.createElement('a')
-        ddgptLink.href = 'https://www.duckduckgpt.com'
-        ddgptLink.target = '_blank' ; ddgptLink.rel = 'noopener'
-        ddgptLink.textContent = 'DuckDuckGPT'
+        const ddgptLink = createAnchor('https://www.duckduckgpt.com', 'DuckDuckGPT')
         appNameSpan.appendChild(ddgptLink) ; ddgptDiv.appendChild(appNameSpan)
 
         // Create/append 'by KudoAI'
         const kudoAIspan = document.createElement('span')
         kudoAIspan.classList.add('kudo-ai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-        const kudoAIlink = document.createElement('a')
-        kudoAIlink.href = 'https://www.kudoai.com'
-        kudoAIlink.target = '_blank' ; kudoAIlink.rel = 'noopener'
-        kudoAIlink.textContent = 'KudoAI'
+        const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
         kudoAIspan.appendChild(kudoAIlink) ; ddgptDiv.appendChild(kudoAIspan)
 
         // Create/append about button
@@ -1113,15 +1115,9 @@
     ddgptDiv.classList.add('ddgpt')
     ddgptAlert('waitingResponse')
 
-    // Init footer CTA to share feedback
-    const footerLink = document.createElement('a')
-    for (const [attr, value] of [['class', 'feedback-prompt__link'],
-        ['href', config.feedbackURL], ['target', '_blank'], ['rel', 'noopener']
-    ]) footerLink.setAttribute(attr, value)
-    footerLink.textContent = messages.link_shareFeedback || 'Share feedback'
-
     // Create/classify/fill feedback footer
     const ddgptFooter = document.createElement('div')
+          footerLink = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
     ddgptFooter.classList.add('feedback-prompt', 'chatgpt-feedback')
     ddgptFooter.appendChild(footerLink)
 
