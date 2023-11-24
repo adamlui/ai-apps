@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.524.7
+// @version             2023.11.524.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1116,7 +1116,7 @@
     ddgptAlert('waitingResponse')
 
     // Create/classify/fill feedback footer
-    const ddgptFooter = document.createElement('div')
+    const ddgptFooter = document.createElement('div'),
           footerLink = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
     ddgptFooter.classList.add('feedback-prompt', 'chatgpt-feedback')
     ddgptFooter.appendChild(footerLink)
