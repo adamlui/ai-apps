@@ -37,7 +37,7 @@
   "alert_proxyNotWorking": { "message": "Proxy API ga e bereke" },
   "alert_suggestProxy": { "message": "Leka go tshuba Proxy Mode mo bareng ya didirisiwa" },
   "alert_suggestOpenAI": { "message": "Leka go tima Proxy Mode mo bareng ya didirisiwa" },
-  "alert_censored": { "message": "Ke maswabi, go ya ka ditaolo tsa kumo ya rona, ga re kake ra go fa karabo ya potso eno, tsweetswee leka dipotso tse dingwe." },
+  "alert_censored": { "message": "Ke maswabi, go ya ka ditaolo tsa kumo ya rona, ga re kake ra go fa karabo ya potso eno, tsweetswee leka dipotso tse dingwe" },
   "alert_maintenance": { "message": "Tsamaiso ya AI kafa tlase ga tlhokomelo" },
   "buttonLabel_moreApps": { "message": "Di-app tse Dintsi tsa ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Leave a Review" },
