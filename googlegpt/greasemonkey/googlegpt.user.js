@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.24.9
+// @version             2023.11.24.10
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -867,15 +867,15 @@
         // Check for active text campaigns to replace CTA
         fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
             (err, advertisersData) => { if (err) return
+                let chosenAdvertiser, adSelected
+                const shuffle = list => list.sort(() => 0.5 - Math.random())
 
                 // Pick random advertiser w/ active text campaigns
-                let chosenAdvertiser, adSelected
                 const advertisersList = Object.entries(advertisersData),
                       kudoAIprobability = 25, // percent chance to pick KudoAI
                       kudoAIentries = advertisersList.filter(([advertiser]) => advertiser === 'kudoai'),
                       kudoAIentriesNeeded = Math.ceil(advertisersList.length / (1 - kudoAIprobability/100)) // total entries needed
                                           * kudoAIprobability/100 - kudoAIentries.length // reduced to KudoAI entries needed
-                const shuffle = list => list.sort(() => 0.5 - Math.random())
                 for (let i = 0 ; i < kudoAIentriesNeeded ; i++) advertisersList.push(...kudoAIentries) // saturate w/ KudoAI                    
                 for (const [advertiser, details] of shuffle(advertisersList)) // pick random active advertiser
                     if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
