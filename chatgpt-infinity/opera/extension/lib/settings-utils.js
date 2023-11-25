@@ -1,5 +1,5 @@
 const config = {
-    appName: 'ChatGPT Infinity', appSymbol: '∞', keyPrefix = 'chatGPTinfinity',
+    appName: 'ChatGPT Infinity', appSymbol: '∞', keyPrefix: 'chatGPTinfinity',
     gitHubURL: 'https://github.com/adamlui/chatgpt-infinity' }
 config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
 
