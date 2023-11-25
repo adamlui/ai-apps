@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.25
+// @version             2023.11.25.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -388,7 +388,7 @@
 
     function camelCase(input) { // for `config.keyPrefix` derived from `config.appName`
         let lastLetterWasUpper = false, isFirstWord = true
-        return input
+        return input.replace(/-/g, ' ') // remove hyphens
             .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
                 if (/[A-Z]{2,}/.test(word) && word != word.toUpperCase()) { // word contains acronym
                     if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
