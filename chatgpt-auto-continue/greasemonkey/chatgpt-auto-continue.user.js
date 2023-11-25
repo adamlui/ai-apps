@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.25.1
+// @version             2023.11.25.2
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -311,8 +311,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
-    function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.keyPrefix + '_' + key, false) })}
+    function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
