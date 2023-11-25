@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.2
+// @version             2023.11.25.3
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -395,7 +395,7 @@
 
     function camelCase(input) { // for `config.keyPrefix` derived from `config.appName`
         let lastLetterWasUpper = false, isFirstWord = true
-        return input
+        return input.replace(/-/g, ' ') // remove hyphens
             .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
                 if (/[A-Z]{2,}/.test(word) && word != word.toUpperCase()) { // word contains acronym
                     if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
