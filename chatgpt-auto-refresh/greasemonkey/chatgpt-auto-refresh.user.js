@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.25.1
+// @version             2023.11.25.2
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -275,7 +275,7 @@
         let calledByOpenAI = false
         if (type == 'focus' && this === unsafeWindow || type == 'visibilitychange') {
             const callStack = new Error().stack + '\n',
-                  aelCaller = callStack.match(/-extension:\/\/.*\n(.+)/)?.[1]
+                  aelCaller = /-extension:\/\/.*\n(.+)/.exec(callStack)?.[1]
             calledByOpenAI = !aelCaller?.includes('-extension://')
             if (calledByOpenAI && type == 'visibilitychange') {
                 ogAEL.call(this, type, function(event) {
