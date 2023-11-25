@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.4
+// @version             2023.11.25.5
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -393,9 +393,9 @@
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
-    function camelCase(input) { // for `config.keyPrefix` derived from `config.appName`
+    function toCamelCase(str) { // for `config.keyPrefix` derived from `config.appName`
         let lastLetterWasUpper = false, isFirstWord = true
-        return input.replace(/-/g, ' ') // remove hyphens
+        return str.replace(/-/g, ' ') // remove hyphens
             .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
                 if (/[A-Z]{2,}/.test(word) && word != word.toUpperCase()) { // word contains acronym
                     if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
@@ -1242,7 +1242,7 @@
         appName: 'GoogleGPT', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/googlegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt' }
-    config.keyPrefix = camelCase(config.appName)
+    config.keyPrefix = toCamelCase(config.appName)
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
