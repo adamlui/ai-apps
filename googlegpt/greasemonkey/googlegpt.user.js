@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.5
+// @version             2023.11.25.6
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -685,7 +685,7 @@
 
     function getOpenAItoken() {
         return new Promise(resolve => {
-            const accessToken = GM_getValue(config.prefix + '_openAItoken')
+            const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
             googleGPTinfo('OpenAI access token: ' + accessToken)
             if (!accessToken) {
                 GM.xmlHttpRequest({ url: openAIendpoints.session, onload: response => {
@@ -693,7 +693,7 @@
                         googleGPTalert('checkCloudflare') ; return }
                     try {
                         const newAccessToken = JSON.parse(response.responseText).accessToken
-                        GM_setValue(config.prefix + '_openAItoken', newAccessToken)
+                        GM_setValue(config.keyPrefix + '_openAItoken', newAccessToken)
                         resolve(newAccessToken)
                     } catch { googleGPTalert('login') ; return }
                 }})
@@ -702,7 +702,7 @@
 
     function getAIGCFkey() {
         return new Promise(resolve => {
-            const publicKey = GM_getValue(config.prefix + '_aigcfKey')
+            const publicKey = GM_getValue(config.keyPrefix + '_aigcfKey')
             if (!publicKey) {
                 GM.xmlHttpRequest({ method: 'GET', url: 'https://api.aigcfun.com/fc/key',
                     headers: {
@@ -712,7 +712,7 @@
                     onload: response => {
                         const newPublicKey = JSON.parse(response.responseText).data
                         if (!newPublicKey) { googleGPTerror('Failed to get AIGCFun public key') ; return }
-                        GM_setValue(config.prefix + '_aigcfKey', newPublicKey)
+                        GM_setValue(config.keyPrefix + '_aigcfKey', newPublicKey)
                         console.info('AIGCFun public key set: ' + newPublicKey)
                         resolve(newPublicKey)
                 }})
@@ -720,7 +720,7 @@
     })}
 
     async function refreshAIGCFendpoint() {
-        GM_setValue(config.prefix + '_aigcfKey', false) // clear GM key
+        GM_setValue(config.keyPrefix + '_aigcfKey', false) // clear GM key
         // Determine index of AIGCF in endpoint map
         let aigcfMapIndex = -1
         for (let i = 0 ; i < proxyEndpoints.length ; i++) {
@@ -990,7 +990,7 @@
                     if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpoints.length)
                         retryDiffHost()
                     else if (event.status === 401 && !config.proxyAPIenabled) {
-                        GM_deleteValue(config.prefix + '_openAItoken') ; googleGPTalert('login') }
+                        GM_deleteValue(config.keyPrefix + '_openAItoken') ; googleGPTalert('login') }
                     else if (event.status === 403)
                         googleGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
                     else if (event.status === 429) googleGPTalert('tooManyRequests')
