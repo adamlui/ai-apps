@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.25
+// @version             2023.11.25.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -317,9 +317,8 @@
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
     function camelCase(input) { // for `config.keyPrefix` derived from `config.appName`
-        input = input.replace(/-/g, ' ') // remove hyphens
         let lastLetterWasUpper = false, isFirstWord = true
-        return input
+        return input.replace(/-/g, ' ') // remove hyphens
             .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
                 if (/[A-Z]{2,}/.test(word) && word != word.toUpperCase()) { // word contains acronym
                     if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
