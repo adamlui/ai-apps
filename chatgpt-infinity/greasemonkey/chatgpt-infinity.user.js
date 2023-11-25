@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.21
+// @version             2023.11.25
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -236,9 +236,10 @@
 
     // Init config
     const config = {
-        prefix: 'chatgptInfinity', appSymbol: '∞', userLanguage: chatgpt.getUserLanguage(),
+        appName: 'ChatGPT Infinity', appSymbol: '∞', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/chatgpt-infinity',
         greasyForkURL: 'https://greasyfork.org/scripts/465051-chatgpt-infinity' }
+    config.keyPrefix = camelCase(config.appName)
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -358,10 +359,32 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
-    function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.keyPrefix + '_' + key, false) })}
+    function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch(err) { return 'other' }}
+
+    function camelCase(input) { // for `config.keyPrefix` derived from `config.appName`
+        let lastLetterWasUpper = false, isFirstWord = true
+        return input.replace(/-/g, ' ') // remove hyphens
+            .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
+                if (/[A-Z]{2,}/.test(word) && word != word.toUpperCase()) { // word contains acronym
+                    if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
+                        word = word.charAt(0).toLowerCase() + word.slice(1) // lower-case it
+                    return word.replace(/([a-z]+)([A-Z]+)/g, '$1 $2') // separate words from following acronyms
+                               .replace(/([A-Z]+)([a-z]+)/g, '$1 $2') // separate acronyms from following words
+                               .split(' ') // split for individual processing
+                } else return word // non-acronym
+            }).map(word => { // convert each word/acronym's case
+                const isFullAcronym = word.toUpperCase() == word
+                const result = isFullAcronym
+                    ? ( lastLetterWasUpper || isFirstWord ) ? word.toLowerCase() : word // alternate acronym case
+                    : ( lastLetterWasUpper || isFirstWord ) // alternate non-acronym case
+                        ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                isFirstWord = false ; lastLetterWasUpper = isFullAcronym ? (result == word && !isFirstWord) : false
+                return result
+            }).join('') // combine to form camel case
+    }
 
     // Define MENU functions
 
@@ -406,7 +429,7 @@
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
                     alert(( messages.alert_replyLangUpdated || 'Language updated' ) + '!', // title
-                        ( messages.appName || 'ChatGPT Infinity' ) + ' ' // msg
+                        ( messages.appName || config.appName ) + ' ' // msg
                             + ( messages.alert_willReplyIn || 'will reply in' ) + ' '
                             + ( replyLanguage || messages.alert_yourSysLang || 'your system language') + '.')
                     if (config.infinityMode) restartInNewChat() // using new reply language                        
@@ -426,7 +449,7 @@
                 const str_replyTopic = replyTopic.toString()
                 saveSetting('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
                 alert(( messages.alert_replyTopicUpdated || 'Topic updated' ) + '!',
-                    ( messages.appName || 'ChatGPT Infinity' ) + ' '
+                    ( messages.appName || config.appName ) + ' '
                         + ( messages.alert_willAnswer || 'will answer questions' ) + ' '
                         + ( !replyTopic || re_all.test(str_replyTopic)
                               ? messages.alert_onAllTopics || 'on ALL topics'
@@ -450,7 +473,7 @@
                 else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
                     saveSetting('replyInterval', parseInt(replyInterval))
                     alert(( messages.alert_replyIntUpdated || 'Interval updated' ) + '!', // title
-                        ( messages.appName || 'ChatGPT Infinity' ) + ' ' // msg
+                        ( messages.appName || config.appName ) + ' ' // msg
                             + ( messages.alert_willReplyEvery || 'will reply every' ) + ' '
                             + replyInterval + ' ' + ( messages.unit_seconds || 'seconds' ) + '.')
                     if (config.infinityMode) resetInSameChat() // using new reply interval                    
@@ -459,7 +482,7 @@
         }}}))
 
         // Add command to launch About modal
-        const aboutLabel = `💡 ${ messages.menuLabel_about || 'About' } ${ messages.appName || 'ChatGPT Infinity' }`
+        const aboutLabel = `💡 ${ messages.menuLabel_about || 'About' } ${ messages.appName || config.appName }`
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
 
@@ -472,7 +495,7 @@
               pBrStyle = 'position: relative ; left: 4px ',
               aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
         const aboutAlertID = alert(
-            messages.appName || 'ChatGPT Infinity', // title
+            messages.appName || config.appName, // title
             `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
             + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy || 'Powered by' }</i></b>: </span>`
@@ -533,7 +556,7 @@
                         // Alert to update
                         const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             ( messages.alert_newerVer || 'An update to' ) + ' ' // msg
-                                + ( messages.appName || 'ChatGPT Infinity' ) + ' '
+                                + ( messages.appName || config.appName ) + ' '
                                 + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
@@ -559,7 +582,7 @@
 
                 // Alert to no update, return to About alert
                 alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ messages.appName || 'ChatGPT Infinity' } (v${ currentVer }) ` // msg
+                    `${ messages.appName || config.appName } (v${ currentVer }) ` // msg
                         + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!',
                     '', '', updateAlertWidth
                 )
