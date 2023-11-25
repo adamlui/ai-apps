@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.10
+// @version             2023.11.25.11
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -898,16 +898,25 @@
         // Check for active text campaigns to replace CTA
         fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
             (err, advertisersData) => { if (err) return
+
+                // Init vars + shuffler
                 let chosenAdvertiser, adSelected
                 const shuffle = list => list.sort(() => 0.5 - Math.random())
+                const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
+                const currentDate = (() => { // in YYYYMMDD format
+                    const today = new Date(), year = today.getFullYear(),
+                          month = String(today.getMonth() + 1).padStart(2, '0'),
+                          day = String(today.getDate()).padStart(2, '0')
+                    return year + month + day
+                })()
 
                 // Pick random advertiser w/ active text campaigns
                 const advertisersList = Object.entries(advertisersData),
-                      kudoAIprobability = 25, // new percent chance to pick KudoAI
-                      kudoAIentries = advertisersList.filter(([advertiser]) => advertiser == 'kudoai'),
-                      kudoAIentriesNeeded = Math.ceil(advertisersList.length / (1 - kudoAIprobability/100)) // total entries needed
-                                          * kudoAIprobability/100 - kudoAIentries.length // reduced to KudoAI entries needed
-                for (let i = 0 ; i < kudoAIentriesNeeded ; i++) advertisersList.push(...kudoAIentries) // saturate w/ KudoAI                    
+                      amazonProbability = 50, // new percent chance to pick Amazon
+                      amazonEntries = advertisersList.filter(([advertiser]) => advertiser == 'amazon'),
+                      amazonEntriesNeeded = Math.ceil(advertisersList.length / (1 - amazonProbability/100)) // total entries needed
+                                          * amazonProbability/100 - amazonEntries.length // reduced to Amazon entries needed
+                for (let i = 0 ; i < amazonEntriesNeeded ; i++) advertisersList.push(...amazonEntries) // saturate w/ Amazon                    
                 for (const [advertiser, details] of shuffle(advertisersList)) // pick random active advertiser
                     if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
 
@@ -917,13 +926,17 @@
                                        + chosenAdvertiser + '/text/campaigns.json'
                     fetchJSON(campaignsURL, (err, campaignsData) => { if (err) { return }
                         for (const [campaignName, campaign] of shuffle(Object.entries(campaignsData))) {
-                            if (!campaign.active) continue // to next campaign since campaign inactive
+                            const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
+                            if (!campaignIsActive) continue // to next campaign since campaign inactive
                             for (const [groupName, adGroup] of shuffle(Object.entries(campaign.adGroups))) {
-                                const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
+
+                                // Skip disqualified groups
                                 if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
-                                    || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self GoogleGPT group
-                                    || adGroup.active === false) // or group explicitly disabled
-                                        continue // to next group
+                                    || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
+                                    || adGroup.active === false // group explicitly disabled
+                                    || adGroup.targetLocations && !adGroup.targetLocations.some( // target locale(s) exist, doesn't match user's
+                                        loc => loc.includes(config.userLocale) || config.userLocale.includes(loc))
+                                ) continue // to next group
 
                                 // Filter out inactive ads, pick random active one
                                 const activeAds = adGroup.ads.filter(ad => ad.active !== false)
@@ -1249,6 +1262,8 @@
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
+    config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
+                      : window.location.hostname.split('.').pop()
     loadSetting('proxyAPIenabled', 'prefixEnabled', 'rqDisabled', 'replyLanguage', 'widerSidebar', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = [], // to store queries + answers for contextual replies
