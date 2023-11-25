@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.24.12
+// @version             2023.11.25
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -393,6 +393,28 @@
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
+    function camelCase(input) { // for `config.keyPrefix` derived from `config.appName`
+        let lastLetterWasUpper = false, isFirstWord = true
+        return input
+            .split(' ').flatMap((word, index) => { // split input into words/acronyms for individual processing
+                if (/[A-Z]{2,}/.test(word) && word !== word.toUpperCase()) { // word contains acronym
+                    if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
+                        word = word.charAt(0).toLowerCase() + word.slice(1) // lower-case it
+                    return word.replace(/([a-z]+)([A-Z]+)/g, '$1 $2') // separate words from following acronyms
+                               .replace(/([A-Z]+)([a-z]+)/g, '$1 $2') // separate acronyms from following words
+                               .split(' ') // split for individual processing
+                } else return word // non-acronym
+            }).map((word) => { // convert each word/acronym's case
+                const isFullAcronym = word.toUpperCase() === word
+                const result = isFullAcronym
+                    ? ( lastLetterWasUpper || isFirstWord ) ? word.toLowerCase() : word // alternate acronym case
+                    : ( lastLetterWasUpper || isFirstWord ) // alternate non-acronym case
+                        ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                isFirstWord = false ; lastLetterWasUpper = isFullAcronym ? (result === word && !isFirstWord) : false
+                return result
+            }).join('') // combine to form camel case
+    }
+
     // Define MENU functions
 
     function registerMenu() {
@@ -470,7 +492,7 @@
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
                     alert(( messages.alert_langUpdated || 'Language updated' ) + '!', // title
-                        'GoogleGPT ' + ( messages.alert_willReplyIn || 'will reply in' ) + ' ' // msg
+                        config.appName + ' ' + ( messages.alert_willReplyIn || 'will reply in' ) + ' ' // msg
                             + ( replyLanguage || messages.alert_yourSysLang || 'your system language' ) + '.',
                         '', '', 335)
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -478,7 +500,7 @@
         }}}))
 
         // Add command to launch About modal
-        const aboutLabel = '💡 ' + ( messages.menuLabel_about || 'About' ) + ' GoogleGPT'
+        const aboutLabel = '💡 ' + ( messages.menuLabel_about || 'About' ) + ' ' + config.appName
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
 
@@ -487,7 +509,7 @@
         // Show alert
         const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
         const aboutAlertID = alert(
-            'GoogleGPT', // title
+            config.appName, // title
             '🏷️ ' + ( messages.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
                 + '⚡ ' + ( messages.about_poweredBy || 'Powered by' ) + ': '
                     + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
@@ -536,7 +558,7 @@
 
                         // Alert to update
                         const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
-                            ( messages.alert_newerVer || 'An update to' ) + ' GoogleGPT '
+                            ( messages.alert_newerVer || 'An update to' ) + ` ${ config.appName } `
                                 + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }! `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.97rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
@@ -562,7 +584,7 @@
 
                 // Alert to no update found, nav back
                 alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `GoogleGPT (v${ currentVer }) ${ messages.alert_isUpToDate || 'is up-to-date' }!`, // msg
+                    `${ config.appName } (v${ currentVer }) ${ messages.alert_isUpToDate || 'is up-to-date' }!`, // msg
                         '', '', updateAlertWidth)
                 launchAboutModal()
     }})}
@@ -588,8 +610,8 @@
           + '</p>' )
     }
 
-    function googleGPTinfo(msg) { console.info(config.appSymbol + ' GoogleGPT >> ' + msg) }
-    function googleGPTerror(msg) { console.error(config.appSymbol + ' GoogleGPT >> ERROR: ' + msg) }
+    function googleGPTinfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
+    function googleGPTerror(msg) { console.error(`${ config.appSymbol } ${ config.appName } >> ERROR: ${ msg }`) }
 
     // Define UI functions
 
@@ -888,8 +910,9 @@
                         for (const [campaignName, campaign] of shuffle(Object.entries(campaignsData))) {
                             if (!campaign.active) continue // to next campaign since campaign inactive
                             for (const [groupName, adGroup] of shuffle(Object.entries(campaign.adGroups))) {
-                                if (/^self$/i.test(groupName) && !/googlegpt/i.test(campaignName) // self-group for other apps
-                                    || /googlegpt/i.test(campaignName) && !/^self$/i.test(groupName) // non-self GoogleGPT group
+                                const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
+                                if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
+                                    || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self GoogleGPT group
                                     || adGroup.active === false) // or group explicitly disabled
                                         continue // to next group
 
@@ -904,7 +927,7 @@
                                 if (destinationURL.includes('http')) { // insert UTM tags
                                     const [baseURL, queryString] = destinationURL.split('?'),
                                           queryParams = new URLSearchParams(queryString || '')
-                                    queryParams.set('utm_source', 'googlegpt')
+                                    queryParams.set('utm_source', config.appName.toLowerCase())
                                     queryParams.set('utm_content', 'app_footer_link')
                                     destinationURL = baseURL + '?' + queryParams.toString()
                                 }
@@ -1015,7 +1038,7 @@
         // Create/append '🤖 GoogleGPT'
         const appNameSpan = document.createElement('span')
         appNameSpan.classList.add('app-name', 'no-user-select') ; appNameSpan.innerText = '🤖  '
-        const googleGPTlink = createAnchor('https://googlegpt.kudoai.com', 'GoogleGPT')
+        const googleGPTlink = createAnchor('https://googlegpt.kudoai.com', config.appName)
         appNameSpan.appendChild(googleGPTlink) ; googleGPTdiv.appendChild(appNameSpan)
 
         // Create/append 'by KudoAI'
@@ -1216,9 +1239,10 @@
 
     // Init config/convo/menu
     const config = {
-        prefix: 'googlegpt', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
+        appName: 'GoogleGPT', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/googlegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt' }
+    config.keyPrefix = camelCase(config.appName)
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
