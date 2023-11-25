@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.1
+// @version             2023.11.25.2
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -397,7 +397,7 @@
         let lastLetterWasUpper = false, isFirstWord = true
         return input
             .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
-                if (/[A-Z]{2,}/.test(word) && word !== word.toUpperCase()) { // word contains acronym
+                if (/[A-Z]{2,}/.test(word) && word != word.toUpperCase()) { // word contains acronym
                     if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
                         word = word.charAt(0).toLowerCase() + word.slice(1) // lower-case it
                     return word.replace(/([a-z]+)([A-Z]+)/g, '$1 $2') // separate words from following acronyms
@@ -405,12 +405,12 @@
                                .split(' ') // split for individual processing
                 } else return word // non-acronym
             }).map(word => { // convert each word/acronym's case
-                const isFullAcronym = word.toUpperCase() === word
+                const isFullAcronym = word.toUpperCase() == word
                 const result = isFullAcronym
                     ? ( lastLetterWasUpper || isFirstWord ) ? word.toLowerCase() : word // alternate acronym case
                     : ( lastLetterWasUpper || isFirstWord ) // alternate non-acronym case
                         ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-                isFirstWord = false ; lastLetterWasUpper = isFullAcronym ? (result === word && !isFirstWord) : false
+                isFirstWord = false ; lastLetterWasUpper = isFullAcronym ? (result == word && !isFirstWord) : false
                 return result
             }).join('') // combine to form camel case
     }
