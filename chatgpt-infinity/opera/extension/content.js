@@ -224,7 +224,7 @@
                     } else {
                         switchSpan.style.backgroundColor = '#CCC'
                         switchSpan.style.boxShadow = 'none'
-                        knobSpan.style.transform = `translateX(0)`
+                        knobSpan.style.transform = 'translateX(0)'
                     }
                 }, 1) // min delay to trigger transition fx
     }})}
