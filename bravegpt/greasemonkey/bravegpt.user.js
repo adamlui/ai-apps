@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.2
+// @version             2023.11.25.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -730,7 +730,8 @@
                                 }
 
                                 // Replace `footerLink` w/ new text/href
-                                footerLink.textContent = chosenAd.text
+                                footerLink.textContent = chosenAd.text.length < 45 ? chosenAd.text
+                                                       : chosenAd.text.slice(0, 45) + '...'
                                 footerLink.setAttribute('href', destinationURL)
                                 footerLink.setAttribute('title', chosenAd.tooltip || '')
                                 adSelected = true ; break // out of group loop after ad selection
@@ -1129,7 +1130,7 @@
         + `.bravegpt .footer { margin: ${ isChromium ? 19 : 24 }px 0 -26px 0 ; border-top: none !important }`
         + '.bravegpt .feedback {'
             + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem ;'
-            + 'letter-spacing: .02em ; line-height: 1; position: relative ; right: -18px ; bottom: 15px ;'
+            + 'letter-spacing: .02em ; position: relative ; right: -18px ; bottom: 15px ;'
             + `color: ${ scheme == 'dark' ? '#aaa' : 'var(--search-text-06)' }}`
         + '.bravegpt .feedback .icon {'
             + ' fill: currentColor ; color: currentColor ; --size: 12px ; position: relative ; top: 0.19em ; right: 2px }'
