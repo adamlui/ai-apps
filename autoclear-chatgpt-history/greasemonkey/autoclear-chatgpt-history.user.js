@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.19.1
+// @version             2023.11.25
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -262,9 +262,10 @@
 
     // Init config
     const config = {
-        prefix: 'chatgptAutoclear', appSymbol: '🕶️', userLanguage: chatgpt.getUserLanguage(),
+        appName: 'Autoclear ChatGPT History', appSymbol: '🕶️', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
         greasyForkURL: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history' }
+    config.keyPrefix = camelCase(config.appName)
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -385,6 +386,28 @@
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
+    function camelCase(input) { // for `config.keyPrefix` derived from `config.appName`
+        let lastLetterWasUpper = false, isFirstWord = true
+        return input
+            .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
+                if (/[A-Z]{2,}/.test(word) && word != word.toUpperCase()) { // word contains acronym
+                    if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
+                        word = word.charAt(0).toLowerCase() + word.slice(1) // lower-case it
+                    return word.replace(/([a-z]+)([A-Z]+)/g, '$1 $2') // separate words from following acronyms
+                               .replace(/([A-Z]+)([a-z]+)/g, '$1 $2') // separate acronyms from following words
+                               .split(' ') // split for individual processing
+                } else return word // non-acronym
+            }).map(word => { // convert each word/acronym's case
+                const isFullAcronym = word.toUpperCase() == word
+                const result = isFullAcronym
+                    ? ( lastLetterWasUpper || isFirstWord ) ? word.toLowerCase() : word // alternate acronym case
+                    : ( lastLetterWasUpper || isFirstWord ) // alternate non-acronym case
+                        ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                isFirstWord = false ; lastLetterWasUpper = isFullAcronym ? (result == word && !isFirstWord) : false
+                return result
+            }).join('') // combine to form camel case
+    }
+
     // Define MENU functions
 
     function registerMenu() {
@@ -422,7 +445,7 @@
 
         // Add command to launch About modal
         const amLabel = '💡 ' + ( messages.menuLabel_about || 'About' ) + ' '
-                      + ( messages.appName || 'Autoclear ChatGPT History' )
+                      + ( messages.appName || config.appName )
         menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
     }
 
@@ -437,7 +460,7 @@
 
         // Show alert
         const aboutAlertID = alert(
-            messages.appName || 'Autoclear ChatGPT History', // title
+            messages.appName || config.appName, // title
             `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
             + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy || 'Powered by' }</i></b>: </span>`
@@ -494,7 +517,7 @@
                         // Alert to update
                         const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             ( messages.alert_newerVer || 'An update to' ) + ' ' // msg
-                                + ( messages.appName || 'Autoclear ChatGPT History' ) + ' '
+                                + ( messages.appName || config.appName ) + ' '
                                 + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
@@ -520,7 +543,7 @@
 
                 // Alert to no update, return to About alert
                 alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ messages.appName || 'Autoclear ChatGPT History' } (v${ currentVer }) ` // msg
+                    `${ messages.appName || config.appName } (v${ currentVer }) ` // msg
                         + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!',
                     '', '', updateAlertWidth
                 )
