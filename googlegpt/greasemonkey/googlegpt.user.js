@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.9
+// @version             2023.11.25.10
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -604,7 +604,7 @@
         msg = googleGPTalerts[msg] || msg
         googleGPTdiv.innerHTML = (
             `<p style="padding-bottom: 15px" ${ /waiting|loading/i.test(msg) ? 'class="loading no-user-select"' : '' }>`
-                + googleGPTalerts[msg] + ( googleGPTalerts[msg].includes('@') ? // if msg needs login link, add it
+                + msg + ( msg.includes('@') ? // if msg needs login link, add it
                     '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
                         + '(' + ( messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode' ) + ')'
                     : '' )
