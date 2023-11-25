@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.24.7
+// @version             2023.11.24.8
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -895,10 +895,11 @@
                                 // Build destination URL
                                 let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
                                     || campaign.destinationURL || 'mailto:ads@kudoai.com'
-                                if (destinationURL.includes('http')) { // insert utm_source
+                                if (destinationURL.includes('http')) { // insert UTM tags
                                     const [baseURL, queryString] = destinationURL.split('?'),
                                           queryParams = new URLSearchParams(queryString || '')
                                     queryParams.set('utm_source', 'googlegpt')
+                                    queryParams.set('utm_content', 'app_footer_link')
                                     destinationURL = baseURL + '?' + queryParams.toString()
                                 }
 
