@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.8
+// @version             2023.11.25.9
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -601,6 +601,7 @@
 
     function googleGPTalert(msg) {
         if (msg.includes('login')) deleteOpenAIcookies()
+        msg = googleGPTalerts[msg] || msg
         googleGPTdiv.innerHTML = (
             `<p style="padding-bottom: 15px" ${ /waiting|loading/i.test(msg) ? 'class="loading no-user-select"' : '' }>`
                 + googleGPTalerts[msg] + ( googleGPTalerts[msg].includes('@') ? // if msg needs login link, add it
