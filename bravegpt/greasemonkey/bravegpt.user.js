@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.1
+// @version             2023.11.25.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -454,6 +454,14 @@
         return anchor
     }
 
+    function fetchJSON(url, callback) { // for dynamic footer
+        GM.xmlHttpRequest({ method: 'GET', url: url, onload: response => {
+            if (response.status >= 200 && response.status < 300) {
+                try { const data = JSON.parse(response.responseText) ; callback(null, data) }
+                catch (err) { callback(err, null) }
+            } else callback(new Error('Failed to load data: ' + response.statusText), null)
+    }})}
+
     // Define SESSION functions
 
     function isBlockedbyCloudflare(resp) {
@@ -588,7 +596,7 @@
             })
     })}
 
-    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `braveGPTshow(answer).handleSubmit()`
+    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `braveGPTshow(answer, footerLink).handleSubmit()`
         if ([' ', 'Enter'].includes(event.key) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
 
@@ -671,6 +679,66 @@
                     })
         }})}
 
+        // Init footer CTA to share feedback
+        const footerLink = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Feedback')
+        footerLink.classList.add('feedback', 'svelte-8js1iq') // Brave classes
+
+        // Check for active text campaigns to replace CTA
+        fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
+            (err, advertisersData) => { if (err) return
+                let chosenAdvertiser, adSelected
+                const shuffle = list => list.sort(() => 0.5 - Math.random())
+
+                // Pick random advertiser w/ active text campaigns
+                const advertisersList = Object.entries(advertisersData),
+                      kudoAIprobability = 25, // new percent chance to pick KudoAI
+                      kudoAIentries = advertisersList.filter(([advertiser]) => advertiser == 'kudoai'),
+                      kudoAIentriesNeeded = Math.ceil(advertisersList.length / (1 - kudoAIprobability/100)) // total entries needed
+                                          * kudoAIprobability/100 - kudoAIentries.length // reduced to KudoAI entries needed
+                for (let i = 0 ; i < kudoAIentriesNeeded ; i++) advertisersList.push(...kudoAIentries) // saturate w/ KudoAI                    
+                for (const [advertiser, details] of shuffle(advertisersList)) // pick random active advertiser
+                    if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
+
+                // Fetch a random, active creative
+                if (chosenAdvertiser) {
+                    const campaignsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/'
+                                       + chosenAdvertiser + '/text/campaigns.json'
+                    fetchJSON(campaignsURL, (err, campaignsData) => { if (err) { return }
+                        for (const [campaignName, campaign] of shuffle(Object.entries(campaignsData))) {
+                            if (!campaign.active) continue // to next campaign since campaign inactive
+                            for (const [groupName, adGroup] of shuffle(Object.entries(campaign.adGroups))) {
+                                const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
+                                if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
+                                    || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self BraveGPT group
+                                    || adGroup.active === false) // or group explicitly disabled
+                                        continue // to next group
+
+                                // Filter out inactive ads, pick random active one
+                                const activeAds = adGroup.ads.filter(ad => ad.active !== false)
+                                if (activeAds.length === 0) continue // to next group since no ads active
+                                const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
+
+                                // Build destination URL
+                                let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
+                                    || campaign.destinationURL || 'mailto:ads@kudoai.com'
+                                if (destinationURL.includes('http')) { // insert UTM tags
+                                    const [baseURL, queryString] = destinationURL.split('?'),
+                                          queryParams = new URLSearchParams(queryString || '')
+                                    queryParams.set('utm_source', config.appName.toLowerCase())
+                                    queryParams.set('utm_content', 'app_footer_link')
+                                    destinationURL = baseURL + '?' + queryParams.toString()
+                                }
+
+                                // Replace `footerLink` w/ new text/href
+                                footerLink.textContent = chosenAd.text
+                                footerLink.setAttribute('href', destinationURL)
+                                footerLink.setAttribute('title', chosenAd.tooltip || '')
+                                adSelected = true ; break // out of group loop after ad selection
+                            }
+                            if (adSelected) break // out of campaign loop after ad selection
+                }})}
+        })
+
         function responseType(api) {
             return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
 
@@ -698,7 +766,7 @@
                         }
                         if (responseItem.startsWith('data: {')) {
                             const answer = JSON.parse(responseItem.slice(6)).message.content.parts[0]
-                            braveGPTshow(answer)
+                            braveGPTshow(answer, footerLink)
                         } else if (responseItem.startsWith('data: [DONE]')) return
                         return reader.read().then(processText)
         })}}}
@@ -723,7 +791,7 @@
                                 const responseParts = event.response.split('\n\n'),
                                       finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
                                       answer = finalResponse.message.content.parts[0]
-                                braveGPTshow(answer)
+                                braveGPTshow(answer, footerLink)
                             } catch (err) {
                                 braveGPTerror(braveGPTalerts.parseFailed + ': ' + err)
                                 braveGPTerror('Response: ' + event.response)
@@ -734,7 +802,7 @@
                         if (event.responseText) {
                             try { // to parse txt response from AIGCF endpoint
                                 const answer = JSON.parse(event.responseText).choices[0].message.content
-                                braveGPTshow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                                braveGPTshow(answer, footerLink) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                             } catch (err) {
                                 braveGPTinfo('Response: ' + event.responseText)
                                 if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
@@ -752,7 +820,7 @@
         }}}}}}}
     }
 
-    function braveGPTshow(answer) {
+    function braveGPTshow(answer, footerLink) {
         while (braveGPTdiv.firstChild) // clear all children
             braveGPTdiv.removeChild(braveGPTdiv.firstChild)
 
@@ -837,23 +905,17 @@
         ]) sendSVG.setAttribute(attr, value)
         sendSVG.appendChild(sendSVGpath) ; sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
-        // Create feedback anchor + set attributes
-        const footerLink = createAnchor(config.feedbackURL)
-        footerLink.classList.add('feedback', 'svelte-8js1iq')
-
-        // Create feedback icon + set attributes
-        const feedbackSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-              feedbackSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+        // Create/insert bulb icon into footer link
+        const footerSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+              footerSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path')
         for (const [attr, value] of [
             ['class', 'icon'], ['width', 15], ['height', 15], ['viewBox', '0 0 15 15']
-        ]) feedbackSVG.setAttribute(attr, value)
-        feedbackSVGpath.setAttribute('fill-rule', 'evenodd')
-        feedbackSVGpath.setAttribute('d', 'M.577 6.23a.577.577 0 1 1 0-1.153H1.5a.577.577 0 0 1 0 1.154H.577ZM2.83 8.939a.576.576 0 0 1 0 .816l-1.385 1.385a.573.573 0 0 1-.816 0 .576.576 0 0 1 0-.816l1.385-1.385a.577.577 0 0 1 .816 0ZM.63.985a.576.576 0 1 1 .815-.816L2.83 1.553a.576.576 0 1 1-.816.816L.63.985ZM15 5.654a.577.577 0 0 1-.577.577H13.5a.577.577 0 0 1 0-1.154h.923c.319 0 .577.258.577.577Zm-.631 4.669a.576.576 0 1 1-.816.816l-1.385-1.385a.576.576 0 1 1 .816-.816l1.385 1.385Zm-2.2-7.954a.576.576 0 0 1 0-.816L13.553.17a.577.577 0 0 1 .816.816l-1.385 1.384a.575.575 0 0 1-.816 0ZM9.3 9.09a.579.579 0 0 0-.045.038c-.45.417-.486 1.23-.486 1.47v.238c-1.045.45-2.053.177-2.537-.013v-.226c0-.24-.036-1.053-.487-1.469a.687.687 0 0 0-.044-.037c-.81-.609-1.777-1.667-1.777-3.253 0-2.073 1.604-3.76 3.576-3.76s3.577 1.687 3.577 3.76c0 1.586-.967 2.644-1.777 3.252Zm-1.8 4.757c-.995 0-1.223-.623-1.27-.814v-.997a4.83 4.83 0 0 0 1.343.197c.374 0 .78-.057 1.195-.18v.978c-.05.202-.282.816-1.269.816ZM7.5.923c-2.609 0-4.73 2.204-4.73 4.914 0 1.616.757 3.047 2.192 4.141.058.094.114.39.115.618v2.494c0 .03.003.06.007.09.1.63.732 1.82 2.416 1.82s2.316-1.19 2.416-1.82a.674.674 0 0 0 .006-.09v-2.494c0-.206.054-.525.11-.613 1.438-1.096 2.198-2.528 2.198-4.146 0-2.71-2.121-4.914-4.73-4.914Z')
-        
-        // Assemble feedback link
-        feedbackSVG.appendChild(feedbackSVGpath)
-        footerLink.appendChild(feedbackSVG)
-        footerLink.appendChild(document.createTextNode(' ' + ( messages.link_shareFeedback || 'Feedback' )))
+        ]) footerSVG.setAttribute(attr, value)
+        footerSVG.style.marginRight = '4px' // gap before CTA
+        footerSVGpath.setAttribute('fill-rule', 'evenodd')
+        footerSVGpath.setAttribute('d', 'M.577 6.23a.577.577 0 1 1 0-1.153H1.5a.577.577 0 0 1 0 1.154H.577ZM2.83 8.939a.576.576 0 0 1 0 .816l-1.385 1.385a.573.573 0 0 1-.816 0 .576.576 0 0 1 0-.816l1.385-1.385a.577.577 0 0 1 .816 0ZM.63.985a.576.576 0 1 1 .815-.816L2.83 1.553a.576.576 0 1 1-.816.816L.63.985ZM15 5.654a.577.577 0 0 1-.577.577H13.5a.577.577 0 0 1 0-1.154h.923c.319 0 .577.258.577.577Zm-.631 4.669a.576.576 0 1 1-.816.816l-1.385-1.385a.576.576 0 1 1 .816-.816l1.385 1.385Zm-2.2-7.954a.576.576 0 0 1 0-.816L13.553.17a.577.577 0 0 1 .816.816l-1.385 1.384a.575.575 0 0 1-.816 0ZM9.3 9.09a.579.579 0 0 0-.045.038c-.45.417-.486 1.23-.486 1.47v.238c-1.045.45-2.053.177-2.537-.013v-.226c0-.24-.036-1.053-.487-1.469a.687.687 0 0 0-.044-.037c-.81-.609-1.777-1.667-1.777-3.253 0-2.073 1.604-3.76 3.576-3.76s3.577 1.687 3.577 3.76c0 1.586-.967 2.644-1.777 3.252Zm-1.8 4.757c-.995 0-1.223-.623-1.27-.814v-.997a4.83 4.83 0 0 0 1.343.197c.374 0 .78-.057 1.195-.18v.978c-.05.202-.282.816-1.269.816ZM7.5.923c-2.609 0-4.73 2.204-4.73 4.914 0 1.616.757 3.047 2.192 4.141.058.094.114.39.115.618v2.494c0 .03.003.06.007.09.1.63.732 1.82 2.416 1.82s2.316-1.19 2.416-1.82a.674.674 0 0 0 .006-.09v-2.494c0-.206.054-.525.11-.613 1.438-1.096 2.198-2.528 2.198-4.146 0-2.71-2.121-4.914-4.73-4.914Z')
+        footerSVG.appendChild(footerSVGpath)
+        footerLink.insertBefore(footerSVG, footerLink.firstChild)
 
         // Create/classify/fill/append footer
         const braveGPTfooter = document.createElement('div')
@@ -1067,7 +1129,7 @@
         + `.bravegpt .footer { margin: ${ isChromium ? 19 : 24 }px 0 -26px 0 ; border-top: none !important }`
         + '.bravegpt .feedback {'
             + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem ;'
-            + 'letter-spacing: .02em ; line-height: 1; position: relative ; right: -10px ; bottom: 15px ;'
+            + 'letter-spacing: .02em ; line-height: 1; position: relative ; right: -18px ; bottom: 15px ;'
             + `color: ${ scheme == 'dark' ? '#aaa' : 'var(--search-text-06)' }}`
         + '.bravegpt .feedback .icon {'
             + ' fill: currentColor ; color: currentColor ; --size: 12px ; position: relative ; top: 0.19em ; right: 2px }'
