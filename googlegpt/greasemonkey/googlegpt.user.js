@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.6
+// @version             2023.11.25.7
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -666,6 +666,14 @@
         return anchor
     }
 
+    function fetchJSON(url, callback) { // for dynamic footer
+        GM.xmlHttpRequest({ method: 'GET', url: url, onload: response => {
+            if (response.status >= 200 && response.status < 300) {
+                try { const data = JSON.parse(response.responseText) ; callback(null, data) }
+                catch (err) { callback(err, null) }
+            } else callback(new Error('Failed to load data: ' + response.statusText), null)
+    }})}
+
     // Define SESSION functions
 
     function isBlockedbyCloudflare(resp) {
@@ -941,14 +949,6 @@
                             if (adSelected) break // out of campaign loop after ad selection
                 }})}
         })
-
-        function fetchJSON(url, callback) {
-            GM.xmlHttpRequest({ method: 'GET', url: url, onload: response => {
-                if (response.status >= 200 && response.status < 300) {
-                    try { const data = JSON.parse(response.responseText) ; callback(null, data) }
-                    catch (err) { callback(err, null) }
-                } else callback(new Error('Failed to load data: ' + response.statusText), null)
-        }})}
 
         function responseType(api) {
             return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
