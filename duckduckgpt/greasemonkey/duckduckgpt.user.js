@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.525.2
+// @version             2023.11.525.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -424,10 +424,11 @@
 
     function ddgptAlert(msg) {
         if (msg.includes('login')) deleteOpenAIcookies()
+        msg = ddgptAlerts[msg] || msg
         ddgptDiv.innerHTML = (
             /waiting|loading/i.test(msg) ? // if alert involves loading, add class
-                '<p class="loading no-user-select">' : '<p>') + ddgptAlerts[msg]
-            + (ddgptAlerts[msg].includes('@') ? // if msg needs login link, add it
+                '<p class="loading no-user-select">' : '<p>') + msg
+            + (msg.includes('@') ? // if msg needs login link, add it
                 '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
                     + '(' + ( messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode' )
                      + ')</p>' : '</p>')
@@ -785,10 +786,10 @@
                             } catch (err) {
                                 ddgptInfo('Response: ' + event.responseText)
                                 if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
-                                    ddgptShow(messages.alert_censored || 'Sorry, according to our product rules, '
+                                    ddgptAlert(messages.alert_censored || 'Sorry, according to our product rules, '
                                     + 'we cannot provide you with an answer to this question, please try other questions')
                                 else if (event.responseText.includes('维护'))
-                                    ddgptShow(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
+                                    ddgptAlert(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
                                     + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
                                 else if (event.responseText.includes('finish_reason')) { // if other AIGCF error
                                     await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
