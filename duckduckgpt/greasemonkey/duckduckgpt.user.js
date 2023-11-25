@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.525.1
+// @version             2023.11.525.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -488,6 +488,14 @@
         if (displayText) anchor.textContent = displayText
         return anchor
     }
+
+    function fetchJSON(url, callback) { // for dynamic footer
+        GM.xmlHttpRequest({ method: 'GET', url: url, onload: response => {
+            if (response.status >= 200 && response.status < 300) {
+                try { const data = JSON.parse(response.responseText) ; callback(null, data) }
+                catch (err) { callback(err, null) }
+            } else callback(new Error('Failed to load data: ' + response.statusText), null)
+    }})}
 
     // Define SESSION functions
 
@@ -1138,9 +1146,68 @@
     ddgptDiv.classList.add('ddgpt')
     ddgptAlert('waitingResponse')
 
-    // Create/classify/fill feedback footer
-    const ddgptFooter = document.createElement('div'),
-          footerLink = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
+    // Init footer CTA to share feedback
+    const footerLink = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
+    footerLink.classList.add('feedback-prompt__link', 'js-feedback-prompt-generic') // DDG classes
+
+    // Check for active text campaigns to replace CTA
+    fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
+        (err, advertisersData) => { if (err) return
+            let chosenAdvertiser, adSelected
+            const shuffle = list => list.sort(() => 0.5 - Math.random())
+
+            // Pick random advertiser w/ active text campaigns
+            const advertisersList = Object.entries(advertisersData),
+                  kudoAIprobability = 25, // new percent chance to pick KudoAI
+                  kudoAIentries = advertisersList.filter(([advertiser]) => advertiser == 'kudoai'),
+                  kudoAIentriesNeeded = Math.ceil(advertisersList.length / (1 - kudoAIprobability/100)) // total entries needed
+                                      * kudoAIprobability/100 - kudoAIentries.length // reduced to KudoAI entries needed
+            for (let i = 0 ; i < kudoAIentriesNeeded ; i++) advertisersList.push(...kudoAIentries) // saturate w/ KudoAI                    
+            for (const [advertiser, details] of shuffle(advertisersList)) // pick random active advertiser
+                if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
+
+            // Fetch a random, active creative
+            if (chosenAdvertiser) {
+                const campaignsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/'
+                                   + chosenAdvertiser + '/text/campaigns.json'
+                fetchJSON(campaignsURL, (err, campaignsData) => { if (err) { return }
+                    for (const [campaignName, campaign] of shuffle(Object.entries(campaignsData))) {
+                        if (!campaign.active) continue // to next campaign since campaign inactive
+                        for (const [groupName, adGroup] of shuffle(Object.entries(campaign.adGroups))) {
+                            const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
+                            if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
+                                || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self DuckDuckGPT group
+                                || adGroup.active === false) // or group explicitly disabled
+                                    continue // to next group
+
+                            // Filter out inactive ads, pick random active one
+                            const activeAds = adGroup.ads.filter(ad => ad.active !== false)
+                            if (activeAds.length === 0) continue // to next group since no ads active
+                            const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
+
+                            // Build destination URL
+                            let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
+                                || campaign.destinationURL || 'mailto:ads@kudoai.com'
+                            if (destinationURL.includes('http')) { // insert UTM tags
+                                const [baseURL, queryString] = destinationURL.split('?'),
+                                      queryParams = new URLSearchParams(queryString || '')
+                                queryParams.set('utm_source', config.appName.toLowerCase())
+                                queryParams.set('utm_content', 'app_footer_link')
+                                destinationURL = baseURL + '?' + queryParams.toString()
+                            }
+
+                            // Replace `footerLink` w/ new text/href
+                            footerLink.textContent = chosenAd.text
+                            footerLink.setAttribute('href', destinationURL)
+                            footerLink.setAttribute('title', chosenAd.tooltip || '')
+                            adSelected = true ; break // out of group loop after ad selection
+                        }
+                        if (adSelected) break // out of campaign loop after ad selection
+            }})}
+    })
+ 
+    // Create/classify/fill footer
+    const ddgptFooter = document.createElement('div')
     ddgptFooter.classList.add('feedback-prompt', 'chatgpt-feedback')
     ddgptFooter.appendChild(footerLink)
 
