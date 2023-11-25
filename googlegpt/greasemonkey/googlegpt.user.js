@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.7
+// @version             2023.11.25.8
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1017,10 +1017,10 @@
                             } catch (err) {
                                 googleGPTinfo('Response: ' + event.responseText)
                                 if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
-                                    googleGPTshow(messages.alert_censored || 'Sorry, according to our product rules, '
+                                    googleGPTalert(messages.alert_censored || 'Sorry, according to our product rules, '
                                         + 'we cannot provide you with an answer to this question, please try other questions')
                                 else if (event.responseText.includes('维护'))
-                                    googleGPTshow(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
+                                    googleGPTalert(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
                                         + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
                                 else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
                                     await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
