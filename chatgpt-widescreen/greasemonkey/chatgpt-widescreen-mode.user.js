@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.22
+// @version             2023.11.25
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -262,7 +262,8 @@
 
     // Init config
     const config = {
-        prefix: site + 'Widescreen', appSymbol: '🖥️', userLanguage: chatgpt.getUserLanguage(),
+        appName: 'ChatGPT Widescreen Mode', appSymbol: '🖥️',
+        keyPrefix: site + 'Widescreen', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/chatgpt-widescreen',
         greasyForkURL: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode' }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
@@ -297,8 +298,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(`${ config.prefix }_${ site }_${ key }`, false) })}
-    function saveSetting(key, value) { GM_setValue(`${ config.prefix }_${ site }_${ key }`, value) ; config[key] = value }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(`${ config.keyPrefix }_${ site }_${ key }`, false) })}
+    function saveSetting(key, value) { GM_setValue(`${ config.keyPrefix }_${ site }_${ key }`, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
@@ -390,7 +391,7 @@
         }))
 
         // Add command to launch About modal
-        const amLabel = `💡 ${ messages.menuLabel_about || 'About' } ${ messages.appName || 'ChatGPT Widescreen Mode' }`
+        const amLabel = `💡 ${ messages.menuLabel_about || 'About' } ${ messages.appName || config.appName }`
         menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
     }
 
@@ -403,7 +404,7 @@
               pBrStyle = 'position: relative ; left: 4px ',
               aStyle = 'color: ' + ( isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
         const aboutAlertID = alert(
-            messages.appName || 'ChatGPT Widescreen Mode', // title
+            messages.appName || config.appName, // title
             `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
             + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy || 'Powered by' }</i></b>: </span>`
@@ -462,7 +463,7 @@
                         // Alert to update
                         const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             ( messages.alert_newerVer || 'An update to' ) + ' ' // msg
-                                + ( messages.appName || 'ChatGPT Widescreen Mode' ) + ' '
+                                + ( messages.appName || config.appName ) + ' '
                                 + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
@@ -488,7 +489,7 @@
 
                 // Alert to no update, return to About alert
                 alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ messages.appName || 'ChatGPT Widescreen Mode' } (v${ currentVer }) ` // msg
+                    `${ messages.appName || config.appName } (v${ currentVer }) ` // msg
                         + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!',
                     '', '', updateAlertWidth
                 )
