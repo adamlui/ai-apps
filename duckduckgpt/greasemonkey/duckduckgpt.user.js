@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.524.9
+// @version             2023.11.525.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -198,10 +198,32 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.prefix + '_' + key, false) })}
-    function saveSetting(key, value) { GM_setValue(config.prefix + '_' + key, value) ; config[key] = value }
+    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.keyPrefix + '_' + key, false) })}
+    function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
+
+    function toCamelCase(str) { // for `config.keyPrefix` derived from `config.appName`
+        let lastLetterWasUpper = false, isFirstWord = true
+        return str.replace(/-/g, ' ') // remove hyphens
+            .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
+                if (/[A-Z]{2,}/.test(word) && word != word.toUpperCase()) { // word contains acronym
+                    if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
+                        word = word.charAt(0).toLowerCase() + word.slice(1) // lower-case it
+                    return word.replace(/([a-z]+)([A-Z]+)/g, '$1 $2') // separate words from following acronyms
+                               .replace(/([A-Z]+)([a-z]+)/g, '$1 $2') // separate acronyms from following words
+                               .split(' ') // split for individual processing
+                } else return word // non-acronym
+            }).map(word => { // convert each word/acronym's case
+                const isFullAcronym = word.toUpperCase() == word
+                const result = isFullAcronym
+                    ? ( lastLetterWasUpper || isFirstWord ) ? word.toLowerCase() : word // alternate acronym case
+                    : ( lastLetterWasUpper || isFirstWord ) // alternate non-acronym case
+                        ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                isFirstWord = false ; lastLetterWasUpper = isFullAcronym ? (result == word && !isFirstWord) : false
+                return result
+            }).join('') // combine to form camel case
+    }
 
     // Define MENU functions
 
@@ -280,7 +302,7 @@
                 else if (!/\d/.test(replyLanguage)) {
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
                     alert(( messages.alert_langUpdated || 'Language updated' ) + '!', // title
-                        'DuckDuckGPT ' + ( messages.alert_willReplyIn || 'will reply in' ) + ' '
+                        `${ config.appName } ${ messages.alert_willReplyIn || 'will reply in' } `
                             + ( replyLanguage || messages.alert_yourSysLang || 'your system language' ) + '.',
                         '', '', 330) // width
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -288,7 +310,7 @@
         }}}))
 
         // Add command to launch About modal
-        const aboutLabel = '💡 ' + ( messages.menuLabel_about || 'About' ) + ' DuckDuckGPT'
+        const aboutLabel = `💡 ${ messages.menuLabel_about || 'About' } ${ config.appName }`
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
 
@@ -297,7 +319,7 @@
         // Show alert
         const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
         const aboutAlertID = alert(
-            'DuckDuckGPT', // title
+            config.appName, // title
             '🏷️ ' + ( messages.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
                 + '⚡ ' + ( messages.about_poweredBy || 'Powered by' ) + ': '
                     + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
@@ -359,7 +381,7 @@
 
                         // Alert to update
                         const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
-                            ( messages.alert_newerVer || 'An update to' ) + ' DuckDuckGPT '
+                            `${ messages.alert_newerVer || 'An update to' } ${ config.appName } `
                                 + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }! `
                                 + '<a target="_blank" rel="noopener" style="font-size: 1.1rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
@@ -385,7 +407,7 @@
 
                 // Alert to no update found, nav back
                 alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `DuckDuckGPT (v${ currentVer }) ${ messages.alert_isUpToDate || 'is up-to-date' }!`, // msg
+                    `${ config.appName } (v${ currentVer }) ${ messages.alert_isUpToDate || 'is up-to-date' }!`, // msg
                         '', '', updateAlertWidth)
                 launchAboutModal()
     }})}
@@ -411,8 +433,8 @@
                      + ')</p>' : '</p>')
     }
 
-    function ddgptInfo(msg) { console.info(config.appSymbol + ' DuckDuckGPT >> ' + msg) }
-    function ddgptError(msg) { console.error(config.appSymbol + ' DuckDuckGPT >> ERROR: ' + msg) }
+    function ddgptInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
+    function ddgptError(msg) { console.error(`${ config.appSymbol } ${ config.appName } >> ERROR: ${ msg }`) }
 
     // Define UI functions
 
@@ -486,7 +508,7 @@
 
     function getOpenAItoken() {
         return new Promise(resolve => {
-            const accessToken = GM_getValue(config.prefix + '_openAItoken')
+            const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
             ddgptInfo('OpenAI access token: ' + accessToken)
             if (!accessToken) {
                 GM.xmlHttpRequest({ url: openAIendpoints.session, onload: response => {
@@ -494,7 +516,7 @@
                         ddgptAlert('checkCloudflare') ; return }
                     try {
                         const newAccessToken = JSON.parse(response.responseText).accessToken
-                        GM_setValue(config.prefix + '_openAItoken', newAccessToken)
+                        GM_setValue(config.keyPrefix + '_openAItoken', newAccessToken)
                         resolve(newAccessToken)
                     } catch { ddgptAlert('login') ; return }
                 }})
@@ -503,7 +525,7 @@
 
     function getAIGCFkey() {
         return new Promise(resolve => {
-            const publicKey = GM_getValue(config.prefix + '_aigcfKey')
+            const publicKey = GM_getValue(config.keyPrefix + '_aigcfKey')
             if (!publicKey) {
                 GM.xmlHttpRequest({ method: 'GET', url: 'https://api.aigcfun.com/fc/key',
                     headers: {
@@ -513,7 +535,7 @@
                     onload: response => {
                         const newPublicKey = JSON.parse(response.responseText).data
                         if (!newPublicKey) { ddgptError('Failed to get AIGCFun public key') ; return }
-                        GM_setValue(config.prefix + '_aigcfKey', newPublicKey)
+                        GM_setValue(config.keyPrefix + '_aigcfKey', newPublicKey)
                         console.info('AIGCFun public key set: ' + newPublicKey)
                         resolve(newPublicKey)
                 }})
@@ -521,7 +543,7 @@
     })}
 
     async function refreshAIGCFendpoint() {
-        GM_setValue(config.prefix + '_aigcfKey', false) // clear GM key
+        GM_setValue(config.keyPrefix + '_aigcfKey', false) // clear GM key
 
         // Determine index of AIGCF in endpoint map
         let aigcfMapIndex = -1
@@ -728,7 +750,7 @@
                     if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpoints.length)
                         retryDiffHost()
                     else if (event.status === 401 && !config.proxyAPIenabled) {
-                        GM_deleteValue(config.prefix + '_openAItoken') ; ddgptAlert('login') }
+                        GM_deleteValue(config.keyPrefix + '_openAItoken') ; ddgptAlert('login') }
                     else if (event.status === 403)
                         ddgptAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
                     else if (event.status === 429) ddgptAlert('tooManyRequests')
@@ -776,7 +798,7 @@
         // Create/append '🤖 DuckDuckGPT'
         const appNameSpan = document.createElement('span')
         appNameSpan.classList.add('app-name', 'no-user-select') ; appNameSpan.innerText = '🤖  '
-        const ddgptLink = createAnchor('https://www.duckduckgpt.com', 'DuckDuckGPT')
+        const ddgptLink = createAnchor('https://www.duckduckgpt.com', config.appName)
         appNameSpan.appendChild(ddgptLink) ; ddgptDiv.appendChild(appNameSpan)
 
         // Create/append 'by KudoAI'
@@ -958,9 +980,10 @@
 
     // Init config/convo/menu
     const config = {
-        prefix: 'ddgpt', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
+        appName: 'DuckDuckGPT', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/duckduckgpt',
         greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt' }
+    config.keyPrefix = toCamelCase(config.appName)
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
