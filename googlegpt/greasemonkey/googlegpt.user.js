@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25
+// @version             2023.11.25.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -396,7 +396,7 @@
     function camelCase(input) { // for `config.keyPrefix` derived from `config.appName`
         let lastLetterWasUpper = false, isFirstWord = true
         return input
-            .split(' ').flatMap((word, index) => { // split input into words/acronyms for individual processing
+            .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
                 if (/[A-Z]{2,}/.test(word) && word !== word.toUpperCase()) { // word contains acronym
                     if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
                         word = word.charAt(0).toLowerCase() + word.slice(1) // lower-case it
@@ -404,7 +404,7 @@
                                .replace(/([A-Z]+)([a-z]+)/g, '$1 $2') // separate acronyms from following words
                                .split(' ') // split for individual processing
                 } else return word // non-acronym
-            }).map((word) => { // convert each word/acronym's case
+            }).map(word => { // convert each word/acronym's case
                 const isFullAcronym = word.toUpperCase() === word
                 const result = isFullAcronym
                     ? ( lastLetterWasUpper || isFirstWord ) ? word.toLowerCase() : word // alternate acronym case
