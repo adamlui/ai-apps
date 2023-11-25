@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.11
+// @version             2023.11.25.12
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -934,8 +934,9 @@
                                 if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
                                     || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
                                     || adGroup.active === false // group explicitly disabled
-                                    || adGroup.targetLocations && !adGroup.targetLocations.some( // target locale(s) exist, doesn't match user's
-                                        loc => loc.includes(config.userLocale) || config.userLocale.includes(loc))
+                                    || adGroup.targetLocations && ( // target locale(s) exist...
+                                        !config.userLocale || !adGroup.targetLocations.some( // ...and user locale is missing or excluded
+                                            loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
                                 ) continue // to next group
 
                                 // Filter out inactive ads, pick random active one
