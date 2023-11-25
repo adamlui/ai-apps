@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.25
+// @version             2023.11.25.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -239,7 +239,7 @@
         appName: 'ChatGPT Infinity', appSymbol: '∞', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/chatgpt-infinity',
         greasyForkURL: 'https://greasyfork.org/scripts/465051-chatgpt-infinity' }
-    config.keyPrefix = camelCase(config.appName)
+    config.keyPrefix = toCamelCase(config.appName)
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -364,9 +364,9 @@
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch(err) { return 'other' }}
 
-    function camelCase(input) { // for `config.keyPrefix` derived from `config.appName`
+    function toCamelCase(str) { // for `config.keyPrefix` derived from `config.appName`
         let lastLetterWasUpper = false, isFirstWord = true
-        return input.replace(/-/g, ' ') // remove hyphens
+        return str.replace(/-/g, ' ') // remove hyphens
             .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
                 if (/[A-Z]{2,}/.test(word) && word != word.toUpperCase()) { // word contains acronym
                     if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
