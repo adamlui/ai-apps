@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.24.10
+// @version             2023.11.24.11
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -872,7 +872,7 @@
 
                 // Pick random advertiser w/ active text campaigns
                 const advertisersList = Object.entries(advertisersData),
-                      kudoAIprobability = 25, // percent chance to pick KudoAI
+                      kudoAIprobability = 25, // new percent chance to pick KudoAI
                       kudoAIentries = advertisersList.filter(([advertiser]) => advertiser === 'kudoai'),
                       kudoAIentriesNeeded = Math.ceil(advertisersList.length / (1 - kudoAIprobability/100)) // total entries needed
                                           * kudoAIprobability/100 - kudoAIentries.length // reduced to KudoAI entries needed
