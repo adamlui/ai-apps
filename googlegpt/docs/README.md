@@ -13,7 +13,7 @@
 <a href="https://app.codacy.com/gh/KudoAI/googlegpt/commits?utm_source=googlegpt&utm_content=quality_shield"><img height=33 src="https://img.shields.io/codacy/grade/302435545aed43d2b65f864992184a58?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
 <a href="https://chatgpt.js.org"><img height=33 src="https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img height=33 src="https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://www.kudoai.com"><img height=33 src="https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://www.kudoai.com?utm_source=googlegpt&utm_content=kudoai_shield"><img height=33 src="https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge"></a>
     
 </div>
 
