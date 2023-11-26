@@ -11,11 +11,11 @@
 [![](https://img.shields.io/greasyfork/dt/462440?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/scripts/462440-bravegpt)
 [![](https://img.shields.io/badge/License-MIT-fca87b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/bravegpt/blob/main/LICENSE)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/bravegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/kudoai/bravegpt/commits/main)
-[![](https://img.shields.io/codacy/grade/5f104994b1464a5c9d8b1b858182fdc2?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/KudoAI/bravegpt/commits?utm_source=bravegpt&utm_content=quality_shield)
-[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
+[![](https://img.shields.io/codacy/grade/5f104994b1464a5c9d8b1b858182fdc2?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/KudoAI/bravegpt/commits?utm_source=bravegpt&utm_content=github_shield)
+[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js?utm_source=bravegpt&utm_content=github_shield)
 [![](https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
-[![](https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.kudoai.com?utm_source=bravegpt&utm_content=kudoai_shield)
-[![](https://img.shields.io/badge/web-https://www.bravegpt.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.bravegpt.com)
+[![](https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.kudoai.com?utm_source=bravegpt&utm_content=github_shield)
+[![](https://img.shields.io/badge/web-https://www.bravegpt.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.bravegpt.com?utm_source=bravegpt&utm_content=github_shield)
 
 <h3><b>BraveGPT</b> brings the magic of ChatGPT to search results (powered by GPT-4!)</h3>
 
