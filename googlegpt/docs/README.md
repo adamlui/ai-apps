@@ -14,6 +14,7 @@
 <a href="https://chatgpt.js.org?utm_source=googlegpt&utm_content=github_shield"><img height=33 src="https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img height=33 src="https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.kudoai.com?utm_source=googlegpt&utm_content=github_shield"><img height=33 src="https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://googlegpt.kudoai.com?utm_source=googlegpt&utm_content=github_shield"><img src="https://img.shields.io/badge/web-https://googlegpt.kudoai.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge"></a>
     
 </div>
 
