@@ -10,7 +10,7 @@
 
 ![](https://img.shields.io/badge/安装-40,000+-2bbbd8?logo=docusign&logoColor=white&labelColor=464646&style=for-the-badge)
 [![](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=星星&logo=github&logoColor=white&labelColor=464646&color=fcf67b&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/stargazers)
-[![](https://img.shields.io/badge/许可证-MIT-fca87b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
+[![](https://img.shields.io/badge/许可证-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=提交&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/commits/main)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=代码质量&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)
 [![](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js?utm_source=chatgpt_infinity&utm_content=github_shield)
