@@ -8,7 +8,7 @@
 </h1>
 
 [![](https://img.shields.io/greasyfork/dt/459849?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/scripts/459849-duckduckgpt)
-[![](https://img.shields.io/badge/License-MIT-fca87b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/duckduckgpt/blob/main/LICENSE)
+[![](https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/duckduckgpt/blob/main/LICENSE)
 [![](https://img.shields.io/github/commit-activity/m/kudoai/duckduckgpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/kudoai/duckduckgpt/commits/main)
 [![](https://img.shields.io/codacy/grade/660eef2b75644cad992111be29434c51?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/KudoAI/duckduckgpt/commits?utm_source=duckduckgpt&utm_content=github_shield)
 [![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js?utm_source=duckduckgpt&utm_content=github_shield)
