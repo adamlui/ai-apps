@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.25.12
+// @version             2023.11.26
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1104,7 +1104,7 @@
         // Create/append speech balloon tip
         const balloonTipSpan = document.createElement('span')
         balloonTipSpan.classList.add('balloon-tip')
-        balloonTipSpan.style.right = isMobile ? '7.78em' : chatgpt.browser.isFirefox() ? '15.35em' : '7.26em'
+        balloonTipSpan.style.right = isMobile ? '7.78em' : chatgpt.browser.isFirefox() ? '15.15em' : '7.26em'
         balloonTipSpan.style.top = (
             chatgpt.browser.isFirefox() ? ( hasSidebar ? '7px' : '5px' )
                                         : ( hasSidebar ? '4px' : '2px' ))
