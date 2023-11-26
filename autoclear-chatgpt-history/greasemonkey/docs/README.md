@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/License-MIT-fca87b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/LICENSE)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/autoclear-chatgpt-history?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/autoclear-chatgpt-history/commits/main)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/autoclear-chatgpt-history?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/autoclear-chatgpt-history)
-[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js)
+[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js?utm_source=autoclear_chatgpt_history&utm_content=powered_by_shield)
 [![](https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 [![](https://img.shields.io/badge/web-https://autoclearchatgpt.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://autoclearchatgpt.com?utm_source=autoclear_chatgpt_history&utm_content=web_shield)
 
