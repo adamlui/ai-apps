@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.26.2
+// @version             2023.11.27
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -687,9 +687,8 @@
         fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
             (err, advertisersData) => { if (err) return
 
-                // Init vars + shuffler
+                // Init vars
                 let chosenAdvertiser, adSelected
-                const shuffle = list => list.sort(() => 0.5 - Math.random())
                 const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
                 const currentDate = (() => { // in YYYYMMDD format
                     const today = new Date(), year = today.getFullYear(),
@@ -698,14 +697,23 @@
                     return year + month + day
                 })()
 
-                // Pick random advertiser w/ active text campaigns
-                const advertisersList = Object.entries(advertisersData),
-                      amazonProbability = 50, // new percent chance to pick Amazon
-                      amazonEntries = advertisersList.filter(([advertiser]) => advertiser == 'amazon'),
-                      amazonEntriesNeeded = Math.ceil(advertisersList.length / (1 - amazonProbability/100)) // total entries needed
-                                          * amazonProbability/100 - amazonEntries.length // reduced to Amazon entries needed
-                for (let i = 0 ; i < amazonEntriesNeeded ; i++) advertisersList.push(...amazonEntries) // saturate w/ Amazon                    
-                for (const [advertiser, details] of shuffle(advertisersList)) // pick random active advertiser
+                // Define functions
+                const shuffled = list => list.sort(() => 0.5 - Math.random())
+                const applyBoosts = list => {
+                    let newListLength = list.length - 1// for applying multiple boosts
+                    list.forEach(([name, data]) => { // check for boosts
+                        if (data.boost) { // boost flagged entry's selection probability
+                            const boostPercent = data.boost / 100,
+                                  entriesNeeded = Math.ceil(newListLength / (1 - boostPercent)) // total entries needed
+                                                * boostPercent - 1 // reduced to boosted entries needed
+                            for (let i = 0; i < entriesNeeded; i++) list.push([name, data]) // saturate list
+                            newListLength += entriesNeeded
+                }})}
+
+                // Select random, active advertiser
+                const advertisersList = Object.entries(advertisersData)
+                applyBoosts(advertisersList)
+                for (const [advertiser, details] of shuffled(advertisersList)) // look for active advertiser
                     if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
 
                 // Fetch a random, active creative
@@ -713,10 +721,16 @@
                     const campaignsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/'
                                        + chosenAdvertiser + '/text/campaigns.json'
                     fetchJSON(campaignsURL, (err, campaignsData) => { if (err) { return }
-                        for (const [campaignName, campaign] of shuffle(Object.entries(campaignsData))) {
+
+                        // Select random, active campaign
+                        const campaignsList = Object.entries(campaignsData)
+                        applyBoosts(campaignsList)
+                        for (const [campaignName, campaign] of shuffled(campaignsList)) {
                             const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
                             if (!campaignIsActive) continue // to next campaign since campaign inactive
-                            for (const [groupName, adGroup] of shuffle(Object.entries(campaign.adGroups))) {
+
+                            // Select random active group
+                            for (const [groupName, adGroup] of shuffled(Object.entries(campaign.adGroups))) {
 
                                 // Skip disqualified groups
                                 if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
@@ -751,8 +765,7 @@
                                 adSelected = true ; break // out of group loop after ad selection
                             }
                             if (adSelected) break // out of campaign loop after ad selection
-                }})}
-        })
+        }})}})
 
         function responseType(api) {
             return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
@@ -919,18 +932,6 @@
             ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
         ]) sendSVG.setAttribute(attr, value)
         sendSVG.appendChild(sendSVGpath) ; sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
-
-        // Create/insert bulb icon into footer link
-        const footerSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-              footerSVGpath = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-        for (const [attr, value] of [
-            ['class', 'icon'], ['width', 15], ['height', 15], ['viewBox', '0 0 15 15']
-        ]) footerSVG.setAttribute(attr, value)
-        footerSVG.style.marginRight = '4px' // gap before CTA
-        footerSVGpath.setAttribute('fill-rule', 'evenodd')
-        footerSVGpath.setAttribute('d', 'M.577 6.23a.577.577 0 1 1 0-1.153H1.5a.577.577 0 0 1 0 1.154H.577ZM2.83 8.939a.576.576 0 0 1 0 .816l-1.385 1.385a.573.573 0 0 1-.816 0 .576.576 0 0 1 0-.816l1.385-1.385a.577.577 0 0 1 .816 0ZM.63.985a.576.576 0 1 1 .815-.816L2.83 1.553a.576.576 0 1 1-.816.816L.63.985ZM15 5.654a.577.577 0 0 1-.577.577H13.5a.577.577 0 0 1 0-1.154h.923c.319 0 .577.258.577.577Zm-.631 4.669a.576.576 0 1 1-.816.816l-1.385-1.385a.576.576 0 1 1 .816-.816l1.385 1.385Zm-2.2-7.954a.576.576 0 0 1 0-.816L13.553.17a.577.577 0 0 1 .816.816l-1.385 1.384a.575.575 0 0 1-.816 0ZM9.3 9.09a.579.579 0 0 0-.045.038c-.45.417-.486 1.23-.486 1.47v.238c-1.045.45-2.053.177-2.537-.013v-.226c0-.24-.036-1.053-.487-1.469a.687.687 0 0 0-.044-.037c-.81-.609-1.777-1.667-1.777-3.253 0-2.073 1.604-3.76 3.576-3.76s3.577 1.687 3.577 3.76c0 1.586-.967 2.644-1.777 3.252Zm-1.8 4.757c-.995 0-1.223-.623-1.27-.814v-.997a4.83 4.83 0 0 0 1.343.197c.374 0 .78-.057 1.195-.18v.978c-.05.202-.282.816-1.269.816ZM7.5.923c-2.609 0-4.73 2.204-4.73 4.914 0 1.616.757 3.047 2.192 4.141.058.094.114.39.115.618v2.494c0 .03.003.06.007.09.1.63.732 1.82 2.416 1.82s2.316-1.19 2.416-1.82a.674.674 0 0 0 .006-.09v-2.494c0-.206.054-.525.11-.613 1.438-1.096 2.198-2.528 2.198-4.146 0-2.71-2.121-4.914-4.73-4.914Z')
-        footerSVG.appendChild(footerSVGpath)
-        footerLink.insertBefore(footerSVG, footerLink.firstChild)
 
         // Create/classify/fill/append footer
         const braveGPTfooter = document.createElement('div')
