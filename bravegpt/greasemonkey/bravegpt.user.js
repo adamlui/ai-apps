@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.26
+// @version             2023.11.26.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -1125,7 +1125,9 @@
         + '.bravegpt {'
             + `word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: ${ isMobile ? -29 : 20}px ;`
             + 'border-radius: 18px ; padding: 24px 23px 45px 23px ; background:'
-                + ( scheme == 'dark' ? '#282828' : 'white' ) + '}'
+                + ( scheme == 'dark' ? '#282828' : 'white' ) + ';'
+            + 'transition: transform 0.3s ease ; transform: scale(1) }'
+        + '.bravegpt:hover { transform: scale(1.015) }'
         + '.bravegpt p { margin: 0 }'
         + '.bravegpt .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }'
         + '.app-name { font-size: 20px ; font-family: var(--brand-font) }'
@@ -1227,6 +1229,7 @@
 
     // Append to Brave, get answer
     const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
+    hostContainer.style.overflow = 'visible' // for boundless hover-zoom of BraveGPT
     setTimeout(() => { 
         hostContainer.prepend(braveGPTdiv) // inject BraveGPT container
         const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
