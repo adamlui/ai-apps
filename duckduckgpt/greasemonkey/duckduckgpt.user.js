@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.527
+// @version             2023.11.527.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1169,7 +1169,7 @@
             })()
 
             // Define functions
-            const shuffled = list => list.sort(() => 0.5 - Math.random())
+            const shuffle = list => list.sort(() => 0.5 - Math.random())
             const applyBoosts = list => {
                 let newListLength = list.length - 1// for applying multiple boosts
                 list.forEach(([name, data]) => { // check for boosts
@@ -1184,7 +1184,7 @@
             // Select random, active advertiser
             const advertisersList = Object.entries(advertisersData)
             applyBoosts(advertisersList)
-            for (const [advertiser, details] of shuffled(advertisersList)) // look for active advertiser
+            for (const [advertiser, details] of shuffle(advertisersList)) // look for active advertiser
                 if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
 
             // Fetch a random, active creative
@@ -1196,12 +1196,12 @@
                     // Select random, active campaign
                     const campaignsList = Object.entries(campaignsData)
                     applyBoosts(campaignsList)
-                    for (const [campaignName, campaign] of shuffled(campaignsList)) {
+                    for (const [campaignName, campaign] of shuffle(campaignsList)) {
                         const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
                         if (!campaignIsActive) continue // to next campaign since campaign inactive
 
                         // Select random active group
-                        for (const [groupName, adGroup] of shuffled(Object.entries(campaign.adGroups))) {
+                        for (const [groupName, adGroup] of shuffle(Object.entries(campaign.adGroups))) {
 
                             // Skip disqualified groups
                             if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
@@ -1235,7 +1235,21 @@
                             adSelected = true ; break // out of group loop after ad selection
                         }
                         if (adSelected) break // out of campaign loop after ad selection
-    }})}})
+            }})}
+
+            function shuffle(list) { return list.sort(() => 0.5 - Math.random()) }
+
+            function applyBoosts(list) {
+                let newListLength = list.length - 1 // for applying multiple boosts
+                list.forEach(([name, data]) => { // check for boosts
+                    if (data.boost) { // boost flagged entry's selection probability
+                        const boostPercent = data.boost / 100,
+                              entriesNeeded = Math.ceil(newListLength / (1 - boostPercent)) // total entries needed
+                                            * boostPercent - 1 // reduced to boosted entries needed
+                        for (let i = 0; i < entriesNeeded; i++) list.push([name, data]) // saturate list
+                        newListLength += entriesNeeded
+            }})}
+    })
  
     // Create/classify/fill footer
     const ddgptFooter = document.createElement('div')
