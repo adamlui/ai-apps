@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.26.2
+// @version             2023.11.27
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -899,9 +899,8 @@
         fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
             (err, advertisersData) => { if (err) return
 
-                // Init vars + shuffler
+                // Init vars
                 let chosenAdvertiser, adSelected
-                const shuffle = list => list.sort(() => 0.5 - Math.random())
                 const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
                 const currentDate = (() => { // in YYYYMMDD format
                     const today = new Date(), year = today.getFullYear(),
@@ -910,14 +909,23 @@
                     return year + month + day
                 })()
 
-                // Pick random advertiser w/ active text campaigns
-                const advertisersList = Object.entries(advertisersData),
-                      amazonProbability = 50, // new percent chance to pick Amazon
-                      amazonEntries = advertisersList.filter(([advertiser]) => advertiser == 'amazon'),
-                      amazonEntriesNeeded = Math.ceil(advertisersList.length / (1 - amazonProbability/100)) // total entries needed
-                                          * amazonProbability/100 - amazonEntries.length // reduced to Amazon entries needed
-                for (let i = 0 ; i < amazonEntriesNeeded ; i++) advertisersList.push(...amazonEntries) // saturate w/ Amazon                    
-                for (const [advertiser, details] of shuffle(advertisersList)) // pick random active advertiser
+                // Define functions
+                const shuffled = list => list.sort(() => 0.5 - Math.random())
+                const applyBoosts = list => {
+                    let newListLength = list.length - 1// for applying multiple boosts
+                    list.forEach(([name, data]) => { // check for boosts
+                        if (data.boost) { // boost flagged entry's selection probability
+                            const boostPercent = data.boost / 100,
+                                  entriesNeeded = Math.ceil(newListLength / (1 - boostPercent)) // total entries needed
+                                                * boostPercent - 1 // reduced to boosted entries needed
+                            for (let i = 0; i < entriesNeeded; i++) list.push([name, data]) // saturate list
+                            newListLength += entriesNeeded
+                }})}
+
+                // Select random, active advertiser
+                const advertisersList = Object.entries(advertisersData)
+                applyBoosts(advertisersList)
+                for (const [advertiser, details] of shuffled(advertisersList)) // look for active advertiser
                     if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
 
                 // Fetch a random, active creative
@@ -925,10 +933,16 @@
                     const campaignsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/'
                                        + chosenAdvertiser + '/text/campaigns.json'
                     fetchJSON(campaignsURL, (err, campaignsData) => { if (err) { return }
-                        for (const [campaignName, campaign] of shuffle(Object.entries(campaignsData))) {
+
+                        // Select random, active campaign
+                        const campaignsList = Object.entries(campaignsData)
+                        applyBoosts(campaignsList)
+                        for (const [campaignName, campaign] of shuffled(campaignsList)) {
                             const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
                             if (!campaignIsActive) continue // to next campaign since campaign inactive
-                            for (const [groupName, adGroup] of shuffle(Object.entries(campaign.adGroups))) {
+
+                            // Select random active group
+                            for (const [groupName, adGroup] of shuffled(Object.entries(campaign.adGroups))) {
 
                                 // Skip disqualified groups
                                 if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
@@ -962,8 +976,7 @@
                                 adSelected = true ; break // out of group loop after ad selection
                             }
                             if (adSelected) break // out of campaign loop after ad selection
-                }})}
-        })
+        }})}})
 
         function responseType(api) {
             return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
