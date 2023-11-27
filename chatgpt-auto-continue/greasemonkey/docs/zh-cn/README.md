@@ -7,7 +7,7 @@
 [![](https://img.shields.io/greasyfork/dt/466789?label=安装&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/scripts/466789-chatgpt-auto-continue)
 [![](https://img.shields.io/badge/许可证-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-continue?label=提交&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-continue/commits/main)
-[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-continue?label=代码质量&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-continue)
+[![](https://img.shields.io/codacy/grade/4ed2c731e9ae49178259f953ee639b19?label=代码质量&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-auto-continue/commits?utm_source=chatgpt_auto_continue&utm_content=github_shield)
 [![](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js?utm_source=chatgpt_auto_continue&utm_content=github_shield)
 [![](https://img.shields.io/badge/提及于-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 [![](https://img.shields.io/badge/网站-https://chatgptautocontinue.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptautocontinue.com?utm_source=chatgpt_auto_continue&utm_content=github_shield)
