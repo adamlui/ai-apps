@@ -244,7 +244,7 @@
             }, 500))
             await chatgpt.isIdle()
             if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
-                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
+                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
         continue: async () => {
@@ -252,7 +252,7 @@
             if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(err) {}
             await chatgpt.isIdle() // before starting delay till next iteration
             if (infinityMode.isActive) // replace timer
-                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
+                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
         deactivate: () => {
@@ -277,7 +277,7 @@
         clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
         if (config.infinityMode && !infinityMode.isActive) { // double-check in case de-activated before scheduled
             settings.load('replyInterval').then(() => {
-                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
+                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
     })}}
 
     // Define SYNC function
