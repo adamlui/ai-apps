@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.26
+// @version             2023.11.26.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -470,8 +470,8 @@
                 const replyInterval = prompt(
                     `${ messages.prompt_updateReplyInt || 'Update reply interval (minimum 5 secs)' }:`, config.replyInterval)
                 if (replyInterval === null) break // user cancelled so do nothing
-                else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
-                    saveSetting('replyInterval', parseInt(replyInterval))
+                else if (!isNaN(parseInt(replyInterval, 10)) && parseInt(replyInterval, 10) > 4) { // valid int set
+                    saveSetting('replyInterval', parseInt(replyInterval, 10))
                     alert(( messages.alert_replyIntUpdated || 'Interval updated' ) + '!', // title
                         ( messages.appName || config.appName ) + ' ' // msg
                             + ( messages.alert_willReplyEvery || 'will reply every' ) + ' '
@@ -720,7 +720,7 @@
             }, 500)
             await chatgpt.isIdle()
             if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
-                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
+                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
         continue: async () => {
@@ -728,7 +728,7 @@
             if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(err) {}
             await chatgpt.isIdle() // before starting delay till next iteration
             if (infinityMode.isActive) // replace timer
-                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
+                infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
         deactivate: () => {
@@ -751,7 +751,7 @@
     async function resetInSameChat() {
         clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null ; await chatgpt.isIdle()
         if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
-            infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval) * 1000)
+            infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
     }
 
 })()
