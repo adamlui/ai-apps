@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.527.1
+// @version             2023.11.527.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1167,19 +1167,6 @@
                       day = String(today.getDate()).padStart(2, '0')
                 return year + month + day
             })()
-
-            // Define functions
-            const shuffle = list => list.sort(() => 0.5 - Math.random())
-            const applyBoosts = list => {
-                let newListLength = list.length - 1// for applying multiple boosts
-                list.forEach(([name, data]) => { // check for boosts
-                    if (data.boost) { // boost flagged entry's selection probability
-                        const boostPercent = data.boost / 100,
-                              entriesNeeded = Math.ceil(newListLength / (1 - boostPercent)) // total entries needed
-                                            * boostPercent - 1 // reduced to boosted entries needed
-                        for (let i = 0; i < entriesNeeded; i++) list.push([name, data]) // saturate list
-                        newListLength += entriesNeeded
-            }})}
 
             // Select random, active advertiser
             const advertisersList = Object.entries(advertisersData)
