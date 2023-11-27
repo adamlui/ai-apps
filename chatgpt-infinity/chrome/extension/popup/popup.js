@@ -119,8 +119,8 @@
         while (true) {
             const replyInterval = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyInt') }:`, config.replyInterval)
             if (replyInterval === null) break // user cancelled so do nothing
-            else if (!isNaN(parseInt(replyInterval)) && parseInt(replyInterval) > 4) { // valid int set
-                settings.save('replyInterval', parseInt(replyInterval))
+            else if (!isNaN(parseInt(replyInterval, 10)) && parseInt(replyInterval, 10) > 4) { // valid int set
+                settings.save('replyInterval', parseInt(replyInterval, 10))
                 window.close() // popup
                 alert(chrome.i18n.getMessage('alert_replyIntUpdated') + '!',
                     chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyEvery')
