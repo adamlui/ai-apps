@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.26
+// @version             2023.11.28
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -235,7 +235,7 @@
 // @compatible          qq
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@06d15c2e7421874a6c8743e51116872417af5e85/dist/chatgpt-2.5.2.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@91ddac7665eed132c3ac63b35db6b8fffffbc893/dist/chatgpt-2.6.0.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -315,7 +315,7 @@
     let menuIDs = [] ; registerMenu() // create browser toolbar menu
 
     // Wait for site load + determine UI for toggle routines
-    await chatgpt.isLoaded() ; const isGizmoUI = chatgpt.isGizmoUI()
+    await chatgpt.isLoaded()
 
     // Stylize alerts (if style missing or outdated)
     const alertStyleUpdated = 20231110 // datestamp of last edit for this file's `chatgptAlertStyle` 
@@ -344,24 +344,16 @@
 
     // Borrow classes from sidebar div
     const chatHistorySelector = 'nav[aria-label="Chat history"]'
-    if (isGizmoUI) {
-        chatgpt.history.isLoaded().then(setTimeout(() => { 
-            const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
-                  navLinks = chatHistoryNav.querySelectorAll('a'),
-                  firstLink = [...navLinks].find(link => link.textContent.includes(
-                      chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT')) || {},
-                  firstIcon = firstLink.querySelector('div:first-child'),
-                  firstLabel = firstLink.querySelector('div:nth-child(2)')
-            navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
-            navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
-        }, 100))
-    } else {
-        for (const navLink of document.querySelectorAll(chatHistorySelector + ' a')) {
-            if (/(new|clear) chat/i.test(navLink.text)) { // focus on new/clear chat button
-                navToggleDiv.setAttribute('class', navLink.classList) // borrow link classes
-                navLink.parentNode.style.margin = '2px 0' // add v-margins
-                break // stop looping since class assignment is done
-    }}}
+    chatgpt.history.isLoaded().then(setTimeout(() => { 
+        const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
+              navLinks = chatHistoryNav.querySelectorAll('a'),
+              firstLink = [...navLinks].find(link => link.textContent.includes(
+                  chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT')) || {},
+              firstIcon = firstLink.querySelector('div:first-child'),
+              firstLabel = firstLink.querySelector('div:nth-child(2)')
+        navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
+        navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
+    }, 100))
 
     // Add listener to toggle switch/label/config/menu/auto-refresh
     navToggleDiv.addEventListener('click', () => {
@@ -598,37 +590,33 @@
     // Define TOGGLE functions
 
     async function insertToggle() {
-        if (isGizmoUI) await chatgpt.history.isLoaded()
+        await chatgpt.history.isLoaded()
 
         // Select sidebar elems
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
-              firstButton = ( isGizmoUI ? [...navButtons].find(button => button.textContent.includes(
-                                  chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT'))
-                                        : chatHistoryNav.querySelector('a') ) || {}
+              firstButton = [...navButtons].find(button => button.textContent.includes(
+                                chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT'))
+
         // Hide 'Enable History' div
         if (chatgpt.history.isOff())
             try {
-                const enableHistoryDiv = isGizmoUI
-                  ? firstButton.parentNode.parentNode.nextElementSibling
-                  : firstButton.parentNode.nextElementSibling
+                const enableHistoryDiv = firstButton.parentNode.parentNode.nextElementSibling
                 enableHistoryDiv.style.display = 'none'
-                if (isGizmoUI) enableHistoryDiv.parentNode.style.width = '100%'
+                enableHistoryDiv.parentNode.style.width = '100%'
             } catch (err) {}
 
         // Insert toggle
-        const parentToInsertInto = isGizmoUI ? firstButton.parentNode.parentNode.parentNode : chatHistoryNav,
-              childToInsertBefore = isGizmoUI ? firstButton.parentNode.parentNode.nextElementSibling : firstButton.parentNode
+        const parentToInsertInto = firstButton.parentNode.parentNode.parentNode,
+              childToInsertBefore = firstButton.parentNode.parentNode.nextElementSibling
         if (!parentToInsertInto.contains(navToggleDiv))
             try { parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore) } catch (err) {}
 
         // Tweak styles
-        if (isGizmoUI) {
-            firstButton.parentNode.parentNode.style.paddingBottom = '0'
-            if (chatgpt.history.isOff() && !config.toggleHidden)
-                navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
-            navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
-        }
+        firstButton.parentNode.parentNode.style.paddingBottom = '0'
+        if (chatgpt.history.isOff() && !config.toggleHidden)
+            navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
+        navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
     }
 
     function updateToggleHTML() {
@@ -637,10 +625,8 @@
         const navicon = document.querySelector('#arToggleFavicon') || document.createElement('img')
         navicon.id = 'arToggleFavicon'
         navicon.src = config.assetHostURL + 'media/images/icons/auto-refresh-navicon-light-155.png'
-        if (isGizmoUI) {
-            navicon.style.width = navicon.style.height = '1.25rem'
-            navicon.style.marginLeft = navicon.style.marginRight = '4px'
-        } else navicon.width = 18
+        navicon.style.width = navicon.style.height = '1.25rem'
+        navicon.style.marginLeft = navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
         const toggleInput = document.querySelector('#arToggleInput') || document.createElement('input')
@@ -651,22 +637,21 @@
         const switchSpan = document.querySelector('#arSwitchSpan') || document.createElement('span')
         switchSpan.id = 'arSwitchSpan'
         const switchStyles = {
-            position: 'relative', left: `${ chatgpt.browser.isMobile() && isGizmoUI ? 211 : 152 }px`,
-            width: `${ isGizmoUI ? 32 : 34 }px`, height: `${ isGizmoUI ? 16 : 18 }px`,
+            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : 152 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
-            '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
+            width: '32px', height: '16px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
         }
         Object.assign(switchSpan.style, switchStyles)
 
         // Create/stylize knob, append to switch
         const knobSpan = document.querySelector('#arToggleKnobSpan') || document.createElement('span')
         knobSpan.id = 'arToggleKnobSpan'
-        const knobWidth = isGizmoUI ? 13 : 14
+        const knobWidth = 13
         const knobStyles = {
-            position: 'absolute', left: '3px', bottom: `${ isGizmoUI ? '0.1em' : '2px' }`,
+            position: 'absolute', left: '3px', bottom: '0.1em',
             width: `${ knobWidth }px`, height: `${ knobWidth }px`, content: '""', borderRadius: '28px',
             transform: toggleInput.checked ? // init opposite final pos
-                'translateX(0)' : `translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px)`,
+                'translateX(0)' : `translateX(${ knobWidth }px) translateY(0)`,
             backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
         }
         Object.assign(knobSpan.style, knobStyles) ; switchSpan.appendChild(knobSpan)
@@ -688,7 +673,7 @@
             if (toggleInput.checked) {
                 switchSpan.style.backgroundColor = '#AD68FF'
                 switchSpan.style.boxShadow = '2px 1px 20px #D8A9FF'
-                knobSpan.style.transform = `translateX(${ knobWidth }px) translateY(${ isGizmoUI ? 0 : 1 }px)`
+                knobSpan.style.transform = `translateX(${ knobWidth }px) translateY(0)`
             } else {
                 switchSpan.style.backgroundColor = '#CCC'
                 switchSpan.style.boxShadow = 'none'
