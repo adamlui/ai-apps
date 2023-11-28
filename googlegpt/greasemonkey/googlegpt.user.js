@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.28
+// @version             2023.11.28.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1356,9 +1356,8 @@
             + `padding: ${ isChromium ? 22 : 20 }px 26px 6px 26px ;`
             + ( isMobile ? 'margin: 8px 0 8px' : 'margin-bottom: 30px' ) + ';' // add vertical margins
             + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
-            + ( scheme == 'dark' ? ' border: none ; background: #282828' : ' background: white' ) + ';'
-            + 'transition: transform 0.3s ease ; transform: scale(1) }'
-        + '.googlegpt:hover { transform: scale(1.01) }'
+            + ( scheme == 'dark' ? ' border: none ; background: #282828' : ' background: white' ) + '}'
+        + '.googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
         + '.googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
         + ( scheme == 'dark' ? '.googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
         + '.app-name { font-size: 1.45rem ; font-weight: 700 }'
