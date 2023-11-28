@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.5.1
+// This library is a condensed version of chatgpt.js v2.6.0
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -282,15 +282,9 @@ const chatgpt = {
 
     history: {
         isOn: function() {
-            if (chatgpt.isGizmoUI()) {
-                const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
-                offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
-                return offDiv.classList.toString().includes('invisible');
-            } else {
-                for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
-                    if (/clear chat/i.test(navLink.text)) return false;
-                } return true;
-            }
+            const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
+            offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
+            return offDiv.classList.toString().includes('invisible');
         },
 
         isOff: function() { return !this.isOn(); }
@@ -298,7 +292,6 @@ const chatgpt = {
 
     isDarkMode: function() { return chatgpt.browser.isDarkMode(); },
     isFullScreen: function() { return chatgpt.browser.isFullScreen(); },
-    isGizmoUI: function () { return document.documentElement.classList.toString().includes('gizmo'); },
 
     isLoaded: function() {
         return new Promise(resolve => {
@@ -497,22 +490,17 @@ const chatgpt = {
         show: function() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
         isOff: function() { return !this.isOn(); },
         isOn: function() {
-            return chatgpt.isGizmoUI()
-              ? ( chatgpt.browser.isMobile() ? document.documentElement.style.overflow == 'hidden'
-                                             : document.querySelector('#__next > div > div').style.visibility != 'hidden' )
-              : !document.querySelector('button[aria-label*="Open sidebar"]');
+            return chatgpt.browser.isMobile() ?
+                document.documentElement.style.overflow == 'hidden'
+              : document.querySelector('#__next > div > div').style.visibility != 'hidden';
         },
 
         toggle: function() {
-            const isGizmoUI = chatgpt.isGizmoUI(),
-                  isMobileDevice = chatgpt.browser.isMobile(),
-                  navBtnSelector = isMobileDevice ? '#__next button'
-                                 : isGizmoUI ? 'main button' 
-                                             : 'nav[aria-label="Chat history"] a',
+            const isMobileDevice = chatgpt.browser.isMobile(),
+                  navBtnSelector = isMobileDevice ? '#__next button' : 'main button' ,
                   isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
-                              : isGizmoUI ? btn => Array.from(btn.querySelectorAll('*'))
-                                                        .some(child => child.style.transform.includes('translateY'))
-                                          : btn => /close sidebar/i.test(btn.text);
+                              : btn => Array.from(btn.querySelectorAll('*'))
+                                            .some(child => child.style.transform.includes('translateY'));
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
         }
