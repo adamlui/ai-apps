@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.26
+// @version             2023.11.28
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -238,7 +238,7 @@
 // @match               *://poe.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon64.png
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@06d15c2e7421874a6c8743e51116872417af5e85/dist/chatgpt-2.5.2.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@91ddac7665eed132c3ac63b35db6b8fffffbc893/dist/chatgpt-2.6.0.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -736,11 +736,9 @@
 
     // Run MAIN routine
 
-    // Wait for OpenAI site load + determine UI for style selectors/tweaks + `sidebarObserver` scope
-    let isGizmoUI
-    if (site == 'openai') {
-        await chatgpt.isLoaded() ; isGizmoUI = chatgpt.isGizmoUI()
-    } else if (site == 'aivvm') {
+    // Wait for site load
+    if (site == 'openai') await chatgpt.isLoaded()
+    else if (site == 'aivvm') {
         await new Promise(resolve => { const intervalId = setInterval(() => {
             if (document.querySelector('svg[class*="send"]')) {
                 clearInterval(intervalId) ; setTimeout(() => { resolve() }, 500)
@@ -764,9 +762,9 @@
                           : site == 'aivvm' ? 'main > div[class*="flex"] > div:not([class*="flex"])'
                           : /* poe */ 'menu[class*="sidebar"], aside[class*="sidebar"]',
           sidepadSelector = '#__next > div > div',
-          headerSelector = site == 'openai' ? ( isGizmoUI ? 'main .sticky' : 'header')
+          headerSelector = site == 'openai' ? 'main .sticky'
                          : site == 'aivvm' ? 'div[class*="top"][class*="sticky"]' : '',
-          footerSelector = site == 'openai' ? ( isGizmoUI ? 'main form ~ div' : 'div[class*="bottom"] > div' )
+          footerSelector = site == 'openai' ? 'main form ~ div'
                          : site == 'aivvm' ? 'div[class*="bottom"] > div:nth-of-type(2)' : ''
 
     // Save full-window + full screen states
@@ -816,7 +814,7 @@
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
-        site == 'openai' ? (( isGizmoUI ? 'main form' : 'div[class*="bottom"] form' ) + '{ max-width: 96% !important }' )
+        site == 'openai' ? 'main form'
       : site == 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }'
       : site == 'aivvm' ? 'div[class*="stretch"] { max-width: 98% }' : '' )
     updateWidescreenStyle()
@@ -832,8 +830,7 @@
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
           bOffset = 1.77, // rem between buttons
           rOffset = ( // rem from right edge of chatbar
-              site == 'openai' ? 2.57
-            : site == 'aivvm' ? 2.15 : '' )
+              site == 'openai' ? 3 : site == 'aivvm' ? 2.15 : '' )
     let buttonColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
@@ -847,7 +844,7 @@
                 window[buttonName].setAttribute('class', sendBtnClasses)
             else if (site == 'poe') // lift buttons slightly
                 window[buttonName].style.cssText += '; margin-bottom: 0.2rem'
-            if (isGizmoUI) { // style tweaks for OpenAI Gizmo UI
+            if (site == 'openai') { // style tweaks for OpenAI Gizmo UI
                 window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
                 window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
                 window[buttonName].style.bottom = '0.91rem' // nudge up for flushness w/ send button
@@ -911,7 +908,7 @@
         })
         setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
             sidebarObserver.observe(document.body, {
-                subtree: true, childList: !isGizmoUI, attributes: !!isGizmoUI })}, 500)
+                subtree: true, childList: false, attributes: true })}, 500)
     }
 
     // Add full screen listeners to update setting/button + set F11 flag
