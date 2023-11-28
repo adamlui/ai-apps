@@ -29,14 +29,12 @@
     if (!['openai', 'poe'].includes(site)) return
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
-    // Wait for OpenAI site load + determine UI for style selectors/tweaks
-    let isGizmoUI
-    if (site == 'openai') {
-        await chatgpt.isLoaded() ; isGizmoUI = chatgpt.isGizmoUI() }
+    // Wait for site load
+    if (site == 'openai') await chatgpt.isLoaded()
 
     // Define UI element selectors
-    const headerSelector = isGizmoUI ? 'main .sticky' : 'header',
-          footerSelector = isGizmoUI ? 'main form ~ div' : 'div[class*="bottom"] > div'
+    const headerSelector = 'main .sticky',
+          footerSelector = 'main form ~ div'
 
     // Save full-window + full screen states
     config.fullWindow = site == 'openai' ? chatgpt.sidebar.isOff() : settings.load('fullWindow')
@@ -79,7 +77,7 @@
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
-        site == 'openai' ? (( isGizmoUI ? 'main form' : 'div[class*="bottom"] form' ) + '{ max-width: 96% !important }' )
+        site == 'openai' ? 'main form'
       : site == 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }' : '' )
     updateWidescreenStyle()
 
@@ -92,7 +90,7 @@
 
     // Create/insert chatbar buttons
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
-          rOffset = 2.57, bOffset = 1.77
+          rOffset = 3, bOffset = 1.77
     let buttonColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
@@ -106,7 +104,7 @@
                 window[buttonName].setAttribute('class', sendBtnClasses)
             else if (site == 'poe') // lift buttons slightly
                 window[buttonName].style.cssText += '; margin-bottom: 0.2rem '
-            if (isGizmoUI) { // style tweaks for OpenAI Gizmo UI
+            if (site == 'openai') { // style tweaks for OpenAI Gizmo UI
                 window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
                 window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
                 window[buttonName].querySelector('svg').setAttribute('width', 18) // fix disappearing width in dark mode
@@ -176,7 +174,7 @@
         }})})
         setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
             sidebarObserver.observe(document.body, {
-                subtree: true, childList: !isGizmoUI, attributes: !!isGizmoUI })}, 500)
+                subtree: true, childList: false, attributes: true })}, 500)
     }
 
     // Add full screen listeners to update setting/button + set F11 flag
