@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.28.4
+// @version             2023.11.28.5
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -477,13 +477,14 @@
         if (!isMobile) {
 
             // Add command to toggle wider sidebar
-            const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
+            const wsbLabel = state.symbol[+!config.widerSidebar] + ' '
                            + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                            + state.separator + state.word[+!config.widerSidebar]
             menuIDs.push(GM_registerMenuCommand(wsbLabel, toggleWiderSidebar))
 
             // Add command to toggle sticky sidebar
-            const ssbLabel = '📌 ' + ( messages.menuLabel_stickySidebar || 'Sticky Sidebar' )
+            const ssbLabel = state.symbol[+!config.stickySidebar] + ' '
+                           + ( messages.menuLabel_stickySidebar || 'Sticky Sidebar' )
                            + state.separator + state.word[+!config.stickySidebar]
             menuIDs.push(GM_registerMenuCommand(ssbLabel, toggleStickySidebar))
         }
