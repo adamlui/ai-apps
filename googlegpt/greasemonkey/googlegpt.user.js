@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.28.3
+// @version             2023.11.28.4
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1144,7 +1144,7 @@
         // Create/append speech balloon tip
         const balloonTipSpan = document.createElement('span')
         balloonTipSpan.classList.add('balloon-tip')
-        balloonTipSpan.style.right = isMobile ? '7.78em' : chatgpt.browser.isFirefox() ? '15.15em' : '7.26em'
+        balloonTipSpan.style.right = isMobile ? '7.78em' : chatgpt.browser.isFirefox() ? '13.55em' : '6.52em'
         balloonTipSpan.style.top = (
             chatgpt.browser.isFirefox() ? ( hasSidebar ? '7px' : '5px' )
                                         : ( hasSidebar ? '4px' : '2px' ))
@@ -1388,7 +1388,7 @@
         + '.googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
         + '.googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
         + ( scheme == 'dark' ? '.googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
-        + '.app-name { font-size: 1.45rem ; font-weight: 700 }'
+        + '.app-name { font-size: 1.25rem ; font-weight: 700 }'
         + '.app-name a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
         + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 8px ;'
             + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
