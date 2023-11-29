@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "abans de la consulta" },
   "menuLabel_afterQuery": { "message": "després de la consulta" },
   "menuLabel_widerSidebar": { "message": "Barra lateral més àmplia" },
+  "menuLabel_stickySidebar": { "message": "Barra lateral sticky" },
   "menuLabel_replyLanguage": { "message": "Idioma de la resposta" },
   "menuLabel_about": { "message": "Quant a" },
   "about_version": { "message": "Versió" },

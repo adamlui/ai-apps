@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "przed zapytaniem" },
   "menuLabel_afterQuery": { "message": "po zapytaniu" },
   "menuLabel_widerSidebar": { "message": "Szerszy pasek boczny" },
+  "menuLabel_stickySidebar": { "message": "Prilepený bočný panel" },
   "menuLabel_replyLanguage": { "message": "Język odpowiedzi" },
   "menuLabel_about": { "message": "Około" },
   "about_version": { "message": "Wersja" },

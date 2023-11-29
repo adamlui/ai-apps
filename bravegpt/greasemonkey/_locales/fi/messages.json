@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "ennen kyselyä" },
   "menuLabel_afterQuery": { "message": "kyselyn jälkeen" },
   "menuLabel_widerSidebar": { "message": "Leveämpi sivupalkki" },
+  "menuLabel_stickySidebar": { "message": "Kiinnitetty sivupalkki" },
   "menuLabel_replyLanguage": { "message": "Vastauskieli" },
   "menuLabel_about": { "message": "Tietoa" },
   "about_version": { "message": "Versio" },

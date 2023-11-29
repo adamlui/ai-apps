@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "pred dopytom" },
   "menuLabel_afterQuery": { "message": "po dopyte" },
   "menuLabel_widerSidebar": { "message": "Širší bočný panel" },
+  "menuLabel_stickySidebar": { "message": "Lepkavý bočný panel" },
   "menuLabel_replyLanguage": { "message": "Jazyk odpovede" },
   "menuLabel_about": { "message": "O nás " },
   "about_version": { "message": "Verzia" },

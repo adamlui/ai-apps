@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "pre-escucha Query" },
   "menuLabel_afterQuery": { "message": "despues di a pidi" },
   "menuLabel_widerSidebar": { "message": "Larger Sidebar cantidad" },
+  "menuLabel_stickySidebar": { "message": "Sticky Sidebar cantidad" },
   "menuLabel_replyLanguage": { "message": "Idioma Responsivo" },
   "menuLabel_about": { "message": "About About" },
   "about_version": { "message": "Vershon" },

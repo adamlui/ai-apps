@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "antes de consulta" },
   "menuLabel_afterQuery": { "message": "logo de consulta" },
   "menuLabel_widerSidebar": { "message": "Barra lateral máis ampla" },
+  "menuLabel_stickySidebar": { "message": "Barra lateral pegajosa" },
   "menuLabel_replyLanguage": { "message": "Reponse Langue" },
   "menuLabel_about": { "message": "Acerca de" },
   "about_version": { "message": "Versión" },

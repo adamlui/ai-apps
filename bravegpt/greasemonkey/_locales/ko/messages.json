@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "질의 전" },
   "menuLabel_afterQuery": { "message": "질의 후" },
   "menuLabel_widerSidebar": { "message": "더 넓은 사이드바" },
+  "menuLabel_stickySidebar": { "message": "고정 사이드바" },
   "menuLabel_replyLanguage": { "message": "회신 언어" },
   "menuLabel_about": { "message": "소개" },
   "about_version": { "message": "버전" },

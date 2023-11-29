@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "trước truy vấn" },
   "menuLabel_afterQuery": { "message": "sau khi truy vấn" },
   "menuLabel_widerSidebar": { "message": "Sidebar rộng hơn" },
+  "menuLabel_stickySidebar": { "message": "Thanh bên dính" },
   "menuLabel_replyLanguage": { "message": "Ngôn ngữ trả lời" },
   "menuLabel_about": { "message": "Giới thiệu" },
   "about_version": { "message": "Phiên bản" },

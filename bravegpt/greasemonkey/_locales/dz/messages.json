@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "དྲི་བཀོད་མ་འབད་བའི་ཧེ་མ་" },
   "menuLabel_afterQuery": { "message": "དྲི་བཀོད་འབད་བའི་ཤུལ་ལས་" },
   "menuLabel_widerSidebar": { "message": "ཟུར་ཟུར་རྒྱ་ཆེ་དྲགས་" },
+  "menuLabel_stickySidebar": { "message": "ཟུར་ཟུར་གྱི་ཐེམ་སྐུམ།" },
   "menuLabel_replyLanguage": { "message": "ལན་སློག" },
   "menuLabel_about": { "message": "སྐོར་ལས་" },
   "about_version": { "message": "ཐོན་རིམ།" },

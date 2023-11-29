@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "enne päringut" },
   "menuLabel_afterQuery": { "message": "pärast päringut" },
   "menuLabel_widerSidebar": { "message": "Laiem külgriba" },
+  "menuLabel_stickySidebar": { "message": "Kleepuv moodul" },
   "menuLabel_replyLanguage": { "message": "Vastuse keel" },
   "menuLabel_about": { "message": "Umbes" },
   "about_version": { "message": "Versioon" },

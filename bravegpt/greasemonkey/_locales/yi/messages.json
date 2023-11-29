@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "איידער אָנפֿרעג" },
   "menuLabel_afterQuery": { "message": "נאָך אָנפֿרעג" },
   "menuLabel_widerSidebar": { "message": "ברייט סיידבאַר" },
+  "menuLabel_stickySidebar": { "message": "קלעפּיק סיידבאַר" },
   "menuLabel_replyLanguage": { "message": "ענטפער שפּראַך" },
   "menuLabel_about": { "message": "dialogs-action" },
   "about_version": { "message": "ווערסיע" },

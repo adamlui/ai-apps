@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "kimuʻa he fehuʻi" },
   "menuLabel_afterQuery": { "message": "hili e fehuʻi" },
   "menuLabel_widerSidebar": { "message": "Tafaʻaki lahi ange" },
+  "menuLabel_stickySidebar": { "message": "Tafaʻaki pikipiki" },
   "menuLabel_replyLanguage": { "message": "Tali ʻa e Lea Fakafonuá" },
   "menuLabel_about": { "message": "Fekauʻaki mo e" },
   "about_version": { "message": "Tatau" },
