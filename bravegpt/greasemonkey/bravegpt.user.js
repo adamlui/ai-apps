@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.29.1
+// @version             2023.11.29.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -227,7 +227,7 @@
         if (!isMobile) {
 
             // Add command to toggle wider sidebar
-            const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
+            const wsbLabel = state.symbol[+!config.widerSidebar] + ' '
                            + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                            + state.separator + state.word[+!config.widerSidebar]
             menuIDs.push(GM_registerMenuCommand(wsbLabel, toggleWiderSidebar))
