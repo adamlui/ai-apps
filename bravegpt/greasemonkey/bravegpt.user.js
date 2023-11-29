@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.28.2
+// @version             2023.11.29
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -164,28 +164,6 @@
     function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
-
-    function toCamelCase(str) { // for `config.keyPrefix` derived from `config.appName`
-        let lastLetterWasUpper = false, isFirstWord = true
-        return str.replace(/-/g, ' ') // remove hyphens
-            .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
-                if (/[A-Z]{2,}/.test(word) && word != word.toUpperCase()) { // word contains acronym
-                    if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
-                        word = word.charAt(0).toLowerCase() + word.slice(1) // lower-case it
-                    return word.replace(/([a-z]+)([A-Z]+)/g, '$1 $2') // separate words from following acronyms
-                               .replace(/([A-Z]+)([a-z]+)/g, '$1 $2') // separate acronyms from following words
-                               .split(' ') // split for individual processing
-                } else return word // non-acronym
-            }).map(word => { // convert each word/acronym's case
-                const isFullAcronym = word.toUpperCase() == word
-                const result = isFullAcronym
-                    ? ( lastLetterWasUpper || isFirstWord ) ? word.toLowerCase() : word // alternate acronym case
-                    : ( lastLetterWasUpper || isFirstWord ) // alternate non-acronym case
-                        ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-                isFirstWord = false ; lastLetterWasUpper = isFullAcronym ? (result == word && !isFirstWord) : false
-                return result
-            }).join('') // combine to form camel case
-    }
 
     // Define MENU functions
 
@@ -1043,10 +1021,9 @@
 
     // Init config/convo/menu
     const config = {
-        appName: 'BraveGPT', appSymbol: '🤖', userLanguage: chatgpt.getUserLanguage(),
+        appName: 'BraveGPT', appSymbol: '🤖', keyPrefix: 'braveGPT', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/bravegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt' }
-    config.keyPrefix = toCamelCase(config.appName)
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
