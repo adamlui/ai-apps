@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "ಪ್ರಶ್ನೆಯ ಮೊದಲು" },
   "menuLabel_afterQuery": { "message": "ಪ್ರಶ್ನೆಯ ನಂತರ" },
   "menuLabel_widerSidebar": { "message": "ವಿಶಾಲ ಬದಿಪಟ್ಟಿ" },
+  "menuLabel_stickySidebar": { "message": "ಜಿಗುಟಾದ ಬದಿಪಟ್ಟಿ" },
   "menuLabel_replyLanguage": { "message": "ಪ್ರತ್ಯುತ್ತರ ಭಾಷೆ" },
   "menuLabel_about": { "message": "ಕುರಿತಾಗಿ" },
   "about_version": { "message": "ಆವೃತ್ತಿ" },

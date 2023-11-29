@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "ante query" },
   "menuLabel_afterQuery": { "message": "post query" },
   "menuLabel_widerSidebar": { "message": "Sidebar" },
+  "menuLabel_stickySidebar": { "message": "Sidebar Sticky" },
   "menuLabel_replyLanguage": { "message": "Respondere Linguae" },
   "menuLabel_about": { "message": "De" },
   "about_version": { "message": "Versio" },

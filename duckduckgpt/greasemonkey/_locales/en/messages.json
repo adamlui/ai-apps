@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "before query" },
   "menuLabel_afterQuery": { "message": "after query" },
   "menuLabel_widerSidebar": { "message": "Wider Sidebar" },
+  "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_replyLanguage": { "message": "Reply Language" },
   "menuLabel_about": { "message": "About" },
   "about_version": { "message": "Version" },

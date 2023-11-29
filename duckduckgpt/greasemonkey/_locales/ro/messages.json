@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "înainte de interogare" },
   "menuLabel_afterQuery": { "message": "după interogare" },
   "menuLabel_widerSidebar": { "message": "Bară laterală mai lată" },
+  "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_replyLanguage": { "message": "Limbă răspuns" },
   "menuLabel_about": { "message": "Despre" },
   "about_version": { "message": "Versiune " },

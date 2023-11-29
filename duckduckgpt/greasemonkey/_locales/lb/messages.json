@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "virun der Query" },
   "menuLabel_afterQuery": { "message": "no queréis" },
   "menuLabel_widerSidebar": { "message": "Breet Säitbar" },
+  "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_replyLanguage": { "message": "Sprooch beäntweren" },
   "menuLabel_about": { "message": "Iwwer Qt" },
   "about_version": { "message": "Versioun" },

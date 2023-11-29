@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "πριν από το ερώτημα" },
   "menuLabel_afterQuery": { "message": "κατόπιν ερωτήματος" },
   "menuLabel_widerSidebar": { "message": "Ευρύτερη πλευρική στήλη" },
+  "menuLabel_stickySidebar": { "message": "Κολλώδης πλαϊνή μπάρα" },
   "menuLabel_replyLanguage": { "message": "Γλώσσα απάντησης" },
   "menuLabel_about": { "message": "Σχετικά" },
   "about_version": { "message": "Έκδοση" },

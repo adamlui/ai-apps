@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "پێش پرسیارکردن" },
   "menuLabel_afterQuery": { "message": "دوای پرسیارکردن" },
   "menuLabel_widerSidebar": { "message": "به ‌ ره ‌ و په ‌ نجه ‌ ره ‌ فراوانتر" },
+  "menuLabel_stickySidebar": { "message": "سەباری تەنیشت" },
   "menuLabel_replyLanguage": { "message": "زمانی وەڵامدانەوە" },
   "menuLabel_about": { "message": "دەربارە" },
   "about_version": { "message": "وشان" },

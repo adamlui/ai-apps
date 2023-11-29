@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "před dotazem" },
   "menuLabel_afterQuery": { "message": "po dotazu" },
   "menuLabel_widerSidebar": { "message": "Širší postranní panel" },
+  "menuLabel_stickySidebar": { "message": "Přilepený postranní panel" },
   "menuLabel_replyLanguage": { "message": "Jazyk odpovědi" },
   "menuLabel_about": { "message": "O" },
   "about_version": { "message": "Verze" },

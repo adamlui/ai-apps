@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "mbere Ikibazo #" },
   "menuLabel_afterQuery": { "message": "nyuma Ikibazo #" },
   "menuLabel_widerSidebar": { "message": "Umurongo wo ku mpande mugari" },
+  "menuLabel_stickySidebar": { "message": "Umurongo wo ku mpande" },
   "menuLabel_replyLanguage": { "message": "Subiza Ururimi" },
   "menuLabel_about": { "message": "Bigyanye" },
   "about_version": { "message": "Umukoro" },

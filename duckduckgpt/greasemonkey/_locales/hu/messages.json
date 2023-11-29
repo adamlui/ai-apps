@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "Lekérdezés előtt" },
   "menuLabel_afterQuery": { "message": "lekérdezés után" },
   "menuLabel_widerSidebar": { "message": "Szélesebb oldalsáv" },
+  "menuLabel_stickySidebar": { "message": "Ragadós oldalsáv" },
   "menuLabel_replyLanguage": { "message": "Válasz nyelve" },
   "menuLabel_about": { "message": "A" },
   "about_version": { "message": "Verzió" },

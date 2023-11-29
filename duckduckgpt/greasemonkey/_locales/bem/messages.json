@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "ilyo tushilaipusha" },
   "menuLabel_afterQuery": { "message": "pa numa ya kwipusha" },
   "menuLabel_widerSidebar": { "message": "Wider Sidebar" },
+  "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_replyLanguage": { "message": "Ukubika Citako" },
   "menuLabel_about": { "message": "pafya" },
   "about_version": { "message": "Ukupilibula" },

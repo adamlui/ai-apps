@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "voor query" },
   "menuLabel_afterQuery": { "message": "na query" },
   "menuLabel_widerSidebar": { "message": "Bredere zijbalk" },
+  "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_replyLanguage": { "message": "Antwoord taal" },
   "menuLabel_about": { "message": "Over" },
   "about_version": { "message": "Versie" },

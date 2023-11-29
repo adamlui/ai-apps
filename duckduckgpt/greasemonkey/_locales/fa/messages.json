@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "قبل از پرس و جو" },
   "menuLabel_afterQuery": { "message": "پس از پرس و جو" },
   "menuLabel_widerSidebar": { "message": "نوار کناری گسترده تر" },
+  "menuLabel_stickySidebar": { "message": "نوار کناری چسبنده" },
   "menuLabel_replyLanguage": { "message": "زبان پاسخ" },
   "menuLabel_about": { "message": "درباره" },
   "about_version": { "message": "نسخه برنامه" },
