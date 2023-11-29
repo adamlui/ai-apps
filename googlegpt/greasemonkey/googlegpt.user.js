@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.28.2
+// @version             2023.11.28.3
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -440,6 +440,7 @@
                 const relatedQueriesDiv = document.querySelector('.related-queries')
                 relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
             } catch (err) {}
+            updateTweaksStyle() // toggle <pre> max-height
             notify(( messages.menuLabel_relatedQueries || 'Related Queries' ) + ' '
                 + state.word[+config.rqDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -473,12 +474,18 @@
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
-        // Add command to toggle wider sidebar
         if (!isMobile) {
+
+            // Add command to toggle wider sidebar
             const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
                            + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                            + state.separator + state.word[+!config.widerSidebar]
             menuIDs.push(GM_registerMenuCommand(wsbLabel, toggleWiderSidebar))
+
+            // Add command to toggle sticky sidebar
+            const ssbLabel = '📌 ' + ( messages.menuLabel_stickySidebar || 'Sticky Sidebar' )
+                           + state.separator + state.word[+!config.stickySidebar]
+            menuIDs.push(GM_registerMenuCommand(ssbLabel, toggleStickySidebar))
         }
 
         // Add command to set reply language
@@ -626,7 +633,24 @@
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     }
 
-    function updateTweaksStyle() { tweaksStyle.innerText = config.widerSidebar ? wsbStyle : '' }
+    function toggleStickySidebar() {
+        saveSetting('stickySidebar', !config.stickySidebar)
+        updateTweaksStyle()
+        notify(( messages.menuLabel_stickySidebar || 'Sticky Sidebar' ) + ' ' + state.word[+!config.stickySidebar])
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+    }
+
+    function updateTweaksStyle() {
+
+        // Update <pre> max-height based on related queries visibility (called in RQ menu toggle + getShowReply())
+        const relatedQueries = document.querySelector('.related-queries')
+        ssbStyle = ssbStyle.replace(/(pre \{ max-height: )\d+(vh)/,
+            relatedQueries && relatedQueries.style.display != 'none' ? '$142$2' : '$159$2')
+
+        // Update tweaks style based on config key (called in tweaks init + googleGPTshow() + toggle functions)
+        tweaksStyle.innerText = ( config.widerSidebar ? wsbStyle : '' )
+                              + ( config.stickySidebar && document.querySelector('.corner-btn') ? ssbStyle : '' )
+    }
 
     function updateWSBsvg() {
 
@@ -890,6 +914,8 @@
                             relatedQueryDiv.addEventListener('keydown', rqEventHandler)
                         }, index * 100)
                     })
+
+                    updateTweaksStyle() // to shorten <pre> max-height
         }})}
 
         // Init footer CTA to share feedback
@@ -1127,6 +1153,7 @@
         // Create/append ChatGPT response
         const answerPre = document.createElement('pre')
         answerPre.textContent = answer ; googleGPTdiv.appendChild(answerPre)
+        updateTweaksStyle() // in case sticky mode on
 
         // Create/append reply section/elements
         const replySection = document.createElement('section'),
@@ -1279,7 +1306,8 @@
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
-    loadSetting('proxyAPIenabled', 'prefixEnabled', 'rqDisabled', 'replyLanguage', 'widerSidebar', 'suffixEnabled')
+    loadSetting('proxyAPIenabled', 'prefixEnabled', 'rqDisabled', 'replyLanguage',
+                'widerSidebar', 'stickySidebar', 'suffixEnabled')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = [], // to store queries + answers for contextual replies
           menuIDs = [] // to store registered commands for removal while preserving order
@@ -1369,7 +1397,7 @@
         + '.googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
         + '.googlegpt pre {'
             + 'font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ;'
-            + ' line-height: 22px ; padding: 1.25em ; border-radius: 10px ;'
+            + ' line-height: 22px ; padding: 1.25em ; border-radius: 10px ; overflow: auto ;'
             + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 }' : 'background: #eaeaea }' )
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
@@ -1382,7 +1410,8 @@
             + 'margin: 13px 0 15px 0 ; padding: 13px 25px 2px 10px ;'
             + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' }'
         + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
-        + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: 19px }'
+        + '.related-queries {'
+            + 'display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: 19px ; overflow: auto }'
         + '.related-query {'
             + `margin: 5px 4px ${ scheme == 'dark' ? 5 : 2 }px 0 ; padding: 8px 12px 8px 13px ;`
             + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ; background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
@@ -1426,6 +1455,9 @@
                    + '.googlegpt { width: 25.65rem }' // expand GoogleGPT when in limiting Google host container
                    + '.googlegpt ~ div { width: 464px }' // expand side snippets
                    + `#googlegpt-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`
+    let ssbStyle = '.googlegpt { position: sticky ; top: 71px ; max-height: 84vh }'
+                 + '.googlegpt pre { max-height: 59vh } .related-queries { max-height: 14vh }'
+                 + 'div[class*="kp-"] { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create/classify/fill GoogleGPT container
