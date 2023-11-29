@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.29
+// @version             2023.11.29.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -621,14 +621,16 @@
 
     function updateTweaksStyle() {
 
-        // Update <pre> max-height based on related queries visibility (called in RQ menu toggle + getShowReply())
-        const relatedQueries = document.querySelector('.related-queries')
-        ssbStyle = ssbStyle.replace(/(pre \{ max-height: )\d+(vh)/,
-            relatedQueries && relatedQueries.style.display != 'none' ? '$142$2' : '$159$2')
-
         // Update tweaks style based on config key (called in tweaks init + googleGPTshow() + toggle functions)
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyle : '' )
                               + ( config.stickySidebar && document.querySelector('.corner-btn') ? ssbStyle : '' )
+
+        // Update <pre> max-height based on related queries visibility (for getShowReply()'s 1st RQ show + menu toggle)
+        const answerPre = document.querySelector('.googlegpt pre'),
+              relatedQueries = document.querySelector('.related-queries'),
+              shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328
+        if (answerPre) answerPre.style.maxHeight = (
+            relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ window.innerHeight - 309 }px` )
     }
 
     function updateWSBsvg() {
@@ -1388,8 +1390,7 @@
             + 'margin: 13px 0 15px 0 ; padding: 13px 25px 2px 10px ;'
             + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' }'
         + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
-        + '.related-queries {'
-            + 'display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: 19px ; overflow: auto }'
+        + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: 19px }'
         + '.related-query {'
             + `margin: 5px 4px ${ scheme == 'dark' ? 5 : 2 }px 0 ; padding: 8px 12px 8px 13px ;`
             + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ; background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
@@ -1432,10 +1433,9 @@
           wsbStyle = '#center_col, #center_col div { max-width: 560px !important }' // shrink center column
                    + '.googlegpt { width: 25.65rem }' // expand GoogleGPT when in limiting Google host container
                    + '.googlegpt ~ div { width: 464px }' // expand side snippets
-                   + `#googlegpt-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`
-    let ssbStyle = '.googlegpt { position: sticky ; top: 71px ; max-height: 84vh }'
-                 + '.googlegpt pre { max-height: 59vh } .related-queries { max-height: 14vh }'
-                 + 'div[class*="kp-"] { display: none }' // hide sidebar contents
+                   + `#googlegpt-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
+          ssbStyle = '.googlegpt { position: sticky ; top: 71px }'
+                   + '.googlegpt ~ div { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create/classify/fill GoogleGPT container
