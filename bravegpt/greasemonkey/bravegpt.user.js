@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.29
+// @version             2023.11.29.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -190,6 +190,7 @@
                 const relatedQueriesDiv = document.querySelector('.related-queries')
                 relatedQueriesDiv.style.display = config.relatedQueriesDisabled ? 'none' : 'flex'
             } catch (err) {}
+            updateTweaksStyle() // toggle <pre> max-height
             notify(( messages.menuLabel_relatedQueries || 'Related Queries' ) + ' '
                 + state.word[+config.relatedQueriesDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -223,12 +224,19 @@
             if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
-        // Add command to toggle fatter sidebar
         if (!isMobile) {
+
+            // Add command to toggle wider sidebar
             const wsbLabel = ( config.widerSidebar ? '🔛' : '↔️' ) + ' '
                            + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                            + state.separator + state.word[+!config.widerSidebar]
             menuIDs.push(GM_registerMenuCommand(wsbLabel, toggleWiderSidebar))
+
+            // Add command to toggle sticky sidebar
+            const ssbLabel = state.symbol[+!config.stickySidebar] + ' '
+                           + ( messages.menuLabel_stickySidebar || 'Sticky Sidebar' )
+                           + state.separator + state.word[+!config.stickySidebar]
+            menuIDs.push(GM_registerMenuCommand(ssbLabel, toggleStickySidebar))
         }
 
         // Add command to set reply language
@@ -391,7 +399,26 @@
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     }
 
-    function updateTweaksStyle() { tweaksStyle.innerText = config.widerSidebar ? wsbStyle : '' }
+    function toggleStickySidebar() {
+        saveSetting('stickySidebar', !config.stickySidebar)
+        updateTweaksStyle()
+        notify(( messages.menuLabel_stickySidebar || 'Sticky Sidebar' ) + ' ' + state.word[+!config.stickySidebar])
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+    }
+
+    function updateTweaksStyle() {
+
+        // Update tweaks style based on settings (for tweaks init + braveGPTshow() + toggle functions)
+        tweaksStyle.innerText = ( config.widerSidebar ? wsbStyle : '' )
+                              + ( config.stickySidebar && document.querySelector('.corner-btn') ? ssbStyle : '' )
+
+        // Update <pre> max-height based on related queries visibility (for getShowReply()'s 1st RQ show + menu toggle)
+        const answerPre = document.querySelector('.bravegpt pre'),
+              relatedQueries = document.querySelector('.related-queries'),
+              shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 221
+        if (answerPre) answerPre.style.maxHeight = (
+            relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ window.innerHeight - 190 }px` )
+    }
 
     function updateWSBsvg() {
 
@@ -655,6 +682,8 @@
                             relatedQueryDiv.addEventListener('keydown', rqEventHandler)
                         }, index * 100)
                     })
+
+                    updateTweaksStyle() // to shorten <pre> max-height
         }})}
 
         // Init footer CTA to share feedback
@@ -887,6 +916,7 @@
               answerPre = document.createElement('pre')
         balloonTipSpan.classList.add('balloon-tip') ; answerPre.textContent = answer
         braveGPTdiv.appendChild(balloonTipSpan) ; braveGPTdiv.appendChild(answerPre)
+        updateTweaksStyle() // in case sticky mode on
 
         // Create/append reply section/elements
         const replySection = document.createElement('section'),
@@ -1030,8 +1060,8 @@
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled',
-        'suffixEnabled', 'widerSidebar', 'replyLanguage')
+    loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled', 'suffixEnabled',
+                'widerSidebar', 'stickySidebar', 'replyLanguage')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = [], menuIDs = []
     const state = {
@@ -1120,7 +1150,7 @@
         + '.bravegpt section.loading { padding-left: 5px ; font-size: 90% }'
         + '.bravegpt pre {'
             + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
-            + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ;'
+            + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ; overflow: auto ;'
             + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 }' )
         + `.bravegpt .footer { margin: ${ isChromium ? 19 : 24 }px 0 -26px 0 ; border-top: none !important }`
         + '.bravegpt .feedback {'
@@ -1180,7 +1210,9 @@
 
     // Create Brave Search style tweaks
     const tweaksStyle = document.createElement('style'),
-          wsbStyle = 'main.main-column, aside.sidebar { max-width: 521px !important }'
+          wsbStyle = 'main.main-column, aside.sidebar { max-width: 521px !important }',
+          ssbStyle = '.bravegpt { position: sticky ; top: 14px }'
+                   + 'aside[class*="sidebar"] > div:not(.bravegpt) { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
     // Create/classify/fill BraveGPT container
