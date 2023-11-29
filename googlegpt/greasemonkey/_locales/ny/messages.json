@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "musanafunse" },
   "menuLabel_afterQuery": { "message": "pambuyo kufunsa" },
   "menuLabel_widerSidebar": { "message": "M 'lifupi Sidebar" },
+  "menuLabel_stickySidebar": { "message": "Lumikizanani nafe" },
   "menuLabel_replyLanguage": { "message": "Yankhani Chilankhulo" },
   "menuLabel_about": { "message": "Zokhudza" },
   "about_version": { "message": "Lumikizanani nafe" },

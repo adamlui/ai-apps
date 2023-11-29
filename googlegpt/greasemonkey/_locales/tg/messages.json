@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "before query" },
   "menuLabel_afterQuery": { "message": "after query" },
   "menuLabel_widerSidebar": { "message": "Панели васеи канорӣ" },
+  "menuLabel_stickySidebar": { "message": "Панели паҳлӯии часпанда" },
   "menuLabel_replyLanguage": { "message": "Reply Language" },
   "menuLabel_about": { "message": "About" },
   "about_version": { "message": "Version" },

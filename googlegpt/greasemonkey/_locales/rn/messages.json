@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "imbere yo kubaza ibibazo" },
   "menuLabel_afterQuery": { "message": "inyuma y'ikibazo" },
   "menuLabel_widerSidebar": { "message": "Wider Sidebar None None" },
+  "menuLabel_stickySidebar": { "message": "Sticky Sidebar None None" },
   "menuLabel_replyLanguage": { "message": "Musubize Ururimi" },
   "menuLabel_about": { "message": "Ku vyerekeye" },
   "about_version": { "message": "Traduzione" },

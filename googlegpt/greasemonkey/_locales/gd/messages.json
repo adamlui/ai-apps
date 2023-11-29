@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "roimhe a 'Phuist \"An clàr roimhe" },
   "menuLabel_afterQuery": { "message": "'S toil'S toil" },
   "menuLabel_widerSidebar": { "message": "Bàr - taoibh nas fharsainge" },
+  "menuLabel_stickySidebar": { "message": "Bàr - taoibh steigeach" },
   "menuLabel_replyLanguage": { "message": "Cànan freagairt" },
   "menuLabel_about": { "message": "Mar deidhinn" },
   "about_version": { "message": "Tionndadh" },

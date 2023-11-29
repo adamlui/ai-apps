@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "قبل الاستعلام" },
   "menuLabel_afterQuery": { "message": "بعد الاستعلام الثاني" },
   "menuLabel_widerSidebar": { "message": "الشريط الجانبي الأوسع" },
+  "menuLabel_stickySidebar": { "message": "شريط جانبي ثابت" },
   "menuLabel_replyLanguage": { "message": "لغة الرد" },
   "menuLabel_about": { "message": "عن وزارة الثقافة" },
   "about_version": { "message": "الإصدار" },

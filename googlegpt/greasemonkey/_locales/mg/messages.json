@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "alohan'ny QUERY" },
   "menuLabel_afterQuery": { "message": "aorian'ny fangatahana" },
   "menuLabel_widerSidebar": { "message": "Malalaka kokoa Sidebar" },
+  "menuLabel_stickySidebar": { "message": "Anjan'ny Sidebar miraikitra" },
   "menuLabel_replyLanguage": { "message": "Fiteny" },
   "menuLabel_about": { "message": "Mikasika ny" },
   "about_version": { "message": "Kinova" },

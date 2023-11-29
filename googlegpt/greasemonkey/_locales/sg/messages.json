@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "kozo ti hunda" },
   "menuLabel_afterQuery": { "message": "na peko ti mbeni hunda" },
   "menuLabel_widerSidebar": { "message": "Hirondelle Sidebar" },
+  "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_replyLanguage": { "message": "Yanga ti awambongi" },
   "menuLabel_about": { "message": "About sara" },
   "about_version": { "message": "Yângâ tî kodoro" },

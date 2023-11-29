@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "sebelum pertanyaan" },
   "menuLabel_afterQuery": { "message": "selepas pertanyaan" },
   "menuLabel_widerSidebar": { "message": "Bar Sisi Lebih Luas" },
+  "menuLabel_stickySidebar": { "message": "Palang Sisi Melekit" },
   "menuLabel_replyLanguage": { "message": "Bahasa Balasan" },
   "menuLabel_about": { "message": "" },
   "about_version": { "message": "Versi" },

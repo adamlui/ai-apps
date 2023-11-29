@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "pamberi nomubvunzo" },
   "menuLabel_afterQuery": { "message": "pashure query" },
   "menuLabel_widerSidebar": { "message": "Upamhi Sidebar" },
+  "menuLabel_stickySidebar": { "message": "Zvishoma nezvishoma mumatope Sidebar" },
   "menuLabel_replyLanguage": { "message": "Pindura Mutauro" },
   "menuLabel_about": { "message": "Nezvedu" },
   "about_version": { "message": "Vhezheni" },

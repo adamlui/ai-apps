@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "перед запитом" },
   "menuLabel_afterQuery": { "message": "після запиту" },
   "menuLabel_widerSidebar": { "message": "Ширша бічна панель" },
+  "menuLabel_stickySidebar": { "message": "Липка бічна панель" },
   "menuLabel_replyLanguage": { "message": "Мова відповіді" },
   "menuLabel_about": { "message": "Про нас" },
   "about_version": { "message": "Версія" },

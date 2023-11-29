@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "د پوښتنې دمخه" },
   "menuLabel_afterQuery": { "message": "د پوښتنې وروسته" },
   "menuLabel_widerSidebar": { "message": "پراخ اړخپټه" },
+  "menuLabel_stickySidebar": { "message": "سريښناکه اړخ چکۍ" },
   "menuLabel_replyLanguage": { "message": "د ځواب ژبه" },
   "menuLabel_about": { "message": "په هکله" },
   "about_version": { "message": ":نسخه" },

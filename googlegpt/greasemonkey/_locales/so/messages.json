@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "su 'aal ka hor" },
   "menuLabel_afterQuery": { "message": "su 'aal ka dib" },
   "menuLabel_widerSidebar": { "message": "Baaxadda Sidebar" },
+  "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_replyLanguage": { "message": "Luqadda Jawaabta" },
   "menuLabel_about": { "message": "Jabuuti" },
   "about_version": { "message": "Version" },

@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "ກ່ອນການສອບຖາມ" },
   "menuLabel_afterQuery": { "message": "ຫຼັງຈາກການສອບຖາມ" },
   "menuLabel_widerSidebar": { "message": "ແຖບຂ້າງກວ້າງ" },
+  "menuLabel_stickySidebar": { "message": "ແຖບຂ້າງຕິດ" },
   "menuLabel_replyLanguage": { "message": "ຕອບສະໜອງພາສາ" },
   "menuLabel_about": { "message": "ກ່ຽວກັບ" },
   "about_version": { "message": "ຮຸ່ນ" },

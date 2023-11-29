@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "ก่อนการสอบถาม" },
   "menuLabel_afterQuery": { "message": "หลังการสอบถาม" },
   "menuLabel_widerSidebar": { "message": "แถบด้านข้างที่กว้างขึ้น" },
+  "menuLabel_stickySidebar": { "message": "แถบด้านข้างแบบสติ๊กกี้" },
   "menuLabel_replyLanguage": { "message": "ตอบกลับภาษา" },
   "menuLabel_about": { "message": "เกี่ยวกับ" },
   "about_version": { "message": "เวอร์ชัน" },

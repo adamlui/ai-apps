@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "پارێز پرسیارەکە" },
   "menuLabel_afterQuery": { "message": "پاش پرسیارەکە" },
   "menuLabel_widerSidebar": { "message": "پێچەوانەی گوشتەواز" },
+  "menuLabel_stickySidebar": { "message": "چەسپاوی لایەنی" },
   "menuLabel_replyLanguage": { "message": "زمانی وەرزیی پاسخ" },
   "menuLabel_about": { "message": "دەربارەی" },
   "about_version": { "message": "وەرژن" },

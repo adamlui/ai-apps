@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "ngaphambi kombuzo" },
   "menuLabel_afterQuery": { "message": "ngemva kombuzo" },
   "menuLabel_widerSidebar": { "message": "Ibha Eseceleni Ebanzi" },
+  "menuLabel_stickySidebar": { "message": "Ibha eseceleni Enamathelayo" },
   "menuLabel_replyLanguage": { "message": "Phendula Ulimi" },
   "menuLabel_about": { "message": "Mayelana" },
   "about_version": { "message": "Uhlelo" },

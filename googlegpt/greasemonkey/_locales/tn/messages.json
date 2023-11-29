@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "pele ga QUERY" },
   "menuLabel_afterQuery": { "message": "after query" },
   "menuLabel_widerSidebar": { "message": "Bareng e Kgolwane ya mo Letlhakoreng" },
+  "menuLabel_stickySidebar": { "message": "STICKY SIDEBAR" },
   "menuLabel_replyLanguage": { "message": "Karabo ya Puo" },
   "menuLabel_about": { "message": "Kaga" },
   "about_version": { "message": "VERSION" },

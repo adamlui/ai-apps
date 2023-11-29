@@ -7,6 +7,7 @@
   "menuLabel_beforeQuery": { "message": "qUERY မတိုင်မီ" },
   "menuLabel_afterQuery": { "message": "qUERY ပြီးနောက်" },
   "menuLabel_widerSidebar": { "message": "ကျယ်ပြန့်သော ဘေးဘား" },
+  "menuLabel_stickySidebar": { "message": "စေးကပ်သော ဘေးဘား" },
   "menuLabel_replyLanguage": { "message": "ပြန်ကြားချက်ဘာသာစကား" },
   "menuLabel_about": { "message": "အကြောင်း" },
   "about_version": { "message": "မူ -" },
