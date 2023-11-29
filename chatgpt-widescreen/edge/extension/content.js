@@ -213,7 +213,8 @@
 
     // Define BUTTON functions
 
-    function setBtnColor() { return chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' }
+    function setBtnColor() { return (
+        site == 'openai' ? ( chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' ) : 'currentColor' )}
 
     function insertBtns() {
         const chatbar = site == 'poe' ? document.querySelector('div[class*="ChatMessageInputContainer"]')
