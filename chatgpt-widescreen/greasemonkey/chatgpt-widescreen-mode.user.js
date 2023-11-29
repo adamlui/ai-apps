@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.29.1
+// @version             2023.11.29.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -843,7 +843,7 @@
             if (site != 'poe') // assign borrowed classes
                 window[buttonName].setAttribute('class', sendBtnClasses)
             else if (site == 'poe') // lift buttons slightly
-                window[buttonName].style.cssText += '; margin-bottom: 0.2rem'
+                window[buttonName].style.marginBottom = ( buttonType == 'newChat' ? '0.45' : '0.2' ) + 'rem'
             if (site == 'openai') { // style tweaks for OpenAI Gizmo UI
                 window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
                 window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
