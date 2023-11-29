@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.29.1
+// @version             2023.11.29.2
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -628,9 +628,10 @@
         // Update <pre> max-height based on related queries visibility (for getShowReply()'s 1st RQ show + menu toggle)
         const answerPre = document.querySelector('.googlegpt pre'),
               relatedQueries = document.querySelector('.related-queries'),
-              shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328
+              shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328,
+              longerPreHeight = window.innerHeight - 309
         if (answerPre) answerPre.style.maxHeight = (
-            relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ window.innerHeight - 309 }px` )
+            relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
     }
 
     function updateWSBsvg() {
