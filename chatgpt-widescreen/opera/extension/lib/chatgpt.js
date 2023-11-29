@@ -283,14 +283,14 @@ const chatgpt = {
     history: {
         isOn: function() {
             const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
-            offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
+                  offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
             return offDiv.classList.toString().includes('invisible');
         },
 
         isOff: function() { return !this.isOn(); }
     },
 
-    isDarkMode: function() { return chatgpt.browser.isDarkMode(); },
+    isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
     isFullScreen: function() { return chatgpt.browser.isFullScreen(); },
 
     isLoaded: function() {
