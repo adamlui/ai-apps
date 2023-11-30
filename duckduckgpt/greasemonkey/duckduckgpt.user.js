@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.529.1
+// @version             2023.11.529.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1146,9 +1146,7 @@
             })()
 
             // Select random, active advertiser
-            const advertisersList = Object.entries(advertisersData)
-            applyBoosts(advertisersList)
-            for (const [advertiser, details] of shuffle(advertisersList)) // look for active advertiser
+            for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
                 if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
 
             // Fetch a random, active creative
@@ -1158,14 +1156,12 @@
                 fetchJSON(campaignsURL, (err, campaignsData) => { if (err) { return }
 
                     // Select random, active campaign
-                    const campaignsList = Object.entries(campaignsData)
-                    applyBoosts(campaignsList)
-                    for (const [campaignName, campaign] of shuffle(campaignsList)) {
+                    for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
                         const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
                         if (!campaignIsActive) continue // to next campaign since campaign inactive
 
                         // Select random active group
-                        for (const [groupName, adGroup] of shuffle(Object.entries(campaign.adGroups))) {
+                        for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
 
                             // Skip disqualified groups
                             if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
@@ -1201,18 +1197,28 @@
                         if (adSelected) break // out of campaign loop after ad selection
             }})}
 
-            function shuffle(list) { return list.sort(() => 0.5 - Math.random()) }
+            function shuffle(list) {
+                let currentIdx = list.length, tempValue, randomIdx
+                while (currentIdx !== 0) { // elements remain to be shuffled
+                    randomIdx = Math.floor(Math.random() * currentIdx) ; currentIdx -= 1
+                    tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
+                }
+                return list
+            }
 
             function applyBoosts(list) {
-                let newListLength = list.length - 1 // for applying multiple boosts
+                let boostedList = [...list],
+                    boostedListLength = boostedList.length - 1 // for applying multiple boosts
                 list.forEach(([name, data]) => { // check for boosts
                     if (data.boost) { // boost flagged entry's selection probability
-                        const boostPercent = data.boost / 100,
-                              entriesNeeded = Math.ceil(newListLength / (1 - boostPercent)) // total entries needed
+                        const boostPercent = parseInt(data.boost, 10) / 100,
+                              entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
                                             * boostPercent - 1 // reduced to boosted entries needed
-                        for (let i = 0; i < entriesNeeded; i++) list.push([name, data]) // saturate list
-                        newListLength += entriesNeeded
-            }})}
+                        for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
+                        boostedListLength += entriesNeeded // update for subsequent calculations
+                }})
+                return boostedList
+            }
     })
  
     // Create/classify/fill footer
