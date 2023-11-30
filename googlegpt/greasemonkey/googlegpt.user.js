@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.29.5
+// @version             2023.11.30
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -615,17 +615,18 @@
 
     function updateTweaksStyle() {
 
-        // Update tweaks style based on config key (called in tweaks init + googleGPTshow() + sidebar toggle function)
+        // Update tweaks style based on config key (for tweaks init + googleGPTshow() + sidebar toggle function)
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyle : '' )
                               + ( config.stickySidebar && document.querySelector('.corner-btn') ? ssbStyle : '' )
 
-        // Update <pre> max-height based on related queries visibility (for getShowReply()'s 1st RQ show + menu toggle)
+        // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for getShowReply()'s RQ show + menu RQ toggle)
         const answerPre = document.querySelector('.googlegpt pre'),
               relatedQueries = document.querySelector('.related-queries'),
               shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328,
               longerPreHeight = window.innerHeight - 309
-        if (answerPre) answerPre.style.maxHeight = (
-            relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
+        if (answerPre)
+            answerPre.style.maxHeight = !config.stickySidebar ? 'none' : (
+                relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
     }
 
     function updateWSBsvg() {
