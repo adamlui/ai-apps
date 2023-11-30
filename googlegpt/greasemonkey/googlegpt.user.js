@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.30
+// @version             2023.11.30.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -615,7 +615,7 @@
 
     function updateTweaksStyle() {
 
-        // Update tweaks style based on config key (for tweaks init + googleGPTshow() + sidebar toggle function)
+        // Update tweaks style based on settings (for tweaks init + googleGPTshow() + sidebar toggle function)
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyle : '' )
                               + ( config.stickySidebar && document.querySelector('.corner-btn') ? ssbStyle : '' )
 
@@ -624,9 +624,8 @@
               relatedQueries = document.querySelector('.related-queries'),
               shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328,
               longerPreHeight = window.innerHeight - 309
-        if (answerPre)
-            answerPre.style.maxHeight = !config.stickySidebar ? 'none' : (
-                relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
+        if (answerPre) answerPre.style.maxHeight = !config.stickySidebar ? 'none' : (
+            relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
     }
 
     function updateWSBsvg() {
