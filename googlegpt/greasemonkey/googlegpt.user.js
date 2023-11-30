@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.29.4
+// @version             2023.11.29.5
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -458,13 +458,13 @@
             const wsbLabel = state.symbol[+!config.widerSidebar] + ' '
                            + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                            + state.separator + state.word[+!config.widerSidebar]
-            menuIDs.push(GM_registerMenuCommand(wsbLabel, toggleWiderSidebar))
+            menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
 
             // Add command to toggle sticky sidebar
             const ssbLabel = state.symbol[+!config.stickySidebar] + ' '
                            + ( messages.menuLabel_stickySidebar || 'Sticky Sidebar' )
                            + state.separator + state.word[+!config.stickySidebar]
-            menuIDs.push(GM_registerMenuCommand(ssbLabel, toggleStickySidebar))
+            menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
         }
 
         // Add command to set reply language
@@ -604,24 +604,18 @@
 
     function isDarkMode() { return !!document.querySelector('[data-darkmode="true"]') }
 
-    function toggleWiderSidebar() {
-        saveSetting('widerSidebar', !config.widerSidebar)
+    function toggleSidebar(mode) {
+        saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
         updateTweaksStyle()
-        if (document.querySelector('.corner-btn')) updateWSBsvg()
-        notify(( messages.menuLabel_widerSidebar || 'Wider Sidebar' ) + ' ' + state.word[+!config.widerSidebar])
-        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-    }
-
-    function toggleStickySidebar() {
-        saveSetting('stickySidebar', !config.stickySidebar)
-        updateTweaksStyle()
-        notify(( messages.menuLabel_stickySidebar || 'Sticky Sidebar' ) + ' ' + state.word[+!config.stickySidebar])
+        if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg()
+        notify(( messages[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
+            + ' ' + state.word[+!config[mode + 'Sidebar']])
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     }
 
     function updateTweaksStyle() {
 
-        // Update tweaks style based on config key (called in tweaks init + googleGPTshow() + toggle functions)
+        // Update tweaks style based on config key (called in tweaks init + googleGPTshow() + sidebar toggle function)
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyle : '' )
                               + ( config.stickySidebar && document.querySelector('.corner-btn') ? ssbStyle : '' )
 
@@ -1207,7 +1201,7 @@
                 + encodeURIComponent(securePayload))
             speakAudio.play().catch(() => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
         })
-        wsbSVG?.addEventListener('click', toggleWiderSidebar)
+        wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
         replyForm.addEventListener('keydown', handleEnter)
         replyForm.addEventListener('submit', handleSubmit)
         chatTextarea.addEventListener('input', autosizeChatbar)
