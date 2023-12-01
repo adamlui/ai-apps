@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.1
+// @version             2023.12.1.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -754,6 +754,7 @@
                                 footerContent.textContent = chosenAd.text.length < 49 ? chosenAd.text
                                                           : chosenAd.text.slice(0, 49) + '...'
                                 footerContent.setAttribute('title', chosenAd.tooltip || '')
+                                adSelected = true ; break
                             }
                             if (adSelected) break // out of campaign loop after ad selection
                 }})}
