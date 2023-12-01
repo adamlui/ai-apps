@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.30.1
+// @version             2023.12.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -895,7 +895,7 @@
         }})}
 
         // Init footer CTA to share feedback
-        const footerLink = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
+        let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
 
         // Check for active text campaigns to replace CTA
         fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
@@ -945,7 +945,7 @@
 
                                 // Build destination URL
                                 let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
-                                    || campaign.destinationURL || 'mailto:ads@kudoai.com'
+                                    || campaign.destinationURL || ''
                                 if (destinationURL.includes('http')) { // insert UTM tags
                                     const [baseURL, queryString] = destinationURL.split('?'),
                                           queryParams = new URLSearchParams(queryString || '')
@@ -954,11 +954,16 @@
                                     destinationURL = baseURL + '?' + queryParams.toString()
                                 }
 
-                                // Replace `footerLink` w/ new text/href
-                                footerLink.textContent = chosenAd.text
-                                footerLink.setAttribute('href', destinationURL)
-                                footerLink.setAttribute('title', chosenAd.tooltip || '')
-                                adSelected = true ; break // out of group loop after ad selection
+                                // Update footer content
+                                if (destinationURL) { // update link
+                                    if (!(footerContent instanceof HTMLAnchorElement)) footerContent = createAnchor(destinationURL)
+                                    else footerContent.setAttribute('href', destinationURL)
+                                } else { // insert new span
+                                    const footerSpan = document.createElement('span')
+                                    footerContent.replaceWith(footerSpan) ; footerContent = footerSpan
+                                }
+                                footerContent.textContent = chosenAd.text
+                                footerContent.setAttribute('title', chosenAd.tooltip || '')             
                             }
                             if (adSelected) break // out of campaign loop after ad selection
                 }})}
@@ -1014,7 +1019,7 @@
                         }
                         if (responseItem.startsWith('data: {')) {
                             const answer = JSON.parse(responseItem.slice(6)).message.content.parts[0]
-                            googleGPTshow(answer, footerLink)
+                            googleGPTshow(answer, footerContent)
                         } else if (responseItem.startsWith('data: [DONE]')) return
                         return reader.read().then(processText)
         })}}}
@@ -1039,7 +1044,7 @@
                                 const responseParts = event.response.split('\n\n'),
                                       finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
                                       answer = finalResponse.message.content.parts[0]
-                                googleGPTshow(answer, footerLink)
+                                googleGPTshow(answer, footerContent)
                             } catch (err) {
                                 googleGPTerror(googleGPTalerts.parseFailed + ': ' + err)
                                 googleGPTerror('Response: ' + event.response)
@@ -1050,7 +1055,7 @@
                         if (event.responseText) {
                             try { // to parse txt response from AIGCF endpoint
                                 const answer = JSON.parse(event.responseText).choices[0].message.content
-                                googleGPTshow(answer, footerLink) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                                googleGPTshow(answer, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                             } catch (err) {
                                 googleGPTinfo('Response: ' + event.responseText)
                                 if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
@@ -1068,7 +1073,7 @@
         }}}}}}}
     }
 
-    function googleGPTshow(answer, footerLink) {
+    function googleGPTshow(answer, footerContent) {
         while (googleGPTdiv.firstChild) // clear all children
             googleGPTdiv.removeChild(googleGPTdiv.firstChild)
 
@@ -1167,7 +1172,7 @@
         // Create/classify/fill/append footer
         const googleGPTfooter = document.createElement('div')
         googleGPTfooter.classList.add('footer')
-        googleGPTfooter.appendChild(footerLink) ; googleGPTdiv.appendChild(googleGPTfooter)
+        googleGPTfooter.appendChild(footerContent) ; googleGPTdiv.appendChild(googleGPTfooter)
 
         // Render math
         renderMathInElement(answerPre, { // eslint-disable-line no-undef
@@ -1424,7 +1429,7 @@
         + '.modal-buttons { margin: 28px 4px -3px -4px !important }' // position alert buttons
         + '.googlegpt .footer { position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ;'
             + `margin: ${ chatgpt.browser.isFirefox() ? '3px' : 0 } -32px 13px }`
-        + '.googlegpt .footer a { color: #aaa ; text-decoration: none }'
+        + '.googlegpt .footer * { color: #aaa ; text-decoration: none }'
         + `.googlegpt .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
     )
     document.head.appendChild(googleGPTstyle)
