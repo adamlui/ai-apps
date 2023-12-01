@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.1
+// @version             2023.12.1.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1223,7 +1223,7 @@
  
     // Create/classify/fill footer
     const ddgptFooter = document.createElement('div')
-    ddgptFooter.classList.add('feedback-prompt', 'chatgpt-feedback')
+    ddgptFooter.classList.add('feedback-prompt', 'ddgpt-feedback')
     ddgptFooter.appendChild(footerLink)
 
     // Activate ad campaign if active
@@ -1239,7 +1239,7 @@
 
             // Create feedback footer & add classes/HTML
             const pcFooter = document.createElement('div')
-            pcFooter.classList.add('feedback-prompt', 'chatgpt-feedback')
+            pcFooter.classList.add('feedback-prompt', 'ddgpt-feedback')
             pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" class="feedback-prompt__link" target="_blank" rel="noopener">' + ( messages.link_shareFeedback || 'Share Feedback' ) +'</a>'
 
             // Inject in sidebar
