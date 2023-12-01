@@ -141,6 +141,7 @@ This script exists thanks to code, translations, issues & ideas from the followi
 [![](https://images.weserv.nl/?url=https://greasyfork.org/vite/assets/blacklogo96-e0c2c761.png?first-contrib=2023.11.27-new-ui-report&h=50&w=50&mask=circle&maxage=7d "jianmin liang")](https://greasyfork.org/en/users/1182535-jianmin-liang)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/67295085?first-contrib=2023.11.28-new-ui-report&h=50&w=50&mask=circle&maxage=7d "@jaysqvl")](https://github.com/jaysqvl)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/78710607?first-contrib=2023.11.29-win7-edge-copy-bug-report&h=50&w=50&mask=circle&maxage=7d "@KamiyaMinoru")](https://github.com/KamiyaMinoru)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/123299068?first-contrib=2023.11.30-unworking-wider-chatbox-bug-report&h=50&w=50&mask=circle&maxage=7d "@SwissFred57")](https://github.com/SwissFred57)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
