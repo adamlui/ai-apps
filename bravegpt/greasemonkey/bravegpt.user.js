@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.11.30
+// @version             2023.12.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -596,7 +596,7 @@
             })
     })}
 
-    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `braveGPTshow(answer, footerLink).handleSubmit()`
+    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `braveGPTshow(answer, footerContent).handleSubmit()`
         if ([' ', 'Enter'].includes(event.key) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
 
@@ -682,8 +682,8 @@
         }})}
 
         // Init footer CTA to share feedback
-        const footerLink = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Feedback')
-        footerLink.classList.add('feedback', 'svelte-8js1iq') // Brave classes
+        let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Feedback')
+        footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
 
         // Check for active text campaigns to replace CTA
         fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
@@ -733,7 +733,7 @@
 
                                 // Build destination URL
                                 let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
-                                    || campaign.destinationURL || 'mailto:ads@kudoai.com'
+                                    || campaign.destinationURL || ''
                                 if (destinationURL.includes('http')) { // insert UTM tags
                                     const [baseURL, queryString] = destinationURL.split('?'),
                                           queryParams = new URLSearchParams(queryString || '')
@@ -742,12 +742,18 @@
                                     destinationURL = baseURL + '?' + queryParams.toString()
                                 }
 
-                                // Replace `footerLink` w/ new text/href
-                                footerLink.textContent = chosenAd.text.length < 49 ? chosenAd.text
-                                                       : chosenAd.text.slice(0, 49) + '...'
-                                footerLink.setAttribute('href', destinationURL)
-                                footerLink.setAttribute('title', chosenAd.tooltip || '')
-                                adSelected = true ; break // out of group loop after ad selection
+                                // Update footer content
+                                if (destinationURL) { // update link
+                                    if (!(footerContent instanceof HTMLAnchorElement)) footerContent = createAnchor(destinationURL)
+                                    else footerContent.setAttribute('href', destinationURL)
+                                } else { // insert new span
+                                    const footerSpan = document.createElement('span')
+                                    footerContent.replaceWith(footerSpan) ; footerContent = footerSpan
+                                }
+                                footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
+                                footerContent.textContent = chosenAd.text.length < 49 ? chosenAd.text
+                                                          : chosenAd.text.slice(0, 49) + '...'
+                                footerContent.setAttribute('title', chosenAd.tooltip || '')
                             }
                             if (adSelected) break // out of campaign loop after ad selection
                 }})}
@@ -803,7 +809,7 @@
                         }
                         if (responseItem.startsWith('data: {')) {
                             const answer = JSON.parse(responseItem.slice(6)).message.content.parts[0]
-                            braveGPTshow(answer, footerLink)
+                            braveGPTshow(answer, footerContent)
                         } else if (responseItem.startsWith('data: [DONE]')) return
                         return reader.read().then(processText)
         })}}}
@@ -828,7 +834,7 @@
                                 const responseParts = event.response.split('\n\n'),
                                       finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
                                       answer = finalResponse.message.content.parts[0]
-                                braveGPTshow(answer, footerLink)
+                                braveGPTshow(answer, footerContent)
                             } catch (err) {
                                 braveGPTerror(braveGPTalerts.parseFailed + ': ' + err)
                                 braveGPTerror('Response: ' + event.response)
@@ -839,7 +845,7 @@
                         if (event.responseText) {
                             try { // to parse txt response from AIGCF endpoint
                                 const answer = JSON.parse(event.responseText).choices[0].message.content
-                                braveGPTshow(answer, footerLink) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                                braveGPTshow(answer, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                             } catch (err) {
                                 braveGPTinfo('Response: ' + event.responseText)
                                 if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
@@ -857,7 +863,7 @@
         }}}}}}}
     }
 
-    function braveGPTshow(answer, footerLink) {
+    function braveGPTshow(answer, footerContent) {
         while (braveGPTdiv.firstChild) // clear all children
             braveGPTdiv.removeChild(braveGPTdiv.firstChild)
 
@@ -946,7 +952,7 @@
         // Create/classify/fill/append footer
         const braveGPTfooter = document.createElement('div')
         braveGPTfooter.classList.add('footer')
-        braveGPTfooter.appendChild(footerLink) ; braveGPTdiv.appendChild(braveGPTfooter)
+        braveGPTfooter.appendChild(footerContent) ; braveGPTdiv.appendChild(braveGPTfooter)
 
         // Render math
         renderMathInElement(answerPre, { // eslint-disable-line no-undef
