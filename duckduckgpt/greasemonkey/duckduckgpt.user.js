@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.1.1
+// @version             2023.12.1.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1128,8 +1128,8 @@
     ddgptAlert('waitingResponse')
 
     // Init footer CTA to share feedback
-    const footerLink = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
-    footerLink.classList.add('feedback-prompt__link', 'js-feedback-prompt-generic') // DDG classes
+    let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
+    footerContent.classList.add('feedback-prompt__link', 'js-feedback-prompt-generic') // DDG classes
 
     // Check for active text campaigns to replace CTA
     fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
@@ -1179,7 +1179,7 @@
 
                             // Build destination URL
                             let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
-                                || campaign.destinationURL || 'mailto:ads@kudoai.com'
+                                || campaign.destinationURL || ''
                             if (destinationURL.includes('http')) { // insert UTM tags
                                 const [baseURL, queryString] = destinationURL.split('?'),
                                       queryParams = new URLSearchParams(queryString || '')
@@ -1188,11 +1188,20 @@
                                 destinationURL = baseURL + '?' + queryParams.toString()
                             }
 
-                            // Replace `footerLink` w/ new text/href
-                            footerLink.textContent = chosenAd.text
-                            footerLink.setAttribute('href', destinationURL)
-                            footerLink.setAttribute('title', chosenAd.tooltip || '')
-                            adSelected = true ; break // out of group loop after ad selection
+                            // Update footer content
+                            if (destinationURL) { // update link
+                                if (!(footerContent instanceof HTMLAnchorElement)) {
+                                    footerContent = createAnchor(destinationURL)
+                                    footerContent.classList.add('feedback-prompt__link') // DDG link class
+                                } else footerContent.setAttribute('href', destinationURL)
+                            } else { // insert new span
+                                const footerSpan = document.createElement('span')
+                                footerContent.replaceWith(footerSpan) ; footerContent = footerSpan
+                            }
+                            footerContent.classList.add('js-feedback-prompt-generic') // DDG footer class
+                            footerContent.textContent = chosenAd.text
+                            footerContent.setAttribute('title', chosenAd.tooltip || '')
+                            adSelected = true ; break
                         }
                         if (adSelected) break // out of campaign loop after ad selection
             }})}
@@ -1224,7 +1233,7 @@
     // Create/classify/fill footer
     const ddgptFooter = document.createElement('div')
     ddgptFooter.classList.add('feedback-prompt', 'ddgpt-feedback')
-    ddgptFooter.appendChild(footerLink)
+    ddgptFooter.appendChild(footerContent)
 
     // Activate ad campaign if active
     GM.xmlHttpRequest({
