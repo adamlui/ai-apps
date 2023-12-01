@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.29.2
+// @version             2023.12.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -814,7 +814,7 @@
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
-        site == 'openai' ? 'main form'
+        site == 'openai' ? 'main form { max-width: 96% !important }'
       : site == 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }'
       : site == 'aivvm' ? 'div[class*="stretch"] { max-width: 98% }' : '' )
     updateWidescreenStyle()
