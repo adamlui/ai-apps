@@ -77,7 +77,7 @@
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
-        site == 'openai' ? 'main form'
+        site == 'openai' ? 'main form { max-width: 96% !important }'
       : site == 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }' : '' )
     updateWidescreenStyle()
 
