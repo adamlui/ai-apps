@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Ifaka izimpendulo ze-ChatGPT ku-Google Search (inikwe amandla yi-GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Thola Izimpendulo Ngokuzenzakalelayo" },
   "menuLabel_proxyAPImode": { "message": "Imodi ye-API Yombambeli" },
   "menuLabel_relatedQueries": { "message": "Imibuzo Ehlobene" },
   "menuLabel_require": { "message": "Kudingeka" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Zama ukuvala i-Proxy Mode kubha yamathuluzi" },
   "alert_censored": { "message": "Uxolo, ngokwemithetho yethu yomkhiqizo, asikwazi ukukunikeza impendulo yalo mbuzo, sicela uzame eminye imibuzo" },
   "alert_maintenance": { "message": "Isistimu ye-AI ngaphansi kwesondlo" },
+  "buttonLabel_sendQueryToGPT": { "message": "Thumela umbuzo ku-GPT" },
   "buttonLabel_moreApps": { "message": "Ama-app engeziwe e-ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Shiya Okushiwo Abanye" },
   "buttonLabel_getSupport": { "message": "Thola Usizo" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Legger ChatGPT-svar til Google Søk (drevet av GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Få svar automatisk" },
   "menuLabel_proxyAPImode": { "message": "Proxy API-modus" },
   "menuLabel_relatedQueries": { "message": "Relaterte spørsmål" },
   "menuLabel_require": { "message": "Krever" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Prøv å slå av proxy-modus i verktøylinjen" },
   "alert_censored": { "message": "Beklager, i henhold til produktreglene våre kan vi ikke gi deg svar på dette spørsmålet, prøv andre spørsmål." },
   "alert_maintenance": { "message": "AI-system under vedlikehold" },
+  "buttonLabel_sendQueryToGPT": { "message": "Send forespørsel til GPT" },
   "buttonLabel_moreApps": { "message": "Flere ChatGPT-apper" },
   "buttonLabel_leaveReview": { "message": "Legg igjen en anmeldelse" },
   "buttonLabel_getSupport": { "message": "Brukerstøtte" },

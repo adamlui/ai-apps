@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Prideda „ChatGPT“ atsakymus į „Google“ paiešką (sukurta GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Automatiškai gauti atsakymus" },
   "menuLabel_proxyAPImode": { "message": "Tarpinio serverio API režimas" },
   "menuLabel_relatedQueries": { "message": "Susijusios užklausos" },
   "menuLabel_require": { "message": "Privalomas laukas" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Pabandykite išjungti tarpinio serverio režimą įrankių juostoje" },
   "alert_censored": { "message": "Atsiprašome, pagal mūsų produktų taisykles negalime jums pateikti atsakymo į šį klausimą. Pabandykite atsakyti į kitus klausimus." },
   "alert_maintenance": { "message": "Atliekama dirbtinio intelekto sistemos techninė priežiūra" },
+  "buttonLabel_sendQueryToGPT": { "message": "Siųsti užklausą GPT" },
   "buttonLabel_moreApps": { "message": "Daugiau „ChatGPT“ programų" },
   "buttonLabel_leaveReview": { "message": "Palikite apžvalgą" },
   "buttonLabel_getSupport": { "message": "Gauti palaikymą" },

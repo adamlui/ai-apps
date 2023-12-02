@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "ChatGPT erantzunak gehitzen ditu Google Bilaketa-n (GPT-4-ren bidez!)" },
+  "menuLabel_autoGetAnswers": { "message": "Lortu erantzunak automatikoki" },
   "menuLabel_proxyAPImode": { "message": "Proxy API modua" },
   "menuLabel_relatedQueries": { "message": "Erlazionatutako kontsultak" },
   "menuLabel_require": { "message": "Eskatu" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Saiatu tresna-barrako proxy modua desaktibatzen" },
   "alert_censored": { "message": "Sentitzen dugu, gure produktuen arauen arabera, ezin dizugu galdera honi erantzunik eman, saiatu beste galdera batzuk." },
   "alert_maintenance": { "message": "AI sistema mantentzen" },
+  "buttonLabel_sendQueryToGPT": { "message": "Bidali kontsulta GPTra" },
   "buttonLabel_moreApps": { "message": "ChatGPT aplikazio gehiago" },
   "buttonLabel_leaveReview": { "message": "Utzi Iritzia" },
   "buttonLabel_getSupport": { "message": "Laguntza lortu" },

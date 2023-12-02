@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Ukulele Tabs for Google Search (ukulele tabs4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Auto-Get Amabile" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_relatedQueries": { "message": "Ifyakwipusha ifilukubuulishisha" },
   "menuLabel_require": { "message": "Ifingakwafwa" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Iyesha Proxy Mode In Toolbar" },
   "alert_censored": { "message": "Peeleniko bambi Peeleniko bambi Peeleniko bambi Peeleniko bambi Amashiwi ya kwa Lesa" },
   "alert_maintenance": { "message": "Sistema de la penser de la p" },
+  "buttonLabel_sendQueryToGPT": { "message": "Tumineni icipusho ku GPT" },
   "buttonLabel_moreApps": { "message": "Ukulele ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Lekisha Review" },
   "buttonLabel_getSupport": { "message": "Peeleniko bambi Peeleni" },

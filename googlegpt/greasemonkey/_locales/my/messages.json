@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search ကို ChatGPT အဖြေများကိုထည့်သွင်း (GPT-4 အားဖြင့် powered!)" },
+  "menuLabel_autoGetAnswers": { "message": "အော်တို Get အဖြေများ" },
   "menuLabel_proxyAPImode": { "message": "Proxy API ကို Mode ကို" },
   "menuLabel_relatedQueries": { "message": "ဆက်စပ်မေးခွန်းများ" },
   "menuLabel_require": { "message": "လိုအပ်သည်" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "ကိရိယာဘားတွင် Proxy Mode ကိုပိတ်ရန်ကြိုးစားပါ" },
   "alert_censored": { "message": "ဝမ်းနည်းပါတယ်, ကျွန်တော်တို့ရဲ့ထုတ်ကုန်စည်းမျဉ်းများအရ, ငါတို့သည်သင်တို့ဤမေးခွန်းကိုအဖြေကိုမပေးနိုငျ, အခြားမေးခွန်းများကိုကြိုးစားပါ ။" },
   "alert_maintenance": { "message": "ပြုပြင်ထိန်းသိမ်းမှုအောက်ရှိ AI စနစ်" },
+  "buttonLabel_sendQueryToGPT": { "message": "GPT သို့ query ပေးပို့ပါ" },
   "buttonLabel_moreApps": { "message": "နောက်ထပ် ChatGPT Apps ကပ" },
   "buttonLabel_leaveReview": { "message": "တစ်ဦးပြန်လည်ဆန်းစစ်ခြင်း Leave" },
   "buttonLabel_getSupport": { "message": "ပံ့ပိုးမှုရယူပါ။ " },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Adiciona respostas de ChatGPT ao Google Search (powered by GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Obter respostas automáticas" },
   "menuLabel_proxyAPImode": { "message": "Modo API de proxy" },
   "menuLabel_relatedQueries": { "message": "Consultas relacionadas" },
   "menuLabel_require": { "message": "Require:" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Tenta desactivar o modo proxy na barra de ferramentas" },
   "alert_censored": { "message": "Sentímolo, de acordo coas nosas regras de produtos, non podemos proporcionarlle unha resposta a esta pregunta, por favor, tente outras preguntas." },
   "alert_maintenance": { "message": "Sistema de IA en manutención" },
+  "buttonLabel_sendQueryToGPT": { "message": "Enviar consulta a GPT" },
   "buttonLabel_moreApps": { "message": "Máis aplicacións de ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Deixa unha opinión" },
   "buttonLabel_getSupport": { "message": "Asistencia" },

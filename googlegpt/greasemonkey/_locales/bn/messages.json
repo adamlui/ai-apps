@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search-এ ChatGPT উত্তর যোগ করে (GPT-4 দ্বারা চালিত!)" },
+  "menuLabel_autoGetAnswers": { "message": "স্বয়ংক্রিয়ভাবে উত্তর পান" },
   "menuLabel_proxyAPImode": { "message": "প্রক্সি API মোড" },
   "menuLabel_relatedQueries": { "message": "সম্পর্কিত জিজ্ঞাসা" },
   "menuLabel_require": { "message": "প্রয়োজন" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "টুলবারে প্রক্সি মোড বন্ধ করার চেষ্টা করুন" },
   "alert_censored": { "message": "দুঃখিত, আমাদের পণ্য নিয়ম অনুযায়ী, আমরা আপনাকে এই প্রশ্নের উত্তর দিতে পারছি না, অনুগ্রহ করে অন্য প্রশ্নগুলি চেষ্টা করুন ।" },
   "alert_maintenance": { "message": "রক্ষণাবেক্ষণাধীন AI সিস্টেম" },
+  "buttonLabel_sendQueryToGPT": { "message": "জিপিটি-তে ক্যোয়ারী পাঠান" },
   "buttonLabel_moreApps": { "message": "আরও চ্যাটজিপিটি অ্যাপস" },
   "buttonLabel_leaveReview": { "message": "একটি রিভিউ লিখুন" },
   "buttonLabel_getSupport": { "message": "সহায়তা পান" },

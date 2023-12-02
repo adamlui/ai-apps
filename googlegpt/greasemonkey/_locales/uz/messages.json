@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "ChatGPT javoblarini Google Qidiruvga qo'shadi (GPT-4 tomonidan quvvatlanadi!)" },
+  "menuLabel_autoGetAnswers": { "message": "Javoblarni avtomatik olish" },
   "menuLabel_proxyAPImode": { "message": "Proksi API rejimi" },
   "menuLabel_relatedQueries": { "message": "Tegishli so'rovlar" },
   "menuLabel_require": { "message": "Talab qilish" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Asboblar panelida Proksi rejimini o'chirib ko'ring" },
   "alert_censored": { "message": "Kechirasiz, mahsulot qoidalariga ko'ra, biz sizga bu savolga javob bera olmaymiz, iltimos, boshqa savollarni sinab ko'ring" },
   "alert_maintenance": { "message": "AI tizimi parvarish qilinmoqda" },
+  "buttonLabel_sendQueryToGPT": { "message": "GPT-ga so&#39;rov yuboring" },
   "buttonLabel_moreApps": { "message": "Boshqa ChatGPT ilovalari" },
   "buttonLabel_leaveReview": { "message": "Sharh qoldiring" },
   "buttonLabel_getSupport": { "message": "Yordam oling" },

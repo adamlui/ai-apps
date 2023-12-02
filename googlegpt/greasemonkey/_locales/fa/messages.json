@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "پاسخ‌های ChatGPT را به جستجوی Google اضافه می‌کند (با پشتیبانی GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "دریافت خودکار پاسخ" },
   "menuLabel_proxyAPImode": { "message": "حالت API پروکسی" },
   "menuLabel_relatedQueries": { "message": "پرس و جوهای مرتبط" },
   "menuLabel_require": { "message": "الزامی" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "سعی کنید حالت پروکسی را در نوار ابزار خاموش کنید" },
   "alert_censored": { "message": "با عرض پوزش، با توجه به قوانین محصول ما، ما نمی توانیم پاسخی برای این سوال به شما ارائه دهیم، لطفا سوالات دیگر را امتحان کنید." },
   "alert_maintenance": { "message": "سیستم هوش مصنوعی در حال تعمیر و نگهداری" },
+  "buttonLabel_sendQueryToGPT": { "message": "ارسال درخواست به GPT" },
   "buttonLabel_moreApps": { "message": "برنامه های بیشتر ChatGPT" },
   "buttonLabel_leaveReview": { "message": "نظر بدهید" },
   "buttonLabel_getSupport": { "message": "پشتیبانی" },

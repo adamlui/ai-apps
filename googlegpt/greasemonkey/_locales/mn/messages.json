@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Хайлтанд ChatGPT-ийг нэмнэ (GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Авто-Орлогийн хариултууд" },
   "menuLabel_proxyAPImode": { "message": "Proxy API горим" },
   "menuLabel_relatedQueries": { "message": "Холбогдох асуултууд" },
   "menuLabel_require": { "message": "Шаардлага" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Хэрэгслийн мөрөнд Прокси горимыг унтраахыг оролдоорой" },
   "alert_censored": { "message": "Уучлаарай, манай бүтээгдэхүүний дүрмийн дагуу бид танд энэ асуултад хариулж чадахгүй тул бусад асуултуудыг туршиж үзнэ үү" },
   "alert_maintenance": { "message": "Засвар үйлчилгээний доор хиймэл оюун санааны систем" },
+  "buttonLabel_sendQueryToGPT": { "message": "GPT-д асуулга илгээх" },
   "buttonLabel_moreApps": { "message": "Илүү их чатGPT аппууд" },
   "buttonLabel_leaveReview": { "message": "Сэтгэгдэл үлдээх" },
   "buttonLabel_getSupport": { "message": "Тусламж авах" },

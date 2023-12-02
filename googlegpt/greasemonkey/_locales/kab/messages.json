@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Add ChatGPT Tiririt i Google Search (s GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Tiririt ɣef tuttriwin -..." },
   "menuLabel_proxyAPImode": { "message": "Aɣewwaṛ n API Proxy" },
   "menuLabel_relatedQueries": { "message": "Isteqsiyen yettwaxedmen" },
   "menuLabel_require": { "message": "Teḥwaǧeḍ" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Ɛreḍ ad tekkseḍ amiḍan n Proxy deg ufaylu n ufaylu" },
   "alert_censored": { "message": "Suref-aɣ, akken iwata, ur nezmir ara ad ak-nerr tiririt ɣef tuttra-yagi, ma ulac aɣilif ɛreḍ isteqsiyen nniḍen." },
   "alert_maintenance": { "message": "A la recherche d 'un plan cul" },
+  "buttonLabel_sendQueryToGPT": { "message": "Azen asteqsi i GPT" },
   "buttonLabel_moreApps": { "message": "Ugar n iseqdacen ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Eǧǧ amagrad" },
   "buttonLabel_getSupport": { "message": "Awi tallalt" },

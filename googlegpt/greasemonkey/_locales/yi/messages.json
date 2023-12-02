@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "לייגט ChatGPT ענטפֿערס צו Google זוך (פּאַוערד דורך GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "אַוטאָ-באַקומען ענטפֿערס" },
   "menuLabel_proxyAPImode": { "message": "פּראָקסי אַפּי מאָדע" },
   "menuLabel_relatedQueries": { "message": "Related Queries" },
   "menuLabel_require": { "message": "דאַרפן" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "פּרוּווט באַשטימען אַוועק פּראַקסי מאָדע אין מכשיר" },
   "alert_censored": { "message": "אנטשולדיגט, לויט אונדזער פּראָדוקט כּללים, מיר קענען נישט צושטעלן אַן ענטפער צו דעם קשיא, ביטע פּרובירן אנדערע פֿראגן." },
   "alert_maintenance": { "message": "אַי סיסטעם אונטער וישאַלט" },
+  "buttonLabel_sendQueryToGPT": { "message": "שיקן אָנפֿרעג צו GPT" },
   "buttonLabel_moreApps": { "message": "מער ChatGPT אַפּפּס" },
   "buttonLabel_leaveReview": { "message": "לאָזן אַ רעצענזיע" },
   "buttonLabel_getSupport": { "message": "באַקומען שטיצן" },

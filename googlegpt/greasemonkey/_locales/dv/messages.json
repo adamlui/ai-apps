@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "ގޫގުލް ސާޗް (ޖީޕީޓީ-4 އިން ޕަވާޑް!) އަށް ޗެޓްޖީޕީޓީ ގެ ޖަވާބު އިތުރުކޮށްފި އެވެ." },
+  "menuLabel_autoGetAnswers": { "message": "އޮޓޯ-ގެޓް ޖަވާބު" },
   "menuLabel_proxyAPImode": { "message": "ޕްރޮކްސީ އެޕީއައި މޯޑް" },
   "menuLabel_relatedQueries": { "message": "ގުޅުންހުރި ސުވާލުތައް" },
   "menuLabel_require": { "message": "ބޭނުންވާ" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "ޓޫލްބާގައި ޕްރޮކްސީ މޯޑް ނިއްވާލަން މަސައްކަތް ކުރޭ" },
   "alert_censored": { "message": "ސޮރީ، އަޅުގަނޑުމެންގެ ޕްރޮޑަކްޓް ރޫލްސް ގައިވާ ގޮތުން، އަޅުގަނޑުމެންނަށް ތިޔަބޭފުޅުންނަށް މި ސުވާލުގެ ޖަވާބެއް ނުދެވޭނެ، އެހެން ސުވާލުތައް ޓްރައި ކޮށްލާށޭ." },
   "alert_maintenance": { "message": "އޭއައި ސިސްޓަމް މެއިންޓަނެންސްގެ ދަށުން" },
+  "buttonLabel_sendQueryToGPT": { "message": "ޖީ.ޕީ.ޓީ އަށް ސުވާލު ފޮނުވުން" },
   "buttonLabel_moreApps": { "message": "އިތުރު ޗެޓްޖީޕީޓީ އެޕްތައް" },
   "buttonLabel_leaveReview": { "message": "ލީވް އަ ރިވިއު" },
   "buttonLabel_getSupport": { "message": "ގެޓް ސަޕޯޓް" },

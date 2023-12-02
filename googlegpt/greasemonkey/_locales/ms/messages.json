@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Menambah jawapan ChatGPT ke Carian Google (dikuasakan oleh GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Dapatkan Jawapan Secara Automatik" },
   "menuLabel_proxyAPImode": { "message": "Mod api Proksi" },
   "menuLabel_relatedQueries": { "message": "Pertanyaan Berkaitan" },
   "menuLabel_require": { "message": "mewajibkan" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Cuba matikan Mod Proksi dalam bar alat" },
   "alert_censored": { "message": "Maaf, mengikut peraturan produk kami, kami tidak dapat memberikan anda jawapan kepada soalan ini, sila cuba soalan lain." },
   "alert_maintenance": { "message": "Sistem AI dalam penyelenggaraan" },
+  "buttonLabel_sendQueryToGPT": { "message": "Hantar pertanyaan kepada GPT" },
   "buttonLabel_moreApps": { "message": "Lebih Banyak Aplikasi ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Tinggalkan ulasan" },
   "buttonLabel_getSupport": { "message": "Dapatkan Sokongan" },

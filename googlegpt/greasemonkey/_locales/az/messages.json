@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search-ə ChatGPT cavabları əlavə edir (GPT-4 tərəfindən dəstəklənir!)" },
+  "menuLabel_autoGetAnswers": { "message": "Avtomatik verilən cavablar" },
   "menuLabel_proxyAPImode": { "message": "Proksi API Rejimi" },
   "menuLabel_relatedQueries": { "message": "Əlaqədar Sorğular" },
   "menuLabel_require": { "message": "Tələb et" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Alətlər panelində Proksi Rejimini söndürməyi sınayın" },
   "alert_censored": { "message": "Üzr istəyirik, məhsul qaydalarımıza əsasən, sizə bu suala cavab verə bilmərik, başqa sualları sınayın" },
   "alert_maintenance": { "message": "AI sistemi texniki baxışdan keçirilir" },
+  "buttonLabel_sendQueryToGPT": { "message": "GPT-yə sorğu göndərin" },
   "buttonLabel_moreApps": { "message": "Daha çox ChatGPT Proqramları" },
   "buttonLabel_leaveReview": { "message": "Rəy bildirin" },
   "buttonLabel_getSupport": { "message": "Dəstək Əldə Edin" },

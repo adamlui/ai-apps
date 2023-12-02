@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Faʻaopopo ChatGPT tali i Google Search (faʻamalosia e GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Tali Auto-Get" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_relatedQueries": { "message": "Fesili" },
   "menuLabel_require": { "message": "Manaʻoga" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Taumafai e aveese le Proxy Mode i toolbar" },
   "alert_censored": { "message": "Faʻamalie atu, e tusa ai ma a matou oloa tulafono, matou te le mafai ona tuʻuina atu ia te oe se tali i lenei fesili, faʻamolemole taumafai isi fesili." },
   "alert_maintenance": { "message": "AI faiga i lalo o le tausiga" },
+  "buttonLabel_sendQueryToGPT": { "message": "Auina atu fesili i le GPT" },
   "buttonLabel_moreApps": { "message": "Sili ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Tuu se Toe Iloiloga" },
   "buttonLabel_getSupport": { "message": "Maua Lagolago" },

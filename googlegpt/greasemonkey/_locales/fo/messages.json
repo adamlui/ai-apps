@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Legg ChatGPT svar til Google Search (drivið av GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Auto-Get Svar" },
   "menuLabel_proxyAPImode": { "message": "Proxy API standi" },
   "menuLabel_relatedQueries": { "message": "Viðkomandi spurningar" },
   "menuLabel_require": { "message": "Kravið" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Royn at sløkkja Proxy Mode í amboðsbarnum" },
   "alert_censored": { "message": "Tað er óheppið, at vit ikki kunnu geva tær svar á henda spurningin í samsvar við okkara vørureglur, so royn onnur spurningar." },
   "alert_maintenance": { "message": "Viðlíkahaldsskipan" },
+  "buttonLabel_sendQueryToGPT": { "message": "Send spurning til GPT" },
   "buttonLabel_moreApps": { "message": "Fleiri ChatGPT apps" },
   "buttonLabel_leaveReview": { "message": "Skriva eina gjøgnumgongd" },
   "buttonLabel_getSupport": { "message": "Fá stuðul" },

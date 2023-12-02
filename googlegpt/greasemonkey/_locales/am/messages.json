@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "በGoogle ፍለጋ ላይ ChatGPT ምላሾችን ያክሉ (በ GPT-4 የተጎላበተው!" },
+  "menuLabel_autoGetAnswers": { "message": "ራስ-ጌ መልሶች" },
   "menuLabel_proxyAPImode": { "message": "Proxy ኤፒአይ ሁነታ" },
   "menuLabel_relatedQueries": { "message": "ተዛማጅ ጥያቄዎች" },
   "menuLabel_require": { "message": "ያስፈልጋል" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "መሣሪያ አሞሌ ውስጥ Proxy ሁነታ ማጥፋት ይሞክሩ" },
   "alert_censored": { "message": "ይቅርታ ፣ በምርታችን ህጎች መሠረት ለዚህ ጥያቄ መልስ ልንሰጥዎ አንችልም ፣ እባክዎ ሌሎች ጥያቄዎችን ይሞክሩ ።" },
   "alert_maintenance": { "message": "AI ስርዓት በጥገና ስር" },
+  "buttonLabel_sendQueryToGPT": { "message": "ጥያቄን ወደ ጂፒቲ ይላኩ" },
   "buttonLabel_moreApps": { "message": "ተጨማሪ ChatGPT መተግበሪያዎች" },
   "buttonLabel_leaveReview": { "message": "ግምገማ ይተው" },
   "buttonLabel_getSupport": { "message": "ድጋፍ ያግኙ" },

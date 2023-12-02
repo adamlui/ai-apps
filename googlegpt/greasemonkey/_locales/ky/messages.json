@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google издөөгө ChatGPT жоопторун кошот (GPT-4 менен иштейт!)" },
+  "menuLabel_autoGetAnswers": { "message": "Жоопторду автоматтык түрдө алуу" },
   "menuLabel_proxyAPImode": { "message": "Прокси API режими" },
   "menuLabel_relatedQueries": { "message": "Байланыштуу суроолор" },
   "menuLabel_require": { "message": "Талап кылуу" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Аспаптар панелинде прокси режимин өчүрүп көрүңүз" },
   "alert_censored": { "message": "Кечиресиз, биздин өнүмдүн эрежелерине ылайык, сизге бул суроого жооп бере албайбыз, башка суроолорду байкап көрүңүз." },
   "alert_maintenance": { "message": "Техникалык тейлөө астында AI системасы" },
+  "buttonLabel_sendQueryToGPT": { "message": "Суроону GPTге жөнөтүү" },
   "buttonLabel_moreApps": { "message": "Көбүрөөк ChatGPT колдонмолору" },
   "buttonLabel_leaveReview": { "message": "Сын-пикир калтыруу" },
   "buttonLabel_getSupport": { "message": "Колдоо алуу" },

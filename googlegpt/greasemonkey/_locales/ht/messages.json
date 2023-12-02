@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Ajoute repons ChatGPT nan Google Search (patrone pa GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Repons Auto-Get" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_relatedQueries": { "message": "Kesyon ki gen rapò" },
   "menuLabel_require": { "message": "Obligatwa" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Eseye chanje mòd Proxy nan ba zouti" },
   "alert_censored": { "message": "Padon, dapre règleman pwodwi nou yo, nou pa ka ba ou yon repons a kesyon sa a, tanpri eseye lòt kesyon." },
   "alert_maintenance": { "message": "Sistèm AI anba antretyen" },
+  "buttonLabel_sendQueryToGPT": { "message": "Voye demann bay GPT" },
   "buttonLabel_moreApps": { "message": "Plis Apps ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Kite yon Revizyon" },
   "buttonLabel_getSupport": { "message": "Jwenn Sipò" },

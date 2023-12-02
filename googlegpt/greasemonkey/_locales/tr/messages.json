@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "ChatGPT yanıtlarını Google Arama'ya ekler (GPT -4 tarafından desteklenmektedir!)" },
+  "menuLabel_autoGetAnswers": { "message": "Otomatik Yanıt Al" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Modu" },
   "menuLabel_relatedQueries": { "message": "İlgili Sorgular" },
   "menuLabel_require": { "message": "Gerekli" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Araç çubuğundan Proxy Modunu kapatmayı deneyin" },
   "alert_censored": { "message": "Üzgünüz, ürün kurallarımıza göre bu soruya cevap veremiyoruz, lütfen diğer soruları deneyin." },
   "alert_maintenance": { "message": "AI sistemi bakımda" },
+  "buttonLabel_sendQueryToGPT": { "message": "GPT'ye sorgu gönder" },
   "buttonLabel_moreApps": { "message": "Daha Fazla ChatGPT Uygulaması" },
   "buttonLabel_leaveReview": { "message": "Bir Yorum Bırakın" },
   "buttonLabel_getSupport": { "message": "Destek Al" },

@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Προσθέτει απαντήσεις ChatGPT στην Αναζήτηση Google (τροφοδοτείται από GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Αυτόματη λήψη απαντήσεων" },
   "menuLabel_proxyAPImode": { "message": "Λειτουργία API διακομιστή μεσολάβησης" },
   "menuLabel_relatedQueries": { "message": "Σχετικά ερωτήματα" },
   "menuLabel_require": { "message": "Απαιτείται" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Δοκιμάστε να απενεργοποιήσετε τη λειτουργία διακομιστή μεσολάβησης στη γραμμή εργαλείων" },
   "alert_censored": { "message": "Δυστυχώς, σύμφωνα με τους κανόνες προϊόντων μας, δεν μπορούμε να σας δώσουμε απάντηση σε αυτήν την ερώτηση. Δοκιμάστε άλλες ερωτήσεις." },
   "alert_maintenance": { "message": "Σύστημα τεχνητής νοημοσύνης υπό συντήρηση" },
+  "buttonLabel_sendQueryToGPT": { "message": "Αποστολή ερωτήματος στο GPT" },
   "buttonLabel_moreApps": { "message": "Περισσότερες εφαρμογές ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Κάντε μία κριτική" },
   "buttonLabel_getSupport": { "message": "Λάβετε υποστήριξη" },

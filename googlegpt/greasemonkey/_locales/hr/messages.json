@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Dodaje ChatGPT odgovore na Google pretraživanje (omogućuje GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Automatsko dobivanje odgovora" },
   "menuLabel_proxyAPImode": { "message": "Proxy API način rada" },
   "menuLabel_relatedQueries": { "message": "Povezani upiti" },
   "menuLabel_require": { "message": "Zadano" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Pokušajte isključiti proxy način rada na alatnoj traci" },
   "alert_censored": { "message": "Žao nam je, prema našim pravilima o proizvodima, ne možemo vam dati odgovor na ovo pitanje, pokušajte s drugim pitanjima." },
   "alert_maintenance": { "message": "Sustav umjetne inteligencije u održavanju" },
+  "buttonLabel_sendQueryToGPT": { "message": "Pošalji upit GPT-u" },
   "buttonLabel_moreApps": { "message": "Još aplikacija za ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Ostavi recenziju" },
   "buttonLabel_getSupport": { "message": "Podrška" },

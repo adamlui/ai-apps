@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search-ში ChatGPT-ის პასუხების დამატება (GPT-4-ის მეშვეობით!)" },
+  "menuLabel_autoGetAnswers": { "message": "Პასუხების ავტომატური მიღება" },
   "menuLabel_proxyAPImode": { "message": "Პროქსი API რეჟიმი" },
   "menuLabel_relatedQueries": { "message": "Მსგავსი შეკითხვები" },
   "menuLabel_require": { "message": "Მოთხოვნა" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Სცადეთ პროქსი რეჟიმის გამორთვა ხელსაწყოთა პანელში" },
   "alert_censored": { "message": "Სამწუხაროდ, ჩვენი პროდუქტის წესების თანახმად, ამ კითხვაზე პასუხს ვერ გაგცემთ. გთხოვთ, სცადოთ სხვა შეკითხვები." },
   "alert_maintenance": { "message": "Მოვლა-პატრონობის პროცესში მყოფი AI სისტემა" },
+  "buttonLabel_sendQueryToGPT": { "message": "Მოთხოვნის GPT ‑ სთვის გაგზავნა" },
   "buttonLabel_moreApps": { "message": "Სხვა ChatGPT აპები" },
   "buttonLabel_leaveReview": { "message": "შეფასების დატოვება" },
   "buttonLabel_getSupport": { "message": "მხარდაჭერის მიღება" },

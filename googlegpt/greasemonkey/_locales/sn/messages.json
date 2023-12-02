@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Inowedzera mhinduro dzeChatGPT kuGoogle Search (inofambiswa neGPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Auto-Kuwana Mhinduro" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_relatedQueries": { "message": "Mibvunzo yakabatana" },
   "menuLabel_require": { "message": "ZVINODZIDZA" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Edza kudzima Proxy Mode mu toolbar" },
   "alert_censored": { "message": "Tine urombo, maererano nemitemo yedu yezvigadzirwa, hatigone kukupa mhinduro kumubvunzo uyu, tapota edza mimwe mibvunzo." },
   "alert_maintenance": { "message": "AI hurongwa pasi Nokuraramisa" },
+  "buttonLabel_sendQueryToGPT": { "message": "Tumira mubvunzo kuGPT" },
   "buttonLabel_moreApps": { "message": "Zvakawanda ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Taura nesu" },
   "buttonLabel_getSupport": { "message": "Kuwana Rutsigiro" },

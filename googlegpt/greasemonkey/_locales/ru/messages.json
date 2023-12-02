@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Добавляет ответы ChatGPT в Поиск Google (на базе GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Ответы с автоматическим получением" },
   "menuLabel_proxyAPImode": { "message": "Режим API прокси-сервера" },
   "menuLabel_relatedQueries": { "message": "маркетинга" },
   "menuLabel_require": { "message": "Требова" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Попробуйте выключить режим прокси на панели инструментов" },
   "alert_censored": { "message": "К сожалению, в соответствии с нашими правилами продукта, мы не можем предоставить вам ответ на этот вопрос, пожалуйста, попробуйте другие вопросы." },
   "alert_maintenance": { "message": "Система искусственного интеллекта в процессе технического обслуживания" },
+  "buttonLabel_sendQueryToGPT": { "message": "Отправить запрос в GPT" },
   "buttonLabel_moreApps": { "message": "Другие приложения ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Оставить отзыв" },
   "buttonLabel_getSupport": { "message": "Получить поддержку" },

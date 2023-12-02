@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Fügt ChatGPT-Antworten zur Google-Suche hinzu (unterstützt von GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Antworten automatisch abrufen" },
   "menuLabel_proxyAPImode": { "message": "Proxy-API-Modus" },
   "menuLabel_relatedQueries": { "message": "Verwandte Fragen" },
   "menuLabel_require": { "message": "Erfordern" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Versuchen Sie, den Proxy-Modus in der Symbolleiste auszuschalten" },
   "alert_censored": { "message": "Leider können wir Ihnen gemäß unseren Produktregeln keine Antwort auf diese Frage geben. Bitte versuchen Sie es mit anderen Fragen." },
   "alert_maintenance": { "message": "KI-System wird gewartet" },
+  "buttonLabel_sendQueryToGPT": { "message": "Anfrage an GPT senden" },
   "buttonLabel_moreApps": { "message": "Weitere ChatGPT-Apps" },
   "buttonLabel_leaveReview": { "message": "Bewertung hinterlassen" },
   "buttonLabel_getSupport": { "message": "Support erhalten" },

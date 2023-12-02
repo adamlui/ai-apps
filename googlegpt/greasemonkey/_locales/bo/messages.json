@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search ནང་ChatGPT ལན་འདེབས་སྣོན་བྱེད ། (GPT-4 ཀྱིས་དབང་བསྒྱུར་བྱེད །)" },
+  "menuLabel_autoGetAnswers": { "message": "རང་འགུལ་གྱི་ལན་ཐོ །" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_relatedQueries": { "message": "འབྲེལ་མཐུད་ཀྱི་དྲི་བ་" },
   "menuLabel_require": { "message": "དགོས་མཁོ །" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Proxy Mode Toolbar ནང་ཕྱིར་འབུད་བྱ་རྒྱུའི་ཚོད་ལྟ་བྱེད་པ" },
   "alert_censored": { "message": "དགག་བཅོལ་ཞུ་རྒྱུ་ཡིན ། ང་ཚོའི་ཐོན་སྐྱེད་ཀྱི་ཁྲིམས་ལུགས་ལྟར་ན ། ང་ཚོས་ཁྱོད་ལ་ལན་འདེབས་བྱེད་མི་ཐུབ །" },
   "alert_maintenance": { "message": "རྒྱུན་སྐྱོང་གི་ལམ་ལུགས་" },
+  "buttonLabel_sendQueryToGPT": { "message": "GPO གྱི་དྲི་བ་དྲིས་ལན །" },
   "buttonLabel_moreApps": { "message": "འདྲ་ཕབ །" },
   "buttonLabel_leaveReview": { "message": "དཔྱད་རྩོམ །" },
   "buttonLabel_getSupport": { "message": "རོགས་རམ་ཐོབ་པ" },

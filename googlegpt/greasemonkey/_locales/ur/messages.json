@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search میں ChatGPT کے جوابات شامل کرتا ہے (GPT -4 کے ذریعے تقویت یافتہ!)" },
+  "menuLabel_autoGetAnswers": { "message": "خودکار جوابات حاصل کریں" },
   "menuLabel_proxyAPImode": { "message": "پراکسی API موڈ" },
   "menuLabel_relatedQueries": { "message": "متعلقہ سوالات" },
   "menuLabel_require": { "message": "تقاضہ کرنا" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "ٹول بار میں پراکسی موڈ کو آف کرنے کی کوشش کریں" },
   "alert_censored": { "message": "معذرت، ہمارے پروڈکٹ کے قواعد کے مطابق، ہم آپ کو اس سوال کا جواب فراہم نہیں کر سکتے، براہ کرم دیگر سوالات آزمائیں ۔" },
   "alert_maintenance": { "message": "مصنوعی ذہانت کا نظام زیرِ دیکھ بھال" },
+  "buttonLabel_sendQueryToGPT": { "message": "GPT کو استفسار بھیجیں" },
   "buttonLabel_moreApps": { "message": "مزید چیٹ جی پی ٹی ایپس" },
   "buttonLabel_leaveReview": { "message": "جائزہ دیں" },
   "buttonLabel_getSupport": { "message": "سپورٹ حاصل کریں" },

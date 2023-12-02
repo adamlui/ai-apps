@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Magdagdag ng mga tugon sa ChatGPT sa Paghahanap ng Google (naaalaga ng GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Ҷавоби худкор" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_relatedQueries": { "message": "Саволҳои марбута" },
   "menuLabel_require": { "message": "Require" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Try switching off Proxy Mode in toolbar" },
   "alert_censored": { "message": "Paumanhin, sa pamamagitan ng aming mga ulat ng produkto, hindi namin magbibigay sa iyo ng isang answer sa ito, mangyaring subukan ang" },
   "alert_maintenance": { "message": "Системаи AI дар ҳолати нигоҳдорӣ" },
+  "buttonLabel_sendQueryToGPT": { "message": "Фиристодани дархост ба GPT" },
   "buttonLabel_moreApps": { "message": "Бештар ChatGPT Барномаҳо" },
   "buttonLabel_leaveReview": { "message": "Leave a Review" },
   "buttonLabel_getSupport": { "message": "Гирифтани Дастгирӣ" },

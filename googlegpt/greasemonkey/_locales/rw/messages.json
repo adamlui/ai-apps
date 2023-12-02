@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Ibisubizo kuri Google Search (powered by GPT-4!)" },
+  "menuLabel_autoGetAnswers": { "message": "Kubona ibisubizo mu buryo bwikora" },
   "menuLabel_proxyAPImode": { "message": "Ubwoko" },
   "menuLabel_relatedQueries": { "message": "< Uburemere UTSINDAGIY" },
   "menuLabel_require": { "message": "Bisabwa" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Bidakora in Umwanyabikoresho" },
   "alert_censored": { "message": "Mumbabarire, dukurikije amategeko y'ibicuruzwa byacu, ntidushobora kuguha igisubizo kuri iki kibazo, nyamuneka gerageza ibindi bibazo." },
   "alert_maintenance": { "message": "Garage under storage" },
+  "buttonLabel_sendQueryToGPT": { "message": "Ikibazo # Kuri" },
   "buttonLabel_moreApps": { "message": "Porogaramu" },
   "buttonLabel_leaveReview": { "message": "A" },
   "buttonLabel_getSupport": { "message": "Gushigikira" },

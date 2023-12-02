@@ -1,6 +1,7 @@
 {
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Agregá una foto_Promocioná Google Search (Powered by GPT-4)" },
+  "menuLabel_autoGetAnswers": { "message": "Solucion Auto-Get" },
   "menuLabel_proxyAPImode": { "message": "Propiedad Api Moda" },
   "menuLabel_relatedQueries": { "message": "Preguntanan relashoná" },
   "menuLabel_require": { "message": "Nesesidat" },
@@ -40,6 +41,7 @@
   "alert_suggestOpenAI": { "message": "Traslochi E Trasporti Di Proxy Mode In Toolbar" },
   "alert_censored": { "message": "Sorry, di akuerdo ku nos reglanan di produkto, nos no por duna bo un kontesta riba e pregunta aki, por fabor purba otro pregunta." },
   "alert_maintenance": { "message": "Sistema cu ta bao di mantencion" },
+  "buttonLabel_sendQueryToGPT": { "message": "Reklama na GPT" },
   "buttonLabel_moreApps": { "message": "Mas informacion de ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Leave a Testimonial" },
   "buttonLabel_getSupport": { "message": "Recibí Apoyo" },
