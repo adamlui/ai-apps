@@ -1,5 +1,7 @@
 <div align="center">
 
+<br>
+
 <picture>
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/beta/with-shadow/darkmode.png">
     <img width=835 src="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/beta/with-shadow/lightmode.png">
