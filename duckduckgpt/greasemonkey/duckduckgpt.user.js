@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.2
+// @version             2023.12.2.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -229,17 +229,17 @@
         }))
 
         // Add command to toggle showing related queries
-        const rqLabel = state.symbol[+config.relatedQueriesDisabled] + ' '
+        const rqLabel = state.symbol[+config.rqDisabled] + ' '
                       + ( messages.menuLabel_relatedQueries || 'Related Queries' ) + ' '
-                      + state.separator + state.word[+config.relatedQueriesDisabled]
+                      + state.separator + state.word[+config.rqDisabled]
         menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
-            saveSetting('relatedQueriesDisabled', !config.relatedQueriesDisabled)
+            saveSetting('rqDisabled', !config.rqDisabled)
             try { // to update visibility based on latest setting
                 const relatedQueriesDiv = document.querySelector('.related-queries')
-                relatedQueriesDiv.style.display = config.relatedQueriesDisabled ? 'none' : 'flex'
+                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
             } catch (err) {}
             notify(( messages.menuLabel_relatedQueries || 'Related Queries' ) + ' '
-                + state.word[+config.relatedQueriesDisabled])
+                + state.word[+config.rqDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -665,7 +665,7 @@
         })
 
         // Get/show related queries
-        if (!config.relatedQueriesDisabled) {
+        if (!config.rqDisabled) {
             getRelatedQueries(convo[convo.length - 1].content).then(relatedQueries => {
                 if (relatedQueries && ddgptDiv.querySelector('textarea')) {
 
@@ -1008,7 +1008,7 @@
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('proxyAPIenabled', 'autoGetDisabled', 'relatedQueriesDisabled',
+    loadSetting('proxyAPIenabled', 'autoGetDisabled', 'rqDisabled',
                 'prefixEnabled', 'suffixEnabled', 'widerSidebar', 'replyLanguage')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = [], menuIDs = []
