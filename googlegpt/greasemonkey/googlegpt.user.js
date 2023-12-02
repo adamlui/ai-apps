@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.2.5
+// @version             2023.12.2.6
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1431,7 +1431,7 @@
             + `background: ${ scheme == 'dark' ? '#a2a2a270' : '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
         + '.related-query svg { float: left ; margin: -0.09em 6px 0 0 ;' // related query icon
             + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
-        + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
+        + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button { border: none ; float: right ; position: relative ; background: none ;'
             + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
@@ -1469,7 +1469,7 @@
 
     // Create/classify GoogleGPT container
     const googleGPTdiv = document.createElement('div')
-    googleGPTdiv.classList.add('googlegpt')
+    googleGPTdiv.classList.add('googlegpt', 'fade-in')
 
     // Append to Google
     const hostContainer = (
@@ -1487,6 +1487,7 @@
     )
     hostContainer.prepend(googleGPTdiv)
     if (document.querySelector('#newHostContainer')) googleGPTdiv.style.marginLeft = '20px'
+    setTimeout(() => googleGPTdiv.classList.add('active'), 100) // fade in
 
     // Show standby mode or get answer
     if (config.autoGetDisabled
