@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.2.1
+// @version             2023.12.2.2
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -1121,7 +1121,7 @@
         speakSpan.appendChild(speakSVG) ; googleGPTdiv.appendChild(speakSpan)
 
         // Create/append Wider Sidebar button
-        if (!isMobile) {
+        if (answer != 'standby' && !isMobile) {
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
@@ -1129,18 +1129,51 @@
             wsbSpan.appendChild(wsbSVG) ; googleGPTdiv.appendChild(wsbSpan) ; updateWSBsvg()
         }
 
-        // Create/append speech balloon tip
-        const balloonTipSpan = document.createElement('span')
+        // Add button listeners
+        aboutSVG.addEventListener('click', launchAboutModal)
+        speakSVG.addEventListener('click', () => {
+            const payload = {
+                text: answer, rate: '2', curTime: Date.now(),
+                spokenDialect: /chinese|^zh/i.test(config.replyLanguage) ? 'zh-CHS' : 'en'
+            }
+            const key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
+                  iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
+            const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
+                iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
+            const speakAudio = new Audio('https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
+                + encodeURIComponent(securePayload))
+            speakAudio.play().catch(() => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
+        })
+        wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
+
+        // Show standby state if prefix/suffix mode on
+        if (answer == 'standby') {
+            const standbyBtn = document.createElement('button')
+            standbyBtn.classList.add('standby-btn')
+            standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send query to GPT'
+            googleGPTdiv.appendChild(standbyBtn)
+            standbyBtn.addEventListener('click', () => {
+                googleGPTalert('waitingResponse')
+                const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
+                convo.push(
+                    config.proxyAPIenabled ? { role: 'user', content: query }
+                                           : { role: 'user', id: chatgpt.uuidv4(),
+                                               content: { content_type: 'text', parts: [query] }})
+                getShowReply(convo)
+            })
+            return
+        }
+
+        // Otherwise create/append ChatGPT response
+        const balloonTipSpan = document.createElement('span'),
+              answerPre = document.createElement('pre')
         balloonTipSpan.classList.add('balloon-tip')
         balloonTipSpan.style.right = isMobile ? '7.02em' : chatgpt.browser.isFirefox() ? '13.55em' : '6.85em'
         balloonTipSpan.style.top = (
             chatgpt.browser.isFirefox() ? ( hasSidebar ? '7px' : '5px' )
                                         : ( hasSidebar ? '4px' : '2px' ))
-        googleGPTdiv.appendChild(balloonTipSpan)
-
-        // Create/append ChatGPT response
-        const answerPre = document.createElement('pre')
-        answerPre.textContent = answer ; googleGPTdiv.appendChild(answerPre)
+        answerPre.textContent = answer
+        googleGPTdiv.appendChild(balloonTipSpan) ; googleGPTdiv.appendChild(answerPre)
         updateTweaksStyle() // in case sticky mode on
 
         // Create/append reply section/elements
@@ -1192,22 +1225,7 @@
             throwOnError: false
         })
 
-        // Add listeners
-        aboutSVG.addEventListener('click', launchAboutModal)
-        speakSVG.addEventListener('click', () => {
-            const payload = {
-                text: answer, rate: '2', curTime: Date.now(),
-                spokenDialect: /chinese|^zh/i.test(config.replyLanguage) ? 'zh-CHS' : 'en'
-            }
-            const key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
-                  iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
-            const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
-                iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
-            const speakAudio = new Audio('https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
-                + encodeURIComponent(securePayload))
-            speakAudio.play().catch(() => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
-        })
-        wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
+        // Add reply section listeners
         replyForm.addEventListener('keydown', handleEnter)
         replyForm.addEventListener('submit', handleSubmit)
         chatTextarea.addEventListener('input', autosizeChatbar)
@@ -1333,11 +1351,6 @@
 
     registerMenu()
 
-    // Exit if prefix/suffix required but not present
-    if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
-        ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) { // or suffix required but not present
-            return }
-
     // Init endpoints
     const openAIendpoints = {
         session: 'https://chat.openai.com/api/auth/session',
@@ -1382,6 +1395,10 @@
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
         + '.googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
         + '.googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
+        + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin: 20px 0 18px ;'
+            + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' }}`
+        + '.standby-btn:hover { background-color: #9cdaff ; color: #3d5d71 ; border-color: #82b7d7 ;'
+            + 'box-shadow: 0 1px 20px #9cdaff ; border-radius: 4px }'
         + '.googlegpt pre {'
             + 'font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ;'
             + ' line-height: 22px ; padding: 1.25em ; border-radius: 10px ; overflow: auto ;'
@@ -1445,10 +1462,9 @@
                    + '.googlegpt ~ div { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
-    // Create/classify/fill GoogleGPT container
+    // Create/classify GoogleGPT container
     const googleGPTdiv = document.createElement('div')
     googleGPTdiv.classList.add('googlegpt')
-    googleGPTalert('waitingResponse')
 
     // Append to Google
     const hostContainer = (
@@ -1467,12 +1483,19 @@
     hostContainer.prepend(googleGPTdiv)
     if (document.querySelector('#newHostContainer')) googleGPTdiv.style.marginLeft = '20px'
 
-    // Get answer
-    const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-    convo.push(
-        config.proxyAPIenabled ? { role: 'user', content: query }
-                               : { role: 'user', id: chatgpt.uuidv4(),
-                                   content: { content_type: 'text', parts: [query] }})
-    getShowReply(convo)
+    // Show standby mode or get answer
+    if (config.autoGetDisabled
+        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // if prefix required but not present
+        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // or suffix required but not present
+    ) googleGPTshow('standby')
+    else {
+        googleGPTalert('waitingResponse')
+        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
+        convo.push(
+            config.proxyAPIenabled ? { role: 'user', content: query }
+                                   : { role: 'user', id: chatgpt.uuidv4(),
+                                       content: { content_type: 'text', parts: [query] }})
+        getShowReply(convo)
+    }
 
 })()
