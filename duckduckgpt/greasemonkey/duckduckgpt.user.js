@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.1.2
+// @version             2023.12.1.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -810,7 +810,7 @@
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         speakSpan.classList.add('corner-btn') ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
-        speakSpan.style.margin = '-0.117em 10px 0px 14px' // fine-tune position
+        speakSpan.style.margin = '-0.117em 10px 0 0' // fine-tune position
         for (const [attr, value] of [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']])
             speakSVG.setAttributeNS(null, attr, value)
         const speakSVGpaths = [
@@ -829,7 +829,7 @@
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
-            wsbSpan.style.marginTop = '0.05rem' // fine-tune position
+            wsbSpan.style.margin = '0.05rem 14px 0 0' // fine-tune position
             wsbSpan.appendChild(wsbSVG) ; ddgptDiv.appendChild(wsbSpan) ; updateWSBsvg()
         }
 
