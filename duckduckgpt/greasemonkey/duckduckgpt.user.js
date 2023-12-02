@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.1.6
+// @version             2023.12.1.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -807,22 +807,24 @@
         aboutSVG.appendChild(aboutSVGpath) ; aboutSpan.appendChild(aboutSVG) ; ddgptDiv.appendChild(aboutSpan)
 
         // Create/append speak button
-        const speakSpan = document.createElement('span'),
-              speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-        speakSpan.classList.add('corner-btn') ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
-        speakSpan.style.margin = '-0.117em 10px 0 0' // fine-tune position
-        for (const [attr, value] of [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']])
-            speakSVG.setAttributeNS(null, attr, value)
-        const speakSVGpaths = [
-            createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
-                d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10' }),
-            createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
-                d: 'M22,20.847c1.281,-1.306 2,-3.077 2,-4.924c0,-1.846 -0.719,-3.617 -2,-4.923' }),
-            createSVGpath({ stroke: 'none', fill: '',
-                d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
-        ]
-        speakSVGpaths.forEach(path => { speakSVG.appendChild(path) })
-        speakSpan.appendChild(speakSVG) ; ddgptDiv.appendChild(speakSpan)
+        if (answer != 'standby') {
+            var speakSpan = document.createElement('span'),
+                speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            speakSpan.classList.add('corner-btn') ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
+            speakSpan.style.margin = '-0.117em 10px 0 0' // fine-tune position
+            for (const [attr, value] of [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']])
+                speakSVG.setAttributeNS(null, attr, value)
+            const speakSVGpaths = [
+                createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
+                    d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10' }),
+                createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
+                    d: 'M22,20.847c1.281,-1.306 2,-3.077 2,-4.924c0,-1.846 -0.719,-3.617 -2,-4.923' }),
+                createSVGpath({ stroke: 'none', fill: '',
+                    d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
+            ]
+            speakSVGpaths.forEach(path => { speakSVG.appendChild(path) })
+            speakSpan.appendChild(speakSVG) ; ddgptDiv.appendChild(speakSpan)
+        }
 
         // Create/append Wider Sidebar button
         if (!isCentered && !isMobile) {
@@ -833,7 +835,42 @@
             wsbSpan.appendChild(wsbSVG) ; ddgptDiv.appendChild(wsbSpan) ; updateWSBsvg()
         }
 
-        // Create/append ChatGPT response
+        // Add button listeners
+        wsbSVG?.addEventListener('click', toggleWiderSidebar)
+        speakSVG?.addEventListener('click', () => {
+            const payload = {
+                text: answer, rate: '2', curTime: Date.now(),
+                spokenDialect: /chinese|^zh/i.test(config.replyLanguage) ? 'zh-CHS' : 'en'
+            }
+            const key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
+                  iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
+            const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
+                iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
+            const speakAudio = new Audio('https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
+                + encodeURIComponent(securePayload))
+            speakAudio.play().catch(() => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
+        })
+        aboutSVG.addEventListener('click', launchAboutModal)
+
+        // Show standby state if prefix/suffix mode on
+        if (answer == 'standby') {
+            const standbyBtn = document.createElement('button')
+            standbyBtn.classList.add('standby-btn')
+            standbyBtn.textContent = messages.sendQueryToGPT || 'Send query to GPT'
+            ddgptDiv.appendChild(standbyBtn)
+            standbyBtn.addEventListener('click', () => {
+                ddgptAlert('waitingResponse')
+                const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
+                convo.push(
+                    config.proxyAPIenabled ? { role: 'user', content: query }
+                                           : { role: 'user', id: chatgpt.uuidv4(),
+                                               content: { content_type: 'text', parts: [query] }})
+                getShowReply(convo)
+            })
+            return
+        }
+
+        // Otherwise create/append ChatGPT response
         const balloonTipSpan = document.createElement('span'),
               answerPre = document.createElement('pre')
         balloonTipSpan.classList.add('balloon-tip') ; answerPre.textContent = answer
@@ -880,22 +917,7 @@
             throwOnError: false
         })
 
-        // Add listeners
-        wsbSVG?.addEventListener('click', toggleWiderSidebar)
-        speakSVG.addEventListener('click', () => {
-            const payload = {
-                text: answer, rate: '2', curTime: Date.now(),
-                spokenDialect: /chinese|^zh/i.test(config.replyLanguage) ? 'zh-CHS' : 'en'
-            }
-            const key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
-                  iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
-            const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
-                iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
-            const speakAudio = new Audio('https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
-                + encodeURIComponent(securePayload))
-            speakAudio.play().catch(() => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
-        })
-        aboutSVG.addEventListener('click', launchAboutModal)
+        // Add reply section listeners
         replyForm.addEventListener('keydown', handleEnter)
         replyForm.addEventListener('submit', handleSubmit)
         chatTextarea.addEventListener('input', autosizeChatbar)
@@ -1014,11 +1036,6 @@
 
     registerMenu()
 
-    // Exit if prefix/suffix required but not present
-    if (( config.prefixEnabled && !/.*q=%2F/.test(document.location) ) || // if prefix required but not present
-        ( config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) )) // or suffix required but not present
-            return
-
     // Init endpoints
     const openAIendpoints = {
         session: 'https://chat.openai.com/api/auth/session',
@@ -1060,6 +1077,9 @@
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
         + '.ddgpt .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
         + '.ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
+        + '.standby-btn { width: 100% ; margin-top: 9px ; padding: 7px 0 ; cursor: pointer ;'
+            + 'border-radius: 4px ; border: 1px solid #888 }'
+        + '.standby-btn:hover { background-color: #fdc14f ; box-shadow: 0 1px 20px #ffd49c ; color: white ; border-color: #ffa500 }'
         + '.ddgpt pre {'
             + 'font-size: 1.14rem ; white-space: pre-wrap ; margin: .85rem 0 7px 0 ; padding: 1.25em ;'
             + 'border-radius: 10px ; line-height: 21px ; min-width: 0 ;'
@@ -1261,12 +1281,18 @@
         isMobile || isCentered ? '[data-area*="mainline"]' : '[class*="sidebar"]')
     hostContainer.prepend(ddgptDiv, ddgptFooter)
 
-    // Get answer
-    const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-    convo.push(
-        config.proxyAPIenabled ? { role: 'user', content: query }
-                               : { role: 'user', id: chatgpt.uuidv4(),
-                                   content: { content_type: 'text', parts: [query] }})
-    getShowReply(convo)
+    // Show standby mode or get answer
+    if (config.prefixEnabled && !/.*q=%2F/.test(document.location) || // if prefix required but not present
+        config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location)) // or suffix required but not present
+            ddgptShow('standby')
+    else {
+        ddgptAlert('waitingResponse')
+        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
+        convo.push(
+            config.proxyAPIenabled ? { role: 'user', content: query }
+                                   : { role: 'user', id: chatgpt.uuidv4(),
+                                       content: { content_type: 'text', parts: [query] }})
+        getShowReply(convo)
+    }
 
 })()
