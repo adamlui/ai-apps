@@ -11,14 +11,14 @@
 
 <br>
 
-<a href="https://greasyfork.org/scripts/478597-googlegpt"><img height=33 src="https://img.shields.io/greasyfork/dt/478597?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge"></a>
-<a href="https://github.com/KudoAI/googlegpt/blob/main/LICENSE"><img height=33 src="https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.com/kudoai/googlegpt/commits/main"><img height=33 src="https://img.shields.io/github/commit-activity/m/kudoai/googlegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
-<a href="https://app.codacy.com/gh/KudoAI/googlegpt/commits?utm_source=googlegpt&utm_content=github_shield"><img height=33 src="https://img.shields.io/codacy/grade/302435545aed43d2b65f864992184a58?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
-<a href="https://chatgpt.js.org?utm_source=googlegpt&utm_content=github_shield"><img height=33 src="https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img height=33 src="https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://www.kudoai.com?utm_source=googlegpt&utm_content=github_shield"><img height=33 src="https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://googlegpt.kudoai.com?utm_source=googlegpt&utm_content=github_shield"><img height=33 src="https://img.shields.io/badge/web-https://googlegpt.kudoai.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://greasyfork.org/scripts/478597-googlegpt"><img height=31 src="https://img.shields.io/greasyfork/dt/478597?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge"></a>
+<a href="https://github.com/KudoAI/googlegpt/blob/main/LICENSE"><img height=31 src="https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://github.com/kudoai/googlegpt/commits/main"><img height=31 src="https://img.shields.io/github/commit-activity/m/kudoai/googlegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
+<a href="https://app.codacy.com/gh/KudoAI/googlegpt/commits?utm_source=googlegpt&utm_content=github_shield"><img height=31 src="https://img.shields.io/codacy/grade/302435545aed43d2b65f864992184a58?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
+<a href="https://chatgpt.js.org?utm_source=googlegpt&utm_content=github_shield"><img height=31 src="https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img height=31 src="https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://www.kudoai.com?utm_source=googlegpt&utm_content=github_shield"><img height=31 src="https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://googlegpt.kudoai.com?utm_source=googlegpt&utm_content=github_shield"><img height=31 src="https://img.shields.io/badge/web-https://googlegpt.kudoai.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge"></a>
     
 </div>
 
