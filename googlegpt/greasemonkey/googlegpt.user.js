@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.2.2
+// @version             2023.12.2.3
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -435,7 +435,6 @@
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
             notify(( messages.mode_prefix || 'Prefix Mode' ) + ' ' + state.word[+!config.prefixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-            if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
 
         // Add command to toggle suffix mode
@@ -449,7 +448,6 @@
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
             notify(( messages.mode_suffix || 'Suffix Mode' ) + ' ' + state.word[+!config.suffixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-            if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
         if (!isMobile) {
