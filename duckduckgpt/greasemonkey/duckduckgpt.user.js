@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.1.4
+// @version             2023.12.1.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -620,8 +620,8 @@
             // Remove divs/listeners
             const relatedQueriesDiv = document.querySelector('.related-queries')
             Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                relatedQueryDiv?.removeEventListener('click', rqEventHandler)
-                relatedQueryDiv?.removeEventListener('keydown', rqEventHandler)
+                relatedQueryDiv.removeEventListener('click', rqEventHandler)
+                relatedQueryDiv.removeEventListener('keydown', rqEventHandler)
             })
             relatedQueriesDiv.remove()
 
@@ -691,8 +691,8 @@
                         // Add fade + listeners
                         setTimeout(() => {
                             relatedQueryDiv.classList.add('active')
-                            relatedQueryDiv?.addEventListener('click', rqEventHandler)
-                            relatedQueryDiv?.addEventListener('keydown', rqEventHandler)
+                            relatedQueryDiv.addEventListener('click', rqEventHandler)
+                            relatedQueryDiv.addEventListener('keydown', rqEventHandler)
                         }, index * 100)
                     })
         }})}
@@ -882,7 +882,7 @@
 
         // Add listeners
         wsbSVG?.addEventListener('click', toggleWiderSidebar)
-        speakSVG?.addEventListener('click', () => {
+        speakSVG.addEventListener('click', () => {
             const payload = {
                 text: answer, rate: '2', curTime: Date.now(),
                 spokenDialect: /chinese|^zh/i.test(config.replyLanguage) ? 'zh-CHS' : 'en'
@@ -895,10 +895,10 @@
                 + encodeURIComponent(securePayload))
             speakAudio.play().catch(() => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
         })
-        aboutSVG?.addEventListener('click', launchAboutModal)
-        replyForm?.addEventListener('keydown', handleEnter)
-        replyForm?.addEventListener('submit', handleSubmit)
-        chatTextarea?.addEventListener('input', autosizeChatbar)
+        aboutSVG.addEventListener('click', launchAboutModal)
+        replyForm.addEventListener('keydown', handleEnter)
+        replyForm.addEventListener('submit', handleSubmit)
+        chatTextarea.addEventListener('input', autosizeChatbar)
 
         function handleEnter(event) {
             if (event.key == 'Enter') {
@@ -927,16 +927,16 @@
             } getShowReply(convo)
 
             // Remove re-added reply section listeners
-            replyForm?.removeEventListener('keydown', handleEnter)
-            replyForm?.removeEventListener('submit', handleSubmit)
-            chatTextarea?.removeEventListener('input', autosizeChatbar)
+            replyForm.removeEventListener('keydown', handleEnter)
+            replyForm.removeEventListener('submit', handleSubmit)
+            chatTextarea.removeEventListener('input', autosizeChatbar)
 
             // Remove related queries
             try {
                 const relatedQueriesDiv = document.querySelector('.related-queries')
                 Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                    relatedQueryDiv?.removeEventListener('click', rqEventHandler)
-                    relatedQueryDiv?.removeEventListener('keydown', rqEventHandler)
+                    relatedQueryDiv.removeEventListener('click', rqEventHandler)
+                    relatedQueryDiv.removeEventListener('keydown', rqEventHandler)
                 })
                 relatedQueriesDiv.remove()
             } catch (err) {}
