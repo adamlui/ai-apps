@@ -1,11 +1,15 @@
-<h1><picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/qxwsajG.png">
-    <img src="https://i.imgur.com/knADLVh.png">
-</picture></h1>
-
 <div align="center">
-    
-<h3>Bring the magic of ChatGPT to Google Search (powered by GPT-4!)</h3>
+
+<br>
+
+<picture>
+    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/googlegpt-logo-darkmode.png">
+    <img width=755 src="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/googlegpt-logo-lightmode.png">
+</picture>
+
+<h3>🤖 Bring the magic of ChatGPT to Google Search (powered by GPT-4!)</h3>
+
+<br>
 
 <a href="https://greasyfork.org/scripts/478597-googlegpt"><img height=33 src="https://img.shields.io/greasyfork/dt/478597?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/googlegpt/blob/main/LICENSE"><img height=33 src="https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
