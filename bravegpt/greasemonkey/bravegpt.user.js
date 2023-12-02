@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.3.3
+// @version             2023.12.3.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -751,13 +751,9 @@
                                 }
 
                                 // Update footer content
-                                if (destinationURL) { // update link
-                                    if (!(footerContent instanceof HTMLAnchorElement)) footerContent = createAnchor(destinationURL)
-                                    else footerContent.setAttribute('href', destinationURL)
-                                } else { // insert new span
-                                    const footerSpan = document.createElement('span')
-                                    footerContent.replaceWith(footerSpan) ; footerContent = footerSpan
-                                }
+                                const newFooterContent = destinationURL ? createAnchor(destinationURL)
+                                                                        : document.createElement('span')
+                                footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
                                 footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
                                 footerContent.textContent = chosenAd.text.length < 49 ? chosenAd.text
                                                           : chosenAd.text.slice(0, 49) + '...'
