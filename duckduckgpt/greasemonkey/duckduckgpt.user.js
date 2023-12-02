@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.2.3
+// @version             2023.12.2.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1121,7 +1121,7 @@
             + `background: ${ scheme == 'dark' ? '#a2a2a270': '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
         + '.related-query svg { position: relative ; top: 4px ; margin-right: 6px ;' // related query icon
             + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
-        + '.fade-in { opacity: 0 ; transform: translateY(20px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
+        + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button { border: none ; float: right ;'
             + `position: relative ; bottom: ${ isChromium ? 52 : 48 }px ; right: ${ isChromium ? 6 : 8 }px ;`
@@ -1153,19 +1153,23 @@
 
     // Create/classify DDGPT container
     const ddgptDiv = document.createElement('div') // create container div
-    ddgptDiv.classList.add('ddgpt')
+    ddgptDiv.classList.add('ddgpt', 'fade-in')
  
     // Create/classify/fill feedback footer
     const ddgptFooter = document.createElement('div')
-    ddgptFooter.classList.add('feedback-prompt', 'ddgpt-feedback')
+    ddgptFooter.classList.add('feedback-prompt', // DDG class
+                              'ddgpt-feedback', 'fade-in') // DDGPT classes
     let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
     footerContent.classList.add('js-feedback-prompt-generic') // DDG footer class
     ddgptFooter.appendChild(footerContent)
 
     // Append DDGPT + footer to DDG
-    const hostContainer = document.querySelector(
-        isMobile || isCentered ? '[data-area*="mainline"]' : '[class*="sidebar"]')
-    hostContainer.prepend(ddgptDiv, ddgptFooter)
+    const ddgptElems = [ddgptFooter, ddgptDiv],
+          hostContainer = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]'
+                                                                        : '[class*="sidebar"]')
+    ddgptElems.forEach(elem => hostContainer.prepend(elem))
+    ddgptElems.reverse().forEach((elem, index) => // fade in staggered
+        setTimeout(() => elem.classList.add('active'), index * 550 - 200))
 
     // Check for active text campaigns to replace footer CTA
     fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
@@ -1230,7 +1234,7 @@
                                                                     : document.createElement('span')
                             footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
                             footerContent.classList.add('fade-in', // DDGPT fade class
-                                'js-feedback-prompt-generic') // DDG footer class
+                                                        'js-feedback-prompt-generic') // DDG footer class
                             footerContent.textContent = chosenAd.text
                             footerContent.setAttribute('title', chosenAd.tooltip || '')
                             setTimeout(() => { footerContent.classList.add('active') }, 100) // to trigger fade
