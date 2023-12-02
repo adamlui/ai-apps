@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.2.4
+// @version             2023.12.2.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -198,7 +198,7 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.keyPrefix + '_' + key, false) })}
+    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(config.keyPrefix + '_' + key, false))}
     function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
@@ -458,7 +458,7 @@
         // Update SVG elements
         while (wsbSVG.firstChild) { wsbSVG.removeChild(wsbSVG.firstChild) }
         const wsbSVGpaths = config.widerSidebar ? wsbONpaths : wsbOFFpaths
-        wsbSVGpaths.forEach(path => { wsbSVG.appendChild(path) })
+        wsbSVGpaths.forEach(path => wsbSVG.appendChild(path))
         if (!wsbSpan.contains(wsbSVG)) wsbSpan.appendChild(wsbSVG)
     }
 
@@ -558,14 +558,14 @@
     let endpoint, accessKey, model
     async function pickAPI() {
         if (config.proxyAPIenabled) { // randomize proxy API
-            const untriedEndpoints = proxyEndpoints.filter(entry => {
-                return !getShowReply.triedEndpoints?.includes(entry[0]) })
+            const untriedEndpoints = proxyEndpoints.filter(
+                entry => !getShowReply.triedEndpoints?.includes(entry[0]))
             const entry = untriedEndpoints[Math.floor(chatgpt.randomFloat() * untriedEndpoints.length)]
             endpoint = entry[0] ; accessKey = entry[1] ; model = entry[2]
         } else { // use OpenAI API
             endpoint = openAIendpoints.chat
-            const timeoutPromise = new Promise((resolve, reject) => {
-                setTimeout(() => { reject(new Error('Timeout occurred')) }, 3000) })
+            const timeoutPromise = new Promise((resolve, reject) =>
+                setTimeout(() => reject(new Error('Timeout occurred')), 3000))
             accessKey = await Promise.race([getOpenAItoken(), timeoutPromise])
             if (!accessKey) { ddgptAlert('login') ; return }
             model = 'text-davinci-002-render'
@@ -830,7 +830,7 @@
                 createSVGpath({ stroke: 'none', fill: '',
                     d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
             ]
-            speakSVGpaths.forEach(path => { speakSVG.appendChild(path) })
+            speakSVGpaths.forEach(path => speakSVG.appendChild(path))
             speakSpan.appendChild(speakSVG) ; ddgptDiv.appendChild(speakSpan)
         }
 
@@ -856,7 +856,7 @@
                 iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
             const speakAudio = new Audio('https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
                 + encodeURIComponent(securePayload))
-            speakAudio.play().catch(() => { chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })})
+            speakAudio.play().catch(() => chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 }))
         })
         aboutSVG.addEventListener('click', launchAboutModal)
 
@@ -1193,7 +1193,7 @@
             if (chosenAdvertiser) {
                 const campaignsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/'
                                    + chosenAdvertiser + '/text/campaigns.json'
-                fetchJSON(campaignsURL, (err, campaignsData) => { if (err) { return }
+                fetchJSON(campaignsURL, (err, campaignsData) => { if (err) return
 
                     // Select random, active campaign
                     for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
@@ -1237,7 +1237,7 @@
                                                         'js-feedback-prompt-generic') // DDG footer class
                             footerContent.textContent = chosenAd.text
                             footerContent.setAttribute('title', chosenAd.tooltip || '')
-                            setTimeout(() => { footerContent.classList.add('active') }, 100) // to trigger fade
+                            setTimeout(() => footerContent.classList.add('active'), 100) // to trigger fade
                             adSelected = true ; break
                         }
                         if (adSelected) break // out of campaign loop after ad selection
