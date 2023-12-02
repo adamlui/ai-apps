@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.2.3
+// @version             2023.12.2.4
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -406,6 +406,16 @@
             notify(( messages.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+!config.proxyAPIenabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             location.reload() // re-send query using new endpoint
+        }))
+
+        // Add command to auto-get mode
+        const agmLabel = state.symbol[+config.autoGetDisabled] + ' '
+                       + ( messages.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
+                       + state.separator + state.word[+config.autoGetDisabled]
+        menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
+            saveSetting('autoGetDisabled', !config.autoGetDisabled)
+            notify(( messages.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + state.word[+config.autoGetDisabled])
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle showing related queries
@@ -1309,8 +1319,8 @@
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
-    loadSetting('proxyAPIenabled', 'prefixEnabled', 'rqDisabled', 'replyLanguage',
-                'widerSidebar', 'stickySidebar', 'suffixEnabled')
+    loadSetting('proxyAPIenabled', 'autoGetDisabled', 'rqDisabled',
+                'prefixEnabled', 'suffixEnabled', 'widerSidebar', 'stickySidebar', 'replyLanguage')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = [], // to store queries + answers for contextual replies
           menuIDs = [] // to store registered commands for removal while preserving order
@@ -1394,6 +1404,7 @@
         + '.googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
         + '.googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
         + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin: 20px 0 18px ;'
+            + ( scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
             + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' }}`
         + '.standby-btn:hover { background-color: #9cdaff ; color: #3d5d71 ; border-color: #82b7d7 ;'
             + 'box-shadow: 0 1px 20px #9cdaff ; border-radius: 4px }'
