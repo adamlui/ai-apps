@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.1.5
+// @version             2023.12.1.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1122,11 +1122,6 @@
                    + '#ddgpt-chatbar { width: 95.6% }'
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
-    // Create/classify/fill DDGPT container
-    const ddgptDiv = document.createElement('div') // create container div
-    ddgptDiv.classList.add('ddgpt')
-    ddgptAlert('waitingResponse')
-
     // Init footer CTA to share feedback
     let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
     footerContent.classList.add('feedback-prompt__link', 'js-feedback-prompt-generic') // DDG classes
@@ -1229,13 +1224,8 @@
                 return boostedList
             }
     })
- 
-    // Create/classify/fill footer
-    const ddgptFooter = document.createElement('div')
-    ddgptFooter.classList.add('feedback-prompt', 'ddgpt-feedback')
-    ddgptFooter.appendChild(footerContent)
 
-    // Activate ad campaign if active
+    // Check for active sidebar campaigns to show
     GM.xmlHttpRequest({
         method: 'GET', url: config.assetHostURL + 'ads/live/creative.html',
         onload: response => { if (response.status === 200) {
@@ -1255,6 +1245,16 @@
             ddgptFooter.insertAdjacentElement('afterend', pcDiv)
             pcDiv.insertAdjacentElement('afterend', pcFooter)
     }}})
+
+    // Create/classify/fill DDGPT container
+    const ddgptDiv = document.createElement('div') // create container div
+    ddgptDiv.classList.add('ddgpt')
+    ddgptAlert('waitingResponse')
+ 
+    // Create/classify/fill footer
+    const ddgptFooter = document.createElement('div')
+    ddgptFooter.classList.add('feedback-prompt', 'ddgpt-feedback')
+    ddgptFooter.appendChild(footerContent)
 
     // Append DDGPT + footer to DDG
     const hostContainer = document.querySelector(
