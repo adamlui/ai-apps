@@ -4,7 +4,7 @@
 
 <picture>
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/googlegpt-logo-darkmode.png">
-    <img width=755 src="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/googlegpt-logo-lightmode.png">
+    <img width=825 src="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/googlegpt-logo-lightmode.png">
 </picture>
 
 <h3>🤖 Bring the magic of ChatGPT to Google Search (powered by GPT-4!)</h3>
