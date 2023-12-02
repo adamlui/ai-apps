@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.1.1
+// @version             2023.12.1.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -896,7 +896,7 @@
         const speakSpan = document.createElement('span'),
               speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         speakSpan.classList.add('corner-btn') ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
-        speakSpan.style.margin = '-0.007em 11px 0px 13px' // fine-tune position
+        speakSpan.style.margin = '-0.007em 11px 0 0' // fine-tune position
         for (const [attr, value] of [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']])
             speakSVG.setAttributeNS(null, attr, value)
         const speakSVGpaths = [
@@ -915,7 +915,7 @@
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
-            wsbSpan.style.marginTop = '0.06rem' // fine-tune position
+            wsbSpan.style.margin = '0.06rem 13px 0 0' // fine-tune position
             wsbSpan.appendChild(wsbSVG) ; braveGPTdiv.appendChild(wsbSpan) ; updateWSBsvg()
         }
 
