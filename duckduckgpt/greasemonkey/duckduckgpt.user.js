@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.2.1
+// @version             2023.12.2.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -254,7 +254,6 @@
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
             notify(( messages.mode_prefix || 'Prefix Mode' ) + ' ' + state.word[+!config.prefixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-            if (!config.prefixEnabled) location.reload() // re-send query if newly disabled
         }))
 
         // Add command to toggle suffix mode
@@ -268,7 +267,6 @@
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
             notify(( messages.mode_suffix || 'Suffix Mode' ) + ' ' + state.word[+!config.suffixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-            if (!config.suffixEnabled) location.reload() // re-send query if newly disabled
         }))
 
         // Add command to toggle wider sidebar
