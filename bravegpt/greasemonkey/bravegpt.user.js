@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.2
+// @version             2023.12.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -178,6 +178,16 @@
             notify(( messages.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+!config.proxyAPIenabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             location.reload() // re-send query using new endpoint
+        }))
+
+        // Add command to auto-get mode
+        const agmLabel = state.symbol[+config.autoGetDisabled] + ' '
+                       + ( messages.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
+                       + state.separator + state.word[+config.autoGetDisabled]
+        menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
+            saveSetting('autoGetDisabled', !config.autoGetDisabled)
+            notify(( messages.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + state.word[+config.autoGetDisabled])
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle showing related queries
@@ -1090,8 +1100,8 @@
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('proxyAPIenabled', 'relatedQueriesDisabled', 'prefixEnabled', 'suffixEnabled',
-                'widerSidebar', 'stickySidebar', 'replyLanguage')
+    loadSetting('proxyAPIenabled', 'autoGetDisabled', 'relatedQueriesDisabled',
+                'prefixEnabled', 'suffixEnabled', 'widerSidebar', 'stickySidebar', 'replyLanguage')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = [], menuIDs = []
     const state = {
@@ -1272,9 +1282,10 @@
     }}})
 
     // Show standby mode or get answer
-    if (config.prefixEnabled && !/.*q=%2F/.test(document.location) || // if prefix required but not present
-        config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location)) // or suffix required but not present
-            braveGPTshow('standby')
+    if (config.autoGetDisabled
+        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // if prefix required but not present
+        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // or suffix required but not present
+    ) braveGPTshow('standby')
     else {
         braveGPTalert('waitingResponse')
         const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
