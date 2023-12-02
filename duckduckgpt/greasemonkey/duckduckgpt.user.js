@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.1.8
+// @version             2023.12.1.10
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -866,7 +866,7 @@
         if (answer == 'standby') {
             const standbyBtn = document.createElement('button')
             standbyBtn.classList.add('standby-btn')
-            standbyBtn.textContent = messages.sendQueryToGPT || 'Send query to GPT'
+            standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send query to GPT'
             ddgptDiv.appendChild(standbyBtn)
             standbyBtn.addEventListener('click', () => {
                 ddgptAlert('waitingResponse')
@@ -1153,11 +1153,23 @@
                    + '#ddgpt-chatbar { width: 95.6% }'
     updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
 
-    // Init footer CTA to share feedback
+    // Create/classify DDGPT container
+    const ddgptDiv = document.createElement('div') // create container div
+    ddgptDiv.classList.add('ddgpt')
+ 
+    // Create/classify/fill feedback footer
+    const ddgptFooter = document.createElement('div')
+    ddgptFooter.classList.add('feedback-prompt', 'ddgpt-feedback')
     let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
     footerContent.classList.add('feedback-prompt__link', 'js-feedback-prompt-generic') // DDG classes
+    ddgptFooter.appendChild(footerContent)
 
-    // Check for active text campaigns to replace CTA
+    // Append DDGPT + footer to DDG
+    const hostContainer = document.querySelector(
+        isMobile || isCentered ? '[data-area*="mainline"]' : '[class*="sidebar"]')
+    hostContainer.prepend(ddgptDiv, ddgptFooter)
+
+    // Check for active text campaigns to replace footer CTA
     fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
         (err, advertisersData) => { if (err) return
 
@@ -1276,21 +1288,6 @@
             ddgptFooter.insertAdjacentElement('afterend', pcDiv)
             pcDiv.insertAdjacentElement('afterend', pcFooter)
     }}})
-
-    // Create/classify/fill DDGPT container
-    const ddgptDiv = document.createElement('div') // create container div
-    ddgptDiv.classList.add('ddgpt')
-    ddgptAlert('waitingResponse')
- 
-    // Create/classify/fill footer
-    const ddgptFooter = document.createElement('div')
-    ddgptFooter.classList.add('feedback-prompt', 'ddgpt-feedback')
-    ddgptFooter.appendChild(footerContent)
-
-    // Append DDGPT + footer to DDG
-    const hostContainer = document.querySelector(
-        isMobile || isCentered ? '[data-area*="mainline"]' : '[class*="sidebar"]')
-    hostContainer.prepend(ddgptDiv, ddgptFooter)
 
     // Show standby mode or get answer
     if (config.autoGetDisabled
