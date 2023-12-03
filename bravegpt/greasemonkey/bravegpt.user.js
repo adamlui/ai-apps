@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.3.7
+// @version             2023.12.3.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -448,6 +448,101 @@
         if (!wsbSpan.contains(wsbSVG)) wsbSpan.appendChild(wsbSVG)
     }
 
+    function updateFooterContent() {
+        fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
+            (err, advertisersData) => { if (err) return
+
+                // Init vars
+                let chosenAdvertiser, adSelected
+                const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
+                const currentDate = (() => { // in YYYYMMDD format
+                    const today = new Date(), year = today.getFullYear(),
+                          month = String(today.getMonth() + 1).padStart(2, '0'),
+                          day = String(today.getDate()).padStart(2, '0')
+                    return year + month + day
+                })()
+
+                // Select random, active advertiser
+                for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
+                    if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
+
+                // Fetch a random, active creative
+                if (chosenAdvertiser) {
+                    const campaignsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/'
+                                       + chosenAdvertiser + '/text/campaigns.json'
+                    fetchJSON(campaignsURL, (err, campaignsData) => { if (err) return
+
+                        // Select random, active campaign
+                        for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
+                            const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
+                            if (!campaignIsActive) continue // to next campaign since campaign inactive
+
+                            // Select random active group
+                            for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
+
+                                // Skip disqualified groups
+                                if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
+                                    || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
+                                    || adGroup.active === false // group explicitly disabled
+                                    || adGroup.targetLocations && ( // target locale(s) exist...
+                                        !config.userLocale || !adGroup.targetLocations.some( // ...and user locale is missing or excluded
+                                            loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
+                                ) continue // to next group
+
+                                // Filter out inactive ads, pick random active one
+                                const activeAds = adGroup.ads.filter(ad => ad.active !== false)
+                                if (activeAds.length === 0) continue // to next group since no ads active
+                                const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
+
+                                // Build destination URL
+                                let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
+                                    || campaign.destinationURL || ''
+                                if (destinationURL.includes('http')) { // insert UTM tags
+                                    const [baseURL, queryString] = destinationURL.split('?'),
+                                          queryParams = new URLSearchParams(queryString || '')
+                                    queryParams.set('utm_source', config.appName.toLowerCase())
+                                    queryParams.set('utm_content', 'app_footer_link')
+                                    destinationURL = baseURL + '?' + queryParams.toString()
+                                }
+
+                                // Update footer content
+                                const newFooterContent = destinationURL ? createAnchor(destinationURL)
+                                                                        : document.createElement('span')
+                                footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
+                                footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
+                                footerContent.textContent = chosenAd.text.length < 49 ? chosenAd.text
+                                                          : chosenAd.text.slice(0, 49) + '...'
+                                footerContent.setAttribute('title', chosenAd.tooltip ||
+                                    footerContent.textContent.includes('...') ? chosenAd.text : '')
+                                adSelected = true ; break
+                            }
+                            if (adSelected) break // out of campaign loop after ad selection
+                }})}
+
+                function shuffle(list) {
+                    let currentIdx = list.length, tempValue, randomIdx
+                    while (currentIdx !== 0) { // elements remain to be shuffled
+                        randomIdx = Math.floor(Math.random() * currentIdx) ; currentIdx -= 1
+                        tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
+                    }
+                    return list
+                }
+
+                function applyBoosts(list) {
+                    let boostedList = [...list],
+                        boostedListLength = boostedList.length - 1 // for applying multiple boosts
+                    list.forEach(([name, data]) => { // check for boosts
+                        if (data.boost) { // boost flagged entry's selection probability
+                            const boostPercent = parseInt(data.boost, 10) / 100,
+                                  entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
+                                                * boostPercent - 1 // reduced to boosted entries needed
+                            for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
+                            boostedListLength += entriesNeeded // update for subsequent calculations
+                    }})
+                    return boostedList
+                }
+    })}
+
     function createSVGpath(attrs) {
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
         for (const attr in attrs) path.setAttributeNS(null, attr, attrs[attr])
@@ -689,104 +784,7 @@
                     updateTweaksStyle() // to shorten <pre> max-height
         }})}
 
-        // Init footer CTA to share feedback
-        let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Feedback')
-        footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
-
-        // Check for active text campaigns to replace CTA
-        fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
-            (err, advertisersData) => { if (err) return
-
-                // Init vars
-                let chosenAdvertiser, adSelected
-                const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
-                const currentDate = (() => { // in YYYYMMDD format
-                    const today = new Date(), year = today.getFullYear(),
-                          month = String(today.getMonth() + 1).padStart(2, '0'),
-                          day = String(today.getDate()).padStart(2, '0')
-                    return year + month + day
-                })()
-
-                // Select random, active advertiser
-                for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
-                    if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
-
-                // Fetch a random, active creative
-                if (chosenAdvertiser) {
-                    const campaignsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/'
-                                       + chosenAdvertiser + '/text/campaigns.json'
-                    fetchJSON(campaignsURL, (err, campaignsData) => { if (err) return
-
-                        // Select random, active campaign
-                        for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
-                            const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
-                            if (!campaignIsActive) continue // to next campaign since campaign inactive
-
-                            // Select random active group
-                            for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
-
-                                // Skip disqualified groups
-                                if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
-                                    || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
-                                    || adGroup.active === false // group explicitly disabled
-                                    || adGroup.targetLocations && ( // target locale(s) exist...
-                                        !config.userLocale || !adGroup.targetLocations.some( // ...and user locale is missing or excluded
-                                            loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
-                                ) continue // to next group
-
-                                // Filter out inactive ads, pick random active one
-                                const activeAds = adGroup.ads.filter(ad => ad.active !== false)
-                                if (activeAds.length === 0) continue // to next group since no ads active
-                                const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
-
-                                // Build destination URL
-                                let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
-                                    || campaign.destinationURL || ''
-                                if (destinationURL.includes('http')) { // insert UTM tags
-                                    const [baseURL, queryString] = destinationURL.split('?'),
-                                          queryParams = new URLSearchParams(queryString || '')
-                                    queryParams.set('utm_source', config.appName.toLowerCase())
-                                    queryParams.set('utm_content', 'app_footer_link')
-                                    destinationURL = baseURL + '?' + queryParams.toString()
-                                }
-
-                                // Update footer content
-                                const newFooterContent = destinationURL ? createAnchor(destinationURL)
-                                                                        : document.createElement('span')
-                                footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
-                                footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
-                                footerContent.textContent = chosenAd.text.length < 49 ? chosenAd.text
-                                                          : chosenAd.text.slice(0, 49) + '...'
-                                footerContent.setAttribute('title', chosenAd.tooltip ||
-                                    footerContent.textContent.includes('...') ? chosenAd.text : '')
-                                adSelected = true ; break
-                            }
-                            if (adSelected) break // out of campaign loop after ad selection
-                }})}
-
-                function shuffle(list) {
-                    let currentIdx = list.length, tempValue, randomIdx
-                    while (currentIdx !== 0) { // elements remain to be shuffled
-                        randomIdx = Math.floor(Math.random() * currentIdx) ; currentIdx -= 1
-                        tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
-                    }
-                    return list
-                }
-
-                function applyBoosts(list) {
-                    let boostedList = [...list],
-                        boostedListLength = boostedList.length - 1 // for applying multiple boosts
-                    list.forEach(([name, data]) => { // check for boosts
-                        if (data.boost) { // boost flagged entry's selection probability
-                            const boostPercent = parseInt(data.boost, 10) / 100,
-                                  entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
-                                                * boostPercent - 1 // reduced to boosted entries needed
-                            for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
-                            boostedListLength += entriesNeeded // update for subsequent calculations
-                    }})
-                    return boostedList
-                }
-        })
+        updateFooterContent()
 
         function responseType(api) {
             return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
@@ -947,7 +945,7 @@
         if (answer == 'standby') {
             const standbyBtn = document.createElement('button')
             standbyBtn.classList.add('standby-btn')
-            standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send query to GPT'
+            standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
             braveGPTdiv.appendChild(standbyBtn)
             standbyBtn.addEventListener('click', () => {
                 braveGPTalert('waitingResponse')
@@ -958,15 +956,15 @@
                                                content: { content_type: 'text', parts: [query] }})
                 getShowReply(convo)
             })
-            return
-        }
 
         // Otherwise create/append ChatGPT response
-        const balloonTipSpan = document.createElement('span'),
-              answerPre = document.createElement('pre')
-        balloonTipSpan.classList.add('balloon-tip') ; answerPre.textContent = answer
-        braveGPTdiv.appendChild(balloonTipSpan) ; braveGPTdiv.appendChild(answerPre)
-        updateTweaksStyle() // in case sticky mode on
+        } else {
+            var balloonTipSpan = document.createElement('span'),
+                answerPre = document.createElement('pre')
+            balloonTipSpan.classList.add('balloon-tip') ; answerPre.textContent = answer
+            braveGPTdiv.appendChild(balloonTipSpan) ; braveGPTdiv.appendChild(answerPre)
+            updateTweaksStyle() // in case sticky mode on
+        }
 
         // Create/append reply section/elements
         const replySection = document.createElement('section'),
@@ -975,7 +973,8 @@
               chatTextarea = document.createElement('textarea')
         continueChatDiv.classList.add('continue-chat')
         chatTextarea.id = 'bravegpt-chatbar' ; chatTextarea.rows = '1'
-        chatTextarea.placeholder = ( messages.tooltip_sendReply || 'Send reply' ) + '...'
+        chatTextarea.placeholder = ( answer == 'standby' ? messages.placeholder_askSomethingElse || 'Ask something else'
+                                                         : messages.tooltip_sendReply || 'Send reply' ) + '...'
         continueChatDiv.appendChild(chatTextarea)
         replyForm.appendChild(continueChatDiv) ; replySection.appendChild(replyForm)
         braveGPTdiv.appendChild(replySection)
@@ -998,21 +997,22 @@
         braveGPTfooter.appendChild(footerContent) ; braveGPTdiv.appendChild(braveGPTfooter)
 
         // Render math
-        renderMathInElement(answerPre, { // eslint-disable-line no-undef
-            delimiters: [
-                { left: '$$', right: '$$', display: true },
-                { left: '$', right: '$', display: false },
-                { left: '\\(', right: '\\)', display: false },
-                { left: '\\[', right: '\\]', display: true },
-                { left: '\\begin{equation}', right: '\\end{equation}', display: true },
-                { left: '\\begin{align}', right: '\\end{align}', display: true },
-                { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
-                { left: '\\begin{gather}', right: '\\end{gather}', display: true },
-                { left: '\\begin{CD}', right: '\\end{CD}', display: true },
-                { left: '\\[', right: '\\]', display: true }
-            ],
-            throwOnError: false
-        })
+        if (answer != 'standby') {
+            renderMathInElement(answerPre, { // eslint-disable-line no-undef
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                    { left: '\\begin{equation}', right: '\\end{equation}', display: true },
+                    { left: '\\begin{align}', right: '\\end{align}', display: true },
+                    { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
+                    { left: '\\begin{gather}', right: '\\end{gather}', display: true },
+                    { left: '\\begin{CD}', right: '\\end{CD}', display: true },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                throwOnError: false
+        })}
 
         // Add reply section listeners
         replyForm.addEventListener('keydown', handleEnter)
@@ -1035,7 +1035,7 @@
         function handleSubmit(event) {
             event.preventDefault()
             if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
-            const prevReplyTrimmed = braveGPTdiv.querySelector('pre').textContent.substring(0, 250 - chatTextarea.value.length),
+            const prevReplyTrimmed = braveGPTdiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || '',
                   yourReply = `${ chatTextarea.value } (reply in ${ config.replyLanguage })`
             if (!config.proxyAPIenabled) {
                 convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
@@ -1178,7 +1178,7 @@
             + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.bravegpt section.loading { padding-left: 5px ; font-size: 90% }'
-        + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; top: 14px ; position: relative ;'
+        + '.standby-btn { width: 100% ; padding: 13px 0 ; cursor: pointer ; margin: 14px 0 20px ;'
             + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' }}`
         + '.standby-btn:hover { background-color: #fd804f ; color: white ; border-color: #ffa500 ;'
             + 'box-shadow: 0 1px 20px #ff9c9c ; border-radius: 4px }'
@@ -1186,7 +1186,7 @@
             + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
             + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ; overflow: auto ;'
             + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 }' )
-        + `.bravegpt .footer { margin: ${ isChromium ? 19 : 24 }px 0 -26px 0 ; border-top: none !important }`
+        + `.bravegpt .footer { margin: ${ isChromium ? 27 : 32 }px 0 -26px 0 ; border-top: none !important }`
         + '.bravegpt .feedback {'
             + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem ;'
             + 'letter-spacing: .02em ; position: relative ; right: -18px ; bottom: 15px ;'
@@ -1204,7 +1204,7 @@
         + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px }'
         + '.continue-chat > textarea {'
             + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
-            + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 5px 0 ;  padding: 14px 22px 5px 10px ;'
+            + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 -7px 0 ;  padding: 14px 22px 5px 10px ;'
             + 'height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ; background:'
                 + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + '}'
         + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
@@ -1224,7 +1224,7 @@
         + '.fade-in { opacity: 0 ; transform: translateY(7px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
         + '.send-button {'
-            + 'float: right ; border: none ; margin: 18px 4px 0 0 ;'
+            + 'float: right ; border: none ; margin: 29px 4px 0 0 ;'
             + `position: relative ; bottom: ${ isChromium ? 61 : 57 }px; right: 10px;`
             + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
@@ -1254,6 +1254,7 @@
     const braveGPTdiv = document.createElement('div') // create container div
     braveGPTdiv.classList.add('bravegpt', 'fade-in', // BraveGPT classes
                               'snippet') // Brave class
+
     // Append to Brave
     const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
     hostContainer.style.overflow = 'visible' // for boundless hover effects of BraveGPT
@@ -1261,6 +1262,10 @@
         hostContainer.prepend(braveGPTdiv)
         setTimeout(() => braveGPTdiv.classList.add('active'), 100) // fade in
     }, isMobile ? 500 : 100)
+
+    // Init footer CTA to share feedback
+    let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Feedback')
+    footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
 
     // Check for active sidebar campaigns to show
     GM.xmlHttpRequest({
@@ -1283,7 +1288,7 @@
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // if prefix required but not present
         || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // or suffix required but not present
-    ) braveGPTshow('standby')
+    ) { updateFooterContent() ; braveGPTshow('standby', footerContent) }
     else {
         braveGPTalert('waitingResponse')
         const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
