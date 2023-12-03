@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Impendulo yokudlala" },
   "tooltip_sendReply": { "message": "Thumela impendulo" },
   "tooltip_sendRelatedQuery": { "message": "Thumela umbuzo ohlobene" },
+  "placeholder_askSomethingElse": { "message": "Buza okunye" },
   "prompt_updateReplyLang": { "message": "Buyekeza ulimi lokuphendula" },
   "alert_langUpdated": { "message": "Ulimi lubuyekeziwe" },
   "alert_willReplyIn": { "message": "uzophendula ku-" },

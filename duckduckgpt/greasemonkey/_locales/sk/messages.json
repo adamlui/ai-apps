@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Prehrať odpoveď" },
   "tooltip_sendReply": { "message": "Odpovedať" },
   "tooltip_sendRelatedQuery": { "message": "Odoslať súvisiacu otázku" },
+  "placeholder_askSomethingElse": { "message": "Niečo iné" },
   "prompt_updateReplyLang": { "message": "Aktualizovať jazyk odpovede" },
   "alert_langUpdated": { "message": "Jazyk bol aktualizovaný" },
   "alert_willReplyIn": { "message": "odpovie v" },

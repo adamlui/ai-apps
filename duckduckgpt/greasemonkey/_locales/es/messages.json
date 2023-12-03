@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Reproducir respuesta" },
   "tooltip_sendReply": { "message": "Enviar respuesta" },
   "tooltip_sendRelatedQuery": { "message": "Enviar consulta relacionada" },
+  "placeholder_askSomethingElse": { "message": "Pida otra cosa." },
   "prompt_updateReplyLang": { "message": "Actualizar el idioma de la respuesta" },
   "alert_langUpdated": { "message": "Idioma Actualizado." },
   "alert_willReplyIn": { "message": "responderá en" },

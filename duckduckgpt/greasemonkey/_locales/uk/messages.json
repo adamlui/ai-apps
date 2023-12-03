@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Відтворити відповідь" },
   "tooltip_sendReply": { "message": "Надіслати відповідь" },
   "tooltip_sendRelatedQuery": { "message": "Надіслати пов 'язаний запит" },
+  "placeholder_askSomethingElse": { "message": "Задати питання" },
   "prompt_updateReplyLang": { "message": "Оновити мову відповіді" },
   "alert_langUpdated": { "message": "Мову оновлено" },
   "alert_willReplyIn": { "message": "відповість у" },

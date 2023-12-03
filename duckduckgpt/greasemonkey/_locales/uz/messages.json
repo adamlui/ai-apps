@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Javobni o&#39;ynang" },
   "tooltip_sendReply": { "message": "Javob yuboring" },
   "tooltip_sendRelatedQuery": { "message": "Tegishli so&#39;rov yuboring" },
+  "placeholder_askSomethingElse": { "message": "Boshqa narsa so&#39;rang" },
   "prompt_updateReplyLang": { "message": "Javob berish tilini yangilang" },
   "alert_langUpdated": { "message": "Til yangilandi" },
   "alert_willReplyIn": { "message": "javob beradi" },

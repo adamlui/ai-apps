@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "שפּיל ענטפער" },
   "tooltip_sendReply": { "message": "שיקן ענטפער" },
   "tooltip_sendRelatedQuery": { "message": "שיקן פֿאַרבונדענע אָנפֿרעג" },
+  "placeholder_askSomethingElse": { "message": "פרעגן עפּעס אַנדערש" },
   "prompt_updateReplyLang": { "message": "דערהייַנטיקן ענטפער שפּראַך" },
   "alert_langUpdated": { "message": "שפּראַך דערהייַנטיקט" },
   "alert_willReplyIn": { "message": "וועט ענטפערן אין" },

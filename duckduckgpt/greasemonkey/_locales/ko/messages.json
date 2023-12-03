@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "답변 재생" },
   "tooltip_sendReply": { "message": "답변 필요" },
   "tooltip_sendRelatedQuery": { "message": "관련 쿼리 보내기" },
+  "placeholder_askSomethingElse": { "message": "기타" },
   "prompt_updateReplyLang": { "message": "답변 언어 업데이트" },
   "alert_langUpdated": { "message": "언어 업데이트됨" },
   "alert_willReplyIn": { "message": "님이 다음으로 회신할 예정입니다" },

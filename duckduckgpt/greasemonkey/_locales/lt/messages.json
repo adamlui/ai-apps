@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Paleisti atsakymą" },
   "tooltip_sendReply": { "message": "Siųsti atsakymą" },
   "tooltip_sendRelatedQuery": { "message": "Siųsti susijusią užklausą" },
+  "placeholder_askSomethingElse": { "message": "Kažkas kita" },
   "prompt_updateReplyLang": { "message": "Atnaujinti atsakymo kalbą" },
   "alert_langUpdated": { "message": "Kalba atnaujinta" },
   "alert_willReplyIn": { "message": "atsakys po" },

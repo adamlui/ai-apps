@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Жауапты ойнату" },
   "tooltip_sendReply": { "message": "Жауап жіберу" },
   "tooltip_sendRelatedQuery": { "message": "Тиісті сұранысты жіберу" },
+  "placeholder_askSomethingElse": { "message": "Басқа нәрсе сұраңыз" },
   "prompt_updateReplyLang": { "message": "Жауап тілін жаңарту" },
   "alert_langUpdated": { "message": "Тіл жаңартылды" },
   "alert_willReplyIn": { "message": "келесіде жауап береді" },

@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Cavabı oxut" },
   "tooltip_sendReply": { "message": "Göndər" },
   "tooltip_sendRelatedQuery": { "message": "Əlaqəli sorğu göndərin" },
+  "placeholder_askSomethingElse": { "message": "Başqa bir şey soruşun" },
   "prompt_updateReplyLang": { "message": "Cavab dilini yenilə" },
   "alert_langUpdated": { "message": "Dil yeniləndi" },
   "alert_willReplyIn": { "message": "cavab verəcək:" },

@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Jawap oýna" },
   "tooltip_sendReply": { "message": "Jawap iber" },
   "tooltip_sendRelatedQuery": { "message": "Baglanyşykly soragy iber" },
+  "placeholder_askSomethingElse": { "message": "Siz ýene bir soragy sorap bilersiňizmi?" },
   "prompt_updateReplyLang": { "message": "Jawap diliniň täzelenmegi" },
   "alert_langUpdated": { "message": "Til ýygnaýarlanýar" },
   "alert_willReplyIn": { "message": "biz hem jogap berip bileris" },

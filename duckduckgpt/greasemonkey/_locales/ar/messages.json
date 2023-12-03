@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "تشغيل الإجابة" },
   "tooltip_sendReply": { "message": "أرسل رد" },
   "tooltip_sendRelatedQuery": { "message": "إرسال استعلام ذي صلة" },
+  "placeholder_askSomethingElse": { "message": "أسأل عن شئ آخر" },
   "prompt_updateReplyLang": { "message": "تحديث لغة الرد" },
   "alert_langUpdated": { "message": "تم تحديث اللغة" },
   "alert_willReplyIn": { "message": "سيتم الرد في" },

@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Antwortnote abspielen" },
   "tooltip_sendReply": { "message": "Antwort senden" },
   "tooltip_sendRelatedQuery": { "message": "Zugehörige Abfrage senden" },
+  "placeholder_askSomethingElse": { "message": "Ein anderes System" },
   "prompt_updateReplyLang": { "message": "Antwortsprache aktualisieren" },
   "alert_langUpdated": { "message": "Sprache aktualisiert" },
   "alert_willReplyIn": { "message": "antwortet in" },

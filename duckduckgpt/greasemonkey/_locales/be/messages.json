@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Прайграць адказ" },
   "tooltip_sendReply": { "message": "Даслаць адказ" },
   "tooltip_sendRelatedQuery": { "message": "Даслаць адпаведны запыт" },
+  "placeholder_askSomethingElse": { "message": "Спытаць што-небудзь яшчэ" },
   "prompt_updateReplyLang": { "message": "Абнавіць мову адказаў" },
   "alert_langUpdated": { "message": "Мова абноўлена" },
   "alert_willReplyIn": { "message": "адкажа ў" },

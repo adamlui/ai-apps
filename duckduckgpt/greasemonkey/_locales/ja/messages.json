@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "回答を再生" },
   "tooltip_sendReply": { "message": "要返信" },
   "tooltip_sendRelatedQuery": { "message": "関連するクエリを送信" },
+  "placeholder_askSomethingElse": { "message": "他の何か" },
   "prompt_updateReplyLang": { "message": "返信言語を更新" },
   "alert_langUpdated": { "message": "言語が更新されました。" },
   "alert_willReplyIn": { "message": "あとで返信します" },

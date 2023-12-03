@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Toktok bilong bekim" },
   "tooltip_sendReply": { "message": "Kirap bekim" },
   "tooltip_sendRelatedQuery": { "message": "Send a related query" },
+  "placeholder_askSomethingElse": { "message": "Mi laik askim yu long wanpela samting moa" },
   "prompt_updateReplyLang": { "message": "Tokples" },
   "alert_langUpdated": { "message": "Tokples i go bek" },
   "alert_willReplyIn": { "message": "em bai bekim tok long" },

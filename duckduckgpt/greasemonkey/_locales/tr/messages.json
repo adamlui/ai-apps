@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Yanıtı oynat" },
   "tooltip_sendReply": { "message": "Yanıt Gönder" },
   "tooltip_sendRelatedQuery": { "message": "İlgili sorguyu gönder" },
+  "placeholder_askSomethingElse": { "message": "Başka bir şey" },
   "prompt_updateReplyLang": { "message": "Yanıt dilini güncelleyin" },
   "alert_langUpdated": { "message": "Dil güncellendi" },
   "alert_willReplyIn": { "message": "cevap verecek" },

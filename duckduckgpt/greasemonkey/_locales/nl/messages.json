@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Antwoord afspelen" },
   "tooltip_sendReply": { "message": "Reactie versturen" },
   "tooltip_sendRelatedQuery": { "message": "Verwante query verzenden" },
+  "placeholder_askSomethingElse": { "message": "Iets anders" },
   "prompt_updateReplyLang": { "message": "Antwoordtaal bijwerken" },
   "alert_langUpdated": { "message": "taalbestand bijgewerkt" },
   "alert_willReplyIn": { "message": "zal antwoorden in" },

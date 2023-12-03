@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Toista vastaus" },
   "tooltip_sendReply": { "message": "Vastaa" },
   "tooltip_sendRelatedQuery": { "message": "Lähetä liittyvä kysely" },
+  "placeholder_askSomethingElse": { "message": "Joku muu" },
   "prompt_updateReplyLang": { "message": "Päivitä vastauskieli" },
   "alert_langUpdated": { "message": "Kieli päivitetty" },
   "alert_willReplyIn": { "message": "vastaa" },

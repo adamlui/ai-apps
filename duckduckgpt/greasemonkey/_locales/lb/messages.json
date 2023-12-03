@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Antwort abspielen" },
   "tooltip_sendReply": { "message": "Äntwert schécken" },
   "tooltip_sendRelatedQuery": { "message": "Zesummenhang Ufro schécken" },
+  "placeholder_askSomethingElse": { "message": "Frot eppes anescht" },
   "prompt_updateReplyLang": { "message": "Äntwertssprooch aktualiséieren" },
   "alert_langUpdated": { "message": "Sprooch aktualiséiert" },
   "alert_willReplyIn": { "message": "wäert äntweren an" },

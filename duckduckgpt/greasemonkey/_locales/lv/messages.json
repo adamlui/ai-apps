@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Atskaņot atbildi" },
   "tooltip_sendReply": { "message": "Sūtīt atbildi" },
   "tooltip_sendRelatedQuery": { "message": "Sūtīt saistīto vaicājumu" },
+  "placeholder_askSomethingElse": { "message": "Pajautāt kaut ko citu" },
   "prompt_updateReplyLang": { "message": "Atjaunināt atbildes valodu" },
   "alert_langUpdated": { "message": "Valoda atjaunināta" },
   "alert_willReplyIn": { "message": "atbildēs pēc" },
