@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Redați răspunsul" },
   "tooltip_sendReply": { "message": "Trimite un răspuns" },
   "tooltip_sendRelatedQuery": { "message": "Trimitere interogare asociată" },
+  "placeholder_askSomethingElse": { "message": "Altceva" },
   "prompt_updateReplyLang": { "message": "Actualizează limba răspunsului" },
   "alert_langUpdated": { "message": "Limbă actualizată" },
   "alert_willReplyIn": { "message": "va răspunde în" },

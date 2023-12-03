@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Ludi respondon" },
   "tooltip_sendReply": { "message": "Sendi  La Respondo" },
   "tooltip_sendRelatedQuery": { "message": "Sendi rilatan peton" },
+  "placeholder_askSomethingElse": { "message": "Demandi ion alian" },
   "prompt_updateReplyLang": { "message": "Ĝisdatigi respondan lingvon" },
   "alert_langUpdated": { "message": "Lingvo ĝisdatigita" },
   "alert_willReplyIn": { "message": "mi respondos en" },

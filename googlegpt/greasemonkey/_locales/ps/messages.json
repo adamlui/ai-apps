@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "ځواب ولوبیږئ" },
   "tooltip_sendReply": { "message": "ځواب وليږه" },
   "tooltip_sendRelatedQuery": { "message": "اړونده پوښتنې ولیږئ" },
+  "placeholder_askSomethingElse": { "message": "بل څه وپوښتئ" },
   "prompt_updateReplyLang": { "message": "د ځواب ژبه تازه کړئ" },
   "alert_langUpdated": { "message": "نوی ژبه تازه کړئ" },
   "alert_willReplyIn": { "message": "به ځواب ورکړي" },

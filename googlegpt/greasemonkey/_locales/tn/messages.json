@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "PLAY ANSWER" },
   "tooltip_sendReply": { "message": "SEND ANSWER" },
   "tooltip_sendRelatedQuery": { "message": "ROMELA DIPOTSO TSE DI AMAN" },
+  "placeholder_askSomethingElse": { "message": "ASK SENGWE SE SENGWE" },
   "prompt_updateReplyLang": { "message": "UPDATE ANSWER LANGUO" },
   "alert_langUpdated": { "message": "Puo e ntshwafaditswe" },
   "alert_willReplyIn": { "message": "o tlile go araba ka" },

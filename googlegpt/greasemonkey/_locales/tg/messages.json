@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Пахш кардани ҷавоб" },
   "tooltip_sendReply": { "message": "Фиристодани ҷавоб" },
   "tooltip_sendRelatedQuery": { "message": "Фиристодани дархости марбута" },
+  "placeholder_askSomethingElse": { "message": "Як чизи дигарро пурсед" },
   "prompt_updateReplyLang": { "message": "Update reply language" },
   "alert_langUpdated": { "message": "Language updated" },
   "alert_willReplyIn": { "message": "will reply in" },

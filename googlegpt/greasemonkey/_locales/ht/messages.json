@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Jwe repons" },
   "tooltip_sendReply": { "message": "Voye repons" },
   "tooltip_sendRelatedQuery": { "message": "Voye demann ki gen rapò" },
+  "placeholder_askSomethingElse": { "message": "Mande yon lòt bagay/Mande yon lòt bagay" },
   "prompt_updateReplyLang": { "message": "MIZAJOU REPONS LANG" },
   "alert_langUpdated": { "message": "Lang mete ajou" },
   "alert_willReplyIn": { "message": "pral reponn nan/répondre à" },

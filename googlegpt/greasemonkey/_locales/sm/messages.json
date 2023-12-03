@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Taaalo Tali" },
   "tooltip_sendReply": { "message": "Auina atu se tali" },
   "tooltip_sendRelatedQuery": { "message": "Auina atu fesili e fesootai i ai" },
+  "placeholder_askSomethingElse": { "message": "Fesili atu i se isi mea" },
   "prompt_updateReplyLang": { "message": "Fa'afouga o le Gagana Tali" },
   "alert_langUpdated": { "message": "Gagana faʻafouina" },
   "alert_willReplyIn": { "message": "o le a ou tali atu i" },

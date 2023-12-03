@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "播放答案" },
   "tooltip_sendReply": { "message": "發送回復" },
   "tooltip_sendRelatedQuery": { "message": "傳送相關查詢" },
+  "placeholder_askSomethingElse": { "message": "問些什麼" },
   "prompt_updateReplyLang": { "message": "更新回覆語言" },
   "alert_langUpdated": { "message": "語言已更新" },
   "alert_willReplyIn": { "message": "將在此回覆" },

@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Spela svar" },
   "tooltip_sendReply": { "message": "Skicka svar" },
   "tooltip_sendRelatedQuery": { "message": "Skicka relaterad fråga" },
+  "placeholder_askSomethingElse": { "message": "Någonting annat" },
   "prompt_updateReplyLang": { "message": "Uppdatera svarsspråk" },
   "alert_langUpdated": { "message": "Språk uppdaterat" },
   "alert_willReplyIn": { "message": "kommer att svara i" },

@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "উত্তর খেলুন" },
   "tooltip_sendReply": { "message": "উত্তর পাঠান" },
   "tooltip_sendRelatedQuery": { "message": "সম্পর্কিত ক্যোয়ারী পাঠান" },
+  "placeholder_askSomethingElse": { "message": "অন্য কিছু জিজ্ঞাসা করুন" },
   "prompt_updateReplyLang": { "message": "উত্তর ভাষা আপডেট করুন" },
   "alert_langUpdated": { "message": "ভাষা আপডেট করা হয়েছে" },
   "alert_willReplyIn": { "message": "উত্তর দেবেন" },

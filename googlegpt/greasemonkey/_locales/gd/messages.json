@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Cluich am freagairt" },
   "tooltip_sendReply": { "message": "Cuir freagairt" },
   "tooltip_sendRelatedQuery": { "message": "Cuir a 'cheist co - cheangailte ris" },
+  "placeholder_askSomethingElse": { "message": "Cuir ceist air rudeigin eile" },
   "prompt_updateReplyLang": { "message": "Ùraich an cànan freagairt" },
   "alert_langUpdated": { "message": "Cànan air ùrachadh" },
   "alert_willReplyIn": { "message": "bidh e a 'freagairt ann an" },

@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Jawaabta ciyaar" },
   "tooltip_sendReply": { "message": "Jawaab u dir" },
   "tooltip_sendRelatedQuery": { "message": "U dir su 'aalaha la xiriira" },
+  "placeholder_askSomethingElse": { "message": "Weydii wax kale" },
   "prompt_updateReplyLang": { "message": "Cusboonaysii Luuqadda Jawaabta" },
   "alert_langUpdated": { "message": "Luuqadda la cusbooneysiiyay" },
   "alert_willReplyIn": { "message": "ka jawaabi doonaa in" },
