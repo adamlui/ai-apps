@@ -33,9 +33,9 @@
     const updateSpan = document.querySelector('span[title*="update" i]')
     updateSpan.addEventListener('click', () => {
         window.close() // popup
-        chrome.runtime.requestUpdateCheck((status, details) => {
+        chrome.runtime.requestUpdateCheck((status, details) =>
             alertToUpdate(status == 'update_available' ? details.version : '')
-    })})
+    )})
 
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]'),
@@ -54,18 +54,18 @@
     // Add Powered by chatgpt.js hover-listener
     const chatGPTjsHostPath = 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/badges/',
           chatGPTjsImg = document.querySelector('.chatgpt-js img')
-    chatGPTjsImg.addEventListener('mouseover', () => {
-        chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png' })
-    chatGPTjsImg.addEventListener('mouseout', () => {
-      chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png' })
+    chatGPTjsImg.addEventListener('mouseover', () =>
+        chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png')
+    chatGPTjsImg.addEventListener('mouseout', () =>
+      chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png')
 
     // Define TOGGLE INIT function
 
     function initToggle(toggleInput, settingKey, notifMsgKey) {
 
         // Init toggle state
-        settings.load(settingKey).then(() => {
-            toggleInput.checked = /disabled/i.test(settingKey) !== config[settingKey] })
+        settings.load(settingKey).then(() =>
+            toggleInput.checked = /disabled/i.test(settingKey) !== config[settingKey])
 
         // Add click-listener to toggle input
         toggleInput.addEventListener('change', () => {
@@ -87,16 +87,16 @@
     // Define FEEDBACK functions
 
     function notify(msg, position) {
-        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs =>
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'notify', msg: msg, position: position || 'bottom-right' })
-    })}
+    )}
     
     function alertToUpdate(version) {
-        chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+        chrome.tabs.query({ active: true, currentWindow: true }, tabs =>
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'alertToUpdate', args: version
-    })})}
+    }))}
 
     // Define SYNC functions
 
@@ -109,11 +109,11 @@
 
         // Updated toolbar icon
         const iconDimensions = [16, 32, 48, 64, 128, 223], iconPaths = {}
-        iconDimensions.forEach(dimension => {
+        iconDimensions.forEach(dimension =>
             iconPaths[dimension] = '../icons/'
                 + (config.extensionDisabled ? 'faded/' : '')
                 + 'icon' + dimension + '.png'
-        })
+        )
         chrome.action.setIcon({ path: iconPaths })
 
         // Update menu contents
