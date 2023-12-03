@@ -40,6 +40,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.09.23&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
 [![](https://images.weserv.nl/?url=https://greasyfork.org/vite/assets/blacklogo96-e0c2c761.png?first-contrib=2023.11.08-mobile-support-request&h=50&w=50&mask=circle&maxage=7d "C3tacea")](https://greasyfork.org/en/users/1213283-c3tacea)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22998537?first-contrib=2023.11.25-related-queries-do-not-show-in-openai-mode-bug-report&h=50&w=50&mask=circle&maxage=7d "@Vozf")](https://github.com/Vozf)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/9349164?first-contrib=2023.11.30-standby-mode-suggestion&h=50&w=50&mask=circle&maxage=7d "@T1mL3arn")](https://github.com/T1mL3arn)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
