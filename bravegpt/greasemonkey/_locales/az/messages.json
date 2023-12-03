@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Alətlər panelində Proksi Rejimini söndürməyi sınayın" },
   "alert_censored": { "message": "Üzr istəyirik, məhsul qaydalarımıza əsasən, sizə bu suala cavab verə bilmərik, başqa sualları sınayın" },
   "alert_maintenance": { "message": "AI sistemi texniki baxışdan keçirilir" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT-yə sorğu göndərin" },
+  "buttonLabel_sendQueryToGPT": { "message": "Axtarış sorğusunu GPT-yə göndərin" },
   "buttonLabel_moreApps": { "message": "Daha çox ChatGPT Proqramları" },
   "buttonLabel_leaveReview": { "message": "Rəy bildirin" },
   "buttonLabel_getSupport": { "message": "Dəstək Əldə Edin" },

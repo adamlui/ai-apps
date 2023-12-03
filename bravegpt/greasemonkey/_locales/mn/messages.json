@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Хэрэгслийн мөрөнд Прокси горимыг унтраахыг оролдоорой" },
   "alert_censored": { "message": "Уучлаарай, манай бүтээгдэхүүний дүрмийн дагуу бид танд энэ асуултад хариулж чадахгүй тул бусад асуултуудыг туршиж үзнэ үү" },
   "alert_maintenance": { "message": "Засвар үйлчилгээний доор хиймэл оюун санааны систем" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT-д асуулга илгээх" },
+  "buttonLabel_sendQueryToGPT": { "message": "GPT руу хайлтын хайлт илгээх" },
   "buttonLabel_moreApps": { "message": "Илүү их чатGPT аппууд" },
   "buttonLabel_leaveReview": { "message": "Сэтгэгдэл үлдээх" },
   "buttonLabel_getSupport": { "message": "Тусламж авах" },

@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Prófaðu að slökkva á milliþjónsham í tækjastikunni" },
   "alert_censored": { "message": "Því miður getum við ekki gefið þér svar við þessari spurningu samkvæmt vörureglum okkar. Vinsamlegast prófaðu aðrar spurningar" },
   "alert_maintenance": { "message": "Gervigreindarkerfi í viðhaldi" },
-  "buttonLabel_sendQueryToGPT": { "message": "Senda fyrirspurn til GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Senda leitarfyrirspurn til GPT" },
   "buttonLabel_moreApps": { "message": "Fleiri ChatGPT öpp" },
   "buttonLabel_leaveReview": { "message": "Skildu eftir umsögn" },
   "buttonLabel_getSupport": { "message": "Fá stuðning" },

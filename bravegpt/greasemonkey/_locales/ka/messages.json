@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Სცადეთ პროქსი რეჟიმის გამორთვა ხელსაწყოთა პანელში" },
   "alert_censored": { "message": "Სამწუხაროდ, ჩვენი პროდუქტის წესების თანახმად, ამ კითხვაზე პასუხს ვერ გაგცემთ. გთხოვთ, სცადოთ სხვა შეკითხვები" },
   "alert_maintenance": { "message": "Მოვლა-პატრონობის პროცესში მყოფი AI სისტემა" },
-  "buttonLabel_sendQueryToGPT": { "message": "Მოთხოვნის GPT ‑ სთვის გაგზავნა" },
+  "buttonLabel_sendQueryToGPT": { "message": "Ძიების მოთხოვნის GPT ‑ სთვის გაგზავნა" },
   "buttonLabel_moreApps": { "message": "Სხვა ChatGPT აპები" },
   "buttonLabel_leaveReview": { "message": "შეფასების დატოვება" },
   "buttonLabel_getSupport": { "message": "მხარდაჭერის მიღება" },

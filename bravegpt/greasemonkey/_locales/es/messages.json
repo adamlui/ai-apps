@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Intente desactivar el modo proxy en la barra de herramientas" },
   "alert_censored": { "message": "Lo sentimos, de acuerdo con las reglas de nuestros productos, no podemos proporcionarle una respuesta a esta pregunta. Por favor, intente con otras preguntas" },
   "alert_maintenance": { "message": "Sistema de IA en mantenimiento" },
-  "buttonLabel_sendQueryToGPT": { "message": "Enviar consulta a GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Enviar consulta de búsqueda a GPT" },
   "buttonLabel_moreApps": { "message": "Más aplicaciones de ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Deja una reseña" },
   "buttonLabel_getSupport": { "message": "Obtener asistencia" },

@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "ព្យាយាមបិទម៉ូដប្រូកស៊ីនៅក្នុងរបារឧបករណ៍" },
   "alert_censored": { "message": "សូមអភ័យទោស យោងទៅតាមច្បាប់ផលិតផលរបស់យើង យើងមិនអាចផ្តល់ឱ្យអ្នកនូវចម្លើយចំពោះសំណួរនេះបានទេ សូមសាកល្បងសំណួរផ្សេងទៀត។" },
   "alert_maintenance": { "message": "ប្រព័ន្ធ AI ដែលស្ថិតនៅក្រោមការថែទាំ" },
-  "buttonLabel_sendQueryToGPT": { "message": "ផ្ញើ សំណួរ ទៅ GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "ផ្ញើសំណួរស្វែងរកទៅ GPT" },
   "buttonLabel_moreApps": { "message": "កម្មវិធី ChatGPT ច្រើនទៀត" },
   "buttonLabel_leaveReview": { "message": "ទុកការពិនិត្យឡើងវិញ" },
   "buttonLabel_getSupport": { "message": "ទទួលបានការគាំទ្រ" },

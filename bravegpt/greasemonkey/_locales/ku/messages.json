@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "بۆ بەکارهێنانی مۆدی پرۆکسی، لە تولباردا ناچالاک بکە" },
   "alert_censored": { "message": "ببورە، بە پارێزراوی ئاگاداریەکانی ماڕەکەیەکمان، ناتوانیم وەڵامی بدۆ بۆ ئەم پرسیارە، تکایە پرسیارێکی تر بەکاربێنە" },
   "alert_maintenance": { "message": "سیستمی هێنانەکەی هوشیارە" },
-  "buttonLabel_sendQueryToGPT": { "message": "پرسیار بنێرە بۆ GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "پرسیاری گەڕان بنێرە بۆ GPT" },
   "buttonLabel_moreApps": { "message": "زیاتری ئاپەکانی ChatGPT" },
   "buttonLabel_leaveReview": { "message": "راي بنێرە" },
   "buttonLabel_getSupport": { "message": "پشتگیری بگرە" },

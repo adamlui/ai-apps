@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Паспрабуйце выключыць рэжым проксі ў панэлі інструментаў" },
   "alert_censored": { "message": "На жаль, у адпаведнасці з нашымі правіламі прадукцыі, мы не можам даць вам адказ на гэтае пытанне, калі ласка, паспрабуйце іншыя пытанні" },
   "alert_maintenance": { "message": "Сістэма штучнага інтэлекту ў абслугоўванні" },
-  "buttonLabel_sendQueryToGPT": { "message": "Даслаць запыт у GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Адправіць пошукавы запыт у GPT" },
   "buttonLabel_moreApps": { "message": "Іншыя праграмы ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Пакінуць водгук" },
   "buttonLabel_getSupport": { "message": "Атрымаць падтрымку" },

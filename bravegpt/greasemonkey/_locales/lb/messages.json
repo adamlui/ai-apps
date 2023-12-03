@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Probéiert de Proxy Modus an der Toolbar auszeschalten" },
   "alert_censored": { "message": "CAA-BHUA CAA-BHUB CAA-BHUC CAA-BHUD CAA-BHUE CAA-BHUF CAA-BHUG CAA-BHUH CAA-BHUI CAA-BHUJ CAA-BHUK CAA-BHUL CAA-BHUM CAA-BHUN CAA-BHUO CAA-BHUP CAA-BHUQ CAA-BHUR CAA-BHUS CAA-BHUT CAA-BHUU CAA-BHUV CAA-BHUW CAA-BHUX CAA-BHUY CAA-BHUZ CAA-BHU0 CAA-BHU1 CAA-BHU2 CAA-BHU3 CAA-BHU4 CAA-BHU5 CAA-BHU6 CAA-BHU7 CAA-BHU8 CAA-BHU9" },
   "alert_maintenance": { "message": "AI System ënner Ënnerhalt" },
-  "buttonLabel_sendQueryToGPT": { "message": "Query op GPT schécken" },
+  "buttonLabel_sendQueryToGPT": { "message": "Suchanfrage an GPT senden" },
   "buttonLabel_moreApps": { "message": "Méi ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten in de" },
   "buttonLabel_getSupport": { "message": "Kréien Support" },

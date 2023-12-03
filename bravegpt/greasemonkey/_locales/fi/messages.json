@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Yritä poistaa välityspalvelintila käytöstä työkalupalkista" },
   "alert_censored": { "message": "Valitettavasti tuotesääntöjemme mukaan emme voi antaa sinulle vastausta tähän kysymykseen, kokeile muita kysymyksiä" },
   "alert_maintenance": { "message": "Tekoälyjärjestelmää huolletaan" },
-  "buttonLabel_sendQueryToGPT": { "message": "Lähetä kysely GPT: lle" },
+  "buttonLabel_sendQueryToGPT": { "message": "Lähetä hakukysely GPT: lle" },
   "buttonLabel_moreApps": { "message": "Lisää ChatGPT-sovelluksia" },
   "buttonLabel_leaveReview": { "message": "Jätä arvostelu" },
   "buttonLabel_getSupport": { "message": "Ota yhteyttä" },

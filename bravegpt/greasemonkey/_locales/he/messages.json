@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "נסה לכבות את מצב ה - Proxy בסרגל הכלים" },
   "alert_censored": { "message": "מצטערים, לפי כללי המוצר שלנו, איננו יכולים לספק לך תשובה לשאלה זו, אנא נסה שאלות אחרות" },
   "alert_maintenance": { "message": "מערכת הבינה המלאכותית בתחזוקה" },
-  "buttonLabel_sendQueryToGPT": { "message": "שליחת שאילתה ל - GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "שליחת שאילתת חיפוש ל - GPT" },
   "buttonLabel_moreApps": { "message": "עוד אפליקציות ChatGPT" },
   "buttonLabel_leaveReview": { "message": "כתבי חוות דעת" },
   "buttonLabel_getSupport": { "message": "קבל תמיכה" },

@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Pokušajte da isključite proksi režim na traci sa alatkama" },
   "alert_censored": { "message": "Žao nam je, prema našim pravilima o proizvodima, ne možemo vam dati odgovor na ovo pitanje, pokušajte sa drugim pitanjima." },
   "alert_maintenance": { "message": "Sistem veštačke inteligencije koji se održava" },
-  "buttonLabel_sendQueryToGPT": { "message": "Pošaljite upit GPT-u" },
+  "buttonLabel_sendQueryToGPT": { "message": "Pošaljite upit za pretragu GPT-u" },
   "buttonLabel_moreApps": { "message": "Još ChatGPT aplikacija" },
   "buttonLabel_leaveReview": { "message": "Ostavite komentar i ocenite turu." },
   "buttonLabel_getSupport": { "message": "Plaćena Podrška " },
