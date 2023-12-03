@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.11.28
+// @version             2023.12.3
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -292,20 +292,21 @@
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     })}
 
-    // Stylize alerts (if style missing or outdated)
-    const alertStyleUpdated = 20231110; // datestamp of last edit for this file's `chatgptAlertStyle` 
-    let chatgptAlertStyle = document.getElementById('chatgpt-alert-override-style'); // try to select existing style
-    if (!chatgptAlertStyle || parseInt(chatgptAlertStyle.getAttribute('last-updated'), 10) < alertStyleUpdated) { // if missing or outdated
-        if (!chatgptAlertStyle) { // outright missing, create/id/attr/append it first
-            chatgptAlertStyle = document.createElement('style'); chatgptAlertStyle.id = 'chatgpt-alert-override-style';
-            chatgptAlertStyle.setAttribute('last-updated', alertStyleUpdated.toString());
-            document.head.appendChild(chatgptAlertStyle);
+    // Add/update tweaks style
+    const tweaksStyleUpdated = 2023123 // datestamp of last edit for this file's `tweaksStyle`
+    let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
+    if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
+        if (!tweaksStyle) { // outright missing, create/id/attr/append it first
+            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
+            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
+            document.head.appendChild(tweaksStyle)
         }
-        chatgptAlertStyle.innerText = (
+        tweaksStyle.innerText = (
             '.chatgpt-modal button {'
               + 'font-size: 0.77rem ; text-transform: uppercase ;'
               + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
           + '.modal-buttons { margin-left: -13px !important }'
+          + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
         )
     }
 
