@@ -3,8 +3,8 @@
 <br>
 
 <picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/beta/with-shadow/darkmode.png">
-    <img width=888 src="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/beta/with-shadow/lightmode.png">
+    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/beta/with-reflection/darkmode.png">
+    <img width=888 src="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/beta/with-reflection/lightmode.png">
 </picture>
 
 <h3>🤖 Bring the magic of ChatGPT to Google Search (powered by GPT-4!)</h3>
