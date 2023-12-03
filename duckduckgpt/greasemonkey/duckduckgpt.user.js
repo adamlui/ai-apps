@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.2.5
+// @version             2023.12.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -198,7 +198,7 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(config.keyPrefix + '_' + key, false))}
+    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(config.keyPrefix + '_' + key, false)) }
     function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
@@ -864,7 +864,7 @@
         if (answer == 'standby') {
             const standbyBtn = document.createElement('button')
             standbyBtn.classList.add('standby-btn')
-            standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send query to GPT'
+            standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
             ddgptDiv.appendChild(standbyBtn)
             standbyBtn.addEventListener('click', () => {
                 ddgptAlert('waitingResponse')
@@ -875,14 +875,14 @@
                                                content: { content_type: 'text', parts: [query] }})
                 getShowReply(convo)
             })
-            return
-        }
 
         // Otherwise create/append ChatGPT response
-        const balloonTipSpan = document.createElement('span'),
-              answerPre = document.createElement('pre')
-        balloonTipSpan.classList.add('balloon-tip') ; answerPre.textContent = answer
-        ddgptDiv.appendChild(balloonTipSpan) ; ddgptDiv.appendChild(answerPre)
+        } else {            
+            var balloonTipSpan = document.createElement('span'),
+                answerPre = document.createElement('pre')
+            balloonTipSpan.classList.add('balloon-tip') ; answerPre.textContent = answer
+            ddgptDiv.appendChild(balloonTipSpan) ; ddgptDiv.appendChild(answerPre)
+        }
 
         // Create/append reply section/elements
         const replySection = document.createElement('section'),
@@ -891,7 +891,8 @@
               chatTextarea = document.createElement('textarea')
         continueChatDiv.classList.add('continue-chat')
         chatTextarea.id = 'ddgpt-chatbar' ; chatTextarea.rows = '1'
-        chatTextarea.placeholder = messages.tooltip_sendReply + '...'
+        chatTextarea.placeholder = ( answer == 'standby' ? messages.placeholder_askSomethingElse || 'Ask something else'
+                                                         : messages.tooltip_sendReply || 'Send reply' ) + '...'
         continueChatDiv.appendChild(chatTextarea)
         replyForm.appendChild(continueChatDiv) ; replySection.appendChild(replyForm)
         ddgptDiv.appendChild(replySection)
@@ -909,21 +910,22 @@
         sendSVG.appendChild(sendSVGpath) ; sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
 
         // Render math
-        renderMathInElement(answerPre, { // eslint-disable-line no-undef
-            delimiters: [
-                { left: '$$', right: '$$', display: true },
-                { left: '$', right: '$', display: false },
-                { left: '\\(', right: '\\)', display: false },
-                { left: '\\[', right: '\\]', display: true },
-                { left: '\\begin{equation}', right: '\\end{equation}', display: true },
-                { left: '\\begin{align}', right: '\\end{align}', display: true },
-                { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
-                { left: '\\begin{gather}', right: '\\end{gather}', display: true },
-                { left: '\\begin{CD}', right: '\\end{CD}', display: true },
-                { left: '\\[', right: '\\]', display: true }
-            ],
-            throwOnError: false
-        })
+        if (answer != 'standby') {
+            renderMathInElement(answerPre, { // eslint-disable-line no-undef
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                    { left: '\\begin{equation}', right: '\\end{equation}', display: true },
+                    { left: '\\begin{align}', right: '\\end{align}', display: true },
+                    { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
+                    { left: '\\begin{gather}', right: '\\end{gather}', display: true },
+                    { left: '\\begin{CD}', right: '\\end{CD}', display: true },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                throwOnError: false
+        })}
 
         // Add reply section listeners
         replyForm.addEventListener('keydown', handleEnter)
@@ -946,7 +948,7 @@
         function handleSubmit(event) {
             event.preventDefault()
             if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
-            const prevReplyTrimmed = ddgptDiv.querySelector('pre').textContent.substring(0, 250 - chatTextarea.value.length),
+            const prevReplyTrimmed = ddgptDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || '',
                   yourReply = `${ chatTextarea.value } (reply in ${ config.replyLanguage })`
             if (!config.proxyAPIenabled) {
                 convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
@@ -1086,7 +1088,7 @@
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
         + '.ddgpt .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
         + '.ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
-        + '.standby-btn { width: 100% ; margin-top: 9px ; padding: 7px 0 ; cursor: pointer ;'
+        + '.standby-btn { width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ;'
             + 'border-radius: 4px ; border: 1px solid #888 }'
         + '.standby-btn:hover { background-color: #fdc14f ; box-shadow: 0 1px 20px #ffd49c ; color: white ; border-color: #ffa500 }'
         + '.ddgpt pre {'
