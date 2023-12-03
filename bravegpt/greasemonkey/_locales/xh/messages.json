@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Dlala impendulo" },
   "tooltip_sendReply": { "message": "Thumela impendulo" },
   "tooltip_sendRelatedQuery": { "message": "Thumela umbuzo onento yokwenza noko" },
+  "placeholder_askSomethingElse": { "message": "Buza enye into" },
   "prompt_updateReplyLang": { "message": "Hlaziya ulwimi lwempendulo" },
   "alert_langUpdated": { "message": "Ulwimi luhlaziyiwe" },
   "alert_willReplyIn": { "message": "iza kuphendula ingekapheli" },

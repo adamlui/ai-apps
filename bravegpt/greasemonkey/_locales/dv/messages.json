@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "ޖަވާބެއް ކުޅެބަލަ" },
   "tooltip_sendReply": { "message": "ޖަވާބު ފޮނުއްވާ" },
   "tooltip_sendRelatedQuery": { "message": "ގުޅުންހުރި ސުވާލު ތައް ފޮނުވުން" },
+  "placeholder_askSomethingElse": { "message": "އެހެން ސުވާލެއް ކުރޭ" },
   "prompt_updateReplyLang": { "message": "ރިޕްލައި ލެންގުއޭޖް އަޕްޑޭޓް ކުރޭ" },
   "alert_langUpdated": { "message": "ބަހުރުވަ އަޕްޑޭޓްކޮށްފި" },
   "alert_willReplyIn": { "message": "ޖަވާބު ދެއްވާނެއެވެ." },

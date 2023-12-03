@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Αναπαραγωγή απάντησης" },
   "tooltip_sendReply": { "message": "Αποστολή απάντησης" },
   "tooltip_sendRelatedQuery": { "message": "Αποστολή σχετικού ερωτήματος" },
+  "placeholder_askSomethingElse": { "message": "Κάτι άλλο" },
   "prompt_updateReplyLang": { "message": "Ενημέρωση γλώσσας απάντησης" },
   "alert_langUpdated": { "message": "Η γλώσσα ενημερώθηκε" },
   "alert_willReplyIn": { "message": "θα απαντήσει σε" },

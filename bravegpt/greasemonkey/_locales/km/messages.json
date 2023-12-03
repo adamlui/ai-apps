@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "ចាក់ចម្លើយ" },
   "tooltip_sendReply": { "message": "ផ្ញើការឆ្លើយតប" },
   "tooltip_sendRelatedQuery": { "message": "ផ្ញើសំណួរដែលពាក់ព័ន្ធ" },
+  "placeholder_askSomethingElse": { "message": "អ្វី​ផ្សេងទៀត" },
   "prompt_updateReplyLang": { "message": "ធ្វើបច្ចុប្បន្នភាពភាសាឆ្លើយតប" },
   "alert_langUpdated": { "message": "បានអាប់ដេតភាសា" },
   "alert_willReplyIn": { "message": "នឹងឆ្លើយតបនៅក្នុង" },

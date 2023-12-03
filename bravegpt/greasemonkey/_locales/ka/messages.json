@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Პასუხის დაკვრა" },
   "tooltip_sendReply": { "message": "გადაუგზავნე" },
   "tooltip_sendRelatedQuery": { "message": "Შესაბამისი მოთხოვნის გაგზავნა" },
+  "placeholder_askSomethingElse": { "message": "Სხვა რამის კითხვა" },
   "prompt_updateReplyLang": { "message": "Განაახლეთ პასუხის ენა" },
   "alert_langUpdated": { "message": "Ენა განახლებულია" },
   "alert_willReplyIn": { "message": "უპასუხებს" },

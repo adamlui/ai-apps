@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Fakafaivaʻi e talí" },
   "tooltip_sendReply": { "message": "ʻAve ʻa e talí" },
   "tooltip_sendRelatedQuery": { "message": "ʻAve ʻa e fehuʻi ʻoku fekauʻaki" },
+  "placeholder_askSomethingElse": { "message": "Kole ha meʻa kehe" },
   "prompt_updateReplyLang": { "message": "Fakatonutonu e tali ʻi he lea fakafonua" },
   "alert_langUpdated": { "message": "Fakatonutonu ʻo e Lea Fakafonuá" },
   "alert_willReplyIn": { "message": "ʻe tali mai ʻi he" },

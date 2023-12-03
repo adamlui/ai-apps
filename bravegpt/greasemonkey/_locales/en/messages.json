@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Play answer" },
   "tooltip_sendReply": { "message": "Send reply" },
   "tooltip_sendRelatedQuery": { "message": "Send related query" },
+  "placeholder_askSomethingElse": { "message": "Ask something else" },
   "prompt_updateReplyLang": { "message": "Update reply language" },
   "alert_langUpdated": { "message": "Language updated" },
   "alert_willReplyIn": { "message": "will reply in" },

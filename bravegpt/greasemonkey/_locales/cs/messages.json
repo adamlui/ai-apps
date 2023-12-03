@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Přehrát odpověď" },
   "tooltip_sendReply": { "message": "Odeslat odpověď" },
   "tooltip_sendRelatedQuery": { "message": "Odeslat související dotaz" },
+  "placeholder_askSomethingElse": { "message": "Jiné" },
   "prompt_updateReplyLang": { "message": "Aktualizovat jazyk odpovědi" },
   "alert_langUpdated": { "message": "Jazyk aktualizován." },
   "alert_willReplyIn": { "message": "odpoví za" },

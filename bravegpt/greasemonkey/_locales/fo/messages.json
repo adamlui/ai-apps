@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Spæl svar" },
   "tooltip_sendReply": { "message": "Sende svar" },
   "tooltip_sendRelatedQuery": { "message": "Send viðkomandi spurning" },
+  "placeholder_askSomethingElse": { "message": "Eg vil spyrja teg um okkurt annað" },
   "prompt_updateReplyLang": { "message": "Uppdatering av málinum" },
   "alert_langUpdated": { "message": "Mál dagførd" },
   "alert_willReplyIn": { "message": "hann svarar í" },

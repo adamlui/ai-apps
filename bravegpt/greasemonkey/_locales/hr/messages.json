@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Reproduciraj odgovor" },
   "tooltip_sendReply": { "message": "Pošalji odgovor" },
   "tooltip_sendRelatedQuery": { "message": "Pošaljite povezani upit" },
+  "placeholder_askSomethingElse": { "message": "Nešto drugo" },
   "prompt_updateReplyLang": { "message": "Ažurirajte jezik odgovora" },
   "alert_langUpdated": { "message": "Jezik je ažuriran" },
   "alert_willReplyIn": { "message": "će odgovoriti u" },

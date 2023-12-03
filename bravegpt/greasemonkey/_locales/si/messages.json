@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "ප් ‍ රතිචාරය වාදනය කරන්න" },
   "tooltip_sendReply": { "message": "ඊ-මේල් මගින් පිලිතුරු දෙන්න" },
   "tooltip_sendRelatedQuery": { "message": "අදාළ විමසුම යවන්න" },
+  "placeholder_askSomethingElse": { "message": "වෙනත් යමක් ඇසුවොත්" },
   "prompt_updateReplyLang": { "message": "ප්‍රතිචාර භාෂාව යාවත්කාලීන කරන්න" },
   "alert_langUpdated": { "message": "භාෂාව යාවත්කාලීන කරන ලදි" },
   "alert_willReplyIn": { "message": "ප් ‍ රතිචාර දක්වනු ඇත" },

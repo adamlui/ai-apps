@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Mängi / Vasta" },
   "tooltip_sendReply": { "message": "Saada vastus" },
   "tooltip_sendRelatedQuery": { "message": "Saada seotud päring" },
+  "placeholder_askSomethingElse": { "message": "Küsi midagi" },
   "prompt_updateReplyLang": { "message": "Uuenda vastuse keelt" },
   "alert_langUpdated": { "message": "Keel uuendatud" },
   "alert_willReplyIn": { "message": "vastab pärast" },

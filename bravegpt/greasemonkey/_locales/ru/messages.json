@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Воспроизвести ответ" },
   "tooltip_sendReply": { "message": "Отправить ответ" },
   "tooltip_sendRelatedQuery": { "message": "Отправить связанный запрос" },
+  "placeholder_askSomethingElse": { "message": "Другое" },
   "prompt_updateReplyLang": { "message": "Обновить язык ответа" },
   "alert_langUpdated": { "message": "Язык обновлен." },
   "alert_willReplyIn": { "message": "Отвечу" },

@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Phát câu trả lời" },
   "tooltip_sendReply": { "message": "Trả lời" },
   "tooltip_sendRelatedQuery": { "message": "Gửi truy vấn liên quan" },
+  "placeholder_askSomethingElse": { "message": "Khác" },
   "prompt_updateReplyLang": { "message": "Cập nhật ngôn ngữ trả lời" },
   "alert_langUpdated": { "message": "Đã cập nhật ngôn ngữ" },
   "alert_willReplyIn": { "message": "sẽ trả lời trong" },

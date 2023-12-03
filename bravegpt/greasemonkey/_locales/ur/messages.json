@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "جواب پلے کریں" },
   "tooltip_sendReply": { "message": "جواب بھیجیں" },
   "tooltip_sendRelatedQuery": { "message": "متعلقہ استفسار بھیجیں" },
+  "placeholder_askSomethingElse": { "message": "کچھ پوچھیں" },
   "prompt_updateReplyLang": { "message": "جواب کی زبان اپ ڈیٹ کریں" },
   "alert_langUpdated": { "message": "زبان کو اپ ڈیٹ کر دیا گیا۔" },
   "alert_willReplyIn": { "message": "میں جواب دیں گے" },

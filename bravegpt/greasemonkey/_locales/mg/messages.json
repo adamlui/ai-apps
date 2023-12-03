@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Mamaky valiny" },
   "tooltip_sendReply": { "message": "Alefaso ny valiny" },
   "tooltip_sendRelatedQuery": { "message": "Handefa fangataham-panazavana mifandraika amin'izany" },
+  "placeholder_askSomethingElse": { "message": "Manontania zavatra hafa" },
   "prompt_updateReplyLang": { "message": "Avao ny fiteny valiana" },
   "alert_langUpdated": { "message": "Teny vaovao" },
   "alert_willReplyIn": { "message": "ny valiny eto" },

@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "یاری وەڵام" },
   "tooltip_sendReply": { "message": "وەڵام بنێرە" },
   "tooltip_sendRelatedQuery": { "message": "پرسیاری پەیوەندیدار بنێرە" },
+  "placeholder_askSomethingElse": { "message": "شتێکی تر بپرسە" },
   "prompt_updateReplyLang": { "message": "زمانی وەڵام نوێ بکەرەوە" },
   "alert_langUpdated": { "message": "زمان نوێکرایەوە" },
   "alert_willReplyIn": { "message": "وەڵام دەدات لە" },

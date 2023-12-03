@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Възпроизвеждане на отговор" },
   "tooltip_sendReply": { "message": "За отговор" },
   "tooltip_sendRelatedQuery": { "message": "Изпращане на свързано запитване" },
+  "placeholder_askSomethingElse": { "message": "Друго" },
   "prompt_updateReplyLang": { "message": "Актуализиране на езика за отговор" },
   "alert_langUpdated": { "message": "Езикът е актуализиран" },
   "alert_willReplyIn": { "message": "ще отговори след" },

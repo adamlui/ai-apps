@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "အဖြေကို ဖွင့်ပါ" },
   "tooltip_sendReply": { "message": "ပြန်စာပို့ရန်" },
   "tooltip_sendRelatedQuery": { "message": "ဆက်စပ်မေးမြန်းချက် ပေးပို့ပါ" },
+  "placeholder_askSomethingElse": { "message": "အခြားတစ်ခုခုကို မေးပါ" },
   "prompt_updateReplyLang": { "message": "ပြန်ကြားချက်ဘာသာစကားကို အပ်ဒိတ်လုပ်ပါ" },
   "alert_langUpdated": { "message": "ဘာသာစကားကို အပ်ဒိတ်လုပ်ထားသည်" },
   "alert_willReplyIn": { "message": "ဖြေကြားပေးပါမည် ။" },

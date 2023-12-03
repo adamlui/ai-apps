@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "ಪ್ಲೇ ಉತ್ತರ" },
   "tooltip_sendReply": { "message": "ಪ್ರತ್ಯುತ್ತರ ಕಳುಹಿಸಿ" },
   "tooltip_sendRelatedQuery": { "message": "ಸಂಬಂಧಿತ ಪ್ರಶ್ನೆಯನ್ನು ಕಳುಹಿಸಿ" },
+  "placeholder_askSomethingElse": { "message": "ಬೇರೆ ಏನನ್ನಾದರೂ ಕೇಳಿ" },
   "prompt_updateReplyLang": { "message": "ಪ್ರತ್ಯುತ್ತರ ಭಾಷೆಯನ್ನು ನವೀಕರಿಸಿ" },
   "alert_langUpdated": { "message": "ಭಾಷೆ ನವೀಕರಿಸಲಾಗಿದೆ" },
   "alert_willReplyIn": { "message": "ರಲ್ಲಿ ಪ್ರತ್ಯುತ್ತರಿಸುತ್ತಾರೆ" },

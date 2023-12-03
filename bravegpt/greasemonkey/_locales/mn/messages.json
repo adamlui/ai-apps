@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "Хариултыг тоглуулах" },
   "tooltip_sendReply": { "message": "Хариулт илгээх" },
   "tooltip_sendRelatedQuery": { "message": "Холбогдох асуулга илгээх" },
+  "placeholder_askSomethingElse": { "message": " " },
   "prompt_updateReplyLang": { "message": "Хариултын хэлийг шинэчлэх" },
   "alert_langUpdated": { "message": "Хэл шинэчилсэн" },
   "alert_willReplyIn": { "message": "хариулт өгөх болно" },

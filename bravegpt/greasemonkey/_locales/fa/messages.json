@@ -19,6 +19,7 @@
   "tooltip_playAnswer": { "message": "پاسخ را پخش کنید" },
   "tooltip_sendReply": { "message": "ارسال پاسخ" },
   "tooltip_sendRelatedQuery": { "message": "ارسال درخواست مرتبط" },
+  "placeholder_askSomethingElse": { "message": "یک چیز دیگر" },
   "prompt_updateReplyLang": { "message": "زبان پاسخ را به روز کنید" },
   "alert_langUpdated": { "message": "بروز رسانی زبان" },
   "alert_willReplyIn": { "message": "در پاسخ خواهد داد" },
