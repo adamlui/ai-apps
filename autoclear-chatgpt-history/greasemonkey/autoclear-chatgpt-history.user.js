@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.3
+// @version             2023.12.3.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -302,7 +302,8 @@
     let menuIDs = [] ; registerMenu() // create browser toolbar menu
 
     // Add/update tweaks style
-    const tweaksStyleUpdated = 2023123 // datestamp of last edit for this file's `tweaksStyle` 
+    const tweaksStyleUpdated = 2023123 // datestamp of last edit for this file's `tweaksStyle`
+    await chatgpt.isLoaded()
     let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
     if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
         if (!tweaksStyle) { // outright missing, create/id/attr/append it first
