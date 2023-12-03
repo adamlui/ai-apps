@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Кӯшиш кунед, ки Ҳолати проксиро дар панели асбобҳо хомӯш кунед" },
   "alert_censored": { "message": "Бубахшед, тибқи қоидаҳои маҳсулот, мо наметавонем ба шумо ба ин савол ҷавоб диҳем, лутфан саволҳои дигарро санҷед" },
   "alert_maintenance": { "message": "Системаи AI дар ҳолати нигоҳдорӣ" },
-  "buttonLabel_sendQueryToGPT": { "message": "Фиристодани дархост ба GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Фиристодани дархости ҷустуҷӯӣ ба GPT" },
   "buttonLabel_moreApps": { "message": "Бештар ChatGPT Барномаҳо" },
   "buttonLabel_leaveReview": { "message": "Баррасиро тарк кунед" },
   "buttonLabel_getSupport": { "message": "Гирифтани Дастгирӣ" },

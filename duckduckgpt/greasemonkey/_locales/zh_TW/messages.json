@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "建議在工具列中關閉 Proxy 模式" },
   "alert_censored": { "message": "很抱歉，根據我們的產品規範，我們無法回覆您的這個問題，請嘗試其他問題" },
   "alert_maintenance": { "message": "AI 系統維護中" },
-  "buttonLabel_sendQueryToGPT": { "message": "將查詢發送到 GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "將搜尋查詢傳送至 GPT" },
   "buttonLabel_moreApps": { "message": "更多 ChatGPT 應用程式" },
   "buttonLabel_leaveReview": { "message": "撰寫評論" },
   "buttonLabel_getSupport": { "message": "得到支持" },

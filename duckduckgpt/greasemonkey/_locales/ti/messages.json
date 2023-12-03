@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Proxy Mode ኣብ toolbar ክትሰርዝ ፈትን" },
   "alert_censored": { "message": "ይቕረታ ፡ ብመሰረት ሕጊ ፍርያትና ፡ መልሲ እዛ ሕቶ እዚኣ ክንህበካ ኣይንኽእልን ኢና ፡ ካልእ ሕቶታት ፈትኖ ።" },
   "alert_maintenance": { "message": "ኣብ ትሕቲ ምዕቃብ ዘሎ ስርዓት AI" },
-  "buttonLabel_sendQueryToGPT": { "message": "ሕቶ ናብ GPT ልኣኽ" },
+  "buttonLabel_sendQueryToGPT": { "message": "ናይ ምርምር ሕቶ ናብ GPT ልኣኽ" },
   "buttonLabel_moreApps": { "message": "ዝያዳ ናይ ChatGPT መተግበሪታት" },
   "buttonLabel_leaveReview": { "message": "ግምገማ ሓዲግካ" },
   "buttonLabel_getSupport": { "message": "ደገፍ ርኸቡ" },

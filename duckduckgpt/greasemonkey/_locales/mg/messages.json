@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Andramo vonoy ny fomba proxy anatin'ny tsipiky ny fitaovana" },
   "alert_censored": { "message": "Miala tsiny, araka ny lalàna ny vokatra, fa tsy afaka manome anao ny valin 'io fanontaniana io, azafady manandrana fanontaniana hafa." },
   "alert_maintenance": { "message": "AI rafitra eo ambany fikojakojana" },
-  "buttonLabel_sendQueryToGPT": { "message": "Alefaso amin'ny GPT ny fangataham-panazavana" },
+  "buttonLabel_sendQueryToGPT": { "message": "Alefaso any amin'ny GPT ny fikarohana" },
   "buttonLabel_moreApps": { "message": "More ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Mametraha fanamarihana" },
   "buttonLabel_getSupport": { "message": "Mitadiava fanampiana" },

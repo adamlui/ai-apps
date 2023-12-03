@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Yesani kuzimitsa Proxy Mode mu toolbar" },
   "alert_censored": { "message": "Pepani, malinga ndi malamulo athu mankhwala, sitingakupatseni yankho la funso ili, chonde yesani mafunso ena." },
   "alert_maintenance": { "message": "AI dongosolo pansi yokonza" },
-  "buttonLabel_sendQueryToGPT": { "message": "Tumizani funso ku GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Tumizani funso lofufuzira ku GPT" },
   "buttonLabel_moreApps": { "message": "Zambiri Mapulogalamu a ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Siyani ndemanga" },
   "buttonLabel_getSupport": { "message": "Pezani Thandizo" },

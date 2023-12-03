@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Provi malŝalti prokurreĝimon en ilobreto" },
   "alert_censored": { "message": "Pardonu, laŭ niaj produktaj reguloj, ni ne povas doni al vi respondon al ĉi tiu demando, bonvolu provi aliajn demandojn" },
   "alert_maintenance": { "message": "Sistemo sub bontenado" },
-  "buttonLabel_sendQueryToGPT": { "message": "Sendi peton al GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Sendi serĉopeton al GPT" },
   "buttonLabel_moreApps": { "message": "Pli ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Lasi revizion" },
   "buttonLabel_getSupport": { "message": "Akiri subtenon" },

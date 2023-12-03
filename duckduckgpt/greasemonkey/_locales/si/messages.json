@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "මෙවලම් තීරුවේ ප් ‍ රොක්සි ප් ‍ රකාරය ක් ‍ රියා විරහිත කිරීමට උත්සාහ කරන්න" },
   "alert_censored": { "message": "කණගාටුයි, අපගේ නිෂ්පාදන නීතිවලට අනුව, අපට ඔබට මෙම ප් රශ්නයට පිළිතුරක් ලබා දිය නොහැක, කරුණාකර වෙනත් ප් රශ්න උත්සාහ කරන්න." },
   "alert_maintenance": { "message": "නඩත්තුව යටතේ AI පද්ධතිය" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT වෙත විමසුමක් යවන්න" },
+  "buttonLabel_sendQueryToGPT": { "message": "සෙවුම් විමසුම GPT වෙත යවන්න" },
   "buttonLabel_moreApps": { "message": "තවත් ChatGPT යෙදුම්" },
   "buttonLabel_leaveReview": { "message": "සමාලෝචනයක් එක් කරන්න" },
   "buttonLabel_getSupport": { "message": "සහාය ලබාගන්න" },

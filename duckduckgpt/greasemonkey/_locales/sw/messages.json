@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "Jaribu kuzima Hali ya Wakala katika upau wa zana" },
   "alert_censored": { "message": "Samahani, kulingana na sheria zetu za bidhaa, hatuwezi kukupa jibu la swali hili, tafadhali jaribu maswali mengine." },
   "alert_maintenance": { "message": "Mfumo wa AI chini ya matengenezo" },
-  "buttonLabel_sendQueryToGPT": { "message": "Tuma swali kwa GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Tuma swali la utafutaji kwa GPT" },
   "buttonLabel_moreApps": { "message": "Programu Zaidi za GumzoGPT" },
   "buttonLabel_leaveReview": { "message": "Acha Tathmini" },
   "buttonLabel_getSupport": { "message": "Pata Usaidizi" },

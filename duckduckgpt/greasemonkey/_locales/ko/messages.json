@@ -42,7 +42,7 @@
   "alert_suggestOpenAI": { "message": "도구 모음에서 프록시 모드를 끄세요" },
   "alert_censored": { "message": "죄송합니다. 제품 규칙에 따라 이 질문에 대한 답변을 드릴 수 없습니다. 다른 질문을 해보세요" },
   "alert_maintenance": { "message": "유지 보수 중인 AI 시스템" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT로 쿼리 보내기" },
+  "buttonLabel_sendQueryToGPT": { "message": "GPT로 검색어 전송" },
   "buttonLabel_moreApps": { "message": "더 많은 ChatGPT 앱" },
   "buttonLabel_leaveReview": { "message": "상품 후기를 남겨주세요" },
   "buttonLabel_getSupport": { "message": "지원받기" },
