@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.2.8
+// @version             2023.12.3
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -661,6 +661,98 @@
         if (!wsbSpan.contains(wsbSVG)) wsbSpan.appendChild(wsbSVG)
     }
 
+    function updateFooterContent() {
+        fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
+            (err, advertisersData) => { if (err) return
+
+                // Init vars
+                let chosenAdvertiser, adSelected
+                const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
+                const currentDate = (() => { // in YYYYMMDD format
+                    const today = new Date(), year = today.getFullYear(),
+                          month = String(today.getMonth() + 1).padStart(2, '0'),
+                          day = String(today.getDate()).padStart(2, '0')
+                    return year + month + day
+                })()
+
+                // Select random, active advertiser
+                for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
+                    if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
+
+                // Fetch a random, active creative
+                if (chosenAdvertiser) {
+                    const campaignsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/'
+                                       + chosenAdvertiser + '/text/campaigns.json'
+                    fetchJSON(campaignsURL, (err, campaignsData) => { if (err) return
+
+                        // Select random, active campaign
+                        for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
+                            const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
+                            if (!campaignIsActive) continue // to next campaign since campaign inactive
+
+                            // Select random active group
+                            for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
+
+                                // Skip disqualified groups
+                                if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
+                                    || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
+                                    || adGroup.active === false // group explicitly disabled
+                                    || adGroup.targetLocations && ( // target locale(s) exist...
+                                        !config.userLocale || !adGroup.targetLocations.some( // ...and user locale is missing or excluded
+                                            loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
+                                ) continue // to next group
+
+                                // Filter out inactive ads, pick random active one
+                                const activeAds = adGroup.ads.filter(ad => ad.active !== false)
+                                if (activeAds.length === 0) continue // to next group since no ads active
+                                const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
+
+                                // Build destination URL
+                                let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
+                                    || campaign.destinationURL || ''
+                                if (destinationURL.includes('http')) { // insert UTM tags
+                                    const [baseURL, queryString] = destinationURL.split('?'),
+                                          queryParams = new URLSearchParams(queryString || '')
+                                    queryParams.set('utm_source', config.appName.toLowerCase())
+                                    queryParams.set('utm_content', 'app_footer_link')
+                                    destinationURL = baseURL + '?' + queryParams.toString()
+                                }
+
+                                // Update footer content
+                                const newFooterContent = destinationURL ? createAnchor(destinationURL)
+                                                                        : document.createElement('span')
+                                footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
+                                footerContent.textContent = chosenAd.text
+                                footerContent.setAttribute('title', chosenAd.tooltip || '')   
+                                adSelected = true ; break
+                            }
+                            if (adSelected) break // out of campaign loop after ad selection
+                }})}
+
+                function shuffle(list) {
+                    let currentIdx = list.length, tempValue, randomIdx
+                    while (currentIdx !== 0) { // elements remain to be shuffled
+                        randomIdx = Math.floor(Math.random() * currentIdx) ; currentIdx -= 1
+                        tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
+                    }
+                    return list
+                }
+
+                function applyBoosts(list) {
+                    let boostedList = [...list],
+                        boostedListLength = boostedList.length - 1 // for applying multiple boosts
+                    list.forEach(([name, data]) => { // check for boosts
+                        if (data.boost) { // boost flagged entry's selection probability
+                            const boostPercent = parseInt(data.boost, 10) / 100,
+                                  entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
+                                                * boostPercent - 1 // reduced to boosted entries needed
+                            for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
+                            boostedListLength += entriesNeeded // update for subsequent calculations
+                    }})
+                    return boostedList
+                }
+    })}
+
     function createSVGpath(attrs) {
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
         for (const attr in attrs) path.setAttributeNS(null, attr, attrs[attr])
@@ -902,100 +994,7 @@
                     updateTweaksStyle() // to shorten <pre> max-height
         }})}
 
-        // Init footer CTA to share feedback
-        let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
-
-        // Check for active text campaigns to replace CTA
-        fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
-            (err, advertisersData) => { if (err) return
-
-                // Init vars
-                let chosenAdvertiser, adSelected
-                const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
-                const currentDate = (() => { // in YYYYMMDD format
-                    const today = new Date(), year = today.getFullYear(),
-                          month = String(today.getMonth() + 1).padStart(2, '0'),
-                          day = String(today.getDate()).padStart(2, '0')
-                    return year + month + day
-                })()
-
-                // Select random, active advertiser
-                for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
-                    if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
-
-                // Fetch a random, active creative
-                if (chosenAdvertiser) {
-                    const campaignsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/'
-                                       + chosenAdvertiser + '/text/campaigns.json'
-                    fetchJSON(campaignsURL, (err, campaignsData) => { if (err) return
-
-                        // Select random, active campaign
-                        for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
-                            const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
-                            if (!campaignIsActive) continue // to next campaign since campaign inactive
-
-                            // Select random active group
-                            for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
-
-                                // Skip disqualified groups
-                                if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
-                                    || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
-                                    || adGroup.active === false // group explicitly disabled
-                                    || adGroup.targetLocations && ( // target locale(s) exist...
-                                        !config.userLocale || !adGroup.targetLocations.some( // ...and user locale is missing or excluded
-                                            loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
-                                ) continue // to next group
-
-                                // Filter out inactive ads, pick random active one
-                                const activeAds = adGroup.ads.filter(ad => ad.active !== false)
-                                if (activeAds.length === 0) continue // to next group since no ads active
-                                const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
-
-                                // Build destination URL
-                                let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
-                                    || campaign.destinationURL || ''
-                                if (destinationURL.includes('http')) { // insert UTM tags
-                                    const [baseURL, queryString] = destinationURL.split('?'),
-                                          queryParams = new URLSearchParams(queryString || '')
-                                    queryParams.set('utm_source', config.appName.toLowerCase())
-                                    queryParams.set('utm_content', 'app_footer_link')
-                                    destinationURL = baseURL + '?' + queryParams.toString()
-                                }
-
-                                // Update footer content
-                                const newFooterContent = destinationURL ? createAnchor(destinationURL)
-                                                                        : document.createElement('span')
-                                footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
-                                footerContent.textContent = chosenAd.text
-                                footerContent.setAttribute('title', chosenAd.tooltip || '')   
-                                adSelected = true ; break
-                            }
-                            if (adSelected) break // out of campaign loop after ad selection
-                }})}
-
-                function shuffle(list) {
-                    let currentIdx = list.length, tempValue, randomIdx
-                    while (currentIdx !== 0) { // elements remain to be shuffled
-                        randomIdx = Math.floor(Math.random() * currentIdx) ; currentIdx -= 1
-                        tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
-                    }
-                    return list
-                }
-
-                function applyBoosts(list) {
-                    let boostedList = [...list],
-                        boostedListLength = boostedList.length - 1 // for applying multiple boosts
-                    list.forEach(([name, data]) => { // check for boosts
-                        if (data.boost) { // boost flagged entry's selection probability
-                            const boostPercent = parseInt(data.boost, 10) / 100,
-                                  entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
-                                                * boostPercent - 1 // reduced to boosted entries needed
-                            for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
-                            boostedListLength += entriesNeeded // update for subsequent calculations
-                    }})
-                    return boostedList
-                }
-        })
+        updateFooterContent()
 
         function responseType(api) {
             return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
@@ -1156,7 +1155,7 @@
         if (answer == 'standby') {
             const standbyBtn = document.createElement('button')
             standbyBtn.classList.add('standby-btn')
-            standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send query to GPT'
+            standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
             googleGPTdiv.appendChild(standbyBtn)
             standbyBtn.addEventListener('click', () => {
                 googleGPTalert('waitingResponse')
@@ -1167,20 +1166,20 @@
                                                content: { content_type: 'text', parts: [query] }})
                 getShowReply(convo)
             })
-            return
-        }
 
         // Otherwise create/append ChatGPT response
-        const balloonTipSpan = document.createElement('span'),
-              answerPre = document.createElement('pre')
-        balloonTipSpan.classList.add('balloon-tip')
-        balloonTipSpan.style.right = isMobile ? '7.02em' : chatgpt.browser.isFirefox() ? '13.55em' : '6.85em'
-        balloonTipSpan.style.top = (
-            chatgpt.browser.isFirefox() ? ( hasSidebar ? '7px' : '5px' )
-                                        : ( hasSidebar ? '4px' : '2px' ))
-        answerPre.textContent = answer
-        googleGPTdiv.appendChild(balloonTipSpan) ; googleGPTdiv.appendChild(answerPre)
-        updateTweaksStyle() // in case sticky mode on
+        } else {
+            var balloonTipSpan = document.createElement('span'),
+                answerPre = document.createElement('pre')
+            balloonTipSpan.classList.add('balloon-tip')
+            balloonTipSpan.style.right = isMobile ? '7.02em' : chatgpt.browser.isFirefox() ? '13.55em' : '6.85em'
+            balloonTipSpan.style.top = (
+                chatgpt.browser.isFirefox() ? ( hasSidebar ? '7px' : '5px' )
+                                            : ( hasSidebar ? '4px' : '2px' ))
+            answerPre.textContent = answer
+            googleGPTdiv.appendChild(balloonTipSpan) ; googleGPTdiv.appendChild(answerPre)
+            updateTweaksStyle() // in case sticky mode on
+        }
 
         // Create/append reply section/elements
         const replySection = document.createElement('section'),
@@ -1189,7 +1188,8 @@
               chatTextarea = document.createElement('textarea')
         continueChatDiv.classList.add('continue-chat')
         chatTextarea.id = 'googlegpt-chatbar' ; chatTextarea.rows = '1'
-        chatTextarea.placeholder = ( messages.tooltip_sendReply || 'Send reply' ) + '...'
+        chatTextarea.placeholder = ( answer == 'standby' ? messages.placeholder_askSomethingElse || 'Ask something else'
+                                                         : messages.tooltip_sendReply || 'Send reply' ) + '...'
         chatTextarea.style.width = hasSidebar ? '88.8%' : '89.5%'
         continueChatDiv.appendChild(chatTextarea)
         replyForm.appendChild(continueChatDiv) ; replySection.appendChild(replyForm)
@@ -1215,21 +1215,22 @@
         googleGPTfooter.appendChild(footerContent) ; googleGPTdiv.appendChild(googleGPTfooter)
 
         // Render math
-        renderMathInElement(answerPre, { // eslint-disable-line no-undef
-            delimiters: [
-                { left: '$$', right: '$$', display: true },
-                { left: '$', right: '$', display: false },
-                { left: '\\(', right: '\\)', display: false },
-                { left: '\\[', right: '\\]', display: true },
-                { left: '\\begin{equation}', right: '\\end{equation}', display: true },
-                { left: '\\begin{align}', right: '\\end{align}', display: true },
-                { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
-                { left: '\\begin{gather}', right: '\\end{gather}', display: true },
-                { left: '\\begin{CD}', right: '\\end{CD}', display: true },
-                { left: '\\[', right: '\\]', display: true }
-            ],
-            throwOnError: false
-        })
+        if (answer != 'standby') {
+            renderMathInElement(answerPre, { // eslint-disable-line no-undef
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },
+                    { left: '\\[', right: '\\]', display: true },
+                    { left: '\\begin{equation}', right: '\\end{equation}', display: true },
+                    { left: '\\begin{align}', right: '\\end{align}', display: true },
+                    { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
+                    { left: '\\begin{gather}', right: '\\end{gather}', display: true },
+                    { left: '\\begin{CD}', right: '\\end{CD}', display: true },
+                    { left: '\\[', right: '\\]', display: true }
+                ],
+                throwOnError: false
+        })}
 
         // Add reply section listeners
         replyForm.addEventListener('keydown', handleEnter)
@@ -1252,7 +1253,7 @@
         function handleSubmit(event) {
             event.preventDefault()
             if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
-            const prevReplyTrimmed = googleGPTdiv.querySelector('pre').textContent.substring(0, 250 - chatTextarea.value.length),
+            const prevReplyTrimmed = googleGPTdiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || '',
                   yourReply = `${ chatTextarea.value } (reply in ${ config.replyLanguage })`
             if (!config.proxyAPIenabled) {
                 convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
@@ -1401,7 +1402,7 @@
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
         + '.googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
         + '.googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
-        + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin: 20px 0 18px ;'
+        + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin-top: 20px ;'
             + ( scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
             + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' }}`
         + '.standby-btn:hover { background-color: #9cdaff ; color: #3d5d71 ; border-color: #82b7d7 ;'
@@ -1491,11 +1492,14 @@
     if (document.querySelector('#newHostContainer')) googleGPTdiv.style.marginLeft = '20px'
     setTimeout(() => googleGPTdiv.classList.add('active'), 100) // fade in
 
+    // Init footer CTA to share feedback
+    let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
+
     // Show standby mode or get answer
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // if prefix required but not present
         || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // or suffix required but not present
-    ) googleGPTshow('standby')
+    ) { updateFooterContent() ; googleGPTshow('standby', footerContent) }
     else {
         googleGPTalert('waitingResponse')
         const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
