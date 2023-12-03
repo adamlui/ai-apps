@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Saiatu tresna-barrako proxy modua desaktibatzen" },
   "alert_censored": { "message": "Sentitzen dugu, gure produktuen arauen arabera, ezin dizugu galdera honi erantzunik eman, saiatu beste galdera batzuk." },
   "alert_maintenance": { "message": "AI sistema mantentzen" },
-  "buttonLabel_sendQueryToGPT": { "message": "Bidali kontsulta GPTra" },
+  "buttonLabel_sendQueryToGPT": { "message": "Bidali bilaketa-kontsulta GPT-ra" },
   "buttonLabel_moreApps": { "message": "ChatGPT aplikazio gehiago" },
   "buttonLabel_leaveReview": { "message": "Utzi Iritzia" },
   "buttonLabel_getSupport": { "message": "Laguntza lortu" },

@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Coba nonaktifkan Mode Proxy di bilah alat" },
   "alert_censored": { "message": "Maaf, sesuai dengan aturan produk kami, kami tidak dapat memberi Anda jawaban atas pertanyaan ini, silakan coba pertanyaan lain." },
   "alert_maintenance": { "message": "Sistem AI dalam pemeliharaan" },
-  "buttonLabel_sendQueryToGPT": { "message": "Kirim kueri ke GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Kirim permintaan pencarian ke GPT" },
   "buttonLabel_moreApps": { "message": "Aplikasi ChatGPT Lainnya" },
   "buttonLabel_leaveReview": { "message": "Buat Ulasan" },
   "buttonLabel_getSupport": { "message": "Mendapat dukungan" },

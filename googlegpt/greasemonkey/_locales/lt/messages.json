@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Pabandykite išjungti tarpinio serverio režimą įrankių juostoje" },
   "alert_censored": { "message": "Atsiprašome, pagal mūsų produktų taisykles negalime jums pateikti atsakymo į šį klausimą. Pabandykite atsakyti į kitus klausimus." },
   "alert_maintenance": { "message": "Atliekama dirbtinio intelekto sistemos techninė priežiūra" },
-  "buttonLabel_sendQueryToGPT": { "message": "Siųsti užklausą GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Siųsti paieškos užklausą GPT" },
   "buttonLabel_moreApps": { "message": "Daugiau „ChatGPT“ programų" },
   "buttonLabel_leaveReview": { "message": "Palikite apžvalgą" },
   "buttonLabel_getSupport": { "message": "Gauti palaikymą" },

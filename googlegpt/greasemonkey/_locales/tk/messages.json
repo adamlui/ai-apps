@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Esbap zolakda Proxy Mode-i söndürmäge synanyň" },
   "alert_censored": { "message": "Biz bu soraga jogap berip bilmeýäris, başga soraglary sorap görüň." },
   "alert_maintenance": { "message": "Garawul diňi we Garawul diňi" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT-de soragy iber" },
+  "buttonLabel_sendQueryToGPT": { "message": "GPT-de gözleg soragyny iber" },
   "buttonLabel_moreApps": { "message": "ÇatGPT Ulymalary" },
   "buttonLabel_leaveReview": { "message": "Çykyş goý" },
   "buttonLabel_getSupport": { "message": "Ýolbaşçylyk maslahaty" },

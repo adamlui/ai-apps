@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Încercați să dezactivați modul Proxy din bara de instrumente" },
   "alert_censored": { "message": "Ne pare rău, în conformitate cu regulile noastre privind produsele, nu vă putem oferi un răspuns la această întrebare, vă rugăm să încercați alte întrebări." },
   "alert_maintenance": { "message": "Sistem AI în curs de întreținere" },
-  "buttonLabel_sendQueryToGPT": { "message": "Trimitere interogare către GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Trimiteți interogarea de căutare către GPT" },
   "buttonLabel_moreApps": { "message": "Mai multe aplicații ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Lasă-ne o recenzie" },
   "buttonLabel_getSupport": { "message": "Primește asistență" },

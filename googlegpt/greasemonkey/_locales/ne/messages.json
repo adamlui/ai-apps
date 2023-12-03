@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "उपकरणपट्टीमा प्रोक्सी मोड बन्द गर्ने प्रयास गर्नुहोस्" },
   "alert_censored": { "message": "माफ गर्नुहोस्, हाम्रो उत्पादन नियमहरू अनुसार, हामी तपाईंलाई यस प्रश्नको उत्तर प्रदान गर्न सक्दैनौं, कृपया अन्य प्रश्नहरू प्रयास गर्नुहोस् ।" },
   "alert_maintenance": { "message": "मर्मतसम्भार अन्तर्गतको AI प्रणाली" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT मा क्वेरी पठाउनुहोस्" },
+  "buttonLabel_sendQueryToGPT": { "message": "GPT मा खोजी क्वेरी पठाउनुहोस्" },
   "buttonLabel_moreApps": { "message": "थप ChatGPT अनुप्रयोगहरू" },
   "buttonLabel_leaveReview": { "message": "समीक्षा छोड्नुहोस्" },
   "buttonLabel_getSupport": { "message": "सहायता प्राप्त गर्नुहोस्" },

@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Probeer de proxymodus in de werkbalk uit te schakelen" },
   "alert_censored": { "message": "Volgens onze productregels kunnen we je geen antwoord geven op deze vraag. Probeer andere vragen." },
   "alert_maintenance": { "message": "AI-systeem in onderhoud" },
-  "buttonLabel_sendQueryToGPT": { "message": "Vraag verzenden naar GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Stuur zoekopdracht naar GPT" },
   "buttonLabel_moreApps": { "message": "Meer ChatGPT-apps" },
   "buttonLabel_leaveReview": { "message": "Recensie achterlaten" },
   "buttonLabel_getSupport": { "message": "Neem contact op" },

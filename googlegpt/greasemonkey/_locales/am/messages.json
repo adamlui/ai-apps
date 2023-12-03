@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "መሣሪያ አሞሌ ውስጥ Proxy ሁነታ ማጥፋት ይሞክሩ" },
   "alert_censored": { "message": "ይቅርታ ፣ በምርታችን ህጎች መሠረት ለዚህ ጥያቄ መልስ ልንሰጥዎ አንችልም ፣ እባክዎ ሌሎች ጥያቄዎችን ይሞክሩ ።" },
   "alert_maintenance": { "message": "AI ስርዓት በጥገና ስር" },
-  "buttonLabel_sendQueryToGPT": { "message": "ጥያቄን ወደ ጂፒቲ ይላኩ" },
+  "buttonLabel_sendQueryToGPT": { "message": "የፍለጋ ጥያቄን ወደ ጂፒቲ ይላኩ" },
   "buttonLabel_moreApps": { "message": "ተጨማሪ ChatGPT መተግበሪያዎች" },
   "buttonLabel_leaveReview": { "message": "ግምገማ ይተው" },
   "buttonLabel_getSupport": { "message": "ድጋፍ ያግኙ" },

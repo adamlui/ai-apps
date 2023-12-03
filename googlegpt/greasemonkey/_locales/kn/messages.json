@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "ಟೂಲ್ ‌ ಬಾರ್ ‌ ನಲ್ಲಿ ಪ್ರಾಕ್ಸಿ ಮೋಡ್ ಆಫ್ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಿ" },
   "alert_censored": { "message": "ಕ್ಷಮಿಸಿ, ನಮ್ಮ ಉತ್ಪನ್ನ ನಿಯಮಗಳ ಪ್ರಕಾರ, ಈ ಪ್ರಶ್ನೆಗೆ ನಾವು ನಿಮಗೆ ಉತ್ತರವನ್ನು ನೀಡಲು ಸಾಧ್ಯವಿಲ್ಲ, ದಯವಿಟ್ಟು ಇತರ ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರಯತ್ನಿಸಿ." },
   "alert_maintenance": { "message": "ನಿರ್ವಹಣೆಯಲ್ಲಿರುವ AI ವ್ಯವಸ್ಥೆ" },
-  "buttonLabel_sendQueryToGPT": { "message": "GPT ಗೆ ಪ್ರಶ್ನೆಯನ್ನು ಕಳುಹಿಸಿ" },
+  "buttonLabel_sendQueryToGPT": { "message": "ಹುಡುಕಾಟ ಪ್ರಶ್ನೆಯನ್ನು GPT ಗೆ ಕಳುಹಿಸಿ" },
   "buttonLabel_moreApps": { "message": "ಇನ್ನಷ್ಟು ChatGPT ಅಪ್ಲಿಕೇಶನ್ ‌ ಗಳು" },
   "buttonLabel_leaveReview": { "message": "ವಿಮರ್ಶೆಯನ್ನು ಬಿಡಿ" },
   "buttonLabel_getSupport": { "message": "ಬೆಂಬಲ ಪಡೆಯಿರಿ" },

@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Опитайте да изключите режима на прокси сървър в лентата с инструменти" },
   "alert_censored": { "message": "За съжаление, съгласно нашите продуктови правила не можем да ви предоставим отговор на този въпрос. Моля, опитайте с други въпроси" },
   "alert_maintenance": { "message": "Система с изкуствен интелект в процес на поддръжка" },
-  "buttonLabel_sendQueryToGPT": { "message": "Изпращане на запитване до GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Изпращане на заявка за търсене до GPT" },
   "buttonLabel_moreApps": { "message": "Още приложения за ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Оставете коментар" },
   "buttonLabel_getSupport": { "message": "Вземи поддръжка" },

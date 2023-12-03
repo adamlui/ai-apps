@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "حاول إيقاف تشغيل وضع الوكيل في شريط الأدوات" },
   "alert_censored": { "message": "عذرًا، وفقًا لقواعد منتجاتنا، لا يمكننا تزويدك بإجابة على هذا السؤال، يرجى تجربة أسئلة أخرى." },
   "alert_maintenance": { "message": "النظام تحت الصيانة." },
-  "buttonLabel_sendQueryToGPT": { "message": "إرسال استعلام إلى GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "إرسال استعلام البحث إلى GPT" },
   "buttonLabel_moreApps": { "message": "المزيد من تطبيقات ChatGPT" },
   "buttonLabel_leaveReview": { "message": "اترك تقييماً" },
   "buttonLabel_getSupport": { "message": "احصل على الدعم" },

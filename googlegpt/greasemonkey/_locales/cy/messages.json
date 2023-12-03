@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Ceisiwch ddiffodd y modd dirprwy yn y bar offer" },
   "alert_censored": { "message": "Mae'n ddrwg gennym, yn unol â'n rheolau cynnyrch, ni allwn roi ateb i chi i'r cwestiwn hwn, rhowch gynnig ar gwestiynau eraill." },
   "alert_maintenance": { "message": "Systemau cynnal a chadw dan oruchwyliaeth" },
-  "buttonLabel_sendQueryToGPT": { "message": "Anfon ymholiad at GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Anfon ymholiad chwilio at GPT" },
   "buttonLabel_moreApps": { "message": "Mwy o ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Gadael Adolygiad" },
   "buttonLabel_getSupport": { "message": "Cael cymorth" },

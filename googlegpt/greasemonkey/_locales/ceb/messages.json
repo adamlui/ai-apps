@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Sulayi ang pagbalhin sa Proxy Mode sa toolbar" },
   "alert_censored": { "message": "Pasensya, sumala sa among mga lagda sa produkto, dili kami makahatag kanimo usa ka tubag sa kini nga pangutana, palihug sulayi ang ubang mga pangutana." },
   "alert_maintenance": { "message": "Ssangyong Çýkma Çýk" },
-  "buttonLabel_sendQueryToGPT": { "message": "Magpadala ng query sa GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Ipadala ang query sa pagpangita sa GPT" },
   "buttonLabel_moreApps": { "message": "Dugang nga ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Magbilin usa ka Pagrepaso" },
   "buttonLabel_getSupport": { "message": "Kuhaa ang Suporta" },

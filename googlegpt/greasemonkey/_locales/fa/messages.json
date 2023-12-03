@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "سعی کنید حالت پروکسی را در نوار ابزار خاموش کنید" },
   "alert_censored": { "message": "با عرض پوزش، با توجه به قوانین محصول ما، ما نمی توانیم پاسخی برای این سوال به شما ارائه دهیم، لطفا سوالات دیگر را امتحان کنید." },
   "alert_maintenance": { "message": "سیستم هوش مصنوعی در حال تعمیر و نگهداری" },
-  "buttonLabel_sendQueryToGPT": { "message": "ارسال درخواست به GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "درخواست جستجو را به GPT ارسال کنید" },
   "buttonLabel_moreApps": { "message": "برنامه های بیشتر ChatGPT" },
   "buttonLabel_leaveReview": { "message": "نظر بدهید" },
   "buttonLabel_getSupport": { "message": "پشتیبانی" },

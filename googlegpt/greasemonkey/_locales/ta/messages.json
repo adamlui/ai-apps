@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "கருவிப்பட்டியில் ப்ராக்ஸி பயன்முறையை அணைக்க முயற்சிக்கவும்" },
   "alert_censored": { "message": "மன்னிக்கவும், எங்கள் தயாரிப்பு விதிகளின்படி, இந்தக் கேள்விக்கான பதிலை எங்களால் உங்களுக்கு வழங்க முடியாது, தயவுசெய்து பிற கேள்விகளை முயற்சிக்கவும்." },
   "alert_maintenance": { "message": "பராமரிப்பில் உள்ள AI அமைப்பு" },
-  "buttonLabel_sendQueryToGPT": { "message": "வினவலை GPT க்கு அனுப்பவும்" },
+  "buttonLabel_sendQueryToGPT": { "message": "தேடல் வினவலை GPT க்கு அனுப்பவும்" },
   "buttonLabel_moreApps": { "message": "மேலும் ChatGPT பயன்பாடுகள்" },
   "buttonLabel_leaveReview": { "message": "ஒரு மதிப்பாய்வை விடுங்கள்" },
   "buttonLabel_getSupport": { "message": "ஆதரவைப் பெறுக" },

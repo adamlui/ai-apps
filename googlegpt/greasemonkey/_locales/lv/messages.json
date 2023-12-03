@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Mēģiniet izslēgt starpniekservera režīmu rīkjoslā" },
   "alert_censored": { "message": "Diemžēl saskaņā ar mūsu produktu noteikumiem mēs nevaram sniegt jums atbildi uz šo jautājumu. Lūdzu, mēģiniet uzdot citus jautājumus" },
   "alert_maintenance": { "message": "Tiek veikta mākslīgā intelekta sistēmas apkope" },
-  "buttonLabel_sendQueryToGPT": { "message": "Sūtīt vaicājumu GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Sūtīt meklēšanas vaicājumu GPT" },
   "buttonLabel_moreApps": { "message": "Vairāk ChatGPT lietotņu" },
   "buttonLabel_leaveReview": { "message": "Atstāt atsauksmi" },
   "buttonLabel_getSupport": { "message": "Saņemt atbalstu" },

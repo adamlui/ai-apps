@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Isku day inaad ka baxdo Proxy Mode ee toolbar" },
   "alert_censored": { "message": "Waan ka xumahay, sida ku xusan xeerarkayaga wax soo saarka, ma ku siin karno jawaab su 'aashan, fadlan isku day su' aalo kale." },
   "alert_maintenance": { "message": "Nidaamka AI ee ku hoos jira dayactirka" },
-  "buttonLabel_sendQueryToGPT": { "message": "U dir su 'aalaha GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "U dir su 'aalaha raadinta GPT" },
   "buttonLabel_moreApps": { "message": "Codsiyada ChatGPT dheeraad ah" },
   "buttonLabel_leaveReview": { "message": "Ka tag dib u eegis" },
   "buttonLabel_getSupport": { "message": "Tageero raadso" },

@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Ɛreḍ ad tekkseḍ amiḍan n Proxy deg ufaylu n ufaylu" },
   "alert_censored": { "message": "Suref-aɣ, akken iwata, ur nezmir ara ad ak-nerr tiririt ɣef tuttra-yagi, ma ulac aɣilif ɛreḍ isteqsiyen nniḍen." },
   "alert_maintenance": { "message": "A la recherche d 'un plan cul" },
-  "buttonLabel_sendQueryToGPT": { "message": "Azen asteqsi i GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Azen asteqsi n unadi ɣer GPT" },
   "buttonLabel_moreApps": { "message": "Ugar n iseqdacen ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Eǧǧ amagrad" },
   "buttonLabel_getSupport": { "message": "Awi tallalt" },

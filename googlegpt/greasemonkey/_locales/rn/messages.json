@@ -41,7 +41,7 @@
   "alert_suggestOpenAI": { "message": "Gerageza guhinduranya uburyo bwa Proxy muri Toolbar" },
   "alert_censored": { "message": "Turababajwe n'uko tudashobora kuguha inyishu y'iki kibazo, turakwinginze ugerageze ibindi bibazo." },
   "alert_maintenance": { "message": "Sisitemu ya AI iri mu kubungabunga" },
-  "buttonLabel_sendQueryToGPT": { "message": "Kurungika ibibazo kuri GPT" },
+  "buttonLabel_sendQueryToGPT": { "message": "Rungika Rungika Kurondera ibibazo kuri GPT" },
   "buttonLabel_moreApps": { "message": "Izindi porogaramu za ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Leave a Review None None" },
   "buttonLabel_getSupport": { "message": "Nurondere imfashanyo" },
