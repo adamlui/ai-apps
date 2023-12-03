@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.1
+// @version             2023.12.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -298,7 +298,7 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(`${ config.keyPrefix }_${ site }_${ key }`, false) })}
+    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(`${ config.keyPrefix }_${ site }_${ key }`, false)) }
     function saveSetting(key, value) { GM_setValue(`${ config.keyPrefix }_${ site }_${ key }`, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
@@ -591,7 +591,7 @@
         // Update SVG elements
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
         const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
-        svgElems.forEach(elem => { buttonSVG.appendChild(elem) })
+        svgElems.forEach(elem => buttonSVG.appendChild(elem))
         if (!button.contains(buttonSVG)) button.appendChild(buttonSVG)
     }
 
@@ -660,8 +660,7 @@
                 alert(messages.alert_pressF11 || 'Press F11 to exit full screen',
                     ( messages.alert_f11reason || 'F11 was used to enter full screen, and due to browser security reasons,'
                         + 'the same key must be used to exit it' ) + '.')
-            document.exitFullscreen().catch(err => {
-                console.error(config.appSymbol + ' >> Failed to exit fullscreen', err) })
+            document.exitFullscreen().catch(err => console.error(config.appSymbol + ' >> Failed to exit fullscreen', err))
         }
     }
 
@@ -687,9 +686,9 @@
                                              : chatgpt.isFullScreen() )
         saveSetting(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
         if (mode == 'fullWindow') syncFullerWindows(state)
-        if (!config.notifDisabled) { // notify synced state
-            notify(`${ messages['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`) }
-        config.modeSynced = true ; setTimeout(() => { config.modeSynced = false }, 100) // prevent repetition
+        if (!config.notifDisabled) // notify synced state
+            notify(`${ messages['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
+        config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
     }
 
     function syncFullerWindows(fullWindowState) {
@@ -741,7 +740,7 @@
     else if (site == 'aivvm') {
         await new Promise(resolve => { const intervalId = setInterval(() => {
             if (document.querySelector('svg[class*="send"]')) {
-                clearInterval(intervalId) ; setTimeout(() => { resolve() }, 500)
+                clearInterval(intervalId) ; setTimeout(() => resolve(), 500)
     }})})}
 
     // Create browser toolbar menu or disable script if extension installed
@@ -794,7 +793,7 @@
     tooltipDiv.classList.add('toggle-tooltip')
     const tooltipStyle = document.createElement('style')
     tooltipStyle.innerText = '.toggle-tooltip {'
-        + 'background: black ; padding: 5px ; border-radius: 6px ; border: 1px solid white ;' // bubble style
+        + 'background: black ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.7rem ; color: white ; ' // font style
         + 'position: absolute ; bottom: 50px ; ' // v-position
         + 'opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 ; ' // visibility
@@ -906,9 +905,9 @@
             if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
                 if (!config.modeSynced) syncMode('fullWindow')
         })
-        setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
+        setTimeout(() => // delay half-sec before observing to avoid repeated toggles from nodeObserver
             sidebarObserver.observe(document.body, {
-                subtree: true, childList: false, attributes: true })}, 500)
+                subtree: true, childList: false, attributes: true }), 500)
     }
 
     // Add full screen listeners to update setting/button + set F11 flag

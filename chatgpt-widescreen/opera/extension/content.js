@@ -56,7 +56,7 @@
     tooltipDiv.classList.add('toggle-tooltip')
     const tooltipStyle = document.createElement('style')
     tooltipStyle.innerText = '.toggle-tooltip {'
-        + 'background: black ; padding: 5px ; border-radius: 6px ; border: 1px solid white ;' // bubble style
+        + 'background: black ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.7rem ; color: white ; ' // font style
         + 'position: absolute ; bottom: 50px ; ' // v-position
         + 'opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 ; ' // visibility
@@ -172,9 +172,9 @@
                     if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
                         if (!config.modeSynced) syncMode('fullWindow')
         }})})
-        setTimeout(() => { // delay half-sec before observing to avoid repeated toggles from nodeObserver
+        setTimeout(() => // delay half-sec before observing to avoid repeated toggles from nodeObserver
             sidebarObserver.observe(document.body, {
-                subtree: true, childList: false, attributes: true })}, 500)
+                subtree: true, childList: false, attributes: true }), 500)
     }
 
     // Add full screen listeners to update setting/button + set F11 flag
@@ -291,7 +291,7 @@
         // Update SVG elements
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
         const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
-        svgElems.forEach(elem => { buttonSVG.appendChild(elem) })
+        svgElems.forEach(elem => buttonSVG.appendChild(elem))
 
         // Update SVG
         if (!button.contains(buttonSVG)) button.appendChild(buttonSVG)
@@ -346,8 +346,7 @@
         } else if (mode == 'fullScreen') {
             if (config.f11)
                 alert(chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
-            document.exitFullscreen().catch(err => {
-                console.error(config.appSymbol + ' >> Failed to exit fullscreen', err) })
+            document.exitFullscreen().catch(err => console.error(config.appSymbol + ' >> Failed to exit fullscreen', err))
         }
     }
 
@@ -369,10 +368,10 @@
         settings.save(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
         if (mode == 'fullWindow') syncFullerWindows(state)
         settings.load('notifDisabled').then(() => {
-            if (!config.notifDisabled) { // notify synced state
+            if (!config.notifDisabled) // notify synced state
                 notify(`${ chrome.i18n.getMessage('mode_' + mode) } ${ state ? 'ON' : 'OFF' }`)
-        }})
-        config.modeSynced = true ; setTimeout(() => { config.modeSynced = false }, 100) // prevent repetition
+        })
+        config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
     }
 
     function syncFullerWindows(fullWindowState) {
