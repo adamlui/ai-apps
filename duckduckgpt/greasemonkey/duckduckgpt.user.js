@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.3
+// @version             2023.12.3.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -664,7 +664,8 @@
 
         // Get/show related queries
         if (!config.rqDisabled) {
-            getRelatedQueries(convo[convo.length - 1].content).then(relatedQueries => {
+            const lastQuery = convo[convo.length - 1]
+            getRelatedQueries(config.proxyAPIenabled ? lastQuery.content : lastQuery.content.parts[0]).then(relatedQueries => {
                 if (relatedQueries && ddgptDiv.querySelector('textarea')) {
 
                     // Create/classify/append parent div
