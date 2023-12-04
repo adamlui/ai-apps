@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.3
+// @version             2023.12.3.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -235,7 +235,7 @@
 // @compatible          qq
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@91ddac7665eed132c3ac63b35db6b8fffffbc893/dist/chatgpt-2.6.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@b5b24f506b436383a4f7036e64a041c1e511bb9c/dist/chatgpt-2.6.1.min.jss
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
