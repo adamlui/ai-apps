@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.3.9
+// @version             2023.12.3.10
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -135,7 +135,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@91ddac7665eed132c3ac63b35db6b8fffffbc893/dist/chatgpt-2.6.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@b5b24f506b436383a4f7036e64a041c1e511bb9c/dist/chatgpt-2.6.1.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js
@@ -1236,9 +1236,10 @@
         + '.chatgpt-modal > div { padding: 24px 20px 24px 20px !important }' // increase alert padding
         + '.chatgpt-modal p { margin-left: 4px ; font-size: 1.115rem }' // position/size alert msg
         + '.chatgpt-modal button {' // alert buttons
-            + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ; padding: 5px !important ;'
+            + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ; '
+            + ( !isMobile ? 'padding: 5px !important ;' : '' )
             + 'border-radius: 0 !important ; border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
-        + '.modal-buttons { margin: 20px 0px -3px -7px !important }' // position alert buttons
+        + `.modal-buttons { margin: 20px 0px -3px ${ isMobile ? 0 : -7 }px !important }` // position alert buttons
         + '.modal-close-btn { top: -7px }' // raise alert close button
     )
     document.head.appendChild(braveGPTstyle)
