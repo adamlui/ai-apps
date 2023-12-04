@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.4
+// @version             2023.12.4.1
 // @license             MIT
 // @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @compatible          chrome
@@ -363,7 +363,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@91ddac7665eed132c3ac63b35db6b8fffffbc893/dist/chatgpt-2.6.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@b5b24f506b436383a4f7036e64a041c1e511bb9c/dist/chatgpt-2.6.1.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js
@@ -408,7 +408,7 @@
             location.reload() // re-send query using new endpoint
         }))
 
-        // Add command to auto-get mode
+        // Add command to toggle auto-get mode
         const agmLabel = state.symbol[+config.autoGetDisabled] + ' '
                        + ( messages.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
                        + state.separator + state.word[+config.autoGetDisabled]
@@ -623,7 +623,7 @@
 
     function updateTweaksStyle() {
 
-        // Update tweaks style based on settings (for tweaks init + googleGPTshow() + sidebar toggle function)
+        // Update tweaks style based on settings (for tweaks init + googleGPTshow() + toggleSidebar())
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyle : '' )
                               + ( config.stickySidebar && document.querySelector('.corner-btn') ? ssbStyle : '' )
 
@@ -1450,10 +1450,11 @@
         + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
         + '.chatgpt-modal p { margin: 0 0 -9px 4px ; font-size: 1.2rem ; line-height: 1.45 }' // position/size alert msg
         + '.chatgpt-modal button {' // alert buttons
-            + 'font-size: 0.84rem ; text-transform: uppercase ; min-width: 113px ; padding: 5px !important ;'
+            + 'font-size: 0.84rem ; text-transform: uppercase ; min-width: 113px ;'
+            + ( !isMobile ? 'padding: 5px !important ;' : '' )
             + 'cursor: pointer ; border-radius: 0 !important ;'
             + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
-        + '.modal-buttons { margin: 28px 4px -3px -4px !important }' // position alert buttons
+        + `.modal-buttons { margin: 28px 4px -3px ${ isMobile ? 4 : -4 }px !important }` // position alert buttons
         + '.googlegpt .footer { position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ;'
             + `margin: ${ chatgpt.browser.isFirefox() ? '3px' : 0 } -32px 13px }`
         + '.googlegpt .footer * { color: #aaa ; text-decoration: none }'
