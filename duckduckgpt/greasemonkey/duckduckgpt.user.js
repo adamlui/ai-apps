@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.3.1
+// @version             2023.12.3.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -173,7 +173,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@91ddac7665eed132c3ac63b35db6b8fffffbc893/dist/chatgpt-2.6.0.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@b5b24f506b436383a4f7036e64a041c1e511bb9c/dist/chatgpt-2.6.1.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js
 // @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js
@@ -218,7 +218,7 @@
             location.reload() // re-send query using new endpoint
         }))
 
-        // Add command to auto-get mode
+        // Add command to toggle auto-get mode
         const agmLabel = state.symbol[+config.autoGetDisabled] + ' '
                        + ( messages.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
                        + state.separator + state.word[+config.autoGetDisabled]
@@ -1139,11 +1139,12 @@
         + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
         + '.chatgpt-modal p { margin: -8px 0 -9px 4px ; font-size: 1.55rem }' // position/size update alert msg
         + '.chatgpt-modal button {' // alert buttons
-            + 'padding: 7px !important ; cursor: pointer ; border-radius: 0 !important ;'
+            + 'cursor: pointer ; border-radius: 0 !important ;'
+            + ( !isMobile ? 'padding: 7px !important ;' : '' )
             + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
             + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + '!important ;'
             + ( scheme == 'dark' ? 'background: none ; color: white' : '') + '}'
-        + '.modal-buttons { margin: 20px -5px -3px -15px !important }' // position alert buttons
+        + `.modal-buttons { margin: 20px -5px -3px ${ isMobile ? -5 : -15 }px !important }` // position alert buttons
     )
     document.head.appendChild(ddgptStyle)
 
