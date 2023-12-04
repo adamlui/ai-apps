@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.6.0
+// This library is a condensed version of chatgpt.js v2.6.1
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -54,7 +54,8 @@ const chatgpt = {
     // [ title/msg = strings, btns = [named functions], checkbox = named function, width (px) = int ] = optional
     // * Spaces are inserted into button labels by parsing function names in camel/kebab/snake case
 
-        const scheme = chatgpt.isDarkMode() ? 'dark' : 'light';   
+        const scheme = chatgpt.isDarkMode() ? 'dark' : 'light',
+              isMobile = chatgpt.browser.isMobile();
 
         // Create modal parent/children elements
         const modalContainer = document.createElement('div');
@@ -65,7 +66,7 @@ const chatgpt = {
               modalMessage = document.createElement('p');
 
         // Create/append/update modal style (if missing or outdated)
-        const thisUpdated = 20231110; // datestamp of last edit for this file's `modalStyle` 
+        const thisUpdated = 20231203; // datestamp of last edit for this file's `modalStyle` 
         let modalStyle = document.querySelector('#chatgpt-modal-style'); // try to select existing style
         if (!modalStyle || parseInt(modalStyle.getAttribute('last-updated'), 10) < thisUpdated) { // if missing or outdated
             if (!modalStyle) { // outright missing, create/id/attr/append it first
@@ -84,7 +85,7 @@ const chatgpt = {
 
                 // Alert styles
                 + '.chatgpt-modal > div {'
-                    + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ;'
+                    + 'opacity: 0 ; transform: translateX(-2px) translateY(5px) ; max-width: 75vw ; word-wrap: break-word ;'
                     + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.2s cubic-bezier(.165,.84,.44,1) ;'
                     + `background-color: ${ scheme == 'dark' ? 'black' : 'white' } ;`
                     + ( scheme != 'dark' ? 'border: 1px solid rgba(0, 0, 0, 0.3) ;' : '' )
@@ -94,13 +95,15 @@ const chatgpt = {
                 + `.chatgpt-modal a { color: ${ scheme == 'dark' ? '#00cfff' : '#1e9ebb' }}`
                 + '.chatgpt-modal.animated > div { opacity: 1 ; transform: translateX(0) translateY(0) }'
                 + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
-                    + '50% { opacity: 0.25 ; transform: scale(1.35) }'
-                    + '100% { opacity: 0 ; transform: scale(2) }}'
+                    + '50% { opacity: 0.25 ; transform: scale(1.05) }'
+                    + '100% { opacity: 0 ; transform: scale(1.35) }}'
 
                 // Button styles
-                + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 }'
+                + '.modal-buttons { display: flex ; justify-content: flex-end ; margin: 20px -5px -3px 0 ;'
+                    + ( isMobile ? 'flex-direction: column-reverse' : '' ) + '}'
                 + '.chatgpt-modal button {'
-                    + 'margin-left: 10px ; padding: 4px 18px ; border-radius: 15px ;'
+                    + `margin-left: ${ isMobile ? 0 : 10}px ; padding: ${ isMobile ? 15 : 4}px 18px ; border-radius: 15px ;`
+                    + ( isMobile ? 'margin-top: 5px ; margin-bottom: 3px ;' : '')
                     + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' }}`
                 + '.primary-modal-btn {'
                     + `border: 1px solid ${ scheme == 'dark' ? 'white' : 'black' } ;`
