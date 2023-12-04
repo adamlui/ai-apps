@@ -7,7 +7,7 @@
     <img width=888 src="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/googlegpt/beta/with-reflection/lightmode.png">
 </picture>
 
-<h3>🤖 Bring the magic of ChatGPT to Google Search (powered by GPT-4!)</h3>
+<h3>🤖 Bring the magic of ChatGPT to Google Search!</h3>
 
 <br>
 
