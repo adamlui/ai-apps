@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.6.1
+// This library is a condensed version of chatgpt.js v2.6.2
 // (c) 2023 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -515,7 +515,7 @@ const chatgpt = {
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
         const delaySend = setInterval(() => {
-            if (!sendButton.hasAttribute('disabled')) { // send msg
+            if (!sendButton?.hasAttribute('disabled')) { // send msg
                 method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendButton.click()
                     : textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
                 clearInterval(delaySend);
