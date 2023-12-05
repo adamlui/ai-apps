@@ -122,8 +122,10 @@
         // Select sidebar elems
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
-              firstButton = [...navButtons].find(button => button.textContent.includes(
-                                chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT'))
+              firstButton = [...navButtons].find(button => {
+                  const re_firstButton = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPTChatGPT|New chat/
+                  return re_firstButton.test(button.textContent)
+              })
         // Hide 'Enable History' div
         if (chatgpt.history.isOff())
             try {
