@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.3.1
+// @version             2023.12.5
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -342,7 +342,7 @@
     })
 
     // Insert full toggle on page load + during navigation
-    insertToggle()
+    await chatgpt.history.isLoaded() ; insertToggle()
     const nodeObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             if (mutation.type == 'childList' && mutation.addedNodes.length) {
@@ -604,8 +604,11 @@
         // Select sidebar elems
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
-              firstButton = [...navButtons].find(button => button.textContent.includes(
-                                chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT'))
+              firstButton = [...navButtons].find(button => {
+                  const re_firstButton = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPTChatGPT|New chat/
+                  return re_firstButton.test(button.textContent)
+              })
+
         // Hide 'Enable History' div
         if (chatgpt.history.isOff())
             try {
