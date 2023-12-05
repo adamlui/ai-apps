@@ -154,9 +154,10 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.4.4
+// @version             2023.12.4.5
 // @license             MIT
-// @icon                https://www.google.com/s2/favicons?sz=64&domain=google.com
+// @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
+// @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
 // @compatible          chrome
 // @compatible          firefox
 // @compatible          edge
