@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.5.1
+// @version             2023.12.7
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -323,8 +323,10 @@
     chatgpt.history.isLoaded().then(setTimeout(() => { 
         const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
               navLinks = chatHistoryNav.querySelectorAll('a'),
-              firstLink = [...navLinks].find(link => link.textContent.includes(
-                  chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT')) || {},
+              firstLink = [...navLinks].find(link => {
+                  const re_firstLinkText = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPT(ChatGPT|New)/
+                  return re_firstLinkText.test(link.textContent) || {}
+              }),
               firstIcon = firstLink.querySelector('div:first-child'),
               firstLabel = firstLink.querySelector('div:nth-child(2)')
         navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
@@ -342,7 +344,7 @@
     })
 
     // Insert full toggle on page load + during navigation
-    await chatgpt.history.isLoaded() ; insertToggle()
+    insertToggle()
     const nodeObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             if (mutation.type == 'childList' && mutation.addedNodes.length) {
@@ -605,8 +607,8 @@
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = [...navButtons].find(button => {
-                  const re_firstButton = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPTChatGPT|New chat/
-                  return re_firstButton.test(button.textContent)
+                  const re_firstButton = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPT(ChatGPT|New)/
+                  return re_firstButton.test(button.textContent) || {}
               })
 
         // Hide 'Enable History' div

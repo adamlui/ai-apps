@@ -62,8 +62,10 @@
     chatgpt.history.isLoaded().then(setTimeout(() => { 
         const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
               navLinks = chatHistoryNav.querySelectorAll('a'),
-              firstLink = [...navLinks].find(link => link.textContent.includes(
-                  chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT')) || {},
+              firstLink = [...navLinks].find(link => {
+                  const re_firstLinkText = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPT(ChatGPT|New)/
+                  return re_firstLinkText.test(link.textContent) || {}
+              }),
               firstIcon = firstLink.querySelector('div:first-child'),
               firstLabel = firstLink.querySelector('div:nth-child(2)')
         navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
@@ -123,9 +125,10 @@
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = [...navButtons].find(button => {
-                  const re_firstButton = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPTChatGPT|New chat/
-                  return re_firstButton.test(button.textContent)
+                  const re_firstButton = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPT(ChatGPT|New)/
+                  return re_firstButton.test(button.textContent) || {}
               })
+
         // Hide 'Enable History' div
         if (chatgpt.history.isOff())
             try {
