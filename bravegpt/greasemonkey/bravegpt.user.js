@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.8.2
+// @version             2023.12.8.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -1270,10 +1270,14 @@
             + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ; '
             + ( !isMobile ? 'padding: 5px !important ;' : '' )
             + 'border-radius: 0 !important ; border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
-        + ( scheme == 'dark' ? '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
-            + 'color: white ; background: black !important }' : '' )
         + `.modal-buttons { margin: 20px 0px -3px ${ isMobile ? 0 : -7 }px !important }` // position alert buttons
-        + `.modal-close-btn { top: -7px ; ${ scheme == 'dark' ? 'stroke: white' : '' }}` // raise alert close button, color white in darkmode
+        + '.modal-close-btn { top: -7px }' // raise alert close button
+        + ( scheme == 'dark' ? // darkmode alert styles
+            ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
+                + 'background-color: black !important ; color: white }'
+            + '.primary-modal-btn { background: white !important ; color: black !important }'
+            + '.modal-close-btn { stroke: white ; fill: white }'
+            + '.chatgpt-modal a { color: #00cfff !important }' ) : '' )
     )
     document.head.appendChild(braveGPTstyle)
 
