@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.8
+// @version             2023.12.8.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -401,7 +401,7 @@
               headingStyle = 'font-size: 1.15rem',
               pStyle = 'position: relative ; left: 3px',
               pBrStyle = 'position: relative ; left: 4px ',
-              aStyle = 'color: ' + ( isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
+              aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
         const aboutAlertID = alert(
             messages.appName || config.appName, // title
             `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version || 'Version' }</i></b>: </span>`
@@ -495,18 +495,11 @@
                 launchAboutModal()
     }})}
 
-    // Define SCHEME function
-
-    function isDarkMode() {
-        return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
-            || document.documentElement.classList.toString().includes('dark')
-    }
-
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
-            shadow || isDarkMode() ? '' : 'shadow')
+            shadow || chatgpt.isDarkMode() ? '' : 'shadow')
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
