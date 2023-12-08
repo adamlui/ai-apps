@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.7
+// @version             2023.12.8
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
@@ -1482,7 +1482,6 @@
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none }'
         + '.kudo-ai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
         + '.katex-html { display: none }' // hide unrendered math
-        + ( scheme == 'dark' ? '.chatgpt-modal > div { background-color: black !important ; color: white }' : '' )
         + '.chatgpt-modal > div { 17px 20px 24px 20px !important }' // increase alert padding
         + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
         + '.chatgpt-modal p { margin: 0 0 -9px 4px ; font-size: 1.2rem ; line-height: 1.45 }' // position/size alert msg
@@ -1492,6 +1491,11 @@
             + 'cursor: pointer ; border-radius: 0 !important ;'
             + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
         + `.modal-buttons { margin: 28px 4px -3px ${ isMobile ? 4 : -4 }px !important }` // position alert buttons
+        + ( scheme == 'dark' ? // darkmode alert styles
+            ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
+                + 'background-color: black !important ; color: white }'
+            + '.chatgpt-modal a { color: #00cfff !important }'
+            + '.primary-modal-btn { background: white !important ; color: black !important }' ) : '' )
         + '.googlegpt .footer { position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ;'
             + `margin: ${ chatgpt.browser.isFirefox() ? '3px' : 0 } -32px 13px }`
         + '.googlegpt .footer * { color: #aaa ; text-decoration: none }'
