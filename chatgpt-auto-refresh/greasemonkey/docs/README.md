@@ -156,6 +156,7 @@ This project exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2470659?first-contrib=2023.08.03-chat-reset-issue&h=50&w=50&mask=circle&maxage=7d "@nabilfreeman")](https://github.com/nabilfreeman)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13482553?first-contrib=2023.10.05-chat-reset-fix&h=50&w=50&mask=circle&maxage=7d "@h-h-h-h")](https://github.com/h-h-h-h)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/5162926?first-contrib=2023.11.27-ui-change-report&h=50&w=50&mask=circle&maxage=7d "@xspeed1989")](https://github.com/xspeed1989)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/37517008?first-contrib=2023.12.05-first-button-bug-report&h=50&w=50&mask=circle&maxage=7d "@Chipsum")](https://github.com/Chipsum)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110?h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
