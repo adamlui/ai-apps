@@ -166,7 +166,7 @@
     }})}) ; schemeObserver.observe(document.documentElement, { attributes: true })
 
     // Monitor sidebar button to update full-window setting
-    if (site != 'poe') {
+    if (site == 'openai') {
         const sidebarObserver = new MutationObserver(() => {
             settings.load(['extensionDisabled']).then(() => {
                 if (!config.extensionDisabled) {
