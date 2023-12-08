@@ -221,14 +221,13 @@
     function insertBtns() {
         const chatbar = document.querySelector(chatbarSelector)
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
-        const leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : ''))
-        if (site == 'poe') chatbar.insertBefore(leftMostBtn, chatbar.lastChild) // elevate nested non-send button to chatbar
-        chatbar.insertBefore(newChatButton, leftMostBtn)
-        chatbar.insertBefore(wideScreenButton, leftMostBtn)
-        chatbar.insertBefore(fullWindowButton, leftMostBtn)
-        chatbar.insertBefore(fullScreenButton, leftMostBtn)
-        chatbar.insertBefore(tooltipDiv, leftMostBtn)
-        if (site == 'openai') chatbar.classList.remove('overflow-hidden') // for tooltips to overflow
+        const leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : '')),
+              elemsToInsert = [newChatButton, wideScreenButton, fullWindowButton, fullScreenButton, tooltipDiv]
+        if (site == 'openai') // allow tooltips to overflow
+            chatbar.classList.remove('overflow-hidden')
+        if (site == 'poe') // elevate nested non-send button to chatbar
+            chatbar.insertBefore(leftMostBtn, chatbar.lastChild)
+        for (const elem of elemsToInsert) chatbar.insertBefore(elem, leftMostBtn)
     }
 
     function removeBtns() {

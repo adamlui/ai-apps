@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.8.2
+// @version             2023.12.8.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -513,14 +513,13 @@
     function insertBtns() {
         const chatbar = document.querySelector(chatbarSelector)
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
-        const leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : ''))
-        if (site == 'poe') chatbar.insertBefore(leftMostBtn, chatbar.lastChild) // elevate nested non-send button to chatbar
-        chatbar.insertBefore(newChatButton, leftMostBtn)
-        chatbar.insertBefore(wideScreenButton, leftMostBtn)
-        chatbar.insertBefore(fullWindowButton, leftMostBtn)
-        chatbar.insertBefore(fullScreenButton, leftMostBtn)
-        chatbar.insertBefore(tooltipDiv, leftMostBtn)
-        if (site == 'openai') chatbar.classList.remove('overflow-hidden') // for tooltips to overflow
+        const leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : '')),
+              elemsToInsert = [newChatButton, wideScreenButton, fullWindowButton, fullScreenButton, tooltipDiv]
+        if (site == 'openai') // allow tooltips to overflow
+            chatbar.classList.remove('overflow-hidden')
+        if (site == 'poe') // elevate nested non-send button to chatbar
+            chatbar.insertBefore(leftMostBtn, chatbar.lastChild)
+        for (const elem of elemsToInsert) chatbar.insertBefore(elem, leftMostBtn)
     }
 
     function updateBtnSVG(mode, state = '') {
@@ -581,6 +580,8 @@
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
         const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
         svgElems.forEach(elem => buttonSVG.appendChild(elem))
+
+        // Update SVG
         if (!button.contains(buttonSVG)) button.appendChild(buttonSVG)
     }
 
