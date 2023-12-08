@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.3.2
+// @version             2023.12.7
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -240,7 +240,7 @@
 // @compatible          qq
 // @match               *://chat.openai.com/*
 // @run-at              document-end
-// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@b5b24f506b436383a4f7036e64a041c1e511bb9c/dist/chatgpt-2.6.1.min.js
+// @require             https://cdn.jsdelivr.net/gh/kudoai/chatgpt.js@906ececf6942708465dc7e56cb9de054673e8687/dist/chatgpt-2.6.2.min.js
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @grant               GM_setValue
@@ -330,11 +330,13 @@
 
     // Borrow classes from sidebar div
     const chatHistorySelector = 'nav[aria-label="Chat history"]'
-    chatgpt.history.isLoaded().then(setTimeout(() => { 
+    chatgpt.history.isLoaded().then(setTimeout(() => {
         const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
               navLinks = chatHistoryNav.querySelectorAll('a'),
-              firstLink = [...navLinks].find(link => link.textContent.includes(
-                  chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT')) || {},
+              firstLink = [...navLinks].find(link => {
+                  const re_firstLinkText = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPT(ChatGPT|New)/
+                  return re_firstLinkText.test(link.textContent)
+              }),
               firstIcon = firstLink.querySelector('div:first-child'),
               firstLabel = firstLink.querySelector('div:nth-child(2)')
         navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
@@ -554,12 +556,13 @@
     async function insertToggle() {
         await chatgpt.history.isLoaded()
 
-
         // Select sidebar elems
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
-              firstButton = [...navButtons].find(button => button.textContent.includes(
-                                chatgpt.history.isOff() ? 'ChatGPTClear' : 'ChatGPTChatGPT'))
+              firstButton = [...navButtons].find(button => {
+                  const re_firstButton = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPTNew/
+                  return re_firstButton.test(button.textContent)
+              })
 
         // Hide 'Enable History' div
         if (chatgpt.history.isOff())
