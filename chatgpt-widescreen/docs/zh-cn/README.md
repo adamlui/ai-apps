@@ -59,7 +59,7 @@
 
 ⚙️ 自定义功能，例如更大的聊天框和隐藏的页眉/页脚，以获得更宽敞的视图
 
-🌐 适用于: **chat.openai.com** + **poe.com** + **chat.aivvm.com**
+🌐 适用于: **chat.openai.com** + **poe.com**
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
@@ -94,7 +94,7 @@
 
 2. 安装 [ChatGPT 宽屏模式](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) userscript (will load in userscript manager installed above)
 
-3. 访问 [chat.openai.com](https://chat.openai.com), [poe.com](https://poe.com) 或 [chat.aivvm.com](https://chat.aivvm.com)，聊天栏已添加模式切换！
+3. 访问 [chat.openai.com](https://chat.openai.com) 或 [poe.com](https://poe.com)，聊天栏已添加模式切换！
 
 <div align="center">
 

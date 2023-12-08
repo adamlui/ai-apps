@@ -59,7 +59,7 @@
 
 ⚙️ Customize features like larger chatbox & hidden header/footer for more spacious view
 
-🌐 Works with: **chat.openai.com** + **poe.com** + **chat.aivvm.com**
+🌐 Works with: **chat.openai.com** + **poe.com**
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
@@ -94,7 +94,7 @@
 
 2. Install [ChatGPT Widescreen Mode](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) userscript (will load in userscript manager installed above)
 
-3. Visit [chat.openai.com](https://chat.openai.com), [poe.com](https://poe.com) or [chat.aivvm.com](https://chat.aivvm.com) & mode toggles are added to chatbar!
+3. Visit [chat.openai.com](https://chat.openai.com) or [poe.com](https://poe.com) & mode toggles are added to chatbar!
 
 <div align="center">
 
