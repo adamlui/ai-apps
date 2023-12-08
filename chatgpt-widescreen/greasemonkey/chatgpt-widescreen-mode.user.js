@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.8.1
+// @version             2023.12.8.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -511,8 +511,7 @@
         site == 'openai' ? ( chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' ) : 'currentColor' )}
 
     function insertBtns() {
-        const chatbar = ( site == 'poe' ? document.querySelector('div[class*="ChatMessageInputContainer"]')
-                        : /* openai */ document.querySelector('form button[class*="bottom"]').parentNode )
+        const chatbar = document.querySelector(chatbarSelector)
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
         const leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : ''))
         if (site == 'poe') chatbar.insertBefore(leftMostBtn, chatbar.lastChild) // elevate nested non-send button to chatbar
@@ -565,7 +564,7 @@
 
         // Set SVG attributes
         const buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-        buttonSVG.setAttribute('height', 18)
+        buttonSVG.setAttribute('height', 18) // prevent shrinking
         if (mode == 'fullWindow') { // stylize full-window button
             buttonSVG.setAttribute('stroke', buttonColor)
             buttonSVG.setAttribute('fill', 'none')
@@ -726,7 +725,9 @@
                           : /* poe */ 'menu[class*="sidebar"], aside[class*="sidebar"]',
           sidepadSelector = '#__next > div > div',
           headerSelector = site == 'openai' ? 'main .sticky' : '',
-          footerSelector = site == 'openai' ? 'main form ~ div' : ''
+          footerSelector = site == 'openai' ? 'main form ~ div' : '',
+          chatbarSelector = site == 'openai' ? 'div[class*="textarea:focus"'
+                          : site == 'poe' ? 'div[class*="ChatMessageInputContainer"]' : ''
 
     // Save full-window + full screen states
     config.fullWindow = site == 'openai' ? isFullWindow() : config.fullWindow

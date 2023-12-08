@@ -33,8 +33,10 @@
     if (site == 'openai') await chatgpt.isLoaded()
 
     // Define UI element selectors
-    const headerSelector = 'main .sticky',
-          footerSelector = 'main form ~ div'
+    const headerSelector = site == 'openai' ? 'main .sticky' : '',
+          footerSelector = site == 'openai' ? 'main form ~ div' : '',
+          chatbarSelector = site == 'openai' ? 'div[class*="textarea:focus"'
+                          : site == 'poe' ? 'div[class*="ChatMessageInputContainer"]' : ''
 
     // Save full-window + full screen states
     config.fullWindow = site == 'openai' ? chatgpt.sidebar.isOff() : settings.load('fullWindow')
@@ -217,8 +219,7 @@
         site == 'openai' ? ( chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' ) : 'currentColor' )}
 
     function insertBtns() {
-        const chatbar = site == 'poe' ? document.querySelector('div[class*="ChatMessageInputContainer"]')
-                                      : document.querySelector('form button[class*="bottom"]').parentNode;
+        const chatbar = document.querySelector(chatbarSelector)
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
         const leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : ''))
         if (site == 'poe') chatbar.insertBefore(leftMostBtn, chatbar.lastChild) // elevate nested non-send button to chatbar
@@ -231,7 +232,7 @@
     }
 
     function removeBtns() {
-        const chatbar = document.querySelector('form button[class*="bottom"]').parentNode
+        const chatbar = document.querySelector(chatbarSelector)
         if (!chatbar.contains(fullWindowButton)) return // if buttons are missing, exit
         else { // remove chat toggles
             const nodesToRemove = [newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv]
