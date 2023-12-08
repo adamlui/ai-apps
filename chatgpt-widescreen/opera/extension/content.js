@@ -277,6 +277,7 @@
 
         // Set SVG attributes
         const buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+        buttonSVG.setAttribute('height', 18) // prevent shrinking   
         if (mode == 'fullWindow') { // stylize full-window button
             buttonSVG.setAttribute('stroke', buttonColor)
             buttonSVG.setAttribute('fill', 'none')
