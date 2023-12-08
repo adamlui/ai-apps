@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.7
+// @version             2023.12.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1134,7 +1134,6 @@
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
         + '.kudo-ai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
         + '.katex-html { display: none } ' // hide unrendered math
-        + ( scheme == 'dark' ? '.chatgpt-modal > div { background-color: black !important ; color: white }' : '' )
         + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important }' // increase alert padding
         + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
         + '.chatgpt-modal p { margin: -8px 0 -9px 4px ; font-size: 1.55rem }' // position/size update alert msg
@@ -1145,6 +1144,9 @@
             + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + '!important ;'
             + ( scheme == 'dark' ? 'background: none ; color: white' : '') + '}'
         + `.modal-buttons { margin: 20px -5px -3px ${ isMobile ? -5 : -15 }px !important }` // position alert buttons
+        + ( scheme == 'dark' ? // darkmode alert styles
+            ( '.chatgpt-modal > div { background-color: black !important ; color: white }'
+            + '.chatgpt-modal a { color: #00cfff !important }' ) : '' )
     )
     document.head.appendChild(ddgptStyle)
 
