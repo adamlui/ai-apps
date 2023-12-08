@@ -64,7 +64,7 @@
               navLinks = chatHistoryNav.querySelectorAll('a'),
               firstLink = [...navLinks].find(link => {
                   const re_firstLinkText = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPT(ChatGPT|New)/
-                  return re_firstLinkText.test(link.textContent) || {}
+                  return re_firstLinkText.test(link.textContent)
               }),
               firstIcon = firstLink.querySelector('div:first-child'),
               firstLabel = firstLink.querySelector('div:nth-child(2)')
@@ -126,7 +126,7 @@
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = [...navButtons].find(button => {
                   const re_firstButton = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPT(ChatGPT|New)/
-                  return re_firstButton.test(button.textContent) || {}
+                  return re_firstButton.test(button.textContent)
               })
 
         // Hide 'Enable History' div
