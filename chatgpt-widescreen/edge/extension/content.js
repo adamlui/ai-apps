@@ -4,6 +4,7 @@
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
 
 (async () => {
+    /* global newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn */
 
     // Import libs
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
@@ -96,7 +97,7 @@
     let buttonColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
-            const buttonName = buttonType + 'Button'
+            const buttonName = buttonType + 'Btn'
             window[buttonName] = document.createElement('div') // create button
             window[buttonName].id = buttonType + '-button' // for toggleTooltip()
             updateBtnSVG(buttonType); // insert icon
@@ -220,8 +221,8 @@
 
     function insertBtns() {
         const chatbar = document.querySelector(chatbarSelector)
-        if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
-        const elemsToInsert = [newChatButton, wideScreenButton, fullWindowButton, fullScreenButton, tooltipDiv],
+        if (chatbar.contains(wideScreenBtn)) return // if buttons aren't missing, exit
+        const elemsToInsert = [newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn, tooltipDiv],
               leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : ''))
         if (site == 'openai') // allow tooltips to overflow
             chatbar.classList.remove('overflow-hidden')
@@ -232,9 +233,9 @@
 
     function removeBtns() {
         const chatbar = document.querySelector(chatbarSelector)
-        if (!chatbar.contains(fullWindowButton)) return // if buttons are missing, exit
+        if (!chatbar.contains(fullWindowBtn)) return // if buttons are missing, exit
         else { // remove chat toggles
-            const nodesToRemove = [newChatButton, fullWindowButton, wideScreenButton, fullScreenButton, tooltipDiv]
+            const nodesToRemove = [newChatBtn, fullWindowBtn, wideScreenBtn, fullScreenBtn, tooltipDiv]
             for (const node of nodesToRemove) chatbar.removeChild(node)
     }}
 
@@ -266,10 +267,10 @@
 
         // Pick appropriate button/elements
         const [button, ONelems, OFFelems] = (
-            mode == 'fullScreen' ? [fullScreenButton, fullScreenONelems, fullScreenOFFelems]
-          : mode == 'fullWindow' ? [fullWindowButton, fullWindowElems, fullWindowElems]
-          : mode == 'wideScreen' ? [wideScreenButton, wideScreenONelems, wideScreenOFFelems]
-                                 : [newChatButton, newChatElems, newChatElems])
+            mode == 'fullScreen' ? [fullScreenBtn, fullScreenONelems, fullScreenOFFelems]
+          : mode == 'fullWindow' ? [fullWindowBtn, fullWindowElems, fullWindowElems]
+          : mode == 'wideScreen' ? [wideScreenBtn, wideScreenONelems, wideScreenOFFelems]
+                                 : [newChatBtn, newChatElems, newChatElems])
 
         // Initialize rem margin offset vs. OpenAI's .mr-1 for hover overlay centeredness
         const lMargin = mode == 'wideScreen' ? .11 : .12, rMargin = (.25 - lMargin)
