@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.8.3
+// @version             2023.12.8.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -296,10 +296,10 @@
                           function alternativeTo() { safeWindowOpen(
                               'https://alternativeto.net/software/bravegpt/about/') }],
                         '', 571) // Review modal width
-                    const reviewButtons = document.getElementById(reviewAlertID).querySelectorAll('button')
-                    reviewButtons[0].style.display = 'none' // hide dismiss button
-                    reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
-                        reviewButtons[1].textContent.replace(/\s/g, '')) },
+                    const reviewBtns = document.getElementById(reviewAlertID).querySelectorAll('button')
+                    reviewBtns[0].style.display = 'none' // hide dismiss button
+                    reviewBtns[1].textContent = ( // remove spaces from AlternativeTo label
+                        reviewBtns[1].textContent.replace(/\s/g, '')) },
                 function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
             ], '', 577) // About modal width
 
@@ -352,9 +352,9 @@
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
-                                  updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update || 'Update'
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
+                                  updateBtns = updateAlert.querySelectorAll('button')
+                            updateBtns[1].textContent = messages.buttonLabel_update || 'Update'
+                            updateBtns[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
                         }
 
                         return
