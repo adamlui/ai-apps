@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.8.5
+// @version             2023.12.8.6
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -256,6 +256,7 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license.
 
 (async () => {
+    /* global newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn */
 
     const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2]
 
