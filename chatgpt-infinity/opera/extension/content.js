@@ -58,14 +58,12 @@
     updateToggleHTML() // create children
 
     // Borrow classes from sidebar div
-    const chatHistorySelector = 'nav[aria-label="Chat history"]'
+    const chatHistorySelector = 'nav[aria-label="Chat history"]',
+          re_firstBtnText = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPT(ChatGPT|New)/
     chatgpt.history.isLoaded().then(setTimeout(() => { 
         const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
               navLinks = chatHistoryNav.querySelectorAll('a'),
-              firstLink = [...navLinks].find(link => {
-                  const re_firstLinkText = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPT(ChatGPT|New)/
-                  return re_firstLinkText.test(link.textContent)
-              }),
+              firstLink = [...navLinks].find(link => re_firstBtnText.test(link.textContent)),
               firstIcon = firstLink.querySelector('div:first-child'),
               firstLabel = firstLink.querySelector('div:nth-child(2)')
         navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
@@ -124,10 +122,7 @@
         // Select sidebar elems
         const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
               navButtons = chatHistoryNav.querySelectorAll('a'),
-              firstButton = [...navButtons].find(button => {
-                  const re_firstButton = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPT(ChatGPT|New)/
-                  return re_firstButton.test(button.textContent)
-              })
+              firstButton = [...navButtons].find(button => re_firstBtnText.test(button.textContent))
 
         // Hide 'Enable History' div
         if (chatgpt.history.isOff())
@@ -146,7 +141,7 @@
         // Tweak styles
         firstButton.parentNode.parentNode.style.paddingBottom = '0'
         if (chatgpt.history.isOff() && !config.toggleHidden)
-            navToggleDiv.style.display = 'flex' // remove forced cloaking
+            navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
         navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
     }
 
