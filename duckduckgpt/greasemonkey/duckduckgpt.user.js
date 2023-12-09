@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.8.1
+// @version             2023.12.8.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -327,10 +327,10 @@
                           function alternativeTo() { safeWindowOpen(
                               'https://alternativeto.net/software/duckduckgpt/about/') }
                         ], '', 523) // Review modal width
-                    const reviewButtons = document.getElementById(reviewAlertID).querySelectorAll('button')
-                    reviewButtons[0].style.display = 'none' // hide Dismiss button
-                    reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
-                        reviewButtons[1].textContent.replace(/\s/g, '')) },
+                    const reviewBtns = document.getElementById(reviewAlertID).querySelectorAll('button')
+                    reviewBtns[0].style.display = 'none' // hide Dismiss button
+                    reviewBtns[1].textContent = ( // remove spaces from AlternativeTo label
+                        reviewBtns[1].textContent.replace(/\s/g, '')) },
                 function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
             ], '', 527) // About modal width
 
@@ -383,9 +383,9 @@
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
-                                  updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update || 'Update'
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
+                                  updateBtns = updateAlert.querySelectorAll('button')
+                            updateBtns[1].textContent = messages.buttonLabel_update || 'Update'
+                            updateBtns[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
                         }
 
                         return
