@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.7
+// @version             2023.12.8
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -412,9 +412,9 @@
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
-                                  updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update || 'Update'
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
+                                  updateBtns = updateAlert.querySelectorAll('button')
+                            updateBtns[1].textContent = messages.buttonLabel_update || 'Update'
+                            updateBtns[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
                         }
 
                         return
