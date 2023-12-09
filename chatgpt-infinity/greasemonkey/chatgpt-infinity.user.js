@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.8
+// @version             2023.12.8.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -506,10 +506,10 @@
                               'https://www.producthunt.com/products/chatgpt-infinity/reviews/new') },
                           function alternativeTo() { safeWindowOpen(
                               'https://alternativeto.net/software/chatgpt-infinity/about/') }])
-                    const reviewButtons = document.getElementById(reviewAlertID).querySelectorAll('button')
-                    reviewButtons[0].style.display = 'none' // hide dismiss button
-                    reviewButtons[1].textContent = ( // remove spaces from AlternativeTo label
-                        reviewButtons[1].textContent.replace(/\s/g, '')) },
+                    const reviewBtns = document.getElementById(reviewAlertID).querySelectorAll('button')
+                    reviewBtns[0].style.display = 'none' // hide dismiss button
+                    reviewBtns[1].textContent = ( // remove spaces from AlternativeTo label
+                        reviewBtns[1].textContent.replace(/\s/g, '')) },
                 function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
             ], '', 478 // set width
         )
@@ -564,9 +564,9 @@
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
-                                  updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update || 'Update'
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
+                                  updateBtns = updateAlert.querySelectorAll('button')
+                            updateBtns[1].textContent = messages.buttonLabel_update || 'Update'
+                            updateBtns[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
                         }
 
                         return
