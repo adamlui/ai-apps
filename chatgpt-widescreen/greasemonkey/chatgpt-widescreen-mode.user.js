@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.8.4
+// @version             2023.12.8.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -478,9 +478,9 @@
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
-                                  updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update || 'Update'
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
+                                  updateBtns = updateAlert.querySelectorAll('button')
+                            updateBtns[1].textContent = messages.buttonLabel_update || 'Update'
+                            updateBtns[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
                         }
 
                         return
@@ -512,8 +512,8 @@
 
     function insertBtns() {
         const chatbar = document.querySelector(chatbarSelector)
-        if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
-        const elemsToInsert = [newChatButton, wideScreenButton, fullWindowButton, fullScreenButton, tooltipDiv],
+        if (chatbar.contains(wideScreenBtn)) return // if buttons aren't missing, exit
+        const elemsToInsert = [newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn, tooltipDiv],
               leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : ''))
         if (site == 'openai') // allow tooltips to overflow
             chatbar.classList.remove('overflow-hidden')
@@ -553,10 +553,10 @@
 
         // Pick appropriate button/elements
         const [button, ONelems, OFFelems] = (
-            mode == 'fullScreen' ? [fullScreenButton, fullScreenONelems, fullScreenOFFelems]
-          : mode == 'fullWindow' ? [fullWindowButton, fullWindowElems, fullWindowElems]
-          : mode == 'wideScreen' ? [wideScreenButton, wideScreenONelems, wideScreenOFFelems]
-                                 : [newChatButton, newChatElems, newChatElems])
+            mode == 'fullScreen' ? [fullScreenBtn, fullScreenONelems, fullScreenOFFelems]
+          : mode == 'fullWindow' ? [fullWindowBtn, fullWindowElems, fullWindowElems]
+          : mode == 'wideScreen' ? [wideScreenBtn, wideScreenONelems, wideScreenOFFelems]
+                                 : [newChatBtn, newChatElems, newChatElems])
 
         // Initialize rem margin offset vs. OpenAI's .mr-1 for hover overlay centeredness
         const lMargin = mode == 'wideScreen' ? .11 : .12, rMargin = (.25 - lMargin)
@@ -795,7 +795,7 @@
     let buttonColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
-            const buttonName = buttonType + 'Button'
+            const buttonName = buttonType + 'Btn'
             window[buttonName] = document.createElement('div') // create button
             window[buttonName].id = buttonType + '-button' // for toggleTooltip()
             updateBtnSVG(buttonType) // insert icon
