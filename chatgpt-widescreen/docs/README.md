@@ -9,7 +9,8 @@
 <div align="center">
 
 ![](https://img.shields.io/badge/Installs-5,000+-2bbbd8?logo=docusign&logoColor=white&labelColor=464646&style=for-the-badge)
-[![](https://img.shields.io/chrome-web-store/stars/jgnjpnmofkalfliddjelaciggjgnphgm?logo=googlechrome&logoColor=white&labelColor=464646&color=e6fc7b&label=Rating&style=for-the-badge)](https://chrome.google.com/webstore/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews)
+[![](https://img.shields.io/chrome-web-store/stars/jgnjpnmofkalfliddjelaciggjgnphgm?logo=googlechrome&logoColor=white&labelColor=464646&color=b5fc7b&label=Rating&style=for-the-badge)](https://chrome.google.com/webstore/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews)
+[![](https://img.shields.io/badge/dynamic/json?logo=microsoftedge&logoColor=white&labelColor=464646&color=7bfce9&label=rating&suffix=/5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fobnaaalnokmchdoagnhmllakaclaaooa&style=for-the-badge)](https://microsoftedge.microsoft.com/addons/detail/chatgpt-widescreen-mode/obnaaalnokmchdoagnhmllakaclaaooa)
 [![](https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-widescreen/blob/main/LICENSE)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
 [![](https://img.shields.io/codacy/grade/918850986ce14fa2b4a99f00bbbfb5cc?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-widescreen/commits?utm_source=chatgpt_widescreen&utm_content=github_shield)
