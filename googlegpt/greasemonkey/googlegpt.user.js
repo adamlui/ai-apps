@@ -20,14 +20,14 @@
 // @description:cy      Ychwanega Atebion ChatGPT i'r bar ochr Google Chwilio
 // @description:da      Tilføjer ChatGPT-svar til Google Søg-sidelinjen
 // @description:de      Fügt ChatGPT-Antworten zur Google-Seitenleiste hinzu
-// @description:dv      ChatGPT އައިކްސޭޓުގެ ޖަވާބުގެ Google ސައިޓުގައި ފޯރުވާރައުގެ ޑައުން 
+// @description:dv      ChatGPT އައިކްސޭޓުގެ ޖަވާބުގެ Google ސައިޓުގައި ފޯރުވާރައުގެ ޑައުން
 // @description:dz      ChatGPT དང་ Google འབྱུང་ཆུང་ལེ་བས་འཐུས་པ་ལགས་སྤྱོད་སྒྲིག་པ་བརྟགས་བཞུགས།
 // @description:el      Προσθέτει απαντήσεις ChatGPT στην πλαϊνή γραμμή αναζήτησης του Google
 // @description:eo      Aldonas ChatGPT-respondojn al la flanka breto de Google Serĉo
 // @description:es      Agrega respuestas de ChatGPT a la barra lateral de Google
 // @description:et      Lisab ChatGPT vastused Google otsingu küljepaneelile
 // @description:eu      Gehitu ChatGPT erantzunak Google bilaketako aldeko alderakoan
-// @description:fa      ChatGPT به پاسخ‌های Google جستجو نوار کناری اضافه می‌کند 
+// @description:fa      ChatGPT به پاسخ‌های Google جستجو نوار کناری اضافه می‌کند
 // @description:fi      Lisää ChatGPT-vastaukset Googleen
 // @description:fil     Nagdaragdag ng mga sagot ng ChatGPT sa sidebar ng Google Search
 // @description:fj      Vakarautaka na vosa vakatotolo ni ChatGPT ki na yasa ni liga ni Google
@@ -41,7 +41,7 @@
 // @description:gu      Google સાઇડબારમાં ChatGPT જવાબો ઉમેરે છે
 // @description:ha      Zaya sauyaƙa daga ChatGPT zuwa bidiyo na bidiyon Google
 // @description:haw     Hoʻohui aku i nā hōʻike a ChatGPT i ka papa aoʻao hema o ka ʻimi ʻana iā Google
-// @description:he      הוספת תשובות ChatGPT לסרגל הצד של Google חיפוש 
+// @description:he      הוספת תשובות ChatGPT לסרגל הצד של Google חיפוש
 // @description:hi      Google साइडबार में ChatGPT उत्तर जोड़ता है
 // @description:hr      Dodaje odgovore aplikacije ChatGPT bočnoj traci pretraživanja Google
 // @description:ht      Ajoute repons ChatGPT nan barre laterale Rechèch Google a
@@ -92,7 +92,7 @@
 // @description:or      ଗୁଗଲ ଖୋଜର ସାଇଡବାରରେ ChatGPT ଉତ୍ତର ଯୋଡ଼ାଯାଇଛି
 // @description:pa      ਗੂਗਲ ਖੋਜ ਦੇ ਸਾਈਡਬਾਰ 'ਚ ChatGPT ਉੱਤਰ ਸ਼ਾਮਲ ਕੀਤੇ ਗਏ ਨੇ
 // @description:pl      Dodaje odpowiedzi ChatGPT w pasku bocznym Google
-// @description:ps      د ګوګل لټون کې ChatGPT جوابونه اضافه کوي 
+// @description:ps      د ګوګل لټون کې ChatGPT جوابونه اضافه کوي
 // @description:pt      Adiciona respostas do ChatGPT à barra lateral do Google Search
 // @description:pt-BR   Adiciona respostas do ChatGPT à barra lateral do Google Search
 // @description:qu      ChatGPT munankunapuraqmi Google ñawpa pachapi yanapaq
@@ -104,7 +104,7 @@
 // @description:sa      गूगल यान्त्रिके अभिन्नधीयो मार्गेण चाटगिपटिं उत्तरम्
 // @description:sat     Googleᱥ ᱵᱟᱨᱦᱟᱨᱚᱛ ᱠᱟᱹᱞᱤᱞᱟ ChatGPT ᱨᱮᱞᱟ ᱦᱚᱱᱮᱡ
 // @description:sc      Aghedda is responsas de ChatGPT a sa barra de cerca de Google
-// @description:sd      گوگل سرچ ۾ ChatGPT جو جوابون اضافو ڪيل آهي 
+// @description:sd      گوگل سرچ ۾ ChatGPT جو جوابون اضافو ڪيل آهي
 // @description:se      Loahpa ChatGPT-vástádusat Google Gaskkaside
 // @description:sg      Tisa na tîsânga lusângo lu ChatGPT kuna ntsâdi ya Google
 // @description:si      Google සෙවුමේ ChatGPT පිළිතුරු එකතු කරයි
@@ -133,9 +133,9 @@
 // @description:ts      Vuyisa mati na ChatGPT hi xiphemu leGoogle Search
 // @description:tt      Google Эзләү үтекле ChatGPT катнаштыру
 // @description:tw      Hwɛ ChatGPT adefoɔ dodoɔ Google hwee
-// @description:ug      Google ئىزدەشتە ChatGPT جاۋابلىرىنى قوشۇش 
+// @description:ug      Google ئىزدەشتە ChatGPT جاۋابلىرىنى قوشۇش
 // @description:uk      Додає відповіді ChatGPT у бічний панелі пошуку Google
-// @description:ur      گوگل تلاش کی طرف ChatGPT کے جوابات شامل کرتا ہے 
+// @description:ur      گوگل تلاش کی طرف ChatGPT کے جوابات شامل کرتا ہے
 // @description:uz      Google qidiruviga ChatGPT javoblari qo'shadi
 // @description:ve      Vhohodzi vha ChatGPT kha vhavhili ya Google Fambisa
 // @description:vi      Thêm câu trả lời của ChatGPT vào thanh bên Google Search
@@ -143,7 +143,7 @@
 // @description:wa      Ådd doveses di Dj ChatGPT a l' cohteye di Dj Google
 // @description:wo      Ndax duggëwul ChatGPT du bind ak wertali Google
 // @description:xh      Nika izicelo zika ChatGPT ezinkunzi ngesandla samazwi eGoogle Search
-// @description:yi      צוגעפיגט אַנטוואָרטן פון טשאַטגפּט אין גוגל זוכן זייַטבאַר 
+// @description:yi      צוגעפיגט אַנטוואָרטן פון טשאַטגפּט אין גוגל זוכן זייַטבאַר
 // @description:yo      Fi awọn iwe itumọ ChatGPT si abala iwoye Google
 // @description:za      Ngozv yi ChatGPT nv nqgozv ya Google Search
 // @description:zh      将 ChatGPT 答案添加到 Google 侧边栏 （无需注册！）
@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.8.3
+// @version             2023.12.9
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
@@ -1518,21 +1518,17 @@
     googleGPTdiv.classList.add('googlegpt', 'fade-in')
 
     // Append to Google
-    const hostContainer = (
-        isMobile ? document.querySelector('#center_col')
-            : document.querySelector('#rhs') ||
-                (() => { // create new one if no side snippets
-                    const centerCol = document.querySelector('#center_col'),
-                          newDiv = document.createElement('div')
-                    centerCol.style.paddingRight = '45px'
-                    newDiv.style.display = 'contents'
-                    newDiv.id ='newHostContainer'
-                    centerCol.insertAdjacentElement('afterend', newDiv)
-                    return newDiv
-                })()
-    )
+    const centerCol = document.querySelector('#center_col')
+    const hostContainer = isMobile ? centerCol
+        : document.querySelector('#rhs') ||
+            (() => { // create new one if no side snippets
+                const newDiv = document.createElement('div')
+                newDiv.style.display = 'contents'
+                centerCol.style.paddingRight = '65px'
+                centerCol.insertAdjacentElement('afterend', newDiv)
+                return newDiv
+            })()
     hostContainer.prepend(googleGPTdiv)
-    if (document.querySelector('#newHostContainer')) googleGPTdiv.style.marginLeft = '20px'
     setTimeout(() => googleGPTdiv.classList.add('active'), 100) // fade in
 
     // Init footer CTA to share feedback
