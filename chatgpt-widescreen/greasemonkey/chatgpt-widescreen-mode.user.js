@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.8.3
+// @version             2023.12.8.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -513,13 +513,13 @@
     function insertBtns() {
         const chatbar = document.querySelector(chatbarSelector)
         if (chatbar.contains(wideScreenButton)) return // if buttons aren't missing, exit
-        const leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : '')),
-              elemsToInsert = [newChatButton, wideScreenButton, fullWindowButton, fullScreenButton, tooltipDiv]
+        const elemsToInsert = [newChatButton, wideScreenButton, fullWindowButton, fullScreenButton, tooltipDiv],
+              leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : ''))
         if (site == 'openai') // allow tooltips to overflow
             chatbar.classList.remove('overflow-hidden')
-        if (site == 'poe') // elevate nested non-send button to chatbar
+        else if (site == 'poe') // elevate nested non-send button to chatbar
             chatbar.insertBefore(leftMostBtn, chatbar.lastChild)
-        for (const elem of elemsToInsert) chatbar.insertBefore(elem, leftMostBtn)
+        elemsToInsert.forEach(elem => chatbar.insertBefore(elem, leftMostBtn))
     }
 
     function updateBtnSVG(mode, state = '') {
