@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.8.2
+// @version             2023.12.8.3
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
@@ -569,9 +569,9 @@
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
-                                  updateButtons = updateAlert.querySelectorAll('button')
-                            updateButtons[1].textContent = messages.buttonLabel_update || 'Update'
-                            updateButtons[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
+                                  updateBtns = updateAlert.querySelectorAll('button')
+                            updateBtns[1].textContent = messages.buttonLabel_update || 'Update'
+                            updateBtns[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
                         }
 
                         return
