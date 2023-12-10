@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.7
+// @version             2023.12.10.8
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
@@ -1164,15 +1164,15 @@
         if (!isMobile) {
 
             // Create/append Sticky Sidebar button
-            var ssbSpan = document.createElement('span'),
-                ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            const ssbSpan = document.createElement('span')
+            var ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             ssbSpan.id = 'ssb-btn' ; ssbSpan.classList.add('corner-btn')
             ssbSpan.style.margin = '-0.05rem 9px 0 0' // fine-tune position
             ssbSpan.append(ssbSVG) ; googleGPTdiv.append(ssbSpan) ; updateSSBsvg()
 
             // Create/append Wider Sidebar button
-            var wsbSpan = document.createElement('span'),
-                wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            const wsbSpan = document.createElement('span')
+            var wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
             wsbSpan.style.margin = '-0.08rem 12px 0 0' // fine-tune position
             wsbSpan.append(wsbSVG) ; googleGPTdiv.append(wsbSpan) ; updateWSBsvg()
@@ -1214,8 +1214,8 @@
 
         // Otherwise create/append ChatGPT response
         } else {
-            var balloonTipSpan = document.createElement('span'),
-                answerPre = document.createElement('pre')
+            const balloonTipSpan = document.createElement('span')
+            var answerPre = document.createElement('pre')
             balloonTipSpan.classList.add('balloon-tip')
             balloonTipSpan.style.right = isMobile ? '7.41em' : isFirefox ? '13.98em' : '6.85em'
             balloonTipSpan.style.top = (
