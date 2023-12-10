@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.1
+// @version             2023.12.10.2
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
@@ -1115,9 +1115,9 @@
         const appPrefixSpan = document.createElement('span'),
               googleGPTanchor = createAnchor('https://googlegpt.kudoai.com', googleGPTimg)
         appPrefixSpan.innerText = '🤖 '
-        appPrefixSpan.className = 'no-user-select' ; appPrefixSpan.style.fontSize = '1.2rem'     
+        appPrefixSpan.className = 'no-user-select' ; appPrefixSpan.style.fontSize = '1.1rem'     
         googleGPTanchor.className = 'no-user-select'         
-        googleGPTimg.width = 126 ; googleGPTimg.style.cssText = 'position: relative ; top: 3px'
+        googleGPTimg.width = 116 ; googleGPTimg.style.cssText = 'position: relative ; top: 2px'
         googleGPTdiv.append(appPrefixSpan, googleGPTanchor)
 
         // Create/append 'by KudoAI'
@@ -1215,7 +1215,7 @@
             var balloonTipSpan = document.createElement('span'),
                 answerPre = document.createElement('pre')
             balloonTipSpan.classList.add('balloon-tip')
-            balloonTipSpan.style.right = isMobile ? '7.85em' : chatgpt.browser.isFirefox() ? '14.57em' : '7.35em'
+            balloonTipSpan.style.right = isMobile ? '7.41em' : chatgpt.browser.isFirefox() ? '13.93em' : '6.9em'
             balloonTipSpan.style.top = (
                 chatgpt.browser.isFirefox() ? ( hasSidebar ? '7px' : '5px' )
                                             : ( hasSidebar ? '4px' : '2px' ))
@@ -1443,7 +1443,7 @@
         + '.googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
         + '.googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
         + ( scheme == 'dark' ? '.googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
-        + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 8px ;'
+        + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 6px ;'
             + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
         + '.googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
