@@ -185,7 +185,7 @@
                         'translateX(0)' : `translateX(${ knobWidth }px) translateY(0)`,
                     backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
                 }
-                Object.assign(knobSpan.style, knobStyles) ; switchSpan.appendChild(knobSpan)
+                Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
                 // Create/stylize/fill label
                 const toggleLabel = document.querySelector('#infToggleLabel') || document.createElement('label')
@@ -195,7 +195,7 @@
                 toggleLabel.innerText = chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
                                       + chrome.i18n.getMessage('state_' + ( toggleInput.checked ? 'enabled' : 'disabled' ))
                 // Append elements
-                for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.appendChild(elem)
+                for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
 
                 // Update visual state
                 navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
