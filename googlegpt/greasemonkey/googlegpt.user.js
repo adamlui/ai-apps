@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.2
+// @version             2023.12.10.3
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
@@ -1517,7 +1517,7 @@
                    + '.googlegpt ~ div { width: 464px }' // expand side snippets
                    + `#googlegpt-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
           ssbStyle = '.googlegpt { position: sticky ; top: 71px }'
-                   + '.googlegpt ~ div { display: none }' // hide sidebar contents
+                   + '.googlegpt ~ * { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/classify GoogleGPT container
