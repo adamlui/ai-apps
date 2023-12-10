@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.1
+// @version             2023.12.10.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -539,31 +539,41 @@
                                 adSelected = true ; break
                             }
                             if (adSelected) break // out of campaign loop after ad selection
-                }})}
+        }})}})
 
-                function shuffle(list) {
-                    let currentIdx = list.length, tempValue, randomIdx
-                    while (currentIdx !== 0) { // elements remain to be shuffled
-                        randomIdx = Math.floor(Math.random() * currentIdx) ; currentIdx -= 1
-                        tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
-                    }
-                    return list
-                }
+        function fetchJSON(url, callback) { // for dynamic footer
+            GM.xmlHttpRequest({ method: 'GET', url: url, onload: response => {
+                if (response.status >= 200 && response.status < 300) {
+                    try { const data = JSON.parse(response.responseText) ; callback(null, data) }
+                    catch (err) { callback(err, null) }
+                } else callback(new Error('Failed to load data: ' + response.statusText), null)
+        }})}
 
-                function applyBoosts(list) {
-                    let boostedList = [...list],
-                        boostedListLength = boostedList.length - 1 // for applying multiple boosts
-                    list.forEach(([name, data]) => { // check for boosts
-                        if (data.boost) { // boost flagged entry's selection probability
-                            const boostPercent = parseInt(data.boost, 10) / 100,
-                                  entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
-                                                * boostPercent - 1 // reduced to boosted entries needed
-                            for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
-                            boostedListLength += entriesNeeded // update for subsequent calculations
-                    }})
-                    return boostedList
-                }
-    })}
+        function shuffle(list) {
+            let currentIdx = list.length, tempValue, randomIdx
+            while (currentIdx !== 0) { // elements remain to be shuffled
+                randomIdx = Math.floor(Math.random() * currentIdx) ; currentIdx -= 1
+                tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
+            }
+            return list
+        }
+
+        function applyBoosts(list) {
+            let boostedList = [...list],
+                boostedListLength = boostedList.length - 1 // for applying multiple boosts
+            list.forEach(([name, data]) => { // check for boosts
+                if (data.boost) { // boost flagged entry's selection probability
+                    const boostPercent = parseInt(data.boost, 10) / 100,
+                          entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
+                                        * boostPercent - 1 // reduced to boosted entries needed
+                    for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
+                    boostedListLength += entriesNeeded // update for subsequent calculations
+            }})
+            return boostedList
+        }
+    }
+
+    // Define FACTORY functions
 
     function createSVGpath(attrs) {
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
@@ -578,14 +588,6 @@
         if (displayText) anchor.textContent = displayText
         return anchor
     }
-
-    function fetchJSON(url, callback) { // for dynamic footer
-        GM.xmlHttpRequest({ method: 'GET', url: url, onload: response => {
-            if (response.status >= 200 && response.status < 300) {
-                try { const data = JSON.parse(response.responseText) ; callback(null, data) }
-                catch (err) { callback(err, null) }
-            } else callback(new Error('Failed to load data: ' + response.statusText), null)
-    }})}
 
     // Define SESSION functions
 
@@ -1325,7 +1327,7 @@
 
     // Show standby mode or get answer
     if (config.autoGetDisabled
-        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // if prefix required but not present
+        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
         || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // or suffix required but not present
     ) { updateFooterContent() ; braveGPTshow('standby', footerContent) }
     else {
