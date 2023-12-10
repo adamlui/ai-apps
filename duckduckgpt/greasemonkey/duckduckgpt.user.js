@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.5
+// @version             2023.12.10.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -692,7 +692,7 @@
 
                     // Create/classify/append parent div
                     const relatedQueriesDiv = document.createElement('div')
-                    relatedQueriesDiv.classList.add('related-queries')
+                    relatedQueriesDiv.className = 'related-queries'
                     ddgptDiv.append(relatedQueriesDiv)
 
                     // Fill each child div, add attributes + icon + listener
@@ -830,7 +830,7 @@
               aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
         aboutSpan.id = 'about-btn' // for toggleTooltip()
-        aboutSpan.classList.add('corner-btn')
+        aboutSpan.className = 'corner-btn'
         const aboutSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
         aboutSVGattrs.forEach(([attr, value]) => aboutSVG.setAttribute(attr, value))            
         aboutSVGpath.setAttribute('d',
@@ -843,7 +843,7 @@
             var speakSpan = document.createElement('span'),
                 speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             speakSpan.id = 'speak-btn' // for toggleTooltip()
-            speakSpan.classList.add('corner-btn') ; speakSpan.style.margin = '-0.117em 10px 0 0'
+            speakSpan.className = 'corner-btn' ; speakSpan.style.margin = '-0.117em 10px 0 0'
             const speakSVGattrs = [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']]
             speakSVGattrs.forEach(([attr, value]) => speakSVG.setAttributeNS(null, attr, value))
             const speakSVGpaths = [
@@ -863,7 +863,7 @@
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' // for updateSSBsvg() + toggleTooltip()
-            wsbSpan.classList.add('corner-btn') ; wsbSpan.style.margin = '0.05rem 14px 0 0'
+            wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.05rem 14px 0 0'
             wsbSpan.append(wsbSVG) ; ddgptDiv.append(wsbSpan) ; updateWSBsvg()
         }
 
@@ -895,7 +895,7 @@
         // Show standby state if prefix/suffix mode on
         if (answer == 'standby') {
             const standbyBtn = document.createElement('button')
-            standbyBtn.classList.add('standby-btn')
+            standbyBtn.className = 'standby-btn'
             standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
             ddgptDiv.append(standbyBtn)
             standbyBtn.addEventListener('click', () => {
@@ -912,7 +912,7 @@
         } else {            
             const balloonTipSpan = document.createElement('span')
             var answerPre = document.createElement('pre')
-            balloonTipSpan.classList.add('balloon-tip') ; answerPre.textContent = answer
+            balloonTipSpan.className = 'balloon-tip' ; answerPre.textContent = answer
             ddgptDiv.append(balloonTipSpan) ; ddgptDiv.append(answerPre)
         }
 
@@ -921,7 +921,7 @@
               replyForm = document.createElement('form'),
               continueChatDiv = document.createElement('div'),
               chatTextarea = document.createElement('textarea')
-        continueChatDiv.classList.add('continue-chat')
+        continueChatDiv.className = 'continue-chat'
         chatTextarea.id = 'ddgpt-chatbar' ; chatTextarea.rows = '1'
         chatTextarea.placeholder = ( answer == 'standby' ? messages.placeholder_askSomethingElse || 'Ask something else'
                                                          : messages.tooltip_sendReply || 'Send reply' ) + '...'
@@ -934,7 +934,7 @@
               sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
                   'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
-        sendButton.classList.add('send-button') ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
+        sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
         for (const [attr, value] of [
             ['viewBox', '4 2 16 16'], ['fill', 'none'], ['width', 16], ['height', 16],
             ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
@@ -1199,7 +1199,7 @@
     ddgptFooter.classList.add('feedback-prompt', // DDG class
                               'ddgpt-feedback', 'fade-in') // DDGPT classes
     let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
-    footerContent.classList.add('js-feedback-prompt-generic') // DDG footer class
+    footerContent.className = 'js-feedback-prompt-generic' // DDG footer class
     ddgptFooter.append(footerContent)
 
     // Create/stylize/append tooltip div
@@ -1324,7 +1324,7 @@
 
             // Create campaign div & add class/style/HTML
             const pcDiv = document.createElement('div')
-            pcDiv.classList.add('ddgpt')
+            pcDiv.className = 'ddgpt'
             pcDiv.style.display = 'flex'
             pcDiv.innerHTML = response.responseText
 
