@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.8
+// @version             2023.12.10
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -322,7 +322,7 @@
         if (!tweaksStyle) { // outright missing, create/id/attr/append it first
             tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
             tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
-            document.head.appendChild(tweaksStyle)
+            document.head.append(tweaksStyle)
         }
         tweaksStyle.innerText = (
             '.chatgpt-modal button {'
@@ -652,7 +652,7 @@
                 'translateX(0)' : `translateX(${ knobWidth }px) translateY(0)`,
             backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
         }
-        Object.assign(knobSpan.style, knobStyles) ; switchSpan.appendChild(knobSpan)
+        Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
         // Create/stylize/fill label
         const toggleLabel = document.querySelector('#arToggleLabel') || document.createElement('label')
@@ -663,7 +663,7 @@
                               + ( toggleInput.checked ? ( messages.state_enabled  || 'enabled' )
                                                       : ( messages.state_disabled || 'disabled' ))
         // Append elements
-        for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.appendChild(elem)
+        for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
 
         // Update visual state
         navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
