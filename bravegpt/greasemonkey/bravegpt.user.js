@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.7
+// @version             2023.12.10.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -796,7 +796,7 @@
 
                     // Create/classify/append parent div
                     const relatedQueriesDiv = document.createElement('div')
-                    relatedQueriesDiv.classList.add('related-queries')
+                    relatedQueriesDiv.className = 'related-queries'
                     braveGPTdiv.append(relatedQueriesDiv)
 
                     // Fill each child div, add attributes + icon + listener
@@ -952,7 +952,7 @@
                 speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                 speakSVGattrs = [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']]
             speakSpan.id = 'speak-btn' // for toggleTooltip()
-            speakSpan.classList.add('corner-btn') ; speakSpan.style.margin = '-0.04em 9px 0 0'
+            speakSpan.className = 'corner-btn' ; speakSpan.style.margin = '-0.04em 9px 0 0'
             speakSVGattrs.forEach(([attr, value]) => speakSVG.setAttributeNS(null, attr, value))
             const speakSVGpaths = [
                 createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
@@ -972,14 +972,14 @@
             var ssbSpan = document.createElement('span'),
                 ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             ssbSpan.id = 'ssb-btn' // for updateSSBsvg() + toggleTooltip()
-            ssbSpan.classList.add('corner-btn') ; ssbSpan.style.margin = '0.01rem 10px 0 0'
+            ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '0.01rem 10px 0 0'
             ssbSpan.append(ssbSVG) ; braveGPTdiv.append(ssbSpan) ; updateSSBsvg()
 
             // Create/append Wider Sidebar button
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' // for updateWSBsvg() + toggleTooltip()
-            wsbSpan.classList.add('corner-btn') ; wsbSpan.style.margin = '0.07rem 13px 0 0'
+            wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.07rem 13px 0 0'
             wsbSpan.append(wsbSVG) ; braveGPTdiv.append(wsbSpan) ; updateWSBsvg()
         }
 
@@ -1013,7 +1013,7 @@
         // Show standby state if prefix/suffix mode on
         if (answer == 'standby') {
             const standbyBtn = document.createElement('button')
-            standbyBtn.classList.add('standby-btn')
+            standbyBtn.className = 'standby-btn'
             standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
             braveGPTdiv.append(standbyBtn)
             standbyBtn.addEventListener('click', () => {
@@ -1030,7 +1030,7 @@
         } else {
             const balloonTipSpan = document.createElement('span')
             var answerPre = document.createElement('pre')
-            balloonTipSpan.classList.add('balloon-tip') ; answerPre.textContent = answer
+            balloonTipSpan.className = 'balloon-tip' ; answerPre.textContent = answer
             braveGPTdiv.append(balloonTipSpan) ; braveGPTdiv.append(answerPre)
         }
 
@@ -1041,7 +1041,7 @@
               replyForm = document.createElement('form'),
               continueChatDiv = document.createElement('div'),
               chatTextarea = document.createElement('textarea')
-        continueChatDiv.classList.add('continue-chat')
+        continueChatDiv.className = 'continue-chat'
         chatTextarea.id = 'bravegpt-chatbar' ; chatTextarea.rows = '1'
         chatTextarea.placeholder = ( answer == 'standby' ? messages.placeholder_askSomethingElse || 'Ask something else'
                                                          : messages.tooltip_sendReply || 'Send reply' ) + '...'
@@ -1054,7 +1054,7 @@
               sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
                   'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
-        sendButton.classList.add('send-button') ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
+        sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
         for (const [attr, value] of [
             ['viewBox', '4 2 16 16'], ['fill', 'none'], ['height', 16], ['width', 16],
             ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
@@ -1063,7 +1063,7 @@
 
         // Create/classify/fill/append footer
         const braveGPTfooter = document.createElement('div')
-        braveGPTfooter.classList.add('footer')
+        braveGPTfooter.className = 'footer'
         braveGPTfooter.append(footerContent) ; braveGPTdiv.append(braveGPTfooter)
 
         // Render math
