@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.3
+// @version             2023.12.10.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -484,6 +484,28 @@
             } else callback(new Error('Failed to load data: ' + response.statusText), null)
     }})}
 
+    // Define TOOLTIP functions
+
+    function toggleTooltip(event) {
+        updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
+        tooltipDiv.style.opacity = event.type == 'mouseover' ? '0.8' : '0'
+    }
+
+    function updateTooltip(buttonType) { // text & position
+        const isStandbyMode = document.querySelector('.standby-btn')
+        tooltipDiv.innerText = (
+            buttonType == 'about' ? messages.menuLabel_about || 'About'
+          : buttonType == 'speak' ? messages.tooltip_playAnswer || 'Play answer'
+          : buttonType == 'wsb' ? (( config.widerSidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
+                                + messages.menuLabel_widerSidebar || 'Wider Sidebar' ) : ''
+        )
+        const ctrAddend = isStandbyMode ? 15 : 1, spreadFactor = isStandbyMode ? 18 : 32,
+              iniRoffset = spreadFactor * ( buttonType == 'about' ? 1
+                                          : buttonType == 'speak' ? 2 : 3 ) + ctrAddend
+        tooltipDiv.style.right = `${ // horizontal position
+            iniRoffset - tooltipDiv.getBoundingClientRect().width / 2}px`
+    }
+
     // Define SESSION functions
 
     function isBlockedbyCloudflare(resp) {
@@ -807,7 +829,8 @@
         const aboutSpan = document.createElement('span'),
               aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
-        aboutSpan.classList.add('corner-btn') ; aboutSpan.title = messages.menuLabel_about || 'About'
+        aboutSpan.id = 'about-btn' // for toggleTooltip()
+        aboutSpan.classList.add('corner-btn')
         for (const [attr, value] of [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']])
             aboutSVG.setAttribute(attr, value)
         aboutSVGpath.setAttribute('d',
@@ -817,10 +840,10 @@
 
         // Create/append speak button
         if (answer != 'standby') {
-            const speakSpan = document.createElement('span')
-            var speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-            speakSpan.classList.add('corner-btn') ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
-            speakSpan.style.margin = '-0.117em 10px 0 0' // fine-tune position
+            var speakSpan = document.createElement('span'),
+                speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            speakSpan.id = 'speak-btn' // for toggleTooltip()
+            speakSpan.classList.add('corner-btn') ; speakSpan.style.margin = '-0.117em 10px 0 0'
             for (const [attr, value] of [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']])
                 speakSVG.setAttributeNS(null, attr, value)
             const speakSVGpaths = [
@@ -837,12 +860,15 @@
 
         // Create/append Wider Sidebar button
         if (!isCentered && !isMobile) {
-            const wsbSpan = document.createElement('span')
-            var wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-            wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
-            wsbSpan.style.margin = '0.05rem 14px 0 0' // fine-tune position
+            var wsbSpan = document.createElement('span'),
+                wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            wsbSpan.id = 'wsb-btn' // for updateSSBsvg() + toggleTooltip()
+            wsbSpan.classList.add('corner-btn') ; wsbSpan.style.margin = '0.05rem 14px 0 0'
             wsbSpan.append(wsbSVG) ; ddgptDiv.append(wsbSpan) ; updateWSBsvg()
         }
+
+        // Add tooltips
+        ddgptDiv.append(tooltipDiv)
 
         // Add button listeners
         wsbSVG?.addEventListener('click', toggleWiderSidebar)
@@ -860,6 +886,11 @@
             speakAudio.play().catch(() => chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 }))
         })
         aboutSVG.addEventListener('click', launchAboutModal)
+        const buttonSpans = [aboutSpan, speakSpan, wsbSpan]
+        buttonSpans.forEach(span => { if (span) { // add hover listeners for tooltips
+            span.addEventListener('mouseover', toggleTooltip)
+            span.addEventListener('mouseout', toggleTooltip)
+        }})
 
         // Show standby state if prefix/suffix mode on
         if (answer == 'standby') {
@@ -1170,6 +1201,17 @@
     let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
     footerContent.classList.add('js-feedback-prompt-generic') // DDG footer class
     ddgptFooter.append(footerContent)
+
+    // Create/stylize/append tooltip div
+    const tooltipDiv = document.createElement('div'),
+          tooltipStyle = document.createElement('style')
+    tooltipDiv.classList.add('button-tooltip', 'no-user-select')
+    tooltipStyle.innerText = '.button-tooltip {'
+        + 'background: black ; padding: 3px 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+        + 'font-size: 0.7rem ; color: white ;' // font style
+        + 'position: absolute ; top: -7px ;' // v-position
+        + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
+    document.head.append(tooltipStyle)
 
     // Append DDGPT + footer to DDG
     const ddgptElems = [ddgptFooter, ddgptDiv],
