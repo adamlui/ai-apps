@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10
+// @version             2023.12.10.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
@@ -658,8 +658,8 @@
         // Update SVG elements
         while (wsbSVG.firstChild) { wsbSVG.removeChild(wsbSVG.firstChild) }
         const wsbSVGpaths = config.widerSidebar ? wsbONpaths : wsbOFFpaths
-        wsbSVGpaths.forEach(path => wsbSVG.appendChild(path))
-        if (!wsbSpan.contains(wsbSVG)) wsbSpan.appendChild(wsbSVG)
+        wsbSVGpaths.forEach(path => wsbSVG.append(path))
+        if (!wsbSpan.contains(wsbSVG)) wsbSpan.append(wsbSVG)
     }
 
     function updateSSBsvg() {
@@ -683,8 +683,8 @@
         // Update SVG elements
         while (ssbSVG.firstChild) { ssbSVG.removeChild(ssbSVG.firstChild) }
         const ssbSVGpaths = config.stickySidebar ? ssbONpaths : ssbOFFpaths
-        ssbSVGpaths.forEach(path => ssbSVG.appendChild(path))
-        if (!ssbSpan.contains(ssbSVG)) ssbSpan.appendChild(ssbSVG)
+        ssbSVGpaths.forEach(path => ssbSVG.append(path))
+        if (!ssbSpan.contains(ssbSVG)) ssbSpan.append(ssbSVG)
     }
 
     function updateFooterContent() {
@@ -987,7 +987,7 @@
                     // Create/classify/append parent div
                     const relatedQueriesDiv = document.createElement('div')
                     relatedQueriesDiv.classList.add('related-queries')
-                    googleGPTdiv.appendChild(relatedQueriesDiv)
+                    googleGPTdiv.append(relatedQueriesDiv)
 
                     // Fill each child div, add attributes + icon + listener
                     relatedQueries.forEach((relatedQuery, index) => {
@@ -1010,8 +1010,8 @@
                         relatedQuerySVG.style.transform = 'rotate(180deg)' // flip arrow upside down
 
                         // Assemble/insert elements
-                        relatedQuerySVG.appendChild(relatedQuerySVGpath) ; relatedQueryDiv.prepend(relatedQuerySVG)
-                        relatedQueriesDiv.appendChild(relatedQueryDiv)
+                        relatedQuerySVG.append(relatedQuerySVGpath) ; relatedQueryDiv.prepend(relatedQuerySVG)
+                        relatedQueriesDiv.append(relatedQueryDiv)
 
                         // Add fade + listeners
                         setTimeout(() => {
@@ -1124,7 +1124,7 @@
         const kudoAIspan = document.createElement('span')
         kudoAIspan.classList.add('kudo-ai', 'no-user-select') ; kudoAIspan.textContent = 'by '
         const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
-        kudoAIspan.appendChild(kudoAIlink) ; googleGPTdiv.appendChild(kudoAIspan)
+        kudoAIspan.append(kudoAIlink) ; googleGPTdiv.append(kudoAIspan)
 
         // Create/append about button
         const aboutSpan = document.createElement('span'),
@@ -1137,7 +1137,7 @@
         aboutSVGpath.setAttribute('d',
             'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z')
         aboutSVGpath.setAttribute('stroke', 'none')
-        aboutSVG.appendChild(aboutSVGpath) ; aboutSpan.appendChild(aboutSVG) ; googleGPTdiv.appendChild(aboutSpan)
+        aboutSVG.append(aboutSVGpath) ; aboutSpan.append(aboutSVG) ; googleGPTdiv.append(aboutSpan)
 
         // Create/append speak button
         if (answer != 'standby') {
@@ -1155,8 +1155,8 @@
                 createSVGpath({ stroke: 'none', fill: '',
                     d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
             ]
-            speakSVGpaths.forEach(path => speakSVG.appendChild(path))
-            speakSpan.appendChild(speakSVG) ; googleGPTdiv.appendChild(speakSpan)
+            speakSVGpaths.forEach(path => speakSVG.append(path))
+            speakSpan.append(speakSVG) ; googleGPTdiv.append(speakSpan)
         }
 
         if (!isMobile) {
@@ -1166,14 +1166,14 @@
                 ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             ssbSpan.id = 'ssb-btn' ; ssbSpan.classList.add('corner-btn')
             ssbSpan.style.margin = '-0.05rem 9px 0 0' // fine-tune position
-            ssbSpan.appendChild(ssbSVG) ; googleGPTdiv.appendChild(ssbSpan) ; updateSSBsvg()
+            ssbSpan.append(ssbSVG) ; googleGPTdiv.append(ssbSpan) ; updateSSBsvg()
 
             // Create/append Wider Sidebar button
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
             wsbSpan.style.margin = '-0.08rem 12px 0 0' // fine-tune position
-            wsbSpan.appendChild(wsbSVG) ; googleGPTdiv.appendChild(wsbSpan) ; updateWSBsvg()
+            wsbSpan.append(wsbSVG) ; googleGPTdiv.append(wsbSpan) ; updateWSBsvg()
         }
 
         // Add button listeners
@@ -1199,7 +1199,7 @@
             const standbyBtn = document.createElement('button')
             standbyBtn.classList.add('standby-btn')
             standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
-            googleGPTdiv.appendChild(standbyBtn)
+            googleGPTdiv.append(standbyBtn)
             standbyBtn.addEventListener('click', () => {
                 googleGPTalert('waitingResponse')
                 const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
@@ -1220,7 +1220,7 @@
                 chatgpt.browser.isFirefox() ? ( hasSidebar ? '7px' : '5px' )
                                             : ( hasSidebar ? '4px' : '2px' ))
             answerPre.textContent = answer
-            googleGPTdiv.appendChild(balloonTipSpan) ; googleGPTdiv.appendChild(answerPre)
+            googleGPTdiv.append(balloonTipSpan) ; googleGPTdiv.append(answerPre)
         }
 
         updateTweaksStyle() // in case sticky mode on
@@ -1235,9 +1235,9 @@
         chatTextarea.placeholder = ( answer == 'standby' ? messages.placeholder_askSomethingElse || 'Ask something else'
                                                          : messages.tooltip_sendReply || 'Send reply' ) + '...'
         chatTextarea.style.width = hasSidebar ? '88.8%' : '89.5%'
-        continueChatDiv.appendChild(chatTextarea)
-        replyForm.appendChild(continueChatDiv) ; replySection.appendChild(replyForm)
-        googleGPTdiv.appendChild(replySection)
+        continueChatDiv.append(chatTextarea)
+        replyForm.append(continueChatDiv) ; replySection.append(replyForm)
+        googleGPTdiv.append(replySection)
 
         // Create/append send button
         const sendButton = document.createElement('button'),
@@ -1251,12 +1251,12 @@
             ['viewBox', '4 2 16 16'], ['fill', 'none'], ['width', 16], ['height', 16],
             ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
         ]) sendSVG.setAttribute(attr, value)
-        sendSVG.appendChild(sendSVGpath) ; sendButton.appendChild(sendSVG) ; continueChatDiv.appendChild(sendButton)
+        sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
 
         // Create/classify/fill/append footer
         const googleGPTfooter = document.createElement('div')
         googleGPTfooter.classList.add('footer')
-        googleGPTfooter.appendChild(footerContent) ; googleGPTdiv.appendChild(googleGPTfooter)
+        googleGPTfooter.append(footerContent) ; googleGPTdiv.append(googleGPTfooter)
 
         // Render math
         if (answer != 'standby') {
@@ -1508,7 +1508,7 @@
         + '.googlegpt .footer * { color: #aaa ; text-decoration: none }'
         + `.googlegpt .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
     )
-    document.head.appendChild(googleGPTstyle)
+    document.head.append(googleGPTstyle)
 
     // Create Google style tweaks
     const tweaksStyle = document.createElement('style'),
@@ -1518,7 +1518,7 @@
                    + `#googlegpt-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
           ssbStyle = '.googlegpt { position: sticky ; top: 71px }'
                    + '.googlegpt ~ div { display: none }' // hide sidebar contents
-    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
+    updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/classify GoogleGPT container
     const googleGPTdiv = document.createElement('div')
