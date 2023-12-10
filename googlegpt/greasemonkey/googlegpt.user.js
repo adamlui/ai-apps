@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.14
+// @version             2023.12.10.15
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
@@ -1543,6 +1543,12 @@
             + `margin: ${ isFirefox ? '3px' : 0 } -32px 13px }`
         + '.googlegpt .footer * { color: #aaa ; text-decoration: none }'
         + `.googlegpt .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
+        + ( // stylize scrollbars in Chromium/Safari
+              '.googlegpt *::-webkit-scrollbar { width: 7px }'
+            + '.googlegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
+            + '.googlegpt *::-webkit-scrollbar-thumb:hover { background: #a6a6a6 }'
+            + '.googlegpt *::-webkit-scrollbar-track { background: none }' )
+        + '.googlegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
     )
     document.head.append(googleGPTstyle)
 
