@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.3
+// @version             2023.12.10.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -940,17 +940,18 @@
             speakSpan.append(speakSVG) ; braveGPTdiv.append(speakSpan)
         }
 
-        // Create/append Sticky Sidebar button
-        var ssbSpan = document.createElement('span'),
-            ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-        ssbSpan.id = 'ssb-btn' ; ssbSpan.classList.add('corner-btn')
-        ssbSpan.style.margin = '0.01rem 10px 0 0' // fine-tune position
-        ssbSpan.append(ssbSVG) ; braveGPTdiv.append(ssbSpan) ; updateSSBsvg()
-
-        // Create/append Wider Sidebar button
         if (!isMobile) {
-            var wsbSpan = document.createElement('span'),
-                wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+
+            // Create/append Sticky Sidebar button
+            const ssbSpan = document.createElement('span')
+            var ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            ssbSpan.id = 'ssb-btn' ; ssbSpan.classList.add('corner-btn')
+            ssbSpan.style.margin = '0.01rem 10px 0 0' // fine-tune position
+            ssbSpan.append(ssbSVG) ; braveGPTdiv.append(ssbSpan) ; updateSSBsvg()
+
+            // Create/append Wider Sidebar button
+            const wsbSpan = document.createElement('span')
+            var wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
             wsbSpan.style.margin = '0.07rem 13px 0 0' // fine-tune position
             wsbSpan.append(wsbSVG) ; braveGPTdiv.append(wsbSpan) ; updateWSBsvg()
@@ -992,8 +993,8 @@
 
         // Otherwise create/append ChatGPT response
         } else {
-            var balloonTipSpan = document.createElement('span'),
-                answerPre = document.createElement('pre')
+            const balloonTipSpan = document.createElement('span')
+            var answerPre = document.createElement('pre')
             balloonTipSpan.classList.add('balloon-tip') ; answerPre.textContent = answer
             braveGPTdiv.append(balloonTipSpan) ; braveGPTdiv.append(answerPre)
         }
