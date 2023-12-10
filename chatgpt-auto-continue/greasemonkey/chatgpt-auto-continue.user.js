@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.8
+// @version             2023.12.10
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -292,7 +292,7 @@
                 + 'font-size: 0.77rem ; text-transform: uppercase ;'
                 + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
             + '.modal-buttons { margin-left: -13px !important }'
-        document.head.appendChild(chatgptAlertStyle)
+        document.head.append(chatgptAlertStyle)
     }
 
     // Observe DOM for need to continue generating response
