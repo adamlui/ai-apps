@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.8
+// @version             2023.12.10
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -309,7 +309,7 @@
         if (!tweaksStyle) { // outright missing, create/id/attr/append it first
             tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
             tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
-            document.head.appendChild(tweaksStyle)
+            document.head.append(tweaksStyle)
         }
         tweaksStyle.innerText = (
             '.chatgpt-modal button {'
@@ -615,7 +615,7 @@
                 'translateX(0)' : `translateX(${ knobWidth }px) translateY(0)`,
             backgroundColor: 'white',  '-webkit-transition': '0.4s', transition: '0.4s'
         }
-        Object.assign(knobSpan.style, knobStyles) ; switchSpan.appendChild(knobSpan)
+        Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
         // Create/ID/stylize/fill label
         const toggleLabel = document.querySelector('#acToggleLabel') || document.createElement('label')
@@ -626,7 +626,7 @@
                               + ( toggleInput.checked ? ( messages.state_enabled  || 'enabled' )
                                                       : ( messages.state_disabled || 'disabled' ))
         // Append elements
-        for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.appendChild(elem)
+        for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
 
         // Update visual state
         navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
