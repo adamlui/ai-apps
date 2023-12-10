@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10
+// @version             2023.12.10.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -837,8 +837,8 @@
 
         // Create/append Wider Sidebar button
         if (!isCentered && !isMobile) {
-            var wsbSpan = document.createElement('span'),
-                wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            const wsbSpan = document.createElement('span')
+            var wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' ; wsbSpan.classList.add('corner-btn')
             wsbSpan.style.margin = '0.05rem 14px 0 0' // fine-tune position
             wsbSpan.append(wsbSVG) ; ddgptDiv.append(wsbSpan) ; updateWSBsvg()
@@ -879,8 +879,8 @@
 
         // Otherwise create/append ChatGPT response
         } else {            
-            var balloonTipSpan = document.createElement('span'),
-                answerPre = document.createElement('pre')
+            const balloonTipSpan = document.createElement('span')
+            var answerPre = document.createElement('pre')
             balloonTipSpan.classList.add('balloon-tip') ; answerPre.textContent = answer
             ddgptDiv.append(balloonTipSpan) ; ddgptDiv.append(answerPre)
         }
@@ -1176,7 +1176,7 @@
           hostContainer = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]'
                                                                         : '[class*="sidebar"]')
     ddgptElems.forEach(elem => hostContainer.prepend(elem))
-    ddgptElems.reverse().forEach((elem, index) => // fade in staggered
+    ddgptElems.toReversed().forEach((elem, index) => // fade in staggered
         setTimeout(() => elem.classList.add('active'), index * 550 - 200))
 
     // Check for active text campaigns to replace footer CTA
@@ -1298,7 +1298,7 @@
 
     // Show standby mode or get answer
     if (config.autoGetDisabled
-        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // if prefix required but not present
+        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
         || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // or suffix required but not present
     ) ddgptShow('standby')
     else {
