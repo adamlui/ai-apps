@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.5
+// @version             2023.12.10.6
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
@@ -1116,7 +1116,7 @@
               googleGPTanchor = createAnchor('https://googlegpt.kudoai.com', googleGPTimg)
         appPrefixSpan.innerText = '🤖 '
         appPrefixSpan.className = 'no-user-select' ; appPrefixSpan.style.fontSize = '1.1rem'     
-        googleGPTanchor.className = 'no-user-select' ; googleGPTimg.width = isFirefox ? 125 : 116
+        googleGPTanchor.className = 'no-user-select' ; googleGPTimg.width = isFirefox ? 118 : 116
         googleGPTimg.style.cssText = `position: relative ; top: ${ isFirefox ? 3 : 2 }px`
         googleGPTdiv.append(appPrefixSpan, googleGPTanchor)
 
@@ -1215,7 +1215,7 @@
             var balloonTipSpan = document.createElement('span'),
                 answerPre = document.createElement('pre')
             balloonTipSpan.classList.add('balloon-tip')
-            balloonTipSpan.style.right = isMobile ? '7.41em' : isFirefox ? '14.53em' : '6.85em'
+            balloonTipSpan.style.right = isMobile ? '7.41em' : isFirefox ? '13.98em' : '6.85em'
             balloonTipSpan.style.top = (
                 isFirefox ? ( hasSidebar ? '7px' : '5px' )
                                             : ( hasSidebar ? '4px' : '2px' ))
