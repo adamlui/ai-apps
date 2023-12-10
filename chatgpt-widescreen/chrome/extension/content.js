@@ -3,8 +3,7 @@
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
 
-(async () => {
-    /* global newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn */
+(async () => { /* global newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn */
 
     // Import libs
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
