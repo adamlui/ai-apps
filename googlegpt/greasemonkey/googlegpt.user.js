@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.10
+// @version             2023.12.10.11
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
@@ -823,12 +823,10 @@
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
                                 + messages.menuLabel_widerSidebar || 'Wider Sidebar' ) : ''
         )
-        const ctrAddend = isStandbyMode ? 15 : 8,
-              spreadFactor = isStandbyMode ? 18 : 28,
-              iniRoffset = spreadFactor * (
-                  buttonType == 'about' ? 1
-                : buttonType == 'speak' ? 2
-                : buttonType == 'ssb' ? 3 : 4 ) + ctrAddend
+        const ctrAddend = isStandbyMode ? 15 : 8, spreadFactor = isStandbyMode ? 18 : 28,
+              iniRoffset = spreadFactor * ( buttonType == 'about' ? 1
+                                          : buttonType == 'speak' ? 2
+                                          : buttonType == 'ssb' ? 3 : 4 ) + ctrAddend
         tooltipDiv.style.right = `${ // horizontal position
             iniRoffset - tooltipDiv.getBoundingClientRect().width / 2}px`
     }
