@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.8.6
+// @version             2023.12.10
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -255,8 +255,7 @@
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license.
 
-(async () => {
-    /* global newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn */
+(async () => { /* global newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn */
 
     const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2]
 
@@ -580,10 +579,10 @@
         // Update SVG elements
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
         const svgElems = config[mode] || state.toLowerCase() == 'on' ? ONelems : OFFelems
-        svgElems.forEach(elem => buttonSVG.appendChild(elem))
+        svgElems.forEach(elem => buttonSVG.append(elem))
 
         // Update SVG
-        if (!button.contains(buttonSVG)) button.appendChild(buttonSVG)
+        if (!button.contains(buttonSVG)) button.append(buttonSVG)
     }
 
     function createSVGelem(tagName, attributes) {
@@ -619,11 +618,11 @@
     // Define TOGGLE functions
 
     function activateMode(mode) {
-        if (mode == 'wideScreen') { document.head.appendChild(wideScreenStyle) ; syncMode('wideScreen') }
+        if (mode == 'wideScreen') { document.head.append(wideScreenStyle) ; syncMode('wideScreen') }
         else if (mode == 'fullWindow') {
             if (site == 'openai') chatgpt.sidebar.hide()
             else /* poe */ syncMode('fullWindow') // since not sidebarObserve()'d
-            document.head.appendChild(fullWindowStyle)
+            document.head.append(fullWindowStyle)
         } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
     }
 
@@ -671,7 +670,7 @@
 
     function syncFullerWindows(fullWindowState) {
         if (fullWindowState && config.fullerWindows && !config.wideScreen) { // activate fuller windows
-            document.head.appendChild(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
+            document.head.append(wideScreenStyle) ; updateBtnSVG('wideScreen', 'on')
         } else if (!fullWindowState) { // de-activate fuller windows
             try { document.head.removeChild(fullWindowStyle) } catch (err) {} // to remove style too so sidebar shows
             if (!config.wideScreen) { // disable widescreen if result of fuller window
@@ -743,7 +742,7 @@
                 + 'font-size: 0.77rem ; text-transform: uppercase ;'
                 + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
             + '.modal-buttons { margin-left: -13px !important }'
-        document.head.appendChild(chatgptAlertStyle)
+        document.head.append(chatgptAlertStyle)
     }
 
     // Collect button classes
@@ -761,7 +760,7 @@
         + 'position: absolute ; bottom: 50px ; ' // v-position
         + 'opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 ; ' // visibility
         + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }' // disable select
-    document.head.appendChild(tooltipStyle)
+    document.head.append(tooltipStyle)
 
     // Create/apply general style tweaks
     const tweaksStyle = document.createElement('style'),
@@ -770,7 +769,7 @@
                   + ( site == 'openai' ? 'main { padding-top: 12px }' : '' ), // increase top-padding
           hfStyle = footerSelector + '{ color: transparent !important ;' // hide footer text
                                    + '  padding: .1rem 0 0 !important }' // reduce v-padding
-    updateTweaksStyle() ; document.head.appendChild(tweaksStyle)
+    updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create widescreen style
     const wideScreenStyle = document.createElement('style')
