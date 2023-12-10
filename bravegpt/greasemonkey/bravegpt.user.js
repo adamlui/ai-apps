@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.4
+// @version             2023.12.10.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -922,8 +922,8 @@
 
         // Create/append speak button
         if (answer != 'standby') {
-            var speakSpan = document.createElement('span'),
-                speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            const speakSpan = document.createElement('span')
+            var speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             speakSpan.classList.add('corner-btn') ; speakSpan.title = messages.tooltip_playAnswer || 'Play answer'
             speakSpan.style.margin = '-0.04em 9px 0 0' // fine-tune position
             for (const [attr, value] of [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']])
