@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.3
+// @version             2023.12.10.4
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
@@ -1215,9 +1215,9 @@
             var balloonTipSpan = document.createElement('span'),
                 answerPre = document.createElement('pre')
             balloonTipSpan.classList.add('balloon-tip')
-            balloonTipSpan.style.right = isMobile ? '7.41em' : chatgpt.browser.isFirefox() ? '13.93em' : '6.9em'
+            balloonTipSpan.style.right = isMobile ? '7.41em' : isFirefox ? '13.93em' : '6.9em'
             balloonTipSpan.style.top = (
-                chatgpt.browser.isFirefox() ? ( hasSidebar ? '7px' : '5px' )
+                isFirefox ? ( hasSidebar ? '7px' : '5px' )
                                             : ( hasSidebar ? '4px' : '2px' ))
             answerPre.textContent = answer
             googleGPTdiv.append(balloonTipSpan) ; googleGPTdiv.append(answerPre)
@@ -1245,8 +1245,8 @@
               sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
                   'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
         sendButton.classList.add('send-button') ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
-        sendButton.style.right = chatgpt.browser.isFirefox() ? '8px' : '7px'
-        sendButton.style.bottom = `${( chatgpt.browser.isFirefox() ? 46 : 49 ) + ( hasSidebar ? 3 : 0 )}px`
+        sendButton.style.right = isFirefox ? '8px' : '7px'
+        sendButton.style.bottom = `${( isFirefox ? 46 : 49 ) + ( hasSidebar ? 3 : 0 )}px`
         for (const [attr, value] of [
             ['viewBox', '4 2 16 16'], ['fill', 'none'], ['width', 16], ['height', 16],
             ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
@@ -1374,12 +1374,13 @@
     // Init UI flags
     const scheme = isDarkMode() ? 'dark' : 'light',
           isChromium = chatgpt.browser.isChromium(),
+          isFirefox = chatgpt.browser.isFirefox(),
           isMobile = chatgpt.browser.isMobile(),
           hasSidebar = document.querySelector('[class*="kp-"]')
 
     // Pre-load logo
     const googleGPTimg = document.createElement('img')
-          googleGPTimg.src = `${ config.assetHostURL }/media/images/logos/googlegpt/beta/${ scheme }mode.png`
+    googleGPTimg.src = `${ config.assetHostURL }/media/images/logos/googlegpt/beta/${ scheme }mode.png`
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -1504,7 +1505,7 @@
             + '.primary-modal-btn { background: white !important ; color: black !important }'
             + '.chatgpt-modal a { color: #00cfff !important }' ) : '' )
         + '.googlegpt .footer { position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ;'
-            + `margin: ${ chatgpt.browser.isFirefox() ? '3px' : 0 } -32px 13px }`
+            + `margin: ${ isFirefox ? '3px' : 0 } -32px 13px }`
         + '.googlegpt .footer * { color: #aaa ; text-decoration: none }'
         + `.googlegpt .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
     )
