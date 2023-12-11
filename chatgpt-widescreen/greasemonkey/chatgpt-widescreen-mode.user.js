@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.10
+// @version             2023.12.11
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -594,12 +594,8 @@
     // Define TOOLTIP functions
 
     function toggleTooltip(event) {
-        const buttonType = (
-            event.target.id.includes('fullScreen') ? 'fullScreen' :
-            event.target.id.includes('fullWindow') ? 'fullWindow' :
-            event.target.id.includes('wide') ? 'wideScreen' : 'newChat')
-        updateTooltip(buttonType) // since mouseover's can indicate button change
-        tooltipDiv.style.opacity = event.type == 'mouseover' ? '0.8' : '0' // toggle visibility
+        updateTooltip(event.currentTarget.id.replace(/-button$/, ''))
+        tooltipDiv.style.opacity = event.type == 'mouseover' ? '0.8' : '0'
     }
 
     function updateTooltip(buttonType) { // text & position
