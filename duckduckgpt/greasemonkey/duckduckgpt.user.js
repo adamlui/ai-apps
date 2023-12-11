@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.6
+// @version             2023.12.11
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1190,6 +1190,17 @@
                    + '#ddgpt-chatbar { width: 95.6% }'
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
+    // Create/stylize tooltip div
+    const tooltipDiv = document.createElement('div'),
+          tooltipStyle = document.createElement('style')
+    tooltipDiv.classList.add('button-tooltip', 'no-user-select')
+    tooltipStyle.innerText = '.button-tooltip {'
+        + 'background: black ; padding: 3px 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+        + 'font-size: 0.7rem ; color: white ;' // font style
+        + 'position: absolute ; top: -7px ;' // v-position
+        + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
+    document.head.append(tooltipStyle)
+
     // Create/classify DDGPT container
     const ddgptDiv = document.createElement('div') // create container div
     ddgptDiv.classList.add('ddgpt', 'fade-in')
@@ -1201,17 +1212,6 @@
     let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
     footerContent.className = 'js-feedback-prompt-generic' // DDG footer class
     ddgptFooter.append(footerContent)
-
-    // Create/stylize/append tooltip div
-    const tooltipDiv = document.createElement('div'),
-          tooltipStyle = document.createElement('style')
-    tooltipDiv.classList.add('button-tooltip', 'no-user-select')
-    tooltipStyle.innerText = '.button-tooltip {'
-        + 'background: black ; padding: 3px 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-        + 'font-size: 0.7rem ; color: white ;' // font style
-        + 'position: absolute ; top: -7px ;' // v-position
-        + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
-    document.head.append(tooltipStyle)
 
     // Append DDGPT + footer to DDG
     const ddgptElems = [ddgptFooter, ddgptDiv],
