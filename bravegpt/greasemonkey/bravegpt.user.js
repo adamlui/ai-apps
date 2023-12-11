@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.10
+// @version             2023.12.11
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -1333,12 +1333,7 @@
                    + '.bravegpt ~ * { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
-    // Create/classify BraveGPT container
-    const braveGPTdiv = document.createElement('div') // create container div
-    braveGPTdiv.classList.add('bravegpt', 'fade-in', // BraveGPT classes
-                              'snippet') // Brave class
-
-    // Create/stylize/append tooltip div
+    // Create/stylize tooltip div
     const tooltipDiv = document.createElement('div'),
           tooltipStyle = document.createElement('style')
     tooltipDiv.classList.add('button-tooltip', 'no-user-select')
@@ -1348,6 +1343,11 @@
         + 'position: absolute ; top: -6px ;' // v-position
         + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
     document.head.append(tooltipStyle)
+
+    // Create/classify BraveGPT container
+    const braveGPTdiv = document.createElement('div') // create container div
+    braveGPTdiv.classList.add('bravegpt', 'fade-in', // BraveGPT classes
+                              'snippet') // Brave class
 
     // Append to Brave
     const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
