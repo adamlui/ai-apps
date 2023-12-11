@@ -308,12 +308,8 @@
     // Define TOOLTIP functions
 
     function toggleTooltip(event) {
-        const buttonType = (
-            event.target.id.includes('fullScreen') ? 'fullScreen' :
-            event.target.id.includes('fullWindow') ? 'fullWindow' :
-            event.target.id.includes('wide') ? 'wideScreen' : 'newChat')
-        updateTooltip(buttonType) // since mouseover's can indicate button change
-        tooltipDiv.style.opacity = event.type == 'mouseover' ? '0.8' : '0' // toggle visibility
+        updateTooltip(event.currentTarget.id.replace(/-button$/, ''))
+        tooltipDiv.style.opacity = event.type == 'mouseover' ? '0.8' : '0'
     }
 
     function updateTooltip(buttonType) { // text & position
