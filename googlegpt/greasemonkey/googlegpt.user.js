@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.10.15
+// @version             2023.12.11
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/icons/googlegpt/beta/black/icon64.png
@@ -1562,20 +1562,20 @@
                    + '.googlegpt ~ * { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
-    // Create/classify GoogleGPT container
-    const googleGPTdiv = document.createElement('div')
-    googleGPTdiv.classList.add('googlegpt', 'fade-in')
-
-    // Create/stylize/append tooltip div
+    // Create/stylize tooltip div
     const tooltipDiv = document.createElement('div'),
           tooltipStyle = document.createElement('style')
     tooltipDiv.classList.add('button-tooltip', 'no-user-select')
     tooltipStyle.innerText = '.button-tooltip {'
         + 'background: black ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.7rem ; color: white ;' // font style
-        + 'position: absolute ; top: -6px ;' // v-position
+        + 'position: absolute ; top: -8px ;' // v-position
         + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
     document.head.append(tooltipStyle)
+
+    // Create/classify GoogleGPT container
+    const googleGPTdiv = document.createElement('div')
+    googleGPTdiv.classList.add('googlegpt', 'fade-in')
 
     // Append to Google
     const centerCol = document.querySelector('#center_col')
