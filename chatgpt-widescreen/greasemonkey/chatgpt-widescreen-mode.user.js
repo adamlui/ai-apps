@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.11
+// @version             2023.12.11.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -601,12 +601,10 @@
     function updateTooltip(buttonType) { // text & position
         tooltipDiv.innerText = messages['tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON'))]
-        const ctrAddend = 25 + ( site == 'poe' ? 42 : 0 ),
-              overlayWidth = site == 'poe' ? 42 : 30,
-              iniRoffset = overlayWidth * (
-                  buttonType.includes('fullScreen') ? 1
-                : buttonType.includes('fullWindow') ? 2
-                : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
+        const ctrAddend = 25 + ( site == 'poe' ? 42 : 0 ), spreadFactor = site == 'poe' ? 42 : 30,
+              iniRoffset = spreadFactor * ( buttonType.includes('fullScreen') ? 1
+                                          : buttonType.includes('fullWindow') ? 2
+                                          : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
         tooltipDiv.style.right = `${ // horizontal position
             iniRoffset - tooltipDiv.getBoundingClientRect().width / 2}px`
     }
