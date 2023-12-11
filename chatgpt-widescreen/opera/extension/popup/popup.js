@@ -16,7 +16,7 @@
     settings.load('extensionDisabled').then(() => { // init toggle state, update greyness
         masterToggle.checked = !config.extensionDisabled ; updateGreyness() })
     masterToggle.addEventListener('change', () => {    
-        settings.save('extensionDisabled', !this.checked)
+        settings.save('extensionDisabled', !config.extensionDisabled)
         syncExtension() ; updateGreyness()
     })
 
