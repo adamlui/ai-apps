@@ -10,7 +10,7 @@
 [![](https://img.shields.io/codacy/grade/4ed2c731e9ae49178259f953ee639b19?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-auto-continue/commits?utm_source=chatgpt_auto_continue&utm_content=github_shield)
 [![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js?utm_source=chatgpt_auto_continue&utm_content=github_shield)
 [![](https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
-[![](https://img.shields.io/badge/web-https://chatgptautocontinue.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptautocontinue.com?utm_source=chatgpt_auto_continue&utm_content=github_shield)
+[![](https://img.shields.io/badge/web-www.chatgptautocontinue.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptautocontinue.com?utm_source=chatgpt_auto_continue&utm_content=github_shield)
 
 ### Automatically continue generating ChatGPT responses when chats cut off.
 
