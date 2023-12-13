@@ -11,7 +11,7 @@
 [![](https://img.shields.io/codacy/grade/fad402ea351b42c98b36f5f4de42edec?label=代码质量&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-auto-refresh/commits?utm_source=chatgpt_auto_refresh&utm_content=github_shield)
 [![](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js?utm_source=chatgpt_auto_refresh&utm_content=github_shield)
 [![](https://img.shields.io/badge/提及于-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
-[![](https://img.shields.io/badge/网站-https://chatgptautorefresh.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptautorefresh.com?utm_source=chatgpt_auto_refresh&utm_content=github_shield)
+[![](https://img.shields.io/badge/网站-www.chatgptautorefresh.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptautorefresh.com?utm_source=chatgpt_auto_refresh&utm_content=github_shield)
 
 ### 通过后台请求保持 ChatGPT 会话新鲜，以消除网络错误 + Cloudflare 检查。
 
