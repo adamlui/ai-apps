@@ -6,7 +6,7 @@
 [![](https://img.shields.io/codacy/grade/b97d57eb28af418abb55d66abac4c418?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/autoclear-chatgpt-history/commits?utm_source=autoclear_chatgpt_history&utm_content=github_shield)
 [![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js?utm_source=autoclear_chatgpt_history&utm_content=github_shield)
 [![](https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
-[![](https://img.shields.io/badge/web-https://autoclearchatgpt.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://autoclearchatgpt.com?utm_source=autoclear_chatgpt_history&utm_content=github_shield)
+[![](https://img.shields.io/badge/web-www.autoclearchatgpt.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://autoclearchatgpt.com?utm_source=autoclear_chatgpt_history&utm_content=github_shield)
 
 ### Auto-clears chat history when visiting chat.openai.com for maximum privacy
 
