@@ -16,7 +16,7 @@
 [![](https://img.shields.io/codacy/grade/918850986ce14fa2b4a99f00bbbfb5cc?label=代码质量&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-widescreen/commits?utm_source=chatgpt_widescreen&utm_content=github_shield)
 [![](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](hhttps://github.com/kudoai/chatgpt.js?utm_source=chatgpt_widescreen&utm_content=github_shield)
 [![](https://img.shields.io/badge/提及于-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
-[![](https://img.shields.io/badge/网站-https://chatgptwidescreen.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptwidescreen.com?utm_source=chatgpt_widescreen&utm_content=github_shield)
+[![](https://img.shields.io/badge/网站-www.chatgptwidescreen.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptwidescreen.com?utm_source=chatgpt_widescreen&utm_content=github_shield)
 
 <br>
 
