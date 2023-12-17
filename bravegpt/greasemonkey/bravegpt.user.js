@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.1
+// @version             2023.12.16.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -581,11 +581,11 @@
         return path
     }
 
-    function createAnchor(linkHref, displayText) {
-        const anchor = document.createElement('a')
-        for (const [attr, value] of [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']])
-            anchor.setAttribute(attr, value)
-        if (displayText) anchor.textContent = displayText
+    function createAnchor(linkHref, displayContent) {
+        const anchor = document.createElement('a'),
+              anchorAttrs = [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']]
+        anchorAttrs.forEach(([attr, value]) => anchor.setAttribute(attr, value))
+        if (displayContent) anchor.append(displayContent)
         return anchor
     }
 
