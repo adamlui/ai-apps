@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.5
+// @version             2023.12.16.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -821,7 +821,7 @@
 
         // Create/append '🤖 DuckDuckGPT'
         const appNameSpan = document.createElement('span')
-        appNameSpan.classList.add('app-name', 'no-user-select') ; appNameSpan.innerText = '🤖  '
+        appNameSpan.classList.add('app-name', 'no-user-select') ; appNameSpan.innerText = '🤖 '
         const ddgptLink = createAnchor('https://www.duckduckgpt.com', config.appName)
         appNameSpan.append(ddgptLink) ; ddgptDiv.append(appNameSpan)
 
@@ -1126,7 +1126,7 @@
         + '.ddgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
         + ( scheme == 'dark' ? '.ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
         + '.app-name { font-size: 1.5rem ; font-weight: 700 }'
-        + '.app-name a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none }'
+        + '.app-name a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none ; margin-left: 1px }'
         + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
             + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
@@ -1144,7 +1144,7 @@
         + '.ddgpt-feedback { margin: 2px 0 25px }'
         + `.ddgpt-feedback * { color: ${ scheme == 'dark' ? '#ccc' : '#666' } !important }`
         + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-            + ( isChromium ? 'top: 2px ; right: 8.25em ;' : 'top: 0.19em ; right: 16.5em ;' )
+            + ( isFirefox ? 'top: 0.29em ; right: 16.2em ;' : 'top: 2px ; right: 8.1em ;' )
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
             + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' } '
         + '.continue-chat > textarea {'
