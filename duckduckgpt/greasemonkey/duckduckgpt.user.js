@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16
+// @version             2023.12.16.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -402,7 +402,7 @@
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
-            shadow || ( scheme == 'dark' ? '' : 'shadow'))
+            shadow || ( scheme == 'dark' ? '' : 'shadow' ))
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
@@ -486,7 +486,7 @@
 
     // Define TOOLTIP functions
 
-    function toggleTooltip(event) {
+    function toggleTooltip(event) { // visibility
         updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
         tooltipDiv.style.opacity = event.type == 'mouseover' ? '0.8' : '0'
     }
@@ -1031,7 +1031,8 @@
 
     // Init config/convo/menu
     const config = {
-        appName: 'DuckDuckGPT', appSymbol: '🤖', keyPrefix: 'duckDuckGPT', userLanguage: chatgpt.getUserLanguage(),
+        appName: 'DuckDuckGPT', appSymbol: '🤖', keyPrefix: 'duckDuckGPT',
+        userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/duckduckgpt',
         greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt' }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
@@ -1341,7 +1342,7 @@
     // Show standby mode or get answer
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // or suffix required but not present
+        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
     ) ddgptShow('standby')
     else {
         ddgptAlert('waitingResponse')
