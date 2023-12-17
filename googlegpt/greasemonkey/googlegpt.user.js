@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.3
+// @version             2023.12.16.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -823,7 +823,7 @@
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
                                 + messages.menuLabel_widerSidebar || 'Wider Sidebar' ) : ''
         )
-        const ctrAddend = isStandbyMode ? 19 : 10, spreadFactor = isStandbyMode ? 15 : 25,
+        const [ctrAddend, spreadFactor] = isStandbyMode ? [19, 15] : [10, 25],
               iniRoffset = spreadFactor * ( buttonType == 'about' ? 1
                                           : buttonType == 'speak' ? 2
                                           : buttonType == 'ssb' ? 3 : 4 ) + ctrAddend
