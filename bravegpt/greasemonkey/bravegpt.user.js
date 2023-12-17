@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16
+// @version             2023.12.16.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -371,7 +371,7 @@
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
-            shadow || ( scheme == 'dark' ? '' : 'shadow'))
+            shadow || ( scheme == 'dark' ? '' : 'shadow' ))
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
@@ -591,7 +591,7 @@
 
     // Define TOOLTIP functions
 
-    function toggleTooltip(event) {
+    function toggleTooltip(event) { // visibility
         updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
         tooltipDiv.style.opacity = event.type == 'mouseover' ? '0.8' : '0'
     }
@@ -1156,7 +1156,8 @@
 
     // Init config/convo/menu
     const config = {
-        appName: 'BraveGPT', appSymbol: '🤖', keyPrefix: 'braveGPT', userLanguage: chatgpt.getUserLanguage(),
+        appName: 'BraveGPT', appSymbol: '🤖', keyPrefix: 'braveGPT',
+        userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/bravegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt' }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
@@ -1381,7 +1382,7 @@
     // Show standby mode or get answer
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // or suffix required but not present
+        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
     ) { updateFooterContent() ; braveGPTshow('standby', footerContent) }
     else {
         braveGPTalert('waitingResponse')
