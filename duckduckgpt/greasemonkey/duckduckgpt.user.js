@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.11
+// @version             2023.12.16
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -499,7 +499,7 @@
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
                                 + messages.menuLabel_widerSidebar || 'Wider Sidebar' ) : ''
         )
-        const ctrAddend = isStandbyMode ? 15 : 1, spreadFactor = isStandbyMode ? 18 : 32,
+        const [ctrAddend, spreadFactor] = isStandbyMode ? [15, 18] : [1, 32],
               iniRoffset = spreadFactor * ( buttonType == 'about' ? 1
                                           : buttonType == 'speak' ? 2 : 3 ) + ctrAddend
         tooltipDiv.style.right = `${ // horizontal position
