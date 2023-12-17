@@ -1,4 +1,4 @@
-name: Sync (bravegpt/ to kudoai/bravegpt/) && (bravegpt/greasemonkey/ to adamlui/userscripts/chatgpt/bravegpt/)
+name: Sync (bravegpt/ to KudoAI/bravegpt/) && (bravegpt/greasemonkey/ to adamlui/userscripts/chatgpt/bravegpt/)
 
 on:
   push:
@@ -19,12 +19,12 @@ jobs:
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
 
-      - name: Checkout kudoai/bravegpt
+      - name: Checkout KudoAI/bravegpt
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: kudoai/bravegpt
-          path: kudoai/bravegpt
+          repository: KudoAI/bravegpt
+          path: KudoAI/bravegpt
 
       - name: Checkout adamlui/userscripts
         uses: actions/checkout@v2
@@ -51,11 +51,11 @@ jobs:
             fi
           done
 
-      - name: Sync bravegpt/ to kudoai/bravegpt/
+      - name: Sync bravegpt/ to KudoAI/bravegpt/
         run: |
           rsync -avhr \
             ${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/ \
-            ${{ github.workspace }}/kudoai/bravegpt/
+            ${{ github.workspace }}/KudoAI/bravegpt/
 
       - name: Sync bravegpt/greasemonkey/ to adamlui/userscripts/chatgpt/bravegpt/
         run: |
@@ -73,7 +73,7 @@ jobs:
           file_pattern: 'bravegpt/**'
           repository: adamlui/chatgpt-apps
 
-      - name: Push to kudoai/bravegpt
+      - name: Push to KudoAI/bravegpt
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
@@ -81,7 +81,7 @@ jobs:
           commit_user_email: auto-sync@kudoai.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: '**'
-          repository: kudoai/bravegpt
+          repository: KudoAI/bravegpt
 
       - name: Push to adamlui/userscripts
         uses: stefanzweifel/git-auto-commit-action@v4
