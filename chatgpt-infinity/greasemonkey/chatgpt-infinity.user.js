@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2023.12.10
+// @version             2023.12.16
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/icons/infinity-symbol/black/icon48.png
@@ -236,7 +236,8 @@
 
     // Init config
     const config = {
-        appName: 'ChatGPT Infinity', appSymbol: '∞', userLanguage: chatgpt.getUserLanguage(),
+        appName: 'ChatGPT Infinity', appSymbol: '∞', keyPrefix: 'chatGPTinfinity',
+        userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/chatgpt-infinity',
         greasyForkURL: 'https://greasyfork.org/scripts/465051-chatgpt-infinity' }
     config.keyPrefix = toCamelCase(config.appName)
@@ -355,28 +356,6 @@
     function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch(err) { return 'other' }}
-
-    function toCamelCase(str) { // for `config.keyPrefix` derived from `config.appName`
-        let lastLetterWasUpper = false, isFirstWord = true
-        return str.replace(/-/g, ' ') // remove hyphens
-            .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
-                if (/[A-Z]{2,}/.test(word) && word != word.toUpperCase()) { // word contains acronym
-                    if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
-                        word = word.charAt(0).toLowerCase() + word.slice(1) // lower-case it
-                    return word.replace(/([a-z]+)([A-Z]+)/g, '$1 $2') // separate words from following acronyms
-                               .replace(/([A-Z]+)([a-z]+)/g, '$1 $2') // separate acronyms from following words
-                               .split(' ') // split for individual processing
-                } else return word // non-acronym
-            }).map(word => { // convert each word/acronym's case
-                const isFullAcronym = word.toUpperCase() == word
-                const result = isFullAcronym
-                    ? ( lastLetterWasUpper || isFirstWord ) ? word.toLowerCase() : word // alternate acronym case
-                    : ( lastLetterWasUpper || isFirstWord ) // alternate non-acronym case
-                        ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-                isFirstWord = false ; lastLetterWasUpper = isFullAcronym ? (result == word && !isFirstWord) : false
-                return result
-            }).join('') // combine to form camel case
-    }
 
     // Define MENU functions
 
