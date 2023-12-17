@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.11
+// @version             2023.12.16
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -606,7 +606,7 @@
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
                                 + messages.menuLabel_widerSidebar || 'Wider Sidebar' ) : ''
         )
-        const ctrAddend = isStandbyMode ? 15 : 5, spreadFactor = isStandbyMode ? 18 : 28,
+        const [ctrAddend, spreadFactor] = isStandbyMode ? [15, 18] : [5, 28],
               iniRoffset = spreadFactor * ( buttonType == 'about' ? 1
                                           : buttonType == 'speak' ? 2
                                           : buttonType == 'ssb' ? 3 : 4 ) + ctrAddend
