@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.5
+// @version             2023.12.16.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -1061,6 +1061,7 @@
               sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
                   'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
         sendButton.id = 'send-btn'
+        sendButton.style.right = '10px' ; sendButton.style.bottom = `${ isFirefox ? 56 : 60 }px`
         for (const [attr, value] of [
             ['viewBox', '4 2 16 16'], ['fill', 'none'], ['height', 16], ['width', 16],
             ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
@@ -1208,6 +1209,7 @@
     // Init UI flags
     const scheme = isDarkMode() ? 'dark' : 'light',
           isChromium = chatgpt.browser.isChromium(),
+          isFirefox = chatgpt.browser.isFirefox(),
           isMobile = chatgpt.browser.isMobile()
 
     registerMenu()
@@ -1302,10 +1304,8 @@
             + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(7px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
-        + '#send-btn {'
-            + 'float: right ; border: none ; margin: 29px 4px 0 0 ;'
-            + `position: relative ; bottom: ${ isChromium ? 61 : 57 }px; right: 10px;`
-            + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
+        + '#send-btn { border: none ; float: right ; position: relative ; background: none ; margin: 29px 4px 0 0 ;'
+            + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `#send-btn:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
         + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa }'
         + '.kudo-ai a { color: #aaa ; text-decoration: none }'
