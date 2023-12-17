@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.4
+// @version             2023.12.16.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -488,23 +488,28 @@
     // Define TOOLTIP functions
 
     function toggleTooltip(event) { // visibility
+        tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
         updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
-        tooltipDiv.style.opacity = event.type == 'mouseover' ? '0.8' : '0'
+        tooltipDiv.style.opacity = event.type == 'mouseover' ? 0.8 : 0
     }
 
     function updateTooltip(buttonType) { // text & position
-        const isStandbyMode = document.querySelector('.standby-btn')
+        const cornerBtnTypes = ['about', 'speak', 'wsb'],
+              [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [15, 18] : [1, 32],
+              iniRoffset = spreadFactor * (buttonType == 'send' ? 1.6 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
+
+        // Update text
         tooltipDiv.innerText = (
             buttonType == 'about' ? messages.menuLabel_about || 'About'
           : buttonType == 'speak' ? messages.tooltip_playAnswer || 'Play answer'
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
-                                + messages.menuLabel_widerSidebar || 'Wider Sidebar' ) : ''
-        )
-        const [ctrAddend, spreadFactor] = isStandbyMode ? [15, 18] : [1, 32],
-              iniRoffset = spreadFactor * ( buttonType == 'about' ? 1
-                                          : buttonType == 'speak' ? 2 : 3 ) + ctrAddend
-        tooltipDiv.style.right = `${ // horizontal position
-            iniRoffset - tooltipDiv.getBoundingClientRect().width / 2}px`
+                                   + messages.menuLabel_widerSidebar || 'Wider Sidebar' )
+          : buttonType == 'send' ? messages.tooltip_sendReply || 'Send reply' : '' )
+
+        // Update position
+        tooltipDiv.style.top = `${ buttonType != 'send' ? -7
+          : tooltipDiv.eventYpos - ddgptDiv.getBoundingClientRect().top - 28 }px`
+        tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
     }
 
     // Define SESSION functions
@@ -871,7 +876,7 @@
         // Add tooltips
         ddgptDiv.append(tooltipDiv)
 
-        // Add button listeners
+        // Add corner button listeners
         wsbSVG?.addEventListener('click', toggleWiderSidebar)
         speakSVG?.addEventListener('click', () => {
             const payload = {
@@ -935,7 +940,9 @@
               sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
                   'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
-        sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
+        sendButton.id = 'send-btn'
+        sendButton.style.right = `${ isFirefox ? 8 : 6 }px`
+        sendButton.style.bottom = `${ isFirefox ? 48 : 52 }px`
         for (const [attr, value] of [
             ['viewBox', '4 2 16 16'], ['fill', 'none'], ['width', 16], ['height', 16],
             ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
@@ -964,6 +971,8 @@
         replyForm.addEventListener('keydown', handleEnter)
         replyForm.addEventListener('submit', handleSubmit)
         chatTextarea.addEventListener('input', autosizeChatbar)
+        sendButton.addEventListener('mouseover', toggleTooltip)
+        sendButton.addEventListener('mouseout', toggleTooltip)
 
         function handleEnter(event) {
             if (event.key == 'Enter') {
@@ -1076,6 +1085,7 @@
     // Init UI flags
     const scheme = chatgpt.isDarkMode() ? 'dark' : 'light',
           isChromium = chatgpt.browser.isChromium(),
+          isFirefox = chatgpt.browser.isFirefox(),
           isMobile = chatgpt.browser.isMobile(),
           isCentered = isCenteredMode()
 
@@ -1159,10 +1169,9 @@
             + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
-        + '.send-button { border: none ; float: right ;'
-            + `position: relative ; bottom: ${ isChromium ? 52 : 48 }px ; right: ${ isChromium ? 6 : 8 }px ;`
-            + `background: none ; color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
-        + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
+        + '#send-btn { border: none ; float: right ; position: relative ; background: none ;'
+            + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
+        + `#send-btn:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
         + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
         + '.kudo-ai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
@@ -1199,7 +1208,7 @@
     tooltipStyle.innerText = '.button-tooltip {'
         + 'background: black ; padding: 3px 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.7rem ; color: white ;' // font style
-        + 'position: absolute ; top: -7px ;' // v-position
+        + 'position: absolute ;' // for updateTooltip() calcs
         + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
     document.head.append(tooltipStyle)
 
