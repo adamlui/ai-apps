@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.7
+// @version             2023.12.16.8
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -625,8 +625,8 @@
     function updateTweaksStyle() {
 
         // Update tweaks style based on settings (for tweaks init + googleGPTshow() + toggleSidebar())
-        tweaksStyle.innerText = ( config.widerSidebar ? wsbStyle : '' )
-                              + ( config.stickySidebar && document.querySelector('.corner-btn') ? ssbStyle : '' )
+        tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
+                              + ( config.stickySidebar && document.querySelector('.corner-btn') ? ssbStyles : '' )
 
         // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for getShowReply()'s RQ show + menu RQ toggle)
         const answerPre = document.querySelector('.googlegpt pre'),
@@ -1557,12 +1557,12 @@
 
     // Create Google style tweaks
     const tweaksStyle = document.createElement('style'),
-          wsbStyle = '#center_col, #center_col div { max-width: 560px !important }' // shrink center column
-                   + '.googlegpt { width: 25.65rem }' // expand GoogleGPT when in limiting Google host container
-                   + '.googlegpt ~ div { width: 464px }' // expand side snippets
-                   + `#googlegpt-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
-          ssbStyle = '.googlegpt { position: sticky ; top: 71px }'
-                   + '.googlegpt ~ * { display: none }' // hide sidebar contents
+          wsbStyles = '#center_col, #center_col div { max-width: 560px !important }' // shrink center column
+                    + '.googlegpt { width: 25.65rem }' // expand GoogleGPT when in limiting Google host container
+                    + '.googlegpt ~ div { width: 464px }' // expand side snippets
+                    + `#googlegpt-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
+          ssbStyles = '.googlegpt { position: sticky ; top: 71px }'
+                    + '.googlegpt ~ * { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/stylize tooltip div
