@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.2
+// @version             2023.12.16.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -469,11 +469,11 @@
         return path
     }
 
-    function createAnchor(linkHref, displayText) {
-        const anchor = document.createElement('a')
-        for (const [attr, value] of [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']])
-            anchor.setAttribute(attr, value)
-        if (displayText) anchor.textContent = displayText
+    function createAnchor(linkHref, displayContent) {
+        const anchor = document.createElement('a'),
+              anchorAttrs = [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']]
+        anchorAttrs.forEach(([attr, value]) => anchor.setAttribute(attr, value))
+        if (displayContent) anchor.append(displayContent)
         return anchor
     }
 
