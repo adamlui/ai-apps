@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.7
+// @version             2023.12.16.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -929,7 +929,7 @@
 
         // Create/append '🤖 BraveGPT'
         const appNameSpan = document.createElement('span')
-        appNameSpan.classList.add('app-name', 'no-user-select') ; appNameSpan.innerText = '🤖  '
+        appNameSpan.classList.add('app-name', 'no-user-select') ; appNameSpan.innerText = '🤖 '
         const braveGPTlink = createAnchor('https://www.bravegpt.com', config.appName)
         appNameSpan.append(braveGPTlink) ; braveGPTdiv.append(appNameSpan)
 
@@ -1250,7 +1250,7 @@
         + '.bravegpt p { margin: 0 }'
         + '.bravegpt .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }'
         + '.app-name { font-size: 20px ; font-family: var(--brand-font) }'
-        + '.app-name a { color: inherit ; text-decoration: none }'
+        + '.app-name a { color: inherit ; text-decoration: none ; margin-left: 3px }'
         + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
             + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
         + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
