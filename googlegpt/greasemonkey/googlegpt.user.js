@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.4
+// @version             2023.12.16.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -378,8 +378,8 @@
 // @grant               GM.xmlHttpRequest
 // @downloadURL         https://update.greasyfork.org/scripts/478597/googlegpt.user.js
 // @updateURL           https://update.greasyfork.org/scripts/478597/googlegpt.meta.js
-// @homepageURL         https://googlegpt.kudoai.com
-// @supportURL          https://googlegpt.kudoai.com/issues
+// @homepageURL         https://www.googlegpt.io
+// @supportURL          https://github.googlegpt.io/issues
 // ==/UserScript==
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023 KudoAI & contributors under the MIT license
@@ -1388,7 +1388,8 @@
 
     // Init config/convo/menu
     const config = {
-        appName: 'GoogleGPT', appSymbol: '🤖', keyPrefix: 'googleGPT', userLanguage: chatgpt.getUserLanguage(),
+        appName: 'GoogleGPT', appSymbol: '🤖', keyPrefix: 'googleGPT',
+        userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/kudoai/googlegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt' }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
@@ -1598,7 +1599,7 @@
     // Show standby mode or get answer
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // or suffix required but not present
+        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
     ) { updateFooterContent() ; googleGPTshow('standby', footerContent) }
     else {
         googleGPTalert('waitingResponse')
