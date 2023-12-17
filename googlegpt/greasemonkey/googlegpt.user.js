@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.11
+// @version             2023.12.16.12
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -1289,8 +1289,8 @@
               sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
                   'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
         sendButton.id = 'send-btn'
-        sendButton.style.right = isFirefox ? '8px' : '7px'
-        sendButton.style.bottom = `${( isFirefox ? 44 : 47 ) + ( hasSidebar ? 3 : 0 )}px`
+        sendButton.style.right = isFirefox ? '8px' : '5px'
+        sendButton.style.bottom = `${( isFirefox ? 46 : 49 ) + ( hasSidebar ? 3 : 0 )}px`
         for (const [attr, value] of [
             ['viewBox', '4 2 16 16'], ['fill', 'none'], ['width', 16], ['height', 16],
             ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
