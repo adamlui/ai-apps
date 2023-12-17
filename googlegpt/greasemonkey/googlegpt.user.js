@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.12
+// @version             2023.12.16.13
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -1148,7 +1148,7 @@
 
         // Create/append '🤖 GoogleGPT'
         const appPrefixSpan = document.createElement('span'),
-              googleGPTanchor = createAnchor('https://googlegpt.kudoai.com', googleGPTimg)
+              googleGPTanchor = createAnchor('https://www.googlegpt.io', googleGPTimg)
         appPrefixSpan.innerText = '🤖 '
         appPrefixSpan.className = 'no-user-select' ; appPrefixSpan.style.fontSize = isMobile ? '1.3rem' : '1.1rem'     
         googleGPTanchor.className = 'no-user-select' ; googleGPTimg.width = isMobile ? 147 : isFirefox ? 127 : 125
