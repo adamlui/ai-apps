@@ -1,4 +1,4 @@
-name: Sync (googlegpt/ to kudoai/googlegpt/) && (googlegpt/greasemonkey/ to adamlui/userscripts/chatgpt/googlegpt/)
+name: Sync (googlegpt/ to KudoAI/googlegpt/) && (googlegpt/greasemonkey/ to adamlui/userscripts/chatgpt/googlegpt/)
 
 on:
   push:
@@ -19,12 +19,12 @@ jobs:
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
 
-      - name: Checkout kudoai/googlegpt
+      - name: Checkout KudoAI/googlegpt
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
-          repository: kudoai/googlegpt
-          path: kudoai/googlegpt
+          repository: KudoAI/googlegpt
+          path: KudoAI/googlegpt
 
       - name: Checkout adamlui/userscripts
         uses: actions/checkout@v2
@@ -51,11 +51,11 @@ jobs:
             fi
           done
 
-      - name: Sync googlegpt/ to kudoai/googlegpt/
+      - name: Sync googlegpt/ to KudoAI/googlegpt/
         run: |
           rsync -avhr \
             ${{ github.workspace }}/adamlui/chatgpt-apps/googlegpt/ \
-            ${{ github.workspace }}/kudoai/googlegpt/
+            ${{ github.workspace }}/KudoAI/googlegpt/
 
       - name: Sync googlegpt/greasemonkey/ to adamlui/userscripts/chatgpt/googlegpt/
         run: |
@@ -73,7 +73,7 @@ jobs:
           file_pattern: 'googlegpt/**'
           repository: adamlui/chatgpt-apps
 
-      - name: Push to kudoai/googlegpt
+      - name: Push to KudoAI/googlegpt
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           push_options: '--force'
@@ -81,7 +81,7 @@ jobs:
           commit_user_email: auto-sync@kudoai.com
           commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
           file_pattern: '**'
-          repository: kudoai/googlegpt
+          repository: KudoAI/googlegpt
 
       - name: Push to adamlui/userscripts
         uses: stefanzweifel/git-auto-commit-action@v4
