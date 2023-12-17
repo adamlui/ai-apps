@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.12
+// @version             2023.12.16
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -588,7 +588,7 @@
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
-            shadow || ( scheme == 'dark' ? '' : 'shadow'))
+            shadow || ( scheme == 'dark' ? '' : 'shadow' ))
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
@@ -1143,7 +1143,7 @@
               googleGPTanchor = createAnchor('https://googlegpt.kudoai.com', googleGPTimg)
         appPrefixSpan.innerText = '🤖 '
         appPrefixSpan.className = 'no-user-select' ; appPrefixSpan.style.fontSize = '1.1rem'     
-        googleGPTanchor.className = 'no-user-select' ; googleGPTimg.width = isFirefox ? 118 : 116
+        googleGPTanchor.className = 'no-user-select' ; googleGPTimg.width = isFirefox ? 127 : 125
         googleGPTimg.style.cssText = `position: relative ; top: ${ isFirefox ? 3 : 2 }px`
         googleGPTdiv.append(appPrefixSpan, googleGPTanchor)
 
@@ -1171,7 +1171,7 @@
             var speakSpan = document.createElement('span'),
                 speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             speakSpan.id = 'speak-btn' // for toggleTooltip()
-            speakSpan.className = 'corner-btn' ; speakSpan.style.margin = '-0.29rem 8px 0 0'
+            speakSpan.className = 'corner-btn' ; speakSpan.style.margin = '-0.29rem 5px 0 0'
             const speakSVGattrs = [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']]
             speakSVGattrs.forEach(([attr, value]) => speakSVG.setAttributeNS(null, attr, value))
             const speakSVGpaths = [
@@ -1192,14 +1192,14 @@
             var ssbSpan = document.createElement('span'),
                 ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             ssbSpan.id = 'ssb-btn' // for updateSSBsvg() + toggleTooltip()
-            ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '-0.05rem 9px 0 0'
+            ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '-0.05rem 6px 0 0'
             ssbSpan.append(ssbSVG) ; googleGPTdiv.append(ssbSpan) ; updateSSBsvg()
 
             // Create/append Wider Sidebar button
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' // for updateSSBsvg() + toggleTooltip()
-            wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-0.08rem 12px 0 0'
+            wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-0.08rem 9px 0 0'
             wsbSpan.append(wsbSVG) ; googleGPTdiv.append(wsbSpan) ; updateWSBsvg()
         }
 
@@ -1250,7 +1250,7 @@
             const balloonTipSpan = document.createElement('span')
             var answerPre = document.createElement('pre')
             balloonTipSpan.className = 'balloon-tip'
-            balloonTipSpan.style.right = isMobile ? '7.41em' : isFirefox ? '13.98em' : '6.85em'
+            balloonTipSpan.style.right = isMobile ? '7.77em' : isFirefox ? '14.65em' : '7.25em'
             balloonTipSpan.style.top = (
                 isFirefox ? ( hasSidebar ? '7px' : '5px' )
                                             : ( hasSidebar ? '4px' : '2px' ))
