@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.7
+// @version             2023.12.16.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -403,7 +403,7 @@
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
-            shadow || ( scheme == 'dark' ? '' : 'shadow' ))
+            shadow || scheme == 'dark' ? '' : 'shadow' )
     }
 
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
@@ -619,14 +619,20 @@
 
     function getRelatedQueries(query) {
         return new Promise((resolve, reject) => {
-            const relatedQueriesQuery = 'Show a numbered list of queries related to this one:\n\n' + query
+            const rqPrompt = 'Show a numbered list of queries related to this one:\n\n' + query
+                           + '\n\nMake sure to suggest a variety that can even greatly deviate from the original topic.'
+                           + ' For example, if the original query asked about someone\'s wife,'
+                               + ' a good related query could involve a different relative.'
+                           + ' Another example, if the original query asked how to learn JavaScript,'
+                               + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
+                           + ' But the key is variety. Do not be repetitive. You must entice user to want to ask one of your related queries.'
             GM.xmlHttpRequest({
                 method: 'POST', url: endpoint, responseType: 'text',
                 headers: createHeaders(endpoint),
                 data: createPayload(endpoint, [
-                    config.proxyAPIenabled ? { role: 'user', content: relatedQueriesQuery }
+                    config.proxyAPIenabled ? { role: 'user', content: rqPrompt }
                                            : { role: 'user', id: chatgpt.uuidv4(),
-                                               content: { content_type: 'text', parts: [relatedQueriesQuery] }}]),
+                                               content: { content_type: 'text', parts: [rqPrompt] }}]),
                 onload: event => {
                     let str_relatedQueries = ''
                     if (!config.proxyAPIenabled && event.response) {
@@ -1349,7 +1355,7 @@
             pcDiv.insertAdjacentElement('afterend', pcFooter)
     }}})
 
-    // Show standby mode or get answer
+    // Show standby mode or get/show answer
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
         || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
