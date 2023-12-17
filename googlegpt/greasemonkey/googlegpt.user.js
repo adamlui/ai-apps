@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.14
+// @version             2023.12.16.15
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -751,7 +751,7 @@
                                                                         : document.createElement('span')
                                 footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
                                 footerContent.textContent = chosenAd.text
-                                footerContent.setAttribute('title', chosenAd.tooltip || '')   
+                                footerContent.setAttribute('title', chosenAd.tooltip || '')
                                 adSelected = true ; break
                             }
                             if (adSelected) break // out of campaign loop after ad selection
@@ -814,11 +814,10 @@
     }
 
     function updateTooltip(buttonType) { // text & position
-        const isStandbyMode = document.querySelector('.standby-btn'),
-              [ctrAddend, spreadFactor] = isStandbyMode ? [19, 15] : [10, 25],
-              xOffset = spreadFactor * ( buttonType == 'about' ? 1
-                                       : buttonType == 'speak' ? 2
-                                       : buttonType == 'ssb' ? 3 : 4 ) + ctrAddend
+        const cornerBtnTypes = ['about', 'speak', 'ssb', 'wsb'],
+              [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [19, 15] : [10, 25],
+              iniRoffset = spreadFactor * (buttonType == 'send' ? 1.5 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
+
         // Update text
         tooltipDiv.innerText = (
             buttonType == 'about' ? messages.menuLabel_about || 'About'
@@ -831,9 +830,8 @@
 
         // Update position
         tooltipDiv.style.top = `${ buttonType != 'send' ? -8
-          : tooltipDiv.eventYpos - googleGPTdiv.getBoundingClientRect().top - 31 }px` // variable based on answer length
-        tooltipDiv.style.right = `${ buttonType == 'send' ? 15
-          : xOffset - tooltipDiv.getBoundingClientRect().width / 2 }px` // variable based on button's x-pos
+          : tooltipDiv.eventYpos - googleGPTdiv.getBoundingClientRect().top - 31 }px`
+        tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
     }
 
     // Define SESSION functions
