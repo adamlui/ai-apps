@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.13
+// @version             2023.12.16.14
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -801,16 +801,13 @@
         const anchor = document.createElement('a'),
               anchorAttrs = [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']]
         anchorAttrs.forEach(([attr, value]) => anchor.setAttribute(attr, value))
-        if (displayContent) {
-            if (typeof displayContent == 'string') anchor.textContent = displayContent
-            else if (displayContent instanceof HTMLElement) anchor.append(displayContent)
-        }
+        if (displayContent) anchor.append(displayContent)
         return anchor
     }
 
     // Define TOOLTIP functions
 
-    function toggleTooltip(event) {
+    function toggleTooltip(event) { // visibility
         tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
         updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
         tooltipDiv.style.opacity = event.type == 'mouseover' ? 0.8 : 0
