@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.3
+// @version             2023.12.16.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -409,10 +409,12 @@
     }
 
     function updateTweaksStyle() {
+        const isStandbyMode = document.querySelector('.standby-btn'),
+              answerIsLoaded = document.querySelector('.corner-btn')
 
         // Update tweaks style based on settings (for tweaks init + braveGPTshow() + toggleSidebar())
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
-                              + ( config.stickySidebar && document.querySelector('.corner-btn') ? ssbStyles : '' )
+                              + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
 
         // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for getShowReply()'s RQ show + menu RQ toggle)
         const answerPre = document.querySelector('.bravegpt pre'),
