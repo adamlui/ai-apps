@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.10
+// @version             2023.12.16.11
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -827,11 +827,10 @@
             buttonType == 'about' ? messages.menuLabel_about || 'About'
           : buttonType == 'speak' ? messages.tooltip_playAnswer || 'Play answer'
           : buttonType == 'ssb' ? (( config.stickySidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
-                                + messages.menuLabel_stickySidebar || 'Sticky Sidebar' )
+                                   + messages.menuLabel_stickySidebar || 'Sticky Sidebar' )
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
-                                + messages.menuLabel_widerSidebar || 'Wider Sidebar' )
-          : buttonType == 'send' ? messages.tooltip_sendReply || 'Send reply' : ''
-        )
+                                   + messages.menuLabel_widerSidebar || 'Wider Sidebar' )
+          : buttonType == 'send' ? messages.tooltip_sendReply || 'Send reply' : '' )
 
         // Update position
         tooltipDiv.style.top = `${ buttonType != 'send' ? -8
