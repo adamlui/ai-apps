@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.15
+// @version             2023.12.16.16
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -816,7 +816,7 @@
     function updateTooltip(buttonType) { // text & position
         const cornerBtnTypes = ['about', 'speak', 'ssb', 'wsb'],
               [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [19, 15] : [10, 25],
-              iniRoffset = spreadFactor * (buttonType == 'send' ? 1.5 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
+              iniRoffset = spreadFactor * (buttonType == 'send' ? 1.65 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
         // Update text
         tooltipDiv.innerText = (
