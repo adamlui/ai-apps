@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.6
+// @version             2023.12.16.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -602,7 +602,7 @@
     function updateTooltip(buttonType) { // text & position
         const cornerBtnTypes = ['about', 'speak', 'ssb', 'wsb'],
               [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [15, 18] : [5, 28],
-              iniRoffset = spreadFactor * (buttonType == 'send' ? 1.8 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
+              iniRoffset = spreadFactor * (buttonType == 'send' ? 1.65 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
         // Update text
         tooltipDiv.innerText = (
