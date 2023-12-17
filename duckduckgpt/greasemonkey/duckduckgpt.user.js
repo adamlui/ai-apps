@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.6
+// @version             2023.12.16.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -942,7 +942,7 @@
                   'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
         sendButton.id = 'send-btn'
         sendButton.style.right = `${ isFirefox ? 8 : 6 }px`
-        sendButton.style.bottom = `${ isFirefox ? 48 : 52 }px`
+        sendButton.style.bottom = `${ isFirefox ? 48 : 53 }px`
         for (const [attr, value] of [
             ['viewBox', '4 2 16 16'], ['fill', 'none'], ['width', 16], ['height', 16],
             ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
