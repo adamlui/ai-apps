@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.3
+// @version             2023.12.16.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -436,7 +436,7 @@
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     }
 
-    function updateTweaksStyle() { tweaksStyle.innerText = config.widerSidebar ? wsbStyle : '' }
+    function updateTweaksStyle() { tweaksStyle.innerText = config.widerSidebar ? wsbStyles : '' }
 
     function updateWSBsvg() {
 
@@ -863,7 +863,7 @@
         if (!isCentered && !isMobile) {
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-            wsbSpan.id = 'wsb-btn' // for updateSSBsvg() + toggleTooltip()
+            wsbSpan.id = 'wsb-btn' // for toggleTooltip()
             wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.05rem 14px 0 0'
             wsbSpan.append(wsbSVG) ; ddgptDiv.append(wsbSpan) ; updateWSBsvg()
         }
@@ -1187,9 +1187,9 @@
 
     // Create DDG style tweaks
     const tweaksStyle = document.createElement('style'),
-          wsbStyle = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
-                   + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
-                   + '#ddgpt-chatbar { width: 95.6% }'
+          wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
+                    + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
+                    + '#ddgpt-chatbar { width: 95.6% }'
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/stylize tooltip div
