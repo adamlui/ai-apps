@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.9
+// @version             2023.12.16.10
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -811,26 +811,33 @@
     // Define TOOLTIP functions
 
     function toggleTooltip(event) {
+        tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
         updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
-        tooltipDiv.style.opacity = event.type == 'mouseover' ? '0.8' : '0'
+        tooltipDiv.style.opacity = event.type == 'mouseover' ? 0.8 : 0
     }
 
     function updateTooltip(buttonType) { // text & position
-        const isStandbyMode = document.querySelector('.standby-btn')
+        const isStandbyMode = document.querySelector('.standby-btn'),
+              [ctrAddend, spreadFactor] = isStandbyMode ? [19, 15] : [10, 25],
+              xOffset = spreadFactor * ( buttonType == 'about' ? 1
+                                       : buttonType == 'speak' ? 2
+                                       : buttonType == 'ssb' ? 3 : 4 ) + ctrAddend
+        // Update text
         tooltipDiv.innerText = (
             buttonType == 'about' ? messages.menuLabel_about || 'About'
           : buttonType == 'speak' ? messages.tooltip_playAnswer || 'Play answer'
           : buttonType == 'ssb' ? (( config.stickySidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
                                 + messages.menuLabel_stickySidebar || 'Sticky Sidebar' )
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
-                                + messages.menuLabel_widerSidebar || 'Wider Sidebar' ) : ''
+                                + messages.menuLabel_widerSidebar || 'Wider Sidebar' )
+          : buttonType == 'send' ? messages.tooltip_sendReply || 'Send reply' : ''
         )
-        const [ctrAddend, spreadFactor] = isStandbyMode ? [19, 15] : [10, 25],
-              iniRoffset = spreadFactor * ( buttonType == 'about' ? 1
-                                          : buttonType == 'speak' ? 2
-                                          : buttonType == 'ssb' ? 3 : 4 ) + ctrAddend
-        tooltipDiv.style.right = `${ // horizontal position
-            iniRoffset - tooltipDiv.getBoundingClientRect().width / 2}px`
+
+        // Update position
+        tooltipDiv.style.top = `${ buttonType != 'send' ? -8
+          : tooltipDiv.eventYpos - googleGPTdiv.getBoundingClientRect().top - 31 }px` // variable based on answer length
+        tooltipDiv.style.right = `${ buttonType == 'send' ? 15
+          : xOffset - tooltipDiv.getBoundingClientRect().width / 2 }px` // variable based on button's x-pos
     }
 
     // Define SESSION functions
@@ -1209,7 +1216,7 @@
         // Add tooltips
         googleGPTdiv.append(tooltipDiv)
 
-        // Add button listeners
+        // Add corner button listeners
         aboutSVG.addEventListener('click', launchAboutModal)
         speakSVG?.addEventListener('click', () => {
             const payload = {
@@ -1282,7 +1289,7 @@
               sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
                   'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
-        sendButton.className = 'send-button' ; sendButton.title = messages.tooltip_sendReply || 'Send reply'
+        sendButton.id = 'send-btn'
         sendButton.style.right = isFirefox ? '8px' : '7px'
         sendButton.style.bottom = `${( isFirefox ? 44 : 47 ) + ( hasSidebar ? 3 : 0 )}px`
         for (const [attr, value] of [
@@ -1318,6 +1325,8 @@
         replyForm.addEventListener('keydown', handleEnter)
         replyForm.addEventListener('submit', handleSubmit)
         chatTextarea.addEventListener('input', autosizeChatbar)
+        sendButton.addEventListener('mouseover', toggleTooltip)
+        sendButton.addEventListener('mouseout', toggleTooltip)
 
         function handleEnter(event) {
             if (event.key == 'Enter') {
@@ -1522,9 +1531,9 @@
             + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
         + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
         + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
-        + '.send-button { border: none ; float: right ; position: relative ; background: none ;'
+        + '#send-btn { border: none ; float: right ; position: relative ; background: none ;'
             + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
-        + `.send-button:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
+        + `#send-btn:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
         + `.kudo-ai { font-size: 0.75rem ; position: relative ; left: ${ isMobile ? 8 : 6 }px ; color: #aaa }`
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none }'
         + '.kudo-ai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
@@ -1574,7 +1583,7 @@
     tooltipStyle.innerText = '.button-tooltip {'
         + 'background: black ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.7rem ; color: white ;' // font style
-        + 'position: absolute ; top: -8px ;' // v-position
+        + 'position: absolute ;' // for updateTooltip() calcs
         + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
     document.head.append(tooltipStyle)
 
