@@ -108,14 +108,14 @@ ChatGPT Widescreen Mode is also available as an [Chrome add-on](https://chrome.c
 
 The userscript is compatible w/ the following browsers:
 
-- **Google Chrome**
-- **Mozilla Firefox**
-- **Microsoft Edge**
-- **Opera**
-- **Brave**
-- **Vivaldi**
-- **LibreWolf**
-- **QQ**
+- [Google Chrome](https://www.chrome.com)
+- [Mozilla Firefox](https://www.firefox.com)
+- [Microsoft Edge](https://www.microsoft.com/edge)
+- [Opera](https://www.opera.com)
+- [Brave](https://brave.com)
+- [Vivaldi](https://vivaldi.com)
+- [LibreWolf](https://librewolf.net/)
+- [QQ](https://browser.qq.com/)
 
 <br>
 
