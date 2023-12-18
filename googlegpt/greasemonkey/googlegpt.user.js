@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.18
+// @version             2023.12.17
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -1152,8 +1152,8 @@
         const appPrefixSpan = document.createElement('span'),
               googleGPTanchor = createAnchor('https://www.googlegpt.io', googleGPTimg)
         appPrefixSpan.innerText = '🤖 '
-        appPrefixSpan.className = 'no-user-select' ; appPrefixSpan.style.fontSize = isMobile ? '1.3rem' : '1.1rem'     
-        googleGPTanchor.className = 'no-user-select' ; googleGPTimg.width = isMobile ? 147 : isFirefox ? 127 : 125
+        appPrefixSpan.className = 'no-user-select' ; appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'     
+        googleGPTanchor.className = 'no-user-select' ; googleGPTimg.width = isMobile ? 197 : isFirefox ? 127 : 125
         googleGPTimg.style.cssText = `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
                                    + ( isMobile ? '; margin-left: 1px' : '' )
         googleGPTdiv.append(appPrefixSpan, googleGPTanchor)
@@ -1261,7 +1261,7 @@
             const balloonTipSpan = document.createElement('span')
             var answerPre = document.createElement('pre')
             balloonTipSpan.className = 'balloon-tip'
-            balloonTipSpan.style.right = isMobile ? '8.81em' : isFirefox ? '14.65em' : '7.25em'
+            balloonTipSpan.style.right = isMobile ? '10.94em' : isFirefox ? '14.65em' : '7.25em'
             balloonTipSpan.style.top = (
                 isFirefox ? ( hasSidebar ? '7px' : '5px' )
                                             : ( hasSidebar ? '4px' : '2px' ))
@@ -1535,7 +1535,7 @@
         + '#send-btn { border: none ; float: right ; position: relative ; background: none ;'
             + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
         + `#send-btn:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
-        + `.kudo-ai { font-size: 0.75rem ; position: relative ; left: ${ isMobile ? 8 : 6 }px ; color: #aaa }`
+        + `.kudo-ai { font-size: ${ isMobile ? 0.85 : 0.75 }rem ; position: relative ; left: ${ isMobile ? 8 : 6 }px ; color: #aaa }`
         + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none }'
         + '.kudo-ai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
         + '.katex-html { display: none }' // hide unrendered math
