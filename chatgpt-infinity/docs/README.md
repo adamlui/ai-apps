@@ -109,15 +109,15 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 
 ChatGPT Infinity is compatible w/ the following browsers:
 
-- **Google Chrome** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Mozilla Firefox** (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Microsoft Edge** (via [Edge add-on](https://edge.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Opera** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Brave** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Vivaldi** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **LibreWolf** (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Ghost** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **QQ** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **[Google Chrome](https://www.chrome.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **[Mozilla Firefox](https://www.firefox.com)** (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **[Microsoft Edge](https://www.microsoft.com/edge)** (via [Edge add-on](https://edge.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **[Opera](https://www.opera.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **[Brave](https://brave.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **[Vivaldi](https://vivaldi.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **[LibreWolf](https://librewolf.net/)** (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **[Ghost](https://ghostbrowser.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **[QQ](https://browser.qq.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
 
 <div align="center">
 
