@@ -116,6 +116,7 @@ The userscript is compatible w/ the following browsers:
 - [Brave](https://brave.com)
 - [Vivaldi](https://vivaldi.com)
 - [LibreWolf](https://librewolf.net/)
+- [Ghost](https://ghostbrowser.com/)
 - [QQ](https://browser.qq.com/)
 
 <br>
