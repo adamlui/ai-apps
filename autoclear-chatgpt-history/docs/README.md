@@ -64,15 +64,15 @@ Autoclear ChatGPT History relies on code from the powerful <a href="https://gith
 
 Autoclear ChatGPT History is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/):
 
-- Google Chrome
-- Mozilla Firefox
-- Microsoft Edge
-- Opera
-- Brave
-- Vivaldi
-- LibreWolf
-- Ghost
-- QQ
+- [Google Chrome](https://www.chrome.com)
+- [Mozilla Firefox](https://www.firefox.com)
+- [Microsoft Edge](https://www.microsoft.com/edge)
+- [Opera](https://www.opera.com)
+- [Brave](https://brave.com)
+- [Vivaldi](https://vivaldi.com)
+- [LibreWolf](https://librewolf.net/)
+- [Ghost](https://ghostbrowser.com/)
+- [QQ](https://browser.qq.com/)
 
 <br>
 
