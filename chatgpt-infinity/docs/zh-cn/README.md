@@ -109,15 +109,15 @@ ChatGPT 无穷 依赖于强大的 [chatgpt.js](https://github.com/kudoai/chatgpt
 
 ChatGPT 无穷 与以下浏览器兼容:
 
-- **Google Chrome** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
-- **Mozilla Firefox** (通过 [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **Microsoft Edge** (通过 [Edge 扩大](https://edge.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
-- **Opera** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
-- **Brave** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
-- **Vivaldi** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
-- **LibreWolf** (通过 [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
-- **Ghost** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
-- **QQ** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **[Google Chrome](https://www.chrome.com)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **[Mozilla Firefox](https://www.firefox.com)** (通过 [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **[Microsoft Edge](https://www.microsoft.com/edge)** (通过 [Edge 扩大](https://edge.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **[Opera](https://www.opera.com)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **[Brave](https://brave.com)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **[Vivaldi](https://vivaldi.com)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **[LibreWolf](https://librewolf.net/)** (通过 [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **[Ghost](https://ghostbrowser.com/)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
+- **[QQ](https://browser.qq.com/)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://chatgptinfinity.com/greasyfork))
 
 <div align="center">
 
