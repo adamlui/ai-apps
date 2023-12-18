@@ -112,16 +112,16 @@ ChatGPT 自動刷新依賴於強大的 <a href="https://github.com/kudoai/chatgp
 
 ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.net/) 或 [Violentmonkey](https://violentmonkey.github.io/) 的浏览器:
 
-- Google Chrome
-- Mozilla Firefox
-- Microsoft Edge
-- Opera
-- Brave
-- Vivaldi
-- Waterfox
-- LibreWolf
-- Ghost
-- QQ
+- [Google Chrome](https://www.chrome.com)
+- [Mozilla Firefox](https://www.firefox.com)
+- [Microsoft Edge](https://www.microsoft.com/edge)
+- [Opera](https://www.opera.com)
+- [Brave](https://brave.com)
+- [Vivaldi](https://vivaldi.com)
+- [Waterfox](https://www.waterfox.net/)
+- [LibreWolf](https://librewolf.net/)
+- [Ghost](https://ghostbrowser.com/)
+- [QQ](https://browser.qq.com/)
 
 <br>
 
