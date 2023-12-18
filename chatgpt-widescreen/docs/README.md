@@ -132,15 +132,15 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 
 ChatGPT Widescreen Mode is compatible w/ the following browsers:
 
-- **Google Chrome** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **Mozilla Firefox** (via [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **Microsoft Edge** (via [Edge add-on](https://edge.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **Opera** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **Brave** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **Vivaldi** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **LibreWolf** (via [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **Ghost** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
-- **QQ** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **[Google Chrome](https://www.chrome.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **[Mozilla Firefox](https://www.firefox.com)** (via [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **[Microsoft Edge](https://www.microsoft.com/edge)** (via [Edge add-on](https://edge.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **[Opera](https://www.opera.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **[Brave](https://brave.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **[Vivaldi](https://vivaldi.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **[LibreWolf](https://librewolf.net/)** (via [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **[Ghost](https://ghostbrowser.com/)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
+- **[QQ](https://browser.qq.com/)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode))
 
 <div align="center">
 
