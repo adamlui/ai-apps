@@ -83,6 +83,8 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/kudoai
 - LibreWolf
 - Ghost
 - QQ
+- Whale
+- Kiwi (on Android!)
 
 If you've tested it to work in a browser not listed, create a [pull request](https://github.bravegpt.com/pulls) to become a contributor!
 
