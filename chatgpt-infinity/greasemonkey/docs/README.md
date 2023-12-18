@@ -76,16 +76,16 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 
 ChatGPT Infinity is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/):
 
-- Google Chrome (also available on <a target="_blank" href="https://chrome.google.com/webstore/detail/chatgpt-infinity/amikeononomkhphopbflomhnmdijjpmb">Chrome Web Store</a>)
-- Mozilla Firefox
-- Microsoft Edge (also available on <a target="_blank" href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-infinity/jgonecnbmehicpdpjkdekamhmlebfagb">Microsoft Store</a>)
-- Opera
-- Brave
-- Vivaldi
-- Waterfox
-- LibreWolf
-- Ghost
-- QQ
+- [Google Chrome](https://www.chrome.com) (also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-infinity/amikeononomkhphopbflomhnmdijjpmb))
+- [Mozilla Firefox](https://www.firefox.com)
+- [Microsoft Edge](https://www.microsoft.com/edge) (also available on [Microsoft Store](https://microsoftedge.microsoft.com/addons/detail/chatgpt-infinity/jgonecnbmehicpdpjkdekamhmlebfagb))
+- [Opera](https://www.opera.com)
+- [Brave](https://brave.com)
+- [Vivaldi](https://vivaldi.com)
+- [Waterfox](https://www.waterfox.net/)
+- [LibreWolf](https://librewolf.net/)
+- [Ghost](https://ghostbrowser.com/)
+- [QQ](https://browser.qq.com/)
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.com/adamlui/chatgpt-infinity/pulls) (contributions of all kinds are welcome!)
 
