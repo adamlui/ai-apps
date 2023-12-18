@@ -32,6 +32,24 @@
 
 [![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/googlegpt-mobile-greeting.png)](https://greasyfork.org/scripts/478597-googlegpt)
 
+## 🌐 Compatibility 
+
+**GoogleGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/):
+
+- [Google Chrome](https://www.chrome.com)
+- [Mozilla Firefox](https://www.firefox.com)
+- [Microsoft Edge](https://www.microsoft.com/edge)
+- [Opera](https://www.opera.com)
+- [Brave](https://brave.com)
+- [Vivaldi](https://vivaldi.com)
+- [LibreWolf](https://librewolf.net/)
+- [Ghost](https://ghostbrowser.com/)
+- [QQ](https://browser.qq.com/)
+- [Whale](https://whale.naver.com)
+- [Kiwi](https://kiwibrowser.com/) (on [Android](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser)!)
+
+If you've tested it to work in a browser not listed, simply create a [pull request](https://github.googlegpt.io/pulls) to become a contributor!
+
 🚀 Install link: https://greasyfork.org/scripts/478597-googlegpt
 
 ## 🧠 Contributors
