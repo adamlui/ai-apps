@@ -69,15 +69,17 @@ DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/kud
 
 **DuckDuckGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/):
 
-- Google Chrome
-- Mozilla Firefox
-- Microsoft Edge
-- Opera
-- Brave
-- Vivaldi
-- LibreWolf
-- Ghost
-- QQ
+- [Google Chrome](https://www.chrome.com)
+- [Mozilla Firefox](https://www.firefox.com)
+- [Microsoft Edge](https://www.microsoft.com/edge)
+- [Opera](https://www.opera.com)
+- [Brave](https://brave.com)
+- [Vivaldi](https://vivaldi.com)
+- [LibreWolf](https://librewolf.net/)
+- [Ghost](https://ghostbrowser.com/)
+- [QQ](https://browser.qq.com/)
+- [Whale](https://whale.naver.com)
+- [Kiwi](https://kiwibrowser.com/) (on [Android](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser)!)
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.duckduckgpt.com/pulls) to become a contributor!
 
