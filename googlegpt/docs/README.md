@@ -34,7 +34,9 @@
 
 ## 🌐 Compatibility 
 
-**GoogleGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/):
+**GoogleGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (recommended) or [Violentmonkey](https://violentmonkey.github.io/).
+
+### Desktop:
 
 - [Google Chrome](https://www.chrome.com)
 - [Mozilla Firefox](https://www.firefox.com)
@@ -46,7 +48,10 @@
 - [Ghost](https://ghostbrowser.com/)
 - [QQ](https://browser.qq.com/)
 - [Whale](https://whale.naver.com)
-- [Kiwi](https://kiwibrowser.com/) (on [Android](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser)!)
+
+### Android:
+
+- [Kiwi](https://kiwibrowser.com/)
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.googlegpt.io/pulls) to become a contributor!
 
