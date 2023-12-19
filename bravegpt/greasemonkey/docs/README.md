@@ -72,7 +72,9 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/kudoai
 
 ## 🌐 Compatibility
 
-**BraveGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/):
+**BraveGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (recommended) or [Violentmonkey](https://violentmonkey.github.io/).
+
+### Desktop:
 
 - [Google Chrome](https://www.chrome.com)
 - [Mozilla Firefox](https://www.firefox.com)
@@ -84,7 +86,11 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/kudoai
 - [Ghost](https://ghostbrowser.com/)
 - [QQ](https://browser.qq.com/)
 - [Whale](https://whale.naver.com)
-- [Kiwi](https://kiwibrowser.com/) (on [Android](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser)!)
+
+### Android:
+
+- [Kiwi](https://kiwibrowser.com/) (recommended)
+- [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)
 
 If you've tested it to work in a browser not listed, create a [pull request](https://github.bravegpt.com/pulls) to become a contributor!
 
