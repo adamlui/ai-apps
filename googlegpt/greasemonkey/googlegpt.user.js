@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.17
+// @version             2023.12.19
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -1500,9 +1500,10 @@
         + '.googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
         + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin-top: 20px ;'
             + ( scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
-            + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' }}`
-        + '.standby-btn:hover { background-color: #9cdaff ; color: #3d5d71 ; border-color: #82b7d7 ;'
-            + 'box-shadow: 0 1px 20px #9cdaff ; border-radius: 4px }'
+            + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
+            + 'transition: transform 0.1s ease !important ; transform: scale(1) }'
+        + '.standby-btn:hover { transform: scale(1.025) ;'
+            + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
         + '.googlegpt pre {'
             + 'font-size: 1.14rem ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ;'
             + ' line-height: 22px ; padding: 1.25em ; border-radius: 10px ; overflow: auto ;'
