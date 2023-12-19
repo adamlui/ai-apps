@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.16.10
+// @version             2023.12.19
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -1267,9 +1267,10 @@
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.bravegpt section.loading { padding-left: 5px ; font-size: 90% }'
         + '.standby-btn { width: 100% ; padding: 13px 0 ; cursor: pointer ; margin: 14px 0 20px ;'
-            + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' }}`
-        + '.standby-btn:hover { background-color: #fd804f ; color: white ; border-color: #ffa500 ;'
-            + 'box-shadow: 0 1px 20px #ff9c9c ; border-radius: 4px }'
+            + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
+            + 'transition: transform 0.1s ease !important ; transform: scale(1) }'
+        + '.standby-btn:hover { border-radius: 4px ; transform: scale(1.025) ;'
+            + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
         + '.bravegpt pre {'
             + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
             + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ; overflow: auto ;'
