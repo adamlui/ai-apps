@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.19.1
+// @version             2023.12.20
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
@@ -1153,7 +1153,8 @@
               googleGPTanchor = createAnchor('https://www.googlegpt.io', googleGPTimg)
         appPrefixSpan.innerText = '🤖 '
         appPrefixSpan.className = 'no-user-select' ; appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'     
-        googleGPTanchor.className = 'no-user-select' ; googleGPTimg.width = isMobile ? 197 : isFirefox ? 127 : 125
+        googleGPTanchor.classList.add('app-name', 'no-user-select')
+        googleGPTimg.width = isMobile ? 197 : isFirefox ? 127 : 125
         googleGPTimg.style.cssText = `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
                                    + ( isMobile ? '; margin-left: 1px' : '' )
         googleGPTdiv.append(appPrefixSpan, googleGPTanchor)
@@ -1430,6 +1431,8 @@
     // Pre-load logo
     const googleGPTimg = document.createElement('img')
     googleGPTimg.src = `${ config.assetHostURL }/media/images/logos/googlegpt/beta/${ scheme }mode.png`
+    googleGPTimg.alt = 'GoogleGPT'
+    googleGPTimg.onerror = () => googleGPTimg.style.cssText = 'margin-left: 2px' // re-pos if alt shown
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -1492,6 +1495,8 @@
             + ( scheme == 'dark' ? ' border: none ; background: #282828' : ' background: white' ) + '}'
         + '.googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
         + '.googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
+        + '.app-name { font-size: 1.35rem ; font-weight: 700 ;'
+            + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important ; text-decoration: none !important }` // img alt styles
         + ( scheme == 'dark' ? '.googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
         + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 6px ;'
             + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
