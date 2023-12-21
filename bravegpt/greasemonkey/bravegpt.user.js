@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.21.3
+// @version             2023.12.21.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -670,7 +670,7 @@
                         'X-Forwarded-For': chatgpt.generateRandomIP() },
                     onload: response => {
                         const newPublicKey = JSON.parse(response.responseText).data
-                        if (!newPublicKey) { ddgptError('Failed to get AIGCFun public key') ; return }
+                        if (!newPublicKey) { braveGPTerror('Failed to get AIGCFun public key') ; return }
                         GM_setValue(config.keyPrefix + '_aigcfKey', newPublicKey)
                         console.info('AIGCFun public key set: ' + newPublicKey)
                         resolve(newPublicKey)
