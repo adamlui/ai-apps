@@ -154,10 +154,10 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.20
+// @version             2023.12.20.1
 // @license             MIT
-// @icon                https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon48.png
-// @icon64              https://media.googlegpt.io/images/icons/googlegpt/beta/black/icon64.png
+// @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
+// @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
 // @compatible          chrome
 // @compatible          firefox
 // @compatible          edge
@@ -1430,7 +1430,7 @@
 
     // Pre-load logo
     const googleGPTimg = document.createElement('img')
-    googleGPTimg.src = `${ config.assetHostURL }/media/images/logos/googlegpt/beta/${ scheme }mode.png`
+    googleGPTimg.src = `${ config.assetHostURL }/media/images/logos/googlegpt/${ scheme }mode.png`
     googleGPTimg.alt = 'GoogleGPT'
     googleGPTimg.onerror = () => googleGPTimg.style.cssText = 'margin-left: 2px' // re-pos if alt shown
 
