@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.21.1
+// @version             2023.12.21.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/bravegpt-icon48.png
 // @icon64              https://media.bravegpt.com/images/bravegpt-icon64.png
@@ -1386,7 +1386,7 @@
 
     // Append to Brave
     const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
-    hostContainer.style.overflow = 'visible' // for boundless hover effects of BraveGPT
+    hostContainer.style.overflow = hostContainer.parentNode.style.overflow = 'visible' // for boundless hover fx
     setTimeout(() => {
         hostContainer.prepend(braveGPTdiv)
         setTimeout(() => braveGPTdiv.classList.add('active'), 100) // fade in
