@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.20.4
+// @version             2023.12.23
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -977,7 +977,7 @@
             })
     })}
 
-    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `googleGPTshow(answer).handleSubmit()`
+    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `googleGPTshow().handleSubmit()`
         if ([' ', 'Enter'].includes(event.key) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
 
@@ -1157,9 +1157,9 @@
         appPrefixSpan.className = 'no-user-select' ; appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'     
         googleGPTanchor.classList.add('app-name', 'no-user-select')
         googleGPTimg.width = isMobile ? 197 : isFirefox ? 127 : 125
-        googleGPTimg.style.cssText = googleGPTimg.style.cssText
-                                   || `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
-                                   + ( isMobile ? '; margin-left: 1px' : '' )
+        googleGPTimg.style.cssText = googleGPTimg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
+                                                         + ( isMobile ? '; margin-left: 1px' : '' )
+                                                         : 'margin-left: 2px' // pos alt if shown
         googleGPTdiv.append(appPrefixSpan, googleGPTanchor)
 
         // Create/append 'by KudoAI'
@@ -1435,7 +1435,7 @@
     const googleGPTimg = document.createElement('img')
     googleGPTimg.src = `${ config.assetHostURL }/media/images/logos/googlegpt/${ scheme }mode.png`
     googleGPTimg.alt = 'GoogleGPT'
-    googleGPTimg.onerror = () => googleGPTimg.style.cssText = 'margin-left: 2px' // pos alt if shown
+    googleGPTimg.onload = () => googleGPTimg.loaded = true // for img/alt pos in `googleGPTshow()`
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
