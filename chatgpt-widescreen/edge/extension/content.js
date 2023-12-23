@@ -407,7 +407,7 @@
         if (config.widerChatbox) wideScreenStyle.innerText += wcbStyle        
     }
 
-    syncExtension = () => { // settings, then disable modes or sync taller/wider chatbox
+    syncExtension = () => { // sync settings
         settings.load('extensionDisabled', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
                       'hiddenHeader', 'hiddenFooter', 'notifDisabled')
             .then(() => {
@@ -415,9 +415,12 @@
                     try { document.head.removeChild(wideScreenStyle) } catch (err) {}
                     try { document.head.removeChild(fullWindowStyle) ; chatgpt.sidebar.show() } catch (err) {}
                     tweaksStyle.innerText = tweaksStyle.innerText.replace(tcbStyle, '')
+                    tweaksStyle.innerText = tweaksStyle.innerText.replace(hhStyle, '')
+                    tweaksStyle.innerText = tweaksStyle.innerText.replace(hfStyle, '')
                     removeBtns()
-                } else {
-                    syncFullerWindows(config.fullWindow)
+                } else { // restore modes
+                    if (config.wideScreen) toggleMode('wideScreen', 'ON')
+                    if (config.fullWindow) toggleMode('fullWindow', 'ON')
                     updateTweaksStyle() // sync taller chatbox + hidden header/footer
                     updateWidescreenStyle() // sync wider chatbox
     }})}
