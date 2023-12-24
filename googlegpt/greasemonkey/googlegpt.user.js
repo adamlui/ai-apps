@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23.6
+// @version             2023.12.23.7
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -1157,7 +1157,7 @@
 
         // Create/append '🤖 GoogleGPT'
         const appPrefixSpan = document.createElement('span'),
-              appLogoAnchor = createAnchor('https://www.googlegpt.io', appLogoImg)
+              appLogoAnchor = createAnchor(config.appURL, appLogoImg)
         appPrefixSpan.innerText = '🤖 '
         appPrefixSpan.className = 'no-user-select' ; appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'     
         appLogoAnchor.classList.add('app-name', 'no-user-select')
@@ -1410,9 +1410,9 @@
     // Init config/convo/menu
     const config = {
         appName: 'GoogleGPT', appSymbol: '🤖', keyPrefix: 'googleGPT',
-        userLanguage: chatgpt.getUserLanguage(),
-        gitHubURL: 'https://github.com/kudoai/googlegpt',
-        greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt' }
+        appURL: 'https://www.googlegpt.io', gitHubURL: 'https://github.com/KudoAI/googlegpt',
+        greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt',
+        userLanguage: chatgpt.getUserLanguage() }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
