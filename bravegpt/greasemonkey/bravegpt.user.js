@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23.8
+// @version             2023.12.23.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -378,10 +378,10 @@
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width)}
 
-    function braveGPTalert(msg) {
-        msg = braveGPTalerts[msg] || msg
+    function appAlert(msg) {
+        msg = appAlerts[msg] || msg
         if (msg.includes('login')) deleteOpenAIcookies()
-        while (braveGPTdiv.firstChild) { braveGPTdiv.removeChild(braveGPTdiv.firstChild) }
+        while (appDiv.firstChild) { appDiv.removeChild(appDiv.firstChild) }
         const alertP = document.createElement('p') ; alertP.textContent = msg
         alertP.className = 'no-user-select' ; alertP.style.marginBottom = '-15px'
         if (/waiting|loading/i.test(msg)) alertP.classList.add('loading')
@@ -389,11 +389,11 @@
             alertP.append(createAnchor('https://chat.openai.com', 'chat.openai.com'),
                 ' (', messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
         }
-        braveGPTdiv.append(alertP)
+        appDiv.append(alertP)
     }
 
-    function braveGPTinfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
-    function braveGPTerror(msg) { console.error(`${ config.appSymbol } ${ config.appName } >> ERROR: ${ msg }`) }
+    function appInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
+    function appError(msg) { console.error(`${ config.appSymbol } ${ config.appName } >> ERROR: ${ msg }`) }
 
     // Define UI functions
 
@@ -416,7 +416,7 @@
         const isStandbyMode = document.querySelector('.standby-btn'),
               answerIsLoaded = document.querySelector('.corner-btn')
 
-        // Update tweaks style based on settings (for tweaks init + braveGPTshow() + toggleSidebar())
+        // Update tweaks style based on settings (for tweaks init + appShow() + toggleSidebar())
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                               + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
 
@@ -432,7 +432,7 @@
     function updateWSBsvg() {
 
         // Init span/SVG/paths
-        const wsbSpan = braveGPTdiv.querySelector('#wsb-btn'),
+        const wsbSpan = appDiv.querySelector('#wsb-btn'),
               wsbSVG = wsbSpan.querySelector('svg')
         const wsbONpaths = [
             createSVGpath({ fill: '', 'fill-rule': 'evenodd',
@@ -456,7 +456,7 @@
 
     function updateSSBsvg() {
         // Init span/SVG/paths
-        const ssbSpan = braveGPTdiv.querySelector('#ssb-btn'),
+        const ssbSpan = appDiv.querySelector('#ssb-btn'),
               ssbSVG = ssbSpan.querySelector('svg')
         const ssbONpaths = [
             createSVGpath({
@@ -626,7 +626,7 @@
 
         // Update position
         tooltipDiv.style.top = `${ buttonType != 'send' ? -6
-          : tooltipDiv.eventYpos - braveGPTdiv.getBoundingClientRect().top - 34 }px`
+          : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 34 }px`
         tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
     }
 
@@ -650,16 +650,16 @@
     function getOpenAItoken() {
         return new Promise(resolve => {
             const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
-            braveGPTinfo('OpenAI access token: ' + accessToken)
+            appInfo('OpenAI access token: ' + accessToken)
             if (!accessToken) {
                 GM.xmlHttpRequest({ url: openAIendpoints.session, onload: response => {
                     if (isBlockedbyCloudflare(response.responseText)) {
-                        braveGPTalert('checkCloudflare') ; return }
+                        appAlert('checkCloudflare') ; return }
                     try {
                         const newAccessToken = JSON.parse(response.responseText).accessToken
                         GM_setValue(config.keyPrefix + '_openAItoken', newAccessToken)
                         resolve(newAccessToken)
-                    } catch { braveGPTalert('login') ; return }
+                    } catch { appAlert('login') ; return }
                 }})
             } else resolve(accessToken)
     })}
@@ -675,7 +675,7 @@
                         'X-Forwarded-For': chatgpt.generateRandomIP() },
                     onload: response => {
                         const newPublicKey = JSON.parse(response.responseText).data
-                        if (!newPublicKey) { braveGPTerror('Failed to get AIGCFun public key') ; return }
+                        if (!newPublicKey) { appError('Failed to get AIGCFun public key') ; return }
                         GM_setValue(config.keyPrefix + '_aigcfKey', newPublicKey)
                         console.info('AIGCFun public key set: ' + newPublicKey)
                         resolve(newPublicKey)
@@ -713,7 +713,7 @@
             const timeoutPromise = new Promise((resolve, reject) =>
                 setTimeout(() => reject(new Error('Timeout occurred')), 3000))
             accessKey = await Promise.race([getOpenAItoken(), timeoutPromise])
-            if (!accessKey) { braveGPTalert('login') ; return }
+            if (!accessKey) { appAlert('login') ; return }
             model = 'text-davinci-002-render'
         }
     }
@@ -757,22 +757,22 @@
                             const responseParts = event.response.split('\n\n'),
                                   finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6))
                             str_relatedQueries = finalResponse.message.content.parts[0]
-                        } catch (err) { braveGPTerror(err) ; reject(err) }
+                        } catch (err) { appError(err) ; reject(err) }
                     } else if (config.proxyAPIenabled && event.responseText) {
                         try { // to parse txt response from proxy API
                             str_relatedQueries = JSON.parse(event.responseText).choices[0].message.content
-                        } catch (err) { braveGPTerror(err) ; reject(err) }
+                        } catch (err) { appError(err) ; reject(err) }
                     }
                     const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
                         .slice(0, 5) // limit to 1st 5
                         .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
                     resolve(arr_relatedQueries)
                 },
-                onerror: err => { braveGPTerror(err) ; reject(err) }
+                onerror: err => { appError(err) ; reject(err) }
             })
     })}
 
-    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `braveGPTshow().handleSubmit()`
+    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
         if ([' ', 'Enter'].includes(event.key) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
 
@@ -785,7 +785,7 @@
             relatedQueriesDiv.remove()
 
             // Send related query
-            const chatbar = braveGPTdiv.querySelector('textarea')
+            const chatbar = appDiv.querySelector('textarea')
             if (chatbar) {
                 chatbar.value = event.target.textContent
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
@@ -804,11 +804,11 @@
             method: 'POST', url: endpoint, headers: createHeaders(endpoint),
             responseType: responseType(endpoint), data: createPayload(endpoint, convo), onloadstart: onLoadStart(), onload: onLoad(),
             onerror: err => {
-                braveGPTerror(err)
-                if (!config.proxyAPIenabled) braveGPTalert(!accessKey ? 'login' : 'suggestProxy')
+                appError(err)
+                if (!config.proxyAPIenabled) appAlert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
                     if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-                    else braveGPTalert('suggestOpenAI')
+                    else appAlert('suggestOpenAI')
             }}
         })
 
@@ -816,12 +816,12 @@
         if (!config.rqDisabled) {
             const lastQuery = convo[convo.length - 1]
             getRelatedQueries(config.proxyAPIenabled ? lastQuery.content : lastQuery.content.parts[0]).then(relatedQueries => {
-                if (relatedQueries && braveGPTdiv.querySelector('textarea')) {
+                if (relatedQueries && appDiv.querySelector('textarea')) {
 
                     // Create/classify/append parent div
                     const relatedQueriesDiv = document.createElement('div')
                     relatedQueriesDiv.className = 'related-queries'
-                    braveGPTdiv.append(relatedQueriesDiv)
+                    appDiv.append(relatedQueriesDiv)
 
                     // Fill each child div, add attributes + icon + listener
                     relatedQueries.forEach((relatedQuery, index) => {
@@ -864,21 +864,21 @@
             return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
 
         function retryDiffHost() {
-            braveGPTerror(`Error calling ${ endpoint }. Trying another endpoint...`)
+            appError(`Error calling ${ endpoint }. Trying another endpoint...`)
             getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
             getShowReply.attemptCnt++
             getShowReply(convo, callback)
         }
 
         function onLoadStart() { // process streams
-            braveGPTinfo('Endpoint used: ' + endpoint)
+            appInfo('Endpoint used: ' + endpoint)
             if (responseType(endpoint) == 'stream') {
                 return stream => {
                     const reader = stream.response.getReader()
                     reader.read().then(function processText({ done, value }) {
                         if (done) return
                         let responseItem = String.fromCharCode(...Array.from(value))
-                        if (responseItem.includes('unusual activity')) { braveGPTalert('suggestProxy') ; return }
+                        if (responseItem.includes('unusual activity')) { appAlert('suggestProxy') ; return }
                         const items = responseItem.split('\n\n')
                         if (items.length > 2) {
                             const lastItem = items.slice(-3, -2)[0]
@@ -887,7 +887,7 @@
                         }
                         if (responseItem.startsWith('data: {')) {
                             const answer = JSON.parse(responseItem.slice(6)).message.content.parts[0]
-                            braveGPTshow(answer, footerContent)
+                            appShow(answer, footerContent)
                         } else if (responseItem.startsWith('data: [DONE]')) return
                         return reader.read().then(processText)
         })}}}
@@ -895,16 +895,16 @@
         function onLoad() { // process text
             return async event => {
                 if (event.status !== 200) {
-                    braveGPTerror('Event status: ' + event.status)
-                    braveGPTerror('Event response: ' + event.responseText)
+                    appError('Event status: ' + event.status)
+                    appError('Event response: ' + event.responseText)
                     if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpoints.length)
                         retryDiffHost()
                     else if (event.status === 401 && !config.proxyAPIenabled) {
-                        GM_deleteValue(config.keyPrefix + '_openAItoken') ; braveGPTalert('login') }
+                        GM_deleteValue(config.keyPrefix + '_openAItoken') ; appAlert('login') }
                     else if (event.status === 403)
-                        braveGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
-                    else if (event.status === 429) braveGPTalert('tooManyRequests')
-                    else braveGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
+                        appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
+                    else if (event.status === 429) appAlert('tooManyRequests')
+                    else appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
                 } else if (responseType(endpoint) == 'text') {
                     if (endpoint.includes('openai')) {
                         if (event.response) {
@@ -912,56 +912,56 @@
                                 const responseParts = event.response.split('\n\n'),
                                       finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
                                       answer = finalResponse.message.content.parts[0]
-                                braveGPTshow(answer, footerContent)
+                                appShow(answer, footerContent)
                             } catch (err) {
-                                braveGPTerror(braveGPTalerts.parseFailed + ': ' + err)
-                                braveGPTerror('Response: ' + event.response)
-                                braveGPTalert('suggestProxy')
+                                appError(appAlerts.parseFailed + ': ' + err)
+                                appError('Response: ' + event.response)
+                                appAlert('suggestProxy')
                             }
                         }
                     } else if (endpoint.includes('aigcf')) {
                         if (event.responseText) {
                             try { // to parse txt response from AIGCF endpoint
                                 const answer = JSON.parse(event.responseText).choices[0].message.content
-                                braveGPTshow(answer, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                                appShow(answer, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                             } catch (err) {
-                                braveGPTinfo('Response: ' + event.responseText)
+                                appInfo('Response: ' + event.responseText)
                                 if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
-                                    braveGPTalert(messages.alert_censored || 'Sorry, according to our product rules, '
+                                    appAlert(messages.alert_censored || 'Sorry, according to our product rules, '
                                         + 'we cannot provide you with an answer to this question, please try other questions')
                                 else if (event.responseText.includes('维护'))
-                                    braveGPTalert(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
+                                    appAlert(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
                                         + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
                                 else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
                                     await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
                                 } else { // use different endpoint or suggest OpenAI
-                                    braveGPTerror(braveGPTalerts.parseFailed + ': ' + err)
+                                    appError(appAlerts.parseFailed + ': ' + err)
                                     if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-                                    else braveGPTalert('suggestOpenAI')
+                                    else appAlert('suggestOpenAI')
         }}}}}}}
     }
 
-    function braveGPTshow(answer, footerContent) {
-        while (braveGPTdiv.firstChild) // clear all children
-            braveGPTdiv.removeChild(braveGPTdiv.firstChild)
+    function appShow(answer, footerContent) {
+        while (appDiv.firstChild) // clear all children
+            appDiv.removeChild(appDiv.firstChild)
 
         // Create/append '🤖 BraveGPT'
-        if (!braveGPTimg.loaded) { // create/append robot emoji for logo alt
+        if (!appLogoImg.loaded) { // create/append robot emoji for logo alt
             const appPrefixSpan = document.createElement('span')
             appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.classList.add('app-name', 'no-user-select')
-            braveGPTdiv.append(appPrefixSpan)
+            appDiv.append(appPrefixSpan)
         }
-        const braveGPTanchor = createAnchor('https://www.bravegpt.com', braveGPTimg)
-        braveGPTanchor.classList.add('app-name', 'no-user-select') ; braveGPTimg.width = 152
-        if (!braveGPTimg.loaded) braveGPTimg.style.marginLeft = '3px' // pos logo alt
-        braveGPTdiv.append(braveGPTanchor)
+        const appLogoAnchor = createAnchor('https://www.bravegpt.com', appLogoImg)
+        appLogoAnchor.classList.add('app-name', 'no-user-select') ; appLogoImg.width = 152
+        if (!appLogoImg.loaded) appLogoImg.style.marginLeft = '3px' // pos logo alt
+        appDiv.append(appLogoAnchor)
 
         // Create/append 'by KudoAI'
         const kudoAIspan = document.createElement('span')
         kudoAIspan.classList.add('kudo-ai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-        kudoAIspan.style.cssText = braveGPTimg.loaded ? 'position: relative ; bottom: 8px ; font-size: 12px' : ''
+        kudoAIspan.style.cssText = appLogoImg.loaded ? 'position: relative ; bottom: 8px ; font-size: 12px' : ''
         const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
-        kudoAIspan.append(kudoAIlink) ; braveGPTdiv.append(kudoAIspan)
+        kudoAIspan.append(kudoAIlink) ; appDiv.append(kudoAIspan)
 
         // Create/append about button
         const aboutSpan = document.createElement('span'),
@@ -974,7 +974,7 @@
         aboutSVGpath.setAttribute('d',
             'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z')
         aboutSVGpath.setAttribute('stroke', 'none')
-        aboutSVG.append(aboutSVGpath) ; aboutSpan.append(aboutSVG) ; braveGPTdiv.append(aboutSpan)
+        aboutSVG.append(aboutSVGpath) ; aboutSpan.append(aboutSVG) ; appDiv.append(aboutSpan)
 
         // Create/append speak button
         if (answer != 'standby') {
@@ -993,7 +993,7 @@
                     d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
             ]
             speakSVGpaths.forEach(path => speakSVG.append(path))
-            speakSpan.append(speakSVG) ; braveGPTdiv.append(speakSpan)
+            speakSpan.append(speakSVG) ; appDiv.append(speakSpan)
         }
 
         if (!isMobile) {
@@ -1003,18 +1003,18 @@
                 ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             ssbSpan.id = 'ssb-btn' // for updateSSBsvg() + toggleTooltip()
             ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '0.01rem 6px 0 0'
-            ssbSpan.append(ssbSVG) ; braveGPTdiv.append(ssbSpan) ; updateSSBsvg()
+            ssbSpan.append(ssbSVG) ; appDiv.append(ssbSpan) ; updateSSBsvg()
 
             // Create/append Wider Sidebar button
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' // for updateWSBsvg() + toggleTooltip()
             wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.07rem 9px 0 0'
-            wsbSpan.append(wsbSVG) ; braveGPTdiv.append(wsbSpan) ; updateWSBsvg()
+            wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan) ; updateWSBsvg()
         }
 
         // Add tooltips
-        braveGPTdiv.append(tooltipDiv)
+        appDiv.append(tooltipDiv)
 
         // Add corner button listeners
         aboutSVG.addEventListener('click', launchAboutModal)
@@ -1045,9 +1045,9 @@
             const standbyBtn = document.createElement('button')
             standbyBtn.className = 'standby-btn'
             standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
-            braveGPTdiv.append(standbyBtn)
+            appDiv.append(standbyBtn)
             standbyBtn.addEventListener('click', () => {
-                braveGPTalert('waitingResponse')
+                appAlert('waitingResponse')
                 const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
                 convo.push(
                     config.proxyAPIenabled ? { role: 'user', content: query }
@@ -1061,7 +1061,7 @@
             const balloonTipSpan = document.createElement('span')
             var answerPre = document.createElement('pre')
             balloonTipSpan.className = 'balloon-tip' ; answerPre.textContent = answer
-            braveGPTdiv.append(balloonTipSpan) ; braveGPTdiv.append(answerPre)
+            appDiv.append(balloonTipSpan) ; appDiv.append(answerPre)
         }
 
         setTimeout(() => updateTweaksStyle(), 100) // in case sticky mode on
@@ -1072,12 +1072,12 @@
               continueChatDiv = document.createElement('div'),
               chatTextarea = document.createElement('textarea')
         continueChatDiv.className = 'continue-chat'
-        chatTextarea.id = 'bravegpt-chatbar' ; chatTextarea.rows = '1'
+        chatTextarea.id = 'app-chatbar' ; chatTextarea.rows = '1'
         chatTextarea.placeholder = ( answer == 'standby' ? messages.placeholder_askSomethingElse || 'Ask something else'
                                                          : messages.tooltip_sendReply || 'Send reply' ) + '...'
         continueChatDiv.append(chatTextarea)
         replyForm.append(continueChatDiv) ; replySection.append(replyForm)
-        braveGPTdiv.append(replySection)
+        appDiv.append(replySection)
 
         // Create/append send button
         const sendButton = document.createElement('button'),
@@ -1093,9 +1093,9 @@
         sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
 
         // Create/classify/fill/append footer
-        const braveGPTfooter = document.createElement('div')
-        braveGPTfooter.className = 'footer'
-        braveGPTfooter.append(footerContent) ; braveGPTdiv.append(braveGPTfooter)
+        const appFooter = document.createElement('div')
+        appFooter.className = 'footer'
+        appFooter.append(footerContent) ; appDiv.append(appFooter)
 
         // Render math
         if (answer != 'standby') {
@@ -1125,7 +1125,7 @@
         function handleEnter(event) {
             if (event.key == 'Enter') {
                 if (event.ctrlKey) { // add newline
-                    const chatTextarea = document.querySelector('#bravegpt-chatbar'),
+                    const chatTextarea = document.querySelector('#app-chatbar'),
                           caretPos = chatTextarea.selectionStart,
                           textBefore = chatTextarea.value.substring(0, caretPos),
                           textAfter = chatTextarea.value.substring(caretPos)
@@ -1138,7 +1138,7 @@
         function handleSubmit(event) {
             event.preventDefault()
             if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
-            const prevReplyTrimmed = braveGPTdiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || '',
+            const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || '',
                   yourReply = `${ chatTextarea.value } (reply in ${ config.replyLanguage })`
             if (!config.proxyAPIenabled) {
                 convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
@@ -1164,12 +1164,12 @@
             } catch (err) {}
 
             // Clear footer
-            while (braveGPTfooter.firstChild) // clear all children
-                braveGPTfooter.removeChild(braveGPTfooter.firstChild)
+            while (appFooter.firstChild) // clear all children
+                appFooter.removeChild(appFooter.firstChild)
 
             // Show loading status
             replySection.classList.add('loading', 'no-user-select')
-            replySection.innerText = braveGPTalerts.waitingResponse
+            replySection.innerText = appAlerts.waitingResponse
         }
 
         let prevLength = chatTextarea.value.length
@@ -1214,12 +1214,12 @@
           isMobile = chatgpt.browser.isMobile()
 
     // Pre-load logo
-    const braveGPTimg = document.createElement('img')
-          braveGPTimg.src = 'data:image/png;base64,'
+    const appLogoImg = document.createElement('img')
+          appLogoImg.src = 'data:image/png;base64,'
               + ( scheme == 'light' ? 'iVBORw0KGgoAAAANSUhEUgAAAQMAAAA3CAYAAAAITS/EAAAACXBIWXMAAAsTAAALEwEAmpwYAAALbmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIiB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMy0wMy0yMFQyMzowNzowOC0wNzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjMtMTItMjBUMjM6MzYtMDg6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjMtMTItMjBUMjM6MzYtMDg6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBwaG90b3Nob3A6SUNDUHJvZmlsZT0ic1JHQiBJRUM2MTk2Ni0yLjEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ZTFhZjA1M2QtZTQwMy02ZjQyLTgwZDktMzcyMTdkNDg1MWQwIiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YmE1MmY3YzItM2Y0Mi00YTQ4LTg2OWQtMTRjMzQ2MTFlYzNhIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MjdiY2U5OTUtOTdmYS0wODQ4LTg4MjktNmRmMWEwY2MwMDg1IiB0aWZmOk9yaWVudGF0aW9uPSIxIiB0aWZmOlhSZXNvbHV0aW9uPSI3MjAwMDAvMTAwMDAiIHRpZmY6WVJlc29sdXRpb249IjcyMDAwMC8xMDAwMCIgdGlmZjpSZXNvbHV0aW9uVW5pdD0iMiIgZXhpZjpDb2xvclNwYWNlPSIxIiBleGlmOlBpeGVsWERpbWVuc2lvbj0iNzMwIiBleGlmOlBpeGVsWURpbWVuc2lvbj0iMTU1Ij4gPHBob3Rvc2hvcDpUZXh0TGF5ZXJzPiA8cmRmOkJhZz4gPHJkZjpsaSBwaG90b3Nob3A6TGF5ZXJOYW1lPSInZ3B0JyIgcGhvdG9zaG9wOkxheWVyVGV4dD0iZ3B0Ii8+IDwvcmRmOkJhZz4gPC9waG90b3Nob3A6VGV4dExheWVycz4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDoyN2JjZTk5NS05N2ZhLTA4NDgtODgyOS02ZGYxYTBjYzAwODUiIHN0RXZ0OndoZW49IjIwMjMtMDMtMjBUMjM6MDc6MDgtMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNvbnZlcnRlZCIgc3RFdnQ6cGFyYW1ldGVycz0iZnJvbSBpbWFnZS9wbmcgdG8gYXBwbGljYXRpb24vdm5kLmFkb2JlLnBob3Rvc2hvcCIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6OWM0MDM4M2MtNzM4OC1jZTQ4LWExODAtZGU1YzRlNGEwNGZhIiBzdEV2dDp3aGVuPSIyMDIzLTAzLTIxVDE5OjQyOjIxLTA3OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo3ODJiOGU4NC00M2YzLWZjNGQtOTA5Ni00YmI2ODc5NzIxNmMiIHN0RXZ0OndoZW49IjIwMjMtMTItMjBUMjM6MzYtMDg6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNvbnZlcnRlZCIgc3RFdnQ6cGFyYW1ldGVycz0iZnJvbSBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iZGVyaXZlZCIgc3RFdnQ6cGFyYW1ldGVycz0iY29udmVydGVkIGZyb20gYXBwbGljYXRpb24vdm5kLmFkb2JlLnBob3Rvc2hvcCB0byBpbWFnZS9wbmciLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmUxYWYwNTNkLWU0MDMtNmY0Mi04MGQ5LTM3MjE3ZDQ4NTFkMCIgc3RFdnQ6d2hlbj0iMjAyMy0xMi0yMFQyMzozNi0wODowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPHhtcE1NOkRl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'
                                     : 'iVBORw0KGgoAAAANSUhEUgAAAQMAAAA3CAYAAAAITS/EAAAACXBIWXMAAAsTAAALEwEAmpwYAAALemlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIiB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIiB4bXA6Q3JlYXRlRGF0ZT0iMjAyMy0wMy0yMFQyMzowNzowOC0wNzowMCIgeG1wOk1vZGlmeURhdGU9IjIwMjMtMTItMjBUMjM6MzY6MjQtMDg6MDAiIHhtcDpNZXRhZGF0YURhdGU9IjIwMjMtMTItMjBUMjM6MzY6MjQtMDg6MDAiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiBwaG90b3Nob3A6SUNDUHJvZmlsZT0ic1JHQiBJRUM2MTk2Ni0yLjEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MGZiNjQ0YjItMjk0Ni1jNTQ1LWJmMjctNmU2YzcwNjdiY2Q2IiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6NDg1ZjY1ZGMtYTY1OS1kZTRjLTllNzktMGEyN2I2NWY4ZjAyIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6MjdiY2U5OTUtOTdmYS0wODQ4LTg4MjktNmRmMWEwY2MwMDg1IiB0aWZmOk9yaWVudGF0aW9uPSIxIiB0aWZmOlhSZXNvbHV0aW9uPSI3MjAwMDAvMTAwMDAiIHRpZmY6WVJlc29sdXRpb249IjcyMDAwMC8xMDAwMCIgdGlmZjpSZXNvbHV0aW9uVW5pdD0iMiIgZXhpZjpDb2xvclNwYWNlPSIxIiBleGlmOlBpeGVsWERpbWVuc2lvbj0iNzMwIiBleGlmOlBpeGVsWURpbWVuc2lvbj0iMTU1Ij4gPHBob3Rvc2hvcDpUZXh0TGF5ZXJzPiA8cmRmOkJhZz4gPHJkZjpsaSBwaG90b3Nob3A6TGF5ZXJOYW1lPSInZ3B0JyIgcGhvdG9zaG9wOkxheWVyVGV4dD0iZ3B0Ii8+IDwvcmRmOkJhZz4gPC9waG90b3Nob3A6VGV4dExheWVycz4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDoyN2JjZTk5NS05N2ZhLTA4NDgtODgyOS02ZGYxYTBjYzAwODUiIHN0RXZ0OndoZW49IjIwMjMtMDMtMjBUMjM6MDc6MDgtMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNvbnZlcnRlZCIgc3RFdnQ6cGFyYW1ldGVycz0iZnJvbSBpbWFnZS9wbmcgdG8gYXBwbGljYXRpb24vdm5kLmFkb2JlLnBob3Rvc2hvcCIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6OWM0MDM4M2MtNzM4OC1jZTQ4LWExODAtZGU1YzRlNGEwNGZhIiBzdEV2dDp3aGVuPSIyMDIzLTAzLTIxVDE5OjQyOjIxLTA3OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgKFdpbmRvd3MpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo1ODU0ZWJjNy02Y2Y0LWNmNGMtOWE1ZS0yNmFlOTA2MTI2YTAiIHN0RXZ0OndoZW49IjIwMjMtMTItMjBUMjM6MzY6MjQtMDg6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNvbnZlcnRlZCIgc3RFdnQ6cGFyYW1ldGVycz0iZnJvbSBhcHBsaWNhdGlvbi92bmQuYWRvYmUucGhvdG9zaG9wIHRvIGltYWdlL3BuZyIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iZGVyaXZlZCIgc3RFdnQ6cGFyYW1ldGVycz0iY29udmVydGVkIGZyb20gYXBwbGljYXRpb24vdm5kLmFkb2JlLnBob3Rvc2hvcCB0byBpbWFnZS9wbmciLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjBmYjY0NGIyLTI5NDYtYzU0NS1iZjI3LTZlNmM3MDY3YmNkNiIgc3RFdnQ6d2hlbj0iMjAyMy0xMi0yMFQyMzozNjoyNC0wODowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9y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' )
-    braveGPTimg.alt = 'BraveGPT'
-    braveGPTimg.onload = () => braveGPTimg.loaded = true // for prefix visibility + img/alt pos in `braveGPTshow()`
+    appLogoImg.alt = 'BraveGPT'
+    appLogoImg.onload = () => appLogoImg.loaded = true // for prefix visibility + img/alt pos in `appShow()`
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -1254,7 +1254,7 @@
     const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
     // Init alerts
-    const braveGPTalerts = {
+    const appAlerts = {
         waitingResponse: ( messages.alert_waitingResponse || 'Waiting for ChatGPT response' ) + '...',
         login: ( messages.alert_login || 'Please login' ) + ' @ ',
         tooManyRequests: ( messages.alert_tooManyRequests || 'ChatGPT is flooded with too many requests' ) + '. '
@@ -1271,8 +1271,8 @@
     }
 
     // Stylize elements
-    const braveGPTstyle = document.createElement('style')
-    braveGPTstyle.innerText = (
+    const appStyle = document.createElement('style')
+    appStyle.innerText = (
           '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.bravegpt {'
             + `word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: ${ isMobile ? -29 : 20}px ;`
@@ -1365,7 +1365,7 @@
             + '.bravegpt *::-webkit-scrollbar-track { background: none }' )
         + '.bravegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
     )
-    document.head.append(braveGPTstyle)
+    document.head.append(appStyle)
 
     // Create Brave Search style tweaks
     const tweaksStyle = document.createElement('style'),
@@ -1387,16 +1387,16 @@
     document.head.append(tooltipStyle)
 
     // Create/classify BraveGPT container
-    const braveGPTdiv = document.createElement('div') // create container div
-    braveGPTdiv.classList.add('bravegpt', 'fade-in', // BraveGPT classes
+    const appDiv = document.createElement('div') // create container div
+    appDiv.classList.add('bravegpt', 'fade-in', // BraveGPT classes
                               'snippet') // Brave class
 
     // Append to Brave
     const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
     hostContainer.style.overflow = hostContainer.parentNode.style.overflow = 'visible' // for boundless hover fx
     setTimeout(() => {
-        hostContainer.prepend(braveGPTdiv)
-        setTimeout(() => braveGPTdiv.classList.add('active'), 100) // fade in
+        hostContainer.prepend(appDiv)
+        setTimeout(() => appDiv.classList.add('active'), 100) // fade in
     }, isMobile ? 500 : 100)
 
     // Init footer CTA to share feedback
@@ -1407,9 +1407,9 @@
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
         || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
-    ) { updateFooterContent() ; braveGPTshow('standby', footerContent) }
+    ) { updateFooterContent() ; appShow('standby', footerContent) }
     else {
-        braveGPTalert('waitingResponse')
+        appAlert('waitingResponse')
         const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
         convo.push(
             config.proxyAPIenabled ? { role: 'user', content: query }
