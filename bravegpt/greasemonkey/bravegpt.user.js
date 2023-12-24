@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23.6
+// @version             2023.12.23.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -1166,7 +1166,7 @@
 
             // Show loading status
             replySection.classList.add('loading', 'no-user-select')
-            replySection.innerHTML = braveGPTalerts.waitingResponse
+            replySection.innerText = braveGPTalerts.waitingResponse
         }
 
         let prevLength = chatTextarea.value.length
@@ -1399,23 +1399,6 @@
     // Init footer CTA to share feedback
     let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Feedback')
     footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
-
-    // Check for active sidebar campaigns to show
-    GM.xmlHttpRequest({
-        method: 'GET', url: config.assetHostURL + 'ads/live/creative.html',
-        onload: response => { if (response.status === 200) {
-
-            // Create campaign div & add class/style/HTML
-            const pcDiv = document.createElement('div')
-            pcDiv.setAttribute( // assign Brave's .snippet + custom class
-                'class', 'snippet bravegpt')
-            pcDiv.style.display = 'flex'
-            pcDiv.style.padding = '17px 19px 21px 23px'
-            pcDiv.innerHTML = response.responseText
-
-            // Inject in sidebar
-            braveGPTdiv.insertAdjacentElement('afterend', pcDiv)
-    }}})
 
     // Show standby mode or get/show answer
     if (config.autoGetDisabled
