@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23.4
+// @version             2023.12.23.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -379,15 +379,17 @@
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width)}
 
     function braveGPTalert(msg) {
-        if (msg.includes('login')) deleteOpenAIcookies()
         msg = braveGPTalerts[msg] || msg
-        braveGPTdiv.innerHTML = (
-            /waiting|loading/i.test(msg) ? // if alert involves loading, add class
-                '<p class="loading no-user-select">' : '<p style="padding: 19px">') + msg
-            + (msg.includes('@') ? // if msg needs login link, add it
-                '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
-                    + '(' + ( messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode' )
-                    + ')</p>' : '</p>')
+        if (msg.includes('login')) deleteOpenAIcookies()
+        while (braveGPTdiv.firstChild) { braveGPTdiv.removeChild(braveGPTdiv.firstChild) }
+        const alertP = document.createElement('p') ; alertP.textContent = msg
+        alertP.className = 'no-user-select' ; alertP.style.paddingBottom = '15px'
+        if (/waiting|loading/i.test(msg)) alertP.classList.add('loading')        
+        if (msg.includes('@')) { // needs login link, add it
+            alertP.append(createAnchor('https://chat.openai.com', 'chat.openai.com'),
+                ' (', messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
+        }
+        braveGPTdiv.append(alertP)
     }
 
     function braveGPTinfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
