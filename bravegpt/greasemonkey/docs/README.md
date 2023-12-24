@@ -2,10 +2,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/logos/bravegpt/darkmode.png">
     <img alt="BraveGPT" width=322 height-58 src="https://media.bravegpt.com/images/logos/bravegpt/lightmode.png">
-  </picture>
-  <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 156px; height: 34px; margin:0 0 11px 5px;" width="156" height="34" /></a>
-  <a href="https://twitter.com/intent/tweet?text=This%20add-on%20adds%20%23ChatGPT%20answers%20right%20besides%20Brave%20Search%20results%21&url=https://www.bravegpt.com&hashtags=greasemonkey,javascript,ai"><img style="margin:0 0 14px 5px;" src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
-  
+  </picture>  
 </h1>
 
 [![](https://img.shields.io/greasyfork/dt/462440?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/scripts/462440-bravegpt)
