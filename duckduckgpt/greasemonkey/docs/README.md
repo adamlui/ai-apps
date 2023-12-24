@@ -161,14 +161,14 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://github.chatgptinfinity.com/#readme) / 
 [Discuss](https://chatgptinfinity.com/discuss)
 
-### <img src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](https://github.bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://github.bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Bring the magic of ChatGPT to Brave Search (powered by GPT-4!)
 <br>[Install](https://github.bravegpt.com/#-installation) /
 [Readme](https://github.bravegpt.com/#readme) /
 [Discuss](https://github.bravegpt.com/discussions)
 
-### <img src="https://www.google.com/s2/favicons?sz=64&domain=google.com" width=19> [GoogleGPT](https://github.kudoai.com/googlegpt) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <img src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png" width=18> [GoogleGPT](https://github.kudoai.com/googlegpt) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > Bring the magic of ChatGPT to Google Search (powered by GPT-4!)
 <br>[Install](https://greasyfork.org/scripts/478597-googlegpt) /
