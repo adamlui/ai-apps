@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23.1
+// @version             2023.12.23.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -596,15 +596,18 @@
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     function googleGPTalert(msg) {
-        if (msg.includes('login')) deleteOpenAIcookies()
         msg = googleGPTalerts[msg] || msg
-        googleGPTdiv.innerHTML = (
-            `<p style="padding-bottom: 15px" ${ /waiting|loading/i.test(msg) ? 'class="loading no-user-select"' : '' }>`
-                + msg + ( msg.includes('@') ? // if msg needs login link, add it
-                    '<a href="https://chat.openai.com" target="_blank" rel="noopener">chat.openai.com</a> '
-                        + '(' + ( messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode' ) + ')'
-                    : '' )
-          + '</p>' )
+        if (msg.includes('login')) deleteOpenAIcookies()
+        while (googleGPTdiv.firstChild) { googleGPTdiv.removeChild(googleGPTdiv.firstChild) }
+        const alertP = document.createElement('p') ; alertP.textContent = msg
+        alertP.className = 'no-user-select' ; alertP.style.paddingBottom = '15px'
+        if (/waiting|loading/i.test(msg)) alertP.classList.add('loading')        
+        if (msg.includes('@')) { // needs login link, add it
+            const openAIlink = createAnchor('https://chat.openai.com', 'chat.openai.com')
+            alertP.append(openAIlink,
+                ' (', messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
+        }
+        googleGPTdiv.append(alertP)
     }
 
     function googleGPTinfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
@@ -1158,7 +1161,7 @@
         googleGPTanchor.classList.add('app-name', 'no-user-select')
         googleGPTimg.width = isMobile ? 197 : isFirefox ? 127 : 125
         googleGPTimg.style.cssText = googleGPTimg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
-                                                         + ( isMobile ? '; margin-left: 1px' : '' )
+                                                             + ( isMobile ? '; margin-left: 1px' : '' )
                                                          : 'margin-left: 2px' // pos alt if shown
         googleGPTdiv.append(appPrefixSpan, googleGPTanchor)
 
