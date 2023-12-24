@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23.7
+// @version             2023.12.23.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -512,8 +512,11 @@
                                 if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
                                     || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
                                     || adGroup.active === false // group explicitly disabled
+                                    || adGroup.targetBrowsers && // target browser(s) exist...
+                                        !adGroup.targetBrowsers.some( // ...but doesn't match user's
+                                            browser => new RegExp(browser, 'i').test(navigator.userAgent))
                                     || adGroup.targetLocations && ( // target locale(s) exist...
-                                        !config.userLocale || !adGroup.targetLocations.some( // ...and user locale is missing or excluded
+                                        !config.userLocale || !adGroup.targetLocations.some( // ...but user locale is missing or excluded
                                             loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
                                 ) continue // to next group
 
