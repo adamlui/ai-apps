@@ -22,7 +22,7 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 [Readme](https://github.com/adamlui/chatgpt-apps/tree/main/autoclear-chatgpt-history#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <img style="margin-bottom:-1px" src="https://media.bravegpt.com/images/bravegpt-icon48.png" width=18> [BraveGPT](../bravegpt) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+### <img style="margin-bottom:-1px" src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](../bravegpt) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Display ChatGPT answers in Brave Search sidebar (powered by GPT-4!)
 <br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/bravegpt#-installation) /
