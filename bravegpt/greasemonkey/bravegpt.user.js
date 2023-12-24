@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23.9
+// @version             2023.12.23.10
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -951,7 +951,7 @@
             appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.classList.add('app-name', 'no-user-select')
             appDiv.append(appPrefixSpan)
         }
-        const appLogoAnchor = createAnchor('https://www.bravegpt.com', appLogoImg)
+        const appLogoAnchor = createAnchor(config.appURL, appLogoImg)
         appLogoAnchor.classList.add('app-name', 'no-user-select') ; appLogoImg.width = 152
         if (!appLogoImg.loaded) appLogoImg.style.marginLeft = '3px' // pos logo alt
         appDiv.append(appLogoAnchor)
@@ -1190,9 +1190,9 @@
     // Init config/convo/menu
     const config = {
         appName: 'BraveGPT', appSymbol: '🤖', keyPrefix: 'braveGPT',
-        userLanguage: chatgpt.getUserLanguage(),
-        gitHubURL: 'https://github.com/kudoai/bravegpt',
-        greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt' }
+        appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/kudoai/bravegpt',
+        greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt',
+        userLanguage: chatgpt.getUserLanguage() }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
