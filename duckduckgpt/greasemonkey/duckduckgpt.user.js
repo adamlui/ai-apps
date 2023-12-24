@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23.2
+// @version             2023.12.23.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -1028,7 +1028,7 @@
             // Show loading status
             const replySection = ddgptDiv.querySelector('section')
             replySection.classList.add('loading', 'no-user-select')
-            replySection.innerHTML = ddgptAlerts.waitingResponse
+            replySection.innerText = ddgptAlerts.waitingResponse
         }
 
         // Autosize chatbar function
@@ -1339,27 +1339,6 @@
                 return boostedList
             }
     })
-
-    // Check for active sidebar campaigns to show
-    GM.xmlHttpRequest({
-        method: 'GET', url: config.assetHostURL + 'ads/live/creative.html',
-        onload: response => { if (response.status === 200) {
-
-            // Create campaign div & add class/style/HTML
-            const pcDiv = document.createElement('div')
-            pcDiv.className = 'ddgpt'
-            pcDiv.style.display = 'flex'
-            pcDiv.innerHTML = response.responseText
-
-            // Create feedback footer & add classes/HTML
-            const pcFooter = document.createElement('div')
-            pcFooter.classList.add('feedback-prompt', 'ddgpt-feedback')
-            pcFooter.innerHTML = '<a href="https://github.ddgpt.com/discussions/new/choose" target="_blank" rel="noopener">' + ( messages.link_shareFeedback || 'Share Feedback' ) +'</a>'
-
-            // Inject in sidebar
-            ddgptFooter.insertAdjacentElement('afterend', pcDiv)
-            pcDiv.insertAdjacentElement('afterend', pcFooter)
-    }}})
 
     // Show standby mode or get/show answer
     if (config.autoGetDisabled
