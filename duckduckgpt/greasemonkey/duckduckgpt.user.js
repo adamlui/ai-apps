@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23
+// @version             2023.12.23.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -657,7 +657,7 @@
             })
     })}
 
-    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `ddgptShow(answer).handleSubmit()`
+    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `ddgptShow().handleSubmit()`
         if ([' ', 'Enter'].includes(event.key) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
 
@@ -1154,7 +1154,7 @@
         + '.ddgpt-feedback { margin: 2px 0 25px }'
         + `.ddgpt-feedback * { color: ${ scheme == 'dark' ? '#ccc' : '#666' } !important }`
         + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-            + ( isFirefox ? 'top: 0.29em ; right: 16.2em ;' : 'top: 2px ; right: 8.1em ;' )
+            + ( isFirefox ? 'top: 0.32em ; right: 16.2em ;' : 'top: 2px ; right: 8.1em ;' )
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
             + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' } '
         + '.continue-chat > textarea {'
