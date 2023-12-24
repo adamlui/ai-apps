@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23.5
+// @version             2023.12.23.6
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -595,10 +595,10 @@
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
-    function googleGPTalert(msg) {
-        msg = googleGPTalerts[msg] || msg
+    function appAlert(msg) {
+        msg = appAlerts[msg] || msg
         if (msg.includes('login')) deleteOpenAIcookies()
-        while (googleGPTdiv.firstChild) { googleGPTdiv.removeChild(googleGPTdiv.firstChild) }
+        while (appDiv.firstChild) { appDiv.removeChild(appDiv.firstChild) }
         const alertP = document.createElement('p') ; alertP.textContent = msg
         alertP.className = 'no-user-select' ; alertP.style.paddingBottom = '15px'
         if (/waiting|loading/i.test(msg)) alertP.classList.add('loading')
@@ -606,11 +606,11 @@
             alertP.append(createAnchor('https://chat.openai.com', 'chat.openai.com'),
                 ' (', messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
         }
-        googleGPTdiv.append(alertP)
+        appDiv.append(alertP)
     }
 
-    function googleGPTinfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
-    function googleGPTerror(msg) { console.error(`${ config.appSymbol } ${ config.appName } >> ERROR: ${ msg }`) }
+    function appInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
+    function appError(msg) { console.error(`${ config.appSymbol } ${ config.appName } >> ERROR: ${ msg }`) }
 
     // Define UI functions
 
@@ -629,7 +629,7 @@
         const isStandbyMode = document.querySelector('.standby-btn'),
               answerIsLoaded = document.querySelector('.corner-btn')
 
-        // Update tweaks style based on settings (for tweaks init + googleGPTshow() + toggleSidebar())
+        // Update tweaks style based on settings (for tweaks init + appShow() + toggleSidebar())
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                               + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
 
@@ -645,7 +645,7 @@
     function updateWSBsvg() {
 
         // Init span/SVG/paths
-        const wsbSpan = googleGPTdiv.querySelector('#wsb-btn'),
+        const wsbSpan = appDiv.querySelector('#wsb-btn'),
               wsbSVG = wsbSpan.querySelector('svg')
         const wsbONpaths = [
             createSVGpath({ fill: '', 'fill-rule': 'evenodd',
@@ -670,7 +670,7 @@
     function updateSSBsvg() {
 
         // Init span/SVG/paths
-        const ssbSpan = googleGPTdiv.querySelector('#ssb-btn'),
+        const ssbSpan = appDiv.querySelector('#ssb-btn'),
               ssbSVG = ssbSpan.querySelector('svg')
         const ssbONpaths = [
             createSVGpath({
@@ -836,7 +836,7 @@
 
         // Update position
         tooltipDiv.style.top = `${ buttonType != 'send' ? -8
-          : tooltipDiv.eventYpos - googleGPTdiv.getBoundingClientRect().top - 31 }px`
+          : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 31 }px`
         tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
     }
 
@@ -860,16 +860,16 @@
     function getOpenAItoken() {
         return new Promise(resolve => {
             const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
-            googleGPTinfo('OpenAI access token: ' + accessToken)
+            appInfo('OpenAI access token: ' + accessToken)
             if (!accessToken) {
                 GM.xmlHttpRequest({ url: openAIendpoints.session, onload: response => {
                     if (isBlockedbyCloudflare(response.responseText)) {
-                        googleGPTalert('checkCloudflare') ; return }
+                        appAlert('checkCloudflare') ; return }
                     try {
                         const newAccessToken = JSON.parse(response.responseText).accessToken
                         GM_setValue(config.keyPrefix + '_openAItoken', newAccessToken)
                         resolve(newAccessToken)
-                    } catch { googleGPTalert('login') ; return }
+                    } catch { appAlert('login') ; return }
                 }})
             } else resolve(accessToken)
     })}
@@ -885,7 +885,7 @@
                         'X-Forwarded-For': chatgpt.generateRandomIP() },
                     onload: response => {
                         const newPublicKey = JSON.parse(response.responseText).data
-                        if (!newPublicKey) { googleGPTerror('Failed to get AIGCFun public key') ; return }
+                        if (!newPublicKey) { appError('Failed to get AIGCFun public key') ; return }
                         GM_setValue(config.keyPrefix + '_aigcfKey', newPublicKey)
                         console.info('AIGCFun public key set: ' + newPublicKey)
                         resolve(newPublicKey)
@@ -923,7 +923,7 @@
             const timeoutPromise = new Promise((resolve, reject) =>
                 setTimeout(() => reject(new Error('Timeout occurred')), 3000))
             accessKey = await Promise.race([getOpenAItoken(), timeoutPromise])
-            if (!accessKey) { googleGPTalert('login') ; return }
+            if (!accessKey) { appAlert('login') ; return }
             model = 'text-davinci-002-render'
         }
     }
@@ -967,22 +967,22 @@
                             const responseParts = event.response.split('\n\n'),
                                   finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6))
                             str_relatedQueries = finalResponse.message.content.parts[0]
-                        } catch (err) { googleGPTerror(err) ; reject(err) }
+                        } catch (err) { appError(err) ; reject(err) }
                     } else if (config.proxyAPIenabled && event.responseText) {
                         try { // to parse txt response from proxy API
                             str_relatedQueries = JSON.parse(event.responseText).choices[0].message.content
-                        } catch (err) { googleGPTerror(err) ; reject(err) }
+                        } catch (err) { appError(err) ; reject(err) }
                     }
                     const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
                         .slice(0, 5) // limit to 1st 5
                         .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
                     resolve(arr_relatedQueries)
                 },
-                onerror: err => { googleGPTerror(err) ; reject(err) }
+                onerror: err => { appError(err) ; reject(err) }
             })
     })}
 
-    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `googleGPTshow().handleSubmit()`
+    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
         if ([' ', 'Enter'].includes(event.key) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
 
@@ -995,7 +995,7 @@
             relatedQueriesDiv.remove()
 
             // Send related query
-            const chatbar = googleGPTdiv.querySelector('textarea')
+            const chatbar = appDiv.querySelector('textarea')
             if (chatbar) {
                 chatbar.value = event.target.textContent
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
@@ -1014,11 +1014,11 @@
             method: 'POST', url: endpoint, headers: createHeaders(endpoint),
             responseType: responseType(endpoint), data: createPayload(endpoint, convo), onloadstart: onLoadStart(), onload: onLoad(),
             onerror: err => {
-                googleGPTerror(err)
-                if (!config.proxyAPIenabled) googleGPTalert(!accessKey ? 'login' : 'suggestProxy')
+                appError(err)
+                if (!config.proxyAPIenabled) appAlert(!accessKey ? 'login' : 'suggestProxy')
                 else { // if proxy mode
                     if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-                    else googleGPTalert('suggestOpenAI')
+                    else appAlert('suggestOpenAI')
             }}
         })
 
@@ -1026,12 +1026,12 @@
         if (!config.rqDisabled) {
             const lastQuery = convo[convo.length - 1]
             getRelatedQueries(config.proxyAPIenabled ? lastQuery.content : lastQuery.content.parts[0]).then(relatedQueries => {
-                if (relatedQueries && googleGPTdiv.querySelector('textarea')) {
+                if (relatedQueries && appDiv.querySelector('textarea')) {
 
                     // Create/classify/append parent div
                     const relatedQueriesDiv = document.createElement('div')
                     relatedQueriesDiv.className = 'related-queries'
-                    googleGPTdiv.append(relatedQueriesDiv)
+                    appDiv.append(relatedQueriesDiv)
 
                     // Fill each child div, add attributes + icon + listener
                     relatedQueries.forEach((relatedQuery, index) => {
@@ -1074,21 +1074,21 @@
             return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
 
         function retryDiffHost() {
-            googleGPTerror(`Error calling ${ endpoint }. Trying another endpoint...`)
+            appError(`Error calling ${ endpoint }. Trying another endpoint...`)
             getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
             getShowReply.attemptCnt++
             getShowReply(convo, callback)
         }
 
         function onLoadStart() { // process streams
-            googleGPTinfo('Endpoint used: ' + endpoint)
+            appInfo('Endpoint used: ' + endpoint)
             if (responseType(endpoint) == 'stream') {
                 return stream => {
                     const reader = stream.response.getReader()
                     reader.read().then(function processText({ done, value }) {
                         if (done) return
                         let responseItem = String.fromCharCode(...Array.from(value))
-                        if (responseItem.includes('unusual activity')) { googleGPTalert('suggestProxy') ; return }
+                        if (responseItem.includes('unusual activity')) { appAlert('suggestProxy') ; return }
                         const items = responseItem.split('\n\n')
                         if (items.length > 2) {
                             const lastItem = items.slice(-3, -2)[0]
@@ -1097,7 +1097,7 @@
                         }
                         if (responseItem.startsWith('data: {')) {
                             const answer = JSON.parse(responseItem.slice(6)).message.content.parts[0]
-                            googleGPTshow(answer, footerContent)
+                            appShow(answer, footerContent)
                         } else if (responseItem.startsWith('data: [DONE]')) return
                         return reader.read().then(processText)
         })}}}
@@ -1105,16 +1105,16 @@
         function onLoad() { // process text
             return async event => {
                 if (event.status !== 200) {
-                    googleGPTerror('Event status: ' + event.status)
-                    googleGPTerror('Event response: ' + event.responseText)
+                    appError('Event status: ' + event.status)
+                    appError('Event response: ' + event.responseText)
                     if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpoints.length)
                         retryDiffHost()
                     else if (event.status === 401 && !config.proxyAPIenabled) {
-                        GM_deleteValue(config.keyPrefix + '_openAItoken') ; googleGPTalert('login') }
+                        GM_deleteValue(config.keyPrefix + '_openAItoken') ; appAlert('login') }
                     else if (event.status === 403)
-                        googleGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
-                    else if (event.status === 429) googleGPTalert('tooManyRequests')
-                    else googleGPTalert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
+                        appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
+                    else if (event.status === 429) appAlert('tooManyRequests')
+                    else appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
                 } else if (responseType(endpoint) == 'text') {
                     if (endpoint.includes('openai')) {
                         if (event.response) {
@@ -1122,56 +1122,56 @@
                                 const responseParts = event.response.split('\n\n'),
                                       finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
                                       answer = finalResponse.message.content.parts[0]
-                                googleGPTshow(answer, footerContent)
+                                appShow(answer, footerContent)
                             } catch (err) {
-                                googleGPTerror(googleGPTalerts.parseFailed + ': ' + err)
-                                googleGPTerror('Response: ' + event.response)
-                                googleGPTalert('suggestProxy')
+                                appError(appAlerts.parseFailed + ': ' + err)
+                                appError('Response: ' + event.response)
+                                appAlert('suggestProxy')
                             }
                         }
                     } else if (endpoint.includes('aigcf')) {
                         if (event.responseText) {
                             try { // to parse txt response from AIGCF endpoint
                                 const answer = JSON.parse(event.responseText).choices[0].message.content
-                                googleGPTshow(answer, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                                appShow(answer, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                             } catch (err) {
-                                googleGPTinfo('Response: ' + event.responseText)
+                                appInfo('Response: ' + event.responseText)
                                 if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
-                                    googleGPTalert(messages.alert_censored || 'Sorry, according to our product rules, '
+                                    appAlert(messages.alert_censored || 'Sorry, according to our product rules, '
                                         + 'we cannot provide you with an answer to this question, please try other questions')
                                 else if (event.responseText.includes('维护'))
-                                    googleGPTalert(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
+                                    appAlert(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
                                         + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
                                 else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
                                     await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
                                 } else { // use different endpoint or suggest OpenAI
-                                    googleGPTerror(googleGPTalerts.parseFailed + ': ' + err)
+                                    appError(appAlerts.parseFailed + ': ' + err)
                                     if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-                                    else googleGPTalert('suggestOpenAI')
+                                    else appAlert('suggestOpenAI')
         }}}}}}}
     }
 
-    function googleGPTshow(answer, footerContent) {
-        while (googleGPTdiv.firstChild) // clear all children
-            googleGPTdiv.removeChild(googleGPTdiv.firstChild)
+    function appShow(answer, footerContent) {
+        while (appDiv.firstChild) // clear all children
+            appDiv.removeChild(appDiv.firstChild)
 
         // Create/append '🤖 GoogleGPT'
         const appPrefixSpan = document.createElement('span'),
-              googleGPTanchor = createAnchor('https://www.googlegpt.io', googleGPTimg)
+              appLogoAnchor = createAnchor('https://www.googlegpt.io', appLogoImg)
         appPrefixSpan.innerText = '🤖 '
         appPrefixSpan.className = 'no-user-select' ; appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'     
-        googleGPTanchor.classList.add('app-name', 'no-user-select')
-        googleGPTimg.width = isMobile ? 197 : isFirefox ? 127 : 125
-        googleGPTimg.style.cssText = googleGPTimg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
+        appLogoAnchor.classList.add('app-name', 'no-user-select')
+        appLogoImg.width = isMobile ? 197 : isFirefox ? 127 : 125
+        appLogoImg.style.cssText = appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
                                                              + ( isMobile ? '; margin-left: 1px' : '' )
                                                          : 'margin-left: 2px' // pos alt if shown
-        googleGPTdiv.append(appPrefixSpan, googleGPTanchor)
+        appDiv.append(appPrefixSpan, appLogoAnchor)
 
         // Create/append 'by KudoAI'
         const kudoAIspan = document.createElement('span')
         kudoAIspan.classList.add('kudo-ai', 'no-user-select') ; kudoAIspan.textContent = 'by '
         const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
-        kudoAIspan.append(kudoAIlink) ; googleGPTdiv.append(kudoAIspan)
+        kudoAIspan.append(kudoAIlink) ; appDiv.append(kudoAIspan)
 
         // Create/append about button
         const aboutSpan = document.createElement('span'),
@@ -1184,7 +1184,7 @@
         aboutSVGpath.setAttribute('d',
             'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z')
         aboutSVGpath.setAttribute('stroke', 'none')
-        aboutSVG.append(aboutSVGpath) ; aboutSpan.append(aboutSVG) ; googleGPTdiv.append(aboutSpan)
+        aboutSVG.append(aboutSVGpath) ; aboutSpan.append(aboutSVG) ; appDiv.append(aboutSpan)
 
         // Create/append speak button
         if (answer != 'standby') {
@@ -1203,7 +1203,7 @@
                     d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
             ]
             speakSVGpaths.forEach(path => speakSVG.append(path))
-            speakSpan.append(speakSVG) ; googleGPTdiv.append(speakSpan)
+            speakSpan.append(speakSVG) ; appDiv.append(speakSpan)
         }
 
         if (!isMobile) {
@@ -1213,18 +1213,18 @@
                 ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             ssbSpan.id = 'ssb-btn' // for updateSSBsvg() + toggleTooltip()
             ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '-0.05rem 6px 0 0'
-            ssbSpan.append(ssbSVG) ; googleGPTdiv.append(ssbSpan) ; updateSSBsvg()
+            ssbSpan.append(ssbSVG) ; appDiv.append(ssbSpan) ; updateSSBsvg()
 
             // Create/append Wider Sidebar button
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' // for updateSSBsvg() + toggleTooltip()
             wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-0.08rem 9px 0 0'
-            wsbSpan.append(wsbSVG) ; googleGPTdiv.append(wsbSpan) ; updateWSBsvg()
+            wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan) ; updateWSBsvg()
         }
 
         // Add tooltips
-        googleGPTdiv.append(tooltipDiv)
+        appDiv.append(tooltipDiv)
 
         // Add corner button listeners
         aboutSVG.addEventListener('click', launchAboutModal)
@@ -1254,9 +1254,9 @@
             const standbyBtn = document.createElement('button')
             standbyBtn.className = 'standby-btn'
             standbyBtn.textContent = messages.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
-            googleGPTdiv.append(standbyBtn)
+            appDiv.append(standbyBtn)
             standbyBtn.addEventListener('click', () => {
-                googleGPTalert('waitingResponse')
+                appAlert('waitingResponse')
                 const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
                 convo.push(
                     config.proxyAPIenabled ? { role: 'user', content: query }
@@ -1275,7 +1275,7 @@
                 isFirefox ? ( hasSidebar ? '7px' : '5px' )
                                             : ( hasSidebar ? '4px' : '2px' ))
             answerPre.textContent = answer
-            googleGPTdiv.append(balloonTipSpan) ; googleGPTdiv.append(answerPre)
+            appDiv.append(balloonTipSpan) ; appDiv.append(answerPre)
         }
 
         updateTweaksStyle() // in case sticky mode on
@@ -1286,13 +1286,13 @@
               continueChatDiv = document.createElement('div'),
               chatTextarea = document.createElement('textarea')
         continueChatDiv.className = 'continue-chat'
-        chatTextarea.id = 'googlegpt-chatbar' ; chatTextarea.rows = '1'
+        chatTextarea.id = 'app-chatbar' ; chatTextarea.rows = '1'
         chatTextarea.placeholder = ( answer == 'standby' ? messages.placeholder_askSomethingElse || 'Ask something else'
                                                          : messages.tooltip_sendReply || 'Send reply' ) + '...'
         chatTextarea.style.width = hasSidebar ? '88.8%' : '89.5%'
         continueChatDiv.append(chatTextarea)
         replyForm.append(continueChatDiv) ; replySection.append(replyForm)
-        googleGPTdiv.append(replySection)
+        appDiv.append(replySection)
 
         // Create/append send button
         const sendButton = document.createElement('button'),
@@ -1309,9 +1309,9 @@
         sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
 
         // Create/classify/fill/append footer
-        const googleGPTfooter = document.createElement('div')
-        googleGPTfooter.className = 'footer'
-        googleGPTfooter.append(footerContent) ; googleGPTdiv.append(googleGPTfooter)
+        const appFooter = document.createElement('div')
+        appFooter.className = 'footer'
+        appFooter.append(footerContent) ; appDiv.append(appFooter)
 
         // Render math
         if (answer != 'standby') {
@@ -1341,7 +1341,7 @@
         function handleEnter(event) {
             if (event.key == 'Enter') {
                 if (event.ctrlKey) { // add newline
-                    const chatTextarea = document.querySelector('#googlegpt-chatbar'),
+                    const chatTextarea = document.querySelector('#app-chatbar'),
                           caretPos = chatTextarea.selectionStart,
                           textBefore = chatTextarea.value.substring(0, caretPos),
                           textAfter = chatTextarea.value.substring(caretPos)
@@ -1354,7 +1354,7 @@
         function handleSubmit(event) {
             event.preventDefault()
             if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
-            const prevReplyTrimmed = googleGPTdiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || '',
+            const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || '',
                   yourReply = `${ chatTextarea.value } (reply in ${ config.replyLanguage })`
             if (!config.proxyAPIenabled) {
                 convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
@@ -1380,12 +1380,12 @@
             } catch (err) {}
 
             // Clear footer
-            while (googleGPTfooter.firstChild) // clear all children
-                googleGPTfooter.removeChild(googleGPTfooter.firstChild)
+            while (appFooter.firstChild) // clear all children
+                appFooter.removeChild(appFooter.firstChild)
 
             // Show loading status
             replySection.classList.add('loading', 'no-user-select')
-            replySection.innerText = googleGPTalerts.waitingResponse
+            replySection.innerText = appAlerts.waitingResponse
         }
 
         // Autosize chatbar function
@@ -1437,10 +1437,10 @@
           hasSidebar = document.querySelector('[class*="kp-"]')
 
     // Pre-load logo
-    const googleGPTimg = document.createElement('img')
-    googleGPTimg.src = `${ config.assetHostURL }/media/images/logos/googlegpt/${ scheme }mode.png`
-    googleGPTimg.alt = 'GoogleGPT'
-    googleGPTimg.onload = () => googleGPTimg.loaded = true // for img/alt pos in `googleGPTshow()`
+    const appLogoImg = document.createElement('img')
+    appLogoImg.src = `${ config.assetHostURL }/media/images/logos/googlegpt/${ scheme }mode.png`
+    appLogoImg.alt = config.appName
+    appLogoImg.onload = () => appLogoImg.loaded = true // for img/alt pos in `appShow()`
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -1475,7 +1475,7 @@
     const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
     // Init alerts
-    const googleGPTalerts = {
+    const appAlerts = {
         waitingResponse: ( messages.alert_waitingResponse || 'Waiting for ChatGPT response' ) + '...',
         login: ( messages.alert_login || 'Please login' ) + ' @ ',
         tooManyRequests: ( messages.alert_tooManyRequests || 'ChatGPT is flooded with too many requests' ) + '. '
@@ -1492,8 +1492,8 @@
     }
 
     // Stylize elements
-    const googleGPTstyle = document.createElement('style')
-    googleGPTstyle.innerText = (
+    const appStyle = document.createElement('style')
+    appStyle.innerText = (
           '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
         + '.googlegpt {'
             + 'border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
@@ -1579,14 +1579,14 @@
             + '.googlegpt *::-webkit-scrollbar-track { background: none }' )
         + '.googlegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
     )
-    document.head.append(googleGPTstyle)
+    document.head.append(appStyle)
 
     // Create Google style tweaks
     const tweaksStyle = document.createElement('style'),
           wsbStyles = '#center_col, #center_col div { max-width: 560px !important }' // shrink center column
                     + '.googlegpt { width: 25.65rem }' // expand GoogleGPT when in limiting Google host container
                     + '.googlegpt ~ div { width: 464px }' // expand side snippets
-                    + `#googlegpt-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
+                    + `#app-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
           ssbStyles = '.googlegpt { position: sticky ; top: 71px }'
                     + '.googlegpt ~ * { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.append(tweaksStyle)
@@ -1603,8 +1603,8 @@
     document.head.append(tooltipStyle)
 
     // Create/classify GoogleGPT container
-    const googleGPTdiv = document.createElement('div')
-    googleGPTdiv.classList.add('googlegpt', 'fade-in')
+    const appDiv = document.createElement('div')
+    appDiv.classList.add('googlegpt', 'fade-in')
 
     // Append to Google
     const centerCol = document.querySelector('#center_col')
@@ -1617,8 +1617,8 @@
                centerCol.insertAdjacentElement('afterend', newHostContainer)
                return newHostContainer
            })()
-    hostContainer.prepend(googleGPTdiv)
-    setTimeout(() => googleGPTdiv.classList.add('active'), 100) // fade in
+    hostContainer.prepend(appDiv)
+    setTimeout(() => appDiv.classList.add('active'), 100) // fade in
 
     // Init footer CTA to share feedback
     let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
@@ -1627,9 +1627,9 @@
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
         || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
-    ) { updateFooterContent() ; googleGPTshow('standby', footerContent) }
+    ) { updateFooterContent() ; appShow('standby', footerContent) }
     else {
-        googleGPTalert('waitingResponse')
+        appAlert('waitingResponse')
         const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
         convo.push(
             config.proxyAPIenabled ? { role: 'user', content: query }
