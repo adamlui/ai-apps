@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23.3
+// @version             2023.12.23.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -601,7 +601,7 @@
         while (googleGPTdiv.firstChild) { googleGPTdiv.removeChild(googleGPTdiv.firstChild) }
         const alertP = document.createElement('p') ; alertP.textContent = msg
         alertP.className = 'no-user-select' ; alertP.style.paddingBottom = '15px'
-        if (/waiting|loading/i.test(msg)) alertP.classList.add('loading')        
+        if (/waiting|loading/i.test(msg)) alertP.classList.add('loading')
         if (msg.includes('@')) { // needs login link, add it
             alertP.append(createAnchor('https://chat.openai.com', 'chat.openai.com'),
                 ' (', messages.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
@@ -1382,7 +1382,7 @@
 
             // Show loading status
             replySection.classList.add('loading', 'no-user-select')
-            replySection.innerHTML = googleGPTalerts.waitingResponse
+            replySection.innerText = googleGPTalerts.waitingResponse
         }
 
         // Autosize chatbar function
