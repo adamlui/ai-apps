@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23.5
+// @version             2023.12.23.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -832,7 +832,7 @@
         // Create/append '🤖 DuckDuckGPT'
         const appNameSpan = document.createElement('span')
         appNameSpan.classList.add('app-name', 'no-user-select') ; appNameSpan.innerText = '🤖 '
-        appNameSpan.append(createAnchor('https://www.duckduckgpt.com', config.appName))
+        appNameSpan.append(createAnchor(config.appURL, config.appName))
         appDiv.append(appNameSpan)
 
         // Create/append 'by KudoAI'
@@ -1052,9 +1052,9 @@
     // Init config/convo/menu
     const config = {
         appName: 'DuckDuckGPT', appSymbol: '🤖', keyPrefix: 'duckDuckGPT',
-        userLanguage: chatgpt.getUserLanguage(),
-        gitHubURL: 'https://github.com/kudoai/duckduckgpt',
-        greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt' }
+        appURL: 'https://www.duckduckgpt.com', gitHubURL: 'https://github.com/KudoAI/duckduckgpt',
+        greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt',
+        userLanguage: chatgpt.getUserLanguage() }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
