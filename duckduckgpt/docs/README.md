@@ -3,8 +3,6 @@
     <source media="(prefers-color-scheme: dark)" srcset="https://media.duckduckgpt.com/images/ddgpt-logo-dark-mode-371x65.png">
     <img src="https://media.duckduckgpt.com/images/ddgpt-logo-light-mode-371x65.png">
   </picture>
-<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 156px; height: 34px; margin:0 0 11px 5px;" width="156" height="34" /></a>
-  <a href="https://twitter.com/intent/tweet?text=Want%20%23ChatGPT%20answers%20right%20alongside%20DuckDuckGo%20results%3F%20This%20%23userscript%20does%20just%20that%21&url=https://duckduckgpt.com&hashtags=greasemonkey,javascript,ai"><img style="margin:0 0 14px 5px;" src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
 </h1>
 
 [![](https://img.shields.io/greasyfork/dt/459849?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/scripts/459849-duckduckgpt)
