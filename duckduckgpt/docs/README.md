@@ -143,6 +143,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/149096330?first-contrib=2023.10.26-brave-dark-mode-bug-ss&h=50&w=50&mask=circle&maxage=7d "@Mrhazed")](https://github.com/Mrhazed)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22998537?first-contrib=2023.11.25-related-queries-do-not-show-in-openai-mode-bug-report&h=50&w=50&mask=circle&maxage=7d "@Vozf")](https://github.com/Vozf)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/9349164?first-contrib=2023.11.30-standby-mode-suggestion&h=50&w=50&mask=circle&maxage=7d "@T1mL3arn")](https://github.com/T1mL3arn)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22026520?first-contrib=2023.12.25-french-tts-suggestion&h=50&w=50&mask=circle&maxage=7d "@papapat")](https://github.com/papapat)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
