@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.23.6
+// @version             2023.12.25
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/ddgpt-icon48.png
 // @icon64              https://media.ddgpt.com/images/ddgpt-icon64.png
@@ -889,11 +889,16 @@
         // Add corner button listeners
         wsbSVG?.addEventListener('click', toggleWiderSidebar)
         speakSVG?.addEventListener('click', () => {
-            const payload = {
-                text: answer, rate: '2', curTime: Date.now(),
-                spokenDialect: /chinese|^zh/i.test(config.replyLanguage) ? 'zh-CHS' : 'en'
-            }
-            const key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
+            const dialectMap = [
+                { code: 'en', regex: /^en(-\w{2})?$/i, rate: 2 },
+                { code: 'de', regex: /german|^deutsch|^de/i, rate: 1.5 },
+                { code: 'es', regex: /spanish|^espa|^es(-\w{2})?$/i, rate: 1.5 },
+                { code: 'fr', regex: /^fr/i, rate: 1.2 },
+                { code: 'zh-CHS', regex: /chinese|^zh/i, rate: 2 }
+            ]
+            const replyDialect = dialectMap.find(entry => entry.regex.test(config.replyLanguage)) || dialectMap[0],
+                  payload = { text: answer, curTime: Date.now(), spokenDialect: replyDialect.code, rate: replyDialect.rate },
+                  key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
                   iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
             const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
                 iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
