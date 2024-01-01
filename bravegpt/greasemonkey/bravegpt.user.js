@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.25
+// @version             2023.12.31
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -740,10 +740,13 @@
             const rqPrompt = 'Show a numbered list of queries related to this one:\n\n' + query
                            + '\n\nMake sure to suggest a variety that can even greatly deviate from the original topic.'
                            + ' For example, if the original query asked about someone\'s wife,'
-                               + ' a good related query could involve a different relative.'
+                               + ' a good related query could involve a different relative and using their name.'
+                           + ' Another example, if the query asked about a game/movie/show,'
+                               + ' good related queries could involve pertinent characters.'
                            + ' Another example, if the original query asked how to learn JavaScript,'
                                + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
-                           + ' But the key is variety. Do not be repetitive. You must entice user to want to ask one of your related queries.'
+                           + ' But the key is variety. Do not be repetitive.'
+                               + ' You must entice user to want to ask one of your related queries.'
             GM.xmlHttpRequest({
                 method: 'POST', url: endpoint, responseType: 'text', headers: createHeaders(endpoint),
                 data: createPayload(endpoint, [
