@@ -107,7 +107,9 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 
 ## 🌐 Compatibility
 
-ChatGPT Infinity is compatible w/ the following browsers:
+**ChatGPT Infinity** is compatible w/ the following browsers.
+
+### Desktop:
 
 - **[Google Chrome](https://www.chrome.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
 - **[Mozilla Firefox](https://www.firefox.com)** (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
@@ -118,6 +120,13 @@ ChatGPT Infinity is compatible w/ the following browsers:
 - **[LibreWolf](https://librewolf.net/)** (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
 - **[Ghost](https://ghostbrowser.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
 - **[QQ](https://browser.qq.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+
+### Android:
+
+- [Kiwi](https://kiwibrowser.com/) (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/) (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+
+If you've tested it to work in a browser not listed, simply create a [pull request](https://github.duckduckgpt.com/pulls) to become a contributor!
 
 <div align="center">
 

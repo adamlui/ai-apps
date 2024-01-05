@@ -74,7 +74,9 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 
 ## 🌐 Compatibility 
 
-ChatGPT Infinity is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/):
+ChatGPT Infinity is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/).
+
+### Desktop:
 
 - [Google Chrome](https://www.chrome.com) (also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-infinity/amikeononomkhphopbflomhnmdijjpmb))
 - [Mozilla Firefox](https://www.firefox.com)
@@ -86,6 +88,11 @@ ChatGPT Infinity is compatible w/ the following browsers using [Tampermonkey](ht
 - [LibreWolf](https://librewolf.net/)
 - [Ghost](https://ghostbrowser.com/)
 - [QQ](https://browser.qq.com/)
+
+### Android:
+
+- [Kiwi](https://kiwibrowser.com/) (also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-infinity/amikeononomkhphopbflomhnmdijjpmb))
+- [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.com/adamlui/chatgpt-infinity/pulls) (contributions of all kinds are welcome!)
 
