@@ -15,7 +15,7 @@
 
 <br>
 
-<a href="https://chatgptinfinity.com/greasyfork"><img height=45 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" height=45 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.chatgptinfinity.com"><img height=45 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" height=45 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptinfinity.com/discuss) / 
 [Review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) / 
@@ -47,7 +47,7 @@
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
-2. Install [ChatGPT Infinity](https://chatgptinfinity.com/greasyfork) userscript (will load in userscript manager installed above)
+2. Install [ChatGPT Infinity](https://greasyfork.chatgptinfinity.com) userscript (will load in userscript manager installed above)
 
 3. Visit [chat.openai.com](https://chat.openai.com) & Infinity toggle is added to sidebar!
 
@@ -94,9 +94,9 @@ ChatGPT Infinity is compatible w/ the following browsers using [Tampermonkey](ht
 - [Kiwi](https://kiwibrowser.com/) (also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-infinity/amikeononomkhphopbflomhnmdijjpmb))
 - [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)
 
-If you've tested it to work in a browser not listed, simply create a [pull request](https://github.com/adamlui/chatgpt-infinity/pulls) (contributions of all kinds are welcome!)
+If you've tested it to work in a browser not listed, simply create a [pull request](https://github.chatgptinfinity.com/pulls) (contributions of all kinds are welcome!)
 
-<a href="https://chatgptinfinity.com/greasyfork"><img height=40 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" height=40 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.chatgptinfinity.com"><img height=40 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" height=40 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptinfinity.com/discuss) / 
 [Leave a review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) / 

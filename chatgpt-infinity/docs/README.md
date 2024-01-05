@@ -25,7 +25,7 @@
 <a href="https://edge.chatgptinfinity.com" target="_blank">
     <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png">
 </a>
-<a href="https://chatgptinfinity.com/greasyfork" target="_blank">
+<a href="https://greasyfork.chatgptinfinity.com" target="_blank">
     <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png">
 </a>
 
@@ -72,7 +72,7 @@
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
 
-2. Install [ChatGPT Infinity](https://chatgptinfinity.com/greasyfork) userscript (will load in userscript manager installed above)
+2. Install [ChatGPT Infinity](https://greasyfork.chatgptinfinity.com) userscript (will load in userscript manager installed above)
 
 3. Visit [chat.openai.com](https://chat.openai.com) & Infinity toggle is added to sidebar!
 
@@ -111,22 +111,22 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 
 ### Desktop:
 
-- **[Google Chrome](https://www.chrome.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **[Mozilla Firefox](https://www.firefox.com)** (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **[Microsoft Edge](https://www.microsoft.com/edge)** (via [Edge add-on](https://edge.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **[Opera](https://www.opera.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **[Brave](https://brave.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **[Vivaldi](https://vivaldi.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **[LibreWolf](https://librewolf.net/)** (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **[Ghost](https://ghostbrowser.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- **[QQ](https://browser.qq.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- **[Google Chrome](https://www.chrome.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[Mozilla Firefox](https://www.firefox.com)** (via [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[Microsoft Edge](https://www.microsoft.com/edge)** (via [Edge add-on](https://edge.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[Opera](https://www.opera.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[Brave](https://brave.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[Vivaldi](https://vivaldi.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[LibreWolf](https://librewolf.net/)** (via [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[Ghost](https://ghostbrowser.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[QQ](https://browser.qq.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 
 ### Android:
 
-- [Kiwi](https://kiwibrowser.com/) (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
-- [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/) (via [Greasemonkey userscript](https://chatgptinfinity.com/greasyfork))
+- [Kiwi](https://kiwibrowser.com/) (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/) (via [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 
-If you've tested it to work in a browser not listed, simply create a [pull request](https://github.duckduckgpt.com/pulls) to become a contributor!
+If you've tested it to work in a browser not listed, simply create a [pull request](https://github.chatgptinfinity.com/pulls) to become a contributor!
 
 <div align="center">
 
@@ -136,7 +136,7 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
 <a href="https://edge.chatgptinfinity.com">
     <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-edge-button.png">
 </a>
-<a href="https://chatgptinfinity.com/greasyfork">
+<a href="https://greasyfork.chatgptinfinity.com">
     <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-userscript-button.png">
 </a>
 
