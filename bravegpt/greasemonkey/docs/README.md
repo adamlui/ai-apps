@@ -173,7 +173,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://github.chatgptautorefresh.com/#readme) /
 [Discuss](https://chatgptautorefresh.com/discuss)
 
-### <img src="https://media.duckduckgpt.com/images/ddgpt-icon48.png" width=17> [DuckDuckGPT](https://github.duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+### <img src="https://media.duckduckgpt.com/images/icons/duckduckgpt/icon48.png" width=17> [DuckDuckGPT](https://github.duckduckgpt.com) <a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Bring the magic of ChatGPT to DuckDuckGo (powered by GPT-4!)
 <br>[Install](https://github.ddgpt.com/#-installation) /
