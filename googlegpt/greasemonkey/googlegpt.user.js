@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.12.31
+// @version             2024.1.7
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -1446,7 +1446,7 @@
 
     // Pre-load logo
     const appLogoImg = document.createElement('img')
-    appLogoImg.src = `${ config.assetHostURL }/media/images/logos/googlegpt/${ scheme }mode.png`
+    appLogoImg.src = `${ config.assetHostURL }/media/images/logos/googlegpt/${ scheme == 'dark' ? 'white' : 'black' }.png`
     appLogoImg.alt = config.appName
     appLogoImg.onload = () => appLogoImg.loaded = true // for img/alt pos in `appShow()`
 
