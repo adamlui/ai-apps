@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.1.8.4
+// @version             2024.1.8.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -482,10 +482,13 @@
                       + state.separator + config.replyLanguage
         menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
             while (true) {
-                const replyLanguage = prompt(
+                let replyLanguage = prompt(
                     ( messages.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
+                    replyLanguage = ( // case it for menu aesthetics
+                        [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
+                          : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
                     alert(( messages.alert_langUpdated || 'Language updated' ) + '!', // title
                         config.appName + ' ' + ( messages.alert_willReplyIn || 'will reply in' ) + ' ' // msg
