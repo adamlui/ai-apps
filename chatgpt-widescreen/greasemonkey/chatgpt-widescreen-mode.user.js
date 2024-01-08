@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.1.5
+// @version             2024.1.8
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -740,8 +740,8 @@
     }
 
     // Collect button classes
-    const sendBtnSelector = site == 'openai' ? 'form button[class*="bottom"]' : null
-    const sendBtnClasses = document.querySelector(sendBtnSelector)?.classList || [],
+    const sendBtnSelector = site == 'openai' ? 'form button[class*="bottom"]' : null,
+          sendBtnClasses = document.querySelector(sendBtnSelector)?.classList || [],
           sendImgClasses = document.querySelector('form button[class*="bottom"] svg')?.classList || []
 
     // Create/stylize tooltip div
