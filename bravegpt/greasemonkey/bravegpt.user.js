@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.1.8.4
+// @version             2023.1.8.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -1117,8 +1117,7 @@
         sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
 
         // Create/classify/fill/append footer
-        const appFooter = document.createElement('div')
-        appFooter.className = 'footer'
+        const appFooter = document.createElement('footer')
         appFooter.append(footerContent) ; appDiv.append(appFooter)
 
         // Render math
@@ -1324,14 +1323,14 @@
             + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
             + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ; overflow: auto ;'
             + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 }' )
-        + `.bravegpt .footer { margin: ${ isChromium ? 27 : 32 }px 0 -26px 0 ; border-top: none !important }`
+        + `.bravegpt footer { margin: ${ isChromium ? 27 : 32 }px 0 -26px 0 ; border-top: none !important }`
         + '.bravegpt .feedback {'
             + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem ;'
             + 'letter-spacing: .02em ; position: relative ; right: -18px ; bottom: 15px ;'
             + `color: ${ scheme == 'dark' ? '#aaa' : 'var(--search-text-06)' }}`
         + '.bravegpt .feedback .icon {'
             + ' fill: currentColor ; color: currentColor ; --size: 12px ; position: relative ; top: 0.19em ; right: 2px }'
-        + `.bravegpt .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
+        + `.bravegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
             + ( isChromium ? 'top: 0.16em ; right: 5.1rem;' : 'top: 0.25em ; right: 10.38rem ;' )
