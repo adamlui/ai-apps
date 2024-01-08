@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.1.8.1
+// @version             2023.1.8.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -1025,13 +1025,23 @@
             const dialectMap = [
                 { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
                 { code: 'ar', regex: /^(ara?(bic)?|اللغة العربية)$/i, rate: 1.5 },
+                { code: 'cs', regex: /^(cze(ch)?|[cč]e[sš].*|cs)$/i, rate: 1.4 },
                 { code: 'da', regex: /^dan?(ish|sk)?$/i, rate: 1.3 },
                 { code: 'de', regex: /^(german|deu?(tsch)?)$/i, rate: 1.5 },
                 { code: 'es', regex: /^(spa(nish)?|espa.*|es(-\w\w)?)$/i, rate: 1.5 },
+                { code: 'fi', regex: /^(fin?(nish)?|suom.*)$/i, rate: 1.4 },
                 { code: 'fr', regex: /^fr/i, rate: 1.2 },
+                { code: 'hu', regex: /^(hun?(garian)?|magyar)$/i, rate: 1.5 },
+                { code: 'it', regex: /^ita?(lian[ao]?)?$/i, rate: 1.4 },
+                { code: 'ja', regex: /^(ja?pa?n(ese)?|日本語)$/i, rate: 1.5 },
+                { code: 'nl', regex: /^(dut(ch)?|flemish|nederlandse?|vlaamse?|nld?)$/i, rate: 1.3 },
                 { code: 'pl', regex: /^po?l(ish|ski)?$/i, rate: 1.4 },
+                { code: 'pt', regex: /^(por(tugu[eê]se?)?|pt(-\w\w)?)$/i, rate: 1.5 },
                 { code: 'ru', regex: /^(rus?(sian)?|русский)$/i, rate: 1.3 },
-                { code: 'zh-CHS', regex: /^(chi(nese)?|zh)/i, rate: 2 }
+                { code: 'sv', regex: /^(swe?(dish)?|sv(enska)?)$/i, rate: 1.4 },
+                { code: 'tr', regex: /^t[uü]?r(k.*)?$/i, rate: 1.6 },
+                { code: 'vi', regex: /^vi[eệ]?t?(namese)?$/i, rate: 1.5 },
+                { code: 'zh-CHS', regex: /^(chi(nese)?|zh|中[国國])/i, rate: 2 }
             ]
             const replyDialect = dialectMap.find(entry => entry.regex.test(config.replyLanguage)) || dialectMap[0],
                   payload = { text: answer, curTime: Date.now(), spokenDialect: replyDialect.code, rate: replyDialect.rate },
@@ -1050,7 +1060,6 @@
             span.addEventListener('mouseover', toggleTooltip)
             span.addEventListener('mouseout', toggleTooltip)
         }})
-
 
         // Show standby state if prefix/suffix mode on
         if (answer == 'standby') {
