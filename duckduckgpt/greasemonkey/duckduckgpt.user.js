@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.1.8.4
+// @version             2024.1.8.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -1178,8 +1178,8 @@
             + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2' : '' ) + '}'
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.ddgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
-        + '.ddgpt-feedback { margin: 2px 0 25px }'
-        + `.ddgpt-feedback * { color: ${ scheme == 'dark' ? '#ccc' : '#666' } !important }`
+        + '.ddgpt + footer { margin: 2px 0 25px }'
+        + `.ddgpt + footer * { color: ${ scheme == 'dark' ? '#ccc' : '#666' } !important }`
         + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
             + ( isFirefox ? 'top: 0.32em ; right: 16.2em ;' : 'top: 2px ; right: 8.1em ;' )
             + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
@@ -1254,9 +1254,9 @@
     appDiv.classList.add('ddgpt', 'fade-in')
  
     // Create/classify/fill feedback footer
-    const appFooter = document.createElement('div')
+    const appFooter = document.createElement('footer')
     appFooter.classList.add('feedback-prompt', // DDG class
-                            'ddgpt-feedback', 'fade-in') // DDGPT classes
+                            'fade-in') // DDGPT classes
     let footerContent = createAnchor(config.feedbackURL, messages.link_shareFeedback || 'Share feedback')
     footerContent.className = 'js-feedback-prompt-generic' // DDG footer class
     appFooter.append(footerContent)
