@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.1.8
+// @version             2024.1.8.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -894,10 +894,14 @@
         speakSVG?.addEventListener('click', () => {
             const dialectMap = [
                 { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
+                { code: 'ar', regex: /^(ara?(bic)?|اللغة العربية)$/i, rate: 1.5 },
+                { code: 'da', regex: /^dan?(ish|sk)?$/i, rate: 1.3 },
                 { code: 'de', regex: /^(german|deu?(tsch)?)$/i, rate: 1.5 },
                 { code: 'es', regex: /^(spa(nish)?|espa.*|es(-\w\w)?)$/i, rate: 1.5 },
                 { code: 'fr', regex: /^fr/i, rate: 1.2 },
-                { code: 'zh-CHS', regex: /^(chi(nese)?|zh)$/i, rate: 2 }
+                { code: 'pl', regex: /^po?l(ish|ski)?$/i, rate: 1.4 },
+                { code: 'ru', regex: /^(rus?(sian)?|русский)$/i, rate: 1.3 },
+                { code: 'zh-CHS', regex: /^(chi(nese)?|zh)/i, rate: 2 }
             ]
             const replyDialect = dialectMap.find(entry => entry.regex.test(config.replyLanguage)) || dialectMap[0],
                   payload = { text: answer, curTime: Date.now(), spokenDialect: replyDialect.code, rate: replyDialect.rate },
