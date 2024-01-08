@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.1.8.3
+// @version             2024.1.8.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -287,7 +287,7 @@
                     ( messages.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
-                    replyLanguage = ( // case it for menu/alert aesthetics
+                    replyLanguage = ( // auto-case for menu/alert aesthetics
                         [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
                           : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
@@ -906,7 +906,7 @@
                 { code: 'fr', regex: /^fr/i, rate: 1.2 },
                 { code: 'hu', regex: /^(hun?(garian)?|magyar)$/i, rate: 1.5 },
                 { code: 'it', regex: /^ita?(lian[ao]?)?$/i, rate: 1.4 },
-                { code: 'ja', regex: /^(ja?pa?n(ese)?|日本語)$/i, rate: 1.5 },
+                { code: 'ja', regex: /^(ja?pa?n(ese)?|日本語|ja)$/i, rate: 1.5 },
                 { code: 'nl', regex: /^(dut(ch)?|flemish|nederlandse?|vlaamse?|nld?)$/i, rate: 1.3 },
                 { code: 'pl', regex: /^po?l(ish|ski)?$/i, rate: 1.4 },
                 { code: 'pt', regex: /^(por(tugu[eê]se?)?|pt(-\w\w)?)$/i, rate: 1.5 },
