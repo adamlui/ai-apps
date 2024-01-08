@@ -80,9 +80,12 @@
     // Add 'Reply Language' click-listener
     replyLangDiv.addEventListener('click', () => {
         while (true) {
-            const replyLanguage = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyLang') }:`, config.replyLanguage)
+            let replyLanguage = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyLang') }:`, config.replyLanguage)
             if (replyLanguage === null) break // user cancelled so do nothing
             else if (!/\d/.test(replyLanguage)) {
+                replyLanguage = ( // auto-case for menu/alert aesthetics
+                    [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
+                    : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                 settings.save('replyLanguage', replyLanguage || config.userLanguage)
                 window.close() // popup
                 alert(chrome.i18n.getMessage('alert_replyLangUpdated') + '!',
