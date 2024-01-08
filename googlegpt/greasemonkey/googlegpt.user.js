@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.1.8.6
+// @version             2024.1.8.7
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -1334,8 +1334,7 @@
         sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
 
         // Create/classify/fill/append footer
-        const appFooter = document.createElement('div')
-        appFooter.className = 'footer'
+        const appFooter = document.createElement('footer')
         appFooter.append(footerContent) ; appDiv.append(appFooter)
 
         // Render math
@@ -1592,11 +1591,11 @@
                 + 'background-color: black !important ; color: white }'
             + '.primary-modal-btn { background: white !important ; color: black !important }'
             + '.chatgpt-modal a { color: #00cfff !important }' ) : '' )
-        + '.googlegpt .footer {'
+        + '.googlegpt footer {'
             + 'position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ; line-height: 1.43em ;'
             + `margin: ${ isFirefox ? 1 : -2 }px -32px 12px }`
-        + '.googlegpt .footer * { color: #aaa ; text-decoration: none }'
-        + `.googlegpt .footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
+        + '.googlegpt footer * { color: #aaa ; text-decoration: none }'
+        + `.googlegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
         + ( // stylize scrollbars in Chromium/Safari
               '.googlegpt *::-webkit-scrollbar { width: 7px }'
             + '.googlegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
