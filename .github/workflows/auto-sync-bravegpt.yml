@@ -53,7 +53,7 @@ jobs:
 
       - name: Sync bravegpt/ to KudoAI/bravegpt/
         run: |
-          rsync -avhr --delete --filter='P /.*/' --filter='P /package*.json/' \
+          rsync -avhr --delete --filter={'P /.*/','P /package*.json/'} \
             ${{ github.workspace }}/adamlui/chatgpt-apps/bravegpt/ \
             ${{ github.workspace }}/KudoAI/bravegpt/
 
