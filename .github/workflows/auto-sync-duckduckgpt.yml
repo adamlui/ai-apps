@@ -53,7 +53,7 @@ jobs:
 
       - name: Sync duckduckgpt/ to KudoAI/duckduckgpt/
         run: |
-          rsync -avhr --delete --filter={'P /.*/','P /package*.json/'} \
+          rsync -avhr --delete --filter={'P /.*','P /package*.json'} \
             ${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/ \
             ${{ github.workspace }}/KudoAI/duckduckgpt/
 
