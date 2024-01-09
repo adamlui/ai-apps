@@ -57,7 +57,7 @@
 </a>
 <br><br>
 
-DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/kudoai/chatgpt.js) library (c) 2023 KudoAI & contributors under the MIT license
+DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/kudoai/chatgpt.js) library (c) 2023–2024 KudoAI & contributors under the MIT license
 <br>...and the [KaTeX](https://github.com/KaTeX/KaTeX) library (c) 2013–2020 Khan Academy & contributors under the MIT license.
 
 </div>

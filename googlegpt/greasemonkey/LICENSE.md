@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2023 [KudoAI](https://kuduoai.com) & contributors
+Copyright (c) 2023–2024 [KudoAI](https://kuduoai.com) & contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

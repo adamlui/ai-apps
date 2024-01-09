@@ -50,7 +50,7 @@
 </a>
 <br><br>
 
-ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/kudoai/chatgpt.js) 库 (c) 2023 KudoAI 和 MIT 许可下的贡献者的代码。
+ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/kudoai/chatgpt.js) 库 (c) 2023–2024 KudoAI 和 MIT 许可下的贡献者的代码。
 
 </div>
 </h6>

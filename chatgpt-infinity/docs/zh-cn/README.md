@@ -100,7 +100,7 @@
 </a>
 <br><br>
 
-ChatGPT 无穷 依赖于强大的 [chatgpt.js](https://github.com/kudoai/chatgpt.js) 库 (c) 2023 KudoAI 和贡献者在 MIT 许可下的代码。
+ChatGPT 无穷 依赖于强大的 [chatgpt.js](https://github.com/kudoai/chatgpt.js) 库 (c) 2023–2024 KudoAI 和贡献者在 MIT 许可下的代码。
 
 </div>
 </h6>
