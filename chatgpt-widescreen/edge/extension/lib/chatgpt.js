@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.6.1
+// This library is a condensed version of chatgpt.js v2.6.4
 // (c) 2023–2024 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
 // Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
@@ -72,7 +72,7 @@ const chatgpt = {
             if (!modalStyle) { // outright missing, create/id/attr/append it first
                 modalStyle = document.createElement('style'); modalStyle.id = 'chatgpt-modal-style';
                 modalStyle.setAttribute('last-updated', thisUpdated.toString());
-                document.head.appendChild(modalStyle);
+                document.head.append(modalStyle);
             }
             modalStyle.innerText = ( // update prev/new style contents
 
@@ -178,7 +178,7 @@ const chatgpt = {
                     .replace(/\b(\w+)nt\b/gi, '$1n\'t') // insert apostrophe in 'nt' suffixes
                     .trim(); // trim leading/trailing spaces
 
-            checkboxDiv.appendChild(checkboxInput); checkboxDiv.appendChild(checkboxLabel);
+            checkboxDiv.append(checkboxInput); checkboxDiv.append(checkboxLabel);
         }
 
         // Create close button
@@ -193,13 +193,13 @@ const chatgpt = {
         closeSVGpath.setAttribute('clip-rule', 'evenodd');
         closeSVGpath.setAttribute('fill', chatgpt.isDarkMode() ? 'white' : 'black');
         closeSVGpath.setAttribute('d', 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z');
-        closeSVG.appendChild(closeSVGpath); closeBtn.appendChild(closeSVG);
+        closeSVG.append(closeSVGpath); closeBtn.append(closeSVG);
 
         // Assemble/append div
         const modalElems = [closeBtn, modalTitle, modalMessage, modalButtons, checkboxDiv];
-        modalElems.forEach((elem) => { modal.appendChild(elem); });
+        modalElems.forEach((elem) => { modal.append(elem); });
         modal.style.width = `${ width || 458 }px`;
-        modalContainer.appendChild(modal); document.body.appendChild(modalContainer); 
+        modalContainer.append(modal); document.body.append(modalContainer); 
 
         // Enqueue alert
         let alertQueue = JSON.parse(localStorage.alertQueue);
@@ -270,8 +270,6 @@ const chatgpt = {
     },
 
     browser: {
-        isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
-
         isFullScreen: function() {
             const userAgentStr = navigator.userAgent;
             return userAgentStr.includes('Chrome') ? window.matchMedia('(display-mode: fullscreen)').matches
@@ -300,7 +298,7 @@ const chatgpt = {
         return new Promise(resolve => {
             const intervalId = setInterval(() => {
                 if (document.querySelector('nav button[id*="menu"]')) {
-                    clearInterval(intervalId); setTimeout(() => { resolve(); }, 500);
+                    clearInterval(intervalId); setTimeout(() => { resolve(true); }, 500);
     }}, 100);});},
 
     notify: async function(msg, position, notifDuration, shadow) {
@@ -313,7 +311,7 @@ const chatgpt = {
         notificationDiv.id = Math.floor(chatgpt.randomFloat() * 1000000) + Date.now();
         notificationDiv.classList.add('chatgpt-notif');
         notificationDiv.innerText = msg; // insert msg
-        document.body.appendChild(notificationDiv); // insert into DOM
+        document.body.append(notificationDiv); // insert into DOM
 
         // Create/append close button
         const closeBtn = document.createElement('div');
@@ -328,7 +326,7 @@ const chatgpt = {
         closeSVGpath.setAttribute('clip-rule', 'evenodd');
         closeSVGpath.setAttribute('fill', 'white');
         closeSVGpath.setAttribute('d', 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z');
-        closeSVG.appendChild(closeSVGpath); closeBtn.appendChild(closeSVG); notificationDiv.appendChild(closeBtn);
+        closeSVG.append(closeSVGpath); closeBtn.append(closeSVG); notificationDiv.append(closeBtn);
 
         // Determine div position/quadrant
         notificationDiv.isTop = !position || !/low|bottom/i.test(position);
@@ -343,7 +341,7 @@ const chatgpt = {
             if (!notifStyle) { // outright missing, create/id/attr/append it first
                 notifStyle = document.createElement('style'); notifStyle.id = 'chatgpt-notif-style';
                 notifStyle.setAttribute('last-updated', thisUpdated.toString());
-                document.head.appendChild(notifStyle);
+                document.head.append(notifStyle);
             }
             notifStyle.innerText = ( // update prev/new style contents
                 '.chatgpt-notif {'
@@ -452,7 +450,7 @@ const chatgpt = {
         for (const childNode of nodeContent) {
 
             // Process text node
-            if (childNode.nodeType === Node.TEXT_NODE) {
+            if (childNode.nodeType == Node.TEXT_NODE) {
                 const text = childNode.nodeValue,
                       elems = Array.from(text.matchAll(reTags));
 
@@ -482,7 +480,7 @@ const chatgpt = {
                 }
 
             // Process element nodes recursively
-            } else if (childNode.nodeType === Node.ELEMENT_NODE) this.renderHTML(childNode);
+            } else if (childNode.nodeType == Node.ELEMENT_NODE) this.renderHTML(childNode);
         }
 
         return node; // if assignment used
