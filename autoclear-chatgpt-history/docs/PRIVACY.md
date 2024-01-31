@@ -15,4 +15,4 @@ Autoclear ChatGPT Histry does not collect nor store any user data. No informatio
 
 ## Updates
 
-To view revisions to this policy, visit https://github.com/adamlui/autoclear-chatgpt-history/commits/main/docs/PRIVACY.md
+To view revisions to this policy, visit https://github.com/adamlui/autoclear-chatgpt-history/commits/main/docs/PRIVACY.md.
