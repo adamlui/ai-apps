@@ -1,6 +1,17 @@
-MIT License
+<div align="right">
+    <h6>
+        <picture>
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-white-icon32.svg">
+            <img height=14 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-icon32.svg">
+        </picture>
+        &nbsp;English |
+        <a href="https://github.com/adamlui/autoclear-chatgpt-history/blob/master/docs/hi/LICENSE.md">हिंदी</a>
+    </h6>
+</div>
 
-Copyright (c) 2023–2024 Adam Lui & contributors.
+# 🏛️ MIT License
+
+**Copyright (c) 2023–2024 [Adam Lui](https://github.com/adamlui) & contributors**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
