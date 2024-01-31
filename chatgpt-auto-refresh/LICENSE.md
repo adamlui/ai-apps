@@ -5,8 +5,8 @@
             <img height=14 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-icon32.svg">
         </picture>
         &nbsp;English |
-        <a href="https://github.com/adamlui/chatgpt-auto-refresh/blob/master/docs/zh-cn/LICENSE.md">简体中文</a> |
-        <a href="https://github.com/adamlui/chatgpt-auto-refresh/blob/master/docs/hi/LICENSE.md">हिंदी</a>
+        <a href="https://github.com/adamlui/chatgpt-auto-refresh/blob/main/docs/zh-cn/LICENSE.md">简体中文</a> |
+        <a href="https://github.com/adamlui/chatgpt-auto-refresh/blob/main/docs/hi/LICENSE.md">हिंदी</a>
     </h6>
 </div>
 
