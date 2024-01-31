@@ -1,5 +1,12 @@
 <div align="right">
-<h5>简体中文 | <a href="../../#readme">English</a></h5>
+    <h6>
+        <picture>
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-white-icon32.svg">
+            <img height=14 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-icon32.svg">
+        </picture>
+        &nbsp;简体中文 |
+        <a href="../../#readme">English</a>
+    </h6>
 </div>
 
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT 自动继续 ⏩ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=%E4%BD%BF%E7%94%A8%E6%AD%A4%E6%8F%92%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BB%8E%E5%A4%9A%E4%B8%AA%20ChatGPT%20%E5%93%8D%E5%BA%94%E7%BB%A7%E7%BB%AD%E5%AF%B9%E8%AF%9D%EF%BC%81&url=https://chatgptautocontinue.com&hashtags=javascript,openai,chatgpt)

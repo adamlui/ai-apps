@@ -1,5 +1,12 @@
 <div align="right">
-<h5>English | <a href="zh-cn#readme">简体中文</a></h5>
+    <h6>
+        <picture>
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-white-icon32.svg">
+            <img height=14 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-icon32.svg">
+        </picture>
+        &nbsp;English |
+        <a href="https://github.com/adamlui/chatgpt-auto-continue/blob/main/docs/zh-cn#readme">简体中文</a>
+    </h6>
 </div>
 
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Auto-Continue ⏩ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Automatically%20continue%20the%20conversation%20from%20multiple%20ChatGPT%20responses%20w%2F%20this%20plug-in%21T&url=https://chatgptautocontinue.com&hashtags=javascript,openai,chatgpt)
