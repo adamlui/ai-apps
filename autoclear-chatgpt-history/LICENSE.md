@@ -11,7 +11,7 @@
 
 # 🏛️ MIT License
 
-**Copyright (c) 2023–2024 [Adam Lui](https://github.com/adamlui) & [contributors](https://github.com/adamlui/autoclear-chatgpt-history/blob/main/docs/README.md#-contributors)**
+**Copyright (c) 2023–2024 [Adam Lui](https://github.com/adamlui) & [contributors](https://github.com/adamlui/autoclear-chatgpt-history/blob/main/docs/README.md#-contributors).**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
