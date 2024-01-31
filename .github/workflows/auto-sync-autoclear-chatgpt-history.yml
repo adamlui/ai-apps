@@ -18,6 +18,7 @@ jobs:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
+          fetch-depth: 2
 
       - name: Checkout adamlui/autoclear-chatgpt-history
         uses: actions/checkout@v2
@@ -38,23 +39,21 @@ jobs:
           shopt -s globstar
           cd ${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history
 
-          # Sync LICENSE.md
-          root_license="${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/LICENSE.md"
-          gm_license="${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/greasemonkey/LICENSE.md"
-          root_license_modified=$(git log -1 --format="%ct" -- "$root_license")
-          gm_license_modified=$(git log -1 --format="%ct" -- "$gm_license")
-          if (( root_license_modified > gm_license_modified )) ; then cp -f "$root_license" "$gm_license"
-          else cp -f "$gm_license" "$root_license" ; fi
+          # Sync license.md
+          root_license_modified=$(git log -1 --format="%ct" -- "LICENSE.md")
+          gm_license_modified=$(git log -1 --format="%ct" -- "greasemonkey/LICENSE.md")
+          if (( root_license_modified > gm_license_modified )) ; then cp -f "LICENSE.md" "greasemonkey/LICENSE.md"
+          elif (( gm_license_modified > root_license_modified )) ; then cp -f "greasemonkey/LICENSE.md" "LICENSE.md" ; fi
 
           # Sync other docs
           for file in docs/**/*.md; do
             relative_path=${file#"docs/"}
-            root_doc="${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/docs/$relative_path"
-            gm_doc="${{ github.workspace }}/adamlui/chatgpt-apps/autoclear-chatgpt-history/greasemonkey/docs/$relative_path"
+            root_doc="docs/$relative_path"
             root_doc_modified=$(git log -1 --format="%ct" -- "$root_doc")
+            gm_doc="greasemonkey/docs/$relative_path"
             gm_doc_modified=$(git log -1 --format="%ct" -- "$gm_doc")
             if (( root_doc_modified > gm_doc_modified )) ; then cp -f "$root_doc" "$gm_doc"
-            else cp -f "$gm_doc" "$root_doc" ; fi
+            elif (( gm_doc_modified > root_doc_modified )) ; then cp -f "$gm_doc" "$root_doc" ; fi
           done
 
       - name: Sync autoclear-chatgpt-history/ to adamlui/autoclear-chatgpt-history/
