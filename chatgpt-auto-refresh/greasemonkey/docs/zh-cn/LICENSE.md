@@ -1,10 +1,18 @@
 <div align="right">
-<h5>简体中文 | <a href="../../LICENSE.md">English</a> | <a href="../hi/LICENSE.md">हिंदी</a></h5>
+    <h6>
+        <picture>
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-white-icon32.svg">
+            <img height=14 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-icon32.svg">
+        </picture>
+        &nbsp;简体中文 |
+        <a href="../../LICENSE.md">English</a> |
+        <a href="../hi/LICENSE.md">हिंदी</a>
+    </h6>
 </div>
 
-# MIT 许可证
+# 🏛️ MIT 许可证
 
-版权所有 (c) 2023–2024 [刘展鹏 (Adam Lui)](https://github.com/adamlui) & [贡献者](.#贡献者)
+**版权所有 (c) 2023–2024 [刘展鹏 (Adam Lui)](https://github.com/adamlui) & [贡献者](.#贡献者)**
 
 特此免费向任何获得副本的人授予许可
 本软件和相关文档文件（“软件”），处理
