@@ -2,9 +2,8 @@ name: Sync (bravegpt/ to KudoAI/bravegpt/) && (bravegpt/greasemonkey/ to adamlui
 
 on:
   push:
-    branches: [ master, main ]
-    paths:
-      - 'bravegpt/**'
+    branches: main
+    paths: bravegpt/**
 
 jobs:
   build:

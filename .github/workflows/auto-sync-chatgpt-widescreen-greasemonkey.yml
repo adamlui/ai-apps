@@ -2,9 +2,8 @@ name: Sync /chatgpt-widescreen/greasemonkey/ to adamlui/userscripts/chatgpt/chat
 
 on:
   push:
-    branches: [ master, main ]
-    paths:
-      - 'chatgpt-widescreen/greasemonkey/**'
+    branches: main
+    paths: chatgpt-widescreen/greasemonkey/**
 
 jobs:
   build:

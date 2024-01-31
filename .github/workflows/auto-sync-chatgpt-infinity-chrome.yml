@@ -2,9 +2,8 @@ name: Sync /chatgpt-infinity/chrome/extension/ to /chatgpt-infinity/(edge|opera)
 
 on:
   push:
-    branches: [ master, main ]
-    paths:
-      - 'chatgpt-infinity/chrome/**'
+    branches: main
+    paths: chatgpt-infinity/chrome/**
 
 jobs:
   build:

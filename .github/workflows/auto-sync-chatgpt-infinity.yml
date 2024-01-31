@@ -2,9 +2,8 @@ name: Sync /chatgpt-infinity/* to adamlui/chatgpt-infinity/*
 
 on:
   push:
-    branches: [ master, main ]
-    paths:
-      - 'chatgpt-infinity/*'
+    branches: main
+    paths: chatgpt-infinity/*
       - 'chatgpt-infinity/docs/**'
       - 'chatgpt-infinity/media/**'
 

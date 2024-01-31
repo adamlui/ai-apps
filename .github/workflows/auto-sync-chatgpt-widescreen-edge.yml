@@ -2,9 +2,8 @@ name: Sync /chatgpt-widescreen/edge/extension/ to /chatgpt-widescreen/(chrome|op
 
 on:
   push:
-    branches: [ master, main ]
-    paths:
-      - 'chatgpt-widescreen/edge/**'
+    branches: main
+    paths: chatgpt-widescreen/edge/**
 
 jobs:
   build:

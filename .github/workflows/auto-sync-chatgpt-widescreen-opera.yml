@@ -2,9 +2,8 @@ name: Sync /chatgpt-widescreen/opera/extension/ to /chatgpt-widescreen/(chrome|e
 
 on:
   push:
-    branches: [ master, main ]
-    paths:
-      - 'chatgpt-widescreen/opera/**'
+    branches: main
+    paths: chatgpt-widescreen/opera/**
 
 jobs:
   build:
