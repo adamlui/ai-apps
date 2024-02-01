@@ -5,7 +5,7 @@
             <img height=14 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-icon32.svg">
         </picture>
         &nbsp;English |
-        <a href="https://github.com/adamlui/autoclear-chatgpt-history/blob/master/docs/hi/LICENSE.md">हिंदी</a>
+        <a href="docs/hi/LICENSE.md">हिंदी</a>
     </h6>
 </div>
 
