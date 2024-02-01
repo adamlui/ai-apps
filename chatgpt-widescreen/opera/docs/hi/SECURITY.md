@@ -1,6 +1,16 @@
-# सुरक्षा नीति
+<div align="right">
+    <h6>
+        <picture>
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-white-icon32.svg">
+            <img height=14 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-icon32.svg">
+        </picture>
+        &nbsp;हिंदी |
+        <a href="../SECURITY.md">English</a> |
+        <a href="../zh-cn/SECURITY.md">简体中文</a>
+    </h6>
+</div>
 
-###### हिंदी | [English](../SECURITY.md) | [简体中文](../zh-cn/SECURITY.md)
+# 🛡️ सुरक्षा नीति
 
 यदि आपको कोई भेद्यता मिलती है, तो कृपया एक [मसौदा सुरक्षा सलाहकार](https://github.com/adamlui/chatgpt-widescreen/security/advisories/new) खोलें।
 
