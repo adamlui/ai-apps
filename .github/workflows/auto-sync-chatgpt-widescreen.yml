@@ -3,7 +3,8 @@ name: Sync /chatgpt-widescreen/* to adamlui/chatgpt-widescreen/*
 on:
   push:
     branches: main
-    paths: chatgpt-widescreen/*
+    paths:
+      - 'chatgpt-widescreen/*'
       - 'chatgpt-widescreen/docs/**'
       - 'chatgpt-widescreen/media/**'
 
