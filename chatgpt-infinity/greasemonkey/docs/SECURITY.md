@@ -1,8 +1,16 @@
 <div align="right">
-<h5>English | <a href="zh-cn/SECURITY.md">简体中文</a> | <a href="hi/SECURITY.md">हिंदी</a></h5>
+    <h6>
+        <picture>
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-white-icon32.svg">
+            <img height=14 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-icon32.svg">
+        </picture>
+        &nbsp;English |
+        <a href="https://github.com/adamlui/chatgpt-infinity/blob/main/greasemonkey/docs/zh-cn/SECURITY.md">简体中文</a> |
+        <a href="https://github.com/adamlui/chatgpt-infinity/blob/main/greasemonkey/docs/hi/SECURITY.md">हिंदी</a>
+    </h6>
 </div>
 
-# Security Policy
+# 🛡️ Security Policy
 
 If you find a vulnerability, please open a [draft security advisory](https://github.com/adamlui/chatgpt-infinity/security/advisories/new).
 
