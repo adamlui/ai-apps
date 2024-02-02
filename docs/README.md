@@ -13,7 +13,7 @@
 
 Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
-![](https://img.shields.io/badge/Installs-100,000+-2bbbd8?logo=docusign&logoColor=white&labelColor=464646&style=for-the-badge)
+![](https://img.shields.io/badge/Users-100,000+-2bbbd8?logo=docusign&logoColor=white&labelColor=464646&style=for-the-badge)
 [![](https://img.shields.io/github/stars/adamlui/chatgpt-apps?label=Stars&logo=github&logoColor=white&labelColor=464646&color=fcf67b&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/stargazers)
 [![](https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/blob/main/LICENSE)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits/main)
