@@ -130,8 +130,8 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 
 ### Android:
 
-- [Kiwi](https://kiwibrowser.com/) (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
-- [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/) (via [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[Kiwi]**(https://kiwibrowser.com/) (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[Mozilla Firefox]**(https://www.mozilla.org/firefox/browsers/mobile/android/) (via [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.chatgptinfinity.com/pulls) to become a contributor!
 

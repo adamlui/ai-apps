@@ -130,8 +130,8 @@ ChatGPT 无穷 与以下浏览器兼容.
 
 ### 安卓:
 
-- [Kiwi](https://kiwibrowser.com/) (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
-- [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/) (通过 [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[Kiwi]**(https://kiwibrowser.com/) (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
+- **[Mozilla Firefox]**(https://www.mozilla.org/firefox/browsers/mobile/android/) (通过 [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 
 <div align="center">
 
