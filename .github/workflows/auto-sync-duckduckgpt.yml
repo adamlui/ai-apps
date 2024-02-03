@@ -35,19 +35,23 @@ jobs:
       - name: Sync docs between root & /greasemonkey
         run: |
           shopt -s globstar
-          for file in "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/docs/"**/*.md; do
-            relative_path=${file#"${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/docs/"}
-            if [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/docs/$relative_path")" > \
-                 "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/docs/$relative_path")" ]; then
-              cp -f \
-                "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/docs/$relative_path" \
-                "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/docs/$relative_path"
-            elif [ "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/docs/$relative_path")" > \
-                   "$(stat -c %y "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/docs/$relative_path")" ]; then
-              cp -f \
-                "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/greasemonkey/docs/$relative_path" \
-                "${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt/docs/$relative_path"
-            fi
+          cd ${{ github.workspace }}/adamlui/chatgpt-apps/duckduckgpt
+
+          # Sync LICENSE.md
+          root_license_modified=$(git log -1 --format="%ct" -- "LICENSE.md")
+          gm_license_modified=$(git log -1 --format="%ct" -- "greasemonkey/LICENSE.md")
+          if (( root_license_modified > gm_license_modified )) ; then cp -f "LICENSE.md" "greasemonkey/LICENSE.md"
+          elif (( gm_license_modified > root_license_modified )) ; then cp -f "greasemonkey/LICENSE.md" "LICENSE.md" ; fi
+
+          # Sync other docs
+          for file in docs/**/*.md; do
+            relative_path=${file#"docs/"}
+            root_doc="docs/$relative_path"
+            root_doc_modified=$(git log -1 --format="%ct" -- "$root_doc")
+            gm_doc="greasemonkey/docs/$relative_path"
+            gm_doc_modified=$(git log -1 --format="%ct" -- "$gm_doc")
+            if (( root_doc_modified > gm_doc_modified )) ; then cp -f "$root_doc" "$gm_doc"
+            elif (( gm_doc_modified > root_doc_modified )) ; then cp -f "$gm_doc" "$root_doc" ; fi
           done
 
       - name: Sync duckduckgpt/ to KudoAI/duckduckgpt/
