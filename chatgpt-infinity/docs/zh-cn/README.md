@@ -184,7 +184,7 @@ ChatGPT 无穷 与以下浏览器兼容.
 
 ## 🤖 更多 ChatGPT 应用
 
-如需更多精彩的 ChatGPT 应用程序，请访问此处: https://github.com/adamlui/chatgpt-apps
+如需更多精彩的 ChatGPT 应用程序，请访问: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
 ## 📜 相关应用
