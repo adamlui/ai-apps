@@ -143,6 +143,7 @@ This script exists thanks to code, translations, issues & ideas from the followi
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/78710607?first-contrib=2023.11.29-win7-edge-copy-bug-report&h=50&w=50&mask=circle&maxage=7d "@KamiyaMinoru")](https://github.com/KamiyaMinoru)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/123299068?first-contrib=2023.11.30-unworking-wider-chatbox-bug-report&h=50&w=50&mask=circle&maxage=7d "@SwissFred57")](https://github.com/SwissFred57)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/6926225?first-contrib=2023.12.21-master-toggle-broken-bug-report&h=50&w=50&mask=circle&maxage=7d "@NoooneyDude")](https://github.com/NoooneyDude)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/53054099?first-contrib=2023.2.3-added-eslint-plugin-userscripts&h=50&w=50&mask=circle&maxage=7d "@Yash-Singh1")](https://github.com/Yash-Singh1)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
