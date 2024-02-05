@@ -133,14 +133,11 @@ ChatGPT 无穷 与以下浏览器兼容.
 <div align="center">
 
 <a href="https://chrome.chatgptinfinity.com">
-    <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-chrome-button.png">
-</a>
+    <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptinfinity.com">
-    <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-edge-button.png">
-</a>
+    <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-to-edge-button.png"></a>
 <a href="https://greasyfork.chatgptinfinity.com">
-    <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-userscript-button.png">
-</a>
+    <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/buttons/add-userscript-button.png"></a>
 
 <br>
 
