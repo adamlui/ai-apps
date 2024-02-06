@@ -1,14 +1,14 @@
 {
   "appName": { "message": "ធ្វើ ឲ្យ ChatGPT ស្រស់ ដោយ ស្វ័យ ប្រវត្តិ" },
   "appDesc": { "message": "*សុវត្ថិភាព* រក្សាទុកវគ្គ ChatGPT ស្រស់, លុបបំបាត់កំហុសបណ្តាញថេរ + ការត្រួតពិនិត្យ Cloudflare (ទាំងអស់ពីផ្ទៃខាងក្រោយ!)" },
-  "menuLabel_autoRefresh": { "message": "ធ្វើ​ឲ្យ​ស្រស់​ដោយ​ស្វ័យប្រវត្តិ" },
+  "menuLabel_autoRefresh": { "message": "ធ្វើឲ្យស្រស់ដោស្វ័យប្រវត្តិ" },
   "menuLabel_toggleVis": { "message": "បិទ/បើកលទ្ធភាពមើលឃើញ" },
   "menuLabel_modeNotifs": { "message": "ការជូនដំណឹងអំពីម៉ូដ" },
-  "menuLabel_refreshInt": { "message": "á  " },
+  "menuLabel_refreshInt": { "message": "ចន្លោះពេលផ្ទុកឡើងវិញ" },
   "menuLabel_about": { "message": "អំពី" },
   "about_version": { "message": "លេខជំនាន់កម្មវិធី" },
-  "about_poweredBy": { "message": "ដំណើរការ​ដោយ" },
-  "about_sourceCode": { "message": "កូដ​ដើម" },
+  "about_poweredBy": { "message": "ដំណើរការដោយ" },
+  "about_sourceCode": { "message": "កូដដើម" },
   "prompt_updateInt": { "message": "អាប់ដេតចន្លោះពេលរីហ្វ្រែស (គិតជាវិនាទី)" },
   "alert_intUpdated": { "message": "បានអាប់ដេតចន្លោះពេល" },
   "alert_willRefresh": { "message": "សម័យ ChatGPT នឹង ធ្វើ ឲ្យ ស្រស់ ដោយ ស្វ័យ ប្រវត្តិ រៀង រាល់" },
@@ -16,7 +16,7 @@
   "alert_updateAvail": { "message": "ការអាប់ដេតមាន" },
   "alert_newerVer": { "message": "អាប់ដេតទៅ" },
   "alert_isAvail": { "message": "មាន" },
-  "alert_upToDate": { "message": "ធ្វើឲ្យ​ទាន់​សម័យ" },
+  "alert_upToDate": { "message": "ធ្វើឲ្យទាន់សម័យ" },
   "alert_isUpToDate": { "message": "បានធ្វើបច្ចុប្បន្នភាព" },
   "buttonLabel_moreApps": { "message": "កម្មវិធី ChatGPT ច្រើនទៀត" },
   "buttonLabel_leaveReview": { "message": "ទុកការពិនិត្យឡើងវិញ" },
@@ -26,6 +26,6 @@
   "buttonLabel_dismiss": { "message": "បោះបង់" },
   "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" },
   "unit_secs": { "message": "វិនាទី" },
-  "state_enabled": { "message": "បាន​ជ្រើស" },
+  "state_enabled": { "message": "បានជ្រើស" },
   "state_disabled": { "message": "បានបិទ" }
 }
