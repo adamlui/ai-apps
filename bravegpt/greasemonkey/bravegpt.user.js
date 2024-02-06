@@ -6,14 +6,14 @@
 // @description:ar      يضيف إجابات ChatGPT إلى شريط البحث الجانبي في Brave (مدعوم بواسطة GPT-4!)
 // @description:az      ChatGPT cavablarını Brave Axtarış yan panelinə əlavə edir (GPT-4 ilə gücləndirilmiş!)
 // @description:be      Дадае адказы ChatGPT да бакавой баковай панэлі Brave Search (падтрымліваецца GPT-4!)
-// @description:bem      Aziya ChatGPT ndalama ku Brave Search sidebar (muma GPT-4!)
+// @description:bem     Aziya ChatGPT ndalama ku Brave Search sidebar (muma GPT-4!)
 // @description:bg      Добавя ChatGPT отговори към страничната лента на Brave Search (задвижван от GPT-4!)
 // @description:bn      Brave সার্চ সাইডবারে ChatGPT উত্তর যোগ করে (পাওয়ারডে GPT-4 দ্বারা!)
 // @description:bo      ChatGPT ལེ་བས་ཚད་བདག་སྐྱེད་དེ་བཟུམ་སྒྲིག་ནང་ Brave Search གནས་པ་བརྗོད་པ། (GPT-4བྱ་བ་བརྒྱུད་པ་!)
 // @description:bs      Dodaje odgovore ChatGPT-a na bočnu traku Brave pretrage (pokreće GPT-4!)
 // @description:ca      Afegeix respostes de ChatGPT a la barra lateral de Brave Search (amb tecnologia GPT-4!)
-// @description:ceb      Nagdugang sa mga tubag sa ChatGPT sa sidebar sa Brave Search (gamit ang GPT-4!)
-// @description:ckb      وەرگرتنی ڕاستەوخۆیی ChatGPT بۆ پەنجەرەی لاتی لە Brave (بە پشتگیرییی GPT-4!)
+// @description:ceb     Nagdugang sa mga tubag sa ChatGPT sa sidebar sa Brave Search (gamit ang GPT-4!)
+// @description:ckb     وەرگرتنی ڕاستەوخۆیی ChatGPT بۆ پەنجەرەی لاتی لە Brave (بە پشتگیرییی GPT-4!)
 // @description:cs      Přidává odpovědi od ChatGPT do bočního panelu Brave Search (poháněno GPT-4!)
 // @description:cy      Ychwanega Atebion ChatGPT i'r bar ochr Brave Search (a gryfhawyd gan GPT-4!)
 // @description:da      Tilføjer ChatGPT-svar til Brave Search-sidelinjen (drevet af GPT-4!)
@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2023.1.28.1
+// @version             2024.2.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
