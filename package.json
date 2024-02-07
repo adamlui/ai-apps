@@ -6,6 +6,9 @@
     "husky": "^9.0.10"
   },
   "scripts": {
-    "lint": "eslint . --ext js,json,yml --cache"
+    "lint": "eslint . --ext js,json,yml --cache",
+    "lint:all": "eslint . --ext js,json,yml",
+    "lint:fix": "eslint . --ext js,json,yml --fix --cache",
+    "lint:fix-all": "eslint . --ext js,json,yml --fix"
   }
 }
