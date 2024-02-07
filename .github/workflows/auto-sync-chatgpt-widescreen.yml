@@ -4,9 +4,9 @@ on:
   push:
     branches: main
     paths:
-      - 'chatgpt-widescreen/*'
-      - 'chatgpt-widescreen/docs/**'
-      - 'chatgpt-widescreen/media/**'
+      - "chatgpt-widescreen/*"
+      - "chatgpt-widescreen/docs/**"
+      - "chatgpt-widescreen/media/**"
 
 jobs:
   build:
@@ -37,9 +37,9 @@ jobs:
       - name: Push to adamlui/chatgpt-widescreen
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          push_options: '--force'
-          add_options: '--all'
+          push_options: --force
+          add_options: --all
           commit_user_email: auto-sync@kudoai.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
-          file_pattern: '**'
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]"
+          file_pattern: "**"
           repository: adamlui/chatgpt-widescreen

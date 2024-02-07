@@ -56,29 +56,29 @@ jobs:
       - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          push_options: '--force'
-          add_options: '--all'
+          push_options: --force
+          add_options: --all
           commit_user_email: auto-sync@kudoai.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
-          file_pattern: 'chatgpt-infinity/**'
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]"
+          file_pattern: "chatgpt-infinity/**"
           repository: adamlui/chatgpt-apps
 
       - name: Push to adamlui/userscripts
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          push_options: '--force'
-          add_options: '--all'
+          push_options: --force
+          add_options: --all
           commit_user_email: auto-sync@kudoai.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
-          file_pattern: 'chatgpt/chatgpt-infinity/**'
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]"
+          file_pattern: "chatgpt/chatgpt-infinity/**"
           repository: adamlui/userscripts
 
       - name: Push to adamlui/chatgpt-infinity
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          push_options: '--force'
-          add_options: '--all'
+          push_options: --force
+          add_options: --all
           commit_user_email: auto-sync@kudoai.com
-          commit_message: '${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]'
-          file_pattern: '**'
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]"
+          file_pattern: "**"
           repository: adamlui/chatgpt-infinity
