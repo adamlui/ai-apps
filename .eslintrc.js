@@ -3,7 +3,7 @@ module.exports = {
     'ignorePatterns': ['!/.github'],
     'rules': {
         'indent': 'off', 'no-unexpected-multiline': 'off', // allow whitespace anywhere
-        'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }], // enforce single quotes for string literals
+        'quotes': ['error', 'single'], // enforce single quotes for string literals
         'key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }], // enforce spacing in object properties
         'comma-dangle': ['error', 'never'], // enforce no trailing commas in arrays or objects
         'no-async-promise-executor': 'off', // allow promise executor functions to be async (to accomodate await lines)
