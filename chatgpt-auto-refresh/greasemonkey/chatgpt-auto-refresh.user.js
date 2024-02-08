@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.8.1
+// @version             2024.2.8.2
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -612,6 +612,8 @@
 
         // Tweak styles
         firstButton.parentNode.parentNode.style.paddingBottom = '0'
+        parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
+            chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
         if (chatgpt.history.isOff() && !config.toggleHidden)
             navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
         navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
