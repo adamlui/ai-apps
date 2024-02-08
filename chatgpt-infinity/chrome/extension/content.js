@@ -155,7 +155,8 @@
                 // Create/size/position navicon
                 const navicon = document.querySelector('#infToggleFavicon') || document.createElement('img')
                 navicon.id = 'infToggleFavicon'
-                navicon.src = config.assetHostURL + 'media/images/icons/infinity-symbol/white/icon64.png'
+                navicon.src = `${ config.assetHostURL }media/images/icons/infinity-symbol/${
+                    chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
                 navicon.style.width = navicon.style.height = '1.25rem'
                 navicon.style.marginLeft = navicon.style.marginRight = '4px'
 
