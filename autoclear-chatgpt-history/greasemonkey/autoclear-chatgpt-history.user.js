@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.8.2
+// @version             2024.2.8.3
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -580,6 +580,9 @@
         if (chatgpt.history.isOff() && !config.toggleHidden)
             navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
         navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
+        document.querySelector('#acToggleFavicon').src = `${
+            config.assetHostURL }media/images/icons/incognito/${
+            chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
 
     function updateToggleHTML() {
@@ -587,8 +590,6 @@
         // Create/size/position navicon
         const navicon = document.querySelector('#acToggleFavicon') || document.createElement('img')
         navicon.id = 'acToggleFavicon'
-        navicon.src = `${ config.assetHostURL }media/images/icons/incognito/${
-            chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
         navicon.style.width = navicon.style.height = '1.25rem'
         navicon.style.marginLeft = navicon.style.marginRight = '4px'
 
