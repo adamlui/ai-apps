@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.8.1
+// @version             2024.2.8.2
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -575,6 +575,8 @@
 
         // Tweak styles
         firstButton.parentNode.parentNode.style.paddingBottom = '0'
+        parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
+            chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
         if (chatgpt.history.isOff() && !config.toggleHidden)
             navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
         navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
