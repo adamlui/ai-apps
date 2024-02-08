@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.8.2
+// @version             2024.2.8.3
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -617,6 +617,9 @@
         if (chatgpt.history.isOff() && !config.toggleHidden)
             navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
         navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
+        document.querySelector('#arToggleFavicon').src = `${ // update navicon color in case scheme changed
+            config.assetHostURL }media/images/icons/incognito/${
+            chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
 
     function updateToggleHTML() {
@@ -624,8 +627,6 @@
         // Create/size/position navicon
         const navicon = document.querySelector('#arToggleFavicon') || document.createElement('img')
         navicon.id = 'arToggleFavicon'
-        navicon.src = `${ config.assetHostURL }media/images/icons/auto-refresh/${
-            chatgpt.isDarkMode() ? 'white' : 'black' }/icon155.png`
         navicon.style.width = navicon.style.height = '1.25rem'
         navicon.style.marginLeft = navicon.style.marginRight = '4px'
 
