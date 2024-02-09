@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.8.5
+// @version             2024.2.8.6
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -675,7 +675,7 @@
         setTimeout(() => {
             if (toggleInput.checked) {
                 switchSpan.style.backgroundColor = '#AD68FF'
-                switchSpan.style.boxShadow = '2px 1px 20px #D8A9FF'
+                switchSpan.style.boxShadow = '2px 1px 9px #D8A9FF'
                 knobSpan.style.transform = `translateX(${ knobWidth }px) translateY(0)`
             } else {
                 switchSpan.style.backgroundColor = '#CCC'
