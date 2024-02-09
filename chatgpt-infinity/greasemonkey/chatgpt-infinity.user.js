@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.8.3
+// @version             2024.2.8.4
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://media.chatgptinfinity.com/images/icons/infinity-symbol/black/icon48.png
@@ -669,7 +669,7 @@
         setTimeout(() => {
             if (toggleInput.checked) {
                 switchSpan.style.backgroundColor = '#AD68FF'
-                switchSpan.style.boxShadow = '2px 1px 20px #D8A9FF'
+                switchSpan.style.boxShadow = '2px 1px 9px #D8A9FF'
                 knobSpan.style.transform = `translateX(${ knobWidth }px) translateY(0)`
             } else {
                 switchSpan.style.backgroundColor = '#CCC'
