@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.8
+// @version             2024.2.8.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://media.chatgptinfinity.com/images/icons/infinity-symbol/black/icon48.png
@@ -606,6 +606,8 @@
 
         // Tweak styles
         firstButton.parentNode.parentNode.style.paddingBottom = '0'
+        parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
+            chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
         if (chatgpt.history.isOff() && !config.toggleHidden)
             navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
         navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'

@@ -140,6 +140,8 @@
 
         // Tweak styles
         firstButton.parentNode.parentNode.style.paddingBottom = '0'
+        parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
+            chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
         if (chatgpt.history.isOff() && !config.toggleHidden)
             navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
         navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
