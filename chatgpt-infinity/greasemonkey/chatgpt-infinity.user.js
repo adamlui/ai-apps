@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.8.1
+// @version             2024.2.8.2
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://media.chatgptinfinity.com/images/icons/infinity-symbol/black/icon48.png
@@ -611,6 +611,9 @@
         if (chatgpt.history.isOff() && !config.toggleHidden)
             navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
         navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
+        document.querySelector('#infToggleFavicon').src = `${ // update navicon color in case scheme changed
+            config.assetHostURL }media/images/icons/infinity-symbol/${
+            chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
 
     function updateToggleHTML() {
@@ -618,8 +621,6 @@
         // Create/size/position navicon
         const navicon = document.querySelector('#infToggleFavicon') || document.createElement('img')
         navicon.id = 'infToggleFavicon'
-        navicon.src = `${ config.assetHostURL }media/images/icons/infinity-symbol/${
-            chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
         navicon.style.width = navicon.style.height = '1.25rem'
         navicon.style.marginLeft = navicon.style.marginRight = '4px'
 
