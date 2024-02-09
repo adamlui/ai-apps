@@ -124,12 +124,13 @@
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = [...navButtons].find(button => re_firstBtnText.test(button.textContent))
 
-        // Hide 'Enable History' div
+        // Hide 'Enable History' div + sibling gradient div
         if (chatgpt.history.isOff())
             try {
-                const enableHistoryDiv = firstButton.parentNode.parentNode.nextElementSibling
-                enableHistoryDiv.style.display = 'none'
+                const enableHistoryDiv = firstButton.parentNode.parentNode.nextElementSibling,
+                      gradientDiv = enableHistoryDiv.nextElementSibling
                 enableHistoryDiv.parentNode.style.width = '100%'
+                for (const div of [enableHistoryDiv, gradientDiv]) div.style.display = 'none'
             } catch (err) {}
 
         // Insert toggle
