@@ -207,7 +207,7 @@
                 setTimeout(() => {
                     if (toggleInput.checked) {
                         switchSpan.style.backgroundColor = '#AD68FF'
-                        switchSpan.style.boxShadow = '2px 1px 20px #D8A9FF'
+                        switchSpan.style.boxShadow = '2px 1px 9px #D8A9FF'
                         knobSpan.style.transform = `translateX(${ knobWidth }px) translateY(0)`
                     } else {
                         switchSpan.style.backgroundColor = '#CCC'
