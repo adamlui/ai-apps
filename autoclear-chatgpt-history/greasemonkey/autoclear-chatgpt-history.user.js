@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.8.5
+// @version             2024.2.8.6
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -638,7 +638,7 @@
         setTimeout(() => {
             if (toggleInput.checked) {
                 switchSpan.style.backgroundColor = '#AD68FF'
-                switchSpan.style.boxShadow = '2px 1px 20px #D8A9FF'
+                switchSpan.style.boxShadow = '2px 1px 9px #D8A9FF'
                 knobSpan.style.transform = `translateX(${ knobWidth }px) translateY(0)`
             } else {
                 switchSpan.style.backgroundColor = '#CCC'
