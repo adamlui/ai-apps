@@ -1,7 +1,7 @@
 // This library is a condensed version of chatgpt.js v2.6.4
 // (c) 2023–2024 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
-// Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
+// Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
 // Init endpoints
 const endpoints = { assets: 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main' }
