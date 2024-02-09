@@ -1,7 +1,7 @@
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org
 // (c) 2023–2024 KudoAI & contributors under the MIT license
 // Source: https://github.com/kudoai/chatgpt.js
-// Latest minified release: https://code.chatgptjs.org/chatgpt-latest.min.js
+// Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
 (async () => {
 
@@ -124,12 +124,13 @@
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = [...navButtons].find(button => re_firstBtnText.test(button.textContent))
 
-        // Hide 'Enable History' div
+        // Hide 'Enable History' div + sibling gradient div
         if (chatgpt.history.isOff())
             try {
-                const enableHistoryDiv = firstButton.parentNode.parentNode.nextElementSibling
-                enableHistoryDiv.style.display = 'none'
+                const enableHistoryDiv = firstButton.parentNode.parentNode.nextElementSibling,
+                      gradientDiv = enableHistoryDiv.nextElementSibling
                 enableHistoryDiv.parentNode.style.width = '100%'
+                for (const div of [enableHistoryDiv, gradientDiv]) div.style.display = 'none'
             } catch (err) {}
 
         // Insert toggle
