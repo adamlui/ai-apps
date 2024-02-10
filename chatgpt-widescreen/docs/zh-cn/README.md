@@ -186,6 +186,23 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
+<div align="center">
+
+<br>
+
+<a href="https://star-history.com/#adamlui/chatgpt-widescreen&Timeline">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=adamlui/chatgpt-widescreen&type=Timeline&theme=dark" />
+        <img width=665 src="https://api.star-history.com/svg?repos=adamlui/chatgpt-widescreen&type=Timeline" />
+    </picture>
+</a>
+
+<br>_如果这个仓库对您有帮助，请考虑给它一个 ⭐！_
+
+</div>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+
 ## 🤖 更多 ChatGPT 应用
 
 如需更多精彩的 ChatGPT 应用程序，请访问: https://github.com/adamlui/chatgpt-apps

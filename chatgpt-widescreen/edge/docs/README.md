@@ -158,6 +158,23 @@ This extension exists thanks to code, translations, issues & ideas from the foll
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
+<div align="center">
+
+<br>
+
+<a href="https://star-history.com/#adamlui/chatgpt-widescreen&Timeline">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=adamlui/chatgpt-widescreen&type=Timeline&theme=dark" />
+        <img width=665 src="https://api.star-history.com/svg?repos=adamlui/chatgpt-widescreen&type=Timeline" />
+    </picture>
+</a>
+
+<br>_Consider giving this repo a ⭐ if it helped you!_
+
+</div>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
