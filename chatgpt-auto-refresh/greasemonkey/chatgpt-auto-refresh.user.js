@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.8.6
+// @version             2024.2.9
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -258,10 +258,10 @@
 
     // Init config
     const config = {
-        appName: 'ChatGPT Auto Refresh', appSymbol: '↻', userLanguage: chatgpt.getUserLanguage(),
+        appName: 'ChatGPT Auto Refresh', appSymbol: '↻', keyPrefix: 'chatGPTautoRefresh',
+        userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-refresh',
         greasyForkURL: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh' }
-    config.keyPrefix = toCamelCase(config.appName)
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -390,28 +390,6 @@
     function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
-
-    function toCamelCase(str) { // for `config.keyPrefix` derived from `config.appName`
-        let lastLetterWasUpper = false, isFirstWord = true
-        return str.replace(/-/g, ' ') // remove hyphens
-            .split(' ').flatMap(word => { // split input into words/acronyms for individual processing
-                if (/[A-Z]{2,}/.test(word) && word != word.toUpperCase()) { // word contains acronym
-                    if (/^[A-Z][a-z]/.test(word)) // word starts w/ title-cased non-acronym
-                        word = word.charAt(0).toLowerCase() + word.slice(1) // lower-case it
-                    return word.replace(/([a-z]+)([A-Z]+)/g, '$1 $2') // separate words from following acronyms
-                               .replace(/([A-Z]+)([a-z]+)/g, '$1 $2') // separate acronyms from following words
-                               .split(' ') // split for individual processing
-                } else return word // non-acronym
-            }).map(word => { // convert each word/acronym's case
-                const isFullAcronym = word.toUpperCase() == word
-                const result = isFullAcronym
-                    ? ( lastLetterWasUpper || isFirstWord ) ? word.toLowerCase() : word // alternate acronym case
-                    : ( lastLetterWasUpper || isFirstWord ) // alternate non-acronym case
-                        ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-                isFirstWord = false ; lastLetterWasUpper = isFullAcronym ? (result == word && !isFirstWord) : false
-                return result
-            }).join('') // combine to form camel case
-    }
 
     // Define MENU functions
 
