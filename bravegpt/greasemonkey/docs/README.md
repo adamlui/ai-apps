@@ -157,6 +157,23 @@ This app exists thanks to code, translations, issues & ideas from the following 
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
 
+<div align="center">
+
+<br>
+
+<a href="https://star-history.com/#KudoAI/bravegpt">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=KudoAI/bravegpt&type=Timeline&theme=dark" />
+        <img width=665 src="https://api.star-history.com/svg?repos=KudoAI/bravegpt&type=Timeline" />
+    </picture>
+</a>
+
+<br><i>Consider giving this project a ⭐ if it helped you!</i>
+
+</div>
+
+<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
