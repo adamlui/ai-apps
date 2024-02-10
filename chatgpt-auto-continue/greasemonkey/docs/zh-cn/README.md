@@ -74,6 +74,23 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/ku
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
 
+#
+
+<div align="center">
+
+<br>
+
+<a href="https://star-history.com/#adamlui/chatgpt-auto-continue">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=adamlui/chatgpt-auto-continue&type=Timeline&theme=dark" />
+        <img width=665 src="https://api.star-history.com/svg?repos=adamlui/chatgpt-auto-continue&type=Timeline" />
+    </picture>
+</a>
+
+<br>_如果这个仓库对您有帮助，请考虑给它 ⭐!_
+
+</div>
+
 ## 🤖 更多 ChatGPT 应用
 
 如需更多史诗般的 ChatGPT 应用程序，请访问此处: https://github.com/adamlui/chatgpt-apps
