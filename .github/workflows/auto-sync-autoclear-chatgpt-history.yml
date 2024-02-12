@@ -67,9 +67,6 @@ jobs:
                 cp -f "$gm_doc_path" "$root_doc_path" ; sync_src="greasemonkey" ; fi ; fi
           done
 
-          echo "root_doc_path: $root_doc_path"
-          echo "gm_doc_path: $gm_doc_path"
-
           # Store sync src for commit msg in self-push step
           echo "sync_src=$sync_src" >> $GITHUB_OUTPUT
 
