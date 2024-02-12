@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.1.28.1
+// @version             2024.2.8.6
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -559,12 +559,13 @@
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = [...navButtons].find(button => re_firstBtnText.test(button.textContent))
 
-        // Hide 'Enable History' div
+        // Hide 'Enable History' div + sibling gradient div
         if (chatgpt.history.isOff())
             try {
-                const enableHistoryDiv = firstButton.parentNode.parentNode.nextElementSibling
-                enableHistoryDiv.style.display = 'none'
+                const enableHistoryDiv = firstButton.parentNode.parentNode.nextElementSibling,
+                      gradientDiv = enableHistoryDiv.nextElementSibling
                 enableHistoryDiv.parentNode.style.width = '100%'
+                for (const div of [enableHistoryDiv, gradientDiv]) div.style.display = 'none'
             } catch (err) {}
 
         // Insert toggle
@@ -575,9 +576,14 @@
 
         // Tweak styles
         firstButton.parentNode.parentNode.style.paddingBottom = '0'
+        parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
+            chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
         if (chatgpt.history.isOff() && !config.toggleHidden)
             navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
         navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
+        document.querySelector('#acToggleFavicon').src = `${ // update navicon color in case scheme changed
+            config.assetHostURL }media/images/icons/incognito/${
+            chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
 
     function updateToggleHTML() {
@@ -585,7 +591,6 @@
         // Create/size/position navicon
         const navicon = document.querySelector('#acToggleFavicon') || document.createElement('img')
         navicon.id = 'acToggleFavicon'
-        navicon.src = config.assetHostURL + 'media/images/icons/navicon.png'
         navicon.style.width = navicon.style.height = '1.25rem'
         navicon.style.marginLeft = navicon.style.marginRight = '4px'
 
@@ -633,12 +638,12 @@
         setTimeout(() => {
             if (toggleInput.checked) {
                 switchSpan.style.backgroundColor = '#AD68FF'
-                switchSpan.style.boxShadow = '2px 1px 20px #D8A9FF'
+                switchSpan.style.boxShadow = '2px 1px 9px #D8A9FF'
                 knobSpan.style.transform = `translateX(${ knobWidth }px) translateY(0)`
             } else {
                 switchSpan.style.backgroundColor = '#CCC'
                 switchSpan.style.boxShadow = 'none'
-                knobSpan.style.transform = `translateX(0)`
+                knobSpan.style.transform = 'translateX(0)'
             }
         }, 1) // min delay to trigger transition fx
     }

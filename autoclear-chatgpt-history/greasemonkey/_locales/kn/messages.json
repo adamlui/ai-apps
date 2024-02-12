@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ಆಟೋಕೇಲರ್ ಚಾಟ್GPT ಇತಿಹಾಸ" },
   "appDesc": { "message": "Chat.openai.com ಗೆ ಭೇಟಿ ನೀಡಿದಾಗ ಆಟೋ-ಕ್ಲಾಕರ್ಸ್ ಚಾಟ್ ಇತಿಹಾಸ" },
-  "menuLabel_autoClear": { "message": "ಆಟೋಕೇಲರ್ ಚಾಟ್ ‌ ಗಳು" },
+  "menuLabel_autoClear": { "message": "ಆಟೋಕೇಲರ್ ಚಾಟ್ ಗಳು" },
   "menuLabel_toggleVis": { "message": "ಗೋಚರತೆಯನ್ನು ಟಾಗಲ್ ಮಾಡಿ" },
   "menuLabel_modeNotifs": { "message": "ಮೋಡ್ ಅಧಿಸೂಚನೆಗಳು" },
   "menuLabel_about": { "message": "ಕುರಿತಾಗಿ" },
@@ -9,19 +9,19 @@
   "about_poweredBy": { "message": "ಸಾಮರ್ಥ್ಯ ಇವರಿಂದ " },
   "about_sourceCode": { "message": "ಮೂಲ ಕೋಡ್" },
   "mode_autoClear": { "message": "ಸ್ವಯಂಚಾಲಿತ ಕಲಿಕೆ" },
-  "alert_choosePlatform": { "message": "ಪ್ಲಾಟ್ ‌ ಫಾರ್ಮ್ ಆಯ್ಕೆಮಾಡಿ" },
+  "alert_choosePlatform": { "message": "ಪ್ಲಾಟ್ ಫಾರ್ಮ್ ಆಯ್ಕೆಮಾಡಿ" },
   "alert_updateAvail": { "message": "ಹೊಸ ಅಪ್ಡೇಟ್ ಲಭ್ಯವಿದೆ." },
-  "alert_newerVer": { "message": "ಗೆ ಅಪ್ ‌ ಡೇಟ್ ಮಾಡಿ" },
+  "alert_newerVer": { "message": "ಗೆ ಅಪ್ ಡೇಟ್ ಮಾಡಿ" },
   "alert_isAvail": { "message": "ಲಭ್ಯವಿದೆ" },
-  "alert_upToDate": { "message": "ಅಪ್ ‌ ಟು ಡೇಟ್" },
-  "alert_isUpToDate": { "message": "ಅಪ್ ‌ ಟು ಡೇಟ್ ಆಗಿದೆ" },
-  "buttonLabel_moreApps": { "message": "ಇನ್ನಷ್ಟು ChatGPT ಅಪ್ಲಿಕೇಶನ್ ‌ ಗಳು" },
+  "alert_upToDate": { "message": "ಅಪ್ ಟು ಡೇಟ್" },
+  "alert_isUpToDate": { "message": "ಅಪ್ ಟು ಡೇಟ್ ಆಗಿದೆ" },
+  "buttonLabel_moreApps": { "message": "ಇನ್ನಷ್ಟು ChatGPT ಅಪ್ಲಿಕೇಶನ್ ಗಳು" },
   "buttonLabel_leaveReview": { "message": "ವಿಮರ್ಶೆಯನ್ನು ಬಿಡಿ" },
   "buttonLabel_getSupport": { "message": "ಬೆಂಬಲ ಪಡೆಯಿರಿ" },
   "buttonLabel_updateCheck": { "message": "ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ" },
   "buttonLabel_update": { "message": "ನವೀಕರಿಸಿ" },
   "buttonLabel_dismiss": { "message": "ವಜಾಗೊಳಿಸಿ" },
   "link_viewChanges": { "message": "ಬದಲಾವಣೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ" },
-  "state_enabled": { "message": "à²à²¶à²à³à²¤à²à³à²³à²¿à²¸à²²à²¾à²à²¿à²¦à³" },
-  "state_disabled": { "message": "à²¸à²à²à³à²¯à²¾à²¤à³à²®à² à²¸à²¹ à²¸à²à²¸à³à²à²¾à²°à² (FPU)" }
+  "state_enabled": { "message": "ಸಕ್ರಿಯಗೊಳಿಸಲಾಗಿದೆ" },
+  "state_disabled": { "message": "ಅಂಗವಿಕಲ" }
 }
