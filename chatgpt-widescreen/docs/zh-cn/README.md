@@ -24,7 +24,7 @@
     <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://edge.chatgptwidescreen.com" target="_blank">
     <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
-<a href="https://chatgptwidescreen.com/greasyfork" target="_blank">
+<a href="https://greasyfork.chatgptwidescreen.com" target="_blank">
     <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
 
 </div>
@@ -147,7 +147,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
     <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptwidescreen.com">
     <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-edge-button.png"></a>
-<a href="https://chatgptwidescreen.com/greasyfork">
+<a href="https://greasyfork.chatgptwidescreen.com">
     <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-userscript-button.png"></a>
 
 <br>
