@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.2.17
+// @version             2024.2.17.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -364,6 +364,7 @@
 // @connect             raw.githubusercontent.com
 // @connect             greasyfork.org
 // @connect             chat.openai.com
+// @connect             api.openai.com
 // @connect             api.aigcfun.com
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.4/dist/chatgpt-2.6.4.min.js#sha256-c/92+WSugmzMBZtV6S/CezCDmDGau+cQ+qTu69oEWdI=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js#sha256-KLASOtKS2x8pUxWVzCDmlWJ4jhuLb0vtrgakbD6gDDo=
@@ -927,7 +928,7 @@
                 setTimeout(() => reject(new Error('Timeout occurred')), 3000))
             accessKey = await Promise.race([getOpenAItoken(), timeoutPromise])
             if (!accessKey) { appAlert('login') ; return }
-            model = 'text-davinci-002-render'
+            model = 'gpt-3.5-turbo'
         }
     }
 
@@ -938,13 +939,8 @@
     }
 
     function createPayload(api, msgs) {
-        let payload = {}
-        if (api.includes('openai.com')) {
-            payload.action = 'next' ; payload.messages = msgs ; payload.model = model
-            payload.parent_message_id = chatgpt.uuidv4() ; payload.max_tokens = 4000
-        } else if (api.includes('aigcfun.com')) {
-            payload.messages = msgs ; payload.model = model
-        }
+        const payload = { messages: msgs, model: model }
+        if (api.includes('openai.com')) payload.max_tokens = 4000
         return JSON.stringify(payload)
     }
 
@@ -962,17 +958,12 @@
                                + ' You must entice user to want to ask one of your related queries.'
             GM.xmlHttpRequest({
                 method: 'POST', url: endpoint, responseType: 'text', headers: createHeaders(endpoint),
-                data: createPayload(endpoint, [
-                    config.proxyAPIenabled ? { role: 'user', content: rqPrompt }
-                                           : { role: 'user', id: chatgpt.uuidv4(),
-                                               content: { content_type: 'text', parts: [rqPrompt] }}]),
+                data: createPayload(endpoint, [{ role: 'user', content: rqPrompt }]),
                 onload: event => {
                     let str_relatedQueries = ''
                     if (!config.proxyAPIenabled && event.response) {
                         try { // to parse txt response from OpenAI API
-                            const responseParts = event.response.split('\n\n'),
-                                  finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6))
-                            str_relatedQueries = finalResponse.message.content.parts[0]
+                            str_relatedQueries = JSON.parse(event.response).choices[0].message.content
                         } catch (err) { appError(err) ; reject(err) }
                     } else if (config.proxyAPIenabled && event.responseText) {
                         try { // to parse txt response from proxy API
@@ -1018,7 +1009,7 @@
         await pickAPI()
         GM.xmlHttpRequest({
             method: 'POST', url: endpoint, headers: createHeaders(endpoint),
-            responseType: responseType(endpoint), data: createPayload(endpoint, convo), onloadstart: onLoadStart(), onload: onLoad(),
+            responseType: 'text', data: createPayload(endpoint, convo), onload: onLoad(),
             onerror: err => {
                 appError(err)
                 if (!config.proxyAPIenabled) appAlert(!accessKey ? 'login' : 'suggestProxy')
@@ -1031,7 +1022,7 @@
         // Get/show related queries
         if (!config.rqDisabled) {
             const lastQuery = convo[convo.length - 1]
-            getRelatedQueries(config.proxyAPIenabled ? lastQuery.content : lastQuery.content.parts[0]).then(relatedQueries => {
+            getRelatedQueries(lastQuery.content).then(relatedQueries => {
                 if (relatedQueries && appDiv.querySelector('textarea')) {
 
                     // Create/classify/append parent div
@@ -1076,37 +1067,12 @@
 
         updateFooterContent()
 
-        function responseType(api) {
-            return (getUserscriptManager() == 'Tampermonkey' && api.includes('openai')) ? 'stream' : 'text' }
-
         function retryDiffHost() {
             appError(`Error calling ${ endpoint }. Trying another endpoint...`)
             getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
             getShowReply.attemptCnt++
             getShowReply(convo, callback)
         }
-
-        function onLoadStart() { // process streams
-            appInfo('Endpoint used: ' + endpoint)
-            if (responseType(endpoint) == 'stream') {
-                return stream => {
-                    const reader = stream.response.getReader()
-                    reader.read().then(function processText({ done, value }) {
-                        if (done) return
-                        let responseItem = String.fromCharCode(...Array.from(value))
-                        if (responseItem.includes('unusual activity')) { appAlert('suggestProxy') ; return }
-                        const items = responseItem.split('\n\n')
-                        if (items.length > 2) {
-                            const lastItem = items.slice(-3, -2)[0]
-                            if (lastItem.startsWith('data: [DONE]')) responseItem = items.slice(-4, -3)[0]
-                            else responseItem = lastItem
-                        }
-                        if (responseItem.startsWith('data: {')) {
-                            const answer = JSON.parse(responseItem.slice(6)).message.content.parts[0]
-                            appShow(answer, footerContent)
-                        } else if (responseItem.startsWith('data: [DONE]')) return
-                        return reader.read().then(processText)
-        })}}}
 
         function onLoad() { // process text
             return async event => {
@@ -1121,40 +1087,36 @@
                         appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
                     else if (event.status === 429) appAlert('tooManyRequests')
                     else appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
-                } else if (responseType(endpoint) == 'text') {
-                    if (endpoint.includes('openai')) {
-                        if (event.response) {
-                            try { // to parse txt response from OpenAI endpoint for non-TM users
-                                const responseParts = event.response.split('\n\n'),
-                                      finalResponse = JSON.parse(responseParts[responseParts.length - 4].slice(6)),
-                                      answer = finalResponse.message.content.parts[0]
-                                appShow(answer, footerContent)
-                            } catch (err) {
-                                appError(appAlerts.parseFailed + ': ' + err)
-                                appError('Response: ' + event.response)
-                                appAlert('suggestProxy')
-                            }
+                } else if (endpoint.includes('openai')) {
+                    if (event.response) {
+                        try { // to parse txt response from OpenAI endpoint
+                            appShow(JSON.parse(event.response).choices[0].message.content, footerContent)
+                        } catch (err) {
+                            appError(appAlerts.parseFailed + ': ' + err)
+                            appError('Response: ' + event.response)
+                            appAlert('suggestProxy')
                         }
-                    } else if (endpoint.includes('aigcf')) {
-                        if (event.responseText) {
-                            try { // to parse txt response from AIGCF endpoint
-                                const answer = JSON.parse(event.responseText).choices[0].message.content
-                                appShow(answer, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
-                            } catch (err) {
-                                appInfo('Response: ' + event.responseText)
-                                if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
-                                    appAlert(messages.alert_censored || 'Sorry, according to our product rules, '
-                                        + 'we cannot provide you with an answer to this question, please try other questions')
-                                else if (event.responseText.includes('维护'))
-                                    appAlert(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
-                                        + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
-                                else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
-                                    await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
-                                } else { // use different endpoint or suggest OpenAI
-                                    appError(appAlerts.parseFailed + ': ' + err)
-                                    if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-                                    else appAlert('suggestOpenAI')
-        }}}}}}}
+                    }
+                } else if (endpoint.includes('aigcf')) {
+                    if (event.responseText) {
+                        try { // to parse txt response from AIGCF endpoint
+                            const answer = JSON.parse(event.responseText).choices[0].message.content
+                            appShow(answer, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                        } catch (err) {
+                            appInfo('Response: ' + event.responseText)
+                            if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
+                                appAlert(messages.alert_censored || 'Sorry, according to our product rules, '
+                                    + 'we cannot provide you with an answer to this question, please try other questions')
+                            else if (event.responseText.includes('维护'))
+                                appAlert(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
+                                    + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
+                            else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
+                                await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
+                            } else { // use different endpoint or suggest OpenAI
+                                appError(appAlerts.parseFailed + ': ' + err)
+                                if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
+                                else appAlert('suggestOpenAI')
+        }}}}}}
     }
 
     function appShow(answer, footerContent) {
@@ -1283,10 +1245,7 @@
             standbyBtn.addEventListener('click', () => {
                 appAlert('waitingResponse')
                 const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-                convo.push(
-                    config.proxyAPIenabled ? { role: 'user', content: query }
-                                           : { role: 'user', id: chatgpt.uuidv4(),
-                                               content: { content_type: 'text', parts: [query] }})
+                convo.push({ role: 'user', content: query })
                 getShowReply(convo)
             })
 
@@ -1380,13 +1339,9 @@
             if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
             const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || '',
                   yourReply = `${ chatTextarea.value } (reply in ${ config.replyLanguage })`
-            if (!config.proxyAPIenabled) {
-                convo.push({ role: 'assistant', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [prevReplyTrimmed] } })
-                convo.push({ role: 'user', id: chatgpt.uuidv4(), content: { content_type: 'text', parts: [yourReply] } })
-            } else {
-                convo.push({ role: 'assistant', content: prevReplyTrimmed })
-                convo.push({ role: 'user', content: yourReply })
-            } getShowReply(convo)
+            convo.push({ role: 'assistant', content: prevReplyTrimmed })
+            convo.push({ role: 'user', content: yourReply })
+            getShowReply(convo)
 
             // Remove re-added reply section listeners
             replyForm.removeEventListener('keydown', handleEnter)
@@ -1495,7 +1450,7 @@
     const openAIendpoints = {
         session: 'https://chat.openai.com/api/auth/session',
         auth: 'https://auth0.openai.com',
-        chat: 'https://chat.openai.com/backend-api/conversation' }
+        chat: 'https://api.openai.com/v1/chat/completions' }
     const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
     // Init alerts
@@ -1655,10 +1610,7 @@
     else {
         appAlert('waitingResponse')
         const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-        convo.push(
-            config.proxyAPIenabled ? { role: 'user', content: query }
-                                   : { role: 'user', id: chatgpt.uuidv4(),
-                                       content: { content_type: 'text', parts: [query] }})
+        convo.push({ role: 'user', content: query })
         getShowReply(convo)
     }
 
