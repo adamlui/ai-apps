@@ -5,7 +5,7 @@
   </picture>  
 </h1>
 
-[![](https://img.shields.io/greasyfork/dt/462440?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/scripts/462440-bravegpt)
+[![](https://img.shields.io/greasyfork/dt/462440?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/scripts/462440-bravegpt)
 [![](https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/bravegpt/blob/main/LICENSE)
 [![](https://img.shields.io/github/commit-activity/m/KudoAI/bravegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/KudoAI/bravegpt/commits/main)
 [![](https://img.shields.io/codacy/grade/5f104994b1464a5c9d8b1b858182fdc2?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/KudoAI/bravegpt/commits?utm_source=bravegpt&utm_content=github_shield)
