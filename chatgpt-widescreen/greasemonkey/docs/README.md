@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![](https://img.shields.io/greasyfork/dt/461473?label=Installs&logo=docusign&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode)
+[![](https://img.shields.io/greasyfork/dt/461473?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode)
 [![](https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
 [![](https://img.shields.io/codacy/grade/918850986ce14fa2b4a99f00bbbfb5cc?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-widescreen/commits?utm_source=chatgpt_widescreen&utm_content=github_shield)
