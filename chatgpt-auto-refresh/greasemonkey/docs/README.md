@@ -11,7 +11,7 @@
 
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Auto Refresh ↻ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20constant%20interruptions%20on%20ChatGPT%3F%20Auto-refresh%20your%20sessions%20w%2F%20this%20plug-in%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt)
 
-[![](https://img.shields.io/badge/Installs-10,000+-2bbbd8?logo=docusign&logoColor=white&labelColor=464646&style=for-the-badge)](https://gf.chatgptautorefresh.com)
+[![](https://img.shields.io/badge/Users-10,000+-2bbbd8?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)](https://gf.chatgptautorefresh.com)
 [![](https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=Stars&color=fcf67b&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/stargazers)
 [![](https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/LICENSE)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
