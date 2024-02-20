@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.2.19
+// @version             2024.2.20
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -240,6 +240,7 @@
                 const relatedQueriesDiv = document.querySelector('.related-queries')
                 relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
             } catch (err) {}
+            updateTweaksStyle() // toggle <pre> max-height
             notify(( messages.menuLabel_relatedQueries || 'Related Queries' ) + ' '
                 + state.word[+config.rqDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -271,12 +272,19 @@
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
-        // Add command to toggle wider sidebar
         if (!isCentered && !isMobile) {
+
+            // Add command to toggle wider sidebar
             const wsbLabel = state.symbol[+!config.widerSidebar] + ' '
                            + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                            + state.separator + state.word[+!config.widerSidebar]
-            menuIDs.push(GM_registerMenuCommand(wsbLabel, toggleWiderSidebar))
+            menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
+
+            // Add command to toggle sticky sidebar
+            const ssbLabel = state.symbol[+!config.stickySidebar] + ' '
+                           + ( messages.menuLabel_stickySidebar || 'Sticky Sidebar' )
+                           + state.separator + state.word[+!config.stickySidebar]
+            menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
         }
 
         // Add command to set reply language
@@ -434,15 +442,31 @@
 
     function isCenteredMode() { return document.documentElement.classList.toString().includes('center') }
 
-    function toggleWiderSidebar() {
-        saveSetting('widerSidebar', !config.widerSidebar)
+    function toggleSidebar(mode) {
+        saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
         updateTweaksStyle()
-        if (document.querySelector('.corner-btn')) updateWSBsvg()
-        notify(( messages.menuLabel_widerSidebar || 'Wider Sidebar' ) + ' ' + state.word[+!config.widerSidebar])
+        if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg() ; else updateSSBsvg()
+        notify(( messages[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
+            + ' ' + state.word[+!config[mode + 'Sidebar']])
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     }
 
-    function updateTweaksStyle() { tweaksStyle.innerText = config.widerSidebar ? wsbStyles : '' }
+    function updateTweaksStyle() {
+        const isStandbyMode = document.querySelector('.standby-btn'),
+              answerIsLoaded = document.querySelector('.corner-btn')
+
+        // Update tweaks style based on settings (for tweaks init + appShow() + toggleSidebar())
+        tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
+                              + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
+
+        // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for getShowReply()'s RQ show + menu RQ toggle)
+        const answerPre = document.querySelector('.ddgpt pre'),
+              relatedQueries = document.querySelector('.related-queries'),
+              shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 245,
+              longerPreHeight = window.innerHeight - 255
+        if (answerPre) answerPre.style.maxHeight = !config.stickySidebar ? 'none' : (
+            relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
+    }
 
     function updateWSBsvg() {
 
@@ -467,6 +491,31 @@
         const wsbSVGpaths = config.widerSidebar ? wsbONpaths : wsbOFFpaths
         wsbSVGpaths.forEach(path => wsbSVG.append(path))
         if (!wsbSpan.contains(wsbSVG)) wsbSpan.append(wsbSVG)
+    }
+
+    function updateSSBsvg() {
+
+        // Init span/SVG/paths
+        const ssbSpan = appDiv.querySelector('#ssb-btn'),
+              ssbSVG = ssbSpan.querySelector('svg')
+        const ssbONpaths = [
+            createSVGpath({
+                d: 'M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z' }) ]
+        const ssbOFFpaths = [
+            createSVGpath({
+                d: 'M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146zm.122 2.112v-.002.002zm0-.002v.002a.5.5 0 0 1-.122.51L6.293 6.878a.5.5 0 0 1-.511.12H5.78l-.014-.004a4.507 4.507 0 0 0-.288-.076 4.922 4.922 0 0 0-.765-.116c-.422-.028-.836.008-1.175.15l5.51 5.509c.141-.34.177-.753.149-1.175a4.924 4.924 0 0 0-.192-1.054l-.004-.013v-.001a.5.5 0 0 1 .12-.512l3.536-3.535a.5.5 0 0 1 .532-.115l.096.022c.087.017.208.034.344.034.114 0 .23-.011.343-.04L9.927 2.028c-.029.113-.04.23-.04.343a1.779 1.779 0 0 0 .062.46z' }) ]
+
+        // Set SVG attributes
+        for (const [attr, value] of [['width', 16], ['height', 16], ['viewBox', '0 0 16 16']])
+            ssbSVG.setAttribute(attr, value)
+        ssbSpan.title = ( config.stickySidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
+                      + messages.menuLabel_stickySidebar || 'Sticky Sidebar'
+
+        // Update SVG elements
+        while (ssbSVG.firstChild) { ssbSVG.removeChild(ssbSVG.firstChild) }
+        const ssbSVGpaths = config.stickySidebar ? ssbONpaths : ssbOFFpaths
+        ssbSVGpaths.forEach(path => ssbSVG.append(path))
+        if (!ssbSpan.contains(ssbSVG)) ssbSpan.append(ssbSVG)
     }
 
     function createSVGpath(attrs) {
@@ -500,7 +549,7 @@
     }
 
     function updateTooltip(buttonType) { // text & position
-        const cornerBtnTypes = ['about', 'speak', 'wsb'],
+        const cornerBtnTypes = ['about', 'speak', 'ssb', 'wsb'],
               [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [15, 18] : [1, 32],
               iniRoffset = spreadFactor * (buttonType == 'send' ? 1.6 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
@@ -508,6 +557,8 @@
         tooltipDiv.innerText = (
             buttonType == 'about' ? messages.menuLabel_about || 'About'
           : buttonType == 'speak' ? messages.tooltip_playAnswer || 'Play answer'
+          : buttonType == 'ssb' ? (( config.stickySidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
+                                   + messages.menuLabel_stickySidebar || 'Sticky Sidebar' )
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
                                    + messages.menuLabel_widerSidebar || 'Wider Sidebar' )
           : buttonType == 'send' ? messages.tooltip_sendReply || 'Send reply' : '' )
@@ -633,8 +684,7 @@
                            + ' But the key is variety. Do not be repetitive.'
                                + ' You must entice user to want to ask one of your related queries.'
             GM.xmlHttpRequest({
-                method: 'POST', url: endpoint, responseType: 'text',
-                headers: createHeaders(endpoint),
+                method: 'POST', url: endpoint, responseType: 'text', headers: createHeaders(endpoint),
                 data: createPayload(endpoint, [{ role: 'user', content: rqPrompt }]),
                 onload: event => {
                     let str_relatedQueries = ''
@@ -685,8 +735,7 @@
         // Get/show answer from ChatGPT
         await pickAPI()
         GM.xmlHttpRequest({
-            method: 'POST', url: endpoint,
-            headers: createHeaders(endpoint),
+            method: 'POST', url: endpoint, headers: createHeaders(endpoint),
             responseType: 'text', data: createPayload(endpoint, convo), onload: onLoad(),
             onerror: err => {
                 appError(err)
@@ -739,6 +788,8 @@
                             relatedQueryDiv.addEventListener('keydown', rqEventHandler)
                         }, index * 100)
                     })
+
+                    updateTweaksStyle() // to shorten <pre> max-height
         }})}
 
         function retryDiffHost() {
@@ -780,11 +831,11 @@
                             appInfo('Response: ' + event.responseText)
                             if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
                                 appAlert(messages.alert_censored || 'Sorry, according to our product rules, '
-                                + 'we cannot provide you with an answer to this question, please try other questions')
+                                    + 'we cannot provide you with an answer to this question, please try other questions')
                             else if (event.responseText.includes('维护'))
                                 appAlert(( messages.alert_maintenance || 'AI system under maintenance' ) + '. '
-                                + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
-                            else if (event.responseText.includes('finish_reason')) { // if other AIGCF error
+                                    + ( messages.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
+                            else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
                                 await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
                             } else { // use different endpoint or suggest OpenAI
                                 appError(appAlerts.parseFailed + ': ' + err)
@@ -827,7 +878,7 @@
             var speakSpan = document.createElement('span'),
                 speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             speakSpan.id = 'speak-btn' // for toggleTooltip()
-            speakSpan.className = 'corner-btn' ; speakSpan.style.margin = '-0.117em 10px 0 0'
+            speakSpan.className = 'corner-btn' ; speakSpan.style.margin = '-0.117em 8px 0 0'
             const speakSVGattrs = [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']]
             speakSVGattrs.forEach(([attr, value]) => speakSVG.setAttributeNS(null, attr, value))
             const speakSVGpaths = [
@@ -842,12 +893,20 @@
             speakSpan.append(speakSVG) ; appDiv.append(speakSpan)
         }
 
-        // Create/append Wider Sidebar button
         if (!isCentered && !isMobile) {
+
+            // Create/append Sticky Sidebar button
+            var ssbSpan = document.createElement('span'),
+                ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+            ssbSpan.id = 'ssb-btn' // for updateSSBsvg() + toggleTooltip()
+            ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '0.09rem 8px 0 0'
+            ssbSpan.append(ssbSVG) ; appDiv.append(ssbSpan) ; updateSSBsvg()
+
+            // Create/append Wider Sidebar button
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-            wsbSpan.id = 'wsb-btn' // for toggleTooltip()
-            wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.05rem 14px 0 0'
+            wsbSpan.id = 'wsb-btn' // for updateSSBsvg() + toggleTooltip()
+            wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.05rem 12px 0 0'
             wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan) ; updateWSBsvg()
         }
 
@@ -855,7 +914,7 @@
         appDiv.append(tooltipDiv)
 
         // Add corner button listeners
-        wsbSVG?.addEventListener('click', toggleWiderSidebar)
+        aboutSVG.addEventListener('click', launchAboutModal)
         speakSVG?.addEventListener('click', () => {
             const dialectMap = [
                 { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
@@ -888,7 +947,8 @@
                 + encodeURIComponent(securePayload))
             speakAudio.play().catch(() => chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 }))
         })
-        aboutSVG.addEventListener('click', launchAboutModal)
+        ssbSVG?.addEventListener('click', () => toggleSidebar('sticky'))
+        wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
         const buttonSpans = [aboutSpan, speakSpan, wsbSpan]
         buttonSpans.forEach(span => { if (span) { // add hover listeners for tooltips
             span.addEventListener('mouseover', toggleTooltip)
@@ -915,6 +975,8 @@
             balloonTipSpan.className = 'balloon-tip' ; answerPre.textContent = answer
             appDiv.append(balloonTipSpan) ; appDiv.append(answerPre)
         }
+
+        updateTweaksStyle() // in case sticky mode on
 
         // Create/append reply section/elements
         const replySection = document.createElement('section'),
@@ -1041,7 +1103,7 @@
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('proxyAPIenabled', 'autoGetDisabled', 'rqDisabled',
+    loadSetting('proxyAPIenabled', 'autoGetDisabled', 'rqDisabled', 'stickySidebar',
                 'prefixEnabled', 'suffixEnabled', 'widerSidebar', 'replyLanguage')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = [], menuIDs = []
@@ -1129,7 +1191,7 @@
             + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
         + '.ddgpt pre {'
             + 'font-size: 1.14rem ; white-space: pre-wrap ; margin: .85rem 0 7px 0 ; padding: 1.25em ;'
-            + 'border-radius: 10px ; line-height: 21px ; min-width: 0 ;'
+            + 'border-radius: 10px ; line-height: 21px ; min-width: 0 ; overflow: auto ;'
             + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2' : '' ) + '}'
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.ddgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
@@ -1145,7 +1207,7 @@
             + 'margin: 3px 0 15px 0 ; padding: 12px 10px 4px 10px ;'
             + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' } '
         + '.related-queries {'
-            + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ;'
+            + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ; overflow: auto ;'
             + ( isChromium ? 'top: -25px ; margin: -7px 0 -15px' : 'top: -20px ; margin: -3px 0 -10px') + '}'
         + '.related-query {'
             + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 4px 10px 5px 10px ;`
@@ -1190,7 +1252,10 @@
     const tweaksStyle = document.createElement('style'),
           wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
                     + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
-                    + '#app-chatbar { width: 95.6% }'
+                    + '#app-chatbar { width: 95.6% }',
+          ssbStyles = '.ddgpt { position: sticky ; top: 14px }'
+                    + '.ddgpt ~ * { display: none }' // hide sidebar contents
+                    + 'body, div.site-wrapper { overflow: clip }' // replace `overflow: hidden` to allow stickiness
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/stylize tooltip div
