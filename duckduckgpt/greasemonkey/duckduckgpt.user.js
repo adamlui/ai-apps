@@ -25,7 +25,7 @@
 // @description:es      Agrega respuestas de ChatGPT a la barra lateral de DuckDuckGo (¡con tecnología de GPT-4!)
 // @description:et      Lisab ChatGPT vastused DuckDuckGo Search küljepaneelile (toetatud GPT-4 poolt!)
 // @description:eu      Gehitu ChatGPT erantzunak DuckDuckGo Search aldeko alderakoan (GPT-4ren aurrerapenean oinarrituta!)
-// @description:fa      ChatGPT به پاسخ‌های DuckDuckGo Search نوار کناری اضافه می‌کند (با پشتیبانی GPT-4!)
+// @description:fa      ChatGPT به پاسخهای DuckDuckGo Search نوار کناری اضافه میکند (با پشتیبانی GPT-4!)
 // @description:fi      Lisää ChatGPT-vastaukset DuckDuckGo-hakupalkkiin (GPT-4:n tuella!)
 // @description:fil     Nagdaragdag ng mga sagot ng ChatGPT sa sidebar ng DuckDuckGo Search (suportado ng GPT-4!)
 // @description:fj      Vakarautaka na vosa vakatotolo ni ChatGPT ki na yasa ni liga ni DuckDuckGo (sa dodonu e GPT-4!)
@@ -119,7 +119,7 @@
 // @description:sv      Lägger till ChatGPT-svar i DuckDuckGo-sökraden (drivs av GPT-4!)
 // @description:sw      Inaongeza majibu ya ChatGPT kwenye ubao wa upande wa DuckDuckGo (inaendeshwa na GPT-4!)
 // @description:ta      டக் டக் கோ தேடலின் பக்கத்தில் ChatGPT பதில்களைச் சேர்க்கின்றது (GPT-4 ஆன்லான்!)
-// @description:te      డక్‌డక్‌గో శోధన పట్టిక పై ChatGPT సమాధానాలను జోడిస్తుంది (GPT-4 ద్వారా మొత్తంగా!)
+// @description:te      డక్డక్గో శోధన పట్టిక పై ChatGPT సమాధానాలను జోడిస్తుంది (GPT-4 ద్వారా మొత్తంగా!)
 // @description:tg      Зиёд кардани ҷавобҳои ChatGPT ба тарафи сатҳи ҷустуҷӯ DuckDuckGo (асосшавӣ ба GPT-4!)
 // @description:th      เพิ่มคำตอบจาก ChatGPT ในแถบด้านข้างของการค้นหา DuckDuckGo (รองรับโดย GPT-4!)
 // @description:ti      ኣብ DuckDuckGo ስልጠና ኣብ ChatGPT ምልክትን ኣማራጺ (በተመስረበ በተን GPT-4!)
@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.2.17.1
+// @version             2024.2.19
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
