@@ -25,7 +25,7 @@
 // @description:es      Agrega respuestas de ChatGPT a la barra lateral de Brave Search (¡impulsado por GPT-4!)
 // @description:et      Lisab ChatGPT vastused Brave Search küljepaneelile (toetatud GPT-4 poolt!)
 // @description:eu      Gehitu ChatGPT erantzunak Brave Search aldeko alderakoan (GPT-4ren aurrerapenean oinarrituta!)
-// @description:fa      ChatGPT پاسخ‌ها را به نوار کناری جستجوی Brave اضافه می‌کند (قدرت گرفته شده توسط GPT-4!)
+// @description:fa      ChatGPT پاسخها را به نوار کناری جستجوی Brave اضافه میکند (قدرت گرفته شده توسط GPT-4!)
 // @description:fi      Lisää ChatGPT-vastaukset Brave-haun sivupalkkiin (käyttäen GPT-4!)
 // @description:fo      Leggur ChatGPT-svar til Brave leitarstika síðupall (drivin av GPT-4!)
 // @description:fr      Ajoute les réponses de ChatGPT à la barre latérale de Brave Search (propulsé par GPT-4 !)
@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.2.17.1
+// @version             2024.2.19
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -1351,6 +1351,7 @@
                     + '.bravegpt { width: 521px }',
           ssbStyles = '.bravegpt { position: sticky ; top: 14px }'
                     + '.bravegpt ~ * { display: none }' // hide sidebar contents
+                    + 'main > div:first-of-type { overflow: visible !important }'
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/stylize tooltip div
