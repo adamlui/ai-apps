@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.17
+// @version             2024.2.21
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -269,8 +269,8 @@
         .replace(/(\d+)-?(.*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
-    loadSetting('fullerWindows', 'fullWindow', 'notifDisabled', 'tcbDisabled',
-        'widerChatbox', 'hiddenHeader', 'hiddenFooter', 'ncbDisabled', 'wideScreen')
+    loadSetting('fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader', 'notifDisabled',
+                'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen')
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
