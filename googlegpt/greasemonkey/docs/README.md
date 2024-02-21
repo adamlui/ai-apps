@@ -11,7 +11,7 @@
 
 <br>
 
-<a href="https://greasyfork.org/scripts/478597-googlegpt"><img height=31 src="https://img.shields.io/badge/Users-20,000+-2bbbd8?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://greasyfork.org/scripts/478597-googlegpt"><img height=31 src="https://img.shields.io/badge/Users-30,000+-2bbbd8?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/googlegpt/blob/main/LICENSE"><img height=31 src="https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/kudoai/googlegpt/commits/main"><img height=31 src="https://img.shields.io/github/commit-activity/m/kudoai/googlegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <a href="https://app.codacy.com/gh/KudoAI/googlegpt/commits?utm_source=googlegpt&utm_content=github_shield"><img height=31 src="https://img.shields.io/codacy/grade/302435545aed43d2b65f864992184a58?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
