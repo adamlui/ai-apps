@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.2.19
+// @version             2024.2.21
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -1177,8 +1177,8 @@
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('proxyAPIenabled', 'autoGetDisabled', 'rqDisabled',
-                'prefixEnabled', 'suffixEnabled', 'widerSidebar', 'stickySidebar', 'replyLanguage')
+    loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
+                'rqDisabled', 'stickySidebar', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = [], menuIDs = []
     const state = {
