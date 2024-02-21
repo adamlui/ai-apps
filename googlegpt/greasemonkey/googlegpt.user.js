@@ -27,7 +27,7 @@
 // @description:es      Agrega respuestas de ChatGPT a la barra lateral de Google
 // @description:et      Lisab ChatGPT vastused Google otsingu küljepaneelile
 // @description:eu      Gehitu ChatGPT erantzunak Google bilaketako aldeko alderakoan
-// @description:fa      ChatGPT به پاسخ‌های Google جستجو نوار کناری اضافه می‌کند
+// @description:fa      ChatGPT به پاسخهای Google جستجو نوار کناری اضافه میکند
 // @description:fi      Lisää ChatGPT-vastaukset Googleen
 // @description:fil     Nagdaragdag ng mga sagot ng ChatGPT sa sidebar ng Google Search
 // @description:fj      Vakarautaka na vosa vakatotolo ni ChatGPT ki na yasa ni liga ni Google
@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.2.17.1
+// @version             2024.2.21
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
