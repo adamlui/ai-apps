@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.23
+// @version             2024.2.26
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -627,6 +627,9 @@
         toggleLabel.id = 'acToggleLabel'
         toggleLabel.style.marginLeft = '-41px' // left-shift to navicon
         toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
+        toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : 148 }px` // to truncate overflown text
+        toggleLabel.style.overflow = 'hidden' // to truncate overflown text
+        toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
         toggleLabel.innerText = ( messages.mode_autoClear || 'Auto-clear' ) + ' '
                               + ( toggleInput.checked ? ( messages.state_enabled  || 'enabled' )
                                                       : ( messages.state_disabled || 'disabled' ))
