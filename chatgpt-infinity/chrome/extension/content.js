@@ -197,6 +197,9 @@
                 toggleLabel.id = 'infToggleLabel'
                 toggleLabel.style.marginLeft = '-41px' // left-shift to navicon
                 toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
+                toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : 148 }px` // to truncate overflown text
+                toggleLabel.style.overflow = 'hidden' // to truncate overflown text
+                toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
                 toggleLabel.innerText = chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
                                       + chrome.i18n.getMessage('state_' + ( toggleInput.checked ? 'enabled' : 'disabled' ))
                 // Append elements
