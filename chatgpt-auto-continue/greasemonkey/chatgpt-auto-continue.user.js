@@ -11,7 +11,7 @@
 // @name:bs             ChatGPT Automatski Nastavi ⏩
 // @name:ca             ChatGPT Auto-Continua ⏩
 // @name:ceb            ChatGPT Auto-Padayon ⏩
-// @name:ckb            ChatGPT ده‌ستكاری خۆکار ⏩
+// @name:ckb            ChatGPT دهستكاری خۆکار ⏩
 // @name:cs             ChatGPT Automatické Pokračování ⏩
 // @name:cy             ChatGPT Auto-Parhau ⏩
 // @name:da             ChatGPT Auto-Fortsæt ⏩
@@ -196,7 +196,7 @@
 // @description:sv      ⚡ Fortsätt att automatiskt generera flera ChatGPT-svar
 // @description:sw      ⚡ Endelea kuzalisha majibu mengi ya ChatGPT kiotomatiki
 // @description:ta      ⚡ தானியங்கி மீண்டும் பல விளக்கங்களை உருவாக்கத் தொடர்ந்துவிடுங்கள் ChatGPT
-// @description:te      ⚡ ఆటోమేటిక్‌గా మరియు మరిన్ని ChatGPT సమాధానాలను రచించండి
+// @description:te      ⚡ ఆటోమేటిక్గా మరియు మరిన్ని ChatGPT సమాధానాలను రచించండి
 // @description:tg      ⚡ Идомаи автоматӣ барои иҷод кардани чанд ҷавоби ChatGPT
 // @description:th      ⚡ ดำเนินการสร้างคำตอบหลาย ๆ ของ ChatGPT อัตโนมัติ
 // @description:ti      ⚡ ደቂቃዎት የሚጠፋ ኮድ ብቻ በኮስታኒክስ በሚገባ ጥሩ ጥያቄዎች ይሰጣል
@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.23
+// @version             2024.2.26
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
