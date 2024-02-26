@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT Automatikus Frissítés" },
   "appDesc": { "message": "*BIZTONSÁGOSAN* frissen tartja a ChatGPT munkameneteit, kiküszöbölve a folyamatos hálózati hibákat és Cloudflare ellenőrzéseket (mindezt a háttérben!)" },
-  "menuLabel_autoRefresh": { "message": "Automatikus frissítés" },
+  "menuLabel_autoRefresh": { "message": "Auto frissítés" },
   "menuLabel_toggleVis": { "message": "Láthatóság váltása" },
   "menuLabel_modeNotifs": { "message": "Mód értesítések" },
   "menuLabel_refreshInt": { "message": "Frissítési időköz" },
