@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.26
+// @version             2024.2.26.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -642,6 +642,9 @@
         toggleLabel.id = 'arToggleLabel'
         toggleLabel.style.marginLeft = '-41px' // left-shift to navicon
         toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
+        toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : 148 }px` // to truncate overflown text
+        toggleLabel.style.overflow = 'hidden' // to truncate overflown text
+        toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
         toggleLabel.innerText = ( messages.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' '
                               + ( toggleInput.checked ? ( messages.state_enabled  || 'enabled' )
                                                       : ( messages.state_disabled || 'disabled' ))
