@@ -21,7 +21,7 @@
 // @name:es             ChatGPT Infinito ∞
 // @name:et             ChatGPT Lõpmatus ∞
 // @name:eu             ChatGPT Infinitua ∞
-// @name:fa             ChatGPT بی‌نهایت ∞
+// @name:fa             ChatGPT بینهایت ∞
 // @name:fi             ChatGPT Ääretön ∞
 // @name:fo             ChatGPT Óendanlighed ∞
 // @name:fr             ChatGPT Infini ∞
@@ -111,7 +111,7 @@
 // @description:es      Genera respuestas infinitas desde el ChatGPT omnisciente (¡en cualquier idioma!)
 // @description:et      Loo lõputuid vastuseid kõike-teadvast ChatGPT-st (mis tahes keeles!)
 // @description:eu      Sortu erantzun infinituak guztiz-arduratsuaren ChatGPT-tik (edozein hizkuntzan!)
-// @description:fa      پاسخ‌های بی‌پایانی را از ChatGPT همه‌دانا تولید کنید (به هر زبانی!)
+// @description:fa      پاسخهای بیپایانی را از ChatGPT همهدانا تولید کنید (به هر زبانی!)
 // @description:fi      Luo loputtomia vastauksia kaikkitietävästä ChatGPT:stä (millä tahansa kielellä!)
 // @description:fo      Skapa endalaus svør frá altvitandi ChatGPT (á hvørjum málrøð!)
 // @description:fr      Générez des réponses infinies à partir de ChatGPT qui sait tout (dans n'importe quelle langue!)
@@ -135,7 +135,7 @@
 // @description:kab     Kkes-as yidir seg yisem-asen n tafriqt ara ddunnit ChatGPT (di tifrat ara ddunit!)
 // @description:kk      Барлық тілде бар білген ChatGPT-ден шексіз жауаптар жасау (қандай да тілде!)
 // @description:km      បង្កើតចម្លើយមិនឃើញចប់ពី ChatGPT ដែលចែកសង្ស័យទាំងអស់ (ជាន់គ្រប់ភាសា!)
-// @description:kn      ಎಲ್ಲರು ತಿಳಿದಿರುವ ಚಾಟ್‌ಜಿಪಿಟಿಯಿಂದ ಅನಂತ ಉತ್ತರಗಳನ್ನು ರಚಿಸಿ (ಯಾವುದೇ ಭಾಷೆಯಲ್ಲಿ!)
+// @description:kn      ಎಲ್ಲರು ತಿಳಿದಿರುವ ಚಾಟ್ಜಿಪಿಟಿಯಿಂದ ಅನಂತ ಉತ್ತರಗಳನ್ನು ರಚಿಸಿ (ಯಾವುದೇ ಭಾಷೆಯಲ್ಲಿ!)
 // @description:ko      어떤 언어로든지 무궁무진한 답변을 만들어내는 ChatGPT입니다!
 // @description:ku      Ji ChatGPT-ê, ku hemî tiştan dizane, bersiva li serbazên li dor qewî yên hilbijartin (bi hertiştî zimanek!)
 // @description:ky      Түз билимдүү ChatGPT боюнча чыгармаларды жаса
@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.23
+// @version             2024.2.26
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://media.chatgptinfinity.com/images/icons/infinity-symbol/black/icon48.png
