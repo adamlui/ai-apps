@@ -44,7 +44,7 @@
 // @name:kab            ChatGPT Amezwaru n Tikliwin Isellalen 🖥️
 // @name:kk             ChatGPT Көлеңкескен түрі 🖥️
 // @name:km             ChatGPT របៀបបង្អស្សមួយធ្វើដំបូង 🖥️
-// @name:kn             ChatGPT ChatGPT ವೈಡ್‌ಸ್ಕ್ರೀನ್ ಮೋಡ್ 🖥️
+// @name:kn             ChatGPT ChatGPT ವೈಡ್ಸ್ಕ್ರೀನ್ ಮೋಡ್ 🖥️
 // @name:ko             ChatGPT 와이드 스크린 모드 🖥️
 // @name:ku             ChatGPT Moda Pêlên Dirêj 🖥️
 // @name:ky             ChatGPT Жогорку Экрандык Режим 🖥️
@@ -56,7 +56,7 @@
 // @name:mg             ChatGPT Tarehimarika tamin'ny Widescreen 🖥️
 // @name:mi             ChatGPT Āhua Whātika ā-Raupapa 🖥️
 // @name:mk             ChatGPT Режим на широк екран 🖥️
-// @name:ml             ChatGPT വൈഡ്‌സ്‌ക്രീൻ മോഡ് 🖥️
+// @name:ml             ChatGPT വൈഡ്സ്ക്രീൻ മോഡ് 🖥️
 // @name:mn             ChatGPT Жинхэнэ Экранны Арга 🖥️
 // @name:ms             ChatGPT Mod Skrin Lebar 🖥️
 // @name:mt             ChatGPT Modalità Widescreen 🖥️
@@ -164,7 +164,7 @@
 // @description:mg      Mametraka ny fomba Widescreen + Fullscreen amin'ny ChatGPT mba handresy ny fandefasana + famindrampoana ny firotsahana
 // @description:mi      Ka whakarite ana i ngā āhuatanga Widescreen + Fullscreen ki te ChatGPT mō te whakaatu whakapai ake + te whakaiti i te whakararuraru
 // @description:mk      Додава режими на Widescreen + Fullscreen во ChatGPT за подобрување на приказот + намалување на скролирањето
-// @description:ml      വായ്ഡ്‌സ്‌ക്രീൻ + പൂർണ്ണസ്ക്രീൻ മോഡുകൾ ചേർക്കുന്നു ChatGPT-യിൽ മിക്കവാറും കാഴ്ചപ്പാട് + കുറവ് തിരിക്കൽ ചെയ്യുന്നതിന്
+// @description:ml      വായ്ഡ്സ്ക്രീൻ + പൂർണ്ണസ്ക്രീൻ മോഡുകൾ ചേർക്കുന്നു ChatGPT-യിൽ മിക്കവാറും കാഴ്ചപ്പാട് + കുറവ് തിരിക്കൽ ചെയ്യുന്നതിന്
 // @description:mn      Widescreen + Fullscreen горимуудыг ChatGPT рүү нэмэх нь дэлгэцэнд хувцаслан + гүйлгээний эвдрэлдээ хянахыг оруулна
 // @description:mr      व्हाइडस्क्रीन + फुलस्क्रीन मोड्स चे ChatGPTमध्ये जोडले जातात व पाहणी वाढविण्यासाठी स्क्रोलिंग कमी करतात
 // @description:ms      Menambah mod Widescreen + Layar Penuh ke ChatGPT untuk tampilan yang lebih baik + pengurangan penatalan
@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.23
+// @version             2024.2.26
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
