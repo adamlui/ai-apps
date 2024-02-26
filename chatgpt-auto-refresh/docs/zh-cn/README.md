@@ -166,6 +166,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13482553?first-contrib=2023.10.05-chat-reset-fix&h=50&w=50&mask=circle&maxage=7d "@h-h-h-h")](https://github.com/h-h-h-h)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/5162926?first-contrib=2023.11.27-ui-change-report&h=50&w=50&mask=circle&maxage=7d "@xspeed1989")](https://github.com/xspeed1989)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/53054099?first-contrib=2023.2.3-added-eslint-plugin-userscripts&h=50&w=50&mask=circle&maxage=7d "@Yash-Singh1")](https://github.com/Yash-Singh1)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2911588?first-contrib=2023.2.26-shortened-hungarian-menu-label&h=50&w=50&mask=circle&maxage=7d "@sanchomuzax")](https://github.com/sanchomuzax)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110?h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
