@@ -11,7 +11,7 @@
 // @name:bo             ChatGPT རེའུ་མིན་པར་སྣོད་དང་ ↻
 // @name:bs             ChatGPT Automatsko Osvježavanje ↻
 // @name:ca             ChatGPT Actualització Automàtica ↻
-// @name:ckb            ChatGPT نوێکردنه‌وه‌ی خۆکار ↻
+// @name:ckb            ChatGPT نوێکردنهوهی خۆکار ↻
 // @name:cs             ChatGPT Automatické obnovení ↻
 // @name:cy             ChatGPT Adnewyddu Auto ↻
 // @name:da             ChatGPT Automatisk Opdatering ↻
@@ -198,7 +198,7 @@
 // @description:sv      *SÄKERT* eliminera 10-minuters återställningar av chattar, konstanta nätverksfel och Cloudflare-kontroller från ChatGPT.
 // @description:sw      *KWA USALAMA* ondoa marejesho ya mazungumzo ya dakika 10, hitilafu endelevu za mtandao na ukaguzi wa Cloudflare kutoka ChatGPT.  
 // @description:ta      *பாதுகாப்பாக* 10 நிமிட உரையாடல் மறுதொடக்கங்கள், தொடர்ச்சியான வலையமைப்பு பிழைகள், மேகக்கம்பெனி சோதனைகளை ChatGPT இருந்து அகற்றுங்கள்.
-// @description:te      *సురక్షితంగా* 10 నిమిషాల చాట్ రీసెట్‌లు, నిరంతర నెట్‌వర్క్ లోపాలు, క్లౌడ్‌ఫ్లేర్ తనిఖీలను ChatGPT నుండి తీసివేయండి.
+// @description:te      *సురక్షితంగా* 10 నిమిషాల చాట్ రీసెట్లు, నిరంతర నెట్వర్క్ లోపాలు, క్లౌడ్ఫ్లేర్ తనిఖీలను ChatGPT నుండి తీసివేయండి.
 // @description:tg      *БО ҲИФЗИ АМНИЯТ* 10-дақиқагии бозсозии чат, хатогиҳои доимии шабака ва санҷиши Cloudflare-ро аз ChatGPT ҳазф намоед.
 // @description:th      *อย่างปลอดภัย* กําจัดการรีเซ็ตแชท 10 นาที ข้อผิดพลาดของเครือข่ายตลอดเวลา และการตรวจสอบของ Cloudflare ออกจาก ChatGPT
 // @description:ti      *ብናይ ደሞዝ* 10 ደቂቕ ድምጺ ናይ መጀመርታ ምቕራብን, ናይ ሕፅይቲ ምእታይን, ናይ Cloudflare ፍልጠትን ካብ ChatGPT ክወግዙ::
@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.23
+// @version             2024.2.26
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
