@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.2.23
+// @version             2024.3.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -137,7 +137,7 @@
 // @connect             chat.openai.com
 // @connect             api.openai.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.5/dist/chatgpt.min.js#sha256-g22gyKeCX7FgEKHXxU3huz8oDksJqCURmRF2RwgSrP0=
+// @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.6/dist/chatgpt.min.js#sha256-mdofvno5msJKgn8yKeix/hTgJuC3rrMtbWgvHuMdFL4=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js#sha256-KLASOtKS2x8pUxWVzCDmlWJ4jhuLb0vtrgakbD6gDDo=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js#sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=
 // @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js#sha256-jjsBF/TfS+RSwLavW48KCs+dSt4j0I1V1+MSryIHd2I=
