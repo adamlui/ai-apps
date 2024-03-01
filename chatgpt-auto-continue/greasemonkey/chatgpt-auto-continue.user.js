@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.2.26
+// @version             2024.3.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
@@ -300,9 +300,10 @@
     const continueObserver = new MutationObserver(mutations =>
         mutations.forEach(mutation => {
             if (mutation.attributeName == 'style' && mutation.target.style.opacity == '1') {
-                document.querySelectorAll('button').forEach(button => {
-                    if (button.textContent.includes('Continue generating')) {
-                        button.click() ; notify(messages.notif_chatAutoContinued || 'Chat Auto-Continued', 'bottom-right')
+                document.querySelectorAll('button svg').forEach(svg => {
+                    if (svg.querySelector('polygon[points*="11 19 2 12 11 5 11 19"]')) {
+                        svg.parentNode.parentNode.click()
+                        notify(messages.notif_chatAutoContinued || 'Chat Auto-Continued', 'bottom-right')
     }})}}))
     continueObserver.observe(document.querySelector('main'), { attributes: true, subtree: true })
 
