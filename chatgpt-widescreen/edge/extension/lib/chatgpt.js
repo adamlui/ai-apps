@@ -1,6 +1,6 @@
-// This library is a condensed version of chatgpt.js v2.6.4
+// This library is a condensed version of chatgpt.js v2.6.6
 // (c) 2023–2024 KudoAI & contributors under the MIT license
-// Source: https://github.com/kudoai/chatgpt.js
+// Source: https://github.com/KudoAI/chatgpt.js
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
 // Init endpoints
@@ -283,7 +283,7 @@ const chatgpt = {
 
     history: {
         isOn: function() {
-            const navDivs = document.querySelectorAll('nav[aria-label="Chat history"] div'),
+            const navDivs = document.querySelectorAll('nav div'),
                   offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
             return offDiv.classList.toString().includes('invisible');
         },
@@ -508,7 +508,7 @@ const chatgpt = {
     },
 
     startNewChat: function() {
-        for (const navLink of document.querySelectorAll('nav[aria-label="Chat history"] a')) {
+        for (const navLink of document.querySelectorAll('nav a')) {
             if (/(new|clear) chat/i.test(navLink.text)) {
                 navLink.click(); return;
     }}}
