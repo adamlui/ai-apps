@@ -16,6 +16,7 @@
 [![](https://img.shields.io/badge/许可证-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=提交&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits/main)
 [![](https://img.shields.io/codacy/grade/b73cda8c423346928768d68c26aadfe7?label=代码质量&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-apps/commits?utm_source=chatgpt_apps&utm_content=github_shield)
+[![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-apps%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=漏洞&color=orange)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-apps)
 [![](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js?utm_source=chatgpt_apps&utm_content=github_shield)
 
 利用 ChatGPT 惊人的 AI 或增强其 UX 的应用程序。
