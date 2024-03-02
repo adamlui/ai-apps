@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.3.1
+// @version             2024.3.1.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -136,6 +136,7 @@
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.openai.com
+// @connect             fanyi.sogou.com
 // @connect             api.aigcfun.com
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.6/dist/chatgpt.min.js#sha256-mdofvno5msJKgn8yKeix/hTgJuC3rrMtbWgvHuMdFL4=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js#sha256-KLASOtKS2x8pUxWVzCDmlWJ4jhuLb0vtrgakbD6gDDo=
@@ -1009,14 +1010,26 @@
                 { code: 'zh-CHS', regex: /^(chi(nese)?|zh|中[国國])/i, rate: 2 }
             ]
             const replyDialect = dialectMap.find(entry => entry.regex.test(config.replyLanguage)) || dialectMap[0],
-                  payload = { text: answer, curTime: Date.now(), spokenDialect: replyDialect.code, rate: replyDialect.rate },
+                  payload = { text: answer, curTime: Date.now(), spokenDialect: replyDialect.code, rate: replyDialect.rate.toString() },
                   key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
                   iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
             const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
                 iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
-            const speakAudio = new Audio('https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
-                + encodeURIComponent(securePayload))
-            speakAudio.play().catch(() => chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 }))
+            GM.xmlHttpRequest({ // audio from Sogou TTS
+                url: 'https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
+                    + encodeURIComponent(securePayload),
+                method: 'GET', responseType: 'arraybuffer',
+                onload: async response => {
+                    if (response.status !== 200) chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })
+                    else {
+                        const audioContext = new (window.AudioContext || window.webkitAudioContext)()
+                        audioContext.decodeAudioData(response.response, buffer => {
+                            const audioSrc = audioContext.createBufferSource()
+                            audioSrc.buffer = buffer
+                            audioSrc.connect(audioContext.destination) // connect source to speakers
+                            audioSrc.start(0) // play audio
+                })}}
+            })
         })
         ssbSVG?.addEventListener('click', () => toggleSidebar('sticky'))
         wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
