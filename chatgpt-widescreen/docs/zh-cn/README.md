@@ -14,7 +14,7 @@
 [![](https://img.shields.io/badge/许可证-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=提交&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
 [![](https://img.shields.io/codacy/grade/918850986ce14fa2b4a99f00bbbfb5cc?label=代码质量&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-widescreen/commits?utm_source=chatgpt_widescreen&utm_content=github_shield)
-[![](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](hhttps://github.com/kudoai/chatgpt.js?utm_source=chatgpt_widescreen&utm_content=github_shield)
+[![](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](hhttps://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_widescreen&utm_content=github_shield)
 [![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-widescreen%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=漏洞&color=orange)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-widescreen)
 [![](https://img.shields.io/badge/提及于-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 [![](https://img.shields.io/badge/网站-www.chatgptwidescreen.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptwidescreen.com?utm_source=chatgpt_widescreen&utm_content=github_shield)
@@ -119,7 +119,7 @@
 </a>
 <br><br>
 
-ChatGPT 寬屏模式依賴於強大的 [chatgpt.js](https://github.com/kudoai/chatgpt.js) 庫 (c) 2023–2024 KudoAI 和 MIT 許可下的貢獻者。
+ChatGPT 寬屏模式依賴於強大的 [chatgpt.js](https://github.com/KudoAI/chatgpt.js) 庫 (c) 2023–2024 KudoAI 和 MIT 許可下的貢獻者。
 
 </div>
 </h6>
