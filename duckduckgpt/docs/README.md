@@ -7,9 +7,9 @@
 
 [![](https://img.shields.io/greasyfork/dt/459849?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/scripts/459849-duckduckgpt)
 [![](https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/duckduckgpt/blob/main/LICENSE)
-[![](https://img.shields.io/github/commit-activity/m/kudoai/duckduckgpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/kudoai/duckduckgpt/commits/main)
+[![](https://img.shields.io/github/commit-activity/m/kudoai/duckduckgpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/KudoAI/duckduckgpt/commits/main)
 [![](https://img.shields.io/codacy/grade/660eef2b75644cad992111be29434c51?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/KudoAI/duckduckgpt/commits?utm_source=duckduckgpt&utm_content=github_shield)
-[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js?utm_source=duckduckgpt&utm_content=github_shield)
+[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=duckduckgpt&utm_content=github_shield)
 [![](https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 [![](https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.kudoai.com?utm_source=duckduckgpt&utm_content=github_shield)
 [![](https://img.shields.io/badge/web-www.duckduckgpt.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.duckduckgpt.com?utm_source=duckduckgpt&utm_content=github_shield)
@@ -57,7 +57,7 @@
 </a>
 <br><br>
 
-DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/kudoai/chatgpt.js) library (c) 2023–2024 KudoAI & contributors under the MIT license
+DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoAI/chatgpt.js) library (c) 2023–2024 KudoAI & contributors under the MIT license
 <br>...and the [KaTeX](https://github.com/KaTeX/KaTeX) library (c) 2013–2020 Khan Academy & contributors under the MIT license.
 
 </div>
@@ -114,7 +114,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 [![](https://img.shields.io/mastodon/follow/111075576869014999?domain=https%3A%2F%2Ftechnodon.org&style=social "Follow @kudoai on Mastodon (technodon.org)")](https://technodon.org/@kudoai?utm_source=duckduckgpt&utm_content=github_shield)
 [![](https://img.shields.io/badge/Follow%20company%2fkudo--ai-151-blue?logo=linkedin&style=social "Follow company/kudo-ai on LinkedIn")](https://linkedin.com/company/kudo-ai)
-[![](https://img.shields.io/github/followers/kudoai?label=Follow%20%40kudoai&style=social "Follow @kudoai on GitHub")](https://github.com/kudoai)
+[![](https://img.shields.io/github/followers/kudoai?label=Follow%20%40kudoai&style=social "Follow @kudoai on GitHub")](https://github.com/KudoAI)
 [![](https://img.shields.io/youtube/channel/subscribers/UCdwQlbPJW3RbkLcHh_DGb0g?label=Follow%20%40kudoailabs&style=social "Follow @kudoailabs on YouTube")](https://www.youtube.com/@kudoailabs?sub_confirmation=1)
 [![](https://img.shields.io/badge/Follow%20KudoAI-6-blue?logo=medium&style=social "Follow KudoAI on Medium")](https://blog.kudoai.com?utm_source=duckduckgpt&utm_content=github_shield)
 <br>[![](https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social "Follow @adam on Mastodon (elonsucks.org)")](https://elonsucks.org/@adam?utm_source=duckduckgpt&utm_content=github_shield)
