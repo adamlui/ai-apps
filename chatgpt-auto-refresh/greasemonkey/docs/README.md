@@ -16,7 +16,7 @@
 [![](https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/LICENSE)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
 [![](https://img.shields.io/codacy/grade/fad402ea351b42c98b36f5f4de42edec?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-auto-refresh/commits?utm_source=chatgpt_auto_refresh&utm_content=github_shield)
-[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/kudoai/chatgpt.js?utm_source=chatgpt_auto_refresh&utm_content=github_shield)
+[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_auto_refresh&utm_content=github_shield)
 [![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-auto-refresh%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Vulnerabilities&color=orange)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-auto-refresh)
 [![](https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 [![](https://img.shields.io/badge/web-www.chatgptautorefresh.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptautorefresh.com?utm_source=chatgpt_auto_refresh&utm_content=github_shield)
@@ -109,7 +109,7 @@
 </a>
 <br><br>
 
-ChatGPT Auto Refresh relies on code from the powerful <a href="https://github.com/kudoai/chatgpt.js">chatgpt.js</a> library (c) 2023–2024 <a href="https://www.kudoai.com">KudoAI</a> & contributors under the MIT license.
+ChatGPT Auto Refresh relies on code from the powerful <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a> library (c) 2023–2024 <a href="https://www.kudoai.com">KudoAI</a> & contributors under the MIT license.
 
 </div>
 </h6>
