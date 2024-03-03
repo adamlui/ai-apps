@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.3.1.2
+// @version             2024.3.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -662,8 +662,6 @@
         // Set SVG attributes
         for (const [attr, value] of [['width', 18], ['height', 18], ['viewBox', '8 8 20 20']])
             wsbSVG.setAttribute(attr, value)
-        wsbSpan.title = ( config.widerSidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
-                      + messages.menuLabel_widerSidebar || 'Wider Sidebar'
 
         // Update SVG elements
         while (wsbSVG.firstChild) { wsbSVG.removeChild(wsbSVG.firstChild) }
@@ -687,8 +685,6 @@
         // Set SVG attributes
         for (const [attr, value] of [['width', 16], ['height', 16], ['viewBox', '0 0 16 16']])
             ssbSVG.setAttribute(attr, value)
-        ssbSpan.title = ( config.stickySidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
-                      + messages.menuLabel_stickySidebar || 'Sticky Sidebar'
 
         // Update SVG elements
         while (ssbSVG.firstChild) { ssbSVG.removeChild(ssbSVG.firstChild) }
