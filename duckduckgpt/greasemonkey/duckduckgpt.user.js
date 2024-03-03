@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.3.1.1
+// @version             2024.3.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -551,7 +551,7 @@
 
     function updateTooltip(buttonType) { // text & position
         const cornerBtnTypes = ['about', 'speak', 'ssb', 'wsb'],
-              [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [15, 18] : [1, 32],
+              [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [15, 17] : [1, 32],
               iniRoffset = spreadFactor * (buttonType == 'send' ? 1.6 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
         // Update text
@@ -962,7 +962,7 @@
         })
         ssbSVG?.addEventListener('click', () => toggleSidebar('sticky'))
         wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
-        const buttonSpans = [aboutSpan, speakSpan, wsbSpan]
+        const buttonSpans = [aboutSpan, speakSpan, ssbSpan, wsbSpan]
         buttonSpans.forEach(span => { if (span) { // add hover listeners for tooltips
             span.addEventListener('mouseover', toggleTooltip)
             span.addEventListener('mouseout', toggleTooltip)
