@@ -9,6 +9,7 @@ module.exports = {
         'no-async-promise-executor': 'off', // allow promise executor functions to be async (to accomodate await lines)
         'no-constant-condition': 'off', // allow constant conditions
         'no-empty': 'off', // allow empty blocks
+        'no-inner-declarations': 'off', // allow function declarations anywhere
         'no-useless-escape': 'off' // allow all escape chars cause ESLint sucks at detecting truly useless ones
     },
     'globals': { 'chatgpt': 'readonly', 'chrome': 'readonly', 'CryptoJS': 'readonly',
