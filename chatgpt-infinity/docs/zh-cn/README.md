@@ -16,12 +16,12 @@
 <div align="center">
 
 ![](https://img.shields.io/badge/用户-70,000+-2bbbd8?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
-[![](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=星星&logo=github&logoColor=white&labelColor=464646&color=fcf67b&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/stargazers)
+[![](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=星星&logo=github&logoColor=white&labelColor=464646&color=silver&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/stargazers)
 [![](https://img.shields.io/badge/许可证-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=提交&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/commits/main)
 [![](https://img.shields.io/codacy/grade/29b89647254f49c2bc09f05fc25bcb53?label=代码质量&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-infinity/commits?utm_source=chatgpt_infinity&utm_content=github_shield)
 [![](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_infinity&utm_content=github_shield)
-[![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-infinity%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=漏洞&color=orange)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-infinity)
+[![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-infinity%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=漏洞&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-infinity)
 [![](https://img.shields.io/badge/提及于-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 [![](https://img.shields.io/badge/网站-www.chatgptinfinity.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptinfinity.com?utm_source=chatgpt_infinity&utm_content=github_shield)
 
