@@ -12,7 +12,7 @@
 # 🤖 ChatGPT 应用程序 &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=检查这些%20ChatGPT%20应用程序%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
 
 ![](https://img.shields.io/badge/用户-100,000+-2bbbd8?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
-[![](https://img.shields.io/github/stars/adamlui/chatgpt-apps?label=星星&logo=github&logoColor=white&labelColor=464646&color=silver&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/stargazers)
+[![](https://img.shields.io/github/stars/adamlui/chatgpt-apps?label=星星&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/stargazers)
 [![](https://img.shields.io/badge/许可证-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=提交&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits/main)
 [![](https://img.shields.io/codacy/grade/b73cda8c423346928768d68c26aadfe7?label=代码质量&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-apps/commits?utm_source=chatgpt_apps&utm_content=github_shield)

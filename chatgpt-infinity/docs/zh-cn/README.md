@@ -16,7 +16,7 @@
 <div align="center">
 
 ![](https://img.shields.io/badge/用户-70,000+-2bbbd8?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
-[![](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=星星&logo=github&logoColor=white&labelColor=464646&color=silver&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/stargazers)
+[![](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=星星&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/stargazers)
 [![](https://img.shields.io/badge/许可证-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=提交&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-infinity/commits/main)
 [![](https://img.shields.io/codacy/grade/29b89647254f49c2bc09f05fc25bcb53?label=代码质量&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-infinity/commits?utm_source=chatgpt_infinity&utm_content=github_shield)

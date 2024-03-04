@@ -14,7 +14,7 @@
 Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
 ![](https://img.shields.io/badge/Users-100,000+-2bbbd8?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
-[![](https://img.shields.io/github/stars/adamlui/chatgpt-apps?label=Stars&logo=github&logoColor=white&labelColor=464646&color=silver&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/stargazers)
+[![](https://img.shields.io/github/stars/adamlui/chatgpt-apps?label=Stars&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/stargazers)
 [![](https://img.shields.io/badge/License-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/blob/main/LICENSE)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits/main)
 [![](https://img.shields.io/codacy/grade/b73cda8c423346928768d68c26aadfe7?label=Code+Quality&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://app.codacy.com/gh/adamlui/chatgpt-apps/commits?utm_source=chatgpt_apps&utm_content=github_shield)
