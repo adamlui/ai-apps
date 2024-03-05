@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.3.5.2
+// @version             2024.3.5.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -1402,7 +1402,7 @@
         greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt',
         userLanguage: chatgpt.getUserLanguage() }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
