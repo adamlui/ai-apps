@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.3.5.1
+// @version             2024.3.5.2
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://media.chatgptinfinity.com/images/icons/infinity-symbol/black/icon48.png
@@ -243,7 +243,7 @@
         gitHubURL: 'https://github.com/adamlui/chatgpt-infinity',
         greasyForkURL: 'https://greasyfork.org/scripts/465051-chatgpt-infinity' }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([^\/]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
+        .replace(/(\d+)-?([^/]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('autoScrollDisabled', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden')
@@ -267,7 +267,7 @@
             } catch (err) { // if 404
                 msgXHRtries++ ; if (msgXHRtries === 3) return // try up to 3X (original/region-stripped/EN) only
                 msgHref = config.userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
-                    msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
+                    msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
             }
