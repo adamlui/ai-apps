@@ -21,18 +21,18 @@ jobs:
         run: |
           LC_NUMERIC=en_US # to insert commas
           declare -A scripts=(
-              ["460805"]="Autoclear ChatGPT History"
-              ["462440"]="BraveGPT"
-              ["466789"]="ChatGPT Auto-Continue"
-              ["462422"]="ChatGPT Auto Refresh"
-              ["465051"]="ChatGPT Infinity"
-              ["461473"]="ChatGPT Widescreen Mode"
-              ["459849"]="DuckDuckGPT"
-              ["473377"]="GitHub Star History"
-              ["473439"]="GitHub Widescreen"
-              ["478597"]="GoogleGPT"
-              ["12639"]="Hide Forum Images"
-              ["456132"]="YouTube Classic"
+            ["460805"]="Autoclear ChatGPT History"
+            ["462440"]="BraveGPT"
+            ["466789"]="ChatGPT Auto-Continue"
+            ["462422"]="ChatGPT Auto Refresh"
+            ["465051"]="ChatGPT Infinity"
+            ["461473"]="ChatGPT Widescreen Mode"
+            ["459849"]="DuckDuckGPT"
+            ["473377"]="GitHub Star History"
+            ["473439"]="GitHub Widescreen"
+            ["478597"]="GoogleGPT"
+            ["12639"]="Hide Forum Images"
+            ["456132"]="YouTube Classic"
           )
 
           expand_num() { # expand nums abbreviated w/ 'k' or 'm' suffix to integers
@@ -74,19 +74,19 @@ jobs:
           # Sort scripts alphabetically for more readable logging
           sorted_scripts=()
           for script_id in "${!scripts[@]}" ; do
-              script_name="${scripts[$script_id]}"
-              sorted_scripts+=("$script_name:$script_id")
+            script_name="${scripts[$script_id]}"
+            sorted_scripts+=("$script_name:$script_id")
           done
           IFS=$'\n' sorted_scripts=($(sort <<<"${sorted_scripts[*]}"))
 
           # Fetch/sum user counts
           for tuple in "${sorted_scripts[@]}" ; do
-              script_id="${tuple##*:}" script_name="${tuple%%:*}"
-              gf_users=$(curl -s "https://img.shields.io/greasyfork/dt/$script_id" |
-                  sed -n 's/.*<title>installs: \([0-9.k]\+\)*<\/title>.*/\1/p')
-              gf_users=$(expand_num "$gf_users")
-              echo "$script_name users: $gf_users"
-              total_users=$((total_users + gf_users))
+            script_id="${tuple##*:}" script_name="${tuple%%:*}"
+            gf_users=$(curl -s "https://img.shields.io/greasyfork/dt/$script_id" |
+              sed -n 's/.*<title>installs: \([0-9.k]\+\)*<\/title>.*/\1/p')
+            gf_users=$(expand_num "$gf_users")
+            echo "$script_name users: $gf_users"
+            total_users=$((total_users + gf_users))
           done
           echo -e "\nTotal users: $total_users"
 
