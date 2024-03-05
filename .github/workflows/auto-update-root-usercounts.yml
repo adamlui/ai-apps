@@ -1,0 +1,117 @@
+name: Auto-update aggregate usercount shields in root READMEs
+
+on:
+  schedule:
+    - cron: "25 2 * * 0" # every Sunday 2:25a
+
+jobs:
+  update-usercount-shields:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout adamlui/userscripts
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.REPO_SYNC_PAT }}
+          repository: adamlui/userscripts
+          path: adamlui/userscripts
+
+      - name: Fetch/sum user counts
+        id: get-usercounts
+        run: |
+          LC_NUMERIC=en_US # to insert commas
+          declare -A scripts=(
+              ["460805"]="Autoclear ChatGPT History"
+              ["462440"]="BraveGPT"
+              ["466789"]="ChatGPT Auto-Continue"
+              ["462422"]="ChatGPT Auto Refresh"
+              ["465051"]="ChatGPT Infinity"
+              ["461473"]="ChatGPT Widescreen Mode"
+              ["459849"]="DuckDuckGPT"
+              ["473377"]="GitHub Star History"
+              ["473439"]="GitHub Widescreen"
+              ["478597"]="GoogleGPT"
+              ["12639"]="Hide Forum Images"
+              ["456132"]="YouTube Classic"
+          )
+
+          expand_num() { # expand nums abbreviated w/ 'k' or 'm' suffix to integers
+            local num=$(echo "$1" | tr '[:upper:]' '[:lower:]') # convert to lowercase
+            if [[ $num =~ k$ ]] ; then
+              num="${num%k}" # remove 'k' suffix
+              num=$(awk "BEGIN { printf \"%.0f\", $num * 1000 }") # multiply by 1000
+            elif [[ $num =~ m$ ]] ; then
+              num="${num%m}" # remove 'm' suffix
+              num=$(awk "BEGIN { printf \"%.0f\", $num * 1000000 }") # multiply by 1000000
+            fi ; echo "$num"
+          }
+
+          format_total() {
+            local num=$1 ; first_digit="${num:0:1}" second_digit="${num:1:1}"
+            second_digit=$(( second_digit < 5 ? 0 : 5 )) # round 2nd digit down
+            if (( num >= 1000000000 )) ; then # 1B+ w/ one decimal place
+              formatted_num="$(( num / 1000000000 ))"
+              remainder=$(( (num % 1000000000) / 100000000 ))
+              if (( remainder != 0 )) ; then formatted_num+=".$remainder" ; fi
+              formatted_num+="B+"
+            elif (( num >= 10000000 )) ; then # abbr 10,000,000+ to 999,000,000+
+              formatted_num=$(printf "%'.f+" $((( num / 1000000 ) * 1000000 )))
+            elif (( num >= 1000000 )) ; then # abbr 1,000,000+ to 9,500,000+
+              formatted_num="${first_digit},${second_digit}00,000+"
+            elif (( num >= 100000 )) ; then # abbr 100,000+ to 950,000+
+              formatted_num="${first_digit}${second_digit}0,000+"
+            elif (( num >= 10000 )) ; then # abbr 10,000+ to 90,000+
+              formatted_num="${first_digit}0,000+"
+            elif (( num >= 1000 )) ; then # abbr 1K to 9.9K
+              formatted_num="$(( num / 1000 ))"
+              remainder=$(( (num % 1000) / 100 ))
+              if (( remainder != 0 )) ; then formatted_num+=".$remainder" ; fi
+              formatted_num+="K"
+            else formatted_num="$num" ; fi # preserve <1K as is
+            echo "$formatted_num"
+          }
+
+          # Sort scripts alphabetically for more readable logging
+          sorted_scripts=()
+          for script_id in "${!scripts[@]}" ; do
+              script_name="${scripts[$script_id]}"
+              sorted_scripts+=("$script_name:$script_id")
+          done
+          IFS=$'\n' sorted_scripts=($(sort <<<"${sorted_scripts[*]}"))
+
+          # Fetch/sum user counts
+          for tuple in "${sorted_scripts[@]}" ; do
+              script_id="${tuple##*:}" script_name="${tuple%%:*}"
+              gf_users=$(curl -s "https://img.shields.io/greasyfork/dt/$script_id" |
+                  sed -n 's/.*<title>installs: \([0-9.k]\+\)*<\/title>.*/\1/p')
+              gf_users=$(expand_num "$gf_users")
+              echo "$script_name users: $gf_users"
+              total_users=$((total_users + gf_users))
+          done
+          echo -e "\nTotal users: $total_users"
+
+          # Format total
+          formatted_total=$(format_total "$total_users")
+          echo "Formatted total: $formatted_total"
+
+          # Store for update step next
+          echo "total_users=$formatted_total" >> $GITHUB_OUTPUT
+
+      - name: Update README shields
+        run: |
+          cd ${{ github.workspace }}/adamlui/userscripts
+          total_users=$(echo ${{ steps.get-usercounts.outputs.total_users }})
+          sed -i "s/\(badge\/[^-]*-\)[0-9.,km+]\+-/\1$total_users-/g" $(find docs/ -name "README.md")
+          if [ $? -eq 0 ] ; then echo "Usercount shields updated to $total_users"
+          else echo "Usercount shields up-to-date already" ; fi
+
+      - name: Push to adamlui/userscripts
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: --force
+          add_options: --all
+          commit_user_email: auto-sync@kudoai.com
+          commit_author: kudo-sync-bot <auto-sync@kudoai.com>
+          commit_message: Updated usercount shield counters
+          file_pattern: "**/README.md"
+          repository: adamlui/userscripts
