@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.3.5
+// @version             2024.3.5.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -263,7 +263,7 @@
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-refresh',
         greasyForkURL: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh' }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([^\/]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
+        .replace(/(\d+)-?([^/]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('arDisabled', 'notifDisabled', 'refreshInterval', 'toggleHidden')
@@ -301,7 +301,7 @@
             } catch (err) { // if 404
                 msgXHRtries++ ; if (msgXHRtries === 3) return // try up to 3X (original/region-stripped/EN) only
                 msgHref = config.userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
-                    msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
+                    msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
             }
