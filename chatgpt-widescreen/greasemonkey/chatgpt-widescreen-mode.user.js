@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.3.5.3
+// @version             2024.3.5.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -257,7 +257,7 @@
 
 (async () => { /* global newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn */
 
-    const site = /:\/\/(?:.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[1]
+    const site = new URL(document.location.href).hostname.split('.').slice(-2, -1)[0]
 
     // Init config
     const config = {
