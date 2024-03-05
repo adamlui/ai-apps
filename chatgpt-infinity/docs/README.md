@@ -125,6 +125,7 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 - **[LibreWolf](https://librewolf.net/)** (via [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[Ghost](https://ghostbrowser.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[QQ](https://browser.qq.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+- **[Whale](https://whale.naver.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 
 ### Android:
 

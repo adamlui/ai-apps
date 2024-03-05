@@ -125,6 +125,7 @@ ChatGPT 无穷 与以下浏览器兼容.
 - **[LibreWolf](https://librewolf.net/)** (通过 [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 - **[Ghost](https://ghostbrowser.com/)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 - **[QQ](https://browser.qq.com/)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
+- **[Whale](https://whale.naver.com/)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 
 ### 安卓:
 

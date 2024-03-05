@@ -89,6 +89,7 @@ ChatGPT Infinity is compatible w/ the following browsers using [Tampermonkey](ht
 - [LibreWolf](https://librewolf.net/)
 - [Ghost](https://ghostbrowser.com/)
 - [QQ](https://browser.qq.com/)
+- [Whale](https://whale.naver.com/)
 
 ### Android:
 
