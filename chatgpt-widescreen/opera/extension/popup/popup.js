@@ -4,11 +4,17 @@
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js'))    
 
     // Localize labels
+    let translationOccurred = false
     document.querySelectorAll('[data-locale]').forEach(elem => {
         const localeKeys = elem.dataset.locale.split(' '),
               translatedText = localeKeys.map(key => chrome.i18n.getMessage(key)).join(' ')
-        elem.innerText = translatedText
-    })
+        if (translatedText !== elem.innerText) {
+            elem.innerText = translatedText ; translationOccurred = true
+    }})
+
+    // Update lang attr if translation occurred
+    if (translationOccurred)
+        document.documentElement.lang = chrome.i18n.getUILanguage().split('-')[0]
 
     // Init master toggle
     const toggles = document.querySelectorAll('input'),
