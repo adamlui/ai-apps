@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.6.6
+// This library is a condensed version of chatgpt.js v2.6.7
 // (c) 2023–2024 KudoAI & contributors under the MIT license
 // Source: https://github.com/KudoAI/chatgpt.js
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
@@ -38,7 +38,7 @@ if (!isChromeUserScript && !(isFFuserScript && !isFFtmScript)) { (async () => {
                 } catch (err) {
                     msgXHRtries++; if (msgXHRtries === 3) resolve({}); // try up to 3X (original/region-stripped/EN) only
                     msgHref = userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
-                        msgHref.replace(/(.*)_.*(\/.*)/, '$1$2') // ...strip region before retrying
+                        msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
                             : ( msgHostDir + 'en/messages.json' ); // else use default English messages
                     loadMsgs();
                 }
@@ -451,7 +451,7 @@ const chatgpt = {
 
     renderHTML: function(node) {
         const reTags = /<([a-z\d]+)\b([^>]*)>([\s\S]*?)<\/\1>/g,
-              reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+(?:\S+)=|[>']))+.)['"]?/g,
+              reAttributes = /(\S+)=['"]?((?:.(?!['"]?\s+\S+=|[>']))+.)['"]?/g,
               nodeContent = node.childNodes;
 
         // Preserve consecutive spaces + line breaks
