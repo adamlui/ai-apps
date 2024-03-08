@@ -98,7 +98,7 @@ jobs:
             script_id="${tuple##*:}" script_name="${tuple%%:*}"
             base_url="https://img.shields.io/greasyfork/dt/"
             gf_users=$(curl -s "$base_url$script_id" |
-              sed -n 's/.*<title>installs: \([0-9.k]\+\)*<\/title>.*/\1/p')
+              sed -n 's/.*<title>installs: \([0-9.k]\+\)*<\/title>.*/\1/Ip')
             gf_users=$(expand_num "$gf_users")
             echo "$script_name GF users: $gf_users"
             total_gf_users=$((total_gf_users + gf_users))
@@ -109,7 +109,7 @@ jobs:
             app_id="${tuple##*:}" app_name="${tuple%%:*}"
             base_url="https://img.shields.io/chrome-web-store/users/"
             chrome_users=$(curl -s "$base_url$app_id" |
-              sed -n 's/.*<title>users: \([0-9.k]\+\)*<\/title>.*/\1/p')
+              sed -n 's/.*<title>users: \([0-9.k]\+\)*<\/title>.*/\1/Ip')
             chrome_users=$(expand_num "$chrome_users")
             echo "$app_name Chrome users: $chrome_users"
             total_chrome_users=$((total_chrome_users + chrome_users))
@@ -141,7 +141,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-apps
           total_users=$(echo ${{ steps.get-usercounts.outputs.total_users }})
-          sed -i "s/\(badge\/[^-]*-\)[0-9.,km+]\+-/\1$total_users-/g" $(find docs/ -name "README.md")
+          sed -i "s/\(badge\/[^-]*-\)[0-9.,km+]\+-/\1$total_users-/gI" $(find docs/ -name "README.md")
           if [ $? -eq 0 ] ; then echo "Usercount shields updated to $total_users"
           else echo "Usercount shields up-to-date already" ; fi
 
