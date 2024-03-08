@@ -49,11 +49,11 @@ jobs:
             "en") # include English
           echo -e "Languages: ${languages[@]}\n"
           for lang in "${languages[@]}"; do
-            root_license=$([[ "$lang" != "en" ]] && echo "docs/$lang" || echo ".")/LICENSE.md
+            root_license=$([[ "$lang" != "en" ]] && echo "./docs/$lang" || echo ".")/LICENSE.md
             root_license_content=$(git show HEAD:"$root_license")
             root_license_modified=$(git log -1 --format="%ct" -- "$root_license")
             for platform in "${platforms[@]}"; do
-              platform_license=$platform/$([[ "$lang" != "en" ]] && echo "docs/$lang/" || echo "")LICENSE.md
+              platform_license=./$platform/$([[ "$lang" != "en" ]] && echo "docs/$lang/" || echo "")LICENSE.md
               platform_license_content=$(git show HEAD:"$platform_license")
               platform_license_modified=$(git log -1 --format="%ct" -- "$platform_license")
               if [[ $root_license_modified -gt $platform_license_modified ]] ; then
