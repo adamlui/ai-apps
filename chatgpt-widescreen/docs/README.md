@@ -119,7 +119,7 @@
 </a>
 <br><br>
 
-ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://github.com/KudoAI/chatgpt.js) library (c) 2023–2024 KudoAI & contributors under the MIT license.
+ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://github.com/KudoAI/chatgpt.js) library © 2023–2024 KudoAI & contributors under the MIT license.
 
 </div>
 </h6>

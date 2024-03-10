@@ -156,8 +156,8 @@
 // @supportURL          https://github.bravegpt.com/issues
 // ==/UserScript==
 
-// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023–2024 KudoAI & contributors under the MIT license
-// ...and KaTeX, the fastest math typesetting library @ https://katex.org (c) 2013–2020 Khan Academy & contributors under the MIT license
+// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org © 2023–2024 KudoAI & contributors under the MIT license
+// ...and KaTeX, the fastest math typesetting library @ https://katex.org © 2013–2020 Khan Academy & contributors under the MIT license
 
 (async () => {
 

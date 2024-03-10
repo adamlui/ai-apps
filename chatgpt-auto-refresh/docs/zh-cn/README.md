@@ -109,7 +109,7 @@
 </a>
 <br><br>
 
-ChatGPT 自動刷新依賴於強大的 <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a> 庫 (c) 2023–2024 <a href="https://www.kudoai.com">KudoAI</a> 和 MIT 許可下的貢獻者。
+ChatGPT 自動刷新依賴於強大的 <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a> 庫 © 2023–2024 <a href="https://www.kudoai.com">KudoAI</a> 和 MIT 許可下的貢獻者。
 
 </div>
 </h6>

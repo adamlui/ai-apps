@@ -58,7 +58,7 @@
 </a>
 <br><br>
 
-ChatGPT Auto-Continue relies on code from the powerful [chatgpt.js](https://github.com/KudoAI/chatgpt.js) library (c) 2023–2024 KudoAI & contributors under the MIT license.
+ChatGPT Auto-Continue relies on code from the powerful [chatgpt.js](https://github.com/KudoAI/chatgpt.js) library © 2023–2024 KudoAI & contributors under the MIT license.
 
 </div>
 </h6>

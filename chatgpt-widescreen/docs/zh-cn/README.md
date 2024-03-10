@@ -119,7 +119,7 @@
 </a>
 <br><br>
 
-ChatGPT 寬屏模式依賴於強大的 [chatgpt.js](https://github.com/KudoAI/chatgpt.js) 庫 (c) 2023–2024 KudoAI 和 MIT 許可下的貢獻者。
+ChatGPT 寬屏模式依賴於強大的 [chatgpt.js](https://github.com/KudoAI/chatgpt.js) 庫 © 2023–2024 KudoAI 和 MIT 許可下的貢獻者。
 
 </div>
 </h6>
