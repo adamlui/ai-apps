@@ -58,7 +58,7 @@
     })
 
     // Add Powered by chatgpt.js hover-listener
-    const chatGPTjsHostPath = 'https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/badges/',
+    const chatGPTjsHostPath = 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/badges/',
           chatGPTjsImg = document.querySelector('.chatgpt-js img')
     chatGPTjsImg.addEventListener('mouseover', () =>
         chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png')

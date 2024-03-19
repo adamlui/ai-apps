@@ -51,8 +51,8 @@
 
 <a href="https://chatgpt.js.org">
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
-        <img width=455 style="margin: 0 0 -13px 18px" src="https://raw.githubusercontent.com/kudoai/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
+        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
+        <img width=455 style="margin: 0 0 -13px 18px" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
     </picture>
 </a>
 <a href="https://katex.org">
