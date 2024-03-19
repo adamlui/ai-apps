@@ -12,7 +12,7 @@
 <br>
 
 <a href="https://greasyfork.org/scripts/478597-googlegpt"><img height=31 src="https://img.shields.io/badge/Users-30,000+-2bbbd8?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
-<a href="https://github.com/KudoAI/googlegpt/blob/main/LICENSE.md"><img height=31 src="https://img.shields.io/badge/License-MIT-red.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://github.com/KudoAI/googlegpt/blob/main/LICENSE.md"><img height=31 src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/googlegpt/commits/main"><img height=31 src="https://img.shields.io/github/commit-activity/m/kudoai/googlegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/kudoai/googlegpt"><img height=31 src="https://img.shields.io/codefactor/grade/github/kudoai/googlegpt?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
 <a href="https://chatgpt.js.org?utm_source=googlegpt&utm_content=github_shield"><img height=31 src="https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
