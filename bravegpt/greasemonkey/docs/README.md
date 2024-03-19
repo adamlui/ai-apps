@@ -128,7 +128,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 [![](https://img.shields.io/badge/Follow%20KudoAI-6-blue?logo=medium&style=social "Follow KudoAI on Medium")](https://blog.kudoai.com?utm_source=bravegpt&utm_content=github_shield)
 <br>[![](https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social "Follow @adam on Mastodon (elonsucks.org)")](https://elonsucks.org/@adam?utm_source=bravegpt&utm_content=github_shield)
 [![](https://img.shields.io/badge/Follow%20@adamllui-2.2k-blue?logo=x&style=social "Follow @adamllui on X")](https://x.com/intent/user?screen_name=adamllui)
-[![](https://img.shields.io/badge/Follow%20in%2fadamlui-1.1k-blue?logo=linkedin&style=social "Follow in/adamlui on LinkedIn")](https://linkedin.com/in/adamlui)
+[![](https://img.shields.io/badge/Follow%20in%2fadamlui-1.2k-blue?logo=linkedin&style=social "Follow in/adamlui on LinkedIn")](https://linkedin.com/in/adamlui)
 [![](https://img.shields.io/badge/Follow%20@adamlui-637-blue?logo=medium&style=social "Follow @adamlui on Medium")](https://adamlui.com?utm_source=bravegpt&utm_content=github_shield)
 [![](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social "Follow @adamluitube on YouTube")](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 [![](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "Follow @adamlui on GitHub")](https://github.com/adamlui)
