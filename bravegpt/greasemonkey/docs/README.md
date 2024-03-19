@@ -15,7 +15,7 @@
 [![](https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.kudoai.com?utm_source=bravegpt&utm_content=github_shield)
 [![](https://img.shields.io/badge/web-www.bravegpt.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://www.bravegpt.com?utm_source=bravegpt&utm_content=github_shield)
 
-<h3><b>BraveGPT</b> brings the magic of ChatGPT to search results (powered by GPT-4!)</h3>
+<h3><b>BraveGPT</b> brings the magic of ChatGPT to Brave Search (powered by GPT-4!)</h3>
 
 <a href="https://greasyfork.org/en/scripts/462440-bravegpt"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>

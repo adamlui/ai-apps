@@ -5,7 +5,6 @@
             <img height=14 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/icons/earth-americas-icon32.svg">
         </picture>
         &nbsp;English |
-        <a href="https://github.com/KudoAI/bravegpt/blob/main/docs/zh-cn/SECURITY.md">简体中文</a> |
         <a href="https://github.com/KudoAI/bravegpt/blob/main/docs/hi/SECURITY.md">हिंदी</a>
     </h6>
 </div>
