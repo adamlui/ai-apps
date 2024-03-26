@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "eslint": "^8.57.0",
-    "eslint-plugin-json-schema-validator": "^4.9.0",
+    "eslint-plugin-json-schema-validator": "^5.0.0",
     "eslint-plugin-yml": "^1.13.2",
     "husky": "^9.0.11"
   },
