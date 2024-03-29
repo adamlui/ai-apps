@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.3.25
+// @version             2024.3.29
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -371,6 +371,7 @@
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js#sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=
 // @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js#sha256-jjsBF/TfS+RSwLavW48KCs+dSt4j0I1V1+MSryIHd2I=
+// @require             https://cdn.jsdelivr.net/npm/generate-ip@2.1.1/dist/generate-ip.min.js#sha256-SFEkf5NRUS1Itc+9ySyxtUSZEF9EAbBzPI5EbCPQFRQ=
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
@@ -883,7 +884,7 @@
                     headers: {
                         'Content-Type': 'application/json',
                         'Referer': 'https://aigcfun.com/',
-                        'X-Forwarded-For': chatgpt.generateRandomIP() },
+                        'X-Forwarded-For': ipv4.generate({ verbose: false }) },
                     onload: response => {
                         const newPublicKey = JSON.parse(response.responseText).data
                         if (!newPublicKey) { appError('Failed to get AIGCFun public key') ; return }
