@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.4.4.1
+// @version             2024.4.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -856,19 +856,17 @@
                 subtree: true, childList: false, attributes: true }), 500)
     }
 
-    // Add full screen listeners to update setting/button + set F11 flag
-    window.addEventListener('resize', () => { // sync full screen settings/button
+    // Add resize listener to update full screen setting/button + disable F11 flag
+    window.addEventListener('resize', () => {
         const fullScreenState = chatgpt.isFullScreen()
         if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
         else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     })
-    window.addEventListener('keydown', event => { // set F11 flag for toggleMode() disabled warning
-        if ((event.key == 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true // set flag if entering full screen via F11
-    })
 
-    // Add key listener to stop generating text on ESC pressed
+    // Add key listener to enable flag on F11 + stop generating text on ESC
     window.addEventListener('keydown', event => {
-        if ((event.key === 'Escape' || event.keyCode === 27) && !chatgpt.isIdle()) chatgpt.stop()
+        if ((event.key == 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true
+        else if ((event.key === 'Escape' || event.keyCode === 27) && !chatgpt.isIdle()) chatgpt.stop()
     })
 
 })()

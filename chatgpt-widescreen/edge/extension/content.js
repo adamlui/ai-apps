@@ -181,21 +181,17 @@
                 subtree: true, childList: false, attributes: true }), 500)
     }
 
-    // Add full screen listeners to update setting/button + set F11 flag
-    window.addEventListener('resize', () => { // sync full screen settings/button
-        settings.load(['extensionDisabled']).then(() => {
-            if (!config.extensionDisabled) {
-                const fullScreenState = chatgpt.isFullScreen()
-                if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
-                else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
-    }})})
-    window.addEventListener('keydown', event => { // set F11 flag for toggleMode() disabled warning
-        if ((event.key == 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true
+    // Add resize listener to update full screen setting/button + disable F11 flag
+    window.addEventListener('resize', () => {
+        const fullScreenState = chatgpt.isFullScreen()
+        if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
+        else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     })
 
-    // Add key listener to stop generating text on ESC pressed
+    // Add key listener to enable flag on F11 + stop generating text on ESC
     window.addEventListener('keydown', event => {
-        if ((event.key === 'Escape' || event.keyCode === 27) && !chatgpt.isIdle()) chatgpt.stop()
+        if ((event.key == 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true
+        else if ((event.key === 'Escape' || event.keyCode === 27) && !chatgpt.isIdle()) chatgpt.stop()
     })
 
     // Define FEEDBACK functions
