@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.6.7
+// This library is a condensed version of chatgpt.js v2.6.8
 // © 2023–2024 KudoAI & contributors under the MIT license
 // Source: https://github.com/KudoAI/chatgpt.js
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
@@ -548,11 +548,7 @@ const chatgpt = {
                 navLink.click(); return;
     }}},
 
-    stop: function() {
-        for (const formButton of document.querySelectorAll('form button')) {
-            if (formButton.textContent.toLowerCase().includes('stop')) {
-                formButton.click(); return;
-    }}}
+    stop: function() { this.response.stopGenerating(); }
 
 };
 
