@@ -1,4 +1,4 @@
-name: Auto-update aggregate usercount shields in root READMEs
+name: Update aggregate usercount shields in root READMEs
 
 on:
   schedule:
