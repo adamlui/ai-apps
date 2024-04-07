@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.4
+// @version             2024.4.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -142,7 +142,7 @@
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js#sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=
 // @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js#sha256-jjsBF/TfS+RSwLavW48KCs+dSt4j0I1V1+MSryIHd2I=
-// @require             https://cdn.jsdelivr.net/npm/generate-ip@2.1.1/dist/generate-ip.min.js#sha256-SFEkf5NRUS1Itc+9ySyxtUSZEF9EAbBzPI5EbCPQFRQ=
+// @require             https://cdn.jsdelivr.net/npm/generate-ip@2.2.1/dist/generate-ip.min.js#sha256-mEN+gb14oCbNFM33ZU0Jqxj9vXEkBln+5SeAa/44U+s=
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
