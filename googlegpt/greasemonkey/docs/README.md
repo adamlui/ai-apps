@@ -35,7 +35,7 @@
 
 ## 🌐 Compatibility 
 
-**GoogleGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (recommended) or [Violentmonkey](https://violentmonkey.github.io/).
+**GoogleGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/).
 
 ### Desktop:
 
