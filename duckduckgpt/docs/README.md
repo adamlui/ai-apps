@@ -29,7 +29,7 @@
 
 ## 🚀 Installation
 
-1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) or Violentmonkey ([Chrome](https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao))
+1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/))
 
 2. Install [DuckDuckGPT](https://greasyfork.org/scripts/459849-duckduckgpt) (will load in userscript manager installed above)
 
@@ -66,7 +66,7 @@ DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/Kud
 
 ## 🌐 Compatibility 
 
-**DuckDuckGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (recommended) or [Violentmonkey](https://violentmonkey.github.io/).
+**DuckDuckGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/).
 
 ### Desktop:
 
