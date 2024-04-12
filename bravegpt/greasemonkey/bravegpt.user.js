@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.12.1
+// @version             2024.4.12.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -921,7 +921,7 @@
             appDiv.append(appPrefixSpan)
         }
         const appLogoAnchor = createAnchor(config.appURL, appLogoImg)
-        appLogoAnchor.classList.add('app-name', 'no-user-select') ; appLogoImg.width = 152
+        appLogoAnchor.classList.add('app-name', 'no-user-select') ; appLogoImg.width = 143
         if (!appLogoImg.loaded) appLogoImg.style.marginLeft = '3px' // pos logo alt
         appDiv.append(appLogoAnchor)
 
@@ -1302,7 +1302,7 @@
         + `.bravegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
         + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
         + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-            + ( isChromium ? 'top: 0.16em ; right: 5.1rem;' : 'top: 0.25em ; right: 10.38rem ;' )
+            + ( isChromium ? 'top: 0.16em ; right: 5rem;' : 'top: 0.25em ; right: 10.03rem ;' )
             + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color:'
                 + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
         + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem }'
