@@ -72,7 +72,7 @@ jobs:
 
       - name: Sync chatgpt-auto-continue/ to adamlui/chatgpt-auto-continue/
         run: |
-          rsync -avhr --delete --filter={'P /.*','P /package*.json'} \
+          rsync -avhr --delete --filter={'P /.*','P /eslint*','P /package*.json'} \
             ${{ github.workspace }}/adamlui/chatgpt-apps/chatgpt-auto-continue/ \
             ${{ github.workspace }}/adamlui/chatgpt-auto-continue/
 
