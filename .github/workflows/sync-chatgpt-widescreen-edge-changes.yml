@@ -2,8 +2,8 @@ name: Sync LICENSE.md from chatgpt-widescreen/edge/* to <platform>/*, then chatg
 
 on:
   push:
-    branches: main
-    paths: chatgpt-widescreen/edge/**
+    branches: [main]
+    paths: [chatgpt-widescreen/edge/**]
 
 jobs:
   build:

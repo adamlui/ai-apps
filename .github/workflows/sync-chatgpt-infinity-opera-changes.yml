@@ -2,8 +2,8 @@ name: Sync LICENSE.md from chatgpt-infinity/opera/* to <platform>/*, then chatgp
 
 on:
   push:
-    branches: main
-    paths: chatgpt-infinity/opera/**
+    branches: [main]
+    paths: [chatgpt-infinity/opera/**]
 
 jobs:
   build:

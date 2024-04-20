@@ -2,8 +2,8 @@ name: Sync (duckduckgpt/ to KudoAI/duckduckgpt/) && (duckduckgpt/greasemonkey/ t
 
 on:
   push:
-    branches: main
-    paths: duckduckgpt/**
+    branches: [main]
+    paths: [duckduckgpt/**]
 
 jobs:
   build:

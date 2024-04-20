@@ -3,7 +3,7 @@ name: Sync LICENSE.md from chatgpt-widescreen/* to chatgpt-widescreen/<platform>
 
 on:
   push:
-    branches: main
+    branches: [main]
     paths:
       - chatgpt-widescreen/*
       - chatgpt-widescreen/docs/**

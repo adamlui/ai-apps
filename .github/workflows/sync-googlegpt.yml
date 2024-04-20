@@ -2,8 +2,8 @@ name: Sync (googlegpt/ to KudoAI/googlegpt/) && (googlegpt/greasemonkey/ to adam
 
 on:
   push:
-    branches: main
-    paths: googlegpt/**
+    branches: [main]
+    paths: [googlegpt/**]
 
 jobs:
   build:

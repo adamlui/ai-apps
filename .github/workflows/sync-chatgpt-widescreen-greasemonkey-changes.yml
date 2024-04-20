@@ -2,8 +2,8 @@ name: Sync LICENSE.md from chatgpt-widescreen/greasemonkey/* to <platform>/*, th
 
 on:
   push:
-    branches: main
-    paths: chatgpt-widescreen/greasemonkey/**
+    branches: [main]
+    paths: [chatgpt-widescreen/greasemonkey/**]
 
 jobs:
   build:

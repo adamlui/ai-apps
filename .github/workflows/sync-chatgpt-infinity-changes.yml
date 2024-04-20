@@ -3,7 +3,7 @@ name: Sync LICENSE.md from chatgpt-infinity/* to chatgpt-infinity/<platform>/*, 
 
 on:
   push:
-    branches: main
+    branches: [main]
     paths:
       - chatgpt-infinity/*
       - chatgpt-infinity/docs/**

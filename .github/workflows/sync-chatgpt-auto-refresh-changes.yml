@@ -2,8 +2,8 @@ name: Sync (chatgpt-auto-refresh/ to adamlui/chatgpt-auto-refresh/) && (chatgpt-
 
 on:
   push:
-    branches: main
-    paths: chatgpt-auto-refresh/**
+    branches: [main]
+    paths: [chatgpt-auto-refresh/**]
 
 jobs:
   build:

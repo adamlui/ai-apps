@@ -2,8 +2,8 @@ name: Sync LICENSE.md from chatgpt-widescreen/opera/* to <platform>/*, then chat
 
 on:
   push:
-    branches: main
-    paths: chatgpt-widescreen/opera/**
+    branches: [main]
+    paths: [chatgpt-widescreen/opera/**]
 
 jobs:
   build:

@@ -2,8 +2,8 @@ name: Sync (chatgpt-auto-continue/ to adamlui/chatgpt-auto-continue/) && (chatgp
 
 on:
   push:
-    branches: main
-    paths: chatgpt-auto-continue/**
+    branches: [main]
+    paths: [chatgpt-auto-continue/**]
 
 jobs:
   build:

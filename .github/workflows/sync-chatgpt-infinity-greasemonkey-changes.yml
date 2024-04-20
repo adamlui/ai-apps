@@ -2,8 +2,8 @@ name: Sync LICENSE.md from chatgpt-infinity/greasemonkey/* to <platform>/*, then
 
 on:
   push:
-    branches: main
-    paths: chatgpt-infinity/greasemonkey/**
+    branches: [main]
+    paths: [chatgpt-infinity/greasemonkey/**]
 
 jobs:
   build:

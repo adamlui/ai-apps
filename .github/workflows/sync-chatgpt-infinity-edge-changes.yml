@@ -2,8 +2,8 @@ name: Sync LICENSE.md from chatgpt-infinity/edge/* to <platform>/*, then chatgpt
 
 on:
   push:
-    branches: main
-    paths: chatgpt-infinity/edge/**
+    branches: [main]
+    paths: [chatgpt-infinity/edge/**]
 
 jobs:
   build:

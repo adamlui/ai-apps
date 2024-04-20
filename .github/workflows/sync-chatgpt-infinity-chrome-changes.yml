@@ -2,8 +2,8 @@ name: Sync LICENSE.md from chatgpt-infinity/chrome/* to <platform>/*, then chatg
 
 on:
   push:
-    branches: main
-    paths: chatgpt-infinity/chrome/**
+    branches: [main]
+    paths: [chatgpt-infinity/chrome/**]
 
 jobs:
   build:
