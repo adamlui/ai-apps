@@ -26,6 +26,6 @@ export default [
             }
         }
     },
-    { files: ['**/*.mjs'], languageOptions: { sourceType: 'module' }},
+    { files: ['**/*.mjs', '**/lib/*.js'], languageOptions: { sourceType: 'module' }},
     ...eslintPluginJsonSchemaValidator.configs['flat/recommended']
 ];
