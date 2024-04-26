@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.26.1
+// @version             2024.4.26.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -453,83 +453,85 @@
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     }
 
-    function updateAppStyle() { appStyle.innerText = (
-        '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-      + '.ddgpt { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 17px 26px 16px ; flex-basis: 0 ;'
-          + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ; '
-          + ( scheme == 'dark' ? ' border: none ; background: #282828' : '' ) + '}'
-      + '.ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
-      + '.ddgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
-      + ( scheme == 'dark' ? '.ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
-      + '.app-name { font-size: 1.5rem ; font-weight: 700 }'
-      + '.app-name a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none ; margin-left: 1px }'
-      + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
-          + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
-      + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
-      + '.ddgpt .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
-      + '.ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
-      + '.standby-btn { width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ;'
-          + 'border-radius: 4px ; border: 1px solid #888 ;'
-          + 'transition: transform 0.1s ease !important ; transform: scale(1) }'
-      + '.standby-btn:hover { border-radius: 4px ; transform: scale(1.025) ;'
-          + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
-      + '.ddgpt pre {'
-          + 'font-size: 1.14rem ; white-space: pre-wrap ; margin: .85rem 0 7px 0 ; padding: 1.25em ;'
-          + 'border-radius: 10px ; line-height: 21px ; min-width: 0 ; overflow: auto ;'
-          + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2' : '' ) + '}'
-      + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-      + '.ddgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
-      + '.ddgpt + footer { margin: 2px 0 25px }'
-      + `.ddgpt + footer * { color: ${ scheme == 'dark' ? '#ccc' : '#666' } !important }`
-      + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-          + ( isFirefox ? 'top: 0.32em ; right: 16.2em ;' : 'top: 2px ; right: 8.1em ;' )
-          + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
-          + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' } '
-      + '.continue-chat > textarea {'
-          + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
-          + 'font-size: 0.92rem ; height: 1.55rem ; width: 94.6% ; max-height: 200px ; resize: none ; '
-          + 'margin: 3px 0 15px 0 ; padding: 12px 10px 4px 10px ;'
-          + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' } '
-      + '.related-queries {'
-          + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ; overflow: visible ;'
-          + ( isChromium ? 'top: -25px ; margin: -7px 0 -15px' : 'top: -20px ; margin: -3px 0 -10px') + '}'
-      + '.related-query {'
-          + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 4px 10px 5px 10px ;`
-          + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
-          + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
-          + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.88em ; cursor: pointer ;`
-          + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
-          + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
-          + 'transition: transform 0.1s ease !important ; transform: scale(1) }'
-      + '.related-query:hover, .related-query:focus { transform: scale(1.025) !important ;'
-          + `background: ${ scheme == 'dark' ? '#a2a2a270': '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
-      + '.related-query svg { position: relative ; top: 4px ; margin-right: 6px ;' // related query icon
-          + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
-      + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
-      + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
-      + '#send-btn { border: none ; float: right ; position: relative ; background: none ;'
-          + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
-      + `#send-btn:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
-      + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
-      + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
-      + '.kudo-ai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
-      + '.katex-html { display: none } ' // hide unrendered math
-      + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important }' // increase alert padding
-      + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
-      + '.chatgpt-modal p { margin: -8px 0 -9px 4px ; font-size: 1.55rem }' // position/size update alert msg
-      + '.chatgpt-modal button {' // alert buttons
-          + 'cursor: pointer ; border-radius: 0 !important ;'
-          + ( !isMobile ? 'padding: 7px !important ;' : '' )
-          + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
-          + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + '!important ;'
-          + ( scheme == 'dark' ? 'background: none ; color: white' : '') + '}'
-      + `.modal-buttons { margin: 20px -5px -3px ${ isMobile ? -5 : -15 }px !important }` // position alert buttons
-      + ( scheme == 'dark' ? // darkmode alert styles
-          ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
-              + 'background-color: black !important ; color: white }'
-          + '.primary-modal-btn { background: white !important ; color: black !important }'
-          + '.chatgpt-modal a { color: #00cfff !important }' ) : '' )
-    )}
+    function updateAppStyle() {
+        appStyle.innerText = (
+            '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+          + '.ddgpt { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 17px 26px 16px ; flex-basis: 0 ;'
+              + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ; '
+              + ( scheme == 'dark' ? ' border: none ; background: #282828' : '' ) + '}'
+          + '.ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
+          + '.ddgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
+          + ( scheme == 'dark' ? '.ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
+          + '.app-name { font-size: 1.5rem ; font-weight: 700 }'
+          + '.app-name a { color: ' + ( scheme == 'dark' ? 'white' : 'inherit' ) + ' ; text-decoration: none ; margin-left: 1px }'
+          + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
+              + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
+          + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' }}`
+          + '.ddgpt .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
+          + '.ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
+          + '.standby-btn { width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ;'
+              + 'border-radius: 4px ; border: 1px solid #888 ;'
+              + 'transition: transform 0.1s ease !important ; transform: scale(1) }'
+          + '.standby-btn:hover { border-radius: 4px ; transform: scale(1.025) ;'
+              + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
+          + '.ddgpt pre {'
+              + 'font-size: 1.14rem ; white-space: pre-wrap ; margin: .85rem 0 7px 0 ; padding: 1.25em ;'
+              + 'border-radius: 10px ; line-height: 21px ; min-width: 0 ; overflow: auto ;'
+              + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2' : '' ) + '}'
+          + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
+          + '.ddgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
+          + '.ddgpt + footer { margin: 2px 0 25px }'
+          + `.ddgpt + footer * { color: ${ scheme == 'dark' ? '#ccc' : '#666' } !important }`
+          + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
+              + ( isFirefox ? 'top: 0.32em ; right: 16.2em ;' : 'top: 2px ; right: 8.1em ;' )
+              + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
+              + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' } '
+          + '.continue-chat > textarea {'
+              + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
+              + 'font-size: 0.92rem ; height: 1.55rem ; width: 94.6% ; max-height: 200px ; resize: none ; '
+              + 'margin: 3px 0 15px 0 ; padding: 12px 10px 4px 10px ;'
+              + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' } '
+          + '.related-queries {'
+              + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ; overflow: visible ;'
+              + ( isChromium ? 'top: -25px ; margin: -7px 0 -15px' : 'top: -20px ; margin: -3px 0 -10px') + '}'
+          + '.related-query {'
+              + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 4px 10px 5px 10px ;`
+              + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
+              + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
+              + `border: 1px solid ${ scheme == 'dark' ? '#777' : '#e1e1e1' } ; font-size: 0.88em ; cursor: pointer ;`
+              + 'border-radius: 0 13px 12px 13px ; width: fit-content ; flex: 0 0 auto ;'
+              + `box-shadow: 1px 3px ${ scheme == 'dark' ? '11px -8px lightgray' : '8px -6px rgba(169, 169, 169, 0.75)' };`
+              + 'transition: transform 0.1s ease !important ; transform: scale(1) }'
+          + '.related-query:hover, .related-query:focus { transform: scale(1.025) !important ;'
+              + `background: ${ scheme == 'dark' ? '#a2a2a270': '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
+          + '.related-query svg { position: relative ; top: 4px ; margin-right: 6px ;' // related query icon
+              + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
+          + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
+          + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
+          + '#send-btn { border: none ; float: right ; position: relative ; background: none ;'
+              + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
+          + `#send-btn:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
+          + '.kudo-ai { position: relative ; left: 6px ; color: #aaa } '
+          + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
+          + '.kudo-ai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
+          + '.katex-html { display: none } ' // hide unrendered math
+          + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important }' // increase alert padding
+          + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
+          + '.chatgpt-modal p { margin: -8px 0 -9px 4px ; font-size: 1.55rem }' // position/size update alert msg
+          + '.chatgpt-modal button {' // alert buttons
+              + 'cursor: pointer ; border-radius: 0 !important ;'
+              + ( !isMobile ? 'padding: 7px !important ;' : '' )
+              + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
+              + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + '!important ;'
+              + ( scheme == 'dark' ? 'background: none ; color: white' : '') + '}'
+          + `.modal-buttons { margin: 20px -5px -3px ${ isMobile ? -5 : -15 }px !important }` // position alert buttons
+          + ( scheme == 'dark' ? // darkmode alert styles
+              ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
+                  + 'background-color: black !important ; color: white }'
+              + '.primary-modal-btn { background: white !important ; color: black !important }'
+              + '.chatgpt-modal a { color: #00cfff !important }' ) : '' )
+        )
+    }
 
     function updateTweaksStyle() {
         const isStandbyMode = document.querySelector('.standby-btn'),
