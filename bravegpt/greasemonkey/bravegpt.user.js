@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.26.4
+// @version             2024.4.26.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -243,12 +243,6 @@
                            + ( messages.menuLabel_widerSidebar || 'Wider Sidebar' )
                            + state.separator + state.word[+!config.widerSidebar]
             menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
-
-            // Add command to toggle sticky sidebar
-            const ssbLabel = state.symbol[+!config.stickySidebar] + ' '
-                           + ( messages.menuLabel_stickySidebar || 'Sticky Sidebar' )
-                           + state.separator + state.word[+!config.stickySidebar]
-            menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
         }
 
         // Add command to set reply language
@@ -412,7 +406,7 @@
     function toggleSidebar(mode) {
         saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
         updateTweaksStyle()
-        if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg() ; else updateSSBsvg()
+        if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg()
         notify(( messages[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
             + ' ' + state.word[+!config[mode + 'Sidebar']])
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
@@ -520,22 +514,8 @@
         )
     }
 
-    function updateTweaksStyle() {
-        const isStandbyMode = document.querySelector('.standby-btn'),
-              answerIsLoaded = document.querySelector('.corner-btn')
-
-        // Update tweaks style based on settings (for tweaks init + appShow() + toggleSidebar())
-        tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
-                              + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
-
-        // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for getShowReply()'s RQ show + menu RQ toggle)
-        const answerPre = document.querySelector('.bravegpt pre'),
-              relatedQueries = document.querySelector('.related-queries'),
-              shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 226,
-              longerPreHeight = window.innerHeight - 200
-        if (answerPre) answerPre.style.maxHeight = !config.stickySidebar ? 'none' : (
-            relatedQueries?.offsetHeight > 0 ? `${ shorterPreHeight }px` : `${ longerPreHeight }px` )
-    }
+    function updateTweaksStyle() { // based on settings (for tweaks init + appShow() + toggleSidebar())
+        tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )}
 
     function updateWSBsvg() {
 
@@ -558,29 +538,6 @@
         const wsbSVGpaths = config.widerSidebar ? wsbONpaths : wsbOFFpaths
         wsbSVGpaths.forEach(path => wsbSVG.append(path))
         if (!wsbSpan.contains(wsbSVG)) wsbSpan.append(wsbSVG)
-    }
-
-    function updateSSBsvg() {
-
-        // Init span/SVG/paths
-        const ssbSpan = appDiv.querySelector('#ssb-btn'),
-              ssbSVG = ssbSpan.querySelector('svg')
-        const ssbONpaths = [
-            createSVGpath({
-                d: 'M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z' }) ]
-        const ssbOFFpaths = [
-            createSVGpath({
-                d: 'M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146zm.122 2.112v-.002.002zm0-.002v.002a.5.5 0 0 1-.122.51L6.293 6.878a.5.5 0 0 1-.511.12H5.78l-.014-.004a4.507 4.507 0 0 0-.288-.076 4.922 4.922 0 0 0-.765-.116c-.422-.028-.836.008-1.175.15l5.51 5.509c.141-.34.177-.753.149-1.175a4.924 4.924 0 0 0-.192-1.054l-.004-.013v-.001a.5.5 0 0 1 .12-.512l3.536-3.535a.5.5 0 0 1 .532-.115l.096.022c.087.017.208.034.344.034.114 0 .23-.011.343-.04L9.927 2.028c-.029.113-.04.23-.04.343a1.779 1.779 0 0 0 .062.46z' }) ]
-
-        // Set SVG attributes
-        for (const [attr, value] of [['width', 16], ['height', 16], ['viewBox', '0 0 16 16']])
-            ssbSVG.setAttribute(attr, value)
-
-        // Update SVG elements
-        while (ssbSVG.firstChild) { ssbSVG.removeChild(ssbSVG.firstChild) }
-        const ssbSVGpaths = config.stickySidebar ? ssbONpaths : ssbOFFpaths
-        ssbSVGpaths.forEach(path => ssbSVG.append(path))
-        if (!ssbSpan.contains(ssbSVG)) ssbSpan.append(ssbSVG)
     }
 
     function updateFooterContent() {
@@ -717,7 +674,7 @@
     }
 
     function updateTooltip(buttonType) { // text & position
-        const cornerBtnTypes = ['about', 'speak', 'ssb', 'wsb'],
+        const cornerBtnTypes = ['about', 'speak', 'wsb'],
               [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [15, 18] : [5, 28],
               iniRoffset = spreadFactor * (buttonType == 'send' ? 1.65 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
@@ -725,8 +682,6 @@
         tooltipDiv.innerText = (
             buttonType == 'about' ? messages.menuLabel_about || 'About'
           : buttonType == 'speak' ? messages.tooltip_playAnswer || 'Play answer'
-          : buttonType == 'ssb' ? (( config.stickySidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
-                                   + messages.menuLabel_stickySidebar || 'Sticky Sidebar' )
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ messages.prefix_exit || 'Exit' } ` :  '' )
                                    + messages.menuLabel_widerSidebar || 'Wider Sidebar' )
           : buttonType == 'send' ? messages.tooltip_sendReply || 'Send reply' : '' )
@@ -1069,13 +1024,6 @@
 
         if (!isMobile) {
 
-            // Create/append Sticky Sidebar button
-            var ssbSpan = document.createElement('span'),
-                ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-            ssbSpan.id = 'ssb-btn' // for updateSSBsvg() + toggleTooltip()
-            ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '0.01rem 6px 0 0'
-            ssbSpan.append(ssbSVG) ; appDiv.append(ssbSpan) ; updateSSBsvg()
-
             // Create/append Wider Sidebar button
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
@@ -1133,9 +1081,8 @@
                 })}}
             })
         })
-        ssbSVG?.addEventListener('click', () => toggleSidebar('sticky'))
         wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
-        const buttonSpans = [aboutSpan, speakSpan, ssbSpan, wsbSpan]
+        const buttonSpans = [aboutSpan, speakSpan, wsbSpan]
         buttonSpans.forEach(span => { if (span) { // add hover listeners for tooltips
             span.addEventListener('mouseover', toggleTooltip)
             span.addEventListener('mouseout', toggleTooltip)
@@ -1161,8 +1108,6 @@
             balloonTipSpan.className = 'balloon-tip' ; answerPre.textContent = answer
             appDiv.append(balloonTipSpan) ; appDiv.append(answerPre)
         }
-
-        setTimeout(() => updateTweaksStyle(), 100) // in case sticky mode on
 
         // Create/append reply section/elements
         const replySection = document.createElement('section'),
@@ -1293,7 +1238,7 @@
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
-                'rqDisabled', 'stickySidebar', 'suffixEnabled', 'widerSidebar')
+                'rqDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     const convo = [], menuIDs = []
     const state = {
@@ -1367,10 +1312,7 @@
     // Create Brave Search style tweaks
     const tweaksStyle = document.createElement('style'),
           wsbStyles = 'main.main-column, aside.sidebar { max-width: 521px !important }'
-                    + '.bravegpt { width: 521px }',
-          ssbStyles = '.bravegpt { position: sticky ; top: 14px }'
-                    + '.bravegpt ~ * { display: none }' // hide sidebar contents
-                    + 'main > div:first-of-type { overflow: visible !important }'
+                    + '.bravegpt { width: 521px }'
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/stylize tooltip div
@@ -1413,7 +1355,7 @@
         getShowReply(convo)
     }
 
-    // Observe/listen for Brave Search scheme changes to update BraveGPT logo/style scheme
+    // Observe/listen for Brave Search + system scheme changes to update BraveGPT logo/style scheme
     (new MutationObserver(handleSchemeChange)).observe( // class changes from Brave Search theme settings
         document.documentElement, { attributes: true, attributeFilter: ['class'] })
     window.matchMedia('(prefers-color-scheme: dark)') // window.matchMedia changes from browser/system settings
