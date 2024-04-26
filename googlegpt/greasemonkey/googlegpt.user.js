@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.18
+// @version             2024.4.26
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -621,8 +621,11 @@
     // Define UI functions
 
     function isDarkMode() {
-        return document.documentElement.outerHTML.match(/prefers-color-scheme:dark/g)?.length == 2 // Google dark mode on
-            || !!document.querySelector('meta[content*=dark]') // Google dark mode set to device default + system dark mode on
+        const domDarkStatus = [...document.querySelectorAll('span')]
+            .find(span => span.textContent == 'Dark theme') // dark theme status label
+            ?.nextElementSibling.textContent // dark theme status
+        return domDarkStatus == 'On' ? true : domDarkStatus == 'Off' ? false
+             : window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
     }
 
     function toggleSidebar(mode) {
