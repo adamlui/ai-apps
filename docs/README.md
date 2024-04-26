@@ -82,4 +82,4 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
 
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions) /
-<a href="#english--%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">Back to top ↑</a>
+<a href="#------------------------------------------------english---------简体中文----">Back to top ↑</a>
