@@ -59,6 +59,7 @@
         <img width=455 style="margin: 0 0 -13px 18px" src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
     </picture>
 </a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://katex.org">
     <img width=175 style="margin: 0 0 -13px 24px" src="https://i.imgur.com/3FBdSCi.png">
 </a>
