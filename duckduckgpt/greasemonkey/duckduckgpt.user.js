@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.26.2
+// @version             2024.4.26.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -1301,6 +1301,9 @@
     appElems.forEach(elem => hostContainer.prepend(elem))
     appElems.toReversed().forEach((elem, index) => // fade in staggered
         setTimeout(() => elem.classList.add('active'), index * 550 - 200))
+
+    // Replace hostContainer max-width w/ min-width for better UI
+    hostContainer.style.maxWidth = '' ; hostContainer.style.minWidth = '448px'
 
     // Check for active text campaigns to replace footer CTA
     fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
