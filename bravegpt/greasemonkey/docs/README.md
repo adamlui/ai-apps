@@ -17,10 +17,10 @@
 
 <h3><b>BraveGPT</b> brings the magic of ChatGPT to Brave Search (powered by GPT-4!)</h3>
 
-<a href="https://greasyfork.org/en/scripts/462440-bravegpt"><img height=45 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=45 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=45 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=45 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.bravegpt.com/discussions) / 
-[Review](https://greasyfork.org/en/scripts/462440-bravegpt/feedback#post-discussion) / 
+[Review](https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion) / 
 [Contact author](https://github.com/adamlui)
 
 #
@@ -33,9 +33,9 @@
 
 ## 🚀 Installation
 
-1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/))
+1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/))
 
-2. Install [BraveGPT](https://greasyfork.org/en/scripts/462440-bravegpt) (will load in userscript manager installed above)
+2. Install [BraveGPT](https://greasyfork.org/scripts/462440-bravegpt) (will load in userscript manager installed above)
 
 3. Visit [search.brave.com](https://search.brave.com), type your search, engage bot!
 
@@ -115,10 +115,10 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <br>
 
-<a href="https://greasyfork.org/en/scripts/462440-bravegpt"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.bravegpt.com/discussions) /
-[Leave a review](https://greasyfork.org/en/scripts/462440-bravegpt/feedback#post-discussion) /
+[Leave a review](https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
