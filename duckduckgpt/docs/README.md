@@ -27,6 +27,10 @@
 
 <img src="https://raw.githubusercontent.com/KudoAI/duckduckgpt/main/media/images/screenshots/how-to-becum-rich-demo.png">
 
+### Mobile:
+
+<img src="https://media.ddgpt.com/images/screenshots/mobile/how-to-becum-rich-query/darkmode.png">
+
 ## 🚀 Installation
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/))
