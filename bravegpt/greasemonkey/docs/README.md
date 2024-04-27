@@ -27,6 +27,10 @@
 
 <img src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png">
 
+#### Mobile:
+
+<img src="https://media.bravegpt.com/images/screenshots/mobile/hi-query/darkmode.png">
+
 ## 🚀 Installation
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/))
