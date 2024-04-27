@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.4.4
+// @version             2024.4.27
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @icon                https://media.chatgptinfinity.com/images/icons/infinity-symbol/black/icon48.png
@@ -257,22 +257,22 @@
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
-        function onLoad(response) {
+        function onLoad(resp) {
             try { // to return localized messages.json
-                const messages = new Proxy(JSON.parse(response.responseText), {
-                    get(target, prop) { // remove need to ref nested keys
-                        if (typeof target[prop] == 'object' && target[prop] !== null && 'message' in target[prop]) {
-                            return target[prop].message
-                }}}) ; resolve(messages)
-            } catch (err) { // if 404
-                msgXHRtries++ ; if (msgXHRtries === 3) return // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
+                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
+                for (const key in msgs)  // remove need to ref nested keys
+                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
+                        flatMsgs[key] = msgs[key].message
+                resolve(flatMsgs)
+            } catch (err) { // if bad response
+                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
                     msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
             }
         }
-    }) ; const messages = await msgsLoaded
+    }) ; const msgs = await msgsLoaded
 
     await chatgpt.isLoaded()
 
@@ -282,7 +282,7 @@
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
     let menuIDs = []
     if (document.documentElement.getAttribute('cif-extension-installed')) { // if extension installed, disable script/menu
-        GM_registerMenuCommand(state.symbol[1] + ' ' + ( messages.menuLabel_disabled || 'Disabled (extension installed)' ),
+        GM_registerMenuCommand(state.symbol[1] + ' ' + ( msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
             () => { return }) // disable menu
         return // exit script
     } else registerMenu() // create functional menu
@@ -365,70 +365,70 @@
 
         // Add command to toggle Infinity Mode
         const imLabel = state.symbol[+!config.infinityMode] + ' '
-                      + ( messages.menuLabel_infinityMode || 'Infinity Mode' ) + ' ∞ '
+                      + ( msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ' ∞ '
                       + state.separator + state.word[+!config.infinityMode]
         menuIDs.push(GM_registerMenuCommand(imLabel, () => { document.querySelector('#infToggleLabel').click() }))
 
         // Add command to toggle visibility of toggle
         const tvLabel = state.symbol[+config.toggleHidden] + ' '
-                      + ( messages.menuLabel_toggleVis || 'Toggle Visibility' )
+                      + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
                       + state.separator + state.word[+config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            notify(( messages.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+config.toggleHidden])
+            notify(( msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+config.toggleHidden])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle auto-scroll
         const asLabel = state.symbol[+config.autoScrollDisabled] + ' '
-                      + ( messages.menuLabel_autoScroll || 'Auto-Scroll' )
+                      + ( msgs.menuLabel_autoScroll || 'Auto-Scroll' )
                       + state.separator + state.word[+config.autoScrollDisabled]
         menuIDs.push(GM_registerMenuCommand(asLabel, () => {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
-            notify(( messages.menuLabel_autoScroll || 'Auto-Scroll' ) + ': '+ state.word[+config.autoScrollDisabled])
+            notify(( msgs.menuLabel_autoScroll || 'Auto-Scroll' ) + ': '+ state.word[+config.autoScrollDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to set reply language
-        const rlLabel = '🌐 ' + ( messages.menuLabel_replyLang || 'Reply Language' )
+        const rlLabel = '🌐 ' + ( msgs.menuLabel_replyLang || 'Reply Language' )
                       + state.separator + config.replyLanguage
         menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
             while (true) {
                 let replyLanguage = prompt(
-                    `${ messages.prompt_updateReplyLang || 'Update reply language' }:`, config.replyLanguage)
+                    `${ msgs.prompt_updateReplyLang || 'Update reply language' }:`, config.replyLanguage)
                 if (replyLanguage === null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
                     replyLanguage = ( // auto-case for menu/alert aesthetics
                         [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
                         : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                    alert(( messages.alert_replyLangUpdated || 'Language updated' ) + '!', // title
-                        ( messages.appName || config.appName ) + ' ' // msg
-                            + ( messages.alert_willReplyIn || 'will reply in' ) + ' '
-                            + ( replyLanguage || messages.alert_yourSysLang || 'your system language') + '.')
+                    alert(( msgs.alert_replyLangUpdated || 'Language updated' ) + '!', // title
+                        ( msgs.appName || config.appName ) + ' ' // msg
+                            + ( msgs.alert_willReplyIn || 'will reply in' ) + ' '
+                            + ( replyLanguage || msgs.alert_yourSysLang || 'your system language') + '.')
                     if (config.infinityMode) restartInNewChat() // using new reply language                        
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
 
         // Add command to set reply topic
-        const re_all = new RegExp('^(' + ( messages.menuLabel_all || 'all' ) + '|all|any|every)$', 'i'),
-              rtLabel = '🧠 ' + ( messages.menuLabel_replyTopic || 'Reply Topic' ) + state.separator
-                      + ( re_all.test(config.replyTopic) ? ( messages.menuLabel_all || 'all' )
+        const re_all = new RegExp('^(' + ( msgs.menuLabel_all || 'all' ) + '|all|any|every)$', 'i'),
+              rtLabel = '🧠 ' + ( msgs.menuLabel_replyTopic || 'Reply Topic' ) + state.separator
+                      + ( re_all.test(config.replyTopic) ? ( msgs.menuLabel_all || 'all' )
                                                          : toTitleCase(config.replyTopic) )
         menuIDs.push(GM_registerMenuCommand(rtLabel, () => {
-            const replyTopic = prompt(( messages.prompt_updateReplyTopic || 'Update reply topic' )
-                             + ' (' + ( messages.prompt_orEnter || 'or enter' ) + ' \'ALL\'):', config.replyTopic)
+            const replyTopic = prompt(( msgs.prompt_updateReplyTopic || 'Update reply topic' )
+                             + ' (' + ( msgs.prompt_orEnter || 'or enter' ) + ' \'ALL\'):', config.replyTopic)
             if (replyTopic !== null) { // user didn't cancel
                 const str_replyTopic = replyTopic.toString()
                 saveSetting('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
-                alert(( messages.alert_replyTopicUpdated || 'Topic updated' ) + '!',
-                    ( messages.appName || config.appName ) + ' '
-                        + ( messages.alert_willAnswer || 'will answer questions' ) + ' '
+                alert(( msgs.alert_replyTopicUpdated || 'Topic updated' ) + '!',
+                    ( msgs.appName || config.appName ) + ' '
+                        + ( msgs.alert_willAnswer || 'will answer questions' ) + ' '
                         + ( !replyTopic || re_all.test(str_replyTopic)
-                              ? messages.alert_onAllTopics || 'on ALL topics'
-                              : (( messages.alert_onTopicOf || 'on the topic of' ) + ' ' + str_replyTopic ))
+                              ? msgs.alert_onAllTopics || 'on ALL topics'
+                              : (( msgs.alert_onTopicOf || 'on the topic of' ) + ' ' + str_replyTopic ))
                         + '!'
                 )
                 if (config.infinityMode) { // restart session using new reply topic
@@ -438,26 +438,26 @@
         }}))
 
         // Add command to change reply interval
-        const riLabel = '⌚ ' + ( messages.menuLabel_replyInt || 'Reply Interval' )
+        const riLabel = '⌚ ' + ( msgs.menuLabel_replyInt || 'Reply Interval' )
                       + state.separator + config.replyInterval + 's'
         menuIDs.push(GM_registerMenuCommand(riLabel, async () => {
             while (true) {
                 const replyInterval = prompt(
-                    `${ messages.prompt_updateReplyInt || 'Update reply interval (minimum 5 secs)' }:`, config.replyInterval)
+                    `${ msgs.prompt_updateReplyInt || 'Update reply interval (minimum 5 secs)' }:`, config.replyInterval)
                 if (replyInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(replyInterval, 10)) && parseInt(replyInterval, 10) > 4) { // valid int set
                     saveSetting('replyInterval', parseInt(replyInterval, 10))
-                    alert(( messages.alert_replyIntUpdated || 'Interval updated' ) + '!', // title
-                        ( messages.appName || config.appName ) + ' ' // msg
-                            + ( messages.alert_willReplyEvery || 'will reply every' ) + ' '
-                            + replyInterval + ' ' + ( messages.unit_seconds || 'seconds' ) + '.')
+                    alert(( msgs.alert_replyIntUpdated || 'Interval updated' ) + '!', // title
+                        ( msgs.appName || config.appName ) + ' ' // msg
+                            + ( msgs.alert_willReplyEvery || 'will reply every' ) + ' '
+                            + replyInterval + ' ' + ( msgs.unit_seconds || 'seconds' ) + '.')
                     if (config.infinityMode) resetInSameChat() // using new reply interval                    
                     for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
                     break
         }}}))
 
         // Add command to launch About modal
-        const aboutLabel = `💡 ${ messages.menuLabel_about || 'About' } ${ messages.appName || config.appName }`
+        const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || config.appName }`
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
 
@@ -470,20 +470,20 @@
               pBrStyle = 'position: relative ; left: 4px ',
               aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
         const aboutAlertID = alert(
-            messages.appName || config.appName, // title
-            `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version || 'Version' }</i></b>: </span>`
+            msgs.appName || config.appName, // title
+            `<span style="${ headingStyle }"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-            + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy || 'Powered by' }</i></b>: </span>`
+            + `<span style="${ headingStyle }"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
                 + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                 + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-            + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode || 'Source code' }</i></b>:</span>\n`
+            + `<span style="${ headingStyle }"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
                 + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                 + config.gitHubURL + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
                 function getSupport() { safeWindowOpen(config.supportURL) },
                 function leaveAReview() { // show new modal
-                    const reviewAlertID = chatgpt.alert(( messages.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
+                    const reviewAlertID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                           function productHunt() { safeWindowOpen(
                               'https://www.producthunt.com/products/chatgpt-infinity/reviews/new') },
@@ -500,13 +500,13 @@
         // Re-format buttons to include emoji + localized label + hide Dismiss button
         for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
             if (/updates/i.test(button.textContent)) button.textContent = (
-                '🚀 ' + ( messages.buttonLabel_updateCheck || 'Check for Updates' ))
+                '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
             else if (/support/i.test(button.textContent)) button.textContent = (
-                '🧠 ' + ( messages.buttonLabel_getSupport || 'Get Support' ))
+                '🧠 ' + ( msgs.buttonLabel_getSupport || 'Get Support' ))
             else if (/review/i.test(button.textContent)) button.textContent = (
-                '⭐ ' + ( messages.buttonLabel_leaveReview || 'Leave a Review' ))
+                '⭐ ' + ( msgs.buttonLabel_leaveReview || 'Leave a Review' ))
             else if (/apps/i.test(button.textContent)) button.textContent = (
-                '🤖 ' + ( messages.buttonLabel_moreApps || 'More ChatGPT Apps' ))
+                '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
             else button.style.display = 'none' // hide Dismiss button
         }
     }
@@ -529,14 +529,14 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
-                            ( messages.alert_newerVer || 'An update to' ) + ' ' // msg
-                                + ( messages.appName || config.appName ) + ' '
-                                + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!   `
+                        const updateAlertID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                            ( msgs.alert_newerVer || 'An update to' ) + ' ' // msg
+                                + ( msgs.appName || config.appName ) + ' '
+                                + `(v ${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + `> ${ messages.link_viewChanges || 'View changes' }</a>`,
+                                    + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
@@ -548,17 +548,17 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = messages.buttonLabel_update || 'Update'
-                            updateBtns[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = msgs.buttonLabel_update || 'Update'
+                            updateBtns[0].textContent = msgs.buttonLabel_dismiss || 'Dismiss'
                         }
 
                         return
                 }}
 
                 // Alert to no update, return to About alert
-                alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ messages.appName || config.appName } (v${ currentVer }) ` // msg
-                        + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!',
+                alert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
+                    `${ msgs.appName || config.appName } (v${ currentVer }) ` // msg
+                        + ( msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
                     '', '', updateAlertWidth
                 )
                 launchAboutModal()
@@ -662,9 +662,9 @@
         toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : 148 }px` // to truncate overflown text
         toggleLabel.style.overflow = 'hidden' // to truncate overflown text
         toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
-        toggleLabel.innerText = ( messages.menuLabel_infinityMode || 'Infinity Mode' ) + ' '
-                              + ( toggleInput.checked ? ( messages.state_enabled  || 'enabled' )
-                                                      : ( messages.state_disabled || 'disabled' ))
+        toggleLabel.innerText = ( msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ' '
+                              + ( toggleInput.checked ? ( msgs.state_enabled  || 'enabled' )
+                                                      : ( msgs.state_disabled || 'disabled' ))
         // Append elements
         for (const elem of [navicon, toggleInput, switchSpan, toggleLabel]) navToggleDiv.append(elem)
 
@@ -686,7 +686,7 @@
     const infinityMode = {
 
         activate: async () => {
-            notify(( messages.menuLabel_infinityMode || 'Infinity Mode' ) + ': ON')
+            notify(( msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ': ON')
             if (chatgpt.browser.isMobile() && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             try { chatgpt.startNewChat() } catch (err) { return }
             setTimeout(() => {
@@ -711,7 +711,7 @@
         deactivate: () => {
             chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
             document.querySelector('#infToggleInput').checked = false // for window listener
-            notify(( messages.menuLabel_infinityMode || 'Infinity Mode' ) + ': OFF')
+            notify(( msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ': OFF')
             config.infinityMode = false // in case toggled by PV listener
         },
 
