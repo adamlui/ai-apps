@@ -25,7 +25,7 @@
 
 #
 
-<img src="https://raw.githubusercontent.com/KudoAI/bravegpt/master/media/images/screenshots/brave-ai.png">
+<img src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png">
 
 ## 🚀 Installation
 
