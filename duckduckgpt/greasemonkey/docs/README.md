@@ -20,7 +20,7 @@
 <a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#-installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.duckduckgpt.com/discussions) /
-[Review](https://duckduckgpt.com/userscript/review) /
+[Review](https://greasyfork.org/scripts/459849-duckduckgpt/feedback#post-discussion) /
 [Contact author](https://github.com/adamlui)
 
 #
@@ -112,7 +112,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 <a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#-installation"><img title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
 [Discuss](https://github.duckduckgpt.com/discussions) /
-[Leave a review](https://duckduckgpt.com/userscript/review) /
+[Leave a review](https://greasyfork.org/scripts/459849-duckduckgpt/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 ## 📣 Social links
