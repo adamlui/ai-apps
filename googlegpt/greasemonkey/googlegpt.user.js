@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.27.1
+// @version             2024.4.28
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -645,7 +645,7 @@
             '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
           + '.googlegpt {'
               + 'border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
-              + `padding: ${ isChromium ? 22 : 20 }px 26px 6px 26px ;`
+              + `padding: ${ isFirefox ? 20 : 22 }px 26px 6px 26px ;`
               + ( isMobile ? 'margin: 8px 0 8px' : 'margin-bottom: 30px' ) + ';' // add vertical margins
               + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
               + ( scheme == 'dark' ? ' border: none ; background: #282828' : ' background: white' ) + '}'
@@ -1518,7 +1518,6 @@
 
     // Init UI flags
     const scheme = isDarkMode() ? 'dark' : 'light',
-          isChromium = chatgpt.browser.isChromium(),
           isFirefox = chatgpt.browser.isFirefox(),
           isMobile = chatgpt.browser.isMobile(),
           hasSidebar = document.querySelector('[class*="kp-"]')
