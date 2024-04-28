@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.27
+// @version             2024.4.27.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -638,7 +638,7 @@
     }
 
     function updateAppLogoSrc() {
-        appLogoImg.src = `${ config.assetHostURL }/media/images/logos/googlegpt/${ scheme == 'dark' ? 'white' : 'black' }.png` }
+        appLogoImg.src = `${config.assetHostURL}/media/images/logos/googlegpt/${ scheme == 'dark' ? 'white' : 'black' }.png` }
 
     function updateAppStyle() {
         appStyle.innerText = (
@@ -1227,8 +1227,8 @@
         appLogoAnchor.classList.add('app-name', 'no-user-select')
         appLogoImg.width = isMobile ? 197 : isFirefox ? 127 : 125
         appLogoImg.style.cssText = appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
-                                                             + ( isMobile ? '; margin-left: 1px' : '' )
-                                                         : 'margin-left: 2px' // pos alt if shown
+                                                         + ( isMobile ? '; margin-left: 1px' : '' )
+                                                     : 'margin-left: 2px' // pos alt if shown
         appDiv.append(appPrefixSpan, appLogoAnchor)
 
         // Create/append 'by KudoAI'
