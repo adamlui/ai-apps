@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.28.2
+// @version             2024.4.28.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -520,9 +520,9 @@
           + '#send-btn { border: none ; float: right ; position: relative ; background: none ;'
               + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
           + `#send-btn:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
-          + '.kudo-ai { margin-left: 6px ; color: #aaa } '
-          + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none } '
-          + '.kudo-ai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
+          + '.kudoai { margin-left: 6px ; color: #aaa } '
+          + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none } '
+          + '.kudoai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
           + '.katex-html { display: none } ' // hide unrendered math
           + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important }' // increase alert padding
           + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
@@ -951,7 +951,7 @@
 
         // Create/append 'by KudoAI'
         const kudoAIspan = document.createElement('span')
-        kudoAIspan.classList.add('kudo-ai', 'no-user-select') ; kudoAIspan.textContent = 'by '
+        kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
         const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
         kudoAIspan.append(kudoAIlink) ; appDiv.append(kudoAIspan)
 
