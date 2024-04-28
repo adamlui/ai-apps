@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.28
+// @version             2024.4.28.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -487,9 +487,9 @@
           + '#send-btn { border: none ; float: right ; position: relative ; background: none ; margin: 29px 4px 0 0 ;'
               + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
           + `#send-btn:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
-          + '.kudo-ai { margin-left: 7px ; font-size: .65rem ; color: #aaa }'
-          + '.kudo-ai a { color: #aaa ; text-decoration: none }'
-          + `.kudo-ai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
+          + '.kudoai { margin-left: 7px ; font-size: .65rem ; color: #aaa }'
+          + '.kudoai a { color: #aaa ; text-decoration: none }'
+          + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
           + '.katex-html { display: none }' // hide unrendered math
           + '.chatgpt-modal > div { padding: 24px 20px 24px 20px !important }' // increase alert padding
           + '.chatgpt-modal p { margin-left: 4px ; font-size: 1.115rem }' // position/size alert msg
@@ -984,7 +984,7 @@
 
         // Create/append 'by KudoAI'
         const kudoAIspan = document.createElement('span')
-        kudoAIspan.classList.add('kudo-ai', 'no-user-select') ; kudoAIspan.textContent = 'by '
+        kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
         kudoAIspan.style.cssText = appLogoImg.loaded ? 'position: relative ; bottom: 8px ; font-size: 12px' : ''
         const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
         kudoAIspan.append(kudoAIlink) ; appDiv.append(kudoAIspan)
