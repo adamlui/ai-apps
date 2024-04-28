@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.4.5
+// @version             2024.4.27
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -278,22 +278,22 @@
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
         GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
-        function onLoad(response) {
+        function onLoad(resp) {
             try { // to return localized messages.json
-                const messages = new Proxy(JSON.parse(response.responseText), {
-                    get(target, prop) { // remove need to ref nested keys
-                        if (typeof target[prop] == 'object' && target[prop] !== null && 'message' in target[prop]) {
-                            return target[prop].message
-                }}}) ; resolve(messages)
-            } catch (err) { // if 404
-                msgXHRtries++ ; if (msgXHRtries === 3) return // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
+                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
+                for (const key in msgs)  // remove need to ref nested keys
+                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
+                        flatMsgs[key] = msgs[key].message
+                resolve(flatMsgs)
+            } catch (err) { // if bad response
+                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
                     msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
             }
         }
-    }) ; const messages = await msgsLoaded
+    }) ; const msgs = await msgsLoaded
 
     // Define SCRIPT functions
 
@@ -309,46 +309,46 @@
 
         // Add command to also activate wide screen in full-window
         const fwLabel = state.symbol[+!config.fullerWindows] + ' '
-                      + ( messages.menuLabel_fullerWins || 'Fuller Windows' )
+                      + ( msgs.menuLabel_fullerWins || 'Fuller Windows' )
                       + state.separator + state.word[+!config.fullerWindows]
         menuIDs.push(GM_registerMenuCommand(fwLabel, () => {
             saveSetting('fullerWindows', !config.fullerWindows)
             syncFullerWindows(config.fullerWindows) // live update on click
             if (!config.notifDisabled)
-                notify(`${ ( messages.menuLabel_fullerWins || 'Fuller Windows' ) }: ${ state.word[+!config.fullerWindows] }`)
+                notify(`${ ( msgs.menuLabel_fullerWins || 'Fuller Windows' ) }: ${ state.word[+!config.fullerWindows] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle taller chatbox when typing
-        const tcbLabel = '↕️ ' + ( messages.menuLabel_tallerChatbox || 'Taller Chatbox' )
+        const tcbLabel = '↕️ ' + ( msgs.menuLabel_tallerChatbox || 'Taller Chatbox' )
                        + state.separator + state.word[+config.tcbDisabled]
         menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
             saveSetting('tcbDisabled', !config.tcbDisabled)
             updateTweaksStyle()
             if (!config.notifDisabled)
-                notify(`${ messages.menuLabel_tallerChatbox || 'Taller Chatbox' }: ${ state.word[+config.tcbDisabled] }`)
+                notify(`${ msgs.menuLabel_tallerChatbox || 'Taller Chatbox' }: ${ state.word[+config.tcbDisabled] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle wider chatbox with widescreen mode
-        const wcbLabel = '↔️ ' + ( messages.menuLabel_widerChatbox || 'Wider Chatbox' )
+        const wcbLabel = '↔️ ' + ( msgs.menuLabel_widerChatbox || 'Wider Chatbox' )
                        + state.separator + state.word[+!config.widerChatbox]
         menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
             saveSetting('widerChatbox', !config.widerChatbox)
             updateWidescreenStyle()
             if (!config.notifDisabled)
-                notify(`${ messages.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ state.word[+!config.widerChatbox] }`)
+                notify(`${ msgs.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ state.word[+!config.widerChatbox] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to hide New Chat button
         const hncLabel = state.symbol[+config.ncbDisabled] + ' '
-                       + ( messages.menuLabel_newChatBtn || 'New Chat Button' )
+                       + ( msgs.menuLabel_newChatBtn || 'New Chat Button' )
                        + state.separator + state.word[+config.ncbDisabled]
         menuIDs.push(GM_registerMenuCommand(hncLabel, () => {
             saveSetting('ncbDisabled', !config.ncbDisabled)
             updateTweaksStyle()
-            notify(`${ messages.menuLabel_newChatBtn || 'New Chat Button' }: ${ state.word[+config.ncbDisabled] }`)
+            notify(`${ msgs.menuLabel_newChatBtn || 'New Chat Button' }: ${ state.word[+config.ncbDisabled] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -356,41 +356,41 @@
 
             // Add command to toggle hidden header
             const hhLabel = state.symbol[+!config.hiddenHeader] + ' '
-                          + ( messages.menuLabel_hiddenHeader || 'Hidden Header' )
+                          + ( msgs.menuLabel_hiddenHeader || 'Hidden Header' )
                           + state.separator + state.word[+!config.hiddenHeader]
             menuIDs.push(GM_registerMenuCommand(hhLabel, () => {
                 saveSetting('hiddenHeader', !config.hiddenHeader)
                 updateTweaksStyle()
                 if (!config.notifDisabled)
-                    notify(`${ messages.menuLabel_hiddenHeader || 'Hidden Header' }: ${ state.word[+!config.hiddenHeader] }`)
+                    notify(`${ msgs.menuLabel_hiddenHeader || 'Hidden Header' }: ${ state.word[+!config.hiddenHeader] }`)
                 for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             }))
 
             // Add command to toggle hidden footer
             const hfLabel = state.symbol[+!config.hiddenFooter] + ' '
-                          + ( messages.menuLabel_hiddenFooter || 'Hidden Footer' )
+                          + ( msgs.menuLabel_hiddenFooter || 'Hidden Footer' )
                           + state.separator + state.word[+!config.hiddenFooter]
             menuIDs.push(GM_registerMenuCommand(hfLabel, () => {
                 saveSetting('hiddenFooter', !config.hiddenFooter)
                 updateTweaksStyle()
                 if (!config.notifDisabled)
-                    notify(`${ messages.menuLabel_hiddenFooter || 'Hidden Footer' }: ${ state.word[+!config.hiddenFooter] }`)
+                    notify(`${ msgs.menuLabel_hiddenFooter || 'Hidden Footer' }: ${ state.word[+!config.hiddenFooter] }`)
                 for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             }))
         }
 
         // Add command to show notifications when switching modes
         const mnLabel = state.symbol[+config.notifDisabled] + ' '
-                      + ( messages.menuLabel_modeNotifs || 'Mode Notifications' )
+                      + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
                       + state.separator + state.word[+config.notifDisabled]
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifDisabled', !config.notifDisabled)
-            notify(`${ messages.menuLabel_modeNotifs || 'Mode Notifications' }: ${ state.word[+config.notifDisabled] }`)
+            notify(`${ msgs.menuLabel_modeNotifs || 'Mode Notifications' }: ${ state.word[+config.notifDisabled] }`)
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to launch About modal
-        const amLabel = `💡 ${ messages.menuLabel_about || 'About' } ${ messages.appName || config.appName }`
+        const amLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || config.appName }`
         menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
     }
 
@@ -403,20 +403,20 @@
               pBrStyle = 'position: relative ; left: 4px ',
               aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
         const aboutAlertID = alert(
-            messages.appName || config.appName, // title
-            `<span style="${ headingStyle }"><b>🏷️ <i>${ messages.about_version || 'Version' }</i></b>: </span>`
+            msgs.appName || config.appName, // title
+            `<span style="${ headingStyle }"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
-            + `<span style="${ headingStyle }"><b>⚡ <i>${ messages.about_poweredBy || 'Powered by' }</i></b>: </span>`
+            + `<span style="${ headingStyle }"><b>⚡ <i>${ msgs.about_poweredBy || 'Powered by' }</i></b>: </span>`
                 + `<span style="${ pStyle }"><a style="${ aStyle }" href="https://chatgpt.js.org" target="_blank" rel="noopener">`
                 + 'chatgpt.js</a>' + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '</span>\n'
-            + `<span style="${ headingStyle }"><b>📜 <i>${ messages.about_sourceCode || 'Source code' }</i></b>:</span>\n`
+            + `<span style="${ headingStyle }"><b>📜 <i>${ msgs.about_sourceCode || 'Source code' }</i></b>:</span>\n`
                 + `<span style="${ pBrStyle }"><a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
                 + config.gitHubURL + '</a></span>',
             [ // buttons
                 function checkForUpdates() { updateCheck() },
                 function getSupport() { safeWindowOpen(config.supportURL) },
                 function leaveAReview() { // show new modal
-                    const reviewAlertID = chatgpt.alert(( messages.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
+                    const reviewAlertID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                           function productHunt() { safeWindowOpen(
                               'https://www.producthunt.com/products/chatgpt-widescreen-mode/reviews/new') },
@@ -431,13 +431,13 @@
         // Re-format buttons to include emoji + localized label + hide Dismiss button
         for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
             if (/updates/i.test(button.textContent)) button.textContent = (
-                '🚀 ' + ( messages.buttonLabel_updateCheck || 'Check for Updates' ))
+                '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
             else if (/support/i.test(button.textContent)) button.textContent = (
-                '🧠 ' + ( messages.buttonLabel_getSupport || 'Get Support' ))
+                '🧠 ' + ( msgs.buttonLabel_getSupport || 'Get Support' ))
             else if (/review/i.test(button.textContent)) button.textContent = (
-                '⭐ ' + ( messages.buttonLabel_leaveReview || 'Leave a Review' ))
+                '⭐ ' + ( msgs.buttonLabel_leaveReview || 'Leave a Review' ))
             else if (/apps/i.test(button.textContent)) button.textContent = (
-                '🤖 ' + ( messages.buttonLabel_moreApps || 'More ChatGPT Apps' ))
+                '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
             else button.style.display = 'none' // hide Dismiss button
         }
     }
@@ -460,14 +460,14 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateAlertID = alert(( messages.alert_updateAvail || 'Update available' ) + '! 🚀', // title
-                            ( messages.alert_newerVer || 'An update to' ) + ' ' // msg
-                                + ( messages.appName || config.appName ) + ' '
-                                + `(v ${ latestVer }) ${ messages.alert_isAvail || 'is available' }!   `
+                        const updateAlertID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                            ( msgs.alert_newerVer || 'An update to' ) + ' ' // msg
+                                + ( msgs.appName || config.appName ) + ' '
+                                + `(v ${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!   `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
-                                    + `> ${ messages.link_viewChanges || 'View changes' }</a>`,
+                                    + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
                                     { active: true, insert: true } // focus, make adjacent
@@ -479,17 +479,17 @@
                         if (!config.userLanguage.startsWith('en')) {
                             const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
-                            updateBtns[1].textContent = messages.buttonLabel_update || 'Update'
-                            updateBtns[0].textContent = messages.buttonLabel_dismiss || 'Dismiss'
+                            updateBtns[1].textContent = msgs.buttonLabel_update || 'Update'
+                            updateBtns[0].textContent = msgs.buttonLabel_dismiss || 'Dismiss'
                         }
 
                         return
                 }}
 
                 // Alert to no update, return to About alert
-                alert(( messages.alert_upToDate || 'Up-to-date' ) + '!', // title
-                    `${ messages.appName || config.appName } (v${ currentVer }) ` // msg
-                        + ( messages.alert_isUpToDate || 'is up-to-date' ) + '!',
+                alert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
+                    `${ msgs.appName || config.appName } (v${ currentVer }) ` // msg
+                        + ( msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
                     '', '', updateAlertWidth
                 )
                 launchAboutModal()
@@ -629,8 +629,8 @@
             else /* poe */ syncMode('fullWindow') // since not sidebarObserve()'d
         } else if (mode == 'fullScreen') {
             if (config.f11)
-                alert(messages.alert_pressF11 || 'Press F11 to exit full screen',
-                    ( messages.alert_f11reason || 'F11 was used to enter full screen, and due to browser security reasons,'
+                alert(msgs.alert_pressF11 || 'Press F11 to exit full screen',
+                    ( msgs.alert_f11reason || 'F11 was used to enter full screen, and due to browser security reasons,'
                         + 'the same key must be used to exit it' ) + '.')
             document.exitFullscreen().catch(err => console.error(config.appSymbol + ' >> Failed to exit fullscreen', err))
         }
@@ -708,7 +708,7 @@
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
     if (document.documentElement.getAttribute('cwm-extension-installed')) { // if extension installed
-        GM_registerMenuCommand(state.symbol[1] + ' ' + ( messages.menuLabel_disabled || 'Disabled (extension installed)' ),
+        GM_registerMenuCommand(state.symbol[1] + ' ' + ( msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
             () => { return }) // disable menu
         return // exit script
     } else registerMenu() // create functional menu
@@ -830,7 +830,7 @@
                     if (site == 'openai') { // sidebar observer doesn't trigger
                         syncFullerWindows(true) // so sync Fuller Windows...
                         if (!config.notifDisabled) // ... + notify
-                            notify(( messages.mode_fullWindow || 'Full-window' ) + ' ON')
+                            notify(( msgs.mode_fullWindow || 'Full-window' ) + ' ON')
                 }}
                 if (config.tcbDisabled) updateTweaksStyle() ; prevSessionChecked = true
             }
