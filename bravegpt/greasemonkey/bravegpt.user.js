@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.28.2
+// @version             2024.4.28.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -252,7 +252,7 @@
             while (true) {
                 let replyLanguage = prompt(
                     ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
-                if (replyLanguage === null) break // user cancelled so do nothing
+                if (replyLanguage == null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
                     replyLanguage = ( // auto-case for menu/alert aesthetics
                         [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
@@ -578,7 +578,7 @@
                                 // Skip disqualified groups
                                 if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
                                     || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
-                                    || adGroup.active === false // group explicitly disabled
+                                    || adGroup.active == false // group explicitly disabled
                                     || adGroup.targetBrowsers && // target browser(s) exist...
                                         !adGroup.targetBrowsers.some( // ...but doesn't match user's
                                             browser => new RegExp(browser, 'i').test(navigator.userAgent))
@@ -588,8 +588,8 @@
                                 ) continue // to next group
 
                                 // Filter out inactive ads, pick random active one
-                                const activeAds = adGroup.ads.filter(ad => ad.active !== false)
-                                if (activeAds.length === 0) continue // to next group since no ads active
+                                const activeAds = adGroup.ads.filter(ad => ad.active != false)
+                                if (activeAds.length == 0) continue // to next group since no ads active
                                 const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
 
                                 // Build destination URL
@@ -627,7 +627,7 @@
 
         function shuffle(list) {
             let currentIdx = list.length, tempValue, randomIdx
-            while (currentIdx !== 0) { // elements remain to be shuffled
+            while (currentIdx != 0) { // elements remain to be shuffled
                 randomIdx = Math.floor(Math.random() * currentIdx) ; currentIdx -= 1
                 tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
             }
@@ -927,16 +927,16 @@
 
         function onLoad() { // process text
             return async event => {
-                if (event.status !== 200) {
+                if (event.status != 200) {
                     appError('Event status: ' + event.status)
                     appError('Event response: ' + event.responseText)
                     if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpoints.length)
                         retryDiffHost()
-                    else if (event.status === 401 && !config.proxyAPIenabled) {
+                    else if (event.status == 401 && !config.proxyAPIenabled) {
                         GM_deleteValue(config.keyPrefix + '_openAItoken') ; appAlert('login') }
-                    else if (event.status === 403)
+                    else if (event.status == 403)
                         appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
-                    else if (event.status === 429) appAlert('tooManyRequests')
+                    else if (event.status == 429) appAlert('tooManyRequests')
                     else appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
                 } else if (endpoint.includes('openai')) {
                     if (event.response) {
@@ -978,7 +978,7 @@
         const appTitleAnchor = createAnchor(config.appURL, (() => {
             if (appLogoImg.loaded) { // size/return app logo img
                 appLogoImg.width = 143 ; return appLogoImg
-            } else { // create/fill/return app name span
+            } else { // create/fill/pos/return app name span
                 const appNameSpan = document.createElement('span')
                 appNameSpan.innerText = '🤖 ' + config.appName
                 appNameSpan.style.marginLeft = '3px'
@@ -1076,7 +1076,7 @@
                     + encodeURIComponent(securePayload),
                 method: 'GET', responseType: 'arraybuffer',
                 onload: async response => {
-                    if (response.status !== 200) chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })
+                    if (response.status != 200) chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })
                     else {
                         const audioContext = new (window.AudioContext || window.webkitAudioContext)()
                         audioContext.decodeAudioData(response.response, buffer => {
@@ -1345,7 +1345,7 @@
     // Remove non-visible overflow styles for boundless hover fx
     let appAncestor = hostContainer
     while (appAncestor) {
-        if (getComputedStyle(appAncestor).overflow !== 'visible') appAncestor.style.overflow = 'visible'
+        if (getComputedStyle(appAncestor).overflow != 'visible') appAncestor.style.overflow = 'visible'
         appAncestor = appAncestor.parentElement
     }
 
