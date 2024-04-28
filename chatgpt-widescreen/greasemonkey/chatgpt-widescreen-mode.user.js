@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.4.27
+// @version             2024.4.27.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -599,7 +599,7 @@
     }
 
     function updateTooltip(buttonType) { // text & position
-        tooltipDiv.innerText = messages['tooltip_' + buttonType + (
+        tooltipDiv.innerText = msgs['tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON'))]
         const ctrAddend = 25 + ( site == 'poe' ? 42 : 0 ), spreadFactor = site == 'poe' ? 42 : 30,
               iniRoffset = spreadFactor * ( buttonType.includes('fullScreen') ? 1
@@ -658,7 +658,7 @@
         saveSetting(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
         if (mode == 'fullWindow') syncFullerWindows(state)
         if (!config.notifDisabled) // notify synced state
-            notify(`${ messages['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
+            notify(`${ msgs['mode_' + mode] } ${ state ? 'ON' : 'OFF' }`)
         config.modeSynced = true ; setTimeout(() => config.modeSynced = false, 100) // prevent repetition
     }
 
