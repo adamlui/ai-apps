@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.28.3
+// @version             2024.4.28.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -296,7 +296,7 @@
             while (true) {
                 let replyLanguage = prompt(
                     ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
-                if (replyLanguage === null) break // user cancelled so do nothing
+                if (replyLanguage == null) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
                     replyLanguage = ( // auto-case for menu/alert aesthetics
                         [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
@@ -494,7 +494,7 @@
               + `right: ${ isFirefox ? ( 16.87 - ( appLogoImg.loaded ? 0 : 0.36 ))
                                      : ( 8.38  - ( appLogoImg.loaded ? 0 : 0.15 ))}em ;`
               + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
-              + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' } '
+                  + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' } '
           + '.continue-chat > textarea {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
               + 'font-size: 0.92rem ; height: 1.55rem ; width: 94.6% ; max-height: 200px ; resize: none ; '
@@ -888,16 +888,16 @@
 
         function onLoad() { // process text
             return async event => {
-                if (event.status !== 200) {
+                if (event.status != 200) {
                     appError('Event status: ' + event.status)
                     appError('Event response: ' + event.responseText)
                     if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpoints.length)
                         retryDiffHost()
-                    else if (event.status === 401 && !config.proxyAPIenabled) {
+                    else if (event.status == 401 && !config.proxyAPIenabled) {
                         GM_deleteValue(config.keyPrefix + '_openAItoken') ; appAlert('login') }
-                    else if (event.status === 403)
+                    else if (event.status == 403)
                         appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
-                    else if (event.status === 429) appAlert('tooManyRequests')
+                    else if (event.status == 429) appAlert('tooManyRequests')
                     else appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
                 } else if (endpoint.includes('openai')) {
                     if (event.response) {
@@ -1043,7 +1043,7 @@
                     + encodeURIComponent(securePayload),
                 method: 'GET', responseType: 'arraybuffer',
                 onload: async response => {
-                    if (response.status !== 200) chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })
+                    if (response.status != 200) chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })
                     else {
                         const audioContext = new (window.AudioContext || window.webkitAudioContext)()
                         audioContext.decodeAudioData(response.response, buffer => {
@@ -1226,7 +1226,7 @@
 
     // Pre-load logo
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc() 
-    appLogoImg.onload = () => appLogoImg.loaded = true // for prefix visibility + img/alt pos in `appShow()`
+    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
@@ -1360,7 +1360,7 @@
                             // Skip disqualified groups
                             if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
                                 || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
-                                || adGroup.active === false // group explicitly disabled
+                                || adGroup.active == false // group explicitly disabled
                                 || adGroup.targetBrowsers && // target browser(s) exist...
                                     !adGroup.targetBrowsers.some( // ...but doesn't match user's
                                         browser => new RegExp(browser, 'i').test(navigator.userAgent))
@@ -1370,8 +1370,8 @@
                             ) continue // to next group
 
                             // Filter out inactive ads, pick random active one
-                            const activeAds = adGroup.ads.filter(ad => ad.active !== false)
-                            if (activeAds.length === 0) continue // to next group since no ads active
+                            const activeAds = adGroup.ads.filter(ad => ad.active != false)
+                            if (activeAds.length == 0) continue // to next group since no ads active
                             const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
 
                             // Build destination URL
@@ -1402,7 +1402,7 @@
 
             function shuffle(list) {
                 let currentIdx = list.length, tempValue, randomIdx
-                while (currentIdx !== 0) { // elements remain to be shuffled
+                while (currentIdx != 0) { // elements remain to be shuffled
                     randomIdx = Math.floor(Math.random() * currentIdx) ; currentIdx -= 1
                     tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
                 }
