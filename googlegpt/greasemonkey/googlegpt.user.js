@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.28.1
+// @version             2024.4.28.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -638,7 +638,9 @@
     }
 
     function updateAppLogoSrc() {
-        appLogoImg.src = `${config.assetHostURL}/media/images/logos/googlegpt/${ scheme == 'dark' ? 'white' : 'black' }.png` }
+        appLogoImg.src = `${config.assetHostURL}/media/images/logos/googlegpt/${ scheme == 'dark' ? 'white' : 'black' }.png`
+        appLogoImg.onerror = () => appLogoImg.style.display = 'none'
+    }
 
     function updateAppStyle() {
         appStyle.innerText = (
@@ -672,8 +674,12 @@
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '.googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
+              + `top: ${ isFirefox ? 0.45 : 0.219 }em ;`
+              + `right: ${ isMobile ? 10.94 : (
+                    isFirefox ? ( 14.65 - ( appLogoImg.loaded ? 0 : 2.13 ))
+                              : ( 7.25 -  ( appLogoImg.loaded ? 0 : ( hasSidebar ? 1.25 : 1.29 ))))}em ;`
               + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
-                  + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' }'
+                  + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
           + '.continue-chat > textarea {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
               + 'height: 1.55rem ; max-height: 200px ; resize: none ;'
@@ -1219,17 +1225,26 @@
         while (appDiv.firstChild) // clear all children
             appDiv.removeChild(appDiv.firstChild)
 
-        // Create/append '🤖 GoogleGPT'
-        const appPrefixSpan = document.createElement('span'),
-              appLogoAnchor = createAnchor(config.appURL, appLogoImg)
-        appPrefixSpan.innerText = '🤖 '
-        appPrefixSpan.className = 'no-user-select' ; appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'     
-        appLogoAnchor.classList.add('app-name', 'no-user-select')
-        appLogoImg.width = isMobile ? 197 : isFirefox ? 127 : 125
-        appLogoImg.style.cssText = appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
-                                                         + ( isMobile ? '; margin-left: 1px' : '' )
-                                                     : 'margin-left: 2px' // pos alt if shown
-        appDiv.append(appPrefixSpan, appLogoAnchor)
+        // Create/append app prefix span + title anchor
+        const appPrefixSpan = document.createElement('span')
+        appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.className = 'no-user-select'
+        appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'    
+        const appTitleAnchor = createAnchor(config.appURL, (() => {
+            if (appLogoImg.loaded) { // size/pos/return app logo img
+                appLogoImg.width = isMobile ? 197 : isFirefox ? 127 : 125
+                appLogoImg.style.cssText = (
+                    appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
+                                          + ( isMobile ? '; margin-left: 1px' : '' ) : '' )
+                return appLogoImg
+            } else { // create/fill/size/return app name span
+                const appNameSpan = document.createElement('span')
+                appNameSpan.innerText = config.appName
+                appNameSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'  
+                return appNameSpan
+            }
+        })())
+        appTitleAnchor.classList.add('app-name', 'no-user-select')
+        appDiv.append(appPrefixSpan, appTitleAnchor)
 
         // Create/append 'by KudoAI'
         const kudoAIspan = document.createElement('span')
@@ -1362,10 +1377,6 @@
             const balloonTipSpan = document.createElement('span')
             var answerPre = document.createElement('pre')
             balloonTipSpan.className = 'balloon-tip'
-            balloonTipSpan.style.right = isMobile ? '10.94em' : isFirefox ? '14.65em' : '7.25em'
-            balloonTipSpan.style.top = (
-                isFirefox ? ( hasSidebar ? '7px' : '5px' )
-                                            : ( hasSidebar ? '4px' : '2px' ))
             answerPre.textContent = answer
             appDiv.append(balloonTipSpan) ; appDiv.append(answerPre)
         }
@@ -1523,9 +1534,8 @@
           hasSidebar = document.querySelector('[class*="kp-"]')
 
     // Pre-load logo
-    const appLogoImg = document.createElement('img')
-    updateAppLogoSrc() ; appLogoImg.alt = config.appName
-    appLogoImg.onload = () => appLogoImg.loaded = true // for img/alt pos in `appShow()`
+    const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
+    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
 
     // Define messages
     const msgsLoaded = new Promise(resolve => {
