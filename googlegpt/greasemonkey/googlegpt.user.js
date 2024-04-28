@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.28
+// @version             2024.4.28.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -697,9 +697,9 @@
           + '#send-btn { border: none ; float: right ; position: relative ; background: none ;'
               + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
           + `#send-btn:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
-          + `.kudo-ai { font-size: ${ isMobile ? 0.85 : 0.75 }rem ; position: relative ; left: ${ isMobile ? 8 : 6 }px ; color: #aaa }`
-          + '.kudo-ai a, .kudo-ai a:visited { color: #aaa ; text-decoration: none }'
-          + '.kudo-ai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
+          + `.kudoai { font-size: ${ isMobile ? 0.85 : 0.75 }rem ; position: relative ; left: ${ isMobile ? 8 : 6 }px ; color: #aaa }`
+          + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none }'
+          + '.kudoai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
           + '.katex-html { display: none }' // hide unrendered math
           + '.chatgpt-modal > div { 17px 20px 24px 20px !important }' // increase alert padding
           + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
@@ -1233,7 +1233,7 @@
 
         // Create/append 'by KudoAI'
         const kudoAIspan = document.createElement('span')
-        kudoAIspan.classList.add('kudo-ai', 'no-user-select') ; kudoAIspan.textContent = 'by '
+        kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
         const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
         kudoAIspan.append(kudoAIlink) ; appDiv.append(kudoAIspan)
 
