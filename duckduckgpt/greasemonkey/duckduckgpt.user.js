@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.28
+// @version             2024.4.28.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -502,7 +502,7 @@
               + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' } '
           + '.related-queries {'
               + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ; overflow: visible ;'
-              + ( isChromium ? 'top: -25px ; margin: -7px 0 -15px' : 'top: -20px ; margin: -3px 0 -10px') + '}'
+              + `${ isFirefox ? 'top: -20px ; margin: -3px 0 -10px' : 'top: -25px ; margin: -7px 0 -15px' }}`
           + '.related-query {'
               + `margin: 4px 4px ${ scheme == 'dark' ? 7 : 2 }px 0 ; padding: 4px 10px 5px 10px ;`
               + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
@@ -1220,8 +1220,7 @@
 
     // Init UI flags
     let scheme = chatgpt.isDarkMode() ? 'dark' : 'light'
-    const isChromium = chatgpt.browser.isChromium(),
-          isFirefox = chatgpt.browser.isFirefox(),
+    const isFirefox = chatgpt.browser.isFirefox(),
           isMobile = chatgpt.browser.isMobile(),
           isCentered = isCenteredMode()
 
