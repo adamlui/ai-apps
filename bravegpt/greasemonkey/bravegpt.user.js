@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.27
+// @version             2024.4.28
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -448,7 +448,7 @@
               + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
               + 'padding: 1.2em ; margin-top: .7em ; border-radius: 13px ; overflow: auto ;'
               + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 }' )
-          + `.bravegpt footer { margin: ${ isChromium ? 27 : 32 }px 0 -26px 0 ; border-top: none !important }`
+          + `.bravegpt footer { margin: ${ isFirefox ? 32 : 27 }px 0 -26px 0 ; border-top: none !important }`
           + '.bravegpt .feedback {'
               + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem; color: #aaa ;'
               + 'letter-spacing: .02em ; position: relative ; right: -18px ; bottom: 15px }'
@@ -457,7 +457,7 @@
           + `.bravegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-              + ( isChromium ? 'top: 0.16em ; right: 5rem;' : 'top: 0.25em ; right: 10.03rem ;' )
+              + ( isFirefox ? 'top: 0.25em ; right: 10.03rem ;' : 'top: 0.16em ; right: 5rem;' )
               + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color:'
                   + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
           + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem }'
@@ -470,7 +470,7 @@
                   + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + '}'
           + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
               + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
-              + ( isChromium ? 'margin-top: -31px' : '' ) + '}'
+              + `${ isFirefox ? '' : 'margin-top: -31px' }}`
           + '.related-query { margin: 4px 4px 2px 0 ; padding: 8px 13px 7px 14px ;'
               + `color: ${ scheme == 'dark' ? '#f2f2f2' : '#767676' } ;`
               + `background: ${ scheme == 'dark' ? '#424242' : '#dadada12' } ;`
@@ -1247,8 +1247,7 @@
 
     // Init UI flags
     let scheme = isDarkMode() ? 'dark' : 'light'
-    const isChromium = chatgpt.browser.isChromium(),
-          isFirefox = chatgpt.browser.isFirefox(),
+    const isFirefox = chatgpt.browser.isFirefox(),
           isMobile = chatgpt.browser.isMobile()
 
     // Pre-load logo
