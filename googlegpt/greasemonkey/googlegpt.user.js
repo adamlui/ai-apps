@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.28.4
+// @version             2024.4.29
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -638,7 +638,7 @@
     }
 
     function updateAppLogoSrc() {
-        appLogoImg.src = `${config.assetHostURL}/media/images/logos/googlegpt/${ scheme == 'dark' ? 'white' : 'black' }.png`
+        appLogoImg.src = `https://media.googlegpt.io/images/logos/googlegpt/${ scheme == 'dark' ? 'white' : 'black' }.png`
         appLogoImg.onerror = () => appLogoImg.style.display = 'none'
     }
 
