@@ -25,11 +25,11 @@
 
 #
 
-<img src="https://raw.githubusercontent.com/KudoAI/duckduckgpt/main/media/images/screenshots/how-to-becum-rich-demo.png">
+<img src="https://media.ddgpt.com/images/screenshots/desktop/how-to-becum-rich-query/darkmode.png">
 
 ### Mobile:
 
-<img src="https://media.ddgpt.com/images/screenshots/mobile/how-to-becum-rich-query/darkmode.png">
+<img src="https://media.ddgpt.com/images/screenshots/mobile/hi-there-query/darkmode.png">
 
 ## 🚀 Installation
 
