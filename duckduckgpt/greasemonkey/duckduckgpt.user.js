@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.4.29
+// @version             2024.5.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -176,11 +176,11 @@
 // @connect             api.openai.com
 // @connect             fanyi.sogou.com
 // @connect             api.aigcfun.com
-// @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.8/dist/chatgpt.min.js#sha256-veeaKpmLF7CZ6kxNfn8SMjD36ijLffGCzel9G4ykpPI=
+// @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.9/dist/chatgpt.min.js#sha256-pl2y5K/m1OovCuCUxK8yh2aA+y+A9uesk3HMBRBQSiE=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js#sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=
 // @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js#sha256-jjsBF/TfS+RSwLavW48KCs+dSt4j0I1V1+MSryIHd2I=
-// @require             https://cdn.jsdelivr.net/npm/generate-ip@2.2.10/dist/generate-ip.min.js#sha256-zbpxOSObRfvoZAdAXnLF9XrKFT6DT0zYhUN6qOzGw8c=
+// @require             https://cdn.jsdelivr.net/npm/generate-ip@2.2.12/dist/generate-ip.min.js#sha256-vCFZlcQIRxmB8f4O5qwMsjCr/YyaCfGoh1/heh+GF+w=
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
