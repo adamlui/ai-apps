@@ -58,7 +58,7 @@
 // @name:mg             Fanavaozana Ankehitriny i ChatGPT ↻
 // @name:mi             ChatGPT Whakahōu Aunoa ↻
 // @name:mk             Автоматско освежување ChatGPT ↻
-// @name:ml             ChatGPT ഓട്ടോ അപ്‌ഡേറ്റ് ↻
+// @name:ml             ChatGPT ഓട്ടോ അപ്ഡേറ്റ് ↻
 // @name:mn             ChatGPT Автоматаар Шинэчлэх ↻
 // @name:ms             Penyegaran Auto ChatGPT ↻
 // @name:mt             ChatGPT Rifreżġjar Awtomatiku ↻
@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.4.27
+// @version             2024.5.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
