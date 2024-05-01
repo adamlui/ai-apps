@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.1
+// @version             2024.5.1.1
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -343,7 +343,7 @@
 
     // Borrow classes from sidebar div
     const chatHistorySelector = 'nav[aria-label="Chat history"]',
-          re_firstBtnText = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPT(ChatGPT|New)/
+          re_firstBtnText = /ChatGPT(ChatGPT|New)/
     chatgpt.history.isLoaded().then(setTimeout(() => { 
         const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
               navLinks = chatHistoryNav.querySelectorAll('a'),
@@ -574,15 +574,6 @@
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = [...navButtons].find(button => re_firstBtnText.test(button.textContent))
 
-        // Hide 'Enable History' div + sibling gradient div
-        if (chatgpt.history.isOff())
-            try {
-                const enableHistoryDiv = firstButton.parentNode.parentNode.nextElementSibling,
-                      gradientDiv = enableHistoryDiv.nextElementSibling
-                enableHistoryDiv.parentNode.style.width = '100%'
-                for (const div of [enableHistoryDiv, gradientDiv]) div.style.display = 'none'
-            } catch (err) {}
-
         // Insert toggle
         const parentToInsertInto = firstButton.parentNode.parentNode.parentNode,
               childToInsertBefore = firstButton.parentNode.parentNode.nextElementSibling
@@ -593,9 +584,7 @@
         firstButton.parentNode.parentNode.style.paddingBottom = '0'
         parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
             chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
-        if (chatgpt.history.isOff() && !config.toggleHidden)
-            navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
-        navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
+        navToggleDiv.style.paddingLeft = '8px'
         document.querySelector('#arToggleFavicon').src = `${ // update navicon color in case scheme changed
             config.assetHostURL }media/images/icons/auto-refresh/${
             chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
