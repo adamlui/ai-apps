@@ -219,7 +219,7 @@
     // Define BUTTON functions
 
     function setBtnColor() { return (
-        site == 'openai' ? ( chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' ) : 'currentColor' )}
+        site == 'openai' ? ( chatgpt.isDarkMode() ? 'white' : '#202123' ) : 'currentColor' )}
 
     function insertBtns() {
         const chatbar = document.querySelector(chatbarSelector)
