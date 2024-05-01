@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.1
+// @version             2024.5.1.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -132,7 +132,7 @@
 // @compatible          kiwi
 // @match               *://search.brave.com/search*
 // @include             https://auth0.openai.com
-// @connect             raw.githubusercontent.com
+// @connect             cdn.jsdelivr.net
 // @connect             greasyfork.org
 // @connect             chat.openai.com
 // @connect             api.openai.com
@@ -1241,7 +1241,7 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '/'
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
                 'rqDisabled', 'suffixEnabled', 'widerSidebar')
