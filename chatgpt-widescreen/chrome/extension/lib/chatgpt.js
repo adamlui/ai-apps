@@ -13,8 +13,7 @@ localStorage.notifyProps = JSON.stringify({
     queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
 
 // Init environment flags & functions
-const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
-      isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
+const isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
       isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
 
 const chatgpt = {
