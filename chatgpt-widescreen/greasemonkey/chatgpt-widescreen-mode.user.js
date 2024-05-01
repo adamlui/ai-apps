@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.4.27.1
+// @version             2024.5.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -508,7 +508,7 @@
     // Define BUTTON functions
 
     function setBtnColor() { return (
-        site == 'openai' ? ( chatgpt.isDarkMode() || chatgpt.history.isOff() ? 'white' : '#202123' ) : 'currentColor' )}
+        site == 'openai' ? ( chatgpt.isDarkMode() ? 'white' : '#202123' ) : 'currentColor' )}
 
     function insertBtns() {
         const chatbar = document.querySelector(chatbarSelector)
