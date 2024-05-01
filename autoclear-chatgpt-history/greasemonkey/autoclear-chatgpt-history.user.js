@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.4.27
+// @version             2024.4.30
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -260,7 +260,7 @@
 
 (async () => {
 
-    // Init config
+    // Init CONFIG
     const config = {
         appName: 'Autoclear ChatGPT History', appSymbol: '🕶️', userLanguage: chatgpt.getUserLanguage(),
         gitHubURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
@@ -272,7 +272,7 @@
     config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
     loadSetting('autoclear', 'buttonHidden', 'notifDisabled', 'toggleHidden')
 
-    // Define messages
+    // Define MESSAGES
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
@@ -295,13 +295,13 @@
         }
     }) ; const msgs = await msgsLoaded;
 
-    // Init/register menu
+    // Init/register MENU
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
     let menuIDs = [] ; registerMenu() // create browser toolbar menu
 
-    // Add/update tweaks style
+    // Add/update TWEAKS style
     const tweaksStyleUpdated = 2023123 // datestamp of last edit for this file's `tweaksStyle`
     await chatgpt.isLoaded()
     let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
@@ -320,7 +320,7 @@
         )
     }
 
-    // Create nav toggle div, add styles
+    // Create nav TOGGLE div, add styles
     const navToggleDiv = document.createElement('div')
     navToggleDiv.style.maxHeight = '44px' // prevent flex overgrowth
     navToggleDiv.style.margin = '2px 0' // add v-margins
@@ -328,9 +328,9 @@
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
     updateToggleHTML() // create children
 
-    // Borrow classes from sidebar div
+    // Borrow CLASSES from sidebar div
     const chatHistorySelector = 'nav[aria-label="Chat history"]',
-          re_firstBtnText = chatgpt.history.isOff() ? /ChatGPTClear/ : /ChatGPT(ChatGPT|New)/
+          re_firstBtnText = /ChatGPT(ChatGPT|New)/
     chatgpt.history.isLoaded().then(setTimeout(() => { 
         const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
               navLinks = chatHistoryNav.querySelectorAll('a'),
@@ -341,7 +341,7 @@
         navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
     }, 100))
 
-    // Add listener to toggle switch/label/config/menu + auto-clear
+    // Add LISTENER to toggle switch/label/config/menu + auto-clear
     navToggleDiv.addEventListener('click', () => {
         const toggleInput = document.querySelector('#acToggleInput')
         toggleInput.checked = !toggleInput.checked
@@ -356,7 +356,7 @@
         saveSetting('autoclear', config.autoclear)
     })
 
-    // Insert full toggle on page load + during navigation
+    // Insert full TOGGLE on page load + during navigation
     insertToggle()
     const nodeObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
@@ -364,9 +364,9 @@
                 insertToggle()
     }})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
-    // Auto-clear on first visit if enabled
+    // AUTO-CLEAR on first visit if enabled
     if (config.autoclear) {
-        if (chatgpt.history.isOn()) setTimeout(() => { chatgpt.clearChats() }, 250)
+        setTimeout(() => chatgpt.clearChats(), 250)
         if (!config.notifDisabled) notify(( msgs.mode_autoClear || 'Auto-Clear' ) + ': ON')
     }
 
@@ -559,15 +559,6 @@
               navButtons = chatHistoryNav.querySelectorAll('a'),
               firstButton = [...navButtons].find(button => re_firstBtnText.test(button.textContent))
 
-        // Hide 'Enable History' div + sibling gradient div
-        if (chatgpt.history.isOff())
-            try {
-                const enableHistoryDiv = firstButton.parentNode.parentNode.nextElementSibling,
-                      gradientDiv = enableHistoryDiv.nextElementSibling
-                enableHistoryDiv.parentNode.style.width = '100%'
-                for (const div of [enableHistoryDiv, gradientDiv]) div.style.display = 'none'
-            } catch (err) {}
-
         // Insert toggle
         const parentToInsertInto = firstButton.parentNode.parentNode.parentNode,
               childToInsertBefore = firstButton.parentNode.parentNode.nextElementSibling
@@ -578,9 +569,7 @@
         firstButton.parentNode.parentNode.style.paddingBottom = '0'
         parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
             chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
-        if (chatgpt.history.isOff() && !config.toggleHidden)
-            navToggleDiv.style.display = 'flex' // remove forced cloaking in private mode
-        navToggleDiv.style.paddingLeft = chatgpt.history.isOff() ? '20px' : '8px'
+        navToggleDiv.style.paddingLeft = '8px'
         document.querySelector('#acToggleFavicon').src = `${ // update navicon color in case scheme changed
             config.assetHostURL }media/images/icons/incognito/${
             chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
