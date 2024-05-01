@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.1.2
+// @version             2024.5.1.3
 // @license             MIT
 // @match               *://chat.openai.com/*
 // @compatible          chrome
@@ -233,10 +233,10 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
-// @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
-// @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
+// @icon                https://cdn.jsdelivr.net/gh/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
+// @icon64              https://cdn.jsdelivr.net/gh/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.9/dist/chatgpt.min.js#sha256-pl2y5K/m1OovCuCUxK8yh2aA+y+A9uesk3HMBRBQSiE=
-// @connect             raw.githubusercontent.com
+// @connect             cdn.jsdelivr.net
 // @connect             greasyfork.org
 // @grant               GM_setValue
 // @grant               GM_getValue
@@ -265,7 +265,7 @@
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '/'
     loadSetting('arDisabled', 'notifDisabled', 'refreshInterval', 'toggleHidden')
     if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
 
