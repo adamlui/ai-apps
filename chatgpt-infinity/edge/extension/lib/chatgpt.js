@@ -1,52 +1,20 @@
-// This library is a condensed version of chatgpt.js v2.6.8
-// © 2023–2024 KudoAI & contributors under the MIT license
+// This library is a condensed version of chatgpt.js v2.6.9
+// © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
+// User guide: https://chatgptjs.org/userguide
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
 // Init endpoints
-const endpoints = { assets: 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main' }
+const endpoints = { assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js' }
 
 // Init feedback properties
 localStorage.alertQueue = JSON.stringify([]);
 localStorage.notifyProps = JSON.stringify({
     queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
 
-// Init GM environment flags
-const isChromeUserScript = navigator.userAgent.includes('Chrome') && typeof unsafeWindow != 'undefined',
-      isFFuserScript = navigator.userAgent.includes('Firefox') && typeof GM_info != 'undefined',
+// Init environment flags
+const isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
       isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
-
-// Define messages
-let cjsMessages;
-if (!isChromeUserScript && !(isFFuserScript && !isFFtmScript)) { (async () => {
-    const cjsMsgsLoaded = new Promise(resolve => {
-        const userLanguage = navigator.languages[0] || navigator.language || navigator.browserLanguage ||
-                             navigator.systemLanguage || navigator.userLanguage || '',
-              msgHostDir = endpoints.assets + '/data/_locales/',
-              msgLocaleDir = ( userLanguage ? userLanguage.replace('-', '_') : 'en' ) + '/';
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0;
-        (function loadMsgs() {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', msgHref); xhr.send();
-            xhr.onload = () => {
-                try { // to return localized messages.json
-                    const messages = new Proxy(JSON.parse(xhr.responseText), {
-                        get(target, prop) { // remove need to ref nested keys
-                            if (typeof target[prop] == 'object' && target[prop] !== null && 'message' in target[prop]) {
-                                return target[prop].message;
-                    }}}); resolve(messages);
-                } catch (err) {
-                    msgXHRtries++; if (msgXHRtries === 3) resolve({}); // try up to 3X (original/region-stripped/EN) only
-                    msgHref = userLanguage.includes('-') && msgXHRtries === 1 ? // if regional lang on 1st try...
-                        msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
-                            : ( msgHostDir + 'en/messages.json' ); // else use default English messages
-                    loadMsgs();
-                }
-            };
-            xhr.onerror = () => { resolve({}); };
-        })();
-    }); cjsMessages = await cjsMsgsLoaded;
-})();}
 
 const chatgpt = {
 
@@ -183,7 +151,7 @@ const chatgpt = {
 
         // Create close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = cjsMessages?.tooltip_close || 'Close'; closeBtn.classList.add('modal-close-btn');
+        closeBtn.title = 'Close'; closeBtn.classList.add('modal-close-btn');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '10px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
@@ -281,14 +249,6 @@ const chatgpt = {
     }},
 
     history: {
-        isOn: function() {
-            const navDivs = document.querySelectorAll('nav div'),
-                  offDiv = [...navDivs].find(div => div.textContent.includes('Chat History is off')) || {};
-            return offDiv.classList.toString().includes('invisible');
-        },
-
-        isOff: function() { return !this.isOn(); },
-
         isLoaded: function() {
             return new Promise(resolve => {
                 const checkChatHistory = () => {
@@ -329,7 +289,7 @@ const chatgpt = {
 
         // Create/append close button
         const closeBtn = document.createElement('div');
-        closeBtn.title = cjsMessages?.tooltip_dismiss || 'Dismiss'; closeBtn.classList.add('notif-close-btn');
+        closeBtn.title = 'Dismiss'; closeBtn.classList.add('notif-close-btn');
         const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         closeSVG.setAttribute('height', '8px');
         closeSVG.setAttribute('viewBox', '0 0 14 14');
