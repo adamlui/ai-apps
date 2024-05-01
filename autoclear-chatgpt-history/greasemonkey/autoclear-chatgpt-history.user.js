@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.1
+// @version             2024.5.1.1
 // @license             MIT
 // @icon                https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
@@ -241,7 +241,7 @@
 // @match               *://chat.openai.com/*
 // @run-at              document-end
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.9/dist/chatgpt.min.js#sha256-pl2y5K/m1OovCuCUxK8yh2aA+y+A9uesk3HMBRBQSiE=
-// @connect             raw.githubusercontent.com
+// @connect             cdn.jsdelivr.net
 // @connect             greasyfork.org
 // @grant               GM_setValue
 // @grant               GM_getValue
@@ -269,7 +269,7 @@
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'raw.githubusercontent.com') + '/main/'
+    config.assetHostURL = 'https://cdn.jsdelivr.net/gh/adamlui/autoclear-chatgpt-history/'
     loadSetting('autoclear', 'buttonHidden', 'notifDisabled', 'toggleHidden')
 
     // Define MESSAGES
