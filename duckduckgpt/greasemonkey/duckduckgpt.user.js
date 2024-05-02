@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.1.1
+// @version             2024.5.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -1326,7 +1326,7 @@
     if (!isMobile) { hostContainer.style.maxWidth = '' ; hostContainer.style.minWidth = '448px' }
 
     // Check for active text campaigns to replace footer CTA
-    fetchJSON('https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/index.json',
+    fetchJSON('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
         (err, advertisersData) => { if (err) return
 
             // Init vars
@@ -1345,7 +1345,7 @@
 
             // Fetch a random, active creative
             if (chosenAdvertiser) {
-                const campaignsURL = 'https://raw.githubusercontent.com/KudoAI/ads-library/main/advertisers/'
+                const campaignsURL = 'https://cdn.jsdelivr.net/gh/KudoAI/ads-library/main/advertisers/'
                                    + chosenAdvertiser + '/text/campaigns.json'
                 fetchJSON(campaignsURL, (err, campaignsData) => { if (err) return
 
