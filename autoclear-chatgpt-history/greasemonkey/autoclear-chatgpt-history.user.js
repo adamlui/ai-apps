@@ -111,121 +111,121 @@
 // @name:zh-SG          自动清除 ChatGPT 历史记录 🕶️
 // @name:zh-TW          自動清除 ChatGPT 歷史記錄 🕶️
 // @name:zu             Sula ChatGPT Isifundo 🕶️
-// @description         Auto-clears chat history when visiting chat.openai.com
-// @description:af      Skoonmaak Chat Geskiedenis wanneer jy chat.openai.com besoek
-// @description:am      የ chat.openai.com ጸሃይ ታክሲን በማግኘት ታከለው
-// @description:ar      يقوم تلقائيًا بمسح سجل المحادثات عند زيارة chat.openai.com
-// @description:az      chat.openai.com-a gedəndə avtomatik olaraq söhbət tarixini təmizləyir
-// @description:be      Аўтаматычна ачышчае гісторыю чата пры наведванні chat.openai.com
-// @description:bem     Chibwezache Mphindi Zochitika Pamene Kumatemba chat.openai.com
-// @description:bg      Автоматично изчиства чат историята при посещение на chat.openai.com
-// @description:bn      যখন chat.openai.com পরিদর্শন করা হলে অটোমেটিকভাবে চ্যাট ইতিহাস মুছে ফেলে
-// @description:bo      དཔེར་ན་ chat.openai.com འགྲེལ་བཤད་འདི་ལུ་ སྤྱོད་ཡོད་མི་འདི་བལྟ་མི་བཟོ།
-// @description:bs      Automatski briše istoriju chata prilikom posjete chat.openai.com
-// @description:ca      S'elimina automàticament l'historial de xats en visitar chat.openai.com
-// @description:ceb     Automatic gidut-ana sa kasaysayan sa chat sa pagbisita sa chat.openai.com
-// @description:ckb     ده‌ستکاریکردنی مێژووی گفتوگۆکان خۆکارانه بۆ سەردانی chat.openai.com
-// @description:cs      Automaticky vymaže historii chatu při návštěvě chat.openai.com
-// @description:cy      Mae'n glirio hanes sgwrs yn awtomatig wrth ymweld â chat.openai.com
-// @description:da      Renser automatisk chatloggen ved besøg på chat.openai.com
-// @description:de      Löscht den Chatverlauf automatisch beim Besuch von chat.openai.com
-// @description:dv      chat.openai.com އެކައުންމަދުގެ ޗެކުމު ހުރިހައްދަވާނެ ޗައިންކުރޭ
-// @description:dz      འཛུགས་མིག་འདི་ལུ་ chat.openai.com འགྲེལ་བཤད་རོགས་བསྐྱེད་ཡོད།
-// @description:el      Αυτόματη διαγραφή ιστορικού συνομιλίας κατά την επίσκεψη στο chat.openai.com
-// @description:eo      Memorigo de la babilado aŭtomate malaperas dum vizito ĉe chat.openai.com
-// @description:es      Borra automáticamente el historial de chat al visitar chat.openai.com
-// @description:et      Kustutab automaatselt vestluse ajaloo, kui külastate saiti chat.openai.com
-// @description:eu      Berezgaitasunez ezabatzen du txataren historia chat.openai.com bisitatzen denean
-// @description:fa      پاک کردن خودکار تاریخچه چت در هنگام بازدید از chat.openai.com
-// @description:fi      Poistaa keskusteluhistorian automaattisesti käydessä chat.openai.comissa
-// @description:fo      Auto-rensar spjall søguna tá tú vitjar chat.openai.com
-// @description:fr      Efface automatiquement l'historique des discussions lors de la visite de chat.openai.com
-// @description:fr-CA   Efface automatiquement l'historique des discussions lors de la visite de chat.openai.com
-// @description:gd      Thoir aire bheagachaidh air eachdraidh na còmhraidh nuair a tha thu a' tadhal air chat.openai.com
-// @description:gl      Limpa automáticamente o historial do chat ao visitar chat.openai.com
-// @description:gu      chat.openai.com મુકે છે નાતીજે જ્ઞાનવર્ધક ચેટ નો ઇતિહાસ
-// @description:haw     Mālama haku ʻinoʻino pāhana hoʻohānau mai ana i chat.openai.com
-// @description:he      מנקה באופן אוטומטי את היסטוריית הצ'אט בעת ביקור ב-chat.openai.com
-// @description:hi      chat.openai.com पर आवर्तित होने पर चैट इतिहास को स्वचालित रूप से साफ करता है
-// @description:hr      Automatski briše povijest razgovora prilikom posjeta chat.openai.com
-// @description:ht      Auto-efase istwa chat la lè vizite chat.openai.com
-// @description:hu      Automatikusan törli a csevegés előzményeit a chat.openai.com látogatásakor
-// @description:hy      Պատմությունը ինքնաշխատանքային մաքրում է chat.openai.com այցելելուն դեպի
-// @description:id      Menghapus otomatis riwayat obrolan saat mengunjungi chat.openai.com
-// @description:is      Hreinsar sjálfvirkt spjallshönnun þegar heimsókn er gerð á chat.openai.com
-// @description:it      Cancella automaticamente la cronologia della chat durante la visita a chat.openai.com
-// @description:ja      chat.openai.com を訪れる際に自動的にチャット履歴を消去します
-// @description:jv      Otomatis ngapus riwayat obrolan nalika ngunjungi chat.openai.com
-// @description:ka      თავისითად წაშლის ჩათის ისტორიას chat.openai.com-ზე მომსახურების დროს
-// @description:kab     Ireɣsan Ayren Tisstrir ChatGPT I yur-s achat.openai.com
-// @description:kk      chat.openai.com-ды көруге бастап автоматты түрде чат тарихын жою
-// @description:km      លុបសេវាកម្មប្រវត្តិការណ៍ជជែកពីព័ត៌មានមនុស្សកន្លងទៅកាន់ chat.openai.com
-// @description:kn      chat.openai.com ಸಂದರ್ಶಿಸಿದಾಗ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಚಾಟ್ ಇತಿಹಾಸವನ್ನು ಅಳಿಸುತ್ತದೆ
-// @description:ko      chat.openai.com 방문 시 채팅 기록을 자동으로 지웁니다
-// @description:ku      Çêkirina historyaya chatê di hembêzkirina chat.openai.com de
-// @description:ky      chat.openai.com барысында түр кат жазмаларын автоматтык түрде жок этиш
-// @description:la      Automate chat historia clearum cum chat.openai.com adibvisam
-// @description:lb      Läscht automatesch d'Chat-Geschicht wéini een chat.openai.com besicht
-// @description:lo      ລຶບປະວັດການສົນທະນາໃນຖ້າເຂົ້າຊົມ chat.openai.com
-// @description:lt      Automatiškai išvalo pokalbių istoriją apsilankius chat.openai.com
-// @description:lv      Automātiski notīra čata vēsturi, apmeklējot chat.openai.com
-// @description:mg      Mamafa tsy ampy lalao ny tetikasa vaovao rehefa mitovy amin'ny chat.openai.com
-// @description:mi      Auto-kōmata e whakakore i te hītori whakawhiti kōrero i te toro ki te chat.openai.com
-// @description:mk      Автоматски брише историја на разговорот при посета на chat.openai.com
-// @description:ml      chat.openai.com സന്ദർശിക്കുമ്പോൾ ചാറ്റ് ചരിത്രം ഓട്ടോ-പിന്തുണച്ച് അഴിച്ചുവയ്ക്കുന്നു
-// @description:mn      chat.openai.com-оос орж ирэх үед чатын түүхийг автоматаар цэвэрлэнэ
-// @description:ms      Membersihkan sejarah perbualan secara automatik apabila melawat chat.openai.com
-// @description:mt      Jħassar awtomatikament il-kronoloġija tal-chat meta żżur chat.openai.com
-// @description:my      chat.openai.com ကိုသွားဖို့အတွက် စကားဝှက်မှတ်တမ်းကို အလိုလိုရွေးချယ်ရန် အလွယ်တကူပြန်ဖွင့်ထားသည်
-// @description:ne      chat.openai.com मा आएकोमा च्याट इतिहास स्वचालित रूपमा हटाउँछ
-// @description:nl      Wis automatisch de chatgeschiedenis bij een bezoek aan chat.openai.com
-// @description:no      Sletter automatisk samtalehistorikk ved besøk på chat.openai.com
-// @description:ny      Kwatsa makina m'chipatala cha chat pamene kuwona chat.openai.com
-// @description:pa      chat.openai.com ਦੇ ਦੌਰਾਨ ਚੈਟ ਇਤਿਹਾਸ ਆਟੋਮੈਟਿਕ ਕਲੀਅਰ ਹੋ ਜਾਂਦਾ ਹੈ
-// @description:pap     Limpieza automático di historial di chat na bishita chat.openai.com
-// @description:pl      Automatycznie czyści historię czatu podczas odwiedzania chat.openai.com
-// @description:ps      خودکار تاریخچه چت پاک کول په chat.openai.com کښې
-// @description:pt      Limpa automaticamente o histórico de bate-papo ao visitar chat.openai.com
-// @description:pt-BR   Limpa automaticamente o histórico de bate-papo ao visitar chat.openai.com
-// @description:rn      Guteza inkuru y'ikarita y'imibare igihe utanga chat.openai.com
-// @description:ro      Șterge automat istoricul chat-ului la vizitarea chat.openai.com
-// @description:ru      Автоматически очищает историю чата при посещении chat.openai.com
-// @description:rw      Inyunganira amakuru ya chat inyuma yuko umaze guhamagara chat.openai.com
-// @description:sg      Auto-kura kolibatalu ya misamba wakari karika kutɔbɔ chat.openai.com
-// @description:si      chat.openai.com වෙත පැය සඳහා ස්වයංක්‍රීයතාවයින් චැට් ඉතිරිකිරීම මකා දැමුම
-// @description:sk      Automaticky vymazáva históriu chatu pri návšteve chat.openai.com
-// @description:sl      Samodejno izbriše zgodovino klepeta ob obisku spletnega mesta chat.openai.com
-// @description:sm      Automa i le malologa o le sootaga i luma i le chat.openai.com
-// @description:sn      Inongorora chat history chinayo ipapo uchi chiri kunochinja chat.openai.com
-// @description:so      Wax ka qaad chatka markii la booqdo chat.openai.com
-// @description:sr      Аутоматски брише историју чата при посети chat.openai.com
-// @description:sv      Rensar automatiskt chattens historik vid besök på chat.openai.com
-// @description:sw      Inaondoa historia ya mazungumzo moja kwa moja wakati wa kutembelea chat.openai.com
-// @description:ta      chat.openai.com அடுத்தடுத்தப்படும் நேரத்தில் உரையாடல் வரலாறை தானியங்கே நீக்குகிறது
-// @description:te      chat.openai.com సందర్శించినప్పుడు స్వయంచాలకంగా చాట్ చరిత్రను తొలగిస్తుంది
-// @description:tg      Тарихи чатро худкор ҷоба кунед, ки chat.openai.com равед
-// @description:th      ล้างประวัติการสนทนาโดยอัตโนมัติเมื่อเข้าชม chat.openai.com
-// @description:ti      ኮምፕዩተር እየጠበቀ ጊዜ chat.openai.com የተሰኘውን ችግርን አስፈልጋል
-// @description:tk      chat.openai.com-a ugradykda çat görnüşini awtomatiki biçimde boşaltýar
-// @description:tn      Emucisha chat chinyakanyaka nga uwonawo chat.openai.com
-// @description:to      'Oku fa'a kovi 'e he ngaahi sipoti fakamatala 'i he falelotu ki he chat.openai.com
-// @description:tpi     Autometik klia chat histeri long bisitim long chat.openai.com
-// @description:tr      chat.openai.com'u ziyaret ettiğinizde sohbet geçmişini otomatik olarak temizler
-// @description:uk      Автоматично очищає історію чату при відвідуванні chat.openai.com
-// @description:ur      chat.openai.com کے دورے پر چیٹ تاریخ خودکار طور پر صاف کرتا ہے
-// @description:uz      chat.openai.com saytini tashrif buyurganda chat tarixini avtomatik ravishda o'chiradi
-// @description:vi      Xóa lịch sử trò chuyện tự động khi ghé thăm chat.openai.com
-// @description:xh      Ingqalasela ihisitela le-chat uma uzithola chat.openai.com
-// @description:yi      רומט די פֿונען דער שאַט היסטאָריע ביי בעזוך בקוקן chat.openai.com
-// @description:zh      访问 chat.openai.com 时自动清除聊天记录
-// @description:zh-CN   访问 chat.openai.com 时自动清除聊天记录
-// @description:zh-HK   訪問 chat.openai.com 時自動清除聊天記錄
-// @description:zh-SG   访问 chat.openai.com 时自动清除聊天记录
-// @description:zh-TW   訪問 chat.openai.com 時自動清除聊天記錄
-// @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chat.openai.com
+// @description         Auto-clears chat history when visiting chatgpt.com
+// @description:af      Skoonmaak Chat Geskiedenis wanneer jy chatgpt.com besoek
+// @description:am      የ chatgpt.com ጸሃይ ታክሲን በማግኘት ታከለው
+// @description:ar      يقوم تلقائيًا بمسح سجل المحادثات عند زيارة chatgpt.com
+// @description:az      chatgpt.com-a gedəndə avtomatik olaraq söhbət tarixini təmizləyir
+// @description:be      Аўтаматычна ачышчае гісторыю чата пры наведванні chatgpt.com
+// @description:bem     Chibwezache Mphindi Zochitika Pamene Kumatemba chatgpt.com
+// @description:bg      Автоматично изчиства чат историята при посещение на chatgpt.com
+// @description:bn      যখন chatgpt.com পরিদর্শন করা হলে অটোমেটিকভাবে চ্যাট ইতিহাস মুছে ফেলে
+// @description:bo      དཔེར་ན་ chatgpt.com འགྲེལ་བཤད་འདི་ལུ་ སྤྱོད་ཡོད་མི་འདི་བལྟ་མི་བཟོ།
+// @description:bs      Automatski briše istoriju chata prilikom posjete chatgpt.com
+// @description:ca      S'elimina automàticament l'historial de xats en visitar chatgpt.com
+// @description:ceb     Automatic gidut-ana sa kasaysayan sa chat sa pagbisita sa chatgpt.com
+// @description:ckb     ده‌ستکاریکردنی مێژووی گفتوگۆکان خۆکارانه بۆ سەردانی chatgpt.com
+// @description:cs      Automaticky vymaže historii chatu při návštěvě chatgpt.com
+// @description:cy      Mae'n glirio hanes sgwrs yn awtomatig wrth ymweld â chatgpt.com
+// @description:da      Renser automatisk chatloggen ved besøg på chatgpt.com
+// @description:de      Löscht den Chatverlauf automatisch beim Besuch von chatgpt.com
+// @description:dv      chatgpt.com އެކައުންމަދުގެ ޗެކުމު ހުރިހައްދަވާނެ ޗައިންކުރޭ
+// @description:dz      འཛུགས་མིག་འདི་ལུ་ chatgpt.com འགྲེལ་བཤད་རོགས་བསྐྱེད་ཡོད།
+// @description:el      Αυτόματη διαγραφή ιστορικού συνομιλίας κατά την επίσκεψη στο chatgpt.com
+// @description:eo      Memorigo de la babilado aŭtomate malaperas dum vizito ĉe chatgpt.com
+// @description:es      Borra automáticamente el historial de chat al visitar chatgpt.com
+// @description:et      Kustutab automaatselt vestluse ajaloo, kui külastate saiti chatgpt.com
+// @description:eu      Berezgaitasunez ezabatzen du txataren historia chatgpt.com bisitatzen denean
+// @description:fa      پاک کردن خودکار تاریخچه چت در هنگام بازدید از chatgpt.com
+// @description:fi      Poistaa keskusteluhistorian automaattisesti käydessä chatgpt.comissa
+// @description:fo      Auto-rensar spjall søguna tá tú vitjar chatgpt.com
+// @description:fr      Efface automatiquement l'historique des discussions lors de la visite de chatgpt.com
+// @description:fr-CA   Efface automatiquement l'historique des discussions lors de la visite de chatgpt.com
+// @description:gd      Thoir aire bheagachaidh air eachdraidh na còmhraidh nuair a tha thu a' tadhal air chatgpt.com
+// @description:gl      Limpa automáticamente o historial do chat ao visitar chatgpt.com
+// @description:gu      chatgpt.com મુકે છે નાતીજે જ્ઞાનવર્ધક ચેટ નો ઇતિહાસ
+// @description:haw     Mālama haku ʻinoʻino pāhana hoʻohānau mai ana i chatgpt.com
+// @description:he      מנקה באופן אוטומטי את היסטוריית הצ'אט בעת ביקור ב-chatgpt.com
+// @description:hi      chatgpt.com पर आवर्तित होने पर चैट इतिहास को स्वचालित रूप से साफ करता है
+// @description:hr      Automatski briše povijest razgovora prilikom posjeta chatgpt.com
+// @description:ht      Auto-efase istwa chat la lè vizite chatgpt.com
+// @description:hu      Automatikusan törli a csevegés előzményeit a chatgpt.com látogatásakor
+// @description:hy      Պատմությունը ինքնաշխատանքային մաքրում է chatgpt.com այցելելուն դեպի
+// @description:id      Menghapus otomatis riwayat obrolan saat mengunjungi chatgpt.com
+// @description:is      Hreinsar sjálfvirkt spjallshönnun þegar heimsókn er gerð á chatgpt.com
+// @description:it      Cancella automaticamente la cronologia della chat durante la visita a chatgpt.com
+// @description:ja      chatgpt.com を訪れる際に自動的にチャット履歴を消去します
+// @description:jv      Otomatis ngapus riwayat obrolan nalika ngunjungi chatgpt.com
+// @description:ka      თავისითად წაშლის ჩათის ისტორიას chatgpt.com-ზე მომსახურების დროს
+// @description:kab     Ireɣsan Ayren Tisstrir ChatGPT I yur-s achatgpt.com
+// @description:kk      chatgpt.com-ды көруге бастап автоматты түрде чат тарихын жою
+// @description:km      លុបសេវាកម្មប្រវត្តិការណ៍ជជែកពីព័ត៌មានមនុស្សកន្លងទៅកាន់ chatgpt.com
+// @description:kn      chatgpt.com ಸಂದರ್ಶಿಸಿದಾಗ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಚಾಟ್ ಇತಿಹಾಸವನ್ನು ಅಳಿಸುತ್ತದೆ
+// @description:ko      chatgpt.com 방문 시 채팅 기록을 자동으로 지웁니다
+// @description:ku      Çêkirina historyaya chatê di hembêzkirina chatgpt.com de
+// @description:ky      chatgpt.com барысында түр кат жазмаларын автоматтык түрде жок этиш
+// @description:la      Automate chat historia clearum cum chatgpt.com adibvisam
+// @description:lb      Läscht automatesch d'Chat-Geschicht wéini een chatgpt.com besicht
+// @description:lo      ລຶບປະວັດການສົນທະນາໃນຖ້າເຂົ້າຊົມ chatgpt.com
+// @description:lt      Automatiškai išvalo pokalbių istoriją apsilankius chatgpt.com
+// @description:lv      Automātiski notīra čata vēsturi, apmeklējot chatgpt.com
+// @description:mg      Mamafa tsy ampy lalao ny tetikasa vaovao rehefa mitovy amin'ny chatgpt.com
+// @description:mi      Auto-kōmata e whakakore i te hītori whakawhiti kōrero i te toro ki te chatgpt.com
+// @description:mk      Автоматски брише историја на разговорот при посета на chatgpt.com
+// @description:ml      chatgpt.com സന്ദർശിക്കുമ്പോൾ ചാറ്റ് ചരിത്രം ഓട്ടോ-പിന്തുണച്ച് അഴിച്ചുവയ്ക്കുന്നു
+// @description:mn      chatgpt.com-оос орж ирэх үед чатын түүхийг автоматаар цэвэрлэнэ
+// @description:ms      Membersihkan sejarah perbualan secara automatik apabila melawat chatgpt.com
+// @description:mt      Jħassar awtomatikament il-kronoloġija tal-chat meta żżur chatgpt.com
+// @description:my      chatgpt.com ကိုသွားဖို့အတွက် စကားဝှက်မှတ်တမ်းကို အလိုလိုရွေးချယ်ရန် အလွယ်တကူပြန်ဖွင့်ထားသည်
+// @description:ne      chatgpt.com मा आएकोमा च्याट इतिहास स्वचालित रूपमा हटाउँछ
+// @description:nl      Wis automatisch de chatgeschiedenis bij een bezoek aan chatgpt.com
+// @description:no      Sletter automatisk samtalehistorikk ved besøk på chatgpt.com
+// @description:ny      Kwatsa makina m'chipatala cha chat pamene kuwona chatgpt.com
+// @description:pa      chatgpt.com ਦੇ ਦੌਰਾਨ ਚੈਟ ਇਤਿਹਾਸ ਆਟੋਮੈਟਿਕ ਕਲੀਅਰ ਹੋ ਜਾਂਦਾ ਹੈ
+// @description:pap     Limpieza automático di historial di chat na bishita chatgpt.com
+// @description:pl      Automatycznie czyści historię czatu podczas odwiedzania chatgpt.com
+// @description:ps      خودکار تاریخچه چت پاک کول په chatgpt.com کښې
+// @description:pt      Limpa automaticamente o histórico de bate-papo ao visitar chatgpt.com
+// @description:pt-BR   Limpa automaticamente o histórico de bate-papo ao visitar chatgpt.com
+// @description:rn      Guteza inkuru y'ikarita y'imibare igihe utanga chatgpt.com
+// @description:ro      Șterge automat istoricul chat-ului la vizitarea chatgpt.com
+// @description:ru      Автоматически очищает историю чата при посещении chatgpt.com
+// @description:rw      Inyunganira amakuru ya chat inyuma yuko umaze guhamagara chatgpt.com
+// @description:sg      Auto-kura kolibatalu ya misamba wakari karika kutɔbɔ chatgpt.com
+// @description:si      chatgpt.com වෙත පැය සඳහා ස්වයංක්‍රීයතාවයින් චැට් ඉතිරිකිරීම මකා දැමුම
+// @description:sk      Automaticky vymazáva históriu chatu pri návšteve chatgpt.com
+// @description:sl      Samodejno izbriše zgodovino klepeta ob obisku spletnega mesta chatgpt.com
+// @description:sm      Automa i le malologa o le sootaga i luma i le chatgpt.com
+// @description:sn      Inongorora chat history chinayo ipapo uchi chiri kunochinja chatgpt.com
+// @description:so      Wax ka qaad chatka markii la booqdo chatgpt.com
+// @description:sr      Аутоматски брише историју чата при посети chatgpt.com
+// @description:sv      Rensar automatiskt chattens historik vid besök på chatgpt.com
+// @description:sw      Inaondoa historia ya mazungumzo moja kwa moja wakati wa kutembelea chatgpt.com
+// @description:ta      chatgpt.com அடுத்தடுத்தப்படும் நேரத்தில் உரையாடல் வரலாறை தானியங்கே நீக்குகிறது
+// @description:te      chatgpt.com సందర్శించినప్పుడు స్వయంచాలకంగా చాట్ చరిత్రను తొలగిస్తుంది
+// @description:tg      Тарихи чатро худкор ҷоба кунед, ки chatgpt.com равед
+// @description:th      ล้างประวัติการสนทนาโดยอัตโนมัติเมื่อเข้าชม chatgpt.com
+// @description:ti      ኮምፕዩተር እየጠበቀ ጊዜ chatgpt.com የተሰኘውን ችግርን አስፈልጋል
+// @description:tk      chatgpt.com-a ugradykda çat görnüşini awtomatiki biçimde boşaltýar
+// @description:tn      Emucisha chat chinyakanyaka nga uwonawo chatgpt.com
+// @description:to      'Oku fa'a kovi 'e he ngaahi sipoti fakamatala 'i he falelotu ki he chatgpt.com
+// @description:tpi     Autometik klia chat histeri long bisitim long chatgpt.com
+// @description:tr      chatgpt.com'u ziyaret ettiğinizde sohbet geçmişini otomatik olarak temizler
+// @description:uk      Автоматично очищає історію чату при відвідуванні chatgpt.com
+// @description:ur      chatgpt.com کے دورے پر چیٹ تاریخ خودکار طور پر صاف کرتا ہے
+// @description:uz      chatgpt.com saytini tashrif buyurganda chat tarixini avtomatik ravishda o'chiradi
+// @description:vi      Xóa lịch sử trò chuyện tự động khi ghé thăm chatgpt.com
+// @description:xh      Ingqalasela ihisitela le-chat uma uzithola chatgpt.com
+// @description:yi      רומט די פֿונען דער שאַט היסטאָריע ביי בעזוך בקוקן chatgpt.com
+// @description:zh      访问 chatgpt.com 时自动清除聊天记录
+// @description:zh-CN   访问 chatgpt.com 时自动清除聊天记录
+// @description:zh-HK   訪問 chatgpt.com 時自動清除聊天記錄
+// @description:zh-SG   访问 chatgpt.com 时自动清除聊天记录
+// @description:zh-TW   訪問 chatgpt.com 時自動清除聊天記錄
+// @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.2
+// @version             2024.5.3
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/userscripts/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/userscripts/chatgpt/media/icons/openai-favicon64.png
@@ -238,7 +238,7 @@
 // @compatible          librewolf
 // @compatible          ghost
 // @compatible          qq
-// @match               *://chat.openai.com/*
+// @match               *://chatgpt.com/*
 // @run-at              document-end
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.6.9/dist/chatgpt.min.js#sha256-pl2y5K/m1OovCuCUxK8yh2aA+y+A9uesk3HMBRBQSiE=
 // @connect             cdn.jsdelivr.net
