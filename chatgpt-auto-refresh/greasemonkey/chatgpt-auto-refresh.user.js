@@ -220,9 +220,9 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.2
+// @version             2024.5.3
 // @license             MIT
-// @match               *://chat.openai.com/*
+// @match               *://chatgpt.com/*
 // @compatible          chrome
 // @compatible          firefox
 // @compatible          edge
