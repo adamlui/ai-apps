@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.2
+// @version             2024.5.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -134,6 +134,7 @@
 // @include             https://auth0.openai.com
 // @connect             cdn.jsdelivr.net
 // @connect             greasyfork.org
+// @connect             chatgpt.com
 // @connect             chat.openai.com
 // @connect             api.openai.com
 // @connect             fanyi.sogou.com
@@ -1288,7 +1289,7 @@
     // Init endpoints
     const openAIendpoints = {
         auth: 'https://auth0.openai.com',
-        session: 'https://chat.openai.com/api/auth/session',
+        session: 'https://chatgpt.com/api/auth/session',
         chat: 'https://api.openai.com/v1/chat/completions' }
     const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
