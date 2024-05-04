@@ -29,7 +29,7 @@
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     // Selectively disable content or user script
-    if (!window.location.hostname == 'chat.openai.com') return
+    if (!/chat(?:gpt|\.openai)\.com/.test(window.location.hostname)) return
     document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
     // Init settings
