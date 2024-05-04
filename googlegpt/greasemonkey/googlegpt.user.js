@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.2
+// @version             2024.5.4.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -363,6 +363,7 @@
 // @include             https://auth0.openai.com
 // @connect             cdn.jsdelivr.net
 // @connect             greasyfork.org
+// @connect             chatgpt.com
 // @connect             chat.openai.com
 // @connect             api.openai.com
 // @connect             fanyi.sogou.com
@@ -1440,6 +1441,9 @@
         sendButton.addEventListener('mouseover', toggleTooltip)
         sendButton.addEventListener('mouseout', toggleTooltip)
 
+        // Focus chatbar if user interacted
+        if (appShow.submitted) chatTextarea.focus()
+
         function handleEnter(event) {
             if (event.key == 'Enter') {
                 if (event.ctrlKey) { // add newline
@@ -1484,6 +1488,9 @@
             // Show loading status
             replySection.classList.add('loading', 'no-user-select')
             replySection.innerText = appAlerts.waitingResponse
+
+            // Flag for chatbar auto-focus on subsequent loads
+            appShow.submitted = true
         }
 
         // Autosize chatbar function
@@ -1564,8 +1571,8 @@
 
     // Init endpoints
     const openAIendpoints = {
-        session: 'https://chat.openai.com/api/auth/session',
         auth: 'https://auth0.openai.com',
+        session: 'https://chatgpt.com/api/auth/session',
         chat: 'https://api.openai.com/v1/chat/completions' }
     const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
