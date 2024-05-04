@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.2
+// @version             2024.5.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -1345,7 +1345,7 @@
 
             // Fetch a random, active creative
             if (chosenAdvertiser) {
-                const campaignsURL = 'https://cdn.jsdelivr.net/gh/KudoAI/ads-library/main/advertisers/'
+                const campaignsURL = 'https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/'
                                    + chosenAdvertiser + '/text/campaigns.json'
                 fetchJSON(campaignsURL, (err, campaignsData) => { if (err) return
 
