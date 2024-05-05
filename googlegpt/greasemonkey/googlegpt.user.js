@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.4.1
+// @version             2024.5.5.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -488,7 +488,7 @@
             while (true) {
                 let replyLanguage = prompt(
                     ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
-                if (replyLanguage == null) break // user cancelled so do nothing
+                if (replyLanguage rqEventHandler) break // user cancelled so do nothing
                 else if (!/\d/.test(replyLanguage)) {
                     replyLanguage = ( // auto-case for menu/alert aesthetics
                         [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
@@ -1082,15 +1082,15 @@
             })
     })}
 
-    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
+    function handleRQevent(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
         if ([' ', 'Enter'].includes(event.key) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
 
             // Remove divs/listeners
             const relatedQueriesDiv = document.querySelector('.related-queries')
             Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                relatedQueryDiv.removeEventListener('click', rqEventHandler)
-                relatedQueryDiv.removeEventListener('keydown', rqEventHandler)
+                relatedQueryDiv.removeEventListener('click', handleRQevent)
+                relatedQueryDiv.removeEventListener('keydown', handleRQevent)
             })
             relatedQueriesDiv.remove()
 
@@ -1100,6 +1100,7 @@
                 chatbar.value = event.target.textContent
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
                     key: 'Enter', bubbles: true, cancelable: true }))
+                appShow.submitSrc = 'relatedQuery' // to not auto-focus chatbar in appShow()
     }}}
 
     async function getShowReply(convo, callback) {
@@ -1160,8 +1161,8 @@
                         // Add fade + listeners
                         setTimeout(() => {
                             relatedQueryDiv.classList.add('active')
-                            relatedQueryDiv.addEventListener('click', rqEventHandler)
-                            relatedQueryDiv.addEventListener('keydown', rqEventHandler)
+                            relatedQueryDiv.addEventListener('click', handleRQevent)
+                            relatedQueryDiv.addEventListener('keydown', handleRQevent)
                         }, index * 100)
                     })
 
@@ -1441,8 +1442,9 @@
         sendButton.addEventListener('mouseover', toggleTooltip)
         sendButton.addEventListener('mouseout', toggleTooltip)
 
-        // Focus chatbar if user interacted
-        if (appShow.submitted) chatTextarea.focus()
+        // Focus chatbar if user typed in prev appShow()
+        if (appShow.submitSrc && appShow.submitSrc != 'relatedQuery') chatTextarea.focus()
+        appShow.submitSrc = 'none'
 
         function handleEnter(event) {
             if (event.key == 'Enter') {
@@ -1475,8 +1477,8 @@
             try {
                 const relatedQueriesDiv = document.querySelector('.related-queries')
                 Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                    relatedQueryDiv.removeEventListener('click', rqEventHandler)
-                    relatedQueryDiv.removeEventListener('keydown', rqEventHandler)
+                    relatedQueryDiv.removeEventListener('click', handleRQevent)
+                    relatedQueryDiv.removeEventListener('keydown', handleRQevent)
                 })
                 relatedQueriesDiv.remove()
             } catch (err) {}
@@ -1488,9 +1490,6 @@
             // Show loading status
             replySection.classList.add('loading', 'no-user-select')
             replySection.innerText = appAlerts.waitingResponse
-
-            // Flag for chatbar auto-focus on subsequent loads
-            appShow.submitted = true
         }
 
         // Autosize chatbar function
