@@ -57,7 +57,7 @@
 
 ## 🗨️ User feedback
 
-<img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png">
+<a href="https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode/feedback"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
