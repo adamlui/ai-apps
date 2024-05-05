@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.4
+// @version             2024.5.5.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -831,15 +831,15 @@
             })
     })}
 
-    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
+    function handleRQevent(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
         if ([' ', 'Enter'].includes(event.key) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
 
             // Remove divs/listeners
             const relatedQueriesDiv = document.querySelector('.related-queries')
             Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                relatedQueryDiv.removeEventListener('click', rqEventHandler)
-                relatedQueryDiv.removeEventListener('keydown', rqEventHandler)
+                relatedQueryDiv.removeEventListener('click', handleRQevent)
+                relatedQueryDiv.removeEventListener('keydown', handleRQevent)
             })
             relatedQueriesDiv.remove()
 
@@ -849,7 +849,9 @@
                 chatbar.value = event.target.textContent
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
                     key: 'Enter', bubbles: true, cancelable: true }))
-    }}}
+                appShow.submitSrc = 'relatedQuery' // to not auto-focus chatbar in appShow()
+            }
+    }}
 
     async function getShowReply(convo, callback) {
 
@@ -909,8 +911,8 @@
                         // Add fade + listeners
                         setTimeout(() => {
                             relatedQueryDiv.classList.add('active')
-                            relatedQueryDiv.addEventListener('click', rqEventHandler)
-                            relatedQueryDiv.addEventListener('keydown', rqEventHandler)
+                            relatedQueryDiv.addEventListener('click', handleRQevent)
+                            relatedQueryDiv.addEventListener('keydown', handleRQevent)
                         }, index * 100)
                     })
 
@@ -1171,6 +1173,10 @@
         sendButton.addEventListener('mouseover', toggleTooltip)
         sendButton.addEventListener('mouseout', toggleTooltip)
 
+        // Focus chatbar if user typed in prev appShow()
+        if (appShow.submitSrc && appShow.submitSrc != 'relatedQuery') chatTextarea.focus()
+        appShow.submitSrc = 'none'
+
         function handleEnter(event) {
             if (event.key == 'Enter') {
                 if (event.ctrlKey) { // add newline
@@ -1202,11 +1208,14 @@
             try {
                 const relatedQueriesDiv = document.querySelector('.related-queries')
                 Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                    relatedQueryDiv.removeEventListener('click', rqEventHandler)
-                    relatedQueryDiv.removeEventListener('keydown', rqEventHandler)
+                    relatedQueryDiv.removeEventListener('click', handleRQevent)
+                    relatedQueryDiv.removeEventListener('keydown', handleRQevent)
                 })
                 relatedQueriesDiv.remove()
             } catch (err) {}
+
+            // Remove 'Send reply' tooltip from send btn clicks
+            tooltipDiv.style.opacity = 0
 
             // Clear footer
             while (appFooter.firstChild) // clear all children
