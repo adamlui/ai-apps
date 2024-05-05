@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.5.2
+// @version             2024.5.5.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -813,7 +813,8 @@
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
                     key: 'Enter', bubbles: true, cancelable: true }))
                 appShow.submitSrc = 'relatedQuery' // to not auto-focus chatbar in appShow()
-    }}}
+            }
+    }}
 
     async function getShowReply(convo, callback) {
 
@@ -1179,6 +1180,9 @@
                 })
                 relatedQueriesDiv.remove()
             } catch (err) {}
+
+            // Remove 'Send reply' tooltip from send btn clicks
+            tooltipDiv.style.opacity = 0
 
             // Show loading status
             const replySection = appDiv.querySelector('section')
