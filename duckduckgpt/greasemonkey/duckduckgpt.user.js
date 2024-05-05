@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.5
+// @version             2024.5.5.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -794,15 +794,15 @@
             })
     })}
 
-    function rqEventHandler(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
+    function handleRQevent(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
         if ([' ', 'Enter'].includes(event.key) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
 
             // Remove divs/listeners
             const relatedQueriesDiv = document.querySelector('.related-queries')
             Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                relatedQueryDiv.removeEventListener('click', rqEventHandler)
-                relatedQueryDiv.removeEventListener('keydown', rqEventHandler)
+                relatedQueryDiv.removeEventListener('click', handleRQevent)
+                relatedQueryDiv.removeEventListener('keydown', handleRQevent)
             })
             relatedQueriesDiv.remove()
 
@@ -873,8 +873,8 @@
                         // Add fade + listeners
                         setTimeout(() => {
                             relatedQueryDiv.classList.add('active')
-                            relatedQueryDiv.addEventListener('click', rqEventHandler)
-                            relatedQueryDiv.addEventListener('keydown', rqEventHandler)
+                            relatedQueryDiv.addEventListener('click', handleRQevent)
+                            relatedQueryDiv.addEventListener('keydown', handleRQevent)
                         }, index * 100)
                     })
 
@@ -1140,8 +1140,8 @@
         sendButton.addEventListener('mouseout', toggleTooltip)
 
         // Focus chatbar if user typed in prev appShow()
-        if (appShow.submitSrc != 'relatedQuery') chatTextarea.focus()
-        appShow.submitSrc == null
+        if (appShow.submitSrc && appShow.submitSrc != 'relatedQuery') chatTextarea.focus()
+        appShow.submitSrc = 'none'
 
         function handleEnter(event) {
             if (event.key == 'Enter') {
@@ -1174,8 +1174,8 @@
             try {
                 const relatedQueriesDiv = document.querySelector('.related-queries')
                 Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                    relatedQueryDiv.removeEventListener('click', rqEventHandler)
-                    relatedQueryDiv.removeEventListener('keydown', rqEventHandler)
+                    relatedQueryDiv.removeEventListener('click', handleRQevent)
+                    relatedQueryDiv.removeEventListener('keydown', handleRQevent)
                 })
                 relatedQueriesDiv.remove()
             } catch (err) {}
