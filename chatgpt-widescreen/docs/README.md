@@ -65,7 +65,13 @@
 
 ## 🗨️ User feedback
 
+#### Greasy Fork:
+
 <img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png">
+
+#### Chrome Web Store:
+
+<img width=999 src="https://media.chatgptwidescreen.com/images/reviews/chrome-web-store.png">
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
