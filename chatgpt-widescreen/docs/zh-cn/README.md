@@ -65,7 +65,7 @@
 
 ## 🗨️ 用户反馈
 
-#### <a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback"><img width=12 src="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon25.png"></a> Greasy Fork:
+#### <a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback"><picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/white/icon25.png"><img width=12 src="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon25.png"></picture></a> Greasy Fork:
 
 <a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
 
