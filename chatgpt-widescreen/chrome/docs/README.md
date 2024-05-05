@@ -53,7 +53,7 @@
 
 ⚙️ Customize features like larger chatbox & hidden header/footer for more spacious view
 
-🌐 Works with: **chat.openai.com** + **poe.com**
+🌐 Works with: **chatgpt.com** + **poe.com**
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
@@ -67,7 +67,7 @@
 
 1. Install [ChatGPT Widescreen Mode](https://chrome.chatgptwidescreen.com) Chrome extension
 
-2. Visit [chat.openai.com](https://chat.openai.com) as normal & mode toggles are added to chatbar!
+2. Visit [chatgpt.com](https://chatgpt.com) as normal & mode toggles are added to chatbar!
 
 <div align="center">
 
@@ -159,7 +159,7 @@ This extension exists thanks to code, translations, issues & ideas from the foll
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/27446620?first-contrib=2023.4.4-esc-to-stop-generating-idea&h=50&w=50&mask=circle&maxage=7d "@asgeirtj")](https://github.com/asgeirtj)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
-[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
+[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 

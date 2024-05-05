@@ -59,7 +59,7 @@
 
 ⚙️ Customize features like larger chatbox & hidden header/footer for more spacious view
 
-🌐 Works with: **chat.openai.com** + **poe.com**
+🌐 Works with: **chatgpt.com** + **poe.com**
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
@@ -81,7 +81,7 @@
 
 1. Install ChatGPT Widescreen Mode extension ([Chrome](https://chrome.chatgptwidescreen.com), [Edge](https://edge.chatgptwidescreen.com))
 
-2. Visit [chat.openai.com](https://chat.openai.com) as normal & mode toggles are added to chatbar!
+2. Visit [chatgpt.com](https://chatgpt.com) as normal & mode toggles are added to chatbar!
 
 *Pro tip: For easier access to extension toggles, (1) click <img height=12 width=12 src="https://user-images.githubusercontent.com/10906554/232301021-9fd8a67a-8911-4dd1-8455-2eb3757428b9.png"> in the browser's toolbar, (2) then <img height=12 width=12 src="https://user-images.githubusercontent.com/10906554/232302439-45d547e5-f96e-464d-ab43-da9c028caf10.png"> next to extension name.*
 
@@ -100,7 +100,7 @@
 
 2. Install [ChatGPT Widescreen Mode](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) userscript (will load in userscript manager installed above)
 
-3. Visit [chat.openai.com](https://chat.openai.com) or [poe.com](https://poe.com) & mode toggles are added to chatbar!
+3. Visit [chatgpt.com](https://chatgpt.com) or [poe.com](https://poe.com) & mode toggles are added to chatbar!
 
 <div align="center">
 
@@ -192,7 +192,7 @@ This project exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/27446620?first-contrib=2023.4.4-esc-to-stop-generating-idea&h=50&w=50&mask=circle&maxage=7d "@asgeirtj")](https://github.com/asgeirtj)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
-[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
+[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 

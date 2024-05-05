@@ -59,7 +59,7 @@
 
 ⚙️ 自定义功能，例如更大的聊天框和隐藏的页眉/页脚，以获得更宽敞的视图
 
-🌐 适用于: **chat.openai.com** + **poe.com**
+🌐 适用于: **chatgpt.com** + **poe.com**
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
@@ -81,7 +81,7 @@
 
 1. 安装 ChatGPT 宽屏模式扩展 ([Chrome](https://chrome.chatgptwidescreen.com), [Edge](https://edge.chatgptwidescreen.com))
 
-2. 访问 [chat.openai.com](https://chat.openai.com)，因为正常和模式切换已添加到聊天栏！
+2. 访问 [chatgpt.com](https://chatgpt.com)，因为正常和模式切换已添加到聊天栏！
 
 *专业提示：更容易访问扩展开关, (1) 点击 <img height=12 width=12 src="https://user-images.githubusercontent.com/10906554/232301021-9fd8a67a-8911-4dd1-8455-2eb3757428b9.png"> 在浏览器的工具栏中, (2) 然后 <img height=12 width=12 src="https://user-images.githubusercontent.com/10906554/232302439-45d547e5-f96e-464d-ab43-da9c028caf10.png"> 在分机名称旁边.*
 
@@ -100,7 +100,7 @@
 
 2. 安装 [ChatGPT 宽屏模式](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) userscript (will load in userscript manager installed above)
 
-3. 访问 [chat.openai.com](https://chat.openai.com) 或 [poe.com](https://poe.com)，聊天栏已添加模式切换！
+3. 访问 [chatgpt.com](https://chatgpt.com) 或 [poe.com](https://poe.com)，聊天栏已添加模式切换！
 
 <div align="center">
 
@@ -192,7 +192,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/27446620?first-contrib=2023.4.4-esc-to-stop-generating-idea&h=50&w=50&mask=circle&maxage=7d "@asgeirtj")](https://github.com/asgeirtj)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
-[![ChatGPT](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
+[![ChatGPT](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
