@@ -67,7 +67,7 @@
 
 #### Greasy Fork:
 
-<a href="https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode/feedback"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
+<a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
 
 #### Chrome Web Store:
 
@@ -181,8 +181,8 @@ This project exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/58298118?first-contrib=2023.09.23-wider-chatbox-idea&h=50&w=50&mask=circle&maxage=7d "@Aubermean")](https://github.com/Aubermean)
 [![](https://images.weserv.nl/?url=https://greasyfork.org/vite/assets/blacklogo96-e0c2c761.png?first-contrib=2023.11.5-plus-buttons-distorted-bug-report&h=50&w=50&mask=circle&maxage=7d "大聪明 (H4Ha）")](https://greasyfork.org/users/1210535-%E5%A4%A7%E8%81%AA%E6%98%8E-h4ha)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/76943037?first-contrib=2023.11.10-gizmo-ui-dark-mode-button-colors-broken-bug-report&h=50&w=50&mask=circle&maxage=7d "@comonetso")](https://github.com/comonetso)
-[![](https://images.weserv.nl/?url=https://greasyfork.org/vite/assets/blacklogo96-e0c2c761.png?first-contrib=2023.11.19-hide-chat-btn-request&h=50&w=50&mask=circle&maxage=7d "Some Guy 9283")](https://greasyfork.org/en/users/1220444-some-guy-9283)
-[![](https://images.weserv.nl/?url=https://greasyfork.org/vite/assets/blacklogo96-e0c2c761.png?first-contrib=2023.11.27-new-ui-report&h=50&w=50&mask=circle&maxage=7d "jianmin liang")](https://greasyfork.org/en/users/1182535-jianmin-liang)
+[![](https://images.weserv.nl/?url=https://greasyfork.org/vite/assets/blacklogo96-e0c2c761.png?first-contrib=2023.11.19-hide-chat-btn-request&h=50&w=50&mask=circle&maxage=7d "Some Guy 9283")](https://greasyfork.org/users/1220444-some-guy-9283)
+[![](https://images.weserv.nl/?url=https://greasyfork.org/vite/assets/blacklogo96-e0c2c761.png?first-contrib=2023.11.27-new-ui-report&h=50&w=50&mask=circle&maxage=7d "jianmin liang")](https://greasyfork.org/users/1182535-jianmin-liang)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/67295085?first-contrib=2023.11.28-new-ui-report&h=50&w=50&mask=circle&maxage=7d "@jaysqvl")](https://github.com/jaysqvl)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/78710607?first-contrib=2023.11.29-win7-edge-copy-bug-report&h=50&w=50&mask=circle&maxage=7d "@KamiyaMinoru")](https://github.com/KamiyaMinoru)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/123299068?first-contrib=2023.11.30-unworking-wider-chatbox-bug-report&h=50&w=50&mask=circle&maxage=7d "@SwissFred57")](https://github.com/SwissFred57)
