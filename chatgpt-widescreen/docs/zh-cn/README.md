@@ -65,11 +65,11 @@
 
 ## 🗨️ 用户反馈
 
-#### Greasy Fork:
+#### <a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback"><img width=12 src="https://media.chatgptwidescreen.com/images/icons/web-stores/greasy-fork/black/icon25.png"></a> Greasy Fork:
 
 <a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
 
-#### Chrome Web Store:
+#### <a href="https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews"><img width=14 src="https://media.chatgptwidescreen.com/images/icons/web-stores/chrome-web-store/icon16.png"></a> Chrome Web Store:
 
 <a href="https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/chrome-web-store.png"></a>
 
