@@ -147,6 +147,8 @@ This script exists thanks to code, translations, issues & ideas from the followi
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13976824?first-contrib=2021.01.31-aria-labels-unreliable-bug-report&h=50&w=50&mask=circle&maxage=7d "@hopana")](https://github.com/hopana)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/53054099?first-contrib=2023.2.3-added-eslint-plugin-userscripts&h=50&w=50&mask=circle&maxage=7d "@Yash-Singh1")](https://github.com/Yash-Singh1)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/27446620?first-contrib=2023.4.4-esc-to-stop-generating-idea&h=50&w=50&mask=circle&maxage=7d "@asgeirtj")](https://github.com/asgeirtj)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/14350406?first-contrib=2024.5.3-update-manifest-to-match-new-chatgpt.com-domain-alert&h=50&w=50&mask=circle&maxage=7d "@OhneNot")](https://github.com/OhneNot)
+[![](https://images.weserv.nl/?url=https://greasyfork.org/vite/assets/blacklogo96-e0c2c761.png?first-contrib=2024.5.3-new-chatgpt.com-domain-alert&h=50&w=50&mask=circle&maxage=7d "Brian Fennell")](https://greasyfork.org/users/1296464-brian-fennell)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
