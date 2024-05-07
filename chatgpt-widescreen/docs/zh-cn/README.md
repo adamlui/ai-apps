@@ -216,7 +216,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 > 保持 ChatGPT 会话新鲜，消除聊天时间限制 + 网络错误 + Cloudflare 检查。
 <br>[安装](https://docs.chatgptautorefresh.com/zh-cn#-如何安装) /
 [自述文件](https://docs.chatgptautorefresh.com/zh-cn#readme) /
-[讨论](https://chatgptautorefresh.com/discuss)
+[讨论](https://github.chatgptautorefresh.com/discussions)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
@@ -230,7 +230,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何語言!)
 <br>[安装](https://docs.chatgptinfinity.com/zh-cn#-如何安装) /
 [自述文件](https://docs.chatgptinfinity.com/zh-cn#readme) /
-[讨论](https://chatgptinfinity.com/discuss)
+[讨论](https://github.chatgptinfinity.com/discussions)
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 

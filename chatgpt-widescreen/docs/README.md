@@ -216,7 +216,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 > Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.
 <br>[Install](https://docs.chatgptautorefresh.com/#-installation) /
 [Readme](https://docs.chatgptautorefresh.com/#readme) /
-[Discuss](https://chatgptautorefresh.com/discuss)
+[Discuss](https://github.chatgptautorefresh.com/discussions)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
@@ -230,7 +230,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 > Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://docs.chatgptinfinity.com/#-installation) /
 [Readme](https://docs.chatgptinfinity.com/#-readme) /
-[Discuss](https://chatgptinfinity.com/discuss)
+[Discuss](https://github.chatgptinfinity.com/discussions)
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
