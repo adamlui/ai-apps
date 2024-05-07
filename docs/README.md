@@ -51,7 +51,7 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 [Readme](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-auto-refresh#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](../chatgpt-infinity) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 4px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Infinity ∞](../chatgpt-infinity) <a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 > Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://github.com/adamlui/chatgpt-apps/tree/main/chatgpt-infinity#-installation) /

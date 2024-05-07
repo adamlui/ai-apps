@@ -107,7 +107,7 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 [自述文件](https://github.chatgptautorefresh.com/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptautorefresh.com/discuss)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](https://github.chatgptinfinity.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 4px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](https://github.chatgptinfinity.com) <a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 > 从无所不知的 ChatGPT (任何语言!) 生成无穷无尽的答案。<br>
 [安装](https://github.chatgptinfinity.com/tree/main/docs/zh-cn#-如何安装) / 
