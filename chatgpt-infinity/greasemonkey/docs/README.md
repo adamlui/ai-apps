@@ -31,7 +31,7 @@
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-on-ss-zoomed-out.png">
+<img src="https://media.chatgptinfinity.com/images/screenshots/infinity-mode-on-ss-zoomed-out.png">
 
 </div>
 
@@ -53,8 +53,8 @@
 
 3. Visit [chatgpt.com](https://chatgpt.com) & Infinity toggle is added to sidebar!
 
-![](https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-toggle.jpg)
-![](https://raw.githubusercontent.com/adamlui/chatgpt-infinity/main/media/images/screenshots/infinity-mode-tm-menu.png)
+![](https://media.chatgptinfinity.com/images/screenshots/infinity-mode-toggle.jpg)
+![](https://media.chatgptinfinity.com/images/screenshots/infinity-mode-tm-menu.png)
 
 ## ⚡ Dependencies
 
