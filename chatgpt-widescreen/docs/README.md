@@ -23,7 +23,7 @@
 <br>
 
 <a href="https://chrome.chatgptwidescreen.com" target="_blank">
-    <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
+    <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://edge.chatgptwidescreen.com" target="_blank">
     <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
 <a href="https://greasyfork.chatgptwidescreen.com" target="_blank">
