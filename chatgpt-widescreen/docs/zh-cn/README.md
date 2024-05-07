@@ -171,6 +171,8 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 该项目的存在归功于以下贡献者的代码、翻译、问题和想法:
 
+<div align="center"><br>
+
 [![@adamlui](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.03.07&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
 [![@XiaoYingYo](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/54934866?first-contrib=2023.03.06-original-script&h=50&w=50&mask=circle&maxage=7d "@XiaoYingYo")](https://github.com/XiaoYingYo)
 [![@mefengl](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/71683364?first-contrib=2023.03.12-new-chat-button&h=50&w=50&mask=circle&maxage=7d "@mefengl")](https://github.com/mefengl)
@@ -195,6 +197,8 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![ChatGPT](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
+
+</div><br>
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
 
