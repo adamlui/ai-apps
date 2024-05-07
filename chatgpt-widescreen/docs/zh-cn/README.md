@@ -225,7 +225,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 [自述文件](https://github.bravegpt.com/#readme) /
 [讨论](https://github.bravegpt.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT无限 ∞](https://github.chatgptinfinity.com)
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT无限 ∞](https://github.chatgptinfinity.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptinfinity.com/images/badges/awesome/badge.svg" style="margin:0 0 -2px 4px"></a>
 
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何語言!)
 <br>[安装](https://github.com/adamlui/chatgpt-infinity/blob/main/docs/zh-cn#-如何安装) /
