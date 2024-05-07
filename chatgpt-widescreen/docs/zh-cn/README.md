@@ -104,7 +104,7 @@
 
 <div align="center">
 
-![全窗口切换](https://media.chatgptwidescreen.com/images/screenshots/zh-cn/widescreen-button.png)
+![](https://media.chatgptwidescreen.com/images/screenshots/zh-cn/widescreen-button.png)
 
 *注意：由于全窗口模式隐藏了侧边栏，请按“+”开始新的聊天*
 
