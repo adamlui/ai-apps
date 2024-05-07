@@ -69,7 +69,7 @@
 
 <div align="center">
 
-![Full-Window toggle](https://i.imgur.com/wdoxZuh.png)
+![Full-Window toggle](https://media.chatgptwidescreen.com/images/screenshots/widescreen-button.png)
 
 *NOTE: Since full-window mode hides the sidebar, press '+' to start new chats*
 
