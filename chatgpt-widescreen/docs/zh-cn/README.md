@@ -211,7 +211,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 ## 📜 相关应用
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动刷新 ↻](https://github.chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动刷新 ↻](https://github.chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > 保持 ChatGPT 会话新鲜，消除聊天时间限制 + 网络错误 + Cloudflare 检查。
 <br>[安装](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/docs/zh-cn#-如何安装) /
