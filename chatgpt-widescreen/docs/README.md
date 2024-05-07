@@ -77,7 +77,7 @@
 
 ## 🚀 Installation
 
-### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"><img style="margin: 0 2px -1px 0" height=16 src="https://i.imgur.com/0wUsChU.png"> Browser extension:
+### <img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/chrome/icon16.png"><img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptwidescreen.com/images/icons/platforms/edge/icon16.png"> Browser extension:
 
 1. Install ChatGPT Widescreen Mode extension ([Chrome](https://chrome.chatgptwidescreen.com), [Edge](https://edge.chatgptwidescreen.com))
 
@@ -94,7 +94,7 @@
 
 #
 
-### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://i.imgur.com/SATGr8j.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey userscript:
+### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey userscript:
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/))
 
