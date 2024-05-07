@@ -214,22 +214,22 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动刷新 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > 保持 ChatGPT 会话新鲜，消除聊天时间限制 + 网络错误 + Cloudflare 检查。
-<br>[安装](https://github.com/adamlui/chatgpt-auto-refresh/tree/main/docs/zh-cn#-如何安装) /
-[自述文件](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/docs/zh-cn#readme) /
+<br>[安装](https://docs.chatgptautorefresh.com/zh-cn#-如何安装) /
+[自述文件](https://docs.chatgptautorefresh.com/zh-cn#readme) /
 [讨论](https://chatgptautorefresh.com/discuss)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > 在 Brave Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4 提供支持!)
-<br>[安装](https://github.bravegpt.com/#-installation) /
-[自述文件](https://github.bravegpt.com/#readme) /
+<br>[安装](https://docs.bravegpt.com/#-installation) /
+[自述文件](https://docs.bravegpt.com/#readme) /
 [讨论](https://github.bravegpt.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT无限 ∞](https://chatgptinfinity.com) <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptinfinity.com/images/badges/awesome/badge.svg" style="margin:0 0 -2px 4px"></a>
 
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何語言!)
-<br>[安装](https://github.com/adamlui/chatgpt-infinity/blob/main/docs/zh-cn#-如何安装) /
-[自述文件](https://github.com/adamlui/chatgpt-infinity/blob/main/docs/zh-cn#readme) /
+<br>[安装](https://docs.chatgptinfinity.com/zh-cn#-如何安装) /
+[自述文件](https://docs.chatgptinfinity.com/zh-cn#readme) /
 [讨论](https://chatgptinfinity.com/discuss)
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
