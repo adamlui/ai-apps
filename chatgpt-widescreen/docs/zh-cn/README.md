@@ -88,7 +88,7 @@
 <div align="center">
 
 <img width=268 src="https://media.chatgptwidescreen.com/images/screenshots/zh-cn/chrome-extension-pin-instructions.png">
-<img width=288 src="https://media.chatgptwidescreen.com/images/screenshots/zh-cn/extension-menu.png">
+<img width=288 src="https://media.chatgptwidescreen.com/images/screenshots/zh-cn/chrome-extension-menu.png">
 
 </div>
 
