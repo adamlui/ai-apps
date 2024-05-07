@@ -59,7 +59,7 @@
 
 ## 🚀 如何安装
 
-### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://i.imgur.com/SATGr8j.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://i.imgur.com/wcCg3al.png"> Greasemonkey 用户脚本:
+### <img style="margin: 0 2px -1px 0" height=16 src="https://www.google.com/chrome/static/images/favicons/apple-icon-60x60.png"><img style="margin: 0 2px -1px 0" height=16 src="https://i.imgur.com/0wUsChU.png"> 浏览器扩展:
 
 1. 安装 ChatGPT 无限 扩展程序 ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com))
 
