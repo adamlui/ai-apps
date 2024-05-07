@@ -23,11 +23,11 @@
 <br>
 
 <a href="https://chrome.chatgptwidescreen.com" target="_blank">
-    <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
+    <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/chrome-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
 <a href="https://edge.chatgptwidescreen.com" target="_blank">
-    <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
+    <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
 <a href="https://greasyfork.chatgptwidescreen.com" target="_blank">
-    <img width=auto height=60 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
+    <img width=auto height=60 src="https://media.chatgptwidescreen.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
 
 </div>
 
@@ -35,19 +35,19 @@
 
 **ChatGPT 宽屏模式** 向 ChatGPT 添加了宽屏 + 全屏模式，通过减少滚动并创造更身临其境的观看体验来增强您的聊天会话。
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 📺 演示
 
 <div align="center">
 
 <a href="https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1">
-    <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/widescreen-mode-video-thumbnail.png">
+    <img src="https://media.chatgptwidescreen.com/images/screenshots/widescreen-mode-video-thumbnail.png">
 </a>
 
 </div><br>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 💊 好处
 
@@ -61,7 +61,7 @@
 
 🌐 适用于: **chatgpt.com** + **poe.com**
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🗨️ 用户反馈
 
@@ -73,7 +73,7 @@
 
 <a href="https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/chrome-web-store.png"></a>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🚀 如何安装
 
@@ -87,8 +87,8 @@
 
 <div align="center">
 
-<img width=268 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/zh-cn/chrome-extension-pin-instructions.png">
-<img width=288 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/zh-cn/extension-menu.png">
+<img width=268 src="https://media.chatgptwidescreen.com/images/screenshots/zh-cn/chrome-extension-pin-instructions.png">
+<img width=288 src="https://media.chatgptwidescreen.com/images/screenshots/zh-cn/extension-menu.png">
 
 </div>
 
@@ -104,13 +104,13 @@
 
 <div align="center">
 
-![全窗口切换](https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/zh-cn/widescreen-button.png)
+![全窗口切换](https://media.chatgptwidescreen.com/images/screenshots/zh-cn/widescreen-button.png)
 
 *注意：由于全窗口模式隐藏了侧边栏，请按“+”开始新的聊天*
 
 </div>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## ⚡ 依赖关系
 
@@ -131,7 +131,7 @@ ChatGPT 寬屏模式依賴於強大的 [chatgpt.js](https://github.com/KudoAI/ch
 </div>
 </h6>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🌐 兼容性
 
@@ -152,11 +152,11 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 <div align="center">
 
 <a href="https://chrome.chatgptwidescreen.com">
-    <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a>
+    <img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptwidescreen.com">
-    <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-edge-button.png"></a>
+    <img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
 <a href="https://greasyfork.chatgptwidescreen.com">
-    <img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-userscript-button.png"></a>
+    <img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-userscript-button.png"></a>
 
 <br>
 
@@ -165,7 +165,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 </div>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🧠 贡献者
 
@@ -200,14 +200,14 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 </div><br>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🤖 更多 ChatGPT 应用
 
 如需更多精彩的 ChatGPT 应用程序，请访问: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 📜 相关应用
 
@@ -232,7 +232,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 [自述文件](https://github.com/adamlui/chatgpt-infinity/blob/main/docs/zh-cn#readme) /
 [讨论](https://chatgptinfinity.com/discuss)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-addons">**更多 ChatGPT 插件**</a> /
 <a href="#%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87--english">回到顶部 ↑</a>

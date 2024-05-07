@@ -17,7 +17,7 @@
  
 <br>
 
-<a href="https://chrome.chatgptwidescreen.com"><img height=70 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a>
+<a href="https://chrome.chatgptwidescreen.com"><img height=70 src="https://media.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
 [Review](https://chrome.google.com/webstore/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm) / 
@@ -29,19 +29,19 @@
 
 **ChatGPT Widescreen Mode** adds widescreen + fullscreen modes to ChatGPT, enhancing your chat sessions by reducing scrolling & creating a more immersive viewing experience.
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 📺 Demo
 
 <div align="center">
 
 <a href="https://www.youtube.com/watch?v=xtOklfi3lZY&list=PLB4S0Z21beYNoCdS3WvAMSxW69OuZzuF1">
-    <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/screenshots/widescreen-mode-video-thumbnail.png">
+    <img src="https://media.chatgptwidescreen.com/images/screenshots/widescreen-mode-video-thumbnail.png">
 </a>
 
 </div><br>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 💊 Benefits
 
@@ -55,13 +55,13 @@
 
 🌐 Works with: **chatgpt.com** + **poe.com**
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🗨️ User feedback
 
 <a href="https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/chrome-web-store.png"></a>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🚀 Installation
 
@@ -82,7 +82,7 @@
 
 </div>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## ⚡ Dependencies
 
@@ -103,7 +103,7 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 </div>
 </h6>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🌐 Compatibility
 
@@ -125,7 +125,7 @@ The userscript is compatible w/ the following browsers:
 
 <div align="center">
 
-<a href="https://chrome.chatgptwidescreen.com"><img height=65 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/buttons/add-to-chrome-button.png"></a><a href="https://edge.chatgptwidescreen.com">
+<a href="https://chrome.chatgptwidescreen.com"><img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a><a href="https://edge.chatgptwidescreen.com">
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
 [Review](https://chrome.google.com/webstore/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm) / 
@@ -133,7 +133,7 @@ The userscript is compatible w/ the following browsers:
 
 </div>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🧠 Contributors
 
@@ -167,14 +167,14 @@ This extension exists thanks to code, translations, issues & ideas from the foll
 
 </div><br>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 ## 📜 Related apps
 
@@ -196,7 +196,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://github.com/adamlui/chatgpt-infinity#readme) /
 [Discuss](https://chatgptinfinity.com/discuss)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
 <a href="https://github.com/adamlui/chatgpt-apps">**More ChatGPT add-ons**</a> /
 <a href="https://github.com/adamlui/chatgpt-widescreen#readme">Back to top ↑</a>
