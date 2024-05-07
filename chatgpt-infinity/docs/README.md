@@ -63,7 +63,7 @@
 
 1. Install ChatGPT Infinity extension ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com))
 
-2. Visit [chat.openai.com](https://chat.openai.com) as normal & Infinity toggle is added to sidebar!
+2. Visit [chatgpt.com](https://chatgpt.com) as normal & Infinity toggle is added to sidebar!
 
 *Pro tip: For easier access to extension toggles, (1) click <img height=12 width=12 src="https://user-images.githubusercontent.com/10906554/232301021-9fd8a67a-8911-4dd1-8455-2eb3757428b9.png"> in the browser's toolbar, (2) then <img height=12 width=12 src="https://user-images.githubusercontent.com/10906554/232302439-45d547e5-f96e-464d-ab43-da9c028caf10.png"> next to extension name.*
 
@@ -80,7 +80,7 @@
 
 2. Install [ChatGPT Infinity](https://greasyfork.chatgptinfinity.com) userscript (will load in userscript manager installed above)
 
-3. Visit [chat.openai.com](https://chat.openai.com) & Infinity toggle is added to sidebar!
+3. Visit [chatgpt.com](https://chatgpt.com) & Infinity toggle is added to sidebar!
 
 <div align="center">
 
@@ -163,7 +163,7 @@ This project exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2911588?first-contrib=2023.2.26-truncate-toggle-label-idea&h=50&w=50&mask=circle&maxage=7d "@sanchomuzax")](https://github.com/sanchomuzax)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
-[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
+[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
 <br><br>
 
 ## 🤖 More ChatGPT apps
