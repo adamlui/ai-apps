@@ -11,7 +11,7 @@
 
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon512.png"><img width=23 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon512.png"></picture> ChatGPT 自动刷新 ↻ &nbsp;<a href="https://twitter.com/intent/tweet?text=厌倦了%20ChatGPT%20的不断中断？%20使用此插件自动刷新您的会话%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
 
-<a href="https://gf.chatgptautorefresh.com"><img height=31 src="https://img.shields.io/badge/用户-10,000+-2bbbd8?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://greasyfork.chatgptautorefresh.com"><img height=31 src="https://img.shields.io/badge/用户-10,000+-2bbbd8?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/adamlui/chatgpt-auto-refresh/stargazers"><img height=31 src="https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=星星&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="LICENSE.md"><img height=31 src="https://img.shields.io/badge/许可证-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/adamlui/chatgpt-auto-refresh/commits/main"><img height=31 src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=提交&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
@@ -23,7 +23,7 @@
 
 ### 通过后台请求保持 ChatGPT 会话新鲜，以消除网络错误 + Cloudflare 检查。
 
-<a href="https://greasyfork.chatgptautorefresh.com"><img height=42 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-如何安装"><img height=42 title="如何安装" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.chatgptautorefresh.com"><img height=45 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-如何安装"><img height=45 title="如何安装" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [讨论](https://chatgptautorefresh.com/discuss) /
 [审查](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
@@ -184,13 +184,13 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 
 ## 📜 相关脚本
 
-### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
+### <img width=17 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24">
 > 向 ChatGPT 添加宽屏 + 全窗口模式以增强查看效果 + 减少滚动。<br>
 [安装](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#-如何安装) /
 [自述文件](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#readme) /
 [讨论](https://chatgptwidescreen.com/discuss)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动继续 ⏩](https://github.chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动继续 ⏩](https://github.chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
 > 自动继续生成多个 ChatGPT 响应。<br>
 [安装](https://github.com/adamlui/chatgpt-auto-continue/tree/main/docs/zh-cn#-如何安装) /
 [自述文件](https://github.com/adamlui/chatgpt-auto-continue/tree/main/docs/zh-cn#readme) /
