@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.7
+// @version             2024.5.7.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -615,9 +615,8 @@
     function activateMode(mode) {
         if (mode == 'wideScreen') { document.head.append(wideScreenStyle) ; syncMode('wideScreen') }
         else if (mode == 'fullWindow') {
-            if (/chatgpt|openai/.test(site)) chatgpt.sidebar.hide()
-            else /* poe */ syncMode('fullWindow') // since not sidebarObserve()'d
             document.head.append(fullWindowStyle)
+            if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.hide()
         } else if (mode == 'fullScreen') document.documentElement.requestFullscreen()
     }
 
