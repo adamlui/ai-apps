@@ -34,7 +34,12 @@
     if (/chatgpt|openai/.test(site)) await chatgpt.isLoaded()
 
     // Define UI element selectors
-    const headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : '',
+    const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after'
+                                        : 'form textarea[id*="prompt"]',
+          sidebarSelector = site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]'
+                                          : '#__next > div > div.dark',
+          sidepadSelector = '#__next > div > div',
+          headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : '',
           footerSelector = /chatgpt|openai/.test(site) ? 'main form ~ div' : '',
           chatbarSelector = /chatgpt|openai/.test(site) ? 'div[class*="textarea:focus"'
                           : site == 'poe' ? 'div[class*="ChatMessageInputContainer"]' : ''
@@ -47,13 +52,6 @@
     const sendBtnSelector = /chatgpt|openai/.test(site) ? 'form button[class*="bottom"]' : null,
           sendBtnClasses = document.querySelector(sendBtnSelector)?.classList || [],
           sendImgClasses = document.querySelector('form button[class*="bottom"] svg')?.classList || []
-
-    // Define UI element selectors
-    const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after'
-                                        : 'form textarea[id*="prompt"]',
-          sidebarSelector = site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]'
-                                          : '#__next > div > div.dark',
-          sidepadSelector = '#__next > div > div'
 
     // Create/stylize tooltip div
     const tooltipDiv = document.createElement('div')
