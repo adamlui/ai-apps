@@ -75,7 +75,7 @@
 
 ## 🗨️ User feedback
 
-<img width=535 src="https://i.imgur.com/nbwAQ1e.png">
+<img width=535 src="https://media.chatgptautorefresh.com/images/reviews/greasy-fork.png">
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">
 
