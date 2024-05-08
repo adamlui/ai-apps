@@ -338,7 +338,8 @@
             try { document.head.removeChild(wideScreenStyle) ; syncMode('wideScreen') } catch (err) {}
         else if (mode == 'fullWindow') {
             try { document.head.removeChild(fullWindowStyle) } catch (err) {}
-            if (site == 'poe') syncMode('fullWindow') ; else chatgpt.sidebar.show()
+            if (/chatgpt|openai/.test(site)) chatgpt.sidebar.show()
+            else if (site == 'poe') syncMode('fullWindow') // since not sidebarObserve()'d
         } else if (mode == 'fullScreen') {
             if (config.f11)
                 alert(chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
