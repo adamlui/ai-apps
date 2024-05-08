@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![](https://img.shields.io/greasyfork/dt/461473?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode)
+[![](https://img.shields.io/greasyfork/dt/461473?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.chatgptwidescreen.com)
 [![](https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-widescreen/commits/main)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
@@ -15,10 +15,10 @@
 
 <br>
 
-<a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode"><img height=45 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img title="How to install" height=45 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.chatgptwidescreen.com"><img height=45 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img title="How to install" height=45 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
-[Review](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback#post-discussion) / 
+[Review](https://greasyfork.chatgptwidescreen.com/feedback#post-discussion) / 
 [Contact author](https://github.com/adamlui)
 
 </div>
@@ -57,7 +57,7 @@
 
 ## 🗨️ User feedback
 
-<a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
+<a href="https://greasyfork.chatgptwidescreen.com/feedback"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
@@ -65,7 +65,7 @@
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/en/extensions/details/tampermonkey-beta/))
 
-2. Install [ChatGPT Widescreen Mode](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) (will load in userscript manager installed above)
+2. Install [ChatGPT Widescreen Mode](https://greasyfork.chatgptwidescreen.com) (will load in userscript manager installed above)
 
 3. Visit [chatgpt.com](https://chatgpt.com) or [poe.com](https://poe.com) & mode toggles are added to chatbar!
 
@@ -116,10 +116,10 @@ ChatGPT Widescreen Mode is compatible w/ the following browsers (via [Tampermonk
 
 <br>
 
-<a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode"><img height=42 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img title="How to install" height=42 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.chatgptwidescreen.com"><img height=42 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img title="How to install" height=42 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
-[Leave a review](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback#post-discussion) / 
+[Leave a review](https://greasyfork.chatgptwidescreen.com/feedback#post-discussion) / 
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">

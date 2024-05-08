@@ -57,7 +57,7 @@
 
 ## 🗨️ User feedback
 
-<a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
+<a href="https://greasyfork.chatgptwidescreen.com/feedback"><img width=999 src="https://media.chatgptwidescreen.com/images/reviews/greasy-fork.png"></a>
 
 <img height=6px width="100%" src="https://media.chatgptwidescreen.com/images/separators/aqua.png">
 
@@ -105,7 +105,7 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 
 ## 🌐 Compatibility
 
-ChatGPT Widescreen Mode is also available as an [Chrome add-on](https://chrome.chatgptwidescreen.com) and a [Greasemonkey userscript](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode) (via [Tampermonkey](https://www.tampermonkey.net/).
+ChatGPT Widescreen Mode is also available as an [Chrome add-on](https://chrome.chatgptwidescreen.com) and a [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com) (via [Tampermonkey](https://www.tampermonkey.net/).
 
 The userscript is compatible w/ the following browsers:
 
