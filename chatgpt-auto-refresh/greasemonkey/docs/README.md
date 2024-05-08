@@ -45,7 +45,7 @@
 
 <div align="center">
     
-![](https://user-images.githubusercontent.com/10906554/229415084-97f55e6d-eb21-4ac0-bc2a-c6174a44cfe1.png)
+![](https://media.chatgptautorefresh.com/images/alerts/cloudflare-stand-by.png)
 
 </div>
 
@@ -53,8 +53,8 @@
 
 <div align="center">
 
-![](https://user-images.githubusercontent.com/10906554/229413173-7183e459-06ca-4b95-b241-8ca79b18039d.png)
-![](https://user-images.githubusercontent.com/10906554/229413421-a6264dc2-a2e3-48a7-ad86-7789dbd7df54.png)
+![](https://media.chatgptautorefresh.com/images/alerts/chatgpt-something-went-wrong.png)
+![](https://media.chatgptautorefresh.com/images/alerts/chatgpt-network-error.png)
 <img width=333 src="https://user-images.githubusercontent.com/10906554/229416105-931e2035-7e30-440a-bdc9-e570daf0d769.png">
     
 </div>
