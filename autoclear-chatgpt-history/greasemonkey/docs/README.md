@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> Autoclear ChatGPT History &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20cluttered%20ChatGPT%20chat%20history%3F%20Auto-clear%20it%20w%2F%20this%20plug-in%21&url=https://github.com/adamlui/autoclear-chatgpt-history&hashtags=javascript,openai,chatgpt)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/openai/white/icon512.png"><img width=23 src="https://media.autoclearchatgpt.com/images/icons/openai/black/icon512.png"></picture> Autoclear ChatGPT History &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20cluttered%20ChatGPT%20chat%20history%3F%20Auto-clear%20it%20w%2F%20this%20plug-in%21&url=https://github.com/adamlui/autoclear-chatgpt-history&hashtags=javascript,openai,chatgpt)
 
 [![](https://img.shields.io/greasyfork/dt/460805?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge)](https://greasyfork.org/scripts/460805-autoclear-chatgpt-history)
 [![](https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/LICENSE.md)
@@ -113,7 +113,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ## 📜 Related scripts
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://github.chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Auto Refresh ↻](https://github.chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
 > Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.
 <br>[Install](https://github.com/adamlui/chatgpt-auto-refresh#-installation) / 
