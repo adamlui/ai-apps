@@ -34,10 +34,10 @@
     if (/chatgpt|openai/.test(site)) await chatgpt.isLoaded()
 
     // Define UI element selectors
-    const inputSelector = site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after'
-                                        : 'form textarea[id*="prompt"]',
-          sidebarSelector = site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]'
-                                          : '#__next > div > div.dark',
+    const inputSelector = /chatgpt|openai/.test(site) ? 'form textarea[id*="prompt"]'
+                        : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
+          sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
+                          : site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]' : '',
           sidepadSelector = '#__next > div > div',
           headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : '',
           footerSelector = /chatgpt|openai/.test(site) ? 'main form ~ div' : '',
