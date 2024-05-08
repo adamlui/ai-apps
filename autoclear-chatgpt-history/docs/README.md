@@ -116,25 +116,25 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Auto Refresh ↻](https://github.chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
 
 > Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.
-<br>[Install](https://docs.chatgptautorefresh.com/#-installation) / 
-[Readme](https://docs.chatgptautorefresh.com/#readme) / 
+<br>[Install](https://github.com/adamlui/chatgpt-auto-refresh#-installation) / 
+[Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) / 
 [Discuss](https://github.chatgptautorefresh.com/discussions)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://github.bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
 > Display ChatGPT answers in Brave Search sidebar (powered by GPT-4!)
-<br>[Install](https://docs.bravegpt.com/#-installation) / 
-[Readme](https://docs.bravegpt.com/#readme) / 
+<br>[Install](https://github.bravegpt.com/#-installation) / 
+[Readme](https://github.bravegpt.com/#readme) / 
 [Discuss](https://github.bravegpt.com/discussions)
 
-### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://github.chatgptwidescreen.com) <img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
+### <img width=17 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing & reduced scrolling.
-<br>[Install](https://docs.chatgptwidescreen.com/#-greasemonkey-userscript) / 
-[Readme](https://docs.chatgptwidescreen.com/#readme) / 
+<br>[Install](https://github.com/adamlui/chatgpt-widescreen#-installation) / 
+[Readme](https://github.com/adamlui/chatgpt-widescreen#readme) / 
 [Discuss](https://github.chatgptwidescreen.com/discussions)
 
-<img height=6px width="100%" src="https://media.autoclearchatgpt.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
 <a href="#-autoclear-chatgpt-history-">Back to top ↑</a>
