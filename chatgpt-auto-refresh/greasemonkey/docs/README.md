@@ -9,21 +9,21 @@
     </h6>
 </div>
 
-# <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon512.png"><img width=23 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon512.png"></picture> ChatGPT Auto Refresh ↻ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20constant%20interruptions%20on%20ChatGPT%3F%20Auto-refresh%20your%20sessions%20w%2F%20this%20plug-in%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon512.png"><img width=23 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon512.png"></picture> ChatGPT Auto Refresh ↻ &nbsp;<a href="https://twitter.com/intent/tweet?text=Tired%20of%20constant%20interruptions%20on%20ChatGPT%3F%20Auto-refresh%20your%20sessions%20w%2F%20this%20plug-in%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
 
-[![](https://img.shields.io/badge/Users-10,000+-2bbbd8?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)](https://gf.chatgptautorefresh.com)
-[![](https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=Stars&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/stargazers)
-[![](https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/blob/main/LICENSE.md)
-[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-auto-refresh/commits/main)
-[![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh)
-[![](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_auto_refresh&utm_content=github_shield)
-[![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-auto-refresh%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Vulnerabilities&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-auto-refresh)
-[![](https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
-[![](https://img.shields.io/badge/web-www.chatgptautorefresh.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptautorefresh.com?utm_source=chatgpt_auto_refresh&utm_content=github_shield)
+<a href="https://gf.chatgptautorefresh.com"><img height=31 src="https://img.shields.io/badge/Users-10,000+-2bbbd8?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://github.com/adamlui/chatgpt-auto-refresh/stargazers"><img height=31 src="https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=Stars&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://github.com/adamlui/chatgpt-auto-refresh/blob/main/LICENSE.md"><img height=31 src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://github.com/adamlui/chatgpt-auto-refresh/commits/main"><img height=31 src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-refresh?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
+<a href="https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-refresh"><img height=31 src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-refresh?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
+<a href="https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_auto_refresh&utm_content=github_shield"><img height=31 src="https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-auto-refresh"><img height=31 src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-auto-refresh%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Vulnerabilities&color=gold"></a>
+<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img height=31 src="https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://chatgptautorefresh.com?utm_source=chatgpt_auto_refresh&utm_content=github_shield"><img height=31 src="https://img.shields.io/badge/web-www.chatgptautorefresh.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
 ### Keeps ChatGPT sessions fresh via background requests to eliminate network errors + Cloudflare checks.
 
-<a href="https://greasyfork.chatgptautorefresh.com"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="-#installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.chatgptautorefresh.com"><img height=42 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="-#installation"><img height=42 title="How to install" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptautorefresh.com/discuss) /
 [Review](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
@@ -133,7 +133,7 @@ ChatGPT Auto Refresh is compatible w/ the following browsers using [Tampermonkey
 
 <br>
 
-<a href="https://greasyfork.chatgptautorefresh.com"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="-#installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.chatgptautorefresh.com"><img height=42 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="-#installation"><img height=42 title="How to install" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptautorefresh.com/discuss) / 
 [Leave a review](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
