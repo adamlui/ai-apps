@@ -124,7 +124,7 @@
 // @description:bs      Automatski briše istoriju chata prilikom posjete chatgpt.com
 // @description:ca      S'elimina automàticament l'historial de xats en visitar chatgpt.com
 // @description:ceb     Automatic gidut-ana sa kasaysayan sa chat sa pagbisita sa chatgpt.com
-// @description:ckb     ده‌ستکاریکردنی مێژووی گفتوگۆکان خۆکارانه بۆ سەردانی chatgpt.com
+// @description:ckb     دهستکاریکردنی مێژووی گفتوگۆکان خۆکارانه بۆ سەردانی chatgpt.com
 // @description:cs      Automaticky vymaže historii chatu při návštěvě chatgpt.com
 // @description:cy      Mae'n glirio hanes sgwrs yn awtomatig wrth ymweld â chatgpt.com
 // @description:da      Renser automatisk chatloggen ved besøg på chatgpt.com
@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.8
+// @version             2024.5.8.2
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/userscripts/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/userscripts/chatgpt/media/icons/openai-favicon64.png
@@ -257,7 +257,8 @@
 // @supportURL          https://github.com/adamlui/autoclear-chatgpt-history/issues
 // ==/UserScript==
 
-// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023–2024 KudoAI & contributors under the MIT license.
+// Documentation: https://docs.autoclearchatgpt.com
+// NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org © 2023–2024 KudoAI & contributors under the MIT license.
 
 (async () => {
 
