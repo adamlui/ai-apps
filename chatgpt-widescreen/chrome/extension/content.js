@@ -40,7 +40,7 @@
                           : site == 'poe' ? 'div[class*="ChatMessageInputContainer"]' : ''
 
     // Save full-window + full screen states
-    config.fullWindow = /chatgpt|openai/.test(site) ? chatgpt.sidebar.isOff() : settings.load('fullWindow')
+    config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : settings.load('fullWindow')
     config.fullScreen = chatgpt.isFullScreen()
 
     // Collect button classes
@@ -172,7 +172,7 @@
         const sidebarObserver = new MutationObserver(() => {
             settings.load(['extensionDisabled']).then(() => {
                 if (!config.extensionDisabled) {
-                    const fullWindowState = chatgpt.sidebar.isOff()
+                    const fullWindowState = isFullWindow()
                     if ((config.fullWindow && !fullWindowState) || (!config.fullWindow && fullWindowState))
                         if (!config.modeSynced) syncMode('fullWindow')
         }})})
@@ -358,10 +358,14 @@
 
     // Define SYNC functions
 
+    function isFullWindow() {
+        return site == 'poe' ? !!document.querySelector('#fullWindow-mode')
+                             : chatgpt.sidebar.isOff()
+    }
+
     function syncMode(mode) { // setting + icon + tooltip
         const state = ( mode == 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
-                      : mode == 'fullWindow' ? ( site == 'poe' ? !!document.querySelector('#fullWindow-mode')
-                                                               : chatgpt.sidebar.isOff() )
+                      : mode == 'fullWindow' ? isFullWindow()
                                              : chatgpt.isFullScreen() )
         settings.save(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)
         if (mode == 'fullWindow') syncFullerWindows(state)
