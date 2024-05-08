@@ -34,7 +34,7 @@
 
 <div align="center">
 
-![](https://user-images.githubusercontent.com/10906554/222903818-b621f0eb-74c2-4dff-ae1a-010305da327b.png)
+![](https://media.autoclearchatgpt.com/images/screenshots/toggle.png)
 
 </div>
 
