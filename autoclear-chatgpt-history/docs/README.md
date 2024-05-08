@@ -13,8 +13,8 @@
 
 <a href="https://greasyfork.org/scripts/460805-autoclear-chatgpt-history"><img height=45 src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://github.com/adamlui/autoclear-chatgpt-history/discussions) /
-[Review](https://greasyfork.org/scripts/460805-autoclear-chatgpt-history/feedback#post-discussion) /
+[Discuss](https://github.autoclearchatgpt.com/discussions) /
+[Review](https://greasyfork.autoclearchatgpt.com/feedback#post-discussion) /
 [Contact author](https://github.com/adamlui)
 
 #
@@ -79,8 +79,8 @@ Autoclear ChatGPT History is compatible w/ the following browsers using [Tamperm
 
 <a href="https://greasyfork.org/scripts/460805-autoclear-chatgpt-history"><img height=42 src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=42 title="How to install" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://autoclearchatgpt.com/discuss) / 
-[Leave a review](https://greasyfork.org/scripts/460805-autoclear-chatgpt-history/feedback#post-discussion) /
+[Discuss](https://github.autoclearchatgpt.com/discussions) / 
+[Leave a review](https://greasyfork.autoclearchatgpt.com/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
@@ -118,7 +118,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 > Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.
 <br>[Install](https://github.com/adamlui/chatgpt-auto-refresh#-installation) / 
 [Readme](https://github.com/adamlui/chatgpt-auto-refresh#readme) / 
-[Discuss](https://chatgptautorefresh.com/discuss)
+[Discuss](https://github.chatgptautorefresh.com/discussions)
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://github.bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
@@ -132,7 +132,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing & reduced scrolling.
 <br>[Install](https://github.com/adamlui/chatgpt-widescreen#-installation) / 
 [Readme](https://github.com/adamlui/chatgpt-widescreen#readme) / 
-[Discuss](https://chatgptwidescreen.com/discuss)
+[Discuss](https://github.chatgptwidescreen.com/discussions)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
   
