@@ -80,7 +80,7 @@
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
         /chatgpt|openai/.test(site) ? 'main form { max-width: 96% !important }'
-      : site == 'poe' ? '[class^="ChatMessageInputFooter"] { max-width: 100% }' : '' )
+      : site == 'poe' ? '[class*=footerInner] { width: 100% }' : '' )
     updateWidescreenStyle()
 
     // Create full-window style
