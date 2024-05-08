@@ -55,7 +55,7 @@
 
 ![](https://media.chatgptautorefresh.com/images/alerts/chatgpt-something-went-wrong.png)
 ![](https://media.chatgptautorefresh.com/images/alerts/chatgpt-network-error.png)
-<img width=333 src="https://user-images.githubusercontent.com/10906554/229416105-931e2035-7e30-440a-bdc9-e570daf0d769.png">
+<img width=333 src="https://media.chatgptautorefresh.com/images/alerts/chatgpt-error-generating-response.png">
     
 </div>
 
