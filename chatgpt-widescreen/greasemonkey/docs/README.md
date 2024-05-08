@@ -15,7 +15,7 @@
 
 <br>
 
-<a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode"><img height=45 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#-installation"><img title="How to install" height=45 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode"><img height=45 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img title="How to install" height=45 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
 [Review](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback#post-discussion) / 
@@ -116,7 +116,7 @@ ChatGPT Widescreen Mode is compatible w/ the following browsers (via [Tampermonk
 
 <br>
 
-<a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#-installation"><img title="How to install" height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode"><img height=42 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img title="How to install" height=42 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
 [Leave a review](https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode/feedback#post-discussion) / 
