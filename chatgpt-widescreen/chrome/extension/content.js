@@ -404,10 +404,8 @@
                 + '.text-base:nth-of-type(2) { max-width: 97% !important }' // widen inner container
                 + '#__next > div > div.flex { width: 100px }' ) // prevent sidebar shrinking when zoomed
             : site == 'poe' ? (
-                  '[class^="MainColumn_column"] { width: 100% !important }' // widen outer container
-                + '[class*="ChatPageMain_container"] { max-width: 97% !important }' // widen inner container
-                + '[class^="Message"] { max-width: 100% !important }' // widen speech bubbles
-                + '[class^="ChatMessageInputFooter"] { max-width: 618px ; margin: auto }' ) // preserve chatbar width
+                  '[class*="ChatMessagesView"] { width: 100% !important }' // widen outer container
+                + '[class^="Message"] { max-width: 100% !important }' ) // widen speech bubbles
             : '' )
         if (config.widerChatbox) wideScreenStyle.innerText += wcbStyle        
     }
