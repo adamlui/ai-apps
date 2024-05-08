@@ -184,7 +184,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ## 📜 Related scripts
 
-### <img width=17 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24">
+### <img width=17 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://github.chatgptwidescreen.com) &nbsp;<img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24">
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
 <br>[Install](https://github.com/adamlui/chatgpt-widescreen#-installation) /
 [Readme](https://github.com/adamlui/chatgpt-widescreen#readme) /

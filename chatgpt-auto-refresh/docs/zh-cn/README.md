@@ -184,7 +184,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 
 ## 📜 相关脚本
 
-### <img width=17 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24">
+### <img width=17 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://github.chatgptwidescreen.com) &nbsp;<img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24">
 > 向 ChatGPT 添加宽屏 + 全窗口模式以增强查看效果 + 减少滚动。<br>
 [安装](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#-如何安装) /
 [自述文件](https://github.com/adamlui/chatgpt-widescreen/tree/main/docs/zh-cn#readme) /
