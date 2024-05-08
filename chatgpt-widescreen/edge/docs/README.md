@@ -65,7 +65,7 @@
 
 1. Install [ChatGPT Widescreen Mode](https://edge.chatgptwidescreen.com) Edge add-on
 
-2. Visit [chatgpt.com](https://chatgpt.com) as normal & mode toggles are added to chatbar!
+2. Visit [chatgpt.com](https://chatgpt.com) or [poe.com](https://poe.com) & mode toggles are added to chatbar!
 
 <div align="center">
 

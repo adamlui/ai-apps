@@ -81,7 +81,7 @@
 
 1. Install ChatGPT Widescreen Mode extension ([Chrome](https://chrome.chatgptwidescreen.com), [Edge](https://edge.chatgptwidescreen.com))
 
-2. Visit [chatgpt.com](https://chatgpt.com) as normal & mode toggles are added to chatbar!
+2. Visit [chatgpt.com](https://chatgpt.com) or [poe.com](https://poe.com) & mode toggles are added to chatbar!
 
 *Pro tip: For easier access to extension toggles, (1) click <img height=12 width=12 src="https://media.chatgptwidescreen.com/images/icons/toolbar/chrome-puzzle-piece/gray.png"> in the browser's toolbar, (2) then <img height=12 width=12 src="https://media.chatgptwidescreen.com/images/icons/toolbar/push-pin/blue.png"> next to extension name.*
 
