@@ -25,7 +25,7 @@
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img height=45 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="-#installation"><img height=45 title="How to install" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://chatgptautorefresh.com/discuss) /
+[Discuss](https://github.chatgptautorefresh.com/discussions) /
 [Review](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
 [Contact author](https://github.com/adamlui)
 
@@ -135,7 +135,7 @@ ChatGPT Auto Refresh is compatible w/ the following browsers using [Tampermonkey
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img height=42 src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/install-button.svg"></a><a href="-#installation"><img height=42 title="How to install" src="https://media.chatgptautorefresh.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[Discuss](https://chatgptautorefresh.com/discuss) / 
+[Discuss](https://github.chatgptautorefresh.com/discussions) / 
 [Leave a review](https://greasyfork.chatgptautorefresh.com/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
@@ -188,19 +188,19 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
 <br>[Install](https://github.com/adamlui/chatgpt-widescreen#-installation) /
 [Readme](https://github.com/adamlui/chatgpt-widescreen#readme) /
-[Discuss](https://chatgptwidescreen.com/discuss)
+[Discuss](https://github.chatgptwidescreen.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Auto-Continue ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
 > Automatically continue generating multiple ChatGPT responses.<br>
 [Install](https://github.com/adamlui/chatgpt-auto-continue#-installation) /
 [Readme](https://github.com/adamlui/chatgpt-auto-continue#readme) /
-[Discuss](https://chatgptautocontinue.com/discuss)
+[Discuss](https://github.chatgptautocontinue.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Infinity ∞](https://chatgptinfinity.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
 > Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://github.com/adamlui/chatgpt-infinity#-installation) / 
 [Readme](https://github.com/adamlui/chatgpt-infinity#readme) / 
-[Discuss](https://chatgptinfinity.com/discuss)
+[Discuss](https://github.chatgptinfinity.com/discussions)
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">
   
