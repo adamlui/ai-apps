@@ -54,7 +54,8 @@
 </a>
 <br><br>
 
-Autoclear ChatGPT History relies on code from the powerful <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a> library © 2023–2024 <a href="https://www.kudoai.com">KudoAI</a> & contributors under the MIT license.
+Autoclear ChatGPT History relies on code from the powerful <a href="https://github.com/KudoAI/chatgpt.js">chatgpt.js</a> library
+<br>© 2023–2024 <a href="https://www.kudoai.com">KudoAI</a> & contributors under the MIT license.
 
 </div>
 </h6>
