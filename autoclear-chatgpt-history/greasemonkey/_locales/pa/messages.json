@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ਆਟੋ - ਕਲੀਅਰ ਚੈਟGPT ਅਤੀਤ" },
-  "appDesc": { "message": "Chat.openai.com ਦਾ ਦੌਰਾ ਕਰਦੇ ਸਮੇਂ ਆਟੋ - ਕਲੀਅਰ ਚੈਟ ਦਾ ਇਤਿਹਾਸ" },
+  "appDesc": { "message": "chatgpt.com ਦਾ ਦੌਰਾ ਕਰਦੇ ਸਮੇਂ ਆਟੋ - ਕਲੀਅਰ ਚੈਟ ਦਾ ਇਤਿਹਾਸ" },
   "menuLabel_autoClear": { "message": "ਆਟੋ ਕਲੀਅਰ ਚੈਟ" },
   "menuLabel_toggleVis": { "message": "ਦਿੱਖ ਬਦਲੋ" },
   "menuLabel_modeNotifs": { "message": "ਮੋਡ ਨੋਟੀਫਿਕੇਸ਼ਨ" },

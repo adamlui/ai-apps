@@ -1,6 +1,6 @@
 {
   "appName": { "message": "خود بخود چیٹ جی پی ٹی کی سرگزشت" },
-  "appDesc": { "message": "Chat.openai.com ملاحظہ کرتے وقت چیٹ کی سرگزشت کو خود بخود صاف کرتا ہے" },
+  "appDesc": { "message": "chatgpt.com ملاحظہ کرتے وقت چیٹ کی سرگزشت کو خود بخود صاف کرتا ہے" },
   "menuLabel_autoClear": { "message": "آٹو کلیئر چیٹس" },
   "menuLabel_toggleVis": { "message": "مرئیت ٹوگل کریں" },
   "menuLabel_modeNotifs": { "message": "موڈ نوٹیفکیشنز" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ታሪኽ ChatGPT Autoclear" },
-  "appDesc": { "message": "Chat.openai.com ክትበጽሕ ከለኻ ናይ ኣውቶ-ክሌራት ናይ ዝርርብ ታሪኽ" },
+  "appDesc": { "message": "chatgpt.com ክትበጽሕ ከለኻ ናይ ኣውቶ-ክሌራት ናይ ዝርርብ ታሪኽ" },
   "menuLabel_autoClear": { "message": "ናይ ኣውቶክሌር ቻትታት" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_modeNotifs": { "message": "ናይ ሞድ ኣፍልጦታት" },

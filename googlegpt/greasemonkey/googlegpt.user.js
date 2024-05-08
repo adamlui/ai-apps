@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.7
+// @version             2024.5.8
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -610,7 +610,7 @@
         alertP.className = 'no-user-select' ; alertP.style.paddingBottom = '15px'
         if (/waiting|loading/i.test(msg)) alertP.classList.add('loading')
         if (msg.includes('@')) { // needs login link, add it
-            alertP.append(createAnchor('https://chat.openai.com', 'chat.openai.com'),
+            alertP.append(createAnchor('https://chatgpt.com', 'chatgpt.com'),
                 ' (', msgs.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
         }
         appDiv.append(alertP)

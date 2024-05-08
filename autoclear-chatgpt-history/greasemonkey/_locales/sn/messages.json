@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ZVINOKOSHA ZVINOKOSHAGPT N" },
-  "appDesc": { "message": "Auto-inojekesa chat nhoroondo kana uchishanyira chat.openai.com" },
+  "appDesc": { "message": "Auto-inojekesa chat nhoroondo kana uchishanyira chatgpt.com" },
   "menuLabel_autoClear": { "message": "Taura nesu" },
   "menuLabel_toggleVis": { "message": "Toggle Kuonekwa" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },

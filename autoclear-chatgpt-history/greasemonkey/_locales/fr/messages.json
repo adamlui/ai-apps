@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Effacer automatiquement l'historique de ChatGPT" },
-  "appDesc": { "message": "Efface automatiquement l'historique du chat lors de la visite de chat.openai.com" },
+  "appDesc": { "message": "Efface automatiquement l'historique du chat lors de la visite de chatgpt.com" },
   "menuLabel_autoClear": { "message": "Effacer les chats automatiquement" },
   "menuLabel_toggleVis": { "message": "Basculer la visibilité" },
   "menuLabel_modeNotifs": { "message": "Notifications du mode" },

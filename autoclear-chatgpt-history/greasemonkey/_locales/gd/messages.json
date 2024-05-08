@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT History" },
-  "appDesc": { "message": "Eachdraidh cabadaich fèin - ghlanadh nuair a tha thu a 'tadhal air chat.openai.com" },
+  "appDesc": { "message": "Eachdraidh cabadaich fèin - ghlanadh nuair a tha thu a 'tadhal air chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear Chats" },
   "menuLabel_toggleVis": { "message": "Toglaich an fhaicsinneachdrawable-action" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications" },

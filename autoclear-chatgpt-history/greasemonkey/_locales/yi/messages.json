@@ -1,6 +1,6 @@
 {
   "appName": { "message": "אַוטאָקלעאַר טשאַטגפּט געשיכטע" },
-  "appDesc": { "message": "אַוטאָ-קלירז שמועס געשיכטע ווען איר באַזוכן chat.openai.com" },
+  "appDesc": { "message": "אַוטאָ-קלירז שמועס געשיכטע ווען איר באַזוכן chatgpt.com" },
   "menuLabel_autoClear": { "message": "אַוטאָקלעאַר טשאַץ" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_modeNotifs": { "message": "מאָדע נאָטיפיקאַטיאָנס" },

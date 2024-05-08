@@ -95,7 +95,7 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
 
 ## 🕵️ Proxy Mode
 
-Proxy API Mode (disabled by default) returns text responses using GPT-4, without the need for a chat.openai.com account.
+Proxy API Mode (disabled by default) returns text responses using GPT-4, without the need for a chatgpt.com account.
 
 When disabled, a ChatGPT account is required to fetch responses, but they are faster stream-type ones (like in demo).
 
@@ -154,7 +154,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/105553471?first-contrib=2024.02.15-openai-endpoint-broke-report&h=50&w=50&mask=circle&maxage=7d "@YashSoPro")](https://github.com/YashSoPro)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
-[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
+[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
 
 #
 

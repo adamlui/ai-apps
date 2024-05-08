@@ -1,6 +1,6 @@
 {
   "appName": { "message": "އޮޓޯކްލިއަރ ޗެޓްޖީޕީޓީ ހީސްޓްރީ" },
-  "appDesc": { "message": "chat.openai.com ޒިޔާރަތްކުރާއިރު އޮޓޯ-ކްލިއަރސް ޗެޓް ހިސްޓްރީ" },
+  "appDesc": { "message": "chatgpt.com ޒިޔާރަތްކުރާއިރު އޮޓޯ-ކްލިއަރސް ޗެޓް ހިސްޓްރީ" },
   "menuLabel_autoClear": { "message": "އޮޓޯކްލިއަރ ޗެޓްސް" },
   "menuLabel_toggleVis": { "message": "ޓޮގްލް ވިޒިބިލިޓީ" },
   "menuLabel_modeNotifs": { "message": "މޯޑް ނޮޓިފިކޭޝަންސް" },

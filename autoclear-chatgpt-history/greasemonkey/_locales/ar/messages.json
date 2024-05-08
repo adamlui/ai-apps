@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT التاريخ" },
-  "appDesc": { "message": "مسح تلقائي لسجل الدردشة عند زيارة chat.openai.com" },
+  "appDesc": { "message": "مسح تلقائي لسجل الدردشة عند زيارة chatgpt.com" },
   "menuLabel_autoClear": { "message": "دردشات مسح تلقائي" },
   "menuLabel_toggleVis": { "message": "تبديل الرؤية" },
   "menuLabel_modeNotifs": { "message": "إشعارات الوضع" },

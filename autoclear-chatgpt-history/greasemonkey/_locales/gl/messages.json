@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Historial de ChatGPT autoclear" },
-  "appDesc": { "message": "Auto-claves historial de chat ao visitar chat.openai.com" },
+  "appDesc": { "message": "Auto-claves historial de chat ao visitar chatgpt.com" },
   "menuLabel_autoClear": { "message": "Chats autocleares" },
   "menuLabel_toggleVis": { "message": "Conmutar a visibilidade" },
   "menuLabel_modeNotifs": { "message": "Notificacións de modo" },

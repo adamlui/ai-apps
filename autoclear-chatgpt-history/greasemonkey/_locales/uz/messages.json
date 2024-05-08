@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT tarixini avtomatik tozalash" },
-  "appDesc": { "message": "Chat.openai.com saytiga tashrif buyurganingizda chat tarixini avtomatik tozalaydi" },
+  "appDesc": { "message": "chatgpt.com saytiga tashrif buyurganingizda chat tarixini avtomatik tozalaydi" },
   "menuLabel_autoClear": { "message": "Chatlarni avtomatik tozalash" },
   "menuLabel_toggleVis": { "message": "Koʻrinishni oʻzgartirish" },
   "menuLabel_modeNotifs": { "message": "Rejim bildirishnomalari" },

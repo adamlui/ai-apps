@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT hisitolia" },
-  "appDesc": { "message": "Hisitolia ʻo e meʻalele ʻi he taimi ʻoku ʻaʻahi ai ki chat.openai.com" },
+  "appDesc": { "message": "Hisitolia ʻo e meʻalele ʻi he taimi ʻoku ʻaʻahi ai ki chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear talanoa tauʻataina" },
   "menuLabel_toggleVis": { "message": "Tuʻu maʻu ʻi hono fakaʻasi" },
   "menuLabel_modeNotifs": { "message": "Fanongonongo ki he Mode" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Riwayat Autoclear ChatGPT" },
-  "appDesc": { "message": "Bersihkan riwayat obrolan secara otomatis saat mengunjungi chat.openai.com" },
+  "appDesc": { "message": "Bersihkan riwayat obrolan secara otomatis saat mengunjungi chatgpt.com" },
   "menuLabel_autoClear": { "message": "Obrolan Bersihkan Otomatis" },
   "menuLabel_toggleVis": { "message": "Jungkitkan visibilitas" },
   "menuLabel_modeNotifs": { "message": "Notifikasi Mode" },

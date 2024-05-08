@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT ඉතිහාසය" },
-  "appDesc": { "message": "Chat.openai.com වෙත පිවිසෙන විට ස්වයංක්රීය පැහැදිලි චැට් ඉතිහාසය" },
+  "appDesc": { "message": "chatgpt.com වෙත පිවිසෙන විට ස්වයංක්රීය පැහැදිලි චැට් ඉතිහාසය" },
   "menuLabel_autoClear": { "message": "ස්වයංක් ‍ රීය කතාබස්" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_modeNotifs": { "message": "ප් ‍ රකාර දැනුම්දීම්" },

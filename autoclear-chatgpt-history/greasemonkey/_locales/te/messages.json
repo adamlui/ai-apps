@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ఆటోక్లియర్ చాట్ GPT చరిత్ర" },
-  "appDesc": { "message": "Chat.openai.com ని సందర్శించినప్పుడు చాట్ చరిత్రను స్వయంచాలకంగా క్లియర్ చేస్తుంది" },
+  "appDesc": { "message": "chatgpt.com ని సందర్శించినప్పుడు చాట్ చరిత్రను స్వయంచాలకంగా క్లియర్ చేస్తుంది" },
   "menuLabel_autoClear": { "message": "చాట్‌లను ఆటోక్లియర్ చేయండి" },
   "menuLabel_toggleVis": { "message": "దృశ్యమానతను టోగుల్ చేయండి" },
   "menuLabel_modeNotifs": { "message": "మోడ్ నోటిఫికేషన్‌లు" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT History" },
-  "appDesc": { "message": "Ckb.wikipedia.org \"ڕێکەوتی سەردانیکردنی Chat.openai.com" },
+  "appDesc": { "message": "Ckb.wikipedia.org \"ڕێکەوتی سەردانیکردنی chatgpt.com" },
   "menuLabel_autoClear": { "message": "پشیلەی خۆگەڕ" },
   "menuLabel_toggleVis": { "message": "بینینه ‌ وه ‌ ی گۆشه ‌ كراو" },
   "menuLabel_modeNotifs": { "message": "ئاگادارکردنه ‌ وه ‌ کانی مۆده ‌ ی" },

@@ -85,7 +85,7 @@
 
 2. 安装 [ChatGPT 自动刷新](https://greasyfork.org/scripts/462422-chatgpt-auto-refresh) (将加载上面安装的用户脚本管理器)
 
-3. 正常访问 [chat.openai.com](https://chat.openai.com)，会话将定期自动刷新 (在后台)!
+3. 正常访问 [chatgpt.com](https://chatgpt.com)，会话将定期自动刷新 (在后台)!
 
 <div align="center">
 
@@ -170,7 +170,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2911588?first-contrib=2023.2.26-shortened-hungarian-menu-label&h=50&w=50&mask=circle&maxage=7d "@sanchomuzax")](https://github.com/sanchomuzax)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110?h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
-[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
+[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
 
 </div>
 

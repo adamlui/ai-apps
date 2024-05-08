@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Samodejno očisti zgodovino klepetaGPT" },
-  "appDesc": { "message": "Samodejno počisti zgodovino klepeta, ko obiščeš chat.openai.com" },
+  "appDesc": { "message": "Samodejno počisti zgodovino klepeta, ko obiščeš chatgpt.com" },
   "menuLabel_autoClear": { "message": "Samodejno brisanje klepetov" },
   "menuLabel_toggleVis": { "message": "Preklopi vidnost" },
   "menuLabel_modeNotifs": { "message": "Obvestila o načinu" },

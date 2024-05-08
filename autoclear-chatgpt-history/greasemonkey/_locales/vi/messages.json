@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Lịch sử ChatGPT tự động xóa" },
-  "appDesc": { "message": "Tự động xóa lịch sử trò chuyện khi truy cập chat.openai.com" },
+  "appDesc": { "message": "Tự động xóa lịch sử trò chuyện khi truy cập chatgpt.com" },
   "menuLabel_autoClear": { "message": "Trò chuyện tự động xóa" },
   "menuLabel_toggleVis": { "message": "Bật/tắt tính ẩn/hiện" },
   "menuLabel_modeNotifs": { "message": "Thông báo chế độ" },

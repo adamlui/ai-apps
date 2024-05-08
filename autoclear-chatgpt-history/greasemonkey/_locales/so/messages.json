@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Taariikhda ChatGPT Autoclear" },
-  "appDesc": { "message": "Auto-clears sheekaysiga taariikhda marka booqashada chat.openai.com" },
+  "appDesc": { "message": "Auto-clears sheekaysiga taariikhda marka booqashada chatgpt.com" },
   "menuLabel_autoClear": { "message": "Wadahadalada Autoclear" },
   "menuLabel_toggleVis": { "message": "Muuqaalka Toggle" },
   "menuLabel_modeNotifs": { "message": "Ogeysiisyada Mode" },

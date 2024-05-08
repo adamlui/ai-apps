@@ -1,6 +1,6 @@
 {
   "appName": { "message": "پاککردنی خۆکارانەی هیستۆریی ChatGPT" },
-  "appDesc": { "message": "خۆکارانە هیستۆریی چات پاک دەکات کاتێ کۆمەڕەکەی chat.openai.com" },
+  "appDesc": { "message": "خۆکارانە هیستۆریی چات پاک دەکات کاتێ کۆمەڕەکەی chatgpt.com" },
   "menuLabel_autoClear": { "message": "پاککردنی چاتە خۆکارانە" },
   "menuLabel_toggleVis": { "message": "گۆڕینی پیشانی" },
   "menuLabel_modeNotifs": { "message": "ئاگاداریە کردن لە هەرێم" },

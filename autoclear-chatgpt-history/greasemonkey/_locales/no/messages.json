@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT-historikk" },
-  "appDesc": { "message": "Tømmer chatteloggen automatisk når du besøker chat.openai.com" },
+  "appDesc": { "message": "Tømmer chatteloggen automatisk når du besøker chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear Chats" },
   "menuLabel_toggleVis": { "message": "Synleg bokmerke" },
   "menuLabel_modeNotifs": { "message": "Modusvarsler" },

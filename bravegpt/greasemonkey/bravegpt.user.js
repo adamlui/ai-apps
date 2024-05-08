@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.7
+// @version             2024.5.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -387,7 +387,7 @@
         alertP.className = 'no-user-select' ; alertP.style.marginBottom = '-15px'
         if (/waiting|loading/i.test(msg)) alertP.classList.add('loading')
         if (msg.includes('@')) { // needs login link, add it
-            alertP.append(createAnchor('https://chat.openai.com', 'chat.openai.com'),
+            alertP.append(createAnchor('https://chatgpt.com', 'chatgpt.com'),
                 ' (', msgs.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
         }
         appDiv.append(alertP)

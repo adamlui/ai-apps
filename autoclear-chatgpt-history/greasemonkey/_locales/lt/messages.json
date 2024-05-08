@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Automatinio išvalymo pokalbių istorijaGPT" },
-  "appDesc": { "message": "Auto-clears pokalbių istorija, kai lankotės chat.openai.com" },
+  "appDesc": { "message": "Auto-clears pokalbių istorija, kai lankotės chatgpt.com" },
   "menuLabel_autoClear": { "message": "Automatinio išvalymo pokalbiai" },
   "menuLabel_toggleVis": { "message": "Perjungti matomumą" },
   "menuLabel_modeNotifs": { "message": "Režimo pranešimai" },

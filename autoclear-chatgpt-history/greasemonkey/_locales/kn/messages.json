@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ಆಟೋಕೇಲರ್ ಚಾಟ್GPT ಇತಿಹಾಸ" },
-  "appDesc": { "message": "Chat.openai.com ಗೆ ಭೇಟಿ ನೀಡಿದಾಗ ಆಟೋ-ಕ್ಲಾಕರ್ಸ್ ಚಾಟ್ ಇತಿಹಾಸ" },
+  "appDesc": { "message": "chatgpt.com ಗೆ ಭೇಟಿ ನೀಡಿದಾಗ ಆಟೋ-ಕ್ಲಾಕರ್ಸ್ ಚಾಟ್ ಇತಿಹಾಸ" },
   "menuLabel_autoClear": { "message": "ಆಟೋಕೇಲರ್ ಚಾಟ್ ಗಳು" },
   "menuLabel_toggleVis": { "message": "ಗೋಚರತೆಯನ್ನು ಟಾಗಲ್ ಮಾಡಿ" },
   "menuLabel_modeNotifs": { "message": "ಮೋಡ್ ಅಧಿಸೂಚನೆಗಳು" },

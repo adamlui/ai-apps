@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Borrar automáticamente el historial de ChatGPT" },
-  "appDesc": { "message": "Borra automáticamente el historial de chat al visitar chat.openai.com" },
+  "appDesc": { "message": "Borra automáticamente el historial de chat al visitar chatgpt.com" },
   "menuLabel_autoClear": { "message": "Borrar automáticamente los chats" },
   "menuLabel_toggleVis": { "message": "Alternar visibilidad" },
   "menuLabel_modeNotifs": { "message": "Notificaciones del modo" },

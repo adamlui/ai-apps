@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT Historio" },
-  "appDesc": { "message": "Aŭtomate purigas babilejo historio kiam vizitante chat.openai.com" },
+  "appDesc": { "message": "Aŭtomate purigas babilejo historio kiam vizitante chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear Chats" },
   "menuLabel_toggleVis": { "message": "Baskuligi videblecon" },
   "menuLabel_modeNotifs": { "message": "@ info: whatsthis" },

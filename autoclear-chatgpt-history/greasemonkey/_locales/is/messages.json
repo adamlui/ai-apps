@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Sjálfvirkt spjallGPT-ferill" },
-  "appDesc": { "message": "Auto-hreinsar spjall sögu þegar þú heimsækir chat.openai.com" },
+  "appDesc": { "message": "Auto-hreinsar spjall sögu þegar þú heimsækir chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear Spjall" },
   "menuLabel_toggleVis": { "message": "Víxla sýnileika" },
   "menuLabel_modeNotifs": { "message": "Tilkynningar um ham" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT History" },
-  "appDesc": { "message": "Holoi ʻakomi i ka mōʻaukala kamaʻilio ke kipa ʻana iā chat.openai.com" },
+  "appDesc": { "message": "Holoi ʻakomi i ka mōʻaukala kamaʻilio ke kipa ʻana iā chatgpt.com" },
   "menuLabel_autoClear": { "message": "Kūkākūkā Autoclear" },
   "menuLabel_toggleVis": { "message": "Hoʻololi i ka ʻike" },
   "menuLabel_modeNotifs": { "message": "Hoʻolaha Kūlana" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Garbitu automatikoki ChatGPT historia" },
-  "appDesc": { "message": "Txat-historia automatikoki garbitzen du chat.openai.com bisitatzean" },
+  "appDesc": { "message": "Txat-historia automatikoki garbitzen du chatgpt.com bisitatzean" },
   "menuLabel_autoClear": { "message": "Garbitu txatak automatikoki" },
   "menuLabel_toggleVis": { "message": "Txandakatu ikusgaitasuna" },
   "menuLabel_modeNotifs": { "message": "Moduaren jakinarazpenak" },

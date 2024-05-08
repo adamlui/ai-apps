@@ -1,6 +1,6 @@
 {
   "appName": { "message": "स्वत: खाली कुराकानीGPT इतिहास" },
-  "appDesc": { "message": "Chat.openai.com भ्रमण गर्दा स्वत: क्लियर च्याट इतिहास" },
+  "appDesc": { "message": "chatgpt.com भ्रमण गर्दा स्वत: क्लियर च्याट इतिहास" },
   "menuLabel_autoClear": { "message": "कुराकानीहरू स्वत: खाली गर्नुहोस्" },
   "menuLabel_toggleVis": { "message": "दृश्यता टगल गर्नुहोस्" },
   "menuLabel_modeNotifs": { "message": "मोड सूचनाहरू" },

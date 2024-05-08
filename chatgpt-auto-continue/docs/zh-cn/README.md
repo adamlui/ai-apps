@@ -42,7 +42,7 @@
 
 2. 安装 [ChatGPT 自动继续](https://greasyfork.org/scripts/466789-chatgpt-auto-continue) (将加载上面安装的用户脚本管理器)
 
-3. 正常访问 [chat.openai.com](https://chat.openai.com)，多条回复对话中断时会自动继续生成!
+3. 正常访问 [chatgpt.com](https://chatgpt.com)，多条回复对话中断时会自动继续生成!
 
 ## ⚡ 依赖关系
 
@@ -74,7 +74,7 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/158176338?first-contrib=2024.3.1-button-click-fails-bug-report&h=50&w=50&mask=circle&maxage=7d "@whz-pku")](https://github.com/whz-pku)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
-[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
+[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
 
 #
 

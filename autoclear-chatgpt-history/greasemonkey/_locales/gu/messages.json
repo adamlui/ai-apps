@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT ઇતિહાસ" },
-  "appDesc": { "message": "Chat.openai.com ની મુલાકાત લેતી વખતે સ્વયં - સાફ ચેટ ઇતિહાસ" },
+  "appDesc": { "message": "chatgpt.com ની મુલાકાત લેતી વખતે સ્વયં - સાફ ચેટ ઇતિહાસ" },
   "menuLabel_autoClear": { "message": "સ્વતઃસ્ફુરિત સંવાદો" },
   "menuLabel_toggleVis": { "message": "દૃશ્યમાનતાને દબાણ કરો" },
   "menuLabel_modeNotifs": { "message": "સ્થિતિ સૂચનાઓ" },

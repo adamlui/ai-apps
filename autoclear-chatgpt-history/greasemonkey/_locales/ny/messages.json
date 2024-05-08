@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Auto nyukiliya ChatGPT History" },
-  "appDesc": { "message": "Auto-clears macheza mbiri pamene kuyendera chat.openai.com" },
+  "appDesc": { "message": "Auto-clears macheza mbiri pamene kuyendera chatgpt.com" },
   "menuLabel_autoClear": { "message": "Auto nyukiliya Chats" },
   "menuLabel_toggleVis": { "message": "Kuwonekera kwa Toggle" },
   "menuLabel_modeNotifs": { "message": "Mfundo zazinsinsi" },

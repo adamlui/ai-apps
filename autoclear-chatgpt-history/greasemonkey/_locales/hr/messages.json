@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT Povijest" },
-  "appDesc": { "message": "Automatski briše povijest čavrljanja prilikom posjete chat.openai.com" },
+  "appDesc": { "message": "Automatski briše povijest čavrljanja prilikom posjete chatgpt.com" },
   "menuLabel_autoClear": { "message": "Automatsko brisanje čavrljanja" },
   "menuLabel_toggleVis": { "message": "Uključi/isključi vidljivost" },
   "menuLabel_modeNotifs": { "message": "Obavijesti o načinu rada" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ניקוי אוטומטי של היסטוריית הצ'אטGPT" },
-  "appDesc": { "message": "מנקה אוטומטית היסטוריית צ'אט בעת ביקור chat.openai.com" },
+  "appDesc": { "message": "מנקה אוטומטית היסטוריית צ'אט בעת ביקור chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear Chats" },
   "menuLabel_toggleVis": { "message": "החלף מצב ניראות" },
   "menuLabel_modeNotifs": { "message": "התראות מצב" },

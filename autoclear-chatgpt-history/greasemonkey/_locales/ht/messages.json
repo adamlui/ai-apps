@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT Istwa" },
-  "appDesc": { "message": "Auto-netwaye istwa chat lè vizite chat.openai.com" },
+  "appDesc": { "message": "Auto-netwaye istwa chat lè vizite chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear Chat" },
   "menuLabel_toggleVis": { "message": "Toggle vizibilite" },
   "menuLabel_modeNotifs": { "message": "Notifikasyon Mode" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT History" },
-  "appDesc": { "message": "Tlhalosa hisitori ya motlotlo ka go ipolokela dilo fa o etela chat.openai.com" },
+  "appDesc": { "message": "Tlhalosa hisitori ya motlotlo ka go ipolokela dilo fa o etela chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear Chats" },
   "menuLabel_toggleVis": { "message": "Toggle Visibility" },
   "menuLabel_modeNotifs": { "message": "Dikitsiso tsa Mode" },

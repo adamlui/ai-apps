@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.7
+// @version             2024.5.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png
@@ -432,7 +432,7 @@
         alertP.className = 'no-user-select'
         if (/waiting|loading/i.test(msg)) alertP.classList.add('loading')
         if (msg.includes('@')) { // needs login link, add it
-            alertP.append(createAnchor('https://chat.openai.com', 'chat.openai.com'),
+            alertP.append(createAnchor('https://chatgpt.com', 'chatgpt.com'),
                 ' (', msgs.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
         }
         appDiv.append(alertP)

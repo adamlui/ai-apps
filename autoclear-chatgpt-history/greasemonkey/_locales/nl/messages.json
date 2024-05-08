@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT-geschiedenis automatisch wissen" },
-  "appDesc": { "message": "Automatisch wissen van chatgeschiedenis bij het bezoeken van chat.openai.com" },
+  "appDesc": { "message": "Automatisch wissen van chatgeschiedenis bij het bezoeken van chatgpt.com" },
   "menuLabel_autoClear": { "message": "Chats automatisch wissen" },
   "menuLabel_toggleVis": { "message": "Zichtbaarheid afdwingen" },
   "menuLabel_modeNotifs": { "message": "Modusmeldingen" },

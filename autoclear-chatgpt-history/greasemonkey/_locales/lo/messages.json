@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT ປະຫວັດຄວາມເປັນມາ" },
-  "appDesc": { "message": "ອັດຕະໂນມັດທໍາຄວາມສະອາດປະຫວັດສົນທະນາເມື່ອໄປຢ້ຽມຢາມ chat.openai.com" },
+  "appDesc": { "message": "ອັດຕະໂນມັດທໍາຄວາມສະອາດປະຫວັດສົນທະນາເມື່ອໄປຢ້ຽມຢາມ chatgpt.com" },
   "menuLabel_autoClear": { "message": "ສົນທະນາ autoclear" },
   "menuLabel_toggleVis": { "message": "ປິດການເບິ່ງເຫັນ" },
   "menuLabel_modeNotifs": { "message": "ການແຈ້ງເຕືອນໂໝດ" },

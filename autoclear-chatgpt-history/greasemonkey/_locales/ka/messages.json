@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT ისტორია" },
-  "appDesc": { "message": "Ავტომატურად ასუფთავებს სტატისტიკა ისტორია, როდესაც გამოჩენის chat.openai.com" },
+  "appDesc": { "message": "Ავტომატურად ასუფთავებს სტატისტიკა ისტორია, როდესაც გამოჩენის chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear ჩეთები" },
   "menuLabel_toggleVis": { "message": "ხილულობის გადართვა" },
   "menuLabel_modeNotifs": { "message": "Რეჟიმის გაფრთხილებები" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Automaatne vestluse kustutamineGPT History" },
-  "appDesc": { "message": "Automaatselt kustutab vestluse ajalugu, kui külastate chat.openai.com" },
+  "appDesc": { "message": "Automaatselt kustutab vestluse ajalugu, kui külastate chatgpt.com" },
   "menuLabel_autoClear": { "message": "Vestluste automaatne kustutamine" },
   "menuLabel_toggleVis": { "message": "Nähtavuse lülitamine" },
   "menuLabel_modeNotifs": { "message": "Režiimi teated" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT History" },
-  "appDesc": { "message": "Auto - yn clirio hanes sgwrsio wrth ymweld â chat.openai.com" },
+  "appDesc": { "message": "Auto - yn clirio hanes sgwrsio wrth ymweld â chatgpt.com" },
   "menuLabel_autoClear": { "message": "Sgyrsiau Awtoclear" },
   "menuLabel_toggleVis": { "message": "Toglo Gwelededd" },
   "menuLabel_modeNotifs": { "message": "Hysbysiadau Modd" },

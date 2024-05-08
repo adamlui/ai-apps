@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT ታሪክ" },
-  "appDesc": { "message": "Chat.openai.com ን ሲጎበኙ የራስ-ሰር ማጽጃዎች የውይይት ታሪክ" },
+  "appDesc": { "message": "chatgpt.com ን ሲጎበኙ የራስ-ሰር ማጽጃዎች የውይይት ታሪክ" },
   "menuLabel_autoClear": { "message": "Autoclear ውይይቶች" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_modeNotifs": { "message": "የቃለ መጠይቂያ" },

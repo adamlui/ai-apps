@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT வரலாறு" },
-  "appDesc": { "message": "Chat.openai.com ஐப் பார்வையிடும்போது அரட்டை வரலாற்றைத் தானாக அழிக்கிறது" },
+  "appDesc": { "message": "chatgpt.com ஐப் பார்வையிடும்போது அரட்டை வரலாற்றைத் தானாக அழிக்கிறது" },
   "menuLabel_autoClear": { "message": "தானியங்கி கிளியர் அரட்டைகள்" },
   "menuLabel_toggleVis": { "message": "தெரிவுநிலையை மாற்றுக" },
   "menuLabel_modeNotifs": { "message": "பயன்முறை அறிவிப்புகள்" },

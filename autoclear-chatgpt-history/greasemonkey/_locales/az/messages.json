@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT Tarix" },
-  "appDesc": { "message": "Chat.openai.com saytına daxil olarkən Auto-clears chat tarixi" },
+  "appDesc": { "message": "chatgpt.com saytına daxil olarkən Auto-clears chat tarixi" },
   "menuLabel_autoClear": { "message": "Autoclear Sohbetler" },
   "menuLabel_toggleVis": { "message": "Görünüşü dəyişdir" },
   "menuLabel_modeNotifs": { "message": "Rejim Bildirişləri" },

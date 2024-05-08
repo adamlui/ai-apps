@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT သမိုင်း" },
-  "appDesc": { "message": "Chat.openai.com သို့သွားရောက်လည်ပတ်သောအခါအော်တိုရှင်းလင်းရေး Chat သမိုင်း" },
+  "appDesc": { "message": "chatgpt.com သို့သွားရောက်လည်ပတ်သောအခါအော်တိုရှင်းလင်းရေး Chat သမိုင်း" },
   "menuLabel_autoClear": { "message": "အလိုအလျောက် Chat ကိုရှင်းလင်း" },
   "menuLabel_toggleVis": { "message": "မြင်ကွင်းကို ထိန်းကျောင်းပါ" },
   "menuLabel_modeNotifs": { "message": "Mode အသိပေးချက်များ" },

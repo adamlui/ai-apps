@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ล้างประวัติ ChatGPT อัตโนมัติ" },
-  "appDesc": { "message": "ล้างประวัติการแชทอัตโนมัติเมื่อไปที่ chat.openai.com" },
+  "appDesc": { "message": "ล้างประวัติการแชทอัตโนมัติเมื่อไปที่ chatgpt.com" },
   "menuLabel_autoClear": { "message": "แชทแบบเคลียร์อัตโนมัติ" },
   "menuLabel_toggleVis": { "message": "เปิด/ปิดการมองเห็น" },
   "menuLabel_modeNotifs": { "message": "การแจ้งเตือนโหมด" },

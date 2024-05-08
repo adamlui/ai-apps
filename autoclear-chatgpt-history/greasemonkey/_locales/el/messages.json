@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Αυτόματη εκκαθάριση ιστορικού ChatGPT" },
-  "appDesc": { "message": "Αυτόματη εκκαθάριση ιστορικού συνομιλίας κατά την επίσκεψη στο chat.openai.com" },
+  "appDesc": { "message": "Αυτόματη εκκαθάριση ιστορικού συνομιλίας κατά την επίσκεψη στο chatgpt.com" },
   "menuLabel_autoClear": { "message": "Αυτόματη εκκαθάριση συνομιλιών" },
   "menuLabel_toggleVis": { "message": "Εναλλαγή ορατότητας" },
   "menuLabel_modeNotifs": { "message": "Ειδοποιήσεις λειτουργίας" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT इतिहास" },
-  "appDesc": { "message": "Chat.openai.com पर जाने पर ऑटो - क्लियर चैट इतिहास" },
+  "appDesc": { "message": "chatgpt.com पर जाने पर ऑटो - क्लियर चैट इतिहास" },
   "menuLabel_autoClear": { "message": "ऑटोक्लियर चैट" },
   "menuLabel_toggleVis": { "message": "दृश्यता टॉगल करें" },
   "menuLabel_modeNotifs": { "message": "मोड सूचनाएं" },

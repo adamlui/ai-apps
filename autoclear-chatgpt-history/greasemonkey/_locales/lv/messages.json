@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Automātiskās dzēšanas tērzēšanasGPT vēsture" },
-  "appDesc": { "message": "Automātiski notīra tērzēšanas vēsturi, apmeklējot chat.openai.com" },
+  "appDesc": { "message": "Automātiski notīra tērzēšanas vēsturi, apmeklējot chatgpt.com" },
   "menuLabel_autoClear": { "message": "Automātiski notīrīt tērzēšanu" },
   "menuLabel_toggleVis": { "message": "Pārslēgt redzamību" },
   "menuLabel_modeNotifs": { "message": "Režīma paziņojumi" },

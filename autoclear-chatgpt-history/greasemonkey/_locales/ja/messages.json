@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT履歴の自動クリア" },
-  "appDesc": { "message": "chat.openai.comを訪れる際にチャット履歴を自動的にクリアします" },
+  "appDesc": { "message": "chatgpt.comを訪れる際にチャット履歴を自動的にクリアします" },
   "menuLabel_autoClear": { "message": "チャットの自動クリア" },
   "menuLabel_toggleVis": { "message": "表示切替" },
   "menuLabel_modeNotifs": { "message": "モード通知" },

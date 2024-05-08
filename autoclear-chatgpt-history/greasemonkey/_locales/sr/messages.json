@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Automatski obriši istoriju ćaskanjaGPT" },
-  "appDesc": { "message": "Automatski briše istoriju ćaskanja kada posetite chat.openai.com" },
+  "appDesc": { "message": "Automatski briše istoriju ćaskanja kada posetite chatgpt.com" },
   "menuLabel_autoClear": { "message": "Automatsko brisanje ćaskanja" },
   "menuLabel_toggleVis": { "message": "Uključi/isključi vidljivost" },
   "menuLabel_modeNotifs": { "message": "Obaveštenja o režimu" },

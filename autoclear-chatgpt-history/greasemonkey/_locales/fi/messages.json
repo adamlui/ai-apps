@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Poista ChatGPT-historia automaattisesti" },
-  "appDesc": { "message": "Automaattinen tyhjentää keskusteluhistorian vieraillessasi chat.openai.com-sivustolla" },
+  "appDesc": { "message": "Automaattinen tyhjentää keskusteluhistorian vieraillessasi chatgpt.com-sivustolla" },
   "menuLabel_autoClear": { "message": "Poista keskustelut automaattisesti" },
   "menuLabel_toggleVis": { "message": "Vaihda näkyvyyttä" },
   "menuLabel_modeNotifs": { "message": "Tilailmoitukset" },

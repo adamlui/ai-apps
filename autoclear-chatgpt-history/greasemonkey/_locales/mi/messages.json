@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Tuhinga o mua ChatGPT History" },
-  "appDesc": { "message": "Auto-clears kōrerorero hītori ina toro chat.openai.com" },
+  "appDesc": { "message": "Auto-clears kōrerorero hītori ina toro chatgpt.com" },
   "menuLabel_autoClear": { "message": "Ngā Kāwai" },
   "menuLabel_toggleVis": { "message": "Tiro Toggle" },
   "menuLabel_modeNotifs": { "message": "Notifications" },

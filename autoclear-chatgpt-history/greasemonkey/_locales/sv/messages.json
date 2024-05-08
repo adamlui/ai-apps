@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT-historik" },
-  "appDesc": { "message": "Automatisk rensar chatthistorik när du besöker chat.openai.com" },
+  "appDesc": { "message": "Automatisk rensar chatthistorik när du besöker chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear chattar" },
   "menuLabel_toggleVis": { "message": "Växla synlighet" },
   "menuLabel_modeNotifs": { "message": "Lägesaviseringar" },

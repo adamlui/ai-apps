@@ -30,7 +30,7 @@
 
 2. Install [Autoclear ChatGPT History](https://greasyfork.org/scripts/460805-autoclear-chatgpt-history) (will load in userscript manager installed above)
 
-3. Visit [chat.openai.com](https://chat.openai.com) as normal, and a toggle appears!
+3. Visit [chatgpt.com](https://chatgpt.com) as normal, and a toggle appears!
 
 <div align="center">
 
@@ -100,7 +100,7 @@ This project exists thanks to code, translations, issues & ideas from the follow
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2911588?first-contrib=2023.2.26-truncate-toggle-label-idea&h=50&w=50&mask=circle&maxage=7d "@sanchomuzax")](https://github.com/sanchomuzax)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
-[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chat.openai.com)
+[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
 

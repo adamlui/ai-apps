@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Sejarah Sembang AutoclearGPT" },
-  "appDesc": { "message": "Auto-clears sejarah sembang apabila melawat chat.openai.com" },
+  "appDesc": { "message": "Auto-clears sejarah sembang apabila melawat chatgpt.com" },
   "menuLabel_autoClear": { "message": "Sembang Autoclear" },
   "menuLabel_toggleVis": { "message": "Kejelasan Item" },
   "menuLabel_modeNotifs": { "message": "Pemberitahuan Mod" },

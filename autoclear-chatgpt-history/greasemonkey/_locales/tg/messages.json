@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Таърихи Autoclear ChatGPT" },
-  "appDesc": { "message": "Auto-clears таърихи чат ҳангоми боздид аз chat.openai.com" },
+  "appDesc": { "message": "Auto-clears таърихи чат ҳангоми боздид аз chatgpt.com" },
   "menuLabel_autoClear": { "message": "Сӯҳбатҳои худкор" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_modeNotifs": { "message": "Огоҳинома дар бораи ҳолат" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT Amateka" },
-  "appDesc": { "message": "Auto-clears chat amateka ilyo atandalila chat.openai.com" },
+  "appDesc": { "message": "Auto-clears chat amateka ilyo atandalila chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear Chats Tukwila" },
   "menuLabel_toggleVis": { "message": "Toggle Visibilya" },
   "menuLabel_modeNotifs": { "message": "Mode Notifications Tukwila" },

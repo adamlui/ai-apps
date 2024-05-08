@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Istoric AutoClear ChatGPT" },
-  "appDesc": { "message": "Auto-clears chat istorie atunci când vizitați chat.openai.com" },
+  "appDesc": { "message": "Auto-clears chat istorie atunci când vizitați chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear Chats" },
   "menuLabel_toggleVis": { "message": "comutați vizibilitatea" },
   "menuLabel_modeNotifs": { "message": "Notificări de mod" },

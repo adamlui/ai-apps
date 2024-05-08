@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Sohbeti Otomatik TemizleGPT Geçmişi" },
-  "appDesc": { "message": "Chat.openai.com adresini ziyaret ederken sohbet geçmişini otomatik olarak temizler" },
+  "appDesc": { "message": "chatgpt.com adresini ziyaret ederken sohbet geçmişini otomatik olarak temizler" },
   "menuLabel_autoClear": { "message": "Sohbetleri Otomatik Temizle" },
   "menuLabel_toggleVis": { "message": "Görünürlüğü Aç/Kapat" },
   "menuLabel_modeNotifs": { "message": "Mod Bildirimleri" },

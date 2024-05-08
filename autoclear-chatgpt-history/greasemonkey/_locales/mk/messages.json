@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Автоматско чистење на историјата на ChatGPT" },
-  "appDesc": { "message": "Автоматско чистење на историјата на разговорот при посета на chat.openai.com" },
+  "appDesc": { "message": "Автоматско чистење на историјата на разговорот при посета на chatgpt.com" },
   "menuLabel_autoClear": { "message": "Автоматско чистење разговори" },
   "menuLabel_toggleVis": { "message": "Вклучи видливост" },
   "menuLabel_modeNotifs": { "message": "Известувања за режим" },

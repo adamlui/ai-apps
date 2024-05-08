@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT Mbaï" },
-  "appDesc": { "message": "Auto-clears chat history tongana mo gue na chat.openai.com" },
+  "appDesc": { "message": "Auto-clears chat history tongana mo gue na chatgpt.com" },
   "menuLabel_autoClear": { "message": "A yeke na yâ ti mbeni kete kete kete kete kete kete kete" },
   "menuLabel_toggleVis": { "message": "A yeke bâ ni na lê ti azo" },
   "menuLabel_modeNotifs": { "message": "Nduru tënë ti mode" },
