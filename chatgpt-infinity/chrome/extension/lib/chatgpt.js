@@ -1,20 +1,12 @@
-// This library is a condensed version of chatgpt.js v2.6.9
+// This library is a condensed version of chatgpt.js v2.6.10
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
 // Latest minified release: https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js/chatgpt.min.js
 
-// Init endpoints
-const endpoints = { assets: 'https://cdn.jsdelivr.net/gh/KudoAI/chatgpt.js' }
-
 // Init feedback properties
 localStorage.alertQueue = JSON.stringify([]);
-localStorage.notifyProps = JSON.stringify({
-    queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
-
-// Init environment flags
-const isFFuserScript = navigator.userAgent.includes('Firefox') && typeof unsafeWindow != 'undefined',
-      isFFtmScript = isFFuserScript && GM_info.scriptHandler == 'Tampermonkey';
+localStorage.notifyProps = JSON.stringify({ queue: { topRight: [], bottomRight: [], bottomLeft: [], topLeft: [] }});
 
 const chatgpt = {
 
@@ -368,28 +360,10 @@ const chatgpt = {
         const hideDelay = fadeDuration > notifDuration ? 0 // don't delay if fade exceeds notification duration
                         : notifDuration - fadeDuration; // otherwise delay for difference
 
-        // Init/schedule audio feedback
-        let dismissAudio, dismissAudioTID; // be accessible to `dismissNotif()`
-        if (isFFtmScript) {
-            // Init base audio index
-            let nthAudio; do nthAudio = Math.floor(Math.random() * 3) + 1; // randomize  between 1-3...
-            while (nthAudio === notifyProps.lastNthAudio); // ...until distinct from prev index (for variety)
-            notifyProps.lastNthAudio = nthAudio; localStorage.notifyProps = JSON.stringify(notifyProps);
-
-            // Build audio element + src URL
-            dismissAudio = new Audio();
-            dismissAudio.src = endpoints.assets + '/media/audio/notifications/bubble-pop/'
-                             + `${ nthAudio }-${ notificationDiv.isRight ? 'right' : 'left' }.mp3`;
-
-            // Schedule playback
-            dismissAudioTID = setTimeout(() => dismissAudio.play().catch(() => {}), hideDelay * 1000);
-        }
-
         // Add notification dismissal to timeout schedule + button clicks
         const dismissNotif = () => {
             notificationDiv.style.animation = `notif-zoom-fade-out ${ fadeDuration }s ease-out`;
-            if (isFFtmScript) dismissAudio?.play().catch(() => {});
-            clearTimeout(dismissFuncTID); clearTimeout(dismissAudioTID);
+            clearTimeout(dismissFuncTID);
         };
         const dismissFuncTID = setTimeout(dismissNotif, hideDelay * 1000); // maintain visibility for `hideDelay` secs, then dismiss     
         closeSVG.addEventListener('click', dismissNotif, { once: true }); // add to close button clicks
