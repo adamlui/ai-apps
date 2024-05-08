@@ -127,14 +127,14 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://github.bravegpt.com/#readme) / 
 [Discuss](https://github.bravegpt.com/discussions)
 
-### <img width=17 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
+### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://github.chatgptwidescreen.com) <img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing & reduced scrolling.
 <br>[Install](https://github.com/adamlui/chatgpt-widescreen#-installation) / 
 [Readme](https://github.com/adamlui/chatgpt-widescreen#readme) / 
 [Discuss](https://github.chatgptwidescreen.com/discussions)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://media.autoclearchatgpt.com/images/separators/gradient-aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
 <a href="#-autoclear-chatgpt-history-">Back to top ↑</a>
