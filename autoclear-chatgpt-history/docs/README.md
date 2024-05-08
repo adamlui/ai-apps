@@ -1,6 +1,6 @@
 # <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.autoclearchatgpt.com/images/icons/openai/white/icon512.png"><img width=23 src="https://media.autoclearchatgpt.com/images/icons/openai/black/icon512.png"></picture> Autoclear ChatGPT History &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20cluttered%20ChatGPT%20chat%20history%3F%20Auto-clear%20it%20w%2F%20this%20plug-in%21&url=https://github.com/adamlui/autoclear-chatgpt-history&hashtags=javascript,openai,chatgpt)
 
-<a href="https://greasyfork.org/scripts/460805-autoclear-chatgpt-history"><img height=31 src="https://img.shields.io/greasyfork/dt/460805?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge"></a>
+<a href="https://greasyfork.autoclearchatgpt.com"><img height=31 src="https://img.shields.io/greasyfork/dt/460805?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge"></a>
 <a href="https://github.com/adamlui/chatgpt-auto-refresh/blob/main/LICENSE.md"><img height=31 src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/adamlui/autoclear-chatgpt-history/commits/main"><img height=31 src="https://img.shields.io/github/commit-activity/m/adamlui/autoclear-chatgpt-history?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/adamlui/autoclear-chatgpt-history"><img height=31 src="https://img.shields.io/codefactor/grade/github/adamlui/autoclear-chatgpt-history?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
@@ -11,7 +11,7 @@
 
 ### Auto-clears chat history when visiting chatgpt.com for maximum privacy
 
-<a href="https://greasyfork.org/scripts/460805-autoclear-chatgpt-history"><img height=45 src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.autoclearchatgpt.com"><img height=45 src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.autoclearchatgpt.com/discussions) /
 [Review](https://greasyfork.autoclearchatgpt.com/feedback#post-discussion) /
@@ -28,7 +28,7 @@
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/))
 
-2. Install [Autoclear ChatGPT History](https://greasyfork.org/scripts/460805-autoclear-chatgpt-history) (will load in userscript manager installed above)
+2. Install [Autoclear ChatGPT History](https://greasyfork.autoclearchatgpt.com) (will load in userscript manager installed above)
 
 3. Visit [chatgpt.com](https://chatgpt.com) as normal, and a toggle appears!
 
@@ -77,7 +77,7 @@ Autoclear ChatGPT History is compatible w/ the following browsers using [Tamperm
 
 <br>
 
-<a href="https://greasyfork.org/scripts/460805-autoclear-chatgpt-history"><img height=42 src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=42 title="How to install" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.autoclearchatgpt.com"><img height=42 src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=42 title="How to install" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.autoclearchatgpt.com/discussions) / 
 [Leave a review](https://greasyfork.autoclearchatgpt.com/feedback#post-discussion) /
