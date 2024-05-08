@@ -19,7 +19,7 @@
 
 #
 
-![](https://user-images.githubusercontent.com/10906554/223881135-dacad119-a10a-4f7c-9ca1-e5286691003f.png)
+![](https://media.autoclearchatgpt.com/images/screenshots/demo.png)
 <br>
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/adamlui/autoclear-chatgpt-history/main/media/images/separators/aqua.png">
