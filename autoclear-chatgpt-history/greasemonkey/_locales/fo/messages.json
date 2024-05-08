@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT History" },
-  "appDesc": { "message": "AUTO-clears chat history when visiting chat.openai.com" },
+  "appDesc": { "message": "AUTO-clears chat history when visiting chatgpt.com" },
   "menuLabel_autoClear": { "message": "Autoclear Chat" },
   "menuLabel_toggleVis": { "message": "Goym eygleiðing" },
   "menuLabel_modeNotifs": { "message": "Modus kunningarskriv" },

@@ -9,7 +9,7 @@
 <a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img height=31 src="https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://autoclearchatgpt.com?utm_source=autoclear_chatgpt_history&utm_content=github_shield"><img height=31 src="https://img.shields.io/badge/web-www.autoclearchatgpt.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
-### Auto-clears chat history when visiting chat.openai.com for maximum privacy
+### Auto-clears chat history when visiting chatgpt.com for maximum privacy
 
 <a href="https://greasyfork.org/scripts/460805-autoclear-chatgpt-history"><img height=45 src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "Autoclear ChatGPT History" },
-  "appDesc": { "message": "Auto-clears chat history when visiting chat.openai.com" },
+  "appDesc": { "message": "Auto-clears chat history when visiting chatgpt.com" },
   "menuLabel_autoClear": { "message": "Comment" },
   "menuLabel_toggleVis": { "message": "(Diw)Gweredekaat an hewelderdrawable-action" },
   "menuLabel_modeNotifs": { "message": "Kemennoù" },
