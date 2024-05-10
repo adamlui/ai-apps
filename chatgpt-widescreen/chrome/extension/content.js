@@ -159,7 +159,7 @@
     const schemeObserver = new MutationObserver(([mutation]) => {
         if (mutation.type == 'attributes' && mutation.attributeName == 'class') {
             btnColor = setBtnColor()
-            updateBtnSVG('fullScreen') ; updateBtnSVG('fullWindow') ; updateBtnSVG('wideScreen') ; updateBtnSVG('newChat')
+            ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'].forEach(updateBtnSVG)
     }})
     schemeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
     schemeObserver.observe(document.querySelector('textarea'), { attributes: true }) // chatbar for temp chat toggles
