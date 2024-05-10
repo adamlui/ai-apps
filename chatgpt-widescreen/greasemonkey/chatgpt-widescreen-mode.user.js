@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.10
+// @version             2024.5.10.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -535,25 +535,25 @@
             // shrink to fit size
           + ( mode == 'newChat' ? '13 13' : mode == 'wideScreen' ? '20 20 ' : mode == 'fullWindow' ? '24 24' : '20 20' ))
         const fullScreenONelems = [
-            createSVGelem('path', { fill: buttonColor, d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
-            createSVGelem('path', { fill: buttonColor, d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
-            createSVGelem('path', { fill: buttonColor, d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
-            createSVGelem('path', { fill: buttonColor, d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
+            createSVGelem('path', { fill: btnColor, d: 'm14,14-4,0 0,2 6,0 0,-6 -2,0 0,4 0,0 z' }),
+            createSVGelem('path', { fill: btnColor, d: 'm22,14 0,-4 -2,0 0,6 6,0 0,-2 -4,0 0,0 z' }),
+            createSVGelem('path', { fill: btnColor, d: 'm20,26 2,0 0,-4 4,0 0,-2 -6,0 0,6 0,0 z' }),
+            createSVGelem('path', { fill: btnColor, d: 'm10,22 4,0 0,4 2,0 0,-6 -6,0 0,2 0,0 z' }) ]
         const fullScreenOFFelems = [
-            createSVGelem('path', { fill: buttonColor, d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
-            createSVGelem('path', { fill: buttonColor, d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
-            createSVGelem('path', { fill: buttonColor, d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
-            createSVGelem('path', { fill: buttonColor, d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ]
+            createSVGelem('path', { fill: btnColor, d: 'm10,16 2,0 0,-4 4,0 0,-2 L 10,10 l 0,6 0,0 z' }),
+            createSVGelem('path', { fill: btnColor, d: 'm20,10 0,2 4,0 0,4 2,0 L 26,10 l -6,0 0,0 z' }),
+            createSVGelem('path', { fill: btnColor, d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
+            createSVGelem('path', { fill: btnColor, d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ]
         const fullWindowElems = [
             createSVGelem('rect', { x: '3', y: '3', width: '18', height: '18', rx: '2', ry: '2' }),
             createSVGelem('line', { x1: '9', y1: '3', x2: '9', y2: '21' }) ]
         const wideScreenONelems = [
-            createSVGelem('path', { fill: buttonColor, 'fill-rule': 'evenodd',
+            createSVGelem('path', { fill: btnColor, 'fill-rule': 'evenodd',
                 d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z' }) ]
         const wideScreenOFFelems = [
-            createSVGelem('path', { fill: buttonColor, 'fill-rule': 'evenodd',
+            createSVGelem('path', { fill: btnColor, 'fill-rule': 'evenodd',
                 d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z' }) ]
-        const newChatElems = [ createSVGelem('path', { fill: buttonColor, d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ]
+        const newChatElems = [ createSVGelem('path', { fill: btnColor, d: 'M22,13h-4v4h-2v-4h-4v-2h4V7h2v4h4V13z' }) ]
 
         // Pick appropriate button/elements
         const [button, ONelems, OFFelems] = (
@@ -569,7 +569,7 @@
         const buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         buttonSVG.setAttribute('height', 18) // prevent shrinking
         if (mode == 'fullWindow') { // stylize full-window button
-            buttonSVG.setAttribute('stroke', buttonColor)
+            buttonSVG.setAttribute('stroke', btnColor)
             buttonSVG.setAttribute('fill', 'none')
             buttonSVG.setAttribute('stroke-width', '2')
             buttonSVG.setAttribute('height', site == 'poe' ? '2em' : 18)
@@ -786,7 +786,7 @@
           bOffset = 1.77, // rem between buttons
           rOffset = ( // rem from right edge of chatbar
               /chatgpt|openai/.test(site) ? 3 : '' )
-    let buttonColor = setBtnColor()
+    let btnColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
             const buttonName = buttonType + 'Btn'
@@ -840,7 +840,7 @@
     // Monitor chatbar/page scheme changes to update button colors
     const schemeObserver = new MutationObserver(([mutation]) => {
         if (mutation.type == 'attributes' && mutation.attributeName == 'class') {
-            buttonColor = setBtnColor()
+            btnColor = setBtnColor()
             updateBtnSVG('fullScreen') ; updateBtnSVG('fullWindow') ; updateBtnSVG('wideScreen') ; updateBtnSVG('newChat')
     }})
     schemeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
