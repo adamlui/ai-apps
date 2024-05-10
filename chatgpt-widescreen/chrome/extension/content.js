@@ -16,7 +16,7 @@
         else if (request.action == 'alert') alert(request.title, request.msg, request.btns)
         else if (typeof window[request.action] == 'function') {
             const args = Array.isArray(request.args) ? request.args // preserve array if supplied
-                       : request.args !== undefined ? [request.args] : [] // convert to array if single or no arg
+                       : request.args != undefined ? [request.args] : [] // convert to array if single or no arg
             window[request.action](...args) // call expression functions
         }
         return true
@@ -187,8 +187,8 @@
 
     // Add key listener to enable flag on F11 + stop generating text on ESC
     window.addEventListener('keydown', event => {
-        if ((event.key == 'F11' || event.keyCode === 122) && !config.fullScreen) config.f11 = true
-        else if ((event.key === 'Escape' || event.keyCode === 27) && !chatgpt.isIdle()) chatgpt.stop()
+        if ((event.key == 'F11' || event.keyCode == 122) && !config.fullScreen) config.f11 = true
+        else if ((event.key == 'Escape' || event.keyCode == 27) && !chatgpt.isIdle()) chatgpt.stop()
     })
 
     // Define FEEDBACK functions
