@@ -390,8 +390,6 @@
         tweaksStyle.innerText = (
               /chatgpt|openai/.test(site) ? (
                   inputSelector + `{ padding-right: ${ config.ncbDisabled ? 126 : 152 }px }` // narrow input to accomodate btns
-                + 'div.group > div > div > div > div:nth-child(2) { ' // move response paginator
-                    + 'position: relative ; left: 66px ; top: 7px } ' // ...below avatar to avoid cropping
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) : '' ) // hide footer
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
