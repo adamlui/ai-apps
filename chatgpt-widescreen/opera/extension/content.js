@@ -155,15 +155,14 @@
 
     }}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
-    // Monitor scheme changes to update button colors
-    const schemeObserver = new MutationObserver(([{ type, target }]) => {
-        if (target === document.documentElement && type == 'attributes' && target.getAttribute('class'))
-            settings.load(['extensionDisabled']).then(() => {
-                if (!config.extensionDisabled) {
-                    buttonColor = setBtnColor()
-                    updateBtnSVG('fullScreen') ; updateBtnSVG('fullWindow')
-                    updateBtnSVG('wideScreen') ; updateBtnSVG('newChat')
-    }})}) ; schemeObserver.observe(document.documentElement, { attributes: true })
+    // Monitor chatbar/page scheme changes to update button colors
+    const schemeObserver = new MutationObserver(([mutation]) => {
+        if (mutation.type == 'attributes' && mutation.attributeName == 'class') {
+            buttonColor = setBtnColor()
+            updateBtnSVG('fullScreen') ; updateBtnSVG('fullWindow') ; updateBtnSVG('wideScreen') ; updateBtnSVG('newChat')
+    }})
+    schemeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
+    schemeObserver.observe(document.querySelector('textarea'), { attributes: true }) // chatbar for temp chat toggles
 
     // Monitor sidebar button to update full-window setting
     if (/chatgpt|openai/.test(site)) {
@@ -217,7 +216,9 @@
     // Define BUTTON functions
 
     function setBtnColor() { return (
-        /chatgpt|openai/.test(site) ? ( chatgpt.isDarkMode() ? 'white' : '#202123' ) : 'currentColor' )}
+        /chatgpt|openai/.test(site) ? ( chatgpt.isDarkMode() || document.querySelector('[class*="white shadow"]') ? 'white' : '#202123' )
+      : site == 'poe' ? 'currentColor' : ''
+    )}
 
     function insertBtns() {
         const chatbar = document.querySelector(chatbarSelector)
