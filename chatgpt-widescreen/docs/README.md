@@ -154,11 +154,11 @@ ChatGPT Widescreen Mode is compatible w/ the following browsers:
 <br>
 
 <a href="https://chrome.chatgptwidescreen.com">
-    <img height=80 src="https://media.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
+    <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptwidescreen.com">
-    <img height=80 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
+    <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
 <a href="https://greasyfork.chatgptwidescreen.com">
-    <img height=80 src="https://media.chatgptwidescreen.com/images/buttons/add-userscript-button.png"></a>
+    <img height=75 src="https://media.chatgptwidescreen.com/images/buttons/add-userscript-button.png"></a>
 
 <br>
 
