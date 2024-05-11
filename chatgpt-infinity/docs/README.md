@@ -59,7 +59,7 @@
 
 ## 🚀 Installation
 
-### <img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"><img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> Browser extension:
+### <img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"><img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> Browser extension:
 
 1. Install ChatGPT Infinity extension ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com))
 
@@ -74,7 +74,7 @@
 
 </div>
 
-### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey userscript:
+### <img height=17 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png"><img height=17.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey userscript:
 
 1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/))
 
@@ -173,21 +173,21 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ## 📜 Related apps
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://github.chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://github.chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
 
 > Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.
 <br>[Install](https://github.chatgptautorefresh.com/#-installation) / 
 [Readme](https://github.chatgptautorefresh.com/#readme) / 
 [Discuss](https://chatgptautorefresh.com/discuss)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continue ⏩](https://github.chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto-Continue ⏩](https://github.chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
 
 > Automatically continue generating multiple ChatGPT responses.<br>
 [Install](https://github.chatgptautocontinue.com/#-installation) / 
 [Readme](https://github.chatgptautocontinue.com/#readme) / 
 [Discuss](https://chatgptautocontinue.com/discussions)
 
-### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
+### <img width=17 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
 <br>[Install](https://github.chatgptwidescreen.com/#-installation) / 

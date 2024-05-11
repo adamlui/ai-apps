@@ -59,7 +59,7 @@
 
 ## 🚀 如何安装
 
-### <img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"><img style="margin: 0 2px -1px 0" height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> 浏览器扩展:
+### <img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"><img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> 浏览器扩展:
 
 1. 安装 ChatGPT 无限 扩展程序 ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com))
 
@@ -74,7 +74,7 @@
 
 </div>
 
-### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey 用户脚本:
+### <img height=17 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png"><img height=17.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey 用户脚本:
 
 1. 安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/))
 
@@ -178,14 +178,14 @@ ChatGPT 无穷 与以下浏览器兼容.
 [自述文件](https://github.chatgptautorefresh.com/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptautorefresh.com/discuss)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动继续 ⏩](https://github.chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -3px 3px"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT 自动继续 ⏩](https://github.chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
 
 > 自动继续生成多个 ChatGPT 响应。<br>
 [安装](https://github.chatgptautocontinue.com/tree/main/docs/zh-cn#-如何安装) / 
 [自述文件](https://github.chatgptautocontinue.com/tree/main/docs/zh-cn#readme) / 
 [讨论](https://chatgptautocontinue.com/discuss)
 
-### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
+### <img width=17 src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
 > 向 ChatGPT 添加宽屏 + 全窗口模式以增强查看效果 + 减少滚动。
 <br>[安装](https://github.chatgptwidescreen.com/tree/main/docs/zh-cn#-如何安装) / 
