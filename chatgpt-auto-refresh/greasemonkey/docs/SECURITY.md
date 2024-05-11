@@ -5,8 +5,8 @@
             <img height=14 src="https://media.chatgptautorefresh.com/images/icons/earth/black/icon32.svg">
         </picture>
         &nbsp;English |
-        <a href="zh-cn/SECURITY.md">简体中文</a> |
-        <a href="hi/SECURITY.md">हिंदी</a>
+        <a href="https://docs.chatgptautorefresh.com/zh-cn/SECURITY.md">简体中文</a> |
+        <a href="https://docs.chatgptautorefresh.com/hi/SECURITY.md">हिंदी</a>
     </h6>
 </div>
 
