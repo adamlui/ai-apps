@@ -31,9 +31,12 @@
 
 #
 
+<div align="center">
+
 ![](https://media.chatgptautorefresh.com/images/screenshots/zh-cn/tm-menu-toggle.png)
 ![](https://media.chatgptautorefresh.com/images/screenshots/zh-cn/mode-notification-on.png)
-<br>
+
+</div>
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">
 
