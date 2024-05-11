@@ -11,7 +11,7 @@
 
 ### Auto-clears chat history when visiting chatgpt.com for maximum privacy
 
-<a href="https://greasyfork.autoclearchatgpt.com"><img height=45 src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.autoclearchatgpt.com"><img height=45 title="Install this script" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.autoclearchatgpt.com/discussions) /
 [Review](https://greasyfork.autoclearchatgpt.com/feedback#post-discussion) /
@@ -78,7 +78,7 @@ Autoclear ChatGPT History is compatible w/ the following browsers using [Tamperm
 
 <br>
 
-<a href="https://greasyfork.autoclearchatgpt.com"><img height=42 src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=42 title="How to install" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.autoclearchatgpt.com"><img height=42 title="Install this script" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=42 title="How to install" src="https://media.autoclearchatgpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.autoclearchatgpt.com/discussions) / 
 [Leave a review](https://greasyfork.autoclearchatgpt.com/feedback#post-discussion) /
