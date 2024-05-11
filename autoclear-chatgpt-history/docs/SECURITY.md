@@ -5,7 +5,7 @@
             <img height=14 src="https://media.autoclearchatgpt.com/images/icons/earth/black/icon32.svg">
         </picture>
         &nbsp;English |
-        <a href="hi/SECURITY.md">हिंदी</a>
+        <a href="https://docs.autoclearchatgpt.com/hi/SECURITY.md">हिंदी</a>
     </h6>
 </div>
 
