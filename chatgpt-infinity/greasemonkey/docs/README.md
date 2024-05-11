@@ -54,8 +54,12 @@
 
 3. Visit [chatgpt.com](https://chatgpt.com) as normal, and a toggle appears in the sidebar and toolbar menu
 
-![](https://media.chatgptinfinity.com/images/screenshots/infinity-mode-toggle.jpg)
-![](https://media.chatgptinfinity.com/images/screenshots/infinity-mode-tm-menu.png)
+<div align="center">
+
+<img src="https://media.chatgptinfinity.com/images/screenshots/infinity-mode-toggle.jpg">
+<img src="https://media.chatgptinfinity.com/images/screenshots/infinity-mode-tm-menu.png">
+
+</div>
 
 ## ⚡ Dependencies
 
