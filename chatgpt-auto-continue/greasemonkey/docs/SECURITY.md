@@ -5,7 +5,7 @@
             <img height=14 src="https://media.chatgptautocontinue.com/images/icons/earth/black/icon32.svg">
         </picture>
         &nbsp;English |
-        <a href="https://github.chatgptautocontinue.com/blob/main/docs/zh-cn/SECURITY.md">简体中文</a>
+        <a href="https://docs.chatgptautocontinue.com/zh-cn/SECURITY.md">简体中文</a>
     </h6>
 </div>
 
