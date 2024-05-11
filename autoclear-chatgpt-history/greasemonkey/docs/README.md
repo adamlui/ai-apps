@@ -34,7 +34,7 @@
 
 <div align="center">
 
-![](https://media.autoclearchatgpt.com/images/screenshots/toggle.png)
+![](https://media.autoclearchatgpt.com/images/screenshots/sidebar-toggle-on.png)
 
 </div>
 
