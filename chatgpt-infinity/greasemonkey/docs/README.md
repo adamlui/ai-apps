@@ -17,7 +17,7 @@
 
 <br>
 
-<a href="https://greasyfork.chatgptinfinity.com"><img height=45 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img title="How to install" height=45 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.chatgptinfinity.com"><img title="Install this script" height=45 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img title="How to install" height=45 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.chatgptinfinity.com/discussions) / 
 [Review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) / 
