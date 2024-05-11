@@ -161,7 +161,7 @@ ChatGPT 无穷 与以下浏览器兼容.
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2911588?first-contrib=2023.2.26-truncate-toggle-label-idea&h=50&w=50&mask=circle&maxage=7d "@sanchomuzax")](https://github.com/sanchomuzax)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
-[![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
+<a href="https://chatgpt.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.chatgptwidescreen.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.chatgptwidescreen.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
 <br><br>
 
 ## 🤖 更多 ChatGPT 应用
