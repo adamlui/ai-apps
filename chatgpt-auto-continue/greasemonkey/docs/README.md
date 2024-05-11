@@ -32,7 +32,7 @@
 
 <div align="center">
 
-<img width=388 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/media/images/screenshots/continue-button-crossed.png"> <img width=321 src="https://raw.githubusercontent.com/adamlui/chatgpt-auto-continue/main/media/images/screenshots/auto-continue-on-notification-checked.png">
+<img width=388 src="https://media.chatgptautocontinue.com/images/screenshots/continue-button-crossed.png"> <img width=321 src="https://media.chatgptautocontinue.com/images/screenshots/auto-continue-on-notification-checked.png">
 
 </div>
 
