@@ -153,11 +153,11 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 <div align="center">
 
 <a href="https://chrome.chatgptwidescreen.com">
-    <img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
+    <img height=80 src="https://media.chatgptwidescreen.com/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptwidescreen.com">
-    <img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
+    <img height=80 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
 <a href="https://greasyfork.chatgptwidescreen.com">
-    <img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-userscript-button.png"></a>
+    <img height=80 src="https://media.chatgptwidescreen.com/images/buttons/add-userscript-button.png"></a>
 
 <br>
 
