@@ -17,7 +17,7 @@
 
 <br>
 
-<a href="https://greasyfork.chatgptinfinity.com"><img height=45 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" height=45 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.chatgptinfinity.com"><img height=45 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img title="How to install" height=45 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.chatgptinfinity.com/discussions) / 
 [Review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) / 
@@ -100,7 +100,7 @@ ChatGPT Infinity is compatible w/ the following browsers using [Tampermonkey](ht
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.chatgptinfinity.com/pulls) (contributions of all kinds are welcome!)
 
-<a href="https://greasyfork.chatgptinfinity.com"><img height=40 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img title="How to install" height=40 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.chatgptinfinity.com"><img height=40 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img title="How to install" height=40 src="https://media.chatgptinfinity.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.chatgptinfinity.com/discussions) / 
 [Leave a review](https://greasyfork.org/scripts/465051-chatgpt-infinity/feedback#post-discussion) / 
