@@ -117,7 +117,7 @@ ChatGPT Widescreen Mode is compatible w/ the following browsers (via [Tampermonk
 
 <br>
 
-<a href="https://greasyfork.chatgptwidescreen.com"><img height=42 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img title="How to install" height=42 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.chatgptwidescreen.com"><img height=42 title="Install this script" src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img title="How to install" height=42 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
 [Leave a review](https://greasyfork.chatgptwidescreen.com/feedback#post-discussion) / 
