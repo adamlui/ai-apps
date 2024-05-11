@@ -128,21 +128,21 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ## 📜 Related apps
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Auto Refresh ↻](https://github.chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Auto Refresh ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
 
 > Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.
 <br>[Install](https://github.chatgptautorefresh.com/#-installation) / 
 [Readme](https://github.chatgptautorefresh.com/#readme) / 
 [Discuss](https://github.chatgptautorefresh.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Auto-Continue ⏩](https://github.chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Auto-Continue ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 
 > Automatically continue generating multiple ChatGPT responses.<br>
 [Install](https://github.chatgptautocontinue.com/#-installation) / 
 [Readme](https://github.chatgptautocontinue.com/#readme) / 
 [Discuss](https://github.chatgptautocontinue.com/discussions)
 
-### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://github.chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
+### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
 > Adds Widescren + Fullscreen modes to ChatGPT for enhanced viewing + reduced scrolling.
 <br>[Install](https://github.chatgptwidescreen.com/#-installation) / 
