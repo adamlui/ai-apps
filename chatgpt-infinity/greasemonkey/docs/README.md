@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![](https://img.shields.io/badge/Users-70,000+-44cc11?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)](https://gf.chatgptinfinity.com)
+[![](https://img.shields.io/badge/Users-70,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)](https://gf.chatgptinfinity.com)
 [![](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=Stars&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.chatgptinfinity.com/stargazers)
 [![](https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
 [![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.chatgptinfinity.com/commits/main)
