@@ -183,7 +183,7 @@ ChatGPT 无穷 与以下浏览器兼容.
 > 自动继续生成多个 ChatGPT 响应。<br>
 [安装](https://docs.chatgptautocontinue.com/zh-cn/#-如何安装) / 
 [自述文件](https://docs.chatgptautocontinue.com/zh-cn/#readme) / 
-[讨论](https://chatgptautocontinue.com/discuss)
+[讨论](https://github.chatgptautocontinue.com/discussions)
 
 ### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
 
