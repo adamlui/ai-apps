@@ -70,7 +70,7 @@
 <br /><br />
 
 ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.com/KudoAI/chatgpt.js) library
-|<br>© 2023–2024 KudoAI & contributors under the MIT license.
+<br>© 2023–2024 KudoAI & contributors under the MIT license.
 
 </div>
 </h6>
