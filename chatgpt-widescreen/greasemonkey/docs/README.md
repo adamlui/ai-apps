@@ -15,7 +15,7 @@
 
 <br>
 
-<a href="https://greasyfork.chatgptwidescreen.com"><img height=45 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img title="How to install" height=45 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.chatgptwidescreen.com"><img height=45 title="Install this script" src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img title="How to install" height=45 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
 [Review](https://greasyfork.chatgptwidescreen.com/feedback#post-discussion) / 
