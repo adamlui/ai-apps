@@ -31,9 +31,12 @@
 
 #
 
+<div align="center">
+
 ![](https://user-images.githubusercontent.com/10906554/234756105-cf367acc-644a-49ee-8586-43c51d43e359.png)
 <img width=355 src="https://media.chatgptautorefresh.com/images/screenshots/mode-notification-on.png">
-<br>
+
+</div>
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">
 
