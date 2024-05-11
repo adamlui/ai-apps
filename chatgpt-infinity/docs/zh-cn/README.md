@@ -138,11 +138,11 @@ ChatGPT 无穷 与以下浏览器兼容.
 <div align="center">
 
 <a href="https://chrome.chatgptinfinity.com">
-    <img height=80 src="https://media.chatgptinfinity.com/images/buttons/add-to-chrome-button.png"></a>
+    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-chrome-button.png"></a>
 <a href="https://edge.chatgptinfinity.com">
-    <img height=80 src="https://media.chatgptinfinity.com/images/buttons/add-to-edge-button.png"></a>
+    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-edge-button.png"></a>
 <a href="https://greasyfork.chatgptinfinity.com">
-    <img height=80 src="https://media.chatgptinfinity.com/images/buttons/add-userscript-button.png"></a>
+    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-userscript-button.png"></a>
 
 <br>
 
