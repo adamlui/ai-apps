@@ -122,7 +122,7 @@ For even more epic ChatGPT apps, go here: https://github.com/adamlui/chatgpt-app
 [Readme](https://github.chatgptwidescreen.com/#readme) / 
 [Discuss](https://github.chatgptwidescreen.com/discussions)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptautocontinue.com/images/separators/gradient-aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
 <a href="#-chatgpt-auto-continue--">Back to top ↑</a>

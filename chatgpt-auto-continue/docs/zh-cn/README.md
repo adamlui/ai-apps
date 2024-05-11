@@ -122,7 +122,7 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 [自述文件](https://github.chatgptwidescreen.com/tree/main/docs/zh-cn#readme) / 
 [讨论](https://github.chatgptwidescreen.com/discussions)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://media.chatgptautocontinue.com/images/separators/gradient-aqua.png">
   
 <a href="https://github.com/adamlui/userscripts">**更多用户脚本**</a> / 
 <a href="#-chatgpt-自动继续--">回到顶部 ↑</a>
