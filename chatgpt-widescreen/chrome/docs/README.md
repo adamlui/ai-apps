@@ -14,7 +14,7 @@
 [![](https://img.shields.io/badge/Featured_by-Google-51a557?logo=googlechrome&logoColor=white&labelColor=464646&style=for-the-badge)](https://chrome.chatgptwidescreen.com)
 [![](https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 <a href="https://www.jsdelivr.com/package/gh/adamlui/chatgpt-widescreen?tab=stats"><img src="https://img.shields.io/jsdelivr/gh/hm/adamlui/chatgpt-widescreen?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20Hits&labelColor=464646&color=49c5d8"></a>
-[![](https://img.shields.io/badge/web-chrome.chatgptwidescreen.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chrome.chatgptwidescreen.com?utm_source=chatgpt_widescreen&utm_content=github_shield)
+[![](https://img.shields.io/badge/web-www.chatgptwidescreen.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptwidescreen.com?utm_source=chatgpt_widescreen&utm_content=github_shield)
  
 <br>
 
