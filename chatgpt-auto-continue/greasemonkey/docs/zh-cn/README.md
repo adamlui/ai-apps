@@ -25,7 +25,7 @@
 <a href="https://greasyfork.chatgptautocontinue.com"><img height=45 title="安装这个脚本
 " src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#-如何安装"><img height=45 title="如何安装" src="https://media.chatgptautocontinue.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
-[讨论](https://chatgptautocontinue.com/discussions) /
+[讨论](https://github.chatgptautocontinue.com/discussions) /
 [审查](https://greasyfork.chatgptautocontinue.com/feedback#post-discussion) /
 [联系作者](https://github.com/adamlui)
 
@@ -106,21 +106,21 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 > 保持 ChatGPT 会话新鲜，消除聊天时间限制 + 网络错误 + Cloudflare 检查。<br>
 [安装](https://github.chatgptautorefresh.com/tree/main/docs/zh-cn#-如何安装) / 
 [自述文件](https://github.chatgptautorefresh.com/tree/main/docs/zh-cn#readme) / 
-[讨论](https://chatgptautorefresh.com/discuss)
+[讨论](https://github.chatgptautorefresh.com/discussions)
 
 ### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT无限 ∞](https://github.chatgptinfinity.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 4px"></a>
 
 > 从无所不知的 ChatGPT (任何语言!) 生成无穷无尽的答案。<br>
 [安装](https://github.chatgptinfinity.com/tree/main/docs/zh-cn#-如何安装) / 
 [自述文件](https://github.chatgptinfinity.com/tree/main/docs/zh-cn#readme) / 
-[讨论](https://chatgptinfinity.com/discuss)
+[讨论](https://github.chatgptinfinity.com/discussions)
 
 ### <img width=17 style="margin-bottom:-1px" src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT 宽屏模式](https://github.chatgptwidescreen.com) <img src="https://raw.githubusercontent.com/adamlui/chatgpt-widescreen/main/media/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" style="width: auto; height: 24px; margin:0 0 -4px 5px;" width="auto" height="24" />
 
 > 向 ChatGPT 添加宽屏 + 全屏模式以减少滚动。<br>
 [安装](https://github.chatgptwidescreen.com/tree/main/docs/zh-cn#-如何安装) / 
 [自述文件](https://github.chatgptwidescreen.com/tree/main/docs/zh-cn#readme) / 
-[讨论](https://chatgptwidescreen.com/discuss)
+[讨论](https://github.chatgptwidescreen.com/discussions)
 
 <img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
   
