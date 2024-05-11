@@ -52,7 +52,7 @@
 
 2. Install [ChatGPT Infinity](https://greasyfork.chatgptinfinity.com) userscript (will load in userscript manager installed above)
 
-3. Visit [chatgpt.com](https://chatgpt.com) & Infinity toggle is added to sidebar!
+3. Visit [chatgpt.com](https://chatgpt.com) as normal, and a toggle appears in the sidebar and toolbar menu
 
 ![](https://media.chatgptinfinity.com/images/screenshots/infinity-mode-toggle.jpg)
 ![](https://media.chatgptinfinity.com/images/screenshots/infinity-mode-tm-menu.png)

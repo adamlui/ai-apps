@@ -65,7 +65,7 @@
 
 1. Install ChatGPT Infinity extension ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com))
 
-2. Visit [chatgpt.com](https://chatgpt.com) as normal & Infinity toggle is added to sidebar!
+2. Visit [chatgpt.com](https://chatgpt.com) as normal, and a toggle appears in the sidebar and toolbar menu
 
 *Pro tip: For easier access to extension toggles, (1) click <img height=12 width=12 src="https://media.chatgptinfinity.com/images/icons/toolbar/chrome-puzzle-piece/gray.png"> in the browser's toolbar, (2) then <img height=12 width=12 src="https://media.chatgptinfinity.com/images/icons/toolbar/push-pin/blue.png"> next to extension name.*
 
