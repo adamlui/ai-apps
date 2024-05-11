@@ -4,7 +4,7 @@
 
 <div align="center">
 
-<a href="https://microsoftedge.microsoft.com/addons/detail/chatgpt-widescreen-mode/obnaaalnokmchdoagnhmllakaclaaooa"><img height=31 src="https://img.shields.io/badge/dynamic/json?logo=microsoftedge&logoColor=white&labelColor=464646&color=7bfce9&label=rating&suffix=/5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fobnaaalnokmchdoagnhmllakaclaaooa&style=for-the-badge"></a>
+<a href="https://edge.chatgptwidescreen.com"><img height=31 src="https://img.shields.io/badge/dynamic/json?logo=microsoftedge&logoColor=white&labelColor=464646&color=7bfce9&label=rating&suffix=/5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fobnaaalnokmchdoagnhmllakaclaaooa&style=for-the-badge"></a>
 <a href="../LICENSE.md"><img height=31 src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.chatgptwidescreen.com/commits"><img height=31 src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen"><img height=31 src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
@@ -18,7 +18,7 @@
 <a href="https://edge.chatgptwidescreen.com"><img height=70 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
-[Review](https://microsoftedge.microsoft.com/addons/detail/chatgpt-widescreen-mode/obnaaalnokmchdoagnhmllakaclaaooa) / 
+[Review](https://edge.chatgptwidescreen.com) / 
 [Contact author](https://github.com/adamlui)
   
 </div>
@@ -127,7 +127,7 @@ The userscript is compatible w/ the following browsers:
 <a href="https://edge.chatgptwidescreen.com"><img height=65 src="https://media.chatgptwidescreen.com/images/buttons/add-to-edge-button.png"></a><a href="https://edge.chatgptwidescreen.com">
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
-[Review](https://microsoftedge.microsoft.com/addons/detail/chatgpt-widescreen-mode/obnaaalnokmchdoagnhmllakaclaaooa) / 
+[Review](https://edge.chatgptwidescreen.com) / 
 [More ChatGPT add-ons](https://github.com/adamlui/chatgpt-addons)
 
 </div>
