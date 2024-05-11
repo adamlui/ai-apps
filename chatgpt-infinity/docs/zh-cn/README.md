@@ -65,7 +65,7 @@
 
 2. 正常访问 [chatgpt.com](https://chatgpt.com) & 侧边栏添加无限切换!
 
-*专业提示：更轻松地访问扩展开关, (1) 点击 <img height=12 width=12 src="https://user-images.githubusercontent.com/10906554/232301021-9fd8a67a-8911-4dd1-8455-2eb3757428b9.png"> 在浏览器的工具栏中, (2) 然后 <img height=12 width=12 src="https://user-images.githubusercontent.com/10906554/232302439-45d547e5-f96e-464d-ab43-da9c028caf10.png"> 扩展名旁边.*
+*专业提示：更轻松地访问扩展开关, (1) 点击 <img height=12 width=12 src="https://media.chatgptinfinity.com/images/icons/toolbar/chrome-puzzle-piece/gray.png"> 在浏览器的工具栏中, (2) 然后 <img height=12 width=12 src="https://media.chatgptinfinity.com/images/icons/toolbar/push-pin/blue.png"> 扩展名旁边.*
 
 <div align="center">
 
