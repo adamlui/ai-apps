@@ -93,7 +93,7 @@
 
 <div align="center">
 
-![自动刷新 启用](https://media.chatgptautorefresh.com/images/screenshots/zh-cn/sidebar-toggle-on.jpg)
+![自动刷新 启用](https://media.chatgptautorefresh.com/images/screenshots/zh-cn/sidebar-toggle-on.png)
 
 <img height=6px width="100%" src="https://media.chatgptautorefresh.com/images/separators/gradient-aqua.png">
 

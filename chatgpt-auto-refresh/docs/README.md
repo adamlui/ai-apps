@@ -93,7 +93,7 @@
 
 <div align="center">
     
-![](https://media.chatgptautorefresh.com/images/screenshots/sidebar-toggle-on.jpg)
+![](https://media.chatgptautorefresh.com/images/screenshots/sidebar-toggle-on.png)
 
 </div>
 
