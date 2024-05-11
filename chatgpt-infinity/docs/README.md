@@ -86,7 +86,7 @@
 
 <div align="center">
 
-<img src="https://media.chatgptinfinity.com/images/screenshots/infinity-mode-toggle.jpg">
+<img src="https://media.chatgptinfinity.com/images/screenshots/sidebar-toggle-on-w-cursor.png">
 
 <p>
 
