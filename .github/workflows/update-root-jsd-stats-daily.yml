@@ -5,7 +5,7 @@ on:
     - cron: "35 0 * * *" # every day 12:35a
 
 jobs:
-  update-downloads-shield:
+  update-jsdelivr-shield:
     runs-on: ubuntu-latest
     
     steps:
@@ -16,8 +16,8 @@ jobs:
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
       
-      - name: Fetch/sum download counts
-        id: get-downloads
+      - name: Fetch/sum jsDelivr request counts
+        id: get-stats
         run: |
           LC_NUMERIC=en_US # to insert commas
           jsd_gh_repos=("adamlui/autoclear-chatgpt-history" "adamlui/chatgpt-auto-continue" "adamlui/chatgpt-auto-refresh"
@@ -79,7 +79,7 @@ jobs:
       - name: Update README shields
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-apps
-          total_hits=$(echo ${{ steps.get-downloads.outputs.total_hits }})
+          total_hits=$(echo ${{ steps.get-stats.outputs.total_hits }})
           if [ "$total_hits" != "0" ]; then
             sed -i -E "s|(badge/jsDelivr_[^-]-)[0-9.,km+]+|\1$total_hits|Ig" docs/README.md ; fi
 
