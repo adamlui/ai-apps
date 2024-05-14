@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.11
+// @version             2024.5.14
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -405,8 +405,7 @@
                                     + `> ${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
                                 GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
-                                    { active: true, insert: true } // focus, make adjacent
-                                ).onclose = () => location.reload() },
+                                    { active: true, insert: true })}, // focus, make adjacent                            
                             '', updateAlertWidth
                         )
 
