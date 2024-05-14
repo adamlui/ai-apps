@@ -6,7 +6,7 @@
   "menuLabel_modeNotifs": { "message": "Rejim bildirishnomalari" },
   "menuLabel_about": { "message": "Qisqacha ma'lumot" },
   "about_version": { "message": "Versiya" },
-  "about_poweredBy": { "message": "Tomonidan qo&#39;llab-quvvatlanadi" },
+  "about_poweredBy": { "message": "Tomonidan qo'llab-quvvatlanadi" },
   "about_sourceCode": { "message": "Ochiq kod" },
   "mode_autoClear": { "message": "Avtomatik tozalash" },
   "alert_choosePlatform": { "message": "Platformani tanlang" },
@@ -21,7 +21,7 @@
   "buttonLabel_updateCheck": { "message": "Yangiliklarni tekshirish" },
   "buttonLabel_update": { "message": "Yangilash" },
   "buttonLabel_dismiss": { "message": "Rad etish" },
-  "link_viewChanges": { "message": "O&#39;zgarishlarni ko&#39;rish" },
+  "link_viewChanges": { "message": "O'zgarishlarni ko'rish" },
   "state_enabled": { "message": "yoqilgan" },
   "state_disabled": { "message": "o'chirilgan" }
 }

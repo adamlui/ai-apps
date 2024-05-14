@@ -8,7 +8,7 @@
   "menuLabel_about": { "message": "Ho‘ākāka" },
   "about_version": { "message": "Manao" },
   "about_poweredBy": { "message": "Hoʻāmana ʻia e" },
-  "about_sourceCode": { "message": "Hoʻopā&#39;ālua" },
+  "about_sourceCode": { "message": "Hoʻopā'ālua" },
   "prompt_updateInt": { "message": "Hoʻohou i ka wā hōʻano hou (i kekona)" },
   "alert_intUpdated": { "message": "Hoʻonui ʻia ka wā waena" },
   "alert_willRefresh": { "message": "E hōʻano hou ka manawa ChatGPT i kēlā me kēia" },
