@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.15
+// @version             2024.5.15.1
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/userscripts/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/userscripts/chatgpt/media/icons/openai-favicon64.png
@@ -333,8 +333,7 @@
 
     // Borrow CLASSES from sidebar div
     chatgpt.history.isLoaded().then(setTimeout(() => { 
-        const navLinks = document.querySelectorAll('nav a'),
-              firstLink = document.querySelector('nav a[href="/"]'),
+        const firstLink = document.querySelector('nav a[href="/"]'),
               firstIcon = firstLink.querySelector('div:first-child'),
               firstLabel = firstLink.querySelector('div:nth-child(2)')
         navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
