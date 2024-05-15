@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.15.1
+// @version             2024.5.15.2
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/userscripts/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/userscripts/chatgpt/media/icons/openai-favicon64.png
@@ -530,17 +530,13 @@
     async function insertToggle() {
         await chatgpt.history.isLoaded()
 
-        // Select sidebar elems
-        const firstButton = document.querySelector('nav a[href="/"]')
-
         // Insert toggle
-        const parentToInsertInto = firstButton.parentNode.parentNode.parentNode,
-              childToInsertBefore = firstButton.parentNode.parentNode.nextElementSibling
+        const parentToInsertInto = document.querySelector('nav > div:not(.invisible)'),
+              childToInsertBefore = parentToInsertInto.children[1]
         if (!parentToInsertInto.contains(navToggleDiv))
             try { parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore) } catch (err) {}
 
         // Tweak styles
-        firstButton.parentNode.parentNode.style.paddingBottom = '0'
         parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
             chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
         navToggleDiv.style.paddingLeft = '8px'
