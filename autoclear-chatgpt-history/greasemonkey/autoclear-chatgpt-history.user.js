@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.14
+// @version             2024.5.15
 // @license             MIT
 // @icon                https://cdn.jsdelivr.net/gh/adamlui/userscripts/chatgpt/media/icons/openai-favicon48.png
 // @icon64              https://cdn.jsdelivr.net/gh/adamlui/userscripts/chatgpt/media/icons/openai-favicon64.png
@@ -332,12 +332,9 @@
     updateToggleHTML() // create children
 
     // Borrow CLASSES from sidebar div
-    const chatHistorySelector = 'nav[aria-label="Chat history"]',
-          re_firstBtnText = /ChatGPT(ChatGPT|New)/
     chatgpt.history.isLoaded().then(setTimeout(() => { 
-        const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
-              navLinks = chatHistoryNav.querySelectorAll('a'),
-              firstLink = [...navLinks].find(link => re_firstBtnText.test(link.textContent)),
+        const navLinks = document.querySelectorAll('nav a'),
+              firstLink = document.querySelector('nav a[href="/"]'),
               firstIcon = firstLink.querySelector('div:first-child'),
               firstLabel = firstLink.querySelector('div:nth-child(2)')
         navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
@@ -535,9 +532,7 @@
         await chatgpt.history.isLoaded()
 
         // Select sidebar elems
-        const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
-              navButtons = chatHistoryNav.querySelectorAll('a'),
-              firstButton = [...navButtons].find(button => re_firstBtnText.test(button.textContent))
+        const firstButton = document.querySelector('nav a[href="/"]')
 
         // Insert toggle
         const parentToInsertInto = firstButton.parentNode.parentNode.parentNode,
