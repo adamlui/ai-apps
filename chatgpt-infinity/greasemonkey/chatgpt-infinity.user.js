@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.14
+// @version             2024.5.15
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -229,8 +229,8 @@
 // @noframes
 // @downloadURL         https://update.greasyfork.org/scripts/465051/chatgpt-infinity.user.js
 // @updateURL           https://update.greasyfork.org/scripts/465051/chatgpt-infinity.meta.js
-// @homepageURL         https://chatgptinfinity.com
-// @supportURL          https://chatgptinfinity.com/support
+// @homepageURL         https://www.chatgptinfinity.com
+// @supportURL          https://support.chatgptinfinity.com
 // ==/UserScript==
 
 // Documentation: https://docs.chatgptinfinity.com
@@ -246,7 +246,7 @@
         greasyForkURL: 'https://greasyfork.org/scripts/465051-chatgpt-infinity' }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
-    config.supportURL = config.gitHubURL + '/issues/new'
+    config.supportURL = 'https://support.chatgptinfinity.com'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@fafec3e/'
     loadSetting('autoScrollDisabled', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
