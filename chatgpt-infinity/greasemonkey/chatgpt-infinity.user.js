@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.15.2
+// @version             2024.5.15.3
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -584,9 +584,6 @@
     async function insertToggle() {
         await chatgpt.history.isLoaded()
 
-        // Select sidebar elems
-        const firstButton = document.querySelector('nav a[href="/"]')
-
         // Insert toggle
         const parentToInsertInto = document.querySelector('nav > div:not(.invisible)'),
               childToInsertBefore = parentToInsertInto.children[1]
@@ -594,7 +591,6 @@
             try { parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore) } catch (err) {}
 
         // Tweak styles
-        firstButton.parentNode.parentNode.style.paddingBottom = '0'
         parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
             chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
         navToggleDiv.style.paddingLeft = '8px'

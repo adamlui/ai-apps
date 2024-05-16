@@ -115,9 +115,6 @@
     async function insertToggle() {
         await chatgpt.history.isLoaded()
 
-        // Select sidebar elems
-        const firstButton = document.querySelector('nav a[href="/"]')
-
         // Insert toggle
         const parentToInsertInto = document.querySelector('nav > div:not(.invisible)'),
               childToInsertBefore = parentToInsertInto.children[1]
@@ -125,7 +122,6 @@
             try { parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore) } catch (err) {}
 
         // Tweak styles
-        firstButton.parentNode.parentNode.style.paddingBottom = '0'
         parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
             chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
         navToggleDiv.style.paddingLeft = '8px'
