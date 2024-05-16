@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.16
+// @version             2024.5.16.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -333,16 +333,18 @@
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
-        // Add command to toggle wider chatbox with widescreen mode
-        const wcbLabel = '↔️ ' + ( msgs.menuLabel_widerChatbox || 'Wider Chatbox' )
-                       + state.separator + state.word[+!config.widerChatbox]
-        menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
-            saveSetting('widerChatbox', !config.widerChatbox)
-            updateWidescreenStyle()
-            if (!config.notifDisabled)
-                notify(`${ msgs.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ state.word[+!config.widerChatbox] }`)
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
+        // Add command to toggle wider chatbox w/ widescreen mode in Poe
+        if (site == 'poe') {
+            const wcbLabel = '↔️ ' + ( msgs.menuLabel_widerChatbox || 'Wider Chatbox' )
+                           + state.separator + state.word[+!config.widerChatbox]
+            menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
+                saveSetting('widerChatbox', !config.widerChatbox)
+                updateWidescreenStyle()
+                if (!config.notifDisabled)
+                    notify(`${ msgs.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ state.word[+!config.widerChatbox] }`)
+                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            }))
+        }
 
         // Add command to hide New Chat button
         const hncLabel = state.symbol[+config.ncbDisabled] + ' '

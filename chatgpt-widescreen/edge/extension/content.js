@@ -6,6 +6,9 @@
 (async () => {
     /* global newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn */
 
+    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2],
+          isGPT4oUI = !!document.documentElement.className.includes(' ')
+
     // Import libs
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
@@ -26,7 +29,6 @@
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     // Selectively disable content or user script
-    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2]
     if (!/chatgpt|openai|poe/.test(site)) return
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
@@ -40,18 +42,17 @@
                           : site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]' : '',
           sidepadSelector = '#__next > div > div',
           headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : '',
-          footerSelector = /chatgpt|openai/.test(site) ? 'main form ~ div' : '',
-          chatbarSelector = /chatgpt|openai/.test(site) ? 'div[class*="textarea:focus"'
-                          : site == 'poe' ? 'div[class*="ChatMessageInputContainer"]' : ''
+          footerSelector = /chatgpt|openai/.test(site) ? 'main form ~ div' : ''
 
     // Save full-window + full screen states
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : settings.load('fullWindow')
     config.fullScreen = chatgpt.isFullScreen()
 
-    // Collect button classes
-    const sendBtnSelector = /chatgpt|openai/.test(site) ? 'form button[class*="bottom"]' : null,
-          sendBtnClasses = document.querySelector(sendBtnSelector)?.classList || [],
-          sendImgClasses = document.querySelector('form button[class*="bottom"] svg')?.classList || []
+    // Collect send button classes
+    const sendBtn = document.querySelector('[data-testid="send-button"]') // pre-GPT-4o
+                 || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
+    const sendBtnClasses = sendBtn?.classList || [],
+          sendSVGclasses = sendBtn?.querySelector('svg')?.classList || []
 
     // Create/stylize tooltip div
     const tooltipDiv = document.createElement('div')
@@ -92,26 +93,24 @@
 
     // Create/insert chatbar buttons
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
-          rOffset = 3, bOffset = 1.77
+          bOffset = isGPT4oUI ? -0.8 : site == 'poe' ? -0.3 : 2,
+          rOffset = isGPT4oUI ? -0.2 : site == 'poe' ? -0.34 : 3.25
     let btnColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
             const buttonName = buttonType + 'Btn'
             window[buttonName] = document.createElement('div') // create button
             window[buttonName].id = buttonType + '-button' // for toggleTooltip()
-            updateBtnSVG(buttonType); // insert icon
+            updateBtnSVG(buttonType) // insert icon
             window[buttonName].style.cssText = `right: ${ rOffset + i * bOffset }rem` // position left of prev button
-            window[buttonName].style.cursor = 'pointer' // add finger cursor // 添加鼠标手势为手指
-            if (site != 'poe') // assign borrowed classes
+            window[buttonName].style.cursor = 'pointer' // add finger cursor
+            if (isGPT4oUI || site == 'poe') window[buttonName].style.position = 'relative' // override static pos
+            if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
                 window[buttonName].setAttribute('class', sendBtnClasses)
-            else if (site == 'poe') // lift buttons slightly
-                window[buttonName].style.marginBottom = ( buttonType == 'newChat' ? '0.45' : '0.2' ) + 'rem'
-            if (/chatgpt|openai/.test(site)) { // style tweaks for OpenAI Gizmo UI
                 window[buttonName].style.backgroundColor = 'transparent' // remove dark mode overlay
                 window[buttonName].style.borderColor = 'transparent' // remove dark mode overlay
-                window[buttonName].querySelector('svg').setAttribute('width', 18) // fix disappearing width in dark mode
-                window[buttonName].style.bottom = '0.91rem' // nudge up for flushness w/ send button
-            }
+            } else if (site == 'poe') // lift buttons slightly
+                window[buttonName].style.marginBottom = ( buttonType == 'newChat' ? '0.45' : '0.2' ) + 'rem'
 
             // Add click/hover listeners
             window[buttonName].addEventListener('click', () => {
@@ -156,11 +155,17 @@
     }}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Monitor chatbar/page scheme changes to update button colors
+    let chatbar = document.querySelector('textarea')
+    for (let i = 0 ; i < ( isGPT4oUI ? 3 : 1 ) ; i++) { chatbar = chatbar.parentNode }
     const schemeObserver = new MutationObserver(([mutation]) => {
         if (mutation.type == 'attributes' && mutation.attributeName == 'class') {
-            btnColor = setBtnColor()
-            ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'].forEach(updateBtnSVG)
+            btnColor = setBtnColor() // init new color
+            chatbar.style.overflow = 'visible' // allow tooltips to overflow pre-GPT4o UI
+            console.log('btnColor is: ' + btnColor)
+            const buttons = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'];
+            buttons.forEach(btn => updateBtnSVG(btn));
     }})
+    schemeObserver.observe(chatbar, { attributes: true })
     schemeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
     schemeObserver.observe(document.querySelector('textarea'), { attributes: true }) // chatbar for temp chat toggles
 
@@ -216,15 +221,26 @@
     // Define BUTTON functions
 
     function setBtnColor() { return (
-        /chatgpt|openai/.test(site) ? ( chatgpt.isDarkMode() || document.querySelector('[class*="white shadow"]') ? 'white' : '#202123' )
+        /chatgpt|openai/.test(site) ? (
+            document.querySelector('.dark.bg-black, [class*="dark:bg-gray"]') // temp chat post-GPT4-o, pre-GPT-4o
+         || chatgpt.isDarkMode() ? 'white' : '#202123' )
       : site == 'poe' ? 'currentColor' : ''
     )}
 
     function insertBtns() {
-        const chatbar = document.querySelector(chatbarSelector)
+
+        // ID chatbar
+        let chatbar
+        if (/chatgpt|openai/.test(site)) {
+            chatbar = document.querySelector('div[class*="textarea:focus"]') // pre-5/2024
+                   || document.querySelector('#prompt-textarea').parentNode.parentNode // post-5/2024
+        } else if (site == 'poe') chatbar = document.querySelector('div[class*="ChatMessageInputContainer"]')
+
+        // Insert buttons
         if (chatbar.contains(wideScreenBtn)) return // if buttons aren't missing, exit
         const elemsToInsert = [newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn, tooltipDiv],
-              leftMostBtn = chatbar.querySelector('button' + ( site != 'poe' ? '[class*="right"]' : ''))
+              leftMostBtn = chatbar.querySelector('button[class*="right"]') // ChatGPT pre-5/2024
+                         || chatbar.querySelector('button') // ChatGPT post-5/2024 + Poe
         if (/chatgpt|openai/.test(site)) // allow tooltips to overflow
             chatbar.classList.remove('overflow-hidden')
         else if (site == 'poe') // elevate nested non-send button to chatbar
@@ -233,7 +249,6 @@
     }
 
     function removeBtns() {
-        const chatbar = document.querySelector(chatbarSelector)
         if (!chatbar.contains(fullWindowBtn)) return // if buttons are missing, exit
         else { // remove chat toggles
             const nodesToRemove = [newChatBtn, fullWindowBtn, wideScreenBtn, fullScreenBtn, tooltipDiv]
@@ -278,17 +293,18 @@
 
         // Set SVG attributes
         const buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-        buttonSVG.setAttribute('height', 18) // prevent shrinking   
+        buttonSVG.setAttribute('height', 18) // prevent shrinking
         if (mode == 'fullWindow') { // stylize full-window button
             buttonSVG.setAttribute('stroke', btnColor)
             buttonSVG.setAttribute('fill', 'none')
             buttonSVG.setAttribute('stroke-width', '2')
-            buttonSVG.setAttribute('height', site == 'poe' ? '2em' : 18)
-            buttonSVG.setAttribute('width', site == 'poe' ? '2em' : 18)
+            buttonSVG.setAttribute('height', site == 'poe' ? '2em' : 17)
+            buttonSVG.setAttribute('width', site == 'poe' ? '2em' : 17)
         }
-        buttonSVG.setAttribute('class', sendImgClasses) // assign borrowed classes
-        buttonSVG.setAttribute( // center oerlay + prevent triggering tooltips twice
-            'style', `margin: 0 ${ rMargin }rem 0 ${ lMargin }rem ; pointer-events: none`)
+        buttonSVG.setAttribute('class', sendSVGclasses) // assign borrowed classes
+        buttonSVG.setAttribute( // center overlay + prevent triggering tooltips twice
+            'style', `margin: 0 ${ rMargin }rem 0 ${ lMargin }rem ; pointer-events: none ;`
+          + ( isGPT4oUI ? 'height: 25px ; width: 25px' : '' ))
         buttonSVG.setAttribute('viewBox', svgViewBox) // set pre-tweaked viewbox
 
         // Update SVG elements
@@ -316,7 +332,8 @@
     function updateTooltip(buttonType) { // text & position
         tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON')))
-        const ctrAddend = 25 + ( site == 'poe' ? 42 : 0 ), spreadFactor = site == 'poe' ? 42 : 30,
+        const ctrAddend = 25 + ( isGPT4oUI ? 11 : site == 'poe' ? 47 : 14 ),
+              spreadFactor = isGPT4oUI ? 37 : site == 'poe' ? 37 : 32,
               iniRoffset = spreadFactor * ( buttonType.includes('fullScreen') ? 1
                                           : buttonType.includes('fullWindow') ? 2
                                           : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
@@ -388,8 +405,10 @@
 
     function updateTweaksStyle() {
         tweaksStyle.innerText = (
-              /chatgpt|openai/.test(site) ? (
-                  inputSelector + `{ padding-right: ${ config.ncbDisabled ? 126 : 152 }px }` // narrow input to accomodate btns
+            /chatgpt|openai/.test(site) ? (
+                  ( inputSelector + ( // widen/narrow input to be flush w/ btns
+                        isGPT4oUI ? '{ margin-right: -48px }'
+                                  : `{ padding-right: ${ config.ncbDisabled ? 154 : 180 }px }` ))
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) : '' ) // hide footer
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
