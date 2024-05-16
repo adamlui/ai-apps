@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.15.4
+// @version             2024.5.15.5
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png
@@ -253,8 +253,8 @@
 // @noframes
 // @downloadURL         https://update.greasyfork.org/scripts/460805/autoclear-chatgpt-history.user.js
 // @updateURL           https://update.greasyfork.org/scripts/460805/autoclear-chatgpt-history.meta.js
-// @homepageURL         https://github.com/adamlui/autoclear-chatgpt-history
-// @supportURL          https://github.com/adamlui/autoclear-chatgpt-history/issues
+// @homepageURL         https://www.autoclearchatgpt.com
+// @supportURL          https://support.autoclearchatgpt.com
 // ==/UserScript==
 
 // Documentation: https://docs.autoclearchatgpt.com
@@ -270,7 +270,7 @@
         greasyForkURL: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history' }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
-    config.supportURL = config.gitHubURL + '/issues/new'
+    config.supportURL = 'https://support.autoclearchatgpt.com'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@16d188e/'
     loadSetting('autoclear', 'buttonHidden', 'notifDisabled', 'toggleHidden')
 
