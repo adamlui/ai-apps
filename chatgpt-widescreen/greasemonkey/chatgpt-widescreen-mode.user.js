@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.16.1
+// @version             2024.5.16.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -558,7 +558,7 @@
             createSVGelem('path', { fill: btnColor, d: 'm24,24 -4,0 0,2 L 26,26 l 0,-6 -2,0 0,4 0,0 z' }),
             createSVGelem('path', { fill: btnColor, d: 'M 12,20 10,20 10,26 l 6,0 0,-2 -4,0 0,-4 0,0 z' }) ]
         const fullWindowElems = [
-            createSVGelem('rect', { x: '3', y: '3', width: '18', height: '18', rx: '2', ry: '2' }),
+            createSVGelem('rect', { x: '3', y: '3', width: '17', height: '17', rx: '2', ry: '2' }),
             createSVGelem('line', { x1: '9', y1: '3', x2: '9', y2: '21' }) ]
         const wideScreenONelems = [
             createSVGelem('path', { fill: btnColor, 'fill-rule': 'evenodd',
