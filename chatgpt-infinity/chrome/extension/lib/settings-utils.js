@@ -1,7 +1,7 @@
 const config = {
     appSymbol: '∞', keyPrefix: 'chatGPTinfinity',
     gitHubURL: 'https://github.com/adamlui/chatgpt-infinity' }
-config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '/'
+config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@5153489/'
 
 const settings = {
 
