@@ -58,12 +58,8 @@
     updateToggleHTML() // create children
 
     // Borrow classes from sidebar div
-    const chatHistorySelector = 'nav[aria-label="Chat history"]',
-          re_firstBtnText = /ChatGPT(ChatGPT|New)/
     chatgpt.history.isLoaded().then(setTimeout(() => { 
-        const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
-              navLinks = chatHistoryNav.querySelectorAll('a'),
-              firstLink = [...navLinks].find(link => re_firstBtnText.test(link.textContent)),
+        const firstLink = document.querySelector('nav a[href="/"]'),
               firstIcon = firstLink.querySelector('div:first-child'),
               firstLabel = firstLink.querySelector('div:nth-child(2)')
         navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
@@ -120,13 +116,11 @@
         await chatgpt.history.isLoaded()
 
         // Select sidebar elems
-        const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
-              navButtons = chatHistoryNav.querySelectorAll('a'),
-              firstButton = [...navButtons].find(button => re_firstBtnText.test(button.textContent))
+        const firstButton = document.querySelector('nav a[href="/"]')
 
         // Insert toggle
-        const parentToInsertInto = firstButton.parentNode.parentNode.parentNode,
-              childToInsertBefore = firstButton.parentNode.parentNode.nextElementSibling
+        const parentToInsertInto = document.querySelector('nav > div:not(.invisible)'),
+              childToInsertBefore = parentToInsertInto.children[1]
         if (!parentToInsertInto.contains(navToggleDiv))
             try { parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore) } catch (err) {}
 

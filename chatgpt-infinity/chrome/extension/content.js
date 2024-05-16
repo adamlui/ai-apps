@@ -119,8 +119,8 @@
         const firstButton = document.querySelector('nav a[href="/"]')
 
         // Insert toggle
-        const parentToInsertInto = firstButton.parentNode.parentNode.parentNode,
-              childToInsertBefore = firstButton.parentNode.parentNode.nextElementSibling
+        const parentToInsertInto = document.querySelector('nav > div:not(.invisible)'),
+              childToInsertBefore = parentToInsertInto.children[1]
         if (!parentToInsertInto.contains(navToggleDiv))
             try { parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore) } catch (err) {}
 

@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.15.1
+// @version             2024.5.15.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -588,8 +588,8 @@
         const firstButton = document.querySelector('nav a[href="/"]')
 
         // Insert toggle
-        const parentToInsertInto = firstButton.parentNode.parentNode.parentNode,
-              childToInsertBefore = firstButton.parentNode.parentNode.nextElementSibling
+        const parentToInsertInto = document.querySelector('nav > div:not(.invisible)'),
+              childToInsertBefore = parentToInsertInto.children[1]
         if (!parentToInsertInto.contains(navToggleDiv))
             try { parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore) } catch (err) {}
 
