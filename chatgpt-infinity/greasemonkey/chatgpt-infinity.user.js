@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.15
+// @version             2024.5.15.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -324,12 +324,8 @@
     updateToggleHTML() // create children
 
     // Borrow classes from sidebar div
-    const chatHistorySelector = 'nav[aria-label="Chat history"]',
-          re_firstBtnText = /ChatGPT(ChatGPT|New)/
     chatgpt.history.isLoaded().then(setTimeout(() => { 
-        const chatHistoryNav = document.querySelector(chatHistorySelector) || {},
-              navLinks = chatHistoryNav.querySelectorAll('a'),
-              firstLink = [...navLinks].find(link => re_firstBtnText.test(link.textContent)),
+        const firstLink = document.querySelector('nav a[href="/"]'),
               firstIcon = firstLink.querySelector('div:first-child'),
               firstLabel = firstLink.querySelector('div:nth-child(2)')
         navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
@@ -589,9 +585,7 @@
         await chatgpt.history.isLoaded()
 
         // Select sidebar elems
-        const chatHistoryNav = document.querySelector('nav[aria-label="Chat history"]') || {},
-              navButtons = chatHistoryNav.querySelectorAll('a'),
-              firstButton = [...navButtons].find(button => re_firstBtnText.test(button.textContent))
+        const firstButton = document.querySelector('nav a[href="/"]')
 
         // Insert toggle
         const parentToInsertInto = firstButton.parentNode.parentNode.parentNode,
