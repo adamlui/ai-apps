@@ -238,7 +238,7 @@
 // @match               *://poe.com/*
 // @icon                https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon48.png
 // @icon64              https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon64.png
-// @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.7.1/dist/chatgpt.min.js#sha256-zllbMzfHw6JSOq+A7od7mubiVsZPybZSHJpE+syw6mk=
+// @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.8.0/dist/chatgpt.min.js#sha256-mE9RqF5F//SpHlpmda3FgvxI0IpoF1lVY3kI2egLh2A=
 // @connect             cdn.jsdelivr.net
 // @connect             greasyfork.org
 // @grant               GM_setValue

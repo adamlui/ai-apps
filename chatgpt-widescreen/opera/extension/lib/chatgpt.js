@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.6.10
+// This library is a condensed version of chatgpt.js v2.8.0
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -241,15 +241,22 @@ const chatgpt = {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
 
+    getNewChatButton: function() {
+        for (const navBtnSVG of document.querySelectorAll('nav button svg'))
+            if (navBtnSVG.querySelector('path[d*="M15.673 3.913a3.121"]')) // new chat icon found
+                return navBtnSVG.parentNode;
+    },
+
     isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
     isFullScreen: function() { return chatgpt.browser.isFullScreen(); },
 
     isLoaded: function() {
         return new Promise(resolve => {
-            const intervalId = setInterval(() => {
-                if (document.querySelector('nav button[id*="menu"]')) {
-                    clearInterval(intervalId); setTimeout(() => { resolve(true); }, 500);
-    }}, 100);});},
+            (function checkIsLoaded() {
+                if (chatgpt.getNewChatButton()) resolve(true);
+                else setTimeout(checkIsLoaded, 100);
+            })();
+    });},
 
     notify: async function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
@@ -423,28 +430,26 @@ const chatgpt = {
         show: function() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
         isOff: function() { return !this.isOn(); },
         isOn: function() {
+            const sidebar = document.querySelector('#__next > div > div');
             return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
-              : document.querySelector('#__next > div > div').style.visibility != 'hidden';
+              : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
         },
 
         toggle: function() {
             const isMobileDevice = chatgpt.browser.isMobile(),
-                  navBtnSelector = isMobileDevice ? '#__next button' : 'main button' ,
+                  isGPT4oUI = !!document.documentElement.className.includes(' '),
+                  navBtnSelector = isMobileDevice ? '#__next button' : isGPT4oUI ? 'nav button' : 'main button',
                   isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
-                              : btn => Array.from(btn.querySelectorAll('*'))
-                                            .some(child => child.style.transform.includes('translateY'));
+                              : isGPT4oUI ? btn => btn.querySelectorAll('svg path[d*="M8.857 3h6.286c1.084"]').length > 0
+                              : /* post-GPT-4o desktop */ btn => [...btn.querySelectorAll('*')]
+                                    .some(child => child.style.transform.includes('translateY'));
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
         }
     },
 
-    startNewChat: function() {
-        for (const navLink of document.querySelectorAll('nav a')) {
-            if (/(new|clear) chat/i.test(navLink.text)) {
-                navLink.click(); return;
-    }}}
-
+    startNewChat: function() { try { this.getNewChatButton().click(); } catch (err) { console.error(err.message); }}
 };
 
 // Prefix console logs w/ '🤖 chatgpt.js >> '
