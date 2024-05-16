@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.15.4
+// @version             2024.5.15.5
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -249,8 +249,8 @@
 // @noframes
 // @downloadURL         https://update.greasyfork.org/scripts/462422/chatgpt-auto-refresh.user.js
 // @updateURL           https://update.greasyfork.org/scripts/462422/chatgpt-auto-refresh.meta.js
-// @homepageURL         https://github.com/adamlui/chatgpt-auto-refresh
-// @supportURL          https://github.com/adamlui/chatgpt-auto-refresh/issues
+// @homepageURL         https://www.chatgptautorefresh.com
+// @supportURL          https://support.chatgptautorefresh.com
 // ==/UserScript==
 
 // Documentation: https://docs.chatgptautorefresh.com
@@ -266,7 +266,7 @@
         greasyForkURL: 'https://greasyfork.chatgptautorefresh.com' }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
-    config.supportURL = config.gitHubURL + '/issues/new'
+    config.supportURL = 'https://support.chatgptautorefresh.com'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@7da042b/'
     loadSetting('arDisabled', 'notifDisabled', 'refreshInterval', 'toggleHidden')
     if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
