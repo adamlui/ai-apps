@@ -226,14 +226,6 @@
                 }, 1) // min delay to trigger transition fx
     }})}
 
-    function sidebarIsLoaded() {
-        return new Promise(resolve => {
-            (function checkIsLoaded() {
-                if (document.querySelector('nav a[href="/"]')) resolve(true)
-                else setTimeout(checkIsLoaded, 100)
-            })()
-    })}
-
     const infinityMode = {
 
         activate: async () => {
