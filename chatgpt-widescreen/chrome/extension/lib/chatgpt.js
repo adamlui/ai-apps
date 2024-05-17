@@ -371,7 +371,7 @@ const chatgpt = {
     randomFloat: function() {
     // * Generates a random, cryptographically secure value between 0 (inclusive) & 1 (exclusive)
         const crypto = window.crypto || window.msCrypto;
-        return crypto.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF;
+        return crypto?.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF || Math.random();
     },
 
     renderHTML: function(node) {
