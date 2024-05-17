@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.16.1
+// @version             2024.5.16.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -594,7 +594,7 @@
         const navicon = document.querySelector('#arToggleFavicon') || document.createElement('img')
         navicon.id = 'arToggleFavicon'
         navicon.style.width = navicon.style.height = '1.25rem'
-        navicon.style.marginLeft = navicon.style.marginRight = '4px'
+        navicon.style.marginLeft = isGPT4oUI ? '2px' : '4px' ; navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
         const toggleInput = document.querySelector('#arToggleInput') || document.createElement('input')

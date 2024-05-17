@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.16.1
+// @version             2024.5.16.2
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png
@@ -557,7 +557,7 @@
         const navicon = document.querySelector('#acToggleFavicon') || document.createElement('img')
         navicon.id = 'acToggleFavicon'
         navicon.style.width = navicon.style.height = '1.25rem'
-        navicon.style.marginLeft = navicon.style.marginRight = '4px'
+        navicon.style.marginLeft = isGPT4oUI ? '2px' : '4px' ; navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
         const toggleInput = document.querySelector('#acToggleInput') || document.createElement('input')

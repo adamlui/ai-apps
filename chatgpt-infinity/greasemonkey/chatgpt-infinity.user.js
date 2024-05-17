@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.16.1
+// @version             2024.5.16.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -611,7 +611,7 @@
         const navicon = document.querySelector('#infToggleFavicon') || document.createElement('img')
         navicon.id = 'infToggleFavicon'
         navicon.style.width = navicon.style.height = '1.25rem'
-        navicon.style.marginLeft = navicon.style.marginRight = '4px'
+        navicon.style.marginLeft = isGPT4oUI ? '2px' : '4px' ; navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
         const toggleInput = document.querySelector('#infToggleInput') || document.createElement('input')
