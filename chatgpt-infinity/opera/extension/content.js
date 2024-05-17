@@ -144,7 +144,7 @@
                 const navicon = document.querySelector('#infToggleFavicon') || document.createElement('img')
                 navicon.id = 'infToggleFavicon'
                 navicon.style.width = navicon.style.height = '1.25rem'
-                navicon.style.marginLeft = navicon.style.marginRight = '4px'
+                navicon.style.marginLeft = isGPT4oUI ? '2px' : '4px' ; navicon.style.marginRight = '4px'
 
                 // Create/ID/disable/hide/update checkbox
                 const toggleInput = document.querySelector('#infToggleInput') || document.createElement('input')
