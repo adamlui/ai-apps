@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.17
+// @version             2024.5.17.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -323,7 +323,7 @@
           isGPT4oUI = !!document.documentElement.className.includes(' ')
 
     // Add/update tweaks style
-    const tweaksStyleUpdated = 20240517 // datestamp of last edit for this file's `tweaksStyle`
+    const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`
     let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
     if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
         if (!tweaksStyle) { // outright missing, create/id/attr/append it first
@@ -337,7 +337,8 @@
               + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
           + '.modal-buttons { margin-left: -13px !important }'
           + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
-          + '.no-click-transform:active, .no-click-transform:focus { transform: none !important }'
+          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar
+              + 'transform: none !important }' // disable distracting click zoom effect
         )
     }
 
@@ -582,7 +583,6 @@
         }
 
         // Tweak styles
-        parentToInsertInto.classList.toggle('no-click-transform', true) // disable distracting zoom effect
         parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
             chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
         navToggleDiv.style.paddingLeft = '8px'
