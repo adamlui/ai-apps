@@ -51,6 +51,24 @@
             if (config.infinityMode) infinityMode.deactivate()
     })}
 
+    // Add/update tweaks style
+    const tweaksStyleUpdated = 20240517 // datestamp of last edit for this file's `tweaksStyle`
+    let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
+    if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
+        if (!tweaksStyle) { // outright missing, create/id/attr/append it first
+            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
+            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
+            document.head.append(tweaksStyle)
+        }
+        tweaksStyle.innerText = (
+            '.chatgpt-modal button {'
+              + 'font-size: 0.77rem ; text-transform: uppercase ;'
+              + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+          + '.modal-buttons { margin-left: -13px !important }'
+          + '.no-click-transform:active, .no-click-transform:focus { transform: none !important }'
+        )
+    }
+
     // Create nav toggle div, add styles
     const navToggleDiv = document.createElement('div')
     navToggleDiv.style.maxHeight = '44px' // prevent flex overgrowth
@@ -126,6 +144,7 @@
         }
 
         // Tweak styles
+        parentToInsertInto.classList.toggle('no-click-transform', true) // disable distracting zoom effect
         parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
             chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
         navToggleDiv.style.paddingLeft = '8px'
