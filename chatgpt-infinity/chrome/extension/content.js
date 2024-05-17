@@ -82,7 +82,7 @@
     updateToggleHTML() // create children
 
     // Insert sidebar toggle
-    await sidebarIsLoaded()
+    await chatgpt.sidebar.isLoaded()
     settings.load(['extensionDisabled']).then(() => {
         if (!config.extensionDisabled) insertToggle() })
 

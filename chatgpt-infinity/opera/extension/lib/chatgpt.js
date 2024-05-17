@@ -93,7 +93,7 @@ const chatgpt = {
 
         // Insert text into elements
         modalTitle.innerText = title || '';
-        modalMessage.innerText = msg || ''; this.renderHTML(modalMessage);
+        modalMessage.innerText = msg || ''; chatgpt.renderHTML(modalMessage);
 
         // Create/append buttons (if provided) to buttons div
         const modalButtons = document.createElement('div');
@@ -248,6 +248,17 @@ const chatgpt = {
 
     getScrollToBottomButton: function() { return document.querySelector('button[class*="cursor"][class*="bottom"]'); },
 
+    getSendButton: function() {
+        return document.querySelector('[data-testid="send-button"]') // pre-GPT-4o
+            || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
+    },
+
+    getStopGeneratingButton: function() {
+        for (const svg of document.querySelectorAll('form button svg')) {
+            if (svg.querySelector('path[d*="2 0 0 1 2"], rect'))
+                return svg.parentNode;
+    }},
+
     history: {
         isLoaded: function() {
             return new Promise(resolve => {
@@ -262,10 +273,11 @@ const chatgpt = {
 
     isIdle: function() {
         return new Promise(resolve => {
-            const intervalId = setInterval(() => {
-                if (chatgpt.getRegenerateButton()) {
-                    clearInterval(intervalId); resolve(true);
-    }}, 100);});},
+            (function checkIsIdle() {
+                if (chatgpt.getRegenerateButton()) resolve(true);
+                else setTimeout(checkIsIdle, 100);
+            })();
+    });},
 
     isLoaded: function() {
         return new Promise(resolve => {
@@ -397,9 +409,9 @@ const chatgpt = {
               nodeContent = node.childNodes;
 
         // Preserve consecutive spaces + line breaks
-        if (!this.renderHTML.preWrapSet) {
-            node.style.whiteSpace = 'pre-wrap'; this.renderHTML.preWrapSet = true;
-            setTimeout(() => { this.renderHTML.preWrapSet = false; }, 100);
+        if (!chatgpt.renderHTML.preWrapSet) {
+            node.style.whiteSpace = 'pre-wrap'; chatgpt.renderHTML.preWrapSet = true;
+            setTimeout(() => { chatgpt.renderHTML.preWrapSet = false; }, 100);
         }
 
         // Process child nodes
@@ -423,7 +435,7 @@ const chatgpt = {
                         tagNode.setAttribute(name, value);
                     });
 
-                    const renderedNode = this.renderHTML(tagNode); // render child elements of newly created node
+                    const renderedNode = chatgpt.renderHTML(tagNode); // render child elements of newly created node
 
                     // Insert newly rendered node
                     const beforeTextNode = document.createTextNode(text.substring(0, elem.index)),
@@ -436,39 +448,28 @@ const chatgpt = {
                 }
 
             // Process element nodes recursively
-            } else if (childNode.nodeType == Node.ELEMENT_NODE) this.renderHTML(childNode);
+            } else if (childNode.nodeType == Node.ELEMENT_NODE) chatgpt.renderHTML(childNode);
         }
 
         return node; // if assignment used
     },
 
-    response: {
-        stopGenerating: function() {
-            for (const svg of document.querySelectorAll('form button svg')) {
-                if (svg.querySelector('path[d*="2 0 0 1 2"]')) {
-                    svg.parentNode.click(); return;
-        }}}
-    },
-
-    scrollToBottom: function() {
-        const scrollBtn = chatgpt.getScrollToBottomButton();
-        if (scrollBtn) scrollBtn.click();
-        else console.error('Scroll button not found!');
-    },
+    response: { stopGenerating: function() { try { chatgpt.getStopBtn().click(); } catch (err) { console.error(err.message); }}},
+    scrollToBottom: function() { try { chatgpt.getScrollBtn().click(); } catch (err) { console.error(err.message); }},
 
     send: function(msg, method='') {
         for (let i = 0; i < arguments.length; i++) if (typeof arguments[i] !== 'string')
             return console.error(`Argument ${ i + 1 } must be a string!`);
         const textArea = document.querySelector('form textarea'),
-              sendButton = document.querySelector('form button[class*="bottom"]');
+              sendBtn = chatgpt.getSendButton();
         textArea.value = msg;
         textArea.dispatchEvent(new Event('input', { bubbles: true })); // enable send button
-        const delaySend = setInterval(() => {
-            if (!sendButton?.hasAttribute('disabled')) { // send msg
-                method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendButton.click()
+
+        setTimeout(function delaySend() {
+            if (!sendBtn?.hasAttribute('disabled')) { // send msg
+                method.toLowerCase() == 'click' || chatgpt.browser.isMobile() ? sendBtn.click()
                     : textArea.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13, bubbles: true }));
-                clearInterval(delaySend);
-            }
+            } else setTimeout(delaySend, 25);
         }, 25);
     },
 
@@ -493,13 +494,122 @@ const chatgpt = {
                                     .some(child => child.style.transform.includes('translateY'));
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
-        }
+        },
+
+        isLoaded: function() {
+            return new Promise(resolve => {
+                (function checkIsLoaded() {
+                    if (document.querySelector('nav a[href="/"]')) resolve(true);
+                    else setTimeout(checkIsLoaded, 100);
+                })();
+        });}
     },
 
-    startNewChat: function() { try { this.getNewChatButton().click(); } catch (err) { console.error(err.message); }},
-    stop: function() { this.response.stopGenerating(); }
+    startNewChat: function() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
+    stop: function() { chatgpt.response.stopGenerating(); }
 
 };
+
+// Create alias functions
+const funcAliases = [
+    ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
+    ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
+        'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
+    ['continue', 'continueChat', 'continueGenerating', 'continueResponse'],
+    ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
+    ['detectLanguage', 'getLanguage'],
+    ['executeCode', 'codeExecute'],
+    ['exportChat', 'chatExport', 'export'],
+    ['getFooterDiv', 'getFooter'],
+    ['getHeaderDiv', 'getHeader'],
+    ['getLastPrompt', 'getLastQuery', 'getMyLastMsg', 'getMyLastQuery'],
+    ['getContinueGeneratingButton', 'getContinueButton'],
+    ['getScrollToBottomButton', 'getScrollButton'],
+    ['getStopGeneratingButton', 'getStopButton'],
+    ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
+    ['isFullScreen', 'isFullscreen', 'isfullscreen'],
+    ['isLoaded', 'isloaded'],
+    ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
+    ['minify', 'codeMinify', 'minifyCode'],
+    ['new', 'newChat', 'startNewChat'],
+    ['obfuscate', 'codeObfuscate', 'obfuscateCode'],
+    ['printAllFunctions', 'showAllFunctions'],
+    ['refactor', 'codeRefactor', 'refactorCode'],
+    ['refreshReply', 'regenerate', 'regenerateReply'],
+    ['refreshSession', 'sessionRefresh'],
+    ['renderHTML', 'renderHtml', 'renderLinks', 'renderTags'],
+    ['reviewCode', 'codeReview'],
+    ['send', 'sendChat', 'sendMsg'],
+    ['sendInNewChat', 'sendNewChat'],
+    ['sentiment', 'analyzeSentiment', 'sentimentAnalysis'],
+    ['startNewChat', 'new', 'newChat'],
+    ['stop', 'stopChat', 'stopGenerating', 'stopResponse'],
+    ['suggest', 'suggestion', 'recommend'],
+    ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
+    ['toggleScheme', 'toggleMode'],
+    ['translate', 'translation', 'translator'],
+    ['unminify', 'unminifyCode', 'codeUnminify'],
+    ['writeCode', 'codeWrite']
+];
+const synonyms = [
+    ['account', 'acct'],
+    ['activate', 'turnOn'],
+    ['analyze', 'check', 'evaluate', 'review'],
+    ['ask', 'send', 'submit'],
+    ['button', 'btn'],
+    ['continue', 'resume'],
+    ['chats', 'history'],
+    ['chat', 'conversation', 'convo'],
+    ['clear', 'delete', 'remove'],
+    ['data', 'details'],
+    ['deactivate', 'deActivate', 'turnOff'],
+    ['execute', 'interpret', 'interpreter', 'run'],
+    ['generating', 'generation'],
+    ['minify', 'uglify'],
+    ['refactor', 'rewrite'],
+    ['regenerate', 'regen'],
+    ['render', 'parse'],
+    ['reply', 'response'],
+    ['sentiment', 'attitude', 'emotion', 'feeling', 'opinion', 'perception'],
+    ['speak', 'say', 'speech', 'talk', 'tts'],
+    ['summarize', 'tldr'],
+    ['unminify', 'beautify', 'prettify', 'prettyPrint']
+];
+const camelCaser = (words) => {
+    return words.map((word, index) => index === 0 || word == 's' ? word : word.charAt(0).toUpperCase() + word.slice(1)).join(''); };
+for (const prop in chatgpt) {
+
+    // Create new function for each alias
+    for (const subAliases of funcAliases) {
+        if (subAliases.includes(prop)) {
+            if (subAliases.some(element => element.includes('.'))) {
+                const nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
+                for (const nestAlias of subAliases) {
+                    if (/^(\w+)/.exec(nestAlias)[1] !== prop) { // don't alias og function
+                        chatgpt[nestAlias] = chatgpt[prop][nestedFunction]; // make new function, reference og one
+            }}} else { // alias direct functions
+                for (const dirAlias of subAliases) {
+                    if (dirAlias !== prop) { // don't alias og function
+                        chatgpt[dirAlias] = chatgpt[prop]; // make new function, reference og one
+            }}}
+    }}
+
+    do { // create new function per synonym per word per function
+        var newFunctionsCreated = false;
+        for (const funcName in chatgpt) {
+            if (typeof chatgpt[funcName] == 'function') {
+                const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
+                for (const funcWord of funcWords) {
+                    const synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
+                        .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
+                        .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
+                    for (const synonym of synonymValues) { // create function per synonym
+                        const newFuncName = camelCaser(funcWords.map(word => (word == funcWord ? synonym : word)));
+                        if (!chatgpt[newFuncName]) { // don't alias existing functions
+                            chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
+                            newFunctionsCreated = true;
+    }}}}}} while (newFunctionsCreated); // loop over new functions to encompass all variations
+}
 
 // Prefix console logs w/ '🤖 chatgpt.js >> '
 const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info;

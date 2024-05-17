@@ -48,8 +48,11 @@
     // Add listener to auto-disable Infinity Mode
     if (document.hidden !== undefined) { // ...if Page Visibility API supported
         document.addEventListener('visibilitychange', () => {
-            if (config.infinityMode) infinityMode.deactivate()
-    })}
+            if (config.infinityMode) {                
+                if (document.querySelector('#infToggleLabel')) // ensure toggle state is accurate
+                    document.querySelector('#infToggleLabel').click()
+                else infinityMode.deactivate()
+    }})}
 
     // Add/update tweaks style
     const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`
@@ -79,7 +82,7 @@
     updateToggleHTML() // create children
 
     // Insert sidebar toggle
-    await sidebarIsLoaded()
+    await chatgpt.sidebar.isLoaded()
     settings.load(['extensionDisabled']).then(() => {
         if (!config.extensionDisabled) insertToggle() })
 

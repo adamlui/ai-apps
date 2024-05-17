@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.17.4
+// @version             2024.5.17.5
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -278,7 +278,7 @@
     }) ; if (!/^en/.test(config.userLanguage)) try { msgs = await msgsLoaded; } catch (err) {}
 
     // Create browser toolbar menu or disable script if extension installed
-    await sidebarIsLoaded() // to let Chromium extension flag inject first
+    await chatgpt.sidebar.isLoaded() // to let Chromium extension flag inject first
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
@@ -674,14 +674,6 @@
             }
         }, 1) // min delay to trigger transition fx
     }
-
-    function sidebarIsLoaded() {
-        return new Promise(resolve => {
-            (function checkIsLoaded() {
-                if (document.querySelector('nav a[href="/"]')) resolve(true)
-                else setTimeout(checkIsLoaded, 100)
-            })()
-    })}
 
     const infinityMode = {
 
