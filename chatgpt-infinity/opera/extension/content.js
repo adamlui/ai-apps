@@ -41,7 +41,9 @@
         if (!config.replyInterval) settings.save('replyInterval', 7) // init refresh interval to 7 secs if unset
     })
 
+    // Init UI flag
     await chatgpt.isLoaded()
+    const isGPT4oUI = !!document.documentElement.className.includes(' ')
 
     // Add listener to auto-disable Infinity Mode
     if (document.hidden !== undefined) { // ...if Page Visibility API supported
@@ -57,14 +59,17 @@
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
     updateToggleHTML() // create children
 
-    // Borrow classes from sidebar div
-    chatgpt.history.isLoaded().then(setTimeout(() => { 
-        const firstLink = document.querySelector('nav a[href="/"]'),
-              firstIcon = firstLink.querySelector('div:first-child'),
-              firstLabel = firstLink.querySelector('div:nth-child(2)')
-        navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
-        navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
-    }, 100))
+    // Insert sidebar toggle
+    await sidebarIsLoaded()
+    settings.load(['extensionDisabled']).then(() => {
+        if (!config.extensionDisabled) insertToggle() })
+
+    // Borrow/assign classes from sidebar div
+    const firstLink = document.querySelector('nav a[href="/"]')
+    const firstIcon = firstLink?.querySelector('div:first-child'),
+          firstLabel = firstLink?.querySelector('div:nth-child(2)')
+    navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
+    navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
 
     // Add listener to toggle switch/label/config/menu
     navToggleDiv.addEventListener('click', () => {
@@ -75,11 +80,7 @@
         infinityMode.toggle()
     })
 
-    // Insert full toggle on page load
-    settings.load(['extensionDisabled']).then(() => {
-        if (!config.extensionDisabled) insertToggle() })
-
-    // Monitor node changes to update toggle visibility
+    // Monitor node changes to update sidebar toggle visibility
     const nodeObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             if (mutation.type == 'childList' && mutation.addedNodes.length) {
@@ -110,14 +111,16 @@
                     + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!')
     }}
 
-    // Define TOGGLE functions
+    // Define UI functions
 
     async function insertToggle() {
         await chatgpt.history.isLoaded()
 
         // Insert toggle
-        const parentToInsertInto = document.querySelector('nav > div:not(.invisible)'),
-              childToInsertBefore = parentToInsertInto.children[1]
+        const parentToInsertInto = document.querySelector('nav '
+            + ( isGPT4oUI ? '.sticky div' // new chat div
+                          : '> div:not(.invisible)' )) // upper nav div
+        const childToInsertBefore = parentToInsertInto.children[1 - ( isGPT4oUI ? 1 : 0 )]
         if (!parentToInsertInto.contains(navToggleDiv))
             try { parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore) } catch (err) {}
 
@@ -152,9 +155,10 @@
                 const switchSpan = document.querySelector('#infSwitchSpan') || document.createElement('span')
                 switchSpan.id = 'infSwitchSpan'
                 const switchStyles = {
-                    position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : 152 }px`,
+                    position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : isGPT4oUI ? 147 : 152 }px`,
                     backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
-                    width: '32px', height: '16px', '-webkit-transition': '0.4s', transition: '0.4s',  borderRadius: '28px'
+                    bottom: `${ !isGPT4oUI ? 0.05 : 0 }em`, width: '30px', height: '15px',
+                    '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
                 }
                 Object.assign(switchSpan.style, switchStyles)
 
@@ -163,7 +167,7 @@
                 knobSpan.id = 'infToggleKnobSpan'
                 const knobWidth = 13
                 const knobStyles = {
-                    position: 'absolute', left: '3px', bottom: '0.1em',
+                    position: 'absolute', left: '3px', bottom: '0.055em',
                     width: `${ knobWidth }px`, height: `${ knobWidth }px`, content: '""', borderRadius: '28px',
                     transform: toggleInput.checked ? // init opposite final pos
                         'translateX(0)' : `translateX(${ knobWidth }px) translateY(0)`,
@@ -176,7 +180,7 @@
                 toggleLabel.id = 'infToggleLabel'
                 toggleLabel.style.marginLeft = '-41px' // left-shift to navicon
                 toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
-                toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : 148 }px` // to truncate overflown text
+                toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : isGPT4oUI ? 145 : 148 }px` // to truncate overflown text
                 toggleLabel.style.overflow = 'hidden' // to truncate overflown text
                 toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
                 toggleLabel.innerText = chrome.i18n.getMessage('menuLabel_infinityMode') + ' '
@@ -198,6 +202,14 @@
                     }
                 }, 1) // min delay to trigger transition fx
     }})}
+
+    function sidebarIsLoaded() {
+        return new Promise(resolve => {
+            (function checkIsLoaded() {
+                if (document.querySelector('nav a[href="/"]')) resolve(true)
+                else setTimeout(checkIsLoaded, 100)
+            })()
+    })}
 
     const infinityMode = {
 
