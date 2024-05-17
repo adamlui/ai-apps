@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.6.10
+// This library is a condensed version of chatgpt.js v2.8.0
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -234,20 +234,27 @@ const chatgpt = {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
 
+    getNewChatButton: function() {
+        for (const navBtnSVG of document.querySelectorAll('nav button svg'))
+            if (navBtnSVG.querySelector('path[d*="M15.673 3.913a3.121"]')) // new chat icon found
+                return navBtnSVG.parentNode;
+    },
+
     getRegenerateButton: function() {   
         for (const mainSVG of document.querySelectorAll('main svg')) {
-            if (mainSVG.querySelector('path[d*="M4.5 2.5C5.05228"]')) // regen icon found
-                return mainSVG.parentNode.parentNode;
+            if (mainSVG.querySelector('path[d*="M3.07 10.876C3.623"]')) // regen icon found
+                return mainSVG.parentNode;
     }},
+
+    getScrollToBottomButton: function() { return document.querySelector('button[class*="cursor"][class*="bottom"]'); },
 
     history: {
         isLoaded: function() {
             return new Promise(resolve => {
-                const checkChatHistory = () => {
+                (function checkChatHistory() {
                     if (document.querySelector('nav')) resolve(true);
                     else setTimeout(checkChatHistory, 100);
-                };
-                checkChatHistory();
+                })();
         });}
     },
 
@@ -262,10 +269,11 @@ const chatgpt = {
 
     isLoaded: function() {
         return new Promise(resolve => {
-            const intervalId = setInterval(() => {
-                if (document.querySelector('nav button[id*="menu"]')) {
-                    clearInterval(intervalId); setTimeout(() => { resolve(true); }, 500);
-    }}, 100);});},
+            (function checkIsLoaded() {
+                if (chatgpt.getNewChatButton()) resolve(true);
+                else setTimeout(checkIsLoaded, 100);
+            })();
+    });},
 
     notify: async function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
@@ -380,7 +388,7 @@ const chatgpt = {
     randomFloat: function() {
     // * Generates a random, cryptographically secure value between 0 (inclusive) & 1 (exclusive)
         const crypto = window.crypto || window.msCrypto;
-        return crypto.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF;
+        return crypto?.getRandomValues(new Uint32Array(1))[0] / 0xFFFFFFFF || Math.random();
     },
 
     renderHTML: function(node) {
@@ -434,9 +442,18 @@ const chatgpt = {
         return node; // if assignment used
     },
 
+    response: {
+        stopGenerating: function() {
+            for (const svg of document.querySelectorAll('form button svg')) {
+                if (svg.querySelector('path[d*="2 0 0 1 2"]')) {
+                    svg.parentNode.click(); return;
+        }}}
+    },
+
     scrollToBottom: function() {
-        try { document.querySelector('button[class*="cursor"][class*="bottom"]').click(); }
-        catch (err) { console.error('', err); }
+        const scrollBtn = chatgpt.getScrollToBottomButton();
+        if (scrollBtn) scrollBtn.click();
+        else console.error('Scroll button not found!');
     },
 
     send: function(msg, method='') {
@@ -460,28 +477,26 @@ const chatgpt = {
         show: function() { this.isOff() ? this.toggle() : console.info('Sidebar already shown!'); },
         isOff: function() { return !this.isOn(); },
         isOn: function() {
+            const sidebar = document.querySelector('#__next > div > div');
             return chatgpt.browser.isMobile() ?
                 document.documentElement.style.overflow == 'hidden'
-              : document.querySelector('#__next > div > div').style.visibility != 'hidden';
+              : sidebar.style.visibility != 'hidden' && sidebar.style.width != '0px';
         },
 
         toggle: function() {
             const isMobileDevice = chatgpt.browser.isMobile(),
-                  navBtnSelector = isMobileDevice ? '#__next button' : 'main button' ,
+                  isGPT4oUI = !!document.documentElement.className.includes(' '),
+                  navBtnSelector = isMobileDevice ? '#__next button' : isGPT4oUI ? 'nav button' : 'main button',
                   isToggleBtn = isMobileDevice ? () => true // since 1st one is toggle
-                              : btn => Array.from(btn.querySelectorAll('*'))
-                                            .some(child => child.style.transform.includes('translateY'));
+                              : isGPT4oUI ? btn => btn.querySelectorAll('svg path[d*="M8.857 3h6.286c1.084"]').length > 0
+                              : /* post-GPT-4o desktop */ btn => [...btn.querySelectorAll('*')]
+                                    .some(child => child.style.transform.includes('translateY'));
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
         }
     },
 
-    startNewChat: function() {
-        for (const navLink of document.querySelectorAll('nav a')) {
-            if (/(new|clear) chat/i.test(navLink.text)) {
-                navLink.click(); return;
-    }}},
-
+    startNewChat: function() { try { this.getNewChatButton().click(); } catch (err) { console.error(err.message); }},
     stop: function() { this.response.stopGenerating(); }
 
 };
