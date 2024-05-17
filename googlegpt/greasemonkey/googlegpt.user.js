@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.16
+// @version             2024.5.16.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png
@@ -384,7 +384,7 @@
 // @downloadURL         https://update.greasyfork.org/scripts/478597/googlegpt.user.js
 // @updateURL           https://update.greasyfork.org/scripts/478597/googlegpt.meta.js
 // @homepageURL         https://www.googlegpt.io
-// @supportURL          https://github.googlegpt.io/issues
+// @supportURL          https://support.googlegpt.io
 // ==/UserScript==
 
 // NOTE: This script relies on the powerful chatgpt.js library @ https://chatgpt.js.org (c) 2023–2024 KudoAI & contributors under the MIT license
