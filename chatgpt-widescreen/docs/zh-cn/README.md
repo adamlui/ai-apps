@@ -18,7 +18,7 @@
 [![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-widescreen%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=漏洞&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-widescreen)
 [![](https://img.shields.io/badge/精选者-Google-51a557?logo=googlechrome&logoColor=white&labelColor=464646&style=for-the-badge)](https://chrome.chatgptwidescreen.com)
 [![](https://img.shields.io/badge/提及于-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
-<a href="https://www.jsdelivr.com/package/gh/adamlui/chatgpt-widescreen?tab=stats"><img height=31 src="https://img.shields.io/jsdelivr/gh/hm/adamlui/chatgpt-widescreen?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20请求&labelColor=464646&color=49c5d8"></a>
+<a href="https://www.jsdelivr.com/package/gh/adamlui/chatgpt-widescreen?tab=stats"><img height=31 src="https://img.shields.io/jsdelivr/gh/hm/adamlui/chatgpt-widescreen?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20请求&labelColor=464646&color=2bbbd8"></a>
 [![](https://img.shields.io/badge/网站-www.chatgptwidescreen.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptwidescreen.com?utm_source=chatgpt_widescreen&utm_content=github_shield)
 
 <br>
