@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.17.1
+// @version             2024.5.17.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -302,7 +302,7 @@
     await chatgpt.isLoaded()
     const continueObserver = new MutationObserver(mutations => mutations.forEach(mutation => {
         if (mutation.attributeName == 'style' && mutation.target.style.opacity == '1') {
-            chatgpt.continue()
+            chatgpt.getContinueGeneratingButton().click()
             notify(msgs.notif_chatAutoContinued || 'Chat Auto-Continued', 'bottom-right')
     }}))
     continueObserver.observe(document.querySelector('main'), { attributes: true, subtree: true })
