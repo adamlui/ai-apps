@@ -65,7 +65,7 @@
               + 'font-size: 0.77rem ; text-transform: uppercase ;'
               + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
           + '.modal-buttons { margin-left: -13px !important }'
-          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar
+          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
               + 'transform: none !important }' // disable distracting click zoom effect
         )
     }
