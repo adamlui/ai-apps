@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.16.4
+// @version             2024.5.17
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -715,11 +715,22 @@
         if (config.widerChatbox) wideScreenStyle.innerText += wcbStyle
     }
 
+    // Define UI function
+
+    function sidebarIsLoaded() {
+        return new Promise(resolve => {
+            (function checkIsLoaded() {
+                if (document.querySelector('nav a[href="/"]')) resolve(true)
+                else setTimeout(checkIsLoaded, 100)
+            })()
+    })}
+
     // Run MAIN routine
 
     if (/chatgpt|openai/.test(site)) await chatgpt.isLoaded()
 
     // Create browser toolbar menu or disable script if extension installed
+    await sidebarIsLoaded() // to let Chromium extension flag inject first
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
