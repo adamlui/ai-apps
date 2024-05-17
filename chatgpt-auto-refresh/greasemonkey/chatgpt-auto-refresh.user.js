@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.16
+// @version             2024.5.16.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -317,9 +317,13 @@
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
     let menuIDs = [] ; registerMenu() // create browser toolbar menu
 
+    // Init UI flags
+    await chatgpt.isLoaded()
+    const isFirefox = chatgpt.browser.isFirefox(),
+          isGPT4oUI = !!document.documentElement.className.includes(' ')
+
     // Add/update tweaks style
     const tweaksStyleUpdated = 2023123 // datestamp of last edit for this file's `tweaksStyle`
-    await chatgpt.isLoaded()
     let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
     if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
         if (!tweaksStyle) { // outright missing, create/id/attr/append it first
@@ -344,14 +348,15 @@
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
     updateToggleHTML() // create children
 
-    // Borrow classes from sidebar div
-    chatgpt.history.isLoaded().then(setTimeout(() => { 
-        const firstLink = document.querySelector('nav a[href="/"]'),
-              firstIcon = firstLink.querySelector('div:first-child'),
-              firstLabel = firstLink.querySelector('div:nth-child(2)')
-        navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
-        navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
-    }, 100))
+    // Insert toggle
+    await sidebarIsLoaded() ; insertToggle()
+
+    // Borrow/assign classes from sidebar div
+    const firstLink = document.querySelector('nav a[href="/"]')
+    const firstIcon = firstLink?.querySelector('div:first-child'),
+          firstLabel = firstLink?.querySelector('div:nth-child(2)')
+    navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
+    navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
 
     // Add listener to toggle switch/label/config/menu/auto-refresh
     navToggleDiv.addEventListener('click', () => {
@@ -369,8 +374,7 @@
         } saveSetting('arDisabled', config.arDisabled)
     })
 
-    // Insert full toggle on page load + during navigation
-    insertToggle()
+    // Insert sidebar toggle during navigation
     const nodeObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             if (mutation.type == 'childList' && mutation.addedNodes.length) {
@@ -562,14 +566,16 @@
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
-    // Define TOGGLE functions
+    // Define UI functions
 
     async function insertToggle() {
         await chatgpt.history.isLoaded()
 
         // Insert toggle
-        const parentToInsertInto = document.querySelector('nav > div:not(.invisible)'),
-              childToInsertBefore = parentToInsertInto.children[1]
+        const parentToInsertInto = document.querySelector('nav '
+            + ( isGPT4oUI ? '.sticky div' // new chat div
+                          : '> div:not(.invisible)' )) // upper nav div
+        const childToInsertBefore = parentToInsertInto.children[1 - ( isGPT4oUI ? 1 : 0 )]
         if (!parentToInsertInto.contains(navToggleDiv))
             try { parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore) } catch (err) {}
 
@@ -599,9 +605,10 @@
         const switchSpan = document.querySelector('#arSwitchSpan') || document.createElement('span')
         switchSpan.id = 'arSwitchSpan'
         const switchStyles = {
-            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : 152 }px`,
+            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : isGPT4oUI ? 147 : 152 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
-            width: '32px', height: '16px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
+            bottom: `${ isFirefox || !isGPT4oUI ? 0.05 : 0 }em`, width: '30px', height: '15px',
+            '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
         }
         Object.assign(switchSpan.style, switchStyles)
 
@@ -610,7 +617,7 @@
         knobSpan.id = 'arToggleKnobSpan'
         const knobWidth = 13
         const knobStyles = {
-            position: 'absolute', left: '3px', bottom: '0.1em',
+            position: 'absolute', left: '3px', bottom: '0.055em',
             width: `${ knobWidth }px`, height: `${ knobWidth }px`, content: '""', borderRadius: '28px',
             transform: toggleInput.checked ? // init opposite final pos
                 'translateX(0)' : `translateX(${ knobWidth }px) translateY(0)`,
@@ -623,7 +630,7 @@
         toggleLabel.id = 'arToggleLabel'
         toggleLabel.style.marginLeft = '-41px' // left-shift to navicon
         toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
-        toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : 148 }px` // to truncate overflown text
+        toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : isGPT4oUI ? 145 : 148 }px` // to truncate overflown text
         toggleLabel.style.overflow = 'hidden' // to truncate overflown text
         toggleLabel.style.textOverflow = 'ellipsis' // to truncate overflown text
         toggleLabel.innerText = ( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' '
@@ -646,5 +653,13 @@
             }
         }, 1) // min delay to trigger transition fx
     }
+
+    function sidebarIsLoaded() {
+        return new Promise(resolve => {
+            (function checkIsLoaded() {
+                if (document.querySelector('nav a[href="/"]')) resolve(true);
+                else setTimeout(checkIsLoaded, 100);
+            })();
+    });}
 
 })()
