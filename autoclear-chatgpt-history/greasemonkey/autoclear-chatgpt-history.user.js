@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.17.3
+// @version             2024.5.17.4
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -338,7 +338,7 @@
     updateToggleHTML() // create children
 
     // Insert sidebar toggle
-    await sidebarIsLoaded() ; insertToggle()
+    await chatgpt.sidebar.isLoaded() ; insertToggle()
 
     // Borrow/assign classes from sidebar div
     const firstLink = document.querySelector('nav a[href="/"]')
@@ -619,13 +619,5 @@
             }
         }, 1) // min delay to trigger transition fx
     }
-
-    function sidebarIsLoaded() {
-        return new Promise(resolve => {
-            (function checkIsLoaded() {
-                if (document.querySelector('nav a[href="/"]')) resolve(true)
-                else setTimeout(checkIsLoaded, 100)
-            })()
-    })}
 
 })()
