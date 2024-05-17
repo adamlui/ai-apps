@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.17.1
+// @version             2024.5.17.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -277,9 +277,8 @@
         }
     }) ; if (!/^en/.test(config.userLanguage)) try { msgs = await msgsLoaded; } catch (err) {}
 
-    await chatgpt.isLoaded()
-
-    // Create browser toolbar menu or disable script if extension installed 
+    // Create browser toolbar menu or disable script if extension installed
+    await sidebarIsLoaded() // to let Chromium extension flag inject first
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
@@ -316,7 +315,7 @@
               + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
           + '.modal-buttons { margin-left: -13px !important }'
           + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
-          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar
+          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
               + 'transform: none !important }' // disable distracting click zoom effect
         )
     }
@@ -329,8 +328,7 @@
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
     updateToggleHTML() // create children
 
-    // Insert sidebar toggle
-    await sidebarIsLoaded() ; insertToggle()
+    insertToggle()
 
     // Borrow/assign classes from sidebar div
     const firstLink = document.querySelector('nav a[href="/"]')
