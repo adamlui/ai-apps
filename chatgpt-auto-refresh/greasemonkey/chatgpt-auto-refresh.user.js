@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.16.3
+// @version             2024.5.16.4
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -575,9 +575,10 @@
         const parentToInsertInto = document.querySelector('nav '
             + ( isGPT4oUI ? '.sticky div' // new chat div
                           : '> div:not(.invisible)' )) // upper nav div
-        const childToInsertBefore = parentToInsertInto.children[1 - ( isGPT4oUI ? 1 : 0 )]
-        if (!parentToInsertInto.contains(navToggleDiv))
-            try { parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore) } catch (err) {}
+        if (!parentToInsertInto.contains(navToggleDiv)) {
+            if (isGPT4oUI) try { parentToInsertInto.append(navToggleDiv) } catch (err) {}
+            else try { parentToInsertInto.insertBefore(navToggleDiv, parentToInsertInto.children[1]) } catch (err) {}
+        }
 
         // Tweak styles
         parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
