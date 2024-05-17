@@ -14,7 +14,7 @@
 ![](https://img.shields.io/badge/用户-150,000+-44cc11?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
 [![](https://img.shields.io/github/stars/adamlui/chatgpt-apps?label=星星&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/stargazers)
 [![](https://img.shields.io/badge/许可证-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=&labelColor=464646&style=for-the-badge)](LICENSE.md)
-[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=提交&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits/main)
+[![](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=提交&logo=github&logoColor=white&labelColor=464646&color=blue&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits/main)
 [![](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=代码质量&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
 [![](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-apps%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=漏洞&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-apps)
 [![](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_apps&utm_content=github_shield)
