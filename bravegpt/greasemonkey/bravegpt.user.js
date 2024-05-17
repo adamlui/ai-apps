@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.16.1
+// @version             2024.5.16.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png
@@ -155,7 +155,7 @@
 // @downloadURL         https://update.greasyfork.org/scripts/462440/bravegpt.user.js
 // @updateURL           https://update.greasyfork.org/scripts/462440/bravegpt.meta.js
 // @homepageURL         https://www.bravegpt.com
-// @supportURL          https://github.bravegpt.com/issues
+// @supportURL          https://support.bravegpt.com
 // ==/UserScript==
 
 // Documentation: https://docs.autoclearchatgpt.com
