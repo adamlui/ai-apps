@@ -126,14 +126,14 @@
         if (!config.extensionDisabled) insertBtns()
     })
 
-    // Monitor node changes to update button visibility + auto-toggle once
-    let prevSessionChecked = false
-    new MutationObserver(() => {
+    // Monitor node changes to auto-toggle once + maintain button visibility + update colors
+    let isTempChat = false, prevSessionChecked = false
+    const nodeObserver = new MutationObserver(([mutation]) => {
 
         // Restore previous session's state + manage toggles
         settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
                        'hiddenHeader', 'hiddenFooter', 'notifDisabled', 'extensionDisabled'])
-            .then(() => { if (!config.extensionDisabled) {                    
+            .then(() => { if (!config.extensionDisabled) {
                 if (!prevSessionChecked) { // restore previous session's state
                     if (config.wideScreen) toggleMode('wideScreen', 'ON')
                     if (config.fullWindow) { toggleMode('fullWindow', 'ON')
@@ -147,26 +147,25 @@
                     if (config.widerChatbox) updateWidescreenStyle()
                     prevSessionChecked = true
                 }
-                insertBtns()
+                insertBtns() // again or they constantly disappear
             } prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
         })
 
-    }).observe(document.querySelector('main'), { childList: true, attributes: true, subtree: true });
-
-    // Monitor chatbar/page scheme changes to update button colors
-    let chatbar = document.querySelector('textarea')
-    for (let i = 0 ; i < ( isGPT4oUI ? 3 : 1 ) ; i++) { chatbar = chatbar.parentNode }
-    const schemeObserver = new MutationObserver(([mutation]) => {
-        if (mutation.type == 'attributes' && mutation.attributeName == 'class') {
-            btnColor = setBtnColor() // init new color
-            chatbar.style.overflow = 'visible' // allow tooltips to overflow pre-GPT4o UI
-            console.log('btnColor is: ' + btnColor)
-            const buttons = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'];
-            buttons.forEach(btn => updateBtnSVG(btn));
-    }})
-    schemeObserver.observe(chatbar, { attributes: true })
-    schemeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
-    schemeObserver.observe(document.querySelector('textarea'), { attributes: true }) // chatbar for temp chat toggles
+        // Update button colors on scheme or temp chat toggle
+        let chatbarBGdiv = document.querySelector('textarea')
+        for (let i = 0 ; i < ( isGPT4oUI ? 3 : 1 ) ; i++) { chatbarBGdiv = chatbarBGdiv.parentNode }
+        if (chatbarBGdiv) {
+            const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
+            if ((mutation.type === 'attributes' && mutation.attributeName === 'class') // potential scheme toggled
+                 || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)) { // temp chat toggled
+                        btnColor = setBtnColor() // init new color
+                        chatbarBGdiv.style.overflow = 'visible' // allow tooltips to overflow pre-GPT4o UI
+                        const buttons = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
+                        buttons.forEach(btn => updateBtnSVG(btn)) ; isTempChat = !isTempChat
+        }}
+    })
+    nodeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
+    nodeObserver.observe(document.querySelector('main'), { attributes: true, subtree: true }); // <main> for chatbar changes
 
     // Monitor sidebar button to update full-window setting
     if (/chatgpt|openai/.test(site)) {
@@ -248,7 +247,16 @@
     }
 
     function removeBtns() {
-        if (!chatbar.contains(fullWindowBtn)) return // if buttons are missing, exit
+
+        // ID chatbar
+        let chatbar
+        if (/chatgpt|openai/.test(site)) {
+            chatbar = document.querySelector('div[class*="textarea:focus"]') // pre-5/2024
+                   || document.querySelector('#prompt-textarea').parentNode.parentNode // post-5/2024
+        } else if (site == 'poe') chatbar = document.querySelector('div[class*="ChatMessageInputContainer"]')
+
+        // Remove buttons
+        if (!chatbar.contains(fullWindowBtn)) { console.log('btns are not missing') ; return } // if buttons are missing, exit
         else { // remove chat toggles
             const nodesToRemove = [newChatBtn, fullWindowBtn, wideScreenBtn, fullScreenBtn, tooltipDiv]
             for (const node of nodesToRemove) chatbar.removeChild(node)
