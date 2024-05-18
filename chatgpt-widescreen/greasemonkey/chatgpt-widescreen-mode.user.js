@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.17.3
+// @version             2024.5.17.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -841,23 +841,22 @@
 
     // Monitor node changes to maintain button visibility + auto-toggle once + manage send button's tooltip
     let prevSessionChecked = false
-    const nodeObserver = new MutationObserver(([{ addedNodes, type }]) => {
-        if (type == 'childList' && addedNodes.length) {
-            insertBtns() // again or they constantly disappear
+    new MutationObserver(mutations => {
+        insertBtns() // again or they constantly disappear
 
-            // Check loaded keys to restore previous session's state
-            if (!prevSessionChecked) {
-                if (config.wideScreen) toggleMode('wideScreen', 'ON')
-                if (config.fullWindow) { toggleMode('fullWindow', 'ON')
-                    if (/chatgpt|openai/.test(site)) { // sidebar observer doesn't trigger
-                        syncFullerWindows(true) // so sync Fuller Windows...
-                        if (!config.notifDisabled) // ... + notify
-                            notify(( msgs.mode_fullWindow || 'Full-window' ) + ' ON')
-                }}
-                if (config.tcbDisabled) updateTweaksStyle() ; prevSessionChecked = true
-            }
+        // Check loaded keys to restore previous session's state
+        if (!prevSessionChecked) {
+            if (config.wideScreen) toggleMode('wideScreen', 'ON')
+            if (config.fullWindow) { toggleMode('fullWindow', 'ON')
+                if (/chatgpt|openai/.test(site)) { // sidebar observer doesn't trigger
+                    syncFullerWindows(true) // so sync Fuller Windows...
+                    if (!config.notifDisabled) // ... + notify
+                        notify(( msgs.mode_fullWindow || 'Full-window' ) + ' ON')
+            }}
+            if (config.tcbDisabled) updateTweaksStyle() ; prevSessionChecked = true
+        }
 
-    }}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
+    }).observe(document.querySelector('main'), { childList: true, attributes: true, subtree: true });
 
     // Monitor chatbar/page scheme changes to update button colors
     let chatbar = document.querySelector('textarea')
