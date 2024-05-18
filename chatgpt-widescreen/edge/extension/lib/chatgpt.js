@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.8.0
+// This library is a condensed version of chatgpt.js v2.9.2
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -93,7 +93,7 @@ const chatgpt = {
 
         // Insert text into elements
         modalTitle.innerText = title || '';
-        modalMessage.innerText = msg || ''; this.renderHTML(modalMessage);
+        modalMessage.innerText = msg || ''; chatgpt.renderHTML(modalMessage);
 
         // Create/append buttons (if provided) to buttons div
         const modalButtons = document.createElement('div');
@@ -368,6 +368,74 @@ const chatgpt = {
         }, { once: true });
     },
 
+    obfuscate: function() { chatgpt.code.obfuscate(); },
+
+    printAllFunctions: function() {
+
+        // Define colors
+        const colors = { // element: [light, dark]
+            cmdPrompt: ['#ff00ff', '#00ff00'], // pink, green
+            objName: ['#0611e9', '#f9ee16'], // blue, yellow
+            methodName: ['#005aff', '#ffa500'], // blue, orange
+            entryType: ['#467e06', '#b981f9'], // green, purple
+            srcMethod: ['#ff0000', '#00ffff'] // red, cyan
+        };
+        Object.keys(colors).forEach(element => { // populate dark scheme colors if missing
+            colors[element][1] = colors[element][1] ||
+                '#' + (Number(`0x1${ colors[element][0].replace(/^#/, '') }`) ^ 0xFFFFFF)
+                    .toString(16).substring(1).toUpperCase(); // convert to hex
+        });
+
+        // Create [functionNames]
+        const functionNames = [];
+        for (const prop in this) {
+            if (typeof this[prop] == 'function') {
+                const chatgptIsParent = !Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[prop].name)),
+                      functionParent = chatgptIsParent ? 'chatgpt' : 'other';
+                functionNames.push([functionParent, prop]);
+            } else if (typeof this[prop] == 'object') {
+                for (const nestedProp in this[prop]) {
+                    if (typeof this[prop][nestedProp] == 'function') {
+                        functionNames.push([prop, nestedProp]);
+        }}}}
+        functionNames.sort((a, b) => { return a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]); });
+
+        // Print methods
+        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches,
+              baseFontStyles = 'font-family: monospace ; font-size: larger ; ';
+        console.log('\n%c🤖 chatgpt.js methods\n', 'font-family: sans-serif ; font-size: xxx-large ; font-weight: bold');
+        for (const functionName of functionNames) {
+            const isChatGptObjParent = /chatgpt|other/.test(functionName[0]),
+                  rootFunction = ( functionName[0] == 'chatgpt' ? this[functionName[1]].name
+                    : functionName[0] !== 'other' ? functionName[0] + '.' + functionName[1]
+                    : (( Object.keys(this).find(obj => Object.keys(this[obj]).includes(this[functionName[1]].name)) + '.' )
+                        + this[functionName[1]].name )),
+                  isAsync = this[functionName[1]]?.constructor.name == 'AsyncFunction';
+            console.log('%c>> %c' + ( isChatGptObjParent ? '' : `${ functionName[0] }.%c`) + functionName[1]
+                    + ' - https://chatgptjs.org/userguide/' + /(?:.*\.)?(.*)/.exec(rootFunction)[1].toLowerCase() + ( isAsync ? '-async' : '' ) + '\n%c[%c'
+                + ((( functionName[0] == 'chatgpt' && functionName[1] == this[functionName[1]].name ) || // parent is chatgpt + names match or
+                    !isChatGptObjParent) // parent is chatgpt.obj
+                        ? 'Function' : 'Alias of' ) + '%c: %c'
+                + rootFunction + '%c]',
+
+                // Styles
+                baseFontStyles + 'font-weight: bold ; color:' + colors.cmdPrompt[+isDarkMode],
+                baseFontStyles + 'font-weight: bold ;'
+                    + 'color:' + colors[isChatGptObjParent ? 'methodName' : 'objName'][+isDarkMode],
+                baseFontStyles + 'font-weight: ' + ( isChatGptObjParent ? 'initial' : 'bold' ) + ';'
+                    + 'color:' + ( isChatGptObjParent ? 'initial' : colors.methodName[+isDarkMode] ),
+                baseFontStyles + 'font-weight: ' + ( isChatGptObjParent ? 'bold' : 'initial' ) + ';'
+                    + 'color:' + ( isChatGptObjParent ? colors.entryType[+isDarkMode] : 'initial' ),
+                baseFontStyles + 'font-weight: ' + ( isChatGptObjParent ? 'initial' : 'bold' ) + ';'
+                    + 'color:' + ( isChatGptObjParent ? 'initial' : colors.entryType[+isDarkMode] ),
+                baseFontStyles + ( isChatGptObjParent ? 'font-style: italic' : 'font-weight: initial' ) + ';'
+                    + 'color:' + ( isChatGptObjParent ? colors.srcMethod[+isDarkMode] : 'initial' ),
+                baseFontStyles + ( isChatGptObjParent ? 'font-weight: initial' : 'font-style: italic' ) + ';'
+                    + 'color:' + ( isChatGptObjParent ? 'initial' : colors.srcMethod[+isDarkMode] ),
+                isChatGptObjParent ? '' : ( baseFontStyles + 'color: initial ; font-weight: initial' ));
+        }
+    },
+
     randomFloat: function() {
     // * Generates a random, cryptographically secure value between 0 (inclusive) & 1 (exclusive)
         const crypto = window.crypto || window.msCrypto;
@@ -380,9 +448,9 @@ const chatgpt = {
               nodeContent = node.childNodes;
 
         // Preserve consecutive spaces + line breaks
-        if (!this.renderHTML.preWrapSet) {
-            node.style.whiteSpace = 'pre-wrap'; this.renderHTML.preWrapSet = true;
-            setTimeout(() => { this.renderHTML.preWrapSet = false; }, 100);
+        if (!chatgpt.renderHTML.preWrapSet) {
+            node.style.whiteSpace = 'pre-wrap'; chatgpt.renderHTML.preWrapSet = true;
+            setTimeout(() => { chatgpt.renderHTML.preWrapSet = false; }, 100);
         }
 
         // Process child nodes
@@ -406,7 +474,7 @@ const chatgpt = {
                         tagNode.setAttribute(name, value);
                     });
 
-                    const renderedNode = this.renderHTML(tagNode); // render child elements of newly created node
+                    const renderedNode = chatgpt.renderHTML(tagNode); // render child elements of newly created node
 
                     // Insert newly rendered node
                     const beforeTextNode = document.createTextNode(text.substring(0, elem.index)),
@@ -419,7 +487,7 @@ const chatgpt = {
                 }
 
             // Process element nodes recursively
-            } else if (childNode.nodeType == Node.ELEMENT_NODE) this.renderHTML(childNode);
+            } else if (childNode.nodeType == Node.ELEMENT_NODE) chatgpt.renderHTML(childNode);
         }
 
         return node; // if assignment used
@@ -449,8 +517,109 @@ const chatgpt = {
         }
     },
 
-    startNewChat: function() { try { this.getNewChatButton().click(); } catch (err) { console.error(err.message); }}
+    startNewChat: function() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
 };
+
+// Create alias functions
+const funcAliases = [
+    ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
+    ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
+        'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
+    ['continue', 'continueChat', 'continueGenerating', 'continueResponse'],
+    ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
+    ['detectLanguage', 'getLanguage'],
+    ['executeCode', 'codeExecute'],
+    ['exportChat', 'chatExport', 'export'],
+    ['getFooterDiv', 'getFooter'],
+    ['getHeaderDiv', 'getHeader'],
+    ['getLastPrompt', 'getLastQuery', 'getMyLastMsg', 'getMyLastQuery'],
+    ['getContinueGeneratingButton', 'getContinueButton'],
+    ['getScrollToBottomButton', 'getScrollButton'],
+    ['getStopGeneratingButton', 'getStopButton'],
+    ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
+    ['isFullScreen', 'isFullscreen', 'isfullscreen'],
+    ['isLoaded', 'isloaded'],
+    ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
+    ['minify', 'codeMinify', 'minifyCode'],
+    ['new', 'newChat', 'startNewChat'],
+    ['obfuscate', 'codeObfuscate', 'obfuscateCode'],
+    ['printAllFunctions', 'showAllFunctions'],
+    ['refactor', 'codeRefactor', 'refactorCode'],
+    ['refreshReply', 'regenerate', 'regenerateReply'],
+    ['refreshSession', 'sessionRefresh'],
+    ['renderHTML', 'renderHtml', 'renderLinks', 'renderTags'],
+    ['reviewCode', 'codeReview'],
+    ['send', 'sendChat', 'sendMsg'],
+    ['sendInNewChat', 'sendNewChat'],
+    ['sentiment', 'analyzeSentiment', 'sentimentAnalysis'],
+    ['startNewChat', 'new', 'newChat'],
+    ['stop', 'stopChat', 'stopGenerating', 'stopResponse'],
+    ['suggest', 'suggestion', 'recommend'],
+    ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
+    ['toggleScheme', 'toggleMode'],
+    ['translate', 'translation', 'translator'],
+    ['unminify', 'unminifyCode', 'codeUnminify'],
+    ['writeCode', 'codeWrite']
+];
+const synonyms = [
+    ['account', 'acct'],
+    ['activate', 'turnOn'],
+    ['analyze', 'check', 'evaluate', 'review'],
+    ['ask', 'send', 'submit'],
+    ['button', 'btn'],
+    ['continue', 'resume'],
+    ['chats', 'history'],
+    ['chat', 'conversation', 'convo'],
+    ['clear', 'delete', 'remove'],
+    ['data', 'details'],
+    ['deactivate', 'deActivate', 'turnOff'],
+    ['execute', 'interpret', 'interpreter', 'run'],
+    ['generating', 'generation'],
+    ['minify', 'uglify'],
+    ['refactor', 'rewrite'],
+    ['regenerate', 'regen'],
+    ['render', 'parse'],
+    ['reply', 'response'],
+    ['sentiment', 'attitude', 'emotion', 'feeling', 'opinion', 'perception'],
+    ['speak', 'say', 'speech', 'talk', 'tts'],
+    ['summarize', 'tldr'],
+    ['unminify', 'beautify', 'prettify', 'prettyPrint']
+];
+const camelCaser = (words) => {
+    return words.map((word, index) => index === 0 || word == 's' ? word : word.charAt(0).toUpperCase() + word.slice(1)).join(''); };
+for (const prop in chatgpt) {
+
+    // Create new function for each alias
+    for (const subAliases of funcAliases) {
+        if (subAliases.includes(prop)) {
+            if (subAliases.some(element => element.includes('.'))) {
+                const nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
+                for (const nestAlias of subAliases) {
+                    if (/^(\w+)/.exec(nestAlias)[1] !== prop) { // don't alias og function
+                        chatgpt[nestAlias] = chatgpt[prop][nestedFunction]; // make new function, reference og one
+            }}} else { // alias direct functions
+                for (const dirAlias of subAliases) {
+                    if (dirAlias !== prop) { // don't alias og function
+                        chatgpt[dirAlias] = chatgpt[prop]; // make new function, reference og one
+            }}}
+    }}
+
+    do { // create new function per synonym per word per function
+        var newFunctionsCreated = false;
+        for (const funcName in chatgpt) {
+            if (typeof chatgpt[funcName] == 'function') {
+                const funcWords = funcName.split(/(?=[A-Zs])/); // split function name into constituent words
+                for (const funcWord of funcWords) {
+                    const synonymValues = [].concat(...synonyms // flatten into single array w/ word's synonyms
+                        .filter(arr => arr.includes(funcWord.toLowerCase())) // filter in relevant synonym sub-arrays
+                        .map(arr => arr.filter(synonym => synonym !== funcWord.toLowerCase()))); // filter out matching word
+                    for (const synonym of synonymValues) { // create function per synonym
+                        const newFuncName = camelCaser(funcWords.map(word => (word == funcWord ? synonym : word)));
+                        if (!chatgpt[newFuncName]) { // don't alias existing functions
+                            chatgpt[newFuncName] = chatgpt[funcName]; // make new function, reference og one
+                            newFunctionsCreated = true;
+    }}}}}} while (newFunctionsCreated); // loop over new functions to encompass all variations
+}
 
 // Prefix console logs w/ '🤖 chatgpt.js >> '
 const consolePrefix = '🤖 chatgpt.js >> ', ogError = console.error, ogInfo = console.info;
