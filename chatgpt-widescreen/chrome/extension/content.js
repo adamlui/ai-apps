@@ -128,7 +128,7 @@
 
     // Monitor node changes to update button visibility + auto-toggle once
     let prevSessionChecked = false
-    new MutationObserver(mutations => {
+    new MutationObserver(() => {
 
         // Restore previous session's state + manage toggles
         settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',

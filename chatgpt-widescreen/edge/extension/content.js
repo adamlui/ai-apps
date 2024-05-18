@@ -128,31 +128,30 @@
 
     // Monitor node changes to update button visibility + auto-toggle once
     let prevSessionChecked = false
-    const nodeObserver = new MutationObserver(([{ addedNodes, type }]) => {
-        if (type == 'childList' && addedNodes.length) {
+    new MutationObserver(() => {
 
-            // Restore previous session's state + manage toggles
-            settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
-                           'hiddenHeader', 'hiddenFooter', 'notifDisabled', 'extensionDisabled'])
-                .then(() => { if (!config.extensionDisabled) {                    
-                    if (!prevSessionChecked) { // restore previous session's state
-                        if (config.wideScreen) toggleMode('wideScreen', 'ON')
-                        if (config.fullWindow) { toggleMode('fullWindow', 'ON')
-                            if (/chatgpt|openai/.test(site)) { // sidebar observer doesn't trigger
-                                syncFullerWindows(true) // so sync Fuller Windows...
-                                if (!config.notifDisabled) // ... + notify
-                                    notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
-                        }}
-                        if (!config.tcbDisabled || config.ncbDisabled || config.hiddenHeader || config.hiddenFooter)
-                            updateTweaksStyle()
-                        if (config.widerChatbox) updateWidescreenStyle()
-                        prevSessionChecked = true
-                    }
-                    insertBtns()
-                } prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
-            })
+        // Restore previous session's state + manage toggles
+        settings.load(['wideScreen', 'fullerWindows', 'tcbDisabled', 'widerChatbox', 'ncbDisabled',
+                       'hiddenHeader', 'hiddenFooter', 'notifDisabled', 'extensionDisabled'])
+            .then(() => { if (!config.extensionDisabled) {                    
+                if (!prevSessionChecked) { // restore previous session's state
+                    if (config.wideScreen) toggleMode('wideScreen', 'ON')
+                    if (config.fullWindow) { toggleMode('fullWindow', 'ON')
+                        if (/chatgpt|openai/.test(site)) { // sidebar observer doesn't trigger
+                            syncFullerWindows(true) // so sync Fuller Windows...
+                            if (!config.notifDisabled) // ... + notify
+                                notify(chrome.i18n.getMessage('mode_fullWindow') + ' ON')
+                    }}
+                    if (!config.tcbDisabled || config.ncbDisabled || config.hiddenHeader || config.hiddenFooter)
+                        updateTweaksStyle()
+                    if (config.widerChatbox) updateWidescreenStyle()
+                    prevSessionChecked = true
+                }
+                insertBtns()
+            } prevSessionChecked = true // even if extensionDisabled, to avoid double-toggle
+        })
 
-    }}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
+    }).observe(document.querySelector('main'), { childList: true, attributes: true, subtree: true });
 
     // Monitor chatbar/page scheme changes to update button colors
     let chatbar = document.querySelector('textarea')

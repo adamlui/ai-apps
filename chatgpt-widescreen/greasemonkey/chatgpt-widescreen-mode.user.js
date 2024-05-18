@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.17.4
+// @version             2024.5.17.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -841,7 +841,7 @@
 
     // Monitor node changes to maintain button visibility + auto-toggle once + manage send button's tooltip
     let prevSessionChecked = false
-    new MutationObserver(mutations => {
+    new MutationObserver(() => {
         insertBtns() // again or they constantly disappear
 
         // Check loaded keys to restore previous session's state
