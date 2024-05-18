@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.17.5
+// @version             2024.5.17.6
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -839,10 +839,9 @@
         })(buttonTypes[i])
     } insertBtns()
 
-    // Monitor node changes to maintain button visibility + auto-toggle once + manage send button's tooltip
-    let prevSessionChecked = false
-    new MutationObserver(() => {
-        insertBtns() // again or they constantly disappear
+    // Monitor node changes to auto-toggle once + maintain button visibility + update colors
+    let isTempChat = false, prevSessionChecked = false
+    const nodeObserver = new MutationObserver(([mutation]) => {
 
         // Check loaded keys to restore previous session's state
         if (!prevSessionChecked) {
@@ -856,22 +855,23 @@
             if (config.tcbDisabled) updateTweaksStyle() ; prevSessionChecked = true
         }
 
-    }).observe(document.querySelector('main'), { childList: true, attributes: true, subtree: true });
+        insertBtns() // again or they constantly disappear
 
-    // Monitor chatbar/page scheme changes to update button colors
-    let chatbar = document.querySelector('textarea')
-    for (let i = 0 ; i < ( isGPT4oUI ? 3 : 1 ) ; i++) { chatbar = chatbar.parentNode }
-    const schemeObserver = new MutationObserver(([mutation]) => {
-        if (mutation.type == 'attributes' && mutation.attributeName == 'class') {
-            btnColor = setBtnColor() // init new color
-            chatbar.style.overflow = 'visible' // allow tooltips to overflow pre-GPT4o UI
-            console.log('btnColor is: ' + btnColor)
-            const buttons = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'];
-            buttons.forEach(btn => updateBtnSVG(btn));
-    }})
-    schemeObserver.observe(chatbar, { attributes: true })
-    schemeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
-    schemeObserver.observe(document.querySelector('textarea'), { attributes: true }) // chatbar for temp chat toggles
+        // Update button colors on scheme or temp chat toggle
+        let chatbarBGdiv = document.querySelector('textarea')
+        for (let i = 0 ; i < ( isGPT4oUI ? 3 : 1 ) ; i++) { chatbarBGdiv = chatbarBGdiv.parentNode }
+        if (chatbarBGdiv) {
+            const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
+            if ((mutation.type === 'attributes' && mutation.attributeName === 'class') // potential scheme toggled
+                 || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)) { // temp chat toggled
+                        btnColor = setBtnColor() // init new color
+                        chatbarBGdiv.style.overflow = 'visible' // allow tooltips to overflow pre-GPT4o UI
+                        const buttons = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
+                        buttons.forEach(btn => updateBtnSVG(btn)) ; isTempChat = !isTempChat
+        }}
+    })
+    nodeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
+    nodeObserver.observe(document.querySelector('main'), { attributes: true, subtree: true }); // <main> for chatbar changes
 
     // Monitor sidebar to update full-window setting
     if (/chatgpt|openai/.test(site)) {
