@@ -240,7 +240,7 @@
         if (chatbar.contains(wideScreenBtn)) return // if buttons aren't missing, exit
         const elemsToInsert = [newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn, tooltipDiv],
               leftMostBtn = chatbar.querySelector('button[class*="right"]') // ChatGPT pre-5/2024
-                         || chatbar.querySelector('button') // ChatGPT post-5/2024 + Poe
+                         || chatbar.lastChild // ChatGPT post-5/2024 + Poe
         if (/chatgpt|openai/.test(site)) // allow tooltips to overflow
             chatbar.classList.remove('overflow-hidden')
         else if (site == 'poe') // elevate nested non-send button to chatbar

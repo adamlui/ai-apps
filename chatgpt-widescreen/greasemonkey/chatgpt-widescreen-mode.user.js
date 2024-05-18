@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.17.2
+// @version             2024.5.17.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -531,7 +531,7 @@
         if (chatbar.contains(wideScreenBtn)) return // if buttons aren't missing, exit
         const elemsToInsert = [newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn, tooltipDiv],
               leftMostBtn = chatbar.querySelector('button[class*="right"]') // ChatGPT pre-5/2024
-                         || chatbar.querySelector('button') // ChatGPT post-5/2024 + Poe
+                         || chatbar.lastChild // ChatGPT post-5/2024 + Poe
         if (/chatgpt|openai/.test(site)) // allow tooltips to overflow
             chatbar.classList.remove('overflow-hidden')
         else if (site == 'poe') // elevate nested non-send button to chatbar
