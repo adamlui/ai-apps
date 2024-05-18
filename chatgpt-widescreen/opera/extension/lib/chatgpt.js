@@ -517,7 +517,7 @@ const chatgpt = {
         }
     },
 
-    startNewChat: function() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
+    startNewChat: function() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }}
 };
 
 // Create alias functions
