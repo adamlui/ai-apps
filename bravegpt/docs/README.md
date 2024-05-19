@@ -17,7 +17,7 @@
 
 <h3><b>BraveGPT</b> brings the magic of ChatGPT to Brave Search (powered by GPT-4!)</h3>
 
-<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=45 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=45 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=45 src="https://media.bravegpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img height=45 title="How to install" src="https://media.bravegpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.bravegpt.com/discussions) / 
 [Review](https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion) / 
@@ -55,8 +55,8 @@
 
 <a href="https://chatgpt.js.org">
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/chatgpt.js-logo-dark-mode-5995x619.png">
-        <img width=455 src="https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/chatgpt.js-logo-light-mode-5995x619.png">
+        <source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/chatgpt.js-logo-dark-mode-5995x619.png">
+        <img width=455 src="https://media.chatgptjs.org/images/chatgpt.js-logo-light-mode-5995x619.png">
     </picture>
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -119,7 +119,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <br>
 
-<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=42 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#installation"><img height=42 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=42 src="https://media.bravegpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img height=42 title="How to install" src="https://media.bravegpt.com/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.bravegpt.com/discussions) /
 [Leave a review](https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion) /
