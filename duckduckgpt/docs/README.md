@@ -5,7 +5,7 @@
   </picture>
 </h1>
 
-<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img height=31 src="https://img.shields.io/greasyfork/dt/459849?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge">
+<a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img height=31 src="https://img.shields.io/greasyfork/dt/459849?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=blue&style=for-the-badge">
 <a href="https://github.com/KudoAI/duckduckgpt/blob/main/LICENSE.md"><img height=31 src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge">
 <a href="https://github.com/KudoAI/duckduckgpt/commits/main"><img height=31 src="https://img.shields.io/github/commit-activity/m/KudoAI/duckduckgpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge">
 <a href="https://www.codefactor.io/repository/github/kudoai/duckduckgpt"><img height=31 src="https://img.shields.io/codefactor/grade/github/kudoai/duckduckgpt?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge">
