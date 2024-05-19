@@ -11,7 +11,7 @@
 
 # <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon512.png"><img width=23 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon512.png"></picture> ChatGPT Auto-Continue ⏩ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Automatically%20continue%20the%20conversation%20from%20multiple%20ChatGPT%20responses%20w%2F%20this%20plug-in%21T&url=https://chatgptautocontinue.com&hashtags=javascript,openai,chatgpt)
 
-<a href="https://greasyfork.chatgptautocontinue.com"><img height=31 src="https://img.shields.io/greasyfork/dt/466789?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge"></a>
+<a href="https://greasyfork.chatgptautocontinue.com"><img height=31 src="https://img.shields.io/greasyfork/dt/466789?label=Users&logo=weightsandbiases&logoColor=white&labelColor=464646&color=blue&style=for-the-badge"></a>
 <a href="../LICENSE.md"><img height=31 src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.chatgptautocontinue.com/commits"><img height=31 src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-continue?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-continue"><img height=31 src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-continue?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
