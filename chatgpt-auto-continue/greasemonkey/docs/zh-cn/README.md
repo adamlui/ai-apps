@@ -9,7 +9,7 @@
     </h6>
 </div>
 
-# <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon512.png"><img width=23 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon512.png"></picture> ChatGPT 自动继续 ⏩ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=%E4%BD%BF%E7%94%A8%E6%AD%A4%E6%8F%92%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BB%8E%E5%A4%9A%E4%B8%AA%20ChatGPT%20%E5%93%8D%E5%BA%94%E7%BB%A7%E7%BB%AD%E5%AF%B9%E8%AF%9D%EF%BC%81&url=https://chatgptautocontinue.com&hashtags=javascript,openai,chatgpt)
+# <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon512.png"><img width=23 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon512.png"></picture> ChatGPT 自动继续 ⏩ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=%E4%BD%BF%E7%94%A8%E6%AD%A4%E6%8F%92%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BB%8E%E5%A4%9A%E4%B8%AA%20ChatGPT%20%E5%93%8D%E5%BA%94%E7%BB%A7%E7%BB%AD%E5%AF%B9%E8%AF%9D%EF%BC%81&url=https://chatgptautocontinue.com&hashtags=javascript,openai,chatgpt)
 
 <a href="https://greasyfork.chatgptautocontinue.com"><img height=31 src="https://img.shields.io/greasyfork/dt/466789?label=用户&logo=weightsandbiases&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge">
 <a href="LICENSE.md"><img height=31 src="https://img.shields.io/badge/许可证-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
@@ -75,7 +75,7 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/158176338?first-contrib=2024.3.1-button-click-fails-bug-report&h=50&w=50&mask=circle&maxage=7d "@whz-pku")](https://github.com/whz-pku)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
-<a href="https://chatgpt.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.chatgptautocontinue.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.chatgptautocontinue.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
+<a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.chatgptautocontinue.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.chatgptautocontinue.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
 
 #
 
@@ -101,14 +101,14 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 
 ## 📜 相关脚本
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动刷新 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动刷新 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
 
 > 保持 ChatGPT 会话新鲜，消除聊天时间限制 + 网络错误 + Cloudflare 检查。<br>
 [安装](https://docs.chatgptautorefresh.com/zh-cn/#-如何安装) / 
 [自述文件](https://docs.chatgptautorefresh.com/zh-cn/#readme) / 
 [讨论](https://github.chatgptautorefresh.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT无限 ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT无限 ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 
 > 从无所不知的 ChatGPT (任何语言!) 生成无穷无尽的答案。<br>
 [安装](https://docs.chatgptinfinity.com/zh-cn/#-如何安装) / 

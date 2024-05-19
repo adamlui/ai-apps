@@ -324,7 +324,7 @@
               + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
           + '.modal-buttons { margin-left: -13px !important }'
           + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
-          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar
+          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
               + 'transform: none !important }' // disable distracting click zoom effect
         )
     }

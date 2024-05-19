@@ -161,10 +161,10 @@ ChatGPT 无穷 与以下浏览器兼容.
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/5162926?first-contrib=2023.11.27-ui-change-report&h=50&w=50&mask=circle&maxage=7d "@xspeed1989")](https://github.com/xspeed1989)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/37517008?first-contrib=2023.12.05-first-button-bug-report&h=50&w=50&mask=circle&maxage=7d "@Chipsum")](https://github.com/Chipsum)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2911588?first-contrib=2023.2.26-truncate-toggle-label-idea&h=50&w=50&mask=circle&maxage=7d "@sanchomuzax")](https://github.com/sanchomuzax)
-<a href="https://greasyfork.org/users/1000404-misspent"><picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=50 src="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.7.29-share-box-popup-bug-alert" title="misspent"></picture></a>
+<a href="https://greasyfork.org/users/1000404-misspent"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=50 src="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.7.29-share-box-popup-bug-alert" title="misspent"></picture></a>
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
-<a href="https://chatgpt.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.chatgptinfinity.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.chatgptinfinity.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
+<a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.chatgptinfinity.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.chatgptinfinity.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
 <br><br>
 
 ## 🤖 更多 ChatGPT 应用
@@ -174,14 +174,14 @@ ChatGPT 无穷 与以下浏览器兼容.
 
 ## 📜 相关应用
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动刷新 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动刷新 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
 
 > 保持 ChatGPT 会话最新以消除网络错误 + Cloudflare 检查。
 <br>[安装](https://docs.chatgptautorefresh.com/zh-cn/#-如何安装) / 
 [自述文件](https://docs.chatgptautorefresh.com/zh-cn/#readme) / 
 [讨论](https://github.chatgptautorefresh.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动继续 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动继续 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 
 > 自动继续生成多个 ChatGPT 响应。<br>
 [安装](https://docs.chatgptautocontinue.com/zh-cn/#-如何安装) / 

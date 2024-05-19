@@ -9,7 +9,7 @@
     </h6>
 </div>
 
-# <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon512.png"><img width=23 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon512.png"></picture> ChatGPT 自动刷新 ↻ &nbsp;<a href="https://twitter.com/intent/tweet?text=厌倦了%20ChatGPT%20的不断中断？%20使用此插件自动刷新您的会话%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
+# <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon512.png"><img width=23 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon512.png"></picture> ChatGPT 自动刷新 ↻ &nbsp;<a href="https://twitter.com/intent/tweet?text=厌倦了%20ChatGPT%20的不断中断？%20使用此插件自动刷新您的会话%21%20&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-auto-refresh&hashtags=greasemonkey,openai,chatgpt"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
 
 <a href="https://greasyfork.chatgptautorefresh.com"><img height=31 src="https://img.shields.io/badge/用户-10,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.chatgptautorefresh.com/stargazers"><img height=31 src="https://img.shields.io/github/stars/adamlui/chatgpt-auto-refresh?label=星星&color=af68ff&logo=github&logoColor=white&labelColor=464646&style=for-the-badge"></a>
@@ -166,7 +166,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/116735067?first-contrib=2023.04.18&h=50&w=50&mask=circle&maxage=7d "@maplepicker")](https://github.com/maplepicker)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/58101940?first-contrib=2023.04.19&h=50&w=50&mask=circle&maxage=7d "@Cloudkkk")](https://github.com/Cloudkkk)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/49114216?first-contrib=2023.04.23&h=50&w=50&mask=circle&maxage=7d "@chenzhihao1040728129")](https://github.com/chenzhihao1040728129)
-<a href="https://greasyfork.org/users/1041317-dlzrncsb"><picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=50 src="https://media.chatgptautorefresh.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.4.24-short-interval-complaint-leading-to-custom-interval-idea" title="dlzrncsb"></picture></a>
+<a href="https://greasyfork.org/users/1041317-dlzrncsb"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=50 src="https://media.chatgptautorefresh.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.4.24-short-interval-complaint-leading-to-custom-interval-idea" title="dlzrncsb"></picture></a>
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.27&h=50&w=50&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2470659?first-contrib=2023.08.03-chat-reset-issue&h=50&w=50&mask=circle&maxage=7d "@nabilfreeman")](https://github.com/nabilfreeman)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/13482553?first-contrib=2023.10.05-chat-reset-fix&h=50&w=50&mask=circle&maxage=7d "@h-h-h-h")](https://github.com/h-h-h-h)
@@ -175,7 +175,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2911588?first-contrib=2023.2.26-shortened-hungarian-menu-label&h=50&w=50&mask=circle&maxage=7d "@sanchomuzax")](https://github.com/sanchomuzax)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110?h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
-<a href="https://chatgpt.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.chatgptautorefresh.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.chatgptautorefresh.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
+<a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.chatgptautorefresh.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.chatgptautorefresh.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
 
 </div>
 
@@ -195,13 +195,13 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 [自述文件](https://docs.chatgptwidescreen.com/zh-cn/#readme) /
 [讨论](https://github.chatgptwidescreen.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动继续 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动继续 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
 > 自动继续生成多个 ChatGPT 响应。<br>
 [安装](https://docs.chatgptautocontinue.com/zh-cn/#-如何安装) /
 [自述文件](https://docs.chatgptautocontinue.com/zh-cn/#readme) /
 [讨论](https://github.chatgptautocontinue.com/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT无限 ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT无限 ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
 > 从无所不知的 ChatGPT 生成无穷无尽的答案 (用任何语言!)
 <br>[安装](https://docs.chatgptinfinity.com/zh-cn#-greasemonkey-用户脚本) /
 [自述文件](https://docs.chatgptinfinity.com/zh-cn#readme) /
