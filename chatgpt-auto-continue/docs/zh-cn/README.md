@@ -11,7 +11,7 @@
 
 # <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon512.png"><img width=23 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon512.png"></picture> ChatGPT 自动继续 ⏩ &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=%E4%BD%BF%E7%94%A8%E6%AD%A4%E6%8F%92%E4%BB%B6%E8%87%AA%E5%8A%A8%E4%BB%8E%E5%A4%9A%E4%B8%AA%20ChatGPT%20%E5%93%8D%E5%BA%94%E7%BB%A7%E7%BB%AD%E5%AF%B9%E8%AF%9D%EF%BC%81&url=https://chatgptautocontinue.com&hashtags=javascript,openai,chatgpt)
 
-<a href="https://greasyfork.chatgptautocontinue.com"><img height=31 src="https://img.shields.io/greasyfork/dt/466789?label=用户&logo=weightsandbiases&logoColor=white&labelColor=464646&color=2bbbd8&style=for-the-badge">
+<a href="https://greasyfork.chatgptautocontinue.com"><img height=31 src="https://img.shields.io/greasyfork/dt/466789?label=用户&logo=weightsandbiases&logoColor=white&labelColor=464646&color=blue&style=for-the-badge">
 <a href="LICENSE.md"><img height=31 src="https://img.shields.io/badge/许可证-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.chatgptautocontinue.com/commits"><img height=31 src="https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-auto-continue?label=提交&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/adamlui/chatgpt-auto-continue"><img height=31 src="https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-auto-continue?label=代码质量&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
