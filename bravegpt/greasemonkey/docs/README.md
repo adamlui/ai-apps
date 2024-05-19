@@ -193,21 +193,21 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ## 📜 Related scripts
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/chatgpt-userscripts/main/media/icons/openai-favicon64.png"></picture> [ChatGPT Auto Refresh ↻](https://github.chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon48.png?a45cf1e"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon48.png?a45cf1e"></picture> [ChatGPT Auto Refresh ↻](https://github.chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg?1080f44"></a>
 
 > Keeps ChatGPT sessions fresh, eliminating chat time limits + network errors + Cloudflare checks.
 <br>[Install](https://github.chatgptautorefresh.com/#-installation) /
 [Readme](https://github.chatgptautorefresh.com/#readme) /
 [Discuss](https://chatgptautorefresh.com/discuss)
 
-### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=17> [DuckDuckGPT](https://github.duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
+### <img width=17 src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302"> [DuckDuckGPT](https://github.duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
 
 > Bring the magic of ChatGPT to DuckDuckGo (powered by GPT-4!)
 <br>[Install](https://github.ddgpt.com/#-installation) /
 [Readme](https://github.ddgpt.com/#readme) /
 [Discuss](https://github.ddgpt.com/discussions)
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png"></picture> [GoogleGPT](https://github.kudoai.com/googlegpt) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png?8652a6e"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e"></picture> [GoogleGPT](https://github.kudoai.com/googlegpt) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.googlegpt.io/images/badges/awesome/badge.svg?699c63d"></a>
 
 > Bring the magic of ChatGPT to Google Search (powered by GPT-4!)
 <br>[Install](https://greasyfork.org/scripts/478597-googlegpt) /
