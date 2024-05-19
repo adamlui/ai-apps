@@ -45,7 +45,7 @@
 
 </div>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
 ## ⚡ Dependencies
 
@@ -74,7 +74,7 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoAI
 </div>
 </h6>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
 ## 🌐 Compatibility
 
@@ -100,7 +100,7 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoAI
 
 If you've tested it to work in a browser not listed, create a [pull request](https://github.bravegpt.com/pulls) to become a contributor!
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
 ## 🕵️ Proxy Mode
 
@@ -125,7 +125,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 [Leave a review](https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
 ## 📣 Social links
 
@@ -141,7 +141,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 [![](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social "Follow @adamluitube on YouTube")](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 [![](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "Follow @adamlui on GitHub")](https://github.com/adamlui)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
 ## 🧠 Contributors
 
@@ -165,7 +165,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
 <div align="center">
 
@@ -182,14 +182,14 @@ This app exists thanks to code, translations, issues & ideas from the following 
 
 </div>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
 ## 📜 Related scripts
 
@@ -214,7 +214,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://github.kudoai.com/googlegpt/#readme) /
 [Discuss](https://github.kudoai.com/googlegpt/discussions)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/KudoAI/bravegpt/main/media/images/separators/aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> /
 <a href="#----------------">Back to top ↑</a>
