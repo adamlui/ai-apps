@@ -61,7 +61,10 @@
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://katex.org">
-    <img width=175 src="https://i.imgur.com/3FBdSCi.png">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/logos/katex/white-logo.svg">
+        <img width=175 src="https://media.bravegpt.com/images/logos/katex/dark-gray-logo423x166.png">
+    </picture>
 </a>
 <br><br>
 
