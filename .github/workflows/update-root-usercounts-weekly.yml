@@ -140,7 +140,7 @@ jobs:
       - name: Update README shields
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-apps
-          total_users=$(echo ${{ steps.get-usercounts.outputs.total_users }})
+          total_users="${{ steps.get-usercounts.outputs.total_users }}"
           sed -i "s/\(badge\/[^-]*-\)[0-9.,km+]\+-/\1$total_users-/gI" $(find docs/ -name "README.md")
           if [ $? -eq 0 ] ; then echo "Usercount shields updated to $total_users"
           else echo "Usercount shields up-to-date already" ; fi
