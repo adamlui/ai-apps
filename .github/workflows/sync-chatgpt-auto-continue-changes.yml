@@ -108,6 +108,6 @@ jobs:
           push_options: --force
           add_options: --all
           commit_user_email: auto-sync@kudoai.com
-          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps`]"
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/chatgpt-auto-continue`]"
           file_pattern: "chatgpt/chatgpt-auto-continue/**"
           repository: adamlui/userscripts
