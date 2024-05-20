@@ -6,8 +6,7 @@
 (async () => {
     /* global newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn */
 
-    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2],
-          isGPT4oUI = !!document.documentElement.className.includes(' ')
+    const site = /:\/\/(.*?\.)?(.*)\.[^/]+/.exec(document.location.href)[2]
 
     // Import libs
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
@@ -31,6 +30,9 @@
     // Selectively disable content or user script
     if (!/chatgpt|openai|poe/.test(site)) return
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
+
+    // Init UI flag
+    const isGPT4oUI = !!document.documentElement.className.includes(' ')
 
     // Define UI element selectors
     if (/chatgpt|openai/.test(site)) await chatgpt.isLoaded()
