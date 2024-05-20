@@ -80,7 +80,7 @@ jobs:
           push_options: --force
           add_options: --all
           commit_user_email: auto-sync@kudoai.com
-          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `adamlui/chatgpt-apps/chatgpt-widescreen`]"
+          commit_message: "${{ github.event.head_commit.message }} ↞ [auto-sync from `chatgpt-widescreen`]"
           file_pattern: "chatgpt-widescreen/**"
           repository: adamlui/chatgpt-apps
 
