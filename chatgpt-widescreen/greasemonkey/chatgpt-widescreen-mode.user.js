@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.20.2
+// @version             2024.5.20.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -728,7 +728,7 @@
     } else registerMenu() // create functional menu
 
     // Init UI flag
-    const isGPT4oUI = !!document.documentElement.className.includes(' ')
+    const isGPT4oUI = document.documentElement.className.includes(' ')
 
     // Define UI element selectors
     const inputSelector = /chatgpt|openai/.test(site) ? 'form textarea[id*="prompt"]'

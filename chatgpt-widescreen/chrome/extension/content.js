@@ -32,7 +32,7 @@
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
     // Init UI flag
-    const isGPT4oUI = !!document.documentElement.className.includes(' ')
+    const isGPT4oUI = document.documentElement.className.includes(' ')
 
     // Define UI element selectors
     if (/chatgpt|openai/.test(site)) await chatgpt.isLoaded()

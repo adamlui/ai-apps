@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.17.6
+// @version             2024.5.20
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -240,7 +240,6 @@
 // @compatible          qq
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
-// @run-at              document-end
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.2/dist/chatgpt.min.js#sha256-5K/Bxm9bvGpV6dIHShz4o0fwPmIbIJxZAcddpzGFhck=
 // @connect             cdn.jsdelivr.net
 // @connect             greasyfork.org
@@ -307,7 +306,7 @@
     // Init UI flags
     await chatgpt.isLoaded()
     const isFirefox = chatgpt.browser.isFirefox(),
-          isGPT4oUI = !!document.documentElement.className.includes(' ')
+          isGPT4oUI = document.documentElement.className.includes(' ')
 
     // Add/update TWEAKS style
     const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`

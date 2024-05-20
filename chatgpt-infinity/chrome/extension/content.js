@@ -43,7 +43,7 @@
 
     // Init UI flag
     await chatgpt.isLoaded()
-    const isGPT4oUI = !!document.documentElement.className.includes(' ')
+    const isGPT4oUI = document.documentElement.className.includes(' ')
 
     // Add listener to auto-disable Infinity Mode
     if (document.hidden !== undefined) { // ...if Page Visibility API supported
