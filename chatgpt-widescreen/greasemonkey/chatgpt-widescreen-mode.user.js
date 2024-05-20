@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.20
+// @version             2024.5.20.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -717,10 +717,8 @@
 
     // Run MAIN routine
 
-    if (/chatgpt|openai/.test(site)) await chatgpt.isLoaded()
-
     // Create browser toolbar menu or disable script if extension installed
-    await chatgpt.sidebar.isLoaded() // to let Chromium extension flag inject first
+    if (/chatgpt|openai/.test(site)) await chatgpt.sidebar.isLoaded() // to let extension flag inject
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
