@@ -32,10 +32,8 @@
     if (!/chatgpt|openai|poe/.test(site)) return
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
-    // Wait for site load
-    if (/chatgpt|openai/.test(site)) await chatgpt.isLoaded()
-
     // Define UI element selectors
+    if (/chatgpt|openai/.test(site)) await chatgpt.isLoaded()
     const inputSelector = /chatgpt|openai/.test(site) ? 'form textarea[id*="prompt"]'
                         : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
           sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
