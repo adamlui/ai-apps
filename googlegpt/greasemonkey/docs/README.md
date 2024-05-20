@@ -69,6 +69,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/9349164?first-contrib=2023.11.30-standby-mode-suggestion&h=50&w=50&mask=circle&maxage=7d "@T1mL3arn")](https://github.com/T1mL3arn)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22026520?first-contrib=2023.12.25-french-tts-suggestion&h=50&w=50&mask=circle&maxage=7d "@papapat")](https://github.com/papapat)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/105553471?first-contrib=2024.02.15-openai-endpoint-broke-report&h=50&w=50&mask=circle&maxage=7d "@YashSoPro")](https://github.com/YashSoPro)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22633385?first-contrib=2024.02.19-comment-typo-correction&h=50&w=50&mask=circle&maxage=7d "@eltociear")](https://github.com/eltociear)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
 
