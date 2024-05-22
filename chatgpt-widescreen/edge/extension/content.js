@@ -32,7 +32,7 @@
     document.documentElement.setAttribute('cwm-extension-installed', true) // for userscript auto-disable
 
     // Init UI flag
-    const isGPT4oUI = !!document.documentElement.className.includes(' ')
+    const isGPT4oUI = document.documentElement.className.includes(' ')
 
     // Define UI element selectors
     if (/chatgpt|openai/.test(site)) await chatgpt.isLoaded()
@@ -251,16 +251,16 @@
         // ID chatbar
         let chatbar
         if (/chatgpt|openai/.test(site)) {
-            chatbar = document.querySelector('div[class*="textarea:focus"]') // pre-5/2024
-                   || document.querySelector('#prompt-textarea').parentNode.parentNode // post-5/2024
+            chatbar = document.querySelector('div[class*="textarea:focus"]') // pre-GPT-4o UI
+                   || document.querySelector('#prompt-textarea').parentNode.parentNode // post-GPT-4o UI
         } else if (site == 'poe') chatbar = document.querySelector('div[class*="ChatMessageInputContainer"]')
 
         // Remove buttons
-        if (!chatbar.contains(fullWindowBtn)) { console.log('btns are not missing') ; return } // if buttons are missing, exit
-        else { // remove chat toggles
+        if (chatbar.contains(fullWindowBtn)) {
             const nodesToRemove = [newChatBtn, fullWindowBtn, wideScreenBtn, fullScreenBtn, tooltipDiv]
             for (const node of nodesToRemove) chatbar.removeChild(node)
-    }}
+        }
+    }
 
     function updateBtnSVG(mode, state = '') {
 
