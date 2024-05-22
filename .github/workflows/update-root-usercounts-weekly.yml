@@ -21,7 +21,7 @@ jobs:
         run: |
           LC_NUMERIC=en_US # to insert commas
 
-          declare -A gf_scripts=(
+          declare -A gf_scripts=( # for Greasy Fork user counts
             ["460805"]="Autoclear ChatGPT History"
             ["462440"]="BraveGPT"
             ["466789"]="ChatGPT Auto-Continue"
@@ -31,11 +31,13 @@ jobs:
             ["459849"]="DuckDuckGPT"
             ["478597"]="GoogleGPT"
           )
-          declare -A chrome_extensions=(
+
+          declare -A chrome_extensions=( # for Chrome user counts
             ["amikeononomkhphopbflomhnmdijjpmb"]="ChatGPT Infinity"
             ["jgnjpnmofkalfliddjelaciggjgnphgm"]="ChatGPT Widescreen Mode"
           )
-          declare -A edge_addons=(
+
+          declare -A edge_addons=( # for Edge user counts
             ["jgonecnbmehicpdpjkdekamhmlebfagb"]="ChatGPT Infinity"
             ["obnaaalnokmchdoagnhmllakaclaaooa"]="ChatGPT Widescreen Mode"
           )
