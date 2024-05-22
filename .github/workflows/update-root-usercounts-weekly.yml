@@ -21,7 +21,7 @@ jobs:
         run: |
           LC_NUMERIC=en_US # to insert commas
 
-          declare -A userscripts=(
+          declare -A gf_scripts=(
             ["460805"]="Autoclear ChatGPT History"
             ["462440"]="BraveGPT"
             ["466789"]="ChatGPT Auto-Continue"
@@ -77,7 +77,7 @@ jobs:
           }
 
           # Alphabetize arrays for more readable logging
-          for array_type in "userscripts" "chrome_extensions" "edge_addons" ; do
+          for array_type in "gf_scripts" "chrome_extensions" "edge_addons" ; do
 
             # Extract IDs/names
             eval ids=\${!$array_type[@]} names=(\"\${$array_type[@]}\")
@@ -94,7 +94,7 @@ jobs:
           done
 
           # Fetch/sum GF user counts
-          for tuple in "${sorted_userscripts[@]}" ; do
+          for tuple in "${sorted_gf_scripts[@]}" ; do
             script_id="${tuple##*:}" script_name="${tuple%%:*}"
             base_url="https://img.shields.io/greasyfork/dt/"
             gf_users=$(curl -s "$base_url$script_id" |
