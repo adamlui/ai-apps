@@ -113,8 +113,8 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <div align='center'>
 
-![](https://user-images.githubusercontent.com/10906554/229068389-795e517f-a95c-4c2f-829c-3fa83a6dbf73.png)
-![](https://user-images.githubusercontent.com/10906554/229728672-3fec6a2d-c4fe-4738-871d-56c1d97cb2c5.png)
+![](https://media.bravegpt.com/images/screenshots/desktop/tampermonkey-proxy-mode-menu.png)
+![](https://media.bravegpt.com/images/screenshots/desktop/proxy-mode-notification.png)
 
 </div>
 
