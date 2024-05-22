@@ -1,7 +1,7 @@
 <h1>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/logos/bravegpt/darkmode.png">
-    <img alt="BraveGPT" width=322 height=58 src="https://media.bravegpt.com/images/logos/bravegpt/lightmode.png">
+    <img alt="BraveGPT" width=322 src="https://media.bravegpt.com/images/logos/bravegpt/lightmode.png">
   </picture>  
 </h1>
 
