@@ -17,11 +17,11 @@ jobs:
           path: adamlui/chatgpt-apps
 
       - name: Fetch/sum user counts
-        id: get-usercounts
+        id: get-stats
         run: |
           LC_NUMERIC=en_US # to insert commas
 
-          declare -A gf_scripts=( # for Greasy Fork user counts
+          declare -A gf_scripts=( # for Greasy Fork script user counts
             ["460805"]="Autoclear ChatGPT History"
             ["462440"]="BraveGPT"
             ["466789"]="ChatGPT Auto-Continue"
@@ -32,14 +32,20 @@ jobs:
             ["478597"]="GoogleGPT"
           )
 
-          declare -A chrome_extensions=( # for Chrome user counts
+          declare -A chrome_extensions=( # for Chrome extension user counts
             ["amikeononomkhphopbflomhnmdijjpmb"]="ChatGPT Infinity"
             ["jgnjpnmofkalfliddjelaciggjgnphgm"]="ChatGPT Widescreen Mode"
           )
 
-          declare -A edge_addons=( # for Edge user counts
+          declare -A edge_addons=( # for Edge addon user counts
             ["jgonecnbmehicpdpjkdekamhmlebfagb"]="ChatGPT Infinity"
             ["obnaaalnokmchdoagnhmllakaclaaooa"]="ChatGPT Widescreen Mode"
+          )
+
+          jsd_gh_repos=( # for jsDelivr request counts
+            "adamlui/chatgpt-apps" "adamlui/autoclear-chatgpt-history" "adamlui/chatgpt-auto-continue"
+            "adamlui/chatgpt-auto-refresh" "adamlui/chatgpt-infinity" "adamlui/chatgpt-widescreen"
+            "KudoAI/bravegpt" "KudoAI/duckduckgpt" "KudoAI/googlegpt"
           )
 
           expand_num() { # expand nums abbreviated w/ 'k' or 'm' suffix to integers
@@ -95,7 +101,7 @@ jobs:
             eval sorted_${array_type}=\(\"\${sorted_array[@]}\"\)
           done
 
-          # Fetch/sum GF user counts
+          # Fetch/sum Greasy Fork user counts
           for tuple in "${sorted_gf_scripts[@]}" ; do
             script_id="${tuple##*:}" script_name="${tuple%%:*}"
             base_url="https://img.shields.io/greasyfork/dt/"
@@ -104,7 +110,7 @@ jobs:
             gf_users=$(expand_num "$gf_users")
             echo "$script_name GF users: $gf_users"
             total_gf_users=$((total_gf_users + gf_users))
-          done ; echo -e "\nTotal Greasy Fork users: $total_gf_users\n"
+          done ; echo -e "\n-----\nTotal Greasy Fork users: $total_gf_users\n-----\n"
 
           # Fetch/sum Chrome extension user counts
           for tuple in "${sorted_chrome_extensions[@]}" ; do
@@ -115,7 +121,7 @@ jobs:
             chrome_users=$(expand_num "$chrome_users")
             echo "$app_name Chrome users: $chrome_users"
             total_chrome_users=$((total_chrome_users + chrome_users))
-          done ; echo -e "\nTotal Chrome users: $total_chrome_users\n"
+          done ; echo -e "\n-----\nTotal Chrome users: $total_chrome_users\n-----\n"
 
           # Fetch/sum Edge addon user counts
           for tuple in "${sorted_edge_addons[@]}" ; do
@@ -126,26 +132,67 @@ jobs:
               sed 's/"activeInstallCount"://')
             echo "$app_name Edge users: $edge_users"
             total_edge_users=$((total_edge_users + edge_users))
-          done ; echo -e "\nTotal Edge users: $total_edge_users\n"
+          done ; echo -e "\n-----\nTotal Edge users: $total_edge_users\n-----\n"
 
-          # Sum user counts
-          total_users=$((total_gf_users + total_chrome_users + total_edge_users))
-          echo "Total cumulative users: $total_users"
+          # Fetch/sum jsDelivr request counts
+          for repo in "${jsd_gh_repos[@]}" ; do
+            repo_requests=$(curl -s "https://img.shields.io/jsdelivr/gh/hm/$repo.svg" |
+              sed -n -E 's|.*<title>jsdelivr: ([0-9,.km]+).*</title>.*|\1|Ip')
+            repo_requests=$(expand_num "$repo_requests")
+            echo "$repo jsDelivr hits: $repo_requests"
+            total_requests=$((total_requests + repo_requests))
+          done ; echo -e "\n-----\nTotal monthly jsDelivr requests: $total_requests\n-----\n"
 
-          # Format total
-          formatted_total=$(format_total "$total_users")
-          echo "Formatted total: $formatted_total"
+          # Format totals
+          formatted_total_users=$(format_total "$((
+            total_gf_users + total_chrome_users + total_edge_users))")
+          echo "Formatted total users: $formatted_total_users"
+          formatted_total_requests=$(format_total "$total_requests")
+          echo "Formatted total monthly jsDelivr requests: $formatted_total_requests"
 
-          # Store for update step next
-          echo "total_users=$formatted_total" >> $GITHUB_OUTPUT
+          # Expose as outputs for update step next
+          echo "total_users=$formatted_total_users" >> $GITHUB_OUTPUT
+          echo "total_requests=$formatted_total_requests" >> $GITHUB_OUTPUT
 
       - name: Update README shields
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-apps
-          total_users="${{ steps.get-usercounts.outputs.total_users }}"
-          sed -i "s/\(badge\/[^-]*-\)[0-9.,km+]\+-/\1$total_users-/gI" $(find docs/ -name "README.md")
-          if [ $? -eq 0 ] ; then echo "Usercount shields updated to $total_users"
-          else echo "Usercount shields up-to-date already" ; fi
+
+          total_users="${{ steps.get-stats.outputs.total_users }}"
+          total_requests="${{ steps.get-stats.outputs.total_requests }}"
+          shields_updated=0
+
+          # Update users shields
+          if [ "$total_users" != "0" ] ; then
+            for readme in $(find docs/ -name "README.md") ; do
+              old_readme=$(<"$readme")
+              sed -i "s/\(badge\/[^-]*-\)[0-9.,km+]\+-/\1$total_users-/gI" "$readme"
+              new_readme=$(<"$readme")
+              if [ "$old_readme" != "$new_readme" ] ; then users_updated=true ; ((shields_updated++)) ; fi
+            done
+            if [ "$users_updated" = true ] ; then echo "Usercount shields updated to $total_users"
+            else echo "Usercount shields already up-to-date" ; fi
+          fi
+
+          # Update jsDelivr shields
+          if [ "$total_requests" != "0" ] ; then
+            for readme in $(find docs/ -name "README.md") ; do
+              old_readme=$(<"$readme")
+              sed -i -E "s|(badge/jsDelivr_[^-]+-)[0-9.,km+]+|\1$total_requests|Ig" "$readme"
+              new_readme=$(<"$readme")
+              if [ "$old_readme" != "$new_readme" ] ; then requests_updated=true ; ((shields_updated++)) ; fi
+            done
+            if [ "$requests_updated" = true ] ; then echo "jsDelivr shields updated to $total_requests"
+            else echo "jsDelivr shields already up-to-date" ; fi
+          fi
+
+          # Define commit msg for push step next
+          commit_msg="Updated "
+          [ "$users_updated" == "true"    ] && commit_msg+="usercount"
+          [ "$shields_updated" -gt 1      ] && commit_msg+="/"
+          [ "$requests_updated" == "true" ] && commit_msg+="jsDelivr"
+          commit_msg+=" shield counter$([ "$shields_updated" -gt 1 ] && echo "s")"
+          echo "commit_msg=$commit_msg" >> $GITHUB_OUTPUT # expose as output
 
       - name: Push to adamlui/chatgpt-apps
         uses: stefanzweifel/git-auto-commit-action@v4
@@ -154,6 +201,6 @@ jobs:
           add_options: --all
           commit_user_email: auto-sync@kudoai.com
           commit_author: kudo-sync-bot <auto-sync@kudoai.com>
-          commit_message: Updated usercount shield counters
+          commit_message: ${{ steps.update-stats.outputs.commit_msg }}
           file_pattern: "**/README.md"
           repository: adamlui/chatgpt-apps
