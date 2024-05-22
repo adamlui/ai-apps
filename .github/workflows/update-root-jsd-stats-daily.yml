@@ -37,7 +37,7 @@ jobs:
 
           format_total() {
             local num=$1 ; first_digit="${num:0:1}" second_digit="${num:1:1}"
-            second_digit=$(( second_digit < 5 ? 0 : 5 )) # round 2nd digit down
+            second_digit_rounded=$(( second_digit < 5 ? 0 : 5 ))
             if (( num >= 1000000000 )) ; then # 1B+ w/ one decimal place
               formatted_num="$(( num / 1000000000 ))"
               remainder=$(( (num % 1000000000) / 100000000 ))
@@ -48,7 +48,7 @@ jobs:
             elif (( num >= 1000000 )) ; then # abbr 1,000,000+ to 9,500,000+
               formatted_num="${first_digit},${second_digit}00,000+"
             elif (( num >= 100000 )) ; then # abbr 100,000+ to 950,000+
-              formatted_num="${first_digit}${second_digit}0,000+"
+              formatted_num="${first_digit}${second_digit_rounded}0,000+"
             elif (( num >= 10000 )) ; then # abbr 10,000+ to 90,000+
               formatted_num="${first_digit}0,000+"
             elif (( num >= 1000 )) ; then # abbr 1K to 9.9K
