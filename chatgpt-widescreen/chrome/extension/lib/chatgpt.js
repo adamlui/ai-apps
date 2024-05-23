@@ -250,14 +250,6 @@ const chatgpt = {
     isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
     isFullScreen: function() { return chatgpt.browser.isFullScreen(); },
 
-    isLoaded: function() {
-        return new Promise(resolve => {
-            (function checkIsLoaded() {
-                if (chatgpt.getNewChatButton()) resolve(true);
-                else setTimeout(checkIsLoaded, 100);
-            })();
-    });},
-
     notify: async function(msg, position, notifDuration, shadow) {
         notifDuration = notifDuration ? +notifDuration : 1.75; // sec duration to maintain notification visibility
         const fadeDuration = 0.3, // sec duration of fade-out
