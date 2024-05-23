@@ -42,7 +42,7 @@
     })
 
     // Init UI flag
-    await chatgpt.isLoaded()
+    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
     const isGPT4oUI = document.documentElement.className.includes(' ')
 
     // Add listener to auto-disable Infinity Mode
@@ -82,7 +82,7 @@
     updateToggleHTML() // create children
 
     // Insert sidebar toggle
-    await chatgpt.sidebar.isLoaded()
+    await Promise.race([chatgpt.sidebar.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
     settings.load(['extensionDisabled']).then(() => {
         if (!config.extensionDisabled) insertToggle() })
 
@@ -136,7 +136,7 @@
     // Define UI functions
 
     async function insertToggle() {
-        await chatgpt.history.isLoaded()
+        await Promise.race([chatgpt.history.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
 
         // Insert toggle
         const parentToInsertInto = document.querySelector('nav '
