@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.23.1
+// @version             2024.5.23.2
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -263,14 +263,14 @@
 
     // Init CONFIG
     const config = {
-        appName: 'Autoclear ChatGPT History', appSymbol: '🕶️',
-        keyPrefix: 'autoclearChatGPThistory', userLanguage: chatgpt.getUserLanguage(),
+        appName: 'Autoclear ChatGPT History', appSymbol: '🕶️', keyPrefix: 'autoclearChatGPThistory',
         gitHubURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
         greasyForkURL: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history' }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = 'https://support.autoclearchatgpt.com'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@16d188e/'
+    config.userLanguage = chatgpt.getUserLanguage()
     loadSetting('autoclear', 'buttonHidden', 'notifDisabled', 'toggleHidden')
 
     // Define MESSAGES
