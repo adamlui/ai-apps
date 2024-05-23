@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.23.2
+// @version             2024.5.23.3
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -281,7 +281,7 @@
     const extensionInstalled = await Promise.race([
         new Promise(resolve => {
             (function checkExtensionInstalled() {
-                if (document.querySelector('[cwm-extension-installed]')) resolve(true)
+                if (document.querySelector('[cif-extension-installed]')) resolve(true)
                 else setTimeout(checkExtensionInstalled, 200)
             })()
         }),
