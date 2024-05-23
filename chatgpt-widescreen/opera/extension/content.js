@@ -35,7 +35,8 @@
     const isGPT4oUI = document.documentElement.className.includes(' ')
 
     // Define UI element selectors
-    if (/chatgpt|openai/.test(site)) await chatgpt.isLoaded()
+    if (/chatgpt|openai/.test(site)) await Promise.race([
+        chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
     const inputSelector = /chatgpt|openai/.test(site) ? 'form textarea[id*="prompt"]'
                         : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
           sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
