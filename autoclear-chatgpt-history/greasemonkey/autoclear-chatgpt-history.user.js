@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.20
+// @version             2024.5.23
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -304,7 +304,7 @@
     let menuIDs = [] ; registerMenu() // create browser toolbar menu
 
     // Init UI flags
-    await chatgpt.isLoaded()
+    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
     const isFirefox = chatgpt.browser.isFirefox(),
           isGPT4oUI = document.documentElement.className.includes(' ')
 
@@ -337,7 +337,8 @@
     updateToggleHTML() // create children
 
     // Insert sidebar toggle
-    await chatgpt.sidebar.isLoaded() ; insertToggle()
+    await Promise.race([chatgpt.sidebar.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
+    insertToggle()
 
     // Borrow/assign classes from sidebar div
     const firstLink = document.querySelector('nav a[href="/"]')
@@ -533,7 +534,7 @@
     // Define UI functions
 
     async function insertToggle() {
-        await chatgpt.history.isLoaded()
+        await Promise.race([chatgpt.history.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
 
         // Insert toggle
         const parentToInsertInto = document.querySelector('nav '

@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.20
+// @version             2024.5.23
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -278,7 +278,8 @@
     }) ; if (!/^en/.test(config.userLanguage)) try { msgs = await msgsLoaded; } catch (err) {}
 
     // Create browser toolbar menu or disable script if extension installed
-    await chatgpt.sidebar.isLoaded() // to let Chromium extension flag inject first
+    await Promise.race([ // to let Chromium extension flag inject first
+        chatgpt.sidebar.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
@@ -589,7 +590,7 @@
     // Define UI functions
 
     async function insertToggle() {
-        await chatgpt.history.isLoaded()
+        await Promise.race([chatgpt.history.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
 
         // Insert toggle
         const parentToInsertInto = document.querySelector('nav '
