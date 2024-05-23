@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.23.1
+// @version             2024.5.23.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -278,13 +278,20 @@
     }) ; if (!/^en/.test(config.userLanguage)) try { msgs = await msgsLoaded; } catch (err) {}
 
     // Create browser toolbar menu or disable script if extension installed
-    await Promise.race([ // to let Chromium extension flag inject first
-        chatgpt.sidebar.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
+    const extensionInstalled = await Promise.race([
+        new Promise(resolve => {
+            (function checkExtensionInstalled() {
+                if (document.querySelector('[cwm-extension-installed]')) resolve(true)
+                else setTimeout(checkExtensionInstalled, 200)
+            })()
+        }),
+        new Promise(resolve => setTimeout(() => resolve(false), 1500))
+    ])
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
     let menuIDs = []
-    if (document.documentElement.getAttribute('cif-extension-installed')) { // if extension installed, disable script/menu
+    if (extensionInstalled) { // disable script/menu
         GM_registerMenuCommand(state.symbol[1] + ' ' + ( msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
             () => { return }) // disable menu
         return // exit script
