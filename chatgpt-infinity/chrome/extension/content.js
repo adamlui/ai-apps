@@ -154,7 +154,7 @@
                     if (gptsLink) resolve(gptsLink.parentNode.parentNode)
                     else setTimeout(checkGPTsLinkLoaded, 200)
                 })()
-            }), new Promise(resolve => setTimeout(resolve(parentToInsertInto.children[1]), 2000))])    
+            }), new Promise(resolve => setTimeout(() => resolve(parentToInsertInto.children[1]), 2000))])    
         if (!parentToInsertInto.contains(navToggleDiv))
              parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore)
 

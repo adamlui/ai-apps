@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.23.9
+// @version             2024.5.24
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -617,7 +617,7 @@
                     if (gptsLink) resolve(gptsLink.parentNode.parentNode)
                     else setTimeout(checkGPTsLinkLoaded, 200)
                 })()
-            }), new Promise(resolve => setTimeout(resolve(parentToInsertInto.children[1]), 2000))])    
+            }), new Promise(resolve => setTimeout(() => resolve(parentToInsertInto.children[1]), 2000))])    
         if (!parentToInsertInto.contains(navToggleDiv))
              parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore)
 

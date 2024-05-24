@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.23.7
+// @version             2024.5.24
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -553,7 +553,7 @@
                     if (gptsLink) resolve(gptsLink.parentNode.parentNode)
                     else setTimeout(checkGPTsLinkLoaded, 200)
                 })()
-            }), new Promise(resolve => setTimeout(resolve(parentToInsertInto.children[1]), 2000))])    
+            }), new Promise(resolve => setTimeout(() => resolve(parentToInsertInto.children[1]), 2000))])    
         if (!parentToInsertInto.contains(navToggleDiv))
             parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore)
 
