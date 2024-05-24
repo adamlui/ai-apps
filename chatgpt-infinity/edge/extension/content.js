@@ -159,8 +159,6 @@
              parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore)
 
         // Tweak styles
-        parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
-            chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
         document.querySelector('#infToggleFavicon').src = `${ // update navicon color in case scheme changed
