@@ -259,16 +259,6 @@ const chatgpt = {
                 return svg.parentNode;
     }},
 
-    history: {
-        isLoaded: function() {
-            return new Promise(resolve => {
-                (function checkChatHistory() {
-                    if (document.querySelector('nav')) resolve(true);
-                    else setTimeout(checkChatHistory, 100);
-                })();
-        });}
-    },
-
     isDarkMode: function() { return document.documentElement.classList.toString().includes('dark'); },
 
     isIdle: function() {
@@ -494,15 +484,7 @@ const chatgpt = {
                                     .some(child => child.style.transform.includes('translateY'));
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
-        },
-
-        isLoaded: function() {
-            return new Promise(resolve => {
-                (function checkIsLoaded() {
-                    if (document.querySelector('nav a[href="/"]')) resolve(true);
-                    else setTimeout(checkIsLoaded, 100);
-                })();
-        });}
+        }
     },
 
     startNewChat: function() { try { chatgpt.getNewChatBtn().click(); } catch (err) { console.error(err.message); }},
