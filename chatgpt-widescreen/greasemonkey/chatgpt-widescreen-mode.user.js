@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.23.3
+// @version             2024.5.23.4
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -723,9 +723,7 @@
                 if (document.querySelector('[cwm-extension-installed]')) resolve(true)
                 else setTimeout(checkExtensionInstalled, 200)
             })()
-        }),
-        new Promise(resolve => setTimeout(() => resolve(false), 1500))
-    ])
+        }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
 
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
