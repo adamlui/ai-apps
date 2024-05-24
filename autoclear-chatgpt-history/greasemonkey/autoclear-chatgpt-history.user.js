@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.23.3
+// @version             2024.5.23.4
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -336,7 +336,7 @@
         )
     }
 
-    // Create nav TOGGLE div, add styles
+    // Create NAV TOGGLE div, add styles
     const navToggleDiv = document.createElement('div')
     navToggleDiv.style.height = '37px'
     navToggleDiv.style.margin = '2px 0' // add v-margins
@@ -344,15 +344,13 @@
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
     updateToggleHTML() // create children
 
-    // Borrow/assign classes from sidebar div
-    if (firstLink) {
+    if (firstLink) { // borrow/assign CLASSES from sidebar div
         const firstIcon = firstLink.querySelector('div:first-child'),
               firstLabel = firstLink.querySelector('div:nth-child(2)')
         navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
         navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
     }
 
-    // Insert sidebar toggle
     insertToggle()
 
     // Add LISTENER to toggle switch/label/config/menu + auto-clear
@@ -370,7 +368,7 @@
         saveSetting('autoclear', config.autoclear)
     })
 
-    // Monitor node changes to update sidebar toggle visibility
+    // monitor NODE CHANGES to update sidebar toggle visibility
     const nodeObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             if (mutation.type == 'childList' && mutation.addedNodes.length) {
