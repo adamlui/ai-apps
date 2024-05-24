@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.23.4
+// @version             2024.5.23.5
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -284,9 +284,7 @@
                 if (document.querySelector('[cif-extension-installed]')) resolve(true)
                 else setTimeout(checkExtensionInstalled, 200)
             })()
-        }),
-        new Promise(resolve => setTimeout(() => resolve(false), 1500))
-    ])
+        }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
@@ -298,8 +296,17 @@
     } else registerMenu() // create functional menu
 
     // Init UI flags
+    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
+    await Promise.race([ // first sidebar link loaded
+        new Promise(resolve => {
+            (function checkFirstLink() {
+                if (document.querySelector('nav a[href="/"]')) resolve(true)
+                else setTimeout(checkFirstLink, 200)
+            })()
+        }), new Promise(resolve => setTimeout(resolve, 5000))])
     const isFirefox = chatgpt.browser.isFirefox(),
-          isGPT4oUI = document.documentElement.className.includes(' ')
+          isGPT4oUI = document.documentElement.className.includes(' '),
+          firstLink = document.querySelector('nav a[href="/"]')
 
     // Add listener to auto-disable Infinity Mode
     if (document.hidden !== undefined) { // ...if Page Visibility API supported
@@ -339,16 +346,14 @@
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
     updateToggleHTML() // create children
 
-    insertToggle()
-
-    // Borrow/assign classes from sidebar div (pre-GPT-4o UI)
-    if (!isGPT4oUI) {
-        const firstLink = document.querySelector('nav a[href="/"]'),
-              firstIcon = firstLink?.querySelector('div:first-child'),
-              firstLabel = firstLink?.querySelector('div:nth-child(2)')
+    if (firstLink) { // borrow/assign classes from sidebar div
+        const firstIcon = firstLink.querySelector('div:first-child'),
+              firstLabel = firstLink.querySelector('div:nth-child(2)')
         navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
         navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
     }
+
+    insertToggle()
 
     // Add listener to toggle switch/label/config/menu
     navToggleDiv.addEventListener('click', () => {
@@ -599,19 +604,27 @@
     // Define UI functions
 
     async function insertToggle() {
-        await Promise.race([chatgpt.history.isLoaded(), new Promise(resolve => setTimeout(resolve, 1000))])
 
         // Insert toggle
-        const parentToInsertInto = document.querySelector('nav '
-            + ( isGPT4oUI ? '' // nav div itself
-                          : '> div:not(.invisible)' )) // upper nav div
+        const parentToInsertInto = document.querySelector('nav ' +
+            (isGPT4oUI && !firstLink ? '' // nav div itself
+                : isGPT4oUI && firstLink ? ' div:nth-of-type(2)' // links + history div
+                : '> div:not(.invisible)')); // upper nav div
+        const childToInsertBefore = await Promise.race([
+            new Promise(resolve => {
+                (function checkGPTsLinkLoaded() {
+                    const gptsLink = document.querySelector('nav a[href="/gpts"]')
+                    if (gptsLink) resolve(gptsLink.parentNode.parentNode)
+                    else (checkGPTsLinkLoaded, 200)
+                })()
+            }), new Promise(resolve => setTimeout(resolve(parentToInsertInto.children[1]), 2000))])    
         if (!parentToInsertInto.contains(navToggleDiv))
-             parentToInsertInto.insertBefore(navToggleDiv, parentToInsertInto.children[1])
+             parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore)
 
         // Tweak styles
         parentToInsertInto.style.backgroundColor = ( // hide transparency revealing chat log
             chatgpt.isDarkMode() ? '#0d0d0d' : '#f9f9f9' )
-        if (isGPT4oUI) parentToInsertInto.children[0].style.marginBottom = '5px'
+        if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
         document.querySelector('#infToggleFavicon').src = `${ // update navicon color in case scheme changed
             config.assetHostURL }media/images/icons/infinity-symbol/${
@@ -635,10 +648,10 @@
         const switchSpan = document.querySelector('#infSwitchSpan') || document.createElement('span')
         switchSpan.id = 'infSwitchSpan'
         const switchStyles = {
-            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : isGPT4oUI ? 160 : 152 }px`,
+            position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : isGPT4oUI ? 147 : 152 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
-            bottom: `${ isGPT4oUI ? -0.15 : 0.05 }em`, width: '30px', height: '15px',
-            '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
+            bottom: `${ !firstLink ? -0.15 : isFirefox || !isGPT4oUI ? 0.05 : 0 }em`,
+            width: '30px', height: '15px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
         }
         Object.assign(switchSpan.style, switchStyles)
 
@@ -647,7 +660,7 @@
         knobSpan.id = 'infToggleKnobSpan'
         const knobWidth = 13
         const knobStyles = {
-            position: 'absolute', left: '3px', bottom: `${ isFirefox ? 0.075 : 0.055 }em`,
+            position: 'absolute', left: '3px', bottom: `${ isFirefox && !firstLink ? 0.075 : 0.055 }em`,
             width: `${ knobWidth }px`, height: `${ knobWidth }px`, content: '""', borderRadius: '28px',
             transform: toggleInput.checked ? // init opposite final pos
                 'translateX(0)' : `translateX(${ knobWidth }px) translateY(0)`,
@@ -658,9 +671,9 @@
         // Create/stylize/fill label
         const toggleLabel = document.querySelector('#infToggleLabel') || document.createElement('label')
         toggleLabel.id = 'infToggleLabel'
-        if (isGPT4oUI) { // add font size/weight since no firstLink to borrow from
+        if (!firstLink) { // add font size/weight since no firstLink to borrow from
             toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
-        toggleLabel.style.marginLeft = `-${ isGPT4oUI ? 23 : 41 }px` // left-shift to navicon
+        toggleLabel.style.marginLeft = `-${ !firstLink ? 23 : 41 }px` // left-shift to navicon
         toggleLabel.style.cursor = 'pointer' // add finger cursor on hover
         toggleLabel.style.width = `${ chatgpt.browser.isMobile() ? 201 : isGPT4oUI ? 145 : 148 }px` // to truncate overflown text
         toggleLabel.style.overflow = 'hidden' // to truncate overflown text
