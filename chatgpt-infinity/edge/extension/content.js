@@ -5,11 +5,11 @@
 
 (async () => {
 
-    // Import libs
+    // Import LIBS
     const { config, settings } = await import(chrome.runtime.getURL('lib/settings-utils.js')),
           { chatgpt } = await import(chrome.runtime.getURL('lib/chatgpt.js'))
 
-    // Add Chrome msg listener
+    // Add CHROME MSG listener
     let fromMsg = false // to prevent double notifications blocked by popup
     chrome.runtime.onMessage.addListener(request => {
         fromMsg = true
@@ -28,11 +28,11 @@
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
-    // Selectively disable content or user script
+    // Selectively DISABLE content or user script
     if (!/chat(?:gpt|\.openai)\.com/.test(window.location.hostname)) return
     document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
 
-    // Init settings
+    // Init SETTINGS
     settings.save('userLanguage', (await chrome.i18n.getAcceptLanguages())[0])
     settings.save('infinityMode', false) // to reset popup toggle
     settings.load(['autoScrollDisabled', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden']).then(() => {
@@ -53,7 +53,7 @@
     const isGPT4oUI = document.documentElement.className.includes(' '),
           firstLink = document.querySelector('nav a[href="/"]')
 
-    // Add listener to auto-disable Infinity Mode
+    // Add LISTENER to auto-disable Infinity Mode
     if (document.hidden !== undefined) { // ...if Page Visibility API supported
         document.addEventListener('visibilitychange', () => {
             if (config.infinityMode) {                
@@ -62,7 +62,7 @@
                 else infinityMode.deactivate()
     }})}
 
-    // Add/update tweaks style
+    // Add/update TWEAKS style
     const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`
     let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
     if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
@@ -81,7 +81,7 @@
         )
     }
 
-    // Create nav toggle div, add styles
+    // Create NAV TOGGLE div, add styles
     const navToggleDiv = document.createElement('div')
     navToggleDiv.style.height = '37px'
     navToggleDiv.style.margin = '2px 0' // add v-margins
@@ -98,7 +98,7 @@
 
     settings.load(['extensionDisabled']).then(() => { if (!config.extensionDisabled) insertToggle() })
 
-    // Add listener to toggle switch/label/config/menu
+    // Add LISTENER to toggle switch/label/config/menu
     navToggleDiv.addEventListener('click', () => {
         const toggleInput = document.querySelector('#infToggleInput')
         toggleInput.checked = !toggleInput.checked
@@ -107,7 +107,7 @@
         infinityMode.toggle()
     })
 
-    // Monitor node changes to update sidebar toggle visibility
+    // Monitor NODE CHANGES to update sidebar toggle visibility
     const nodeObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             if (mutation.type == 'childList' && mutation.addedNodes.length) {
@@ -154,7 +154,7 @@
                     if (gptsLink) resolve(gptsLink.parentNode.parentNode)
                     else setTimeout(checkGPTsLinkLoaded, 200)
                 })()
-            }), new Promise(resolve => setTimeout(resolve(parentToInsertInto.children[1]), 2000))])    
+            }), new Promise(resolve => setTimeout(() => resolve(parentToInsertInto.children[1]), 2000))])    
         if (!parentToInsertInto.contains(navToggleDiv))
              parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore)
 
