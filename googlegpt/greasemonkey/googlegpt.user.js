@@ -154,7 +154,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.23
+// @version             2024.5.23.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1515,7 +1515,7 @@
 
     // Run MAIN routine
 
-    // Init config/convo/menu
+    // Init CONFIG/CONVO/MENU
     const config = {
         appName: 'GoogleGPT', appSymbol: '🤖', keyPrefix: 'googleGPT',
         appURL: 'https://www.googlegpt.io', gitHubURL: 'https://github.com/KudoAI/googlegpt',
@@ -1543,11 +1543,11 @@
           isMobile = chatgpt.browser.isMobile(),
           hasSidebar = document.querySelector('[class*="kp-"]')
 
-    // Pre-load logo
+    // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
     appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
 
-    // Define messages
+    // Define MESSAGES
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
@@ -1572,14 +1572,14 @@
 
     registerMenu()
 
-    // Init endpoints
+    // Init ENDPOINTS
     const openAIendpoints = {
         auth: 'https://auth0.openai.com',
         session: 'https://chatgpt.com/api/auth/session',
         chat: 'https://api.openai.com/v1/chat/completions' }
     const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
-    // Init alerts
+    // Init ALERTS
     const appAlerts = {
         waitingResponse: ( msgs.alert_waitingResponse || 'Waiting for ChatGPT response' ) + '...',
         login: ( msgs.alert_login || 'Please login' ) + ' @ ',
@@ -1596,11 +1596,11 @@
             + ( msgs.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
     }
 
-    // Stylize elements
+    // STYLIZE elements
     const appStyle = document.createElement('style')
     updateAppStyle() ; document.head.append(appStyle)
 
-    // Create Google style tweaks
+    // Create Google style TWEAKS
     const tweaksStyle = document.createElement('style'),
           wsbStyles = '#center_col, #center_col div { max-width: 560px !important }' // shrink center column
                     + '.googlegpt { width: 25.65rem }' // expand GoogleGPT when in limiting Google host container
@@ -1610,7 +1610,7 @@
                     + '.googlegpt ~ * { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
-    // Create/stylize tooltip div
+    // Create/stylize TOOLTIP div
     const tooltipDiv = document.createElement('div'),
           tooltipStyle = document.createElement('style')
     tooltipDiv.classList.add('button-tooltip', 'no-user-select')
@@ -1621,11 +1621,11 @@
         + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
     document.head.append(tooltipStyle)
 
-    // Create/classify GoogleGPT container
+    // Create/classify GOOGLEGPT container
     const appDiv = document.createElement('div')
     appDiv.classList.add('googlegpt', 'fade-in')
 
-    // Append to Google
+    // APPEND to Google
     const centerCol = document.querySelector('#center_col')
     const hostContainer = isMobile ? centerCol
         : document.querySelector('#rhs') // sidebar container if side snippets exist
@@ -1642,7 +1642,7 @@
     // Init footer CTA to share feedback
     let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
 
-    // Show standby mode or get/show answer
+    // Show STANDBY mode or get/show ANSWER
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
         || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present

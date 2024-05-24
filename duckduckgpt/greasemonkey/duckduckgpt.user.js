@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.23
+// @version             2024.5.23.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1208,7 +1208,7 @@
 
     // Run MAIN routine
 
-    // Init config/convo/menu
+    // Init CONFIG/CONVO/MENU
     const config = {
         appName: 'DuckDuckGPT', appSymbol: '🤖', keyPrefix: 'duckDuckGPT',
         appURL: 'https://www.duckduckgpt.com', gitHubURL: 'https://github.com/KudoAI/duckduckgpt',
@@ -1234,11 +1234,11 @@
           isMobile = chatgpt.browser.isMobile(),
           isCentered = isCenteredMode()
 
-    // Pre-load logo
+    // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc() 
     appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
 
-    // Define messages
+    // Define MESSAGES
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
@@ -1263,14 +1263,14 @@
 
     registerMenu()
 
-    // Init endpoints
+    // Init ENDPOINTS
     const openAIendpoints = {
         auth: 'https://auth0.openai.com',
         session: 'https://chatgpt.com/api/auth/session',
         chat: 'https://api.openai.com/v1/chat/completions' }
     const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
-    // Init alerts
+    // Init ALERTS
     const appAlerts = {
         waitingResponse: ( msgs.alert_waitingResponse || 'Waiting for ChatGPT response' ) + '...',
         login: ( msgs.alert_login || 'Please login' ) + ' @ ',
@@ -1287,11 +1287,11 @@
             + ( msgs.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
     }
 
-    // Stylize elements
+    // STYLIZE elements
     const appStyle = document.createElement('style')
     updateAppStyle() ; document.head.append(appStyle)
 
-    // Create DDG style tweaks
+    // Create DDG style TWEAKS
     const tweaksStyle = document.createElement('style'),
           wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
                     + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
@@ -1301,7 +1301,7 @@
                     + 'body, div.site-wrapper { overflow: clip }' // replace `overflow: hidden` to allow stickiness
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
-    // Create/stylize tooltip div
+    // Create/stylize TOOLTIP div
     const tooltipDiv = document.createElement('div'),
           tooltipStyle = document.createElement('style')
     tooltipDiv.classList.add('button-tooltip', 'no-user-select')
@@ -1316,7 +1316,7 @@
     const appDiv = document.createElement('div') // create container div
     appDiv.classList.add('ddgpt', 'fade-in')
  
-    // Create/classify/fill feedback footer
+    // Create/classify/fill feedback FOOTER
     const appFooter = document.createElement('footer')
     appFooter.classList.add('feedback-prompt', // DDG class
                             'fade-in') // DDGPT classes
@@ -1324,7 +1324,7 @@
     footerContent.className = 'js-feedback-prompt-generic' // DDG footer class
     appFooter.append(footerContent)
 
-    // Append DDGPT + footer to DDG
+    // APPEND DDGPT + footer to DDG
     const appElems = [appFooter, appDiv],
           hostContainer = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]'
                                                                         : '[class*="sidebar"]')
@@ -1332,10 +1332,10 @@
     appElems.toReversed().forEach((elem, index) => // fade in staggered
         setTimeout(() => elem.classList.add('active'), index * 550 - 200))
 
-    // Replace hostContainer max-width w/ min-width for better UI
+    // REPLACE hostContainer max-width w/ min-width for better UI
     if (!isMobile) { hostContainer.style.maxWidth = '' ; hostContainer.style.minWidth = '448px' }
 
-    // Check for active text campaigns to replace footer CTA
+    // Check for active TEXT CAMPAIGNS to replace footer CTA
     fetchJSON('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
         (err, advertisersData) => { if (err) return
 
@@ -1434,7 +1434,7 @@
             }
     })
 
-    // Show standby mode or get/show answer
+    // Show STANDBY mode or get/show ANSWER
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
         || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
@@ -1446,7 +1446,7 @@
         getShowReply(convo)
     }
 
-    // Observe for DDG scheme changes to update DDGPT scheme
+    // Observe for DDG SCHEME CHANGES to update DDGPT scheme
     (new MutationObserver(handleSchemeChange)).observe( // class changes from DDG appearance settings
         document.documentElement, { attributes: true, attributeFilter: ['class'] })
     function handleSchemeChange() {

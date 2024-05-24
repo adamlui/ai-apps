@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.23.1
+// @version             2024.5.23.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -246,7 +246,7 @@
 
 (async () => {
 
-    // Init config
+    // Init CONFIG
     const config = {
         appName: 'ChatGPT Auto-Continue', appSymbol: '≫', keyPrefix: 'chatGPTautoContinue',
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-continue',
@@ -258,7 +258,7 @@
     config.userLanguage = chatgpt.getUserLanguage()
     loadSetting('notifDisabled')
 
-    // Define messages
+    // Define MESSAGES
     let msgs = {};
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
@@ -282,12 +282,12 @@
         }
     }) ; if (!/^en/.test(config.userLanguage)) try { msgs = await msgsLoaded; } catch (err) {}
 
-    // Init/register menu
+    // Init/register MENU
     let menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
                                 separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
     registerMenu() // create browser toolbar menu
 
-    // Stylize alerts
+    // Stylize ALERTS
     if (!document.getElementById('chatgpt-alert-override-style')) {
         const chatgptAlertStyle = document.createElement('style')
         chatgptAlertStyle.id = 'chatgpt-alert-override-style'
@@ -307,7 +307,7 @@
     }}))
     continueObserver.observe(document.querySelector('main'), { attributes: true, subtree: true })
 
-    // Notify of status on load
+    // NOTIFY of status on load
     if (!config.notifDisabled) notify(( msgs.mode_autoContinue || 'Auto-Continue' ) + ': ON')
 
     // Define SCRIPT functions

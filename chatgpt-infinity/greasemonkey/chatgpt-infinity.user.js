@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.23.5
+// @version             2024.5.23.6
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -238,7 +238,7 @@
 
 (async () => {
 
-    // Init config
+    // Init CONFIG
     const config = {
         appName: 'ChatGPT Infinity', appSymbol: '∞', keyPrefix: 'chatGPTinfinity',
         gitHubURL: 'https://github.com/adamlui/chatgpt-infinity',
@@ -253,7 +253,7 @@
     if (!config.replyTopic) saveSetting('replyTopic', 'ALL') // init reply topic if unset
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
 
-    // Define messages
+    // Define MESSAGES
     let msgs = {};
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
@@ -277,7 +277,7 @@
         }
     }) ; if (!/^en/.test(config.userLanguage)) try { msgs = await msgsLoaded; } catch (err) {}
 
-    // Create browser toolbar menu or disable script if extension installed
+    // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
     const extensionInstalled = await Promise.race([
         new Promise(resolve => {
             (function checkExtensionInstalled() {
@@ -318,7 +318,7 @@
                 for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     }})}
 
-    // Add/update tweaks style
+    // Add/update TWEAKS style
     const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`
     let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
     if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
@@ -338,7 +338,7 @@
         )
     }
 
-    // Create nav toggle div, add styles
+    // Create NAV TOGGLE div, add styles
     const navToggleDiv = document.createElement('div')
     navToggleDiv.style.height = '37px'
     navToggleDiv.style.margin = '2px 0' // add v-margins
@@ -346,7 +346,7 @@
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
     updateToggleHTML() // create children
 
-    if (firstLink) { // borrow/assign classes from sidebar div
+    if (firstLink) { // borrow/assign CLASSES from sidebar div
         const firstIcon = firstLink.querySelector('div:first-child'),
               firstLabel = firstLink.querySelector('div:nth-child(2)')
         navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
@@ -355,7 +355,7 @@
 
     insertToggle()
 
-    // Add listener to toggle switch/label/config/menu
+    // Add LISTENER to toggle switch/label/config/menu
     navToggleDiv.addEventListener('click', () => {
         const toggleInput = document.querySelector('#infToggleInput')
         toggleInput.checked = !toggleInput.checked
@@ -365,7 +365,7 @@
         infinityMode.toggle()
     })
 
-    // Monitor node changes to update sidebar toggle visibility
+    // monitor NODE CHANGES to update sidebar toggle visibility
     const nodeObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             if (mutation.type == 'childList' && mutation.addedNodes.length) {

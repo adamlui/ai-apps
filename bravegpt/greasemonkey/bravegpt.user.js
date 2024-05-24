@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.23
+// @version             2024.5.23.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1241,7 +1241,7 @@
 
     // Run MAIN routine
 
-    // Init config/convo/menu
+    // Init CONFIG/CONVO/MENU
     const config = {
         appName: 'BraveGPT', appSymbol: '🤖', keyPrefix: 'braveGPT',
         appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/KudoAI/bravegpt',
@@ -1266,11 +1266,11 @@
     const isFirefox = chatgpt.browser.isFirefox(),
           isMobile = chatgpt.browser.isMobile()
 
-    // Pre-load logo
+    // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
     appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
 
-    // Define messages
+    // Define MESSAGES
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
@@ -1295,14 +1295,14 @@
 
     registerMenu()
 
-    // Init endpoints
+    // Init ENDPOINTS
     const openAIendpoints = {
         auth: 'https://auth0.openai.com',
         session: 'https://chatgpt.com/api/auth/session',
         chat: 'https://api.openai.com/v1/chat/completions' }
     const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
 
-    // Init alerts
+    // Init ALERTS
     const appAlerts = {
         waitingResponse: ( msgs.alert_waitingResponse || 'Waiting for ChatGPT response' ) + '...',
         login: ( msgs.alert_login || 'Please login' ) + ' @ ',
@@ -1319,17 +1319,17 @@
             + ( msgs.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
     }
 
-    // Stylize elements
+    // STYLIZE elements
     const appStyle = document.createElement('style')
     updateAppStyle() ; document.head.append(appStyle)
 
-    // Create Brave Search style tweaks
+    // Create Brave Search style TWEAKS
     const tweaksStyle = document.createElement('style'),
           wsbStyles = 'main.main-column, aside.sidebar { max-width: 521px !important }'
                     + '.bravegpt { width: 521px }'
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
-    // Create/stylize tooltip div
+    // Create/stylize TOOLTIP div
     const tooltipDiv = document.createElement('div'),
           tooltipStyle = document.createElement('style')
     tooltipDiv.classList.add('button-tooltip', 'no-user-select')
@@ -1340,19 +1340,19 @@
         + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
     document.head.append(tooltipStyle)
 
-    // Create/classify BraveGPT container
+    // Create/classify BRAVEGPT container
     const appDiv = document.createElement('div') // create container div
     appDiv.classList.add('bravegpt', 'fade-in', // BraveGPT classes
                               'snippet') // Brave class
 
-    // Append to Brave
+    // APPEND to Brave
     const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
     setTimeout(() => {
         hostContainer.prepend(appDiv)
         setTimeout(() => appDiv.classList.add('active'), 100) // fade in
     }, isMobile ? 500 : 100)
 
-    // Remove non-visible overflow styles for boundless hover fx
+    // Remove non-visible OVERFLOW STYLES for boundless hover fx
     let appAncestor = hostContainer
     while (appAncestor) {
         if (getComputedStyle(appAncestor).overflow != 'visible') appAncestor.style.overflow = 'visible'
@@ -1363,7 +1363,7 @@
     let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Feedback')
     footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
 
-    // Show standby mode or get/show answer
+    // Show STANDBY mode or get/show ANSWER
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
         || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
@@ -1375,7 +1375,7 @@
         getShowReply(convo)
     }
 
-    // Observe/listen for Brave Search + system scheme changes to update BraveGPT logo/style scheme
+    // Observe/listen for Brave Search + system SCHEME CHANGES to update BraveGPT logo/style scheme
     (new MutationObserver(handleSchemeChange)).observe( // class changes from Brave Search theme settings
         document.documentElement, { attributes: true, attributeFilter: ['class'] })
     window.matchMedia('(prefers-color-scheme: dark)') // window.matchMedia changes from browser/system settings

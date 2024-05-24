@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.23.3
+// @version             2024.5.23.4
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -258,7 +258,7 @@
 
 (async () => {
 
-    // Init config
+    // Init CONFIG
     const config = {
         appName: 'ChatGPT Auto Refresh', appSymbol: '↻', keyPrefix: 'chatGPTautoRefresh',
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-refresh',
@@ -271,7 +271,7 @@
     loadSetting('arDisabled', 'notifDisabled', 'refreshInterval', 'toggleHidden')
     if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
 
-    // Prevent sporadic convo resets
+    // Prevent sporadic convo RESETS
     const ogAEL = EventTarget.prototype.addEventListener
     EventTarget.prototype.addEventListener = function(type, listener, optionsOrUseCapture) {
         let calledByOpenAI = false
@@ -287,7 +287,7 @@
         if (!calledByOpenAI) ogAEL.apply(this, arguments)
     }
 
-    // Define messages
+    // Define MESSAGES
     let msgs = {};
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
@@ -311,7 +311,7 @@
         }
     }) ; if (!/^en/.test(config.userLanguage)) try { msgs = await msgsLoaded; } catch (err) {}
 
-    // Init/register menu
+    // Init/register MENU
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
@@ -330,7 +330,7 @@
           isGPT4oUI = document.documentElement.className.includes(' '),
           firstLink = document.querySelector('nav a[href="/"]')
 
-    // Add/update tweaks style
+    // Add/update TWEAKS style
     const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`
     let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
     if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
@@ -350,7 +350,7 @@
         )
     }
 
-    // Create nav toggle div, add styles
+    // Create NAV TOGGLE div, add styles
     const navToggleDiv = document.createElement('div')
     navToggleDiv.style.height = '37px'
     navToggleDiv.style.margin = '2px 0' // add v-margins
@@ -358,7 +358,7 @@
     navToggleDiv.style.cursor = 'pointer' // add finger cursor
     updateToggleHTML() // create children
 
-    if (firstLink) { // borrow/assign classes from sidebar div
+    if (firstLink) { // borrow/assign CLASSES from sidebar div
         const firstIcon = firstLink.querySelector('div:first-child'),
               firstLabel = firstLink.querySelector('div:nth-child(2)')
         navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
@@ -367,7 +367,7 @@
 
     insertToggle()
 
-    // Add listener to toggle switch/label/config/menu/auto-refresh
+    // Add LISTENER to toggle switch/label/config/menu/auto-refresh
     navToggleDiv.addEventListener('click', () => {
         const toggleInput = document.querySelector('#arToggleInput')
         toggleInput.checked = !toggleInput.checked
@@ -383,14 +383,14 @@
         } saveSetting('arDisabled', config.arDisabled)
     })
 
-    // Monitor node changes to update sidebar toggle visibility
+    // monitor NODE CHANGES to update sidebar toggle visibility
     const nodeObserver = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             if (mutation.type == 'childList' && mutation.addedNodes.length) {
                 insertToggle()
     }})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
-    // Activate auto-refresh on first visit if enabled
+    // Activate AUTO-REFRESH on first visit if enabled
     if (!config.arDisabled) {
         chatgpt.autoRefresh.activate(config.refreshInterval)
         if (!config.notifDisabled) notify(( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': ON')

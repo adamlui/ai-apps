@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.23.4
+// @version             2024.5.23.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -261,7 +261,7 @@
 
     const site = new URL(document.location.href).hostname.split('.').slice(-2, -1)[0]
 
-    // Init config
+    // Init CONFIG
     const config = {
         appName: 'ChatGPT Widescreen Mode', appSymbol: '🖥️', keyPrefix: site + 'Widescreen',
         gitHubURL: 'https://github.com/adamlui/chatgpt-widescreen',
@@ -274,7 +274,7 @@
     loadSetting('fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader', 'notifDisabled',
                 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen')
 
-    // Define messages
+    // Define MESSAGES
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
@@ -716,7 +716,7 @@
 
     // Run MAIN routine
 
-    // Create browser toolbar menu or disable script if extension installed
+    // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
     const extensionInstalled = await Promise.race([
         new Promise(resolve => {
             (function checkExtensionInstalled() {
@@ -737,7 +737,7 @@
     // Init UI flag
     const isGPT4oUI = document.documentElement.className.includes(' ')
 
-    // Define UI element selectors
+    // Define UI element SELECTORS
     const inputSelector = /chatgpt|openai/.test(site) ? 'form textarea[id*="prompt"]'
                         : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
           sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
@@ -746,11 +746,11 @@
           headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : '',
           footerSelector = /chatgpt|openai/.test(site) ? 'main form ~ div' : ''
 
-    // Save full-window + full screen states
+    // Save FULL-WINDOW + FULL SCREEN states
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : config.fullWindow
     config.fullScreen = chatgpt.isFullScreen()
 
-    // Stylize alerts
+    // Stylize ALERTS
     if (!document.getElementById('chatgpt-alert-override-style')) {
         const chatgptAlertStyle = document.createElement('style')
         chatgptAlertStyle.id = 'chatgpt-alert-override-style'
@@ -761,13 +761,13 @@
         document.head.append(chatgptAlertStyle)
     }
 
-    // Collect send button classes
+    // Collect SEND BUTTON classes
     const sendBtn = document.querySelector('[data-testid="send-button"]') // pre-GPT-4o
                  || document.querySelector('path[d*="M15.192 8.906a1.143"]')?.parentNode.parentNode; // post-GPT-4o
     const sendBtnClasses = sendBtn?.classList || [],
           sendSVGclasses = sendBtn?.querySelector('svg')?.classList || []
 
-    // Create/stylize tooltip div
+    // Create/stylize TOOLTIP div
     const tooltipDiv = document.createElement('div')
     tooltipDiv.classList.add('toggle-tooltip')
     const tooltipStyle = document.createElement('style')
@@ -779,7 +779,7 @@
         + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }' // disable select
     document.head.append(tooltipStyle)
 
-    // Create/apply general style tweaks
+    // Create/apply general style TWEAKS
     const tweaksStyle = document.createElement('style'),
           tcbStyle = inputSelector + '{ max-height: 68vh !important }', // heighten chatbox
           hhStyle = headerSelector + '{ display: none !important }' // hide header
@@ -788,7 +788,7 @@
                                    + '  padding: .1rem 0 0 !important }' // reduce v-padding
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
-    // Create widescreen style
+    // Create WIDESCREEN style
     const wideScreenStyle = document.createElement('style')
     wideScreenStyle.id = 'wideScreen-mode' // for syncMode()
     const wcbStyle = ( // Wider Chatbox for updateWidescreenStyle()
@@ -796,14 +796,14 @@
       : site == 'poe' ? '[class*=footerInner] { width: 100% }' : '' )
     updateWidescreenStyle()
 
-    // Create full-window style
+    // Create FULL-WINDOW style
     const fullWindowStyle = document.createElement('style')
     fullWindowStyle.id = 'fullWindow-mode' // for syncMode()
     fullWindowStyle.innerText = (
           sidebarSelector + '{ display: none }' // hide sidebar
         + sidepadSelector + '{ padding-left: 0px }' ) // remove side padding
 
-    // Create/insert chatbar buttons
+    // Create/insert chatbar BUTTONS
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
           bOffset = isGPT4oUI ? -0.8 : site == 'poe' ? -0.3 : 2,
           rOffset = isGPT4oUI ? -0.2 : site == 'poe' ? -0.34 : 3.25
@@ -836,7 +836,7 @@
         })(buttonTypes[i])
     } insertBtns()
 
-    // Monitor node changes to auto-toggle once + maintain button visibility + update colors
+    // Monitor NODE CHANGES to auto-toggle once + maintain button visibility + update colors
     let isTempChat = false, prevSessionChecked = false
     const nodeObserver = new MutationObserver(([mutation]) => {
 
@@ -870,7 +870,7 @@
     nodeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
     nodeObserver.observe(document.querySelector('main'), { attributes: true, subtree: true }); // <main> for chatbar changes
 
-    // Monitor sidebar to update full-window setting
+    // Monitor SIDEBAR to update full-window setting
     if (/chatgpt|openai/.test(site)) {
         const sidebarObserver = new MutationObserver(() => {
             const fullWindowState = isFullWindow()
@@ -882,14 +882,14 @@
                 subtree: true, childList: false, attributes: true }), 500)
     }
 
-    // Add resize listener to update full screen setting/button + disable F11 flag
+    // Add RESIZE LISTENER to update full screen setting/button + disable F11 flag
     window.addEventListener('resize', () => {
         const fullScreenState = chatgpt.isFullScreen()
         if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
         else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
     })
 
-    // Add key listener to enable flag on F11 + stop generating text on ESC
+    // Add KEY LISTENER to enable flag on F11 + stop generating text on ESC
     window.addEventListener('keydown', event => {
         if ((event.key == 'F11' || event.keyCode == 122) && !config.fullScreen) config.f11 = true
         else if ((event.key == 'Escape' || event.keyCode == 27) && !chatgpt.isIdle()) chatgpt.stop()
