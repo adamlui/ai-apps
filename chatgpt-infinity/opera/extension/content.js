@@ -152,7 +152,7 @@
                 (function checkGPTsLinkLoaded() {
                     const gptsLink = document.querySelector('nav a[href="/gpts"]')
                     if (gptsLink) resolve(gptsLink.parentNode.parentNode)
-                    else (checkGPTsLinkLoaded, 200)
+                    else setTimeout(checkGPTsLinkLoaded, 200)
                 })()
             }), new Promise(resolve => setTimeout(resolve(parentToInsertInto.children[1]), 2000))])    
         if (!parentToInsertInto.contains(navToggleDiv))
