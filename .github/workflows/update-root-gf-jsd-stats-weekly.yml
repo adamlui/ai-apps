@@ -163,7 +163,8 @@ jobs:
           shields_updated=0
 
           # Update users shields
-          if [ "$total_users" != "0" ] ; then
+          if [ "$total_users" == "0" ] ; then echo "Error getting total usercount"
+          else
             for readme in $(find docs/ -name "README.md") ; do
               old_readme=$(<"$readme")
               sed -i "s/\(badge\/[^-]*-\)[0-9.,km+]\+-/\1$total_users-/gI" "$readme"
@@ -175,7 +176,8 @@ jobs:
           fi
 
           # Update jsDelivr shields
-          if [ "$total_requests" != "0" ] ; then
+          if [ "$total_requests" == "0" ] ; then echo "Error getting total jsDelivr requests"
+          else
             for readme in $(find docs/ -name "README.md") ; do
               old_readme=$(<"$readme")
               sed -i -E "s|(badge/jsDelivr_[^-]+-)[0-9.,km+]+|\1$total_requests|Ig" "$readme"
