@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.26
+// @version             2024.5.26.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -322,7 +322,7 @@
     await chatgpt.sidebar.isLoaded()
     const isFirefox = chatgpt.browser.isFirefox(),
           isGPT4oUI = document.documentElement.className.includes(' '),
-          firstLink = document.querySelector('nav a[href="/"]')
+          firstLink = chatgpt.getNewChatLink()
 
     // Add/update TWEAKS style
     const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`

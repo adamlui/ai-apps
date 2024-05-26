@@ -45,7 +45,7 @@
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
     await chatgpt.sidebar.isLoaded()
     const isGPT4oUI = document.documentElement.className.includes(' '),
-          firstLink = document.querySelector('nav a[href="/"]')
+          firstLink = chatgpt.getNewChatLink()
 
     // Add LISTENER to auto-disable Infinity Mode
     if (document.hidden !== undefined) { // ...if Page Visibility API supported

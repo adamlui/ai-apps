@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.26
+// @version             2024.5.26.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -300,7 +300,7 @@
     await chatgpt.sidebar.isLoaded()
     const isFirefox = chatgpt.browser.isFirefox(),
           isGPT4oUI = document.documentElement.className.includes(' '),
-          firstLink = document.querySelector('nav a[href="/"]')
+          firstLink = chatgpt.getNewChatLink()
 
     // Add listener to auto-disable Infinity Mode
     if (document.hidden !== undefined) { // ...if Page Visibility API supported

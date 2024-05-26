@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.26
+// @version             2024.5.26.1
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -308,7 +308,7 @@
     await chatgpt.sidebar.isLoaded()
     const isFirefox = chatgpt.browser.isFirefox(),
           isGPT4oUI = document.documentElement.className.includes(' '),
-          firstLink = document.querySelector('nav a[href="/"]')
+          firstLink = chatgpt.getNewChatLink()
 
     // Add/update TWEAKS style
     const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`
