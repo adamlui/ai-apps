@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.24.1
+// @version             2024.5.26
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -319,13 +319,7 @@
 
     // Init UI flags
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
-    await Promise.race([ // first sidebar link loaded
-        new Promise(resolve => {
-            (function checkFirstLink() {
-                if (document.querySelector('nav a[href="/"]')) resolve(true)
-                else setTimeout(checkFirstLink, 200)
-            })()
-        }), new Promise(resolve => setTimeout(resolve, 5000))])
+    await chatgpt.sidebar.isLoaded()
     const isFirefox = chatgpt.browser.isFirefox(),
           isGPT4oUI = document.documentElement.className.includes(' '),
           firstLink = document.querySelector('nav a[href="/"]')

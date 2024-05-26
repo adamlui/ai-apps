@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.24.1
+// @version             2024.5.26
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -305,13 +305,7 @@
 
     // Init UI flags
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
-    await Promise.race([ // first sidebar link loaded or 1s passed
-        new Promise(resolve => {
-            (function checkFirstLink() {
-                if (document.querySelector('nav a[href="/"]')) resolve(true)
-                else setTimeout(checkFirstLink, 200)
-            })()
-        }), new Promise(resolve => setTimeout(resolve, 5000))])
+    await chatgpt.sidebar.isLoaded()
     const isFirefox = chatgpt.browser.isFirefox(),
           isGPT4oUI = document.documentElement.className.includes(' '),
           firstLink = document.querySelector('nav a[href="/"]')

@@ -43,13 +43,7 @@
 
     // Init UI flags
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
-    await Promise.race([ // first sidebar link loaded
-        new Promise(resolve => {
-            (function checkFirstLink() {
-                if (document.querySelector('nav a[href="/"]')) resolve(true)
-                else setTimeout(checkFirstLink, 200)
-            })()
-        }), new Promise(resolve => setTimeout(resolve, 5000))])
+    await chatgpt.sidebar.isLoaded()
     const isGPT4oUI = document.documentElement.className.includes(' '),
           firstLink = document.querySelector('nav a[href="/"]')
 
