@@ -187,7 +187,7 @@ jobs:
             if [ "$requests_updated" = true ] ; then echo "jsDelivr shields updated to $total_requests"
             else echo "jsDelivr shields already up-to-date" ; fi
           fi
-          
+
           # Define commit msg for push step next
           if [ "$users_updated" == "true" ] && [ "$requests_updated" == "true" ] ; then
             multi_shield_types_updated=true ; fi
