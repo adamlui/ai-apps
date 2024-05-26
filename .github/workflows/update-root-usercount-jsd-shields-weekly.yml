@@ -3,7 +3,7 @@ name: Update usercount + jsDelivr shields in root READMEs
 on: workflow_dispatch
 
 jobs:
-  update-usercount-shields:
+  update-root-usercount-jsd-shields:
     runs-on: ubuntu-latest
 
     steps:
@@ -153,6 +153,7 @@ jobs:
           echo "total_requests=$formatted_total_requests" >> $GITHUB_OUTPUT
 
       - name: Update README shields
+        id: update-stats
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-apps
 
