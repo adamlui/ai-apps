@@ -485,6 +485,19 @@ const chatgpt = {
                                     .some(child => child.style.transform.includes('translateY'));
             for (const btn of document.querySelectorAll(navBtnSelector))
                 if (isToggleBtn(btn)) { btn.click(); return; }
+        },
+
+        isLoaded: async function() {
+            await chatgpt.isLoaded();
+            return Promise.race([
+                new Promise(resolve => {
+                    (function checkNewChatLink() {
+                        if (chatgpt.getNewChatLink()) resolve(true);
+                        else setTimeout(checkNewChatLink, 200);
+                    })();
+                }),
+                new Promise(resolve => setTimeout(resolve, 5000)) // since New Chat link not always present
+            ]);
         }
     },
 
