@@ -161,7 +161,6 @@ jobs:
 
           total_users="${{ steps.get-stats.outputs.total_users }}"
           total_requests="${{ steps.get-stats.outputs.total_requests }}"
-          shields_updated=0
 
           # Update usercount shields
           if [ "$total_users" == "0" ] ; then echo "Error getting total usercount"
