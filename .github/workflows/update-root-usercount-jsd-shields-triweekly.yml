@@ -16,7 +16,7 @@ jobs:
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
 
-      - name: Fetch/sum user counts
+      - name: Fetch/sum user + JSD request counts
         id: get-stats
         run: |
           LC_NUMERIC=en_US # to insert commas
@@ -155,7 +155,7 @@ jobs:
           echo "total_requests=$formatted_total_requests" >> $GITHUB_OUTPUT
 
       - name: Update README shields
-        id: update-stats
+        id: update-shields
         run: |
           cd ${{ github.workspace }}/adamlui/chatgpt-apps
 
@@ -204,5 +204,5 @@ jobs:
           git config --global user.name "kudo-sync-bot"
           git config --global user.email "auto-sync@kudoai.com"
           git add .
-          git commit -n -m "${{ steps.update-stats.outputs.commit_msg }}" || true
+          git commit -n -m "${{ steps.update-shields.outputs.commit_msg }}" || true
           git push
