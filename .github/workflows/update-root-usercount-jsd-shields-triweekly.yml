@@ -189,12 +189,12 @@ jobs:
           fi
 
           # Define commit msg for push step next
-          if [ "$users_updated" == "true" ] && [ "$requests_updated" == "true" ] ; then
+          if [ "$users_updated" = true ] && [ "$requests_updated" = true ] ; then
             multi_shield_types_updated=true ; fi
           commit_msg="Updated "
-          [ "$users_updated" == "true"              ] && commit_msg+="usercount"
-          [ "$multi_shield_types_updated" == "true" ] && commit_msg+="/"
-          [ "$requests_updated" == "true"           ] && commit_msg+="jsDelivr"
+          [ "$users_updated" = true              ] && commit_msg+="usercount"
+          [ "$multi_shield_types_updated" = true ] && commit_msg+="/"
+          [ "$requests_updated" = true           ] && commit_msg+="jsDelivr"
           commit_msg+=" shield counters in root READMEs"
           echo "commit_msg=$commit_msg" >> $GITHUB_OUTPUT # expose as output
 
