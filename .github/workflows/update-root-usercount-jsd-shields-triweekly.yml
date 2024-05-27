@@ -1,4 +1,4 @@
-name: Update usercount/sDelivr shields in root READMEs
+name: Update usercount/jsDelivr shields in root READMEs
 
 on:
   schedule:
