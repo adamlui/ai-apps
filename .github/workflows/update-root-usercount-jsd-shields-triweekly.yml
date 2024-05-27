@@ -199,12 +199,10 @@ jobs:
           echo "commit_msg=$commit_msg" >> $GITHUB_OUTPUT # expose as output
 
       - name: Push to adamlui/chatgpt-apps
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          push_options: --force
-          add_options: --all
-          commit_user_email: auto-sync@kudoai.com
-          commit_author: kudo-sync-bot <auto-sync@kudoai.com>
-          commit_message: ${{ steps.update-stats.outputs.commit_msg }}
-          file_pattern: "**/README.md"
-          repository: adamlui/chatgpt-apps
+        run: |
+          cd ${{ github.workspace }}/adamlui/chatgpt-apps
+          git config --global user.name "kudo-sync-bot"
+          git config --global user.email "auto-sync@kudoai.com"
+          git add .
+          git commit -n -m "${{ steps.update-stats.outputs.commit_msg }}" || true
+          git push
