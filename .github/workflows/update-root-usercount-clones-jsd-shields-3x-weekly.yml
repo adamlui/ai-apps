@@ -198,7 +198,7 @@ jobs:
               if [ "$old_readme" != "$new_readme" ] ; then clones_updated=true ; fi
             done
             if [ "$clones_updated" = true ] ; then echo "Git clones shields updated to $total_clones"
-            else echo "Git clones shields up-to-date already" ; fi
+            else echo "Git clones shields already up-to-date" ; fi
           fi
 
           # Update jsDelivr shields
