@@ -116,7 +116,7 @@
             window[buttonName].addEventListener('click', () => {
                 if (buttonType == 'newChat') {
                     if (/chatgpt|openai/.test(site)) chatgpt.startNewChat()
-                    else if (site == 'poe') document.querySelector('header a[class*="button"]').click()
+                    else if (site == 'poe') document.querySelector('header a[class*="button"]')?.click()
                 } else toggleMode(buttonType) })
             window[buttonName].addEventListener('mouseover', toggleTooltip)
             window[buttonName].addEventListener('mouseout', toggleTooltip)
