@@ -1,11 +1,11 @@
-name: Update usercount/jsDelivr shields in root READMEs
+name: Update usercount/clones/jsDelivr shields in root READMEs
 
 on:
   schedule:
     - cron: "25 2 * * 0,2,4" # every Sun/Tue/Thu @ 2:25 AM
 
 jobs:
-  update-root-usercount-jsd-shields:
+  update-root-usercount-clones-jsd-shields:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +16,7 @@ jobs:
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
 
-      - name: Fetch/sum user + JSD request counts
+      - name: Fetch/sum user + clone + JSD request counts
         id: get-stats
         run: |
           LC_NUMERIC=en_US # to insert commas
@@ -134,6 +134,17 @@ jobs:
             total_edge_users=$((total_edge_users + edge_users))
           done ; echo -e "\n-----\nTotal Edge users: $total_edge_users\n-----\n"
 
+          # Fetch/calculate git clone count
+          biweekly_clones=$(curl -sSL \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.REPO_SYNC_PAT }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/adamlui/chatgpt-apps/traffic/clones" |
+            sed -n -E '0,/.*"count": ([0-9]+).*/ s//\1/p')
+          total_clones=$((biweekly_clones * 2))
+          echo "Biweekly git clones: $biweekly_clones"
+          echo -e "\n-----\nTotal monthly git clones: $total_clones\n-----\n"
+
           # Fetch/sum jsDelivr request counts
           for repo in "${jsd_gh_repos[@]}" ; do
             repo_requests=$(curl -s "https://img.shields.io/jsdelivr/gh/hm/$repo.svg" |
@@ -147,11 +158,14 @@ jobs:
           formatted_total_users=$(format_total "$((
             total_gf_users + total_chrome_users + total_edge_users))")
           echo "Formatted total users: $formatted_total_users"
+          formatted_total_clones=$(format_total "$total_clones")
+          echo "Formatted total monthly git clones: $formatted_total_clones"
           formatted_total_requests=$(format_total "$total_requests")
           echo "Formatted total monthly jsDelivr requests: $formatted_total_requests"
 
           # Expose as outputs for update step next
           echo "total_users=$formatted_total_users" >> $GITHUB_OUTPUT
+          echo "total_clones=$formatted_total_clones" >> $GITHUB_OUTPUT
           echo "total_requests=$formatted_total_requests" >> $GITHUB_OUTPUT
 
       - name: Update README shields
@@ -175,6 +189,19 @@ jobs:
             else echo "Usercount shields already up-to-date" ; fi
           fi
 
+          # Update git clones shield
+          if [ "$total_clones" == "0" ] ; then echo "Error getting total git clones"
+          else # perform update
+            for readme in $(find docs/ -name "README.md") ; do
+              old_readme=$(<"$readme")
+              sed -i -E "s|(badge/[^-]+-)[0-9.,km+]+(/[^?]+\?logo=github)|\1$total_clones\2|gI" "$readme"
+              new_readme=$(<"$readme")
+              if [ "$old_readme" != "$new_readme" ] ; then clones_updated=true ; fi
+            done
+            if [ "$clones_updated" = true ] ; then echo "Git clones shields updated to $total_clones"
+            else echo "Git clones shields up-to-date already" ; fi
+          fi
+
           # Update jsDelivr shields
           if [ "$total_requests" == "0" ] ; then echo "Error getting total jsDelivr requests"
           else
@@ -188,14 +215,21 @@ jobs:
             else echo "jsDelivr shields already up-to-date" ; fi
           fi
 
+          # Count shield types updated for commit msg
+          shield_types_updated=0
+          [ "$users_updated" = true ] && ((shield_types_updated+=1))
+          [ "$clones_updated" = true ] && ((shield_types_updated+=1))
+          [ "$requests_updated" = true ] && ((shield_types_updated+=1))
+          if [ "$shield_types_updated" -gt 1 ] ; then multi_shield_types_updated=true ; fi
+
           # Define commit msg for push step next
-          if [ "$users_updated" = true ] && [ "$requests_updated" = true ] ; then
-            multi_shield_types_updated=true ; fi
           commit_msg="Updated "
-          [ "$users_updated" = true              ] && commit_msg+="usercount"
-          [ "$multi_shield_types_updated" = true ] && commit_msg+="/"
-          [ "$requests_updated" = true           ] && commit_msg+="jsDelivr"
-          commit_msg+=" shield counters in root READMEs"
+          [ "$users_updated" = true ] && commit_msg+="usercount"
+          if [ "$clones_updated" = true ] ; then            
+             [ "$multi_shield_types_updated" = true ] && commit_msg+="/" ; commit_msg+="clones" ; fi
+          if [ "$requests_updated" = true ] ; then            
+             [ "$multi_shield_types_updated" = true ] && commit_msg+="/" ; commit_msg+="jsDelivr" ; fi
+          commit_msg+=" shield counters in root README"
           echo "commit_msg=$commit_msg" >> $GITHUB_OUTPUT # expose as output
 
       - name: Push to adamlui/chatgpt-apps
