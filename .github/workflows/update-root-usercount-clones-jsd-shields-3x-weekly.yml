@@ -225,7 +225,7 @@ jobs:
           commit_msg="Updated "
           [ "$users_updated" = true ] && commit_msg+="usercount"
           if [ "$clones_updated" = true ] ; then            
-             [ "$multi_shield_types_updated" = true ] && commit_msg+="/" ; commit_msg+="clones" ; fi
+             [ "$users_updated" = true ] && commit_msg+="/" ; commit_msg+="clones" ; fi
           if [ "$requests_updated" = true ] ; then            
              [ "$multi_shield_types_updated" = true ] && commit_msg+="/" ; commit_msg+="jsDelivr" ; fi
           commit_msg+=" shield counters in root README"
