@@ -172,6 +172,7 @@ jobs:
           cd ${{ github.workspace }}/adamlui/chatgpt-apps
 
           total_users="${{ steps.get-stats.outputs.total_users }}"
+          total_clones="${{ steps.get-stats.outputs.total_clones }}"
           total_requests="${{ steps.get-stats.outputs.total_requests }}"
 
           # Update usercount shields
