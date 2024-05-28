@@ -446,88 +446,10 @@ const chatgpt = {
 };
 
 // Create alias functions
-const funcAliases = [
-    ['actAs', 'actas', 'act', 'become', 'persona', 'premadePrompt', 'preMadePrompt', 'prePrompt', 'preprompt', 'roleplay', 'rolePlay', 'rp'],
-    ['activateAutoRefresh', 'activateAutoRefresher', 'activateRefresher', 'activateSessionRefresher',
-        'autoRefresh', 'autoRefresher', 'autoRefreshSession', 'refresher', 'sessionRefresher'],
-    ['continue', 'continueChat', 'continueGenerating', 'continueResponse'],
-    ['deactivateAutoRefresh', 'deactivateAutoRefresher', 'deactivateRefresher', 'deactivateSessionRefresher'],
-    ['detectLanguage', 'getLanguage'],
-    ['executeCode', 'codeExecute'],
-    ['exportChat', 'chatExport', 'export'],
-    ['getFooterDiv', 'getFooter'],
-    ['getHeaderDiv', 'getHeader'],
-    ['getLastPrompt', 'getLastQuery', 'getMyLastMsg', 'getMyLastQuery'],
-    ['getContinueGeneratingButton', 'getContinueButton'],
-    ['getScrollToBottomButton', 'getScrollButton'],
-    ['getStopGeneratingButton', 'getStopButton'],
-    ['getTextarea', 'getTextArea', 'getChatbox', 'getChatBox'],
-    ['isFullScreen', 'isFullscreen', 'isfullscreen'],
-    ['isLoaded', 'isloaded'],
-    ['logOut', 'logout', 'logOff', 'logoff', 'signOut', 'signout', 'signOff', 'signoff'],
-    ['minify', 'codeMinify', 'minifyCode'],
-    ['new', 'newChat', 'startNewChat'],
-    ['obfuscate', 'codeObfuscate', 'obfuscateCode'],
-    ['printAllFunctions', 'showAllFunctions'],
-    ['refactor', 'codeRefactor', 'refactorCode'],
-    ['refreshReply', 'regenerate', 'regenerateReply'],
-    ['refreshSession', 'sessionRefresh'],
-    ['renderHTML', 'renderHtml', 'renderLinks', 'renderTags'],
-    ['reviewCode', 'codeReview'],
-    ['send', 'sendChat', 'sendMsg'],
-    ['sendInNewChat', 'sendNewChat'],
-    ['sentiment', 'analyzeSentiment', 'sentimentAnalysis'],
-    ['startNewChat', 'new', 'newChat'],
-    ['stop', 'stopChat', 'stopGenerating', 'stopResponse'],
-    ['suggest', 'suggestion', 'recommend'],
-    ['toggleAutoRefresh', 'toggleAutoRefresher', 'toggleRefresher', 'toggleSessionRefresher'],
-    ['toggleScheme', 'toggleMode'],
-    ['translate', 'translation', 'translator'],
-    ['unminify', 'unminifyCode', 'codeUnminify'],
-    ['writeCode', 'codeWrite']
-];
-const synonyms = [
-    ['account', 'acct'],
-    ['activate', 'turnOn'],
-    ['analyze', 'check', 'evaluate', 'review'],
-    ['ask', 'send', 'submit'],
-    ['button', 'btn'],
-    ['continue', 'resume'],
-    ['chats', 'history'],
-    ['chat', 'conversation', 'convo'],
-    ['clear', 'delete', 'remove'],
-    ['data', 'details'],
-    ['deactivate', 'deActivate', 'turnOff'],
-    ['execute', 'interpret', 'interpreter', 'run'],
-    ['generating', 'generation'],
-    ['minify', 'uglify'],
-    ['refactor', 'rewrite'],
-    ['regenerate', 'regen'],
-    ['render', 'parse'],
-    ['reply', 'response'],
-    ['sentiment', 'attitude', 'emotion', 'feeling', 'opinion', 'perception'],
-    ['speak', 'say', 'speech', 'talk', 'tts'],
-    ['summarize', 'tldr'],
-    ['unminify', 'beautify', 'prettify', 'prettyPrint']
-];
+const synonyms = [['button', 'btn']];
 const camelCaser = (words) => {
     return words.map((word, index) => index === 0 || word == 's' ? word : word.charAt(0).toUpperCase() + word.slice(1)).join(''); };
 for (const prop in chatgpt) {
-
-    // Create new function for each alias
-    for (const subAliases of funcAliases) {
-        if (subAliases.includes(prop)) {
-            if (subAliases.some(element => element.includes('.'))) {
-                const nestedFunction = subAliases.find(element => element.includes('.')).split('.')[1];
-                for (const nestAlias of subAliases) {
-                    if (/^(\w+)/.exec(nestAlias)[1] !== prop) { // don't alias og function
-                        chatgpt[nestAlias] = chatgpt[prop][nestedFunction]; // make new function, reference og one
-            }}} else { // alias direct functions
-                for (const dirAlias of subAliases) {
-                    if (dirAlias !== prop) { // don't alias og function
-                        chatgpt[dirAlias] = chatgpt[prop]; // make new function, reference og one
-            }}}
-    }}
 
     do { // create new function per synonym per word per function
         var newFunctionsCreated = false;
