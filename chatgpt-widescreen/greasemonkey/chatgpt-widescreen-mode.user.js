@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.28.1
+// @version             2024.5.28.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -526,16 +526,24 @@
                    || document.querySelector('#prompt-textarea').parentNode.parentNode // post-5/2024
         } else if (site == 'poe') chatbar = document.querySelector('div[class*="ChatMessageInputContainer"]')
 
-        // Insert buttons
         if (chatbar.contains(wideScreenBtn)) return // if buttons aren't missing, exit
-        const elemsToInsert = [newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn, tooltipDiv],
-              leftMostBtn = chatbar.querySelector('button[class*="right"]') // ChatGPT pre-5/2024
-                         || chatbar.lastChild // ChatGPT post-5/2024 + Poe
+
+        // Tweak chatbar
         if (/chatgpt|openai/.test(site)) // allow tooltips to overflow
             chatbar.classList.remove('overflow-hidden')
-        else if (site == 'poe') // elevate nested non-send button to chatbar
-            chatbar.insertBefore(leftMostBtn, chatbar.lastChild)
-        elemsToInsert.forEach(elem => chatbar.insertBefore(elem, leftMostBtn))
+        else if (site == 'poe') { // left-align attach file button
+            const attachFileBtn = chatbar.querySelector('button[class*="File"]')
+            attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
+            document.querySelector(inputSelector).style.paddingLeft = '2.35rem' // to accomodate new btn pos
+        }
+
+        // Insert buttons
+        const elemsToInsert = [newChatBtn, wideScreenBtn, fullWindowBtn, fullScreenBtn, tooltipDiv]
+        const elemToInsertBefore = (
+            /chatgpt|openai/.test(site) ? chatbar.querySelector('button[class*="right"]') // ChatGPT pre-5/2024
+                                       || chatbar.lastChild // ChatGPT post-5/2024 + Poe
+                                        : chatbar.children[1] ) // Poe
+        elemsToInsert.forEach(elem => chatbar.insertBefore(elem, elemToInsertBefore))
     }
 
     function updateBtnSVG(mode, state = '') {
@@ -694,7 +702,9 @@
                                   : `{ padding-right: ${ config.ncbDisabled ? 150 : 176 }px }` ))
                 + ( '[id$="-button"] { opacity: inherit !important }' ) // disable chatbar btn hover dim
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
-                + ( config.hiddenFooter ? hfStyle : '' )) : '' ) // hide footer
+                + ( config.hiddenFooter ? hfStyle : '' )) // hide footer
+          : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' // h-pad mic btn for even spread
+          : '' )
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
         + `#newChat-button { display: ${ config.ncbDisabled ? 'none' : 'flex' }}`
     }
@@ -803,7 +813,7 @@
 
     // Create/insert chatbar BUTTONS
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
-          bOffset = isGPT4oUI ? -1.3 : site == 'poe' ? -0.3 : 2,
+          bOffset = isGPT4oUI ? -1.3 : site == 'poe' ? -0.02 : 2,
           rOffset = isGPT4oUI ? -0.65 : site == 'poe' ? -0.34 : 3.35
     let btnColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
