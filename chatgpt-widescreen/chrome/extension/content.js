@@ -413,6 +413,7 @@
                   ( inputSelector + ( // widen/narrow input to be flush w/ btns
                         isGPT4oUI ? '{ margin-right: -48px }'
                                   : `{ padding-right: ${ config.ncbDisabled ? 154 : 180 }px }` ))
+                + ( '[id$="-button"] { opacity: inherit !important }' ) // disable chatbar btn hover dim
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) : '' ) // hide footer
         + ( !config.tcbDisabled ? tcbStyle : '' ) // expand text input vertically
