@@ -228,7 +228,7 @@ jobs:
              [ "$users_updated" = true ] && commit_msg+="/" ; commit_msg+="clones" ; fi
           if [ "$requests_updated" = true ] ; then            
              [ "$multi_shield_types_updated" = true ] && commit_msg+="/" ; commit_msg+="jsDelivr" ; fi
-          commit_msg+=" shield counters in root README"
+          commit_msg+=" shield counters in root READMEs"
           echo "commit_msg=$commit_msg" >> $GITHUB_OUTPUT # expose as output
 
       - name: Push to adamlui/chatgpt-apps
