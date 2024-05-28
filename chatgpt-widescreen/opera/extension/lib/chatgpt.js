@@ -361,8 +361,6 @@ const chatgpt = {
         }, { once: true });
     },
 
-    obfuscate: function() { chatgpt.code.obfuscate(); },
-
     printAllFunctions: function() {
 
         // Define colors
