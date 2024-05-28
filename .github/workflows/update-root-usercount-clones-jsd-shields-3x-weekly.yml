@@ -19,8 +19,6 @@ jobs:
       - name: Fetch/sum user + clone + JSD request counts
         id: get-stats
         run: |
-          LC_NUMERIC=en_US # to insert commas
-
           declare -A gf_scripts=( # for Greasy Fork script user counts
             ["460805"]="Autoclear ChatGPT History"
             ["462440"]="BraveGPT"
