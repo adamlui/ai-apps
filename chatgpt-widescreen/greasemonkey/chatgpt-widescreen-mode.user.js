@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.24
+// @version             2024.5.27
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -575,9 +575,6 @@
           : mode == 'wideScreen' ? [wideScreenBtn, wideScreenONelems, wideScreenOFFelems]
                                  : [newChatBtn, newChatElems, newChatElems])
 
-        // Initialize rem margin offset vs. OpenAI's .mr-1 for hover overlay centeredness
-        const lMargin = mode == 'wideScreen' ? .11 : .12, rMargin = (.25 - lMargin)
-
         // Set SVG attributes
         const buttonSVG = button.querySelector('svg') || document.createElementNS('http://www.w3.org/2000/svg', 'svg')
         buttonSVG.setAttribute('height', 18) // prevent shrinking
@@ -589,10 +586,10 @@
             buttonSVG.setAttribute('width', site == 'poe' ? '2em' : 17)
         }
         buttonSVG.setAttribute('class', sendSVGclasses) // assign borrowed classes
-        buttonSVG.setAttribute( // center overlay + prevent triggering tooltips twice
-            'style', `margin: 0 ${ rMargin }rem 0 ${ lMargin }rem ; pointer-events: none ;`
-          + ( isGPT4oUI ? 'height: 25px ; width: 25px' : '' ))
         buttonSVG.setAttribute('viewBox', svgViewBox) // set pre-tweaked viewbox
+        buttonSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
+        if (/chatgpt|openai/.test(site)) // override button resizing
+            buttonSVG.style.height = buttonSVG.style.width = `${ isGPT4oUI ? 1.2 : 1.3 }rem`
 
         // Update SVG elements
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
@@ -619,8 +616,8 @@
     function updateTooltip(buttonType) { // text & position
         tooltipDiv.innerText = msgs['tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON'))]
-        const ctrAddend = 25 + ( isGPT4oUI ? 11 : site == 'poe' ? 47 : 14 ),
-              spreadFactor = isGPT4oUI ? 37 : site == 'poe' ? 37 : 32,
+        const ctrAddend = 25 + ( isGPT4oUI ? 10 : site == 'poe' ? 47 : 10 ),
+              spreadFactor = isGPT4oUI ? 30 : site == 'poe' ? 37 : 32,
               iniRoffset = spreadFactor * ( buttonType.includes('fullScreen') ? 1
                                           : buttonType.includes('fullWindow') ? 2
                                           : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
@@ -806,8 +803,8 @@
 
     // Create/insert chatbar BUTTONS
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
-          bOffset = isGPT4oUI ? -0.8 : site == 'poe' ? -0.3 : 2,
-          rOffset = isGPT4oUI ? -0.2 : site == 'poe' ? -0.34 : 3.25
+          bOffset = isGPT4oUI ? -1.3 : site == 'poe' ? -0.3 : 2,
+          rOffset = isGPT4oUI ? -0.65 : site == 'poe' ? -0.34 : 3.35
     let btnColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
@@ -815,7 +812,8 @@
             window[buttonName] = document.createElement('div') // create button
             window[buttonName].id = buttonType + '-button' // for toggleTooltip()
             updateBtnSVG(buttonType) // insert icon
-            window[buttonName].style.cssText = `right: ${ rOffset + i * bOffset }rem` // position left of prev button
+            window[buttonName].style.cssText = `right: ${ rOffset + i * bOffset }rem ;` // position left of prev button
+                + `bottom: ${ /chatgpt|openai/.test(site) && !isGPT4oUI ? '0.75rem' : '' }` // scooch up pre-GPT-4o UI
             window[buttonName].style.cursor = 'pointer' // add finger cursor
             if (isGPT4oUI || site == 'poe') window[buttonName].style.position = 'relative' // override static pos
             if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
