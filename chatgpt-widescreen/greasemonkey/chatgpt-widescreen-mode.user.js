@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.27
+// @version             2024.5.27.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -275,7 +275,6 @@
                 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen')
 
     // Define MESSAGES
-    let msgs = {}
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
@@ -296,7 +295,7 @@
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
             }
         }
-    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
+    }) ; const msgs = await msgsLoaded
 
     // Define SCRIPT functions
 
