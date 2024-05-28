@@ -1,4 +1,4 @@
-// This library is a condensed version of chatgpt.js v2.9.2
+// This library is a condensed version of chatgpt.js v2.9.3
 // © 2023–2024 KudoAI & contributors under the MIT license.
 // Source: https://github.com/KudoAI/chatgpt.js
 // User guide: https://chatgptjs.org/userguide
@@ -243,7 +243,8 @@ const chatgpt = {
 
     getNewChatButton: function() {
         for (const navBtnSVG of document.querySelectorAll('nav button svg'))
-            if (navBtnSVG.querySelector('path[d*="M15.673 3.913a3.121"]')) // new chat icon found
+            if (navBtnSVG.querySelector('path[d*="M15.673 3.913a3.121"], ' // pencil-on-pad icon
+                                      + 'path[d*="M3.07 10.876C3.623"]'))  // refresh icon if temp chat
                 return navBtnSVG.parentNode;
     },
 
