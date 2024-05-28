@@ -254,17 +254,6 @@
         elemsToInsert.forEach(elem => chatbar.insertBefore(elem, elemToInsertBefore))
     }
 
-    function updateTooltip(buttonType) { // text & position
-        tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + buttonType + (
-            !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON')))
-        const ctrAddend = 35, spreadFactor = isGPT4oUI ? 30 : 32,
-              iniRoffset = spreadFactor * ( buttonType.includes('fullScreen') ? 1
-                                          : buttonType.includes('fullWindow') ? 2
-                                          : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
-        tooltipDiv.style.right = `${ // horizontal position
-            iniRoffset - tooltipDiv.getBoundingClientRect().width / 2}px`
-    }
-
     function removeBtns() {
 
         // ID chatbar
