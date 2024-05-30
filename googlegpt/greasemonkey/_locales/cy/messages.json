@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Yn ychwanegu atebion ChatGPT i Google Search (wedi'i bweru gan GPT -4!)" },
+  "appDesc": { "message": "Yn ychwanegu atebion ChatGPT i Google Search (wedi'i bweru gan GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Atebion Auto - GET" },
   "menuLabel_proxyAPImode": { "message": "Modd API Dirprwy" },
   "menuLabel_relatedQueries": { "message": "Ymholiadau Perthnasol" },

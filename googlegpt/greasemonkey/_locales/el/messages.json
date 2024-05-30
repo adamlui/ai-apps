@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Προσθέτει απαντήσεις ChatGPT στην Αναζήτηση Google (τροφοδοτείται από GPT-4!)" },
+  "appDesc": { "message": "Προσθέτει απαντήσεις ChatGPT στην Αναζήτηση Google (τροφοδοτείται από GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Αυτόματη λήψη απαντήσεων" },
   "menuLabel_proxyAPImode": { "message": "Λειτουργία API διακομιστή μεσολάβησης" },
   "menuLabel_relatedQueries": { "message": "Σχετικά ερωτήματα" },

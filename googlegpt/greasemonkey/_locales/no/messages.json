@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Legger ChatGPT-svar til Google Søk (drevet av GPT-4!)" },
+  "appDesc": { "message": "Legger ChatGPT-svar til Google Søk (drevet av GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Få svar automatisk" },
   "menuLabel_proxyAPImode": { "message": "Proxy API-modus" },
   "menuLabel_relatedQueries": { "message": "Relaterte spørsmål" },

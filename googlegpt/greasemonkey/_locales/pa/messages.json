@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "ਚੈਟਜੀਪੀਟੀ ਦੇ ਜਵਾਬ ਗੂਗਲ ਸਰਚ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ (ਜੀਪੀਟੀ -4 ਦੁਆਰਾ ਸੰਚਾਲਿਤ!" },
+  "appDesc": { "message": "ChatGPT ਦੇ ਜਵਾਬਾਂ ਨੂੰ Google Search ਸਾਇਡਬਾਰ 'ਤੇ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ (GPT-4o! ਦੁਆਰਾ ਪਾਵਰ)" },
   "menuLabel_autoGetAnswers": { "message": "ਆਟੋ-ਗੇਟ ਜਵਾਬ" },
   "menuLabel_proxyAPImode": { "message": "ਪਰਾਕਸੀ API ਮੋਡ" },
   "menuLabel_relatedQueries": { "message": "ਸੰਬੰਧਿਤ ਪੁੱਛਗਿੱਛ" },

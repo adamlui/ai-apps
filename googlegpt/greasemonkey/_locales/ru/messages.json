@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Добавляет ответы ChatGPT в Поиск Google (на базе GPT-4!)" },
+  "appDesc": { "message": "Добавляет ответы ChatGPT в Поиск Google (на базе GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Ответы с автоматическим получением" },
   "menuLabel_proxyAPImode": { "message": "Режим API прокси-сервера" },
   "menuLabel_relatedQueries": { "message": "маркетинга" },
