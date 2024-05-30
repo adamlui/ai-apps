@@ -200,4 +200,4 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
-<a href="#">Back to top ↑</a>
+<a href="#-bring-the-magic-of-chatgpt-to-google-search-powered-by-gpt-4o">Back to top ↑</a>
