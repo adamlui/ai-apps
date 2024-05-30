@@ -28,11 +28,14 @@
 
 <br>
 
-[![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/meaning-of-life-dark-demo.png)](https://greasyfork.googlegpt.io)
+<img src="https://media.googlegpt.io/images/screenshots/desktop/meaning-of-life-query/darkmode.png">
 
 ### Mobile
 
-[![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/googlegpt-mobile-greeting.png)](https://greasyfork.googlegpt.io)
+<picture>
+    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png">
+    <img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/lightmode.png">
+</picture>
 
 ## 🌐 Compatibility 
 
