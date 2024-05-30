@@ -119,7 +119,7 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <div align='center'>
 
-<img width=388 src="https://media.googlegpt.io/images/screenshots/desktop/tampermonkey-proxy-mode-menu.png">
+<img width=355 src="https://media.googlegpt.io/images/screenshots/desktop/tampermonkey-proxy-mode-menu.png">
 <img src="https://media.bravegpt.com/images/screenshots/desktop/proxy-mode-notification.png">
 
 </div>
