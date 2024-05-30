@@ -107,6 +107,25 @@ GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoA
 
 If you've tested it to work in a browser not listed, create a [pull request](https://github.googlegpt.io/pulls) to become a contributor!
 
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+
+## 🕵️ Proxy Mode
+
+Proxy API Mode (disabled by default) returns text responses using GPT-4o, without the need for a chatgpt.com account.
+
+When disabled, a ChatGPT account is required to fetch responses, but they are faster stream-type ones (like in demo).
+
+If OpenAI API is acting unreliable, enable Proxy Mode like this:
+
+<div align='center'>
+
+<img width=333 src="https://media.googlegpt.io/images/screenshots/desktop/tampermonkey-proxy-mode-menu.png">
+<img src="https://media.bravegpt.com/images/screenshots/desktop/proxy-mode-notification.png">
+
+</div>
+
+<br>
+
 🚀 Install link: https://greasyfork.googlegpt.io
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
