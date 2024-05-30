@@ -53,7 +53,36 @@
 
 3. Visit [google.com](https://google.com), type your search, engage bot!
 
-<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+
+## ⚡ Dependencies
+
+<h6>
+<div align="center">
+<br>
+
+<a href="https://chatgpt.js.org">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/chatgpt.js/flat/white/logo5995x619.png?77d7d9f">
+        <img width=455 src="https://media.chatgptjs.org/images/logos/chatgpt.js/flat/black/logo5995x619.png?77d7d9f">
+    </picture>
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://katex.org">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/logos/katex/white-logo.svg">
+        <img width=175 src="https://media.googlegpt.io/images/logos/katex/dark-gray-logo423x166.png">
+    </picture>
+</a>
+<br><br>
+
+GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoAI/chatgpt.js) library © 2023–2024 KudoAI & contributors under the MIT license
+<br>...and the [KaTeX](https://github.com/KaTeX/KaTeX) library © 2013–2020 Khan Academy & contributors under the MIT license.
+
+</div>
+</h6>
+
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
 ## 🌐 Compatibility 
 
