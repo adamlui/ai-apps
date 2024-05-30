@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.24
+// @version             2024.5.29
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -176,7 +176,7 @@
 // @connect             chat.openai.com
 // @connect             api.openai.com
 // @connect             fanyi.sogou.com
-// @connect             api.aigcfun.com
+// @connect             api11.gptforlove.com
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.3/dist/chatgpt.min.js#sha256-EDN+mCc+0Y4YVzJEoNikd4/rAIaJDLAdb+erWvupXTM=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js#sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=
@@ -691,41 +691,16 @@
             } else resolve(accessToken)
     })}
 
-    function getAIGCFkey() {
-        return new Promise(resolve => {
-            const publicKey = GM_getValue(config.keyPrefix + '_aigcfKey')
-            if (!publicKey) {
-                GM.xmlHttpRequest({ method: 'GET', url: 'https://api.aigcfun.com/fc/key',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Referer': 'https://aigcfun.com/',
-                        'X-Forwarded-For': ipv4.generate({ verbose: false }) },
-                    onload: response => {
-                        const newPublicKey = JSON.parse(response.responseText).data
-                        if (!newPublicKey) { appError('Failed to get AIGCFun public key') ; return }
-                        GM_setValue(config.keyPrefix + '_aigcfKey', newPublicKey)
-                        console.info('AIGCFun public key set: ' + newPublicKey)
-                        resolve(newPublicKey)
-                    },
-                    onerror: resolve('')
+    function getGPTplusKey() {
+        let nn = Math.floor(new Date().getTime() / 1e3)
+        const fD = e => {
+            let t = CryptoJS.enc.Utf8.parse(e),
+                o = CryptoJS.AES.encrypt(t, 'fjfsd我w4真3dd服iuhf了wf', {
+                    mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7
             })
-            } else resolve(publicKey)
-    })}
-
-    async function refreshAIGCFendpoint() {
-        GM_setValue(config.keyPrefix + '_aigcfKey', false) // clear GM key
-
-        // Determine index of AIGCF in endpoint map
-        let aigcfMapIndex = -1
-        for (let i = 0 ; i < proxyEndpoints.length ; i++) {
-            const endpoint = proxyEndpoints[i]
-            if (endpoint.some(item => item.includes('aigcfun'))) {
-                aigcfMapIndex = i ; break
-        }}
-
-        // Update AIGCF endpoint w/ fresh key (using fresh IP)
-        proxyEndpoints[aigcfMapIndex][0] = (
-            'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey())
+            return o.toString()
+        }
+        return fD(nn);
     }
 
     // Define ANSWER functions
@@ -736,7 +711,9 @@
             const untriedEndpoints = proxyEndpoints.filter(
                 entry => !getShowReply.triedEndpoints?.includes(entry[0]))
             const entry = untriedEndpoints[Math.floor(chatgpt.randomFloat() * untriedEndpoints.length)]
-            endpoint = entry[0] ; accessKey = entry[1] ; model = entry[2]
+            if (!entry) // no more proxy endpoints left untried
+                appAlert('suggestOpenAI')
+            else endpoint = entry[0]
         } else { // use OpenAI API
             endpoint = openAIendpoints.chat
             const timeoutPromise = new Promise((resolve, reject) =>
@@ -745,17 +722,31 @@
             if (!accessKey) { appAlert('login') ; return }
             model = 'gpt-3.5-turbo'
         }
+        appInfo('Endpoint used: ' + endpoint)
     }
 
     function createHeaders(api) {
-        let headers = { 'Content-Type': 'application/json' }
+        let headers = {
+            'Content-Type': 'application/json',
+            'X-Forwarded-For': ipv4.generate({ verbose: false })
+        }            
         if (api.includes('openai.com')) headers.Authorization = 'Bearer ' + accessKey
         return headers
     }
 
+    let parentID_gptPlus
     function createPayload(api, msgs) {
-        const payload = { messages: msgs, model: model }
-        if (api.includes('openai.com')) payload.max_tokens = 4000
+        let payload = {}
+        if (api.includes('openai.com'))
+            payload = { messages: msgs, model: model, max_tokens: 4000 }
+        else if (api.includes('gptforlove.com')) {
+            payload = {
+                secret: getGPTplusKey(), top_p: 1, temperature: 0.8,
+                systemMessage: 'You are ChatGPT, the version is GPT3.5, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.',
+                prompt: msgs[msgs.length - 1].content
+            }
+            if (parentID_gptPlus) payload.options = { parentMessageId: parentID_gptPlus }
+        }
         return JSON.stringify(payload)
     }
 
@@ -782,7 +773,8 @@
                         } catch (err) { appError(err) ; reject(err) }
                     } else if (config.proxyAPIenabled && event.responseText) {
                         try { // to parse txt response from proxy API
-                            str_relatedQueries = JSON.parse(event.responseText).choices[0].message.content
+                            let chunks = event.responseText.trim().split('\n')
+                            str_relatedQueries = JSON.parse(chunks[chunks.length - 1]).text
                         } catch (err) { appError(err) ; reject(err) }
                     }
                     const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
@@ -912,26 +904,25 @@
                             appAlert('suggestProxy')
                         }
                     }
-                } else if (endpoint.includes('aigcf')) {
-                    if (event.responseText) {
-                        try { // to parse txt response from AIGCF endpoint
-                            const answer = JSON.parse(event.responseText).choices[0].message.content
-                            appShow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
-                        } catch (err) {
+                } else if (endpoint.includes('gptforlove')) {
+                    if (event.responseText && !event.responseText.includes('Fail')) {
+                        try { // to parse txt response from GPTPlus
+                            let chunks = event.responseText.trim().split('\n'),
+                                lastObj = JSON.parse(chunks[chunks.length - 1])
+                            if (lastObj.id) parentID_gptPlus = lastObj.id
+                            appShow(lastObj.text) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                        } catch (err) { // use different endpoint or suggest OpenAI
                             appInfo('Response: ' + event.responseText)
-                            if (event.responseText.includes('非常抱歉，根据我们的产品规则，无法为你提供该问题的回答'))
-                                appAlert(msgs.alert_censored || 'Sorry, according to our product rules, '
-                                    + 'we cannot provide you with an answer to this question, please try other questions')
-                            else if (event.responseText.includes('维护'))
-                                appAlert(( msgs.alert_maintenance || 'AI system under maintenance' ) + '. '
-                                    + ( msgs.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' ))
-                            else if (event.responseText.includes('finish_reason')) { // if other AIGCF error encountered
-                                await refreshAIGCFendpoint() ; getShowReply(convo, callback) // re-fetch related queries w/ fresh IP
-                            } else { // use different endpoint or suggest OpenAI
-                                appError(appAlerts.parseFailed + ': ' + err)
-                                if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-                                else appAlert('suggestOpenAI')
-        }}}}}}
+                            appError(appAlerts.parseFailed + ': ' + err)
+                            if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
+                            else appAlert('suggestOpenAI')
+                        }
+                    } else {
+                        appInfo('Response: ' + event.responseText)
+                        if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
+                        else appAlert('suggestOpenAI')
+                    }
+        }}}
     }
 
     function appShow(answer) {
@@ -1269,7 +1260,7 @@
         auth: 'https://auth0.openai.com',
         session: 'https://chatgpt.com/api/auth/session',
         chat: 'https://api.openai.com/v1/chat/completions' }
-    const proxyEndpoints = [[ 'https://api.aigcfun.com/api/v1/text?key=' + await getAIGCFkey(), '', 'gpt-3.5-turbo' ]]
+    const proxyEndpoints = [[ 'https://api11.gptforlove.com/chat-process' ]]
 
     // Init ALERTS
     const appAlerts = {
