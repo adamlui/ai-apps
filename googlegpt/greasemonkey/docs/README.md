@@ -11,7 +11,7 @@
 
 <br>
 
-<a href="https://greasyfork.org/scripts/478597-googlegpt"><img height=31 src="https://img.shields.io/badge/Users-40,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://greasyfork.googlegpt.io"><img height=31 src="https://img.shields.io/badge/Users-40,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/googlegpt/blob/main/LICENSE.md"><img height=31 src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.com/KudoAI/googlegpt/commits/main"><img height=31 src="https://img.shields.io/github/commit-activity/m/KudoAI/googlegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/kudoai/googlegpt"><img height=31 src="https://img.shields.io/codefactor/grade/github/kudoai/googlegpt?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
@@ -28,11 +28,11 @@
 
 <br>
 
-[![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/meaning-of-life-dark-demo.png)](https://greasyfork.org/scripts/478597-googlegpt)
+[![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/meaning-of-life-dark-demo.png)](https://greasyfork.googlegpt.io)
 
 ### Mobile
 
-[![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/googlegpt-mobile-greeting.png)](https://greasyfork.org/scripts/478597-googlegpt)
+[![](https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/screenshots/googlegpt-mobile-greeting.png)](https://greasyfork.googlegpt.io)
 
 ## 🌐 Compatibility 
 
@@ -57,7 +57,7 @@
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.googlegpt.io/pulls) to become a contributor!
 
-🚀 Install link: https://greasyfork.org/scripts/478597-googlegpt
+🚀 Install link: https://greasyfork.googlegpt.io
 
 ## 🧠 Contributors
 
