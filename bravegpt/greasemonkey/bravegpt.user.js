@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.29
+// @version             2024.5.29.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -946,7 +946,7 @@ setTimeout(async () => {
                         }
                     }
                 } else if (endpoint.includes('gptforlove')) {
-                    if (event.responseText && !event.responseText.includes("Fail")) {
+                    if (event.responseText && !event.responseText.includes('Fail')) {
                         try { // to parse txt response from GPTPlus
                             let chunks = event.responseText.trim().split('\n'),
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
