@@ -109,6 +109,8 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 
 🚀 Install link: https://greasyfork.googlegpt.io
 
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+
 ## 🧠 Contributors
 
 This app exists thanks to code, translations, issues & ideas from the following contributors:
@@ -123,7 +125,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://i.imgur.com/tNyIPmG.jpg?h=50&w=50&mask=circle&maxage=7d "ChatGPT")](https://chatgpt.com)
 
-#
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
 <div align="center">
 
@@ -140,10 +142,14 @@ This app exists thanks to code, translations, issues & ideas from the following 
 
 </div>
 
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br><br>
+
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
 ## 📜 Related scripts
 
@@ -168,7 +174,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://github.ddgpt.com/#readme) /
 [Discuss](https://github.ddgpt.com/discussions)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
 <a href="#--------">Back to top ↑</a>
