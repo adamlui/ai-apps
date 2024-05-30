@@ -3,8 +3,8 @@
 <br>
 
 <picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/googlegpt/with-reflection/white.png">
-    <img alt="GoogleGPT" width=888 src="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/googlegpt/with-reflection/black.png">
+    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/logos/googlegpt/with-reflection/white.png">
+    <img alt="GoogleGPT" width=888 src="https://media.googlegpt.io/images/logos/googlegpt/with-reflection/black.png">
 </picture>
 
 <br>
