@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "ChatGPT གིས་ Brave Search sidebar ལུ་ལན་འདེབས་ཚུ་བཙུགས་དོ་ཡོདཔ་ཨིན། (GPT-4གིས་ཤུགས་བཏོན་ཏེ་!)" },
+  "appDesc": { "message": "ChatGPT གིས་ Brave Search sidebar ལུ་ལན་འདེབས་ཚུ་བཙུགས་དོ་ཡོདཔ་ཨིན། (GPT-4oགིས་ཤུགས་བཏོན་ཏེ་!)" },
   "menuLabel_proxyAPImode": { "message": "པོརསི་ཨེཔི་གི་རྣམ་ཐར།" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get ལན་སློག" },
   "menuLabel_relatedQueries": { "message": "གནད་དོན་ཁག་ཆེ་ཤོས་" },

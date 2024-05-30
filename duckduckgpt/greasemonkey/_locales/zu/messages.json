@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Ifaka izimpendulo ze-ChatGPT kubha eseceleni ye-DuckDuckGo (inikwe amandla yi-GPT-4!)" },
+  "appDesc": { "message": "Ifaka izimpendulo ze-ChatGPT kubha eseceleni ye-DuckDuckGo (inikwe amandla yi-GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Imodi ye-API Yombambeli" },
   "menuLabel_autoGetAnswers": { "message": "Thola Izimpendulo Ngokuzenzakalelayo" },
   "menuLabel_relatedQueries": { "message": "Imibuzo Ehlobene" },

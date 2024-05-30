@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Voeg ChatGPT-antwoorde by DuckDuckGo-sybalk (aangedryf deur GPT-4!)" },
+  "appDesc": { "message": "Voeg ChatGPT-antwoorde by DuckDuckGo-sybalk (aangedryf deur GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Volmag-API-modus" },
   "menuLabel_autoGetAnswers": { "message": "Outo- Kry Antwoorde" },
   "menuLabel_relatedQueries": { "message": "Verwante navrae" },

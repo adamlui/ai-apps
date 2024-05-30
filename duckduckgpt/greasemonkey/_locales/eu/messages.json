@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "ChatGPT erantzunak gehitzen ditu DuckDuckGo alboko barran (GPT-4-k bultzatuta!)" },
+  "appDesc": { "message": "ChatGPT erantzunak gehitzen ditu DuckDuckGo alboko barran (GPT-4o-k bultzatuta!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API modua" },
   "menuLabel_autoGetAnswers": { "message": "Lortu erantzunak automatikoki" },
   "menuLabel_relatedQueries": { "message": "Erlazionatutako kontsultak" },

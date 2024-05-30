@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Ku dar ChatGPT jawaabaha Google Search (waxaa ku shaqeeya GPT-4!)" },
+  "appDesc": { "message": "Ku dar ChatGPT jawaabaha Google Search (waxaa ku shaqeeya GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Jawaabaha Auto-Get" },
   "menuLabel_proxyAPImode": { "message": "Qaabka API Proxy" },
   "menuLabel_relatedQueries": { "message": "Su 'aalaha la xiriira" },

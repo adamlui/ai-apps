@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Pridá odpovede ChatGPT na bočný panel DuckDuckGo (poháňaný GPT-4!)" },
+  "appDesc": { "message": "Pridá odpovede ChatGPT na bočný panel DuckDuckGo (poháňaný GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Režim proxy API" },
   "menuLabel_autoGetAnswers": { "message": "Automatické získavanie odpovedí" },
   "menuLabel_relatedQueries": { "message": "Súvisiace otázky" },

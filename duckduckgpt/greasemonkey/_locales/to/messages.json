@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Tanaki atu ChatGPT ngaahi tali ki he DuckDuckGo sidebar (fakamisini ʻe he KONGA-4!)" },
+  "appDesc": { "message": "Toka'anga 'a e ngaahi fakamatala 'o e ChatGPT ki he saiti fakafonua 'o e DuckDuckGo (pau'i 'i he GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "API Mode fakafofonga" },
   "menuLabel_autoGetAnswers": { "message": "Ngaahi tali ki he meʻalele" },
   "menuLabel_relatedQueries": { "message": "Ngaahi fakaʻekeʻeke ʻoku fekauʻaki" },

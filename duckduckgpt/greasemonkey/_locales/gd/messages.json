@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "A 'cur freagairtean ChatGPT gu bàr - taoibh DuckDuckGo (air a stiùireadh le GPT -4!)" },
+  "appDesc": { "message": "Tha ChatGPT a 'cur freagairtean ris an t-sìde-bàr DuckDuckGPT (air a dhèanamh le GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Modh API Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Freagairtean fèin - ghluasadach" },
   "menuLabel_relatedQueries": { "message": "Ceistean co - cheangailte" },

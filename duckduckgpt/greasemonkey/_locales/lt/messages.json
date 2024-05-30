@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Prideda „ChatGPT“ atsakymus į „DuckDuckGo“ šoninę juostą (sukurta GPT-4!)" },
+  "appDesc": { "message": "Prideda „ChatGPT“ atsakymus į „DuckDuckGo“ šoninę juostą (sukurta GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Tarpinio serverio API režimas" },
   "menuLabel_autoGetAnswers": { "message": "Automatiškai gauti atsakymus" },
   "menuLabel_relatedQueries": { "message": "Susijusios užklausos" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Tilføjer ChatGPT-svar til DuckDuckGo-sidebjælken (drevet af GPT-4!)" },
+  "appDesc": { "message": "Tilføjer ChatGPT-svar til DuckDuckGo-sidebjælken (drevet af GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API-tilstand" },
   "menuLabel_autoGetAnswers": { "message": "Hent svar automatisk" },
   "menuLabel_relatedQueries": { "message": "Relaterede forespørgsler" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "زیادکردنی هاوپۆل بۆ brave search sidebar (پەڕەی ڕەوانەکەر) (بەستەرەکان_دەستکاری)" },
+  "appDesc": { "message": "زیادکردنی وەڵامەکانی ChatGPT بۆ سایدباری Brave Search (بەرپێنانی GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "شێوازی APIی پرۆکسی" },
   "menuLabel_autoGetAnswers": { "message": "وەڵامە خۆگەڕەکان" },
   "menuLabel_relatedQueries": { "message": "پرسیارە پەیوەندیدارەکان" },

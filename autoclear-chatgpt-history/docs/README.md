@@ -125,7 +125,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
-> Display ChatGPT answers in Brave Search sidebar (powered by GPT-4!)
+> Display ChatGPT answers in Brave Search sidebar (powered by GPT-4o!)
 <br>[Install](https://github.bravegpt.com/#-installation) / 
 [Readme](https://github.bravegpt.com/#readme) / 
 [Discuss](https://github.bravegpt.com/discussions)

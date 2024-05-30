@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Google検索にChatGPTの回答を追加（ GPT -4搭載！ ）" },
+  "appDesc": { "message": "Google 検索に ChatGPT の回答を追加（ GPT-4搭載！）" },
   "menuLabel_autoGetAnswers": { "message": "回答を自動取得" },
   "menuLabel_proxyAPImode": { "message": "プロキシAPIモード" },
   "menuLabel_relatedQueries": { "message": "関連するクエリ" },

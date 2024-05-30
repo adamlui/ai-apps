@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "E tsenya dikarabo tsa ChatGPT mo bareng e e kafa thoko ya DuckDuckGo (e e dirisiwang ke GPT-4!)" },
+  "appDesc": { "message": "E tsenya dikarabo tsa ChatGPT mo bareng e e kafa thoko ya DuckDuckGo (e e dirisiwang ke GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_autoGetAnswers": { "message": "Go Bona Dikarabo ka Tsela e e Itshwarang" },
   "menuLabel_relatedQueries": { "message": "Dipotšišo tšeo di sepelel" },

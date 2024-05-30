@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "מוסיף תשובות ChatGPT לסרגל הצד של חיפוש אמיץ (מופעל על ידי GPT -4!)" },
+  "appDesc": { "message": "מוסיף תשובות של ChatGPT לסרגל הצד של Brave Search (מופעל על ידי GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "מצב API של שרת Proxy" },
   "menuLabel_autoGetAnswers": { "message": "קבל תשובות אוטומטיות" },
   "menuLabel_relatedQueries": { "message": "שאילתות קשורות" },

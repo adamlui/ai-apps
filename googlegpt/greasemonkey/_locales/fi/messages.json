@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Lisää ChatGPT-vastaukset Google-hakuun (powered by GPT-4!)" },
+  "appDesc": { "message": "Lisää ChatGPT-vastaukset Google-hakuun (powered by GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Automaattinen vastausten haku" },
   "menuLabel_proxyAPImode": { "message": "Välityspalvelimen API-tila" },
   "menuLabel_relatedQueries": { "message": "Aiheeseen liittyvät kyselyt" },

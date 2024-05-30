@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Დაამატეთ ChatGPT-ის პასუხები DuckDuckGo-ს გვერდით ზოლში (GPT-4-ის მეშვეობით!)" },
+  "appDesc": { "message": "Დაამატეთ ChatGPT-ის პასუხები DuckDuckGo-ს გვერდით ზოლში (GPT-4o-ის მეშვეობით!)" },
   "menuLabel_proxyAPImode": { "message": "Პროქსი API რეჟიმი" },
   "menuLabel_autoGetAnswers": { "message": "Პასუხების ავტომატური მიღება" },
   "menuLabel_relatedQueries": { "message": "Მსგავსი შეკითხვები" },

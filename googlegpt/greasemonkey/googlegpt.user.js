@@ -2,159 +2,165 @@
 // @name                GoogleGPT 🤖
 // @name:zh-CN          GoogleGPT 🤖
 // @name:zh-TW          GoogleGPT 🤖
-// @description         Adds ChatGPT answers to Google Search sidebar
-// @description:af      Voeg ChatGPT-antwoorde by Google Soek kantbalk by
-// @description:am      የChatGPT መልስናወርቃለች እርስዎን በGoogle የተወሰኑ ገጽታዎችን ይጨምሩ
-// @description:ar      يضيف إجابات ChatGPT إلى شريط البحث الجانبي في Google
-// @description:az      ChatGPT cavablarını Google Axtarış yan panelinə əlavə edir
-// @description:be      Дадае адказы ChatGPT да бакавой баковай панэлі Google Search
-// @description:bem     Aziya ChatGPT ndalama ku Google sidebar
-// @description:bg      Добавя ChatGPT отговори към страничната лента на Google Search
-// @description:bn      Google সাইডবারে ChatGPT উত্তর যোগ করে
-// @description:bo      ChatGPT ལེ་བས་ཚད་བདག་སྐྱེད་དེ་བཟུམ་སྒྲིག་ནང་ Google གནས་པ་བརྗོད་པ།
-// @description:bs      Dodaje odgovore ChatGPT-a na bočnu traku Google pretrage
-// @description:ca      Afegeix respostes de ChatGPT a la barra lateral de Google Search
-// @description:ceb     Nagdugang sa mga tubag sa ChatGPT sa sidebar sa Google Search
-// @description:ckb     وەرگرتنی ڕاستەوخۆیی ChatGPT بۆ پەنجەرەی لاتی لە Google
-// @description:cs      Přidává odpovědi od ChatGPT do bočního panelu Google Search
-// @description:cy      Ychwanega Atebion ChatGPT i'r bar ochr Google Chwilio
-// @description:da      Tilføjer ChatGPT-svar til Google Søg-sidelinjen
-// @description:de      Fügt ChatGPT-Antworten zur Google-Seitenleiste hinzu
-// @description:dv      ChatGPT އައިކްސޭޓުގެ ޖަވާބުގެ Google ސައިޓުގައި ފޯރުވާރައުގެ ޑައުން
-// @description:dz      ChatGPT དང་ Google འབྱུང་ཆུང་ལེ་བས་འཐུས་པ་ལགས་སྤྱོད་སྒྲིག་པ་བརྟགས་བཞུགས།
-// @description:el      Προσθέτει απαντήσεις ChatGPT στην πλαϊνή γραμμή αναζήτησης του Google
-// @description:eo      Aldonas ChatGPT-respondojn al la flanka breto de Google Serĉo
-// @description:es      Agrega respuestas de ChatGPT a la barra lateral de Google
-// @description:et      Lisab ChatGPT vastused Google otsingu küljepaneelile
-// @description:eu      Gehitu ChatGPT erantzunak Google bilaketako aldeko alderakoan
-// @description:fa      ChatGPT به پاسخهای Google جستجو نوار کناری اضافه میکند
-// @description:fi      Lisää ChatGPT-vastaukset Googleen
-// @description:fil     Nagdaragdag ng mga sagot ng ChatGPT sa sidebar ng Google Search
-// @description:fj      Vakarautaka na vosa vakatotolo ni ChatGPT ki na yasa ni liga ni Google
-// @description:fo      Leggur ChatGPT-svar til Google Leita síðustriku
-// @description:fr      Ajoute les réponses ChatGPT à la barre latérale Google
-// @description:fr-CA   Ajoute les réponses ChatGPT à la barre latérale Google
-// @description:ga      Cuireann freagraí ChatGPT le taobhliosta Google Cuardach
-// @description:gd      Cuir freagairtean ChatGPT ris an taobh-siostam Google Lorg
-// @description:gl      Engade as respostas de ChatGPT á barra lateral de procura de Google
-// @description:gn      Oñemohẽ ChatGPT ñemohendu Google Ñepyrũ
-// @description:gu      Google સાઇડબારમાં ChatGPT જવાબો ઉમેરે છે
-// @description:ha      Zaya sauyaƙa daga ChatGPT zuwa bidiyo na bidiyon Google
-// @description:haw     Hoʻohui aku i nā hōʻike a ChatGPT i ka papa aoʻao hema o ka ʻimi ʻana iā Google
-// @description:he      הוספת תשובות ChatGPT לסרגל הצד של Google חיפוש
-// @description:hi      Google साइडबार में ChatGPT उत्तर जोड़ता है
-// @description:hr      Dodaje odgovore aplikacije ChatGPT bočnoj traci pretraživanja Google
-// @description:ht      Ajoute repons ChatGPT nan barre laterale Rechèch Google a
-// @description:hu      A ChatGPT válaszokat ad a Google Keresés oldalsávjához
-// @description:hy      Ավելացնում է ChatGPT պատասխանները Google որոնումի կողմից
-// @description:id      Menambahkan jawaban ChatGPT ke sidebar Google Search
-// @description:ig      Tinye obere ChatGPT na-aga n'etiti ozi akụkụ Google Search
-// @description:is      Bætir við ChatGPT svarum við hliðina á Google leitarstiku
-// @description:it      Aggiunge le risposte ChatGPT alla barra laterale di Google
-// @description:iu      ᐊᑎᒪᐃᓐᓂᐊᕐᓂᖅ ChatGPT ᐅᖃᐅᓯᒻᓂᒃ Google ᑎᑎᕋᖅ
-// @description:ja      ChatGPT の回答を Google サイドバーに追加します
-// @description:jv      Nambaki jawaban ChatGPT menyang sidebar Google Search
-// @description:ka      დაამატებს ChatGPT პასუხებს Google ძიების გვერდის გვერდზე
-// @description:kg      Kweyisa mawu a ChatGPT kuna sebukulu Google Search
-// @description:kk      ChatGPT жауаптарын Google іздеу жолағына қосады
-// @description:km      បន្ថែមការឆ្លើយនៃ ChatGPT ទៅជាន់ប្រែក្រវូកស្វែករក Google។
-// @description:kn      Google ಹೆಸರಿನಲ್ಲಿ ChatGPT ಉತ್ತರಗಳನ್ನು ಸೇರಿಸಲಾಗುತ್ತದೆ
-// @description:ko      Google 사이드바에 ChatGPT 답변 추가
-// @description:kok     Google शोधन बारकिटेलो वर ChatGPT उत्तर जातो
-// @description:ku      Li ser karkera lêgerîna Google ChatGPT parve dike
-// @description:ky      ChatGPT жауаптарын Google издөө жолундо кошотот
-// @description:la      Adiungit responsiones ChatGPT ad lateralem mensam quaerendi Google
-// @description:lb      Setzt ChatGPT Äntwerten op Google Sichfenster bäi
-// @description:lo      ເພີ່ມຄໍາຕອບ ChatGPT ໄປສະແດງໄວ້ໃນແບບຂອງ Google Vükos
-// @description:lt      Prideda ChatGPT atsakymus į „Google“ paieškos šoninį juostos rėmelį
-// @description:lv      Pievieno ChatGPT atbildes Google meklēšanas sānjoslā
-// @description:mg      Mampiditra valiny avy amin'ny ChatGPT ao amin'ny laharana tenim-paharetan'ny Google
-// @description:mi      Whakapau kōrero mai te ChatGPT ki te whītiki o Google Search
-// @description:mk      Додавање на ChatGPT одговори во страничната лента на Google пребарување
-// @description:ml      Google സോളിൽ ChatGPT ഉത്തരങ്ങൾ ചേർക്കുന്നു
-// @description:mn      ChatGPT хариултуудыг Google хайлтын хажуу талд нэмнэ
-// @description:mr      गूगलवर ChatGPT प्रतिसाद जोडला जातो
-// @description:ms      Menambah jawapan ChatGPT ke sidebar Carian Google
-// @description:mt      Iżżid ir-risposti tal-ChatGPT lill-sidebar tat-Tikketta Google
-// @description:my      Google ရှိ ChatGPT အဖြေကိုထည့်သွင်းရန်
-// @description:na      Ongerenga mei a ChatGPT i le tofiga o Google Suʻesuʻega
-// @description:nb      Legger til ChatGPT-svar i Google Søk sidefelt
-// @description:nd      Ithunyelwe izithuthi za ChatGPT kuqukethwe kwesibhakabhaka seGoogle Search
-// @description:ne      Google खोजको साइडबारमा ChatGPT उत्तरहरू थप्दै
-// @description:ng      Ongeza mafandikio ya ChatGPT ku tepu ya Google Search
-// @description:nl      Voegt ChatGPT-antwoorden toe aan de zijkant van Google Zoeken
-// @description:nn      Legg til ChatGPT-svar i Google Søk sidefelt
-// @description:no      Legger til ChatGPT-svar i Google Søk sidefelt
-// @description:nso     E ngata re tswetše diphetho tša ChatGPT go setšhabeng sa Google Search
-// @description:ny      Ndadzivula mawu a ChatGPT ku sesele ya Google Search
-// @description:oc      Apond las responsas de ChatGPT a la barra laterala de Google Search
-// @description:om      Fayyadamnu Google Ayyaanni ChatGPT tiwwiiqaa garaa garaatti argachuu dandeenyu
-// @description:or      ଗୁଗଲ ଖୋଜର ସାଇଡବାରରେ ChatGPT ଉତ୍ତର ଯୋଡ଼ାଯାଇଛି
-// @description:pa      ਗੂਗਲ ਖੋਜ ਦੇ ਸਾਈਡਬਾਰ 'ਚ ChatGPT ਉੱਤਰ ਸ਼ਾਮਲ ਕੀਤੇ ਗਏ ਨੇ
-// @description:pl      Dodaje odpowiedzi ChatGPT w pasku bocznym Google
-// @description:ps      د ګوګل لټون کې ChatGPT جوابونه اضافه کوي
-// @description:pt      Adiciona respostas do ChatGPT à barra lateral do Google Search
-// @description:pt-BR   Adiciona respostas do ChatGPT à barra lateral do Google Search
-// @description:qu      ChatGPT munankunapuraqmi Google ñawpa pachapi yanapaq
-// @description:rm      Agiunta las respostas da ChatGPT a la barra laterala da Google Search
-// @description:rn      Abaririza amajwi nka ChatGPT ku rubuga rw'ikibazo cya Google
-// @description:ro      Adaugă răspunsurile ChatGPT în bara laterală Google Căutare
-// @description:ru      Добавляет ответы ChatGPT на боковую панель Google
-// @description:rw      Byongeyeza amajwi yo mubu sideba ya Google ChatGPT
-// @description:sa      गूगल यान्त्रिके अभिन्नधीयो मार्गेण चाटगिपटिं उत्तरम्
-// @description:sat     Googleᱥ ᱵᱟᱨᱦᱟᱨᱚᱛ ᱠᱟᱹᱞᱤᱞᱟ ChatGPT ᱨᱮᱞᱟ ᱦᱚᱱᱮᱡ
-// @description:sc      Aghedda is responsas de ChatGPT a sa barra de cerca de Google
-// @description:sd      گوگل سرچ ۾ ChatGPT جو جوابون اضافو ڪيل آهي
-// @description:se      Loahpa ChatGPT-vástádusat Google Gaskkaside
-// @description:sg      Tisa na tîsânga lusângo lu ChatGPT kuna ntsâdi ya Google
-// @description:si      Google සෙවුමේ ChatGPT පිළිතුරු එකතු කරයි
-// @description:sk      Pridáva odpovede ChatGPT do bočnej lišty vyhľadávania Google
-// @description:sl      Dodaja odgovore ChatGPT v stransko vrstico iskanja Google
-// @description:sm      Faʻaalia atonu a le ChatGPT i le taavale lautele o le Google Suʻesuʻega
-// @description:sn      Kupurikira maitiro eChatGPT kuve kuwandisa wevhu raGoogle Search
-// @description:so      Ku darin xogta ChatGPT ee gooshi Google Search
-// @description:sq      Shton përgjigje ChatGPT në anëbardhën e kërkimit Google
-// @description:sr      Додаје одговоре ЧатГПТ-а у траку за претрагу Google
-// @description:ss      Faka amavulandlela aseChatGPT e sidebarenge sikaGoogle Seaching
-// @description:st      Kgetha ChatGPT ho litlhopho tsa Google Thetsa
-// @description:su      Nambihan jawaban ChatGPT ka sisi kiri Google
-// @description:sv      Lägger till ChatGPT-svar i Google-sökraden
-// @description:sw      Inaongeza majibu ya ChatGPT kwenye ubao wa upande wa Google
-// @description:ta      கூகிள் தேடலின் பக்கத்தில் ChatGPT பதில்களைச் சேர்க்கின்றது
-// @description:te      గూగుల్ శోధన పట్టిక పై ChatGPT సమాధానాలను జోడిస్తుంది
-// @description:tg      Зиёд кардани ҷавобҳои ChatGPT ба тарафи сатҳи ҷустуҷӯ Google
-// @description:th      เพิ่มคําตอบจาก ChatGPT ในแถบด้านข้างของการค้นหา Google
-// @description:ti      ኣብ Google ስልጠና ኣብ ChatGPT ምልክትን ኣማራጺ
-// @description:tk      Google gecikmäge ChatGPT jogaby goşýar
-// @description:tl      Nagdadagdag ng mga sagot ng ChatGPT sa sidebar ng Google Search
-// @description:tn      Viseza izisho zika ChatGPT kwekhoni leGoogle Search
-// @description:to      Tānaki e ngaue kihe sipa tali fakapotopoto 'o e Google ngaue 'o e ChatGPT
-// @description:tr      ChatGPT yanıtlarını Google Arama kenar çubuğuna ekler
-// @description:ts      Vuyisa mati na ChatGPT hi xiphemu leGoogle Search
-// @description:tt      Google Эзләү үтекле ChatGPT катнаштыру
-// @description:tw      Hwɛ ChatGPT adefoɔ dodoɔ Google hwee
-// @description:ug      Google ئىزدەشتە ChatGPT جاۋابلىرىنى قوشۇش
-// @description:uk      Додає відповіді ChatGPT у бічний панелі пошуку Google
-// @description:ur      گوگل تلاش کی طرف ChatGPT کے جوابات شامل کرتا ہے
-// @description:uz      Google qidiruviga ChatGPT javoblari qo'shadi
-// @description:ve      Vhohodzi vha ChatGPT kha vhavhili ya Google Fambisa
-// @description:vi      Thêm câu trả lời của ChatGPT vào thanh bên Google Search
-// @description:vo      Läükon datans ChatGPT ad pät binon Google Vükos
-// @description:wa      Ådd doveses di Dj ChatGPT a l' cohteye di Dj Google
-// @description:wo      Ndax duggëwul ChatGPT du bind ak wertali Google
-// @description:xh      Nika izicelo zika ChatGPT ezinkunzi ngesandla samazwi eGoogle Search
-// @description:yi      צוגעפיגט אַנטוואָרטן פון טשאַטגפּט אין גוגל זוכן זייַטבאַר
-// @description:yo      Fi awọn iwe itumọ ChatGPT si abala iwoye Google
-// @description:za      Ngozv yi ChatGPT nv nqgozv ya Google Search
-// @description:zh      将 ChatGPT 答案添加到 Google 侧边栏 （无需注册！）
-// @description:zh-CN   将 ChatGPT 答案添加到 Google 侧边栏 （无需注册！）
-// @description:zh-HK   將 ChatGPT 答案添加到 Google 側邊欄 （無需註冊！）
-// @description:zh-SG   将 ChatGPT 答案添加到 Google 侧边栏 （无需注册！）
-// @description:zh-TW   將 ChatGPT 答案添加到 Google 側邊欄 （無需註冊！）
-// @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search
+// @description         Adds ChatGPT answers to Google Search sidebar (powered by GPT-4o!)
+// @description:af      Voeg ChatGPT-antwoorde by Google Soek kantbalk by (aangedryf deur GPT-4o!)
+// @description:am      የChatGPT መልስናወርቃለች እርስዎን በGoogle የተወሰኑ ገጽታዎችን ይጨምሩ (ተከፋይ GPT-4o!)
+// @description:ar      يضيف إجابات ChatGPT إلى شريط البحث الجانبي في Google (مدعوم بواسطة GPT-4o!)
+// @description:az      ChatGPT cavablarını Google Axtarış yan panelinə əlavə edir (GPT-4o tərəfindən işlədilir!)
+// @description:be      Дадае адказы ChatGPT да бакавой баковай панэлі Google Search (з дапамогай GPT-4o!)
+// @description:bem     Aziya ChatGPT ndalama ku Google sidebar (yezagwirizwitsa ndi GPT-4o!)
+// @description:bg      Добавя ChatGPT отговори към страничната лента на Google Search (с поддръжка от GPT-4o!)
+// @description:bn      Google সাইডবারে ChatGPT উত্তর যোগ করে (দ্বারা GPT-4o প্রস্তুত!)
+// @description:bo      ChatGPT ལེ་བས་ཚད་བདག་སྐྱེད་དེ་བཟུམ་སྒྲིག་ནང་ Google གནས་པ་བརྗོད་པ། (GPT-4o སྒྲིག་དང་སྤྱི་བོར་ཡོད་ཡིག!)
+// @description:bs      Dodaje odgovore ChatGPT-a na bočnu traku Google pretrage (pokreće GPT-4o!)
+// @description:ca      Afegeix respostes de ChatGPT a la barra lateral de Google Search (impulsat per GPT-4o!)
+// @description:ceb     Nagdugang sa mga tubag sa ChatGPT sa sidebar sa Google Search (pinaagi sa gihimong GPT-4o!)
+// @description:ckb     وەرگرتنی ڕاستەوخۆیی ChatGPT بۆ پەنجەرەی لاتی لە Google (پشتیوانیکراوە لە لایەن GPT-4o!)
+// @description:cs      Přidává odpovědi od ChatGPT do bočního panelu Google Search (poháněno GPT-4o!)
+// @description:cy      Ychwanega Atebion ChatGPT i'r bar ochr Google Chwilio (pŵerwyd gan GPT-4o!)
+// @description:da      Tilføjer ChatGPT-svar til Google Søg-sidelinjen (drevet af GPT-4o!)
+// @description:de      Fügt ChatGPT-Antworten zur Google-Seitenleiste hinzu (unterstützt von GPT-4o!)
+// @description:dv      ChatGPT އައިކްސޭޓުގެ ޖަވާބުގެ Google ސައިޓުގައި ފޯރުވާރައުގެ ޑައުން (GPT-4o! ތަފްޞީލް)
+// @description:dz      ChatGPT དང་ Google འབྱུང་ཆུང་ལེ་བས་འཐུས་པ་ལགས་སྤྱོད་སྒྲིག་པ་བརྟགས། (GPT-4o རྒྱབས་བྱས་ཏེ!)
+// @description:el      Προσθέτει απαντήσεις ChatGPT στην πλαϊνή γραμμή αναζήτησης του Google (τροφοδοτούμενο από το GPT-4o!)
+// @description:eo      Aldonas ChatGPT-respondojn al la flanka breto de Google Serĉo (motorigita de GPT-4o!)
+// @description:es      Agrega respuestas de ChatGPT a la barra lateral de Google (impulsado por GPT-4o!)
+// @description:et      Lisab ChatGPT vastused Google otsingu küljepaneelile (toetatud GPT-4o poolt!)
+// @description:eu      Gehitu ChatGPT erantzunak Google bilaketa aldean (eredua: GPT-4o!)
+// @description:fa      ChatGPT به پاسخهای Google جستجو نوار کناری اضافه میکند (قدرت گرفته شده توسط GPT-4o!)
+// @description:fi      Lisää ChatGPT-vastaukset Googleen (teknologia: GPT-4o!)
+// @description:fil     Nagdaragdag ng mga sagot ng ChatGPT sa sidebar ng Google Search (pinaandar ng GPT-4o!)
+// @description:fj      Vakarautaka na vosa vakatotolo ni ChatGPT ki na yasa ni liga ni Google (veivakatovolei e na GPT-4o!)
+// @description:fo      Leggur ChatGPT-svar til Google Leita síðustriku (róbotrýni: GPT-4o!)
+// @description:fr      Ajoute les réponses ChatGPT à la barre latérale Google (alimenté par GPT-4o!)
+// @description:fr-CA   Ajoute les réponses ChatGPT à la barre latérale Google (alimenté par GPT-4o!)
+// @description:ga      Cuireann freagraí ChatGPT le taobhliosta Google Cuardach (cumhachtaithe ag GPT-4o!)
+// @description:gd      Cuir freagairtean ChatGPT ris an taobh-siostam Google Lorg (cumhachd le GPT-4o!)
+// @description:gl      Engade as respostas de ChatGPT á barra lateral de procura de Google (potenciado por GPT-4o!)
+// @description:gn      Oñemohẽ ChatGPT ñemohendu Google Ñepyrũ (teknologia: GPT-4o!)
+// @description:gu      Google સાઇડબારમાં ChatGPT જવાબો ઉમેરે છે (પાવર્ડ બાય GPT-4o!)
+// @description:ha      Zaya sauyaƙa daga ChatGPT zuwa bidiyo na bidiyon Google (kara na GPT-4o!)
+// @description:haw     Hoʻohui aku i nā hōʻike a ChatGPT i ka papa aoʻao hema o ka ʻimi ʻana iā Google (hoʻolako ʻia e GPT-4o!)
+// @description:he      הוספת תשובות ChatGPT לסרגל הצד של Google חיפוש (הופעל על ידי GPT-4o!)
+// @description:hi      Google साइडबार में ChatGPT उत्तर जोड़ता है (पावर्ड बाय GPT-4o!)
+// @description:hr      Dodaje odgovore aplikacije ChatGPT bočnoj traci pretraživanja Google (pokreće GPT-4o!)
+// @description:ht      Ajoute repons ChatGPT nan barre laterale Rechèch Google a (pòtansye pa GPT-4o!)
+// @description:hu      A ChatGPT válaszokat ad a Google Keresés oldalsávjához (hajtja: GPT-4o!)
+// @description:hy      Ավելացնում է ChatGPT պատասխանները Google որոնումի կողմից (աշխատում է GPT-4o!-ով)
+// @description:id      Menambahkan jawaban ChatGPT ke sidebar Google Search (didukung oleh GPT-4o!)
+// @description:ig      Tinye obere ChatGPT na-aga n'etiti ozi akụkụ Google Search (na-atụgharị nke GPT-4o!)
+// @description:is      Bætir við ChatGPT svarum við hliðina á Google leitarstiku (af þjónustu: GPT-4o!)
+// @description:it      Aggiunge le risposte ChatGPT alla barra laterale di Google (alimentato da GPT-4o!)
+// @description:iu      ᐊᑎᒪᐃᓐᓂᐊᕐᓂᖅ ChatGPT ᐅᖃᐅᓯᒻᓂᒃ Google ᑎᑎᕋᖅ (ᐅᓪᓗᒥᒄ GPT-4o-ᓇ!)
+// @description:ja      ChatGPT の回答を Google サイドバーに追加します (powered by GPT-4o!)
+// @description:jv      Nambaki jawaban ChatGPT menyang sidebar Google Search (didukung déning GPT-4o!)
+// @description:ka      დაამატებს ChatGPT პასუხებს Google ძიების გვერდზე (ძალაში შენერგვაში: GPT-4o!)
+// @description:kg      Kweyisa mawu a ChatGPT kuna sebukulu Google Search (olengisa na GPT-4o!)
+// @description:kk      Google іздеу жолағына ChatGPT жауаптарын қосады (жеткілік: GPT-4o арқылы!)
+// @description:kl      Tilersorlu Google-mut aamma-assititsoq ChatGPT-ippit (equitooqarfiup 4o-powered!)
+// @description:km      បន្ថែមចម្លើយដែលបានបញ្ចូលដោយ ChatGPT ទៅខ្សែសំខាន់ Google (គ្រប់គ្រងដោយ GPT-4o!)
+// @description:kn      ಗೂಗಲ್ ಹುಡುಕಾಟದ ಸೈಡ್‌ಬಾರ್‌ಗೆ ಚಾಟ್‌ಜಿಪಿಟಿ ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ (ಬಿಡುಗಡೆ ಗಿರಾಕಿ: GPT-4o!)
+// @description:ko      ChatGPT 답변을 Google 검색 사이드바에 추가합니다 (GPT-4o!으로 구동됨)
+// @description:kok     Google शोधाच्या बाजुस चॅटजीपीटी उत्तर घालतो (शक्ती: GPT-4o!)
+// @description:kr      Yanaɓa aiki na ChatGPT na ƙasaɓa ta hannu zuwa baya na Google (da aka buga da GPT-4o!)
+// @description:ks      ChatGPT د جوابونو Google لټون مخ (د: GPT-4o! لخوا)
+// @description:ku      Berhev dike le bersivên ChatGPTê Google Search (teqezkirina li GPT-4o!)
+// @description:ky      Google издөө жолунда ChatGPT жооптарын кошотот (өндүрүү: GPT-4o!)
+// @description:la      Adde ChatGPT responsa ad latere Google quaerere (motus a GPT-4o!)
+// @description:lb      Setzt ChatGPT Äntwerten derbäi Google Sichbar (gedréift vun GPT-4o!)
+// @description:lg      Yamba okuba y'oluganda wa ChatGPT mu kisangibwa kya Google (ebizimbe bya GPT-4o!)
+// @description:ln      Ekómi kosunga na makambo ya ChatGPT na moto ya Google Search (ezalaki na molimo na GPT-4o!)
+// @description:lo      ເພີ່ມຄຳຕອບ ChatGPT ເຂົ້າໃຈການຄົ້ນຫາ Google (ສະຫຼັບໄດ້ຂອງ GPT-4o!)
+// @description:lt      Prideda ChatGPT atsakymus į Google paieškos šoninę juostą (varomas GPT-4o!)
+// @description:lv      Pievieno ChatGPT atbildes Google meklēšanas sānjoslai (piedziņā: GPT-4o!)
+// @description:mg      Manampy olana amin'ny Google Search amin'ny sary ho an'ny fiaraha-monina izay mitovy (nataon'i GPT-4o!)
+// @description:mh      Ekwe jej ki en̄aaj tuon Google Search io ikwoor ChatGPT jerbal (koṃro: GPT-4o!)
+// @description:mi      Tāpirihia ngā whakautu o ChatGPT ki te tekau Google (whakaratohia e GPT-4o!)
+// @description:mk      Додава одговори на ChatGPT на страничниот Google бар (поддржано од GPT-4o!)
+// @description:ml      ഗൂഗിൾ തിരച്ചിലിന്റെ സൈഡ്‌ബാർലേക്ക് ചാറ്റിജിപിടി ഉത്തരങ്ങൾ ചേർക്കുന്നു (ശക്തിശാലിയായി GPT-4o യില്‍!)
+// @description:mn      Google хайлтын зүүний самбарт ChatGPT хариултууд нэмэх (тэмдэглэл: GPT-4o!)
+// @description:mr      Google शोध बाजुस ChatGPT प्रत्युत्तर जोडतो (शक्ती: GPT-4o!)
+// @description:ms      Menambah jawapan ChatGPT ke sidebar Carian Google (dikuasakan oleh GPT-4o!)
+// @description:mt      Żid it-tweġibiet tal-ChatGPT għas-sidebar tal-Google Search (ippreżentat min (powered by GPT-4o!)
+// @description:my      Google ရှိ ChatGPT အဖြေကိုထည့်သွင်းရန် (လွှဲပြီးနောက် powered by GPT-4o!)
+// @description:na      Ongerenga mei a ChatGPT i le tofiga o Google Suʻesuʻega (ʻo fesoasoaniʻi e GPT-4o!)
+// @description:nb      Legger til ChatGPT-svar i Google Søk sidefelt (drevet av GPT-4o!)
+// @description:nd      Ithunyelwe izithuthi za ChatGPT kuqukethwe kwesibhakabhaka seGoogle Search (lithuthukisiwe ngu GPT-4o!)
+// @description:ne      Google खोजको साइडबारमा ChatGPT उत्तरहरू थप्दै (पावर द्वारा GPT-4o!)
+// @description:ng      Ongeza mafandikio ya ChatGPT ku tepu ya Google Search (ifananyishwa na GPT-4o!)
+// @description:nl      Voegt ChatGPT-antwoorden toe aan de zijkant van Google Zoeken (aangedreven door GPT-4o!)
+// @description:nn      Legg til ChatGPT-svar i Google Søk sidefelt (drevet av GPT-4o!)
+// @description:no      Legger til ChatGPT-svar i Google Søk sidefelt (drevet av GPT-4o!)
+// @description:nso     E ngata re tswetše diphetho tša ChatGPT go setšhabeng sa Google Search (nthusa ke GPT-4o!)
+// @description:ny      Ndadzivula mawu a ChatGPT ku sesele ya Google Search (ganizidwa ndi GPT-4o!)
+// @description:oc      Apond las responsas de ChatGPT a la barra laterala de Google Search (potenciat per GPT-4o!)
+// @description:om      Fayyadamnu Google Ayyaanni ChatGPT tiwwiiqaa garaa garaatti argachuu dandeenyu (Qaldama GPT-4o!)
+// @description:or      ଗୁଗଲ ଖୋଜର ସାଇଡବାରରେ ChatGPT ଉତ୍ତର ଯୋଡ଼ାଯାଇଛି (ଦ୍ବାରା ପ୍ରଦାନ କରାଯାଇଛି powered by GPT-4o!)
+// @description:pa      ਗੂਗਲ ਖੋਜ ਦੇ ਸਾਈਡਬਾਰ 'ਚ ChatGPT ਉੱਤਰ ਸ਼ਾਮਲ ਕੀਤੇ ਗਏ ਨੇ (ਪਾਵਰਡ ਬਾਈ GPT-4o!)
+// @description:pl      Dodaje odpowiedzi ChatGPT w pasku bocznym Google (zasilany przez GPT-4o!)
+// @description:ps      د ګوګل لټون کې ChatGPT جو جوابون اضافو ګيل آهی (د پوهاندۍ لخوا GPT-4o!)
+// @description:pt      Adiciona respostas do ChatGPT à barra lateral do Google Search (alimentado por GPT-4o!)
+// @description:pt-BR   Adiciona respostas do ChatGPT à barra lateral do Google Search (alimentado por GPT-4o!)
+// @description:qu      ChatGPT munankunapuraqmi Google ñawpa pachapi yanapaq (ñuqayku GPT-4o! shinalla)
+// @description:rm      Agiunta las respostas da ChatGPT a la barra laterala da Google Search (potenzià da GPT-4o!)
+// @description:rn      Abaririza amajwi nka ChatGPT ku rubuga rw'ikibazo cya Google (yamitabiriwe na GPT-4o!)
+// @description:ro      Adaugă răspunsurile ChatGPT în bara laterală Google Căutare (alimentat de GPT-4o!)
+// @description:ru      Добавляет ответы ChatGPT на боковую панель Google (при поддержке GPT-4o!)
+// @description:rw      Byongeyeza amajwi yo mubu sideba ya Google ChatGPT (akomokwa na GPT-4o!)
+// @description:sa      गूगल यान्त्रिके अभिन्नधीयो मार्गेण चाटगिपटिं उत्तरम् (आह्वानित by GPT-4o!)
+// @description:sat     Googleᱥ ᱵᱟᱨᱦᱟᱨᱚᱛ ᱠᱟᱹᱞᱤᱞᱟ ChatGPT ᱨᱮᱞᱟ ᱦᱚᱱᱮᱡ (ᱱᱚᱢᱮᱱᱟᱹ ᱠᱚ GPT-4o! ᱨᱮᱫ)
+// @description:sc      Aghedda is responsas de ChatGPT a sa barra de cerca de Google (potziu da GPT-4o!)
+// @description:sd      گوگل سرچ ۾ ChatGPT جو جوابون اضافو ڪيل آهي (پاوريو بائي GPT-4o!)
+// @description:se      Loahpa ChatGPT-vástádusat Google Gaskkaside (suorggahan de GPT-4o!)
+// @description:sg      Tisa na tîsânga lusângo lu ChatGPT kuna ntsâdi ya Google (wuha na GPT-4o!)
+// @description:si      Google සෙවුමේ ChatGPT පිළිතුරු එකතු කරයි (බලාපොරොත්තු බෙදාහරින්නෙයි GPT-4o! හාදුව)
+// @description:sk      Pridáva odpovede ChatGPT do bočnej lišty vyhľadávania Google (poháňané GPT-4o!)
+// @description:sl      Dodaja odgovore ChatGPT v stransko vrstico iskanja Google (omogoča GPT-4o!)
+// @description:sm      Faʻaalia atonu a le ChatGPT i le taavale lautele o le Google Suʻesuʻega (faʻamalosi e GPT-4o!)
+// @description:sn      Kupurikira maitiro eChatGPT kuve kuwandisa wevhu raGoogle Search (akatengeswa na GPT-4o!)
+// @description:so      Ku darin xogta ChatGPT ee gooshi Google Search (caawinaysa GPT-4o!)
+// @description:sq      Shton përgjigje ChatGPT në anëbardhën e kërkimit Google (përcjellur nga GPT-4o!)
+// @description:sr      Додаје одговоре ЧатГПТ-а у траку за претрагу Google (покреће GPT-4o!)
+// @description:ss      Faka amavulandlela aseChatGPT e sidebarenge sikaGoogle Seaching (sikwazisiwe ngu GPT-4o!)
+// @description:st      Kgetha ChatGPT ho litlhopho tsa Google Thetsa (elelisa ka GPT-4o!)
+// @description:su      Nambihan jawaban ChatGPT ka sisi kiri Google (dikuwit oleh GPT-4o!)
+// @description:sv      Lägger till ChatGPT-svar i Google-sökraden (drivs av GPT-4o!)
+// @description:sw      Inaongeza majibu ya ChatGPT kwenye ubao wa upande wa Google (imetengenezwa na GPT-4o!)
+// @description:ta      கூகிள் தேடலின் பக்கத்தில் ChatGPT பதில்களைச் சேர்க்கின்றது (பவர்டராக்கப்பட்டது GPT-4o!)
+// @description:te      గూగుల్ శోధన పట్టిక పై ChatGPT సమాధానాలను జోడిస్తుంది (యాంకరులు ద్వారా GPT-4o సంచాలితం!)
+// @description:tg      Зиёд кардани ҷавобҳои ChatGPT ба тарафи сатҳи ҷустуҷӯ Google (саркашӣ шуда аз GPT-4o!)
+// @description:th      เพิ่มคําตอบจาก ChatGPT ในแถบด้านข้างของการค้นหา Google (สนับสนุนโดย GPT-4o!)
+// @description:ti      ኣብ Google ስልጠና ኣብ ChatGPT ምልክትን ኣማራጺ (ዘበክን በተለዋዋጭ ኣብዚ powered by GPT-4o!)
+// @description:tk      Google gecikmäge ChatGPT jogaby goşýar (GPT-4o tarapyndan işledilýär!)
+// @description:tl      Nagdadagdag ng mga sagot ng ChatGPT sa sidebar ng Google Search (pinaandar ng GPT-4o!)
+// @description:tn      Viseza izisho zika ChatGPT kwekhoni leGoogle Search (kusetjentšwe ke GPT-4o!)
+// @description:to      Tānaki e ngaue kihe sipa tali fakapotopoto 'o e Google ngaue 'o e ChatGPT (tohi e ngaahi sivi 'i he founga kehekehe 'o e GPT-4o!)
+// @description:tr      ChatGPT yanıtlarını Google Arama kenar çubuğuna ekler (GPT-4o tarafından desteklenir!)
+// @description:ts      Vuyisa mati na ChatGPT hi xiphemu leGoogle Search (na ku hluvukelwe hi GPT-4o!)
+// @description:tt      Google Эзләү үтекле ChatGPT катнаштыру (GPT-4o ґалиматымен күреніс!)
+// @description:tw      Hwɛ ChatGPT adefoɔ dodoɔ Google hwee (ete woawo na GPT-4o!)
+// @description:ug      Google ئىزدەشتە ChatGPT جاۋابلىرىنى قوشۇش (GPT-4o بىلەن قۇرغان!)
+// @description:uk      Додає відповіді ChatGPT у бічний панелі пошуку Google (працює на GPT-4o!)
+// @description:ur      گوگل تلاش کی طرف ChatGPT کے جوابات شامل کرتا ہے (GPT-4o کی مدد سے!)
+// @description:uz      Google qidiruviga ChatGPT javoblari qo'shadi (GPT-4o tomonidan qo'llaniladi!)
+// @description:ve      Vhohodzi vha ChatGPT kha vhavhili ya Google Fambisa (vhathwedzwa na GPT-4o!)
+// @description:vi      Thêm câu trả lời của ChatGPT vào thanh bên Google Search (được hỗ trợ bởi GPT-4o!)
+// @description:vo      Läükon datans ChatGPT ad pät binon Google Vükos (ö pükonömi jö GPT-4o!)
+// @description:wa      Ådd doveses di Dj ChatGPT a l' cohteye di Dj Google (djuwé pa GPT-4o!)
+// @description:wo      Ndax duggëwul ChatGPT du bind ak wertali Google (waaye bu GPT-4o!)
+// @description:xh      Nika izicelo zika ChatGPT ezinkunzi ngesandla samazwi eGoogle Search (kumgangatho ngu GPT-4o!)
+// @description:yi      צוגעפיגט אַנטוואָרטן פון טשאַטגפּט אין גוגל זוכן זייַטבאַר (געפּאָווערעד דורך GPT-4o!)
+// @description:yo      Fi awọn iwe itumọ ChatGPT si abala iwoye Google (ni idawọ GPT-4o!)
+// @description:za      Ngozv yi ChatGPT nv nqgozv ya Google Search (gyaeqnganh GPT-4o!)
+// @description:zh      将 ChatGPT 答案添加到 Google 侧边栏 (由 GPT-4o 提供支持!)
+// @description:zh-CN   将 ChatGPT 答案添加到 Google 侧边栏 (由 GPT-4o 提供支持!)
+// @description:zh-HK   將 ChatGPT 答案添加到 Google 側邊欄 (由 GPT-4o 提供支援!)
+// @description:zh-SG   将 ChatGPT 答案添加到 Google 侧边栏 (由 GPT-4o 提供支持!)
+// @description:zh-TW   將 ChatGPT 答案添加到 Google 側邊欄 (由 GPT-4o 提供支援!)
+// @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.29.3
+// @version             2024.5.29.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "پاسخ‌های ChatGPT را به نوار کناری DuckDuckGo اضافه می‌کند (طراحی شده توسط GPT-4!)" },
+  "appDesc": { "message": "پاسخ‌های ChatGPT را به نوار کناری DuckDuckGo اضافه می‌کند (طراحی شده توسط GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "حالت API پروکسی" },
   "menuLabel_autoGetAnswers": { "message": "دریافت خودکار پاسخ" },
   "menuLabel_relatedQueries": { "message": "پرس و جوهای مرتبط" },

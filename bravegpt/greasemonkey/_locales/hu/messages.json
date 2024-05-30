@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "ChatGPT válaszokat ad hozzá a Brave Search oldalsávhoz (GPT-4 motorral!)" },
+  "appDesc": { "message": "ChatGPT válaszokat ad hozzá a Brave Search oldalsávhoz (GPT-4o motorral!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API mód" },
   "menuLabel_autoGetAnswers": { "message": "Válaszok automatikus lekérése" },
   "menuLabel_relatedQueries": { "message": "Kapcsolódó kérdések" },

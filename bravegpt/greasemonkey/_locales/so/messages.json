@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Ku darso Jawaabaha ChatGPT ee Brave Search sidebar (oo ay ku shaqeyso GPT-4!)" },
+  "appDesc": { "message": "Ku darso Jawaabaha ChatGPT ee Brave Search sidebar (oo ay ku shaqeyso GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Qaabka API Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Jawaabaha Auto-Get" },
   "menuLabel_relatedQueries": { "message": "Su 'aalaha la xiriira" },

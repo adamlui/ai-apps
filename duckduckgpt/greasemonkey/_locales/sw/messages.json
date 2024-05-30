@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Inaongeza majibu ya ChatGPT kwenye upau wa pembeni wa DuckDuckGo (unaendeshwa na GPT-4!)" },
+  "appDesc": { "message": "Inaongeza majibu ya ChatGPT kwenye upau wa pembeni wa DuckDuckGo (unaendeshwa na GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Hali Mbadala ya API" },
   "menuLabel_autoGetAnswers": { "message": "Pata Majibu Kiotomatiki" },
   "menuLabel_relatedQueries": { "message": "Maswali Yanayohusiana" },

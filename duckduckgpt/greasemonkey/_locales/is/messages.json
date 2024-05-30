@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Bætir ChatGPT svörum við DuckDuckGo hliðarstiku (keyrð af GPT-4!)" },
+  "appDesc": { "message": "Bætir ChatGPT svörum við DuckDuckGo hliðarstiku (keyrð af GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API hamur" },
   "menuLabel_autoGetAnswers": { "message": "Sjálfvirk svör" },
   "menuLabel_relatedQueries": { "message": "Tengdar fyrirspurnir" },

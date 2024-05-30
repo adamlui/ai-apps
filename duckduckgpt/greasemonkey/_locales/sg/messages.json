@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Add ChatGPT answers to DuckDuckGo sidebar (so GPT-4 ayeke sara kua na ni!)" },
+  "appDesc": { "message": "Add ChatGPT answers to DuckDuckGo sidebar (so GPT-4o ayeke sara kua na ni!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API mode na na na" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Réponses" },
   "menuLabel_relatedQueries": { "message": "Ahundango tënë so andu tënë ni" },

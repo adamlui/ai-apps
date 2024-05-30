@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "ChatGPT javoblarini Brave Search yon paneliga qo‘shadi (GPT-4 tomonidan quvvatlanadi!)" },
+  "appDesc": { "message": "ChatGPT javoblarini Brave Search yon paneliga qo‘shadi (GPT-4o tomonidan quvvatlanadi!)" },
   "menuLabel_proxyAPImode": { "message": "Proksi API rejimi" },
   "menuLabel_autoGetAnswers": { "message": "Javoblarni avtomatik olish" },
   "menuLabel_relatedQueries": { "message": "Tegishli so'rovlar" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Żid it-tweġibiet taċ-ChatGPT ma' Google Search (imħaddem minn GPT-4!)" },
+  "appDesc": { "message": "Żid it-tweġibiet taċ-ChatGPT ma' Google Search (imħaddem minn GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Ikseb Tweġibiet Awtomatiċi" },
   "menuLabel_proxyAPImode": { "message": "Modalità API Proxy" },
   "menuLabel_relatedQueries": { "message": "Mistoqsijiet Relatati" },

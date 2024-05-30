@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Agregá una foto_Promocioná Google Search (Powered by GPT-4)" },
+  "appDesc": { "message": "Agregá una foto_Promocioná Google Search (Powered by GPT-4o)" },
   "menuLabel_autoGetAnswers": { "message": "Solucion Auto-Get" },
   "menuLabel_proxyAPImode": { "message": "Propiedad Api Moda" },
   "menuLabel_relatedQueries": { "message": "Preguntanan relashoná" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Füügt ChatGPT Äntwerten op DuckDuckGo Sidebar (ugedriwwen duerch GPT-4!)" },
+  "appDesc": { "message": "Füügt ChatGPT Äntwerten op DuckDuckGo Sidebar (ugedriwwen duerch GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy-API-Modus" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Äntwerten" },
   "menuLabel_relatedQueries": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten in de comments" },

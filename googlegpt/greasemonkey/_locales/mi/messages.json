@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Tāpirihia nga whakautu ChatGPT ki a Google Search (e whakahaerehia ana e GPT-4!)" },
+  "appDesc": { "message": "Tāpirihia nga whakautu ChatGPT ki a Google Search (e whakahaerehia ana e GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Whakautu Auto-Get" },
   "menuLabel_proxyAPImode": { "message": "Aratau API Proxy" },
   "menuLabel_relatedQueries": { "message": "Ngā pātai e pā ana" },

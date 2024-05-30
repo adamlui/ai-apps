@@ -224,7 +224,7 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
-> 在 Brave Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4 提供支持!)
+> 在 Brave Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4o 提供支持!)
 <br>[安装](https://docs.bravegpt.com/#-installation) /
 [自述文件](https://docs.bravegpt.com/#readme) /
 [讨论](https://github.bravegpt.com/discussions)

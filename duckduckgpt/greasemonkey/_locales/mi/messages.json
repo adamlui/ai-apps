@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Tāpiri ChatGPT whakautu ki DuckDuckGo tahabar (e whakahaerehia ana e GPT-4!)" },
+  "appDesc": { "message": "Tāpiri ChatGPT whakautu ki DuckDuckGo tahabar (e whakahaerehia ana e GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Aratau API Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Whakautu Auto-Get" },
   "menuLabel_relatedQueries": { "message": "Ngā pātai e pā ana" },

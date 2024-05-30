@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "زیادکردنی هاوپۆل بۆ DuckDuckGo sidebar (لە لایەن GPT -4!)" },
+  "appDesc": { "message": "زیادکردنی وەڵامەکانی ChatGPT بۆ سایدباری DuckDuckGo (بەرپێنانی GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "شێوازی APIی پرۆکسی" },
   "menuLabel_autoGetAnswers": { "message": "وەڵامە خۆگەڕەکان" },
   "menuLabel_relatedQueries": { "message": "پرسیارە پەیوەندیدارەکان" },

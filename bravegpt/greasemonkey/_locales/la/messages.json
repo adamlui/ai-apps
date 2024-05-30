@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Addsa chatGPT verba Brave Search sidebar (powered by GPT-4!)" },
+  "appDesc": { "message": "Addsa chatGPT verba Brave Search sidebar (powered by GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Modus" },
   "menuLabel_autoGetAnswers": { "message": "Answers Auto-Get" },
   "menuLabel_relatedQueries": { "message": "Quaeso relatum" },

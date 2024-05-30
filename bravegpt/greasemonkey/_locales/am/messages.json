@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "ለጀግንነት ፍለጋ የጎን አሞሌ (በ GPT-4 የተጎላበተ) ChatGPT ምላሾችን ያክሉ!" },
+  "appDesc": { "message": "ለጀግንነት ፍለጋ የጎን አሞሌ (በ GPT-4o የተጎላበተ) ChatGPT ምላሾችን ያክሉ!" },
   "menuLabel_proxyAPImode": { "message": "ተኪ ኤፒአይ ሁነታ" },
   "menuLabel_autoGetAnswers": { "message": "ራስ-ጌ መልሶች" },
   "menuLabel_relatedQueries": { "message": "ተዛማጅ ጥያቄዎች" },

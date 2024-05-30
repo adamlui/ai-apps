@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "يضيف إجابات ChatGPT إلى الشريط الجانبي لـ DuckDuckGo (مدعوم من GPT -4!)" },
+  "appDesc": { "message": "يضيف إجابات ChatGPT إلى الشريط الجانبي لـ DuckDuckGo (مدعوم من GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "وضع واجهة برمجة التطبيقات للوكيل" },
   "menuLabel_autoGetAnswers": { "message": "الحصول على الإجابات تلقائيًا" },
   "menuLabel_relatedQueries": { "message": "الاستفسارات ذات الصلة" },

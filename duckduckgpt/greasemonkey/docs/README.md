@@ -16,7 +16,7 @@
 <a href="https://www.jsdelivr.com/package/gh/KudoAI/duckduckgpt?tab=stats"><img height=31 src="https://img.shields.io/jsdelivr/gh/hm/KudoAI/duckduckgpt?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20Requests&labelColor=464646&color=2bbbd8"></a>
 <a href="https://www.duckduckgpt.com?utm_source=duckduckgpt&utm_content=github_shield"><img height=31 src="https://img.shields.io/badge/web-www.duckduckgpt.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge">
 
-<h3><b>DuckDuckGPT</b> brings the magic of ChatGPT to DDG (powered by GPT-4!)</h3>
+<h3><b>DuckDuckGPT</b> brings the magic of ChatGPT to DDG (powered by GPT-4o!)</h3>
 
 <a href="https://greasyfork.org/scripts/459849-duckduckgpt"><img height=45 src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://github.com/adamlui/userscripts/raw/master/media/images/buttons/help-button.svg"></a>
 <br>
@@ -96,7 +96,7 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
 
 ## 🕵️ Proxy Mode
 
-Proxy API Mode (disabled by default) returns text responses using GPT-4, without the need for a chatgpt.com account.
+Proxy API Mode (disabled by default) returns text responses using GPT-4o, without the need for a chatgpt.com account.
 
 When disabled, a ChatGPT account is required to fetch responses, but they are faster stream-type ones (like in demo).
 
@@ -190,14 +190,14 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://github.bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> Bring the magic of ChatGPT to Brave Search (powered by GPT-4!)
+> Bring the magic of ChatGPT to Brave Search (powered by GPT-4o!)
 <br>[Install](https://github.bravegpt.com/#-installation) /
 [Readme](https://github.bravegpt.com/#readme) /
 [Discuss](https://github.bravegpt.com/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png"></picture> [GoogleGPT](https://github.kudoai.com/googlegpt) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg"></a>
 
-> Bring the magic of ChatGPT to Google Search (powered by GPT-4!)
+> Bring the magic of ChatGPT to Google Search (powered by GPT-4o!)
 <br>[Install](https://greasyfork.org/scripts/478597-googlegpt) /
 [Readme](https://github.kudoai.com/googlegpt/#readme) /
 [Discuss](https://github.kudoai.com/googlegpt/discussions)

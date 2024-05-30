@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Adiungit ChatGPT responsa ad DuckDuckGo pars (motum per GPT-4!)" },
+  "appDesc": { "message": "Adiungit ChatGPT responsa ad DuckDuckGo pars (motum per GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Modus" },
   "menuLabel_autoGetAnswers": { "message": "Answers Auto-Get" },
   "menuLabel_relatedQueries": { "message": "Quaeso relatum" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "DuckDuckGPT" },
-  "appDesc": { "message": "Nagdugang mga tubag sa ChatGPT sa DuckDuckGo sidebar (gipadagan sa GPT-4!)" },
+  "appDesc": { "message": "Nagdugang mga tubag sa ChatGPT sa DuckDuckGo sidebar (gipadagan sa GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Modo sa Proxy API" },
   "menuLabel_autoGetAnswers": { "message": "Mga Tubag sa Auto-Get" },
   "menuLabel_relatedQueries": { "message": "May Kalabutan nga mga Pangutana" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "बहादुर खोज साइडबार में ChatGPT उत्तर जोड़ता है (GPT -4 द्वारा संचालित!)" },
+  "appDesc": { "message": "ChatGPT जवाबों को Brave Search साइडबार में जोड़ता है (GPT-4o! द्वारा संचालित)" },
   "menuLabel_proxyAPImode": { "message": "प्रॉक्सी एपीआई मोड" },
   "menuLabel_autoGetAnswers": { "message": "अपने आप जवाब पाएँ" },
   "menuLabel_relatedQueries": { "message": "संबंधित प्रश्न" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Lisab ChatGPT vastused Google 'i otsingusse (toetab GPT-4!)" },
+  "appDesc": { "message": "Lisab ChatGPT vastused Google 'i otsingusse (toetab GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Automaatne vastuste hankimine" },
   "menuLabel_proxyAPImode": { "message": "Puhverserveri API-režiim" },
   "menuLabel_relatedQueries": { "message": "Seotud päringud" },

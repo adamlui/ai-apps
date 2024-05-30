@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Inowedzera mhinduro dzeChatGPT kune Brave Search sidebar (inofambiswa neGPT-4!)" },
+  "appDesc": { "message": "Inowedzera mhinduro dzeChatGPT kune Brave Search sidebar (inofambiswa neGPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Kuwana Mhinduro" },
   "menuLabel_relatedQueries": { "message": "Mibvunzo yakabatana" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "BraveGPT" },
-  "appDesc": { "message": "Kuri Umurongo wo ku mpande (ku 4.)" },
+  "appDesc": { "message": "Yerekana amajwi ya ChatGPT kuri igisubizo cy'ibanze cya Brave Search (abakinnye GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Ubwoko" },
   "menuLabel_autoGetAnswers": { "message": "Kubona ibisubizo mu buryo bwikora" },
   "menuLabel_relatedQueries": { "message": "< Uburemere UTSINDAGIY" },
