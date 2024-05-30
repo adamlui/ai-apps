@@ -74,9 +74,9 @@
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/duckduckgpt#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png"></picture> [GoogleGPT](../../googlegpt)
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png"></picture> [GoogleGPT](../../googlegpt) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-> 在 Google Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4o 驱动!) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
+> 在 Google Search 侧边栏中显示 ChatGPT 答案 (由 GPT-4o 驱动!)
 <br>[安装](https://greasyfork.org/scripts/478597-googlegpt) /
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/googlegpt#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
