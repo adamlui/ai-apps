@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.30.2
+// @version             2024.5.30.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1403,8 +1403,8 @@
             var answerPre = document.createElement('pre')
             balloonTipSpan.className = 'balloon-tip'
             balloonTipSpan.style.cssText = ( // pos it
-                `top: ${ isFirefox ? 0.45 : 0.219 }em ;`
-              + `right: ${ isMobile ? 10.94 : (
+                `top: ${ isMobile ? 0.2303 : isFirefox ? 0.45 : 0.219 }em ;`
+              + `right: ${ isMobile ? 11.2 : (
                           isFirefox ? ( 14.65 - ( appLogoImg.loaded ? 0 : 2.13 ))
                                     : ( 7.25 -  ( appLogoImg.loaded ? 0 : ( hasSidebar ? 1.25 : 1.29 ))))}em`
             )
