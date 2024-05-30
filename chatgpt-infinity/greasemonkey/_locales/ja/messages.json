@@ -17,7 +17,7 @@
   "prompt_updateReplyTopic": { "message": "返信トピックを更新" },
   "prompt_orEnter": { "message": "または入力してください" },
   "prompt_updateReplyInt": { "message": "返信間隔を更新する（最小5秒）" },
-  "alert_replyLangUpdated": { "message": "言語が更新されました。" },
+  "alert_replyLangUpdated": { "message": "言語が更新されました" },
   "alert_willReplyIn": { "message": "は次に返信します" },
   "alert_yourSysLang": { "message": "あなたのシステム言語" },
   "alert_replyTopicUpdated": { "message": "%sのトピックが更新されました" },
