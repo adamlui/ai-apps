@@ -119,14 +119,18 @@ If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <div align='center'>
 
-<img width=333 src="https://media.googlegpt.io/images/screenshots/desktop/tampermonkey-proxy-mode-menu.png">
+<img width=388 src="https://media.googlegpt.io/images/screenshots/desktop/tampermonkey-proxy-mode-menu.png">
 <img src="https://media.bravegpt.com/images/screenshots/desktop/proxy-mode-notification.png">
 
 </div>
 
 <br>
 
-🚀 Install link: https://greasyfork.googlegpt.io
+<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=42 src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=42 title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg"></a>
+<br>
+[Discuss](https://github.googlegpt.io/discussions) /
+[Leave a review](https://greasyfork.googlegpt.io/feedback#post-discussion) /
+[More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
