@@ -12,7 +12,7 @@
   "menuLabel_replyLanguage": { "message": "返信言語" },
   "menuLabel_about": { "message": "詳細" },
   "about_version": { "message": "バージョン" },
-  "about_poweredBy": { "message": "Powered by" },
+  "about_poweredBy": { "message": "搭載" },
   "about_sourceCode": { "message": "ソースコード" },
   "mode_prefix": { "message": "プレフィックスモード" },
   "mode_suffix": { "message": "接尾辞モード" },
