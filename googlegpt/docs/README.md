@@ -105,7 +105,7 @@ GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoA
 
 - [Kiwi](https://kiwibrowser.com/)
 
-If you've tested it to work in a browser not listed, simply create a [pull request](https://github.googlegpt.io/pulls) to become a contributor!
+If you've tested it to work in a browser not listed, create a [pull request](https://github.googlegpt.io/pulls) to become a contributor!
 
 🚀 Install link: https://greasyfork.googlegpt.io
 
