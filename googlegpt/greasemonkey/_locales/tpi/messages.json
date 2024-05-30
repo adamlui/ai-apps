@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Ol i save putim ol bekim bilong ChatGPT long Google Search (GPT-4o i save mekim wok long en!)" },
+  "appDesc": { "message": "Ol i save putim ol bekim bilong ChatGPT long Google Search (GPT-4 i save mekim wok long en!)" },
   "menuLabel_autoGetAnswers": { "message": "Ol bekim bilong ol askim" },
   "menuLabel_proxyAPImode": { "message": "Proxy API mode" },
   "menuLabel_relatedQueries": { "message": "Ol askim" },

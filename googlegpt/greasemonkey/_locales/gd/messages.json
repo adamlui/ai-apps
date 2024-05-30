@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "A 'cur ri freagairtean ChatGPT gu Google Search (air a stiùireadh le GPT-4o!)" },
+  "appDesc": { "message": "A 'cur ri freagairtean ChatGPT gu Google Search (air a stiùireadh le GPT -4!)" },
   "menuLabel_autoGetAnswers": { "message": "Freagairtean fèin - ghluasadach" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_relatedQueries": { "message": "Ceistean co - cheangailte" },

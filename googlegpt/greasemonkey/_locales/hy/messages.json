@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Ավելացնում է ChatGPT պատասխանները Google Search կողմից աջ կողմանց (GPT-4o! զինվորված)" },
+  "appDesc": { "message": "Ավելացնում է ChatGPT - ի պատասխանները Google Search - ում (սնուցվում է GPT -4!)" },
   "menuLabel_autoGetAnswers": { "message": "Ավտոմատ պատասխաններ" },
   "menuLabel_proxyAPImode": { "message": "Proxy API ռեժիմ" },
   "menuLabel_relatedQueries": { "message": "Առնչվող հարցումներ" },

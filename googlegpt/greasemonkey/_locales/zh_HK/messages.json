@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "將 ChatGPT 答案添加到 Google Search 搜索 (由GPT-4o提供支持!)" },
+  "appDesc": { "message": "將 ChatGPT 答案添加到 Google Search 搜索 (由GPT-4提供支持!)" },
   "menuLabel_autoGetAnswers": { "message": "自動取得答案" },
   "menuLabel_proxyAPImode": { "message": "代理 API 模式" },
   "menuLabel_relatedQueries": { "message": "相關查詢" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Aggiunge le risposte ChatGPT alla Ricerca Google (con tecnologia GPT-4o!)" },
+  "appDesc": { "message": "Aggiunge le risposte ChatGPT alla Ricerca Google (con tecnologia GPT-4!)" },
   "menuLabel_autoGetAnswers": { "message": "Ottieni automaticamente risposte" },
   "menuLabel_proxyAPImode": { "message": "Modalità API proxy" },
   "menuLabel_relatedQueries": { "message": "Domande correlate" },

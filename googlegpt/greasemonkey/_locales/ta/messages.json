@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Google தேடலுக்கு ChatGPT பதில்களைச் சேர்க்கிறது (GPT-4o ஆல் இயக்கப்படுகிறது!)" },
+  "appDesc": { "message": "Google தேடலுக்கு ChatGPT பதில்களைச் சேர்க்கிறது (GPT-4 ஆல் இயக்கப்படுகிறது!)" },
   "menuLabel_autoGetAnswers": { "message": "தானாகப் பெறப்பட்ட பதில்கள்" },
   "menuLabel_proxyAPImode": { "message": "ப்ராக்ஸி API பயன்முறை" },
   "menuLabel_relatedQueries": { "message": "தொடர்புடைய கேள்விகள்" },

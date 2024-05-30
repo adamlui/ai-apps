@@ -7,7 +7,7 @@
     <img alt="GoogleGPT" width=888 src="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/googlegpt/with-reflection/black.png">
 </picture>
 
-<h3>🤖 Bring the magic of ChatGPT to Google Search (powered by GPT-4o!)</h3>
+<h3>🤖 Bring the magic of ChatGPT to Google Search!</h3>
 
 <br>
 
@@ -106,14 +106,14 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://github.bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> Bring the magic of ChatGPT to Brave Search (powered by GPT-4o!)
+> Bring the magic of ChatGPT to Brave Search (powered by GPT-4!)
 <br>[Install](https://github.bravegpt.com/#-installation) /
 [Readme](https://github.bravegpt.com/#readme) /
 [Discuss](https://github.bravegpt.com/discussions)
 
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=17> [DuckDuckGPT](https://github.duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> Bring the magic of ChatGPT to DuckDuckGo (powered by GPT-4o!)
+> Bring the magic of ChatGPT to DuckDuckGo (powered by GPT-4!)
 <br>[Install](https://github.ddgpt.com/#-installation) /
 [Readme](https://github.ddgpt.com/#readme) /
 [Discuss](https://github.ddgpt.com/discussions)

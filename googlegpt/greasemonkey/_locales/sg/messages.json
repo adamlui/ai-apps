@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Add ChatGPT answers to Google Search (so GPT-4o ayeke sara kua na ni!)" },
+  "appDesc": { "message": "Add ChatGPT answers to Google Search (so GPT-4 ayeke sara kua na ni!)" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Réponses" },
   "menuLabel_proxyAPImode": { "message": "Proxy API mode na na na" },
   "menuLabel_relatedQueries": { "message": "Ahundango tënë so andu tënë ni" },
