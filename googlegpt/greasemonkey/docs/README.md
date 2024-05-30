@@ -24,7 +24,7 @@
 
 <h3>🤖 Bring the magic of ChatGPT to Google Search (powered by GPT-4o!)</h3>
 
-<a href="https://greasyfork.googlegpt.io"><img height=45 src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg"></a><a href="https://greasyfork.org/en/help/installing-user-scripts"><img height=45 title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.googlegpt.io"><img height=45 src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://greasyfork.googlegpt.io) / 
 [Review](https://greasyfork.googlegpt.io/feedback#post-discussion) / 
@@ -44,6 +44,16 @@
     <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png">
     <img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/lightmode.png">
 </picture>
+
+## 🚀 Installation
+
+1. Install Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/))
+
+2. Install [GoogleGPT](https://greasyfork.googlegpt.io) (will load in userscript manager installed above)
+
+3. Visit [google.com](https://google.com), type your search, engage bot!
+
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
 
 ## 🌐 Compatibility 
 
