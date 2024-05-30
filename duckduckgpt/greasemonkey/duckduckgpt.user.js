@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.30
+// @version             2024.5.30.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -492,11 +492,8 @@
           + '.ddgpt + footer { margin: 2px 0 25px }'
           + `.ddgpt + footer * { color: ${ scheme == 'dark' ? '#ccc' : '#666' } !important }`
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-              + `top: ${ isFirefox ? '0.55em' : '4px' } ;`
-              + `right: ${ isFirefox ? ( 16.87 - ( appLogoImg.loaded ? 0 : 0.36 ))
-                                     : ( 8.38  - ( appLogoImg.loaded ? 0 : 0.15 ))}em ;`
               + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
-                  + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + ' } '
+                  + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
           + '.continue-chat > textarea {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
               + 'font-size: 0.92rem ; height: 1.55rem ; width: 94.6% ; max-height: 200px ; resize: none ; '
@@ -1100,7 +1097,13 @@
         } else {            
             const balloonTipSpan = document.createElement('span')
             var answerPre = document.createElement('pre')
-            balloonTipSpan.className = 'balloon-tip' ; answerPre.textContent = answer
+            balloonTipSpan.className = 'balloon-tip'
+            balloonTipSpan.style.cssText = ( // pos it
+                `top: ${ isFirefox ? '0.55em' : '4px' } ;`
+              + `right: ${ isFirefox ? ( 16.87 - ( appLogoImg.loaded ? 0 : 0.36 ))
+                                     : ( 8.38  - ( appLogoImg.loaded ? 0 : 0.15 ))}em`
+            )
+            answerPre.textContent = answer
             appDiv.append(balloonTipSpan) ; appDiv.append(answerPre)
         }
 

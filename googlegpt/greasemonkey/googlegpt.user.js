@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.30
+// @version             2024.5.30.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -682,10 +682,6 @@
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '.googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-              + `top: ${ isFirefox ? 0.45 : 0.219 }em ;`
-              + `right: ${ isMobile ? 10.94 : (
-                    isFirefox ? ( 14.65 - ( appLogoImg.loaded ? 0 : 2.13 ))
-                              : ( 7.25 -  ( appLogoImg.loaded ? 0 : ( hasSidebar ? 1.25 : 1.29 ))))}em ;`
               + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
                   + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
           + '.continue-chat > textarea {'
@@ -1406,6 +1402,12 @@
             const balloonTipSpan = document.createElement('span')
             var answerPre = document.createElement('pre')
             balloonTipSpan.className = 'balloon-tip'
+            balloonTipSpan.style.cssText = ( // pos it
+                `top: ${ isFirefox ? 0.45 : 0.219 }em ;`
+              + `right: ${ isMobile ? 10.94 : (
+                          isFirefox ? ( 14.65 - ( appLogoImg.loaded ? 0 : 2.13 ))
+                                    : ( 7.25 -  ( appLogoImg.loaded ? 0 : ( hasSidebar ? 1.25 : 1.29 ))))}em`
+            )
             answerPre.textContent = answer
             appDiv.append(balloonTipSpan) ; appDiv.append(answerPre)
         }
