@@ -7,8 +7,6 @@
     <img alt="GoogleGPT" width=888 src="https://raw.githubusercontent.com/KudoAI/googlegpt/main/media/images/logos/googlegpt/with-reflection/black.png">
 </picture>
 
-<h3>🤖 Bring the magic of ChatGPT to Google Search (powered by GPT-4o!)</h3>
-
 <br>
 
 <a href="https://greasyfork.googlegpt.io"><img height=31 src="https://img.shields.io/badge/Users-40,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
@@ -21,6 +19,16 @@
 <a href="https://www.kudoai.com?utm_source=googlegpt&utm_content=github_shield"><img height=31 src="https://img.shields.io/badge/Built_by-KudoAI-a07bfc?logo=esbuild&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://www.jsdelivr.com/package/gh/KudoAI/googlegpt?tab=stats"><img height=31 src="https://img.shields.io/jsdelivr/gh/hm/KudoAI/googlegpt?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20Requests&labelColor=464646&color=2bbbd8"></a>
 <a href="https://www.googlegpt.io?utm_source=googlegpt&utm_content=github_shield"><img height=31 src="https://img.shields.io/badge/web-www.googlegpt.io-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+
+#
+
+<h3>🤖 Bring the magic of ChatGPT to Google Search (powered by GPT-4o!)</h3>
+
+<a href="https://greasyfork.googlegpt.io"><img height=45 src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg"></a><a href="https://greasyfork.org/en/help/installing-user-scripts"><img height=45 title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg"></a>
+<br>
+[Discuss](https://greasyfork.googlegpt.io) / 
+[Review](https://greasyfork.googlegpt.io/feedback#post-discussion) / 
+[Contact author](https://github.com/adamlui)
     
 </div>
 
