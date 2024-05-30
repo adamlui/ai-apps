@@ -107,9 +107,7 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 
 Proxy API Mode (disabled by default) returns text responses using GPT-4o, without the need for a chatgpt.com account.
 
-When disabled, a ChatGPT account is required to fetch responses.
-
-If OpenAI API is acting unreliable, enable Proxy Mode like this:
+When disabled, a ChatGPT account is required to fetch responses. If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
 <div align='center'>
 
