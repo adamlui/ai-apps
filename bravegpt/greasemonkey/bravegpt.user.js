@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.29.1
+// @version             2024.5.29.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -138,6 +138,7 @@
 // @connect             chat.openai.com
 // @connect             api.openai.com
 // @connect             fanyi.sogou.com
+// @connect             api.binjie.fun
 // @connect             api11.gptforlove.com
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.3/dist/chatgpt.min.js#sha256-EDN+mCc+0Y4YVzJEoNikd4/rAIaJDLAdb+erWvupXTM=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
@@ -739,7 +740,7 @@ setTimeout(async () => {
             })
             return o.toString()
         }
-        return fD(nn);
+        return fD(nn)
     }
 
     // Define ANSWER functions
@@ -765,26 +766,29 @@ setTimeout(async () => {
     }
 
     function createHeaders(api) {
-        let headers = {
-            'Content-Type': 'application/json',
-            'X-Forwarded-For': ipv4.generate({ verbose: false })
-        }            
+        let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ipv4.generate({ verbose: false })}
         if (api.includes('openai.com')) headers.Authorization = 'Bearer ' + accessKey
+        else if (api.includes('binjie.fun')) headers.origin = 'https://chat18.aichatos.xyz'
         return headers
     }
 
-    let parentID_gptPlus
+    const ids = { gptPlus: { parentID: '' }, yqCloud: { userID: '#/chat/' + Date.now() }}
     function createPayload(api, msgs) {
         let payload = {}
         if (api.includes('openai.com'))
             payload = { messages: msgs, model: model, max_tokens: 4000 }
-        else if (api.includes('gptforlove.com')) {
+        else if  (api.includes('binjie.fun')) {
             payload = {
-                secret: getGPTplusKey(), top_p: 1, temperature: 0.8,
-                systemMessage: 'You are ChatGPT, the version is GPT3.5, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.',
-                prompt: msgs[msgs.length - 1].content
+                prompt: msgs[msgs.length - 1].content,
+                withoutContext: false, userId: ids.yqCloud.userID, network: true
             }
-            if (parentID_gptPlus) payload.options = { parentMessageId: parentID_gptPlus }
+        } else if (api.includes('gptforlove.com')) {
+            payload = {
+                prompt: msgs[msgs.length - 1].content,
+                secret: getGPTplusKey(), top_p: 1, temperature: 0.8,
+                systemMessage: 'You are ChatGPT, the version is GPT3.5, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.'
+            }
+            if (ids.gptPlus.parentID) payload.options = { parentMessageId: ids.gptPlus.parentID }
         }
         return JSON.stringify(payload)
     }
@@ -806,12 +810,20 @@ setTimeout(async () => {
                 data: createPayload(endpoint, [{ role: 'user', content: rqPrompt }]),
                 onload: event => {
                     let str_relatedQueries = ''
-                    if (!config.proxyAPIenabled && event.response) {
-                        try { // to parse txt response from OpenAI API
-                            str_relatedQueries = JSON.parse(event.response).choices[0].message.content
+                    if (endpoint.includes('openai.com')) {
+                        try { str_relatedQueries = JSON.parse(event.response).choices[0].message.content }
+                        catch (err) { appError(err) ; reject(err) }
+                    } else if (endpoint.includes('binjie.fun')) { 
+                        try {
+                            const text = event.responseText, chunkSize = 1024
+                            let currentIndex = 0
+                            while (currentIndex < text.length) {
+                                const chunk = text.substring(currentIndex, currentIndex + chunkSize)
+                                currentIndex += chunkSize ; str_relatedQueries += chunk
+                            }
                         } catch (err) { appError(err) ; reject(err) }
-                    } else if (config.proxyAPIenabled && event.responseText) {
-                        try { // to parse txt response from proxy API
+                    } else if (endpoint.includes('gptforlove.com')) {
+                        try {
                             let chunks = event.responseText.trim().split('\n')
                             str_relatedQueries = JSON.parse(chunks[chunks.length - 1]).text
                         } catch (err) { appError(err) ; reject(err) }
@@ -923,6 +935,10 @@ setTimeout(async () => {
         }
 
         function onLoad() { // process text
+            const proxyRetryOrAlert = () => {
+                if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
+                else appAlert('suggestOpenAI')
+            }
             return async event => {
                 if (event.status != 200) {
                     appError('Event status: ' + event.status)
@@ -935,36 +951,47 @@ setTimeout(async () => {
                         appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
                     else if (event.status == 429) appAlert('tooManyRequests')
                     else appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
-                } else if (endpoint.includes('openai')) {
+                } else if (endpoint.includes('openai.com')) {
                     if (event.response) {
-                        try { // to parse txt response from OpenAI endpoint
+                        try {
                             appShow(JSON.parse(event.response).choices[0].message.content, footerContent)
                         } catch (err) {
+                            appInfo('Response: ' + event.response)
                             appError(appAlerts.parseFailed + ': ' + err)
-                            appError('Response: ' + event.response)
                             appAlert('suggestProxy')
                         }
-                    }
-                } else if (endpoint.includes('gptforlove')) {
+                    } else { appInfo('Response: ' + event.responseText) ; appAlert('suggestProxy') }
+                } else if (endpoint.includes('binjie.fun')) {
+                    if (event.responseText) {
+                        try {
+                            const text = event.responseText, chunkSize = 1024
+                            let answer = '', currentIndex = 0
+                            while (currentIndex < text.length) {
+                                const chunk = text.substring(currentIndex, currentIndex + chunkSize)
+                                currentIndex += chunkSize ; answer += chunk
+                            }
+                            appShow(answer, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                        } catch (err) { // use different endpoint or suggest OpenAI
+                            appInfo('Response: ' + event.responseText)
+                            appError(appAlerts.parseFailed + ': ' + err)
+                            proxyRetryOrAlert()
+                        }
+                    } else { appInfo('Response: ' + event.responseText) ; proxyRetryOrAlert() }
+                } else if (endpoint.includes('gptforlove.com')) {
                     if (event.responseText && !event.responseText.includes('Fail')) {
-                        try { // to parse txt response from GPTPlus
+                        try {
                             let chunks = event.responseText.trim().split('\n'),
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
-                            if (lastObj.id) parentID_gptPlus = lastObj.id
+                            if (lastObj.id) ids.gptPlus.parentID = lastObj.id
                             appShow(lastObj.text, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (err) { // use different endpoint or suggest OpenAI
                             appInfo('Response: ' + event.responseText)
                             appError(appAlerts.parseFailed + ': ' + err)
-                            if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-                            else appAlert('suggestOpenAI')
+                            proxyRetryOrAlert()
                         }
-                    } else {
-                        appInfo('Response: ' + event.responseText)
-                        if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-                        else appAlert('suggestOpenAI')
-                    }
-        }}}
-    }
+                    } else { appInfo('Response: ' + event.responseText) ; proxyRetryOrAlert() }
+                }
+    }}}
 
     function appShow(answer, footerContent) {
         while (appDiv.firstChild) // clear all children
@@ -1294,7 +1321,9 @@ setTimeout(async () => {
         auth: 'https://auth0.openai.com',
         session: 'https://chatgpt.com/api/auth/session',
         chat: 'https://api.openai.com/v1/chat/completions' }
-    const proxyEndpoints = [[ 'https://api11.gptforlove.com/chat-process' ]]
+    const proxyEndpoints = [
+        [ 'https://api.binjie.fun/api/generateStream' ],
+        [ 'https://api11.gptforlove.com/chat-process' ]]
 
     // Init ALERTS
     const appAlerts = {
