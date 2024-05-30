@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.29.2
+// @version             2024.5.29.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -816,10 +816,10 @@ setTimeout(async () => {
                     } else if (endpoint.includes('binjie.fun')) { 
                         try {
                             const text = event.responseText, chunkSize = 1024
-                            let currentIndex = 0
-                            while (currentIndex < text.length) {
-                                const chunk = text.substring(currentIndex, currentIndex + chunkSize)
-                                currentIndex += chunkSize ; str_relatedQueries += chunk
+                            let currentIdx = 0
+                            while (currentIdx < text.length) {
+                                const chunk = text.substring(currentIdx, currentIdx + chunkSize)
+                                currentIdx += chunkSize ; str_relatedQueries += chunk
                             }
                         } catch (err) { appError(err) ; reject(err) }
                     } else if (endpoint.includes('gptforlove.com')) {
@@ -891,7 +891,7 @@ setTimeout(async () => {
                     appDiv.append(relatedQueriesDiv)
 
                     // Fill each child div, add attributes + icon + listener
-                    relatedQueries.forEach((relatedQuery, index) => {
+                    relatedQueries.forEach((relatedQuery, idx) => {
                         const relatedQueryDiv = document.createElement('div'),
                               relatedQuerySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                               relatedQuerySVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
@@ -919,7 +919,7 @@ setTimeout(async () => {
                             relatedQueryDiv.classList.add('active')
                             relatedQueryDiv.addEventListener('click', handleRQevent)
                             relatedQueryDiv.addEventListener('keydown', handleRQevent)
-                        }, index * 100)
+                        }, idx * 100)
                     })
 
                     updateTweaksStyle() // to shorten <pre> max-height
@@ -965,10 +965,10 @@ setTimeout(async () => {
                     if (event.responseText) {
                         try {
                             const text = event.responseText, chunkSize = 1024
-                            let answer = '', currentIndex = 0
-                            while (currentIndex < text.length) {
-                                const chunk = text.substring(currentIndex, currentIndex + chunkSize)
-                                currentIndex += chunkSize ; answer += chunk
+                            let answer = '', currentIdx = 0
+                            while (currentIdx < text.length) {
+                                const chunk = text.substring(currentIdx, currentIdx + chunkSize)
+                                currentIdx += chunkSize ; answer += chunk
                             }
                             appShow(answer, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (err) { // use different endpoint or suggest OpenAI

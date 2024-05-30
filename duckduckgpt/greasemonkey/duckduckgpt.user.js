@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.29.1
+// @version             2024.5.29.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -777,10 +777,10 @@
                     } else if (endpoint.includes('binjie.fun')) { 
                         try {
                             const text = event.responseText, chunkSize = 1024
-                            let currentIndex = 0
-                            while (currentIndex < text.length) {
-                                const chunk = text.substring(currentIndex, currentIndex + chunkSize)
-                                currentIndex += chunkSize ; str_relatedQueries += chunk
+                            let currentIdx = 0
+                            while (currentIdx < text.length) {
+                                const chunk = text.substring(currentIdx, currentIdx + chunkSize)
+                                currentIdx += chunkSize ; str_relatedQueries += chunk
                             }
                         } catch (err) { appError(err) ; reject(err) }
                     } else if (endpoint.includes('gptforlove.com')) {
@@ -852,7 +852,7 @@
                     appDiv.append(relatedQueriesDiv)
 
                     // Fill each child div, add attributes + icon + listener
-                    relatedQueries.forEach((relatedQuery, index) => {
+                    relatedQueries.forEach((relatedQuery, idx) => {
                         const relatedQueryDiv = document.createElement('div'),
                               relatedQuerySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                               relatedQuerySVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
@@ -880,7 +880,7 @@
                             relatedQueryDiv.classList.add('active')
                             relatedQueryDiv.addEventListener('click', handleRQevent)
                             relatedQueryDiv.addEventListener('keydown', handleRQevent)
-                        }, index * 100)
+                        }, idx * 100)
                     })
 
                     updateTweaksStyle() // to shorten <pre> max-height
@@ -924,10 +924,10 @@
                     if (event.responseText) {
                         try {
                             const text = event.responseText, chunkSize = 1024
-                            let answer = '', currentIndex = 0
-                            while (currentIndex < text.length) {
-                                const chunk = text.substring(currentIndex, currentIndex + chunkSize)
-                                currentIndex += chunkSize ; answer += chunk
+                            let answer = '', currentIdx = 0
+                            while (currentIdx < text.length) {
+                                const chunk = text.substring(currentIdx, currentIdx + chunkSize)
+                                currentIdx += chunkSize ; answer += chunk
                             }
                             appShow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (err) { // use different endpoint or suggest OpenAI
@@ -1350,8 +1350,8 @@
           hostContainer = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]'
                                                                         : '[class*="sidebar"]')
     appElems.forEach(elem => hostContainer.prepend(elem))
-    appElems.toReversed().forEach((elem, index) => // fade in staggered
-        setTimeout(() => elem.classList.add('active'), index * 550 - 200))
+    appElems.toReversed().forEach((elem, idx) => // fade in staggered
+        setTimeout(() => elem.classList.add('active'), idx * 550 - 200))
 
     // REPLACE hostContainer max-width w/ min-width for better UI
     if (!isMobile) { hostContainer.style.maxWidth = '' ; hostContainer.style.minWidth = '448px' }
