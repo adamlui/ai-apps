@@ -144,6 +144,7 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22026520?first-contrib=2023.12.25-french-tts-suggestion&h=50&w=50&mask=circle&maxage=7d "@papapat")](https://github.com/papapat)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/105553471?first-contrib=2024.02.15-openai-endpoint-broke-report&h=50&w=50&mask=circle&maxage=7d "@YashSoPro")](https://github.com/YashSoPro)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22633385?first-contrib=2024.02.19-comment-typo-correction&h=50&w=50&mask=circle&maxage=7d "@eltociear")](https://github.com/eltociear)
+[![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/30918938?first-contrib=2024.5.30-added-safari-to-readme-compatibility&h=50&w=50&mask=circle&maxage=7d "@bbradleyjoness")](https://github.com/bbradleyjoness)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 <a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.googlegpt.io/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.googlegpt.io/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
 
