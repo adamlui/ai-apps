@@ -1,116 +1,116 @@
 // ==UserScript==
-// @name                Autoclear ChatGPT History
-// @name:af             Verwyder ChatGPT Geskiedenis 🕶️
-// @name:am             በተሻለ ChatGPT ጉዳዮ ማግኘት 🕶️
-// @name:ar             مسح تاريخ ChatGPT 🕶️
-// @name:az             ChatGPT Tarixini Təmizləyin 🕶️
-// @name:be             Ачысціць гісторыю ChatGPT 🕶️
-// @name:bem            Lekeni ChatGPT History 🕶️
-// @name:bg             Изчистете ChatGPT История 🕶️
-// @name:bn             চ্যাটজিপিটি ইতিহাস মুছে ফেলুন 🕶️
-// @name:bo             ChatGPT སྐད་དོན་ཚར་བཟོ། 🕶️
-// @name:bs             Obriši ChatGPT historiju 🕶️
-// @name:ca             Esborra l'historial de ChatGPT 🕶️
-// @name:ceb            Autoclear ChatGPT Kasaysayan 🕶️
-// @name:ckb            بسڕەوەی مێژووی ChatGPT 🕶️
-// @name:cs             Vymazat ChatGPT Historii 🕶️
-// @name:cy             Clirio Hanes ChatGPT 🕶️
-// @name:da             Ryd ChatGPT Historik 🕶️
-// @name:de             ChatGPT-Verlauf löschen 🕶️
-// @name:dv             ChatGPT ހިސްތުކުރުން ފުހެވޭނީ 🕶️
-// @name:dz             ChatGPT སྐད་ཆ་འབད་བཅུ་ 🕶️
-// @name:el             Διαγραφή Ιστορικού ChatGPT 🕶️
-// @name:eo             Forviŝi ChatGPT Historion 🕶️
-// @name:es             Borrar Historial de ChatGPT 🕶️
-// @name:et             Kustuta ChatGPT Ajalugu 🕶️
-// @name:eu             Ezabatu ChatGPT Historia 🕶️
-// @name:fa             پاک کردن تاریخچه ChatGPT 🕶️
-// @name:fi             Poista ChatGPT:n historia 🕶️
-// @name:fo             Strika ChatGPT Søgu 🕶️
-// @name:fr             Effacer l'historique de ChatGPT 🕶️
-// @name:fr-CA          Effacer l'historique de ChatGPT 🕶️
-// @name:gd             Lùghdaich Eachdraidh ChatGPT 🕶️
-// @name:gl             Limpar Historial de ChatGPT 🕶️
-// @name:gu             આપો ChatGPT ઇતિહાસ 🕶️
-// @name:haw            Kāpaki Kākoʻo i ka Moʻolelo o ChatGPT 🕶️
-// @name:he             מחק את היסטוריית ChatGPT 🕶️
-// @name:hi             ChatGPT इतिहास को हटाएं 🕶️
-// @name:hr             Izbriši ChatGPT Povijest 🕶️
-// @name:ht             Efase ChatGPT Istwa 🕶️
-// @name:hu             ChatGPT Előzmények Törlése 🕶️
-// @name:hy             Ջնջել ChatGPT-ի Պատմությունը 🕶️
-// @name:id             Hapus Riwayat ChatGPT 🕶️
-// @name:is             Eyða ChatGPT Saga 🕶️
-// @name:it             Cancella Cronologia ChatGPT 🕶️
-// @name:ja             ChatGPT の履歴を削除する 🕶️
-// @name:jv             Hapus Riwayat ChatGPT 🕶️
-// @name:ka             ChatGPT-ის ისტორიის გასუფთავება 🕶️
-// @name:kab            Sken ChatGPT Tamɣarit 🕶️
-// @name:kk             ChatGPT Тарихын Жою 🕶️
-// @name:km             លុបប្រវត្តិសាស្រ្ត ChatGPT 🕶️
-// @name:kn             ChatGPT ಇತಿಹಾಸವನ್ನು ಅಳಿಸಿ 🕶️
-// @name:ko             ChatGPT 기록 지우기 🕶️
-// @name:ku             Çavkaniya ChatGPTê Paqij bike 🕶️
-// @name:ky             ChatGPT Тарыхын Жок Кыл 🕶️
-// @name:la             Eximitte Historiam ChatGPT 🕶️
-// @name:lb             Läschen ChatGPT Geschicht 🕶️
-// @name:lo             ລຶບບັນດາຕິນມັກສະບັບ ChatGPT 🕶️
-// @name:lt             Išvalyti ChatGPT Istoriją 🕶️
-// @name:lv             Notīrīt ChatGPT Vēsturi 🕶️
-// @name:mg             Mamafa ny ChatGPT Historique 🕶️
-// @name:mi             Muku ChatGPT Hītori 🕶️
-// @name:mk             Избриши го Историјата на ChatGPT 🕶️
-// @name:ml             ചാറ്റ്‌ജിപിടി ചരിത്രം മായ്ക്കുക 🕶️
-// @name:mn             ChatGPT Түүхийг устгах 🕶️
-// @name:ms             Padam Sejarah ChatGPT 🕶️
-// @name:mt             Ħassar It-Twaħħil ChatGPT 🕶️
-// @name:my             ဆက်လက် ChatGPT သမိုင်းကို ဖျက်ပစ်နေပါသည် 🕶️
-// @name:ne             Autoclear ChatGPT इतिहास 🕶️
-// @name:nl             Wis ChatGPT Geschiedenis 🕶️
-// @name:no             Autoclear ChatGPT Historie 🕶️
-// @name:ny             Tikalonso ChatGPT Chisulo 🕶️
-// @name:pa             ਚੈਟਜੀਪੀਟੀ ਇਤਿਹਾਸ ਮਿਟਾਓ 🕶️
-// @name:pap            Bula Historia di ChatGPT 🕶️
-// @name:pl             Wyczyść Historię ChatGPT 🕶️
-// @name:ps             د ChatGPT د تاریخ پاکول 🕶️
-// @name:pt             Limpar Histórico do ChatGPT 🕶️
-// @name:pt-BR          Limpar Histórico do ChatGPT 🕶️
-// @name:rn             Kwihesha ChatGPT Byinshi 🕶️
-// @name:ro             Ștergeți Istoricul ChatGPT 🕶️
-// @name:ru             Очистить Историю ChatGPT 🕶️
-// @name:rw             Fata ChatGPT Itangazo 🕶️
-// @name:sg             Mbama ChatGPT Makumbe 🕶️
-// @name:si             නැවත සංවේදී ChatGPT ඉතිරිකිරීම 🕶️
-// @name:sk             Vymažte ChatGPT Históriu 🕶️
-// @name:sl             Počisti Zgodovino ChatGPT 🕶️
-// @name:sm             Masi ChatGPT Faʻaipoipoga 🕶️
-// @name:sn             Tirisa ChatGPT Chiremba 🕶️
-// @name:so             Ka Saar Tareenka ChatGPT 🕶️
-// @name:sr             Обриши историју ChatGPT-а 🕶️
-// @name:sv             Rensa ChatGPT Historik 🕶️
-// @name:sw             Futa Historia ya ChatGPT 🕶️
-// @name:ta             தானாகவே அழிக்க சேட்ஜிபிடி வரலாற்றை 🕶️
-// @name:te             ChatGPT చరిత్రను తొలగించు 🕶️
-// @name:tg             Тозаиши корҳои ChatGPT 🕶️
-// @name:th             ล้างประวัติศาสตร์ ChatGPT 🕶️
-// @name:ti             ምርግጋጽ ChatGPT ኣጸዓይ ፈጥር 🕶️
-// @name:tk             ChatGPT Tarixini Aýyr 🕶️
-// @name:tn             Futa ChatGPT Tlhahlobo 🕶️
-// @name:to             Fakatonu ChatGPT History 🕶️
-// @name:tpi            Kolim ChatGPT Stori 🕶️
-// @name:tr             ChatGPT Geçmişi Temizle 🕶️
-// @name:uk             Очистити Історію ChatGPT 🕶️
-// @name:ur             ChatGPT کی تاریخ صاف کریں 🕶️
-// @name:uz             ChatGPT Tarixini Tozalash 🕶️
-// @name:vi             Xóa Lịch Sử ChatGPT 🕶️
-// @name:xh             Qhipha ChatGPT Isaziso 🕶️
-// @name:yi             ויסמעקן טשאַטגפּט געשיכטע 🕶️
-// @name:zh             自动清除 ChatGPT 历史记录 🕶️
-// @name:zh-CN          自动清除 ChatGPT 历史记录 🕶️
-// @name:zh-HK          自動清除 ChatGPT 歷史記錄 🕶️
-// @name:zh-SG          自动清除 ChatGPT 历史记录 🕶️
-// @name:zh-TW          自動清除 ChatGPT 歷史記錄 🕶️
-// @name:zu             Sula ChatGPT Isifundo 🕶️
+// @name                Autoclear ChatGPT History 😎
+// @name:af             Verwyder ChatGPT Geskiedenis 😎
+// @name:am             በተሻለ ChatGPT ጉዳዮ ማግኘት 😎
+// @name:ar             مسح تاريخ ChatGPT 😎
+// @name:az             ChatGPT Tarixini Təmizləyin 😎
+// @name:be             Ачысціць гісторыю ChatGPT 😎
+// @name:bem            Lekeni ChatGPT History 😎
+// @name:bg             Изчистете ChatGPT История 😎
+// @name:bn             চ্যাটজিপিটি ইতিহাস মুছে ফেলুন 😎
+// @name:bo             ChatGPT སྐད་དོན་ཚར་བཟོ། 😎
+// @name:bs             Obriši ChatGPT historiju 😎
+// @name:ca             Esborra l'historial de ChatGPT 😎
+// @name:ceb            Autoclear ChatGPT Kasaysayan 😎
+// @name:ckb            بسڕەوەی مێژووی ChatGPT 😎
+// @name:cs             Vymazat ChatGPT Historii 😎
+// @name:cy             Clirio Hanes ChatGPT 😎
+// @name:da             Ryd ChatGPT Historik 😎
+// @name:de             ChatGPT-Verlauf löschen 😎
+// @name:dv             ChatGPT ހިސްތުކުރުން ފުހެވޭނީ 😎
+// @name:dz             ChatGPT སྐད་ཆ་འབད་བཅུ་ 😎
+// @name:el             Διαγραφή Ιστορικού ChatGPT 😎
+// @name:eo             Forviŝi ChatGPT Historion 😎
+// @name:es             Borrar Historial de ChatGPT 😎
+// @name:et             Kustuta ChatGPT Ajalugu 😎
+// @name:eu             Ezabatu ChatGPT Historia 😎
+// @name:fa             پاک کردن تاریخچه ChatGPT 😎
+// @name:fi             Poista ChatGPT:n historia 😎
+// @name:fo             Strika ChatGPT Søgu 😎
+// @name:fr             Effacer l'historique de ChatGPT 😎
+// @name:fr-CA          Effacer l'historique de ChatGPT 😎
+// @name:gd             Lùghdaich Eachdraidh ChatGPT 😎
+// @name:gl             Limpar Historial de ChatGPT 😎
+// @name:gu             આપો ChatGPT ઇતિહાસ 😎
+// @name:haw            Kāpaki Kākoʻo i ka Moʻolelo o ChatGPT 😎
+// @name:he             מחק את היסטוריית ChatGPT 😎
+// @name:hi             ChatGPT इतिहास को हटाएं 😎
+// @name:hr             Izbriši ChatGPT Povijest 😎
+// @name:ht             Efase ChatGPT Istwa 😎
+// @name:hu             ChatGPT Előzmények Törlése 😎
+// @name:hy             Ջնջել ChatGPT-ի Պատմությունը 😎
+// @name:id             Hapus Riwayat ChatGPT 😎
+// @name:is             Eyða ChatGPT Saga 😎
+// @name:it             Cancella Cronologia ChatGPT 😎
+// @name:ja             ChatGPT の履歴を削除する 😎
+// @name:jv             Hapus Riwayat ChatGPT 😎
+// @name:ka             ChatGPT-ის ისტორიის გასუფთავება 😎
+// @name:kab            Sken ChatGPT Tamɣarit 😎
+// @name:kk             ChatGPT Тарихын Жою 😎
+// @name:km             លុបប្រវត្តិសាស្រ្ត ChatGPT 😎
+// @name:kn             ChatGPT ಇತಿಹಾಸವನ್ನು ಅಳಿಸಿ 😎
+// @name:ko             ChatGPT 기록 지우기 😎
+// @name:ku             Çavkaniya ChatGPTê Paqij bike 😎
+// @name:ky             ChatGPT Тарыхын Жок Кыл 😎
+// @name:la             Eximitte Historiam ChatGPT 😎
+// @name:lb             Läschen ChatGPT Geschicht 😎
+// @name:lo             ລຶບບັນດາຕິນມັກສະບັບ ChatGPT 😎
+// @name:lt             Išvalyti ChatGPT Istoriją 😎
+// @name:lv             Notīrīt ChatGPT Vēsturi 😎
+// @name:mg             Mamafa ny ChatGPT Historique 😎
+// @name:mi             Muku ChatGPT Hītori 😎
+// @name:mk             Избриши го Историјата на ChatGPT 😎
+// @name:ml             ചാറ്റ്‌ജിപിടി ചരിത്രം മായ്ക്കുക 😎
+// @name:mn             ChatGPT Түүхийг устгах 😎
+// @name:ms             Padam Sejarah ChatGPT 😎
+// @name:mt             Ħassar It-Twaħħil ChatGPT 😎
+// @name:my             ဆက်လက် ChatGPT သမိုင်းကို ဖျက်ပစ်နေပါသည် 😎
+// @name:ne             Autoclear ChatGPT इतिहास 😎
+// @name:nl             Wis ChatGPT Geschiedenis 😎
+// @name:no             Autoclear ChatGPT Historie 😎
+// @name:ny             Tikalonso ChatGPT Chisulo 😎
+// @name:pa             ਚੈਟਜੀਪੀਟੀ ਇਤਿਹਾਸ ਮਿਟਾਓ 😎
+// @name:pap            Bula Historia di ChatGPT 😎
+// @name:pl             Wyczyść Historię ChatGPT 😎
+// @name:ps             د ChatGPT د تاریخ پاکول 😎
+// @name:pt             Limpar Histórico do ChatGPT 😎
+// @name:pt-BR          Limpar Histórico do ChatGPT 😎
+// @name:rn             Kwihesha ChatGPT Byinshi 😎
+// @name:ro             Ștergeți Istoricul ChatGPT 😎
+// @name:ru             Очистить Историю ChatGPT 😎
+// @name:rw             Fata ChatGPT Itangazo 😎
+// @name:sg             Mbama ChatGPT Makumbe 😎
+// @name:si             නැවත සංවේදී ChatGPT ඉතිරිකිරීම 😎
+// @name:sk             Vymažte ChatGPT Históriu 😎
+// @name:sl             Počisti Zgodovino ChatGPT 😎
+// @name:sm             Masi ChatGPT Faʻaipoipoga 😎
+// @name:sn             Tirisa ChatGPT Chiremba 😎
+// @name:so             Ka Saar Tareenka ChatGPT 😎
+// @name:sr             Обриши историју ChatGPT-а 😎
+// @name:sv             Rensa ChatGPT Historik 😎
+// @name:sw             Futa Historia ya ChatGPT 😎
+// @name:ta             தானாகவே அழிக்க சேட்ஜிபிடி வரலாற்றை 😎
+// @name:te             ChatGPT చరిత్రను తొలగించు 😎
+// @name:tg             Тозаиши корҳои ChatGPT 😎
+// @name:th             ล้างประวัติศาสตร์ ChatGPT 😎
+// @name:ti             ምርግጋጽ ChatGPT ኣጸዓይ ፈጥር 😎
+// @name:tk             ChatGPT Tarixini Aýyr 😎
+// @name:tn             Futa ChatGPT Tlhahlobo 😎
+// @name:to             Fakatonu ChatGPT History 😎
+// @name:tpi            Kolim ChatGPT Stori 😎
+// @name:tr             ChatGPT Geçmişi Temizle 😎
+// @name:uk             Очистити Історію ChatGPT 😎
+// @name:ur             ChatGPT کی تاریخ صاف کریں 😎
+// @name:uz             ChatGPT Tarixini Tozalash 😎
+// @name:vi             Xóa Lịch Sử ChatGPT 😎
+// @name:xh             Qhipha ChatGPT Isaziso 😎
+// @name:yi             ויסמעקן טשאַטגפּט געשיכטע 😎
+// @name:zh             自动清除 ChatGPT 历史记录 😎
+// @name:zh-CN          自动清除 ChatGPT 历史记录 😎
+// @name:zh-HK          自動清除 ChatGPT 歷史記錄 😎
+// @name:zh-SG          自动清除 ChatGPT 历史记录 😎
+// @name:zh-TW          自動清除 ChatGPT 歷史記錄 😎
+// @name:zu             Sula ChatGPT Isifundo 😎
 // @description         Auto-clears chat history when visiting chatgpt.com
 // @description:af      Skoonmaak Chat Geskiedenis wanneer jy chatgpt.com besoek
 // @description:am      የ chatgpt.com ጸሃይ ታክሲን በማግኘት ታከለው
@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.31.2
+// @version             2024.5.31.3
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -263,7 +263,7 @@
 
     // Init CONFIG
     const config = {
-        appName: 'Autoclear ChatGPT History', appSymbol: '🕶️', keyPrefix: 'autoclearChatGPThistory',
+        appName: 'Autoclear ChatGPT History', appSymbol: '😎', keyPrefix: 'autoclearChatGPThistory',
         gitHubURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
         greasyForkURL: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history' }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')

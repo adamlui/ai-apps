@@ -9,7 +9,7 @@
     </h6>
 </div>
 
-# 🕶️ Privacy Policy
+# 😎 Privacy Policy
 
 Autoclear ChatGPT History does not collect nor store any user data. No information is shared with third-parties for personally-targeted, behavioral marketing or any other purpose. No information is collected from any third-parties. 
 
