@@ -59,7 +59,7 @@
     const tooltipStyle = document.createElement('style')
     tooltipStyle.innerText = '.toggle-tooltip {'
         + 'background: black ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-        + 'font-size: 0.7rem ; color: white ; ' // font style
+        + 'font-size: 0.85rem ; color: white ; ' // font style
         + 'position: absolute ; bottom: 50px ; ' // v-position
         + 'opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 ; ' // visibility
         + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
@@ -421,7 +421,7 @@
                   ( inputSelector + ( // widen/narrow input to be flush w/ btns
                         isGPT4oUI ? '{ margin-right: -86px }'
                                   : `{ padding-right: ${ config.ncbDisabled ? 150 : 176 }px }` ))
-                + ( '[id$="-button"]:hover { opacity: 80% !important }' ) // dim chatbor btns on hover
+                + ( '[id$="-button"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) // hide footer
           : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' // h-pad mic btn for even spread

@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.31
+// @version             2024.5.31.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -781,7 +781,7 @@
     const tooltipStyle = document.createElement('style')
     tooltipStyle.innerText = '.toggle-tooltip {'
         + 'background: black ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-        + 'font-size: 0.7rem ; color: white ; ' // font style
+        + 'font-size: 0.85rem ; color: white ; ' // font style
         + 'position: absolute ; bottom: 50px ; ' // v-position
         + 'opacity: 0 ; transition: opacity 0.1s ; z-index: 9999 ; ' // visibility
         + '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }' // disable select
