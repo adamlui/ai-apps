@@ -421,7 +421,7 @@
                   ( inputSelector + ( // widen/narrow input to be flush w/ btns
                         isGPT4oUI ? '{ margin-right: -86px }'
                                   : `{ padding-right: ${ config.ncbDisabled ? 150 : 176 }px }` ))
-                + ( '[id$="-button"] { opacity: inherit !important }' ) // disable chatbar btn hover dim
+                + ( '[id$="-button"]:hover { opacity: 80% !important }' ) // dim chatbor btns on hover
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
                 + ( config.hiddenFooter ? hfStyle : '' )) // hide footer
           : site == 'poe' ? 'button[class*="Voice"] { margin: 0 -3px 0 -8px }' // h-pad mic btn for even spread
