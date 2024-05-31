@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.30.3
+// @version             2024.5.30.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -725,8 +725,9 @@
 
     function createHeaders(api) {
         let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ipv4.generate({ verbose: false })}
-        if (api.includes('openai.com')) headers.Authorization = 'Bearer ' + accessKey
-        else if (api.includes('binjie.fun')) headers.Origin = 'https://chat18.aichatos.xyz'
+        if (api.includes('openai.com'))          headers.Authorization = 'Bearer ' + accessKey
+        else if (api.includes('binjie.fun'))     headers.Referer = headers.Origin = 'https://chat18.aichatos.xyz'
+        else if (api.includes('gptforlove.com')) headers.Referer = headers.Origin = 'https://ai27.gptforlove.com'
         return headers
     }
 

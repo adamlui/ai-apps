@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.30.3
+// @version             2024.5.30.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -764,8 +764,9 @@ setTimeout(async () => {
 
     function createHeaders(api) {
         let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ipv4.generate({ verbose: false })}
-        if (api.includes('openai.com')) headers.Authorization = 'Bearer ' + accessKey
-        else if (api.includes('binjie.fun')) headers.Origin = 'https://chat18.aichatos.xyz'
+        if (api.includes('openai.com'))          headers.Authorization = 'Bearer ' + accessKey
+        else if (api.includes('binjie.fun'))     headers.Referer = headers.Origin = 'https://chat18.aichatos.xyz'
+        else if (api.includes('gptforlove.com')) headers.Referer = headers.Origin = 'https://ai27.gptforlove.com'
         return headers
     }
 

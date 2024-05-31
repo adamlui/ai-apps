@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.30.6
+// @version             2024.5.30.7
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1020,8 +1020,9 @@
 
     function createHeaders(api) {
         let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ipv4.generate({ verbose: false })}
-        if (api.includes('openai.com')) headers.Authorization = 'Bearer ' + accessKey
-        else if (api.includes('binjie.fun')) headers.Origin = 'https://chat18.aichatos.xyz'
+        if (api.includes('openai.com'))          headers.Authorization = 'Bearer ' + accessKey
+        else if (api.includes('binjie.fun'))     headers.Referer = headers.Origin = 'https://chat18.aichatos.xyz'
+        else if (api.includes('gptforlove.com')) headers.Referer = headers.Origin = 'https://ai27.gptforlove.com'
         return headers
     }
 
