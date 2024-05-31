@@ -93,6 +93,7 @@ GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoA
 - [Google Chrome](https://www.chrome.com)
 - [Mozilla Firefox](https://www.firefox.com)
 - [Microsoft Edge](https://www.microsoft.com/edge)
+- [Safari](https://www.apple.com/safari/)
 - [Opera](https://www.opera.com)
 - [Brave](https://brave.com)
 - [Vivaldi](https://vivaldi.com)
