@@ -24,7 +24,7 @@
 
 <h3>🤖 Bring the magic of ChatGPT to Google Search (powered by GPT-4o!)</h3>
 
-<a href="https://greasyfork.googlegpt.io"><img height=45 src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=45 title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.googlegpt.io"><img height=50 src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=50 title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.googlegpt.io/discussions) / 
 [Review](https://greasyfork.googlegpt.io/feedback#post-discussion) / 
