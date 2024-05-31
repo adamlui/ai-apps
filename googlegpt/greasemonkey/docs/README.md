@@ -58,7 +58,6 @@
 
 <h6>
 <div align="center">
-<br>
 
 <a href="https://chatgpt.js.org">
     <picture>
@@ -77,6 +76,7 @@
 
 GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoAI/chatgpt.js) library © 2023–2024 KudoAI & contributors under the MIT license
 <br>...and the [KaTeX](https://github.com/KaTeX/KaTeX) library © 2013–2020 Khan Academy & contributors under the MIT license.
+<br><br>
 
 </div>
 </h6>
