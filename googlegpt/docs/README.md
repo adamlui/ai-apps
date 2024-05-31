@@ -129,11 +129,19 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 
 <br>
 
-<a href="https://greasyfork.googlegpt.io"><img alt="Install this script" height=42 src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=42 alt="How to install" title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg"></a>
+<div align="center">
+
+<br>
+
+<a href="https://greasyfork.googlegpt.io"><img alt="Install this script" height=50 src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=50 alt="How to install" title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg"></a>
 <br>
 [Discuss](https://github.googlegpt.io/discussions) /
 [Leave a review](https://greasyfork.googlegpt.io/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
+
+<br>
+
+</div>
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
