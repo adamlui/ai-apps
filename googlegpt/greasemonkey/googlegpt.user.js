@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.31.3
+// @version             2024.5.31.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -712,7 +712,7 @@
           + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none }'
           + '.kudoai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
           + ( // markdown styles
-                '.googlegpt pre h1 { font-size: 1.45em } .googlegpt pre h2 { font-size: 1.25em }' // size headings
+                '.googlegpt pre h1 { font-size: 1.25em } .googlegpt pre h2 { font-size: 1.1em }' // size headings
               + '.googlegpt pre ol { padding-left: 1.58em }' // indent
               + '.googlegpt pre ul { margin: -10px 0 -6px ; padding-left: 1.5em }' // reduce v-spacing, indent
               + '.googlegpt pre li { margin: -10px 0 ; list-style: unset }' ) // reduce v-spacing, show left symbols
