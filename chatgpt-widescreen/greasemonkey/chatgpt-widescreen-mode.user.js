@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.31.4
+// @version             2024.5.31.5
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -467,7 +467,7 @@
                         const updateAlertID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             ( msgs.alert_newerVer || 'An update to' ) + ' ' // msg
                                 + ( msgs.appName || config.appName ) + ' '
-                                + `(v ${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
+                                + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
                                     + 'href="' + config.gitHubURL + '/commits/main/greasemonkey/'
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '" '
