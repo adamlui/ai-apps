@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.31.5
+// @version             2024.5.31.6
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -355,7 +355,7 @@
         updateToggleHTML()
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         if (config.autoclear) {
-            setTimeout(() => { chatgpt.clearChats('api'), hideHistory(), chatgpt.startNewChat() }, 250)
+            setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
             if (!config.notifDisabled) notify(( msgs.mode_autoClear || 'Auto-Clear' ) + ': ON')
         } else if (!config.autoclear)
             if (!config.notifDisabled) notify(( msgs.mode_autoClear || 'Auto-Clear' ) + ': OFF')
@@ -371,7 +371,7 @@
 
     // AUTO-CLEAR on first visit if enabled
     if (config.autoclear) {
-        setTimeout(() => { chatgpt.clearChats('api'), hideHistory(), chatgpt.startNewChat() }, 250)
+        setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
         if (!config.notifDisabled) notify(( msgs.mode_autoClear || 'Auto-Clear' ) + ': ON')
     }
 
