@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.31.3
+// @version             2024.5.31.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -179,10 +179,11 @@
 // @connect             openai.com
 // @connect             sogou.com
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.3/dist/chatgpt.min.js#sha256-EDN+mCc+0Y4YVzJEoNikd4/rAIaJDLAdb+erWvupXTM=
-// @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
-// @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js#sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=
 // @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js#sha256-jjsBF/TfS+RSwLavW48KCs+dSt4j0I1V1+MSryIHd2I=
 // @require             https://cdn.jsdelivr.net/npm/generate-ip@2.4.1/dist/generate-ip.min.js#sha256-PRvQIDVWK/a+aAqEFVQv7RePbRe/tX6tWQVM80rAe2M=
+// @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
+// @require             https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js#sha256-nLjaz8CGwpZsnsS6VPSi3EO3y+KzPOwaJ0PYhsf7R6c=
+// @require             https://cdn.jsdelivr.net/npm/marked/marked.min.js#sha256-Ffq85bZYmLMrA/XtJen4kacprUwNbYdxEKd0SqhHqJQ=
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
@@ -484,7 +485,7 @@
           + '.standby-btn:hover { border-radius: 4px ; transform: scale(1.025) ;'
               + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
           + '.ddgpt pre {'
-              + 'font-size: 1.14rem ; white-space: pre-wrap ; margin: .99rem 0 7px 0 ; padding: 1.25em ;'
+              + 'font-size: 1.14rem ; white-space: pre-wrap ; margin: .99rem 0 7px 0 ; padding: 1.25em 1.25em 0 1.25em ;'
               + 'border-radius: 10px ; line-height: 21px ; min-width: 0 ; overflow: auto ;'
               + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2' : '' ) + '}'
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
@@ -522,6 +523,11 @@
           + '.kudoai { margin-left: 6px ; color: #aaa } '
           + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none } '
           + '.kudoai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
+          + ( // markdown styles
+                '.ddgpt pre h1 { font-size: 1.45em } .ddgpt pre h2 { font-size: 1.25em }' // size headings
+              + '.ddgpt pre ol { margin: -30px 0 -17px }' // reduce v-spacing
+              + '.ddgpt pre ul { margin: -10px 0 -17px }' // reduce v-spacing
+              + '.ddgpt pre li { margin: -10px 0 ; list-style: inside }' ) // reduce v-spacing, show left symbols
           + '.katex-html { display: none } ' // hide unrendered math
           + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important }' // increase alert padding
           + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
@@ -1153,6 +1159,9 @@
             ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
         ]) sendSVG.setAttribute(attr, value)
         sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
+
+        // Render markdown
+        answerPre.innerHTML = marked.parse(answer)
 
         // Render math
         if (answer != 'standby') {
