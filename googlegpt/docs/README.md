@@ -50,6 +50,8 @@
 
 3. Visit [google.com](https://google.com), type your search, engage bot!
 
+<br><a href="https://github.com/sponsors/KudoAI"><img src="https://media.googlegpt.io/images/banners/sponsor/$10/banner1660x260.png"></a>
+
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
 ## ⚡ Dependencies
