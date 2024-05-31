@@ -42,6 +42,8 @@
 
 <img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png">
 
+<br>
+
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
 ## 🚀 Installation
