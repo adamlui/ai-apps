@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.31.10
+// @version             2024.5.31.11
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1018,7 +1018,7 @@
             accessKey = await Promise.race([getOpenAItoken(), new Promise(reject =>
                 setTimeout(() => reject(new Error('Timeout occurred')), 3000))])
             if (!accessKey) { appAlert('login') ; return }
-            endpointMethod = 'POST', model = 'gpt-3.5-turbo'
+            endpointMethod = 'POST' ; model = 'gpt-3.5-turbo'
         }
         appInfo('Endpoint used: ' + endpoint)
     }

@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.31.9
+// @version             2024.5.31.10
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -762,7 +762,7 @@ setTimeout(async () => {
             accessKey = await Promise.race([getOpenAItoken(), new Promise(reject =>
                 setTimeout(() => reject(new Error('Timeout occurred')), 3000))])
             if (!accessKey) { appAlert('login') ; return }
-            endpointMethod = 'POST', model = 'gpt-3.5-turbo'
+            endpointMethod = 'POST' ; model = 'gpt-3.5-turbo'
         }
         appInfo('Endpoint used: ' + endpoint)
     }
