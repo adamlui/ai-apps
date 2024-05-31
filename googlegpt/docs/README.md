@@ -147,6 +147,8 @@ This app exists thanks to code, testing, issues, translations & ideas from the f
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 <a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.googlegpt.io/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.googlegpt.io/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
 
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
