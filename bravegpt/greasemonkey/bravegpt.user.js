@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.31.7
+// @version             2024.5.31.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1196,11 +1196,9 @@ setTimeout(async () => {
         const appFooter = document.createElement('footer')
         appFooter.append(footerContent) ; appDiv.append(appFooter)
 
-        // Render markdown
-        answerPre.innerHTML = marked.parse(answer)
-
-        // Render math
+        // Render markdown/math
         if (answer != 'standby') {
+            answerPre.innerHTML = marked.parse(answer)
             renderMathInElement(answerPre, { // eslint-disable-line no-undef
                 delimiters: [
                     { left: '$$', right: '$$', display: true },
