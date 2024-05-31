@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.31.9
+// @version             2024.5.31.10
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -525,9 +525,11 @@
           + '.kudoai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
           + ( // markdown styles
                 '.ddgpt pre h1 { font-size: 1.45em } .ddgpt pre h2 { font-size: 1.25em }' // size headings
-              + '.ddgpt pre ol { margin: -30px 0 -17px }' // reduce v-spacing
+              + '.ddgpt pre ol { margin: -30px 0 -37px }' // reduce v-spacing
+              + '.ddgpt pre ol > li { margin: -10px 0 0 1.6em ; list-style: decimal }' // reduce v-spacing, show number markers
+              + '.ddgpt pre ol > li::marker { font-size: 0.9em }' // shrink number markers
               + '.ddgpt pre ul { margin: -10px 0 -17px }' // reduce v-spacing
-              + '.ddgpt pre li { margin: -10px 0 ; list-style: inside }' ) // reduce v-spacing, show left symbols
+              + '.ddgpt pre ul > li { margin: -10px 0 0 1.2em ; list-style: inside }' ) // reduce v-spacing, show bullets
           + '.katex-html { display: none } ' // hide unrendered math
           + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important }' // increase alert padding
           + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
