@@ -148,25 +148,6 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 <a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.googlegpt.io/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.googlegpt.io/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
 
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
-
-<div align="center">
-
-<br>
-
-<a href="https://star-history.com/#KudoAI/googlegpt">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=KudoAI/googlegpt&type=Timeline&theme=dark" />
-        <img width=665 src="https://api.star-history.com/svg?repos=KudoAI/googlegpt&type=Timeline" />
-    </picture>
-</a>
-
-<br><i>Consider giving this project a ⭐ if it helped you!</i>
-
-</div>
-
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
-
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
