@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name                Autoclear ChatGPT History 😎
+// @name                Autoclear ChatGPT History
 // @name:af             Verwyder ChatGPT Geskiedenis 😎
 // @name:am             በተሻለ ChatGPT ጉዳዮ ማግኘት 😎
 // @name:ar             مسح تاريخ ChatGPT 😎
@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.31.3
+// @version             2024.5.31.4
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
