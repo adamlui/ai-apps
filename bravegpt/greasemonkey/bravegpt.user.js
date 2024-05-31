@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.30.5
+// @version             2024.5.31
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -137,6 +137,7 @@
 // @connect             gptforlove.com
 // @connect             greasyfork.org
 // @connect             jsdelivr.net
+// @connect             onrender.com
 // @connect             openai.com
 // @connect             sogou.com
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.3/dist/chatgpt.min.js#sha256-EDN+mCc+0Y4YVzJEoNikd4/rAIaJDLAdb+erWvupXTM=
@@ -741,7 +742,7 @@ setTimeout(async () => {
 
     // Define ANSWER functions
 
-    let endpoint, accessKey, model
+    let endpoint, endpointMethod, accessKey, model
     async function pickAPI() {
         if (config.proxyAPIenabled) { // randomize proxy API
             const untriedEndpoints = proxyEndpoints.filter(
@@ -749,23 +750,27 @@ setTimeout(async () => {
             const entry = untriedEndpoints[Math.floor(chatgpt.randomFloat() * untriedEndpoints.length)]
             if (!entry) // no more proxy endpoints left untried
                 appAlert('suggestOpenAI')
-            else endpoint = entry[0]
+            else { endpoint = entry[0], endpointMethod = entry[1].method }
         } else { // use OpenAI API
             endpoint = openAIendpoints.chat
             const timeoutPromise = new Promise((resolve, reject) =>
                 setTimeout(() => reject(new Error('Timeout occurred')), 3000))
             accessKey = await Promise.race([getOpenAItoken(), timeoutPromise])
             if (!accessKey) { appAlert('login') ; return }
-            model = 'gpt-3.5-turbo'
+            endpointMethod = 'POST', model = 'gpt-3.5-turbo'
         }
         appInfo('Endpoint used: ' + endpoint)
     }
 
     function createHeaders(api) {
         let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ipv4.generate({ verbose: false })}
-        if (api.includes('openai.com'))          headers.Authorization = 'Bearer ' + accessKey
-        else if (api.includes('binjie.fun'))     headers.Referer = headers.Origin = 'https://chat18.aichatos.xyz'
-        else if (api.includes('gptforlove.com')) headers.Referer = headers.Origin = 'https://ai27.gptforlove.com'
+        if (api.includes('openai.com')) headers.Authorization = 'Bearer ' + accessKey
+        headers.Referer = headers.Origin = ( // preserve expected traffic src
+            api.includes('openai.com') ? 'https://chatgpt.com'
+          : api.includes('binjie.fun') ? 'https://chat18.aichatos.xyz'
+          : api.includes('gptforlove.com') ? 'https://ai27.gptforlove.com'
+          : api.includes('onrender.com') ? 'https://e8.frechat.xyz' : ''
+        )
         return headers
     }
 
@@ -786,7 +791,8 @@ setTimeout(async () => {
                 systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.'
             }
             if (ids.gptPlus.parentID) payload.options = { parentMessageId: ids.gptPlus.parentID }
-        }
+        } else if (api.includes('onrender.com'))
+            payload = { messages: msgs, model: 'gemma-7b-it' }
         return JSON.stringify(payload)
     }
 
@@ -803,7 +809,7 @@ setTimeout(async () => {
                            + ' But the key is variety. Do not be repetitive.'
                                + ' You must entice user to want to ask one of your related queries.'
             GM.xmlHttpRequest({
-                method: 'POST', url: endpoint, responseType: 'text', headers: createHeaders(endpoint),
+                method: endpointMethod, url: endpoint, responseType: 'text', headers: createHeaders(endpoint),
                 data: createPayload(endpoint, [{ role: 'user', content: rqPrompt }]),
                 onload: event => {
                     let str_relatedQueries = ''
@@ -824,6 +830,9 @@ setTimeout(async () => {
                             let chunks = event.responseText.trim().split('\n')
                             str_relatedQueries = JSON.parse(chunks[chunks.length - 1]).text
                         } catch (err) { appError(err) ; reject(err) }
+                    } else if (endpoint.includes('onrender.com')) {
+                        try { str_relatedQueries = event.responseText ; console.log(event)}
+                        catch (err) { appError(err) ; reject(err) }
                     }
                     const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
                         .slice(0, 5) // limit to 1st 5
@@ -865,7 +874,7 @@ setTimeout(async () => {
         // Get/show answer from ChatGPT
         await pickAPI()
         GM.xmlHttpRequest({
-            method: 'POST', url: endpoint, headers: createHeaders(endpoint),
+            method: endpointMethod, url: endpoint, headers: createHeaders(endpoint),
             responseType: 'text', data: createPayload(endpoint, convo), onload: onLoad(),
             onerror: err => {
                 appError(err)
@@ -981,6 +990,17 @@ setTimeout(async () => {
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
                             if (lastObj.id) ids.gptPlus.parentID = lastObj.id
                             appShow(lastObj.text, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                        } catch (err) { // use different endpoint or suggest OpenAI
+                            appInfo('Response: ' + event.responseText)
+                            appError(appAlerts.parseFailed + ': ' + err)
+                            proxyRetryOrAlert()
+                        }
+                    } else { appInfo('Response: ' + event.responseText) ; proxyRetryOrAlert() }
+                } else if (endpoint.includes('onrender.com')) {
+                    if (event.responseText) {
+                        try {
+                            console.log(event)
+                            appShow(event.responseText, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (err) { // use different endpoint or suggest OpenAI
                             appInfo('Response: ' + event.responseText)
                             appError(appAlerts.parseFailed + ': ' + err)
@@ -1322,10 +1342,13 @@ setTimeout(async () => {
     const openAIendpoints = {
         auth: 'https://auth0.openai.com',
         session: 'https://chatgpt.com/api/auth/session',
-        chat: 'https://api.openai.com/v1/chat/completions' }
+        chat: 'https://api.openai.com/v1/chat/completions'
+    }
     const proxyEndpoints = [
-        [ 'https://api.binjie.fun/api/generateStream' ],
-        [ 'https://api11.gptforlove.com/chat-process' ]]
+        [ 'https://api.binjie.fun/api/generateStream', { method: 'POST', stream: true }],
+        [ 'https://api11.gptforlove.com/chat-process', { method: 'POST', stream: true }],
+        [ 'https://demo-yj7h.onrender.com/single/chat_messages', { method: 'PUT', stream: true }]
+    ]
 
     // Init ALERTS
     const appAlerts = {
