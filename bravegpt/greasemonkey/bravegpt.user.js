@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.31.8
+// @version             2024.5.31.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -756,7 +756,7 @@ setTimeout(async () => {
             const entry = untriedEndpoints[Math.floor(chatgpt.randomFloat() * untriedEndpoints.length)]
             if (!entry) // no more proxy endpoints left untried
                 appAlert('suggestOpenAI')
-            else { endpoint = entry[0], endpointMethod = entry[1].method }
+            else { endpoint = entry[0] ; endpointMethod = entry[1].method }
         } else { // use OpenAI API
             endpoint = openAIendpoints.chat
             accessKey = await Promise.race([getOpenAItoken(), new Promise(reject =>
