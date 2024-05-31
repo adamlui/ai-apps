@@ -20,7 +20,7 @@
 <a href="https://www.jsdelivr.com/package/gh/KudoAI/googlegpt?tab=stats"><img height=31 src="https://img.shields.io/jsdelivr/gh/hm/KudoAI/googlegpt?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20Requests&labelColor=464646&color=2bbbd8"></a>
 <a href="https://www.googlegpt.io?utm_source=googlegpt&utm_content=github_shield"><img height=31 src="https://img.shields.io/badge/web-www.googlegpt.io-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
-#
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
 <h3>🤖 Bring the magic of ChatGPT to Google Search (powered by GPT-4o!)</h3>
 
@@ -32,7 +32,7 @@
     
 </div>
 
-#
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
 <br>
 
@@ -41,6 +41,8 @@
 ### Mobile
 
 <img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png">
+
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
 ## 🚀 Installation
 
