@@ -135,7 +135,7 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 
 ## 🧠 Contributors
 
-This app exists thanks to code, translations, issues & ideas from the following contributors:
+This app exists thanks to code, testing, issues, translations & ideas from the following contributors:
 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.09.23&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
 [![](https://images.weserv.nl/?url=https://greasyfork.org/vite/assets/blacklogo96-e0c2c761.png?first-contrib=2023.11.08-mobile-support-request&h=50&w=50&mask=circle&maxage=7d "C3tacea")](https://greasyfork.org/users/1213283-c3tacea)
