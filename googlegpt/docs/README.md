@@ -40,10 +40,7 @@
 
 ### Mobile
 
-<picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png">
-    <img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/lightmode.png">
-</picture>
+<img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png">
 
 ## 🚀 Installation
 
