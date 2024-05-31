@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.31.7
+// @version             2024.5.31.8
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -377,7 +377,7 @@
 // @connect             openai.com
 // @connect             sogou.com
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.3/dist/chatgpt.min.js#sha256-EDN+mCc+0Y4YVzJEoNikd4/rAIaJDLAdb+erWvupXTM=
-// @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js#sha256-jjsBF/TfS+RSwLavW48KCs+dSt4j0I1V1+MSryIHd2I=
+// @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js#sha256-dppVXeVTurw1ozOPNE3XqhYmDJPOosfbKQcHyQSE58w=
 // @require             https://cdn.jsdelivr.net/npm/generate-ip@2.4.2/dist/generate-ip.min.js#sha256-PRvQIDVWK/a+aAqEFVQv7RePbRe/tX6tWQVM80rAe2M=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js#sha256-e1fUJ6xicGd9r42DgN7SzHMzb5FJoWe44f4NbvZmBK4=
