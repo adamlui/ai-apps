@@ -113,7 +113,7 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
 
-## 🕵️ Proxy Mode
+## 😎 Proxy Mode
 
 Proxy API Mode (disabled by default) returns text responses using GPT-4o, without the need for a chatgpt.com account.
 
