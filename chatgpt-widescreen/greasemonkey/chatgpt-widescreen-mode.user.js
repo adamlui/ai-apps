@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.31.2
+// @version             2024.5.31.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -596,7 +596,7 @@
         buttonSVG.setAttribute('viewBox', svgViewBox) // set pre-tweaked viewbox
         buttonSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
         if (/chatgpt|openai/.test(site)) // override button resizing
-            buttonSVG.style.height = buttonSVG.style.width = `${ isGPT4oUI ? 1.2 : 1.3 }rem`
+            buttonSVG.style.height = buttonSVG.style.width = `${ isGPT4oUI ? 1.25 : 1.3 }rem`
 
         // Update SVG elements
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }

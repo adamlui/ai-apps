@@ -318,7 +318,7 @@
         buttonSVG.setAttribute('viewBox', svgViewBox) // set pre-tweaked viewbox
         buttonSVG.style.pointerEvents = 'none' // prevent triggering tooltips twice
         if (/chatgpt|openai/.test(site)) // override button resizing
-            buttonSVG.style.height = buttonSVG.style.width = `${ isGPT4oUI ? 1.2 : 1.3 }rem`
+            buttonSVG.style.height = buttonSVG.style.width = `${ isGPT4oUI ? 1.25 : 1.3 }rem`
 
         // Update SVG elements
         while (buttonSVG.firstChild) { buttonSVG.removeChild(buttonSVG.firstChild) }
