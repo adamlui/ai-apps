@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.31.1
+// @version             2024.5.31.2
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -355,7 +355,7 @@
         updateToggleHTML()
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         if (config.autoclear) {
-            setTimeout(chatgpt.clearChats, 250)
+            setTimeout(() => { chatgpt.clearChats(), hideHistory(), chatgpt.startNewChat() }, 250)
             if (!config.notifDisabled) notify(( msgs.mode_autoClear || 'Auto-Clear' ) + ': ON')
         } else if (!config.autoclear)
             if (!config.notifDisabled) notify(( msgs.mode_autoClear || 'Auto-Clear' ) + ': OFF')
@@ -371,7 +371,7 @@
 
     // AUTO-CLEAR on first visit if enabled
     if (config.autoclear) {
-        setTimeout(() => chatgpt.clearChats(), 250)
+        setTimeout(() => { chatgpt.clearChats(), hideHistory(), chatgpt.startNewChat() }, 250)
         if (!config.notifDisabled) notify(( msgs.mode_autoClear || 'Auto-Clear' ) + ': ON')
     }
 
@@ -625,6 +625,20 @@
                 knobSpan.style.transform = 'translateX(0)'
             }
         }, 1) // min delay to trigger transition fx
+    }
+
+    function hideHistory() { // from DOM since chatgpt.clearChats() works back-end only (front-end updates on refresh)
+        document.querySelectorAll('nav ol').forEach(ol => {
+            ol.previousElementSibling.style.display = 'none' // hide temporal heading
+            ol.querySelectorAll('li').forEach(li => li.style.display = 'none') // hide chat entry
+        })
+        if (!hideHistory.observer) { // init/attach observer to monitor <nav> for restoration of temporal headings on new chats
+            hideHistory.observer = new MutationObserver(mutations => mutations.forEach(mutation => {
+                if (mutation.type == 'childList') mutation.addedNodes.forEach(addedNode => {
+                    if (addedNode.tagName == 'LI') addedNode.closest('ol').previousElementSibling.style.display = 'inherit'
+            })}))
+            hideHistory.observer.observe(document.querySelector('nav'), { childList: true, subtree: true })
+        }
     }
 
 })()
