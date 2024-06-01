@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.4
+// @version             2024.6.1.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -783,7 +783,7 @@
         } else if (endpoint.includes('openai.com')) {
             if (resp.response) {
                 try {
-                    appShow(JSON.parse(resp.response).choices[0].message.content, footerContent)
+                    appShow(JSON.parse(resp.response).choices[0].message.content)
                 } catch (err) {
                     appInfo('Response: ' + resp.response)
                     appError(appAlerts.parseFailed + ': ' + err)
@@ -799,7 +799,7 @@
                         const chunk = text.substring(currentIdx, currentIdx + chunkSize)
                         currentIdx += chunkSize ; answer += chunk
                     }
-                    appShow(answer, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                    appShow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     appInfo('Response: ' + resp.responseText)
                     appError(appAlerts.parseFailed + ': ' + err)
@@ -812,7 +812,7 @@
                     let chunks = resp.responseText.trim().split('\n'),
                         lastObj = JSON.parse(chunks[chunks.length - 1])
                     if (lastObj.id) ids.gptPlus.parentID = lastObj.id
-                    appShow(lastObj.text, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                    appShow(lastObj.text) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     appInfo('Response: ' + resp.responseText)
                     appError(appAlerts.parseFailed + ': ' + err)
@@ -825,7 +825,7 @@
                     const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
                         .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                         .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
-                    appShow(extractedData.join(''), footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                    appShow(extractedData.join('')) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     appInfo('Response: ' + resp.responseText)
                     appError(appAlerts.parseFailed + ': ' + err)
@@ -835,7 +835,7 @@
         } else if (endpoint.includes('onrender.com')) {
             if (resp.responseText) {
                 try {
-                    appShow(resp.responseText, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                    appShow(resp.responseText) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     appInfo('Response: ' + resp.responseText)
                     appError(appAlerts.parseFailed + ': ' + err)
