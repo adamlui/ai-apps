@@ -3,8 +3,8 @@
 <br>
 
 <picture>
-    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/logos/googlegpt/with-reflection/white.png">
-    <img alt="GoogleGPT" width=888 src="https://media.googlegpt.io/images/logos/googlegpt/with-reflection/black.png">
+    <source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/logos/googlegpt/with-reflection/white.png?latest">
+    <img alt="GoogleGPT" width=888 src="https://media.googlegpt.io/images/logos/googlegpt/with-reflection/black.png?latest">
 </picture>
 
 <br>
@@ -20,11 +20,11 @@
 <a href="https://www.jsdelivr.com/package/gh/KudoAI/googlegpt?tab=stats"><img height=31 src="https://img.shields.io/jsdelivr/gh/hm/KudoAI/googlegpt?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20Requests&labelColor=464646&color=2bbbd8"></a>
 <a href="https://www.googlegpt.io?utm_source=googlegpt&utm_content=github_shield"><img height=31 src="https://img.shields.io/badge/web-www.googlegpt.io-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
 <h3>🤖 Bring the magic of ChatGPT to Google Search (powered by GPT-4o!)</h3>
 
-<a href="https://greasyfork.googlegpt.io"><img height=50 alt="Install this script" src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=50 alt="How to install" title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.googlegpt.io"><img height=50 alt="Install this script" src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#-installation"><img height=50 alt="How to install" title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg?latest"></a>
 <br>
 [Discuss](https://github.googlegpt.io/discussions) / 
 [Review](https://greasyfork.googlegpt.io/feedback#post-discussion) / 
@@ -32,19 +32,19 @@
     
 </div>
 
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
 <br>
 
-<img src="https://media.googlegpt.io/images/screenshots/desktop/meaning-of-life-query/darkmode.png">
+<img src="https://media.googlegpt.io/images/screenshots/desktop/meaning-of-life-query/darkmode.png?latest">
 
 ### Mobile
 
-<img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png">
+<img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png?latest">
 
 <br>
 
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
 ## 🚀 Installation
 
@@ -54,9 +54,9 @@
 
 3. Visit [google.com](https://google.com), type your search, engage bot!
 
-<br><a href="https://github.com/sponsors/KudoAI"><img src="https://media.googlegpt.io/images/banners/sponsor/$10/banner1660x260.png"></a>
+<br><a href="https://github.com/sponsors/KudoAI"><img src="https://media.googlegpt.io/images/banners/sponsor/$10/banner1660x260.png?latest"></a>
 
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
 ## ⚡ Dependencies
 
@@ -72,8 +72,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://katex.org">
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/logos/katex/white-logo.svg">
-        <img width=175 src="https://media.googlegpt.io/images/logos/katex/dark-gray-logo423x166.png">
+        <source media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/logos/katex/white-logo.svg?latest">
+        <img width=175 src="https://media.googlegpt.io/images/logos/katex/dark-gray-logo423x166.png?latest">
     </picture>
 </a>
 <br><br>
@@ -85,7 +85,7 @@ GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoA
 </div>
 </h6>
 
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
 ## 🌐 Compatibility 
 
@@ -112,7 +112,7 @@ GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoA
 
 If you've tested it to work in a browser not listed, create a [pull request](https://github.googlegpt.io/pulls) to become a contributor!
 
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
 ## 😎 Proxy Mode
 
@@ -122,8 +122,8 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 
 <div align='center'>
 
-<img width=355 src="https://media.googlegpt.io/images/screenshots/desktop/tampermonkey-proxy-mode-menu.png">
-<img src="https://media.googlegpt.io/images/screenshots/desktop/proxy-mode-notification.png">
+<img width=355 src="https://media.googlegpt.io/images/screenshots/desktop/tampermonkey-proxy-mode-menu.png?latest">
+<img src="https://media.googlegpt.io/images/screenshots/desktop/proxy-mode-notification.png?latest">
 
 </div>
 
@@ -133,7 +133,7 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 
 <br>
 
-<a href="https://greasyfork.googlegpt.io"><img alt="Install this script" height=48 src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg"></a><a href="#-installation"><img height=48 alt="How to install" title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.googlegpt.io"><img alt="Install this script" height=48 src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#-installation"><img height=48 alt="How to install" title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg?latest"></a>
 <br>
 [Discuss](https://github.googlegpt.io/discussions) /
 [Leave a review](https://greasyfork.googlegpt.io/feedback#post-discussion) /
@@ -143,7 +143,7 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 
 </div>
 
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
 ## 🧠 Contributors
 
@@ -157,43 +157,43 @@ This app exists thanks to code, testing, issues, translations & ideas from the f
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/105553471?first-contrib=2024.02.15-openai-endpoint-broke-report&h=50&w=50&mask=circle&maxage=7d "@YashSoPro")](https://github.com/YashSoPro)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22633385?first-contrib=2024.02.19-comment-typo-correction&h=50&w=50&mask=circle&maxage=7d "@eltociear")](https://github.com/eltociear)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/30918938?first-contrib=2024.5.30-added-safari-to-readme-compatibility&h=50&w=50&mask=circle&maxage=7d "@bbradleyjoness")](https://github.com/bbradleyjoness)
-<a href="https://greasyfork.org/users/670188-hacker09"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=50 src="https://media.googlegpt.io/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2024.5.30-render-markdown-idea" title="hacker09"></picture></a>
+<a href="https://greasyfork.org/users/670188-hacker09"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/web-stores/greasy-fork/white/icon50.png?latest"><img width=50 src="https://media.googlegpt.io/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2024.5.30-render-markdown-idea" title="hacker09"></picture></a>
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 <a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.googlegpt.io/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.googlegpt.io/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
 
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
 ## 📜 Related scripts
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT Infinity ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/openai/white/icon16.png?latest"><img width=16 src="https://media.chatgptinfinity.com/images/icons/openai/black/icon16.png?latest"></picture> [ChatGPT Infinity ∞](https://chatgptinfinity.com) &nbsp;<a href="https://chrome.chatgptinfinity.com"><img height=20 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/featured-by-google/badge500x91.png?latest"></a>
 
 > Generate endless answers from all-knowing ChatGPT (in any language!)
 <br>[Install](https://docs.chatgptinfinity.com/#-installation) / 
 [Readme](https://docs.chatgptinfinity.com/#readme) / 
 [Discuss](https://github.chatgptinfinity.com/discussions)
 
-### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png?latest" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Bring the magic of ChatGPT to Brave Search (powered by GPT-4o!)
 <br>[Install](https://docs.bravegpt.com/#-installation) /
 [Readme](https://docs.bravegpt.com/#readme) /
 [Discuss](https://github.bravegpt.com/discussions)
 
-### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png" width=17> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?latest" width=17> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
 > Bring the magic of ChatGPT to DuckDuckGo (powered by GPT-4o!)
 <br>[Install](https://docs.ddgpt.com/#-installation) /
 [Readme](https://docs.ddgpt.com/#readme) /
 [Discuss](https://github.ddgpt.com/discussions)
 
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
 <a href="#-bring-the-magic-of-chatgpt-to-google-search-powered-by-gpt-4o">Back to top ↑</a>

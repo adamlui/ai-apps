@@ -1,7 +1,7 @@
 <h1>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/logos/bravegpt/darkmode.png">
-    <img alt="BraveGPT" width=322 src="https://media.bravegpt.com/images/logos/bravegpt/lightmode.png">
+    <source media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/logos/bravegpt/darkmode.png?latest">
+    <img alt="BraveGPT" width=322 src="https://media.bravegpt.com/images/logos/bravegpt/lightmode.png?latest">
   </picture>  
 </h1>
 
@@ -18,7 +18,7 @@
 
 <h3><b>BraveGPT</b> brings the magic of ChatGPT to Brave Search (powered by GPT-4o!)</h3>
 
-<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=45 src="https://media.bravegpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img height=45 title="How to install" src="https://media.bravegpt.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=45 src="https://media.bravegpt.com/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#installation"><img height=45 title="How to install" src="https://media.bravegpt.com/images/buttons/greasy-fork/help-button.svg?latest"></a>
 <br>
 [Discuss](https://github.bravegpt.com/discussions) / 
 [Review](https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion) / 
@@ -26,11 +26,11 @@
 
 #
 
-<img src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png">
+<img src="https://media.bravegpt.com/images/screenshots/desktop/bitcoin-query/darkmode.png?latest">
 
 #### Mobile:
 
-<img src="https://media.bravegpt.com/images/screenshots/mobile/hi-query/darkmode.png">
+<img src="https://media.bravegpt.com/images/screenshots/mobile/hi-query/darkmode.png?latest">
 
 ## 🚀 Installation
 
@@ -46,7 +46,7 @@
 
 </div>
 
-<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png?latest">
 
 ## ⚡ Dependencies
 
@@ -63,8 +63,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://katex.org">
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/logos/katex/white-logo.svg">
-        <img width=175 src="https://media.bravegpt.com/images/logos/katex/dark-gray-logo423x166.png">
+        <source media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/logos/katex/white-logo.svg?latest">
+        <img width=175 src="https://media.bravegpt.com/images/logos/katex/dark-gray-logo423x166.png?latest">
     </picture>
 </a>
 <br><br>
@@ -75,7 +75,7 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoAI
 </div>
 </h6>
 
-<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png?latest">
 
 ## 🌐 Compatibility
 
@@ -101,7 +101,7 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoAI
 
 If you've tested it to work in a browser not listed, create a [pull request](https://github.bravegpt.com/pulls) to become a contributor!
 
-<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png?latest">
 
 ## 🕵️ Proxy Mode
 
@@ -118,13 +118,13 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 
 <br>
 
-<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=42 src="https://media.bravegpt.com/images/buttons/greasy-fork/install-button.svg"></a><a href="#installation"><img height=42 title="How to install" src="https://media.bravegpt.com/images/buttons/greasy-fork/help-button.svg"></a>
+<a href="https://greasyfork.org/scripts/462440-bravegpt"><img height=42 src="https://media.bravegpt.com/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#installation"><img height=42 title="How to install" src="https://media.bravegpt.com/images/buttons/greasy-fork/help-button.svg?latest"></a>
 <br>
 [Discuss](https://github.bravegpt.com/discussions) /
 [Leave a review](https://greasyfork.org/scripts/462440-bravegpt/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
-<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png?latest">
 
 ## 📣 Social links
 
@@ -140,7 +140,7 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 [![](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social "Follow @adamluitube on YouTube")](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 [![](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "Follow @adamlui on GitHub")](https://github.com/adamlui)
 
-<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png?latest">
 
 ## 🧠 Contributors
 
@@ -160,12 +160,12 @@ This app exists thanks to code, translations, issues & ideas from the following 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/9349164?first-contrib=2023.11.30-standby-mode-suggestion&h=50&w=50&mask=circle&maxage=7d "@T1mL3arn")](https://github.com/T1mL3arn)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/22026520?first-contrib=2023.12.25-french-tts-suggestion&h=50&w=50&mask=circle&maxage=7d "@papapat")](https://github.com/papapat)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/105553471?first-contrib=2024.02.15-openai-endpoint-broke-report&h=50&w=50&mask=circle&maxage=7d "@YashSoPro")](https://github.com/YashSoPro)
-<a href="https://greasyfork.org/users/670188-hacker09"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=50 src="https://media.bravegpt.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2024.5.30-render-markdown-idea" title="hacker09"></picture></a>
+<a href="https://greasyfork.org/users/670188-hacker09"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/icons/web-stores/greasy-fork/white/icon50.png?latest"><img width=50 src="https://media.bravegpt.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2024.5.30-render-markdown-idea" title="hacker09"></picture></a>
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 <a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.bravegpt.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.bravegpt.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
 
-<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png?latest">
 
 <div align="center">
 
@@ -182,14 +182,14 @@ This app exists thanks to code, translations, issues & ideas from the following 
 
 </div>
 
-<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png?latest">
 
 ## 🤖 More ChatGPT apps
 
 For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 <br><br>
 
-<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png?latest">
 
 ## 📜 Related scripts
 
@@ -214,7 +214,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://github.kudoai.com/googlegpt/#readme) /
 [Discuss](https://github.kudoai.com/googlegpt/discussions)
 
-<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png?latest">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> /
 <a href="#----------------">Back to top ↑</a>

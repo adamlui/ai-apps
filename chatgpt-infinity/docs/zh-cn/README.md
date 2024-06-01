@@ -1,8 +1,8 @@
 <div align="right">
     <h6>
         <picture>
-            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/earth/white/icon32.svg">
-            <img height=14 src="https://media.chatgptinfinity.com/images/icons/earth/black/icon32.svg">
+            <source type="image/svg+xml" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/earth/white/icon32.svg?latest">
+            <img height=14 src="https://media.chatgptinfinity.com/images/icons/earth/black/icon32.svg?latest">
         </picture>
         &nbsp;简体中文 |
         <a href="../..#readme">English</a>
@@ -32,11 +32,11 @@
 <br>
 
 <a href="https://chrome.chatgptinfinity.com" target="_blank">
-    <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png"></a>
+    <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/chrome-web-store/available-in-the-chrome-web-store-green-square-border-light-498x152.png?latest"></a>
 <a href="https://edge.chatgptinfinity.com" target="_blank">
-    <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png"></a>
+    <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/microsoft-store/get-it-from-microsoft-blue-square-border-light-457x157.png?latest"></a>
 <a href="https://greasyfork.chatgptinfinity.com" target="_blank">
-    <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png"></a>
+    <img width=auto height=60 src="https://media.chatgptinfinity.com/images/badges/greasy-fork/available-on-greasy-fork-gold-square-border-light-816x262.png?latest"></a>
 
 </div>
 
@@ -46,7 +46,7 @@
 
 <div align="center">
 
-<img src="https://media.chatgptinfinity.com/images/screenshots/infinity-mode-on-ss-zoomed-out.png">
+<img src="https://media.chatgptinfinity.com/images/screenshots/infinity-mode-on-ss-zoomed-out.png?latest">
 
 </div>
 
@@ -62,22 +62,22 @@
 
 ## 🚀 如何安装
 
-### <img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png"><img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png"> 浏览器扩展:
+### <img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/chrome/icon16.png?latest"><img height=16 src="https://media.chatgptinfinity.com/images/icons/platforms/edge/icon16.png?latest"> 浏览器扩展:
 
 1. 安装 ChatGPT 无限 扩展程序 ([Chrome](https://chrome.chatgptinfinity.com), [Edge](https://edge.chatgptinfinity.com))
 
 2. 正常访问 [chatgpt.com](https://chatgpt.com)，侧边栏和工具栏菜单中会出现一个切换开关
 
-*专业提示：更轻松地访问扩展开关, (1) 点击 <img height=12 width=12 src="https://media.chatgptinfinity.com/images/icons/toolbar/chrome-puzzle-piece/gray.png"> 在浏览器的工具栏中, (2) 然后 <img height=12 width=12 src="https://media.chatgptinfinity.com/images/icons/toolbar/push-pin/blue.png"> 扩展名旁边.*
+*专业提示：更轻松地访问扩展开关, (1) 点击 <img height=12 width=12 src="https://media.chatgptinfinity.com/images/icons/toolbar/chrome-puzzle-piece/gray.png?latest"> 在浏览器的工具栏中, (2) 然后 <img height=12 width=12 src="https://media.chatgptinfinity.com/images/icons/toolbar/push-pin/blue.png?latest"> 扩展名旁边.*
 
 <div align="center">
 
-<img width=268 src="https://media.chatgptinfinity.com/images/screenshots/chrome-extension-pin-instructions.png">
-<img width=268 src="https://media.chatgptinfinity.com/images/screenshots/zh-cn/chrome-extension-menu.png">
+<img width=268 src="https://media.chatgptinfinity.com/images/screenshots/chrome-extension-pin-instructions.png?latest">
+<img width=268 src="https://media.chatgptinfinity.com/images/screenshots/zh-cn/chrome-extension-menu.png?latest">
 
 </div>
 
-### <img height=17 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png"><img height=17.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png"> Greasemonkey 用户脚本:
+### <img height=17 src="https://media.chatgptinfinity.com/images/icons/platforms/tampermonkey/icon28.png?latest"><img height=17.5 src="https://media.chatgptinfinity.com/images/icons/platforms/violentmonkey/icon25.png?latest"> Greasemonkey 用户脚本:
 
 1. 安装 Tampermonkey ([Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/))
 
@@ -87,7 +87,7 @@
 
 <div align="center">
 
-<img src="https://media.chatgptinfinity.com/images/screenshots/zh-cn/sidebar-toggle-on-w-cursor.png">
+<img src="https://media.chatgptinfinity.com/images/screenshots/zh-cn/sidebar-toggle-on-w-cursor.png?latest">
 
 <p>
 
@@ -139,11 +139,11 @@ ChatGPT 无穷 与以下浏览器兼容.
 <div align="center">
 
 <a href="https://chrome.chatgptinfinity.com">
-    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-chrome-button.png"></a>
+    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-chrome-button.png?latest"></a>
 <a href="https://edge.chatgptinfinity.com">
-    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-edge-button.png"></a>
+    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-to-edge-button.png?latest"></a>
 <a href="https://greasyfork.chatgptinfinity.com">
-    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-userscript-button.png"></a>
+    <img height=75 src="https://media.chatgptinfinity.com/images/buttons/add-userscript-button.png?latest"></a>
 
 <br>
 
@@ -162,7 +162,7 @@ ChatGPT 无穷 与以下浏览器兼容.
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/5162926?first-contrib=2023.11.27-ui-change-report&h=50&w=50&mask=circle&maxage=7d "@xspeed1989")](https://github.com/xspeed1989)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/37517008?first-contrib=2023.12.05-first-button-bug-report&h=50&w=50&mask=circle&maxage=7d "@Chipsum")](https://github.com/Chipsum)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/2911588?first-contrib=2023.2.26-truncate-toggle-label-idea&h=50&w=50&mask=circle&maxage=7d "@sanchomuzax")](https://github.com/sanchomuzax)
-<a href="https://greasyfork.org/users/1000404-misspent"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/white/icon50.png"><img width=50 src="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.7.29-share-box-popup-bug-alert" title="misspent"></picture></a>
+<a href="https://greasyfork.org/users/1000404-misspent"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/white/icon50.png?latest"><img width=50 src="https://media.chatgptinfinity.com/images/icons/web-stores/greasy-fork/black/icon50.png?first-contrib=2023.7.29-share-box-popup-bug-alert" title="misspent"></picture></a>
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/in/29110&h=50&w=50&mask=circle&maxage=7d "Dependabot")](https://github.com/dependabot)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/31427850?h=50&w=50&mask=circle&maxage=7d "@ImgBotApp")](https://github.com/ImgBotApp)
 <a href="https://chatgpt.com"><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://images.weserv.nl/?url=https://media.chatgptinfinity.com/images/icons/platforms/chatgpt/black-on-white/icon50.png?h=50&w=50&mask=circle&maxage=7d"><img src="https://images.weserv.nl/?url=https://media.chatgptinfinity.com/images/icons/platforms/chatgpt/white-on-black/icon50.png?h=50&w=50&mask=circle&maxage=7d" title="ChatGPT"></picture></a>
@@ -175,28 +175,28 @@ ChatGPT 无穷 与以下浏览器兼容.
 
 ## 📜 相关应用
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动刷新 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautorefresh.com/images/icons/openai/white/icon16.png?latest"><img width=16 src="https://media.chatgptautorefresh.com/images/icons/openai/black/icon16.png?latest"></picture> [ChatGPT 自动刷新 ↻](https://chatgptautorefresh.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautorefresh.com/images/badges/awesome/badge.svg?latest"></a>
 
 > 保持 ChatGPT 会话最新以消除网络错误 + Cloudflare 检查。
 <br>[安装](https://docs.chatgptautorefresh.com/zh-cn/#-如何安装) / 
 [自述文件](https://docs.chatgptautorefresh.com/zh-cn/#readme) / 
 [讨论](https://github.chatgptautorefresh.com/discussions)
 
-### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png"></picture> [ChatGPT 自动继续 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg"></a>
+### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptautocontinue.com/images/icons/openai/white/icon16.png?latest"><img width=16 src="https://media.chatgptautocontinue.com/images/icons/openai/black/icon16.png?latest"></picture> [ChatGPT 自动继续 ⏩](https://chatgptautocontinue.com) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://media.chatgptautocontinue.com/images/badges/awesome/badge.svg?latest"></a>
 
 > 自动继续生成多个 ChatGPT 响应。<br>
 [安装](https://docs.chatgptautocontinue.com/zh-cn/#-如何安装) / 
 [自述文件](https://docs.chatgptautocontinue.com/zh-cn/#readme) / 
 [讨论](https://github.chatgptautocontinue.com/discussions)
 
-### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png"> [ChatGPT Widescreen Mode](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg" width="auto" height="24" />
+### <img width=17 src="https://media.chatgptwidescreen.com/images/icons/widescreen-robot-emoji/icon32.png?latest"> [ChatGPT Widescreen Mode](https://chatgptwidescreen.com) &nbsp;<img src="https://media.chatgptwidescreen.com/images/badges/product-hunt/product-of-the-week-2-larger-centered-rounded-light.svg?latest" width="auto" height="24" />
 
 > 向 ChatGPT 添加宽屏 + 全窗口模式以增强查看效果 + 减少滚动。
 <br>[安装](https://docs.chatgptwidescreen.com/zh-cn/#-如何安装) / 
 [自述文件](https://docs.chatgptwidescreen.com/zh-cn/#readme) / 
 [讨论](https://github.chatgptwidescreen.com/discussions)
 
-<img height=6px width="100%" src="https://media.chatgptinfinity.com/images/separators/gradient-aqua.png">
+<img height=6px width="100%" src="https://media.chatgptinfinity.com/images/separators/gradient-aqua.png?latest">
   
 <a href="https://github.com/adamlui/chatgpt-apps">**更多 ChatGPT 附加组件**</a> / 
 <a href="#">回到顶部 ↑</a>
