@@ -108,7 +108,8 @@ GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoA
 
 ### Android:
 
-- [Kiwi](https://kiwibrowser.com/)
+- [Kiwi](https://kiwibrowser.com/) (Recommended)
+- [Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)
 
 ### iOS:
 
