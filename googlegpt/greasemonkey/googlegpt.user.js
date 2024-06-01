@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1
+// @version             2024.6.1.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1591,10 +1591,6 @@
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
 
-    // Pre-load LOGO
-    const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
-    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
-
     // Define MESSAGES
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
@@ -1623,6 +1619,10 @@
           isFirefox = chatgpt.browser.isFirefox(),
           isMobile = chatgpt.browser.isMobile(),
           hasSidebar = document.querySelector('[class*="kp-"]')
+
+    // Pre-load LOGO
+    const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
+    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
 
     registerMenu()
 
