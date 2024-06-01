@@ -92,6 +92,8 @@ DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/Kud
 - [Kiwi](https://kiwibrowser.com/) (recommended)
 - [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)
 
+<br>
+
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.duckduckgpt.com/pulls) to become a contributor!
 
 ## 🕵️ Proxy Mode

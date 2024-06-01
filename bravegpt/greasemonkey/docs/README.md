@@ -99,6 +99,8 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoAI
 - [Kiwi](https://kiwibrowser.com/) (recommended)
 - [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)
 
+<br>
+
 If you've tested it to work in a browser not listed, create a [pull request](https://github.bravegpt.com/pulls) to become a contributor!
 
 <img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png?latest">
