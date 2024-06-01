@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.6
+// @version             2024.6.1.7
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -373,6 +373,7 @@
 // @connect             gptforlove.com
 // @connect             greasyfork.org
 // @connect             jsdelivr.net
+// @connect             mixerbox.com
 // @connect             onrender.com
 // @connect             openai.com
 // @connect             sogou.com
@@ -1031,6 +1032,7 @@
             api.includes('openai.com') ? 'https://chatgpt.com'
           : api.includes('binjie.fun') ? 'https://chat18.aichatos.xyz'
           : api.includes('gptforlove.com') ? 'https://ai27.gptforlove.com'
+          : api.includes('mixerbox.com') ? 'https://chatai.mixerbox.com'
           : api.includes('onrender.com') ? 'https://e8.frechat.xyz' : ''
         )
         return headers
@@ -1053,7 +1055,9 @@
                 systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.'
             }
             if (ids.gptPlus.parentID) payload.options = { parentMessageId: ids.gptPlus.parentID }
-        } else if (api.includes('onrender.com'))
+        } else if (api.includes('mixerbox.com'))
+            payload = { prompt: msgs, model: 'gpt-3.5-turbo' }
+        else if (api.includes('onrender.com'))
             payload = { messages: msgs, model: 'gemma-7b-it' }
         return JSON.stringify(payload)
     }
@@ -1091,6 +1095,13 @@
                         try {
                             let chunks = event.responseText.trim().split('\n')
                             str_relatedQueries = JSON.parse(chunks[chunks.length - 1]).text
+                        } catch (err) { appError(err) ; reject(err) }
+                    } else if (endpoint.includes('mixerbox.com')) {
+                        try {
+                            const extractedData = Array.from(event.responseText.matchAll(/data:(.*)/g), match => match[1]
+                                .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
+                                .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
+                            str_relatedQueries = extractedData.join('')
                         } catch (err) { appError(err) ; reject(err) }
                     } else if (endpoint.includes('onrender.com')) {
                         try { str_relatedQueries = event.responseText }
@@ -1252,6 +1263,19 @@
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
                             if (lastObj.id) ids.gptPlus.parentID = lastObj.id
                             appShow(lastObj.text, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                        } catch (err) { // use different endpoint or suggest OpenAI
+                            appInfo('Response: ' + event.responseText)
+                            appError(appAlerts.parseFailed + ': ' + err)
+                            proxyRetryOrAlert()
+                        }
+                    } else { appInfo('Response: ' + event.responseText) ; proxyRetryOrAlert() }
+                } else if (endpoint.includes('mixerbox.com')) {
+                    if (event.responseText) {
+                        try {
+                            const extractedData = Array.from(event.responseText.matchAll(/data:(.*)/g), match => match[1]
+                                .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
+                                .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
+                            appShow(extractedData.join(''), footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                         } catch (err) { // use different endpoint or suggest OpenAI
                             appInfo('Response: ' + event.responseText)
                             appError(appAlerts.parseFailed + ': ' + err)
@@ -1646,6 +1670,7 @@
     const proxyEndpoints = [
         [ 'https://api.binjie.fun/api/generateStream', { method: 'POST', stream: true }],
         [ 'https://api11.gptforlove.com/chat-process', { method: 'POST', stream: true }],
+        [ 'https://chatai.mixerbox.com/api/chat/stream', { method: 'POST', stream: true }],
         [ 'https://demo-yj7h.onrender.com/single/chat_messages', { method: 'PUT', stream: true }]
     ]
 
