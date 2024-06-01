@@ -116,9 +116,9 @@ ChatGPT 无穷 依赖于强大的 [chatgpt.js](https://github.com/KudoAI/chatgpt
 
 ## 🌐 兼容性
 
-ChatGPT 无穷 与以下浏览器兼容.
+ChatGPT 无穷 与以下浏览器兼容:
 
-### 台式:
+### 🖥️ 台式
 
 - **[Google Chrome](https://www.chrome.com)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 - **[Mozilla Firefox](https://www.firefox.com)** (通过 [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
@@ -131,10 +131,12 @@ ChatGPT 无穷 与以下浏览器兼容.
 - **[QQ](https://browser.qq.com/)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 - **[Whale](https://whale.naver.com/)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 
-### 安卓:
+<br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/white/logo150x24.png?latest"><img alt="Android" width=111 src="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png?latest"></picture><br>
 
 - **[Kiwi](https://kiwibrowser.com/)** (通过 [Chrome 扩大](https://chrome.chatgptinfinity.com) or [Greasemonkey 用户脚本](https://greasyfork.chatgptinfinity.com))
 - **[Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)** (通过 [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+
+<br>
 
 <div align="center">
 

@@ -117,9 +117,9 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 
 ## 🌐 Compatibility
 
-**ChatGPT Infinity** is compatible w/ the following browsers.
+**ChatGPT Infinity** is compatible w/ the following browsers:
 
-### Desktop:
+### 🖥️ Desktop
 
 - **[Google Chrome](https://www.chrome.com)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[Mozilla Firefox](https://www.firefox.com)** (via [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
@@ -132,10 +132,12 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 - **[QQ](https://browser.qq.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[Whale](https://whale.naver.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 
-### Android:
+<br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/white/logo150x24.png?latest"><img alt="Android" width=111 src="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png?latest"></picture><br>
 
 - **[Kiwi](https://kiwibrowser.com/)** (via [Chrome extension](https://chrome.chatgptinfinity.com) or [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
 - **[Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)** (via [Greasemonkey userscript](https://greasyfork.chatgptinfinity.com))
+
+<br>
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.chatgptinfinity.com/pulls) to become a contributor!
 
