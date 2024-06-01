@@ -72,9 +72,9 @@ DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/Kud
 
 ## 🌐 Compatibility 
 
-**DuckDuckGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/).
+**DuckDuckGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/):
 
-### Desktop:
+### 🖥️ Desktop
 
 - [Google Chrome](https://www.chrome.com)
 - [Mozilla Firefox](https://www.firefox.com)
@@ -87,7 +87,7 @@ DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/Kud
 - [QQ](https://browser.qq.com/)
 - [Whale](https://whale.naver.com)
 
-### Android:
+<br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.ddgpt.com/images/logos/platforms/android/head-plus-word/white/logo150x24.png?latest"><img alt="Android" width=111 src="https://media.ddgpt.com/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png?latest"></picture><br>
 
 - [Kiwi](https://kiwibrowser.com/) (recommended)
 - [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)

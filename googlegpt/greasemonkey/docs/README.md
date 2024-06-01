@@ -89,9 +89,9 @@ GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoA
 
 ## 🌐 Compatibility 
 
-**GoogleGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/).
+**GoogleGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/):
 
-### Desktop:
+### 🖥️ Desktop
 
 - [Google Chrome](https://www.chrome.com)
 - [Mozilla Firefox](https://www.firefox.com)
@@ -106,12 +106,12 @@ GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoA
 - [QQ](https://browser.qq.com/)
 - [Whale](https://whale.naver.com)
 
-### Android:
+<br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/logos/platforms/android/head-plus-word/white/logo150x24.png?latest"><img alt="Android" width=111 src="https://media.googlegpt.io/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png?latest"></picture><br>
 
 - [Kiwi](https://kiwibrowser.com/) (Recommended)
 - [Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)
 
-### iOS:
+<br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/logos/platforms/ios/apple-plus-word/white/logo150x71.png?latest"><img alt="iOS" width=55 src="https://media.googlegpt.io/images/logos/platforms/ios/apple-plus-word/black/logo150x71.png?latest"></picture>
 
 - [Orion](https://apps.apple.com/app/orion-browser-by-kagi/id1484498200)
 
