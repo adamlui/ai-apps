@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.4
+// @version             2024.6.1.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -880,9 +880,17 @@ setTimeout(async () => {
                 }
             } else { appInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
         }
+
         function proxyRetryOrAlert() {
             if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
             else appAlert('suggestOpenAI')
+        }
+
+        function retryDiffHost() {
+            appError(`Error calling ${ endpoint }. Trying another endpoint...`)
+            getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
+            getShowReply.attemptCnt++
+            getShowReply(convo, callback)
         }
     }
 
@@ -1029,13 +1037,6 @@ setTimeout(async () => {
         }})}
 
         updateFooterContent()
-
-        function retryDiffHost() {
-            appError(`Error calling ${ endpoint }. Trying another endpoint...`)
-            getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
-            getShowReply.attemptCnt++
-            getShowReply(convo, callback)
-        }
     }
 
     function appShow(answer, footerContent) {

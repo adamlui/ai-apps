@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.8
+// @version             2024.6.1.9
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1137,9 +1137,17 @@
                 }
             } else { appInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
         }
+
         function proxyRetryOrAlert() {
             if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
             else appAlert('suggestOpenAI')
+        }
+
+        function retryDiffHost() {
+            appError(`Error calling ${ endpoint }. Trying another endpoint...`)
+            getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
+            getShowReply.attemptCnt++
+            getShowReply(convo, callback)
         }
     }
 
@@ -1286,13 +1294,6 @@
         }})}
 
         updateFooterContent()
-
-        function retryDiffHost() {
-            appError(`Error calling ${ endpoint }. Trying another endpoint...`)
-            getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
-            getShowReply.attemptCnt++
-            getShowReply(convo, callback)
-        }
     }
 
     function appShow(answer, footerContent) {
