@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.13
+// @version             2024.6.1.14
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -177,6 +177,7 @@
 // @compatible          qq
 // @compatible          whale
 // @compatible          kiwi
+// @compatible          orion
 // @match               *://*.google.com/search*
 // @match               *://*.google.ad/search*
 // @match               *://*.google.ae/search*
