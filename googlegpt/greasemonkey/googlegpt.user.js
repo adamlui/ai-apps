@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.4
+// @version             2024.6.1.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1297,17 +1297,19 @@
         appDiv.append(appPrefixSpan, appTitleAnchor)
 
         // Create/append 'by KudoAI'
-        const kudoAIspan = document.createElement('span')
-        kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-        const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
-        kudoAIspan.append(kudoAIlink) ; appDiv.append(kudoAIspan)
+        if (!isMobile) {
+            const kudoAIspan = document.createElement('span')
+            kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
+            const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
+            kudoAIspan.append(kudoAIlink) ; appDiv.append(kudoAIspan)
+        }
 
         // Create/append about button
         const aboutSpan = document.createElement('span'),
               aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
               aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
         aboutSpan.id = 'about-btn' // for toggleTooltip()
-        aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = '-0.15rem'
+        aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = `${ isMobile ? 0.25 : -0.15 }rem`
         const aboutSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
         aboutSVGattrs.forEach(([attr, value]) => aboutSVG.setAttribute(attr, value))
         aboutSVGpath.setAttribute('d',
@@ -1320,7 +1322,7 @@
             var speakSpan = document.createElement('span'),
                 speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             speakSpan.id = 'speak-btn' // for toggleTooltip()
-            speakSpan.className = 'corner-btn' ; speakSpan.style.margin = '-0.29rem 5px 0 0'
+            speakSpan.className = 'corner-btn' ; speakSpan.style.margin = `${ isMobile ? '0.11rem 10px' : '-0.29rem 5px' } 0 0`
             const speakSVGattrs = [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']]
             speakSVGattrs.forEach(([attr, value]) => speakSVG.setAttributeNS(null, attr, value))
             const speakSVGpaths = [
