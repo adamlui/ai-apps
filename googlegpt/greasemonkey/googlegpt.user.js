@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.5
+// @version             2024.6.1.6
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1078,7 +1078,7 @@
                     if (endpoint.includes('openai.com')) {
                         try { str_relatedQueries = JSON.parse(event.response).choices[0].message.content }
                         catch (err) { appError(err) ; reject(err) }
-                    } else if (endpoint.includes('binjie.fun')) { 
+                    } else if (endpoint.includes('binjie.fun') && !event.responseText?.includes('很抱歉地')) { 
                         try {
                             const text = event.responseText, chunkSize = 1024
                             let currentIdx = 0
@@ -1230,7 +1230,7 @@
                         }
                     } else { appInfo('Response: ' + event.responseText) ; appAlert('suggestProxy') }
                 } else if (endpoint.includes('binjie.fun')) {
-                    if (event.responseText) {
+                    if (event.responseText && !event.responseText.includes('很抱歉地')) {
                         try {
                             const text = event.responseText, chunkSize = 1024
                             let answer = '', currentIdx = 0
