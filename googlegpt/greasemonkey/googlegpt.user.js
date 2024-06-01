@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.5.31.11
+// @version             2024.6.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -631,10 +631,11 @@
     // Define UI functions
 
     function isDarkMode() {
-        for (const img of document.getElementsByTagName('img'))
-            if (img.alt == 'Google' && img.src.includes('light'))
-                return true        
-        return false
+        const domDarkStatus = [...document.querySelectorAll('span')]
+            .find(span => span.textContent == 'Dark theme') // dark theme status label
+            ?.nextElementSibling.textContent // dark theme status
+        return domDarkStatus == 'On' ? true : domDarkStatus == 'Off' ? false
+             : window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
     }
 
     function toggleSidebar(mode) {
@@ -1590,12 +1591,6 @@
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
 
-    // Init UI flags
-    const scheme = isDarkMode() ? 'dark' : 'light',
-          isFirefox = chatgpt.browser.isFirefox(),
-          isMobile = chatgpt.browser.isMobile(),
-          hasSidebar = document.querySelector('[class*="kp-"]')
-
     // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
     appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
@@ -1622,6 +1617,12 @@
             }
         }
     }) ; const msgs = await msgsLoaded
+
+    // Init UI flags
+    const scheme = isDarkMode() ? 'dark' : 'light',
+          isFirefox = chatgpt.browser.isFirefox(),
+          isMobile = chatgpt.browser.isMobile(),
+          hasSidebar = document.querySelector('[class*="kp-"]')
 
     registerMenu()
 
