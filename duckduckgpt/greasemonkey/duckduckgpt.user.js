@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.10
+// @version             2024.6.1.11
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -641,13 +641,13 @@
     function toggleTooltip(event) { // visibility
         tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
         updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
-        tooltipDiv.style.opacity = event.type == 'mouseover' ? 0.8 : 0
+        tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
     }
 
     function updateTooltip(buttonType) { // text & position
         const cornerBtnTypes = ['about', 'speak', 'ssb', 'wsb'],
-              [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [15, 17] : [1, 32],
-              iniRoffset = spreadFactor * (buttonType == 'send' ? 1.6 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
+              [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [17, 18] : [4, 29],
+              iniRoffset = spreadFactor * (buttonType == 'send' ? 1.5 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
         // Update text
         tooltipDiv.innerText = (
@@ -660,8 +660,8 @@
           : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply' : '' )
 
         // Update position
-        tooltipDiv.style.top = `${ buttonType != 'send' ? -7
-          : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 28 }px`
+        tooltipDiv.style.top = `${ buttonType != 'send' ? -15
+          : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
         tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
     }
 
@@ -1387,9 +1387,10 @@
           tooltipStyle = document.createElement('style')
     tooltipDiv.classList.add('button-tooltip', 'no-user-select')
     tooltipStyle.innerText = '.button-tooltip {'
-        + 'background: black ; padding: 3px 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-        + 'font-size: 0.7rem ; color: white ;' // font style
+        + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 4px 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+        + 'font-size: 0.87em ; color: white ;' // font style
         + 'position: absolute ;' // for updateTooltip() calcs
+        + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
         + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
     document.head.append(tooltipStyle)
 

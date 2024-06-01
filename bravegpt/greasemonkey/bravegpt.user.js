@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.6
+// @version             2024.6.1.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -679,7 +679,7 @@ setTimeout(async () => {
     function toggleTooltip(event) { // visibility
         tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
         updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
-        tooltipDiv.style.opacity = event.type == 'mouseover' ? 0.8 : 0
+        tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
     }
 
     function updateTooltip(buttonType) { // text & position
@@ -1414,9 +1414,10 @@ setTimeout(async () => {
           tooltipStyle = document.createElement('style')
     tooltipDiv.classList.add('button-tooltip', 'no-user-select')
     tooltipStyle.innerText = '.button-tooltip {'
-        + 'background: black ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-        + 'font-size: 0.55rem ; color: white ;' // font style
+        + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 5px 6px 3px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+        + 'font-size: 0.58rem ; color: white ;' // font style
         + 'position: absolute ;' // for updateTooltip() calcs
+        + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
         + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
     document.head.append(tooltipStyle)
 
