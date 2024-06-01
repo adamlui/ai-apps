@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.12
+// @version             2024.6.1.13
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -954,8 +954,8 @@
           : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply' : '' )
 
         // Update position
-        tooltipDiv.style.top = `${ buttonType != 'send' ? -8
-          : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 31 }px`
+        tooltipDiv.style.top = `${ buttonType != 'send' ? -13
+          : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
         tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
     }
 
@@ -1376,7 +1376,7 @@
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' // for updateSSBsvg() + toggleTooltip()
-            wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-0.08rem 9px 0 0'
+            wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-0.1rem 9px 0 0'
             wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan) ; updateWSBsvg()
         }
 
