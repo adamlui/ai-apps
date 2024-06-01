@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.31.1
+// @version             2024.6.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -359,12 +359,10 @@
         infinityMode.toggle()
     })
 
-    // monitor NODE CHANGES to update sidebar toggle visibility
-    const nodeObserver = new MutationObserver(mutations => {
-        mutations.forEach(mutation => {
-            if (mutation.type == 'childList' && mutation.addedNodes.length) {
-                insertToggle()
-    }})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
+    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
+    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
+        if (mutation.type == 'childList' && mutation.addedNodes.length) insertToggle() })})
+    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Define SCRIPT functions
 

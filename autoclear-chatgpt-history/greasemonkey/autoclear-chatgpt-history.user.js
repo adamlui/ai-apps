@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.31.6
+// @version             2024.6.1
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -362,12 +362,10 @@
         saveSetting('autoclear', config.autoclear)
     })
 
-    // monitor NODE CHANGES to update sidebar toggle visibility
-    const nodeObserver = new MutationObserver(mutations => {
-        mutations.forEach(mutation => {
-            if (mutation.type == 'childList' && mutation.addedNodes.length) {
-                insertToggle()
-    }})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
+    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
+    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
+        if (mutation.type == 'childList' && mutation.addedNodes.length) insertToggle() })})
+    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // AUTO-CLEAR on first visit if enabled
     if (config.autoclear) {
@@ -632,7 +630,7 @@
             ol.previousElementSibling.style.display = 'none' // hide temporal heading
             ol.querySelectorAll('li').forEach(li => li.style.display = 'none') // hide chat entry
         })
-        if (!hideHistory.observer) { // init/attach observer to monitor <nav> for restoration of temporal headings on new chats
+        if (!hideHistory.observer) { // monitor <nav> to restore temporal headings on new chats
             hideHistory.observer = new MutationObserver(mutations => mutations.forEach(mutation => {
                 if (mutation.type == 'childList') mutation.addedNodes.forEach(addedNode => {
                     if (addedNode.tagName == 'LI') addedNode.closest('ol').previousElementSibling.style.display = 'inherit'

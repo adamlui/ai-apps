@@ -101,13 +101,11 @@
         infinityMode.toggle()
     })
 
-    // Monitor NODE CHANGES to update sidebar toggle visibility
-    const nodeObserver = new MutationObserver(mutations => {
-        mutations.forEach(mutation => {
-            if (mutation.type == 'childList' && mutation.addedNodes.length) {
-                settings.load(['extensionDisabled']).then(() => {
-                    if (!config.extensionDisabled) insertToggle()
-    })}})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
+    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
+    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
+        if (mutation.type == 'childList' && mutation.addedNodes.length)
+            settings.load(['extensionDisabled']).then(() => { if (!config.extensionDisabled) insertToggle()
+    })})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
     // Define FEEDBACK functions
 
