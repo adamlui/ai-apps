@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.1
+// @version             2024.6.1.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -946,9 +946,9 @@
             buttonType == 'about' ? msgs.menuLabel_about || 'About'
           : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
           : buttonType == 'ssb' ? (( config.stickySidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                   + msgs.menuLabel_stickySidebar || 'Sticky Sidebar' )
+                                   + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' ))
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                   + msgs.menuLabel_widerSidebar || 'Wider Sidebar' )
+                                   + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
           : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply' : '' )
 
         // Update position
