@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.3
+// @version             2024.6.1.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1616,6 +1616,14 @@
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
 
     // Init UI flags
+    await Promise.race([ // dark theme label loaded or 0.5s passed
+        new Promise(resolve => {
+            (function checkDarkThemeLabel() {
+                [...document.querySelectorAll('span')].find(span => span.textContent == 'Dark theme')
+                    ? resolve(true) : setTimeout(checkDarkThemeLabel, 200)
+            })()
+        }), new Promise(resolve => setTimeout(resolve, 500))
+    ])
     const scheme = isDarkMode() ? 'dark' : 'light',
           isFirefox = chatgpt.browser.isFirefox(),
           isMobile = chatgpt.browser.isMobile(),
