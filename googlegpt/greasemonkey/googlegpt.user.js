@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.9
+// @version             2024.6.1.10
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1142,13 +1142,13 @@
             if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
             else appAlert('suggestOpenAI')
         }
+    }
 
-        function retryDiffHost() {
-            appError(`Error calling ${ endpoint }. Trying another endpoint...`)
-            getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
-            getShowReply.attemptCnt++
-            getShowReply(convo, callback)
-        }
+    function retryDiffHost() {
+        appError(`Error calling ${ endpoint }. Trying another endpoint...`)
+        getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
+        getShowReply.attemptCnt++
+        getShowReply(convo)
     }
 
     function getRelatedQueries(query) {
@@ -1227,7 +1227,7 @@
             }
     }}
 
-    async function getShowReply(convo, callback) {
+    async function getShowReply(convo) {
 
         // Initialize attempt properties
         if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []

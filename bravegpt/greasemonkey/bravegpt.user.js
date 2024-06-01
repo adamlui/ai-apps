@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.5
+// @version             2024.6.1.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -885,13 +885,13 @@ setTimeout(async () => {
             if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
             else appAlert('suggestOpenAI')
         }
+    }
 
-        function retryDiffHost() {
-            appError(`Error calling ${ endpoint }. Trying another endpoint...`)
-            getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
-            getShowReply.attemptCnt++
-            getShowReply(convo, callback)
-        }
+    function retryDiffHost() {
+        appError(`Error calling ${ endpoint }. Trying another endpoint...`)
+        getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
+        getShowReply.attemptCnt++
+        getShowReply(convo)
     }
 
     function getRelatedQueries(query) {
@@ -970,7 +970,7 @@ setTimeout(async () => {
             }
     }}
 
-    async function getShowReply(convo, callback) {
+    async function getShowReply(convo) {
 
         // Initialize attempt properties
         if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []

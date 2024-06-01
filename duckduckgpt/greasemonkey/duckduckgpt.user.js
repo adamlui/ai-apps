@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.5
+// @version             2024.6.1.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -848,13 +848,13 @@
             if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
             else appAlert('suggestOpenAI')
         }
+    }
 
-        function retryDiffHost() {
-            appError(`Error calling ${ endpoint }. Trying another endpoint...`)
-            getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
-            getShowReply.attemptCnt++
-            getShowReply(convo, callback)
-        }
+    function retryDiffHost() {
+        appError(`Error calling ${ endpoint }. Trying another endpoint...`)
+        getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
+        getShowReply.attemptCnt++
+        getShowReply(convo)
     }
 
     function getRelatedQueries(query) {
@@ -933,7 +933,7 @@
             }
     }}
 
-    async function getShowReply(convo, callback) {
+    async function getShowReply(convo) {
 
         // Initialize attempt properties
         if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []
