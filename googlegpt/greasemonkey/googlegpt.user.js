@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.2.1
+// @version             2024.6.2.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1175,7 +1175,7 @@
         appError(`Error calling ${ endpoint }. Trying another endpoint...`)
         getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
         getShowReply.attemptCnt++
-        getShowReply(convo)
+        getShowReply(msgChain)
     }
 
     function getRelatedQueries(query) {
@@ -1254,7 +1254,7 @@
             }
     }}
 
-    async function getShowReply(convo) {
+    async function getShowReply(msgChain) {
 
         // Initialize attempt properties
         if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []
@@ -1264,7 +1264,7 @@
         await pickAPI()
         GM.xmlHttpRequest({
             method: endpointMethod, url: endpoint, headers: createHeaders(endpoint),
-            responseType: 'text', data: createPayload(endpoint, convo), onload: processText,
+            responseType: 'text', data: createPayload(endpoint, msgChain), onload: processText,
             onerror: err => { appError(err)
                 if (!config.proxyAPIenabled)
                     appAlert(!accessKey ? 'login' : ['openAInotWorking', 'suggestProxy'])
@@ -1276,7 +1276,7 @@
 
         // Get/show related queries
         if (!config.rqDisabled) {
-            const lastQuery = convo[convo.length - 1]
+            const lastQuery = msgChain[msgChain.length - 1]
             getRelatedQueries(lastQuery.content).then(relatedQueries => {
                 if (relatedQueries && appDiv.querySelector('textarea')) {
 
@@ -1472,8 +1472,8 @@
             standbyBtn.addEventListener('click', () => {
                 appAlert('waitingResponse')
                 const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-                convo.push({ role: 'user', content: query })
-                getShowReply(convo)
+                msgChain.push({ role: 'user', content: query })
+                getShowReply(msgChain)
             })
 
         // Otherwise create/append ChatGPT response
@@ -1570,12 +1570,12 @@
 
         function handleSubmit(event) {
             event.preventDefault()
-            if (convo.length > 2) convo.splice(0, 2) // keep token usage maintainable
+            if (msgChain.length > 2) msgChain.splice(0, 2) // keep token usage maintainable
             const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || '',
                   yourReply = `${ chatTextarea.value } (reply in ${ config.replyLanguage })`
-            convo.push({ role: 'assistant', content: prevReplyTrimmed })
-            convo.push({ role: 'user', content: yourReply })
-            getShowReply(convo)
+            msgChain.push({ role: 'assistant', content: prevReplyTrimmed })
+            msgChain.push({ role: 'user', content: yourReply })
+            getShowReply(msgChain)
 
             // Remove re-added reply section listeners
             replyForm.removeEventListener('keydown', handleEnter)
@@ -1623,7 +1623,7 @@
 
     // Run MAIN routine
 
-    // Init CONFIG/CONVO/MENU
+    // Init CONFIG/MSGCHAIN/MENU
     const config = {
         appName: 'GoogleGPT', appSymbol: '🤖', keyPrefix: 'googleGPT',
         appURL: 'https://www.googlegpt.io', gitHubURL: 'https://github.com/KudoAI/googlegpt',
@@ -1639,7 +1639,7 @@
     loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
                 'rqDisabled', 'stickySidebar', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    const convo = [], // to store queries + answers for contextual replies
+    const msgChain = [], // to store queries + answers for contextual replies
           menuIDs = [] // to store registered commands for removal while preserving order
     const state = {
         symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
@@ -1770,8 +1770,8 @@
     else {
         appAlert('waitingResponse')
         const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-        convo.push({ role: 'user', content: query })
-        getShowReply(convo)
+        msgChain.push({ role: 'user', content: query })
+        getShowReply(msgChain)
     }
 
 })()
