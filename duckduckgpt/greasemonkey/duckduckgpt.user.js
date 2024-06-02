@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.2.3
+// @version             2024.6.2.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -456,8 +456,8 @@
         appDiv.appendChild(alertP)
     }
 
-    function appInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
-    function appError(msg) { console.error(`${ config.appSymbol } ${ config.appName } >> ERROR: ${ msg }`) }
+    function consoleInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
+    function consoleErr(msg) { console.error(`${ config.appSymbol } ${ config.appName } >> ERROR: ${ msg }`) }
 
     // Define UI functions
 
@@ -710,7 +710,7 @@
     function getOpenAItoken() {
         return new Promise(resolve => {
             const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
-            appInfo('OpenAI access token: ' + accessToken)
+            consoleInfo('OpenAI access token: ' + accessToken)
             if (!accessToken) {
                 GM.xmlHttpRequest({ url: openAIendpoints.session, onload: response => {
                     if (isBlockedbyCloudflare(response.responseText)) {
@@ -754,7 +754,7 @@
             if (!accessKey) { appAlert('login') ; return }
             endpointMethod = 'POST' ; model = 'gpt-3.5-turbo'
         }
-        appInfo('Endpoint used: ' + endpoint)
+        consoleInfo('Endpoint used: ' + endpoint)
     }
 
     function createHeaders(api) {
@@ -796,8 +796,8 @@
 
     function processText(resp) {
         if (resp.status != 200) {
-            appError('Response status: ' + resp.status)
-            appError('Response text: ' + resp.responseText)
+            consoleErr('Response status: ' + resp.status)
+            consoleErr('Response text: ' + resp.responseText)
             if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpoints.length)
                 retryDiffHost()
             else if (resp.status == 401 && !config.proxyAPIenabled) {
@@ -814,11 +814,11 @@
                 try {
                     appShow(JSON.parse(resp.response).choices[0].message.content)
                 } catch (err) {
-                    appInfo('Response: ' + resp.response)
-                    appError(appAlerts.parseFailed + ': ' + err)
+                    consoleInfo('Response: ' + resp.response)
+                    consoleErr(appAlerts.parseFailed + ': ' + err)
                     appAlert('openAInotWorking, suggestProxy')
                 }
-            } else { appInfo('Response: ' + resp.responseText) ; appAlert('openAInotWorking, suggestProxy') }
+            } else { consoleInfo('Response: ' + resp.responseText) ; appAlert('openAInotWorking, suggestProxy') }
         } else if (endpoint.includes('binjie.fun')) {
             if (resp.responseText) {
                 try {
@@ -830,11 +830,11 @@
                     }
                     appShow(answer) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
-                    appInfo('Response: ' + resp.responseText)
-                    appError(appAlerts.parseFailed + ': ' + err)
+                    consoleInfo('Response: ' + resp.responseText)
+                    consoleErr(appAlerts.parseFailed + ': ' + err)
                     proxyRetryOrAlert()
                 }
-            } else { appInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
+            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
         } else if (endpoint.includes('gptforlove.com')) {
             if (resp.responseText && !resp.responseText.includes('Fail')) {
                 try {
@@ -843,11 +843,11 @@
                     if (lastObj.id) ids.gptPlus.parentID = lastObj.id
                     appShow(lastObj.text) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
-                    appInfo('Response: ' + resp.responseText)
-                    appError(appAlerts.parseFailed + ': ' + err)
+                    consoleInfo('Response: ' + resp.responseText)
+                    consoleErr(appAlerts.parseFailed + ': ' + err)
                     proxyRetryOrAlert()
                 }
-            } else { appInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
+            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
         } else if (endpoint.includes('mixerbox.com')) {
             if (resp.responseText) {
                 try {
@@ -856,21 +856,21 @@
                         .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                     appShow(extractedData.join('')) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
-                    appInfo('Response: ' + resp.responseText)
-                    appError(appAlerts.parseFailed + ': ' + err)
+                    consoleInfo('Response: ' + resp.responseText)
+                    consoleErr(appAlerts.parseFailed + ': ' + err)
                     proxyRetryOrAlert()
                 }
-            } else { appInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
+            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
         } else if (endpoint.includes('onrender.com')) {
             if (resp.responseText) {
                 try {
                     appShow(resp.responseText) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
-                    appInfo('Response: ' + resp.responseText)
-                    appError(appAlerts.parseFailed + ': ' + err)
+                    consoleInfo('Response: ' + resp.responseText)
+                    consoleErr(appAlerts.parseFailed + ': ' + err)
                     proxyRetryOrAlert()
                 }
-            } else { appInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
+            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
         }
 
         function proxyRetryOrAlert() {
@@ -880,7 +880,7 @@
     }
 
     function retryDiffHost() {
-        appError(`Error calling ${ endpoint }. Trying another endpoint...`)
+        consoleErr(`Error calling ${ endpoint }. Trying another endpoint...`)
         getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
         getShowReply.attemptCnt++
         getShowReply(msgChain)
@@ -905,7 +905,7 @@
                     let str_relatedQueries = ''
                     if (endpoint.includes('openai.com')) {
                         try { str_relatedQueries = JSON.parse(event.response).choices[0].message.content }
-                        catch (err) { appError(err) ; reject(err) }
+                        catch (err) { consoleErr(err) ; reject(err) }
                     } else if (endpoint.includes('binjie.fun')) { 
                         try {
                             const text = event.responseText, chunkSize = 1024
@@ -914,29 +914,29 @@
                                 const chunk = text.substring(currentIdx, currentIdx + chunkSize)
                                 currentIdx += chunkSize ; str_relatedQueries += chunk
                             }
-                        } catch (err) { appError(err) ; reject(err) }
+                        } catch (err) { consoleErr(err) ; reject(err) }
                     } else if (endpoint.includes('gptforlove.com')) {
                         try {
                             let chunks = event.responseText.trim().split('\n')
                             str_relatedQueries = JSON.parse(chunks[chunks.length - 1]).text
-                        } catch (err) { appError(err) ; reject(err) }
+                        } catch (err) { consoleErr(err) ; reject(err) }
                     } else if (endpoint.includes('mixerbox.com')) {
                         try {
                             const extractedData = Array.from(event.responseText.matchAll(/data:(.*)/g), match => match[1]
                                 .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                                 .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                             str_relatedQueries = extractedData.join('')
-                        } catch (err) { appError(err) ; reject(err) }
+                        } catch (err) { consoleErr(err) ; reject(err) }
                     } else if (endpoint.includes('onrender.com')) {
                         try { str_relatedQueries = event.responseText }
-                        catch (err) { appError(err) ; reject(err) }
+                        catch (err) { consoleErr(err) ; reject(err) }
                     }
                     const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
                         .slice(0, 5) // limit to 1st 5
                         .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
                     resolve(arr_relatedQueries)
                 },
-                onerror: err => { appError(err) ; reject(err) }
+                onerror: err => { consoleErr(err) ; reject(err) }
             })
     })}
 
@@ -973,7 +973,7 @@
         GM.xmlHttpRequest({
             method: endpointMethod, url: endpoint, headers: createHeaders(endpoint),
             responseType: 'text', data: createPayload(endpoint, msgChain), onload: processText,
-            onerror: err => { appError(err)
+            onerror: err => { consoleErr(err)
                 if (!config.proxyAPIenabled)
                     appAlert(!accessKey ? 'login' : ['openAInotWorking', 'suggestProxy'])
                 else { // if proxy mode
