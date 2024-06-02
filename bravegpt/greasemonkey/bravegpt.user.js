@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.2
+// @version             2024.6.2.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -182,12 +182,7 @@ setTimeout(async () => {
         const pamLabel = state.symbol[+!config.proxyAPIenabled] + ' '
                        + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
                        + state.separator + state.word[+!config.proxyAPIenabled]
-        menuIDs.push(GM_registerMenuCommand(pamLabel, () => {
-            saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+!config.proxyAPIenabled])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-            location.reload() // re-send query using new endpoint
-        }))
+        menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
         // Add command to toggle auto-get mode
         const agmLabel = state.symbol[+config.autoGetDisabled] + ' '
@@ -394,11 +389,21 @@ setTimeout(async () => {
             if (msg.includes('login')) deleteOpenAIcookies()
             if (msg.match(/waiting|loading/i)) alertP.classList.add('loading')
 
+            // Hyperlink msgs.alert_switching<On|Off>
+            const foundState = ['On', 'Off'].find(state =>
+                msg.includes(alerts['alert_switching' + state] || state.toLowerCase()))
+            if (foundState) { // hyperlink switch phrase for click listener to toggleProxyMode()
+                const switchPhrase = alerts['alert_Switching' + foundState] || 'switching ' + foundState.toLowerCase()
+                msg = msg.replace(switchPhrase, `<a href="#" class="proxyToggle">${switchPhrase}</a>`)
+            }
+
             // Create/fill/append msg span
             const msgSpan = document.createElement('span')
             msgSpan.innerHTML = msg ; alertP.appendChild(msgSpan)
 
-            // Insert login link if necessary
+            // Insert/activate toggle/login links if necessary
+            msgSpan.querySelector('.proxyToggle') // needs click listener to toggleProxyMode(), add it
+                ?.addEventListener('click', toggleProxyMode)
             if (msg.includes('@')) { // needs login link, add it
                 alertP.append(createAnchor('https://chatgpt.com', 'chatgpt.com'),
                     ' (', msgs.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
@@ -416,15 +421,6 @@ setTimeout(async () => {
         return document.documentElement.classList.contains('dark') ? true
              : document.documentElement.classList.contains('light') ? false
              : window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
-    }
-
-    function toggleSidebar(mode) {
-        saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
-        updateTweaksStyle()
-        if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg()
-        notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
-            + ' ' + state.word[+!config[mode + 'Sidebar']])
-        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     }
 
     function updateAppLogoSrc() {
@@ -561,6 +557,25 @@ setTimeout(async () => {
         if (!wsbSpan.contains(wsbSVG)) wsbSpan.append(wsbSVG)
     }
 
+    function updateTooltip(buttonType) { // text & position
+        const cornerBtnTypes = ['about', 'speak', 'wsb'],
+              [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [15, 18] : [5, 28],
+              iniRoffset = spreadFactor * (buttonType == 'send' ? 1.65 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
+
+        // Update text
+        tooltipDiv.innerText = (
+            buttonType == 'about' ? msgs.menuLabel_about || 'About'
+          : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
+          : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
+                                   + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
+          : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply' : '' )
+
+        // Update position
+        tooltipDiv.style.top = `${ buttonType != 'send' ? -6
+          : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 34 }px`
+        tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
+    }
+
     function updateFooterContent() {
         fetchJSON('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
             (err, advertisersData) => { if (err) return
@@ -686,31 +701,28 @@ setTimeout(async () => {
         return anchor
     }
 
-    // Define TOOLTIP functions
+    // Define TOGGLE functions
+
+    function toggleProxyMode() {
+        saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
+        notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+!config.proxyAPIenabled])
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        location.reload() // re-send query using new endpoint
+    }
+
+    function toggleSidebar(mode) {
+        saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
+        updateTweaksStyle()
+        if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg()
+        notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
+            + ' ' + state.word[+!config[mode + 'Sidebar']])
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+    }
 
     function toggleTooltip(event) { // visibility
         tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
         updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
         tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
-    }
-
-    function updateTooltip(buttonType) { // text & position
-        const cornerBtnTypes = ['about', 'speak', 'wsb'],
-              [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [15, 18] : [5, 28],
-              iniRoffset = spreadFactor * (buttonType == 'send' ? 1.65 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
-
-        // Update text
-        tooltipDiv.innerText = (
-            buttonType == 'about' ? msgs.menuLabel_about || 'About'
-          : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
-          : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                   + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
-          : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply' : '' )
-
-        // Update position
-        tooltipDiv.style.top = `${ buttonType != 'send' ? -6
-          : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 34 }px`
-        tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
     }
 
     // Define SESSION functions

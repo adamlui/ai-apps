@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.2
+// @version             2024.6.2.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -220,12 +220,7 @@
         const pamLabel = state.symbol[+!config.proxyAPIenabled] + ' '
                        + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
                        + state.separator + state.word[+!config.proxyAPIenabled]
-        menuIDs.push(GM_registerMenuCommand(pamLabel, () => {
-            saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-            notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+!config.proxyAPIenabled])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-            location.reload() // re-send query using new endpoint
-        }))
+        menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
         // Add command to toggle auto-get mode
         const agmLabel = state.symbol[+config.autoGetDisabled] + ' '
@@ -438,11 +433,21 @@
             if (msg.includes('login')) deleteOpenAIcookies()
             if (msg.match(/waiting|loading/i)) alertP.classList.add('loading')
 
+            // Hyperlink msgs.alert_switching<On|Off>
+            const foundState = ['On', 'Off'].find(state =>
+                msg.includes(alerts['alert_switching' + state] || state.toLowerCase()))
+            if (foundState) { // hyperlink switch phrase for click listener to toggleProxyMode()
+                const switchPhrase = alerts['alert_Switching' + foundState] || 'switching ' + foundState.toLowerCase()
+                msg = msg.replace(switchPhrase, `<a href="#" class="proxyToggle">${switchPhrase}</a>`)
+            }
+
             // Create/fill/append msg span
             const msgSpan = document.createElement('span')
             msgSpan.innerHTML = msg ; alertP.appendChild(msgSpan)
 
-            // Insert login link if necessary
+            // Insert/activate toggle/login links if necessary
+            msgSpan.querySelector('.proxyToggle') // needs click listener to toggleProxyMode(), add it
+                ?.addEventListener('click', toggleProxyMode)
             if (msg.includes('@')) { // needs login link, add it
                 alertP.append(createAnchor('https://chatgpt.com', 'chatgpt.com'),
                     ' (', msgs.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
@@ -457,15 +462,6 @@
     // Define UI functions
 
     function isCenteredMode() { return document.documentElement.classList.toString().includes('center') }
-
-    function toggleSidebar(mode) {
-        saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
-        updateTweaksStyle()
-        if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg() ; else updateSSBsvg()
-        notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
-            + ' ' + state.word[+!config[mode + 'Sidebar']])
-        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-    }
 
     function updateAppLogoSrc() {
         appLogoImg.onerror = () => appLogoImg.style.display = 'none'
@@ -625,36 +621,6 @@
         if (!ssbSpan.contains(ssbSVG)) ssbSpan.append(ssbSVG)
     }
 
-    function createSVGpath(attrs) {
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-        for (const attr in attrs) path.setAttributeNS(null, attr, attrs[attr])
-        return path
-    }
-
-    function createAnchor(linkHref, displayContent) {
-        const anchor = document.createElement('a'),
-              anchorAttrs = [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']]
-        anchorAttrs.forEach(([attr, value]) => anchor.setAttribute(attr, value))
-        if (displayContent) anchor.append(displayContent)
-        return anchor
-    }
-
-    function fetchJSON(url, callback) { // for dynamic footer
-        GM.xmlHttpRequest({ method: 'GET', url: url, onload: response => {
-            if (response.status >= 200 && response.status < 300) {
-                try { const data = JSON.parse(response.responseText) ; callback(null, data) }
-                catch (err) { callback(err, null) }
-            } else callback(new Error('Failed to load data: ' + response.statusText), null)
-    }})}
-
-    // Define TOOLTIP functions
-
-    function toggleTooltip(event) { // visibility
-        tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
-        updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
-        tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
-    }
-
     function updateTooltip(buttonType) { // text & position
         const cornerBtnTypes = ['about', 'speak', 'ssb', 'wsb'],
               [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [17, 18] : [4, 29],
@@ -674,6 +640,54 @@
         tooltipDiv.style.top = `${ buttonType != 'send' ? -15
           : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
         tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
+    }
+
+    function fetchJSON(url, callback) { // for dynamic footer
+        GM.xmlHttpRequest({ method: 'GET', url: url, onload: response => {
+            if (response.status >= 200 && response.status < 300) {
+                try { const data = JSON.parse(response.responseText) ; callback(null, data) }
+                catch (err) { callback(err, null) }
+            } else callback(new Error('Failed to load data: ' + response.statusText), null)
+    }})}
+
+    // Define FACTORY functions
+
+    function createSVGpath(attrs) {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+        for (const attr in attrs) path.setAttributeNS(null, attr, attrs[attr])
+        return path
+    }
+
+    function createAnchor(linkHref, displayContent) {
+        const anchor = document.createElement('a'),
+              anchorAttrs = [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']]
+        anchorAttrs.forEach(([attr, value]) => anchor.setAttribute(attr, value))
+        if (displayContent) anchor.append(displayContent)
+        return anchor
+    }
+
+    // Define TOGGLE functions
+
+    function toggleProxyMode() {
+        saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
+        notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+!config.proxyAPIenabled])
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        location.reload() // re-send query using new endpoint
+    }
+
+    function toggleSidebar(mode) {
+        saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
+        updateTweaksStyle()
+        if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg() ; else updateSSBsvg()
+        notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
+            + ' ' + state.word[+!config[mode + 'Sidebar']])
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+    }
+
+    function toggleTooltip(event) { // visibility
+        tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
+        updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
+        tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
     }
 
     // Define SESSION functions
