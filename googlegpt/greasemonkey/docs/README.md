@@ -115,6 +115,8 @@ GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoA
 
 - [Orion](https://apps.apple.com/app/orion-browser-by-kagi/id1484498200)
 
+<br>
+
 If you've tested it to work in a browser not listed, create a [pull request](https://github.googlegpt.io/pulls) to become a contributor!
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
