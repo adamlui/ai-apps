@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.2.2
+// @version             2024.6.2.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -616,8 +616,8 @@
 
         alerts.forEach(alert => { // process each alert
             let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
-            if (msg.includes('login')) deleteOpenAIcookies()
-            if (msg.match(/waiting|loading/i)) alertP.classList.add('loading')
+            if (msg.includes(appAlerts.login)) deleteOpenAIcookies()
+            if (msg.includes(appAlerts.waitingResponse)) alertP.classList.add('loading')
 
             // Hyperlink msgs.alert_switching<On|Off>
             const foundState = ['On', 'Off'].find(state =>

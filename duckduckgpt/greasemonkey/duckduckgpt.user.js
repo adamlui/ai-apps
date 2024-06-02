@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.2.2
+// @version             2024.6.2.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -428,10 +428,10 @@
         while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear appDiv content
         const alertP = document.createElement('p') ; alertP.className = 'no-user-select'
 
-        alerts.forEach(alert => { // process each alert
+        alerts.forEach(alert => { // process each alert for display
             let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
-            if (msg.includes('login')) deleteOpenAIcookies()
-            if (msg.match(/waiting|loading/i)) alertP.classList.add('loading')
+            if (msg.includes(appAlerts.login)) deleteOpenAIcookies()
+            if (msg.includes(appAlerts.waitingResponse)) alertP.classList.add('loading')
 
             // Hyperlink msgs.alert_switching<On|Off>
             const foundState = ['On', 'Off'].find(state =>
