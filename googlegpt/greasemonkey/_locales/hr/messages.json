@@ -37,7 +37,7 @@
   "alert_parseFailed": { "message": "Raščlanjivanje odgovora JSON nije uspjelo" },
   "alert_checkCloudflare": { "message": "Prođite sigurnosnu provjeru Cloudflare" },
   "alert_notWorking": { "message": "Ne ide." },
-  "alert_try": { "message": "﻿Pokušaj" },
+  "alert_try": { "message": "Pokušaj" },
   "alert_switchingOn": { "message": "uključuje." },
   "alert_switchingOff": { "message": "Isključivanje" },
   "buttonLabel_sendQueryToGPT": { "message": "Pošaljite upit za pretraživanje GPT-u" },
