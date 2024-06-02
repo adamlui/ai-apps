@@ -109,7 +109,7 @@ GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoA
 <br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/logos/platforms/android/head-plus-word/white/logo150x24.png?latest"><img alt="Android" width=111 src="https://media.googlegpt.io/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png?latest"></picture><br>
 
 - [Kiwi](https://kiwibrowser.com/) (Recommended)
-- [Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)
+- [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)
 
 <br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/logos/platforms/ios/apple-plus-word/white/logo150x71.png?latest"><img alt="iOS" width=55 src="https://media.googlegpt.io/images/logos/platforms/ios/apple-plus-word/black/logo150x71.png?latest"></picture>
 
