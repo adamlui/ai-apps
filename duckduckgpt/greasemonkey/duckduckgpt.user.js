@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.1.13
+// @version             2024.6.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -428,18 +428,27 @@
     function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
-    function appAlert(msg) {
-        msg = appAlerts[msg] || msg
-        if (msg.includes('login')) deleteOpenAIcookies()
-        while (appDiv.firstChild) { appDiv.removeChild(appDiv.firstChild) }
-        const alertP = document.createElement('p') ; alertP.textContent = msg
-        alertP.className = 'no-user-select'
-        if (/waiting|loading/i.test(msg)) alertP.classList.add('loading')
-        if (msg.includes('@')) { // needs login link, add it
-            alertP.append(createAnchor('https://chatgpt.com', 'chatgpt.com'),
-                ' (', msgs.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
-        }
-        appDiv.append(alertP)
+    function appAlert(...alerts) {
+        alerts = alerts.flat() // flatten array args nested by spread operator
+        while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear appDiv content
+        const alertP = document.createElement('p') ; alertP.className = 'no-user-select'
+
+        alerts.forEach(alert => { // process each alert
+            let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
+            if (msg.includes('login')) deleteOpenAIcookies()
+            if (msg.match(/waiting|loading/i)) alertP.classList.add('loading')
+
+            // Create/fill/append msg span
+            const msgSpan = document.createElement('span')
+            msgSpan.innerHTML = msg ; alertP.appendChild(msgSpan)
+
+            // Insert login link if necessary
+            if (msg.includes('@')) { // needs login link, add it
+                alertP.append(createAnchor('https://chatgpt.com', 'chatgpt.com'),
+                    ' (', msgs.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
+            }
+        })
+        appDiv.appendChild(alertP)
     }
 
     function appInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
@@ -722,7 +731,7 @@
                 entry => !getShowReply.triedEndpoints?.includes(entry[0]))
             const entry = untriedEndpoints[Math.floor(chatgpt.randomFloat() * untriedEndpoints.length)]
             if (!entry) // no more proxy endpoints left untried
-                appAlert('suggestOpenAI')
+                appAlert('proxyNotWorking', 'suggestOpenAI')
             else { endpoint = entry[0] ; endpointMethod = entry[1].method }
         } else { // use OpenAI API
             endpoint = openAIendpoints.chat
@@ -780,9 +789,12 @@
             else if (resp.status == 401 && !config.proxyAPIenabled) {
                 GM_deleteValue(config.keyPrefix + '_openAItoken') ; appAlert('login') }
             else if (resp.status == 403)
-                appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'checkCloudflare')
-            else if (resp.status == 429) appAlert('tooManyRequests')
-            else appAlert(config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy')
+                appAlert(config.proxyAPIenabled ? ['proxyNotWorking', 'suggestOpenAI'] : 'checkCloudflare')
+            else if (resp.status == 429)
+                appAlert('tooManyRequests')
+            else // uncommon status
+                appAlert(`${ config.proxyAPIenabled ? 'proxyN' : 'openAIn' }otWorking`,
+                         `suggest${ config.proxyAPIenabled ? 'OpenAI' : 'Proxy' }`)
         } else if (endpoint.includes('openai.com')) {
             if (resp.response) {
                 try {
@@ -790,9 +802,9 @@
                 } catch (err) {
                     appInfo('Response: ' + resp.response)
                     appError(appAlerts.parseFailed + ': ' + err)
-                    appAlert('suggestProxy')
+                    appAlert('openAInotWorking, suggestProxy')
                 }
-            } else { appInfo('Response: ' + resp.responseText) ; appAlert('suggestProxy') }
+            } else { appInfo('Response: ' + resp.responseText) ; appAlert('openAInotWorking, suggestProxy') }
         } else if (endpoint.includes('binjie.fun')) {
             if (resp.responseText) {
                 try {
@@ -849,7 +861,7 @@
 
         function proxyRetryOrAlert() {
             if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-            else appAlert('suggestOpenAI')
+            else appAlert('proxyNotWorking', 'suggestOpenAI')
         }
     }
 
@@ -947,12 +959,12 @@
         GM.xmlHttpRequest({
             method: endpointMethod, url: endpoint, headers: createHeaders(endpoint),
             responseType: 'text', data: createPayload(endpoint, convo), onload: processText,
-            onerror: err => {
-                appError(err)
-                if (!config.proxyAPIenabled) appAlert(!accessKey ? 'login' : 'suggestProxy')
+            onerror: err => { appError(err)
+                if (!config.proxyAPIenabled)
+                    appAlert(!accessKey ? 'login' : ['openAInotWorking', 'suggestProxy'])
                 else { // if proxy mode
                     if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
-                    else appAlert('suggestOpenAI')
+                    else appAlert('proxyNotWorking', 'suggestOpenAI')
             }}
         })
 
@@ -1293,7 +1305,7 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@07e1726/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@ae440034e/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
@@ -1355,19 +1367,15 @@
 
     // Init ALERTS
     const appAlerts = {
-        waitingResponse: ( msgs.alert_waitingResponse || 'Waiting for ChatGPT response' ) + '...',
-        login: ( msgs.alert_login || 'Please login' ) + ' @ ',
-        tooManyRequests: ( msgs.alert_tooManyRequests || 'ChatGPT is flooded with too many requests' ) + '. '
-            + ( config.proxyAPIenabled ? ( msgs.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
-                                       : ( msgs.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' )),
-        parseFailed: ( msgs.alert_parseFailed || 'Failed to parse response JSON' ) + '. '
-            + ( config.proxyAPIenabled ? ( msgs.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
-                                       : ( msgs.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' )),
-        checkCloudflare: ( msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' ) + ' @ ',
-        suggestProxy: ( msgs.alert_openAInotWorking || 'OpenAI API is not working' ) + '. '
-            + ( msgs.alert_suggestProxy || 'Try switching on Proxy Mode in toolbar' ),
-        suggestOpenAI: ( msgs.alert_proxyNotWorking || 'Proxy API is not working' ) + '. '
-            + ( msgs.alert_suggestOpenAI || 'Try switching off Proxy Mode in toolbar' )
+        waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
+        login:            `${ msgs.alert_login || 'Please login' } @ `,
+        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
+        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
+        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
+        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
+        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
+        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
+        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
     }
 
     // STYLIZE elements
