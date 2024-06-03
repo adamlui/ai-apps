@@ -158,7 +158,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.19
+// @version             2024.6.3.20
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -703,17 +703,18 @@
                 function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
             ], '', 515) // About modal width
 
-        // Re-format buttons to include emoji + localized label + hide Dismiss button
-        for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-            if (/updates/i.test(button.textContent)) button.textContent = (
+        // Resize + format buttons to include emoji + localized label + hide Dismiss button
+        for (const btn of document.getElementById(aboutAlertID).querySelectorAll('button')) {
+            btn.style.height = '50px' ; // re-size to fit meaty text content
+            if (/updates/i.test(btn.textContent)) btn.textContent = (
                 '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
-            else if (/support/i.test(button.textContent)) button.textContent = (
+            else if (/support/i.test(btn.textContent)) btn.textContent = (
                 '🧠 ' + ( msgs.buttonLabel_getSupport || 'Get Support' ))
-            else if (/review/i.test(button.textContent)) button.textContent = (
+            else if (/review/i.test(btn.textContent)) btn.textContent = (
                 '⭐ ' + ( msgs.buttonLabel_leaveReview || 'Leave a Review' ))
-            else if (/apps/i.test(button.textContent)) button.textContent = (
+            else if (/apps/i.test(btn.textContent)) btn.textContent = (
                 '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
-            else button.style.display = 'none' // hide Dismiss button
+            else btn.style.display = 'none' // hide Dismiss button
         }
     }
 
@@ -900,15 +901,16 @@
               + '.googlegpt > pre ul { margin: -10px 0 -6px ; padding-left: 1.5em }' // reduce v-spacing, indent
               + '.googlegpt > pre li { margin: -10px 0 ; list-style: unset }' ) // reduce v-spacing, show left symbols
           + '.katex-html { display: none }' // hide unrendered math
+          + '.chatgpt-notify { padding: 13px 13px 13px 18px !important }' // pad notifications
           + '.chatgpt-modal > div { 17px 20px 24px 20px !important }' // increase alert padding
           + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
-          + '.chatgpt-modal p { margin: 0 0 -9px 4px ; font-size: 1.2rem ; line-height: 1.45 }' // position/size alert msg
+          + '.chatgpt-modal p { margin: 14px 0 -29px 4px ; font-size: 1.28em ; line-height: 1.57 }' // position/size alert msg
           + '.chatgpt-modal button {' // alert buttons
               + 'font-size: 0.84rem ; text-transform: uppercase ; min-width: 113px ;'
               + ( !isMobile ? 'padding: 5px !important ;' : '' )
-              + 'cursor: pointer ; border-radius: 0 !important ;'
+              + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
               + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
-          + `.modal-buttons { margin: 28px 4px ${ isMobile ? '2px 4px' : '-3px -4px' } !important }` // position alert buttons
+          + `.modal-buttons { margin: 42px 4px ${ isMobile ? '2px 4px' : '-3px -4px' } !important }` // position alert buttons
           + ( scheme == 'dark' ? // darkmode alert styles
               ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                   + 'background-color: black !important ; color: white }'
@@ -935,9 +937,6 @@
         // Update tweaks style based on settings (for tweaks init + appShow() + toggleSidebar())
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                               + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
-
-        // Re-pad site notifications
-        tweaksStyle.innerText += '.chatgpt-notify { padding: 13px 13px 13px 18px !important }'
 
         // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for getShowReply()'s RQ show + menu RQ toggle)
         const answerPre = document.querySelector('.googlegpt > pre'),
