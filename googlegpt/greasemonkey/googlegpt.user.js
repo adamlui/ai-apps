@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.2.4
+// @version             2024.6.2.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1030,68 +1030,60 @@
 
     // Define ANSWER functions
 
-    let endpoint, endpointMethod, accessKey, model
-    async function pickAPI() {
+    function pickAPI() {
+        let chosenAPI
         if (config.proxyAPIenabled) { // randomize proxy API
-            const untriedEndpoints = proxyEndpoints.filter(
-                entry => !getShowReply.triedEndpoints?.includes(entry[0]))
-            const entry = untriedEndpoints[Math.floor(chatgpt.randomFloat() * untriedEndpoints.length)]
-            if (!entry) // no more proxy endpoints left untried
-                appAlert('proxyNotWorking', 'suggestOpenAI')
-            else { endpoint = entry[0] ; endpointMethod = entry[1].method }
-        } else { // use OpenAI API
-            endpoint = openAIendpoints.chat
-            accessKey = await Promise.race([getOpenAItoken(), new Promise(reject =>
-                setTimeout(() => reject(new Error('Timeout occurred')), 3000))])
-            if (!accessKey) { appAlert('login') ; return }
-            endpointMethod = 'POST' ; model = 'gpt-3.5-turbo'
-        }
-        consoleInfo('Endpoint used: ' + endpoint)
+            const untriedAPIs = Object.keys(apis).filter( // filter out OpenAI + tried APIs
+                api => api != 'OpenAI' && !getShowReply.triedAPIs.includes(api))
+            chosenAPI = untriedAPIs[ // pick random array entry
+                Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]
+            if (!chosenAPI) { consoleErr('No proxy APIs left untried') ; return null }
+        } else chosenAPI = 'OpenAI'
+
+        // Log chosen API endpoint
+        let logPrefix = 'getShowReply() » '
+        try { logPrefix = pickAPI.arguments.callee.caller.name + '() » ' } catch (err) {}
+        consoleInfo(logPrefix + 'Endpoint used: ' + apis[chosenAPI].endpoint)
+        return chosenAPI
     }
 
     function createHeaders(api) {
         let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ipv4.generate({ verbose: false })}
-        if (api.includes('openai.com')) headers.Authorization = 'Bearer ' + accessKey
-        headers.Referer = headers.Origin = ( // preserve expected traffic src
-            api.includes('openai.com') ? 'https://chatgpt.com'
-          : api.includes('binjie.fun') ? 'https://chat18.aichatos.xyz'
-          : api.includes('gptforlove.com') ? 'https://ai27.gptforlove.com'
-          : api.includes('mixerbox.com') ? 'https://chatai.mixerbox.com'
-          : api.includes('onrender.com') ? 'https://e8.frechat.xyz' : ''
-        )
+        if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
+        headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // prserve expected traffic src
         return headers
     }
 
     const ids = { gptPlus: { parentID: '' }, yqCloud: { userID: '#/chat/' + Date.now() }}
     function createPayload(api, msgs) {
         let payload = {}
-        if (api.includes('openai.com'))
-            payload = { messages: msgs, model: model, max_tokens: 4000 }
-        else if  (api.includes('binjie.fun')) {
+        if (api == 'OpenAI')
+            payload = { messages: msgs, model: 'gpt-3.5-turbo', max_tokens: 4000 }
+        else if  (api == 'AIchatOS') {
             payload = {
                 prompt: msgs[msgs.length - 1].content,
                 withoutContext: false, userId: ids.yqCloud.userID, network: true
             }
-        } else if (api.includes('gptforlove.com')) {
+        }  else if (api == 'Free Chat')
+            payload = { messages: msgs, model: 'gemma-7b-it' }
+        else if (api == 'GPTforLove') {
             payload = {
                 prompt: msgs[msgs.length - 1].content,
                 secret: generateGPTplusKey(), top_p: 1, temperature: 0.8,
                 systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.'
             }
             if (ids.gptPlus.parentID) payload.options = { parentMessageId: ids.gptPlus.parentID }
-        } else if (api.includes('mixerbox.com'))
+        } else if (api == 'MixerBox AI')
             payload = { prompt: msgs, model: 'gpt-3.5-turbo' }
-        else if (api.includes('onrender.com'))
-            payload = { messages: msgs, model: 'gemma-7b-it' }
         return JSON.stringify(payload)
     }
 
-    function processText(resp) {
+    function processText(api, resp) {
         if (resp.status != 200) {
             consoleErr('Response status: ' + resp.status)
             consoleErr('Response text: ' + resp.responseText)
-            if (config.proxyAPIenabled && getShowReply.attemptCnt < proxyEndpoints.length)
-                retryDiffHost()
+            if (config.proxyAPIenabled && getShowReply.attemptCnt < Object.keys(apis).length -1)
+                retryDiffHost(api)
             else if (resp.status == 401 && !config.proxyAPIenabled) {
                 GM_deleteValue(config.keyPrefix + '_openAItoken') ; appAlert('login') }
             else if (resp.status == 403)
@@ -1101,7 +1093,7 @@
             else // uncommon status
                 appAlert(`${ config.proxyAPIenabled ? 'proxyN' : 'openAIn' }otWorking`,
                          `suggest${ config.proxyAPIenabled ? 'OpenAI' : 'Proxy' }`)
-        } else if (endpoint.includes('openai.com')) {
+        } else if (api == 'OpenAI') {
             if (resp.response) {
                 try {
                     appShow(JSON.parse(resp.response).choices[0].message.content, footerContent)
@@ -1111,8 +1103,8 @@
                     appAlert('openAInotWorking, suggestProxy')
                 }
             } else { consoleInfo('Response: ' + resp.responseText) ; appAlert('openAInotWorking, suggestProxy') }
-        } else if (endpoint.includes('binjie.fun')) {
-            if (resp.responseText) {
+        } else if (api == 'AIchatOS') {
+            if (resp.responseText && !resp.responseText.includes('很抱歉地')) {
                 try {
                     const text = resp.responseText, chunkSize = 1024
                     let answer = '', currentIdx = 0
@@ -1120,85 +1112,86 @@
                         const chunk = text.substring(currentIdx, currentIdx + chunkSize)
                         currentIdx += chunkSize ; answer += chunk
                     }
-                    appShow(answer, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                    appShow(answer, footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed + ': ' + err)
-                    proxyRetryOrAlert()
+                    proxyRetryOrAlert(api)
                 }
-            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
-        } else if (endpoint.includes('gptforlove.com')) {
+            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert(api) }
+        } else if (api == 'Free Chat') {
+            if (resp.responseText) {
+                try {
+                    appShow(resp.responseText, footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
+                } catch (err) { // use different endpoint or suggest OpenAI
+                    consoleInfo('Response: ' + resp.responseText)
+                    consoleErr(appAlerts.parseFailed + ': ' + err)
+                    proxyRetryOrAlert(api)
+                }
+            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert(api) }
+        } else if (api == 'GPTforLove') {
             if (resp.responseText && !resp.responseText.includes('Fail')) {
                 try {
                     let chunks = resp.responseText.trim().split('\n'),
                         lastObj = JSON.parse(chunks[chunks.length - 1])
                     if (lastObj.id) ids.gptPlus.parentID = lastObj.id
-                    appShow(lastObj.text, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                    appShow(lastObj.text, footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed + ': ' + err)
-                    proxyRetryOrAlert()
+                    proxyRetryOrAlert(api)
                 }
-            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
-        } else if (endpoint.includes('mixerbox.com')) {
+            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert(api) }
+        } else if (api == 'MixerBox AI') {
             if (resp.responseText) {
                 try {
                     const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
                         .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                         .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
-                    appShow(extractedData.join(''), footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
+                    appShow(extractedData.join(''), footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed + ': ' + err)
-                    proxyRetryOrAlert()
+                    proxyRetryOrAlert(api)
                 }
-            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
-        } else if (endpoint.includes('onrender.com')) {
-            if (resp.responseText) {
-                try {
-                    appShow(resp.responseText, footerContent) ; getShowReply.triedEndpoints = [] ; getShowReply.attemptCnt = 0
-                } catch (err) { // use different endpoint or suggest OpenAI
-                    consoleInfo('Response: ' + resp.responseText)
-                    consoleErr(appAlerts.parseFailed + ': ' + err)
-                    proxyRetryOrAlert()
-                }
-            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert() }
+            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert(api) }
         }
 
-        function proxyRetryOrAlert() {
-            if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
+        function proxyRetryOrAlert(api) {
+            if (getShowReply.attemptCnt < Object.keys(apis).length -1) retryDiffHost(api)
             else appAlert('proxyNotWorking', 'suggestOpenAI')
         }
     }
 
-    function retryDiffHost() {
-        consoleErr(`Error calling ${ endpoint }. Trying another endpoint...`)
-        getShowReply.triedEndpoints.push(endpoint) // store current proxy to not retry
+    function retryDiffHost(triedAPI) {
+        consoleErr(`Error calling ${ apis[triedAPI].endpoint }. Trying another endpoint...`)
+        getShowReply.triedAPIs.push(triedAPI) // store triedAPI to not retry
         getShowReply.attemptCnt++
         getShowReply(msgChain)
     }
 
     function getRelatedQueries(query) {
+        const api = pickAPI()
         return new Promise((resolve, reject) => {
             const rqPrompt = 'Show a numbered list of queries related to this one:\n\n' + query
-                           + '\n\nMake sure to suggest a variety that can even greatly deviate from the original topic.'
-                           + ' For example, if the original query asked about someone\'s wife,'
-                               + ' a good related query could involve a different relative and using their name.'
-                           + ' Another example, if the query asked about a game/movie/show,'
-                               + ' good related queries could involve pertinent characters.'
-                           + ' Another example, if the original query asked how to learn JavaScript,'
-                               + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
-                           + ' But the key is variety. Do not be repetitive.'
-                               + ' You must entice user to want to ask one of your related queries.'
+               + '\n\nMake sure to suggest a variety that can even greatly deviate from the original topic.'
+               + ' For example, if the original query asked about someone\'s wife,'
+                   + ' a good related query could involve a different relative and using their name.'
+               + ' Another example, if the query asked about a game/movie/show,'
+                   + ' good related queries could involve pertinent characters.'
+               + ' Another example, if the original query asked how to learn JavaScript,'
+                   + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
+               + ' But the key is variety. Do not be repetitive.'
+                   + ' You must entice user to want to ask one of your related queries.'
             GM.xmlHttpRequest({
-                method: endpointMethod, url: endpoint, responseType: 'text', headers: createHeaders(endpoint),
-                data: createPayload(endpoint, [{ role: 'user', content: rqPrompt }]),
+                method: apis[api].method, url: apis[api].endpoint, responseType: 'text',
+                headers: createHeaders(api), data: createPayload(api, [{ role: 'user', content: rqPrompt }]),
                 onload: event => {
                     let str_relatedQueries = ''
-                    if (endpoint.includes('openai.com')) {
+                    if (api == 'OpenAI') {
                         try { str_relatedQueries = JSON.parse(event.response).choices[0].message.content }
                         catch (err) { consoleErr(err) ; reject(err) }
-                    } else if (endpoint.includes('binjie.fun') && !event.responseText?.includes('很抱歉地')) { 
+                    } else if (api == 'AIchatOS' && !event.responseText?.includes('很抱歉地')) { 
                         try {
                             const text = event.responseText, chunkSize = 1024
                             let currentIdx = 0
@@ -1207,21 +1200,21 @@
                                 currentIdx += chunkSize ; str_relatedQueries += chunk
                             }
                         } catch (err) { consoleErr(err) ; reject(err) }
-                    } else if (endpoint.includes('gptforlove.com')) {
+                    } else if (api == 'Free Chat') {
+                        try { str_relatedQueries = event.responseText }
+                        catch (err) { consoleErr(err) ; reject(err) }
+                    } else if (api == 'GPTforLove') {
                         try {
                             let chunks = event.responseText.trim().split('\n')
                             str_relatedQueries = JSON.parse(chunks[chunks.length - 1]).text
                         } catch (err) { consoleErr(err) ; reject(err) }
-                    } else if (endpoint.includes('mixerbox.com')) {
+                    } else if (api == 'MixerBox AI') {
                         try {
                             const extractedData = Array.from(event.responseText.matchAll(/data:(.*)/g), match => match[1]
                                 .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                                 .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                             str_relatedQueries = extractedData.join('')
                         } catch (err) { consoleErr(err) ; reject(err) }
-                    } else if (endpoint.includes('onrender.com')) {
-                        try { str_relatedQueries = event.responseText }
-                        catch (err) { consoleErr(err) ; reject(err) }
                     }
                     const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
                         .slice(0, 5) // limit to 1st 5
@@ -1256,20 +1249,29 @@
 
     async function getShowReply(msgChain) {
 
-        // Initialize attempt properties
-        if (!getShowReply.triedEndpoints) getShowReply.triedEndpoints = []
-        if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 0
+        // Init API attempt props
+        if (!getShowReply.triedAPIs) getShowReply.triedAPIs = []
+        if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 1
+
+        // Pick API
+        const api = pickAPI()
+        if (!api) { // no more proxy APIs left untried
+            appAlert('proxyNotWorking', 'suggestOpenAI') ; return }
+
+        if (!config.proxyAPIenabled) // init OpenAI key
+            config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
 
         // Get/show answer from ChatGPT
-        await pickAPI()
         GM.xmlHttpRequest({
-            method: endpointMethod, url: endpoint, headers: createHeaders(endpoint),
-            responseType: 'text', data: createPayload(endpoint, msgChain), onload: processText,
-            onerror: err => { consoleErr(err)
+            method: apis[api].method, url: apis[api].endpoint, responseType: 'text', 
+            headers: createHeaders(api), data: createPayload(api, msgChain),
+            onload: resp => processText(api, resp),
+            onerror: err => { consoleErr(err.message)
                 if (!config.proxyAPIenabled)
-                    appAlert(!accessKey ? 'login' : ['openAInotWorking', 'suggestProxy'])
-                else { // if proxy mode
-                    if (getShowReply.attemptCnt < proxyEndpoints.length) retryDiffHost()
+                    appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
+                else { // if Proxy Mode
+                    if (getShowReply.attemptCnt < Object.keys(apis).length -1)
+                         retryDiffHost(api)
                     else appAlert('proxyNotWorking', 'suggestOpenAI')
             }}
         })
@@ -1689,18 +1691,20 @@
 
     registerMenu()
 
-    // Init ENDPOINTS
-    const openAIendpoints = {
-        auth: 'https://auth0.openai.com',
-        session: 'https://chatgpt.com/api/auth/session',
-        chat: 'https://api.openai.com/v1/chat/completions'
+    // Init API props
+    const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
+    const apis = {
+        'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.xyz',
+            endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true },
+        'Free Chat': { expectedOrigin: 'https://e8.frechat.xyz',
+            endpoint: 'https://demo-yj7h.onrender.com/single/chat_messages',  method: 'PUT', streamable: true },
+        'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
+            endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true },
+        'MixerBox AI': { expectedOrigin: 'https://chatai.mixerbox.com',
+            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', method: 'POST', streamable: true },
+        'OpenAI': { expectedOrigin: 'https://chatgpt.com',
+            endpoint: 'https://api.openai.com/v1/chat/completions', method: 'POST', streamable: true }
     }
-    const proxyEndpoints = [
-        [ 'https://api.binjie.fun/api/generateStream', { method: 'POST', stream: true }],
-        [ 'https://api11.gptforlove.com/chat-process', { method: 'POST', stream: true }],
-        [ 'https://chatai.mixerbox.com/api/chat/stream', { method: 'POST', stream: true }],
-        [ 'https://demo-yj7h.onrender.com/single/chat_messages', { method: 'PUT', stream: true }]
-    ]
 
     // Init ALERTS
     const appAlerts = {
