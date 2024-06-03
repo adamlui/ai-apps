@@ -158,7 +158,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.18
+// @version             2024.6.3.19
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -463,7 +463,7 @@
     const scheme = isDarkMode() ? 'dark' : 'light',
           isFirefox = chatgpt.browser.isFirefox(),
           isMobile = chatgpt.browser.isMobile(),
-          hasSidebar = document.querySelector('[class*="kp-"]')
+          hasSidebar = !!document.querySelector('[class*="kp-"]')
 
     // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
