@@ -58,7 +58,7 @@
     tooltipDiv.classList.add('toggle-tooltip')
     const tooltipStyle = document.createElement('style')
     tooltipStyle.innerText = '.toggle-tooltip {'
-        + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+        + 'background-color: rgba(0, 0, 0, 0.71) ; padding: 5px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.85rem ; color: white ;' // font style
         + 'position: absolute ; bottom: 50px ;' // v-position
         + 'box-shadow: 4px 6px 16px 0px rgb(0 0 0 / 38%) ;' // drop shadow
