@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.11
+// @version             2024.6.3.12
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -412,7 +412,7 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@481304f/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@79ed685/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
@@ -789,26 +789,30 @@
             let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
             if (msg.includes(appAlerts.login)) deleteOpenAIcookies()
             if (msg.includes(appAlerts.waitingResponse)) alertP.classList.add('loading')
+            const linkStyle = `style="color: ${ scheme == 'dark' ? 'white' : '#190cb0' }"`
+
+            // Add login link to login msgs
+            if (msg.includes('@'))
+                msg += `<a target="_blank" rel="noopener" ${linkStyle} href="https://chatgpt.com">chatgpt.com</a>.`
+                + ` (${ msgs.alert_ifIssuePersists || 'If issue persists' },`
+                + ` ${( msgs.alert_try || 'Try' ).toLowerCase() }`
+                + ` ${ msgs.alert_switchingOn || 'switching on' }`
+                + ` ${ msgs.mode_proxy || 'Proxy Mode' })`
 
             // Hyperlink msgs.alert_switching<On|Off>
             const foundState = ['On', 'Off'].find(state =>
                 msg.includes(alerts['alert_switching' + state] || state.toLowerCase()))
             if (foundState) { // hyperlink switch phrase for click listener to toggleProxyMode()
                 const switchPhrase = alerts['alert_Switching' + foundState] || 'switching ' + foundState.toLowerCase()
-                msg = msg.replace(switchPhrase, `<a href="#" class="proxyToggle">${switchPhrase}</a>`)
+                msg = msg.replace(switchPhrase, `<a href="#" ${linkStyle} class="proxyToggle">${switchPhrase}</a>`)
             }
 
             // Create/fill/append msg span
             const msgSpan = document.createElement('span')
             msgSpan.innerHTML = msg ; alertP.appendChild(msgSpan)
 
-            // Insert/activate toggle/login links if necessary
-            msgSpan.querySelector('.proxyToggle') // needs click listener to toggleProxyMode(), add it
-                ?.addEventListener('click', toggleProxyMode)
-            if (msg.includes('@')) { // needs login link, add it
-                alertP.append(createAnchor('https://chatgpt.com', 'chatgpt.com'),
-                    ' (', msgs.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
-            }
+            // Activate toggle link if necessary
+            msgSpan.querySelector('.proxyToggle')?.addEventListener('click', toggleProxyMode)
         })
         appDiv.appendChild(alertP)
     }

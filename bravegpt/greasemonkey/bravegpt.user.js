@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.7
+// @version             2024.6.3.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -176,7 +176,7 @@ setTimeout(async () => {
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@24fddba/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@5cf9970/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
@@ -323,7 +323,7 @@ setTimeout(async () => {
         if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() }
     }
 
-        // Define SCRIPT functions
+    // Define SCRIPT functions
 
     function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(config.keyPrefix + '_' + key, false)) }
     function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
@@ -557,26 +557,30 @@ setTimeout(async () => {
             let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
             if (msg.includes(appAlerts.login)) deleteOpenAIcookies()
             if (msg.includes(appAlerts.waitingResponse)) alertP.classList.add('loading')
+            const linkStyle = `style="color: ${ scheme == 'dark' ? 'white' : '#190cb0' }"`
+
+            // Add login link to login msgs
+            if (msg.includes('@'))
+                msg += `<a target="_blank" rel="noopener" ${linkStyle} href="https://chatgpt.com">chatgpt.com</a>.`
+                + ` (${ msgs.alert_ifIssuePersists || 'If issue persists' },`
+                + ` ${( msgs.alert_try || 'Try' ).toLowerCase() }`
+                + ` ${ msgs.alert_switchingOn || 'switching on' }`
+                + ` ${ msgs.mode_proxy || 'Proxy Mode' })`
 
             // Hyperlink msgs.alert_switching<On|Off>
             const foundState = ['On', 'Off'].find(state =>
                 msg.includes(alerts['alert_switching' + state] || state.toLowerCase()))
             if (foundState) { // hyperlink switch phrase for click listener to toggleProxyMode()
                 const switchPhrase = alerts['alert_Switching' + foundState] || 'switching ' + foundState.toLowerCase()
-                msg = msg.replace(switchPhrase, `<a href="#" class="proxyToggle">${switchPhrase}</a>`)
+                msg = msg.replace(switchPhrase, `<a href="#" ${linkStyle} class="proxyToggle">${switchPhrase}</a>`)
             }
 
             // Create/fill/append msg span
             const msgSpan = document.createElement('span')
             msgSpan.innerHTML = msg ; alertP.appendChild(msgSpan)
 
-            // Insert/activate toggle/login links if necessary
-            msgSpan.querySelector('.proxyToggle') // needs click listener to toggleProxyMode(), add it
-                ?.addEventListener('click', toggleProxyMode)
-            if (msg.includes('@')) { // needs login link, add it
-                alertP.append(createAnchor('https://chatgpt.com', 'chatgpt.com'),
-                    ' (', msgs.alert_ifIssuePersists || 'If issue persists, try activating Proxy Mode', ')')
-            }
+            // Activate toggle link if necessary
+            msgSpan.querySelector('.proxyToggle')?.addEventListener('click', toggleProxyMode)
         })
         appDiv.appendChild(alertP)
     }
