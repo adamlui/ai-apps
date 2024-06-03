@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Papas" },
   "link_viewChanges": { "message": "Tan-awa ang mga kausaban" },
   "link_shareFeedback": { "message": "Feedback" },
-  "prefix_exit": { "message": "Mogawas" }
+  "prefix_exit": { "message": "Mogawas" },
+  "state_on": { "message": "Sa" },
+  "state_off": { "message": "Off" }
 }

@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Malakcepti" },
   "link_viewChanges": { "message": "Montri ŝanĝojn" },
   "link_shareFeedback": { "message": "@ info: whatsthis" },
-  "prefix_exit": { "message": "Eliri" }
+  "prefix_exit": { "message": "Eliri" },
+  "state_on": { "message": "Oran" },
+  "state_off": { "message": "off" }
 }

@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Respingeți" },
   "link_viewChanges": { "message": "Vizualizează modificările" },
   "link_shareFeedback": { "message": "Trimite feedback" },
-  "prefix_exit": { "message": "Ieșire" }
+  "prefix_exit": { "message": "Ieșire" },
+  "state_on": { "message": "On" },
+  "state_off": { "message": "Oprit" }
 }

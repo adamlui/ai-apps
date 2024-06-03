@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "TLOGELA" },
   "link_viewChanges": { "message": "Leba diphetogo" },
   "link_shareFeedback": { "message": "Share Feedback" },
-  "prefix_exit": { "message": "Tswa" }
+  "prefix_exit": { "message": "Tswa" },
+  "state_on": { "message": "On" },
+  "state_off": { "message": "OFF" }
 }

@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Işden aýyrmak" },
   "link_viewChanges": { "message": "Özgertmeleri Gör" },
   "link_shareFeedback": { "message": "Öwrenme paýlaş" },
-  "prefix_exit": { "message": "Çyk" }
+  "prefix_exit": { "message": "Çyk" },
+  "state_on": { "message": "% jeminden" },
+  "state_off": { "message": "Çyk" }
 }

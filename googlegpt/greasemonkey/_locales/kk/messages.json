@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Жұмыстан шығару" },
   "link_viewChanges": { "message": "Өзгерістерді көру" },
   "link_shareFeedback": { "message": "Кері байланыспен бөлісу" },
-  "prefix_exit": { "message": "Шығу" }
+  "prefix_exit": { "message": "Шығу" },
+  "state_on": { "message": "Болсын" },
+  "state_off": { "message": "Өшіру" }
 }

@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "খারিজ করুন" },
   "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" },
   "link_shareFeedback": { "message": "ফিডব্যাক শেয়ার করুন" },
-  "prefix_exit": { "message": "বের হয়ে যান" }
+  "prefix_exit": { "message": "বের হয়ে যান" },
+  "state_on": { "message": "চালু" },
+  "state_off": { "message": "বন্ধ" }
 }

@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Rexeitar" },
   "link_viewChanges": { "message": "Ver cambios" },
   "link_shareFeedback": { "message": "Compartir a retroalimentación" },
-  "prefix_exit": { "message": "Sair" }
+  "prefix_exit": { "message": "Sair" },
+  "state_on": { "message": "Activado" },
+  "state_off": { "message": "Apagado" }
 }

@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Noraidīt" },
   "link_viewChanges": { "message": "Skatīt izmaiņas" },
   "link_shareFeedback": { "message": "Dalieties savās atsauksmēs" },
-  "prefix_exit": { "message": "Iziet" }
+  "prefix_exit": { "message": "Iziet" },
+  "state_on": { "message": "Ieslēgt" },
+  "state_off": { "message": "Izslēgta" }
 }

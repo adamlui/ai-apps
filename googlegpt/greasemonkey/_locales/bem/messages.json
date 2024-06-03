@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Ukufumishiwapo" },
   "link_viewChanges": { "message": "Moneni ifyo ifintu fyayaluka" },
   "link_shareFeedback": { "message": "Share Feedback" },
-  "prefix_exit": { "message": "Fumenimo" }
+  "prefix_exit": { "message": "Fumenimo" },
+  "state_on": { "message": "Pali" },
+  "state_off": { "message": "OFF" }
 }

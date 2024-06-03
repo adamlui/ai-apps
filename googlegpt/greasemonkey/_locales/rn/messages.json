@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Ukwirukana" },
   "link_viewChanges": { "message": "Kubona impinduka" },
   "link_shareFeedback": { "message": "Gira ico ushikirije" },
-  "prefix_exit": { "message": "Gusohoka" }
+  "prefix_exit": { "message": "Gusohoka" },
+  "state_on": { "message": "Ku" },
+  "state_off": { "message": "Numa Numa" }
 }

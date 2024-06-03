@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Ofginn" },
   "link_viewChanges": { "message": "Ännerungen uweisen" },
   "link_shareFeedback": { "message": "Feedback" },
-  "prefix_exit": { "message": "Zoumaachen" }
+  "prefix_exit": { "message": "Zoumaachen" },
+  "state_on": { "message": "Un" },
+  "state_off": { "message": "Aus" }
 }

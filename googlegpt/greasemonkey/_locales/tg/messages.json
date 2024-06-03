@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Рад кардан" },
   "link_viewChanges": { "message": "Tingnan ang mga pagbabago" },
   "link_shareFeedback": { "message": "Share Feedback" },
-  "prefix_exit": { "message": "Баромад" }
+  "prefix_exit": { "message": "Баромад" },
+  "state_on": { "message": "Оран" },
+  "state_off": { "message": "& Ғайри фаъол" }
 }

@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Hoʻokuʻu" },
   "link_viewChanges": { "message": "Nānā i nā hoʻololi" },
   "link_shareFeedback": { "message": "Kaʻana Manaʻo" },
-  "prefix_exit": { "message": "Puka" }
+  "prefix_exit": { "message": "Puka" },
+  "state_on": { "message": "Ma ka" },
+  "state_off": { "message": "OFF!" }
 }

@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "Vaʻai suiga" },
   "link_shareFeedback": { "message": "Manatu Fa‘afautuaga" },
-  "prefix_exit": { "message": "Alu'ese" }
+  "prefix_exit": { "message": "Alu'ese" },
+  "state_on": { "message": "I luga o" },
+  "state_off": { "message": "ALU!" }
 }

@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Відхиляти" },
   "link_viewChanges": { "message": "Переглянути зміни" },
   "link_shareFeedback": { "message": "Поділитися відгуком" },
-  "prefix_exit": { "message": "Вихід" }
+  "prefix_exit": { "message": "Вихід" },
+  "state_on": { "message": "На" },
+  "state_off": { "message": "Вимкнуто" }
 }

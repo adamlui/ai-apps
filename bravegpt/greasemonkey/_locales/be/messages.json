@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Адхіліць" },
   "link_viewChanges": { "message": "Праглядзець змены" },
   "link_shareFeedback": { "message": "Зваротная сувязь" },
-  "prefix_exit": { "message": "Выйсьці" }
+  "prefix_exit": { "message": "Выйсьці" },
+  "state_on": { "message": "Уключэнне" },
+  "state_off": { "message": "Выключэнне" }
 }

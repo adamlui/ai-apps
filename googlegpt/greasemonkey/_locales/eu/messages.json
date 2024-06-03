@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Bistatik kendu" },
   "link_viewChanges": { "message": "Ikusi aldaketak" },
   "link_shareFeedback": { "message": "Partekatu Iritzia" },
-  "prefix_exit": { "message": "Irten" }
+  "prefix_exit": { "message": "Irten" },
+  "state_on": { "message": "Piztuta" },
+  "state_off": { "message": "Itzalita" }
 }

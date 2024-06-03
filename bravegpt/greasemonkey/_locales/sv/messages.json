@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Avfärda" },
   "link_viewChanges": { "message": "Visa ändringar" },
   "link_shareFeedback": { "message": "Feedback" },
-  "prefix_exit": { "message": "Avsluta" }
+  "prefix_exit": { "message": "Avsluta" },
+  "state_on": { "message": "På" },
+  "state_off": { "message": "Av" }
 }

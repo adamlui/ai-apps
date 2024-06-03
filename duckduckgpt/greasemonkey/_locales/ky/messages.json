@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Иштен бошотуу" },
   "link_viewChanges": { "message": "Өзгөрүүлөрдү көрүү" },
   "link_shareFeedback": { "message": "Пикирлерди бөлүшүү" },
-  "prefix_exit": { "message": "Чыгуу" }
+  "prefix_exit": { "message": "Чыгуу" },
+  "state_on": { "message": "БАР" },
+  "state_off": { "message": "Өчүрүү" }
 }

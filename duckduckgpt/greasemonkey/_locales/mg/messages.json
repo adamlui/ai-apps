@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Hiditra" },
   "link_viewChanges": { "message": "Hijery ireo fanovana" },
   "link_shareFeedback": { "message": "Mizara Feedback" },
-  "prefix_exit": { "message": "Mivoaka" }
+  "prefix_exit": { "message": "Mivoaka" },
+  "state_on": { "message": "Tamin’I –" },
+  "state_off": { "message": "Ajanona" }
 }

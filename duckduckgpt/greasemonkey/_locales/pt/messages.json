@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Ignorar" },
   "link_viewChanges": { "message": "Ver Alterações" },
   "link_shareFeedback": { "message": "Partilhe o seu feedback" },
-  "prefix_exit": { "message": "Sair" }
+  "prefix_exit": { "message": "Sair" },
+  "state_on": { "message": "Activado" },
+  "state_off": { "message": "Desligado" }
 }

@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "رد کردن" },
   "link_viewChanges": { "message": "بدلونونه وګورئ" },
   "link_shareFeedback": { "message": "نظرونه شریک کړئ" },
-  "prefix_exit": { "message": "وتون" }
+  "prefix_exit": { "message": "وتون" },
+  "state_on": { "message": "بل" },
+  "state_off": { "message": "Property_BAR_NewPrefs_App_BAR_" }
 }

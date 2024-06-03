@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "پارێزگا بکە" },
   "link_viewChanges": { "message": "گۆڕانکاریەکان بینەرە" },
   "link_shareFeedback": { "message": "پارساوی" },
-  "prefix_exit": { "message": "دەرچوون" }
+  "prefix_exit": { "message": "دەرچوون" },
+  "state_on": { "message": "Vekirî" },
+  "state_off": { "message": "Girtî" }
 }

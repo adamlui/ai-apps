@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "ยกเลิก" },
   "link_viewChanges": { "message": "ดูการเปลี่ยนแปลง" },
   "link_shareFeedback": { "message": "แชร์ข้อเสนอแนะ" },
-  "prefix_exit": { "message": "ออก" }
+  "prefix_exit": { "message": "ออก" },
+  "state_on": { "message": "เปิด" },
+  "state_off": { "message": "ปิด" }
 }

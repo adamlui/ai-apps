@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "કાઢી મૂકવું" },
   "link_viewChanges": { "message": "ફેરફારો જુઓ" },
   "link_shareFeedback": { "message": "પ્રતિસાદ શેર કરો" },
-  "prefix_exit": { "message": "એક્ઝીટ" }
+  "prefix_exit": { "message": "એક્ઝીટ" },
+  "state_on": { "message": "બરાબર" },
+  "state_off": { "message": "બંધ" }
 }

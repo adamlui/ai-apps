@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Avrita" },
   "link_viewChanges": { "message": "Sí broytingar" },
   "link_shareFeedback": { "message": "Deil afturmelding" },
-  "prefix_exit": { "message": "Útgangur" }
+  "prefix_exit": { "message": "Útgangur" },
+  "state_on": { "message": "t" },
+  "state_off": { "message": "Av" }
 }

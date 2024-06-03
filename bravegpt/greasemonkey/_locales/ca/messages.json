@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Descarta" },
   "link_viewChanges": { "message": "Mostra els canvis" },
   "link_shareFeedback": { "message": "Dóna’ns la teva opinió" },
-  "prefix_exit": { "message": "Surt" }
+  "prefix_exit": { "message": "Surt" },
+  "state_on": { "message": "Activat" },
+  "state_off": { "message": "Desactivat" }
 }

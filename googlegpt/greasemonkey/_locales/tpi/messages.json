@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Lusim" },
   "link_viewChanges": { "message": "Lukim ol senis" },
   "link_shareFeedback": { "message": "Toksave long ol samting" },
-  "prefix_exit": { "message": "Kisim" }
+  "prefix_exit": { "message": "Kisim" },
+  "state_on": { "message": "Long" },
+  "state_off": { "message": "Kisim i go" }
 }

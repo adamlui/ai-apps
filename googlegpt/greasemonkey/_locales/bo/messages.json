@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "འདོར་བ།" },
   "link_viewChanges": { "message": "འགྱུར་བ་མཐོང་བ" },
   "link_shareFeedback": { "message": "འདྲ་ཕབ །" },
-  "prefix_exit": { "message": "ཐོན་ཐབས །" }
+  "prefix_exit": { "message": "ཐོན་ཐབས །" },
+  "state_on": { "message": "སྤར་རྒྱུ" },
+  "state_off": { "message": "གསོད" }
 }

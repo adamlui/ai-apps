@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "நிராகரிக்கவும்" },
   "link_viewChanges": { "message": "மாற்றங்களைக் காண்க" },
   "link_shareFeedback": { "message": "பின்னூட்டத்தைப் பகிரவும்" },
-  "prefix_exit": { "message": "வெளியேறு" }
+  "prefix_exit": { "message": "வெளியேறு" },
+  "state_on": { "message": "மீது" },
+  "state_off": { "message": "நிறுத்துக" }
 }

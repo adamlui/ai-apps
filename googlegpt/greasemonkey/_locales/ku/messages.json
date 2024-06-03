@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "ردکردنەوە" },
   "link_viewChanges": { "message": "گۆرانی بینینەکان" },
   "link_shareFeedback": { "message": "پەیامی ئەزموون بگرە" },
-  "prefix_exit": { "message": "دەرچوون" }
+  "prefix_exit": { "message": "دەرچوون" },
+  "state_on": { "message": "Vekirî" },
+  "state_off": { "message": "Girtî" }
 }

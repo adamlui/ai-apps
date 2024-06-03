@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Dzinga" },
   "link_viewChanges": { "message": "Vonanyi cinjo" },
   "link_shareFeedback": { "message": "Taura nesu" },
-  "prefix_exit": { "message": "Buda" }
+  "prefix_exit": { "message": "Buda" },
+  "state_on": { "message": "Pana" },
+  "state_off": { "message": "ZVIMWE" }
 }

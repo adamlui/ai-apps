@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Hylkää" },
   "link_viewChanges": { "message": "Näytä muutokset" },
   "link_shareFeedback": { "message": "Anna palautetta" },
-  "prefix_exit": { "message": "Poistu" }
+  "prefix_exit": { "message": "Poistu" },
+  "state_on": { "message": "Päällä" },
+  "state_off": { "message": "Pois päältä" }
 }

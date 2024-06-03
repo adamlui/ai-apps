@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Opusti" },
   "link_viewChanges": { "message": "Poglej spremembe" },
   "link_shareFeedback": { "message": "Delite povratne informacije" },
-  "prefix_exit": { "message": "Izhod" }
+  "prefix_exit": { "message": "Izhod" },
+  "state_on": { "message": "Vklopljeno" },
+  "state_off": { "message": "Off" }
 }

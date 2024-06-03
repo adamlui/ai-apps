@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Afwijzen" },
   "link_viewChanges": { "message": "Wijzigingen weergeven" },
   "link_shareFeedback": { "message": "Deel feedback" },
-  "prefix_exit": { "message": "Exit" }
+  "prefix_exit": { "message": "Exit" },
+  "state_on": { "message": "Incident melden" },
+  "state_off": { "message": "Uit" }
 }

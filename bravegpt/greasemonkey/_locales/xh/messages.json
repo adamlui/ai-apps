@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Gxotha" },
   "link_viewChanges": { "message": "Jonga izinto ezitshintshiweyo" },
   "link_shareFeedback": { "message": "Impendulo" },
-  "prefix_exit": { "message": "Phuma" }
+  "prefix_exit": { "message": "Phuma" },
+  "state_on": { "message": "Inye" },
+  "state_off": { "message": "cima" }
 }

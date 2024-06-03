@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "ವಜಾಗೊಳಿಸಿ" },
   "link_viewChanges": { "message": "ಬದಲಾವಣೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ" },
   "link_shareFeedback": { "message": "ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ" },
-  "prefix_exit": { "message": "ನಿರ್ಗಮಿಸಿ" }
+  "prefix_exit": { "message": "ನಿರ್ಗಮಿಸಿ" },
+  "state_on": { "message": "ರಂದು" },
+  "state_off": { "message": "ಆಫ್" }
 }

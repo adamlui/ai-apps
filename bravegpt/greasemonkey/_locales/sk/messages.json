@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Odmietnuť" },
   "link_viewChanges": { "message": "Zobraziť zmeny" },
   "link_shareFeedback": { "message": "Spätná väzba" },
-  "prefix_exit": { "message": "Odísť" }
+  "prefix_exit": { "message": "Odísť" },
+  "state_on": { "message": "Zapnuté" },
+  "state_off": { "message": "Vypnuté" }
 }

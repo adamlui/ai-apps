@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "אָפּזאָגן" },
   "link_viewChanges": { "message": "קוק ענדערונגען" },
   "link_shareFeedback": { "message": "ייַנטיילן באַמערקונגען" },
-  "prefix_exit": { "message": "אַרויסגאַנג" }
+  "prefix_exit": { "message": "אַרויסגאַנג" },
+  "state_on": { "message": "אויף" },
+  "state_off": { "message": "אַוועק" }
 }

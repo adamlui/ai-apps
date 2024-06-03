@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "‫رفض‬" },
   "link_viewChanges": { "message": "عرض سجل التغييرات" },
   "link_shareFeedback": { "message": "مشاركة الملاحظات. " },
-  "prefix_exit": { "message": "خروج" }
+  "prefix_exit": { "message": "خروج" },
+  "state_on": { "message": "تشغيل" },
+  "state_off": { "message": "إيقاف التشغيل" }
 }

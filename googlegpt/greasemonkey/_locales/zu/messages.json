@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Susa" },
   "link_viewChanges": { "message": "Buka ushintsho" },
   "link_shareFeedback": { "message": "Yabelana Ngombiko" },
-  "prefix_exit": { "message": "Phuma" }
+  "prefix_exit": { "message": "Phuma" },
+  "state_on": { "message": "ku" },
+  "state_off": { "message": "Kuvaliwe" }
 }

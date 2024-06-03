@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Descarta" },
   "link_viewChanges": { "message": "Mostra els canvis" },
   "link_shareFeedback": { "message": "Compartir comentaris" },
-  "prefix_exit": { "message": "Surt" }
+  "prefix_exit": { "message": "Surt" },
+  "state_on": { "message": "Activat" },
+  "state_off": { "message": "Desactivat" }
 }

@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Disimulashon" },
   "link_viewChanges": { "message": "Bista riba kambionan" },
   "link_shareFeedback": { "message": "Kompartí Kompartí" },
-  "prefix_exit": { "message": "Salida" }
+  "prefix_exit": { "message": "Salida" },
+  "state_on": { "message": "Riba" },
+  "state_off": { "message": "For di" }
 }

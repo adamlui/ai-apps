@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Rad etish" },
   "link_viewChanges": { "message": "O'zgarishlarni ko'rish" },
   "link_shareFeedback": { "message": "Fikr-mulohazangizni baham ko'ring" },
-  "prefix_exit": { "message": "Chiqish" }
+  "prefix_exit": { "message": "Chiqish" },
+  "state_on": { "message": "Yoniq" },
+  "state_off": { "message": "O'chirilgan" }
 }

@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Отхвърли" },
   "link_viewChanges": { "message": "Вижте Промените" },
   "link_shareFeedback": { "message": "Обратна информация" },
-  "prefix_exit": { "message": "Изход" }
+  "prefix_exit": { "message": "Изход" },
+  "state_on": { "message": "On" },
+  "state_off": { "message": "Изкл." }
 }

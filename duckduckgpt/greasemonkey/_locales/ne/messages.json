@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "खारेज गर्नुहोस्" },
   "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" },
   "link_shareFeedback": { "message": "प्रतिक्रिया साझा गर्नुहोस्" },
-  "prefix_exit": { "message": "निस्कने ठाउँ" }
+  "prefix_exit": { "message": "निस्कने ठाउँ" },
+  "state_on": { "message": "खुला" },
+  "state_off": { "message": "बन्द" }
 }

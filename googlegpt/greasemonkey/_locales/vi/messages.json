@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Bỏ qua" },
   "link_viewChanges": { "message": "Xem thay đổi" },
   "link_shareFeedback": { "message": "Chia sẻ phản hồi của bạn" },
-  "prefix_exit": { "message": "Thoát" }
+  "prefix_exit": { "message": "Thoát" },
+  "state_on": { "message": "Bật" },
+  "state_off": { "message": "Tắt" }
 }

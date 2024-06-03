@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Atšaukti" },
   "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" },
   "link_shareFeedback": { "message": "Išsakykite savo nuomonę" },
-  "prefix_exit": { "message": "Išeiti" }
+  "prefix_exit": { "message": "Išeiti" },
+  "state_on": { "message": "Įjungta" },
+  "state_off": { "message": "Išjungta" }
 }

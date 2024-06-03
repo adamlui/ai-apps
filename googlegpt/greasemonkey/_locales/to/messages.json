@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Tukuange" },
   "link_viewChanges": { "message": "Vakai ki he ngaahi liliú" },
   "link_shareFeedback": { "message": "Vahevahe ʻa e Fakamatala" },
-  "prefix_exit": { "message": "Hū ki tu’a" }
+  "prefix_exit": { "message": "Hū ki tu’a" },
+  "state_on": { "message": "ʻI he" },
+  "state_off": { "message": "ʻOsi" }
 }

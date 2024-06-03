@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Дуусах" },
   "link_viewChanges": { "message": "Өөрчлөлтүүдийг харах" },
   "link_shareFeedback": { "message": "Санал хүсэлтийг хуваалцах" },
-  "prefix_exit": { "message": "Гарах" }
+  "prefix_exit": { "message": "Гарах" },
+  "state_on": { "message": "Асаах" },
+  "state_off": { "message": "Хаах" }
 }

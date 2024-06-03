@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Demisyon" },
   "link_viewChanges": { "message": "Gade chanjman yo" },
   "link_shareFeedback": { "message": "Pataje kòmantè ou yo/Pataje fidbak ou yo/Faites part de vos commentaires" },
-  "prefix_exit": { "message": "SÒTI" }
+  "prefix_exit": { "message": "SÒTI" },
+  "state_on": { "message": "Nan dat" },
+  "state_off": { "message": "etenn/koupe " }
 }

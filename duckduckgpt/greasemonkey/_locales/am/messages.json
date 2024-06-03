@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "መደምሰሻ" },
   "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" },
   "link_shareFeedback": { "message": "ግብረመልስ ያጋሩ" },
-  "prefix_exit": { "message": "ይውጡ" }
+  "prefix_exit": { "message": "ይውጡ" },
+  "state_on": { "message": "በላይ" },
+  "state_off": { "message": "አጥፋ" }
 }

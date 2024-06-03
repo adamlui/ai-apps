@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Отфрли" },
   "link_viewChanges": { "message": "Прикажи ги промените" },
   "link_shareFeedback": { "message": "Споделете повратен коментар" },
-  "prefix_exit": { "message": "Излези" }
+  "prefix_exit": { "message": "Излези" },
+  "state_on": { "message": "На" },
+  "state_off": { "message": "Исклучено" }
 }

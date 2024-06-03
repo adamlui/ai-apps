@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "खारिज करना" },
   "link_viewChanges": { "message": "बदलाव देखें" },
   "link_shareFeedback": { "message": "फ़ीडबैक" },
-  "prefix_exit": { "message": "बाहर निकलें" }
+  "prefix_exit": { "message": "बाहर निकलें" },
+  "state_on": { "message": "चालू" },
+  "state_off": { "message": "बंद" }
 }

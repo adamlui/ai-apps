@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "తీసివేయండి" },
   "link_viewChanges": { "message": "మార్పులను చూడండి" },
   "link_shareFeedback": { "message": "అభిప్రాయాన్ని పంచుకోండి" },
-  "prefix_exit": { "message": "నిష్క్రమించండి" }
+  "prefix_exit": { "message": "నిష్క్రమించండి" },
+  "state_on": { "message": "ఆన్" },
+  "state_off": { "message": "ఆఫ్" }
 }

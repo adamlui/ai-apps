@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Փակել" },
   "link_viewChanges": { "message": "Դիտել փոփոխությունները" },
   "link_shareFeedback": { "message": "Կիսվել կարծիքներով" },
-  "prefix_exit": { "message": "Exit" }
+  "prefix_exit": { "message": "Exit" },
+  "state_on": { "message": "Միացնել" },
+  "state_off": { "message": "Անջատել" }
 }

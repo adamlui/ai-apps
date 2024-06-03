@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Bağla" },
   "link_viewChanges": { "message": "Dəyişikliklərə bax" },
   "link_shareFeedback": { "message": "Əlaqə saxlamaq" },
-  "prefix_exit": { "message": "Çıxmaq" }
+  "prefix_exit": { "message": "Çıxmaq" },
+  "state_on": { "message": " " },
+  "state_off": { "message": "İŞLƏMİR" }
 }

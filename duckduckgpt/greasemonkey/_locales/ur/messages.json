@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "برخاست" },
   "link_viewChanges": { "message": "تبدیلیاں دیکھیں" },
   "link_shareFeedback": { "message": "تاثرات شیئر کریں" },
-  "prefix_exit": { "message": "خارج ہوں" }
+  "prefix_exit": { "message": "خارج ہوں" },
+  "state_on": { "message": "چالو کریں" },
+  "state_off": { "message": "بند کریں" }
 }

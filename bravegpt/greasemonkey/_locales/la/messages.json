@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "dimitto" },
   "link_viewChanges": { "message": "Vedi anche l 'accendenza" },
   "link_shareFeedback": { "message": "Feedback" },
-  "prefix_exit": { "message": "Exire" }
+  "prefix_exit": { "message": "Exire" },
+  "state_on": { "message": "mutare melius" },
+  "state_off": { "message": "finis eum" }
 }

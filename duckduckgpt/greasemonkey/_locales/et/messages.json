@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Loobu" },
   "link_viewChanges": { "message": "Vaata muudatusi" },
   "link_shareFeedback": { "message": "tagasiside jagamine" },
-  "prefix_exit": { "message": "Väljumine" }
+  "prefix_exit": { "message": "Väljumine" },
+  "state_on": { "message": "Sees" },
+  "state_off": { "message": "Välja lülitatud" }
 }

@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "បោះបង់" },
   "link_viewChanges": { "message": "មើលការផ្លាស់ប្តូរ" },
   "link_shareFeedback": { "message": "មតិត្រឡប់" },
-  "prefix_exit": { "message": "ច្រកចេញ" }
+  "prefix_exit": { "message": "ច្រកចេញ" },
+  "state_on": { "message": "ស្តីពី" },
+  "state_off": { "message": "បិទ" }
 }

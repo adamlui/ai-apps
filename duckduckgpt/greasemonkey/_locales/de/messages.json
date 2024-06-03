@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Verwerfen" },
   "link_viewChanges": { "message": "Änderungen anzeigen" },
   "link_shareFeedback": { "message": "Feedback teilen" },
-  "prefix_exit": { "message": "Abbrechen" }
+  "prefix_exit": { "message": "Abbrechen" },
+  "state_on": { "message": "Auf" },
+  "state_off": { "message": "Aus" }
 }

@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "پشتگوێخستن" },
   "link_viewChanges": { "message": "بینینی گۆڕانکارییەکان" },
   "link_shareFeedback": { "message": "فیدباکی هاوبەش" },
-  "prefix_exit": { "message": "دەرچوون" }
+  "prefix_exit": { "message": "دەرچوون" },
+  "state_on": { "message": "لە" },
+  "state_off": { "message": "دەر، دەرەوە، کوژانەوە، پشوو، بێ ڕێزانە، خراپ بوو، دوور، خوار، کووژاوە، لە، دوور لە" }
 }

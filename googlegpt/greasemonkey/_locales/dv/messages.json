@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "މަގާމުން ވަކިކުރުން" },
   "link_viewChanges": { "message": "ވިއު ޗޭންޖްސް" },
   "link_shareFeedback": { "message": "ފީޑްބެކް ޝެއާ ކުރޭ" },
-  "prefix_exit": { "message": "ނުކުތުން" }
+  "prefix_exit": { "message": "ނުކުތުން" },
+  "state_on": { "message": "މަތީގައި" },
+  "state_off": { "message": "އޮފް" }
 }

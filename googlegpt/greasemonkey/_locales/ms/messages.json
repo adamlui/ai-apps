@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Singkir" },
   "link_viewChanges": { "message": "Lihat perubahan" },
   "link_shareFeedback": { "message": "Kongsi Maklum Balas" },
-  "prefix_exit": { "message": "Keluar" }
+  "prefix_exit": { "message": "Keluar" },
+  "state_on": { "message": "Hidup" },
+  "state_off": { "message": "Mati" }
 }

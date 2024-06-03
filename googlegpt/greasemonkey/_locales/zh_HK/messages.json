@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "返回" },
   "link_viewChanges": { "message": "查看變更" },
   "link_shareFeedback": { "message": "分享意見回饋" },
-  "prefix_exit": { "message": "退出" }
+  "prefix_exit": { "message": "退出" },
+  "state_on": { "message": "開" },
+  "state_off": { "message": "關" }
 }

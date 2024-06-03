@@ -51,5 +51,7 @@
   "buttonLabel_dismiss": { "message": "Xil ka qaad" },
   "link_viewChanges": { "message": "Eeg isbeddellada" },
   "link_shareFeedback": { "message": "Jawaab Celin" },
-  "prefix_exit": { "message": "Bixid" }
+  "prefix_exit": { "message": "Bixid" },
+  "state_on": { "message": "Shid" },
+  "state_off": { "message": "Dami" }
 }

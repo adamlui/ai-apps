@@ -50,5 +50,7 @@
   "buttonLabel_dismiss": { "message": "Cau" },
   "link_viewChanges": { "message": "Gweld newidiadau" },
   "link_shareFeedback": { "message": "Rhannu adborth" },
-  "prefix_exit": { "message": "Man gadael" }
+  "prefix_exit": { "message": "Man gadael" },
+  "state_on": { "message": "Ymlaen" },
+  "state_off": { "message": "Wedi'i ddiffodd" }
 }
