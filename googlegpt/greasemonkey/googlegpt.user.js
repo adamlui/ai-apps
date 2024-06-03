@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.13
+// @version             2024.6.3.14
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1064,7 +1064,7 @@
                                 // Filter out inactive ads, pick random active one
                                 const activeAds = adGroup.ads.filter(ad => ad.active != false)
                                 if (activeAds.length == 0) continue // to next group since no ads active
-                                const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
+                                const chosenAd = activeAds[Math.floor(chatgpt.randomFloat() * activeAds.length)] // random active one
 
                                 // Build destination URL
                                 let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
@@ -1099,7 +1099,7 @@
         function shuffle(list) {
             let currentIdx = list.length, tempValue, randomIdx
             while (currentIdx != 0) { // elements remain to be shuffled
-                randomIdx = Math.floor(Math.random() * currentIdx) ; currentIdx -= 1
+                randomIdx = Math.floor(chatgpt.randomFloat() * currentIdx) ; currentIdx -= 1
                 tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
             }
             return list
