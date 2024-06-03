@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "ਖਾਰਜ ਕਰੋ" },
   "link_viewChanges": { "message": "ਤਬਦੀਲੀਆਂ ਵੇਖੋ" },
   "state_enabled": { "message": "ਯੋਗ ਹੈ" },
-  "state_disabled": { "message": "ਆਯੋਗ ਹੈ" }
+  "state_disabled": { "message": "ਆਯੋਗ ਹੈ" },
+  "state_on": { "message": "ਤੇ" },
+  "state_off": { "message": "ਬੰਦ" }
 }

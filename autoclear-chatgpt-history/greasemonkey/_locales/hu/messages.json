@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Elvetés" },
   "link_viewChanges": { "message": "Módosítások megtekintése" },
   "state_enabled": { "message": "engedélyezve" },
-  "state_disabled": { "message": "letiltott" }
+  "state_disabled": { "message": "letiltott" },
+  "state_on": { "message": "be" },
+  "state_off": { "message": "Be /" }
 }

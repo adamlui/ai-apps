@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Иштен бошотуу" },
   "link_viewChanges": { "message": "Өзгөрүүлөрдү көрүү" },
   "state_enabled": { "message": "Күйгүзүлдү" },
-  "state_disabled": { "message": "Өчүрүлгөн" }
+  "state_disabled": { "message": "Өчүрүлгөн" },
+  "state_on": { "message": "ичинде" },
+  "state_off": { "message": "Өчүрүү" }
 }

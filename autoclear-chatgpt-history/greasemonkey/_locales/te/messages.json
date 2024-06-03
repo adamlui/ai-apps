@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "తీసివేయండి" },
   "link_viewChanges": { "message": "మార్పులను చూడండి" },
   "state_enabled": { "message": "చేతనంచేసిన" },
-  "state_disabled": { "message": "వికలాంగులు" }
+  "state_disabled": { "message": "వికలాంగులు" },
+  "state_on": { "message": "మీద" },
+  "state_off": { "message": "అచేతనం" }
 }

@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "שחרור" },
   "link_viewChanges": { "message": "הצגת השינויים" },
   "state_enabled": { "message": "מופעל" },
-  "state_disabled": { "message": "מושבת" }
+  "state_disabled": { "message": "מושבת" },
+  "state_on": { "message": "ב" },
+  "state_off": { "message": "כבוי" }
 }

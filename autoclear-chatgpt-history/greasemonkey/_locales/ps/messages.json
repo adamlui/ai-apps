@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "رد کردن" },
   "link_viewChanges": { "message": "بدلونونه وګورئ" },
   "state_enabled": { "message": "فعال شوی" },
-  "state_disabled": { "message": "غیر فعال شوی" }
+  "state_disabled": { "message": "غیر فعال شوی" },
+  "state_on": { "message": "په" },
+  "state_off": { "message": "مړ" }
 }

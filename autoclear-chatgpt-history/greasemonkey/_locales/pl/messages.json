@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Odrzuć" },
   "link_viewChanges": { "message": "Przegląd zmian" },
   "state_enabled": { "message": "włączony" },
-  "state_disabled": { "message": "wyłączone" }
+  "state_disabled": { "message": "wyłączone" },
+  "state_on": { "message": "w dniu" },
+  "state_off": { "message": "OFF (wył.)" }
 }

@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "འདོར་བ།" },
   "link_viewChanges": { "message": "འགྱུར་བ་མཐོང་བ" },
   "state_enabled": { "message": "སྤྱོད་སྒོ་ཕྱེས།" },
-  "state_disabled": { "message": "སྤྱོད་སྒོ་བཀག" }
+  "state_disabled": { "message": "སྤྱོད་སྒོ་བཀག" },
+  "state_on": { "message": "སྤར་རྒྱུ" },
+  "state_off": { "message": "གསོད" }
 }

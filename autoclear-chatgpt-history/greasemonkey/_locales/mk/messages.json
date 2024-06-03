@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Отфрли" },
   "link_viewChanges": { "message": "Прикажи ги промените" },
   "state_enabled": { "message": "овозможено" },
-  "state_disabled": { "message": "оневозможено" }
+  "state_disabled": { "message": "оневозможено" },
+  "state_on": { "message": "на" },
+  "state_off": { "message": "off" }
 }

@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "খারিজ করুন" },
   "link_viewChanges": { "message": "পরিবর্তনগুলি দেখুন" },
   "state_enabled": { "message": "সক্রিয়।" },
-  "state_disabled": { "message": "নিস্ক্রিয়" }
+  "state_disabled": { "message": "নিস্ক্রিয়" },
+  "state_on": { "message": "অন" },
+  "state_off": { "message": "বন্ধ" }
 }

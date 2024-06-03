@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "Özgertmeleri Gör" },
   "state_enabled": { "message": "Jawany Mümkin Et" },
-  "state_disabled": { "message": "Mümkin edigili" }
+  "state_disabled": { "message": "Mümkin edigili" },
+  "state_on": { "message": "% jeminden" },
+  "state_off": { "message": "çyk" }
 }

@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "TLOGELA" },
   "link_viewChanges": { "message": "Leba diphetogo" },
   "state_enabled": { "message": "e kgontshiwe" },
-  "state_disabled": { "message": "golafetse" }
+  "state_disabled": { "message": "golafetse" },
+  "state_on": { "message": "on" },
+  "state_off": { "message": "off" }
 }

@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Lusim" },
   "link_viewChanges": { "message": "Lukim ol senis" },
   "state_enabled": { "message": "em i bin mekim olsem" },
-  "state_disabled": { "message": "disable" }
+  "state_disabled": { "message": "disable" },
+  "state_on": { "message": "long" },
+  "state_off": { "message": "i go" }
 }

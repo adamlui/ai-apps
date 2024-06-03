@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "खारेज गर्नुहोस्" },
   "link_viewChanges": { "message": "परिवर्तनहरू हेर्नुहोस्" },
   "state_enabled": { "message": "MHz" },
-  "state_disabled": { "message": "अक्षम" }
+  "state_disabled": { "message": "अक्षम" },
+  "state_on": { "message": "on" },
+  "state_off": { "message": "off" }
 }

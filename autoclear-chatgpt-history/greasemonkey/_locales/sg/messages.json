@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Gbenga Akinnagbe" },
   "link_viewChanges": { "message": "Bâ achangement" },
   "state_enabled": { "message": "enable awe" },
-  "state_disabled": { "message": "disable awe" }
+  "state_disabled": { "message": "disable awe" },
+  "state_on": { "message": "na ndö ti" },
+  "state_off": { "message": "ti zia lege ni" }
 }

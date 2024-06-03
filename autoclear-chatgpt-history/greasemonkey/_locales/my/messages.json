@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "ထုတ်ပယ်ပါ" },
   "link_viewChanges": { "message": "အပြောင်းအလဲများကို ကြည့်ရန်" },
   "state_enabled": { "message": "ဖွင့်ထားသည်" },
-  "state_disabled": { "message": "ပိတ်ထားသည်" }
+  "state_disabled": { "message": "ပိတ်ထားသည်" },
+  "state_on": { "message": "အပေါ်တွင်" },
+  "state_off": { "message": "ပိတ်" }
 }

@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Noraidīt" },
   "link_viewChanges": { "message": "Skatīt izmaiņas" },
   "state_enabled": { "message": "iespējots" },
-  "state_disabled": { "message": "Izslēgt" }
+  "state_disabled": { "message": "Izslēgt" },
+  "state_on": { "message": "ieslēgts" },
+  "state_off": { "message": "izslēgt" }
 }

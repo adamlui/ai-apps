@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "நிராகரிக்கவும்" },
   "link_viewChanges": { "message": "மாற்றங்களைக் காண்க" },
   "state_enabled": { "message": "à®¨à¯à®²à®®à¯" },
-  "state_disabled": { "message": "முடக்கிப்பட்டுள்ளது" }
+  "state_disabled": { "message": "முடக்கிப்பட்டுள்ளது" },
+  "state_on": { "message": "இயக்கு" },
+  "state_off": { "message": "நீக்கு" }
 }

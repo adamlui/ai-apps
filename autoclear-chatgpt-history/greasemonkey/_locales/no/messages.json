@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Ignorer" },
   "link_viewChanges": { "message": "Vis endringer" },
   "state_enabled": { "message": "aktivert" },
-  "state_disabled": { "message": "deaktivert" }
+  "state_disabled": { "message": "deaktivert" },
+  "state_on": { "message": "på" },
+  "state_off": { "message": "avslag" }
 }

@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "אָפּזאָגן" },
   "link_viewChanges": { "message": "קוק ענדערונגען" },
   "state_enabled": { "message": "ערמעגליכט" },
-  "state_disabled": { "message": "input-mode" }
+  "state_disabled": { "message": "input-mode" },
+  "state_on": { "message": "אויף" },
+  "state_off": { "message": "אַוועק" }
 }

@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Odbaci" },
   "link_viewChanges": { "message": "Prikaži promjene" },
   "state_enabled": { "message": "Omoguceno" },
-  "state_disabled": { "message": "onemogućen" }
+  "state_disabled": { "message": "onemogućen" },
+  "state_on": { "message": "on (uključeno)" },
+  "state_off": { "message": "off (isključeno)" }
 }

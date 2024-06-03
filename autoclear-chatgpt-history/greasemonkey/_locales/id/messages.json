@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Tutup" },
   "link_viewChanges": { "message": "Lihat perubahan" },
   "state_enabled": { "message": "difungsikan" },
-  "state_disabled": { "message": "dinonaktifkan" }
+  "state_disabled": { "message": "dinonaktifkan" },
+  "state_on": { "message": "tentang" },
+  "state_off": { "message": "mati" }
 }

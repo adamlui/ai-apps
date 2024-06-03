@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Dismiss" },
   "link_viewChanges": { "message": "Vaʻai suiga" },
   "state_enabled": { "message": "faatagaina" },
-  "state_disabled": { "message": "faaletonu" }
+  "state_disabled": { "message": "faaletonu" },
+  "state_on": { "message": "i luga o" },
+  "state_off": { "message": "ALU!" }
 }

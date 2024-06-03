@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Descarta" },
   "link_viewChanges": { "message": "Mostra els canvis" },
   "state_enabled": { "message": "habilitat" },
-  "state_disabled": { "message": "inhabilitat" }
+  "state_disabled": { "message": "inhabilitat" },
+  "state_on": { "message": "activat" },
+  "state_off": { "message": "off" }
 }

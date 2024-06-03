@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Disteurel" },
   "link_viewChanges": { "message": "Kemmoù" },
   "state_enabled": { "message": "Ment an teol" },
-  "state_disabled": { "message": "Trobarzhelloù Arouezenn" }
+  "state_disabled": { "message": "Trobarzhelloù Arouezenn" },
+  "state_on": { "message": "deraouekaet" },
+  "state_off": { "message": "marv" }
 }

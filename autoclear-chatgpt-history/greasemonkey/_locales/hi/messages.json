@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "खारिज करना" },
   "link_viewChanges": { "message": "बदलाव देखें" },
   "state_enabled": { "message": "(अज्ञात)" },
-  "state_disabled": { "message": "अक्षम" }
+  "state_disabled": { "message": "अक्षम" },
+  "state_on": { "message": "ते" },
+  "state_off": { "message": "बन्द" }
 }

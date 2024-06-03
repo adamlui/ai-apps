@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Kureka" },
   "link_viewChanges": { "message": "Amahinduka" },
   "state_enabled": { "message": "Birafunguye" },
-  "state_disabled": { "message": "Yahagaritswe" }
+  "state_disabled": { "message": "Yahagaritswe" },
+  "state_on": { "message": "Agashushondanga" },
+  "state_off": { "message": "bidakora" }
 }

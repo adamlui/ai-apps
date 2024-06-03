@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": " Κλείσιμο" },
   "link_viewChanges": { "message": "Εμφάνιση αλλαγών" },
   "state_enabled": { "message": "ενεργό" },
-  "state_disabled": { "message": "απενεργοποιημένο" }
+  "state_disabled": { "message": "απενεργοποιημένο" },
+  "state_on": { "message": "την" },
+  "state_off": { "message": "ανενεργό" }
 }

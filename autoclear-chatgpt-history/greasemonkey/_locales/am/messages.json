@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "መደምሰሻ" },
   "link_viewChanges": { "message": "ለውጦችን ይመልከቱ" },
   "state_enabled": { "message": "የነቃ" },
-  "state_disabled": { "message": "የተሰናከለ" }
+  "state_disabled": { "message": "የተሰናከለ" },
+  "state_on": { "message": "በላይ" },
+  "state_off": { "message": "አጥፋ" }
 }

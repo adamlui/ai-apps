@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Demisyon" },
   "link_viewChanges": { "message": "Gade chanjman yo" },
   "state_enabled": { "message": "pèmèt" },
-  "state_disabled": { "message": "Andikape" }
+  "state_disabled": { "message": "Andikape" },
+  "state_on": { "message": "nan dat" },
+  "state_off": { "message": "etenn/koupe " }
 }

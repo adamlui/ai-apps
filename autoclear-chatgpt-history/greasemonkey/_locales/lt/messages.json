@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Atšaukti" },
   "link_viewChanges": { "message": "Peržiūrėti failo pakeitimus" },
   "state_enabled": { "message": "įjungtas" },
-  "state_disabled": { "message": "išjungta" }
+  "state_disabled": { "message": "išjungta" },
+  "state_on": { "message": "kada" },
+  "state_off": { "message": "išj" }
 }

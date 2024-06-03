@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Ignorer" },
   "link_viewChanges": { "message": "Afficher les modifications" },
   "state_enabled": { "message": "activé" },
-  "state_disabled": { "message": "désactivé" }
+  "state_disabled": { "message": "désactivé" },
+  "state_on": { "message": "actif" },
+  "state_off": { "message": "désactivé" }
 }

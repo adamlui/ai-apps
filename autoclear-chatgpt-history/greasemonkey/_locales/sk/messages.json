@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Odmietnuť" },
   "link_viewChanges": { "message": "Zobraziť zmeny" },
   "state_enabled": { "message": "povolené" },
-  "state_disabled": { "message": "nepovolené" }
+  "state_disabled": { "message": "nepovolené" },
+  "state_on": { "message": "na" },
+  "state_off": { "message": "off" }
 }

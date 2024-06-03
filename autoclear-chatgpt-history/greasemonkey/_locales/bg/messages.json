@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Отхвърли" },
   "link_viewChanges": { "message": "Вижте Промените" },
   "state_enabled": { "message": "разрешен" },
-  "state_disabled": { "message": "изключен" }
+  "state_disabled": { "message": "изключен" },
+  "state_on": { "message": "На" },
+  "state_off": { "message": "изключен" }
 }

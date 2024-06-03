@@ -23,5 +23,7 @@
   "buttonLabel_dismiss": { "message": "Адхіліць" },
   "link_viewChanges": { "message": "Праглядзець змены" },
   "state_enabled": { "message": "XYZ/ альфа- канал" },
-  "state_disabled": { "message": "адключаны" }
+  "state_disabled": { "message": "адключаны" },
+  "state_on": { "message": "на" },
+  "state_off": { "message": "выкл." }
 }
