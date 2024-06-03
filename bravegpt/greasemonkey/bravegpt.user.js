@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.4
+// @version             2024.6.3.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -176,20 +176,13 @@ setTimeout(async () => {
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@e1450b5/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@24fddba/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
                 'rqDisabled', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
-
-    // Init MENU objs
-    const menuIDs = [] // to store registered commands for removal while preserving order
-    const state = {
-        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
-    }
 
     // Init UI flags
     let scheme = isDarkMode() ? 'dark' : 'light'
@@ -223,6 +216,14 @@ setTimeout(async () => {
             }
         }
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
+
+    // Init MENU objs
+    const menuIDs = [] // to store registered commands for removal while preserving order
+    const state = {
+        symbol: ['✔️', '❌'],
+        word: [msgs.state_on.toUpperCase() || 'ON', msgs.state_off.toUpperCase() || 'OFF'],
+        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
+    }
 
     registerMenu()
 
