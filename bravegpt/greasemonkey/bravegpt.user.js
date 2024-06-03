@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.1
+// @version             2024.6.3.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -580,8 +580,8 @@ setTimeout(async () => {
         appDiv.appendChild(alertP)
     }
 
-    function consoleInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
-    function consoleErr(label, msg) { console.error(`${config.appSymbol} ${config.appName} >> ${label}${ msg ? `: ${msg}` : '' }`)}
+    function consoleInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ msg }`) }
+    function consoleErr(label, msg) { console.error(`${config.appSymbol} ${config.appName} » ${label}${ msg ? `: ${msg}` : '' }`)}
 
     // Define UI functions
 

@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.2
+// @version             2024.6.3
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -654,7 +654,7 @@
                 alert(msgs.alert_pressF11 || 'Press F11 to exit full screen',
                     ( msgs.alert_f11reason || 'F11 was used to enter full screen, and due to browser security reasons,'
                         + 'the same key must be used to exit it' ) + '.')
-            document.exitFullscreen().catch(err => console.error(config.appSymbol + ' >> Failed to exit fullscreen', err))
+            document.exitFullscreen().catch(err => console.error(config.appSymbol + ' » Failed to exit fullscreen', err))
         }
     }
 

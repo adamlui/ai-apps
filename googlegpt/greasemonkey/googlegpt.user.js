@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.1
+// @version             2024.6.3.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -812,8 +812,8 @@
         appDiv.appendChild(alertP)
     }
 
-    function consoleInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
-    function consoleErr(label, msg) { console.error(`${config.appSymbol} ${config.appName} >> ${label}${ msg ? `: ${msg}` : '' }`)}
+    function consoleInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ msg }`) }
+    function consoleErr(label, msg) { console.error(`${config.appSymbol} ${config.appName} » ${label}${ msg ? `: ${msg}` : '' }`)}
 
     // Define UI functions
 

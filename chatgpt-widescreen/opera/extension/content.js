@@ -374,7 +374,7 @@
         } else if (mode == 'fullScreen') {
             if (config.f11)
                 alert(chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
-            document.exitFullscreen().catch(err => console.error(config.appSymbol + ' >> Failed to exit fullscreen', err))
+            document.exitFullscreen().catch(err => console.error(config.appSymbol + ' » Failed to exit fullscreen', err))
         }
     }
 
