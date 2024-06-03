@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.2.8
+// @version             2024.6.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -412,13 +412,14 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@ae440034e/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@cd76f95/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
     loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
-                'rqDisabled', 'stickySidebar', 'suffixEnabled', 'widerSidebar')
+                'rqDisabled', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
+    if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
 
     // Init MENU objs
     const menuIDs = [] // to store registered commands for removal while preserving order
@@ -576,6 +577,19 @@
                        + state.separator + state.word[+!config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
+        if (getUserscriptManager() == 'Tampermonkey') {
+
+            // Add command to toggle streaming mode
+            const stmLabel = state.symbol[+config.streamingDisabled] + ' '
+                          + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
+                          + state.separator + state.word[+config.streamingDisabled]
+            menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
+                saveSetting('streamingDisabled', !config.streamingDisabled)
+                notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + state.word[+config.streamingDisabled])
+                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            }))
+        }
+
         // Add command to toggle auto-get mode
         const agmLabel = state.symbol[+config.autoGetDisabled] + ' '
                        + ( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
@@ -603,11 +617,11 @@
         }))
 
         // Add command to toggle prefix mode
-        const pmLabel = state.symbol[+!config.prefixEnabled] + ' '
+        const pfmLabel = state.symbol[+!config.prefixEnabled] + ' '
                       + ( msgs.menuLabel_require || 'Require' ) + ' "/" '
                       + ( msgs.menuLabel_beforeQuery || 'before query' ) + ' '
                       + state.separator + state.word[+!config.prefixEnabled]
-        menuIDs.push(GM_registerMenuCommand(pmLabel, () => {
+        menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
@@ -616,11 +630,11 @@
         }))
 
         // Add command to toggle suffix mode
-        const smLabel = state.symbol[+!config.suffixEnabled] + ' '
+        const sfmLabel = state.symbol[+!config.suffixEnabled] + ' '
                       + ( msgs.menuLabel_require || 'Require' ) + ' "?" '
                       + ( msgs.menuLabel_afterQuery || 'after query' ) + ' '
                       + state.separator + state.word[+!config.suffixEnabled]
-        menuIDs.push(GM_registerMenuCommand(smLabel, () => {
+        menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
@@ -799,7 +813,7 @@
     }
 
     function consoleInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } >> ${ msg }`) }
-    function consoleErr(msg) { console.error(`${ config.appSymbol } ${ config.appName } >> ERROR: ${ msg }`) }
+    function consoleErr(label, msg) { console.error(`${config.appSymbol} ${config.appName} >> ${label}${ msg ? `: ${msg}` : '' }`)}
 
     // Define UI functions
 
@@ -1189,8 +1203,11 @@
     function pickAPI() {
         let chosenAPI
         if (config.proxyAPIenabled) { // randomize proxy API
-            const untriedAPIs = Object.keys(apis).filter( // filter out OpenAI + tried APIs
-                api => api != 'OpenAI' && !getShowReply.triedAPIs.includes(api))
+            const untriedAPIs = Object.keys(apis)
+                .filter( // out OpenAI + tried APIs
+                    api => api !== 'OpenAI' && !getShowReply.triedAPIs.includes(api))
+                .filter( // out unstreamable APIs if config.streamingDisabled
+                    api => config.streamingDisabled || apis[api].streamable )
             chosenAPI = untriedAPIs[ // pick random array entry
                 Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]
             if (!chosenAPI) { consoleErr('No proxy APIs left untried') ; return null }
@@ -1234,9 +1251,10 @@
     }
 
     function processText(api, resp) {
+        if (!config.streamingDisabled && config.proxyAPIenabled) return
         if (resp.status != 200) {
-            consoleErr('Response status: ' + resp.status)
-            consoleErr('Response text: ' + resp.responseText)
+            consoleErr('Response status', resp.status)
+            consoleErr('Response text', resp.responseText)
             if (config.proxyAPIenabled && getShowReply.attemptCnt < Object.keys(apis).length -1)
                 retryDiffHost(api)
             else if (resp.status == 401 && !config.proxyAPIenabled) {
@@ -1254,7 +1272,7 @@
                     appShow(JSON.parse(resp.response).choices[0].message.content, footerContent)
                 } catch (err) {
                     consoleInfo('Response: ' + resp.response)
-                    consoleErr(appAlerts.parseFailed + ': ' + err)
+                    consoleErr(appAlerts.parseFailed, err)
                     appAlert('openAInotWorking, suggestProxy')
                 }
             } else { consoleInfo('Response: ' + resp.responseText) ; appAlert('openAInotWorking, suggestProxy') }
@@ -1270,20 +1288,20 @@
                     appShow(answer, footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
-                    consoleErr(appAlerts.parseFailed + ': ' + err)
-                    proxyRetryOrAlert(api)
+                    consoleErr(appAlerts.parseFailed, err)
+                    retryDiffHost(api)
                 }
-            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert(api) }
+            } else { consoleInfo('Response: ' + resp.responseText) ; retryDiffHost(api) }
         } else if (api == 'Free Chat') {
             if (resp.responseText) {
                 try {
                     appShow(resp.responseText, footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
-                    consoleErr(appAlerts.parseFailed + ': ' + err)
-                    proxyRetryOrAlert(api)
+                    consoleErr(appAlerts.parseFailed, err)
+                    retryDiffHost(api)
                 }
-            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert(api) }
+            } else { consoleInfo('Response: ' + resp.responseText) ; retryDiffHost(api) }
         } else if (api == 'GPTforLove') {
             if (resp.responseText && !resp.responseText.includes('Fail')) {
                 try {
@@ -1293,10 +1311,10 @@
                     appShow(lastObj.text, footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
-                    consoleErr(appAlerts.parseFailed + ': ' + err)
-                    proxyRetryOrAlert(api)
+                    consoleErr(appAlerts.parseFailed, err)
+                    retryDiffHost(api)
                 }
-            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert(api) }
+            } else { consoleInfo('Response: ' + resp.responseText) ; retryDiffHost(api) }
         } else if (api == 'MixerBox AI') {
             if (resp.responseText) {
                 try {
@@ -1306,24 +1324,48 @@
                     appShow(extractedData.join(''), footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
-                    consoleErr(appAlerts.parseFailed + ': ' + err)
-                    proxyRetryOrAlert(api)
+                    consoleErr(appAlerts.parseFailed, err)
+                    retryDiffHost(api)
                 }
-            } else { consoleInfo('Response: ' + resp.responseText) ; proxyRetryOrAlert(api) }
+            } else { consoleInfo('Response: ' + resp.responseText) ; retryDiffHost(api) }
         }
+    }
 
-        function proxyRetryOrAlert(api) {
-            if (getShowReply.attemptCnt < Object.keys(apis).length -1) retryDiffHost(api)
-            else appAlert('proxyNotWorking', 'suggestOpenAI')
+    function processStream(api, stream) {
+        if (config.streamingDisabled || !config.proxyAPIenabled) return
+        const reader = stream.response.getReader()
+        let accumulatedChunks = ''
+        reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream:', err.message))
+        function processStreamText({ done, value }) {
+            if (done) return
+            let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
+            if (api == 'MixerBox AI') { // pre-process chunks
+                const extractedChunks = Array.from(chunk.matchAll(/data:(.*)/g), match => match[1]
+                    .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
+                    .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
+                chunk = extractedChunks.join('')
+            }
+            accumulatedChunks += chunk
+            try { // to show accumulated chunks
+                if (/['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // GPTforLove fail
+                     consoleErr('Response', accumulatedChunks) ; retryDiffHost(api) }
+                else appShow(accumulatedChunks, footerContent)
+            } catch (err) { consoleErr('Error showing stream:', err.message) }
+            return reader.read().then(processStreamText).catch(err => consoleErr('Error reading stream:', err.message))
         }
     }
 
     function retryDiffHost(triedAPI) {
-        consoleErr(`Error calling ${ apis[triedAPI].endpoint }. Trying another endpoint...`)
-        getShowReply.triedAPIs.push(triedAPI) // store triedAPI to not retry
-        getShowReply.attemptCnt++
-        getShowReply(msgChain)
-    }
+        consoleErr('Error using ' + apis[triedAPI].endpoint)
+        if (getShowReply.attemptCnt < Object.keys(apis).length -1) {
+            consoleInfo('Trying another endpoint...')
+            getShowReply.triedAPIs.push(triedAPI) // store tried API to not retry
+            getShowReply.attemptCnt++
+            getShowReply(msgChain)
+        } else {
+            consoleInfo('No remaining untried endpoints')
+            appAlert('proxyNotWorking', 'suggestOpenAI')
+    }}
 
     function getRelatedQueries(query) {
         const api = pickAPI()
@@ -1418,9 +1460,11 @@
 
         // Get/show answer from ChatGPT
         GM.xmlHttpRequest({
-            method: apis[api].method, url: apis[api].endpoint, responseType: 'text', 
+            method: apis[api].method, url: apis[api].endpoint,
+            responseType: config.streamingDisabled || !config.proxyAPIenabled ? 'text' : 'stream',
             headers: createHeaders(api), data: createPayload(api, msgChain),
             onload: resp => processText(api, resp),
+            onloadstart: resp => processStream(api, resp),
             onerror: err => { consoleErr(err.message)
                 if (!config.proxyAPIenabled)
                     appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
