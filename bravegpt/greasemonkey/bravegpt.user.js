@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.2
+// @version             2024.6.3.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -339,7 +339,7 @@ setTimeout(async () => {
                        + state.separator + state.word[+!config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
-        if (getUserscriptManager() == 'Tampermonkey') {
+        if (getUserscriptManager() == 'Tampermonkey' && config.proxyAPIenabled) {
 
             // Add command to toggle streaming mode
             const stmLabel = state.symbol[+config.streamingDisabled] + ' '

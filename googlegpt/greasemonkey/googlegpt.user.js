@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.2
+// @version             2024.6.3.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -577,7 +577,7 @@
                        + state.separator + state.word[+!config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
-        if (getUserscriptManager() == 'Tampermonkey') {
+        if (getUserscriptManager() == 'Tampermonkey' && config.proxyAPIenabled) {
 
             // Add command to toggle streaming mode
             const stmLabel = state.symbol[+config.streamingDisabled] + ' '
