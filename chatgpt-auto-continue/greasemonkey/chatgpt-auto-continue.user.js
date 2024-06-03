@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.3.1
+// @version             2024.6.3.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -264,7 +264,8 @@
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: resp => {
+        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        function onLoad(resp) {
             try { // to return localized messages.json
                 const msgs = JSON.parse(resp.responseText), flatMsgs = {}
                 for (const key in msgs)  // remove need to ref nested keys
@@ -278,7 +279,7 @@
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
             }
-        }})
+        }
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
 
     // Init MENU objs

@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.15
+// @version             2024.6.3.16
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -427,7 +427,8 @@
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: resp => {
+        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        function onLoad(resp) {
             try { // to return localized messages.json
                 const msgs = JSON.parse(resp.responseText), flatMsgs = {}
                 for (const key in msgs)  // remove need to ref nested keys
@@ -441,7 +442,7 @@
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
                 GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
             }
-        }})
+        }
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
 
     // Init MENU objs
