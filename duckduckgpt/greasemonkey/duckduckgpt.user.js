@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3
+// @version             2024.6.3.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1064,7 +1064,7 @@
             consoleErr('Response status', resp.status)
             consoleErr('Response text', resp.responseText)
             if (config.proxyAPIenabled && getShowReply.attemptCnt < Object.keys(apis).length -1)
-                retryDiffHost(api)
+                tryDiffAPI(api)
             else if (resp.status == 401 && !config.proxyAPIenabled) {
                 GM_deleteValue(config.keyPrefix + '_openAItoken') ; appAlert('login') }
             else if (resp.status == 403)
@@ -1097,9 +1097,9 @@
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed, err)
-                    retryDiffHost(api)
+                    tryDiffAPI(api)
                 }
-            } else { consoleInfo('Response: ' + resp.responseText) ; retryDiffHost(api) }
+            } else { consoleInfo('Response: ' + resp.responseText) ; tryDiffAPI(api) }
         } else if (api == 'Free Chat') {
             if (resp.responseText) {
                 try {
@@ -1107,9 +1107,9 @@
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed, err)
-                    retryDiffHost(api)
+                    tryDiffAPI(api)
                 }
-            } else { consoleInfo('Response: ' + resp.responseText) ; retryDiffHost(api) }
+            } else { consoleInfo('Response: ' + resp.responseText) ; tryDiffAPI(api) }
         } else if (api == 'GPTforLove') {
             if (resp.responseText && !resp.responseText.includes('Fail')) {
                 try {
@@ -1120,9 +1120,9 @@
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed, err)
-                    retryDiffHost(api)
+                    tryDiffAPI(api)
                 }
-            } else { consoleInfo('Response: ' + resp.responseText) ; retryDiffHost(api) }
+            } else { consoleInfo('Response: ' + resp.responseText) ; tryDiffAPI(api) }
         } else if (api == 'MixerBox AI') {
             if (resp.responseText) {
                 try {
@@ -1133,9 +1133,9 @@
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed, err)
-                    retryDiffHost(api)
+                    tryDiffAPI(api)
                 }
-            } else { consoleInfo('Response: ' + resp.responseText) ; retryDiffHost(api) }
+            } else { consoleInfo('Response: ' + resp.responseText) ; tryDiffAPI(api) }
         }
     }
 
@@ -1156,14 +1156,14 @@
             accumulatedChunks += chunk
             try { // to show accumulated chunks
                 if (/['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // GPTforLove fail
-                     consoleErr('Response', accumulatedChunks) ; retryDiffHost(api) }
+                     consoleErr('Response', accumulatedChunks) ; tryDiffAPI(api) }
                 else appShow(accumulatedChunks)
             } catch (err) { consoleErr('Error showing stream:', err.message) }
             return reader.read().then(processStreamText).catch(err => consoleErr('Error reading stream:', err.message))
         }
     }
 
-    function retryDiffHost(triedAPI) {
+    function tryDiffAPI(triedAPI) {
         consoleErr('Error using ' + apis[triedAPI].endpoint)
         if (getShowReply.attemptCnt < Object.keys(apis).length -1) {
             consoleInfo('Trying another endpoint...')
@@ -1278,7 +1278,7 @@
                     appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
                 else { // if Proxy Mode
                     if (getShowReply.attemptCnt < Object.keys(apis).length -1)
-                         retryDiffHost(api)
+                         tryDiffAPI(api)
                     else appAlert('proxyNotWorking', 'suggestOpenAI')
             }}
         })
