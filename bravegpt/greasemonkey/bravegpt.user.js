@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.2.7
+// @version             2024.6.2.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -231,7 +231,7 @@ setTimeout(async () => {
         'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.xyz',
             endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true },
         'Free Chat': { expectedOrigin: 'https://e8.frechat.xyz',
-            endpoint: 'https://demo-yj7h.onrender.com/single/chat_messages',  method: 'PUT', streamable: true },
+            endpoint: 'https://demo-yj7h.onrender.com/single/chat_messages', method: 'PUT', streamable: true },
         'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
             endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true },
         'MixerBox AI': { expectedOrigin: 'https://chatai.mixerbox.com',
@@ -254,17 +254,16 @@ setTimeout(async () => {
         suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
     }
 
-    // STYLIZE elements
-    const appStyle = document.createElement('style')
-    updateAppStyle() ; document.head.append(appStyle)
+    // Stylize APP elems
+    const appStyle = document.createElement('style') ; updateAppStyle() ; document.head.append(appStyle)
 
-    // Create Brave Search style TWEAKS
+    // Stylize SITE elems
     const tweaksStyle = document.createElement('style'),
           wsbStyles = 'main.main-column, aside.sidebar { max-width: 521px !important }'
                     + '.bravegpt { width: 521px }'
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
-    // Create/stylize TOOLTIP div
+    // Stylize TOOLTIPs
     const tooltipDiv = document.createElement('div'),
           tooltipStyle = document.createElement('style')
     tooltipDiv.classList.add('button-tooltip', 'no-user-select')
