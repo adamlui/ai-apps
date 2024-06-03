@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.3
+// @version             2024.6.3.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -625,7 +625,7 @@ setTimeout(async () => {
               + 'transition: transform 0.1s ease !important ; transform: scale(1) }'
           + '.standby-btn:hover { border-radius: 4px ; transform: scale(1.025) ;'
               + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
-          + '.bravegpt pre {'
+          + '.bravegpt > pre {'
               + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
               + 'padding: 1.2em 1.2em 0 1.2em ; margin-top: .7em ; border-radius: 13px ; overflow: auto ;'
               + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 }' )
@@ -671,10 +671,10 @@ setTimeout(async () => {
           + '.kudoai a { color: #aaa ; text-decoration: none }'
           + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
           + ( // markdown styles
-                '.bravegpt pre h1 { font-size: 1.25em } .bravegpt pre h2 { font-size: 1.1em }' // size headings
-              + '.bravegpt pre ul { margin: -10px 0 -6px ; }' // reduce v-spacing
-              + '.bravegpt pre ol { margin: -33px 0 -6px ; }' // reduce v-spacing
-              + '.bravegpt pre li { margin: -10px 0 ; list-style: inside }' ) // reduce v-spacing, show left symbols
+                '.bravegpt > pre h1 { font-size: 1.25em } .bravegpt > pre h2 { font-size: 1.1em }' // size headings
+              + '.bravegpt > pre ul { margin: -10px 0 -6px ; }' // reduce v-spacing
+              + '.bravegpt > pre ol { margin: -33px 0 -6px ; }' // reduce v-spacing
+              + '.bravegpt > pre li { margin: -10px 0 ; list-style: inside }' ) // reduce v-spacing, show left symbols
           + '.katex-html { display: none }' // hide unrendered math
           + '.chatgpt-modal > div { padding: 24px 20px 24px 20px !important }' // increase alert padding
           + '.chatgpt-modal p { margin-left: 4px ; font-size: 1.115rem }' // position/size alert msg

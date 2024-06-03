@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.4
+// @version             2024.6.3.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -856,7 +856,7 @@
               + 'transition: transform 0.1s ease !important ; transform: scale(1) }'
           + '.standby-btn:hover { border-radius: 6px ; transform: scale(1.025) ;'
               + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
-          + '.googlegpt pre {'
+          + '.googlegpt > pre {'
               + 'font-size: 1.05em ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ;'
               + ' line-height: 22px ; padding: 1.25em 1.25em 0 1.25em ; border-radius: 10px ; overflow: auto ;'
               + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 }' : 'background: #eaeaea }' )
@@ -892,10 +892,10 @@
           + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none }'
           + '.kudoai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
           + ( // markdown styles
-                '.googlegpt pre h1 { font-size: 1.25em } .googlegpt pre h2 { font-size: 1.1em }' // size headings
-              + '.googlegpt pre ol { padding-left: 1.58em }' // indent
-              + '.googlegpt pre ul { margin: -10px 0 -6px ; padding-left: 1.5em }' // reduce v-spacing, indent
-              + '.googlegpt pre li { margin: -10px 0 ; list-style: unset }' ) // reduce v-spacing, show left symbols
+                '.googlegpt > pre h1 { font-size: 1.25em } .googlegpt > pre h2 { font-size: 1.1em }' // size headings
+              + '.googlegpt > pre ol { padding-left: 1.58em }' // indent
+              + '.googlegpt > pre ul { margin: -10px 0 -6px ; padding-left: 1.5em }' // reduce v-spacing, indent
+              + '.googlegpt > pre li { margin: -10px 0 ; list-style: unset }' ) // reduce v-spacing, show left symbols
           + '.katex-html { display: none }' // hide unrendered math
           + '.chatgpt-modal > div { 17px 20px 24px 20px !important }' // increase alert padding
           + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
@@ -934,7 +934,7 @@
                               + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
 
         // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for getShowReply()'s RQ show + menu RQ toggle)
-        const answerPre = document.querySelector('.googlegpt pre'),
+        const answerPre = document.querySelector('.googlegpt > pre'),
               relatedQueries = document.querySelector('.related-queries'),
               shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328,
               longerPreHeight = window.innerHeight - 309

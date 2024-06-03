@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.3
+// @version             2024.6.3.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -762,7 +762,7 @@
               + 'transition: transform 0.1s ease !important ; transform: scale(1) }'
           + '.standby-btn:hover { border-radius: 4px ; transform: scale(1.025) ;'
               + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
-          + '.ddgpt pre {'
+          + '.ddgpt > pre {'
               + 'font-size: 1.14rem ; white-space: pre-wrap ; margin: .99rem 0 7px 0 ; padding: 1.25em 1.25em 0 1.25em ;'
               + 'border-radius: 10px ; line-height: 21px ; min-width: 0 ; overflow: auto ;'
               + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2' : '' ) + '}'
@@ -802,13 +802,13 @@
           + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none } '
           + '.kudoai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
           + ( // rendered markdown styles
-                '.ddgpt pre h1 { font-size: 1.29em } .ddgpt pre h2 { font-size: 1.19em }' // size headings
-              + '.ddgpt pre h1, .ddgpt pre h2 { margin-bottom: -15px }' // reduce gap after headings
-              + '.ddgpt pre ol { margin: -30px 0 -37px }' // reduce v-padding
-              + '.ddgpt pre ol > li { margin: -10px 0 0 1.6em ; list-style: decimal }' // reduce v-padding, show number markers
-              + '.ddgpt pre ol > li::marker { font-size: 0.9em }' // shrink number markers
-              + '.ddgpt pre ul { margin: -28px 0 -35px }' // reduce v-padding
-              + '.ddgpt pre ul > li { margin: -10px 0 0 1.2em ; list-style: inside }' ) // reduce v-padding, show bullets
+                '.ddgpt > pre h1 { font-size: 1.29em } .ddgpt > pre h2 { font-size: 1.19em }' // size headings
+              + '.ddgpt > pre h1, .ddgpt > pre h2 { margin-bottom: -15px }' // reduce gap after headings
+              + '.ddgpt > pre ol { margin: -30px 0 -37px }' // reduce v-padding
+              + '.ddgpt > pre ol > li { margin: -10px 0 0 1.6em ; list-style: decimal }' // reduce v-padding, show number markers
+              + '.ddgpt > pre ol > li::marker { font-size: 0.9em }' // shrink number markers
+              + '.ddgpt > pre ul { margin: -28px 0 -35px }' // reduce v-padding
+              + '.ddgpt > pre ul > li { margin: -10px 0 0 1.2em ; list-style: inside }' ) // reduce v-padding, show bullets
           + '.katex-html { display: none } ' // hide unrendered math
           + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important }' // increase alert padding
           + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
@@ -837,7 +837,7 @@
                               + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
 
         // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for getShowReply()'s RQ show + menu RQ toggle)
-        const answerPre = document.querySelector('.ddgpt pre'),
+        const answerPre = document.querySelector('.ddgpt > pre'),
               relatedQueries = document.querySelector('.related-queries'),
               shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 245,
               longerPreHeight = window.innerHeight - 255
