@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.2.6
+// @version             2024.6.2.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -204,6 +204,263 @@
 // ...and KaTeX, the fastest math typesetting library @ https://katex.org (c) 2013–2020 Khan Academy & contributors under the MIT license
 
 (async () => {
+
+    // Init CONFIG
+    const config = {
+        appName: 'DuckDuckGPT', appSymbol: '🤖', keyPrefix: 'duckDuckGPT',
+        appURL: 'https://www.duckduckgpt.com', gitHubURL: 'https://github.com/KudoAI/duckduckgpt',
+        greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt' }
+    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
+    config.supportURL = config.gitHubURL + '/issues/new'
+    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@ae440034e/'
+    config.userLanguage = chatgpt.getUserLanguage()
+    config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
+    loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
+                'rqDisabled', 'stickySidebar', 'suffixEnabled', 'widerSidebar')
+    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
+
+    // Init MENU objs
+    const menuIDs = [] // to store registered commands for removal while preserving order
+    const state = {
+        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
+    }
+
+    // Init UI flags
+    let scheme = chatgpt.isDarkMode() ? 'dark' : 'light'
+    const isFirefox = chatgpt.browser.isFirefox(),
+          isMobile = chatgpt.browser.isMobile(),
+          isCentered = isCenteredMode()
+
+    // Pre-load LOGO
+    const appLogoImg = document.createElement('img') ; updateAppLogoSrc() 
+    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
+
+    // Define MESSAGES
+    let msgs = {}
+    const msgsLoaded = new Promise(resolve => {
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
+        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        function onLoad(resp) {
+            try { // to return localized messages.json
+                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
+                for (const key in msgs)  // remove need to ref nested keys
+                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
+                        flatMsgs[key] = msgs[key].message
+                resolve(flatMsgs)
+            } catch (err) { // if bad response
+                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                    msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
+                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+            }
+        }
+    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
+
+    registerMenu()
+
+    // Init API props
+    const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
+    const apis = {
+        'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.xyz',
+            endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true },
+        'Free Chat': { expectedOrigin: 'https://e8.frechat.xyz',
+            endpoint: 'https://demo-yj7h.onrender.com/single/chat_messages',  method: 'PUT', streamable: true },
+        'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
+            endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true },
+        'MixerBox AI': { expectedOrigin: 'https://chatai.mixerbox.com',
+            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', method: 'POST', streamable: true },
+        'OpenAI': { expectedOrigin: 'https://chatgpt.com',
+            endpoint: 'https://api.openai.com/v1/chat/completions', method: 'POST', streamable: true }
+    }
+    const apiIDs = { gptPlus: { parentID: '' }, yqCloud: { userID: '#/chat/' + Date.now() }}
+
+    // Init ALERTS
+    const appAlerts = {
+        waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
+        login:            `${ msgs.alert_login || 'Please login' } @ `,
+        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
+        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
+        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
+        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
+        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
+        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
+        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
+    }
+
+    // STYLIZE elements
+    const appStyle = document.createElement('style')
+    updateAppStyle() ; document.head.append(appStyle)
+
+    // Create DDG style TWEAKS
+    const tweaksStyle = document.createElement('style'),
+          wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
+                    + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
+                    + '#app-chatbar { width: 95.6% }',
+          ssbStyles = '.ddgpt { position: sticky ; top: 14px }'
+                    + '.ddgpt ~ * { display: none }' // hide sidebar contents
+                    + 'body, div.site-wrapper { overflow: clip }' // replace `overflow: hidden` to allow stickiness
+    updateTweaksStyle() ; document.head.append(tweaksStyle)
+
+    // Create/stylize TOOLTIP div
+    const tooltipDiv = document.createElement('div'),
+          tooltipStyle = document.createElement('style')
+    tooltipDiv.classList.add('button-tooltip', 'no-user-select')
+    tooltipStyle.innerText = '.button-tooltip {'
+        + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 4px 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+        + 'font-size: 0.87em ; color: white ;' // font style
+        + 'position: absolute ;' // for updateTooltip() calcs
+        + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
+        + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
+    document.head.append(tooltipStyle)
+
+    // Create/classify DDGPT container
+    const appDiv = document.createElement('div') // create container div
+    appDiv.classList.add('ddgpt', 'fade-in')
+ 
+    // Create/classify/fill feedback FOOTER
+    const appFooter = document.createElement('footer')
+    appFooter.classList.add('feedback-prompt', // DDG class
+                            'fade-in') // DDGPT classes
+    let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
+    footerContent.className = 'js-feedback-prompt-generic' // DDG footer class
+    appFooter.append(footerContent)
+
+    // APPEND DDGPT + footer to DDG
+    const appElems = [appFooter, appDiv],
+          hostContainer = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]'
+                                                                        : '[class*="sidebar"]')
+    appElems.forEach(elem => hostContainer.prepend(elem))
+    appElems.toReversed().forEach((elem, idx) => // fade in staggered
+        setTimeout(() => elem.classList.add('active'), idx * 550 - 200))
+
+    // REPLACE hostContainer max-width w/ min-width for better UI
+    if (!isMobile) { hostContainer.style.maxWidth = '' ; hostContainer.style.minWidth = '448px' }
+
+    // Check for active TEXT CAMPAIGNS to replace footer CTA
+    fetchJSON('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
+        (err, advertisersData) => { if (err) return
+
+            // Init vars
+            let chosenAdvertiser, adSelected
+            const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
+            const currentDate = (() => { // in YYYYMMDD format
+                const today = new Date(), year = today.getFullYear(),
+                      month = String(today.getMonth() + 1).padStart(2, '0'),
+                      day = String(today.getDate()).padStart(2, '0')
+                return year + month + day
+            })()
+
+            // Select random, active advertiser
+            for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
+                if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
+
+            // Fetch a random, active creative
+            if (chosenAdvertiser) {
+                const campaignsURL = 'https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/'
+                                   + chosenAdvertiser + '/text/campaigns.json'
+                fetchJSON(campaignsURL, (err, campaignsData) => { if (err) return
+
+                    // Select random, active campaign
+                    for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
+                        const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
+                        if (!campaignIsActive) continue // to next campaign since campaign inactive
+
+                        // Select random active group
+                        for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
+
+                            // Skip disqualified groups
+                            if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
+                                || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
+                                || adGroup.active == false // group explicitly disabled
+                                || adGroup.targetBrowsers && // target browser(s) exist...
+                                    !adGroup.targetBrowsers.some( // ...but doesn't match user's
+                                        browser => new RegExp(browser, 'i').test(navigator.userAgent))
+                                || adGroup.targetLocations && ( // target locale(s) exist...
+                                    !config.userLocale || !adGroup.targetLocations.some( // ...and user locale is missing or excluded
+                                        loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
+                            ) continue // to next group
+
+                            // Filter out inactive ads, pick random active one
+                            const activeAds = adGroup.ads.filter(ad => ad.active != false)
+                            if (activeAds.length == 0) continue // to next group since no ads active
+                            const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
+
+                            // Build destination URL
+                            let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
+                                || campaign.destinationURL || ''
+                            if (destinationURL.includes('http')) { // insert UTM tags
+                                const [baseURL, queryString] = destinationURL.split('?'),
+                                      queryParams = new URLSearchParams(queryString || '')
+                                queryParams.set('utm_source', config.appName.toLowerCase())
+                                queryParams.set('utm_content', 'app_footer_link')
+                                destinationURL = baseURL + '?' + queryParams.toString()
+                            }
+
+                            // Update footer content
+                            footerContent.setAttribute('class', '') // reset for re-fade
+                            const newFooterContent = destinationURL ? createAnchor(destinationURL)
+                                                                    : document.createElement('span')
+                            footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
+                            footerContent.classList.add('fade-in', // DDGPT fade class
+                                                        'js-feedback-prompt-generic') // DDG footer class
+                            footerContent.textContent = chosenAd.text
+                            footerContent.setAttribute('title', chosenAd.tooltip || '')
+                            setTimeout(() => footerContent.classList.add('active'), 100) // to trigger fade
+                            adSelected = true ; break
+                        }
+                        if (adSelected) break // out of campaign loop after ad selection
+            }})}
+
+            function shuffle(list) {
+                let currentIdx = list.length, tempValue, randomIdx
+                while (currentIdx != 0) { // elements remain to be shuffled
+                    randomIdx = Math.floor(Math.random() * currentIdx) ; currentIdx -= 1
+                    tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
+                }
+                return list
+            }
+
+            function applyBoosts(list) {
+                let boostedList = [...list],
+                    boostedListLength = boostedList.length - 1 // for applying multiple boosts
+                list.forEach(([name, data]) => { // check for boosts
+                    if (data.boost) { // boost flagged entry's selection probability
+                        const boostPercent = parseInt(data.boost, 10) / 100,
+                              entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
+                                            * boostPercent - 1 // reduced to boosted entries needed
+                        for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
+                        boostedListLength += entriesNeeded // update for subsequent calculations
+                }})
+                return boostedList
+            }
+    })
+
+    // Show STANDBY mode or get/show ANSWER
+    const msgChain = [] // to store queries + answers for contextual replies
+    if (config.autoGetDisabled
+        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
+        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
+    ) appShow('standby')
+    else {
+        appAlert('waitingResponse')
+        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
+        msgChain.push({ role: 'user', content: query })
+        getShowReply(msgChain)
+    }
+
+    // Observe for DDG SCHEME CHANGES to update DDGPT scheme
+    (new MutationObserver(handleSchemeChange)).observe( // class changes from DDG appearance settings
+        document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    function handleSchemeChange() {
+        const newScheme = chatgpt.isDarkMode() ? 'dark' : 'light'
+        if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() }
+    }
 
     // Define SCRIPT functions
 
@@ -762,7 +1019,6 @@
         return headers
     }
 
-    const ids = { gptPlus: { parentID: '' }, yqCloud: { userID: '#/chat/' + Date.now() }}
     function createPayload(api, msgs) {
         let payload = {}
         if (api == 'OpenAI')
@@ -770,7 +1026,7 @@
         else if  (api == 'AIchatOS') {
             payload = {
                 prompt: msgs[msgs.length - 1].content,
-                withoutContext: false, userId: ids.yqCloud.userID, network: true
+                withoutContext: false, userId: apiIDs.yqCloud.userID, network: true
             }
         }  else if (api == 'Free Chat')
             payload = { messages: msgs, model: 'gemma-7b-it' }
@@ -780,7 +1036,7 @@
                 secret: generateGPTplusKey(), top_p: 1, temperature: 0.8,
                 systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.'
             }
-            if (ids.gptPlus.parentID) payload.options = { parentMessageId: ids.gptPlus.parentID }
+            if (apiIDs.gptPlus.parentID) payload.options = { parentMessageId: apiIDs.gptPlus.parentID }
         } else if (api == 'MixerBox AI')
             payload = { prompt: msgs, model: 'gpt-3.5-turbo' }
         return JSON.stringify(payload)
@@ -842,7 +1098,7 @@
                 try {
                     let chunks = resp.responseText.trim().split('\n'),
                         lastObj = JSON.parse(chunks[chunks.length - 1])
-                    if (lastObj.id) ids.gptPlus.parentID = lastObj.id
+                    if (lastObj.id) apiIDs.gptPlus.parentID = lastObj.id
                     appShow(lastObj.text) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
@@ -1308,261 +1564,6 @@
             chatTextarea.style.height = chatTextarea.scrollHeight - vOffset + 'px'
             prevLength = newLength
         }
-    }
-
-    // Run MAIN routine
-
-    // Init CONFIG/MSGCHAIN/MENU
-    const config = {
-        appName: 'DuckDuckGPT', appSymbol: '🤖', keyPrefix: 'duckDuckGPT',
-        appURL: 'https://www.duckduckgpt.com', gitHubURL: 'https://github.com/KudoAI/duckduckgpt',
-        greasyForkURL: 'https://greasyfork.org/scripts/459849-duckduckgpt' }
-    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
-    config.supportURL = config.gitHubURL + '/issues/new'
-    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@ae440034e/'
-    config.userLanguage = chatgpt.getUserLanguage()
-    config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
-                'rqDisabled', 'stickySidebar', 'suffixEnabled', 'widerSidebar')
-    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    const msgChain = [], // to store queries + answers for contextual replies
-          menuIDs = [] // to store registered commands for removal while preserving order
-    const state = {
-        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
-
-    // Init UI flags
-    let scheme = chatgpt.isDarkMode() ? 'dark' : 'light'
-    const isFirefox = chatgpt.browser.isFirefox(),
-          isMobile = chatgpt.browser.isMobile(),
-          isCentered = isCenteredMode()
-
-    // Pre-load LOGO
-    const appLogoImg = document.createElement('img') ; updateAppLogoSrc() 
-    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
-
-    // Define MESSAGES
-    let msgs = {}
-    const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
-              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
-        function onLoad(resp) {
-            try { // to return localized messages.json
-                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
-                for (const key in msgs)  // remove need to ref nested keys
-                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
-                        flatMsgs[key] = msgs[key].message
-                resolve(flatMsgs)
-            } catch (err) { // if bad response
-                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
-                    msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
-                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
-            }
-        }
-    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
-
-    registerMenu()
-
-    // Init API props
-    const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
-    const apis = {
-        'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.xyz',
-            endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true },
-        'Free Chat': { expectedOrigin: 'https://e8.frechat.xyz',
-            endpoint: 'https://demo-yj7h.onrender.com/single/chat_messages',  method: 'PUT', streamable: true },
-        'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
-            endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true },
-        'MixerBox AI': { expectedOrigin: 'https://chatai.mixerbox.com',
-            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', method: 'POST', streamable: true },
-        'OpenAI': { expectedOrigin: 'https://chatgpt.com',
-            endpoint: 'https://api.openai.com/v1/chat/completions', method: 'POST', streamable: true }
-    }
-
-    // Init ALERTS
-    const appAlerts = {
-        waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
-        login:            `${ msgs.alert_login || 'Please login' } @ `,
-        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
-        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
-        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
-        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
-        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
-        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
-        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
-    }
-
-    // STYLIZE elements
-    const appStyle = document.createElement('style')
-    updateAppStyle() ; document.head.append(appStyle)
-
-    // Create DDG style TWEAKS
-    const tweaksStyle = document.createElement('style'),
-          wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
-                    + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
-                    + '#app-chatbar { width: 95.6% }',
-          ssbStyles = '.ddgpt { position: sticky ; top: 14px }'
-                    + '.ddgpt ~ * { display: none }' // hide sidebar contents
-                    + 'body, div.site-wrapper { overflow: clip }' // replace `overflow: hidden` to allow stickiness
-    updateTweaksStyle() ; document.head.append(tweaksStyle)
-
-    // Create/stylize TOOLTIP div
-    const tooltipDiv = document.createElement('div'),
-          tooltipStyle = document.createElement('style')
-    tooltipDiv.classList.add('button-tooltip', 'no-user-select')
-    tooltipStyle.innerText = '.button-tooltip {'
-        + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 4px 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-        + 'font-size: 0.87em ; color: white ;' // font style
-        + 'position: absolute ;' // for updateTooltip() calcs
-        + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
-        + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
-    document.head.append(tooltipStyle)
-
-    // Create/classify DDGPT container
-    const appDiv = document.createElement('div') // create container div
-    appDiv.classList.add('ddgpt', 'fade-in')
- 
-    // Create/classify/fill feedback FOOTER
-    const appFooter = document.createElement('footer')
-    appFooter.classList.add('feedback-prompt', // DDG class
-                            'fade-in') // DDGPT classes
-    let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
-    footerContent.className = 'js-feedback-prompt-generic' // DDG footer class
-    appFooter.append(footerContent)
-
-    // APPEND DDGPT + footer to DDG
-    const appElems = [appFooter, appDiv],
-          hostContainer = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]'
-                                                                        : '[class*="sidebar"]')
-    appElems.forEach(elem => hostContainer.prepend(elem))
-    appElems.toReversed().forEach((elem, idx) => // fade in staggered
-        setTimeout(() => elem.classList.add('active'), idx * 550 - 200))
-
-    // REPLACE hostContainer max-width w/ min-width for better UI
-    if (!isMobile) { hostContainer.style.maxWidth = '' ; hostContainer.style.minWidth = '448px' }
-
-    // Check for active TEXT CAMPAIGNS to replace footer CTA
-    fetchJSON('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
-        (err, advertisersData) => { if (err) return
-
-            // Init vars
-            let chosenAdvertiser, adSelected
-            const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
-            const currentDate = (() => { // in YYYYMMDD format
-                const today = new Date(), year = today.getFullYear(),
-                      month = String(today.getMonth() + 1).padStart(2, '0'),
-                      day = String(today.getDate()).padStart(2, '0')
-                return year + month + day
-            })()
-
-            // Select random, active advertiser
-            for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
-                if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
-
-            // Fetch a random, active creative
-            if (chosenAdvertiser) {
-                const campaignsURL = 'https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/'
-                                   + chosenAdvertiser + '/text/campaigns.json'
-                fetchJSON(campaignsURL, (err, campaignsData) => { if (err) return
-
-                    // Select random, active campaign
-                    for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
-                        const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
-                        if (!campaignIsActive) continue // to next campaign since campaign inactive
-
-                        // Select random active group
-                        for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
-
-                            // Skip disqualified groups
-                            if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
-                                || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
-                                || adGroup.active == false // group explicitly disabled
-                                || adGroup.targetBrowsers && // target browser(s) exist...
-                                    !adGroup.targetBrowsers.some( // ...but doesn't match user's
-                                        browser => new RegExp(browser, 'i').test(navigator.userAgent))
-                                || adGroup.targetLocations && ( // target locale(s) exist...
-                                    !config.userLocale || !adGroup.targetLocations.some( // ...and user locale is missing or excluded
-                                        loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
-                            ) continue // to next group
-
-                            // Filter out inactive ads, pick random active one
-                            const activeAds = adGroup.ads.filter(ad => ad.active != false)
-                            if (activeAds.length == 0) continue // to next group since no ads active
-                            const chosenAd = activeAds[Math.floor(Math.random() * activeAds.length)] // random active one
-
-                            // Build destination URL
-                            let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
-                                || campaign.destinationURL || ''
-                            if (destinationURL.includes('http')) { // insert UTM tags
-                                const [baseURL, queryString] = destinationURL.split('?'),
-                                      queryParams = new URLSearchParams(queryString || '')
-                                queryParams.set('utm_source', config.appName.toLowerCase())
-                                queryParams.set('utm_content', 'app_footer_link')
-                                destinationURL = baseURL + '?' + queryParams.toString()
-                            }
-
-                            // Update footer content
-                            footerContent.setAttribute('class', '') // reset for re-fade
-                            const newFooterContent = destinationURL ? createAnchor(destinationURL)
-                                                                    : document.createElement('span')
-                            footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
-                            footerContent.classList.add('fade-in', // DDGPT fade class
-                                                        'js-feedback-prompt-generic') // DDG footer class
-                            footerContent.textContent = chosenAd.text
-                            footerContent.setAttribute('title', chosenAd.tooltip || '')
-                            setTimeout(() => footerContent.classList.add('active'), 100) // to trigger fade
-                            adSelected = true ; break
-                        }
-                        if (adSelected) break // out of campaign loop after ad selection
-            }})}
-
-            function shuffle(list) {
-                let currentIdx = list.length, tempValue, randomIdx
-                while (currentIdx != 0) { // elements remain to be shuffled
-                    randomIdx = Math.floor(Math.random() * currentIdx) ; currentIdx -= 1
-                    tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
-                }
-                return list
-            }
-
-            function applyBoosts(list) {
-                let boostedList = [...list],
-                    boostedListLength = boostedList.length - 1 // for applying multiple boosts
-                list.forEach(([name, data]) => { // check for boosts
-                    if (data.boost) { // boost flagged entry's selection probability
-                        const boostPercent = parseInt(data.boost, 10) / 100,
-                              entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
-                                            * boostPercent - 1 // reduced to boosted entries needed
-                        for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
-                        boostedListLength += entriesNeeded // update for subsequent calculations
-                }})
-                return boostedList
-            }
-    })
-
-    // Show STANDBY mode or get/show ANSWER
-    if (config.autoGetDisabled
-        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
-    ) appShow('standby')
-    else {
-        appAlert('waitingResponse')
-        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-        msgChain.push({ role: 'user', content: query })
-        getShowReply(msgChain)
-    }
-
-    // Observe for DDG SCHEME CHANGES to update DDGPT scheme
-    (new MutationObserver(handleSchemeChange)).observe( // class changes from DDG appearance settings
-        document.documentElement, { attributes: true, attributeFilter: ['class'] })
-    function handleSchemeChange() {
-        const newScheme = chatgpt.isDarkMode() ? 'dark' : 'light'
-        if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() }
     }
 
 })()

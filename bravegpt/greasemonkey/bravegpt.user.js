@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.2.6
+// @version             2024.6.2.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -167,7 +167,162 @@
 
 setTimeout(async () => {
 
-    // Define SCRIPT functions
+    // Init CONFIG
+    const config = {
+        appName: 'BraveGPT', appSymbol: '🤖', keyPrefix: 'braveGPT',
+        appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/KudoAI/bravegpt',
+        greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt' }
+    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
+    config.supportURL = config.gitHubURL + '/issues/new'
+    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@ae440034e/'
+    config.userLanguage = chatgpt.getUserLanguage()
+    config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
+    loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
+                'rqDisabled', 'suffixEnabled', 'widerSidebar')
+    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
+
+    // Init MENU objs
+    const menuIDs = [] // to store registered commands for removal while preserving order
+    const state = {
+        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
+        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
+    }
+
+    // Init UI flags
+    let scheme = isDarkMode() ? 'dark' : 'light'
+    const isFirefox = chatgpt.browser.isFirefox(),
+          isMobile = chatgpt.browser.isMobile()
+
+    // Pre-load LOGO
+    const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
+    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
+
+    // Define MESSAGES
+    let msgs = {}
+    const msgsLoaded = new Promise(resolve => {
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
+        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        function onLoad(resp) {
+            try { // to return localized messages.json
+                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
+                for (const key in msgs)  // remove need to ref nested keys
+                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
+                        flatMsgs[key] = msgs[key].message
+                resolve(flatMsgs)
+            } catch (err) { // if bad response
+                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                    msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
+                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+            }
+        }
+    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
+
+    registerMenu()
+
+    // Init API props
+    const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
+    const apis = {
+        'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.xyz',
+            endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true },
+        'Free Chat': { expectedOrigin: 'https://e8.frechat.xyz',
+            endpoint: 'https://demo-yj7h.onrender.com/single/chat_messages',  method: 'PUT', streamable: true },
+        'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
+            endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true },
+        'MixerBox AI': { expectedOrigin: 'https://chatai.mixerbox.com',
+            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', method: 'POST', streamable: true },
+        'OpenAI': { expectedOrigin: 'https://chatgpt.com',
+            endpoint: 'https://api.openai.com/v1/chat/completions', method: 'POST', streamable: true }
+    }
+    const apiIDs = { gptPlus: { parentID: '' }, yqCloud: { userID: '#/chat/' + Date.now() }}
+
+    // Init ALERTS
+    const appAlerts = {
+        waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
+        login:            `${ msgs.alert_login || 'Please login' } @ `,
+        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
+        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
+        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
+        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
+        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
+        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
+        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
+    }
+
+    // STYLIZE elements
+    const appStyle = document.createElement('style')
+    updateAppStyle() ; document.head.append(appStyle)
+
+    // Create Brave Search style TWEAKS
+    const tweaksStyle = document.createElement('style'),
+          wsbStyles = 'main.main-column, aside.sidebar { max-width: 521px !important }'
+                    + '.bravegpt { width: 521px }'
+    updateTweaksStyle() ; document.head.append(tweaksStyle)
+
+    // Create/stylize TOOLTIP div
+    const tooltipDiv = document.createElement('div'),
+          tooltipStyle = document.createElement('style')
+    tooltipDiv.classList.add('button-tooltip', 'no-user-select')
+    tooltipStyle.innerText = '.button-tooltip {'
+        + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 5px 6px 3px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+        + 'font-size: 0.58rem ; color: white ;' // font style
+        + 'position: absolute ;' // for updateTooltip() calcs
+        + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
+        + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
+    document.head.append(tooltipStyle)
+
+    // Create/classify BRAVEGPT container
+    const appDiv = document.createElement('div') // create container div
+    appDiv.classList.add('bravegpt', 'fade-in', // BraveGPT classes
+                              'snippet') // Brave class
+
+    // APPEND to Brave
+    const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
+    setTimeout(() => {
+        hostContainer.prepend(appDiv)
+        setTimeout(() => appDiv.classList.add('active'), 100) // fade in
+    }, isMobile ? 500 : 100)
+
+    // Remove non-visible OVERFLOW STYLES for boundless hover fx
+    let appAncestor = hostContainer
+    while (appAncestor) {
+        if (getComputedStyle(appAncestor).overflow != 'visible') appAncestor.style.overflow = 'visible'
+        appAncestor = appAncestor.parentElement
+    }
+
+    // Init footer CTA to share feedback
+    let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Feedback')
+    footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
+
+    // Show STANDBY mode or get/show ANSWER
+    const msgChain = [] // to store queries + answers for contextual replies
+    if (config.autoGetDisabled
+        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
+        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
+    ) { updateFooterContent() ; appShow('standby', footerContent) }
+    else {
+        appAlert('waitingResponse')
+        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
+        msgChain.push({ role: 'user', content: query })
+        getShowReply(msgChain)
+    }
+
+    // Observe/listen for Brave Search + system SCHEME CHANGES to update BraveGPT logo/style scheme
+    (new MutationObserver(handleSchemeChange)).observe( // class changes from Brave Search theme settings
+        document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    window.matchMedia('(prefers-color-scheme: dark)') // window.matchMedia changes from browser/system settings
+        .addEventListener('change', handleSchemeChange)
+    function handleSchemeChange() {
+        const newScheme = isDarkMode() ? 'dark' : 'light'
+        if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() }
+    }
+
+        // Define SCRIPT functions
 
     function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(config.keyPrefix + '_' + key, false)) }
     function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
@@ -797,7 +952,6 @@ setTimeout(async () => {
         return headers
     }
 
-    const ids = { gptPlus: { parentID: '' }, yqCloud: { userID: '#/chat/' + Date.now() }}
     function createPayload(api, msgs) {
         let payload = {}
         if (api == 'OpenAI')
@@ -805,7 +959,7 @@ setTimeout(async () => {
         else if  (api == 'AIchatOS') {
             payload = {
                 prompt: msgs[msgs.length - 1].content,
-                withoutContext: false, userId: ids.yqCloud.userID, network: true
+                withoutContext: false, userId: apiIDs.yqCloud.userID, network: true
             }
         }  else if (api == 'Free Chat')
             payload = { messages: msgs, model: 'gemma-7b-it' }
@@ -815,7 +969,7 @@ setTimeout(async () => {
                 secret: generateGPTplusKey(), top_p: 1, temperature: 0.8,
                 systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.'
             }
-            if (ids.gptPlus.parentID) payload.options = { parentMessageId: ids.gptPlus.parentID }
+            if (apiIDs.gptPlus.parentID) payload.options = { parentMessageId: apiIDs.gptPlus.parentID }
         } else if (api == 'MixerBox AI')
             payload = { prompt: msgs, model: 'gpt-3.5-turbo' }
         return JSON.stringify(payload)
@@ -877,7 +1031,7 @@ setTimeout(async () => {
                 try {
                     let chunks = resp.responseText.trim().split('\n'),
                         lastObj = JSON.parse(chunks[chunks.length - 1])
-                    if (lastObj.id) ids.gptPlus.parentID = lastObj.id
+                    if (lastObj.id) apiIDs.gptPlus.parentID = lastObj.id
                     appShow(lastObj.text, footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
@@ -1339,159 +1493,6 @@ setTimeout(async () => {
             chatTextarea.style.height = chatTextarea.scrollHeight > 55 ? chatTextarea.scrollHeight + 'px' : '2.15rem'
             prevLength = newLength
         }
-    }
-
-    // Run MAIN routine
-
-    // Init CONFIG/MSGCHAIN/MENU
-    const config = {
-        appName: 'BraveGPT', appSymbol: '🤖', keyPrefix: 'braveGPT',
-        appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/KudoAI/bravegpt',
-        greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt' }
-    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
-    config.supportURL = config.gitHubURL + '/issues/new'
-    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@ae440034e/'
-    config.userLanguage = chatgpt.getUserLanguage()
-    config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
-                'rqDisabled', 'suffixEnabled', 'widerSidebar')
-    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    const msgChain = [], // to store queries + answers for contextual replies
-          menuIDs = [] // to store registered commands for removal while preserving order
-    const state = {
-        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
-
-    // Init UI flags
-    let scheme = isDarkMode() ? 'dark' : 'light'
-    const isFirefox = chatgpt.browser.isFirefox(),
-          isMobile = chatgpt.browser.isMobile()
-
-    // Pre-load LOGO
-    const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
-    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
-
-    // Define MESSAGES
-    let msgs = {}
-    const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
-              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
-        function onLoad(resp) {
-            try { // to return localized messages.json
-                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
-                for (const key in msgs)  // remove need to ref nested keys
-                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
-                        flatMsgs[key] = msgs[key].message
-                resolve(flatMsgs)
-            } catch (err) { // if bad response
-                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
-                    msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
-                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
-            }
-        }
-    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
-
-    registerMenu()
-
-    // Init API props
-    const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
-    const apis = {
-        'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.xyz',
-            endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true },
-        'Free Chat': { expectedOrigin: 'https://e8.frechat.xyz',
-            endpoint: 'https://demo-yj7h.onrender.com/single/chat_messages',  method: 'PUT', streamable: true },
-        'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
-            endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true },
-        'MixerBox AI': { expectedOrigin: 'https://chatai.mixerbox.com',
-            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', method: 'POST', streamable: true },
-        'OpenAI': { expectedOrigin: 'https://chatgpt.com',
-            endpoint: 'https://api.openai.com/v1/chat/completions', method: 'POST', streamable: true }
-    }
-
-    // Init ALERTS
-    const appAlerts = {
-        waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
-        login:            `${ msgs.alert_login || 'Please login' } @ `,
-        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
-        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
-        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
-        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
-        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
-        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
-        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
-    }
-
-    // STYLIZE elements
-    const appStyle = document.createElement('style')
-    updateAppStyle() ; document.head.append(appStyle)
-
-    // Create Brave Search style TWEAKS
-    const tweaksStyle = document.createElement('style'),
-          wsbStyles = 'main.main-column, aside.sidebar { max-width: 521px !important }'
-                    + '.bravegpt { width: 521px }'
-    updateTweaksStyle() ; document.head.append(tweaksStyle)
-
-    // Create/stylize TOOLTIP div
-    const tooltipDiv = document.createElement('div'),
-          tooltipStyle = document.createElement('style')
-    tooltipDiv.classList.add('button-tooltip', 'no-user-select')
-    tooltipStyle.innerText = '.button-tooltip {'
-        + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 5px 6px 3px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-        + 'font-size: 0.58rem ; color: white ;' // font style
-        + 'position: absolute ;' // for updateTooltip() calcs
-        + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
-        + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
-    document.head.append(tooltipStyle)
-
-    // Create/classify BRAVEGPT container
-    const appDiv = document.createElement('div') // create container div
-    appDiv.classList.add('bravegpt', 'fade-in', // BraveGPT classes
-                              'snippet') // Brave class
-
-    // APPEND to Brave
-    const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
-    setTimeout(() => {
-        hostContainer.prepend(appDiv)
-        setTimeout(() => appDiv.classList.add('active'), 100) // fade in
-    }, isMobile ? 500 : 100)
-
-    // Remove non-visible OVERFLOW STYLES for boundless hover fx
-    let appAncestor = hostContainer
-    while (appAncestor) {
-        if (getComputedStyle(appAncestor).overflow != 'visible') appAncestor.style.overflow = 'visible'
-        appAncestor = appAncestor.parentElement
-    }
-
-    // Init footer CTA to share feedback
-    let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Feedback')
-    footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
-
-    // Show STANDBY mode or get/show ANSWER
-    if (config.autoGetDisabled
-        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
-    ) { updateFooterContent() ; appShow('standby', footerContent) }
-    else {
-        appAlert('waitingResponse')
-        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-        msgChain.push({ role: 'user', content: query })
-        getShowReply(msgChain)
-    }
-
-    // Observe/listen for Brave Search + system SCHEME CHANGES to update BraveGPT logo/style scheme
-    (new MutationObserver(handleSchemeChange)).observe( // class changes from Brave Search theme settings
-        document.documentElement, { attributes: true, attributeFilter: ['class'] })
-    window.matchMedia('(prefers-color-scheme: dark)') // window.matchMedia changes from browser/system settings
-        .addEventListener('change', handleSchemeChange)
-    function handleSchemeChange() {
-        const newScheme = isDarkMode() ? 'dark' : 'light'
-        if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() }
     }
 
 }, 1500)
