@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "ಸಾಮರ್ಥ್ಯ ಇವರಿಂದ " },
   "about_sourceCode": { "message": "ಮೂಲ ಕೋಡ್" },
   "mode_proxy": { "message": "ಪ್ರಾಕ್ಸಿ ಮೋಡ್" },
+  "mode_streaming": { "message": "ಸ್ಟ್ರೀಮಿಂಗ್ ಮೋಡ್" },
   "mode_prefix": { "message": "ಪೂರ್ವಪ್ರತ್ಯಯ ಮೋಡ್" },
   "mode_suffix": { "message": "ಉತ್ತರ ಪ್ರತ್ಯಯ ಮೋಡ್" },
   "tooltip_playAnswer": { "message": "ಪ್ಲೇ ಉತ್ತರ" },

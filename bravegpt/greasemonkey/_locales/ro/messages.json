@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Operat de" },
   "about_sourceCode": { "message": "Codul sursă" },
   "mode_proxy": { "message": "Mod proxy" },
+  "mode_streaming": { "message": "Mod de redare în flux" },
   "mode_prefix": { "message": "Mod prefix" },
   "mode_suffix": { "message": "Mod sufix" },
   "tooltip_playAnswer": { "message": "Redați răspunsul" },

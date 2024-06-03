@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Wedi'i gynnal gan" },
   "about_sourceCode": { "message": "Cod ffynhonnell" },
   "mode_proxy": { "message": "Modd Dirprwy" },
+  "mode_streaming": { "message": "Modd Ffrydio" },
   "mode_prefix": { "message": "Modd Rhagddodiad" },
   "mode_suffix": { "message": "Modd Ôl - ddodiad" },
   "tooltip_playAnswer": { "message": "Chwarae'r ateb" },

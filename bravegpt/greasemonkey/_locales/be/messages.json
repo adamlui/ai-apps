@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Пры падтрымцы" },
   "about_sourceCode": { "message": "Зыходнікі" },
   "mode_proxy": { "message": "Рэжым проксі" },
+  "mode_streaming": { "message": "Рэжым струменевага перадачы" },
   "mode_prefix": { "message": "Рэжым прэфікса" },
   "mode_suffix": { "message": "Рэжым суфікса" },
   "tooltip_playAnswer": { "message": "Прайграць адказ" },

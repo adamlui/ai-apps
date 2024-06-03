@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "באמצעות " },
   "about_sourceCode": { "message": "קוד מקור" },
   "mode_proxy": { "message": "מצב מתווך" },
+  "mode_streaming": { "message": "מצב הזרמה" },
   "mode_prefix": { "message": "מצב קידומת" },
   "mode_suffix": { "message": "מצב סיומת" },
   "tooltip_playAnswer": { "message": "נגן תשובה" },

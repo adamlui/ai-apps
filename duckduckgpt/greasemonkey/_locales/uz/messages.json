@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Tomonidan qo'llab-quvvatlanadi" },
   "about_sourceCode": { "message": "Ochiq kod" },
   "mode_proxy": { "message": "Proksi rejimi" },
+  "mode_streaming": { "message": "Oqim rejimi" },
   "mode_prefix": { "message": "Prefiks rejimi" },
   "mode_suffix": { "message": "Suffiks rejimi" },
   "tooltip_playAnswer": { "message": "Javobni o'ynang" },

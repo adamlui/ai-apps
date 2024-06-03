@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Рамзи манбаъ" },
   "mode_proxy": { "message": "Ҳолати прокси" },
+  "mode_streaming": { "message": "Ҳолати ҷараён" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
   "tooltip_playAnswer": { "message": "Пахш кардани ҷавоб" },

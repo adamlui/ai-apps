@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Cung cấp bởi " },
   "about_sourceCode": { "message": "Mã nguồn" },
   "mode_proxy": { "message": "Chế độ proxy IP" },
+  "mode_streaming": { "message": "Chế độ truyền phát" },
   "mode_prefix": { "message": "Chế độ Tiền tố" },
   "mode_suffix": { "message": "Chế độ Hậu tố" },
   "tooltip_playAnswer": { "message": "Phát câu trả lời" },

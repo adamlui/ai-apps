@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Destek" },
   "about_sourceCode": { "message": "Kaynak Kodu" },
   "mode_proxy": { "message": "Proxy Modu" },
+  "mode_streaming": { "message": "Akış modu" },
   "mode_prefix": { "message": "Önek Modu" },
   "mode_suffix": { "message": "Sonek Modu" },
   "tooltip_playAnswer": { "message": "Yanıtı oynat" },

@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Bereetgestallt vun" },
   "about_sourceCode": { "message": "Quellcode" },
   "mode_proxy": { "message": "Proxy- Modus" },
+  "mode_streaming": { "message": "Streaming-Modus" },
   "mode_prefix": { "message": "Viraussetzungsmodus" },
   "mode_suffix": { "message": "Suffix-Modus" },
   "tooltip_playAnswer": { "message": "Antwort abspielen" },

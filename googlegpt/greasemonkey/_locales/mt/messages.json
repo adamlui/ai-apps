@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Imħaddem minn" },
   "about_sourceCode": { "message": "Kodiċi tas-sors" },
   "mode_proxy": { "message": "Modalità Proxy" },
+  "mode_streaming": { "message": "Modalità ta' Streaming" },
   "mode_prefix": { "message": "Modalità Prefiss" },
   "mode_suffix": { "message": "Modalità Suffix" },
   "tooltip_playAnswer": { "message": "Ara t-tweġiba" },

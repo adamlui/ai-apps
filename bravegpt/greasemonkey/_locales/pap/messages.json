@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Potenciá por" },
   "about_sourceCode": { "message": "Kódigo di fuente" },
   "mode_proxy": { "message": "Propiedad Moda" },
+  "mode_streaming": { "message": "Modulo di Streaming" },
   "mode_prefix": { "message": "Pre-escucha Mode" },
   "mode_suffix": { "message": "Suffisante Moda" },
   "tooltip_playAnswer": { "message": "Spiel Response" },

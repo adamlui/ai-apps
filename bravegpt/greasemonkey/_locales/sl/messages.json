@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Poganja" },
   "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode:" },
   "mode_proxy": { "message": "Način posredovanja" },
+  "mode_streaming": { "message": "Način pretočnega predvajanja" },
   "mode_prefix": { "message": "Način predpone" },
   "mode_suffix": { "message": "Način pripone" },
   "tooltip_playAnswer": { "message": "Predvajaj odgovor" },

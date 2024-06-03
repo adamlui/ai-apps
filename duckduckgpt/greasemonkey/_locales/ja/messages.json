@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "搭載" },
   "about_sourceCode": { "message": "ソースコード" },
   "mode_proxy": { "message": "プロキシモード" },
+  "mode_streaming": { "message": "ストリーミングモード" },
   "mode_prefix": { "message": "プレフィックスモード" },
   "mode_suffix": { "message": "接尾辞モード" },
   "tooltip_playAnswer": { "message": "回答を再生" },

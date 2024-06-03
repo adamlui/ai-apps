@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "🇦🇲" },
   "about_sourceCode": { "message": "Ծրագրային կոդ" },
   "mode_proxy": { "message": "Վստահված ռեժիմ" },
+  "mode_streaming": { "message": "Հեռարձակման ռեժիմ" },
   "mode_prefix": { "message": "Նախադիտման ռեժիմ" },
   "mode_suffix": { "message": "Սուֆիքսային ռեժիմ" },
   "tooltip_playAnswer": { "message": "Դիտել պատասխանը" },

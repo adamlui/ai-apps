@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "ብ" },
   "about_sourceCode": { "message": "ምንጪ ኮድ" },
   "mode_proxy": { "message": "ፕሮክሲ ሞድ" },
+  "mode_streaming": { "message": "ኣገባብ ስርሒት" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "ሱፊክስ ሞድ" },
   "tooltip_playAnswer": { "message": "መልሲ ተጻወት" },

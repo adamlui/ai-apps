@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "สนับสนุนโดย" },
   "about_sourceCode": { "message": "รหัสต้นฉบับ" },
   "mode_proxy": { "message": "โหมดพร็อกซี" },
+  "mode_streaming": { "message": "โหมดสตรีมมิ่ง" },
   "mode_prefix": { "message": "โหมดคำนำหน้า" },
   "mode_suffix": { "message": "โหมดคำต่อท้าย" },
   "tooltip_playAnswer": { "message": "เล่นคำตอบ" },

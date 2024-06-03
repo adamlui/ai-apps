@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "A yeke sara kua na ni" },
   "about_sourceCode": { "message": "Source code ti" },
   "mode_proxy": { "message": "Mbi Proxy Mode" },
+  "mode_streaming": { "message": "Streaming Mode" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "A yeke nzoni ti tene zo asara ye na lege ni" },
   "tooltip_playAnswer": { "message": "Répondre PLAY Répondre" },

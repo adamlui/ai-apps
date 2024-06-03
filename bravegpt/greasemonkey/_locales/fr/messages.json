@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Réaliser par" },
   "about_sourceCode": { "message": "Code source" },
   "mode_proxy": { "message": "Mode proxy" },
+  "mode_streaming": { "message": "Mode streaming" },
   "mode_prefix": { "message": "Mode préfixe" },
   "mode_suffix": { "message": "Mode suffixe" },
   "tooltip_playAnswer": { "message": "Lire la réponse" },

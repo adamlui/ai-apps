@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Ondersteund door" },
   "about_sourceCode": { "message": "Broncode" },
   "mode_proxy": { "message": "Proxymodus" },
+  "mode_streaming": { "message": "Streamingmodus" },
   "mode_prefix": { "message": "Voorvoegsel modus" },
   "mode_suffix": { "message": "Achtervoegselmodus" },
   "tooltip_playAnswer": { "message": "Antwoord afspelen" },

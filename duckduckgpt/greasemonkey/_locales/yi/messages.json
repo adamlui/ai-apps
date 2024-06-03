@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "פּאַוערד דורך" },
   "about_sourceCode": { "message": "מקור קאָד" },
   "mode_proxy": { "message": "פּראָקסי מאָדע" },
+  "mode_streaming": { "message": "סטרימינג מאָדע" },
   "mode_prefix": { "message": "פּרעפיקס מאָדע" },
   "mode_suffix": { "message": "סאַפיקס מאָדע" },
   "tooltip_playAnswer": { "message": "שפּיל ענטפער" },

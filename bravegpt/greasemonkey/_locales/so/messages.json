@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Waxa fudaydiyay:" },
   "about_sourceCode": { "message": "Koodhka isha" },
   "mode_proxy": { "message": "Qaabka Proxy" },
+  "mode_streaming": { "message": "Habka Daadinta" },
   "mode_prefix": { "message": "Habka Prefix" },
   "mode_suffix": { "message": "Suffix Mode" },
   "tooltip_playAnswer": { "message": "Jawaabta ciyaar" },

@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "技術驅動" },
   "about_sourceCode": { "message": "原始碼" },
   "mode_proxy": { "message": "代理模式" },
+  "mode_streaming": { "message": "串流模式" },
   "mode_prefix": { "message": "前綴模式" },
   "mode_suffix": { "message": "後綴模式" },
   "tooltip_playAnswer": { "message": "播放答案" },

@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Ampandehanin'i" },
   "about_sourceCode": { "message": "Kaody niaingana" },
   "mode_proxy": { "message": "Proxy Mode" },
+  "mode_streaming": { "message": "Fomba mihodina" },
   "mode_prefix": { "message": "Fomban'ny tovona" },
   "mode_suffix": { "message": "Fomba Suffix" },
   "tooltip_playAnswer": { "message": "Mamaky valiny" },

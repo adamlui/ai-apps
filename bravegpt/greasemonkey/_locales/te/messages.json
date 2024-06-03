@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "ద్వారా ఆధారితం" },
   "about_sourceCode": { "message": "సోర్స్ కోడ్" },
   "mode_proxy": { "message": "ప్రాక్సీ మోడ్" },
+  "mode_streaming": { "message": "స్ట్రీమింగ్ మోడ్" },
   "mode_prefix": { "message": "ఉపసర్గ మోడ్" },
   "mode_suffix": { "message": "ప్రత్యయం మోడ్" },
   "tooltip_playAnswer": { "message": "సమాధానం ప్లే చేయండి" },

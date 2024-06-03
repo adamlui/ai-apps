@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "විසින් බල ගැන්වී ඇත" },
   "about_sourceCode": { "message": "මූලාශ්‍ර කේතය" },
   "mode_proxy": { "message": "ප් ‍ රොක්සි ප් ‍ රකාරය" },
+  "mode_streaming": { "message": "ප් ‍ රවාහ ප් ‍ රකාරය" },
   "mode_prefix": { "message": "මනාප ප් ‍ රකාරය" },
   "mode_suffix": { "message": "ප් ‍ රමාණාත්මක ප් ‍ රකාරය" },
   "tooltip_playAnswer": { "message": "ප් ‍ රතිචාරය වාදනය කරන්න" },

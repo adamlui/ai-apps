@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Izstrādāts" },
   "about_sourceCode": { "message": "about_sourceCode" },
   "mode_proxy": { "message": "Starpniekservera režīms" },
+  "mode_streaming": { "message": "Straumēšanas režīms" },
   "mode_prefix": { "message": "Prefiksa režīms" },
   "mode_suffix": { "message": "Sufiksa režīms" },
   "tooltip_playAnswer": { "message": "Atskaņot atbildi" },

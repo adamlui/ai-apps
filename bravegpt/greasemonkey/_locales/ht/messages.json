@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "kòd sous/ code source / le code source mis à jour/code en langage source" },
   "mode_proxy": { "message": "Proxy Mode" },
+  "mode_streaming": { "message": "Mòd Streaming" },
   "mode_prefix": { "message": "Mòd Prefiks" },
   "mode_suffix": { "message": "Mòd Suffix" },
   "tooltip_playAnswer": { "message": "Jwe repons" },

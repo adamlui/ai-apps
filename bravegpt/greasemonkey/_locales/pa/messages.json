@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },
   "about_sourceCode": { "message": "ਸਰੋਤ ਕੋਡ@ info: whatsthis" },
   "mode_proxy": { "message": "ਪਰਾਕਸੀ ਮੋਡ" },
+  "mode_streaming": { "message": "ਸਟਰੀਮਿੰਗ ਮੋਡ" },
   "mode_prefix": { "message": "ਅਗੇਤਰ ਮੋਡ" },
   "mode_suffix": { "message": "ਪਿਛੇਤਰ ਮੋਡ" },
   "tooltip_playAnswer": { "message": "ਚਲਾਓ ਜਵਾਬ" },

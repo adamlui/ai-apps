@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Didukung oleh " },
   "about_sourceCode": { "message": "Kode sumber" },
   "mode_proxy": { "message": "Mode Proxy" },
+  "mode_streaming": { "message": "Mode Streaming" },
   "mode_prefix": { "message": "Mode Prefiks" },
   "mode_suffix": { "message": "Mode Akhiran" },
   "tooltip_playAnswer": { "message": "Putar jawaban" },

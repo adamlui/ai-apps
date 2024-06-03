@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "દ્વારા સંચાલિત" },
   "about_sourceCode": { "message": "સ્ત્રોત કોડ" },
   "mode_proxy": { "message": "પ્રોક્સી મોડ" },
+  "mode_streaming": { "message": "સ્ટ્રીમિંગ મોડ" },
   "mode_prefix": { "message": "ઉપસર્ગ સ્થિતિ" },
   "mode_suffix": { "message": "પ્રત્યય સ્થિતિ" },
   "tooltip_playAnswer": { "message": "જવાબ રમો" },

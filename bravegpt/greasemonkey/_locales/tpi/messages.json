@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Em i gat bikpela strong" },
   "about_sourceCode": { "message": "Kod bilong as" },
   "mode_proxy": { "message": "Proxy mode" },
+  "mode_streaming": { "message": "Streaming mode" },
   "mode_prefix": { "message": "Prefiks mod" },
   "mode_suffix": { "message": "Suffix mode" },
   "tooltip_playAnswer": { "message": "Toktok bilong bekim" },

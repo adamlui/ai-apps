@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "ބާރުވެރި ކުރުވާފައިވަނީ" },
   "about_sourceCode": { "message": "ސޯސް ކޯޑް" },
   "mode_proxy": { "message": "ޕްރޮކްސީ މޯޑް" },
+  "mode_streaming": { "message": "ސްޓްރީމިންގ މޯޑް" },
   "mode_prefix": { "message": "ޕްރިފިކްސް މޯޑް" },
   "mode_suffix": { "message": "ޕްރެފިކްޓް މޯޑް" },
   "tooltip_playAnswer": { "message": "ޖަވާބެއް ކުޅެބަލަ" },

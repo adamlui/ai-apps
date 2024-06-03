@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Drevet av" },
   "about_sourceCode": { "message": "Kildekode" },
   "mode_proxy": { "message": "Proxy-modus" },
+  "mode_streaming": { "message": "Strømmemodus" },
   "mode_prefix": { "message": "Prefiksmodus" },
   "mode_suffix": { "message": "Suffiksmodus" },
   "tooltip_playAnswer": { "message": "Spill svar" },

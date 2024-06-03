@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "ຂັບເຄື່ອນໂດຍ" },
   "about_sourceCode": { "message": "ຊອດສ໌ໂຄດ" },
   "mode_proxy": { "message": "ໂໝດໂປຣແກຣມ" },
+  "mode_streaming": { "message": "ໂໝດສະຕີມ" },
   "mode_prefix": { "message": "ໂໝດອຳນວຍຄວາມສະດວກ" },
   "mode_suffix": { "message": "ໂໝດ Suffix" },
   "tooltip_playAnswer": { "message": "ຫຼິ້ນຄໍາຕອບ" },

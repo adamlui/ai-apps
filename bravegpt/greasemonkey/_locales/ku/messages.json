@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "پارێزراوە لەلایەن" },
   "about_sourceCode": { "message": "کۆدی سەرچاوە" },
   "mode_proxy": { "message": "Mode Proxy" },
+  "mode_streaming": { "message": "Mode Streaming" },
   "mode_prefix": { "message": "مۆدی پێشنیشان" },
   "mode_suffix": { "message": "مۆدی پاشنیشان" },
   "tooltip_playAnswer": { "message": "یاری وەڵام" },

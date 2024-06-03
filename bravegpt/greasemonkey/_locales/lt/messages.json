@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Įgalino Proneta" },
   "about_sourceCode": { "message": "Pradinis kodas" },
   "mode_proxy": { "message": "Tarpinio serverio režimas" },
+  "mode_streaming": { "message": "Transliacijos režimas" },
   "mode_prefix": { "message": "Priešdėlio režimas" },
   "mode_suffix": { "message": "Priesagos režimas" },
   "tooltip_playAnswer": { "message": "Paleisti atsakymą" },

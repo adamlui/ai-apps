@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "تقویت یافتہ از" },
   "about_sourceCode": { "message": "کۆسی سەرچاوە" },
   "mode_proxy": { "message": "پراکسی موڈ" },
+  "mode_streaming": { "message": "اسٹریمنگ موڈ" },
   "mode_prefix": { "message": "سابقہ موڈ" },
   "mode_suffix": { "message": "صفت وضع" },
   "tooltip_playAnswer": { "message": "جواب پلے کریں" },

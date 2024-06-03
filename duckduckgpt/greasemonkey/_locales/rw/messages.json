@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Ku" },
   "about_sourceCode": { "message": "C Inkomoko ITEGEKONGENGA" },
   "mode_proxy": { "message": "Ubwoko" },
+  "mode_streaming": { "message": "Ubwoko" },
   "mode_prefix": { "message": "< Uburemere UTSINDAGIYE" },
   "mode_suffix": { "message": "Ubwoko" },
   "tooltip_playAnswer": { "message": "Igisubizo" },

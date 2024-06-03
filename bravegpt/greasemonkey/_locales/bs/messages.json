@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "omogućio" },
   "about_sourceCode": { "message": "Izvorni kod" },
   "mode_proxy": { "message": "Režim proxyja" },
+  "mode_streaming": { "message": "Režim streaminga" },
   "mode_prefix": { "message": "Režim prefiksa" },
   "mode_suffix": { "message": "Režim sufiksa" },
   "tooltip_playAnswer": { "message": "Reproduciraj odgovor" },

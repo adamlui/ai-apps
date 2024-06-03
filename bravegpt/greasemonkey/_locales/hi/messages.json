@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "...द्वारा पावरशुदा" },
   "about_sourceCode": { "message": "सोर्स कोड" },
   "mode_proxy": { "message": "प्रॉक्सी मोड" },
+  "mode_streaming": { "message": "स्ट्रीमिंग मोड" },
   "mode_prefix": { "message": "उपसर्ग मोड" },
   "mode_suffix": { "message": "प्रत्यय मोड" },
   "tooltip_playAnswer": { "message": "जवाब खेलें" },

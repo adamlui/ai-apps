@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Amapola by Amapola" },
   "about_sourceCode": { "message": "Ifyebo fyaba mu cipande ca kubalilapo" },
   "mode_proxy": { "message": "Proxy Mode" },
+  "mode_streaming": { "message": "Inshila ya kulonganinamo" },
   "mode_prefix": { "message": "Mu Moda wa Cishinka" },
   "mode_suffix": { "message": "Mu Moda wa Sufikisi" },
   "tooltip_playAnswer": { "message": "Tinikeni pa kwasuka" },

@@ -15,6 +15,7 @@
   "about_poweredBy": { "message": "Toiteallikaks" },
   "about_sourceCode": { "message": "Lähtekood" },
   "mode_proxy": { "message": "Puhverrežiim" },
+  "mode_streaming": { "message": "Voogedastusrežiim" },
   "mode_prefix": { "message": "Eesliite režiim" },
   "mode_suffix": { "message": "Järelliite režiim" },
   "tooltip_playAnswer": { "message": "Mängi / Vasta" },
