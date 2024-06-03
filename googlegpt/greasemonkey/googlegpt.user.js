@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.9
+// @version             2024.6.3.10
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -449,7 +449,7 @@
     const menuIDs = [] // to store registered commands for removal while preserving order
     const state = {
         symbol: ['✔️', '❌'],
-        word: [msgs.state_on.toUpperCase() || 'ON', msgs.state_off.toUpperCase() || 'OFF'],
+        word: [(msgs.state_on || 'On').toUpperCase(), (msgs.state_off || 'Off').toUpperCase()],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
     }
 
