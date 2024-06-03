@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.3
+// @version             2024.6.3.1
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -297,11 +297,14 @@
         }
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
 
-    // Init/register MENU
+    // Init MENU objs
+    const menuIDs = [] // to store registered cmds for removal while preserving order
     const state = {
-        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
-    let menuIDs = [] ; registerMenu() // create browser toolbar menu
+        symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
+        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
+    }
+
+    registerMenu() // create browser toolbar menu
 
     // Init UI flags
     await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
@@ -383,12 +386,11 @@
     // Define MENU functions
 
     function registerMenu() {
-        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
 
         // Add command to toggle auto-clear
-        const acLabel = state.symbol[+!config.autoclear] + ' '
+        const acLabel = state.symbol[+config.autoclear] + ' '
                       + ( msgs.menuLabel_autoClear || 'Autoclear Chats' )
-                      + state.separator + state.word[+!config.autoclear]
+                      + state.separator + state.word[+config.autoclear]
         menuIDs.push(GM_registerMenuCommand(acLabel, () => {
             document.querySelector('#acToggleLabel').click()
         }))
@@ -396,22 +398,22 @@
         // Add 'Toggle Visibility' command
         const tvLabel = state.symbol[+config.toggleHidden] + ' '
                       + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
-                      + state.separator + state.word[+config.toggleHidden]
+                      + state.separator + state.word[+!config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifDisabled) {
-                notify(( msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+config.toggleHidden])
+                notify(( msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+!config.toggleHidden])
             } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to show notifications when changing settings/modes
-        const mnLabel = state.symbol[+config.notifDisabled] + ' '
+        const mnLabel = state.symbol[+!config.notifDisabled] + ' '
                       + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
-                      + state.separator + state.word[+config.notifDisabled]
+                      + state.separator + state.word[+!config.notifDisabled]
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifDisabled', !config.notifDisabled)
-            notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + state.word[+config.notifDisabled])
+            notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + state.word[+!config.notifDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 

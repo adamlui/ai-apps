@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.1
+// @version             2024.6.3
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -277,6 +277,13 @@
         }
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
 
+    // Init MENU objs
+    const menuIDs = [] // to store registered cmds for removal while preserving order
+    const state = {
+        symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
+        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
+    }
+
     // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
     const extensionInstalled = await Promise.race([
         new Promise(resolve => {
@@ -285,12 +292,8 @@
                 else setTimeout(checkExtensionInstalled, 200)
             })()
         }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
-    const state = {
-        symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
-    let menuIDs = []
     if (extensionInstalled) { // disable script/menu
-        GM_registerMenuCommand(state.symbol[1] + ' ' + ( msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
+        GM_registerMenuCommand(state.symbol[0] + ' ' + ( msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
             () => { return }) // disable menu
         return // exit script
     } else registerMenu() // create functional menu
@@ -374,32 +377,31 @@
     // Define MENU functions
 
     function registerMenu() {
-        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
 
         // Add command to toggle Infinity Mode
-        const imLabel = state.symbol[+!config.infinityMode] + ' '
+        const imLabel = state.symbol[+config.infinityMode] + ' '
                       + ( msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ' ∞ '
-                      + state.separator + state.word[+!config.infinityMode]
+                      + state.separator + state.word[+config.infinityMode]
         menuIDs.push(GM_registerMenuCommand(imLabel, () => { document.querySelector('#infToggleLabel').click() }))
 
         // Add command to toggle visibility of toggle
-        const tvLabel = state.symbol[+config.toggleHidden] + ' '
+        const tvLabel = state.symbol[+!config.toggleHidden] + ' '
                       + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
-                      + state.separator + state.word[+config.toggleHidden]
+                      + state.separator + state.word[+!config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            notify(( msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+config.toggleHidden])
+            notify(( msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+!config.toggleHidden])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle auto-scroll
-        const asLabel = state.symbol[+config.autoScrollDisabled] + ' '
+        const asLabel = state.symbol[+!config.autoScrollDisabled] + ' '
                       + ( msgs.menuLabel_autoScroll || 'Auto-Scroll' )
-                      + state.separator + state.word[+config.autoScrollDisabled]
+                      + state.separator + state.word[+!config.autoScrollDisabled]
         menuIDs.push(GM_registerMenuCommand(asLabel, () => {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
-            notify(( msgs.menuLabel_autoScroll || 'Auto-Scroll' ) + ': '+ state.word[+config.autoScrollDisabled])
+            notify(( msgs.menuLabel_autoScroll || 'Auto-Scroll' ) + ': '+ state.word[+!config.autoScrollDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 

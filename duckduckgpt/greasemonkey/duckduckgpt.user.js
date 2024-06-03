@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.6
+// @version             2024.6.3.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -257,14 +257,14 @@
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
 
     // Init MENU objs
-    const menuIDs = [] // to store registered commands for removal while preserving order
+    const menuIDs = [] // to store registered cmds for removal while preserving order
     const state = {
-        symbol: ['✔️', '❌'],
-        word: [(msgs.state_on || 'On').toUpperCase(), (msgs.state_off || 'Off').toUpperCase()],
+        symbol: ['❌', '✔️'],
+        word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
     }
 
-    registerMenu()
+    registerMenu() // create browser toolbar menu
 
     // Init API props
     const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
@@ -475,38 +475,38 @@
     function registerMenu() {
 
         // Add command to toggle proxy API mode
-        const pamLabel = state.symbol[+!config.proxyAPIenabled] + ' '
+        const pamLabel = state.symbol[+config.proxyAPIenabled] + ' '
                        + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
-                       + state.separator + state.word[+!config.proxyAPIenabled]
+                       + state.separator + state.word[+config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
         if (getUserscriptManager() == 'Tampermonkey' && config.proxyAPIenabled) {
 
             // Add command to toggle streaming mode
-            const stmLabel = state.symbol[+config.streamingDisabled] + ' '
+            const stmLabel = state.symbol[+!config.streamingDisabled] + ' '
                           + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
-                          + state.separator + state.word[+config.streamingDisabled]
+                          + state.separator + state.word[+!config.streamingDisabled]
             menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
                 saveSetting('streamingDisabled', !config.streamingDisabled)
-                notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + state.word[+config.streamingDisabled])
+                notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + state.word[+!config.streamingDisabled])
                 for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
             }))
         }
 
         // Add command to toggle auto-get mode
-        const agmLabel = state.symbol[+config.autoGetDisabled] + ' '
+        const agmLabel = state.symbol[+!config.autoGetDisabled] + ' '
                        + ( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
-                       + state.separator + state.word[+config.autoGetDisabled]
+                       + state.separator + state.word[+!config.autoGetDisabled]
         menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
             saveSetting('autoGetDisabled', !config.autoGetDisabled)
-            notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + state.word[+config.autoGetDisabled])
+            notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + state.word[+!config.autoGetDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle showing related queries
-        const rqLabel = state.symbol[+config.rqDisabled] + ' '
+        const rqLabel = state.symbol[+!config.rqDisabled] + ' '
                       + ( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
-                      + state.separator + state.word[+config.rqDisabled]
+                      + state.separator + state.word[+!config.rqDisabled]
         menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
             saveSetting('rqDisabled', !config.rqDisabled)
             try { // to update visibility based on latest setting
@@ -515,48 +515,48 @@
             } catch (err) {}
             updateTweaksStyle() // toggle <pre> max-height
             notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
-                + state.word[+config.rqDisabled])
+                + state.word[+!config.rqDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle prefix mode
-        const pfmLabel = state.symbol[+!config.prefixEnabled] + ' '
+        const pfmLabel = state.symbol[+config.prefixEnabled] + ' '
                       + ( msgs.menuLabel_require || 'Require' ) + ' "/" '
                       + ( msgs.menuLabel_beforeQuery || 'before query' ) + ' '
-                      + state.separator + state.word[+!config.prefixEnabled]
+                      + state.separator + state.word[+config.prefixEnabled]
         menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
-            notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + state.word[+!config.prefixEnabled])
+            notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + state.word[+config.prefixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         // Add command to toggle suffix mode
-        const sfmLabel = state.symbol[+!config.suffixEnabled] + ' '
+        const sfmLabel = state.symbol[+config.suffixEnabled] + ' '
                       + ( msgs.menuLabel_require || 'Require' ) + ' "?" '
                       + ( msgs.menuLabel_afterQuery || 'after query' ) + ' '
-                      + state.separator + state.word[+!config.suffixEnabled]
+                      + state.separator + state.word[+config.suffixEnabled]
         menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + state.word[+!config.suffixEnabled])
+            notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + state.word[+config.suffixEnabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
         if (!isCentered && !isMobile) {
 
             // Add command to toggle wider sidebar
-            const wsbLabel = state.symbol[+!config.widerSidebar] + ' '
+            const wsbLabel = state.symbol[+config.widerSidebar] + ' '
                            + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' )
-                           + state.separator + state.word[+!config.widerSidebar]
+                           + state.separator + state.word[+config.widerSidebar]
             menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
 
             // Add command to toggle sticky sidebar
-            const ssbLabel = state.symbol[+!config.stickySidebar] + ' '
+            const ssbLabel = state.symbol[+config.stickySidebar] + ' '
                            + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' )
-                           + state.separator + state.word[+!config.stickySidebar]
+                           + state.separator + state.word[+config.stickySidebar]
             menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
         }
 
@@ -941,7 +941,7 @@
 
     function toggleProxyMode() {
         saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-        notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+!config.proxyAPIenabled])
+        notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+config.proxyAPIenabled])
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         location.reload() // re-send query using new endpoint
     }
@@ -951,7 +951,7 @@
         updateTweaksStyle()
         if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg() ; else updateSSBsvg()
         notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
-            + ' ' + state.word[+!config[mode + 'Sidebar']])
+            + ' ' + state.word[+config[mode + 'Sidebar']])
         for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
     }
 

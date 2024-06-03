@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.5.31.1
+// @version             2024.6.3
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -282,9 +282,13 @@
         }
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
 
-    // Init/register MENU
-    let menuIDs = [], state = { symbol: ['✔️', '❌'], word: ['ON', 'OFF'],
-                                separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ' }
+    // Init MENU objs
+    const menuIDs = [] // to store registered cmds for removal while preserving order
+    const state = {
+        symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
+        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
+    }
+
     registerMenu() // create browser toolbar menu
 
     // Stylize ALERTS
@@ -320,15 +324,14 @@
     // Define MENU functions
 
     function registerMenu() {
-        menuIDs = [] // empty to store newly registered cmds for removal while preserving order
 
         // Add command to hide/show notifications on load
-        const mnLabel = state.symbol[+config.notifDisabled] + ' '
+        const mnLabel = state.symbol[+!config.notifDisabled] + ' '
                       + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
-                      + state.separator + state.word[+config.notifDisabled]
+                      + state.separator + state.word[+!config.notifDisabled]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifDisabled', !config.notifDisabled)
-            notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + state.word[+config.notifDisabled])
+            notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + state.word[+!config.notifDisabled])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
