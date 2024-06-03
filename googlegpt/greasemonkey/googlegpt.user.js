@@ -160,7 +160,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.2.5
+// @version             2024.6.2.6
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -555,10 +555,10 @@
         GM.xmlHttpRequest({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
-            onload: response => { const updateAlertWidth = 377
+            onload: resp => { const updateAlertWidth = 377
 
                 // Compare versions
-                const latestVer = /@version +(.*)/.exec(response.responseText)[1]
+                const latestVer = /@version +(.*)/.exec(resp.responseText)[1]
                 for (let i = 0 ; i < 4 ; i++) { // loop thru subver's
                     const currentSubVer = parseInt(currentVer.split('.')[i], 10) || 0,
                           latestSubVer = parseInt(latestVer.split('.')[i], 10) || 0
@@ -911,11 +911,11 @@
         }})}})
 
         function fetchJSON(url, callback) {
-            GM.xmlHttpRequest({ method: 'GET', url: url, onload: response => {
-                if (response.status >= 200 && response.status < 300) {
-                    try { const data = JSON.parse(response.responseText) ; callback(null, data) }
+            GM.xmlHttpRequest({ method: 'GET', url: url, onload: resp => {
+                if (resp.status >= 200 && resp.status < 300) {
+                    try { const data = JSON.parse(resp.responseText) ; callback(null, data) }
                     catch (err) { callback(err, null) }
-                } else callback(new Error('Failed to load data: ' + response.statusText), null)
+                } else callback(new Error('Failed to load data: ' + resp.statusText), null)
         }})}
 
         function shuffle(list) {
@@ -1004,11 +1004,11 @@
             const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
             consoleInfo('OpenAI access token: ' + accessToken)
             if (!accessToken) {
-                GM.xmlHttpRequest({ url: openAIendpoints.session, onload: response => {
-                    if (isBlockedbyCloudflare(response.responseText)) {
+                GM.xmlHttpRequest({ url: openAIendpoints.session, onload: resp => {
+                    if (isBlockedbyCloudflare(resp.responseText)) {
                         appAlert('checkCloudflare') ; return }
                     try {
-                        const newAccessToken = JSON.parse(response.responseText).accessToken
+                        const newAccessToken = JSON.parse(resp.responseText).accessToken
                         GM_setValue(config.keyPrefix + '_openAItoken', newAccessToken)
                         resolve(newAccessToken)
                     } catch { appAlert('login') ; return }
@@ -1445,11 +1445,11 @@
                 url: 'https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
                     + encodeURIComponent(securePayload),
                 method: 'GET', responseType: 'arraybuffer',
-                onload: async response => {
-                    if (response.status != 200) chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })
+                onload: async resp => {
+                    if (resp.status != 200) chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })
                     else {
                         const audioContext = new (window.AudioContext || window.webkitAudioContext)()
-                        audioContext.decodeAudioData(response.response, buffer => {
+                        audioContext.decodeAudioData(resp.response, buffer => {
                             const audioSrc = audioContext.createBufferSource()
                             audioSrc.buffer = buffer
                             audioSrc.connect(audioContext.destination) // connect source to speakers
