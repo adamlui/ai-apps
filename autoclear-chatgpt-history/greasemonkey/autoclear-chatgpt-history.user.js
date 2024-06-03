@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.3.3
+// @version             2024.6.3.4
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -269,7 +269,7 @@
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = 'https://support.autoclearchatgpt.com'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@16d188e/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@f34c294/'
     config.userLanguage = chatgpt.getUserLanguage()
     loadSetting('autoclear', 'buttonHidden', 'notifDisabled', 'toggleHidden')
 
@@ -300,7 +300,8 @@
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const state = {
-        symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
+        symbol: ['❌', '✔️'],
+        word: [(msgs.state_off || 'off').toUpperCase(), (msgs.state_on || 'on').toUpperCase()],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
     }
 
