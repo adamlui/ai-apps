@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.13
+// @version             2024.6.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1093,7 +1093,7 @@
                 }
             } else { consoleInfo('Response: ' + resp.responseText) ; appAlert('openAInotWorking, suggestProxy') }
         } else if (api == 'AIchatOS') {
-            if (resp.responseText && !resp.responseText.includes('很抱歉地')) {
+            if (resp.responseText && !/很抱歉地|系统公告/.test(resp.responseText) {
                 try {
                     const text = resp.responseText, chunkSize = 1024
                     let answer = '', currentIdx = 0
@@ -1204,7 +1204,7 @@
                     if (api == 'OpenAI') {
                         try { str_relatedQueries = JSON.parse(event.response).choices[0].message.content }
                         catch (err) { consoleErr(err) ; reject(err) }
-                    } else if (api == 'AIchatOS' && !event.responseText?.includes('很抱歉地')) { 
+                    } else if (api == 'AIchatOS' && !/很抱歉地|系统公告/.test(resp.responseText)) { 
                         try {
                             const text = event.responseText, chunkSize = 1024
                             let currentIdx = 0
