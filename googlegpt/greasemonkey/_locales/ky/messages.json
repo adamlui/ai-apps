@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Баштапкы код" },
   "mode_proxy": { "message": "Прокси режими" },
   "mode_streaming": { "message": "Агым режими" },
+  "mode_autoScroll": { "message": "Автоматтык каттоо" },
   "mode_prefix": { "message": "Prefix режими" },
   "mode_suffix": { "message": "Suffix режими" },
   "tooltip_playAnswer": { "message": "Жооп ойнотуу" },

@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Lähdekoodi" },
   "mode_proxy": { "message": "Välityspalvelintila" },
   "mode_streaming": { "message": "Suoratoistotila" },
+  "mode_autoScroll": { "message": "Autom. vieritys" },
   "mode_prefix": { "message": "Etuliitteen tila" },
   "mode_suffix": { "message": "Jälkiliite-tila" },
   "tooltip_playAnswer": { "message": "Toista vastaus" },

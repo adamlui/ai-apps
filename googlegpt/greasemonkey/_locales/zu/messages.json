@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Ikhodi yomthombo" },
   "mode_proxy": { "message": "Imodi Yombambeli" },
   "mode_streaming": { "message": "Imodi Yokusakaza" },
+  "mode_autoScroll": { "message": "I-Scroll Ezenzakalelayo" },
   "mode_prefix": { "message": "Imodi Yesimaphambili" },
   "mode_suffix": { "message": "Imodi Ye-suffix" },
   "tooltip_playAnswer": { "message": "Impendulo yokudlala" },

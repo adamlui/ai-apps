@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Broncode" },
   "mode_proxy": { "message": "Proxymodus" },
   "mode_streaming": { "message": "Streamingmodus" },
+  "mode_autoScroll": { "message": "Automatisch Scrollen" },
   "mode_prefix": { "message": "Voorvoegsel modus" },
   "mode_suffix": { "message": "Achtervoegselmodus" },
   "tooltip_playAnswer": { "message": "Antwoord afspelen" },

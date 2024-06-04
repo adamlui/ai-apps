@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Hoʻopā'ālua" },
   "mode_proxy": { "message": "Kūlana Kūlana" },
   "mode_streaming": { "message": "ʻAno hoʻoheheʻe" },
+  "mode_autoScroll": { "message": "Paʻa-Aunoa" },
   "mode_prefix": { "message": "Ke ano prefix" },
   "mode_suffix": { "message": "ʻAno Suffix" },
   "tooltip_playAnswer": { "message": "Pāʻani pane" },

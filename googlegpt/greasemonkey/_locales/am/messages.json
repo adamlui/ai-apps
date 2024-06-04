@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "የምንጭ ኮድ" },
   "mode_proxy": { "message": "Proxy ሁነታ" },
   "mode_streaming": { "message": "የዥረት ሁነታ" },
+  "mode_autoScroll": { "message": "ራስ-ሽያጭ" },
   "mode_prefix": { "message": "Prefix ሁነታ" },
   "mode_suffix": { "message": "Suffix ሁነታ" },
   "tooltip_playAnswer": { "message": "መልስ አጫውት" },

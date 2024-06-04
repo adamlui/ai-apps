@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Рамзи манбаъ" },
   "mode_proxy": { "message": "Ҳолати прокси" },
   "mode_streaming": { "message": "Ҳолати ҷараён" },
+  "mode_autoScroll": { "message": "Ҳаракати худкор" },
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
   "tooltip_playAnswer": { "message": "Пахш кардани ҷавоб" },

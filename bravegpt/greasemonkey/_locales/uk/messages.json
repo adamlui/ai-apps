@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Джерельний код" },
   "mode_proxy": { "message": "Режим проксі-сервера" },
   "mode_streaming": { "message": "Режим потокової передачі" },
+  "mode_autoScroll": { "message": "Автоматично" },
   "mode_prefix": { "message": "Режим префікса" },
   "mode_suffix": { "message": "Режим суфіксу" },
   "tooltip_playAnswer": { "message": "Відтворити відповідь" },

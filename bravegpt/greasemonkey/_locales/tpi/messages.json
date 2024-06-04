@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Kod bilong as" },
   "mode_proxy": { "message": "Proxy mode" },
   "mode_streaming": { "message": "Streaming mode" },
+  "mode_autoScroll": { "message": "Auto-Scroll" },
   "mode_prefix": { "message": "Prefiks mod" },
   "mode_suffix": { "message": "Suffix mode" },
   "tooltip_playAnswer": { "message": "Toktok bilong bekim" },

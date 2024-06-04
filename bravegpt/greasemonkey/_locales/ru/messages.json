@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Исходный код" },
   "mode_proxy": { "message": "режим прокси" },
   "mode_streaming": { "message": "Потоковый режим" },
+  "mode_autoScroll": { "message": "Автопрокрутка" },
   "mode_prefix": { "message": "Режим префикса" },
   "mode_suffix": { "message": "Режим суффикса" },
   "tooltip_playAnswer": { "message": "Воспроизвести ответ" },

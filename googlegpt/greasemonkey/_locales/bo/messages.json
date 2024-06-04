@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "འབྱུང་ཁུངས །" },
   "mode_proxy": { "message": "པརོཀསི་རྣམ་གཞག" },
   "mode_streaming": { "message": "རྒྱུན་ཤེས །" },
+  "mode_autoScroll": { "message": "རང་འགུལ་ལྟ་ཀློག" },
   "mode_prefix": { "message": "སྔོན་སྒྲིག" },
   "mode_suffix": { "message": "Suffix Mode" },
   "tooltip_playAnswer": { "message": "ལན་འདེབས །" },

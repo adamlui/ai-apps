@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "ᠰᠣᠷᠪᠤᠯᠵᠢ ᠺᠣᠳ᠋ " },
   "mode_proxy": { "message": "Proxy Горим" },
   "mode_streaming": { "message": "Урсгалын Горим" },
+  "mode_autoScroll": { "message": "Авто-ролл" },
   "mode_prefix": { "message": "Угтварын Горим" },
   "mode_suffix": { "message": "Дагаварын Горим" },
   "tooltip_playAnswer": { "message": "Хариултыг тоглуулах" },

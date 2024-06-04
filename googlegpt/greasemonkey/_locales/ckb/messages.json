@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "کۆدی سەرچاوە" },
   "mode_proxy": { "message": "شێوازی پرۆکسی" },
   "mode_streaming": { "message": "شێوازی پەخشکردن" },
+  "mode_autoScroll": { "message": "ڕۆیشتنی خودکار" },
   "mode_prefix": { "message": "Prefix mode" },
   "mode_suffix": { "message": "Suffix mode" },
   "tooltip_playAnswer": { "message": "وەڵام یاری بکە" },

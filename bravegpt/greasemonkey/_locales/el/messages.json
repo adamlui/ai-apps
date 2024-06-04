@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Source code" },
   "mode_proxy": { "message": "Λειτουργία διακομιστή μεσολάβησης" },
   "mode_streaming": { "message": "Λειτουργία ροής" },
+  "mode_autoScroll": { "message": "Αυτόματη κύλιση" },
   "mode_prefix": { "message": "Λειτουργία προθέματος" },
   "mode_suffix": { "message": "Λειτουργία επιθέματος" },
   "tooltip_playAnswer": { "message": "Αναπαραγωγή απάντησης" },

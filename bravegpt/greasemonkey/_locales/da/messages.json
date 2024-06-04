@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Kildekode" },
   "mode_proxy": { "message": "Proxy-tilstand" },
   "mode_streaming": { "message": "Streamingtilstand" },
+  "mode_autoScroll": { "message": "Rul display automatisk (autorul)" },
   "mode_prefix": { "message": "Præfikstilstand" },
   "mode_suffix": { "message": "Suffikstilstand" },
   "tooltip_playAnswer": { "message": "Afspil svar" },

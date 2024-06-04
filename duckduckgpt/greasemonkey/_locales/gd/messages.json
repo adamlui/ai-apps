@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Bun-tùs a' chod" },
   "mode_proxy": { "message": "Modh an ionaid" },
   "mode_streaming": { "message": "Modh sruthadh" },
+  "mode_autoScroll": { "message": "Sgrolaich gu fèin - obrachail" },
   "mode_prefix": { "message": "Modh an ro - leasachaidh" },
   "mode_suffix": { "message": "Modh an iar - leasachaidh" },
   "tooltip_playAnswer": { "message": "Cluich am freagairt" },

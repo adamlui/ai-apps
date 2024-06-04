@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "ပင္မကုဒ္" },
   "mode_proxy": { "message": "Proxy မုဒ်" },
   "mode_streaming": { "message": "Streaming မုဒ်" },
+  "mode_autoScroll": { "message": "Auto-Scroll" },
   "mode_prefix": { "message": "ရှေ့ဆက်မုဒ်" },
   "mode_suffix": { "message": "နောက်ဆက်တွဲ မုဒ်" },
   "tooltip_playAnswer": { "message": "အဖြေကို ဖွင့်ပါ" },

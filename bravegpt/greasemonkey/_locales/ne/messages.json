@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "स्रोत सङ्केत" },
   "mode_proxy": { "message": "प्रोक्सी मोड" },
   "mode_streaming": { "message": "स्ट्रिमिङ मोड" },
+  "mode_autoScroll": { "message": "स्वत: स्क्रोल गर्नुहोस्" },
   "mode_prefix": { "message": "उपसर्ग मोड" },
   "mode_suffix": { "message": "प्रत्यय मोड" },
   "tooltip_playAnswer": { "message": "जवाफ प्ले गर्नुहोस्" },

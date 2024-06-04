@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Zdrojový kód" },
   "mode_proxy": { "message": "Režim proxy" },
   "mode_streaming": { "message": "Režim streamovania" },
+  "mode_autoScroll": { "message": "Automatické posúvanie" },
   "mode_prefix": { "message": "Režim predpony" },
   "mode_suffix": { "message": "Režim prípony" },
   "tooltip_playAnswer": { "message": "Prehrať odpoveď" },

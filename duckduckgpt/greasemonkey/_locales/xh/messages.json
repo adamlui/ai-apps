@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Ikhowudi engumthombo" },
   "mode_proxy": { "message": "Imo yeProxy" },
   "mode_streaming": { "message": "Imowudi Yokusasaza" },
+  "mode_autoScroll": { "message": "Zikrola ngokuzenzekelayo" },
   "mode_prefix": { "message": "Imowudi Yesimaphambili" },
   "mode_suffix": { "message": "Imowudi Ye-suffix" },
   "tooltip_playAnswer": { "message": "Dlala impendulo" },

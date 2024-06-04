@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Waehere puna" },
   "mode_proxy": { "message": "Mode Proxy" },
   "mode_streaming": { "message": "Mode Streaming" },
+  "mode_autoScroll": { "message": "Auto-Scroll" },
   "mode_prefix": { "message": "Momo Prefix" },
   "mode_suffix": { "message": "Mode Suffix" },
   "tooltip_playAnswer": { "message": "Whakautu Play" },

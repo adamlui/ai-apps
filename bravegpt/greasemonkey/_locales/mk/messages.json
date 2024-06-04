@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "@ info: whatsthis" },
   "mode_proxy": { "message": "Режим на прокси" },
   "mode_streaming": { "message": "Режим на стриминг" },
+  "mode_autoScroll": { "message": "Автоматско поместување" },
   "mode_prefix": { "message": "Режим на префикс" },
   "mode_suffix": { "message": "Режим на суфикс" },
   "tooltip_playAnswer": { "message": "Пушти одговор" },

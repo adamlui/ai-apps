@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Codex Originis" },
   "mode_proxy": { "message": "Proxy Mode" },
   "mode_streaming": { "message": "Modus streaming" },
+  "mode_autoScroll": { "message": "Circus autorum" },
   "mode_prefix": { "message": "Modus prefix" },
   "mode_suffix": { "message": "Modus Sufix" },
   "tooltip_playAnswer": { "message": "Reperire" },

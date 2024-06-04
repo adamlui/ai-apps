@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Upprunakóði@ info: whatsthis" },
   "mode_proxy": { "message": "Milliþjónshamur" },
   "mode_streaming": { "message": "Straumstilling" },
+  "mode_autoScroll": { "message": "Sjálfvirk fletting" },
   "mode_prefix": { "message": "Forskeytahamur" },
   "mode_suffix": { "message": "Viðskeytahamur" },
   "tooltip_playAnswer": { "message": "Spila svar" },

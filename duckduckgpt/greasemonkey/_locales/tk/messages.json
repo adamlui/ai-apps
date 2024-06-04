@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Çykgyt kodu" },
   "mode_proxy": { "message": "Proxy Mody" },
   "mode_streaming": { "message": "Streaming Mode" },
+  "mode_autoScroll": { "message": "Auto-Scroll" },
   "mode_prefix": { "message": "Prefiks Modu" },
   "mode_suffix": { "message": "Suffix Modu" },
   "tooltip_playAnswer": { "message": "Jawap oýna" },

@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Бастапқы код" },
   "mode_proxy": { "message": "Прокси режимі" },
   "mode_streaming": { "message": "Ағын режимі" },
+  "mode_autoScroll": { "message": "Автоматты түрде тіркеу" },
   "mode_prefix": { "message": "Префикс режимі" },
   "mode_suffix": { "message": "Suffix режимі" },
   "tooltip_playAnswer": { "message": "Жауапты ойнату" },

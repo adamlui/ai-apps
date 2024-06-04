@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Mã nguồn" },
   "mode_proxy": { "message": "Chế độ proxy IP" },
   "mode_streaming": { "message": "Chế độ truyền phát" },
+  "mode_autoScroll": { "message": "Tự động cuộn" },
   "mode_prefix": { "message": "Chế độ Tiền tố" },
   "mode_suffix": { "message": "Chế độ Hậu tố" },
   "tooltip_playAnswer": { "message": "Phát câu trả lời" },

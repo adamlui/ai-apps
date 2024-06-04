@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Codi font" },
   "mode_proxy": { "message": "Mode de servidor intermediari" },
   "mode_streaming": { "message": "Mode de transmissió" },
+  "mode_autoScroll": { "message": "Desplaçament automàtic" },
   "mode_prefix": { "message": "Mode de prefix" },
   "mode_suffix": { "message": "Mode de sufix" },
   "tooltip_playAnswer": { "message": "Reprodueix la resposta" },

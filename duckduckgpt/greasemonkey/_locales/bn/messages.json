@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "সোর্স কোড" },
   "mode_proxy": { "message": "প্রক্সি মোড" },
   "mode_streaming": { "message": "স্ট্রিমিং মোড" },
+  "mode_autoScroll": { "message": "অটো স্ক্রল" },
   "mode_prefix": { "message": "উপসর্গ মোড" },
   "mode_suffix": { "message": "সাফিক্স মোড" },
   "tooltip_playAnswer": { "message": "উত্তর খেলুন" },

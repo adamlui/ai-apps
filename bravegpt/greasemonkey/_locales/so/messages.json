@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Koodhka isha" },
   "mode_proxy": { "message": "Qaabka Proxy" },
   "mode_streaming": { "message": "Habka Daadinta" },
+  "mode_autoScroll": { "message": "Auto-Scroll" },
   "mode_prefix": { "message": "Habka Prefix" },
   "mode_suffix": { "message": "Suffix Mode" },
   "tooltip_playAnswer": { "message": "Jawaabta ciyaar" },

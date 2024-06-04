@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Maʻuʻanga fakamatala" },
   "mode_proxy": { "message": "Founga fakafofonga" },
   "mode_streaming": { "message": "Streaming Mode" },
+  "mode_autoScroll": { "message": "Scroll-Scroll" },
   "mode_prefix": { "message": "Muʻa cata Mode" },
   "mode_suffix": { "message": "Founga tanaki atu" },
   "tooltip_playAnswer": { "message": "Fakafaivaʻi e talí" },

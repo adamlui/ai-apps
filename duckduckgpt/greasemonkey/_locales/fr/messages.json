@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Code source" },
   "mode_proxy": { "message": "Mode proxy" },
   "mode_streaming": { "message": "Mode streaming" },
+  "mode_autoScroll": { "message": "Défilement automatique" },
   "mode_prefix": { "message": "Mode préfixe" },
   "mode_suffix": { "message": "Mode suffixe" },
   "tooltip_playAnswer": { "message": "Lire la réponse" },

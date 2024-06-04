@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Ikodi y'isôko" },
   "mode_proxy": { "message": "Proxy Mode None None" },
   "mode_streaming": { "message": "Imero yo gukwiragiza" },
+  "mode_autoScroll": { "message": "Auto-Scroll None None" },
   "mode_prefix": { "message": "Prefix Mode None None" },
   "mode_suffix": { "message": "Uburyo buhagije" },
   "tooltip_playAnswer": { "message": "Kwinana Reply" },

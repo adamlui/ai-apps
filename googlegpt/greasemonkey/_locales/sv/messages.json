@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Källkod" },
   "mode_proxy": { "message": "Proxy-läge" },
   "mode_streaming": { "message": "Strömningsläge" },
+  "mode_autoScroll": { "message": "Automatisk rullning" },
   "mode_prefix": { "message": "Prefixläge" },
   "mode_suffix": { "message": "Suffixläge" },
   "tooltip_playAnswer": { "message": "Spela svar" },

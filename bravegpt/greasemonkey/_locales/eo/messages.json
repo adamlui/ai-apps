@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Fontkodo" },
   "mode_proxy": { "message": "Prokurila moduso" },
   "mode_streaming": { "message": "Streaming Mode" },
+  "mode_autoScroll": { "message": "Aŭtomate rulumi" },
   "mode_prefix": { "message": "Prefiksa moduso" },
   "mode_suffix": { "message": "Suffix Mode" },
   "tooltip_playAnswer": { "message": "Ludi respondon" },

@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Iturburu kode" },
   "mode_proxy": { "message": "Proxy modua" },
   "mode_streaming": { "message": "Streaming modua" },
+  "mode_autoScroll": { "message": "Korritu automatikoki" },
   "mode_prefix": { "message": "Aurrizkien modua" },
   "mode_suffix": { "message": "Atzizki modua" },
   "tooltip_playAnswer": { "message": "Erreproduzitu erantzuna" },

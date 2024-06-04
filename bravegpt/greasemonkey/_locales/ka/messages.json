@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "საწყისი კოდი" },
   "mode_proxy": { "message": "Პროქსი რეჟიმი" },
   "mode_streaming": { "message": "Სტრიმინგის რეჟიმი" },
+  "mode_autoScroll": { "message": "Ავტომატური გადახვევა" },
   "mode_prefix": { "message": "Პრეფიქსული რეჟიმი" },
   "mode_suffix": { "message": "Სუფიქსური რეჟიმი" },
   "tooltip_playAnswer": { "message": "Პასუხის დაკვრა" },

@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "سورس کد" },
   "mode_proxy": { "message": "حالت پروکسی" },
   "mode_streaming": { "message": "حالت جریان" },
+  "mode_autoScroll": { "message": "اسکرول خودکار" },
   "mode_prefix": { "message": "حالت پیشوند" },
   "mode_suffix": { "message": "حالت پسوند" },
   "tooltip_playAnswer": { "message": "پاسخ را پخش کنید" },

@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Ada keldukota" },
   "mode_proxy": { "message": "Proxy mode" },
   "mode_streaming": { "message": "Streymingarháttur" },
+  "mode_autoScroll": { "message": "Skráset teg sjálv/ur" },
   "mode_prefix": { "message": "Præfiksmodus" },
   "mode_suffix": { "message": "Eftirfylgjandi standi" },
   "tooltip_playAnswer": { "message": "Spæl svar" },

@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "원본 코드" },
   "mode_proxy": { "message": "프록시 모드" },
   "mode_streaming": { "message": "스트리밍 모드" },
+  "mode_autoScroll": { "message": "자동스크롤" },
   "mode_prefix": { "message": "접두사 모드" },
   "mode_suffix": { "message": "접미사 모드" },
   "tooltip_playAnswer": { "message": "답변 재생" },

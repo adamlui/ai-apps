@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "شيفرة مصدرية" },
   "mode_proxy": { "message": "وضع البروكسي" },
   "mode_streaming": { "message": "وضع البث المباشر" },
+  "mode_autoScroll": { "message": "تمرير تلقائي" },
   "mode_prefix": { "message": "وضع البادئة" },
   "mode_suffix": { "message": "وضع اللاحقة" },
   "tooltip_playAnswer": { "message": "تشغيل الإجابة" },

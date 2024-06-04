@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Forráskód" },
   "mode_proxy": { "message": "Proxy mód" },
   "mode_streaming": { "message": "Streaming mód" },
+  "mode_autoScroll": { "message": "Automatikus görgetés" },
   "mode_prefix": { "message": "Előtag mód" },
   "mode_suffix": { "message": "Utótag mód" },
   "tooltip_playAnswer": { "message": "Válasz lejátszása" },

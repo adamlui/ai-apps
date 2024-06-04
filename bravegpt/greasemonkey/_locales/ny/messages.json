@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Gwero kachidindo" },
   "mode_proxy": { "message": "Mchitidwe wa Proxy" },
   "mode_streaming": { "message": "Njira Yotsatsira" },
+  "mode_autoScroll": { "message": "Auto-Scroll" },
   "mode_prefix": { "message": "Mchitidwe wa Prefix" },
   "mode_suffix": { "message": "Lumikizanani nafe" },
   "tooltip_playAnswer": { "message": "Lumikizanani nafe" },

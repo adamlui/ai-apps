@@ -16,6 +16,7 @@
   "about_sourceCode": { "message": "Izvorni kod" },
   "mode_proxy": { "message": "Proxy način rada" },
   "mode_streaming": { "message": "Način strujanja" },
+  "mode_autoScroll": { "message": "Automatski pomak" },
   "mode_prefix": { "message": "Način rada prefiksa" },
   "mode_suffix": { "message": "Način sufiksa" },
   "tooltip_playAnswer": { "message": "Reproduciraj odgovor" },
