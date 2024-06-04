@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.4.2
+// @version             2024.6.4.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -270,13 +270,13 @@
     const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
     const apis = {
         'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.xyz',
-            endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true },
+            endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true, accumulatesText: false },
         'Free Chat': { expectedOrigin: 'https://e8.frechat.xyz',
-            endpoint: 'https://demo-yj7h.onrender.com/single/chat_messages', method: 'PUT', streamable: true },
+            endpoint: 'https://demo-yj7h.onrender.com/single/chat_messages', method: 'PUT', streamable: true, accumulatesText: false },
         'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
-            endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true },
+            endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true, accumulatesText: true },
         'MixerBox AI': { expectedOrigin: 'https://chatai.mixerbox.com',
-            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', method: 'POST', streamable: true },
+            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', method: 'POST', streamable: true, accumulatesText: false },
         'OpenAI': { expectedOrigin: 'https://chatgpt.com',
             endpoint: 'https://api.openai.com/v1/chat/completions', method: 'POST', streamable: true }
     }
@@ -1161,11 +1161,18 @@
                     .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                 chunk = extractedChunks.join('')
             }
-            accumulatedChunks += chunk
-            try { // to show accumulated chunks
-                if (/['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // GPTforLove fail
-                     consoleErr('Response', accumulatedChunks) ; tryDiffAPI(api) }
-                else appShow(accumulatedChunks)
+            accumulatedChunks = apis[api].accumulatesText ? chunk : accumulatedChunks + chunk
+            if (/['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // GPTforLove fail
+                consoleErr('Response', accumulatedChunks) ; tryDiffAPI(api) ; return }
+            try { // to show stream text
+                let textToShow
+                if (api == 'GPTforLove') { // extract parentID + latest chunk text
+                    const jsonLines = accumulatedChunks.split('\n'),
+                          nowResult = JSON.parse(jsonLines[jsonLines.length - 1])
+                    if (nowResult.id) apiIDs.gptPlus.parentID = nowResult.id // for contextual replies
+                    textToShow = nowResult.text
+                } else textToShow = accumulatedChunks
+                appShow(textToShow, footerContent)
             } catch (err) { consoleErr('Error showing stream:', err.message) }
             return reader.read().then(processStreamText).catch(err => consoleErr('Error reading stream:', err.message))
         }
@@ -1204,7 +1211,7 @@
                     if (api == 'OpenAI') {
                         try { str_relatedQueries = JSON.parse(event.response).choices[0].message.content }
                         catch (err) { consoleErr(err) ; reject(err) }
-                    } else if (api == 'AIchatOS' && !/很抱歉地|系统公告/.test(event.responseText)) { 
+                    } else if (api == 'AIchatOS' && !/很抱歉地|系统公告/.test(event.responseText)) {
                         try {
                             const text = event.responseText, chunkSize = 1024
                             let currentIdx = 0
