@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.4.4
+// @version             2024.6.4.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -179,7 +179,7 @@ setTimeout(async () => {
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@5cf9970/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('autoGetDisabled', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
+    loadSetting('autoGetDisabled', 'autoScroll', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
                 'rqDisabled', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
@@ -360,6 +360,16 @@ setTimeout(async () => {
         menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
             saveSetting('autoGetDisabled', !config.autoGetDisabled)
             notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + state.word[+!config.autoGetDisabled])
+            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        }))
+
+        // Add command to toggle auto-scroll (when streaming)
+        const assLabel = state.symbol[+config.autoScroll] + ' '
+                       + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
+                       + state.separator + state.word[+config.autoScroll]
+        menuIDs.push(GM_registerMenuCommand(assLabel, () => {
+            saveSetting('autoScroll', !config.autoScroll)
+            notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + state.word[+config.autoScroll])
             for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
         }))
 
@@ -1191,9 +1201,9 @@ setTimeout(async () => {
             const chatbar = appDiv.querySelector('textarea')
             if (chatbar) {
                 chatbar.value = event.target.textContent
+                appShow.submitSrc = 'click' // for appShow() auto-focus
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
                     key: 'Enter', bubbles: true, cancelable: true }))
-                appShow.submitSrc = 'relatedQuery' // to not auto-focus chatbar in appShow()
             }
     }}
 
@@ -1411,6 +1421,7 @@ setTimeout(async () => {
                 appAlert('waitingResponse')
                 const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
                 msgChain.push({ role: 'user', content: query })
+                appShow.submitSrc = 'click' // for appShow() auto-focus
                 getShowReply(msgChain)
             })
 
@@ -1484,8 +1495,12 @@ setTimeout(async () => {
         sendButton.addEventListener('mouseover', toggleTooltip)
         sendButton.addEventListener('mouseout', toggleTooltip)
 
-        // Focus chatbar if user typed in prev appShow()
-        if (appShow.submitSrc && appShow.submitSrc != 'relatedQuery') chatTextarea.focus()
+        // Focus chatbar conditionally
+        const proxyAPIstreaming = !config.streamingDisabled && config.proxyAPIenabled
+        if (appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top // app is above fold
+            || !proxyAPIstreaming && appShow?.submitSrc != 'click' // user replied to non-stream
+            || proxyAPIstreaming && config.autoScroll // auto-scroll active for streaming APIs
+        ) chatTextarea.focus()
         appShow.submitSrc = 'none'
 
         function handleEnter(event) {
