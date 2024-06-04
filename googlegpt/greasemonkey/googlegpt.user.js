@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.4.3
+// @version             2024.6.4.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -488,7 +488,7 @@
         'OpenAI': { expectedOrigin: 'https://chatgpt.com',
             endpoint: 'https://api.openai.com/v1/chat/completions', method: 'POST', streamable: true }
     }
-    const apiIDs = { gptPlus: { parentID: '' }, yqCloud: { userID: '#/chat/' + Date.now() }}
+    const apiIDs = { gptForLove: { parentID: '' }, aiChatOS: { userID: '#/chat/' + Date.now() }}
 
     // Init ALERTS
     const appAlerts = {
@@ -1208,7 +1208,7 @@
             } else resolve(accessToken)
     })}
 
-    function generateGPTplusKey() {
+    function generateGPTforLoveKey() {
         let nn = Math.floor(new Date().getTime() / 1e3)
         const fD = e => {
             let t = CryptoJS.enc.Utf8.parse(e),
@@ -1256,17 +1256,17 @@
         else if  (api == 'AIchatOS') {
             payload = {
                 prompt: msgs[msgs.length - 1].content,
-                withoutContext: false, userId: apiIDs.yqCloud.userID, network: true
+                withoutContext: false, userId: apiIDs.aiChatOS.userID, network: true
             }
         }  else if (api == 'Free Chat')
             payload = { messages: msgs, model: 'gemma-7b-it' }
         else if (api == 'GPTforLove') {
             payload = {
                 prompt: msgs[msgs.length - 1].content,
-                secret: generateGPTplusKey(), top_p: 1, temperature: 0.8,
+                secret: generateGPTforLoveKey(), top_p: 1, temperature: 0.8,
                 systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.'
             }
-            if (apiIDs.gptPlus.parentID) payload.options = { parentMessageId: apiIDs.gptPlus.parentID }
+            if (apiIDs.gptForLove.parentID) payload.options = { parentMessageId: apiIDs.gptForLove.parentID }
         } else if (api == 'MixerBox AI')
             payload = { prompt: msgs, model: 'gpt-3.5-turbo' }
         return JSON.stringify(payload)
@@ -1329,7 +1329,7 @@
                 try {
                     let chunks = resp.responseText.trim().split('\n'),
                         lastObj = JSON.parse(chunks[chunks.length - 1])
-                    if (lastObj.id) apiIDs.gptPlus.parentID = lastObj.id
+                    if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
                     appShow(lastObj.text, footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
@@ -1375,7 +1375,7 @@
                 if (api == 'GPTforLove') { // extract parentID + latest chunk text
                     const jsonLines = accumulatedChunks.split('\n'),
                           nowResult = JSON.parse(jsonLines[jsonLines.length - 1])
-                    if (nowResult.id) apiIDs.gptPlus.parentID = nowResult.id // for contextual replies
+                    if (nowResult.id) apiIDs.gptForLove.parentID = nowResult.id // for contextual replies
                     textToShow = nowResult.text
                 } else textToShow = accumulatedChunks
                 appShow(textToShow, footerContent)
