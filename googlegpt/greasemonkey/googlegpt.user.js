@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.3.23
+// @version             2024.6.3.24
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -579,28 +579,28 @@
                        + state.separator + state.word[+config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
-        // Add command to toggle streaming mode
+        // Add command toggle streaming mode or alert unsupported
         const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
         const stmLabel = state.symbol[+stmState] + ' '
                        + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
                        + state.separator + state.word[+stmState]
         menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
-            if (getUserscriptManager() != 'Tampermonkey') // alert unsupported, suggest Tampermonkey
+            if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
                 alert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                       `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.lert_isOnlyAvailFor || 'is only available for' }`
                           + ' <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a>.'
                           + ` (${ msgs.alert_userscriptMgrNoStream ||
                                     'Your userscript manager does not support returning stream responses' }.)`)
-            else if (!config.proxyAPIenabled) { // alert unsupported, suggest Proxy Mode
+            else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
                 let msg = `${ msgs.mode_streaming || 'Streaming Mode' } `
                         + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
                         + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
                         + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
                 const switchPhrase = msgs.alert_switchingOn || 'switching on'
                 msg = msg.replace(switchPhrase, `<a href="#" class="proxyToggle">${switchPhrase}</a>`)
-                alert('Streaming Mode unavailable', msg)
+                alert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
                 document.querySelector('.proxyToggle')?.addEventListener('click', toggleProxyMode)
-            } else {
+            } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
                 notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + state.word[+!config.streamingDisabled])
                 for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
