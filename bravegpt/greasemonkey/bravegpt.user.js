@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.4.11
+// @version             2024.6.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1513,7 +1513,7 @@ setTimeout(async () => {
         // Focus chatbar conditionally
         const proxyAPIstreaming = !config.streamingDisabled && config.proxyAPIenabled
         if (appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top // app fully above fold
-            || !proxyAPIstreaming && appShow?.submitSrc != 'click' // user replied to non-stream
+            || !proxyAPIstreaming && appShow.submitSrc && appShow.submitSrc != 'click' // user replied to non-stream
             ||  proxyAPIstreaming && config.autoScroll // auto-scroll active for streaming APIs
         ) chatTextarea.focus()
         appShow.submitSrc = 'none'

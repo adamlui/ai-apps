@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.4.13
+// @version             2024.6.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1796,7 +1796,7 @@
         // Focus chatbar conditionally
         const proxyAPIstreaming = !config.streamingDisabled && config.proxyAPIenabled
         if (appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top // app fully above fold
-            || !proxyAPIstreaming && appShow?.submitSrc != 'click' // user replied to non-stream
+            || !proxyAPIstreaming && appShow.submitSrc && appShow.submitSrc != 'click' // user replied to non-stream
             ||  proxyAPIstreaming && config.autoScroll // auto-scroll active for streaming APIs
         ) chatTextarea.focus()
         appShow.submitSrc = 'none'
