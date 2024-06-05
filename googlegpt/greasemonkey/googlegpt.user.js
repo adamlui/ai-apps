@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.4.12
+// @version             2024.6.4.13
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1770,7 +1770,6 @@
         // Render markdown/math
         if (answer != 'standby') {
             answerPre.innerHTML = marked.parse(answer, { pedantic: true })
-            //hljs.highlightAll();
             renderMathInElement(answerPre, { // eslint-disable-line no-undef
                 delimiters: [
                     { left: '$$', right: '$$', display: true },
