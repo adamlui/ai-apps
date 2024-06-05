@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.5
+// @version             2024.6.5.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -145,9 +145,11 @@
 // @require             https://cdn.jsdelivr.net/npm/@kudoai/chatgpt.js@2.9.3/dist/chatgpt.min.js#sha256-EDN+mCc+0Y4YVzJEoNikd4/rAIaJDLAdb+erWvupXTM=
 // @require             https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js#sha256-dppVXeVTurw1ozOPNE3XqhYmDJPOosfbKQcHyQSE58w=
 // @require             https://cdn.jsdelivr.net/npm/generate-ip@2.4.2/dist/generate-ip.min.js#sha256-PRvQIDVWK/a+aAqEFVQv7RePbRe/tX6tWQVM80rAe2M=
+// @require             https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js#sha256-g3pvpbDHNrUrveKythkPMF2j/J7UFoHbUyFQcFe1yEY=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js#sha256-n0UwfFeU7SR6DQlfOmLlLvIhWmeyMnIDp/2RmVmuedE=
 // @require             https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js#sha256-e1fUJ6xicGd9r42DgN7SzHMzb5FJoWe44f4NbvZmBK4=
 // @require             https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js#sha256-Ffq85bZYmLMrA/XtJen4kacprUwNbYdxEKd0SqhHqJQ=
+// @resource hljsCSS    https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css#sha256-v0N76BFFkH0dCB8bUr4cHSVN8A/zCaOopMuSmJWV/5w=
 // @grant               GM_getValue
 // @grant               GM_setValue
 // @grant               GM_deleteValue
@@ -155,6 +157,7 @@
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
 // @grant               GM_openInTab
+// @grant               GM_getResourceText
 // @grant               GM.xmlHttpRequest
 // @downloadURL         https://update.greasyfork.org/scripts/462440/bravegpt.user.js
 // @updateURL           https://update.greasyfork.org/scripts/462440/bravegpt.meta.js
@@ -257,7 +260,9 @@ setTimeout(async () => {
     }
 
     // Stylize APP elems
-    const appStyle = document.createElement('style') ; updateAppStyle() ; document.head.append(appStyle)
+    const appStyle =  document.createElement('style') ; updateAppStyle()
+    const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
+    document.head.append(appStyle, hljsStyle)
 
     // Stylize SITE elems
     const tweaksStyle = document.createElement('style'),
@@ -1487,6 +1492,7 @@ setTimeout(async () => {
         // Render markdown/math
         if (answer != 'standby') {
             answerPre.innerHTML = marked.parse(answer)
+            hljs.highlightAll() // eslint-disable-line no-undef
             renderMathInElement(answerPre, { // eslint-disable-line no-undef
                 delimiters: [
                     { left: '$$', right: '$$', display: true },
