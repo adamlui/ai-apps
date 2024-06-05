@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.4.7
+// @version             2024.6.4.8
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1462,7 +1462,8 @@
     })}
 
     function handleRQevent(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
-        if ([' ', 'Enter'].includes(event.key) || event.type == 'click') {
+        const keys = [' ', 'Space', 'Enter', 'Return'], keyCodes = [32, 13]    
+        if (keys.includes(event.key) || keyCodes.includes(event.keyCode) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
 
             // Remove divs/listeners
@@ -1794,14 +1795,14 @@
 
         // Focus chatbar conditionally
         const proxyAPIstreaming = !config.streamingDisabled && config.proxyAPIenabled
-        if (appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top // app is above fold
+        if (appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top // app fully above fold
             || !proxyAPIstreaming && appShow?.submitSrc != 'click' // user replied to non-stream
-            || proxyAPIstreaming && config.autoScroll // auto-scroll active for streaming APIs
+            ||  proxyAPIstreaming && config.autoScroll // auto-scroll active for streaming APIs
         ) chatTextarea.focus()
         appShow.submitSrc = 'none'
 
         function handleEnter(event) {
-            if (event.key == 'Enter') {
+            if (event.key == 'Enter' || event.keyCode == 13) {
                 if (event.ctrlKey) { // add newline
                     const chatTextarea = document.querySelector('#app-chatbar'),
                           caretPos = chatTextarea.selectionStart,
