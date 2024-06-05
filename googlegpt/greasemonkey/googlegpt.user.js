@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.4.11
+// @version             2024.6.4.12
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1274,7 +1274,7 @@
             payload = {
                 prompt: msgs[msgs.length - 1].content,
                 secret: generateGPTforLoveKey(), top_p: 1, temperature: 0.8,
-                systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.'
+                systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI. Follow the user\'s instructions carefully.'
             }
             if (apiIDs.gptForLove.parentID) payload.options = { parentMessageId: apiIDs.gptForLove.parentID }
         } else if (api == 'MixerBox AI')
@@ -1770,6 +1770,7 @@
         // Render markdown/math
         if (answer != 'standby') {
             answerPre.innerHTML = marked.parse(answer, { pedantic: true })
+            //hljs.highlightAll();
             renderMathInElement(answerPre, { // eslint-disable-line no-undef
                 delimiters: [
                     { left: '$$', right: '$$', display: true },
