@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.5.2
+// @version             2024.6.5.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -933,6 +933,7 @@
               + '.googlegpt > pre ol { padding-left: 1.58em }' // indent
               + '.googlegpt > pre ul { margin: -10px 0 -6px ; padding-left: 1.5em }' // reduce v-spacing, indent
               + '.googlegpt > pre li { margin: -10px 0 ; list-style: unset }' ) // reduce v-spacing, show left symbols
+          + 'code.hljs { text-wrap: nowrap ; overflow-x: scroll }' // don't wrap highlighted code to be scrollable horizontally
           + '.katex-html { display: none }' // hide unrendered math
           + '.chatgpt-notify { padding: 13px 13px 13px 18px !important }' // pad notifications
           + '.chatgpt-modal > div { 17px 20px 24px 20px !important }' // increase alert padding
@@ -1773,10 +1774,12 @@
         const appFooter = document.createElement('footer')
         appFooter.append(footerContent) ; appDiv.append(appFooter)
 
-        // Render markdown/math
+        // Render markdown/math + highlight code
         if (answer != 'standby') {
             answerPre.innerHTML = marked.parse(answer)
             hljs.highlightAll() // eslint-disable-line no-undef
+            answerPre.querySelectorAll('code').forEach(codeBlock => { // add linebreaks after semicolons
+                codeBlock.innerHTML = codeBlock.innerHTML.replace(/;\s*/g, ';<br>') })
             renderMathInElement(answerPre, { // eslint-disable-line no-undef
                 delimiters: [
                     { left: '$$', right: '$$', display: true },
