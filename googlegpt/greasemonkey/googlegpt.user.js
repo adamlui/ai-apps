@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.5.4
+// @version             2024.6.5.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -872,7 +872,7 @@
           + '.googlegpt {'
               + 'border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
               + `padding: ${ isFirefox ? 20 : 22 }px 26px 6px 26px ;`
-              + 'width: 255px ;' // arbitrary hard-width to prevent Google's flex-wrap moving app to bottom
+              + 'width: 319px ;' // hard-width to prevent Google's flex-wrap moving app to bottom
               + ( isMobile ? 'margin: 8px 0 8px' : 'margin-bottom: 30px' ) + ';' // add vertical margins
               + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
               + ( scheme == 'dark' ? ' border: none ; background: #282828' : ' background: white' ) + '}'
@@ -929,7 +929,8 @@
           + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none }'
           + '.kudoai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
           + ( // markdown styles
-                '.googlegpt > pre h1 { font-size: 1.25em } .googlegpt > pre h2 { font-size: 1.1em }' // size headings
+                '.googlegpt > pre h1 { font-size: 1.25em } .googlegpt > pre h2 { font-size: 1.1em }' // size headings+
+              + '.googlegpt > pre > p { margin-bottom: -1.25em }' // eliminate bottom gap
               + '.googlegpt > pre ol { padding-left: 1.58em }' // indent
               + '.googlegpt > pre ul { margin: -10px 0 -6px ; padding-left: 1.5em }' // reduce v-spacing, indent
               + '.googlegpt > pre li { margin: -10px 0 ; list-style: unset }' ) // reduce v-spacing, show left symbols
