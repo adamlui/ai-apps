@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.4.9
+// @version             2024.6.4.10
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -889,7 +889,7 @@
               + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
           + '.googlegpt > pre {'
               + `font-size: ${ isMobile ? 1.68 : 1.15 }em ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ;`
-              + `line-height: ${ isMobile ? 27 : 22 }px ; padding: 1.25em 1.25em 0 1.25em ; border-radius: 10px ; overflow: auto ;`
+              + `line-height: ${ isMobile ? 27 : 22 }px ; padding: 1.25em ; border-radius: 10px ; overflow: auto ;`
               + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 }' : 'background: #eaeaea }' )
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '.googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
@@ -924,6 +924,7 @@
           + '.kudoai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
           + ( // markdown styles
                 '.googlegpt > pre h1 { font-size: 1.25em } .googlegpt > pre h2 { font-size: 1.1em }' // size headings
+              + '.googlegpt > pre > p { margin-bottom: -1.25em }' // eliminate bottom gap
               + '.googlegpt > pre ol { padding-left: 1.58em }' // indent
               + '.googlegpt > pre ul { margin: -10px 0 -6px ; padding-left: 1.5em }' // reduce v-spacing, indent
               + '.googlegpt > pre li { margin: -10px 0 ; list-style: unset }' ) // reduce v-spacing, show left symbols
@@ -1462,7 +1463,7 @@
     })}
 
     function handleRQevent(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
-        const keys = [' ', 'Spacebar', 'Enter', 'Return'], keyCodes = [32, 13]    
+        const keys = [' ', 'Spacebar', 'Enter', 'Return'], keyCodes = [32, 13]
         if (keys.includes(event.key) || keyCodes.includes(event.keyCode) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
 
@@ -1769,7 +1770,7 @@
 
         // Render markdown/math
         if (answer != 'standby') {
-            answerPre.innerHTML = marked.parse(answer)
+            answerPre.innerHTML = marked.parse(answer, { pedantic: true })
             renderMathInElement(answerPre, { // eslint-disable-line no-undef
                 delimiters: [
                     { left: '$$', right: '$$', display: true },
