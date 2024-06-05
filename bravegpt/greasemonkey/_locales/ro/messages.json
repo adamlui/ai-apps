@@ -3,6 +3,7 @@
   "appDesc": { "message": "Adaugă răspunsuri ChatGPT la bara laterală Brave Search (susținută de GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Mod API proxy" },
   "menuLabel_autoGetAnswers": { "message": "Obținere automată răspunsuri" },
+  "menuLabel_whenStreaming": { "message": "când redați în flux" },
   "menuLabel_relatedQueries": { "message": "Interogări conexe" },
   "menuLabel_require": { "message": "d dcr" },
   "menuLabel_beforeQuery": { "message": "înainte de interogare" },

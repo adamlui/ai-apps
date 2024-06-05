@@ -3,6 +3,7 @@
   "appDesc": { "message": "زیاد کردنی وەرزی ChatGPT بۆ تایبەتی Brave Search (پارێزراوە لەلایەن GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "مۆدی پرۆکسی API" },
   "menuLabel_autoGetAnswers": { "message": "خۆکارانە وەڵامەکان وەربگرە" },
+  "menuLabel_whenStreaming": { "message": "dema streaming" },
   "menuLabel_relatedQueries": { "message": "پرسیارە پەیوەندیدارەکان" },
   "menuLabel_require": { "message": "پێویستی" },
   "menuLabel_beforeQuery": { "message": "پارێزگا بکە" },

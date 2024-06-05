@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Acurikira amatwara ya ChatGPT mu gucunga rw' Icyumweru cya Google Search (akunze kugendana n' GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Ashura" },
+  "menuLabel_whenStreaming": { "message": "numa Numa Streaming" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode None None" },
   "menuLabel_relatedQueries": { "message": "Ibibazo bifitaniye isano" },
   "menuLabel_require": { "message": "Ibisabwa" },

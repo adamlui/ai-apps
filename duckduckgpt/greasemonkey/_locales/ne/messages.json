@@ -3,6 +3,7 @@
   "appDesc": { "message": "DuckDuckGo साइडबारमा ChatGPT उत्तरहरू थप्दछ (GPT-4o द्वारा संचालित!)" },
   "menuLabel_proxyAPImode": { "message": "प्रोक्सी API मोड" },
   "menuLabel_autoGetAnswers": { "message": "स्वतः - उत्तरहरू प्राप्त गर्नुहोस्" },
+  "menuLabel_whenStreaming": { "message": "स्ट्रिमिङ गर्दा" },
   "menuLabel_relatedQueries": { "message": "सम्बन्धित प्रश्नहरू" },
   "menuLabel_require": { "message": "आवश्यक" },
   "menuLabel_beforeQuery": { "message": "क्वेरी अघि" },

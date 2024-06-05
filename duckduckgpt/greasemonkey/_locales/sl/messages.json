@@ -3,6 +3,7 @@
   "appDesc": { "message": "Doda odgovore ChatGPT v stransko vrstico DuckDuckGo (poganja GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API način" },
   "menuLabel_autoGetAnswers": { "message": "Samodejno pridobi odgovore" },
+  "menuLabel_whenStreaming": { "message": "pri pretočnem predvajanju" },
   "menuLabel_relatedQueries": { "message": "Povezane poizvedbe" },
   "menuLabel_require": { "message": "Zahtevaj" },
   "menuLabel_beforeQuery": { "message": "pred poizvedbo" },

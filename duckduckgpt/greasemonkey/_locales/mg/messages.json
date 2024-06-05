@@ -3,6 +3,7 @@
   "appDesc": { "message": "Addds ChatGPT mamaly ny DuckDuckGo Sidebar (Powered by GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Fomba API'ny proxy" },
   "menuLabel_autoGetAnswers": { "message": "Auto-hamaly ny valin-teny" },
+  "menuLabel_whenStreaming": { "message": "rehefa miraikitra" },
   "menuLabel_relatedQueries": { "message": "Fanontaniana mifandraika amin'izany" },
   "menuLabel_require": { "message": "FEPETRA" },
   "menuLabel_beforeQuery": { "message": "alohan'ny QUERY" },

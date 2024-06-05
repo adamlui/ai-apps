@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search-ə ChatGPT cavabları əlavə edir (GPT-4o tərəfindən dəstəklənir!)" },
   "menuLabel_autoGetAnswers": { "message": "Avtomatik verilən cavablar" },
+  "menuLabel_whenStreaming": { "message": "axın zamanı" },
   "menuLabel_proxyAPImode": { "message": "Proksi API Rejimi" },
   "menuLabel_relatedQueries": { "message": "Əlaqədar Sorğular" },
   "menuLabel_require": { "message": "Tələb et" },

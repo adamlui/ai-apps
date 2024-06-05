@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Ibisubizo kuri Google Search (powered by GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Kubona ibisubizo mu buryo bwikora" },
+  "menuLabel_whenStreaming": { "message": "ryari:" },
   "menuLabel_proxyAPImode": { "message": "Ubwoko" },
   "menuLabel_relatedQueries": { "message": "< Uburemere UTSINDAGIY" },
   "menuLabel_require": { "message": "Bisabwa" },

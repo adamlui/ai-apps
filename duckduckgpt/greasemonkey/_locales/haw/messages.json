@@ -3,6 +3,7 @@
   "appDesc": { "message": "Hoʻohui i nā pane ChatGPT i ka ʻaoʻao ʻaoʻao DuckDuckGo (hoʻohana ʻia e GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Kūlana API Kūlana" },
   "menuLabel_autoGetAnswers": { "message": "Loaʻa i nā pane" },
+  "menuLabel_whenStreaming": { "message": "i ke kahe ana" },
   "menuLabel_relatedQueries": { "message": "Nā nīnau pili" },
   "menuLabel_require": { "message": "Koi" },
   "menuLabel_beforeQuery": { "message": "mamua o ka ninau ana" },

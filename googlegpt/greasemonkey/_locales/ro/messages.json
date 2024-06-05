@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Adaugă răspunsuri ChatGPT la Căutarea Google (susținut de GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Obținere automată răspunsuri" },
+  "menuLabel_whenStreaming": { "message": "când redați în flux" },
   "menuLabel_proxyAPImode": { "message": "Mod API proxy" },
   "menuLabel_relatedQueries": { "message": "Interogări conexe" },
   "menuLabel_require": { "message": "d dcr" },

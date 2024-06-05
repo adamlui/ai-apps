@@ -3,6 +3,7 @@
   "appDesc": { "message": "Добавляет ответы ChatGPT на сайдбар Brave Search (работает на GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Режим API прокси-сервера" },
   "menuLabel_autoGetAnswers": { "message": "Ответы с автоматическим получением" },
+  "menuLabel_whenStreaming": { "message": "при потоковой передаче" },
   "menuLabel_relatedQueries": { "message": "маркетинга" },
   "menuLabel_require": { "message": "Требова" },
   "menuLabel_beforeQuery": { "message": "перед запросом" },

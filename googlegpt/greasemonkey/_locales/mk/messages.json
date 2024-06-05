@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Додава ChatGPT одговори на Google Search (овозможено од GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Автоматско добивање одговори" },
+  "menuLabel_whenStreaming": { "message": "при преносот" },
   "menuLabel_proxyAPImode": { "message": "Режим на прокси API" },
   "menuLabel_relatedQueries": { "message": "Поврзани прашања" },
   "menuLabel_require": { "message": "Задолжително" },

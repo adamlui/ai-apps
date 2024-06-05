@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google ಹುಡುಕಾಟಕ್ಕೆ ChatGPT ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ (GPT-4o ನಿಂದ ಚಾಲಿತವಾಗಿದೆ!)" },
   "menuLabel_autoGetAnswers": { "message": "ಸ್ವಯಂ-ಗೆಟ್ ಉತ್ತರಗಳು" },
+  "menuLabel_whenStreaming": { "message": "ಸ್ಟ್ರೀಮ್ ಮಾಡುವಾಗ" },
   "menuLabel_proxyAPImode": { "message": "ಪ್ರಾಕ್ಸಿ API ಮೋಡ್" },
   "menuLabel_relatedQueries": { "message": "ಸಂಬಂಧಿತ ಪ್ರಶ್ನೆಗಳು" },
   "menuLabel_require": { "message": "ಅಗತ್ಯವಿದೆ" },

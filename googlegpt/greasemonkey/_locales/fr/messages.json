@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Ajoute des réponses ChatGPT à la recherche Google (propulsé par GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Obtention automatique des réponses" },
+  "menuLabel_whenStreaming": { "message": "lors du streaming" },
   "menuLabel_proxyAPImode": { "message": "Mode API proxy" },
   "menuLabel_relatedQueries": { "message": "Requêtes connexes" },
   "menuLabel_require": { "message": "Requis" },

@@ -3,6 +3,7 @@
   "appDesc": { "message": "Tilføjer ChatGPT-svar til DuckDuckGo-sidebjælken (drevet af GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API-tilstand" },
   "menuLabel_autoGetAnswers": { "message": "Hent svar automatisk" },
+  "menuLabel_whenStreaming": { "message": "når du streamer" },
   "menuLabel_relatedQueries": { "message": "Relaterede forespørgsler" },
   "menuLabel_require": { "message": "Kræv" },
   "menuLabel_beforeQuery": { "message": "før forespørgsel" },

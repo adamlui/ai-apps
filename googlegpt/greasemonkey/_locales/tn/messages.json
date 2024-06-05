@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "E tsenya dikarabo tsa ChatGPT mo Patlisisong ya Google (e e dirisiwang ke GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Go Bona Dikarabo ka Tsela e e Itshwarang" },
+  "menuLabel_whenStreaming": { "message": "when streaming" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_relatedQueries": { "message": "Dipotšišo tšeo di sepelel" },
   "menuLabel_require": { "message": "E a batlega" },

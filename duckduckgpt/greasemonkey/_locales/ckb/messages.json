@@ -3,6 +3,7 @@
   "appDesc": { "message": "زیادکردنی وەڵامەکانی ChatGPT بۆ سایدباری DuckDuckGo (بەرپێنانی GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "شێوازی APIی پرۆکسی" },
   "menuLabel_autoGetAnswers": { "message": "وەڵامە خۆگەڕەکان" },
+  "menuLabel_whenStreaming": { "message": "کاتێک پەخش دەکرێت" },
   "menuLabel_relatedQueries": { "message": "پرسیارە پەیوەندیدارەکان" },
   "menuLabel_require": { "message": "پێویست دەکات، پێویستبون، پێویستی پێ بوون، داوالێکردن، پێویستبوون، پێویستی پێبوون، داواکردن، ویستن، داوای لێدەکا، بەسەری دەسەپێنێ، فەرمانی دەدات بە\n[کۆمپیوتەر]: پێویستبوون" },
   "menuLabel_beforeQuery": { "message": "پێش پرسیارکردن" },

@@ -3,6 +3,7 @@
   "appDesc": { "message": "Ajoute des réponses ChatGPT à la barre latérale de DuckDuckGo (optimisée par GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Mode API proxy" },
   "menuLabel_autoGetAnswers": { "message": "Obtention automatique des réponses" },
+  "menuLabel_whenStreaming": { "message": "lors du streaming" },
   "menuLabel_relatedQueries": { "message": "Requêtes connexes" },
   "menuLabel_require": { "message": "Requis" },
   "menuLabel_beforeQuery": { "message": "avant la requête" },

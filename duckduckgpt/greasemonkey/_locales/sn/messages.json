@@ -3,6 +3,7 @@
   "appDesc": { "message": "Anowedzera ChatGPT mhinduro DuckDuckGo sidebar (dzinofambiswa ne GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Kuwana Mhinduro" },
+  "menuLabel_whenStreaming": { "message": "apo kudirana" },
   "menuLabel_relatedQueries": { "message": "Mibvunzo yakabatana" },
   "menuLabel_require": { "message": "ZVINODZIDZA" },
   "menuLabel_beforeQuery": { "message": "pamberi nomubvunzo" },

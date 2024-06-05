@@ -3,6 +3,7 @@
   "appDesc": { "message": "Voeg ChatGPT antwoorde op Dapper Soek sidebar (aangedryf deur GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Volmag-API-modus" },
   "menuLabel_autoGetAnswers": { "message": "Outo- Kry Antwoorde" },
+  "menuLabel_whenStreaming": { "message": "wanneer om te stroom" },
   "menuLabel_relatedQueries": { "message": "Verwante navrae" },
   "menuLabel_require": { "message": "Vereis" },
   "menuLabel_beforeQuery": { "message": "voor navraag" },

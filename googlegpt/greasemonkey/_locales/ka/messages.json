@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search-ში ChatGPT-ის პასუხების დამატება (GPT-4o-ის მეშვეობით!)" },
   "menuLabel_autoGetAnswers": { "message": "Პასუხების ავტომატური მიღება" },
+  "menuLabel_whenStreaming": { "message": "სტრიმინგისას" },
   "menuLabel_proxyAPImode": { "message": "Პროქსი API რეჟიმი" },
   "menuLabel_relatedQueries": { "message": "Მსგავსი შეკითხვები" },
   "menuLabel_require": { "message": "Მოთხოვნა" },

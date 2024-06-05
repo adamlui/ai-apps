@@ -3,6 +3,7 @@
   "appDesc": { "message": "ChatGPT javoblarini Brave Search yon paneliga qo‘shadi (GPT-4o tomonidan quvvatlanadi!)" },
   "menuLabel_proxyAPImode": { "message": "Proksi API rejimi" },
   "menuLabel_autoGetAnswers": { "message": "Javoblarni avtomatik olish" },
+  "menuLabel_whenStreaming": { "message": "oqim paytida" },
   "menuLabel_relatedQueries": { "message": "Tegishli so'rovlar" },
   "menuLabel_require": { "message": "Talab qilish" },
   "menuLabel_beforeQuery": { "message": "so'rovdan oldin" },

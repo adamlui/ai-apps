@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "לייגט ChatGPT ענטפֿערס צו Google זוך (פּאַוערד דורך GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "אַוטאָ-באַקומען ענטפֿערס" },
+  "menuLabel_whenStreaming": { "message": "ווען סטרימינג" },
   "menuLabel_proxyAPImode": { "message": "פּראָקסי אַפּי מאָדע" },
   "menuLabel_relatedQueries": { "message": "Related Queries" },
   "menuLabel_require": { "message": "דאַרפן" },

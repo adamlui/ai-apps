@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Bætir ChatGPT svörum við Google leit (keyrð af GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Sjálfvirk svör" },
+  "menuLabel_whenStreaming": { "message": "þegar streymt er" },
   "menuLabel_proxyAPImode": { "message": "Proxy API hamur" },
   "menuLabel_relatedQueries": { "message": "Tengdar fyrirspurnir" },
   "menuLabel_require": { "message": "Ãarfnast:" },

@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Prideda „ChatGPT“ atsakymus į „Google“ paiešką (sukurta GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Automatiškai gauti atsakymus" },
+  "menuLabel_whenStreaming": { "message": "srautinio perdavimo metu" },
   "menuLabel_proxyAPImode": { "message": "Tarpinio serverio API režimas" },
   "menuLabel_relatedQueries": { "message": "Susijusios užklausos" },
   "menuLabel_require": { "message": "Privalomas laukas" },

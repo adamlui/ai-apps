@@ -3,6 +3,7 @@
   "appDesc": { "message": "Προσθέτει απαντήσεις ChatGPT στην πλαϊνή μπάρα Γενναίας Αναζήτησης (τροφοδοτείται από GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Λειτουργία API διακομιστή μεσολάβησης" },
   "menuLabel_autoGetAnswers": { "message": "Αυτόματη λήψη απαντήσεων" },
+  "menuLabel_whenStreaming": { "message": "κατά τη ροή" },
   "menuLabel_relatedQueries": { "message": "Σχετικά ερωτήματα" },
   "menuLabel_require": { "message": "Απαιτείται" },
   "menuLabel_beforeQuery": { "message": "πριν από το ερώτημα" },

@@ -3,6 +3,7 @@
   "appDesc": { "message": "DuckDuckGo سائڈبار میں ChatGPT جوابات شامل کرتا ہے (GPT-4o کے ذریعہ تقویت یافتہ!)" },
   "menuLabel_proxyAPImode": { "message": "پراکسی API موڈ" },
   "menuLabel_autoGetAnswers": { "message": "خودکار جوابات حاصل کریں" },
+  "menuLabel_whenStreaming": { "message": "اسٹریم کرتے وقت" },
   "menuLabel_relatedQueries": { "message": "متعلقہ سوالات" },
   "menuLabel_require": { "message": "تقاضہ کرنا" },
   "menuLabel_beforeQuery": { "message": "استفسار سے پہلے" },

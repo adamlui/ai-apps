@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search میں ChatGPT کے جوابات شامل کرتا ہے (GPT-4o کے ذریعے تقویت یافتہ!)" },
   "menuLabel_autoGetAnswers": { "message": "خودکار جوابات حاصل کریں" },
+  "menuLabel_whenStreaming": { "message": "اسٹریم کرتے وقت" },
   "menuLabel_proxyAPImode": { "message": "پراکسی API موڈ" },
   "menuLabel_relatedQueries": { "message": "متعلقہ سوالات" },
   "menuLabel_require": { "message": "تقاضہ کرنا" },

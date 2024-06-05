@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "زیادکردنی وەڵامەکانی ChatGPT بۆ سایدباری Google Search (بەرپێنانی GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "وەڵامە خۆگەڕەکان" },
+  "menuLabel_whenStreaming": { "message": "کاتێک پەخش دەکرێت" },
   "menuLabel_proxyAPImode": { "message": "شێوازی APIی پرۆکسی" },
   "menuLabel_relatedQueries": { "message": "پرسیارە پەیوەندیدارەکان" },
   "menuLabel_require": { "message": "پێویست دەکات، پێویستبون، پێویستی پێ بوون، داوالێکردن، پێویستبوون، پێویستی پێبوون، داواکردن، ویستن، داوای لێدەکا، بەسەری دەسەپێنێ، فەرمانی دەدات بە\n[کۆمپیوتەر]: پێویستبوون" },

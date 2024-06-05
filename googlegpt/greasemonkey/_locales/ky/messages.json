@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google издөөгө ChatGPT жоопторун кошот (GPT-4o менен иштейт!)" },
   "menuLabel_autoGetAnswers": { "message": "Жоопторду автоматтык түрдө алуу" },
+  "menuLabel_whenStreaming": { "message": "агым учурунда" },
   "menuLabel_proxyAPImode": { "message": "Прокси API режими" },
   "menuLabel_relatedQueries": { "message": "Байланыштуу суроолор" },
   "menuLabel_require": { "message": "Талап кылуу" },

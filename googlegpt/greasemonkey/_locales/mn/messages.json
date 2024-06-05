@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Хайлтанд ChatGPT-ийг нэмнэ (GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Авто-Орлогийн хариултууд" },
+  "menuLabel_whenStreaming": { "message": "урсгал хийх үед" },
   "menuLabel_proxyAPImode": { "message": "Proxy API горим" },
   "menuLabel_relatedQueries": { "message": "Холбогдох асуултууд" },
   "menuLabel_require": { "message": "Шаардлага" },

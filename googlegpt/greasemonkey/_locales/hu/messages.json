@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "ChatGPT-válaszokat ad hozzá a Google Kereséshez (GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Válaszok automatikus lekérése" },
+  "menuLabel_whenStreaming": { "message": "streaming közben" },
   "menuLabel_proxyAPImode": { "message": "Proxy API mód" },
   "menuLabel_relatedQueries": { "message": "Kapcsolódó kérdések" },
   "menuLabel_require": { "message": "Kötelező" },

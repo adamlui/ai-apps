@@ -3,6 +3,7 @@
   "appDesc": { "message": "Lisab ChatGPT vastused DuckDuckGo külgribale (powered by GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Puhverserveri API-režiim" },
   "menuLabel_autoGetAnswers": { "message": "Automaatne vastuste hankimine" },
+  "menuLabel_whenStreaming": { "message": "voogesituse ajal" },
   "menuLabel_relatedQueries": { "message": "Seotud päringud" },
   "menuLabel_require": { "message": "Jaapani jeen" },
   "menuLabel_beforeQuery": { "message": "enne päringut" },

@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Search ကို ChatGPT အဖြေများကိုထည့်သွင်း (GPT-4o အားဖြင့် powered!)" },
   "menuLabel_autoGetAnswers": { "message": "အော်တို Get အဖြေများ" },
+  "menuLabel_whenStreaming": { "message": "streaming လုပ်သည့်အခါ" },
   "menuLabel_proxyAPImode": { "message": "Proxy API ကို Mode ကို" },
   "menuLabel_relatedQueries": { "message": "ဆက်စပ်မေးခွန်းများ" },
   "menuLabel_require": { "message": "လိုအပ်သည်" },

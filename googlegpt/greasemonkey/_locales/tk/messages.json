@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google gözlegine ChatGPT jogaplaryny goş (GPT-4o bilen işleýän!)" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get jogaplary" },
+  "menuLabel_whenStreaming": { "message": "ötýänçä" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_relatedQueries": { "message": "Baglanyşykly soraglar" },
   "menuLabel_require": { "message": "Kerek" },

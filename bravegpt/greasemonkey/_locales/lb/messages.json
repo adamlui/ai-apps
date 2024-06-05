@@ -3,6 +3,7 @@
   "appDesc": { "message": "Füügt ChatGPT Äntwerten op Brave Search Sidebar (ugedriwwe vu GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy-API-Modus" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Äntwerten" },
+  "menuLabel_whenStreaming": { "message": "wann streamen" },
   "menuLabel_relatedQueries": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten in de comments" },
   "menuLabel_require": { "message": "Fuerderen" },
   "menuLabel_beforeQuery": { "message": "virun der Query" },

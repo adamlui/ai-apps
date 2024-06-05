@@ -3,6 +3,7 @@
   "appDesc": { "message": "DuckDuckGo సైడ్‌బార్‌కు ChatGPT సమాధానాలను జోడిస్తుంది (GPT-4o ద్వారా ఆధారితం!)" },
   "menuLabel_proxyAPImode": { "message": "ప్రాక్సీ API మోడ్" },
   "menuLabel_autoGetAnswers": { "message": "ఆటో-గెట్ సమాధానాలు" },
+  "menuLabel_whenStreaming": { "message": "ప్రసారం చేసేటప్పుడు" },
   "menuLabel_relatedQueries": { "message": "సంబంధిత ప్రశ్నలు" },
   "menuLabel_require": { "message": "అవసరం" },
   "menuLabel_beforeQuery": { "message": "ప్రశ్నకు ముందు" },
