@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.4.12
+// @version             2024.6.4.13
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -214,7 +214,7 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@9866ed5/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@1626c5d/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting('autoGetDisabled', 'autoScroll', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
@@ -480,18 +480,32 @@
                        + state.separator + state.word[+config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
-        if (getUserscriptManager() == 'Tampermonkey' && config.proxyAPIenabled) {
-
-            // Add command to toggle streaming mode
-            const stmLabel = state.symbol[+!config.streamingDisabled] + ' '
-                          + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
-                          + state.separator + state.word[+!config.streamingDisabled]
-            menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
+        // Add command toggle streaming mode or alert unsupported
+        const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
+        const stmLabel = state.symbol[+stmState] + ' '
+                       + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
+                       + state.separator + state.word[+stmState]
+        menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
+            if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
+                alert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                      `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.lert_isOnlyAvailFor || 'is only available for' }`
+                          + ' <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a>.'
+                          + ` (${ msgs.alert_userscriptMgrNoStream ||
+                                    'Your userscript manager does not support returning stream responses' }.)`)
+            else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
+                let msg = `${ msgs.mode_streaming || 'Streaming Mode' } `
+                        + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
+                        + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
+                        + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
+                const switchPhrase = msgs.alert_switchingOn || 'switching on'
+                msg = msg.replace(switchPhrase, `<a href="#" class="proxyToggle">${switchPhrase}</a>`)
+                alert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
+                document.querySelector('.proxyToggle')?.addEventListener('click', toggleProxyMode)
+            } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
                 notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + state.word[+!config.streamingDisabled])
                 for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-            }))
-        }
+        }}))
 
         // Add command to toggle auto-get mode
         const agmLabel = state.symbol[+!config.autoGetDisabled] + ' '
