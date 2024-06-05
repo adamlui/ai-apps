@@ -36,7 +36,7 @@
 
 <br>
 
-<img src="https://media.googlegpt.io/images/screenshots/desktop/meaning-of-life-query/darkmode.png?latest">
+<img src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png?latest">
 
 ### Mobile
 
