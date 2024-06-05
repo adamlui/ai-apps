@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.5.3
+// @version             2024.6.5.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1181,7 +1181,6 @@
 
     function processStream(api, stream) {
         if (config.streamingDisabled || !config.proxyAPIenabled || getShowReply.received) return
-        if (stream) getShowReply.received = true
         const reader = stream.response.getReader()
         let accumulatedChunks = ''
         reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream:', err.message))
@@ -1206,6 +1205,7 @@
                     textToShow = nowResult.text
                 } else textToShow = accumulatedChunks
                 appShow(textToShow)
+                if (textToShow) getShowReply.received = true
             } catch (err) { consoleErr('Error showing stream:', err.message) }
             return reader.read().then(processStreamText).catch(err => consoleErr('Error reading stream:', err.message))
         }

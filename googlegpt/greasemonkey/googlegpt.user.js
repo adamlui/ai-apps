@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.5.5
+// @version             2024.6.5.6
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1377,7 +1377,6 @@
 
     function processStream(api, stream) {
         if (config.streamingDisabled || !config.proxyAPIenabled || getShowReply.received) return
-        if (stream) getShowReply.received = true
         const reader = stream.response.getReader()
         let accumulatedChunks = ''
         reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream:', err.message))
@@ -1402,6 +1401,7 @@
                     textToShow = nowResult.text
                 } else textToShow = accumulatedChunks
                 appShow(textToShow, footerContent)
+                if (textToShow) getShowReply.received = true
             } catch (err) { consoleErr('Error showing stream:', err.message) }
             return reader.read().then(processStreamText).catch(err => consoleErr('Error reading stream:', err.message))
         }
