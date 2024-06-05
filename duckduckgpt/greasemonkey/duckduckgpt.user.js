@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.4.11
+// @version             2024.6.4.12
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1254,7 +1254,7 @@
     })}
 
     function handleRQevent(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
-        const keys = [' ', 'Space', 'Enter', 'Return'], keyCodes = [32, 13]    
+        const keys = [' ', 'Spacebar', 'Enter', 'Return'], keyCodes = [32, 13]    
         if (keys.includes(event.key) || keyCodes.includes(event.keyCode) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
 
