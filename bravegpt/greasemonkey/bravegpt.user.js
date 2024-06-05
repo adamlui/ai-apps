@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.5.3
+// @version             2024.6.5.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1380,7 +1380,7 @@ setTimeout(async () => {
             var wsbSpan = document.createElement('span'),
                 wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
             wsbSpan.id = 'wsb-btn' // for updateWSBsvg() + toggleTooltip()
-            wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.101em 11px 0 0'
+            wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.151em 11px 0 0'
             wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan) ; updateWSBsvg()
         }
 
