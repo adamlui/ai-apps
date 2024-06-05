@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o + Google Gemma!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.5.10
+// @version             2024.6.5.11
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -558,7 +558,7 @@
     const msgChain = [] // to store queries + answers for contextual replies
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
+        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location) // suffix required but not present
     ) { updateFooterContent() ; appShow('standby', footerContent) }
     else {
         appAlert('waitingResponse')

@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.5.5
+// @version             2024.6.5.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -309,7 +309,7 @@ setTimeout(async () => {
     const msgChain = [] // to store queries + answers for contextual replies
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*%3F(&|$)/.test(document.location) // suffix required but not present
+        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location) // suffix required but not present
     ) { updateFooterContent() ; appShow('standby', footerContent) }
     else {
         appAlert('waitingResponse')
