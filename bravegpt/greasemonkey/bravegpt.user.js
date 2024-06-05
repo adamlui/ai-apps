@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.5.1
+// @version             2024.6.5.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1026,7 +1026,7 @@ setTimeout(async () => {
     }
 
     function processText(api, resp) {
-        if (!config.streamingDisabled && config.proxyAPIenabled) return
+        if (!config.streamingDisabled && config.proxyAPIenabled || getShowReply.received) return
         if (resp.status != 200) {
             consoleErr('Response status', resp.status)
             consoleErr('Response text', resp.responseText)
@@ -1060,7 +1060,8 @@ setTimeout(async () => {
                         const chunk = text.substring(currentIdx, currentIdx + chunkSize)
                         currentIdx += chunkSize ; answer += chunk
                     }
-                    appShow(answer, footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
+                    appShow(answer, footerContent)
+                    getShowReply.received = true ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed, err)
@@ -1070,7 +1071,8 @@ setTimeout(async () => {
         } else if (api == 'Free Chat') {
             if (resp.responseText) {
                 try {
-                    appShow(resp.responseText, footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
+                    appShow(resp.responseText, footerContent)
+                    getShowReply.received = true ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed, err)
@@ -1083,7 +1085,8 @@ setTimeout(async () => {
                     let chunks = resp.responseText.trim().split('\n'),
                         lastObj = JSON.parse(chunks[chunks.length - 1])
                     if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
-                    appShow(lastObj.text, footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
+                    appShow(lastObj.text, footerContent)
+                    getShowReply.received = true ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed, err)
@@ -1096,7 +1099,8 @@ setTimeout(async () => {
                     const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
                         .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                         .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
-                    appShow(extractedData.join(''), footerContent) ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
+                    appShow(extractedData.join(''), footerContent)
+                    getShowReply.received = true ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed, err)
@@ -1107,7 +1111,8 @@ setTimeout(async () => {
     }
 
     function processStream(api, stream) {
-        if (config.streamingDisabled || !config.proxyAPIenabled) return
+        if (config.streamingDisabled || !config.proxyAPIenabled || getShowReply.received) return
+        if (stream) getShowReply.received = true
         const reader = stream.response.getReader()
         let accumulatedChunks = ''
         reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream:', err.message))
@@ -1230,6 +1235,7 @@ setTimeout(async () => {
     async function getShowReply(msgChain) {
 
         // Init API attempt props
+        getShowReply.received = false
         if (!getShowReply.triedAPIs) getShowReply.triedAPIs = []
         if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 1
 
@@ -1240,6 +1246,9 @@ setTimeout(async () => {
 
         if (!config.proxyAPIenabled) // init OpenAI key
             config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
+        else getShowReply.respTimer = setTimeout(() => { // try diff API after 3s of no response
+            if (config.proxyAPIenabled && !getShowReply.received) tryDiffAPI(api) }, 3000)
+
 
         // Get/show answer from ChatGPT
         GM.xmlHttpRequest({
@@ -1489,7 +1498,7 @@ setTimeout(async () => {
         const appFooter = document.createElement('footer')
         appFooter.append(footerContent) ; appDiv.append(appFooter)
 
-        // Render markdown/math
+        // Render markdown/math + highlight code
         if (answer != 'standby') {
             answerPre.innerHTML = marked.parse(answer)
             hljs.highlightAll() // eslint-disable-line no-undef
