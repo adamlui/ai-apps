@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o + Google Gemma!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.5.9
+// @version             2024.6.5.10
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -622,14 +622,16 @@
         }))
 
         // Add command to toggle auto-scroll (when streaming)
-        const assLabel = state.symbol[+config.autoScroll] + ' '
-                       + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
-                       + state.separator + state.word[+config.autoScroll]
-        menuIDs.push(GM_registerMenuCommand(assLabel, () => {
-            saveSetting('autoScroll', !config.autoScroll)
-            notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + state.word[+config.autoScroll])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        }))
+        if (!isMobile) {
+            const assLabel = state.symbol[+config.autoScroll] + ' '
+                           + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
+                           + state.separator + state.word[+config.autoScroll]
+            menuIDs.push(GM_registerMenuCommand(assLabel, () => {
+                saveSetting('autoScroll', !config.autoScroll)
+                notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + state.word[+config.autoScroll])
+                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            }))
+        }
 
         // Add command to toggle showing related queries
         const rqLabel = state.symbol[+!config.rqDisabled] + ' '
@@ -1823,10 +1825,11 @@
 
         // Focus chatbar conditionally
         const proxyAPIstreaming = !config.streamingDisabled && config.proxyAPIenabled
-        if (appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top // app fully above fold
+        if (!isMobile && ( // exclude mobile devices to not auto-popup OSD keyboard
+            appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top // app fully above fold
             || !proxyAPIstreaming && appShow.submitSrc && appShow.submitSrc != 'click' // user replied to non-stream
             ||  proxyAPIstreaming && config.autoScroll // auto-scroll active for streaming APIs
-        ) chatTextarea.focus()
+        )) chatTextarea.focus()
         appShow.submitSrc = 'none'
 
         function handleEnter(event) {
