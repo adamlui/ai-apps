@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Add ChatGPT Tiririt i Google Search (s GPT-4o!)" },
+  "appDesc": { "message": "Add ChatGPT Tiririt i Google Search (s GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Tiririt ɣef tuttriwin -..." },
   "menuLabel_whenStreaming": { "message": "asmi ara tessuffɣeḍ" },
   "menuLabel_proxyAPImode": { "message": "Aɣewwaṛ n API Proxy" },

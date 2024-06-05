@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Dodaje ChatGPT odgovore u Google pretragu (pokreće GPT-4o!)" },
+  "appDesc": { "message": "Dodaje ChatGPT odgovore u Google pretragu (pokreće GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Automatski dobijte odgovore" },
   "menuLabel_whenStreaming": { "message": "prilikom striminga" },
   "menuLabel_proxyAPImode": { "message": "API režim proksija" },

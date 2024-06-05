@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Menambahkan jawaban ChatGPT ke Google Penelusuran (didukung oleh GPT-4o!)" },
+  "appDesc": { "message": "Menambahkan jawaban ChatGPT ke Google Penelusuran (didukung oleh GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Dapatkan Jawaban Otomatis" },
   "menuLabel_whenStreaming": { "message": "saat streaming" },
   "menuLabel_proxyAPImode": { "message": "Mode api Proxy" },

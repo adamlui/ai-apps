@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Pievieno ChatGPT atbildes Google meklēšanai (nodrošina GPT-4o!)" },
+  "appDesc": { "message": "Pievieno ChatGPT atbildes Google meklēšanai (nodrošina GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Automātiski saņemt atbildes" },
   "menuLabel_whenStreaming": { "message": "straumējot" },
   "menuLabel_proxyAPImode": { "message": "Starpniekservera API režīms" },

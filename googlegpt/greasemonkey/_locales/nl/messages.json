@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Voegt ChatGPT-antwoorden toe aan Google Zoeken (mogelijk gemaakt door GPT-4o!)" },
+  "appDesc": { "message": "Voegt ChatGPT-antwoorden toe aan Google Zoeken (mogelijk gemaakt door GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Automatisch antwoorden krijgen" },
   "menuLabel_whenStreaming": { "message": "bij het streamen" },
   "menuLabel_proxyAPImode": { "message": "Proxy-API-modus" },

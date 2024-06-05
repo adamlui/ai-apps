@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "پاسخ‌های ChatGPT را به جستجوی Google اضافه می‌کند (با پشتیبانی GPT-4o!)" },
+  "appDesc": { "message": "پاسخ‌های ChatGPT را به جستجوی Google اضافه می‌کند (با پشتیبانی GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "دریافت خودکار پاسخ" },
   "menuLabel_whenStreaming": { "message": "هنگام پخش جریانی" },
   "menuLabel_proxyAPImode": { "message": "حالت API پروکسی" },

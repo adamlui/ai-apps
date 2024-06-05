@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Google Search-এ ChatGPT উত্তর যোগ করে (GPT-4o দ্বারা চালিত!)" },
+  "appDesc": { "message": "Google Search-এ ChatGPT উত্তর যোগ করে (GPT-4o + Google Gemma দ্বারা চালিত!)" },
   "menuLabel_autoGetAnswers": { "message": "স্বয়ংক্রিয়ভাবে উত্তর পান" },
   "menuLabel_whenStreaming": { "message": "স্ট্রিমিং করার সময়" },
   "menuLabel_proxyAPImode": { "message": "প্রক্সি API মোড" },

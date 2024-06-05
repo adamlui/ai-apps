@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Google Search වෙත ChatGPT පිළිතුරු එක් කරයි (GPT-4o මගින් බල ගැන්වේ!)" },
+  "appDesc": { "message": "Google Search වෙත ChatGPT පිළිතුරු එක් කරයි (GPT-4o + Google Gemma මගින් බල ගැන්වේ!)" },
   "menuLabel_autoGetAnswers": { "message": "ස්වයංක් ‍ රීය පිළිතුරු ලබා ගන්න" },
   "menuLabel_whenStreaming": { "message": "ප් ‍ රවාහනය කරන විට" },
   "menuLabel_proxyAPImode": { "message": "ප් ‍ රොක්සි API ප් ‍ රකාරය" },

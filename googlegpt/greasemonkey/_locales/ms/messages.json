@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Menambah jawapan ChatGPT ke Carian Google (dikuasakan oleh GPT-4o!)" },
+  "appDesc": { "message": "Menambah jawapan ChatGPT ke Carian Google (dikuasakan oleh GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Dapatkan Jawapan Secara Automatik" },
   "menuLabel_whenStreaming": { "message": "apabila penstriman" },
   "menuLabel_proxyAPImode": { "message": "Mod api Proksi" },

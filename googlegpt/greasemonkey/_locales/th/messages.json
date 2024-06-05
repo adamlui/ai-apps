@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "เพิ่มคำตอบ ChatGPT ใน Google Search (ขับเคลื่อนโดย GPT-4o!)" },
+  "appDesc": { "message": "เพิ่มคำตอบ ChatGPT ใน Google Search (ขับเคลื่อนโดย GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "รับคำตอบอัตโนมัติ" },
   "menuLabel_whenStreaming": { "message": "เมื่อสตรีมมิ่ง" },
   "menuLabel_proxyAPImode": { "message": "โหมด API พร็อกซี" },

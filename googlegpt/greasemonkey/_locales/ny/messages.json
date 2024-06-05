@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Amawonjezera mayankho a ChatGPT ku Google Search (yoyendetsedwa ndi GPT-4o!)" },
+  "appDesc": { "message": "Amawonjezera mayankho a ChatGPT ku Google Search (yoyendetsedwa ndi GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Mayankho" },
   "menuLabel_whenStreaming": { "message": "pamene akukhamukira" },
   "menuLabel_proxyAPImode": { "message": "Njira ya Proxy API" },

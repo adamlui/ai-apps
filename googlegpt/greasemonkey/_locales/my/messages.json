@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Google Search ကို ChatGPT အဖြေများကိုထည့်သွင်း (GPT-4o အားဖြင့် powered!)" },
+  "appDesc": { "message": "Google Search ကို ChatGPT အဖြေများကိုထည့်သွင်း (GPT-4o + Google Gemma အားဖြင့် powered!)" },
   "menuLabel_autoGetAnswers": { "message": "အော်တို Get အဖြေများ" },
   "menuLabel_whenStreaming": { "message": "streaming လုပ်သည့်အခါ" },
   "menuLabel_proxyAPImode": { "message": "Proxy API ကို Mode ကို" },

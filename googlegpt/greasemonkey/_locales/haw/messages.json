@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Hoʻohui i nā pane ChatGPT i ka Huli Google (hoʻohana ʻia e GPT-4o!)" },
+  "appDesc": { "message": "Hoʻohui i nā pane ChatGPT i ka Huli Google (hoʻohana ʻia e GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Loaʻa i nā pane" },
   "menuLabel_whenStreaming": { "message": "i ke kahe ana" },
   "menuLabel_proxyAPImode": { "message": "Kūlana API Kūlana" },

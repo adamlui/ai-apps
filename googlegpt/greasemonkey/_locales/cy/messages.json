@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Yn ychwanegu atebion ChatGPT i Google Search (wedi'i bweru gan GPT-4o!)" },
+  "appDesc": { "message": "Yn ychwanegu atebion ChatGPT i Google Search (wedi'i bweru gan GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Atebion Auto - GET" },
   "menuLabel_whenStreaming": { "message": "wrth ffrydio" },
   "menuLabel_proxyAPImode": { "message": "Modd API Dirprwy" },

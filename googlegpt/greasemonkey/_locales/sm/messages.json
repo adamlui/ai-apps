@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Faʻaopopo ChatGPT tali i Google Search (faʻamalosia e GPT-4o!)" },
+  "appDesc": { "message": "Faʻaopopo ChatGPT tali i Google Search (faʻamalosia e GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Tali Auto-Get" },
   "menuLabel_whenStreaming": { "message": "pe a tafe" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },

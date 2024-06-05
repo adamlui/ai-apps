@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Ifaka izimpendulo ze-ChatGPT ku-Google Search (inikwe amandla yi-GPT-4o!)" },
+  "appDesc": { "message": "Ifaka izimpendulo ze-ChatGPT ku-Google Search (inikwe amandla yi-GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Thola Izimpendulo Ngokuzenzakalelayo" },
   "menuLabel_whenStreaming": { "message": "lapho kusakazwa" },
   "menuLabel_proxyAPImode": { "message": "Imodi ye-API Yombambeli" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "ChatGPT އަށްނަންވެސް Google Search ގެ ސައިޒްފުޅުމުގެ ކެކު (ގަބައި GPT-4o! އަށް)" },
+  "appDesc": { "message": "ChatGPT އަށްނަންވެސް Google Search ގެ ސައިޒްފުޅުމުގެ ކެކު (ގަބައި GPT-4o + Google Gemma! އަށް)" },
   "menuLabel_autoGetAnswers": { "message": "އޮޓޯ-ގެޓް ޖަވާބު" },
   "menuLabel_whenStreaming": { "message": "ސްޓްރީމް ކުރާއިރު" },
   "menuLabel_proxyAPImode": { "message": "ޕްރޮކްސީ އެޕީއައި މޯޑް" },

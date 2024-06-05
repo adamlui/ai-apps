@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Dodaje odpowiedzi ChatGPT do wyszukiwarki Google (obsługiwanej przez GPT-4o!)" },
+  "appDesc": { "message": "Dodaje odpowiedzi ChatGPT do wyszukiwarki Google (obsługiwanej przez GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Automatyczne uzyskiwanie odpowiedzi" },
   "menuLabel_whenStreaming": { "message": "podczas przesyłania strumieniowego" },
   "menuLabel_proxyAPImode": { "message": "Tryb proxy API" },

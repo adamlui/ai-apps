@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Nagdugang mga tubag sa ChatGPT sa Google Search (gipadagan sa GPT-4o!)" },
+  "appDesc": { "message": "Nagdugang mga tubag sa ChatGPT sa Google Search (gipadagan sa GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "Mga Tubag sa Auto-Get" },
   "menuLabel_whenStreaming": { "message": "kon streaming" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },

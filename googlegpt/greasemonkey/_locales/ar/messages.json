@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "يضيف إجابات ChatGPT إلى بحث Google (مدعوم من GPT-4o!)" },
+  "appDesc": { "message": "يضيف إجابات ChatGPT إلى بحث Google (مدعوم من GPT-4o + Google Gemma!)" },
   "menuLabel_autoGetAnswers": { "message": "الحصول على الإجابات تلقائيًا" },
   "menuLabel_whenStreaming": { "message": "عند البث" },
   "menuLabel_proxyAPImode": { "message": "وضع واجهة برمجة التطبيقات للوكيل" },
