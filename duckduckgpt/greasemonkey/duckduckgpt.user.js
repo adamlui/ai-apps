@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.6.5
+// @version             2024.6.6.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -708,8 +708,9 @@
                 function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
             ], '', 527) // About modal width
 
-        // Re-format buttons to include emoji + localized label + hide Dismiss button
+        // Resize/format buttons to include emoji + localized label + hide Dismiss button
         for (const btn of document.getElementById(aboutAlertID).querySelectorAll('button')) {
+            btn.style.height = '52px' // re-size to fit meaty text content
             if (/updates/i.test(btn.textContent)) btn.textContent = (
                 '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
             else if (/support/i.test(btn.textContent)) btn.textContent = (
@@ -906,14 +907,14 @@
           + '.chatgpt-notif { padding: 11px 15px 6px 12px !important }' // pad site notifications
           + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important }' // increase alert padding
           + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
-          + '.chatgpt-modal p { margin: -8px 0 -9px 4px ; font-size: 1.55rem }' // position/size update alert msg
+          + '.chatgpt-modal p { margin: -8px 0 -14px 4px ; font-size: 1.55rem }' // position/size update alert msg
           + '.chatgpt-modal button {' // alert buttons
-              + 'cursor: pointer ; border-radius: 0 !important ;'
-              + ( !isMobile ? 'padding: 7px !important ;' : '' )
               + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
+              + ( !isMobile ? 'padding: 7px !important ;' : '' )
+              + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
               + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + '!important ;'
               + ( scheme == 'dark' ? 'background: none ; color: white' : '') + '}'
-          + `.modal-buttons { margin: 20px -5px -3px ${ isMobile ? -5 : -15 }px !important }` // position alert buttons
+          + `.modal-buttons { margin: 24px -5px -3px ${ isMobile ? -5 : -15 }px !important }` // position alert buttons
           + ( scheme == 'dark' ? // darkmode alert styles
               ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                   + 'background-color: black !important ; color: white }'
