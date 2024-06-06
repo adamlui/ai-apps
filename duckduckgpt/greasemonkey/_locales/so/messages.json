@@ -15,7 +15,7 @@
   "menuLabel_auto": { "message": "Baabuur" },
   "menuLabel_about": { "message": "Jabuuti" },
   "about_version": { "message": "Version" },
-  "about_poweredBy": { "message": "Waxa fudaydiyay:" },
+  "about_poweredBy": { "message": "Waxa fudaydiyay" },
   "about_sourceCode": { "message": "Koodhka isha" },
   "scheme_light": { "message": "Iftiinka" },
   "scheme_dark": { "message": "Madow" },
@@ -61,7 +61,7 @@
   "buttonLabel_update": { "message": "Cusboonaysiinta" },
   "buttonLabel_dismiss": { "message": "Xil ka qaad" },
   "link_viewChanges": { "message": "Eeg isbeddellada" },
-  "link_shareFeedback": { "message": "Nala wadaag war-celintaada." },
+  "link_shareFeedback": { "message": "Nala wadaag war-celintaada" },
   "prefix_exit": { "message": "Bixid" },
   "state_on": { "message": "Shid" },
   "state_off": { "message": "Dami" }

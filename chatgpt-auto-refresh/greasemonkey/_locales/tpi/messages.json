@@ -11,7 +11,7 @@
   "about_sourceCode": { "message": "Kod bilong as" },
   "prompt_updateInt": { "message": "Wokim nupela taim (long seken)" },
   "alert_intUpdated": { "message": "Ol i save mekim wok long ol narapela hap" },
-  "alert_willRefresh": { "message": "Ol man i save mekim pasin nogut long ol arapela man, ol i save mekim pasin nogut long ol arapela man." },
+  "alert_willRefresh": { "message": "Ol man i save mekim pasin nogut long ol arapela man, ol i save mekim pasin nogut long ol arapela man" },
   "alert_choosePlatform": { "message": "Piksaim wanpela platform" },
   "alert_updateAvail": { "message": "Tok pisin i go pinis" },
   "alert_newerVer": { "message": "Ol nupela tok" },

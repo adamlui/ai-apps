@@ -20,7 +20,7 @@
   "alert_replyLangUpdated": { "message": "השפה עודכנה" },
   "alert_willReplyIn": { "message": "יגיב בעוד" },
   "alert_yourSysLang": { "message": "שפת המערכת שלך" },
-  "alert_replyTopicUpdated": { "message": "הנושא עודכן." },
+  "alert_replyTopicUpdated": { "message": "הנושא עודכן" },
   "alert_willAnswer": { "message": "תשובה לשאלות" },
   "alert_onTopicOf": { "message": "על הנושא של" },
   "alert_onAllTopics": { "message": "כל הנושאים" },

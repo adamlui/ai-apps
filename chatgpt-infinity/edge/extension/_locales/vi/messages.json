@@ -20,7 +20,7 @@
   "alert_replyLangUpdated": { "message": "Đã cập nhật ngôn ngữ" },
   "alert_willReplyIn": { "message": "sẽ trả lời trong" },
   "alert_yourSysLang": { "message": "ngôn ngữ hệ thống của bạn" },
-  "alert_replyTopicUpdated": { "message": "Chủ đề đã được cập nhật." },
+  "alert_replyTopicUpdated": { "message": "Chủ đề đã được cập nhật" },
   "alert_willAnswer": { "message": "sẽ trả lời các câu hỏi" },
   "alert_onTopicOf": { "message": "về chủ đề" },
   "alert_onAllTopics": { "message": "Tất cả chủ đề" },

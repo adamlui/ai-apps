@@ -11,7 +11,7 @@
   "menuLabel_about": { "message": "സംബന്ധിച്ച്" },
   "menuLabel_disabled": { "message": "അപ്രാപ്തമാക്കിയിരിക്കുന്നു (വിപുലീകരണം ഇൻസ്റ്റാൾ ചെയ്തിരിക്കുന്നു)" },
   "about_version": { "message": "പതിപ്പ്" },
-  "about_poweredBy": { "message": "പിന്തുണയ്ക്കുന്നത്:" },
+  "about_poweredBy": { "message": "പിന്തുണയ്ക്കുന്നത്" },
   "about_sourceCode": { "message": "സോഴ്സ് കോഡ്" },
   "prompt_updateReplyLang": { "message": "പ്രതികരണ ഭാഷ അപ്ഡേറ്റ് ചെയ്യുക" },
   "prompt_updateReplyTopic": { "message": "മറുപടി വിഷയം അപ്‌ഡേറ്റുചെയ്യുക" },

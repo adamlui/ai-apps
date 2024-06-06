@@ -20,7 +20,7 @@
   "alert_replyLangUpdated": { "message": "Јазикот е ажуриран" },
   "alert_willReplyIn": { "message": "ќе одговори во" },
   "alert_yourSysLang": { "message": "јазикот на вашиот систем" },
-  "alert_replyTopicUpdated": { "message": "Темата е ажурирана." },
+  "alert_replyTopicUpdated": { "message": "Темата е ажурирана" },
   "alert_willAnswer": { "message": "ќе одговара на прашања" },
   "alert_onTopicOf": { "message": "на тема" },
   "alert_onAllTopics": { "message": "на СИТЕ ТЕМИ" },

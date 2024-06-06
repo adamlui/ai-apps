@@ -30,7 +30,7 @@
   "alert_upToDate": { "message": "Aktuell" },
   "alert_isUpToDate": { "message": "ist aktuell" },
   "alert_pressF11": { "message": "Drücken Sie F11, um den Vollbildmodus zu beenden" },
-  "alert_f11reason": { "message": "F11 wurde verwendet, um den Vollbildmodus zu aktivieren. Aus Sicherheitsgründen muss derselbe Schlüssel verwendet werden, um ihn zu beenden." },
+  "alert_f11reason": { "message": "F11 wurde verwendet, um den Vollbildmodus zu aktivieren. Aus Sicherheitsgründen muss derselbe Schlüssel verwendet werden, um ihn zu beenden" },
   "buttonLabel_moreApps": { "message": "Weitere ChatGPT-Apps" },
   "buttonLabel_leaveReview": { "message": "Bewertung hinterlassen" },
   "buttonLabel_getSupport": { "message": "Support erhalten" },

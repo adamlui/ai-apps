@@ -14,7 +14,7 @@
   "alert_willRefresh": { "message": "ChatGPT სესია ავტომატურად განახლდება ყოველი" },
   "alert_choosePlatform": { "message": "Აირჩიეთ პლატფორმა" },
   "alert_updateAvail": { "message": "Განახლება შესაძლებელია" },
-  "alert_newerVer": { "message": "Განახლება:" },
+  "alert_newerVer": { "message": "Განახლება" },
   "alert_isAvail": { "message": "ხელმისაწვდომია" },
   "alert_upToDate": { "message": "განახლებულია" },
   "alert_isUpToDate": { "message": "განახლებულია" },

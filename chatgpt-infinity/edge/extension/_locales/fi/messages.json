@@ -20,7 +20,7 @@
   "alert_replyLangUpdated": { "message": "Kieli päivitetty" },
   "alert_willReplyIn": { "message": "vastaa" },
   "alert_yourSysLang": { "message": "järjestelmäsi kielellä" },
-  "alert_replyTopicUpdated": { "message": "Aihealue päivitetty." },
+  "alert_replyTopicUpdated": { "message": "Aihealue päivitetty" },
   "alert_willAnswer": { "message": "vastaa kysymyksiin" },
   "alert_onTopicOf": { "message": "aiheesta" },
   "alert_onAllTopics": { "message": "Kaikki aiheet" },

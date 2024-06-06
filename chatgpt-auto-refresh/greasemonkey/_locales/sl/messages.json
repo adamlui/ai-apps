@@ -8,7 +8,7 @@
   "menuLabel_about": { "message": "Vizitka" },
   "about_version": { "message": "Različica" },
   "about_poweredBy": { "message": "Poganja" },
-  "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode:" },
+  "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode" },
   "prompt_updateInt": { "message": "Posodobite interval osveževanja (v sekundah)" },
   "alert_intUpdated": { "message": "Interval je posodobljen" },
   "alert_willRefresh": { "message": "Seja ChatGPT se samodejno osveži vsakih" },

@@ -14,7 +14,7 @@
   "menuLabel_colorScheme": { "message": "Farva" },
   "menuLabel_auto": { "message": "Bilur" },
   "menuLabel_about": { "message": "Um" },
-  "about_version": { "message": "Útgáva:" },
+  "about_version": { "message": "Útgáva" },
   "about_poweredBy": { "message": "Powered by SFX" },
   "about_sourceCode": { "message": "Ada keldukota" },
   "scheme_light": { "message": "Ljós" },

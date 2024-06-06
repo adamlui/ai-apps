@@ -11,7 +11,7 @@
   "mode_autoClear": { "message": "Cancellazione automatica" },
   "alert_choosePlatform": { "message": "Scegli una piattaforma" },
   "alert_updateAvail": { "message": "Aggiornamento disponibile" },
-  "alert_newerVer": { "message": "Invia aggiornamento a:" },
+  "alert_newerVer": { "message": "Invia aggiornamento a" },
   "alert_isAvail": { "message": "è disponibile" },
   "alert_upToDate": { "message": "Aggiornato" },
   "alert_isUpToDate": { "message": "è aggiornato" },

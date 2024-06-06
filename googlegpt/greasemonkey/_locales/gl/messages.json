@@ -5,7 +5,7 @@
   "menuLabel_whenStreaming": { "message": "ao streaming" },
   "menuLabel_proxyAPImode": { "message": "Modo API de proxy" },
   "menuLabel_relatedQueries": { "message": "Consultas relacionadas" },
-  "menuLabel_require": { "message": "Require:" },
+  "menuLabel_require": { "message": "Require" },
   "menuLabel_beforeQuery": { "message": "antes de consulta" },
   "menuLabel_afterQuery": { "message": "logo de consulta" },
   "menuLabel_widerSidebar": { "message": "Barra lateral máis ampla" },

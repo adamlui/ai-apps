@@ -12,7 +12,7 @@
   "menuLabel_stickySidebar": { "message": "टाँसिने साइडबार" },
   "menuLabel_replyLanguage": { "message": "जवाफ भाषा" },
   "menuLabel_colorScheme": { "message": "रङ योजना" },
-  "menuLabel_auto": { "message": "लेखक:" },
+  "menuLabel_auto": { "message": "लेखक" },
   "menuLabel_about": { "message": "बारेमा" },
   "about_version": { "message": "संस्करण " },
   "about_poweredBy": { "message": "समर्थनकर्ता " },

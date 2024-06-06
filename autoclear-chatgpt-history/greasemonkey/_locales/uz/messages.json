@@ -12,7 +12,7 @@
   "alert_choosePlatform": { "message": "Platformani tanlang" },
   "alert_updateAvail": { "message": "Mavjud yangilanishlar" },
   "alert_newerVer": { "message": "Yangilash" },
-  "alert_isAvail": { "message": "mavjud." },
+  "alert_isAvail": { "message": "mavjud" },
   "alert_upToDate": { "message": "Yangilash" },
   "alert_isUpToDate": { "message": "dolzarb hisoblanadi" },
   "buttonLabel_moreApps": { "message": "Boshqa ChatGPT ilovalari" },

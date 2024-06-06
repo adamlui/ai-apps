@@ -22,7 +22,7 @@
   "alert_yourSysLang": { "message": "tungumál kerfisins" },
   "alert_replyTopicUpdated": { "message": "Efni uppfært" },
   "alert_willAnswer": { "message": "mun svara spurningum" },
-  "alert_onTopicOf": { "message": "um málefni Íslendinga." },
+  "alert_onTopicOf": { "message": "um málefni Íslendinga" },
   "alert_onAllTopics": { "message": "um ÖLL EFNI" },
   "alert_replyIntUpdated": { "message": "Millibil uppfært" },
   "alert_willReplyEvery": { "message": "mun svara á hverjum degi" },

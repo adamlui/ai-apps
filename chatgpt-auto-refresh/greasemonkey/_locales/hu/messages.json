@@ -7,7 +7,7 @@
   "menuLabel_refreshInt": { "message": "Frissítési időköz" },
   "menuLabel_about": { "message": "A" },
   "about_version": { "message": "Verzió" },
-  "about_poweredBy": { "message": "Kiszolgálja:" },
+  "about_poweredBy": { "message": "Kiszolgálja" },
   "about_sourceCode": { "message": "Forráskód" },
   "prompt_updateInt": { "message": "Frissítési időköz frissítése (másodpercben)" },
   "alert_intUpdated": { "message": "Intervallum frissítve" },

@@ -33,7 +33,7 @@
   "alert_willReplyIn": { "message": "უპასუხებს" },
   "alert_yourSysLang": { "message": "სისტემური ენა?" },
   "alert_updateAvail": { "message": "ხელმისაწვდომია განახლება" },
-  "alert_newerVer": { "message": "Განახლება:" },
+  "alert_newerVer": { "message": "Განახლება" },
   "alert_isAvail": { "message": "თავისუფალია" },
   "alert_upToDate": { "message": "განახლებულია" },
   "alert_isUpToDate": { "message": "არის განახლებული" },
@@ -62,6 +62,6 @@
   "link_viewChanges": { "message": "ცვლილებების ნახვა" },
   "link_shareFeedback": { "message": "Გამოხმაურების გაზიარება" },
   "prefix_exit": { "message": "გასვლა" },
-  "state_on": { "message": "." },
+  "state_on": { "message": "" },
   "state_off": { "message": "გამორთ." }
 }

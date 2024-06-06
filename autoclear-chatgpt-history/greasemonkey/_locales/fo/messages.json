@@ -5,7 +5,7 @@
   "menuLabel_toggleVis": { "message": "Goym eygleiðing" },
   "menuLabel_modeNotifs": { "message": "Modus kunningarskriv" },
   "menuLabel_about": { "message": "Um" },
-  "about_version": { "message": "Útgáva:" },
+  "about_version": { "message": "Útgáva" },
   "about_poweredBy": { "message": "Powered by SFX" },
   "about_sourceCode": { "message": "Ada keldukota" },
   "mode_autoClear": { "message": "Auto-Clear" },

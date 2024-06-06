@@ -30,7 +30,7 @@
   "alert_upToDate": { "message": "Famaritana" },
   "alert_isUpToDate": { "message": "mampihena" },
   "alert_pressF11": { "message": "Fitoerana F11" },
-  "alert_f11reason": { "message": "Ny fampiasana ny tranonkala dia tsy maintsy ampiasaina, ary tsy maintsy ampiasaina ho an'ny rehetra." },
+  "alert_f11reason": { "message": "Ny fampiasana ny tranonkala dia tsy maintsy ampiasaina, ary tsy maintsy ampiasaina ho an'ny rehetra" },
   "buttonLabel_moreApps": { "message": "More ChatGPT Apps" },
   "buttonLabel_leaveReview": { "message": "Mametraha fanamarihana" },
   "buttonLabel_getSupport": { "message": "Mitadiava fanampiana" },

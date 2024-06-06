@@ -24,7 +24,7 @@
   "tooltip_fullScreenOFF": { "message": "Familia" },
   "tooltip_newChat": { "message": "Txat berria" },
   "alert_choosePlatform": { "message": "Aukeratu plataforma bat" },
-  "alert_updateAvail": { "message": "Ez dago azalpenik erabilgarri." },
+  "alert_updateAvail": { "message": "Ez dago azalpenik erabilgarri" },
   "alert_newerVer": { "message": "Eguneratze bat" },
   "alert_isAvail": { "message": "eskuragarri dago" },
   "alert_upToDate": { "message": "Eguneratu" },

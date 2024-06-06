@@ -11,7 +11,7 @@
   "about_sourceCode": { "message": "സോഴ്സ് കോഡ്" },
   "prompt_updateInt": { "message": "പുതുക്കം ഇൻറർവൽ അപ്ഡേറ്റ് ചെയ്യുക (സെക്കന്റുകൾക്ക്)" },
   "alert_intUpdated": { "message": "ഇടവേള അപ്‌ഡേറ്റുചെയ്‌തു" },
-  "alert_willRefresh": { "message": "ChatGPT സെഷൻ ഓട്ടോ പുതുക്കുന്നതിന് പുതിയ ഇൻറർവൽ." },
+  "alert_willRefresh": { "message": "ChatGPT സെഷൻ ഓട്ടോ പുതുക്കുന്നതിന് പുതിയ ഇൻറർവൽ" },
   "alert_choosePlatform": { "message": "ഒരു പ്ലാറ്റ്ഫോം തിരഞ്ഞെടുക്കുക" },
   "alert_updateAvail": { "message": "Update available" },
   "alert_newerVer": { "message": "ഇതിലേക്കുള്ള ഒരു അപ്‌ഡേറ്റ്" },

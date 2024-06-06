@@ -49,7 +49,7 @@
   "alert_checkCloudflare": { "message": "Tafadhali pitisha ukaguzi wa usalama wa Cloudflare" },
   "alert_notWorking": { "message": "haifanyi kazi" },
   "alert_ifIssuePersists": { "message": "Ikiwa tatizo litaendelea" },
-  "alert_try": { "message": "Jaribu:" },
+  "alert_try": { "message": "Jaribu" },
   "alert_switchingOn": { "message": "kuwasha" },
   "alert_switchingOff": { "message": "kuzima" },
   "buttonLabel_sendQueryToGPT": { "message": "Tuma swali la utafutaji kwa GPT" },

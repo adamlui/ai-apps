@@ -36,7 +36,7 @@
   "alert_updateAvail": { "message": "Aktualizácia k dispozícii" },
   "alert_newerVer": { "message": "Aktualizujte na" },
   "alert_isAvail": { "message": "k dispozícii" },
-  "alert_upToDate": { "message": "Aktuálny." },
+  "alert_upToDate": { "message": "Aktuálny" },
   "alert_isUpToDate": { "message": "sú aktuálne" },
   "alert_unavailable": { "message": "nedostupné" },
   "alert_isOnlyAvailFor": { "message": "je k dispozícii len pre" },

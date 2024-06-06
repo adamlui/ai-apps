@@ -14,7 +14,7 @@
   "alert_willRefresh": { "message": "La sessione di ChatGPT verrà aggiornata automaticamente ogni" },
   "alert_choosePlatform": { "message": "Scegli una piattaforma" },
   "alert_updateAvail": { "message": "Aggiornamento disponibile" },
-  "alert_newerVer": { "message": "Invia aggiornamento a:" },
+  "alert_newerVer": { "message": "Invia aggiornamento a" },
   "alert_isAvail": { "message": "è disponibile" },
   "alert_upToDate": { "message": "Aggiornato" },
   "alert_isUpToDate": { "message": "è aggiornato" },

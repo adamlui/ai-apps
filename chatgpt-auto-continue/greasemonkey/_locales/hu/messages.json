@@ -4,7 +4,7 @@
   "menuLabel_modeNotifs": { "message": "Üzemmód értesítések" },
   "menuLabel_about": { "message": "A" },
   "about_version": { "message": "Verzió" },
-  "about_poweredBy": { "message": "Kiszolgálja:" },
+  "about_poweredBy": { "message": "Kiszolgálja" },
   "about_sourceCode": { "message": "Forráskód" },
   "mode_autoContinue": { "message": "Automatikus folytatás" },
   "alert_updateAvail": { "message": "Frissítés érhető el" },

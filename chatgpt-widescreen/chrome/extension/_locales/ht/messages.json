@@ -30,7 +30,7 @@
   "alert_upToDate": { "message": "Mizajou/ajou/a jou/alamòd /monte a dat/le plus récent /à jour /moderne" },
   "alert_isUpToDate": { "message": "se mete ajou/est à jour" },
   "alert_pressF11": { "message": "Peze F11 pou sòti ekran plen" },
-  "alert_f11reason": { "message": "F11 te itilize pou antre nan ekran plen, e akòz rezon sekirite navigatè, menm kle a dwe itilize pou sòti li." },
+  "alert_f11reason": { "message": "F11 te itilize pou antre nan ekran plen, e akòz rezon sekirite navigatè, menm kle a dwe itilize pou sòti li" },
   "buttonLabel_moreApps": { "message": "Plis Apps ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Kite yon Revizyon" },
   "buttonLabel_getSupport": { "message": "Jwenn Sipò" },

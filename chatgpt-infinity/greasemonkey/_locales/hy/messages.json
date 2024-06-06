@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT Infinity" },
-  "appDesc": { "message": "Ստեղծեք անվերջ պատասխաններ բոլորի իմացությամբ ChatGPT - ից (ցանկացած լեզվով):" },
+  "appDesc": { "message": "Ստեղծեք անվերջ պատասխաններ բոլորի իմացությամբ ChatGPT - ից (ցանկացած լեզվով)" },
   "menuLabel_infinityMode": { "message": "Անսահմանության ռեժիմ" },
   "menuLabel_toggleVis": { "message": "Միացնել տեսանելիությունը" },
   "menuLabel_autoScroll": { "message": "Ինքնասպասարկում" },

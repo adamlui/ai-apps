@@ -17,7 +17,7 @@
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Izstrādāts" },
   "about_sourceCode": { "message": "about_sourceCode" },
-  "scheme_light": { "message": "Videi draudzīgs&#10;Produktam jābūt izgatavotam no ilgtspējīgiem materiāliem, lai radītu minimālu ietekmi uz vidi." },
+  "scheme_light": { "message": "Videi draudzīgs&#10;Produktam jābūt izgatavotam no ilgtspējīgiem materiāliem, lai radītu minimālu ietekmi uz vidi" },
   "scheme_dark": { "message": "Tumša" },
   "mode_proxy": { "message": "Starpniekservera režīms" },
   "mode_streaming": { "message": "Straumēšanas režīms" },

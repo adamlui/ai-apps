@@ -27,7 +27,7 @@
   "alert_replyIntUpdated": { "message": "Tarte eguneratua" },
   "alert_willReplyEvery": { "message": "bakoitzean erantzungo du" },
   "alert_choosePlatform": { "message": "Aukeratu plataforma bat" },
-  "alert_updateAvail": { "message": "Ez dago azalpenik erabilgarri." },
+  "alert_updateAvail": { "message": "Ez dago azalpenik erabilgarri" },
   "alert_newerVer": { "message": "Eguneratze bat" },
   "alert_isAvail": { "message": "eskuragarri dago" },
   "alert_upToDate": { "message": "Eguneratu" },

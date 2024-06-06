@@ -9,7 +9,7 @@
   "mode_autoContinue": { "message": "Lanjutkan Otomatis" },
   "alert_updateAvail": { "message": "Pembaruan tersedia" },
   "alert_newerVer": { "message": "Pembaruan untuk" },
-  "alert_isAvail": { "message": "Install package not available." },
+  "alert_isAvail": { "message": "Install package not available" },
   "alert_upToDate": { "message": "Terbaru" },
   "alert_isUpToDate": { "message": "terbaru" },
   "notif_chatAutoContinued": { "message": "Obrolan Disambung Otomatis" },

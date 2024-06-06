@@ -8,7 +8,7 @@
   "about_sourceCode": { "message": "Codice sorgente" },
   "mode_autoContinue": { "message": "Continuazione automatica" },
   "alert_updateAvail": { "message": "Aggiornamento disponibile" },
-  "alert_newerVer": { "message": "Invia aggiornamento a:" },
+  "alert_newerVer": { "message": "Invia aggiornamento a" },
   "alert_isAvail": { "message": "è disponibile" },
   "alert_upToDate": { "message": "Aggiornato" },
   "alert_isUpToDate": { "message": "è aggiornato" },

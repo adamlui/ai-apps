@@ -39,7 +39,7 @@
   "alert_upToDate": { "message": "Ajan tasalla" },
   "alert_isUpToDate": { "message": "Ajan tasalla" },
   "alert_unavailable": { "message": "ei käytettävissä" },
-  "alert_isOnlyAvailFor": { "message": "on käytettävissä vain seuraaville:" },
+  "alert_isOnlyAvailFor": { "message": "on käytettävissä vain seuraaville" },
   "alert_userscriptMgrNoStream": { "message": "Usercript Manager ei tue palaavia suoratoistovastauksia" },
   "alert_isCurrentlyOnlyAvailBy": { "message": "on tällä hetkellä saatavilla vain" },
   "alert_openAIsupportSoon": { "message": "OpenAI API: n tuki lisätään pian" },

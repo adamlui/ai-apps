@@ -5,7 +5,7 @@
   "menuLabel_autoGetAnswers": { "message": "Sjálfvirk svör" },
   "menuLabel_whenStreaming": { "message": "þegar streymt er" },
   "menuLabel_relatedQueries": { "message": "Tengdar fyrirspurnir" },
-  "menuLabel_require": { "message": "Ãarfnast:" },
+  "menuLabel_require": { "message": "Ãarfnast" },
   "menuLabel_beforeQuery": { "message": "fyrir fyrirspurn" },
   "menuLabel_afterQuery": { "message": "eftir fyrirspurn" },
   "menuLabel_widerSidebar": { "message": "Breiðari hliðarslá" },

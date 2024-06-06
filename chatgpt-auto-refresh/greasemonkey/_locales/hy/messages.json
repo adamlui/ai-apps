@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT ավտոմատ թարմացում" },
-  "appDesc": { "message": "*ԱՊԱՀՈՎ* թարմացնում է ChatGPT նիստերը՝ վերացնելով ցանցի մշտական սխալները + Cloudflare-ի ստուգումները (բոլորը ֆոնից):" },
+  "appDesc": { "message": "*ԱՊԱՀՈՎ* թարմացնում է ChatGPT նիստերը՝ վերացնելով ցանցի մշտական սխալները + Cloudflare-ի ստուգումները (բոլորը ֆոնից)" },
   "menuLabel_autoRefresh": { "message": "Ավտոմատ թարմացում" },
   "menuLabel_toggleVis": { "message": "Միացնել տեսանելիությունը" },
   "menuLabel_modeNotifs": { "message": "Ռեժիմի ծանուցումներ" },

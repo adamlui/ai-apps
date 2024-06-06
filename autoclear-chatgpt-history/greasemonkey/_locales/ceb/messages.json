@@ -5,7 +5,7 @@
   "menuLabel_toggleVis": { "message": "Toggle visibility" },
   "menuLabel_modeNotifs": { "message": "Mga Notipikasyon sa Mode" },
   "menuLabel_about": { "message": "Mahitungod" },
-  "about_version": { "message": "Bersyon:" },
+  "about_version": { "message": "Bersyon" },
   "about_poweredBy": { "message": "Gipadagan sa" },
   "about_sourceCode": { "message": "Gigikana sa kodigo" },
   "mode_autoClear": { "message": "Autoplay Loop" },

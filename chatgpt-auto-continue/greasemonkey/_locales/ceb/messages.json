@@ -3,7 +3,7 @@
   "appDesc": { "message": "Awtomatikong ipadayon ang pagmugna daghang mga tubag sa ChatGPT" },
   "menuLabel_modeNotifs": { "message": "Mga Notipikasyon sa Mode" },
   "menuLabel_about": { "message": "Mahitungod" },
-  "about_version": { "message": "Bersyon:" },
+  "about_version": { "message": "Bersyon" },
   "about_poweredBy": { "message": "Gipadagan sa" },
   "about_sourceCode": { "message": "Gigikana sa kodigo" },
   "mode_autoContinue": { "message": "Awtomatikong Pagpadayon" },

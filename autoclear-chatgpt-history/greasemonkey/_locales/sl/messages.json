@@ -7,7 +7,7 @@
   "menuLabel_about": { "message": "Vizitka" },
   "about_version": { "message": "Različica" },
   "about_poweredBy": { "message": "Poganja" },
-  "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode:" },
+  "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode" },
   "mode_autoClear": { "message": "Samodejno čiščenje" },
   "alert_choosePlatform": { "message": "Izberite platformo" },
   "alert_updateAvail": { "message": "Posodobitev na voljo" },

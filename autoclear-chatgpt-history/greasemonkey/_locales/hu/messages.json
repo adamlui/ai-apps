@@ -6,7 +6,7 @@
   "menuLabel_modeNotifs": { "message": "Üzemmód értesítések" },
   "menuLabel_about": { "message": "A" },
   "about_version": { "message": "Verzió" },
-  "about_poweredBy": { "message": "Kiszolgálja:" },
+  "about_poweredBy": { "message": "Kiszolgálja" },
   "about_sourceCode": { "message": "Forráskód" },
   "mode_autoClear": { "message": "Automatikus törlés" },
   "alert_choosePlatform": { "message": "Válasszon platformot" },

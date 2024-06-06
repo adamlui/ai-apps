@@ -1,7 +1,7 @@
 {
   "appName": { "message": "ChatGPT avtomatik yangilash" },
   "appDesc": { "message": "*XAVFSIZLIK* ChatGPT seanslarini yangilab turadi, doimiy tarmoq xatolarini va Cloudflare tekshiruvlarini yo'q qiladi (hammasi fonda!)" },
-  "menuLabel_autoRefresh": { "message": "Autoyangilash:" },
+  "menuLabel_autoRefresh": { "message": "Autoyangilash" },
   "menuLabel_toggleVis": { "message": "Koʻrinishni oʻzgartirish" },
   "menuLabel_modeNotifs": { "message": "Rejim bildirishnomalari" },
   "menuLabel_refreshInt": { "message": "Yangilash oraligÊ»i" },
@@ -15,7 +15,7 @@
   "alert_choosePlatform": { "message": "Platformani tanlang" },
   "alert_updateAvail": { "message": "Mavjud yangilanishlar" },
   "alert_newerVer": { "message": "Yangilash" },
-  "alert_isAvail": { "message": "mavjud." },
+  "alert_isAvail": { "message": "mavjud" },
   "alert_upToDate": { "message": "Yangilash" },
   "alert_isUpToDate": { "message": "dolzarb hisoblanadi" },
   "buttonLabel_moreApps": { "message": "Boshqa ChatGPT ilovalari" },

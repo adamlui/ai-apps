@@ -12,7 +12,7 @@
   "menuLabel_disabled": { "message": "Onemogočeno (razširitev nameščena)" },
   "about_version": { "message": "Različica" },
   "about_poweredBy": { "message": "Poganja" },
-  "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode:" },
+  "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode" },
   "prompt_updateReplyLang": { "message": "Posodobi jezik odgovora" },
   "prompt_updateReplyTopic": { "message": "Posodobi temo odgovora" },
   "prompt_orEnter": { "message": "ali vnesite" },

@@ -39,7 +39,7 @@
   "alert_upToDate": { "message": "Güncel" },
   "alert_isUpToDate": { "message": "güncel" },
   "alert_unavailable": { "message": "kullanım dışı" },
-  "alert_isOnlyAvailFor": { "message": "yalnızca şunlar için kullanılabilir:" },
+  "alert_isOnlyAvailFor": { "message": "yalnızca şunlar için kullanılabilir" },
   "alert_userscriptMgrNoStream": { "message": "Kullanıcı betiği yöneticiniz geri dönen akış yanıtlarını desteklemiyor" },
   "alert_isCurrentlyOnlyAvailBy": { "message": "şu anda yalnızca tarafından kullanılabilir" },
   "alert_openAIsupportSoon": { "message": "OpenAI API desteği kısa süre içinde eklenecektir" },

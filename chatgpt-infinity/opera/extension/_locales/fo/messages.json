@@ -10,7 +10,7 @@
   "menuLabel_replyInt": { "message": "Svar Bili" },
   "menuLabel_about": { "message": "Um" },
   "menuLabel_disabled": { "message": "Óvirkin (viðbót innsett)" },
-  "about_version": { "message": "Útgáva:" },
+  "about_version": { "message": "Útgáva" },
   "about_poweredBy": { "message": "Powered by SFX" },
   "about_sourceCode": { "message": "Ada keldukota" },
   "prompt_updateReplyLang": { "message": "Uppdater svar máli" },

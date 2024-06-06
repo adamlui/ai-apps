@@ -25,7 +25,7 @@
   "buttonLabel_update": { "message": "Uppfæra" },
   "buttonLabel_dismiss": { "message": "Hafna" },
   "link_viewChanges": { "message": "Skoða breytingar" },
-  "unit_secs": { "message": "sek." },
+  "unit_secs": { "message": "sek" },
   "state_enabled": { "message": "Lag" },
   "state_disabled": { "message": "óvirkt" }
 }

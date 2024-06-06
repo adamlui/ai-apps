@@ -30,7 +30,7 @@
   "alert_upToDate": { "message": "Аднаўленне не патрабуецца" },
   "alert_isUpToDate": { "message": "у цяперашні час Up-to-date" },
   "alert_pressF11": { "message": "Націсніце F11, каб выйсці з поўнага экрана" },
-  "alert_f11reason": { "message": "F11 быў выкарыстаны для ўваходу на поўны экран, і з-за прычын бяспекі браўзэра, той жа ключ павінен быць выкарыстаны для выхаду з яго." },
+  "alert_f11reason": { "message": "F11 быў выкарыстаны для ўваходу на поўны экран, і з-за прычын бяспекі браўзэра, той жа ключ павінен быць выкарыстаны для выхаду з яго" },
   "buttonLabel_moreApps": { "message": "Іншыя праграмы ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Пакінуць водгук" },
   "buttonLabel_getSupport": { "message": "Атрымаць падтрымку" },

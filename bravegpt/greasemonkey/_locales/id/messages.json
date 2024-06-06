@@ -35,7 +35,7 @@
   "alert_choosePlatform": { "message": "Pilih platform" },
   "alert_updateAvail": { "message": "Pembaruan tersedia" },
   "alert_newerVer": { "message": "Pembaruan untuk" },
-  "alert_isAvail": { "message": "Install package not available." },
+  "alert_isAvail": { "message": "Install package not available" },
   "alert_upToDate": { "message": "Terkini" },
   "alert_isUpToDate": { "message": "sudah mutakhir" },
   "alert_unavailable": { "message": "tidak tersedia" },

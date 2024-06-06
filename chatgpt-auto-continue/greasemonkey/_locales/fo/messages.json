@@ -3,7 +3,7 @@
   "appDesc": { "message": "Sjálvvirkandi framhaldandi at skapa fleiri ChatGPT svar" },
   "menuLabel_modeNotifs": { "message": "Modus kunningar" },
   "menuLabel_about": { "message": "Um" },
-  "about_version": { "message": "Útgáva:" },
+  "about_version": { "message": "Útgáva" },
   "about_poweredBy": { "message": "Powered by SFX" },
   "about_sourceCode": { "message": "Ada keldukota" },
   "mode_autoContinue": { "message": "Auto-Continue" },

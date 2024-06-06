@@ -8,7 +8,7 @@
   "menuLabel_hiddenHeader": { "message": "Скрытый заголовок страницы" },
   "menuLabel_hiddenFooter": { "message": "Скрытый подвал" },
   "menuLabel_modeNotifs": { "message": "Уведомления о Режиме" },
-  "menuLabel_about": { "message": "Шифр." },
+  "menuLabel_about": { "message": "Шифр" },
   "menuLabel_disabled": { "message": "Отключено (расширение установлено)" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "На базе технологии" },

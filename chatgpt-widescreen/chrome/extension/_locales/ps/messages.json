@@ -30,7 +30,7 @@
   "alert_upToDate": { "message": "اوسمهالیز دي" },
   "alert_isUpToDate": { "message": "د پورته کولو وړ دی" },
   "alert_pressF11": { "message": "د F1111 ته ورتلل" },
-  "alert_f11reason": { "message": "کور ته اړتیا لري، او د دې لپاره چې د کورني حالت ته ورسیږي، دا باید د دوی د کارولو وړ وي." },
+  "alert_f11reason": { "message": "کور ته اړتیا لري، او د دې لپاره چې د کورني حالت ته ورسیږي، دا باید د دوی د کارولو وړ وي" },
   "buttonLabel_moreApps": { "message": "نور چیټ جی پی ټي ایپونه" },
   "buttonLabel_leaveReview": { "message": "بیاکتنه پریږدئ" },
   "buttonLabel_getSupport": { "message": "مرسته ترلاسه کړئ" },

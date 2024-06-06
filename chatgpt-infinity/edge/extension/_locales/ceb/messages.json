@@ -10,7 +10,7 @@
   "menuLabel_replyInt": { "message": "Interval sa Tubag" },
   "menuLabel_about": { "message": "Mga Bahin" },
   "menuLabel_disabled": { "message": "Nahilakip (na-instalar ang ekstensyon)" },
-  "about_version": { "message": "Bersyon:" },
+  "about_version": { "message": "Bersyon" },
   "about_poweredBy": { "message": "Gipadagan sa" },
   "about_sourceCode": { "message": "Gigikana sa kodigo" },
   "prompt_updateReplyLang": { "message": "Usbongi ang lengguwahe sa tubag" },

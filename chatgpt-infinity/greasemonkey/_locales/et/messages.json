@@ -20,7 +20,7 @@
   "alert_replyLangUpdated": { "message": "Keel uuendatud" },
   "alert_willReplyIn": { "message": "vastab" },
   "alert_yourSysLang": { "message": "teie süsteemikeel" },
-  "alert_replyTopicUpdated": { "message": "Teema on värskendatud." },
+  "alert_replyTopicUpdated": { "message": "Teema on värskendatud" },
   "alert_willAnswer": { "message": "vastab küsimustele" },
   "alert_onTopicOf": { "message": "teemal" },
   "alert_onAllTopics": { "message": "Kõik teemad" },

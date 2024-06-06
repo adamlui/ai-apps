@@ -27,7 +27,7 @@
   "alert_replyIntUpdated": { "message": "ಮಧ್ಯಂತರವನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ" },
   "alert_willReplyEvery": { "message": "ಪ್ರತಿ ಪ್ರತ್ಯುತ್ತರ ನೀಡುತ್ತದೆ" },
   "alert_choosePlatform": { "message": "ಪ್ಲಾಟ್ ಫಾರ್ಮ್ ಆಯ್ಕೆಮಾಡಿ" },
-  "alert_updateAvail": { "message": "ಹೊಸ ಅಪ್ಡೇಟ್ ಲಭ್ಯವಿದೆ." },
+  "alert_updateAvail": { "message": "ಹೊಸ ಅಪ್ಡೇಟ್ ಲಭ್ಯವಿದೆ" },
   "alert_newerVer": { "message": "ಗೆ ಅಪ್ ಡೇಟ್ ಮಾಡಿ" },
   "alert_isAvail": { "message": "ಲಭ್ಯವಿದೆ" },
   "alert_upToDate": { "message": "ಅಪ್ ಡೇಟ್" },

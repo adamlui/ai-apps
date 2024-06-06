@@ -25,7 +25,7 @@
   "buttonLabel_update": { "message": "Nadogradi" },
   "buttonLabel_dismiss": { "message": "Otkaži" },
   "link_viewChanges": { "message": "Vidi promjene" },
-  "unit_secs": { "message": "sek." },
+  "unit_secs": { "message": "sek" },
   "state_enabled": { "message": "Omogućeno" },
   "state_disabled": { "message": "onemogućen" }
 }

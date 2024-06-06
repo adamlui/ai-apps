@@ -9,7 +9,7 @@
   "mode_autoContinue": { "message": "Avtomatik Davom etish" },
   "alert_updateAvail": { "message": "Mavjud yangilanishlar" },
   "alert_newerVer": { "message": "Yangilash" },
-  "alert_isAvail": { "message": "mavjud." },
+  "alert_isAvail": { "message": "mavjud" },
   "alert_upToDate": { "message": "Yangilash" },
   "alert_isUpToDate": { "message": "dolzarb hisoblanadi" },
   "notif_chatAutoContinued": { "message": "Chat avtomatik davom etadi" },

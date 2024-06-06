@@ -14,7 +14,7 @@
   "alert_newerVer": { "message": "Ενημέρωση" },
   "alert_isAvail": { "message": "Μη διαθέσιμο" },
   "alert_upToDate": { "message": "Ενημερωμένο" },
-  "alert_isUpToDate": { "message": " είναι ενήμερο." },
+  "alert_isUpToDate": { "message": " είναι ενήμερο" },
   "buttonLabel_moreApps": { "message": "Περισσότερες εφαρμογές ChatGPT" },
   "buttonLabel_leaveReview": { "message": "Κάντε μία κριτική" },
   "buttonLabel_getSupport": { "message": "Λάβετε υποστήριξη" },

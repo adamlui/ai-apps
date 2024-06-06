@@ -4,7 +4,7 @@
   "menuLabel_modeNotifs": { "message": "മോഡ് അറിയിപ്പുകൾ" },
   "menuLabel_about": { "message": "സംബന്ധിച്ച്" },
   "about_version": { "message": "പതിപ്പ്" },
-  "about_poweredBy": { "message": "പിന്തുണയ്ക്കുന്നത്:" },
+  "about_poweredBy": { "message": "പിന്തുണയ്ക്കുന്നത്" },
   "about_sourceCode": { "message": "സോഴ്സ് കോഡ്" },
   "mode_autoContinue": { "message": "യാന്ത്രികമായി തുടരുക" },
   "alert_updateAvail": { "message": "%d അപ്‌ഡേറ്റ് ലഭ്യമാണ്" },
