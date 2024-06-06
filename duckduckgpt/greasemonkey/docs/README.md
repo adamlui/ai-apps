@@ -203,7 +203,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://github.kudoai.com/googlegpt/#readme) /
 [Discuss](https://github.kudoai.com/googlegpt/discussions)
 
-<img height=6px width="100%" src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png">
+<img height=6px width="100%" src="https://media.ddgpt.com/images/separators/gradient-aqua.png?latest">
 
 <a href="https://github.com/adamlui/userscripts">**More userscripts**</a> / 
 <a href="#--------------">Back to top ↑</a>
