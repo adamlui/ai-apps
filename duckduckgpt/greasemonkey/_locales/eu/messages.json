@@ -15,7 +15,7 @@
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Egileari Buruz" },
   "about_version": { "message": "Bertsioa" },
-  "about_poweredBy": { "message": "Teknologia: " },
+  "about_poweredBy": { "message": "Teknologia:" },
   "about_sourceCode": { "message": "Iturburu kode" },
   "scheme_light": { "message": "Arina" },
   "scheme_dark": { "message": "Iluna" },

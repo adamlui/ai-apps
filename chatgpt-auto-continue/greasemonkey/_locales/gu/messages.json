@@ -2,7 +2,7 @@
   "appName": { "message": "ChatGPT આપોઆપ- ચાલુ રાખો" },
   "appDesc": { "message": "આપમેળે બહુવિધ ChatGPT જવાબો જનરેટ કરવાનું ચાલુ રાખો" },
   "menuLabel_modeNotifs": { "message": "મોડ સૂચનાઓ" },
-  "menuLabel_about": { "message": "માહિતી " },
+  "menuLabel_about": { "message": "માહિતી" },
   "about_version": { "message": "આવૃત્તિ" },
   "about_poweredBy": { "message": "દ્વારા સંચાલિત" },
   "about_sourceCode": { "message": "સ્ત્રોત કોડ" },

@@ -6,7 +6,7 @@
   "menuLabel_modeNotifs": { "message": "התראות מצב" },
   "menuLabel_about": { "message": "אודות" },
   "about_version": { "message": "גירסה" },
-  "about_poweredBy": { "message": "באמצעות " },
+  "about_poweredBy": { "message": "באמצעות" },
   "about_sourceCode": { "message": "קוד מקור" },
   "mode_autoClear": { "message": "ניקוי אוטומטי" },
   "alert_choosePlatform": { "message": "בחירת פלטפורמה" },

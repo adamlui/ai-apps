@@ -7,7 +7,7 @@
   "menuLabel_refreshInt": { "message": "מרווח רענון" },
   "menuLabel_about": { "message": "אודות" },
   "about_version": { "message": "גירסה" },
-  "about_poweredBy": { "message": "באמצעות " },
+  "about_poweredBy": { "message": "באמצעות" },
   "about_sourceCode": { "message": "קוד מקור" },
   "prompt_updateInt": { "message": "מרווח רענון עדכון (בשניות)" },
   "alert_intUpdated": { "message": "המרווח עודכן" },

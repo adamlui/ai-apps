@@ -33,7 +33,7 @@
   "alert_f11reason": { "message": "F11 ကို screen အပြည့်အစုံထဲသို့ဝင်ရန်အသုံးပြုခဲ့ပြီး browser လုံခြုံရေးအကြောင်းပြချက်များကြောင့် ၎ င်းကိုထွက်ခွာရန်တူညီသောကီးကိုအသုံးပြုရမည် ။" },
   "buttonLabel_moreApps": { "message": "နောက်ထပ် ChatGPT Apps ကပ" },
   "buttonLabel_leaveReview": { "message": "တစ်ဦးပြန်လည်ဆန်းစစ်ခြင်း Leave" },
-  "buttonLabel_getSupport": { "message": "ပံ့ပိုးမှုရယူပါ။ " },
+  "buttonLabel_getSupport": { "message": "ပံ့ပိုးမှုရယူပါ။" },
   "buttonLabel_updateCheck": { "message": "အသစ်ထွက်ရှိမှု့ကိုစစ်ဆေးမည်" },
   "buttonLabel_update": { "message": "နောက်ဆုံးသတင်း" },
   "buttonLabel_dismiss": { "message": "ပယ်ဖျက်မည်" },

@@ -8,7 +8,7 @@
   "menuLabel_hiddenHeader": { "message": "છુપાયેલ હેડર" },
   "menuLabel_hiddenFooter": { "message": "છુપાયેલ ફુટર" },
   "menuLabel_modeNotifs": { "message": "સ્થિતિ સૂચનાઓ" },
-  "menuLabel_about": { "message": "માહિતી " },
+  "menuLabel_about": { "message": "માહિતી" },
   "menuLabel_disabled": { "message": "અક્ષમ (એક્સટેન્શન સ્થાપિત)" },
   "about_version": { "message": "આવૃત્તિ" },
   "about_poweredBy": { "message": "દ્વારા સંચાલિત" },

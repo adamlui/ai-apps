@@ -62,6 +62,6 @@
   "link_viewChanges": { "message": "Dəyişikliklərə bax" },
   "link_shareFeedback": { "message": "Məxfi rəy paylaşın" },
   "prefix_exit": { "message": "Çıxmaq" },
-  "state_on": { "message": " " },
+  "state_on": { "message": "" },
   "state_off": { "message": "İŞLƏMİR" }
 }

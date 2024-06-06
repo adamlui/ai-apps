@@ -11,7 +11,7 @@
   "menuLabel_about": { "message": "ಕುರಿತಾಗಿ" },
   "menuLabel_disabled": { "message": "ಅಕ್ಷಮ (ವಿಸ್ತರಣ ಸ್ಥಾಪಿಸಲಾಗಿದೆ)" },
   "about_version": { "message": "ಆವೃತ್ತಿ" },
-  "about_poweredBy": { "message": "ಸಾಮರ್ಥ್ಯ ಇವರಿಂದ " },
+  "about_poweredBy": { "message": "ಸಾಮರ್ಥ್ಯ ಇವರಿಂದ" },
   "about_sourceCode": { "message": "ಮೂಲ ಕೋಡ್" },
   "prompt_updateReplyLang": { "message": "ಉತ್ತರ ಭಾಷೆಯನ್ನು ಅದಾಯವಿಸಿ" },
   "prompt_updateReplyTopic": { "message": "ಪ್ರತಿಕ್ರಿಯೆಯ ವಿಷಯವನ್ನು ನವೀಕರಿಸಿ" },

@@ -4,7 +4,7 @@
   "menuLabel_modeNotifs": { "message": "Pemberitahuan Mode" },
   "menuLabel_about": { "message": "Ihwal" },
   "about_version": { "message": "Versi" },
-  "about_poweredBy": { "message": "Didukung oleh " },
+  "about_poweredBy": { "message": "Didukung oleh" },
   "about_sourceCode": { "message": "Kode sumber" },
   "mode_autoContinue": { "message": "Lanjutkan Otomatis" },
   "alert_updateAvail": { "message": "Pembaruan tersedia" },

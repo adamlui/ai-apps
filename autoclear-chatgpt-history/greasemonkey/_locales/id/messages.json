@@ -6,7 +6,7 @@
   "menuLabel_modeNotifs": { "message": "Notifikasi Mode" },
   "menuLabel_about": { "message": "Ihwal" },
   "about_version": { "message": "Versi" },
-  "about_poweredBy": { "message": "Didukung oleh " },
+  "about_poweredBy": { "message": "Didukung oleh" },
   "about_sourceCode": { "message": "Kode sumber" },
   "mode_autoClear": { "message": "Bersihkan Otomatis" },
   "alert_choosePlatform": { "message": "Pilih platform" },

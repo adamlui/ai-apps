@@ -48,7 +48,7 @@
   "alert_tooManyRequests": { "message": "ChatGPT je preplavljen s preveč zahtev" },
   "alert_parseFailed": { "message": "Odziva JSON ni bilo mogoče razčleniti" },
   "alert_checkCloudflare": { "message": "Opravite varnostno preverjanje Cloudflare" },
-  "alert_notWorking": { "message": "SCI ne deluje " },
+  "alert_notWorking": { "message": "SCI ne deluje" },
   "alert_ifIssuePersists": { "message": "Če težava še vedno obstaja" },
   "alert_try": { "message": "Poskusite" },
   "alert_switchingOn": { "message": "Vklop" },

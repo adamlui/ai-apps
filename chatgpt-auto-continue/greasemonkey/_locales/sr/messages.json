@@ -15,7 +15,7 @@
   "notif_chatAutoContinued": { "message": "Ćaskanje je automatski nastavljeno" },
   "buttonLabel_moreApps": { "message": "Još ChatGPT aplikacija" },
   "buttonLabel_leaveReview": { "message": "Ostavite komentar i ocenite turu" },
-  "buttonLabel_getSupport": { "message": "Plaćena Podrška " },
+  "buttonLabel_getSupport": { "message": "Plaćena Podrška" },
   "buttonLabel_updateCheck": { "message": "Провери допуне" },
   "buttonLabel_update": { "message": "Ažuriraj" },
   "buttonLabel_dismiss": { "message": "Odbaci" },

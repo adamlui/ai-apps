@@ -11,7 +11,7 @@
   "menuLabel_widerSidebar": { "message": "Bredere sidebjælke" },
   "menuLabel_stickySidebar": { "message": "Klæbende sidebjælke" },
   "menuLabel_replyLanguage": { "message": "Svarsprog" },
-  "menuLabel_colorScheme": { "message": "Farve skema " },
+  "menuLabel_colorScheme": { "message": "Farve skema" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Om" },
   "about_version": { "message": "Version" },

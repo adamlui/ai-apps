@@ -48,7 +48,7 @@
   "alert_tooManyRequests": { "message": "ChatGPT wird mit zu vielen Anfragen überflutet" },
   "alert_parseFailed": { "message": "Antwort-json konnte nicht analysiert werden" },
   "alert_checkCloudflare": { "message": "Bitte bestehen Sie die Cloudflare-Sicherheitsprüfung" },
-  "alert_notWorking": { "message": " funktioniert nicht" },
+  "alert_notWorking": { "message": "funktioniert nicht" },
   "alert_ifIssuePersists": { "message": "Problem bleibt bestehen" },
   "alert_try": { "message": "Versuchen, versuch, versuche, versucht, versuchen Sie" },
   "alert_switchingOn": { "message": "Einschalten" },

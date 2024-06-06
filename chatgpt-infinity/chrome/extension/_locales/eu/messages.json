@@ -11,7 +11,7 @@
   "menuLabel_about": { "message": "Egileari Buruz" },
   "menuLabel_disabled": { "message": "Desgaituta (luzapena instalatuta)" },
   "about_version": { "message": "Bertsioa" },
-  "about_poweredBy": { "message": "Teknologia: " },
+  "about_poweredBy": { "message": "Teknologia:" },
   "about_sourceCode": { "message": "Iturburu kode" },
   "prompt_updateReplyLang": { "message": "Eguneratu erantzunen hizkuntza" },
   "prompt_updateReplyTopic": { "message": "Eguneratu erantzunen gaia" },

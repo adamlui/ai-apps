@@ -4,7 +4,7 @@
   "menuLabel_autoClear": { "message": "Automatické čety" },
   "menuLabel_toggleVis": { "message": "Prepnúť viditeľnosť" },
   "menuLabel_modeNotifs": { "message": "Upozornenia režimu" },
-  "menuLabel_about": { "message": "O nás " },
+  "menuLabel_about": { "message": "O nás" },
   "about_version": { "message": "Verzia" },
   "about_poweredBy": { "message": "Beží na" },
   "about_sourceCode": { "message": "Zdrojový kód" },

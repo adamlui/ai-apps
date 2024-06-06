@@ -15,7 +15,7 @@
   "menuLabel_auto": { "message": "Otomatis" },
   "menuLabel_about": { "message": "Ihwal" },
   "about_version": { "message": "Versi" },
-  "about_poweredBy": { "message": "Didukung oleh " },
+  "about_poweredBy": { "message": "Didukung oleh" },
   "about_sourceCode": { "message": "Kode sumber" },
   "scheme_light": { "message": "Lampu" },
   "scheme_dark": { "message": "Gelap" },

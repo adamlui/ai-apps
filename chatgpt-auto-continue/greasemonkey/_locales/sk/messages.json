@@ -2,7 +2,7 @@
   "appName": { "message": "ChatGPT Auto-Continue" },
   "appDesc": { "message": "Automaticky pokračovať v generovaní viacerých odpovedí ChatGPT" },
   "menuLabel_modeNotifs": { "message": "Upozornenia režimu" },
-  "menuLabel_about": { "message": "O nás " },
+  "menuLabel_about": { "message": "O nás" },
   "about_version": { "message": "Verzia" },
   "about_poweredBy": { "message": "Beží na" },
   "about_sourceCode": { "message": "Zdrojový kód" },

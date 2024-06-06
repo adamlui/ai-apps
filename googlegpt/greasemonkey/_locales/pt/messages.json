@@ -20,7 +20,7 @@
   "scheme_light": { "message": "Claro" },
   "scheme_dark": { "message": "Escuro" },
   "mode_proxy": { "message": "Modo Proxy" },
-  "mode_streaming": { "message": "   Modo de transmissão " },
+  "mode_streaming": { "message": "Modo de transmissão" },
   "mode_autoScroll": { "message": "Auto Scroll" },
   "mode_prefix": { "message": "Modo de prefixo" },
   "mode_suffix": { "message": "Modo Sufixo" },

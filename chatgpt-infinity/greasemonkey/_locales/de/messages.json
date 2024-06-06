@@ -15,7 +15,7 @@
   "about_sourceCode": { "message": "Quellcode" },
   "prompt_updateReplyLang": { "message": "Antwortsprache aktualisieren" },
   "prompt_updateReplyTopic": { "message": "Antwort-Thema aktualisieren" },
-  "prompt_orEnter": { "message": " oder eintreten" },
+  "prompt_orEnter": { "message": "oder eintreten" },
   "prompt_updateReplyInt": { "message": "Antwortintervall aktualisieren (mindestens 5 Sekunden)" },
   "alert_replyLangUpdated": { "message": "Sprache aktualisiert" },
   "alert_willReplyIn": { "message": "wird in" },

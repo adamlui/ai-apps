@@ -4,7 +4,7 @@
   "menuLabel_modeNotifs": { "message": "התראות מצב" },
   "menuLabel_about": { "message": "אודות" },
   "about_version": { "message": "גירסה" },
-  "about_poweredBy": { "message": "באמצעות " },
+  "about_poweredBy": { "message": "באמצעות" },
   "about_sourceCode": { "message": "קוד מקור" },
   "mode_autoContinue": { "message": "המשך אוטומטי" },
   "alert_updateAvail": { "message": "עדכון זמין" },

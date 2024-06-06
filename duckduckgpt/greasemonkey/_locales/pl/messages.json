@@ -51,7 +51,7 @@
   "alert_notWorking": { "message": "nie działa" },
   "alert_ifIssuePersists": { "message": "Jeśli problem będzie się powtarzał," },
   "alert_try": { "message": "Spróbuj" },
-  "alert_switchingOn": { "message": "Włączanie " },
+  "alert_switchingOn": { "message": "Włączanie" },
   "alert_switchingOff": { "message": "Wyłączanie" },
   "buttonLabel_sendQueryToGPT": { "message": "Wyślij zapytanie wyszukiwania do GPT" },
   "buttonLabel_moreApps": { "message": "Więcej aplikacji ChatGPT" },

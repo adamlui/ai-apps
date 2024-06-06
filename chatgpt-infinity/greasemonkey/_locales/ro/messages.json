@@ -10,7 +10,7 @@
   "menuLabel_replyInt": { "message": "Interval de răspuns" },
   "menuLabel_about": { "message": "Despre" },
   "menuLabel_disabled": { "message": "Dezactivat (extensie instalată)" },
-  "about_version": { "message": "Versiune " },
+  "about_version": { "message": "Versiune" },
   "about_poweredBy": { "message": "Operat de" },
   "about_sourceCode": { "message": "Codul sursă" },
   "prompt_updateReplyLang": { "message": "Actualizați limba de răspuns" },

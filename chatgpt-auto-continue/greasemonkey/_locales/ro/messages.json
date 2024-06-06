@@ -3,7 +3,7 @@
   "appDesc": { "message": "Continuați automat să generați mai multe răspunsuri ChatGPT" },
   "menuLabel_modeNotifs": { "message": "Notificări mod" },
   "menuLabel_about": { "message": "Despre" },
-  "about_version": { "message": "Versiune " },
+  "about_version": { "message": "Versiune" },
   "about_poweredBy": { "message": "Operat de" },
   "about_sourceCode": { "message": "Codul sursă" },
   "mode_autoContinue": { "message": "Continuare automată" },

@@ -36,7 +36,7 @@
   "buttonLabel_leaveReview": { "message": "समीक्षा लिखें" },
   "buttonLabel_getSupport": { "message": "सपोर्ट प्राप्त करें" },
   "buttonLabel_updateCheck": { "message": "अद्यतन के लिए जाँचें" },
-  "buttonLabel_update": { "message": "अपडेट " },
+  "buttonLabel_update": { "message": "अपडेट" },
   "buttonLabel_dismiss": { "message": "खारिज करना" },
   "link_viewChanges": { "message": "बदलाव देखें" },
   "unit_seconds": { "message": "सेकंड" },

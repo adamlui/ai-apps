@@ -36,7 +36,7 @@
   "buttonLabel_leaveReview": { "message": "Ostavi recenziju" },
   "buttonLabel_getSupport": { "message": "Podrška" },
   "buttonLabel_updateCheck": { "message": "Provjeri za nadogradnje" },
-  "buttonLabel_update": { "message": "Ažurirana " },
+  "buttonLabel_update": { "message": "Ažurirana" },
   "buttonLabel_dismiss": { "message": "Odbaci" },
   "link_viewChanges": { "message": "Pregledaj promjene" },
   "unit_seconds": { "message": "sekundi" },

@@ -18,7 +18,7 @@
   "prompt_orEnter": { "message": "noma ungene" },
   "prompt_updateReplyInt": { "message": "Buyekeza isikhathi sokuphendula (okungenani imizuzwana engu-5)" },
   "alert_replyLangUpdated": { "message": "Ulimi lubuyekeziwe" },
-  "alert_willReplyIn": { "message": " izophendula" },
+  "alert_willReplyIn": { "message": "izophendula" },
   "alert_yourSysLang": { "message": "uhlelo lwakho lolimi" },
   "alert_replyTopicUpdated": { "message": "Isihloko sibuyekeziwe" },
   "alert_willAnswer": { "message": "uzophendula imibuzo" },

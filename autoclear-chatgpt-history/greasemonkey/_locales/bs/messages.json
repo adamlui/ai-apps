@@ -24,6 +24,6 @@
   "link_viewChanges": { "message": "Vidi promjene" },
   "state_enabled": { "message": "Omogućeno" },
   "state_disabled": { "message": "onemogućen" },
-  "state_on": { "message": "na " },
+  "state_on": { "message": "na" },
   "state_off": { "message": "ugasi." }
 }

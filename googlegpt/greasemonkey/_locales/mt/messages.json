@@ -62,6 +62,6 @@
   "link_viewChanges": { "message": "Ara l-bidliet" },
   "link_shareFeedback": { "message": "Aqsam il-Ħsibijiet mal-oħrajn" },
   "prefix_exit": { "message": "Ħruġ" },
-  "state_on": { "message": "fil " },
+  "state_on": { "message": "fil" },
   "state_off": { "message": "Diżattivata" }
 }

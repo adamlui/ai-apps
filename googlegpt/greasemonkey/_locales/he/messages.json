@@ -15,7 +15,7 @@
   "menuLabel_auto": { "message": "אוטומטי" },
   "menuLabel_about": { "message": "אודות" },
   "about_version": { "message": "גירסה" },
-  "about_poweredBy": { "message": "באמצעות " },
+  "about_poweredBy": { "message": "באמצעות" },
   "about_sourceCode": { "message": "קוד מקור" },
   "scheme_light": { "message": "בהיר" },
   "scheme_dark": { "message": "כהה" },

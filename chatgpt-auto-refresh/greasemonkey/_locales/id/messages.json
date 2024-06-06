@@ -7,7 +7,7 @@
   "menuLabel_refreshInt": { "message": "Interval Pembaruan" },
   "menuLabel_about": { "message": "Ihwal" },
   "about_version": { "message": "Versi" },
-  "about_poweredBy": { "message": "Didukung oleh " },
+  "about_poweredBy": { "message": "Didukung oleh" },
   "about_sourceCode": { "message": "Kode sumber" },
   "prompt_updateInt": { "message": "Perbarui interval penyegaran (dalam hitungan detik)" },
   "alert_intUpdated": { "message": "Interval diperbarui" },

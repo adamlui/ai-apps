@@ -8,7 +8,7 @@
   "menuLabel_replyTopic": { "message": "Téma odpovede" },
   "menuLabel_all": { "message": "VŠETKY;" },
   "menuLabel_replyInt": { "message": "Interval odpovede" },
-  "menuLabel_about": { "message": "O nás " },
+  "menuLabel_about": { "message": "O nás" },
   "menuLabel_disabled": { "message": "Vypnuté (rozšírenie nainštalované)" },
   "about_version": { "message": "Verzia" },
   "about_poweredBy": { "message": "Beží na" },

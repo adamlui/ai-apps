@@ -5,7 +5,7 @@
   "menuLabel_toggleVis": { "message": "comutați vizibilitatea" },
   "menuLabel_modeNotifs": { "message": "Notificări de mod" },
   "menuLabel_about": { "message": "Despre" },
-  "about_version": { "message": "Versiune " },
+  "about_version": { "message": "Versiune" },
   "about_poweredBy": { "message": "Operat de" },
   "about_sourceCode": { "message": "Codul sursă" },
   "mode_autoClear": { "message": "Curățare automată" },
