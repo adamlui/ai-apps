@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "ເພີ່ມ ຄໍາ ຕອບ ChatGPT ເຂົ້າໃນ Google Search (ຂັບເຄື່ອນໂດຍ GPT-4o + Google Gemma!)" },
+  "appDesc": { "message": "ເພີ່ມ ຄໍາ ຕອບ ChatGPT ເຂົ້າໃນ Google Search (ຂັບເຄື່ອນໂດຍ Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "ຄໍາຕອບອັດຕະໂນມັດ" },
   "menuLabel_whenStreaming": { "message": "ເມື່ອການຖ່າຍທອດ" },
   "menuLabel_proxyAPImode": { "message": "ໂໝດໂປຣແກຣມ API" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "מוסיף תשובות ChatGPT לחיפוש Google (מופעל על ידי GPT-4o + Google Gemma!)" },
+  "appDesc": { "message": "מוסיף תשובות ChatGPT לחיפוש Google (מופעל על ידי Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "קבל תשובות אוטומטיות" },
   "menuLabel_whenStreaming": { "message": "בזמן סטרימינג" },
   "menuLabel_proxyAPImode": { "message": "מצב API של שרת Proxy" },

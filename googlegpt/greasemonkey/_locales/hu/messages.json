@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "ChatGPT-válaszokat ad hozzá a Google Kereséshez (GPT-4o + Google Gemma!)" },
+  "appDesc": { "message": "ChatGPT-válaszokat ad hozzá a Google Kereséshez (Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Válaszok automatikus lekérése" },
   "menuLabel_whenStreaming": { "message": "streaming közben" },
   "menuLabel_proxyAPImode": { "message": "Proxy API mód" },

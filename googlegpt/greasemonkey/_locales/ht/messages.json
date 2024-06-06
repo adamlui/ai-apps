@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Ajoute repons ChatGPT nan Google Search (patrone pa GPT-4o + Google Gemma!)" },
+  "appDesc": { "message": "Ajoute repons ChatGPT nan Google Search (patrone pa Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Repons Auto-Get" },
   "menuLabel_whenStreaming": { "message": "lè difizyon/lè difizyon" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },

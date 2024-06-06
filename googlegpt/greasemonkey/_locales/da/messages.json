@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Tilføjer ChatGPT-svar til Google-søgning (drevet af GPT-4o + Google Gemma!)" },
+  "appDesc": { "message": "Tilføjer ChatGPT-svar til Google-søgning (drevet af Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Hent svar automatisk" },
   "menuLabel_whenStreaming": { "message": "når du streamer" },
   "menuLabel_proxyAPImode": { "message": "Proxy API-tilstand" },

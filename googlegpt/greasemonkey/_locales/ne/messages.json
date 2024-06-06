@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Google खोजमा ChatGPT उत्तरहरू थप्दछ (GPT-4o + Google Gemma द्वारा संचालित!)" },
+  "appDesc": { "message": "Google खोजमा ChatGPT उत्तरहरू थप्दछ (Google Gemma + GPT-4o द्वारा संचालित!)" },
   "menuLabel_autoGetAnswers": { "message": "स्वतः - उत्तरहरू प्राप्त गर्नुहोस्" },
   "menuLabel_whenStreaming": { "message": "स्ट्रिमिङ गर्दा" },
   "menuLabel_proxyAPImode": { "message": "प्रोक्सी API मोड" },

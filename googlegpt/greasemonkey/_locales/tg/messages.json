@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Magdagdag ng mga tugon sa ChatGPT sa Paghahanap ng Google (naaalaga ng GPT-4o + Google Gemma!)" },
+  "appDesc": { "message": "Magdagdag ng mga tugon sa ChatGPT sa Paghahanap ng Google (naaalaga ng Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Ҷавоби худкор" },
   "menuLabel_whenStreaming": { "message": "ҳангоми ҷараён" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "زیادکردنی وەڵامەکانی ChatGPT بۆ سایدباری Google Search (بەرپێنانی GPT-4o + Google Gemma!)" },
+  "appDesc": { "message": "زیادکردنی وەڵامەکانی ChatGPT بۆ سایدباری Google Search (بەرپێنانی Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "وەڵامە خۆگەڕەکان" },
   "menuLabel_whenStreaming": { "message": "کاتێک پەخش دەکرێت" },
   "menuLabel_proxyAPImode": { "message": "شێوازی APIی پرۆکسی" },

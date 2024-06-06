@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Füügt ChatGPT Äntwerten op Google Sich (ugedriwwen duerch GPT-4o + Google Gemma!)" },
+  "appDesc": { "message": "Füügt ChatGPT Äntwerten op Google Sich (ugedriwwen duerch Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Äntwerten" },
   "menuLabel_whenStreaming": { "message": "wann streamen" },
   "menuLabel_proxyAPImode": { "message": "Proxy-API-Modus" },

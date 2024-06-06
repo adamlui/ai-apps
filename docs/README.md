@@ -76,7 +76,7 @@ Apps that utilize the astounding AI of ChatGPT or enhance its UX.
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png?latest"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?latest"></picture> [GoogleGPT](../googlegpt) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#chatgpt"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-> Display ChatGPT answers in Google Search sidebar (powered by GPT-4o + Google Gemma!)
+> Display ChatGPT answers in Google Search sidebar (powered by Google Gemma + GPT-4o!)
 <br>[Install](https://greasyfork.org/scripts/478597-googlegpt) /
 [Readme](https://github.com/adamlui/chatgpt-apps/tree/main/googlegpt#readme) /
 [Discuss](https://github.com/adamlui/chatgpt-apps/discussions)

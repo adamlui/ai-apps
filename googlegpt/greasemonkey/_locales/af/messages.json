@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Voeg ChatGPT antwoorde op Google Search (aangedryf deur GPT-4o + Google Gemma!)" },
+  "appDesc": { "message": "Voeg ChatGPT antwoorde op Google Search (aangedryf deur Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Outo- Kry Antwoorde" },
   "menuLabel_whenStreaming": { "message": "wanneer om te stroom" },
   "menuLabel_proxyAPImode": { "message": "Volmag-API-modus" },

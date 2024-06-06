@@ -22,7 +22,7 @@
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
-<h3>🤖 Bring the magic of ChatGPT to Google Search (powered by GPT-4o + Google Gemma!)</h3>
+<h3>🤖 Bring the magic of ChatGPT to Google Search (powered by Google Gemma + GPT-4o!)</h3>
 
 <a href="https://greasyfork.googlegpt.io"><img height=50 alt="Install this script" src="https://media.googlegpt.io/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#-installation"><img height=50 alt="How to install" title="How to install" src="https://media.googlegpt.io/images/buttons/greasy-fork/help-button.svg?latest"></a>
 <br>
@@ -123,7 +123,7 @@ If you've tested it to work in a browser not listed, create a [pull request](htt
 
 ## 🕶️ Proxy Mode
 
-Proxy API Mode (disabled by default) returns text responses using GPT-4o + Google Gemma, without the need for a chatgpt.com account.
+Proxy API Mode (disabled by default) returns text responses using Google Gemma + GPT-4o, without the need for a chatgpt.com account.
 
 When disabled, a ChatGPT account is required to fetch responses. If OpenAI API is acting unreliable, enable Proxy Mode like this:
 
