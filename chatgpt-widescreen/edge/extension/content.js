@@ -94,8 +94,8 @@
 
     // Create/insert chatbar BUTTONS
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
-          bOffset = isGPT4oUI ? -0.86 : site == 'poe' ? -0.02 : 2,
-          rOffset = isGPT4oUI ? -0.4 : site == 'poe' ? -0.34 : 3.35
+          bOffset = isGPT4oUI ? -0.91 : site == 'poe' ? -0.02 : 2,
+          rOffset = isGPT4oUI ? -0.45 : site == 'poe' ? -0.34 : 3.35
     let btnColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
