@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.6.1
+// @version             2024.6.6.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -755,8 +755,7 @@
           sidepadSelector = '#__next > div > div',
           headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : '',
           footerSelector = /chatgpt|openai/.test(site) ?
-              chatgpt.getFooterDiv()?.classList.toString().split(' ').map(
-                  className => `.${className.replace(/([:[\]])/g, '\\$1')}`).join('') : ''
+              chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]])/g, '\\$1').replace(/^| /g, '.') : ''
 
     // Save FULL-WINDOW + FULL SCREEN states
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : config.fullWindow
