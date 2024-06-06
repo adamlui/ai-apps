@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.3.2
+// @version             2024.6.6
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -312,7 +312,7 @@
                 if (document.querySelector('#infToggleLabel')) // ensure toggle state is accurate
                     document.querySelector('#infToggleLabel').click()
                 else infinityMode.deactivate()
-                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+                refreshMenu()
     }})}
 
     // Add/update TWEAKS style
@@ -357,8 +357,7 @@
         const toggleInput = document.querySelector('#infToggleInput')
         toggleInput.checked = !toggleInput.checked
         config.infinityMode = toggleInput.checked
-        updateToggleHTML()
-        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        updateToggleHTML() ; refreshMenu()
         infinityMode.toggle()
     })
 
@@ -392,7 +391,7 @@
             saveSetting('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             notify(( msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+!config.toggleHidden])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            refreshMenu()
         }))
 
         // Add command to toggle auto-scroll
@@ -402,7 +401,7 @@
         menuIDs.push(GM_registerMenuCommand(asLabel, () => {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
             notify(( msgs.menuLabel_autoScroll || 'Auto-Scroll' ) + ': '+ state.word[+!config.autoScrollDisabled])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            refreshMenu()
         }))
 
         // Add command to set reply language
@@ -423,8 +422,7 @@
                             + ( msgs.alert_willReplyIn || 'will reply in' ) + ' '
                             + ( replyLanguage || msgs.alert_yourSysLang || 'your system language') + '.')
                     if (config.infinityMode) restartInNewChat() // using new reply language                        
-                    for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-                    break
+                    refreshMenu() ; break
         }}}))
 
         // Add command to set reply topic
@@ -449,7 +447,7 @@
                 if (config.infinityMode) { // restart session using new reply topic
                     chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
                     setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 500) } // toggle on
-                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+                refreshMenu()
         }}))
 
         // Add command to change reply interval
@@ -467,14 +465,15 @@
                             + ( msgs.alert_willReplyEvery || 'will reply every' ) + ' '
                             + replyInterval + ' ' + ( msgs.unit_seconds || 'seconds' ) + '.')
                     if (config.infinityMode) resetInSameChat() // using new reply interval                    
-                    for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-                    break
+                    refreshMenu() ; break
         }}}))
 
         // Add command to launch About modal
         const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || config.appName }`
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
+
+    function refreshMenu() { for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() }
 
     function launchAboutModal() {
 

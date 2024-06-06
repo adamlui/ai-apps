@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.4
+// @version             2024.6.6
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -354,10 +354,8 @@
     // Add LISTENER to toggle switch/label/config/menu + auto-clear
     navToggleDiv.addEventListener('click', () => {
         const toggleInput = document.querySelector('#acToggleInput')
-        toggleInput.checked = !toggleInput.checked
-        config.autoclear = toggleInput.checked
-        updateToggleHTML()
-        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        toggleInput.checked = !toggleInput.checked ; config.autoclear = toggleInput.checked
+        updateToggleHTML() ; refreshMenu()
         if (config.autoclear) {
             setTimeout(() => { chatgpt.clearChats('api') ; hideHistory() ; chatgpt.startNewChat() }, 250)
             if (!config.notifDisabled) notify(`${ msgs.mode_autoClear || 'Auto-Clear' }: ${state.word[1]}`)
@@ -403,9 +401,9 @@
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            if (!config.notifDisabled) {
-                notify(( msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+!config.toggleHidden])
-            } for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            if (!config.notifDisabled) notify((
+                msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+!config.toggleHidden])
+            refreshMenu()
         }))
 
         // Add command to show notifications when changing settings/modes
@@ -415,7 +413,7 @@
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifDisabled', !config.notifDisabled)
             notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + state.word[+!config.notifDisabled])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            refreshMenu()
         }))
 
         // Add command to launch About modal
@@ -423,6 +421,8 @@
                       + ( msgs.appName || config.appName )
         menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
     }
+
+    function refreshMenu() { for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() }
 
     function launchAboutModal() {
 

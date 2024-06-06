@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.3.3
+// @version             2024.6.6
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -367,10 +367,8 @@
     // Add LISTENER to toggle switch/label/config/menu/auto-refresh
     navToggleDiv.addEventListener('click', () => {
         const toggleInput = document.querySelector('#arToggleInput')
-        toggleInput.checked = !toggleInput.checked
-        config.arDisabled = !toggleInput.checked
-        updateToggleHTML()
-        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        toggleInput.checked = !toggleInput.checked ; config.arDisabled = !toggleInput.checked
+        updateToggleHTML() ; refreshMenu()
         if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
             chatgpt.autoRefresh.activate(config.refreshInterval)
             if (!config.notifDisabled) notify(( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': ON')
@@ -417,9 +415,9 @@
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
-            if (!config.notifDisabled)
-                notify(( msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+!config.toggleHidden])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            if (!config.notifDisabled) notify((
+                msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+!config.toggleHidden])
+            refreshMenu()
         }))
 
         // Add command to show notifications when switching modes
@@ -429,7 +427,7 @@
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifDisabled', !config.notifDisabled)
             notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + state.word[+!config.notifDisabled])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            refreshMenu()
         }))
 
         // Add command to change refresh interval
@@ -446,7 +444,7 @@
                         chatgpt.autoRefresh.deactivate()
                         chatgpt.autoRefresh.activate(refreshInterval)
                     }
-                    for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+                    refreshMenu()
                     const minInterval = Math.max(2, config.refreshInterval - 10),
                           maxInterval = config.refreshInterval + 10
                     alert(( msgs.alert_intUpdated || 'Interval updated' ) + '!',
@@ -460,6 +458,8 @@
         const amLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ msgs.appName || config.appName }`
         menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
     }
+
+    function refreshMenu() { for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() }
 
     function launchAboutModal() {
 

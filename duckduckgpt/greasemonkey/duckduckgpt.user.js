@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.5.6
+// @version             2024.6.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -509,7 +509,7 @@
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
                 notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + state.word[+!config.streamingDisabled])
-                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+                refreshMenu()
         }}))
 
         // Add command to toggle auto-get mode
@@ -519,7 +519,7 @@
         menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
             saveSetting('autoGetDisabled', !config.autoGetDisabled)
             notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + state.word[+!config.autoGetDisabled])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            refreshMenu()
         }))
 
         // Add command to toggle auto-scroll (when streaming)
@@ -530,7 +530,7 @@
             menuIDs.push(GM_registerMenuCommand(assLabel, () => {
                 saveSetting('autoScroll', !config.autoScroll)
                 notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + state.word[+config.autoScroll])
-                for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+                refreshMenu()
             }))
         }
 
@@ -545,9 +545,8 @@
                 relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
             } catch (err) {}
             updateTweaksStyle() // toggle <pre> max-height
-            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
-                + state.word[+!config.rqDisabled])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + state.word[+!config.rqDisabled])
+            refreshMenu()
         }))
 
         // Add command to toggle prefix mode
@@ -560,7 +559,7 @@
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
             notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + state.word[+config.prefixEnabled])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            refreshMenu()
         }))
 
         // Add command to toggle suffix mode
@@ -573,7 +572,7 @@
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
             notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + state.word[+config.suffixEnabled])
-            for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+            refreshMenu()
         }))
 
         if (!isCentered && !isMobile) {
@@ -608,14 +607,15 @@
                         `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
                             + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
                         '', '', 330) // width
-                    for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-                    break
+                    refreshMenu() ; break
         }}}))
 
         // Add command to launch About modal
         const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ config.appName }`
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
+
+    function refreshMenu() { for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() }
 
     function launchAboutModal() {
 
@@ -979,8 +979,7 @@
     function toggleProxyMode() {
         saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
         notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+config.proxyAPIenabled])
-        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
-        location.reload() // re-send query using new endpoint
+        refreshMenu() ; location.reload() // re-send query using new endpoint
     }
 
     function toggleSidebar(mode) {
@@ -989,7 +988,7 @@
         if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg() ; else updateSSBsvg()
         notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
             + ' ' + state.word[+config[mode + 'Sidebar']])
-        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() // refresh menu
+        refreshMenu()
     }
 
     function toggleTooltip(event) { // visibility
