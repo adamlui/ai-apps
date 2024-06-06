@@ -241,6 +241,8 @@ const chatgpt = {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent); }
     },
 
+    getFooterDiv: function() { return document.querySelector('main form').parentNode.parentNode.nextElementSibling; },
+
     getNewChatButton: function() {
         for (const navBtnSVG of document.querySelectorAll('nav button svg'))
             if (navBtnSVG.querySelector('path[d*="M15.673 3.913a3.121"], ' // pencil-on-pad icon
