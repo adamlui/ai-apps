@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.6.4
+// @version             2024.6.6.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -709,7 +709,7 @@
             ], '', 527) // About modal width
 
         // Re-format buttons to include emoji + localized label + hide Dismiss button
-        for (const btn of document.getElementById(aboutAlertID).querySelectorAll('btn')) {
+        for (const btn of document.getElementById(aboutAlertID).querySelectorAll('button')) {
             if (/updates/i.test(btn.textContent)) btn.textContent = (
                 '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
             else if (/support/i.test(btn.textContent)) btn.textContent = (
