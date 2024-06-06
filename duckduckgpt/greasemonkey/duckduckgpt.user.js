@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.6.2
+// @version             2024.6.6.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -317,8 +317,8 @@
     // Stylize TOOLTIPs
     const tooltipDiv = document.createElement('div'),
           tooltipStyle = document.createElement('style')
-    tooltipDiv.classList.add('button-tooltip', 'no-user-select')
-    tooltipStyle.innerText = '.button-tooltip {'
+    tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
+    tooltipStyle.innerText = '.btn-tooltip {'
         + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 4px 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.87em ; color: white ;' // font style
         + 'position: absolute ;' // for updateTooltip() calcs
@@ -709,16 +709,16 @@
             ], '', 527) // About modal width
 
         // Re-format buttons to include emoji + localized label + hide Dismiss button
-        for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-            if (/updates/i.test(button.textContent)) button.textContent = (
+        for (const btn of document.getElementById(aboutAlertID).querySelectorAll('btn')) {
+            if (/updates/i.test(btn.textContent)) btn.textContent = (
                 '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
-            else if (/support/i.test(button.textContent)) button.textContent = (
+            else if (/support/i.test(btn.textContent)) btn.textContent = (
                 '🧠 ' + ( msgs.buttonLabel_getSupport || 'Get Support' ))
-            else if (/review/i.test(button.textContent)) button.textContent = (
+            else if (/review/i.test(btn.textContent)) btn.textContent = (
                 '⭐ ' + ( msgs.buttonLabel_leaveReview || 'Leave a Review' ))
-            else if (/apps/i.test(button.textContent)) button.textContent = (
+            else if (/apps/i.test(btn.textContent)) btn.textContent = (
                 '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
-            else button.style.display = 'none' // hide Dismiss button
+            else btn.style.display = 'none' // hide Dismiss button
         }
     }
 

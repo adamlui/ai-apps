@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi GPT-4o + Google Gemma!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.6.2
+// @version             2024.6.6.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -525,8 +525,8 @@
     // Stylize TOOLTIPs
     const tooltipDiv = document.createElement('div'),
           tooltipStyle = document.createElement('style')
-    tooltipDiv.classList.add('button-tooltip', 'no-user-select')
-    tooltipStyle.innerText = '.button-tooltip {'
+    tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
+    tooltipStyle.innerText = '.btn-tooltip {'
         + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
         + 'font-size: 0.75rem ; color: white ;' // font style
         + 'position: absolute ;' // for updateTooltip() calcs
