@@ -421,7 +421,7 @@
         tweaksStyle.innerText = (
             /chatgpt|openai/.test(site) ? (
                   ( inputSelector + ( // widen/narrow input to be flush w/ btns
-                        isGPT4oUI ? '{ margin-right: -86px }'
+                        isGPT4oUI ? '{ margin-right: -62px }'
                                   : `{ padding-right: ${ config.ncbDisabled ? 150 : 176 }px }` ))
                 + ( '[id$="-button"]:hover { opacity: 80% !important }' ) // dim chatbar btns on hover
                 + ( config.hiddenHeader ? hhStyle : '' ) // hide header
