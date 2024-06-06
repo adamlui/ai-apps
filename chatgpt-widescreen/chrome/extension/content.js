@@ -41,7 +41,9 @@
                           : site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]' : '',
           sidepadSelector = '#__next > div > div',
           headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : '',
-          footerSelector = /chatgpt|openai/.test(site) ? 'main form ~ div' : ''
+          footerSelector = /chatgpt|openai/.test(site) ?
+              chatgpt.getFooterDiv()?.classList.toString().split(' ').map(
+                  className => `.${className.replace(/([:[\]])/g, '\\$1')}`).join('') : ''
 
     // Save FULL-WINDOW + FULL SCREEN states
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : settings.load('fullWindow')
