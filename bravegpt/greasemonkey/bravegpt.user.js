@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.6
+// @version             2024.6.6.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -179,16 +179,16 @@ setTimeout(async () => {
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@33f2cb3/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@4d9a45e/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting('autoGetDisabled', 'autoScroll', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
-                'rqDisabled', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
+                'rqDisabled', 'scheme', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
 
     // Init UI flags
-    let scheme = isDarkMode() ? 'dark' : 'light'
+    let scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' )
     const isFirefox = chatgpt.browser.isFirefox(),
           isMobile = chatgpt.browser.isMobile()
 
@@ -318,12 +318,13 @@ setTimeout(async () => {
         getShowReply(msgChain)
     }
 
-    // Observe/listen for Brave Search + system SCHEME CHANGES to update BraveGPT logo/style scheme
+    // Observe/listen for Brave Search + system SCHEME CHANGES to update BraveGPT scheme if auto-scheme mode
     (new MutationObserver(handleSchemeChange)).observe( // class changes from Brave Search theme settings
         document.documentElement, { attributes: true, attributeFilter: ['class'] })
     window.matchMedia('(prefers-color-scheme: dark)') // window.matchMedia changes from browser/system settings
         .addEventListener('change', handleSchemeChange)
     function handleSchemeChange() {
+        if (config.scheme) return // since light/dark hard-set
         const newScheme = isDarkMode() ? 'dark' : 'light'
         if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() }
     }
@@ -463,12 +464,67 @@ setTimeout(async () => {
                     refreshMenu() ; break
         }}}))
 
+        // Add command to set color scheme
+        const schemeLabel = ( config.scheme == 'light' ? '☀️' :
+                              config.scheme == 'dark'  ? '🌘' : '🌗' ) + ' '
+                          + ( msgs.menuLabel_colorScheme || 'Color Scheme' ) + state.separator
+                          + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
+                              config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
+                                                       : msgs.menuLabel_auto || 'Auto' )
+        menuIDs.push(GM_registerMenuCommand(schemeLabel, launchSchemeModal))
+
         // Add command to launch About modal
         const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ config.appName }`
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
 
     function refreshMenu() { for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() }
+
+    function launchSchemeModal() {
+
+        // Show modal
+        const schemeAlertID = alert(`${
+            config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
+            [ // buttons
+                function auto() { updateScheme('auto') },
+                function light() { updateScheme('light') },
+                function dark() { updateScheme('dark') }
+        ])
+
+        // Center button cluster
+        const schemeModal = document.getElementById(schemeAlertID)
+        schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
+
+        // Re-format each button
+        for (const btn of schemeModal.querySelectorAll('button')) {
+            btn.classList = ( // emphasize active scheme
+                config.scheme == btn.textContent.toLowerCase() || (btn.textContent == 'Auto' && !config.scheme)
+                  ? 'primary-modal-btn' : '' )
+
+            // Prepend emoji + localize labels
+            if (/light/i.test(btn.textContent)) btn.textContent = (
+                '☀️ ' + ( msgs.scheme_light   || 'Light' ))
+            else if (/dark/i.test(btn.textContent)) btn.textContent = (
+                '🌘 ' + ( msgs.scheme_dark    || 'Dark' ))
+            else if (/auto/i.test(btn.textContent)) btn.textContent = (
+                '🌗 ' + ( msgs.menuLabel_auto || 'Auto' ))
+
+            else btn.style.display = 'none' // hide Dismiss button
+        }
+
+        function updateScheme(newScheme) {
+            scheme = newScheme == 'auto' ? ( isDarkMode() ? 'dark' : 'light' ) : newScheme
+            saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
+            updateAppLogoSrc() ; updateAppStyle() ; schemeNotify(newScheme) ; refreshMenu()
+        }
+
+        function schemeNotify(scheme) {
+            notify(` ${ msgs.menuLabel_colorScheme || 'Color Scheme' }: `
+                   + ( scheme == 'light' ? msgs.scheme_light   || 'Light' :
+                       scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
+                                         : msgs.menuLabel_auto || 'Auto' ).toUpperCase()
+        )}
+    }
 
     function launchAboutModal() {
 
@@ -725,7 +781,8 @@ setTimeout(async () => {
                   + 'background-color: black !important ; color: white }'
               + '.primary-modal-btn { background: white !important ; color: black !important }'
               + '.modal-close-btn { stroke: white ; fill: white }'
-              + '.chatgpt-modal a { color: #00cfff !important }' ) : '' )
+              + '.chatgpt-modal a { color: #00cfff !important }'
+              + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
           + ( // stylize scrollbars in Chromium/Safari
                 '.bravegpt *::-webkit-scrollbar { width: 7px }'
               + '.bravegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
