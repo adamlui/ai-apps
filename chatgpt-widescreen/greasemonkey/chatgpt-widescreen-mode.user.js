@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.3.3
+// @version             2024.6.6
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -816,8 +816,8 @@
 
     // Create/insert chatbar BUTTONS
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
-          bOffset = isGPT4oUI ? -1.3 : site == 'poe' ? -0.02 : 2,
-          rOffset = isGPT4oUI ? -0.65 : site == 'poe' ? -0.34 : 3.35
+          bOffset = isGPT4oUI ? -0.86 : site == 'poe' ? -0.02 : 2,
+          rOffset = isGPT4oUI ? -0.4 : site == 'poe' ? -0.34 : 3.35
     let btnColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
