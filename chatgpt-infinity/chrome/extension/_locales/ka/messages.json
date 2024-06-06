@@ -19,7 +19,7 @@
   "prompt_updateReplyInt": { "message": "განახლება პასუხის ინტერვალი (მინიმუმ 5 წამი)" },
   "alert_replyLangUpdated": { "message": "Ენა განახლებულია" },
   "alert_willReplyIn": { "message": "პასუხს გადაეცემა" },
-  "alert_yourSysLang": { "message": "სისტემური ენა?" },
+  "alert_yourSysLang": { "message": "სისტემური ენა" },
   "alert_replyTopicUpdated": { "message": "Თემა განახლდა" },
   "alert_willAnswer": { "message": "უპასუხებს კითხვებს" },
   "alert_onTopicOf": { "message": "თემაზე" },

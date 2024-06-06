@@ -47,7 +47,7 @@
   "alert_tooManyRequests": { "message": "ChatGPT ត្រូវបានជន់លិចដោយមានសំណើច្រើនពេក" },
   "alert_parseFailed": { "message": "បានបរាជ័យក្នុងការញែកចម្លើយ JSON" },
   "alert_checkCloudflare": { "message": "សូមឆ្លងកាត់ការត្រួតពិនិត្យសុវត្ថិភាព Cloudflare" },
-  "alert_notWorking": { "message": "អ្វីដែលមិនដំណើរការទៅបានល្អ?" },
+  "alert_notWorking": { "message": "អ្វីដែលមិនដំណើរការទៅបានល្អ" },
   "alert_ifIssuePersists": { "message": "ប្រសិនបើបញ្ហានៅតែបន្ត" },
   "alert_try": { "message": "សាកល្បង" },
   "alert_switchingOn": { "message": "កំពុងបើក" },

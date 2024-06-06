@@ -47,7 +47,7 @@
   "alert_tooManyRequests": { "message": "ChatGPT çok fazla istekle dolup taşıyor" },
   "alert_parseFailed": { "message": "Yanıt JSON'u ayrıştırılamadı" },
   "alert_checkCloudflare": { "message": "Lütfen Cloudflare güvenlik kontrolünden geçin" },
-  "alert_notWorking": { "message": "iNDS Çalışmıyor mu?" },
+  "alert_notWorking": { "message": "iNDS Çalışmıyor mu" },
   "alert_ifIssuePersists": { "message": "Sorun devam ederse" },
   "alert_try": { "message": "Try" },
   "alert_switchingOn": { "message": "Açma" },

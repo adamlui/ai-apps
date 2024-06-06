@@ -21,7 +21,7 @@
   "alert_willReplyIn": { "message": "จะตอบกลับใน" },
   "alert_yourSysLang": { "message": "ภาษาระบบของคุณ" },
   "alert_replyTopicUpdated": { "message": "หัวข้อที่ปรับปรุงล่าสุด" },
-  "alert_willAnswer": { "message": "เป็นคนตอบคำถาม?" },
+  "alert_willAnswer": { "message": "เป็นคนตอบคำถาม" },
   "alert_onTopicOf": { "message": "ในหัวข้อเรื่อง" },
   "alert_onAllTopics": { "message": "ในทุกหัวข้อ" },
   "alert_replyIntUpdated": { "message": "อัพเดทช่วงเวลาแล้ว" },
