@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.6.1
+// @version             2024.6.6.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -197,6 +197,7 @@
 // @grant               GM_openInTab
 // @grant               GM_getResourceText
 // @grant               GM.xmlHttpRequest
+// @noframes
 // @downloadURL         https://update.greasyfork.org/scripts/459849/duckduckgpt.user.js
 // @updateURL           https://update.greasyfork.org/scripts/459849/duckduckgpt.meta.js
 // @homepageURL         https://www.duckduckgpt.com
