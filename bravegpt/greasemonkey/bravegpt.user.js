@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.6.4
+// @version             2024.6.6.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -486,7 +486,7 @@ setTimeout(async () => {
     function launchSchemeModal() {
 
         // Show modal
-        const schemeAlertID = alert(`${
+        const schemeModalID = alert(`${
             config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
             [ // buttons
                 function auto() { updateScheme('auto') },
@@ -495,7 +495,7 @@ setTimeout(async () => {
         ], '', 503) // px width
 
         // Center button cluster
-        const schemeModal = document.getElementById(schemeAlertID)
+        const schemeModal = document.getElementById(schemeModalID)
         schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
 
         // Re-format each button
@@ -533,7 +533,7 @@ setTimeout(async () => {
 
         // Show modal
         const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
-        const aboutAlertID = alert(
+        const aboutModalID = alert(
             config.appName, // title
             '🏷️ ' + ( msgs.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
                 + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
@@ -546,7 +546,7 @@ setTimeout(async () => {
                 function checkForUpdates() { updateCheck() },
                 function getSupport() { safeWindowOpen(config.supportURL) },
                 function leaveAReview() {
-                    const reviewAlertID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a platform' ) + ':', '',
+                    const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(
                               config.greasyForkURL + '/feedback#post-discussion') },
                           function productHunt() { safeWindowOpen(
@@ -556,7 +556,7 @@ setTimeout(async () => {
                           function alternativeTo() { safeWindowOpen(
                               'https://alternativeto.net/software/bravegpt/about/') }],
                         '', 571) // Review modal width
-                    const reviewBtns = document.getElementById(reviewAlertID).querySelectorAll('button')
+                    const reviewBtns = document.getElementById(reviewModalID).querySelectorAll('button')
                     reviewBtns[0].style.display = 'none' // hide dismiss button
                     reviewBtns[1].textContent = ( // remove spaces from AlternativeTo label
                         reviewBtns[1].textContent.replace(/\s/g, '')) },
@@ -564,7 +564,7 @@ setTimeout(async () => {
             ], '', 577) // About modal width
 
         // Resize + format buttons to include emoji + localized label + hide Dismiss button
-        for (const btn of document.getElementById(aboutAlertID).querySelectorAll('button')) {
+        for (const btn of document.getElementById(aboutModalID).querySelectorAll('button')) {
             btn.style.height = '53px' // re-size to fit meaty text content
             if (/updates/i.test(btn.textContent)) btn.textContent = (
                 '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
@@ -596,7 +596,7 @@ setTimeout(async () => {
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateAlertID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                        const updateModalID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             `${ msgs.alert_newerVer || 'An update to' } ${ config.appName } `
                                 + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.93rem" '
@@ -612,7 +612,7 @@ setTimeout(async () => {
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
-                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
+                            const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
                             updateBtns[1].textContent = msgs.buttonLabel_update || 'Update'
                             updateBtns[0].textContent = msgs.buttonLabel_dismiss || 'Dismiss'

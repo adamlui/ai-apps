@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.6.4
+// @version             2024.6.6.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -729,7 +729,7 @@
     function launchSchemeModal() {
 
         // Show modal
-        const schemeAlertID = alert(`${
+        const schemeModalID = alert(`${
             config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
             [ // buttons
                 function auto() { updateScheme('auto') },
@@ -738,7 +738,7 @@
         ])
 
         // Center button cluster
-        const schemeModal = document.getElementById(schemeAlertID)
+        const schemeModal = document.getElementById(schemeModalID)
         schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
 
         // Re-format each button
@@ -776,7 +776,7 @@
 
         // Show alert
         const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
-        const aboutAlertID = alert(
+        const aboutModalID = alert(
             config.appName, // title
             '🏷️ ' + ( msgs.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
                 + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
@@ -794,8 +794,8 @@
             ], '', 515) // About modal width
 
         // Resize + format buttons to include emoji + localized label + hide Dismiss button
-        for (const btn of document.getElementById(aboutAlertID).querySelectorAll('button')) {
-            btn.style.height = '50px' ; // re-size to fit meaty text content
+        for (const btn of document.getElementById(aboutModalID).querySelectorAll('button')) {
+            btn.style.height = '50px' // re-size to fit meaty text content
             if (/updates/i.test(btn.textContent)) btn.textContent = (
                 '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
             else if (/support/i.test(btn.textContent)) btn.textContent = (
@@ -826,7 +826,7 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateAlertID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                        const updateModalID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             ( msgs.alert_newerVer || 'An update to' ) + ` ${ config.appName } `
                                 + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.97rem" '
@@ -842,7 +842,7 @@
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
-                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
+                            const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
                             updateBtns[1].textContent = msgs.buttonLabel_update || 'Update'
                             updateBtns[0].textContent = msgs.buttonLabel_dismiss || 'Dismiss'

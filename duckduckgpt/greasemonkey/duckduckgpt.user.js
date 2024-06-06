@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.6.6
+// @version             2024.6.6.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -631,7 +631,7 @@
     function launchSchemeModal() {
 
         // Show modal
-        const schemeAlertID = alert(`${
+        const schemeModalID = alert(`${
             config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
             [ // buttons
                 function auto() { updateScheme('auto') },
@@ -640,7 +640,7 @@
         ])
 
         // Center button cluster
-        const schemeModal = document.getElementById(schemeAlertID)
+        const schemeModal = document.getElementById(schemeModalID)
         schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
 
         // Re-format each button
@@ -678,7 +678,7 @@
 
         // Show alert
         const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
-        const aboutAlertID = alert(
+        const aboutModalID = alert(
             config.appName, // title
             '🏷️ ' + ( msgs.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
                 + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
@@ -691,7 +691,7 @@
                 function checkForUpdates() { updateCheck() },
                 function getSupport() { safeWindowOpen(config.supportURL) },
                 function leaveAReview() {
-                    const reviewAlertID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a platform' ) + ':', '',
+                    const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(
                               config.greasyForkURL + '/feedback#post-discussion') },
                           function productHunt() { safeWindowOpen(
@@ -701,7 +701,7 @@
                           function alternativeTo() { safeWindowOpen(
                               'https://alternativeto.net/software/duckduckgpt/about/') }
                         ], '', 523) // Review modal width
-                    const reviewBtns = document.getElementById(reviewAlertID).querySelectorAll('button')
+                    const reviewBtns = document.getElementById(reviewModalID).querySelectorAll('button')
                     reviewBtns[0].style.display = 'none' // hide Dismiss button
                     reviewBtns[1].textContent = ( // remove spaces from AlternativeTo label
                         reviewBtns[1].textContent.replace(/\s/g, '')) },
@@ -709,7 +709,7 @@
             ], '', 527) // About modal width
 
         // Resize/format buttons to include emoji + localized label + hide Dismiss button
-        for (const btn of document.getElementById(aboutAlertID).querySelectorAll('button')) {
+        for (const btn of document.getElementById(aboutModalID).querySelectorAll('button')) {
             btn.style.height = '52px' // re-size to fit meaty text content
             if (/updates/i.test(btn.textContent)) btn.textContent = (
                 '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
@@ -741,7 +741,7 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateAlertID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                        const updateModalID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             `${ msgs.alert_newerVer || 'An update to' } ${ config.appName } `
                                 + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 1.1rem" '
@@ -757,7 +757,7 @@
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
-                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
+                            const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
                             updateBtns[1].textContent = msgs.buttonLabel_update || 'Update'
                             updateBtns[0].textContent = msgs.buttonLabel_dismiss || 'Dismiss'
