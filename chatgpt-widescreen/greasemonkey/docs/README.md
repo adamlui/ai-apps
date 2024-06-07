@@ -16,7 +16,7 @@
 
 <br>
 
-<a href="https://greasyfork.chatgptwidescreen.com"><img height=45 title="Install this script" src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#-installation"><img title="How to install" height=45 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg?latest"></a>
+<a href="https://greasyfork.chatgptwidescreen.com"><img height=45 alt="Install this script" src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#-installation"><img height=45 alt="How to install" title="How to install" src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg?latest"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
 [Review](https://greasyfork.chatgptwidescreen.com/feedback#post-discussion) / 
@@ -118,7 +118,7 @@ ChatGPT Widescreen Mode is compatible w/ the following browsers (via [Tampermonk
 
 <br>
 
-<a href="https://greasyfork.chatgptwidescreen.com"><img height=42 title="Install this script" src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#-installation"><img title="How to install" height=42 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg?latest"></a>
+<a href="https://greasyfork.chatgptwidescreen.com"><img alt="Install this script" height=42 src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/install-button.svg?latest"></a><a href="#-installation"><img height=42 alt="How to install" title="How to install" src="https://media.chatgptwidescreen.com/images/buttons/greasy-fork/help-button.svg?latest"></a>
 <br>
 [Discuss](https://chatgptwidescreen.com/discuss) / 
 [Leave a review](https://greasyfork.chatgptwidescreen.com/feedback#post-discussion) / 
@@ -177,7 +177,7 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://docs.chatgptautorefresh.com/#readme) /
 [Discuss](https://github.chatgptautorefresh.com/discussions)
 
-### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png?latest" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
+### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png?latest" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 > Display ChatGPT answers in Brave Search sidebar.
 <br>[Install](https://docs.bravegpt.com/#-installation) /
 [Readme](https://docs.bravegpt.com/#readme) /
