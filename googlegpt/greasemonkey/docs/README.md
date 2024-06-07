@@ -186,14 +186,14 @@ For even more epic ChatGPT apps, visit: https://github.com/adamlui/chatgpt-apps
 [Readme](https://docs.chatgptinfinity.com/#readme) / 
 [Discuss](https://github.chatgptinfinity.com/discussions)
 
-### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png?latest" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png?latest" width=18> [BraveGPT](https://bravegpt.com) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" width="112" height="24" /></a>
 
 > Bring the magic of ChatGPT to Brave Search (powered by GPT-4o!)
 <br>[Install](https://docs.bravegpt.com/#-installation) /
 [Readme](https://docs.bravegpt.com/#readme) /
 [Discuss](https://github.bravegpt.com/discussions)
 
-### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?latest" width=17> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
+### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?latest" width=17> [DuckDuckGPT](https://duckduckgpt.com) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" width="112" height="24" /></a>
 
 > Bring the magic of ChatGPT to DuckDuckGo (powered by GPT-4o!)
 <br>[Install](https://docs.ddgpt.com/#-installation) /
