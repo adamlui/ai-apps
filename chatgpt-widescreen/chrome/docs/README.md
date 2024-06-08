@@ -5,16 +5,16 @@
 <div align="center">
 
 ![](https://img.shields.io/badge/Users-3,000+-blue?logo=icinga&logoColor=white&labelColor=464646&style=for-the-badge)
-[![Chrome reviews](https://img.shields.io/chrome-web-store/stars/jgnjpnmofkalfliddjelaciggjgnphgm?logo=googlechrome&logoColor=white&labelColor=464646&color=51a557&label=Rating&style=for-the-badge)](https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews)
-[![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
-[![GitHub commits](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.chatgptwidescreen.com/commits)
-[![CodeFactor grade](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
-[![Powered by chatgpt.js](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_widescreen&utm_content=github_shield)
-[![SonarCloud vulnerabilities](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-widescreen%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Vulnerabilities&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-widescreen)
-[![Featured by Google](https://img.shields.io/badge/Featured_by-Google-51a557?logo=googlechrome&logoColor=white&labelColor=464646&style=for-the-badge)](https://chrome.chatgptwidescreen.com)
-[![Mentioned in Awesome](https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
+[![\[Chrome reviews\]](https://img.shields.io/chrome-web-store/stars/jgnjpnmofkalfliddjelaciggjgnphgm?logo=googlechrome&logoColor=white&labelColor=464646&color=51a557&label=Rating&style=for-the-badge)](https://chromewebstore.google.com/detail/chatgpt-widescreen-mode/jgnjpnmofkalfliddjelaciggjgnphgm/reviews)
+[![\[License: MIT\]](https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](../LICENSE.md)
+[![\[GitHub commits\]](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-widescreen?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.chatgptwidescreen.com/commits)
+[![\[CodeFactor grade\]](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-widescreen?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-widescreen)
+[![\[Powered by chatgpt.js\]](https://img.shields.io/badge/Powered_by-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_widescreen&utm_content=github_shield)
+[![\[SonarCloud vulnerabilities\]](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-widescreen%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=Vulnerabilities&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-widescreen)
+[![\[Featured by Google\]](https://img.shields.io/badge/Featured_by-Google-51a557?logo=googlechrome&logoColor=white&labelColor=464646&style=for-the-badge)](https://chrome.chatgptwidescreen.com)
+[![\[Mentioned in Awesome\]](https://img.shields.io/badge/Mentioned_in-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
 <a href="https://www.jsdelivr.com/package/gh/adamlui/chatgpt-widescreen?tab=stats"><img alt="jsDelivr stats" src="https://img.shields.io/jsdelivr/gh/hm/adamlui/chatgpt-widescreen?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20Requests&labelColor=464646&color=2bbbd8"></a>
-[![www.chatgptwidescreen.com](https://img.shields.io/badge/web-www.chatgptwidescreen.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptwidescreen.com?utm_source=chatgpt_widescreen&utm_content=github_shield)
+[![\[www.chatgptwidescreen.com\]](https://img.shields.io/badge/web-www.chatgptwidescreen.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptwidescreen.com?utm_source=chatgpt_widescreen&utm_content=github_shield)
  
 <br>
 
@@ -76,8 +76,8 @@
 
 *NOTE: Since full-window mode hides the sidebar, press '+' to start new chats*
 
-![image](https://media.chatgptwidescreen.com/images/screenshots/chrome-extension-pin-instructions.png)
-![image](https://media.chatgptwidescreen.com/images/screenshots/chrome-extension-menu.png)
+![\[image\]](https://media.chatgptwidescreen.com/images/screenshots/chrome-extension-pin-instructions.png)
+![\[image\]](https://media.chatgptwidescreen.com/images/screenshots/chrome-extension-menu.png)
 
 *Pro tip: For easier access to extension toggles, (1) click <img height=12 width=12 src="https://media.chatgptwidescreen.com/images/icons/toolbar/chrome-puzzle-piece/gray.png?latest"> in the browser's toolbar, (2) then <img height=12 width=12 src="https://media.chatgptwidescreen.com/images/icons/toolbar/push-pin/blue.png?latest"> next to extension name.*
 
