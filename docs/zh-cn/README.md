@@ -11,15 +11,15 @@
 
 # 🤖 ChatGPT 应用程序 &nbsp;[![](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=检查这些%20ChatGPT%20应用程序%21&url=https://github.com/adamlui/chatgpt-addons&hashtags=greasemonkey,userscript,javascript,ai)
 
-![](https://img.shields.io/badge/用户-150,000+-44cc11?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
-[![\[GitHub 星星\]](https://img.shields.io/github/stars/adamlui/chatgpt-apps?label=星星&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/stargazers)
-[![\[许可证: MIT\]](https://img.shields.io/badge/许可证-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=&labelColor=464646&style=for-the-badge)](LICENSE.md)
-[![\[GitHub 提交\]](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=提交&logo=github&logoColor=white&labelColor=464646&color=blue&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits)
+![](https://img.shields.io/badge/%E7%94%A8%E6%88%B7-150,000+-44cc11?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
+[![\[GitHub 星星\]](https://img.shields.io/github/stars/adamlui/chatgpt-apps?label=%E6%98%9F%E6%98%9F&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/stargazers)
+[![\[许可证: MIT\]](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=&labelColor=464646&style=for-the-badge)](LICENSE.md)
+[![\[GitHub 提交\]](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-apps?label=%E6%8F%90%E4%BA%A4&logo=github&logoColor=white&labelColor=464646&color=blue&style=for-the-badge)](https://github.com/adamlui/chatgpt-apps/commits)
 ![](https://img.shields.io/badge/%E5%85%8B%E9%9A%86-7.6K/%E6%9C%88-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge)
-[![\[CodeFactor 等级\]](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=代码质量&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
-[![\[SonarCloud 漏洞\]](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-apps%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=漏洞&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-apps)
-[![\[供电 chatgpt.js\]](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_apps&utm_content=github_shield)
-<img src="https://img.shields.io/badge/jsDelivr_请求-850,000+/month-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge">
+[![\[CodeFactor 等级\]](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-apps?label=%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F&logo=codacy&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-apps)
+[![\[SonarCloud 漏洞\]](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-apps%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=%E6%BC%8F%E6%B4%9E&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-apps)
+[![\[供电 chatgpt.js\]](https://img.shields.io/badge/%E4%BE%9B%E7%94%B5-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_apps&utm_content=github_shield)
+<img src="https://img.shields.io/badge/jsDelivr_%E8%AF%B7%E6%B1%82-850,000+/month-2bbbd8.svg?logo=jsdelivr&logoColor=white&labelColor=464646&style=for-the-badge">
 
 利用 ChatGPT 惊人的 AI 或增强其 UX 的应用程序。
 

@@ -15,19 +15,19 @@
 
 <div align="center">
 
-![](https://img.shields.io/badge/用户-80,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
-[![\[GitHub 星星\]](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=星星&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.chatgptinfinity.com/stargazers)
-[![\[Microsoft Edge\]](https://img.shields.io/badge/dynamic/json?logo=microsoftedge&logoColor=white&labelColor=464646&color=7bfce9&label=评分&suffix=/5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fjgonecnbmehicpdpjkdekamhmlebfagb&style=for-the-badge)](https://edge.chatgptinfinity.com)
-[![\[许可证: MIT\]](https://img.shields.io/badge/许可证-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
-[![\[GitHub 提交\]](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=提交&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.chatgptinfinity.com/commits)
+![](https://img.shields.io/badge/%E7%94%A8%E6%88%B7-80,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
+[![\[GitHub 星星\]](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=%E6%98%9F%E6%98%9F&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.chatgptinfinity.com/stargazers)
+[![\[Microsoft Edge\]](https://img.shields.io/badge/dynamic/json?logo=microsoftedge&logoColor=white&labelColor=464646&color=7bfce9&label=%E8%AF%84%E5%88%86&suffix=/5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fjgonecnbmehicpdpjkdekamhmlebfagb&style=for-the-badge)](https://edge.chatgptinfinity.com)
+[![\[许可证: MIT\]](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
+[![\[GitHub 提交\]](https://img.shields.io/github/commit-activity/m/adamlui/chatgpt-infinity?label=%E6%8F%90%E4%BA%A4&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge)](https://github.chatgptinfinity.com/commits)
 ![](https://img.shields.io/badge/%E5%85%8B%E9%9A%86-2.1K/%E6%9C%88-869da0?logo=github&logoColor=white&labelColor=464646&style=for-the-badge)
-[![\[CodeFactor 等级\]](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=代码质量&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)
-[![\[供电 chatgpt.js\]](https://img.shields.io/badge/供电-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_infinity&utm_content=github_shield)
-[![\[SonarCloud 漏洞\]](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-infinity%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=漏洞&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-infinity)
-[![\[由 Google 推荐\]](https://img.shields.io/badge/精选者-Google-51a557?logo=googlechrome&logoColor=white&labelColor=464646&style=for-the-badge)](https://chrome.chatgptinfinity.com)
-[![\[在 Awesome 中提及\]](https://img.shields.io/badge/提及于-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
-<a href="https://www.jsdelivr.com/package/gh/adamlui/chatgpt-infinity?tab=stats"><img height=31 alt="[jsDelivr 统计数据]" src="https://img.shields.io/jsdelivr/gh/hm/adamlui/chatgpt-infinity?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20请求&labelColor=464646&color=2bbbd8"></a>
-[![\[www.chatgptinfinity.com\]](https://img.shields.io/badge/网站-www.chatgptinfinity.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptinfinity.com?utm_source=chatgpt_infinity&utm_content=github_shield)
+[![\[CodeFactor 等级\]](https://img.shields.io/codefactor/grade/github/adamlui/chatgpt-infinity?label=%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge)](https://www.codefactor.io/repository/github/adamlui/chatgpt-infinity)
+[![\[供电 chatgpt.js\]](https://img.shields.io/badge/%E4%BE%9B%E7%94%B5-chatgpt.js-black?logo=gamejolt&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/KudoAI/chatgpt.js?utm_source=chatgpt_infinity&utm_content=github_shield)
+[![\[SonarCloud 漏洞\]](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fsonarcloud.io%2Fapi%2Fmeasures%2Fcomponent%3Fcomponent%3Dadamlui_chatgpt-infinity%26metricKeys%3Dvulnerabilities&query=%24.component.measures.0.value&style=for-the-badge&logo=sonarcloud&logoColor=white&labelColor=464646&label=%E6%BC%8F%E6%B4%9E&color=gold)](https://sonarcloud.io/component_measures?metric=new_vulnerabilities&id=adamlui_chatgpt-infinity)
+[![\[由 Google 推荐\]](https://img.shields.io/badge/%E7%B2%BE%E9%80%89%E8%80%85-Google-51a557?logo=googlechrome&logoColor=white&labelColor=464646&style=for-the-badge)](https://chrome.chatgptinfinity.com)
+[![\[在 Awesome 中提及\]](https://img.shields.io/badge/%E6%8F%90%E5%8F%8A%E4%BA%8E-Awesome-fc7bb7?logo=awesomelists&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.com/awesome-scripts/awesome-userscripts#chatgpt)
+<a href="https://www.jsdelivr.com/package/gh/adamlui/chatgpt-infinity?tab=stats"><img alt="[jsDelivr 统计数据]" src="https://img.shields.io/jsdelivr/gh/hm/adamlui/chatgpt-infinity?style=for-the-badge&logo=jsdelivr&logoColor=white&label=jsDelivr%20%E8%AF%B7%E6%B1%82&labelColor=464646&color=2bbbd8"></a>
+[![\[www.chatgptinfinity.com\]](https://img.shields.io/badge/%E7%BD%91%E7%AB%99-www.chatgptinfinity.com-lightgrey?logo=dribbble&logoColor=white&labelColor=464646&style=for-the-badge)](https://chatgptinfinity.com?utm_source=chatgpt_infinity&utm_content=github_shield)
 
 <br>
 
