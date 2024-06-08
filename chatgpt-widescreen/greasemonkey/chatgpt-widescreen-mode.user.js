@@ -535,7 +535,7 @@
         else if (site == 'poe') { // left-align attach file button
             const attachFileBtn = chatbar.querySelector('button[class*="File"]')
             attachFileBtn.style.cssText = 'position: absolute ; left: 1rem ; bottom: 0.35rem'
-            document.querySelector(inputSelector).style.paddingLeft = '2.35rem' // to accommodate new btn pos
+            document.querySelector(inputSelector).style.paddingLeft = '2.35rem' // to accomodate new btn pos
         }
 
         // Insert buttons
