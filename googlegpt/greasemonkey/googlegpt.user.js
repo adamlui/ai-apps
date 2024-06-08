@@ -159,7 +159,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-Google Search (kuphathwa yi Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.8.1
+// @version             2024.6.8.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -898,12 +898,12 @@
 
             // Create/fill/append msg span
             const msgSpan = document.createElement('span')
-            msgSpan.innerHTML = msg ; alertP.appendChild(msgSpan)
+            msgSpan.innerHTML = msg ; alertP.append(msgSpan)
 
             // Activate toggle link if necessary
             msgSpan.querySelector('.proxyToggle')?.addEventListener('click', toggleProxyMode)
         })
-        appDiv.appendChild(alertP)
+        appDiv.append(alertP)
     }
 
     function consoleInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ msg }`) }

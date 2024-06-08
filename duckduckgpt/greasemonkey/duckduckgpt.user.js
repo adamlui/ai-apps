@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.8.1
+// @version             2024.6.8.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -812,12 +812,12 @@
 
             // Create/fill/append msg span
             const msgSpan = document.createElement('span')
-            msgSpan.innerHTML = msg ; alertP.appendChild(msgSpan)
+            msgSpan.innerHTML = msg ; alertP.append(msgSpan)
 
             // Activate toggle link if necessary
             msgSpan.querySelector('.proxyToggle')?.addEventListener('click', toggleProxyMode)
         })
-        appDiv.appendChild(alertP)
+        appDiv.append(alertP)
     }
 
     function consoleInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ msg }`) }
