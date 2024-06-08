@@ -9,7 +9,7 @@
 
 <br>
 
-<a href="https://greasyfork.googlegpt.io"><img height=31 alt="Greasy Fork""https://img.shields.io/badge/Users-40,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
+<a href="https://greasyfork.googlegpt.io"><img height=31 alt="Greasy Fork" "https://img.shields.io/badge/Users-40,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.googlegpt.io/blob/main/LICENSE.md"><img height=31 alt="License: MIT" src="https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge"></a>
 <a href="https://github.googlegpt.io/commits/main"><img height=31 alt="GitHub commits" src="https://img.shields.io/github/commit-activity/m/KudoAI/googlegpt?label=Commits&logo=github&logoColor=white&labelColor=464646&color=7bb7fc&style=for-the-badge"></a>
 <a href="https://www.codefactor.io/repository/github/KudoAI/googlegpt"><img height=31 alt="CodeFactor grade" src="https://img.shields.io/codefactor/grade/github/KudoAI/googlegpt?label=Code+Quality&logo=codefactor&logoColor=white&labelColor=464646&color=b5fc7b&style=for-the-badge"></a>
