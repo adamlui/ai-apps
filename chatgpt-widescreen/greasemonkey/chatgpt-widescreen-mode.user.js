@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.6.6
+// @version             2024.6.8
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -407,7 +407,7 @@
               pStyle = 'position: relative ; left: 3px',
               pBrStyle = 'position: relative ; left: 4px ',
               aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
-        const aboutAlertID = alert(
+        const aboutModalID = alert(
             msgs.appName || config.appName, // title
             `<span style="${ headingStyle }"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
@@ -421,20 +421,20 @@
                 function checkForUpdates() { updateCheck() },
                 function getSupport() { safeWindowOpen(config.supportURL) },
                 function leaveAReview() { // show new modal
-                    const reviewAlertID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
+                    const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a Platform' ) + ':', '',
                         [ function greasyFork() { safeWindowOpen(config.greasyForkURL + '/feedback#post-discussion') },
                           function productHunt() { safeWindowOpen(
                               'https://www.producthunt.com/products/chatgpt-widescreen-mode/reviews/new') },
                           function futurepedia() { safeWindowOpen(
                               'https://www.futurepedia.io/tool/chatgpt-widescreen-mode#chatgpt-widescreen-mode-review') }])
-                    document.getElementById(reviewAlertID).querySelector('button')
+                    document.getElementById(reviewModalID).querySelector('button')
                         .style.display = 'none' }, // hide dismiss button
                 function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
             ], '', 478 // set width
         )
 
         // Re-format buttons to include emoji + localized label + hide Dismiss button
-        for (const button of document.getElementById(aboutAlertID).querySelectorAll('button')) {
+        for (const button of document.getElementById(aboutModalID).querySelectorAll('button')) {
             if (/updates/i.test(button.textContent)) button.textContent = (
                 '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
             else if (/support/i.test(button.textContent)) button.textContent = (
@@ -465,7 +465,7 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateAlertID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                        const updateModalID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             ( msgs.alert_newerVer || 'An update to' ) + ' ' // msg
                                 + ( msgs.appName || config.appName ) + ' '
                                 + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
@@ -481,7 +481,7 @@
 
                         // Localize button labels if needed
                         if (!config.userLanguage.startsWith('en')) {
-                            const updateAlert = document.querySelector(`[id="${ updateAlertID }"]`),
+                            const updateAlert = document.querySelector(`[id="${ updateModalID }"]`),
                                   updateBtns = updateAlert.querySelectorAll('button')
                             updateBtns[1].textContent = msgs.buttonLabel_update || 'Update'
                             updateBtns[0].textContent = msgs.buttonLabel_dismiss || 'Dismiss'
@@ -490,7 +490,7 @@
                         return
                 }}
 
-                // Alert to no update, return to About alert
+                // Alert to no update, return to About modal
                 alert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
                     `${ msgs.appName || config.appName } (v${ currentVer }) ` // msg
                         + ( msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
