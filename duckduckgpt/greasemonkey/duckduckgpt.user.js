@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.8.4
+// @version             2024.6.8.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1166,7 +1166,7 @@
             else if (resp.status == 403)
                 appAlert(config.proxyAPIenabled ? ['proxyNotWorking', 'suggestOpenAI'] : 'checkCloudflare')
             else if (resp.status == 429)
-                appAlert('tooManyRequests')
+                appAlert(['tooManyRequests', config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy'])
             else // uncommon status
                 appAlert(`${ config.proxyAPIenabled ? 'proxyN' : 'openAIn' }otWorking`,
                          `suggest${ config.proxyAPIenabled ? 'OpenAI' : 'Proxy' }`)
