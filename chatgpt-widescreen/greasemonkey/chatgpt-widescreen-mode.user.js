@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.8
+// @version             2024.6.8.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -407,7 +407,7 @@
               pStyle = 'position: relative ; left: 3px',
               pBrStyle = 'position: relative ; left: 4px ',
               aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
-        const aboutModalID = alert(
+        const aboutModalID = siteAlert(
             msgs.appName || config.appName, // title
             `<span style="${ headingStyle }"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
@@ -465,7 +465,7 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateModalID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                        const updateModalID = siteAlert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             ( msgs.alert_newerVer || 'An update to' ) + ' ' // msg
                                 + ( msgs.appName || config.appName ) + ' '
                                 + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
@@ -491,7 +491,7 @@
                 }}
 
                 // Alert to no update, return to About modal
-                alert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
+                siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
                     `${ msgs.appName || config.appName } (v${ currentVer }) ` // msg
                         + ( msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
                     '', '', updateAlertWidth
@@ -506,7 +506,7 @@
             shadow || chatgpt.isDarkMode() ? '' : 'shadow')
     }
 
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     // Define BUTTON functions
@@ -652,7 +652,7 @@
             else if (site == 'poe') syncMode('fullWindow') // since not sidebarObserve()'d
         } else if (mode == 'fullScreen') {
             if (config.f11)
-                alert(msgs.alert_pressF11 || 'Press F11 to exit full screen',
+                siteAlert(msgs.alert_pressF11 || 'Press F11 to exit full screen',
                     ( msgs.alert_f11reason || 'F11 was used to enter full screen, and due to browser security reasons,'
                         + 'the same key must be used to exit it' ) + '.')
             document.exitFullscreen().catch(err => console.error(config.appSymbol + ' » Failed to exit fullscreen', err))

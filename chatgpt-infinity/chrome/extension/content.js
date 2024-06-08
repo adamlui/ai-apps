@@ -14,7 +14,7 @@
     chrome.runtime.onMessage.addListener(request => {
         fromMsg = true
         if (request.action == 'notify') notify(request.msg, request.position)
-        else if (request.action == 'alert') alert(request.title, request.msg, request.btns)
+        else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
         else if (request.action == 'updateToggleHTML') updateToggleHTML()
         else if (request.action == 'clickToggle') document.querySelector('#infToggleLabel').click()        
         else if (typeof window[request.action] == 'function') {
@@ -25,7 +25,7 @@
         return true
     })
 
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     // Selectively DISABLE content or user script
@@ -116,7 +116,7 @@
 
     alertToUpdate = version => { // eslint-disable-line no-undef
         if (version) {
-            alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
+            siteAlert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
                 chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
                     + ' v' + version.toString() + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
                     + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
@@ -125,7 +125,7 @@
                 function reloadChrome() { chrome.runtime.reload() } // update button
             )
         } else {
-            alert(chrome.i18n.getMessage('alert_upToDate') + '!',
+            siteAlert(chrome.i18n.getMessage('alert_upToDate') + '!',
                 chrome.i18n.getMessage('appName') + ' v' + chrome.runtime.getManifest().version
                     + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!')
     }}

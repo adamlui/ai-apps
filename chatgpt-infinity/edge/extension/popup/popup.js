@@ -94,7 +94,7 @@
                     : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                 settings.save('replyLanguage', replyLanguage || config.userLanguage)
                 window.close() // popup
-                alert(chrome.i18n.getMessage('alert_replyLangUpdated') + '!',
+                siteAlert(chrome.i18n.getMessage('alert_replyLangUpdated') + '!',
                     chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyIn') + ' '
                     + ( replyLanguage || chrome.i18n.getMessage('alert_yourSysLang') ) + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, tabs => { // check active tab
@@ -112,7 +112,7 @@
             const str_replyTopic = replyTopic.toString()
             settings.save('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
             window.close() // popup
-            alert(chrome.i18n.getMessage('alert_replyTopicUpdated') + '!',
+            siteAlert(chrome.i18n.getMessage('alert_replyTopicUpdated') + '!',
                 chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willAnswer') + ' '
                     + ( !replyTopic || re_all.test(str_replyTopic) ? chrome.i18n.getMessage('alert_onAllTopics')
                                                                    : chrome.i18n.getMessage('alert_onTopicOf')
@@ -131,7 +131,7 @@
             else if (!isNaN(parseInt(replyInterval, 10)) && parseInt(replyInterval, 10) > 4) { // valid int set
                 settings.save('replyInterval', parseInt(replyInterval, 10))
                 window.close() // popup
-                alert(chrome.i18n.getMessage('alert_replyIntUpdated') + '!',
+                siteAlert(chrome.i18n.getMessage('alert_replyIntUpdated') + '!',
                     chrome.i18n.getMessage('appName') + ' ' + chrome.i18n.getMessage('alert_willReplyEvery')
                     + ' ' + replyInterval + ' ' + chrome.i18n.getMessage('unit_seconds') + '.')
                 chrome.tabs.query({ active: true, currentWindow: true }, tabs => { // check active tab
@@ -179,7 +179,7 @@
                 action: 'notify', msg: msg, position: position || 'bottom-right' })
     })}
 
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'alert', title: title, msg: msg, btns: btns, checkbox: checkbox, width: width

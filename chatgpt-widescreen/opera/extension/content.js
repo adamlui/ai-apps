@@ -15,7 +15,7 @@
     // Add CHROME MSG listener
     chrome.runtime.onMessage.addListener(request => {
         if (request.action == 'notify') notify(request.msg, request.position)
-        else if (request.action == 'alert') alert(request.title, request.msg, request.btns)
+        else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
         else if (typeof window[request.action] == 'function') {
             const args = Array.isArray(request.args) ? request.args // preserve array if supplied
                        : request.args != undefined ? [request.args] : [] // convert to array if single or no arg
@@ -24,7 +24,7 @@
         return true
     })
 
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     // Selectively DISABLE content or user script
@@ -204,7 +204,7 @@
 
     alertToUpdate = version => { // eslint-disable-line no-undef
         if (version) {
-            alert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
+            siteAlert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
                 chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
                     + ' v' + version + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
                     + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
@@ -213,7 +213,7 @@
                 function reloadChrome() { chrome.runtime.reload() } // update button
             )
         } else {
-            alert(chrome.i18n.getMessage('alert_upToDate') + '!',
+            siteAlert(chrome.i18n.getMessage('alert_upToDate') + '!',
                 chrome.i18n.getMessage('appName') + ' v' + chrome.runtime.getManifest().version
                     + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!' )
     }}
@@ -374,7 +374,7 @@
             else if (site == 'poe') syncMode('fullWindow') // since not sidebarObserve()'d
         } else if (mode == 'fullScreen') {
             if (config.f11)
-                alert(chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
+                siteAlert(chrome.i18n.getMessage('alert_pressF11'), chrome.i18n.getMessage('alert_f11reason') + '.')
             document.exitFullscreen().catch(err => console.error(config.appSymbol + ' » Failed to exit fullscreen', err))
         }
     }

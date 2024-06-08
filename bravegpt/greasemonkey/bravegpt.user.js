@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.8.4
+// @version             2024.6.8.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -354,7 +354,7 @@ setTimeout(async () => {
                        + state.separator + state.word[+stmState]
         menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
             if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
-                alert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                       `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.lert_isOnlyAvailFor || 'is only available for' }`
                           + ' <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a>.'
                           + ` (${ msgs.alert_userscriptMgrNoStream ||
@@ -367,7 +367,7 @@ setTimeout(async () => {
                         + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
                 const switchPhrase = msgs.alert_switchingOn || 'switching on'
                 msg = msg.replace(switchPhrase, `<a href="#" class="proxyToggle">${switchPhrase}</a>`)
-                alert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                     msg, '', '', 575) // px width
                 document.querySelector('.proxyToggle')?.addEventListener('click', toggleProxyMode)
             } else { // functional toggle
@@ -461,7 +461,7 @@ setTimeout(async () => {
                         [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
                           : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                    alert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
+                    siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
                         `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
                             + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.')
                     refreshMenu() ; break
@@ -486,7 +486,7 @@ setTimeout(async () => {
     function launchSchemeModal() {
 
         // Show modal
-        const schemeModalID = alert(`${
+        const schemeModalID = siteAlert(`${
             config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
             [ // buttons
                 function auto() { updateScheme('auto') },
@@ -533,7 +533,7 @@ setTimeout(async () => {
 
         // Show modal
         const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
-        const aboutModalID = alert(
+        const aboutModalID = siteAlert(
             config.appName, // title
             '🏷️ ' + ( msgs.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
                 + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
@@ -596,7 +596,7 @@ setTimeout(async () => {
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateModalID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                        const updateModalID = siteAlert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             `${ msgs.alert_newerVer || 'An update to' } ${ config.appName } `
                                 + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
                                 + '<a target="_blank" rel="noopener" style="font-size: 0.93rem" '
@@ -622,7 +622,7 @@ setTimeout(async () => {
                 }}
 
                 // Alert to no update found, nav back
-                alert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
+                siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
                     `${ config.appName } (v${ currentVer }) ${ msgs.alert_isUpToDate || 'is up-to-date' }!`, // msg
                         '', '', updateAlertWidth)
                 launchAboutModal()
@@ -635,7 +635,7 @@ setTimeout(async () => {
             shadow || scheme == 'dark' ? '' : 'shadow' )
     }
 
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width)}
 
     function appAlert(...alerts) {

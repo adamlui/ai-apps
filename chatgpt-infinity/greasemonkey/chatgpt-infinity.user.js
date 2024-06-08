@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.8
+// @version             2024.6.8.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -417,7 +417,7 @@
                         [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
                         : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                    alert(( msgs.alert_replyLangUpdated || 'Language updated' ) + '!', // title
+                    siteAlert(( msgs.alert_replyLangUpdated || 'Language updated' ) + '!', // title
                         ( msgs.appName || config.appName ) + ' ' // msg
                             + ( msgs.alert_willReplyIn || 'will reply in' ) + ' '
                             + ( replyLanguage || msgs.alert_yourSysLang || 'your system language') + '.')
@@ -436,7 +436,7 @@
             if (replyTopic !== null) { // user didn't cancel
                 const str_replyTopic = replyTopic.toString()
                 saveSetting('replyTopic', !replyTopic || re_all.test(str_replyTopic) ? 'ALL' : str_replyTopic)
-                alert(( msgs.alert_replyTopicUpdated || 'Topic updated' ) + '!',
+                siteAlert(( msgs.alert_replyTopicUpdated || 'Topic updated' ) + '!',
                     ( msgs.appName || config.appName ) + ' '
                         + ( msgs.alert_willAnswer || 'will answer questions' ) + ' '
                         + ( !replyTopic || re_all.test(str_replyTopic)
@@ -460,7 +460,7 @@
                 if (replyInterval === null) break // user cancelled so do nothing
                 else if (!isNaN(parseInt(replyInterval, 10)) && parseInt(replyInterval, 10) > 4) { // valid int set
                     saveSetting('replyInterval', parseInt(replyInterval, 10))
-                    alert(( msgs.alert_replyIntUpdated || 'Interval updated' ) + '!', // title
+                    siteAlert(( msgs.alert_replyIntUpdated || 'Interval updated' ) + '!', // title
                         ( msgs.appName || config.appName ) + ' ' // msg
                             + ( msgs.alert_willReplyEvery || 'will reply every' ) + ' '
                             + replyInterval + ' ' + ( msgs.unit_seconds || 'seconds' ) + '.')
@@ -483,7 +483,7 @@
               pStyle = 'position: relative ; left: 3px',
               pBrStyle = 'position: relative ; left: 4px ',
               aStyle = 'color: ' + ( chatgpt.isDarkMode() ? '#c67afb' : '#8325c4' ) // purple
-        const aboutModalID = alert(
+        const aboutModalID = siteAlert(
             msgs.appName || config.appName, // title
             `<span style="${ headingStyle }"><b>🏷️ <i>${ msgs.about_version || 'Version' }</i></b>: </span>`
                 + `<span style="${ pStyle }">${ GM_info.script.version }</span>\n`
@@ -543,7 +543,7 @@
                     else if (latestSubVer > currentSubVer) { // if outdated
 
                         // Alert to update
-                        const updateModalID = alert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
+                        const updateModalID = siteAlert(( msgs.alert_updateAvail || 'Update available' ) + '! 🚀', // title
                             ( msgs.alert_newerVer || 'An update to' ) + ' ' // msg
                                 + ( msgs.appName || config.appName ) + ' '
                                 + `(v${ latestVer }) ${ msgs.alert_isAvail || 'is available' }!  `
@@ -569,7 +569,7 @@
                 }}
 
                 // Alert to no update, return to About modal
-                alert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
+                siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
                     `${ msgs.appName || config.appName } (v${ currentVer }) ` // msg
                         + ( msgs.alert_isUpToDate || 'is up-to-date' ) + '!',
                     '', '', updateAlertWidth
@@ -591,7 +591,7 @@
             position, notifDuration, shadow || chatgpt.isDarkMode() ? '' : 'shadow')
     }
 
-    function alert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
         return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     // Define UI functions
