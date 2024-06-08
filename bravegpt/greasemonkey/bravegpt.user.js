@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.8.2
+// @version             2024.6.8.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -659,10 +659,10 @@ setTimeout(async () => {
                 + ` ${ msgs.mode_proxy || 'Proxy Mode' })`
 
             // Hyperlink msgs.alert_switching<On|Off>
-            const foundState = ['On', 'Off'].find(state =>
-                msg.includes(msgs['alert_switching' + state] || state.toLowerCase()))
+            const foundState = ['on', 'off'].find(state =>
+                msg.includes(msgs['alert_switching' + state.toUppercase()]) || new RegExp(`\\b${state}\\b`).test(msg))
             if (foundState) { // hyperlink switch phrase for click listener to toggleProxyMode()
-                const switchPhrase = msgs['alert_switching' + foundState] || 'switching ' + foundState.toLowerCase()
+                const switchPhrase = msgs['alert_switching' + foundState] || 'switching ' + foundState
                 msg = msg.replace(switchPhrase, `<a href="#" ${linkStyle} class="proxyToggle">${switchPhrase}</a>`)
             }
 

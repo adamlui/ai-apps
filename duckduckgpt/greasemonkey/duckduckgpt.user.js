@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.8.2
+// @version             2024.6.8.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -803,10 +803,10 @@
                 + ` ${ msgs.mode_proxy || 'Proxy Mode' })`
 
             // Hyperlink msgs.alert_switching<On|Off>
-            const foundState = ['On', 'Off'].find(state =>
-                msg.includes(msgs['alert_switching' + state] || state.toLowerCase()))
+            const foundState = ['on', 'off'].find(state =>
+                msg.includes(msgs['alert_switching' + state.toUppercase()]) || new RegExp(`\\b${state}\\b`).test(msg))
             if (foundState) { // hyperlink switch phrase for click listener to toggleProxyMode()
-                const switchPhrase = msgs['alert_switching' + foundState] || 'switching ' + foundState.toLowerCase()
+                const switchPhrase = msgs['alert_switching' + foundState] || 'switching ' + foundState
                 msg = msg.replace(switchPhrase, `<a href="#" ${linkStyle} class="proxyToggle">${switchPhrase}</a>`)
             }
 
