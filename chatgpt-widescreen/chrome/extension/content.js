@@ -95,7 +95,7 @@
     // Create/insert chatbar BUTTONS
     const buttonTypes = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat'],
           bOffset = isGPT4oUI ? -0.91 : site == 'poe' ? -0.02 : 1.8,
-          rOffset = isGPT4oUI ? -0.45 : site == 'poe' ? -0.34 : 2.95
+          rOffset = isGPT4oUI ? -0.45 : site == 'poe' ? -0.34 : 3.05
     let btnColor = setBtnColor()
     for (let i = 0 ; i < buttonTypes.length ; i++) {
         (buttonType => { // enclose in IIFE to separately capture button type for async listeners
@@ -104,7 +104,7 @@
             window[buttonName].id = buttonType + '-button' // for toggleTooltip()
             updateBtnSVG(buttonType) // insert icon
             window[buttonName].style.cssText = `right: ${ rOffset + i * bOffset }rem ;` // position left of prev button
-                + `bottom: ${ /chatgpt|openai/.test(site) && !isGPT4oUI ? '0.75rem' : '' }` // scooch up pre-GPT-4o UI
+                + `bottom: ${ /chatgpt|openai/.test(site) && !isGPT4oUI ? '11px' : '' }` // scooch up pre-GPT-4o UI
             window[buttonName].style.cursor = 'pointer' // add finger cursor
             if (isGPT4oUI || site == 'poe') window[buttonName].style.position = 'relative' // override static pos
             if (/chatgpt|openai/.test(site)) { // assign classes + tweak styles
@@ -346,8 +346,8 @@
     function updateTooltip(buttonType) { // text & position
         tooltipDiv.innerText = chrome.i18n.getMessage('tooltip_' + buttonType + (
             !/full|wide/i.test(buttonType) ? '' : (config[buttonType] ? 'OFF' : 'ON')))
-        const ctrAddend = 25 + ( site == 'poe' ? 45 : 10 ),
-              spreadFactor = isGPT4oUI ? 30 : site == 'poe' ? 35 : 32,
+        const ctrAddend = 25 + ( isGPT4oUI ? 10 : site == 'poe' ? 45 : 13 ),
+              spreadFactor = isGPT4oUI ? 30 : site == 'poe' ? 35 : 28,
               iniRoffset = spreadFactor * ( buttonType.includes('fullScreen') ? 1
                                           : buttonType.includes('fullWindow') ? 2
                                           : buttonType.includes('wide') ? 3 : 4 ) + ctrAddend
