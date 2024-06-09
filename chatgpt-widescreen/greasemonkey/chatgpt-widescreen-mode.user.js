@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.9.1
+// @version             2024.6.9.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -869,18 +869,19 @@
 
         insertBtns() // again or they constantly disappear
 
-        // Update button colors on scheme or temp chat toggle
-        let chatbarBGdiv = document.querySelector('textarea')
-        for (let i = 0 ; i < ( isGPT4oUI ? 3 : 1 ) ; i++) { chatbarBGdiv = chatbarBGdiv.parentNode }
-        if (chatbarBGdiv) {
-            const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
-            if ((mutation.type === 'attributes' && mutation.attributeName === 'class') // potential scheme toggled
-                 || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)) { // temp chat toggled
-                        btnColor = setBtnColor() // init new color
-                        chatbarBGdiv.style.overflow = 'visible' // allow tooltips to overflow pre-GPT4o UI
-                        const buttons = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
-                        buttons.forEach(btn => updateBtnSVG(btn)) ; isTempChat = !isTempChat
-        }}
+        // Update button colors on ChatGPT scheme or temp chat toggle
+        if (/chatgpt|openai/.test(site)) {
+            let chatbarBGdiv = document.querySelector('textarea')
+            for (let i = 0 ; i < ( isGPT4oUI ? 3 : 1 ) ; i++) { chatbarBGdiv = chatbarBGdiv.parentNode }
+            if (chatbarBGdiv) {
+                const chatbarBGisBlack = chatbarBGdiv.classList.contains('bg-black');
+                if ((mutation.type === 'attributes' && mutation.attributeName === 'class') // potential scheme toggled
+                     || (chatbarBGisBlack && !isTempChat) || (!chatbarBGisBlack && isTempChat)) { // temp chat toggled
+                            btnColor = setBtnColor() // init new color
+                            chatbarBGdiv.style.overflow = 'visible' // allow tooltips to overflow pre-GPT4o UI
+                            const buttons = ['fullScreen', 'fullWindow', 'wideScreen', 'newChat']
+                            buttons.forEach(btn => updateBtnSVG(btn)) ; isTempChat = !isTempChat
+        }}}
     })
     nodeObserver.observe(document.documentElement, { attributes: true }) // <html> for page scheme toggles
     nodeObserver.observe(document.querySelector('main'), { attributes: true, subtree: true }); // <main> for chatbar changes
