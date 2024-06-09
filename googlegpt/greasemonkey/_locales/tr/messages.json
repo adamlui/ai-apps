@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "ChatGPT yanıtlarını Google Arama'ya ekler (Google Gemma + GPT-4o tarafından desteklenmektedir!)" },
+  "appDesc": { "message": "Google Arama'ya yapay zeka yanıtları ekler (Google Gemma + GPT -4o tarafından desteklenmektedir!)" },
   "menuLabel_autoGetAnswers": { "message": "Otomatik Yanıt Al" },
   "menuLabel_whenStreaming": { "message": "akış sırasında" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Modu" },

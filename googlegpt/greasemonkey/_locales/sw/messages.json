@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Inaongeza majibu ya ChatGPT kwenye Utafutaji wa Google (inaendeshwa na Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Inaongeza majibu ya AI kwenye Utafutaji wa Google (inaendeshwa na Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Pata Majibu Kiotomatiki" },
   "menuLabel_whenStreaming": { "message": "wakati wa kutiririsha" },
   "menuLabel_proxyAPImode": { "message": "Hali Mbadala ya API" },

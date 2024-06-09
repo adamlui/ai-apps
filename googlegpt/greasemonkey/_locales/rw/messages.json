@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Ibisubizo kuri Google Search (powered by Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Bye bye Google Search (powered by Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Kubona ibisubizo mu buryo bwikora" },
   "menuLabel_whenStreaming": { "message": "ryari" },
   "menuLabel_proxyAPImode": { "message": "Ubwoko" },

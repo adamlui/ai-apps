@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Agregá una foto_Promocioná Google Search (Powered by Google Gemma + GPT-4o)" },
+  "appDesc": { "message": "Agregá una foto_Promocioná Google Gemma + GPT-4o" },
   "menuLabel_autoGetAnswers": { "message": "Solucion Auto-Get" },
   "menuLabel_whenStreaming": { "message": "ora Streaming" },
   "menuLabel_proxyAPImode": { "message": "Propiedad Api Moda" },

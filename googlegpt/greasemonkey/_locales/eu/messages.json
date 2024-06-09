@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "ChatGPT erantzunak gehitzen ditu Google Bilaketa-n (Google Gemma + GPT-4o-ren bidez!)" },
+  "appDesc": { "message": "AI erantzunak gehitzen ditu Google Bilaketa-n (Google Gemma + GPT-4o-k bultzatuta!)" },
   "menuLabel_autoGetAnswers": { "message": "Lortu erantzunak automatikoki" },
   "menuLabel_whenStreaming": { "message": "erreproduzitzean" },
   "menuLabel_proxyAPImode": { "message": "Proxy API modua" },

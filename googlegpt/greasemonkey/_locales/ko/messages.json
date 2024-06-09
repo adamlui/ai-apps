@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Google 검색에 ChatGPT 답변 추가 (Google Gemma + GPT-4o 제공!)" },
+  "appDesc": { "message": "Google 검색에 AI 답변을 추가합니다 (Google Gemma + GPT-4o 제공!)" },
   "menuLabel_autoGetAnswers": { "message": "답변 자동 가져오기" },
   "menuLabel_whenStreaming": { "message": "스트리밍할 때" },
   "menuLabel_proxyAPImode": { "message": "프록시 API 모드" },

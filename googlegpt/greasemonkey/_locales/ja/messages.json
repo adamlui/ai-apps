@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Google 検索に ChatGPT の回答を追加 (Google Gemma + GPT-4o 搭載!)" },
+  "appDesc": { "message": "Google検索にAIの回答を追加（ Google Gemma + GPT -4 o搭載！ ）" },
   "menuLabel_autoGetAnswers": { "message": "回答を自動取得" },
   "menuLabel_whenStreaming": { "message": "ストリーミング時" },
   "menuLabel_proxyAPImode": { "message": "プロキシ API モード" },

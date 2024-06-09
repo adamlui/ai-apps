@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Addds ChatGPT valiny ny Google Search (Powered by Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Adds AI mamaly ny Google Search (Powered by Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Auto-hamaly ny valin-teny" },
   "menuLabel_whenStreaming": { "message": "rehefa miraikitra" },
   "menuLabel_proxyAPImode": { "message": "Fomba API'ny proxy" },

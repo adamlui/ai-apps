@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Thêm câu trả lời ChatGPT vào Tìm kiếm của Google (được cung cấp bởi Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Thêm câu trả lời AI vào Tìm kiếm của Google (được hỗ trợ bởi Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Tự động nhận câu trả lời" },
   "menuLabel_whenStreaming": { "message": "khi phát trực tuyến" },
   "menuLabel_proxyAPImode": { "message": "Chế độ API proxy" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Přidá odpovědi ChatGPT do Vyhledávání Google (poháněno Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Přidává odpovědi AI do Vyhledávání Google (s podporou Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Automatické získávání odpovědí" },
   "menuLabel_whenStreaming": { "message": "při streamování" },
   "menuLabel_proxyAPImode": { "message": "Režim proxy API" },

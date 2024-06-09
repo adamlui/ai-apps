@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "መልሲ ChatGPT ናብ Google Search (ብ Google Gemma + GPT-4o ዝተሰርሐ!" },
+  "appDesc": { "message": "መልሲ AI ንGoogle Search (ብGoogle Gemma + GPT-4o ዝተሰርሐ!)" },
   "menuLabel_autoGetAnswers": { "message": "ናይ ኣውቶ-ጀት መልሲ" },
   "menuLabel_whenStreaming": { "message": "ምስ ዥረት" },
   "menuLabel_proxyAPImode": { "message": "ፕሮክሲ ኤፒአይ ሞድ" },

@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "ChatGPT ਦੇ ਜਵਾਬਾਂ ਨੂੰ Google Search ਸਾਇਡਬਾਰ 'ਤੇ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ (Google Gemma + GPT-4o! ਦੁਆਰਾ ਪਾਵਰ)" },
+  "appDesc": { "message": "Google ਖੋਜ ਵਿੱਚ AI ਜਵਾਬ ਜੋੜਦਾ ਹੈ (Google Gemma + GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ!" },
   "menuLabel_autoGetAnswers": { "message": "ਆਟੋ-ਗੇਟ ਜਵਾਬ" },
   "menuLabel_whenStreaming": { "message": "ਜਦੋਂ ਸਟ੍ਰੀਮਿੰਗ ਹੋਵੇ" },
   "menuLabel_proxyAPImode": { "message": "ਪਰਾਕਸੀ API ਮੋਡ" },

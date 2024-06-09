@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Google തിരയലിലേക്ക് ChatGPT ഉത്തരങ്ങൾ ചേർക്കുന്നു (Google Gemma + GPT-4o നാൽ നയിക്കപ്പെടുന്നു!)" },
+  "appDesc": { "message": "Google തിരയലിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു (Google Gemma + GPT-4o നാൽ നയിക്കപ്പെടുന്നു!)" },
   "menuLabel_autoGetAnswers": { "message": "യാന്ത്രികമായി ലഭിക്കുന്ന ഉത്തരങ്ങൾ" },
   "menuLabel_whenStreaming": { "message": "സ്ട്രീം ചെയ്യുമ്പോൾ" },
   "menuLabel_proxyAPImode": { "message": "പ്രോക്സി API മോഡ്" },

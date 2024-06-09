@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Дадае адказы ChatGPT у пошук Google (працуе на Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Дадае адказы на штучны інтэлект у пошук Google (на базе Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Аўтаматычнае атрыманне адказаў" },
   "menuLabel_whenStreaming": { "message": "пры струменевай перадачы" },
   "menuLabel_proxyAPImode": { "message": "Рэжым API-проксі" },

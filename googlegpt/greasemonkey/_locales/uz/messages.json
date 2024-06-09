@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "ChatGPT javoblarini Google Qidiruvga qo'shadi (Google Gemma + GPT-4o tomonidan quvvatlanadi!)" },
+  "appDesc": { "message": "Google Qidiruvga AI javoblarini qo'shadi (Google Gemma + GPT-4o tomonidan quvvatlanadi!)" },
   "menuLabel_autoGetAnswers": { "message": "Javoblarni avtomatik olish" },
   "menuLabel_whenStreaming": { "message": "oqim paytida" },
   "menuLabel_proxyAPImode": { "message": "Proksi API rejimi" },

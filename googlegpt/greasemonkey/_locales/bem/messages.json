@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Yasosa ChatGPT amano kuboko ku Google Search insoselo (ifukwa Google Gemma + GPT-4o!)" },
+  "appDesc": { "message": "Sangeni ifyasuko kuli Google Search (Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Amabile" },
   "menuLabel_whenStreaming": { "message": "lintu Streaming" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
