@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.9.9
+// @version             2024.6.10
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -307,7 +307,7 @@ setTimeout(async () => {
     footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
 
     // Show STANDBY mode or get/show ANSWER
-    const msgChain = [] // to store queries + answers for contextual replies
+    let msgChain = [] // to store queries + answers for contextual replies
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
         || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location) // suffix required but not present
@@ -1231,7 +1231,7 @@ setTimeout(async () => {
                    + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
                + ' But the key is variety. Do not be repetitive.'
                    + ' You must entice user to want to ask one of your related queries.'
-               + ' Do not show the parenthetical instructions in these queries.'
+               + ` Reply in ${config.replyLanguage}`
             GM.xmlHttpRequest({
                 method: apis[api].method, url: apis[api].endpoint, responseType: 'text',
                 headers: createHeaders(api), data: createPayload(api, [{ role: 'user', content: rqPrompt }]),
@@ -1300,8 +1300,21 @@ setTimeout(async () => {
     function augmentQuery(query) {
         const augmentedQuery = query
             + ' (only if this query involves math, use latex if showing math w/ $$ as delimiters)'
-            + ` (reply in ${ config.replyLanguage })`
+            + ` (reply in ${config.replyLanguage})`
         return augmentedQuery
+    }
+
+    function stripQueryAugments(msgChain) {
+        const augmentCnt = augmentQuery.toString().match(/\+/g).length
+        return msgChain.map(msg => { // stripped chain
+            if (msg.role == 'user') {
+                let content = msg.content
+                const augments = content.match(/\s*\([^)]*\)\s*/g)
+                if (augments) for (let i = 0 ; i < augmentCnt ; i++) // strip augments
+                    content = content.replace(augments[augments.length - 1 - i], '')
+                return { ...msg, content: content.trim() }
+            } else return msg // agent's unstripped
+        })
     }
 
     async function getShowReply(msgChain) {
@@ -1340,7 +1353,7 @@ setTimeout(async () => {
 
         // Get/show related queries
         if (!config.rqDisabled) {
-            const lastQuery = msgChain[msgChain.length - 1]
+            const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1]
             getRelatedQueries(lastQuery.content).then(relatedQueries => {
                 if (relatedQueries && appDiv.querySelector('textarea')) {
 
@@ -1641,6 +1654,7 @@ setTimeout(async () => {
             event.preventDefault()
             const chatTextarea = appDiv.querySelector('#app-chatbar')
             if (msgChain.length > 2) msgChain.splice(0, 2) // keep token usage maintainable
+            msgChain = stripQueryAugments(msgChain)
             const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || '',
                   yourReply = `${ chatTextarea.value } (reply in ${ config.replyLanguage })`
             msgChain.push({ role: 'assistant', content: prevReplyTrimmed })
