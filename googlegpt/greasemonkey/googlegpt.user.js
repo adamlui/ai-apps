@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.5
+// @version             2024.6.10.6
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1922,13 +1922,10 @@
         updateTweaksStyle() // in case sticky mode on
 
         // Focus chatbar conditionally
-        const proxyAPIstreaming = !config.streamingDisabled && config.proxyAPIenabled
         if (!isMobile && // exclude mobile devices to not auto-popup OSD keyboard
-            !document.querySelector('.standby-btn') && ( // exclude when Auto-Get off
-                appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top // app fully above fold
-            || !proxyAPIstreaming && appShow.submitSrc && appShow.submitSrc != 'click' // user replied to non-stream
-            ||  proxyAPIstreaming && config.autoScroll // auto-scroll active for streaming APIs
-        )) appDiv.querySelector('#app-chatbar').focus()
+            !document.querySelector('.standby-btn') &&  // exclude when Auto-Get off
+            ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top ) // app fully above fold
+        ) appDiv.querySelector('#app-chatbar').focus()
         appShow.submitSrc = 'none'
 
         function handleEnter(event) {
