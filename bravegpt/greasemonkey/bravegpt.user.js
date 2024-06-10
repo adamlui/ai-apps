@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10
+// @version             2024.6.10.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1290,7 +1290,7 @@ setTimeout(async () => {
             // Send related query
             const chatbar = appDiv.querySelector('textarea')
             if (chatbar) {
-                chatbar.value = augmentQuery(event.target.textContent)
+                chatbar.value = event.target.textContent
                 appShow.submitSrc = 'click' // for appShow() auto-focus
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
                     key: 'Enter', bubbles: true, cancelable: true }))
@@ -1655,10 +1655,9 @@ setTimeout(async () => {
             const chatTextarea = appDiv.querySelector('#app-chatbar')
             if (msgChain.length > 2) msgChain.splice(0, 2) // keep token usage maintainable
             msgChain = stripQueryAugments(msgChain)
-            const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || '',
-                  yourReply = `${ chatTextarea.value } (reply in ${ config.replyLanguage })`
+            const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || ''
             msgChain.push({ role: 'assistant', content: prevReplyTrimmed })
-            msgChain.push({ role: 'user', content: yourReply })
+            msgChain.push({ role: 'user', content: augmentQuery(chatTextarea.value) })
             getShowReply(msgChain)
 
             // Remove re-added reply section listeners
