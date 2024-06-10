@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.9.7
+// @version             2024.6.9.8
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1872,12 +1872,12 @@
         if (answer != 'standby') { // show answer
             const answerPre = appDiv.querySelector('pre')
             answerPre.innerHTML = marked.parse(answer) // render markdown
-            hljs.highlightAll() // highlight code // eslint-disable-line no-undef
+            hljs.highlightAll() // highlight code
             answerPre.querySelectorAll('code').forEach(codeBlock => { // add linebreaks after semicolons
                 codeBlock.innerHTML = codeBlock.innerHTML.replace(/;\s*/g, ';<br>') })
             const elemsToRenderMathIn = [answerPre, ...answerPre.querySelectorAll('*')]
             elemsToRenderMathIn.forEach(elem => {
-                renderMathInElement(elem, { // typeset math // eslint-disable-line no-undef
+                renderMathInElement(elem, { // typeset math
                     delimiters: [
                         { left: '$$', right: '$$', display: true },
                         { left: '$', right: '$', display: false },
