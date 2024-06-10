@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.9.3
+// @version             2024.6.9.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1363,7 +1363,7 @@
 
     function augmentQuery(query) {
         const augmentedQuery = query
-            + ( /\b(?:math|equation|formula)\b/.test(query) ? ' reply using latex w/ $$ as delimiters' : '' )
+            + ' (if math is involved, reply using latex w/ $$ as delimiters)'
             + ` (reply in ${ config.replyLanguage })`
         return augmentedQuery
     }
@@ -1637,24 +1637,28 @@
         sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
 
         // Render markdown/math + highlight code
-        if (answer != 'standby') {
-            answerPre.innerHTML = marked.parse(answer)
-            hljs.highlightAll() // eslint-disable-line no-undef
-            renderMathInElement(answerPre, { // eslint-disable-line no-undef
-                delimiters: [
-                    { left: '$$', right: '$$', display: true },
-                    { left: '$', right: '$', display: false },
-                    { left: '\\(', right: '\\)', display: false },
-                    { left: '\\[', right: '\\]', display: true },
-                    { left: '\\begin{equation}', right: '\\end{equation}', display: true },
-                    { left: '\\begin{align}', right: '\\end{align}', display: true },
-                    { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
-                    { left: '\\begin{gather}', right: '\\end{gather}', display: true },
-                    { left: '\\begin{CD}', right: '\\end{CD}', display: true },
-                    { left: '\\[', right: '\\]', display: true }
-                ],
-                throwOnError: false
-        })}
+        if (answer != 'standby') { // show answer
+            hljs.highlightAll() // highlight code // eslint-disable-line no-undef
+            answerPre.querySelectorAll('code').forEach(codeBlock => { // add linebreaks after semicolons
+                codeBlock.innerHTML = codeBlock.innerHTML.replace(/;\s*/g, ';<br>') })
+            const elemsToRenderMathIn = [answerPre, ...answerPre.querySelectorAll('*')]
+            elemsToRenderMathIn.forEach(elem => {
+                renderMathInElement(elem, { // typeset math // eslint-disable-line no-undef
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$', right: '$', display: false },
+                        { left: '\\(', right: '\\)', display: false },
+                        { left: '\\[', right: '\\]', display: true },
+                        { left: '\\begin{equation}', right: '\\end{equation}', display: true },
+                        { left: '\\begin{align}', right: '\\end{align}', display: true },
+                        { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
+                        { left: '\\begin{gather}', right: '\\end{gather}', display: true },
+                        { left: '\\begin{CD}', right: '\\end{CD}', display: true },
+                        { left: '\\[', right: '\\]', display: true }
+                    ],
+                    throwOnError: false
+            })})
+        } updateTweaksStyle() // in case sticky mode on
 
         // Add reply section listeners
         replyForm.addEventListener('keydown', handleEnter)
