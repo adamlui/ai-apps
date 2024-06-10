@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.9.7
+// @version             2024.6.9.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1318,9 +1318,8 @@ setTimeout(async () => {
 
         if (!config.proxyAPIenabled) // init OpenAI key
             config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
-        else getShowReply.respTimer = setTimeout(() => { // try diff API after 3s of no response
-            if (config.proxyAPIenabled && !getShowReply.received) tryDiffAPI(api) }, 3000)
-
+        else getShowReply.respTimer = setTimeout(() => { // try diff API after 3-5s of no response
+            if (config.proxyAPIenabled && !getShowReply.received) tryDiffAPI(api) }, config.streamingDisabled ? 5000 : 3000)
 
         // Get/show answer from ChatGPT
         GM.xmlHttpRequest({
