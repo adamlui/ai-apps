@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.2
+// @version             2024.6.10.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1881,6 +1881,12 @@
             chatTextarea.addEventListener('input', autosizeChatbar)
             sendButton.addEventListener('mouseover', toggleTooltip)
             sendButton.addEventListener('mouseout', toggleTooltip)
+
+            // Scroll to top on mobile if user interacted
+            if (isMobile && appShow.submitSrc) {
+                document.body.scrollTop = 0 // Safari
+                document.documentElement.scrollTop = 0 // Chromium/FF/IE
+            }
         }
 
         if (answer != 'standby') { // show answer
