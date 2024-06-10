@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.10
+// @version             2024.6.10.11
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1696,8 +1696,8 @@
 
             // Auto-scroll if active
             if (config.autoScroll && !isMobile && config.proxyAPIenabled && !config.streamingDisabled) {
-                const pxToScroll = appDiv.querySelector('#app-chatbar').getBoundingClientRect().bottom - window.innerHeight + 12
-                window.scrollBy({ top: pxToScroll })
+                if (config.stickySidebar) answerPre.scrollTop = answerPre.scrollHeight
+                else window.scrollBy({ top: appDiv.querySelector('#app-chatbar').getBoundingClientRect().bottom - window.innerHeight +12 })
             }
         }
 
