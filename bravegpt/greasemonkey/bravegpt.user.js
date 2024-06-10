@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.9.2
+// @version             2024.6.9.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -314,8 +314,7 @@ setTimeout(async () => {
     ) { updateFooterContent() ; appShow('standby', footerContent) }
     else {
         appAlert('waitingResponse')
-        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-        msgChain.push({ role: 'user', content: query })
+        msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
         getShowReply(msgChain)
     }
 
@@ -1231,6 +1230,7 @@ setTimeout(async () => {
                    + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
                + ' But the key is variety. Do not be repetitive.'
                    + ' You must entice user to want to ask one of your related queries.'
+               + ' Do not show the parenthetical instructions in these queries.'
             GM.xmlHttpRequest({
                 method: apis[api].method, url: apis[api].endpoint, responseType: 'text',
                 headers: createHeaders(api), data: createPayload(api, [{ role: 'user', content: rqPrompt }]),
@@ -1289,12 +1289,19 @@ setTimeout(async () => {
             // Send related query
             const chatbar = appDiv.querySelector('textarea')
             if (chatbar) {
-                chatbar.value = event.target.textContent
+                chatbar.value = augmentQuery(event.target.textContent)
                 appShow.submitSrc = 'click' // for appShow() auto-focus
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
                     key: 'Enter', bubbles: true, cancelable: true }))
             }
     }}
+
+    function augmentQuery(query) {
+        const augmentedQuery = query
+            + ( /\b(?:math|equation|formula)\b/.test(query) ? ' reply using latex w/ $$ as delimiters' : '' )
+            + ` (reply in ${ config.replyLanguage })`
+        return augmentedQuery
+    }
 
     async function getShowReply(msgChain) {
 
@@ -1512,8 +1519,7 @@ setTimeout(async () => {
             appDiv.append(standbyBtn)
             standbyBtn.addEventListener('click', () => {
                 appAlert('waitingResponse')
-                const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-                msgChain.push({ role: 'user', content: query })
+                msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
                 appShow.submitSrc = 'click' // for appShow() auto-focus
                 getShowReply(msgChain)
             })

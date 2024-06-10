@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.9.2
+// @version             2024.6.9.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -456,8 +456,7 @@
     ) appShow('standby')
     else {
         appAlert('waitingResponse')
-        const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-        msgChain.push({ role: 'user', content: query })
+        msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
         getShowReply(msgChain)
     }
 
@@ -1296,6 +1295,7 @@
                    + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
                + ' But the key is variety. Do not be repetitive.'
                    + ' You must entice user to want to ask one of your related queries.'
+               + ' Do not show the parenthetical instructions in these queries.'
             GM.xmlHttpRequest({
                 method: apis[api].method, url: apis[api].endpoint, responseType: 'text',
                 headers: createHeaders(api), data: createPayload(api, [{ role: 'user', content: rqPrompt }]),
@@ -1354,12 +1354,19 @@
             // Send related query
             const chatbar = appDiv.querySelector('textarea')
             if (chatbar) {
-                chatbar.value = event.target.textContent
+                chatbar.value = augmentQuery(event.target.textContent)
                 appShow.submitSrc = 'click' // for appShow() auto-focus
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
                     key: 'Enter', bubbles: true, cancelable: true }))
             }
     }}
+
+    function augmentQuery(query) {
+        const augmentedQuery = query
+            + ( /\b(?:math|equation|formula)\b/.test(query) ? ' reply using latex w/ $$ as delimiters' : '' )
+            + ` (reply in ${ config.replyLanguage })`
+        return augmentedQuery
+    }
 
     async function getShowReply(msgChain) {
 
@@ -1581,8 +1588,7 @@
             appDiv.append(standbyBtn)
             standbyBtn.addEventListener('click', () => {
                 appAlert('waitingResponse')
-                const query = `${ new URL(location.href).searchParams.get('q') } (reply in ${ config.replyLanguage })`
-                msgChain.push({ role: 'user', content: query })
+                msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
                 appShow.submitSrc = 'click' // for appShow() auto-focus
                 getShowReply(msgChain)
             })
