@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.2
+// @version             2024.6.10.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1465,10 +1465,9 @@
 
     function appShow(answer) {
 
-        if (!appDiv.querySelector('pre')) { // build answer interface
-
-            // Clear app content
-            while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild)
+        // Build answer interface up to reply section if missing
+        if (!appDiv.querySelector('pre')) {
+            while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
 
             // Create/append app title anchor
             const appTitleAnchor = createAnchor(config.appURL, (() => {
@@ -1624,7 +1623,8 @@
             }
         }
 
-        if (!appDiv.querySelector('#app-chatbar')) { // build reply section
+        // Build reply section if missing
+        if (!appDiv.querySelector('#app-chatbar')) {
 
             // Init/clear reply section content/classes
             const replySection = appDiv.querySelector('section') || document.createElement('section')
@@ -1671,7 +1671,8 @@
             }
         }
 
-        if (answer != 'standby') { // show answer
+        // Render/show answer if query sent
+        if (answer != 'standby') {
             const answerPre = appDiv.querySelector('pre')
             answerPre.innerHTML = marked.parse(answer) // render markdown
             hljs.highlightAll() // highlight code
@@ -1694,6 +1695,10 @@
                     ],
                     throwOnError: false
             })})
+
+            // Auto-scroll if active
+            if (!isMobile && config.proxyAPIenabled && config.autoScroll) 
+                window.scrollBy({ top: appDiv.getBoundingClientRect().bottom - window.innerHeight })
         }
 
         updateTweaksStyle() // in case sticky mode on

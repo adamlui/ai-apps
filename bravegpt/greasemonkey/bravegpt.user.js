@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.3
+// @version             2024.6.10.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1402,10 +1402,9 @@ setTimeout(async () => {
 
     function appShow(answer, footerContent) {
 
-        if (!appDiv.querySelector('pre')) { // build answer interface
-
-            // Clear app content
-            while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild)
+        // Build answer interface up to reply section if missing
+        if (!appDiv.querySelector('pre')) {
+            while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
 
             // Create/append app title anchor
             const appTitleAnchor = createAnchor(config.appURL, (() => {
@@ -1554,7 +1553,8 @@ setTimeout(async () => {
             }
         }
 
-        if (!appDiv.querySelector('#app-chatbar')) { // build reply section
+        // Build reply section if missing
+        if (!appDiv.querySelector('#app-chatbar')) {
 
             // Init/clear reply section content/classes
             const replySection = appDiv.querySelector('section') || document.createElement('section')
@@ -1605,8 +1605,8 @@ setTimeout(async () => {
             }
         }
 
-        // Render markdown/math + highlight code
-        if (answer != 'standby') { // show answer
+        // Render/show answer if query sent
+        if (answer != 'standby') {
             const answerPre = appDiv.querySelector('pre')
             answerPre.innerHTML = marked.parse(answer) // render markdown
             hljs.highlightAll() // highlight code
@@ -1629,6 +1629,10 @@ setTimeout(async () => {
                     ],
                     throwOnError: false
             })})
+
+            // Auto-scroll if active
+            if (!isMobile && config.proxyAPIenabled && config.autoScroll) 
+                window.scrollBy({ top: appDiv.getBoundingClientRect().bottom - window.innerHeight })
         }
 
         updateTweaksStyle() // in case sticky mode on
