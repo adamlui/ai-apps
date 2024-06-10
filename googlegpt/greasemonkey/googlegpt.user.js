@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.1
+// @version             2024.6.10.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1947,7 +1947,7 @@
             const replyForm = appDiv.querySelector('form')
             replyForm.removeEventListener('keydown', handleEnter)
             replyForm.removeEventListener('submit', handleSubmit)
-            appDiv.querySelector('#app-chatbar').removeEventListener('input', autosizeChatbar)
+            chatTextarea.removeEventListener('input', autosizeChatbar)
 
             // Remove related queries
             try {
