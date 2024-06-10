@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.6
+// @version             2024.6.10.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -374,7 +374,8 @@ setTimeout(async () => {
                 saveSetting('streamingDisabled', !config.streamingDisabled)
                 notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + state.word[+!config.streamingDisabled])
                 refreshMenu()
-        }}))
+            }
+        }))
 
         // Add command to toggle auto-get mode
         const agmLabel = state.symbol[+!config.autoGetDisabled] + ' '
@@ -742,8 +743,8 @@ setTimeout(async () => {
           + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px }'
           + '.continue-chat > textarea {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
-              + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 -7px 0 ;  padding: 14px 22px 5px 10px ;'
-              + 'height: 2.15rem ; width: 100% ; max-height: 200px ; resize: none ; background:'
+              + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 -7px 0 ;  padding: 14px 26px 13px 10px ;'
+              + 'height: 45px ; line-height: 17px ; width: 100% ; max-height: 200px ; resize: none ; background:'
                   + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + '}'
           + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
               + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
@@ -1705,9 +1706,9 @@ setTimeout(async () => {
             if (newLength < prevLength) { // if deleting txt
                 chatTextarea.style.height = 'auto' // ...auto-fit height
                 if (parseInt(getComputedStyle(chatTextarea).height) < 55) { // if down to one line
-                    chatTextarea.style.height = '2.15rem' } // ...reset to original height
+                    chatTextarea.style.height = '45px' } // ...reset to original height
             }
-            chatTextarea.style.height = chatTextarea.scrollHeight > 55 ? chatTextarea.scrollHeight + 'px' : '2.15rem'
+            chatTextarea.style.height = `${ chatTextarea.scrollHeight > 60 ? ( chatTextarea.scrollHeight +2 ) : 45 }px`
             prevLength = newLength
         }
     }

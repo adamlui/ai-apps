@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.7
+// @version             2024.6.10.8
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -607,7 +607,8 @@
                 saveSetting('streamingDisabled', !config.streamingDisabled)
                 notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + state.word[+!config.streamingDisabled])
                 refreshMenu()
-        }}))
+            }
+        }))
 
         // Add command to toggle auto-get mode
         const agmLabel = state.symbol[+!config.autoGetDisabled] + ' '
@@ -969,8 +970,8 @@
                   + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
           + '.continue-chat > textarea {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
-              + 'height: 1.55rem ; max-height: 200px ; resize: none ;'
-              + 'margin: 13px 0 15px 0 ; padding: 13px 25px 2px 10px ;'
+              + 'height: 15px ; max-height: 200px ; resize: none ;'
+              + 'margin: 13px 0 15px 0 ; padding: 13px 25px 13px 10px ;'
               + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' }'
           + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
           + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: 19px }'
@@ -1991,10 +1992,10 @@
             if (newLength < prevLength) { // if deleting txt
                 chatTextarea.style.height = 'auto' // ...auto-fit height
                 if (parseInt(getComputedStyle(chatTextarea).height) < 35) { // if down to one line
-                    chatTextarea.style.height = '1.55rem' } // ...reset to original height
+                    chatTextarea.style.height = '15px' } // ...reset to original height
             }
             const unpaddedHeight = chatTextarea.scrollHeight - vOffset
-            chatTextarea.style.height = unpaddedHeight > 35 ? unpaddedHeight + 'px' : '1.55rem'
+            chatTextarea.style.height = `${ unpaddedHeight > 29 ? unpaddedHeight : 15 }px`
             prevLength = newLength
         }
     }

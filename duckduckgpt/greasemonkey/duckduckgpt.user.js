@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.5
+// @version             2024.6.10.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -512,7 +512,8 @@
                 saveSetting('streamingDisabled', !config.streamingDisabled)
                 notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + state.word[+!config.streamingDisabled])
                 refreshMenu()
-        }}))
+            }
+        }))
 
         // Add command to toggle auto-get mode
         const agmLabel = state.symbol[+!config.autoGetDisabled] + ' '
@@ -870,8 +871,8 @@
                   + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
           + '.continue-chat > textarea {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
-              + 'font-size: 0.92rem ; height: 1.55rem ; width: 94.6% ; max-height: 200px ; resize: none ; '
-              + 'margin: 3px 0 15px 0 ; padding: 12px 10px 4px 10px ;'
+              + 'font-size: 0.92rem ; height: 16px ; width: 94.6% ; max-height: 200px ; resize: none ; '
+              + 'margin: 3px 0 15px 0 ; padding: 13px 10px 11px 10px ;'
               + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' } '
           + '.related-queries {'
               + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ; overflow: visible ;'
@@ -1651,7 +1652,7 @@
                       'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
             sendButton.id = 'send-btn'
             sendButton.style.right = `${ isFirefox ? 8 : 6 }px`
-            sendButton.style.bottom = `${ isFirefox ? 48 : 53 }px`
+            sendButton.style.bottom = `${ isFirefox ? 49 : 53 }px`
             for (const [attr, value] of [
                 ['viewBox', '4 2 16 16'], ['fill', 'none'], ['width', 16], ['height', 16],
                 ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
@@ -1768,8 +1769,8 @@
             const newLength = chatTextarea.value.length
             if (newLength < prevLength) { // if deleting txt
                 chatTextarea.style.height = 'auto' // ...auto-fit height
-                if (parseInt(getComputedStyle(chatTextarea).height) < 35) { // if down to one line
-                    chatTextarea.style.height = '1.55rem' } // ...reset to original height
+                if (parseInt(getComputedStyle(chatTextarea).height) < 35) // if down to one line
+                    chatTextarea.style.height = '16px' // ...reset to original height
             }
             chatTextarea.style.height = chatTextarea.scrollHeight - vOffset + 'px'
             prevLength = newLength
