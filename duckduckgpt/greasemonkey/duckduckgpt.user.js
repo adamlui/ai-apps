@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.9.6
+// @version             2024.6.9.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -895,8 +895,8 @@
           + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none } '
           + '.kudoai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
           + ( // rendered markdown styles
-                '.ddgpt > pre h1 { font-size: 1.29em } .ddgpt > pre h2 { font-size: 1.19em }' // size headings
-              + '.ddgpt > pre h1, .ddgpt > pre h2 { margin-bottom: -15px }' // reduce gap after headings
+                '.ddgpt > pre h1 { font-size: 24px } .ddgpt > pre h2 { font-size: 22px } .ddgpt > pre h3 { font-size: 20px }' // size headings
+              + '.ddgpt > pre h1, .ddgpt > pre h2, .ddgpt > pre h3 { margin-bottom: -15px }' // reduce gap after headings
               + '.ddgpt > pre ol { margin: -30px 0 -21px }' // reduce v-padding
               + '.ddgpt > pre ol > li { margin: -10px 0 0 1.6em ; list-style: decimal }' // reduce v-padding, show number markers
               + '.ddgpt > pre ol > li::marker { font-size: 0.9em }' // shrink number markers
