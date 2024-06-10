@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.9.6
+// @version             2024.6.9.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -643,8 +643,9 @@ setTimeout(async () => {
         const alertP = document.createElement('p')
         alertP.className = 'no-user-select' ; alertP.style.marginBottom = '-15px'
 
-        alerts.forEach(alert => { // process each alert
+        alerts.forEach((alert, idx) => { // process each alert for display
             let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
+            if (idx > 0) msg = ' ' + msg // left-pad 2nd+ alerts
             if (msg.includes(appAlerts.login)) deleteOpenAIcookies()
             if (msg.includes(appAlerts.waitingResponse)) alertP.classList.add('loading')
             const linkStyle = `style="color: ${ scheme == 'dark' ? 'white' : '#190cb0' }"`

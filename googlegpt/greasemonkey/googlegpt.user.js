@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.9.9
+// @version             2024.6.9.10
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -870,8 +870,9 @@
         const alertP = document.createElement('p')
         alertP.className = 'no-user-select' ; alertP.style.paddingBottom = '15px'
 
-        alerts.forEach(alert => { // process each alert
+        alerts.forEach((alert, idx) => { // process each alert for display
             let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
+            if (idx > 0) msg = ' ' + msg // left-pad 2nd+ alerts
             if (msg.includes(appAlerts.login)) deleteOpenAIcookies()
             if (msg.includes(appAlerts.waitingResponse)) alertP.classList.add('loading')
             const linkStyle = `style="color: ${ scheme == 'dark' ? 'white' : '#190cb0' }"`
