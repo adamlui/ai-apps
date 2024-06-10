@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.3
+// @version             2024.6.10.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -958,8 +958,8 @@
           + '.standby-btn:hover { border-radius: 6px ; transform: scale(1.025) ;'
               + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
           + '.googlegpt > pre {'
-              + `font-size: ${ isMobile ? 1.68 : 1.15 }em ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ;`
-              + `line-height: ${ isMobile ? 27 : 22 }px ; padding: 1.25em ; border-radius: 10px ; overflow: auto ;`
+              + `font-size: ${ isMobile ? '14px' : '1.15em' } ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ;`
+              + `line-height: ${ isMobile ? 19 : 22 }px ; padding: 1.25em ; border-radius: 10px ; overflow: auto ;`
               + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 }' : 'background: #eaeaea }' )
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '.googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
