@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.9
+// @version             2024.6.10
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -438,8 +438,8 @@
                 const refreshInterval = prompt(
                     `${ msgs.prompt_updateInt || 'Update refresh interval (in secs)' }:`, config.refreshInterval)
                 if (refreshInterval === null) break // user cancelled so do nothing
-                else if (!isNaN(parseInt(refreshInterval)) && parseInt(refreshInterval) > 0) { // valid int set
-                    saveSetting('refreshInterval', parseInt(refreshInterval))
+                else if (!isNaN(parseInt(refreshInterval, 10)) && parseInt(refreshInterval, 10) > 0) { // valid int set
+                    saveSetting('refreshInterval', parseInt(refreshInterval, 10))
                     if (chatgpt.autoRefresh.isActive) { // reset running auto-refresh
                         chatgpt.autoRefresh.deactivate()
                         chatgpt.autoRefresh.activate(refreshInterval)

@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.7
+// @version             2024.6.10.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1705,7 +1705,7 @@ setTimeout(async () => {
             const newLength = chatTextarea.value.length
             if (newLength < prevLength) { // if deleting txt
                 chatTextarea.style.height = 'auto' // ...auto-fit height
-                if (parseInt(getComputedStyle(chatTextarea).height) < 55) { // if down to one line
+                if (parseInt(getComputedStyle(chatTextarea).height, 10) < 55) { // if down to one line
                     chatTextarea.style.height = '45px' } // ...reset to original height
             }
             chatTextarea.style.height = `${ chatTextarea.scrollHeight > 60 ? ( chatTextarea.scrollHeight +2 ) : 45 }px`

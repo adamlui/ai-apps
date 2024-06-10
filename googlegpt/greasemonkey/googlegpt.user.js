@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.8
+// @version             2024.6.10.9
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1991,7 +1991,7 @@
             const newLength = chatTextarea.value.length
             if (newLength < prevLength) { // if deleting txt
                 chatTextarea.style.height = 'auto' // ...auto-fit height
-                if (parseInt(getComputedStyle(chatTextarea).height) < 35) { // if down to one line
+                if (parseInt(getComputedStyle(chatTextarea).height, 10) < 35) { // if down to one line
                     chatTextarea.style.height = '15px' } // ...reset to original height
             }
             const unpaddedHeight = chatTextarea.scrollHeight - vOffset

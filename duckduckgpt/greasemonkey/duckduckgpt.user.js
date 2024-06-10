@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.6
+// @version             2024.6.10.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1769,7 +1769,7 @@
             const newLength = chatTextarea.value.length
             if (newLength < prevLength) { // if deleting txt
                 chatTextarea.style.height = 'auto' // ...auto-fit height
-                if (parseInt(getComputedStyle(chatTextarea).height) < 35) // if down to one line
+                if (parseInt(getComputedStyle(chatTextarea).height, 10) < 35) // if down to one line
                     chatTextarea.style.height = '16px' // ...reset to original height
             }
             chatTextarea.style.height = chatTextarea.scrollHeight - vOffset + 'px'
