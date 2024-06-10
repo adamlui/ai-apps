@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.9
+// @version             2024.6.10.10
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -519,17 +519,18 @@
                     + '.googlegpt ~ * { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
-    // Stylize TOOLTIPs
-    const tooltipDiv = document.createElement('div'),
-          tooltipStyle = document.createElement('style')
-    tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
-    tooltipStyle.innerText = '.btn-tooltip {'
-        + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-        + 'font-size: 0.75rem ; color: white ;' // font style
-        + 'position: absolute ;' // for updateTooltip() calcs
-        + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
-        + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
-    document.head.append(tooltipStyle)
+    // Create/stylize TOOLTIPs
+    if (!isMobile) {
+        var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
+        const tooltipStyle = document.createElement('style')
+        tooltipStyle.innerText = '.btn-tooltip {'
+            + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+            + 'font-size: 0.75rem ; color: white ;' // font style
+            + 'position: absolute ;' // for updateTooltip() calcs
+            + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
+            + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
+        document.head.append(tooltipStyle)
+    }
 
     // Create/classify GOOGLEGPT container
     const appDiv = document.createElement('div')
@@ -1753,7 +1754,7 @@
             }
 
             // Add tooltips
-            appDiv.append(tooltipDiv)
+            if (!isMobile) appDiv.append(tooltipDiv)
 
             // Add corner button listeners
             aboutSVG.addEventListener('click', launchAboutModal)
@@ -1803,11 +1804,9 @@
             })
             ssbSVG?.addEventListener('click', () => toggleSidebar('sticky'))
             wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
-            const buttonSpans = [aboutSpan, speakSpan, ssbSpan, wsbSpan]
-            buttonSpans.forEach(span => { if (span) { // add hover listeners for tooltips
-                span.addEventListener('mouseover', toggleTooltip)
-                span.addEventListener('mouseout', toggleTooltip)
-            }})
+            if (!isMobile) // add hover listeners for tooltips
+                [aboutSpan, speakSpan, ssbSpan, wsbSpan].forEach(span => { if (span)
+                    ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
 
             // Show standby state if prefix/suffix mode on
             if (answer == 'standby') {
@@ -1881,8 +1880,8 @@
             replyForm.addEventListener('keydown', handleEnter)
             replyForm.addEventListener('submit', handleSubmit)
             chatTextarea.addEventListener('input', autosizeChatbar)
-            sendButton.addEventListener('mouseover', toggleTooltip)
-            sendButton.addEventListener('mouseout', toggleTooltip)
+            if (!isMobile) // add hover listeners for tooltips
+                ['mouseover', 'mouseout'].forEach(event => sendButton.addEventListener(event, toggleTooltip))
 
             // Scroll to top on mobile if user interacted
             if (isMobile && appShow.submitSrc) {
@@ -1970,7 +1969,7 @@
             } catch (err) {}
 
             // Remove 'Send reply' tooltip from send btn clicks
-            tooltipDiv.style.opacity = 0
+            if (!isMobile) tooltipDiv.style.opacity = 0
 
             // Clear footer
             const appFooter = appDiv.querySelector('footer')
