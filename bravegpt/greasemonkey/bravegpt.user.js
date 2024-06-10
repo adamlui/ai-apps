@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.11
+// @version             2024.6.10.12
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -644,7 +644,7 @@ setTimeout(async () => {
         alerts = alerts.flat() // flatten array args nested by spread operator
         while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear appDiv content
         const alertP = document.createElement('p')
-        alertP.className = 'no-user-select' ; alertP.style.marginBottom = '-15px'
+        alertP.className = 'no-user-select' ; alertP.style.marginBottom = '-22px'
 
         alerts.forEach((alert, idx) => { // process each alert for display
             let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
