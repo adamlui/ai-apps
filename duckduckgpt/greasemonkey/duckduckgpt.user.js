@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.9.5
+// @version             2024.6.9.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1450,194 +1450,210 @@
     }
 
     function appShow(answer) {
-        while (appDiv.firstChild) // clear all children
-            appDiv.removeChild(appDiv.firstChild)
 
-        // Create/append app title anchor
-        const appTitleAnchor = createAnchor(config.appURL, (() => {
-            if (appLogoImg.loaded) { // size/pos/return app logo img
-                appLogoImg.width = 181 ; appLogoImg.style.margin = '-7px 0'
-                return appLogoImg
-            } else { // create/fill/return app name span
-                const appNameSpan = document.createElement('span')
-                appNameSpan.innerText = '🤖 ' + config.appName
-                return appNameSpan
+        if (!appDiv.querySelector('pre')) { // build answer interface
+
+            // Clear app content
+            while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild)
+
+            // Create/append app title anchor
+            const appTitleAnchor = createAnchor(config.appURL, (() => {
+                if (appLogoImg.loaded) { // size/pos/return app logo img
+                    appLogoImg.width = 181 ; appLogoImg.style.margin = '-7px 0'
+                    return appLogoImg
+                } else { // create/fill/return app name span
+                    const appNameSpan = document.createElement('span')
+                    appNameSpan.innerText = '🤖 ' + config.appName
+                    return appNameSpan
+                }
+            })())
+            appTitleAnchor.classList.add('app-name', 'no-user-select')
+            appDiv.append(appTitleAnchor)
+
+            // Create/append 'by KudoAI'
+            const kudoAIspan = document.createElement('span')
+            kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
+            const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
+            kudoAIspan.append(kudoAIlink) ; appDiv.append(kudoAIspan)
+
+            // Create/append about button
+            const aboutSpan = document.createElement('span'),
+                  aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                  aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
+            aboutSpan.id = 'about-btn' // for toggleTooltip()
+            aboutSpan.className = 'corner-btn'
+            const aboutSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
+            aboutSVGattrs.forEach(([attr, value]) => aboutSVG.setAttribute(attr, value))            
+            aboutSVGpath.setAttribute('d',
+                'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z')
+            aboutSVGpath.setAttribute('stroke', 'none')
+            aboutSVG.append(aboutSVGpath) ; aboutSpan.append(aboutSVG) ; appDiv.append(aboutSpan)
+
+            // Create/append speak button
+            if (answer != 'standby') {
+                var speakSpan = document.createElement('span'),
+                    speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+                speakSpan.id = 'speak-btn' // for toggleTooltip()
+                speakSpan.className = 'corner-btn' ; speakSpan.style.margin = '-0.117em 8px 0 0'
+                const speakSVGattrs = [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']]
+                speakSVGattrs.forEach(([attr, value]) => speakSVG.setAttributeNS(null, attr, value))
+                const speakSVGpaths = [
+                    createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
+                        d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10' }),
+                    createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
+                        d: 'M22,20.847c1.281,-1.306 2,-3.077 2,-4.924c0,-1.846 -0.719,-3.617 -2,-4.923' }),
+                    createSVGpath({ stroke: 'none', fill: '',
+                        d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
+                ]
+                speakSVGpaths.forEach(path => speakSVG.append(path))
+                speakSpan.append(speakSVG) ; appDiv.append(speakSpan)
             }
-        })())
-        appTitleAnchor.classList.add('app-name', 'no-user-select')
-        appDiv.append(appTitleAnchor)
 
-        // Create/append 'by KudoAI'
-        const kudoAIspan = document.createElement('span')
-        kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-        const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
-        kudoAIspan.append(kudoAIlink) ; appDiv.append(kudoAIspan)
+            if (!isCentered && !isMobile) {
 
-        // Create/append about button
-        const aboutSpan = document.createElement('span'),
-              aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-              aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
-        aboutSpan.id = 'about-btn' // for toggleTooltip()
-        aboutSpan.className = 'corner-btn'
-        const aboutSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
-        aboutSVGattrs.forEach(([attr, value]) => aboutSVG.setAttribute(attr, value))            
-        aboutSVGpath.setAttribute('d',
-            'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z')
-        aboutSVGpath.setAttribute('stroke', 'none')
-        aboutSVG.append(aboutSVGpath) ; aboutSpan.append(aboutSVG) ; appDiv.append(aboutSpan)
+                // Create/append Sticky Sidebar button
+                var ssbSpan = document.createElement('span'),
+                    ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+                ssbSpan.id = 'ssb-btn' // for updateSSBsvg() + toggleTooltip()
+                ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '0.09rem 8px 0 0'
+                ssbSpan.append(ssbSVG) ; appDiv.append(ssbSpan) ; updateSSBsvg()
 
-        // Create/append speak button
-        if (answer != 'standby') {
-            var speakSpan = document.createElement('span'),
-                speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-            speakSpan.id = 'speak-btn' // for toggleTooltip()
-            speakSpan.className = 'corner-btn' ; speakSpan.style.margin = '-0.117em 8px 0 0'
-            const speakSVGattrs = [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']]
-            speakSVGattrs.forEach(([attr, value]) => speakSVG.setAttributeNS(null, attr, value))
-            const speakSVGpaths = [
-                createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
-                    d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10' }),
-                createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
-                    d: 'M22,20.847c1.281,-1.306 2,-3.077 2,-4.924c0,-1.846 -0.719,-3.617 -2,-4.923' }),
-                createSVGpath({ stroke: 'none', fill: '',
-                    d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
-            ]
-            speakSVGpaths.forEach(path => speakSVG.append(path))
-            speakSpan.append(speakSVG) ; appDiv.append(speakSpan)
-        }
+                // Create/append Wider Sidebar button
+                var wsbSpan = document.createElement('span'),
+                    wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+                wsbSpan.id = 'wsb-btn' // for updateSSBsvg() + toggleTooltip()
+                wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.05rem 12px 0 0'
+                wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan) ; updateWSBsvg()
+            }
 
-        if (!isCentered && !isMobile) {
+            // Add tooltips
+            appDiv.append(tooltipDiv)
 
-            // Create/append Sticky Sidebar button
-            var ssbSpan = document.createElement('span'),
-                ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-            ssbSpan.id = 'ssb-btn' // for updateSSBsvg() + toggleTooltip()
-            ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '0.09rem 8px 0 0'
-            ssbSpan.append(ssbSVG) ; appDiv.append(ssbSpan) ; updateSSBsvg()
-
-            // Create/append Wider Sidebar button
-            var wsbSpan = document.createElement('span'),
-                wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-            wsbSpan.id = 'wsb-btn' // for updateSSBsvg() + toggleTooltip()
-            wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.05rem 12px 0 0'
-            wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan) ; updateWSBsvg()
-        }
-
-        // Add tooltips
-        appDiv.append(tooltipDiv)
-
-        // Add corner button listeners
-        aboutSVG.addEventListener('click', launchAboutModal)
-        speakSVG?.addEventListener('click', () => {
-            const dialectMap = [
-                { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
-                { code: 'ar', regex: /^(ara?(bic)?|اللغة العربية)$/i, rate: 1.5 },
-                { code: 'cs', regex: /^(cze(ch)?|[cč]e[sš].*|cs)$/i, rate: 1.4 },
-                { code: 'da', regex: /^dan?(ish|sk)?$/i, rate: 1.3 },
-                { code: 'de', regex: /^(german|deu?(tsch)?)$/i, rate: 1.5 },
-                { code: 'es', regex: /^(spa(nish)?|espa.*|es(-\w\w)?)$/i, rate: 1.5 },
-                { code: 'fi', regex: /^(fin?(nish)?|suom.*)$/i, rate: 1.4 },
-                { code: 'fr', regex: /^fr/i, rate: 1.2 },
-                { code: 'hu', regex: /^(hun?(garian)?|magyar)$/i, rate: 1.5 },
-                { code: 'it', regex: /^ita?(lian[ao]?)?$/i, rate: 1.4 },
-                { code: 'ja', regex: /^(ja?pa?n(ese)?|日本語|ja)$/i, rate: 1.5 },
-                { code: 'nl', regex: /^(dut(ch)?|flemish|nederlandse?|vlaamse?|nld?)$/i, rate: 1.3 },
-                { code: 'pl', regex: /^po?l(ish|ski)?$/i, rate: 1.4 },
-                { code: 'pt', regex: /^(por(tugu[eê]se?)?|pt(-\w\w)?)$/i, rate: 1.5 },
-                { code: 'ru', regex: /^(rus?(sian)?|русский)$/i, rate: 1.3 },
-                { code: 'sv', regex: /^(swe?(dish)?|sv(enska)?)$/i, rate: 1.4 },
-                { code: 'tr', regex: /^t[uü]?r(k.*)?$/i, rate: 1.6 },
-                { code: 'vi', regex: /^vi[eệ]?t?(namese)?$/i, rate: 1.5 },
-                { code: 'zh-CHS', regex: /^(chi(nese)?|zh|中[国國])/i, rate: 2 }
-            ]
-            const replyDialect = dialectMap.find(entry => entry.regex.test(config.replyLanguage)) || dialectMap[0],
-                  payload = { text: answer, curTime: Date.now(), spokenDialect: replyDialect.code, rate: replyDialect.rate.toString() },
-                  key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
-                  iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
-            const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
-                iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
-            GM.xmlHttpRequest({ // audio from Sogou TTS
-                url: 'https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
-                    + encodeURIComponent(securePayload),
-                method: 'GET', responseType: 'arraybuffer',
-                onload: async resp => {
-                    if (resp.status != 200) chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })
-                    else {
-                        const audioContext = new (window.AudioContext || window.webkitAudioContext)()
-                        audioContext.decodeAudioData(resp.response, buffer => {
-                            const audioSrc = audioContext.createBufferSource()
-                            audioSrc.buffer = buffer
-                            audioSrc.connect(audioContext.destination) // connect source to speakers
-                            audioSrc.start(0) // play audio
-                })}}
+            // Add corner button listeners
+            aboutSVG.addEventListener('click', launchAboutModal)
+            speakSVG?.addEventListener('click', () => {
+                const dialectMap = [
+                    { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
+                    { code: 'ar', regex: /^(ara?(bic)?|اللغة العربية)$/i, rate: 1.5 },
+                    { code: 'cs', regex: /^(cze(ch)?|[cč]e[sš].*|cs)$/i, rate: 1.4 },
+                    { code: 'da', regex: /^dan?(ish|sk)?$/i, rate: 1.3 },
+                    { code: 'de', regex: /^(german|deu?(tsch)?)$/i, rate: 1.5 },
+                    { code: 'es', regex: /^(spa(nish)?|espa.*|es(-\w\w)?)$/i, rate: 1.5 },
+                    { code: 'fi', regex: /^(fin?(nish)?|suom.*)$/i, rate: 1.4 },
+                    { code: 'fr', regex: /^fr/i, rate: 1.2 },
+                    { code: 'hu', regex: /^(hun?(garian)?|magyar)$/i, rate: 1.5 },
+                    { code: 'it', regex: /^ita?(lian[ao]?)?$/i, rate: 1.4 },
+                    { code: 'ja', regex: /^(ja?pa?n(ese)?|日本語|ja)$/i, rate: 1.5 },
+                    { code: 'nl', regex: /^(dut(ch)?|flemish|nederlandse?|vlaamse?|nld?)$/i, rate: 1.3 },
+                    { code: 'pl', regex: /^po?l(ish|ski)?$/i, rate: 1.4 },
+                    { code: 'pt', regex: /^(por(tugu[eê]se?)?|pt(-\w\w)?)$/i, rate: 1.5 },
+                    { code: 'ru', regex: /^(rus?(sian)?|русский)$/i, rate: 1.3 },
+                    { code: 'sv', regex: /^(swe?(dish)?|sv(enska)?)$/i, rate: 1.4 },
+                    { code: 'tr', regex: /^t[uü]?r(k.*)?$/i, rate: 1.6 },
+                    { code: 'vi', regex: /^vi[eệ]?t?(namese)?$/i, rate: 1.5 },
+                    { code: 'zh-CHS', regex: /^(chi(nese)?|zh|中[国國])/i, rate: 2 }
+                ]
+                const replyDialect = dialectMap.find(entry => entry.regex.test(config.replyLanguage)) || dialectMap[0],
+                      payload = { text: answer, curTime: Date.now(), spokenDialect: replyDialect.code, rate: replyDialect.rate.toString() },
+                      key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
+                      iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
+                const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
+                    iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
+                GM.xmlHttpRequest({ // audio from Sogou TTS
+                    url: 'https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
+                        + encodeURIComponent(securePayload),
+                    method: 'GET', responseType: 'arraybuffer',
+                    onload: async resp => {
+                        if (resp.status != 200) chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })
+                        else {
+                            const audioContext = new (window.AudioContext || window.webkitAudioContext)()
+                            audioContext.decodeAudioData(resp.response, buffer => {
+                                const audioSrc = audioContext.createBufferSource()
+                                audioSrc.buffer = buffer
+                                audioSrc.connect(audioContext.destination) // connect source to speakers
+                                audioSrc.start(0) // play audio
+                    })}}
+                })
             })
-        })
-        ssbSVG?.addEventListener('click', () => toggleSidebar('sticky'))
-        wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
-        const buttonSpans = [aboutSpan, speakSpan, ssbSpan, wsbSpan]
-        buttonSpans.forEach(span => { if (span) { // add hover listeners for tooltips
-            span.addEventListener('mouseover', toggleTooltip)
-            span.addEventListener('mouseout', toggleTooltip)
-        }})
+            ssbSVG?.addEventListener('click', () => toggleSidebar('sticky'))
+            wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
+            const buttonSpans = [aboutSpan, speakSpan, ssbSpan, wsbSpan]
+            buttonSpans.forEach(span => { if (span) { // add hover listeners for tooltips
+                span.addEventListener('mouseover', toggleTooltip)
+                span.addEventListener('mouseout', toggleTooltip)
+            }})
 
-        // Show standby state if prefix/suffix mode on
-        if (answer == 'standby') {
-            const standbyBtn = document.createElement('button')
-            standbyBtn.className = 'standby-btn'
-            standbyBtn.textContent = msgs.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
-            appDiv.append(standbyBtn)
-            standbyBtn.addEventListener('click', () => {
-                appAlert('waitingResponse')
-                msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
-                appShow.submitSrc = 'click' // for appShow() auto-focus
-                getShowReply(msgChain)
-            })
+            // Show standby state if prefix/suffix mode on
+            if (answer == 'standby') {
+                const standbyBtn = document.createElement('button')
+                standbyBtn.className = 'standby-btn'
+                standbyBtn.textContent = msgs.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
+                appDiv.append(standbyBtn)
+                standbyBtn.addEventListener('click', () => {
+                    appAlert('waitingResponse')
+                    msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
+                    appShow.submitSrc = 'click' // for appShow() auto-focus
+                    getShowReply(msgChain)
+                })
 
-        // Otherwise create/append ChatGPT response
-        } else {            
-            const balloonTipSpan = document.createElement('span')
-            var answerPre = document.createElement('pre')
-            balloonTipSpan.className = 'balloon-tip'
-            balloonTipSpan.style.cssText = ( // pos it
-                `top: ${ isFirefox ? '0.55em' : '4px' } ;`
-              + `right: ${ isFirefox ? ( 16.87 - ( appLogoImg.loaded ? 0 : 0.36 ))
-                                     : ( 8.38  - ( appLogoImg.loaded ? 0 : 0.15 ))}em`
-            )
-            answerPre.textContent = answer
-            appDiv.append(balloonTipSpan) ; appDiv.append(answerPre)
+            // Otherwise create/append answer bubble
+            } else {            
+                const balloonTipSpan = document.createElement('span')
+                var answerPre = document.createElement('pre')
+                balloonTipSpan.className = 'balloon-tip'
+                balloonTipSpan.style.cssText = ( // pos it
+                    `top: ${ isFirefox ? '0.55em' : '4px' } ;`
+                  + `right: ${ isFirefox ? ( 16.87 - ( appLogoImg.loaded ? 0 : 0.36 ))
+                                         : ( 8.38  - ( appLogoImg.loaded ? 0 : 0.15 ))}em`
+                )
+                appDiv.append(balloonTipSpan) ; appDiv.append(answerPre)
+            }
         }
 
-        updateTweaksStyle() // in case sticky mode on
+        if (!appDiv.querySelector('#app-chatbar')) { // build reply section
 
-        // Create/append reply section/elements
-        const replySection = document.createElement('section'),
-              replyForm = document.createElement('form'),
-              continueChatDiv = document.createElement('div'),
-              chatTextarea = document.createElement('textarea')
-        continueChatDiv.className = 'continue-chat'
-        chatTextarea.id = 'app-chatbar' ; chatTextarea.rows = '1'
-        chatTextarea.placeholder = ( answer == 'standby' ? msgs.placeholder_askSomethingElse || 'Ask something else'
-                                                         : msgs.tooltip_sendReply || 'Send reply' ) + '...'
-        continueChatDiv.append(chatTextarea)
-        replyForm.append(continueChatDiv) ; replySection.append(replyForm)
-        appDiv.append(replySection)
+            // Init/clear reply section content/classes
+            const replySection = appDiv.querySelector('section') || document.createElement('section')
+            while (replySection.firstChild) replySection.removeChild(replySection.firstChild)
+            replySection.classList.remove('loading', 'no-user-select')
 
-        // Create/append send button
-        const sendButton = document.createElement('button'),
-              sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-              sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
-                  'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
-        sendButton.id = 'send-btn'
-        sendButton.style.right = `${ isFirefox ? 8 : 6 }px`
-        sendButton.style.bottom = `${ isFirefox ? 48 : 53 }px`
-        for (const [attr, value] of [
-            ['viewBox', '4 2 16 16'], ['fill', 'none'], ['width', 16], ['height', 16],
-            ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
-        ]) sendSVG.setAttribute(attr, value)
-        sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
+            // Create/append section elems
+            const replyForm = document.createElement('form'),
+                  continueChatDiv = document.createElement('div'),
+                  chatTextarea = document.createElement('textarea')
+            continueChatDiv.className = 'continue-chat'
+            chatTextarea.id = 'app-chatbar' ; chatTextarea.rows = '1'
+            chatTextarea.placeholder = ( answer == 'standby' ? msgs.placeholder_askSomethingElse || 'Ask something else'
+                                                             : msgs.tooltip_sendReply || 'Send reply' ) + '...'
+            continueChatDiv.append(chatTextarea)
+            replyForm.append(continueChatDiv) ; replySection.append(replyForm)
+            appDiv.append(replySection)
 
-        // Render markdown/math + highlight code
+            // Create/append send button
+            const sendButton = document.createElement('button'),
+                  sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                  sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
+                      'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
+            sendButton.id = 'send-btn'
+            sendButton.style.right = `${ isFirefox ? 8 : 6 }px`
+            sendButton.style.bottom = `${ isFirefox ? 48 : 53 }px`
+            for (const [attr, value] of [
+                ['viewBox', '4 2 16 16'], ['fill', 'none'], ['width', 16], ['height', 16],
+                ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
+            ]) sendSVG.setAttribute(attr, value)
+            sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
+
+            // Add reply section listeners
+            replyForm.addEventListener('keydown', handleEnter)
+            replyForm.addEventListener('submit', handleSubmit)
+            chatTextarea.addEventListener('input', autosizeChatbar)
+            sendButton.addEventListener('mouseover', toggleTooltip)
+            sendButton.addEventListener('mouseout', toggleTooltip)
+        }
+
         if (answer != 'standby') { // show answer
+            const answerPre = appDiv.querySelector('pre')
+            answerPre.innerHTML = marked.parse(answer) // render markdown
             hljs.highlightAll() // highlight code
             answerPre.querySelectorAll('code').forEach(codeBlock => { // add linebreaks after semicolons
                 codeBlock.innerHTML = codeBlock.innerHTML.replace(/;\s*/g, ';<br>') })
@@ -1658,14 +1674,9 @@
                     ],
                     throwOnError: false
             })})
-        } updateTweaksStyle() // in case sticky mode on
+        }
 
-        // Add reply section listeners
-        replyForm.addEventListener('keydown', handleEnter)
-        replyForm.addEventListener('submit', handleSubmit)
-        chatTextarea.addEventListener('input', autosizeChatbar)
-        sendButton.addEventListener('mouseover', toggleTooltip)
-        sendButton.addEventListener('mouseout', toggleTooltip)
+        updateTweaksStyle() // in case sticky mode on
 
         // Focus chatbar conditionally
         const proxyAPIstreaming = !config.streamingDisabled && config.proxyAPIenabled
@@ -1674,13 +1685,13 @@
                 appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top // app fully above fold
             || !proxyAPIstreaming && appShow.submitSrc && appShow.submitSrc != 'click' // user replied to non-stream
             ||  proxyAPIstreaming && config.autoScroll // auto-scroll active for streaming APIs
-        )) chatTextarea.focus()
+        )) appDiv.querySelector('#app-chatbar').focus()
         appShow.submitSrc = 'none'
 
         function handleEnter(event) {
             if (event.key == 'Enter' || event.keyCode == 13) {
                 if (event.ctrlKey) { // add newline
-                    const chatTextarea = document.querySelector('#app-chatbar'),
+                    const chatTextarea = appDiv.querySelector('#app-chatbar'),
                           caretPos = chatTextarea.selectionStart,
                           textBefore = chatTextarea.value.substring(0, caretPos),
                           textAfter = chatTextarea.value.substring(caretPos)
@@ -1692,6 +1703,7 @@
 
         function handleSubmit(event) {
             event.preventDefault()
+            const chatTextarea = appDiv.querySelector('#app-chatbar')
             if (msgChain.length > 2) msgChain.splice(0, 2) // keep token usage maintainable
             const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || '',
                   yourReply = `${ chatTextarea.value } (reply in ${ config.replyLanguage })`
@@ -1700,6 +1712,7 @@
             getShowReply(msgChain)
 
             // Remove re-added reply section listeners
+            const replyForm = appDiv.querySelector('form')
             replyForm.removeEventListener('keydown', handleEnter)
             replyForm.removeEventListener('submit', handleSubmit)
             chatTextarea.removeEventListener('input', autosizeChatbar)
@@ -1724,7 +1737,8 @@
         }
 
         // Autosize chatbar function
-        const { paddingTop, paddingBottom } = getComputedStyle(chatTextarea),
+        const chatTextarea = appDiv.querySelector('#app-chatbar'),
+              { paddingTop, paddingBottom } = getComputedStyle(chatTextarea),
               vOffset = parseInt(paddingTop, 10) + parseInt(paddingBottom, 10)
         let prevLength = chatTextarea.value.length
         function autosizeChatbar() {
