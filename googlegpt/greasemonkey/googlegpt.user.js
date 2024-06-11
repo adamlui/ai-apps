@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.6
+// @version             2024.6.11.7
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1428,9 +1428,9 @@
 
         if (!config.proxyAPIenabled) // init OpenAI key
             config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
-        else setTimeout(() => { // try diff API after 3-5s of no response
+        else setTimeout(() => { // try diff API after 6-9s of no response
             if (config.proxyAPIenabled && getShowReply.status != 'done' && !getShowReply.sender)
-                tryDiffAPI(api, 'timeout') }, config.streamingDisabled ? 5000 : 3000)
+                tryDiffAPI(api, 'timeout') }, config.streamingDisabled ? 9000 : 6000)
 
         // Get/show answer from ChatGPT
         GM.xmlHttpRequest({

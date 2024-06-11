@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.6
+// @version             2024.6.11.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1127,9 +1127,9 @@
 
         if (!config.proxyAPIenabled) // init OpenAI key
             config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
-        else setTimeout(() => { // try diff API after 3-5s of no response
+        else setTimeout(() => { // try diff API after 6-9s of no response
             if (config.proxyAPIenabled && getShowReply.status != 'done' && !getShowReply.sender)
-                tryDiffAPI(api, 'timeout') }, config.streamingDisabled ? 5000 : 3000)
+                tryDiffAPI(api, 'timeout') }, config.streamingDisabled ? 9000 : 6000)
 
         // Get/show answer from ChatGPT
         GM.xmlHttpRequest({
