@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.1
+// @version             2024.6.11.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1925,9 +1925,8 @@
         updateTweaksStyle() // in case sticky mode on
 
         // Focus chatbar conditionally
-        if (!isMobile && // exclude mobile devices to not auto-popup OSD keyboard
-            !document.querySelector('.standby-btn') &&  // exclude when Auto-Get off
-            ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top ) // app fully above fold
+        if (!isMobile // exclude mobile devices to not auto-popup OSD keyboard
+            && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top ) // app fully above fold
         ) appDiv.querySelector('#app-chatbar').focus()
         appShow.submitSrc = 'none'
 
