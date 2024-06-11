@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.1
+// @version             2024.6.11.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1275,7 +1275,7 @@
                 } else textToShow = accumulatedChunks
                 if (textToShow && getShowReply.status != 'done') { // text ready, app waiting or sending
                     if (!getShowReply.sender) getShowReply.sender = api // app is waiting, become sender
-                    if (getShowReply.sender == api) appShow(footerContent)
+                    if (getShowReply.sender == api) appShow(textToShow)
                 }
             } catch (err) { consoleErr('Error showing stream', err.message) }
             return reader.read().then(({ done, value }) => {
@@ -1707,9 +1707,8 @@
         updateTweaksStyle() // in case sticky mode on
 
         // Focus chatbar conditionally
-        if (!isMobile && // exclude mobile devices to not auto-popup OSD keyboard
-            !document.querySelector('.standby-btn') &&  // exclude when Auto-Get off
-            ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top ) // app fully above fold
+        if (!isMobile // exclude mobile devices to not auto-popup OSD keyboard
+            && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top ) // app fully above fold
         ) appDiv.querySelector('#app-chatbar').focus()
         appShow.submitSrc = 'none'
 
