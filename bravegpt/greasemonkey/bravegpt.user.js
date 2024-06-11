@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.6
+// @version             2024.6.11.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -236,8 +236,6 @@ setTimeout(async () => {
     const apis = {
         'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.xyz',
             endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true, accumulatesText: false },
-        'Free Chat': { expectedOrigin: 'https://e8.frechat.xyz',
-            endpoint: 'https://demo-yj7h.onrender.com/single/chat_messages', method: 'PUT', streamable: true, accumulatesText: false },
         'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
             endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true, accumulatesText: true },
         'MixerBox AI': { expectedOrigin: 'https://chatai.mixerbox.com',
@@ -1093,9 +1091,7 @@ setTimeout(async () => {
                 prompt: msgs[msgs.length - 1].content,
                 withoutContext: false, userId: apiIDs.aiChatOS.userID, network: true
             }
-        }  else if (api == 'Free Chat')
-            payload = { messages: msgs, model: 'gemma-7b-it' }
-        else if (api == 'GPTforLove') {
+        } else if (api == 'GPTforLove') {
             payload = {
                 prompt: msgs[msgs.length - 1].content,
                 secret: generateGPTforLoveKey(), top_p: 1, temperature: 0.8,
@@ -1143,17 +1139,6 @@ setTimeout(async () => {
                         currentIdx += chunkSize ; answer += chunk
                     }
                     appShow(answer, footerContent)
-                    getShowReply.status = 'done' ; clearTimedOutAPIs(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
-                } catch (err) { // use different endpoint or suggest OpenAI
-                    consoleInfo('Response: ' + resp.responseText)
-                    consoleErr(appAlerts.parseFailed, err)
-                    if (getShowReply.status != 'done') tryDiffAPI(api)
-                }
-            } else { consoleInfo('Response: ' + resp.responseText) ; if (getShowReply.status != 'done') tryDiffAPI(api) }
-        } else if (api == 'Free Chat') {
-            if (resp.responseText) {
-                try {
-                    appShow(resp.responseText, footerContent)
                     getShowReply.status = 'done' ; clearTimedOutAPIs(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
@@ -1266,9 +1251,6 @@ setTimeout(async () => {
                                 currentIdx += chunkSize ; str_relatedQueries += chunk
                             }
                         } catch (err) { consoleErr(err) ; reject(err) }
-                    } else if (api == 'Free Chat') {
-                        try { str_relatedQueries = event.responseText }
-                        catch (err) { consoleErr(err) ; reject(err) }
                     } else if (api == 'GPTforLove') {
                         try {
                             let chunks = event.responseText.trim().split('\n')
