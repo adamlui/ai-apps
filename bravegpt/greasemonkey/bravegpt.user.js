@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.4
+// @version             2024.6.11.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1045,11 +1045,10 @@ setTimeout(async () => {
     function pickAPI() {
         let chosenAPI
         if (config.proxyAPIenabled) { // randomize proxy API
-            const untriedAPIs = Object.keys(apis)
-                .filter( // out OpenAI + tried APIs
-                    api => api !== 'OpenAI' && !getShowReply.triedAPIs.includes(api))
-                .filter( // out unstreamable APIs if config.streamingDisabled
-                    api => config.streamingDisabled || apis[api].streamable )
+            const untriedAPIs = Object.keys(apis).filter(api =>
+                   api != 'OpenAI' // since Proxy Mode
+                && !getShowReply.triedAPIs.some(entry => entry[api] == 'err') // exclude tried APIs that err'd
+                && (config.streamingDisabled || apis[api].streamable)) // exclude unstreamable APIs if config.streamingDisabled
             chosenAPI = untriedAPIs[ // pick random array entry
                 Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]
             if (!chosenAPI) { consoleErr('No proxy APIs left untried') ; return null }
@@ -1060,6 +1059,22 @@ setTimeout(async () => {
         try { logPrefix = pickAPI.arguments.callee.caller.name + '() » ' } catch (err) {}
         consoleInfo(logPrefix + 'Endpoint used: ' + apis[chosenAPI].endpoint)
         return chosenAPI
+    }
+
+    function tryDiffAPI(triedAPI, reason = 'err') {
+        consoleErr(`Error using ${apis[triedAPI].endpoint} due to ${reason}`)
+        if (getShowReply.attemptCnt < Object.keys(apis).length -1) {
+            consoleInfo('Trying another endpoint...')
+            getShowReply.triedAPIs.push({ [triedAPI]: reason }) ; getShowReply.attemptCnt++
+            getShowReply(msgChain)
+        } else {
+            consoleInfo('No remaining untried endpoints')
+            appAlert('proxyNotWorking', 'suggestOpenAI')
+    }}
+
+    function clearTimedOutAPIs(apiArray) {
+        apiArray.splice(0, apiArray.length, // empty apiArray
+            ...apiArray.filter(entry => Object.values(entry)[0] != 'timeout')) // replace w/ err'd APIs
     }
 
     function createHeaders(api) {
@@ -1128,7 +1143,7 @@ setTimeout(async () => {
                         currentIdx += chunkSize ; answer += chunk
                     }
                     appShow(answer, footerContent)
-                    getShowReply.status = 'done' ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
+                    getShowReply.status = 'done' ; clearTimedOutAPIs(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed, err)
@@ -1139,7 +1154,7 @@ setTimeout(async () => {
             if (resp.responseText) {
                 try {
                     appShow(resp.responseText, footerContent)
-                    getShowReply.status = 'done' ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
+                    getShowReply.status = 'done' ; clearTimedOutAPIs(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed, err)
@@ -1153,7 +1168,7 @@ setTimeout(async () => {
                         lastObj = JSON.parse(chunks[chunks.length - 1])
                     if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
                     appShow(lastObj.text, footerContent)
-                    getShowReply.status = 'done' ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
+                    getShowReply.status = 'done' ; clearTimedOutAPIs(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed, err)
@@ -1167,7 +1182,7 @@ setTimeout(async () => {
                         .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                         .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                     appShow(extractedData.join(''), footerContent)
-                    getShowReply.status = 'done' ; getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
+                    getShowReply.status = 'done' ; clearTimedOutAPIs(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
                 } catch (err) { // use different endpoint or suggest OpenAI
                     consoleInfo('Response: ' + resp.responseText)
                     consoleErr(appAlerts.parseFailed, err)
@@ -1184,7 +1199,7 @@ setTimeout(async () => {
         function processStreamText({ done, value }) {
             if (done) {
                 getShowReply.status = 'done' ; getShowReply.sender = null
-                getShowReply.triedAPIs = [] ; getShowReply.attemptCnt = 0
+                clearTimedOutAPIs(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
                 return
             }
             let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
@@ -1219,18 +1234,6 @@ setTimeout(async () => {
             }).catch(err => consoleErr('Error reading stream', err.message))
         }
     }
-
-    function tryDiffAPI(triedAPI) {
-        consoleErr('Error using ' + apis[triedAPI].endpoint)
-        if (getShowReply.attemptCnt < Object.keys(apis).length -1) {
-            consoleInfo('Trying another endpoint...')
-            getShowReply.triedAPIs.push(triedAPI) // store tried API to not retry
-            getShowReply.attemptCnt++
-            getShowReply(msgChain)
-        } else {
-            consoleInfo('No remaining untried endpoints')
-            appAlert('proxyNotWorking', 'suggestOpenAI')
-    }}
 
     function getRelatedQueries(query) {
         const api = pickAPI()
@@ -1340,7 +1343,7 @@ setTimeout(async () => {
             config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
         else setTimeout(() => { // try diff API after 3-5s of no response
             if (config.proxyAPIenabled && getShowReply.status != 'done' && !getShowReply.sender)
-                tryDiffAPI(api) }, config.streamingDisabled ? 5000 : 3000)
+                tryDiffAPI(api, 'timeout') }, config.streamingDisabled ? 5000 : 3000)
 
         // Get/show answer from ChatGPT
         GM.xmlHttpRequest({
