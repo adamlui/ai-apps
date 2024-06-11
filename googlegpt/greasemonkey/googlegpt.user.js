@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.14
+// @version             2024.6.11
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1563,12 +1563,7 @@
             }
     }}
 
-    function augmentQuery(query) {
-        const augmentedQuery = query
-            + ' (only if this query involves math, use latex if showing math w/ $$ as delimiters)'
-            + ` (reply in ${config.replyLanguage})`
-        return augmentedQuery
-    }
+    function augmentQuery(query) { return query + ` (reply in ${config.replyLanguage})` }
 
     function stripQueryAugments(msgChain) {
         const augmentCnt = augmentQuery.toString().match(/\+/g).length

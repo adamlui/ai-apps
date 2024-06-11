@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.10.11
+// @version             2024.6.11
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1363,12 +1363,7 @@
             }
     }}
 
-    function augmentQuery(query) {
-        const augmentedQuery = query
-            + ' (only if this query involves math, use latex if showing math w/ $$ as delimiters)'
-            + ` (reply in ${config.replyLanguage})`
-        return augmentedQuery
-    }
+    function augmentQuery(query) { return query + ` (reply in ${config.replyLanguage})` }
 
     function stripQueryAugments(msgChain) {
         const augmentCnt = augmentQuery.toString().match(/\+/g).length
