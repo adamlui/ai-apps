@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.4
+// @version             2024.6.11.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -402,168 +402,6 @@
 // ..and KaTeX, the fastest math typesetting library @ https://katex.org (c) 2013–2020 Khan Academy & contributors under the MIT license
 
 (async () => {
-
-    // Init CONFIG
-    const config = {
-        appName: 'GoogleGPT', appSymbol: '🤖', keyPrefix: 'googleGPT',
-        appURL: 'https://www.googlegpt.io', gitHubURL: 'https://github.com/KudoAI/googlegpt',
-        greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt' }
-    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
-    config.supportURL = config.gitHubURL + '/issues/new'
-    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@698b652/'
-    config.userLanguage = chatgpt.getUserLanguage()
-    config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
-                      : window.location.hostname.split('.').pop()
-    loadSetting('autoGetDisabled', 'autoScroll', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
-                'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
-    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
-
-    // Define MESSAGES
-    let msgs = {}
-    const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
-              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
-        function onLoad(resp) {
-            try { // to return localized messages.json
-                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
-                for (const key in msgs)  // remove need to ref nested keys
-                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
-                        flatMsgs[key] = msgs[key].message
-                resolve(flatMsgs)
-            } catch (err) { // if bad response
-                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
-                    msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
-                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
-            }
-        }
-    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
-
-    // Init MENU objs
-    const menuIDs = [] // to store registered cmds for removal while preserving order
-    const state = {
-        symbol: ['❌', '✔️'],
-        word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()],
-        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
-    }
-
-    // Init UI flags
-    await Promise.race([ // dark theme label loaded or 0.5s passed
-        new Promise(resolve => {
-            (function checkDarkThemeLabel() {
-                [...document.querySelectorAll('span')].find(span => span.textContent == 'Dark theme')
-                    ? resolve(true) : setTimeout(checkDarkThemeLabel, 200)
-            })()
-        }), new Promise(resolve => setTimeout(resolve, 500))
-    ])
-    let scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' )
-    const isFirefox = chatgpt.browser.isFirefox(),
-          isMobile = chatgpt.browser.isMobile(),
-          hasSidebar = !!document.querySelector('[class*="kp-"]')
-
-    // Pre-load LOGO
-    const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
-    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
-
-    registerMenu() // create browser toolbar menu
-
-    if (window.location.search.includes('&udm=2')) return // exit if on Google Images
-
-    // Init API props
-    const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
-    const apis = {
-        'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.xyz',
-            endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true, accumulatesText: false },
-        'Free Chat': { expectedOrigin: 'https://e8.frechat.xyz',
-            endpoint: 'https://demo-yj7h.onrender.com/single/chat_messages', method: 'PUT', streamable: true, accumulatesText: false },
-        'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
-            endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true, accumulatesText: true },
-        'MixerBox AI': { expectedOrigin: 'https://chatai.mixerbox.com',
-            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', method: 'POST', streamable: true, accumulatesText: false },
-        'OpenAI': { expectedOrigin: 'https://chatgpt.com',
-            endpoint: 'https://api.openai.com/v1/chat/completions', method: 'POST', streamable: true }
-    }
-    const apiIDs = { gptForLove: { parentID: '' }, aiChatOS: { userID: '#/chat/' + Date.now() }}
-
-    // Init ALERTS
-    const appAlerts = {
-        waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
-        login:            `${ msgs.alert_login || 'Please login' } @ `,
-        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
-        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
-        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
-        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
-        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
-        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
-        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
-    }
-
-    // Stylize APP elems
-    const appStyle =  document.createElement('style') ; updateAppStyle()
-    const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
-    document.head.append(appStyle, hljsStyle)
-
-    // Stylize SITE elems
-    const tweaksStyle = document.createElement('style'),
-          wsbStyles = '#center_col, #center_col div { max-width: 560px !important }' // shrink center column
-                    + '.googlegpt { width: 25.65rem }' // expand GoogleGPT when in limiting Google host container
-                    + '.googlegpt ~ div { width: 464px }' // expand side snippets
-                    + `#app-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
-          ssbStyles = '.googlegpt { position: sticky ; top: 71px }'
-                    + '.googlegpt ~ * { display: none }' // hide sidebar contents
-    updateTweaksStyle() ; document.head.append(tweaksStyle)
-
-    // Create/stylize TOOLTIPs
-    if (!isMobile) {
-        var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
-        const tooltipStyle = document.createElement('style')
-        tooltipStyle.innerText = '.btn-tooltip {'
-            + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-            + 'font-size: 0.75rem ; color: white ;' // font style
-            + 'position: absolute ;' // for updateTooltip() calcs
-            + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
-            + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
-        document.head.append(tooltipStyle)
-    }
-
-    // Create/classify GOOGLEGPT container
-    const appDiv = document.createElement('div')
-    appDiv.classList.add('googlegpt', 'fade-in')
-
-    // APPEND to Google
-    const centerCol = document.querySelector('#center_col')
-    const hostContainer = isMobile ? centerCol
-        : document.querySelector('#rhs') // sidebar container if side snippets exist
-        || (() => { // create new one if no side snippets exist
-               const newHostContainer = document.createElement('div')
-               newHostContainer.style.display = 'contents'
-               centerCol.style.paddingRight = '65px'
-               centerCol.insertAdjacentElement('afterend', newHostContainer)
-               return newHostContainer
-           })()
-    hostContainer.prepend(appDiv)
-    setTimeout(() => appDiv.classList.add('active'), 100) // fade in
-
-    // Init footer CTA to share feedback
-    let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
-
-    // Show STANDBY mode or get/show ANSWER
-    let msgChain = [] // to store queries + answers for contextual replies
-    if (config.autoGetDisabled
-        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location) // suffix required but not present
-    ) { updateFooterContent() ; appShow('standby', footerContent) }
-    else {
-        appAlert('waitingResponse')
-        msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
-        getShowReply(msgChain)
-    }
 
     // Define SCRIPT functions
 
@@ -2001,6 +1839,170 @@
             chatTextarea.style.height = `${ unpaddedHeight > 29 ? unpaddedHeight : 15 }px`
             prevLength = newLength
         }
+    }
+
+    // Run MAIN routine
+
+    // Init CONFIG
+    const config = {
+        appName: 'GoogleGPT', appSymbol: '🤖', keyPrefix: 'googleGPT',
+        appURL: 'https://www.googlegpt.io', gitHubURL: 'https://github.com/KudoAI/googlegpt',
+        greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt' }
+    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
+    config.supportURL = config.gitHubURL + '/issues/new'
+    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@698b652/'
+    config.userLanguage = chatgpt.getUserLanguage()
+    config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
+                      : window.location.hostname.split('.').pop()
+    loadSetting('autoGetDisabled', 'autoScroll', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
+                'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
+    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
+    if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
+
+    // Define MESSAGES
+    let msgs = {}
+    const msgsLoaded = new Promise(resolve => {
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
+        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        function onLoad(resp) {
+            try { // to return localized messages.json
+                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
+                for (const key in msgs)  // remove need to ref nested keys
+                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
+                        flatMsgs[key] = msgs[key].message
+                resolve(flatMsgs)
+            } catch (err) { // if bad response
+                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                    msgHref.replace(/([^_]*)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
+                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+            }
+        }
+    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
+
+    // Init MENU objs
+    const menuIDs = [] // to store registered cmds for removal while preserving order
+    const state = {
+        symbol: ['❌', '✔️'],
+        word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()],
+        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
+    }
+
+    // Init UI flags
+    await Promise.race([ // dark theme label loaded or 0.5s passed
+        new Promise(resolve => {
+            (function checkDarkThemeLabel() {
+                [...document.querySelectorAll('span')].find(span => span.textContent == 'Dark theme')
+                    ? resolve(true) : setTimeout(checkDarkThemeLabel, 200)
+            })()
+        }), new Promise(resolve => setTimeout(resolve, 500))
+    ])
+    let scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' )
+    const isFirefox = chatgpt.browser.isFirefox(),
+          isMobile = chatgpt.browser.isMobile(),
+          hasSidebar = !!document.querySelector('[class*="kp-"]')
+
+    // Pre-load LOGO
+    const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
+    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
+
+    registerMenu() // create browser toolbar menu
+
+    if (window.location.search.includes('&udm=2')) return // exit if on Google Images
+
+    // Init API props
+    const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
+    const apis = {
+        'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.xyz',
+            endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true, accumulatesText: false },
+        'Free Chat': { expectedOrigin: 'https://e8.frechat.xyz',
+            endpoint: 'https://demo-yj7h.onrender.com/single/chat_messages', method: 'PUT', streamable: true, accumulatesText: false },
+        'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
+            endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true, accumulatesText: true },
+        'MixerBox AI': { expectedOrigin: 'https://chatai.mixerbox.com',
+            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', method: 'POST', streamable: true, accumulatesText: false },
+        'OpenAI': { expectedOrigin: 'https://chatgpt.com',
+            endpoint: 'https://api.openai.com/v1/chat/completions', method: 'POST', streamable: true }
+    }
+    const apiIDs = { gptForLove: { parentID: '' }, aiChatOS: { userID: '#/chat/' + Date.now() }}
+
+    // Init ALERTS
+    const appAlerts = {
+        waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
+        login:            `${ msgs.alert_login || 'Please login' } @ `,
+        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
+        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
+        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
+        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
+        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
+        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
+        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
+    }
+
+    // Stylize APP elems
+    const appStyle =  document.createElement('style') ; updateAppStyle()
+    const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
+    document.head.append(appStyle, hljsStyle)
+
+    // Stylize SITE elems
+    const tweaksStyle = document.createElement('style'),
+          wsbStyles = '#center_col, #center_col div { max-width: 560px !important }' // shrink center column
+                    + '.googlegpt { width: 25.65rem }' // expand GoogleGPT when in limiting Google host container
+                    + '.googlegpt ~ div { width: 464px }' // expand side snippets
+                    + `#app-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
+          ssbStyles = '.googlegpt { position: sticky ; top: 71px }'
+                    + '.googlegpt ~ * { display: none }' // hide sidebar contents
+    updateTweaksStyle() ; document.head.append(tweaksStyle)
+
+    // Create/stylize TOOLTIPs
+    if (!isMobile) {
+        var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
+        const tooltipStyle = document.createElement('style')
+        tooltipStyle.innerText = '.btn-tooltip {'
+            + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+            + 'font-size: 0.75rem ; color: white ;' // font style
+            + 'position: absolute ;' // for updateTooltip() calcs
+            + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
+            + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
+        document.head.append(tooltipStyle)
+    }
+
+    // Create/classify GOOGLEGPT container
+    const appDiv = document.createElement('div')
+    appDiv.classList.add('googlegpt', 'fade-in')
+
+    // APPEND to Google
+    const centerCol = document.querySelector('#center_col')
+    const hostContainer = isMobile ? centerCol
+        : document.querySelector('#rhs') // sidebar container if side snippets exist
+        || (() => { // create new one if no side snippets exist
+               const newHostContainer = document.createElement('div')
+               newHostContainer.style.display = 'contents'
+               centerCol.style.paddingRight = '65px'
+               centerCol.insertAdjacentElement('afterend', newHostContainer)
+               return newHostContainer
+           })()
+    hostContainer.prepend(appDiv)
+    setTimeout(() => appDiv.classList.add('active'), 100) // fade in
+
+    // Init footer CTA to share feedback
+    let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
+
+    // Show STANDBY mode or get/show ANSWER
+    let msgChain = [] // to store queries + answers for contextual replies
+    if (config.autoGetDisabled
+        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
+        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location) // suffix required but not present
+    ) { updateFooterContent() ; appShow('standby', footerContent) }
+    else {
+        appAlert('waitingResponse')
+        msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
+        getShowReply(msgChain)
     }
 
 })()
