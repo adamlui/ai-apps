@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.2
+// @version             2024.6.11.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1895,6 +1895,8 @@
             const answerPre = appDiv.querySelector('pre')
             answerPre.innerHTML = marked.parse(answer) // render markdown
             hljs.highlightAll() // highlight code
+
+            // Typeset math
             answerPre.querySelectorAll('code').forEach(codeBlock => { // add linebreaks after semicolons
                 codeBlock.innerHTML = codeBlock.innerHTML.replace(/;\s*/g, ';<br>') })
             const elemsToRenderMathIn = [answerPre, ...answerPre.querySelectorAll('*')]
@@ -1915,14 +1917,14 @@
                     throwOnError: false
             })})
 
+            if (config.stickySidebar) updateTweaksStyle() // to reset answerPre height
+
             // Auto-scroll if active
             if (config.autoScroll && !isMobile && config.proxyAPIenabled && !config.streamingDisabled) {
                 if (config.stickySidebar) answerPre.scrollTop = answerPre.scrollHeight
                 else window.scrollBy({ top: appDiv.querySelector('#app-chatbar').getBoundingClientRect().bottom - window.innerHeight +13 })
             }
         }
-
-        updateTweaksStyle() // in case sticky mode on
 
         // Focus chatbar conditionally
         if (!isMobile // exclude mobile devices to not auto-popup OSD keyboard
