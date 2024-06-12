@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.11
+// @version             2024.6.11.12
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -808,7 +808,7 @@
                   + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
           + '.continue-chat > textarea {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
-              + 'height: 15px ; max-height: 200px ; resize: none ;'
+              + 'height: 16px ; max-height: 200px ; resize: none ;'
               + 'margin: 13px 0 15px 0 ; padding: 13px 25px 13px 10px ;'
               + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' }'
           + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
@@ -1381,10 +1381,10 @@
             if (newLength < prevLength) { // if deleting txt
                 chatTextarea.style.height = 'auto' // ...auto-fit height
                 if (parseInt(getComputedStyle(chatTextarea).height, 10) < 35) { // if down to one line
-                    chatTextarea.style.height = '15px' } // ...reset to original height
+                    chatTextarea.style.height = '16px' } // ...reset to original height
             }
             const unpaddedHeight = chatTextarea.scrollHeight - vOffset
-            chatTextarea.style.height = `${ unpaddedHeight > 29 ? unpaddedHeight : 15 }px`
+            chatTextarea.style.height = `${ unpaddedHeight > 29 ? unpaddedHeight : 16 }px`
             prevLength = newLength
         }
     }
