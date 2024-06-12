@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.8
+// @version             2024.6.11.9
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1177,7 +1177,7 @@
             if (config.proxyAPIenabled) { // randomize proxy API
                 const untriedAPIs = Object.keys(apis).filter(api =>
                        api != 'OpenAI' // since Proxy Mode
-                    && !getShowReply.triedAPIs.some(entry => entry[api] == 'err') // exclude tried APIs that err'd
+                    && !getShowReply.triedAPIs.some(entry => entry.hasOwnProperty(api)) // exclude tried APIs
                     && (config.streamingDisabled || apis[api].streamable)) // exclude unstreamable APIs if config.streamingDisabled
                 chosenAPI = untriedAPIs[ // pick random array entry
                     Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]

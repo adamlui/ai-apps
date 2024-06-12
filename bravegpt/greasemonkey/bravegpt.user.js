@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.10
+// @version             2024.6.11.11
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1219,7 +1219,7 @@ setTimeout(async () => {
             if (config.proxyAPIenabled) { // randomize proxy API
                 const untriedAPIs = Object.keys(apis).filter(api =>
                        api != 'OpenAI' // since Proxy Mode
-                    && !getShowReply.triedAPIs.some(entry => entry[api] == 'err') // exclude tried APIs that err'd
+                    && !getShowReply.triedAPIs.some(entry => entry.hasOwnProperty(api)) // exclude tried APIs
                     && (config.streamingDisabled || apis[api].streamable)) // exclude unstreamable APIs if config.streamingDisabled
                 chosenAPI = untriedAPIs[ // pick random array entry
                     Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]

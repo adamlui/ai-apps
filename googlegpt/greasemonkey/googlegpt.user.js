@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.8
+// @version             2024.6.11.9
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1505,7 +1505,7 @@
             if (config.proxyAPIenabled) { // randomize proxy API
                 const untriedAPIs = Object.keys(apis).filter(api =>
                        api != 'OpenAI' // since Proxy Mode
-                    && !getShowReply.triedAPIs.some(entry => entry[api] == 'err') // exclude tried APIs that err'd
+                    && !getShowReply.triedAPIs.some(entry => entry.hasOwnProperty(api)) // exclude tried APIs
                     && (config.streamingDisabled || apis[api].streamable)) // exclude unstreamable APIs if config.streamingDisabled
                 chosenAPI = untriedAPIs[ // pick random array entry
                     Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]
