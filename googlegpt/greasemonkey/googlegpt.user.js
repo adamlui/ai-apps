@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.14
+// @version             2024.6.11.15
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1170,7 +1170,8 @@
                     { code: 'zh-CHS', regex: /^(chi(nese)?|zh|中[国國])/i, rate: 2 }
                 ]
                 const replyDialect = dialectMap.find(entry => entry.regex.test(config.replyLanguage)) || dialectMap[0],
-                      payload = { text: answer, curTime: Date.now(), spokenDialect: replyDialect.code, rate: replyDialect.rate.toString() },
+                      payload = { text: appDiv.querySelector('pre').textContent, curTime: Date.now(),
+                                  spokenDialect: replyDialect.code, rate: replyDialect.rate.toString() },
                       key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
                       iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
                 const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {

@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.11
+// @version             2024.6.11.12
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -854,7 +854,8 @@
                     { code: 'zh-CHS', regex: /^(chi(nese)?|zh|中[国國])/i, rate: 2 }
                 ]
                 const replyDialect = dialectMap.find(entry => entry.regex.test(config.replyLanguage)) || dialectMap[0],
-                      payload = { text: answer, curTime: Date.now(), spokenDialect: replyDialect.code, rate: replyDialect.rate.toString() },
+                      payload = { text: appDiv.querySelector('pre').textContent, curTime: Date.now(),
+                                  spokenDialect: replyDialect.code, rate: replyDialect.rate.toString() },
                       key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
                       iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
                 const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {

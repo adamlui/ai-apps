@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.13
+// @version             2024.6.11.14
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -890,7 +890,8 @@ setTimeout(async () => {
                     { code: 'zh-CHS', regex: /^(chi(nese)?|zh|中[国國])/i, rate: 2 }
                 ]
                 const replyDialect = dialectMap.find(entry => entry.regex.test(config.replyLanguage)) || dialectMap[0],
-                      payload = { text: answer, curTime: Date.now(), spokenDialect: replyDialect.code, rate: replyDialect.rate.toString() },
+                      payload = { text: appDiv.querySelector('pre').textContent, curTime: Date.now(),
+                                  spokenDialect: replyDialect.code, rate: replyDialect.rate.toString() },
                       key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
                       iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
                 const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
