@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.11.7
+// @version             2024.6.11.8
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1058,441 +1058,6 @@
         }
     }
 
-    // Define FACTORY functions
-
-    function createSVGpath(attrs) {
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
-        for (const attr in attrs) path.setAttributeNS(null, attr, attrs[attr])
-        return path
-    }
-
-    function createAnchor(linkHref, displayContent) {
-        const anchor = document.createElement('a'),
-              anchorAttrs = [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']]
-        anchorAttrs.forEach(([attr, value]) => anchor.setAttribute(attr, value))
-        if (displayContent) anchor.append(displayContent)
-        return anchor
-    }
-
-    // Define TOGGLE functions
-
-    function toggleProxyMode() {
-        saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-        notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+config.proxyAPIenabled])
-        refreshMenu() ; location.reload() // re-send query using new endpoint
-    }
-
-    function toggleSidebar(mode) {
-        saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
-        updateTweaksStyle()
-        if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg() ; else updateSSBsvg()
-        notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
-            + ' ' + state.word[+config[mode + 'Sidebar']])
-        refreshMenu()
-    }
-
-    function toggleTooltip(event) { // visibility
-        tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
-        updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
-        tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
-    }
-
-    // Define SESSION functions
-
-    function isBlockedbyCloudflare(resp) {
-        try {
-            const html = new DOMParser().parseFromString(resp, 'text/html'),
-                  title = html.querySelector('title')
-            return title.innerText == 'Just a moment...'
-        } catch (err) { return false }
-    }
-
-    function deleteOpenAIcookies() {
-        if (getUserscriptManager() != 'Tampermonkey') return
-        GM_cookie.list({ url: openAIendpoints.auth }, (cookies, error) => {
-            if (!error) { for (const cookie of cookies) {
-                GM_cookie.delete({ url: openAIendpoints.auth, name: cookie.name })
-    }}})}
-
-    function getOpenAItoken() {
-        return new Promise(resolve => {
-            const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
-            consoleInfo('OpenAI access token: ' + accessToken)
-            if (!accessToken) {
-                GM.xmlHttpRequest({ url: openAIendpoints.session, onload: resp => {
-                    if (isBlockedbyCloudflare(resp.responseText)) {
-                        appAlert('checkCloudflare') ; return }
-                    try {
-                        const newAccessToken = JSON.parse(resp.responseText).accessToken
-                        GM_setValue(config.keyPrefix + '_openAItoken', newAccessToken)
-                        resolve(newAccessToken)
-                    } catch { appAlert('login') ; return }
-                }})
-            } else resolve(accessToken)
-    })}
-
-    function generateGPTforLoveKey() {
-        let nn = Math.floor(new Date().getTime() / 1e3)
-        const fD = e => {
-            let t = CryptoJS.enc.Utf8.parse(e),
-                o = CryptoJS.AES.encrypt(t, 'fjfsd我w4真3dd服iuhf了wf', {
-                    mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7
-            })
-            return o.toString()
-        }
-        return fD(nn)
-    }
-
-    // Define ANSWER functions
-
-    function pickAPI() {
-        let chosenAPI
-        if (config.proxyAPIenabled) { // randomize proxy API
-            const untriedAPIs = Object.keys(apis).filter(api =>
-                   api != 'OpenAI' // since Proxy Mode
-                && !getShowReply.triedAPIs.some(entry => entry[api] == 'err') // exclude tried APIs that err'd
-                && (config.streamingDisabled || apis[api].streamable)) // exclude unstreamable APIs if config.streamingDisabled
-            chosenAPI = untriedAPIs[ // pick random array entry
-                Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]
-            if (!chosenAPI) { consoleErr('No proxy APIs left untried') ; return null }
-        } else chosenAPI = 'OpenAI'
-
-        // Log chosen API endpoint
-        let logPrefix = 'getShowReply() » '
-        try { logPrefix = pickAPI.arguments.callee.caller.name + '() » ' } catch (err) {}
-        consoleInfo(logPrefix + 'Endpoint used: ' + apis[chosenAPI].endpoint)
-        return chosenAPI
-    }
-
-    function tryDiffAPI(triedAPI, reason = 'err') {
-        consoleErr(`Error using ${apis[triedAPI].endpoint} due to ${reason}`)
-        if (getShowReply.attemptCnt < Object.keys(apis).length -1) {
-            consoleInfo('Trying another endpoint...')
-            getShowReply.triedAPIs.push({ [triedAPI]: reason }) ; getShowReply.attemptCnt++
-            getShowReply(msgChain)
-        } else {
-            consoleInfo('No remaining untried endpoints')
-            appAlert('proxyNotWorking', 'suggestOpenAI')
-    }}
-
-    function clearTimedOutAPIs(apiArray) {
-        apiArray.splice(0, apiArray.length, // empty apiArray
-            ...apiArray.filter(entry => Object.values(entry)[0] != 'timeout')) // replace w/ err'd APIs
-    }
-
-    function createHeaders(api) {
-        let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ipv4.generate({ verbose: false })}
-        if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
-        headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // prserve expected traffic src
-        return headers
-    }
-
-    function createPayload(api, msgs) {
-        let payload = {}
-        if (api == 'OpenAI')
-            payload = { messages: msgs, model: 'gpt-3.5-turbo', max_tokens: 4000 }
-        else if  (api == 'AIchatOS') {
-            payload = {
-                prompt: msgs[msgs.length - 1].content,
-                withoutContext: false, userId: apiIDs.aiChatOS.userID, network: true
-            }
-        } else if (api == 'GPTforLove') {
-            payload = {
-                prompt: msgs[msgs.length - 1].content,
-                secret: generateGPTforLoveKey(), top_p: 1, temperature: 0.8,
-                systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI. Follow the user\'s instructions carefully.'
-            }
-            if (apiIDs.gptForLove.parentID) payload.options = { parentMessageId: apiIDs.gptForLove.parentID }
-        } else if (api == 'MixerBox AI')
-            payload = { prompt: msgs, model: 'gpt-3.5-turbo' }
-        return JSON.stringify(payload)
-    }
-
-    function processText(api, resp) {
-        if (!config.streamingDisabled && config.proxyAPIenabled || getShowReply.status == 'done') return
-        if (resp.status != 200) {
-            consoleErr('Response status', resp.status)
-            consoleErr('Response text', resp.responseText)
-            if (config.proxyAPIenabled && getShowReply.status != 'done')
-                tryDiffAPI(api)
-            else if (resp.status == 401 && !config.proxyAPIenabled) {
-                GM_deleteValue(config.keyPrefix + '_openAItoken') ; appAlert('login') }
-            else if (resp.status == 403)
-                appAlert(config.proxyAPIenabled ? ['proxyNotWorking', 'suggestOpenAI'] : 'checkCloudflare')
-            else if (resp.status == 429)
-                appAlert(['tooManyRequests', config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy'])
-            else // uncommon status
-                appAlert(`${ config.proxyAPIenabled ? 'proxyN' : 'openAIn' }otWorking`,
-                         `suggest${ config.proxyAPIenabled ? 'OpenAI' : 'Proxy' }`)
-        } else if (api == 'OpenAI') {
-            if (resp.response) {
-                try {
-                    appShow(JSON.parse(resp.response).choices[0].message.content, footerContent)
-                } catch (err) {
-                    consoleInfo('Response: ' + resp.response)
-                    consoleErr(appAlerts.parseFailed, err)
-                    appAlert('openAInotWorking, suggestProxy')
-                }
-            } else { consoleInfo('Response: ' + resp.responseText) ; appAlert('openAInotWorking, suggestProxy') }
-        } else if (api == 'AIchatOS') {
-            if (resp.responseText && !/很抱歉地|系统公告/.test(resp.responseText)) {
-                try {
-                    const text = resp.responseText, chunkSize = 1024
-                    let answer = '', currentIdx = 0
-                    while (currentIdx < text.length) {
-                        const chunk = text.substring(currentIdx, currentIdx + chunkSize)
-                        currentIdx += chunkSize ; answer += chunk
-                    }
-                    appShow(answer, footerContent)
-                    getShowReply.status = 'done' ; clearTimedOutAPIs(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
-                } catch (err) { // use different endpoint or suggest OpenAI
-                    consoleInfo('Response: ' + resp.responseText)
-                    consoleErr(appAlerts.parseFailed, err)
-                    if (getShowReply.status != 'done') tryDiffAPI(api)
-                }
-            } else { consoleInfo('Response: ' + resp.responseText) ; if (getShowReply.status != 'done') tryDiffAPI(api) }
-        } else if (api == 'GPTforLove') {
-            if (resp.responseText && !resp.responseText.includes('Fail')) {
-                try {
-                    let chunks = resp.responseText.trim().split('\n'),
-                        lastObj = JSON.parse(chunks[chunks.length - 1])
-                    if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
-                    appShow(lastObj.text, footerContent)
-                    getShowReply.status = 'done' ; clearTimedOutAPIs(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
-                } catch (err) { // use different endpoint or suggest OpenAI
-                    consoleInfo('Response: ' + resp.responseText)
-                    consoleErr(appAlerts.parseFailed, err)
-                    if (getShowReply.status != 'done') tryDiffAPI(api)
-                }
-            } else { consoleInfo('Response: ' + resp.responseText) ; if (getShowReply.status != 'done') tryDiffAPI(api) }
-        } else if (api == 'MixerBox AI') {
-            if (resp.responseText) {
-                try {
-                    const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
-                        .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
-                        .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
-                    appShow(extractedData.join(''), footerContent)
-                    getShowReply.status = 'done' ; clearTimedOutAPIs(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
-                } catch (err) { // use different endpoint or suggest OpenAI
-                    consoleInfo('Response: ' + resp.responseText)
-                    consoleErr(appAlerts.parseFailed, err)
-                    if (getShowReply.status != 'done') tryDiffAPI(api)
-                }
-            } else { consoleInfo('Response: ' + resp.responseText) ; if (getShowReply.status != 'done') tryDiffAPI(api) }
-        }
-    }
-
-    function processStream(api, stream) {
-        if (config.streamingDisabled || !config.proxyAPIenabled) return
-        const reader = stream.response.getReader() ; let accumulatedChunks = ''
-        reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream', err.message))
-        function processStreamText({ done, value }) {
-            if (done) {
-                getShowReply.status = 'done' ; getShowReply.sender = null
-                clearTimedOutAPIs(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
-                return
-            }
-            let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
-            if (api == 'MixerBox AI') { // pre-process chunks
-                const extractedChunks = Array.from(chunk.matchAll(/data:(.*)/g), match => match[1]
-                    .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
-                    .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
-                chunk = extractedChunks.join('')
-            }
-            accumulatedChunks = apis[api].accumulatesText ? chunk : accumulatedChunks + chunk
-            if (/['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // GPTforLove fail
-                consoleErr('Response', accumulatedChunks)
-                if (getShowReply.status != 'done' && !getShowReply.sender) tryDiffAPI(api)
-                return
-            }
-            try { // to show stream text
-                let textToShow
-                if (api == 'GPTforLove') { // extract parentID + latest chunk text
-                    const jsonLines = accumulatedChunks.split('\n'),
-                          nowResult = JSON.parse(jsonLines[jsonLines.length - 1])
-                    if (nowResult.id) apiIDs.gptForLove.parentID = nowResult.id // for contextual replies
-                    textToShow = nowResult.text
-                } else textToShow = accumulatedChunks
-                if (textToShow && getShowReply.status != 'done') { // text ready, app waiting or sending
-                    if (!getShowReply.sender) getShowReply.sender = api // app is waiting, become sender
-                    if (getShowReply.sender == api) appShow(textToShow, footerContent)
-                }
-            } catch (err) { consoleErr('Error showing stream', err.message) }
-            return reader.read().then(({ done, value }) => {
-                if (getShowReply.sender == api) // am designated sender, recurse
-                    processStreamText({ done, value })
-            }).catch(err => consoleErr('Error reading stream', err.message))
-        }
-    }
-
-    function getRelatedQueries(query) {
-        const api = pickAPI()
-        return new Promise((resolve, reject) => {
-            const rqPrompt = 'Show a numbered list of queries related to this one:\n\n' + query
-               + '\n\nMake sure to suggest a variety that can even greatly deviate from the original topic.'
-               + ' For example, if the original query asked about someone\'s wife,'
-                   + ' a good related query could involve a different relative and using their name.'
-               + ' Another example, if the query asked about a game/movie/show,'
-                   + ' good related queries could involve pertinent characters.'
-               + ' Another example, if the original query asked how to learn JavaScript,'
-                   + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
-               + ' But the key is variety. Do not be repetitive.'
-                   + ' You must entice user to want to ask one of your related queries.'
-               + ` Reply in ${config.replyLanguage}`
-            GM.xmlHttpRequest({
-                method: apis[api].method, url: apis[api].endpoint, responseType: 'text',
-                headers: createHeaders(api), data: createPayload(api, [{ role: 'user', content: rqPrompt }]),
-                onload: event => {
-                    let str_relatedQueries = ''
-                    if (api == 'OpenAI') {
-                        try { str_relatedQueries = JSON.parse(event.response).choices[0].message.content }
-                        catch (err) { consoleErr(err) ; reject(err) }
-                    } else if (api == 'AIchatOS' && !/很抱歉地|系统公告/.test(event.responseText)) {
-                        try {
-                            const text = event.responseText, chunkSize = 1024
-                            let currentIdx = 0
-                            while (currentIdx < text.length) {
-                                const chunk = text.substring(currentIdx, currentIdx + chunkSize)
-                                currentIdx += chunkSize ; str_relatedQueries += chunk
-                            }
-                        } catch (err) { consoleErr(err) ; reject(err) }
-                    } else if (api == 'GPTforLove') {
-                        try {
-                            let chunks = event.responseText.trim().split('\n')
-                            str_relatedQueries = JSON.parse(chunks[chunks.length - 1]).text
-                        } catch (err) { consoleErr(err) ; reject(err) }
-                    } else if (api == 'MixerBox AI') {
-                        try {
-                            const extractedData = Array.from(event.responseText.matchAll(/data:(.*)/g), match => match[1]
-                                .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
-                                .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
-                            str_relatedQueries = extractedData.join('')
-                        } catch (err) { consoleErr(err) ; reject(err) }
-                    }
-                    const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
-                        .slice(0, 5) // limit to 1st 5
-                        .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
-                    resolve(arr_relatedQueries)
-                },
-                onerror: err => { consoleErr(err) ; reject(err) }
-            })
-    })}
-
-    function handleRQevent(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
-        const keys = [' ', 'Spacebar', 'Enter', 'Return'], keyCodes = [32, 13]
-        if (keys.includes(event.key) || keyCodes.includes(event.keyCode) || event.type == 'click') {
-            event.preventDefault() // prevent scroll on space taps
-
-            // Remove divs/listeners
-            const relatedQueriesDiv = document.querySelector('.related-queries')
-            Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                ['click', 'keydown'].forEach(event => { relatedQueryDiv.removeEventListener(event, handleRQevent) })})
-            relatedQueriesDiv.remove()
-
-            // Send related query
-            const chatbar = appDiv.querySelector('textarea')
-            if (chatbar) {
-                chatbar.value = event.target.textContent
-                appShow.submitSrc = 'click' // for appShow() auto-focus
-                chatbar.dispatchEvent(new KeyboardEvent('keydown', {
-                    key: 'Enter', bubbles: true, cancelable: true }))
-            }
-    }}
-
-    function augmentQuery(query) { return query + ` (reply in ${config.replyLanguage})` }
-
-    function stripQueryAugments(msgChain) {
-        const augmentCnt = augmentQuery.toString().match(/\+/g).length
-        return msgChain.map(msg => { // stripped chain
-            if (msg.role == 'user') {
-                let content = msg.content
-                const augments = content.match(/\s*\([^)]*\)\s*/g)
-                if (augments) for (let i = 0 ; i < augmentCnt ; i++) // strip augments
-                    content = content.replace(augments[augments.length - 1 - i], '')
-                return { ...msg, content: content.trim() }
-            } else return msg // agent's unstripped
-        })
-    }
-
-    async function getShowReply(msgChain) {
-
-        // Init API attempt props
-        getShowReply.status = 'waiting'
-        if (!getShowReply.triedAPIs) getShowReply.triedAPIs = []
-        if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 1
-
-        // Pick API
-        const api = pickAPI()
-        if (!api) { // no more proxy APIs left untried
-            appAlert('proxyNotWorking', 'suggestOpenAI') ; return }
-
-        if (!config.proxyAPIenabled) // init OpenAI key
-            config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
-        else setTimeout(() => { // try diff API after 6-9s of no response
-            if (config.proxyAPIenabled && getShowReply.status != 'done' && !getShowReply.sender)
-                tryDiffAPI(api, 'timeout') }, config.streamingDisabled ? 9000 : 6000)
-
-        // Get/show answer from ChatGPT
-        GM.xmlHttpRequest({
-            method: apis[api].method, url: apis[api].endpoint,
-            responseType: config.streamingDisabled || !config.proxyAPIenabled ? 'text' : 'stream',
-            headers: createHeaders(api), data: createPayload(api, msgChain),
-            onload: resp => processText(api, resp),
-            onloadstart: resp => processStream(api, resp),
-            onerror: err => { consoleErr(err.message)
-                if (!config.proxyAPIenabled) appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
-                else if (getShowReply.status != 'done') tryDiffAPI(api)
-            }
-        })
-
-        // Get/show related queries
-        if (!config.rqDisabled) {
-            const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1]
-            getRelatedQueries(lastQuery.content).then(relatedQueries => {
-                if (relatedQueries && appDiv.querySelector('textarea')) {
-
-                    // Create/classify/append parent div
-                    const relatedQueriesDiv = document.createElement('div')
-                    relatedQueriesDiv.className = 'related-queries'
-                    appDiv.append(relatedQueriesDiv)
-
-                    // Fill each child div, add attributes + icon + listener
-                    relatedQueries.forEach((relatedQuery, idx) => {
-                        const relatedQueryDiv = document.createElement('div'),
-                              relatedQuerySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                              relatedQuerySVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
-
-                        // Add attributes
-                        relatedQueryDiv.title = msgs.tooltip_sendRelatedQuery || 'Send related query'
-                        relatedQueryDiv.classList.add('related-query', 'fade-in', 'no-user-select')
-                        relatedQueryDiv.setAttribute('tabindex', 0)
-                        relatedQueryDiv.textContent = relatedQuery
-
-                        // Create icon
-                        for (const [attr, value] of [
-                            ['viewBox', '0 0 24 24'], ['width', 18], ['height', 18], ['fill', 'currentColor']
-                        ]) relatedQuerySVG.setAttribute(attr, value)
-                        relatedQuerySVGpath.setAttribute('d',
-                            'M16 10H6.83L9 7.83l1.41-1.41L9 5l-6 6 6 6 1.41-1.41L9 14.17 6.83 12H16c1.65 0 3 1.35 3 3v4h2v-4c0-2.76-2.24-5-5-5z')
-                        relatedQuerySVG.style.transform = 'rotate(180deg)' // flip arrow upside down
-
-                        // Assemble/insert elements
-                        relatedQuerySVG.append(relatedQuerySVGpath) ; relatedQueryDiv.prepend(relatedQuerySVG)
-                        relatedQueriesDiv.append(relatedQueryDiv)
-
-                        // Add fade + listeners
-                        setTimeout(() => {
-                            relatedQueryDiv.classList.add('active')
-                            for (const event of ['click', 'keydown']) relatedQueryDiv.addEventListener(event, handleRQevent)
-                        }, idx * 100)
-                    })
-
-                    updateTweaksStyle() // to shorten <pre> max-height
-        }})}
-
-        updateFooterContent()
-    }
-
     function appShow(answer, footerContent) {
 
         // Build answer interface up to reply section if missing
@@ -1823,6 +1388,452 @@
             chatTextarea.style.height = `${ unpaddedHeight > 29 ? unpaddedHeight : 15 }px`
             prevLength = newLength
         }
+    }
+
+    function handleRQevent(event) { // for attachment/removal in `getShowReply()` + `appShow().handleSubmit()`
+        const keys = [' ', 'Spacebar', 'Enter', 'Return'], keyCodes = [32, 13]
+        if (keys.includes(event.key) || keyCodes.includes(event.keyCode) || event.type == 'click') {
+            event.preventDefault() // prevent scroll on space taps
+
+            // Remove divs/listeners
+            const relatedQueriesDiv = document.querySelector('.related-queries')
+            Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
+                ['click', 'keydown'].forEach(event => { relatedQueryDiv.removeEventListener(event, handleRQevent) })})
+            relatedQueriesDiv.remove()
+
+            // Send related query
+            const chatbar = appDiv.querySelector('textarea')
+            if (chatbar) {
+                chatbar.value = event.target.textContent
+                appShow.submitSrc = 'click' // for appShow() auto-focus
+                chatbar.dispatchEvent(new KeyboardEvent('keydown', {
+                    key: 'Enter', bubbles: true, cancelable: true }))
+            }
+    }}
+
+    // Define FACTORY functions
+
+    function createSVGpath(attrs) {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+        for (const attr in attrs) path.setAttributeNS(null, attr, attrs[attr])
+        return path
+    }
+
+    function createAnchor(linkHref, displayContent) {
+        const anchor = document.createElement('a'),
+              anchorAttrs = [['href', linkHref], ['target', '_blank'], ['rel', 'noopener']]
+        anchorAttrs.forEach(([attr, value]) => anchor.setAttribute(attr, value))
+        if (displayContent) anchor.append(displayContent)
+        return anchor
+    }
+
+    // Define TOGGLE functions
+
+    function toggleProxyMode() {
+        saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
+        notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+config.proxyAPIenabled])
+        refreshMenu() ; location.reload() // re-send query using new endpoint
+    }
+
+    function toggleSidebar(mode) {
+        saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
+        updateTweaksStyle()
+        if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg() ; else updateSSBsvg()
+        notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
+            + ' ' + state.word[+config[mode + 'Sidebar']])
+        refreshMenu()
+    }
+
+    function toggleTooltip(event) { // visibility
+        tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
+        updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
+        tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
+    }
+
+    // Define SESSION functions
+
+    function isBlockedbyCloudflare(resp) {
+        try {
+            const html = new DOMParser().parseFromString(resp, 'text/html'),
+                  title = html.querySelector('title')
+            return title.innerText == 'Just a moment...'
+        } catch (err) { return false }
+    }
+
+    function deleteOpenAIcookies() {
+        if (getUserscriptManager() != 'Tampermonkey') return
+        GM_cookie.list({ url: openAIendpoints.auth }, (cookies, error) => {
+            if (!error) { for (const cookie of cookies) {
+                GM_cookie.delete({ url: openAIendpoints.auth, name: cookie.name })
+    }}})}
+
+    function getOpenAItoken() {
+        return new Promise(resolve => {
+            const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
+            consoleInfo('OpenAI access token: ' + accessToken)
+            if (!accessToken) {
+                GM.xmlHttpRequest({ url: openAIendpoints.session, onload: resp => {
+                    if (isBlockedbyCloudflare(resp.responseText)) {
+                        appAlert('checkCloudflare') ; return }
+                    try {
+                        const newAccessToken = JSON.parse(resp.responseText).accessToken
+                        GM_setValue(config.keyPrefix + '_openAItoken', newAccessToken)
+                        resolve(newAccessToken)
+                    } catch { appAlert('login') ; return }
+                }})
+            } else resolve(accessToken)
+    })}
+
+    function generateGPTforLoveKey() {
+        let nn = Math.floor(new Date().getTime() / 1e3)
+        const fD = e => {
+            let t = CryptoJS.enc.Utf8.parse(e),
+                o = CryptoJS.AES.encrypt(t, 'fjfsd我w4真3dd服iuhf了wf', {
+                    mode: CryptoJS.mode.ECB, padding: CryptoJS.pad.Pkcs7
+            })
+            return o.toString()
+        }
+        return fD(nn)
+    }
+
+    // Define API functions
+
+    const api = {
+
+        pick: function() {
+            let chosenAPI
+            if (config.proxyAPIenabled) { // randomize proxy API
+                const untriedAPIs = Object.keys(apis).filter(api =>
+                       api != 'OpenAI' // since Proxy Mode
+                    && !getShowReply.triedAPIs.some(entry => entry[api] == 'err') // exclude tried APIs that err'd
+                    && (config.streamingDisabled || apis[api].streamable)) // exclude unstreamable APIs if config.streamingDisabled
+                chosenAPI = untriedAPIs[ // pick random array entry
+                    Math.floor(chatgpt.randomFloat() * untriedAPIs.length)]
+                if (!chosenAPI) { consoleErr('No proxy APIs left untried') ; return null }
+            } else chosenAPI = 'OpenAI'
+
+            // Log chosen API endpoint
+            let logPrefix = 'getShowReply() » '
+            try { logPrefix = api.pick.arguments.callee.caller.name + '() » ' } catch (err) {}
+            consoleInfo(logPrefix + 'Endpoint used: ' + apis[chosenAPI].endpoint)
+            return chosenAPI
+        },
+
+        tryNew: function(triedAPI, reason = 'err') {
+            consoleErr(`Error using ${apis[triedAPI].endpoint} due to ${reason}`)
+            if (getShowReply.attemptCnt < Object.keys(apis).length -1) {
+                consoleInfo('Trying another endpoint...')
+                getShowReply.triedAPIs.push({ [triedAPI]: reason }) ; getShowReply.attemptCnt++
+                getShowReply(msgChain)
+            } else {
+                consoleInfo('No remaining untried endpoints')
+                appAlert('proxyNotWorking', 'suggestOpenAI')
+            }
+        },
+
+        clearTimedOut: function(triedAPIs) { // to retry on new queries
+            triedAPIs.splice(0, triedAPIs.length, // empty apiArray
+                ...triedAPIs.filter(entry => Object.values(entry)[0] != 'timeout')) // replace w/ err'd APIs
+        },
+
+        createHeaders: function(api) {
+            let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ipv4.generate({ verbose: false })}
+            if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
+            headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // prserve expected traffic src
+            return headers
+        },
+
+        createPayload: function(api, msgs) {
+            let payload = {}
+            if (api == 'OpenAI')
+                payload = { messages: msgs, model: 'gpt-3.5-turbo', max_tokens: 4000 }
+            else if  (api == 'AIchatOS') {
+                payload = {
+                    prompt: msgs[msgs.length - 1].content,
+                    withoutContext: false, userId: apiIDs.aiChatOS.userID, network: true
+                }
+            } else if (api == 'GPTforLove') {
+                payload = {
+                    prompt: msgs[msgs.length - 1].content,
+                    secret: generateGPTforLoveKey(), top_p: 1, temperature: 0.8,
+                    systemMessage: 'You are ChatGPT, the version is GPT-4o, a large language model trained by OpenAI. Follow the user\'s instructions carefully.'
+                }
+                if (apiIDs.gptForLove.parentID) payload.options = { parentMessageId: apiIDs.gptForLove.parentID }
+            } else if (api == 'MixerBox AI')
+                payload = { prompt: msgs, model: 'gpt-3.5-turbo' }
+            return JSON.stringify(payload)
+        }
+    }
+
+    // Define GET functions
+
+    async function getShowReply(msgChain) {
+
+        // Init API attempt props
+        getShowReply.status = 'waiting'
+        if (!getShowReply.triedAPIs) getShowReply.triedAPIs = []
+        if (!getShowReply.attemptCnt) getShowReply.attemptCnt = 1
+
+        // Pick API
+        getShowReply.api = api.pick()
+        if (!getShowReply.api) { // no more proxy APIs left untried
+            appAlert('proxyNotWorking', 'suggestOpenAI') ; return }
+
+        if (!config.proxyAPIenabled) // init OpenAI key
+            config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
+        else setTimeout(() => { // try diff API after 6-9s of no response
+            if (config.proxyAPIenabled && getShowReply.status != 'done' && !getShowReply.sender)
+                api.tryNew(getShowReply.api, 'timeout') }, config.streamingDisabled ? 9000 : 6000)
+
+        // Get/show answer from ChatGPT
+        GM.xmlHttpRequest({
+            method: apis[getShowReply.api].method, url: apis[getShowReply.api].endpoint,
+            responseType: config.streamingDisabled || !config.proxyAPIenabled ? 'text' : 'stream',
+            headers: api.createHeaders(getShowReply.api), data: api.createPayload(getShowReply.api, msgChain),
+            onload: resp => processText(getShowReply.api, resp),
+            onloadstart: resp => processStream(getShowReply.api, resp),
+            onerror: err => { consoleErr(err.message)
+                if (!config.proxyAPIenabled) appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
+                else if (getShowReply.status != 'done') api.tryNew(getShowReply.api)
+            }
+        })
+
+        // Get/show related queries
+        if (!config.rqDisabled) {
+            const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1]
+            getRelatedQueries(lastQuery.content).then(relatedQueries => {
+                if (relatedQueries && appDiv.querySelector('textarea')) {
+
+                    // Create/classify/append parent div
+                    const relatedQueriesDiv = document.createElement('div')
+                    relatedQueriesDiv.className = 'related-queries'
+                    appDiv.append(relatedQueriesDiv)
+
+                    // Fill each child div, add attributes + icon + listener
+                    relatedQueries.forEach((relatedQuery, idx) => {
+                        const relatedQueryDiv = document.createElement('div'),
+                              relatedQuerySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                              relatedQuerySVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
+
+                        // Add attributes
+                        relatedQueryDiv.title = msgs.tooltip_sendRelatedQuery || 'Send related query'
+                        relatedQueryDiv.classList.add('related-query', 'fade-in', 'no-user-select')
+                        relatedQueryDiv.setAttribute('tabindex', 0)
+                        relatedQueryDiv.textContent = relatedQuery
+
+                        // Create icon
+                        for (const [attr, value] of [
+                            ['viewBox', '0 0 24 24'], ['width', 18], ['height', 18], ['fill', 'currentColor']
+                        ]) relatedQuerySVG.setAttribute(attr, value)
+                        relatedQuerySVGpath.setAttribute('d',
+                            'M16 10H6.83L9 7.83l1.41-1.41L9 5l-6 6 6 6 1.41-1.41L9 14.17 6.83 12H16c1.65 0 3 1.35 3 3v4h2v-4c0-2.76-2.24-5-5-5z')
+                        relatedQuerySVG.style.transform = 'rotate(180deg)' // flip arrow upside down
+
+                        // Assemble/insert elements
+                        relatedQuerySVG.append(relatedQuerySVGpath) ; relatedQueryDiv.prepend(relatedQuerySVG)
+                        relatedQueriesDiv.append(relatedQueryDiv)
+
+                        // Add fade + listeners
+                        setTimeout(() => {
+                            relatedQueryDiv.classList.add('active')
+                            for (const event of ['click', 'keydown']) relatedQueryDiv.addEventListener(event, handleRQevent)
+                        }, idx * 100)
+                    })
+
+                    updateTweaksStyle() // to shorten <pre> max-height
+        }})}
+
+        updateFooterContent()
+    }
+
+    function getRelatedQueries(query) {
+        getRelatedQueries.api = api.pick()
+        return new Promise((resolve, reject) => {
+            const rqPrompt = 'Show a numbered list of queries related to this one:\n\n' + query
+               + '\n\nMake sure to suggest a variety that can even greatly deviate from the original topic.'
+               + ' For example, if the original query asked about someone\'s wife,'
+                   + ' a good related query could involve a different relative and using their name.'
+               + ' Another example, if the query asked about a game/movie/show,'
+                   + ' good related queries could involve pertinent characters.'
+               + ' Another example, if the original query asked how to learn JavaScript,'
+                   + ' good related queries could ask why/when/where instead, even replacing JS w/ other languages.'
+               + ' But the key is variety. Do not be repetitive.'
+                   + ' You must entice user to want to ask one of your related queries.'
+               + ` Reply in ${config.replyLanguage}`
+            GM.xmlHttpRequest({
+                method: apis[getRelatedQueries.api].method, url: apis[getRelatedQueries.api].endpoint,
+                responseType: 'text', headers: api.createHeaders(getRelatedQueries.api),
+                data: api.createPayload(getRelatedQueries.api, [{ role: 'user', content: rqPrompt }]),
+                onload: event => {
+                    let str_relatedQueries = ''
+                    if (getRelatedQueries.api == 'OpenAI') {
+                        try { str_relatedQueries = JSON.parse(event.response).choices[0].message.content }
+                        catch (err) { consoleErr(err) ; reject(err) }
+                    } else if (getRelatedQueries.api == 'AIchatOS' && !/很抱歉地|系统公告/.test(event.responseText)) {
+                        try {
+                            const text = event.responseText, chunkSize = 1024
+                            let currentIdx = 0
+                            while (currentIdx < text.length) {
+                                const chunk = text.substring(currentIdx, currentIdx + chunkSize)
+                                currentIdx += chunkSize ; str_relatedQueries += chunk
+                            }
+                        } catch (err) { consoleErr(err) ; reject(err) }
+                    } else if (getRelatedQueries.api == 'GPTforLove') {
+                        try {
+                            let chunks = event.responseText.trim().split('\n')
+                            str_relatedQueries = JSON.parse(chunks[chunks.length - 1]).text
+                        } catch (err) { consoleErr(err) ; reject(err) }
+                    } else if (getRelatedQueries.api == 'MixerBox AI') {
+                        try {
+                            const extractedData = Array.from(event.responseText.matchAll(/data:(.*)/g), match => match[1]
+                                .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
+                                .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
+                            str_relatedQueries = extractedData.join('')
+                        } catch (err) { consoleErr(err) ; reject(err) }
+                    }
+                    const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
+                        .slice(0, 5) // limit to 1st 5
+                        .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
+                    resolve(arr_relatedQueries)
+                },
+                onerror: err => { consoleErr(err) ; reject(err) }
+            })
+    })}
+
+    // Define PROCESS functions
+
+    function processText(activeAPI, resp) {
+        if (!config.streamingDisabled && config.proxyAPIenabled || getShowReply.status == 'done') return
+        if (resp.status != 200) {
+            consoleErr('Response status', resp.status)
+            consoleErr('Response text', resp.responseText)
+            if (config.proxyAPIenabled && getShowReply.status != 'done')
+                api.tryNew(activeAPI)
+            else if (resp.status == 401 && !config.proxyAPIenabled) {
+                GM_deleteValue(config.keyPrefix + '_openAItoken') ; appAlert('login') }
+            else if (resp.status == 403)
+                appAlert(config.proxyAPIenabled ? ['proxyNotWorking', 'suggestOpenAI'] : 'checkCloudflare')
+            else if (resp.status == 429)
+                appAlert(['tooManyRequests', config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy'])
+            else // uncommon status
+                appAlert(`${ config.proxyAPIenabled ? 'proxyN' : 'openAIn' }otWorking`,
+                         `suggest${ config.proxyAPIenabled ? 'OpenAI' : 'Proxy' }`)
+        } else if (activeAPI == 'OpenAI') {
+            if (resp.response) {
+                try {
+                    appShow(JSON.parse(resp.response).choices[0].message.content, footerContent)
+                } catch (err) {
+                    consoleInfo('Response: ' + resp.response)
+                    consoleErr(appAlerts.parseFailed, err)
+                    appAlert('openAInotWorking, suggestProxy')
+                }
+            } else { consoleInfo('Response: ' + resp.responseText) ; appAlert('openAInotWorking, suggestProxy') }
+        } else if (activeAPI == 'AIchatOS') {
+            if (resp.responseText && !/很抱歉地|系统公告/.test(resp.responseText)) {
+                try {
+                    const text = resp.responseText, chunkSize = 1024
+                    let answer = '', currentIdx = 0
+                    while (currentIdx < text.length) {
+                        const chunk = text.substring(currentIdx, currentIdx + chunkSize)
+                        currentIdx += chunkSize ; answer += chunk
+                    }
+                    appShow(answer, footerContent)
+                    getShowReply.status = 'done' ; api.clearTimedOut(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
+                } catch (err) { // use different endpoint or suggest OpenAI
+                    consoleInfo('Response: ' + resp.responseText)
+                    consoleErr(appAlerts.parseFailed, err)
+                    if (getShowReply.status != 'done') api.tryNew(activeAPI)
+                }
+            } else { consoleInfo('Response: ' + resp.responseText) ; if (getShowReply.status != 'done') api.tryNew(api) }
+        } else if (activeAPI == 'GPTforLove') {
+            if (resp.responseText && !resp.responseText.includes('Fail')) {
+                try {
+                    let chunks = resp.responseText.trim().split('\n'),
+                        lastObj = JSON.parse(chunks[chunks.length - 1])
+                    if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
+                    appShow(lastObj.text, footerContent)
+                    getShowReply.status = 'done' ; api.clearTimedOut(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
+                } catch (err) { // use different endpoint or suggest OpenAI
+                    consoleInfo('Response: ' + resp.responseText)
+                    consoleErr(appAlerts.parseFailed, err)
+                    if (getShowReply.status != 'done') api.tryNew(api)
+                }
+            } else { consoleInfo('Response: ' + resp.responseText) ; if (getShowReply.status != 'done') api.tryNew(api) }
+        } else if (activeAPI == 'MixerBox AI') {
+            if (resp.responseText) {
+                try {
+                    const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
+                        .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
+                        .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
+                    appShow(extractedData.join(''), footerContent)
+                    getShowReply.status = 'done' ; api.clearTimedOut(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
+                } catch (err) { // use different endpoint or suggest OpenAI
+                    consoleInfo('Response: ' + resp.responseText)
+                    consoleErr(appAlerts.parseFailed, err)
+                    if (getShowReply.status != 'done') api.tryNew(activeAPI)
+                }
+            } else { consoleInfo('Response: ' + resp.responseText) ; if (getShowReply.status != 'done') api.tryNew(activeAPI) }
+        }
+    }
+
+    function processStream(activeAPI, stream) {
+        if (config.streamingDisabled || !config.proxyAPIenabled) return
+        const reader = stream.response.getReader() ; let accumulatedChunks = ''
+        reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream', err.message))
+        function processStreamText({ done, value }) {
+            if (done) {
+                getShowReply.status = 'done' ; getShowReply.sender = null
+                api.clearTimedOut(getShowReply.triedAPIs) ; getShowReply.attemptCnt = 0
+                return
+            }
+            let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
+            if (activeAPI == 'MixerBox AI') { // pre-process chunks
+                const extractedChunks = Array.from(chunk.matchAll(/data:(.*)/g), match => match[1]
+                    .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
+                    .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
+                chunk = extractedChunks.join('')
+            }
+            accumulatedChunks = apis[activeAPI].accumulatesText ? chunk : accumulatedChunks + chunk
+            if (/['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // GPTforLove fail
+                consoleErr('Response', accumulatedChunks)
+                if (getShowReply.status != 'done' && !getShowReply.sender) api.tryNew(activeAPI)
+                return
+            }
+            try { // to show stream text
+                let textToShow
+                if (activeAPI == 'GPTforLove') { // extract parentID + latest chunk text
+                    const jsonLines = accumulatedChunks.split('\n'),
+                          nowResult = JSON.parse(jsonLines[jsonLines.length - 1])
+                    if (nowResult.id) apiIDs.gptForLove.parentID = nowResult.id // for contextual replies
+                    textToShow = nowResult.text
+                } else textToShow = accumulatedChunks
+                if (textToShow && getShowReply.status != 'done') { // text ready, app waiting or sending
+                    if (!getShowReply.sender) getShowReply.sender = activeAPI // app is waiting, become sender
+                    if (getShowReply.sender == activeAPI) appShow(textToShow, footerContent)
+                }
+            } catch (err) { consoleErr('Error showing stream', err.message) }
+            return reader.read().then(({ done, value }) => {
+                if (getShowReply.sender == activeAPI) // am designated sender, recurse
+                    processStreamText({ done, value })
+            }).catch(err => consoleErr('Error reading stream', err.message))
+        }
+    }
+
+    // Define QUERY AUGMENT functions
+
+    function augmentQuery(query) { return query + ` (reply in ${config.replyLanguage})` }
+
+    function stripQueryAugments(msgChain) {
+        const augmentCnt = augmentQuery.toString().match(/\+/g).length
+        return msgChain.map(msg => { // stripped chain
+            if (msg.role == 'user') {
+                let content = msg.content
+                const augments = content.match(/\s*\([^)]*\)\s*/g)
+                if (augments) for (let i = 0 ; i < augmentCnt ; i++) // strip augments
+                    content = content.replace(augments[augments.length - 1 - i], '')
+                return { ...msg, content: content.trim() }
+            } else return msg // agent's unstripped
+        })
     }
 
     // Run MAIN routine
