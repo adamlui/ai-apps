@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.6
+// @version             2024.6.13.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -281,7 +281,7 @@
                 const switchPhrase = msgs.alert_switchingOn || 'switching on'
                 msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
                 siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
-                appDiv.querySelector('.alert-link')?.addEventListener('click', () => {
+                appDiv.querySelector('[href="#"]')?.addEventListener('click', () => {
                     document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
@@ -596,7 +596,7 @@
             msgSpan.innerHTML = msg ; alertP.append(msgSpan)
 
             // Activate toggle link if necessary
-            msgSpan.querySelector('.alert-link')?.addEventListener('click', toggleProxyMode)
+            msgSpan.querySelector('[href="#"]')?.addEventListener('click', toggleProxyMode)
         })
         appDiv.append(alertP)
     }

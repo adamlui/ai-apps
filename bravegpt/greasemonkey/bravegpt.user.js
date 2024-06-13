@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.6
+// @version             2024.6.13.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -243,7 +243,7 @@ setTimeout(async () => {
                 msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
                 siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                     msg, '', '', 575) // px width
-                appDiv.querySelector('.alert-link')?.addEventListener('click', () => {
+                appDiv.querySelector('[href="#"]')?.addEventListener('click', () => {
                     document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
@@ -551,7 +551,7 @@ setTimeout(async () => {
             msgSpan.innerHTML = msg ; alertP.append(msgSpan)
 
             // Activate toggle link if necessary
-            msgSpan.querySelector('.alert-link')?.addEventListener('click', toggleProxyMode)
+            msgSpan.querySelector('[href="#"]')?.addEventListener('click', toggleProxyMode)
         })
         appDiv.append(alertP)
     }

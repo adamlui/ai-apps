@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.8
+// @version             2024.6.13.9
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -476,7 +476,7 @@
                 const switchPhrase = msgs.alert_switchingOn || 'switching on'
                 msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
                 siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
-                appDiv.querySelector('.alert-link')?.addEventListener('click', () => {
+                appDiv.querySelector('[href="#"]')?.addEventListener('click', () => {
                     document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
@@ -778,7 +778,7 @@
             msgSpan.innerHTML = msg ; alertP.append(msgSpan)
 
             // Activate toggle link if necessary
-            msgSpan.querySelector('.alert-link')?.addEventListener('click', toggleProxyMode)
+            msgSpan.querySelector('[href="#"]')?.addEventListener('click', toggleProxyMode)
         })
         appDiv.append(alertP)
     }
