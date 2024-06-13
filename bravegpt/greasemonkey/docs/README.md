@@ -91,7 +91,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 ## 🌐 Compatibility
 
-**BraveGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (required for Streaming Mode) or [Violentmonkey](https://violentmonkey.github.io/).
+**BraveGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (recommended for Streaming Mode) or [Violentmonkey](https://violentmonkey.github.io/).
 
 ### 🖥️ Desktop
 
