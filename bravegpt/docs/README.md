@@ -79,7 +79,7 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoAI
 
 ## 🌐 Compatibility
 
-**BraveGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (recommended for Streaming Mode) or [Violentmonkey](https://violentmonkey.github.io/).
+**BraveGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (required for Streaming Mode) or [Violentmonkey](https://violentmonkey.github.io/).
 
 ### 🖥️ Desktop
 

@@ -90,7 +90,7 @@ GoogleGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoA
 
 ## 🌐 Compatibility 
 
-**GoogleGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (recommended for Streaming Mode) or [Violentmonkey](https://violentmonkey.github.io/).
+**GoogleGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (required for Streaming Mode) or [Violentmonkey](https://violentmonkey.github.io/).
 
 ### 🖥️ Desktop
 
