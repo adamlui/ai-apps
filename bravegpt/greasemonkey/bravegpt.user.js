@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.12.8
+// @version             2024.6.12.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1076,9 +1076,9 @@ setTimeout(async () => {
             get.related.api = api.pick(get.related)
             if (!get.related.api) return // no more proxy APIs left untried
 
-            setTimeout(() => { // try diff API after 6s of no response
+            setTimeout(() => { // try diff API after 7s of no response
                 if (get.related.status != 'done')
-                    api.tryNew(get.related, get.related.api, 'timeout') }, 6000)
+                    api.tryNew(get.related, get.related.api, 'timeout') }, 7000)
 
             return new Promise((resolve, reject) => {
                 const rqPrompt = 'Show a numbered list of queries related to this one:\n\n' + query
