@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.12.6
+// @version             2024.6.12.7
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1642,6 +1642,23 @@
         }
     }
 
+    // Define QUERY AUGMENT functions
+
+    function augmentQuery(query) { return query + ` (reply in ${config.replyLanguage})` }
+
+    function stripQueryAugments(msgChain) {
+        const augmentCnt = augmentQuery.toString().match(/\+/g).length
+        return msgChain.map(msg => { // stripped chain
+            if (msg.role == 'user') {
+                let content = msg.content
+                const augments = content.match(/\s*\([^)]*\)\s*/g)
+                if (augments) for (let i = 0 ; i < augmentCnt ; i++) // strip augments
+                    content = content.replace(augments[augments.length - 1 - i], '')
+                return { ...msg, content: content.trim() }
+            } else return msg // agent's unstripped
+        })
+    }
+
     // Define GET functions
 
     const get = {
@@ -1887,23 +1904,6 @@
                 }).catch(err => consoleErr('Error reading stream', err.message))
             }
         }
-    }
-
-    // Define QUERY AUGMENT functions
-
-    function augmentQuery(query) { return query + ` (reply in ${config.replyLanguage})` }
-
-    function stripQueryAugments(msgChain) {
-        const augmentCnt = augmentQuery.toString().match(/\+/g).length
-        return msgChain.map(msg => { // stripped chain
-            if (msg.role == 'user') {
-                let content = msg.content
-                const augments = content.match(/\s*\([^)]*\)\s*/g)
-                if (augments) for (let i = 0 ; i < augmentCnt ; i++) // strip augments
-                    content = content.replace(augments[augments.length - 1 - i], '')
-                return { ...msg, content: content.trim() }
-            } else return msg // agent's unstripped
-        })
     }
 
     // Run MAIN routine
