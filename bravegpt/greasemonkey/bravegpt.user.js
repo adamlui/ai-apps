@@ -1355,6 +1355,23 @@ setTimeout(async () => {
         }
     }
 
+    // Define QUERY AUGMENT functions
+
+    function augmentQuery(query) { return query + ` (reply in ${config.replyLanguage})` }
+
+    function stripQueryAugments(msgChain) {
+        const augmentCnt = augmentQuery.toString().match(/\+/g).length
+        return msgChain.map(msg => { // stripped chain
+            if (msg.role == 'user') {
+                let content = msg.content
+                const augments = content.match(/\s*\([^)]*\)\s*/g)
+                if (augments) for (let i = 0 ; i < augmentCnt ; i++) // strip augments
+                    content = content.replace(augments[augments.length - 1 - i], '')
+                return { ...msg, content: content.trim() }
+            } else return msg // agent's unstripped
+        })
+    }
+
     // Define GET functions
 
     const get = {
@@ -1600,23 +1617,6 @@ setTimeout(async () => {
                 }).catch(err => consoleErr('Error reading stream', err.message))
             }
         }
-    }
-
-    // Define QUERY AUGMENT functions
-
-    function augmentQuery(query) { return query + ` (reply in ${config.replyLanguage})` }
-
-    function stripQueryAugments(msgChain) {
-        const augmentCnt = augmentQuery.toString().match(/\+/g).length
-        return msgChain.map(msg => { // stripped chain
-            if (msg.role == 'user') {
-                let content = msg.content
-                const augments = content.match(/\s*\([^)]*\)\s*/g)
-                if (augments) for (let i = 0 ; i < augmentCnt ; i++) // strip augments
-                    content = content.replace(augments[augments.length - 1 - i], '')
-                return { ...msg, content: content.trim() }
-            } else return msg // agent's unstripped
-        })
     }
 
     // Run MAIN routine
