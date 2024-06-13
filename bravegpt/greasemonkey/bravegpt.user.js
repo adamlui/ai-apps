@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.1
+// @version             2024.6.13.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -521,7 +521,7 @@ setTimeout(async () => {
     function appAlert(...alerts) {
         alerts = alerts.flat() // flatten array args nested by spread operator
         while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear appDiv content
-        const alertP = document.createElement('p')
+        const alertP = document.createElement('p') ; alertP.id = 'bravegpt-alert'
         alertP.className = 'no-user-select' ; alertP.style.marginBottom = '-22px'
 
         alerts.forEach((alert, idx) => { // process each alert for display
@@ -569,7 +569,7 @@ setTimeout(async () => {
     }
 
     function updateTitleLine() {
-        if (appDiv.querySelector('.loading')) return
+        if (appDiv.querySelector('.loading, #bravegpt-alert')) return // only update reply UI
 
         const appTitleVisible = !!appDiv.querySelector('.app-name'),
               byLineVisible = !!appDiv.querySelector('.kudoai'),

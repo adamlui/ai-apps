@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.1
+// @version             2024.6.13.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -566,7 +566,8 @@
     function appAlert(...alerts) {
         alerts = alerts.flat() // flatten array args nested by spread operator
         while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear appDiv content
-        const alertP = document.createElement('p') ; alertP.className = 'no-user-select'
+        const alertP = document.createElement('p')
+        alertP.id = 'ddgpt-alert' ; alertP.className = 'no-user-select'
 
         alerts.forEach((alert, idx) => { // process each alert for display
             let msg = appAlerts[alert] || alert // use string verbatim if not found in appAlerts
@@ -609,7 +610,7 @@
     function isCenteredMode() { return document.documentElement.classList.toString().includes('center') }
 
     function updateTitleAnchor() {
-        if (appDiv.querySelector('.loading')) return
+        if (appDiv.querySelector('.loading, #ddgpt-alert')) return // only update reply UI
 
         const appTitleVisible = !!appDiv.querySelector('.app-name'),
               logoVisible = !!appDiv.querySelector('img')

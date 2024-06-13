@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.3
+// @version             2024.6.13.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -748,7 +748,7 @@
     function appAlert(...alerts) {
         alerts = alerts.flat() // flatten array args nested by spread operator
         while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear appDiv content
-        const alertP = document.createElement('p')
+        const alertP = document.createElement('p') ; alertP.id = 'googlegpt-alert'
         alertP.className = 'no-user-select' ; alertP.style.paddingBottom = '15px'
 
         alerts.forEach((alert, idx) => { // process each alert for display
@@ -812,7 +812,7 @@
     }
 
     function updateTitleElems() {
-        if (appDiv.querySelector('.loading')) return
+        if (appDiv.querySelector('.loading, #googlegpt-alert')) return // only update reply UI
 
         const appPrefixVisible = !!appDiv.querySelector('#app-prefix'),
               appTitleVisible = !!appDiv.querySelector('.app-name'),
