@@ -72,7 +72,7 @@ DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/Kud
 
 ## 🌐 Compatibility 
 
-**DuckDuckGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/):
+**DuckDuckGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (recommended for Streaming Mode) or [Violentmonkey](https://violentmonkey.github.io/).
 
 ### 🖥️ Desktop
 
