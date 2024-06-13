@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.12.3
+// @version             2024.6.12.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -401,6 +401,38 @@
 // ..and KaTeX, the fastest math typesetting library @ https://katex.org (c) 2013–2020 Khan Academy & contributors under the MIT license
 
 (async () => {
+
+    // Init CONFIG
+    const config = {
+        appName: 'GoogleGPT', appSymbol: '🤖', keyPrefix: 'googleGPT',
+        appURL: 'https://www.googlegpt.io', gitHubURL: 'https://github.com/KudoAI/googlegpt',
+        greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt' }
+    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
+        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
+    config.supportURL = config.gitHubURL + '/issues/new'
+    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@698b652/'
+    config.userLanguage = chatgpt.getUserLanguage()
+    config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
+                      : window.location.hostname.split('.').pop()
+    loadSetting('autoGetDisabled', 'autoScroll', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
+                'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
+    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
+    if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
+
+    // Init API props
+    const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
+    const apis = {
+        'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.xyz',
+            endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true, accumulatesText: false },
+        'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
+            endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true, accumulatesText: true },
+        'MixerBox AI': { expectedOrigin: 'https://chatai.mixerbox.com',
+            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', method: 'POST', streamable: true, accumulatesText: false },
+        'OpenAI': { expectedOrigin: 'https://chatgpt.com',
+            endpoint: 'https://api.openai.com/v1/chat/completions', method: 'POST', streamable: true }
+    }
+    const apiIDs = { gptForLove: { parentID: '' }, aiChatOS: { userID: '#/chat/' + Date.now() }}
 
     // Define SCRIPT functions
 
@@ -1876,24 +1908,6 @@
 
     // Run MAIN routine
 
-    // Init CONFIG
-    const config = {
-        appName: 'GoogleGPT', appSymbol: '🤖', keyPrefix: 'googleGPT',
-        appURL: 'https://www.googlegpt.io', gitHubURL: 'https://github.com/KudoAI/googlegpt',
-        greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt' }
-    config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
-        .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
-    config.supportURL = config.gitHubURL + '/issues/new'
-    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@698b652/'
-    config.userLanguage = chatgpt.getUserLanguage()
-    config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
-                      : window.location.hostname.split('.').pop()
-    loadSetting('autoGetDisabled', 'autoScroll', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
-                'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
-    if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
-    if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
-
     // Define MESSAGES
     let msgs = {}
     const msgsLoaded = new Promise(resolve => {
@@ -1947,20 +1961,6 @@
     registerMenu() // create browser toolbar menu
 
     if (window.location.search.includes('&udm=2')) return // exit if on Google Images
-
-    // Init API props
-    const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
-    const apis = {
-        'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.xyz',
-            endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true, accumulatesText: false },
-        'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
-            endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true, accumulatesText: true },
-        'MixerBox AI': { expectedOrigin: 'https://chatai.mixerbox.com',
-            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', method: 'POST', streamable: true, accumulatesText: false },
-        'OpenAI': { expectedOrigin: 'https://chatgpt.com',
-            endpoint: 'https://api.openai.com/v1/chat/completions', method: 'POST', streamable: true }
-    }
-    const apiIDs = { gptForLove: { parentID: '' }, aiChatOS: { userID: '#/chat/' + Date.now() }}
 
     // Init ALERTS
     const appAlerts = {
