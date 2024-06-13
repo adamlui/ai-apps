@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.2
+// @version             2024.6.13.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -903,7 +903,8 @@ setTimeout(async () => {
     function toggleProxyMode() {
         saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
         notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+config.proxyAPIenabled])
-        refreshMenu() ; location.reload() // re-send query using new endpoint
+        refreshMenu()
+        if (appDiv.querySelector('#bravegpt-alert')) location.reload() // re-send query if user alerted
     }
 
     function toggleSidebar(mode) {

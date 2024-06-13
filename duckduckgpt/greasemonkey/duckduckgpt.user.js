@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.2
+// @version             2024.6.13.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -857,7 +857,8 @@
     function toggleProxyMode() {
         saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
         notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+config.proxyAPIenabled])
-        refreshMenu() ; location.reload() // re-send query using new endpoint
+        refreshMenu()
+        if (appDiv.querySelector('#ddgpt-alert')) location.reload() // re-send query if user alerted
     }
 
     function toggleSidebar(mode) {
