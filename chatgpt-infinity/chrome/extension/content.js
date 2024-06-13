@@ -136,21 +136,13 @@
 
         // Insert toggle
         const parentToInsertInto = document.querySelector('nav ' +
-            (isGPT4oUI && !firstLink ? '' // nav div itself
-                : isGPT4oUI && firstLink ? ' div:nth-of-type(2)' // links + history div
-                : '> div:not(.invisible)')); // upper nav div
-        const childToInsertBefore = await Promise.race([
-            new Promise(resolve => {
-                (function checkGPTsLinkLoaded() {
-                    const gptsLink = document.querySelector('nav a[href="/gpts"]')
-                    if (gptsLink) resolve(gptsLink.parentNode.parentNode)
-                    else setTimeout(checkGPTsLinkLoaded, 200)
-                })()
-            }), new Promise(resolve => setTimeout(() => resolve(parentToInsertInto.children[1]), 2000))])    
+            (isGPT4oUI ? '' // nav div itself
+                : '> div:not(.invisible)')) // upper nav div
         if (!parentToInsertInto.contains(navToggleDiv))
-             parentToInsertInto.insertBefore(navToggleDiv, childToInsertBefore)
+            parentToInsertInto.insertBefore(navToggleDiv, parentToInsertInto.children[1])
 
         // Tweak styles
+        if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
         document.querySelector('#infToggleFavicon').src = `${ // update navicon color in case scheme changed
