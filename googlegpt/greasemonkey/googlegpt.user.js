@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.5
+// @version             2024.6.13.6
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -474,9 +474,9 @@
                         + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
                         + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
                 const switchPhrase = msgs.alert_switchingOn || 'switching on'
-                msg = msg.replace(switchPhrase, `<a href="#" class="proxyToggle">${switchPhrase}</a>`)
+                msg = msg.replace(switchPhrase, `<a href="#" class="proxy-toggle-link">${switchPhrase}</a>`)
                 siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
-                document.querySelector('.proxyToggle')?.addEventListener('click', () => {
+                document.querySelector('.proxy-toggle-link')?.addEventListener('click', () => {
                     document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
@@ -771,7 +771,7 @@
                 msg.includes(msgs['alert_switching' + state]) || new RegExp(`\\b${state}\\b`, 'i').test(msg))
             if (foundState) { // hyperlink switch phrase for click listener to toggleProxyMode()
                 const switchPhrase = msgs['alert_switching' + foundState] || 'switching ' + foundState.toLowerCase()
-                msg = msg.replace(switchPhrase, `<a href="#" ${linkStyle} class="proxyToggle">${switchPhrase}</a>`)
+                msg = msg.replace(switchPhrase, `<a href="#" ${linkStyle} class="proxy-toggle-link">${switchPhrase}</a>`)
             }
 
             // Create/fill/append msg span
@@ -779,7 +779,7 @@
             msgSpan.innerHTML = msg ; alertP.append(msgSpan)
 
             // Activate toggle link if necessary
-            msgSpan.querySelector('.proxyToggle')?.addEventListener('click', toggleProxyMode)
+            msgSpan.querySelector('.proxy-toggle-link')?.addEventListener('click', toggleProxyMode)
         })
         appDiv.append(alertP)
     }

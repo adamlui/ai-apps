@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.3
+// @version             2024.6.13.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -240,10 +240,10 @@ setTimeout(async () => {
                         + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
                         + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
                 const switchPhrase = msgs.alert_switchingOn || 'switching on'
-                msg = msg.replace(switchPhrase, `<a href="#" class="proxyToggle">${switchPhrase}</a>`)
+                msg = msg.replace(switchPhrase, `<a href="#" class="proxy-toggle-link">${switchPhrase}</a>`)
                 siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                     msg, '', '', 575) // px width
-                document.querySelector('.proxyToggle')?.addEventListener('click', () => {
+                document.querySelector('.proxy-toggle-link')?.addEventListener('click', () => {
                     document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
@@ -544,7 +544,7 @@ setTimeout(async () => {
                 msg.includes(msgs['alert_switching' + state]) || new RegExp(`\\b${state}\\b`, 'i').test(msg))
             if (foundState) { // hyperlink switch phrase for click listener to toggleProxyMode()
                 const switchPhrase = msgs['alert_switching' + foundState] || 'switching ' + foundState.toLowerCase()
-                msg = msg.replace(switchPhrase, `<a href="#" ${linkStyle} class="proxyToggle">${switchPhrase}</a>`)
+                msg = msg.replace(switchPhrase, `<a href="#" ${linkStyle} class="proxy-toggle-link">${switchPhrase}</a>`)
             }
 
             // Create/fill/append msg span
@@ -552,7 +552,7 @@ setTimeout(async () => {
             msgSpan.innerHTML = msg ; alertP.append(msgSpan)
 
             // Activate toggle link if necessary
-            msgSpan.querySelector('.proxyToggle')?.addEventListener('click', toggleProxyMode)
+            msgSpan.querySelector('.proxy-toggle-link')?.addEventListener('click', toggleProxyMode)
         })
         appDiv.append(alertP)
     }
