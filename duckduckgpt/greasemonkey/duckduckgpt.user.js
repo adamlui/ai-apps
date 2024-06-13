@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13
+// @version             2024.6.13.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1485,10 +1485,12 @@
             }
 
             // Focus chatbar conditionally
-            if (!isMobile // exclude mobile devices to not auto-popup OSD keyboard
-                && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top ) // app fully above fold
-            ) appDiv.querySelector('#app-chatbar').focus()
-            show.reply.submitSrc = 'none'
+            if (!show.reply.chatbarFocused // do only once
+                && !isMobile // exclude mobile devices to not auto-popup OSD keyboard
+                && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top )) { // app fully above fold
+                    appDiv.querySelector('#app-chatbar').focus() ; show.reply.chatbarFocused = true }
+
+            show.reply.submitSrc = 'none' // for reply section builder's mobile scroll-to-top if user interacted
 
             function handleEnter(event) {
                 if (event.key == 'Enter' || event.keyCode == 13) {
@@ -1534,6 +1536,8 @@
                 const replySection = appDiv.querySelector('section')
                 replySection.classList.add('loading', 'no-user-select')
                 replySection.innerText = appAlerts.waitingResponse
+
+                show.reply.chatbarFocused = false // for auto-focus routine
             }
 
             // Autosize chatbar function
