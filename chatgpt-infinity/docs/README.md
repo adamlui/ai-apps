@@ -15,7 +15,7 @@
 
 <div align="center">
 
-![](https://img.shields.io/badge/Users-80,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
+![](https://img.shields.io/badge/Users-90,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
 [![\[GitHub Stars\]](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=Stars&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.chatgptinfinity.com/stargazers)
 [![\[Microsoft Edge\]](https://img.shields.io/badge/dynamic/json?logo=microsoftedge&logoColor=white&labelColor=464646&color=7bfce9&label=rating&suffix=/5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fjgonecnbmehicpdpjkdekamhmlebfagb&style=for-the-badge)](https://edge.chatgptinfinity.com)
 [![\[License: MIT\]](https://img.shields.io/badge/License-MIT-orange.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](https://github.chatgptinfinity.com/blob/main/LICENSE.md)

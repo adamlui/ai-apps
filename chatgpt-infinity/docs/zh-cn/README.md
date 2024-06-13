@@ -15,7 +15,7 @@
 
 <div align="center">
 
-![](https://img.shields.io/badge/%E7%94%A8%E6%88%B7-80,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
+![](https://img.shields.io/badge/%E7%94%A8%E6%88%B7-90,000+-blue?logo=weightsandbiases&logoColor=white&labelColor=464646&style=for-the-badge)
 [![\[GitHub 星星\]](https://img.shields.io/github/stars/adamlui/chatgpt-infinity?label=%E6%98%9F%E6%98%9F&logo=github&logoColor=white&labelColor=464646&color=af68ff&style=for-the-badge)](https://github.chatgptinfinity.com/stargazers)
 [![\[Microsoft Edge\]](https://img.shields.io/badge/dynamic/json?logo=microsoftedge&logoColor=white&labelColor=464646&color=7bfce9&label=%E8%AF%84%E5%88%86&suffix=/5&query=%24.averageRating&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fjgonecnbmehicpdpjkdekamhmlebfagb&style=for-the-badge)](https://edge.chatgptinfinity.com)
 [![\[许可证: MIT\]](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-MIT-fcde7b.svg?logo=internetarchive&logoColor=white&labelColor=464646&style=for-the-badge)](LICENSE.md)
