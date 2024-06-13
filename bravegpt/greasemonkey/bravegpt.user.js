@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.12.6
+// @version             2024.6.12.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -282,7 +282,7 @@ setTimeout(async () => {
                 relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
             if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.related(lastQuery).then(queries => showRelatedQueries(queries))
+                get.related(lastQuery).then(queries => show.related(queries))
                     .catch(err => { consoleErr(err.message) ; api.tryNew(get.related, get.related.api) })
             }
             updateTweaksStyle() // toggle <pre> max-height
@@ -676,7 +676,7 @@ setTimeout(async () => {
         )
     }
 
-    function updateTweaksStyle() { // based on settings (for tweaks init + appShow() + toggleSidebar())
+    function updateTweaksStyle() { // based on settings (for tweaks init + show.reply() + toggleSidebar())
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )}
 
     function updateWSBsvg() {
@@ -819,368 +819,7 @@ setTimeout(async () => {
         }
     }
 
-    function appShow(answer, footerContent) {
-
-        // Build answer interface up to reply section if missing
-        if (!appDiv.querySelector('pre')) {
-            while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
-
-            // Create/append app title anchor
-            const appTitleAnchor = createAnchor(config.appURL, (() => {
-                if (appLogoImg.loaded) { // size/return app logo img
-                    appLogoImg.width = 143 ; return appLogoImg
-                } else { // create/fill/pos/return app name span
-                    const appNameSpan = document.createElement('span')
-                    appNameSpan.innerText = '🤖 ' + config.appName
-                    appNameSpan.style.marginLeft = '3px'
-                    return appNameSpan
-                }
-            })())
-            appTitleAnchor.classList.add('app-name', 'no-user-select')
-            appDiv.append(appTitleAnchor)
-
-            // Create/append 'by KudoAI'
-            const kudoAIspan = document.createElement('span')
-            kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-            kudoAIspan.style.cssText = appLogoImg.loaded ? 'position: relative ; bottom: 8px ; font-size: 12px' : ''
-            const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
-            kudoAIspan.append(kudoAIlink) ; appDiv.append(kudoAIspan)
-
-            // Create/append about button
-            const aboutSpan = document.createElement('span'),
-                  aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                  aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
-            aboutSpan.id = 'about-btn' // for toggleTooltip()
-            aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = '2px'
-            const aboutSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
-            aboutSVGattrs.forEach(([attr,value]) => aboutSVG.setAttribute(attr, value))            
-            aboutSVGpath.setAttribute('d',
-                'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z')
-            aboutSVGpath.setAttribute('stroke', 'none')
-            aboutSVG.append(aboutSVGpath) ; aboutSpan.append(aboutSVG) ; appDiv.append(aboutSpan)
-
-            // Create/append speak button
-            if (answer != 'standby') {
-                var speakSpan = document.createElement('span'),
-                    speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-                speakSpan.id = 'speak-btn' // for toggleTooltip()
-                speakSpan.className = 'corner-btn' ; speakSpan.style.marginRight = '7px'
-                const speakSVGattrs = [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']]
-                speakSVGattrs.forEach(([attr, value]) => speakSVG.setAttributeNS(null, attr, value))
-                const speakSVGpaths = [
-                    createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
-                        d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10' }),
-                    createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
-                        d: 'M22,20.847c1.281,-1.306 2,-3.077 2,-4.924c0,-1.846 -0.719,-3.617 -2,-4.923' }),
-                    createSVGpath({ stroke: 'none', fill: '',
-                        d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
-                ]
-                speakSVGpaths.forEach(path => speakSVG.append(path))
-                speakSpan.append(speakSVG) ; appDiv.append(speakSpan)
-            }
-
-            if (!isMobile) {
-
-                // Create/append Wider Sidebar button
-                var wsbSpan = document.createElement('span'),
-                    wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
-                wsbSpan.id = 'wsb-btn' // for updateWSBsvg() + toggleTooltip()
-                wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.151em 11px 0 0'
-                wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan) ; updateWSBsvg()
-            }
-
-            // Add tooltips
-            if (!isMobile) appDiv.append(tooltipDiv)
-
-            // Add corner button listeners
-            aboutSVG.addEventListener('click', launchAboutModal)
-            speakSVG?.addEventListener('click', () => {
-                const dialectMap = [
-                    { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
-                    { code: 'ar', regex: /^(ara?(bic)?|اللغة العربية)$/i, rate: 1.5 },
-                    { code: 'cs', regex: /^(cze(ch)?|[cč]e[sš].*|cs)$/i, rate: 1.4 },
-                    { code: 'da', regex: /^dan?(ish|sk)?$/i, rate: 1.3 },
-                    { code: 'de', regex: /^(german|deu?(tsch)?)$/i, rate: 1.5 },
-                    { code: 'es', regex: /^(spa(nish)?|espa.*|es(-\w\w)?)$/i, rate: 1.5 },
-                    { code: 'fi', regex: /^(fin?(nish)?|suom.*)$/i, rate: 1.4 },
-                    { code: 'fr', regex: /^fr/i, rate: 1.2 },
-                    { code: 'hu', regex: /^(hun?(garian)?|magyar)$/i, rate: 1.5 },
-                    { code: 'it', regex: /^ita?(lian[ao]?)?$/i, rate: 1.4 },
-                    { code: 'ja', regex: /^(ja?pa?n(ese)?|日本語|ja)$/i, rate: 1.5 },
-                    { code: 'nl', regex: /^(dut(ch)?|flemish|nederlandse?|vlaamse?|nld?)$/i, rate: 1.3 },
-                    { code: 'pl', regex: /^po?l(ish|ski)?$/i, rate: 1.4 },
-                    { code: 'pt', regex: /^(por(tugu[eê]se?)?|pt(-\w\w)?)$/i, rate: 1.5 },
-                    { code: 'ru', regex: /^(rus?(sian)?|русский)$/i, rate: 1.3 },
-                    { code: 'sv', regex: /^(swe?(dish)?|sv(enska)?)$/i, rate: 1.4 },
-                    { code: 'tr', regex: /^t[uü]?r(k.*)?$/i, rate: 1.6 },
-                    { code: 'vi', regex: /^vi[eệ]?t?(namese)?$/i, rate: 1.5 },
-                    { code: 'zh-CHS', regex: /^(chi(nese)?|zh|中[国國])/i, rate: 2 }
-                ]
-                const replyDialect = dialectMap.find(entry => entry.regex.test(config.replyLanguage)) || dialectMap[0],
-                      payload = { text: appDiv.querySelector('pre').textContent, curTime: Date.now(),
-                                  spokenDialect: replyDialect.code, rate: replyDialect.rate.toString() },
-                      key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
-                      iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
-                const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
-                    iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
-                GM.xmlHttpRequest({ // audio from Sogou TTS
-                    url: 'https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
-                        + encodeURIComponent(securePayload),
-                    method: 'GET', responseType: 'arraybuffer',
-                    onload: async resp => {
-                        if (resp.status != 200) chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })
-                        else {
-                            const audioContext = new (window.AudioContext || window.webkitAudioContext)()
-                            audioContext.decodeAudioData(resp.response, buffer => {
-                                const audioSrc = audioContext.createBufferSource()
-                                audioSrc.buffer = buffer
-                                audioSrc.connect(audioContext.destination) // connect source to speakers
-                                audioSrc.start(0) // play audio
-                    })}}
-                })
-            })
-            wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
-            if (!isMobile) // add hover listeners for tooltips
-                [aboutSpan, speakSpan, wsbSpan].forEach(span => { if (span)
-                    ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
-
-            // Show standby state if prefix/suffix mode on
-            if (answer == 'standby') {
-                const standbyBtn = document.createElement('button')
-                standbyBtn.className = 'standby-btn'
-                standbyBtn.textContent = msgs.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
-                appDiv.append(standbyBtn)
-                standbyBtn.addEventListener('click', () => {
-                    appAlert('waitingResponse')
-                    msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
-                    appShow.submitSrc = 'click' // for appShow() auto-focus
-                    get.answer(msgChain)
-                })
-
-            // Otherwise create/append answer bubble
-            } else {
-                const balloonTipSpan = document.createElement('span')
-                var answerPre = document.createElement('pre')
-                balloonTipSpan.className = 'balloon-tip'
-                balloonTipSpan.style.cssText = ( // pos it
-                    `top: ${( isFirefox ? 0.33 : 0.16 ) - ( appLogoImg.loaded ? 0.13 : 0 )}em ;`
-                  + `right: ${ isFirefox ? ( 10.03 - ( appLogoImg.loaded ? 0 : 0.577 ))
-                                         : ( 5.01  - ( appLogoImg.loaded ? 0 : 0.262 ))}rem`
-                )
-                appDiv.append(balloonTipSpan) ; appDiv.append(answerPre)
-            }
-        }
-
-        // Build reply section if missing
-        if (!appDiv.querySelector('#app-chatbar')) {
-
-            // Init/clear reply section content/classes
-            const replySection = appDiv.querySelector('section') || document.createElement('section')
-            while (replySection.firstChild) replySection.removeChild(replySection.firstChild)
-            replySection.classList.remove('loading', 'no-user-select')
-
-            // Create/append section elems
-            const replyForm = document.createElement('form'),
-                  continueChatDiv = document.createElement('div'),
-                  chatTextarea = document.createElement('textarea')
-            continueChatDiv.className = 'continue-chat'
-            chatTextarea.id = 'app-chatbar' ; chatTextarea.rows = '1'
-            chatTextarea.placeholder = ( answer == 'standby' ? msgs.placeholder_askSomethingElse || 'Ask something else'
-                                                             : msgs.tooltip_sendReply || 'Send reply' ) + '...'
-            continueChatDiv.append(chatTextarea)
-            replyForm.append(continueChatDiv) ; replySection.append(replyForm)
-            appDiv.insertBefore(replySection, appDiv.querySelector('footer'))
-
-            // Create/append send button
-            const sendButton = document.createElement('button'),
-                  sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                  sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
-                      'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
-            sendButton.id = 'send-btn'
-            sendButton.style.right = '10px' ; sendButton.style.bottom = `${ isFirefox ? 56 : 60 }px`
-            for (const [attr, value] of [
-                ['viewBox', '4 2 16 16'], ['fill', 'none'], ['height', 16], ['width', 16],
-                ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
-            ]) sendSVG.setAttribute(attr, value)
-            sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
-
-            // Init/fill/append footer
-            const appFooter = appDiv.querySelector('footer') || document.createElement('footer')
-            appFooter.append(footerContent)
-            if (!appDiv.querySelector('footer')) appDiv.append(appFooter)
-
-            // Add reply section listeners
-            replyForm.addEventListener('keydown', handleEnter)
-            replyForm.addEventListener('submit', handleSubmit)
-            chatTextarea.addEventListener('input', autosizeChatbar)
-            if (!isMobile) // add hover listeners for tooltips
-                ['mouseover', 'mouseout'].forEach(event => sendButton.addEventListener(event, toggleTooltip))
-
-            // Scroll to top on mobile if user interacted
-            if (isMobile && appShow.submitSrc) {
-                document.body.scrollTop = 0 // Safari
-                document.documentElement.scrollTop = 0 // Chromium/FF/IE
-            }
-        }
-
-        // Render/show answer if query sent
-        if (answer != 'standby') {
-            const answerPre = appDiv.querySelector('pre')
-            answerPre.innerHTML = marked.parse(answer) // render markdown
-            hljs.highlightAll() // highlight code
-
-            // Typeset math
-            answerPre.querySelectorAll('code').forEach(codeBlock => { // add linebreaks after semicolons
-                codeBlock.innerHTML = codeBlock.innerHTML.replace(/;\s*/g, ';<br>') })
-            const elemsToRenderMathIn = [answerPre, ...answerPre.querySelectorAll('*')]
-            elemsToRenderMathIn.forEach(elem => {
-                renderMathInElement(elem, { // typeset math
-                    delimiters: [
-                        { left: '$$', right: '$$', display: true },
-                        { left: '$', right: '$', display: false },
-                        { left: '\\(', right: '\\)', display: false },
-                        { left: '\\[', right: '\\]', display: true },
-                        { left: '\\begin{equation}', right: '\\end{equation}', display: true },
-                        { left: '\\begin{align}', right: '\\end{align}', display: true },
-                        { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
-                        { left: '\\begin{gather}', right: '\\end{gather}', display: true },
-                        { left: '\\begin{CD}', right: '\\end{CD}', display: true },
-                        { left: '\\[', right: '\\]', display: true }
-                    ],
-                    throwOnError: false
-            })})
-
-            // Auto-scroll if active
-            if (config.autoScroll && !isMobile && config.proxyAPIenabled && !config.streamingDisabled) {
-                if (config.stickySidebar) answerPre.scrollTop = answerPre.scrollHeight
-                else window.scrollBy({ top: appDiv.querySelector('footer').getBoundingClientRect().bottom - window.innerHeight + 13 })
-            }
-        }
-
-        // Focus chatbar conditionally
-        if (!isMobile // exclude mobile devices to not auto-popup OSD keyboard
-            && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top ) // app fully above fold
-        ) appDiv.querySelector('#app-chatbar').focus()
-        appShow.submitSrc = 'none'
-
-        function handleEnter(event) {
-            if (event.key == 'Enter' || event.keyCode == 13) {
-                if (event.ctrlKey) { // add newline
-                    const chatTextarea = appDiv.querySelector('#app-chatbar'),
-                          caretPos = chatTextarea.selectionStart,
-                          textBefore = chatTextarea.value.substring(0, caretPos),
-                          textAfter = chatTextarea.value.substring(caretPos)
-                    chatTextarea.value = textBefore + '\n' + textAfter // add newline
-                    chatTextarea.selectionStart = chatTextarea.selectionEnd = caretPos + 1 // preserve caret pos
-                    autosizeChatbar()
-                } else if (!event.shiftKey) handleSubmit(event)
-        }}
-
-        function handleSubmit(event) {
-            event.preventDefault()
-            const chatTextarea = appDiv.querySelector('#app-chatbar')
-            if (msgChain.length > 2) msgChain.splice(0, 2) // keep token usage maintainable
-            msgChain = stripQueryAugments(msgChain)
-            const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || ''
-            msgChain.push({ role: 'assistant', content: prevReplyTrimmed })
-            msgChain.push({ role: 'user', content: augmentQuery(chatTextarea.value) })
-            get.answer(msgChain)
-
-            // Remove re-added reply section listeners
-            const replyForm = appDiv.querySelector('form')
-            replyForm.removeEventListener('keydown', handleEnter)
-            replyForm.removeEventListener('submit', handleSubmit)
-            chatTextarea.removeEventListener('input', autosizeChatbar)
-
-            // Remove related queries
-            try {
-                const relatedQueriesDiv = document.querySelector('.related-queries')
-                Array.from(relatedQueriesDiv.children).forEach(child => {
-                    ['click', 'keydown'].forEach(event => child.removeEventListener(event, handleRQevent)) })
-                relatedQueriesDiv.remove()
-            } catch (err) {}
-
-            // Remove 'Send reply' tooltip from send btn clicks
-            if (!isMobile) tooltipDiv.style.opacity = 0
-
-            // Clear footer
-            const appFooter = appDiv.querySelector('footer')
-            while (appFooter.firstChild) appFooter.removeChild(appFooter.firstChild)
-
-            // Show loading status
-            const replySection = appDiv.querySelector('section')
-            replySection.classList.add('loading', 'no-user-select')
-            replySection.innerText = appAlerts.waitingResponse
-        }
-
-        // Autosize chatbar function
-        const chatTextarea = appDiv.querySelector('#app-chatbar')
-        let prevLength = chatTextarea.value.length
-        function autosizeChatbar() {
-            const newLength = chatTextarea.value.length
-            if (newLength < prevLength) { // if deleting txt
-                chatTextarea.style.height = 'auto' // ...auto-fit height
-                if (parseInt(getComputedStyle(chatTextarea).height, 10) < 55) { // if down to one line
-                    chatTextarea.style.height = '45px' } // ...reset to original height
-            }
-            chatTextarea.style.height = `${ chatTextarea.scrollHeight > 60 ? ( chatTextarea.scrollHeight +2 ) : 45 }px`
-            prevLength = newLength
-        }
-    }
-
-    function showRelatedQueries(queries) {
-        if (!showRelatedQueries.greenlit) { // wait for get.answer() to finish showing answer
-            showRelatedQueries.statusChecker = setInterval(() => {
-                if (get.answer.status != 'waiting') {
-                    showRelatedQueries.greenlit = true
-                    showRelatedQueries(queries)
-                    clearInterval(showRelatedQueries.statusChecker)
-            }}, 500, queries)
-        } else { // show queries from latest statusChecker call
-            showRelatedQueries.greenlit = false
-            if (queries && !appDiv.querySelector('.related-queries')) {
-
-                // Create/classify/append parent div
-                const relatedQueriesDiv = document.createElement('div') ; relatedQueriesDiv.className = 'related-queries'
-                appDiv.append(relatedQueriesDiv)
-
-                // Fill each child div, add attributes + icon + listener
-                queries.forEach((query, idx) => {
-                    const relatedQueryDiv = document.createElement('div'),
-                          relatedQuerySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                          relatedQuerySVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
-
-                    // Add attributes
-                    relatedQueryDiv.title = msgs.tooltip_sendRelatedQuery || 'Send related query'
-                    relatedQueryDiv.classList.add('related-query', 'fade-in', 'no-user-select')
-                    relatedQueryDiv.setAttribute('tabindex', 0)
-                    relatedQueryDiv.textContent = query
-
-                    // Create icon
-                    for (const [attr, value] of [
-                        ['viewBox', '0 0 24 24'], ['width', 18], ['height', 18], ['fill', 'currentColor']
-                    ]) relatedQuerySVG.setAttribute(attr, value)
-                    relatedQuerySVGpath.setAttribute('d',
-                        'M16 10H6.83L9 7.83l1.41-1.41L9 5l-6 6 6 6 1.41-1.41L9 14.17 6.83 12H16c1.65 0 3 1.35 3 3v4h2v-4c0-2.76-2.24-5-5-5z')
-                    relatedQuerySVG.style.transform = 'rotate(180deg)' // flip arrow upside down
-
-                    // Assemble/insert elems
-                    relatedQuerySVG.append(relatedQuerySVGpath) ; relatedQueryDiv.prepend(relatedQuerySVG)
-                    relatedQueriesDiv.append(relatedQueryDiv)
-
-                    // Add fade + listeners
-                    setTimeout(() => {
-                        relatedQueryDiv.classList.add('active')
-                        for (const event of ['click', 'keydown']) relatedQueryDiv.addEventListener(event, handleRQevent)
-                    }, idx * 100)
-                })
-
-                updateTweaksStyle() // to shorten <pre> max-height
-            }
-        }
-    }
-
-    function handleRQevent(event) { // for attachment/removal in `get.answer()` + `appShow().handleSubmit()`
+    function handleRQevent(event) { // for attachment/removal in `get.answer()` + `show.reply().handleSubmit()`
         const keys = [' ', 'Spacebar', 'Enter', 'Return'], keyCodes = [32, 13]    
         if (keys.includes(event.key) || keyCodes.includes(event.keyCode) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
@@ -1195,7 +834,7 @@ setTimeout(async () => {
             const chatbar = appDiv.querySelector('textarea')
             if (chatbar) {
                 chatbar.value = event.target.textContent
-                appShow.submitSrc = 'click' // for appShow() auto-focus
+                show.reply.submitSrc = 'click' // for show.reply() auto-focus
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
                     key: 'Enter', bubbles: true, cancelable: true }))
             }
@@ -1314,7 +953,7 @@ setTimeout(async () => {
                 consoleInfo('Trying another endpoint...')
                 caller.triedAPIs.push({ [triedAPI]: reason }) ; caller.attemptCnt++
                 caller(caller == get.answer ? msgChain : stripQueryAugments(msgChain)[msgChain.length - 1].content)
-                    .then(result => { if (caller == get.related) showRelatedQueries(result) ; else return })
+                    .then(result => { if (caller == get.related) show.related(result) ; else return })
             } else {
                 consoleInfo('No remaining untried endpoints')
                 if (caller == get.answer) appAlert('proxyNotWorking', 'suggestOpenAI')
@@ -1410,7 +1049,7 @@ setTimeout(async () => {
             // Get/show related queries if enabled on 1st get.answer()
             if (!config.rqDisabled && get.answer.attemptCnt == 1) {
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.related(lastQuery).then(queries => showRelatedQueries(queries))
+                get.related(lastQuery).then(queries => show.related(queries))
                     .catch(err => { consoleErr(err.message) ; api.tryNew(get.related, get.related.api) })
             }
 
@@ -1520,7 +1159,7 @@ setTimeout(async () => {
             } else if (activeAPI == 'OpenAI') {
                 if (resp.response) {
                     try {
-                        appShow(JSON.parse(resp.response).choices[0].message.content, footerContent)
+                        show.reply(JSON.parse(resp.response).choices[0].message.content, footerContent)
                     } catch (err) {
                         consoleInfo('Response: ' + resp.response)
                         consoleErr(appAlerts.parseFailed, err)
@@ -1536,7 +1175,7 @@ setTimeout(async () => {
                             const chunk = text.substring(currentIdx, currentIdx + chunkSize)
                             currentIdx += chunkSize ; answer += chunk
                         }
-                        appShow(answer, footerContent)
+                        show.reply(answer, footerContent)
                         get.answer.status = 'done' ; api.clearTimedOut(get.answer.triedAPIs) ; get.answer.attemptCnt = null
                     } catch (err) { // use different endpoint or suggest OpenAI
                         consoleInfo('Response: ' + resp.responseText)
@@ -1550,7 +1189,7 @@ setTimeout(async () => {
                         let chunks = resp.responseText.trim().split('\n'),
                             lastObj = JSON.parse(chunks[chunks.length - 1])
                         if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
-                        appShow(lastObj.text, footerContent)
+                        show.reply(lastObj.text, footerContent)
                         get.answer.status = 'done' ; api.clearTimedOut(get.answer.triedAPIs) ; get.answer.attemptCnt = null
                     } catch (err) { // use different endpoint or suggest OpenAI
                         consoleInfo('Response: ' + resp.responseText)
@@ -1564,7 +1203,7 @@ setTimeout(async () => {
                         const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
                             .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                             .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
-                        appShow(extractedData.join(''), footerContent)
+                        show.reply(extractedData.join(''), footerContent)
                         get.answer.status = 'done' ; api.clearTimedOut(get.answer.triedAPIs) ; get.answer.attemptCnt = null
                     } catch (err) { // use different endpoint or suggest OpenAI
                         consoleInfo('Response: ' + resp.responseText)
@@ -1608,7 +1247,7 @@ setTimeout(async () => {
                     } else textToShow = accumulatedChunks
                     if (textToShow && get.answer.status != 'done') { // text ready, app waiting or sending
                         if (!get.answer.sender) get.answer.sender = activeAPI // app is waiting, become sender
-                        if (get.answer.sender == activeAPI) appShow(textToShow, footerContent)
+                        if (get.answer.sender == activeAPI) show.reply(textToShow, footerContent)
                     }
                 } catch (err) { consoleErr('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
@@ -1617,6 +1256,370 @@ setTimeout(async () => {
                 }).catch(err => consoleErr('Error reading stream', err.message))
             }
         }
+    }
+
+    // Define SHOW functions
+
+    const show = {
+
+        reply: function(answer) {
+
+            // Build answer interface up to reply section if missing
+            if (!appDiv.querySelector('pre')) {
+                while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
+
+                // Create/append app title anchor
+                const appTitleAnchor = createAnchor(config.appURL, (() => {
+                    if (appLogoImg.loaded) { // size/return app logo img
+                        appLogoImg.width = 143 ; return appLogoImg
+                    } else { // create/fill/pos/return app name span
+                        const appNameSpan = document.createElement('span')
+                        appNameSpan.innerText = '🤖 ' + config.appName
+                        appNameSpan.style.marginLeft = '3px'
+                        return appNameSpan
+                    }
+                })())
+                appTitleAnchor.classList.add('app-name', 'no-user-select')
+                appDiv.append(appTitleAnchor)
+
+                // Create/append 'by KudoAI'
+                const kudoAIspan = document.createElement('span')
+                kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
+                kudoAIspan.style.cssText = appLogoImg.loaded ? 'position: relative ; bottom: 8px ; font-size: 12px' : ''
+                const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
+                kudoAIspan.append(kudoAIlink) ; appDiv.append(kudoAIspan)
+
+                // Create/append about button
+                const aboutSpan = document.createElement('span'),
+                      aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
+                aboutSpan.id = 'about-btn' // for toggleTooltip()
+                aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = '2px'
+                const aboutSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
+                aboutSVGattrs.forEach(([attr,value]) => aboutSVG.setAttribute(attr, value))            
+                aboutSVGpath.setAttribute('d',
+                    'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z')
+                aboutSVGpath.setAttribute('stroke', 'none')
+                aboutSVG.append(aboutSVGpath) ; aboutSpan.append(aboutSVG) ; appDiv.append(aboutSpan)
+
+                // Create/append speak button
+                if (answer != 'standby') {
+                    var speakSpan = document.createElement('span'),
+                        speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+                    speakSpan.id = 'speak-btn' // for toggleTooltip()
+                    speakSpan.className = 'corner-btn' ; speakSpan.style.marginRight = '7px'
+                    const speakSVGattrs = [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']]
+                    speakSVGattrs.forEach(([attr, value]) => speakSVG.setAttributeNS(null, attr, value))
+                    const speakSVGpaths = [
+                        createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
+                            d: 'M24.5,26c2.881,-2.652 4.5,-6.249 4.5,-10c0,-3.751 -1.619,-7.348 -4.5,-10' }),
+                        createSVGpath({ stroke: '', 'stroke-width': '2px', fill: 'none',
+                            d: 'M22,20.847c1.281,-1.306 2,-3.077 2,-4.924c0,-1.846 -0.719,-3.617 -2,-4.923' }),
+                        createSVGpath({ stroke: 'none', fill: '',
+                            d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
+                    ]
+                    speakSVGpaths.forEach(path => speakSVG.append(path))
+                    speakSpan.append(speakSVG) ; appDiv.append(speakSpan)
+                }
+
+                if (!isMobile) {
+
+                    // Create/append Wider Sidebar button
+                    var wsbSpan = document.createElement('span'),
+                        wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+                    wsbSpan.id = 'wsb-btn' // for updateWSBsvg() + toggleTooltip()
+                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.151em 11px 0 0'
+                    wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan) ; updateWSBsvg()
+                }
+
+                // Add tooltips
+                if (!isMobile) appDiv.append(tooltipDiv)
+
+                // Add corner button listeners
+                aboutSVG.addEventListener('click', launchAboutModal)
+                speakSVG?.addEventListener('click', () => {
+                    const dialectMap = [
+                        { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
+                        { code: 'ar', regex: /^(ara?(bic)?|اللغة العربية)$/i, rate: 1.5 },
+                        { code: 'cs', regex: /^(cze(ch)?|[cč]e[sš].*|cs)$/i, rate: 1.4 },
+                        { code: 'da', regex: /^dan?(ish|sk)?$/i, rate: 1.3 },
+                        { code: 'de', regex: /^(german|deu?(tsch)?)$/i, rate: 1.5 },
+                        { code: 'es', regex: /^(spa(nish)?|espa.*|es(-\w\w)?)$/i, rate: 1.5 },
+                        { code: 'fi', regex: /^(fin?(nish)?|suom.*)$/i, rate: 1.4 },
+                        { code: 'fr', regex: /^fr/i, rate: 1.2 },
+                        { code: 'hu', regex: /^(hun?(garian)?|magyar)$/i, rate: 1.5 },
+                        { code: 'it', regex: /^ita?(lian[ao]?)?$/i, rate: 1.4 },
+                        { code: 'ja', regex: /^(ja?pa?n(ese)?|日本語|ja)$/i, rate: 1.5 },
+                        { code: 'nl', regex: /^(dut(ch)?|flemish|nederlandse?|vlaamse?|nld?)$/i, rate: 1.3 },
+                        { code: 'pl', regex: /^po?l(ish|ski)?$/i, rate: 1.4 },
+                        { code: 'pt', regex: /^(por(tugu[eê]se?)?|pt(-\w\w)?)$/i, rate: 1.5 },
+                        { code: 'ru', regex: /^(rus?(sian)?|русский)$/i, rate: 1.3 },
+                        { code: 'sv', regex: /^(swe?(dish)?|sv(enska)?)$/i, rate: 1.4 },
+                        { code: 'tr', regex: /^t[uü]?r(k.*)?$/i, rate: 1.6 },
+                        { code: 'vi', regex: /^vi[eệ]?t?(namese)?$/i, rate: 1.5 },
+                        { code: 'zh-CHS', regex: /^(chi(nese)?|zh|中[国國])/i, rate: 2 }
+                    ]
+                    const replyDialect = dialectMap.find(entry => entry.regex.test(config.replyLanguage)) || dialectMap[0],
+                          payload = { text: appDiv.querySelector('pre').textContent, curTime: Date.now(),
+                                      spokenDialect: replyDialect.code, rate: replyDialect.rate.toString() },
+                          key = CryptoJS.enc.Utf8.parse('76350b1840ff9832eb6244ac6d444366'),
+                          iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
+                    const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
+                        iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
+                    GM.xmlHttpRequest({ // audio from Sogou TTS
+                        url: 'https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
+                            + encodeURIComponent(securePayload),
+                        method: 'GET', responseType: 'arraybuffer',
+                        onload: async resp => {
+                            if (resp.status != 200) chatgpt.speak(answer, { voice: 2, pitch: 1, speed: 1.5 })
+                            else {
+                                const audioContext = new (window.AudioContext || window.webkitAudioContext)()
+                                audioContext.decodeAudioData(resp.response, buffer => {
+                                    const audioSrc = audioContext.createBufferSource()
+                                    audioSrc.buffer = buffer
+                                    audioSrc.connect(audioContext.destination) // connect source to speakers
+                                    audioSrc.start(0) // play audio
+                        })}}
+                    })
+                })
+                wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
+                if (!isMobile) // add hover listeners for tooltips
+                    [aboutSpan, speakSpan, wsbSpan].forEach(span => { if (span)
+                        ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
+
+                // Show standby state if prefix/suffix mode on
+                if (answer == 'standby') {
+                    const standbyBtn = document.createElement('button')
+                    standbyBtn.className = 'standby-btn'
+                    standbyBtn.textContent = msgs.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
+                    appDiv.append(standbyBtn)
+                    standbyBtn.addEventListener('click', () => {
+                        appAlert('waitingResponse')
+                        msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
+                        show.reply.submitSrc = 'click' // for show.reply() auto-focus
+                        get.answer(msgChain)
+                    })
+
+                // Otherwise create/append answer bubble
+                } else {
+                    const balloonTipSpan = document.createElement('span')
+                    var answerPre = document.createElement('pre')
+                    balloonTipSpan.className = 'balloon-tip'
+                    balloonTipSpan.style.cssText = ( // pos it
+                        `top: ${( isFirefox ? 0.33 : 0.16 ) - ( appLogoImg.loaded ? 0.13 : 0 )}em ;`
+                      + `right: ${ isFirefox ? ( 10.03 - ( appLogoImg.loaded ? 0 : 0.577 ))
+                                             : ( 5.01  - ( appLogoImg.loaded ? 0 : 0.262 ))}rem`
+                    )
+                    appDiv.append(balloonTipSpan) ; appDiv.append(answerPre)
+                }
+            }
+
+            // Build reply section if missing
+            if (!appDiv.querySelector('#app-chatbar')) {
+
+                // Init/clear reply section content/classes
+                const replySection = appDiv.querySelector('section') || document.createElement('section')
+                while (replySection.firstChild) replySection.removeChild(replySection.firstChild)
+                replySection.classList.remove('loading', 'no-user-select')
+
+                // Create/append section elems
+                const replyForm = document.createElement('form'),
+                      continueChatDiv = document.createElement('div'),
+                      chatTextarea = document.createElement('textarea')
+                continueChatDiv.className = 'continue-chat'
+                chatTextarea.id = 'app-chatbar' ; chatTextarea.rows = '1'
+                chatTextarea.placeholder = ( answer == 'standby' ? msgs.placeholder_askSomethingElse || 'Ask something else'
+                                                                 : msgs.tooltip_sendReply || 'Send reply' ) + '...'
+                continueChatDiv.append(chatTextarea)
+                replyForm.append(continueChatDiv) ; replySection.append(replyForm)
+                appDiv.insertBefore(replySection, appDiv.querySelector('footer'))
+
+                // Create/append send button
+                const sendButton = document.createElement('button'),
+                      sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
+                          'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
+                sendButton.id = 'send-btn'
+                sendButton.style.right = '10px' ; sendButton.style.bottom = `${ isFirefox ? 56 : 60 }px`
+                for (const [attr, value] of [
+                    ['viewBox', '4 2 16 16'], ['fill', 'none'], ['height', 16], ['width', 16],
+                    ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
+                ]) sendSVG.setAttribute(attr, value)
+                sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
+
+                // Init/fill/append footer
+                const appFooter = appDiv.querySelector('footer') || document.createElement('footer')
+                appFooter.append(footerContent)
+                if (!appDiv.querySelector('footer')) appDiv.append(appFooter)
+
+                // Add reply section listeners
+                replyForm.addEventListener('keydown', handleEnter)
+                replyForm.addEventListener('submit', handleSubmit)
+                chatTextarea.addEventListener('input', autosizeChatbar)
+                if (!isMobile) // add hover listeners for tooltips
+                    ['mouseover', 'mouseout'].forEach(event => sendButton.addEventListener(event, toggleTooltip))
+
+                // Scroll to top on mobile if user interacted
+                if (isMobile && show.reply.submitSrc) {
+                    document.body.scrollTop = 0 // Safari
+                    document.documentElement.scrollTop = 0 // Chromium/FF/IE
+                }
+            }
+
+            // Render/show answer if query sent
+            if (answer != 'standby') {
+                const answerPre = appDiv.querySelector('pre')
+                answerPre.innerHTML = marked.parse(answer) // render markdown
+                hljs.highlightAll() // highlight code
+
+                // Typeset math
+                answerPre.querySelectorAll('code').forEach(codeBlock => { // add linebreaks after semicolons
+                    codeBlock.innerHTML = codeBlock.innerHTML.replace(/;\s*/g, ';<br>') })
+                const elemsToRenderMathIn = [answerPre, ...answerPre.querySelectorAll('*')]
+                elemsToRenderMathIn.forEach(elem => {
+                    renderMathInElement(elem, { // typeset math
+                        delimiters: [
+                            { left: '$$', right: '$$', display: true },
+                            { left: '$', right: '$', display: false },
+                            { left: '\\(', right: '\\)', display: false },
+                            { left: '\\[', right: '\\]', display: true },
+                            { left: '\\begin{equation}', right: '\\end{equation}', display: true },
+                            { left: '\\begin{align}', right: '\\end{align}', display: true },
+                            { left: '\\begin{alignat}', right: '\\end{alignat}', display: true },
+                            { left: '\\begin{gather}', right: '\\end{gather}', display: true },
+                            { left: '\\begin{CD}', right: '\\end{CD}', display: true },
+                            { left: '\\[', right: '\\]', display: true }
+                        ],
+                        throwOnError: false
+                })})
+
+                // Auto-scroll if active
+                if (config.autoScroll && !isMobile && config.proxyAPIenabled && !config.streamingDisabled) {
+                    if (config.stickySidebar) answerPre.scrollTop = answerPre.scrollHeight
+                    else window.scrollBy({ top: appDiv.querySelector('footer').getBoundingClientRect().bottom - window.innerHeight + 13 })
+                }
+            }
+
+            // Focus chatbar conditionally
+            if (!isMobile // exclude mobile devices to not auto-popup OSD keyboard
+                && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top ) // app fully above fold
+            ) appDiv.querySelector('#app-chatbar').focus()
+            show.reply.submitSrc = 'none'
+
+            function handleEnter(event) {
+                if (event.key == 'Enter' || event.keyCode == 13) {
+                    if (event.ctrlKey) { // add newline
+                        const chatTextarea = appDiv.querySelector('#app-chatbar'),
+                              caretPos = chatTextarea.selectionStart,
+                              textBefore = chatTextarea.value.substring(0, caretPos),
+                              textAfter = chatTextarea.value.substring(caretPos)
+                        chatTextarea.value = textBefore + '\n' + textAfter // add newline
+                        chatTextarea.selectionStart = chatTextarea.selectionEnd = caretPos + 1 // preserve caret pos
+                        autosizeChatbar()
+                    } else if (!event.shiftKey) handleSubmit(event)
+            }}
+
+            function handleSubmit(event) {
+                event.preventDefault()
+                const chatTextarea = appDiv.querySelector('#app-chatbar')
+                if (msgChain.length > 2) msgChain.splice(0, 2) // keep token usage maintainable
+                msgChain = stripQueryAugments(msgChain)
+                const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || ''
+                msgChain.push({ role: 'assistant', content: prevReplyTrimmed })
+                msgChain.push({ role: 'user', content: augmentQuery(chatTextarea.value) })
+                get.answer(msgChain)
+
+                // Remove re-added reply section listeners
+                const replyForm = appDiv.querySelector('form')
+                replyForm.removeEventListener('keydown', handleEnter)
+                replyForm.removeEventListener('submit', handleSubmit)
+                chatTextarea.removeEventListener('input', autosizeChatbar)
+
+                // Remove related queries
+                try {
+                    const relatedQueriesDiv = document.querySelector('.related-queries')
+                    Array.from(relatedQueriesDiv.children).forEach(child => {
+                        ['click', 'keydown'].forEach(event => child.removeEventListener(event, handleRQevent)) })
+                    relatedQueriesDiv.remove()
+                } catch (err) {}
+
+                // Remove 'Send reply' tooltip from send btn clicks
+                if (!isMobile) tooltipDiv.style.opacity = 0
+
+                // Clear footer
+                const appFooter = appDiv.querySelector('footer')
+                while (appFooter.firstChild) appFooter.removeChild(appFooter.firstChild)
+
+                // Show loading status
+                const replySection = appDiv.querySelector('section')
+                replySection.classList.add('loading', 'no-user-select')
+                replySection.innerText = appAlerts.waitingResponse
+            }
+
+            // Autosize chatbar function
+            const chatTextarea = appDiv.querySelector('#app-chatbar')
+            let prevLength = chatTextarea.value.length
+            function autosizeChatbar() {
+                const newLength = chatTextarea.value.length
+                if (newLength < prevLength) { // if deleting txt
+                    chatTextarea.style.height = 'auto' // ...auto-fit height
+                    if (parseInt(getComputedStyle(chatTextarea).height, 10) < 55) { // if down to one line
+                        chatTextarea.style.height = '45px' } // ...reset to original height
+                }
+                chatTextarea.style.height = `${ chatTextarea.scrollHeight > 60 ? ( chatTextarea.scrollHeight +2 ) : 45 }px`
+                prevLength = newLength
+            }
+        },
+
+        related: function(queries) {
+            if (!show.related.greenlit) { // wait for get.answer() to finish showing answer
+                show.related.statusChecker = setInterval(() => {
+                    if (get.answer.status != 'waiting') {
+                        show.related.greenlit = true
+                        show.related(queries)
+                        clearInterval(show.related.statusChecker)
+                }}, 500, queries)
+            } else { // show queries from latest statusChecker call
+                show.related.greenlit = false
+                if (queries && !appDiv.querySelector('.related-queries')) {
+
+                    // Create/classify/append parent div
+                    const relatedQueriesDiv = document.createElement('div') ; relatedQueriesDiv.className = 'related-queries'
+                    appDiv.append(relatedQueriesDiv)
+
+                    // Fill each child div, add attributes + icon + listener
+                    queries.forEach((query, idx) => {
+                        const relatedQueryDiv = document.createElement('div'),
+                              relatedQuerySVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                              relatedQuerySVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
+
+                        // Add attributes
+                        relatedQueryDiv.title = msgs.tooltip_sendRelatedQuery || 'Send related query'
+                        relatedQueryDiv.classList.add('related-query', 'fade-in', 'no-user-select')
+                        relatedQueryDiv.setAttribute('tabindex', 0)
+                        relatedQueryDiv.textContent = query
+
+                        // Create icon
+                        for (const [attr, value] of [
+                            ['viewBox', '0 0 24 24'], ['width', 18], ['height', 18], ['fill', 'currentColor']
+                        ]) relatedQuerySVG.setAttribute(attr, value)
+                        relatedQuerySVGpath.setAttribute('d',
+                            'M16 10H6.83L9 7.83l1.41-1.41L9 5l-6 6 6 6 1.41-1.41L9 14.17 6.83 12H16c1.65 0 3 1.35 3 3v4h2v-4c0-2.76-2.24-5-5-5z')
+                        relatedQuerySVG.style.transform = 'rotate(180deg)' // flip arrow upside down
+
+                        // Assemble/insert elems
+                        relatedQuerySVG.append(relatedQuerySVGpath) ; relatedQueryDiv.prepend(relatedQuerySVG)
+                        relatedQueriesDiv.append(relatedQueryDiv)
+
+                        // Add fade + listeners
+                        setTimeout(() => {
+                            relatedQueryDiv.classList.add('active')
+                            for (const event of ['click', 'keydown']) relatedQueryDiv.addEventListener(event, handleRQevent)
+                        }, idx * 100)
+                    })
+
+                    updateTweaksStyle() // to shorten <pre> max-height
+        }}}
     }
 
     // Run MAIN routine
@@ -1628,7 +1631,7 @@ setTimeout(async () => {
 
     // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
-    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in appShow() + .balloon-tip pos in updateAppStyle()
+    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in show.reply() + .balloon-tip pos in updateAppStyle()
 
     // Define MESSAGES
     let msgs = {}
@@ -1729,10 +1732,10 @@ setTimeout(async () => {
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
         || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
-            appShow('standby', footerContent)
+            show.reply('standby', footerContent)
             if (!config.rqDisabled) {
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.related(lastQuery).then(queries => showRelatedQueries(queries))
+                get.related(lastQuery).then(queries => show.related(queries))
                     .catch(err => { consoleErr(err.message) ; api.tryNew(get.related, get.related.api) })
             }
     } else { appAlert('waitingResponse') ; get.answer(msgChain) }
