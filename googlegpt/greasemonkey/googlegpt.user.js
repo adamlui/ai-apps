@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.2
+// @version             2024.6.13.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1709,10 +1709,10 @@
                     var answerPre = document.createElement('pre')
                     balloonTipSpan.className = 'balloon-tip'
                     balloonTipSpan.style.cssText = ( // pos it
-                        `top: ${ isMobile ? 0.2303 : isFirefox ? 0.45 : 0.219 }em ;`
-                      + `right: ${ isMobile ? 11.2 : (
+                        `top: ${ isMobile ? '5px' : isFirefox ? '0.45em' : '0.219em' } ;`
+                      + `right: ${ isMobile ? '231px' : (
                                   isFirefox ? ( 14.65 - ( appLogoImg.loaded ? 0 : 2.13 ))
-                                            : ( 7.25 -  ( appLogoImg.loaded ? 0 : ( hasSidebar ? 1.25 : 1.29 ))))}em`
+                                            : ( 7.25 -  ( appLogoImg.loaded ? 0 : ( hasSidebar ? 1.25 : 1.29 )))) + 'em' }`
                     )
                     appDiv.append(balloonTipSpan) ; appDiv.append(answerPre)
                 }
