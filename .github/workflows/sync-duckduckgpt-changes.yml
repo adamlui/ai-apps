@@ -12,21 +12,21 @@ jobs:
     steps:
 
       - name: Checkout adamlui/chatgpt-apps
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/chatgpt-apps
           path: adamlui/chatgpt-apps
 
       - name: Checkout KudoAI/duckduckgpt
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: KudoAI/duckduckgpt
           path: KudoAI/duckduckgpt
 
       - name: Checkout adamlui/userscripts
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_SYNC_PAT }}
           repository: adamlui/userscripts
