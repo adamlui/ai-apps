@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.8
+// @version             2024.6.13.9
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -642,34 +642,34 @@
     function updateAppStyle() {
         appStyle.innerText = (
             '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-          + '.ddgpt { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 17px 26px 16px ; flex-basis: 0 ;'
+          + '#ddgpt { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 17px 26px 16px ; flex-basis: 0 ;'
               + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ; '
               + ( scheme == 'dark' ? ' border: none ; background: #282828' : '' ) + '}'
-          + '.ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
-          + '.ddgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
-          + `.ddgpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
-          + ( scheme == 'dark' ? '.ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
+          + '#ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
+          + '#ddgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
+          + `#ddgpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
+          + ( scheme == 'dark' ? '#ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
           + '.app-name, .app-name:hover { font-size: 1.5rem ; font-weight: 700 ; text-decoration: none ;'
               + `color: ${ scheme == 'dark' ? 'white' : 'black' }}`
           + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
               + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
           + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' } ;`
               + 'transform: scale(1.185) ; transition: transform 0.05s ease }'
-          + '.ddgpt .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
-          + '.ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
+          + '#ddgpt .loading { color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
+          + '#ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
           + '.standby-btn { width: 100% ; margin: 9px 0 9px ; padding: 11px 0 ; cursor: pointer ;'
               + 'border-radius: 4px ; border: 1px solid #888 ;'
               + 'transform: scale(1) ; transition: transform 0.1s ease !important }'
           + '.standby-btn:hover { border-radius: 4px ; transform: scale(1.025) ;'
               + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
-          + '.ddgpt > pre {'
+          + '#ddgpt > pre {'
               + 'font-size: 1.14rem ; white-space: pre-wrap ; margin: .99rem 0 7px 0 ; padding: 1.25em 1.25em 0 1.25em ;'
               + 'border-radius: 10px ; line-height: 21px ; min-width: 0 ; overflow: auto ;'
               + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2' : '' ) + '}'
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-          + '.ddgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
-          + '.ddgpt + footer { margin: 2px 0 25px }'
-          + `.ddgpt + footer * { color: ${ scheme == 'dark' ? '#ccc' : '#666' } !important }`
+          + '#ddgpt section.loading { padding-left: 5px }' // left-pad loading status when sending replies
+          + '#ddgpt + footer { margin: 2px 0 25px }'
+          + `#ddgpt + footer * { color: ${ scheme == 'dark' ? '#ccc' : '#666' } !important }`
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
               + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
                   + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
@@ -702,13 +702,13 @@
           + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none } '
           + '.kudoai a:hover { color: ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' ; text-decoration: none } '
           + ( // rendered markdown styles
-                '.ddgpt > pre h1 { font-size: 24px } .ddgpt > pre h2 { font-size: 22px } .ddgpt > pre h3 { font-size: 20px }' // size headings
-              + '.ddgpt > pre h1, .ddgpt > pre h2, .ddgpt > pre h3 { margin-bottom: -15px }' // reduce gap after headings
-              + '.ddgpt > pre ol { margin: -30px 0 -21px }' // reduce v-padding
-              + '.ddgpt > pre ol > li { margin: -10px 0 0 1.6em ; list-style: decimal }' // reduce v-padding, show number markers
-              + '.ddgpt > pre ol > li::marker { font-size: 0.9em }' // shrink number markers
-              + '.ddgpt > pre ul { margin: -28px 0 -21px }' // reduce v-padding
-              + '.ddgpt > pre ul > li { margin: -10px 0 0 1.2em ; list-style: inside }' ) // reduce v-padding, show bullets
+                '#ddgpt > pre h1 { font-size: 24px } #ddgpt > pre h2 { font-size: 22px } #ddgpt > pre h3 { font-size: 20px }' // size headings
+              + '#ddgpt > pre h1, #ddgpt > pre h2, #ddgpt > pre h3 { margin-bottom: -15px }' // reduce gap after headings
+              + '#ddgpt > pre ol { margin: -30px 0 -21px }' // reduce v-padding
+              + '#ddgpt > pre ol > li { margin: -10px 0 0 1.6em ; list-style: decimal }' // reduce v-padding, show number markers
+              + '#ddgpt > pre ol > li::marker { font-size: 0.9em }' // shrink number markers
+              + '#ddgpt > pre ul { margin: -28px 0 -21px }' // reduce v-padding
+              + '#ddgpt > pre ul > li { margin: -10px 0 0 1.2em ; list-style: inside }' ) // reduce v-padding, show bullets
           + '.katex-html { display: none } ' // hide unrendered math
           + '.chatgpt-notif { padding: 11px 15px 6px 12px !important }' // pad site notifications
           + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important }' // increase alert padding
@@ -727,7 +727,7 @@
               + '.primary-modal-btn { background: white !important ; color: black !important }'
               + '.chatgpt-modal a { color: #00cfff !important }'
               + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
-          + '.ddgpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
+          + '#ddgpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
         )
     }
 
@@ -740,7 +740,7 @@
                               + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
 
         // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
-        const answerPre = document.querySelector('.ddgpt > pre'),
+        const answerPre = document.querySelector('#ddgpt > pre'),
               relatedQueries = document.querySelector('.related-queries'),
               shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 245,
               longerPreHeight = window.innerHeight - 255
@@ -1677,8 +1677,8 @@
           wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
                     + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
                     + '#app-chatbar { width: 95.6% }',
-          ssbStyles = '.ddgpt { position: sticky ; top: 14px }'
-                    + '.ddgpt ~ * { display: none }' // hide sidebar contents
+          ssbStyles = '#ddgpt { position: sticky ; top: 14px }'
+                    + '#ddgpt ~ * { display: none }' // hide sidebar contents
                     + 'body, div.site-wrapper { overflow: clip }' // replace `overflow: hidden` to allow stickiness
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
@@ -1695,9 +1695,8 @@
         document.head.append(tooltipStyle)
     }
 
-    // Create/classify DDGPT container
-    const appDiv = document.createElement('div') // create container div
-    appDiv.classList.add('ddgpt', 'fade-in')
+    // Create/ID/classify DDGPT container
+    const appDiv = document.createElement('div') ; appDiv.id = 'ddgpt' ; appDiv.classList.add('fade-in')
  
     // Create/classify/fill feedback FOOTER
     const appFooter = document.createElement('footer')
