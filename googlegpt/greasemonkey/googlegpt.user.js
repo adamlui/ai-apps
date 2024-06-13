@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.7
+// @version             2024.6.13.8
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -850,37 +850,37 @@
     function updateAppStyle() {
         appStyle.innerText = (
             '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-          + '.googlegpt {'
+          + '#googlegpt {'
               + 'border-radius: 8px ; border: 1px solid #dadce0 ; height: fit-content ; flex-basis: 0 ;'
               + `padding: ${ isFirefox ? 20 : 22 }px 26px 6px 26px ;`
               + `width: ${ isMobile ? 'auto' : '319px' } ;` // hard-width to prevent Google's flex-wrap moving app to bottom
               + ( isMobile ? 'margin: 8px 0 8px' : 'margin-bottom: 30px' ) + ';' // add vertical margins
               + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
               + ( scheme == 'dark' ? ' border: none ; background: #282828' : ' background: white' ) + '}'
-          + '.googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
-          + '.googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
-          + `.googlegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
+          + '#googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
+          + '#googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
+          + `#googlegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
           + '.app-name { font-size: 1.35rem ; font-weight: 700 ; text-decoration: none !important ;'
               + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important }`
-          + ( scheme == 'dark' ? '.googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
+          + ( scheme == 'dark' ? '#googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
           + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 6px ;'
               + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
           + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' } ;`
               + 'transform: scale(1.185) ; transition: transform 0.05s ease }'
-          + '.googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
-          + '.googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
+          + '#googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
+          + '#googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
           + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin-top: 20px ;'
               + ( scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
               + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
               + 'transform: scale(1) ; transition: transform 0.1s ease }'
           + '.standby-btn:hover { border-radius: 6px ; transform: scale(1.025) ;'
               + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
-          + '.googlegpt > pre {'
+          + '#googlegpt > pre {'
               + `font-size: ${ isMobile ? '14px' : '1.15em' } ; white-space: pre-wrap ; min-width: 0 ; margin: 16px 0 0 0 ;`
               + `line-height: ${ isMobile ? 19 : 22 }px ; padding: 1.25em ; border-radius: 10px ; overflow: auto ;`
               + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 }' : 'background: #eaeaea }' )
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-          + '.googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
+          + '#googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
               + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
                   + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
@@ -911,11 +911,11 @@
           + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none }'
           + '.kudoai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
           + ( // markdown styles
-                '.googlegpt > pre h1 { font-size: 1.25em } .googlegpt > pre h2 { font-size: 1.1em }' // size headings
-              + '.googlegpt > pre > p { margin-bottom: -1.25em }' // eliminate bottom gap
-              + '.googlegpt > pre ol { padding-left: 1.58em }' // indent
-              + '.googlegpt > pre ul { margin: -10px 0 -6px ; padding-left: 1.5em }' // reduce v-spacing, indent
-              + '.googlegpt > pre li { margin: -10px 0 ; list-style: unset }' ) // reduce v-spacing, show left symbols
+                '#googlegpt > pre h1 { font-size: 1.25em } #googlegpt > pre h2 { font-size: 1.1em }' // size headings
+              + '#googlegpt > pre > p { margin-bottom: -1.25em }' // eliminate bottom gap
+              + '#googlegpt > pre ol { padding-left: 1.58em }' // indent
+              + '#googlegpt > pre ul { margin: -10px 0 -6px ; padding-left: 1.5em }' // reduce v-spacing, indent
+              + '#googlegpt > pre li { margin: -10px 0 ; list-style: unset }' ) // reduce v-spacing, show left symbols
           + 'code.hljs { text-wrap: nowrap ; overflow-x: scroll }' // don't wrap highlighted code to be scrollable horizontally
           + '.katex-html { display: none }' // hide unrendered math
           + '.chatgpt-notify { padding: 13px 13px 13px 18px !important }' // pad notifications
@@ -934,17 +934,17 @@
               + '.primary-modal-btn { background: white !important ; color: black !important }'
               + '.chatgpt-modal a { color: #00cfff !important }'
               + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
-          + '.googlegpt footer {'
+          + '#googlegpt footer {'
               + 'position: relative ; right: -33px ; text-align: right ; font-size: 0.75rem ; line-height: 1.43em ;'
               + `margin: ${ isFirefox ? 1 : -2 }px -32px 12px }`
-          + '.googlegpt footer * { color: #aaa ; text-decoration: none }'
-          + `.googlegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
+          + '#googlegpt footer * { color: #aaa ; text-decoration: none }'
+          + `#googlegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
           + ( // stylize scrollbars in Chromium/Safari
-                '.googlegpt *::-webkit-scrollbar { width: 7px }'
-              + '.googlegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
-              + '.googlegpt *::-webkit-scrollbar-thumb:hover { background: #a6a6a6 }'
-              + '.googlegpt *::-webkit-scrollbar-track { background: none }' )
-          + '.googlegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
+                '#googlegpt *::-webkit-scrollbar { width: 7px }'
+              + '#googlegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
+              + '#googlegpt *::-webkit-scrollbar-thumb:hover { background: #a6a6a6 }'
+              + '#googlegpt *::-webkit-scrollbar-track { background: none }' )
+          + '#googlegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
         )
     }
 
@@ -957,7 +957,7 @@
                               + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
 
         // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
-        const answerPre = document.querySelector('.googlegpt > pre'),
+        const answerPre = document.querySelector('#googlegpt > pre'),
               relatedQueries = document.querySelector('.related-queries'),
               shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328,
               longerPreHeight = window.innerHeight - 309
@@ -2013,11 +2013,11 @@
     // Stylize SITE elems
     const tweaksStyle = document.createElement('style'),
           wsbStyles = '#center_col, #center_col div { max-width: 506px !important }' // shrink center column
-                    + '.googlegpt { width: 465px }' // expand GoogleGPT when in limiting Google host container
-                    + '.googlegpt ~ div { width: 540px !important }' // expand side snippets
+                    + '#googlegpt { width: 465px }' // expand GoogleGPT when in limiting Google host container
+                    + '#googlegpt ~ div { width: 540px !important }' // expand side snippets
                     + `#app-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
-          ssbStyles = '.googlegpt { position: sticky ; top: 87px }'
-                    + '.googlegpt ~ * { display: none }' // hide sidebar contents
+          ssbStyles = '#googlegpt { position: sticky ; top: 87px }'
+                    + '#googlegpt ~ * { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/stylize TOOLTIPs
@@ -2033,9 +2033,8 @@
         document.head.append(tooltipStyle)
     }
 
-    // Create/classify GOOGLEGPT container
-    const appDiv = document.createElement('div')
-    appDiv.classList.add('googlegpt', 'fade-in')
+    // Create/ID/classify GOOGLEGPT container
+    const appDiv = document.createElement('div') ; appDiv.id = 'googlegpt' ;  appDiv.classList.add('fade-in')
 
     // APPEND to Google
     const centerCol = document.querySelector('#center_col')
