@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.12.2
+// @version             2024.6.12.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -476,10 +476,14 @@
                       + state.separator + state.word[+!config.rqDisabled]
         menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
             saveSetting('rqDisabled', !config.rqDisabled)
-            try { // to update visibility based on latest setting
-                const relatedQueriesDiv = document.querySelector('.related-queries')
+            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+            if (relatedQueriesDiv) // update visibility based on latest setting
                 relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
-            } catch (err) {}
+            if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
+                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                get.relatedQueries(lastQuery).then(queries => showRelatedQueries(queries))
+                    .catch(err => { consoleErr(err.message) ; api.tryNew(get.relatedQueries, get.relatedQueries.api) })
+            }
             updateTweaksStyle() // toggle <pre> max-height
             notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + state.word[+!config.rqDisabled])
             refreshMenu()
@@ -1385,7 +1389,7 @@
     function showRelatedQueries(queries) {
         if (!showRelatedQueries.greenlit) { // wait for get.answer() to finish showing answer
             showRelatedQueries.statusChecker = setInterval(() => {
-                if (get.answer.status == 'done') {
+                if (get.answer.status != 'waiting') {
                     showRelatedQueries.greenlit = true
                     showRelatedQueries(queries)
                     clearInterval(showRelatedQueries.statusChecker)
@@ -2021,15 +2025,16 @@
     let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
 
     // Show STANDBY mode or get/show ANSWER
-    let msgChain = [] // to store queries + answers for contextual replies
+    let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location) // suffix required but not present
-    ) { updateFooterContent() ; appShow('standby', footerContent) }
-    else {
-        appAlert('waitingResponse')
-        msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
-        get.answer(msgChain)
-    }
+        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
+            appShow('standby', footerContent)
+            if (!config.rqDisabled) {
+                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                get.relatedQueries(lastQuery).then(queries => showRelatedQueries(queries))
+                    .catch(err => { consoleErr(err.message) ; api.tryNew(get.relatedQueries, get.relatedQueries.api) })
+            }
+    } else { appAlert('waitingResponse') ; get.answer(msgChain) }
 
 })()

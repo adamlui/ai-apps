@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.12.3
+// @version             2024.6.12.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -282,10 +282,14 @@
                       + state.separator + state.word[+!config.rqDisabled]
         menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
             saveSetting('rqDisabled', !config.rqDisabled)
-            try { // to update visibility based on latest setting
-                const relatedQueriesDiv = document.querySelector('.related-queries')
+            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+            if (relatedQueriesDiv) // update visibility based on latest setting
                 relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
-            } catch (err) {}
+            if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
+                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                get.relatedQueries(lastQuery).then(queries => showRelatedQueries(queries))
+                    .catch(err => { consoleErr(err.message) ; api.tryNew(get.relatedQueries, get.relatedQueries.api) })
+            }
             updateTweaksStyle() // toggle <pre> max-height
             notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + state.word[+!config.rqDisabled])
             refreshMenu()
@@ -1065,7 +1069,7 @@
     function showRelatedQueries(queries) {
         if (!showRelatedQueries.greenlit) { // wait for get.answer() to finish showing answer
             showRelatedQueries.statusChecker = setInterval(() => {
-                if (get.answer.status == 'done') {
+                if (get.answer.status != 'waiting') {
                     showRelatedQueries.greenlit = true
                     showRelatedQueries(queries)
                     clearInterval(showRelatedQueries.statusChecker)
@@ -1789,16 +1793,17 @@
     })
 
     // Show STANDBY mode or get/show ANSWER
-    let msgChain = [] // to store queries + answers for contextual replies
+    let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
     if (config.autoGetDisabled
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location) // suffix required but not present
-    ) appShow('standby')
-    else {
-        appAlert('waitingResponse')
-        msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
-        get.answer(msgChain)
-    }
+        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
+            appShow('standby')
+            if (!config.rqDisabled) {
+                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                get.relatedQueries(lastQuery).then(queries => showRelatedQueries(queries))
+                    .catch(err => { consoleErr(err.message) ; api.tryNew(get.relatedQueries, get.relatedQueries.api) })
+            }
+    } else { appAlert('waitingResponse') ; get.answer(msgChain) }
 
     // Observe for DDG SCHEME CHANGES to update DDGPT scheme if auto-scheme mode if auto-scheme mode
     (new MutationObserver(handleSchemeChange)).observe( // class changes from DDG appearance settings
