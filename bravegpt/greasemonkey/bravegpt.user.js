@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.4
+// @version             2024.6.13.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -240,10 +240,10 @@ setTimeout(async () => {
                         + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
                         + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
                 const switchPhrase = msgs.alert_switchingOn || 'switching on'
-                msg = msg.replace(switchPhrase, `<a href="#" class="proxy-toggle-link">${switchPhrase}</a>`)
+                msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
                 siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                     msg, '', '', 575) // px width
-                document.querySelector('.proxy-toggle-link')?.addEventListener('click', () => {
+                appDiv.querySelector('.alert-link')?.addEventListener('click', () => {
                     document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
@@ -529,22 +529,21 @@ setTimeout(async () => {
             if (idx > 0) msg = ' ' + msg // left-pad 2nd+ alerts
             if (msg.includes(appAlerts.login)) deleteOpenAIcookies()
             if (msg.includes(appAlerts.waitingResponse)) alertP.classList.add('loading')
-            const linkStyle = `style="color: ${ scheme == 'dark' ? 'white' : '#190cb0' }"`
 
             // Add login link to login msgs
             if (msg.includes('@'))
-                msg += `<a target="_blank" rel="noopener" ${linkStyle} href="https://chatgpt.com">chatgpt.com</a>.`
-                + ` (${ msgs.alert_ifIssuePersists || 'If issue persists' },`
-                + ` ${( msgs.alert_try || 'Try' ).toLowerCase() }`
-                + ` ${ msgs.alert_switchingOn || 'switching on' }`
-                + ` ${ msgs.mode_proxy || 'Proxy Mode' })`
+                msg += '<a class="alert-link" target="_blank" rel="noopener" href="https://chatgpt.com">chatgpt.com</a>.'
+                     + ` (${ msgs.alert_ifIssuePersists || 'If issue persists' },`
+                     + ` ${( msgs.alert_try || 'Try' ).toLowerCase() }`
+                     + ` ${ msgs.alert_switchingOn || 'switching on' }`
+                     + ` ${ msgs.mode_proxy || 'Proxy Mode' })`
 
             // Hyperlink msgs.alert_switching<On|Off>
             const foundState = ['On', 'Off'].find(state =>
                 msg.includes(msgs['alert_switching' + state]) || new RegExp(`\\b${state}\\b`, 'i').test(msg))
             if (foundState) { // hyperlink switch phrase for click listener to toggleProxyMode()
                 const switchPhrase = msgs['alert_switching' + foundState] || 'switching ' + foundState.toLowerCase()
-                msg = msg.replace(switchPhrase, `<a href="#" ${linkStyle} class="proxy-toggle-link">${switchPhrase}</a>`)
+                msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
             }
 
             // Create/fill/append msg span
@@ -552,7 +551,7 @@ setTimeout(async () => {
             msgSpan.innerHTML = msg ; alertP.append(msgSpan)
 
             // Activate toggle link if necessary
-            msgSpan.querySelector('.proxy-toggle-link')?.addEventListener('click', toggleProxyMode)
+            msgSpan.querySelector('.alert-link')?.addEventListener('click', toggleProxyMode)
         })
         appDiv.append(alertP)
     }
@@ -621,6 +620,7 @@ setTimeout(async () => {
                   + ( scheme == 'dark' ? ( isMobile ? 'var(--search-gray-800)' : '#282828' ) : 'white' ) + '}'
           + '.bravegpt:hover { box-shadow: 0 9px 28px rgba(0, 0, 0, 0.09) }'
           + '.bravegpt p { margin: 0 }'
+          + `.bravegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
           + '.bravegpt .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }'
           + '.app-name { font-size: 20px ; font-family: var(--brand-font) ; text-decoration: none;'
               + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important }`

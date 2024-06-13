@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.6
+// @version             2024.6.13.7
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -474,9 +474,9 @@
                         + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
                         + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
                 const switchPhrase = msgs.alert_switchingOn || 'switching on'
-                msg = msg.replace(switchPhrase, `<a href="#" class="proxy-toggle-link">${switchPhrase}</a>`)
+                msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
                 siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
-                document.querySelector('.proxy-toggle-link')?.addEventListener('click', () => {
+                appDiv.querySelector('.alert-link')?.addEventListener('click', () => {
                     document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
@@ -756,22 +756,21 @@
             if (idx > 0) msg = ' ' + msg // left-pad 2nd+ alerts
             if (msg.includes(appAlerts.login)) deleteOpenAIcookies()
             if (msg.includes(appAlerts.waitingResponse)) alertP.classList.add('loading')
-            const linkStyle = `style="color: ${ scheme == 'dark' ? 'white' : '#190cb0' }"`
 
             // Add login link to login msgs
             if (msg.includes('@'))
-                msg += `<a target="_blank" rel="noopener" ${linkStyle} href="https://chatgpt.com">chatgpt.com</a>.`
-                + ` (${ msgs.alert_ifIssuePersists || 'If issue persists' },`
-                + ` ${( msgs.alert_try || 'Try' ).toLowerCase() }`
-                + ` ${ msgs.alert_switchingOn || 'switching on' }`
-                + ` ${ msgs.mode_proxy || 'Proxy Mode' })`
+                msg += '<a class="alert-link" target="_blank" rel="noopener" href="https://chatgpt.com">chatgpt.com</a>.'
+                     + ` (${ msgs.alert_ifIssuePersists || 'If issue persists' },`
+                     + ` ${( msgs.alert_try || 'Try' ).toLowerCase() }`
+                     + ` ${ msgs.alert_switchingOn || 'switching on' }`
+                     + ` ${ msgs.mode_proxy || 'Proxy Mode' })`
 
             // Hyperlink msgs.alert_switching<On|Off>
             const foundState = ['On', 'Off'].find(state =>
                 msg.includes(msgs['alert_switching' + state]) || new RegExp(`\\b${state}\\b`, 'i').test(msg))
             if (foundState) { // hyperlink switch phrase for click listener to toggleProxyMode()
                 const switchPhrase = msgs['alert_switching' + foundState] || 'switching ' + foundState.toLowerCase()
-                msg = msg.replace(switchPhrase, `<a href="#" ${linkStyle} class="proxy-toggle-link">${switchPhrase}</a>`)
+                msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
             }
 
             // Create/fill/append msg span
@@ -779,7 +778,7 @@
             msgSpan.innerHTML = msg ; alertP.append(msgSpan)
 
             // Activate toggle link if necessary
-            msgSpan.querySelector('.proxy-toggle-link')?.addEventListener('click', toggleProxyMode)
+            msgSpan.querySelector('.alert-link')?.addEventListener('click', toggleProxyMode)
         })
         appDiv.append(alertP)
     }
@@ -860,6 +859,7 @@
               + ( scheme == 'dark' ? ' border: none ; background: #282828' : ' background: white' ) + '}'
           + '.googlegpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
           + '.googlegpt p { margin: 0 ;' + ( scheme == 'dark' ? 'color: #ccc }' : '}' )
+          + `.googlegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
           + '.app-name { font-size: 1.35rem ; font-weight: 700 ; text-decoration: none !important ;'
               + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important }`
           + ( scheme == 'dark' ? '.googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
