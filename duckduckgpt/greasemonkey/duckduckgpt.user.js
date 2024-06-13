@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.12.13
+// @version             2024.6.13
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -607,6 +607,30 @@
     // Define UI functions
 
     function isCenteredMode() { return document.documentElement.classList.toString().includes('center') }
+
+    function updateTitleAnchor() {
+        if (appDiv.querySelector('.loading')) return
+
+        const appTitleVisible = !!appDiv.querySelector('.app-name'),
+              logoVisible = !!appDiv.querySelector('img')
+
+        // Create/fill/classify/style/append/update title anchor
+        if (!appTitleVisible || !logoVisible) {
+            const appTitleAnchor = createAnchor(config.appURL, (() => {
+                if (appLogoImg.loaded) { // size/pos/return app logo img
+                    appLogoImg.width = 181 ; appLogoImg.style.margin = '-7px 0'
+                    return appLogoImg
+                } else { // create/fill/return app name span
+                    const appNameSpan = document.createElement('span')
+                    appNameSpan.innerText = '🤖 ' + config.appName
+                    return appNameSpan
+                }
+            })())
+            appTitleAnchor.classList.add('app-name', 'no-user-select')
+            if (!appTitleVisible) appDiv.append(appTitleAnchor)
+            else appDiv.querySelector('.app-name').replaceWith(appTitleAnchor) // for appLogoImg.onload() callback
+        }
+    }
 
     function updateAppLogoSrc() {
         appLogoImg.onerror = () => appLogoImg.style.display = 'none'
@@ -1235,18 +1259,7 @@
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
 
                 // Create/append app title anchor
-                const appTitleAnchor = createAnchor(config.appURL, (() => {
-                    if (appLogoImg.loaded) { // size/pos/return app logo img
-                        appLogoImg.width = 181 ; appLogoImg.style.margin = '-7px 0'
-                        return appLogoImg
-                    } else { // create/fill/return app name span
-                        const appNameSpan = document.createElement('span')
-                        appNameSpan.innerText = '🤖 ' + config.appName
-                        return appNameSpan
-                    }
-                })())
-                appTitleAnchor.classList.add('app-name', 'no-user-select')
-                appDiv.append(appTitleAnchor)
+                updateTitleAnchor()
 
                 // Create/append 'by KudoAI'
                 const kudoAIspan = document.createElement('span')
@@ -1599,7 +1612,7 @@
 
     // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc() 
-    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in show.reply() + .balloon-tip pos in updateAppStyle()
+    appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleAnchor() }
 
     // Define MESSAGES
     let msgs = {}

@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.12.12
+// @version             2024.6.13
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -809,6 +809,42 @@
     function updateAppLogoSrc() {
         appLogoImg.src = `https://media.googlegpt.io/images/logos/googlegpt/${ scheme == 'dark' ? 'white' : 'black' }.png`
         appLogoImg.onerror = () => appLogoImg.style.display = 'none'
+    }
+
+    function updateTitleElems() {
+        if (appDiv.querySelector('.loading')) return
+
+        const appTitleVisible = !!appDiv.querySelector('.app-name'),
+              logoVisible = !!appDiv.querySelector('img')
+
+        // Create/id/fill/classify/style/append app prefix
+        if (!appDiv.querySelector('#app-prefix')) {
+            const appPrefixSpan = document.createElement('span') ; appPrefixSpan.id = 'app-prefix'
+            appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.className = 'no-user-select'
+            appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
+            appDiv.append(appPrefixSpan)
+        }
+
+        // Create/fill/classify/style/append/update title anchor
+        if (!appTitleVisible || !logoVisible) {
+            const appTitleAnchor = createAnchor(config.appURL, (() => {
+                if (appLogoImg.loaded) { // size/pos/return app logo img
+                    appLogoImg.width = isMobile ? 197 : isFirefox ? 127 : 125
+                    appLogoImg.style.cssText = (
+                        appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
+                                          + ( isMobile ? '; margin-left: 1px' : '' ) : '' )
+                    return appLogoImg
+                } else { // create/fill/size/return app name span
+                    const appNameSpan = document.createElement('span')
+                    appNameSpan.innerText = config.appName
+                    appNameSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
+                    return appNameSpan
+                }
+            })())
+            appTitleAnchor.classList.add('app-name', 'no-user-select')
+            if (!appTitleVisible) appDiv.append(appTitleAnchor)
+            else appDiv.querySelector('.app-name').replaceWith(appTitleAnchor) // for appLogoImg.onload() callback
+        }
     }
 
     function updateAppStyle() {
@@ -1536,26 +1572,8 @@
             if (!appDiv.querySelector('pre')) {
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
 
-                // Create/append app prefix span + title anchor
-                const appPrefixSpan = document.createElement('span')
-                appPrefixSpan.innerText = '🤖 ' ; appPrefixSpan.className = 'no-user-select'
-                appPrefixSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
-                const appTitleAnchor = createAnchor(config.appURL, (() => {
-                    if (appLogoImg.loaded) { // size/pos/return app logo img
-                        appLogoImg.width = isMobile ? 197 : isFirefox ? 127 : 125
-                        appLogoImg.style.cssText = (
-                            appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
-                                              + ( isMobile ? '; margin-left: 1px' : '' ) : '' )
-                        return appLogoImg
-                    } else { // create/fill/size/return app name span
-                        const appNameSpan = document.createElement('span')
-                        appNameSpan.innerText = config.appName
-                        appNameSpan.style.fontSize = isMobile ? '1.7rem' : '1.1rem'
-                        return appNameSpan
-                    }
-                })())
-                appTitleAnchor.classList.add('app-name', 'no-user-select')
-                appDiv.append(appPrefixSpan, appTitleAnchor)
+                // Create/append app title elems
+                updateTitleElems()
 
                 // Create/append 'by KudoAI'
                 if (!isMobile) {
@@ -1962,7 +1980,7 @@
 
     // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
-    appLogoImg.onload = () => appLogoImg.loaded = true // for app header tweaks in show.reply() + .balloon-tip pos in updateAppStyle()
+    appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleElems() }
 
     registerMenu() // create browser toolbar menu
 
