@@ -46,6 +46,16 @@
   
 </div>
 
+## <img width=25px src="https://media.ddgpt.com/images/icons/platforms/tampermonkey/icon28.png?latest"> Tampermonkey Users
+
+If you are installing **Tampermonkey** (v5.2.0+) for the first time from the [Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), you must enable **Developer Mode** for userscripts to function.
+
+To do so, visit [chrome://extensions](chrome://extensions) > activate **Developer Mode** toggle > restart browser
+
+<img width=735 src="https://media.ddgpt.com/images/screenshots/desktop/chrome/developer-mode-toggle.png?latest">
+
+💡 _**Note:** If you installed Tampermonkey from the add-on store for [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/), then Developer Mode is not required._
+
 ## ⚡ Dependencies
 
 <h6>

@@ -77,6 +77,18 @@ BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoAI
 
 <img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png?latest">
 
+## <img width=25px src="https://media.bravegpt.com/images/icons/platforms/tampermonkey/icon28.png?latest"> Tampermonkey Users
+
+If you are installing **Tampermonkey** (v5.2.0+) for the first time from the [Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), you must enable **Developer Mode** for userscripts to function.
+
+To do so, visit [chrome://extensions](chrome://extensions) > activate **Developer Mode** toggle > restart browser
+
+<img width=735 src="https://media.bravegpt.com/images/screenshots/desktop/chrome/developer-mode-toggle.png?latest">
+
+💡 _**Note:** If you installed Tampermonkey from the add-on store for [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/), then Developer Mode is not required._
+
+<img height=6px width="100%" src="https://media.bravegpt.com/images/separators/gradient-aqua.png?latest">
+
 ## 🌐 Compatibility
 
 **BraveGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (required for Streaming Mode) or [Violentmonkey](https://violentmonkey.github.io/).
