@@ -98,7 +98,7 @@
 
 ### <img style="margin: 0 2px -0.065rem 0" height=17 src="https://media.chatgptwidescreen.com/images/icons/platforms/tampermonkey/icon28.png?latest"><img style="margin: 0 2px -0.035rem 1px" height=17.5 src="https://media.chatgptwidescreen.com/images/icons/platforms/violentmonkey/icon25.png?latest"> Greasemonkey 用户脚本:
 
-1. 安装 Tampermonkey ([Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) 或者 Violentmonkey ([Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao))
+1. 安装 Tampermonkey ([Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd), [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)) 或 Violentmonkey ([Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao))
 
 2. 安装 [ChatGPT 宽屏模式](https://greasyfork.chatgptwidescreen.com) userscript (will load in userscript manager installed above)
 
@@ -140,15 +140,15 @@ ChatGPT 寬屏模式依賴於強大的 [chatgpt.js](https://github.com/KudoAI/ch
 
 ChatGPT 宽屏模式与以下浏览器兼容:
 
-- **[Google Chrome](https://www.chrome.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或者 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
+- **[Google Chrome](https://www.chrome.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 - **[Mozilla Firefox](https://www.firefox.com)** (通过 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
-- **[Microsoft Edge](https://www.microsoft.com/edge)** (通过 [Edge 扩展程序](https://edge.chatgptwidescreen.com) 或者 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
-- **[Opera](https://www.opera.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或者 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
-- **[Brave](https://brave.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或者 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
-- **[Vivaldi](https://vivaldi.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或者 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
+- **[Microsoft Edge](https://www.microsoft.com/edge)** (通过 [Edge 扩展程序](https://edge.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
+- **[Opera](https://www.opera.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
+- **[Brave](https://brave.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
+- **[Vivaldi](https://vivaldi.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 - **[LibreWolf](https://librewolf.net/)** (通过 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
-- **[Ghost](https://ghostbrowser.com/)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或者 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
-- **[QQ](https://browser.qq.com/)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或者 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
+- **[Ghost](https://ghostbrowser.com/)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
+- **[QQ](https://browser.qq.com/)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 
 <br>
 
