@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.12.11
+// @version             2024.6.12.12
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -401,6 +401,9 @@
 // ..and KaTeX, the fastest math typesetting library @ https://katex.org (c) 2013–2020 Khan Academy & contributors under the MIT license
 
 (async () => {
+
+    // Init browser flags
+    const isFirefox = chatgpt.browser.isFirefox(), isMobile = chatgpt.browser.isMobile()
 
     // Init CONFIG
     const config = {
@@ -1945,7 +1948,7 @@
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
     }
 
-    // Init UI flags
+    // Init UI vars
     await Promise.race([ // dark theme label loaded or 0.5s passed
         new Promise(resolve => {
             (function checkDarkThemeLabel() {
@@ -1955,9 +1958,7 @@
         }), new Promise(resolve => setTimeout(resolve, 500))
     ])
     let scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' )
-    const isFirefox = chatgpt.browser.isFirefox(),
-          isMobile = chatgpt.browser.isMobile(),
-          hasSidebar = !!document.querySelector('[class*="kp-"]')
+    const hasSidebar = !!document.querySelector('[class*="kp-"]')
 
     // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc()

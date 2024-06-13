@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.12.12
+// @version             2024.6.12.13
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -207,6 +207,9 @@
 // ...and KaTeX, the fastest math typesetting library @ https://katex.org (c) 2013–2020 Khan Academy & contributors under the MIT license
 
 (async () => {
+
+    // Init browser flags
+    const isFirefox = chatgpt.browser.isFirefox(), isMobile = chatgpt.browser.isMobile()
 
     // Init CONFIG
     const config = {
@@ -1590,11 +1593,9 @@
 
     // Run MAIN routine
 
-    // Init UI flags
+    // Init UI vars
     let scheme = config.scheme || ( chatgpt.isDarkMode() ? 'dark' : 'light' )
-    const isFirefox = chatgpt.browser.isFirefox(),
-          isMobile = chatgpt.browser.isMobile(),
-          isCentered = isCenteredMode()
+    const isCentered = isCenteredMode()
 
     // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc() 
