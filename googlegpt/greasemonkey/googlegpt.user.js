@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.12.5
+// @version             2024.6.12.6
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -513,8 +513,8 @@
                 relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
             if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.relatedQueries(lastQuery).then(queries => showRelatedQueries(queries))
-                    .catch(err => { consoleErr(err.message) ; api.tryNew(get.relatedQueries, get.relatedQueries.api) })
+                get.related(lastQuery).then(queries => showRelatedQueries(queries))
+                    .catch(err => { consoleErr(err.message) ; api.tryNew(get.related, get.related.api) })
             }
             updateTweaksStyle() // toggle <pre> max-height
             notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + state.word[+!config.rqDisabled])
@@ -1601,7 +1601,7 @@
                 consoleInfo('Trying another endpoint...')
                 caller.triedAPIs.push({ [triedAPI]: reason }) ; caller.attemptCnt++
                 caller(caller == get.answer ? msgChain : stripQueryAugments(msgChain)[msgChain.length - 1].content)
-                    .then(result => { if (caller == get.relatedQueries) showRelatedQueries(result) ; else return })
+                    .then(result => { if (caller == get.related) showRelatedQueries(result) ; else return })
             } else {
                 consoleInfo('No remaining untried endpoints')
                 if (caller == get.answer) appAlert('proxyNotWorking', 'suggestOpenAI')
@@ -1680,8 +1680,8 @@
             // Get/show related queries if enabled on 1st get.answer()
             if (!config.rqDisabled && get.answer.attemptCnt == 1) {
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.relatedQueries(lastQuery).then(queries => showRelatedQueries(queries))
-                    .catch(err => { consoleErr(err.message) ; api.tryNew(get.relatedQueries, get.relatedQueries.api) })
+                get.related(lastQuery).then(queries => showRelatedQueries(queries))
+                    .catch(err => { consoleErr(err.message) ; api.tryNew(get.related, get.related.api) })
             }
 
             updateFooterContent()
@@ -1696,20 +1696,20 @@
             }})
         },
 
-        relatedQueries: function(query) {
+        related: function(query) {
 
             // Init API attempt props
-            get.relatedQueries.status = 'waiting'
-            if (!get.relatedQueries.triedAPIs) get.relatedQueries.triedAPIs = []
-            if (!get.relatedQueries.attemptCnt) get.relatedQueries.attemptCnt = 1
+            get.related.status = 'waiting'
+            if (!get.related.triedAPIs) get.related.triedAPIs = []
+            if (!get.related.attemptCnt) get.related.attemptCnt = 1
 
             // Pick API
-            get.relatedQueries.api = api.pick(get.relatedQueries)
-            if (!get.relatedQueries.api) return // no more proxy APIs left untried
+            get.related.api = api.pick(get.related)
+            if (!get.related.api) return // no more proxy APIs left untried
 
             setTimeout(() => { // try diff API after 6s of no response
-                if (get.relatedQueries.status != 'done')
-                    api.tryNew(get.relatedQueries, get.relatedQueries.api, 'timeout') }, 6000)
+                if (get.related.status != 'done')
+                    api.tryNew(get.related, get.related.api, 'timeout') }, 6000)
 
             return new Promise((resolve, reject) => {
                 const rqPrompt = 'Show a numbered list of queries related to this one:\n\n' + query
@@ -1724,15 +1724,15 @@
                        + ' You must entice user to want to ask one of your related queries.'
                    + ` Reply in ${config.replyLanguage}`
                 GM.xmlHttpRequest({
-                    method: apis[get.relatedQueries.api].method, url: apis[get.relatedQueries.api].endpoint,
-                    responseType: 'text', headers: api.createHeaders(get.relatedQueries.api),
-                    data: api.createPayload(get.relatedQueries.api, [{ role: 'user', content: rqPrompt }]),
+                    method: apis[get.related.api].method, url: apis[get.related.api].endpoint,
+                    responseType: 'text', headers: api.createHeaders(get.related.api),
+                    data: api.createPayload(get.related.api, [{ role: 'user', content: rqPrompt }]),
                     onload: event => {
                         let str_relatedQueries = ''
-                        if (get.relatedQueries.api == 'OpenAI') {
+                        if (get.related.api == 'OpenAI') {
                             try { str_relatedQueries = JSON.parse(event.response).choices[0].message.content }
                             catch (err) { consoleErr(err) ; reject(err) }
-                        } else if (get.relatedQueries.api == 'AIchatOS' && !/很抱歉地|系统公告/.test(event.responseText)) {
+                        } else if (get.related.api == 'AIchatOS' && !/很抱歉地|系统公告/.test(event.responseText)) {
                             try {
                                 const text = event.responseText, chunkSize = 1024
                                 let currentIdx = 0
@@ -1741,12 +1741,12 @@
                                     currentIdx += chunkSize ; str_relatedQueries += chunk
                                 }
                             } catch (err) { consoleErr(err) ; reject(err) }
-                        } else if (get.relatedQueries.api == 'GPTforLove') {
+                        } else if (get.related.api == 'GPTforLove') {
                             try {
                                 let chunks = event.responseText.trim().split('\n')
                                 str_relatedQueries = JSON.parse(chunks[chunks.length - 1]).text
                             } catch (err) { consoleErr(err) ; reject(err) }
-                        } else if (get.relatedQueries.api == 'MixerBox AI') {
+                        } else if (get.related.api == 'MixerBox AI') {
                             try {
                                 const extractedData = Array.from(event.responseText.matchAll(/data:(.*)/g), match => match[1]
                                     .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
@@ -1757,8 +1757,8 @@
                         const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
                             .slice(0, 5) // limit to 1st 5
                             .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
-                        get.relatedQueries.status = 'done'
-                        get.relatedQueries.attemptCnt = null ; api.clearTimedOut(get.relatedQueries.triedAPIs)
+                        get.related.status = 'done'
+                        get.related.attemptCnt = null ; api.clearTimedOut(get.related.triedAPIs)
                         resolve(arr_relatedQueries)
                     },
                     onerror: err => { consoleErr(err) ; reject(err) }
@@ -2032,8 +2032,8 @@
             appShow('standby', footerContent)
             if (!config.rqDisabled) {
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.relatedQueries(lastQuery).then(queries => showRelatedQueries(queries))
-                    .catch(err => { consoleErr(err.message) ; api.tryNew(get.relatedQueries, get.relatedQueries.api) })
+                get.related(lastQuery).then(queries => showRelatedQueries(queries))
+                    .catch(err => { consoleErr(err.message) ; api.tryNew(get.related, get.related.api) })
             }
     } else { appAlert('waitingResponse') ; get.answer(msgChain) }
 
