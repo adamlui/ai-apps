@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.13.8
+// @version             2024.6.13.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -613,42 +613,42 @@ setTimeout(async () => {
     function updateAppStyle() {
         appStyle.innerText = (
             '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-          + '.bravegpt {'
+          + '#bravegpt {'
               + `word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: ${ isMobile ? -29 : 20}px ;`
               + 'border: 1px solid var(--color-divider-subtle) ; border-radius: 18px ;'
               + 'padding: 24px 23px 45px 23px ; background:'
                   + ( scheme == 'dark' ? ( isMobile ? 'var(--search-gray-800)' : '#282828' ) : 'white' ) + '}'
-          + '.bravegpt:hover { box-shadow: 0 9px 28px rgba(0, 0, 0, 0.09) }'
-          + '.bravegpt p { margin: 0 }'
-          + `.bravegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
-          + '.bravegpt .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }'
+          + '#bravegpt:hover { box-shadow: 0 9px 28px rgba(0, 0, 0, 0.09) }'
+          + '#bravegpt p { margin: 0 }'
+          + `#bravegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
+          + '#bravegpt .chatgpt-icon { position: relative ; bottom: -4px ; margin-right: 11px }'
           + '.app-name { font-size: 20px ; font-family: var(--brand-font) ; text-decoration: none;'
               + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important }`
           + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
               + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
           + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' } ;`
               + 'transform: scale(1.185) ; transition: transform 0.05s ease }'
-          + '.bravegpt .loading {'
-              + 'margin-bottom: -55px ;' // offset vs. `.bravegpt` bottom-padding footer accomodation
+          + '#bravegpt .loading {'
+              + 'margin-bottom: -55px ;' // offset vs. #bravegpt bottom-padding footer accomodation
               + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
-          + '.bravegpt section.loading { padding-left: 5px ; font-size: 90% }'
+          + '#bravegpt section.loading { padding-left: 5px ; font-size: 90% }'
           + '.standby-btn { width: 100% ; padding: 13px 0 ; cursor: pointer ; margin: 14px 0 20px ;'
               + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
               + 'transform: scale(1) ; transition: transform 0.1s ease }'
           + '.standby-btn:hover { border-radius: 4px ; transform: scale(1.025) ;'
               + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
-          + '.bravegpt > pre {'
+          + '#bravegpt > pre {'
               + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
               + 'padding: 1.2em 1.2em 0 1.2em ; margin-top: .7em ; border-radius: 13px ; overflow: auto ;'
               + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 }' )
-          + `.bravegpt footer { margin: ${ isFirefox ? 32 : 27 }px 0 -26px 0 ; border-top: none !important }`
-          + '.bravegpt .feedback {'
+          + `#bravegpt footer { margin: ${ isFirefox ? 32 : 27 }px 0 -26px 0 ; border-top: none !important }`
+          + '#bravegpt .feedback {'
               + 'float: right ; font-family: var(--brand-font) ; font-size: .55rem; color: #aaa ;'
               + 'letter-spacing: .02em ; position: relative ; right: -18px ; bottom: 15px }'
-          + '.bravegpt .feedback .icon {'
+          + '#bravegpt .feedback .icon {'
               + ' fill: currentColor ; color: currentColor ; --size: 12px ; position: relative ; top: 0.19em ; right: 2px }'
-          + `.bravegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
+          + `#bravegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
               + 'border-bottom-style: solid ; border-bottom-width: 16px ; border-top: 0 ; border-bottom-color:'
@@ -684,10 +684,10 @@ setTimeout(async () => {
           + '.kudoai a { color: #aaa ; text-decoration: none }'
           + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
           + ( // markdown styles
-                '.bravegpt > pre h1 { font-size: 1.25em } .bravegpt > pre h2 { font-size: 1.1em }' // size headings
-              + '.bravegpt > pre ul { margin: -10px 0 -6px ; }' // reduce v-spacing
-              + '.bravegpt > pre ol { margin: -33px 0 -6px ; }' // reduce v-spacing
-              + '.bravegpt > pre li { margin: -10px 0 ; list-style: inside }' ) // reduce v-spacing, show left symbols
+                '#bravegpt > pre h1 { font-size: 1.25em } #bravegpt > pre h2 { font-size: 1.1em }' // size headings
+              + '#bravegpt > pre ul { margin: -10px 0 -6px ; }' // reduce v-spacing
+              + '#bravegpt > pre ol { margin: -33px 0 -6px ; }' // reduce v-spacing
+              + '#bravegpt > pre li { margin: -10px 0 ; list-style: inside }' ) // reduce v-spacing, show left symbols
           + '.katex-html { display: none }' // hide unrendered math
           + '.chatgpt-modal > div { padding: 24px 20px 24px 20px !important }' // increase alert padding
           + '.chatgpt-modal h2 { font-size: 32px ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + shrink it
@@ -707,11 +707,11 @@ setTimeout(async () => {
               + '.chatgpt-modal a { color: #00cfff !important }'
               + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
           + ( // stylize scrollbars in Chromium/Safari
-                '.bravegpt *::-webkit-scrollbar { width: 7px }'
-              + '.bravegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
-              + '.bravegpt *::-webkit-scrollbar-thumb:hover { background: #a6a6a6 }'
-              + '.bravegpt *::-webkit-scrollbar-track { background: none }' )
-          + '.bravegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
+                '#bravegpt *::-webkit-scrollbar { width: 7px }'
+              + '#bravegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
+              + '#bravegpt *::-webkit-scrollbar-thumb:hover { background: #a6a6a6 }'
+              + '#bravegpt *::-webkit-scrollbar-track { background: none }' )
+          + '#bravegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
         )
     }
 
@@ -1712,7 +1712,7 @@ setTimeout(async () => {
     // Stylize SITE elems
     const tweaksStyle = document.createElement('style'),
           wsbStyles = 'main.main-column, aside.sidebar { max-width: 521px !important }'
-                    + '.bravegpt { width: 521px }'
+                    + '#bravegpt { width: 521px }'
     updateTweaksStyle() ; document.head.append(tweaksStyle)
 
     // Create/stylize TOOLTIPs
@@ -1728,10 +1728,10 @@ setTimeout(async () => {
         document.head.append(tooltipStyle)
     }
 
-    // Create/classify BRAVEGPT container
-    const appDiv = document.createElement('div') // create container div
-    appDiv.classList.add('bravegpt', 'fade-in', // BraveGPT classes
-                              'snippet') // Brave class
+    // Create/ID/classify BRAVEGPT container
+    const appDiv = document.createElement('div') ; appDiv.id = 'bravegpt'
+    appDiv.classList.add('fade-in', // BraveGPT class
+                         'snippet') // Brave class
 
     // APPEND to Brave
     const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
