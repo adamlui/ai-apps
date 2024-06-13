@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.12.8
+// @version             2024.6.12.9
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -914,7 +914,7 @@
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                               + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
 
-        // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.answer()'s RQ show + menu RQ toggle)
+        // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
         const answerPre = document.querySelector('.googlegpt > pre'),
               relatedQueries = document.querySelector('.related-queries'),
               shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328,
@@ -1085,7 +1085,7 @@
         }
     }
 
-    function handleRQevent(event) { // for attachment/removal in `get.answer()` + `show.reply().handleSubmit()`
+    function handleRQevent(event) { // for attachment/removal in `get.reply()` + `show.reply().handleSubmit()`
         const keys = [' ', 'Spacebar', 'Enter', 'Return'], keyCodes = [32, 13]
         if (keys.includes(event.key) || keyCodes.includes(event.keyCode) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
@@ -1198,7 +1198,7 @@
         pick: function(caller) {
             const logPrefix = `get.${caller.name}() » `
             const untriedAPIs = Object.keys(apis).filter(api =>
-                   api != ( caller == get.answer ? 'OpenAI' : '' ) // exclude OpenAI for get.answer() since Proxy Mode
+                   api != ( caller == get.reply ? 'OpenAI' : '' ) // exclude OpenAI for get.reply() since Proxy Mode
                 && !caller.triedAPIs.some(entry => Object.prototype.hasOwnProperty.call(entry, api)) // exclude tried APIs
                 && (config.streamingDisabled || apis[api].streamable)) // exclude unstreamable APIs if config.streamingDisabled
             const chosenAPI = untriedAPIs[ // pick random array entry
@@ -1215,11 +1215,11 @@
             if (caller.attemptCnt < Object.keys(apis).length -1) {
                 consoleInfo('Trying another endpoint...')
                 caller.triedAPIs.push({ [triedAPI]: reason }) ; caller.attemptCnt++
-                caller(caller == get.answer ? msgChain : stripQueryAugments(msgChain)[msgChain.length - 1].content)
+                caller(caller == get.reply ? msgChain : stripQueryAugments(msgChain)[msgChain.length - 1].content)
                     .then(result => { if (caller == get.related) show.related(result) ; else return })
             } else {
                 consoleInfo('No remaining untried endpoints')
-                if (caller == get.answer) appAlert('proxyNotWorking', 'suggestOpenAI')
+                if (caller == get.reply) appAlert('proxyNotWorking', 'suggestOpenAI')
             }
         },
 
@@ -1278,39 +1278,39 @@
 
     const get = {
 
-        answer: async function(msgChain) {
+        reply: async function(msgChain) {
 
             // Init API attempt props
-            get.answer.status = 'waiting'
-            if (!get.answer.triedAPIs) get.answer.triedAPIs = []
-            if (!get.answer.attemptCnt) get.answer.attemptCnt = 1
+            get.reply.status = 'waiting'
+            if (!get.reply.triedAPIs) get.reply.triedAPIs = []
+            if (!get.reply.attemptCnt) get.reply.attemptCnt = 1
 
             // Pick API
-            get.answer.api = config.proxyAPIenabled ? api.pick(get.answer) : 'OpenAI'
-            if (!get.answer.api) { // no more proxy APIs left untried
+            get.reply.api = config.proxyAPIenabled ? api.pick(get.reply) : 'OpenAI'
+            if (!get.reply.api) { // no more proxy APIs left untried
                 appAlert('proxyNotWorking', 'suggestOpenAI') ; return }
 
             if (!config.proxyAPIenabled) // init OpenAI key
                 config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
             else setTimeout(() => { // try diff API after 6-9s of no response
-                if (config.proxyAPIenabled && get.answer.status != 'done' && !get.answer.sender)
-                    api.tryNew(get.answer, get.answer.api, 'timeout') }, config.streamingDisabled ? 9000 : 6000)
+                if (config.proxyAPIenabled && get.reply.status != 'done' && !get.reply.sender)
+                    api.tryNew(get.reply, get.reply.api, 'timeout') }, config.streamingDisabled ? 9000 : 6000)
 
             // Get/show answer from ChatGPT
             GM.xmlHttpRequest({
-                method: apis[get.answer.api].method, url: apis[get.answer.api].endpoint,
+                method: apis[get.reply.api].method, url: apis[get.reply.api].endpoint,
                 responseType: config.streamingDisabled || !config.proxyAPIenabled ? 'text' : 'stream',
-                headers: api.createHeaders(get.answer.api), data: api.createPayload(get.answer.api, msgChain),
-                onload: resp => dataProcess.text(get.answer.api, resp),
-                onloadstart: resp => dataProcess.stream(get.answer.api, resp),
+                headers: api.createHeaders(get.reply.api), data: api.createPayload(get.reply.api, msgChain),
+                onload: resp => dataProcess.text(get.reply.api, resp),
+                onloadstart: resp => dataProcess.stream(get.reply.api, resp),
                 onerror: err => { consoleErr(err.message)
                     if (!config.proxyAPIenabled) appAlert(!config.openAIkey ? 'login' : ['openAInotWorking', 'suggestProxy'])
-                    else if (get.answer.status != 'done') api.tryNew(get.answer, get.answer.api)
+                    else if (get.reply.status != 'done') api.tryNew(get.reply, get.reply.api)
                 }
             })
 
-            // Get/show related queries if enabled on 1st get.answer()
-            if (!config.rqDisabled && get.answer.attemptCnt == 1) {
+            // Get/show related queries if enabled on 1st get.reply()
+            if (!config.rqDisabled && get.reply.attemptCnt == 1) {
                 const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
                 get.related(lastQuery).then(queries => show.related(queries))
                     .catch(err => { consoleErr(err.message) ; api.tryNew(get.related, get.related.api) })
@@ -1403,13 +1403,13 @@
     const dataProcess = {
 
         text: function(activeAPI, resp) {
-            if (!config.streamingDisabled && config.proxyAPIenabled || get.answer.status == 'done')
+            if (!config.streamingDisabled && config.proxyAPIenabled || get.reply.status == 'done')
                 return
             if (resp.status != 200) {
                 consoleErr('Response status', resp.status)
                 consoleErr('Response text', resp.responseText)
-                if (config.proxyAPIenabled && get.answer.status != 'done')
-                    api.tryNew(get.answer, activeAPI)
+                if (config.proxyAPIenabled && get.reply.status != 'done')
+                    api.tryNew(get.reply, activeAPI)
                 else if (resp.status == 401 && !config.proxyAPIenabled) {
                     GM_deleteValue(config.keyPrefix + '_openAItoken') ; appAlert('login') }
                 else if (resp.status == 403)
@@ -1439,13 +1439,13 @@
                             currentIdx += chunkSize ; answer += chunk
                         }
                         show.reply(answer, footerContent)
-                        get.answer.status = 'done' ; api.clearTimedOut(get.answer.triedAPIs) ; get.answer.attemptCnt = null
+                        get.reply.status = 'done' ; api.clearTimedOut(get.reply.triedAPIs) ; get.reply.attemptCnt = null
                     } catch (err) { // use different endpoint or suggest OpenAI
                         consoleInfo('Response: ' + resp.responseText)
                         consoleErr(appAlerts.parseFailed, err)
-                        if (get.answer.status != 'done') api.tryNew(get.answer, activeAPI)
+                        if (get.reply.status != 'done') api.tryNew(get.reply, activeAPI)
                     }
-                } else { consoleInfo('Response: ' + resp.responseText) ; if (get.answer.status != 'done') api.tryNew(get.answer, activeAPI) }
+                } else { consoleInfo('Response: ' + resp.responseText) ; if (get.reply.status != 'done') api.tryNew(get.reply, activeAPI) }
             } else if (activeAPI == 'GPTforLove') {
                 if (resp.responseText && !resp.responseText.includes('Fail')) {
                     try {
@@ -1453,13 +1453,13 @@
                             lastObj = JSON.parse(chunks[chunks.length - 1])
                         if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
                         show.reply(lastObj.text, footerContent)
-                        get.answer.status = 'done' ; api.clearTimedOut(get.answer.triedAPIs) ; get.answer.attemptCnt = null
+                        get.reply.status = 'done' ; api.clearTimedOut(get.reply.triedAPIs) ; get.reply.attemptCnt = null
                     } catch (err) { // use different endpoint or suggest OpenAI
                         consoleInfo('Response: ' + resp.responseText)
                         consoleErr(appAlerts.parseFailed, err)
-                        if (get.answer.status != 'done') api.tryNew(get.answer, activeAPI)
+                        if (get.reply.status != 'done') api.tryNew(get.reply, activeAPI)
                     }
-                } else { consoleInfo('Response: ' + resp.responseText) ; if (get.answer.status != 'done') api.tryNew(get.answer, activeAPI) }
+                } else { consoleInfo('Response: ' + resp.responseText) ; if (get.reply.status != 'done') api.tryNew(get.reply, activeAPI) }
             } else if (activeAPI == 'MixerBox AI') {
                 if (resp.responseText) {
                     try {
@@ -1467,13 +1467,13 @@
                             .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                             .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                         show.reply(extractedData.join(''), footerContent)
-                        get.answer.status = 'done' ; api.clearTimedOut(get.answer.triedAPIs) ; get.answer.attemptCnt = null
+                        get.reply.status = 'done' ; api.clearTimedOut(get.reply.triedAPIs) ; get.reply.attemptCnt = null
                     } catch (err) { // use different endpoint or suggest OpenAI
                         consoleInfo('Response: ' + resp.responseText)
                         consoleErr(appAlerts.parseFailed, err)
-                        if (get.answer.status != 'done') api.tryNew(get.answer, activeAPI)
+                        if (get.reply.status != 'done') api.tryNew(get.reply, activeAPI)
                     }
-                } else { consoleInfo('Response: ' + resp.responseText) ; if (get.answer.status != 'done') api.tryNew(get.answer, activeAPI) }
+                } else { consoleInfo('Response: ' + resp.responseText) ; if (get.reply.status != 'done') api.tryNew(get.reply, activeAPI) }
             }
         },
 
@@ -1483,8 +1483,8 @@
             reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream', err.message))
             function processStreamText({ done, value }) {
                 if (done) {
-                    get.answer.status = 'done' ; get.answer.sender = null
-                    api.clearTimedOut(get.answer.triedAPIs) ; get.answer.attemptCnt = null
+                    get.reply.status = 'done' ; get.reply.sender = null
+                    api.clearTimedOut(get.reply.triedAPIs) ; get.reply.attemptCnt = null
                     return
                 }
                 let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
@@ -1497,7 +1497,7 @@
                 accumulatedChunks = apis[activeAPI].accumulatesText ? chunk : accumulatedChunks + chunk
                 if (/['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // GPTforLove fail
                     consoleErr('Response', accumulatedChunks)
-                    if (get.answer.status != 'done' && !get.answer.sender) api.tryNew(get.answer, activeAPI)
+                    if (get.reply.status != 'done' && !get.reply.sender) api.tryNew(get.reply, activeAPI)
                     return
                 }
                 try { // to show stream text
@@ -1508,13 +1508,13 @@
                         if (nowResult.id) apiIDs.gptForLove.parentID = nowResult.id // for contextual replies
                         textToShow = nowResult.text
                     } else textToShow = accumulatedChunks
-                    if (textToShow && get.answer.status != 'done') { // text ready, app waiting or sending
-                        if (!get.answer.sender) get.answer.sender = activeAPI // app is waiting, become sender
-                        if (get.answer.sender == activeAPI) show.reply(textToShow, footerContent)
+                    if (textToShow && get.reply.status != 'done') { // text ready, app waiting or sending
+                        if (!get.reply.sender) get.reply.sender = activeAPI // app is waiting, become sender
+                        if (get.reply.sender == activeAPI) show.reply(textToShow, footerContent)
                     }
                 } catch (err) { consoleErr('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
-                    if (get.answer.sender == activeAPI) // am designated sender, recurse
+                    if (get.reply.sender == activeAPI) // am designated sender, recurse
                         processStreamText({ done, value })
                 }).catch(err => consoleErr('Error reading stream', err.message))
             }
@@ -1676,7 +1676,7 @@
                         appAlert('waitingResponse')
                         msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
                         show.reply.submitSrc = 'click' // for show.reply() auto-focus
-                        get.answer(msgChain)
+                        get.reply(msgChain)
                     })
 
                 // Otherwise create/append answer bubble
@@ -1811,7 +1811,7 @@
                 const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || ''
                 msgChain.push({ role: 'assistant', content: prevReplyTrimmed })
                 msgChain.push({ role: 'user', content: augmentQuery(chatTextarea.value) })
-                get.answer(msgChain)
+                get.reply(msgChain)
 
                 // Remove re-added reply section listeners
                 const replyForm = appDiv.querySelector('form')
@@ -1859,9 +1859,9 @@
         },
 
         related: function(queries) {
-            if (!show.related.greenlit) { // wait for get.answer() to finish showing answer
+            if (!show.related.greenlit) { // wait for get.reply() to finish showing answer
                 show.related.statusChecker = setInterval(() => {
-                    if (get.answer.status != 'waiting') {
+                    if (get.reply.status != 'waiting') {
                         show.related.greenlit = true
                         show.related(queries)
                         clearInterval(show.related.statusChecker)
@@ -2038,6 +2038,6 @@
                 get.related(lastQuery).then(queries => show.related(queries))
                     .catch(err => { consoleErr(err.message) ; api.tryNew(get.related, get.related.api) })
             }
-    } else { appAlert('waitingResponse') ; get.answer(msgChain) }
+    } else { appAlert('waitingResponse') ; get.reply(msgChain) }
 
 })()
