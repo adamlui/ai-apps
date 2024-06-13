@@ -89,8 +89,8 @@ DuckDuckGPT relies on code from the powerful [chatgpt.js](https://github.com/Kud
 
 <br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.ddgpt.com/images/logos/platforms/android/head-plus-word/white/logo150x24.png?latest"><img alt="Android" width=111 src="https://media.ddgpt.com/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png?latest"></picture><br>
 
-- [Kiwi](https://kiwibrowser.com/) (recommended)
-- [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)
+- [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/) (using [Tampermonkey for Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/)) (recommended for Streaming Mode)
+- [Kiwi](https://kiwibrowser.com/) (using [Violentmonkey for Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag))
 
 <br>
 
