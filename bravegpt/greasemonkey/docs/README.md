@@ -52,25 +52,18 @@
 
 <h6>
 <div align="center">
-<br>
 
-<a href="https://chatgpt.js.org">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://media.chatgptjs.org/images/logos/chatgpt.js/flat/white/logo5995x619.png?77d7d9f">
-        <img width=455 src="https://media.chatgptjs.org/images/logos/chatgpt.js/flat/black/logo5995x619.png?77d7d9f">
-    </picture>
-</a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://katex.org">
-    <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/logos/katex/white-logo.svg?latest">
-        <img width=175 src="https://media.bravegpt.com/images/logos/katex/dark-gray-logo423x166.png?latest">
-    </picture>
-</a>
-<br><br>
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://media.bravegpt.com/images/logos/dependencies/collage/white.png?latest">
+    <img src="https://media.bravegpt.com/images/logos/dependencies/collage/black.png?latest">
+</picture>
 
-BraveGPT relies on code from the powerful [chatgpt.js](https://github.com/KudoAI/chatgpt.js) library © 2023–2024 KudoAI & contributors under the MIT license
-<br>...and the [KaTeX](https://github.com/KaTeX/KaTeX) library © 2013–2020 Khan Academy & contributors under the MIT license.
+[chatgpt.js](https://chatgpt.js.org) © 2023–2024 [KudoAI](https://kudoai.com) & contributors under the MIT license
+<br>[CryptoJS](https://github.com/brix/crypto-js) © 2009-2013 [Jeff Mott](https://github.com/Jeff-Mott-OR) © 2013-2016 [Evan Vosberg](https://github.com/evanvosberg) under the MIT license
+<br>[generate-ip](https://generate-ip.org) © 2024 [Adam Lui](https://github.com/adamlui) & contributors under the MIT license
+<br>[highlight.js](https://highlightjs.org/) © 2006 [Ivan Sagalaev](https://github.com/isagalaev) under the BSD 3-Clause License
+<br>[KaTeX](https://katex.org/) © 2013–2020 [Khan Academy](https://www.khanacademy.org/) & other contributors under the MIT license
+<br>[Marked](https://marked.js.org) © 2018+ [MarkedJS](https://github.com/markedjs/) © 2011–2018 [Christopher Jeffrey](https://github.com/chjj/) under the MIT license
 
 </div>
 </h6>
