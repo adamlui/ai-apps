@@ -104,6 +104,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 - [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/) (using [Tampermonkey for Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/)) (recommended for Streaming Mode)
 - [Kiwi](https://kiwibrowser.com/) (using [Violentmonkey for Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag))
+- [Mask Browser](https://play.google.com/store/apps/details?id=net.maskbrowser.browser) (using [Tampermonkey for Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd))
 
 <br>
 
