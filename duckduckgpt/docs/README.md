@@ -72,6 +72,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 <br>[highlight.js](https://highlightjs.org/) © 2006 [Ivan Sagalaev](https://github.com/isagalaev) under the BSD 3-Clause License
 <br>[KaTeX](https://katex.org/) © 2013–2020 [Khan Academy](https://www.khanacademy.org/) & other contributors under the MIT license
 <br>[Marked](https://marked.js.org) © 2018+ [MarkedJS](https://github.com/markedjs/) © 2011–2018 [Christopher Jeffrey](https://github.com/chjj/) under the MIT license
+<br><br>
 
 </div>
 </h6>
