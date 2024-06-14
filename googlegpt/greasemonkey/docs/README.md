@@ -71,28 +71,6 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 
-## ⚡ Dependencies
-
-<h6>
-<div align="center">
-
-<picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/logos/dependencies/collage/white.png?latest">
-    <img src="https://media.googlegpt.io/images/logos/dependencies/collage/black.png?latest">
-</picture>
-
-[chatgpt.js](https://chatgpt.js.org) © 2023–2024 [KudoAI](https://kudoai.com) & contributors under the MIT license
-<br>[generate-ip](https://generate-ip.org) © 2024 [Adam Lui](https://github.com/adamlui) & contributors under the MIT license
-<br>[highlight.js](https://highlightjs.org) © 2006 [Ivan Sagalaev](https://github.com/isagalaev) under the BSD 3-Clause license
-<br>[KaTeX](https://katex.org) © 2013–2020 [Khan Academy](https://www.khanacademy.org) & other contributors under the MIT license
-<br>[Marked](https://marked.js.org) © 2018+ [MarkedJS](https://github.com/markedjs) © 2011–2018 [Christopher Jeffrey](https://github.com/chjj) under the MIT license
-<br><br>
-
-</div>
-</h6>
-
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
-
 ## 🌐 Compatibility 
 
 **GoogleGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (recommended for Streaming Mode) or [Violentmonkey](https://violentmonkey.github.io/).
@@ -156,6 +134,28 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 <br>
 
 </div>
+
+<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
+
+## ⚡ Dependencies
+
+<h6>
+<div align="center">
+
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/logos/dependencies/collage/white.png?latest">
+    <img src="https://media.googlegpt.io/images/logos/dependencies/collage/black.png?latest">
+</picture>
+
+[chatgpt.js](https://chatgpt.js.org) © 2023–2024 [KudoAI](https://kudoai.com) & contributors under the MIT license
+<br>[generate-ip](https://generate-ip.org) © 2024 [Adam Lui](https://github.com/adamlui) & contributors under the MIT license
+<br>[highlight.js](https://highlightjs.org) © 2006 [Ivan Sagalaev](https://github.com/isagalaev) under the BSD 3-Clause license
+<br>[KaTeX](https://katex.org) © 2013–2020 [Khan Academy](https://www.khanacademy.org) & other contributors under the MIT license
+<br>[Marked](https://marked.js.org) © 2018+ [MarkedJS](https://github.com/markedjs) © 2011–2018 [Christopher Jeffrey](https://github.com/chjj) under the MIT license
+<br><br>
+
+</div>
+</h6>
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
 

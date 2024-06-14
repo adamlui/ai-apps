@@ -55,26 +55,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 <img width=735 src="https://media.ddgpt.com/images/screenshots/desktop/chrome/developer-mode-toggle.png?latest">
 
 💡 _**Note:** If you installed Tampermonkey from the add-on store for [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/), then Developer Mode is not required._
-
-## ⚡ Dependencies
-
-<h6>
-<div align="center">
-
-<picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://media.ddgpt.com/images/logos/dependencies/collage/white.png?latest">
-    <img src="https://media.ddgpt.com/images/logos/dependencies/collage/black.png?latest">
-</picture>
-
-[chatgpt.js](https://chatgpt.js.org) © 2023–2024 [KudoAI](https://kudoai.com) & contributors under the MIT license
-<br>[generate-ip](https://generate-ip.org) © 2024 [Adam Lui](https://github.com/adamlui) & contributors under the MIT license
-<br>[highlight.js](https://highlightjs.org) © 2006 [Ivan Sagalaev](https://github.com/isagalaev) under the BSD 3-Clause license
-<br>[KaTeX](https://katex.org) © 2013–2020 [Khan Academy](https://www.khanacademy.org) & other contributors under the MIT license
-<br>[Marked](https://marked.js.org) © 2018+ [MarkedJS](https://github.com/markedjs) © 2011–2018 [Christopher Jeffrey](https://github.com/chjj) under the MIT license
 <br><br>
-
-</div>
-</h6>
 
 ## 🌐 Compatibility 
 
@@ -98,10 +79,10 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 - [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/) (using [Tampermonkey for Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/)) (recommended for Streaming Mode)
 - [Kiwi](https://kiwibrowser.com/) (using [Violentmonkey for Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag))
 - [Mask Browser](https://play.google.com/store/apps/details?id=net.maskbrowser.browser) (using [Tampermonkey for Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd))
-
-<br>
+<br><br>
 
 If you've tested it to work in a browser not listed, simply create a [pull request](https://github.duckduckgpt.com/pulls) to become a contributor!
+<br><br>
 
 ## 🕵️ Proxy Mode
 
@@ -123,6 +104,7 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 [Discuss](https://github.duckduckgpt.com/discussions) /
 [Leave a review](https://greasyfork.org/scripts/459849-duckduckgpt/feedback#post-discussion) /
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
+<br><br>
 
 ## 📣 Social links
 
@@ -137,6 +119,27 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 [![](https://img.shields.io/badge/Follow%20@adamlui-637-blue?logo=medium&style=social "Follow @adamlui on Medium")](https://adamlui.com?utm_source=duckduckgpt&utm_content=github_shield)
 [![](https://img.shields.io/youtube/channel/subscribers/UCgBMqK7SRL5R__3qM-YAcSg?label=Follow%20%40adamluitube&style=social "Follow @adamluitube on YouTube")](https://www.youtube.com/AdamLuiTube?sub_confirmation=1)
 [![](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "Follow @adamlui on GitHub")](https://github.com/adamlui)
+<br><br>
+
+## ⚡ Dependencies
+
+<h6>
+<div align="center">
+
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://media.ddgpt.com/images/logos/dependencies/collage/white.png?latest">
+    <img src="https://media.ddgpt.com/images/logos/dependencies/collage/black.png?latest">
+</picture>
+
+[chatgpt.js](https://chatgpt.js.org) © 2023–2024 [KudoAI](https://kudoai.com) & contributors under the MIT license
+<br>[generate-ip](https://generate-ip.org) © 2024 [Adam Lui](https://github.com/adamlui) & contributors under the MIT license
+<br>[highlight.js](https://highlightjs.org) © 2006 [Ivan Sagalaev](https://github.com/isagalaev) under the BSD 3-Clause license
+<br>[KaTeX](https://katex.org) © 2013–2020 [Khan Academy](https://www.khanacademy.org) & other contributors under the MIT license
+<br>[Marked](https://marked.js.org) © 2018+ [MarkedJS](https://github.com/markedjs) © 2011–2018 [Christopher Jeffrey](https://github.com/chjj) under the MIT license
+<br><br>
+
+</div>
+</h6>
 
 ## 🧠 Contributors
 
