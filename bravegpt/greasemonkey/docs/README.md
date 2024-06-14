@@ -61,7 +61,7 @@
 [chatgpt.js](https://chatgpt.js.org) © 2023–2024 [KudoAI](https://kudoai.com) & contributors under the MIT license
 <br>[CryptoJS](https://github.com/brix/crypto-js) © 2009-2013 [Jeff Mott](https://github.com/Jeff-Mott-OR) © 2013-2016 [Evan Vosberg](https://github.com/evanvosberg) under the MIT license
 <br>[generate-ip](https://generate-ip.org) © 2024 [Adam Lui](https://github.com/adamlui) & contributors under the MIT license
-<br>[highlight.js](https://highlightjs.org/) © 2006 [Ivan Sagalaev](https://github.com/isagalaev) under the BSD 3-Clause License
+<br>[highlight.js](https://highlightjs.org/) © 2006 [Ivan Sagalaev](https://github.com/isagalaev) under the BSD 3-Clause license
 <br>[KaTeX](https://katex.org/) © 2013–2020 [Khan Academy](https://www.khanacademy.org/) & other contributors under the MIT license
 <br>[Marked](https://marked.js.org) © 2018+ [MarkedJS](https://github.com/markedjs/) © 2011–2018 [Christopher Jeffrey](https://github.com/chjj/) under the MIT license
 <br><br>
