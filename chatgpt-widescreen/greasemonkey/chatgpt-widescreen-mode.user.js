@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.15.1
+// @version             2024.6.15.2
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -766,7 +766,6 @@
                 })();
             }), new Promise(resolve => setTimeout(resolve, 3000)) // timeout after 3s
         ])
-        console.log('focusing chatbar')
         document.querySelector(inputSelector)?.focus()
     }
 
