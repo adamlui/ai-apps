@@ -40,7 +40,7 @@
           sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
                           : site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]' : '',
           sidepadSelector = '#__next > div > div',
-          headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : '',
+          headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : ''
     let footerSelector = 'footer'
     try { footerSelector = /chatgpt|openai/.test(site) ?
               chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]])/g, '\\$1').replace(/^| /g, '.') : ''
