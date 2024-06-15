@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.14
+// @version             2024.6.14.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -419,8 +419,8 @@
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
-    loadSetting('autoget', 'autoScroll', 'notFirstRun', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
-                'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
+    loadSetting('autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'notFirstRun', 'prefixEnabled', 'proxyAPIenabled',
+                'replyLanguage', 'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
     if (isMobile && !config.notFirstRun) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
@@ -496,8 +496,21 @@
             refreshMenu()
         }))
 
-        // Add command to toggle auto-scroll (when streaming)
+        
         if (!isMobile) {
+
+            // Add command to toggle auto-focus chatbar
+            const afcLabel = state.symbol[+!config.autoFocusChatbarDisabled] + ' '
+                           + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                           + state.separator + state.word[+!config.autoFocusChatbarDisabled]
+            menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
+                saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
+                notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                             + state.word[+!config.autoFocusChatbarDisabled])
+                refreshMenu()
+            }))
+
+            // Add command to toggle auto-scroll (when streaming)
             const assLabel = state.symbol[+config.autoScroll] + ' '
                            + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
                            + state.separator + state.word[+config.autoScroll]
@@ -1811,7 +1824,7 @@
             }
 
             // Focus chatbar conditionally
-            if (!show.reply.chatbarFocused // do only once
+            if (!config.autoFocusChatbarDisabled && !show.reply.chatbarFocused // do only once if enabled
                 && !isMobile // exclude mobile devices to not auto-popup OSD keyboard
                 && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top )) { // app fully above fold
                     appDiv.querySelector('#app-chatbar').focus() ; show.reply.chatbarFocused = true }

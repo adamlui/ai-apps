@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.14
+// @version             2024.6.14.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -186,8 +186,8 @@ setTimeout(async () => {
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@4d9a45e/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('autoGetDisabled', 'autoScroll', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage',
-                'rqDisabled', 'scheme', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
+    loadSetting('autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'prefixEnabled', 'proxyAPIenabled',
+                'replyLanguage', 'rqDisabled', 'scheme', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
 
@@ -263,8 +263,21 @@ setTimeout(async () => {
             refreshMenu()
         }))
 
-        // Add command to toggle auto-scroll (when streaming)
         if (!isMobile) {
+
+            // Add command to toggle auto-focus chatbar
+            const afcLabel = state.symbol[+!config.autoFocusChatbarDisabled] + ' '
+                           + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                           + state.separator + state.word[+!config.autoFocusChatbarDisabled]
+            menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
+                saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
+                notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                             + state.word[+!config.autoFocusChatbarDisabled])
+                refreshMenu()
+            }))
+
+
+            // Add command to toggle auto-scroll (when streaming)
             const assLabel = state.symbol[+config.autoScroll] + ' '
                            + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
                            + state.separator + state.word[+config.autoScroll]
@@ -1524,7 +1537,7 @@ setTimeout(async () => {
             }
 
             // Focus chatbar conditionally
-            if (!show.reply.chatbarFocused // do only once
+            if (!config.autoFocusChatbarDisabled && !show.reply.chatbarFocused // do only once if enabled
                 && !isMobile // exclude mobile devices to not auto-popup OSD keyboard
                 && ( appDiv.offsetHeight < window.innerHeight - appDiv.getBoundingClientRect().top )) { // app fully above fold
                     appDiv.querySelector('#app-chatbar').focus() ; show.reply.chatbarFocused = true }
