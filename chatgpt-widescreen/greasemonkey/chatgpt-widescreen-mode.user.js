@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.9.2
+// @version             2024.6.14
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -271,8 +271,8 @@
     config.supportURL = config.gitHubURL + '/issues/new'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@11a0711/'
     config.userLanguage = chatgpt.getUserLanguage()
-    loadSetting('fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader', 'notifDisabled',
-                'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen')
+    loadSetting('autoFocusChatbarDisabled', 'fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
+                'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen')
 
     // Define MESSAGES
     const msgsLoaded = new Promise(resolve => {
@@ -356,6 +356,18 @@
         }))
 
         if (/chatgpt|openai/.test(site)) {
+
+            // Add command to toggle Auto-Focus Chatbar
+            const afcLabel = state.symbol[+!config.autoFocusChatbarDisabled] + ' '
+                           + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                           + state.separator + state.word[+!config.autoFocusChatbarDisabled]
+            menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
+                saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
+                notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                             + state.word[+!config.autoFocusChatbarDisabled])
+                if (!config.autoFocusChatbarDisabled) document.querySelector(inputSelector)?.focus()
+                refreshMenu()
+            }))
 
             // Add command to toggle hidden header
             const hhLabel = state.symbol[+config.hiddenHeader] + ' '
@@ -732,6 +744,30 @@
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
     }
 
+    // Define UI element SELECTORS
+    const inputSelector = /chatgpt|openai/.test(site) ? 'form textarea[id*="prompt"]'
+                        : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
+          sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
+                          : site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]' : '',
+          sidepadSelector = '#__next > div > div',
+          headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : ''
+          footerSelector = /chatgpt|openai/.test(site) ?
+              chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]])/g, '\\$1').replace(/^| /g, '.') : ''
+
+    // AUTO-FOCUS ChatGPT chatbar if enabled
+    if (/chatgpt|openai/.test(site) && !config.autoFocusChatbarDisabled) {
+        await Promise.race([
+            new Promise(resolve => {
+                (function checkSecondChatbarBtn() { // since it causes de-focus
+                    const chatbarBtns = document.querySelector(inputSelector)?.parentNode.parentNode.getElementsByTagName('button')
+                    chatbarBtns?.length >= 2 ? resolve(true) : setTimeout(checkSecondChatbarBtn, 200)
+                })();
+            }), new Promise(resolve => setTimeout(resolve, 3000)) // timeout after 3s
+        ])
+        console.log('focusing chatbar')
+        document.querySelector(inputSelector)?.focus()
+    }
+
     // Create browser TOOLBAR MENU or DISABLE SCRIPT if extension installed
     const extensionInstalled = await Promise.race([
         new Promise(resolve => {
@@ -748,16 +784,6 @@
 
     // Init UI flag
     const isGPT4oUI = document.documentElement.className.includes(' ')
-
-    // Define UI element SELECTORS
-    const inputSelector = /chatgpt|openai/.test(site) ? 'form textarea[id*="prompt"]'
-                        : site == 'poe' ? '[class*="InputContainer_textArea"] textarea, [class*="InputContainer_textArea"]::after' : '',
-          sidebarSelector = /chatgpt|openai/.test(site) ? '#__next > div > div.dark'
-                          : site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]' : '',
-          sidepadSelector = '#__next > div > div',
-          headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : '',
-          footerSelector = /chatgpt|openai/.test(site) ?
-              chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]])/g, '\\$1').replace(/^| /g, '.') : ''
 
     // Save FULL-WINDOW + FULL SCREEN states
     config.fullWindow = /chatgpt|openai/.test(site) ? isFullWindow() : config.fullWindow
