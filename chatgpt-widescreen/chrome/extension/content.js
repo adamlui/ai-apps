@@ -474,8 +474,8 @@
                     tweaksStyle.innerText = tweaksStyle.innerText.replace(hfStyle, '')
                     removeBtns()
                 } else { // restore modes
-                    if (config.wideScreen) toggleMode('wideScreen', 'ON')
-                    if (config.fullWindow) toggleMode('fullWindow', 'ON')
+                    if (config.wideScreen && !document.head.contains(wideScreenStyle)) toggleMode('wideScreen', 'ON')
+                    if (config.fullWindow && !isFullWindow()) toggleMode('fullWindow', 'ON')
                     updateTweaksStyle() // sync taller chatbox + hidden header/footer
                     updateWidescreenStyle() // sync wider chatbox
     }})}
