@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.14.3
+// @version             2024.6.14.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1232,10 +1232,12 @@
             // Add event listeners for dragging knob
             let isDragging = false, startX, startLeft;
             sliderKnob.addEventListener('mousedown', event => {
-                isDragging = true ; startX = event.clientX ; startLeft = sliderKnob.offsetLeft })
+                isDragging = true ; startX = event.clientX ; startLeft = sliderKnob.offsetLeft
+                answerPre.classList.add('no-user-select') // prevent highlighting from rapid movement
+            })
             appDiv.addEventListener('mousemove', event => {
                 if (isDragging) moveKnob(startLeft + event.clientX - startX) })
-            appDiv.addEventListener('mouseup', () => isDragging = false)
+            appDiv.addEventListener('mouseup', () => { isDragging = false ; answerPre.classList.remove('no-user-select')})
 
             // Add event listener for wheel-scrolling knob
             fontSizeSlider.addEventListener('wheel', event => {
