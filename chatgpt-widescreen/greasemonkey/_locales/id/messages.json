@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Lebih tinggi Chatbox" },
   "menuLabel_widerChatbox": { "message": "Kotak Obrolan yang Lebih Luas" },
   "menuLabel_newChatBtn": { "message": "Tombol Obrolan Baru" },
+  "menuLabel_autoFocusChatbar": { "message": "Bilah Obrolan Fokus Otomatis" },
   "menuLabel_hiddenHeader": { "message": "Header Tersembunyi" },
   "menuLabel_hiddenFooter": { "message": "Footer Tersembunyi" },
   "menuLabel_modeNotifs": { "message": "Notifikasi Mode" },

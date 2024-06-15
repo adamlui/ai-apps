@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Undo-type" },
   "menuLabel_widerChatbox": { "message": "ሰፊሕ ቻትቦክስ" },
   "menuLabel_newChatBtn": { "message": "ሓድሽ ቻት ቡተን" },
+  "menuLabel_autoFocusChatbar": { "message": "ናይ ኣውቶ-ፎኩስ ቻትባር" },
   "menuLabel_hiddenHeader": { "message": "እተሓብአ ርእሲ" },
   "menuLabel_hiddenFooter": { "message": "እተሓብአ ፉተር" },
   "menuLabel_modeNotifs": { "message": "ሓበሬታታት ኣገባብ" },

@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "ကျယ်ပြန့်သော Chatbox" },
   "menuLabel_newChatBtn": { "message": "စကားပြောခလုတ်အသစ်" },
+  "menuLabel_autoFocusChatbar": { "message": "အလိုအလျောက်အာရုံစူးစိုက်မှု စကားပြောဘား" },
   "menuLabel_hiddenHeader": { "message": "ဖုံးကွယ်ထားသော ခေါင်းစီး" },
   "menuLabel_hiddenFooter": { "message": "ဖုံးကွယ်ထားသော Footer" },
   "menuLabel_modeNotifs": { "message": "Mode အသိပေးချက်များ" },

@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Вища Чат-коробка" },
   "menuLabel_widerChatbox": { "message": "Ширше вікно чату" },
   "menuLabel_newChatBtn": { "message": "Нова кнопка чату" },
+  "menuLabel_autoFocusChatbar": { "message": "Панель чату з автофокусом" },
   "menuLabel_hiddenHeader": { "message": "Прихований заголовок" },
   "menuLabel_hiddenFooter": { "message": "Прихований нижній колонтитул" },
   "menuLabel_modeNotifs": { "message": "Сповіщення про Режим" },

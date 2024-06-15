@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Hộp trò chuyện cao hơn" },
   "menuLabel_widerChatbox": { "message": "Hộp trò chuyện rộng hơn" },
   "menuLabel_newChatBtn": { "message": "Nút trò chuyện mới" },
+  "menuLabel_autoFocusChatbar": { "message": "Tự động lấy nét Chatbar" },
   "menuLabel_hiddenHeader": { "message": "Tiêu đề ẩn" },
   "menuLabel_hiddenFooter": { "message": "Chân trang bị ẩn" },
   "menuLabel_modeNotifs": { "message": "Thông báo chế độ" },

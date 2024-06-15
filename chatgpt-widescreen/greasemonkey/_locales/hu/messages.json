@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Magasabb chatbox" },
   "menuLabel_widerChatbox": { "message": "Szélesebb chatbox" },
   "menuLabel_newChatBtn": { "message": "Új csevegés gomb" },
+  "menuLabel_autoFocusChatbar": { "message": "Automatikus fókuszálás a csevegősávon" },
   "menuLabel_hiddenHeader": { "message": "Rejtett fejléc" },
   "menuLabel_hiddenFooter": { "message": "Rejtett lábléc" },
   "menuLabel_modeNotifs": { "message": "Üzemmód értesítések" },

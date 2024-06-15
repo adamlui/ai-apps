@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Daha geniş söhbət qutusu" },
   "menuLabel_newChatBtn": { "message": "Yeni Söhbət Düyməsi" },
+  "menuLabel_autoFocusChatbar": { "message": "Avtomatik Fokus Çatbarı" },
   "menuLabel_hiddenHeader": { "message": "Gizli Başlıq" },
   "menuLabel_hiddenFooter": { "message": "Gizli Altbilgi" },
   "menuLabel_modeNotifs": { "message": "Rejim Bildirişləri" },

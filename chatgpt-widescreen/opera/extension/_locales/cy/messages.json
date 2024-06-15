@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Blwch Sgwrsio Ehangach" },
   "menuLabel_newChatBtn": { "message": "Botwm Sgwrs Newydd" },
+  "menuLabel_autoFocusChatbar": { "message": "Bar Sgwrs Awtomatig - Ffocws" },
   "menuLabel_hiddenHeader": { "message": "Pennawd Cudd" },
   "menuLabel_hiddenFooter": { "message": "Troedyn Cudd" },
   "menuLabel_modeNotifs": { "message": "Hysbysiadau Modd" },

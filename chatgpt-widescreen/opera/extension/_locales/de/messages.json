@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Höhere Chatbox" },
   "menuLabel_widerChatbox": { "message": "Breitere Chatbox" },
   "menuLabel_newChatBtn": { "message": "Chat-Button" },
+  "menuLabel_autoFocusChatbar": { "message": "Autofokus-Chatbar" },
   "menuLabel_hiddenHeader": { "message": "Ausgeblendete Kopfzeile" },
   "menuLabel_hiddenFooter": { "message": "Ausgeblendete Fußzeile" },
   "menuLabel_modeNotifs": { "message": "Modusbenachrichtigungen" },

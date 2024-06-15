@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Sanduuqa Wada-hadalka ballaaran" },
   "menuLabel_newChatBtn": { "message": "Badhamada Chat cusub" },
+  "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_hiddenHeader": { "message": "hiddenHeader" },
   "menuLabel_hiddenFooter": { "message": "Footer Qarsoon" },
   "menuLabel_modeNotifs": { "message": "Ogeysiisyada Habka" },

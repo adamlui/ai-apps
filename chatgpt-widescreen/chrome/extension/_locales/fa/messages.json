@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "چت باکس بلندتر" },
   "menuLabel_widerChatbox": { "message": "چت باکس گسترده تر" },
   "menuLabel_newChatBtn": { "message": "دکمه چت" },
+  "menuLabel_autoFocusChatbar": { "message": "نوار چت فوکوس خودکار" },
   "menuLabel_hiddenHeader": { "message": "هدر مخفی" },
   "menuLabel_hiddenFooter": { "message": "پاورقی پنهان" },
   "menuLabel_modeNotifs": { "message": "اعلان‌های حالت" },

@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Taller Chatbox" },
   "menuLabel_widerChatbox": { "message": "Kaxxa taċ-chat usa'" },
   "menuLabel_newChatBtn": { "message": "Buttuna taċ-chat ġdida" },
+  "menuLabel_autoFocusChatbar": { "message": "Fokus Awtomatiku fuq iċ-chatbar" },
   "menuLabel_hiddenHeader": { "message": "Intestatura Moħbija" },
   "menuLabel_hiddenFooter": { "message": "Footer moħbija" },
   "menuLabel_modeNotifs": { "message": "Notifiki tal-Modalità" },

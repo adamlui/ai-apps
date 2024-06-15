@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "ਚੈਟਬਾਕਸ ਚੈਟਬਾਕਸ" },
   "menuLabel_widerChatbox": { "message": "ਚੌੜਾ ਚੈਟਬਾਕਸ" },
   "menuLabel_newChatBtn": { "message": "ਨਵਾਂ ਗੱਲਬਾਤ ਬਟਨ" },
+  "menuLabel_autoFocusChatbar": { "message": "ਆਟੋ-ਫੋਕਸ ਚੈਟਬਾਰ" },
   "menuLabel_hiddenHeader": { "message": "ਓਹਲੇ ਹੈੱਡਰ" },
   "menuLabel_hiddenFooter": { "message": "ਲੁਕਵਾਂ ਫੁੱਟਰ" },
   "menuLabel_modeNotifs": { "message": "ਮੋਡ ਨੋਟੀਫਿਕੇਸ਼ਨ" },

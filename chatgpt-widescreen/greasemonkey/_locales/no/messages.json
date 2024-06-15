@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Høyere Chatbox" },
   "menuLabel_widerChatbox": { "message": "Bredere chatboks" },
   "menuLabel_newChatBtn": { "message": "Ny chat-knapp" },
+  "menuLabel_autoFocusChatbar": { "message": "Autofokus chatbar" },
   "menuLabel_hiddenHeader": { "message": "Skjult Toppfelt" },
   "menuLabel_hiddenFooter": { "message": "Skjult bunntekst" },
   "menuLabel_modeNotifs": { "message": "Modusvarsler" },

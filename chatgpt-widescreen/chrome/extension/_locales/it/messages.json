@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Chatbox più alta" },
   "menuLabel_widerChatbox": { "message": "Chatbox più ampia" },
   "menuLabel_newChatBtn": { "message": "pulsante chat" },
+  "menuLabel_autoFocusChatbar": { "message": "Messa a fuoco automatica della barra di chat" },
   "menuLabel_hiddenHeader": { "message": "Intestazione nascosta" },
   "menuLabel_hiddenFooter": { "message": "Nascondi Footer" },
   "menuLabel_modeNotifs": { "message": "Notifiche di modalità" },

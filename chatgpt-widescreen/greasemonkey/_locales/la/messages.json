@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Voyer" },
   "menuLabel_widerChatbox": { "message": "Videtur Chatbox" },
   "menuLabel_newChatBtn": { "message": "New Chat Button" },
+  "menuLabel_autoFocusChatbar": { "message": "Autocus Chatbar" },
   "menuLabel_hiddenHeader": { "message": "Headeris hidden" },
   "menuLabel_hiddenFooter": { "message": "Footerus Auxilium" },
   "menuLabel_modeNotifs": { "message": "Notre sécurité" },

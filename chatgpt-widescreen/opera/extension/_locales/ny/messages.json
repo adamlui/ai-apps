@@ -5,6 +5,7 @@
   "menuLabel_tallerChatbox": { "message": "Zambiri zaife" },
   "menuLabel_widerChatbox": { "message": "Lumikizanani nafe" },
   "menuLabel_newChatBtn": { "message": "Latsopano Chat Button" },
+  "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_hiddenHeader": { "message": "ZOKHUDZA" },
   "menuLabel_hiddenFooter": { "message": "ZOKHUDZA" },
   "menuLabel_modeNotifs": { "message": "Mfundo zazinsinsi" },
