@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Modd Rhagddodiad" },
   "mode_suffix": { "message": "Modd Ôl - ddodiad" },
   "tooltip_playAnswer": { "message": "Chwarae'r ateb" },
+  "tooltip_fontSize": { "message": "Maint ffont" },
   "tooltip_sendReply": { "message": "Anfon Ateb" },
   "tooltip_sendRelatedQuery": { "message": "Anfon ymholiad cysylltiedig" },
   "placeholder_askSomethingElse": { "message": "Gofyn rhywbeth arall" },

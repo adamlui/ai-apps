@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Mokgwa wa go Kopa" },
   "mode_suffix": { "message": "Mokgwa wa Seeletswa" },
   "tooltip_playAnswer": { "message": "PLAY ANSWER" },
+  "tooltip_fontSize": { "message": "Saese ya font" },
   "tooltip_sendReply": { "message": "SEND ANSWER" },
   "tooltip_sendRelatedQuery": { "message": "ROMELA DIPOTSO TSE DI AMAN" },
   "placeholder_askSomethingElse": { "message": "ASK SENGWE SE SENGWE" },

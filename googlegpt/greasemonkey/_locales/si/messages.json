@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "මනාප ප් ‍ රකාරය" },
   "mode_suffix": { "message": "ප් ‍ රමාණාත්මක ප් ‍ රකාරය" },
   "tooltip_playAnswer": { "message": "ප් ‍ රතිචාරය වාදනය කරන්න" },
+  "tooltip_fontSize": { "message": "අකුරු ප්‍රමාණය" },
   "tooltip_sendReply": { "message": "ඊ-මේල් මගින් පිලිතුරු දෙන්න" },
   "tooltip_sendRelatedQuery": { "message": "අදාළ විමසුම යවන්න" },
   "placeholder_askSomethingElse": { "message": "වෙනත් යමක් ඇසුවොත්" },

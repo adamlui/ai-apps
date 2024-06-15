@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Mchitidwe wa Prefix" },
   "mode_suffix": { "message": "Lumikizanani nafe" },
   "tooltip_playAnswer": { "message": "Lumikizanani nafe" },
+  "tooltip_fontSize": { "message": "Kakulidwe ka fonti:" },
   "tooltip_sendReply": { "message": "Tumizani yankho" },
   "tooltip_sendRelatedQuery": { "message": "Tumizani mafunso okhudzana" },
   "placeholder_askSomethingElse": { "message": "Funsani china" },

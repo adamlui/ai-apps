@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Modus prefix" },
   "mode_suffix": { "message": "Modus Sufix" },
   "tooltip_playAnswer": { "message": "Reperire" },
+  "tooltip_fontSize": { "message": "Dimensio typi:" },
   "tooltip_sendReply": { "message": "Opportuna" },
   "tooltip_sendRelatedQuery": { "message": "Quaeso relatum" },
   "placeholder_askSomethingElse": { "message": "QUE QUAE QUAGE" },

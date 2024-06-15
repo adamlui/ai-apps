@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Პრეფიქსული რეჟიმი" },
   "mode_suffix": { "message": "Სუფიქსური რეჟიმი" },
   "tooltip_playAnswer": { "message": "Პასუხის დაკვრა" },
+  "tooltip_fontSize": { "message": "ფონტის ზომა" },
   "tooltip_sendReply": { "message": "გადაუგზავნე" },
   "tooltip_sendRelatedQuery": { "message": "Შესაბამისი მოთხოვნის გაგზავნა" },
   "placeholder_askSomethingElse": { "message": "Სხვა რამის კითხვა" },

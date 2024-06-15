@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Előtag mód" },
   "mode_suffix": { "message": "Utótag mód" },
   "tooltip_playAnswer": { "message": "Válasz lejátszása" },
+  "tooltip_fontSize": { "message": "Betűméret" },
   "tooltip_sendReply": { "message": "Válasz elküldése" },
   "tooltip_sendRelatedQuery": { "message": "Kapcsolódó lekérdezés küldése" },
   "placeholder_askSomethingElse": { "message": "Más kérdésem van" },

@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "སྔོན་སྒྲིག་གི་རྣམ་ཐར།" },
   "mode_suffix": { "message": "ལྔ་པ་སྒོ་" },
   "tooltip_playAnswer": { "message": "ལན་འདེབས་འབད།" },
+  "tooltip_fontSize": { "message": "ཡིག་སྣོད་སྦོམ་ཆུང་།" },
   "tooltip_sendReply": { "message": "ང་བཅས་ཀྱིས་ལན་རྐྱབ་ཨིན། ང་བཅས་ཀྱིས་ལན་རྐྱབ་ཨིན།" },
   "tooltip_sendRelatedQuery": { "message": "འབྲེལ་བ་ཡོད་པའི་དྲི་བ་ཚུ་གཏང་འབད།" },
   "placeholder_askSomethingElse": { "message": "ད་རུང་དྲི་བ་གཅིག་དྲི་ནི་" },

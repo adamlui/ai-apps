@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Habka Prefix" },
   "mode_suffix": { "message": "Suffix Mode" },
   "tooltip_playAnswer": { "message": "Jawaabta ciyaar" },
+  "tooltip_fontSize": { "message": "Cabbirka font" },
   "tooltip_sendReply": { "message": "Jawaab u dir" },
   "tooltip_sendRelatedQuery": { "message": "U dir su 'aalaha la xiriira" },
   "placeholder_askSomethingElse": { "message": "Weydii wax kale" },

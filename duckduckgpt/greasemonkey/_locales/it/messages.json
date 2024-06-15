@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Modalità prefisso" },
   "mode_suffix": { "message": "Suffisso" },
   "tooltip_playAnswer": { "message": "Riproduci risposta" },
+  "tooltip_fontSize": { "message": "Dimensione del carattere" },
   "tooltip_sendReply": { "message": "Invia risposta" },
   "tooltip_sendRelatedQuery": { "message": "Invia query correlata" },
   "placeholder_askSomethingElse": { "message": "Chiedimi qualcos'altro" },

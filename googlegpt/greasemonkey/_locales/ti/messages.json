@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "ሱፊክስ ሞድ" },
   "tooltip_playAnswer": { "message": "መልሲ ተጻወት" },
+  "tooltip_fontSize": { "message": "መጠን ፊደላት" },
   "tooltip_sendReply": { "message": "መልሲ ልኣኽ" },
   "tooltip_sendRelatedQuery": { "message": "ምስዚ ዚተሓሓዝ ሕቶ ልኣኽ" },
   "placeholder_askSomethingElse": { "message": "ካልእ ነገር ሕተቶ" },

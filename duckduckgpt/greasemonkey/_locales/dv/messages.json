@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "ޕްރިފިކްސް މޯޑް" },
   "mode_suffix": { "message": "ޕްރެފިކްޓް މޯޑް" },
   "tooltip_playAnswer": { "message": "ޖަވާބެއް ކުޅެބަލަ" },
+  "tooltip_fontSize": { "message": "ފޮންޓް ސައިޒް" },
   "tooltip_sendReply": { "message": "ޖަވާބު ފޮނުއްވާ" },
   "tooltip_sendRelatedQuery": { "message": "ގުޅުންހުރި ސުވާލު ތައް ފޮނުވުން" },
   "placeholder_askSomethingElse": { "message": "އެހެން ސުވާލެއް ކުރޭ" },

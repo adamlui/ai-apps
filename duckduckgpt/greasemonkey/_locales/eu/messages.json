@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Aurrizkien modua" },
   "mode_suffix": { "message": "Atzizki modua" },
   "tooltip_playAnswer": { "message": "Erreproduzitu erantzuna" },
+  "tooltip_fontSize": { "message": "Letra-tamaina " },
   "tooltip_sendReply": { "message": "Erantzuna bidali" },
   "tooltip_sendRelatedQuery": { "message": "Bidali erlazionatutako kontsulta" },
   "placeholder_askSomethingElse": { "message": "Beste zerbait galdetu" },

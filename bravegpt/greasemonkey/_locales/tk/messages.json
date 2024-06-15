@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Prefiks Modu" },
   "mode_suffix": { "message": "Suffix Modu" },
   "tooltip_playAnswer": { "message": "Jawap oýna" },
+  "tooltip_fontSize": { "message": "Şriftiň ululygy..." },
   "tooltip_sendReply": { "message": "Jawap iber" },
   "tooltip_sendRelatedQuery": { "message": "Baglanyşykly soragy iber" },
   "placeholder_askSomethingElse": { "message": "Siz ýene bir soragy sorap bilersiňizmi" },

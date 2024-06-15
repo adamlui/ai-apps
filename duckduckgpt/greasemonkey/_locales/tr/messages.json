@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Önek Modu" },
   "mode_suffix": { "message": "Sonek Modu" },
   "tooltip_playAnswer": { "message": "Yanıtı oynat" },
+  "tooltip_fontSize": { "message": "Yazı boyutu" },
   "tooltip_sendReply": { "message": "Yanıt Gönder" },
   "tooltip_sendRelatedQuery": { "message": "İlgili sorguyu gönder" },
   "placeholder_askSomethingElse": { "message": "Başka bir şey" },

@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Modalità Prefiss" },
   "mode_suffix": { "message": "Modalità Suffix" },
   "tooltip_playAnswer": { "message": "Ara t-tweġiba" },
+  "tooltip_fontSize": { "message": "Daqs tat-tipa" },
   "tooltip_sendReply": { "message": "Ibgħat tweġiba" },
   "tooltip_sendRelatedQuery": { "message": "Ibgħat mistoqsija relatata" },
   "placeholder_askSomethingElse": { "message": "Xi ħaġa oħra" },

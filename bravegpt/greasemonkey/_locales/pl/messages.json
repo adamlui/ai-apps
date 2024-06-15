@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Tryb prefiksu" },
   "mode_suffix": { "message": "Tryb przyrostka" },
   "tooltip_playAnswer": { "message": "Odtwórz odpowiedź" },
+  "tooltip_fontSize": { "message": "Rozmiar czcionki" },
   "tooltip_sendReply": { "message": "Odpowiedz" },
   "tooltip_sendRelatedQuery": { "message": "Wyślij powiązane zapytanie" },
   "placeholder_askSomethingElse": { "message": "Coś innego" },

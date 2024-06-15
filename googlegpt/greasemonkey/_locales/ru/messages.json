@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Режим префикса" },
   "mode_suffix": { "message": "Режим суффикса" },
   "tooltip_playAnswer": { "message": "Воспроизвести ответ" },
+  "tooltip_fontSize": { "message": "Размер шрифта" },
   "tooltip_sendReply": { "message": "Отправить ответ" },
   "tooltip_sendRelatedQuery": { "message": "Отправить связанный запрос" },
   "placeholder_askSomethingElse": { "message": "Другое" },

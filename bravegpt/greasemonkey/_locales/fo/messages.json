@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Præfiksmodus" },
   "mode_suffix": { "message": "Eftirfylgjandi standi" },
   "tooltip_playAnswer": { "message": "Spæl svar" },
+  "tooltip_fontSize": { "message": "Skriftstødd..." },
   "tooltip_sendReply": { "message": "Sende svar" },
   "tooltip_sendRelatedQuery": { "message": "Send viðkomandi spurning" },
   "placeholder_askSomethingElse": { "message": "Eg vil spyrja teg um okkurt annað" },

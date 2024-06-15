@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Etuliitteen tila" },
   "mode_suffix": { "message": "Jälkiliite-tila" },
   "tooltip_playAnswer": { "message": "Toista vastaus" },
+  "tooltip_fontSize": { "message": "Kirjasimen koko" },
   "tooltip_sendReply": { "message": "Vastaa" },
   "tooltip_sendRelatedQuery": { "message": "Lähetä liittyvä kysely" },
   "placeholder_askSomethingElse": { "message": "Joku muu" },

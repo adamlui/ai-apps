@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Eesliite režiim" },
   "mode_suffix": { "message": "Järelliite režiim" },
   "tooltip_playAnswer": { "message": "Mängi / Vasta" },
+  "tooltip_fontSize": { "message": "Kirjasuurus" },
   "tooltip_sendReply": { "message": "Saada vastus" },
   "tooltip_sendRelatedQuery": { "message": "Saada seotud päring" },
   "placeholder_askSomethingElse": { "message": "Küsi midagi" },

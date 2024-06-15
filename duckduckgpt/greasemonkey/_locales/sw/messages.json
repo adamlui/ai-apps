@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Hali ya Kiambishi awali" },
   "mode_suffix": { "message": "Hali ya Suffix" },
   "tooltip_playAnswer": { "message": "Jibu la mchezo" },
+  "tooltip_fontSize": { "message": "Ukubwa wa fonti:" },
   "tooltip_sendReply": { "message": "Tuma jibu" },
   "tooltip_sendRelatedQuery": { "message": "Tuma swali linalohusiana" },
   "placeholder_askSomethingElse": { "message": "Uliza kitu kingine" },

@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Modh an ro - leasachaidh" },
   "mode_suffix": { "message": "Modh an iar - leasachaidh" },
   "tooltip_playAnswer": { "message": "Cluich am freagairt" },
+  "tooltip_fontSize": { "message": "Meud a' chrutha-clò..." },
   "tooltip_sendReply": { "message": "Cuir freagairt" },
   "tooltip_sendRelatedQuery": { "message": "Cuir a 'cheist co - cheangailte ris" },
   "placeholder_askSomethingElse": { "message": "Cuir ceist air rudeigin eile" },

@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Mod Awalan" },
   "mode_suffix": { "message": "Mod Akhiran" },
   "tooltip_playAnswer": { "message": "Mainkan jawapan" },
+  "tooltip_fontSize": { "message": "Saiz huruf" },
   "tooltip_sendReply": { "message": "Balas" },
   "tooltip_sendRelatedQuery": { "message": "Hantar pertanyaan berkaitan" },
   "placeholder_askSomethingElse": { "message": "Tanya perkara lain" },

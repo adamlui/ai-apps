@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Ke ano prefix" },
   "mode_suffix": { "message": "ʻAno Suffix" },
   "tooltip_playAnswer": { "message": "Pāʻani pane" },
+  "tooltip_fontSize": { "message": "Nui kikokiko" },
   "tooltip_sendReply": { "message": "Hoʻouna pane" },
   "tooltip_sendRelatedQuery": { "message": "E hoʻouna i ka nīnau pili" },
   "placeholder_askSomethingElse": { "message": "E nīnau i kekahi mea ʻē aʻe" },

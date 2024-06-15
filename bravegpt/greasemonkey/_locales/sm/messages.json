@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Suffix Mode" },
   "tooltip_playAnswer": { "message": "Taaalo Tali" },
+  "tooltip_fontSize": { "message": "Font tele" },
   "tooltip_sendReply": { "message": "Auina atu se tali" },
   "tooltip_sendRelatedQuery": { "message": "Auina atu fesili e fesootai i ai" },
   "placeholder_askSomethingElse": { "message": "Fesili atu i se isi mea" },

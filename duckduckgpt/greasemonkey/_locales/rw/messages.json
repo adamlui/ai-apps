@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "< Uburemere UTSINDAGIYE" },
   "mode_suffix": { "message": "Ubwoko" },
   "tooltip_playAnswer": { "message": "Igisubizo" },
+  "tooltip_fontSize": { "message": "Imyandikire" },
   "tooltip_sendReply": { "message": "Subiza" },
   "tooltip_sendRelatedQuery": { "message": "Ikibazo #" },
   "placeholder_askSomethingElse": { "message": "Ikindi" },

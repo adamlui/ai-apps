@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "دۆخی پێشگر" },
   "mode_suffix": { "message": "دۆخی پاشگر" },
   "tooltip_playAnswer": { "message": "وەڵام یاری بکە" },
+  "tooltip_fontSize": { "message": "قەبارەی جۆرە پیت" },
   "tooltip_sendReply": { "message": "وەڵام بنێرە" },
   "tooltip_sendRelatedQuery": { "message": "پرسگەی پەیوەندیدار بنێرە" },
   "placeholder_askSomethingElse": { "message": "پرسیار لە شتێکی تر بکە" },

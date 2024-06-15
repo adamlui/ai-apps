@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Λειτουργία προθέματος" },
   "mode_suffix": { "message": "Λειτουργία επιθέματος" },
   "tooltip_playAnswer": { "message": "Αναπαραγωγή απάντησης" },
+  "tooltip_fontSize": { "message": "Μέγεθος γραμματοσειράς" },
   "tooltip_sendReply": { "message": "Αποστολή απάντησης" },
   "tooltip_sendRelatedQuery": { "message": "Αποστολή σχετικού ερωτήματος" },
   "placeholder_askSomethingElse": { "message": "Κάτι άλλο" },

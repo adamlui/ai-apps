@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Präfix-Modus" },
   "mode_suffix": { "message": "Suffix-Modus" },
   "tooltip_playAnswer": { "message": "Antwortnote abspielen" },
+  "tooltip_fontSize": { "message": "Schriftgröße" },
   "tooltip_sendReply": { "message": "Antwort senden" },
   "tooltip_sendRelatedQuery": { "message": "Zugehörige Abfrage senden" },
   "placeholder_askSomethingElse": { "message": "Ein anderes System" },

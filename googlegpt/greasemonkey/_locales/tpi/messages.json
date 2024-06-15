@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Prefix mode" },
   "mode_suffix": { "message": "Suffix mode" },
   "tooltip_playAnswer": { "message": "Toktok bilong bekim" },
+  "tooltip_fontSize": { "message": "Sais bilong leta:" },
   "tooltip_sendReply": { "message": "Kirap bekim" },
   "tooltip_sendRelatedQuery": { "message": "Send a related query" },
   "placeholder_askSomethingElse": { "message": "Mi laik askim yu long wanpela samting moa" },

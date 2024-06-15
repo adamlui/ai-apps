@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Режим на префикс" },
   "mode_suffix": { "message": "Режим на суфикс" },
   "tooltip_playAnswer": { "message": "Възпроизвеждане на отговор" },
+  "tooltip_fontSize": { "message": "Размер на мравка" },
   "tooltip_sendReply": { "message": "За отговор" },
   "tooltip_sendRelatedQuery": { "message": "Изпращане на свързано запитване" },
   "placeholder_askSomethingElse": { "message": "Друго" },

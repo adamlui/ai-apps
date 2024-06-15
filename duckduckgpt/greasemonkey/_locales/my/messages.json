@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "ရှေ့ဆက်မုဒ်" },
   "mode_suffix": { "message": "နောက်ဆက်တွဲ မုဒ်" },
   "tooltip_playAnswer": { "message": "အဖြေကို ဖွင့်ပါ" },
+  "tooltip_fontSize": { "message": "ဖောင့်အရွယ်အစား" },
   "tooltip_sendReply": { "message": "ပြန်စာပို့ရန်" },
   "tooltip_sendRelatedQuery": { "message": "ဆက်စပ်မေးမြန်းချက် ပေးပို့ပါ" },
   "placeholder_askSomethingElse": { "message": "အခြားတစ်ခုခုကို မေးပါ" },

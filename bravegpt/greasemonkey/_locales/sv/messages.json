@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Prefixläge" },
   "mode_suffix": { "message": "Suffixläge" },
   "tooltip_playAnswer": { "message": "Spela svar" },
+  "tooltip_fontSize": { "message": "Teckenstorlek" },
   "tooltip_sendReply": { "message": "Skicka svar" },
   "tooltip_sendRelatedQuery": { "message": "Skicka relaterad fråga" },
   "placeholder_askSomethingElse": { "message": "Någonting annat" },

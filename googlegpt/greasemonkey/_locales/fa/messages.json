@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "حالت پیشوند" },
   "mode_suffix": { "message": "حالت پسوند" },
   "tooltip_playAnswer": { "message": "پاسخ را پخش کنید" },
+  "tooltip_fontSize": { "message": "اندازه فونت" },
   "tooltip_sendReply": { "message": "ارسال پاسخ" },
   "tooltip_sendRelatedQuery": { "message": "ارسال درخواست مرتبط" },
   "placeholder_askSomethingElse": { "message": "یک چیز دیگر" },

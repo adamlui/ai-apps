@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Chế độ Tiền tố" },
   "mode_suffix": { "message": "Chế độ Hậu tố" },
   "tooltip_playAnswer": { "message": "Phát câu trả lời" },
+  "tooltip_fontSize": { "message": "Kích thước phông" },
   "tooltip_sendReply": { "message": "Trả lời" },
   "tooltip_sendRelatedQuery": { "message": "Gửi truy vấn liên quan" },
   "placeholder_askSomethingElse": { "message": "Khác" },

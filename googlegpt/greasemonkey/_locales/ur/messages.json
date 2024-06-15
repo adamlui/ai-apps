@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "سابقہ موڈ" },
   "mode_suffix": { "message": "صفت وضع" },
   "tooltip_playAnswer": { "message": "جواب پلے کریں" },
+  "tooltip_fontSize": { "message": "فونٹ سائز" },
   "tooltip_sendReply": { "message": "جواب بھیجیں" },
   "tooltip_sendRelatedQuery": { "message": "متعلقہ استفسار بھیجیں" },
   "placeholder_askSomethingElse": { "message": "کچھ پوچھیں" },

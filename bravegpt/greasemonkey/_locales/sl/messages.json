@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Način predpone" },
   "mode_suffix": { "message": "Način pripone" },
   "tooltip_playAnswer": { "message": "Predvajaj odgovor" },
+  "tooltip_fontSize": { "message": "Velikost pisave" },
   "tooltip_sendReply": { "message": "Odgovori" },
   "tooltip_sendRelatedQuery": { "message": "Pošlji povezano poizvedbo" },
   "placeholder_askSomethingElse": { "message": "Nekaj drugega" },

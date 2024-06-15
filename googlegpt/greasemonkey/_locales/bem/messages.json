@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Prefix Mode" },
   "mode_suffix": { "message": "Fela Kuti - Suffix Mode" },
   "tooltip_playAnswer": { "message": "Tinikeni pa kwasuka" },
+  "tooltip_fontSize": { "message": "Ubukulu bwa filembo..." },
   "tooltip_sendReply": { "message": "Tuma Mwakitwile" },
   "tooltip_sendRelatedQuery": { "message": "Tumineni ifipusho ifilanda pali ili lyashi" },
   "placeholder_askSomethingElse": { "message": "Ask Mukena Bali" },

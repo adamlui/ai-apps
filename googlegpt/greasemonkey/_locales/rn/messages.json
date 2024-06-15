@@ -26,6 +26,7 @@
   "mode_prefix": { "message": "Prefix Mode None None" },
   "mode_suffix": { "message": "Uburyo buhagije" },
   "tooltip_playAnswer": { "message": "Kwinana Reply" },
+  "tooltip_fontSize": { "message": "Ubunini bwa Font" },
   "tooltip_sendReply": { "message": "Rungika Rungika" },
   "tooltip_sendRelatedQuery": { "message": "Rungika Rungika Ibibazo bifitaniye isano" },
   "placeholder_askSomethingElse": { "message": "Nusabe ikindi kintu" },
