@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.14.1
+// @version             2024.6.14.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -415,7 +415,7 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@698b652/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@f59023d/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
