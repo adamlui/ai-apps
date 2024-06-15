@@ -41,8 +41,10 @@
                           : site == 'poe' ? 'menu[class*="sidebar"], aside[class*="sidebar"]' : '',
           sidepadSelector = '#__next > div > div',
           headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : '',
-          footerSelector = /chatgpt|openai/.test(site) ?
+    let footerSelector = 'footer'
+    try { footerSelector = /chatgpt|openai/.test(site) ?
               chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]])/g, '\\$1').replace(/^| /g, '.') : ''
+    } catch (err) {}
 
     // AUTO-FOCUS ChatGPT chatbar if enabled
     if (/chatgpt|openai/.test(site)) {
