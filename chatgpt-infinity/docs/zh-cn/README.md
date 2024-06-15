@@ -156,7 +156,7 @@ ChatGPT 无穷 与以下浏览器兼容:
 
 ## 🧠 贡献者
 
-该项目的存在得益于以下贡献者的代码、翻译、问题和想法:
+该项目的存在得益于以下贡献者的代码、测试、问题、翻译和想法：
 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.04.28&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.30-doc-translations&h=50&w=50&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)

@@ -159,7 +159,7 @@ If you've tested it to work in a browser not listed, simply create a [pull reque
 
 ## 🧠 Contributors
 
-This project exists thanks to code, translations, issues & ideas from the following contributors:
+This project exists thanks to code, testing, issues, translations & ideas from the following contributors:
 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.04.28&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/131989355?first-contrib=2023.04.30-doc-translations&h=50&w=50&mask=circle&maxage=7d "@Zin6969")](https://github.com/Zin6969)

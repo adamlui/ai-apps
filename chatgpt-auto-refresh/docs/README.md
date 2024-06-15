@@ -148,7 +148,7 @@ ChatGPT Auto Refresh is compatible w/ the following browsers using [Tampermonkey
 
 ## 🧠 Contributors
 
-This project exists thanks to code, translations, issues & ideas from the following contributors:
+This project exists thanks to code, testing, issues, translations & ideas from the following contributors:
 
 <div align="center">
 

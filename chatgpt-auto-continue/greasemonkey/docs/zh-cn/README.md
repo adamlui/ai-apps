@@ -67,7 +67,7 @@ ChatGPT 自动继续 依赖于功能强大的 [chatgpt.js](https://github.com/Ku
 
 ## 🧠 贡献者
 
-该项目的存在归功于以下贡献者的代码、翻译、问题和想法:
+该项目的存在得益于以下贡献者的代码、测试、问题、翻译和想法：
 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.04.28&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/84412716?first-contrib=2023.08.02-ux-update-bug-report&h=50&w=50&mask=circle&maxage=7d "@a12930")](https://github.com/a12930)

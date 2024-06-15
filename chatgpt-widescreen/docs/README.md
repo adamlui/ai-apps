@@ -172,7 +172,7 @@ ChatGPT Widescreen Mode is compatible w/ the following browsers:
 
 ## 🧠 Contributors
 
-This project exists thanks to code, translations, issues & ideas from the following contributors:
+This project exists thanks to code, testing, issues, translations & ideas from the following contributors:
 
 <div align="center"><br>
 

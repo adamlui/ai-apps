@@ -89,7 +89,7 @@ Autoclear ChatGPT History is compatible w/ the following browsers using [Tamperm
 
 ## 🧠 Contributors
 
-This project exists thanks to code, translations, issues & ideas from the following contributors:
+This project exists thanks to code, testing, issues, translations & ideas from the following contributors:
 
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/10906554?first-contrib=2023.02.26&h=50&w=50&mask=circle&maxage=7d "@adamlui")](https://github.com/adamlui)
 [![](https://images.weserv.nl/?url=https://avatars.githubusercontent.com/u/102437240?first-contrib=2023.02.25-autoclear-idea&h=50&w=50&mask=circle&maxage=7d "@Tripp1e")](https://github.com/Tripp1e)

@@ -147,7 +147,7 @@ ChatGPT 自动刷新兼容以下使用 [Tampermonkey](https://www.tampermonkey.n
 
 ## 🧠 贡献者
 
-该项目的存在归功于以下贡献者的代码、翻译、问题和想法:
+该项目的存在得益于以下贡献者的代码、测试、问题、翻译和想法：
 <br><br>
 
 <div align="center">
