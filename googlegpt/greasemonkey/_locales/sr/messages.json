@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Dodaje AI odgovore u Google pretragu (pokreće Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Automatski dobijte odgovore" },
+  "menuLabel_autoFocusChatbar": { "message": "Traka za ćaskanje sa automatskim fokusiranjem" },
   "menuLabel_whenStreaming": { "message": "prilikom striminga" },
   "menuLabel_proxyAPImode": { "message": "API režim proksija" },
   "menuLabel_relatedQueries": { "message": "Povezani upiti" },

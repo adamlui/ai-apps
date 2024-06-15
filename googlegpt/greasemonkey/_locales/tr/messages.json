@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google Arama'ya yapay zeka yanıtları ekler (Google Gemma + GPT -4o tarafından desteklenmektedir!)" },
   "menuLabel_autoGetAnswers": { "message": "Otomatik Yanıt Al" },
+  "menuLabel_autoFocusChatbar": { "message": "Otomatik Odaklanma Sohbet Çubuğu" },
   "menuLabel_whenStreaming": { "message": "akış sırasında" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Modu" },
   "menuLabel_relatedQueries": { "message": "İlgili Sorgular" },

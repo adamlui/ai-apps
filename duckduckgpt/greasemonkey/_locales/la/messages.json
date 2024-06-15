@@ -3,6 +3,7 @@
   "appDesc": { "message": "Adiungit ChatGPT responsa ad DuckDuckGo pars (motum per GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Modus" },
   "menuLabel_autoGetAnswers": { "message": "Answers Auto-Get" },
+  "menuLabel_autoFocusChatbar": { "message": "Autocus Chatbar" },
   "menuLabel_whenStreaming": { "message": "quando streaming" },
   "menuLabel_relatedQueries": { "message": "Quaeso relatum" },
   "menuLabel_require": { "message": "Requirere" },

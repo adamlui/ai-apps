@@ -3,6 +3,7 @@
   "appDesc": { "message": "Lisää ChatGPT-vastaukset Brave Search -sivupalkkiin (powered by GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Välityspalvelimen API-tila" },
   "menuLabel_autoGetAnswers": { "message": "Automaattinen vastausten haku" },
+  "menuLabel_autoFocusChatbar": { "message": "Automaattitarkennuksen keskustelupalkki" },
   "menuLabel_whenStreaming": { "message": "kun suoratoistat" },
   "menuLabel_relatedQueries": { "message": "Aiheeseen liittyvät kyselyt" },
   "menuLabel_require": { "message": "Vaaditaan" },

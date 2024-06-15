@@ -3,6 +3,7 @@
   "appDesc": { "message": "Ifaka izimpendulo ze-ChatGPT kubha eseceleni Yosesho Olunesibindi (inikwe amandla yi-GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Imodi ye-API Yombambeli" },
   "menuLabel_autoGetAnswers": { "message": "Thola Izimpendulo Ngokuzenzakalelayo" },
+  "menuLabel_autoFocusChatbar": { "message": "I-Auto-Focus Chatbar" },
   "menuLabel_whenStreaming": { "message": "lapho kusakazwa" },
   "menuLabel_relatedQueries": { "message": "Imibuzo Ehlobene" },
   "menuLabel_require": { "message": "Kudingeka" },

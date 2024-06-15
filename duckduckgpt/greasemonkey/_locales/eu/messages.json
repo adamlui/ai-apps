@@ -3,6 +3,7 @@
   "appDesc": { "message": "ChatGPT erantzunak gehitzen ditu DuckDuckGo alboko barran (GPT-4o-k bultzatuta!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API modua" },
   "menuLabel_autoGetAnswers": { "message": "Lortu erantzunak automatikoki" },
+  "menuLabel_autoFocusChatbar": { "message": "Foku automatikoko txat-barra" },
   "menuLabel_whenStreaming": { "message": "erreproduzitzean" },
   "menuLabel_relatedQueries": { "message": "Erlazionatutako kontsultak" },
   "menuLabel_require": { "message": "Eskatu" },

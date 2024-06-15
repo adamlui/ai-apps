@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "מוסיף תשובות בינה מלאכותית לחיפוש Google (מופעל על ידי Google Gemma + GPT -4o!)" },
   "menuLabel_autoGetAnswers": { "message": "קבל תשובות אוטומטיות" },
+  "menuLabel_autoFocusChatbar": { "message": "פוקוס אוטומטי של סרגל הצ'אט" },
   "menuLabel_whenStreaming": { "message": "בזמן סטרימינג" },
   "menuLabel_proxyAPImode": { "message": "מצב API של שרת Proxy" },
   "menuLabel_relatedQueries": { "message": "שאילתות קשורות" },

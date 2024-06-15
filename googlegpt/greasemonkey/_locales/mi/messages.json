@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Tāpirihia nga whakautu AI ki a Google Search (e whakahaerehia ana e Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Whakautu Auto-Get" },
+  "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_whenStreaming": { "message": "i te wa e rere ana" },
   "menuLabel_proxyAPImode": { "message": "Aratau API Proxy" },
   "menuLabel_relatedQueries": { "message": "Ngā pātai e pā ana" },

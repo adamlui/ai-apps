@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Adds AI valitum ad Google Search (Powered by Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Answers Auto-Get" },
+  "menuLabel_autoFocusChatbar": { "message": "Autocus Chatbar" },
   "menuLabel_whenStreaming": { "message": "quando streaming" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Modus" },
   "menuLabel_relatedQueries": { "message": "Quaeso relatum" },

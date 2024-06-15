@@ -3,6 +3,7 @@
   "appDesc": { "message": "ለጀግንነት ፍለጋ የጎን አሞሌ (በ GPT-4o የተጎላበተ) ChatGPT ምላሾችን ያክሉ!" },
   "menuLabel_proxyAPImode": { "message": "ተኪ ኤፒአይ ሁነታ" },
   "menuLabel_autoGetAnswers": { "message": "ራስ-ጌ መልሶች" },
+  "menuLabel_autoFocusChatbar": { "message": "ራስ-ፎኩስ ቻትባር" },
   "menuLabel_whenStreaming": { "message": "ዥረት ጊዜ" },
   "menuLabel_relatedQueries": { "message": "ተዛማጅ ጥያቄዎች" },
   "menuLabel_require": { "message": "ያስፈልጋል" },

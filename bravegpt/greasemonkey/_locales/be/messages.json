@@ -3,6 +3,7 @@
   "appDesc": { "message": "Дадае адказы ChatGPT у адважную бакавую панэль пошуку (працуе на GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Рэжым API-проксі" },
   "menuLabel_autoGetAnswers": { "message": "Аўтаматычнае атрыманне адказаў" },
+  "menuLabel_autoFocusChatbar": { "message": "Аўтаматычная фокусная панель чата" },
   "menuLabel_whenStreaming": { "message": "пры струменевай перадачы" },
   "menuLabel_relatedQueries": { "message": "Звязаныя запыты" },
   "menuLabel_require": { "message": "Патрабаванне" },

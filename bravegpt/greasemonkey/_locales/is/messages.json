@@ -3,6 +3,7 @@
   "appDesc": { "message": "Bætir ChatGPT svörum við Brave Search hliðarstiku (keyrð af GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API hamur" },
   "menuLabel_autoGetAnswers": { "message": "Sjálfvirk svör" },
+  "menuLabel_autoFocusChatbar": { "message": "Spjallslá með sjálfvirkum fókus" },
   "menuLabel_whenStreaming": { "message": "þegar streymt er" },
   "menuLabel_relatedQueries": { "message": "Tengdar fyrirspurnir" },
   "menuLabel_require": { "message": "Ãarfnast" },

@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Προσθέτει απαντήσεις AI στην Αναζήτηση Google (τροφοδοτείται από το Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Αυτόματη λήψη απαντήσεων" },
+  "menuLabel_autoFocusChatbar": { "message": "Γραμμή συνομιλίας αυτόματης εστίασης" },
   "menuLabel_whenStreaming": { "message": "κατά τη ροή" },
   "menuLabel_proxyAPImode": { "message": "Λειτουργία API διακομιστή μεσολάβησης" },
   "menuLabel_relatedQueries": { "message": "Σχετικά ερωτήματα" },

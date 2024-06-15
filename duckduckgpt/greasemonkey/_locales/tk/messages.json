@@ -3,6 +3,7 @@
   "appDesc": { "message": "ÇatGPT jogaplaryny DuckDuckGo (GPT-4o bilen işleýän!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API tertibi" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get jogaplary" },
+  "menuLabel_autoFocusChatbar": { "message": "Awto-Fokus Çatbary" },
   "menuLabel_whenStreaming": { "message": "ötýänçä" },
   "menuLabel_relatedQueries": { "message": "Baglanyşykly soraglar" },
   "menuLabel_require": { "message": "Kerek" },

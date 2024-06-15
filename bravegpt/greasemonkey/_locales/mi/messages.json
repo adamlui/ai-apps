@@ -3,6 +3,7 @@
   "appDesc": { "message": "Tāpiri ChatGPT whakautu ki Brave Search sidebar (e whakahaerehia ana e GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Aratau API Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Whakautu Auto-Get" },
+  "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_whenStreaming": { "message": "i te wa e rere ana" },
   "menuLabel_relatedQueries": { "message": "Ngā pātai e pā ana" },
   "menuLabel_require": { "message": "Ngā whakaritenga" },

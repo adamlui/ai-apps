@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google-ийн хайлтанд AI-ийг нэмнэ (Google Gemma + GPT-4o зайтай!)" },
   "menuLabel_autoGetAnswers": { "message": "Авто-Орлогийн хариултууд" },
+  "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_whenStreaming": { "message": "урсгал хийх үед" },
   "menuLabel_proxyAPImode": { "message": "Proxy API горим" },
   "menuLabel_relatedQueries": { "message": "Холбогдох асуултууд" },

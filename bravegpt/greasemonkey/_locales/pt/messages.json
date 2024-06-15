@@ -3,6 +3,7 @@
   "appDesc": { "message": "Adiciona respostas do ChatGPT à barra lateral do Brave Search (alimentado pelo GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Modo API Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Obter respostas automaticamente" },
+  "menuLabel_autoFocusChatbar": { "message": "Barra de Chat com Foco Automático" },
   "menuLabel_whenStreaming": { "message": "ao transmitir" },
   "menuLabel_relatedQueries": { "message": "Consultas Relacionadas" },
   "menuLabel_require": { "message": "Exigir" },

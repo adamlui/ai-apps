@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google gözlegine AI jogaplaryny goş (Google Gemma + GPT-4o bilen işleýär!)" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get jogaplary" },
+  "menuLabel_autoFocusChatbar": { "message": "Awto-Fokus Çatbary" },
   "menuLabel_whenStreaming": { "message": "ötýänçä" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_relatedQueries": { "message": "Baglanyşykly soraglar" },

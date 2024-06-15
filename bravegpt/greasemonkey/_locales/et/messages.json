@@ -3,6 +3,7 @@
   "appDesc": { "message": "Lisab ChatGPT vastused Brave Searchi külgribale (toetab GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Puhverserveri API-režiim" },
   "menuLabel_autoGetAnswers": { "message": "Automaatne vastuste hankimine" },
+  "menuLabel_autoFocusChatbar": { "message": "Automaatse teravustamise vestlusriba" },
   "menuLabel_whenStreaming": { "message": "voogesituse ajal" },
   "menuLabel_relatedQueries": { "message": "Seotud päringud" },
   "menuLabel_require": { "message": "Jaapani jeen" },

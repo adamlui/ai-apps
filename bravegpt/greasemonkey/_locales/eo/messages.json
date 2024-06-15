@@ -3,6 +3,7 @@
   "appDesc": { "message": "Aldonas ChatGPT respondoj al Kuraĝa Serĉo sidebar (funkciigita de GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Prokura API-Reĝimo" },
   "menuLabel_autoGetAnswers": { "message": "Aŭtomate ricevi respondojn" },
+  "menuLabel_autoFocusChatbar": { "message": "@ info: whatsthis" },
   "menuLabel_whenStreaming": { "message": "dum fluo" },
   "menuLabel_relatedQueries": { "message": "Rilataj demandoj" },
   "menuLabel_require": { "message": "Postuli" },

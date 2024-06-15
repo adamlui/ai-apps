@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Inaongeza majibu ya AI kwenye Utafutaji wa Google (inaendeshwa na Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Pata Majibu Kiotomatiki" },
+  "menuLabel_autoFocusChatbar": { "message": "Baa ya Gumzo la Kuzingatia Kiotomatiki" },
   "menuLabel_whenStreaming": { "message": "wakati wa kutiririsha" },
   "menuLabel_proxyAPImode": { "message": "Hali Mbadala ya API" },
   "menuLabel_relatedQueries": { "message": "Maswali Yanayohusiana" },

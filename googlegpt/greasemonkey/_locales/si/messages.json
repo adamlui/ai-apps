@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Google සෙවුම් සඳහා AI පිළිතුරු එක් කරයි (Google Gemma + GPT-4o විසින් බල ගැන්වේ!)" },
   "menuLabel_autoGetAnswers": { "message": "ස්වයංක් ‍ රීය පිළිතුරු ලබා ගන්න" },
+  "menuLabel_autoFocusChatbar": { "message": "ස්වයංක් ‍ රීය නාභිගත සංවාද තීරුව" },
   "menuLabel_whenStreaming": { "message": "ප් ‍ රවාහනය කරන විට" },
   "menuLabel_proxyAPImode": { "message": "ප් ‍ රොක්සි API ප් ‍ රකාරය" },
   "menuLabel_relatedQueries": { "message": "ආශ් ‍ රිත විමසුම්" },

@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Faʻaopopo AI tali i Google Search (faʻamalosia e Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Tali Auto-Get" },
+  "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_whenStreaming": { "message": "pe a tafe" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_relatedQueries": { "message": "Fesili" },

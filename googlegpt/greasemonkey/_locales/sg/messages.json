@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Add AI answers to Google Search (na lege ti Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Réponses" },
+  "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar Anglais" },
   "menuLabel_whenStreaming": { "message": "na ngoi so a yeke pika" },
   "menuLabel_proxyAPImode": { "message": "Proxy API mode na na na" },
   "menuLabel_relatedQueries": { "message": "Ahundango tënë so andu tënë ni" },

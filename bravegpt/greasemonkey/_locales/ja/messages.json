@@ -3,6 +3,7 @@
   "appDesc": { "message": "Brave Search サイドバーに ChatGPT 回答を追加 (GPT-4o 搭載!)" },
   "menuLabel_proxyAPImode": { "message": "プロキシ API モード" },
   "menuLabel_autoGetAnswers": { "message": "回答を自動取得" },
+  "menuLabel_autoFocusChatbar": { "message": "オートフォーカスチャットバー" },
   "menuLabel_whenStreaming": { "message": "ストリーミング時" },
   "menuLabel_relatedQueries": { "message": "関連するクエリ" },
   "menuLabel_require": { "message": "必須" },

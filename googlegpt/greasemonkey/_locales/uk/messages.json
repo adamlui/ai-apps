@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Додає відповіді ШІ до Пошуку Google (на базі Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Автоматичне отримання відповідей" },
+  "menuLabel_autoFocusChatbar": { "message": "Панель чату з автофокусом" },
   "menuLabel_whenStreaming": { "message": "під час потокової передачі" },
   "menuLabel_proxyAPImode": { "message": "Режим API проксі-сервера" },
   "menuLabel_relatedQueries": { "message": "Пов 'язані запити" },

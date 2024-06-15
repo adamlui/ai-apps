@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Lägger till AI-svar i Google Sök (drivs av Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Få svar automatiskt" },
+  "menuLabel_autoFocusChatbar": { "message": "Chatbar med autofokus" },
   "menuLabel_whenStreaming": { "message": "vid streaming" },
   "menuLabel_proxyAPImode": { "message": "Proxy API-läge" },
   "menuLabel_relatedQueries": { "message": "Relaterade frågor" },

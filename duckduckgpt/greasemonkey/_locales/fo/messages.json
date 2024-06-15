@@ -3,6 +3,7 @@
   "appDesc": { "message": "Legg ChatGPT svar til DuckDuckGo sidebar (drivið av GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API standi" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Svar" },
+  "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_whenStreaming": { "message": "tá ið tað verður streymt" },
   "menuLabel_relatedQueries": { "message": "Viðkomandi spurningar" },
   "menuLabel_require": { "message": "Kravið" },

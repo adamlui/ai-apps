@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "מוסיף אַי ענטפֿערס צו Google זוך (פּאַוערד דורך Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "אַוטאָ-באַקומען ענטפֿערס" },
+  "menuLabel_autoFocusChatbar": { "message": "אַוטאָ-פאָקוס טשאַטבאַר" },
   "menuLabel_whenStreaming": { "message": "ווען סטרימינג" },
   "menuLabel_proxyAPImode": { "message": "פּראָקסי אַפּי מאָדע" },
   "menuLabel_relatedQueries": { "message": "Related Queries" },

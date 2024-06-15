@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "向 Google 搜索添加 AI 智能答案（由 Google Gemma + GPT-4o 提供支持！）" },
   "menuLabel_autoGetAnswers": { "message": "自動取得答案" },
+  "menuLabel_autoFocusChatbar": { "message": "自動對焦聊天列" },
   "menuLabel_whenStreaming": { "message": "串流時" },
   "menuLabel_proxyAPImode": { "message": "代理 API 模式" },
   "menuLabel_relatedQueries": { "message": "相關查詢" },

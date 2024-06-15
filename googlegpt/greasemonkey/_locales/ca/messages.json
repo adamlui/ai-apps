@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Afegeix respostes d'IA a la cerca de Google (amb la tecnologia de Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Obtenir respostes automàticament" },
+  "menuLabel_autoFocusChatbar": { "message": "Barra de xat amb enfocament automàtic" },
   "menuLabel_whenStreaming": { "message": "en transmetre" },
   "menuLabel_proxyAPImode": { "message": "Mode API de servidor intermediari" },
   "menuLabel_relatedQueries": { "message": "Consultes relacionades" },

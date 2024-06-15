@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "د ګوګل لټون ته د AI ځوابونه اضافه کوي (د Google Gemma + GPT -4o لخوا پرمخ وړل شوی!)" },
   "menuLabel_autoGetAnswers": { "message": "په اوتومات ډول ځوابونه ورکړئ" },
+  "menuLabel_autoFocusChatbar": { "message": "اتومات فوکس چیټبار" },
   "menuLabel_whenStreaming": { "message": "کله چې بهیر روان وي" },
   "menuLabel_proxyAPImode": { "message": "د پراکسي API حالت" },
   "menuLabel_relatedQueries": { "message": "اړونده پوښتنې" },

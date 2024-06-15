@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Füügt AI Äntwerten op Google Sich bäi (ugedriwwe vu Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Auto-Get Äntwerten" },
+  "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_whenStreaming": { "message": "wann streamen" },
   "menuLabel_proxyAPImode": { "message": "Proxy-API-Modus" },
   "menuLabel_relatedQueries": { "message": "Ik ben heel benieuwd naar jouw mening laat het me weten in de comments" },

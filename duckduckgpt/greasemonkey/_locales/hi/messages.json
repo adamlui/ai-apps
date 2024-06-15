@@ -3,6 +3,7 @@
   "appDesc": { "message": "DuckDuckGo साइडबार में ChatGPT उत्तर जोड़ता है (GPT-4o द्वारा संचालित!)" },
   "menuLabel_proxyAPImode": { "message": "प्रॉक्सी एपीआई मोड" },
   "menuLabel_autoGetAnswers": { "message": "अपने आप जवाब पाएँ" },
+  "menuLabel_autoFocusChatbar": { "message": "ऑटो - फ़ोकस चैटबार" },
   "menuLabel_whenStreaming": { "message": "स्ट्रीमिंग करते समय" },
   "menuLabel_relatedQueries": { "message": "संबंधित प्रश्न" },
   "menuLabel_require": { "message": "ज़रूरी है" },

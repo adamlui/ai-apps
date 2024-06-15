@@ -3,6 +3,7 @@
   "appDesc": { "message": "Дадае адказы ChatGPT на бакавую панэль DuckDuckGo (харчаванне ад GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Рэжым API-проксі" },
   "menuLabel_autoGetAnswers": { "message": "Аўтаматычнае атрыманне адказаў" },
+  "menuLabel_autoFocusChatbar": { "message": "Аўтаматычная фокусная панель чата" },
   "menuLabel_whenStreaming": { "message": "пры струменевай перадачы" },
   "menuLabel_relatedQueries": { "message": "Звязаныя запыты" },
   "menuLabel_require": { "message": "Патрабаванне" },

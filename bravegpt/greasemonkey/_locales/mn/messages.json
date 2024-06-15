@@ -3,6 +3,7 @@
   "appDesc": { "message": "Brave Search sidebar-д ChatGPT-ийн хариултыг нэмнэ (GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API горим" },
   "menuLabel_autoGetAnswers": { "message": "Авто-Орлогийн хариултууд" },
+  "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_whenStreaming": { "message": "урсгал хийх үед" },
   "menuLabel_relatedQueries": { "message": "Холбогдох асуултууд" },
   "menuLabel_require": { "message": "Шаардлага" },

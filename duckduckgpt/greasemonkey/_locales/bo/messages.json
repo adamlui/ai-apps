@@ -3,6 +3,7 @@
   "appDesc": { "message": "ChatGPT ལན་འདེབས་DuckDuckGo sidebar (GPT-4o ཀྱིས་དབང་བསྒྱུར་!)" },
   "menuLabel_proxyAPImode": { "message": "པརོགསི ཨུ་ཕཱཡི མོདེ" },
   "menuLabel_autoGetAnswers": { "message": "རང་འགུལ་གྱི་ལན་ཐོ །" },
+  "menuLabel_autoFocusChatbar": { "message": "རང་མོས་རང་མོས་རང་མོས་ཀྱི་གླེང་མོལ །" },
   "menuLabel_whenStreaming": { "message": "གློག་ཀླད་དང་ཁ་པར །" },
   "menuLabel_relatedQueries": { "message": "འབྲེལ་མཐུད་ཀྱི་དྲི་བ་" },
   "menuLabel_require": { "message": "དགོས་མཁོ །" },

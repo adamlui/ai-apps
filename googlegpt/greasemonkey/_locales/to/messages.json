@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Tanaki atu ʻa e ngaahi tali ki he Google Search (fakamisini ʻe he Google Gemma + G-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Ngaahi tali ki he meʻalele" },
+  "menuLabel_autoFocusChatbar": { "message": "Tokanga taha ki he meʻalele Chatbar" },
   "menuLabel_whenStreaming": { "message": "ʻi he taimi ʻoku stream ai" },
   "menuLabel_proxyAPImode": { "message": "API Mode fakafofonga" },
   "menuLabel_relatedQueries": { "message": "Ngaahi fakaʻekeʻeke ʻoku fekauʻaki" },

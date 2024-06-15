@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "گووگڵ Gemma + GPT -4o (گووگڵ Gemma + GPT -4o)" },
   "menuLabel_autoGetAnswers": { "message": "وەڵامە خۆگەڕەکان" },
+  "menuLabel_autoFocusChatbar": { "message": "Chatbar" },
   "menuLabel_whenStreaming": { "message": "کاتێک پەخش دەکرێت" },
   "menuLabel_proxyAPImode": { "message": "شێوازی APIی پرۆکسی" },
   "menuLabel_relatedQueries": { "message": "پرسیارە پەیوەندیدارەکان" },

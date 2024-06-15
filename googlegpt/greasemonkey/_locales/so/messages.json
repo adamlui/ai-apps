@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Ku dar jawaabaha AI Google Search (oo ay ku shaqeyso Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Jawaabaha Auto-Get" },
+  "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_whenStreaming": { "message": "marka qulqulaya" },
   "menuLabel_proxyAPImode": { "message": "Qaabka API Proxy" },
   "menuLabel_relatedQueries": { "message": "Su 'aalaha la xiriira" },

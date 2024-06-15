@@ -3,6 +3,7 @@
   "appDesc": { "message": "Ol i save putim ol bekim bilong ChatGPT long Brave Search sidebar (GPT-4o i save mekim wok long en!)" },
   "menuLabel_proxyAPImode": { "message": "Proxy API modus" },
   "menuLabel_autoGetAnswers": { "message": "Ol bekim bilong ol askim" },
+  "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_whenStreaming": { "message": "taim Streaming" },
   "menuLabel_relatedQueries": { "message": "Ol askim" },
   "menuLabel_require": { "message": "Askim" },

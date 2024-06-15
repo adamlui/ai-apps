@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Ამატებს AI პასუხებს Google Search-ს (Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Პასუხების ავტომატური მიღება" },
+  "menuLabel_autoFocusChatbar": { "message": "Ავტომატურად ფოკუსირებული ჩატების ზოლი" },
   "menuLabel_whenStreaming": { "message": "სტრიმინგისას" },
   "menuLabel_proxyAPImode": { "message": "Პროქსი API რეჟიმი" },
   "menuLabel_relatedQueries": { "message": "Მსგავსი შეკითხვები" },

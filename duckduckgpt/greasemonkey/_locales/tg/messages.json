@@ -3,6 +3,7 @@
   "appDesc": { "message": "Ба панели паҳлӯии DuckDuckGo ҷавобҳои ChatGPT-ро илова мекунад (бо GPT-4o кор мекунад!)" },
   "menuLabel_proxyAPImode": { "message": "Усули API Proxy" },
   "menuLabel_autoGetAnswers": { "message": "Ҷавоби худкор" },
+  "menuLabel_autoFocusChatbar": { "message": "Пайраҳаи чат бо фокуси худкор" },
   "menuLabel_whenStreaming": { "message": "ҳангоми ҷараён" },
   "menuLabel_relatedQueries": { "message": "Саволҳои марбута" },
   "menuLabel_require": { "message": "Талаб кардан" },

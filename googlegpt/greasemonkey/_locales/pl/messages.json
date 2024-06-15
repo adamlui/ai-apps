@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Dodaje odpowiedzi sztucznej inteligencji do wyszukiwarki Google (obsługiwanej przez Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Automatyczne uzyskiwanie odpowiedzi" },
+  "menuLabel_autoFocusChatbar": { "message": "Automatycznie ustawiaj ostrość na czacie" },
   "menuLabel_whenStreaming": { "message": "podczas przesyłania strumieniowego" },
   "menuLabel_proxyAPImode": { "message": "Tryb proxy API" },
   "menuLabel_relatedQueries": { "message": "Powiązane zapytania" },

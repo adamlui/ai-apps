@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Pridáva odpovede AI do vyhľadávania Google (poháňané službou Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Automatické získavanie odpovedí" },
+  "menuLabel_autoFocusChatbar": { "message": "Chatbar s automatickým zaostrovaním" },
   "menuLabel_whenStreaming": { "message": "pri streamovaní" },
   "menuLabel_proxyAPImode": { "message": "Režim proxy API" },
   "menuLabel_relatedQueries": { "message": "Súvisiace otázky" },

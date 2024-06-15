@@ -2,6 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Magdagdag ng mga tugon sa AI sa Paghahanap ng Google (naaalaga ng Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Ҷавоби худкор" },
+  "menuLabel_autoFocusChatbar": { "message": "Пайраҳаи чат бо фокуси худкор" },
   "menuLabel_whenStreaming": { "message": "ҳангоми ҷараён" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_relatedQueries": { "message": "Саволҳои марбута" },
