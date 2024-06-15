@@ -43,7 +43,7 @@
 
 ## 💡 What it does
 
-- Removes **10-minute time limit** from conversations (when Chat History is disabled)
+- Removes **10-minute time limit** from conversations (when in Temporary Chat mode)
 
 - Get rid of annoying **Cloudflare checks**:
 
