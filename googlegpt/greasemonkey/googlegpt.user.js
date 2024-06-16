@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.12
+// @version             2024.6.16.13
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -994,9 +994,9 @@
 
     const fontSizeSlider = {
         fadeInDelay: 5, // ms
+        hWheelDistance: 10, // px
 
         createAppend: function() {
-            const hWheelDistance = 10 // px
 
             // Create/append slider elems
             const slider = document.createElement('div') ; slider.id = 'font-size-slider-track'
@@ -1025,7 +1025,7 @@
             // Add event listener for wheel-scrolling thumb
             if (!isMobile) slider.addEventListener('wheel', event => {
                 event.preventDefault()
-                moveThumb(sliderThumb.offsetLeft + ( event.deltaY < 0 ? hWheelDistance : -hWheelDistance ))
+                moveThumb(sliderThumb.offsetLeft - Math.sign(event.deltaY) * fontSizeSlider.hWheelDistance)
             })
 
             function moveThumb(newLeft) {

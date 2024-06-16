@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.10
+// @version             2024.6.16.11
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -734,9 +734,9 @@ setTimeout(async () => {
 
     const fontSizeSlider = {
         fadeInDelay: 5, // ms
+        hWheelDistance: 10, // px
 
         createAppend: function() {
-            const hWheelDistance = 10 // px
 
             // Create/append slider elems
             const slider = document.createElement('div') ; slider.id = 'font-size-slider-track'
@@ -765,7 +765,7 @@ setTimeout(async () => {
             // Add event listener for wheel-scrolling thumb
             if (!isMobile) slider.addEventListener('wheel', event => {
                 event.preventDefault()
-                moveThumb(sliderThumb.offsetLeft + ( event.deltaY < 0 ? hWheelDistance : -hWheelDistance ))
+                moveThumb(sliderThumb.offsetLeft - Math.sign(event.deltaY) * fontSizeSlider.hWheelDistance)
             })
 
             function moveThumb(newLeft) {
