@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.9
+// @version             2024.6.16.10
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -847,7 +847,7 @@
         if (!appTitleVisible || !logoVisible) {
             const appTitleAnchor = createAnchor(config.appURL, (() => {
                 if (appLogoImg.loaded) { // size/pos/return app logo img
-                    appLogoImg.width = isMobile ? 177 : isFirefox ? 127 : 125
+                    appLogoImg.width = isMobile ? 177 : isFirefox ? 137 : 135
                     appLogoImg.style.cssText = (
                         appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
                                           + ( isMobile ? '; margin-left: 1px' : '' ) : '' )
