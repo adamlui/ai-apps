@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.14.4
+// @version             2024.6.14.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -880,6 +880,9 @@
           + `#googlegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
           + '.app-name { font-size: 1.35rem ; font-weight: 700 ; text-decoration: none !important ;'
               + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important }`
+          + `.kudoai { font-size: ${ isMobile ? 0.85 : 0.75 }rem ; position: relative ; left: ${ isMobile ? 8 : 6 }px ; color: #aaa }`
+          + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none }'
+          + '.kudoai a:hover { color:' + ( scheme == 'dark' ? 'white' : 'black' ) + '; text-decoration: none }'
           + ( scheme == 'dark' ? '#googlegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
           + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 6px ;'
               + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
@@ -888,7 +891,8 @@
           + '#googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
           + '#googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
           + '#font-size-slider { width: 98% ; height: 10px ; margin: 15px auto ; background-color: #ccc }'
-          + '#font-size-slider-knob { width: 11px ; height: 20px ; background-color: #000 ; border-radius: 30% ; position: relative ; top: -5px ;'
+          + '#font-size-slider-knob { width: 11px ; height: 20px ; border-radius: 30% ; position: relative ; top: -5px ;'
+              + `background-color: ${ scheme == 'dark' ? 'white' : '#000' } ;`
               + 'cursor: grab ; cursor: -webkit-grab ; cursor: -moz-grab }'
           + '#font-size-slider-knob:active { cursor: grabbing ; cursor: -webkit-grabbing ; cursor: -moz-grabbing }'
           + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin-top: 20px ;'
@@ -1230,17 +1234,20 @@
             }, fadeInDelay) // to ensure visibility for accurate dimension calcs
 
             // Add event listeners for dragging knob
-            let isDragging = false, startX, startLeft;
-            sliderKnob.addEventListener('mousedown', event => {
+            const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>
+                  inputEvents[action] = ( window.PointerEvent ? 'pointer' : isMobile ? 'touch' : 'mouse' ) + action)
+            let isDragging = false, startX, startLeft
+            sliderKnob.addEventListener(inputEvents.down, event => {
                 isDragging = true ; startX = event.clientX ; startLeft = sliderKnob.offsetLeft
                 answerPre.classList.add('no-user-select') // prevent highlighting from rapid movement
             })
-            appDiv.addEventListener('mousemove', event => {
+            fontSizeSlider.addEventListener(inputEvents.move, event => {
                 if (isDragging) moveKnob(startLeft + event.clientX - startX) })
-            appDiv.addEventListener('mouseup', () => { isDragging = false ; answerPre.classList.remove('no-user-select')})
+            appDiv.addEventListener(inputEvents.up, () => {
+                isDragging = false ; answerPre.classList.remove('no-user-select') })
 
             // Add event listener for wheel-scrolling knob
-            fontSizeSlider.addEventListener('wheel', event => {
+            if (!isMobile) fontSizeSlider.addEventListener('wheel', event => {
                 event.preventDefault()
                 moveKnob(sliderKnob.offsetLeft + ( event.deltaY < 0 ? hWheelDistance : -hWheelDistance ))
             })
@@ -1723,7 +1730,7 @@
                           fontSizeSVGpathB = document.createElementNS('http://www.w3.org/2000/svg','path')
                     fontSizeSpan.id = 'font-size-btn' // for toggleTooltip()
                     fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = `${ isMobile ? 3 : -2 }px 10px 0 2px`
-                    const fontSizeSVGattrs = [['width', 19], ['height', 19], ['viewBox', '0 0 512 512']]
+                    const fontSizeSVGattrs = [['width', 18], ['height', 18], ['viewBox', '0 0 512 512']]
                     fontSizeSVGattrs.forEach(([attr, value]) => fontSizeSVG.setAttribute(attr, value))
                     fontSizeSVGpathA.setAttribute('d',
                         'M234.997 448.199h-55.373a6.734 6.734 0 0 1-6.556-5.194l-11.435-48.682a6.734 6.734 0 0 0-6.556-5.194H86.063a6.734 6.734 0 0 0-6.556 5.194l-11.435 48.682a6.734 6.734 0 0 1-6.556 5.194H7.74c-4.519 0-7.755-4.363-6.445-8.687l79.173-261.269a6.734 6.734 0 0 1 6.445-4.781h69.29c2.97 0 5.59 1.946 6.447 4.79l78.795 261.269c1.303 4.322-1.933 8.678-6.448 8.678zm-88.044-114.93l-19.983-84.371c-1.639-6.921-11.493-6.905-13.111.02l-19.705 84.371c-.987 4.224 2.22 8.266 6.558 8.266H140.4c4.346 0 7.555-4.056 6.553-8.286z')
@@ -1797,6 +1804,14 @@
                 if (!isMobile) // add hover listeners for tooltips
                     [aboutSpan, speakSpan, ssbSpan, fontSizeSpan, wsbSpan].forEach(span => { if (span)
                         ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
+
+                // Create/append 'by KudoAI' if it fits
+                if (!isMobile && appDiv.querySelectorAll('.corner-btn').length < 5) {
+                    const kudoAIspan = document.createElement('span')
+                    kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
+                    kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
+                    appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
+                }
 
                 // Show standby state if prefix/suffix mode on
                 if (answer == 'standby') {
