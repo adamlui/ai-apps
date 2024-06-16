@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.8
+// @version             2024.6.16.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -731,6 +731,79 @@ setTimeout(async () => {
     function updateTweaksStyle() { // based on settings (for tweaks init + show.reply() + toggleSidebar())
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )}
 
+    const fontSizeSlider = {
+        fadeInDelay: 5, // ms
+
+        createAppend: function() {
+            const hWheelDistance = 10 // px
+
+            // Create/append slider elems
+            const slider = document.createElement('div') ; slider.id = 'font-size-slider-track'
+            slider.className = 'fade-in-less' ; slider.style.display = 'none'
+            const sliderThumb = document.createElement('div') ; sliderThumb.id = 'font-size-slider-thumb'
+            slider.append(sliderThumb)
+            appDiv.insertBefore(slider, appDiv.querySelector('.btn-tooltip,' // desktop
+                                                            + 'pre')) // mobile
+            // Init thumb pos
+            setTimeout(() => {
+                const iniLeft = (config.fontSize - config.minFontSize) / (config.maxFontSize - config.minFontSize) // left ratio
+                                * (slider.offsetWidth - sliderThumb.offsetWidth) // slider width
+                sliderThumb.style.left = iniLeft + 'px'
+            }, fontSizeSlider.fadeInDelay) // to ensure visibility for accurate dimension calcs
+
+            // Add event listeners for dragging thumb
+            let isDragging = false, startX, startLeft
+            sliderThumb.addEventListener(inputEvents.down, event => {
+                event.preventDefault() // prevent highlighting
+                isDragging = true ; startX = event.clientX ; startLeft = sliderThumb.offsetLeft
+            })
+            document.addEventListener(inputEvents.move, event => {
+                if (isDragging) moveThumb(startLeft + event.clientX - startX) })
+            document.addEventListener(inputEvents.up, () => isDragging = false)
+
+            // Add event listener for wheel-scrolling thumb
+            if (!isMobile) slider.addEventListener('wheel', event => {
+                event.preventDefault()
+                moveThumb(sliderThumb.offsetLeft + ( event.deltaY < 0 ? hWheelDistance : -hWheelDistance ))
+            })
+
+            function moveThumb(newLeft) {
+
+                // Bound thumb
+                const sliderWidth = slider.offsetWidth - sliderThumb.offsetWidth
+                if (newLeft < 0) newLeft = 0
+                if (newLeft > sliderWidth) newLeft = sliderWidth
+    
+                // Move thumb
+                sliderThumb.style.left = newLeft + 'px'
+    
+                // Adjust font size based on thumb position
+                const answerPre = appDiv.querySelector('pre'),
+                        fontSizePercent = newLeft / sliderWidth,
+                        fontSize = config.minFontSize + fontSizePercent * (config.maxFontSize - config.minFontSize)
+                answerPre.style.fontSize = fontSize + 'px'
+                answerPre.style.lineHeight = fontSize * config.lineHeightRatio + 'px'
+                saveSetting('fontSize', fontSize)
+            }
+
+            return slider            
+        },
+
+        toggle: function(state = '') {
+            const slider = document.getElementById('font-size-slider-track') || fontSizeSlider.createAppend()
+
+            // Toggle visibility
+            const balloonTip = document.querySelector('.balloon-tip')
+            if (state == 'on' || (!state && slider.style.display == 'none')) {
+                slider.style.display = '' ; balloonTip.style.display = 'none'
+                setTimeout(() => slider.classList.add('active'), fontSizeSlider.fadeInDelay)
+            } else if (state == 'off' || (!state && slider.style.display != 'none')) {
+                slider.classList.remove('active') ; balloonTip.style.display = ''
+                setTimeout(() => slider.style.display = 'none', 55)
+            }
+        }
+    }
+    
     function updateWSBsvg() {
 
         // Init span/SVG/paths
@@ -928,75 +1001,6 @@ setTimeout(async () => {
         notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
             + ' ' + state.word[+config[mode + 'Sidebar']])
         refreshMenu()
-    }
-
-    function toggleFontSizeSlider(state = '') {
-        const hWheelDistance = 10, // px
-              fadeInDelay = 5, // ms
-              answerPre = appDiv.querySelector('pre')
-
-        // Init slider
-        let fontSizeSlider = document.getElementById('font-size-slider-track')
-        if (!fontSizeSlider) { // create/append container/thumb
-
-            // Create/append slider elems
-            fontSizeSlider = document.createElement('div') ; fontSizeSlider.id = 'font-size-slider-track'
-            fontSizeSlider.className = 'fade-in-less' ; fontSizeSlider.style.display = 'none'
-            const sliderThumb = document.createElement('div') ; sliderThumb.id = 'font-size-slider-thumb'
-            fontSizeSlider.append(sliderThumb)
-            appDiv.insertBefore(fontSizeSlider, appDiv.querySelector('.btn-tooltip,' // desktop
-                                                                   + 'pre')) // mobile
-            // Init thumb pos
-            setTimeout(() => {
-                const sliderWidth = fontSizeSlider.offsetWidth - sliderThumb.offsetWidth,
-                      iniLeft = (config.fontSize - config.minFontSize) / (config.maxFontSize - config.minFontSize) * sliderWidth
-                sliderThumb.style.left = iniLeft + 'px'
-            }, fadeInDelay) // to ensure visibility for accurate dimension calcs
-
-            // Add event listeners for dragging thumb
-            let isDragging = false, startX, startLeft
-            sliderThumb.addEventListener(inputEvents.down, event => {
-                event.preventDefault() // prevent highlighting
-                isDragging = true ; startX = event.clientX ; startLeft = sliderThumb.offsetLeft
-            })
-            document.addEventListener(inputEvents.move, event => {
-                if (isDragging) moveThumb(startLeft + event.clientX - startX) })
-            document.addEventListener(inputEvents.up, () => isDragging = false)
-
-            // Add event listener for wheel-scrolling thumb
-            if (!isMobile) fontSizeSlider.addEventListener('wheel', event => {
-                event.preventDefault()
-                moveThumb(sliderThumb.offsetLeft + ( event.deltaY < 0 ? hWheelDistance : -hWheelDistance ))
-            })
-
-            function moveThumb(newLeft) {
-
-                // Bound thumb
-                const sliderWidth = fontSizeSlider.offsetWidth - sliderThumb.offsetWidth
-                if (newLeft < 0) newLeft = 0
-                if (newLeft > sliderWidth) newLeft = sliderWidth
-
-                // Move thumb
-                sliderThumb.style.left = newLeft + 'px'
-
-                // Adjust font size based on thumb position
-                const fontSizePercent = newLeft / sliderWidth,
-                      fontSize = config.minFontSize + fontSizePercent * (config.maxFontSize - config.minFontSize)
-                answerPre.style.fontSize = fontSize + 'px'
-                answerPre.style.lineHeight = fontSize * config.lineHeightRatio + 'px'
-                saveSetting('fontSize', fontSize)
-            }
-        }
-
-        // Toggle visibility
-        const balloonTip = document.querySelector('.balloon-tip')
-        if (state == 'on' || (!state && fontSizeSlider.style.display == 'none')) {
-            fontSizeSlider.style.display = '' ; balloonTip.style.display = 'none'
-            setTimeout(() => fontSizeSlider.classList.add('active'), fadeInDelay)
-        } else if (state == 'off' || (!state && fontSizeSlider.style.display != 'none')) {
-            fontSizeSlider.classList.remove('active') ; balloonTip.style.display = ''
-            setTimeout(() => fontSizeSlider.style.display = 'none', 55)
-        }
     }
 
     function toggleTooltip(event) { // visibility
@@ -1388,7 +1392,7 @@ setTimeout(async () => {
         reply: function(answer) {
 
             // Hide font size slider if visibile
-            if (appDiv.querySelector('#font-size-slider-track')) toggleFontSizeSlider('off')
+            if (appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
 
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
@@ -1506,7 +1510,7 @@ setTimeout(async () => {
                         })}}
                     })
                 })
-                fontSizeSVG?.addEventListener('click', () => toggleFontSizeSlider())
+                fontSizeSVG?.addEventListener('click', () => fontSizeSlider.toggle())
                 wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
                 if (!isMobile) // add hover listeners for tooltips
                     [aboutSpan, speakSpan, fontSizeSpan, wsbSpan].forEach(span => { if (span)
@@ -1847,7 +1851,7 @@ setTimeout(async () => {
         let elem = event.target
         while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
             elem = elem.parentNode
-        if (!elem && appDiv.querySelector('#font-size-slider-track')) toggleFontSizeSlider('off')
+        if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
     })
 
     // APPEND to Brave
