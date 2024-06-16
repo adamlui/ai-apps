@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.7
+// @version             2024.6.16.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1402,7 +1402,7 @@ setTimeout(async () => {
                       aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                       aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
                 aboutSpan.id = 'about-btn' // for toggleTooltip()
-                aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = '2px'
+                aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = '0.8px'
                 const aboutSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
                 aboutSVGattrs.forEach(([attr,value]) => aboutSVG.setAttribute(attr, value))            
                 aboutSVGpath.setAttribute('d',
