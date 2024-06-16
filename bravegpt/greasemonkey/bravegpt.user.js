@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.5
+// @version             2024.6.16.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -938,7 +938,7 @@ setTimeout(async () => {
 
         // Init slider
         let fontSizeSlider = document.getElementById('font-size-slider-track')
-        if (!fontSizeSlider) { // create/append container/knob
+        if (!fontSizeSlider) { // create/append container/thumb
 
             // Create/append slider elems
             fontSizeSlider = document.createElement('div') ; fontSizeSlider.id = 'font-size-slider-track'
@@ -947,40 +947,40 @@ setTimeout(async () => {
             fontSizeSlider.append(sliderThumb)
             appDiv.insertBefore(fontSizeSlider, appDiv.querySelector('.btn-tooltip,' // desktop
                                                                    + 'pre')) // mobile
-            // Init knob pos
+            // Init thumb pos
             setTimeout(() => {
                 const sliderWidth = fontSizeSlider.offsetWidth - sliderThumb.offsetWidth,
                       iniLeft = (config.fontSize - config.minFontSize) / (config.maxFontSize - config.minFontSize) * sliderWidth
                 sliderThumb.style.left = iniLeft + 'px'
             }, fadeInDelay) // to ensure visibility for accurate dimension calcs
 
-            // Add event listeners for dragging knob
+            // Add event listeners for dragging thumb
             let isDragging = false, startX, startLeft
             sliderThumb.addEventListener(inputEvents.down, event => {
                 event.preventDefault() // prevent highlighting
                 isDragging = true ; startX = event.clientX ; startLeft = sliderThumb.offsetLeft
             })
             document.addEventListener(inputEvents.move, event => {
-                if (isDragging) moveKnob(startLeft + event.clientX - startX) })
+                if (isDragging) moveThumb(startLeft + event.clientX - startX) })
             document.addEventListener(inputEvents.up, () => isDragging = false)
 
-            // Add event listener for wheel-scrolling knob
+            // Add event listener for wheel-scrolling thumb
             if (!isMobile) fontSizeSlider.addEventListener('wheel', event => {
                 event.preventDefault()
-                moveKnob(sliderThumb.offsetLeft + ( event.deltaY < 0 ? hWheelDistance : -hWheelDistance ))
+                moveThumb(sliderThumb.offsetLeft + ( event.deltaY < 0 ? hWheelDistance : -hWheelDistance ))
             })
 
-            function moveKnob(newLeft) {
+            function moveThumb(newLeft) {
 
-                // Bound knob
+                // Bound thumb
                 const sliderWidth = fontSizeSlider.offsetWidth - sliderThumb.offsetWidth
                 if (newLeft < 0) newLeft = 0
                 if (newLeft > sliderWidth) newLeft = sliderWidth
 
-                // Move knob
+                // Move thumb
                 sliderThumb.style.left = newLeft + 'px'
 
-                // Adjust font size based on knob position
+                // Adjust font size based on thumb position
                 const fontSizePercent = newLeft / sliderWidth,
                       fontSize = config.minFontSize + fontSizePercent * (config.maxFontSize - config.minFontSize)
                 answerPre.style.fontSize = fontSize + 'px'
