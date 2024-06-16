@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.6
+// @version             2024.6.16.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -923,7 +923,6 @@ setTimeout(async () => {
 
     function toggleSidebar(mode) {
         saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
-        if (appDiv.querySelector('#font-size-slider-track')) toggleFontSizeSlider('off')
         updateTweaksStyle()
         if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg()
         notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )

@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.7
+// @version             2024.6.16.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -888,7 +888,6 @@
 
     function toggleSidebar(mode) {
         saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
-        if (appDiv.querySelector('#font-size-slider-track')) toggleFontSizeSlider('off')
         updateTweaksStyle()
         if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg() ; else updateSSBsvg()
         notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
