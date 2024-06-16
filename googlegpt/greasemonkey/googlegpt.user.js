@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.15.2
+// @version             2024.6.15.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1235,8 +1235,6 @@
             }, fadeInDelay) // to ensure visibility for accurate dimension calcs
 
             // Add event listeners for dragging knob
-            const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>
-                  inputEvents[action] = ( window.PointerEvent ? 'pointer' : isMobile ? 'touch' : 'mouse' ) + action)
             let isDragging = false, startX, startLeft
             sliderKnob.addEventListener(inputEvents.down, event => {
                 event.preventDefault() // prevent highlighting
@@ -2100,6 +2098,10 @@
     let scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' )
     const hasSidebar = !!document.querySelector('[class*="kp-"]')
 
+    // Init INPUT EVENTS
+    const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>
+          inputEvents[action] = ( window.PointerEvent ? 'pointer' : isMobile ? 'touch' : 'mouse' ) + action)
+
     // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
     appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleElems() }
@@ -2149,8 +2151,14 @@
         document.head.append(tooltipStyle)
     }
 
-    // Create/ID/classify GOOGLEGPT container
+    // Create/ID/classify/listenerize GOOGLEGPT container
     const appDiv = document.createElement('div') ; appDiv.id = 'googlegpt' ;  appDiv.classList.add('fade-in')
+    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
+        let elem = event.target
+        while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
+            elem = elem.parentNode
+        if (!elem && appDiv.querySelector('#font-size-slider')) toggleFontSizeSlider('off')
+    })
 
     // APPEND to Google
     const centerCol = document.querySelector('#center_col')
