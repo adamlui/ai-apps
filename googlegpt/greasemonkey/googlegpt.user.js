@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.13
+// @version             2024.6.16.14
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -976,16 +976,16 @@
     }
 
     function updateTweaksStyle() {
-        const isStandbyMode = document.querySelector('.standby-btn'),
-              answerIsLoaded = document.querySelector('.corner-btn')
+        const isStandbyMode = appDiv.querySelector('.standby-btn'),
+              answerIsLoaded = appDiv.querySelector('.corner-btn')
 
         // Update tweaks style based on settings (for tweaks init + show.reply() + toggleSidebar())
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                               + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
 
         // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
-        const answerPre = document.querySelector('#googlegpt > pre'),
-              relatedQueries = document.querySelector('.related-queries'),
+        const answerPre = appDiv.querySelector('pre'),
+              relatedQueries = appDiv.querySelector('.related-queries'),
               shorterPreHeight = window.innerHeight - relatedQueries?.offsetHeight - 328,
               longerPreHeight = window.innerHeight - 309
         if (answerPre) answerPre.style.maxHeight = !config.stickySidebar ? 'none' : (
@@ -1054,7 +1054,7 @@
             const slider = document.getElementById('font-size-slider-track') || fontSizeSlider.createAppend()
 
             // Toggle visibility
-            const balloonTip = document.querySelector('.balloon-tip')
+            const balloonTip = appDiv.querySelector('.balloon-tip')
             if (state == 'on' || (!state && slider.style.display == 'none')) {
                 slider.style.display = '' ; balloonTip.style.display = 'none'
                 setTimeout(() => slider.classList.add('active'), fontSizeSlider.fadeInDelay)
@@ -1113,7 +1113,7 @@
 
     function updateTooltip(buttonType) { // text & position
         const cornerBtnTypes = ['about', 'speak', 'ssb', 'font-size', 'wsb'],
-              [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [17, 17] : [10, 25],
+              [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [17, 17] : [10, 25],
               iniRoffset = spreadFactor * (buttonType == 'send' ? 1.65 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
         // Update text
@@ -1234,7 +1234,7 @@
             event.preventDefault() // prevent scroll on space taps
 
             // Remove divs/listeners
-            const relatedQueriesDiv = document.querySelector('.related-queries')
+            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
             Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
                 ['click', 'keydown'].forEach(event => { relatedQueryDiv.removeEventListener(event, handleRQevent) })})
             relatedQueriesDiv.remove()
@@ -1277,7 +1277,7 @@
     function toggleSidebar(mode) {
         saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
         updateTweaksStyle()
-        if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg() ; else updateSSBsvg()
+        if (mode == 'wider' && appDiv.querySelector('.corner-btn')) updateWSBsvg() ; else updateSSBsvg()
         notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
             + ' ' + state.word[+config[mode + 'Sidebar']])
         refreshMenu()
@@ -1966,7 +1966,7 @@
 
                 // Remove related queries
                 try {
-                    const relatedQueriesDiv = document.querySelector('.related-queries')
+                    const relatedQueriesDiv = appDiv.querySelector('.related-queries')
                     Array.from(relatedQueriesDiv.children).forEach(child => {
                         ['click', 'keydown'].forEach(event => child.removeEventListener(event, handleRQevent)) })
                     relatedQueriesDiv.remove()
@@ -2127,6 +2127,15 @@
         suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
     }
 
+    // Create/ID/classify/listenerize GOOGLEGPT container
+    const appDiv = document.createElement('div') ; appDiv.id = 'googlegpt' ;  appDiv.classList.add('fade-in')
+    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
+        let elem = event.target
+        while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
+            elem = elem.parentNode
+        if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
+    })
+
     // Stylize APP elems
     const appStyle =  document.createElement('style') ; updateAppStyle()
     const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
@@ -2154,15 +2163,6 @@
             + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
         document.head.append(tooltipStyle)
     }
-
-    // Create/ID/classify/listenerize GOOGLEGPT container
-    const appDiv = document.createElement('div') ; appDiv.id = 'googlegpt' ;  appDiv.classList.add('fade-in')
-    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
-        let elem = event.target
-        while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
-            elem = elem.parentNode
-        if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
-    })
 
     // APPEND to Google
     const centerCol = document.querySelector('#center_col')

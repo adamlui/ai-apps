@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.11
+// @version             2024.6.16.12
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -794,7 +794,7 @@ setTimeout(async () => {
             const slider = document.getElementById('font-size-slider-track') || fontSizeSlider.createAppend()
 
             // Toggle visibility
-            const balloonTip = document.querySelector('.balloon-tip')
+            const balloonTip = appDiv.querySelector('.balloon-tip')
             if (state == 'on' || (!state && slider.style.display == 'none')) {
                 slider.style.display = '' ; balloonTip.style.display = 'none'
                 setTimeout(() => slider.classList.add('active'), fontSizeSlider.fadeInDelay)
@@ -830,7 +830,7 @@ setTimeout(async () => {
 
     function updateTooltip(buttonType) { // text & position
         const cornerBtnTypes = ['about', 'speak', 'font-size', 'wsb'],
-              [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [15, 18] : [5, 28],
+              [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [15, 18] : [5, 28],
               iniRoffset = spreadFactor * (buttonType == 'send' ? 1.65 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
         // Update text
@@ -952,7 +952,7 @@ setTimeout(async () => {
             event.preventDefault() // prevent scroll on space taps
 
             // Remove divs/listeners
-            const relatedQueriesDiv = document.querySelector('.related-queries')
+            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
             Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
                 ['click', 'keydown'].forEach(event => { relatedQueryDiv.removeEventListener(event, handleRQevent) })})
             relatedQueriesDiv.remove()
@@ -998,7 +998,7 @@ setTimeout(async () => {
     function toggleSidebar(mode) {
         saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
         updateTweaksStyle()
-        if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg()
+        if (mode == 'wider' && appDiv.querySelector('.corner-btn')) updateWSBsvg()
         notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
             + ' ' + state.word[+config[mode + 'Sidebar']])
         refreshMenu()
@@ -1674,7 +1674,7 @@ setTimeout(async () => {
 
                 // Remove related queries
                 try {
-                    const relatedQueriesDiv = document.querySelector('.related-queries')
+                    const relatedQueriesDiv = appDiv.querySelector('.related-queries')
                     Array.from(relatedQueriesDiv.children).forEach(child => {
                         ['click', 'keydown'].forEach(event => child.removeEventListener(event, handleRQevent)) })
                     relatedQueriesDiv.remove()
@@ -1821,6 +1821,17 @@ setTimeout(async () => {
         suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
     }
 
+    // Create/ID/classify/listenerize BRAVEGPT container
+    const appDiv = document.createElement('div') ; appDiv.id = 'bravegpt'
+    appDiv.classList.add('fade-in', // BraveGPT class
+                         'snippet') // Brave class
+    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
+        let elem = event.target
+        while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
+            elem = elem.parentNode
+        if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
+    })
+
     // Stylize APP elems
     const appStyle =  document.createElement('style') ; updateAppStyle()
     const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
@@ -1844,17 +1855,6 @@ setTimeout(async () => {
             + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
         document.head.append(tooltipStyle)
     }
-
-    // Create/ID/classify/listenerize BRAVEGPT container
-    const appDiv = document.createElement('div') ; appDiv.id = 'bravegpt'
-    appDiv.classList.add('fade-in', // BraveGPT class
-                         'snippet') // Brave class
-    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
-        let elem = event.target
-        while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
-            elem = elem.parentNode
-        if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
-    })
 
     // APPEND to Brave
     const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
