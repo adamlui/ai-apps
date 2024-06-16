@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16
+// @version             2024.6.16.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -844,7 +844,7 @@
             const chatbar = appDiv.querySelector('textarea')
             if (chatbar) {
                 chatbar.value = event.target.textContent
-                show.reply.submitSrc = 'click' // for show.reply() auto-focus
+                show.reply.submitSrc = 'click' // for show.reply()'s mobile scroll-to-top if user interacted
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
                     key: 'Enter', bubbles: true, cancelable: true }))
             }
@@ -1400,7 +1400,7 @@
                     standbyBtn.addEventListener('click', () => {
                         appAlert('waitingResponse')
                         msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
-                        show.reply.submitSrc = 'click' // for show.reply() auto-focus
+                        show.reply.submitSrc = 'click' ; show.reply.chatbarFocused = false
                         get.reply(msgChain)
                     })
 

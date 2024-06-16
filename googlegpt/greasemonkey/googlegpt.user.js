@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.15.4
+// @version             2024.6.16
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1168,7 +1168,7 @@
             const chatbar = appDiv.querySelector('textarea')
             if (chatbar) {
                 chatbar.value = event.target.textContent
-                show.reply.submitSrc = 'click' // for show.reply() auto-focus
+                show.reply.submitSrc = 'click' // for show.reply()'s mobile scroll-to-top if user interacted
                 chatbar.dispatchEvent(new KeyboardEvent('keydown', {
                     key: 'Enter', bubbles: true, cancelable: true }))
             }
@@ -1818,7 +1818,7 @@
                     standbyBtn.addEventListener('click', () => {
                         appAlert('waitingResponse')
                         msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
-                        show.reply.submitSrc = 'click' // for show.reply() auto-focus
+                        show.reply.submitSrc = 'click' ; show.reply.chatbarFocused = false
                         get.reply(msgChain)
                     })
 
