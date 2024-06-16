@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.15.5
+// @version             2024.6.16
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -210,7 +210,7 @@
 (async () => {
 
     // Init browser flags
-    const isFirefox = chatgpt.browser.isFirefox(), isMobile = chatgpt.browser.isMobile()
+    const isFirefox = chatgpt.browser.isFirefox(), isEdge = navigator.userAgent.includes('Edg'), isMobile = chatgpt.browser.isMobile()
 
     // Init CONFIG
     const config = {
@@ -1258,7 +1258,7 @@
                 } catch (err) { consoleErr('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
                     if (get.reply.sender == activeAPI) // am designated sender, recurse
-                        processStreamText({ done, value })
+                        setTimeout(() => { processStreamText({ done, value }) }, isEdge ? 15 : 1) // Edge delay vs. STATUS_ACCESS_VIOLATION bug
                 }).catch(err => consoleErr('Error reading stream', err.message))
             }
         }
