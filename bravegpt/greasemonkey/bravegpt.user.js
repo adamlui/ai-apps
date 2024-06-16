@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.15.3
+// @version             2024.6.15.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1418,7 +1418,6 @@ setTimeout(async () => {
                     kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
                     kudoAIspan.style.cssText = 'position: relative ; bottom: 8px ; font-size: 12px'
                     kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
-                    appDiv.append(kudoAIspan)
                     appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
                 }
 
