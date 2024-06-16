@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.15.3
+// @version             2024.6.15.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -404,7 +404,7 @@
 (async () => {
 
     // Init browser flags
-    const isFirefox = chatgpt.browser.isFirefox(), isMobile = chatgpt.browser.isMobile()
+    const isFirefox = chatgpt.browser.isFirefox(), isEdge = navigator.userAgent.includes('Edg'), isMobile = chatgpt.browser.isMobile()
 
     // Init CONFIG
     const config = {
@@ -908,7 +908,7 @@
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '#googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
-              + `float: left ; margin: ${ isMobile ? 39 : 28 }px -15px 0 0 ; left: ${ isMobile ? 12 : 6 }px ;`
+              + `float: left ; margin: ${ isMobile ? 39 : 28 }px -15px 0 0 ; left: ${ isMobile ? 12 : 6 }px ;` // positioning
               + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
                   + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
           + '.continue-chat > textarea {'
@@ -929,8 +929,6 @@
               + `background: ${ scheme == 'dark' ? '#a2a2a270' : '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
           + '.related-query svg { float: left ; margin: -0.09em 6px 0 0 ;' // related query icon
               + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
-          + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
-          + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
           + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
           + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
           + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
@@ -1656,7 +1654,7 @@
                 } catch (err) { consoleErr('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
                     if (get.reply.sender == activeAPI) // am designated sender, recurse
-                        processStreamText({ done, value })
+                        setTimeout(() => { processStreamText({ done, value }) }, isEdge ? 15 : 1) // Edge delay vs. STATUS_ACCESS_VIOLATION bug
                 }).catch(err => consoleErr('Error reading stream', err.message))
             }
         }
