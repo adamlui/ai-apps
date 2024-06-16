@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.15.2
+// @version             2024.6.15.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -581,11 +581,10 @@ setTimeout(async () => {
              : window.matchMedia?.('(prefers-color-scheme: dark)')?.matches
     }
 
-    function updateTitleLine() {
+    function updateTitleAnchor() {
         if (appDiv.querySelector('.loading, #bravegpt-alert')) return // only update reply UI
 
         const appTitleVisible = !!appDiv.querySelector('.app-name'),
-              byLineVisible = !!appDiv.querySelector('.kudoai'),
               logoVisible = !!appDiv.querySelector('img')              
 
         // Create/fill/classify/style/append/update title anchor
@@ -603,17 +602,6 @@ setTimeout(async () => {
             appTitleAnchor.classList.add('app-name', 'no-user-select')
             if (!appTitleVisible) appDiv.append(appTitleAnchor)
             else appDiv.querySelector('.app-name').replaceWith(appTitleAnchor) // for appLogoImg.onload() callback
-        }
-
-        // Create/classify/style/hyperlink/append/update 'by KudoAI'
-        if (!byLineVisible || !logoVisible) {
-            const kudoAIspan = document.createElement('span')
-            kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-            kudoAIspan.style.cssText = appLogoImg.loaded ? 'position: relative ; bottom: 8px ; font-size: 12px' : ''
-            const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
-            kudoAIspan.append(kudoAIlink)
-            if (!byLineVisible) appDiv.append(kudoAIspan)
-            else appDiv.querySelector('.kudoai').replaceWith(kudoAIspan) // for appLogoImg.onload() callback
         }
     }
 
@@ -1324,7 +1312,7 @@ setTimeout(async () => {
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
 
                 // Create/append app title anchor + byline
-                updateTitleLine()
+                updateTitleAnchor()
 
                 // Create/append about button
                 const aboutSpan = document.createElement('span'),
@@ -1423,6 +1411,16 @@ setTimeout(async () => {
                 if (!isMobile) // add hover listeners for tooltips
                     [aboutSpan, speakSpan, wsbSpan].forEach(span => { if (span)
                         ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
+
+                // Create/append 'by KudoAI' if it fits
+                if (appDiv.querySelectorAll('.corner-btn').length < 5) {
+                    const kudoAIspan = document.createElement('span')
+                    kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
+                    kudoAIspan.style.cssText = 'position: relative ; bottom: 8px ; font-size: 12px'
+                    kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
+                    appDiv.append(kudoAIspan)
+                    appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
+                }
 
                 // Show standby state if prefix/suffix mode on
                 if (answer == 'standby') {
@@ -1665,7 +1663,7 @@ setTimeout(async () => {
 
     // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
-    appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleLine() }
+    appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleAnchor() }
 
     // Define MESSAGES
     let msgs = {}

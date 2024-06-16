@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.15.1
+// @version             2024.6.15.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1277,12 +1277,6 @@
                 // Create/append app title anchor
                 updateTitleAnchor()
 
-                // Create/append 'by KudoAI'
-                const kudoAIspan = document.createElement('span')
-                kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-                const kudoAIlink = createAnchor('https://www.kudoai.com', 'KudoAI')
-                kudoAIspan.append(kudoAIlink) ; appDiv.append(kudoAIspan)
-
                 // Create/append about button
                 const aboutSpan = document.createElement('span'),
                       aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
@@ -1388,6 +1382,14 @@
                 if (!isMobile) // add hover listeners for tooltips
                     [aboutSpan, speakSpan, ssbSpan, wsbSpan].forEach(span => { if (span)
                         ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
+
+                // Create/append 'by KudoAI' if it fits
+                if (appDiv.querySelectorAll('.corner-btn').length < 5) {
+                    const kudoAIspan = document.createElement('span')
+                    kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
+                    kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
+                    appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
+                }
 
                 // Show standby state if prefix/suffix mode on
                 if (answer == 'standby') {
