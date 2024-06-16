@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.15.3
+// @version             2024.6.15.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1384,7 +1384,7 @@
                         ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
 
                 // Create/append 'by KudoAI' if it fits
-                if (appDiv.querySelectorAll('.corner-btn').length < 6) {
+                if (appDiv.querySelectorAll('.corner-btn').length < isMobile ? 4 : 6) {
                     const kudoAIspan = document.createElement('span')
                     kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
                     kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
