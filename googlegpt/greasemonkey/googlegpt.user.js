@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.5
+// @version             2024.6.16.6
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -890,11 +890,11 @@
               + 'transform: scale(1.185) ; transition: transform 0.05s ease }'
           + '#googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
           + '#googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
-          + '#font-size-slider { width: 98% ; height: 10px ; margin: 15px auto ; background-color: #ccc }'
-          + '#font-size-slider-knob { width: 11px ; height: 20px ; border-radius: 30% ; position: relative ; top: -5px ;'
+          + '#font-size-slider-track { width: 98% ; height: 10px ; margin: 15px auto ; background-color: #ccc }'
+          + '#font-size-slider-thumb { width: 11px ; height: 20px ; border-radius: 30% ; position: relative ; top: -5px ;'
               + `background-color: ${ scheme == 'dark' ? 'white' : '#000' } ;`
               + 'cursor: grab ; cursor: -webkit-grab ; cursor: -moz-grab }'
-          + '#font-size-slider-knob:active { cursor: grabbing ; cursor: -webkit-grabbing ; cursor: -moz-grabbing }'
+          + '#font-size-slider-thumb:active { cursor: grabbing ; cursor: -webkit-grabbing ; cursor: -moz-grabbing }'
           + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin-top: 20px ;'
               + ( scheme == 'dark' ? 'color: #fff ; background: #000 ;' : '')
               + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
@@ -1202,7 +1202,7 @@
 
     function toggleSidebar(mode) {
         saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
-        if (appDiv.querySelector('#font-size-slider')) toggleFontSizeSlider('off')
+        if (appDiv.querySelector('#font-size-slider-track')) toggleFontSizeSlider('off')
         updateTweaksStyle()
         if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg() ; else updateSSBsvg()
         notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
@@ -1216,28 +1216,28 @@
               answerPre = appDiv.querySelector('pre')
 
         // Init slider
-        let fontSizeSlider = document.getElementById('font-size-slider')
+        let fontSizeSlider = document.getElementById('font-size-slider-track')
         if (!fontSizeSlider) { // create/append container/knob
 
             // Create/append slider elems
-            fontSizeSlider = document.createElement('div') ; fontSizeSlider.id = 'font-size-slider'
+            fontSizeSlider = document.createElement('div') ; fontSizeSlider.id = 'font-size-slider-track'
             fontSizeSlider.className = 'fade-in-less' ; fontSizeSlider.style.display = 'none'
-            const sliderKnob = document.createElement('div') ; sliderKnob.id = 'font-size-slider-knob'
-            fontSizeSlider.append(sliderKnob)
+            const sliderThumb = document.createElement('div') ; sliderThumb.id = 'font-size-slider-thumb'
+            fontSizeSlider.append(sliderThumb)
             appDiv.insertBefore(fontSizeSlider, appDiv.querySelector('.btn-tooltip,' // desktop
                                                                    + 'pre')) // mobile
             // Init knob pos
             setTimeout(() => {
-                const sliderWidth = fontSizeSlider.offsetWidth - sliderKnob.offsetWidth,
+                const sliderWidth = fontSizeSlider.offsetWidth - sliderThumb.offsetWidth,
                       iniLeft = (config.fontSize - config.minFontSize) / (config.maxFontSize - config.minFontSize) * sliderWidth
-                sliderKnob.style.left = iniLeft + 'px'
+                sliderThumb.style.left = iniLeft + 'px'
             }, fadeInDelay) // to ensure visibility for accurate dimension calcs
 
             // Add event listeners for dragging knob
             let isDragging = false, startX, startLeft
-            sliderKnob.addEventListener(inputEvents.down, event => {
+            sliderThumb.addEventListener(inputEvents.down, event => {
                 event.preventDefault() // prevent highlighting
-                isDragging = true ; startX = event.clientX ; startLeft = sliderKnob.offsetLeft
+                isDragging = true ; startX = event.clientX ; startLeft = sliderThumb.offsetLeft
             })
             document.addEventListener(inputEvents.move, event => {
                 if (isDragging) moveKnob(startLeft + event.clientX - startX) })
@@ -1246,18 +1246,18 @@
             // Add event listener for wheel-scrolling knob
             if (!isMobile) fontSizeSlider.addEventListener('wheel', event => {
                 event.preventDefault()
-                moveKnob(sliderKnob.offsetLeft + ( event.deltaY < 0 ? hWheelDistance : -hWheelDistance ))
+                moveKnob(sliderThumb.offsetLeft + ( event.deltaY < 0 ? hWheelDistance : -hWheelDistance ))
             })
 
             function moveKnob(newLeft) {
 
                 // Bound knob
-                const sliderWidth = fontSizeSlider.offsetWidth - sliderKnob.offsetWidth
+                const sliderWidth = fontSizeSlider.offsetWidth - sliderThumb.offsetWidth
                 if (newLeft < 0) newLeft = 0
                 if (newLeft > sliderWidth) newLeft = sliderWidth
 
                 // Move knob
-                sliderKnob.style.left = newLeft + 'px'
+                sliderThumb.style.left = newLeft + 'px'
 
                 // Adjust font size based on knob position
                 const fontSizePercent = newLeft / sliderWidth,
@@ -1668,7 +1668,7 @@
         reply: function(answer) {
 
             // Hide font size slider if visibile
-            if (appDiv.querySelector('#font-size-slider')) toggleFontSizeSlider('off')
+            if (appDiv.querySelector('#font-size-slider-track')) toggleFontSizeSlider('off')
 
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
@@ -2156,7 +2156,7 @@
         let elem = event.target
         while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
             elem = elem.parentNode
-        if (!elem && appDiv.querySelector('#font-size-slider')) toggleFontSizeSlider('off')
+        if (!elem && appDiv.querySelector('#font-size-slider-track')) toggleFontSizeSlider('off')
     })
 
     // APPEND to Google
