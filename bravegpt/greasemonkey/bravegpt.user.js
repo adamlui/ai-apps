@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.1
+// @version             2024.6.16.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -178,17 +178,20 @@ setTimeout(async () => {
     const config = {
         appName: 'BraveGPT', appSymbol: '🤖', keyPrefix: 'braveGPT',
         appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/KudoAI/bravegpt',
-        greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt' }
+        greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt',
+        minFontSize: 13, maxFontSize: 24, lineHeightRatio: 1.313 }
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@015b171/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@5814342/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'prefixEnabled', 'proxyAPIenabled',
-                'replyLanguage', 'rqDisabled', 'scheme', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
+    loadSetting('autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'prefixEnabled',
+                'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme', 'streamingDisabled',
+                'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
+    if (!config.fontSize) saveSetting('fontSize', 16) // init reply font size if unset
     if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
 
     // Init API props
@@ -635,14 +638,20 @@ setTimeout(async () => {
               + 'color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '#bravegpt section.loading { padding-left: 5px ; font-size: 90% }'
+          + '#font-size-slider { width: 98% ; height: 10px ; margin: 7px auto 18px ; background-color: #ccc }'
+          + '#font-size-slider-knob { width: 11px ; height: 20px ; border-radius: 30% ; position: relative ; top: -5px ;'
+              + `background-color: ${ scheme == 'dark' ? 'white' : '#000' } ;`
+              + 'cursor: grab ; cursor: -webkit-grab ; cursor: -moz-grab }'
+          + '#font-size-slider-knob:active { cursor: grabbing ; cursor: -webkit-grabbing ; cursor: -moz-grabbing }'
           + '.standby-btn { width: 100% ; padding: 13px 0 ; cursor: pointer ; margin: 14px 0 20px ;'
               + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
               + 'transform: scale(1) ; transition: transform 0.1s ease }'
           + '.standby-btn:hover { border-radius: 4px ; transform: scale(1.025) ;'
               + `${ scheme == 'dark' ? 'background: white ; color: black' : 'background: black ; color: white' }}`
           + '#bravegpt > pre {'
-              + 'font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ; line-height: 21px ;'
-              + 'padding: 1.2em 1.2em 0 1.2em ; margin-top: .7em ; border-radius: 13px ; overflow: auto ;'
+              + `font-size: ${config.fontSize}px ; font-family: Consolas, Menlo, Monaco, monospace ; white-space: pre-wrap ;`
+              + `line-height: ${ config.fontSize * config.lineHeightRatio }px ;`
+              + 'margin-top: .7em ; padding: 1.2em 1.2em 0 1.2em ; border-radius: 13px ; overflow: auto ;'
               + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 } ' : ' background: #eaeaea ; color: #282828 }' )
           + `#bravegpt footer { margin: ${ isFirefox ? 32 : 27 }px 0 -26px 0 ; border-top: none !important }`
           + '#bravegpt .feedback {'
@@ -678,8 +687,9 @@ setTimeout(async () => {
               + `background: ${ scheme == 'dark' ? '#a2a2a270': '#e5edff ; color: #000000a8 ; border-color: #a3c9ff' }}`
           + '.related-query svg { float: left ; margin: 0.09em 6px 0 0 ;' // related query icon
               + `color: ${ scheme == 'dark' ? '#aaa' : '#c1c1c1' }}`
-          + '.fade-in { opacity: 0 ; transform: translateY(7px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
-          + '.fade-in.active { opacity: 1 ; transform: translateY(0) }'
+          + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
+          + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
+          + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
           + '#send-btn { border: none ; float: right ; position: relative ; background: none ; margin: 29px 4px 0 0 ;'
               + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
           + `#send-btn:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
@@ -745,7 +755,7 @@ setTimeout(async () => {
     }
 
     function updateTooltip(buttonType) { // text & position
-        const cornerBtnTypes = ['about', 'speak', 'wsb'],
+        const cornerBtnTypes = ['about', 'speak', 'font-size', 'wsb'],
               [ctrAddend, spreadFactor] = document.querySelector('.standby-btn') ? [15, 18] : [5, 28],
               iniRoffset = spreadFactor * (buttonType == 'send' ? 1.65 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
@@ -753,6 +763,7 @@ setTimeout(async () => {
         tooltipDiv.innerText = (
             buttonType == 'about' ? msgs.menuLabel_about || 'About'
           : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
+          : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
                                    + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
           : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply' : '' )
@@ -912,11 +923,81 @@ setTimeout(async () => {
 
     function toggleSidebar(mode) {
         saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
+        if (appDiv.querySelector('#font-size-slider')) toggleFontSizeSlider('off')
         updateTweaksStyle()
         if (mode == 'wider' && document.querySelector('.corner-btn')) updateWSBsvg()
         notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
             + ' ' + state.word[+config[mode + 'Sidebar']])
         refreshMenu()
+    }
+
+    function toggleFontSizeSlider(state = '') {
+        const hWheelDistance = 10, // px
+              fadeInDelay = 5, // ms
+              answerPre = appDiv.querySelector('pre')
+
+        // Init slider
+        let fontSizeSlider = document.getElementById('font-size-slider')
+        if (!fontSizeSlider) { // create/append container/knob
+
+            // Create/append slider elems
+            fontSizeSlider = document.createElement('div') ; fontSizeSlider.id = 'font-size-slider'
+            fontSizeSlider.className = 'fade-in-less' ; fontSizeSlider.style.display = 'none'
+            const sliderKnob = document.createElement('div') ; sliderKnob.id = 'font-size-slider-knob'
+            fontSizeSlider.append(sliderKnob)
+            appDiv.insertBefore(fontSizeSlider, appDiv.querySelector('.btn-tooltip,' // desktop
+                                                                   + 'pre')) // mobile
+            // Init knob pos
+            setTimeout(() => {
+                const sliderWidth = fontSizeSlider.offsetWidth - sliderKnob.offsetWidth,
+                      iniLeft = (config.fontSize - config.minFontSize) / (config.maxFontSize - config.minFontSize) * sliderWidth
+                sliderKnob.style.left = iniLeft + 'px'
+            }, fadeInDelay) // to ensure visibility for accurate dimension calcs
+
+            // Add event listeners for dragging knob
+            let isDragging = false, startX, startLeft
+            sliderKnob.addEventListener(inputEvents.down, event => {
+                event.preventDefault() // prevent highlighting
+                isDragging = true ; startX = event.clientX ; startLeft = sliderKnob.offsetLeft
+            })
+            document.addEventListener(inputEvents.move, event => {
+                if (isDragging) moveKnob(startLeft + event.clientX - startX) })
+            document.addEventListener(inputEvents.up, () => isDragging = false)
+
+            // Add event listener for wheel-scrolling knob
+            if (!isMobile) fontSizeSlider.addEventListener('wheel', event => {
+                event.preventDefault()
+                moveKnob(sliderKnob.offsetLeft + ( event.deltaY < 0 ? hWheelDistance : -hWheelDistance ))
+            })
+
+            function moveKnob(newLeft) {
+
+                // Bound knob
+                const sliderWidth = fontSizeSlider.offsetWidth - sliderKnob.offsetWidth
+                if (newLeft < 0) newLeft = 0
+                if (newLeft > sliderWidth) newLeft = sliderWidth
+
+                // Move knob
+                sliderKnob.style.left = newLeft + 'px'
+
+                // Adjust font size based on knob position
+                const fontSizePercent = newLeft / sliderWidth,
+                      fontSize = config.minFontSize + fontSizePercent * (config.maxFontSize - config.minFontSize)
+                answerPre.style.fontSize = fontSize + 'px'
+                answerPre.style.lineHeight = fontSize * config.lineHeightRatio + 'px'
+                saveSetting('fontSize', fontSize)
+            }
+        }
+
+        // Toggle visibility
+        const balloonTip = document.querySelector('.balloon-tip')
+        if (state == 'on' || (!state && fontSizeSlider.style.display == 'none')) {
+            fontSizeSlider.style.display = '' ; balloonTip.style.display = 'none'
+            setTimeout(() => fontSizeSlider.classList.add('active'), fadeInDelay)
+        } else if (state == 'off' || (!state && fontSizeSlider.style.display != 'none')) {
+            fontSizeSlider.classList.remove('active') ; balloonTip.style.display = ''
+            setTimeout(() => fontSizeSlider.style.display = 'none', 55)
+        }
     }
 
     function toggleTooltip(event) { // visibility
@@ -1307,6 +1388,9 @@ setTimeout(async () => {
 
         reply: function(answer) {
 
+            // Hide font size slider if visibile
+            if (appDiv.querySelector('#font-size-slider')) toggleFontSizeSlider('off')
+
             // Build answer interface up to reply section if missing
             if (!appDiv.querySelector('pre')) {
                 while (appDiv.firstChild) appDiv.removeChild(appDiv.firstChild) // clear app content
@@ -1347,9 +1431,25 @@ setTimeout(async () => {
                     speakSpan.append(speakSVG) ; appDiv.append(speakSpan)
                 }
 
-                if (!isMobile) {
+                // Create/append font size button
+                if (answer != 'standby') {
+                    var fontSizeSpan = document.createElement('span'),
+                        fontSizeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+                    const fontSizeSVGpathA = document.createElementNS('http://www.w3.org/2000/svg','path'),
+                          fontSizeSVGpathB = document.createElementNS('http://www.w3.org/2000/svg','path')
+                    fontSizeSpan.id = 'font-size-btn' // for toggleTooltip()
+                    fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = '1px 10px 0 2px'
+                    const fontSizeSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 512 512']]
+                    fontSizeSVGattrs.forEach(([attr, value]) => fontSizeSVG.setAttribute(attr, value))
+                    fontSizeSVGpathA.setAttribute('d',
+                        'M234.997 448.199h-55.373a6.734 6.734 0 0 1-6.556-5.194l-11.435-48.682a6.734 6.734 0 0 0-6.556-5.194H86.063a6.734 6.734 0 0 0-6.556 5.194l-11.435 48.682a6.734 6.734 0 0 1-6.556 5.194H7.74c-4.519 0-7.755-4.363-6.445-8.687l79.173-261.269a6.734 6.734 0 0 1 6.445-4.781h69.29c2.97 0 5.59 1.946 6.447 4.79l78.795 261.269c1.303 4.322-1.933 8.678-6.448 8.678zm-88.044-114.93l-19.983-84.371c-1.639-6.921-11.493-6.905-13.111.02l-19.705 84.371c-.987 4.224 2.22 8.266 6.558 8.266H140.4c4.346 0 7.555-4.056 6.553-8.286z')
+                    fontSizeSVGpathB.setAttribute('d',
+                        'M502.572 448.199h-77.475a9.423 9.423 0 0 1-9.173-7.268l-16-68.114a9.423 9.423 0 0 0-9.173-7.268H294.19a9.423 9.423 0 0 0-9.173 7.268l-16 68.114a9.423 9.423 0 0 1-9.173 7.268h-75.241c-6.322 0-10.851-6.104-9.017-12.155L286.362 70.491a9.422 9.422 0 0 1 9.017-6.69h96.947a9.422 9.422 0 0 1 9.021 6.702l110.245 365.554c1.825 6.047-2.703 12.142-9.02 12.142zM379.385 287.395l-27.959-118.047c-2.293-9.683-16.081-9.661-18.344.029l-27.57 118.047c-1.38 5.91 3.106 11.565 9.175 11.565h55.529c6.082-.001 10.571-5.676 9.169-11.594z')
+                    fontSizeSVG.append(fontSizeSVGpathA, fontSizeSVGpathB) ; fontSizeSpan.append(fontSizeSVG) ; appDiv.append(fontSizeSpan)
+                }
 
-                    // Create/append Wider Sidebar button
+                // Create/append Wider Sidebar button
+                if (!isMobile) {                    
                     var wsbSpan = document.createElement('span'),
                         wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
                     wsbSpan.id = 'wsb-btn' // for updateWSBsvg() + toggleTooltip()
@@ -1407,9 +1507,10 @@ setTimeout(async () => {
                         })}}
                     })
                 })
+                fontSizeSVG?.addEventListener('click', () => toggleFontSizeSlider())
                 wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
                 if (!isMobile) // add hover listeners for tooltips
-                    [aboutSpan, speakSpan, wsbSpan].forEach(span => { if (span)
+                    [aboutSpan, speakSpan, fontSizeSpan, wsbSpan].forEach(span => { if (span)
                         ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
 
                 // Create/append 'by KudoAI' if it fits
@@ -1660,6 +1761,10 @@ setTimeout(async () => {
     // Init scheme var
     let scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' )
 
+    // Init INPUT EVENTS
+    const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>
+        inputEvents[action] = ( window.PointerEvent ? 'pointer' : isMobile ? 'touch' : 'mouse' ) + action)
+
     // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
     appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleAnchor() }
@@ -1735,10 +1840,16 @@ setTimeout(async () => {
         document.head.append(tooltipStyle)
     }
 
-    // Create/ID/classify BRAVEGPT container
+    // Create/ID/classify/listenerize BRAVEGPT container
     const appDiv = document.createElement('div') ; appDiv.id = 'bravegpt'
     appDiv.classList.add('fade-in', // BraveGPT class
                          'snippet') // Brave class
+    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
+        let elem = event.target
+        while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
+            elem = elem.parentNode
+        if (!elem && appDiv.querySelector('#font-size-slider')) toggleFontSizeSlider('off')
+    })
 
     // APPEND to Brave
     const hostContainer = document.querySelector(isMobile ? '#results' : '.sidebar')
