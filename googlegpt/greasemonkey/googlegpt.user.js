@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.6
+// @version             2024.6.16.7
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -891,8 +891,8 @@
           + '#googlegpt .loading { padding-bottom: 15px ; color: #b6b8ba ; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite }'
           + '#googlegpt.sidebar-free { margin-left: 60px ; height: fit-content }'
           + '#font-size-slider-track { width: 98% ; height: 10px ; margin: 15px auto ; background-color: #ccc }'
-          + '#font-size-slider-thumb { width: 11px ; height: 20px ; border-radius: 30% ; position: relative ; top: -5px ;'
-              + `background-color: ${ scheme == 'dark' ? 'white' : '#000' } ;`
+          + '#font-size-slider-thumb { width: 10px ; height: 26px ; border-radius: 30% ; position: relative ; top: -8.25px ;'
+              + `background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
               + 'cursor: grab ; cursor: -webkit-grab ; cursor: -moz-grab }'
           + '#font-size-slider-thumb:active { cursor: grabbing ; cursor: -webkit-grabbing ; cursor: -moz-grabbing }'
           + '.standby-btn { width: 100% ; padding: 11px 0 ; cursor: pointer ; margin-top: 20px ;'
