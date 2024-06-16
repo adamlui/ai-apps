@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.15.3
+// @version             2024.6.16
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -753,7 +753,7 @@
           headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : ''
     let footerSelector = 'footer'
     try { footerSelector = /chatgpt|openai/.test(site) ?
-              chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]])/g, '\\$1').replace(/^| /g, '.') : ''
+              chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') : ''
     } catch (err) {}
 
     // AUTO-FOCUS ChatGPT chatbar if enabled

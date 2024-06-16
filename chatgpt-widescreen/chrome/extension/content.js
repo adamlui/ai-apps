@@ -43,7 +43,7 @@
           headerSelector = /chatgpt|openai/.test(site) ? 'main .sticky' : ''
     let footerSelector = 'footer'
     try { footerSelector = /chatgpt|openai/.test(site) ?
-              chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]])/g, '\\$1').replace(/^| /g, '.') : ''
+              chatgpt.getFooterDiv()?.classList.toString().replace(/([:[\]\\])/g, '\\$1').replace(/^| /g, '.') : ''
     } catch (err) {}
 
     // AUTO-FOCUS ChatGPT chatbar if enabled
