@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.16
+// @version             2024.6.17
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -366,7 +366,7 @@
 
     // Add LISTENER to toggle switch/label/config/menu/auto-refresh
     navToggleDiv.addEventListener('click', () => {
-        const toggleInput = document.querySelector('#arToggleInput')
+        const toggleInput = document.getElementById('arToggleInput')
         toggleInput.checked = !toggleInput.checked ; config.arDisabled = !toggleInput.checked
         updateToggleHTML() ; refreshMenu()
         if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
@@ -405,7 +405,7 @@
                       + ( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' ↻ '
                       + state.separator + state.word[+!config.arDisabled]
         menuIDs.push(GM_registerMenuCommand(arLabel, () => {
-            document.querySelector('#arSwitchSpan').click()
+            document.getElementById('arSwitchSpan').click()
         }))
 
         // Add command to toggle visibility of toggle
@@ -584,7 +584,7 @@
         if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
-        document.querySelector('#arToggleFavicon').src = `${ // update navicon color in case scheme changed
+        document.getElementById('arToggleFavicon').src = `${ // update navicon color in case scheme changed
             config.assetHostURL }media/images/icons/auto-refresh/${
             chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
@@ -592,18 +592,18 @@
     function updateToggleHTML() {
 
         // Create/size/position navicon
-        const navicon = document.querySelector('#arToggleFavicon') || document.createElement('img')
+        const navicon = document.getElementById('arToggleFavicon') || document.createElement('img')
         navicon.id = 'arToggleFavicon'
         navicon.style.width = navicon.style.height = '1.25rem'
         navicon.style.marginLeft = isGPT4oUI ? '2px' : '4px' ; navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
-        const toggleInput = document.querySelector('#arToggleInput') || document.createElement('input')
+        const toggleInput = document.getElementById('arToggleInput') || document.createElement('input')
         toggleInput.id = 'arToggleInput' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
         toggleInput.style.display = 'none' ; toggleInput.checked = !config.arDisabled
 
         // Create/ID/stylize switch
-        const switchSpan = document.querySelector('#arSwitchSpan') || document.createElement('span')
+        const switchSpan = document.getElementById('arSwitchSpan') || document.createElement('span')
         switchSpan.id = 'arSwitchSpan'
         const switchStyles = {
             position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : isGPT4oUI ? 147 : 152 }px`,
@@ -614,7 +614,7 @@
         Object.assign(switchSpan.style, switchStyles)
 
         // Create/stylize knob, append to switch
-        const knobSpan = document.querySelector('#arToggleKnobSpan') || document.createElement('span')
+        const knobSpan = document.getElementById('arToggleKnobSpan') || document.createElement('span')
         knobSpan.id = 'arToggleKnobSpan'
         const knobWidth = 13
         const knobStyles = {
@@ -627,7 +627,7 @@
         Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
         // Create/stylize/fill label
-        const toggleLabel = document.querySelector('#arToggleLabel') || document.createElement('label')
+        const toggleLabel = document.getElementById('arToggleLabel') || document.createElement('label')
         toggleLabel.id = 'arToggleLabel'
         if (!firstLink) { // add font size/weight since no firstLink to borrow from
             toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }

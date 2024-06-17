@@ -16,7 +16,7 @@
         if (request.action == 'notify') notify(request.msg, request.position)
         else if (request.action == 'alert') siteAlert(request.title, request.msg, request.btns)
         else if (request.action == 'updateToggleHTML') updateToggleHTML()
-        else if (request.action == 'clickToggle') document.querySelector('#infToggleLabel').click()        
+        else if (request.action == 'clickToggle') document.getElementById('infToggleLabel').click()        
         else if (typeof window[request.action] == 'function') {
             const args = Array.isArray(request.args) ? request.args // preserve array if supplied
                        : request.args !== undefined ? [request.args] : [] // convert to array if single or no arg
@@ -51,8 +51,8 @@
     if (document.hidden !== undefined) { // ...if Page Visibility API supported
         document.addEventListener('visibilitychange', () => {
             if (config.infinityMode) {                
-                if (document.querySelector('#infToggleLabel')) // ensure toggle state is accurate
-                    document.querySelector('#infToggleLabel').click()
+                if (document.getElementById('infToggleLabel')) // ensure toggle state is accurate
+                    document.getElementById('infToggleLabel').click()
                 else infinityMode.deactivate()
     }})}
 
@@ -94,7 +94,7 @@
 
     // Add LISTENER to toggle switch/label/config/menu
     navToggleDiv.addEventListener('click', () => {
-        const toggleInput = document.querySelector('#infToggleInput')
+        const toggleInput = document.getElementById('infToggleInput')
         toggleInput.checked = !toggleInput.checked
         settings.save('infinityMode', toggleInput.checked)
         updateToggleHTML()
@@ -145,7 +145,7 @@
         if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
-        document.querySelector('#infToggleFavicon').src = `${ // update navicon color in case scheme changed
+        document.getElementById('infToggleFavicon').src = `${ // update navicon color in case scheme changed
             config.assetHostURL }media/images/icons/infinity-symbol/${
             chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
@@ -158,18 +158,18 @@
             else {
 
                 // Create/size/position navicon
-                const navicon = document.querySelector('#infToggleFavicon') || document.createElement('img')
+                const navicon = document.getElementById('infToggleFavicon') || document.createElement('img')
                 navicon.id = 'infToggleFavicon'
                 navicon.style.width = navicon.style.height = '1.25rem'
                 navicon.style.marginLeft = isGPT4oUI ? '2px' : '4px' ; navicon.style.marginRight = '4px'
 
                 // Create/ID/disable/hide/update checkbox
-                const toggleInput = document.querySelector('#infToggleInput') || document.createElement('input')
+                const toggleInput = document.getElementById('infToggleInput') || document.createElement('input')
                 toggleInput.id = 'infToggleInput' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
                 toggleInput.style.display = 'none' ; toggleInput.checked = config.infinityMode
 
                 // Create/ID/stylize switch
-                const switchSpan = document.querySelector('#infSwitchSpan') || document.createElement('span')
+                const switchSpan = document.getElementById('infSwitchSpan') || document.createElement('span')
                 switchSpan.id = 'infSwitchSpan'
                 const switchStyles = {
                     position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : isGPT4oUI ? 147 : 152 }px`,
@@ -180,7 +180,7 @@
                 Object.assign(switchSpan.style, switchStyles)
 
                 // Create/stylize knob, append to switch
-                const knobSpan = document.querySelector('#infToggleKnobSpan') || document.createElement('span')
+                const knobSpan = document.getElementById('infToggleKnobSpan') || document.createElement('span')
                 knobSpan.id = 'infToggleKnobSpan'
                 const knobWidth = 13
                 const knobStyles = {
@@ -193,7 +193,7 @@
                 Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
                 // Create/stylize/fill label
-                const toggleLabel = document.querySelector('#infToggleLabel') || document.createElement('label')
+                const toggleLabel = document.getElementById('infToggleLabel') || document.createElement('label')
                 toggleLabel.id = 'infToggleLabel'
                 if (!firstLink) { // add font size/weight since no firstLink to borrow from
                     toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
@@ -252,7 +252,7 @@
             if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': OFF')
             fromMsg = false
             chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
-            document.querySelector('#infToggleInput').checked = false // for window listener
+            document.getElementById('infToggleInput').checked = false // for window listener
             settings.save('infinityMode', false) // in case toggled by PV listener
         },
 
@@ -262,8 +262,8 @@
     // Define LIVE RESTART functions
 
     restartInNewChat = () => { // eslint-disable-line no-undef
-        chatgpt.stop() ; document.querySelector('#infToggleLabel').click() // toggle off
-        setTimeout(() => { document.querySelector('#infToggleLabel').click() }, 750) // toggle on
+        chatgpt.stop() ; document.getElementById('infToggleLabel').click() // toggle off
+        setTimeout(() => { document.getElementById('infToggleLabel').click() }, 750) // toggle on
     }
 
     resetInSameChat = async () => { // eslint-disable-line no-undef

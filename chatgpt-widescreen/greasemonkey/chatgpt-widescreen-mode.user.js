@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.16.1
+// @version             2024.6.17
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -536,7 +536,7 @@
         let chatbar
         if (/chatgpt|openai/.test(site)) {
             chatbar = document.querySelector('div[class*="textarea:focus"]') // pre-5/2024
-                   || document.querySelector('#prompt-textarea').parentNode.parentNode // post-5/2024
+                   || document.getElementById('prompt-textarea').parentNode.parentNode // post-5/2024
         } else if (site == 'poe') chatbar = document.querySelector('div[class*="ChatMessageInputContainer"]')
 
         if (chatbar.contains(wideScreenBtn)) return // if buttons aren't missing, exit
@@ -682,12 +682,12 @@
     // Define SYNC functions
 
     function isFullWindow() {
-        return site == 'poe' ? !!document.querySelector('#fullWindow-mode')
+        return site == 'poe' ? !!document.getElementById('fullWindow-mode')
                              : chatgpt.sidebar.isOff()
     }
 
     function syncMode(mode) { // setting + icon + tooltip
-        const state = ( mode == 'wideScreen' ? !!document.querySelector('#wideScreen-mode')
+        const state = ( mode == 'wideScreen' ? !!document.getElementById('wideScreen-mode')
                       : mode == 'fullWindow' ? isFullWindow()
                                              : chatgpt.isFullScreen() )
         saveSetting(mode, state) ; updateBtnSVG(mode) ; updateTooltip(mode)

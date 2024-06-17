@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.16
+// @version             2024.6.17
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -353,7 +353,7 @@
 
     // Add LISTENER to toggle switch/label/config/menu + auto-clear
     navToggleDiv.addEventListener('click', () => {
-        const toggleInput = document.querySelector('#acToggleInput')
+        const toggleInput = document.getElementById('acToggleInput')
         toggleInput.checked = !toggleInput.checked ; config.autoclear = toggleInput.checked
         updateToggleHTML() ; refreshMenu()
         if (config.autoclear) {
@@ -391,7 +391,7 @@
                       + ( msgs.menuLabel_autoClear || 'Autoclear Chats' )
                       + state.separator + state.word[+config.autoclear]
         menuIDs.push(GM_registerMenuCommand(acLabel, () => {
-            document.querySelector('#acToggleLabel').click()
+            document.getElementById('acToggleLabel').click()
         }))
 
         // Add 'Toggle Visibility' command
@@ -547,7 +547,7 @@
         if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
-        document.querySelector('#acToggleFavicon').src = `${ // update navicon color in case scheme changed
+        document.getElementById('acToggleFavicon').src = `${ // update navicon color in case scheme changed
             config.assetHostURL }media/images/icons/incognito/${
             chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
@@ -555,18 +555,18 @@
     function updateToggleHTML() {
 
         // Create/size/position navicon
-        const navicon = document.querySelector('#acToggleFavicon') || document.createElement('img')
+        const navicon = document.getElementById('acToggleFavicon') || document.createElement('img')
         navicon.id = 'acToggleFavicon'
         navicon.style.width = navicon.style.height = '1.25rem'
         navicon.style.marginLeft = isGPT4oUI ? '2px' : '4px' ; navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
-        const toggleInput = document.querySelector('#acToggleInput') || document.createElement('input')
+        const toggleInput = document.getElementById('acToggleInput') || document.createElement('input')
         toggleInput.id = 'acToggleInput' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
         toggleInput.style.display = 'none' ; toggleInput.checked = config.autoclear
 
         // Create/ID/stylize switch
-        const switchSpan = document.querySelector('#acSwitchSpan') || document.createElement('span')
+        const switchSpan = document.getElementById('acSwitchSpan') || document.createElement('span')
         switchSpan.id = 'acSwitchSpan'
         const switchStyles = {
             position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : isGPT4oUI ? 147 : 152 }px`,
@@ -577,7 +577,7 @@
         Object.assign(switchSpan.style, switchStyles)
 
         // Create/ID/stylize knob, append to switch
-        const knobSpan = document.querySelector('#acToggleKnobSpan') || document.createElement('span')
+        const knobSpan = document.getElementById('acToggleKnobSpan') || document.createElement('span')
         knobSpan.id = 'acToggleKnobSpan'
         const knobWidth = 13
         const knobStyles = {
@@ -590,7 +590,7 @@
         Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
         // Create/ID/stylize/fill label
-        const toggleLabel = document.querySelector('#acToggleLabel') || document.createElement('label')
+        const toggleLabel = document.getElementById('acToggleLabel') || document.createElement('label')
         toggleLabel.id = 'acToggleLabel'
         if (!firstLink) { // add font size/weight since no firstLink to borrow from
             toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
