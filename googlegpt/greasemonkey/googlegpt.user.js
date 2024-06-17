@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.20
+// @version             2024.6.17.21
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -925,7 +925,7 @@
               + `font-size: ${config.fontSize}px ; white-space: pre-wrap ; min-width: 0 ;`
               + `line-height: ${ config.fontSize * config.lineHeightRatio }px ; `
               + 'margin: 16px 0 0 0 ; padding: 1.25em ; border-radius: 10px ; overflow: auto ;'
-              + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 }' : 'background: #eaeaea }' )
+              + ( scheme == 'dark' ? 'background: #3a3a3a ; color: #f2f2f2 }' : 'background: #eaeaea ; color: #202124 }' )
           + '@keyframes pulse { 0%, to { opacity: 1 } 50% { opacity: .5 }}'
           + '#googlegpt section.loading { padding: 15px 0 14px 5px }' // left/top-pad loading status when sending replies
           + '.balloon-tip { content: "" ; position: relative ; border: 7px solid transparent ;'
@@ -965,7 +965,8 @@
           + 'code.hljs { text-wrap: nowrap ; overflow-x: scroll }' // don't wrap highlighted code to be scrollable horizontally
           + '.katex-html { display: none }' // hide unrendered math
           + '.chatgpt-notify { padding: 13px 13px 13px 18px !important }' // pad notifications
-          + '.chatgpt-modal > div { 17px 20px 24px 20px !important }' // increase alert padding
+          + '.chatgpt-modal > div { 17px 20px 24px 20px !important ;' // increase alert padding
+              + 'background-color: white ; color: #202124 }'
           + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
           + '.modal-close-btn { top: -8px !important ; right: -8px !important }' // re-pos modal close button
           + `.modal-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}`
