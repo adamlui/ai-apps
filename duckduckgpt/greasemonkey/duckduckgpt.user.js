@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.4
+// @version             2024.6.17.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -765,12 +765,17 @@
     }
 
     function updateTweaksStyle() {
-        const isStandbyMode = appDiv.querySelector('.standby-btn'),
-              answerIsLoaded = appDiv.querySelector('.corner-btn')
 
         // Update tweaks style based on settings (for tweaks init + show.reply() + toggleSidebar())
+        const isStandbyMode = appDiv.querySelector('.standby-btn'),
+              answerIsLoaded = appDiv.querySelector('.corner-btn')
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                               + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
+
+        // Update 'by KudoAI' visibility based on corner space available
+        const kudoAIspan = appDiv.querySelector('.kudoai')
+        if (kudoAIspan) kudoAIspan.style.display = (
+            appDiv.querySelectorAll('.corner-btn').length < ( isMobile ? 3 : !config.widerSidebar ? 6 : 8 )) ? '' : 'none'
 
         // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
         const answerPre = appDiv.querySelector('pre'),
@@ -1499,13 +1504,12 @@
                     [aboutSpan, speakSpan, ssbSpan, fontSizeSpan, wsbSpan].forEach(span => { if (span)
                         ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
 
-                // Create/append 'by KudoAI' if it fits
-                if (appDiv.querySelectorAll('.corner-btn').length < ( isMobile ? 3 : 6 )) {
-                    const kudoAIspan = document.createElement('span')
-                    kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-                    kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
-                    appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
-                }
+                // Create/append 'by KudoAI'
+                const kudoAIspan = document.createElement('span')
+                kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
+                kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
+                appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
+                updateTweaksStyle() // show/hide based on corner space available
 
                 // Show standby state if prefix/suffix mode on
                 if (answer == 'standby') {

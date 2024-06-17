@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.4
+// @version             2024.6.17.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -984,12 +984,17 @@
     }
 
     function updateTweaksStyle() {
-        const isStandbyMode = appDiv.querySelector('.standby-btn'),
-              answerIsLoaded = appDiv.querySelector('.corner-btn')
 
         // Update tweaks style based on settings (for tweaks init + show.reply() + toggleSidebar())
+        const isStandbyMode = appDiv.querySelector('.standby-btn'),
+              answerIsLoaded = appDiv.querySelector('.corner-btn')
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
                               + ( config.stickySidebar && !isStandbyMode && answerIsLoaded ? ssbStyles : '' )
+
+        // Update 'by KudoAI' visibility based on corner space available
+        const kudoAIspan = appDiv.querySelector('.kudoai')
+        if (kudoAIspan) kudoAIspan.style.display = (
+            appDiv.querySelectorAll('.corner-btn').length < ( config.widerSidebar ? 10 : 5 )) ? '' : 'none'
 
         // Update <pre> max-height in Sticky Sidebar mode based on RQ visibility (for get.reply()'s RQ show + menu RQ toggle)
         const answerPre = appDiv.querySelector('pre'),
@@ -1816,11 +1821,12 @@
                         ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
 
                 // Create/append 'by KudoAI' if it fits
-                if (!isMobile && appDiv.querySelectorAll('.corner-btn').length < 5) {
+                if (!isMobile) {
                     const kudoAIspan = document.createElement('span')
                     kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
                     kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
                     appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
+                    updateTweaksStyle() // show/hide based on corner space available
                 }
 
                 // Show standby state if prefix/suffix mode on

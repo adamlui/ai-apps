@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.4
+// @version             2024.6.17.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -737,8 +737,16 @@ setTimeout(async () => {
         )
     }
 
-    function updateTweaksStyle() { // based on settings (for tweaks init + show.reply() + toggleSidebar())
-        tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )}
+    function updateTweaksStyle() {
+
+        // Update tweaks style based on settings (for tweaks init + show.reply() + toggleSidebar())
+        tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
+
+        // Update 'by KudoAI' visibility based on corner space available
+        const kudoAIspan = appDiv.querySelector('.kudoai')
+        if (kudoAIspan) kudoAIspan.style.display = (
+            appDiv.querySelectorAll('.corner-btn').length < ( config.widerSidebar ? 10 : 5 )) ? '' : 'none'
+    }
 
     const fontSizeSlider = {
         fadeInDelay: 5, // ms
@@ -1526,14 +1534,13 @@ setTimeout(async () => {
                     [aboutSpan, speakSpan, fontSizeSpan, wsbSpan].forEach(span => { if (span)
                         ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
 
-                // Create/append 'by KudoAI' if it fits
-                if (appDiv.querySelectorAll('.corner-btn').length < 5) {
-                    const kudoAIspan = document.createElement('span')
-                    kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
-                    kudoAIspan.style.cssText = 'position: relative ; bottom: 8px ; font-size: 12px'
-                    kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
-                    appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
-                }
+                // Create/append 'by KudoAI'
+                const kudoAIspan = document.createElement('span')
+                kudoAIspan.classList.add('kudoai', 'no-user-select') ; kudoAIspan.textContent = 'by '
+                kudoAIspan.style.cssText = 'position: relative ; bottom: 8px ; font-size: 12px'
+                kudoAIspan.append(createAnchor('https://www.kudoai.com', 'KudoAI'))
+                appDiv.querySelector('.app-name').insertAdjacentElement('afterend', kudoAIspan)
+                updateTweaksStyle() // show/hide based on corner space available
 
                 // Show standby state if prefix/suffix mode on
                 if (answer == 'standby') {
