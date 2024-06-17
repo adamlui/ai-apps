@@ -64,7 +64,7 @@
 // @description:la      Adiungit responsiones ChatGPT ad lateralem mensam quaerendi DuckDuckGo (GPT-4o motore!)
 // @description:lb      Setzt ChatGPT Äntwerten op DuckDuckGo Sichfenster bäi (gedriwwt vum GPT-4o!)
 // @description:lo      ເພີ່ມຄຳຕອບ ChatGPT ໄປສະແດງໄວ້ໃນແບບຂອງ DuckDuckGo Search (ໂດຍ GPT-4o!)
-// @description:lt      Prideda ChatGPT atsakymus į šoninį juostos paieškos rėmelį „DuckDuckGo“ (naudojant GPT-4o!)
+// @description:lt      Prideda ChatGPT atsakymus į šoninį juostos paieškos rėmelį DuckDuckGo (naudojant GPT-4o!)
 // @description:lv      Pievieno ChatGPT atbildes DuckDuckGo meklēšanas sānjoslā (darbināts ar GPT-4o!)
 // @description:mg      Mampiditra valiny avy amin'ny ChatGPT ao amin'ny laharana tenim-paharetan'ny DuckDuckGo (amin'ny alalan'ny GPT-4o!)
 // @description:mi      Whakapau kōrero mai te ChatGPT ki te whītiki o DuckDuckGo Search (e whakahauhau ana e GPT-4o!)
@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.1
+// @version             2024.6.17.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -222,7 +222,7 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@fd5fad2/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@3ebf715/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting('autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun', 'prefixEnabled',
@@ -230,7 +230,7 @@
                 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', 16.4) // init reply font size if unset
-    if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
+    if (isEdge || getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if Edge or not TM
     if (isMobile && !config.notFirstRun) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
     saveSetting('notFirstRun', true)
 
@@ -271,7 +271,14 @@
                        + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
                        + state.separator + state.word[+stmState]
         menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
-            if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
+            if (isEdge) { // alert Edge unsupported, link to browser bug
+                const msBugLink = 'https://answers.microsoft.com/en-us/microsoftedge/forum/all/'
+                                + 'status-access-violation-issues/1fd4a2ef-6736-441f-8421-6ed167105093'
+                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                    `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } Edge`
+                      + ` ${ msgs.alert_untilMSfixesBug || 'until Microsoft fixes this long-standing browser rendering bug' }:`
+                      + ` <a target="_blank" rel="noopener" href="${msBugLink}">${msBugLink}</a>`)
+            } else if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
                 siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
                       + ' <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a>.'
@@ -1345,7 +1352,7 @@
                 } catch (err) { consoleErr('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
                     if (get.reply.sender == caller.api) // am designated sender, recurse
-                        setTimeout(() => { processStreamText({ done, value }) }, isEdge ? 200 : 1) // Edge delay vs. STATUS_ACCESS_VIOLATION bug
+                        processStreamText({ done, value })
                 }).catch(err => consoleErr('Error reading stream', err.message))
             }
         }
