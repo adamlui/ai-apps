@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.5
+// @version             2024.6.17.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1443,7 +1443,7 @@
                     var wsbSpan = document.createElement('span'),
                         wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
                     wsbSpan.id = 'wsb-btn' // for updateSSBsvg() + toggleTooltip()
-                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '0.05rem 12px 0 0'
+                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '2px 12px 0 0'
                     wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan) ; updateWSBsvg()
                 }
 
