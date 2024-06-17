@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "нэвтрэх боломжтой" },
   "alert_upToDate": { "message": "Дагалдах" },
   "alert_isUpToDate": { "message": "одоогийн байдлаар" },
+  "alert_isUnsupportedIn": { "message": "-д дэмжихгүй байна" },
+  "alert_untilMSfixesBug": { "message": "майкрософт энэ урт хугацааны хөтөчийн алдааг засах хүртэл" },
   "alert_unavailable": { "message": "Боломжгүй" },
   "alert_isOnlyAvailFor": { "message": "зөвхөн боломжтой" },
   "alert_userscriptMgrNoStream": { "message": "Таны хэрэглэгчийн редакторын менежер урсгалын буцах хариу урвалыг дэмжихгүй байна" },

@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "is available" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "is up-to-date" },
+  "alert_isUnsupportedIn": { "message": "is unsupported in" },
+  "alert_untilMSfixesBug": { "message": "until Microsoft fixes this long-standing browser rendering bug" },
   "alert_unavailable": { "message": "unavailable" },
   "alert_isOnlyAvailFor": { "message": "is only available for" },
   "alert_userscriptMgrNoStream": { "message": "Your userscript manager does not support returning stream responses" },

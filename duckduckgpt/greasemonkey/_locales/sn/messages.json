@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "inowanika" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "is up-to-date" },
+  "alert_isUnsupportedIn": { "message": "is unsupported in" },
+  "alert_untilMSfixesBug": { "message": "kusvikira Microsoft anogadzirisa ichi refu akamira Browser achiita tsikidzi" },
   "alert_unavailable": { "message": "hazviwanikwi" },
   "alert_isOnlyAvailFor": { "message": "inongowanikwa chete ye" },
   "alert_userscriptMgrNoStream": { "message": "Your userscript maneja haritsigiri kudzoka rukova mhinduro" },

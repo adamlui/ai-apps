@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "geçerli" },
   "alert_upToDate": { "message": "Güncel" },
   "alert_isUpToDate": { "message": "Güncel" },
+  "alert_isUnsupportedIn": { "message": "şurada desteklenmiyor:" },
+  "alert_untilMSfixesBug": { "message": "microsoft bu uzun süredir devam eden tarayıcı oluşturma hatasını düzeltene kadar" },
   "alert_unavailable": { "message": "kullanım dışı" },
   "alert_isOnlyAvailFor": { "message": "yalnızca şunlar için kullanılabilir" },
   "alert_userscriptMgrNoStream": { "message": "Kullanıcı betiği yöneticiniz geri dönen akış yanıtlarını desteklemiyor" },

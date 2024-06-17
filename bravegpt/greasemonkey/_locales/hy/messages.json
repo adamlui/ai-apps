@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "առկա է" },
   "alert_upToDate": { "message": "Թարմացված" },
   "alert_isUpToDate": { "message": "այն արդիական է" },
+  "alert_isUnsupportedIn": { "message": "չի աջակցվում ՝" },
+  "alert_untilMSfixesBug": { "message": "մինչև Microsoft - ը շտկի այս երկարամյա դիտարկչի մատուցման վրիպակը" },
   "alert_unavailable": { "message": "ազատ չէ" },
   "alert_isOnlyAvailFor": { "message": "հասանելի է միայն" },
   "alert_userscriptMgrNoStream": { "message": "Ձեր օգտատիրոջ սկրիպտի կառավարիչը չի աջակցում հոսքային պատասխանների վերադարձը" },

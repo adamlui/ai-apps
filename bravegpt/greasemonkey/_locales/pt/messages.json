@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "está disponível" },
   "alert_upToDate": { "message": "Moderno" },
   "alert_isUpToDate": { "message": "está actualizado" },
+  "alert_isUnsupportedIn": { "message": "não é suportado em" },
+  "alert_untilMSfixesBug": { "message": "até que a Microsoft corrija esse bug de renderização de navegador de longa data" },
   "alert_unavailable": { "message": "indisponível" },
   "alert_isOnlyAvailFor": { "message": "Apenas disponível para" },
   "alert_userscriptMgrNoStream": { "message": "O seu gestor de scripts de utilizador não suporta respostas de fluxo de retorno" },

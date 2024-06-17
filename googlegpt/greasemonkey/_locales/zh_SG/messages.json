@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "是可用的" },
   "alert_upToDate": { "message": "已最新" },
   "alert_isUpToDate": { "message": "是最新的" },
+  "alert_isUnsupportedIn": { "message": "在中不受支持" },
+  "alert_untilMSfixesBug": { "message": "直到 Microsoft 修复这个长期存在的浏览器渲染错误" },
   "alert_unavailable": { "message": "不可用" },
   "alert_isOnlyAvailFor": { "message": "仅适用于" },
   "alert_userscriptMgrNoStream": { "message": "您的用户脚本管理器不支持返回流响应" },

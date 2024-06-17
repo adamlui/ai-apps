@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "est disponible" },
   "alert_upToDate": { "message": "À jour" },
   "alert_isUpToDate": { "message": "Elle est à jour" },
+  "alert_isUnsupportedIn": { "message": "n'est pas pris en charge dans" },
+  "alert_untilMSfixesBug": { "message": "jusqu'à ce que Microsoft corrige ce bogue de rendu de navigateur de longue date" },
   "alert_unavailable": { "message": "Il ne reste plus de produit disponible pour cette date" },
   "alert_isOnlyAvailFor": { "message": "n'est disponible que pour" },
   "alert_userscriptMgrNoStream": { "message": "Votre gestionnaire de script utilisateur ne prend pas en charge le retour des réponses de flux" },

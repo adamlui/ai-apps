@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "waa la heli karaa" },
   "alert_upToDate": { "message": "Ilaa taariiqda" },
   "alert_isUpToDate": { "message": "waa up-to-date" },
+  "alert_isUnsupportedIn": { "message": "waa wax aan lagu taageerin gudaha." },
+  "alert_untilMSfixesBug": { "message": "ilaa Microsoft ay hagaajiso biraawsarkan muddo dheer soo jiray ee bixiya cayayaanka" },
   "alert_unavailable": { "message": "aan la aamini karin" },
   "alert_isOnlyAvailFor": { "message": "waxaa loo heli karaa oo keliya" },
   "alert_userscriptMgrNoStream": { "message": "Maamulahaaga isticmaaleyaasha ma taageerayo soo noqoshada jawaabaha qulqulka" },

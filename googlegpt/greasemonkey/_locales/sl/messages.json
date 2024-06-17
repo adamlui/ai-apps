@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "je na voljo" },
   "alert_upToDate": { "message": "najnovejši" },
   "alert_isUpToDate": { "message": "najnovejši" },
+  "alert_isUnsupportedIn": { "message": "voznik ni podprt v" },
+  "alert_untilMSfixesBug": { "message": "dokler Microsoft ne odpravi te dolgotrajne napake pri upodabljanju brskalnika" },
   "alert_unavailable": { "message": "ni na voljo" },
   "alert_isOnlyAvailFor": { "message": "je na voljo samo za" },
   "alert_userscriptMgrNoStream": { "message": "Vaš upravitelj uporabniških skriptov ne podpira povratnih odgovorov toka" },

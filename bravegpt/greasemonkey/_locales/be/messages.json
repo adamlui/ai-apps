@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "даступны" },
   "alert_upToDate": { "message": "Аднаўленне не патрабуецца" },
   "alert_isUpToDate": { "message": "абноўлена" },
+  "alert_isUnsupportedIn": { "message": "не падтрымліваецца ў" },
+  "alert_untilMSfixesBug": { "message": "пакуль Microsoft не выправіць гэтую даўнюю памылку рэндэрынгу браўзэра" },
   "alert_unavailable": { "message": "недаступны" },
   "alert_isOnlyAvailFor": { "message": "даступны толькі для" },
   "alert_userscriptMgrNoStream": { "message": "Ваш менеджэр сцэнарыяў не падтрымлівае адказы на зваротны паток" },

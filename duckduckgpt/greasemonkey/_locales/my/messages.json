@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "ရရှိနိုင်ပါသည်" },
   "alert_upToDate": { "message": "နောက်ဆုံးရ" },
   "alert_isUpToDate": { "message": "up-to-date ဖြစ်အောင်နေပါ" },
+  "alert_isUnsupportedIn": { "message": "ပံ့ပိုးမထားပါ" },
+  "alert_untilMSfixesBug": { "message": "မိုက်ကရိုဆော့ဖ်သည်ဤရှည်လျားသော browser rendering bug ကိုပြုပြင်သည်အထိ" },
   "alert_unavailable": { "message": "(မရနိုင်ပါ)" },
   "alert_isOnlyAvailFor": { "message": "အတွက်သာ အသုံးပြုနိုင်မည် ဖြစ်ပါသည် ။" },
   "alert_userscriptMgrNoStream": { "message": "သင် ၏ အသုံးပြုသူမှတ်တမ်း မန်နေဂျာသည် စီးဆင်းမှု တုံ့ပြန်မှုများကို မထောက်ပံ့ပါ" },

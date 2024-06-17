@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "موجوده" },
   "alert_upToDate": { "message": "بروزرسانی" },
   "alert_isUpToDate": { "message": "به روز است" },
+  "alert_isUnsupportedIn": { "message": "در پشتیبانی نمی شود" },
+  "alert_untilMSfixesBug": { "message": "تا زمانی که مایکروسافت این باگ قدیمی رندر مرورگر را برطرف کند" },
   "alert_unavailable": { "message": "ناموجود" },
   "alert_isOnlyAvailFor": { "message": "فقط برای" },
   "alert_userscriptMgrNoStream": { "message": "مدیر اسکریپت کاربر شما از پاسخ‌های جریان برگشتی پشتیبانی نمی‌کند" },

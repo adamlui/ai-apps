@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "huwa disponibbli" },
   "alert_upToDate": { "message": "ŻOMM RUĦEK AĠĠORNAT" },
   "alert_isUpToDate": { "message": "huwa aġġornat" },
+  "alert_isUnsupportedIn": { "message": "mhuwiex appoġġjat fi" },
+  "alert_untilMSfixesBug": { "message": "sakemm Microsoft tirranġa dan il-bug tal-apparenza tal-brawżer li ilu jeżisti" },
   "alert_unavailable": { "message": "mhux disponibbli" },
   "alert_isOnlyAvailFor": { "message": "huwa disponibbli biss għal" },
   "alert_userscriptMgrNoStream": { "message": "Il-maniġer tal-iskript tal-utenti tiegħek ma jappoġġjax it-tweġibiet tal-flussi li jirrit" },

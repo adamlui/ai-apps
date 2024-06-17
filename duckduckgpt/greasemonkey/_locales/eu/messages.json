@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "eskuragarri dago" },
   "alert_upToDate": { "message": "Eguneratu" },
   "alert_isUpToDate": { "message": "Eguneratu" },
+  "alert_isUnsupportedIn": { "message": "ez da onartzen" },
+  "alert_untilMSfixesBug": { "message": "Microsoft-ek aspaldiko arakatzailearen errendatze akats hau konpondu arte" },
   "alert_unavailable": { "message": "ez dago erabilgarri" },
   "alert_isOnlyAvailFor": { "message": "bakarrik dago eskuragarri" },
   "alert_userscriptMgrNoStream": { "message": "Zure userscript-en kudeatzaileak ez du onartzen korronteen erantzunak itzultzea" },

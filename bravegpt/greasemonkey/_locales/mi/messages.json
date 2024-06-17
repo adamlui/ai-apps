@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "kei te wātea ahau" },
   "alert_upToDate": { "message": "Whakahoutia" },
   "alert_isUpToDate": { "message": "kei a koe i tenei wa" },
+  "alert_isUnsupportedIn": { "message": "e kore e tautokohia i roto i" },
+  "alert_untilMSfixesBug": { "message": "tae noa ki te whakatika a Microsoft i tenei hapa tuku pūtirotiro roa" },
   "alert_unavailable": { "message": "kāore e wātea ana" },
   "alert_isOnlyAvailFor": { "message": "anake e wātea ana mo" },
   "alert_userscriptMgrNoStream": { "message": "Kaore to kaiwhakahaere kaiwhakamahi e tautoko i te whakahoki mai i nga whakautu rere" },

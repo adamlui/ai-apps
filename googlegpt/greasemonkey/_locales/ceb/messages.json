@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "mao available" },
   "alert_upToDate": { "message": "UPDATE" },
   "alert_isUpToDate": { "message": "uPDATE kini" },
+  "alert_isUnsupportedIn": { "message": "unsupported in" },
+  "alert_untilMSfixesBug": { "message": "hangtod nga giayo sa Microsoft kini nga dugay na nga browser rendering bug" },
   "alert_unavailable": { "message": "unavailable" },
   "alert_isOnlyAvailFor": { "message": "anaa lamang kini alang" },
   "alert_userscriptMgrNoStream": { "message": "Ang imong tigdumala sa userscript dili mosuporta sa pagbalik sa mga tubag sa stream" },

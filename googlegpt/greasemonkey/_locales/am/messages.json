@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "ይገኛል" },
   "alert_upToDate": { "message": "ወቅታዊ" },
   "alert_isUpToDate": { "message": "እስከ-ወደ-ቀን ነው" },
+  "alert_isUnsupportedIn": { "message": "ውስጥ አይደገፍም" },
+  "alert_untilMSfixesBug": { "message": "ማይክሮሶፍት ይህንን ለረጅም ጊዜ የቆየ አሳሽ ሳንካን እስከሚያስተካክል ድረስ" },
   "alert_unavailable": { "message": "አይገኝም" },
   "alert_isOnlyAvailFor": { "message": "ይገኛል ብቻ ለ" },
   "alert_userscriptMgrNoStream": { "message": "የተጠቃሚ ጽሑፍ አስተዳዳሪዎ የመመለሻ ዥረት ምላሾችን አይደግፍም" },

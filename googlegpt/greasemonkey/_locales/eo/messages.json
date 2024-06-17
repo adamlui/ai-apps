@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "estas disponebla" },
   "alert_upToDate": { "message": "Aktuala" },
   "alert_isUpToDate": { "message": "estas ĝisdata" },
+  "alert_isUnsupportedIn": { "message": "ĝi ne estas subtenata en" },
+  "alert_untilMSfixesBug": { "message": "ĝis Mikrosofto riparas tiun multjaran retumilon igantan cimon" },
   "alert_unavailable": { "message": "neatingebla" },
   "alert_isOnlyAvailFor": { "message": "estas disponebla nur por" },
   "alert_userscriptMgrNoStream": { "message": "Via uzantoskripta administrilo ne subtenas revenantajn fluajn respondojn" },

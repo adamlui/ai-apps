@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "ar gael" },
   "alert_upToDate": { "message": "cyfredol" },
   "alert_isUpToDate": { "message": "updateddd" },
+  "alert_isUnsupportedIn": { "message": "heb ei gefnogi mewn" },
+  "alert_untilMSfixesBug": { "message": "hyd nes y bydd Microsoft yn trwsio'r gwall rendro porwr hirsefydlog hwn" },
   "alert_unavailable": { "message": "dim ar gael" },
   "alert_isOnlyAvailFor": { "message": "ar gael yn unig ar gyfer" },
   "alert_userscriptMgrNoStream": { "message": "Nid yw eich rheolwr sgriptiau defnyddwyr yn cefnogi ymatebion llif sy'n dychwelyd" },

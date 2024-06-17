@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "கிடைக்கிறது" },
   "alert_upToDate": { "message": "அதனை இன் று வரை" },
   "alert_isUpToDate": { "message": "up-to-date" },
+  "alert_isUnsupportedIn": { "message": "இல் ஆதரிக்கப்படவில்லை" },
+  "alert_untilMSfixesBug": { "message": "மைக்ரோசாப்ட் இந்த நீண்டகால உலாவி ரெண்டரிங் பிழையை சரிசெய்யும் வரை" },
   "alert_unavailable": { "message": "கிடைக்கவில்லை" },
   "alert_isOnlyAvailFor": { "message": "க்கு மட்டுமே கிடைக்கிறது" },
   "alert_userscriptMgrNoStream": { "message": "உங்கள் பயனர் ஸ்கிரிப்ட் மேலாளர் ஸ்ட்ரீம் பதில்களைத் திருப்பித் தருவதை ஆதரிக்கவில்லை" },

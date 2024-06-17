@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "འཐོབ་ཚུགས་" },
   "alert_upToDate": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
   "alert_isUpToDate": { "message": "ད་ལྟོའི་བར་ན་ཡང་" },
+  "alert_isUnsupportedIn": { "message": "འདི་ནང་ལུ་ རྒྱབ་སྐྱོར་མེད་" },
+  "alert_untilMSfixesBug": { "message": "འདི་གི་དོན་ལུ་ ཁྱོད་ཀྱིས་ ཁྱོད་ཀྱིས་ ཁྱོད་ཀྱིས་ ཁྱོད་ཀྱིས་འབད་མིའི་ལཱ་འདི་ ཁྱོད་ཀྱིས་འབད་དགོ་པའི་རེ་བ་ཡོད་ཟེར་སླབ་ཨིན།" },
   "alert_unavailable": { "message": "མ་ཐོབ་" },
   "alert_isOnlyAvailFor": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
   "alert_userscriptMgrNoStream": { "message": "ཁྱེད་ཀྱི་ལག་ལེན་གྱི་ཡིག་འབྲུ་འཛིན་སྐྱོང་པ་གིས་ Return Stream ལན་སློགལུ་ རྒྱབ་སྐྱོར་མི་འབད་དོ།" },

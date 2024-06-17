@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "ലഭ്യമാണ്" },
   "alert_upToDate": { "message": "ഇന്നുവരെയുള്ള_മാറ്റങ്ങള്‍_വരുത്തിയത്" },
   "alert_isUpToDate": { "message": "ഇന്നുവരെയുള്ള_മാറ്റങ്ങള്‍_വരുത്തിയത്" },
+  "alert_isUnsupportedIn": { "message": "ൽ പിന്തുണയ്ക്കുന്നില്ല" },
+  "alert_untilMSfixesBug": { "message": "മൈക്രോസോഫ്റ്റ് ഈ ദീർഘകാല ബ്രൗസർ റെൻഡറിംഗ് ബഗ് പരിഹരിക്കുന്നതുവരെ" },
   "alert_unavailable": { "message": "ലഭ്യമല്ല" },
   "alert_isOnlyAvailFor": { "message": "s" },
   "alert_userscriptMgrNoStream": { "message": "നിങ്ങളുടെ യൂസർസ്ക്രിപ്റ്റ് മാനേജർ സ്ട്രീം പ്രതികരണങ്ങൾ മടക്കിനൽകുന്നതിനെ പിന്തുണയ്ക്കുന്നില്ല" },

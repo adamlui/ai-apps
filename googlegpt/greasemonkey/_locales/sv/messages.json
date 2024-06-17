@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "är tillgänglig" },
   "alert_upToDate": { "message": "Aktualisering" },
   "alert_isUpToDate": { "message": "är uppdaterad" },
+  "alert_isUnsupportedIn": { "message": "stöds inte i" },
+  "alert_untilMSfixesBug": { "message": "tills Microsoft åtgärdar den här långvariga webbläsarrenderingsbuggen" },
   "alert_unavailable": { "message": "otillgänglig" },
   "alert_isOnlyAvailFor": { "message": "är endast tillgängligt för" },
   "alert_userscriptMgrNoStream": { "message": "Din användarskripthanterare stöder inte återkommande strömsvar" },

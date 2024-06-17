@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "ir pieejams" },
   "alert_upToDate": { "message": "Aktuāls" },
   "alert_isUpToDate": { "message": "Aktuāls" },
+  "alert_isUnsupportedIn": { "message": "netiek atbalstīts šeit:" },
+  "alert_untilMSfixesBug": { "message": "līdz Microsoft novērsīs šo ilgstošo pārlūkprogrammas atveidošanas kļūdu" },
   "alert_unavailable": { "message": "Nav pieejams" },
   "alert_isOnlyAvailFor": { "message": "ir pieejams tikai" },
   "alert_userscriptMgrNoStream": { "message": "Jūsu lietotāju skriptu pārvaldnieks neatbalsta straumes atbilžu atgriešanu" },

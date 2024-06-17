@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "ta disponibel" },
   "alert_upToDate": { "message": "UPDATE" },
   "alert_isUpToDate": { "message": "tabata up-to-date" },
+  "alert_isUnsupportedIn": { "message": "ta sin apoyo den" },
+  "alert_untilMSfixesBug": { "message": "ver Informe Ampliado de Estacion De Servicio Sl" },
   "alert_unavailable": { "message": "indisponibel" },
   "alert_isOnlyAvailFor": { "message": "ta disponibel solamente pa" },
   "alert_userscriptMgrNoStream": { "message": "No User Responder No User Responder" },

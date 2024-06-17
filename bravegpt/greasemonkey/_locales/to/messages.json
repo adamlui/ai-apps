@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "ʻoku lava ke maʻu" },
   "alert_upToDate": { "message": "ʻO aʻu mai ki he ʻaho ni" },
   "alert_isUpToDate": { "message": "ʻOku aʻu ki he ʻaho ni" },
+  "alert_isUnsupportedIn": { "message": "ʻoku ʻikai poupouʻi ʻi he" },
+  "alert_untilMSfixesBug": { "message": "kae ʻoua kuo fakaleleiʻi ʻe he Microsoft ʻa e browser ʻoku tuʻu fuoloa ko ʻeni" },
   "alert_unavailable": { "message": "ʻikai maʻu" },
   "alert_isOnlyAvailFor": { "message": "ʻOku ʻata pe ki he" },
   "alert_userscriptMgrNoStream": { "message": "ʻOku ʻikai poupouʻi ʻe hoʻo pule userscript ʻa e ngaahi tali ki he stream" },

@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "доступно" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "<PROG_NAME> в актуальном состоянии!" },
+  "alert_isUnsupportedIn": { "message": "не поддерживается в" },
+  "alert_untilMSfixesBug": { "message": "пока Microsoft не исправит эту давнюю ошибку рендеринга браузера" },
   "alert_unavailable": { "message": "отсутствует" },
   "alert_isOnlyAvailFor": { "message": "доступно только для" },
   "alert_userscriptMgrNoStream": { "message": "Ваш менеджер пользовательских скриптов не поддерживает возврат ответов потока" },

@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "tað er tøkt" },
   "alert_upToDate": { "message": "Uppdaterað" },
   "alert_isUpToDate": { "message": "núverandi tíðindi" },
+  "alert_isUnsupportedIn": { "message": "tað er ikki stuðlað í" },
+  "alert_untilMSfixesBug": { "message": "til Microsoft loysir hesa langtíðar browsaraverndarfeil" },
   "alert_unavailable": { "message": "ikki tøkt" },
   "alert_isOnlyAvailFor": { "message": "tað er bert at fáa" },
   "alert_userscriptMgrNoStream": { "message": "Brúkaraskrivstjórin hjá tær tekur ikki undir við afturvendandi streymum" },

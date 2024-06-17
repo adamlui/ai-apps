@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "azo atao" },
   "alert_upToDate": { "message": "Up-to-daty" },
   "alert_isUpToDate": { "message": "zava-nitranga farany" },
+  "alert_isUnsupportedIn": { "message": "tsy raisina an-tànana ny rohy misolotena" },
+  "alert_untilMSfixesBug": { "message": "mandra- Microsoft manamboatra izany lava-nitsangana navigateur rendering bibikely" },
   "alert_unavailable": { "message": "tsy misy" },
   "alert_isOnlyAvailFor": { "message": "tsy misy afa-tsy ho" },
   "alert_userscriptMgrNoStream": { "message": "Ny mpitantana ny mpampiasacript dia tsy manohana ny valiny miverina" },

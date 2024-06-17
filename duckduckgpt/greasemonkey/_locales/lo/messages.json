@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "ມີ" },
   "alert_upToDate": { "message": "ອັບເດດ" },
   "alert_isUpToDate": { "message": "up-to-date" },
+  "alert_isUnsupportedIn": { "message": "ບໍ່ໄດ້ຮັບການສະ ຫນັບ ສະ ຫນູນ ໃນ" },
+  "alert_untilMSfixesBug": { "message": "ຈົນກວ່າ Microsoft ຈະແກ້ໄຂຂໍ້ບົກພ່ອງຂອງຕົວທ່ອງເວັບທີ່ມີມາແຕ່ດົນນານນີ້" },
   "alert_unavailable": { "message": "ບໍ່ສາມາດໃຊ້ໄດ້" },
   "alert_isOnlyAvailFor": { "message": "ມີພຽງແຕ່ສໍາລັບ" },
   "alert_userscriptMgrNoStream": { "message": "ຜູ້ຈັດການສະຄິບຜູ້ໃຊ້ຂອງທ່ານບໍ່ສະໜັບສະໜູນການຕອບສະທ້ອນຄືນ" },

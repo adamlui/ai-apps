@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "iyatholakala" },
   "alert_upToDate": { "message": "Okwakamuva" },
   "alert_isUpToDate": { "message": "isesikhathini" },
+  "alert_isUnsupportedIn": { "message": "ayisekelwa ku-" },
+  "alert_untilMSfixesBug": { "message": "kuze kube yilapho i-Microsoft ilungisa lesi siphazamisi sebhrawuza osekuyisikhathi eside" },
   "alert_unavailable": { "message": "ayitholakali" },
   "alert_isOnlyAvailFor": { "message": "itholakala kuphela ku-" },
   "alert_userscriptMgrNoStream": { "message": "Imenenja yakho yombhalo wabasebenzisi ayisekeli izimpendulo zokusakaza ezibuyayo" },

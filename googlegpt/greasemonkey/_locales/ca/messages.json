@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "està disponible" },
   "alert_upToDate": { "message": "Actualitzat" },
   "alert_isUpToDate": { "message": "està actualitzat" },
+  "alert_isUnsupportedIn": { "message": "no és compatible amb" },
+  "alert_untilMSfixesBug": { "message": "fins que Microsoft solucioni aquest error de representació del navegador de llarga data" },
   "alert_unavailable": { "message": "no disponible" },
   "alert_isOnlyAvailFor": { "message": "només està disponible per a" },
   "alert_userscriptMgrNoStream": { "message": "El gestor de l'script d'usuari no admet el retorn de respostes de fluxos" },

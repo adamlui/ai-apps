@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "alipo" },
   "alert_upToDate": { "message": "Pakulanda" },
   "alert_isUpToDate": { "message": "alalandapo" },
+  "alert_isUnsupportedIn": { "message": "takuma Ishibashi in" },
+  "alert_untilMSfixesBug": { "message": "ukufikila ilyo ba Microsoft bakonaula ubu bulungami bwa nshita iitali" },
   "alert_unavailable": { "message": "tabalipo" },
   "alert_isOnlyAvailFor": { "message": "fela Anikulapo Kuti" },
   "alert_userscriptMgrNoStream": { "message": "Oshitopolwa shoye oshitopolwa shoka sha ningwa po oshitopo" },

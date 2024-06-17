@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "بەردەستە" },
   "alert_upToDate": { "message": "نوێ، ھاوچەرخ، نو، تازە" },
   "alert_isUpToDate": { "message": "نوێ، ھاوچەرخ، نو، تازە" },
+  "alert_isUnsupportedIn": { "message": "پشتگیرى نەکراوە لە" },
+  "alert_untilMSfixesBug": { "message": "چۆن گۆ دەکرێ Browser" },
   "alert_unavailable": { "message": "دەست ناکەوێت، دوورە دەست، دوورەدەست، نەبوون، لەبەردەستدا نەبوون" },
   "alert_isOnlyAvailFor": { "message": "تەنها بەردەستە" },
   "alert_userscriptMgrNoStream": { "message": "بەڕێوەبەری پەڕەی بەکارھێنەریت پشتگیری وەڵامی گەڕاندنەوە ناکات" },

@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "Install package not available" },
   "alert_upToDate": { "message": "Up - to - date" },
   "alert_isUpToDate": { "message": "sudah mutakhir" },
+  "alert_isUnsupportedIn": { "message": "tidak didukung dalam" },
+  "alert_untilMSfixesBug": { "message": "sampai Microsoft memperbaiki bug perenderan peramban lama ini" },
   "alert_unavailable": { "message": "tidak tersedia" },
   "alert_isOnlyAvailFor": { "message": "hanya tersedia untuk" },
   "alert_userscriptMgrNoStream": { "message": "Manajer skrip pengguna Anda tidak mendukung respons aliran balik" },

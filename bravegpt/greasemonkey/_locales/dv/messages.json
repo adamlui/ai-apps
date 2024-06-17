@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "ލިބެން ހުންނާނެ" },
   "alert_upToDate": { "message": "އެންމެ ފަހުގެ ތާރީޚް" },
   "alert_isUpToDate": { "message": "އެންމެ ފަހުގެ" },
+  "alert_isUnsupportedIn": { "message": "އިން ސަޕޯޓް ނުކުރެވޭ" },
+  "alert_untilMSfixesBug": { "message": "މައިކްރޮސޮފްޓުން ގިނަ ދުވަސްތަކެއް ވަންދެން އުފެދިފައިވާ މި ބްރައުޒާ ރެންޑަރިންގ ބަގް ރަނގަޅު ކުރެވެންދެން" },
   "alert_unavailable": { "message": "ނުލިބެއެވެ" },
   "alert_isOnlyAvailFor": { "message": "ލިބޭނީ ހަމައެކަނި" },
   "alert_userscriptMgrNoStream": { "message": "ތިބާގެ ޔޫޒަރސްކްރިޕްޓް މެނޭޖަރ ރިޓަރން ސްޓްރީމް ރެސްޕޮންސްތަކަށް ސަޕޯޓް ނުކުރެއެވެ" },

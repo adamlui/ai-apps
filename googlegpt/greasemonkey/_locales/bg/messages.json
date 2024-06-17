@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "е налична" },
   "alert_upToDate": { "message": "Обновен" },
   "alert_isUpToDate": { "message": "е актуален" },
+  "alert_isUnsupportedIn": { "message": "не се поддържа в" },
+  "alert_untilMSfixesBug": { "message": "докато Microsoft не поправи този дългогодишен бъг в рендирането на браузъра" },
   "alert_unavailable": { "message": "недостъпен" },
   "alert_isOnlyAvailFor": { "message": "се предлага само за" },
   "alert_userscriptMgrNoStream": { "message": "Мениджърът на потребителския ви скрипт не поддържа отговори за връщане на поток" },

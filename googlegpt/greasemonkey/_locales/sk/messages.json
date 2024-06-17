@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "k dispozícii" },
   "alert_upToDate": { "message": "Aktuálny" },
   "alert_isUpToDate": { "message": "sú aktuálne" },
+  "alert_isUnsupportedIn": { "message": "nie je podporovaný v" },
+  "alert_untilMSfixesBug": { "message": "kým spoločnosť Microsoft neopraví túto dlhotrvajúcu chybu pri vykresľovaní prehliadača" },
   "alert_unavailable": { "message": "nedostupné" },
   "alert_isOnlyAvailFor": { "message": "je k dispozícii len pre" },
   "alert_userscriptMgrNoStream": { "message": "Váš správca používateľského skriptu nepodporuje vracajúce sa odpovede streamu" },

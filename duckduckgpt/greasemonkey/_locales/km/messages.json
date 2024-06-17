@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "មាន" },
   "alert_upToDate": { "message": "ទាន់សម័យ" },
   "alert_isUpToDate": { "message": "វាទាន់សម័យ" },
+  "alert_isUnsupportedIn": { "message": "មិនត្រូវបានគាំទ្រនៅក្នុង" },
+  "alert_untilMSfixesBug": { "message": "រហូតដល់ Microsoft ជួសជុលកំហុសកម្មវិធីរុករកយូរអង្វែងនេះ" },
   "alert_unavailable": { "message": "មិនមាន" },
   "alert_isOnlyAvailFor": { "message": "មានសម្រាប់តែ" },
   "alert_userscriptMgrNoStream": { "message": "អ្នកគ្រប់គ្រងស្គ្រីបអ្នកប្រើរបស់អ្នកមិនគាំទ្រការឆ្លើយតបស្ទ្រីមត្រឡប់មកវិញទេ" },

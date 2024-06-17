@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "elérhető" },
   "alert_upToDate": { "message": "Aktuális" },
   "alert_isUpToDate": { "message": "naprakész" },
+  "alert_isUnsupportedIn": { "message": "nem támogatott itt:" },
+  "alert_untilMSfixesBug": { "message": "amíg a Microsoft meg nem javítja ezt a régóta fennálló böngésző-megjelenítési hibát" },
   "alert_unavailable": { "message": "nem elérhető" },
   "alert_isOnlyAvailFor": { "message": "csak ekkor érhető el" },
   "alert_userscriptMgrNoStream": { "message": "A usercript menedzsere nem támogatja az adatfolyam-válaszok visszaküldését" },

@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "사용가능" },
   "alert_upToDate": { "message": "최신 버전입니다" },
   "alert_isUpToDate": { "message": "최신판입니다" },
+  "alert_isUnsupportedIn": { "message": "이 (가) 지원되지 않음" },
+  "alert_untilMSfixesBug": { "message": "microsoft가 이 오랜 브라우저 렌더링 버그를 수정할 때까지" },
   "alert_unavailable": { "message": "불가능" },
   "alert_isOnlyAvailFor": { "message": "은 (는) 다음에 대해서만 사용할 수" },
   "alert_userscriptMgrNoStream": { "message": "사용자 스크립트 관리자가 스트림 응답 반환을 지원하지 않습니다" },

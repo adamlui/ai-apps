@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "er tilgængelig" },
   "alert_upToDate": { "message": "Opdateret" },
   "alert_isUpToDate": { "message": "er opdateret" },
+  "alert_isUnsupportedIn": { "message": "understøttes ikke i" },
+  "alert_untilMSfixesBug": { "message": "indtil Microsoft retter denne mangeårige browsergengivelsesfejl" },
   "alert_unavailable": { "message": "utilgængelig" },
   "alert_isOnlyAvailFor": { "message": "er kun tilgængelig for" },
   "alert_userscriptMgrNoStream": { "message": "Din usercript-manager understøtter ikke returnerende stream-svar" },

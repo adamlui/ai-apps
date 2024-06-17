@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "jest dostępna" },
   "alert_upToDate": { "message": "Aktualne" },
   "alert_isUpToDate": { "message": "jest aktualny" },
+  "alert_isUnsupportedIn": { "message": "nie jest obsługiwany w" },
+  "alert_untilMSfixesBug": { "message": "dopóki Microsoft nie naprawi tego długotrwałego błędu renderowania przeglądarki" },
   "alert_unavailable": { "message": "niedostępne" },
   "alert_isOnlyAvailFor": { "message": "jest dostępny tylko dla" },
   "alert_userscriptMgrNoStream": { "message": "Twój menedżer skryptów użytkownika nie obsługuje zwrotnych odpowiedzi strumieniowych" },

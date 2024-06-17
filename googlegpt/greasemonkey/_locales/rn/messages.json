@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "none None available" },
   "alert_upToDate": { "message": "Update None None" },
   "alert_isUpToDate": { "message": "yamaho Yama - Update" },
+  "alert_isUnsupportedIn": { "message": "ntabwo ashigikiwe muri" },
+  "alert_untilMSfixesBug": { "message": "nkurunziza agiye gukosora ubwo buhumbu bumaze igihe kirekire buriko burashirwa mu ngiro" },
   "alert_unavailable": { "message": "ntaho bihuriye" },
   "alert_isOnlyAvailFor": { "message": "gusa birahari" },
   "alert_userscriptMgrNoStream": { "message": "Uwurongoye uwo murongo ntiyasubiriye gutanga inyishu" },

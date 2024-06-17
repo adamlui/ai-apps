@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "bihari" },
   "alert_upToDate": { "message": "Kuvugurura" },
   "alert_isUpToDate": { "message": "Kuvugurura" },
+  "alert_isUnsupportedIn": { "message": "ntiyashyigikiwe muri" },
+  "alert_untilMSfixesBug": { "message": "iyi Mucukumbuzi" },
   "alert_unavailable": { "message": "Bihari" },
   "alert_isOnlyAvailFor": { "message": "iboneka gusa ku" },
   "alert_userscriptMgrNoStream": { "message": "Muyobozi OYA Gushigikira" },

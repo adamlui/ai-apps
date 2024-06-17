@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "tilgjengelig" },
   "alert_upToDate": { "message": "Oppdatert" },
   "alert_isUpToDate": { "message": "er oppdatert" },
+  "alert_isUnsupportedIn": { "message": "er ikke støttet i" },
+  "alert_untilMSfixesBug": { "message": "til Microsoft fikser denne langvarige nettlesergjengivelsesfeilen" },
   "alert_unavailable": { "message": "utilgjengelig" },
   "alert_isOnlyAvailFor": { "message": "er kun tilgjengelig for" },
   "alert_userscriptMgrNoStream": { "message": "Brukerskriptbehandlingen din støtter ikke returnerende strømsvar" },

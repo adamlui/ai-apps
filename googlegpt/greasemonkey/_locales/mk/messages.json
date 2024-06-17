@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "е достапен" },
   "alert_upToDate": { "message": "Ажурираj" },
   "alert_isUpToDate": { "message": "е ажуриран" },
+  "alert_isUnsupportedIn": { "message": "не е поддржан во" },
+  "alert_untilMSfixesBug": { "message": "додека Microsoft не ја поправи оваа долгогодишна грешка во рендерирањето на прелистувачот" },
   "alert_unavailable": { "message": "недостапно" },
   "alert_isOnlyAvailFor": { "message": "е достапен само за" },
   "alert_userscriptMgrNoStream": { "message": "Вашиот менаџер на кориснички скрипт не поддржува повратни одговори на преносот" },

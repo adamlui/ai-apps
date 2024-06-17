@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "je dostupna" },
   "alert_upToDate": { "message": "U toku" },
   "alert_isUpToDate": { "message": "je ažuran" },
+  "alert_isUnsupportedIn": { "message": "nije podržano u" },
+  "alert_untilMSfixesBug": { "message": "dok Microsoft ne ispravi ovu dugogodišnju grešku u renderiranju pregledača" },
   "alert_unavailable": { "message": "недоступан/на" },
   "alert_isOnlyAvailFor": { "message": "je dostupno samo za" },
   "alert_userscriptMgrNoStream": { "message": "Menadžer korisničkih skripti ne podržava povratne odgovore strima" },

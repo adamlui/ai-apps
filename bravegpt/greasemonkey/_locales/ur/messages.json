@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "دستیاب ہے" },
   "alert_upToDate": { "message": "تازہ ترین" },
   "alert_isUpToDate": { "message": "تازہ ترین ہے" },
+  "alert_isUnsupportedIn": { "message": "میں غیر تعاون یافتہ ہے" },
+  "alert_untilMSfixesBug": { "message": "جب تک مائیکروسافٹ اس دیرینہ براؤزر رینڈرنگ بگ کو ٹھیک نہیں کرتا" },
   "alert_unavailable": { "message": "دستیاب نہیں" },
   "alert_isOnlyAvailFor": { "message": "صرف کے لئے دستیاب ہے" },
   "alert_userscriptMgrNoStream": { "message": "آپ کا صارف اسکرپٹ مینیجر واپس آنے والے اسٹریم جوابات کی حمایت نہیں کرتا ہے" },

@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "қолжетімді" },
   "alert_upToDate": { "message": "Жаңартылған" },
   "alert_isUpToDate": { "message": "жаңартылған" },
+  "alert_isUnsupportedIn": { "message": "келесіде қолдау көрсетілмейді" },
+  "alert_untilMSfixesBug": { "message": "microsoft осы ұзақ уақытқа созылған браузерді көрсету қатесін түзеткенге дейін" },
   "alert_unavailable": { "message": "қол жеткізбейді" },
   "alert_isOnlyAvailFor": { "message": "тек қол жетімді" },
   "alert_userscriptMgrNoStream": { "message": "Пайдаланушы скрипті менеджері ағын жауаптарын қайтаруды қолдамайды" },

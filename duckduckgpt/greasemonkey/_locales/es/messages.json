@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "está disponible" },
   "alert_upToDate": { "message": "Al día" },
   "alert_isUpToDate": { "message": "está actualizada" },
+  "alert_isUnsupportedIn": { "message": "no es compatible en" },
+  "alert_untilMSfixesBug": { "message": "hasta que Microsoft corrija este error de representación del navegador de larga data" },
   "alert_unavailable": { "message": "no disponible" },
   "alert_isOnlyAvailFor": { "message": "solo está disponible para" },
   "alert_userscriptMgrNoStream": { "message": "Su administrador de scripts de usuario no admite la devolución de respuestas de transmisión" },

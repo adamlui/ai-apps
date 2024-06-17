@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "on saadaval" },
   "alert_upToDate": { "message": "ajakohane" },
   "alert_isUpToDate": { "message": "ajakohane" },
+  "alert_isUnsupportedIn": { "message": "ei toetata asukohas" },
+  "alert_untilMSfixesBug": { "message": "kuni Microsoft parandab selle pikaajalise brauseri renderdamise vea" },
   "alert_unavailable": { "message": "kättesaamatu" },
   "alert_isOnlyAvailFor": { "message": "on saadaval ainult" },
   "alert_userscriptMgrNoStream": { "message": "Sinu kasutaja skriptihaldur ei toeta voo vastuste tagastamist" },

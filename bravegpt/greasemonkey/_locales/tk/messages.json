@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "häzir bar" },
   "alert_upToDate": { "message": "Up-to-date" },
   "alert_isUpToDate": { "message": "häzirki döwürde" },
+  "alert_isUnsupportedIn": { "message": "eger, ýok, ulanylmaga haklydy" },
+  "alert_untilMSfixesBug": { "message": "microsoft bu uzak wagtly brauzerini düzedýänçä" },
   "alert_unavailable": { "message": "ähli zat ýok" },
   "alert_isOnlyAvailFor": { "message": "ýeke ulanmaga rugsat berilýän" },
   "alert_userscriptMgrNoStream": { "message": "Siziň ulanýan ýazgylar menejeriňiz gaýdyp gelýän akma jogaplaryny goldamaýar" },

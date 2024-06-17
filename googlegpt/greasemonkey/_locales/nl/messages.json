@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "is beschikbaar" },
   "alert_upToDate": { "message": "Bijgewerkt" },
   "alert_isUpToDate": { "message": "<PROTECTED> is geactualiseerd" },
+  "alert_isUnsupportedIn": { "message": "wordt niet ondersteund in" },
+  "alert_untilMSfixesBug": { "message": "totdat Microsoft deze al lang bestaande browser rendering bug oplost" },
   "alert_unavailable": { "message": "niet beschikbaar" },
   "alert_isOnlyAvailFor": { "message": "Alleen beschikbaar voor" },
   "alert_userscriptMgrNoStream": { "message": "Uw gebruikersscriptmanager ondersteunt geen terugkerende streamreacties" },

@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "este disponibil" },
   "alert_upToDate": { "message": "Actualizat" },
   "alert_isUpToDate": { "message": "Actualizat" },
+  "alert_isUnsupportedIn": { "message": "nu este acceptat în" },
+  "alert_untilMSfixesBug": { "message": "până când Microsoft remediază această eroare de redare a browserului de lungă durată" },
   "alert_unavailable": { "message": "indisponibil" },
   "alert_isOnlyAvailFor": { "message": "este disponibil numai pentru" },
   "alert_userscriptMgrNoStream": { "message": "Managerul dvs. de scripturi de utilizator nu acceptă returnarea răspunsurilor fluxului" },

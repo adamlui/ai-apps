@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "mövcuddur" },
   "alert_upToDate": { "message": "Güncəllə" },
   "alert_isUpToDate": { "message": "yenilənir" },
+  "alert_isUnsupportedIn": { "message": "dəstəklənmir" },
+  "alert_untilMSfixesBug": { "message": "microsoft-un bu uzun sürən brauzer göstərmə xətasını düzəltməsinə qədər" },
   "alert_unavailable": { "message": "ƏLÇATAN DEYİL" },
   "alert_isOnlyAvailFor": { "message": "yalnız bunun üçün mövcuddur" },
   "alert_userscriptMgrNoStream": { "message": "İstifadəçilər üzrə meneceriniz axın cavablarının qaytarılmasını dəstəkləmir" },

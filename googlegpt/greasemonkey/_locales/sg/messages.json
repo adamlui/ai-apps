@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "yeke available" },
   "alert_upToDate": { "message": "A yeke sara si a yeke nzoni ti tene azo" },
   "alert_isUpToDate": { "message": "a yeke ti laso" },
+  "alert_isUnsupportedIn": { "message": "a yeke mû maboko na lo pëpe" },
+  "alert_untilMSfixesBug": { "message": "juska Microsoft aleke ye so a sara na yâ ti mbeni navigateur so ayeke sara si mbeni ye ti sioni asi" },
   "alert_unavailable": { "message": "unbore MeUnbore" },
   "alert_isOnlyAvailFor": { "message": "tu n 'es ni fiable ni aimable" },
   "alert_userscriptMgrNoStream": { "message": "Zo so ayeke sara kua na mo ayeke mû maboko na mo ape ti kiri na peko ti atënë so mo yeke kiri na ni" },

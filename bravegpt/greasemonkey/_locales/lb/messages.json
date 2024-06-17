@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "ass verfügbar" },
   "alert_upToDate": { "message": "Aktualiséiert" },
   "alert_isUpToDate": { "message": "hie/si, hatt/et gëtt aktualiséiert" },
+  "alert_isUnsupportedIn": { "message": "ass non-supported in ass" },
+  "alert_untilMSfixesBug": { "message": "bis Microsoft fixéiert dëse laangjärege Browser Rendering Bug" },
   "alert_unavailable": { "message": "net disponibel" },
   "alert_isOnlyAvailFor": { "message": "ass nëmmen disponibel fir" },
   "alert_userscriptMgrNoStream": { "message": "Äre User Script Manager ënnerstëtzt net Retour Stream Äntwerten" },

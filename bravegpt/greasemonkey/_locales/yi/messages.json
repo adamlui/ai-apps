@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "איז בנימצא" },
   "alert_upToDate": { "message": "היינטצייטיג" },
   "alert_isUpToDate": { "message": "איז דערהייַנטיקט" },
+  "alert_isUnsupportedIn": { "message": "איז ניט געשטיצט אין" },
+  "alert_untilMSfixesBug": { "message": "ביז מייקראָסאָפֿט פיקסיז דעם לאַנג-שטייענדיק בלעטערער רענדערינג זשוק" },
   "alert_unavailable": { "message": "ניט בנימצא" },
   "alert_isOnlyAvailFor": { "message": "איז בלויז בנימצא פֿאַר" },
   "alert_userscriptMgrNoStream": { "message": "דיין באַניצער סקריפּט פאַרוואַלטער שטיצט נישט צוריקקומען טייַך רעספּאָנסעס" },

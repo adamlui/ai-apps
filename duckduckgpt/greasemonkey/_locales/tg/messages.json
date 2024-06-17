@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "дастрас аст" },
   "alert_upToDate": { "message": "Навшуда" },
   "alert_isUpToDate": { "message": "замонавӣ аст" },
+  "alert_isUnsupportedIn": { "message": "пуштибонӣ намешавад дар" },
+  "alert_untilMSfixesBug": { "message": "то он даме, ки Microsoft ин браузери дарозмуддатро ислоҳ мекунад" },
   "alert_unavailable": { "message": "дастрас нест" },
   "alert_isOnlyAvailFor": { "message": "isang magagamit lamang para sa" },
   "alert_userscriptMgrNoStream": { "message": "Мудири корвандони шумо ҷавобҳои ҷараёнро пуштибонӣ намекунад" },

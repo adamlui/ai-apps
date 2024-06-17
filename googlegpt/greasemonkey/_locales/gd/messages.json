@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "tha e ri fhaotainn" },
   "alert_upToDate": { "message": "Up to date" },
   "alert_isUpToDate": { "message": "tha Updates" },
+  "alert_isUnsupportedIn": { "message": "tha e gun taic ann an" },
+  "alert_untilMSfixesBug": { "message": "mar a shocraicheas tu am brabhsair fad - ùine seo" },
   "alert_unavailable": { "message": "chan eil e ri fhaighinn" },
   "alert_isOnlyAvailFor": { "message": "chan eil e ri fhaighinn ach airson" },
   "alert_userscriptMgrNoStream": { "message": "Chan eil am manaidsear luchd - cleachdaidh agad a 'toirt taic do fhreagairtean sruthadh air ais" },

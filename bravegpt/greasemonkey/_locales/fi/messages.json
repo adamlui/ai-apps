@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "on käytettävissä" },
   "alert_upToDate": { "message": "Ajan tasalla" },
   "alert_isUpToDate": { "message": "Ajan tasalla" },
+  "alert_isUnsupportedIn": { "message": "ei tueta kohteessa" },
+  "alert_untilMSfixesBug": { "message": "kunnes Microsoft korjaa tämän pitkäaikaisen selaimen renderointivirheen" },
   "alert_unavailable": { "message": "ei käytettävissä" },
   "alert_isOnlyAvailFor": { "message": "on käytettävissä vain seuraaville" },
   "alert_userscriptMgrNoStream": { "message": "Usercript Manager ei tue palaavia suoratoistovastauksia" },

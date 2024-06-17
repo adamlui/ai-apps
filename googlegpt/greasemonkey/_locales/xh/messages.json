@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "iyafumaneka" },
   "alert_upToDate": { "message": "Eyangoku" },
   "alert_isUpToDate": { "message": "isexesheni" },
+  "alert_isUnsupportedIn": { "message": "ayixhaswanga ngo-" },
+  "alert_untilMSfixesBug": { "message": "de uMicrosoft alungise le ngxaki ikudala ibhrawuza" },
   "alert_unavailable": { "message": "engekhoyo" },
   "alert_isOnlyAvailFor": { "message": "ifumaneka kuphela" },
   "alert_userscriptMgrNoStream": { "message": "Umphathi wakho weskripti akaxhasi iimpendulo ezibuyayo" },

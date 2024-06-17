@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "ተዳልዩ ኣሎ" },
   "alert_upToDate": { "message": "ኣቐዲምካ ምምሕያሽ" },
   "alert_isUpToDate": { "message": "ዝዘመነ" },
+  "alert_isUnsupportedIn": { "message": "መልሲኻ ኣይሰመረን ።" },
+  "alert_untilMSfixesBug": { "message": "ክሳብ ማይክሮሶፍት ነዚ ነዊሕ እዋን ዝጸንሐ ናይ ብራውዘር ምትዕርራይ ጉድለት ክሳብ ዝፈትሖ" },
   "alert_unavailable": { "message": "ኣይርከብን" },
   "alert_isOnlyAvailFor": { "message": "ን" },
   "alert_userscriptMgrNoStream": { "message": "ናይ ተጠቀምቲ ጽሑፍ ኣማሓዳሪኻ ናይ ምምላስ መልሲ ኣይድግፍን" },

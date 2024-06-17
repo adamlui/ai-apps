@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "mavjud" },
   "alert_upToDate": { "message": "Yangilash" },
   "alert_isUpToDate": { "message": "dolzarb hisoblanadi" },
+  "alert_isUnsupportedIn": { "message": "ichida qo'llab-quvvatlanmaydi" },
+  "alert_untilMSfixesBug": { "message": "Microsoft uzoq vaqtdan beri mavjud bo'lgan brauzerni ko'rsatish xatosini tuzatmaguncha" },
   "alert_unavailable": { "message": "mavjud emas" },
   "alert_isOnlyAvailFor": { "message": "uchungina mavjud" },
   "alert_userscriptMgrNoStream": { "message": "Sizning foydalanuvchi skripti menejeri oqim javoblarini qaytarishni qo'llab-quvvatlamaydi" },

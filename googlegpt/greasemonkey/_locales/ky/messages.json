@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "жеткиликтүү" },
   "alert_upToDate": { "message": "Учурдагы" },
   "alert_isUpToDate": { "message": "актуалдуулугу" },
+  "alert_isUnsupportedIn": { "message": "колдоого алынбайт" },
+  "alert_untilMSfixesBug": { "message": "microsoft бул узакка созулган браузерди көрсөтүү катасын оңдогонго чейин" },
   "alert_unavailable": { "message": "жеткиликтүү эмес" },
   "alert_isOnlyAvailFor": { "message": "үчүн гана жеткиликтүү" },
   "alert_userscriptMgrNoStream": { "message": "Сиздин колдонуучунун скрипт менеджери агымдын жоопторун кайтарууну колдобойт" },

@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "Μη διαθέσιμο" },
   "alert_upToDate": { "message": "Ενημερωμένο" },
   "alert_isUpToDate": { "message": "είναι ενήμερο" },
+  "alert_isUnsupportedIn": { "message": "δεν υποστηρίζεται σε" },
+  "alert_untilMSfixesBug": { "message": "έως ότου η Microsoft διορθώσει αυτό το μακροχρόνιο σφάλμα απόδοσης προγράμματος περιήγησης" },
   "alert_unavailable": { "message": "Μη Διαθέσιμη" },
   "alert_isOnlyAvailFor": { "message": "είναι διαθέσιμο μόνο για" },
   "alert_userscriptMgrNoStream": { "message": "Ο διαχειριστής κειμένων χρηστών σας δεν υποστηρίζει την επιστροφή απαντήσεων ροής" },

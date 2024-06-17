@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "e teng" },
   "alert_upToDate": { "message": "Feleletše" },
   "alert_isUpToDate": { "message": "e mo nakong" },
+  "alert_isUnsupportedIn": { "message": "ga e na kemonokeng mo" },
+  "alert_untilMSfixesBug": { "message": "go fitlhela Microsoft e siamisa tshenekegi eno e e sa bolong go nna teng ya sebaka se seleele" },
   "alert_unavailable": { "message": "ga e yo" },
   "alert_isOnlyAvailFor": { "message": "e teng fela go" },
   "alert_userscriptMgrNoStream": { "message": "Mmanejara wa gago wa dikwalo tsa badirisi ga a tshegetse dikarabo tse di busediwang tsa" },

@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "ipezeka" },
   "alert_upToDate": { "message": "Zaposachedwa" },
   "alert_isUpToDate": { "message": "ndi up-to-date" },
+  "alert_isUnsupportedIn": { "message": "ndi unsupported mu" },
+  "alert_untilMSfixesBug": { "message": "mpaka Microsoft kukonza izi yaitali osatsegula rendering cholakwika" },
   "alert_unavailable": { "message": "osapezeka" },
   "alert_isOnlyAvailFor": { "message": "ndi kupezeka kokha kwa" },
   "alert_userscriptMgrNoStream": { "message": "Woyang 'anira wanu wa usercript samathandizira mayankho obwerera mumtsinje" },

@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "มี   ให้ใช้งานแล้ว" },
   "alert_upToDate": { "message": "ถึงวันที่    .........................................  ……………." },
   "alert_isUpToDate": { "message": "เป็นปัจจุบัน" },
+  "alert_isUnsupportedIn": { "message": "ไม่ได้รับการสนับสนุนใน" },
+  "alert_untilMSfixesBug": { "message": "จนกว่า Microsoft จะแก้ไขบั๊กการแสดงผลของเบราว์เซอร์ที่ใช้กันมานานนี้" },
   "alert_unavailable": { "message": "ไม่มี" },
   "alert_isOnlyAvailFor": { "message": "ใช้ได้เฉพาะในราคา" },
   "alert_userscriptMgrNoStream": { "message": "ผู้จัดการสคริปต์ผู้ใช้ของคุณไม่สนับสนุนการตอบกลับสตรีมที่กลับมา" },

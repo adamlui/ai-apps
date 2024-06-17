@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "بەردەستە" },
   "alert_upToDate": { "message": "نوێکرایەوە" },
   "alert_isUpToDate": { "message": "نوێکرایەوە" },
+  "alert_isUnsupportedIn": { "message": "tê de ne piştgirî ye" },
+  "alert_untilMSfixesBug": { "message": "heya ku Microsoft vê xeletiya danasîna gerokê ya demdirêj rast bike" },
   "alert_unavailable": { "message": "لەبەردەست دا نیە" },
   "alert_isOnlyAvailFor": { "message": "tenê ji bo peyda dibe" },
   "alert_userscriptMgrNoStream": { "message": "Rêvebirê nivîsara weya bikarhêner bersivên vegerandina tîrêjê piştgirî nake" },

@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "شتون لري" },
   "alert_upToDate": { "message": "اوسمهالیز دي" },
   "alert_isUpToDate": { "message": "تازه دی" },
+  "alert_isUnsupportedIn": { "message": "په کې نه ملاتړ کیږي" },
+  "alert_untilMSfixesBug": { "message": "تر هغه چې مایکروسافټ دا اوږدمهاله براوزر بګ اصلاح کړي" },
   "alert_unavailable": { "message": "شتون نلري" },
   "alert_isOnlyAvailFor": { "message": "یوازې د لپاره شتون لري" },
   "alert_userscriptMgrNoStream": { "message": "ستاسو د کاروونکي سکریپ مدیر د جریان بیرته راستنیدو ملاتړ نه کوي" },

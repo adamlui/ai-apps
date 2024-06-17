@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "Esta dispoñibel" },
   "alert_upToDate": { "message": "Ao día" },
   "alert_isUpToDate": { "message": "está actualizado" },
+  "alert_isUnsupportedIn": { "message": "no está soportado en" },
+  "alert_untilMSfixesBug": { "message": "ata que Microsoft corrixa este erro de renderización de navegador de longa data" },
   "alert_unavailable": { "message": "non dispoñíbel" },
   "alert_isOnlyAvailFor": { "message": "só está dispoñible para" },
   "alert_userscriptMgrNoStream": { "message": "O seu xestor de script de usuario non admite as respostas de fluxo de retorno" },

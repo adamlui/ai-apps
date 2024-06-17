@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "inapatikana" },
   "alert_upToDate": { "message": "Imesasishwa" },
   "alert_isUpToDate": { "message": "imesasishwa" },
+  "alert_isUnsupportedIn": { "message": "haitumiki katika" },
+  "alert_untilMSfixesBug": { "message": "hadi Microsoft itakaporekebisha hitilafu hii ya muda mrefu ya kutoa kivinjari" },
   "alert_unavailable": { "message": "(Haipatikani)" },
   "alert_isOnlyAvailFor": { "message": "inapatikana tu kwa" },
   "alert_userscriptMgrNoStream": { "message": "Meneja wako wa hati za watumiaji haungi mkono majibu ya mkondo wa kurudi" },

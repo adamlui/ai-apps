@@ -39,6 +39,8 @@
   "alert_isAvail": { "message": "%s זמין" },
   "alert_upToDate": { "message": "מעודכן" },
   "alert_isUpToDate": { "message": "מעודכן" },
+  "alert_isUnsupportedIn": { "message": "אינו נתמך" },
+  "alert_untilMSfixesBug": { "message": "עד ש - Microsoft תתקן את באג עיבוד הדפדפן הוותיק הזה" },
   "alert_unavailable": { "message": "היעדר נגישות" },
   "alert_isOnlyAvailFor": { "message": "זמין רק עבור" },
   "alert_userscriptMgrNoStream": { "message": "מנהל הסקריפטים שלך אינו תומך בתגובות זרם חוזרות" },

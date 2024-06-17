@@ -40,6 +40,8 @@
   "alert_isAvail": { "message": "ਉਪਲੱਬਧ ਹੈ" },
   "alert_upToDate": { "message": "ਨਵੀਨੀਕਰਨ" },
   "alert_isUpToDate": { "message": "ਨਵੀਨੀਕਰਨ" },
+  "alert_isUnsupportedIn": { "message": "ਵਿੱਚ ਅਸਮਰਥਿਤ ਹੈ" },
+  "alert_untilMSfixesBug": { "message": "ਜਦੋਂ ਤੱਕ ਮਾਈਕ੍ਰੋਸਾੱਫਟ ਇਸ ਲੰਬੇ ਸਮੇਂ ਤੋਂ ਚੱਲ ਰਹੇ ਬ੍ਰਾ browserਜ਼ਰ ਰੈਂਡਰਿੰਗ ਬੱਗ ਨੂੰ ਠੀਕ ਨਹੀਂ ਕਰਦਾ" },
   "alert_unavailable": { "message": "ਅਣ- ਉਪਲੱਬਧ" },
   "alert_isOnlyAvailFor": { "message": "ਸਿਰਫ ਲਈ ਉਪਲਬਧ ਹੈ" },
   "alert_userscriptMgrNoStream": { "message": "ਤੁਹਾਡਾ ਯੂਜ਼ਰਸਕ੍ਰਿਪਟ ਮੈਨੇਜਰ ਵਾਪਸ ਆਉਣ ਵਾਲੇ ਸਟਰੀਮ ਜਵਾਬਾਂ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦਾ" },
