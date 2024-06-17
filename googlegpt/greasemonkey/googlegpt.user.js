@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.1
+// @version             2024.6.17.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -417,7 +417,7 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@c2c72f8/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@02510f0/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
@@ -426,7 +426,7 @@
                 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', isMobile ? 14 : 16.55) // init reply font size if unset
-    if (getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if not TM
+    if (isEdge || getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if Edge or not TM
     if (isMobile && !config.notFirstRun) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
     saveSetting('notFirstRun', true)
 
@@ -467,7 +467,14 @@
                        + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
                        + state.separator + state.word[+stmState]
         menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
-            if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
+            if (isEdge) { // alert Edge unsupported, link to browser bug
+                const msBugLink = 'https://answers.microsoft.com/en-us/microsoftedge/forum/all/'
+                                + 'status-access-violation-issues/1fd4a2ef-6736-441f-8421-6ed167105093'
+                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                    `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } Edge`
+                      + ` ${ msgs.alert_untilMSfixesBug || 'until Microsoft fixes this long-standing browser rendering bug' }:`
+                      + ` <a target="_blank" rel="noopener" href="${msBugLink}">${msBugLink}</a>`)
+            } else if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
                 siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
                       + ' <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a>.'
@@ -1661,7 +1668,7 @@
                 } catch (err) { consoleErr('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
                     if (get.reply.sender == caller.api) // am designated sender, recurse
-                        setTimeout(() => { processStreamText({ done, value }) }, isEdge ? 200 : 1) // Edge delay vs. STATUS_ACCESS_VIOLATION bug
+                        processStreamText({ done, value })
                 }).catch(err => consoleErr('Error reading stream', err.message))
             }
         }
