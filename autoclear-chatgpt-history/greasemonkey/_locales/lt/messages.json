@@ -15,7 +15,7 @@
   "alert_isAvail": { "message": "yra prieinama" },
   "alert_upToDate": { "message": "Naujausias" },
   "alert_isUpToDate": { "message": "atnaujintas" },
-  "buttonLabel_moreApps": { "message": "Daugiau „ChatGPT“ programų" },
+  "buttonLabel_moreApps": { "message": "Daugiau ChatGPT programų" },
   "buttonLabel_leaveReview": { "message": "Palikite apžvalgą" },
   "buttonLabel_getSupport": { "message": "Gauti palaikymą" },
   "buttonLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },

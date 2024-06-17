@@ -1,6 +1,6 @@
 {
   "appName": { "message": "ChatGPT automatinis atnaujinimas" },
-  "appDesc": { "message": "*SAUGIAI* palaiko „ChatGPT“ sesijas šviežias, pašalina nuolatines tinklo klaidas + „Cloudflare“ patikrinimus (visi iš fono!)" },
+  "appDesc": { "message": "*SAUGIAI* palaiko ChatGPT sesijas šviežias, pašalina nuolatines tinklo klaidas + Cloudflare patikrinimus (visi iš fono!)" },
   "menuLabel_autoRefresh": { "message": "Automatiškai atnaujintiComment" },
   "menuLabel_toggleVis": { "message": "Perjungti matomumą" },
   "menuLabel_modeNotifs": { "message": "Pranešimai apie režimą" },
@@ -18,7 +18,7 @@
   "alert_isAvail": { "message": "yra prieinama" },
   "alert_upToDate": { "message": "Naujausias" },
   "alert_isUpToDate": { "message": "atnaujintas" },
-  "buttonLabel_moreApps": { "message": "Daugiau „ChatGPT“ programų" },
+  "buttonLabel_moreApps": { "message": "Daugiau ChatGPT programų" },
   "buttonLabel_leaveReview": { "message": "Palikite apžvalgą" },
   "buttonLabel_getSupport": { "message": "Gauti palaikymą" },
   "buttonLabel_updateCheck": { "message": "Ieškoti atnaujinimų" },
