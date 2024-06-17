@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.6
+// @version             2024.6.17.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -675,6 +675,7 @@
           + ( scheme == 'dark' ? '#ddgpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
           + '.app-name, .app-name:hover { font-size: 1.5rem ; font-weight: 700 ; text-decoration: none ;'
               + `color: ${ scheme == 'dark' ? 'white' : 'black' }}`
+          + '#corner-btns { float: right ; margin-top: 4px }'
           + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
               + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
           + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' } ;`
@@ -1379,6 +1380,10 @@
                 // Create/append app title anchor
                 updateTitleAnchor()
 
+                // Create/append corner buttons div
+                const cornerBtnsDiv = document.createElement('div') ; cornerBtnsDiv.id = 'corner-btns'
+                appDiv.append(cornerBtnsDiv)
+
                 // Create/append about button
                 const aboutSpan = document.createElement('span'),
                       aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
@@ -1390,14 +1395,14 @@
                 aboutSVGpath.setAttribute('d',
                     'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z')
                 aboutSVGpath.setAttribute('stroke', 'none')
-                aboutSVG.append(aboutSVGpath) ; aboutSpan.append(aboutSVG) ; appDiv.append(aboutSpan)
+                aboutSVG.append(aboutSVGpath) ; aboutSpan.append(aboutSVG) ; cornerBtnsDiv.append(aboutSpan)
 
                 // Create/append speak button
                 if (answer != 'standby') {
                     var speakSpan = document.createElement('span'),
                         speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
                     speakSpan.id = 'speak-btn' // for toggleTooltip()
-                    speakSpan.className = 'corner-btn' ; speakSpan.style.margin = '-0.117em 8px 0 0'
+                    speakSpan.className = 'corner-btn' ; speakSpan.style.margin = '-2px 8px 0 0'
                     const speakSVGattrs = [['width', 22], ['height', 22], ['viewBox', '0 0 32 32']]
                     speakSVGattrs.forEach(([attr, value]) => speakSVG.setAttributeNS(null, attr, value))
                     const speakSVGpaths = [
@@ -1409,7 +1414,7 @@
                             d: 'M9.957,10.88c-0.605,0.625 -1.415,0.98 -2.262,0.991c-4.695,0.022 -4.695,0.322 -4.695,4.129c0,3.806 0,4.105 4.695,4.129c0.846,0.011 1.656,0.366 2.261,0.991c1.045,1.078 2.766,2.856 4.245,4.384c0.474,0.49 1.18,0.631 1.791,0.36c0.611,-0.272 1.008,-0.904 1.008,-1.604c0,-4.585 0,-11.936 0,-16.52c0,-0.7 -0.397,-1.332 -1.008,-1.604c-0.611,-0.271 -1.317,-0.13 -1.791,0.36c-1.479,1.528 -3.2,3.306 -4.244,4.384Z' })
                     ]
                     speakSVGpaths.forEach(path => speakSVG.append(path))
-                    speakSpan.append(speakSVG) ; appDiv.append(speakSpan)
+                    speakSpan.append(speakSVG) ; cornerBtnsDiv.append(speakSpan)
                 }
 
                 // Create/append Sticky Sidebar button
@@ -1417,8 +1422,8 @@
                     var ssbSpan = document.createElement('span'),
                         ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
                     ssbSpan.id = 'ssb-btn' // for updateSSBsvg() + toggleTooltip()
-                    ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '0.09rem 8px 0 0'
-                    ssbSpan.append(ssbSVG) ; appDiv.append(ssbSpan) ; updateSSBsvg()
+                    ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '1px 8px 0 0'
+                    ssbSpan.append(ssbSVG) ; cornerBtnsDiv.append(ssbSpan) ; updateSSBsvg()
                 }
 
                 // Create/append font size button
@@ -1428,14 +1433,14 @@
                     const fontSizeSVGpathA = document.createElementNS('http://www.w3.org/2000/svg','path'),
                           fontSizeSVGpathB = document.createElementNS('http://www.w3.org/2000/svg','path')
                     fontSizeSpan.id = 'font-size-btn' // for toggleTooltip()
-                    fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = '1px 10px 0 2px'
+                    fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = '0 10px 0 2px'
                     const fontSizeSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 512 512']]
                     fontSizeSVGattrs.forEach(([attr, value]) => fontSizeSVG.setAttribute(attr, value))
                     fontSizeSVGpathA.setAttribute('d',
                         'M234.997 448.199h-55.373a6.734 6.734 0 0 1-6.556-5.194l-11.435-48.682a6.734 6.734 0 0 0-6.556-5.194H86.063a6.734 6.734 0 0 0-6.556 5.194l-11.435 48.682a6.734 6.734 0 0 1-6.556 5.194H7.74c-4.519 0-7.755-4.363-6.445-8.687l79.173-261.269a6.734 6.734 0 0 1 6.445-4.781h69.29c2.97 0 5.59 1.946 6.447 4.79l78.795 261.269c1.303 4.322-1.933 8.678-6.448 8.678zm-88.044-114.93l-19.983-84.371c-1.639-6.921-11.493-6.905-13.111.02l-19.705 84.371c-.987 4.224 2.22 8.266 6.558 8.266H140.4c4.346 0 7.555-4.056 6.553-8.286z')
                     fontSizeSVGpathB.setAttribute('d',
                         'M502.572 448.199h-77.475a9.423 9.423 0 0 1-9.173-7.268l-16-68.114a9.423 9.423 0 0 0-9.173-7.268H294.19a9.423 9.423 0 0 0-9.173 7.268l-16 68.114a9.423 9.423 0 0 1-9.173 7.268h-75.241c-6.322 0-10.851-6.104-9.017-12.155L286.362 70.491a9.422 9.422 0 0 1 9.017-6.69h96.947a9.422 9.422 0 0 1 9.021 6.702l110.245 365.554c1.825 6.047-2.703 12.142-9.02 12.142zM379.385 287.395l-27.959-118.047c-2.293-9.683-16.081-9.661-18.344.029l-27.57 118.047c-1.38 5.91 3.106 11.565 9.175 11.565h55.529c6.082-.001 10.571-5.676 9.169-11.594z')
-                    fontSizeSVG.append(fontSizeSVGpathA, fontSizeSVGpathB) ; fontSizeSpan.append(fontSizeSVG) ; appDiv.append(fontSizeSpan)
+                    fontSizeSVG.append(fontSizeSVGpathA, fontSizeSVGpathB) ; fontSizeSpan.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeSpan)
                 }
 
                 // Create/append Wider Sidebar button
@@ -1443,8 +1448,8 @@
                     var wsbSpan = document.createElement('span'),
                         wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
                     wsbSpan.id = 'wsb-btn' // for updateSSBsvg() + toggleTooltip()
-                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '2px 12px 0 0'
-                    wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan) ; updateWSBsvg()
+                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.marginRight = '11.5px'
+                    wsbSpan.append(wsbSVG) ; cornerBtnsDiv.append(wsbSpan) ; updateWSBsvg()
                 }
 
                 // Add tooltips
