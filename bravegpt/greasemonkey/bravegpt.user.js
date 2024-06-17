@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.6
+// @version             2024.6.17.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -845,7 +845,7 @@ setTimeout(async () => {
     }
 
     function updateTooltip(buttonType) { // text & position
-        const cornerBtnTypes = ['about', 'speak', 'font-size', 'wsb'],
+        const cornerBtnTypes = ['about', 'speak', 'csb', 'font-size', 'wsb'],
               [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [15, 18] : [5, 28],
               iniRoffset = spreadFactor * (buttonType == 'send' ? 1.65 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
@@ -853,6 +853,7 @@ setTimeout(async () => {
         tooltipDiv.innerText = (
             buttonType == 'about' ? msgs.menuLabel_about || 'About'
           : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
+          : buttonType == 'csb' ? msgs.menuLabel_colorScheme || 'Color Scheme'
           : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
                                    + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
@@ -1419,7 +1420,7 @@ setTimeout(async () => {
                 // Create/append app title anchor + byline
                 updateTitleAnchor()
 
-                // Create/append about button
+                // Create/append About button
                 const aboutSpan = document.createElement('span'),
                       aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                       aboutSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
@@ -1432,7 +1433,7 @@ setTimeout(async () => {
                 aboutSVGpath.setAttribute('stroke', 'none')
                 aboutSVG.append(aboutSVGpath) ; aboutSpan.append(aboutSVG) ; appDiv.append(aboutSpan)
 
-                // Create/append speak button
+                // Create/append Speak button
                 if (answer != 'standby') {
                     var speakSpan = document.createElement('span'),
                         speakSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
@@ -1452,7 +1453,18 @@ setTimeout(async () => {
                     speakSpan.append(speakSVG) ; appDiv.append(speakSpan)
                 }
 
-                // Create/append font size button
+                // Create/append Color Scheme button
+                const csbSpan = document.createElement('span'),
+                      csbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      csbSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
+                csbSpan.id = 'csb-btn' // for toggleTooltip()
+                csbSpan.className = 'corner-btn' ; csbSpan.style.margin = '-0.2px 9px 0 0'
+                const csbSVGattrs = [['width', 15], ['height', 15], ['viewBox', '0 -960 960 960']]
+                csbSVGattrs.forEach(([attr, value]) => csbSVG.setAttribute(attr, value))
+                csbSVGpath.setAttribute('d', 'M479.92-34q-91.56 0-173.4-35.02t-142.16-95.34q-60.32-60.32-95.34-142.24Q34-388.53 34-480.08q0-91.56 35.02-173.4t95.34-142.16q60.32-60.32 142.24-95.34Q388.53-926 480.08-926q91.56 0 173.4 35.02t142.16 95.34q60.32 60.32 95.34 142.24Q926-571.47 926-479.92q0 91.56-35.02 173.4t-95.34 142.16q-60.32 60.32-142.24 95.34Q571.47-34 479.92-34ZM530-174q113-19 186.5-102.78T790-480q0-116.71-73.5-201.35Q643-766 530-785v611Z')
+                csbSVG.append(csbSVGpath) ; csbSpan.append(csbSVG) ; appDiv.append(csbSpan)
+
+                // Create/append Font Size button
                 if (answer != 'standby') {
                     var fontSizeSpan = document.createElement('span'),
                         fontSizeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
@@ -1529,9 +1541,10 @@ setTimeout(async () => {
                     })
                 })
                 fontSizeSVG?.addEventListener('click', () => fontSizeSlider.toggle())
+                csbSVG.addEventListener('click', launchSchemeModal)
                 wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
                 if (!isMobile) // add hover listeners for tooltips
-                    [aboutSpan, speakSpan, fontSizeSpan, wsbSpan].forEach(span => { if (span)
+                    [aboutSpan, speakSpan, csbSpan, fontSizeSpan, wsbSpan].forEach(span => { if (span)
                         ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
 
                 // Create/append 'by KudoAI'
