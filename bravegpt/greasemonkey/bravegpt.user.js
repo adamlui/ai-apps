@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.15
+// @version             2024.6.17.17
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -727,13 +727,13 @@ setTimeout(async () => {
           + '.modal-close-btn { top: -7px !important ; right: -7px !important }' // re-pos modal close button
           + `.modal-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}`
           + `.modal-close-btn:hover { background-color: #${ scheme == 'dark' ? '666464' : 'f2f2f2' } !important }`
-          + '.chatgpt-modal p { margin: 14px 0 -20px 4px ; font-size: 1.115rem }' // position/size alert msg
+          + '.chatgpt-modal p { margin: 14px 0 -20px 4px ; font-size: 1.115rem }' // pos/size modal msg
+          + `.modal-buttons { margin: 38px 0px 6px ${ isMobile ? 0 : -7 }px !important }` // pos modal buttons
           + '.chatgpt-modal button {' // alert buttons
               + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ; '
               + `padding: ${ isMobile? '5px' : '4px 3px' } !important ;`
               + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
               + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
-          + `.modal-buttons { margin: 38px 0px 6px ${ isMobile ? 0 : -7 }px !important }` // position alert buttons
           + ( scheme == 'dark' ? // darkmode alert styles
               ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                   + 'background-color: black !important ; color: white }'

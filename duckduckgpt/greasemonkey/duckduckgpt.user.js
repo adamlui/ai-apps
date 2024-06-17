@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.17
+// @version             2024.6.17.18
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -763,8 +763,9 @@
           + '.modal-close-btn { top: -4px !important ; right: -11px !important }' // re-pos modal close button
           + `.modal-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}`
           + `.modal-close-btn:hover { background-color: #${ scheme == 'dark' ? '666464' : 'f2f2f2' } !important }`
-          + '.chatgpt-modal p { margin: -8px 0 -14px 4px ; font-size: 1.55rem }' // position/size update alert msg
+          + '.chatgpt-modal p { margin: -8px 0 -14px 4px ; font-size: 1.55rem }' // pos/size modal msg
           + `.chatgpt-modal a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
+          + `.modal-buttons { margin: 24px -5px -3px ${ isMobile ? -5 : -15 }px !important }` // pos modal buttons
           + '.chatgpt-modal button {' // modal buttons
               + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
               + `padding: ${ isMobile? '7px' : '4px 10px' } !important ;`
@@ -773,7 +774,6 @@
               + ( scheme == 'dark' ? 'background: none ; color: white' : '') + '}'
           + '.primary-modal-btn { background: black !important ; color: white !important }'
           + '.chatgpt-modal button:hover { background-color: #9cdaff !important ; color: black !important }'
-          + `.modal-buttons { margin: 24px -5px -3px ${ isMobile ? -5 : -15 }px !important }` // position alert buttons
           + ( scheme == 'dark' ? // additional darkmode alert styles
               ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                   + 'background-color: black !important ; color: white }'

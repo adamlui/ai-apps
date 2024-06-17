@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.18
+// @version             2024.6.17.20
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -970,13 +970,13 @@
           + '.modal-close-btn { top: -8px !important ; right: -8px !important }' // re-pos modal close button
           + `.modal-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}`
           + `.modal-close-btn:hover { background-color: #${ scheme == 'dark' ? '666464' : 'f2f2f2' } !important }`
-          + '.chatgpt-modal p { margin: 14px 0 -29px 4px ; font-size: 1.28em ; line-height: 1.57 }' // position/size alert msg
+          + '.chatgpt-modal p { margin: 14px 0 -29px 4px ; font-size: 1.28em ; line-height: 1.57 }' // pos/size modal msg
+          + `.modal-buttons { margin: 42px 4px ${ isMobile ? '2px 4px' : '-3px -4px' } !important }` // pos modal buttons
           + '.chatgpt-modal button {' // alert buttons
               + 'font-size: 0.84rem ; text-transform: uppercase ; min-width: 113px ;'
               + `padding: ${ isMobile? '5px' : '4px 10px' } !important ;`
               + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
               + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
-          + `.modal-buttons { margin: 42px 4px ${ isMobile ? '2px 4px' : '-3px -4px' } !important }` // position alert buttons
           + ( scheme == 'dark' ? // darkmode alert styles
               ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                   + 'background-color: black !important ; color: white }'
