@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.9
+// @version             2024.6.17.10
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -648,6 +648,9 @@ setTimeout(async () => {
           + ( scheme == 'dark' ? '#bravegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
           + '.app-name { font-size: 20px ; font-family: var(--brand-font) ; text-decoration: none !important;'
               + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important }`
+          + '.kudoai { margin-left: 7px ; font-size: .65rem ; color: #aaa }'
+          + '.kudoai a { color: #aaa ; text-decoration: none }'
+          + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
           + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
               + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
           + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' } ;`
@@ -713,9 +716,6 @@ setTimeout(async () => {
           + '#send-btn { border: none ; float: right ; position: relative ; background: none ; margin: 29px 4px 0 0 ;'
               + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
           + `#send-btn:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
-          + '.kudoai { margin-left: 7px ; font-size: .65rem ; color: #aaa }'
-          + '.kudoai a { color: #aaa ; text-decoration: none }'
-          + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' } ; text-decoration: none }`
           + ( // markdown styles
                 '#bravegpt > pre h1 { font-size: 1.25em } #bravegpt > pre h2 { font-size: 1.1em }' // size headings
               + '#bravegpt > pre ul { margin: -10px 0 -6px ; }' // reduce v-spacing
