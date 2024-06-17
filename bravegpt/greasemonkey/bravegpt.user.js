@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.12
+// @version             2024.6.16.13
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1381,7 +1381,7 @@ setTimeout(async () => {
                 } catch (err) { consoleErr('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
                     if (get.reply.sender == caller.api) // am designated sender, recurse
-                        setTimeout(() => { processStreamText({ done, value }) }, isEdge ? 50 : 1) // Edge delay vs. STATUS_ACCESS_VIOLATION bug
+                        setTimeout(() => { processStreamText({ done, value }) }, isEdge ? 100 : 1) // Edge delay vs. STATUS_ACCESS_VIOLATION bug
                 }).catch(err => consoleErr('Error reading stream', err.message))
             }
         }

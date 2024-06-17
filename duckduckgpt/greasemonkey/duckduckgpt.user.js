@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.16.12
+// @version             2024.6.16.13
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1344,7 +1344,7 @@
                 } catch (err) { consoleErr('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
                     if (get.reply.sender == caller.api) // am designated sender, recurse
-                        setTimeout(() => { processStreamText({ done, value }) }, isEdge ? 50 : 1) // Edge delay vs. STATUS_ACCESS_VIOLATION bug
+                        setTimeout(() => { processStreamText({ done, value }) }, isEdge ? 100 : 1) // Edge delay vs. STATUS_ACCESS_VIOLATION bug
                 }).catch(err => consoleErr('Error reading stream', err.message))
             }
         }
