@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.8
+// @version             2024.6.17.9
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -645,24 +645,35 @@
         schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
 
         // Re-format each button
-        for (const btn of schemeModal.querySelectorAll('button')) {
-            btn.classList = ( // emphasize active scheme
+        const buttons = schemeModal.querySelectorAll('button'),
+              schemes = { 'light': '☀️', 'dark': '🌘', 'auto': '🌗'}
+        for (const btn of buttons) {
+            const btnScheme = btn.textContent.toLowerCase()
+
+            // Emphasize active scheme
+            btn.classList = (
                 config.scheme == btn.textContent.toLowerCase() || (btn.textContent == 'Auto' && !config.scheme)
                   ? 'primary-modal-btn' : '' )
 
             // Prepend emoji + localize labels
-            if (/light/i.test(btn.textContent)) btn.textContent = (
-                '☀️ ' + ( msgs.scheme_light   || 'Light' ))
-            else if (/dark/i.test(btn.textContent)) btn.textContent = (
-                '🌘 ' + ( msgs.scheme_dark    || 'Dark' ))
-            else if (/auto/i.test(btn.textContent)) btn.textContent = (
-                '🌗 ' + ( msgs.menuLabel_auto || 'Auto' ))
-
+            if (Object.prototype.hasOwnProperty.call(schemes, btnScheme))
+                 btn.textContent = `${schemes[btnScheme]} ${ msgs['scheme_' + btnScheme] || btnScheme.toUpperCase() }`
             else btn.style.display = 'none' // hide Dismiss button
+
+            // Clone button to replace listener to not dismiss modal on click
+            const newBtn = btn.cloneNode(true) ; btn.parentNode.replaceChild(newBtn, btn)
+            newBtn.addEventListener('click', event => {
+                event.stopPropagation() // disable chatgpt.js dismissAlert()
+                updateScheme(btnScheme) // call corresponding scheme func
+                schemeModal.querySelectorAll('button').forEach(btn => btn.classList = '') // clear prev emphasized active scheme
+                newBtn.classList = 'primary-modal-btn' // emphasize newly active scheme
+                newBtn.style.cssText = 'pointer-events: none' // disable hover fx to show emphasis
+                setTimeout(() => { newBtn.style.pointerEvents = 'auto'; }, 100) // re-enable hover fx after 100ms to flicker emphasis
+            })
         }
 
         function updateScheme(newScheme) {
-            scheme = newScheme == 'auto' ? ( isDarkMode() ? 'dark' : 'light' ) : newScheme
+            scheme = newScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : newScheme
             saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
             updateAppLogoSrc() ; updateAppStyle() ; schemeNotify(newScheme) ; refreshMenu()
         }
@@ -677,7 +688,7 @@
 
     function launchAboutModal() {
 
-        // Show alert
+        // Show modal
         const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
         const aboutModalID = siteAlert(
             config.appName, // title
@@ -855,7 +866,7 @@
         if (!appTitleVisible || !logoVisible) {
             const appTitleAnchor = createAnchor(config.appURL, (() => {
                 if (appLogoImg.loaded) { // size/pos/return app logo img
-                    appLogoImg.width = isMobile ? 177 : isFirefox ? 137 : 135
+                    appLogoImg.width = isMobile ? 177 : isFirefox ? 124 : 122
                     appLogoImg.style.cssText = (
                         appLogoImg.loaded ? `position: relative ; top: ${ isMobile ? 4 : isFirefox ? 3 : 2 }px`
                                           + ( isMobile ? '; margin-left: 1px' : '' ) : '' )
@@ -1734,7 +1745,7 @@
                     var ssbSpan = document.createElement('span'),
                         ssbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
                     ssbSpan.id = 'ssb-btn' // for updateSSBsvg() + toggleTooltip()
-                    ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '-0.05rem 8px 0 0'
+                    ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '-1px 8px 0 0'
                     ssbSpan.append(ssbSVG) ; appDiv.append(ssbSpan) ; updateSSBsvg()
                 }
 
@@ -1743,7 +1754,7 @@
                       csbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                       csbSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path')
                 csbSpan.id = 'csb-btn' // for toggleTooltip()
-                csbSpan.className = 'corner-btn' ; csbSpan.style.margin = '-0.2px 9px 0 0'
+                csbSpan.className = 'corner-btn' ; csbSpan.style.margin = '-0.2px 10px 0 0'
                 const csbSVGattrs = [['width', 15], ['height', 15], ['viewBox', '0 -960 960 960']]
                 csbSVGattrs.forEach(([attr, value]) => csbSVG.setAttribute(attr, value))
                 csbSVGpath.setAttribute('d', 'M479.92-34q-91.56 0-173.4-35.02t-142.16-95.34q-60.32-60.32-95.34-142.24Q34-388.53 34-480.08q0-91.56 35.02-173.4t95.34-142.16q60.32-60.32 142.24-95.34Q388.53-926 480.08-926q91.56 0 173.4 35.02t142.16 95.34q60.32 60.32 95.34 142.24Q926-571.47 926-479.92q0 91.56-35.02 173.4t-95.34 142.16q-60.32 60.32-142.24 95.34Q571.47-34 479.92-34ZM530-174q113-19 186.5-102.78T790-480q0-116.71-73.5-201.35Q643-766 530-785v611Z')
@@ -1756,7 +1767,7 @@
                     const fontSizeSVGpathA = document.createElementNS('http://www.w3.org/2000/svg','path'),
                           fontSizeSVGpathB = document.createElementNS('http://www.w3.org/2000/svg','path')
                     fontSizeSpan.id = 'font-size-btn' // for toggleTooltip()
-                    fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = `${ isMobile ? 3 : -2 }px 10px 0 2px`
+                    fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = `${ isMobile ? 3 : -1 }px 11px 0 0`
                     const fontSizeSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 512 512']]
                     fontSizeSVGattrs.forEach(([attr, value]) => fontSizeSVG.setAttribute(attr, value))
                     fontSizeSVGpathA.setAttribute('d',
@@ -1771,7 +1782,7 @@
                     var wsbSpan = document.createElement('span'),
                         wsbSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
                     wsbSpan.id = 'wsb-btn' // for updateSSBsvg() + toggleTooltip()
-                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-0.1rem 9px 0 0'
+                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-1px 11px 0 0'
                     wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan) ; updateWSBsvg()
                 }
 

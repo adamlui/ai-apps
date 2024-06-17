@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.7
+// @version             2024.6.17.8
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -404,24 +404,35 @@ setTimeout(async () => {
         schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
 
         // Re-format each button
-        for (const btn of schemeModal.querySelectorAll('button')) {
-            btn.classList = ( // emphasize active scheme
+        const buttons = schemeModal.querySelectorAll('button'),
+              schemes = { 'light': '☀️', 'dark': '🌘', 'auto': '🌗'}
+        for (const btn of buttons) {
+            const btnScheme = btn.textContent.toLowerCase()
+
+            // Emphasize active scheme
+            btn.classList = (
                 config.scheme == btn.textContent.toLowerCase() || (btn.textContent == 'Auto' && !config.scheme)
                   ? 'primary-modal-btn' : '' )
 
             // Prepend emoji + localize labels
-            if (/light/i.test(btn.textContent)) btn.textContent = (
-                '☀️ ' + ( msgs.scheme_light   || 'Light' ))
-            else if (/dark/i.test(btn.textContent)) btn.textContent = (
-                '🌘 ' + ( msgs.scheme_dark    || 'Dark' ))
-            else if (/auto/i.test(btn.textContent)) btn.textContent = (
-                '🌗 ' + ( msgs.menuLabel_auto || 'Auto' ))
-
+            if (Object.prototype.hasOwnProperty.call(schemes, btnScheme))
+                 btn.textContent = `${schemes[btnScheme]} ${ msgs['scheme_' + btnScheme] || btnScheme.toUpperCase() }`
             else btn.style.display = 'none' // hide Dismiss button
+
+            // Clone button to replace listener to not dismiss modal on click
+            const newBtn = btn.cloneNode(true) ; btn.parentNode.replaceChild(newBtn, btn)
+            newBtn.addEventListener('click', event => {
+                event.stopPropagation() // disable chatgpt.js dismissAlert()
+                updateScheme(btnScheme) // call corresponding scheme func
+                schemeModal.querySelectorAll('button').forEach(btn => btn.classList = '') // clear prev emphasized active scheme
+                newBtn.classList = 'primary-modal-btn' // emphasize newly active scheme
+                newBtn.style.cssText = 'pointer-events: none' // disable hover fx to show emphasis
+                setTimeout(() => { newBtn.style.pointerEvents = 'auto'; }, 100) // re-enable hover fx after 100ms to flicker emphasis
+            })
         }
 
         function updateScheme(newScheme) {
-            scheme = newScheme == 'auto' ? ( isDarkMode() ? 'dark' : 'light' ) : newScheme
+            scheme = newScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : newScheme
             saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
             updateAppLogoSrc() ; updateAppStyle() ; schemeNotify(newScheme) ; refreshMenu()
         }
