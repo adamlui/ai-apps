@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.5
+// @version             2024.6.17.6
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -184,7 +184,7 @@ setTimeout(async () => {
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@bb63c4e/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@b5c3426/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting('autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'prefixEnabled',
@@ -1674,40 +1674,47 @@ setTimeout(async () => {
             function handleSubmit(event) {
                 event.preventDefault()
                 const chatTextarea = appDiv.querySelector('#app-chatbar')
-                if (msgChain.length > 2) msgChain.splice(0, 2) // keep token usage maintainable
-                msgChain = stripQueryAugments(msgChain)
-                const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || ''
-                msgChain.push({ role: 'assistant', content: prevReplyTrimmed })
-                msgChain.push({ role: 'user', content: augmentQuery(chatTextarea.value) })
-                get.reply(msgChain)
 
-                // Remove re-added reply section listeners
-                const replyForm = appDiv.querySelector('form')
-                replyForm.removeEventListener('keydown', handleEnter)
-                replyForm.removeEventListener('submit', handleSubmit)
-                chatTextarea.removeEventListener('input', autosizeChatbar)
+                // No reply, change placeholder + focus chatbar
+                if (chatTextarea.value.trim() == '') {
+                    chatTextarea.placeholder = `${ msgs.placeholder_typeSomething || 'Type something' }...`
+                    chatTextarea.focus()
 
-                // Remove related queries
-                try {
-                    const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-                    Array.from(relatedQueriesDiv.children).forEach(child => {
-                        ['click', 'keydown'].forEach(event => child.removeEventListener(event, handleRQevent)) })
-                    relatedQueriesDiv.remove()
-                } catch (err) {}
+                // Yes reply, submit it + transform to loading UI
+                } else {
 
-                // Remove 'Send reply' tooltip from send btn clicks
-                if (!isMobile) tooltipDiv.style.opacity = 0
+                    // Modify/submit msg chain
+                    if (msgChain.length > 2) msgChain.splice(0, 2) // keep token usage maintainable
+                    msgChain = stripQueryAugments(msgChain)
+                    const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || ''
+                    msgChain.push({ role: 'assistant', content: prevReplyTrimmed })
+                    msgChain.push({ role: 'user', content: augmentQuery(chatTextarea.value) })
+                    get.reply(msgChain)
 
-                // Clear footer
-                const appFooter = appDiv.querySelector('footer')
-                while (appFooter.firstChild) appFooter.removeChild(appFooter.firstChild)
+                    // Remove re-added reply section listeners
+                    const replyForm = appDiv.querySelector('form')
+                    replyForm.removeEventListener('keydown', handleEnter)
+                    replyForm.removeEventListener('submit', handleSubmit)
+                    chatTextarea.removeEventListener('input', autosizeChatbar)
 
-                // Show loading status
-                const replySection = appDiv.querySelector('section')
-                replySection.classList.add('loading', 'no-user-select')
-                replySection.innerText = appAlerts.waitingResponse
+                    // Remove related queries
+                    try {
+                        const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+                        Array.from(relatedQueriesDiv.children).forEach(child => {
+                            ['click', 'keydown'].forEach(event => child.removeEventListener(event, handleRQevent)) })
+                        relatedQueriesDiv.remove()
+                    } catch (err) {}
 
-                show.reply.chatbarFocused = false // for auto-focus routine
+                    // Remove 'Send reply' tooltip from send btn clicks
+                    if (!isMobile) tooltipDiv.style.opacity = 0
+
+                    // Show loading status
+                    const replySection = appDiv.querySelector('section')
+                    replySection.classList.add('loading', 'no-user-select')
+                    replySection.innerText = appAlerts.waitingResponse
+
+                    show.reply.chatbarFocused = false // for auto-focus routine
+                }
             }
 
             // Autosize chatbar function

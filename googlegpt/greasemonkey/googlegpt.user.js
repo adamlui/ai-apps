@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.5
+// @version             2024.6.17.6
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -417,7 +417,7 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@02510f0/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@35def99/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
@@ -1965,40 +1965,47 @@
             function handleSubmit(event) {
                 event.preventDefault()
                 const chatTextarea = appDiv.querySelector('#app-chatbar')
-                if (msgChain.length > 2) msgChain.splice(0, 2) // keep token usage maintainable
-                msgChain = stripQueryAugments(msgChain)
-                const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || ''
-                msgChain.push({ role: 'assistant', content: prevReplyTrimmed })
-                msgChain.push({ role: 'user', content: augmentQuery(chatTextarea.value) })
-                get.reply(msgChain)
 
-                // Remove re-added reply section listeners
-                const replyForm = appDiv.querySelector('form')
-                replyForm.removeEventListener('keydown', handleEnter)
-                replyForm.removeEventListener('submit', handleSubmit)
-                chatTextarea.removeEventListener('input', autosizeChatbar)
+                // No reply, change placeholder + focus chatbar
+                if (chatTextarea.value.trim() == '') {
+                    chatTextarea.placeholder = `${ msgs.placeholder_typeSomething || 'Type something' }...`
+                    chatTextarea.focus()
 
-                // Remove related queries
-                try {
-                    const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-                    Array.from(relatedQueriesDiv.children).forEach(child => {
-                        ['click', 'keydown'].forEach(event => child.removeEventListener(event, handleRQevent)) })
-                    relatedQueriesDiv.remove()
-                } catch (err) {}
+                // Yes reply, submit it + transform to loading UI
+                } else {
 
-                // Remove 'Send reply' tooltip from send btn clicks
-                if (!isMobile) tooltipDiv.style.opacity = 0
+                    // Modify/submit msg chain
+                    if (msgChain.length > 2) msgChain.splice(0, 2) // keep token usage maintainable
+                    msgChain = stripQueryAugments(msgChain)
+                    const prevReplyTrimmed = appDiv.querySelector('pre')?.textContent.substring(0, 250 - chatTextarea.value.length) || ''
+                    msgChain.push({ role: 'assistant', content: prevReplyTrimmed })
+                    msgChain.push({ role: 'user', content: augmentQuery(chatTextarea.value) })
+                    get.reply(msgChain)
 
-                // Clear footer
-                const appFooter = appDiv.querySelector('footer')
-                while (appFooter.firstChild) appFooter.removeChild(appFooter.firstChild)
+                    // Remove re-added reply section listeners
+                    const replyForm = appDiv.querySelector('form')
+                    replyForm.removeEventListener('keydown', handleEnter)
+                    replyForm.removeEventListener('submit', handleSubmit)
+                    chatTextarea.removeEventListener('input', autosizeChatbar)
 
-                // Show loading status
-                const replySection = appDiv.querySelector('section')
-                replySection.classList.add('loading', 'no-user-select')
-                replySection.innerText = appAlerts.waitingResponse
+                    // Remove related queries
+                    try {
+                        const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+                        Array.from(relatedQueriesDiv.children).forEach(child => {
+                            ['click', 'keydown'].forEach(event => child.removeEventListener(event, handleRQevent)) })
+                        relatedQueriesDiv.remove()
+                    } catch (err) {}
 
-                show.reply.chatbarFocused = false // for auto-focus routine
+                    // Remove 'Send reply' tooltip from send btn clicks
+                    if (!isMobile) tooltipDiv.style.opacity = 0
+
+                    // Show loading status
+                    const replySection = appDiv.querySelector('section')
+                    replySection.classList.add('loading', 'no-user-select')
+                    replySection.innerText = appAlerts.waitingResponse
+
+                    show.reply.chatbarFocused = false // for auto-focus routine
+                }
             }
 
             // Autosize chatbar function
