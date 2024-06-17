@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Letursstærð" },
   "tooltip_sendReply": { "message": "Senda svar" },
   "tooltip_sendRelatedQuery": { "message": "Senda tengda fyrirspurn" },
+  "placeholder_typeSomething": { "message": "Sláðu eitthvað inn" },
   "placeholder_askSomethingElse": { "message": "Spurðu um eitthvað annað" },
   "prompt_updateReplyLang": { "message": "Uppfæra tungumál svars" },
   "alert_langUpdated": { "message": "Tungumál uppfært" },

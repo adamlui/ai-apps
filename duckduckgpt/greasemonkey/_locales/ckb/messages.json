@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "قەبارەی جۆرە پیت" },
   "tooltip_sendReply": { "message": "وەڵام بنێرە" },
   "tooltip_sendRelatedQuery": { "message": "پرسگەی پەیوەندیدار بنێرە" },
+  "placeholder_typeSomething": { "message": "شتێک بنووسە" },
   "placeholder_askSomethingElse": { "message": "پرسیار لە شتێکی تر بکە" },
   "prompt_updateReplyLang": { "message": "زمانی وەڵام نوێ بکەوە" },
   "alert_langUpdated": { "message": "زمان نوێ کرایەوە" },

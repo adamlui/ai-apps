@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Tuma jibu" },
   "tooltip_sendRelatedQuery": { "message": "Tuma swali linalohusiana" },
   "placeholder_askSomethingElse": { "message": "Uliza kitu kingine" },
+  "placeholder_typeSomething": { "message": "Andika kitu" },
   "prompt_updateReplyLang": { "message": "Sasisha lugha ya kujibu" },
   "alert_langUpdated": { "message": "Lugha imesasishwa" },
   "alert_willReplyIn": { "message": "atajibu ndani ya" },

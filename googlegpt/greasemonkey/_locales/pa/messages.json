@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "ਜਵਾਬ ਭੇਜੋ" },
   "tooltip_sendRelatedQuery": { "message": "ਸੰਬੰਧਿਤ ਪੁੱਛਗਿੱਛ ਭੇਜੋ" },
   "placeholder_askSomethingElse": { "message": "ਕੁਝ ਹੋਰ ਪੁੱਛੋ" },
+  "placeholder_typeSomething": { "message": "ਕੁਝ ਟਾਈਪ ਕਰੋ" },
   "prompt_updateReplyLang": { "message": "ਜਵਾਬ ਭਾਸ਼ਾ ਨੂੰ ਅੱਪਡੇਟ ਕਰੋ" },
   "alert_langUpdated": { "message": "ਭਾਸ਼ਾ ਅੱਪਡੇਟ ਕੀਤੀ ਗਈ" },
   "alert_willReplyIn": { "message": "ਵਿੱਚ ਜਵਾਬ ਦੇਵੇਗਾ" },

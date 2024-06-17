@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Skriftstødd..." },
   "tooltip_sendReply": { "message": "Sende svar" },
   "tooltip_sendRelatedQuery": { "message": "Send viðkomandi spurning" },
+  "placeholder_typeSomething": { "message": "Hvat er tað?" },
   "placeholder_askSomethingElse": { "message": "Eg vil spyrja teg um okkurt annað" },
   "prompt_updateReplyLang": { "message": "Uppdatering av málinum" },
   "alert_langUpdated": { "message": "Mál dagførd" },

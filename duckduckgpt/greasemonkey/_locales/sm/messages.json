@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Font tele" },
   "tooltip_sendReply": { "message": "Auina atu se tali" },
   "tooltip_sendRelatedQuery": { "message": "Auina atu fesili e fesootai i ai" },
+  "placeholder_typeSomething": { "message": "Ituaiga o se mea" },
   "placeholder_askSomethingElse": { "message": "Fesili atu i se isi mea" },
   "prompt_updateReplyLang": { "message": "Fa'afouga o le Gagana Tali" },
   "alert_langUpdated": { "message": "Gagana faʻafouina" },

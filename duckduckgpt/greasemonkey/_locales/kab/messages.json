@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "&Teɣzi n tsefsit" },
   "tooltip_sendReply": { "message": "Azen tiririt" },
   "tooltip_sendRelatedQuery": { "message": "Azen asteqsi yettwaxedmen" },
+  "placeholder_typeSomething": { "message": "Aru yiwet n tɣawsa" },
   "placeholder_askSomethingElse": { "message": "Steqsi ayen-nniḍen" },
   "prompt_updateReplyLang": { "message": "Snifel tutlayt n tiririt" },
   "alert_langUpdated": { "message": "Idioma deg xinag - AmawalAma" },

@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Отправить ответ" },
   "tooltip_sendRelatedQuery": { "message": "Отправить связанный запрос" },
   "placeholder_askSomethingElse": { "message": "Другое" },
+  "placeholder_typeSomething": { "message": "Введите текст" },
   "prompt_updateReplyLang": { "message": "Обновить язык ответа" },
   "alert_langUpdated": { "message": "Язык обновлен" },
   "alert_willReplyIn": { "message": "Отвечу" },

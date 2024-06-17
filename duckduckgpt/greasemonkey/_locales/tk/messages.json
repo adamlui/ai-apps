@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Şriftiň ululygy..." },
   "tooltip_sendReply": { "message": "Jawap iber" },
   "tooltip_sendRelatedQuery": { "message": "Baglanyşykly soragy iber" },
+  "placeholder_typeSomething": { "message": "Bir zadyň tüýsini" },
   "placeholder_askSomethingElse": { "message": "Siz ýene bir soragy sorap bilersiňizmi" },
   "prompt_updateReplyLang": { "message": "Jawap diliniň täzelenmegi" },
   "alert_langUpdated": { "message": "Til ýygnaýarlanýar" },

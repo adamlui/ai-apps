@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Қаріп өлшемі" },
   "tooltip_sendReply": { "message": "Жауап жіберу" },
   "tooltip_sendRelatedQuery": { "message": "Тиісті сұранысты жіберу" },
+  "placeholder_typeSomething": { "message": "Бірдеңе теріңіз" },
   "placeholder_askSomethingElse": { "message": "Басқа нәрсе сұраңыз" },
   "prompt_updateReplyLang": { "message": "Жауап тілін жаңарту" },
   "alert_langUpdated": { "message": "Тіл жаңартылды" },

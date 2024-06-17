@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Usayizi wefonti" },
   "tooltip_sendReply": { "message": "Thumela impendulo" },
   "tooltip_sendRelatedQuery": { "message": "Thumela umbuzo ohlobene" },
+  "placeholder_typeSomething": { "message": "Thayipha okuthile" },
   "placeholder_askSomethingElse": { "message": "Buza okunye" },
   "prompt_updateReplyLang": { "message": "Buyekeza ulimi lokuphendula" },
   "alert_langUpdated": { "message": "Ulimi lubuyekeziwe" },

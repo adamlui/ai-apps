@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Ուղարկել պատասխան" },
   "tooltip_sendRelatedQuery": { "message": "Ուղարկել համապատասխան հարցում" },
   "placeholder_askSomethingElse": { "message": "Հարցրեք մեկ այլ բան" },
+  "placeholder_typeSomething": { "message": "Մուտքագրեք ինչ - որ" },
   "prompt_updateReplyLang": { "message": "Թարմացնել պատասխանների լեզուն" },
   "alert_langUpdated": { "message": "Լեզուն թարմացվել է" },
   "alert_willReplyIn": { "message": "կպատասխանի" },

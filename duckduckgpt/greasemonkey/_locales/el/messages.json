@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Μέγεθος γραμματοσειράς" },
   "tooltip_sendReply": { "message": "Αποστολή απάντησης" },
   "tooltip_sendRelatedQuery": { "message": "Αποστολή σχετικού ερωτήματος" },
+  "placeholder_typeSomething": { "message": "Πληκτρολογήστε κάτι" },
   "placeholder_askSomethingElse": { "message": "Κάτι άλλο" },
   "prompt_updateReplyLang": { "message": "Ενημέρωση γλώσσας απάντησης" },
   "alert_langUpdated": { "message": "Η γλώσσα ενημερώθηκε" },

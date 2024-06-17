@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Betűméret" },
   "tooltip_sendReply": { "message": "Válasz elküldése" },
   "tooltip_sendRelatedQuery": { "message": "Kapcsolódó lekérdezés küldése" },
+  "placeholder_typeSomething": { "message": "Írjon be valamit" },
   "placeholder_askSomethingElse": { "message": "Más kérdésem van" },
   "prompt_updateReplyLang": { "message": "Válasz nyelvének frissítése" },
   "alert_langUpdated": { "message": "Nyelv frissítve" },

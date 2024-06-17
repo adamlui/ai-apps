@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Tuma Mwakitwile" },
   "tooltip_sendRelatedQuery": { "message": "Tumineni ifipusho ifilanda pali ili lyashi" },
   "placeholder_askSomethingElse": { "message": "Ask Mukena Bali" },
+  "placeholder_typeSomething": { "message": "Mulesunga icintu cimo" },
   "prompt_updateReplyLang": { "message": "Update Mwakitwile language" },
   "alert_langUpdated": { "message": "Ludimi lwa lwa Tumama updated" },
   "alert_willReplyIn": { "message": "asuka Iwashita" },

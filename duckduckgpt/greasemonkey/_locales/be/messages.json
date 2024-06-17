@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Памер мурашкі" },
   "tooltip_sendReply": { "message": "Даслаць адказ" },
   "tooltip_sendRelatedQuery": { "message": "Даслаць адпаведны запыт" },
+  "placeholder_typeSomething": { "message": "Увядзіце нешта" },
   "placeholder_askSomethingElse": { "message": "Спытаць што-небудзь яшчэ" },
   "prompt_updateReplyLang": { "message": "Абнавіць мову адказаў" },
   "alert_langUpdated": { "message": "Мова абноўлена" },

@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Velikost pisave" },
   "tooltip_sendReply": { "message": "Odgovori" },
   "tooltip_sendRelatedQuery": { "message": "Pošlji povezano poizvedbo" },
+  "placeholder_typeSomething": { "message": "Vnesite nekaj" },
   "placeholder_askSomethingElse": { "message": "Nekaj drugega" },
   "prompt_updateReplyLang": { "message": "Posodobi jezik odgovora" },
   "alert_langUpdated": { "message": "Jezik je posodobljen" },

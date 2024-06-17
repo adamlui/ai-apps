@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "גודל פונט" },
   "tooltip_sendReply": { "message": "שלח תגובה" },
   "tooltip_sendRelatedQuery": { "message": "שלח שאילתה קשורה" },
+  "placeholder_typeSomething": { "message": "יש להקליד משהו..." },
   "placeholder_askSomethingElse": { "message": "Something else&#10;&#10;" },
   "prompt_updateReplyLang": { "message": "עדכון שפת התגובה" },
   "alert_langUpdated": { "message": "השפה עודכנה" },

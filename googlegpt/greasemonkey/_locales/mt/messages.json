@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Ibgħat tweġiba" },
   "tooltip_sendRelatedQuery": { "message": "Ibgħat mistoqsija relatata" },
   "placeholder_askSomethingElse": { "message": "Xi ħaġa oħra" },
+  "placeholder_typeSomething": { "message": "Ikteb xi ħaġa" },
   "prompt_updateReplyLang": { "message": "Aġġorna l-lingwa tat-tweġibiet" },
   "alert_langUpdated": { "message": "Il-lingwa ġiet aġġornata" },
   "alert_willReplyIn": { "message": "se twieġeb" },

@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Meud a' chrutha-clò..." },
   "tooltip_sendReply": { "message": "Cuir freagairt" },
   "tooltip_sendRelatedQuery": { "message": "Cuir a 'cheist co - cheangailte ris" },
+  "placeholder_typeSomething": { "message": "Seòrsaich rudeigin" },
   "placeholder_askSomethingElse": { "message": "Cuir ceist air rudeigin eile" },
   "prompt_updateReplyLang": { "message": "Ùraich an cànan freagairt" },
   "alert_langUpdated": { "message": "Cànan air ùrachadh" },

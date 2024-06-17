@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Send svar" },
   "tooltip_sendRelatedQuery": { "message": "Send relateret forespørgsel" },
   "placeholder_askSomethingElse": { "message": "Noget andet" },
+  "placeholder_typeSomething": { "message": "Skriv noget" },
   "prompt_updateReplyLang": { "message": "Opdater svarsprog" },
   "alert_langUpdated": { "message": "Sprog opdateret" },
   "alert_willReplyIn": { "message": "vil svare om" },

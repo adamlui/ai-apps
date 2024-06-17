@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Ukubwa wa fonti:" },
   "tooltip_sendReply": { "message": "Tuma jibu" },
   "tooltip_sendRelatedQuery": { "message": "Tuma swali linalohusiana" },
+  "placeholder_typeSomething": { "message": "Andika kitu" },
   "placeholder_askSomethingElse": { "message": "Uliza kitu kingine" },
   "prompt_updateReplyLang": { "message": "Sasisha lugha ya kujibu" },
   "alert_langUpdated": { "message": "Lugha imesasishwa" },

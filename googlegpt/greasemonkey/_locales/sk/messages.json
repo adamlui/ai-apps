@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Odpovedať" },
   "tooltip_sendRelatedQuery": { "message": "Odoslať súvisiacu otázku" },
   "placeholder_askSomethingElse": { "message": "Niečo iné" },
+  "placeholder_typeSomething": { "message": "Napíšte niečo" },
   "prompt_updateReplyLang": { "message": "Aktualizovať jazyk odpovede" },
   "alert_langUpdated": { "message": "Jazyk bol aktualizovaný" },
   "alert_willReplyIn": { "message": "odpovie v" },

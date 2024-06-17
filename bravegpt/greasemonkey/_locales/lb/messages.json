@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Äntwert schécken" },
   "tooltip_sendRelatedQuery": { "message": "Zesummenhang Ufro schécken" },
   "placeholder_askSomethingElse": { "message": "Frot eppes anescht" },
+  "placeholder_typeSomething": { "message": "Typ eppes" },
   "prompt_updateReplyLang": { "message": "Äntwertssprooch aktualiséieren" },
   "alert_langUpdated": { "message": "Sprooch aktualiséiert" },
   "alert_willReplyIn": { "message": "wäert äntweren an" },

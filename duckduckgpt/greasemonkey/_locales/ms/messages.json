@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Saiz huruf" },
   "tooltip_sendReply": { "message": "Balas" },
   "tooltip_sendRelatedQuery": { "message": "Hantar pertanyaan berkaitan" },
+  "placeholder_typeSomething": { "message": "Taipkan sesuatu" },
   "placeholder_askSomethingElse": { "message": "Tanya perkara lain" },
   "prompt_updateReplyLang": { "message": "Kemas kini bahasa balasan" },
   "alert_langUpdated": { "message": "Bahasa dikemas kini" },

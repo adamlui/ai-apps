@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Thumela impendulo" },
   "tooltip_sendRelatedQuery": { "message": "Thumela umbuzo onento yokwenza noko" },
   "placeholder_askSomethingElse": { "message": "Buza enye into" },
+  "placeholder_typeSomething": { "message": "Bhala into" },
   "prompt_updateReplyLang": { "message": "Hlaziya ulwimi lwempendulo" },
   "alert_langUpdated": { "message": "Ulwimi luhlaziyiwe" },
   "alert_willReplyIn": { "message": "iza kuphendula ingekapheli" },

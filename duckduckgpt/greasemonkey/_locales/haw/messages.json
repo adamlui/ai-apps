@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Nui kikokiko" },
   "tooltip_sendReply": { "message": "Hoʻouna pane" },
   "tooltip_sendRelatedQuery": { "message": "E hoʻouna i ka nīnau pili" },
+  "placeholder_typeSomething": { "message": "Kākau i kekahi mea" },
   "placeholder_askSomethingElse": { "message": "E nīnau i kekahi mea ʻē aʻe" },
   "prompt_updateReplyLang": { "message": "Hōʻano hou i ka ʻōlelo pane" },
   "alert_langUpdated": { "message": "Hōʻano hou ʻia ka ʻōlelo" },

@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "à² à²à³à²£à²²à²à³à²·à²£à²à²³à²¨à³à²¨à³ à²à³à²¨à³à²¯ à²¬à²¾à²°à²¿à²à³ à²¬à²³à²à³à²¦à²¾à²°à²¨à²¿à²à²¦ à²¬à²¦à²²à²¾à²¯à²¿à²¸à²²à²¾à²à²¿à²¦à³à²¦à³." },
   "tooltip_sendReply": { "message": "ಪ್ರತ್ಯುತ್ತರ ಕಳುಹಿಸಿ" },
   "tooltip_sendRelatedQuery": { "message": "ಸಂಬಂಧಿತ ಪ್ರಶ್ನೆಯನ್ನು ಕಳುಹಿಸಿ" },
+  "placeholder_typeSomething": { "message": "ಏನನ್ನಾದರೂ ಟೈಪ್ ಮಾಡಿ" },
   "placeholder_askSomethingElse": { "message": "ಬೇರೆ ಏನನ್ನಾದರೂ ಕೇಳಿ" },
   "prompt_updateReplyLang": { "message": "ಪ್ರತ್ಯುತ್ತರ ಭಾಷೆಯನ್ನು ನವೀಕರಿಸಿ" },
   "alert_langUpdated": { "message": "ಭಾಷೆ ನವೀಕರಿಸಲಾಗಿದೆ" },

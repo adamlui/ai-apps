@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Saese ya font" },
   "tooltip_sendReply": { "message": "SEND ANSWER" },
   "tooltip_sendRelatedQuery": { "message": "ROMELA DIPOTSO TSE DI AMAN" },
+  "placeholder_typeSomething": { "message": "Kwala sengwe mo go yone" },
   "placeholder_askSomethingElse": { "message": "ASK SENGWE SE SENGWE" },
   "prompt_updateReplyLang": { "message": "Puo e e tlhabolotsweng ya karabo" },
   "alert_langUpdated": { "message": "Puo e ntshwafaditswe" },

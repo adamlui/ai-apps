@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Letra-tamaina " },
   "tooltip_sendReply": { "message": "Erantzuna bidali" },
   "tooltip_sendRelatedQuery": { "message": "Bidali erlazionatutako kontsulta" },
+  "placeholder_typeSomething": { "message": "Idatzi zerbait" },
   "placeholder_askSomethingElse": { "message": "Beste zerbait galdetu" },
   "prompt_updateReplyLang": { "message": "Eguneratu erantzunen hizkuntza" },
   "alert_langUpdated": { "message": "Hizkuntza eguneratua" },

@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Cabbirka font" },
   "tooltip_sendReply": { "message": "Jawaab u dir" },
   "tooltip_sendRelatedQuery": { "message": "U dir su 'aalaha la xiriira" },
+  "placeholder_typeSomething": { "message": "Nooca wax" },
   "placeholder_askSomethingElse": { "message": "Weydii wax kale" },
   "prompt_updateReplyLang": { "message": "Cusboonaysii Luuqadda Jawaabta" },
   "alert_langUpdated": { "message": "Luuqadda la cusbooneysiiyay" },

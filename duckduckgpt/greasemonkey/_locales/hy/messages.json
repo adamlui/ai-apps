@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "@ action boldify selected text" },
   "tooltip_sendReply": { "message": "Ուղարկել պատասխան" },
   "tooltip_sendRelatedQuery": { "message": "Ուղարկել համապատասխան հարցում" },
+  "placeholder_typeSomething": { "message": "Մուտքագրեք ինչ - որ" },
   "placeholder_askSomethingElse": { "message": "Հարցրեք մեկ այլ բան" },
   "prompt_updateReplyLang": { "message": "Թարմացնել պատասխանների լեզուն" },
   "alert_langUpdated": { "message": "Լեզուն թարմացվել է" },

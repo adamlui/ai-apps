@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Андозаи мӯрча" },
   "tooltip_sendReply": { "message": "Фиристодани ҷавоб" },
   "tooltip_sendRelatedQuery": { "message": "Фиристодани дархости марбута" },
+  "placeholder_typeSomething": { "message": "Чизеро чоп кунед" },
   "placeholder_askSomethingElse": { "message": "Як чизи дигарро пурсед" },
   "prompt_updateReplyLang": { "message": "Забони ҷавобро навсозӣ кунед" },
   "alert_langUpdated": { "message": "Забон нав карда шуд" },

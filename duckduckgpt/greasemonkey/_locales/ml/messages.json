@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "ചിഹ്ന വലിപ്പം" },
   "tooltip_sendReply": { "message": "മറുപടി അയയ്ക്കുക" },
   "tooltip_sendRelatedQuery": { "message": "ബന്ധപ്പെട്ട ചോദ്യം അയയ്ക്കുക" },
+  "placeholder_typeSomething": { "message": "എന്തെങ്കിലും ടൈപ്പ് ചെയ്യുക" },
   "placeholder_askSomethingElse": { "message": "മറ്റെന്തെങ്കിലും ചോദിക്കുക" },
   "prompt_updateReplyLang": { "message": "മറുപടി ഭാഷ അപ്‌ഡേറ്റ് ചെയ്യുക" },
   "alert_langUpdated": { "message": "ഭാഷ അപ്‌ഡേറ്റുചെയ്‌തു" },

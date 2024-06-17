@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "字体大小" },
   "tooltip_sendReply": { "message": "回复" },
   "tooltip_sendRelatedQuery": { "message": "发送相关查询" },
+  "placeholder_typeSomething": { "message": "输入一些内容" },
   "placeholder_askSomethingElse": { "message": "其他方面" },
   "prompt_updateReplyLang": { "message": "更新回复语言" },
   "alert_langUpdated": { "message": "语言已更新" },

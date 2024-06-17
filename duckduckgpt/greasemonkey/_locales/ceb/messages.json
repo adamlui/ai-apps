@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Gidak-on sa font..." },
   "tooltip_sendReply": { "message": "Ipadala ang tubag" },
   "tooltip_sendRelatedQuery": { "message": "Ipadala ang may kalabutan nga pangutana" },
+  "placeholder_typeSomething": { "message": "Type sa usa ka butang" },
   "placeholder_askSomethingElse": { "message": "Pangutan-a ang usa ka butang nga lain" },
   "prompt_updateReplyLang": { "message": "Tubag sa Lenguahe" },
   "alert_langUpdated": { "message": "Gi-update ang sinultian" },

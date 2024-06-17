@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "ទំហំពុម្ពអក្សរ" },
   "tooltip_sendReply": { "message": "ផ្ញើការឆ្លើយតប" },
   "tooltip_sendRelatedQuery": { "message": "ផ្ញើសំណួរដែលពាក់ព័ន្ធ" },
+  "placeholder_typeSomething": { "message": "វាយបញ្ចូលអ្វីមួយ" },
   "placeholder_askSomethingElse": { "message": "អ្វីផ្សេងទៀត" },
   "prompt_updateReplyLang": { "message": "ធ្វើបច្ចុប្បន្នភាពភាសាឆ្លើយតប" },
   "alert_langUpdated": { "message": "បានអាប់ដេតភាសា" },

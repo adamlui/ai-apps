@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Lettertipe Grootte" },
   "tooltip_sendReply": { "message": "Stuur antwoord" },
   "tooltip_sendRelatedQuery": { "message": "Stuur verwante navraag" },
+  "placeholder_typeSomething": { "message": "Tik iets" },
   "placeholder_askSomethingElse": { "message": "Vra iets anders" },
   "prompt_updateReplyLang": { "message": "Dateer antwoordtaal op" },
   "alert_langUpdated": { "message": "Taal opgedateer" },

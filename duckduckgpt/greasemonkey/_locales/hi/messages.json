@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "चींटी आकार" },
   "tooltip_sendReply": { "message": "जवाब भेजें" },
   "tooltip_sendRelatedQuery": { "message": "संबंधित क्वेरी भेजें" },
+  "placeholder_typeSomething": { "message": "कुछ लिखें" },
   "placeholder_askSomethingElse": { "message": "कुछ और पूछें" },
   "prompt_updateReplyLang": { "message": "उत्तर भाषा अपडेट करें" },
   "alert_langUpdated": { "message": "भाषा अपडेट की गई" },

@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "பதில் அனுப்பு" },
   "tooltip_sendRelatedQuery": { "message": "தொடர்புடைய வினவலை அனுப்பவும்" },
   "placeholder_askSomethingElse": { "message": "வேறு ஏதாவது கேளுங்கள்" },
+  "placeholder_typeSomething": { "message": "எதையாவது தட்டச்சு செய்க" },
   "prompt_updateReplyLang": { "message": "பதில் மொழியைப் புதுப்பிக்கவும்" },
   "alert_langUpdated": { "message": "மொழி புதுப்பிக்கப்பட்டது" },
   "alert_willReplyIn": { "message": "இல் பதிலளிப்பார்" },

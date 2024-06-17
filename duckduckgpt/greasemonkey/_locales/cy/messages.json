@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Maint ffont" },
   "tooltip_sendReply": { "message": "Anfon Ateb" },
   "tooltip_sendRelatedQuery": { "message": "Anfon ymholiad cysylltiedig" },
+  "placeholder_typeSomething": { "message": "Teipiwch rywbeth" },
   "placeholder_askSomethingElse": { "message": "Gofyn rhywbeth arall" },
   "prompt_updateReplyLang": { "message": "Diweddaru iaith ateb" },
   "alert_langUpdated": { "message": "Diweddarwyd yr iaith" },

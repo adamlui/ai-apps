@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Siųsti atsakymą" },
   "tooltip_sendRelatedQuery": { "message": "Siųsti susijusią užklausą" },
   "placeholder_askSomethingElse": { "message": "Kažkas kita" },
+  "placeholder_typeSomething": { "message": "Įveskite ką nors" },
   "prompt_updateReplyLang": { "message": "Atnaujinti atsakymo kalbą" },
   "alert_langUpdated": { "message": "Kalba atnaujinta" },
   "alert_willReplyIn": { "message": "atsakys po" },

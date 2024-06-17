@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Invia risposta" },
   "tooltip_sendRelatedQuery": { "message": "Invia query correlata" },
   "placeholder_askSomethingElse": { "message": "Chiedimi qualcos'altro" },
+  "placeholder_typeSomething": { "message": "Digita qualcosa" },
   "prompt_updateReplyLang": { "message": "Aggiorna la lingua della risposta" },
   "alert_langUpdated": { "message": "Lingua aggiornata" },
   "alert_willReplyIn": { "message": "risponderà tra" },

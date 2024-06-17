@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "ފޮންޓް ސައިޒް" },
   "tooltip_sendReply": { "message": "ޖަވާބު ފޮނުއްވާ" },
   "tooltip_sendRelatedQuery": { "message": "ގުޅުންހުރި ސުވާލު ތައް ފޮނުވުން" },
+  "placeholder_typeSomething": { "message": "އެއްޗެއް ޓައިޕް ކުރާށެވެ" },
   "placeholder_askSomethingElse": { "message": "އެހެން ސުވާލެއް ކުރޭ" },
   "prompt_updateReplyLang": { "message": "ރިޕްލައި ލެންގުއޭޖް އަޕްޑޭޓް ކުރޭ" },
   "alert_langUpdated": { "message": "ބަހުރުވަ އަޕްޑޭޓްކޮށްފި" },

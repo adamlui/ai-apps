@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Momotuhi" },
   "tooltip_sendReply": { "message": "Tukua mai he whakautu" },
   "tooltip_sendRelatedQuery": { "message": "Tukua mai he pātai e pā ana" },
+  "placeholder_typeSomething": { "message": "Tīpakohia tetahi mea" },
   "placeholder_askSomethingElse": { "message": "Pātai atu ki tētahi atu mea" },
   "prompt_updateReplyLang": { "message": "Whakahōu reo whakautu" },
   "alert_langUpdated": { "message": "Reo whakahoutia" },

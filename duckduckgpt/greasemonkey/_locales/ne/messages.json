@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "फन्ट" },
   "tooltip_sendReply": { "message": "जवाफ पठाउनुहोस्" },
   "tooltip_sendRelatedQuery": { "message": "सम्बन्धित क्वेरी पठाउनुहोस्" },
+  "placeholder_typeSomething": { "message": "केही टाइप गर्नुहोस्" },
   "placeholder_askSomethingElse": { "message": "अरु केहि सोध्नुहोस्" },
   "prompt_updateReplyLang": { "message": "जवाफ भाषा अद्यावधिक गर्नुहोस्" },
   "alert_langUpdated": { "message": "भाषा अद्यावधिक गरियो" },

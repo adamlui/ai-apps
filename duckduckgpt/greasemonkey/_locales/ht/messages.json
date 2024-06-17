@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Gwosè Polis Karaktè" },
   "tooltip_sendReply": { "message": "Voye repons" },
   "tooltip_sendRelatedQuery": { "message": "Voye demann ki gen rapò" },
+  "placeholder_typeSomething": { "message": "Tape yon bagay" },
   "placeholder_askSomethingElse": { "message": "Mande yon lòt bagay/Mande yon lòt bagay" },
   "prompt_updateReplyLang": { "message": "MIZAJOU REPONS LANG" },
   "alert_langUpdated": { "message": "Lang mete ajou" },

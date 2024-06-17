@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "د ليکبڼې کچه" },
   "tooltip_sendReply": { "message": "ځواب وليږه" },
   "tooltip_sendRelatedQuery": { "message": "اړونده پوښتنې ولیږئ" },
+  "placeholder_typeSomething": { "message": "یو څه ولیکئ" },
   "placeholder_askSomethingElse": { "message": "بل څه وپوښتئ" },
   "prompt_updateReplyLang": { "message": "د ځواب ژبه تازه کړئ" },
   "alert_langUpdated": { "message": "نوی ژبه تازه کړئ" },

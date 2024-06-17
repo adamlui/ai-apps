@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Шрифттин кегли" },
   "tooltip_sendReply": { "message": "Жооп жөнөтүү" },
   "tooltip_sendRelatedQuery": { "message": "Тиешелүү сурам жөнөтүү" },
+  "placeholder_typeSomething": { "message": "Бир нерсени терүү" },
   "placeholder_askSomethingElse": { "message": "Башка бир нерсе сураңыз" },
   "prompt_updateReplyLang": { "message": "Жооп тилин жаңыртуу" },
   "alert_langUpdated": { "message": "Тил жаңыртылды" },

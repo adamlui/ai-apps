@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Teckenstorlek" },
   "tooltip_sendReply": { "message": "Skicka svar" },
   "tooltip_sendRelatedQuery": { "message": "Skicka relaterad fråga" },
+  "placeholder_typeSomething": { "message": "Skriv något …" },
   "placeholder_askSomethingElse": { "message": "Någonting annat" },
   "prompt_updateReplyLang": { "message": "Uppdatera svarsspråk" },
   "alert_langUpdated": { "message": "Språk uppdaterat" },

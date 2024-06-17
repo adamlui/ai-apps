@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Pošalji odgovor" },
   "tooltip_sendRelatedQuery": { "message": "Pošaljite povezani upit" },
   "placeholder_askSomethingElse": { "message": "Pitajte nešto drugo" },
+  "placeholder_typeSomething": { "message": "Upišite nešto" },
   "prompt_updateReplyLang": { "message": "Ažuriraj jezik odgovora" },
   "alert_langUpdated": { "message": "Jezik je ažuriran" },
   "alert_willReplyIn": { "message": "će odgovoriti u" },

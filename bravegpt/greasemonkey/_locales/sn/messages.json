@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Tumira mhinduro" },
   "tooltip_sendRelatedQuery": { "message": "Tumira mubvunzo wakabatana" },
   "placeholder_askSomethingElse": { "message": "Bvunza chimwe chinhu" },
+  "placeholder_typeSomething": { "message": "Nyora chimwe chinhu" },
   "prompt_updateReplyLang": { "message": "Zivisa mutauro wekupindura" },
   "alert_langUpdated": { "message": "Mutauro wakagadziridzwa" },
   "alert_willReplyIn": { "message": "achapindura mukati" },

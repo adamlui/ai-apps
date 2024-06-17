@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Rungika Rungika" },
   "tooltip_sendRelatedQuery": { "message": "Rungika Rungika Ibibazo bifitaniye isano" },
   "placeholder_askSomethingElse": { "message": "Nusabe ikindi kintu" },
+  "placeholder_typeSomething": { "message": "Niwandike ikintu" },
   "prompt_updateReplyLang": { "message": "Réponse de la langue nouveau" },
   "alert_langUpdated": { "message": "Ururimi Updated" },
   "alert_willReplyIn": { "message": "ashura In" },

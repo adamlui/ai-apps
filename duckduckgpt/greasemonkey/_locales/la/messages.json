@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Dimensio typi:" },
   "tooltip_sendReply": { "message": "Opportuna" },
   "tooltip_sendRelatedQuery": { "message": "Quaeso relatum" },
+  "placeholder_typeSomething": { "message": "Genus quidem" },
   "placeholder_askSomethingElse": { "message": "QUE QUAE QUAGE" },
   "prompt_updateReplyLang": { "message": "Renova responsio lingua" },
   "alert_langUpdated": { "message": "Lingua renovata" },

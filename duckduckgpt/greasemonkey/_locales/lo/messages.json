@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "ຂະໜາດຕົວອັກສອນ" },
   "tooltip_sendReply": { "message": "ຕອບ ຕອບ" },
   "tooltip_sendRelatedQuery": { "message": "ສົ່ງຄຳຖາມທີ່ກ່ຽວຂ້ອງ" },
+  "placeholder_typeSomething": { "message": "ປະເພດບາງສິ່ງບາງຢ່າງ" },
   "placeholder_askSomethingElse": { "message": "" },
   "prompt_updateReplyLang": { "message": "ອັບເດດພາສາຕອບ" },
   "alert_langUpdated": { "message": "ພາສາອັບເດດ" },

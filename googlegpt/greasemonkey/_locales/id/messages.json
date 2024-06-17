@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Kirim balasan" },
   "tooltip_sendRelatedQuery": { "message": "Kirim kueri terkait" },
   "placeholder_askSomethingElse": { "message": "Bertanya sesuatu" },
+  "placeholder_typeSomething": { "message": "Ketikkan sesuatu" },
   "prompt_updateReplyLang": { "message": "Perbarui bahasa balasan" },
   "alert_langUpdated": { "message": "Bahasa diperbarui" },
   "alert_willReplyIn": { "message": "akan membalas dalam" },

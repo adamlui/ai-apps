@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "اندازه فونت" },
   "tooltip_sendReply": { "message": "ارسال پاسخ" },
   "tooltip_sendRelatedQuery": { "message": "ارسال درخواست مرتبط" },
+  "placeholder_typeSomething": { "message": "چیزی را تایپ کنید" },
   "placeholder_askSomethingElse": { "message": "یک چیز دیگر" },
   "prompt_updateReplyLang": { "message": "زبان پاسخ را به روز کنید" },
   "alert_langUpdated": { "message": "بروز رسانی زبان" },

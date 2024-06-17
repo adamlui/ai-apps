@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Erantzuna bidali" },
   "tooltip_sendRelatedQuery": { "message": "Bidali erlazionatutako kontsulta" },
   "placeholder_askSomethingElse": { "message": "Beste zerbait galdetu" },
+  "placeholder_typeSomething": { "message": "Idatzi zerbait" },
   "prompt_updateReplyLang": { "message": "Eguneratu erantzunen hizkuntza" },
   "alert_langUpdated": { "message": "Hizkuntza eguneratua" },
   "alert_willReplyIn": { "message": "erantzungo du" },

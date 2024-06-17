@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Velikost písma" },
   "tooltip_sendReply": { "message": "Odeslat odpověď" },
   "tooltip_sendRelatedQuery": { "message": "Odeslat související dotaz" },
+  "placeholder_typeSomething": { "message": "Napište něco…" },
   "placeholder_askSomethingElse": { "message": "Jiné" },
   "prompt_updateReplyLang": { "message": "Aktualizovat jazyk odpovědi" },
   "alert_langUpdated": { "message": "Jazyk aktualizován" },

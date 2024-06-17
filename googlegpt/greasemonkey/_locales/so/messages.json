@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "Jawaab u dir" },
   "tooltip_sendRelatedQuery": { "message": "U dir su 'aalaha la xiriira" },
   "placeholder_askSomethingElse": { "message": "Weydii wax kale" },
+  "placeholder_typeSomething": { "message": "Nooca wax" },
   "prompt_updateReplyLang": { "message": "Cusboonaysii Luuqadda Jawaabta" },
   "alert_langUpdated": { "message": "Luuqadda la cusbooneysiiyay" },
   "alert_willReplyIn": { "message": "ka jawaabi doonaa in" },

@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "የፎንት መጠን..." },
   "tooltip_sendReply": { "message": "መልስ ላክ" },
   "tooltip_sendRelatedQuery": { "message": "ተዛማጅ ጥያቄ ይላኩ" },
+  "placeholder_typeSomething": { "message": "አንድ ነገር ይተይቡ" },
   "placeholder_askSomethingElse": { "message": "ሌላ ነገር ጠይቅ" },
   "prompt_updateReplyLang": { "message": "የምላሽ ቋንቋን ያዘምኑ" },
   "alert_langUpdated": { "message": "ቋንቋ ዘምኗል" },

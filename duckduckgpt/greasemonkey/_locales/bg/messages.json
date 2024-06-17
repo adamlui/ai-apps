@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Размер на мравка" },
   "tooltip_sendReply": { "message": "За отговор" },
   "tooltip_sendRelatedQuery": { "message": "Изпращане на свързано запитване" },
+  "placeholder_typeSomething": { "message": "Въведете нещо" },
   "placeholder_askSomethingElse": { "message": "Друго" },
   "prompt_updateReplyLang": { "message": "Актуализиране на езика за отговор" },
   "alert_langUpdated": { "message": "Езикът е актуализиран" },

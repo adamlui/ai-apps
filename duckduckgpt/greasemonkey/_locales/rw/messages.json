@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Imyandikire" },
   "tooltip_sendReply": { "message": "Subiza" },
   "tooltip_sendRelatedQuery": { "message": "Ikibazo #" },
+  "placeholder_typeSomething": { "message": "Kwandika ikintu" },
   "placeholder_askSomethingElse": { "message": "Ikindi" },
   "prompt_updateReplyLang": { "message": "Subiza Ururimi" },
   "alert_langUpdated": { "message": "&lt; Uburemere UTSINDAG" },

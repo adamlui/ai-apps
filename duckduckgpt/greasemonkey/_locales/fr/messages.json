@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Taille police" },
   "tooltip_sendReply": { "message": "Envoyer une&#10; réponse" },
   "tooltip_sendRelatedQuery": { "message": "Envoyer une requête associée" },
+  "placeholder_typeSomething": { "message": "Tapez quelque chose" },
   "placeholder_askSomethingElse": { "message": "Demander quelque chose" },
   "prompt_updateReplyLang": { "message": "Mettre à jour la langue de réponse" },
   "alert_langUpdated": { "message": "Langue mise à jour" },

@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "መልስ ላክ" },
   "tooltip_sendRelatedQuery": { "message": "ተዛማጅ ጥያቄ ይላኩ" },
   "placeholder_askSomethingElse": { "message": "ሌላ ነገር ጠይቅ" },
+  "placeholder_typeSomething": { "message": "አንድ ነገር ይተይቡ" },
   "prompt_updateReplyLang": { "message": "የምላሽ ቋንቋን ያዘምኑ" },
   "alert_langUpdated": { "message": "ቋንቋ ዘምኗል" },
   "alert_willReplyIn": { "message": "ውስጥ መልስ ይሆናል" },

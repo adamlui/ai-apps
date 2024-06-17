@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Ubukulu bwa filembo..." },
   "tooltip_sendReply": { "message": "Tuma Mwakitwile" },
   "tooltip_sendRelatedQuery": { "message": "Tumineni ifipusho ifilanda pali ili lyashi" },
+  "placeholder_typeSomething": { "message": "Mulesunga icintu cimo" },
   "placeholder_askSomethingElse": { "message": "Ask Mukena Bali" },
   "prompt_updateReplyLang": { "message": "Ubulasanshi ukubika citako" },
   "alert_langUpdated": { "message": "Ludimi lwa lwa Tumama updated" },

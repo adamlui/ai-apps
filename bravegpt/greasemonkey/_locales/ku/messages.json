@@ -30,6 +30,7 @@
   "tooltip_sendReply": { "message": "وەڵام بنێرە" },
   "tooltip_sendRelatedQuery": { "message": "پرسیاری پەیوەندیدار بنێرە" },
   "placeholder_askSomethingElse": { "message": "شتێکی تر بپرسە" },
+  "placeholder_typeSomething": { "message": "Tiştek binivîse" },
   "prompt_updateReplyLang": { "message": "زمانی وەڵام نوێ بکەرەوە" },
   "alert_langUpdated": { "message": "زمان نوێکرایەوە" },
   "alert_willReplyIn": { "message": "وەڵام دەدات لە" },

@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "መጠን ፊደላት" },
   "tooltip_sendReply": { "message": "መልሲ ልኣኽ" },
   "tooltip_sendRelatedQuery": { "message": "ምስዚ ዚተሓሓዝ ሕቶ ልኣኽ" },
+  "placeholder_typeSomething": { "message": "ገለ ነገር ጽሓፍ" },
   "placeholder_askSomethingElse": { "message": "ካልእ ነገር ሕተቶ" },
   "prompt_updateReplyLang": { "message": "ቋንቋ መልሲ ኣዘምነሉ" },
   "alert_langUpdated": { "message": "ቋንቋ ዝሕደስ" },

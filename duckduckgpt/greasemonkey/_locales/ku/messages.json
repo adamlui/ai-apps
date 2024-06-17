@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Mezinahiya cureyê tîpan" },
   "tooltip_sendReply": { "message": "وەڵام بنێرە" },
   "tooltip_sendRelatedQuery": { "message": "پرسیاری پەیوەندیدار بنێرە" },
+  "placeholder_typeSomething": { "message": "Tiştek binivîse" },
   "placeholder_askSomethingElse": { "message": "شتێکی تر بپرسە" },
   "prompt_updateReplyLang": { "message": "نوێکردنەوەی زمانی وەرزیی پاسخ" },
   "alert_langUpdated": { "message": "زمان نوێکرایەوە" },

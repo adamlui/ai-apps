@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Haben'ilay endritsoratra" },
   "tooltip_sendReply": { "message": "Alefaso ny valiny" },
   "tooltip_sendRelatedQuery": { "message": "Handefa fangataham-panazavana mifandraika amin'izany" },
+  "placeholder_typeSomething": { "message": "Karazana zavatra" },
   "placeholder_askSomethingElse": { "message": "Manontania zavatra hafa" },
   "prompt_updateReplyLang": { "message": "Avao ny fiteny valiana" },
   "alert_langUpdated": { "message": "Teny vaovao" },

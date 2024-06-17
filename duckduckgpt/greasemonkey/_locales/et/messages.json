@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Kirjasuurus" },
   "tooltip_sendReply": { "message": "Saada vastus" },
   "tooltip_sendRelatedQuery": { "message": "Saada seotud päring" },
+  "placeholder_typeSomething": { "message": "Sisesta midagi" },
   "placeholder_askSomethingElse": { "message": "Küsi midagi" },
   "prompt_updateReplyLang": { "message": "Uuenda vastuse keelt" },
   "alert_langUpdated": { "message": "Keel uuendatud" },

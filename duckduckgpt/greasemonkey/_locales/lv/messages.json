@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Rakstzīmju izmērs" },
   "tooltip_sendReply": { "message": "Sūtīt atbildi" },
   "tooltip_sendRelatedQuery": { "message": "Sūtīt saistīto vaicājumu" },
+  "placeholder_typeSomething": { "message": "Ierakstiet kaut ko" },
   "placeholder_askSomethingElse": { "message": "Pajautāt kaut ko citu" },
   "prompt_updateReplyLang": { "message": "Atjaunināt atbildes valodu" },
   "alert_langUpdated": { "message": "Valoda atjaunināta" },

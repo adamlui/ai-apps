@@ -29,6 +29,7 @@
   "tooltip_fontSize": { "message": "Kakulidwe ka fonti:" },
   "tooltip_sendReply": { "message": "Tumizani yankho" },
   "tooltip_sendRelatedQuery": { "message": "Tumizani mafunso okhudzana" },
+  "placeholder_typeSomething": { "message": "Lembani chinachake" },
   "placeholder_askSomethingElse": { "message": "Funsani china" },
   "prompt_updateReplyLang": { "message": "Sinthani Chilankhulo cha Yankho" },
   "alert_langUpdated": { "message": "Chilankhulo kusinthidwa" },
