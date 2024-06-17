@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.13
+// @version             2024.6.17.14
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -724,6 +724,9 @@ setTimeout(async () => {
           + '.katex-html { display: none }' // hide unrendered math
           + '.chatgpt-modal > div { padding: 24px 20px 24px 20px !important }' // increase alert padding
           + '.chatgpt-modal h2 { font-size: 32px ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + shrink it
+          + '.modal-close-btn { top: -7px !important ; right: -7px !important }' // re-pos modal close button
+          + `.modal-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}`
+          + `.modal-close-btn:hover { background-color: #${ scheme == 'dark' ? '666464' : 'f2f2f2' } !important }`
           + '.chatgpt-modal p { margin: 14px 0 -20px 4px ; font-size: 1.115rem }' // position/size alert msg
           + '.chatgpt-modal button {' // alert buttons
               + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ; '
@@ -731,12 +734,10 @@ setTimeout(async () => {
               + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
               + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
           + `.modal-buttons { margin: 38px 0px 6px ${ isMobile ? 0 : -7 }px !important }` // position alert buttons
-          + '.modal-close-btn { top: -7px }' // raise alert close button
           + ( scheme == 'dark' ? // darkmode alert styles
               ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                   + 'background-color: black !important ; color: white }'
               + '.primary-modal-btn { background: white !important ; color: black !important }'
-              + '.modal-close-btn { stroke: white ; fill: white }'
               + '.chatgpt-modal a { color: #00cfff !important }'
               + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
           + ( // stylize scrollbars in Chromium/Safari

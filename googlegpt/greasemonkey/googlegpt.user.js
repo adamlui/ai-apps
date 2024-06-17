@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.16
+// @version             2024.6.17.17
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -967,6 +967,9 @@
           + '.chatgpt-notify { padding: 13px 13px 13px 18px !important }' // pad notifications
           + '.chatgpt-modal > div { 17px 20px 24px 20px !important }' // increase alert padding
           + '.chatgpt-modal h2 { font-size: 1.65rem ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + enlarge it
+          + '.modal-close-btn { top: -8px !important ; right: -8px !important }' // re-pos modal close button
+          + `.modal-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}`
+          + `.modal-close-btn:hover { background-color: #${ scheme == 'dark' ? '666464' : 'f2f2f2' } !important }`
           + '.chatgpt-modal p { margin: 14px 0 -29px 4px ; font-size: 1.28em ; line-height: 1.57 }' // position/size alert msg
           + '.chatgpt-modal button {' // alert buttons
               + 'font-size: 0.84rem ; text-transform: uppercase ; min-width: 113px ;'
