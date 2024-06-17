@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.13
+// @version             2024.6.17.14
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -677,9 +677,9 @@
     function updateAppStyle() {
         appStyle.innerText = (
             '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
-          + '#ddgpt { border-radius: 8px ; border: 1px solid #dadce0 ; padding: 17px 26px 16px ; flex-basis: 0 ;'
-              + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ; '
-              + ( scheme == 'dark' ? ' border: none ; background: #282828' : '' ) + '}'
+          + '#ddgpt { border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ;'
+              + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
+              + `${ scheme == 'dark' ? 'border: none ; background: #282828' : 'border: 1px solid #dadce0 ; background: #fff' }}`
           + '#ddgpt:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.14) }'
           + '#ddgpt p { margin: 0 ; ' + ( scheme == 'dark' ? 'color: #ccc } ' : ' } ' )
           + `#ddgpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
@@ -720,9 +720,10 @@
               + 'float: left ; left: 9px ; margin: 34px -14px 0 0 ;' // positioning
               + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color: '
                   + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
-          + '.continue-chat > textarea {'
+          + '#app-chatbar {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
               + 'font-size: 0.92rem ; height: 16px ; width: 94.6% ; max-height: 200px ; resize: none ; '
+              + `color: #${ scheme == 'dark' ? 'eee' : '222' } ;`
               + 'margin: 3px 0 15px 0 ; padding: 13px 10px 11px 10px ;'
               + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' } '
           + '.related-queries {'
@@ -756,21 +757,24 @@
               + '#ddgpt > pre ul > li { margin: -10px 0 0 1.2em ; list-style: inside }' ) // reduce v-padding, show bullets
           + '.katex-html { display: none } ' // hide unrendered math
           + '.chatgpt-notif { padding: 11px 15px 6px 12px !important }' // pad site notifications
-          + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important }' // increase alert padding
+          + '.chatgpt-modal > div { padding: 20px 25px 24px 25px !important ;' // increase alert padding
+              + 'background-color: white !important ; color: black }'
           + '.chatgpt-modal h2 { margin: 0 ; padding: 0 ; font-weight: bold }' // shrink margin/padding around alert titles, force bold
           + '.chatgpt-modal p { margin: -8px 0 -14px 4px ; font-size: 1.55rem }' // position/size update alert msg
+          + `.chatgpt-modal a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
           + '.chatgpt-modal button {' // alert buttons
               + 'font-size: 1rem ; text-transform: uppercase ; min-width: 121px ;'
               + ( !isMobile ? 'padding: 7px !important ;' : '' )
               + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
               + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + '!important ;'
               + ( scheme == 'dark' ? 'background: none ; color: white' : '') + '}'
+          + '.primary-modal-btn { background: black !important ; color: white !important }'
+          + '.chatgpt-modal button:hover { background-color: #9cdaff !important ; color: black !important }'
           + `.modal-buttons { margin: 24px -5px -3px ${ isMobile ? -5 : -15 }px !important }` // position alert buttons
-          + ( scheme == 'dark' ? // darkmode alert styles
+          + ( scheme == 'dark' ? // additional darkmode alert styles
               ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                   + 'background-color: black !important ; color: white }'
               + '.primary-modal-btn { background: white !important ; color: black !important }'
-              + '.chatgpt-modal a { color: #00cfff !important }'
               + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
           + '#ddgpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
         )
