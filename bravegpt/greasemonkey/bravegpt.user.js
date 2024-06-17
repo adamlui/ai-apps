@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.11
+// @version             2024.6.17.12
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -646,10 +646,10 @@ setTimeout(async () => {
           + '#bravegpt p { margin: 0 }'
           + `#bravegpt .alert-link { color: ${ scheme == 'light' ? '#190cb0' : 'white ; text-decoration: underline' }}`
           + ( scheme == 'dark' ? '#bravegpt a { text-decoration: underline }' : '' ) // underline dark-mode links in alerts
-          + '.app-name { font-size: 20px ; font-family: var(--brand-font) ; text-decoration: none !important;'
+          + '.app-name { font-size: 20px ; font-family: var(--brand-font) ; text-decoration: none ;'
               + `color: ${ scheme == 'dark' ? 'white' : 'black' } !important }`
           + '.kudoai { margin-left: 7px ; font-size: .65rem ; color: #aaa }'
-          + '.kudoai a { color: #aaa ; text-decoration: none }'
+          + '.kudoai a { color: #aaa ; text-decoration: none !important }'
           + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
           + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 4px ;'
               + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
