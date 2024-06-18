@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.20
+// @version             2024.6.17.21
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -797,7 +797,6 @@ setTimeout(async () => {
             sliderThumb.addEventListener(inputEvents.down, event => {
                 isDragging = true ; startX = event.clientX ; startLeft = sliderThumb.offsetLeft     
                 document.body.appendChild(fontSizeSlider.cursorOverlay)
-                console.log('appended')
             })
             document.addEventListener(inputEvents.move, event => {
                 if (isDragging) moveThumb(startLeft + event.clientX - startX) })

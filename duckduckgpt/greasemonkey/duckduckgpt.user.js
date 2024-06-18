@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.20
+// @version             2024.6.17.21
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -836,7 +836,6 @@
             sliderThumb.addEventListener(inputEvents.down, event => {
                 isDragging = true ; startX = event.clientX ; startLeft = sliderThumb.offsetLeft     
                 document.body.appendChild(fontSizeSlider.cursorOverlay)
-                console.log('appended')
             })
             document.addEventListener(inputEvents.move, event => {
                 if (isDragging) moveThumb(startLeft + event.clientX - startX) })
