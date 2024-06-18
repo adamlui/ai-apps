@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.18
+// @version             2024.6.17.19
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -677,6 +677,8 @@
     function updateAppStyle() {
         appStyle.innerText = (
             '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+          + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show grabbing cursor everywhere
+              + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: grabbing }'
           + '#ddgpt { border-radius: 8px ; padding: 17px 26px 16px ; flex-basis: 0 ;'
               + 'flex-grow: 1 ; word-wrap: break-word ; white-space: pre-wrap ; box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06) ;'
               + `${ scheme == 'dark' ? 'border: none ; background: #282828' : 'border: 1px solid #dadce0 ; background: #fff' }}`
@@ -698,6 +700,8 @@
           + '#ddgpt.sidebar-free { margin-left: 60px ; height: fit-content }'
           + '#font-size-slider-track { width: 98% ; height: 10px ; margin: -6px auto -13px ; padding: 15px 0 ;'
               + 'background-color: #ccc ; box-sizing: content-box; background-clip: content-box ; -webkit-background-clip: content-box }'
+          + '#font-size-slider-track::before {' // to add finger cursor to unpadded core only
+              + 'content: "" ; position: absolute ; top: 10px ; left: 0 ; right: 0 ; height: calc(100% - 20px) ; cursor: pointer }'
           + '#font-size-slider-thumb { width: 10px ; height: 25px ; border-radius: 30% ; position: relative ; top: -7.65px ;'
               + `background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
               + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: grab ; cursor: -webkit-grab ; cursor: -moz-grab }'
@@ -812,6 +816,8 @@
         createAppend: function() {
 
             // Create/append slider elems
+            fontSizeSlider.cursorOverlay = document.createElement('div')
+            fontSizeSlider.cursorOverlay.classList.add('cursor-overlay') // for grabbing cursor
             const slider = document.createElement('div') ; slider.id = 'font-size-slider-track'
             slider.className = 'fade-in-less' ; slider.style.display = 'none'
             const sliderThumb = document.createElement('div') ; sliderThumb.id = 'font-size-slider-thumb'
@@ -828,17 +834,30 @@
             // Add event listeners for dragging thumb
             let isDragging = false, startX, startLeft
             sliderThumb.addEventListener(inputEvents.down, event => {
-                event.preventDefault() // prevent highlighting
-                isDragging = true ; startX = event.clientX ; startLeft = sliderThumb.offsetLeft
+                isDragging = true ; startX = event.clientX ; startLeft = sliderThumb.offsetLeft     
+                document.body.appendChild(fontSizeSlider.cursorOverlay)
+                console.log('appended')
             })
             document.addEventListener(inputEvents.move, event => {
                 if (isDragging) moveThumb(startLeft + event.clientX - startX) })
-            document.addEventListener(inputEvents.up, () => isDragging = false)
+            document.addEventListener(inputEvents.up, () => {
+                isDragging = false
+                if (fontSizeSlider.cursorOverlay.parentNode)
+                    fontSizeSlider.cursorOverlay.parentNode.removeChild(fontSizeSlider.cursorOverlay)
+            })
 
             // Add event listener for wheel-scrolling thumb
             if (!isMobile) slider.addEventListener('wheel', event => {
                 event.preventDefault()
                 moveThumb(sliderThumb.offsetLeft - Math.sign(event.deltaY) * fontSizeSlider.hWheelDistance)
+            })
+
+            // Add event listener for seek/dragging by inputEvents.down on track
+            slider.addEventListener(inputEvents.down, event => {
+                const clientX = event.clientX || (event.touches && event.touches[0].clientX)
+                moveThumb(clientX - slider.getBoundingClientRect().left - sliderThumb.offsetWidth / 2)
+                isDragging = true ; startX = clientX ; startLeft = sliderThumb.offsetLeft // manually init dragging
+                document.body.appendChild(fontSizeSlider.cursorOverlay)
             })
 
             function moveThumb(newLeft) {
