@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.19
+// @version             2024.6.17.20
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -945,7 +945,7 @@
 
     function updateTooltip(buttonType) { // text & position
         const cornerBtnTypes = ['about', 'speak', 'ssb', 'csb', 'font-size', 'wsb'],
-              [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [17, 18] : [4, 29],
+              [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [20, 15] : [6, 27.5],
               iniRoffset = spreadFactor * (buttonType == 'send' ? 1.5 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
         // Update text
