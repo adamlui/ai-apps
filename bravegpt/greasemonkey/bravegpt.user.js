@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.17
+// @version             2024.6.17.18
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -667,6 +667,7 @@ setTimeout(async () => {
               + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: grab ; cursor: -webkit-grab ; cursor: -moz-grab }'
           + '#font-size-slider-thumb:active { cursor: grabbing ; cursor: -webkit-grabbing ; cursor: -moz-grabbing }'
           + '.standby-btn { width: 100% ; padding: 13px 0 ; cursor: pointer ; margin: 14px 0 20px ;'
+              + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
               + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
               + 'transform: scale(1) ; transition: transform 0.1s ease }'
           + '.standby-btn:hover { border-radius: 4px ; transform: scale(1.025) ;'
@@ -691,11 +692,12 @@ setTimeout(async () => {
           + '.chatgpt-js { font-family: var(--brand-font) ; font-size: .65rem ; position: relative ; right: .9rem }'
           + '.chatgpt-js > a { color: inherit ; top: .054rem }'
           + '.chatgpt-js > svg { top: 3px ; position: relative ; margin-right: 1px }'
-          + '.continue-chat > textarea {'
+          + '#app-chatbar {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 15px 12px 0 ;`
               + 'border-radius: 15px 16px 15px 0 ; margin: -6px 0 -7px 0 ;  padding: 12px 26px 12px 10px ;'
-              + 'height: 43px ; line-height: 17px ; width: 100% ; max-height: 200px ; resize: none ; background:'
-                  + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + '}'
+              + 'height: 43px ; line-height: 17px ; width: 100% ; max-height: 200px ; resize: none ;'
+              + `background: ${ scheme == 'dark' ? '#515151' : '#eeeeee70' } ;`
+              + `color: ${ scheme == 'dark' ? '#eee' : '#222' }}`
           + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: -18px ;'
               + 'position: relative ; top: -3px ;' // scooch up to hug feedback gap
               + `${ isFirefox ? '' : 'margin-top: -31px' }}`
@@ -722,23 +724,27 @@ setTimeout(async () => {
               + '#bravegpt > pre ol { margin: -33px 0 -6px ; }' // reduce v-spacing
               + '#bravegpt > pre li { margin: -10px 0 ; list-style: inside }' ) // reduce v-spacing, show left symbols
           + '.katex-html { display: none }' // hide unrendered math
-          + '.chatgpt-modal > div { padding: 24px 20px 24px 20px !important }' // increase alert padding
+          + '.chatgpt-modal > div { padding: 24px 20px 24px 20px !important ;' // increase modal padding
+              + 'background-color: white !important ; color: #202124 }'
           + '.chatgpt-modal h2 { font-size: 32px ; margin: 0 ; padding: 0 }' // shrink margin/padding around alert title + shrink it
           + '.modal-close-btn { top: -7px !important ; right: -7px !important }' // re-pos modal close button
           + `.modal-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}`
           + `.modal-close-btn:hover { background-color: #${ scheme == 'dark' ? '666464' : 'f2f2f2' } !important }`
           + '.chatgpt-modal p { margin: 14px 0 -20px 4px ; font-size: 1.115rem }' // pos/size modal msg
+          + `.chatgpt-modal a { color: #${ scheme == 'dark' ? '00cfff' : '1e9ebb' } !important }`
           + `.modal-buttons { margin: 38px 0px 6px ${ isMobile ? 0 : -7 }px !important }` // pos modal buttons
           + '.chatgpt-modal button {' // alert buttons
               + 'font-size: 0.72rem ; text-transform: uppercase ; min-width: 123px ; '
               + `padding: ${ isMobile? '5px' : '4px 3px' } !important ;`
               + 'cursor: pointer ; border-radius: 0 !important ; height: 39px ;'
               + 'border: 1px solid ' + ( scheme == 'dark' ? 'white' : 'black' ) + ' !important }'
-          + ( scheme == 'dark' ? // darkmode alert styles
+          + '.primary-modal-btn { background: black !important ; color: white !important }'
+          + '.chatgpt-modal button:hover { background-color: #9cdaff !important ; color: black !important ;'
+              + `box-shadow: ${ scheme == 'dark' ? '2px 1px 54px #00cfff' : '2px 1px 30px #9cdaff' } !important }`
+          + ( scheme == 'dark' ? // additional darkmode modal styles
               ( '.chatgpt-modal > div, .chatgpt-modal button:not(.primary-modal-btn) {'
                   + 'background-color: black !important ; color: white }'
               + '.primary-modal-btn { background: white !important ; color: black !important }'
-              + '.chatgpt-modal a { color: #00cfff !important }'
               + '.chatgpt-modal button:hover { background-color: #00cfff !important ; color: black !important }' ) : '' )
           + ( // stylize scrollbars in Chromium/Safari
                 '#bravegpt *::-webkit-scrollbar { width: 7px }'
