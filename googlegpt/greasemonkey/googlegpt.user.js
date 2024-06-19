@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.19
+// @version             2024.6.19.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -435,7 +435,7 @@
     // Init API props
     const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
     const apis = {
-        'AIchatOS': { expectedOrigin: 'https://chat18.aichatos.com',
+        'AIchatOS': { expectedOrigin: 'https://chat18.aichatos8.com',
             endpoint: 'https://api.binjie.fun/api/generateStream', method: 'POST', streamable: true, accumulatesText: false },
         'GPTforLove': { expectedOrigin: 'https://ai27.gptforlove.com',
             endpoint: 'https://api11.gptforlove.com/chat-process', method: 'POST', streamable: true, accumulatesText: true },
