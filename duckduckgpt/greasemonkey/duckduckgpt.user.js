@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.18
+// @version             2024.6.18.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -209,8 +209,10 @@
 
 (async () => {
 
-    // Init browser flags
-    const isFirefox = chatgpt.browser.isFirefox(), isEdge = navigator.userAgent.includes('Edg'), isMobile = chatgpt.browser.isMobile()
+    // Init BROWSER FLAGS
+    const isFirefox = chatgpt.browser.isFirefox(),
+          isEdge = navigator.userAgent.includes('Edg'),
+          isMobile = chatgpt.browser.isMobile()
 
     // Init CONFIG
     const config = {
@@ -247,6 +249,43 @@
             endpoint: 'https://api.openai.com/v1/chat/completions', method: 'POST', streamable: true }
     }
     const apiIDs = { gptForLove: { parentID: '' }, aiChatOS: { userID: '#/chat/' + Date.now() }}
+
+    // Init INPUT EVENTS
+    const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>
+          inputEvents[action] = ( window.PointerEvent ? 'pointer' : isMobile ? 'touch' : 'mouse' ) + action)
+
+    // Init MESSAGES
+    let msgs = {}
+    const msgsLoaded = new Promise(resolve => {
+        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
+              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
+        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
+        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        function onLoad(resp) {
+            try { // to return localized messages.json
+                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
+                for (const key in msgs)  // remove need to ref nested keys
+                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
+                        flatMsgs[key] = msgs[key].message
+                resolve(flatMsgs)
+            } catch (err) { // if bad response
+                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
+                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
+                    msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
+                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
+                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+            }
+        }
+    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
+
+    // Init MENU objs
+    const menuIDs = [] // to store registered cmds for removal while preserving order
+    const menuState = {
+        symbol: ['❌', '✔️'], separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ',
+        word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
+    }
+
+    registerMenu() // create browser toolbar menu
 
     // Define SCRIPT functions
 
@@ -1812,46 +1851,9 @@
     let scheme = config.scheme || ( chatgpt.isDarkMode() ? 'dark' : 'light' )
     const isCentered = isCenteredMode()
 
-    // Init INPUT EVENTS
-    const inputEvents = {} ; ['down', 'move', 'up'].forEach(action =>
-        inputEvents[action] = ( window.PointerEvent ? 'pointer' : isMobile ? 'touch' : 'mouse' ) + action)
-
     // Pre-load LOGO
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc() 
     appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleAnchor() }
-
-    // Define MESSAGES
-    let msgs = {}
-    const msgsLoaded = new Promise(resolve => {
-        const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
-              msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
-        let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
-        function onLoad(resp) {
-            try { // to return localized messages.json
-                const msgs = JSON.parse(resp.responseText), flatMsgs = {}
-                for (const key in msgs)  // remove need to ref nested keys
-                    if (typeof msgs[key] == 'object' && 'message' in msgs[key])
-                        flatMsgs[key] = msgs[key].message
-                resolve(flatMsgs)
-            } catch (err) { // if bad response
-                msgXHRtries++ ; if (msgXHRtries == 3) return resolve({}) // try up to 3X (original/region-stripped/EN) only
-                msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
-                    msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
-                        : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
-            }
-        }
-    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
-
-    // Init MENU objs
-    const menuIDs = [] // to store registered cmds for removal while preserving order
-    const menuState = {
-        symbol: ['❌', '✔️'], separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ',
-        word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
-    }
-
-    registerMenu() // create browser toolbar menu
 
     // Init ALERTS
     const appAlerts = {
