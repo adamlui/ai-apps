@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.19.4
+// @version             2024.6.19.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1157,9 +1157,10 @@
         },
 
         createHeaders: function(api) {
-            let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ipv4.generate({ verbose: false })}
+            const ip = ipv4.generate({ verbose: false })
+            let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ip, 'X-Real-IP': ip }
             if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
-            headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // prserve expected traffic src
+            headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // preserve expected traffic src
             return headers
         },
 

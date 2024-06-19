@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.19.2
+// @version             2024.6.19.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1190,9 +1190,10 @@ setTimeout(async () => {
         },
 
         createHeaders: function(api) {
-            let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ipv4.generate({ verbose: false })}
+            const ip = ipv4.generate({ verbose: false })
+            let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ip, 'X-Real-IP': ip }
             if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
-            headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // prserve expected traffic src
+            headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // preserve expected traffic src
             return headers
         },
 

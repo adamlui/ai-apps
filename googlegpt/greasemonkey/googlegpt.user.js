@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.19.2
+// @version             2024.6.19.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1463,9 +1463,10 @@
         },
 
         createHeaders: function(api) {
-            let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ipv4.generate({ verbose: false })}
+            const ip = ipv4.generate({ verbose: false })
+            let headers = { 'Content-Type': 'application/json', 'X-Forwarded-For': ip, 'X-Real-IP': ip }
             if (api == 'OpenAI') headers.Authorization = 'Bearer ' + config.openAIkey
-            headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // prserve expected traffic src
+            headers.Referer = headers.Origin = apis[api].expectedOrigin || '' // preserve expected traffic src
             return headers
         },
 
