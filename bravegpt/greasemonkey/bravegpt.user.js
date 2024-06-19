@@ -114,7 +114,7 @@
 // @description:zu      Engeza amaswazi aseChatGPT emugqa wokuqala weBrave Search (ibhulohwe nguGPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.17.21
+// @version             2024.6.18
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -220,16 +220,16 @@ setTimeout(async () => {
     function registerMenu() {
 
         // Add command to toggle proxy API mode
-        const pamLabel = state.symbol[+config.proxyAPIenabled] + ' '
+        const pamLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
                        + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
-                       + state.separator + state.word[+config.proxyAPIenabled]
+                       + menuState.separator + menuState.word[+config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
         // Add command toggle streaming mode or alert unsupported
         const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
-        const stmLabel = state.symbol[+stmState] + ' '
+        const stmLabel = menuState.symbol[+stmState] + ' '
                        + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
-                       + state.separator + state.word[+stmState]
+                       + menuState.separator + menuState.word[+stmState]
         menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
             if (isEdge) { // alert Edge unsupported, link to browser bug
                 const msBugLink = 'https://answers.microsoft.com/en-us/microsoftedge/forum/all/'
@@ -258,50 +258,50 @@ setTimeout(async () => {
                     document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
-                notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + state.word[+!config.streamingDisabled])
+                notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + menuState.word[+!config.streamingDisabled])
                 refreshMenu()
             }
         }))
 
         // Add command to toggle auto-get mode
-        const agmLabel = state.symbol[+!config.autoGetDisabled] + ' '
+        const agmLabel = menuState.symbol[+!config.autoGetDisabled] + ' '
                        + ( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
-                       + state.separator + state.word[+!config.autoGetDisabled]
+                       + menuState.separator + menuState.word[+!config.autoGetDisabled]
         menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
             saveSetting('autoGetDisabled', !config.autoGetDisabled)
-            notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + state.word[+!config.autoGetDisabled])
+            notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + menuState.word[+!config.autoGetDisabled])
             refreshMenu()
         }))
 
         if (!isMobile) {
 
             // Add command to toggle auto-focus chatbar
-            const afcLabel = state.symbol[+!config.autoFocusChatbarDisabled] + ' '
+            const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
                            + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                           + state.separator + state.word[+!config.autoFocusChatbarDisabled]
+                           + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
             menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
                 saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
                 notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                             + state.word[+!config.autoFocusChatbarDisabled])
+                             + menuState.word[+!config.autoFocusChatbarDisabled])
                 refreshMenu()
             }))
 
 
             // Add command to toggle auto-scroll (when streaming)
-            const assLabel = state.symbol[+config.autoScroll] + ' '
+            const assLabel = menuState.symbol[+config.autoScroll] + ' '
                            + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
-                           + state.separator + state.word[+config.autoScroll]
+                           + menuState.separator + menuState.word[+config.autoScroll]
             menuIDs.push(GM_registerMenuCommand(assLabel, () => {
                 saveSetting('autoScroll', !config.autoScroll)
-                notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + state.word[+config.autoScroll])
+                notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + menuState.word[+config.autoScroll])
                 refreshMenu()
             }))
         }
 
         // Add command to toggle showing related queries
-        const rqLabel = state.symbol[+!config.rqDisabled] + ' '
+        const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
                       + ( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
-                      + state.separator + state.word[+!config.rqDisabled]
+                      + menuState.separator + menuState.word[+!config.rqDisabled]
         menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
             saveSetting('rqDisabled', !config.rqDisabled)
             const relatedQueriesDiv = appDiv.querySelector('.related-queries')
@@ -314,48 +314,48 @@ setTimeout(async () => {
                         if (get.related.status != 'done') api.tryNew(get.related) })
             }
             updateTweaksStyle() // toggle <pre> max-height
-            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + state.word[+!config.rqDisabled])
+            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
             refreshMenu()
         }))
 
         // Add command to toggle prefix mode
-        const pfmLabel = state.symbol[+config.prefixEnabled] + ' '
+        const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
                       + ( msgs.menuLabel_require || 'Require' ) + ' "/" '
                       + ( msgs.menuLabel_beforeQuery || 'before query' ) + ' '
-                      + state.separator + state.word[+config.prefixEnabled]
+                      + menuState.separator + menuState.word[+config.prefixEnabled]
         menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
             saveSetting('prefixEnabled', !config.prefixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
                 saveSetting('suffixEnabled', !config.suffixEnabled) }
-            notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + state.word[+config.prefixEnabled])
+            notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + menuState.word[+config.prefixEnabled])
             refreshMenu()
         }))
 
         // Add command to toggle suffix mode
-        const sfmLabel = state.symbol[+config.suffixEnabled] + ' '
+        const sfmLabel = menuState.symbol[+config.suffixEnabled] + ' '
                       + ( msgs.menuLabel_require || 'Require' ) + ' "?" '
                       + ( msgs.menuLabel_afterQuery || 'after query' ) + ' '
-                      + state.separator + state.word[+config.suffixEnabled]
+                      + menuState.separator + menuState.word[+config.suffixEnabled]
         menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + state.word[+!config.suffixEnabled])
+            notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + menuState.word[+!config.suffixEnabled])
             refreshMenu()
         }))
 
         if (!isMobile) {
 
             // Add command to toggle wider sidebar
-            const wsbLabel = state.symbol[+config.widerSidebar] + ' '
+            const wsbLabel = menuState.symbol[+config.widerSidebar] + ' '
                            + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' )
-                           + state.separator + state.word[+config.widerSidebar]
+                           + menuState.separator + menuState.word[+config.widerSidebar]
             menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
         }
 
         // Add command to set reply language
         const rlLabel = '🌐 ' + ( msgs.menuLabel_replyLanguage || 'Reply Language' )
-                      + state.separator + config.replyLanguage
+                      + menuState.separator + config.replyLanguage
         menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
             while (true) {
                 let replyLanguage = prompt(
@@ -375,7 +375,7 @@ setTimeout(async () => {
         // Add command to set color scheme
         const schemeLabel = ( config.scheme == 'light' ? '☀️' :
                               config.scheme == 'dark'  ? '🌘' : '🌗' ) + ' '
-                          + ( msgs.menuLabel_colorScheme || 'Color Scheme' ) + state.separator
+                          + ( msgs.menuLabel_colorScheme || 'Color Scheme' ) + menuState.separator
                           + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
                               config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
                                                        : msgs.menuLabel_auto || 'Auto' )
@@ -1043,7 +1043,7 @@ setTimeout(async () => {
 
     function toggleProxyMode() {
         saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-        notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + state.word[+config.proxyAPIenabled])
+        notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
         refreshMenu()
         if (appDiv.querySelector('#bravegpt-alert')) location.reload() // re-send query if user alerted
     }
@@ -1053,7 +1053,7 @@ setTimeout(async () => {
         updateTweaksStyle()
         if (mode == 'wider' && appDiv.querySelector('.corner-btn')) updateWSBsvg()
         notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
-            + ' ' + state.word[+config[mode + 'Sidebar']])
+            + ' ' + menuState.word[+config[mode + 'Sidebar']])
         refreshMenu()
     }
 
@@ -1871,10 +1871,9 @@ setTimeout(async () => {
 
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
-    const state = {
-        symbol: ['❌', '✔️'],
-        word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()],
-        separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
+    const menuState = {
+        symbol: ['❌', '✔️'], separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ',
+        word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
     }
 
     registerMenu() // create browser toolbar menu
