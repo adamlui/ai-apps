@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.17
+// @version             2024.6.18
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -313,7 +313,7 @@
 
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
-    const state = {
+    const menuState = {
         symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
     }
@@ -401,38 +401,38 @@
     function registerMenu() {
 
         // Add command to toggle auto-refresh
-        const arLabel = state.symbol[+!config.arDisabled] + ' '
+        const arLabel = menuState.symbol[+!config.arDisabled] + ' '
                       + ( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' ↻ '
-                      + state.separator + state.word[+!config.arDisabled]
+                      + menuState.separator + menuState.word[+!config.arDisabled]
         menuIDs.push(GM_registerMenuCommand(arLabel, () => {
             document.getElementById('arSwitchSpan').click()
         }))
 
         // Add command to toggle visibility of toggle
-        const tvLabel = state.symbol[+!config.toggleHidden] + ' '
+        const tvLabel = menuState.symbol[+!config.toggleHidden] + ' '
                       + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
-                      + state.separator + state.word[+!config.toggleHidden]
+                      + menuState.separator + menuState.word[+!config.toggleHidden]
         menuIDs.push(GM_registerMenuCommand(tvLabel, () => {
             saveSetting('toggleHidden', !config.toggleHidden)
             navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex' // toggle visibility
             if (!config.notifDisabled) notify((
-                msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ state.word[+!config.toggleHidden])
+                msgs.menuLabel_toggleVis || 'Toggle Visibility' ) + ': '+ menuState.word[+!config.toggleHidden])
             refreshMenu()
         }))
 
         // Add command to show notifications when switching modes
-        const mnLabel = state.symbol[+!config.notifDisabled] + ' '
+        const mnLabel = menuState.symbol[+!config.notifDisabled] + ' '
                       + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
-                      + state.separator + state.word[+!config.notifDisabled]
+                      + menuState.separator + menuState.word[+!config.notifDisabled]
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifDisabled', !config.notifDisabled)
-            notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + state.word[+!config.notifDisabled])
+            notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + menuState.word[+!config.notifDisabled])
             refreshMenu()
         }))
 
         // Add command to change refresh interval
         const riLabel = '⌚ ' + ( msgs.menuLabel_refreshInt || 'Refresh Interval' ) + ' '
-                      + state.separator + config.refreshInterval + 's'
+                      + menuState.separator + config.refreshInterval + 's'
         menuIDs.push(GM_registerMenuCommand(riLabel, () => {
             while (true) {
                 const refreshInterval = prompt(

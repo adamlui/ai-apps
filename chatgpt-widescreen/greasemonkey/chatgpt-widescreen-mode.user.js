@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.17
+// @version             2024.6.18
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -309,98 +309,98 @@
     function registerMenu() {
 
         // Add command to also activate wide screen in full-window
-        const fwLabel = state.symbol[+config.fullerWindows] + ' '
+        const fwLabel = menuState.symbol[+config.fullerWindows] + ' '
                       + ( msgs.menuLabel_fullerWins || 'Fuller Windows' )
-                      + state.separator + state.word[+config.fullerWindows]
+                      + menuState.separator + menuState.word[+config.fullerWindows]
         menuIDs.push(GM_registerMenuCommand(fwLabel, () => {
             saveSetting('fullerWindows', !config.fullerWindows)
             syncFullerWindows(config.fullerWindows) // live update on click
             if (!config.notifDisabled) notify(
-                `${ ( msgs.menuLabel_fullerWins || 'Fuller Windows' ) }: ${ state.word[+config.fullerWindows] }`)
+                `${ ( msgs.menuLabel_fullerWins || 'Fuller Windows' ) }: ${ menuState.word[+config.fullerWindows] }`)
             refreshMenu()
         }))
 
         // Add command to toggle taller chatbox when typing
         const tcbLabel = '↕️ ' + ( msgs.menuLabel_tallerChatbox || 'Taller Chatbox' )
-                       + state.separator + state.word[+!config.tcbDisabled]
+                       + menuState.separator + menuState.word[+!config.tcbDisabled]
         menuIDs.push(GM_registerMenuCommand(tcbLabel, () => {
             saveSetting('tcbDisabled', !config.tcbDisabled)
             updateTweaksStyle()
             if (!config.notifDisabled) notify(
-                `${ msgs.menuLabel_tallerChatbox || 'Taller Chatbox' }: ${ state.word[+!config.tcbDisabled] }`)
+                `${ msgs.menuLabel_tallerChatbox || 'Taller Chatbox' }: ${ menuState.word[+!config.tcbDisabled] }`)
             refreshMenu()
         }))
 
         // Add command to toggle wider chatbox w/ widescreen mode in Poe
         if (site == 'poe') {
             const wcbLabel = '↔️ ' + ( msgs.menuLabel_widerChatbox || 'Wider Chatbox' )
-                           + state.separator + state.word[+config.widerChatbox]
+                           + menuState.separator + menuState.word[+config.widerChatbox]
             menuIDs.push(GM_registerMenuCommand(wcbLabel, () => {
                 saveSetting('widerChatbox', !config.widerChatbox)
                 updateWidescreenStyle()
                 if (!config.notifDisabled) notify(
-                    `${ msgs.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ state.word[+config.widerChatbox] }`)
+                    `${ msgs.menuLabel_widerChatbox || 'Wider Chatbox' }: ${ menuState.word[+config.widerChatbox] }`)
                 refreshMenu()
             }))
         }
 
         // Add command to hide New Chat button
-        const hncLabel = state.symbol[+!config.ncbDisabled] + ' '
+        const hncLabel = menuState.symbol[+!config.ncbDisabled] + ' '
                        + ( msgs.menuLabel_newChatBtn || 'New Chat Button' )
-                       + state.separator + state.word[+!config.ncbDisabled]
+                       + menuState.separator + menuState.word[+!config.ncbDisabled]
         menuIDs.push(GM_registerMenuCommand(hncLabel, () => {
             saveSetting('ncbDisabled', !config.ncbDisabled)
             updateTweaksStyle()
-            notify(`${ msgs.menuLabel_newChatBtn || 'New Chat Button' }: ${ state.word[+!config.ncbDisabled] }`)
+            notify(`${ msgs.menuLabel_newChatBtn || 'New Chat Button' }: ${ menuState.word[+!config.ncbDisabled] }`)
             refreshMenu()
         }))
 
         if (/chatgpt|openai/.test(site)) {
 
             // Add command to toggle Auto-Focus Chatbar
-            const afcLabel = state.symbol[+!config.autoFocusChatbarDisabled] + ' '
+            const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
                            + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                           + state.separator + state.word[+!config.autoFocusChatbarDisabled]
+                           + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
             menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
                 saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
                 notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                             + state.word[+!config.autoFocusChatbarDisabled])
+                             + menuState.word[+!config.autoFocusChatbarDisabled])
                 if (!config.autoFocusChatbarDisabled) document.querySelector(inputSelector)?.focus()
                 refreshMenu()
             }))
 
             // Add command to toggle hidden header
-            const hhLabel = state.symbol[+config.hiddenHeader] + ' '
+            const hhLabel = menuState.symbol[+config.hiddenHeader] + ' '
                           + ( msgs.menuLabel_hiddenHeader || 'Hidden Header' )
-                          + state.separator + state.word[+config.hiddenHeader]
+                          + menuState.separator + menuState.word[+config.hiddenHeader]
             menuIDs.push(GM_registerMenuCommand(hhLabel, () => {
                 saveSetting('hiddenHeader', !config.hiddenHeader)
                 updateTweaksStyle()
                 if (!config.notifDisabled) notify(
-                    `${ msgs.menuLabel_hiddenHeader || 'Hidden Header' }: ${ state.word[+config.hiddenHeader] }`)
+                    `${ msgs.menuLabel_hiddenHeader || 'Hidden Header' }: ${ menuState.word[+config.hiddenHeader] }`)
                 refreshMenu()
             }))
 
             // Add command to toggle hidden footer
-            const hfLabel = state.symbol[+config.hiddenFooter] + ' '
+            const hfLabel = menuState.symbol[+config.hiddenFooter] + ' '
                           + ( msgs.menuLabel_hiddenFooter || 'Hidden Footer' )
-                          + state.separator + state.word[+config.hiddenFooter]
+                          + menuState.separator + menuState.word[+config.hiddenFooter]
             menuIDs.push(GM_registerMenuCommand(hfLabel, () => {
                 saveSetting('hiddenFooter', !config.hiddenFooter)
                 updateTweaksStyle()
                 if (!config.notifDisabled) notify(
-                    `${ msgs.menuLabel_hiddenFooter || 'Hidden Footer' }: ${ state.word[+config.hiddenFooter] }`)
+                    `${ msgs.menuLabel_hiddenFooter || 'Hidden Footer' }: ${ menuState.word[+config.hiddenFooter] }`)
                 refreshMenu()
             }))
         }
 
         // Add command to show notifications when switching modes
-        const mnLabel = state.symbol[+!config.notifDisabled] + ' '
+        const mnLabel = menuState.symbol[+!config.notifDisabled] + ' '
                       + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
-                      + state.separator + state.word[+!config.notifDisabled]
+                      + menuState.separator + menuState.word[+!config.notifDisabled]
         menuIDs.push(GM_registerMenuCommand(mnLabel, () => {
             saveSetting('notifDisabled', !config.notifDisabled)
-            notify(`${ msgs.menuLabel_modeNotifs || 'Mode Notifications' }: ${ state.word[+!config.notifDisabled] }`)
+            notify(`${ msgs.menuLabel_modeNotifs || 'Mode Notifications' }: ${ menuState.word[+!config.notifDisabled] }`)
             refreshMenu()
         }))
 
@@ -739,7 +739,7 @@
 
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
-    const state = {
+    const menuState = {
         symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
     }
@@ -778,7 +778,7 @@
             })()
         }), new Promise(resolve => setTimeout(() => resolve(false), 1500))])
     if (extensionInstalled) { // disable script/menu
-        GM_registerMenuCommand(state.symbol[0] + ' ' + ( msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
+        GM_registerMenuCommand(menuState.symbol[0] + ' ' + ( msgs.menuLabel_disabled || 'Disabled (extension installed)' ),
             () => { return }) // disable menu
         return // exit script
     } else registerMenu() // create functional menu

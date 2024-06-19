@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.16
+// @version             2024.6.18
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -284,7 +284,7 @@
 
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
-    const state = {
+    const menuState = {
         symbol: ['❌', '✔️'], word: ['OFF', 'ON'],
         separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': '
     }
@@ -326,12 +326,12 @@
     function registerMenu() {
 
         // Add command to hide/show notifications on load
-        const mnLabel = state.symbol[+!config.notifDisabled] + ' '
+        const mnLabel = menuState.symbol[+!config.notifDisabled] + ' '
                       + ( msgs.menuLabel_modeNotifs || 'Mode Notifications' )
-                      + state.separator + state.word[+!config.notifDisabled]
+                      + menuState.separator + menuState.word[+!config.notifDisabled]
         menuIDs.push(GM_registerMenuCommand(mnLabel, function() {
             saveSetting('notifDisabled', !config.notifDisabled)
-            notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + state.word[+!config.notifDisabled])
+            notify(( msgs.menuLabel_modeNotifs || 'Mode Notifications' ) + ': ' + menuState.word[+!config.notifDisabled])
             refreshMenu()
         }))
 
