@@ -93,7 +93,7 @@
 // @description:ny      Mawonjezera mayankho a AI pa Google Search. Uchenjeza kuchokera kumtengo wonse. Yoyenera ndi Google Gemma + GPT-4o!
 // @description:oc      Ajuda de respostas d'IA a la Recèrca Google. Demandatz dins n'importa quala pagina. Impulsat per Google Gemma + GPT-4o!
 // @description:om      Deebii AI Google Search irratti dabalata. Salphina midhaan eessatti. Google Gemma + GPT-4o tiin kan hojjetamu!
-// @description:or      Google ସର୍ଚ୍‌ରେ AI ଉତ୍ତର ଯୋଗ କରୁଛି। ଯେକଣ ସାଇଟରୁ ପ୍ରଶ୍ନିତ୍ୱ କରିବାରେ। Google Gemma + GPT-4o ଦ୍ୱାରା ସାଧାରଣ କରାଯାଇଛି!
+// @description:or      Google ସର୍ଚ୍ରେ AI ଉତ୍ତର ଯୋଗ କରୁଛି। ଯେକଣ ସାଇଟରୁ ପ୍ରଶ୍ନିତ୍ୱ କରିବାରେ। Google Gemma + GPT-4o ଦ୍ୱାରା ସାଧାରଣ କରାଯାଇଛି!
 // @description:pa      Google ਖੋਜ ਵਿੱਚ AI ਜਵਾਬ ਜੋੜਦਾ ਹੈ। ਕਿਸੇ ਵੀ ਸਾਈਟ ਤੋਂ ਪੁੱਛੋ। Google Gemma + GPT-4o ਦੁਆਰਾ ਚਲਾਇਆ ਜਾਂਦਾ ਹੈ!
 // @description:pl      Dodaje odpowiedzi AI do wyszukiwarki Google. Zapytaj z dowolnej strony. Obsługiwane przez Google Gemma + GPT-4o!
 // @description:ps      AI جوابونه د Google Search کې اضافه کړې. د کولو د کوم کښته پوښتوي. په لاسرسی کې پوه شوی شوی د Google Gemma + GPT-4o!
@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.20
+// @version             2024.6.20.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
