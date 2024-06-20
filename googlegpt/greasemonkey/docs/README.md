@@ -39,9 +39,21 @@
 
 <img src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png?latest">
 
-### Mobile
+### Customizable color scheme:
+
+<img src="https://media.googlegpt.io/images/screenshots/desktop/color-scheme-modal.png?latest">
+
+### Mobile compatible:
 
 <img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png?latest">
+
+### Scalable display size:
+
+<img src="https://media.googlegpt.io/images/screenshots/desktop/font-size-slider.gif">
+
+### Ask from any website:
+
+<img width=565 src="https://media.googlegpt.io/images/screenshots/desktop/what-are-userscripts-asktip-on-greasy-fork.png?latest">
 
 <br>
 
