@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Skrýt nabídku" },
   "menuLabel_always": { "message": "vždy" },
   "menuLabel_forThisSite": { "message": "(pro tento web)" },
+  "menuLabel_fromAllSites": { "message": "Všechny weby" },
   "about_version": { "message": "Verze" },
   "about_poweredBy": { "message": "Běží na" },
   "about_sourceCode": { "message": "Zdrojový kód" },

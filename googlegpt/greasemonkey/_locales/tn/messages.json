@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "HIDE MENU" },
   "menuLabel_always": { "message": "<g x=1 id=\"28404\"/> Ka metlha" },
   "menuLabel_forThisSite": { "message": "ya setsha seno sa inthanete" },
+  "menuLabel_fromAllSites": { "message": "go tswa mo mafelong otlhe a ditsha" },
   "about_version": { "message": "VERSION" },
   "about_poweredBy": { "message": "E tsamaisiwa ke" },
   "about_sourceCode": { "message": "Source code" },

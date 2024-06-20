@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Gøym meny" },
   "menuLabel_always": { "message": "alltid" },
   "menuLabel_forThisSite": { "message": "for denne siden" },
+  "menuLabel_fromAllSites": { "message": "fra alle nettsteder" },
   "about_version": { "message": "Versjon" },
   "about_poweredBy": { "message": "Drevet av" },
   "about_sourceCode": { "message": "Kildekode" },

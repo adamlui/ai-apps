@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Verstecke Menü" },
   "menuLabel_always": { "message": "immer" },
   "menuLabel_forThisSite": { "message": "für diese Seite." },
+  "menuLabel_fromAllSites": { "message": "Alle Webseiten" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Unterstützt von" },
   "about_sourceCode": { "message": "Quellcode" },

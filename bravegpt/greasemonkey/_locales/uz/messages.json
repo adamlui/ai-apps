@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Menyuni yashirish" },
   "menuLabel_always": { "message": "_Har doim" },
   "menuLabel_forThisSite": { "message": "ushbu sayt uchun" },
+  "menuLabel_fromAllSites": { "message": "Hamma fayllar" },
   "about_version": { "message": "Versiya" },
   "about_poweredBy": { "message": "Tomonidan qo'llab-quvvatlanadi" },
   "about_sourceCode": { "message": "Ochiq kod" },

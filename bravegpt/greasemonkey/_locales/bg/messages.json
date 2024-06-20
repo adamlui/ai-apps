@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Скриване на менюто" },
   "menuLabel_always": { "message": "винаги" },
   "menuLabel_forThisSite": { "message": "за този сайт" },
+  "menuLabel_fromAllSites": { "message": "Всички сайтове" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Създадено от" },
   "about_sourceCode": { "message": "Изходен код" },

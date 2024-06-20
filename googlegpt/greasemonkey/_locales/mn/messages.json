@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Цэсийг нуух" },
   "menuLabel_always": { "message": "дандаа" },
   "menuLabel_forThisSite": { "message": "энэ сайтын хувьд" },
+  "menuLabel_fromAllSites": { "message": "бүх сайтаас" },
   "about_version": { "message": "Хувилбар" },
   "about_poweredBy": { "message": "ИЛЧЛЭГЧ" },
   "about_sourceCode": { "message": "ᠰᠣᠷᠪᠤᠯᠵᠢ ᠺᠣᠳ᠋" },

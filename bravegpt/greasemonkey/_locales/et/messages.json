@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Peida menüü" },
   "menuLabel_always": { "message": "alati" },
   "menuLabel_forThisSite": { "message": "sellele saidile" },
+  "menuLabel_fromAllSites": { "message": "Kõik saidid %s" },
   "about_version": { "message": "Versioon" },
   "about_poweredBy": { "message": "Toiteallikaks" },
   "about_sourceCode": { "message": "Lähtekood" },

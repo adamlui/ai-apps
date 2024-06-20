@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Мәзірді жасыру" },
   "menuLabel_always": { "message": "Әрқашан" },
   "menuLabel_forThisSite": { "message": "осы сайт үшін" },
+  "menuLabel_fromAllSites": { "message": "барлық сайттардан" },
   "about_version": { "message": "Нұсқа" },
   "about_poweredBy": { "message": "Сайтты жасаған" },
   "about_sourceCode": { "message": "Бастапқы код" },

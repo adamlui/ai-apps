@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Hide menu ti" },
   "menuLabel_always": { "message": "lakue lakue" },
   "menuLabel_forThisSite": { "message": "na ndo ti site so" },
+  "menuLabel_fromAllSites": { "message": "ti all sites" },
   "about_version": { "message": "Yângâ tî kodoro" },
   "about_poweredBy": { "message": "A yeke sara kua na ni" },
   "about_sourceCode": { "message": "Source code ti" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "ເຊື່ອງເມນູ" },
   "menuLabel_always": { "message": "ຕະຫຼອດ " },
   "menuLabel_forThisSite": { "message": "ສໍາລັບເວັບໄຊທ໌ນີ້" },
+  "menuLabel_fromAllSites": { "message": "ຈາກທຸກເວັບໄຊທ໌" },
   "about_version": { "message": "ຮຸ່ນ" },
   "about_poweredBy": { "message": "ຂັບເຄື່ອນໂດຍ" },
   "about_sourceCode": { "message": "ຊອດສ໌ໂຄດ" },

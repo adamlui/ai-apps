@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Sakrij izbornik" },
   "menuLabel_always": { "message": "uvijek" },
   "menuLabel_forThisSite": { "message": "za ovu stranicu" },
+  "menuLabel_fromAllSites": { "message": "Sve datoteke" },
   "about_version": { "message": "Verzija" },
   "about_poweredBy": { "message": "Pokreće" },
   "about_sourceCode": { "message": "Izvorni kod" },

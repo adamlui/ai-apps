@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "ምናሌ ደብቅ" },
   "menuLabel_always": { "message": "ሁል ጊዜ" },
   "menuLabel_forThisSite": { "message": "ለዚህ ድረ-ገጽ" },
+  "menuLabel_fromAllSites": { "message": "ከሁሉም ጣቢያዎች" },
   "about_version": { "message": "እትም" },
   "about_poweredBy": { "message": "የተጎለበተው በ" },
   "about_sourceCode": { "message": "የምንጭ ኮድ" },

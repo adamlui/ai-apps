@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Skjul menu" },
   "menuLabel_always": { "message": "altid" },
   "menuLabel_forThisSite": { "message": "for dette websted" },
+  "menuLabel_fromAllSites": { "message": "Annoncer fra alle websteder" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Drevet af" },
   "about_sourceCode": { "message": "Kildekode" },

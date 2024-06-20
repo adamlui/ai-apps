@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "مخفی کردن منو" },
   "menuLabel_always": { "message": "همیشه" },
   "menuLabel_forThisSite": { "message": "برای این سایت" },
+  "menuLabel_fromAllSites": { "message": "همه سایت ها" },
   "about_version": { "message": "نسخه برنامه" },
   "about_poweredBy": { "message": "قدرت گرفته توسط" },
   "about_sourceCode": { "message": "سورس کد" },

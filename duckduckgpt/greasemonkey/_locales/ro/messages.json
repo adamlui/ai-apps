@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Ascunde meniul" },
   "menuLabel_always": { "message": "mereu" },
   "menuLabel_forThisSite": { "message": "pentru acest site" },
+  "menuLabel_fromAllSites": { "message": "Toate site-urile" },
   "about_version": { "message": "Versiune" },
   "about_poweredBy": { "message": "Operat de" },
   "about_sourceCode": { "message": "Codul sursă" },

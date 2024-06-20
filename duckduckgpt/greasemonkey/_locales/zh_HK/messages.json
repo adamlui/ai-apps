@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "隱藏菜單" },
   "menuLabel_always": { "message": "總是" },
   "menuLabel_forThisSite": { "message": "適用於此網站" },
+  "menuLabel_fromAllSites": { "message": "來自所有網站" },
   "about_version": { "message": "版本" },
   "about_poweredBy": { "message": "技術支持" },
   "about_sourceCode": { "message": "原始碼" },

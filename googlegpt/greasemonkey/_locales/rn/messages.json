@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Guhisha imenyu" },
   "menuLabel_always": { "message": "yamaho Yama" },
   "menuLabel_forThisSite": { "message": "kuri uru rubuga" },
+  "menuLabel_fromAllSites": { "message": "ku mbuga zose" },
   "about_version": { "message": "Traduzione" },
   "about_poweredBy": { "message": "Yashizwe mu ngiro na" },
   "about_sourceCode": { "message": "Ikodi y'isôko" },

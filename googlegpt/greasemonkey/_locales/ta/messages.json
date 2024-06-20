@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "பட்டியலை & மறை" },
   "menuLabel_always": { "message": "எப்போதும்" },
   "menuLabel_forThisSite": { "message": "இந்த தளத்திற்கு" },
+  "menuLabel_fromAllSites": { "message": "எல்லா தளங்களிலிருந்தும்" },
   "about_version": { "message": "பதிப்பு" },
   "about_poweredBy": { "message": "மூலம் இயக்கப்படுகிறது" },
   "about_sourceCode": { "message": "@ info: whatsthis" },

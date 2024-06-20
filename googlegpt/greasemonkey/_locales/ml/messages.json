@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "& വിഭവങ്ങള്‍ ഒളിപ്പിക്കുക" },
   "menuLabel_always": { "message": "എല്ലായ്പ്പോഴും" },
   "menuLabel_forThisSite": { "message": "ഈ സൈറ്റിനായി" },
+  "menuLabel_fromAllSites": { "message": "എല്ലാ സൈറ്റുകളിൽ നിന്നും" },
   "about_version": { "message": "പതിപ്പ്" },
   "about_poweredBy": { "message": "നയിച്ചത്" },
   "about_sourceCode": { "message": "സോഴ്സ് കോഡ്" },

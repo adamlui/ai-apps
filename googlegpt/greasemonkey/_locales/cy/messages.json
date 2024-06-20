@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "& Dangos Dewislen" },
   "menuLabel_always": { "message": "" },
   "menuLabel_forThisSite": { "message": "ar gyfer y wefan hon" },
+  "menuLabel_fromAllSites": { "message": "Pob Gwefan" },
   "about_version": { "message": "Fersiwn" },
   "about_poweredBy": { "message": "Wedi'i gynnal gan" },
   "about_sourceCode": { "message": "Cod ffynhonnell" },

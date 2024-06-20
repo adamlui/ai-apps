@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Hide menu" },
   "menuLabel_always": { "message": "I taimi uma" },
   "menuLabel_forThisSite": { "message": "mo lenei 'upega tafaʻilagi" },
+  "menuLabel_fromAllSites": { "message": "mai nofoaga uma" },
   "about_version": { "message": "Faaliliuga" },
   "about_poweredBy": { "message": "Malosiaga e ala i" },
   "about_sourceCode": { "message": "Punaoa code" },

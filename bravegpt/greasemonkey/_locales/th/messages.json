@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "ซ่อนเมนู" },
   "menuLabel_always": { "message": "เสมอ" },
   "menuLabel_forThisSite": { "message": "สำหรับเว็บไซต์นี้" },
+  "menuLabel_fromAllSites": { "message": "เว็บไซต์ทั้งหมด" },
   "about_version": { "message": "เวอร์ชัน" },
   "about_poweredBy": { "message": "สนับสนุนโดย" },
   "about_sourceCode": { "message": "รหัสต้นฉบับ" },

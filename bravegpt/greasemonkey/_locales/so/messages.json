@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Qari menu" },
   "menuLabel_always": { "message": "Mar walba" },
   "menuLabel_forThisSite": { "message": "loogu talagalay boggan" },
+  "menuLabel_fromAllSites": { "message": "ka dhammaan goobaha" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Waxa fudaydiyay" },
   "about_sourceCode": { "message": "Koodhka isha" },

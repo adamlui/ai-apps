@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Falaich a 'chlàr - taice" },
   "menuLabel_always": { "message": "an - còmhnaidh" },
   "menuLabel_forThisSite": { "message": "airson an làrach seo" },
+  "menuLabel_fromAllSites": { "message": "bho gach làrach" },
   "about_version": { "message": "Tionndadh" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Bun-tùs a' chod" },

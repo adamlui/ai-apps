@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "ምናሌታት ሕባእ" },
   "menuLabel_always": { "message": "ኹሉ ጊዜ" },
   "menuLabel_forThisSite": { "message": "ኣብዚ ወብ ሳይት እዚ" },
+  "menuLabel_fromAllSites": { "message": "ካብ ኩሉ መርበብ ሓበሬታታት" },
   "about_version": { "message": "መበል" },
   "about_poweredBy": { "message": "ብ" },
   "about_sourceCode": { "message": "ምንጪ ኮድ" },

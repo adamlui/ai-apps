@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Kache meni" },
   "menuLabel_always": { "message": "toujou / toujours" },
   "menuLabel_forThisSite": { "message": "pou sit sa a/pour ce site" },
+  "menuLabel_fromAllSites": { "message": "soti nan tout sit/de toutes les" },
   "about_version": { "message": "Vèsyon" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "kòd sous/ code source / le code source mis à jour/code en langage source" },

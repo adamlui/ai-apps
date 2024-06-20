@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "مینو چھپائیں" },
   "menuLabel_always": { "message": "ہمیشہ" },
   "menuLabel_forThisSite": { "message": "اس سائٹ کے لیے" },
+  "menuLabel_fromAllSites": { "message": "تمام سائٹس سے" },
   "about_version": { "message": "ورژن" },
   "about_poweredBy": { "message": "تقویت یافتہ از" },
   "about_sourceCode": { "message": "کۆسی سەرچاوە" },

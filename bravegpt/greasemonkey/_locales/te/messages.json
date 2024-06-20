@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "మెనూను దాచండి" },
   "menuLabel_always": { "message": "ఎల్లప్పుడూ " },
   "menuLabel_forThisSite": { "message": "ఈ సైట్ కోసం" },
+  "menuLabel_fromAllSites": { "message": "అన్ని సైట్ ‌ ల నుండి" },
   "about_version": { "message": "సంస్కరణ" },
   "about_poweredBy": { "message": "ద్వారా ఆధారితం" },
   "about_sourceCode": { "message": "సోర్స్ కోడ్" },

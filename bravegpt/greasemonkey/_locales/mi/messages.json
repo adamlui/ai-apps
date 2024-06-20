@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Menu Hide" },
   "menuLabel_always": { "message": "he aroha mau roa" },
   "menuLabel_forThisSite": { "message": "mō tēnei pae" },
+  "menuLabel_fromAllSites": { "message": "Whakapiri" },
   "about_version": { "message": "Whakaaturanga" },
   "about_poweredBy": { "message": "Te mana o te mana" },
   "about_sourceCode": { "message": "Waehere puna" },

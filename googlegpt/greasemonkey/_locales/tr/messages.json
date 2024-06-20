@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Menüyü gizle" },
   "menuLabel_always": { "message": "her zaman" },
   "menuLabel_forThisSite": { "message": "bu site için" },
+  "menuLabel_fromAllSites": { "message": "Tüm siteler" },
   "about_version": { "message": "Versiyon" },
   "about_poweredBy": { "message": "Destek" },
   "about_sourceCode": { "message": "Kaynak Kodu" },

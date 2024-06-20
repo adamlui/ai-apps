@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "मेनू छिपाएँ" },
   "menuLabel_always": { "message": "हमेशा" },
   "menuLabel_forThisSite": { "message": "इस साइट के लिए" },
+  "menuLabel_fromAllSites": { "message": "सभी साइटों से" },
   "about_version": { "message": "संस्करण" },
   "about_poweredBy": { "message": "...द्वारा पावरशुदा" },
   "about_sourceCode": { "message": "सोर्स कोड" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Menü elrejtése" },
   "menuLabel_always": { "message": "mindig" },
   "menuLabel_forThisSite": { "message": "ehhez az oldalhoz" },
+  "menuLabel_fromAllSites": { "message": "az összes webhelyről" },
   "about_version": { "message": "Verzió" },
   "about_poweredBy": { "message": "Kiszolgálja" },
   "about_sourceCode": { "message": "Forráskód" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Ficha menyu" },
   "menuLabel_always": { "message": "daima" },
   "menuLabel_forThisSite": { "message": "kwa tovuti hii" },
+  "menuLabel_fromAllSites": { "message": "kutoka kwenye tovuti zote" },
   "about_version": { "message": "Toleo" },
   "about_poweredBy": { "message": "Imewezeshwa na" },
   "about_sourceCode": { "message": "Msimbo wa chanzo" },

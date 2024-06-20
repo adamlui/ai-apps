@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Забаронена" },
   "menuLabel_always": { "message": "Заўсёды" },
   "menuLabel_forThisSite": { "message": "для гэтага сайта" },
+  "menuLabel_fromAllSites": { "message": "з усіх сайтаў" },
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Пры падтрымцы" },
   "about_sourceCode": { "message": "Зыходнікі" },

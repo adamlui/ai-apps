@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Menu verbergen" },
   "menuLabel_always": { "message": "altijd" },
   "menuLabel_forThisSite": { "message": "voor deze site" },
+  "menuLabel_fromAllSites": { "message": "Alle Sites" },
   "about_version": { "message": "Versie" },
   "about_poweredBy": { "message": "Ondersteund door" },
   "about_sourceCode": { "message": "Broncode" },

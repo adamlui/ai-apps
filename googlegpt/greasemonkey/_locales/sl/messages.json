@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Skrij meni" },
   "menuLabel_always": { "message": "vedno" },
   "menuLabel_forThisSite": { "message": "za to spletno mesto" },
+  "menuLabel_fromAllSites": { "message": "Vsa spletna mesta" },
   "about_version": { "message": "Različica" },
   "about_poweredBy": { "message": "Poganja" },
   "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Sembunyikan menu" },
   "menuLabel_always": { "message": "selalu" },
   "menuLabel_forThisSite": { "message": "untuk situs ini" },
+  "menuLabel_fromAllSites": { "message": "dari semua situs" },
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Didukung oleh" },
   "about_sourceCode": { "message": "Kode sumber" },

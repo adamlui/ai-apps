@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "მენიუს დამალვა" },
   "menuLabel_always": { "message": "ყოველთვის" },
   "menuLabel_forThisSite": { "message": "ამ საიტისთვის" },
+  "menuLabel_fromAllSites": { "message": "ყველა ცენტრიდან" },
   "about_version": { "message": "ვერსია" },
   "about_poweredBy": { "message": "აგებულია KDE-ზე" },
   "about_sourceCode": { "message": "საწყისი კოდი" },

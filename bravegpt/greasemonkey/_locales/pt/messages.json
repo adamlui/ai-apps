@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Esconder o menu" },
   "menuLabel_always": { "message": "sempre" },
   "menuLabel_forThisSite": { "message": "`fraca`, `boa`, or `forte`" },
+  "menuLabel_fromAllSites": { "message": "Todos os sítios" },
   "about_version": { "message": "Versão" },
   "about_poweredBy": { "message": "Distribuído pela" },
   "about_sourceCode": { "message": "Código-fonte" },

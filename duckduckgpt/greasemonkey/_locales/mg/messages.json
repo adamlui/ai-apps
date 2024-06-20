@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Afeno ny tolotra" },
   "menuLabel_always": { "message": "_Foana" },
   "menuLabel_forThisSite": { "message": "ho an'ity tranonkala ity" },
+  "menuLabel_fromAllSites": { "message": "Ny rakitra rehetra" },
   "about_version": { "message": "Kinova" },
   "about_poweredBy": { "message": "Ampandehanin'i" },
   "about_sourceCode": { "message": "Kaody niaingana" },

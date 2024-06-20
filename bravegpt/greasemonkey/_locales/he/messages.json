@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "הסתר תפריט" },
   "menuLabel_always": { "message": "תמיד" },
   "menuLabel_forThisSite": { "message": "עבור אתר זה" },
+  "menuLabel_fromAllSites": { "message": "כל האתרים" },
   "about_version": { "message": "גירסה" },
   "about_poweredBy": { "message": "באמצעות" },
   "about_sourceCode": { "message": "קוד מקור" },

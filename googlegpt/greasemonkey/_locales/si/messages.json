@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "මෙනුව සඟවන්න" },
   "menuLabel_always": { "message": "සැමවිටම" },
   "menuLabel_forThisSite": { "message": "මෙම වෙබ් අඩවිය සඳහා" },
+  "menuLabel_fromAllSites": { "message": "සියලු වෙබ් අඩවි වලින්" },
   "about_version": { "message": "වෙළුම" },
   "about_poweredBy": { "message": "විසින් බල ගැන්වී ඇත" },
   "about_sourceCode": { "message": "මූලාශ්‍ර කේතය" },

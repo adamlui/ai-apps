@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Сховати меню" },
   "menuLabel_always": { "message": "завше" },
   "menuLabel_forThisSite": { "message": "для цього сайту" },
+  "menuLabel_fromAllSites": { "message": "Всі сайти" },
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Працює на" },
   "about_sourceCode": { "message": "Джерельний код" },

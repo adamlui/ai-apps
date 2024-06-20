@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Menu skondí" },
   "menuLabel_always": { "message": "semper" },
   "menuLabel_forThisSite": { "message": "pa e website aki" },
+  "menuLabel_fromAllSites": { "message": "di tur e sitionan" },
   "about_version": { "message": "Vershon" },
   "about_poweredBy": { "message": "Potenciá por" },
   "about_sourceCode": { "message": "Kódigo di fuente" },

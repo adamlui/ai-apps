@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Sakrij meni" },
   "menuLabel_always": { "message": "uvek" },
   "menuLabel_forThisSite": { "message": "za ovaj sajt" },
+  "menuLabel_fromAllSites": { "message": "Sva mesta" },
   "about_version": { "message": "Verzija" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Izvorni kod" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "મેનુ છુપાવો" },
   "menuLabel_always": { "message": "નિરંતર " },
   "menuLabel_forThisSite": { "message": "આ સાઇટ માટે" },
+  "menuLabel_fromAllSites": { "message": "બધી ફાઇલો" },
   "about_version": { "message": "આવૃત્તિ" },
   "about_poweredBy": { "message": "દ્વારા સંચાલિત" },
   "about_sourceCode": { "message": "સ્ત્રોત કોડ" },

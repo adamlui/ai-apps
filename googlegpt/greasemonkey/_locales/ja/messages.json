@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "メニューを隠す" },
   "menuLabel_always": { "message": "常に" },
   "menuLabel_forThisSite": { "message": "このサイトの" },
+  "menuLabel_fromAllSites": { "message": "すべてのサイト" },
   "about_version": { "message": "バージョン" },
   "about_poweredBy": { "message": "搭載" },
   "about_sourceCode": { "message": "ソースコード" },

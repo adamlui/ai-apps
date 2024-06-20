@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Пинҳон кардани & Меню" },
   "menuLabel_always": { "message": "Ҳамеша" },
   "menuLabel_forThisSite": { "message": "para sa site na ito" },
+  "menuLabel_fromAllSites": { "message": "mula sa lahat ng mga site" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Рамзи манбаъ" },

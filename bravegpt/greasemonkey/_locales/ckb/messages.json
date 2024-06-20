@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "لیستە بشارەوە" },
   "menuLabel_always": { "message": "هەمووکاتێ" },
   "menuLabel_forThisSite": { "message": "بۆ ئه م سایته" },
+  "menuLabel_fromAllSites": { "message": "هەموو ماڵپەڕەکان" },
   "about_version": { "message": "وشان" },
   "about_poweredBy": { "message": "به ‌ کاره ‌اتووه ‌ له ‌ لایه ‌" },
   "about_sourceCode": { "message": "کۆدی سەرچاوە" },

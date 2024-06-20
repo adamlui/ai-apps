@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "ਮੇਨੂ ਓਹਲੇ" },
   "menuLabel_always": { "message": "ਹਮੇਸ਼ਾ" },
   "menuLabel_forThisSite": { "message": "ਇਸ ਸਾਈਟ ਲਈ" },
+  "menuLabel_fromAllSites": { "message": "ਸਾਰੀਆਂ ਸਾਈਟਾਂ ਤੋਂ" },
   "about_version": { "message": "ਵਰਜਨ" },
   "about_poweredBy": { "message": "ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },
   "about_sourceCode": { "message": "ਸਰੋਤ ਕੋਡ@ info: whatsthis" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Menü verstoppen" },
   "menuLabel_always": { "message": "Emmer" },
   "menuLabel_forThisSite": { "message": "fir dëse Site" },
+  "menuLabel_fromAllSites": { "message": "vu tous les sites" },
   "about_version": { "message": "Versioun" },
   "about_poweredBy": { "message": "Bereetgestallt vun" },
   "about_sourceCode": { "message": "Quellcode" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Fufuuʻi ʻa e menu" },
   "menuLabel_always": { "message": "Maʻu pe" },
   "menuLabel_forThisSite": { "message": "ki he saiti ni" },
+  "menuLabel_fromAllSites": { "message": "mei he ngaahi saiti kotoa" },
   "about_version": { "message": "Tatau" },
   "about_poweredBy": { "message": "Fakalele ʻe he" },
   "about_sourceCode": { "message": "Maʻuʻanga fakamatala" },

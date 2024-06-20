@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Kubisa menyu" },
   "menuLabel_always": { "message": "nthawi zonse" },
   "menuLabel_forThisSite": { "message": "chifukwa malowa" },
+  "menuLabel_fromAllSites": { "message": "kuchokera kumalo onse" },
   "about_version": { "message": "Lumikizanani nafe" },
   "about_poweredBy": { "message": "Mothandizidwa ndi" },
   "about_sourceCode": { "message": "Gwero kachidindo" },

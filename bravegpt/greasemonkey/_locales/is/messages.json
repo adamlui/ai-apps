@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Fela valmynd" },
   "menuLabel_always": { "message": "Alltaf" },
   "menuLabel_forThisSite": { "message": "fyrir þessa síðu" },
+  "menuLabel_fromAllSites": { "message": "frá öllum vefsvæðum" },
   "about_version": { "message": "Útgáfa" },
   "about_poweredBy": { "message": "Knúið af" },
   "about_sourceCode": { "message": "Upprunakóði@ info: whatsthis" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Oculta el menú" },
   "menuLabel_always": { "message": "always" },
   "menuLabel_forThisSite": { "message": "per a aquest lloc" },
+  "menuLabel_fromAllSites": { "message": "de tots els llocs" },
   "about_version": { "message": "Versió" },
   "about_poweredBy": { "message": "Desenvolupat per" },
   "about_sourceCode": { "message": "Codi font" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Ibikubiyemo" },
   "menuLabel_always": { "message": "Buri gihe" },
   "menuLabel_forThisSite": { "message": "kuri uru rubuga" },
+  "menuLabel_fromAllSites": { "message": "amadosiye yose" },
   "about_version": { "message": "Umukoro" },
   "about_poweredBy": { "message": "Ku" },
   "about_sourceCode": { "message": "C Inkomoko ITEGEKONGENGA" },

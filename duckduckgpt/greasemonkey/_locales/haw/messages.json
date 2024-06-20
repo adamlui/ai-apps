@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Hūnā papa kuhikuhi" },
   "menuLabel_always": { "message": "mau" },
   "menuLabel_forThisSite": { "message": "no keia paena" },
+  "menuLabel_fromAllSites": { "message": "mai nā pūnaewele a pau" },
   "about_version": { "message": "Manao" },
   "about_poweredBy": { "message": "Hoʻāmana ʻia e" },
   "about_sourceCode": { "message": "Hoʻopā'ālua" },

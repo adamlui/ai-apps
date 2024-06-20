@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "মেনু লুকান" },
   "menuLabel_always": { "message": "সর্বদা" },
   "menuLabel_forThisSite": { "message": "এই সাইটের জন্য" },
+  "menuLabel_fromAllSites": { "message": "সমস্ত সাইট থেকে" },
   "about_version": { "message": "সংস্করণ" },
   "about_poweredBy": { "message": "নিবেদন করছেন" },
   "about_sourceCode": { "message": "সোর্স কোড" },

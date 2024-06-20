@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "באַהאַלטן מעניו" },
   "menuLabel_always": { "message": "אַלע מאָל" },
   "menuLabel_forThisSite": { "message": "פֿאַר דעם פּלאַץ" },
+  "menuLabel_fromAllSites": { "message": "פון אַלע זייטלעך" },
   "about_version": { "message": "ווערסיע" },
   "about_poweredBy": { "message": "פּאַוערד דורך" },
   "about_sourceCode": { "message": "מקור קאָד" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Menua ezkutatu" },
   "menuLabel_always": { "message": "always" },
   "menuLabel_forThisSite": { "message": "gune honetarako" },
+  "menuLabel_fromAllSites": { "message": "Fitxategi denak" },
   "about_version": { "message": "Bertsioa" },
   "about_poweredBy": { "message": "Teknologia:" },
   "about_sourceCode": { "message": "Iturburu kode" },

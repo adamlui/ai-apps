@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "إخفاء" },
   "menuLabel_always": { "message": "always" },
   "menuLabel_forThisSite": { "message": "عملة الموقع" },
+  "menuLabel_fromAllSites": { "message": "جميع المواقع" },
   "about_version": { "message": "الإصدار" },
   "about_poweredBy": { "message": "يستخدم" },
   "about_sourceCode": { "message": "شيفرة مصدرية" },

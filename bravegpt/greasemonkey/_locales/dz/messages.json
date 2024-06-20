@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "ཁ་བྱང་སྦ་བཞག" },
   "menuLabel_always": { "message": "ཨ་རྟག་རང་།" },
   "menuLabel_forThisSite": { "message": "འདི་གི་དོན་ལུ་" },
+  "menuLabel_fromAllSites": { "message": "ས་སྒོ་ག་ར་ནང་ལས་" },
   "about_version": { "message": "ཐོན་རིམ།" },
   "about_poweredBy": { "message": "དབང་ཤུགས་ཀྱི་ཐོག་ལས་" },
   "about_sourceCode": { "message": "ཐོན་ཁུངས་ཀོཌ་" },

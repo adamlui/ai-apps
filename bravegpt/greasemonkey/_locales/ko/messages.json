@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "메뉴 숨기기" },
   "menuLabel_always": { "message": "늘" },
   "menuLabel_forThisSite": { "message": "이 사이트의 경우" },
+  "menuLabel_fromAllSites": { "message": "사이트" },
   "about_version": { "message": "버전" },
   "about_poweredBy": { "message": "제공" },
   "about_sourceCode": { "message": "원본 코드" },

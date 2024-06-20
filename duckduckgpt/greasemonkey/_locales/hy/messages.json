@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Թաքցնել ընտրացանկը" },
   "menuLabel_always": { "message": "Միշտ " },
   "menuLabel_forThisSite": { "message": "այս կայքի համար" },
+  "menuLabel_fromAllSites": { "message": "բոլոր կայքերից" },
   "about_version": { "message": "Ստանալ պրեմիում տարբերակը" },
   "about_poweredBy": { "message": "🇦🇲" },
   "about_sourceCode": { "message": "Ծրագրային կոդ" },

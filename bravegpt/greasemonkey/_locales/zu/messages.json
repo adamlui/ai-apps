@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Fihla imenyu" },
   "menuLabel_always": { "message": "Njalo" },
   "menuLabel_forThisSite": { "message": "kule sayithi" },
+  "menuLabel_fromAllSites": { "message": "kusuka kuwo wonke amasayithi" },
   "about_version": { "message": "Uhlelo" },
   "about_poweredBy": { "message": "Ixhaswa yi-" },
   "about_sourceCode": { "message": "Ikhodi yomthombo" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Slėpti meniu" },
   "menuLabel_always": { "message": "visuomet" },
   "menuLabel_forThisSite": { "message": "šiai svetainei" },
+  "menuLabel_fromAllSites": { "message": "Visos statybvietės" },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Įgalino Proneta" },
   "about_sourceCode": { "message": "Pradinis kodas" },

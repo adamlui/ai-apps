@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "غورنۍ پټول" },
   "menuLabel_always": { "message": "همیشه د پاره" },
   "menuLabel_forThisSite": { "message": "د دې پاڼې لپاره" },
+  "menuLabel_fromAllSites": { "message": "ټولې ويبپاڼې" },
   "about_version": { "message": ":نسخه" },
   "about_poweredBy": { "message": "طراحی شده توسط" },
   "about_sourceCode": { "message": "سرچينه كوډه" },

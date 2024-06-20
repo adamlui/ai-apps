@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Itago ang menu" },
   "menuLabel_always": { "message": "Same as always" },
   "menuLabel_forThisSite": { "message": "alang niini nga site" },
+  "menuLabel_fromAllSites": { "message": "gikan sa tanan nga mga site" },
   "about_version": { "message": "Bersyon" },
   "about_poweredBy": { "message": "Gipadagan sa" },
   "about_sourceCode": { "message": "Gigikana sa kodigo" },

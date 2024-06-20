@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "លាក់ម៉ឺនុយ" },
   "menuLabel_always": { "message": "ជានិច្ចកាល" },
   "menuLabel_forThisSite": { "message": "សម្រាប់គេហទំព័រនេះ" },
+  "menuLabel_fromAllSites": { "message": "ពីគ្រប់គេហទំព័រទាំងអស់" },
   "about_version": { "message": "លេខជំនាន់កម្មវិធី" },
   "about_poweredBy": { "message": "ដំណើរការដោយ" },
   "about_sourceCode": { "message": "កូដដើម" },

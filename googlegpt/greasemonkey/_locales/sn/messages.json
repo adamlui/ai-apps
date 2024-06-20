@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "HIDE MENU" },
   "menuLabel_always": { "message": "nguva dzose" },
   "menuLabel_forThisSite": { "message": "nokuti nzvimbo iyi" },
+  "menuLabel_fromAllSites": { "message": "kubva kumasayiti ose" },
   "about_version": { "message": "Vhezheni" },
   "about_poweredBy": { "message": "Inofambiswa ne" },
   "about_sourceCode": { "message": "Kunobva kodhi" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "隐藏菜单" },
   "menuLabel_always": { "message": "始终" },
   "menuLabel_forThisSite": { "message": "本网站" },
+  "menuLabel_fromAllSites": { "message": "全部网站" },
   "about_version": { "message": "版本" },
   "about_poweredBy": { "message": "数据来源" },
   "about_sourceCode": { "message": "源代码" },

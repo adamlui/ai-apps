@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "& Montru menuon" },
   "menuLabel_always": { "message": "ĉiam" },
   "menuLabel_forThisSite": { "message": "por ĉi tiu retejo" },
+  "menuLabel_fromAllSites": { "message": "de ĉiuj retejoj" },
   "about_version": { "message": "Versio" },
   "about_poweredBy": { "message": "funkciigita de" },
   "about_sourceCode": { "message": "Fontkodo" },

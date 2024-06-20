@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Menu Ẩn" },
   "menuLabel_always": { "message": "luôn luôn" },
   "menuLabel_forThisSite": { "message": "cho trang web này" },
+  "menuLabel_fromAllSites": { "message": "Tất cả các Website" },
   "about_version": { "message": "Phiên bản" },
   "about_poweredBy": { "message": "Cung cấp bởi" },
   "about_sourceCode": { "message": "Mã nguồn" },

@@ -21,6 +21,7 @@
   "menuLabel_hideMenu": { "message": "Fihla imenyu" },
   "menuLabel_always": { "message": "Rhoqo" },
   "menuLabel_forThisSite": { "message": "kule webhusayithi" },
+  "menuLabel_fromAllSites": { "message": "kuzo zonke iiwebhusayithi" },
   "about_version": { "message": "Inguqulelo" },
   "about_poweredBy": { "message": "Ixhaswa ngu" },
   "about_sourceCode": { "message": "Ikhowudi engumthombo" },
