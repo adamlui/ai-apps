@@ -1,162 +1,164 @@
 // ==UserScript==
 // @name                GoogleGPT 🤖
 // @name:zh-CN          GoogleGPT 🤖
-// @description         Adds AI answers to Google Search (powered by Google Gemma + GPT-4o!)
-// @description:af      Voeg KI-antwoorde by Google Soek (aangedryf deur Google Gemma + GPT-4o!) toe
-// @description:am      የAI መልስናወርቃለች እርስዎን Google ፍለጋ እርስዎን በተወሰኑ ገጽታዎች (ተከፋይ Google Gemma + GPT-4o!) ጨምሮ
-// @description:ar      يضيف إجابات الذكاء الاصطناعي إلى بحث Google (مدعوم بواسطة Google Gemma + GPT-4o!)
-// @description:az      Google Axtarışa AI cavabları əlavə edir (Google Gemma + GPT-4o ilə işləyir!)
-// @description:be      Дадае адказы штучнага інтэлекту ў пошук Google (на базе Google Gemma + GPT-4o!)
-// @description:bem     Yamfumano AI mafundo pa Google Search (eko wakuleta na Google Gemma + GPT-4o!)
-// @description:bg      Добавя AI отговори към Google Търсене (осигурено от Google Gemma + GPT-4o!)
-// @description:bn      Google অনুসন্ধানে AI উত্তর যোগ করে (Google Gemma + GPT-4o দ্বারা চালিত!)
-// @description:bo      གི་དྲུག་བཏུས་བྱས་ཀྱི་འཕྲུལ་ཆས་དང་ (Google Gemma + GPT-4o!) སྤྱི་ཚོགས་བརྡ་འདེབས་བསྒྲགས་པ།
-// @description:bs      Dodaje AI odgovore u Google pretragu (pokreće Google Gemma + GPT-4o!)
-// @description:ca      Afegeix respostes d'IA a la Cerca de Google (amb la tecnologia de Google Gemma + GPT-4o!)
-// @description:ceb     Nagdugang mga tubag sa AI sa Google Search (gipadagan sa Google Gemma + GPT-4o!)
-// @description:cs      Přidává odpovědi AI do Vyhledávání Google (využívá technologii Google Gemma + GPT-4o!)
-// @description:cy      Yn ychwanegu atebion AI i Google Search (wedi'u pweru gan Google Gemma + GPT-4o!)
-// @description:da      Tilføjer AI-svar til Google Søgning (drevet af Google Gemma + GPT-4o!)
-// @description:de      Fügt der Google-Suche KI-Antworten hinzu (unterstützt von Google Gemma + GPT-4o!)
-// @description:dv      ގޫގުލް ސަރޗަށް އެއައި ޖަވާބުތައް އިތުރުކުރެއެވެ (ގޫގުލް ޖެމާ +ޖީޕީޓީ-4އޯ އިން ޕަވަރޑް!)
-// @description:dz      གི་དྲུག་བཏུས་བྱས་ཀྱི་འཕྲུལ་ཆས་དང་ (Google Gemma + GPT-4o!) སྤྱི་ཚོགས་བརྡ་འདེབས་བསྒྲགས་པ།
-// @description:el      Προσθέτει απαντήσεις AI στην Αναζήτηση Google (τροφοδοτείται από το Google Gemma + GPT-4o!)
-// @description:eo      Aldonas AI-respondojn al Google Search (funkciigita de Google Gemma + GPT-4o!)
-// @description:es      Agrega respuestas de IA a la Búsqueda de Google (¡con tecnología de Google Gemma + GPT-4o!)
-// @description:et      Lisab AI vastused Google'i otsingusse (toiteallikaks Google Gemma + GPT-4o!)
-// @description:eu      AI erantzunak gehitzen ditu Google Bilaketa-n (Google Gemma + GPT-4o-k bultzatuta!)
-// @description:fa      پاسخهای هوش مصنوعی را به جستجوی Google اضافه میکند (با Google Gemma + GPT-4o!)
-// @description:fi      Lisää AI-vastauksia Google-hakuun (Google Gemma + GPT-4o!)
-// @description:fil     Nagdaragdag ng mga sagot sa AI sa Google Search (pinapatakbo ng Google Gemma + GPT-4o!)
-// @description:fj      Vakatotolo kina na ivakatakilakila AI ki na Google Search (sa rawa ni tukuna e Google Gemma + GPT-4o!)
-// @description:fo      Lætur AI svar til Google Leit (reka av Google Gemma + GPT-4o!)
-// @description:fr      Ajoute des réponses IA à la recherche Google (propulsé par Google Gemma + GPT-4o!)
-// @description:fr-CA   Ajoute des réponses IA à la recherche Google (propulsé par Google Gemma + GPT-4o!)
-// @description:gd      A’ cur freagairtean AI ri Rannsachadh Ghoogle (le cumhachd bho Google Gemma + GPT-4o!)
-// @description:gl      Engade respostas de intelixencia artificial á Busca de Google (con tecnoloxía Google Gemma + GPT-4o!)
-// @description:gn      Ombojoapy AI ñembohovái Google Jeporeka-pe (omombaretéva Google Gemma + GPT-4o!)
-// @description:gu      Google શોધમાં AI જવાબો ઉમેરે છે (Google Gemma + GPT-4o દ્વારા સંચાલિત!)
-// @description:ha      Yana ƙara amsoshin AI ga Binciken Google (Google Gemma + GPT-4o ne ke ƙarfafa shi!)
-// @description:haw     Hoʻohui i nā pane AI i ka Huli Google (hoʻohana ʻia e Google Gemma + GPT-4o!)
-// @description:he      מוסיף תשובות בינה מלאכותית לחיפוש Google (מופעל על ידי Google Gemma + GPT-4o!)
-// @description:hi      गूगल सर्च में AI उत्तर जोड़े गए (गूगल जेम्मा + GPT-4o द्वारा संचालित!)
-// @description:hr      Dodaje AI odgovore u Google pretraživanje (pokreće Google Gemma + GPT-4o!)
-// @description:ht      Ajoute repons AI nan Google Search (ki mache ak Google Gemma + GPT-4o!)
-// @description:hu      AI-válaszokat ad a Google Kereséshez (a Google Gemma + GPT-4o által üzemeltetett!)
-// @description:hy      Ավելացնում է AI-ի պատասխանները Google Search-ին (գործում է Google Gemma + GPT-4o!)
-// @description:id      Menambahkan jawaban AI ke Google Penelusuran (didukung oleh Google Gemma + GPT-4o!)
-// @description:ig      Na-agbakwụnye azịza AI na Ọchụchọ Google (Google Gemma + GPT-4o kwadoro!)
-// @description:is      Bætir gervigreind svörum við Google leit (knúið af Google Gemma + GPT-4o!)
-// @description:it      Aggiunge risposte AI alla Ricerca Google (con tecnologia Google Gemma + GPT-4o!)
-// @description:ja      Google 検索に AI 回答を追加します (Google Gemma + GPT-4o を搭載)
-// @description:jv      Nambahake jawaban AI menyang Google Search (powered by Google Gemma + GPT-4o!)
-// @description:ka      ამატებს AI პასუხებს Google Search-ში (გამშვები Google Gemma + GPT-4o!)
-// @description:kg      Kozala AI mpenza na Google Search (nasala malamu na Google Gemma + GPT-4o!)
-// @description:kk      Google Search қызметіне AI жауаптарын қосады (Google Gemma + GPT-4o арқылы жұмыс істейді!)
-// @description:kl      Google-imut imartaasut pingaaruteqaraluartoq (Google Gemma + GPT-4o!-imut pingaaruteqarlugu)
-// @description:km      បន្ថែមចម្លើយ AI ទៅ Google Search (ដំណើរការដោយ Google Gemma + GPT-4o!)
-// @description:kn      Google ಹುಡುಕಾಟಕ್ಕೆ AI ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ (Google Gemma + GPT-4o ನಿಂದ ನಡೆಸಲ್ಪಡುತ್ತಿದೆ!)
-// @description:ko      Google 검색에 AI 답변 추가(Google Gemma + GPT-4o!)
-// @description:kok     Google Search कडेन AI जापो जोडटा (Google Gemma + GPT-4o कडल्यान चालीत!)
-// @description:kr      Yi AI jawo cikin Google Search (powered da Google Gemma + GPT-4o!)
-// @description:ks      Google Search تەز ئی ئای وعدەی (Google Gemma + GPT-4o! دوہ ئی جوڑ دەچ )
-// @description:ku      Bersivên AI-ê li Lêgerîna Google-ê zêde dike (ji hêla Google Gemma + GPT-4o ve hatî hêz kirin!)
-// @description:ky      Google издөөдө AI жооптарды кошуп чыгарат (Google Gemma + GPT-4o! орденелген)
-// @description:la      Addit AI responsa inquisitionis Google (potestas a Google Gemma + GPT-4o!)
-// @description:lb      Füügt AI Äntwerten op Google Sich (ugedriwwen vu Google Gemma + GPT-4o!)
-// @description:lg      Enkuba za Google Search (ezimbudde mu Google Gemma + GPT-4o!)
-// @description:ln      Ebakisi biyano ya AI na Google Search (ezali na nguya ya Google Gemma + GPT-4o!)
-// @description:lo      ເພີ່ມຄໍາຕອບ AI ໃສ່ Google Search (ຂັບເຄື່ອນໂດຍ Google Gemma + GPT-4o!)
-// @description:lt      Prideda AI atsakymus į Google paiešką (parengiama naudojant Google Gemma + GPT-4o!)
-// @description:lv      Pievieno AI atbildes Google meklēšanai (nodrošina Google Gemma + GPT-4o!)
-// @description:mg      Manampy valiny AI amin'ny Fikarohana Google (navoakan'ny Google Gemma + GPT-4o!)
-// @description:mh      Eo an Google Search AI (e ko ilo Google Gemma + GPT-4o!)
-// @description:mi      Ka taapirihia nga whakautu AI ki te Rapu a Google (whakamanahia e Google Gemma + GPT-4o!)
-// @description:mk      Додава одговори со вештачка интелигенција во Пребарување на Google (напојувано од Google Gemma + GPT-4o!)
-// @description:ml      Google തിരയലിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു (Google Gemma + GPT-4o നൽകുന്നതാണ്!)
-// @description:mn      Google Хайлтад хиймэл оюун ухааны хариултуудыг нэмдэг (Google Gemma + GPT-4o!)
-// @description:mr      Google शोध मध्ये AI उत्तरे जोडते (Google Gemma + GPT-4o द्वारे समर्थित!)
-// @description:ms      Menambahkan jawapan AI pada Carian Google (dikuasakan oleh Google Gemma + GPT-4o!)
-// @description:mt      Iżżid it-tweġibiet tal-AI ma' Google Search (mħaddma minn Google Gemma + GPT-4o!)
-// @description:my      Google Search သို့ AI အဖြေများကို ပေါင်းထည့်သည် (Google Gemma + GPT-4o!)
-// @description:na      E AI naba Nauru Google Search (aimen Google Gemma + GPT-4o!)
-// @description:nb      Legger til AI-svar til Google Søk (drevet av Google Gemma + GPT-4o!)
-// @description:nd      Izixhumanisi zika AI ku-Google Search (kuthelekiswa ngu-Google Gemma + GPT-4o!)
-// @description:ne      Google खोजमा AI जवाफहरू थप्छ (Google Gemma + GPT-4o द्वारा संचालित!)
-// @description:ng      Okulonga AI pa Google Search (ombinga mbo Google Gemma + GPT-4o!)
-// @description:nl      Voegt AI-antwoorden toe aan Google Zoeken (mogelijk gemaakt door Google Gemma + GPT-4o!)
-// @description:nn      Legg til AI-svar i Google-søk (drivkraft frå Google Gemma + GPT-4o!)
-// @description:no      Legger til AI-svar til Google Søk (drevet av Google Gemma + GPT-4o!)
-// @description:nso     Bolela le marwala a AI ka Google Search (ka beke e be e fetolang Google Gemma + GPT-4o!)
-// @description:ny      Imawonjezera mayankho a AI ku Google Search (yoyendetsedwa ndi Google Gemma + GPT-4o!)
-// @description:oc      Ajuda de respostas d'IA a la Recèrca Google (impulsat per Google Gemma + GPT-4o!)
-// @description:om      Deebii AI Google Search irratti dabalata (Google Gemma + GPT-4o tiin kan hojjetamu!)
-// @description:or      ଗୁଗୁଲ୍ ସନ୍ଧାନରେ AI ଉତ୍ତର ଯୋଗ କରେ (ଗୁଗୁଲ୍ ଜେମା + GPT-4o ଦ୍ୱାରା ଚାଳିତ!)
-// @description:pa      Google ਖੋਜ ਵਿੱਚ AI ਜਵਾਬ ਜੋੜਦਾ ਹੈ (Google Gemma + GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ!)
-// @description:pl      Dodaje odpowiedzi AI do wyszukiwarki Google (obsługiwane przez Google Gemma + GPT-4o!)
-// @description:ps      AI جوابونه د Google Search کې اضافه کړې (پاښې کښې د Google Gemma + GPT-4o! پر ورکړل شوی)
-// @description:pt      Adiciona respostas de IA à Pesquisa Google (desenvolvido por Google Gemma + GPT-4o!)
-// @description:pt-BR   Adiciona respostas de IA à Pesquisa Google (desenvolvido por Google Gemma + GPT-4o!)
-// @description:qu      AI kutichiykunata Google Maskanaman yapan (Google Gemma + GPT-4o kaqwan kallpachasqa!)
-// @description:rm      Agionta las repartizions da l'IA a la Raisch da Google (alimentà da Google Gemma + GPT-4o!)
-// @description:rn      Kujojora amatangazo ya AI muri Google Search (yibumosoje na Google Gemma + GPT-4o!)
-// @description:ro      Adaugă răspunsuri AI la Căutarea Google (produs de Google Gemma + GPT-4o!)
-// @description:ru      Добавляет ответы ИИ в поиск Google (на базе Google Gemma + GPT-4o!)
-// @description:rw      Ongeraho ibisubizo bya AI kubushakashatsi bwa Google (bikoreshwa na Google Gemma + GPT-4o!)
-// @description:sa      Google Search इत्यत्र AI उत्तराणि योजयति (Google Gemma + GPT-4o द्वारा संचालितम्!)
-// @description:sat     Google Search ᱡᱟᱢᱟᱨᱤ AI ᱠᱷᱟᱹᱨᱩᱣᱟᱨ ᱨᱮᱰ Google Gemma + GPT-4o! (ᱡᱤ ᱠᱟᱹᱫᱽᱨᱟᱡᱟᱨ)
-// @description:sc      Agiunta is rispostas de IA a sa Cèrca de Google (moteada dae Google Gemma + GPT-4o!)
-// @description:sd      AI جوابن کي گوگل سرچ ۾ شامل ڪري ٿو (گوگل گيما + GPT-4o پاران طاقتور!)
-// @description:se      Čuoŋománu AI vástidat Google Čoahkkimis (ráđđi Google Gemma + GPT-4o!)
-// @description:sg      Ko tî Google Search (yî mazângâkâzâ aye Google Gemma + GPT-4o!)
-// @description:si      Google සෙවීමට AI පිළිතුරු එක් කරයි (Google Gemma + GPT-4o මගින් බලගන්වයි!)
-// @description:sk      Pridáva odpovede AI do Vyhľadávania Google (využíva Google Gemma + GPT-4o!)
-// @description:sl      Iskanju Google doda odgovore AI (poganja Google Gemma + GPT-4o!)
-// @description:sm      Fa'aopoopo tali AI ile Su'esu'ega Google (fa'aola e Google Gemma + GPT-4o!)
-// @description:sn      Inowedzera mhinduro dzeAI kuGoogle Search (inofambiswa neGoogle Gemma + GPT-4o!)
-// @description:so      Waxay ku daraa jawaabaha AI raadinta Google (waxaa ku shaqeeya Google Gemma + GPT-4o!)
-// @description:sq      Shton përgjigjet e AI në Google Search (mundësuar nga Google Gemma + GPT-4o!)
-// @description:sr      Додаје АИ одговоре у Гоогле претрагу (покреће Гоогле Гемма + ГПТ-4о!)
-// @description:ss      Sicubungisa imiphumela ye-AI kwi-Google Search (ikhethe lihamba yi-Google Gemma + GPT-4o!)
-// @description:st      E eketsa likarabo tsa AI ho Google Search (e tsamaisoang ke Google Gemma + GPT-4o!)
-// @description:su      Nambahkeun jawaban AI kana Google Search (Powered by Google Gemma + GPT-4o!)
-// @description:sv      Lägger till AI-svar till Google Sök (driven av Google Gemma + GPT-4o!)
-// @description:sw      Huongeza majibu ya AI kwa Tafuta na Google (inayoendeshwa na Google Gemma + GPT-4o!)
-// @description:ta      Google தேடலில் AI பதில்களைச் சேர்க்கிறது (Google Gemma + GPT-4o மூலம் இயக்கப்படுகிறது!)
-// @description:te      Google శోధనకు AI సమాధానాలను జోడిస్తుంది (Google Gemma + GPT-4o ద్వారా ఆధారితం!)
-// @description:tg      Ба Ҷустуҷӯи Google ҷавобҳои AI илова мекунад (аз ҷониби Google Gemma + GPT-4o!)
-// @description:th      เพิ่มคำตอบ AI ให้กับ Google Search (ขับเคลื่อนโดย Google Gemma + GPT-4o!)
-// @description:ti      ኣብ Google Search (ብ Google Gemma + GPT-4o ዝሰርሕ!) ናይ AI መልስታት ይውስኽ
-// @description:tk      Google Gözlegine AI jogaplaryny goşýar (Google Gemma + GPT-4o bilen işleýär!)
-// @description:tl      Idinagdag ang mga sagot ng AI sa Google Search (pinaandar ng Google Gemma + GPT-4o!)
-// @description:tn      Go dirwa ditlhopho tsa AI mo Google Search (lebelotse ke Google Gemma + GPT-4o!)
-// @description:to      Kuo hiki 'e he Fakamaau 'a e AI ki he Ngaahi fakafiefia 'o e Google (tokoni 'e he Google Gemma + GPT-4o!)
-// @description:tr      Google Arama'ya yapay zeka yanıtları ekler (Google Gemma + GPT-4o tarafından desteklenir!)
-// @description:ts      Ku engetela tinhlamulo ta AI eka Google Search (leyi fambiwaka hi Google Gemma + GPT-4o!)
-// @description:tt      Google Search'ка AI җаваплары өсти (Google Gemma + GPT-4o белән эшләнгән!)
-// @description:tw      Ɔde AI mmuae ka Google Search ho (a Google Gemma + GPT-4o na ɛma ahoɔden!)
-// @description:ug      گۇگۇل ئىزدەشكە سۈنئىي ئەقىل جاۋابلىرىنى قوشىدۇ (Google Gemma + GPT-4o!)
-// @description:uk      Додає відповіді штучного інтелекту до Пошуку Google (на основі Google Gemma + GPT-4o!)
-// @description:ur      Google تلاش میں AI جوابات شامل کرتا ہے (Google Gemma + GPT-4o کے ذریعے تقویت یافتہ!)
-// @description:uz      Google Qidiruvga AI javoblarini qo'shadi (Google Gemma + GPT-4o tomonidan quvvatlanadi!)
-// @description:ve      Vhulangwa ha mavhuso a AI kha Google Search (vho tshiwanaho nga Google Gemma + GPT-4o!)
-// @description:vi      Thêm câu trả lời AI vào Google Tìm kiếm (được cung cấp bởi Google Gemma + GPT-4o!)
-// @description:vo      Jepolö AI smüds ob Google Zif (kaukipölö vedönöfik Google Gemma + GPT-4o!)
-// @description:wa      Adjon des reponses d'IA a l'echetchinge Googel (mouvé pa Googel Gemma + GPT-4o!)
-// @description:wo      Am nañu bëggeeku AI yu jàng ci Google Search (ñu wecc nit Google Gemma + GPT-4o!)
-// @description:xh      Yongeza iimpendulo ze-AI kuPhendlo lukaGoogle (ixhaswe yiGoogle Gemma + GPT-4o!)
-// @description:yi      מוסיף אַי ענטפֿערס צו Google זוך (פּאַוערד דורך Google Gemma + GPT-4o!)
-// @description:yo      Ṣafikun awọn idahun AI si Wiwa Google (agbara nipasẹ Google Gemma + GPT-4o!)
-// @description:za      Gwngh gvmjcoengh jaedzhaengz mav Mvaenz Googel (enghdaengz Gvmjcoengh Gemma + GPT-4o!)
-// @description:zh      为 Google 搜索添加 AI 答案（由 Google Gemma + GPT-4o 提供支持！）
-// @description:zh-CN   为 Google 搜索添加 AI 答案（由 Google Gemma + GPT-4o 提供支持！）
-// @description:zh-HK   將 AI 答案新增至 Google 搜尋（由 Google Gemma + GPT-4o 提供支援！）
-// @description:zh-SG   为 Google 搜索添加 AI 答案（由 Google Gemma + GPT-4o 提供支持！）
-// @description:zh-TW   將 AI 答案新增至 Google 搜尋（由 Google Gemma + GPT-4o 提供支援！）
-// @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
+// @description         Adds AI answers to Google Search. Ask from any site. Powered by Google Gemma + GPT-4o!
+// @description:af      Voeg KI-antwoorde by Google Soek. Vra vanaf enige webwerf. Aangedryf deur Google Gemma + GPT-4o!
+// @description:am      የAI መልስናወርቃለች እርስዎን Google ፍለጋ፣ የእያንዳንዱ ድረ-ገጽን ጥያቄ በመጠቀም ያለበት፣ ግብጽን የተሻለ እና GPT-4o! ተከታታይ
+// @description:ar      يضيف إجابات الذكاء الاصطناعي إلى بحث Google. اسأل من أي موقع. مدعوم بواسطة Google Gemma + GPT-4o!
+// @description:az      Google Axtarışa AI cavabları əlavə edir. Hər hansı bir səhifədən sual edin. Google Gemma + GPT-4o ilə işləyir!
+// @description:be      Дадае адказы штучнага інтэлекту ў пошук Google. Запытвайце з любога сайта. На базе Google Gemma + GPT-4o!
+// @description:bem     Yamfumano AI mafundo pa Google Search. Uliza kumayi malo awebusayiti. Eko wakuleta na Google Gemma + GPT-4o!
+// @description:bg      Добавя AI отговори към Google Търсене. Питайте от всяко сайт. Осигурено от Google Gemma + GPT-4o!
+// @description:bn      Google অনুসন্ধানে AI উত্তর যোগ করে। যেকোনো সাইট থেকে জিজ্ঞাসা করুন। Google Gemma + GPT-4o দ্বারা চালিত!
+// @description:bo      Google པ་ལས་ AI དྲུག་བཏུས་བྱས་ཀྱི་འཕྲུལ་ཆས་གསར་ཤོག། གསང་ལས་སྙན་ཞུ་བཞག་པའི་གློ་དོན་འགྱོ་སྡེ། Google Gemma + GPT-4o གི་བྱུང་བའི་ལས་རིགས་འཕྲིན་ལས་ཕབ།
+// @description:bs      Dodaje AI odgovore u Google pretragu. Pitajte sa bilo kog sajta. Pokreće Google Gemma + GPT-4o!
+// @description:ca      Afegeix respostes d'IA a la Cerca de Google. Pregunta des de qualsevol lloc web. Amb la tecnologia de Google Gemma + GPT-4o!
+// @description:ceb     Nagdugang mga tubag sa AI sa Google Search. Pangutana gikan sa bisan unsang site. Gipadagan sa Google Gemma + GPT-4o!
+// @description:cs      Přidává odpovědi AI do Vyhledávání Google. Zeptejte se z libovolného webu. Využívá technologii Google Gemma + GPT-4o!
+// @description:cy      Yn ychwanegu atebion AI i Google Search. Gofynnwch o unrhyw wefan. Wedi'u pweru gan Google Gemma + GPT-4o!
+// @description:da      Tilføjer AI-svar til Google Søgning. Spørg fra enhver hjemmeside. Drevet af Google Gemma + GPT-4o!
+// @description:de      Fügt der Google-Suche KI-Antworten hinzu. Fragen Sie von jeder Website aus. Angetrieben von Google Gemma + GPT-4o!
+// @description:dv      ގޮތަކަށް Google ހިތުގައި AI އަށް އިތުރުކުރަންވީ. އެއްކޮށްފިވާ ތަރުޖަމާކުރަންވީ ސަބަބުގެ އަދަދު. ގޮތަކަށް ޤިމާން Gemma + GPT-4o!
+// @description:el      Προσθέτει απαντήσεις ΤΝ στην αναζήτηση Google. Κάντε ερωτήσεις από οποιονδήποτε ιστότοπο. Τροφοδοτείται από την τεχνολογία Google Gemma + GPT-4o!
+// @description:en      Adds AI answers to Google Search. Ask from any site. Powered by Google Gemma + GPT-4o!
+// @description:eo      Aldonas AI-respondojn al Google-Serĉo. Demandu de iu ajn retejo. Funkciigita de Google Gemma + GPT-4o!
+// @description:es      Agrega respuestas de IA a la Búsqueda de Google. Pregunta desde cualquier sitio. Impulsado por Google Gemma + GPT-4o!
+// @description:et      Lisab Google'i otsingusse AI-vastused. Küsige igast veebisaidilt. Töötab Google Gemma + GPT-4o abil!
+// @description:eu      Gehitu erantzunak Google Bilaketara. Galdetu edozein webguneetatik. Google Gemma + GPT-4o teknologiak erabiliak!
+// @description:fa      جوابهای هوش مصنوعی را به جستجوی گوگل اضافه میکند. از هر سایتی بپرسید. توسط Google Gemma + GPT-4o پیشرانه شده است!
+// @description:ff      Yeesal ar Ceesal AI soobal mo Google. Ndee ciftoranka tonɗi. Yayee hooree Google Gemma + GPT-4o!
+// @description:fi      Lisää tekoälyn vastaukset Google-hakuun. Kysy mistä tahansa sivustosta. Toimii Google Gemma + GPT-4o -teknologialla!
+// @description:fo      Leggur AI-svar til Google Leit. Spyr frá hvørjum heimasíðu. Drívur av Google Gemma + GPT-4o!
+// @description:fr      Ajoute des réponses IA à la recherche Google. Posez des questions depuis n'importe quel site. Alimenté par Google Gemma + GPT-4o !
+// @description:fr-CA   Ajoute des réponses IA à la recherche Google. Posez des questions depuis n'importe quel site. Alimenté par Google Gemma + GPT-4o !
+// @description:fy      Foeget AI-antwurden ta oan Google Sykje. Fraach fan elke site. Yn 'e macht fan Google Gemma + GPT-4o!
+// @description:ga      Cuirtear freagraí AR le Google Search. Cuir ceist ó aon suíomh. Tá sé iontach le cumhacht Google Gemma + GPT-4o!
+// @description:gd      Tha freagairtean AI airson Lorg Google a' cur ris. Cuir ceist bhon àite sam bith. Air a stiùireadh le Google Gemma + GPT-4o!
+// @description:gl      Engade respostas de IA á Busca de Google. Pregunta desde calquera sitio. Potenciado por Google Gemma + GPT-4o!
+// @description:gn      Ko añe'ẽchagua heta mba'epytĩvo ğuarã ha'eve Google Search. Hína oguereko nendive mba'épa. Google Gemma + GPT-4o amandajeheguasã!
+// @description:gu      ગુગલ શોધમાં AI જવાબો ઉમેરે છે. કોઈપણ સાઇટ પરથી પ્રશ્ન કરો. Google જેમા + GPT-4o સાથે ચાલે છે!
+// @description:gv      Ta currymyn yn Google Lhie er jannoo freaghtyn AI. Cur kiune veih quoi dy chooid vaayl. Stiurrit liorish Google Gemma + GPT-4o!
+// @description:ha      Sanya yanayi na AI zuwa Bincike na Google. Tambaya daga wani shafin. An kai matawar Google Gemma + GPT-4o!
+// @description:haw     Hoʻohui aku i nā hoʻopaʻa ʻana AI i ka ʻimi iā Google. Nīnau mai ma kekahi ʻaoʻao. Hoʻohui ʻia e Google Gemma + GPT-4o!
+// @description:he      מוסיף תשובות AI לחיפוש ב-Google. שאל מכל אתר. מופעל על ידי גוגל Gemma + GPT-4o!
+// @description:hi      गूगल सर्च में AI जवाब जोड़ता है। किसी भी साइट से पूछें। गूगल जेमा + GPT-4o से पावर ड्राइव किया जाता है!
+// @description:hmn     Thaum twb ua ntej pab AI nyob rau kev siv Google. Nco npe pib los sis puas tau nyob rau kev tshiab. Hu ua Google Gemma + GPT-4o!
+// @description:hr      Dodaje AI odgovore na Google pretragu. Pitajte s bilo kojeg mjesta. Pokreće Google Gemma + GPT-4o!
+// @description:ht      Ajoute répons nan motorèch Google la a. Poze kesyon soti nan nenpòt sit. Alimante pa Google Gemma + GPT-4o!
+// @description:hu      AI válaszokat ad a Google-kereséshez. Kérd bármelyik webhelyről. A Google Gemma + GPT-4o által működtetett!
+// @description:hy      Ավելացնում է AI պատասխաններ Google որոնումում։ Հարցեր կատարեք ամենատարածված կայքերից։ Որակավորված է Google Gemma + GPT-4o կողմից։
+// @description:ia      Adde responas de AI a Google Sercha. Fa questiones de ulle sito. Alimentate per Google Gemma + GPT-4o!
+// @description:id      Menambahkan jawaban AI ke Pencarian Google. Tanyakan dari situs mana pun. Didukung oleh Google Gemma + GPT-4o!
+// @description:ig      Kwee na-ewe ọrụ AI na Google Search. Kwee site n'anya. Mgbanwe na Google Gemma + GPT-4o!
+// @description:is      Bætir við AI-svörum við Google leit. Spyrji frá hverjum vefsvæði. Rekin með Google Gemma + GPT-4o!
+// @description:it      Aggiunge risposte AI alla Ricerca Google. Fai domande da qualsiasi sito. Alimentato da Google Gemma + GPT-4o!
+// @description:ja      Google 検索に AI 回答を追加します。どのサイトからでも質問してください。Google Gemma + GPT-4o で動作します！
+// @description:jv      Nambahke jawaban AI menyang Panggonan Google. Tanya saka piranti katresna. Digawe ora Google Gemma + GPT-4o!
+// @description:ka      დაამატებს AI პასუხებს Google ძებნაში. დასაკითხებლად ნებისმიერი საიტიდან. Google Gemma + GPT-4o-ის მიერ გამართულია!
+// @description:kk      Google іздеудегі AI жауаптарды қосады. Өтінімдерді кез келген сайттан сұраңыз. Google Gemma + GPT-4o арқылы жұмыс істейді!
+// @description:km      បន្ថែមការឆ្លើយដូចជាអក្សរអង់គ្លេសទៅលើការស្វែងរក Google។ សួរសំនួរពីគេហទំព័រមួយ។ គ្រប់គ្រងដោយ Google Gemma + GPT-4o!
+// @description:kn      ಗೂಗಲ್ ಸರ್ಚ್ನಲ್ಲಿ AI ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ. ಯಾವುದೇ ತಾಳದಿಂದ ಪ್ರಶ್ನಿಸಿ. Google Gemma + GPT-4o ಶಕ್ತಿಯಿಂದ ಪ್ರಾರಂಭ!
+// @description:ko      Google 검색에 AI 답변 추가. 모든 사이트에서 질문하세요. Google Gemma + GPT-4o로 제공됩니다!
+// @description:kok     Google Search मा AI उत्तरहरू थप्छ। कुनै पनि साइटबाट प्रश्न गर्नुहोस्। Google Gemma + GPT-4o द्वारा प्रायोजित!
+// @description:kr      Google 검색에 AI 답변 추가. 모든 사이트에서 질문하세요. Google Gemma + GPT-4o로 제공됩니다!
+// @description:ks      Google Search تەز ئی ئای وعدەی. هەر سایتێکەوە لەخوارەوە پرسیار بکە. لەلایەن Google Gemma + GPT-4o دا دامەزراندوە!
+// @description:ku      Google Search-ê bersivên AI zêde dike. Ji hemû malperan pirs bike. Ji bo ku hûn bêtir bifikirin, ji hêla Google Gemma + GPT-4o ve tê peyda kirin!
+// @description:ky      Google издөөдө AI жооптарды кошуп чыгарат. Баардык сайттардан суроо сороңуз. Google Gemma + GPT-4o орденелген!
+// @description:la      AI responsa Google inquisitioni addit. Ex quaestione quaesiveris. Potestas a Google Gemma + GPT-4o!
+// @description:lb      AI Äntwerten op Google Sich bäisetzen. Vu jiddwere Site froen. Gedriwwen vun Google Gemma + GPT-4o!
+// @description:lg      Enkuba za Google Search zongezeko. Zivanye kusosola nga mu kintu kintu. Ekirizibwa n'okutuukiriza mu Google Gemma + GPT-4o!
+// @description:ln      Biyano ya AI na Google Search ezongisi kobeteli. Soki wapi na site moko moko. Ebandaki na Google Gemma + GPT-4o!
+// @description:lo      ຄໍາຕອບ AI ເພື່ອທີ່ Google Search. ບົດສອນຈາກເນື້ອຫາທັງຫມົດ. ໄດ້ຈາກ Google Gemma + GPT-4o!
+// @description:lt      Pridedami AI atsakymai į Google paiešką. Klausykite iš bet kurio tinklalapio. Google Gemma + GPT-4o naudojamas!
+// @description:lv      Pievieno AI atbildes Google meklēšanai. Jautājiet no jebkuras vietnes. Google Gemma + GPT-4o barošana!
+// @description:mg      Manampy valiny AI amin'ny Fikarohana Google. Mandray fitenenana avy any amin'ny toerana iray. Nampanjakana amin'ny Google Gemma + GPT-4o!
+// @description:mh      Eo an Google Search AI. E jou kwoj ilo aer! E ko ilo Google Gemma + GPT-4o!
+// @description:mi      Ka taapirihia nga whakautu AI ki te Rapu a Google. Pātai i runga i ia paetukutuku. I takatūtia e Google Gemma + GPT-4o!
+// @description:mk      Додавање на AI одговори на пребарување на Google. Прашајте од било која страница. Давање на напојување од Google Gemma + GPT-4o!
+// @description:ml      Google തിരയലിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു. ഏതെങ്കിലും സൈറ്റിൽ ചോദിക്കുക. Google Gemma + GPT-4o നിർത്തലാക്കുന്നു!
+// @description:mn      Google Хайлтад хиймэл оюун ухааны хариултуудыг нэмдэг. Асуулт хийн гэхэд аль сайтас болохыг асуулна уу. Google Gemma + GPT-4o-аар хүргэгдэнэ!
+// @description:mr      Google शोध मध्ये AI उत्तरे जोडते. कोणत्याही संकेतस्थळावरून प्रश्न विचारा. Google Gemma + GPT-4o चालू केलेल्याने!
+// @description:ms      Menambah jawapan AI pada Carian Google. Tanyakan dari mana-mana laman web. Digerakkan oleh Google Gemma + GPT-4o!
+// @description:mt      Iżżid it-tweġibiet tal-AI ma' Google Search. Itlob minn kwalunkwe sit. Mħaddma minn Google Gemma + GPT-4o!
+// @description:my      ကုန်လက်မှုသို့ AI အဖြေများကို Google ရဲ့ရှာဖွေအဖြေပေးပါ။ အနည်းဆုံးဆိုရင်းမှာမေးခွင့်ပြုပါ။ Google Gemma + GPT-4o အကြောင်းကြားသည်!
+// @description:na      Ondje okwa tulwa AI Ondje Google Search. Onande okwa monandje komulilo yoka monande okwa ondululuko ondata Google Gemma + GPT-4o!
+// @description:nb      Legger til AI-svar til Google Søk. Spør fra hvilken som helst side. Drevet av Google Gemma + GPT-4o!
+// @description:nd      Zviunganidza maita anotaura e AI kuna Google Search. Pinda kuburikidza kubva panyika ine. Zvakawanikwa na Google Gemma + GPT-4o!
+// @description:ne      Google खोजमा AI जवाफहरू थप्छ। कुनै साइटबाट सोध्नुहोस्। Google Gemma + GPT-4o द्वारा संचालित!
+// @description:ng      Onguqulo AI kwi-Google Search. Buza ekuhlaleni kokubonakala. Kubanjelwe ngu-Google Gemma + GPT-4o!
+// @description:nl      Voegt AI-antwoorden toe aan Google Zoeken. Vraag vanaf elke site. Mogelijk gemaakt door Google Gemma + GPT-4o!
+// @description:nn      Legg til AI-svar i Google-søk. Spør frå kva som helst nettstad. Drevet av Google Gemma + GPT-4o!
+// @description:no      Legger til AI-svar til Google Søk. Spør fra hvilken som helst side. Drevet av Google Gemma + GPT-4o!
+// @description:nso     Bolela marwala a AI ka Google Search. Botse ka nako eo e ka utlwisiswa. E re fetolang ka Google Gemma + GPT-4o!
+// @description:ny      Mawonjezera mayankho a AI pa Google Search. Uchenjeza kuchokera kumtengo wonse. Yoyenera ndi Google Gemma + GPT-4o!
+// @description:oc      Ajuda de respostas d'IA a la Recèrca Google. Demandatz dins n'importa quala pagina. Impulsat per Google Gemma + GPT-4o!
+// @description:om      Deebii AI Google Search irratti dabalata. Salphina midhaan eessatti. Google Gemma + GPT-4o tiin kan hojjetamu!
+// @description:or      Google ସର୍ଚ୍‌ରେ AI ଉତ୍ତର ଯୋଗ କରୁଛି। ଯେକଣ ସାଇଟରୁ ପ୍ରଶ୍ନିତ୍ୱ କରିବାରେ। Google Gemma + GPT-4o ଦ୍ୱାରା ସାଧାରଣ କରାଯାଇଛି!
+// @description:pa      Google ਖੋਜ ਵਿੱਚ AI ਜਵਾਬ ਜੋੜਦਾ ਹੈ। ਕਿਸੇ ਵੀ ਸਾਈਟ ਤੋਂ ਪੁੱਛੋ। Google Gemma + GPT-4o ਦੁਆਰਾ ਚਲਾਇਆ ਜਾਂਦਾ ਹੈ!
+// @description:pl      Dodaje odpowiedzi AI do wyszukiwarki Google. Zapytaj z dowolnej strony. Obsługiwane przez Google Gemma + GPT-4o!
+// @description:ps      AI جوابونه د Google Search کې اضافه کړې. د کولو د کوم کښته پوښتوي. په لاسرسی کې پوه شوی شوی د Google Gemma + GPT-4o!
+// @description:pt      Adiciona respostas de IA à Pesquisa Google. Pergunte de qualquer site. Desenvolvido por Google Gemma + GPT-4o!
+// @description:pt-BR   Adiciona respostas de IA à Pesquisa Google. Pergunte de qualquer site. Desenvolvido por Google Gemma + GPT-4o!
+// @description:qu      AI kutichiykunata Google Maskanaman yapan. Kayman tawqa qallarimu. Google Gemma + GPT-4o kaqwan kallpachasqa!
+// @description:rm      Agionta las repartizions da l'IA a la Raisch da Google. Dumonda da qualsiasa pagina. Alimentà da Google Gemma + GPT-4o!
+// @description:rn      Kujojora amatangazo ya AI muri Google Search. Ibura kuri wabwo wese. Yibumosoje na Google Gemma + GPT-4o!
+// @description:ro      Adaugă răspunsuri AI la Căutarea Google. Întreabă de pe orice site. Produs de Google Gemma + GPT-4o!
+// @description:ru      Добавляет ответы ИИ в поиск Google. Спросите с любого сайта. На базе Google Gemma + GPT-4o!
+// @description:rw      Ongeraho ibisubizo bya AI kubushakashatsi bwa Google. Baza kwandika kuri website yihariye. Bikoreshwa na Google Gemma + GPT-4o!
+// @description:sa      Google Search इत्यत्र AI उत्तराणि योजयति। कस्यचित् स्थानादपि प्रच्छन्नम्। Google Gemma + GPT-4o द्वारेणाधारितम्!
+// @description:sat     Google Search ᱡᱟᱢᱟᱨᱤ AI ᱠᱷᱟᱹᱨᱩᱣᱟᱨ ᱨᱮᱰ ᱠᱮᱴᱮᱫᱟ ᱡᱤᱠᱷᱮᱱᱮᱫᱽᱨᱟᱡ ᱞᱟᱠᱟᱢᱟᱨᱮᱭᱟᱜᱼ ᱞᱟᱨᱟᱡ ᱥᱟᱢᱟᱞᱮᱡᱽᱨᱟᱱᱤ!
+// @description:sc      Agiunta is rispostas de IA a sa Cèrca de Google. Bidiat de sa pàgina chi ses. Moteada dae Google Gemma + GPT-4o!
+// @description:sd      AI جوابن کي گوگل سرچ ۾ شامل ڪري ٿو. ڪونهي ويب سائيٽ کان سوٽي ڪريو. گوگل جيما + GPT-4o کان چلائيل!
+// @description:se      Čuoŋománu AI vástidat Google Čoahkkimis. Dáváda olbmuid guorahallamiid. Ráđđi Google Gemma + GPT-4o!
+// @description:sg      Ko tî Google Search. (yî mazângâkâzâ aye Google Gemma + GPT-4o!)
+// @description:si      Google සෙවීමට AI පිළිතුරු එක් කරයි. කිසිවක් ව්‍යාපෘතියේ ඉල්ලීමක් කරන්න. Google Gemma + GPT-4o මගින් සක්රිය කළ!
+// @description:sk      Pridáva odpovede AI do Vyhľadávania Google. Spýtajte sa z ľubovoľnej stránky. Využíva Google Gemma + GPT-4o!
+// @description:sl      Iskanju Google doda odgovore AI. Vprašajte iz katere koli strani. Poganja Google Gemma + GPT-4o!
+// @description:sm      Fa'aopoopo tali AI ile Su'esu'ega Google. Fesili mai le feiloa'i. Fa'aola e Google Gemma + GPT-4o!
+// @description:sn      Inowedzera mhinduro dzeAI kuGoogle Search. Inodya kubva kune zvakawanda. Inofambiswa neGoogle Gemma + GPT-4o!
+// @description:so      Waxay ku daraa jawaabaha AI raadinta Google. Ku weydiin qof kasta oo bogga. Waxaa ku shaqeeya Google Gemma + GPT-4o!
+// @description:sq      Shton përgjigjet e AI në Google Search. Pyet nga çdo faqe. Mundësuar nga Google Gemma + GPT-4o!
+// @description:sr      Додаје АИ одговоре у Гоогле претрагу. Питајте са било ког сајта. Покреће Гоогле Гемма + ГПТ-4о!
+// @description:ss      Sicubungisa imiphumela ye-AI kwi-Google Search. Ncenga kwikheli elithile. Ikhetha lihamba yi-Google Gemma + GPT-4o!
+// @description:st      E eketsa likarabo tsa AI ho Google Search. Sebelisa mosebelisi oa lefatše. E tsamaisoang ke Google Gemma + GPT-4o!
+// @description:su      Nambahkeun jawaban AI kana Google Search. Salaku ti kénéh kasieh manawi. Powered by Google Gemma + GPT-4o!
+// @description:sv      Lägger till AI-svar till Google Sök. Fråga från valfri webbplats. Driven av Google Gemma + GPT-4o!
+// @description:sw      Huongeza majibu ya AI kwa Tafuta na Google. Uliza kutoka kwenye tovuti yoyote. Inayoendeshwa na Google Gemma + GPT-4o!
+// @description:ta      Google தேடலில் AI பதில்களைச் சேர்க்கிறது. எந்த இணையதளத்தில் கேள்வி கேட்கலாம். Google Gemma + GPT-4o அன்றும் அமைக்கப்படுகிறது!
+// @description:te      Google శోధనకు AI సమాధానాలను జోడిస్తుంది. ఎవరైనా సైట్ నుండి అడిగండి. Google Gemma + GPT-4o ద్వారా ఆధారితం!
+// @description:tg      Ба Ҷустуҷӯи Google ҷавобҳои AI илова мекунад. Аз ҳар саҳифаи вебсайт пурсиш кунед. Ҷустуҷӯи Google Gemma + GPT-4o белән эшләнгән!
+// @description:th      เพิ่มคำตอบ AI ให้กับ Google Search. ถามจากเว็บไซต์ใดก็ได้. ขับเคลื่อนโดย Google Gemma + GPT-4o!
+// @description:ti      ኣብ Google Search ዋዕላይ ብትግርኛዕለኛን መልስቲ ኣልቦ ዝብል ዓይነት። በስራ እቶም ስልጠናን ተመልከቱ። ተጠቓምቲ Google Gemma + GPT-4o!
+// @description:tk      Google Gözlegine AI jogaplaryny goşýar. Indi web sahypasynyň işgärlerine soraw beriň. Google Gemma + GPT-4o bilen işleýär!
+// @description:tl      Idinagdag ang mga sagot ng AI sa Google Search. Magtanong mula sa anumang site. Pinaandar ng Google Gemma + GPT-4o!
+// @description:tn      Go dirwa ditlhopho tsa AI mo Google Search. Boima ka setlhare sa yone. Lebelotse ke Google Gemma + GPT-4o!
+// @description:to      Kuo hiki 'e he Fakamaau 'a e AI ki he Ngaahi fakafiefia 'o e Google. Fakakaukau'i mai 'i ha tefito fakatufonu. Tokoni 'e he Google Gemma + GPT-4o!
+// @description:tr      Google Arama'ya yapay zeka yanıtları ekler. Herhangi bir siteden sorun. Google Gemma + GPT-4o tarafından desteklenir!
+// @description:ts      Ku engetela tinhlamulo ta AI eka Google Search. Lava ku ntlafatsa hi ntsako wa wena. Leyi fambiwaka hi Google Gemma + GPT-4o!
+// @description:tt      Google Search'ка AI җаваплары өсти. Qullanğan bir saýtdan soraw salıñ. Google Gemma + GPT-4o белән эшләнгән!
+// @description:tw      Ɔde AI mmuae ka Google Search ho. Tɔe me ho nyinaa bɔ mu. A Google Gemma + GPT-4o na ɛma ahoɔden!
+// @description:ug      گۇگۇل ئىزدەشكە سۈنئىي ئەقىل جاۋابلىرىنى قوشىدۇ. ھەرقايسى سېتىدىن سوئال سوراڭ. Google Gemma + GPT-4o تومۇنىدا ئىشلىتىلىدۇ!
+// @description:uk      Додає відповіді штучного інтелекту до Пошуку Google. Питайте з будь-якого сайту. На основі Google Gemma + GPT-4o!
+// @description:ur      Google تلاش میں AI جوابات شامل کرتا ہے. کسی بھی سائٹ سے سوال کریں. Google Gemma + GPT-4o کے ذریعے تقویت یافتہ!
+// @description:uz      Google Qidiruvga AI javoblarini qo'shadi. Har qanday veb-saytdan so'ralishingiz mumkin. Google Gemma + GPT-4o tomonidan quvvatlanadi!
+// @description:ve      Vhulangwa ha mavhuso a AI kha Google Search. Vho dzhela u nga tshiṅedzwa fhasi. Vho tshiwanaho nga Google Gemma + GPT-4o!
+// @description:vi      Thêm câu trả lời AI vào Google Tìm kiếm. Hỏi từ bất kỳ trang nào. Được cung cấp bởi Google Gemma + GPT-4o!
+// @description:vo      Jepolö AI smüds ob Google Zif. Vödo yela pendobs atan. Kaukipölö vedönöfik Google Gemma + GPT-4o!
+// @description:wa      Adjon des reponses d'IA a l'echetchinge Googel. Poez-vos demandes sor n'importe kelle sit. Mouvé pa Googel Gemma + GPT-4o!
+// @description:wo      Am nañu bëggeeku AI yu jàng ci Google Search. Dem bañ nga am di yoon bi. Ñu wecc nit Google Gemma + GPT-4o!
+// @description:xh      Yongeza iimpendulo ze-AI kuPhendlo lukaGoogle. Phendula kwiintsuku yona. Ixhaswe yiGoogle Gemma + GPT-4o!
+// @description:yi      מוסיף אַי ענטפֿערס צו Google זוך. פּרעג אויף קיין אויפֿן ארטיקל. פּאַוערד דורך Google Gemma + GPT-4o!
+// @description:yo      Ṣafikun awọn idahun AI si Wiwa Google. Gbà mí lórí èrò nípa èyí tí ó tọ̀. Agbara nipasẹ Google Gemma + GPT-4o!
+// @description:za      Gwngh gvmjcoengh jaedzhaengz mav Mvaenz Googel. Veix veix mvangcvuengh dorn daenq. Enghdaengz Gvmjcoengh Gemma + GPT-4o!
+// @description:zh      为 Google 搜索添加 AI 答案。从任何网站提问。由 Google Gemma + GPT-4o 提供支持！
+// @description:zh-CN   为 Google 搜索添加 AI 答案。从任何网站提问。由 Google Gemma + GPT-4o 提供支持！
+// @description:zh-HK   將人工智慧答案加入 Google 搜尋。從任何網站詢問。由 Google Gemma + GPT-4o 提供支援！
+// @description:zh-SG   为 Google 搜索添加 AI 答案。从任何网站提问。由 Google Gemma + GPT-4o 提供支持！
+// @description:zh-TW   將人工智慧答案加入 Google 搜尋。從任何網站詢問。由 Google Gemma + GPT-4o 提供支援！
+// @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.19.4
+// @version             2024.6.20
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
