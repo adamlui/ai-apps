@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-Brave Search. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.20.8
+// @version             2024.6.20.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2622,7 +2622,7 @@ setTimeout(async () => {
             // Create/ID/stylize/append asktip div
             asktip = document.createElement('div') ; asktip.id = 'asktip'
             asktip.style.cssText = noUserSelectStyles
-              + `font-family: ${fontFamilies} ; font-size: 17px ;`
+              + `font-family: ${fontFamilies} ; font-size: 14px ;`
               + `position: absolute ; background-color: ${bgColor} ; border: 1px solid black ; border-radius: 12px ;`
               + 'padding: 5px 2px ; box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px ; display: none ; z-index: 1000'
             document.body.append(asktip)
@@ -2652,7 +2652,7 @@ setTimeout(async () => {
             const hideAsktipMenu = document.createElement('div')
             hideAsktipMenu.id = 'hide-asktip-menu' ; hideAsktipMenu.style.display = 'none'
             hideAsktipMenu.style.cssText = noUserSelectStyles
-              + `font-family: ${fontFamilies} ; font-size: 16px ; border: 1px solid black ; border-radius: 9px ;`
+              + `font-family: ${fontFamilies} ; font-size: 13px ; border: 1px solid black ; border-radius: 9px ;`
               + `display: none ; color: rgb(27, 27, 27) ; background: ${bgColor} ; position: absolute ; padding: 3px ;`
               + 'box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px ; z-index: 1200'
             document.body.append(hideAsktipMenu)
@@ -2699,7 +2699,7 @@ setTimeout(async () => {
                     if (!asktipContentSpan) { // make/append it
                         asktipContentSpan = document.createElement('span') ; asktipContentSpan.id = 'bravegpt-asktip-content'
                         asktipContentSpan.textContent = `${ msgs.menuLabel_ask || 'Ask' } ${config.appName}`
-                        appIconImg.style.cssText = 'width: 18px ; position: relative ; top: 3px ; margin-right: 5px ; vertical-align: baseline'
+                        appIconImg.style.cssText = 'width: 17px ; position: relative ; top: 3px ; margin-right: 5px ; vertical-align: baseline'
                         asktipContentSpan.prepend(appIconImg)
                         asktipContentSpan.style.cssText = 'padding: 3px 6px ; border-radius: 9px ;  cursor: pointer'
                         asktipContentSpan.onmouseover = () => { // highlight bg, hide hide-tip menu

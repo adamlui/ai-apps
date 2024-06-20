@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.20.9
+// @version             2024.6.20.10
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2878,7 +2878,7 @@
             // Create/ID/stylize/append asktip div
             asktip = document.createElement('div') ; asktip.id = 'asktip'
             asktip.style.cssText = noUserSelectStyles
-              + `font-family: ${fontFamilies} ; font-size: 17px ;`
+              + `font-family: ${fontFamilies} ; font-size: 14px ;`
               + `position: absolute ; background-color: ${bgColor} ; border: 1px solid black ; border-radius: 12px ;`
               + 'padding: 5px 2px ; box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px ; display: none ; z-index: 1000'
             document.body.append(asktip)
@@ -2908,7 +2908,7 @@
             const hideAsktipMenu = document.createElement('div')
             hideAsktipMenu.id = 'hide-asktip-menu' ; hideAsktipMenu.style.display = 'none'
             hideAsktipMenu.style.cssText = noUserSelectStyles
-              + `font-family: ${fontFamilies} ; font-size: 16px ; border: 1px solid black ; border-radius: 9px ;`
+              + `font-family: ${fontFamilies} ; font-size: 13px ; border: 1px solid black ; border-radius: 9px ;`
               + `display: none ; color: rgb(27, 27, 27) ; background: ${bgColor} ; position: absolute ; padding: 3px ;`
               + 'box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px ; z-index: 1200'
             document.body.append(hideAsktipMenu)
@@ -2955,7 +2955,7 @@
                     if (!asktipContentSpan) { // make/append it
                         asktipContentSpan = document.createElement('span') ; asktipContentSpan.id = 'googlegpt-asktip-content'
                         asktipContentSpan.textContent = `${ msgs.menuLabel_ask || 'Ask' } ${config.appName}`
-                        appIconImg.style.cssText = 'width: 18px ; position: relative ; top: 3px ; margin-right: 5px ; vertical-align: baseline'
+                        appIconImg.style.cssText = 'width: 17px ; position: relative ; top: 3px ; margin-right: 5px ; vertical-align: baseline'
                         asktipContentSpan.prepend(appIconImg)
                         asktipContentSpan.style.cssText = 'padding: 3px 6px ; border-radius: 9px ;  cursor: pointer'
                         asktipContentSpan.onmouseover = () => { // highlight bg, hide hide-tip menu
