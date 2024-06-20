@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.20.1
+// @version             2024.6.20.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -251,16 +251,16 @@
     const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
     const apis = {
         'AIchatOS': {
-            expectedOrigin: 'https://chat18.aichatos8.com', endpoint: 'https://api.binjie.fun/api/generateStream',
+            endpoint: 'https://api.binjie.fun/api/generateStream', expectedOrigin: 'https://chat18.aichatos8.com',
             method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'] },
         'GPTforLove': {
-            expectedOrigin: 'https://ai27.gptforlove.com', endpoint: 'https://api11.gptforlove.com/chat-process',
+            endpoint: 'https://api11.gptforlove.com/chat-process', expectedOrigin: 'https://ai27.gptforlove.com',
             method: 'POST', streamable: true, accumulatesText: true },
         'MixerBox AI': {
-            expectedOrigin: 'https://chatai.mixerbox.com', endpoint: 'https://chatai.mixerbox.com/api/chat/stream',
+            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', expectedOrigin: 'https://chatai.mixerbox.com',
             method: 'POST', streamable: true, accumulatesText: false },
         'OpenAI': {
-            expectedOrigin: 'https://chatgpt.com', endpoint: 'https://api.openai.com/v1/chat/completions',
+            endpoint: 'https://api.openai.com/v1/chat/completions', expectedOrigin: 'https://chatgpt.com',
             method: 'POST', streamable: true }
     }
     const apiIDs = { gptForLove: { parentID: '' }, aiChatOS: { userID: '#/chat/' + Date.now() }}

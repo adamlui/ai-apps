@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.20
+// @version             2024.6.20.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -245,16 +245,16 @@
     const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
     const apis = {
         'AIchatOS': {
-            expectedOrigin: 'https://chat18.aichatos8.com', endpoint: 'https://api.binjie.fun/api/generateStream',
+            endpoint: 'https://api.binjie.fun/api/generateStream', expectedOrigin: 'https://chat18.aichatos8.com',
             method: 'POST', streamable: true, accumulatesText: false, failFlags: ['很抱歉地', '系统公告'] },
         'GPTforLove': {
-            expectedOrigin: 'https://ai27.gptforlove.com', endpoint: 'https://api11.gptforlove.com/chat-process',
+            endpoint: 'https://api11.gptforlove.com/chat-process', expectedOrigin: 'https://ai27.gptforlove.com',
             method: 'POST', streamable: true, accumulatesText: true },
         'MixerBox AI': {
-            expectedOrigin: 'https://chatai.mixerbox.com', endpoint: 'https://chatai.mixerbox.com/api/chat/stream',
+            endpoint: 'https://chatai.mixerbox.com/api/chat/stream', expectedOrigin: 'https://chatai.mixerbox.com',
             method: 'POST', streamable: true, accumulatesText: false },
         'OpenAI': {
-            expectedOrigin: 'https://chatgpt.com', endpoint: 'https://api.openai.com/v1/chat/completions',
+            endpoint: 'https://api.openai.com/v1/chat/completions', expectedOrigin: 'https://chatgpt.com',
             method: 'POST', streamable: true }
     }
     const apiIDs = { gptForLove: { parentID: '' }, aiChatOS: { userID: '#/chat/' + Date.now() }}
