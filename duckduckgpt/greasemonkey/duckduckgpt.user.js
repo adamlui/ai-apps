@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.20.9
+// @version             2024.6.20.10
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1360,9 +1360,9 @@
                   + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
           + '#app-chatbar {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
-              + 'font-size: 0.92rem ; height: 16px ; width: 94.6% ; max-height: 200px ; resize: none ; '
+              + 'font-size: 0.92rem ; height: 19px ; width: 94.6% ; max-height: 200px ; resize: none ; '
               + `color: #${ scheme == 'dark' ? 'eee' : '222' } ;`
-              + 'margin: 3px 0 15px 0 ; padding: 13px 10px 11px 10px ;'
+              + 'margin: 3px 0 15px 0 ; padding: 13px 10px 9px 10px ;'
               + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' } '
           + '.related-queries {'
               + 'display: flex ; flex-wrap: wrap ; width: 100% ; position: relative ; overflow: visible ;'
@@ -2385,7 +2385,7 @@
                 if (newLength < prevLength) { // if deleting txt
                     chatTextarea.style.height = 'auto' // ...auto-fit height
                     if (parseInt(getComputedStyle(chatTextarea).height, 10) < 35) // if down to one line
-                        chatTextarea.style.height = '16px' // ...reset to original height
+                        chatTextarea.style.height = '19px' // ...reset to original height
                 }
                 chatTextarea.style.height = chatTextarea.scrollHeight - vOffset + 'px'
                 prevLength = newLength
