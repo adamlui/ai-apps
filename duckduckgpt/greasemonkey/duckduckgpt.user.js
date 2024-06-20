@@ -152,7 +152,7 @@
 // @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.19.5
+// @version             2024.6.19.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -170,7 +170,7 @@
 // @compatible          kiwi
 // @compatible          mask
 // @compatible          orion
-// @match               *://duckduckgo.com/?*
+// @match               *://*/*
 // @include             https://auth0.openai.com
 // @connect             binjie.fun
 // @connect             chatgpt.com
@@ -212,7 +212,8 @@
     // Init BROWSER FLAGS
     const isFirefox = chatgpt.browser.isFirefox(),
           isEdge = navigator.userAgent.includes('Edg'),
-          isMobile = chatgpt.browser.isMobile()
+          isMobile = chatgpt.browser.isMobile(),
+          isDDGserp = /^https:\/\/(?:www\.)?duckduckgo\.[^/]+\/\?/.test(document.location.href)
 
     // Init CONFIG
     const config = {
@@ -224,12 +225,13 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@c49a3a2/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@89baf4e/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun', 'prefixEnabled',
-                'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled',
-                'suffixEnabled', 'widerSidebar')
+    loadSetting(['autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun',
+                'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
+                'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar'])
+    loadSetting(['asktipDisabled', 'sitesToNotShowAsktip'], 'global')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', 16.4) // init reply font size if unset
     if (isEdge || getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if Edge or not TM
@@ -297,8 +299,20 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(config.keyPrefix + '_' + key, false)) }
-    function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
+    function loadSetting(keys, scope = '') {
+        keys.forEach(key => {
+            if (scope == 'global') {
+                const val = localStorage[key]
+                config[key] = val ? JSON.parse(val) : false
+            } else config[key] = GM_getValue(config.keyPrefix + '_' + key, false)
+    })}
+
+    function saveSetting(key, val, scope = '') {
+        if (scope == 'global') localStorage[key] = JSON.stringify(val)
+        else GM_setValue(config.keyPrefix + '_' + key, val)
+        config[key] = val
+    }
+
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
@@ -306,171 +320,188 @@
 
     function registerMenu() {
 
-        // Add command to toggle proxy API mode
-        const pamLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
-                       + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
-                       + menuState.separator + menuState.word[+config.proxyAPIenabled]
-        menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
+        if (isDDGserp) {
 
-        // Add command toggle streaming mode or alert unsupported
-        const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
-        const stmLabel = menuState.symbol[+stmState] + ' '
-                       + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
-                       + menuState.separator + menuState.word[+stmState]
-        menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
-            if (isEdge) { // alert Edge unsupported, link to browser bug
-                const msBugLink = 'https://answers.microsoft.com/en-us/microsoftedge/forum/all/'
-                                + 'status-access-violation-issues/1fd4a2ef-6736-441f-8421-6ed167105093'
-                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                    `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } Edge`
-                      + ` ${ msgs.alert_untilMSfixesBug || 'until Microsoft fixes this long-standing browser rendering bug' }:`
-                      + ` <a target="_blank" rel="noopener" href="${msBugLink}">${msBugLink}</a>`)
-            } else if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
-                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                    `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
-                      + ' <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a>.'
-                      + ` (${ msgs.alert_userscriptMgrNoStream ||
-                                'Your userscript manager does not support returning stream responses' }.)`)
-            else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
-                let msg = `${ msgs.mode_streaming || 'Streaming Mode' } `
-                        + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
-                        + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
-                        + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
-                const switchPhrase = msgs.alert_switchingOn || 'switching on'
-                msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
-                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
-                appDiv.querySelector('[href="#"]')?.addEventListener('click', () => {
-                    document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
-            } else { // functional toggle
-                saveSetting('streamingDisabled', !config.streamingDisabled)
-                notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + menuState.word[+!config.streamingDisabled])
-                refreshMenu()
-            }
-        }))
+            // Add command to toggle proxy API mode
+            const pamLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
+                           + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
+                           + menuState.separator + menuState.word[+config.proxyAPIenabled]
+            menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
-        // Add command to toggle auto-get mode
-        const agmLabel = menuState.symbol[+config.autoget] + ' '
-                       + ( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
-                       + menuState.separator + menuState.word[+config.autoget]
-        menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
-            saveSetting('autoget', !config.autoget)
-            notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + menuState.word[+config.autoget])
-            refreshMenu()
-        }))
+            // Add command toggle streaming mode or alert unsupported
+            const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
+            const stmLabel = menuState.symbol[+stmState] + ' '
+                           + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
+                           + menuState.separator + menuState.word[+stmState]
+            menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
+                if (isEdge) { // alert Edge unsupported, link to browser bug
+                    const msBugLink = 'https://answers.microsoft.com/en-us/microsoftedge/forum/all/'
+                                    + 'status-access-violation-issues/1fd4a2ef-6736-441f-8421-6ed167105093'
+                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } Edge`
+                          + ` ${ msgs.alert_untilMSfixesBug || 'until Microsoft fixes this long-standing browser rendering bug' }:`
+                          + ` <a target="_blank" rel="noopener" href="${msBugLink}">${msBugLink}</a>`)
+                } else if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
+                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
+                          + ' <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a>.'
+                          + ` (${ msgs.alert_userscriptMgrNoStream ||
+                                    'Your userscript manager does not support returning stream responses' }.)`)
+                else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
+                    let msg = `${ msgs.mode_streaming || 'Streaming Mode' } `
+                            + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
+                            + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
+                            + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
+                    const switchPhrase = msgs.alert_switchingOn || 'switching on'
+                    msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
+                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
+                    appDiv.querySelector('[href="#"]')?.addEventListener('click', () => {
+                        document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
+                } else { // functional toggle
+                    saveSetting('streamingDisabled', !config.streamingDisabled)
+                    notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + menuState.word[+!config.streamingDisabled])
+                    refreshMenu()
+                }
+            }))
 
-        if (!isMobile) {
-
-            // Add command to toggle auto-focus chatbar
-            const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
-                           + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                           + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
-            menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
-                saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
-                notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                             + menuState.word[+!config.autoFocusChatbarDisabled])
+            // Add command to toggle auto-get mode
+            const agmLabel = menuState.symbol[+config.autoget] + ' '
+                           + ( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
+                           + menuState.separator + menuState.word[+config.autoget]
+            menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
+                saveSetting('autoget', !config.autoget)
+                notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + menuState.word[+config.autoget])
                 refreshMenu()
             }))
 
-            // Add command to toggle auto-scroll (when streaming)
-            const assLabel = menuState.symbol[+config.autoScroll] + ' '
-                           + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
-                           + menuState.separator + menuState.word[+config.autoScroll]
-            menuIDs.push(GM_registerMenuCommand(assLabel, () => {
-                saveSetting('autoScroll', !config.autoScroll)
-                notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + menuState.word[+config.autoScroll])
+            if (!isMobile) {
+
+                // Add command to toggle auto-focus chatbar
+                const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
+                               + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                               + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
+                menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
+                    saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
+                    notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                                 + menuState.word[+!config.autoFocusChatbarDisabled])
+                    refreshMenu()
+                }))
+
+                // Add command to toggle auto-scroll (when streaming)
+                const assLabel = menuState.symbol[+config.autoScroll] + ' '
+                               + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
+                               + menuState.separator + menuState.word[+config.autoScroll]
+                menuIDs.push(GM_registerMenuCommand(assLabel, () => {
+                    saveSetting('autoScroll', !config.autoScroll)
+                    notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + menuState.word[+config.autoScroll])
+                    refreshMenu()
+                }))
+            }
+
+            // Add command to toggle showing related queries
+            const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
+                          + ( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
+                          + menuState.separator + menuState.word[+!config.rqDisabled]
+            menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
+                saveSetting('rqDisabled', !config.rqDisabled)
+                const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+                if (relatedQueriesDiv) // update visibility based on latest setting
+                    relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
+                if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
+                    const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                    get.related(lastQuery).then(queries => show.related(queries))
+                        .catch(err => { consoleErr(err.message)
+                            if (get.related.status != 'done') api.tryNew(get.related) })
+                }
+                updateTweaksStyle() // toggle <pre> max-height
+                notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
                 refreshMenu()
             }))
-        }
 
-        // Add command to toggle showing related queries
-        const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
-                      + ( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
-                      + menuState.separator + menuState.word[+!config.rqDisabled]
-        menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
-            saveSetting('rqDisabled', !config.rqDisabled)
-            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-            if (relatedQueriesDiv) // update visibility based on latest setting
-                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
-            if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
-                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.related(lastQuery).then(queries => show.related(queries))
-                    .catch(err => { consoleErr(err.message)
-                        if (get.related.status != 'done') api.tryNew(get.related) })
+            // Add command to toggle prefix mode
+            const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
+                          + ( msgs.menuLabel_require || 'Require' ) + ' "/" '
+                          + ( msgs.menuLabel_beforeQuery || 'before query' ) + ' '
+                          + menuState.separator + menuState.word[+config.prefixEnabled]
+            menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
+                saveSetting('prefixEnabled', !config.prefixEnabled)
+                if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
+                    saveSetting('suffixEnabled', !config.suffixEnabled) }
+                notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + menuState.word[+config.prefixEnabled])
+                refreshMenu()
+            }))
+
+            // Add command to toggle suffix mode
+            const sfmLabel = menuState.symbol[+config.suffixEnabled] + ' '
+                          + ( msgs.menuLabel_require || 'Require' ) + ' "?" '
+                          + ( msgs.menuLabel_afterQuery || 'after query' ) + ' '
+                          + menuState.separator + menuState.word[+config.suffixEnabled]
+            menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
+                saveSetting('suffixEnabled', !config.suffixEnabled)
+                if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
+                    saveSetting('prefixEnabled', !config.prefixEnabled) }
+                notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + menuState.word[+config.suffixEnabled])
+                refreshMenu()
+            }))
+
+            if (!isCentered && !isMobile) {
+
+                // Add command to toggle wider sidebar
+                const wsbLabel = menuState.symbol[+config.widerSidebar] + ' '
+                               + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' )
+                               + menuState.separator + menuState.word[+config.widerSidebar]
+                menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
+
+                // Add command to toggle sticky sidebar
+                const ssbLabel = menuState.symbol[+config.stickySidebar] + ' '
+                               + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' )
+                               + menuState.separator + menuState.word[+config.stickySidebar]
+                menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
             }
-            updateTweaksStyle() // toggle <pre> max-height
-            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
-            refreshMenu()
-        }))
-
-        // Add command to toggle prefix mode
-        const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
-                      + ( msgs.menuLabel_require || 'Require' ) + ' "/" '
-                      + ( msgs.menuLabel_beforeQuery || 'before query' ) + ' '
-                      + menuState.separator + menuState.word[+config.prefixEnabled]
-        menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
-            saveSetting('prefixEnabled', !config.prefixEnabled)
-            if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
-                saveSetting('suffixEnabled', !config.suffixEnabled) }
-            notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + menuState.word[+config.prefixEnabled])
-            refreshMenu()
-        }))
-
-        // Add command to toggle suffix mode
-        const sfmLabel = menuState.symbol[+config.suffixEnabled] + ' '
-                      + ( msgs.menuLabel_require || 'Require' ) + ' "?" '
-                      + ( msgs.menuLabel_afterQuery || 'after query' ) + ' '
-                      + menuState.separator + menuState.word[+config.suffixEnabled]
-        menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
-            saveSetting('suffixEnabled', !config.suffixEnabled)
-            if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
-                saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + menuState.word[+config.suffixEnabled])
-            refreshMenu()
-        }))
-
-        if (!isCentered && !isMobile) {
-
-            // Add command to toggle wider sidebar
-            const wsbLabel = menuState.symbol[+config.widerSidebar] + ' '
-                           + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' )
-                           + menuState.separator + menuState.word[+config.widerSidebar]
-            menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
-
-            // Add command to toggle sticky sidebar
-            const ssbLabel = menuState.symbol[+config.stickySidebar] + ' '
-                           + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' )
-                           + menuState.separator + menuState.word[+config.stickySidebar]
-            menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
         }
 
-        // Add command to set reply language
-        const rlLabel = '🌐 ' + ( msgs.menuLabel_replyLanguage || 'Reply Language' )
-                      + menuState.separator + config.replyLanguage
-        menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
-            while (true) {
-                let replyLanguage = prompt(
-                    ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
-                if (replyLanguage == null) break // user cancelled so do nothing
-                else if (!/\d/.test(replyLanguage)) {
-                    replyLanguage = ( // auto-case for menu/alert aesthetics
-                        [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
-                          : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
-                    saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                    siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
-                        `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
-                            + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
-                        '', '', 330) // width
-                    refreshMenu() ; break
-        }}}))
+        // Add command to toggle highlight-to-ask
+        const htaLabel = `${menuState.symbol[+!config.asktipDisabled]} `
+                       + `${ msgs.menuLabel_highlightToAsk || 'Highlight-to-ask' } `
+                       + `(${ msgs.menuLabel_fromAnySite || 'from any site' })`
+                       + menuState.separator + menuState.word[+!config.asktipDisabled]
+        menuIDs.push(GM_registerMenuCommand(htaLabel, () => {
+            saveSetting('asktipDisabled', !config.asktipDisabled, 'global')
+            notify(`${ msgs.menuLabel_highlightToAsk || 'Highlight-to-ask' } ${menuState.word[+!config.asktipDisabled]}`)
+            refreshMenu()
+        }))
 
-        // Add command to set color scheme
-        const schemeLabel = ( config.scheme == 'light' ? '☀️' :
-                              config.scheme == 'dark'  ? '🌘' : '🌗' ) + ' '
-                          + ( msgs.menuLabel_colorScheme || 'Color Scheme' ) + menuState.separator
-                          + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
-                              config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
-                                                       : msgs.menuLabel_auto || 'Auto' )
-        menuIDs.push(GM_registerMenuCommand(schemeLabel, launchSchemeModal))
+        if (isDDGserp) {
+
+            // Add command to set reply language
+            const rlLabel = '🌐 ' + ( msgs.menuLabel_replyLanguage || 'Reply Language' )
+                          + menuState.separator + config.replyLanguage
+            menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
+                while (true) {
+                    let replyLanguage = prompt(
+                        ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
+                    if (replyLanguage == null) break // user cancelled so do nothing
+                    else if (!/\d/.test(replyLanguage)) {
+                        replyLanguage = ( // auto-case for menu/alert aesthetics
+                            [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
+                              : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
+                        saveSetting('replyLanguage', replyLanguage || config.userLanguage)
+                        siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
+                            `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
+                                + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
+                            '', '', 330) // width
+                        refreshMenu() ; break
+            }}}))
+
+            // Add command to set color scheme
+            const schemeLabel = ( config.scheme == 'light' ? '☀️' :
+                                  config.scheme == 'dark'  ? '🌘' : '🌗' ) + ' '
+                              + ( msgs.menuLabel_colorScheme || 'Color Scheme' ) + menuState.separator
+                              + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
+                                  config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
+                                                           : msgs.menuLabel_auto || 'Auto' )
+            menuIDs.push(GM_registerMenuCommand(schemeLabel, launchSchemeModal))
+        }
 
         // Add command to launch About modal
         const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ config.appName }`
@@ -1478,7 +1509,7 @@
                 aboutSpan.id = 'about-btn' // for toggleTooltip()
                 aboutSpan.className = 'corner-btn'
                 const aboutSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 56.693 56.693']]
-                aboutSVGattrs.forEach(([attr, value]) => aboutSVG.setAttribute(attr, value))            
+                aboutSVGattrs.forEach(([attr, value]) => aboutSVG.setAttribute(attr, value))
                 aboutSVGpath.setAttribute('d',
                     'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z')
                 aboutSVGpath.setAttribute('stroke', 'none')
@@ -1858,199 +1889,325 @@
 
     // Run MAIN routine
 
-    // Pre-load LOGO
-    const appLogoImg = document.createElement('img') ; updateAppLogoSrc() 
-    appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleAnchor() }
+    if (isDDGserp) { // show DUCKDUCKGPT
 
-    // Init ALERTS
-    const appAlerts = {
-        waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
-        login:            `${ msgs.alert_login || 'Please login' } @ `,
-        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
-        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
-        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
-        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
-        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
-        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
-        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
-    }
+        // Init ALERTS
+        var appAlerts = {
+            waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
+            login:            `${ msgs.alert_login || 'Please login' } @ `,
+            checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
+            tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
+            parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
+            proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
+            openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
+            suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
+            suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
+        }
 
-    // Create/ID/classify/listenerize DDGPT container
-    const appDiv = document.createElement('div') ; appDiv.id = 'ddgpt' ; appDiv.classList.add('fade-in')
-    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
-        let elem = event.target
-        while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
-            elem = elem.parentNode
-        if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
-    })
+        // Pre-load LOGO
+        var appLogoImg = document.createElement('img') ; updateAppLogoSrc() 
+        appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleAnchor() }
 
-    // Stylize APP elems
-    const appStyle =  document.createElement('style') ; updateAppStyle()
-    const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
-    document.head.append(appStyle, hljsStyle)
+        // Create/ID/classify/listenerize DDGPT container
+        var appDiv = document.createElement('div') ; appDiv.id = 'ddgpt' ; appDiv.classList.add('fade-in')
+        appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
+            let elem = event.target
+            while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
+                elem = elem.parentNode
+            if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
+        })
 
-    // Stylize SITE elems
-    const tweaksStyle = document.createElement('style'),
-          wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
-                    + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
-                    + '#app-chatbar { width: 95.6% }',
-          ssbStyles = '#ddgpt { position: sticky ; top: 14px }'
-                    + '#ddgpt ~ * { display: none }' // hide sidebar contents
-                    + 'body, div.site-wrapper { overflow: clip }' // replace `overflow: hidden` to allow stickiness
-    updateTweaksStyle() ; document.head.append(tweaksStyle)
+        // Stylize APP elems
+        var appStyle =  document.createElement('style') ; updateAppStyle()
+        const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
+        document.head.append(appStyle, hljsStyle)
 
-    // Create/stylize TOOLTIPs
-    if (!isMobile) {
-        var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
-        const tooltipStyle = document.createElement('style')
-        tooltipStyle.innerText = '.btn-tooltip {'
-            + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 4px 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-            + 'font-size: 0.87em ; color: white ;' // font style
-            + 'position: absolute ;' // for updateTooltip() calcs
-            + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
-            + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
-        document.head.append(tooltipStyle)
-    }
- 
-    // Create/classify/fill feedback FOOTER
-    const appFooter = document.createElement('footer')
-    appFooter.classList.add('fade-in', // DDGPT class
-                            'feedback-prompt') // DDG class
-    let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
-    footerContent.className = 'js-feedback-prompt-generic' // DDG footer class
-    appFooter.append(footerContent)
+        // Stylize SITE elems
+        var tweaksStyle = document.createElement('style'),
+              wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
+                        + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
+                        + '#app-chatbar { width: 95.6% }',
+              ssbStyles = '#ddgpt { position: sticky ; top: 14px }'
+                        + '#ddgpt ~ * { display: none }' // hide sidebar contents
+                        + 'body, div.site-wrapper { overflow: clip }' // replace `overflow: hidden` to allow stickiness
+        updateTweaksStyle() ; document.head.append(tweaksStyle)
 
-    // APPEND DDGPT + footer to DDG
-    const appElems = [appFooter, appDiv],
-          hostContainer = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]'
-                                                                        : '[class*="sidebar"]')
-    appElems.forEach(elem => hostContainer.prepend(elem))
-    appElems.toReversed().forEach((elem, idx) => // fade in staggered
-        setTimeout(() => elem.classList.add('active'), idx * 550 - 200))
+        // Create/stylize TOOLTIPs
+        if (!isMobile) {
+            var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
+            const tooltipStyle = document.createElement('style')
+            tooltipStyle.innerText = '.btn-tooltip {'
+                + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 4px 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+                + 'font-size: 0.87em ; color: white ;' // font style
+                + 'position: absolute ;' // for updateTooltip() calcs
+                + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
+                + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
+            document.head.append(tooltipStyle)
+        }
+     
+        // Create/classify/fill feedback FOOTER
+        const appFooter = document.createElement('footer')
+        appFooter.classList.add('fade-in', // DDGPT class
+                                'feedback-prompt') // DDG class
+        let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
+        footerContent.className = 'js-feedback-prompt-generic' // DDG footer class
+        appFooter.append(footerContent)
 
-    // REPLACE hostContainer max-width w/ min-width for better UI
-    if (!isMobile) { hostContainer.style.maxWidth = '' ; hostContainer.style.minWidth = '448px' }
+        // APPEND DDGPT + footer to DDG
+        const appElems = [appFooter, appDiv],
+              hostContainer = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]'
+                                                                            : '[class*="sidebar"]')
+        appElems.forEach(elem => hostContainer.prepend(elem))
+        appElems.toReversed().forEach((elem, idx) => // fade in staggered
+            setTimeout(() => elem.classList.add('active'), idx * 550 - 200))
 
-    // Check for active TEXT CAMPAIGNS to replace footer CTA
-    get.json('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
-        (err, advertisersData) => { if (err) return
+        // REPLACE hostContainer max-width w/ min-width for better UI
+        if (!isMobile) { hostContainer.style.maxWidth = '' ; hostContainer.style.minWidth = '448px' }
 
-            // Init vars
-            let chosenAdvertiser, adSelected
-            const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
-            const currentDate = (() => { // in YYYYMMDD format
-                const today = new Date(), year = today.getFullYear(),
-                      month = String(today.getMonth() + 1).padStart(2, '0'),
-                      day = String(today.getDate()).padStart(2, '0')
-                return year + month + day
-            })()
+        // Check for active TEXT CAMPAIGNS to replace footer CTA
+        get.json('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
+            (err, advertisersData) => { if (err) return
 
-            // Select random, active advertiser
-            for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
-                if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
+                // Init vars
+                let chosenAdvertiser, adSelected
+                const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
+                const currentDate = (() => { // in YYYYMMDD format
+                    const today = new Date(), year = today.getFullYear(),
+                          month = String(today.getMonth() + 1).padStart(2, '0'),
+                          day = String(today.getDate()).padStart(2, '0')
+                    return year + month + day
+                })()
 
-            // Fetch a random, active creative
-            if (chosenAdvertiser) {
-                const campaignsURL = 'https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/'
-                                   + chosenAdvertiser + '/text/campaigns.json'
-                get.json(campaignsURL, (err, campaignsData) => { if (err) return
+                // Select random, active advertiser
+                for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
+                    if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
 
-                    // Select random, active campaign
-                    for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
-                        const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
-                        if (!campaignIsActive) continue // to next campaign since campaign inactive
+                // Fetch a random, active creative
+                if (chosenAdvertiser) {
+                    const campaignsURL = 'https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/'
+                                       + chosenAdvertiser + '/text/campaigns.json'
+                    get.json(campaignsURL, (err, campaignsData) => { if (err) return
 
-                        // Select random active group
-                        for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
+                        // Select random, active campaign
+                        for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
+                            const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
+                            if (!campaignIsActive) continue // to next campaign since campaign inactive
 
-                            // Skip disqualified groups
-                            if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
-                                || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
-                                || adGroup.active == false // group explicitly disabled
-                                || adGroup.targetBrowsers && // target browser(s) exist...
-                                    !adGroup.targetBrowsers.some( // ...but doesn't match user's
-                                        browser => new RegExp(browser, 'i').test(navigator.userAgent))
-                                || adGroup.targetLocations && ( // target locale(s) exist...
-                                    !config.userLocale || !adGroup.targetLocations.some( // ...and user locale is missing or excluded
-                                        loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
-                            ) continue // to next group
+                            // Select random active group
+                            for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
 
-                            // Filter out inactive ads, pick random active one
-                            const activeAds = adGroup.ads.filter(ad => ad.active != false)
-                            if (activeAds.length == 0) continue // to next group since no ads active
-                            const chosenAd = activeAds[Math.floor(chatgpt.randomFloat() * activeAds.length)] // random active one
+                                // Skip disqualified groups
+                                if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
+                                    || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
+                                    || adGroup.active == false // group explicitly disabled
+                                    || adGroup.targetBrowsers && // target browser(s) exist...
+                                        !adGroup.targetBrowsers.some( // ...but doesn't match user's
+                                            browser => new RegExp(browser, 'i').test(navigator.userAgent))
+                                    || adGroup.targetLocations && ( // target locale(s) exist...
+                                        !config.userLocale || !adGroup.targetLocations.some( // ...and user locale is missing or excluded
+                                            loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
+                                ) continue // to next group
 
-                            // Build destination URL
-                            let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
-                                || campaign.destinationURL || ''
-                            if (destinationURL.includes('http')) { // insert UTM tags
-                                const [baseURL, queryString] = destinationURL.split('?'),
-                                      queryParams = new URLSearchParams(queryString || '')
-                                queryParams.set('utm_source', config.appName.toLowerCase())
-                                queryParams.set('utm_content', 'app_footer_link')
-                                destinationURL = baseURL + '?' + queryParams.toString()
+                                // Filter out inactive ads, pick random active one
+                                const activeAds = adGroup.ads.filter(ad => ad.active != false)
+                                if (activeAds.length == 0) continue // to next group since no ads active
+                                const chosenAd = activeAds[Math.floor(chatgpt.randomFloat() * activeAds.length)] // random active one
+
+                                // Build destination URL
+                                let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
+                                    || campaign.destinationURL || ''
+                                if (destinationURL.includes('http')) { // insert UTM tags
+                                    const [baseURL, queryString] = destinationURL.split('?'),
+                                          queryParams = new URLSearchParams(queryString || '')
+                                    queryParams.set('utm_source', config.appName.toLowerCase())
+                                    queryParams.set('utm_content', 'app_footer_link')
+                                    destinationURL = baseURL + '?' + queryParams.toString()
+                                }
+
+                                // Update footer content
+                                footerContent.setAttribute('class', '') // reset for re-fade
+                                const newFooterContent = destinationURL ? createAnchor(destinationURL)
+                                                                        : document.createElement('span')
+                                footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
+                                footerContent.classList.add('fade-in', // DDGPT fade class
+                                                            'js-feedback-prompt-generic') // DDG footer class
+                                footerContent.textContent = chosenAd.text
+                                footerContent.setAttribute('title', chosenAd.tooltip || '')
+                                setTimeout(() => footerContent.classList.add('active'), 100) // to trigger fade
+                                adSelected = true ; break
                             }
+                            if (adSelected) break // out of campaign loop after ad selection
+                }})}
 
-                            // Update footer content
-                            footerContent.setAttribute('class', '') // reset for re-fade
-                            const newFooterContent = destinationURL ? createAnchor(destinationURL)
-                                                                    : document.createElement('span')
-                            footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
-                            footerContent.classList.add('fade-in', // DDGPT fade class
-                                                        'js-feedback-prompt-generic') // DDG footer class
-                            footerContent.textContent = chosenAd.text
-                            footerContent.setAttribute('title', chosenAd.tooltip || '')
-                            setTimeout(() => footerContent.classList.add('active'), 100) // to trigger fade
-                            adSelected = true ; break
-                        }
-                        if (adSelected) break // out of campaign loop after ad selection
-            }})}
-
-            function shuffle(list) {
-                let currentIdx = list.length, tempValue, randomIdx
-                while (currentIdx != 0) { // elements remain to be shuffled
-                    randomIdx = Math.floor(chatgpt.randomFloat() * currentIdx) ; currentIdx -= 1
-                    tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
+                function shuffle(list) {
+                    let currentIdx = list.length, tempValue, randomIdx
+                    while (currentIdx != 0) { // elements remain to be shuffled
+                        randomIdx = Math.floor(chatgpt.randomFloat() * currentIdx) ; currentIdx -= 1
+                        tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
+                    }
+                    return list
                 }
-                return list
-            }
 
-            function applyBoosts(list) {
-                let boostedList = [...list],
-                    boostedListLength = boostedList.length - 1 // for applying multiple boosts
-                list.forEach(([name, data]) => { // check for boosts
-                    if (data.boost) { // boost flagged entry's selection probability
-                        const boostPercent = parseInt(data.boost, 10) / 100,
-                              entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
-                                            * boostPercent - 1 // reduced to boosted entries needed
-                        for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
-                        boostedListLength += entriesNeeded // update for subsequent calculations
-                }})
-                return boostedList
-            }
-    })
+                function applyBoosts(list) {
+                    let boostedList = [...list],
+                        boostedListLength = boostedList.length - 1 // for applying multiple boosts
+                    list.forEach(([name, data]) => { // check for boosts
+                        if (data.boost) { // boost flagged entry's selection probability
+                            const boostPercent = parseInt(data.boost, 10) / 100,
+                                  entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
+                                                * boostPercent - 1 // reduced to boosted entries needed
+                            for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
+                            boostedListLength += entriesNeeded // update for subsequent calculations
+                    }})
+                    return boostedList
+                }
+        })
 
-    // Show STANDBY mode or get/show ANSWER
-    let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
-    if (!config.autoget
-        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
-            show.reply('standby')
-            if (!config.rqDisabled) {
-                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.related(lastQuery).then(queries => show.related(queries))
-                    .catch(err => { consoleErr(err.message)
-                        if (get.related.status != 'done') api.tryNew(get.related) })
-            }
-    } else { appAlert('waitingResponse') ; get.reply(msgChain) }
+        // Show STANDBY mode or get/show ANSWER
+        var msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
+        if (!config.autoget && !location.href.includes('src=asktip') // Auto-Get disabled and not queried from other site
+            || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
+            || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
+                show.reply('standby')
+                if (!config.rqDisabled) {
+                    const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                    get.related(lastQuery).then(queries => show.related(queries))
+                        .catch(err => { consoleErr(err.message)
+                            if (get.related.status != 'done') api.tryNew(get.related) })
+                }
+        } else { appAlert('waitingResponse') ; get.reply(msgChain) }
 
-    // Observe for DDG SCHEME CHANGES to update DDGPT scheme if auto-scheme mode if auto-scheme mode
-    (new MutationObserver(handleSchemeChange)).observe( // class changes from DDG appearance settings
-        document.documentElement, { attributes: true, attributeFilter: ['class'] })
-    function handleSchemeChange() {
-        if (config.scheme) return // since light/dark hard-set
-        const newScheme = chatgpt.isDarkMode() ? 'dark' : 'light'
-        if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() }
+        // Observe for DDG SCHEME CHANGES to update DDGPT scheme if auto-scheme mode if auto-scheme mode
+        (new MutationObserver(handleSchemeChange)).observe( // class changes from DDG appearance settings
+            document.documentElement, { attributes: true, attributeFilter: ['class'] })
+        function handleSchemeChange() {
+            if (config.scheme) return // since light/dark hard-set
+            const newScheme = chatgpt.isDarkMode() ? 'dark' : 'light'
+            if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() }
+        }
+
+    } else { // create/append/listenerize ASKTIP + elems
+
+        const asktipDisabled = () => config.asktipDisabled
+            || config.sitesToNotShowAsktip && config.sitesToNotShowAsktip.some(domain => location.href.includes(domain))
+
+        // Pre-load ICON
+        const appIconImg = document.createElement('img')
+        appIconImg.src = 'https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302'
+
+        // Init asktip
+        let asktip = document.getElementById('asktip')
+        if (!asktip) { // make/append it
+            const fontFamilies = '"Source Sans Pro", sans-serif', bgColor = '#f9f9f9',
+                  noUserSelectStyles = '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;'
+
+            // Create/ID/stylize/append asktip div
+            asktip = document.createElement('div') ; asktip.id = 'asktip'
+            asktip.style.cssText = noUserSelectStyles
+              + `font-family: ${fontFamilies} ; font-size: 17px ;`
+              + `position: absolute ; background-color: ${bgColor} ; border: 1px solid black ; border-radius: 12px ;`
+              + 'padding: 5px 2px ; box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px ; display: none ; z-index: 1000'
+            document.body.append(asktip)
+
+            // Create/stylize/listenerize/append hide tip ELEMS
+            const hideTipSpan = document.createElement('span'),
+                  hideTipSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                  hideTipSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path'),
+                  hideTipSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 -960 960 960'], ['fill', 'black']]
+            hideTipSVGattrs.forEach(([attr, value]) => hideTipSVG.setAttribute(attr, value))
+            hideTipSVG.style.cssText = 'position: relative ; top: 2.85px ; margin: 0 4px 0 6px ; vertical-align: baseline'
+            hideTipSVGpath.setAttribute('d',
+                'm660.61-425.83-93.65-93.65q4.6-29.82-17.63-53.22-22.24-23.39-54.37-18.78l-89.13-89.13q14.43-6.3 34.84-10.61 20.42-4.3 39.5-4.3 82.4 0 138.87 56.48 56.48 56.47 56.48 138.87 0 17.95-3.59 37.63-3.58 19.67-11.32 36.71ZM805.17-280.7l-81.08-81.65q34.04-27.87 61.93-60.82 27.89-32.96 50.02-76.83-52.13-101.3-145.7-162.09-93.57-60.78-210.59-60.78-28.75 0-54.58 3.44-25.82 3.43-48.43 9.73l-90.35-90.34q42.87-17.87 92.44-27.59 49.57-9.72 101.17-9.72 163.3 0 292.61 92Q901.91-653.36 961.09-500q-23.44 64.87-64.65 121.37-41.22 56.5-91.27 97.93ZM790.39-20.48 624.52-184.91q-33.87 11.56-69.5 16.91T480-162.65q-163.87 0-293.78-92.28Q56.3-347.22-1.09-500q19.44-52.87 50.63-100.57 31.2-47.69 71.07-87.82L11.43-798.87l74-74 778.4 778.96-73.44 73.43ZM202.83-608.87q-26 27.7-44.09 52-18.09 24.3-34.22 56.87 50.6 102.48 144.5 162.68 93.9 60.19 210.98 60.19 9.74 0 21.96-.5 12.21-.5 27.04-3.07l-22.78-26.21q-6.31 1.43-12.78 1.93-6.46.5-13.44.5-82.47 0-138.99-56.53-56.53-56.52-56.53-138.99 0-6.41-.07-12.66-.06-6.25 1.37-13.56l-82.95-82.65Zm348.08 72.91ZM365.57-445Z')
+            hideTipSpan.style.cssText = 'padding: 3px 1px ; border-radius: 9px ; cursor: pointer'
+            hideTipSpan.onmouseover = () => { // highlight bg, show menu
+                hideTipSpan.style.background = '#bcd7dfab'
+                if (hideAsktipMenu.style.display == 'none') {
+                    hideAsktipMenu.style.display = 'grid'
+                    hideAsktipMenu.style.left = `${hideTipSpan.getBoundingClientRect().left}px`
+                    hideAsktipMenu.style.top = `${ hideTipSpan.getBoundingClientRect().bottom
+                        + ( window.pageYOffset || document.documentElement.scrollTop ) +6 }px`
+            }}
+            hideTipSpan.onmouseout = () => hideTipSpan.style.background = 'none' // unhighlight bg
+            hideTipSVG.append(hideTipSVGpath) ; hideTipSpan.append(hideTipSVG) ; asktip.append(hideTipSpan)
+
+            // Create/ID/stylize/append hide tip menu
+            const hideAsktipMenu = document.createElement('div')
+            hideAsktipMenu.id = 'hide-asktip-menu' ; hideAsktipMenu.style.display = 'none'
+            hideAsktipMenu.style.cssText = noUserSelectStyles
+              + `font-family: ${fontFamilies} ; font-size: 16px ; border: 1px solid black ; border-radius: 9px ;`
+              + `display: none ; color: rgb(27, 27, 27) ; background: ${bgColor} ; position: absolute ; padding: 3px ;`
+              + 'box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px'
+            document.body.append(hideAsktipMenu)
+
+            // Create/fill/stylize/listenerize/append hide tip menu items
+            const hideAsktipMenuItemA = document.createElement('span'),
+                  hideAsktipMenuItemB = document.createElement('span')
+            hideAsktipMenuItemA.textContent = `${ msgs.menuLabel_hideMenu || 'Hide menu' } `
+                                         + `${ msgs.menuLabel_forThisSite || 'for this site' }`
+            hideAsktipMenuItemB.textContent = `${ msgs.menuLabel_hideMenu || 'Hide menu' } `
+                                         + `${ msgs.menuLabel_always || 'always' }`;
+            [hideAsktipMenuItemA, hideAsktipMenuItemB].forEach((menuItem, idx) => {
+                menuItem.style.cssText = 'cursor: pointer ; padding: 1px 6px'
+                menuItem.onmouseover = () => menuItem.style.background = '#bcd7dfab' // highlight bg
+                menuItem.onmouseout = () => menuItem.style.background = 'none' // unhighlight bg
+                if (idx == 0) { // entry to hide menu for site
+                    menuItem.style.cssText += '; border-bottom: 1px dotted rgb(0, 0, 0)' // add separator
+                    menuItem.onclick = () => {
+                        if (!config.sitesToNotShowAsktip) config.sitesToNotShowAsktip = []
+                        config.sitesToNotShowAsktip.push(new URL(location.href).hostname)
+                        saveSetting('sitesToNotShowAsktip', config.sitesToNotShowAsktip, 'global')
+                        document.getElementById('hide-asktip-menu').style.display = 'none'
+                        document.getElementById('asktip').style.display = 'none'
+                    }
+                } else { // entry to hide menu always
+                    menuItem.onclick = () => {
+                        saveSetting('asktipDisabled', true, 'global')
+                        refreshMenu()
+                        document.getElementById('hide-asktip-menu').style.display = 'none'
+                        document.getElementById('asktip').style.display = 'none'
+                }}
+            })
+            hideAsktipMenu.append(hideAsktipMenuItemA, hideAsktipMenuItemB)
+        }
+
+        // Add inputEvents.up event to SHOW asktip
+        document.addEventListener(inputEvents.up, event => { setTimeout(() => {
+            if (asktipDisabled()) return
+            const selectedText = window.getSelection().toString().trim()
+            if (selectedText && !event.target.closest('#asktip')) {
+            
+                    // Init asktip content
+                    let asktipContentSpan = document.getElementById('ddgpt-asktip-content')
+                    if (!asktipContentSpan) { // make/append it
+                        asktipContentSpan = document.createElement('span') ; asktipContentSpan.id = 'ddgpt-asktip-content'
+                        asktipContentSpan.textContent = `${ msgs.menuLabel_ask || 'Ask' } ${config.appName}`
+                        appIconImg.style.cssText = 'width: 18px ; position: relative ; top: 3px ; margin-right: 5px ; vertical-align: baseline'
+                        asktipContentSpan.prepend(appIconImg)
+                        asktipContentSpan.style.cssText = 'padding: 3px 6px ; border-radius: 9px ;  cursor: pointer'
+                        asktipContentSpan.onmouseover = () => { // highlight bg, hide hide-tip menu
+                            asktipContentSpan.style.background = '#bcd7dfab'
+                            const hideAsktipMenu = document.getElementById('hide-asktip-menu')
+                            if (hideAsktipMenu?.style.display != 'none') hideAsktipMenu.style.display = 'none'
+                        }
+                        asktipContentSpan.onmouseout = () => asktipContentSpan.style.background = 'none' // unlight bg
+                        asktip.prepend(asktipContentSpan)
+                    }
+
+                    // Add/update click event each time to capture live selectedText
+                    asktipContentSpan.onclick = () => {
+                        safeWindowOpen(`https://duckduckgo.com/?q=${encodeURIComponent(selectedText)}&src=asktip`)
+                        asktip.style.display = 'none'
+                    }
+
+                    // Show asktip
+                    asktip.style.display = 'ruby'
+                    asktip.style.left = `${ event.pageX - asktip.offsetWidth/2 }px`
+                    asktip.style.top = `${ event.pageY - asktip.offsetHeight -28 }px`
+
+            } else // hide everything
+                asktip.style.display = document.getElementById('hide-asktip-menu').style.display = 'none'
+
+        }, 1)})  // to avoid double trigger
     }
 
 })()

@@ -156,7 +156,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.19.3
+// @version             2024.6.19.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -175,196 +175,7 @@
 // @compatible          kiwi
 // @compatible          mask
 // @compatible          orion
-// @match               *://*.google.com/search*
-// @match               *://*.google.ad/search*
-// @match               *://*.google.ae/search*
-// @match               *://*.google.com.af/search*
-// @match               *://*.google.com.ag/search*
-// @match               *://*.google.com.ai/search*
-// @match               *://*.google.al/search*
-// @match               *://*.google.am/search*
-// @match               *://*.google.co.ao/search*
-// @match               *://*.google.com.ar/search*
-// @match               *://*.google.as/search*
-// @match               *://*.google.at/search*
-// @match               *://*.google.com.au/search*
-// @match               *://*.google.az/search*
-// @match               *://*.google.ba/search*
-// @match               *://*.google.com.bd/search*
-// @match               *://*.google.be/search*
-// @match               *://*.google.bf/search*
-// @match               *://*.google.bg/search*
-// @match               *://*.google.com.bh/search*
-// @match               *://*.google.bi/search*
-// @match               *://*.google.bj/search*
-// @match               *://*.google.com.bn/search*
-// @match               *://*.google.com.bo/search*
-// @match               *://*.google.com.br/search*
-// @match               *://*.google.bs/search*
-// @match               *://*.google.bt/search*
-// @match               *://*.google.co.bw/search*
-// @match               *://*.google.by/search*
-// @match               *://*.google.com.bz/search*
-// @match               *://*.google.ca/search*
-// @match               *://*.google.cd/search*
-// @match               *://*.google.cf/search*
-// @match               *://*.google.cg/search*
-// @match               *://*.google.ch/search*
-// @match               *://*.google.ci/search*
-// @match               *://*.google.co.ck/search*
-// @match               *://*.google.cl/search*
-// @match               *://*.google.cm/search*
-// @match               *://*.google.cn/search*
-// @match               *://*.google.com.co/search*
-// @match               *://*.google.co.cr/search*
-// @match               *://*.google.com.cu/search*
-// @match               *://*.google.cv/search*
-// @match               *://*.google.com.cy/search*
-// @match               *://*.google.cz/search*
-// @match               *://*.google.de/search*
-// @match               *://*.google.dj/search*
-// @match               *://*.google.dk/search*
-// @match               *://*.google.dm/search*
-// @match               *://*.google.com.do/search*
-// @match               *://*.google.dz/search*
-// @match               *://*.google.com.ec/search*
-// @match               *://*.google.ee/search*
-// @match               *://*.google.com.eg/search*
-// @match               *://*.google.es/search*
-// @match               *://*.google.com.et/search*
-// @match               *://*.google.fi/search*
-// @match               *://*.google.com.fj/search*
-// @match               *://*.google.fm/search*
-// @match               *://*.google.fr/search*
-// @match               *://*.google.ga/search*
-// @match               *://*.google.ge/search*
-// @match               *://*.google.gg/search*
-// @match               *://*.google.com.gh/search*
-// @match               *://*.google.com.gi/search*
-// @match               *://*.google.gl/search*
-// @match               *://*.google.gm/search*
-// @match               *://*.google.gr/search*
-// @match               *://*.google.com.gt/search*
-// @match               *://*.google.gy/search*
-// @match               *://*.google.com.hk/search*
-// @match               *://*.google.hn/search*
-// @match               *://*.google.hr/search*
-// @match               *://*.google.ht/search*
-// @match               *://*.google.hu/search*
-// @match               *://*.google.co.id/search*
-// @match               *://*.google.ie/search*
-// @match               *://*.google.co.il/search*
-// @match               *://*.google.im/search*
-// @match               *://*.google.co.in/search*
-// @match               *://*.google.iq/search*
-// @match               *://*.google.is/search*
-// @match               *://*.google.it/search*
-// @match               *://*.google.je/search*
-// @match               *://*.google.com.jm/search*
-// @match               *://*.google.jo/search*
-// @match               *://*.google.co.jp/search*
-// @match               *://*.google.co.ke/search*
-// @match               *://*.google.com.kh/search*
-// @match               *://*.google.ki/search*
-// @match               *://*.google.kg/search*
-// @match               *://*.google.co.kr/search*
-// @match               *://*.google.com.kw/search*
-// @match               *://*.google.kz/search*
-// @match               *://*.google.la/search*
-// @match               *://*.google.com.lb/search*
-// @match               *://*.google.li/search*
-// @match               *://*.google.lk/search*
-// @match               *://*.google.co.ls/search*
-// @match               *://*.google.lt/search*
-// @match               *://*.google.lu/search*
-// @match               *://*.google.lv/search*
-// @match               *://*.google.com.ly/search*
-// @match               *://*.google.co.ma/search*
-// @match               *://*.google.md/search*
-// @match               *://*.google.me/search*
-// @match               *://*.google.mg/search*
-// @match               *://*.google.mk/search*
-// @match               *://*.google.ml/search*
-// @match               *://*.google.com.mm/search*
-// @match               *://*.google.mn/search*
-// @match               *://*.google.ms/search*
-// @match               *://*.google.com.mt/search*
-// @match               *://*.google.mu/search*
-// @match               *://*.google.mv/search*
-// @match               *://*.google.mw/search*
-// @match               *://*.google.com.mx/search*
-// @match               *://*.google.com.my/search*
-// @match               *://*.google.co.mz/search*
-// @match               *://*.google.com.na/search*
-// @match               *://*.google.com.ng/search*
-// @match               *://*.google.com.ni/search*
-// @match               *://*.google.ne/search*
-// @match               *://*.google.nl/search*
-// @match               *://*.google.no/search*
-// @match               *://*.google.com.np/search*
-// @match               *://*.google.nr/search*
-// @match               *://*.google.nu/search*
-// @match               *://*.google.co.nz/search*
-// @match               *://*.google.com.om/search*
-// @match               *://*.google.com.pa/search*
-// @match               *://*.google.com.pe/search*
-// @match               *://*.google.com.pg/search*
-// @match               *://*.google.com.ph/search*
-// @match               *://*.google.com.pk/search*
-// @match               *://*.google.pl/search*
-// @match               *://*.google.pn/search*
-// @match               *://*.google.com.pr/search*
-// @match               *://*.google.ps/search*
-// @match               *://*.google.pt/search*
-// @match               *://*.google.com.py/search*
-// @match               *://*.google.com.qa/search*
-// @match               *://*.google.ro/search*
-// @match               *://*.google.ru/search*
-// @match               *://*.google.rw/search*
-// @match               *://*.google.com.sa/search*
-// @match               *://*.google.com.sb/search*
-// @match               *://*.google.sc/search*
-// @match               *://*.google.se/search*
-// @match               *://*.google.com.sg/search*
-// @match               *://*.google.sh/search*
-// @match               *://*.google.si/search*
-// @match               *://*.google.sk/search*
-// @match               *://*.google.com.sl/search*
-// @match               *://*.google.sn/search*
-// @match               *://*.google.so/search*
-// @match               *://*.google.sm/search*
-// @match               *://*.google.sr/search*
-// @match               *://*.google.st/search*
-// @match               *://*.google.com.sv/search*
-// @match               *://*.google.td/search*
-// @match               *://*.google.tg/search*
-// @match               *://*.google.co.th/search*
-// @match               *://*.google.com.tj/search*
-// @match               *://*.google.tl/search*
-// @match               *://*.google.tm/search*
-// @match               *://*.google.tn/search*
-// @match               *://*.google.to/search*
-// @match               *://*.google.com.tr/search*
-// @match               *://*.google.tt/search*
-// @match               *://*.google.com.tw/search*
-// @match               *://*.google.co.tz/search*
-// @match               *://*.google.com.ua/search*
-// @match               *://*.google.co.ug/search*
-// @match               *://*.google.co.uk/search*
-// @match               *://*.google.com.uy/search*
-// @match               *://*.google.co.uz/search*
-// @match               *://*.google.com.vc/search*
-// @match               *://*.google.co.ve/search*
-// @match               *://*.google.vg/search*
-// @match               *://*.google.co.vi/search*
-// @match               *://*.google.com.vn/search*
-// @match               *://*.google.vu/search*
-// @match               *://*.google.ws/search*
-// @match               *://*.google.rs/search*
-// @match               *://*.google.co.za/search*
-// @match               *://*.google.co.zm/search*
-// @match               *://*.google.co.zw/search*
-// @match               *://*.google.cat/search*
+// @match               *://*/*
 // @include             https://auth0.openai.com
 // @connect             binjie.fun
 // @connect             chatgpt.com
@@ -403,11 +214,12 @@
 
 (async () => {
 
-    // Init BROWSER FLAGS
+    // Init ENV FLAGS
     const isFirefox = chatgpt.browser.isFirefox(),
           isEdge = navigator.userAgent.includes('Edg'),
-          isMobile = chatgpt.browser.isMobile()
-
+          isMobile = chatgpt.browser.isMobile(),
+          isGoogleSERP = /^https:\/\/(?:www\.)?google\.[^/]+\/search\?/.test(document.location.href)
+                      && !document.location.search.includes('&udm=2') // exclude Google Images
     // Init CONFIG
     const config = {
         appName: 'GoogleGPT', appSymbol: '🤖', keyPrefix: 'googleGPT',
@@ -419,13 +231,14 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@35def99/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@68a72f1/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
-    loadSetting('autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun', 'prefixEnabled',
-                'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme', 'stickySidebar', 'streamingDisabled',
-                'suffixEnabled', 'widerSidebar')
+    loadSetting(['autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun',
+                'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
+                'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar'])
+    loadSetting(['asktipDisabled', 'sitesToNotShowAsktip'], 'global')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', isMobile ? 14 : 16.55) // init reply font size if unset
     if (isEdge || getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if Edge or not TM
@@ -489,8 +302,20 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(config.keyPrefix + '_' + key, false)) }
-    function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
+    function loadSetting(keys, scope = '') {
+        keys.forEach(key => {
+            if (scope == 'global') {
+                const val = localStorage[key]
+                config[key] = val ? JSON.parse(val) : false
+            } else config[key] = GM_getValue(config.keyPrefix + '_' + key, false)
+    })}
+
+    function saveSetting(key, val, scope = '') {
+        if (scope == 'global') localStorage[key] = JSON.stringify(val)
+        else GM_setValue(config.keyPrefix + '_' + key, val)
+        config[key] = val
+    }
+
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
@@ -498,172 +323,189 @@
 
     function registerMenu() {
 
-        // Add command to toggle proxy API mode
-        const pamLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
-                       + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
-                       + menuState.separator + menuState.word[+config.proxyAPIenabled]
-        menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
+        if (isGoogleSERP) {
 
-        // Add command toggle streaming mode or alert unsupported
-        const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
-        const stmLabel = menuState.symbol[+stmState] + ' '
-                       + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
-                       + menuState.separator + menuState.word[+stmState]
-        menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
-            if (isEdge) { // alert Edge unsupported, link to browser bug
-                const msBugLink = 'https://answers.microsoft.com/en-us/microsoftedge/forum/all/'
-                                + 'status-access-violation-issues/1fd4a2ef-6736-441f-8421-6ed167105093'
-                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                    `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } Edge`
-                      + ` ${ msgs.alert_untilMSfixesBug || 'until Microsoft fixes this long-standing browser rendering bug' }:`
-                      + ` <a target="_blank" rel="noopener" href="${msBugLink}">${msBugLink}</a>`)
-            } else if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
-                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                    `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
-                      + ' <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a>.'
-                      + ` (${ msgs.alert_userscriptMgrNoStream ||
-                                'Your userscript manager does not support returning stream responses' }.)`)
-            else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
-                let msg = `${ msgs.mode_streaming || 'Streaming Mode' } `
-                        + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
-                        + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
-                        + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
-                const switchPhrase = msgs.alert_switchingOn || 'switching on'
-                msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
-                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
-                appDiv.querySelector('[href="#"]')?.addEventListener('click', () => {
-                    document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
-            } else { // functional toggle
-                saveSetting('streamingDisabled', !config.streamingDisabled)
-                notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + menuState.word[+!config.streamingDisabled])
-                refreshMenu()
-            }
-        }))
+            // Add command to toggle proxy API mode
+            const pamLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
+                           + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
+                           + menuState.separator + menuState.word[+config.proxyAPIenabled]
+            menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
-        // Add command to toggle auto-get mode
-        const agmLabel = menuState.symbol[+config.autoget] + ' '
-                       + ( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
-                       + menuState.separator + menuState.word[+config.autoget]
-        menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
-            saveSetting('autoget', !config.autoget)
-            notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + menuState.word[+config.autoget])
-            refreshMenu()
-        }))
+            // Add command toggle streaming mode or alert unsupported
+            const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
+            const stmLabel = menuState.symbol[+stmState] + ' '
+                           + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
+                           + menuState.separator + menuState.word[+stmState]
+            menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
+                if (isEdge) { // alert Edge unsupported, link to browser bug
+                    const msBugLink = 'https://answers.microsoft.com/en-us/microsoftedge/forum/all/'
+                                    + 'status-access-violation-issues/1fd4a2ef-6736-441f-8421-6ed167105093'
+                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } Edge`
+                          + ` ${ msgs.alert_untilMSfixesBug || 'until Microsoft fixes this long-standing browser rendering bug' }:`
+                          + ` <a target="_blank" rel="noopener" href="${msBugLink}">${msBugLink}</a>`)
+                } else if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
+                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
+                          + ' <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a>.'
+                          + ` (${ msgs.alert_userscriptMgrNoStream ||
+                                    'Your userscript manager does not support returning stream responses' }.)`)
+                else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
+                    let msg = `${ msgs.mode_streaming || 'Streaming Mode' } `
+                            + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
+                            + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
+                            + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
+                    const switchPhrase = msgs.alert_switchingOn || 'switching on'
+                    msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
+                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
+                    appDiv.querySelector('[href="#"]')?.addEventListener('click', () => {
+                        document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
+                } else { // functional toggle
+                    saveSetting('streamingDisabled', !config.streamingDisabled)
+                    notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + menuState.word[+!config.streamingDisabled])
+                    refreshMenu()
+                }
+            }))
 
-        
-        if (!isMobile) {
-
-            // Add command to toggle auto-focus chatbar
-            const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
-                           + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                           + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
-            menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
-                saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
-                notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                             + menuState.word[+!config.autoFocusChatbarDisabled])
+            // Add command to toggle auto-get mode
+            const agmLabel = menuState.symbol[+config.autoget] + ' '
+                           + ( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
+                           + menuState.separator + menuState.word[+config.autoget]
+            menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
+                saveSetting('autoget', !config.autoget)
+                notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + menuState.word[+config.autoget])
                 refreshMenu()
             }))
 
-            // Add command to toggle auto-scroll (when streaming)
-            const assLabel = menuState.symbol[+config.autoScroll] + ' '
-                           + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
-                           + menuState.separator + menuState.word[+config.autoScroll]
-            menuIDs.push(GM_registerMenuCommand(assLabel, () => {
-                saveSetting('autoScroll', !config.autoScroll)
-                notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + menuState.word[+config.autoScroll])
+            
+            if (!isMobile) {
+
+                // Add command to toggle auto-focus chatbar
+                const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
+                               + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                               + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
+                menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
+                    saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
+                    notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                                 + menuState.word[+!config.autoFocusChatbarDisabled])
+                    refreshMenu()
+                }))
+
+                // Add command to toggle auto-scroll (when streaming)
+                const assLabel = menuState.symbol[+config.autoScroll] + ' '
+                               + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
+                               + menuState.separator + menuState.word[+config.autoScroll]
+                menuIDs.push(GM_registerMenuCommand(assLabel, () => {
+                    saveSetting('autoScroll', !config.autoScroll)
+                    notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + menuState.word[+config.autoScroll])
+                    refreshMenu()
+                }))
+            }
+
+            // Add command to toggle showing related queries
+            const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
+                          + ( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
+                          + menuState.separator + menuState.word[+!config.rqDisabled]
+            menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
+                saveSetting('rqDisabled', !config.rqDisabled)
+                const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+                if (relatedQueriesDiv) // update visibility based on latest setting
+                    relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
+                if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
+                    const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                    get.related(lastQuery).then(queries => show.related(queries))
+                        .catch(err => { consoleErr(err.message)
+                            if (get.related.status != 'done') api.tryNew(get.related) })
+                }
+                updateTweaksStyle() // toggle <pre> max-height
+                notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
                 refreshMenu()
             }))
-        }
 
-        // Add command to toggle showing related queries
-        const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
-                      + ( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
-                      + menuState.separator + menuState.word[+!config.rqDisabled]
-        menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
-            saveSetting('rqDisabled', !config.rqDisabled)
-            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-            if (relatedQueriesDiv) // update visibility based on latest setting
-                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
-            if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
-                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.related(lastQuery).then(queries => show.related(queries))
-                    .catch(err => { consoleErr(err.message)
-                        if (get.related.status != 'done') api.tryNew(get.related) })
+            // Add command to toggle prefix mode
+            const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
+                          + ( msgs.menuLabel_require || 'Require' ) + ' "/" '
+                          + ( msgs.menuLabel_beforeQuery || 'before query' ) + ' '
+                          + menuState.separator + menuState.word[+config.prefixEnabled]
+            menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
+                saveSetting('prefixEnabled', !config.prefixEnabled)
+                if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
+                    saveSetting('suffixEnabled', !config.suffixEnabled) }
+                notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + menuState.word[+config.prefixEnabled])
+                refreshMenu()
+            }))
+
+            // Add command to toggle suffix mode
+            const sfmLabel = menuState.symbol[+config.suffixEnabled] + ' '
+                          + ( msgs.menuLabel_require || 'Require' ) + ' "?" '
+                          + ( msgs.menuLabel_afterQuery || 'after query' ) + ' '
+                          + menuState.separator + menuState.word[+config.suffixEnabled]
+            menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
+                saveSetting('suffixEnabled', !config.suffixEnabled)
+                if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
+                    saveSetting('prefixEnabled', !config.prefixEnabled) }
+                notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + menuState.word[+config.suffixEnabled])
+                refreshMenu()
+            }))
+
+            if (!isMobile) {
+
+                // Add command to toggle wider sidebar
+                const wsbLabel = menuState.symbol[+config.widerSidebar] + ' '
+                               + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' )
+                               + menuState.separator + menuState.word[+config.widerSidebar]
+                menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
+
+                // Add command to toggle sticky sidebar
+                const ssbLabel = menuState.symbol[+config.stickySidebar] + ' '
+                               + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' )
+                               + menuState.separator + menuState.word[+config.stickySidebar]
+                menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
             }
-            updateTweaksStyle() // toggle <pre> max-height
-            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
-            refreshMenu()
-        }))
-
-        // Add command to toggle prefix mode
-        const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
-                      + ( msgs.menuLabel_require || 'Require' ) + ' "/" '
-                      + ( msgs.menuLabel_beforeQuery || 'before query' ) + ' '
-                      + menuState.separator + menuState.word[+config.prefixEnabled]
-        menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
-            saveSetting('prefixEnabled', !config.prefixEnabled)
-            if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
-                saveSetting('suffixEnabled', !config.suffixEnabled) }
-            notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + menuState.word[+config.prefixEnabled])
-            refreshMenu()
-        }))
-
-        // Add command to toggle suffix mode
-        const sfmLabel = menuState.symbol[+config.suffixEnabled] + ' '
-                      + ( msgs.menuLabel_require || 'Require' ) + ' "?" '
-                      + ( msgs.menuLabel_afterQuery || 'after query' ) + ' '
-                      + menuState.separator + menuState.word[+config.suffixEnabled]
-        menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
-            saveSetting('suffixEnabled', !config.suffixEnabled)
-            if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
-                saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + menuState.word[+config.suffixEnabled])
-            refreshMenu()
-        }))
-
-        if (!isMobile) {
-
-            // Add command to toggle wider sidebar
-            const wsbLabel = menuState.symbol[+config.widerSidebar] + ' '
-                           + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' )
-                           + menuState.separator + menuState.word[+config.widerSidebar]
-            menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
-
-            // Add command to toggle sticky sidebar
-            const ssbLabel = menuState.symbol[+config.stickySidebar] + ' '
-                           + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' )
-                           + menuState.separator + menuState.word[+config.stickySidebar]
-            menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
         }
 
-        // Add command to set reply language
-        const rlLabel = '🌐 ' + ( msgs.menuLabel_replyLanguage || 'Reply Language' )
-                      + menuState.separator + config.replyLanguage
-        menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
-            while (true) {
-                let replyLanguage = prompt(
-                    ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
-                if (replyLanguage == null) break // user cancelled so do nothing
-                else if (!/\d/.test(replyLanguage)) {
-                    replyLanguage = ( // auto-case for menu/alert aesthetics
-                        [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
-                          : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
-                    saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                    siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
-                        config.appName + ' ' + ( msgs.alert_willReplyIn || 'will reply in' ) + ' ' // msg
-                            + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
-                        '', '', 335)
-                    refreshMenu() ; break
-        }}}))
+        // Add command to toggle highlight-to-ask
+        const htaLabel = `${menuState.symbol[+!config.asktipDisabled]} `
+                       + `${ msgs.menuLabel_highlightToAsk || 'Highlight-to-ask' } `
+                       + `(${ msgs.menuLabel_fromAnySite || 'from any site' })`
+                       + menuState.separator + menuState.word[+!config.asktipDisabled]
+        menuIDs.push(GM_registerMenuCommand(htaLabel, () => {
+            saveSetting('asktipDisabled', !config.asktipDisabled, 'global')
+            notify(`${ msgs.menuLabel_highlightToAsk || 'Highlight-to-ask' } ${menuState.word[+!config.asktipDisabled]}`)
+            refreshMenu()
+        }))
 
-        // Add command to set color scheme
-        const schemeLabel = ( config.scheme == 'light' ? '☀️' :
-                              config.scheme == 'dark'  ? '🌘' : '🌗' ) + ' '
-                          + ( msgs.menuLabel_colorScheme || 'Color Scheme' ) + menuState.separator
-                          + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
-                              config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
-                                                       : msgs.menuLabel_auto || 'Auto' )
-        menuIDs.push(GM_registerMenuCommand(schemeLabel, launchSchemeModal))
+        if (isGoogleSERP) {
+
+            // Add command to set reply language
+            const rlLabel = '🌐 ' + ( msgs.menuLabel_replyLanguage || 'Reply Language' )
+                          + menuState.separator + config.replyLanguage
+            menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
+                while (true) {
+                    let replyLanguage = prompt(
+                        ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
+                    if (replyLanguage == null) break // user cancelled so do nothing
+                    else if (!/\d/.test(replyLanguage)) {
+                        replyLanguage = ( // auto-case for menu/alert aesthetics
+                            [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
+                              : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
+                        saveSetting('replyLanguage', replyLanguage || config.userLanguage)
+                        siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
+                            config.appName + ' ' + ( msgs.alert_willReplyIn || 'will reply in' ) + ' ' // msg
+                                + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
+                            '', '', 335)
+                        refreshMenu() ; break
+            }}}))
+
+            // Add command to set color scheme
+            const schemeLabel = ( config.scheme == 'light' ? '☀️' :
+                                  config.scheme == 'dark'  ? '🌘' : '🌗' ) + ' '
+                              + ( msgs.menuLabel_colorScheme || 'Color Scheme' ) + menuState.separator
+                              + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
+                                  config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
+                                                           : msgs.menuLabel_auto || 'Auto' )
+            menuIDs.push(GM_registerMenuCommand(schemeLabel, launchSchemeModal))
+        }
 
         // Add command to launch About modal
         const aboutLabel = '💡 ' + ( msgs.menuLabel_about || 'About' ) + ' ' + config.appName
@@ -2171,103 +2013,227 @@
 
     // Run MAIN routine
 
-    // Init UI vars
-    await Promise.race([ // dark theme label loaded or 0.5s passed
-        new Promise(resolve => {
-            (function checkDarkThemeLabel() {
-                [...document.querySelectorAll('span')].find(span => span.textContent == 'Dark theme')
-                    ? resolve(true) : setTimeout(checkDarkThemeLabel, 200)
-            })()
-        }), new Promise(resolve => setTimeout(resolve, 500))
-    ])
-    let scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' )
-    const hasSidebar = !!document.querySelector('[class*="kp-"]')
+    if (isGoogleSERP) { // show GOOGLEGPT
 
-    // Pre-load LOGO
-    const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
-    appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleElems() }
+        // Init ALERTS
+        var appAlerts = {
+            waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
+            login:            `${ msgs.alert_login || 'Please login' } @ `,
+            checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
+            tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
+            parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
+            proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
+            openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
+            suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
+            suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
+        }
 
-    if (window.location.search.includes('&udm=2')) return // exit if on Google Images
+        // Init UI vars
+        await Promise.race([ // dark theme label loaded or 0.5s passed
+            new Promise(resolve => {
+                (function checkDarkThemeLabel() {
+                    [...document.querySelectorAll('span')].find(span => span.textContent == 'Dark theme')
+                        ? resolve(true) : setTimeout(checkDarkThemeLabel, 200)
+                })()
+            }), new Promise(resolve => setTimeout(resolve, 500))
+        ])
+        var scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' ),
+            hasSidebar = !!document.querySelector('[class*="kp-"]')
 
-    // Init ALERTS
-    const appAlerts = {
-        waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
-        login:            `${ msgs.alert_login || 'Please login' } @ `,
-        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
-        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
-        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
-        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
-        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
-        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
-        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
+        // Pre-load LOGO
+        var appLogoImg = document.createElement('img') ; updateAppLogoSrc()
+        appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleElems() }
+
+        // Create/ID/classify/listenerize GOOGLEGPT container
+        var appDiv = document.createElement('div') ; appDiv.id = 'googlegpt' ;  appDiv.classList.add('fade-in')
+        appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
+            let elem = event.target
+            while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
+                elem = elem.parentNode
+            if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
+        })
+
+        // Stylize APP elems
+        var appStyle = document.createElement('style') ; updateAppStyle()
+        const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
+        document.head.append(appStyle, hljsStyle)
+
+        // Stylize SITE elems
+        var tweaksStyle = document.createElement('style'),
+              wsbStyles = '#center_col, #center_col div { max-width: 516px !important ; overflow: hidden }' // shrink center column
+                        + '#googlegpt { width: 455px }' // expand GoogleGPT when in limiting Google host container
+                        + '#googlegpt ~ div { width: 540px !important }' // expand side snippets
+                        + `#app-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
+              ssbStyles = '#googlegpt { position: sticky ; top: 87px }'
+                        + '#googlegpt ~ * { display: none }' // hide sidebar contents
+        updateTweaksStyle() ; document.head.append(tweaksStyle)
+
+        // Create/stylize TOOLTIPs
+        if (!isMobile) {
+            var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
+            const tooltipStyle = document.createElement('style')
+            tooltipStyle.innerText = '.btn-tooltip {'
+                + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+                + 'font-size: 0.75rem ; color: white ;' // font style
+                + 'position: absolute ;' // for updateTooltip() calcs
+                + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
+                + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
+            document.head.append(tooltipStyle)
+        }
+
+        // APPEND to Google
+        const centerCol = document.getElementById('center_col')
+        const hostContainer = isMobile ? centerCol
+            : document.getElementById('rhs') // sidebar container if side snippets exist
+            || (() => { // create new one if no side snippets exist
+                   const newHostContainer = document.createElement('div')
+                   newHostContainer.style.display = 'contents'
+                   centerCol.style.paddingRight = '65px'
+                   centerCol.insertAdjacentElement('afterend', newHostContainer)
+                   return newHostContainer
+               })()
+        hostContainer.prepend(appDiv)
+        setTimeout(() => appDiv.classList.add('active'), 100) // fade in
+
+        // Init footer CTA to share feedback
+        var footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
+
+        // Show STANDBY mode or get/show ANSWER
+        var msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
+        if (!config.autoget && !location.href.includes('src=asktip') // Auto-Get disabled and not queried from other site
+            || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
+            || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
+                show.reply('standby', footerContent)
+                if (!config.rqDisabled) {
+                    const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                    get.related(lastQuery).then(queries => show.related(queries))
+                        .catch(err => { consoleErr(err.message)
+                            if (get.related.status != 'done') api.tryNew(get.related) })
+                }
+        } else { appAlert('waitingResponse') ; get.reply(msgChain) }
+
+    } else { // create/append/listenerize ASKTIP + elems
+
+        const asktipDisabled = () => config.asktipDisabled
+            || config.sitesToNotShowAsktip && config.sitesToNotShowAsktip.some(domain => location.href.includes(domain))
+
+        // Pre-load ICON
+        const appIconImg = document.createElement('img')
+        appIconImg.src = 'https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e'
+
+        // Init asktip
+        let asktip = document.getElementById('asktip')
+        if (!asktip) { // make/append it
+            const fontFamilies = '"Source Sans Pro", sans-serif', bgColor = '#f9f9f9',
+                  noUserSelectStyles = '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;'
+
+            // Create/ID/stylize/append asktip div
+            asktip = document.createElement('div') ; asktip.id = 'asktip'
+            asktip.style.cssText = noUserSelectStyles
+              + `font-family: ${fontFamilies} ; font-size: 17px ;`
+              + `position: absolute ; background-color: ${bgColor} ; border: 1px solid black ; border-radius: 12px ;`
+              + 'padding: 5px 2px ; box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px ; display: none ; z-index: 1000'
+            document.body.append(asktip)
+
+            // Create/stylize/listenerize/append hide tip ELEMS
+            const hideTipSpan = document.createElement('span'),
+                  hideTipSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                  hideTipSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path'),
+                  hideTipSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 -960 960 960'], ['fill', 'black']]
+            hideTipSVGattrs.forEach(([attr, value]) => hideTipSVG.setAttribute(attr, value))
+            hideTipSVG.style.cssText = 'position: relative ; top: 2.85px ; margin: 0 4px 0 6px ; vertical-align: baseline'
+            hideTipSVGpath.setAttribute('d',
+                'm660.61-425.83-93.65-93.65q4.6-29.82-17.63-53.22-22.24-23.39-54.37-18.78l-89.13-89.13q14.43-6.3 34.84-10.61 20.42-4.3 39.5-4.3 82.4 0 138.87 56.48 56.48 56.47 56.48 138.87 0 17.95-3.59 37.63-3.58 19.67-11.32 36.71ZM805.17-280.7l-81.08-81.65q34.04-27.87 61.93-60.82 27.89-32.96 50.02-76.83-52.13-101.3-145.7-162.09-93.57-60.78-210.59-60.78-28.75 0-54.58 3.44-25.82 3.43-48.43 9.73l-90.35-90.34q42.87-17.87 92.44-27.59 49.57-9.72 101.17-9.72 163.3 0 292.61 92Q901.91-653.36 961.09-500q-23.44 64.87-64.65 121.37-41.22 56.5-91.27 97.93ZM790.39-20.48 624.52-184.91q-33.87 11.56-69.5 16.91T480-162.65q-163.87 0-293.78-92.28Q56.3-347.22-1.09-500q19.44-52.87 50.63-100.57 31.2-47.69 71.07-87.82L11.43-798.87l74-74 778.4 778.96-73.44 73.43ZM202.83-608.87q-26 27.7-44.09 52-18.09 24.3-34.22 56.87 50.6 102.48 144.5 162.68 93.9 60.19 210.98 60.19 9.74 0 21.96-.5 12.21-.5 27.04-3.07l-22.78-26.21q-6.31 1.43-12.78 1.93-6.46.5-13.44.5-82.47 0-138.99-56.53-56.53-56.52-56.53-138.99 0-6.41-.07-12.66-.06-6.25 1.37-13.56l-82.95-82.65Zm348.08 72.91ZM365.57-445Z')
+            hideTipSpan.style.cssText = 'padding: 3px 1px ; border-radius: 9px ; cursor: pointer'
+            hideTipSpan.onmouseover = () => { // highlight bg, show menu
+                hideTipSpan.style.background = '#bcd7dfab'
+                if (hideAsktipMenu.style.display == 'none') {
+                    hideAsktipMenu.style.display = 'grid'
+                    hideAsktipMenu.style.left = `${hideTipSpan.getBoundingClientRect().left}px`
+                    hideAsktipMenu.style.top = `${ hideTipSpan.getBoundingClientRect().bottom
+                        + ( window.pageYOffset || document.documentElement.scrollTop ) +6 }px`
+            }}
+            hideTipSpan.onmouseout = () => hideTipSpan.style.background = 'none' // unhighlight bg
+            hideTipSVG.append(hideTipSVGpath) ; hideTipSpan.append(hideTipSVG) ; asktip.append(hideTipSpan)
+
+            // Create/ID/stylize/append hide tip menu
+            const hideAsktipMenu = document.createElement('div')
+            hideAsktipMenu.id = 'hide-asktip-menu' ; hideAsktipMenu.style.display = 'none'
+            hideAsktipMenu.style.cssText = noUserSelectStyles
+              + `font-family: ${fontFamilies} ; font-size: 16px ; border: 1px solid black ; border-radius: 9px ;`
+              + `display: none ; color: rgb(27, 27, 27) ; background: ${bgColor} ; position: absolute ; padding: 3px ;`
+              + 'box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px'
+            document.body.append(hideAsktipMenu)
+
+            // Create/fill/stylize/listenerize/append hide tip menu items
+            const hideAsktipMenuItemA = document.createElement('span'),
+                  hideAsktipMenuItemB = document.createElement('span')
+            hideAsktipMenuItemA.textContent = `${ msgs.menuLabel_hideMenu || 'Hide menu' } `
+                                         + `${ msgs.menuLabel_forThisSite || 'for this site' }`
+            hideAsktipMenuItemB.textContent = `${ msgs.menuLabel_hideMenu || 'Hide menu' } `
+                                         + `${ msgs.menuLabel_always || 'always' }`;
+            [hideAsktipMenuItemA, hideAsktipMenuItemB].forEach((menuItem, idx) => {
+                menuItem.style.cssText = 'cursor: pointer ; padding: 1px 6px'
+                menuItem.onmouseover = () => menuItem.style.background = '#bcd7dfab' // highlight bg
+                menuItem.onmouseout = () => menuItem.style.background = 'none' // unhighlight bg
+                if (idx == 0) { // entry to hide menu for site
+                    menuItem.style.cssText += '; border-bottom: 1px dotted rgb(0, 0, 0)' // add separator
+                    menuItem.onclick = () => {
+                        if (!config.sitesToNotShowAsktip) config.sitesToNotShowAsktip = []
+                        config.sitesToNotShowAsktip.push(new URL(location.href).hostname)
+                        saveSetting('sitesToNotShowAsktip', config.sitesToNotShowAsktip, 'global')
+                        document.getElementById('hide-asktip-menu').style.display = 'none'
+                        document.getElementById('asktip').style.display = 'none'
+                    }
+                } else { // entry to hide menu always
+                    menuItem.onclick = () => {
+                        saveSetting('asktipDisabled', true, 'global')
+                        refreshMenu()
+                        document.getElementById('hide-asktip-menu').style.display = 'none'
+                        document.getElementById('asktip').style.display = 'none'
+                }}
+            })
+            hideAsktipMenu.append(hideAsktipMenuItemA, hideAsktipMenuItemB)
+        }
+
+        // Add inputEvents.up event to SHOW asktip
+        document.addEventListener(inputEvents.up, event => { setTimeout(() => {
+            if (asktipDisabled()) return
+            const selectedText = window.getSelection().toString().trim()
+            if (selectedText && !event.target.closest('#asktip')) {
+            
+                    // Init asktip content
+                    let asktipContentSpan = document.getElementById('googlegpt-asktip-content')
+                    if (!asktipContentSpan) { // make/append it
+                        asktipContentSpan = document.createElement('span') ; asktipContentSpan.id = 'googlegpt-asktip-content'
+                        asktipContentSpan.textContent = `${ msgs.menuLabel_ask || 'Ask' } ${config.appName}`
+                        appIconImg.style.cssText = 'width: 18px ; position: relative ; top: 3px ; margin-right: 5px ; vertical-align: baseline'
+                        asktipContentSpan.prepend(appIconImg)
+                        asktipContentSpan.style.cssText = 'padding: 3px 6px ; border-radius: 9px ;  cursor: pointer'
+                        asktipContentSpan.onmouseover = () => { // highlight bg, hide hide-tip menu
+                            asktipContentSpan.style.background = '#bcd7dfab'
+                            const hideAsktipMenu = document.getElementById('hide-asktip-menu')
+                            if (hideAsktipMenu?.style.display != 'none') hideAsktipMenu.style.display = 'none'
+                        }
+                        asktipContentSpan.onmouseout = () => asktipContentSpan.style.background = 'none' // unlight bg
+                        asktip.prepend(asktipContentSpan)
+                    }
+
+                    // Add/update click event each time to capture live selectedText
+                    asktipContentSpan.onclick = () => {
+                        safeWindowOpen(`https://www.google.com/search?q=${encodeURIComponent(selectedText)}&src=asktip`)
+                        asktip.style.display = 'none'
+                    }
+
+                    // Show asktip
+                    asktip.style.display = 'ruby'
+                    asktip.style.left = `${ event.pageX - asktip.offsetWidth/2 }px`
+                    asktip.style.top = `${ event.pageY - asktip.offsetHeight -28 }px`
+
+            } else // hide everything
+                asktip.style.display = document.getElementById('hide-asktip-menu').style.display = 'none'
+
+        }, 1)})  // to avoid double trigger
     }
-
-    // Create/ID/classify/listenerize GOOGLEGPT container
-    const appDiv = document.createElement('div') ; appDiv.id = 'googlegpt' ;  appDiv.classList.add('fade-in')
-    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
-        let elem = event.target
-        while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
-            elem = elem.parentNode
-        if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
-    })
-
-    // Stylize APP elems
-    const appStyle =  document.createElement('style') ; updateAppStyle()
-    const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
-    document.head.append(appStyle, hljsStyle)
-
-    // Stylize SITE elems
-    const tweaksStyle = document.createElement('style'),
-          wsbStyles = '#center_col, #center_col div { max-width: 516px !important ; overflow: hidden }' // shrink center column
-                    + '#googlegpt { width: 455px }' // expand GoogleGPT when in limiting Google host container
-                    + '#googlegpt ~ div { width: 540px !important }' // expand side snippets
-                    + `#app-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
-          ssbStyles = '#googlegpt { position: sticky ; top: 87px }'
-                    + '#googlegpt ~ * { display: none }' // hide sidebar contents
-    updateTweaksStyle() ; document.head.append(tweaksStyle)
-
-    // Create/stylize TOOLTIPs
-    if (!isMobile) {
-        var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
-        const tooltipStyle = document.createElement('style')
-        tooltipStyle.innerText = '.btn-tooltip {'
-            + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-            + 'font-size: 0.75rem ; color: white ;' // font style
-            + 'position: absolute ;' // for updateTooltip() calcs
-            + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
-            + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
-        document.head.append(tooltipStyle)
-    }
-
-    // APPEND to Google
-    const centerCol = document.getElementById('center_col')
-    const hostContainer = isMobile ? centerCol
-        : document.getElementById('rhs') // sidebar container if side snippets exist
-        || (() => { // create new one if no side snippets exist
-               const newHostContainer = document.createElement('div')
-               newHostContainer.style.display = 'contents'
-               centerCol.style.paddingRight = '65px'
-               centerCol.insertAdjacentElement('afterend', newHostContainer)
-               return newHostContainer
-           })()
-    hostContainer.prepend(appDiv)
-    setTimeout(() => appDiv.classList.add('active'), 100) // fade in
-
-    // Init footer CTA to share feedback
-    let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
-
-    // Show STANDBY mode or get/show ANSWER
-    let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
-    if (!config.autoget
-        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
-            show.reply('standby', footerContent)
-            if (!config.rqDisabled) {
-                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.related(lastQuery).then(queries => show.related(queries))
-                    .catch(err => { consoleErr(err.message)
-                        if (get.related.status != 'done') api.tryNew(get.related) })
-            }
-    } else { appAlert('waitingResponse') ; get.reply(msgChain) }
 
 })()
