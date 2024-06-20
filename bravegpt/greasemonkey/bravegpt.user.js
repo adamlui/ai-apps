@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-Brave Search. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.20.2
+// @version             2024.6.20.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -224,7 +224,7 @@ setTimeout(async () => {
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@eb5b96e/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@c6ccc6f/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting(['autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize',
@@ -2106,7 +2106,7 @@ setTimeout(async () => {
             hideAsktipMenuItemA.textContent = `${ msgs.menuLabel_hideMenu || 'Hide menu' } `
                                          + `${ msgs.menuLabel_forThisSite || 'for this site' }`
             hideAsktipMenuItemB.textContent = `${ msgs.menuLabel_hideMenu || 'Hide menu' } `
-                                         + `${ msgs.menuLabel_always || 'always' }`;
+                                         + `${ msgs.menuLabel_fromAllSites || 'from all sites' }`;
             [hideAsktipMenuItemA, hideAsktipMenuItemB].forEach((menuItem, idx) => {
                 menuItem.style.cssText = 'cursor: pointer ; padding: 1px 6px'
                 menuItem.onmouseover = () => menuItem.style.background = '#bcd7dfab' // highlight bg

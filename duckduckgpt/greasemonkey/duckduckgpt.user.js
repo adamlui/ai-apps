@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.20.2
+// @version             2024.6.20.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -224,7 +224,7 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@89baf4e/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@f2c9d00/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting(['autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun',
@@ -2144,7 +2144,7 @@
             hideAsktipMenuItemA.textContent = `${ msgs.menuLabel_hideMenu || 'Hide menu' } `
                                          + `${ msgs.menuLabel_forThisSite || 'for this site' }`
             hideAsktipMenuItemB.textContent = `${ msgs.menuLabel_hideMenu || 'Hide menu' } `
-                                         + `${ msgs.menuLabel_always || 'always' }`;
+                                         + `${ msgs.menuLabel_fromAllSites || 'from all sites' }`;
             [hideAsktipMenuItemA, hideAsktipMenuItemB].forEach((menuItem, idx) => {
                 menuItem.style.cssText = 'cursor: pointer ; padding: 1px 6px'
                 menuItem.onmouseover = () => menuItem.style.background = '#bcd7dfab' // highlight bg
