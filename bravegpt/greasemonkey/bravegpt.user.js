@@ -151,13 +151,13 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-Brave Search. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.20.3
+// @version             2024.6.20.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
 // @compatible          chrome
 // @compatible          firefox
-// @compatible          edge
+// @compatible          edge except for Streaming Mode
 // @compatible          opera
 // @compatible          brave
 // @compatible          vivaldi
