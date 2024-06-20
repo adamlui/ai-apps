@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "משוב" },
   "prefix_exit": { "message": "יציאה" },
   "state_on": { "message": "פועל" },
-  "state_off": { "message": "כבוי" }
+  "state_off": { "message": "כבוי" },
+  "query_hiThere": { "message": "שלום," },
+  "query_translate": { "message": "תרגם" }
 }

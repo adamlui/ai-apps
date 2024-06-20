@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "பின்னூட்டத்தைப் பகிரவும்" },
   "prefix_exit": { "message": "வெளியேறு" },
   "state_on": { "message": "மீது" },
-  "state_off": { "message": "நிறுத்துக" }
+  "state_off": { "message": "நிறுத்துக" },
+  "query_hiThere": { "message": "வணக்கம்!" },
+  "query_translate": { "message": "மொழிமாற்று" }
 }

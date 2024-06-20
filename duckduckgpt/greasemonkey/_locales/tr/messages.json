@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Geri Bildirim Paylaş" },
   "prefix_exit": { "message": "Çık" },
   "state_on": { "message": "Açık" },
-  "state_off": { "message": "Kapalı" }
+  "state_off": { "message": "Kapalı" },
+  "query_hiThere": { "message": "Merhaba" },
+  "query_translate": { "message": "Çevir" }
 }

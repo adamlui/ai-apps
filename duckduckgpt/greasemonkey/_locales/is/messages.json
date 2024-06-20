@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Deildu athugasemdum" },
   "prefix_exit": { "message": "Hætta" },
   "state_on": { "message": "Á" },
-  "state_off": { "message": "Óvirkt" }
+  "state_off": { "message": "Óvirkt" },
+  "query_hiThere": { "message": "Sæl/ll" },
+  "query_translate": { "message": "Þýða" }
 }

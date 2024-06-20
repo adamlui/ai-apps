@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Κοινοποίηση προτάσεων βελτίωσης" },
   "prefix_exit": { "message": "Έξοδος" },
   "state_on": { "message": "On" },
-  "state_off": { "message": "Off" }
+  "state_off": { "message": "Off" },
+  "query_hiThere": { "message": "Γεια σας" },
+  "query_translate": { "message": "Μετάφραση" }
 }

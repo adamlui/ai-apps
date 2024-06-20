@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "ግብረመልስ ያጋሩ" },
   "prefix_exit": { "message": "ይውጡ" },
   "state_on": { "message": "በላይ" },
-  "state_off": { "message": "አጥፋ" }
+  "state_off": { "message": "አጥፋ" },
+  "query_hiThere": { "message": "ጤና ይስጥልኝ! " },
+  "query_translate": { "message": "ትርጉም" }
 }

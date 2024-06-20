@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Fikr-mulohazangizni baham ko'ring" },
   "prefix_exit": { "message": "Chiqish" },
   "state_on": { "message": "Yoniq" },
-  "state_off": { "message": "O'chirilgan" }
+  "state_off": { "message": "O'chirilgan" },
+  "query_hiThere": { "message": "salom" },
+  "query_translate": { "message": "Tarjimalar" }
 }

@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Öwrenme paýlaş" },
   "prefix_exit": { "message": "Çyk" },
   "state_on": { "message": "% jeminden" },
-  "state_off": { "message": "Çyk" }
+  "state_off": { "message": "Çyk" },
+  "query_hiThere": { "message": "Salam, salam" },
+  "query_translate": { "message": "Terjime et" }
 }

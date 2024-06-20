@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Məxfi rəy paylaşın" },
   "prefix_exit": { "message": "Çıxmaq" },
   "state_on": { "message": "" },
-  "state_off": { "message": "İŞLƏMİR" }
+  "state_off": { "message": "İŞLƏMİR" },
+  "query_hiThere": { "message": "Salam," },
+  "query_translate": { "message": "Tərcümə et" }
 }

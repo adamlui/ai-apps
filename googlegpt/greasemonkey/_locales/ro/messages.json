@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Trimite feedback" },
   "prefix_exit": { "message": "Ieșire" },
   "state_on": { "message": "On" },
-  "state_off": { "message": "Oprit" }
+  "state_off": { "message": "Oprit" },
+  "query_hiThere": { "message": "Salut," },
+  "query_translate": { "message": "Traduceți" }
 }

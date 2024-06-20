@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Atsauksme" },
   "prefix_exit": { "message": "Iziet" },
   "state_on": { "message": "Ieslēgt" },
-  "state_off": { "message": "Izslēgta" }
+  "state_off": { "message": "Izslēgta" },
+  "query_hiThere": { "message": "Sveiki!" },
+  "query_translate": { "message": "Tulkot" }
 }

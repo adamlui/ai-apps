@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Visszajelzés" },
   "prefix_exit": { "message": "Kilépés" },
   "state_on": { "message": "Be" },
-  "state_off": { "message": "Kikapcsolva" }
+  "state_off": { "message": "Kikapcsolva" },
+  "query_hiThere": { "message": "Üdv!" },
+  "query_translate": { "message": "Fordítás" }
 }

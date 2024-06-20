@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "پەیامی ئەزموون بگرە" },
   "prefix_exit": { "message": "دەرچوون" },
   "state_on": { "message": "Vekirî" },
-  "state_off": { "message": "Girtî" }
+  "state_off": { "message": "Girtî" },
+  "query_hiThere": { "message": "silav" },
+  "query_translate": { "message": "وەرگێڕان" }
 }

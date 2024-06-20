@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Podziel się swoją opinią" },
   "prefix_exit": { "message": "Wyjście" },
   "state_on": { "message": "Wł" },
-  "state_off": { "message": "Wył." }
+  "state_off": { "message": "Wył." },
+  "query_hiThere": { "message": "Witaj" },
+  "query_translate": { "message": "Przetłumacz " }
 }

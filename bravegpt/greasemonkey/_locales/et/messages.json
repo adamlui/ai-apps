@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Tagasiside" },
   "prefix_exit": { "message": "Väljumine" },
   "state_on": { "message": "Sees" },
-  "state_off": { "message": "Välja lülitatud" }
+  "state_off": { "message": "Välja lülitatud" },
+  "query_hiThere": { "message": "Tere" },
+  "query_translate": { "message": "Tõlgi" }
 }

@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Share Feedback" },
   "prefix_exit": { "message": "Fumenimo" },
   "state_on": { "message": "Pali" },
-  "state_off": { "message": "OFF" }
+  "state_off": { "message": "OFF" },
+  "query_hiThere": { "message": "Hello Mulya" },
+  "query_translate": { "message": "Ukupilibula" }
 }

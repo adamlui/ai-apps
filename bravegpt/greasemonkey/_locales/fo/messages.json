@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Viðmerkingar" },
   "prefix_exit": { "message": "Útgangur" },
   "state_on": { "message": "t" },
-  "state_off": { "message": "Av" }
+  "state_off": { "message": "Av" },
+  "query_hiThere": { "message": "Heilsan er her" },
+  "query_translate": { "message": "Umsetja" }
 }

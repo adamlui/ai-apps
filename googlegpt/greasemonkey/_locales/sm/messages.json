@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Faasoa atu Feedback" },
   "prefix_exit": { "message": "Alu'ese" },
   "state_on": { "message": "I luga o" },
-  "state_off": { "message": "ALU!" }
+  "state_off": { "message": "ALU!" },
+  "query_hiThere": { "message": "Talofa iina" },
+  "query_translate": { "message": "Faaliliuga" }
 }

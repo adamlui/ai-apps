@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Tikti" },
   "prefix_exit": { "message": "Ffeγ" },
   "state_on": { "message": "Yermed" },
-  "state_off": { "message": "Yensa" }
+  "state_off": { "message": "Yensa" },
+  "query_hiThere": { "message": "Azul dinna," },
+  "query_translate": { "message": "Suqel" }
 }

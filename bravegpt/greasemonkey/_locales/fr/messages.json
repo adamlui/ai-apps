@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Commentaire" },
   "prefix_exit": { "message": "Quitter" },
   "state_on": { "message": "Activé" },
-  "state_off": { "message": "Arrêt" }
+  "state_off": { "message": "Arrêt" },
+  "query_hiThere": { "message": "Salut" },
+  "query_translate": { "message": "Traduire" }
 }

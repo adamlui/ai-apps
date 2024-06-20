@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Anna palautetta" },
   "prefix_exit": { "message": "Poistu" },
   "state_on": { "message": "Päällä" },
-  "state_off": { "message": "Pois päältä" }
+  "state_off": { "message": "Pois päältä" },
+  "query_hiThere": { "message": "Moi," },
+  "query_translate": { "message": "Käännä" }
 }

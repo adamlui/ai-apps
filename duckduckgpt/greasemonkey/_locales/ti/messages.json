@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "ግብረ መልሲ ምዝርጋሕ" },
   "prefix_exit": { "message": "ውጻእ" },
   "state_on": { "message": "o" },
-  "state_off": { "message": "ዝወጽ" }
+  "state_off": { "message": "ዝወጽ" },
+  "query_hiThere": { "message": "ሰላም ኣብዚ" },
+  "query_translate": { "message": "ተርጉም" }
 }

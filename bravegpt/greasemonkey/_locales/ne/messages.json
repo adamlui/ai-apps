@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "प्रतिक्रिया" },
   "prefix_exit": { "message": "निस्कने ठाउँ" },
   "state_on": { "message": "खुला" },
-  "state_off": { "message": "बन्द" }
+  "state_off": { "message": "बन्द" },
+  "query_hiThere": { "message": "नमस्ते" },
+  "query_translate": { "message": "अनुवाद गर्नहोस्" }
 }

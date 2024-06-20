@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "نظرات خود را به اشتراک بگذارید" },
   "prefix_exit": { "message": "خروج" },
   "state_on": { "message": "شما در" },
-  "state_off": { "message": "خاموش" }
+  "state_off": { "message": "خاموش" },
+  "query_hiThere": { "message": "سلام , " },
+  "query_translate": { "message": "Translate" }
 }

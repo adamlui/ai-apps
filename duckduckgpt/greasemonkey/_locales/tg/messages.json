@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Мубодилаи фикру ақида" },
   "prefix_exit": { "message": "Баромад" },
   "state_on": { "message": "Оран" },
-  "state_off": { "message": "& Ғайри фаъол" }
+  "state_off": { "message": "& Ғайри фаъол" },
+  "query_hiThere": { "message": "Салом дар он ҷо" },
+  "query_translate": { "message": "ÐÑÐ±Ð¾Ð±Ð¸ Ð¡Ð¸Ð½ÑÑ" }
 }

@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "अपना प्रतिक्रिया साझा करें" },
   "prefix_exit": { "message": "बाहर निकलें" },
   "state_on": { "message": "चालू" },
-  "state_off": { "message": "बंद" }
+  "state_off": { "message": "बंद" },
+  "query_hiThere": { "message": "Hi there" },
+  "query_translate": { "message": "अंदाजा लगाइए कि हम कौन सा गाना गा रहे हैं।" }
 }

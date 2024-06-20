@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Nala wadaag war-celintaada" },
   "prefix_exit": { "message": "Bixid" },
   "state_on": { "message": "Shid" },
-  "state_off": { "message": "Dami" }
+  "state_off": { "message": "Dami" },
+  "query_hiThere": { "message": "Waad salaaman tahay!" },
+  "query_translate": { "message": "Translate" }
 }

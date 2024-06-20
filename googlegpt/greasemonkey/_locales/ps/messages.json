@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "نظرونه شریک کړئ" },
   "prefix_exit": { "message": "وتون" },
   "state_on": { "message": "بل" },
-  "state_off": { "message": "Property_BAR_NewPrefs_App_BAR_" }
+  "state_off": { "message": "Property_BAR_NewPrefs_App_BAR_" },
+  "query_hiThere": { "message": "سلام، هلته" },
+  "query_translate": { "message": "ژباړل" }
 }

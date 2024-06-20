@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Partilhe o seu feedback" },
   "prefix_exit": { "message": "Sair" },
   "state_on": { "message": "Activado" },
-  "state_off": { "message": "Desligado" }
+  "state_off": { "message": "Desligado" },
+  "query_hiThere": { "message": "Olá," },
+  "query_translate": { "message": "Traduzir" }
 }

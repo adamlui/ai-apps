@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Impendulo" },
   "prefix_exit": { "message": "Phuma" },
   "state_on": { "message": "Inye" },
-  "state_off": { "message": "cima" }
+  "state_off": { "message": "cima" },
+  "query_hiThere": { "message": "Molo apho!" },
+  "query_translate": { "message": "Uguqulelo lomsebenzi kolunye ulwimi" }
 }

@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Ohar-bidaltzea" },
   "prefix_exit": { "message": "Irten" },
   "state_on": { "message": "Piztuta" },
-  "state_off": { "message": "Itzalita" }
+  "state_off": { "message": "Itzalita" },
+  "query_hiThere": { "message": "Kaixo" },
+  "query_translate": { "message": "Itzuli" }
 }

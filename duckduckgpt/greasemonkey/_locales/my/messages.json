@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "ဝေမျှရန် တုံ့ပြန်ချက်" },
   "prefix_exit": { "message": "ထြက္ရန္" },
   "state_on": { "message": "(ျဖစ္စဥ္)" },
-  "state_off": { "message": "ပိတ်" }
+  "state_off": { "message": "ပိတ်" },
+  "query_hiThere": { "message": "မင်္ဂလာပါ" },
+  "query_translate": { "message": "ဘာသာျပန္ပါ" }
 }

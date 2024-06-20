@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "ފީޑްބެކް ޝެއާ ކުރޭ" },
   "prefix_exit": { "message": "ނުކުތުން" },
   "state_on": { "message": "މަތީގައި" },
-  "state_off": { "message": "އޮފް" }
+  "state_off": { "message": "އޮފް" },
+  "query_hiThere": { "message": "އައްސަލާމް ޢަލައިކުމް" },
+  "query_translate": { "message": "ތަރުޖަމާކުރުން" }
 }

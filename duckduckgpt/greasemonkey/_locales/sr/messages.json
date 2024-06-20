@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Deljenje povratnih informacija" },
   "prefix_exit": { "message": "Izlaz" },
   "state_on": { "message": "Uključeno" },
-  "state_off": { "message": "Off (isključeno)" }
+  "state_off": { "message": "Off (isključeno)" },
+  "query_hiThere": { "message": "- Huan." },
+  "query_translate": { "message": "Prevedi" }
 }

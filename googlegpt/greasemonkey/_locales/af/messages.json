@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Deel terugvoer" },
   "prefix_exit": { "message": "Gaan uit" },
   "state_on": { "message": "Op" },
-  "state_off": { "message": "Af" }
+  "state_off": { "message": "Af" },
+  "query_hiThere": { "message": "Hi daar" },
+  "query_translate": { "message": "Vertaal" }
 }

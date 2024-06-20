@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "フィードバックを送る" },
   "prefix_exit": { "message": "終了" },
   "state_on": { "message": "オン" },
-  "state_off": { "message": "オフ" }
+  "state_off": { "message": "オフ" },
+  "query_hiThere": { "message": "こんにちは" },
+  "query_translate": { "message": "翻訳" }
 }

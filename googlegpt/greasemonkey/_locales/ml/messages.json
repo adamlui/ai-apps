@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "ഫീഡ്‌ബാക്ക് പങ്കിടുക" },
   "prefix_exit": { "message": "പുറത്തു് കടക്കുക" },
   "state_on": { "message": "ഓണ്‍" },
-  "state_off": { "message": "ഓഫ്" }
+  "state_off": { "message": "ഓഫ്" },
+  "query_hiThere": { "message": "ഹായ്" },
+  "query_translate": { "message": "à´¤àµà´°à´¿ à´àµà´£à´" }
 }

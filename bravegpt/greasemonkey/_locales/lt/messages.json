@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Grįžtamoji informacija" },
   "prefix_exit": { "message": "Išeiti" },
   "state_on": { "message": "Įjungta" },
-  "state_off": { "message": "Išjungta" }
+  "state_off": { "message": "Išjungta" },
+  "query_hiThere": { "message": "Sveiki." },
+  "query_translate": { "message": "Versti" }
 }

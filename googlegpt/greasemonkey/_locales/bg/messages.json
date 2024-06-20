@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Споделяне на отзиви" },
   "prefix_exit": { "message": "Изход" },
   "state_on": { "message": "На" },
-  "state_off": { "message": "изключен" }
+  "state_off": { "message": "изключен" },
+  "query_hiThere": { "message": "Здравейте!" },
+  "query_translate": { "message": "Превод" }
 }

@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Feedback" },
   "prefix_exit": { "message": "Mogawas" },
   "state_on": { "message": "Sa" },
-  "state_off": { "message": "Off" }
+  "state_off": { "message": "Off" },
+  "query_hiThere": { "message": "Hai sa ma uit" },
+  "query_translate": { "message": "Paghubad" }
 }

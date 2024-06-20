@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Umpan Balik" },
   "prefix_exit": { "message": "Keluar" },
   "state_on": { "message": "Hidup (On)" },
-  "state_off": { "message": "Mati (Off)" }
+  "state_off": { "message": "Mati (Off)" },
+  "query_hiThere": { "message": "Halo" },
+  "query_translate": { "message": "Terjemahkan" }
 }

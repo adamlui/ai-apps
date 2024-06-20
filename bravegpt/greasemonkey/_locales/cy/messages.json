@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Adborth" },
   "prefix_exit": { "message": "Man gadael" },
   "state_on": { "message": "Ymlaen" },
-  "state_off": { "message": "Wedi'i ddiffodd" }
+  "state_off": { "message": "Wedi'i ddiffodd" },
+  "query_hiThere": { "message": "Shwmae, " },
+  "query_translate": { "message": "Cyfieithu" }
 }

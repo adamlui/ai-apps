@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "ແບ່ງປັນຄຳຕິຊົມ" },
   "prefix_exit": { "message": "ອອກ" },
   "state_on": { "message": "ເປີດ" },
-  "state_off": { "message": "ປິດ" }
+  "state_off": { "message": "ປິດ" },
+  "query_hiThere": { "message": "Hi ຢູ່ທີ່ນັ້ນ" },
+  "query_translate": { "message": "ແປພາສາ: " }
 }

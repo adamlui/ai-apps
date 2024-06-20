@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "ZVINOKOSHA" },
   "prefix_exit": { "message": "Buda" },
   "state_on": { "message": "Pana" },
-  "state_off": { "message": "ZVIMWE" }
+  "state_off": { "message": "ZVIMWE" },
+  "query_hiThere": { "message": "Mhoroi" },
+  "query_translate": { "message": "Dudziro" }
 }

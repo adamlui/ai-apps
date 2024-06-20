@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Toksave" },
   "prefix_exit": { "message": "Kisim" },
   "state_on": { "message": "Long" },
-  "state_off": { "message": "Kisim i go" }
+  "state_off": { "message": "Kisim i go" },
+  "query_hiThere": { "message": "Mi stap hia" },
+  "query_translate": { "message": "Tok Pisin" }
 }

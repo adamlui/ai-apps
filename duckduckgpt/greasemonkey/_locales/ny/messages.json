@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Gawani Ndemanga" },
   "prefix_exit": { "message": "Lumikizanani nafe" },
   "state_on": { "message": "ZOKHUD" },
-  "state_off": { "message": "Kuzimitsa" }
+  "state_off": { "message": "Kuzimitsa" },
+  "query_hiThere": { "message": "Moni kumeneko" },
+  "query_translate": { "message": "Tanthauzirani" }
 }

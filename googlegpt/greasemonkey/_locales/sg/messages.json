@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Share Feedback na na" },
   "prefix_exit": { "message": "A yeke sigigi na ni" },
   "state_on": { "message": "Na ndo ti" },
-  "state_off": { "message": "A yeke na lege ni ape" }
+  "state_off": { "message": "A yeke na lege ni ape" },
+  "query_hiThere": { "message": "Salut na ndo so" },
+  "query_translate": { "message": "Ti kiri peko ti atënë ti yâ ti Bible" }
 }

@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Ditshwaelo" },
   "prefix_exit": { "message": "Tswa" },
   "state_on": { "message": "On" },
-  "state_off": { "message": "OFF" }
+  "state_off": { "message": "OFF" },
+  "query_hiThere": { "message": "Dumela" },
+  "query_translate": { "message": "TRANSLATE" }
 }

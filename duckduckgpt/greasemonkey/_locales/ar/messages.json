@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "مشاركة الملاحظات." },
   "prefix_exit": { "message": "خروج" },
   "state_on": { "message": "تشغيل" },
-  "state_off": { "message": "إيقاف التشغيل" }
+  "state_off": { "message": "إيقاف التشغيل" },
+  "query_hiThere": { "message": "أهلا وسَهلًا" },
+  "query_translate": { "message": "الترجمة" }
 }

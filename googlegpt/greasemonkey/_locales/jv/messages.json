@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Share Feedback" },
   "prefix_exit": { "message": "Exit" },
   "state_on": { "message": "On" },
-  "state_off": { "message": "Off" }
+  "state_off": { "message": "Off" },
+  "query_hiThere": { "message": "Hi there" },
+  "query_translate": { "message": "Translate" }
 }

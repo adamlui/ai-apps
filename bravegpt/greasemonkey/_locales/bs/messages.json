@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Povratne informacije" },
   "prefix_exit": { "message": "Izlaz" },
   "state_on": { "message": "Da" },
-  "state_off": { "message": "Ne" }
+  "state_off": { "message": "Ne" },
+  "query_hiThere": { "message": "Zdravo." },
+  "query_translate": { "message": "Prevedi" }
 }

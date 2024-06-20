@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Fidbak" },
   "prefix_exit": { "message": "SÒTI" },
   "state_on": { "message": "Nan dat" },
-  "state_off": { "message": "etenn/koupe " }
+  "state_off": { "message": "etenn/koupe " },
+  "query_hiThere": { "message": "Hi there" },
+  "query_translate": { "message": "Tradui" }
 }

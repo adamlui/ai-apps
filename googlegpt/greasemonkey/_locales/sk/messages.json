@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Zdieľajte spätnú väzbu s" },
   "prefix_exit": { "message": "Odísť" },
   "state_on": { "message": "Zapnuté" },
-  "state_off": { "message": "Vypnuté" }
+  "state_off": { "message": "Vypnuté" },
+  "query_hiThere": { "message": "Dobrý deň," },
+  "query_translate": { "message": "Preložiť" }
 }

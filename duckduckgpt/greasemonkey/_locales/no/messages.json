@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Gi en tilbakemelding" },
   "prefix_exit": { "message": "Utgang" },
   "state_on": { "message": "På" },
-  "state_off": { "message": "Av" }
+  "state_off": { "message": "Av" },
+  "query_hiThere": { "message": "Hei" },
+  "query_translate": { "message": "Oversett" }
 }

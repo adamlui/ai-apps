@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "反馈" },
   "prefix_exit": { "message": "退出" },
   "state_on": { "message": "开" },
-  "state_off": { "message": "关" }
+  "state_off": { "message": "关" },
+  "query_hiThere": { "message": "你好" },
+  "query_translate": { "message": "翻译" }
 }

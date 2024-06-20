@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Kummenti b'reazzjoni" },
   "prefix_exit": { "message": "Ħruġ" },
   "state_on": { "message": "fil" },
-  "state_off": { "message": "Diżattivata" }
+  "state_off": { "message": "Diżattivata" },
+  "query_hiThere": { "message": "Hi hemm" },
+  "query_translate": { "message": "Ittraduċi" }
 }

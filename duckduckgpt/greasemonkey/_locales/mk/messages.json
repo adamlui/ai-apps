@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Споделете повратен коментар" },
   "prefix_exit": { "message": "Излези" },
   "state_on": { "message": "На" },
-  "state_off": { "message": "Исклучено" }
+  "state_off": { "message": "Исклучено" },
+  "query_hiThere": { "message": "Здраво!" },
+  "query_translate": { "message": "Преведи" }
 }

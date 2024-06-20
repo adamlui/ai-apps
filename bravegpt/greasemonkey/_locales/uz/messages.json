@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Шикоят ва таклифлар қутиси" },
   "prefix_exit": { "message": "Chiqish" },
   "state_on": { "message": "Yoniq" },
-  "state_off": { "message": "O'chirilgan" }
+  "state_off": { "message": "O'chirilgan" },
+  "query_hiThere": { "message": "salom" },
+  "query_translate": { "message": "Tarjimalar" }
 }

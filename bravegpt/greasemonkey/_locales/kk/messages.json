@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Кері байланыс" },
   "prefix_exit": { "message": "Шығу" },
   "state_on": { "message": "Болсын" },
-  "state_off": { "message": "Өшіру" }
+  "state_off": { "message": "Өшіру" },
+  "query_hiThere": { "message": "Сәлем," },
+  "query_translate": { "message": "Аударма" }
 }

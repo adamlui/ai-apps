@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Deel feedback" },
   "prefix_exit": { "message": "Exit" },
   "state_on": { "message": "Aan" },
-  "state_off": { "message": "Uit" }
+  "state_off": { "message": "Uit" },
+  "query_hiThere": { "message": "Goedendag" },
+  "query_translate": { "message": "Vertaal" }
 }

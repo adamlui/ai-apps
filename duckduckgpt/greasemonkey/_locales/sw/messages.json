@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Toa maoni yako" },
   "prefix_exit": { "message": "Ondoka" },
   "state_on": { "message": "Washa" },
-  "state_off": { "message": "Zima" }
+  "state_off": { "message": "Zima" },
+  "query_hiThere": { "message": "Hujambo!" },
+  "query_translate": { "message": "Tafsiri" }
 }

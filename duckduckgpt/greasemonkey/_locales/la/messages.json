@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Partes Feedes" },
   "prefix_exit": { "message": "Exire" },
   "state_on": { "message": "mutare melius" },
-  "state_off": { "message": "finis eum" }
+  "state_off": { "message": "finis eum" },
+  "query_hiThere": { "message": "Salve!" },
+  "query_translate": { "message": "vidi tantum" }
 }

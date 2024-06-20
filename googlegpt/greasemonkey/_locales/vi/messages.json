@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Chia sẻ phản hồi của bạn" },
   "prefix_exit": { "message": "Thoát" },
   "state_on": { "message": "Bật" },
-  "state_off": { "message": "Tắt" }
+  "state_off": { "message": "Tắt" },
+  "query_hiThere": { "message": "Xin Chào" },
+  "query_translate": { "message": "Translate" }
 }

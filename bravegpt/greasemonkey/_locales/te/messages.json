@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "ఫీడ్‌బ్యాక్" },
   "prefix_exit": { "message": "నిష్క్రమించండి" },
   "state_on": { "message": "ఆన్" },
-  "state_off": { "message": "ఆఫ్" }
+  "state_off": { "message": "ఆఫ్" },
+  "query_hiThere": { "message": "హాయ్" },
+  "query_translate": { "message": "అనువదించు" }
 }

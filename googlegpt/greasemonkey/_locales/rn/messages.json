@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Gira ico ushikirije" },
   "prefix_exit": { "message": "Gusohoka" },
   "state_on": { "message": "Ku" },
-  "state_off": { "message": "Numa Numa" }
+  "state_off": { "message": "Numa Numa" },
+  "query_hiThere": { "message": "Hi there None None" },
+  "query_translate": { "message": "Traduzione" }
 }

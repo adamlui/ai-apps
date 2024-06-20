@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "དགོངས་མཆར།" },
   "prefix_exit": { "message": "ཐོན་ཐབས །" },
   "state_on": { "message": "སྤར་རྒྱུ" },
-  "state_off": { "message": "གསོད" }
+  "state_off": { "message": "གསོད" },
+  "query_hiThere": { "message": "དྲ་ངོས་འདི་ཡི་བཟོ་བཅོས་མཐའ་མ་" },
+  "query_translate": { "message": "སྐད་སྒྱུར་" }
 }

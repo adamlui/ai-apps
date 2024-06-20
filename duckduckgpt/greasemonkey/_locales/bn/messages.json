@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "ফিডব্যাক শেয়ার করুন" },
   "prefix_exit": { "message": "বের হয়ে যান" },
   "state_on": { "message": "চালু" },
-  "state_off": { "message": "বন্ধ" }
+  "state_off": { "message": "বন্ধ" },
+  "query_hiThere": { "message": "হাই!" },
+  "query_translate": { "message": "অনুবাদ করুন" }
 }

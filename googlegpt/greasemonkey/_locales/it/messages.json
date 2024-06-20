@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Condividi il feedback" },
   "prefix_exit": { "message": "Esci" },
   "state_on": { "message": "On" },
-  "state_off": { "message": "Spento" }
+  "state_off": { "message": "Spento" },
+  "query_hiThere": { "message": "Salve" },
+  "query_translate": { "message": "Tradurre" }
 }

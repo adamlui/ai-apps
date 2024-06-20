@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Skill" },
   "prefix_exit": { "message": "Phuma" },
   "state_on": { "message": "ku" },
-  "state_off": { "message": "Kuvaliwe" }
+  "state_off": { "message": "Kuvaliwe" },
+  "query_hiThere": { "message": "Sawubona lapho" },
+  "query_translate": { "message": "Humusha" }
 }

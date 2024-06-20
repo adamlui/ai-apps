@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Gusangiza" },
   "prefix_exit": { "message": "Gusohoka" },
   "state_on": { "message": "Gufungura" },
-  "state_off": { "message": "Gufunga" }
+  "state_off": { "message": "Gufunga" },
+  "query_hiThere": { "message": "Bye bye there" },
+  "query_translate": { "message": "translate" }
 }

@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Kongsi Maklum Balas" },
   "prefix_exit": { "message": "Keluar" },
   "state_on": { "message": "Hidup" },
-  "state_off": { "message": "Mati" }
+  "state_off": { "message": "Mati" },
+  "query_hiThere": { "message": "Hi semua," },
+  "query_translate": { "message": "Terjemahan" }
 }

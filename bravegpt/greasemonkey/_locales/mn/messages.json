@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Санал хүсэлт" },
   "prefix_exit": { "message": "Гарах" },
   "state_on": { "message": "Асаах" },
-  "state_off": { "message": "Хаах" }
+  "state_off": { "message": "Хаах" },
+  "query_hiThere": { "message": "Сайн байна уу," },
+  "query_translate": { "message": "Орчуулах" }
 }

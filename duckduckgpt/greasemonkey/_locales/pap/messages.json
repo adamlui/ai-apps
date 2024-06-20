@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Kompartí Kompartí" },
   "prefix_exit": { "message": "Salida" },
   "state_on": { "message": "Riba" },
-  "state_off": { "message": "For di" }
+  "state_off": { "message": "For di" },
+  "query_hiThere": { "message": "Hi, Tin Tin" },
+  "query_translate": { "message": "Traduccion" }
 }

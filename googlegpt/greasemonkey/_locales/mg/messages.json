@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Mizara Feedback" },
   "prefix_exit": { "message": "Mivoaka" },
   "state_on": { "message": "Tamin’I –" },
-  "state_off": { "message": "Ajanona" }
+  "state_off": { "message": "Ajanona" },
+  "query_hiThere": { "message": "Salama eto" },
+  "query_translate": { "message": "Hadika" }
 }

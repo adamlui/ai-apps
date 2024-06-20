@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Feedback" },
   "prefix_exit": { "message": "Afslut" },
   "state_on": { "message": "Til" },
-  "state_off": { "message": "Fra" }
+  "state_off": { "message": "Fra" },
+  "query_hiThere": { "message": "Hej" },
+  "query_translate": { "message": "Oversæt" }
 }

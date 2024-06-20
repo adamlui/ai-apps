@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "피드백" },
   "prefix_exit": { "message": "나가기" },
   "state_on": { "message": "켜짐" },
-  "state_off": { "message": "꺼짐" }
+  "state_off": { "message": "꺼짐" },
+  "query_hiThere": { "message": "안녕하세요" },
+  "query_translate": { "message": "번역하기" }
 }

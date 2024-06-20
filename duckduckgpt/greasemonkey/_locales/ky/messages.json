@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Пикирлерди бөлүшүү" },
   "prefix_exit": { "message": "Чыгуу" },
   "state_on": { "message": "БАР" },
-  "state_off": { "message": "Өчүрүү" }
+  "state_off": { "message": "Өчүрүү" },
+  "query_hiThere": { "message": "Hi ал жерде" },
+  "query_translate": { "message": "которуу" }
 }

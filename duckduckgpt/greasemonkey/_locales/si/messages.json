@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "ප්‍රතිපෝෂණය බෙදා ගන්න" },
   "prefix_exit": { "message": "පිට වන්න" },
   "state_on": { "message": "" },
-  "state_off": { "message": "Property_BAR_NewPrefs_App_BAR_" }
+  "state_off": { "message": "Property_BAR_NewPrefs_App_BAR_" },
+  "query_hiThere": { "message": "කොහොමද ඉතින්..." },
+  "query_translate": { "message": "පරිවර්තනය" }
 }

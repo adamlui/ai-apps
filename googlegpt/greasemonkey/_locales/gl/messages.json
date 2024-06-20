@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Compartir a retroalimentación" },
   "prefix_exit": { "message": "Sair" },
   "state_on": { "message": "Activado" },
-  "state_off": { "message": "Apagado" }
+  "state_off": { "message": "Apagado" },
+  "query_hiThere": { "message": "Ciao ciao" },
+  "query_translate": { "message": "Traducir" }
 }

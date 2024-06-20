@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Zpětná vazba" },
   "prefix_exit": { "message": "Východ/výjezd" },
   "state_on": { "message": "Zapnuto" },
-  "state_off": { "message": "Vypnuto" }
+  "state_off": { "message": "Vypnuto" },
+  "query_hiThere": { "message": "Dobrý den," },
+  "query_translate": { "message": "Přeložit" }
 }

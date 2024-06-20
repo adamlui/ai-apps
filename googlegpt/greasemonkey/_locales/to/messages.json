@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Vahevahe ʻa e Fakamatala" },
   "prefix_exit": { "message": "Hū ki tu’a" },
   "state_on": { "message": "ʻI he" },
-  "state_off": { "message": "ʻOsi" }
+  "state_off": { "message": "ʻOsi" },
+  "query_hiThere": { "message": "Malo e lelei" },
+  "query_translate": { "message": "Liliu Leá" }
 }

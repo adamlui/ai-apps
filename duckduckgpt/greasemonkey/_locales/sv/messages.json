@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Dela feedback" },
   "prefix_exit": { "message": "Avsluta" },
   "state_on": { "message": "På" },
-  "state_off": { "message": "Av" }
+  "state_off": { "message": "Av" },
+  "query_hiThere": { "message": "Hejsan" },
+  "query_translate": { "message": "Översätt" }
 }

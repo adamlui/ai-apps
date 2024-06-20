@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "ਸੁਝਾਅ" },
   "prefix_exit": { "message": "ਬਾਹਰ ਨਿਕਲੋ" },
   "state_on": { "message": "ਚਾਲੂ" },
-  "state_off": { "message": "ਬੰਦ" }
+  "state_off": { "message": "ਬੰਦ" },
+  "query_hiThere": { "message": "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਜੀ" },
+  "query_translate": { "message": "ਅਨੁਵਾਦ" }
 }

@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Падзяліцца зваротнай сувяззю" },
   "prefix_exit": { "message": "Выйсьці" },
   "state_on": { "message": "Уключэнне" },
-  "state_off": { "message": "Выключэнне" }
+  "state_off": { "message": "Выключэнне" },
+  "query_hiThere": { "message": "Прывітанне" },
+  "query_translate": { "message": "Перакладзіце" }
 }

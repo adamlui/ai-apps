@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಹಂಚಿಕೊಳ್ಳಿ" },
   "prefix_exit": { "message": "ನಿರ್ಗಮಿಸಿ" },
   "state_on": { "message": "ರಂದು" },
-  "state_off": { "message": "ಆಫ್" }
+  "state_off": { "message": "ಆಫ್" },
+  "query_hiThere": { "message": "ನಮಸ್ಕಾರ," },
+  "query_translate": { "message": "ಅನುವಾದಿಸು" }
 }

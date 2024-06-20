@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "ចែករំលែកមតិកែលម្អ" },
   "prefix_exit": { "message": "ច្រកចេញ" },
   "state_on": { "message": "ស្តីពី" },
-  "state_off": { "message": "បិទ" }
+  "state_off": { "message": "បិទ" },
+  "query_hiThere": { "message": "សួស្តី!" },
+  "query_translate": { "message": "បកប្រែ" }
 }

@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "تاثرات شیئر کریں" },
   "prefix_exit": { "message": "خارج ہوں" },
   "state_on": { "message": "چالو کریں" },
-  "state_off": { "message": "بند کریں" }
+  "state_off": { "message": "بند کریں" },
+  "query_hiThere": { "message": "سلام،" },
+  "query_translate": { "message": "ترجمہ" }
 }

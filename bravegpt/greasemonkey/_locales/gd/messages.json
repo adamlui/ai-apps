@@ -69,5 +69,7 @@
   "link_shareFeedback": { "message": "Aiseolas" },
   "prefix_exit": { "message": "Slighe a-mach" },
   "state_on": { "message": "air" },
-  "state_off": { "message": "Off" }
+  "state_off": { "message": "Off" },
+  "query_hiThere": { "message": "Hello ann" },
+  "query_translate": { "message": "Eadar - theangaich" }
 }

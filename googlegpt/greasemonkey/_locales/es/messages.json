@@ -68,5 +68,7 @@
   "link_shareFeedback": { "message": "Compartir comentarios" },
   "prefix_exit": { "message": "Salida" },
   "state_on": { "message": "Activado" },
-  "state_off": { "message": "Apagado" }
+  "state_off": { "message": "Apagado" },
+  "query_hiThere": { "message": "Hola" },
+  "query_translate": { "message": "Traducir" }
 }
