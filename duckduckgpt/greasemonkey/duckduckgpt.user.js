@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.20.6
+// @version             2024.6.20.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1093,7 +1093,8 @@
 
             // Prepend emoji + localize labels
             if (Object.prototype.hasOwnProperty.call(schemes, btnScheme))
-                 btn.textContent = `${schemes[btnScheme]} ${ msgs['scheme_' + btnScheme] || btnScheme.toUpperCase() }`
+                btn.textContent = `${schemes[btnScheme]} ${ // emoji
+                    msgs['scheme_' + btnScheme] || msgs['menuLabel_' + btnScheme] || btnScheme.toUpperCase() }`
             else btn.style.display = 'none' // hide Dismiss button
 
             // Clone button to replace listener to not dismiss modal on click

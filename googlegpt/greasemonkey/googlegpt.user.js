@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.20.7
+// @version             2024.6.20.8
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1289,7 +1289,8 @@
 
             // Prepend emoji + localize labels
             if (Object.prototype.hasOwnProperty.call(schemes, btnScheme))
-                 btn.textContent = `${schemes[btnScheme]} ${ msgs['scheme_' + btnScheme] || btnScheme.toUpperCase() }`
+                btn.textContent = `${schemes[btnScheme]} ${ // emoji
+                    msgs['scheme_' + btnScheme] || msgs['menuLabel_' + btnScheme] || btnScheme.toUpperCase() }`
             else btn.style.display = 'none' // hide Dismiss button
 
             // Clone button to replace listener to not dismiss modal on click
