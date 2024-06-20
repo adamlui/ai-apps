@@ -1,158 +1,157 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @description         Adds ChatGPT answers to DuckDuckGo sidebar (powered by GPT-4o!)
-// @description:af      Voeg ChatGPT-antwoorde by DuckDuckGo-kantbalk by (aangedryf deur GPT-4o!)
-// @description:am      የChatGPT መልስናወርቃለች እርስዎን በDuckDuckGo የተወሰኑ ገጽታዎችን (ተግባር በGPT-4o!) ይጨምሩ
-// @description:ar      يضيف إجابات ChatGPT إلى شريط البحث الجانبي في DuckDuckGo (مدعوم بواسطة GPT-4o!)
-// @description:az      ChatGPT cavablarını DuckDuckGo Axtarış yan panelinə əlavə edir (GPT-4o ilə gücləndirilmiş!)
-// @description:be      Дадае адказы ChatGPT да бакавой баковай панэлі DuckDuckGo Search (падтрымліваецца GPT-4o!)
-// @description:bem     Aziya ChatGPT ndalama ku DuckDuckGo sidebar (muma GPT-4o!)
-// @description:bg      Добавя ChatGPT отговори към страничната лента на DuckDuckGo Search (задвижван от GPT-4o!)
-// @description:bn      DuckDuckGo সাইডবারে ChatGPT উত্তর যোগ করে (পাওয়ারডে GPT-4o দ্বারা!)
-// @description:bo      ChatGPT ལེ་བས་ཚད་བདག་སྐྱེད་དེ་བཟུམ་སྒྲིག་ནང་ DuckDuckGo གནས་པ་བརྗོད་པ། (GPT-4oབྱ་བ་བརྒྱུད་པ་!)
-// @description:bs      Dodaje odgovore ChatGPT-a na bočnu traku DuckDuckGo pretrage (pokreće GPT-4o!)
-// @description:ca      Afegeix respostes de ChatGPT a la barra lateral de DuckDuckGo Search (amb tecnologia GPT-4o!)
-// @description:ceb     Nagdugang sa mga tubag sa ChatGPT sa sidebar sa DuckDuckGo Search (gamit ang GPT-4o!)
-// @description:ckb     وەرگرتنی ڕاستەوخۆیی ChatGPT بۆ پەنجەرەی لاتی لە DuckDuckGo (بە پشتگیرییی GPT-4o!)
-// @description:cs      Přidává odpovědi od ChatGPT do bočního panelu DuckDuckGo Search (poháněno GPT-4o!)
-// @description:cy      Ychwanega Atebion ChatGPT i'r bar ochr DuckDuckGo Search (a gryfhawyd gan GPT-4o!)
-// @description:da      Tilføjer ChatGPT-svar til DuckDuckGo Search-sidelinjen (drevet af GPT-4o!)
-// @description:de      Fügt ChatGPT-Antworten zur DuckDuckGo-Seitenleiste hinzu (unterstützt von GPT-4o!)
-// @description:dv      ChatGPT އައިކްސޭޓުގެ ޖަވާބުގެ DuckDuckGo ސައިޓުގައި ފޯރުވާރައުގެ ޑައުން (އެކައުންއައި ވަކި GPT-4o!)
-// @description:dz      ChatGPT དང་ DuckDuckGo འབྱུང་ཆུང་ལེ་བས་འཐུས་པ་ལགས་སྤྱོད་སྒྲིག་པ་བརྟགས་བཞུགས། (GPT-4o་གི་སྒྲིག་དང་!)
-// @description:el      Προσθέτει απαντήσεις ChatGPT στην πλαϊνή γραμμή αναζήτησης του DuckDuckGo (με την υποστήριξη του GPT-4o!)
-// @description:eo      Aldonas ChatGPT-respondojn al la flanka breto de DuckDuckGo Serĉo (funkciigita de GPT-4o!)
-// @description:es      Agrega respuestas de ChatGPT a la barra lateral de DuckDuckGo (¡con tecnología de GPT-4o!)
-// @description:et      Lisab ChatGPT vastused DuckDuckGo Search küljepaneelile (toetatud GPT-4o poolt!)
-// @description:eu      Gehitu ChatGPT erantzunak DuckDuckGo Search aldeko alderakoan (GPT-4oren aurrerapenean oinarrituta!)
-// @description:fa      ChatGPT به پاسخهای DuckDuckGo Search نوار کناری اضافه میکند (با پشتیبانی GPT-4o!)
-// @description:fi      Lisää ChatGPT-vastaukset DuckDuckGo-hakupalkkiin (GPT-4o:n tuella!)
-// @description:fil     Nagdaragdag ng mga sagot ng ChatGPT sa sidebar ng DuckDuckGo Search (suportado ng GPT-4o!)
-// @description:fj      Vakarautaka na vosa vakatotolo ni ChatGPT ki na yasa ni liga ni DuckDuckGo (sa dodonu e GPT-4o!)
-// @description:fo      Leggur ChatGPT-svar til DuckDuckGo Leita síðustriku (við GPT-4o!)
-// @description:fr      Ajoute les réponses ChatGPT à la barre latérale DuckDuckGo (propulsé par GPT-4o!)
-// @description:fr-CA   Ajoute les réponses ChatGPT à la barre latérale DuckDuckGo (propulsé par GPT-4o!)
-// @description:ga      Cuireann freagraí ChatGPT le taobhliosta Cuardach DuckDuckGo (dírithe ag GPT-4o!)
-// @description:gd      Cuir freagairtean ChatGPT ris an taobh-siostam Lorg DuckDuckGo (le taca GPT-4o!)
-// @description:gl      Engade as respostas de ChatGPT á barra lateral de procura de DuckDuckGo (con tecnoloxía GPT-4o!)
-// @description:gn      Oñemohẽ ChatGPT ñemohendu DuckDuckGo Search (MBOGUE GPT-4o rembiasakue!)
-// @description:gu      DuckDuckGo સાઇડબારમાં ChatGPT જવાબો ઉમેરે છે (GPT-4o દ્વારા સમર્થિત!)
-// @description:ha      Zaya sauyaƙa daga ChatGPT zuwa bidiyo na bidiyon DuckDuckGo (mai bincike ta GPT-4o!)
-// @description:haw     Hoʻohui aku i nā hōʻike a ChatGPT i ka papa aoʻao hema o ka ʻimi ʻana iā DuckDuckGo (e hōʻoikaika ana e GPT-4o!)
-// @description:he      הוספת תשובות ChatGPT לסרגל הצד של DuckDuckGo Search (מופעל על ידי GPT-4o!)
-// @description:hi      DuckDuckGo साइडबार में ChatGPT उत्तर जोड़ता है (GPT-4o द्वारा समर्थित!)
-// @description:hr      Dodaje odgovore aplikacije ChatGPT bočnoj traci pretraživanja DuckDuckGo (pokreće GPT-4o!)
-// @description:ht      Ajoute repons ChatGPT nan barre laterale Rechèch DuckDuckGo a (dise GPT-4o!)
-// @description:hu      A ChatGPT válaszokat ad a DuckDuckGo Keresés oldalsávjához (GPT-4o által hajtva!)
-// @description:hy      Ավելացնում է ChatGPT պատասխանները DuckDuckGo որոնումի կողմից (աջակցումով GPT-4o!)
-// @description:id      Menambahkan jawaban ChatGPT ke sidebar DuckDuckGo Search (digerakkan oleh GPT-4o!)
-// @description:ig      Tinye obere ChatGPT na-aga n'etiti ozi akụkụ DuckDuckGo Search (na-ezute GPT-4o!)
-// @description:is      Bætir við ChatGPT svarum við hliðina á DuckDuckGo leitarstiku (mjög GPT-4o!)
-// @description:it      Aggiunge le risposte ChatGPT alla barra laterale di DuckDuckGo (basata su GPT-4o!)
-// @description:iu      ᐊᑎᒪᐃᓐᓂᐊᕐᓂᖅ ChatGPT ᐅᖃᐅᓯᒻᓂᒃ DuckDuckGo ᑎᑎᕋᖅ (GPT-4o ᑕᒪᒃᓴᐃᓂᖅ!)
-// @description:ja      ChatGPT の回答を DuckDuckGo サイドバーに追加します (GPT-4o を搭載!)
-// @description:jv      Nambaki jawaban ChatGPT menyang sidebar DuckDuckGo Search (didandani dening GPT-4o!)
-// @description:ka      დაამატებს ChatGPT პასუხებს DuckDuckGo ძიების გვერდის გვერდზე (GPT-4o-ის მხარდაჭერით!)
-// @description:kg      Kweyisa mawu a ChatGPT kuna sebukulu DuckDuckGo Search (ekupesana na GPT-4o!)
-// @description:kk      ChatGPT жауаптарын DuckDuckGo іздеу жолағына қосады (GPT-4o жетіспенді!)
-// @description:km      បន្ថែមការឆ្លើយនៃ ChatGPT ទៅជាន់ប្រែក្រវូកស្វែករក DuckDuckGo (រកជំនុំដោយ GPT-4o)។
-// @description:kn      DuckDuckGo ಹೆಸರಿನಲ್ಲಿ ChatGPT ಉತ್ತರಗಳನ್ನು ಸೇರಿಸಲಾಗುತ್ತದೆ (GPT-4o ಆಗಿದೆ!)
-// @description:ko      DuckDuckGo 사이드바에 ChatGPT 답변 추가 (GPT-4o 기반!)
-// @description:kok     DuckDuckGo शोधन बारकिटेलो वर ChatGPT उत्तर जातो (GPT-4o द्वारे समर्थित!)
-// @description:ku      Li ser karkera lêgerîna DuckDuckGo ChatGPT parve dike (bi karê GPT-4o anîn!)
-// @description:ky      ChatGPT жауаптарын DuckDuckGo издөө жолундо кошотот (GPT-4o жардамы менен!)
-// @description:la      Adiungit responsiones ChatGPT ad lateralem mensam quaerendi DuckDuckGo (GPT-4o motore!)
-// @description:lb      Setzt ChatGPT Äntwerten op DuckDuckGo Sichfenster bäi (gedriwwt vum GPT-4o!)
-// @description:lo      ເພີ່ມຄຳຕອບ ChatGPT ໄປສະແດງໄວ້ໃນແບບຂອງ DuckDuckGo Search (ໂດຍ GPT-4o!)
-// @description:lt      Prideda ChatGPT atsakymus į šoninį juostos paieškos rėmelį DuckDuckGo (naudojant GPT-4o!)
-// @description:lv      Pievieno ChatGPT atbildes DuckDuckGo meklēšanas sānjoslā (darbināts ar GPT-4o!)
-// @description:mg      Mampiditra valiny avy amin'ny ChatGPT ao amin'ny laharana tenim-paharetan'ny DuckDuckGo (amin'ny alalan'ny GPT-4o!)
-// @description:mi      Whakapau kōrero mai te ChatGPT ki te whītiki o DuckDuckGo Search (e whakahauhau ana e GPT-4o!)
-// @description:mk      Додавање на ChatGPT одговори во страничната лента на DuckDuckGo пребарување (поддржувано од GPT-4o!)
-// @description:ml      DuckDuckGo സോളിൽ ChatGPT ഉത്തരങ്ങൾ ചേർക്കുന്നു (GPT-4o പ്രചാരിക്കുന്നു!)
-// @description:mn      ChatGPT хариултуудыг DuckDuckGo хайлтын хажуу талд нэмнэ (GPT-4o дэмжилттэй!)
-// @description:mr      डब्ल्यूडब्ल्यूडब्ल्यूवर ChatGPT प्रतिसाद जोडला जातो (GPT-4o द्वारे समर्थित!)
-// @description:ms      Menambah jawapan ChatGPT ke sidebar Carian DuckDuckGo (dikuasakan oleh GPT-4o!)
-// @description:mt      Iżżid ir-risposti tal-ChatGPT lill-sidebar tat-Tikketta DuckDuckGo (ppowrat bl-GPT-4o!)
-// @description:my      DuckDuckGo ရှိ ChatGPT အဖြေကိုထည့်သွင်းရန် (GPT-4o ဖြင့်အထောက်အပံ့အဆုံး!)
-// @description:na      Ongerenga mei a ChatGPT i le tofiga o DuckDuckGo Suʻesuʻega (faʻatasi e GPT-4o!)
-// @description:nb      Legger til ChatGPT-svar i DuckDuckGo Søk sidefelt (drevet av GPT-4o!)
-// @description:nd      Ithunyelwe izithuthi za ChatGPT kuqukethwe kwesibhakabhaka seDuckDuckGo Search (edlalwa ngu GPT-4o!)
-// @description:ne      DuckDuckGo खोजको साइडबारमा ChatGPT उत्तरहरू थप्दै (GPT-4o द्वारा समर्थित!)
-// @description:ng      Ongeza mafandikio ya ChatGPT ku tepu ya DuckDuckGo Search (mbitsiwa na GPT-4o!)
-// @description:nl      Voegt ChatGPT-antwoorden toe aan de zijkant van DuckDuckGo Zoeken (aangedreven door GPT-4o!)
-// @description:nn      Legg til ChatGPT-svar i DuckDuckGo Søk sidefelt (drivne av GPT-4o!)
-// @description:no      Legger til ChatGPT-svar i DuckDuckGo Søk sidefelt (drevet av GPT-4o!)
-// @description:nso     E ngata re tswetše diphetho tša ChatGPT go setšhabeng sa DuckDuckGo Search (ka ditshehetsweng ke GPT-4o!)
-// @description:ny      Ndadzivula mawu a ChatGPT ku sesele ya DuckDuckGo Search (yosungiridwa ndi GPT-4o!)
-// @description:oc      Apond las responsas de ChatGPT a la barra laterala de DuckDuckGo Search (alimentat per GPT-4o !)
-// @description:om      Fayyadamnu DuukDuukGo Ayyaanni ChatGPT tiwwiiqaa garaa garaatti argachuu dandeenyu (gadi dhiiraa GPT-4o!)
-// @description:or      ଡକଡକଗୋ ଖୋଜର ସାଇଡବାରରେ ChatGPT ଉତ୍ତର ଯୋଡ଼ାଯାଇଛି (GPT-4o ଦ୍ବାରା ପ୍ରାଧାନ!)
-// @description:pa      ਡਕਡਕਗੋ ਖੋਜ ਦੇ ਸਾਈਡਬਾਰ 'ਚ ChatGPT ਉੱਤਰ ਸ਼ਾਮਲ ਕੀਤੇ ਗਏ ਨੇ (GPT-4o ਦੀ ਮੂਲ ਤੋਂ ਚਲਾਇਆ ਗਿਆ!)
-// @description:pl      Dodaje odpowiedzi ChatGPT w pasku bocznym DuckDuckGo (obsługiwane przez GPT-4o!)
-// @description:ps      د ډک ډک ګو لټون کې ChatGPT جوابونه اضافه کوي (د GPT-4o سره په انجن کې کار پلورل شوی!)
-// @description:pt      Adiciona respostas do ChatGPT à barra lateral do DuckDuckGo Search (com suporte da GPT-4o!)
-// @description:pt-BR   Adiciona respostas do ChatGPT à barra lateral do DuckDuckGo Search (com suporte da GPT-4o!)
-// @description:qu      ChatGPT munankunapuraqmi DuckDuckGo ñawpa pachapi yanapaq (GPT-4o yachachiqkuna)
-// @description:rm      Agiunta las respostas da ChatGPT a la barra laterala da DuckDuckGo Search (sustegnì da GPT-4o!)
-// @description:rn      Abaririza amajwi nka ChatGPT ku rubuga rw'ikibazo cya DuckDuckGo (yashinzwe na GPT-4o!)
-// @description:ro      Adaugă răspunsurile ChatGPT în bara laterală DuckDuckGo Căutare (susținut de GPT-4o!)
-// @description:ru      Добавляет ответы ChatGPT на боковую панель DuckDuckGo (на базе GPT-4o!)
-// @description:rw      Byongeyeza amajwi yo mubu sideba ya DuckDuckGo ChatGPT (yashinzwe na GPT-4o!)
-// @description:sa      डकडकगो यान्त्रिके अभिन्नधीयो मार्गेण चाटगिपटिं उत्तरम् (GPT-4o प्रेरितः)!
-// @description:sat     DuckDuckGoᱥ ᱵᱟᱨᱦᱟᱨᱚᱛ ᱠᱟᱹᱞᱤᱞᱟ ChatGPT ᱨᱮᱞᱟ ᱦᱚᱱᱮᱡ (GPT-4o ᱚᱛᱷᱟ ᱠᱚᱢᱵᱚᱨᱟᱺᱡ!)
-// @description:sc      Aghedda is responsas de ChatGPT a sa barra de cerca de DuckDuckGo (adantzadu dae GPT-4o!)
-// @description:sd      ڊڪ ڊڪ گو سرچ ۾ ChatGPT جو جوابون اضافو ڪيل آهي (GPT-4o کي طاقت ورجڻ وارو!)
-// @description:se      Loahpa ChatGPT-vástádusat DuckDuckGo Gaskkaside (doaimmasaš GPT-4o!)
-// @description:sg      Tisa na tîsânga lusângo lu ChatGPT kuna ntsâdi ya DuckDuckGo (sa tebelî GPT-4o!)
-// @description:si      DuckDuckGo සෙවුමේ ChatGPT පිළිතුරු එකතු කරයි (GPT-4o වෙත සහාය කළා!)
-// @description:sk      Pridáva odpovede ChatGPT do bočnej lišty vyhľadávania DuckDuckGo (pomocou GPT-4o!)
-// @description:sl      Dodaja odgovore ChatGPT v stransko vrstico iskanja DuckDuckGo (podprto s strani GPT-4o!)
-// @description:sm      Faʻaalia atonu a le ChatGPT i le taavale lautele o le DuckDuckGo Suʻesuʻega (faʻatasi i le GPT-4o!)
-// @description:sn      Kupurikira maitiro eChatGPT kuve kuwandisa wevhu raDuckDuckGo Search (akakosha neGPT-4o!)
-// @description:so      Ku darin xogta ChatGPT ee gooshi DuckDuckGo Search (lagu taageerayo GPT-4o!)
-// @description:sq      Shton përgjigje ChatGPT në anëbardhën e kërkimit DuckDuckGo (e mbështetur nga GPT-4o!)
-// @description:sr      Додаје одговоре ЧатГПТ-а у траку за претрагу DuckDuckGo (подржано од стране GPT-4o!)
-// @description:ss      Faka amavulandlela aseChatGPT e sidebarenge sikaDuckDuckGo Seaching (okusekelwa ngu GPT-4o!)
-// @description:st      Kgetha ChatGPT ho litlhopho tsa DuckDuckGo Thetsa (ho hlolehileng ka GPT-4o!)
-// @description:su      Nambihan jawaban ChatGPT ka sisi kiri DuckDuckGo (diyandaké pikeun GPT-4o!)
-// @description:sv      Lägger till ChatGPT-svar i DuckDuckGo-sökraden (drivs av GPT-4o!)
-// @description:sw      Inaongeza majibu ya ChatGPT kwenye ubao wa upande wa DuckDuckGo (inaendeshwa na GPT-4o!)
-// @description:ta      டக் டக் கோ தேடலின் பக்கத்தில் ChatGPT பதில்களைச் சேர்க்கின்றது (GPT-4o ஆன்லான்!)
-// @description:te      డక్డక్గో శోధన పట్టిక పై ChatGPT సమాధానాలను జోడిస్తుంది (GPT-4o ద్వారా మొత్తంగా!)
-// @description:tg      Зиёд кардани ҷавобҳои ChatGPT ба тарафи сатҳи ҷустуҷӯ DuckDuckGo (асосшавӣ ба GPT-4o!)
-// @description:th      เพิ่มคำตอบจาก ChatGPT ในแถบด้านข้างของการค้นหา DuckDuckGo (รองรับโดย GPT-4o!)
-// @description:ti      ኣብ DuckDuckGo ስልጠና ኣብ ChatGPT ምልክትን ኣማራጺ (በተመስረበ በተን GPT-4o!)
-// @description:tk      DuckDuckGo gecikmäge ChatGPT jogaby goşýar (GPT-4o bilen!)
-// @description:tl      Nagdadagdag ng mga sagot ng ChatGPT sa sidebar ng DuckDuckGo Search (suportado ng GPT-4o!)
-// @description:tn      Viseza izisho zika ChatGPT kwekhoni leDuckDuckGo Search (kukhombisa ngokweGPT-4o!)
-// @description:to      Tānaki e ngaue kihe sipa tali fakapotopoto 'o e DuckDuckGo ngaue 'o e ChatGPT (tokotaha 'e GPT-4o!)
-// @description:tr      ChatGPT yanıtlarını DuckDuckGo Arama kenar çubuğuna ekler (GPT-4o tarafından desteklenir!)
-// @description:ts      Vuyisa mati na ChatGPT hi xiphemu leDuckDuckGo Search (hosiwa hi GPT-4o!)
-// @description:tt      DuckDuckGo Эзләү үтекле ChatGPT катнаштыру (GPT-4o итегезеккән!)
-// @description:tw      Hwɛ ChatGPT adefoɔ dodoɔ DuckDuckGo hwee (ka ho asasaa GPT-4o!)
-// @description:ug      DuckDuckGo ئىزدەشتە ChatGPT جاۋابلىرىنى قوشۇش (GPT-4o دىن قوللايدۇ!)
-// @description:uk      Додає відповіді ChatGPT у бічний панелі пошуку DuckDuckGo (підтримується GPT-4o!)
-// @description:ur      DuckDuckGo سائڈبار میں ChatGPT جوابات شامل کرتا ہے (GPT-4o کے ذریعے تقویت یافتہ!)
-// @description:uz      DuckDuckGo qidiruviga ChatGPT javoblari qo'shadi (GPT-4o tomonidan qo'llab-quvvatlanadi!)
-// @description:ve      Vhohodzi vha ChatGPT kha vhavhili ya DuckDuckGo Fambisa (vha sungulwa na GPT-4o!)
-// @description:vi      Thêm câu trả lời của ChatGPT vào thanh bên DuckDuckGo Search (được hỗ trợ bởi GPT-4o!)
-// @description:vo      Läükon datans ChatGPT ad pät binon DuckDuckGo Vükos (nükonoson dö GPT-4o!)
-// @description:wa      Ådd doveses di Dj DuckDuckGo a l' cohteye di Dj ChatGPT (rèhnutî pa GPT-4o !)
-// @description:wo      Ndax duggëwul ChatGPT du bind ak wertali DuckDuckGo (naataanal ku GPT-4o!)
-// @description:xh      Nika izicelo zika ChatGPT ezinkunzi ngesandla samazwi eDuckDuckGo Search (zakhiwo ngu GPT-4o!)
-// @description:yi      מוסיף תשובות ChatGPT לסרגל הצד של DuckDuckGo (מופעל על ידי GPT-4o!)
-// @description:yo      Fi awọn iwe itumọ ChatGPT si abala iwoye DuckDuckGo (ṣiṣe ni GPT-4o!)
-// @description:za      Ngozv yi ChatGPT nv nqgozv ya DuckDuckGo Search (dqvliuzgozv ngel GPT-4o!)
-// @description:zh      将 ChatGPT 答案添加到 DuckDuckGo 侧边栏 (由 GPT-4o 提供支持!)
-// @description:zh-CN   将 ChatGPT 答案添加到 DuckDuckGo 侧边栏 (由 GPT-4o 提供支持!)
-// @description:zh-HK   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4o 提供支持!)
-// @description:zh-SG   将 ChatGPT 答案添加到 DuckDuckGo 侧边栏 (由 GPT-4o 提供支持!)
-// @description:zh-TW   將 ChatGPT 答案添加到 DuckDuckGo 側邊欄 (由 GPT-4o 提供支持!)
-// @description:zu      Faka amaphawu ase-ChatGPT kuvaliwe i-DuckDuckGo Search (okwesikhashana ngu-GPT-4o!)
+// @description         Adds AI answers to DuckDuckGo. Ask from any site. Powered by GPT-4o!
+// @description:af      Voeg KI-antwoorde by DuckDuckGo. Vra vanaf enige webwerf. Aangedryf deur GPT-4o!
+// @description:am      የAI መልስናወርቃለች እርስዎን DuckDuckGo ፍለጋ፣ የእያንዳንዱ ድረ-ገጽን ጥያቄ በመጠቀም ያለበት፣ GPT-4o ተከታታይ!
+// @description:ar      يضيف إجابات الذكاء الاصطناعي إلى DuckDuckGo. اسأل من أي موقع. مدعوم بواسطة GPT-4o!
+// @description:az      DuckDuckGo-a AI cavabları əlavə edir. Hər hansı bir səhifədən sual edin. GPT-4o ilə işləyir!
+// @description:be      Дадае адказы штучнага інтэлекту ў DuckDuckGo. Запытвайце з любога сайта. Аб'яднана з GPT-4o!
+// @description:bem     Yamfumano AI mafundo pa DuckDuckGo. Uliza kumayi malo awebusayiti. Eko wakuleta na GPT-4o!
+// @description:bg      Добавя AI отговори към DuckDuckGo. Питайте от всяко сайт. Осигурено от GPT-4o!
+// @description:bn      DuckDuckGo তে AI উত্তর যোগ করে। যেকোনো সাইট থেকে জিজ্ঞাসা করুন। GPT-4o দ্বারা চালিত!
+// @description:bo      DuckDuckGo ནི་ AI དྲུག་བཏུས་བྱས་ཀྱི་འཕྲུལ་ཆས་གསར་ཤོག། གསང་ལས་སྙན་ཞུ་བཞག་པའི་གློ་དོན་འགྱོ་སྡེ། GPT-4o གི་བྱུང་བའི་ལས་རིགས་འཕྲིན་ལས་ཕབ།
+// @description:bs      Dodaje AI odgovore u DuckDuckGo pretragu. Pitajte sa bilo kog sajta. Pokreće GPT-4o!
+// @description:ca      Afegeix respostes d'IA a DuckDuckGo. Pregunta des de qualsevol lloc web. Amb la tecnologia de GPT-4o!
+// @description:ceb     Nagdugang mga tubag sa AI sa DuckDuckGo Search. Pangutana gikan sa bisan unsang site. Gipadagan sa GPT-4o!
+// @description:cs      Přidává odpovědi AI do vyhledávání DuckDuckGo. Zeptejte se z libovolného webu. Poháněno GPT-4o!
+// @description:cy      Ychwanegu atebion AI i Ddarganfod DuckDuckGo. Gofynnwch o unrhyw safle. Pwerwyd gan GPT-4o!
+// @description:da      Tilføjer AI-svar til DuckDuckGo. Spørg fra enhver side. Drevet af GPT-4o!
+// @description:de      Fügt KI-Antworten zu DuckDuckGo hinzu. Fragen Sie von jeder Website aus. Angetrieben von GPT-4o!
+// @description:el      Προσθέτει απαντήσεις AI στο DuckDuckGo. Κάντε ερωτήσεις από οποιαδήποτε ιστοσελίδα. Τροφοδοτείται από GPT-4o!
+// @description:en      Adds AI answers to DuckDuckGo. Ask from any site. Powered by GPT-4o!
+// @description:eo      Aldonas AI-respondojn al DuckDuckGo. Demandu de iu ajn retejo. Energio de GPT-4o!
+// @description:es      Agrega respuestas de IA a DuckDuckGo. Haz preguntas desde cualquier sitio. ¡Potenciado por GPT-4o!
+// @description:et      Lisab DuckDuckGo'le AI-vastuseid. Küsige mis tahes saidilt. Töötab GPT-4o abil!
+// @description:eu      Gaiak AI erantzunak gehitu DuckDuckGo-ri. Nahi duzun edozein webguneetatik galdetu. GPT-4o-k gidatuta!
+// @description:fa      پاسخهای هوش مصنوعی را به DuckDuckGo اضافه میکند. از هر سایتی بپرسید. توسط GPT-4o پشتیبانی میشود!
+// @description:fi      Lisää tekoälyn vastauksia DuckDuckGo:hun. Kysy mistä tahansa sivulta. Toimii GPT-4o:n avulla!
+// @description:fil     Nagdudugtong ng mga sagot ng AI sa DuckDuckGo. Magtanong mula sa anumang site. Hinihikayat ng GPT-4o!
+// @description:fj      Vakarautaka na vosa vakatotolo ni AI ki na yasa ni DuckDuckGo. Taroga mai na yasa e dua na vanua. Vakarautaki e na GPT-4o!
+// @description:fo      Leggur AI svar til DuckDuckGo. Spyr frá hvørjum síðu. Virkar við GPT-4o!
+// @description:fr      Ajoute des réponses IA à DuckDuckGo. Demandez à partir de n'importe quel site. Alimenté par GPT-4o!
+// @description:fr-CA   Ajoute des réponses IA à DuckDuckGo. Demandez à partir de n'importe quel site. Alimenté par GPT-4o!
+// @description:ga      Cuireann sé freagraí AI le DuckDuckGo. Fiafraigh ó aon suíomh. Tá sé cumraithe ag GPT-4o!
+// @description:gd      Cuiridh e freagairtean AI ri DuckDuckGo. Fiosrachadh bho gach làrach. Air a chumasachadh le GPT-4o!
+// @description:gl      Engade respostas de IA á barra lateral de procura de DuckDuckGo. Pregunta desde calquera sitio. Alimentado por GPT-4o!
+// @description:gn      Oñemohẽ Guyra'ihoãi Tupãsy AI rire DuckDuckGo Search. Pehendu mba'éichapa peteĩ ne'ẽrõ. Mboguero ko'ãiva GPT-4o!
+// @description:gu      DuckDuckGo પર AI જવાબો ઉમેરે છે. કોઈપણ સાઇટથી પૂછો. GPT-4o પર ચાલે છે!
+// @description:ha      Zaya sauyaƙa daga AI zuwa bidiyo na bidiyon DuckDuckGo. Tambaya daga irin yayan saitoci. Yana yin GPT-4o!
+// @description:haw     Hoʻohui aku i nā hōʻike a ka ʻikeʻike ʻana i ka papa aoʻao o ka ʻimi ʻana iā DuckDuckGo. Kāhea mai ma nā kahua like ʻole. Hōʻoikaika ʻia e GPT-4o!
+// @description:he      מוסיף תשובות המופעלות על ידי AI לסרגל הצד של DuckDuckGo Search. שאל מכל אתר. מופעל על ידי GPT-4o!
+// @description:hi      DuckDuckGo पर AI उत्तर जोड़ता है। किसी भी साइट से पूछें। GPT-4o के द्वारा संचालित!
+// @description:hr      Dodaje odgovore AI na bočnoj traci pretraživanja DuckDuckGo. Pitajte s bilo kojeg mjesta. Pokreće GPT-4o!
+// @description:ht      Ajoute repons IA nan barre laterale Rechèch DuckDuckGo a. Mandem soti nan nenpòt kote. Difize pa GPT-4o!
+// @description:hu      AI válaszokat ad a DuckDuckGo Keresés oldalsávjához. Kérdezzen bárhonnan. GPT-4o által hajtva!
+// @description:hy      Ավելացնում է AI պատասխաններ DuckDuckGo Search-ի կողմից: Հարցերը կարող եք կատարել ցանկացած կայքից: Գործում է GPT-4o!
+// @description:ia      Addi responsas de AI al barra lateral de cerca de DuckDuckGo. Interroga ex ulle sito. Functiona per GPT-4o!
+// @description:id      Menambahkan jawaban AI ke sidebar pencarian DuckDuckGo. Tanya dari situs mana pun. Didukung oleh GPT-4o!
+// @description:ig      Tinye ndebanye AI na ohere na-atọ ọnụ ahụ na DuckDuckGo. Weere ma ozi site n'anya. Nwere ike ina-emume GPT-4o!
+// @description:is      Bætir við AI svar við leitarstikuna DuckDuckGo. Spyrji frá hverju síðu. Keyrir á GPT-4o!
+// @description:it      Aggiunge risposte IA alla barra laterale di ricerca di DuckDuckGo. Chiedi da qualsiasi sito. Alimentato da GPT-4o!
+// @description:ja      DuckDuckGoの検索バーサイドバーにAIの回答を追加します。どのサイトからでも質問してください。GPT-4oで駆動しています！
+// @description:jv      Nambahaké jawaban AI dhisik sampingan DuckDuckGo. Tanya saka piranti kanthi apapun. Didukung déning GPT-4o!
+// @description:ka      დაამატებს AI პასუხებს DuckDuckGo ძებნის ზღვასთან. გთხოვთ ნებისმიერ საიტიდან. მუშაობს GPT-4o-ზე!
+// @description:kk      DuckDuckGo іздеу тақтасына AI жауаптарын қосады. Кез келген сайттан сұрау жасаңыз. GPT-4o үшін жұмыс жасайды!
+// @description:kl      Tilersiornerit AI-svarerilluunngorniarnera DuckDuckGo. Arlaanngaanneersorneq ataaseqarnissaanik. Aamma GPT-4o ippit!
+// @description:km      បន្ថែមចម្លើយ AI ទៅជួរស្វ័រ DuckDuckGo។ សួរពីតំបន់មួយណាមួយ។ ប្រព្រឹត្តនៅលើ GPT-4o!
+// @description:kn      DuckDuckGo ಗೆ AI ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ. ಯಾವುದೇ ಸೈಟ್ನಿಂದ ಕೇಳಿ. GPT-4o ನಿಂದ ನಡೆಸಲ್ಪಡುತ್ತಿದೆ!
+// @description:ko      DuckDuckGo 검색 사이드 바에 AI 답변을 추가합니다. 어느 사이트에서든 질문하세요. GPT-4o로 작동됩니다!
+// @description:ku      Bersivên AI yên DuckDuckGo Search-ê dikeve kêleka siyayê. Ji her çi malperê pirs bike. Li ser GPT-4o pêşveçûn dike!
+// @description:ky      DuckDuckGo издөө тамчысына AI жоопторду кошотот. Кандай сымалда калсаңыз болот. GPT-4o иштебейт!
+// @description:la      Addit responsa AI ad latere explorandi DuckDuckGo. Interroga ex quacumque pagina. Agitur per GPT-4o!
+// @description:lb      Setzt AI Äntwerten bei der DuckDuckGo Sichleeschbaarsäit derbäi. Froe vun där Äntwerten. Gesteiert vun GPT-4o!
+// @description:lg      Ekola ebyamagero by'obuloko ku ssentebe ya sokweerabira ya DuckDuckGo. Ekola ebyamagero ku kintu kyonna. Ekitegedde nga GPT-4o!
+// @description:ln      Kokata lisakoli ya téléchargement ya DuckDuckGo. Soma mpe mosala oyo ekóya. Epai na GPT-4o!
+// @description:lo      ຕື່ມຄຳຕອບຈາກ AI ໃນເຄື່ອງມືການຊອກຫາຂອງ DuckDuckGo. ບໍ່ມີເຄື່ອງທີ່ໄດ້ປະກອບ. ເຮັດໃຫ້ໂປຣໄຟຟ້າໃຊ້ເປັນ GPT-4o!
+// @description:lt      Prideda AI atsakymų į paieškos juostos šoną DuckDuckGo. Klauskite iš bet kurios svetainės. Veikia su GPT-4o!
+// @description:lv      Pievieno atbildes no AI DuckDuckGo meklēšanas sānjoslā. Jautājiet no jebkuras vietnes. Darbojas ar GPT-4o!
+// @description:mg      Manampy volabe AI ao amin'ny sidebar ny hetsika DuckDuckGo. Mandefa amin'ny toerana iray. Manankarena amin'ny GPT-4o!
+// @description:mi      Tāpirihia ngā whakautu AI ki te tāpae mātaitanga DuckDuckGo. Pātai mai i ētahi tūranga. E whakahaere ana i te GPT-4o!
+// @description:mk      Додава одговори од ИИ на страничната лента на пребарувањето DuckDuckGo. Прашајте од било која страница. Поддржано од GPT-4o!
+// @description:ml      DuckDuckGo-യിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു. ഏതെങ്കിലും സൈറ്റിൽ നിന്ന് ചോദിക്കുക. GPT-4o നൽകുന്നത്!
+// @description:mn      DuckDuckGo хайлтын хажуугийн самбарт AI хариултуудыг нэмдэг. Ямар ч сайтаас асуугаарай. GPT-4o дэмжлэгтэй!
+// @description:mr      DuckDuckGo च्या शोध साइडबारमध्ये AI उत्तरे जोडली जातात. कोणत्याही साइटवरून विचारा. GPT-4o द्वारा समर्थित!
+// @description:ms      Menambah jawapan AI ke sidebar DuckDuckGo. Tanya dari mana-mana laman web. Dikuasakan oleh GPT-4o!
+// @description:mt      Iżżid tweġibiet AI mal-sidebar ta' DuckDuckGo. Staqsi minn kwalunkwe sit. Mgħammar minn GPT-4o!
+// @description:my      DuckDuckGo ရှိ AI အဖြေများကို ထည့်သွင်းသည်။ မည်သည့်ဆိုဒ်မှမေးပါ။ GPT-4o ဖြင့်အထောက်အပံ့ပြုသည်!
+// @description:na      Ongerenga mea a AI ki le tofiga o DuckDuckGo. Fesili mai so’o se ‘upega tafa’ilagi. Fa’aola e GPT-4o!
+// @description:nb      Legger til AI-svar i DuckDuckGo sidefeltet. Spør fra hvilken som helst side. Drevet av GPT-4o!
+// @description:nd      Ithunyelwe izimpendulo ze-AI ku-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Iqhutshwa yi-GPT-4o!
+// @description:ne      DuckDuckGo खोजको साइडबारमा AI उत्तरहरू थप्छ। कुनै पनि साइटबाट सोध्नुहोस्। GPT-4o द्वारा समर्थित!
+// @description:ng      Ongeza majibu ya AI kwenye menyu ya DuckDuckGo. Uliza kutoka kwa tovuti yoyote. Inaendeshwa na GPT-4o!
+// @description:nl      Voegt AI-antwoorden toe aan de DuckDuckGo zijbalk. Vraag vanaf elke site. Aangedreven door GPT-4o!
+// @description:nn      Legg til AI-svar i DuckDuckGo sidefelt. Spør fra hvilken som helst side. Drevet av GPT-4o!
+// @description:no      Legger til AI-svar i DuckDuckGo sidefelt. Spør fra hvilken som helst side. Drevet av GPT-4o!
+// @description:nso     E eketsa dikarabo tša AI go sephateng sa DuckDuckGo. Botšiša go tšwa sebakeng se sengwe le se sengwe. E hloletšwe ke GPT-4o!
+// @description:ny      Imathandizira mayankho a AI ku sidebar ya DuckDuckGo. Funsani kuchokera patsamba lililonse. Yothandizidwa ndi GPT-4o!
+// @description:oc      Apond las responsas AI a la barra laterala de DuckDuckGo. Demandatz a partir de qualsevol site. Alimentat per GPT-4o!
+// @description:om      Deebii AI DuckDuckGo irratti dabalata. Marsariitii kamirraayyuu gaafadhu. GPT-4o tiin kan hojjetu!
+// @description:or      DuckDuckGo କୁ AI ଉତ୍ତର ଯୋଗ କରେ | ଯେକ any ଣସି ସାଇଟରୁ ପଚାର | GPT-4o ଦ୍ୱାରା ଚାଳିତ!
+// @description:pa      DuckDuckGo ਲਈ AI ਜਵਾਬ ਜੋੜਦਾ ਹੈ। ਕਿਸੇ ਵੀ ਸਾਈਟ ਤੋਂ ਪੁੱਛੋ. GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ!
+// @description:pl      Dodaje odpowiedzi AI do paska bocznego DuckDuckGo. Zapytaj z dowolnej strony. Wspierany przez GPT-4o!
+// @description:ps      DuckDuckGo ته د AI ځوابونه اضافه کوي. له هر سایټ څخه پوښتنه وکړئ. د GPT-4o لخوا پرمخ وړل کیږي!
+// @description:pt      Adiciona respostas AI à barra lateral do DuckDuckGo. Pergunte de qualquer site. Alimentado por GPT-4o!
+// @description:pt-BR   Adiciona respostas AI à barra lateral do DuckDuckGo. Pergunte de qualquer site. Alimentado por GPT-4o!
+// @description:qu      Añade respuestas de AI a la barra lateral de DuckDuckGo. Pregunta desde cualquier sitio. Impulsado por GPT-4o!
+// @description:rm      Agiunta las respostas AI a la barra laterala da DuckDuckGo. Dumonda da tut il link. Sustegnì da GPT-4o!
+// @description:rn      Yongeramwo inyishu za AI ku rubuga rwa DuckDuckGo. Baza kuri site yose. Iterwa n’inkomezi na GPT-4o!
+// @description:ro      Adaugă răspunsuri AI în bara laterală DuckDuckGo. Întreabă de pe orice site. Susținut de GPT-4o!
+// @description:ru      Добавляет ответы AI на боковую панель DuckDuckGo. Спрашивайте с любого сайта. На базе GPT-4o!
+// @description:rw      Yongerera ibisubizo bya AI mu ruhande rwa DuckDuckGo. Ubusabe kuri site iyo ari yo yose. Gishyigikiwe na GPT-4o!
+// @description:sa      DuckDuckGo इत्यत्र AI उत्तराणि योजयति । कस्यापि साइट् तः पृच्छन्तु। GPT-4o द्वारा संचालित!
+// @description:sat     DuckDuckGoᱥ ᱵᱟᱨᱦᱟᱨᱚᱛ ᱠᱟᱹᱞᱤᱞᱟ AI ᱨᱮᱞᱟ ᱦᱚᱱᱮᱡ (GPT-4o ᱚᱛᱷᱟ ᱠᱚᱢᱵᱚᱨᱟᱺᱡ!)
+// @description:sc      Aghjunghje risposte AI à a barra laterale di DuckDuckGo. Dumandate da qualsiasi situ. Supportatu da GPT-4o!
+// @description:sd      شامل ڪري ٿو AI جوابن کي DuckDuckGo ڏانهن. ڪنهن به سائيٽ کان پڇو. GPT-4o پاران طاقتور!
+// @description:se      Loahpa AI-vástádusat DuckDuckGo gaskkaside. Jearahuvvon gosage sajis. Doaimmasaš GPT-4o!
+// @description:sg      Tisa na tîsânga ya AI kuna ntsâdi ya DuckDuckGo. Sônga kuna site y'oseî. Sa tebelî GPT-4o!
+// @description:si      DuckDuckGo සෙවුමේ AI පිළිතුරු එකතු කරයි. කිසිඳු වෙබ් අඩවියකින් විමසන්න. GPT-4o විසින් බලගැන්වී ඇත!
+// @description:sk      Pridáva AI odpovede do bočnej lišty vyhľadávania DuckDuckGo. Spýtajte sa z akejkoľvek stránky. Podporované GPT-4o!
+// @description:sl      Dodaja AI odgovore v stransko vrstico iskanja DuckDuckGo. Vprašajte s katere koli strani. Podprto z GPT-4o!
+// @description:sm      Faʻaopopo tali AI i le itu saogalemu o le DuckDuckGo. Fesili mai i soʻo se saite. Faʻatinoina e GPT-4o!
+// @description:sn      Kupindura maitiro e AI kuve kuwandisa wevhu ra DuckDuckGo Search. Bvunza kubva pane chero saiti. Akakosha ne GPT-4o!
+// @description:so      Ku daraya jawaabaha AI ee dhinaca DuckDuckGo. Weydii laga bilaabo goob kasta. Waxaa ku shaqeeya GPT-4o!
+// @description:sq      Shton përgjigje AI në anëbardhën e kërkimit DuckDuckGo. Pyet nga çdo faqe. Mbështetur nga GPT-4o!
+// @description:sr      Dodaje AI odgovore u bočnu traku DuckDuckGo. Pitajte sa bilo kog sajta. Podržano od strane GPT-4o!
+// @description:ss      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo Search. Buza kusuka kunoma isiphi isiza. Ixhaswe yi-GPT-4o!
+// @description:st      Eketsa likarabo tsa AI ho lehlakoreng la DuckDuckGo. Botsa ho tloha sebakeng leha e le sefe. E tsamaisoa ke GPT-4o!
+// @description:su      Nambahkeun jawaban AI ka sidebar DuckDuckGo. Tanya ti situs mana waé. Disetir ku GPT-4o!
+// @description:sv      Lägger till AI-svar i DuckDuckGo sidofält. Fråga från vilken sida som helst. Drivs av GPT-4o!
+// @description:sw      Inaongeza majibu ya AI kwenye upau wa kando wa DuckDuckGo. Uliza kutoka kwa tovuti yoyote. Inaendeshwa na GPT-4o!
+// @description:ta      DuckDuckGo க்கு AI பதில்களைச் சேர்க்கிறது. எந்த தளத்தில் இருந்தும் கேளுங்கள். GPT-4o மூலம் இயக்கப்படுகிறது!
+// @description:te      DuckDuckGoకి AI సమాధానాలను జోడిస్తుంది. ఏదైనా సైట్ నుండి అడగండి. GPT-4o ద్వారా ఆధారితం!
+// @description:tg      Зиёд кардани ҷавобҳои AI ба тарафи DuckDuckGo. Аз ҳар гуна сайт пурсед. Мувофиқи GPT-4o!
+// @description:th      เพิ่มคำตอบ AI ในแถบด้านข้างของ DuckDuckGo. ถามจากเว็บไซต์ใดก็ได้. รองรับโดย GPT-4o!
+// @description:ti      ናብ DuckDuckGo ናይ AI መልስታት ይውስኽ። ካብ ዝኾነ መርበብ ሓበሬታ ሕተት። ብ GPT-4o ዝሰርሕ!
+// @description:tk      DuckDuckGo-a AI jogaplary goşýar. Islendik sahypadan sorag beriň. GPT-4o bilen işleýär!
+// @description:tl      Nagdadagdag ng mga sagot na AI sa sidebar ng DuckDuckGo. Magtanong mula sa anumang site. Pinapagana ng GPT-4o!
+// @description:tn      E kenyelelitse dikarabo tsa AI lehlakoreng la DuckDuckGo. Botsa ho tswa saeteng efe kapa efe. E tsamaisoa ke GPT-4o!
+// @description:to      Tānaki atu ‘a e ngaahi tali AI ki he fehokotaki’anga ki tu‘a ‘o e DuckDuckGo. Fai ha me‘a mei ha saiti pē. Ngāue‘aki ‘e he GPT-4o!
+// @description:tr      DuckDuckGo yan çubuğuna AI yanıtları ekler. Herhangi bir siteden sorabilirsiniz. GPT-4o tarafından desteklenmektedir!
+// @description:ts      Yongeza swivutiso swa AI ehlangwini ra DuckDuckGo. Vutisa kusuka eka sayiti yin’wana na yin’wana. Ri seketelwa hi GPT-4o!
+// @description:tt      DuckDuckGo Эзләү читенә AI җавапларын өсти. Теләсә кайсы сайттан сорагыз. GPT-4o белән эшли!
+// @description:tw      Ɛde AI mmuae aka ho maa DuckDuckGo mpapawsoɛ. Bisa fi beae biara. Ɛyɛ GPT-4o a ɛde tumi!
+// @description:ug      DuckDuckGo ئىزدەشتە AI جاۋابلىرىنى قوشىدۇ. ھەر قانداق تور بەتتىن سوراڭ. GPT-4o نىڭ قوللىشى بىلەن!
+// @description:uk      Додає AI відповіді у бічну панель DuckDuckGo. Питайте з будь-якого сайту. Підтримується GPT-4o!
+// @description:ur      DuckDuckGo سائڈبار میں AI جوابات شامل کرتا ہے۔ کسی بھی سائٹ سے پوچھیں۔ GPT-4o کے ذریعے تقویت یافتہ!
+// @description:uz      DuckDuckGo qidiruviga AI javoblari qo'shadi. Har qanday saytdan so'rang. GPT-4o tomonidan qo'llab-quvvatlanadi!
+// @description:ve      Vho hodza a AI kha zwa vhambadela zwa DuckDuckGo. U nga vhudzisa kha tshiimiswa tshithihi na tshithihi. Zwi khou shuma nga GPT-4o!
+// @description:vi      Thêm câu trả lời AI vào thanh bên DuckDuckGo. Hỏi từ bất kỳ trang web nào. Được hỗ trợ bởi GPT-4o!
+// @description:vo      Läükon datans AI ad päts binon DuckDuckGo. Pedön sevei okik. Nüköfon dö GPT-4o!
+// @description:wa      Åjouter des réponses AI å l'cohete di DuckDuckGo. Dimande a på onk ki site. Sopoirtê pa GPT-4o!
+// @description:wo      Duggal na AI ci wetu DuckDuckGo. Laaj fi kan la rekk. Naataanal ko GPT-4o!
+// @description:xh      Yongeza iimpendulo ze-AI kwicala le-DuckDuckGo. Buza kwisiza nayiphi na. Iqhutywa yi-GPT-4o!
+// @description:yi      מוסיף תשובות AI לסרגל הצד של DuckDuckGo. שאל מכל אתר. מופעל על ידי GPT-4o!
+// @description:yo      Fikun awọn idahun AI si abala DuckDuckGo. Beere lati ọdọ eyikeyi aaye ayelujara. Ṣe atilẹyin nipasẹ GPT-4o!
+// @description:za      Gaeng an de AI beix bouxmaenz an DuckDuckGo. Faenh daengz mboujlaenz sim. Giekdaemz an GPT-4o fap!
+// @description:zh      为 DuckDuckGo 添加 AI 答案。从任何网站提问。由 GPT-4o 提供支持！
+// @description:zh-CN   为 DuckDuckGo 添加 AI 答案。从任何网站提问。由 GPT-4o 提供支持！
+// @description:zh-HK   為 DuckDuckGo 增加人工智慧答案。從任何網站詢問。由 GPT-4o 提供支援！
+// @description:zh-SG   为 DuckDuckGo 添加 AI 答案。从任何网站提问。由 GPT-4o 提供支持！
+// @description:zh-TW   為 DuckDuckGo 增加人工智慧答案。從任何網站詢問。由 GPT-4o 提供支援！
+// @description:zu      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.19.6
+// @version             2024.6.20
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
