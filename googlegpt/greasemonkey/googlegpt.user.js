@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.20.8
+// @version             2024.6.20.9
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -982,10 +982,10 @@
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
-    loadSetting(['autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun',
+    loadSetting(['asktipDisabled', 'autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun',
                 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
                 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar'])
-    loadSetting(['asktipDisabled', 'sitesToNotShowAsktip'], 'global')
+    loadSetting(['sitesToNotShowAsktip'], 'global')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', isMobile ? 14 : 16.55) // init reply font size if unset
     if (isEdge || getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if Edge or not TM
@@ -1217,7 +1217,7 @@
                        + `(${ msgs.menuLabel_fromAnySite || 'from any site' })`
                        + menuState.separator + menuState.word[+!config.asktipDisabled]
         menuIDs.push(GM_registerMenuCommand(htaLabel, () => {
-            saveSetting('asktipDisabled', !config.asktipDisabled, 'global')
+            saveSetting('asktipDisabled', !config.asktipDisabled)
             notify(`${ msgs.menuLabel_highlightToAsk || 'Highlight-to-ask' } ${menuState.word[+!config.asktipDisabled]}`)
             refreshMenu()
         }))
@@ -2935,7 +2935,7 @@
                     }
                 } else { // entry to hide menu always
                     menuItem.onclick = () => {
-                        saveSetting('asktipDisabled', true, 'global')
+                        saveSetting('asktipDisabled', true)
                         refreshMenu()
                         document.getElementById('hide-asktip-menu').style.display = 'none'
                         document.getElementById('asktip').style.display = 'none'
