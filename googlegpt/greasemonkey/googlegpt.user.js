@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.7
+// @version             2024.6.21.8
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -166,7 +166,7 @@
 // @compatible          firefox
 // @compatible          edge except for Streaming Mode
 // @compatible          safari
-// @compatible          opera
+// @compatible          opera after allowing userscript manager access to search page results in opera://extensions
 // @compatible          brave except for Streaming Mode
 // @compatible          vivaldi
 // @compatible          waterfox

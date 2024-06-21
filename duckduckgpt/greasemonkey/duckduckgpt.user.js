@@ -151,14 +151,14 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.6
+// @version             2024.6.21.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
 // @compatible          chrome
 // @compatible          firefox
 // @compatible          edge except for Streaming Mode
-// @compatible          opera
+// @compatible          opera after allowing userscript manager access to search page results in opera://extensions
 // @compatible          brave except for Streaming Mode
 // @compatible          vivaldi
 // @compatible          waterfox
