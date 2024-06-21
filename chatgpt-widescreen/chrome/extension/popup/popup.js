@@ -36,14 +36,6 @@
     initToggle(toggles[7], 'hiddenFooter', 'menuLabel_hiddenFooter')
     initToggle(toggles[8], 'notifDisabled', 'menuLabel_modeNotifs')
 
-    // Add update-check span click-listener
-    const updateSpan = document.querySelector('span[title*="update" i]')
-    updateSpan.addEventListener('click', () => {
-        window.close() // popup
-        chrome.runtime.requestUpdateCheck((status, details) =>
-            alertToUpdate(status == 'update_available' ? details.version : '')
-    )})
-
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]'),
           supportSpan = supportLink.parentNode 
@@ -98,12 +90,6 @@
             chrome.tabs.sendMessage(tabs[0].id, { 
                 action: 'notify', msg: msg, position: position || 'bottom-right' })
     )}
-    
-    function alertToUpdate(version) {
-        chrome.tabs.query({ active: true, currentWindow: true }, tabs =>
-            chrome.tabs.sendMessage(tabs[0].id, { 
-                action: 'alertToUpdate', args: version
-    }))}
 
     // Define SYNC functions
 

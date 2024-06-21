@@ -114,22 +114,6 @@
             shadow || chatgpt.isDarkMode() ? '' : 'shadow' )
     }
 
-    alertToUpdate = version => { // eslint-disable-line no-undef
-        if (version) {
-            siteAlert(`${ chrome.i18n.getMessage('alert_updateAvail') }!`,
-                chrome.i18n.getMessage('alert_newerVer') + ' ' + chrome.i18n.getMessage('appName')
-                    + ' v' + version.toString() + ' ' + chrome.i18n.getMessage('alert_isAvail') + '!   '
-                    + '<a target="_blank" rel="noopener" style="font-size: 0.7rem" '
-                        + 'href="' + config.gitHubURL + '/commits/main/chrome/extension" '
-                        + '>' + chrome.i18n.getMessage('link_viewChanges') + '</a>',
-                function reloadChrome() { chrome.runtime.reload() } // update button
-            )
-        } else {
-            siteAlert(chrome.i18n.getMessage('alert_upToDate') + '!',
-                chrome.i18n.getMessage('appName') + ' v' + chrome.runtime.getManifest().version
-                    + ' ' + chrome.i18n.getMessage('alert_isUpToDate') + '!')
-    }}
-
     // Define UI functions
 
     async function insertToggle() {
