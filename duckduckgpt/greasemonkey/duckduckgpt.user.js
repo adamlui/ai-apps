@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.1
+// @version             2024.6.21.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -790,8 +790,10 @@
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', 16.4) // init reply font size if unset
     if (isEdge || getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if Edge or not TM
-    if (isMobile && !config.notFirstRun) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
-    saveSetting('notFirstRun', true)
+    if (!config.notFirstRun) {
+        if (isMobile) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
+        config.greetUser = true // for after msgs load
+    } saveSetting('notFirstRun', true)
 
     // Init UI VARS
     let scheme = config.scheme || ( chatgpt.isDarkMode() ? 'dark' : 'light' )
@@ -842,6 +844,9 @@
             }
         }
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
+
+    if (config.greetUser && !isDDGserp) // greet user on first run
+        safeWindowOpen(`https://duckduckgo.com/?q=${ msgs.query_hiThere || 'hi there' }&src=first-run`)
 
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
@@ -2621,7 +2626,7 @@
 
         // Show STANDBY mode or get/show ANSWER
         var msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
-        if (!config.autoget && !location.href.includes('src=asktip') // Auto-Get disabled and not queried from other site
+        if (!config.autoget && !/src=(?:first-run|asktip)/.test(location.href) // Auto-Get disabled and not queried from other site or 1st run
             || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
             || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
                 show.reply('standby')

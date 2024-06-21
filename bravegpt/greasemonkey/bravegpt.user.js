@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-Brave Search. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.1
+// @version             2024.6.21.2
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -784,12 +784,14 @@ setTimeout(async () => {
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting(['asktipDisabled', 'autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize',
-                'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
+                'notFirstRun', 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
                 'streamingDisabled', 'suffixEnabled', 'widerSidebar'])
     loadSetting(['sitesToNotShowAsktip'], 'global')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', 16) // init reply font size if unset
     if (isEdge || getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if Edge or not TM
+    if (!config.notFirstRun) config.greetUser = true // for after msgs load
+    saveSetting('notFirstRun', true)
 
     // Init API props
     const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
@@ -836,6 +838,9 @@ setTimeout(async () => {
             }
         }
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
+
+    if (config.greetUser && !isBraveSERP) // greet user on first run
+        safeWindowOpen(`https://search.brave.com/search?q=${ msgs.query_hiThere || 'hi there' }&src=first-run`)
 
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
@@ -2581,7 +2586,7 @@ setTimeout(async () => {
 
         // Show STANDBY mode or get/show ANSWER
         var msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
-        if (!config.autoget && !location.href.includes('src=asktip') // Auto-Get disabled and not queried from other site
+        if (!config.autoget && !/src=(?:first-run|asktip)/.test(location.href) // Auto-Get disabled and not queried from other site or 1st run
             || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
             || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
                 show.reply('standby', footerContent)
