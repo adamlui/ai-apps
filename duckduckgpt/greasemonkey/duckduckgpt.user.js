@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.3
+// @version             2024.6.21.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -765,7 +765,7 @@
 
     // Init BROWSER FLAGS
     const isFirefox = chatgpt.browser.isFirefox(),
-          isEdge = navigator.userAgent.includes('Edg'),
+          isEdge = JSON.stringify(navigator.userAgentData.brands)?.includes('Edge'),
           isMobile = chatgpt.browser.isMobile(),
           isDDGserp = /^https:\/\/(?:www\.)?duckduckgo\.[^/]+\/\?/.test(document.location.href)
 

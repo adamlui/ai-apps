@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-Brave Search. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.3
+// @version             2024.6.21.4
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -765,7 +765,7 @@ setTimeout(async () => {
 
     // Init BROWSER FLAGS
     const isFirefox = chatgpt.browser.isFirefox(),
-          isEdge = navigator.userAgent.includes('Edg'),
+          isEdge = JSON.stringify(navigator.userAgentData.brands)?.includes('Edge'),
           isMobile = chatgpt.browser.isMobile(),
           isBraveSERP = /^https:\/\/search\.brave\.[^/]+\/search\?/.test(document.location.href)
 

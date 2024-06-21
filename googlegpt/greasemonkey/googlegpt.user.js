@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.4
+// @version             2024.6.21.5
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -962,7 +962,7 @@
 
     // Init ENV FLAGS
     const isFirefox = chatgpt.browser.isFirefox(),
-          isEdge = navigator.userAgent.includes('Edg'),
+          isEdge = JSON.stringify(navigator.userAgentData.brands)?.includes('Edge'),
           isMobile = chatgpt.browser.isMobile(),
           isGoogleSERP = /^https:\/\/(?:www\.)?google\.[^/]+\/search\?/.test(document.location.href)
                       && !document.location.search.includes('&udm=2') // exclude Google Images
