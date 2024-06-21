@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.6
+// @version             2024.6.21.7
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -167,7 +167,7 @@
 // @compatible          edge except for Streaming Mode
 // @compatible          safari
 // @compatible          opera
-// @compatible          brave
+// @compatible          brave except for Streaming Mode
 // @compatible          vivaldi
 // @compatible          waterfox
 // @compatible          librewolf
@@ -963,6 +963,7 @@
     // Init ENV FLAGS
     const isFirefox = chatgpt.browser.isFirefox(),
           isEdge = JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge'),
+          isBrave = JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'),
           isMobile = chatgpt.browser.isMobile(),
           isGoogleSERP = /^https:\/\/(?:www\.)?google\.[^/]+\/search\?/.test(document.location.href)
                       && !document.location.search.includes('&udm=2') // exclude Google Images
@@ -987,7 +988,8 @@
     loadSetting(['sitesToNotShowAsktip'], 'global')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', isMobile ? 14 : 16.55) // init reply font size if unset
-    if (isEdge || getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if Edge or not TM
+    if (isEdge || isBrave || getUserscriptManager() != 'Tampermonkey') // disable streaming in unspported envs
+        saveSetting('streamingDisabled', true)
     if (!config.notFirstRun) {
         if (isMobile) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
         config.greetUser = true // for after msgs load
@@ -1088,13 +1090,15 @@
                            + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
                            + menuState.separator + menuState.word[+stmState]
             menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
-                if (isEdge) { // alert Edge unsupported, link to browser bug
+                if (isEdge || isBrave) { // alert browser unsupported, link to browser bug
                     const msBugLink = 'https://answers.microsoft.com/en-us/microsoftedge/forum/all/'
                                     + 'status-access-violation-issues/1fd4a2ef-6736-441f-8421-6ed167105093'
                     siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } Edge`
-                          + ` ${ msgs.alert_untilMSfixesBug || 'until Microsoft fixes this long-standing browser rendering bug' }:`
-                          + ` <a target="_blank" rel="noopener" href="${msBugLink}">${msBugLink}</a>`)
+                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
+                          + ( isEdge ? ( 'Edge' 
+                              + ` ${ msgs.alert_untilMSfixesBug || 'until Microsoft fixes this long-standing browser rendering bug' }:`
+                              + ` <a target="_blank" rel="noopener" href="${msBugLink}">${msBugLink}</a>` )
+                                  : 'Brave.' ))
                 } else if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
                     siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                         `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`

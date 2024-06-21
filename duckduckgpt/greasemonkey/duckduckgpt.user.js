@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.5
+// @version             2024.6.21.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -159,7 +159,7 @@
 // @compatible          firefox
 // @compatible          edge except for Streaming Mode
 // @compatible          opera
-// @compatible          brave
+// @compatible          brave except for Streaming Mode
 // @compatible          vivaldi
 // @compatible          waterfox
 // @compatible          librewolf
@@ -766,6 +766,7 @@
     // Init BROWSER FLAGS
     const isFirefox = chatgpt.browser.isFirefox(),
           isEdge = JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge'),
+          isBrave = JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'),
           isMobile = chatgpt.browser.isMobile(),
           isDDGserp = /^https:\/\/(?:www\.)?duckduckgo\.[^/]+\/\?/.test(document.location.href)
 
@@ -788,7 +789,8 @@
     loadSetting(['sitesToNotShowAsktip'], 'global')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', 16.4) // init reply font size if unset
-    if (isEdge || getUserscriptManager() != 'Tampermonkey') saveSetting('streamingDisabled', true) // disable streaming if Edge or not TM
+    if (isEdge || isBrave || getUserscriptManager() != 'Tampermonkey') // disable streaming in unspported envs
+        saveSetting('streamingDisabled', true)
     if (!config.notFirstRun) {
         if (isMobile) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
         config.greetUser = true // for after msgs load
@@ -893,13 +895,15 @@
                            + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
                            + menuState.separator + menuState.word[+stmState]
             menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
-                if (isEdge) { // alert Edge unsupported, link to browser bug
+                if (isEdge || isBrave) { // alert browser unsupported, link to browser bug
                     const msBugLink = 'https://answers.microsoft.com/en-us/microsoftedge/forum/all/'
                                     + 'status-access-violation-issues/1fd4a2ef-6736-441f-8421-6ed167105093'
                     siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } Edge`
-                          + ` ${ msgs.alert_untilMSfixesBug || 'until Microsoft fixes this long-standing browser rendering bug' }:`
-                          + ` <a target="_blank" rel="noopener" href="${msBugLink}">${msBugLink}</a>`)
+                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
+                          + ( isEdge ? ( 'Edge' 
+                              + ` ${ msgs.alert_untilMSfixesBug || 'until Microsoft fixes this long-standing browser rendering bug' }:`
+                              + ` <a target="_blank" rel="noopener" href="${msBugLink}">${msBugLink}</a>` )
+                                  : 'Brave.' ))
                 } else if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
                     siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                         `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
