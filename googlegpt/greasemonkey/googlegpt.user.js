@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.1
+// @version             2024.6.21.2
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2899,7 +2899,7 @@
                     hideAsktipMenu.style.display = 'grid'
                     hideAsktipMenu.style.left = `${hideTipSpan.getBoundingClientRect().left}px`
                     hideAsktipMenu.style.top = `${ hideTipSpan.getBoundingClientRect().bottom
-                        + ( window.pageYOffset || document.documentElement.scrollTop ) +6 }px`
+                        + ( window.scrollY || window.pageYOffset || document.documentElement.scrollTop ) +6 }px`
             }}
             hideTipSpan.onmouseout = () => hideTipSpan.style.background = 'none' // unhighlight bg
             hideTipSVG.append(hideTipSVGpath) ; hideTipSpan.append(hideTipSVG) ; asktip.append(hideTipSpan)

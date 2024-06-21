@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-Brave Search. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21
+// @version             2024.6.21.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -2643,7 +2643,7 @@ setTimeout(async () => {
                     hideAsktipMenu.style.display = 'grid'
                     hideAsktipMenu.style.left = `${hideTipSpan.getBoundingClientRect().left}px`
                     hideAsktipMenu.style.top = `${ hideTipSpan.getBoundingClientRect().bottom
-                        + ( window.pageYOffset || document.documentElement.scrollTop ) +6 }px`
+                        + ( window.scrollY || window.pageYOffset || document.documentElement.scrollTop ) +6 }px`
             }}
             hideTipSpan.onmouseout = () => hideTipSpan.style.background = 'none' // unhighlight bg
             hideTipSVG.append(hideTipSVGpath) ; hideTipSpan.append(hideTipSVG) ; asktip.append(hideTipSpan)

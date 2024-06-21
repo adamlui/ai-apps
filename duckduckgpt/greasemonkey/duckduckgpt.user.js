@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21
+// @version             2024.6.21.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2681,7 +2681,7 @@
                     hideAsktipMenu.style.display = 'grid'
                     hideAsktipMenu.style.left = `${hideTipSpan.getBoundingClientRect().left}px`
                     hideAsktipMenu.style.top = `${ hideTipSpan.getBoundingClientRect().bottom
-                        + ( window.pageYOffset || document.documentElement.scrollTop ) +6 }px`
+                        + ( window.scrollY || window.pageYOffset || document.documentElement.scrollTop ) +6 }px`
             }}
             hideTipSpan.onmouseout = () => hideTipSpan.style.background = 'none' // unhighlight bg
             hideTipSVG.append(hideTipSVGpath) ; hideTipSpan.append(hideTipSVG) ; asktip.append(hideTipSpan)
