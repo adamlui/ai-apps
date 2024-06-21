@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21
+// @version             2024.6.21.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1464,7 +1464,7 @@
         const domDarkStatus = [...document.querySelectorAll('span')]
             .find(span => span.textContent == 'Dark theme') // dark theme status label
             ?.nextElementSibling.textContent // dark theme status
-        if (domDarkStatus) return domDarkStatus == 'On' ? true : false
+        if (domDarkStatus) return domDarkStatus == 'On'
 
         // Vanilla logo method
         for (const img of document.getElementsByTagName('img'))
