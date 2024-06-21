@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-Brave Search. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.2
+// @version             2024.6.21.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -748,7 +748,6 @@
 // @grant               GM_cookie
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
-// @grant               GM_openInTab
 // @grant               GM_getResourceText
 // @grant               GM.xmlHttpRequest
 // @noframes
@@ -1192,10 +1191,8 @@ setTimeout(async () => {
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
                                     + `>${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
-                                GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
-                                    { active: true, insert: true } // focus, make adjacent
-                                ).onclose = () => location.reload() },
-                            '', updateAlertWidth
+                                safeWindowOpen(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now())
+                            }, '', updateAlertWidth
                         )
 
                         // Localize button labels if needed

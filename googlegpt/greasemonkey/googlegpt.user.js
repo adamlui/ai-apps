@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.3
+// @version             2024.6.21.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -945,7 +945,6 @@
 // @grant               GM_cookie
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
-// @grant               GM_openInTab
 // @grant               GM_getResourceText
 // @grant               GM.xmlHttpRequest
 // @noframes
@@ -1386,10 +1385,8 @@
                                     + config.updateURL.replace(/.*\/(.*)meta\.js/, '$1user.js') + '"'
                                     + `>${ msgs.link_viewChanges || 'View changes' }</a>`,
                             function update() { // button
-                                GM_openInTab(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now(),
-                                    { active: true, insert: true } // focus, make adjacent
-                                ).onclose = () => location.reload() },
-                            '', updateAlertWidth
+                                safeWindowOpen(config.updateURL.replace('meta.js', 'user.js') + '?t=' + Date.now())
+                            }, '', updateAlertWidth
                         )
 
                         // Localize button labels if needed
