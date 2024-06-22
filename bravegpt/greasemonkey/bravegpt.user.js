@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.22.2
+// @version             2024.6.22.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -227,7 +227,7 @@ setTimeout(async () => {
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@c65ee15/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@2bdba5a/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
     loadSetting('autoGetDisabled', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize',
@@ -655,7 +655,8 @@ setTimeout(async () => {
 
             // Add login link to login msgs
             if (msg.includes('@'))
-                msg += '<a class="alert-link" target="_blank" rel="noopener" href="https://chatgpt.com">chatgpt.com</a>.'
+                msg += '<a class="alert-link" target="_blank" rel="noopener" href="https://chatgpt.com">chatgpt.com</a>,'
+                     + ` ${ msgs.alert_thenRefreshPage || 'then refresh this page' }.`
                      + ` (${ msgs.alert_ifIssuePersists || 'If issue persists' },`
                      + ` ${( msgs.alert_try || 'Try' ).toLowerCase() }`
                      + ` ${ msgs.alert_switchingOn || 'switching on' }`

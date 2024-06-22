@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.22.2
+// @version             2024.6.22.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -419,7 +419,7 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@46e50d9/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@43c4e03/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
@@ -845,7 +845,8 @@
 
             // Add login link to login msgs
             if (msg.includes('@'))
-                msg += '<a class="alert-link" target="_blank" rel="noopener" href="https://chatgpt.com">chatgpt.com</a>.'
+                msg += '<a class="alert-link" target="_blank" rel="noopener" href="https://chatgpt.com">chatgpt.com</a>,'
+                     + ` ${ msgs.alert_thenRefreshPage || 'then refresh this page' }.`
                      + ` (${ msgs.alert_ifIssuePersists || 'If issue persists' },`
                      + ` ${( msgs.alert_try || 'Try' ).toLowerCase() }`
                      + ` ${ msgs.alert_switchingOn || 'switching on' }`
