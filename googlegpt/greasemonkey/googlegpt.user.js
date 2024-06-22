@@ -158,16 +158,16 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.10
+// @version             2024.6.21.11
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
 // @compatible          chrome
 // @compatible          firefox
-// @compatible          edge except for Streaming Mode
+// @compatible          edge except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible          safari
 // @compatible          opera after allowing userscript manager access to search page results in opera://extensions
-// @compatible          brave except for Streaming Mode
+// @compatible          brave except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible          vivaldi
 // @compatible          waterfox
 // @compatible          librewolf
@@ -244,9 +244,11 @@
     loadSetting(['sitesToNotShowAsktip'], 'global')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', isMobile ? 14 : 16.55) // init reply font size if unset
-    if (isEdge || isBrave || getUserscriptManager() != 'Tampermonkey') // disable streaming in unspported envs
-        saveSetting('streamingDisabled', true)
-    if (!config.notFirstRun) {
+    if ( // disable streaming in unspported envs
+        !/Tampermonkey|ScriptCat/.test(getUserscriptManager()) // unsupported userscript manager
+        || getUserscriptManager() == 'Tampermonkey' && (isEdge || isBrave) // Tampermonkey in browser that triggers STATUS_ACCESS_VIOLATION
+    ) saveSetting('streamingDisabled', true)
+    if (!config.notFirstRun) { // first run inits
         if (isMobile) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
         config.greetUser = true // for after msgs load
     } saveSetting('notFirstRun', true)
@@ -340,27 +342,29 @@
                            + menuState.separator + menuState.word[+config.proxyAPIenabled]
             menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
-            // Add command toggle streaming mode or alert unsupported
+            // Add command to toggle streaming mode or alert unsupported
             const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
             const stmLabel = menuState.symbol[+stmState] + ' '
                            + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
                            + menuState.separator + menuState.word[+stmState]
             menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
-                if (isEdge || isBrave) { // alert browser unsupported, link to browser bug
-                    const msBugLink = 'https://answers.microsoft.com/en-us/microsoftedge/forum/all/'
-                                    + 'status-access-violation-issues/1fd4a2ef-6736-441f-8421-6ed167105093'
-                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
-                          + ( isEdge ? ( 'Edge' 
-                              + ` ${ msgs.alert_untilMSfixesBug || 'until Microsoft fixes this long-standing browser rendering bug' }:`
-                              + ` <a target="_blank" rel="noopener" href="${msBugLink}">${msBugLink}</a>` )
-                                  : 'Brave.' ))
-                } else if (getUserscriptManager() != 'Tampermonkey') // alert userscript manager unsupported, suggest Tampermonkey
+                const scriptCatLink = isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
+                                    : isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
+                                                : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
+                if (!/Tampermonkey|ScriptCat/.test(getUserscriptManager())) { // alert userscript manager unsupported, suggest TM/SC
                     siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                         `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
-                          + ' <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a>.'
-                          + ` (${ msgs.alert_userscriptMgrNoStream ||
-                                    'Your userscript manager does not support returning stream responses' }.)`)
+                            + ( !isEdge && !isBrave ? // suggest TM for supported browsers
+                                ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
+                                    : '' )
+                            + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
+                            + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`)
+                } else if (getUserscriptManager() == 'Tampermonkey' && (isEdge || isBrave)) // alert TM/browser unsupported, suggest ScriptCat
+                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
+                            + `${ isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
+                            + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
+                                + `${ msgs.alert_instead || 'instead' }.`)
                 else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
                     let msg = `${ msgs.mode_streaming || 'Streaming Mode' } `
                             + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
