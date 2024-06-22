@@ -5,7 +5,8 @@
             <img height=14 src="https://media.chatgptinfinity.com/images/icons/earth/black/icon32.svg?latest">
         </picture>
         &nbsp;English |
-        <a href="zh-cn#readme">简体中文</a>
+        <a href="zh-cn#readme">简体中文</a> |
+        <a href="ja#readme">日本語</a>
     </h6>
 </div>
 
