@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Unterstützung für OpenAI-API wird in Kürze hinzugefügt" },
   "alert_waitingResponse": { "message": "Warten auf ChatGPT-Antwort" },
   "alert_login": { "message": "Bitte anmelden" },
+  "alert_thenRefreshPage": { "message": "Dann aktualisieren Sie diese Seite" },
   "alert_tooManyRequests": { "message": "ChatGPT wird mit zu vielen Anfragen überflutet" },
   "alert_parseFailed": { "message": "Antwort-json konnte nicht analysiert werden" },
   "alert_checkCloudflare": { "message": "Bitte bestehen Sie die Cloudflare-Sicherheitsprüfung" },

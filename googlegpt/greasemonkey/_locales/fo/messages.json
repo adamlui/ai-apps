@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Stuðul til OpenAI API verður lagt afturat skjótt" },
   "alert_waitingResponse": { "message": "Vænta eftir svarinum frá Katalonia" },
   "alert_login": { "message": "Vinarliga innrita" },
+  "alert_thenRefreshPage": { "message": "at lata síðuna fríska" },
   "alert_tooManyRequests": { "message": "ChatGPT er ovurstórur við ov nógvum umsóknum" },
   "alert_parseFailed": { "message": "Miseydnaðist at greina svar JSON" },
   "alert_checkCloudflare": { "message": "Vinarliga passa Cloudflare-tryggisroyndina" },

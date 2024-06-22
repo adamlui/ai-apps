@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Support fir OpenAI API gëtt geschwënn bäigefüügt" },
   "alert_waitingResponse": { "message": "Waart op ChatGPT Äntwert" },
   "alert_login": { "message": "Login w.e.g" },
+  "alert_thenRefreshPage": { "message": "dann erfrësch dës Säit" },
   "alert_tooManyRequests": { "message": "ChatGPT ass mat ze vill Ufroen iwwerschwemmt" },
   "alert_parseFailed": { "message": "Konnt d'Äntwert JSON net analyséieren" },
   "alert_checkCloudflare": { "message": "Gitt w.e.g. Cloudflare Sécherheetscheck un" },

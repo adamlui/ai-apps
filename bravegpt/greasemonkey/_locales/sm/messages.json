@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Lagolago mo OpenAI API o le a faʻaopopoina i se taimi lata mai" },
   "alert_waitingResponse": { "message": "Faatalitali mo le Tali ChatGPT" },
   "alert_login": { "message": "Faʻamolemole ulufale" },
+  "alert_thenRefreshPage": { "message": "ona toe faafouina lea o lenei itulau" },
   "alert_tooManyRequests": { "message": "ChatGPT ua lolo i le tele o talosaga" },
   "alert_parseFailed": { "message": "Ua le mafai ona tali atu JSON" },
   "alert_checkCloudflare": { "message": "Faʻamolemole pasia le Cloudflare saogalemu siaki" },

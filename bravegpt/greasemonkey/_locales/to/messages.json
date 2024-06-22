@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "ʻE tanaki atu ʻa e tokoni ki he OpenAI API ʻi ha taimi nounou pe" },
   "alert_waitingResponse": { "message": "Ko e tatali ki he tali ChatGPT" },
   "alert_login": { "message": "Kātaki ʻo login" },
+  "alert_thenRefreshPage": { "message": "hili ia pea refresh ʻa e peesi ko ʻeni" },
   "alert_tooManyRequests": { "message": "ʻOku fonu ʻa e ChatGPT ʻi ha ngaahi kole lahi" },
   "alert_parseFailed": { "message": "ʻIkai lava ke ʻanalaiso e tali ʻa e foha" },
   "alert_checkCloudflare": { "message": "Kataki ʻo paasi Cloudflare sieke maluʻi" },

@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "La prise en charge de l'API OpenAI sera ajoutée sous peu" },
   "alert_waitingResponse": { "message": "En attente de la réponse ChatGPT" },
   "alert_login": { "message": "Veuillez vous connecter" },
+  "alert_thenRefreshPage": { "message": "Alors, rafraîchissez cette page" },
   "alert_tooManyRequests": { "message": "ChatGPT est inondé de trop de demandes" },
   "alert_parseFailed": { "message": "Échec de l'analyse de la réponse JSON" },
   "alert_checkCloudflare": { "message": "Veuillez passer le contrôle de sécurité Cloudflare" },

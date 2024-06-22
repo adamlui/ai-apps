@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Tez orada OpenAI API qo'llab-quvvatlashi qo'shiladi" },
   "alert_waitingResponse": { "message": "ChatGPT javobi kutilmoqda" },
   "alert_login": { "message": "Iltimos, tizimga kiring" },
+  "alert_thenRefreshPage": { "message": "keyin ushbu sahifani yangilang" },
   "alert_tooManyRequests": { "message": "ChatGPT juda koʻp soʻrovlar bilan toʻlib ketgan" },
   "alert_parseFailed": { "message": "JSON javobini tahlil qilib bo‘lmadi" },
   "alert_checkCloudflare": { "message": "Iltimos, Cloudflare xavfsizlik tekshiruvidan o'ting" },

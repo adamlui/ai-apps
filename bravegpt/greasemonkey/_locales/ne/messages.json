@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI API को लागि सहायता चाँडै थपिनेछ" },
   "alert_waitingResponse": { "message": "ChatGPT प्रतिक्रियाको लागि पर्खदै" },
   "alert_login": { "message": "कृपया लगइन गर्नुहोस्" },
+  "alert_thenRefreshPage": { "message": "त्यसपछि यो पृष्ठ रिफ्रेस गर्नुहोस्" },
   "alert_tooManyRequests": { "message": "ChatGPT धेरै अनुरोधहरूले भरिएको छ" },
   "alert_parseFailed": { "message": "प्रतिक्रिया JSON पद वर्णन गर्न असफल भयो" },
   "alert_checkCloudflare": { "message": "कृपया क्लाउडफ्लेयर सुरक्षा जाँच पास गर्नुहोस्" },

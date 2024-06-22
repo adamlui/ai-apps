@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI API-ის მხარდაჭერა მალე დაემატება" },
   "alert_waitingResponse": { "message": "ChatGPT პასუხის მოლოდინში" },
   "alert_login": { "message": "Გთხოვთ, შეხვიდეთ სისტემაში" },
+  "alert_thenRefreshPage": { "message": "განაახლეთ ეს გვერდი" },
   "alert_tooManyRequests": { "message": "ChatGPT დატბორილია ძალიან ბევრი მოთხოვნით" },
   "alert_parseFailed": { "message": "Პასუხის JSON-ის დამუშავების შეცდომა" },
   "alert_checkCloudflare": { "message": "Გაიარეთ Cloudflare-ის უსაფრთხოების შემოწმება" },

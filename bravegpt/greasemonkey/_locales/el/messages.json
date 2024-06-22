@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Σύντομα θα προστεθεί υποστήριξη για το OpenAI API" },
   "alert_waitingResponse": { "message": "Αναμονή για απάντηση ChatGPT" },
   "alert_login": { "message": "Παρακαλούμε συνδεθείτε" },
+  "alert_thenRefreshPage": { "message": "στη συνέχεια, ανανεώστε αυτήν τη σελίδα" },
   "alert_tooManyRequests": { "message": "Το ChatGPT κατακλύζεται από πάρα πολλά αιτήματα" },
   "alert_parseFailed": { "message": "Αποτυχία ανάλυσης απόκρισης" },
   "alert_checkCloudflare": { "message": "Περάστε τον έλεγχο ασφαλείας Cloudflare" },

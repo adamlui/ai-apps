@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Drīzumā tiks pievienots OpenAI API atbalsts" },
   "alert_waitingResponse": { "message": "Gaida ChatGPT atbildi" },
   "alert_login": { "message": "Lūdzu, piesakieties" },
+  "alert_thenRefreshPage": { "message": "pēc tam atsvaidziniet šo lapu" },
   "alert_tooManyRequests": { "message": "ChatGPT ir pārpildīts ar pārāk daudziem pieprasījumiem" },
   "alert_parseFailed": { "message": "Neizdevās parsēt atbildi JSON" },
   "alert_checkCloudflare": { "message": "Lūdzu, izturiet Cloudflare drošības pārbaudi" },

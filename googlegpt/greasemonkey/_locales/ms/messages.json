@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Sokongan untuk api OpenAI akan ditambah sebentar lagi" },
   "alert_waitingResponse": { "message": "Menunggu jawapan ChatGPT" },
   "alert_login": { "message": "Sila log masuk" },
+  "alert_thenRefreshPage": { "message": "muatkan semula halaman ini" },
   "alert_tooManyRequests": { "message": "ChatGPT dibanjiri terlalu banyak permintaan" },
   "alert_parseFailed": { "message": "Gagal menghuraikan jawapan JSON" },
   "alert_checkCloudflare": { "message": "Sila lulus pemeriksaan keselamatan Cloudflare" },

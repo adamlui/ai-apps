@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Piştgiriya ji bo OpenAI API dê di demek kurt de were zêdekirin" },
   "alert_waitingResponse": { "message": "چاک پەیوەندیدان بۆ وەڵامی ChatGPT" },
   "alert_login": { "message": "تکایە بچۆ ژوورەوە" },
+  "alert_thenRefreshPage": { "message": "paşê vê rûpelê nûve bikin" },
   "alert_tooManyRequests": { "message": "ChatGPT بە زۆری پارێز دەکرێتەوە بە بەشداری زۆری پارێز" },
   "alert_parseFailed": { "message": "شکستی لە پارسکردنی JSONی وەڵام" },
   "alert_checkCloudflare": { "message": "تکایە پارێزراوە لەلایەن پارێزراوەی کلاودفلارە بگۆڕە" },

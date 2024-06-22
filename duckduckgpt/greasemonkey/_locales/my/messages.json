@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI API အတွက်အထောက်အပံ့ကိုမကြာမီထည့်သွင်းပါလိမ့်မည်" },
   "alert_waitingResponse": { "message": "ChatGPT တုံ့ပြန်မှုကို စောင့်ဆိုင်းနေသည်" },
   "alert_login": { "message": "ကျေးဇူးပြု ၍ အကောင့်ဝင်ပါ" },
+  "alert_thenRefreshPage": { "message": "ထို့နောက် ဤစာမျက်နှာကို လန်းဆန်းစေပါ" },
   "alert_tooManyRequests": { "message": "ChatGPT သည် တောင်းဆိုမှုများစွာဖြင့် ရေလွှမ်းနေသည်" },
   "alert_parseFailed": { "message": "တုံ့ပြန်မှု JSON ကို မအောင်မြင်ပါ" },
   "alert_checkCloudflare": { "message": "Cloudflare လုံခြုံရေးစစ်ဆေးမှုကိုအောင် ကျေးဇူးပြု" },

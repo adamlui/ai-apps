@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Aðstoð við OpenAI API verður bætt við innan skamms" },
   "alert_waitingResponse": { "message": "Beðið eftir svari frá ChatGPT" },
   "alert_login": { "message": "Vinsamlegast skráðu þig inn!" },
+  "alert_thenRefreshPage": { "message": "endurhlaða svo þessa síðu" },
   "alert_tooManyRequests": { "message": "Of margar beiðnir berast vegna ChatGPT" },
   "alert_parseFailed": { "message": "Ekki tókst að þátta svar JSON" },
   "alert_checkCloudflare": { "message": "Vinsamlegast standist öryggisskoðun Cloudflare" },

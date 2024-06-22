@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI API ಗೆ ಬೆಂಬಲವನ್ನು ಶೀಘ್ರದಲ್ಲೇ ಸೇರಿಸಲಾಗುತ್ತದೆ" },
   "alert_waitingResponse": { "message": "ChatGPT ಪ್ರತಿಕ್ರಿಯೆಗಾಗಿ ಕಾಯಲಾಗುತ್ತಿದೆ" },
   "alert_login": { "message": "ದಯವಿಟ್ಟು ಲಾಗಿನ್ ಆಗಿ" },
+  "alert_thenRefreshPage": { "message": "ನಂತರ ಈ ಪುಟವನ್ನು ರಿಫ್ರೆಶ್ ಮಾಡಿ" },
   "alert_tooManyRequests": { "message": "ChatGPT ಹಲವಾರು ವಿನಂತಿಗಳಿಂದ ತುಂಬಿ ತುಳುಕುತ್ತಿದೆ" },
   "alert_parseFailed": { "message": "JSON ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಪಾರ್ಸ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ" },
   "alert_checkCloudflare": { "message": "ದಯವಿಟ್ಟು ಕ್ಲೌಡ್ ಫ್ಲೇರ್ ಭದ್ರತಾ ಪರಿಶೀಲನೆಯಲ್ಲಿ ಉತ್ತೀರ್ಣರಾಗಿ" },

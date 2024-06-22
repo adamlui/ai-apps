@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI API - ի աջակցումը շուտով կավելացվի" },
   "alert_waitingResponse": { "message": "Սպասում է ChatGPT - ի պատասխանին" },
   "alert_login": { "message": "Խնդրումենք մւտքագրվել" },
+  "alert_thenRefreshPage": { "message": "ապա թարմացրեք այս էջը" },
   "alert_tooManyRequests": { "message": "ChatGPT - ը ողողված է չափազանց շատ հայտերով" },
   "alert_parseFailed": { "message": "Չհաջողվեց վերլուծել JSON - ի պատասխանը" },
   "alert_checkCloudflare": { "message": "Խնդրում ենք անցնել Cloudflare - ի անվտանգության ստուգում" },

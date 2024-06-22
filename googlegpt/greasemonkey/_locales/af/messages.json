@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Ondersteuning vir OpenAI API sal binnekort bygevoeg word" },
   "alert_waitingResponse": { "message": "Wag vir ChatGPT antwoord" },
   "alert_login": { "message": "Meld asseblief aan" },
+  "alert_thenRefreshPage": { "message": "verfris dan hierdie bladsy" },
   "alert_tooManyRequests": { "message": "ChatGPT is oorstroom met te veel versoeke" },
   "alert_parseFailed": { "message": "Kon nie antwoord JSON ontleed nie" },
   "alert_checkCloudflare": { "message": "Slaag asseblief Cloudflare-sekuriteitskontrole" },

@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Podpora za OpenAI API bo kmalu dodana" },
   "alert_waitingResponse": { "message": "Čakanje na odgovor KlepetaGPT" },
   "alert_login": { "message": "Prosimo, prijavite se" },
+  "alert_thenRefreshPage": { "message": "Prosimo, osvežite stran in poskusite znova" },
   "alert_tooManyRequests": { "message": "ChatGPT je preplavljen s preveč zahtev" },
   "alert_parseFailed": { "message": "Odziva JSON ni bilo mogoče razčleniti" },
   "alert_checkCloudflare": { "message": "Opravite varnostno preverjanje Cloudflare" },

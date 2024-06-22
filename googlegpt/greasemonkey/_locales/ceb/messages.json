@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Ang suporta alang sa OpenAI API idugang sa dili madugay" },
   "alert_waitingResponse": { "message": "Naghulat alang sa ChatGPT tubag" },
   "alert_login": { "message": "Sila login" },
+  "alert_thenRefreshPage": { "message": "dayon i-refresh kini nga panid" },
   "alert_tooManyRequests": { "message": "Ang ChatGPT gibaha sa daghang mga hangyo" },
   "alert_parseFailed": { "message": "Napakyas sa pag-parse sa tubag JSON" },
   "alert_checkCloudflare": { "message": "Palihug ipasa ang pagsusi sa seguridad sa Cloudflare" },

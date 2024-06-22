@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Bidh Apple Pay a 'fosgladh a dh' aithghearr" },
   "alert_waitingResponse": { "message": "A 'feitheamh ri freagairt ChatGPT" },
   "alert_login": { "message": "Mas e do thoil e logadh a - steach" },
+  "alert_thenRefreshPage": { "message": "an uairsin ath - nuadhaich an duilleag seo" },
   "alert_tooManyRequests": { "message": "Tha iomarca iarrtasan ann an cabhag" },
   "alert_parseFailed": { "message": "Dh'fhàillig le parsadh an fhreagairt JSON" },
   "alert_checkCloudflare": { "message": "Gabh seachad air sgrùdadh tèarainteachd Cloudflare" },

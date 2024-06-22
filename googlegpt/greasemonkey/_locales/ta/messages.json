@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI APIக்கான ஆதரவு விரைவில் சேர்க்கப்படும்" },
   "alert_waitingResponse": { "message": "ChatGPT பதிலுக்காகக் காத்திருக்கிறது" },
   "alert_login": { "message": "உள்நுழைக" },
+  "alert_thenRefreshPage": { "message": "பின்னர் இந்தப் பக்கத்தைப் புதுப்பிக்கவும்" },
   "alert_tooManyRequests": { "message": "ChatGPT பல கோரிக்கைகளால் நிரம்பி வழிகிறது" },
   "alert_parseFailed": { "message": "JSON பதிலைப் பகுக்க முடியவில்லை" },
   "alert_checkCloudflare": { "message": "கிளவுட்ஃப்ளேர் பாதுகாப்புச் சரிபார்ப்பில் தேர்ச்சி பெறுங்கள்" },

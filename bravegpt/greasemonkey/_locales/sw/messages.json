@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Usaidizi wa API ya OpenAI utaongezwa hivi karibuni" },
   "alert_waitingResponse": { "message": "Inasubiri jibu la ChatGPT" },
   "alert_login": { "message": "Tafadhali ingia" },
+  "alert_thenRefreshPage": { "message": "kisha fungua upya ukurasa huu" },
   "alert_tooManyRequests": { "message": "ChatGPT imejaa maombi mengi mno" },
   "alert_parseFailed": { "message": "Imeshindwa kugawanya jibu la JSON" },
   "alert_checkCloudflare": { "message": "Tafadhali pitisha ukaguzi wa usalama wa Cloudflare" },

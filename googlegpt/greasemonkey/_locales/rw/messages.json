@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Itangazo rya cyamunara y'umutungo utimukanwa uzatangwa mu gihe kitarambiranye" },
   "alert_waitingResponse": { "message": "Kugirango" },
   "alert_login": { "message": "Ifashayinjira" },
+  "alert_thenRefreshPage": { "message": "ongera usubire kuri iyi paji" },
   "alert_tooManyRequests": { "message": "Ni Na" },
   "alert_parseFailed": { "message": "Kuri JSON" },
   "alert_checkCloudflare": { "message": "Umutekano Kugenzura.." },

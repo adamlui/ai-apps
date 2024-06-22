@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "ستتم إضافة دعم واجهة برمجة تطبيقات OpenAI قريبًا" },
   "alert_waitingResponse": { "message": "في انتظار استجابة ChatGPT" },
   "alert_login": { "message": "يرجى تسجيل الدخول" },
+  "alert_thenRefreshPage": { "message": "تحديث هذه الصفحة" },
   "alert_tooManyRequests": { "message": "تم إغراق ChatGPT بالعديد من الطلبات" },
   "alert_parseFailed": { "message": "تعذر تحليل الاستجابة JSON" },
   "alert_checkCloudflare": { "message": "يرجى اجتياز فحص أمان Cloudflare" },

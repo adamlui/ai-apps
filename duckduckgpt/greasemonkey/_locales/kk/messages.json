@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Көп ұзамай OpenAI API қолдауы қосылады" },
   "alert_waitingResponse": { "message": "ChatGPT жауабын күтуде" },
   "alert_login": { "message": "Кіруіңізді өтінеміз" },
+  "alert_thenRefreshPage": { "message": "содан кейін бұл бетті жаңартыңыз" },
   "alert_tooManyRequests": { "message": "ChatGPT тым көп сұраулармен толтырылған" },
   "alert_parseFailed": { "message": "JSON жауаптарын талдау сәтсіз аяқталды" },
   "alert_checkCloudflare": { "message": "Cloudflare қауіпсіздік тексерісінен өтіңіз" },

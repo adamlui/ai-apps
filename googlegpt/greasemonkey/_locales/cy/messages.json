@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Bydd cefnogaeth ar gyfer API OpenAI yn cael ei hychwanegu yn fuan" },
   "alert_waitingResponse": { "message": "Aros am ymateb ChatGPT" },
   "alert_login": { "message": "Mewngofnodwch os gwelwch yn dda" },
+  "alert_thenRefreshPage": { "message": "yna adnewyddu'r dudalen hon" },
   "alert_tooManyRequests": { "message": "Mae ChatGPT yn gorlifo â gormod o geisiadau" },
   "alert_parseFailed": { "message": "Methwyd gramadegu ymateb JSON" },
   "alert_checkCloudflare": { "message": "Pasiwch wiriad diogelwch Cloudflare" },

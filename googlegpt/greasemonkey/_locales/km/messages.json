@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "ការគាំទ្រ OpenAI API នឹងត្រូវបានបន្ថែមក្នុងពេលឆាប់ៗ" },
   "alert_waitingResponse": { "message": "កំពុងរង់ចាំការឆ្លើយតបរបស់ ChatGPT" },
   "alert_login": { "message": "សូមចូលគណនី" },
+  "alert_thenRefreshPage": { "message": "បិទ ទំព័រ នេះ" },
   "alert_tooManyRequests": { "message": "ChatGPT ត្រូវបានជន់លិចដោយមានសំណើច្រើនពេក" },
   "alert_parseFailed": { "message": "បានបរាជ័យក្នុងការញែកចម្លើយ JSON" },
   "alert_checkCloudflare": { "message": "សូមឆ្លងកាត់ការត្រួតពិនិត្យសុវត្ថិភាព Cloudflare" },

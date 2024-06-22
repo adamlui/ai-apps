@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "שטיצן פֿאַר OpenAI API וועט זיין מוסיף באַלד" },
   "alert_waitingResponse": { "message": "ווארטן פֿאַר ChatGPT ענטפער" },
   "alert_login": { "message": "ביטע קלאָץ אין" },
+  "alert_thenRefreshPage": { "message": "דערנאָך דערפרישן דעם בלאַט" },
   "alert_tooManyRequests": { "message": "ChatGPT איז פלאַדאַד מיט צו פילע ריקוועס" },
   "alert_parseFailed": { "message": "ניט אַנדערש צו פּאַרסירן ענטפער JSON" },
   "alert_checkCloudflare": { "message": "ביטע דורכגיין Cloudflare זיכערהייט טשעק" },

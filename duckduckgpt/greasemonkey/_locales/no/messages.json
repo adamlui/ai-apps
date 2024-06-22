@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Støtte for OpenAI API vil bli lagt til snart" },
   "alert_waitingResponse": { "message": "Venter på ChatGPT-svar" },
   "alert_login": { "message": "Vennligst logg inn" },
+  "alert_thenRefreshPage": { "message": "Last siden på nytt" },
   "alert_tooManyRequests": { "message": "ChatGPT er oversvømmet med for mange forespørsler" },
   "alert_parseFailed": { "message": "Kunne ikke analysere respons JSON" },
   "alert_checkCloudflare": { "message": "Vennligst bestå Cloudflare sikkerhetssjekk" },

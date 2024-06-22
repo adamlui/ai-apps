@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Fela Anikulapo Kuti Fela Anikulapo Kuti API" },
   "alert_waitingResponse": { "message": "Fela Anikulapo Kuti ChatGPT Response" },
   "alert_login": { "message": "Nga mulefwaya ukulembesha" },
+  "alert_thenRefreshPage": { "message": "pusheni iyi pepala" },
   "alert_tooManyRequests": { "message": "Kotoba no tame ni shite imasen deshita" },
   "alert_parseFailed": { "message": "No Comments on JSON Mwakitwile" },
   "alert_checkCloudflare": { "message": "Ukulele Tabs Cloudflare Ukulele Tabs" },

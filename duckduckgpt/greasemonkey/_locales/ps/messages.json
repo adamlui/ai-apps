@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "د OpenAI API ملاتړ به ډیر ژر اضافه شي" },
   "alert_waitingResponse": { "message": "د ChatGPT ځواب ته انتظار" },
   "alert_login": { "message": "مهرباني وکړئ ننوځئ" },
+  "alert_thenRefreshPage": { "message": "بیا دا پاڼه تازه کړئ" },
   "alert_tooManyRequests": { "message": "ChatGPT د ډیرو غوښتنو سره سیلاب شوی" },
   "alert_parseFailed": { "message": "د JSON ځواب تجزیه کولو کې پاتې راغلی" },
   "alert_checkCloudflare": { "message": "مهرباني وکړئ د Cloudflare امنیتي چیک پاس کړئ" },

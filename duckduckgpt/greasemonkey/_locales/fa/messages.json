@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "پشتیبانی از OpenAI API به زودی اضافه خواهد شد" },
   "alert_waitingResponse": { "message": "در انتظار پاسخ ChatGPT" },
   "alert_login": { "message": "لطفا وارد شوید" },
+  "alert_thenRefreshPage": { "message": "بارگزاری مجدد صفحه" },
   "alert_tooManyRequests": { "message": "ChatGPT مملو از درخواست های بسیار زیادی است" },
   "alert_parseFailed": { "message": "پاسخ JSON تجزیه نشد" },
   "alert_checkCloudflare": { "message": "لطفاً بررسی امنیتی Cloudflare را پاس کنید" },

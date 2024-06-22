@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Yo pral ajoute sipò pou OpenAI API yon ti tan" },
   "alert_waitingResponse": { "message": "Ap tann repons ChatGPT" },
   "alert_login": { "message": "Tanpri konekte" },
+  "alert_thenRefreshPage": { "message": "lè sa a, rafrechi paj sa a/al" },
   "alert_tooManyRequests": { "message": "ChatGPT inonde ak twòp demann" },
   "alert_parseFailed": { "message": "Pa t analize repons JSON" },
   "alert_checkCloudflare": { "message": "Tanpri pase chèk sekirite Cloudflare" },

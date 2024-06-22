@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "很快將新增對 OpenAI API 的支援" },
   "alert_waitingResponse": { "message": "正在等待 ChatGPT 回應" },
   "alert_login": { "message": "請登入" },
+  "alert_thenRefreshPage": { "message": "然後重新整理此頁面" },
   "alert_tooManyRequests": { "message": "ChatGPT 被太多請求淹沒" },
   "alert_parseFailed": { "message": "無法剖析回應 JSON" },
   "alert_checkCloudflare": { "message": "請通過 Cloudflare 安全檢查" },

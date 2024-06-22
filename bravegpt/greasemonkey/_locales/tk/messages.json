@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI API-iň goldawy tizden goşulýar" },
   "alert_waitingResponse": { "message": "ÇatGPT jogap garaşýar" },
   "alert_login": { "message": "Lütfen login ediň" },
+  "alert_thenRefreshPage": { "message": "bu sahypa täzeden täzelendi" },
   "alert_tooManyRequests": { "message": "ÇatGPT köp talaplar bilen dolup-daşýar" },
   "alert_parseFailed": { "message": "JSON-da jogap tapylmady" },
   "alert_checkCloudflare": { "message": "Lütfen Cloudflare howpsuzlyk seretmesini geçiň" },

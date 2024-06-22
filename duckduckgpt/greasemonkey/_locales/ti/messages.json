@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "ደገፍ OpenAI API ኣብ ቀረባ እዋን ክውስኽ ኢዩ" },
   "alert_waitingResponse": { "message": "መልሲ ChatGPT" },
   "alert_login": { "message": "ብኽብረትካ በጃኻ መእተዊ" },
+  "alert_thenRefreshPage": { "message": "ነዚ ገጽ እዚ ኣሐድሶ" },
   "alert_tooManyRequests": { "message": "ChatGPT ብብዙሕ ጠለባት ይዕምብብብ" },
   "alert_parseFailed": { "message": "መልሲ JSON ኣይረኸበን ።" },
   "alert_checkCloudflare": { "message": "ብኽብረትካ በጃኻ ናይ Cloudflare ናይ ጸጥታ መርመራ ሕለፍ" },

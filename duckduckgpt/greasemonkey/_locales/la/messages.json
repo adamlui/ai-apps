@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Support for OpenAI API HQUAE PLUS" },
   "alert_waitingResponse": { "message": "Expectantes ChatGPT responsum" },
   "alert_login": { "message": "Eligere intrare" },
+  "alert_thenRefreshPage": { "message": "hoc pagina refresh" },
   "alert_tooManyRequests": { "message": "ChatGPT sobedus multos requestes" },
   "alert_parseFailed": { "message": "Quaedam explicabo JSON" },
   "alert_checkCloudflare": { "message": "Quaeso consilium perficitur" },

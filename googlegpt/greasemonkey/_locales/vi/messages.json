@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Hỗ trợ cho API OpenAI sẽ sớm được thêm vào" },
   "alert_waitingResponse": { "message": "Đang chờ phản hồi ChatGPT" },
   "alert_login": { "message": "Vui lòng đăng nhập" },
+  "alert_thenRefreshPage": { "message": "Sau đó làm mới trang này" },
   "alert_tooManyRequests": { "message": "ChatGPT tràn ngập quá nhiều yêu cầu" },
   "alert_parseFailed": { "message": "Không thể phân tích cú pháp JSON phản hồi" },
   "alert_checkCloudflare": { "message": "Vui lòng vượt qua kiểm tra bảo mật Cloudflare" },

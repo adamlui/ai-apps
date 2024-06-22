@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Pronto lo añadí sosten na AOV" },
   "alert_waitingResponse": { "message": "Solucion a ChatGPT" },
   "alert_login": { "message": "Por Fabor Login" },
+  "alert_thenRefreshPage": { "message": "refresca esa página" },
   "alert_tooManyRequests": { "message": "KLM ta exigi demasiado peticion" },
   "alert_parseFailed": { "message": "Respondiendo a JSON" },
   "alert_checkCloudflare": { "message": "Por Favor Verificacion Cloudflare" },

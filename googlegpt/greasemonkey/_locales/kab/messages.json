@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Affinez votre recherche pour OpenAI API will be added soon" },
   "alert_waitingResponse": { "message": "Araǧu i tiririt n ChatGPT" },
   "alert_login": { "message": "Ttxil-k · m sekcem" },
+  "alert_thenRefreshPage": { "message": "snifel asebter-agi" },
   "alert_tooManyRequests": { "message": "ChatGPT yettazzal s waṭas n isteqsiyen" },
   "alert_parseFailed": { "message": "Isebtar i yellan ddaw-a sɛan aseɣwen ɣer JSON" },
   "alert_checkCloudflare": { "message": "Ttxil-k · m sekcem asekles n tγellist n Cloudflare" },

@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Дастгирии OpenAI API ба наздикӣ илова карда мешавад" },
   "alert_waitingResponse": { "message": "Интизори посухи ChatGPT" },
   "alert_login": { "message": "Лутфан ворид шавед" },
+  "alert_thenRefreshPage": { "message": "pagkatapos ay i-refresh ang pah" },
   "alert_tooManyRequests": { "message": "ChatGPT бо дархостҳои аз ҳад зиёд пур шудааст" },
   "alert_parseFailed": { "message": "Ҷавоби JSON-ро таҳлил карда натавонист" },
   "alert_checkCloudflare": { "message": "Лутфан аз санҷиши амнияти Cloudflare гузаред" },

@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "ለ OpenAI ኤፒአይ ድጋፍ በቅርቡ ይታከላል" },
   "alert_waitingResponse": { "message": "የ ChatGPT ምላሽ በመጠባበቅ ላይ" },
   "alert_login": { "message": "እባክዎ ይግቡ" },
+  "alert_thenRefreshPage": { "message": "ከዚያም ይህን ገጽ ያድሱ" },
   "alert_tooManyRequests": { "message": "ChatGPT በጣም ብዙ ጥያቄዎች ጋር ጎርፍ ነው" },
   "alert_parseFailed": { "message": "የ JSON ምላሽ መለጠፍ አልተሳካም" },
   "alert_checkCloudflare": { "message": "እባክዎ Cloudflare የደህንነት ፍተሻን ያልፉ" },

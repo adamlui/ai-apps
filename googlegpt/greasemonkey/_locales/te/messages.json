@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI APIకి మద్దతు త్వరలో జోడించబడుతుంది" },
   "alert_waitingResponse": { "message": "Waiting for ChatGPT response" },
   "alert_login": { "message": "Please login" },
+  "alert_thenRefreshPage": { "message": "ఆపై ఈ పేజీని రిఫ్రెష్ చేయండి" },
   "alert_tooManyRequests": { "message": "ChatGPT is flooded with too many requests" },
   "alert_parseFailed": { "message": "Failed to parse response JSON" },
   "alert_checkCloudflare": { "message": "Please pass Cloudflare security check" },

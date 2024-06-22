@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "އޯޕަންއޭއައި އެޕީއައި އަށް ސަޕޯޓް ވަރަށް އަވަހަށް އިތުރު ކުރެވޭނެ އެވެ" },
   "alert_waitingResponse": { "message": "ޗެޓްޖީޕީޓީގެ ޖަވާބަކަށް އިންތިޒާރުކުރުން" },
   "alert_login": { "message": "ލޮގިން ކޮށްލާށެވެ" },
+  "alert_thenRefreshPage": { "message": "ދެން މި ޕޭޖް ރިފްރެޝް ކުރާށެވެ" },
   "alert_tooManyRequests": { "message": "ޗެޓްޖީޕީޓީ ފުރިފައި ވަނީ މާ ގިނަ ރިކުއެސްޓްތަކަކުން" },
   "alert_parseFailed": { "message": "ޖަވާބެއް ޕާސް ނުކުރެވުނު ޖޭ.އެސް.އޯ.އެން" },
   "alert_checkCloudflare": { "message": "ކްލައުޑްފްލެއާ ސެކިއުރިޓީ ޗެކް ޕާސް ކުރޭ" },

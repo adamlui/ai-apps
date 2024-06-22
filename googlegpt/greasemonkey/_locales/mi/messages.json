@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Tautoko mo OpenAI API ka taapirihia wawe" },
   "alert_waitingResponse": { "message": "Te tatari mo te whakautu ChatGPT" },
   "alert_login": { "message": "Tena koa takiuru" },
+  "alert_thenRefreshPage": { "message": "whakahoutia tenei whārangi" },
   "alert_tooManyRequests": { "message": "ChatGPT kua waipuke ki te nui rawa o ngā tono" },
   "alert_parseFailed": { "message": "Kaore i taea te whakautu i te JSON" },
   "alert_checkCloudflare": { "message": "Tena koa haere ki te tirotiro i te haumarutanga Cloudflare" },

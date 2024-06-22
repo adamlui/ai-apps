@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "การสนับสนุน OpenAI API จะถูกเพิ่มในไม่ช้า" },
   "alert_waitingResponse": { "message": "กำลังรอการตอบกลับของ ChatGPT" },
   "alert_login": { "message": "กรุณาเข้าสู่ระบบ" },
+  "alert_thenRefreshPage": { "message": "แล้วรีเฟรชหน้านี้" },
   "alert_tooManyRequests": { "message": "ChatGPT เต็มไปด้วยคำขอมากเกินไป" },
   "alert_parseFailed": { "message": "การแยกวิเคราะห์ JSON การตอบสนองล้มเหลว" },
   "alert_checkCloudflare": { "message": "โปรดผ่านการตรวจสอบความปลอดภัยของ Cloudflare" },

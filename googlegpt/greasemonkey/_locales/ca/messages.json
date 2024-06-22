@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "En breu s'afegirà el suport per a l'API d'OpenAI" },
   "alert_waitingResponse": { "message": "S'està esperant la resposta de ChatGPT" },
   "alert_login": { "message": "Iniciar sessió" },
+  "alert_thenRefreshPage": { "message": "després actualitza aquesta pàgina" },
   "alert_tooManyRequests": { "message": "El ChatGPT està ple de moltes sol·licituds" },
   "alert_parseFailed": { "message": "No s'ha pogut analitzar la resposta JSON" },
   "alert_checkCloudflare": { "message": "Passa la comprovació de seguretat de Cloudflare" },

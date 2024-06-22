@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI API-এর জন্য সমর্থন শীঘ্রই যোগ করা হবে" },
   "alert_waitingResponse": { "message": "ChatGPT উত্তরের জন্য অপেক্ষা করা হচ্ছে" },
   "alert_login": { "message": "দয়া করে লগইন করুন" },
+  "alert_thenRefreshPage": { "message": "তারপর এই পৃষ্ঠাটি রিফ্রেশ করুন" },
   "alert_tooManyRequests": { "message": "ChatGPT অনেক বেশি রিকোয়েস্ট নিয়ে প্লাবিত হয়েছে" },
   "alert_parseFailed": { "message": "প্রতিক্রিয়া JSON পার্স করতে ব্যর্থ হয়েছে" },
   "alert_checkCloudflare": { "message": "অনুগ্রহ করে ক্লাউডফ্লেয়ার সুরক্ষা চেক পাস করুন" },

@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Ol i laik bai ol i ken helpim ol long mekim ol samting bilong helpim ol long kamap gutpela" },
   "alert_waitingResponse": { "message": "Ol i wetim bekim bilong dispela askim" },
   "alert_login": { "message": "Plim Plim Login" },
+  "alert_thenRefreshPage": { "message": "refresh dispela pes" },
   "alert_tooManyRequests": { "message": "ChatGPT i pulap long planti askim" },
   "alert_parseFailed": { "message": "Ol i no inap skelim bekim bilong JSON" },
   "alert_checkCloudflare": { "message": "Plis go pas long Cloudflare security check" },

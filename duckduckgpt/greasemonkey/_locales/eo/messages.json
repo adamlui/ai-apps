@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Subteno por OpenAI API estos aldonita baldaŭ" },
   "alert_waitingResponse": { "message": "Atendante la respondon de ChatGPT" },
   "alert_login": { "message": "Bonvolu ensaluti" },
+  "alert_thenRefreshPage": { "message": "refreŝigu ĉi tiun paĝon" },
   "alert_tooManyRequests": { "message": "ChatGPT estas inundita kun tro multaj petoj" },
   "alert_parseFailed": { "message": "Fiaskis analizi respondon JSON" },
   "alert_checkCloudflare": { "message": "Bonvolu pasi Cloudflare sekureco ĉeko" },

@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI API のサポートはまもなく追加されます" },
   "alert_waitingResponse": { "message": "ChatGPT の応答を待っています" },
   "alert_login": { "message": "ログインして下さい" },
+  "alert_thenRefreshPage": { "message": "このページを更新" },
   "alert_tooManyRequests": { "message": "ChatGPT のリクエスト数が多すぎます" },
   "alert_parseFailed": { "message": "応答の解析に失敗しました" },
   "alert_checkCloudflare": { "message": "Cloudflare のセキュリティチェックに合格してください" },

@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "很快将添加对 OpenAI API 的支持" },
   "alert_waitingResponse": { "message": "正在等待 ChatGPT 响应" },
   "alert_login": { "message": "请登录" },
+  "alert_thenRefreshPage": { "message": "刷新此页面" },
   "alert_tooManyRequests": { "message": "ChatGPT 被太多请求淹没" },
   "alert_parseFailed": { "message": "解析响应 JSON 失败" },
   "alert_checkCloudflare": { "message": "请通过 Cloudflare 安全检查" },

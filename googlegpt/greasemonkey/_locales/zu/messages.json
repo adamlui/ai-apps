@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Usizo lwe-OpenAI API luzofakwa maduzane" },
   "alert_waitingResponse": { "message": "Ilinde impendulo ye-ChatGPT" },
   "alert_login": { "message": "Sicela ungene ngemvume ku-akhawunti" },
+  "alert_thenRefreshPage": { "message": "bese uvuselela leli khasi" },
   "alert_tooManyRequests": { "message": "I-ChatGPT igcwele izicelo eziningi kakhulu" },
   "alert_parseFailed": { "message": "Yehlulekile ukuhlukanisa impendulo ye-JSON" },
   "alert_checkCloudflare": { "message": "Sicela udlulise ukuhlolwa kokuphepha kwe-Cloudflare" },

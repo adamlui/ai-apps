@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "L-appoġġ għall-API ta' OpenAI se jiżdied dalwaqt" },
   "alert_waitingResponse": { "message": "Qed nistennew tweġiba għal ChatGPT" },
   "alert_login": { "message": "Jekk jogħġbok idħol" },
+  "alert_thenRefreshPage": { "message": "imbagħad aġġorna din il-paġna" },
   "alert_tooManyRequests": { "message": "ChatGPT huwa mgħarraq b' wisq talbiet" },
   "alert_parseFailed": { "message": "Ma rnexxilniex nanalizzaw it-tweġiba JSON" },
   "alert_checkCloudflare": { "message": "Jekk jogħġbok agħmel iċċekkjar tas-sigurtà ta' Cloudflare" },

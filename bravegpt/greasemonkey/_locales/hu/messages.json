@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Hamarosan hozzáadjuk az OpenAI API támogatását" },
   "alert_waitingResponse": { "message": "Várakozás a ChatGPT válaszára" },
   "alert_login": { "message": "Kérlek jelentkezz be" },
+  "alert_thenRefreshPage": { "message": "Ezután frissítse ezt a lapot" },
   "alert_tooManyRequests": { "message": "A ChatGPT túl sok kéréssel van elárasztva" },
   "alert_parseFailed": { "message": "Válasz JSON feldolgozása sikertelen" },
   "alert_checkCloudflare": { "message": "Kérjük, teljesítse a Cloudflare biztonsági ellenőrzését" },

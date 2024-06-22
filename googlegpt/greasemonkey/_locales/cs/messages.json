@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Podpora rozhraní OpenAI API bude brzy přidána" },
   "alert_waitingResponse": { "message": "Čekání na odpověď ChatGPT" },
   "alert_login": { "message": "Prosím přihlašte se" },
+  "alert_thenRefreshPage": { "message": "Potom aktualizujte tuto stránku." },
   "alert_tooManyRequests": { "message": "ChatGPT je zaplaven příliš mnoha požadavky" },
   "alert_parseFailed": { "message": "Nepodařilo se analyzovat odpověď JSON" },
   "alert_checkCloudflare": { "message": "Projděte bezpečnostní kontrolou Cloudflare" },

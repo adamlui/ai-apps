@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI API desteği kısa süre içinde eklenecektir" },
   "alert_waitingResponse": { "message": "ChatGPT yanıtı bekleniyor" },
   "alert_login": { "message": "Lütfen giriş yapın" },
+  "alert_thenRefreshPage": { "message": "Ardından sayfayı yenileyin" },
   "alert_tooManyRequests": { "message": "ChatGPT çok fazla istekle dolup taşıyor" },
   "alert_parseFailed": { "message": "Yanıt JSON'u ayrıştırılamadı" },
   "alert_checkCloudflare": { "message": "Lütfen Cloudflare güvenlik kontrolünden geçin" },

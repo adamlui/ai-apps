@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "У бліжэйшы час будзе дададзена падтрымка API OpenAI" },
   "alert_waitingResponse": { "message": "Чакаем адказу на чатGPT" },
   "alert_login": { "message": "Калі ласка, увайдзіце" },
+  "alert_thenRefreshPage": { "message": "затым абнавіць гэтую старонку" },
   "alert_tooManyRequests": { "message": "ЧатGPT запоўнены занадта вялікай колькасцю запытаў" },
   "alert_parseFailed": { "message": "Немагчыма разабраць адказ JSON" },
   "alert_checkCloudflare": { "message": "Прайдзіце праверку бяспекі Cloudflare" },

@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI API-ийн дэмжлэгийг удахгүй нэмж болно" },
   "alert_waitingResponse": { "message": "ChatGPT-ийн хариултыг хүлээж байна" },
   "alert_login": { "message": "Нэвтрэнэ үү" },
+  "alert_thenRefreshPage": { "message": "дараа нь энэ хуудсыг шинэчлэх" },
   "alert_tooManyRequests": { "message": "ChatGPT нь хэт олон хүсэлтээр үерт автсан байдаг" },
   "alert_parseFailed": { "message": "Хариулт JSON-г задалж чадсангүй" },
   "alert_checkCloudflare": { "message": "Cloudflare аюулгүй байдлын шалгалтыг нэвтрүүлнэ үү" },

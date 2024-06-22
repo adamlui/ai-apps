@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "ਓਪਨਏਆਈ ਏਪੀਆਈ ਲਈ ਸਹਾਇਤਾ ਜਲਦੀ ਹੀ ਸ਼ਾਮਲ ਕੀਤੀ ਜਾਏਗੀ" },
   "alert_waitingResponse": { "message": "ਚੈਟਜੀਪੀਟੀ ਜਵਾਬ ਦੀ ਉਡੀਕ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ" },
   "alert_login": { "message": "ਕਿਰਪਾ ਕਰਕੇ ਲੌਗਇਨ ਕਰੋ" },
+  "alert_thenRefreshPage": { "message": "ਫਿਰ ਇਹ ਸਫ਼ਾ ਤਾਜ਼ਾ ਕਰੋ" },
   "alert_tooManyRequests": { "message": "ChatGPT ਬਹੁਤ ਸਾਰੀਆਂ ਬੇਨਤੀਆਂ ਨਾਲ ਭਰਿਆ ਹੋਇਆ ਹੈ" },
   "alert_parseFailed": { "message": "ਜਵਾਬ ਪਾਰਸ ਕਰਨ ਲਈ ਫੇਲ੍ਹ JSON" },
   "alert_checkCloudflare": { "message": "ਕਿਰਪਾ ਕਰਕੇ ਕਲਾਉਡਫਲੇਅਰ ਸੁਰੱਖਿਆ ਜਾਂਚ ਪਾਸ ਕਰੋ" },

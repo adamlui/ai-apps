@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Kemonokeng ya OpenAI API e tlile go tsenngwa mo bogautshwaneng" },
   "alert_waitingResponse": { "message": "Re letetse karabo ya ChatGPT" },
   "alert_login": { "message": "Tsweetswee tsenela" },
+  "alert_thenRefreshPage": { "message": "morago ga moo o ntshwafatse tsebe eno" },
   "alert_tooManyRequests": { "message": "ChatGPT e tletse ka dikopo tse dintsi thata" },
   "alert_parseFailed": { "message": "O reteletswe ke go kgaoganya karabo ya JSON" },
   "alert_checkCloudflare": { "message": "Re kopa gore o fete tlhatlhobo ya tshireletso ya Cloudflare" },

@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI APIགི་དོན་ལུ་ རྒྱབ་སྐྱོར་འདི་ འཕྲལ་མགྱོགས་ར་ ཡར་སེང་འབད་ནི་ཨིན།" },
   "alert_waitingResponse": { "message": "ChatGPT ལན་སློགགི་དོན་ལུ་སྒུག་སྡོད་" },
   "alert_login": { "message": "ནང་འཛུལ་འབད།" },
+  "alert_thenRefreshPage": { "message": "ཤོག་ལེབ་འདི་ གསརཔ་བཟོ་" },
   "alert_tooManyRequests": { "message": "ChatGPT གིས་ ཞུ་ཡིག་ལེ་ཤ་བཙུགས་ཏེ་འདུག" },
   "alert_parseFailed": { "message": "ལན་སློག JSON བལྟ་ནི་མ་ཐོབ།" },
   "alert_checkCloudflare": { "message": "སྤྲིན་གྱི་ལྡེ་མིག་ཚུ་ བརྟག་དཔྱད་འབད་" },

@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "ການສະ ຫນັບ ສະ ຫນູນ ສໍາ ລັບ OpenAI API ຈະເພີ່ມຂື້ນໃນໄວໆນີ້" },
   "alert_waitingResponse": { "message": "ລໍຖ້າການຕອບໂຕ້ຂອງ ChatGPT" },
   "alert_login": { "message": "ກະລຸນາເຂົ້າສູ່ລະບົບ" },
+  "alert_thenRefreshPage": { "message": "ອົດໃສຫນ້າ" },
   "alert_tooManyRequests": { "message": "ChatGPT ຖືກນ້ ໍາ ຖ້ວມດ້ວຍ ຄໍາ ຮ້ອງຂໍຫຼາຍເກີນໄປ" },
   "alert_parseFailed": { "message": "ການວິເຄາະຄໍາຕອບ JSON ບໍ່ສຳເລັດ" },
   "alert_checkCloudflare": { "message": "ກະລຸນາຜ່ານການກວດສອບຄວາມປອດໄພ Cloudflare" },

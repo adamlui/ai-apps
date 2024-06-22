@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI API에 대한 지원이 곧 추가될 예정입니다" },
   "alert_waitingResponse": { "message": "ChatGPT 응답 대기 중" },
   "alert_login": { "message": "로그인 해 주세요" },
+  "alert_thenRefreshPage": { "message": "그런 다음 이 페이지를 새로 고침하세요" },
   "alert_tooManyRequests": { "message": "ChatGPT 에 요청이 너무 많습니다" },
   "alert_parseFailed": { "message": "응답 분석 실패" },
   "alert_checkCloudflare": { "message": "Cloudflare 보안 검사를 통과하십시오" },

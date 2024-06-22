@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Support for OpenAI API will be added shortly" },
   "alert_waitingResponse": { "message": "Waiting for ChatGPT response" },
   "alert_login": { "message": "Please login" },
+  "alert_thenRefreshPage": { "message": "then refresh this page" },
   "alert_tooManyRequests": { "message": "ChatGPT is flooded with too many requests" },
   "alert_parseFailed": { "message": "Failed to parse response JSON" },
   "alert_checkCloudflare": { "message": "Please pass Cloudflare security check" },

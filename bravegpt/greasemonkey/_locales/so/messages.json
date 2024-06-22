@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Taageerada OpenAI API ayaa lagu dari doonaa goor dhow" },
   "alert_waitingResponse": { "message": "Sugitaanka jawaabta ChatGPT" },
   "alert_login": { "message": "Fadlan gal" },
+  "alert_thenRefreshPage": { "message": "ka dibna cusbooneysii boggan" },
   "alert_tooManyRequests": { "message": "ChatGPT waxaa daadsan codsiyada aad u badan" },
   "alert_parseFailed": { "message": "Ku guuldareystay jawaabta Parse JSON" },
   "alert_checkCloudflare": { "message": "Fadlan dhaaf jeegga amniga Cloudflare" },

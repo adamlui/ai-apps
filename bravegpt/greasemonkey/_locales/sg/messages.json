@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "A yeke zia ande maboko na maboko ti OpenAI API na yâ ti kete ngoi" },
   "alert_waitingResponse": { "message": "Ti kiri tënë na hundango tënë niModifier" },
   "alert_login": { "message": "Mbi hunda na mo ti ga na ndo ni" },
+  "alert_thenRefreshPage": { "message": "ti leke lembeti ni" },
   "alert_tooManyRequests": { "message": "ChatGPT ayeke na gbâ ti asambela" },
   "alert_parseFailed": { "message": "A yeke na lege ni pëpe ti tene a kiri tënë na ala" },
   "alert_checkCloudflare": { "message": "A yeke nzoni e sara kua na Cloudflare" },

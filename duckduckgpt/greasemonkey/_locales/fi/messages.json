@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "OpenAI API: n tuki lisätään pian" },
   "alert_waitingResponse": { "message": "Odotetaan ChatGPT-vastausta" },
   "alert_login": { "message": "Kirjaudu sisään" },
+  "alert_thenRefreshPage": { "message": "Päivitä tämä sivu" },
   "alert_tooManyRequests": { "message": "ChatGPT on täynnä liian monia pyyntöjä" },
   "alert_parseFailed": { "message": "JSON-vastauksen jäsentäminen epäonnistui" },
   "alert_checkCloudflare": { "message": "Läpäise Cloudflare-turvatarkastus" },

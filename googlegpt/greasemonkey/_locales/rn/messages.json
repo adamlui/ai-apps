@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Ugushigikira API ya OpenAI bigiye kwongerwa vuba" },
   "alert_waitingResponse": { "message": "Nkurunziza arindiriye inyishu ya ChatGPT" },
   "alert_login": { "message": "Usabwe kwinjira" },
+  "alert_thenRefreshPage": { "message": "nusubize uru rupapuro" },
   "alert_tooManyRequests": { "message": "UBUGENZI BW'UBUGENZI BWO BW'" },
   "alert_parseFailed": { "message": "Nirwana Nirwana JSON" },
   "alert_checkCloudflare": { "message": "Ndagusavye uce uronka ikete ry'umutekano rya Cloudflare" },

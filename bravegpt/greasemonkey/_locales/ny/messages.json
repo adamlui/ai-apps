@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Thandizo la OpenAI API lidzawonjezedwa posachedwa" },
   "alert_waitingResponse": { "message": "Kuyembekezera yankho la ChatGPT" },
   "alert_login": { "message": "Lumikizanani nafe" },
+  "alert_thenRefreshPage": { "message": "kenako tsitsimutsani tsamba ili" },
   "alert_tooManyRequests": { "message": "ChatGPT imasefukira ndi zopempha zambiri" },
   "alert_parseFailed": { "message": "Analephera parse Poyankha JSON" },
   "alert_checkCloudflare": { "message": "Chonde pitani Cloudflare chitetezo cheke" },

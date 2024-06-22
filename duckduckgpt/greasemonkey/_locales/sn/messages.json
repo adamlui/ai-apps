@@ -53,6 +53,7 @@
   "alert_openAIsupportSoon": { "message": "Tsigiro yeOpenAI API ichawedzerwa munguva pfupi" },
   "alert_waitingResponse": { "message": "Ndakamirira mhinduro yeChatGPT" },
   "alert_login": { "message": "Ndokumbira upinde" },
+  "alert_thenRefreshPage": { "message": "zvino kuzorodza peji ino" },
   "alert_tooManyRequests": { "message": "ChatGPT yakafukidzwa nezvikumbiro zvakawandisa" },
   "alert_parseFailed": { "message": "Akakundikana kupatsanura mhinduro JSON" },
   "alert_checkCloudflare": { "message": "Ndokumbirawo upfuure Cloudflare chengetedzo cheki" },

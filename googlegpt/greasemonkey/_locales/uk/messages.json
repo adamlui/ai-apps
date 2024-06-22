@@ -52,6 +52,7 @@
   "alert_openAIsupportSoon": { "message": "Підтримку API OpenAI буде додано найближчим часом" },
   "alert_waitingResponse": { "message": "Очікування відповіді ChatGPT" },
   "alert_login": { "message": "Будь ласка, увійдіть у систему" },
+  "alert_thenRefreshPage": { "message": "Оновіть цю сторінку." },
   "alert_tooManyRequests": { "message": "ChatGPT переповнений занадто великою кількістю запитів" },
   "alert_parseFailed": { "message": "Не вдалося проаналізувати відповідь JSON" },
   "alert_checkCloudflare": { "message": "Пройдіть перевірку безпеки Cloudflare" },
