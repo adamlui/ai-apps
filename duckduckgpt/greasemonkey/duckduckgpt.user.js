@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.22.1
+// @version             2024.6.22.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -201,11 +201,11 @@
 // ==/UserScript==
 
 // Dependencies:
-// - chatgpt.js (https://chatgpt.js.org) © 2023–2024 KudoAI & contributors under the MIT license
-// - generate-ip (https://generate-ip.org) © 2024 Adam Lui & contributors under the MIT license
-// - highlight.js (https://highlightjs.org) © 2006 Ivan Sagalaev under the BSD 3-Clause license
-// - KaTeX (https://katex.org) © 2013–2020 Khan Academy & other contributors under the MIT license
-// - Marked (https://marked.js.org) © 2018+ MarkedJS © 2011–2018 Christopher Jeffrey under the MIT license
+// ✓ chatgpt.js (https://chatgpt.js.org) © 2023–2024 KudoAI & contributors under the MIT license
+// ✓ generate-ip (https://generate-ip.org) © 2024 Adam Lui & contributors under the MIT license
+// ✓ highlight.js (https://highlightjs.org) © 2006 Ivan Sagalaev under the BSD 3-Clause license
+// ✓ KaTeX (https://katex.org) © 2013–2020 Khan Academy & other contributors under the MIT license
+// ✓ Marked (https://marked.js.org) © 2018+ MarkedJS © 2011–2018 Christopher Jeffrey under the MIT license
 // Documentation: https://docs.ddgpt.com
 
 (async () => {
