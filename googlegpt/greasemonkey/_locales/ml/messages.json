@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "ഉപയോഗിക്കുമ്പോൾ" },
   "alert_pleaseUse": { "message": "ദയവായി ഉപയോഗിക്കുക" },
   "alert_instead": { "message": "പകരം..." },
-  "alert_untilMSfixesBug": { "message": "മൈക്രോസോഫ്റ്റ് ഈ ദീർഘകാല ബ്രൗസർ റെൻഡറിംഗ് ബഗ് പരിഹരിക്കുന്നതുവരെ" },
   "alert_unavailable": { "message": "ലഭ്യമല്ല" },
   "alert_isOnlyAvailFor": { "message": "s" },
   "alert_and": { "message": "," },

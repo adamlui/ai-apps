@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "W przypadku używania systemu" },
   "alert_pleaseUse": { "message": "Użyj" },
   "alert_instead": { "message": "zamiast" },
-  "alert_untilMSfixesBug": { "message": "dopóki Microsoft nie naprawi tego długotrwałego błędu renderowania przeglądarki" },
   "alert_unavailable": { "message": "niedostępne" },
   "alert_isOnlyAvailFor": { "message": "jest dostępny tylko dla" },
   "alert_and": { "message": "oraz" },

@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "အသုံးပြုသည့်အခါ" },
   "alert_pleaseUse": { "message": "ကျေးဇူးပြု ၍ အသုံးပြုပါ" },
   "alert_instead": { "message": "ကို လုပ်ကြည့်ရင်ကော။\"" },
-  "alert_untilMSfixesBug": { "message": "မိုက်ကရိုဆော့ဖ်သည်ဤရှည်လျားသော browser rendering bug ကိုပြုပြင်သည်အထိ" },
   "alert_unavailable": { "message": "(မရနိုင်ပါ)" },
   "alert_isOnlyAvailFor": { "message": "အတွက်သာ အသုံးပြုနိုင်မည် ဖြစ်ပါသည် ။" },
   "alert_and": { "message": "Raw Material (Inventory) တွေ ဝယ်မယ့် လုပ်ငန်းမျိုးအတွက်၊" },

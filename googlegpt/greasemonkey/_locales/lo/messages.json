@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "ເມື່ອໃຊ້" },
   "alert_pleaseUse": { "message": "ກະລຸນາໃຊ້" },
   "alert_instead": { "message": "Instead" },
-  "alert_untilMSfixesBug": { "message": "ຈົນກວ່າ Microsoft ຈະແກ້ໄຂຂໍ້ບົກພ່ອງຂອງຕົວທ່ອງເວັບທີ່ມີມາແຕ່ດົນນານນີ້" },
   "alert_unavailable": { "message": "ບໍ່ສາມາດໃຊ້ໄດ້" },
   "alert_isOnlyAvailFor": { "message": "ມີພຽງແຕ່ສໍາລັບ" },
   "alert_and": { "message": "ແລະ" },

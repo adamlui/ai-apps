@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "pri uporabi" },
   "alert_pleaseUse": { "message": "Prosimo, uporabite" },
   "alert_instead": { "message": "Tako so berlinsko Musilovo družbo razpustili, na Dunaju pa so ustanovili novo." },
-  "alert_untilMSfixesBug": { "message": "dokler Microsoft ne odpravi te dolgotrajne napake pri upodabljanju brskalnika" },
   "alert_unavailable": { "message": "ni na voljo" },
   "alert_isOnlyAvailFor": { "message": "je na voljo samo za" },
   "alert_and": { "message": "in" },

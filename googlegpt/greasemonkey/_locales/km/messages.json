@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "នៅពេលប្រើ" },
   "alert_pleaseUse": { "message": "សូមប្រើ" },
   "alert_instead": { "message": "ផ្ទុយទៅវិញ" },
-  "alert_untilMSfixesBug": { "message": "រហូតដល់ Microsoft ជួសជុលកំហុសកម្មវិធីរុករកយូរអង្វែងនេះ" },
   "alert_unavailable": { "message": "មិនមាន" },
   "alert_isOnlyAvailFor": { "message": "មានសម្រាប់តែ" },
   "alert_and": { "message": "និង" },

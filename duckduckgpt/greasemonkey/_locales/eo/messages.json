@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "kiam oni uzas" },
   "alert_pleaseUse": { "message": "Bonvolu" },
   "alert_instead": { "message": "anstataŭ" },
-  "alert_untilMSfixesBug": { "message": "ĝis Mikrosofto riparas tiun multjaran retumilon igantan cimon" },
   "alert_unavailable": { "message": "neatingebla" },
   "alert_isOnlyAvailFor": { "message": "estas disponebla nur por" },
   "alert_and": { "message": "kaj" },

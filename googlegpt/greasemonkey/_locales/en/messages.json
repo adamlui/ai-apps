@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "when using" },
   "alert_pleaseUse": { "message": "Please use" },
   "alert_instead": { "message": "instead" },
-  "alert_untilMSfixesBug": { "message": "until Microsoft fixes this long-standing browser rendering bug" },
   "alert_unavailable": { "message": "unavailable" },
   "alert_isOnlyAvailFor": { "message": "is only available for" },
   "alert_and": { "message": "and" },

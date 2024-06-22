@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "når du bruker" },
   "alert_pleaseUse": { "message": "Nytt gjerne" },
   "alert_instead": { "message": "i stedet for" },
-  "alert_untilMSfixesBug": { "message": "til Microsoft fikser denne langvarige nettlesergjengivelsesfeilen" },
   "alert_unavailable": { "message": "utilgjengelig" },
   "alert_isOnlyAvailFor": { "message": "er kun tilgjengelig for" },
   "alert_and": { "message": "og" },

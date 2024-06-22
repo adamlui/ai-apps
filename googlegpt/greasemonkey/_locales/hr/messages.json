@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "Koristeći kremu" },
   "alert_pleaseUse": { "message": "Molomo koristite" },
   "alert_instead": { "message": "umjesto toga." },
-  "alert_untilMSfixesBug": { "message": "sve dok Microsoft ne ispravi ovu dugotrajnu pogrešku u prikazivanju u pregledniku" },
   "alert_unavailable": { "message": "nedostupno" },
   "alert_isOnlyAvailFor": { "message": "dostupno je samo za" },
   "alert_and": { "message": "i" },

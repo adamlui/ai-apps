@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "භාවිතා කරන විට" },
   "alert_pleaseUse": { "message": "කරුණාකර භාවිතා කරන්න" },
   "alert_instead": { "message": "වෙනුවට" },
-  "alert_untilMSfixesBug": { "message": "මයික්රොසොෆ්ට් මෙම දිගුකාලීන බ්රවුසරය විදැහුම් දෝෂය නිවැරදි කරන තුරු" },
   "alert_unavailable": { "message": "ලබා ගත නොහැක" },
   "alert_isOnlyAvailFor": { "message": "සඳහා පමණක් ලබා ගත හැකිය" },
   "alert_and": { "message": "සහ" },

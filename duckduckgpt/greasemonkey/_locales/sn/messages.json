@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "kana uchishandisa" },
   "alert_pleaseUse": { "message": "Ndapota shandisa" },
   "alert_instead": { "message": "pachinzvimbo" },
-  "alert_untilMSfixesBug": { "message": "kusvikira Microsoft anogadzirisa ichi refu akamira Browser achiita tsikidzi" },
   "alert_unavailable": { "message": "hazviwanikwi" },
   "alert_isOnlyAvailFor": { "message": "inongowanikwa chete ye" },
   "alert_and": { "message": "uye" },

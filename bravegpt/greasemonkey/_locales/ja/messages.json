@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "を使用する場合" },
   "alert_pleaseUse": { "message": "使用してください" },
   "alert_instead": { "message": "代わりに" },
-  "alert_untilMSfixesBug": { "message": "microsoftがこの長年のブラウザレンダリングのバグを修正するまで" },
   "alert_unavailable": { "message": "利用できません" },
   "alert_isOnlyAvailFor": { "message": "利用可能期間：" },
   "alert_and": { "message": "と" },

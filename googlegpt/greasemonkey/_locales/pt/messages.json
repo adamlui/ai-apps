@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "A posologia de NovoMix 30 pode também ser iniciada com uma dose diária de 12 U ao jantar (refeição da noite)." },
   "alert_pleaseUse": { "message": "Por favor utilize" },
   "alert_instead": { "message": "em vez disso" },
-  "alert_untilMSfixesBug": { "message": "até que a Microsoft corrija esse bug de renderização de navegador de longa data" },
   "alert_unavailable": { "message": "indisponível" },
   "alert_isOnlyAvailFor": { "message": "Apenas disponível para" },
   "alert_and": { "message": "e" },

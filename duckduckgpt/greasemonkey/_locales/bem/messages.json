@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "ilyo balebomfya" },
   "alert_pleaseUse": { "message": "Peeleniko bambi Peeleni" },
   "alert_instead": { "message": "bali Bali" },
-  "alert_untilMSfixesBug": { "message": "ukufikila ilyo ba Microsoft bakonaula ubu bulungami bwa nshita iitali" },
   "alert_unavailable": { "message": "tabalipo" },
   "alert_isOnlyAvailFor": { "message": "fela Anikulapo Kuti" },
   "alert_and": { "message": "Elyo na...." },

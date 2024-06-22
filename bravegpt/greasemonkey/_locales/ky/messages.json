@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "колдонууда" },
   "alert_pleaseUse": { "message": "Сураныч, колдонуңуз" },
   "alert_instead": { "message": "ордуна" },
-  "alert_untilMSfixesBug": { "message": "microsoft бул узакка созулган браузерди көрсөтүү катасын оңдогонго чейин" },
   "alert_unavailable": { "message": "жеткиликтүү эмес" },
   "alert_isOnlyAvailFor": { "message": "үчүн гана жеткиликтүү" },
   "alert_and": { "message": "Ал эми ..." },

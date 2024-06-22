@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "ఉపయోగిస్తున్నప్పుడు" },
   "alert_pleaseUse": { "message": "దయచేసి ఉపయోగించండి" },
   "alert_instead": { "message": "బదులుగా" },
-  "alert_untilMSfixesBug": { "message": "మైక్రోసాఫ్ట్ ఈ దీర్ఘకాల బ్రౌజర్ రెండరింగ్ బగ్ ‌ ను పరిష్కరించే వరకు" },
   "alert_unavailable": { "message": "అందుబాటులో లేదు" },
   "alert_isOnlyAvailFor": { "message": "కోసం మాత్రమే అందుబాటులో ఉంది" },
   "alert_and": { "message": "మరియు" },

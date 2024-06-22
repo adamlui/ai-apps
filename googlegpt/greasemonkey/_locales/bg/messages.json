@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "6U" },
   "alert_pleaseUse": { "message": "Моля, използвайте" },
   "alert_instead": { "message": "Вместо" },
-  "alert_untilMSfixesBug": { "message": "докато Microsoft не поправи този дългогодишен бъг в рендирането на браузъра" },
   "alert_unavailable": { "message": "недостъпен" },
   "alert_isOnlyAvailFor": { "message": "се предлага само за" },
   "alert_and": { "message": "и" },

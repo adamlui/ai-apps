@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "при використанні" },
   "alert_pleaseUse": { "message": "Будь ласка, використовуйте" },
   "alert_instead": { "message": "INSTEAD" },
-  "alert_untilMSfixesBug": { "message": "поки Microsoft не виправить цю давню помилку рендерингу браузера" },
   "alert_unavailable": { "message": "недоступне" },
   "alert_isOnlyAvailFor": { "message": "доступний лише для" },
   "alert_and": { "message": "та" },

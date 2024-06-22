@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "wrth ddefnyddio" },
   "alert_pleaseUse": { "message": "Defnyddiwch" },
   "alert_instead": { "message": "yn lle hynny" },
-  "alert_untilMSfixesBug": { "message": "hyd nes y bydd Microsoft yn trwsio'r gwall rendro porwr hirsefydlog hwn" },
   "alert_unavailable": { "message": "dim ar gael" },
   "alert_isOnlyAvailFor": { "message": "ar gael yn unig ar gyfer" },
   "alert_and": { "message": "a" },

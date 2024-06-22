@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "בעת השימוש" },
   "alert_pleaseUse": { "message": "אנא השתמש" },
   "alert_instead": { "message": "במקום" },
-  "alert_untilMSfixesBug": { "message": "עד ש - Microsoft תתקן את באג עיבוד הדפדפן הוותיק הזה" },
   "alert_unavailable": { "message": "היעדר נגישות" },
   "alert_isOnlyAvailFor": { "message": "זמין רק עבור" },
   "alert_and": { "message": "ו" },

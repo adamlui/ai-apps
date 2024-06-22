@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "wanneer gebruik" },
   "alert_pleaseUse": { "message": "Gebruik asseblief" },
   "alert_instead": { "message": "in plaas daarvan" },
-  "alert_untilMSfixesBug": { "message": "totdat Microsoft hierdie langdurige blaaierverwerkingsfout regstel" },
   "alert_unavailable": { "message": "nie beskikbaar nie" },
   "alert_isOnlyAvailFor": { "message": "die is alleen beschikbaar om" },
   "alert_and": { "message": "en" },

@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "Lors de l'utilisation" },
   "alert_pleaseUse": { "message": "Veuillez utiliser" },
   "alert_instead": { "message": "plutôt que" },
-  "alert_untilMSfixesBug": { "message": "jusqu'à ce que Microsoft corrige ce bogue de rendu de navigateur de longue date" },
   "alert_unavailable": { "message": "Il ne reste plus de produit disponible pour cette date" },
   "alert_isOnlyAvailFor": { "message": "n'est disponible que pour" },
   "alert_and": { "message": "et" },

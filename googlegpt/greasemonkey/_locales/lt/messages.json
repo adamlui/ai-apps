@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "Naudojant" },
   "alert_pleaseUse": { "message": "(360 mg)" },
   "alert_instead": { "message": "vietoje." },
-  "alert_untilMSfixesBug": { "message": "kol Microsoft ištaisys šią seną naršyklės atvaizdavimo klaidą" },
   "alert_unavailable": { "message": "neprieinama" },
   "alert_isOnlyAvailFor": { "message": "galima tik" },
   "alert_and": { "message": "ir" },

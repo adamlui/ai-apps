@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "NovoMix 30 jista ’ wkoll jinbeda darba kuljum bi 12 U waqt il- pranzu (l- ikla ta ’ filg axija)." },
   "alert_pleaseUse": { "message": "Jekk jogħġbok uża" },
   "alert_instead": { "message": "minflok" },
-  "alert_untilMSfixesBug": { "message": "sakemm Microsoft tirranġa dan il-bug tal-apparenza tal-brawżer li ilu jeżisti" },
   "alert_unavailable": { "message": "mhux disponibbli" },
   "alert_isOnlyAvailFor": { "message": "huwa disponibbli biss għal" },
   "alert_and": { "message": "u" },

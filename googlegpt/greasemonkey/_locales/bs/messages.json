@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "kada koristite" },
   "alert_pleaseUse": { "message": "Koristite" },
   "alert_instead": { "message": "INSTEAD" },
-  "alert_untilMSfixesBug": { "message": "dok Microsoft ne ispravi ovu dugotrajnu grešku u renderiranju preglednika" },
   "alert_unavailable": { "message": "nedostupni" },
   "alert_isOnlyAvailFor": { "message": "je dostupno samo za" },
   "alert_and": { "message": "i" },

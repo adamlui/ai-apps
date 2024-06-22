@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "Quando si usa" },
   "alert_pleaseUse": { "message": "Utilizzare" },
   "alert_instead": { "message": "invece" },
-  "alert_untilMSfixesBug": { "message": "fino a quando Microsoft non risolve questo bug di rendering del browser di lunga data" },
   "alert_unavailable": { "message": "non disponibile" },
   "alert_isOnlyAvailFor": { "message": "è disponibile solo per" },
   "alert_and": { "message": "e" },

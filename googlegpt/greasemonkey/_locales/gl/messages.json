@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "ao utilizar" },
   "alert_pleaseUse": { "message": "Por favor, use" },
   "alert_instead": { "message": "INSTEAD" },
-  "alert_untilMSfixesBug": { "message": "ata que Microsoft corrixa este erro de renderización de navegador de longa data" },
   "alert_unavailable": { "message": "non dispoñíbel" },
   "alert_isOnlyAvailFor": { "message": "só está dispoñible para" },
   "alert_and": { "message": "y" },

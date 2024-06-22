@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "markaad isticmaaleyso" },
   "alert_pleaseUse": { "message": "Fadlan isticmaal" },
   "alert_instead": { "message": "halkii" },
-  "alert_untilMSfixesBug": { "message": "ilaa Microsoft ay hagaajiso biraawsarkan muddo dheer soo jiray ee bixiya cayayaanka" },
   "alert_unavailable": { "message": "aan la aamini karin" },
   "alert_isOnlyAvailFor": { "message": "waxaa loo heli karaa oo keliya" },
   "alert_and": { "message": "iyo" },

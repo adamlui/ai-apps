@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "Khi đang sử dụng" },
   "alert_pleaseUse": { "message": "Vui lòng sử dụng" },
   "alert_instead": { "message": "để thay thế" },
-  "alert_untilMSfixesBug": { "message": "cho đến khi Microsoft sửa lỗi kết xuất trình duyệt lâu đời này" },
   "alert_unavailable": { "message": "không có mặt" },
   "alert_isOnlyAvailFor": { "message": "chỉ khả dụng cho" },
   "alert_and": { "message": "và" },

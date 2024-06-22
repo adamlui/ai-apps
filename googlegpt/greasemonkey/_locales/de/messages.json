@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "Bei Verwendung&#x0D;" },
   "alert_pleaseUse": { "message": "Bitte verwenden Sie" },
   "alert_instead": { "message": "instead" },
-  "alert_untilMSfixesBug": { "message": "bis Microsoft diesen langjährigen Browser-Rendering-Fehler behebt" },
   "alert_unavailable": { "message": "Weil der Artikel nicht verfügbar ist" },
   "alert_isOnlyAvailFor": { "message": "Es steht nur für <stringmarket stringmarket=\"omnipcx_office\"/> zur Verfügung" },
   "alert_and": { "message": "und" },

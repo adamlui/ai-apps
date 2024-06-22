@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "ווען ניצן" },
   "alert_pleaseUse": { "message": "ביטע נוצן" },
   "alert_instead": { "message": "אַנשטאָט" },
-  "alert_untilMSfixesBug": { "message": "ביז מייקראָסאָפֿט פיקסיז דעם לאַנג-שטייענדיק בלעטערער רענדערינג זשוק" },
   "alert_unavailable": { "message": "ניט בנימצא" },
   "alert_isOnlyAvailFor": { "message": "איז בלויז בנימצא פֿאַר" },
   "alert_and": { "message": "און" },

@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "عند استعمال" },
   "alert_pleaseUse": { "message": "من فضلك استخدم" },
   "alert_instead": { "message": "بدلا من, عوضا عن" },
-  "alert_untilMSfixesBug": { "message": "حتى تقوم Microsoft بإصلاح هذا الخطأ الطويل الأمد في عرض المتصفح" },
   "alert_unavailable": { "message": "غير متوفره" },
   "alert_isOnlyAvailFor": { "message": "متاح فقط لـ" },
   "alert_and": { "message": "و" },

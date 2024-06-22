@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "Apabila menggunakan..." },
   "alert_pleaseUse": { "message": "Sila gunakan" },
   "alert_instead": { "message": "seperti perbualan tele kami sebelumnya" },
-  "alert_untilMSfixesBug": { "message": "sehingga Microsoft membetulkan pepijat perenderan penyemak imbas yang telah lama wujud ini" },
   "alert_unavailable": { "message": "tiada" },
   "alert_isOnlyAvailFor": { "message": "hanya tersedia untuk" },
   "alert_and": { "message": "dan" },

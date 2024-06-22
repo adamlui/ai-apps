@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "mukamagwiritsa ntchito" },
   "alert_pleaseUse": { "message": "Chonde gwiritsani ntchito" },
   "alert_instead": { "message": "m 'malo" },
-  "alert_untilMSfixesBug": { "message": "mpaka Microsoft kukonza izi yaitali osatsegula rendering cholakwika" },
   "alert_unavailable": { "message": "osapezeka" },
   "alert_isOnlyAvailFor": { "message": "ndi kupezeka kokha kwa" },
   "alert_and": { "message": "Ndi..." },

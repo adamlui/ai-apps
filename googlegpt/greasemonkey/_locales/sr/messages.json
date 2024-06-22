@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "Kada upotrebljavate" },
   "alert_pleaseUse": { "message": "Uzmite ovo." },
   "alert_instead": { "message": "umjesto te knjige." },
-  "alert_untilMSfixesBug": { "message": "dok Microsoft ne ispravi ovu dugogodišnju grešku u renderiranju pregledača" },
   "alert_unavailable": { "message": "недоступан/на" },
   "alert_isOnlyAvailFor": { "message": "je dostupno samo za" },
   "alert_and": { "message": "и" },

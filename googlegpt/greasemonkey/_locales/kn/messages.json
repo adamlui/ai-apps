@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "ಬಳಸುವಾಗ" },
   "alert_pleaseUse": { "message": "ದಯವಿಟ್ಟು ಬಳಸಿ" },
   "alert_instead": { "message": "ಬದಲಿಗೆ" },
-  "alert_untilMSfixesBug": { "message": "ಮೈಕ್ರೋಸಾಫ್ಟ್ ಈ ದೀರ್ಘಕಾಲದ ಬ್ರೌಸರ್ ರೆಂಡರಿಂಗ್ ದೋಷವನ್ನು ಸರಿಪಡಿಸುವವರೆಗೆ" },
   "alert_unavailable": { "message": "ಲಭ್ಯವಿರುವುದಿಲ್ಲ" },
   "alert_isOnlyAvailFor": { "message": "ಗೆ ಮಾತ್ರ ಲಭ್ಯವಿದೆ" },
   "alert_and": { "message": "ಮತ್ತು" },

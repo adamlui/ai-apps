@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "tongana mo yeke sara kua na ni" },
   "alert_pleaseUse": { "message": "Mbi hunda na mo ti sara kua na ni" },
   "alert_instead": { "message": "a hon ti" },
-  "alert_untilMSfixesBug": { "message": "juska Microsoft aleke ye so a sara na yâ ti mbeni navigateur so ayeke sara si mbeni ye ti sioni asi" },
   "alert_unavailable": { "message": "unbore MeUnbore" },
   "alert_isOnlyAvailFor": { "message": "tu n 'es ni fiable ni aimable" },
   "alert_and": { "message": "na" },

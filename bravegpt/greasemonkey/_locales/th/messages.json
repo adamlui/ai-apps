@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "เมื่อใช้" },
   "alert_pleaseUse": { "message": "จริง ใหใชส" },
   "alert_instead": { "message": "แทน" },
-  "alert_untilMSfixesBug": { "message": "จนกว่า Microsoft จะแก้ไขบั๊กการแสดงผลของเบราว์เซอร์ที่ใช้กันมานานนี้" },
   "alert_unavailable": { "message": "ไม่มี" },
   "alert_isOnlyAvailFor": { "message": "ใช้ได้เฉพาะในราคา" },
   "alert_and": { "message": "และ" },

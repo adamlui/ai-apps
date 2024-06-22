@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "pe a faʻaaogaina" },
   "alert_pleaseUse": { "message": "Faʻamolemole faʻaaoga" },
   "alert_instead": { "message": "nai lo lena" },
-  "alert_untilMSfixesBug": { "message": "seia oo ina toe faaleleia e Microsoft lenei browser ua leva ona tuuina atu sese" },
   "alert_unavailable": { "message": "e le mafai ona maua" },
   "alert_isOnlyAvailFor": { "message": "e na o le avanoa e maua ai" },
   "alert_and": { "message": "ma" },

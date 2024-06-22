@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "við notkun" },
   "alert_pleaseUse": { "message": "Vinsamlegast notið" },
   "alert_instead": { "message": "rifabútíns í staðinn." },
-  "alert_untilMSfixesBug": { "message": "þar til Microsoft lagar þessa langvarandi villu í vafranum" },
   "alert_unavailable": { "message": "ekki til útláns" },
   "alert_isOnlyAvailFor": { "message": "er aðeins í boði fyrir" },
   "alert_and": { "message": "og" },

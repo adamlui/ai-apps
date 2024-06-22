@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "2 NovoMix 30 var uzs kt ar vienreiz dien ar 12 V vakari s (vakara dienreiz)." },
   "alert_pleaseUse": { "message": "(360 mg)" },
   "alert_instead": { "message": "Tā vietā" },
-  "alert_untilMSfixesBug": { "message": "līdz Microsoft novērsīs šo ilgstošo pārlūkprogrammas atveidošanas kļūdu" },
   "alert_unavailable": { "message": "Nav pieejams" },
   "alert_isOnlyAvailFor": { "message": "ir pieejams tikai" },
   "alert_and": { "message": "un" },

@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "ምስ ዘይኮኑ ፡" },
   "alert_pleaseUse": { "message": "ብኽብረትካ በጃኻ ተጠቐም" },
   "alert_instead": { "message": "ኣብ ክንዳኡስ ፡" },
-  "alert_untilMSfixesBug": { "message": "ክሳብ ማይክሮሶፍት ነዚ ነዊሕ እዋን ዝጸንሐ ናይ ብራውዘር ምትዕርራይ ጉድለት ክሳብ ዝፈትሖ" },
   "alert_unavailable": { "message": "ኣይርከብን" },
   "alert_isOnlyAvailFor": { "message": "ን" },
   "alert_and": { "message": "ከምኡ ድማ" },

@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "saat menggunakan" },
   "alert_pleaseUse": { "message": "Silakan gunakan" },
   "alert_instead": { "message": "Sebaliknya" },
-  "alert_untilMSfixesBug": { "message": "sampai Microsoft memperbaiki bug perenderan peramban lama ini" },
   "alert_unavailable": { "message": "tidak tersedia" },
   "alert_isOnlyAvailFor": { "message": "hanya tersedia untuk" },
   "alert_and": { "message": "dan" },

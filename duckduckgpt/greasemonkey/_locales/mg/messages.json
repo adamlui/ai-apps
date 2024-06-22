@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "rehefa mampiasa" },
   "alert_pleaseUse": { "message": "Masìna ianao, mampiasa" },
   "alert_instead": { "message": "fa" },
-  "alert_untilMSfixesBug": { "message": "mandra- Microsoft manamboatra izany lava-nitsangana navigateur rendering bibikely" },
   "alert_unavailable": { "message": "tsy misy" },
   "alert_isOnlyAvailFor": { "message": "tsy misy afa-tsy ho" },
   "alert_and": { "message": "sy" },

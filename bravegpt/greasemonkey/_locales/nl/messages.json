@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "Bij gebruik van" },
   "alert_pleaseUse": { "message": "لطفا استفاده کنید" },
   "alert_instead": { "message": "in plaats van" },
-  "alert_untilMSfixesBug": { "message": "totdat Microsoft deze al lang bestaande browser rendering bug oplost" },
   "alert_unavailable": { "message": "niet beschikbaar" },
   "alert_isOnlyAvailFor": { "message": "Alleen beschikbaar voor" },
   "alert_and": { "message": "and" },

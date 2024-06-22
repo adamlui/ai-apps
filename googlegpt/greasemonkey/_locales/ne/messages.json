@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "प्रयोग गर्दा" },
   "alert_pleaseUse": { "message": "कृपया प्रयोग गर्नुहोस्" },
   "alert_instead": { "message": "सट्टा" },
-  "alert_untilMSfixesBug": { "message": "माइक्रोसफ्टले यो लामो समयदेखिको ब्राउजर रेन्डरिंग बग समाधान नगरेसम्म" },
   "alert_unavailable": { "message": "उपलब्ध छैन" },
   "alert_isOnlyAvailFor": { "message": "को लागी मात्र उपलब्ध छ" },
   "alert_and": { "message": "र" },

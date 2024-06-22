@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "ਵਰਤਣ ਵੇਲੇ" },
   "alert_pleaseUse": { "message": "ਕਿਰਪਾ ਕਰਕੇ ਵਰਤੋ" },
   "alert_instead": { "message": "ਇਸ ਦੀ ਬਜਾਏ" },
-  "alert_untilMSfixesBug": { "message": "ਜਦੋਂ ਤੱਕ ਮਾਈਕ੍ਰੋਸਾੱਫਟ ਇਸ ਲੰਬੇ ਸਮੇਂ ਤੋਂ ਚੱਲ ਰਹੇ ਬ੍ਰਾ browserਜ਼ਰ ਰੈਂਡਰਿੰਗ ਬੱਗ ਨੂੰ ਠੀਕ ਨਹੀਂ ਕਰਦਾ" },
   "alert_unavailable": { "message": "ਅਣ- ਉਪਲੱਬਧ" },
   "alert_isOnlyAvailFor": { "message": "ਸਿਰਫ ਲਈ ਉਪਲਬਧ ਹੈ" },
   "alert_and": { "message": "ਅਤੇ" },

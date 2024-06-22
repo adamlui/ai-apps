@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "Использование" },
   "alert_pleaseUse": { "message": "Пожалуйста, используйте" },
   "alert_instead": { "message": "вместо" },
-  "alert_untilMSfixesBug": { "message": "пока Microsoft не исправит эту давнюю ошибку рендеринга браузера" },
   "alert_unavailable": { "message": "отсутствует" },
   "alert_isOnlyAvailFor": { "message": "доступно только для" },
   "alert_and": { "message": "и" },

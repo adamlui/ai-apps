@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "NovoMix 30 sa tiež môže podáva jedenkrát denne pri po iato nej dávke 12 U v ase ve ere (ve erného jedla)." },
   "alert_pleaseUse": { "message": "Použite" },
   "alert_instead": { "message": "ANTIMYKOTIKÁ" },
-  "alert_untilMSfixesBug": { "message": "kým spoločnosť Microsoft neopraví túto dlhotrvajúcu chybu pri vykresľovaní prehliadača" },
   "alert_unavailable": { "message": "nedostupné" },
   "alert_isOnlyAvailFor": { "message": "je k dispozícii len pre" },
   "alert_and": { "message": "a" },

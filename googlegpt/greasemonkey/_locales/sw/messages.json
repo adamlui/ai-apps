@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "wakati wa kutumia" },
   "alert_pleaseUse": { "message": "Tafadhali tumia" },
   "alert_instead": { "message": "Badala yake:" },
-  "alert_untilMSfixesBug": { "message": "hadi Microsoft itakaporekebisha hitilafu hii ya muda mrefu ya kutoa kivinjari" },
   "alert_unavailable": { "message": "(Haipatikani)" },
   "alert_isOnlyAvailFor": { "message": "inapatikana tu kwa" },
   "alert_and": { "message": "na" },

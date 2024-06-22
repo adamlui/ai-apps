@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "NovoMix 30 kan også" },
   "alert_pleaseUse": { "message": "Anvend en anden kapselstyrke*" },
   "alert_instead": { "message": "istedet" },
-  "alert_untilMSfixesBug": { "message": "indtil Microsoft retter denne mangeårige browsergengivelsesfejl" },
   "alert_unavailable": { "message": "utilgængelig" },
   "alert_isOnlyAvailFor": { "message": "er kun tilgængelig for" },
   "alert_and": { "message": "og" },

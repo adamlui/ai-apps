@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "օգտագործելիս" },
   "alert_pleaseUse": { "message": "Խնդրում ենք օգտագործել" },
   "alert_instead": { "message": "փոխարենը" },
-  "alert_untilMSfixesBug": { "message": "մինչև Microsoft - ը շտկի այս երկարամյա դիտարկչի մատուցման վրիպակը" },
   "alert_unavailable": { "message": "ազատ չէ" },
   "alert_isOnlyAvailFor": { "message": "հասանելի է միայն" },
   "alert_and": { "message": "և" },

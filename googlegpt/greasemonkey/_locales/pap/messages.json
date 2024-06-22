@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "ora Uso" },
   "alert_pleaseUse": { "message": "Por fabor usa" },
   "alert_instead": { "message": "na lugá di" },
-  "alert_untilMSfixesBug": { "message": "ver Informe Ampliado de Estacion De Servicio Sl" },
   "alert_unavailable": { "message": "indisponibel" },
   "alert_isOnlyAvailFor": { "message": "ta disponibel solamente pa" },
   "alert_and": { "message": "i" },

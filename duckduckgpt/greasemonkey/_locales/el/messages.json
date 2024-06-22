@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "30 U" },
   "alert_pleaseUse": { "message": "Παρακαλούμε χρησιμοποιήστε" },
   "alert_instead": { "message": "δε και" },
-  "alert_untilMSfixesBug": { "message": "έως ότου η Microsoft διορθώσει αυτό το μακροχρόνιο σφάλμα απόδοσης προγράμματος περιήγησης" },
   "alert_unavailable": { "message": "Μη Διαθέσιμη" },
   "alert_isOnlyAvailFor": { "message": "είναι διαθέσιμο μόνο για" },
   "alert_and": { "message": "και" },

@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "xa usebenzisa" },
   "alert_pleaseUse": { "message": "Nceda usebenzise" },
   "alert_instead": { "message": "endaweni yoko" },
-  "alert_untilMSfixesBug": { "message": "de uMicrosoft alungise le ngxaki ikudala ibhrawuza" },
   "alert_unavailable": { "message": "engekhoyo" },
   "alert_isOnlyAvailFor": { "message": "ifumaneka kuphela" },
   "alert_and": { "message": "no" },

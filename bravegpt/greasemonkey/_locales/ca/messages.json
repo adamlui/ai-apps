@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "quan s'utilitza" },
   "alert_pleaseUse": { "message": "Utilitza" },
   "alert_instead": { "message": "INSTEAD" },
-  "alert_untilMSfixesBug": { "message": "fins que Microsoft solucioni aquest error de representació del navegador de llarga data" },
   "alert_unavailable": { "message": "no disponible" },
   "alert_isOnlyAvailFor": { "message": "només està disponible per a" },
   "alert_and": { "message": "i" },

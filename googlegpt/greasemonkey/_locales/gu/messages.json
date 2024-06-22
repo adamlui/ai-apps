@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "ઉપયોગ કરતી વખતે" },
   "alert_pleaseUse": { "message": "કૃપા કરીને ઉપયોગ કરો" },
   "alert_instead": { "message": "તેના બદલે" },
-  "alert_untilMSfixesBug": { "message": "જ્યાં સુધી માઇક્રોસોફ્ટ આ લાંબા સમયથી ચાલી રહેલી બ્રાઉઝર રેન્ડરીંગ ભૂલને ઠીક ન કરે ત્યાં સુધી" },
   "alert_unavailable": { "message": "ઉપલબ્ધ નથી" },
   "alert_isOnlyAvailFor": { "message": "માટે જ ઉપલબ્ધ છે" },
   "alert_and": { "message": "અને" },

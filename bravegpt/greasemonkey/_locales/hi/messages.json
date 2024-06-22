@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "उपयोग करते समय" },
   "alert_pleaseUse": { "message": "कृपया इस्तेमाल करें" },
   "alert_instead": { "message": "बजाय" },
-  "alert_untilMSfixesBug": { "message": "जब तक माइक्रोसॉफ्ट इस लंबे समय से चले आ रहे ब्राउज़र रेंडरिंग बग को ठीक नहीं कर देता" },
   "alert_unavailable": { "message": "अनुपलब्ध" },
   "alert_isOnlyAvailFor": { "message": "केवल के लिए उपलब्ध है" },
   "alert_and": { "message": "और" },

@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "በሚጠቀሙበት ጊዜ" },
   "alert_pleaseUse": { "message": "እባክዎ ይጠቀሙ" },
   "alert_instead": { "message": "ለመሄድ ብወስን፡፡" },
-  "alert_untilMSfixesBug": { "message": "ማይክሮሶፍት ይህንን ለረጅም ጊዜ የቆየ አሳሽ ሳንካን እስከሚያስተካክል ድረስ" },
   "alert_unavailable": { "message": "አይገኝም" },
   "alert_isOnlyAvailFor": { "message": "ይገኛል ብቻ ለ" },
   "alert_and": { "message": "እና" },

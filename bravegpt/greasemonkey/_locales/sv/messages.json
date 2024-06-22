@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "När NovoMix 30 används en gång" },
   "alert_pleaseUse": { "message": "Vänligen använd:" },
   "alert_instead": { "message": "istället" },
-  "alert_untilMSfixesBug": { "message": "tills Microsoft åtgärdar den här långvariga webbläsarrenderingsbuggen" },
   "alert_unavailable": { "message": "otillgänglig" },
   "alert_isOnlyAvailFor": { "message": "är endast tillgängligt för" },
   "alert_and": { "message": "and" },

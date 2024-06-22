@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "ལག་ལེན་འཐབ་པའི་སྐབས་" },
   "alert_pleaseUse": { "message": "ལག་ལེན་འཐབ་ནིའི་དོན་ལས་" },
   "alert_instead": { "message": "འདི་གི་དོན་ལུ་" },
-  "alert_untilMSfixesBug": { "message": "འདི་གི་དོན་ལུ་ ཁྱོད་ཀྱིས་ ཁྱོད་ཀྱིས་ ཁྱོད་ཀྱིས་ ཁྱོད་ཀྱིས་འབད་མིའི་ལཱ་འདི་ ཁྱོད་ཀྱིས་འབད་དགོ་པའི་རེ་བ་ཡོད་ཟེར་སླབ་ཨིན།" },
   "alert_unavailable": { "message": "མ་ཐོབ་" },
   "alert_isOnlyAvailFor": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
   "alert_and": { "message": "དང་" },

@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "хэрэглэх үед" },
   "alert_pleaseUse": { "message": "Хэрэглэнэ үү" },
   "alert_instead": { "message": "оронд" },
-  "alert_untilMSfixesBug": { "message": "майкрософт энэ урт хугацааны хөтөчийн алдааг засах хүртэл" },
   "alert_unavailable": { "message": "Боломжгүй" },
   "alert_isOnlyAvailFor": { "message": "зөвхөн боломжтой" },
   "alert_and": { "message": "болон" },

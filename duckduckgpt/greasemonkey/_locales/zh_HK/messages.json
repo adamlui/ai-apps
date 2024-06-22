@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "使用時" },
   "alert_pleaseUse": { "message": "請使用" },
   "alert_instead": { "message": "反之" },
-  "alert_untilMSfixesBug": { "message": "直到 Microsoft 修復這個長期存在的瀏覽器渲染錯誤" },
   "alert_unavailable": { "message": "不供預訂" },
   "alert_isOnlyAvailFor": { "message": "僅適用於" },
   "alert_and": { "message": "及" },

@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "ryari: ikoresha" },
   "alert_pleaseUse": { "message": "Gukoresha" },
   "alert_instead": { "message": "ahubwo" },
-  "alert_untilMSfixesBug": { "message": "iyi Mucukumbuzi" },
   "alert_unavailable": { "message": "Bihari" },
   "alert_isOnlyAvailFor": { "message": "iboneka gusa ku" },
   "alert_and": { "message": "&&" },

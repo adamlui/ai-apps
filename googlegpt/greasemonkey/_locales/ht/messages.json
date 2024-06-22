@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "lè w ap itilize/lè w" },
   "alert_pleaseUse": { "message": "Tanpri itilize" },
   "alert_instead": { "message": "Olye de sa/Au lieu de cela" },
-  "alert_untilMSfixesBug": { "message": "jiskaske Microsoft ranje sa a depi lontan navigatè rann ensèk" },
   "alert_unavailable": { "message": "ki pa disponib/pa disponib/" },
   "alert_isOnlyAvailFor": { "message": "se sèlman ki disponib pou/est disponible seule" },
   "alert_and": { "message": "epi" },

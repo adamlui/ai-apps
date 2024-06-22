@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "ke hoohana" },
   "alert_pleaseUse": { "message": "E ʻoluʻolu e hoʻohana" },
   "alert_instead": { "message": "ma kahi" },
-  "alert_untilMSfixesBug": { "message": "a hiki i ka wā e hoʻoponopono ai ʻo Microsoft i kēia mea hoʻoheheʻe ʻana i ka polokalamu kele pūnaewele lōʻihi" },
   "alert_unavailable": { "message": "loaʻa ʻole" },
   "alert_isOnlyAvailFor": { "message": "loaʻa wale no" },
   "alert_and": { "message": "aloha au i ko'u mau kaikunane" },

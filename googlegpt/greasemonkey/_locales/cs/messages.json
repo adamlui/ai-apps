@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "Používání p ípravku NovoMix 30 m že být také zahájeno podáním 12 jednotek jedenkrát denn p i ve e i (ve erním jídle)." },
   "alert_pleaseUse": { "message": "please use" },
   "alert_instead": { "message": "místo toho" },
-  "alert_untilMSfixesBug": { "message": "dokud Microsoft neopraví tuto dlouholetou chybu vykreslování prohlížeče" },
   "alert_unavailable": { "message": "nedostupné" },
   "alert_isOnlyAvailFor": { "message": "je k dispozici pouze pro" },
   "alert_and": { "message": "a" },

@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "igihe ukoresha" },
   "alert_pleaseUse": { "message": "Ndabasavye mukoreshe" },
   "alert_instead": { "message": "ahubwo" },
-  "alert_untilMSfixesBug": { "message": "nkurunziza agiye gukosora ubwo buhumbu bumaze igihe kirekire buriko burashirwa mu ngiro" },
   "alert_unavailable": { "message": "ntaho bihuriye" },
   "alert_isOnlyAvailFor": { "message": "gusa birahari" },
   "alert_and": { "message": "kandi" },

@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "taimi ʻoku fakaʻaongaʻi ai" },
   "alert_pleaseUse": { "message": "Kātaki ʻo fakaʻaongaʻi" },
   "alert_instead": { "message": "ka" },
-  "alert_untilMSfixesBug": { "message": "kae ʻoua kuo fakaleleiʻi ʻe he Microsoft ʻa e browser ʻoku tuʻu fuoloa ko ʻeni" },
   "alert_unavailable": { "message": "ʻikai maʻu" },
   "alert_isOnlyAvailFor": { "message": "ʻOku ʻata pe ki he" },
   "alert_and": { "message": "e" },

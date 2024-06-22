@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "사용할때" },
   "alert_pleaseUse": { "message": "사용 하세오:" },
   "alert_instead": { "message": "instead." },
-  "alert_untilMSfixesBug": { "message": "microsoft가 이 오랜 브라우저 렌더링 버그를 수정할 때까지" },
   "alert_unavailable": { "message": "불가능" },
   "alert_isOnlyAvailFor": { "message": "은 (는) 다음에 대해서만 사용할 수" },
   "alert_and": { "message": "및" },

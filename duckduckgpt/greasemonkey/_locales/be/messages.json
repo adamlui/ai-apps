@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "пры выкарыстанні" },
   "alert_pleaseUse": { "message": "Калі ласка, выкарыстоўвайце" },
   "alert_instead": { "message": "замест" },
-  "alert_untilMSfixesBug": { "message": "пакуль Microsoft не выправіць гэтую даўнюю памылку рэндэрынгу браўзэра" },
   "alert_unavailable": { "message": "недаступны" },
   "alert_isOnlyAvailFor": { "message": "даступны толькі для" },
   "alert_and": { "message": "і" },

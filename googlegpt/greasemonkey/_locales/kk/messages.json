@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "пайдаланған кезде" },
   "alert_pleaseUse": { "message": "Пайдаланыңыз" },
   "alert_instead": { "message": "орнына" },
-  "alert_untilMSfixesBug": { "message": "microsoft осы ұзақ уақытқа созылған браузерді көрсету қатесін түзеткенге дейін" },
   "alert_unavailable": { "message": "қол жеткізбейді" },
   "alert_isOnlyAvailFor": { "message": "тек қол жетімді" },
   "alert_and": { "message": "және " },

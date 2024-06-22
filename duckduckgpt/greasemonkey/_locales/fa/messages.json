@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "هنگام استفاده از" },
   "alert_pleaseUse": { "message": "خواهش می کنم استفاده کنید" },
   "alert_instead": { "message": "بجای" },
-  "alert_untilMSfixesBug": { "message": "تا زمانی که مایکروسافت این باگ قدیمی رندر مرورگر را برطرف کند" },
   "alert_unavailable": { "message": "ناموجود" },
   "alert_isOnlyAvailFor": { "message": "فقط برای" },
   "alert_and": { "message": "و" },

@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "kon mogamit" },
   "alert_pleaseUse": { "message": "Palihog gamita" },
   "alert_instead": { "message": "sa baylo" },
-  "alert_untilMSfixesBug": { "message": "hangtod nga giayo sa Microsoft kini nga dugay na nga browser rendering bug" },
   "alert_unavailable": { "message": "unavailable" },
   "alert_isOnlyAvailFor": { "message": "anaa lamang kini alang" },
   "alert_and": { "message": "og wisdom" },

@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "i te wa e whakamahi ana" },
   "alert_pleaseUse": { "message": "Tena koa whakamahia" },
   "alert_instead": { "message": "engari" },
-  "alert_untilMSfixesBug": { "message": "tae noa ki te whakatika a Microsoft i tenei hapa tuku pūtirotiro roa" },
   "alert_unavailable": { "message": "kāore e wātea ana" },
   "alert_isOnlyAvailFor": { "message": "anake e wātea ana mo" },
   "alert_and": { "message": "Kyle Klye Ko" },

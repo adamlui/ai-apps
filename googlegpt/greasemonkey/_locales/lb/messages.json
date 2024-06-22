@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "wann zu gebrauchen" },
   "alert_pleaseUse": { "message": "Benotzt w.e.g." },
   "alert_instead": { "message": "amplaz" },
-  "alert_untilMSfixesBug": { "message": "bis Microsoft fixéiert dëse laangjärege Browser Rendering Bug" },
   "alert_unavailable": { "message": "net disponibel" },
   "alert_isOnlyAvailFor": { "message": "ass nëmmen disponibel fir" },
   "alert_and": { "message": "a(n)" },

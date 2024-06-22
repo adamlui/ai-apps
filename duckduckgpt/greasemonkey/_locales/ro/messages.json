@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "Cînd NovoMix 30 se administreaz o dat pe zi, iar doza este mai mare de 30 de unit i, în general este recomandat sa se împart doza în dou p r i i s se efectueze dou administr ri." },
   "alert_pleaseUse": { "message": "Vă rugăm să utilizați" },
   "alert_instead": { "message": "în loc de" },
-  "alert_untilMSfixesBug": { "message": "până când Microsoft remediază această eroare de redare a browserului de lungă durată" },
   "alert_unavailable": { "message": "indisponibil" },
   "alert_isOnlyAvailFor": { "message": "este disponibil numai pentru" },
   "alert_and": { "message": "și" },

@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "Külső eszköz" },
   "alert_pleaseUse": { "message": "Kérjük, használja" },
   "alert_instead": { "message": "helyette" },
-  "alert_untilMSfixesBug": { "message": "amíg a Microsoft meg nem javítja ezt a régóta fennálló böngésző-megjelenítési hibát" },
   "alert_unavailable": { "message": "nem elérhető" },
   "alert_isOnlyAvailFor": { "message": "csak ekkor érhető el" },
   "alert_and": { "message": "és" },

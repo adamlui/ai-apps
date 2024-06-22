@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "استعمال کرتے وقت" },
   "alert_pleaseUse": { "message": "براہ کرم استعمال کریں" },
   "alert_instead": { "message": "بجائے" },
-  "alert_untilMSfixesBug": { "message": "جب تک مائیکروسافٹ اس دیرینہ براؤزر رینڈرنگ بگ کو ٹھیک نہیں کرتا" },
   "alert_unavailable": { "message": "دستیاب نہیں" },
   "alert_isOnlyAvailFor": { "message": "صرف کے لئے دستیاب ہے" },
   "alert_and": { "message": "اور " },

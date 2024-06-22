@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "Kui NovoMix 30" },
   "alert_pleaseUse": { "message": "Palun kasutage" },
   "alert_instead": { "message": "kasutamist." },
-  "alert_untilMSfixesBug": { "message": "kuni Microsoft parandab selle pikaajalise brauseri renderdamise vea" },
   "alert_unavailable": { "message": "kättesaamatu" },
   "alert_isOnlyAvailFor": { "message": "on saadaval ainult" },
   "alert_and": { "message": "ja" },

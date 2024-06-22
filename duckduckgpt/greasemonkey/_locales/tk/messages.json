@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "eger, ýok, ulanylmaga haklydy" },
   "alert_pleaseUse": { "message": "Lütfen ulan" },
   "alert_instead": { "message": "gaýtam" },
-  "alert_untilMSfixesBug": { "message": "microsoft bu uzak wagtly brauzerini düzedýänçä" },
   "alert_unavailable": { "message": "ähli zat ýok" },
   "alert_isOnlyAvailFor": { "message": "ýeke ulanmaga rugsat berilýän" },
   "alert_and": { "message": "we" },

@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "nuair a bhios tu a 'cleachdadh" },
   "alert_pleaseUse": { "message": "Feuch an cleachd thu" },
   "alert_instead": { "message": "INSTEAD" },
-  "alert_untilMSfixesBug": { "message": "mar a shocraicheas tu am brabhsair fad - ùine seo" },
   "alert_unavailable": { "message": "chan eil e ri fhaighinn" },
   "alert_isOnlyAvailFor": { "message": "chan eil e ri fhaighinn ach airson" },
   "alert_and": { "message": "Agus..." },

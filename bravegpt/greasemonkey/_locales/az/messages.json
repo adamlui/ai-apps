@@ -52,7 +52,6 @@
   "alert_whenUsing": { "message": "istifadə edərkən" },
   "alert_pleaseUse": { "message": "İstifadə edin" },
   "alert_instead": { "message": "əvəzinə" },
-  "alert_untilMSfixesBug": { "message": "microsoft-un bu uzun sürən brauzer göstərmə xətasını düzəltməsinə qədər" },
   "alert_unavailable": { "message": "ƏLÇATAN DEYİL" },
   "alert_isOnlyAvailFor": { "message": "yalnız bunun üçün mövcuddur" },
   "alert_and": { "message": "və " },

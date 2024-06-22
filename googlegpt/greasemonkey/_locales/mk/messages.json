@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "кога користите" },
   "alert_pleaseUse": { "message": "Користете" },
   "alert_instead": { "message": "наместо тоа" },
-  "alert_untilMSfixesBug": { "message": "додека Microsoft не ја поправи оваа долгогодишна грешка во рендерирањето на прелистувачот" },
   "alert_unavailable": { "message": "недостапно" },
   "alert_isOnlyAvailFor": { "message": "е достапен само за" },
   "alert_and": { "message": "и" },

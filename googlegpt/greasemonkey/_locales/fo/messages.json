@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "tá ið tað verður brúkt" },
   "alert_pleaseUse": { "message": "Vinarliga brúk" },
   "alert_instead": { "message": "í staðin" },
-  "alert_untilMSfixesBug": { "message": "til Microsoft loysir hesa langtíðar browsaraverndarfeil" },
   "alert_unavailable": { "message": "ikki tøkt" },
   "alert_isOnlyAvailFor": { "message": "tað er bert at fáa" },
   "alert_and": { "message": "og" },

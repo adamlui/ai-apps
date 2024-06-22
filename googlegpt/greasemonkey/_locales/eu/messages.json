@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "erabiltzean" },
   "alert_pleaseUse": { "message": "Mesedez, erabili" },
   "alert_instead": { "message": "Horren ordez " },
-  "alert_untilMSfixesBug": { "message": "Microsoft-ek aspaldiko arakatzailearen errendatze akats hau konpondu arte" },
   "alert_unavailable": { "message": "ez dago erabilgarri" },
   "alert_isOnlyAvailFor": { "message": "bakarrik dago eskuragarri" },
   "alert_and": { "message": "eta" },

@@ -51,7 +51,6 @@
   "alert_whenUsing": { "message": "当利用" },
   "alert_pleaseUse": { "message": "请用 请用" },
   "alert_instead": { "message": "代替" },
-  "alert_untilMSfixesBug": { "message": "直到 Microsoft 修复这个长期存在的浏览器渲染错误" },
   "alert_unavailable": { "message": "不可用" },
   "alert_isOnlyAvailFor": { "message": "仅适用于" },
   "alert_and": { "message": "和" },
