@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-Brave Search. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.8
+// @version             2024.6.21.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1403,15 +1403,17 @@ setTimeout(async () => {
                             try { str_relatedQueries = JSON.parse(event.response).choices[0].message.content }
                             catch (err) { consoleErr(err) ; reject(err) }
                         } else if (get.related.api == 'AIchatOS'
-                            && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags].join('|')).test(event.responseText)) {
-                                try {
-                                    const text = event.responseText, chunkSize = 1024
-                                    let currentIdx = 0
-                                    while (currentIdx < text.length) {
-                                        const chunk = text.substring(currentIdx, currentIdx + chunkSize)
-                                        currentIdx += chunkSize ; str_relatedQueries += chunk
-                                    }
-                                } catch (err) { consoleErr(err) ; reject(err) }
+                            && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags]
+                                .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
+                                .join('|')).test(event.responseText)) {
+                                    try {
+                                        const text = event.responseText, chunkSize = 1024
+                                        let currentIdx = 0
+                                        while (currentIdx < text.length) {
+                                            const chunk = text.substring(currentIdx, currentIdx + chunkSize)
+                                            currentIdx += chunkSize ; str_relatedQueries += chunk
+                                        }
+                                    } catch (err) { consoleErr(err) ; reject(err) }
                         } else if (get.related.api == 'GPTforLove') {
                             try {
                                 let chunks = event.responseText.trim().split('\n')
@@ -1470,21 +1472,23 @@ setTimeout(async () => {
                 } else { consoleInfo('Response: ' + resp.responseText) ; appAlert('openAInotWorking, suggestProxy') }
             } else if (caller.api == 'AIchatOS') {
                 if (resp.responseText
-                    && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags].join('|')).test(resp.responseText)) {
-                        try {
-                            const text = resp.responseText, chunkSize = 1024
-                            let answer = '', currentIdx = 0
-                            while (currentIdx < text.length) {
-                                const chunk = text.substring(currentIdx, currentIdx + chunkSize)
-                                currentIdx += chunkSize ; answer += chunk
+                    && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags]
+                        .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
+                        .join('|')).test(event.responseText)) {
+                            try {
+                                const text = resp.responseText, chunkSize = 1024
+                                let answer = '', currentIdx = 0
+                                while (currentIdx < text.length) {
+                                    const chunk = text.substring(currentIdx, currentIdx + chunkSize)
+                                    currentIdx += chunkSize ; answer += chunk
+                                }
+                                show.reply(answer, footerContent)
+                                get.reply.status = 'done' ; api.clearTimedOut(get.reply.triedAPIs) ; get.reply.attemptCnt = null
+                            } catch (err) { // use different endpoint or suggest OpenAI
+                                consoleInfo('Response: ' + resp.responseText)
+                                consoleErr(appAlerts.parseFailed, err)
+                                if (get.reply.status != 'done') api.tryNew(caller)
                             }
-                            show.reply(answer, footerContent)
-                            get.reply.status = 'done' ; api.clearTimedOut(get.reply.triedAPIs) ; get.reply.attemptCnt = null
-                        } catch (err) { // use different endpoint or suggest OpenAI
-                            consoleInfo('Response: ' + resp.responseText)
-                            consoleErr(appAlerts.parseFailed, err)
-                            if (get.reply.status != 'done') api.tryNew(caller)
-                        }
                 } else { consoleInfo('Response: ' + resp.responseText) ; if (get.reply.status != 'done') api.tryNew(caller) }
             } else if (caller.api == 'GPTforLove') {
                 if (resp.responseText && !resp.responseText.includes('Fail')) {
