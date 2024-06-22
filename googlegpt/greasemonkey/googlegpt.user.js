@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.14
+// @version             2024.6.21.15
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1534,7 +1534,7 @@
                 if (resp.responseText
                     && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags]
                         .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
-                        .join('|')).test(event.responseText)) {
+                        .join('|')).test(resp.responseText)) {
                             try {
                                 const text = resp.responseText, chunkSize = 1024
                                 let answer = '', currentIdx = 0

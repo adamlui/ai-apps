@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-Brave Search. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.13
+// @version             2024.6.21.14
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1482,7 +1482,7 @@ setTimeout(async () => {
                 if (resp.responseText
                     && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags]
                         .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
-                        .join('|')).test(event.responseText)) {
+                        .join('|')).test(resp.responseText)) {
                             try {
                                 const text = resp.responseText, chunkSize = 1024
                                 let answer = '', currentIdx = 0
