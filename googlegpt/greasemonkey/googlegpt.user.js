@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.22.3
+// @version             2024.6.22.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2235,7 +2235,7 @@
     }
 
     // APPEND to Google
-    const centerCol = document.getElementById('center_col')
+    const centerCol = document.querySelector('#center_col, #main')
     const hostContainer = isMobile ? centerCol
         : document.getElementById('rhs') // sidebar container if side snippets exist
         || (() => { // create new one if no side snippets exist
