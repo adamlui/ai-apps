@@ -158,7 +158,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.13
+// @version             2024.6.21.14
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -211,13 +211,13 @@
 // @contributionURL     https://github.com/sponsors/KudoAI
 // ==/UserScript==
 
-// Documentation: https://docs.googlegpt.io
 // Dependencies:
 // - chatgpt.js (https://chatgpt.js.org) © 2023–2024 KudoAI & contributors under the MIT license
 // - generate-ip (https://generate-ip.org) © 2024 Adam Lui & contributors under the MIT license
 // - highlight.js (https://highlightjs.org) © 2006 Ivan Sagalaev under the BSD 3-Clause license
 // - KaTeX (https://katex.org) © 2013–2020 Khan Academy & other contributors under the MIT license
 // - Marked (https://marked.js.org) © 2018+ MarkedJS © 2011–2018 Christopher Jeffrey under the MIT license
+// Documentation: https://docs.googlegpt.io
 
 (async () => {
 

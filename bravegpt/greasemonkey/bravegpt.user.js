@@ -151,7 +151,7 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-Brave Search. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.12
+// @version             2024.6.21.13
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -203,13 +203,13 @@
 // @contributionURL     https://github.com/sponsors/KudoAI
 // ==/UserScript==
 
-// Documentation: https://docs.bravegpt.com
 // Dependencies:
 // - chatgpt.js (https://chatgpt.js.org) © 2023–2024 KudoAI & contributors under the MIT license
 // - generate-ip (https://generate-ip.org) © 2024 Adam Lui & contributors under the MIT license
 // - highlight.js (https://highlightjs.org) © 2006 Ivan Sagalaev under the BSD 3-Clause license
 // - KaTeX (https://katex.org) © 2013–2020 Khan Academy & other contributors under the MIT license
 // - Marked (https://marked.js.org) © 2018+ MarkedJS © 2011–2018 Christopher Jeffrey under the MIT license
+// Documentation: https://docs.bravegpt.com
 
 setTimeout(async () => {
 
