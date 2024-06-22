@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "基本配色方案" },
   "menuLabel_auto": { "message": "自動" },
   "menuLabel_about": { "message": "關於我們" },
-  "menuLabel_highlightToAsk": { "message": "突出顯示至任務" },
-  "menuLabel_fromAnySite": { "message": "從任何網站" },
-  "menuLabel_ask": { "message": "詢問" },
-  "menuLabel_hideMenu": { "message": "隱藏菜單" },
-  "menuLabel_always": { "message": "總是" },
-  "menuLabel_forThisSite": { "message": "適用於此網站" },
-  "menuLabel_fromAllSites": { "message": "來自所有網站" },
   "about_version": { "message": "版本" },
   "about_poweredBy": { "message": "技術支持" },
   "about_sourceCode": { "message": "原始碼" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "反饋意見" },
   "prefix_exit": { "message": "退出" },
   "state_on": { "message": "開" },
-  "state_off": { "message": "關" },
-  "query_hiThere": { "message": "大家好" },
-  "query_translate": { "message": "翻譯" }
+  "state_off": { "message": "關" }
 }

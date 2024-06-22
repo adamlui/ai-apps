@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Schema de culori" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Despre" },
-  "menuLabel_highlightToAsk": { "message": "Evidențiere la sarcină" },
-  "menuLabel_fromAnySite": { "message": "de pe orice site" },
-  "menuLabel_ask": { "message": "Întrebați" },
-  "menuLabel_hideMenu": { "message": "Ascunde meniul" },
-  "menuLabel_always": { "message": "mereu" },
-  "menuLabel_forThisSite": { "message": "pentru acest site" },
-  "menuLabel_fromAllSites": { "message": "Toate site-urile" },
   "about_version": { "message": "Versiune" },
   "about_poweredBy": { "message": "Operat de" },
   "about_sourceCode": { "message": "Codul sursă" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Trimite feedback" },
   "prefix_exit": { "message": "Ieșire" },
   "state_on": { "message": "On" },
-  "state_off": { "message": "Oprit" },
-  "query_hiThere": { "message": "Salut," },
-  "query_translate": { "message": "Traduceți" }
+  "state_off": { "message": "Oprit" }
 }

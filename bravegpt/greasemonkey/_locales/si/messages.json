@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "වේගය" },
   "menuLabel_auto": { "message": "ස්වයංක්‍රීය" },
   "menuLabel_about": { "message": "සම්බන්ධව" },
-  "menuLabel_highlightToAsk": { "message": "උද්දීපනය-කිරීමේ කාර්යය" },
-  "menuLabel_fromAnySite": { "message": "ඕනෑම වෙබ් අඩවියකින්" },
-  "menuLabel_ask": { "message": "අසන්න" },
-  "menuLabel_hideMenu": { "message": "මෙනුව සඟවන්න" },
-  "menuLabel_always": { "message": "සැමවිටම" },
-  "menuLabel_forThisSite": { "message": "මෙම වෙබ් අඩවිය සඳහා" },
-  "menuLabel_fromAllSites": { "message": "සියලු වෙබ් අඩවි වලින්" },
   "about_version": { "message": "වෙළුම" },
   "about_poweredBy": { "message": "විසින් බල ගැන්වී ඇත" },
   "about_sourceCode": { "message": "මූලාශ්‍ර කේතය" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "ප්‍රතිපෝෂණය" },
   "prefix_exit": { "message": "පිට වන්න" },
   "state_on": { "message": "" },
-  "state_off": { "message": "Property_BAR_NewPrefs_App_BAR_" },
-  "query_hiThere": { "message": "කොහොමද ඉතින්..." },
-  "query_translate": { "message": "පරිවර්තනය" }
+  "state_off": { "message": "Property_BAR_NewPrefs_App_BAR_" }
 }

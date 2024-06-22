@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Skema sa Kolor" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Mahitungod" },
-  "menuLabel_highlightToAsk": { "message": "HIGHLIGHT-TO-AK" },
-  "menuLabel_fromAnySite": { "message": "gikan sa bisan unsang site" },
-  "menuLabel_ask": { "message": "Mangayo" },
-  "menuLabel_hideMenu": { "message": "Itago ang menu" },
-  "menuLabel_always": { "message": "Same as always" },
-  "menuLabel_forThisSite": { "message": "alang niini nga site" },
-  "menuLabel_fromAllSites": { "message": "gikan sa tanan nga mga site" },
   "about_version": { "message": "Bersyon" },
   "about_poweredBy": { "message": "Gipadagan sa" },
   "about_sourceCode": { "message": "Gigikana sa kodigo" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Feedback" },
   "prefix_exit": { "message": "Mogawas" },
   "state_on": { "message": "Sa" },
-  "state_off": { "message": "Off" },
-  "query_hiThere": { "message": "Hai sa ma uit" },
-  "query_translate": { "message": "Paghubad" }
+  "state_off": { "message": "Off" }
 }

@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Kolorara Etosoplasma name" },
   "menuLabel_auto": { "message": "Aŭtomate" },
   "menuLabel_about": { "message": "Alproksimigas" },
-  "menuLabel_highlightToAsk": { "message": "Emfazi- tasko" },
-  "menuLabel_fromAnySite": { "message": "de iu ajn retejo" },
-  "menuLabel_ask": { "message": "& Demandu" },
-  "menuLabel_hideMenu": { "message": "& Montru menuon" },
-  "menuLabel_always": { "message": "ĉiam" },
-  "menuLabel_forThisSite": { "message": "por ĉi tiu retejo" },
-  "menuLabel_fromAllSites": { "message": "de ĉiuj retejoj" },
   "about_version": { "message": "Versio" },
   "about_poweredBy": { "message": "funkciigita de" },
   "about_sourceCode": { "message": "Fontkodo" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Retrosciigo" },
   "prefix_exit": { "message": "Eliri" },
   "state_on": { "message": "Oran" },
-  "state_off": { "message": "off" },
-  "query_hiThere": { "message": "Saluton." },
-  "query_translate": { "message": "Traduki" }
+  "state_off": { "message": "off" }
 }

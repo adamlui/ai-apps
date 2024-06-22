@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Esquema de color" },
   "menuLabel_auto": { "message": "Automàtic" },
   "menuLabel_about": { "message": "Quant a" },
-  "menuLabel_highlightToAsk": { "message": "Destacat a la pregunta" },
-  "menuLabel_fromAnySite": { "message": "des de qualsevol lloc" },
-  "menuLabel_ask": { "message": "Pregunta" },
-  "menuLabel_hideMenu": { "message": "Oculta el menú" },
-  "menuLabel_always": { "message": "always" },
-  "menuLabel_forThisSite": { "message": "per a aquest lloc" },
-  "menuLabel_fromAllSites": { "message": "de tots els llocs" },
   "about_version": { "message": "Versió" },
   "about_poweredBy": { "message": "Desenvolupat per" },
   "about_sourceCode": { "message": "Codi font" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Dóna’ns la teva opinió" },
   "prefix_exit": { "message": "Surt" },
   "state_on": { "message": "Activat" },
-  "state_off": { "message": "Desactivat" },
-  "query_hiThere": { "message": "Hola" },
-  "query_translate": { "message": "Traduir" }
+  "state_off": { "message": "Desactivat" }
 }

@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "రంగు స్కీమాplasma name" },
   "menuLabel_auto": { "message": "స్వయంచాలితం" },
   "menuLabel_about": { "message": "గురించి" },
-  "menuLabel_highlightToAsk": { "message": "హైలైట్-టు-ఆస్క్" },
-  "menuLabel_fromAnySite": { "message": "ఏదైనా సైట్ నుండి" },
-  "menuLabel_ask": { "message": "అడుగండి" },
-  "menuLabel_hideMenu": { "message": "మెనూను దాచండి" },
-  "menuLabel_always": { "message": "ఎల్లప్పుడూ " },
-  "menuLabel_forThisSite": { "message": "ఈ సైట్ కోసం" },
-  "menuLabel_fromAllSites": { "message": "అన్ని సైట్ ‌ ల నుండి" },
   "about_version": { "message": "సంస్కరణ" },
   "about_poweredBy": { "message": "ద్వారా ఆధారితం" },
   "about_sourceCode": { "message": "సోర్స్ కోడ్" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "అభిప్రాయాన్ని పంచుకోండి" },
   "prefix_exit": { "message": "నిష్క్రమించండి" },
   "state_on": { "message": "ఆన్" },
-  "state_off": { "message": "ఆఫ్" },
-  "query_hiThere": { "message": "హాయ్" },
-  "query_translate": { "message": "అనువదించు" }
+  "state_off": { "message": "ఆఫ్" }
 }

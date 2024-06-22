@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Mpango wa Rangi" },
   "menuLabel_auto": { "message": "Otomatiki" },
   "menuLabel_about": { "message": "Kuhusu" },
-  "menuLabel_highlightToAsk": { "message": "Angazia-kwa-kazi" },
-  "menuLabel_fromAnySite": { "message": "kutoka kwenye tovuti yoyote" },
-  "menuLabel_ask": { "message": "Omba" },
-  "menuLabel_hideMenu": { "message": "Ficha menyu" },
-  "menuLabel_always": { "message": "daima" },
-  "menuLabel_forThisSite": { "message": "kwa tovuti hii" },
-  "menuLabel_fromAllSites": { "message": "kutoka kwenye tovuti zote" },
   "about_version": { "message": "Toleo" },
   "about_poweredBy": { "message": "Imewezeshwa na" },
   "about_sourceCode": { "message": "Msimbo wa chanzo" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Maoni" },
   "prefix_exit": { "message": "Ondoka" },
   "state_on": { "message": "Washa" },
-  "state_off": { "message": "Zima" },
-  "query_hiThere": { "message": "Hujambo!" },
-  "query_translate": { "message": "Tafsiri" }
+  "state_off": { "message": "Zima" }
 }

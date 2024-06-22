@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Esquema de cores" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Quem somos" },
-  "menuLabel_highlightToAsk": { "message": "Destaque para perguntar" },
-  "menuLabel_fromAnySite": { "message": "de qualquer site" },
-  "menuLabel_ask": { "message": "Perguntar" },
-  "menuLabel_hideMenu": { "message": "Esconder o menu" },
-  "menuLabel_always": { "message": "sempre" },
-  "menuLabel_forThisSite": { "message": "`fraca`, `boa`, or `forte`" },
-  "menuLabel_fromAllSites": { "message": "Todos os sítios" },
   "about_version": { "message": "Versão" },
   "about_poweredBy": { "message": "Distribuído pela" },
   "about_sourceCode": { "message": "Código-fonte" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Feedback" },
   "prefix_exit": { "message": "Sair" },
   "state_on": { "message": "Activado" },
-  "state_off": { "message": "Desligado" },
-  "query_hiThere": { "message": "Olá," },
-  "query_translate": { "message": "Traduzir" }
+  "state_off": { "message": "Desligado" }
 }

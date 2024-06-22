@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "פֿאַרב נאָמען" },
   "menuLabel_auto": { "message": "אַוטאָ" },
   "menuLabel_about": { "message": "dialogs-action" },
-  "menuLabel_highlightToAsk": { "message": "הויכפּונקט-צו-פרעגן" },
-  "menuLabel_fromAnySite": { "message": "פון קיין פּלאַץ" },
-  "menuLabel_ask": { "message": "פרעגן" },
-  "menuLabel_hideMenu": { "message": "באַהאַלטן מעניו" },
-  "menuLabel_always": { "message": "אַלע מאָל" },
-  "menuLabel_forThisSite": { "message": "פֿאַר דעם פּלאַץ" },
-  "menuLabel_fromAllSites": { "message": "פון אַלע זייטלעך" },
   "about_version": { "message": "ווערסיע" },
   "about_poweredBy": { "message": "פּאַוערד דורך" },
   "about_sourceCode": { "message": "מקור קאָד" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "באַמערקונגען" },
   "prefix_exit": { "message": "אַרויסגאַנג" },
   "state_on": { "message": "אויף" },
-  "state_off": { "message": "אַוועק" },
-  "query_hiThere": { "message": "א גיטן אייך" },
-  "query_translate": { "message": "אפטייטש" }
+  "state_off": { "message": "אַוועק" }
 }

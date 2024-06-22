@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "رنگ اسکیما" },
   "menuLabel_auto": { "message": "خودکار" },
   "menuLabel_about": { "message": "درباره" },
-  "menuLabel_highlightToAsk": { "message": "برجسته کردن برای پرسیدن" },
-  "menuLabel_fromAnySite": { "message": "از هر سایتی" },
-  "menuLabel_ask": { "message": "پرسیدن از" },
-  "menuLabel_hideMenu": { "message": "مخفی کردن منو" },
-  "menuLabel_always": { "message": "همیشه" },
-  "menuLabel_forThisSite": { "message": "برای این سایت" },
-  "menuLabel_fromAllSites": { "message": "همه سایت ها" },
   "about_version": { "message": "نسخه برنامه" },
   "about_poweredBy": { "message": "قدرت گرفته توسط" },
   "about_sourceCode": { "message": "سورس کد" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "نظرات خود را به اشتراک بگذارید" },
   "prefix_exit": { "message": "خروج" },
   "state_on": { "message": "شما در" },
-  "state_off": { "message": "خاموش" },
-  "query_hiThere": { "message": "سلام , " },
-  "query_translate": { "message": "Translate" }
+  "state_off": { "message": "خاموش" }
 }

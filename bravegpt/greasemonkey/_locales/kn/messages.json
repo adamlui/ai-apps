@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "ಬಣ್ಣ ಯೋಜನೆ" },
   "menuLabel_auto": { "message": "ಸ್ವಯಂ" },
   "menuLabel_about": { "message": "ಕುರಿತಾಗಿ" },
-  "menuLabel_highlightToAsk": { "message": "ಹೈಲೈಟ್-ಟು-ಆಸ್ಕ್" },
-  "menuLabel_fromAnySite": { "message": "ಯಾವುದೇ ಸೈಟ್ ‌ ನಿಂದ" },
-  "menuLabel_ask": { "message": "ಕೋರು" },
-  "menuLabel_hideMenu": { "message": "ಮೆನು ಮರೆಮಾಡಿ" },
-  "menuLabel_always": { "message": "ಎಂದಿಗೂ" },
-  "menuLabel_forThisSite": { "message": "ಈ ಸೈಟ್ ‌ ಗಾಗಿ" },
-  "menuLabel_fromAllSites": { "message": "ಎಲ್ಲಾ ಸೈಟ್ ‌ ಗಳಿಂದ" },
   "about_version": { "message": "ಆವೃತ್ತಿ" },
   "about_poweredBy": { "message": "ಸಾಮರ್ಥ್ಯ ಇವರಿಂದ" },
   "about_sourceCode": { "message": "ಮೂಲ ಕೋಡ್" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "ಪ್ರತಿಕ್ರಿಯೆ" },
   "prefix_exit": { "message": "ನಿರ್ಗಮಿಸಿ" },
   "state_on": { "message": "ರಂದು" },
-  "state_off": { "message": "ಆಫ್" },
-  "query_hiThere": { "message": "ನಮಸ್ಕಾರ," },
-  "query_translate": { "message": "ಅನುವಾದಿಸು" }
+  "state_off": { "message": "ಆಫ್" }
 }

@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Mbeni ye so ayeke na yâ ti mbeni ye so ayeke na" },
   "menuLabel_auto": { "message": "Ala Auto" },
   "menuLabel_about": { "message": "About sara" },
-  "menuLabel_highlightToAsk": { "message": "A yeke kota ye ti tene a sara tënë ti aye so ayeke na yâ ti" },
-  "menuLabel_fromAnySite": { "message": "na ndo ti mbeni ndo nde" },
-  "menuLabel_ask": { "message": "Bibia Be Ye Ye" },
-  "menuLabel_hideMenu": { "message": "Hide menu ti" },
-  "menuLabel_always": { "message": "lakue lakue" },
-  "menuLabel_forThisSite": { "message": "na ndo ti site so" },
-  "menuLabel_fromAllSites": { "message": "ti all sites" },
   "about_version": { "message": "Yângâ tî kodoro" },
   "about_poweredBy": { "message": "A yeke sara kua na ni" },
   "about_sourceCode": { "message": "Source code ti" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Share Feedback na na" },
   "prefix_exit": { "message": "A yeke sigigi na ni" },
   "state_on": { "message": "Na ndo ti" },
-  "state_off": { "message": "A yeke na lege ni ape" },
-  "query_hiThere": { "message": "Salut na ndo so" },
-  "query_translate": { "message": "Ti kiri peko ti atënë ti yâ ti Bible" }
+  "state_off": { "message": "A yeke na lege ni ape" }
 }

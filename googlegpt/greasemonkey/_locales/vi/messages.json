@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Bảng màu" },
   "menuLabel_auto": { "message": "Tự động" },
   "menuLabel_about": { "message": "Giới thiệu" },
-  "menuLabel_highlightToAsk": { "message": "Làm nổi bật để yêu cầu" },
-  "menuLabel_fromAnySite": { "message": "từ bất kỳ trang web nào" },
-  "menuLabel_ask": { "message": "H" },
-  "menuLabel_hideMenu": { "message": "Menu Ẩn" },
-  "menuLabel_always": { "message": "luôn luôn" },
-  "menuLabel_forThisSite": { "message": "cho trang web này" },
-  "menuLabel_fromAllSites": { "message": "Tất cả các Website" },
   "about_version": { "message": "Phiên bản" },
   "about_poweredBy": { "message": "Cung cấp bởi" },
   "about_sourceCode": { "message": "Mã nguồn" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Chia sẻ phản hồi của bạn" },
   "prefix_exit": { "message": "Thoát" },
   "state_on": { "message": "Bật" },
-  "state_off": { "message": "Tắt" },
-  "query_hiThere": { "message": "Xin Chào" },
-  "query_translate": { "message": "Translate" }
+  "state_off": { "message": "Tắt" }
 }

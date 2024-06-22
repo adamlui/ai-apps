@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Esquema de Color" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Acerca de" },
-  "menuLabel_highlightToAsk": { "message": "Resaltar a la tarea" },
-  "menuLabel_fromAnySite": { "message": "desde cualquier sitio" },
-  "menuLabel_ask": { "message": "Pedir" },
-  "menuLabel_hideMenu": { "message": "Ocultar menú" },
-  "menuLabel_always": { "message": "siempre" },
-  "menuLabel_forThisSite": { "message": "para este sitio." },
-  "menuLabel_fromAllSites": { "message": "Todos los sitios" },
   "about_version": { "message": "Versión" },
   "about_poweredBy": { "message": "Desarrollado por" },
   "about_sourceCode": { "message": "Código fuente" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Compartir comentarios" },
   "prefix_exit": { "message": "Salida" },
   "state_on": { "message": "Activado" },
-  "state_off": { "message": "Apagado" },
-  "query_hiThere": { "message": "Hola" },
-  "query_translate": { "message": "Traducir" }
+  "state_off": { "message": "Apagado" }
 }

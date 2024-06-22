@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "סכמת צבעים" },
   "menuLabel_auto": { "message": "אוטומטי" },
   "menuLabel_about": { "message": "אודות" },
-  "menuLabel_highlightToAsk": { "message": "הדגש - כדי - לשאול" },
-  "menuLabel_fromAnySite": { "message": "מכל אתר" },
-  "menuLabel_ask": { "message": "לשאול" },
-  "menuLabel_hideMenu": { "message": "הסתר תפריט" },
-  "menuLabel_always": { "message": "תמיד" },
-  "menuLabel_forThisSite": { "message": "עבור אתר זה" },
-  "menuLabel_fromAllSites": { "message": "כל האתרים" },
   "about_version": { "message": "גירסה" },
   "about_poweredBy": { "message": "באמצעות" },
   "about_sourceCode": { "message": "קוד מקור" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "שתפי משוב" },
   "prefix_exit": { "message": "יציאה" },
   "state_on": { "message": "פועל" },
-  "state_off": { "message": "כבוי" },
-  "query_hiThere": { "message": "שלום," },
-  "query_translate": { "message": "תרגם" }
+  "state_off": { "message": "כבוי" }
 }

@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "રંગ યોજનાplasma name" },
   "menuLabel_auto": { "message": "આપમેળે" },
   "menuLabel_about": { "message": "માહિતી" },
-  "menuLabel_highlightToAsk": { "message": "હાઇલાઇટ-ટુ-આસ્ક" },
-  "menuLabel_fromAnySite": { "message": "કોઈપણ સાઇટ પરથી" },
-  "menuLabel_ask": { "message": "પૂછો" },
-  "menuLabel_hideMenu": { "message": "મેનુ છુપાવો" },
-  "menuLabel_always": { "message": "નિરંતર " },
-  "menuLabel_forThisSite": { "message": "આ સાઇટ માટે" },
-  "menuLabel_fromAllSites": { "message": "બધી ફાઇલો" },
   "about_version": { "message": "આવૃત્તિ" },
   "about_poweredBy": { "message": "દ્વારા સંચાલિત" },
   "about_sourceCode": { "message": "સ્ત્રોત કોડ" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "પ્રતિભાવ આપો" },
   "prefix_exit": { "message": "એક્ઝીટ" },
   "state_on": { "message": "બરાબર" },
-  "state_off": { "message": "બંધ" },
-  "query_hiThere": { "message": "નમસ્તે" },
-  "query_translate": { "message": "ભાષાંતર" }
+  "state_off": { "message": "બંધ" }
 }

@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Σχήμα Χρωμάτων" },
   "menuLabel_auto": { "message": "Αυτόματη εφαρμογή" },
   "menuLabel_about": { "message": "Σχετικά" },
-  "menuLabel_highlightToAsk": { "message": "Επισήμανση σε εργασία" },
-  "menuLabel_fromAnySite": { "message": "από οποιαδήποτε τοποθεσία" },
-  "menuLabel_ask": { "message": "Ρωτήστε" },
-  "menuLabel_hideMenu": { "message": "Απόκρυψη μενού" },
-  "menuLabel_always": { "message": "πάντα" },
-  "menuLabel_forThisSite": { "message": "για αυτόν τον ιστότοπο" },
-  "menuLabel_fromAllSites": { "message": "Όλοι οι ιστότοποι" },
   "about_version": { "message": "Έκδοση" },
   "about_poweredBy": { "message": "Με την υποστήριξη" },
   "about_sourceCode": { "message": "Source code" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Ανατροφοδότηση" },
   "prefix_exit": { "message": "Έξοδος" },
   "state_on": { "message": "On" },
-  "state_off": { "message": "Off" },
-  "query_hiThere": { "message": "Γεια σας" },
-  "query_translate": { "message": "Μετάφραση" }
+  "state_off": { "message": "Off" }
 }

@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "रंग योजनाplasma name" },
   "menuLabel_auto": { "message": "अपने-आप" },
   "menuLabel_about": { "message": "परिचय" },
-  "menuLabel_highlightToAsk": { "message": "हाइलाइट - टू - टॉस्क" },
-  "menuLabel_fromAnySite": { "message": "किसी भी साइट से" },
-  "menuLabel_ask": { "message": "पूछें" },
-  "menuLabel_hideMenu": { "message": "मेनू छिपाएँ" },
-  "menuLabel_always": { "message": "हमेशा" },
-  "menuLabel_forThisSite": { "message": "इस साइट के लिए" },
-  "menuLabel_fromAllSites": { "message": "सभी साइटों से" },
   "about_version": { "message": "संस्करण" },
   "about_poweredBy": { "message": "...द्वारा पावरशुदा" },
   "about_sourceCode": { "message": "सोर्स कोड" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "अपना प्रतिक्रिया साझा करें" },
   "prefix_exit": { "message": "बाहर निकलें" },
   "state_on": { "message": "चालू" },
-  "state_off": { "message": "बंद" },
-  "query_hiThere": { "message": "Hi there" },
-  "query_translate": { "message": "अंदाजा लगाइए कि हम कौन सा गाना गा रहे हैं।" }
+  "state_off": { "message": "बंद" }
 }

@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Litaskema" },
   "menuLabel_auto": { "message": "Sjálfvirkt" },
   "menuLabel_about": { "message": "Um" },
-  "menuLabel_highlightToAsk": { "message": "Auðkenna-til-að-" },
-  "menuLabel_fromAnySite": { "message": "frá hvaða síðu sem er" },
-  "menuLabel_ask": { "message": "Spyrja" },
-  "menuLabel_hideMenu": { "message": "Fela valmynd" },
-  "menuLabel_always": { "message": "Alltaf" },
-  "menuLabel_forThisSite": { "message": "fyrir þessa síðu" },
-  "menuLabel_fromAllSites": { "message": "frá öllum vefsvæðum" },
   "about_version": { "message": "Útgáfa" },
   "about_poweredBy": { "message": "Knúið af" },
   "about_sourceCode": { "message": "Upprunakóði@ info: whatsthis" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Svar" },
   "prefix_exit": { "message": "Hætta" },
   "state_on": { "message": "Á" },
-  "state_off": { "message": "Óvirkt" },
-  "query_hiThere": { "message": "Sæl/ll" },
-  "query_translate": { "message": "Þýða" }
+  "state_off": { "message": "Óvirkt" }
 }

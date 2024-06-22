@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "색 구성표" },
   "menuLabel_auto": { "message": "자동" },
   "menuLabel_about": { "message": "소개" },
-  "menuLabel_highlightToAsk": { "message": "하이라이트에서 작업으로" },
-  "menuLabel_fromAnySite": { "message": "모든 사이트에서" },
-  "menuLabel_ask": { "message": "문의하기" },
-  "menuLabel_hideMenu": { "message": "메뉴 숨기기" },
-  "menuLabel_always": { "message": "늘" },
-  "menuLabel_forThisSite": { "message": "이 사이트의 경우" },
-  "menuLabel_fromAllSites": { "message": "사이트" },
   "about_version": { "message": "버전" },
   "about_poweredBy": { "message": "제공" },
   "about_sourceCode": { "message": "원본 코드" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "피드백 공유하기" },
   "prefix_exit": { "message": "나가기" },
   "state_on": { "message": "켜짐" },
-  "state_off": { "message": "꺼짐" },
-  "query_hiThere": { "message": "안녕하세요" },
-  "query_translate": { "message": "번역하기" }
+  "state_off": { "message": "꺼짐" }
 }

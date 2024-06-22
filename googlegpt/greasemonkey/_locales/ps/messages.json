@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "رنګبندي" },
   "menuLabel_auto": { "message": "آټو (Auto)" },
   "menuLabel_about": { "message": "په هکله" },
-  "menuLabel_highlightToAsk": { "message": "دندې ځلېدل" },
-  "menuLabel_fromAnySite": { "message": "له هر ځای څخه" },
-  "menuLabel_ask": { "message": "پوښتنه" },
-  "menuLabel_hideMenu": { "message": "غورنۍ پټول" },
-  "menuLabel_always": { "message": "همیشه د پاره" },
-  "menuLabel_forThisSite": { "message": "د دې پاڼې لپاره" },
-  "menuLabel_fromAllSites": { "message": "ټولې ويبپاڼې" },
   "about_version": { "message": ":نسخه" },
   "about_poweredBy": { "message": "طراحی شده توسط" },
   "about_sourceCode": { "message": "سرچينه كوډه" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "نظرونه شریک کړئ" },
   "prefix_exit": { "message": "وتون" },
   "state_on": { "message": "بل" },
-  "state_off": { "message": "Property_BAR_NewPrefs_App_BAR_" },
-  "query_hiThere": { "message": "سلام، هلته" },
-  "query_translate": { "message": "ژباړل" }
+  "state_off": { "message": "Property_BAR_NewPrefs_App_BAR_" }
 }

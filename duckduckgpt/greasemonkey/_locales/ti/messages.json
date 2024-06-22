@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "መደብ ቀለም" },
   "menuLabel_auto": { "message": "ኣውቶሞቢል" },
   "menuLabel_about": { "message": "ብዛዕባ" },
-  "menuLabel_highlightToAsk": { "message": "ልዑል ብርሃን-ን-ን-ስራዕ" },
-  "menuLabel_fromAnySite": { "message": "ካብ ዝኾነ ቦታ" },
-  "menuLabel_ask": { "message": "htet\n" },
-  "menuLabel_hideMenu": { "message": "ምናሌታት ሕባእ" },
-  "menuLabel_always": { "message": "ኹሉ ጊዜ" },
-  "menuLabel_forThisSite": { "message": "ኣብዚ ወብ ሳይት እዚ" },
-  "menuLabel_fromAllSites": { "message": "ካብ ኩሉ መርበብ ሓበሬታታት" },
   "about_version": { "message": "መበል" },
   "about_poweredBy": { "message": "ብ" },
   "about_sourceCode": { "message": "ምንጪ ኮድ" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "ግብረ መልሲ ምዝርጋሕ" },
   "prefix_exit": { "message": "ውጻእ" },
   "state_on": { "message": "o" },
-  "state_off": { "message": "ዝወጽ" },
-  "query_hiThere": { "message": "ሰላም ኣብዚ" },
-  "query_translate": { "message": "ተርጉም" }
+  "state_off": { "message": "ዝወጽ" }
 }

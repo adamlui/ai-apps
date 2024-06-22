@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "ფერების სქემა" },
   "menuLabel_auto": { "message": "ავტო" },
   "menuLabel_about": { "message": "პროგრამის შესახებ" },
-  "menuLabel_highlightToAsk": { "message": "Დასმულ შეკითხვებზე გამოკვეთა" },
-  "menuLabel_fromAnySite": { "message": "ნებისმიერი ცენტრიდან" },
-  "menuLabel_ask": { "message": "კითხვა" },
-  "menuLabel_hideMenu": { "message": "მენიუს დამალვა" },
-  "menuLabel_always": { "message": "ყოველთვის" },
-  "menuLabel_forThisSite": { "message": "ამ საიტისთვის" },
-  "menuLabel_fromAllSites": { "message": "ყველა ცენტრიდან" },
   "about_version": { "message": "ვერსია" },
   "about_poweredBy": { "message": "აგებულია KDE-ზე" },
   "about_sourceCode": { "message": "საწყისი კოდი" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "უკუკავშირი" },
   "prefix_exit": { "message": "გასვლა" },
   "state_on": { "message": "" },
-  "state_off": { "message": "გამორთ." },
-  "query_hiThere": { "message": "სალამი" },
-  "query_translate": { "message": "თარგმნა" }
+  "state_off": { "message": "გამორთ." }
 }

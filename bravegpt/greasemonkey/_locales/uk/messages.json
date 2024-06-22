@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Схема кольору" },
   "menuLabel_auto": { "message": "Автоматичний режим" },
   "menuLabel_about": { "message": "Про нас" },
-  "menuLabel_highlightToAsk": { "message": "Виділити до запитання" },
-  "menuLabel_fromAnySite": { "message": "з будь-якого сайту" },
-  "menuLabel_ask": { "message": "Запитати" },
-  "menuLabel_hideMenu": { "message": "Сховати меню" },
-  "menuLabel_always": { "message": "завше" },
-  "menuLabel_forThisSite": { "message": "для цього сайту" },
-  "menuLabel_fromAllSites": { "message": "Всі сайти" },
   "about_version": { "message": "Версія" },
   "about_poweredBy": { "message": "Працює на" },
   "about_sourceCode": { "message": "Джерельний код" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Зворотний зв'язок" },
   "prefix_exit": { "message": "Вихід" },
   "state_on": { "message": "На" },
-  "state_off": { "message": "Вимкнуто" },
-  "query_hiThere": { "message": "Привітик" },
-  "query_translate": { "message": "Перекласти" }
+  "state_off": { "message": "Вимкнуто" }
 }

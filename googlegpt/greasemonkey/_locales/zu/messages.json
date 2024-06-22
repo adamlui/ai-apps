@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Uhlelo Lwemibala" },
   "menuLabel_auto": { "message": "Ukuzenzakalela" },
   "menuLabel_about": { "message": "Mayelana" },
-  "menuLabel_highlightToAsk": { "message": "Qokomisa umsebenzi" },
-  "menuLabel_fromAnySite": { "message": "kusuka kunoma iyiphi isayithi" },
-  "menuLabel_ask": { "message": "Buza" },
-  "menuLabel_hideMenu": { "message": "Fihla imenyu" },
-  "menuLabel_always": { "message": "Njalo" },
-  "menuLabel_forThisSite": { "message": "kule sayithi" },
-  "menuLabel_fromAllSites": { "message": "kusuka kuwo wonke amasayithi" },
   "about_version": { "message": "Uhlelo" },
   "about_poweredBy": { "message": "Ixhaswa yi-" },
   "about_sourceCode": { "message": "Ikhodi yomthombo" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Yabelana Ngombiko" },
   "prefix_exit": { "message": "Phuma" },
   "state_on": { "message": "ku" },
-  "state_off": { "message": "Kuvaliwe" },
-  "query_hiThere": { "message": "Sawubona lapho" },
-  "query_translate": { "message": "Humusha" }
+  "state_off": { "message": "Kuvaliwe" }
 }

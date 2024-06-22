@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "रङ योजना" },
   "menuLabel_auto": { "message": "लेखक" },
   "menuLabel_about": { "message": "बारेमा" },
-  "menuLabel_highlightToAsk": { "message": "हाइलाइट - टु - कार्य" },
-  "menuLabel_fromAnySite": { "message": "कुनै पनि साइटबाट" },
-  "menuLabel_ask": { "message": "Public files of %s%.0s" },
-  "menuLabel_hideMenu": { "message": "निषेधित" },
-  "menuLabel_always": { "message": "" },
-  "menuLabel_forThisSite": { "message": "यस साइटको लागि" },
-  "menuLabel_fromAllSites": { "message": "सबै फाइलहरू" },
   "about_version": { "message": "संस्करण" },
   "about_poweredBy": { "message": "समर्थनकर्ता" },
   "about_sourceCode": { "message": "स्रोत सङ्केत" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "प्रतिक्रिया साझा गर्नुहोस्" },
   "prefix_exit": { "message": "निस्कने ठाउँ" },
   "state_on": { "message": "खुला" },
-  "state_off": { "message": "बन्द" },
-  "query_hiThere": { "message": "नमस्ते" },
-  "query_translate": { "message": "अनुवाद गर्नहोस्" }
+  "state_off": { "message": "बन्द" }
 }

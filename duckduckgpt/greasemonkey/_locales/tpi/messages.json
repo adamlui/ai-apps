@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Skema bilong kol" },
   "menuLabel_auto": { "message": "Automation" },
   "menuLabel_about": { "message": "About" },
-  "menuLabel_highlightToAsk": { "message": "Toktok bilong ol man i gat bikpela laik" },
-  "menuLabel_fromAnySite": { "message": "long olgeta hap" },
-  "menuLabel_ask": { "message": "Askim" },
-  "menuLabel_hideMenu": { "message": "Ol menu i stap hait" },
-  "menuLabel_always": { "message": "i stap oltaim" },
-  "menuLabel_forThisSite": { "message": "long dispela hap" },
-  "menuLabel_fromAllSites": { "message": "long olgeta hap" },
   "about_version": { "message": "Tok Pisin" },
   "about_poweredBy": { "message": "Em i gat bikpela strong" },
   "about_sourceCode": { "message": "Kod bilong as" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Toksave long ol samting" },
   "prefix_exit": { "message": "Kisim" },
   "state_on": { "message": "Long" },
-  "state_off": { "message": "Kisim i go" },
-  "query_hiThere": { "message": "Mi stap hia" },
-  "query_translate": { "message": "Tok Pisin" }
+  "state_off": { "message": "Kisim i go" }
 }

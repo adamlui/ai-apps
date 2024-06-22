@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Color Scheme" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "About" },
-  "menuLabel_highlightToAsk": { "message": "Highlight-to-ask" },
-  "menuLabel_fromAnySite": { "message": "from any site" },
-  "menuLabel_ask": { "message": "Ask" },
-  "menuLabel_hideMenu": { "message": "Hide menu" },
-  "menuLabel_always": { "message": "always" },
-  "menuLabel_forThisSite": { "message": "for this site" },
-  "menuLabel_fromAllSites": { "message": "from all sites" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Source code" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Share Feedback" },
   "prefix_exit" : { "message": "Exit" },
   "state_on" : { "message": "On" },
-  "state_off" : { "message": "Off" },
-  "query_hiThere": { "message": "Hi there" },
-  "query_translate": { "message": "Translate" }
+  "state_off" : { "message": "Off" }
 }

@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Түстер сұлбасы" },
   "menuLabel_auto": { "message": "Автоматты басқару" },
   "menuLabel_about": { "message": "Туралы" },
-  "menuLabel_highlightToAsk": { "message": "Белгілеу тапсырмасы" },
-  "menuLabel_fromAnySite": { "message": "кез келген сайттан" },
-  "menuLabel_ask": { "message": "& Сұрау" },
-  "menuLabel_hideMenu": { "message": "Мәзірді жасыру" },
-  "menuLabel_always": { "message": "Әрқашан" },
-  "menuLabel_forThisSite": { "message": "осы сайт үшін" },
-  "menuLabel_fromAllSites": { "message": "барлық сайттардан" },
   "about_version": { "message": "Нұсқа" },
   "about_poweredBy": { "message": "Сайтты жасаған" },
   "about_sourceCode": { "message": "Бастапқы код" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Кері байланыспен бөлісу" },
   "prefix_exit": { "message": "Шығу" },
   "state_on": { "message": "Болсын" },
-  "state_off": { "message": "Өшіру" },
-  "query_hiThere": { "message": "Сәлем," },
-  "query_translate": { "message": "Аударма" }
+  "state_off": { "message": "Өшіру" }
 }

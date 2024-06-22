@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Värvi temaatika" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Umbes" },
-  "menuLabel_highlightToAsk": { "message": "Esiletõstmine kuni küsimine" },
-  "menuLabel_fromAnySite": { "message": "mis tahes saidilt" },
-  "menuLabel_ask": { "message": "küsige" },
-  "menuLabel_hideMenu": { "message": "Peida menüü" },
-  "menuLabel_always": { "message": "alati" },
-  "menuLabel_forThisSite": { "message": "sellele saidile" },
-  "menuLabel_fromAllSites": { "message": "Kõik saidid %s" },
   "about_version": { "message": "Versioon" },
   "about_poweredBy": { "message": "Toiteallikaks" },
   "about_sourceCode": { "message": "Lähtekood" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Tagasiside" },
   "prefix_exit": { "message": "Väljumine" },
   "state_on": { "message": "Sees" },
-  "state_off": { "message": "Välja lülitatud" },
-  "query_hiThere": { "message": "Tere" },
-  "query_translate": { "message": "Tõlgi" }
+  "state_off": { "message": "Välja lülitatud" }
 }

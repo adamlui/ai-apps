@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "_ይዞታዎች" },
   "menuLabel_auto": { "message": "በራሱ" },
   "menuLabel_about": { "message": "ስለ" },
-  "menuLabel_highlightToAsk": { "message": "ከፍተኛ ብርሃን-ወደ ተግባር" },
-  "menuLabel_fromAnySite": { "message": "ከማንኛውም ጣቢያ" },
-  "menuLabel_ask": { "message": "(ጠይቅ):" },
-  "menuLabel_hideMenu": { "message": "ምናሌ ደብቅ" },
-  "menuLabel_always": { "message": "ሁል ጊዜ" },
-  "menuLabel_forThisSite": { "message": "ለዚህ ድረ-ገጽ" },
-  "menuLabel_fromAllSites": { "message": "ከሁሉም ጣቢያዎች" },
   "about_version": { "message": "እትም" },
   "about_poweredBy": { "message": "የተጎለበተው በ" },
   "about_sourceCode": { "message": "የምንጭ ኮድ" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "ግብረመልስ ያጋሩ" },
   "prefix_exit": { "message": "ይውጡ" },
   "state_on": { "message": "በላይ" },
-  "state_off": { "message": "አጥፋ" },
-  "query_hiThere": { "message": "ጤና ይስጥልኝ! " },
-  "query_translate": { "message": "ትርጉም" }
+  "state_off": { "message": "አጥፋ" }
 }

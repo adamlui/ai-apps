@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Kleurskema" },
   "menuLabel_auto": { "message": "Ada" },
   "menuLabel_about": { "message": "Omtrent" },
-  "menuLabel_highlightToAsk": { "message": "Verlig- na- taak" },
-  "menuLabel_fromAnySite": { "message": "van enige webwerf" },
-  "menuLabel_ask": { "message": "Vra" },
-  "menuLabel_hideMenu": { "message": "Versteek kieslys" },
-  "menuLabel_always": { "message": "altyd" },
-  "menuLabel_forThisSite": { "message": "vir hierdie webwerf" },
-  "menuLabel_fromAllSites": { "message": "Alle webwerwe" },
   "about_version": { "message": "Weergawe" },
   "about_poweredBy": { "message": "Aangedryf deur" },
   "about_sourceCode": { "message": "Oorsprong Kode" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Deel terugvoer" },
   "prefix_exit": { "message": "Gaan uit" },
   "state_on": { "message": "Op" },
-  "state_off": { "message": "Af" },
-  "query_hiThere": { "message": "Hi daar" },
-  "query_translate": { "message": "Vertaal" }
+  "state_off": { "message": "Af" }
 }

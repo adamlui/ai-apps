@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Cynlluniau ysgrifenadwy VFS" },
   "menuLabel_auto": { "message": "Awto" },
   "menuLabel_about": { "message": "Gwybodaeth" },
-  "menuLabel_highlightToAsk": { "message": "Amlygu - i - fwg" },
-  "menuLabel_fromAnySite": { "message": "o unrhyw safle" },
-  "menuLabel_ask": { "message": "Gofyn" },
-  "menuLabel_hideMenu": { "message": "& Dangos Dewislen" },
-  "menuLabel_always": { "message": "" },
-  "menuLabel_forThisSite": { "message": "ar gyfer y wefan hon" },
-  "menuLabel_fromAllSites": { "message": "Pob Gwefan" },
   "about_version": { "message": "Fersiwn" },
   "about_poweredBy": { "message": "Wedi'i gynnal gan" },
   "about_sourceCode": { "message": "Cod ffynhonnell" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Rhannu adborth" },
   "prefix_exit": { "message": "Man gadael" },
   "state_on": { "message": "Ymlaen" },
-  "state_off": { "message": "Wedi'i ddiffodd" },
-  "query_hiThere": { "message": "Shwmae, " },
-  "query_translate": { "message": "Cyfieithu" }
+  "state_off": { "message": "Wedi'i ddiffodd" }
 }

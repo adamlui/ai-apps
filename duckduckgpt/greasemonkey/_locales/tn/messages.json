@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Sekema sa Mmala" },
   "menuLabel_auto": { "message": "AUTO" },
   "menuLabel_about": { "message": "Ka" },
-  "menuLabel_highlightToAsk": { "message": "Selo sa botlhokwa go se dira" },
-  "menuLabel_fromAnySite": { "message": "go tswa mo setsheng sepe fela" },
-  "menuLabel_ask": { "message": "ASK" },
-  "menuLabel_hideMenu": { "message": "HIDE MENU" },
-  "menuLabel_always": { "message": "<g x=1 id=\"28404\"/> Ka metlha" },
-  "menuLabel_forThisSite": { "message": "ya setsha seno sa inthanete" },
-  "menuLabel_fromAllSites": { "message": "go tswa mo mafelong otlhe a ditsha" },
   "about_version": { "message": "Thanolo" },
   "about_poweredBy": { "message": "E tsamaisiwa ke" },
   "about_sourceCode": { "message": "Khoutu ya motswedi" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Go Abelana Tshedimosetso ya Kgakololo" },
   "prefix_exit": { "message": "Tswa" },
   "state_on": { "message": "On" },
-  "state_off": { "message": "OFF" },
-  "query_hiThere": { "message": "Dumela" },
-  "query_translate": { "message": "TRANSLATE" }
+  "state_off": { "message": "OFF" }
 }

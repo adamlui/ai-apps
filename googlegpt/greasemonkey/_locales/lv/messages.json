@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Krāsas shēma" },
   "menuLabel_auto": { "message": "Automātiski" },
   "menuLabel_about": { "message": "Par produktu" },
-  "menuLabel_highlightToAsk": { "message": "Izcelt pēc jautājuma" },
-  "menuLabel_fromAnySite": { "message": "no jebkuras vietas" },
-  "menuLabel_ask": { "message": "DzÄst failu" },
-  "menuLabel_hideMenu": { "message": "Slēpt izvēlni" },
-  "menuLabel_always": { "message": "vienmēr" },
-  "menuLabel_forThisSite": { "message": "šai vietnei" },
-  "menuLabel_fromAllSites": { "message": "Visas vietnes" },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Izstrādāts" },
   "about_sourceCode": { "message": "about_sourceCode" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Dalieties savās atsauksmēs" },
   "prefix_exit": { "message": "Iziet" },
   "state_on": { "message": "Ieslēgt" },
-  "state_off": { "message": "Izslēgta" },
-  "query_hiThere": { "message": "Sveiki!" },
-  "query_translate": { "message": "Tulkot" }
+  "state_off": { "message": "Izslēgta" }
 }

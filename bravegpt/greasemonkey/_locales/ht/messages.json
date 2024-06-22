@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Plan Koulè" },
   "menuLabel_auto": { "message": "Otomatik" },
   "menuLabel_about": { "message": "Apwopo" },
-  "menuLabel_highlightToAsk": { "message": "Mete aksan sou-nan-echèl" },
-  "menuLabel_fromAnySite": { "message": "soti nan nenpòt ki sit/de toute" },
-  "menuLabel_ask": { "message": "Mande" },
-  "menuLabel_hideMenu": { "message": "Kache meni" },
-  "menuLabel_always": { "message": "toujou / toujours" },
-  "menuLabel_forThisSite": { "message": "pou sit sa a/pour ce site" },
-  "menuLabel_fromAllSites": { "message": "soti nan tout sit/de toutes les" },
   "about_version": { "message": "Vèsyon" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "kòd sous/ code source / le code source mis à jour/code en langage source" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Fidbak" },
   "prefix_exit": { "message": "SÒTI" },
   "state_on": { "message": "Nan dat" },
-  "state_off": { "message": "etenn/koupe " },
-  "query_hiThere": { "message": "Hi there" },
-  "query_translate": { "message": "Tradui" }
+  "state_off": { "message": "etenn/koupe " }
 }

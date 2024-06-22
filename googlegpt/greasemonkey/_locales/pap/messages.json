@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Plan di koló" },
   "menuLabel_auto": { "message": "Outo" },
   "menuLabel_about": { "message": "About About" },
-  "menuLabel_highlightToAsk": { "message": "Pre-escucha Task" },
-  "menuLabel_fromAnySite": { "message": "di kualke lugá" },
-  "menuLabel_ask": { "message": "Puntra" },
-  "menuLabel_hideMenu": { "message": "Menu skondí" },
-  "menuLabel_always": { "message": "semper" },
-  "menuLabel_forThisSite": { "message": "pa e website aki" },
-  "menuLabel_fromAllSites": { "message": "di tur e sitionan" },
   "about_version": { "message": "Vershon" },
   "about_poweredBy": { "message": "Potenciá por" },
   "about_sourceCode": { "message": "Kódigo di fuente" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Kompartí Kompartí" },
   "prefix_exit": { "message": "Salida" },
   "state_on": { "message": "Riba" },
-  "state_off": { "message": "For di" },
-  "query_hiThere": { "message": "Hi, Tin Tin" },
-  "query_translate": { "message": "Traduccion" }
+  "state_off": { "message": "For di" }
 }

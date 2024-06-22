@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Schemat kolorystyczny" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Około" },
-  "menuLabel_highlightToAsk": { "message": "Highlight-to-ask" },
-  "menuLabel_fromAnySite": { "message": "z dowolnego miejsca" },
-  "menuLabel_ask": { "message": "Zapytaj" },
-  "menuLabel_hideMenu": { "message": "Ukryj menu" },
-  "menuLabel_always": { "message": "zawsze" },
-  "menuLabel_forThisSite": { "message": "dla tej strony" },
-  "menuLabel_fromAllSites": { "message": "Wszystkie witryny" },
   "about_version": { "message": "Wersja" },
   "about_poweredBy": { "message": "Obsługiwane przez" },
   "about_sourceCode": { "message": "Kod źródłowy" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Informacja zwrotna" },
   "prefix_exit": { "message": "Wyjście" },
   "state_on": { "message": "Wł" },
-  "state_off": { "message": "Wył." },
-  "query_hiThere": { "message": "Witaj" },
-  "query_translate": { "message": "Przetłumacz " }
+  "state_off": { "message": "Wył." }
 }

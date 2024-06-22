@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Skema tal-Kulur" },
   "menuLabel_auto": { "message": "Awto" },
   "menuLabel_about": { "message": "Dwar" },
-  "menuLabel_highlightToAsk": { "message": "Enfasi biex tfittex" },
-  "menuLabel_fromAnySite": { "message": "minn kwalunkwe sit" },
-  "menuLabel_ask": { "message": "Staqsi" },
-  "menuLabel_hideMenu": { "message": "Aħbi l-menù" },
-  "menuLabel_always": { "message": "dejjem" },
-  "menuLabel_forThisSite": { "message": "għal dan is-sit" },
-  "menuLabel_fromAllSites": { "message": "mis-siti kollha" },
   "about_version": { "message": "Verżjoni" },
   "about_poweredBy": { "message": "Imħaddem minn" },
   "about_sourceCode": { "message": "Kodiċi tas-sors" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Kummenti b'reazzjoni" },
   "prefix_exit": { "message": "Ħruġ" },
   "state_on": { "message": "fil" },
-  "state_off": { "message": "Diżattivata" },
-  "query_hiThere": { "message": "Hi hemm" },
-  "query_translate": { "message": "Ittraduċi" }
+  "state_off": { "message": "Diżattivata" }
 }

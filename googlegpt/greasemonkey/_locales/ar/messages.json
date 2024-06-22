@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "مخطط الألوان" },
   "menuLabel_auto": { "message": "تلقائي" },
   "menuLabel_about": { "message": "عن وزارة الثقافة" },
-  "menuLabel_highlightToAsk": { "message": "تسليط الضوء على الطلب" },
-  "menuLabel_fromAnySite": { "message": "من أي موقع" },
-  "menuLabel_ask": { "message": "اطرح" },
-  "menuLabel_hideMenu": { "message": "إخفاء" },
-  "menuLabel_always": { "message": "always" },
-  "menuLabel_forThisSite": { "message": "عملة الموقع" },
-  "menuLabel_fromAllSites": { "message": "جميع المواقع" },
   "about_version": { "message": "الإصدار" },
   "about_poweredBy": { "message": "يستخدم" },
   "about_sourceCode": { "message": "شيفرة مصدرية" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "مشاركة الملاحظات." },
   "prefix_exit": { "message": "خروج" },
   "state_on": { "message": "تشغيل" },
-  "state_off": { "message": "إيقاف التشغيل" },
-  "query_hiThere": { "message": "أهلا وسَهلًا" },
-  "query_translate": { "message": "الترجمة" }
+  "state_off": { "message": "إيقاف التشغيل" }
 }

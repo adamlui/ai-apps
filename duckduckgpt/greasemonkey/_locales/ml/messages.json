@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "നിറം കൊടുക്കുന്ന പദ്ധതി" },
   "menuLabel_auto": { "message": "സ്വതേ" },
   "menuLabel_about": { "message": "സംബന്ധിച്ച്" },
-  "menuLabel_highlightToAsk": { "message": "ഹൈലൈറ്റ്-ടു-ഓസ്‌ക്" },
-  "menuLabel_fromAnySite": { "message": "ഏത് സൈറ്റിൽ നിന്നും" },
-  "menuLabel_ask": { "message": "ചോദിക്കുക" },
-  "menuLabel_hideMenu": { "message": "& വിഭവങ്ങള്‍ ഒളിപ്പിക്കുക" },
-  "menuLabel_always": { "message": "എല്ലായ്പ്പോഴും" },
-  "menuLabel_forThisSite": { "message": "ഈ സൈറ്റിനായി" },
-  "menuLabel_fromAllSites": { "message": "എല്ലാ സൈറ്റുകളിൽ നിന്നും" },
   "about_version": { "message": "പതിപ്പ്" },
   "about_poweredBy": { "message": "നയിച്ചത്" },
   "about_sourceCode": { "message": "സോഴ്സ് കോഡ്" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "ഫീഡ്‌ബാക്ക് പങ്കിടുക" },
   "prefix_exit": { "message": "പുറത്തു് കടക്കുക" },
   "state_on": { "message": "ഓണ്‍" },
-  "state_off": { "message": "ഓഫ്" },
-  "query_hiThere": { "message": "ഹായ്" },
-  "query_translate": { "message": "à´¤àµà´°à´¿ à´àµà´£à´" }
+  "state_off": { "message": "ഓഫ്" }
 }

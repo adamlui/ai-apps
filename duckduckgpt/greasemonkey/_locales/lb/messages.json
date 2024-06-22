@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Faarfschema" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Iwwer Qt" },
-  "menuLabel_highlightToAsk": { "message": "Benieuwd naar jouw mening laat het me weten in de comments" },
-  "menuLabel_fromAnySite": { "message": "vun any site" },
-  "menuLabel_ask": { "message": "Fro" },
-  "menuLabel_hideMenu": { "message": "Menü verstoppen" },
-  "menuLabel_always": { "message": "Emmer" },
-  "menuLabel_forThisSite": { "message": "fir dëse Site" },
-  "menuLabel_fromAllSites": { "message": "vu tous les sites" },
   "about_version": { "message": "Versioun" },
   "about_poweredBy": { "message": "Bereetgestallt vun" },
   "about_sourceCode": { "message": "Quellcode" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Feedback deelen" },
   "prefix_exit": { "message": "Zoumaachen" },
   "state_on": { "message": "Un" },
-  "state_off": { "message": "Aus" },
-  "query_hiThere": { "message": "Hi there DA" },
-  "query_translate": { "message": "Iwwersetzung" }
+  "state_off": { "message": "Aus" }
 }

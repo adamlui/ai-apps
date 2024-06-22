@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "<B B" },
   "menuLabel_auto": { "message": "Byikora" },
   "menuLabel_about": { "message": "Bigyanye" },
-  "menuLabel_highlightToAsk": { "message": "Umwanya- nkenerwa" },
-  "menuLabel_fromAnySite": { "message": "kuri site iyo ari yo yose" },
-  "menuLabel_ask": { "message": "Public files of %s%.0s" },
-  "menuLabel_hideMenu": { "message": "Ibikubiyemo" },
-  "menuLabel_always": { "message": "Buri gihe" },
-  "menuLabel_forThisSite": { "message": "kuri uru rubuga" },
-  "menuLabel_fromAllSites": { "message": "amadosiye yose" },
   "about_version": { "message": "Umukoro" },
   "about_poweredBy": { "message": "Ku" },
   "about_sourceCode": { "message": "C Inkomoko ITEGEKONGENGA" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Isubiramo" },
   "prefix_exit": { "message": "Gusohoka" },
   "state_on": { "message": "Gufungura" },
-  "state_off": { "message": "Gufunga" },
-  "query_hiThere": { "message": "Bye bye there" },
-  "query_translate": { "message": "translate" }
+  "state_off": { "message": "Gufunga" }
 }

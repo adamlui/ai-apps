@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Spalvų schema" },
   "menuLabel_auto": { "message": "Automatinis" },
   "menuLabel_about": { "message": "Apie" },
-  "menuLabel_highlightToAsk": { "message": "Paryškinti pagal užklausą" },
-  "menuLabel_fromAnySite": { "message": "iš bet kurios vietos" },
-  "menuLabel_ask": { "message": "Klauskite" },
-  "menuLabel_hideMenu": { "message": "Slėpti meniu" },
-  "menuLabel_always": { "message": "visuomet" },
-  "menuLabel_forThisSite": { "message": "šiai svetainei" },
-  "menuLabel_fromAllSites": { "message": "Visos statybvietės" },
   "about_version": { "message": "Versija" },
   "about_poweredBy": { "message": "Įgalino Proneta" },
   "about_sourceCode": { "message": "Pradinis kodas" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Išsakykite savo nuomonę" },
   "prefix_exit": { "message": "Išeiti" },
   "state_on": { "message": "Įjungta" },
-  "state_off": { "message": "Išjungta" },
-  "query_hiThere": { "message": "Sveiki." },
-  "query_translate": { "message": "Versti" }
+  "state_off": { "message": "Išjungta" }
 }

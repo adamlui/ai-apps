@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Схемаи рангҳо" },
   "menuLabel_auto": { "message": "Худкор" },
   "menuLabel_about": { "message": "Дар бораи" },
-  "menuLabel_highlightToAsk": { "message": "Ð  Ð ° Ð ¼ Ð ¾ Ð" },
-  "menuLabel_fromAnySite": { "message": "mula sa anumang site" },
-  "menuLabel_ask": { "message": "& Пурсидан" },
-  "menuLabel_hideMenu": { "message": "Пинҳон кардани & Меню" },
-  "menuLabel_always": { "message": "Ҳамеша" },
-  "menuLabel_forThisSite": { "message": "para sa site na ito" },
-  "menuLabel_fromAllSites": { "message": "mula sa lahat ng mga site" },
   "about_version": { "message": "Версия" },
   "about_poweredBy": { "message": "Нерӯмандшуда аз тарафи" },
   "about_sourceCode": { "message": "Рамзи манбаъ" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Мубодилаи фикру ақида" },
   "prefix_exit": { "message": "Баромад" },
   "state_on": { "message": "Оран" },
-  "state_off": { "message": "& Ғайри фаъол" },
-  "query_hiThere": { "message": "Салом дар он ҷо" },
-  "query_translate": { "message": "ÐÑÐ±Ð¾Ð±Ð¸ Ð¡Ð¸Ð½ÑÑ" }
+  "state_off": { "message": "& Ғайри фаъол" }
 }

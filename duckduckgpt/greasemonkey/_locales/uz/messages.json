@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Rang sxemasi" },
   "menuLabel_auto": { "message": "Avtomatik" },
   "menuLabel_about": { "message": "Qisqacha ma'lumot" },
-  "menuLabel_highlightToAsk": { "message": "Ajratish uchun soʻrov" },
-  "menuLabel_fromAnySite": { "message": "har qanday saytdan" },
-  "menuLabel_ask": { "message": "& Soʻrash" },
-  "menuLabel_hideMenu": { "message": "Menyuni yashirish" },
-  "menuLabel_always": { "message": "_Har doim" },
-  "menuLabel_forThisSite": { "message": "ushbu sayt uchun" },
-  "menuLabel_fromAllSites": { "message": "Hamma fayllar" },
   "about_version": { "message": "Versiya" },
   "about_poweredBy": { "message": "Tomonidan qo'llab-quvvatlanadi" },
   "about_sourceCode": { "message": "Ochiq kod" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Fikr-mulohazangizni baham ko'ring" },
   "prefix_exit": { "message": "Chiqish" },
   "state_on": { "message": "Yoniq" },
-  "state_off": { "message": "O'chirilgan" },
-  "query_hiThere": { "message": "salom" },
-  "query_translate": { "message": "Tarjimalar" }
+  "state_off": { "message": "O'chirilgan" }
 }

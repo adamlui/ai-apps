@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Azenziɣ n yini" },
   "menuLabel_auto": { "message": "Awurman" },
   "menuLabel_about": { "message": "Talɣut ɣef" },
-  "menuLabel_highlightToAsk": { "message": "Adjectifs à Adjectifs" },
-  "menuLabel_fromAnySite": { "message": "si yal amkan" },
-  "menuLabel_ask": { "message": "Steqsi" },
-  "menuLabel_hideMenu": { "message": "Ffren afaylu" },
-  "menuLabel_always": { "message": "Yalas" },
-  "menuLabel_forThisSite": { "message": "i usmel-agi" },
-  "menuLabel_fromAllSites": { "message": "seg yal iminig" },
   "about_version": { "message": "Lqem" },
   "about_poweredBy": { "message": "Yettunefk-d sɣur" },
   "about_sourceCode": { "message": "Tangalt aγbalu" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Rnu tiririt" },
   "prefix_exit": { "message": "Ffeγ" },
   "state_on": { "message": "Yermed" },
-  "state_off": { "message": "Yensa" },
-  "query_hiThere": { "message": "Azul dinna," },
-  "query_translate": { "message": "Suqel" }
+  "state_off": { "message": "Yensa" }
 }

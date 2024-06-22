@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Ibara ry'urukoba" },
   "menuLabel_auto": { "message": "Imodoka" },
   "menuLabel_about": { "message": "Ku vyerekeye" },
-  "menuLabel_highlightToAsk": { "message": "Akari Asagiri - Akari Asagiri" },
-  "menuLabel_fromAnySite": { "message": "urubuga urwo ari rwo rwose" },
-  "menuLabel_ask": { "message": "Saba" },
-  "menuLabel_hideMenu": { "message": "Guhisha imenyu" },
-  "menuLabel_always": { "message": "yamaho Yama" },
-  "menuLabel_forThisSite": { "message": "kuri uru rubuga" },
-  "menuLabel_fromAllSites": { "message": "ku mbuga zose" },
   "about_version": { "message": "Traduzione" },
   "about_poweredBy": { "message": "Yashizwe mu ngiro na" },
   "about_sourceCode": { "message": "Ikodi y'isôko" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Gira ico ushikirije" },
   "prefix_exit": { "message": "Gusohoka" },
   "state_on": { "message": "Ku" },
-  "state_off": { "message": "Numa Numa" },
-  "query_hiThere": { "message": "Hi there None None" },
-  "query_translate": { "message": "Traduzione" }
+  "state_off": { "message": "Numa Numa" }
 }

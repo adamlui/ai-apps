@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Odabir boje" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "O nama" },
-  "menuLabel_highlightToAsk": { "message": "Istakni-u-pitaj" },
-  "menuLabel_fromAnySite": { "message": "s bilo kojeg mjesta" },
-  "menuLabel_ask": { "message": "Pitaj" },
-  "menuLabel_hideMenu": { "message": "Sakrij izbornik" },
-  "menuLabel_always": { "message": "uvijek" },
-  "menuLabel_forThisSite": { "message": "za ovu stranicu" },
-  "menuLabel_fromAllSites": { "message": "Sve datoteke" },
   "about_version": { "message": "Verzija" },
   "about_poweredBy": { "message": "Pokreće" },
   "about_sourceCode": { "message": "Izvorni kod" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Podijeli komentar" },
   "prefix_exit": { "message": "Izlaz" },
   "state_on": { "message": "On (Uključeno)" },
-  "state_off": { "message": "Isključivanje" },
-  "query_hiThere": { "message": "Bok... " },
-  "query_translate": { "message": "Prevedi" }
+  "state_off": { "message": "Isključivanje" }
 }

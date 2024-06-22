@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Fargepalett" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Om" },
-  "menuLabel_highlightToAsk": { "message": "Fremhev å spørre" },
-  "menuLabel_fromAnySite": { "message": "fra hvilket som helst nettsted" },
-  "menuLabel_ask": { "message": "Ask" },
-  "menuLabel_hideMenu": { "message": "Gøym meny" },
-  "menuLabel_always": { "message": "alltid" },
-  "menuLabel_forThisSite": { "message": "for denne siden" },
-  "menuLabel_fromAllSites": { "message": "fra alle nettsteder" },
   "about_version": { "message": "Versjon" },
   "about_poweredBy": { "message": "Drevet av" },
   "about_sourceCode": { "message": "Kildekode" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Tilbakemeldinger" },
   "prefix_exit": { "message": "Utgang" },
   "state_on": { "message": "På" },
-  "state_off": { "message": "Av" },
-  "query_hiThere": { "message": "Hei" },
-  "query_translate": { "message": "Oversett" }
+  "state_off": { "message": "Av" }
 }

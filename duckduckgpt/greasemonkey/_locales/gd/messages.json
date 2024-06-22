@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Sgeama dhathan" },
   "menuLabel_auto": { "message": "Gu fèin-obrachail" },
   "menuLabel_about": { "message": "Mar deidhinn" },
-  "menuLabel_highlightToAsk": { "message": "Highlight - to - assk" },
-  "menuLabel_fromAnySite": { "message": "bho làrach sam bith" },
-  "menuLabel_ask": { "message": "Iarr" },
-  "menuLabel_hideMenu": { "message": "Falaich a 'chlàr - taice" },
-  "menuLabel_always": { "message": "an - còmhnaidh" },
-  "menuLabel_forThisSite": { "message": "airson an làrach seo" },
-  "menuLabel_fromAllSites": { "message": "bho gach làrach" },
   "about_version": { "message": "Tionndadh" },
   "about_poweredBy": { "message": "Powered by" },
   "about_sourceCode": { "message": "Bun-tùs a' chod" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Share Feedback" },
   "prefix_exit": { "message": "Slighe a-mach" },
   "state_on": { "message": "air" },
-  "state_off": { "message": "Off" },
-  "query_hiThere": { "message": "Hello ann" },
-  "query_translate": { "message": "Eadar - theangaich" }
+  "state_off": { "message": "Off" }
 }

@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Kleurenschema" },
   "menuLabel_auto": { "message": "Automatisch" },
   "menuLabel_about": { "message": "Over" },
-  "menuLabel_highlightToAsk": { "message": "Highlight-to-ask" },
-  "menuLabel_fromAnySite": { "message": "vanaf elke locatie" },
-  "menuLabel_ask": { "message": "Vragen stellen" },
-  "menuLabel_hideMenu": { "message": "Menu verbergen" },
-  "menuLabel_always": { "message": "altijd" },
-  "menuLabel_forThisSite": { "message": "voor deze site" },
-  "menuLabel_fromAllSites": { "message": "Alle Sites" },
   "about_version": { "message": "Versie" },
   "about_poweredBy": { "message": "Ondersteund door" },
   "about_sourceCode": { "message": "Broncode" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Deel feedback" },
   "prefix_exit": { "message": "Exit" },
   "state_on": { "message": "Incident melden" },
-  "state_off": { "message": "Uit" },
-  "query_hiThere": { "message": "Goedendag" },
-  "query_translate": { "message": "Vertaal" }
+  "state_off": { "message": "Uit" }
 }

@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Fuafuaga lanu" },
   "menuLabel_auto": { "message": "Taavale" },
   "menuLabel_about": { "message": "E uiga i" },
-  "menuLabel_highlightToAsk": { "message": "Maualuga-faamaoniga" },
-  "menuLabel_fromAnySite": { "message": "mai so o se nofoaga" },
-  "menuLabel_ask": { "message": "Fesili" },
-  "menuLabel_hideMenu": { "message": "Hide menu" },
-  "menuLabel_always": { "message": "I taimi uma" },
-  "menuLabel_forThisSite": { "message": "mo lenei 'upega tafaʻilagi" },
-  "menuLabel_fromAllSites": { "message": "mai nofoaga uma" },
   "about_version": { "message": "Faaliliuga" },
   "about_poweredBy": { "message": "Malosiaga e ala i" },
   "about_sourceCode": { "message": "Punaoa code" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Faasoa atu Feedback" },
   "prefix_exit": { "message": "Alu'ese" },
   "state_on": { "message": "I luga o" },
-  "state_off": { "message": "ALU!" },
-  "query_hiThere": { "message": "Talofa iina" },
-  "query_translate": { "message": "Faaliliuga" }
+  "state_off": { "message": "ALU!" }
 }

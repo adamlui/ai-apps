@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Barevné schéma" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "O" },
-  "menuLabel_highlightToAsk": { "message": "Zvýraznění úkolu" },
-  "menuLabel_fromAnySite": { "message": "z jakéhokoli místa" },
-  "menuLabel_ask": { "message": "Dotázat" },
-  "menuLabel_hideMenu": { "message": "Skrýt nabídku" },
-  "menuLabel_always": { "message": "vždy" },
-  "menuLabel_forThisSite": { "message": "(pro tento web)" },
-  "menuLabel_fromAllSites": { "message": "Všechny weby" },
   "about_version": { "message": "Verze" },
   "about_poweredBy": { "message": "Běží na" },
   "about_sourceCode": { "message": "Zdrojový kód" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Zpětná vazba" },
   "prefix_exit": { "message": "Východ/výjezd" },
   "state_on": { "message": "Zapnuto" },
-  "state_off": { "message": "Vypnuto" },
-  "query_hiThere": { "message": "Dobrý den," },
-  "query_translate": { "message": "Přeložit" }
+  "state_off": { "message": "Vypnuto" }
 }

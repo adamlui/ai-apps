@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Imibala" },
   "menuLabel_auto": { "message": "Ezenzekelayo" },
   "menuLabel_about": { "message": "Malunga" },
-  "menuLabel_highlightToAsk": { "message": "Yenza ibonakale into ekufuneka yenziwe" },
-  "menuLabel_fromAnySite": { "message": "isuka nakweyiphi na iwebhusayithi" },
-  "menuLabel_ask": { "message": "Buza" },
-  "menuLabel_hideMenu": { "message": "Fihla imenyu" },
-  "menuLabel_always": { "message": "Rhoqo" },
-  "menuLabel_forThisSite": { "message": "kule webhusayithi" },
-  "menuLabel_fromAllSites": { "message": "kuzo zonke iiwebhusayithi" },
   "about_version": { "message": "Inguqulelo" },
   "about_poweredBy": { "message": "Ixhaswa ngu" },
   "about_sourceCode": { "message": "Ikhowudi engumthombo" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Yabelana ngengxelo yakho" },
   "prefix_exit": { "message": "Phuma" },
   "state_on": { "message": "Inye" },
-  "state_off": { "message": "cima" },
-  "query_hiThere": { "message": "Molo apho!" },
-  "query_translate": { "message": "Uguqulelo lomsebenzi kolunye ulwimi" }
+  "state_off": { "message": "cima" }
 }

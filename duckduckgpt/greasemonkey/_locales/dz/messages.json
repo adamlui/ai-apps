@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "ཚོས་གཞི་འཆར་གཞི་" },
   "menuLabel_auto": { "message": "རང་མགོ་རང་འདྲོངས་" },
   "menuLabel_about": { "message": "སྐོར་ལས་" },
-  "menuLabel_highlightToAsk": { "message": "སེལ་འཐུ་འབད་སའི་གནས་ཡིག" },
-  "menuLabel_fromAnySite": { "message": "ཝིང་བེསི་ཊི་ཡཱན་ལས་" },
-  "menuLabel_ask": { "message": "དྲིས་ལན།" },
-  "menuLabel_hideMenu": { "message": "ཁ་བྱང་སྦ་བཞག" },
-  "menuLabel_always": { "message": "ཨ་རྟག་རང་།" },
-  "menuLabel_forThisSite": { "message": "འདི་གི་དོན་ལུ་" },
-  "menuLabel_fromAllSites": { "message": "ས་སྒོ་ག་ར་ནང་ལས་" },
   "about_version": { "message": "ཐོན་རིམ།" },
   "about_poweredBy": { "message": "དབང་ཤུགས་ཀྱི་ཐོག་ལས་" },
   "about_sourceCode": { "message": "ཐོན་ཁུངས་ཀོཌ་" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "འདྲ་བཤུས་བགོ་བཤའ་རྐྱབས།" },
   "prefix_exit": { "message": "ཐོན་ཐོ།" },
   "state_on": { "message": "སྤོ་བཤུད་འབད་" },
-  "state_off": { "message": "སེལ་འཐུ་འབད།" },
-  "query_hiThere": { "message": "དྲིན་ལན་འཇལ་གནང་།" },
-  "query_translate": { "message": "སྐད་བསྒྱུར་འབད་" }
+  "state_off": { "message": "སེལ་འཐུ་འབད།" }
 }

@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Färgschema" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Om" },
-  "menuLabel_highlightToAsk": { "message": "Markera-till-fråga" },
-  "menuLabel_fromAnySite": { "message": "från vilken webbplats som helst" },
-  "menuLabel_ask": { "message": "Fråga" },
-  "menuLabel_hideMenu": { "message": "Göm menyn" },
-  "menuLabel_always": { "message": "always" },
-  "menuLabel_forThisSite": { "message": "(för denna webbplats)" },
-  "menuLabel_fromAllSites": { "message": "Alla webplatser" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Drivs av" },
   "about_sourceCode": { "message": "Källkod" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Dela feedback" },
   "prefix_exit": { "message": "Avsluta" },
   "state_on": { "message": "På" },
-  "state_off": { "message": "Av" },
-  "query_hiThere": { "message": "Hejsan" },
-  "query_translate": { "message": "Översätt" }
+  "state_off": { "message": "Av" }
 }

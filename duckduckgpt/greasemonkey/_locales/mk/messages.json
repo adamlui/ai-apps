@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Шема на бои" },
   "menuLabel_auto": { "message": "Автоматски" },
   "menuLabel_about": { "message": "За" },
-  "menuLabel_highlightToAsk": { "message": "Означете за да побарате" },
-  "menuLabel_fromAnySite": { "message": "од која било страница" },
-  "menuLabel_ask": { "message": "Прашај" },
-  "menuLabel_hideMenu": { "message": "Скриј го менито" },
-  "menuLabel_always": { "message": "Секогаш" },
-  "menuLabel_forThisSite": { "message": "за оваа страница" },
-  "menuLabel_fromAllSites": { "message": "Сите страници" },
   "about_version": { "message": "Верзија" },
   "about_poweredBy": { "message": "Поддржано од" },
   "about_sourceCode": { "message": "@ info: whatsthis" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Споделете повратен коментар" },
   "prefix_exit": { "message": "Излези" },
   "state_on": { "message": "На" },
-  "state_off": { "message": "Исклучено" },
-  "query_hiThere": { "message": "Здраво!" },
-  "query_translate": { "message": "Преведи" }
+  "state_off": { "message": "Исклучено" }
 }

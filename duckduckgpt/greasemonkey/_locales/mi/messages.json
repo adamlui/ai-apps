@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "_Huri" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Mō" },
-  "menuLabel_highlightToAsk": { "message": "Highlight-to-ask" },
-  "menuLabel_fromAnySite": { "message": "mai i tetahi pae" },
-  "menuLabel_ask": { "message": "" },
-  "menuLabel_hideMenu": { "message": "Menu Hide" },
-  "menuLabel_always": { "message": "he aroha mau roa" },
-  "menuLabel_forThisSite": { "message": "mō tēnei pae" },
-  "menuLabel_fromAllSites": { "message": "Whakapiri" },
   "about_version": { "message": "Whakaaturanga" },
   "about_poweredBy": { "message": "Te mana o te mana" },
   "about_sourceCode": { "message": "Waehere puna" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Whakawhitiwhiti kōrero" },
   "prefix_exit": { "message": "Whakawhiti" },
   "state_on": { "message": "runga" },
-  "state_off": { "message": "..e whakaweto ana." },
-  "query_hiThere": { "message": "Kia ora i reira" },
-  "query_translate": { "message": "he aha te tikanga" }
+  "state_off": { "message": "..e whakaweto ana." }
 }

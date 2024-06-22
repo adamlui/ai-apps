@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Barvna shema" },
   "menuLabel_auto": { "message": "Samodejno" },
   "menuLabel_about": { "message": "Vizitka" },
-  "menuLabel_highlightToAsk": { "message": "Poudarite z vprašanjem" },
-  "menuLabel_fromAnySite": { "message": "s katerega koli spletnega mesta" },
-  "menuLabel_ask": { "message": "Vprašajte" },
-  "menuLabel_hideMenu": { "message": "Skrij meni" },
-  "menuLabel_always": { "message": "vedno" },
-  "menuLabel_forThisSite": { "message": "za to spletno mesto" },
-  "menuLabel_fromAllSites": { "message": "Vsa spletna mesta" },
   "about_version": { "message": "Različica" },
   "about_poweredBy": { "message": "Poganja" },
   "about_sourceCode": { "message": "Kliknite tukaj za prenos izvorne kode" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Delite povratne informacije" },
   "prefix_exit": { "message": "Izhod" },
   "state_on": { "message": "Vklopljeno" },
-  "state_off": { "message": "Off" },
-  "query_hiThere": { "message": "Pozdravljeni!" },
-  "query_translate": { "message": "Translate" }
+  "state_off": { "message": "Off" }
 }

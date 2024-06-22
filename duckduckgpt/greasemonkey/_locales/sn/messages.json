@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Ruvara Scheme" },
   "menuLabel_auto": { "message": "Auto" },
   "menuLabel_about": { "message": "Nezvedu" },
-  "menuLabel_highlightToAsk": { "message": "Chidziwitso-kuti-chidziwitso" },
-  "menuLabel_fromAnySite": { "message": "kubva chero nzvimbo" },
-  "menuLabel_ask": { "message": "Bvunza" },
-  "menuLabel_hideMenu": { "message": "HIDE MENU" },
-  "menuLabel_always": { "message": "nguva dzose" },
-  "menuLabel_forThisSite": { "message": "nokuti nzvimbo iyi" },
-  "menuLabel_fromAllSites": { "message": "kubva kumasayiti ose" },
   "about_version": { "message": "Vhezheni" },
   "about_poweredBy": { "message": "Inofambiswa ne" },
   "about_sourceCode": { "message": "Kunobva kodhi" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Taura nesu" },
   "prefix_exit": { "message": "Buda" },
   "state_on": { "message": "Pana" },
-  "state_off": { "message": "ZVIMWE" },
-  "query_hiThere": { "message": "Mhoroi" },
-  "query_translate": { "message": "Dudziro" }
+  "state_off": { "message": "ZVIMWE" }
 }

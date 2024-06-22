@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "நிற அமைப்பு" },
   "menuLabel_auto": { "message": "தானியங்கி" },
   "menuLabel_about": { "message": "பற்றி" },
-  "menuLabel_highlightToAsk": { "message": "முன்னிலைப்படுத்தல்-பணி" },
-  "menuLabel_fromAnySite": { "message": "எந்தத் தளத்திலிருந்தும்" },
-  "menuLabel_ask": { "message": "கேளுங்கள்." },
-  "menuLabel_hideMenu": { "message": "பட்டியலை & மறை" },
-  "menuLabel_always": { "message": "எப்போதும்" },
-  "menuLabel_forThisSite": { "message": "இந்த தளத்திற்கு" },
-  "menuLabel_fromAllSites": { "message": "எல்லா தளங்களிலிருந்தும்" },
   "about_version": { "message": "பதிப்பு" },
   "about_poweredBy": { "message": "மூலம் இயக்கப்படுகிறது" },
   "about_sourceCode": { "message": "@ info: whatsthis" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "பின்னூட்டத்தைப் பகிரவும்" },
   "prefix_exit": { "message": "வெளியேறு" },
   "state_on": { "message": "மீது" },
-  "state_off": { "message": "நிறுத்துக" },
-  "query_hiThere": { "message": "வணக்கம்!" },
-  "query_translate": { "message": "மொழிமாற்று" }
+  "state_off": { "message": "நிறுத்துக" }
 }

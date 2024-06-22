@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "ชุดสีplasma name" },
   "menuLabel_auto": { "message": "อัตโนมัติ" },
   "menuLabel_about": { "message": "เกี่ยวกับ" },
-  "menuLabel_highlightToAsk": { "message": "ไฮไลต์ต่องาน" },
-  "menuLabel_fromAnySite": { "message": "จากเว็บไซต์ใดก็ได้" },
-  "menuLabel_ask": { "message": "ถามคำถาม" },
-  "menuLabel_hideMenu": { "message": "ซ่อนเมนู" },
-  "menuLabel_always": { "message": "เสมอ" },
-  "menuLabel_forThisSite": { "message": "สำหรับเว็บไซต์นี้" },
-  "menuLabel_fromAllSites": { "message": "เว็บไซต์ทั้งหมด" },
   "about_version": { "message": "เวอร์ชัน" },
   "about_poweredBy": { "message": "สนับสนุนโดย" },
   "about_sourceCode": { "message": "รหัสต้นฉบับ" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "ข้อเสนอแนะ" },
   "prefix_exit": { "message": "ออก" },
   "state_on": { "message": "เปิด" },
-  "state_off": { "message": "ปิด" },
-  "query_hiThere": { "message": "สวัสดีค่ะ" },
-  "query_translate": { "message": "แปล" }
+  "state_off": { "message": "ปิด" }
 }

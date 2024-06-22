@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "বর্ণবিন্যাস" },
   "menuLabel_auto": { "message": "স্বয়ংক্রিয়" },
   "menuLabel_about": { "message": "সম্বন্ধে" },
-  "menuLabel_highlightToAsk": { "message": "হাইলাইট-টু-টাস্ক" },
-  "menuLabel_fromAnySite": { "message": "যে কোনও সাইট থেকে" },
-  "menuLabel_ask": { "message": "জিজ্ঞেস করা" },
-  "menuLabel_hideMenu": { "message": "মেনু লুকান" },
-  "menuLabel_always": { "message": "সর্বদা" },
-  "menuLabel_forThisSite": { "message": "এই সাইটের জন্য" },
-  "menuLabel_fromAllSites": { "message": "সমস্ত সাইট থেকে" },
   "about_version": { "message": "সংস্করণ" },
   "about_poweredBy": { "message": "নিবেদন করছেন" },
   "about_sourceCode": { "message": "সোর্স কোড" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "ফিডব্যাক শেয়ার করুন" },
   "prefix_exit": { "message": "বের হয়ে যান" },
   "state_on": { "message": "চালু" },
-  "state_off": { "message": "বন্ধ" },
-  "query_hiThere": { "message": "হাই!" },
-  "query_translate": { "message": "অনুবাদ করুন" }
+  "state_off": { "message": "বন্ধ" }
 }

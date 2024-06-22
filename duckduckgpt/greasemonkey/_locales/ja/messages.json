@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "配色" },
   "menuLabel_auto": { "message": "自動" },
   "menuLabel_about": { "message": "詳細" },
-  "menuLabel_highlightToAsk": { "message": "ハイライト- to - ask" },
-  "menuLabel_fromAnySite": { "message": "任意のサイトから" },
-  "menuLabel_ask": { "message": "ニュースをニュースする" },
-  "menuLabel_hideMenu": { "message": "メニューを隠す" },
-  "menuLabel_always": { "message": "常に" },
-  "menuLabel_forThisSite": { "message": "このサイトの" },
-  "menuLabel_fromAllSites": { "message": "すべてのサイト" },
   "about_version": { "message": "バージョン" },
   "about_poweredBy": { "message": "搭載" },
   "about_sourceCode": { "message": "ソースコード" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "フィードバックを送る" },
   "prefix_exit": { "message": "終了" },
   "state_on": { "message": "オン" },
-  "state_off": { "message": "オフ" },
-  "query_hiThere": { "message": "こんにちは" },
-  "query_translate": { "message": "翻訳" }
+  "state_off": { "message": "オフ" }
 }

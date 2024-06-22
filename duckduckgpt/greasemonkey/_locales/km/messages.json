@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "គ្រោងការណ៍ពណ៌" },
   "menuLabel_auto": { "message": "អូតូ" },
   "menuLabel_about": { "message": "អំពី" },
-  "menuLabel_highlightToAsk": { "message": "បន្លិច ទៅ សំណួរ" },
-  "menuLabel_fromAnySite": { "message": "ពីគេហទំព័រណាមួយ" },
-  "menuLabel_ask": { "message": "សួរ" },
-  "menuLabel_hideMenu": { "message": "លាក់ម៉ឺនុយ" },
-  "menuLabel_always": { "message": "ជានិច្ចកាល" },
-  "menuLabel_forThisSite": { "message": "សម្រាប់គេហទំព័រនេះ" },
-  "menuLabel_fromAllSites": { "message": "ពីគ្រប់គេហទំព័រទាំងអស់" },
   "about_version": { "message": "លេខជំនាន់កម្មវិធី" },
   "about_poweredBy": { "message": "ដំណើរការដោយ" },
   "about_sourceCode": { "message": "កូដដើម" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "ចែករំលែកមតិកែលម្អ" },
   "prefix_exit": { "message": "ច្រកចេញ" },
   "state_on": { "message": "ស្តីពី" },
-  "state_off": { "message": "បិទ" },
-  "query_hiThere": { "message": "សួស្តី!" },
-  "query_translate": { "message": "បកប្រែ" }
+  "state_off": { "message": "បិទ" }
 }

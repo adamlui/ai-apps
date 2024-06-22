@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Skema Warna" },
   "menuLabel_auto": { "message": "Otomatis" },
   "menuLabel_about": { "message": "Ihwal" },
-  "menuLabel_highlightToAsk": { "message": "Sorot untuk ditanyakan" },
-  "menuLabel_fromAnySite": { "message": "dari situs mana pun" },
-  "menuLabel_ask": { "message": "Tanya" },
-  "menuLabel_hideMenu": { "message": "Sembunyikan menu" },
-  "menuLabel_always": { "message": "selalu" },
-  "menuLabel_forThisSite": { "message": "untuk situs ini" },
-  "menuLabel_fromAllSites": { "message": "dari semua situs" },
   "about_version": { "message": "Versi" },
   "about_poweredBy": { "message": "Didukung oleh" },
   "about_sourceCode": { "message": "Kode sumber" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Umpan Balik" },
   "prefix_exit": { "message": "Keluar" },
   "state_on": { "message": "Hidup (On)" },
-  "state_off": { "message": "Mati (Off)" },
-  "query_hiThere": { "message": "Halo" },
-  "query_translate": { "message": "Terjemahkan" }
+  "state_off": { "message": "Mati (Off)" }
 }

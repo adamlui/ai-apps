@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Farva" },
   "menuLabel_auto": { "message": "Bilur" },
   "menuLabel_about": { "message": "Um" },
-  "menuLabel_highlightToAsk": { "message": "Uppheftir-til-uppgáva" },
-  "menuLabel_fromAnySite": { "message": "á einum og hvørjum staði" },
-  "menuLabel_ask": { "message": "Spyr" },
-  "menuLabel_hideMenu": { "message": "Dylja menyu" },
-  "menuLabel_always": { "message": "Altíð." },
-  "menuLabel_forThisSite": { "message": "fyri hesa heimasíðuna" },
-  "menuLabel_fromAllSites": { "message": "á hvørjum staði" },
   "about_version": { "message": "Útgáva" },
   "about_poweredBy": { "message": "Dreivin av" },
   "about_sourceCode": { "message": "Ada keldukota" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "Deil afturmelding" },
   "prefix_exit": { "message": "Útgangur" },
   "state_on": { "message": "t" },
-  "state_off": { "message": "Av" },
-  "query_hiThere": { "message": "Heilsan er her" },
-  "query_translate": { "message": "Umsetja" }
+  "state_off": { "message": "Av" }
 }

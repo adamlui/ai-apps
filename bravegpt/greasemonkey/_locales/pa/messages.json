@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "ਰੰਗ ਸਕੀਮ" },
   "menuLabel_auto": { "message": "ਆਟੋ" },
   "menuLabel_about": { "message": "ਇਸ ਬਾਰੇ" },
-  "menuLabel_highlightToAsk": { "message": "ਹਾਈਲਾਈਟ-ਟੂ-ਕਾਸਕ" },
-  "menuLabel_fromAnySite": { "message": "ਕਿਸੇ ਵੀ ਸਾਈਟ ਤੋਂ" },
-  "menuLabel_ask": { "message": "ਪੁੱਛੋ" },
-  "menuLabel_hideMenu": { "message": "ਮੇਨੂ ਓਹਲੇ" },
-  "menuLabel_always": { "message": "ਹਮੇਸ਼ਾ" },
-  "menuLabel_forThisSite": { "message": "ਇਸ ਸਾਈਟ ਲਈ" },
-  "menuLabel_fromAllSites": { "message": "ਸਾਰੀਆਂ ਸਾਈਟਾਂ ਤੋਂ" },
   "about_version": { "message": "ਵਰਜਨ" },
   "about_poweredBy": { "message": "ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },
   "about_sourceCode": { "message": "ਸਰੋਤ ਕੋਡ@ info: whatsthis" },
@@ -79,7 +72,5 @@
   "link_shareFeedback": { "message": "ਸੁਝਾਅ" },
   "prefix_exit": { "message": "ਬਾਹਰ ਨਿਕਲੋ" },
   "state_on": { "message": "ਚਾਲੂ" },
-  "state_off": { "message": "ਬੰਦ" },
-  "query_hiThere": { "message": "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਜੀ" },
-  "query_translate": { "message": "ਅਨੁਵਾਦ" }
+  "state_off": { "message": "ਬੰਦ" }
 }

@@ -15,13 +15,6 @@
   "menuLabel_colorScheme": { "message": "Qorshaha Midabka" },
   "menuLabel_auto": { "message": "Baabuur" },
   "menuLabel_about": { "message": "Jabuuti" },
-  "menuLabel_highlightToAsk": { "message": "Iftiinka sare ee shaqada" },
-  "menuLabel_fromAnySite": { "message": "laga bilaabo goob kasta" },
-  "menuLabel_ask": { "message": "Weydii" },
-  "menuLabel_hideMenu": { "message": "Qari menu" },
-  "menuLabel_always": { "message": "Mar walba" },
-  "menuLabel_forThisSite": { "message": "loogu talagalay boggan" },
-  "menuLabel_fromAllSites": { "message": "ka dhammaan goobaha" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Waxa fudaydiyay" },
   "about_sourceCode": { "message": "Koodhka isha" },
@@ -78,7 +71,5 @@
   "link_shareFeedback": { "message": "Nala wadaag war-celintaada" },
   "prefix_exit": { "message": "Bixid" },
   "state_on": { "message": "Shid" },
-  "state_off": { "message": "Dami" },
-  "query_hiThere": { "message": "Waad salaaman tahay!" },
-  "query_translate": { "message": "Translate" }
+  "state_off": { "message": "Dami" }
 }
