@@ -51,10 +51,6 @@
 
 <img src="https://media.googlegpt.io/images/screenshots/desktop/font-size-slider.gif">
 
-### Ask from any website:
-
-<img width=565 src="https://media.googlegpt.io/images/screenshots/desktop/what-are-userscripts-asktip-on-greasy-fork.png?latest">
-
 <br>
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
