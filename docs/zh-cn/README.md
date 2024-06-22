@@ -34,7 +34,7 @@
 
 ### <img src="https://media.bravegpt.com/images/icons/bravegpt/icon48.png?latest" width=18> [BraveGPT](../../bravegpt) &nbsp;<a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> 为 Brave Search 添加 AI 答案。可从任何网站提问。由 GPT-4o 提供支持！
+> 为 Brave Search 添加 AI 答案（由 GPT-4o 提供支持！）
 <br>[安装](https://github.com/adamlui/chatgpt-apps/tree/main/bravegpt#-installation) /
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/bravegpt#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
@@ -69,14 +69,14 @@
 
 ### <img src="https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?latest" width=17> [DuckDuckGPT](../../duckduckgpt) &nbsp;<a href="https://www.producthunt.com/posts/duckduckgpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-duckduckgpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=379261&theme=light" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-> 为 DuckDuckGo 添加 AI 答案。可从任何网站提问。由 GPT-4o 提供支持！
+> 为 DuckDuckGo 添加 AI 答案（由 GPT-4o 提供支持！）
 <br>[安装](https://github.com/adamlui/chatgpt-apps/tree/main/duckduckgpt#-installation) /
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/duckduckgpt#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
 
 ### <picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.googlegpt.io/images/icons/googlegpt/white/icon32.png?latest"><img width=17 src="https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?latest"></picture> [GoogleGPT](../../googlegpt) &nbsp;<a href="https://github.com/awesome-scripts/awesome-userscripts#privacy"><img src="https://awesome.re/mentioned-badge.svg" style="margin:0 0 -2px 5px"></a>
 
-> 为 Google Search 添加 AI 答案。可从任何网站提问。由 Google Gemma + GPT-4o 提供支持！
+> 为 Google Search 添加 AI 答案（由 Google Gemma + GPT-4o 提供支持！）
 <br>[安装](https://greasyfork.org/scripts/478597-googlegpt) /
 [自述文件](https://github.com/adamlui/chatgpt-apps/tree/main/googlegpt#readme) /
 [讨论](https://github.com/adamlui/chatgpt-apps/discussions)
