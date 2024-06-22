@@ -158,11 +158,11 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.11
+// @version             2024.6.21.12
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
-// @compatible          chrome
+// @compatible          chrome except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible          firefox
 // @compatible          edge except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible          safari
@@ -217,7 +217,8 @@
 (async () => {
 
     // Init ENV FLAGS
-    const isFirefox = chatgpt.browser.isFirefox(),
+    const isChrome = JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome'),
+          isFirefox = chatgpt.browser.isFirefox(),
           isEdge = JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge'),
           isBrave = JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'),
           isMobile = chatgpt.browser.isMobile(),
@@ -246,7 +247,7 @@
     if (!config.fontSize) saveSetting('fontSize', isMobile ? 14 : 16.55) // init reply font size if unset
     if ( // disable streaming in unspported envs
         !/Tampermonkey|ScriptCat/.test(getUserscriptManager()) // unsupported userscript manager
-        || getUserscriptManager() == 'Tampermonkey' && (isEdge || isBrave) // Tampermonkey in browser that triggers STATUS_ACCESS_VIOLATION
+        || getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave) // TM in browser that triggers STATUS_ACCESS_VIOLATION
     ) saveSetting('streamingDisabled', true)
     if (!config.notFirstRun) { // first run inits
         if (isMobile) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
@@ -359,10 +360,10 @@
                                     : '' )
                             + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
                             + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`)
-                } else if (getUserscriptManager() == 'Tampermonkey' && (isEdge || isBrave)) // alert TM/browser unsupported, suggest ScriptCat
+                } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) // alert TM/browser unsupported, suggest SC
                     siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                         `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
-                            + `${ isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
+                            + `${ isChrome ? 'Chrome' : isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
                             + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
                                 + `${ msgs.alert_instead || 'instead' }.`)
                 else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode

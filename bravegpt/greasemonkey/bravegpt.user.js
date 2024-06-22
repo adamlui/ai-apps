@@ -151,11 +151,11 @@
 // @description:zu      Faka izimpendulo ze-AI eceleni kwe-Brave Search. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.10
+// @version             2024.6.21.11
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
-// @compatible          chrome
+// @compatible          chrome except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible          firefox
 // @compatible          edge except for Streaming Mode w/ Tampermonkey (use ScriptCat instead)
 // @compatible          opera after allowing userscript manager access to search page results in opera://extensions
@@ -209,7 +209,8 @@
 setTimeout(async () => {
 
     // Init BROWSER FLAGS
-    const isFirefox = chatgpt.browser.isFirefox(),
+    const isChrome = JSON.stringify(navigator.userAgentData?.brands)?.includes('Chrome'),
+          isFirefox = chatgpt.browser.isFirefox(),
           isEdge = JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge'),
           isBrave = JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'),
           isMobile = chatgpt.browser.isMobile(),
@@ -236,7 +237,7 @@ setTimeout(async () => {
     if (!config.fontSize) saveSetting('fontSize', 16) // init reply font size if unset
     if ( // disable streaming in unspported envs
         !/Tampermonkey|ScriptCat/.test(getUserscriptManager()) // unsupported userscript manager
-        || getUserscriptManager() == 'Tampermonkey' && (isEdge || isBrave) // Tampermonkey in browser that triggers STATUS_ACCESS_VIOLATION
+        || getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave) // TM in browser that triggers STATUS_ACCESS_VIOLATION
     ) saveSetting('streamingDisabled', true)
     if (!config.notFirstRun) config.greetUser = true // for after msgs load
     saveSetting('notFirstRun', true)
@@ -347,10 +348,10 @@ setTimeout(async () => {
                                     : '' )
                             + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
                             + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`)
-                } else if (getUserscriptManager() == 'Tampermonkey' && (isEdge || isBrave)) // alert TM/browser unsupported, suggest ScriptCat
+                } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) // alert TM/browser unsupported, suggest SC
                     siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
                         `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
-                            + `${ isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
+                            + `${ isChrome ? 'Chrome' : isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
                             + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
                                 + `${ msgs.alert_instead || 'instead' }.`)
                 else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
