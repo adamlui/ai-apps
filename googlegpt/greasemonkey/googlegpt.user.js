@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.22
+// @version             2024.6.22.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -713,14 +713,14 @@
 
             // Clone button to replace listener to not dismiss modal on click
             const newBtn = btn.cloneNode(true) ; btn.parentNode.replaceChild(newBtn, btn)
-            newBtn.addEventListener('click', event => {
+            newBtn.onclick = event => {
                 event.stopPropagation() // disable chatgpt.js dismissAlert()
                 updateScheme(btnScheme) // call corresponding scheme func
                 schemeModal.querySelectorAll('button').forEach(btn => btn.classList = '') // clear prev emphasized active scheme
                 newBtn.classList = 'primary-modal-btn' // emphasize newly active scheme
                 newBtn.style.cssText = 'pointer-events: none' // disable hover fx to show emphasis
                 setTimeout(() => { newBtn.style.pointerEvents = 'auto'; }, 100) // re-enable hover fx after 100ms to flicker emphasis
-            })
+            }
         }
 
         function updateScheme(newScheme) {
@@ -1110,10 +1110,10 @@
             })
 
             // Add event listener for wheel-scrolling thumb
-            if (!isMobile) slider.addEventListener('wheel', event => {
+            if (!isMobile) slider.onwheel = event => {
                 event.preventDefault()
                 moveThumb(sliderThumb.offsetLeft - Math.sign(event.deltaY) * fontSizeSlider.hWheelDistance)
-            })
+            }
 
             // Add event listener for seek/dragging by inputEvents.down on track
             slider.addEventListener(inputEvents.down, event => {
@@ -1328,12 +1328,7 @@
         const keys = [' ', 'Spacebar', 'Enter', 'Return'], keyCodes = [32, 13]
         if (keys.includes(event.key) || keyCodes.includes(event.keyCode) || event.type == 'click') {
             event.preventDefault() // prevent scroll on space taps
-
-            // Remove divs/listeners
-            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-            Array.from(relatedQueriesDiv.children).forEach(relatedQueryDiv => {
-                ['click', 'keydown'].forEach(event => { relatedQueryDiv.removeEventListener(event, handleRQevent) })})
-            relatedQueriesDiv.remove()
+            appDiv.querySelector('.related-queries').remove() // remove related queries
 
             // Send related query
             const chatbar = appDiv.querySelector('textarea')
@@ -1868,8 +1863,8 @@
                 if (!isMobile) appDiv.append(tooltipDiv)
 
                 // Add corner button listeners
-                aboutSVG.addEventListener('click', launchAboutModal)
-                speakSVG?.addEventListener('click', () => {
+                aboutSVG.onclick = launchAboutModal
+                if (speakSVG) speakSVG.onclick = () => {
                     const dialectMap = [
                         { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
                         { code: 'ar', regex: /^(ara?(bic)?|اللغة العربية)$/i, rate: 1.5 },
@@ -1913,14 +1908,14 @@
                                     audioSrc.start(0) // play audio
                         })}}
                     })
-                })
-                ssbSVG?.addEventListener('click', () => toggleSidebar('sticky'))
-                csbSVG.addEventListener('click', launchSchemeModal)
-                fontSizeSVG?.addEventListener('click', () => fontSizeSlider.toggle())
-                wsbSVG?.addEventListener('click', () => toggleSidebar('wider'))
+                }
+                if (ssbSVG) ssbSVG.onclick = () => toggleSidebar('sticky')
+                csbSVG.onclick = launchSchemeModal
+                if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
+                if (wsbSVG) wsbSVG.onclick = () => toggleSidebar('wider')
                 if (!isMobile) // add hover listeners for tooltips
-                    [aboutSpan, speakSpan, ssbSpan, csbSpan, fontSizeSpan, wsbSpan].forEach(span => { if (span)
-                        ['mouseover', 'mouseout'].forEach(event => span.addEventListener(event, toggleTooltip)) })
+                    [aboutSpan, speakSpan, ssbSpan, csbSpan, fontSizeSpan, wsbSpan].forEach(span => {
+                        if (span) span.onmouseover = span.onmouseout = toggleTooltip })
 
                 // Create/append 'by KudoAI' if it fits
                 if (!isMobile) {
@@ -1937,12 +1932,12 @@
                     standbyBtn.className = 'standby-btn'
                     standbyBtn.textContent = msgs.buttonLabel_sendQueryToGPT || 'Send search query to GPT'
                     appDiv.append(standbyBtn)
-                    standbyBtn.addEventListener('click', () => {
+                    standbyBtn.onclick = () => {
                         appAlert('waitingResponse')
                         msgChain.push({ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) })
                         show.reply.submitSrc = 'click' ; show.reply.chatbarFocused = false
                         get.reply(msgChain)
-                    })
+                    }
 
                 // Otherwise create/append answer bubble
                 } else {
@@ -1994,11 +1989,11 @@
                 if (!appDiv.querySelector('footer')) appDiv.append(appFooter)
 
                 // Add reply section listeners
-                replyForm.addEventListener('keydown', handleEnter)
-                replyForm.addEventListener('submit', handleSubmit)
-                chatTextarea.addEventListener('input', autosizeChatbar)
+                replyForm.onkeydown = handleEnter
+                replyForm.onsubmit = handleSubmit
+                chatTextarea.oninput = autosizeChatbar
                 if (!isMobile) // add hover listeners for tooltips
-                    ['mouseover', 'mouseout'].forEach(event => sendButton.addEventListener(event, toggleTooltip))
+                    sendButton.onmouseover = sendButton.onmouseout = toggleTooltip
 
                 // Scroll to top on mobile if user interacted
                 if (isMobile && show.reply.submitSrc) {
@@ -2084,24 +2079,9 @@
                     msgChain.push({ role: 'user', content: augmentQuery(chatTextarea.value) })
                     get.reply(msgChain)
 
-                    // Remove re-added reply section listeners
-                    const replyForm = appDiv.querySelector('form')
-                    replyForm.removeEventListener('keydown', handleEnter)
-                    replyForm.removeEventListener('submit', handleSubmit)
-                    chatTextarea.removeEventListener('input', autosizeChatbar)
-
-                    // Remove related queries
-                    try {
-                        const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-                        Array.from(relatedQueriesDiv.children).forEach(child => {
-                            ['click', 'keydown'].forEach(event => child.removeEventListener(event, handleRQevent)) })
-                        relatedQueriesDiv.remove()
-                    } catch (err) {}
-
-                    // Remove 'Send reply' tooltip from send btn clicks
-                    if (!isMobile) tooltipDiv.style.opacity = 0
-
-                    // Clear footer
+                    // Hide/remove elems
+                    appDiv.querySelector('.related-queries')?.remove() // remove related queries
+                    if (!isMobile) tooltipDiv.style.opacity = 0 // hide 'Send reply' tooltip post-send btn click
                     const appFooter = appDiv.querySelector('footer')
                     while (appFooter.firstChild) appFooter.removeChild(appFooter.firstChild)
 
@@ -2175,7 +2155,7 @@
                         // Add fade + listeners
                         setTimeout(() => {
                             relatedQueryDiv.classList.add('active')
-                            for (const event of ['click', 'keydown']) relatedQueryDiv.addEventListener(event, handleRQevent)
+                            relatedQueryDiv.onclick = relatedQueryDiv.onkeydown = handleRQevent
                         }, idx * 100)
                     })
 
