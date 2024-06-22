@@ -1,164 +1,155 @@
 // ==UserScript==
 // @name                GoogleGPT 🤖
 // @name:zh-CN          GoogleGPT 🤖
-// @description         Adds AI answers to Google Search. Ask from any site. Powered by Google Gemma + GPT-4o!
-// @description:af      Voeg KI-antwoorde by Google Soek. Vra vanaf enige webwerf. Aangedryf deur Google Gemma + GPT-4o!
-// @description:am      የAI መልስናወርቃለች እርስዎን Google ፍለጋ፣ የእያንዳንዱ ድረ-ገጽን ጥያቄ በመጠቀም ያለበት፣ ግብጽን የተሻለ እና GPT-4o! ተከታታይ
-// @description:ar      يضيف إجابات الذكاء الاصطناعي إلى بحث Google. اسأل من أي موقع. مدعوم بواسطة Google Gemma + GPT-4o!
-// @description:az      Google Axtarışa AI cavabları əlavə edir. Hər hansı bir səhifədən sual edin. Google Gemma + GPT-4o ilə işləyir!
-// @description:be      Дадае адказы штучнага інтэлекту ў пошук Google. Запытвайце з любога сайта. На базе Google Gemma + GPT-4o!
-// @description:bem     Yamfumano AI mafundo pa Google Search. Uliza kumayi malo awebusayiti. Eko wakuleta na Google Gemma + GPT-4o!
-// @description:bg      Добавя AI отговори към Google Търсене. Питайте от всяко сайт. Осигурено от Google Gemma + GPT-4o!
-// @description:bn      Google অনুসন্ধানে AI উত্তর যোগ করে। যেকোনো সাইট থেকে জিজ্ঞাসা করুন। Google Gemma + GPT-4o দ্বারা চালিত!
-// @description:bo      Google པ་ལས་ AI དྲུག་བཏུས་བྱས་ཀྱི་འཕྲུལ་ཆས་གསར་ཤོག། གསང་ལས་སྙན་ཞུ་བཞག་པའི་གློ་དོན་འགྱོ་སྡེ། Google Gemma + GPT-4o གི་བྱུང་བའི་ལས་རིགས་འཕྲིན་ལས་ཕབ།
-// @description:bs      Dodaje AI odgovore u Google pretragu. Pitajte sa bilo kog sajta. Pokreće Google Gemma + GPT-4o!
-// @description:ca      Afegeix respostes d'IA a la Cerca de Google. Pregunta des de qualsevol lloc web. Amb la tecnologia de Google Gemma + GPT-4o!
-// @description:ceb     Nagdugang mga tubag sa AI sa Google Search. Pangutana gikan sa bisan unsang site. Gipadagan sa Google Gemma + GPT-4o!
-// @description:cs      Přidává odpovědi AI do Vyhledávání Google. Zeptejte se z libovolného webu. Využívá technologii Google Gemma + GPT-4o!
-// @description:cy      Yn ychwanegu atebion AI i Google Search. Gofynnwch o unrhyw wefan. Wedi'u pweru gan Google Gemma + GPT-4o!
-// @description:da      Tilføjer AI-svar til Google Søgning. Spørg fra enhver hjemmeside. Drevet af Google Gemma + GPT-4o!
-// @description:de      Fügt der Google-Suche KI-Antworten hinzu. Fragen Sie von jeder Website aus. Angetrieben von Google Gemma + GPT-4o!
-// @description:dv      ގޮތަކަށް Google ހިތުގައި AI އަށް އިތުރުކުރަންވީ. އެއްކޮށްފިވާ ތަރުޖަމާކުރަންވީ ސަބަބުގެ އަދަދު. ގޮތަކަށް ޤިމާން Gemma + GPT-4o!
-// @description:el      Προσθέτει απαντήσεις ΤΝ στην αναζήτηση Google. Κάντε ερωτήσεις από οποιονδήποτε ιστότοπο. Τροφοδοτείται από την τεχνολογία Google Gemma + GPT-4o!
-// @description:en      Adds AI answers to Google Search. Ask from any site. Powered by Google Gemma + GPT-4o!
-// @description:eo      Aldonas AI-respondojn al Google-Serĉo. Demandu de iu ajn retejo. Funkciigita de Google Gemma + GPT-4o!
-// @description:es      Agrega respuestas de IA a la Búsqueda de Google. Pregunta desde cualquier sitio. Impulsado por Google Gemma + GPT-4o!
-// @description:et      Lisab Google'i otsingusse AI-vastused. Küsige igast veebisaidilt. Töötab Google Gemma + GPT-4o abil!
-// @description:eu      Gehitu erantzunak Google Bilaketara. Galdetu edozein webguneetatik. Google Gemma + GPT-4o teknologiak erabiliak!
-// @description:fa      جوابهای هوش مصنوعی را به جستجوی گوگل اضافه میکند. از هر سایتی بپرسید. توسط Google Gemma + GPT-4o پیشرانه شده است!
-// @description:ff      Yeesal ar Ceesal AI soobal mo Google. Ndee ciftoranka tonɗi. Yayee hooree Google Gemma + GPT-4o!
-// @description:fi      Lisää tekoälyn vastaukset Google-hakuun. Kysy mistä tahansa sivustosta. Toimii Google Gemma + GPT-4o -teknologialla!
-// @description:fo      Leggur AI-svar til Google Leit. Spyr frá hvørjum heimasíðu. Drívur av Google Gemma + GPT-4o!
-// @description:fr      Ajoute des réponses IA à la recherche Google. Posez des questions depuis n'importe quel site. Alimenté par Google Gemma + GPT-4o !
-// @description:fr-CA   Ajoute des réponses IA à la recherche Google. Posez des questions depuis n'importe quel site. Alimenté par Google Gemma + GPT-4o !
-// @description:fy      Foeget AI-antwurden ta oan Google Sykje. Fraach fan elke site. Yn 'e macht fan Google Gemma + GPT-4o!
-// @description:ga      Cuirtear freagraí AR le Google Search. Cuir ceist ó aon suíomh. Tá sé iontach le cumhacht Google Gemma + GPT-4o!
-// @description:gd      Tha freagairtean AI airson Lorg Google a' cur ris. Cuir ceist bhon àite sam bith. Air a stiùireadh le Google Gemma + GPT-4o!
-// @description:gl      Engade respostas de IA á Busca de Google. Pregunta desde calquera sitio. Potenciado por Google Gemma + GPT-4o!
-// @description:gn      Ko añe'ẽchagua heta mba'epytĩvo ğuarã ha'eve Google Search. Hína oguereko nendive mba'épa. Google Gemma + GPT-4o amandajeheguasã!
-// @description:gu      ગુગલ શોધમાં AI જવાબો ઉમેરે છે. કોઈપણ સાઇટ પરથી પ્રશ્ન કરો. Google જેમા + GPT-4o સાથે ચાલે છે!
-// @description:gv      Ta currymyn yn Google Lhie er jannoo freaghtyn AI. Cur kiune veih quoi dy chooid vaayl. Stiurrit liorish Google Gemma + GPT-4o!
-// @description:ha      Sanya yanayi na AI zuwa Bincike na Google. Tambaya daga wani shafin. An kai matawar Google Gemma + GPT-4o!
-// @description:haw     Hoʻohui aku i nā hoʻopaʻa ʻana AI i ka ʻimi iā Google. Nīnau mai ma kekahi ʻaoʻao. Hoʻohui ʻia e Google Gemma + GPT-4o!
-// @description:he      מוסיף תשובות AI לחיפוש ב-Google. שאל מכל אתר. מופעל על ידי גוגל Gemma + GPT-4o!
-// @description:hi      गूगल सर्च में AI जवाब जोड़ता है। किसी भी साइट से पूछें। गूगल जेमा + GPT-4o से पावर ड्राइव किया जाता है!
-// @description:hmn     Thaum twb ua ntej pab AI nyob rau kev siv Google. Nco npe pib los sis puas tau nyob rau kev tshiab. Hu ua Google Gemma + GPT-4o!
-// @description:hr      Dodaje AI odgovore na Google pretragu. Pitajte s bilo kojeg mjesta. Pokreće Google Gemma + GPT-4o!
-// @description:ht      Ajoute répons nan motorèch Google la a. Poze kesyon soti nan nenpòt sit. Alimante pa Google Gemma + GPT-4o!
-// @description:hu      AI válaszokat ad a Google-kereséshez. Kérd bármelyik webhelyről. A Google Gemma + GPT-4o által működtetett!
-// @description:hy      Ավելացնում է AI պատասխաններ Google որոնումում։ Հարցեր կատարեք ամենատարածված կայքերից։ Որակավորված է Google Gemma + GPT-4o կողմից։
-// @description:ia      Adde responas de AI a Google Sercha. Fa questiones de ulle sito. Alimentate per Google Gemma + GPT-4o!
-// @description:id      Menambahkan jawaban AI ke Pencarian Google. Tanyakan dari situs mana pun. Didukung oleh Google Gemma + GPT-4o!
-// @description:ig      Kwee na-ewe ọrụ AI na Google Search. Kwee site n'anya. Mgbanwe na Google Gemma + GPT-4o!
-// @description:is      Bætir við AI-svörum við Google leit. Spyrji frá hverjum vefsvæði. Rekin með Google Gemma + GPT-4o!
-// @description:it      Aggiunge risposte AI alla Ricerca Google. Fai domande da qualsiasi sito. Alimentato da Google Gemma + GPT-4o!
-// @description:ja      Google 検索に AI 回答を追加します。どのサイトからでも質問してください。Google Gemma + GPT-4o で動作します！
-// @description:jv      Nambahke jawaban AI menyang Panggonan Google. Tanya saka piranti katresna. Digawe ora Google Gemma + GPT-4o!
-// @description:ka      დაამატებს AI პასუხებს Google ძებნაში. დასაკითხებლად ნებისმიერი საიტიდან. Google Gemma + GPT-4o-ის მიერ გამართულია!
-// @description:kk      Google іздеудегі AI жауаптарды қосады. Өтінімдерді кез келген сайттан сұраңыз. Google Gemma + GPT-4o арқылы жұмыс істейді!
-// @description:km      បន្ថែមការឆ្លើយដូចជាអក្សរអង់គ្លេសទៅលើការស្វែងរក Google។ សួរសំនួរពីគេហទំព័រមួយ។ គ្រប់គ្រងដោយ Google Gemma + GPT-4o!
-// @description:kn      ಗೂಗಲ್ ಸರ್ಚ್ನಲ್ಲಿ AI ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ. ಯಾವುದೇ ತಾಳದಿಂದ ಪ್ರಶ್ನಿಸಿ. Google Gemma + GPT-4o ಶಕ್ತಿಯಿಂದ ಪ್ರಾರಂಭ!
-// @description:ko      Google 검색에 AI 답변 추가. 모든 사이트에서 질문하세요. Google Gemma + GPT-4o로 제공됩니다!
-// @description:kok     Google Search मा AI उत्तरहरू थप्छ। कुनै पनि साइटबाट प्रश्न गर्नुहोस्। Google Gemma + GPT-4o द्वारा प्रायोजित!
-// @description:kr      Google 검색에 AI 답변 추가. 모든 사이트에서 질문하세요. Google Gemma + GPT-4o로 제공됩니다!
-// @description:ks      Google Search تەز ئی ئای وعدەی. هەر سایتێکەوە لەخوارەوە پرسیار بکە. لەلایەن Google Gemma + GPT-4o دا دامەزراندوە!
-// @description:ku      Google Search-ê bersivên AI zêde dike. Ji hemû malperan pirs bike. Ji bo ku hûn bêtir bifikirin, ji hêla Google Gemma + GPT-4o ve tê peyda kirin!
-// @description:ky      Google издөөдө AI жооптарды кошуп чыгарат. Баардык сайттардан суроо сороңуз. Google Gemma + GPT-4o орденелген!
-// @description:la      AI responsa Google inquisitioni addit. Ex quaestione quaesiveris. Potestas a Google Gemma + GPT-4o!
-// @description:lb      AI Äntwerten op Google Sich bäisetzen. Vu jiddwere Site froen. Gedriwwen vun Google Gemma + GPT-4o!
-// @description:lg      Enkuba za Google Search zongezeko. Zivanye kusosola nga mu kintu kintu. Ekirizibwa n'okutuukiriza mu Google Gemma + GPT-4o!
-// @description:ln      Biyano ya AI na Google Search ezongisi kobeteli. Soki wapi na site moko moko. Ebandaki na Google Gemma + GPT-4o!
-// @description:lo      ຄໍາຕອບ AI ເພື່ອທີ່ Google Search. ບົດສອນຈາກເນື້ອຫາທັງຫມົດ. ໄດ້ຈາກ Google Gemma + GPT-4o!
-// @description:lt      Pridedami AI atsakymai į Google paiešką. Klausykite iš bet kurio tinklalapio. Google Gemma + GPT-4o naudojamas!
-// @description:lv      Pievieno AI atbildes Google meklēšanai. Jautājiet no jebkuras vietnes. Google Gemma + GPT-4o barošana!
-// @description:mg      Manampy valiny AI amin'ny Fikarohana Google. Mandray fitenenana avy any amin'ny toerana iray. Nampanjakana amin'ny Google Gemma + GPT-4o!
-// @description:mh      Eo an Google Search AI. E jou kwoj ilo aer! E ko ilo Google Gemma + GPT-4o!
-// @description:mi      Ka taapirihia nga whakautu AI ki te Rapu a Google. Pātai i runga i ia paetukutuku. I takatūtia e Google Gemma + GPT-4o!
-// @description:mk      Додавање на AI одговори на пребарување на Google. Прашајте од било која страница. Давање на напојување од Google Gemma + GPT-4o!
-// @description:ml      Google തിരയലിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു. ഏതെങ്കിലും സൈറ്റിൽ ചോദിക്കുക. Google Gemma + GPT-4o നിർത്തലാക്കുന്നു!
-// @description:mn      Google Хайлтад хиймэл оюун ухааны хариултуудыг нэмдэг. Асуулт хийн гэхэд аль сайтас болохыг асуулна уу. Google Gemma + GPT-4o-аар хүргэгдэнэ!
-// @description:mr      Google शोध मध्ये AI उत्तरे जोडते. कोणत्याही संकेतस्थळावरून प्रश्न विचारा. Google Gemma + GPT-4o चालू केलेल्याने!
-// @description:ms      Menambah jawapan AI pada Carian Google. Tanyakan dari mana-mana laman web. Digerakkan oleh Google Gemma + GPT-4o!
-// @description:mt      Iżżid it-tweġibiet tal-AI ma' Google Search. Itlob minn kwalunkwe sit. Mħaddma minn Google Gemma + GPT-4o!
-// @description:my      ကုန်လက်မှုသို့ AI အဖြေများကို Google ရဲ့ရှာဖွေအဖြေပေးပါ။ အနည်းဆုံးဆိုရင်းမှာမေးခွင့်ပြုပါ။ Google Gemma + GPT-4o အကြောင်းကြားသည်!
-// @description:na      Ondje okwa tulwa AI Ondje Google Search. Onande okwa monandje komulilo yoka monande okwa ondululuko ondata Google Gemma + GPT-4o!
-// @description:nb      Legger til AI-svar til Google Søk. Spør fra hvilken som helst side. Drevet av Google Gemma + GPT-4o!
-// @description:nd      Zviunganidza maita anotaura e AI kuna Google Search. Pinda kuburikidza kubva panyika ine. Zvakawanikwa na Google Gemma + GPT-4o!
-// @description:ne      Google खोजमा AI जवाफहरू थप्छ। कुनै साइटबाट सोध्नुहोस्। Google Gemma + GPT-4o द्वारा संचालित!
-// @description:ng      Onguqulo AI kwi-Google Search. Buza ekuhlaleni kokubonakala. Kubanjelwe ngu-Google Gemma + GPT-4o!
-// @description:nl      Voegt AI-antwoorden toe aan Google Zoeken. Vraag vanaf elke site. Mogelijk gemaakt door Google Gemma + GPT-4o!
-// @description:nn      Legg til AI-svar i Google-søk. Spør frå kva som helst nettstad. Drevet av Google Gemma + GPT-4o!
-// @description:no      Legger til AI-svar til Google Søk. Spør fra hvilken som helst side. Drevet av Google Gemma + GPT-4o!
-// @description:nso     Bolela marwala a AI ka Google Search. Botse ka nako eo e ka utlwisiswa. E re fetolang ka Google Gemma + GPT-4o!
-// @description:ny      Mawonjezera mayankho a AI pa Google Search. Uchenjeza kuchokera kumtengo wonse. Yoyenera ndi Google Gemma + GPT-4o!
-// @description:oc      Ajuda de respostas d'IA a la Recèrca Google. Demandatz dins n'importa quala pagina. Impulsat per Google Gemma + GPT-4o!
-// @description:om      Deebii AI Google Search irratti dabalata. Salphina midhaan eessatti. Google Gemma + GPT-4o tiin kan hojjetamu!
-// @description:or      Google ସର୍ଚ୍ରେ AI ଉତ୍ତର ଯୋଗ କରୁଛି। ଯେକଣ ସାଇଟରୁ ପ୍ରଶ୍ନିତ୍ୱ କରିବାରେ। Google Gemma + GPT-4o ଦ୍ୱାରା ସାଧାରଣ କରାଯାଇଛି!
-// @description:pa      Google ਖੋਜ ਵਿੱਚ AI ਜਵਾਬ ਜੋੜਦਾ ਹੈ। ਕਿਸੇ ਵੀ ਸਾਈਟ ਤੋਂ ਪੁੱਛੋ। Google Gemma + GPT-4o ਦੁਆਰਾ ਚਲਾਇਆ ਜਾਂਦਾ ਹੈ!
-// @description:pl      Dodaje odpowiedzi AI do wyszukiwarki Google. Zapytaj z dowolnej strony. Obsługiwane przez Google Gemma + GPT-4o!
-// @description:ps      AI جوابونه د Google Search کې اضافه کړې. د کولو د کوم کښته پوښتوي. په لاسرسی کې پوه شوی شوی د Google Gemma + GPT-4o!
-// @description:pt      Adiciona respostas de IA à Pesquisa Google. Pergunte de qualquer site. Desenvolvido por Google Gemma + GPT-4o!
-// @description:pt-BR   Adiciona respostas de IA à Pesquisa Google. Pergunte de qualquer site. Desenvolvido por Google Gemma + GPT-4o!
-// @description:qu      AI kutichiykunata Google Maskanaman yapan. Kayman tawqa qallarimu. Google Gemma + GPT-4o kaqwan kallpachasqa!
-// @description:rm      Agionta las repartizions da l'IA a la Raisch da Google. Dumonda da qualsiasa pagina. Alimentà da Google Gemma + GPT-4o!
-// @description:rn      Kujojora amatangazo ya AI muri Google Search. Ibura kuri wabwo wese. Yibumosoje na Google Gemma + GPT-4o!
-// @description:ro      Adaugă răspunsuri AI la Căutarea Google. Întreabă de pe orice site. Produs de Google Gemma + GPT-4o!
-// @description:ru      Добавляет ответы ИИ в поиск Google. Спросите с любого сайта. На базе Google Gemma + GPT-4o!
-// @description:rw      Ongeraho ibisubizo bya AI kubushakashatsi bwa Google. Baza kwandika kuri website yihariye. Bikoreshwa na Google Gemma + GPT-4o!
-// @description:sa      Google Search इत्यत्र AI उत्तराणि योजयति। कस्यचित् स्थानादपि प्रच्छन्नम्। Google Gemma + GPT-4o द्वारेणाधारितम्!
-// @description:sat     Google Search ᱡᱟᱢᱟᱨᱤ AI ᱠᱷᱟᱹᱨᱩᱣᱟᱨ ᱨᱮᱰ ᱠᱮᱴᱮᱫᱟ ᱡᱤᱠᱷᱮᱱᱮᱫᱽᱨᱟᱡ ᱞᱟᱠᱟᱢᱟᱨᱮᱭᱟᱜᱼ ᱞᱟᱨᱟᱡ ᱥᱟᱢᱟᱞᱮᱡᱽᱨᱟᱱᱤ!
-// @description:sc      Agiunta is rispostas de IA a sa Cèrca de Google. Bidiat de sa pàgina chi ses. Moteada dae Google Gemma + GPT-4o!
-// @description:sd      AI جوابن کي گوگل سرچ ۾ شامل ڪري ٿو. ڪونهي ويب سائيٽ کان سوٽي ڪريو. گوگل جيما + GPT-4o کان چلائيل!
-// @description:se      Čuoŋománu AI vástidat Google Čoahkkimis. Dáváda olbmuid guorahallamiid. Ráđđi Google Gemma + GPT-4o!
-// @description:sg      Ko tî Google Search. (yî mazângâkâzâ aye Google Gemma + GPT-4o!)
-// @description:si      Google සෙවීමට AI පිළිතුරු එක් කරයි. කිසිවක් ව්‍යාපෘතියේ ඉල්ලීමක් කරන්න. Google Gemma + GPT-4o මගින් සක්රිය කළ!
-// @description:sk      Pridáva odpovede AI do Vyhľadávania Google. Spýtajte sa z ľubovoľnej stránky. Využíva Google Gemma + GPT-4o!
-// @description:sl      Iskanju Google doda odgovore AI. Vprašajte iz katere koli strani. Poganja Google Gemma + GPT-4o!
-// @description:sm      Fa'aopoopo tali AI ile Su'esu'ega Google. Fesili mai le feiloa'i. Fa'aola e Google Gemma + GPT-4o!
-// @description:sn      Inowedzera mhinduro dzeAI kuGoogle Search. Inodya kubva kune zvakawanda. Inofambiswa neGoogle Gemma + GPT-4o!
-// @description:so      Waxay ku daraa jawaabaha AI raadinta Google. Ku weydiin qof kasta oo bogga. Waxaa ku shaqeeya Google Gemma + GPT-4o!
-// @description:sq      Shton përgjigjet e AI në Google Search. Pyet nga çdo faqe. Mundësuar nga Google Gemma + GPT-4o!
-// @description:sr      Додаје АИ одговоре у Гоогле претрагу. Питајте са било ког сајта. Покреће Гоогле Гемма + ГПТ-4о!
-// @description:ss      Sicubungisa imiphumela ye-AI kwi-Google Search. Ncenga kwikheli elithile. Ikhetha lihamba yi-Google Gemma + GPT-4o!
-// @description:st      E eketsa likarabo tsa AI ho Google Search. Sebelisa mosebelisi oa lefatše. E tsamaisoang ke Google Gemma + GPT-4o!
-// @description:su      Nambahkeun jawaban AI kana Google Search. Salaku ti kénéh kasieh manawi. Powered by Google Gemma + GPT-4o!
-// @description:sv      Lägger till AI-svar till Google Sök. Fråga från valfri webbplats. Driven av Google Gemma + GPT-4o!
-// @description:sw      Huongeza majibu ya AI kwa Tafuta na Google. Uliza kutoka kwenye tovuti yoyote. Inayoendeshwa na Google Gemma + GPT-4o!
-// @description:ta      Google தேடலில் AI பதில்களைச் சேர்க்கிறது. எந்த இணையதளத்தில் கேள்வி கேட்கலாம். Google Gemma + GPT-4o அன்றும் அமைக்கப்படுகிறது!
-// @description:te      Google శోధనకు AI సమాధానాలను జోడిస్తుంది. ఎవరైనా సైట్ నుండి అడిగండి. Google Gemma + GPT-4o ద్వారా ఆధారితం!
-// @description:tg      Ба Ҷустуҷӯи Google ҷавобҳои AI илова мекунад. Аз ҳар саҳифаи вебсайт пурсиш кунед. Ҷустуҷӯи Google Gemma + GPT-4o белән эшләнгән!
-// @description:th      เพิ่มคำตอบ AI ให้กับ Google Search. ถามจากเว็บไซต์ใดก็ได้. ขับเคลื่อนโดย Google Gemma + GPT-4o!
-// @description:ti      ኣብ Google Search ዋዕላይ ብትግርኛዕለኛን መልስቲ ኣልቦ ዝብል ዓይነት። በስራ እቶም ስልጠናን ተመልከቱ። ተጠቓምቲ Google Gemma + GPT-4o!
-// @description:tk      Google Gözlegine AI jogaplaryny goşýar. Indi web sahypasynyň işgärlerine soraw beriň. Google Gemma + GPT-4o bilen işleýär!
-// @description:tl      Idinagdag ang mga sagot ng AI sa Google Search. Magtanong mula sa anumang site. Pinaandar ng Google Gemma + GPT-4o!
-// @description:tn      Go dirwa ditlhopho tsa AI mo Google Search. Boima ka setlhare sa yone. Lebelotse ke Google Gemma + GPT-4o!
-// @description:to      Kuo hiki 'e he Fakamaau 'a e AI ki he Ngaahi fakafiefia 'o e Google. Fakakaukau'i mai 'i ha tefito fakatufonu. Tokoni 'e he Google Gemma + GPT-4o!
-// @description:tr      Google Arama'ya yapay zeka yanıtları ekler. Herhangi bir siteden sorun. Google Gemma + GPT-4o tarafından desteklenir!
-// @description:ts      Ku engetela tinhlamulo ta AI eka Google Search. Lava ku ntlafatsa hi ntsako wa wena. Leyi fambiwaka hi Google Gemma + GPT-4o!
-// @description:tt      Google Search'ка AI җаваплары өсти. Qullanğan bir saýtdan soraw salıñ. Google Gemma + GPT-4o белән эшләнгән!
-// @description:tw      Ɔde AI mmuae ka Google Search ho. Tɔe me ho nyinaa bɔ mu. A Google Gemma + GPT-4o na ɛma ahoɔden!
-// @description:ug      گۇگۇل ئىزدەشكە سۈنئىي ئەقىل جاۋابلىرىنى قوشىدۇ. ھەرقايسى سېتىدىن سوئال سوراڭ. Google Gemma + GPT-4o تومۇنىدا ئىشلىتىلىدۇ!
-// @description:uk      Додає відповіді штучного інтелекту до Пошуку Google. Питайте з будь-якого сайту. На основі Google Gemma + GPT-4o!
-// @description:ur      Google تلاش میں AI جوابات شامل کرتا ہے. کسی بھی سائٹ سے سوال کریں. Google Gemma + GPT-4o کے ذریعے تقویت یافتہ!
-// @description:uz      Google Qidiruvga AI javoblarini qo'shadi. Har qanday veb-saytdan so'ralishingiz mumkin. Google Gemma + GPT-4o tomonidan quvvatlanadi!
-// @description:ve      Vhulangwa ha mavhuso a AI kha Google Search. Vho dzhela u nga tshiṅedzwa fhasi. Vho tshiwanaho nga Google Gemma + GPT-4o!
-// @description:vi      Thêm câu trả lời AI vào Google Tìm kiếm. Hỏi từ bất kỳ trang nào. Được cung cấp bởi Google Gemma + GPT-4o!
-// @description:vo      Jepolö AI smüds ob Google Zif. Vödo yela pendobs atan. Kaukipölö vedönöfik Google Gemma + GPT-4o!
-// @description:wa      Adjon des reponses d'IA a l'echetchinge Googel. Poez-vos demandes sor n'importe kelle sit. Mouvé pa Googel Gemma + GPT-4o!
-// @description:wo      Am nañu bëggeeku AI yu jàng ci Google Search. Dem bañ nga am di yoon bi. Ñu wecc nit Google Gemma + GPT-4o!
-// @description:xh      Yongeza iimpendulo ze-AI kuPhendlo lukaGoogle. Phendula kwiintsuku yona. Ixhaswe yiGoogle Gemma + GPT-4o!
-// @description:yi      מוסיף אַי ענטפֿערס צו Google זוך. פּרעג אויף קיין אויפֿן ארטיקל. פּאַוערד דורך Google Gemma + GPT-4o!
-// @description:yo      Ṣafikun awọn idahun AI si Wiwa Google. Gbà mí lórí èrò nípa èyí tí ó tọ̀. Agbara nipasẹ Google Gemma + GPT-4o!
-// @description:za      Gwngh gvmjcoengh jaedzhaengz mav Mvaenz Googel. Veix veix mvangcvuengh dorn daenq. Enghdaengz Gvmjcoengh Gemma + GPT-4o!
-// @description:zh      为 Google 搜索添加 AI 答案。从任何网站提问。由 Google Gemma + GPT-4o 提供支持！
-// @description:zh-CN   为 Google 搜索添加 AI 答案。从任何网站提问。由 Google Gemma + GPT-4o 提供支持！
-// @description:zh-HK   將人工智慧答案加入 Google 搜尋。從任何網站詢問。由 Google Gemma + GPT-4o 提供支援！
-// @description:zh-SG   为 Google 搜索添加 AI 答案。从任何网站提问。由 Google Gemma + GPT-4o 提供支持！
-// @description:zh-TW   將人工智慧答案加入 Google 搜尋。從任何網站詢問。由 Google Gemma + GPT-4o 提供支援！
-// @description:zu      Yengeza izimpendulo ze-AI ku-Google Search. Buza kuphi noma yikuphi usayithi. Inikwa amandla yi-Google Gemma + GPT-4o!
+// @description         Adds AI answers to Google Search (powered by Google Gemma + GPT-4o!)
+// @description:af      Voeg AI-antwoorde by Google Search (aangedryf deur Google Gemma + GPT-4o!)
+// @description:am      የ Google Search ውስጥ AI መልቀቅን አድርግ፣ (Google Gemma + GPT-4o በመሣሪያዎቹ ውስጥ!)
+// @description:ar      يضيف إجابات AI إلى Google Search (مدعوم بواسطة Google Gemma + GPT-4o!)
+// @description:as      Google Search-লৈ AI উত্তৰ যোগ দিয়ে (Google Gemma + GPT-4o দ্বাৰা পাওৱা হৈছে!)
+// @description:az      Google Search-ya AI cavablarını əlavə edir (Google Gemma + GPT-4o tərəfindən dəstəklənir!)
+// @description:be      Дадае ІА адказы на Google Search (падтрымліваецца Google Gemma + GPT-4o!)
+// @description:bg      Добавя ИИ отговори в Google Search (поддържан от Google Gemma + GPT-4o!)
+// @description:bn      Google Search-ত AI উত্তর যোগ করে (Google Gemma + GPT-4o দ্বারা প্রচালিত!)
+// @description:bs      Dodaje AI odgovore na Google Search (pokreće Google Gemma + GPT-4o!)
+// @description:ca      Afegeix respostes d'IA a Google Search (impulsat per Google Gemma + GPT-4o!)
+// @description:ceb     Nagdugang ug mga tubag AI ngadto sa Google Search (gipadagan sa Google Gemma + GPT-4o!)
+// @description:co      Aggiunge risposte AI a Google Search (supportate da Google Gemma + GPT-4o!)
+// @description:cs      Přidává AI odpovědi do Google Search (poháněno Google Gemma + GPT-4o!)
+// @description:cy      Ychwanegu atebion AI i Google Search (a yrrir gan Google Gemma + GPT-4o!)
+// @description:da      Tilføjer AI-svar til Google Search (drevet af Google Gemma + GPT-4o!)
+// @description:de      Fügt AI-Antworten zu Google Search hinzu (betrieben von Google Gemma + GPT-4o!)
+// @description:el      Προσθέτει απαντήσεις AI στο Google Search (τροφοδοτούμενο από Google Gemma + GPT-4o!)
+// @description:en      Adds AI answers to Google Search (powered by Google Gemma + GPT-4o!)
+// @description:eo      Aldonas AI-respondojn al Google Search (ebligita de Google Gemma + GPT-4o!)
+// @description:es      Añade respuestas de IA a Google Search (impulsado por Google Gemma + GPT-4o!)
+// @description:et      Lisab AI-vastused Google Search'le (juhitud Google Gemma + GPT-4o-ga!)
+// @description:eu      Gehitu IA erantzunak Google Search-n (Google Gemma + GPT-4o-k bultzatuta!)
+// @description:fa      پاسخهای هوشمصنوعی به Google Search اضافه میشود (توسط Google Gemma + GPT-4o پشتیبانی میشود!)
+// @description:fi      Lisää tekoälyvastauksia Google Search:hun (ohjattu Google Gemma + GPT-4o:lla!)
+// @description:fil     Nagdaragdag ng mga sagot ng AI sa Google Search (pinapagana ng Google Gemma + GPT-4o!)
+// @description:fo      Bætir AI svar við Google Search (drifin af Google Gemma + GPT-4o!)
+// @description:fr      Ajoute des réponses IA à Google Search (propulsé par Google Gemma + GPT-4o!)
+// @description:fr-CA   Ajoute des réponses IA à Google Search (propulsé par Google Gemma + GPT-4o!)
+// @description:fy      Foeget AI-antwurden ta oan Google Search (dreaun troch Google Gemma + GPT-4o!)
+// @description:ga      Cuirtear freagraí AI le Google Search (dírítear ag Google Gemma + GPT-4o!)
+// @description:gd      Cur freagairtichean AI ris an Google Search (air a thug seachad le Google Gemma + GPT-4o!)
+// @description:gl      Engade respostas de IA a Google Search (impulsado por Google Gemma + GPT-4o!)
+// @description:gu      Google Search માટે AI જવાબો ઉમેરે છે (Google Gemma + GPT-4o દ્વારા પોવરેડ!)
+// @description:ha      Ƙaddara takardun AI zu Google Search (da aka fi Google Gemma + GPT-4o!)
+// @description:haw     Hoʻohui aku i nā hoʻopiʻi AI iā Google Search (hoʻohui ʻia e Google Gemma + GPT-4o!)
+// @description:he      מוסיף תשובות AI ל-Google Search (מופעל על ידי Google Gemma + GPT-4o!)
+// @description:hi      Google Search में AI उत्तर जोड़ता है (Google Gemma + GPT-4o द्वारा संचालित!)
+// @description:hmn     Ntxig AI nruab nruab rau Google Search (pab cuam Google Gemma + GPT-4o!)
+// @description:hr      Dodaje AI odgovore na Google Search (pokreće Google Gemma + GPT-4o!)
+// @description:ht      Ajoute repons AI nan Google Search (pòte pa Google Gemma + GPT-4o!)
+// @description:hu      AI válaszokat ad hozzá a Google Search-hoz (Google Gemma + GPT-4o által hajtva!)
+// @description:hy      Ավելացնում է AI պատասխաններ Google Search-ում (աջակցված է Google Gemma + GPT-4o-ով!)
+// @description:ia      Adde responas AI a Google Search (propulsate per Google Gemma + GPT-4o!)
+// @description:id      Menambahkan jawaban AI ke Google Search (didukung oleh Google Gemma + GPT-4o!)
+// @description:ig      Tinye ihe ndekọ AI n'ụzọ ọgụgụ Google Search (n'efu na Google Gemma + GPT-4o!)
+// @description:ii      Google Search ᐸᔦᒪᔪᐃᓃᑦ AI ᓇᑕᐅᒪᐃᑦᓯ (Google Gemma + GPT-4o ᓂᑕᔪᑦᓯᐏᑦᑕᒥᔭ!)
+// @description:is      Bætir AI svar við Google Search (keyrir á Google Gemma + GPT-4o!)
+// @description:it      Aggiunge risposte AI a Google Search (alimentato da Google Gemma + GPT-4o!)
+// @description:iu      Google Search ᑲᑎᒪᔪᖅᑐᖅᑐᐃᓐᓇᓂᒃ AI ᑎᑎᕋᖃᕐᓯᒪᓂᖏᓐ (Google Gemma + GPT-4o ᑐᑭᒧᑦᑖᑦ!)
+// @description:ja      Google Search に AI 回答を追加します (Google Gemma + GPT-4o で動作！)
+// @description:jv      Nambéhi pirangga AI nganti Google Search (diduweni déning Google Gemma + GPT-4o!)
+// @description:ka      ამატებს AI პასუხებს Google Search-ს (იმართება Google Gemma + GPT-4o!)
+// @description:kk      Google Search-ға AI жауаптарын қосады (Google Gemma + GPT-4o арқылы жұмыс істейді!)
+// @description:kl      Google Search-mi AI-t Kalaallit Nunaanni iluani (Google Gemma + GPT-4o! -nip ilaanni!)
+// @description:km      បន្ថែមចម្លើយ AI ទៅ Google Search (ដំណើរការដោយ Google Gemma + GPT-4o!)
+// @description:kn      Google Search ಗೆ AI ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ (Google Gemma + GPT-4o ನಿಂದ ನಡೆಸಲ್ಪಡುತ್ತಿದೆ!)
+// @description:ko      Google Search에 AI 답변을 추가합니다(Google Gemma + GPT-4o 제공!)
+// @description:ku      Bersivên AI-ê li Google Search zêde dike (ji hêla Google Gemma + GPT-4o ve hatî hêzdar kirin!)
+// @description:ky      Google Search'го AI жоопторун кошот (Google Gemma + GPT-4o тарабынан иштейт!)
+// @description:la      Addit AI responsa Google Search (powered per Google Gemma + GPT-4o!)
+// @description:lb      Füügt AI Äntwerten op Google Search (ugedriwwen duerch Google Gemma + GPT-4o!)
+// @description:lg      Yambula emisomo ey'ensobi ku Google Search (enkuuma Google Gemma + GPT-4o!)
+// @description:ln      Ebakisi biyano ya AI na Google Search (ezali na nguya ya Google Gemma + GPT-4o!)
+// @description:lo      ເພີ່ມຄໍາຕອບ AI ໃຫ້ກັບ Google Search (ຂັບເຄື່ອນໂດຍ Google Gemma + GPT-4o!)
+// @description:lt      Prideda AI atsakymus į „Google Search“ (maitina Google Gemma + GPT-4o!)
+// @description:lv      Pievieno AI atbildes Google Search (darbina Google Gemma + GPT-4o!)
+// @description:mg      Manampy valiny AI amin'ny Google Search (nampiasain'ny Google Gemma + GPT-4o!)
+// @description:mi      Ka taapirihia nga whakautu AI ki a Google Search (whakamahia e Google Gemma + GPT-4o!)
+// @description:mk      Додава одговори со вештачка интелигенција на Google Search (напојувано од Google Gemma + GPT-4o!)
+// @description:ml      Google Search-യിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു (Google Gemma + GPT-4o നൽകുന്നതാണ്!)
+// @description:mn      Google Search-д AI хариултуудыг нэмдэг (Google Gemma + GPT-4o-оор ажилладаг!)
+// @description:mr      Google Search ला AI उत्तरे जोडते (Google Gemma + GPT-4o द्वारे समर्थित!)
+// @description:ms      Menambahkan jawapan AI pada Google Search (dikuasakan oleh Google Gemma + GPT-4o!)
+// @description:mt      Iżżid it-tweġibiet AI għal Google Search (mħaddma minn Google Gemma + GPT-4o!)
+// @description:my      Google Search (Google Gemma + GPT-4o ဖြင့် စွမ်းဆောင်ထားသည့်) တွင် AI အဖြေများကို ပေါင်းထည့်သည်
+// @description:na      Aeta AI teroma i Google Search (ira Google Gemma + GPT-4o reke akea!)
+// @description:nb      Legger til AI-svar på Google Search (drevet av Google Gemma + GPT-4o!)
+// @description:nd      Iyatholakala amaswelelo e-AI kuGoogle Search (kuyatholakala ngokulawula uGoogle Gemma + GPT-4o!)
+// @description:ne      Google Search मा AI जवाफहरू थप्छ (Google Gemma + GPT-4o द्वारा संचालित!)
+// @description:ng      Ondjova mbelelo dha AI moGoogle Search (uumbuli nguGoogle Gemma + GPT-4o!)
+// @description:nl      Voegt AI-antwoorden toe aan Google Search (mogelijk gemaakt door Google Gemma + GPT-4o!)
+// @description:nn      Legg til AI-svar på Google Search (drevet av Google Gemma + GPT-4o!)
+// @description:no      Legger til AI-svar til Google Search (drevet av Google Gemma + GPT-4o!)
+// @description:nso     Ya go etela ditshenyegi tsa AI mo Google Search (e dirwang ke Google Gemma + GPT-4o!)
+// @description:ny      Imawonjezera mayankho a AI ku Google Search (yoyendetsedwa ndi Google Gemma + GPT-4o!)
+// @description:oc      Ajusta de respòstas d'IA a Google Search (amb Google Gemma + GPT-4o!)
+// @description:om      Deebii AI Google Search (Google Gemma + GPT-4o'n kan hojjetu!) irratti dabalata.
+// @description:or      Google Search କୁ AI ଉତ୍ତର ଯୋଗ କରେ (Google Gemma + GPT-4o ଦ୍ୱାରା ଚାଳିତ!)
+// @description:pa      Google Search (Google Gemma + GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ!) ਵਿੱਚ AI ਜਵਾਬ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ
+// @description:pl      Dodaje odpowiedzi AI do Google Search (obsługiwane przez Google Gemma + GPT-4o!)
+// @description:ps      Google Search ته د AI ځوابونه اضافه کوي (د Google Gemma + GPT-4o لخوا پرمخ وړل کیږي!)
+// @description:pt      Adiciona respostas de IA ao Google Search (desenvolvido por Google Gemma + GPT-4o!)
+// @description:pt-BR   Adiciona respostas de IA ao Google Search (desenvolvido por Google Gemma + GPT-4o!)
+// @description:qu      Google Search (Google Gemma + GPT-4o nisqawan kallpachasqa!) nisqaman AI kutichiykunata yapan.
+// @description:rm      Agiuntescha respostas d'IA a Google Search (propulsà da Google Gemma + GPT-4o!)
+// @description:rn      Abafasha inyandiko z'IA ku Google Search (yashyizweho na Google Gemma + GPT-4o!)
+// @description:ro      Adaugă răspunsuri AI la Google Search (alimentat de Google Gemma + GPT-4o!)
+// @description:ru      Добавляет ответы ИИ в Google Search (на базе Google Gemma + GPT-4o!)
+// @description:rw      Ongeraho ibisubizo bya AI kuri Google Search (ikoreshwa na Google Gemma + GPT-4o!)
+// @description:sa      Google Search (Google Gemma + GPT-4o द्वारा संचालितम्!) इत्यत्र AI उत्तराणि योजयति ।
+// @description:sat     Google Search ar AI jawab khon ojantok (Google Gemma + GPT-4o! sebadha manju)
+// @description:sc      Agiungit rispostas de IA a Google Search (motorizadu da Google Gemma + GPT-4o!)
+// @description:sd      شامل ڪري ٿو AI جوابن کي Google Search (Google Gemma + GPT-4o پاران طاقتور!)
+// @description:se      Lávdegáhtii AI vástid Google Search (Google Gemma + GPT-4o! vuosttas!)
+// @description:sg      Nâ tî-kûzâ mái vêdáara AI mbi Google Search (ngâ Google Gemma + GPT-4o!)
+// @description:si      Google Search වෙත AI පිළිතුරු එක් කරයි (Google Gemma + GPT-4o මගින් බලගන්වයි!)
+// @description:sk      Pridáva odpovede AI do Google Search (poháňané Google Gemma + GPT-4o!)
+// @description:sl      Dodaja odgovore AI v Google Search (poganja Google Gemma + GPT-4o!)
+// @description:sm      Faʻaopoopo tali AI ile Google Search (faʻamalosia e Google Gemma + GPT-4o!)
+// @description:sn      Inowedzera mhinduro dzeAI kuGoogle Search (inofambiswa neGoogle Gemma + GPT-4o!)
+// @description:so      Waxay ku dartay jawaabaha AI Google Search (waxaa ku shaqeeya Google Gemma + GPT-4o!)
+// @description:sq      Shton përgjigjet e AI në Google Search (mundësuar nga Google Gemma + GPT-4o!)
+// @description:sr      Додаје АИ одговоре у Google Search (покреће ГПТ-4о!)
+// @description:ss      Iphendvulela izindlela zezilungiselelo ku-Google Search (izenzakalo nge-Google Gemma + GPT-4o!)
+// @description:st      E kopanetse diqoqo tsa AI ka Google Search (ka sebelisoa ke Google Gemma + GPT-4o!)
+// @description:su      Nambahkeun jawaban AI kana Google Search (dikuatkeun ku Google Gemma + GPT-4o!)
+// @description:sv      Lägger till AI-svar till Google Search (driven av Google Gemma + GPT-4o!)
+// @description:sw      Inaongeza majibu ya AI kwa Google Search (inaendeshwa na Google Gemma + GPT-4o!)
+// @description:ta      Google Search க்கு AI பதில்களைச் சேர்க்கிறது (Google Gemma + GPT-4o மூலம் இயக்கப்படுகிறது!)
+// @description:te      Google Searchకి AI సమాధానాలను జోడిస్తుంది (Google Gemma + GPT-4o ద్వారా ఆధారితం!)
+// @description:tg      Ба Google Search ҷавобҳои AI илова мекунад (аз ҷониби Google Gemma + GPT-4o!)
+// @description:th      เพิ่มคำตอบ AI ให้กับ Google Search (ขับเคลื่อนโดย Google Gemma + GPT-4o!)
+// @description:ti      ናብ Google Search (ብGoogle Gemma + GPT-4o ዝሰርሕ!) ናይ AI መልስታት ይውስኸሉ።
+// @description:tk      Google Search-a AI jogaplaryny goşýar (Google Gemma + GPT-4o bilen işleýär!)
+// @description:tl      Nagdadagdag ng mga sagot ng AI sa Google Search (pinapatakbo ng Google Gemma + GPT-4o!)
+// @description:tn      O amogela dipotso tsa AI mo Google Search (e a nang le Google Gemma + GPT-4o!)
+// @description:to      Tambisa mabizo a AI ku Google Search (mukutenga na Google Gemma + GPT-4o!)
+// @description:tr      Google Search'ya yapay zeka yanıtları ekler (Google Gemma + GPT-4o tarafından desteklenmektedir!)
+// @description:ts      Ku engetela tinhlamulo ta AI eka Google Search (leyi fambiwaka hi Google Gemma + GPT-4o!)
+// @description:tt      Google Search'ка AI җаваплары өсти (Google Gemma + GPT-4o белән эшләнгән!)
+// @description:tw      Ɔde AI mmuae ka Google Search (a Google Gemma + GPT-4o na ɛma ahoɔden!) ho.
+// @description:ug      Google Search ۋەبسېتكە AI جاۋابلار قوشۇدۇ (Google Gemma + GPT-4o تەكشۈرگۈچى بىلەن!)
+// @description:uk      Додає відповіді штучного інтелекту в Google Search (на базі Google Gemma + GPT-4o!)
+// @description:ur      Google Search میں AI جوابات شامل کرتا ہے (Google Gemma + GPT-4o کے ذریعے تقویت یافتہ!)
+// @description:uz      Google Search-ga AI javoblarini qo'shadi (Google Gemma + GPT-4o tomonidan quvvatlanadi!)
+// @description:vi      Thêm câu trả lời AI vào Google Search (được cung cấp bởi Google Gemma + GPT-4o!)
+// @description:xh      Yongeza iimpendulo ze-AI kwi-Google Search (ixhaswe yi-Google Gemma + GPT-4o!)
+// @description:yi      לייגט אַי ענטפֿערס צו Google Search (Powered דורך Google Gemma + GPT-4o!)
+// @description:yo      Ṣe afikun awọn idahun AI si Google Search (agbara nipasẹ Google Gemma + GPT-4o!)
+// @description:zh      为 Google Search 添加 AI 答案（由 Google Gemma + GPT-4o 提供支持！）
+// @description:zh-CN   为 Google Search 添加 AI 答案（由 Google Gemma + GPT-4o 提供支持！）
+// @description:zh-HK   為 Google Search 添加 AI 答案（由 Google Gemma + GPT-4o 提供支援！）
+// @description:zh-SG   为 Google Search 添加 AI 答案（由 Google Gemma + GPT-4o 提供支持！）
+// @description:zh-TW   為 Google Search 添加 AI 答案（由 Google Gemma + GPT-4o 提供支援！）
+// @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.15
+// @version             2024.6.21.16
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -177,7 +168,196 @@
 // @compatible          kiwi
 // @compatible          mask
 // @compatible          orion
-// @match               *://*/*
+// @match               *://*.google.com/search*
+// @match               *://*.google.ad/search*
+// @match               *://*.google.ae/search*
+// @match               *://*.google.com.af/search*
+// @match               *://*.google.com.ag/search*
+// @match               *://*.google.com.ai/search*
+// @match               *://*.google.al/search*
+// @match               *://*.google.am/search*
+// @match               *://*.google.co.ao/search*
+// @match               *://*.google.com.ar/search*
+// @match               *://*.google.as/search*
+// @match               *://*.google.at/search*
+// @match               *://*.google.com.au/search*
+// @match               *://*.google.az/search*
+// @match               *://*.google.ba/search*
+// @match               *://*.google.com.bd/search*
+// @match               *://*.google.be/search*
+// @match               *://*.google.bf/search*
+// @match               *://*.google.bg/search*
+// @match               *://*.google.com.bh/search*
+// @match               *://*.google.bi/search*
+// @match               *://*.google.bj/search*
+// @match               *://*.google.com.bn/search*
+// @match               *://*.google.com.bo/search*
+// @match               *://*.google.com.br/search*
+// @match               *://*.google.bs/search*
+// @match               *://*.google.bt/search*
+// @match               *://*.google.co.bw/search*
+// @match               *://*.google.by/search*
+// @match               *://*.google.com.bz/search*
+// @match               *://*.google.ca/search*
+// @match               *://*.google.cd/search*
+// @match               *://*.google.cf/search*
+// @match               *://*.google.cg/search*
+// @match               *://*.google.ch/search*
+// @match               *://*.google.ci/search*
+// @match               *://*.google.co.ck/search*
+// @match               *://*.google.cl/search*
+// @match               *://*.google.cm/search*
+// @match               *://*.google.cn/search*
+// @match               *://*.google.com.co/search*
+// @match               *://*.google.co.cr/search*
+// @match               *://*.google.com.cu/search*
+// @match               *://*.google.cv/search*
+// @match               *://*.google.com.cy/search*
+// @match               *://*.google.cz/search*
+// @match               *://*.google.de/search*
+// @match               *://*.google.dj/search*
+// @match               *://*.google.dk/search*
+// @match               *://*.google.dm/search*
+// @match               *://*.google.com.do/search*
+// @match               *://*.google.dz/search*
+// @match               *://*.google.com.ec/search*
+// @match               *://*.google.ee/search*
+// @match               *://*.google.com.eg/search*
+// @match               *://*.google.es/search*
+// @match               *://*.google.com.et/search*
+// @match               *://*.google.fi/search*
+// @match               *://*.google.com.fj/search*
+// @match               *://*.google.fm/search*
+// @match               *://*.google.fr/search*
+// @match               *://*.google.ga/search*
+// @match               *://*.google.ge/search*
+// @match               *://*.google.gg/search*
+// @match               *://*.google.com.gh/search*
+// @match               *://*.google.com.gi/search*
+// @match               *://*.google.gl/search*
+// @match               *://*.google.gm/search*
+// @match               *://*.google.gr/search*
+// @match               *://*.google.com.gt/search*
+// @match               *://*.google.gy/search*
+// @match               *://*.google.com.hk/search*
+// @match               *://*.google.hn/search*
+// @match               *://*.google.hr/search*
+// @match               *://*.google.ht/search*
+// @match               *://*.google.hu/search*
+// @match               *://*.google.co.id/search*
+// @match               *://*.google.ie/search*
+// @match               *://*.google.co.il/search*
+// @match               *://*.google.im/search*
+// @match               *://*.google.co.in/search*
+// @match               *://*.google.iq/search*
+// @match               *://*.google.is/search*
+// @match               *://*.google.it/search*
+// @match               *://*.google.je/search*
+// @match               *://*.google.com.jm/search*
+// @match               *://*.google.jo/search*
+// @match               *://*.google.co.jp/search*
+// @match               *://*.google.co.ke/search*
+// @match               *://*.google.com.kh/search*
+// @match               *://*.google.ki/search*
+// @match               *://*.google.kg/search*
+// @match               *://*.google.co.kr/search*
+// @match               *://*.google.com.kw/search*
+// @match               *://*.google.kz/search*
+// @match               *://*.google.la/search*
+// @match               *://*.google.com.lb/search*
+// @match               *://*.google.li/search*
+// @match               *://*.google.lk/search*
+// @match               *://*.google.co.ls/search*
+// @match               *://*.google.lt/search*
+// @match               *://*.google.lu/search*
+// @match               *://*.google.lv/search*
+// @match               *://*.google.com.ly/search*
+// @match               *://*.google.co.ma/search*
+// @match               *://*.google.md/search*
+// @match               *://*.google.me/search*
+// @match               *://*.google.mg/search*
+// @match               *://*.google.mk/search*
+// @match               *://*.google.ml/search*
+// @match               *://*.google.com.mm/search*
+// @match               *://*.google.mn/search*
+// @match               *://*.google.ms/search*
+// @match               *://*.google.com.mt/search*
+// @match               *://*.google.mu/search*
+// @match               *://*.google.mv/search*
+// @match               *://*.google.mw/search*
+// @match               *://*.google.com.mx/search*
+// @match               *://*.google.com.my/search*
+// @match               *://*.google.co.mz/search*
+// @match               *://*.google.com.na/search*
+// @match               *://*.google.com.ng/search*
+// @match               *://*.google.com.ni/search*
+// @match               *://*.google.ne/search*
+// @match               *://*.google.nl/search*
+// @match               *://*.google.no/search*
+// @match               *://*.google.com.np/search*
+// @match               *://*.google.nr/search*
+// @match               *://*.google.nu/search*
+// @match               *://*.google.co.nz/search*
+// @match               *://*.google.com.om/search*
+// @match               *://*.google.com.pa/search*
+// @match               *://*.google.com.pe/search*
+// @match               *://*.google.com.pg/search*
+// @match               *://*.google.com.ph/search*
+// @match               *://*.google.com.pk/search*
+// @match               *://*.google.pl/search*
+// @match               *://*.google.pn/search*
+// @match               *://*.google.com.pr/search*
+// @match               *://*.google.ps/search*
+// @match               *://*.google.pt/search*
+// @match               *://*.google.com.py/search*
+// @match               *://*.google.com.qa/search*
+// @match               *://*.google.ro/search*
+// @match               *://*.google.ru/search*
+// @match               *://*.google.rw/search*
+// @match               *://*.google.com.sa/search*
+// @match               *://*.google.com.sb/search*
+// @match               *://*.google.sc/search*
+// @match               *://*.google.se/search*
+// @match               *://*.google.com.sg/search*
+// @match               *://*.google.sh/search*
+// @match               *://*.google.si/search*
+// @match               *://*.google.sk/search*
+// @match               *://*.google.com.sl/search*
+// @match               *://*.google.sn/search*
+// @match               *://*.google.so/search*
+// @match               *://*.google.sm/search*
+// @match               *://*.google.sr/search*
+// @match               *://*.google.st/search*
+// @match               *://*.google.com.sv/search*
+// @match               *://*.google.td/search*
+// @match               *://*.google.tg/search*
+// @match               *://*.google.co.th/search*
+// @match               *://*.google.com.tj/search*
+// @match               *://*.google.tl/search*
+// @match               *://*.google.tm/search*
+// @match               *://*.google.tn/search*
+// @match               *://*.google.to/search*
+// @match               *://*.google.com.tr/search*
+// @match               *://*.google.tt/search*
+// @match               *://*.google.com.tw/search*
+// @match               *://*.google.co.tz/search*
+// @match               *://*.google.com.ua/search*
+// @match               *://*.google.co.ug/search*
+// @match               *://*.google.co.uk/search*
+// @match               *://*.google.com.uy/search*
+// @match               *://*.google.co.uz/search*
+// @match               *://*.google.com.vc/search*
+// @match               *://*.google.co.ve/search*
+// @match               *://*.google.vg/search*
+// @match               *://*.google.co.vi/search*
+// @match               *://*.google.com.vn/search*
+// @match               *://*.google.vu/search*
+// @match               *://*.google.ws/search*
+// @match               *://*.google.rs/search*
+// @match               *://*.google.co.za/search*
+// @match               *://*.google.co.zm/search*
+// @match               *://*.google.co.zw/search*
+// @match               *://*.google.cat/search*
 // @include             https://auth0.openai.com
 // @connect             binjie.fun
 // @connect             chatgpt.com
@@ -226,9 +406,8 @@
           isFirefox = chatgpt.browser.isFirefox(),
           isEdge = JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge'),
           isBrave = JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'),
-          isMobile = chatgpt.browser.isMobile(),
-          isGoogleSERP = /^https:\/\/(?:www\.)?google\.[^/]+\/search\?/.test(document.location.href)
-                      && !document.location.search.includes('&udm=2') // exclude Google Images
+          isMobile = chatgpt.browser.isMobile()
+
     // Init CONFIG
     const config = {
         appName: 'GoogleGPT', appSymbol: '🤖', keyPrefix: 'googleGPT',
@@ -240,24 +419,21 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@8668fc0/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@46e50d9/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = window.location.hostname.endsWith('.com') ? 'us'
                       : window.location.hostname.split('.').pop()
-    loadSetting(['asktipDisabled', 'autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun',
+    loadSetting('autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun',
                 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
-                'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar'])
-    loadSetting(['sitesToNotShowAsktip'], 'global')
+                'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', isMobile ? 14 : 16.55) // init reply font size if unset
     if ( // disable streaming in unspported envs
         !/Tampermonkey|ScriptCat/.test(getUserscriptManager()) // unsupported userscript manager
         || getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave) // TM in browser that triggers STATUS_ACCESS_VIOLATION
     ) saveSetting('streamingDisabled', true)
-    if (!config.notFirstRun) { // first run inits
-        if (isMobile) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
-        config.greetUser = true // for after msgs load
-    } saveSetting('notFirstRun', true)
+    if (!config.notFirstRun && isMobile) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
+    saveSetting('notFirstRun', true)
 
     // Init API props
     const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
@@ -305,9 +481,6 @@
         }
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
 
-    if (config.greetUser && !isGoogleSERP) // greet user on first run
-        safeWindowOpen(`https://www.google.com/search?q=${ msgs.query_hiThere || 'hi there' }&src=first-run`)
-
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
@@ -319,20 +492,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(keys, scope = '') {
-        keys.forEach(key => {
-            if (scope == 'global') {
-                const val = localStorage[key]
-                config[key] = val ? JSON.parse(val) : false
-            } else config[key] = GM_getValue(config.keyPrefix + '_' + key, false)
-    })}
-
-    function saveSetting(key, val, scope = '') {
-        if (scope == 'global') localStorage[key] = JSON.stringify(val)
-        else GM_setValue(config.keyPrefix + '_' + key, val)
-        config[key] = val
-    }
-
+    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(config.keyPrefix + '_' + key, false)) }
+    function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
@@ -340,193 +501,176 @@
 
     function registerMenu() {
 
-        if (isGoogleSERP) {
+        // Add command to toggle proxy API mode
+        const pamLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
+                       + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
+                       + menuState.separator + menuState.word[+config.proxyAPIenabled]
+        menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
-            // Add command to toggle proxy API mode
-            const pamLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
-                           + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
-                           + menuState.separator + menuState.word[+config.proxyAPIenabled]
-            menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
-
-            // Add command to toggle streaming mode or alert unsupported
-            const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
-            const stmLabel = menuState.symbol[+stmState] + ' '
-                           + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
-                           + menuState.separator + menuState.word[+stmState]
-            menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
-                const scriptCatLink = isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
-                                    : isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
-                                                : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
-                if (!/Tampermonkey|ScriptCat/.test(getUserscriptManager())) { // alert userscript manager unsupported, suggest TM/SC
-                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
-                            + ( !isEdge && !isBrave ? // suggest TM for supported browsers
-                                ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
-                                    : '' )
-                            + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
-                            + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`)
-                } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) // alert TM/browser unsupported, suggest SC
-                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
-                            + `${ isChrome ? 'Chrome' : isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
-                            + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
-                                + `${ msgs.alert_instead || 'instead' }.`)
-                else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
-                    let msg = `${ msgs.mode_streaming || 'Streaming Mode' } `
-                            + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
-                            + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
-                            + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
-                    const switchPhrase = msgs.alert_switchingOn || 'switching on'
-                    msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
-                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
-                    appDiv.querySelector('[href="#"]')?.addEventListener('click', () => {
-                        document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
-                } else { // functional toggle
-                    saveSetting('streamingDisabled', !config.streamingDisabled)
-                    notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + menuState.word[+!config.streamingDisabled])
-                    refreshMenu()
-                }
-            }))
-
-            // Add command to toggle auto-get mode
-            const agmLabel = menuState.symbol[+config.autoget] + ' '
-                           + ( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
-                           + menuState.separator + menuState.word[+config.autoget]
-            menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
-                saveSetting('autoget', !config.autoget)
-                notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + menuState.word[+config.autoget])
+        // Add command to toggle streaming mode or alert unsupported
+        const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
+        const stmLabel = menuState.symbol[+stmState] + ' '
+                       + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
+                       + menuState.separator + menuState.word[+stmState]
+        menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
+            const scriptCatLink = isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
+                                : isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
+                                            : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
+            if (!/Tampermonkey|ScriptCat/.test(getUserscriptManager())) { // alert userscript manager unsupported, suggest TM/SC
+                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                    `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
+                        + ( !isEdge && !isBrave ? // suggest TM for supported browsers
+                            ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
+                                : '' )
+                        + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
+                        + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`)
+            } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) // alert TM/browser unsupported, suggest SC
+                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                    `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
+                        + `${ isChrome ? 'Chrome' : isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
+                        + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
+                            + `${ msgs.alert_instead || 'instead' }.`)
+            else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
+                let msg = `${ msgs.mode_streaming || 'Streaming Mode' } `
+                        + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
+                        + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
+                        + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
+                const switchPhrase = msgs.alert_switchingOn || 'switching on'
+                msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
+                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
+                appDiv.querySelector('[href="#"]')?.addEventListener('click', () => {
+                    document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
+            } else { // functional toggle
+                saveSetting('streamingDisabled', !config.streamingDisabled)
+                notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + menuState.word[+!config.streamingDisabled])
                 refreshMenu()
-            }))
-
-            
-            if (!isMobile) {
-
-                // Add command to toggle auto-focus chatbar
-                const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
-                               + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                               + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
-                menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
-                    saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
-                    notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                                 + menuState.word[+!config.autoFocusChatbarDisabled])
-                    refreshMenu()
-                }))
-
-                // Add command to toggle auto-scroll (when streaming)
-                const assLabel = menuState.symbol[+config.autoScroll] + ' '
-                               + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
-                               + menuState.separator + menuState.word[+config.autoScroll]
-                menuIDs.push(GM_registerMenuCommand(assLabel, () => {
-                    saveSetting('autoScroll', !config.autoScroll)
-                    notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + menuState.word[+config.autoScroll])
-                    refreshMenu()
-                }))
             }
+        }))
 
-            // Add command to toggle showing related queries
-            const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
-                          + ( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
-                          + menuState.separator + menuState.word[+!config.rqDisabled]
-            menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
-                saveSetting('rqDisabled', !config.rqDisabled)
-                const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-                if (relatedQueriesDiv) // update visibility based on latest setting
-                    relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
-                if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
-                    const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                    get.related(lastQuery).then(queries => show.related(queries))
-                        .catch(err => { consoleErr(err.message)
-                            if (get.related.status != 'done') api.tryNew(get.related) })
-                }
-                updateTweaksStyle() // toggle <pre> max-height
-                notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
-                refreshMenu()
-            }))
-
-            // Add command to toggle prefix mode
-            const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
-                          + ( msgs.menuLabel_require || 'Require' ) + ' "/" '
-                          + ( msgs.menuLabel_beforeQuery || 'before query' ) + ' '
-                          + menuState.separator + menuState.word[+config.prefixEnabled]
-            menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
-                saveSetting('prefixEnabled', !config.prefixEnabled)
-                if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
-                    saveSetting('suffixEnabled', !config.suffixEnabled) }
-                notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + menuState.word[+config.prefixEnabled])
-                refreshMenu()
-            }))
-
-            // Add command to toggle suffix mode
-            const sfmLabel = menuState.symbol[+config.suffixEnabled] + ' '
-                          + ( msgs.menuLabel_require || 'Require' ) + ' "?" '
-                          + ( msgs.menuLabel_afterQuery || 'after query' ) + ' '
-                          + menuState.separator + menuState.word[+config.suffixEnabled]
-            menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
-                saveSetting('suffixEnabled', !config.suffixEnabled)
-                if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
-                    saveSetting('prefixEnabled', !config.prefixEnabled) }
-                notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + menuState.word[+config.suffixEnabled])
-                refreshMenu()
-            }))
-
-            if (!isMobile) {
-
-                // Add command to toggle wider sidebar
-                const wsbLabel = menuState.symbol[+config.widerSidebar] + ' '
-                               + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' )
-                               + menuState.separator + menuState.word[+config.widerSidebar]
-                menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
-
-                // Add command to toggle sticky sidebar
-                const ssbLabel = menuState.symbol[+config.stickySidebar] + ' '
-                               + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' )
-                               + menuState.separator + menuState.word[+config.stickySidebar]
-                menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
-            }
-        }
-
-        // Add command to toggle highlight-to-ask
-        const htaLabel = `${menuState.symbol[+!config.asktipDisabled]} `
-                       + `${ msgs.menuLabel_highlightToAsk || 'Highlight-to-ask' } `
-                       + `(${ msgs.menuLabel_fromAnySite || 'from any site' })`
-                       + menuState.separator + menuState.word[+!config.asktipDisabled]
-        menuIDs.push(GM_registerMenuCommand(htaLabel, () => {
-            saveSetting('asktipDisabled', !config.asktipDisabled)
-            notify(`${ msgs.menuLabel_highlightToAsk || 'Highlight-to-ask' } ${menuState.word[+!config.asktipDisabled]}`)
+        // Add command to toggle auto-get mode
+        const agmLabel = menuState.symbol[+config.autoget] + ' '
+                       + ( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
+                       + menuState.separator + menuState.word[+config.autoget]
+        menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
+            saveSetting('autoget', !config.autoget)
+            notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + menuState.word[+config.autoget])
             refreshMenu()
         }))
 
-        if (isGoogleSERP) {
+        
+        if (!isMobile) {
 
-            // Add command to set reply language
-            const rlLabel = '🌐 ' + ( msgs.menuLabel_replyLanguage || 'Reply Language' )
-                          + menuState.separator + config.replyLanguage
-            menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
-                while (true) {
-                    let replyLanguage = prompt(
-                        ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
-                    if (replyLanguage == null) break // user cancelled so do nothing
-                    else if (!/\d/.test(replyLanguage)) {
-                        replyLanguage = ( // auto-case for menu/alert aesthetics
-                            [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
-                              : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
-                        saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                        siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
-                            config.appName + ' ' + ( msgs.alert_willReplyIn || 'will reply in' ) + ' ' // msg
-                                + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
-                            '', '', 335)
-                        refreshMenu() ; break
-            }}}))
+            // Add command to toggle auto-focus chatbar
+            const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
+                           + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                           + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
+            menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
+                saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
+                notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                             + menuState.word[+!config.autoFocusChatbarDisabled])
+                refreshMenu()
+            }))
 
-            // Add command to set color scheme
-            const schemeLabel = ( config.scheme == 'light' ? '☀️' :
-                                  config.scheme == 'dark'  ? '🌘' : '🌗' ) + ' '
-                              + ( msgs.menuLabel_colorScheme || 'Color Scheme' ) + menuState.separator
-                              + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
-                                  config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
-                                                           : msgs.menuLabel_auto || 'Auto' )
-            menuIDs.push(GM_registerMenuCommand(schemeLabel, launchSchemeModal))
+            // Add command to toggle auto-scroll (when streaming)
+            const assLabel = menuState.symbol[+config.autoScroll] + ' '
+                           + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
+                           + menuState.separator + menuState.word[+config.autoScroll]
+            menuIDs.push(GM_registerMenuCommand(assLabel, () => {
+                saveSetting('autoScroll', !config.autoScroll)
+                notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + menuState.word[+config.autoScroll])
+                refreshMenu()
+            }))
         }
+
+        // Add command to toggle showing related queries
+        const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
+                      + ( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
+                      + menuState.separator + menuState.word[+!config.rqDisabled]
+        menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
+            saveSetting('rqDisabled', !config.rqDisabled)
+            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+            if (relatedQueriesDiv) // update visibility based on latest setting
+                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
+            if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
+                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                get.related(lastQuery).then(queries => show.related(queries))
+                    .catch(err => { consoleErr(err.message)
+                        if (get.related.status != 'done') api.tryNew(get.related) })
+            }
+            updateTweaksStyle() // toggle <pre> max-height
+            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
+            refreshMenu()
+        }))
+
+        // Add command to toggle prefix mode
+        const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
+                      + ( msgs.menuLabel_require || 'Require' ) + ' "/" '
+                      + ( msgs.menuLabel_beforeQuery || 'before query' ) + ' '
+                      + menuState.separator + menuState.word[+config.prefixEnabled]
+        menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
+            saveSetting('prefixEnabled', !config.prefixEnabled)
+            if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
+                saveSetting('suffixEnabled', !config.suffixEnabled) }
+            notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + menuState.word[+config.prefixEnabled])
+            refreshMenu()
+        }))
+
+        // Add command to toggle suffix mode
+        const sfmLabel = menuState.symbol[+config.suffixEnabled] + ' '
+                      + ( msgs.menuLabel_require || 'Require' ) + ' "?" '
+                      + ( msgs.menuLabel_afterQuery || 'after query' ) + ' '
+                      + menuState.separator + menuState.word[+config.suffixEnabled]
+        menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
+            saveSetting('suffixEnabled', !config.suffixEnabled)
+            if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
+                saveSetting('prefixEnabled', !config.prefixEnabled) }
+            notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + menuState.word[+config.suffixEnabled])
+            refreshMenu()
+        }))
+
+        if (!isMobile) {
+
+            // Add command to toggle wider sidebar
+            const wsbLabel = menuState.symbol[+config.widerSidebar] + ' '
+                           + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' )
+                           + menuState.separator + menuState.word[+config.widerSidebar]
+            menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
+
+            // Add command to toggle sticky sidebar
+            const ssbLabel = menuState.symbol[+config.stickySidebar] + ' '
+                           + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' )
+                           + menuState.separator + menuState.word[+config.stickySidebar]
+            menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
+        }
+
+        // Add command to set reply language
+        const rlLabel = '🌐 ' + ( msgs.menuLabel_replyLanguage || 'Reply Language' )
+                      + menuState.separator + config.replyLanguage
+        menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
+            while (true) {
+                let replyLanguage = prompt(
+                    ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
+                if (replyLanguage == null) break // user cancelled so do nothing
+                else if (!/\d/.test(replyLanguage)) {
+                    replyLanguage = ( // auto-case for menu/alert aesthetics
+                        [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
+                          : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
+                    saveSetting('replyLanguage', replyLanguage || config.userLanguage)
+                    siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
+                        config.appName + ' ' + ( msgs.alert_willReplyIn || 'will reply in' ) + ' ' // msg
+                            + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
+                        '', '', 335)
+                    refreshMenu() ; break
+        }}}))
+
+        // Add command to set color scheme
+        const schemeLabel = ( config.scheme == 'light' ? '☀️' :
+                              config.scheme == 'dark'  ? '🌘' : '🌗' ) + ' '
+                          + ( msgs.menuLabel_colorScheme || 'Color Scheme' ) + menuState.separator
+                          + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
+                              config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
+                                                       : msgs.menuLabel_auto || 'Auto' )
+        menuIDs.push(GM_registerMenuCommand(schemeLabel, launchSchemeModal))
 
         // Add command to launch About modal
         const aboutLabel = '💡 ' + ( msgs.menuLabel_about || 'About' ) + ' ' + config.appName
@@ -1957,6 +2101,10 @@
                     // Remove 'Send reply' tooltip from send btn clicks
                     if (!isMobile) tooltipDiv.style.opacity = 0
 
+                    // Clear footer
+                    const appFooter = appDiv.querySelector('footer')
+                    while (appFooter.firstChild) appFooter.removeChild(appFooter.firstChild)
+
                     // Show loading status
                     const replySection = appDiv.querySelector('section')
                     replySection.classList.add('loading', 'no-user-select')
@@ -2037,227 +2185,103 @@
 
     // Run MAIN routine
 
-    if (isGoogleSERP) { // show GOOGLEGPT
+    if (window.location.search.includes('&udm=2')) return // exit if on Google Images
 
-        // Init ALERTS
-        var appAlerts = {
-            waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
-            login:            `${ msgs.alert_login || 'Please login' } @ `,
-            checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
-            tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
-            parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
-            proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
-            openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
-            suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
-            suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
-        }
-
-        // Init UI vars
-        await Promise.race([ // dark theme label loaded or 0.5s passed
-            new Promise(resolve => {
-                (function checkDarkThemeLabel() {
-                    [...document.querySelectorAll('span')].find(span => span.textContent == 'Dark theme')
-                        ? resolve(true) : setTimeout(checkDarkThemeLabel, 200)
-                })()
-            }), new Promise(resolve => setTimeout(resolve, 500))
-        ])
-        var scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' ),
-            hasSidebar = !!document.querySelector('[class*="kp-"]')
-
-        // Pre-load LOGO
-        var appLogoImg = document.createElement('img') ; updateAppLogoSrc()
-        appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleElems() }
-
-        // Create/ID/classify/listenerize GOOGLEGPT container
-        var appDiv = document.createElement('div') ; appDiv.id = 'googlegpt' ;  appDiv.classList.add('fade-in')
-        appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
-            let elem = event.target
-            while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
-                elem = elem.parentNode
-            if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
-        })
-
-        // Stylize APP elems
-        var appStyle = document.createElement('style') ; updateAppStyle()
-        const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
-        document.head.append(appStyle, hljsStyle)
-
-        // Stylize SITE elems
-        var tweaksStyle = document.createElement('style'),
-              wsbStyles = '#center_col, #center_col div { max-width: 516px !important ; overflow: hidden }' // shrink center column
-                        + '#googlegpt { width: 455px }' // expand GoogleGPT when in limiting Google host container
-                        + '#googlegpt ~ div { width: 540px !important }' // expand side snippets
-                        + `#app-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
-              ssbStyles = '#googlegpt { position: sticky ; top: 87px }'
-                        + '#googlegpt ~ * { display: none }' // hide sidebar contents
-        updateTweaksStyle() ; document.head.append(tweaksStyle)
-
-        // Create/stylize TOOLTIPs
-        if (!isMobile) {
-            var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
-            const tooltipStyle = document.createElement('style')
-            tooltipStyle.innerText = '.btn-tooltip {'
-                + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-                + 'font-size: 0.75rem ; color: white ;' // font style
-                + 'position: absolute ;' // for updateTooltip() calcs
-                + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
-                + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
-            document.head.append(tooltipStyle)
-        }
-
-        // APPEND to Google
-        const centerCol = document.getElementById('center_col')
-        const hostContainer = isMobile ? centerCol
-            : document.getElementById('rhs') // sidebar container if side snippets exist
-            || (() => { // create new one if no side snippets exist
-                   const newHostContainer = document.createElement('div')
-                   newHostContainer.style.display = 'contents'
-                   centerCol.style.paddingRight = '65px'
-                   centerCol.insertAdjacentElement('afterend', newHostContainer)
-                   return newHostContainer
-               })()
-        hostContainer.prepend(appDiv)
-        setTimeout(() => appDiv.classList.add('active'), 100) // fade in
-
-        // Init footer CTA to share feedback
-        var footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
-
-        // Show STANDBY mode or get/show ANSWER
-        var msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
-        if (!config.autoget && !/src=(?:first-run|asktip)/.test(location.href) // Auto-Get disabled and not queried from other site or 1st run
-            || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-            || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
-                show.reply('standby', footerContent)
-                if (!config.rqDisabled) {
-                    const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                    get.related(lastQuery).then(queries => show.related(queries))
-                        .catch(err => { consoleErr(err.message)
-                            if (get.related.status != 'done') api.tryNew(get.related) })
-                }
-        } else { appAlert('waitingResponse') ; get.reply(msgChain) }
-
-    } else { // create/append/listenerize ASKTIP + elems
-
-        const asktipDisabled = () => config.asktipDisabled
-            || config.sitesToNotShowAsktip && config.sitesToNotShowAsktip.some(domain => location.href.includes(domain))
-
-        // Pre-load ICON
-        const appIconImg = document.createElement('img')
-        appIconImg.src = 'https://media.googlegpt.io/images/icons/googlegpt/black/icon32.png?8652a6e'
-
-        // Init asktip
-        let asktip = document.getElementById('asktip')
-        if (!asktip) { // make/append it
-            const fontFamilies = '"Source Sans Pro", sans-serif', bgColor = '#f9f9f9',
-                  noUserSelectStyles = '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;'
-
-            // Create/ID/stylize/append asktip div
-            asktip = document.createElement('div') ; asktip.id = 'asktip'
-            asktip.style.cssText = noUserSelectStyles
-              + `font-family: ${fontFamilies} ; font-size: 14px ;`
-              + `position: absolute ; background-color: ${bgColor} ; border: 1px solid black ; border-radius: 12px ;`
-              + 'padding: 5px 2px ; box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px ; display: none ; z-index: 1000'
-            document.body.append(asktip)
-
-            // Create/stylize/listenerize/append hide tip ELEMS
-            const hideTipSpan = document.createElement('span'),
-                  hideTipSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                  hideTipSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path'),
-                  hideTipSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 -960 960 960'], ['fill', 'black']]
-            hideTipSVGattrs.forEach(([attr, value]) => hideTipSVG.setAttribute(attr, value))
-            hideTipSVG.style.cssText = 'position: relative ; top: 2.85px ; margin: 0 4px 0 6px ; vertical-align: baseline'
-            hideTipSVGpath.setAttribute('d',
-                'm660.61-425.83-93.65-93.65q4.6-29.82-17.63-53.22-22.24-23.39-54.37-18.78l-89.13-89.13q14.43-6.3 34.84-10.61 20.42-4.3 39.5-4.3 82.4 0 138.87 56.48 56.48 56.47 56.48 138.87 0 17.95-3.59 37.63-3.58 19.67-11.32 36.71ZM805.17-280.7l-81.08-81.65q34.04-27.87 61.93-60.82 27.89-32.96 50.02-76.83-52.13-101.3-145.7-162.09-93.57-60.78-210.59-60.78-28.75 0-54.58 3.44-25.82 3.43-48.43 9.73l-90.35-90.34q42.87-17.87 92.44-27.59 49.57-9.72 101.17-9.72 163.3 0 292.61 92Q901.91-653.36 961.09-500q-23.44 64.87-64.65 121.37-41.22 56.5-91.27 97.93ZM790.39-20.48 624.52-184.91q-33.87 11.56-69.5 16.91T480-162.65q-163.87 0-293.78-92.28Q56.3-347.22-1.09-500q19.44-52.87 50.63-100.57 31.2-47.69 71.07-87.82L11.43-798.87l74-74 778.4 778.96-73.44 73.43ZM202.83-608.87q-26 27.7-44.09 52-18.09 24.3-34.22 56.87 50.6 102.48 144.5 162.68 93.9 60.19 210.98 60.19 9.74 0 21.96-.5 12.21-.5 27.04-3.07l-22.78-26.21q-6.31 1.43-12.78 1.93-6.46.5-13.44.5-82.47 0-138.99-56.53-56.53-56.52-56.53-138.99 0-6.41-.07-12.66-.06-6.25 1.37-13.56l-82.95-82.65Zm348.08 72.91ZM365.57-445Z')
-            hideTipSpan.style.cssText = 'padding: 3px 1px ; border-radius: 9px ; cursor: pointer'
-            hideTipSpan.onmouseover = () => { // highlight bg, show menu
-                hideTipSpan.style.background = '#bcd7dfab'
-                if (hideAsktipMenu.style.display == 'none') {
-                    hideAsktipMenu.style.display = 'grid'
-                    hideAsktipMenu.style.left = `${hideTipSpan.getBoundingClientRect().left}px`
-                    hideAsktipMenu.style.top = `${ hideTipSpan.getBoundingClientRect().bottom
-                        + ( window.scrollY || window.pageYOffset || document.documentElement.scrollTop ) +6 }px`
-            }}
-            hideTipSpan.onmouseout = () => hideTipSpan.style.background = 'none' // unhighlight bg
-            hideTipSVG.append(hideTipSVGpath) ; hideTipSpan.append(hideTipSVG) ; asktip.append(hideTipSpan)
-
-            // Create/ID/stylize/append hide tip menu
-            const hideAsktipMenu = document.createElement('div')
-            hideAsktipMenu.id = 'hide-asktip-menu' ; hideAsktipMenu.style.display = 'none'
-            hideAsktipMenu.style.cssText = noUserSelectStyles
-              + `font-family: ${fontFamilies} ; font-size: 13px ; border: 1px solid black ; border-radius: 9px ;`
-              + `display: none ; color: rgb(27, 27, 27) ; background: ${bgColor} ; position: absolute ; padding: 3px ;`
-              + 'box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px ; z-index: 1200'
-            document.body.append(hideAsktipMenu)
-
-            // Create/fill/stylize/listenerize/append hide tip menu items
-            const hideAsktipMenuItemA = document.createElement('span'),
-                  hideAsktipMenuItemB = document.createElement('span')
-            hideAsktipMenuItemA.textContent = `${ msgs.menuLabel_hideMenu || 'Hide menu' } `
-                                         + `${ msgs.menuLabel_forThisSite || 'for this site' }`
-            hideAsktipMenuItemB.textContent = `${ msgs.menuLabel_hideMenu || 'Hide menu' } `
-                                         + `${ msgs.menuLabel_fromAllSites || 'from all sites' }`;
-            [hideAsktipMenuItemA, hideAsktipMenuItemB].forEach((menuItem, idx) => {
-                menuItem.style.cssText = 'cursor: pointer ; padding: 1px 6px'
-                menuItem.onmouseover = () => menuItem.style.background = '#bcd7dfab' // highlight bg
-                menuItem.onmouseout = () => menuItem.style.background = 'none' // unhighlight bg
-                if (idx == 0) { // entry to hide menu for site
-                    menuItem.style.cssText += '; border-bottom: 1px dotted rgb(0, 0, 0)' // add separator
-                    menuItem.onclick = () => {
-                        if (!config.sitesToNotShowAsktip) config.sitesToNotShowAsktip = []
-                        config.sitesToNotShowAsktip.push(new URL(location.href).hostname)
-                        saveSetting('sitesToNotShowAsktip', config.sitesToNotShowAsktip, 'global')
-                        document.getElementById('hide-asktip-menu').style.display = 'none'
-                        document.getElementById('asktip').style.display = 'none'
-                    }
-                } else { // entry to hide menu always
-                    menuItem.onclick = () => {
-                        saveSetting('asktipDisabled', true)
-                        refreshMenu()
-                        document.getElementById('hide-asktip-menu').style.display = 'none'
-                        document.getElementById('asktip').style.display = 'none'
-                }}
-            })
-            hideAsktipMenu.append(hideAsktipMenuItemA, hideAsktipMenuItemB)
-        }
-
-        // Add inputEvents.up event to SHOW asktip
-        document.addEventListener(inputEvents.up, event => { setTimeout(() => {
-            if (asktipDisabled()) return
-            const selectedText = window.getSelection().toString().trim()
-            if (selectedText && !event.target.closest('#asktip')) {
-            
-                    // Init asktip content
-                    let asktipContentSpan = document.getElementById('googlegpt-asktip-content')
-                    if (!asktipContentSpan) { // make/append it
-                        asktipContentSpan = document.createElement('span') ; asktipContentSpan.id = 'googlegpt-asktip-content'
-                        asktipContentSpan.textContent = `${ msgs.menuLabel_ask || 'Ask' } ${config.appName}`
-                        appIconImg.style.cssText = 'width: 17px ; position: relative ; top: 3px ; margin-right: 5px ; vertical-align: baseline'
-                        asktipContentSpan.prepend(appIconImg)
-                        asktipContentSpan.style.cssText = 'padding: 3px 6px ; border-radius: 9px ;  cursor: pointer'
-                        asktipContentSpan.onmouseover = () => { // highlight bg, hide hide-tip menu
-                            asktipContentSpan.style.background = '#bcd7dfab'
-                            const hideAsktipMenu = document.getElementById('hide-asktip-menu')
-                            if (hideAsktipMenu?.style.display != 'none') hideAsktipMenu.style.display = 'none'
-                        }
-                        asktipContentSpan.onmouseout = () => asktipContentSpan.style.background = 'none' // unlight bg
-                        asktip.prepend(asktipContentSpan)
-                    }
-
-                    // Add/update click event each time to capture live selectedText
-                    asktipContentSpan.onclick = () => {
-                        safeWindowOpen(`https://www.google.com/search?q=${encodeURIComponent(selectedText)}&src=asktip`)
-                        asktip.style.display = 'none'
-                    }
-
-                    // Show asktip
-                    asktip.style.display = 'ruby'
-                    asktip.style.left = `${ event.pageX - asktip.offsetWidth/2 }px`
-                    asktip.style.top = `${ event.pageY - asktip.offsetHeight -28 }px`
-
-            } else // hide everything
-                asktip.style.display = document.getElementById('hide-asktip-menu').style.display = 'none'
-
-        }, 1)})  // to avoid double trigger
+    // Init ALERTS
+    const appAlerts = {
+        waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
+        login:            `${ msgs.alert_login || 'Please login' } @ `,
+        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
+        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
+        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
+        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
+        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
+        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
+        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
     }
+
+    // Init UI vars
+    await Promise.race([ // dark theme label loaded or 0.5s passed
+        new Promise(resolve => {
+            (function checkDarkThemeLabel() {
+                [...document.querySelectorAll('span')].find(span => span.textContent == 'Dark theme')
+                    ? resolve(true) : setTimeout(checkDarkThemeLabel, 200)
+            })()
+        }), new Promise(resolve => setTimeout(resolve, 500))
+    ])
+    let scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' )
+    const hasSidebar = !!document.querySelector('[class*="kp-"]')
+
+    // Pre-load LOGO
+    const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
+    appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleElems() }
+
+    // Create/ID/classify/listenerize GOOGLEGPT container
+    const appDiv = document.createElement('div') ; appDiv.id = 'googlegpt' ;  appDiv.classList.add('fade-in')
+    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
+        let elem = event.target
+        while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
+            elem = elem.parentNode
+        if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
+    })
+
+    // Stylize APP elems
+    const appStyle = document.createElement('style') ; updateAppStyle()
+    const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
+    document.head.append(appStyle, hljsStyle)
+
+    // Stylize SITE elems
+    const tweaksStyle = document.createElement('style'),
+          wsbStyles = '#center_col, #center_col div { max-width: 516px !important ; overflow: hidden }' // shrink center column
+                    + '#googlegpt { width: 455px }' // expand GoogleGPT when in limiting Google host container
+                    + '#googlegpt ~ div { width: 540px !important }' // expand side snippets
+                    + `#app-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
+          ssbStyles = '#googlegpt { position: sticky ; top: 87px }'
+                    + '#googlegpt ~ * { display: none }' // hide sidebar contents
+    updateTweaksStyle() ; document.head.append(tweaksStyle)
+
+    // Create/stylize TOOLTIPs
+    if (!isMobile) {
+        var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
+        const tooltipStyle = document.createElement('style')
+        tooltipStyle.innerText = '.btn-tooltip {'
+            + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+            + 'font-size: 0.75rem ; color: white ;' // font style
+            + 'position: absolute ;' // for updateTooltip() calcs
+            + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
+            + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
+        document.head.append(tooltipStyle)
+    }
+
+    // APPEND to Google
+    const centerCol = document.getElementById('center_col')
+    const hostContainer = isMobile ? centerCol
+        : document.getElementById('rhs') // sidebar container if side snippets exist
+        || (() => { // create new one if no side snippets exist
+               const newHostContainer = document.createElement('div')
+               newHostContainer.style.display = 'contents'
+               centerCol.style.paddingRight = '65px'
+               centerCol.insertAdjacentElement('afterend', newHostContainer)
+               return newHostContainer
+           })()
+    hostContainer.prepend(appDiv)
+    setTimeout(() => appDiv.classList.add('active'), 100) // fade in
+
+    // Init footer CTA to share feedback
+    let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
+
+    // Show STANDBY mode or get/show ANSWER
+    let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
+    if (!config.autoget && !/src=(?:first-run|asktip)/.test(location.href) // Auto-Get disabled and not queried from other site or 1st run
+        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
+        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
+            show.reply('standby', footerContent)
+            if (!config.rqDisabled) {
+                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                get.related(lastQuery).then(queries => show.related(queries))
+                    .catch(err => { consoleErr(err.message)
+                        if (get.related.status != 'done') api.tryNew(get.related) })
+            }
+    } else { appAlert('waitingResponse') ; get.reply(msgChain) }
 
 })()

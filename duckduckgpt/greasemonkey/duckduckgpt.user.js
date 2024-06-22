@@ -1,157 +1,154 @@
 // ==UserScript==
 // @name                DuckDuckGPT 🤖
-// @description         Adds AI answers to DuckDuckGo. Ask from any site. Powered by GPT-4o!
-// @description:af      Voeg KI-antwoorde by DuckDuckGo. Vra vanaf enige webwerf. Aangedryf deur GPT-4o!
-// @description:am      የAI መልስናወርቃለች እርስዎን DuckDuckGo ፍለጋ፣ የእያንዳንዱ ድረ-ገጽን ጥያቄ በመጠቀም ያለበት፣ GPT-4o ተከታታይ!
-// @description:ar      يضيف إجابات الذكاء الاصطناعي إلى DuckDuckGo. اسأل من أي موقع. مدعوم بواسطة GPT-4o!
-// @description:az      DuckDuckGo-a AI cavabları əlavə edir. Hər hansı bir səhifədən sual edin. GPT-4o ilə işləyir!
-// @description:be      Дадае адказы штучнага інтэлекту ў DuckDuckGo. Запытвайце з любога сайта. Аб'яднана з GPT-4o!
-// @description:bem     Yamfumano AI mafundo pa DuckDuckGo. Uliza kumayi malo awebusayiti. Eko wakuleta na GPT-4o!
-// @description:bg      Добавя AI отговори към DuckDuckGo. Питайте от всяко сайт. Осигурено от GPT-4o!
-// @description:bn      DuckDuckGo তে AI উত্তর যোগ করে। যেকোনো সাইট থেকে জিজ্ঞাসা করুন। GPT-4o দ্বারা চালিত!
-// @description:bo      DuckDuckGo ནི་ AI དྲུག་བཏུས་བྱས་ཀྱི་འཕྲུལ་ཆས་གསར་ཤོག། གསང་ལས་སྙན་ཞུ་བཞག་པའི་གློ་དོན་འགྱོ་སྡེ། GPT-4o གི་བྱུང་བའི་ལས་རིགས་འཕྲིན་ལས་ཕབ།
-// @description:bs      Dodaje AI odgovore u DuckDuckGo pretragu. Pitajte sa bilo kog sajta. Pokreće GPT-4o!
-// @description:ca      Afegeix respostes d'IA a DuckDuckGo. Pregunta des de qualsevol lloc web. Amb la tecnologia de GPT-4o!
-// @description:ceb     Nagdugang mga tubag sa AI sa DuckDuckGo Search. Pangutana gikan sa bisan unsang site. Gipadagan sa GPT-4o!
-// @description:cs      Přidává odpovědi AI do vyhledávání DuckDuckGo. Zeptejte se z libovolného webu. Poháněno GPT-4o!
-// @description:cy      Ychwanegu atebion AI i Ddarganfod DuckDuckGo. Gofynnwch o unrhyw safle. Pwerwyd gan GPT-4o!
-// @description:da      Tilføjer AI-svar til DuckDuckGo. Spørg fra enhver side. Drevet af GPT-4o!
-// @description:de      Fügt KI-Antworten zu DuckDuckGo hinzu. Fragen Sie von jeder Website aus. Angetrieben von GPT-4o!
-// @description:el      Προσθέτει απαντήσεις AI στο DuckDuckGo. Κάντε ερωτήσεις από οποιαδήποτε ιστοσελίδα. Τροφοδοτείται από GPT-4o!
-// @description:en      Adds AI answers to DuckDuckGo. Ask from any site. Powered by GPT-4o!
-// @description:eo      Aldonas AI-respondojn al DuckDuckGo. Demandu de iu ajn retejo. Energio de GPT-4o!
-// @description:es      Agrega respuestas de IA a DuckDuckGo. Haz preguntas desde cualquier sitio. ¡Potenciado por GPT-4o!
-// @description:et      Lisab DuckDuckGo'le AI-vastuseid. Küsige mis tahes saidilt. Töötab GPT-4o abil!
-// @description:eu      Gaiak AI erantzunak gehitu DuckDuckGo-ri. Nahi duzun edozein webguneetatik galdetu. GPT-4o-k gidatuta!
-// @description:fa      پاسخهای هوش مصنوعی را به DuckDuckGo اضافه میکند. از هر سایتی بپرسید. توسط GPT-4o پشتیبانی میشود!
-// @description:fi      Lisää tekoälyn vastauksia DuckDuckGo:hun. Kysy mistä tahansa sivulta. Toimii GPT-4o:n avulla!
-// @description:fil     Nagdudugtong ng mga sagot ng AI sa DuckDuckGo. Magtanong mula sa anumang site. Hinihikayat ng GPT-4o!
-// @description:fj      Vakarautaka na vosa vakatotolo ni AI ki na yasa ni DuckDuckGo. Taroga mai na yasa e dua na vanua. Vakarautaki e na GPT-4o!
-// @description:fo      Leggur AI svar til DuckDuckGo. Spyr frá hvørjum síðu. Virkar við GPT-4o!
-// @description:fr      Ajoute des réponses IA à DuckDuckGo. Demandez à partir de n'importe quel site. Alimenté par GPT-4o!
-// @description:fr-CA   Ajoute des réponses IA à DuckDuckGo. Demandez à partir de n'importe quel site. Alimenté par GPT-4o!
-// @description:ga      Cuireann sé freagraí AI le DuckDuckGo. Fiafraigh ó aon suíomh. Tá sé cumraithe ag GPT-4o!
-// @description:gd      Cuiridh e freagairtean AI ri DuckDuckGo. Fiosrachadh bho gach làrach. Air a chumasachadh le GPT-4o!
-// @description:gl      Engade respostas de IA á barra lateral de procura de DuckDuckGo. Pregunta desde calquera sitio. Alimentado por GPT-4o!
-// @description:gn      Oñemohẽ Guyra'ihoãi Tupãsy AI rire DuckDuckGo Search. Pehendu mba'éichapa peteĩ ne'ẽrõ. Mboguero ko'ãiva GPT-4o!
-// @description:gu      DuckDuckGo પર AI જવાબો ઉમેરે છે. કોઈપણ સાઇટથી પૂછો. GPT-4o પર ચાલે છે!
-// @description:ha      Zaya sauyaƙa daga AI zuwa bidiyo na bidiyon DuckDuckGo. Tambaya daga irin yayan saitoci. Yana yin GPT-4o!
-// @description:haw     Hoʻohui aku i nā hōʻike a ka ʻikeʻike ʻana i ka papa aoʻao o ka ʻimi ʻana iā DuckDuckGo. Kāhea mai ma nā kahua like ʻole. Hōʻoikaika ʻia e GPT-4o!
-// @description:he      מוסיף תשובות המופעלות על ידי AI לסרגל הצד של DuckDuckGo Search. שאל מכל אתר. מופעל על ידי GPT-4o!
-// @description:hi      DuckDuckGo पर AI उत्तर जोड़ता है। किसी भी साइट से पूछें। GPT-4o के द्वारा संचालित!
-// @description:hr      Dodaje odgovore AI na bočnoj traci pretraživanja DuckDuckGo. Pitajte s bilo kojeg mjesta. Pokreće GPT-4o!
-// @description:ht      Ajoute repons IA nan barre laterale Rechèch DuckDuckGo a. Mandem soti nan nenpòt kote. Difize pa GPT-4o!
-// @description:hu      AI válaszokat ad a DuckDuckGo Keresés oldalsávjához. Kérdezzen bárhonnan. GPT-4o által hajtva!
-// @description:hy      Ավելացնում է AI պատասխաններ DuckDuckGo Search-ի կողմից: Հարցերը կարող եք կատարել ցանկացած կայքից: Գործում է GPT-4o!
-// @description:ia      Addi responsas de AI al barra lateral de cerca de DuckDuckGo. Interroga ex ulle sito. Functiona per GPT-4o!
-// @description:id      Menambahkan jawaban AI ke sidebar pencarian DuckDuckGo. Tanya dari situs mana pun. Didukung oleh GPT-4o!
-// @description:ig      Tinye ndebanye AI na ohere na-atọ ọnụ ahụ na DuckDuckGo. Weere ma ozi site n'anya. Nwere ike ina-emume GPT-4o!
-// @description:is      Bætir við AI svar við leitarstikuna DuckDuckGo. Spyrji frá hverju síðu. Keyrir á GPT-4o!
-// @description:it      Aggiunge risposte IA alla barra laterale di ricerca di DuckDuckGo. Chiedi da qualsiasi sito. Alimentato da GPT-4o!
-// @description:ja      DuckDuckGoの検索バーサイドバーにAIの回答を追加します。どのサイトからでも質問してください。GPT-4oで駆動しています！
-// @description:jv      Nambahaké jawaban AI dhisik sampingan DuckDuckGo. Tanya saka piranti kanthi apapun. Didukung déning GPT-4o!
-// @description:ka      დაამატებს AI პასუხებს DuckDuckGo ძებნის ზღვასთან. გთხოვთ ნებისმიერ საიტიდან. მუშაობს GPT-4o-ზე!
-// @description:kk      DuckDuckGo іздеу тақтасына AI жауаптарын қосады. Кез келген сайттан сұрау жасаңыз. GPT-4o үшін жұмыс жасайды!
-// @description:kl      Tilersiornerit AI-svarerilluunngorniarnera DuckDuckGo. Arlaanngaanneersorneq ataaseqarnissaanik. Aamma GPT-4o ippit!
-// @description:km      បន្ថែមចម្លើយ AI ទៅជួរស្វ័រ DuckDuckGo។ សួរពីតំបន់មួយណាមួយ។ ប្រព្រឹត្តនៅលើ GPT-4o!
-// @description:kn      DuckDuckGo ಗೆ AI ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ. ಯಾವುದೇ ಸೈಟ್ನಿಂದ ಕೇಳಿ. GPT-4o ನಿಂದ ನಡೆಸಲ್ಪಡುತ್ತಿದೆ!
-// @description:ko      DuckDuckGo 검색 사이드 바에 AI 답변을 추가합니다. 어느 사이트에서든 질문하세요. GPT-4o로 작동됩니다!
-// @description:ku      Bersivên AI yên DuckDuckGo Search-ê dikeve kêleka siyayê. Ji her çi malperê pirs bike. Li ser GPT-4o pêşveçûn dike!
-// @description:ky      DuckDuckGo издөө тамчысына AI жоопторду кошотот. Кандай сымалда калсаңыз болот. GPT-4o иштебейт!
-// @description:la      Addit responsa AI ad latere explorandi DuckDuckGo. Interroga ex quacumque pagina. Agitur per GPT-4o!
-// @description:lb      Setzt AI Äntwerten bei der DuckDuckGo Sichleeschbaarsäit derbäi. Froe vun där Äntwerten. Gesteiert vun GPT-4o!
-// @description:lg      Ekola ebyamagero by'obuloko ku ssentebe ya sokweerabira ya DuckDuckGo. Ekola ebyamagero ku kintu kyonna. Ekitegedde nga GPT-4o!
-// @description:ln      Kokata lisakoli ya téléchargement ya DuckDuckGo. Soma mpe mosala oyo ekóya. Epai na GPT-4o!
-// @description:lo      ຕື່ມຄຳຕອບຈາກ AI ໃນເຄື່ອງມືການຊອກຫາຂອງ DuckDuckGo. ບໍ່ມີເຄື່ອງທີ່ໄດ້ປະກອບ. ເຮັດໃຫ້ໂປຣໄຟຟ້າໃຊ້ເປັນ GPT-4o!
-// @description:lt      Prideda AI atsakymų į paieškos juostos šoną DuckDuckGo. Klauskite iš bet kurios svetainės. Veikia su GPT-4o!
-// @description:lv      Pievieno atbildes no AI DuckDuckGo meklēšanas sānjoslā. Jautājiet no jebkuras vietnes. Darbojas ar GPT-4o!
-// @description:mg      Manampy volabe AI ao amin'ny sidebar ny hetsika DuckDuckGo. Mandefa amin'ny toerana iray. Manankarena amin'ny GPT-4o!
-// @description:mi      Tāpirihia ngā whakautu AI ki te tāpae mātaitanga DuckDuckGo. Pātai mai i ētahi tūranga. E whakahaere ana i te GPT-4o!
-// @description:mk      Додава одговори од ИИ на страничната лента на пребарувањето DuckDuckGo. Прашајте од било која страница. Поддржано од GPT-4o!
-// @description:ml      DuckDuckGo-യിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു. ഏതെങ്കിലും സൈറ്റിൽ നിന്ന് ചോദിക്കുക. GPT-4o നൽകുന്നത്!
-// @description:mn      DuckDuckGo хайлтын хажуугийн самбарт AI хариултуудыг нэмдэг. Ямар ч сайтаас асуугаарай. GPT-4o дэмжлэгтэй!
-// @description:mr      DuckDuckGo च्या शोध साइडबारमध्ये AI उत्तरे जोडली जातात. कोणत्याही साइटवरून विचारा. GPT-4o द्वारा समर्थित!
-// @description:ms      Menambah jawapan AI ke sidebar DuckDuckGo. Tanya dari mana-mana laman web. Dikuasakan oleh GPT-4o!
-// @description:mt      Iżżid tweġibiet AI mal-sidebar ta' DuckDuckGo. Staqsi minn kwalunkwe sit. Mgħammar minn GPT-4o!
-// @description:my      DuckDuckGo ရှိ AI အဖြေများကို ထည့်သွင်းသည်။ မည်သည့်ဆိုဒ်မှမေးပါ။ GPT-4o ဖြင့်အထောက်အပံ့ပြုသည်!
-// @description:na      Ongerenga mea a AI ki le tofiga o DuckDuckGo. Fesili mai so’o se ‘upega tafa’ilagi. Fa’aola e GPT-4o!
-// @description:nb      Legger til AI-svar i DuckDuckGo sidefeltet. Spør fra hvilken som helst side. Drevet av GPT-4o!
-// @description:nd      Ithunyelwe izimpendulo ze-AI ku-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Iqhutshwa yi-GPT-4o!
-// @description:ne      DuckDuckGo खोजको साइडबारमा AI उत्तरहरू थप्छ। कुनै पनि साइटबाट सोध्नुहोस्। GPT-4o द्वारा समर्थित!
-// @description:ng      Ongeza majibu ya AI kwenye menyu ya DuckDuckGo. Uliza kutoka kwa tovuti yoyote. Inaendeshwa na GPT-4o!
-// @description:nl      Voegt AI-antwoorden toe aan de DuckDuckGo zijbalk. Vraag vanaf elke site. Aangedreven door GPT-4o!
-// @description:nn      Legg til AI-svar i DuckDuckGo sidefelt. Spør fra hvilken som helst side. Drevet av GPT-4o!
-// @description:no      Legger til AI-svar i DuckDuckGo sidefelt. Spør fra hvilken som helst side. Drevet av GPT-4o!
-// @description:nso     E eketsa dikarabo tša AI go sephateng sa DuckDuckGo. Botšiša go tšwa sebakeng se sengwe le se sengwe. E hloletšwe ke GPT-4o!
-// @description:ny      Imathandizira mayankho a AI ku sidebar ya DuckDuckGo. Funsani kuchokera patsamba lililonse. Yothandizidwa ndi GPT-4o!
-// @description:oc      Apond las responsas AI a la barra laterala de DuckDuckGo. Demandatz a partir de qualsevol site. Alimentat per GPT-4o!
-// @description:om      Deebii AI DuckDuckGo irratti dabalata. Marsariitii kamirraayyuu gaafadhu. GPT-4o tiin kan hojjetu!
-// @description:or      DuckDuckGo କୁ AI ଉତ୍ତର ଯୋଗ କରେ | ଯେକ any ଣସି ସାଇଟରୁ ପଚାର | GPT-4o ଦ୍ୱାରା ଚାଳିତ!
-// @description:pa      DuckDuckGo ਲਈ AI ਜਵਾਬ ਜੋੜਦਾ ਹੈ। ਕਿਸੇ ਵੀ ਸਾਈਟ ਤੋਂ ਪੁੱਛੋ. GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ!
-// @description:pl      Dodaje odpowiedzi AI do paska bocznego DuckDuckGo. Zapytaj z dowolnej strony. Wspierany przez GPT-4o!
-// @description:ps      DuckDuckGo ته د AI ځوابونه اضافه کوي. له هر سایټ څخه پوښتنه وکړئ. د GPT-4o لخوا پرمخ وړل کیږي!
-// @description:pt      Adiciona respostas AI à barra lateral do DuckDuckGo. Pergunte de qualquer site. Alimentado por GPT-4o!
-// @description:pt-BR   Adiciona respostas AI à barra lateral do DuckDuckGo. Pergunte de qualquer site. Alimentado por GPT-4o!
-// @description:qu      Añade respuestas de AI a la barra lateral de DuckDuckGo. Pregunta desde cualquier sitio. Impulsado por GPT-4o!
-// @description:rm      Agiunta las respostas AI a la barra laterala da DuckDuckGo. Dumonda da tut il link. Sustegnì da GPT-4o!
-// @description:rn      Yongeramwo inyishu za AI ku rubuga rwa DuckDuckGo. Baza kuri site yose. Iterwa n’inkomezi na GPT-4o!
-// @description:ro      Adaugă răspunsuri AI în bara laterală DuckDuckGo. Întreabă de pe orice site. Susținut de GPT-4o!
-// @description:ru      Добавляет ответы AI на боковую панель DuckDuckGo. Спрашивайте с любого сайта. На базе GPT-4o!
-// @description:rw      Yongerera ibisubizo bya AI mu ruhande rwa DuckDuckGo. Ubusabe kuri site iyo ari yo yose. Gishyigikiwe na GPT-4o!
-// @description:sa      DuckDuckGo इत्यत्र AI उत्तराणि योजयति । कस्यापि साइट् तः पृच्छन्तु। GPT-4o द्वारा संचालित!
-// @description:sat     DuckDuckGoᱥ ᱵᱟᱨᱦᱟᱨᱚᱛ ᱠᱟᱹᱞᱤᱞᱟ AI ᱨᱮᱞᱟ ᱦᱚᱱᱮᱡ (GPT-4o ᱚᱛᱷᱟ ᱠᱚᱢᱵᱚᱨᱟᱺᱡ!)
-// @description:sc      Aghjunghje risposte AI à a barra laterale di DuckDuckGo. Dumandate da qualsiasi situ. Supportatu da GPT-4o!
-// @description:sd      شامل ڪري ٿو AI جوابن کي DuckDuckGo ڏانهن. ڪنهن به سائيٽ کان پڇو. GPT-4o پاران طاقتور!
-// @description:se      Loahpa AI-vástádusat DuckDuckGo gaskkaside. Jearahuvvon gosage sajis. Doaimmasaš GPT-4o!
-// @description:sg      Tisa na tîsânga ya AI kuna ntsâdi ya DuckDuckGo. Sônga kuna site y'oseî. Sa tebelî GPT-4o!
-// @description:si      DuckDuckGo සෙවුමේ AI පිළිතුරු එකතු කරයි. කිසිඳු වෙබ් අඩවියකින් විමසන්න. GPT-4o විසින් බලගැන්වී ඇත!
-// @description:sk      Pridáva AI odpovede do bočnej lišty vyhľadávania DuckDuckGo. Spýtajte sa z akejkoľvek stránky. Podporované GPT-4o!
-// @description:sl      Dodaja AI odgovore v stransko vrstico iskanja DuckDuckGo. Vprašajte s katere koli strani. Podprto z GPT-4o!
-// @description:sm      Faʻaopopo tali AI i le itu saogalemu o le DuckDuckGo. Fesili mai i soʻo se saite. Faʻatinoina e GPT-4o!
-// @description:sn      Kupindura maitiro e AI kuve kuwandisa wevhu ra DuckDuckGo Search. Bvunza kubva pane chero saiti. Akakosha ne GPT-4o!
-// @description:so      Ku daraya jawaabaha AI ee dhinaca DuckDuckGo. Weydii laga bilaabo goob kasta. Waxaa ku shaqeeya GPT-4o!
-// @description:sq      Shton përgjigje AI në anëbardhën e kërkimit DuckDuckGo. Pyet nga çdo faqe. Mbështetur nga GPT-4o!
-// @description:sr      Dodaje AI odgovore u bočnu traku DuckDuckGo. Pitajte sa bilo kog sajta. Podržano od strane GPT-4o!
-// @description:ss      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo Search. Buza kusuka kunoma isiphi isiza. Ixhaswe yi-GPT-4o!
-// @description:st      Eketsa likarabo tsa AI ho lehlakoreng la DuckDuckGo. Botsa ho tloha sebakeng leha e le sefe. E tsamaisoa ke GPT-4o!
-// @description:su      Nambahkeun jawaban AI ka sidebar DuckDuckGo. Tanya ti situs mana waé. Disetir ku GPT-4o!
-// @description:sv      Lägger till AI-svar i DuckDuckGo sidofält. Fråga från vilken sida som helst. Drivs av GPT-4o!
-// @description:sw      Inaongeza majibu ya AI kwenye upau wa kando wa DuckDuckGo. Uliza kutoka kwa tovuti yoyote. Inaendeshwa na GPT-4o!
-// @description:ta      DuckDuckGo க்கு AI பதில்களைச் சேர்க்கிறது. எந்த தளத்தில் இருந்தும் கேளுங்கள். GPT-4o மூலம் இயக்கப்படுகிறது!
-// @description:te      DuckDuckGoకి AI సమాధానాలను జోడిస్తుంది. ఏదైనా సైట్ నుండి అడగండి. GPT-4o ద్వారా ఆధారితం!
-// @description:tg      Зиёд кардани ҷавобҳои AI ба тарафи DuckDuckGo. Аз ҳар гуна сайт пурсед. Мувофиқи GPT-4o!
-// @description:th      เพิ่มคำตอบ AI ในแถบด้านข้างของ DuckDuckGo. ถามจากเว็บไซต์ใดก็ได้. รองรับโดย GPT-4o!
-// @description:ti      ናብ DuckDuckGo ናይ AI መልስታት ይውስኽ። ካብ ዝኾነ መርበብ ሓበሬታ ሕተት። ብ GPT-4o ዝሰርሕ!
-// @description:tk      DuckDuckGo-a AI jogaplary goşýar. Islendik sahypadan sorag beriň. GPT-4o bilen işleýär!
-// @description:tl      Nagdadagdag ng mga sagot na AI sa sidebar ng DuckDuckGo. Magtanong mula sa anumang site. Pinapagana ng GPT-4o!
-// @description:tn      E kenyelelitse dikarabo tsa AI lehlakoreng la DuckDuckGo. Botsa ho tswa saeteng efe kapa efe. E tsamaisoa ke GPT-4o!
-// @description:to      Tānaki atu ‘a e ngaahi tali AI ki he fehokotaki’anga ki tu‘a ‘o e DuckDuckGo. Fai ha me‘a mei ha saiti pē. Ngāue‘aki ‘e he GPT-4o!
-// @description:tr      DuckDuckGo yan çubuğuna AI yanıtları ekler. Herhangi bir siteden sorabilirsiniz. GPT-4o tarafından desteklenmektedir!
-// @description:ts      Yongeza swivutiso swa AI ehlangwini ra DuckDuckGo. Vutisa kusuka eka sayiti yin’wana na yin’wana. Ri seketelwa hi GPT-4o!
-// @description:tt      DuckDuckGo Эзләү читенә AI җавапларын өсти. Теләсә кайсы сайттан сорагыз. GPT-4o белән эшли!
-// @description:tw      Ɛde AI mmuae aka ho maa DuckDuckGo mpapawsoɛ. Bisa fi beae biara. Ɛyɛ GPT-4o a ɛde tumi!
-// @description:ug      DuckDuckGo ئىزدەشتە AI جاۋابلىرىنى قوشىدۇ. ھەر قانداق تور بەتتىن سوراڭ. GPT-4o نىڭ قوللىشى بىلەن!
-// @description:uk      Додає AI відповіді у бічну панель DuckDuckGo. Питайте з будь-якого сайту. Підтримується GPT-4o!
-// @description:ur      DuckDuckGo سائڈبار میں AI جوابات شامل کرتا ہے۔ کسی بھی سائٹ سے پوچھیں۔ GPT-4o کے ذریعے تقویت یافتہ!
-// @description:uz      DuckDuckGo qidiruviga AI javoblari qo'shadi. Har qanday saytdan so'rang. GPT-4o tomonidan qo'llab-quvvatlanadi!
-// @description:ve      Vho hodza a AI kha zwa vhambadela zwa DuckDuckGo. U nga vhudzisa kha tshiimiswa tshithihi na tshithihi. Zwi khou shuma nga GPT-4o!
-// @description:vi      Thêm câu trả lời AI vào thanh bên DuckDuckGo. Hỏi từ bất kỳ trang web nào. Được hỗ trợ bởi GPT-4o!
-// @description:vo      Läükon datans AI ad päts binon DuckDuckGo. Pedön sevei okik. Nüköfon dö GPT-4o!
-// @description:wa      Åjouter des réponses AI å l'cohete di DuckDuckGo. Dimande a på onk ki site. Sopoirtê pa GPT-4o!
-// @description:wo      Duggal na AI ci wetu DuckDuckGo. Laaj fi kan la rekk. Naataanal ko GPT-4o!
-// @description:xh      Yongeza iimpendulo ze-AI kwicala le-DuckDuckGo. Buza kwisiza nayiphi na. Iqhutywa yi-GPT-4o!
-// @description:yi      מוסיף תשובות AI לסרגל הצד של DuckDuckGo. שאל מכל אתר. מופעל על ידי GPT-4o!
-// @description:yo      Fikun awọn idahun AI si abala DuckDuckGo. Beere lati ọdọ eyikeyi aaye ayelujara. Ṣe atilẹyin nipasẹ GPT-4o!
-// @description:za      Gaeng an de AI beix bouxmaenz an DuckDuckGo. Faenh daengz mboujlaenz sim. Giekdaemz an GPT-4o fap!
-// @description:zh      为 DuckDuckGo 添加 AI 答案。从任何网站提问。由 GPT-4o 提供支持！
-// @description:zh-CN   为 DuckDuckGo 添加 AI 答案。从任何网站提问。由 GPT-4o 提供支持！
-// @description:zh-HK   為 DuckDuckGo 增加人工智慧答案。從任何網站詢問。由 GPT-4o 提供支援！
-// @description:zh-SG   为 DuckDuckGo 添加 AI 答案。从任何网站提问。由 GPT-4o 提供支持！
-// @description:zh-TW   為 DuckDuckGo 增加人工智慧答案。從任何網站詢問。由 GPT-4o 提供支援！
-// @description:zu      Faka izimpendulo ze-AI eceleni kwe-DuckDuckGo. Buza kusuka kunoma yisiphi isiza. Ixhaswe yi-GPT-4o!
+// @description         Adds AI answers to DuckDuckGo (powered by GPT-4o!)
+// @description:af      Voeg AI-antwoorde by DuckDuckGo (aangedryf deur GPT-4o!)
+// @description:am      የ DuckDuckGo ውስጥ AI መልቀቅን አድርግ፣ (GPT-4o በመሣሪያዎቹ ውስጥ!)
+// @description:ar      يضيف إجابات AI إلى DuckDuckGo (مدعوم بواسطة GPT-4o!)
+// @description:as      DuckDuckGo-লৈ AI উত্তৰ যোগ দিয়ে (GPT-4o দ্বাৰা পাওৱা হৈছে!)
+// @description:az      DuckDuckGo-ya AI cavablarını əlavə edir (GPT-4o tərəfindən dəstəklənir!)
+// @description:be      Дадае ІА адказы на DuckDuckGo (падтрымліваецца GPT-4o!)
+// @description:bg      Добавя ИИ отговори в DuckDuckGo (поддържан от GPT-4o!)
+// @description:bn      DuckDuckGo-ত AI উত্তর যোগ করে (GPT-4o দ্বারা প্রচালিত!)
+// @description:bs      Dodaje AI odgovore na DuckDuckGo (pokreće GPT-4o!)
+// @description:ca      Afegeix respostes d'IA a DuckDuckGo (impulsat per GPT-4o!)
+// @description:ceb     Nagdugang ug mga tubag AI ngadto sa DuckDuckGo (gipadagan sa GPT-4o!)
+// @description:co      Aggiunge risposte AI a DuckDuckGo (supportate da GPT-4o!)
+// @description:cs      Přidává AI odpovědi do DuckDuckGo (poháněno GPT-4o!)
+// @description:cy      Ychwanegu atebion AI i DuckDuckGo (a yrrir gan GPT-4o!)
+// @description:da      Tilføjer AI-svar til DuckDuckGo (drevet af GPT-4o!)
+// @description:de      Fügt AI-Antworten zu DuckDuckGo hinzu (betrieben von GPT-4o!)
+// @description:el      Προσθέτει απαντήσεις AI στο DuckDuckGo (τροφοδοτούμενο από GPT-4o!)
+// @description:en      Adds AI answers to DuckDuckGo (powered by GPT-4o!)
+// @description:eo      Aldonas AI-respondojn al DuckDuckGo (ebligita de GPT-4o!)
+// @description:es      Añade respuestas de IA a DuckDuckGo (impulsado por GPT-4o!)
+// @description:et      Lisab AI-vastused DuckDuckGo'le (juhitud GPT-4o-ga!)
+// @description:eu      Gehitu IA erantzunak DuckDuckGo-n (GPT-4o-k bultzatuta!)
+// @description:fa      پاسخهای هوشمصنوعی به DuckDuckGo اضافه میشود (توسط GPT-4o پشتیبانی میشود!)
+// @description:fi      Lisää tekoälyvastauksia DuckDuckGo:hun (ohjattu GPT-4o:lla!)
+// @description:fil     Nagdaragdag ng mga sagot ng AI sa DuckDuckGo (pinapagana ng GPT-4o!)
+// @description:fo      Bætir AI svar við DuckDuckGo (drifin af GPT-4o!)
+// @description:fr      Ajoute des réponses IA à DuckDuckGo (propulsé par GPT-4o!)
+// @description:fr-CA   Ajoute des réponses IA à DuckDuckGo (propulsé par GPT-4o!)
+// @description:fy      Foeget AI-antwurden ta oan DuckDuckGo (dreaun troch GPT-4o!)
+// @description:ga      Cuirtear freagraí AI le DuckDuckGo (dírítear ag GPT-4o!)
+// @description:gd      Cur freagairtichean AI ris an DuckDuckGo (air a thug seachad le GPT-4o!)
+// @description:gl      Engade respostas de IA a DuckDuckGo (impulsado por GPT-4o!)
+// @description:gu      DuckDuckGo માટે AI જવાબો ઉમેરે છે (GPT-4o દ્વારા પોવરેડ!)
+// @description:ha      Ƙaddara takardun AI zu DuckDuckGo (da aka fi GPT-4o!)
+// @description:haw     Hoʻohui aku i nā hoʻopiʻi AI iā DuckDuckGo (hoʻohui ʻia e GPT-4o!)
+// @description:he      מוסיף תשובות AI ל-DuckDuckGo (מופעל על ידי GPT-4o!)
+// @description:hi      DuckDuckGo में AI उत्तर जोड़ता है (GPT-4o द्वारा संचालित!)
+// @description:hmn     Ntxig AI nruab nruab rau DuckDuckGo (pab cuam GPT-4o!)
+// @description:hr      Dodaje AI odgovore na DuckDuckGo (pokreće GPT-4o!)
+// @description:ht      Ajoute repons AI nan DuckDuckGo (pòte pa GPT-4o!)
+// @description:hu      AI válaszokat ad hozzá a DuckDuckGo-hoz (GPT-4o által hajtva!)
+// @description:hy      Ավելացնում է AI պատասխաններ DuckDuckGo-ում (աջակցված է GPT-4o-ով!)
+// @description:ia      Adde responas AI a DuckDuckGo (propulsate per GPT-4o!)
+// @description:id      Menambahkan jawaban AI ke DuckDuckGo (didukung oleh GPT-4o!)
+// @description:ig      Tinye ihe ndekọ AI n'ụzọ ọgụgụ DuckDuckGo (n'efu na GPT-4o!)
+// @description:ii      DuckDuckGo ᐸᔦᒪᔪᐃᓃᑦ AI ᓇᑕᐅᒪᐃᑦᓯ (GPT-4o ᓂᑕᔪᑦᓯᐏᑦᑕᒥᔭ!)
+// @description:is      Bætir AI svar við DuckDuckGo (keyrir á GPT-4o!)
+// @description:it      Aggiunge risposte AI a DuckDuckGo (alimentato da GPT-4o!)
+// @description:iu      DuckDuckGo ᑲᑎᒪᔪᖅᑐᖅᑐᐃᓐᓇᓂᒃ AI ᑎᑎᕋᖃᕐᓯᒪᓂᖏᓐ (GPT-4o ᑐᑭᒧᑦᑖᑦ!)
+// @description:ja      DuckDuckGo に AI 回答を追加します (GPT-4o で動作！)
+// @description:jv      Nambéhi pirangga AI nganti DuckDuckGo (diduweni déning GPT-4o!)
+// @description:ka      ამატებს AI პასუხებს DuckDuckGo-ს (იმართება GPT-4o!)
+// @description:kk      DuckDuckGo-ға AI жауаптарын қосады (GPT-4o арқылы жұмыс істейді!)
+// @description:kl      DuckDuckGo-mi AI-t Kalaallit Nunaanni iluani (GPT-4o! -nip ilaanni!)
+// @description:km      បន្ថែមចម្លើយ AI ទៅ DuckDuckGo (ដំណើរការដោយ GPT-4o!)
+// @description:kn      DuckDuckGo ಗೆ AI ಉತ್ತರಗಳನ್ನು ಸೇರಿಸುತ್ತದೆ (GPT-4o ನಿಂದ ನಡೆಸಲ್ಪಡುತ್ತಿದೆ!)
+// @description:ko      DuckDuckGo에 AI 답변을 추가합니다(GPT-4o 제공!)
+// @description:ku      Bersivên AI-ê li DuckDuckGo zêde dike (ji hêla GPT-4o ve hatî hêzdar kirin!)
+// @description:ky      DuckDuckGo'го AI жоопторун кошот (GPT-4o тарабынан иштейт!)
+// @description:la      Addit AI responsa DuckDuckGo (powered per GPT-4o!)
+// @description:lb      Füügt AI Äntwerten op DuckDuckGo (ugedriwwen duerch GPT-4o!)
+// @description:lg      Yambula emisomo ey'ensobi ku DuckDuckGo (enkuuma GPT-4o!)
+// @description:ln      Ebakisi biyano ya AI na DuckDuckGo (ezali na nguya ya GPT-4o!)
+// @description:lo      ເພີ່ມຄໍາຕອບ AI ໃຫ້ກັບ DuckDuckGo (ຂັບເຄື່ອນໂດຍ GPT-4o!)
+// @description:lt      Prideda AI atsakymus į „DuckDuckGo“ (maitina GPT-4o!)
+// @description:lv      Pievieno AI atbildes DuckDuckGo (darbina GPT-4o!)
+// @description:mg      Manampy valiny AI amin'ny DuckDuckGo (nampiasain'ny GPT-4o!)
+// @description:mi      Ka taapirihia nga whakautu AI ki a DuckDuckGo (whakamahia e GPT-4o!)
+// @description:mk      Додава одговори со вештачка интелигенција на DuckDuckGo (напојувано од GPT-4o!)
+// @description:ml      DuckDuckGo-യിലേക്ക് AI ഉത്തരങ്ങൾ ചേർക്കുന്നു (GPT-4o നൽകുന്നതാണ്!)
+// @description:mn      DuckDuckGo-д AI хариултуудыг нэмдэг (GPT-4o-оор ажилладаг!)
+// @description:mr      DuckDuckGo ला AI उत्तरे जोडते (GPT-4o द्वारे समर्थित!)
+// @description:ms      Menambahkan jawapan AI pada DuckDuckGo (dikuasakan oleh GPT-4o!)
+// @description:mt      Iżżid it-tweġibiet AI għal DuckDuckGo (mħaddma minn GPT-4o!)
+// @description:my      DuckDuckGo (GPT-4o ဖြင့် စွမ်းဆောင်ထားသည့်) တွင် AI အဖြေများကို ပေါင်းထည့်သည်
+// @description:na      Aeta AI teroma i DuckDuckGo (ira GPT-4o reke akea!)
+// @description:nb      Legger til AI-svar på DuckDuckGo (drevet av GPT-4o!)
+// @description:nd      Iyatholakala amaswelelo e-AI kuDuckDuckGo (kuyatholakala ngokulawula uGPT-4o!)
+// @description:ne      DuckDuckGo मा AI जवाफहरू थप्छ (GPT-4o द्वारा संचालित!)
+// @description:ng      Ondjova mbelelo dha AI moDuckDuckGo (uumbuli nguGPT-4o!)
+// @description:nl      Voegt AI-antwoorden toe aan DuckDuckGo (mogelijk gemaakt door GPT-4o!)
+// @description:nn      Legg til AI-svar på DuckDuckGo (drevet av GPT-4o!)
+// @description:no      Legger til AI-svar til DuckDuckGo (drevet av GPT-4o!)
+// @description:nso     Ya go etela ditshenyegi tsa AI mo DuckDuckGo (e dirwang ke GPT-4o!)
+// @description:ny      Imawonjezera mayankho a AI ku DuckDuckGo (yoyendetsedwa ndi GPT-4o!)
+// @description:oc      Ajusta de respòstas d'IA a DuckDuckGo (amb GPT-4o!)
+// @description:om      Deebii AI DuckDuckGo (GPT-4o'n kan hojjetu!) irratti dabalata.
+// @description:or      DuckDuckGo କୁ AI ଉତ୍ତର ଯୋଗ କରେ (GPT-4o ଦ୍ୱାରା ଚାଳିତ!)
+// @description:pa      DuckDuckGo (GPT-4o ਦੁਆਰਾ ਸੰਚਾਲਿਤ!) ਵਿੱਚ AI ਜਵਾਬ ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ
+// @description:pl      Dodaje odpowiedzi AI do DuckDuckGo (obsługiwane przez GPT-4o!)
+// @description:ps      DuckDuckGo ته د AI ځوابونه اضافه کوي (د GPT-4o لخوا پرمخ وړل کیږي!)
+// @description:pt      Adiciona respostas de IA ao DuckDuckGo (desenvolvido por GPT-4o!)
+// @description:pt-BR   Adiciona respostas de IA ao DuckDuckGo (desenvolvido por GPT-4o!)
+// @description:qu      DuckDuckGo (GPT-4o nisqawan kallpachasqa!) nisqaman AI kutichiykunata yapan.
+// @description:rm      Agiuntescha respostas d'IA a DuckDuckGo (propulsà da GPT-4o!)
+// @description:rn      Abafasha inyandiko z'IA ku DuckDuckGo (yashyizweho na GPT-4o!)
+// @description:ro      Adaugă răspunsuri AI la DuckDuckGo (alimentat de GPT-4o!)
+// @description:ru      Добавляет ответы ИИ в DuckDuckGo (на базе GPT-4o!)
+// @description:rw      Ongeraho ibisubizo bya AI kuri DuckDuckGo (ikoreshwa na GPT-4o!)
+// @description:sa      DuckDuckGo (GPT-4o द्वारा संचालितम्!) इत्यत्र AI उत्तराणि योजयति ।
+// @description:sat     DuckDuckGo ar AI jawab khon ojantok (GPT-4o! sebadha manju)
+// @description:sc      Agiungit rispostas de IA a DuckDuckGo (motorizadu da GPT-4o!)
+// @description:sd      شامل ڪري ٿو AI جوابن کي DuckDuckGo (GPT-4o پاران طاقتور!)
+// @description:se      Lávdegáhtii AI vástid DuckDuckGo (GPT-4o! vuosttas!)
+// @description:sg      Nâ tî-kûzâ mái vêdáara AI mbi DuckDuckGo (ngâ GPT-4o!)
+// @description:si      DuckDuckGo වෙත AI පිළිතුරු එක් කරයි (GPT-4o මගින් බලගන්වයි!)
+// @description:sk      Pridáva odpovede AI do DuckDuckGo (poháňané GPT-4o!)
+// @description:sl      Dodaja odgovore AI v DuckDuckGo (poganja GPT-4o!)
+// @description:sm      Faʻaopoopo tali AI ile DuckDuckGo (faʻamalosia e GPT-4o!)
+// @description:sn      Inowedzera mhinduro dzeAI kuDuckDuckGo (inofambiswa neGPT-4o!)
+// @description:so      Waxay ku dartay jawaabaha AI DuckDuckGo (waxaa ku shaqeeya GPT-4o!)
+// @description:sq      Shton përgjigjet e AI në DuckDuckGo (mundësuar nga GPT-4o!)
+// @description:sr      Додаје АИ одговоре у DuckDuckGo (покреће ГПТ-4о!)
+// @description:ss      Iphendvulela izindlela zezilungiselelo ku-DuckDuckGo (izenzakalo nge-GPT-4o!)
+// @description:st      E kopanetse diqoqo tsa AI ka DuckDuckGo (ka sebelisoa ke GPT-4o!)
+// @description:su      Nambahkeun jawaban AI kana DuckDuckGo (dikuatkeun ku GPT-4o!)
+// @description:sv      Lägger till AI-svar till DuckDuckGo (driven av GPT-4o!)
+// @description:sw      Inaongeza majibu ya AI kwa DuckDuckGo (inaendeshwa na GPT-4o!)
+// @description:ta      DuckDuckGo க்கு AI பதில்களைச் சேர்க்கிறது (GPT-4o மூலம் இயக்கப்படுகிறது!)
+// @description:te      DuckDuckGoకి AI సమాధానాలను జోడిస్తుంది (GPT-4o ద్వారా ఆధారితం!)
+// @description:tg      Ба DuckDuckGo ҷавобҳои AI илова мекунад (аз ҷониби GPT-4o!)
+// @description:th      เพิ่มคำตอบ AI ให้กับ DuckDuckGo (ขับเคลื่อนโดย GPT-4o!)
+// @description:ti      ናብ DuckDuckGo (ብGPT-4o ዝሰርሕ!) ናይ AI መልስታት ይውስኸሉ።
+// @description:tk      DuckDuckGo-a AI jogaplaryny goşýar (GPT-4o bilen işleýär!)
+// @description:tl      Nagdadagdag ng mga sagot ng AI sa DuckDuckGo (pinapatakbo ng GPT-4o!)
+// @description:tn      O amogela dipotso tsa AI mo DuckDuckGo (e a nang le GPT-4o!)
+// @description:to      Tambisa mabizo a AI ku DuckDuckGo (mukutenga na GPT-4o!)
+// @description:tr      DuckDuckGo'ya yapay zeka yanıtları ekler (GPT-4o tarafından desteklenmektedir!)
+// @description:ts      Ku engetela tinhlamulo ta AI eka DuckDuckGo (leyi fambiwaka hi GPT-4o!)
+// @description:tt      DuckDuckGo'ка AI җаваплары өсти (GPT-4o белән эшләнгән!)
+// @description:tw      Ɔde AI mmuae ka DuckDuckGo (a GPT-4o na ɛma ahoɔden!) ho.
+// @description:ug      DuckDuckGo ۋەبسېتكە AI جاۋابلار قوشۇدۇ (GPT-4o تەكشۈرگۈچى بىلەن!)
+// @description:uk      Додає відповіді штучного інтелекту в DuckDuckGo (на базі GPT-4o!)
+// @description:ur      DuckDuckGo میں AI جوابات شامل کرتا ہے (GPT-4o کے ذریعے تقویت یافتہ!)
+// @description:uz      DuckDuckGo-ga AI javoblarini qo'shadi (GPT-4o tomonidan quvvatlanadi!)
+// @description:vi      Thêm câu trả lời AI vào DuckDuckGo (được cung cấp bởi GPT-4o!)
+// @description:xh      Yongeza iimpendulo ze-AI kwi-DuckDuckGo (ixhaswe yi-GPT-4o!)
+// @description:yi      לייגט אַי ענטפֿערס צו DuckDuckGo (Powered דורך GPT-4o!)
+// @description:yo      Ṣe afikun awọn idahun AI si DuckDuckGo (agbara nipasẹ GPT-4o!)
+// @description:zh      为 DuckDuckGo 添加 AI 答案（由 GPT-4o 提供支持！）
+// @description:zh-CN   为 DuckDuckGo 添加 AI 答案（由 GPT-4o 提供支持！）
+// @description:zh-HK   為 DuckDuckGo 添加 AI 答案（由 GPT-4o 提供支援！）
+// @description:zh-SG   为 DuckDuckGo 添加 AI 答案（由 GPT-4o 提供支持！）
+// @description:zh-TW   為 DuckDuckGo 添加 AI 答案（由 GPT-4o 提供支援！）
+// @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.21.14
+// @version             2024.6.21.15
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -169,7 +166,7 @@
 // @compatible          kiwi
 // @compatible          mask
 // @compatible          orion
-// @match               *://*/*
+// @match               *://duckduckgo.com/?*
 // @include             https://auth0.openai.com
 // @connect             binjie.fun
 // @connect             chatgpt.com
@@ -218,8 +215,7 @@
           isFirefox = chatgpt.browser.isFirefox(),
           isEdge = JSON.stringify(navigator.userAgentData?.brands)?.includes('Edge'),
           isBrave = JSON.stringify(navigator.userAgentData?.brands)?.includes('Brave'),
-          isMobile = chatgpt.browser.isMobile(),
-          isDDGserp = /^https:\/\/(?:www\.)?duckduckgo\.[^/]+\/\?/.test(document.location.href)
+          isMobile = chatgpt.browser.isMobile()
 
     // Init CONFIG
     const config = {
@@ -231,23 +227,20 @@
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
     config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@f2c9d00/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@a5b2abd/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting(['asktipDisabled', 'autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun',
+    loadSetting('autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun',
                 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
-                'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar'])
-    loadSetting(['sitesToNotShowAsktip'], 'global')
+                'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.fontSize) saveSetting('fontSize', 16.4) // init reply font size if unset
     if ( // disable streaming in unspported envs
         !/Tampermonkey|ScriptCat/.test(getUserscriptManager()) // unsupported userscript manager
         || getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave) // TM in browser that triggers STATUS_ACCESS_VIOLATION
     ) saveSetting('streamingDisabled', true)
-    if (!config.notFirstRun) { // first run inits
-        if (isMobile) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
-        config.greetUser = true // for after msgs load
-    } saveSetting('notFirstRun', true)
+    if (!config.notFirstRun && isMobile) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
+    saveSetting('notFirstRun', true)
 
     // Init UI VARS
     let scheme = config.scheme || ( chatgpt.isDarkMode() ? 'dark' : 'light' )
@@ -299,9 +292,6 @@
         }
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
 
-    if (config.greetUser && !isDDGserp) // greet user on first run
-        safeWindowOpen(`https://duckduckgo.com/?q=${ msgs.query_hiThere || 'hi there' }&src=first-run`)
-
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
@@ -313,20 +303,8 @@
 
     // Define SCRIPT functions
 
-    function loadSetting(keys, scope = '') {
-        keys.forEach(key => {
-            if (scope == 'global') {
-                const val = localStorage[key]
-                config[key] = val ? JSON.parse(val) : false
-            } else config[key] = GM_getValue(config.keyPrefix + '_' + key, false)
-    })}
-
-    function saveSetting(key, val, scope = '') {
-        if (scope == 'global') localStorage[key] = JSON.stringify(val)
-        else GM_setValue(config.keyPrefix + '_' + key, val)
-        config[key] = val
-    }
-
+    function loadSetting(...keys) { keys.forEach(key => config[key] = GM_getValue(config.keyPrefix + '_' + key, false)) }
+    function saveSetting(key, value) { GM_setValue(config.keyPrefix + '_' + key, value) ; config[key] = value }
     function safeWindowOpen(url) { window.open(url, '_blank', 'noopener') } // to prevent backdoor vulnerabilities
     function getUserscriptManager() { try { return GM_info.scriptHandler } catch (err) { return 'other' }}
 
@@ -334,192 +312,175 @@
 
     function registerMenu() {
 
-        if (isDDGserp) {
+        // Add command to toggle proxy API mode
+        const pamLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
+                       + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
+                       + menuState.separator + menuState.word[+config.proxyAPIenabled]
+        menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
-            // Add command to toggle proxy API mode
-            const pamLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
-                           + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
-                           + menuState.separator + menuState.word[+config.proxyAPIenabled]
-            menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
-
-            // Add command to toggle streaming mode or alert unsupported
-            const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
-            const stmLabel = menuState.symbol[+stmState] + ' '
-                           + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
-                           + menuState.separator + menuState.word[+stmState]
-            menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
-                const scriptCatLink = isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
-                                    : isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
-                                                : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
-                if (!/Tampermonkey|ScriptCat/.test(getUserscriptManager())) { // alert userscript manager unsupported, suggest TM/SC
-                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
-                            + ( !isEdge && !isBrave ? // suggest TM for supported browsers
-                                ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
-                                    : '' )
-                            + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
-                            + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`)
-                } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) // alert TM/browser unsupported, suggest SC
-                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                        `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
-                            + `${ isChrome ? 'Chrome' : isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
-                            + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
-                                + `${ msgs.alert_instead || 'instead' }.`)
-                else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
-                    let msg = `${ msgs.mode_streaming || 'Streaming Mode' } `
-                            + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
-                            + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
-                            + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
-                    const switchPhrase = msgs.alert_switchingOn || 'switching on'
-                    msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
-                    siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
-                    appDiv.querySelector('[href="#"]')?.addEventListener('click', () => {
-                        document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
-                } else { // functional toggle
-                    saveSetting('streamingDisabled', !config.streamingDisabled)
-                    notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + menuState.word[+!config.streamingDisabled])
-                    refreshMenu()
-                }
-            }))
-
-            // Add command to toggle auto-get mode
-            const agmLabel = menuState.symbol[+config.autoget] + ' '
-                           + ( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
-                           + menuState.separator + menuState.word[+config.autoget]
-            menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
-                saveSetting('autoget', !config.autoget)
-                notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + menuState.word[+config.autoget])
+        // Add command to toggle streaming mode or alert unsupported
+        const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
+        const stmLabel = menuState.symbol[+stmState] + ' '
+                       + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
+                       + menuState.separator + menuState.word[+stmState]
+        menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
+            const scriptCatLink = isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
+                                : isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
+                                            : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
+            if (!/Tampermonkey|ScriptCat/.test(getUserscriptManager())) { // alert userscript manager unsupported, suggest TM/SC
+                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                    `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
+                        + ( !isEdge && !isBrave ? // suggest TM for supported browsers
+                            ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
+                                : '' )
+                        + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
+                        + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`)
+            } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) // alert TM/browser unsupported, suggest SC
+                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
+                    `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
+                        + `${ isChrome ? 'Chrome' : isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
+                        + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
+                            + `${ msgs.alert_instead || 'instead' }.`)
+            else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
+                let msg = `${ msgs.mode_streaming || 'Streaming Mode' } `
+                        + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
+                        + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
+                        + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
+                const switchPhrase = msgs.alert_switchingOn || 'switching on'
+                msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
+                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg)
+                appDiv.querySelector('[href="#"]')?.addEventListener('click', () => {
+                    document.querySelector('.modal-close-btn').click() ; toggleProxyMode() })
+            } else { // functional toggle
+                saveSetting('streamingDisabled', !config.streamingDisabled)
+                notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + menuState.word[+!config.streamingDisabled])
                 refreshMenu()
-            }))
-
-            if (!isMobile) {
-
-                // Add command to toggle auto-focus chatbar
-                const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
-                               + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                               + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
-                menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
-                    saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
-                    notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                                 + menuState.word[+!config.autoFocusChatbarDisabled])
-                    refreshMenu()
-                }))
-
-                // Add command to toggle auto-scroll (when streaming)
-                const assLabel = menuState.symbol[+config.autoScroll] + ' '
-                               + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
-                               + menuState.separator + menuState.word[+config.autoScroll]
-                menuIDs.push(GM_registerMenuCommand(assLabel, () => {
-                    saveSetting('autoScroll', !config.autoScroll)
-                    notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + menuState.word[+config.autoScroll])
-                    refreshMenu()
-                }))
             }
+        }))
 
-            // Add command to toggle showing related queries
-            const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
-                          + ( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
-                          + menuState.separator + menuState.word[+!config.rqDisabled]
-            menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
-                saveSetting('rqDisabled', !config.rqDisabled)
-                const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-                if (relatedQueriesDiv) // update visibility based on latest setting
-                    relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
-                if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
-                    const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                    get.related(lastQuery).then(queries => show.related(queries))
-                        .catch(err => { consoleErr(err.message)
-                            if (get.related.status != 'done') api.tryNew(get.related) })
-                }
-                updateTweaksStyle() // toggle <pre> max-height
-                notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
-                refreshMenu()
-            }))
-
-            // Add command to toggle prefix mode
-            const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
-                          + ( msgs.menuLabel_require || 'Require' ) + ' "/" '
-                          + ( msgs.menuLabel_beforeQuery || 'before query' ) + ' '
-                          + menuState.separator + menuState.word[+config.prefixEnabled]
-            menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
-                saveSetting('prefixEnabled', !config.prefixEnabled)
-                if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
-                    saveSetting('suffixEnabled', !config.suffixEnabled) }
-                notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + menuState.word[+config.prefixEnabled])
-                refreshMenu()
-            }))
-
-            // Add command to toggle suffix mode
-            const sfmLabel = menuState.symbol[+config.suffixEnabled] + ' '
-                          + ( msgs.menuLabel_require || 'Require' ) + ' "?" '
-                          + ( msgs.menuLabel_afterQuery || 'after query' ) + ' '
-                          + menuState.separator + menuState.word[+config.suffixEnabled]
-            menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
-                saveSetting('suffixEnabled', !config.suffixEnabled)
-                if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
-                    saveSetting('prefixEnabled', !config.prefixEnabled) }
-                notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + menuState.word[+config.suffixEnabled])
-                refreshMenu()
-            }))
-
-            if (!isCentered && !isMobile) {
-
-                // Add command to toggle wider sidebar
-                const wsbLabel = menuState.symbol[+config.widerSidebar] + ' '
-                               + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' )
-                               + menuState.separator + menuState.word[+config.widerSidebar]
-                menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
-
-                // Add command to toggle sticky sidebar
-                const ssbLabel = menuState.symbol[+config.stickySidebar] + ' '
-                               + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' )
-                               + menuState.separator + menuState.word[+config.stickySidebar]
-                menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
-            }
-        }
-
-        // Add command to toggle highlight-to-ask
-        const htaLabel = `${menuState.symbol[+!config.asktipDisabled]} `
-                       + `${ msgs.menuLabel_highlightToAsk || 'Highlight-to-ask' } `
-                       + `(${ msgs.menuLabel_fromAnySite || 'from any site' })`
-                       + menuState.separator + menuState.word[+!config.asktipDisabled]
-        menuIDs.push(GM_registerMenuCommand(htaLabel, () => {
-            saveSetting('asktipDisabled', !config.asktipDisabled)
-            notify(`${ msgs.menuLabel_highlightToAsk || 'Highlight-to-ask' } ${menuState.word[+!config.asktipDisabled]}`)
+        // Add command to toggle auto-get mode
+        const agmLabel = menuState.symbol[+config.autoget] + ' '
+                       + ( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
+                       + menuState.separator + menuState.word[+config.autoget]
+        menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
+            saveSetting('autoget', !config.autoget)
+            notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + menuState.word[+config.autoget])
             refreshMenu()
         }))
 
-        if (isDDGserp) {
+        if (!isMobile) {
 
-            // Add command to set reply language
-            const rlLabel = '🌐 ' + ( msgs.menuLabel_replyLanguage || 'Reply Language' )
-                          + menuState.separator + config.replyLanguage
-            menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
-                while (true) {
-                    let replyLanguage = prompt(
-                        ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
-                    if (replyLanguage == null) break // user cancelled so do nothing
-                    else if (!/\d/.test(replyLanguage)) {
-                        replyLanguage = ( // auto-case for menu/alert aesthetics
-                            [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
-                              : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
-                        saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                        siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
-                            `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
-                                + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
-                            '', '', 330) // width
-                        refreshMenu() ; break
-            }}}))
+            // Add command to toggle auto-focus chatbar
+            const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
+                           + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                           + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
+            menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
+                saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
+                notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                             + menuState.word[+!config.autoFocusChatbarDisabled])
+                refreshMenu()
+            }))
 
-            // Add command to set color scheme
-            const schemeLabel = ( config.scheme == 'light' ? '☀️' :
-                                  config.scheme == 'dark'  ? '🌘' : '🌗' ) + ' '
-                              + ( msgs.menuLabel_colorScheme || 'Color Scheme' ) + menuState.separator
-                              + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
-                                  config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
-                                                           : msgs.menuLabel_auto || 'Auto' )
-            menuIDs.push(GM_registerMenuCommand(schemeLabel, launchSchemeModal))
+            // Add command to toggle auto-scroll (when streaming)
+            const assLabel = menuState.symbol[+config.autoScroll] + ' '
+                           + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
+                           + menuState.separator + menuState.word[+config.autoScroll]
+            menuIDs.push(GM_registerMenuCommand(assLabel, () => {
+                saveSetting('autoScroll', !config.autoScroll)
+                notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + menuState.word[+config.autoScroll])
+                refreshMenu()
+            }))
         }
+
+        // Add command to toggle showing related queries
+        const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
+                      + ( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
+                      + menuState.separator + menuState.word[+!config.rqDisabled]
+        menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
+            saveSetting('rqDisabled', !config.rqDisabled)
+            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+            if (relatedQueriesDiv) // update visibility based on latest setting
+                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
+            if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
+                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                get.related(lastQuery).then(queries => show.related(queries))
+                    .catch(err => { consoleErr(err.message)
+                        if (get.related.status != 'done') api.tryNew(get.related) })
+            }
+            updateTweaksStyle() // toggle <pre> max-height
+            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
+            refreshMenu()
+        }))
+
+        // Add command to toggle prefix mode
+        const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
+                      + ( msgs.menuLabel_require || 'Require' ) + ' "/" '
+                      + ( msgs.menuLabel_beforeQuery || 'before query' ) + ' '
+                      + menuState.separator + menuState.word[+config.prefixEnabled]
+        menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
+            saveSetting('prefixEnabled', !config.prefixEnabled)
+            if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
+                saveSetting('suffixEnabled', !config.suffixEnabled) }
+            notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + menuState.word[+config.prefixEnabled])
+            refreshMenu()
+        }))
+
+        // Add command to toggle suffix mode
+        const sfmLabel = menuState.symbol[+config.suffixEnabled] + ' '
+                      + ( msgs.menuLabel_require || 'Require' ) + ' "?" '
+                      + ( msgs.menuLabel_afterQuery || 'after query' ) + ' '
+                      + menuState.separator + menuState.word[+config.suffixEnabled]
+        menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
+            saveSetting('suffixEnabled', !config.suffixEnabled)
+            if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
+                saveSetting('prefixEnabled', !config.prefixEnabled) }
+            notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + menuState.word[+config.suffixEnabled])
+            refreshMenu()
+        }))
+
+        if (!isCentered && !isMobile) {
+
+            // Add command to toggle wider sidebar
+            const wsbLabel = menuState.symbol[+config.widerSidebar] + ' '
+                           + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' )
+                           + menuState.separator + menuState.word[+config.widerSidebar]
+            menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
+
+            // Add command to toggle sticky sidebar
+            const ssbLabel = menuState.symbol[+config.stickySidebar] + ' '
+                           + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' )
+                           + menuState.separator + menuState.word[+config.stickySidebar]
+            menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
+        }
+
+        // Add command to set reply language
+        const rlLabel = '🌐 ' + ( msgs.menuLabel_replyLanguage || 'Reply Language' )
+                      + menuState.separator + config.replyLanguage
+        menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
+            while (true) {
+                let replyLanguage = prompt(
+                    ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
+                if (replyLanguage == null) break // user cancelled so do nothing
+                else if (!/\d/.test(replyLanguage)) {
+                    replyLanguage = ( // auto-case for menu/alert aesthetics
+                        [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
+                          : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
+                    saveSetting('replyLanguage', replyLanguage || config.userLanguage)
+                    siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
+                        `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
+                            + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
+                        '', '', 330) // width
+                    refreshMenu() ; break
+        }}}))
+
+        // Add command to set color scheme
+        const schemeLabel = ( config.scheme == 'light' ? '☀️' :
+                              config.scheme == 'dark'  ? '🌘' : '🌗' ) + ' '
+                          + ( msgs.menuLabel_colorScheme || 'Color Scheme' ) + menuState.separator
+                          + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
+                              config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
+                                                       : msgs.menuLabel_auto || 'Auto' )
+        menuIDs.push(GM_registerMenuCommand(schemeLabel, launchSchemeModal))
 
         // Add command to launch About modal
         const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ config.appName }`
@@ -1910,325 +1871,199 @@
 
     // Run MAIN routine
 
-    if (isDDGserp) { // show DUCKDUCKGPT
+    // Init ALERTS
+    const appAlerts = {
+        waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
+        login:            `${ msgs.alert_login || 'Please login' } @ `,
+        checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
+        tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
+        parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
+        proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
+        openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
+        suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
+        suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
+    }
 
-        // Init ALERTS
-        var appAlerts = {
-            waitingResponse:  `${ msgs.alert_waitingResponse || 'Waiting for ChatGPT response' }...`,
-            login:            `${ msgs.alert_login || 'Please login' } @ `,
-            checkCloudflare:  `${ msgs.alert_checkCloudflare || 'Please pass Cloudflare security check' } @ `,
-            tooManyRequests:  `${ msgs.alert_tooManyRequests || 'API is flooded with too many requests' }.`,
-            parseFailed:      `${ msgs.alert_parseFailed || 'Failed to parse response JSON' }.`,
-            proxyNotWorking:  `${ msgs.mode_proxy || 'Proxy Mode' } ${ msgs.alert_notWorking || 'is not working' }.`,
-            openAInotWorking: `OpenAI API ${ msgs.alert_notWorking || 'is not working' }.`,
-            suggestProxy:     `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }`,
-            suggestOpenAI:    `${ msgs.alert_try || 'Try' } ${ msgs.alert_switchingOff || 'switching off' } ${ msgs.mode_proxy || 'Proxy Mode' }`
-        }
+    // Pre-load LOGO
+    const appLogoImg = document.createElement('img') ; updateAppLogoSrc() 
+    appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleAnchor() }
 
-        // Pre-load LOGO
-        var appLogoImg = document.createElement('img') ; updateAppLogoSrc() 
-        appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleAnchor() }
+    // Create/ID/classify/listenerize DDGPT container
+    const appDiv = document.createElement('div') ; appDiv.id = 'ddgpt' ; appDiv.classList.add('fade-in')
+    appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
+        let elem = event.target
+        while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
+            elem = elem.parentNode
+        if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
+    })
 
-        // Create/ID/classify/listenerize DDGPT container
-        var appDiv = document.createElement('div') ; appDiv.id = 'ddgpt' ; appDiv.classList.add('fade-in')
-        appDiv.addEventListener(inputEvents.down, event => { // to dismiss visible font size slider
-            let elem = event.target
-            while (elem && !(elem.id?.includes('font-size'))) // find font size elem parent to exclude handling down event
-                elem = elem.parentNode
-            if (!elem && appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
-        })
+    // Stylize APP elems
+    const appStyle =  document.createElement('style') ; updateAppStyle()
+    const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
+    document.head.append(appStyle, hljsStyle)
 
-        // Stylize APP elems
-        var appStyle =  document.createElement('style') ; updateAppStyle()
-        const hljsStyle = document.createElement('style') ; hljsStyle.innerText = GM_getResourceText('hljsCSS')
-        document.head.append(appStyle, hljsStyle)
+    // Stylize SITE elems
+    const tweaksStyle = document.createElement('style'),
+          wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
+                    + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
+                    + '#app-chatbar { width: 95.6% }',
+          ssbStyles = '#ddgpt { position: sticky ; top: 14px }'
+                    + '#ddgpt ~ * { display: none }' // hide sidebar contents
+                    + 'body, div.site-wrapper { overflow: clip }' // replace `overflow: hidden` to allow stickiness
+    updateTweaksStyle() ; document.head.append(tweaksStyle)
 
-        // Stylize SITE elems
-        var tweaksStyle = document.createElement('style'),
-              wsbStyles = 'section[data-area="mainline"] { max-width: 590px !important }' // max before centered mode changes
-                        + 'section[data-area="sidebar"] { max-width: 530px !important ; flex-basis: 530px !important }'
-                        + '#app-chatbar { width: 95.6% }',
-              ssbStyles = '#ddgpt { position: sticky ; top: 14px }'
-                        + '#ddgpt ~ * { display: none }' // hide sidebar contents
-                        + 'body, div.site-wrapper { overflow: clip }' // replace `overflow: hidden` to allow stickiness
-        updateTweaksStyle() ; document.head.append(tweaksStyle)
+    // Create/stylize TOOLTIPs
+    if (!isMobile) {
+        var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
+        const tooltipStyle = document.createElement('style')
+        tooltipStyle.innerText = '.btn-tooltip {'
+            + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 4px 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
+            + 'font-size: 0.87em ; color: white ;' // font style
+            + 'position: absolute ;' // for updateTooltip() calcs
+            + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
+            + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
+        document.head.append(tooltipStyle)
+    }
+ 
+    // Create/classify/fill feedback FOOTER
+    const appFooter = document.createElement('footer')
+    appFooter.classList.add('fade-in', // DDGPT class
+                            'feedback-prompt') // DDG class
+    let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
+    footerContent.className = 'js-feedback-prompt-generic' // DDG footer class
+    appFooter.append(footerContent)
 
-        // Create/stylize TOOLTIPs
-        if (!isMobile) {
-            var tooltipDiv = document.createElement('div') ; tooltipDiv.classList.add('btn-tooltip', 'no-user-select')
-            const tooltipStyle = document.createElement('style')
-            tooltipStyle.innerText = '.btn-tooltip {'
-                + 'background-color: rgba(0, 0, 0, 0.64) ; padding: 4px 6px ; border-radius: 6px ; border: 1px solid #d9d9e3 ;' // bubble style
-                + 'font-size: 0.87em ; color: white ;' // font style
-                + 'position: absolute ;' // for updateTooltip() calcs
-                + 'box-shadow: 3px 5px 16px 0px rgb(0 0 0 / 21%) ;' // drop shadow
-                + 'opacity: 0 ; transition: opacity 0.1s ; height: fit-content ; z-index: 9999 }' // visibility
-            document.head.append(tooltipStyle)
-        }
-     
-        // Create/classify/fill feedback FOOTER
-        const appFooter = document.createElement('footer')
-        appFooter.classList.add('fade-in', // DDGPT class
-                                'feedback-prompt') // DDG class
-        let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
-        footerContent.className = 'js-feedback-prompt-generic' // DDG footer class
-        appFooter.append(footerContent)
+    // APPEND DDGPT + footer to DDG
+    const appElems = [appFooter, appDiv],
+          hostContainer = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]'
+                                                                        : '[class*="sidebar"]')
+    appElems.forEach(elem => hostContainer.prepend(elem))
+    appElems.toReversed().forEach((elem, idx) => // fade in staggered
+        setTimeout(() => elem.classList.add('active'), idx * 550 - 200))
 
-        // APPEND DDGPT + footer to DDG
-        const appElems = [appFooter, appDiv],
-              hostContainer = document.querySelector(isMobile || isCentered ? '[data-area*="mainline"]'
-                                                                            : '[class*="sidebar"]')
-        appElems.forEach(elem => hostContainer.prepend(elem))
-        appElems.toReversed().forEach((elem, idx) => // fade in staggered
-            setTimeout(() => elem.classList.add('active'), idx * 550 - 200))
+    // REPLACE hostContainer max-width w/ min-width for better UI
+    if (!isMobile) { hostContainer.style.maxWidth = '' ; hostContainer.style.minWidth = '448px' }
 
-        // REPLACE hostContainer max-width w/ min-width for better UI
-        if (!isMobile) { hostContainer.style.maxWidth = '' ; hostContainer.style.minWidth = '448px' }
+    // Check for active TEXT CAMPAIGNS to replace footer CTA
+    get.json('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
+        (err, advertisersData) => { if (err) return
 
-        // Check for active TEXT CAMPAIGNS to replace footer CTA
-        get.json('https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/index.json',
-            (err, advertisersData) => { if (err) return
+            // Init vars
+            let chosenAdvertiser, adSelected
+            const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
+            const currentDate = (() => { // in YYYYMMDD format
+                const today = new Date(), year = today.getFullYear(),
+                      month = String(today.getMonth() + 1).padStart(2, '0'),
+                      day = String(today.getDate()).padStart(2, '0')
+                return year + month + day
+            })()
 
-                // Init vars
-                let chosenAdvertiser, adSelected
-                const re_appName = new RegExp(config.appName.toLowerCase(), 'i')
-                const currentDate = (() => { // in YYYYMMDD format
-                    const today = new Date(), year = today.getFullYear(),
-                          month = String(today.getMonth() + 1).padStart(2, '0'),
-                          day = String(today.getDate()).padStart(2, '0')
-                    return year + month + day
-                })()
+            // Select random, active advertiser
+            for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
+                if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
 
-                // Select random, active advertiser
-                for (const [advertiser, details] of shuffle(applyBoosts(Object.entries(advertisersData))))
-                    if (details.campaigns.text) { chosenAdvertiser = advertiser ; break }
+            // Fetch a random, active creative
+            if (chosenAdvertiser) {
+                const campaignsURL = 'https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/'
+                                   + chosenAdvertiser + '/text/campaigns.json'
+                get.json(campaignsURL, (err, campaignsData) => { if (err) return
 
-                // Fetch a random, active creative
-                if (chosenAdvertiser) {
-                    const campaignsURL = 'https://cdn.jsdelivr.net/gh/KudoAI/ads-library/advertisers/'
-                                       + chosenAdvertiser + '/text/campaigns.json'
-                    get.json(campaignsURL, (err, campaignsData) => { if (err) return
+                    // Select random, active campaign
+                    for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
+                        const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
+                        if (!campaignIsActive) continue // to next campaign since campaign inactive
 
-                        // Select random, active campaign
-                        for (const [campaignName, campaign] of shuffle(applyBoosts(Object.entries(campaignsData)))) {
-                            const campaignIsActive = campaign.active && (!campaign.endDate || currentDate <= campaign.endDate)
-                            if (!campaignIsActive) continue // to next campaign since campaign inactive
+                        // Select random active group
+                        for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
 
-                            // Select random active group
-                            for (const [groupName, adGroup] of shuffle(applyBoosts(Object.entries(campaign.adGroups)))) {
+                            // Skip disqualified groups
+                            if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
+                                || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
+                                || adGroup.active == false // group explicitly disabled
+                                || adGroup.targetBrowsers && // target browser(s) exist...
+                                    !adGroup.targetBrowsers.some( // ...but doesn't match user's
+                                        browser => new RegExp(browser, 'i').test(navigator.userAgent))
+                                || adGroup.targetLocations && ( // target locale(s) exist...
+                                    !config.userLocale || !adGroup.targetLocations.some( // ...and user locale is missing or excluded
+                                        loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
+                            ) continue // to next group
 
-                                // Skip disqualified groups
-                                if (/^self$/i.test(groupName) && !re_appName.test(campaignName) // self-group for other apps
-                                    || re_appName.test(campaignName) && !/^self$/i.test(groupName) // non-self group for this app
-                                    || adGroup.active == false // group explicitly disabled
-                                    || adGroup.targetBrowsers && // target browser(s) exist...
-                                        !adGroup.targetBrowsers.some( // ...but doesn't match user's
-                                            browser => new RegExp(browser, 'i').test(navigator.userAgent))
-                                    || adGroup.targetLocations && ( // target locale(s) exist...
-                                        !config.userLocale || !adGroup.targetLocations.some( // ...and user locale is missing or excluded
-                                            loc => loc.includes(config.userLocale) || config.userLocale.includes(loc)))
-                                ) continue // to next group
+                            // Filter out inactive ads, pick random active one
+                            const activeAds = adGroup.ads.filter(ad => ad.active != false)
+                            if (activeAds.length == 0) continue // to next group since no ads active
+                            const chosenAd = activeAds[Math.floor(chatgpt.randomFloat() * activeAds.length)] // random active one
 
-                                // Filter out inactive ads, pick random active one
-                                const activeAds = adGroup.ads.filter(ad => ad.active != false)
-                                if (activeAds.length == 0) continue // to next group since no ads active
-                                const chosenAd = activeAds[Math.floor(chatgpt.randomFloat() * activeAds.length)] // random active one
-
-                                // Build destination URL
-                                let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
-                                    || campaign.destinationURL || ''
-                                if (destinationURL.includes('http')) { // insert UTM tags
-                                    const [baseURL, queryString] = destinationURL.split('?'),
-                                          queryParams = new URLSearchParams(queryString || '')
-                                    queryParams.set('utm_source', config.appName.toLowerCase())
-                                    queryParams.set('utm_content', 'app_footer_link')
-                                    destinationURL = baseURL + '?' + queryParams.toString()
-                                }
-
-                                // Update footer content
-                                footerContent.setAttribute('class', '') // reset for re-fade
-                                const newFooterContent = destinationURL ? createAnchor(destinationURL)
-                                                                        : document.createElement('span')
-                                footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
-                                footerContent.classList.add('fade-in', // DDGPT fade class
-                                                            'js-feedback-prompt-generic') // DDG footer class
-                                footerContent.textContent = chosenAd.text
-                                footerContent.setAttribute('title', chosenAd.tooltip || '')
-                                setTimeout(() => footerContent.classList.add('active'), 100) // to trigger fade
-                                adSelected = true ; break
+                            // Build destination URL
+                            let destinationURL = chosenAd.destinationURL || adGroup.destinationURL
+                                || campaign.destinationURL || ''
+                            if (destinationURL.includes('http')) { // insert UTM tags
+                                const [baseURL, queryString] = destinationURL.split('?'),
+                                      queryParams = new URLSearchParams(queryString || '')
+                                queryParams.set('utm_source', config.appName.toLowerCase())
+                                queryParams.set('utm_content', 'app_footer_link')
+                                destinationURL = baseURL + '?' + queryParams.toString()
                             }
-                            if (adSelected) break // out of campaign loop after ad selection
-                }})}
 
-                function shuffle(list) {
-                    let currentIdx = list.length, tempValue, randomIdx
-                    while (currentIdx != 0) { // elements remain to be shuffled
-                        randomIdx = Math.floor(chatgpt.randomFloat() * currentIdx) ; currentIdx -= 1
-                        tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
-                    }
-                    return list
-                }
-
-                function applyBoosts(list) {
-                    let boostedList = [...list],
-                        boostedListLength = boostedList.length - 1 // for applying multiple boosts
-                    list.forEach(([name, data]) => { // check for boosts
-                        if (data.boost) { // boost flagged entry's selection probability
-                            const boostPercent = parseInt(data.boost, 10) / 100,
-                                  entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
-                                                * boostPercent - 1 // reduced to boosted entries needed
-                            for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
-                            boostedListLength += entriesNeeded // update for subsequent calculations
-                    }})
-                    return boostedList
-                }
-        })
-
-        // Show STANDBY mode or get/show ANSWER
-        var msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
-        if (!config.autoget && !/src=(?:first-run|asktip)/.test(location.href) // Auto-Get disabled and not queried from other site or 1st run
-            || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
-            || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
-                show.reply('standby')
-                if (!config.rqDisabled) {
-                    const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                    get.related(lastQuery).then(queries => show.related(queries))
-                        .catch(err => { consoleErr(err.message)
-                            if (get.related.status != 'done') api.tryNew(get.related) })
-                }
-        } else { appAlert('waitingResponse') ; get.reply(msgChain) }
-
-        // Observe for DDG SCHEME CHANGES to update DDGPT scheme if auto-scheme mode if auto-scheme mode
-        (new MutationObserver(handleSchemeChange)).observe( // class changes from DDG appearance settings
-            document.documentElement, { attributes: true, attributeFilter: ['class'] })
-        function handleSchemeChange() {
-            if (config.scheme) return // since light/dark hard-set
-            const newScheme = chatgpt.isDarkMode() ? 'dark' : 'light'
-            if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() }
-        }
-
-    } else { // create/append/listenerize ASKTIP + elems
-
-        const asktipDisabled = () => config.asktipDisabled
-            || config.sitesToNotShowAsktip && config.sitesToNotShowAsktip.some(domain => location.href.includes(domain))
-
-        // Pre-load ICON
-        const appIconImg = document.createElement('img')
-        appIconImg.src = 'https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302'
-
-        // Init asktip
-        let asktip = document.getElementById('asktip')
-        if (!asktip) { // make/append it
-            const fontFamilies = '"Source Sans Pro", sans-serif', bgColor = '#f9f9f9',
-                  noUserSelectStyles = '-webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none ;'
-
-            // Create/ID/stylize/append asktip div
-            asktip = document.createElement('div') ; asktip.id = 'asktip'
-            asktip.style.cssText = noUserSelectStyles
-              + `font-family: ${fontFamilies} ; font-size: 14px ;`
-              + `position: absolute ; background-color: ${bgColor} ; border: 1px solid black ; border-radius: 12px ;`
-              + 'padding: 5px 2px ; box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px ; display: none ; z-index: 1000'
-            document.body.append(asktip)
-
-            // Create/stylize/listenerize/append hide tip ELEMS
-            const hideTipSpan = document.createElement('span'),
-                  hideTipSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                  hideTipSVGpath = document.createElementNS('http://www.w3.org/2000/svg','path'),
-                  hideTipSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 -960 960 960'], ['fill', 'black']]
-            hideTipSVGattrs.forEach(([attr, value]) => hideTipSVG.setAttribute(attr, value))
-            hideTipSVG.style.cssText = 'position: relative ; top: 2.85px ; margin: 0 4px 0 6px ; vertical-align: baseline'
-            hideTipSVGpath.setAttribute('d',
-                'm660.61-425.83-93.65-93.65q4.6-29.82-17.63-53.22-22.24-23.39-54.37-18.78l-89.13-89.13q14.43-6.3 34.84-10.61 20.42-4.3 39.5-4.3 82.4 0 138.87 56.48 56.48 56.47 56.48 138.87 0 17.95-3.59 37.63-3.58 19.67-11.32 36.71ZM805.17-280.7l-81.08-81.65q34.04-27.87 61.93-60.82 27.89-32.96 50.02-76.83-52.13-101.3-145.7-162.09-93.57-60.78-210.59-60.78-28.75 0-54.58 3.44-25.82 3.43-48.43 9.73l-90.35-90.34q42.87-17.87 92.44-27.59 49.57-9.72 101.17-9.72 163.3 0 292.61 92Q901.91-653.36 961.09-500q-23.44 64.87-64.65 121.37-41.22 56.5-91.27 97.93ZM790.39-20.48 624.52-184.91q-33.87 11.56-69.5 16.91T480-162.65q-163.87 0-293.78-92.28Q56.3-347.22-1.09-500q19.44-52.87 50.63-100.57 31.2-47.69 71.07-87.82L11.43-798.87l74-74 778.4 778.96-73.44 73.43ZM202.83-608.87q-26 27.7-44.09 52-18.09 24.3-34.22 56.87 50.6 102.48 144.5 162.68 93.9 60.19 210.98 60.19 9.74 0 21.96-.5 12.21-.5 27.04-3.07l-22.78-26.21q-6.31 1.43-12.78 1.93-6.46.5-13.44.5-82.47 0-138.99-56.53-56.53-56.52-56.53-138.99 0-6.41-.07-12.66-.06-6.25 1.37-13.56l-82.95-82.65Zm348.08 72.91ZM365.57-445Z')
-            hideTipSpan.style.cssText = 'padding: 3px 1px ; border-radius: 9px ; cursor: pointer'
-            hideTipSpan.onmouseover = () => { // highlight bg, show menu
-                hideTipSpan.style.background = '#bcd7dfab'
-                if (hideAsktipMenu.style.display == 'none') {
-                    hideAsktipMenu.style.display = 'grid'
-                    hideAsktipMenu.style.left = `${hideTipSpan.getBoundingClientRect().left}px`
-                    hideAsktipMenu.style.top = `${ hideTipSpan.getBoundingClientRect().bottom
-                        + ( window.scrollY || window.pageYOffset || document.documentElement.scrollTop ) +6 }px`
-            }}
-            hideTipSpan.onmouseout = () => hideTipSpan.style.background = 'none' // unhighlight bg
-            hideTipSVG.append(hideTipSVGpath) ; hideTipSpan.append(hideTipSVG) ; asktip.append(hideTipSpan)
-
-            // Create/ID/stylize/append hide tip menu
-            const hideAsktipMenu = document.createElement('div')
-            hideAsktipMenu.id = 'hide-asktip-menu' ; hideAsktipMenu.style.display = 'none'
-            hideAsktipMenu.style.cssText = noUserSelectStyles
-              + `font-family: ${fontFamilies} ; font-size: 13px ; border: 1px solid black ; border-radius: 9px ;`
-              + `display: none ; color: rgb(27, 27, 27) ; background: ${bgColor} ; position: absolute ; padding: 3px ;`
-              + 'box-shadow: rgba(0, 0, 0, 0.21) 0 5px 11px ; z-index: 1200'
-            document.body.append(hideAsktipMenu)
-
-            // Create/fill/stylize/listenerize/append hide tip menu items
-            const hideAsktipMenuItemA = document.createElement('span'),
-                  hideAsktipMenuItemB = document.createElement('span')
-            hideAsktipMenuItemA.textContent = `${ msgs.menuLabel_hideMenu || 'Hide menu' } `
-                                         + `${ msgs.menuLabel_forThisSite || 'for this site' }`
-            hideAsktipMenuItemB.textContent = `${ msgs.menuLabel_hideMenu || 'Hide menu' } `
-                                         + `${ msgs.menuLabel_fromAllSites || 'from all sites' }`;
-            [hideAsktipMenuItemA, hideAsktipMenuItemB].forEach((menuItem, idx) => {
-                menuItem.style.cssText = 'cursor: pointer ; padding: 1px 6px'
-                menuItem.onmouseover = () => menuItem.style.background = '#bcd7dfab' // highlight bg
-                menuItem.onmouseout = () => menuItem.style.background = 'none' // unhighlight bg
-                if (idx == 0) { // entry to hide menu for site
-                    menuItem.style.cssText += '; border-bottom: 1px dotted rgb(0, 0, 0)' // add separator
-                    menuItem.onclick = () => {
-                        if (!config.sitesToNotShowAsktip) config.sitesToNotShowAsktip = []
-                        config.sitesToNotShowAsktip.push(new URL(location.href).hostname)
-                        saveSetting('sitesToNotShowAsktip', config.sitesToNotShowAsktip, 'global')
-                        document.getElementById('hide-asktip-menu').style.display = 'none'
-                        document.getElementById('asktip').style.display = 'none'
-                    }
-                } else { // entry to hide menu always
-                    menuItem.onclick = () => {
-                        saveSetting('asktipDisabled', true)
-                        refreshMenu()
-                        document.getElementById('hide-asktip-menu').style.display = 'none'
-                        document.getElementById('asktip').style.display = 'none'
-                }}
-            })
-            hideAsktipMenu.append(hideAsktipMenuItemA, hideAsktipMenuItemB)
-        }
-
-        // Add inputEvents.up event to SHOW asktip
-        document.addEventListener(inputEvents.up, event => { setTimeout(() => {
-            if (asktipDisabled()) return
-            const selectedText = window.getSelection().toString().trim()
-            if (selectedText && !event.target.closest('#asktip')) {
-            
-                    // Init asktip content
-                    let asktipContentSpan = document.getElementById('ddgpt-asktip-content')
-                    if (!asktipContentSpan) { // make/append it
-                        asktipContentSpan = document.createElement('span') ; asktipContentSpan.id = 'ddgpt-asktip-content'
-                        asktipContentSpan.textContent = `${ msgs.menuLabel_ask || 'Ask' } ${config.appName}`
-                        appIconImg.style.cssText = 'width: 17px ; position: relative ; top: 3px ; margin-right: 5px ; vertical-align: baseline'
-                        asktipContentSpan.prepend(appIconImg)
-                        asktipContentSpan.style.cssText = 'padding: 3px 6px ; border-radius: 9px ;  cursor: pointer'
-                        asktipContentSpan.onmouseover = () => { // highlight bg, hide hide-tip menu
-                            asktipContentSpan.style.background = '#bcd7dfab'
-                            const hideAsktipMenu = document.getElementById('hide-asktip-menu')
-                            if (hideAsktipMenu?.style.display != 'none') hideAsktipMenu.style.display = 'none'
+                            // Update footer content
+                            footerContent.setAttribute('class', '') // reset for re-fade
+                            const newFooterContent = destinationURL ? createAnchor(destinationURL)
+                                                                    : document.createElement('span')
+                            footerContent.replaceWith(newFooterContent) ; footerContent = newFooterContent
+                            footerContent.classList.add('fade-in', // DDGPT fade class
+                                                        'js-feedback-prompt-generic') // DDG footer class
+                            footerContent.textContent = chosenAd.text
+                            footerContent.setAttribute('title', chosenAd.tooltip || '')
+                            setTimeout(() => footerContent.classList.add('active'), 100) // to trigger fade
+                            adSelected = true ; break
                         }
-                        asktipContentSpan.onmouseout = () => asktipContentSpan.style.background = 'none' // unlight bg
-                        asktip.prepend(asktipContentSpan)
-                    }
+                        if (adSelected) break // out of campaign loop after ad selection
+            }})}
 
-                    // Add/update click event each time to capture live selectedText
-                    asktipContentSpan.onclick = () => {
-                        safeWindowOpen(`https://duckduckgo.com/?q=${encodeURIComponent(selectedText)}&src=asktip`)
-                        asktip.style.display = 'none'
-                    }
+            function shuffle(list) {
+                let currentIdx = list.length, tempValue, randomIdx
+                while (currentIdx != 0) { // elements remain to be shuffled
+                    randomIdx = Math.floor(chatgpt.randomFloat() * currentIdx) ; currentIdx -= 1
+                    tempValue = list[currentIdx] ; list[currentIdx] = list[randomIdx] ; list[randomIdx] = tempValue
+                }
+                return list
+            }
 
-                    // Show asktip
-                    asktip.style.display = 'ruby'
-                    asktip.style.left = `${ event.pageX - asktip.offsetWidth/2 }px`
-                    asktip.style.top = `${ event.pageY - asktip.offsetHeight -28 }px`
+            function applyBoosts(list) {
+                let boostedList = [...list],
+                    boostedListLength = boostedList.length - 1 // for applying multiple boosts
+                list.forEach(([name, data]) => { // check for boosts
+                    if (data.boost) { // boost flagged entry's selection probability
+                        const boostPercent = parseInt(data.boost, 10) / 100,
+                              entriesNeeded = Math.ceil(boostedListLength / (1 - boostPercent)) // total entries needed
+                                            * boostPercent - 1 // reduced to boosted entries needed
+                        for (let i = 0 ; i < entriesNeeded ; i++) boostedList.push([name, data]) // saturate list
+                        boostedListLength += entriesNeeded // update for subsequent calculations
+                }})
+                return boostedList
+            }
+    })
 
-            } else // hide everything
-                asktip.style.display = document.getElementById('hide-asktip-menu').style.display = 'none'
+    // Show STANDBY mode or get/show ANSWER
+    let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
+    if (!config.autoget && !/src=(?:first-run|asktip)/.test(location.href) // Auto-Get disabled and not queried from other site or 1st run
+        || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
+        || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
+            show.reply('standby')
+            if (!config.rqDisabled) {
+                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                get.related(lastQuery).then(queries => show.related(queries))
+                    .catch(err => { consoleErr(err.message)
+                        if (get.related.status != 'done') api.tryNew(get.related) })
+            }
+    } else { appAlert('waitingResponse') ; get.reply(msgChain) }
 
-        }, 1)})  // to avoid double trigger
+    // Observe for DDG SCHEME CHANGES to update DDGPT scheme if auto-scheme mode if auto-scheme mode
+    (new MutationObserver(handleSchemeChange)).observe( // class changes from DDG appearance settings
+        document.documentElement, { attributes: true, attributeFilter: ['class'] })
+    function handleSchemeChange() {
+        if (config.scheme) return // since light/dark hard-set
+        const newScheme = chatgpt.isDarkMode() ? 'dark' : 'light'
+        if (newScheme != scheme) { scheme = newScheme ; updateAppLogoSrc() ; updateAppStyle() }
     }
 
 })()
