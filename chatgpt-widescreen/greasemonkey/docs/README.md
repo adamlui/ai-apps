@@ -105,7 +105,7 @@ ChatGPT Widescreen Mode relies on code from the powerful [chatgpt.js](https://gi
 
 ## 🌐 Compatibility
 
-ChatGPT Widescreen Mode is compatible w/ the following browsers (via [Tampermonkey](https://www.tampermonkey.net/):
+ChatGPT Widescreen Mode is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org), [Violentmonkey](https://violentmonkey.github.io) or [Tampermonkey](https://www.tampermonkey.net):
 
 - [Google Chrome](https://www.chrome.com) (also available on [Chrome Web Store](https://chrome.chatgptwidescreen.com))
 - [Mozilla Firefox](https://www.firefox.com)

@@ -85,7 +85,7 @@ ChatGPT Infinity relies on code from the powerful [chatgpt.js](https://github.co
 
 ## 🌐 Compatibility 
 
-ChatGPT Infinity is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/):
+ChatGPT Infinity is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org), [Violentmonkey](https://violentmonkey.github.io) or [Tampermonkey](https://www.tampermonkey.net):
 
 ### 🖥️ Desktop
 
