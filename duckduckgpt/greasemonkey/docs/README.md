@@ -65,7 +65,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 ## 🌐 Compatibility 
 
-**DuckDuckGPT** **GoogleGPT** is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org/), [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/).
+**DuckDuckGPT** **GoogleGPT** is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org), [Tampermonkey](https://www.tampermonkey.net) or [Violentmonkey](https://violentmonkey.github.io).
 
 ### 🖥️ Desktop
 
@@ -75,9 +75,9 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 - [Opera](https://www.opera.com)
 - [Brave](https://brave.com)
 - [Vivaldi](https://vivaldi.com)
-- [LibreWolf](https://librewolf.net/)
-- [Ghost](https://ghostbrowser.com/)
-- [QQ](https://browser.qq.com/)
+- [LibreWolf](https://librewolf.net)
+- [Ghost](https://ghostbrowser.com)
+- [QQ](https://browser.qq.com)
 - [Whale](https://whale.naver.com)
 
 <br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.ddgpt.com/images/logos/platforms/android/head-plus-word/white/logo150x24.png?latest"><img alt="Android" width=111 src="https://media.ddgpt.com/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png?latest"></picture><br>

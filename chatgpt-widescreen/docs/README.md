@@ -149,9 +149,9 @@ ChatGPT Widescreen Mode is compatible w/ the following browsers:
 - **[Opera](https://www.opera.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
 - **[Brave](https://brave.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
 - **[Vivaldi](https://vivaldi.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[LibreWolf](https://librewolf.net/)** (via [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[Ghost](https://ghostbrowser.com/)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
-- **[QQ](https://browser.qq.com/)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
+- **[LibreWolf](https://librewolf.net)** (via [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
+- **[Ghost](https://ghostbrowser.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
+- **[QQ](https://browser.qq.com)** (via [Chrome extension](https://chrome.chatgptwidescreen.com) or [Greasemonkey userscript](https://greasyfork.chatgptwidescreen.com))
 
 <div align="center">
 

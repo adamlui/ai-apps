@@ -128,14 +128,14 @@ ChatGPT Infinity は、強力な [chatgpt.js](https://github.com/KudoAI/chatgpt.
 - **[Opera](https://www.opera.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Brave](https://brave.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Vivaldi](https://vivaldi.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
-- **[LibreWolf](https://librewolf.net/)**（[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
-- **[Ghost](https://ghostbrowser.com/)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
-- **[QQ](https://browser.qq.com/)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
-- **[Whale](https://whale.naver.com/)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[LibreWolf](https://librewolf.net)**（[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[Ghost](https://ghostbrowser.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[QQ](https://browser.qq.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[Whale](https://whale.naver.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 
 <br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/white/logo150x24.png?latest"><img alt="Android" width=111 src="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png?latest"></picture><br>
 
-- **[Kiwi](https://kiwibrowser.com/)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
+- **[Kiwi](https://kiwibrowser.com)**（[Chrome 拡張機能](https://chrome.chatgptinfinity.com)または[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 - **[Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)**（[Greasemonkey ユーザースクリプト](https://greasyfork.chatgptinfinity.com)を介して）
 
 <br>

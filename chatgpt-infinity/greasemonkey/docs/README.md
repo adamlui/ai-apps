@@ -95,15 +95,15 @@ ChatGPT Infinity is compatible w/ the following browsers using [ScriptCat](https
 - [Opera](https://www.opera.com)
 - [Brave](https://brave.com)
 - [Vivaldi](https://vivaldi.com)
-- [Waterfox](https://www.waterfox.net/)
-- [LibreWolf](https://librewolf.net/)
-- [Ghost](https://ghostbrowser.com/)
-- [QQ](https://browser.qq.com/)
-- [Whale](https://whale.naver.com/)
+- [Waterfox](https://www.waterfox.net)
+- [LibreWolf](https://librewolf.net)
+- [Ghost](https://ghostbrowser.com)
+- [QQ](https://browser.qq.com)
+- [Whale](https://whale.naver.com)
 
 <br><picture><source type="image/png" media="(prefers-color-scheme: dark)" srcset="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/white/logo150x24.png?latest"><img alt="Android" width=111 src="https://media.chatgptinfinity.com/images/logos/platforms/android/head-plus-word/green-head-black-word/logo150x24.png?latest"></picture><br>
 
-- [Kiwi](https://kiwibrowser.com/) (also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-infinity/amikeononomkhphopbflomhnmdijjpmb))
+- [Kiwi](https://kiwibrowser.com) (also available on [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-infinity/amikeononomkhphopbflomhnmdijjpmb))
 - [Mozilla Firefox](https://www.mozilla.org/firefox/browsers/mobile/android/)
 
 <br>

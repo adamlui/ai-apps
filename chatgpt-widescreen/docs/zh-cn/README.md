@@ -149,9 +149,9 @@ ChatGPT 宽屏模式与以下浏览器兼容:
 - **[Opera](https://www.opera.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 - **[Brave](https://brave.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 - **[Vivaldi](https://vivaldi.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
-- **[LibreWolf](https://librewolf.net/)** (通过 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
-- **[Ghost](https://ghostbrowser.com/)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
-- **[QQ](https://browser.qq.com/)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
+- **[LibreWolf](https://librewolf.net)** (通过 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
+- **[Ghost](https://ghostbrowser.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
+- **[QQ](https://browser.qq.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 
 <br>
 
