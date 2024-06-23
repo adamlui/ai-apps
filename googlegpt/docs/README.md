@@ -37,23 +37,26 @@
 
 <br>
 
-<div align="center"><img src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png?latest"></div>
+<div align="center"><img src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png?latest">
+<br><br>
 
-### Customizable color scheme:
+<h3>Customizable color scheme:</h3>
 
-<div align="center"><img src="https://media.googlegpt.io/images/screenshots/desktop/color-scheme-modal.png?latest"></div>
+<img src="https://media.googlegpt.io/images/screenshots/desktop/color-scheme-modal.png?latest">
 
-### Mobile compatible:
+<h3>Mobile compatible:</h3>
 
-<div align="center"><img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png?latest"></div>
+<img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png?latest">
 
-### Scalable display size:
+<h3>Scalable display size:</h3>
 
-<div align="center"><img src="https://media.googlegpt.io/images/screenshots/desktop/font-size-slider.gif"></div>
+<img src="https://media.googlegpt.io/images/screenshots/desktop/font-size-slider.gif">
 
-### Math rendering (using KaTeX):
+<h3>Math (KaTeX) rendering:</h3>
 
-<div align="center"><img src="https://media.googlegpt.io/images/screenshots/desktop/math-formulas/dark-on-dark.png?latest"></div>
+<img src="https://media.googlegpt.io/images/screenshots/desktop/math-formulas/dark-on-dark.png?latest">
+
+</div>
 
 <br>
 
