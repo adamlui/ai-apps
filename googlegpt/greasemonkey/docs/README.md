@@ -51,6 +51,10 @@
 
 <div align="center"><img src="https://media.googlegpt.io/images/screenshots/desktop/font-size-slider.gif"></div>
 
+### Math rendering (using KaTeX):
+
+<div align="center"><img src="https://media.googlegpt.io/images/screenshots/desktop/math-formulas/dark-on-dark.png?latest"></div>
+
 <br>
 
 <img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
