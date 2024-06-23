@@ -54,7 +54,7 @@
 
 <h3>Math (KaTeX) rendering:</h3>
 
-<img src="https://media.googlegpt.io/images/screenshots/desktop/math-formulas/dark-on-dark.png?latest">
+<img width=665 src="https://media.googlegpt.io/images/screenshots/desktop/math-formulas/dark-on-dark.png?latest">
 
 </div>
 
