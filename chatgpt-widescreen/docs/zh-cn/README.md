@@ -131,7 +131,7 @@
 </a>
 <br><br>
 
-ChatGPT 寬屏模式依賴於強大的 [chatgpt.js](https://github.com/KudoAI/chatgpt.js) 庫 
+ChatGPT 寬屏模式 依賴於強大的 [chatgpt.js](https://github.com/KudoAI/chatgpt.js) 庫 
 <br>© 2023–2024 KudoAI 和 MIT 許可下的貢獻者。
 
 </div>
@@ -141,7 +141,7 @@ ChatGPT 寬屏模式依賴於強大的 [chatgpt.js](https://github.com/KudoAI/ch
 
 ## 🌐 兼容性
 
-ChatGPT 宽屏模式与以下浏览器兼容:
+ChatGPT 宽屏模式 与以下浏览器兼容:
 
 - **[Google Chrome](https://www.chrome.com)** (通过 [Chrome 扩展程序](https://chrome.chatgptwidescreen.com) 或 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
 - **[Mozilla Firefox](https://www.firefox.com)** (通过 [Greasemonkey 用户脚本](https://greasyfork.chatgptwidescreen.com))
