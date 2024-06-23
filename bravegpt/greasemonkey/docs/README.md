@@ -67,7 +67,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 ## 🌐 Compatibility
 
-**BraveGPT** **GoogleGPT** is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org), [Tampermonkey](https://www.tampermonkey.net) or [Violentmonkey](https://violentmonkey.github.io).
+**BraveGPT** is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org), [Tampermonkey](https://www.tampermonkey.net) or [Violentmonkey](https://violentmonkey.github.io).
 
 ### 🖥️ Desktop
 
