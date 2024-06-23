@@ -33,23 +33,23 @@
     
 </div>
 
-<img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest">
+<div align="center"><img height=6px width="100%" src="https://media.googlegpt.io/images/separators/gradient-aqua.png?latest"></div>
 
 <br>
 
-<img src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png?latest">
+<div align="center"><img src="https://media.googlegpt.io/images/screenshots/desktop/javascript-arrays-query/darkmode.png?latest"></div>
 
 ### Customizable color scheme:
 
-<img src="https://media.googlegpt.io/images/screenshots/desktop/color-scheme-modal.png?latest">
+<div align="center"><img src="https://media.googlegpt.io/images/screenshots/desktop/color-scheme-modal.png?latest"></div>
 
 ### Mobile compatible:
 
-<img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png?latest">
+<div align="center"><img width=365 src="https://media.googlegpt.io/images/screenshots/mobile/hi-there-query/darkmode.png?latest"></div>
 
 ### Scalable display size:
 
-<img src="https://media.googlegpt.io/images/screenshots/desktop/font-size-slider.gif">
+<div align="center"><img src="https://media.googlegpt.io/images/screenshots/desktop/font-size-slider.gif"></div>
 
 <br>
 
