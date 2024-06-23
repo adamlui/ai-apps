@@ -65,7 +65,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 ## 🌐 Compatibility 
 
-**DuckDuckGPT** is compatible w/ the following browsers using [Tampermonkey](https://www.tampermonkey.net/) (recommended for Streaming Mode) or [Violentmonkey](https://violentmonkey.github.io/).
+**DuckDuckGPT** **GoogleGPT** is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org/), [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/).
 
 ### 🖥️ Desktop
 
