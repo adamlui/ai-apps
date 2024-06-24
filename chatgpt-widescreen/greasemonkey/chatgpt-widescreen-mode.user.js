@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.20
+// @version             2024.6.24
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -868,13 +868,14 @@
                 window[buttonName].style.marginBottom = ( buttonType == 'newChat' ? '0.45' : '0.2' ) + 'rem'
 
             // Add click/hover listeners
-            window[buttonName].addEventListener('click', () => {
+            window[buttonName].onclick = () => {
                 if (buttonType == 'newChat') {
                     if (/chatgpt|openai/.test(site)) chatgpt.startNewChat()
                     else if (site == 'poe') document.querySelector('header a[class*="button"]')?.click()
-                } else toggleMode(buttonType) })
-            window[buttonName].addEventListener('mouseover', toggleTooltip)
-            window[buttonName].addEventListener('mouseout', toggleTooltip)
+                } else toggleMode(buttonType)
+            }
+            window[buttonName].onmouseover = toggleTooltip
+            window[buttonName].onmouseout = toggleTooltip
 
         })(buttonTypes[i])
     } insertBtns()
@@ -927,16 +928,16 @@
     }
 
     // Add RESIZE LISTENER to update full screen setting/button + disable F11 flag
-    window.addEventListener('resize', () => {
+    window.onresize = () => {
         const fullScreenState = chatgpt.isFullScreen()
         if (config.fullScreen && !fullScreenState) { syncMode('fullScreen') ; config.f11 = false } // exiting full screen
         else if (!config.fullScreen && fullScreenState) syncMode('fullScreen') // entering full screen
-    })
+    }
 
     // Add KEY LISTENER to enable flag on F11 + stop generating text on ESC
-    window.addEventListener('keydown', event => {
+    window.onkeydown = event => {
         if ((event.key == 'F11' || event.keyCode == 122) && !config.fullScreen) config.f11 = true
         else if ((event.key == 'Escape' || event.keyCode == 27) && !chatgpt.isIdle()) chatgpt.stop()
-    })
+    }
 
 })()

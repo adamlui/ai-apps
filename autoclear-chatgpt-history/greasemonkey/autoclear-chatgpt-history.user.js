@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.20
+// @version             2024.6.24
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -352,7 +352,7 @@
     insertToggle()
 
     // Add LISTENER to toggle switch/label/config/menu + auto-clear
-    navToggleDiv.addEventListener('click', () => {
+    navToggleDiv.onclick = () => {
         const toggleInput = document.getElementById('acToggleInput')
         toggleInput.checked = !toggleInput.checked ; config.autoclear = toggleInput.checked
         updateToggleHTML() ; refreshMenu()
@@ -362,7 +362,7 @@
         } else if (!config.autoclear)
             if (!config.notifDisabled) notify(`${ msgs.mode_autoClear || 'Auto-Clear' }: ${menuState.word[0]}`)
         saveSetting('autoclear', config.autoclear)
-    })
+    }
 
     // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
     const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {

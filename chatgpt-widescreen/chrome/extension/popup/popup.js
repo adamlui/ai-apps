@@ -21,10 +21,10 @@
           masterToggle = toggles[0]
     settings.load('extensionDisabled').then(() => { // init toggle state, update greyness
         masterToggle.checked = !config.extensionDisabled ; updateGreyness() })
-    masterToggle.addEventListener('change', () => {    
+    masterToggle.onchange = () => {    
         settings.save('extensionDisabled', !config.extensionDisabled)
         syncExtension() ; updateGreyness()
-    })
+    }
 
     // Init sub-toggles
     initToggle(toggles[1], 'fullerWindows', 'menuLabel_fullerWins')
@@ -39,24 +39,20 @@
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]'),
           supportSpan = supportLink.parentNode 
-    supportSpan.addEventListener('click', event => {
-        if (event.target === supportSpan) supportLink.click() // to avoid double-toggle
-    })
+    supportSpan.onclick = event => {
+        if (event.target === supportSpan) supportLink.click() } // to avoid double-toggle
 
     // Add More Add-ons span click-listener
     const moreAddOnsLink = document.querySelector('a[title*="more" i]'),
           moreAddOnsSpan = moreAddOnsLink.parentNode 
-    moreAddOnsSpan.addEventListener('click', event => {
-        if (event.target === moreAddOnsSpan) moreAddOnsLink.click() // to avoid double-toggle
-    })
+    moreAddOnsSpan.onclick = event => {
+        if (event.target === moreAddOnsSpan) moreAddOnsLink.click() } // to avoid double-toggle
 
     // Add Powered by chatgpt.js hover-listener
     const chatGPTjsHostPath = 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/badges/',
           chatGPTjsImg = document.querySelector('.chatgpt-js img')
-    chatGPTjsImg.addEventListener('mouseover', () =>
-        chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png')
-    chatGPTjsImg.addEventListener('mouseout', () =>
-      chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png')
+    chatGPTjsImg.onmouseover = () => chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png'
+    chatGPTjsImg.onmouseout = () => chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png'
 
     // Define TOGGLE INIT function
 
@@ -67,20 +63,20 @@
             toggleInput.checked = /disabled/i.test(settingKey) !== config[settingKey])
 
         // Add click-listener to toggle input
-        toggleInput.addEventListener('change', () => {
+        toggleInput.onchange = () => {
             settings.save(settingKey, !config[settingKey]) ; syncExtension()
             settings.load('notifDisabled').then(() => { // show mode notification
                 if (!config.notifDisabled || /notif/i.test(settingKey) || /notif/i.test(settingKey)) // ...if enabled or notif-related setting
                     notify(chrome.i18n.getMessage(notifMsgKey) + ' '
                         + (/disabled/i.test(settingKey) !== config[settingKey] ? 'ON' : 'OFF'))
-        })})
+        })}
 
         // Add click listener to toggle input's parent label
         const toggleLabel = toggleInput.parentNode.parentNode
-        toggleLabel.addEventListener('click', event => {
+        toggleLabel.onclick = event => {
             if ([toggleLabel, document.querySelector(`[data-locale*="${ notifMsgKey }"]`)].includes(event.target))
                 toggleInput.click()
-        })
+        }
     }
 
     // Define FEEDBACK functions

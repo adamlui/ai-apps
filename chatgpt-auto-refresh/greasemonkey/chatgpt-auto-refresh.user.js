@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.20
+// @version             2024.6.24
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -366,7 +366,7 @@
     insertToggle()
 
     // Add LISTENER to toggle switch/label/config/menu/auto-refresh
-    navToggleDiv.addEventListener('click', () => {
+    navToggleDiv.onclick = () => {
         const toggleInput = document.getElementById('arToggleInput')
         toggleInput.checked = !toggleInput.checked ; config.arDisabled = !toggleInput.checked
         updateToggleHTML() ; refreshMenu()
@@ -377,7 +377,7 @@
             chatgpt.autoRefresh.deactivate()
             if (!config.notifDisabled) notify(( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ': OFF')
         } saveSetting('arDisabled', config.arDisabled)
-    })
+    }
 
     // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
     const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {

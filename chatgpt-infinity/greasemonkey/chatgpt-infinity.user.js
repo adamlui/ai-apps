@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.20
+// @version             2024.6.24
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -307,14 +307,14 @@
           firstLink = chatgpt.getNewChatLink()
 
     // Add listener to auto-disable Infinity Mode
-    if (document.hidden !== undefined) { // ...if Page Visibility API supported
-        document.addEventListener('visibilitychange', () => {
+    if (document.hidden !== undefined) // ...if Page Visibility API supported
+        document.onvisibilitychange = () => {
             if (config.infinityMode) {                
                 if (document.getElementById('infToggleLabel')) // ensure toggle state is accurate
                     document.getElementById('infToggleLabel').click()
                 else infinityMode.deactivate()
                 refreshMenu()
-    }})}
+        }}
 
     // Add/update TWEAKS style
     const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`
@@ -354,13 +354,13 @@
     insertToggle()
 
     // Add LISTENER to toggle switch/label/config/menu
-    navToggleDiv.addEventListener('click', () => {
+    navToggleDiv.onclick = () => {
         const toggleInput = document.getElementById('infToggleInput')
         toggleInput.checked = !toggleInput.checked
         config.infinityMode = toggleInput.checked
         updateToggleHTML() ; refreshMenu()
         infinityMode.toggle()
-    })
+    }
 
     // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
     const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {

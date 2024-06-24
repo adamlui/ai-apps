@@ -20,11 +20,11 @@
     const masterToggle = document.querySelector('input')
     settings.load('extensionDisabled').then(() => { // init toggle state, update greyness
         masterToggle.checked = !config.extensionDisabled ; updateGreyness() })
-    masterToggle.addEventListener('change', () => {    
+    masterToggle.onchange = () => {    
         settings.save('extensionDisabled', !config.extensionDisabled)
         infinityModeToggle.checked = false // always disable Infinity Mode on main toggle
         syncExtension() ; updateGreyness()
-    })
+    }
 
     // Locate settings elements
     const menuItems = document.querySelectorAll('.menu-item'),
@@ -51,40 +51,40 @@
         })
 
     // Add 'Infinity Mode' click-listeners
-    infinityModeToggle.addEventListener('change', () => {
+    infinityModeToggle.onchange = () => {
         chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
             if (new URL(tabs[0].url).hostname != 'chatgpt.com') return // do nothing if not on ChatGPT
             chrome.tabs.sendMessage(tabs[0].id, { action: 'clickToggle' }) // else click sidebar toggle
         })
         notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ' ' + (infinityModeToggle.checked ? 'ON' : 'OFF'))
-    })
-    infinityModeDiv.addEventListener('click', event => {
+    }
+    infinityModeDiv.onclick = event => {
         if ([infinityModeDiv, document.querySelector('[data-locale*="infinityMode"]')].includes(event.target))
             infinityModeToggle.click() 
-    })
+    }
 
     // Add 'Toggle Visibility' click-listeners
-    toggleVisToggle.addEventListener('change', () => {
+    toggleVisToggle.onchange = () => {
         settings.save('toggleHidden', !config.toggleHidden) ; syncExtension()
         notify(chrome.i18n.getMessage('menuLabel_toggleVis') + ' ' + ( !config.toggleHidden ? 'ON' : 'OFF' ))
-    })
-    toggleVisDiv.addEventListener('click', event => {
+    }
+    toggleVisDiv.onclick = event => {
         if ([toggleVisDiv, document.querySelector('[data-locale*="toggleVis"]')].includes(event.target))
             toggleVisToggle.click() 
-    })
+    }
 
     // Add 'Auto-Scroll' click-listeners
-    autoScrollToggle.addEventListener('change', () => {
+    autoScrollToggle.onchange = () => {
         settings.save('autoScrollDisabled', !config.autoScrollDisabled) ; syncExtension()        
         notify(chrome.i18n.getMessage('menuLabel_autoScroll') + ' ' + ( !config.autoScrollDisabled ? 'ON' : 'OFF' ))
-    })
-    autoScrollDiv.addEventListener('click', event => {
+    }
+    autoScrollDiv.onclick = event => {
         if ([autoScrollDiv, document.querySelector('[data-locale*="autoScroll"]')].includes(event.target))
             autoScrollToggle.click() 
-    })
+    }
 
     // Add 'Reply Language' click-listener
-    replyLangDiv.addEventListener('click', () => {
+    replyLangDiv.onclick = () => {
         while (true) {
             let replyLanguage = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyLang') }:`, config.replyLanguage)
             if (replyLanguage === null) break // user cancelled so do nothing
@@ -102,10 +102,10 @@
                         chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
                 })
                 break
-    }}})
+    }}}
 
     // Add 'Reply Topic' click-listener
-    replyTopicDiv.addEventListener('click', () => {
+    replyTopicDiv.onclick = () => {
         const replyTopic = prompt(chrome.i18n.getMessage('prompt_updateReplyTopic')
             + ' (' + chrome.i18n.getMessage('prompt_orEnter') + ' \'ALL\'):', config.replyTopic)
         if (replyTopic !== null) { // user didn't cancel
@@ -121,10 +121,10 @@
                 if (new URL(tabs[0].url).hostname == 'chatgpt.com' && config.infinityMode) { // reboot active session
                     chrome.tabs.sendMessage(tabs[0].id, { action: 'restartInNewChat' }) }
             })
-    }})
+    }}
 
     // Add 'Reply Interval' click-listener
-    replyIntervalDiv.addEventListener('click', () => {
+    replyIntervalDiv.onclick = () => {
         while (true) {
             const replyInterval = prompt(`${ chrome.i18n.getMessage('prompt_updateReplyInt') }:`, config.replyInterval)
             if (replyInterval === null) break // user cancelled so do nothing
@@ -139,29 +139,25 @@
                         chrome.tabs.sendMessage(tabs[0].id, { action: 'resetInSameChat' })
                 })
                 break
-    }}})
+    }}}
 
     // Add Support span click-listener
     const supportLink = document.querySelector('a[title*="support" i]'),
           supportSpan = supportLink.parentNode 
-    supportSpan.addEventListener('click', event => {
-        if (event.target == supportSpan) supportLink.click() // to avoid double-toggle
-    })
+    supportSpan.onclick = event => {
+        if (event.target == supportSpan) supportLink.click() } // to avoid double-toggle
 
     // Add More Add-ons span click-listener
     const moreAddOnsLink = document.querySelector('a[title*="more" i]'),
           moreAddOnsSpan = moreAddOnsLink.parentNode 
-    moreAddOnsSpan.addEventListener('click', event => {
-        if (event.target == moreAddOnsSpan) moreAddOnsLink.click() // to avoid double-toggle
-    })
+    moreAddOnsSpan.onclick = event => {
+        if (event.target == moreAddOnsSpan) moreAddOnsLink.click() } // to avoid double-toggle
 
     // Add Powered by chatgpt.js hover-listener
     const chatGPTjsHostPath = 'https://raw.githubusercontent.com/KudoAI/chatgpt.js/main/media/images/badges/',
           chatGPTjsImg = document.querySelector('.chatgpt-js img')
-    chatGPTjsImg.addEventListener('mouseover', function() {
-        chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png' })
-    chatGPTjsImg.addEventListener('mouseout', function() {
-      chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png' })
+    chatGPTjsImg.onmouseover = () => chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js.png'
+    chatGPTjsImg.onmouseout = () => chatGPTjsImg.src = chatGPTjsHostPath + 'powered-by-chatgpt.js-faded.png'
 
     // Define FEEDBACK functions
 
