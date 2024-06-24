@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.24.3
+// @version             2024.6.24.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1449,7 +1449,7 @@
 
         tryNew: function(caller, reason = 'err') {
             consoleErr(`Error using ${apis[caller.api].endpoint} due to ${reason}`)
-            if (caller.attemptCnt < Object.keys(apis).length -1) {
+            if (caller.attemptCnt < Object.keys(apis).length -+(caller == get.reply)) {
                 consoleInfo('Trying another endpoint...')
                 caller.triedAPIs.push({ [caller.api]: reason }) ; caller.attemptCnt++
                 caller(caller == get.reply ? msgChain : stripQueryAugments(msgChain)[msgChain.length - 1].content)
@@ -1585,7 +1585,7 @@
             // Try diff API after 7s of no response
             setTimeout(() => { if (get.related.status != 'done') api.tryNew(get.related, 'timeout') }, 7000)
 
-            return new Promise((resolve, reject) => {
+            return new Promise(resolve => {
                 const rqPrompt = 'Show a numbered list of queries related to this one:\n\n' + query
                    + '\n\nMake sure to suggest a variety that can even greatly deviate from the original topic.'
                    + ' For example, if the original query asked about someone\'s wife,'
@@ -1601,44 +1601,8 @@
                     method: apis[get.related.api].method, url: apis[get.related.api].endpoint,
                     responseType: 'text', headers: api.createHeaders(get.related.api),
                     data: api.createPayload(get.related.api, [{ role: 'user', content: rqPrompt }]),
-                    onload: event => {
-                        let str_relatedQueries = ''
-                        if (get.related.api == 'OpenAI') {
-                            try { str_relatedQueries = JSON.parse(event.response).choices[0].message.content }
-                            catch (err) { consoleErr(err) ; reject(err) }
-                        } else if (get.related.api == 'AIchatOS'
-                            && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags]
-                                .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
-                                .join('|')).test(event.responseText)) {
-                                    try {
-                                        const text = event.responseText, chunkSize = 1024
-                                        let currentIdx = 0
-                                        while (currentIdx < text.length) {
-                                            const chunk = text.substring(currentIdx, currentIdx + chunkSize)
-                                            currentIdx += chunkSize ; str_relatedQueries += chunk
-                                        }
-                                    } catch (err) { consoleErr(err) ; reject(err) }
-                        } else if (get.related.api == 'GPTforLove') {
-                            try {
-                                let chunks = event.responseText.trim().split('\n')
-                                str_relatedQueries = JSON.parse(chunks[chunks.length - 1]).text
-                            } catch (err) { consoleErr(err) ; reject(err) }
-                        } else if (get.related.api == 'MixerBox AI') {
-                            try {
-                                const extractedData = Array.from(event.responseText.matchAll(/data:(.*)/g), match => match[1]
-                                    .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
-                                    .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
-                                str_relatedQueries = extractedData.join('')
-                            } catch (err) { consoleErr(err) ; reject(err) }
-                        }
-                        const arr_relatedQueries = (str_relatedQueries.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
-                            .slice(0, 5) // limit to 1st 5
-                            .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
-                        get.related.status = 'done'
-                        get.related.attemptCnt = null ; api.clearTimedOut(get.related.triedAPIs)
-                        resolve(arr_relatedQueries)
-                    },
-                    onerror: err => { consoleErr(err) ; reject(err) }
+                    onload: resp => dataProcess.text(get.related, resp).then(resolve),
+                    onerror: err => { consoleErr(err.message) ; if (get.related.status != 'done') api.tryNew(get.related) }
             })})
         }
     }
@@ -1648,81 +1612,99 @@
     const dataProcess = {
 
         text: function(caller, resp) {
-            if (!config.streamingDisabled && config.proxyAPIenabled || caller.status == 'done')
-                return
-            if (resp.status != 200) {
-                consoleErr('Response status', resp.status)
-                consoleErr('Response text', resp.responseText)
-                if (config.proxyAPIenabled && caller.status != 'done')
-                    api.tryNew(caller)
-                else if (resp.status == 401 && !config.proxyAPIenabled)
-                    appAlert('login')
-                else if (resp.status == 403)
-                    appAlert(config.proxyAPIenabled ? ['proxyNotWorking', 'suggestOpenAI'] : 'checkCloudflare')
-                else if (resp.status == 429)
-                    appAlert(['tooManyRequests', config.proxyAPIenabled ? 'suggestOpenAI' : 'suggestProxy'])
-                else // uncommon status
-                    appAlert(`${ config.proxyAPIenabled ? 'proxyN' : 'openAIn' }otWorking`,
-                             `suggest${ config.proxyAPIenabled ? 'OpenAI' : 'Proxy' }`)
-            } else if (caller.api == 'OpenAI') {
-                if (resp.response) {
-                    try {
-                        show.reply(JSON.parse(resp.response).choices[0].message.content, footerContent)
-                    } catch (err) {
-                        consoleInfo('Response: ' + resp.response)
-                        consoleErr(appAlerts.parseFailed, err)
-                        appAlert('openAInotWorking, suggestProxy')
+            return new Promise(resolve => {
+                let respText
+                const logPrefix = `get.${caller.name}() » dataProcess.text() » `
+                if (caller == get.reply && config.proxyAPIenabled && !config.streamingDisabled || caller.status == 'done')
+                    return
+                if (resp.status != 200) {
+                    consoleErr(logPrefix + 'Response status', resp.status)
+                    consoleErr(logPrefix + 'Response', resp)
+                    if (caller == get.reply && caller.api == 'OpenAI')
+                        appAlert(resp.status == 401 ? 'login'
+                               : resp.status == 403 ? 'checkCloudflare'
+                               : resp.status == 429 ? ['tooManyRequests', 'suggestProxy']
+                                                    : ['openAInotWorking', 'suggestProxy'] )
+                    else if (caller.status != 'done')
+                        api.tryNew(caller)
+                } else if (caller.api == 'OpenAI') {
+                    if (resp.response) {
+                        try { // to show response or return related queries
+                            respText = JSON.parse(resp.response).choices[0].message.content
+                            if (!respText) throw new Error()
+                            caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
+                            if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
+                        } catch (err) { // suggest proxy or try diff API
+                            consoleInfo(logPrefix + 'Response text: ' + resp.response)
+                            consoleErr(logPrefix + appAlerts.parseFailed, err)
+                            if (caller == get.reply) appAlert('openAInotWorking, suggestProxy')
+                            else if (caller.status != 'done') api.tryNew(caller)
+                        }
+                    } else { // suggest proxy or try diff API
+                        if (caller == get.reply) appAlert('openAInotWorking, suggestProxy')
+                        else if (caller.status != 'done') api.tryNew(caller)
                     }
-                } else { consoleInfo('Response: ' + resp.responseText) ; appAlert('openAInotWorking, suggestProxy') }
-            } else if (caller.api == 'AIchatOS') {
-                if (resp.responseText
-                    && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags]
-                        .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
-                        .join('|')).test(resp.responseText)) {
-                            try {
-                                const text = resp.responseText, chunkSize = 1024
-                                let answer = '', currentIdx = 0
-                                while (currentIdx < text.length) {
-                                    const chunk = text.substring(currentIdx, currentIdx + chunkSize)
-                                    currentIdx += chunkSize ; answer += chunk
+                } else if (caller.api == 'AIchatOS') {
+                    if (resp.responseText
+                        && !new RegExp([apis.AIchatOS.expectedOrigin, ...apis.AIchatOS.failFlags]
+                            .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) // escape special chars
+                            .join('|')).test(resp.responseText)) {
+                                try { // to show response or return related queries
+                                    const text = resp.responseText, chunkSize = 1024
+                                    let currentIdx = 0
+                                    while (currentIdx < text.length) {
+                                        const chunk = text.substring(currentIdx, currentIdx + chunkSize)
+                                        currentIdx += chunkSize ; respText += chunk
+                                    }
+                                    if (!respText) throw new Error()
+                                    caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
+                                    if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
+                                } catch (err) { // try diff API
+                                    consoleInfo(logPrefix + 'Response text: ' + resp.responseText)
+                                    consoleErr(logPrefix + appAlerts.parseFailed, err)
+                                    if (caller.status != 'done') api.tryNew(caller)
                                 }
-                                show.reply(answer, footerContent)
-                                caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                            } catch (err) { // use different endpoint or suggest OpenAI
-                                consoleInfo('Response: ' + resp.responseText)
-                                consoleErr(appAlerts.parseFailed, err)
-                                if (caller.status != 'done') api.tryNew(caller)
-                            }
-                } else { consoleInfo('Response: ' + resp.responseText) ; if (caller.status != 'done') api.tryNew(caller) }
-            } else if (caller.api == 'GPTforLove') {
-                if (resp.responseText && !resp.responseText.includes('Fail')) {
-                    try {
-                        let chunks = resp.responseText.trim().split('\n'),
-                            lastObj = JSON.parse(chunks[chunks.length - 1])
-                        if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
-                        show.reply(lastObj.text, footerContent)
-                        caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                    } catch (err) { // use different endpoint or suggest OpenAI
-                        consoleInfo('Response: ' + resp.responseText)
-                        consoleErr(appAlerts.parseFailed, err)
-                        if (caller.status != 'done') api.tryNew(caller)
-                    }
-                } else { consoleInfo('Response: ' + resp.responseText) ; if (caller.status != 'done') api.tryNew(caller) }
-            } else if (caller.api == 'MixerBox AI') {
-                if (resp.responseText) {
-                    try {
-                        const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
-                            .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
-                            .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
-                        show.reply(extractedData.join(''), footerContent)
-                        caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
-                    } catch (err) { // use different endpoint or suggest OpenAI
-                        consoleInfo('Response: ' + resp.responseText)
-                        consoleErr(appAlerts.parseFailed, err)
-                        if (caller.status != 'done') api.tryNew(caller)
-                    }
-                } else { consoleInfo('Response: ' + resp.responseText) ; if (caller.status != 'done') api.tryNew(caller) }
-            }
+                    } else if (caller.status != 'done') api.tryNew(caller)
+                } else if (caller.api == 'GPTforLove') {
+                    if (resp.responseText && !resp.responseText.includes('Fail')) {
+                        try { // to show response or return related queries
+                            let chunks = resp.responseText.trim().split('\n'),
+                                lastObj = JSON.parse(chunks[chunks.length - 1])
+                            if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
+                            respText = lastObj.text
+                            if (!respText) throw new Error()
+                            caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
+                            if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
+                        } catch (err) { // try diff API
+                            consoleInfo(logPrefix + 'Response text: ' + resp.responseText)
+                            consoleErr(logPrefix + appAlerts.parseFailed, err)
+                            if (caller.status != 'done') api.tryNew(caller)
+                        }
+                    } else if (caller.status != 'done') api.tryNew(caller)
+                } else if (caller.api == 'MixerBox AI') {
+                    if (resp.responseText) {
+                        try { // to show response or return related queries
+                            const extractedData = Array.from(resp.responseText.matchAll(/data:(.*)/g), match => match[1]
+                                .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
+                                .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
+                            respText = extractedData.join('')
+                            if (!respText) throw new Error()
+                            caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
+                            if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
+                        } catch (err) { // try diff API
+                            consoleInfo(logPrefix + 'Response text: ' + resp.responseText)
+                            consoleErr(logPrefix + appAlerts.parseFailed, err)
+                            if (caller.status != 'done') api.tryNew(caller)
+                        }
+                    } else if (caller.status != 'done') api.tryNew(caller)
+                }
+
+                function arrayify(strList) { // for get.related() calls
+                    return (strList.match(/\d+\.\s*(.*?)(?=\n|$)/g) || [])
+                        .slice(0, 5) // limit to 1st 5
+                        .map(match => match.replace(/^\d+\.\s*/, '')) // strip numbering
+                }
+            })
         },
 
         stream: function(caller, stream) {
