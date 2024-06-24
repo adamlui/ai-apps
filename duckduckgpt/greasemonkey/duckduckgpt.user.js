@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.24.2
+// @version             2024.6.24.3
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1089,6 +1089,7 @@
     }
 
     function deleteOpenAIcookies() {
+        GM_deleteValue(config.keyPrefix + '_openAItoken')
         if (getUserscriptManager() != 'Tampermonkey') return
         GM_cookie.list({ url: openAIendpoints.auth }, (cookies, error) => {
             if (!error) { for (const cookie of cookies) {
@@ -1349,8 +1350,8 @@
                 consoleErr('Response text', resp.responseText)
                 if (config.proxyAPIenabled && caller.status != 'done')
                     api.tryNew(caller)
-                else if (resp.status == 401 && !config.proxyAPIenabled) {
-                    GM_deleteValue(config.keyPrefix + '_openAItoken') ; appAlert('login') }
+                else if (resp.status == 401 && !config.proxyAPIenabled)
+                    appAlert('login')
                 else if (resp.status == 403)
                     appAlert(config.proxyAPIenabled ? ['proxyNotWorking', 'suggestOpenAI'] : 'checkCloudflare')
                 else if (resp.status == 429)
