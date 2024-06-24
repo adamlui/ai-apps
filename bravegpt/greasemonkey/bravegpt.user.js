@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.24
+// @version             2024.6.24.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1411,12 +1411,12 @@ setTimeout(async () => {
     const dataProcess = {
 
         text: function(caller, resp) {
-            if (!config.streamingDisabled && config.proxyAPIenabled || get.reply.status == 'done')
+            if (!config.streamingDisabled && config.proxyAPIenabled || caller.status == 'done')
                 return
             if (resp.status != 200) {
                 consoleErr('Response status', resp.status)
                 consoleErr('Response text', resp.responseText)
-                if (config.proxyAPIenabled && get.reply.status != 'done')
+                if (config.proxyAPIenabled && caller.status != 'done')
                     api.tryNew(caller)
                 else if (resp.status == 401 && !config.proxyAPIenabled) {
                     GM_deleteValue(config.keyPrefix + '_openAItoken') ; appAlert('login') }
@@ -1450,13 +1450,13 @@ setTimeout(async () => {
                                     currentIdx += chunkSize ; answer += chunk
                                 }
                                 show.reply(answer, footerContent)
-                                get.reply.status = 'done' ; api.clearTimedOut(get.reply.triedAPIs) ; get.reply.attemptCnt = null
+                                caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                             } catch (err) { // use different endpoint or suggest OpenAI
                                 consoleInfo('Response: ' + resp.responseText)
                                 consoleErr(appAlerts.parseFailed, err)
-                                if (get.reply.status != 'done') api.tryNew(caller)
+                                if (caller.status != 'done') api.tryNew(caller)
                             }
-                } else { consoleInfo('Response: ' + resp.responseText) ; if (get.reply.status != 'done') api.tryNew(caller) }
+                } else { consoleInfo('Response: ' + resp.responseText) ; if (caller.status != 'done') api.tryNew(caller) }
             } else if (caller.api == 'GPTforLove') {
                 if (resp.responseText && !resp.responseText.includes('Fail')) {
                     try {
@@ -1464,13 +1464,13 @@ setTimeout(async () => {
                             lastObj = JSON.parse(chunks[chunks.length - 1])
                         if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
                         show.reply(lastObj.text, footerContent)
-                        get.reply.status = 'done' ; api.clearTimedOut(get.reply.triedAPIs) ; get.reply.attemptCnt = null
+                        caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                     } catch (err) { // use different endpoint or suggest OpenAI
                         consoleInfo('Response: ' + resp.responseText)
                         consoleErr(appAlerts.parseFailed, err)
-                        if (get.reply.status != 'done') api.tryNew(caller)
+                        if (caller.status != 'done') api.tryNew(caller)
                     }
-                } else { consoleInfo('Response: ' + resp.responseText) ; if (get.reply.status != 'done') api.tryNew(caller) }
+                } else { consoleInfo('Response: ' + resp.responseText) ; if (caller.status != 'done') api.tryNew(caller) }
             } else if (caller.api == 'MixerBox AI') {
                 if (resp.responseText) {
                     try {
@@ -1478,13 +1478,13 @@ setTimeout(async () => {
                             .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                             .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                         show.reply(extractedData.join(''), footerContent)
-                        get.reply.status = 'done' ; api.clearTimedOut(get.reply.triedAPIs) ; get.reply.attemptCnt = null
+                        caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                     } catch (err) { // use different endpoint or suggest OpenAI
                         consoleInfo('Response: ' + resp.responseText)
                         consoleErr(appAlerts.parseFailed, err)
-                        if (get.reply.status != 'done') api.tryNew(caller)
+                        if (caller.status != 'done') api.tryNew(caller)
                     }
-                } else { consoleInfo('Response: ' + resp.responseText) ; if (get.reply.status != 'done') api.tryNew(caller) }
+                } else { consoleInfo('Response: ' + resp.responseText) ; if (caller.status != 'done') api.tryNew(caller) }
             }
         },
 
@@ -1494,8 +1494,8 @@ setTimeout(async () => {
             reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream', err.message))
             function processStreamText({ done, value }) {
                 if (done) {
-                    get.reply.status = 'done' ; get.reply.sender = null
-                    api.clearTimedOut(get.reply.triedAPIs) ; get.reply.attemptCnt = null
+                    caller.status = 'done' ; caller.sender = null
+                    api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                     return
                 }
                 let chunk = new TextDecoder('utf8').decode(new Uint8Array(value))
@@ -1508,7 +1508,7 @@ setTimeout(async () => {
                 accumulatedChunks = apis[caller.api].accumulatesText ? chunk : accumulatedChunks + chunk
                 if (/['"]?status['"]?:\s*['"]Fail['"]/.test(accumulatedChunks)) { // GPTforLove fail
                     consoleErr('Response', accumulatedChunks)
-                    if (get.reply.status != 'done' && !get.reply.sender) api.tryNew(caller)
+                    if (caller.status != 'done' && !caller.sender) api.tryNew(caller)
                     return
                 }
                 try { // to show stream text
@@ -1519,13 +1519,13 @@ setTimeout(async () => {
                         if (nowResult.id) apiIDs.gptForLove.parentID = nowResult.id // for contextual replies
                         textToShow = nowResult.text
                     } else textToShow = accumulatedChunks
-                    if (textToShow && get.reply.status != 'done') { // text ready, app waiting or sending
-                        if (!get.reply.sender) get.reply.sender = caller.api // app is waiting, become sender
-                        if (get.reply.sender == caller.api) show.reply(textToShow, footerContent)
+                    if (textToShow && caller.status != 'done') { // text ready, app waiting or sending
+                        if (!caller.sender) caller.sender = caller.api // app is waiting, become sender
+                        if (caller.sender == caller.api) show.reply(textToShow, footerContent)
                     }
                 } catch (err) { consoleErr('Error showing stream', err.message) }
                 return reader.read().then(({ done, value }) => {
-                    if (get.reply.sender == caller.api) // am designated sender, recurse
+                    if (caller.sender == caller.api) // am designated sender, recurse
                         processStreamText({ done, value })
                 }).catch(err => consoleErr('Error reading stream', err.message))
             }
