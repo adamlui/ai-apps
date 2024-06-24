@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.23.1
+// @version             2024.6.24
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1566,7 +1566,7 @@
             }})
         },
 
-        related: function(query) {
+        related: async function(query) {
 
             // Init API attempt props
             get.related.status = 'waiting'
@@ -1577,7 +1577,9 @@
             get.related.api = api.pick(get.related)
             if (!get.related.api) return // no more proxy APIs left untried
 
-            setTimeout(() => { // try diff API after 7s of no response
+            if (!config.proxyAPIenabled) // init OpenAI key
+                config.openAIkey = await Promise.race([getOpenAItoken(), new Promise(reject => setTimeout(reject, 3000))])
+            else setTimeout(() => { // try diff API after 7s of no response
                 if (get.related.status != 'done')
                     api.tryNew(get.related, 'timeout') }, 7000)
 
