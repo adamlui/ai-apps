@@ -1,6 +1,5 @@
 import js from '@eslint/js';
 import globals from 'globals';
-import eslintPluginJsonSchemaValidator from 'eslint-plugin-json-schema-validator';
 
 export default [
     js.configs.recommended,
@@ -25,6 +24,5 @@ export default [
             }
         }
     },
-    { files: ['**/*.mjs', '**/lib/*.js'], languageOptions: { sourceType: 'module' }},
-    ...eslintPluginJsonSchemaValidator.configs['flat/recommended']
+    { files: ['**/*.mjs', '**/lib/*.js'], languageOptions: { sourceType: 'module' }}
 ];
