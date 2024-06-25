@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.25.1
+// @version             2024.6.25.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -249,7 +249,7 @@
     config.supportURL = 'https://support.chatgptinfinity.com'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@5153489/'
     config.userLanguage = chatgpt.getUserLanguage()
-    loadSetting('autoScrollDisabled', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden')
+    loadSetting('autoScrollDisabled', 'autoStart', 'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
     if (!config.replyTopic) saveSetting('replyTopic', 'ALL') // init reply topic if unset
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
@@ -299,74 +299,6 @@
         return // exit script
     } else registerMenu() // create functional menu
 
-    // Init UI flags
-    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
-    await chatgpt.sidebar.isLoaded()
-    const isFirefox = chatgpt.browser.isFirefox(),
-          isGPT4oUI = document.documentElement.className.includes(' '),
-          firstLink = chatgpt.getNewChatLink()
-
-    // Add listener to auto-disable Infinity Mode
-    if (document.hidden !== undefined) // ...if Page Visibility API supported
-        document.onvisibilitychange = () => {
-            if (config.infinityMode) {                
-                if (document.getElementById('infToggleLabel')) // ensure toggle state is accurate
-                    document.getElementById('infToggleLabel').click()
-                else infinityMode.deactivate()
-                refreshMenu()
-        }}
-
-    // Add/update TWEAKS style
-    const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`
-    let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
-    if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
-        if (!tweaksStyle) { // outright missing, create/id/attr/append it first
-            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
-            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
-            document.head.append(tweaksStyle)
-        }
-        tweaksStyle.innerText = (
-            '.chatgpt-modal button {'
-              + 'font-size: 0.77rem ; text-transform: uppercase ;'
-              + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-          + '.modal-buttons { margin-left: -13px !important }'
-          + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
-          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
-              + 'transform: none !important }' // disable distracting click zoom effect
-        )
-    }
-
-    // Create NAV TOGGLE div, add styles
-    const navToggleDiv = document.createElement('div')
-    navToggleDiv.style.height = '37px'
-    navToggleDiv.style.margin = '2px 0' // add v-margins
-    navToggleDiv.style.userSelect = 'none' // prevent highlighting
-    navToggleDiv.style.cursor = 'pointer' // add finger cursor
-    updateToggleHTML() // create children
-
-    if (firstLink) { // borrow/assign CLASSES from sidebar div
-        const firstIcon = firstLink.querySelector('div:first-child'),
-              firstLabel = firstLink.querySelector('div:nth-child(2)')
-        navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
-        navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
-    }
-
-    insertToggle()
-
-    // Add LISTENER to toggle switch/label/config/menu
-    navToggleDiv.onclick = () => {
-        const toggleInput = document.getElementById('infToggleInput')
-        toggleInput.checked = !toggleInput.checked
-        config.infinityMode = toggleInput.checked
-        updateToggleHTML() ; refreshMenu()
-        infinityMode.toggle()
-    }
-
-    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
-    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
-        if (mutation.type == 'childList' && mutation.addedNodes.length) insertToggle() })})
-    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
-
     // Define SCRIPT functions
 
     function loadSetting(...keys) { keys.forEach(key => { config[key] = GM_getValue(config.keyPrefix + '_' + key, false) })}
@@ -384,6 +316,16 @@
                       + menuState.separator + menuState.word[+config.infinityMode]
         menuIDs.push(GM_registerMenuCommand(imLabel, () => { document.getElementById('infToggleLabel').click() }))
 
+        // Add command to toggle Auto-Start
+        const astLabel = menuState.symbol[+config.autoStart] + ' '
+                       + ( msgs.menuLabel_autoStart || 'Auto-Start' )
+                       + menuState.separator + menuState.word[+config.autoStart]
+        menuIDs.push(GM_registerMenuCommand(astLabel, () => {
+            saveSetting('autoStart', !config.autoStart)
+            notify(( msgs.menuLabel_autoStart || 'Auto-Start' ) + ': '+ menuState.word[+config.autoStart])
+            refreshMenu()
+        }))
+
         // Add command to toggle visibility of toggle
         const tvLabel = menuState.symbol[+!config.toggleHidden] + ' '
                       + ( msgs.menuLabel_toggleVis || 'Toggle Visibility' )
@@ -395,11 +337,11 @@
             refreshMenu()
         }))
 
-        // Add command to toggle auto-scroll
-        const asLabel = menuState.symbol[+!config.autoScrollDisabled] + ' '
-                      + ( msgs.menuLabel_autoScroll || 'Auto-Scroll' )
-                      + menuState.separator + menuState.word[+!config.autoScrollDisabled]
-        menuIDs.push(GM_registerMenuCommand(asLabel, () => {
+        // Add command to toggle Auto-Scroll
+        const ascLabel = menuState.symbol[+!config.autoScrollDisabled] + ' '
+                       + ( msgs.menuLabel_autoScroll || 'Auto-Scroll' )
+                       + menuState.separator + menuState.word[+!config.autoScrollDisabled]
+        menuIDs.push(GM_registerMenuCommand(ascLabel, () => {
             saveSetting('autoScrollDisabled', !config.autoScrollDisabled)
             notify(( msgs.menuLabel_autoScroll || 'Auto-Scroll' ) + ': '+ menuState.word[+!config.autoScrollDisabled])
             refreshMenu()
@@ -731,5 +673,83 @@
         if (config.infinityMode && !infinityMode.isActive) // double-check in case de-activated before scheduled
             infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
     }
+
+    // Run MAIN routine
+
+    // Init UI flags
+    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
+    await chatgpt.sidebar.isLoaded()
+    const isFirefox = chatgpt.browser.isFirefox(),
+          isGPT4oUI = document.documentElement.className.includes(' '),
+          firstLink = chatgpt.getNewChatLink()
+
+    // Add listener to auto-disable Infinity Mode
+    if (document.hidden !== undefined) // ...if Page Visibility API supported
+        document.onvisibilitychange = () => {
+            if (config.infinityMode) {                
+                if (document.getElementById('infToggleLabel')) // ensure toggle state is accurate
+                    document.getElementById('infToggleLabel').click()
+                else infinityMode.deactivate()
+                refreshMenu()
+        }}
+
+    // Add/update TWEAKS style
+    const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`
+    let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
+    if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
+        if (!tweaksStyle) { // outright missing, create/id/attr/append it first
+            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
+            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
+            document.head.append(tweaksStyle)
+        }
+        tweaksStyle.innerText = (
+            '.chatgpt-modal button {'
+              + 'font-size: 0.77rem ; text-transform: uppercase ;'
+              + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+          + '.modal-buttons { margin-left: -13px !important }'
+          + '* { scrollbar-width: thin }' // make FF scrollbar skinny to not crop toggle
+          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
+              + 'transform: none !important }' // disable distracting click zoom effect
+        )
+    }
+
+    // Create NAV TOGGLE div, add styles
+    const navToggleDiv = document.createElement('div')
+    navToggleDiv.style.height = '37px'
+    navToggleDiv.style.margin = '2px 0' // add v-margins
+    navToggleDiv.style.userSelect = 'none' // prevent highlighting
+    navToggleDiv.style.cursor = 'pointer' // add finger cursor
+    updateToggleHTML() // create children
+
+    if (firstLink) { // borrow/assign CLASSES from sidebar div
+        const firstIcon = firstLink.querySelector('div:first-child'),
+              firstLabel = firstLink.querySelector('div:nth-child(2)')
+        navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
+        navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
+    }
+
+    insertToggle()
+
+    // Add LISTENER to toggle switch/label/config/menu
+    navToggleDiv.onclick = () => {
+        const toggleInput = document.getElementById('infToggleInput')
+        toggleInput.checked = !toggleInput.checked
+        config.infinityMode = toggleInput.checked
+        updateToggleHTML() ; refreshMenu()
+        infinityMode.toggle()
+    }
+
+    // Auto-start if enabled
+    if (config.autoStart) {
+        const navToggle = document.getElementById('infToggleInput')
+        if (navToggle) navToggle.parentNode.click()
+        else { // activate via infinityMode
+            infinityMode.activate() ; config.infinityMode = true ; refreshMenu()
+    }}
+
+    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
+    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
+        if (mutation.type == 'childList' && mutation.addedNodes.length) insertToggle() })})
+    nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
 
 })()

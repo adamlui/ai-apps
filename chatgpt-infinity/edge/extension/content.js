@@ -38,72 +38,6 @@
         if (!config.replyInterval) settings.save('replyInterval', 7) // init refresh interval to 7 secs if unset
     })
 
-    // Init UI flags
-    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
-    await chatgpt.sidebar.isLoaded()
-    const isGPT4oUI = document.documentElement.className.includes(' '),
-          firstLink = chatgpt.getNewChatLink()
-
-    // Add LISTENER to auto-disable Infinity Mode
-    if (document.hidden !== undefined) // ...if Page Visibility API supported
-        document.onvisibilitychange = () => {
-            if (config.infinityMode) {                
-                if (document.getElementById('infToggleLabel')) // ensure toggle state is accurate
-                    document.getElementById('infToggleLabel').click()
-                else infinityMode.deactivate()
-        }}
-
-    // Add/update TWEAKS style
-    const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`
-    let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
-    if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
-        if (!tweaksStyle) { // outright missing, create/id/attr/append it first
-            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
-            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
-            document.head.append(tweaksStyle)
-        }
-        tweaksStyle.innerText = (
-            '.chatgpt-modal button {'
-              + 'font-size: 0.77rem ; text-transform: uppercase ;'
-              + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
-          + '.modal-buttons { margin-left: -13px !important }'
-          + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
-              + 'transform: none !important }' // disable distracting click zoom effect
-        )
-    }
-
-    // Create NAV TOGGLE div, add styles
-    const navToggleDiv = document.createElement('div')
-    navToggleDiv.style.height = '37px'
-    navToggleDiv.style.margin = '2px 0' // add v-margins
-    navToggleDiv.style.userSelect = 'none' // prevent highlighting
-    navToggleDiv.style.cursor = 'pointer' // add finger cursor
-    updateToggleHTML() // create children
-
-    if (firstLink) { // borrow/assign classes from sidebar div
-        const firstIcon = firstLink.querySelector('div:first-child'),
-              firstLabel = firstLink.querySelector('div:nth-child(2)')
-        navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
-        navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
-    }
-
-    settings.load(['extensionDisabled']).then(() => { if (!config.extensionDisabled) insertToggle() })
-
-    // Add LISTENER to toggle switch/label/config/menu
-    navToggleDiv.onclick = () => {
-        const toggleInput = document.getElementById('infToggleInput')
-        toggleInput.checked = !toggleInput.checked
-        settings.save('infinityMode', toggleInput.checked)
-        updateToggleHTML()
-        infinityMode.toggle()
-    }
-
-    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
-    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
-        if (mutation.type == 'childList' && mutation.addedNodes.length)
-            settings.load(['extensionDisabled']).then(() => { if (!config.extensionDisabled) insertToggle()
-    })})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })
-
     // Define FEEDBACK functions
 
     function notify(msg, position = '', notifDuration = '', shadow = '') {
@@ -261,9 +195,84 @@
     // Define SYNC function
 
     syncExtension = () => { // settings + sidebar toggle visibility
-        settings.load(['extensionDisabled', 'toggleHidden', 'autoScrollDisabled',
-                       'replyTopic', 'replyInterval', 'replyLanguage'])
+        settings.load(['autoScrollDisabled', 'autoStart', 'extensionDisabled',
+                       'replyInterval', 'replyLanguage', 'replyTopic', 'toggleHidden'])
             .then(() => { insertToggle() ; updateToggleHTML() // hide/show sidebar toggle based on latest setting
     })}
+
+    // Init UI flags
+    await Promise.race([chatgpt.isLoaded(), new Promise(resolve => setTimeout(resolve, 5000))]) // initial UI loaded
+    await chatgpt.sidebar.isLoaded()
+    const isGPT4oUI = document.documentElement.className.includes(' '),
+            firstLink = chatgpt.getNewChatLink()
+
+    // Add LISTENER to auto-disable Infinity Mode
+    if (document.hidden !== undefined) // ...if Page Visibility API supported
+        document.onvisibilitychange = () => {
+            if (config.infinityMode) {                
+                if (document.getElementById('infToggleLabel')) // ensure toggle state is accurate
+                    document.getElementById('infToggleLabel').click()
+                else infinityMode.deactivate()
+        }}
+
+    // Add/update TWEAKS style
+    const tweaksStyleUpdated = 202405171 // datestamp of last edit for this file's `tweaksStyle`
+    let tweaksStyle = document.getElementById('tweaks-style') // try to select existing style
+    if (!tweaksStyle || parseInt(tweaksStyle.getAttribute('last-updated'), 10) < tweaksStyleUpdated) { // if missing or outdated
+        if (!tweaksStyle) { // outright missing, create/id/attr/append it first
+            tweaksStyle = document.createElement('style') ; tweaksStyle.id = 'tweaks-style'
+            tweaksStyle.setAttribute('last-updated', tweaksStyleUpdated.toString())
+            document.head.append(tweaksStyle)
+        }
+        tweaksStyle.innerText = (
+            '.chatgpt-modal button {'
+                + 'font-size: 0.77rem ; text-transform: uppercase ;'
+                + 'border-radius: 0 !important ; padding: 5px !important ; min-width: 102px }'
+            + '.modal-buttons { margin-left: -13px !important }'
+            + '.sticky div:active, .sticky div:focus {' // post-GPT-4o UI sidebar button container
+                + 'transform: none !important }' // disable distracting click zoom effect
+        )
+    }
+
+    // Create NAV TOGGLE div, add styles
+    const navToggleDiv = document.createElement('div')
+    navToggleDiv.style.height = '37px'
+    navToggleDiv.style.margin = '2px 0' // add v-margins
+    navToggleDiv.style.userSelect = 'none' // prevent highlighting
+    navToggleDiv.style.cursor = 'pointer' // add finger cursor
+    updateToggleHTML() // create children
+
+    if (firstLink) { // borrow/assign classes from sidebar div
+        const firstIcon = firstLink.querySelector('div:first-child'),
+                firstLabel = firstLink.querySelector('div:nth-child(2)')
+        navToggleDiv.classList.add(...firstLink.classList, ...firstLabel.classList)
+        navToggleDiv.querySelector('img')?.classList.add(...firstIcon.classList)
+    }
+
+    settings.load(['extensionDisabled']).then(() => { if (!config.extensionDisabled) insertToggle() })
+
+    // Add LISTENER to toggle switch/label/config/menu
+    navToggleDiv.onclick = () => {
+        const toggleInput = document.getElementById('infToggleInput')
+        toggleInput.checked = !toggleInput.checked
+        settings.save('infinityMode', toggleInput.checked)
+        updateToggleHTML()
+        infinityMode.toggle()
+    }
+
+    // Auto-start if enabled
+    settings.load('autoStart').then(() => { if (config.autoStart) {
+        const navToggle = document.getElementById('infToggleInput')
+        if (navToggle) navToggle.parentNode.click()
+        else { // activate via infinityMode funcs obj
+            infinityMode.activate()
+            settings.save('infinityMode', true) // so popup.js updates toggle
+    }}})
+
+    // Monitor <html> to maintain SIDEBAR TOGGLE VISIBILITY on node changes
+    const nodeObserver = new MutationObserver(mutations => { mutations.forEach(mutation => {
+        if (mutation.type == 'childList' && mutation.addedNodes.length)
+            settings.load(['extensionDisabled']).then(() => { if (!config.extensionDisabled) insertToggle()
+    })})}) ; nodeObserver.observe(document.documentElement, { childList: true, subtree: true })    
 
 })()

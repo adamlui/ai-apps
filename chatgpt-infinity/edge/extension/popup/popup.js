@@ -29,24 +29,26 @@
     // Locate settings elements
     const menuItems = document.querySelectorAll('.menu-item'),
           infinityModeDiv = menuItems[0], infinityModeToggle = infinityModeDiv.querySelector('input'),
-          toggleVisDiv = menuItems[1], toggleVisToggle = toggleVisDiv.querySelector('input'),
-          autoScrollDiv = menuItems[2], autoScrollToggle = autoScrollDiv.querySelector('input'),
-          replyLangDiv = menuItems[3], replyLangLabel = replyLangDiv.querySelector('span'),
-          replyTopicDiv = menuItems[4], replyTopicLabel = replyTopicDiv.querySelector('span'),
-          replyIntervalDiv = menuItems[5], replyIntervalLabel = replyIntervalDiv.querySelector('span')
+          autoStartDiv = menuItems[1], autoStartToggle = autoStartDiv.querySelector('input'),
+          toggleVisDiv = menuItems[2], toggleVisToggle = toggleVisDiv.querySelector('input'),
+          autoScrollDiv = menuItems[3], autoScrollToggle = autoScrollDiv.querySelector('input'),
+          replyLangDiv = menuItems[4], replyLangLabel = replyLangDiv.querySelector('span'),
+          replyTopicDiv = menuItems[5], replyTopicLabel = replyTopicDiv.querySelector('span'),
+          replyIntervalDiv = menuItems[6], replyIntervalLabel = replyIntervalDiv.querySelector('span')
 
     // Sync toggle states + menu labels
     const re_all = new RegExp('^(' + chrome.i18n.getMessage('menuLabel_all') + '|all|any|every)$', 'i')
-    settings.load(['infinityMode', 'toggleHidden', 'autoScrollDisabled',
-                   'replyInterval', 'replyTopic', 'replyLanguage', 'userLanguage'])
+    settings.load(['autoScrollDisabled', 'autoStart', 'infinityMode', 'replyInterval',
+                   'replyLanguage', 'replyTopic', 'toggleHidden', 'userLanguage'])
         .then(() => { // restore toggle states
             infinityModeToggle.checked = config.infinityMode
+            autoStartToggle.checked = config.autoStart
             toggleVisToggle.checked = !config.toggleHidden
             autoScrollToggle.checked = !config.autoScrollDisabled
             replyLangLabel.innerText += ` — ${ config.replyLanguage }`
             replyTopicLabel.innerText += ' — '
                 + ( re_all.test(config.replyTopic) ? chrome.i18n.getMessage('menuLabel_all')
-                                                    : toTitleCase(config.replyTopic) )
+                                                   : toTitleCase(config.replyTopic) )
             replyIntervalLabel.innerText += ` — ${ config.replyInterval }s`
         })
 
@@ -61,6 +63,16 @@
     infinityModeDiv.onclick = event => {
         if ([infinityModeDiv, document.querySelector('[data-locale*="infinityMode"]')].includes(event.target))
             infinityModeToggle.click() 
+    }
+
+    // Add 'Auto-Start' click-listeners
+    autoStartToggle.onchange = () => {
+        settings.save('autoStart', !config.autoStart) ; syncExtension()        
+        notify(chrome.i18n.getMessage('menuLabel_autoStart') + ' ' + ( config.autoStart ? 'ON' : 'OFF' ))
+    }
+    autoStartDiv.onclick = event => {
+        if ([autoStartDiv, document.querySelector('[data-locale*="autoStart"]')].includes(event.target))
+            autoStartToggle.click() 
     }
 
     // Add 'Toggle Visibility' click-listeners
