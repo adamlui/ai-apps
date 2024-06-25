@@ -25,9 +25,6 @@
         return true
     })
 
-    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
-        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
-
     // Selectively DISABLE content or user script
     if (!/chat(?:gpt|\.openai)\.com/.test(window.location.hostname)) return
     document.documentElement.setAttribute('cif-extension-installed', true) // for userscript auto-disable
@@ -113,6 +110,9 @@
         chatgpt.notify(`${ config.appSymbol } ${ msg }`, position, notifDuration,
             shadow || chatgpt.isDarkMode() ? '' : 'shadow' )
     }
+
+    function siteAlert(title = '', msg = '', btns = '', checkbox = '', width = '') {
+        return chatgpt.alert(`${ config.appSymbol } ${ title }`, msg, btns, checkbox, width )}
 
     // Define UI functions
 
