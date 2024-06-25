@@ -63,7 +63,7 @@
         if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
-        document.getElementById('infToggleFavicon').src = `${ // update navicon color in case scheme changed
+        document.getElementById('infToggleFavicon')?.src = `${ // update navicon color in case scheme changed
             config.assetHostURL }media/images/icons/infinity-symbol/${
             chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
