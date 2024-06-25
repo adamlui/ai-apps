@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Sukurkite begalinius atsakymus iš visų žinančių ChatGPT (bet kuria kalba!)" },
   "menuLabel_infinityMode": { "message": "begalybė" },
+  "menuLabel_autoStart": { "message": "@ action" },
   "menuLabel_toggleVis": { "message": "Perjungti matomumą" },
   "menuLabel_autoScroll": { "message": "Automatinė slinktis" },
   "menuLabel_replyLang": { "message": "Atsakymo kalba" },

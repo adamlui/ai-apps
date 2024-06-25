@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Gadzira mhinduro dzisingagumi kubva kune vese vanoziva ChatGPT (mune chero mutauro!)" },
   "menuLabel_infinityMode": { "message": "Nezvedu" },
+  "menuLabel_autoStart": { "message": "Auto-kutanga" },
   "menuLabel_toggleVis": { "message": "Toggle Kuonekwa" },
   "menuLabel_autoScroll": { "message": "Auto Mupumburu" },
   "menuLabel_replyLang": { "message": "Pindura Mutauro" },

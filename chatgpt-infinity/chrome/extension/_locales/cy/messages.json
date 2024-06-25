@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Anfeidredd" },
   "appDesc": { "message": "Creu atebion diddiwedd o ChatGPT holl - wybodus (mewn unrhyw iaith!)" },
   "menuLabel_infinityMode": { "message": "Modd Anfeidredd" },
+  "menuLabel_autoStart": { "message": "Awto - gychwyn" },
   "menuLabel_toggleVis": { "message": "Toglo Gwelededd" },
   "menuLabel_autoScroll": { "message": "Cofrestru'n Awtomatig" },
   "menuLabel_replyLang": { "message": "Iaith Ateb" },

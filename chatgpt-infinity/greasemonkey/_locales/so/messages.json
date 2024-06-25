@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Abuur jawaabo aan dhammaad lahayn oo ka socda ChatGPT oo dhan oo aqoon u leh (luqad kasta!)" },
   "menuLabel_infinityMode": { "message": "Qaabka Aan Dhamaadka Lahayn" },
+  "menuLabel_autoStart": { "message": "Auto-Start" },
   "menuLabel_toggleVis": { "message": "Beddel Aragtida" },
   "menuLabel_autoScroll": { "message": "Auto-Scroll" },
   "menuLabel_replyLang": { "message": "Luqadda Jawaabta" },

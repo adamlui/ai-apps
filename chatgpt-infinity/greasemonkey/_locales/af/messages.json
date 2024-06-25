@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Oneindigheid" },
   "appDesc": { "message": "Genereer eindelose antwoorde van alwetende ChatGPT (in enige taal!)" },
   "menuLabel_infinityMode": { "message": "Oneindige modus" },
+  "menuLabel_autoStart": { "message": "Outo- Begin" },
   "menuLabel_toggleVis": { "message": "Wissel Sigbaarheid" },
   "menuLabel_autoScroll": { "message": "Outo-Rol" },
   "menuLabel_replyLang": { "message": "Antwoord Taal" },

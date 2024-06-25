@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Guhindura ibyanditswe byose birimo ibisobanuro byo mu Kinyarwanda n'ibindi" },
   "menuLabel_infinityMode": { "message": "Umwanya wa Ibindi" },
+  "menuLabel_autoStart": { "message": "Gutangira" },
   "menuLabel_toggleVis": { "message": "Guhindura Imihora" },
   "menuLabel_autoScroll": { "message": "Auto-Scroll" },
   "menuLabel_replyLang": { "message": "Igihugu cy'ibyanditswe" },

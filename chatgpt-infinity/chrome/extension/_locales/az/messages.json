@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Sonsuzluq" },
   "appDesc": { "message": "Sonsuz cavabları bütün ChatGPT (hər hansı bir dildə) yaradın!" },
   "menuLabel_infinityMode": { "message": "Sonsuzluq rejimi" },
+  "menuLabel_autoStart": { "message": "Avtomatik Başlanğıc" },
   "menuLabel_toggleVis": { "message": "Görünüşü dəyişdir" },
   "menuLabel_autoScroll": { "message": "Avtomatik sürüşdürün" },
   "menuLabel_replyLang": { "message": "Cavab Dili" },

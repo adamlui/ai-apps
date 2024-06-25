@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinitas" },
   "appDesc": { "message": "Genera infinitas responsiones a ChatGPT omniscio (quacumque lingua!)" },
   "menuLabel_infinityMode": { "message": "Modus Infinitas" },
+  "menuLabel_autoStart": { "message": "Auto-Start" },
   "menuLabel_toggleVis": { "message": "Visibilitatem Commuta" },
   "menuLabel_autoScroll": { "message": "Automate Scrollum" },
   "menuLabel_replyLang": { "message": "Lingua Responsionis" },

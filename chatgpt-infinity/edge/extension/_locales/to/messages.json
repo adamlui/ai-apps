@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Fakamahino ngaahi ngaahi talanoa mei he ChatGPT faka'ofo'o (i he lea 'oku kei ngaue'aki!)" },
   "menuLabel_infinityMode": { "message": "Lea 'ofo'o" },
+  "menuLabel_autoStart": { "message": "Kamata ʻo e meʻalele" },
   "menuLabel_toggleVis": { "message": "Toli 'i he me'a fakahalangofua" },
   "menuLabel_autoScroll": { "message": "Tali 'i he faka'ilo" },
   "menuLabel_replyLang": { "message": "Lea fakautu" },

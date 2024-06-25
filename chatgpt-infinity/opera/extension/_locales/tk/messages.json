@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Sonsuzlygy" },
   "appDesc": { "message": "Ähli bilen ChatGPT (her dilde!)" },
   "menuLabel_infinityMode": { "message": "Sonsuzluk Mode" },
+  "menuLabel_autoStart": { "message": "Awto Başlamak" },
   "menuLabel_toggleVis": { "message": "Görkezilen Ýagdaýyşy Gaýd Et" },
   "menuLabel_autoScroll": { "message": "Awto-aýlamak" },
   "menuLabel_replyLang": { "message": "Tile Gaýd Et" },

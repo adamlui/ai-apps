@@ -2,6 +2,7 @@
   "appName": { "message": "ЧатГПТ Бескрај" },
   "appDesc": { "message": "Генеришите бесконачне одговоре од свемогућег ЧатГПТ (на било ком језику!)" },
   "menuLabel_infinityMode": { "message": "Бескрајни режим" },
+  "menuLabel_autoStart": { "message": "Аутоматско покретање." },
   "menuLabel_toggleVis": { "message": "Промени видљивост" },
   "menuLabel_autoScroll": { "message": "Аутоматско скроловање" },
   "menuLabel_replyLang": { "message": "Језик одговора" },

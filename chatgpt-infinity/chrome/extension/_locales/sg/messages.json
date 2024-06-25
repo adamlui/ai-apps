@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Tindoma ti gbogbo gboté sango a ti ChatGPT (na yamba ti na!)" },
   "menuLabel_infinityMode": { "message": "Mode Infinity" },
+  "menuLabel_autoStart": { "message": "Mbi Auto-Start" },
   "menuLabel_toggleVis": { "message": "Báyà Tômbôlô" },
   "menuLabel_autoScroll": { "message": "Auto-Scroll" },
   "menuLabel_replyLang": { "message": "Lángá tí ìyọ̀nù" },

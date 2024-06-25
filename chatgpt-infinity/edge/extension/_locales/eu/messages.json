@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Sortu erantzun amaigabeak ChatGPT ezagunetik (edozein hizkuntzatan!)" },
   "menuLabel_infinityMode": { "message": "Infinitu modua" },
+  "menuLabel_autoStart": { "message": "Auto- hasi." },
   "menuLabel_toggleVis": { "message": "Txandakatu ikusgaitasuna" },
   "menuLabel_autoScroll": { "message": "Korritu automatikoki" },
   "menuLabel_replyLang": { "message": "Erantzun hizkuntza" },

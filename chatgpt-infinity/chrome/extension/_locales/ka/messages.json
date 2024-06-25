@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "გენერირებს უსასრულობის პასუხებს ყველა ცოდნისგან რომელიც მისცეს ChatGPT (ნებისმიერ ენაზე!)" },
   "menuLabel_infinityMode": { "message": "უსასრულობის რეჟიმი" },
+  "menuLabel_autoStart": { "message": "Ავტომატური დაწყება" },
   "menuLabel_toggleVis": { "message": "ხილვის ჩართვა/გათიშვა" },
   "menuLabel_autoScroll": { "message": "ავტო-გადართვა" },
   "menuLabel_replyLang": { "message": "პასუხის ენა" },

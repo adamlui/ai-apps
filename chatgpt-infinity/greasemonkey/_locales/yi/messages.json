@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "דזשענערייט סאָף ענטפֿערס פֿון אַלע-געוויסן ChatGPT (אין קיין שפּראַך!)" },
   "menuLabel_infinityMode": { "message": "ומענדיקייַט מאָדע" },
+  "menuLabel_autoStart": { "message": "אַוטאָ-אָנהייב" },
   "menuLabel_toggleVis": { "message": "drawable-action" },
   "menuLabel_autoScroll": { "message": "אַוטאָ-מעגילע" },
   "menuLabel_replyLang": { "message": "ענטפער שפּראַך" },

@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "සියලු දන්නා ChatGPT සිට නිමක් නැති පිළිතුරු උත්පාදනය (ඕනෑම භාෂාවකින්!)" },
   "menuLabel_infinityMode": { "message": "Infinity Mode" },
+  "menuLabel_autoStart": { "message": "ස්වයංක් ‍ රීයව ආරම්භ කරන්න" },
   "menuLabel_toggleVis": { "message": "දෘශ්‍යතාව ටොගල් කරන්න" },
   "menuLabel_autoScroll": { "message": "ස්වයංක්‍රීයව අනුචලනය කරන්න" },
   "menuLabel_replyLang": { "message": "ප්‍රතිචාර භාෂාව" },

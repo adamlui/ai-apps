@@ -2,6 +2,7 @@
   "appName": { "message": "ЧатДжиПиТи Инфинити" },
   "appDesc": { "message": "Генерирайте безкрайни отговори от всезнайния ЧатДжиПиТи (на всяки език!)" },
   "menuLabel_infinityMode": { "message": "Режим безкрайност" },
+  "menuLabel_autoStart": { "message": "Автоматично стартиране" },
   "menuLabel_toggleVis": { "message": "Превключване на видимостта" },
   "menuLabel_autoScroll": { "message": "Автоматична превъртане" },
   "menuLabel_replyLang": { "message": "Език за отговор" },

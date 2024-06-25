@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT بێ سنوور" },
   "appDesc": { "message": "پاسخە ناوەندی لەم بابەتە بە چاودێری ChatGPT (بە هەر زمانێک!)" },
   "menuLabel_infinityMode": { "message": "شێوەی بێ سنوور" },
+  "menuLabel_autoStart": { "message": "Oto-Destpêk" },
   "menuLabel_toggleVis": { "message": "گۆڕینی نیشاندان" },
   "menuLabel_autoScroll": { "message": "خێرا حرکت کردن" },
   "menuLabel_replyLang": { "message": "زمانی وەرزیی پاسخ" },

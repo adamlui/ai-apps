@@ -2,6 +2,7 @@
   "appName": { "message": "ཆུད་འབྲེལ་གནང་བ་ ChatGPT Infinity" },
   "appDesc": { "message": "ཆུད་འབྲེལ་གནང་བ་ ChatGPT (ང་གི་སྐད་ཡིགས་པ་དེ་ཡི་གེ་རིགས་ཚོགས་ཆ་གོང་མ་བྱུང་ཡོད་པ་!)" },
   "menuLabel_infinityMode": { "message": "ཆུད་འབྲེལ་གནང་བ་ རྩོམ་གྲི་རྟག་ཏུ" },
+  "menuLabel_autoStart": { "message": "རང་འགུལ་འགོ་འཛུགས" },
   "menuLabel_toggleVis": { "message": "མཐུན་རྟགས་འཛུགས་བྱུང་ཡོད་པ་" },
   "menuLabel_autoScroll": { "message": "རེ་འབོད་ཕྲ་མོང་ལས་མཐུན་མ་བྱུང་ཡོད་པ་" },
   "menuLabel_replyLang": { "message": "ལོ་ལུགས་ཀླད་གྲིས་སྟོན་པ་བཞག་སྟོན་" },

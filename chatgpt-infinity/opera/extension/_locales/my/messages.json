@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "အားလုံးသိသော ChatGPT (မည်သည့်ဘာသာစကားဖြင့်မဆို) မှ အဆုံးမဲ့အဖြေများကို ထုတ်ပေးပါ" },
   "menuLabel_infinityMode": { "message": "Infinity မုဒ်" },
+  "menuLabel_autoStart": { "message": "အလိုအလျောက်စတင်ပါ" },
   "menuLabel_toggleVis": { "message": "မြင်နိုင်မှုခလုတ်" },
   "menuLabel_autoScroll": { "message": "Auto-Scroll" },
   "menuLabel_replyLang": { "message": "ပြန်ကြားရေးဘာသာစကား" },

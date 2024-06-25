@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "E hana i nā pane pau ʻole mai ChatGPT ʻike āpau (ma kekahi ʻōlelo!)" },
   "menuLabel_infinityMode": { "message": "Ke ano pau ole" },
+  "menuLabel_autoStart": { "message": "Hoʻomaka ʻakomi" },
   "menuLabel_toggleVis": { "message": "Hoʻololi i ka ʻike" },
   "menuLabel_autoScroll": { "message": "Paʻa-Aunoa" },
   "menuLabel_replyLang": { "message": "Pane ʻŌlelo" },

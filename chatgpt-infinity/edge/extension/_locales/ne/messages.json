@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT इन्फिनिटी" },
   "appDesc": { "message": "सबै - ज्ञात ChatGPT देखि अनन्त जवाफ उत्पन्न (कुनै पनि भाषामा!)" },
   "menuLabel_infinityMode": { "message": "इन्फिनिटी मोड" },
+  "menuLabel_autoStart": { "message": "स्वत: - सुरु ।" },
   "menuLabel_toggleVis": { "message": "दृश्यता टगल गर्नुहोस्" },
   "menuLabel_autoScroll": { "message": "स्वत: स्क्रोल गर्नुहोस्" },
   "menuLabel_replyLang": { "message": "भाषा जवाफ दिनुहोस्" },

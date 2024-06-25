@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Loo lõputuid vastuseid kõiketeadvast ChatGPT-st (mis tahes keeles!)" },
   "menuLabel_infinityMode": { "message": "Lõpmatuse režiim" },
+  "menuLabel_autoStart": { "message": "Automaatne alustamine" },
   "menuLabel_toggleVis": { "message": "Nähtavuse lülitamine" },
   "menuLabel_autoScroll": { "message": "Automaatne kerimine" },
   "menuLabel_replyLang": { "message": "Vastuse keel" },

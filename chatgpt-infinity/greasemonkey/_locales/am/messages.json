@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT ስለይ" },
   "appDesc": { "message": "ሁሉ-እውቀት ChatGPT (በማንኛውም ቋንቋ!)" },
   "menuLabel_infinityMode": { "message": "እስከ ሲምጣ ሞድ" },
+  "menuLabel_autoStart": { "message": "Auto-Start" },
   "menuLabel_toggleVis": { "message": "ታይነትን ቀያይር" },
   "menuLabel_autoScroll": { "message": "ራስ-ሰር ጥቅል" },
   "menuLabel_replyLang": { "message": "የምላሽ ቋንቋ" },

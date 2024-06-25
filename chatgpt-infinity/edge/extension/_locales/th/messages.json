@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "สร้างคำตอบได้ไม่จำกัดจาก ChatGPT ที่รู้ทุกเรื่อง (ในภาษาใดก็ได้!)" },
   "menuLabel_infinityMode": { "message": "โหมด Infinity" },
+  "menuLabel_autoStart": { "message": "เริ่มอัตโนมัติ" },
   "menuLabel_toggleVis": { "message": "สลับมองเห็น" },
   "menuLabel_autoScroll": { "message": "เลื่อนอัตโนมัติ" },
   "menuLabel_replyLang": { "message": "ภาษาตอบกลับ" },

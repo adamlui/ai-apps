@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "ສ້າງຄໍາຕອບບໍ່ຢຸດຢັ້ງຈາກ ChatGPT ທີ່ຮູ້ທຸກຢ່າງ (ໃນພາສາໃດໆ!)" },
   "menuLabel_infinityMode": { "message": "ໂໝດ Infinity" },
+  "menuLabel_autoStart": { "message": "ການເລີ່ມຕົ້ນອັດຕະໂນມັດ" },
   "menuLabel_toggleVis": { "message": "ປິດການເບິ່ງເຫັນ" },
   "menuLabel_autoScroll": { "message": "ເລື່ອນອັດຕະໂນມັດ" },
   "menuLabel_replyLang": { "message": "ຕອບກັບ ພາສາ" },

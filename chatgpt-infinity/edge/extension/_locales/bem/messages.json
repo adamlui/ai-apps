@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Ya Nkondo" },
   "appDesc": { "message": "Shinikisha amano apa ukupeza mayankho apamwamba ku munsungu uyu wa ChatGPT (mu cilipi cakwe!)" },
   "menuLabel_infinityMode": { "message": "Nkondo Ya Nkakasa" },
+  "menuLabel_autoStart": { "message": "Auto-Start" },
   "menuLabel_toggleVis": { "message": "Shinga ubukali" },
   "menuLabel_autoScroll": { "message": "Kulabika Fye Ng'anda" },
   "menuLabel_replyLang": { "message": "Lusani lwama Wafwile" },

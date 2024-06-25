@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT ଇନ୍ଫିନିଟି" },
   "appDesc": { "message": "ସମସ୍ତ-ଜ୍ଞାନ ଯୋଗାଇ ChatGPT ଦ୍ୱାରା ଅନିତ୍ୟ ଉତ୍ତର ପାଇଁ (ଯାହା କଣ୍ଟି!)" },
   "menuLabel_infinityMode": { "message": "ଅନନ୍ତ ମୋଡ୍" },
+  "menuLabel_autoStart": { "message": "ସ୍ୱୟଂଚାଳିତ ଭାବରେ ଆରମ୍ଭ କରନ୍ତୁ" },
   "menuLabel_toggleVis": { "message": "ଦୃଶ୍ୟତା ବଦଳାନ୍ତୁ" },
   "menuLabel_autoScroll": { "message": "ଅଟୋ-ସ୍କ୍ରୋଲ୍" },
   "menuLabel_replyLang": { "message": "ଉତ୍ତର ଭାଷା" },

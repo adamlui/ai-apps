@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Radīt nebeidzamu atbildes no visiem zinošs ChatGPT (jebkurā valodā!)" },
   "menuLabel_infinityMode": { "message": "Bezgalības režīms" },
+  "menuLabel_autoStart": { "message": "Automātiski palaist." },
   "menuLabel_toggleVis": { "message": "Pārslēgt redzamību" },
   "menuLabel_autoScroll": { "message": "Automātiskā ritināšana" },
   "menuLabel_replyLang": { "message": "Atbildes valoda" },

@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinit" },
   "appDesc": { "message": "Generează răspunsuri infinite de la ChatGPT, cel care știe totul (în orice limbă!)" },
   "menuLabel_infinityMode": { "message": "Mod Infinit" },
+  "menuLabel_autoStart": { "message": "Auto Start" },
   "menuLabel_toggleVis": { "message": "Comutare vizibilitate" },
   "menuLabel_autoScroll": { "message": "Derulare automată" },
   "menuLabel_replyLang": { "message": "Limba de răspuns" },

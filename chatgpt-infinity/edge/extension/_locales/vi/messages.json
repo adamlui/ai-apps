@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Vô tận" },
   "appDesc": { "message": "Tạo ra những câu trả lời vô tận từ ChatGPT thông thạo (bằng bất kỳ ngôn ngữ nào!)" },
   "menuLabel_infinityMode": { "message": "Chế độ Vô tận" },
+  "menuLabel_autoStart": { "message": "Tự động bắt đầu" },
   "menuLabel_toggleVis": { "message": "Chuyển đổi Tính hiển thị" },
   "menuLabel_autoScroll": { "message": "Tự động cuộn trang" },
   "menuLabel_replyLang": { "message": "Ngôn ngữ Trả lời" },

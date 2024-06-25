@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT ഇൻഫിനിറ്റി" },
   "appDesc": { "message": "എന്തെങ്കിലും ഭാഷയിലുള്ള അനന്തമായ ഉത്തരങ്ങൾ ജനറേറ്റ് ചെയ്യുക അറിയുന്ന സര്‍വാജ്ഞതയുള്ള ചാറ്റ്‌ജിപിടി ഇൻഫിനിറ്റി എന്നതില്‍" },
   "menuLabel_infinityMode": { "message": "ഇൻഫിനിറ്റി മോഡ്" },
+  "menuLabel_autoStart": { "message": "ഓട്ടോ സ്റ്റാർട്ട്" },
   "menuLabel_toggleVis": { "message": "ദൃശ്യത മാറ്റുക" },
   "menuLabel_autoScroll": { "message": "ഓട്ടോ സ്‌ക്രോൾ" },
   "menuLabel_replyLang": { "message": "പ്രതികരണ ഭാഷ" },

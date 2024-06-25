@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT 无尽" },
   "appDesc": { "message": "从无所不知的 ChatGPT 中生成无尽的答案 (任何语言!)" },
   "menuLabel_infinityMode": { "message": "无尽模式" },
+  "menuLabel_autoStart": { "message": "自动开始" },
   "menuLabel_toggleVis": { "message": "切换可见性" },
   "menuLabel_autoScroll": { "message": "自动滚动" },
   "menuLabel_replyLang": { "message": "回复语言" },

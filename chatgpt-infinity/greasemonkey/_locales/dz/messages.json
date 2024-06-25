@@ -2,6 +2,7 @@
   "appName": { "message": "ཨའི་ཌི་ཨར་སི་གི་རྒྱབ་སྐྱོར་འབད་ནི།" },
   "appDesc": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
   "menuLabel_infinityMode": { "message": "པ་ ཐོན་ཡོདཔ་ཨིན་པས།" },
+  "menuLabel_autoStart": { "message": "རང་ལུགས་རང་འགོ་བཙུགསཔ་ཨིན།" },
   "menuLabel_toggleVis": { "message": "མ་ཤེས་པའི་བརྡ་དོན།" },
   "menuLabel_autoScroll": { "message": "ས་སྒོ་ལག་ལེན་འཐབ་ནིའི་དོན་ལུ་ ཨའི་ལེཊི།" },
   "menuLabel_replyLang": { "message": "སྒྲ་སྐད།" },

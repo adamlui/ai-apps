@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Barcha bilishlarni olish uchun nihoyatgacha javoblar yaratadi (har qanday til bilan!)" },
   "menuLabel_infinityMode": { "message": "Nihoyatgacha Rejim" },
+  "menuLabel_autoStart": { "message": "Avtomatik ishga tushirish" },
   "menuLabel_toggleVis": { "message": "Ko'rib chiqarishni o'zgartirish" },
   "menuLabel_autoScroll": { "message": "Avtomatik Yurish" },
   "menuLabel_replyLang": { "message": "Javob Til" },

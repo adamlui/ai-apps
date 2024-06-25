@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Инфинити" },
   "appDesc": { "message": "Бүх хэл дээрээ том хайрцагтай ChatGPT-ээс алдаагүй хариулна" },
   "menuLabel_infinityMode": { "message": "Инфинити горим" },
+  "menuLabel_autoStart": { "message": "Автоматаар эхлүүлэх" },
   "menuLabel_toggleVis": { "message": "Харагдацыг солих" },
   "menuLabel_autoScroll": { "message": "Автоматаар гаргах" },
   "menuLabel_replyLang": { "message": "Хариулт хэл" },

@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Snulfu-d tiririt ur nettfakka ara seg udiwenni n ChatGPT (s tutlayin nniḍen!)" },
   "menuLabel_infinityMode": { "message": "Askar infinity" },
+  "menuLabel_autoStart": { "message": "bdu" },
   "menuLabel_toggleVis": { "message": "Rnu tamuɣli" },
   "menuLabel_autoScroll": { "message": "Tajerrumt tawurmant" },
   "menuLabel_replyLang": { "message": "Tutlayt tiririt" },

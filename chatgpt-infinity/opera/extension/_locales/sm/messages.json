@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Faʻalilolilo i soʻo se auala mai le faʻaalia o le ChatGPT (i ni isi gagana!)" },
   "menuLabel_infinityMode": { "message": "Le Mode Infinity" },
+  "menuLabel_autoStart": { "message": "Auto-Start" },
   "menuLabel_toggleVis": { "message": "Faaofaina le Vaega" },
   "menuLabel_autoScroll": { "message": "Auto-Scroll" },
   "menuLabel_replyLang": { "message": "Gagana e toe faʻatauina ai" },

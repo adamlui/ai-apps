@@ -2,6 +2,7 @@
   "appName": { "message": "Whārangi whaimana: ChatGPT Infinity" },
   "appDesc": { "message": "Waihangahia nga whakautu mutunga kore mai i te ChatGPT katoa e mohio ana (i tetahi reo!)" },
   "menuLabel_infinityMode": { "message": "Momotuhi" },
+  "menuLabel_autoStart": { "message": "Auto-Start" },
   "menuLabel_toggleVis": { "message": "Tiro Toggle" },
   "menuLabel_autoScroll": { "message": "Panuku-aunoa" },
   "menuLabel_replyLang": { "message": "Reo Whakautu" },

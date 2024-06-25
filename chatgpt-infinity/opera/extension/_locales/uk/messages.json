@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "За допомогою ChatGPT, який знає все, ви можете генерувати безкінечні відповіді на будь-яку тему (навіть іноземні мови!)" },
   "menuLabel_infinityMode": { "message": "Режим безмежності" },
+  "menuLabel_autoStart": { "message": "Автоматичний запуск" },
   "menuLabel_toggleVis": { "message": "Перемикнути видимість" },
   "menuLabel_autoScroll": { "message": "Автоматична прокрутка" },
   "menuLabel_replyLang": { "message": "Мова відповіді" },

@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinito" },
   "appDesc": { "message": "Generu senfinaĵajn respondojn el la ĉio-scia ChatGPT (en kiu ajn lingvo!)" },
   "menuLabel_infinityMode": { "message": "Modo Senfinaĵo" },
+  "menuLabel_autoStart": { "message": "Aŭtoro@ action" },
   "menuLabel_toggleVis": { "message": "Ŝalti videblecon" },
   "menuLabel_autoScroll": { "message": "Aŭtomata Rulumado" },
   "menuLabel_replyLang": { "message": "Responda Lingvo" },

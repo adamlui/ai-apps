@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Iġġenera tweġibiet bla tmiem minn ChatGPT li jaf kollox (fi kwalunkwe lingwa!)" },
   "menuLabel_infinityMode": { "message": "Modalità ta' Infinità" },
+  "menuLabel_autoStart": { "message": "Bidu Awtomatiku" },
   "menuLabel_toggleVis": { "message": "Aqleb il-Viżibilità" },
   "menuLabel_autoScroll": { "message": "Auto-Scroll" },
   "menuLabel_replyLang": { "message": "Wieġeb il-Lingwa" },

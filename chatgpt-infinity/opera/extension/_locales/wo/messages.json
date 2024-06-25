@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Dëggal tééjoo ji juuf ChatGPT (ñuy ñuy leegii bëjje!)" },
   "menuLabel_infinityMode": { "message": "Reewu Nopp Infinity" },
+  "menuLabel_autoStart": { "message": "Auto-Start (Auto-Start)" },
   "menuLabel_toggleVis": { "message": "Xawaari Akkiya" },
   "menuLabel_autoScroll": { "message": "Auto-Scroll" },
   "menuLabel_replyLang": { "message": "Xët yi Jëm ci Kat" },

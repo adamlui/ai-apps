@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Generéiere endlos Äntwerten aus all wëssen ChatGPT (an all Sprooch!)" },
   "menuLabel_infinityMode": { "message": "Infinity Modus" },
+  "menuLabel_autoStart": { "message": "CAA -" },
   "menuLabel_toggleVis": { "message": "Wiesselvisibilitéit" },
   "menuLabel_autoScroll": { "message": "Auto-Scroll" },
   "menuLabel_replyLang": { "message": "Sprooch beäntweren" },

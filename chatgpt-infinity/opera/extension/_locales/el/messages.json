@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Δημιουργία ατελείωτων απαντήσεων από τον πανγνωστικό ChatGPT (σε οποιαδήποτε γλώσσα!)" },
   "menuLabel_infinityMode": { "message": "Λειτουργία Άπειρο" },
+  "menuLabel_autoStart": { "message": "Αυτόματη εκκίνηση" },
   "menuLabel_toggleVis": { "message": "Εναλλαγή ορατότητας" },
   "menuLabel_autoScroll": { "message": "Αυτόματη κύλιση" },
   "menuLabel_replyLang": { "message": "Γλώσσα Απάντησης" },

@@ -2,6 +2,7 @@
   "appName": { "message": "تشات جي بي تي إنفينيتي" },
   "appDesc": { "message": "تولد أجوبة لا نهائية من تشات جي بي تي المعرف بكل شيء (بأي لغة!)" },
   "menuLabel_infinityMode": { "message": "وضع اللانهائية" },
+  "menuLabel_autoStart": { "message": "التشغيل التلقائي" },
   "menuLabel_toggleVis": { "message": "تبديل الرؤية" },
   "menuLabel_autoScroll": { "message": "التمرير التلقائي" },
   "menuLabel_replyLang": { "message": "لغة الرد" },

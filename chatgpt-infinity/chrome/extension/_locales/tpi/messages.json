@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Praim olgeta askim long ChatGPT (long wanpela tokples!)" },
   "menuLabel_infinityMode": { "message": "Infinity Mod" },
+  "menuLabel_autoStart": { "message": "Auto-start" },
   "menuLabel_toggleVis": { "message": "Hausim Luk" },
   "menuLabel_autoScroll": { "message": "Otomatik Skrol" },
   "menuLabel_replyLang": { "message": "Tokpisin em i Toksait" },

@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Mamorona valiny mivantana avy amin'ny ChatGPT mahalala an'izay (amin'ny fiteny iray kokoa!)" },
   "menuLabel_infinityMode": { "message": "Rehefa mitovy" },
+  "menuLabel_autoStart": { "message": "Auto-Start" },
   "menuLabel_toggleVis": { "message": "Ampidirina ny fisiana" },
   "menuLabel_autoScroll": { "message": "Auto-Scroll" },
   "menuLabel_replyLang": { "message": "Fiteny Fialam-boly" },

@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "បង្កើតចម្លើយគ្មានទីបញ្ចប់ពី ChatGPT ដែលមានចំណេះដឹងទាំងអស់ (ក្នុងភាសាណាមួយ!)" },
   "menuLabel_infinityMode": { "message": "ម៉ូដគ្មានទីបញ្ចប់" },
+  "menuLabel_autoStart": { "message": "@ action" },
   "menuLabel_toggleVis": { "message": "បិទ/បើក ភាព មើល ឃើញ" },
   "menuLabel_autoScroll": { "message": "ស្វ័យរំកិល" },
   "menuLabel_replyLang": { "message": "ឆ្លើយតប ភាសា" },

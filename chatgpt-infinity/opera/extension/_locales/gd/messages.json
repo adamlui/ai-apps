@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Leigheas air freagairtean gun tàmailt bho ChatGPT a tha a' cluinntinn gach cànan! (ann an sam bith cànan!)" },
   "menuLabel_infinityMode": { "message": "Modh Infinity" },
+  "menuLabel_autoStart": { "message": "Tòisich gu fèin - obrachail" },
   "menuLabel_toggleVis": { "message": "Tog Càileachd" },
   "menuLabel_autoScroll": { "message": "Sgrolaich fèin-ghluasadach" },
   "menuLabel_replyLang": { "message": "Cànan Freagairt" },

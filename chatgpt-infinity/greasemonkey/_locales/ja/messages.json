@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "全知の ChatGPT から無限の回答を生成します（どんな言語でも！）" },
   "menuLabel_infinityMode": { "message": "無限モード" },
+  "menuLabel_autoStart": { "message": "オートスタート" },
   "menuLabel_toggleVis": { "message": "表示の切り替え" },
   "menuLabel_autoScroll": { "message": "オートスクロール" },
   "menuLabel_replyLang": { "message": "返信言語" },

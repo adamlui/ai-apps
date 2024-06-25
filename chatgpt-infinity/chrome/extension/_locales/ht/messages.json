@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Jenere repons kontinuèl soti nan tout konnen ChatGPT (nan nenpòt ki lang!)" },
   "menuLabel_infinityMode": { "message": "Infinity Mode" },
+  "menuLabel_autoStart": { "message": "Auto-Start" },
   "menuLabel_toggleVis": { "message": "Toggle vizibilite" },
   "menuLabel_autoScroll": { "message": "Auto woulo liv" },
   "menuLabel_replyLang": { "message": "Lang Repons" },

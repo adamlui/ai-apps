@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "전능한 ChatGPT에서 (어떤 언어든) 끝없는 대답 생성" },
   "menuLabel_infinityMode": { "message": "무한 모드" },
+  "menuLabel_autoStart": { "message": "자동 시작" },
   "menuLabel_toggleVis": { "message": "가시성 전환" },
   "menuLabel_autoScroll": { "message": "자동 스크롤" },
   "menuLabel_replyLang": { "message": "응답 언어" },

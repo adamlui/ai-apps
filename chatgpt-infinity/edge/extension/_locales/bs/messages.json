@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Generišite beskrajne odgovore od sveznajućeg ChatGPT-a (na bilo kom jeziku!)" },
   "menuLabel_infinityMode": { "message": "Beskonačni režim" },
+  "menuLabel_autoStart": { "message": "Auto start:" },
   "menuLabel_toggleVis": { "message": "Uključi/isključi vidljivost" },
   "menuLabel_autoScroll": { "message": "Automatsko pomicanje" },
   "menuLabel_replyLang": { "message": "Jezik odgovora" },

@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT бесконечности" },
   "appDesc": { "message": "Генерируйте бесконечные ответы от всезнающего ChatGPT (на любом языке!)" },
   "menuLabel_infinityMode": { "message": "Режим бесконечности" },
+  "menuLabel_autoStart": { "message": "Автоматический старт" },
   "menuLabel_toggleVis": { "message": "Переключить видимость" },
   "menuLabel_autoScroll": { "message": "Автопрокрутка" },
   "menuLabel_replyLang": { "message": "Язык ответа" },

@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Xerar respostas infinitas de todo o que sabe ChatGPT (en calquera idioma!)" },
   "menuLabel_infinityMode": { "message": "Modo infinito" },
+  "menuLabel_autoStart": { "message": "Inicio automático@ action" },
   "menuLabel_toggleVis": { "message": "Conmutar a visibilidade" },
   "menuLabel_autoScroll": { "message": "Desprazamento automático" },
   "menuLabel_replyLang": { "message": "Lingua de resposta" },

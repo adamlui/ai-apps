@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Ítrótt" },
   "appDesc": { "message": "Mynda ótaldar svar frá allvitandi ChatGPT (á hvørjum máli!)" },
   "menuLabel_infinityMode": { "message": "Ótøkis Mode" },
+  "menuLabel_autoStart": { "message": "Byrja sjálvvirkandi" },
   "menuLabel_toggleVis": { "message": "Broyt Sýnlighið" },
   "menuLabel_autoScroll": { "message": "Sjálv-kúla" },
   "menuLabel_replyLang": { "message": "Svar Mál" },

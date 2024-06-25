@@ -2,6 +2,7 @@
   "appName": { "message": "چټ جی پی ټی انفنټی" },
   "appDesc": { "message": "ټولګی چټ جی پی ټی (په هر ژبه کې!) سره لاندی جوابونه پیدا کړئ" },
   "menuLabel_infinityMode": { "message": "انفنټی موډ" },
+  "menuLabel_autoStart": { "message": "اتومات پیل (Auto - Start)" },
   "menuLabel_toggleVis": { "message": "دیداریګرۍ تبدیل کړئ" },
   "menuLabel_autoScroll": { "message": "خودکار سکرول" },
   "menuLabel_replyLang": { "message": "جواب ژبه" },

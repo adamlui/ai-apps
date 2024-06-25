@@ -2,6 +2,7 @@
   "appName": { "message": "چیٹ جی پی ٹی انفنٹی" },
   "appDesc": { "message": "ہر زبان میں ہر قسم کے جوابات فراہم کرنے والے چیٹ جی پی ٹی سے لامحدود جوابات حاصل کریں!" },
   "menuLabel_infinityMode": { "message": "لامحدود موڈ" },
+  "menuLabel_autoStart": { "message": "خود بخود شروع کریں" },
   "menuLabel_toggleVis": { "message": "نمائش بدلیں" },
   "menuLabel_autoScroll": { "message": "خود بخود سکرول" },
   "menuLabel_replyLang": { "message": "جواب کی زبان" },

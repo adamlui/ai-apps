@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Sonsuzluk" },
   "appDesc": { "message": "Hep-bilen ChatGPT'den sonsuz cevaplar üretin (herhangi bir dilde!)" },
   "menuLabel_infinityMode": { "message": "Sonsuz Mod" },
+  "menuLabel_autoStart": { "message": "Otomatik Oynatma" },
   "menuLabel_toggleVis": { "message": "Görünürlüğü Değiştir" },
   "menuLabel_autoScroll": { "message": "Otomatik Kaydırma" },
   "menuLabel_replyLang": { "message": "Cevap Dili" },

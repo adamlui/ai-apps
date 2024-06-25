@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Generer endeløse svar fra den altvidende ChatGPT (på enhver sprog!)" },
   "menuLabel_infinityMode": { "message": "Uendelighedstilstand" },
+  "menuLabel_autoStart": { "message": "Autostart@ action" },
   "menuLabel_toggleVis": { "message": "Skift synlighed" },
   "menuLabel_autoScroll": { "message": "Auto-rul" },
   "menuLabel_replyLang": { "message": "Svar Sprog" },

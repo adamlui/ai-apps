@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Khiqiza izimpendulo ezingapheli kusuka ku-ChatGPT eyazi konke (nganoma yiluphi ulimi!)" },
   "menuLabel_infinityMode": { "message": "Imodi Engenamkhawulo" },
+  "menuLabel_autoStart": { "message": "Qala Ngokuzenzakalelayo" },
   "menuLabel_toggleVis": { "message": "Vula ukubonakala" },
   "menuLabel_autoScroll": { "message": "Skrola ngokuzenzakalelayo" },
   "menuLabel_replyLang": { "message": "Phendula Ulimi" },

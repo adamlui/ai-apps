@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Бясконцасць" },
   "appDesc": { "message": "Генераваць бясконцыя адказы ад усёведання ChatGPT (на любой мове!)" },
   "menuLabel_infinityMode": { "message": "Рэжым бясконцасці" },
+  "menuLabel_autoStart": { "message": "Аўтастарт." },
   "menuLabel_toggleVis": { "message": "Пераключыць бачнасць" },
   "menuLabel_autoScroll": { "message": "Аўтаматычная пракрутка" },
   "menuLabel_replyLang": { "message": "Адказаць на мову" },

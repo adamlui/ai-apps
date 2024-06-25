@@ -2,6 +2,7 @@
   "appName": { "message": "ਚੈਟਜੀਪੀਟੀ ਇੰਫਿਨਿਟੀ" },
   "appDesc": { "message": "ਸਭ-ਜਾਣਤਾ ਚੈਟਜੀਪੀਟੀ ਤੋਂ ਅਨੰਤ ਜਵਾਬ ਬਣਾਓ (ਕਿਸੇ ਵੀ ਭਾਸ਼ਾ ਵਿੱਚ!)" },
   "menuLabel_infinityMode": { "message": "ਅਨੰਤ ਮੋਡ" },
+  "menuLabel_autoStart": { "message": "ਆਟੋ- ਸਟਾਰਟ ।" },
   "menuLabel_toggleVis": { "message": "ਦਿੱਖ ਬਦਲੋ" },
   "menuLabel_autoScroll": { "message": "ਸਵੈ-ਸਕ੍ਰੋਲ" },
   "menuLabel_replyLang": { "message": "ਜਵਾਬ ਭਾਸ਼ਾ" },

@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Maghimo og walay katapusang mga tubag gikan sa tataw nga ChatGPT (sa bisan unsang lengguwahe!)" },
   "menuLabel_infinityMode": { "message": "Infinity Mode" },
+  "menuLabel_autoStart": { "message": "Auto-Start" },
   "menuLabel_toggleVis": { "message": "Himoa'g Dili Makita" },
   "menuLabel_autoScroll": { "message": "Auto-Scroll" },
   "menuLabel_replyLang": { "message": "Lengguwahe sa Tubag" },

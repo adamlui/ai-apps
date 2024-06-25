@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "پاسخ های بی پایان را از ChatGPT دانا (به هر زبانی!) ایجاد کنید" },
   "menuLabel_infinityMode": { "message": "حالت بی نهایت" },
+  "menuLabel_autoStart": { "message": "پخش خودکار" },
   "menuLabel_toggleVis": { "message": "تغییر نمایانی" },
   "menuLabel_autoScroll": { "message": "اسکرول خودکار" },
   "menuLabel_replyLang": { "message": "زبان پاسخ" },

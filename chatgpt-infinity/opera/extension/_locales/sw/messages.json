@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Kuzalisha majibu kutokuwa na mwisho kutoka wote kujua ChatGPT (katika lugha yoyote!)" },
   "menuLabel_infinityMode": { "message": "Hali ya Kutokuwa na Ukomo" },
+  "menuLabel_autoStart": { "message": "Anza Kiotomatiki" },
   "menuLabel_toggleVis": { "message": "Geuza Mwonekano" },
   "menuLabel_autoScroll": { "message": "Safiri kiotomatiki" },
   "menuLabel_replyLang": { "message": "Lugha ya Majibu" },

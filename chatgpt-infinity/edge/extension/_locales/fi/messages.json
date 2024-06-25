@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Generoi loputtomia vastauksia kaikkivaltiaasta ChatGPT:stä (minkä tahansa kielen!)" },
   "menuLabel_infinityMode": { "message": "Infinity-tila" },
+  "menuLabel_autoStart": { "message": "Automaattikäynnistys." },
   "menuLabel_toggleVis": { "message": "Vaihda näkyvyyttä" },
   "menuLabel_autoScroll": { "message": "Automaattinen vieritys" },
   "menuLabel_replyLang": { "message": "Vastauskieli" },

@@ -2,6 +2,7 @@
   "appName": { "message": "ChatGPT Infinity" },
   "appDesc": { "message": "Genere respuèstanan sin fin di e ChatGPT tur-sabí (na kualkier idioma!)" },
   "menuLabel_infinityMode": { "message": "Modo Infinito" },
+  "menuLabel_autoStart": { "message": "Komienso di outo" },
   "menuLabel_toggleVis": { "message": "Cambia Visibilidad" },
   "menuLabel_autoScroll": { "message": "Auto-Desplasamentu" },
   "menuLabel_replyLang": { "message": "Idioma di Contestá" },
