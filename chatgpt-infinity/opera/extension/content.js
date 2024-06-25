@@ -212,7 +212,8 @@
             if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
             fromMsg = false
             if (chatgpt.browser.isMobile() && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
-            try { chatgpt.startNewChat() } catch (err) { return }
+            if (!new URL(document.location).pathname.startsWith('/g/')) // not on GPT page
+                try { chatgpt.startNewChat() } catch (err) { return } // start new chat
             settings.load('replyLanguage', 'replyTopic', 'replyInterval').then(() => setTimeout(() => {
                 chatgpt.send('Generate a single random question'
                     + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )

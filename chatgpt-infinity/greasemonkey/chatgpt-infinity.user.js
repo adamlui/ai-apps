@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.24
+// @version             2024.6.25
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -688,7 +688,8 @@
         activate: async () => {
             notify(( msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ': ON')
             if (chatgpt.browser.isMobile() && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
-            try { chatgpt.startNewChat() } catch (err) { return }
+            if (!new URL(document.location).pathname.startsWith('/g/')) // not on GPT page
+                try { chatgpt.startNewChat() } catch (err) { return } // start new chat
             setTimeout(() => {
                 chatgpt.send('Generate a single random question'
                     + ( config.replyLanguage ? ( ' in ' + config.replyLanguage ) : '' )
