@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.24.8
+// @version             2024.6.24.9
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1450,7 +1450,7 @@ setTimeout(async () => {
 
         text(caller, resp) {
             return new Promise(resolve => {
-                let respText
+                let respText = ''
                 const logPrefix = `get.${caller.name}() » dataProcess.text() » `
                 if (caller == get.reply && config.proxyAPIenabled && !config.streamingDisabled || caller.status == 'done')
                     return
@@ -1468,7 +1468,6 @@ setTimeout(async () => {
                     if (resp.response) {
                         try { // to show response or return related queries
                             respText = JSON.parse(resp.response).choices[0].message.content
-                            if (!respText) throw new Error()
                             caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                             if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
                         } catch (err) { // suggest proxy or try diff API
@@ -1509,7 +1508,6 @@ setTimeout(async () => {
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
                             if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
                             respText = lastObj.text
-                            if (!respText) throw new Error()
                             caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                             if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
                         } catch (err) { // try diff API
@@ -1525,7 +1523,6 @@ setTimeout(async () => {
                                 .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                                 .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                             respText = extractedData.join('')
-                            if (!respText) throw new Error()
                             caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                             if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
                         } catch (err) { // try diff API

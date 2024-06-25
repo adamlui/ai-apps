@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.24.8
+// @version             2024.6.24.9
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1689,7 +1689,7 @@
 
         text(caller, resp) {
             return new Promise(resolve => {
-                let respText
+                let respText = ''
                 const logPrefix = `get.${caller.name}() » dataProcess.text() » `
                 if (caller == get.reply && config.proxyAPIenabled && !config.streamingDisabled || caller.status == 'done')
                     return
@@ -1707,7 +1707,6 @@
                     if (resp.response) {
                         try { // to show response or return related queries
                             respText = JSON.parse(resp.response).choices[0].message.content
-                            if (!respText) throw new Error()
                             caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                             if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
                         } catch (err) { // suggest proxy or try diff API
@@ -1748,7 +1747,6 @@
                                 lastObj = JSON.parse(chunks[chunks.length - 1])
                             if (lastObj.id) apiIDs.gptForLove.parentID = lastObj.id
                             respText = lastObj.text
-                            if (!respText) throw new Error()
                             caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                             if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
                         } catch (err) { // try diff API
@@ -1764,7 +1762,6 @@
                                 .replace(/\[SPACE\]/g, ' ').replace(/\[NEWLINE\]/g, '\n'))
                                 .filter(match => !/(?:message_(?:start|end)|done)/.test(match))
                             respText = extractedData.join('')
-                            if (!respText) throw new Error()
                             caller.status = 'done' ; api.clearTimedOut(caller.triedAPIs) ; caller.attemptCnt = null
                             if (caller == get.reply) show.reply(respText, footerContent) ; else resolve(arrayify(respText))
                         } catch (err) { // try diff API
