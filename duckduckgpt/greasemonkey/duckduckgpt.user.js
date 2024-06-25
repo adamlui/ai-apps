@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.24.5
+// @version             2024.6.24.6
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1227,7 +1227,7 @@
 
     const get = {
 
-        reply: async function(msgChain) {
+        async reply(msgChain) {
 
             // Init API attempt props
             get.reply.status = 'waiting'
@@ -1267,7 +1267,7 @@
             }
         },
 
-        json: function(url, callback) { // for dynamic footer
+        json(url, callback) { // for dynamic footer
             GM.xmlHttpRequest({ method: 'GET', url: url, onload: resp => {
                 if (resp.status >= 200 && resp.status < 300) {
                     try { const data = JSON.parse(resp.responseText) ; callback(null, data) }
@@ -1276,7 +1276,7 @@
             }})
         },
 
-        related: async function(query) {
+        async related(query) {
 
             // Init API attempt props
             get.related.status = 'waiting'
@@ -1320,7 +1320,7 @@
 
     const dataProcess = {
 
-        text: function(caller, resp) {
+        text(caller, resp) {
             return new Promise(resolve => {
                 let respText
                 const logPrefix = `get.${caller.name}() » dataProcess.text() » `
@@ -1416,7 +1416,7 @@
             })
         },
 
-        stream: function(caller, stream) {
+        stream(caller, stream) {
             if (config.streamingDisabled || !config.proxyAPIenabled) return
             const reader = stream.response.getReader() ; let accumulatedChunks = ''
             reader.read().then(processStreamText).catch(err => consoleErr('Error processing stream', err.message))
@@ -1464,7 +1464,7 @@
 
     const show = {
 
-        reply: function(answer) {
+        reply(answer) {
 
             // Hide font size slider if visibile
             if (appDiv.querySelector('#font-size-slider-track')) fontSizeSlider.toggle('off')
@@ -1801,7 +1801,7 @@
             }
         },
 
-        related: function(queries) {
+        related(queries) {
             if (!show.related.greenlit) { // wait for get.reply() to finish showing answer
                 show.related.statusChecker = setInterval(() => {
                     if (get.reply.status != 'waiting') {
