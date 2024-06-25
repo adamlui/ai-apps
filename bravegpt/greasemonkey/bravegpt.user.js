@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.24.6
+// @version             2024.6.24.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -308,8 +308,6 @@ setTimeout(async () => {
         symbol: ['❌', '✔️'], separator: getUserscriptManager() == 'Tampermonkey' ? ' — ' : ': ',
         word: [(msgs.state_off || 'Off').toUpperCase(), (msgs.state_on || 'On').toUpperCase()]
     }
-
-    registerMenu() // create browser toolbar menu
 
     // Define SCRIPT functions
 
@@ -480,121 +478,14 @@ setTimeout(async () => {
                           + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
                               config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
                                                        : msgs.menuLabel_auto || 'Auto' )
-        menuIDs.push(GM_registerMenuCommand(schemeLabel, launchSchemeModal))
+        menuIDs.push(GM_registerMenuCommand(schemeLabel, modals.scheme.show))
 
         // Add command to launch About modal
         const aboutLabel = `💡 ${settingsLabels.about.label}`
-        menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
+        menuIDs.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
     }
 
     function refreshMenu() { for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() }
-
-    function launchSchemeModal() {
-
-        // Show modal
-        const schemeModalID = siteAlert(`${
-            config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
-            [ // buttons
-                function auto() { updateScheme('auto') },
-                function light() { updateScheme('light') },
-                function dark() { updateScheme('dark') }
-        ], '', 503) // px width
-
-        // Center button cluster
-        const schemeModal = document.getElementById(schemeModalID)
-        schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
-
-        // Re-format each button
-        const buttons = schemeModal.querySelectorAll('button'),
-              schemes = { 'light': '☀️', 'dark': '🌘', 'auto': '🌗'}
-        for (const btn of buttons) {
-            const btnScheme = btn.textContent.toLowerCase()
-
-            // Emphasize active scheme
-            btn.classList = (
-                config.scheme == btn.textContent.toLowerCase() || (btn.textContent == 'Auto' && !config.scheme)
-                  ? 'primary-modal-btn' : '' )
-
-            // Prepend emoji + localize labels
-            if (Object.prototype.hasOwnProperty.call(schemes, btnScheme))
-                btn.textContent = `${schemes[btnScheme]} ${ // emoji
-                    msgs['scheme_' + btnScheme] || msgs['menuLabel_' + btnScheme] || btnScheme.toUpperCase() }`
-            else btn.style.display = 'none' // hide Dismiss button
-
-            // Clone button to replace listener to not dismiss modal on click
-            const newBtn = btn.cloneNode(true) ; btn.parentNode.replaceChild(newBtn, btn)
-            newBtn.onclick = event => {
-                event.stopPropagation() // disable chatgpt.js dismissAlert()
-                updateScheme(btnScheme) // call corresponding scheme func
-                schemeModal.querySelectorAll('button').forEach(btn => btn.classList = '') // clear prev emphasized active scheme
-                newBtn.classList = 'primary-modal-btn' // emphasize newly active scheme
-                newBtn.style.cssText = 'pointer-events: none' // disable hover fx to show emphasis
-                setTimeout(() => { newBtn.style.pointerEvents = 'auto'; }, 100) // re-enable hover fx after 100ms to flicker emphasis
-            }
-        }
-
-        function updateScheme(newScheme) {
-            scheme = newScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : newScheme
-            saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
-            updateAppLogoSrc() ; updateAppStyle() ; schemeNotify(newScheme) ; refreshMenu()
-        }
-
-        function schemeNotify(scheme) {
-            notify(` ${ msgs.menuLabel_colorScheme || 'Color Scheme' }: `
-                   + ( scheme == 'light' ? msgs.scheme_light   || 'Light' :
-                       scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
-                                         : msgs.menuLabel_auto || 'Auto' ).toUpperCase()
-        )}
-    }
-
-    function launchAboutModal() {
-
-        // Show modal
-        const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
-        const aboutModalID = siteAlert(
-            config.appName, // title
-            '🏷️ ' + ( msgs.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
-                + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
-                    + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
-                    + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
-                + '📜 ' + ( msgs.about_sourceCode || 'Source code' ) + ':\n '
-                    + `<a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
-                        + config.gitHubURL + '</a>',
-            [ // buttons
-                function checkForUpdates() { updateCheck() },
-                function getSupport() { safeWindowOpen(config.supportURL) },
-                function leaveAReview() {
-                    const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a platform' ) + ':', '',
-                        [ function greasyFork() { safeWindowOpen(
-                              config.greasyForkURL + '/feedback#post-discussion') },
-                          function productHunt() { safeWindowOpen(
-                              'https://www.producthunt.com/products/bravegpt/reviews/new') },
-                          function futurepedia() { safeWindowOpen(
-                              'https://www.futurepedia.io/tool/bravegpt#bravegpt-review') },
-                          function alternativeTo() { safeWindowOpen(
-                              'https://alternativeto.net/software/bravegpt/about/') }],
-                        '', 571) // Review modal width
-                    const reviewBtns = document.getElementById(reviewModalID).querySelectorAll('button')
-                    reviewBtns[0].style.display = 'none' // hide dismiss button
-                    reviewBtns[1].textContent = ( // remove spaces from AlternativeTo label
-                        reviewBtns[1].textContent.replace(/\s/g, '')) },
-                function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
-            ], '', 577) // About modal width
-
-        // Resize + format buttons to include emoji + localized label + hide Dismiss button
-        for (const btn of document.getElementById(aboutModalID).querySelectorAll('button')) {
-            btn.style.height = '53px' // re-size to fit meaty text content
-            if (/updates/i.test(btn.textContent)) btn.textContent = (
-                '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
-            else if (/support/i.test(btn.textContent)) btn.textContent = (
-                '🧠 ' + ( msgs.buttonLabel_getSupport || 'Get Support' ))
-            else if (/review/i.test(btn.textContent)) btn.textContent = (
-                '⭐ ' + ( msgs.buttonLabel_leaveReview || 'Leave a Review' ))
-            else if (/apps/i.test(btn.textContent)) btn.textContent = (
-                '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
-            else btn.style.display = 'none' // hide Dismiss button
-        }
-    }
 
     function updateCheck() {
 
@@ -641,7 +532,7 @@ setTimeout(async () => {
                 siteAlert(( msgs.alert_upToDate || 'Up-to-date' ) + '!', // title
                     `${ config.appName } (v${ currentVer }) ${ msgs.alert_isUpToDate || 'is up-to-date' }!`, // msg
                         '', '', updateAlertWidth)
-                launchAboutModal()
+                modals.about.show()
     }})}
 
     // Define FEEDBACK functions
@@ -695,6 +586,116 @@ setTimeout(async () => {
 
     function consoleInfo(msg) { console.info(`${ config.appSymbol } ${ config.appName } » ${ msg }`) }
     function consoleErr(label, msg) { console.error(`${config.appSymbol} ${config.appName} » ${label}${ msg ? `: ${msg}` : '' }`)}
+
+    // Define MODAL functions
+
+    const modals = {
+        about: {
+            show() {
+                const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
+                const aboutModalID = siteAlert(
+                    config.appName, // title
+                    '🏷️ ' + ( msgs.about_version || 'Version' ) + ': ' + GM_info.script.version + '\n'
+                        + '⚡ ' + ( msgs.about_poweredBy || 'Powered by' ) + ': '
+                            + '<a href="https://chatgpt.js.org" target="_blank" rel="noopener">chatgpt.js</a>'
+                            + ( chatgptJSver ? ( ' v' + chatgptJSver ) : '' ) + '\n'
+                        + '📜 ' + ( msgs.about_sourceCode || 'Source code' ) + ':\n '
+                            + `<a href="${ config.gitHubURL }" target="_blank" rel="nopener">`
+                                + config.gitHubURL + '</a>',
+                    [ // buttons
+                        function checkForUpdates() { updateCheck() },
+                        function getSupport() { safeWindowOpen(config.supportURL) },
+                        function leaveAReview() {
+                            const reviewModalID = chatgpt.alert(( msgs.alert_choosePlatform || 'Choose a platform' ) + ':', '',
+                                [ function greasyFork() { safeWindowOpen(
+                                      config.greasyForkURL + '/feedback#post-discussion') },
+                                  function productHunt() { safeWindowOpen(
+                                      'https://www.producthunt.com/products/bravegpt/reviews/new') },
+                                  function futurepedia() { safeWindowOpen(
+                                      'https://www.futurepedia.io/tool/bravegpt#bravegpt-review') },
+                                  function alternativeTo() { safeWindowOpen(
+                                      'https://alternativeto.net/software/bravegpt/about/') }],
+                                '', 571) // Review modal width
+                            const reviewBtns = document.getElementById(reviewModalID).querySelectorAll('button')
+                            reviewBtns[0].style.display = 'none' // hide dismiss button
+                            reviewBtns[1].textContent = ( // remove spaces from AlternativeTo label
+                                reviewBtns[1].textContent.replace(/\s/g, '')) },
+                        function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
+                    ], '', 577) // About modal width
+
+                // Resize + format buttons to include emoji + localized label + hide Dismiss button
+                for (const btn of document.getElementById(aboutModalID).querySelectorAll('button')) {
+                    btn.style.height = '53px' // re-size to fit meaty text content
+                    if (/updates/i.test(btn.textContent)) btn.textContent = (
+                        '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
+                    else if (/support/i.test(btn.textContent)) btn.textContent = (
+                        '🧠 ' + ( msgs.buttonLabel_getSupport || 'Get Support' ))
+                    else if (/review/i.test(btn.textContent)) btn.textContent = (
+                        '⭐ ' + ( msgs.buttonLabel_leaveReview || 'Leave a Review' ))
+                    else if (/apps/i.test(btn.textContent)) btn.textContent = (
+                        '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
+                    else btn.style.display = 'none' // hide Dismiss button
+            }}
+        },
+
+        scheme: {
+            show() {
+                const schemeModalID = siteAlert(`${
+                    config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
+                    [ // buttons
+                        function auto() { updateScheme('auto') },
+                        function light() { updateScheme('light') },
+                        function dark() { updateScheme('dark') }
+                ], '', 503) // px width
+
+                // Center button cluster
+                const schemeModal = document.getElementById(schemeModalID)
+                schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
+
+                // Re-format each button
+                const buttons = schemeModal.querySelectorAll('button'),
+                      schemes = { 'light': '☀️', 'dark': '🌘', 'auto': '🌗'}
+                for (const btn of buttons) {
+                    const btnScheme = btn.textContent.toLowerCase()
+
+                    // Emphasize active scheme
+                    btn.classList = (
+                        config.scheme == btn.textContent.toLowerCase() || (btn.textContent == 'Auto' && !config.scheme)
+                          ? 'primary-modal-btn' : '' )
+
+                    // Prepend emoji + localize labels
+                    if (Object.prototype.hasOwnProperty.call(schemes, btnScheme))
+                        btn.textContent = `${schemes[btnScheme]} ${ // emoji
+                            msgs['scheme_' + btnScheme] || msgs['menuLabel_' + btnScheme] || btnScheme.toUpperCase() }`
+                    else btn.style.display = 'none' // hide Dismiss button
+
+                    // Clone button to replace listener to not dismiss modal on click
+                    const newBtn = btn.cloneNode(true) ; btn.parentNode.replaceChild(newBtn, btn)
+                    newBtn.onclick = event => {
+                        event.stopPropagation() // disable chatgpt.js dismissAlert()
+                        updateScheme(btnScheme) // call corresponding scheme func
+                        schemeModal.querySelectorAll('button').forEach(btn => btn.classList = '') // clear prev emphasized active scheme
+                        newBtn.classList = 'primary-modal-btn' // emphasize newly active scheme
+                        newBtn.style.cssText = 'pointer-events: none' // disable hover fx to show emphasis
+                        setTimeout(() => { newBtn.style.pointerEvents = 'auto'; }, 100) // re-enable hover fx after 100ms to flicker emphasis
+                    }
+                }
+
+                function updateScheme(newScheme) {
+                    scheme = newScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : newScheme
+                    saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
+                    updateAppLogoSrc() ; updateAppStyle() ; schemeNotify(newScheme) ; refreshMenu()
+                }
+
+                function schemeNotify(scheme) {
+                    notify(` ${ msgs.menuLabel_colorScheme || 'Color Scheme' }: `
+                           + ( scheme == 'light' ? msgs.scheme_light   || 'Light' :
+                               scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
+                                                 : msgs.menuLabel_auto || 'Auto' ).toUpperCase()
+                )}
+            }
+        }
+    }
 
     // Define UI functions
 
@@ -1619,7 +1620,7 @@ setTimeout(async () => {
                 if (!isMobile) appDiv.append(tooltipDiv)
 
                 // Add corner button listeners
-                aboutSVG.onclick = launchAboutModal
+                aboutSVG.onclick = modals.about.show
                 if (speakSVG) speakSVG.onclick = () => {
                     const dialectMap = [
                         { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
@@ -1665,7 +1666,7 @@ setTimeout(async () => {
                         })}}
                     })
                 }
-                csbSVG.onclick = launchSchemeModal
+                csbSVG.onclick = modals.scheme.show
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
                 if (wsbSVG) wsbSVG.onclick = () => toggleSidebar('wider')
                 if (!isMobile) // add hover listeners for tooltips
@@ -1911,6 +1912,8 @@ setTimeout(async () => {
     }
 
     // Run MAIN routine
+
+    registerMenu() // create browser toolbar menu
 
     // Init ALERTS
     const appAlerts = {
