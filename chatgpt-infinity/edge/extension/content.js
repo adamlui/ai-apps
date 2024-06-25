@@ -208,7 +208,7 @@
 
     const infinityMode = {
 
-        activate: async () => {
+        async activate() {
             if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': ON')
             fromMsg = false
             if (chatgpt.browser.isMobile() && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
@@ -225,7 +225,7 @@
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
-        continue: async () => {
+        async continue() {
             chatgpt.send('Do it again.')
             if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(err) {}
             await chatgpt.isIdle() // before starting delay till next iteration
@@ -233,7 +233,7 @@
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
-        deactivate: () => {
+        async deactivate() {
             if (!fromMsg) notify(chrome.i18n.getMessage('menuLabel_infinityMode') + ': OFF')
             fromMsg = false
             chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
@@ -241,7 +241,7 @@
             settings.save('infinityMode', false) // in case toggled by PV listener
         },
 
-        toggle: () => { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
+        async toggle() { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
     }
 
     // Define LIVE RESTART functions

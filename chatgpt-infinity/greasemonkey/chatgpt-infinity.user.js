@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.25
+// @version             2024.6.25.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -685,7 +685,7 @@
 
     const infinityMode = {
 
-        activate: async () => {
+        async activate() {
             notify(( msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ': ON')
             if (chatgpt.browser.isMobile() && chatgpt.sidebar.isOn()) chatgpt.sidebar.hide()
             if (!new URL(document.location).pathname.startsWith('/g/')) // not on GPT page
@@ -701,7 +701,7 @@
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
-        continue: async () => {
+        async continue() {
             chatgpt.send('Do it again.')
             if (!config.autoScrollDisabled) try { chatgpt.scrollToBottom() } catch(err) {}
             await chatgpt.isIdle() // before starting delay till next iteration
@@ -709,14 +709,14 @@
                 infinityMode.isActive = setTimeout(infinityMode.continue, parseInt(config.replyInterval, 10) * 1000)
         },
 
-        deactivate: () => {
+        deactivate() {
             chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
             document.getElementById('infToggleInput').checked = false // for window listener
             notify(( msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ': OFF')
             config.infinityMode = false // in case toggled by PV listener
         },
 
-        toggle: () => { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
+        toggle() { config.infinityMode ? infinityMode.activate() : infinityMode.deactivate() }
     }
 
     // Define INTERRUPT functions
