@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.24.4
+// @version             2024.6.24.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -286,6 +286,22 @@ setTimeout(async () => {
         }
     }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
 
+    // Init SETTINGS labels
+    const settingsLabels = {
+        proxyMode: { label: msgs.menuLabel_proxyAPImode || 'Proxy API Mode' },
+        streamingMode: { label: msgs.mode_streaming || 'Streaming Mode' },
+        autoGet: { label: msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' },
+        autoFocusChatbar: { label: msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar', mobile: false },
+        autoScroll: { label: `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`, mobile: false },
+        relatedQueries: { label: `${ msgs.menuLabel_show || 'Show' } ${ msgs.menuLabel_relatedQueries || 'Related Queries' }` },
+        prefixMode: { label: `${ msgs.menuLabel_require || 'Require' } "/" ${ msgs.menuLabel_beforeQuery || 'before query' }` },
+        suffixMode: { label: `${ msgs.menuLabel_require || 'Require' } "?" ${ msgs.menuLabel_afterQuery || 'after query' }` },
+        widerSidebar: { label: msgs.menuLabel_widerSidebar || 'Wider Sidebar', mobile: false },
+        replyLanguage: { label: msgs.menuLabel_replyLanguage || 'Reply Language' },
+        colorScheme: { label: msgs.menuLabel_colorScheme || 'Color Scheme' },
+        about: { label: `${ msgs.menuLabel_about || 'About' } ${config.appName}` }
+    }
+
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
     const menuState = {
@@ -308,35 +324,35 @@ setTimeout(async () => {
 
         // Add command to toggle proxy API mode
         const pamLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
-                       + ( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' '
+                       + settingsLabels.proxyMode.label + ' '
                        + menuState.separator + menuState.word[+config.proxyAPIenabled]
         menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
 
         // Add command to toggle streaming mode or alert unsupported
         const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
         const stmLabel = menuState.symbol[+stmState] + ' '
-                       + ( msgs.mode_streaming || 'Streaming Mode' ) + ' '
+                       + settingsLabels.streamingMode.label + ' '
                        + menuState.separator + menuState.word[+stmState]
         menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
             const scriptCatLink = isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
                                 : isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
                                             : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
             if (!/Tampermonkey|ScriptCat/.test(getUserscriptManager())) { // alert userscript manager unsupported, suggest TM/SC
-                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                    `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
+                siteAlert(`${settingsLabels.streamingMode.label} ${ msgs.alert_unavailable || 'unavailable' }`,
+                    `${settingsLabels.streamingMode.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
                         + ( !isEdge && !isBrave ? // suggest TM for supported browsers
                             ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
                                 : '' )
                         + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
                         + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`)
             } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) // alert TM/browser unsupported, suggest SC
-                siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`,
-                    `${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
+                siteAlert(`${settingsLabels.streamingMode.label} ${ msgs.alert_unavailable || 'unavailable' }`,
+                    `${settingsLabels.streamingMode.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
                         + `${ isChrome ? 'Chrome' : isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
                         + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
                             + `${ msgs.alert_instead || 'instead' }.`)
             else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
-                let msg = `${ msgs.mode_streaming || 'Streaming Mode' } `
+                let msg = `${settingsLabels.streamingMode.label} `
                         + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
                         + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
                         + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
@@ -347,18 +363,18 @@ setTimeout(async () => {
                 alert.querySelector('[href="#"]').onclick = () => { alert.querySelector('.modal-close-btn').click() ; toggleProxyMode() }
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
-                notify(( msgs.mode_streaming || 'Streaming Mode' ) + ' ' + menuState.word[+!config.streamingDisabled])
+                notify(settingsLabels.streamingMode.label + ' ' + menuState.word[+!config.streamingDisabled])
                 refreshMenu()
             }
         }))
 
         // Add command to toggle auto-get mode
-        const agmLabel = menuState.symbol[+!config.autoGetDisabled] + ' '
-                       + ( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' '
-                       + menuState.separator + menuState.word[+!config.autoGetDisabled]
+        const agmLabel = menuState.symbol[+config.autoget] + ' '
+                       + settingsLabels.autoGet.label + ' '
+                       + menuState.separator + menuState.word[+config.autoget]
         menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
-            saveSetting('autoGetDisabled', !config.autoGetDisabled)
-            notify(( msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers' ) + ' ' + menuState.word[+!config.autoGetDisabled])
+            saveSetting('autoget', !config.autoget)
+            notify(settingsLabels.autoGet.label + ' ' + menuState.word[+config.autoget])
             refreshMenu()
         }))
 
@@ -366,30 +382,28 @@ setTimeout(async () => {
 
             // Add command to toggle auto-focus chatbar
             const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
-                           + ( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
+                           + settingsLabels.autoFocusChatbar.label + ' '
                            + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
             menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
                 saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
-                notify(( msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar' ) + ' '
-                             + menuState.word[+!config.autoFocusChatbarDisabled])
+                notify(settingsLabels.autoFocusChatbar.label + ' ' + menuState.word[+!config.autoFocusChatbarDisabled])
                 refreshMenu()
             }))
 
-
             // Add command to toggle auto-scroll (when streaming)
             const assLabel = menuState.symbol[+config.autoScroll] + ' '
-                           + `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`
+                           + settingsLabels.autoScroll.label
                            + menuState.separator + menuState.word[+config.autoScroll]
             menuIDs.push(GM_registerMenuCommand(assLabel, () => {
                 saveSetting('autoScroll', !config.autoScroll)
-                notify(( msgs.mode_autoScroll || 'Auto-Scroll' ) + ' ' + menuState.word[+config.autoScroll])
+                notify(settingsLabels.autoScroll.label + ' ' + menuState.word[+config.autoScroll])
                 refreshMenu()
             }))
         }
 
         // Add command to toggle showing related queries
         const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
-                      + ( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' '
+                      + settingsLabels.relatedQueries.label + ' '
                       + menuState.separator + menuState.word[+!config.rqDisabled]
         menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
             saveSetting('rqDisabled', !config.rqDisabled)
@@ -409,8 +423,7 @@ setTimeout(async () => {
 
         // Add command to toggle prefix mode
         const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
-                      + ( msgs.menuLabel_require || 'Require' ) + ' "/" '
-                      + ( msgs.menuLabel_beforeQuery || 'before query' ) + ' '
+                      + settingsLabels.prefixMode.label + ' '
                       + menuState.separator + menuState.word[+config.prefixEnabled]
         menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
             saveSetting('prefixEnabled', !config.prefixEnabled)
@@ -422,27 +435,26 @@ setTimeout(async () => {
 
         // Add command to toggle suffix mode
         const sfmLabel = menuState.symbol[+config.suffixEnabled] + ' '
-                      + ( msgs.menuLabel_require || 'Require' ) + ' "?" '
-                      + ( msgs.menuLabel_afterQuery || 'after query' ) + ' '
+                      + settingsLabels.suffixMode.label + ' '
                       + menuState.separator + menuState.word[+config.suffixEnabled]
         menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
             saveSetting('suffixEnabled', !config.suffixEnabled)
             if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
                 saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + menuState.word[+!config.suffixEnabled])
+            notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + menuState.word[+config.suffixEnabled])
             refreshMenu()
         }))
 
         // Add command to toggle wider sidebar
         if (!isMobile) {
             const wsbLabel = menuState.symbol[+config.widerSidebar] + ' '
-                           + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' )
+                           + settingsLabels.widerSidebar.label
                            + menuState.separator + menuState.word[+config.widerSidebar]
             menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
         }
 
         // Add command to set reply language
-        const rlLabel = '🌐 ' + ( msgs.menuLabel_replyLanguage || 'Reply Language' )
+        const rlLabel = '🌐 ' + settingsLabels.replyLanguage.label
                       + menuState.separator + config.replyLanguage
         menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
             while (true) {
@@ -456,21 +468,22 @@ setTimeout(async () => {
                     saveSetting('replyLanguage', replyLanguage || config.userLanguage)
                     siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
                         `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
-                            + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.')
+                            + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
+                        '', '', 330) // width
                     refreshMenu() ; break
         }}}))
 
         // Add command to set color scheme
         const schemeLabel = ( config.scheme == 'light' ? '☀️' :
                               config.scheme == 'dark'  ? '🌘' : '🌗' ) + ' '
-                          + ( msgs.menuLabel_colorScheme || 'Color Scheme' ) + menuState.separator
+                          + settingsLabels.colorScheme.label + menuState.separator
                           + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
                               config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
                                                        : msgs.menuLabel_auto || 'Auto' )
         menuIDs.push(GM_registerMenuCommand(schemeLabel, launchSchemeModal))
 
         // Add command to launch About modal
-        const aboutLabel = `💡 ${ msgs.menuLabel_about || 'About' } ${ config.appName }`
+        const aboutLabel = `💡 ${settingsLabels.about.label}`
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
 
