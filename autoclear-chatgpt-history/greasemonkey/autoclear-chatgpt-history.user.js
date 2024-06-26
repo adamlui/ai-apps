@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.24
+// @version             2024.6.25
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -547,7 +547,7 @@
         if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
-        document.getElementById('acToggleFavicon').src = `${ // update navicon color in case scheme changed
+        document.getElementById('acToggleNavicon').src = `${ // update navicon color in case scheme changed
             config.assetHostURL }media/images/icons/incognito/${
             chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
@@ -555,8 +555,8 @@
     function updateToggleHTML() {
 
         // Create/size/position navicon
-        const navicon = document.getElementById('acToggleFavicon') || document.createElement('img')
-        navicon.id = 'acToggleFavicon'
+        const navicon = document.getElementById('acToggleNavicon') || document.createElement('img')
+        navicon.id = 'acToggleNavicon'
         navicon.style.width = navicon.style.height = '1.25rem'
         navicon.style.marginLeft = isGPT4oUI ? '2px' : '4px' ; navicon.style.marginRight = '4px'
 
