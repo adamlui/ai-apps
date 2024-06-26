@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.26
+// @version             2024.6.26.1
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -608,9 +608,6 @@
         // Update visual state
         navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
         setTimeout(() => {
-            switchSpan.style.backgroundColor = toggleInput.checked ? '#ad68ff' : '#ccc'
-            switchSpan.style.boxShadow = toggleInput.checked ? '2px 1px 9px #d8a9ff' : 'none'
-            knobSpan.style.transform = toggleInput.checked ? `translateX(${ knobWidth }px) translateY(0)` : 'translateX(0)'
             switchSpan.style.backgroundColor = toggleInput.checked ? '#ad68ff' : '#ccc'
             switchSpan.style.boxShadow = toggleInput.checked ? '2px 1px 9px #d8a9ff' : 'none'
             knobSpan.style.transform = toggleInput.checked ? `translateX(${ knobWidth }px) translateY(0)` : 'translateX(0)'
