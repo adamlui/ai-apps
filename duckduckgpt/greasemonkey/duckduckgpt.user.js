@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.26.1
+// @version             2024.6.26.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -317,7 +317,7 @@
         stickySidebar: { label: msgs.menuLabel_stickySidebar || 'Sticky Sidebar', type: 'toggle', mobile: false, centered: false },
         replyLanguage: { label: msgs.menuLabel_replyLanguage || 'Reply Language', type: 'prompt' },
         scheme: { label: msgs.menuLabel_colorScheme || 'Color Scheme', type: 'modal' },
-        about: { label: `${ msgs.menuLabel_about || 'About' } ${config.appName}`, type: 'modal' }
+        about: { label: `${ msgs.menuLabel_about || 'About' } ${config.appName}...`, type: 'modal' }
     }
 
     // Init MENU objs
