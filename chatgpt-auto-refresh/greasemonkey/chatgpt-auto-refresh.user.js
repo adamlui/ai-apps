@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.25
+// @version             2024.6.25.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -367,7 +367,7 @@
 
     // Add LISTENER to toggle switch/label/config/menu/auto-refresh
     navToggleDiv.onclick = () => {
-        const toggleInput = document.getElementById('arToggleInput')
+        const toggleInput = document.getElementById('auto-refresh-toggle-input')
         toggleInput.checked = !toggleInput.checked ; config.arDisabled = !toggleInput.checked
         updateToggleHTML() ; refreshMenu()
         if (!config.arDisabled && !chatgpt.autoRefresh.isActive) {
@@ -406,7 +406,7 @@
                       + ( msgs.menuLabel_autoRefresh || 'Auto-Refresh' ) + ' ↻ '
                       + menuState.separator + menuState.word[+!config.arDisabled]
         menuIDs.push(GM_registerMenuCommand(arLabel, () => {
-            document.getElementById('arSwitchSpan').click()
+            document.getElementById('auto-refresh-switch-span').click()
         }))
 
         // Add command to toggle visibility of toggle
@@ -585,7 +585,7 @@
         if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
-        document.getElementById('arToggleNavicon').src = `${ // update navicon color in case scheme changed
+        document.getElementById('auto-refresh-toggle-navicon').src = `${ // update navicon color in case scheme changed
             config.assetHostURL }media/images/icons/auto-refresh/${
             chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
@@ -593,19 +593,19 @@
     function updateToggleHTML() {
 
         // Create/size/position navicon
-        const navicon = document.getElementById('arToggleNavicon') || document.createElement('img')
-        navicon.id = 'arToggleNavicon'
+        const navicon = document.getElementById('auto-refresh-toggle-navicon') || document.createElement('img')
+        navicon.id = 'auto-refresh-toggle-navicon'
         navicon.style.width = navicon.style.height = '1.25rem'
         navicon.style.marginLeft = isGPT4oUI ? '2px' : '4px' ; navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
-        const toggleInput = document.getElementById('arToggleInput') || document.createElement('input')
-        toggleInput.id = 'arToggleInput' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
+        const toggleInput = document.getElementById('auto-refresh-toggle-input') || document.createElement('input')
+        toggleInput.id = 'auto-refresh-toggle-input' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
         toggleInput.style.display = 'none' ; toggleInput.checked = !config.arDisabled
 
         // Create/ID/stylize switch
-        const switchSpan = document.getElementById('arSwitchSpan') || document.createElement('span')
-        switchSpan.id = 'arSwitchSpan'
+        const switchSpan = document.getElementById('auto-refresh-switch-span') || document.createElement('span')
+        switchSpan.id = 'auto-refresh-switch-span'
         const switchStyles = {
             position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : isGPT4oUI ? 147 : 152 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
@@ -615,8 +615,8 @@
         Object.assign(switchSpan.style, switchStyles)
 
         // Create/stylize knob, append to switch
-        const knobSpan = document.getElementById('arToggleKnobSpan') || document.createElement('span')
-        knobSpan.id = 'arToggleKnobSpan'
+        const knobSpan = document.getElementById('auto-refresh-toggle-knob-span') || document.createElement('span')
+        knobSpan.id = 'auto-refresh-toggle-knob-span'
         const knobWidth = 13
         const knobStyles = {
             position: 'absolute', left: '3px', bottom: `${ isFirefox && !firstLink ? 0.075 : 0.055 }em`,
@@ -628,8 +628,8 @@
         Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
         // Create/stylize/fill label
-        const toggleLabel = document.getElementById('arToggleLabel') || document.createElement('label')
-        toggleLabel.id = 'arToggleLabel'
+        const toggleLabel = document.getElementById('auto-refresh-toggle-label') || document.createElement('label')
+        toggleLabel.id = 'auto-refresh-toggle-label'
         if (!firstLink) { // add font size/weight since no firstLink to borrow from
             toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
         toggleLabel.style.marginLeft = `-${ !firstLink ? 23 : 41 }px` // left-shift to navicon

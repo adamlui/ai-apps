@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.25
+// @version             2024.6.25.1
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -353,7 +353,7 @@
 
     // Add LISTENER to toggle switch/label/config/menu + auto-clear
     navToggleDiv.onclick = () => {
-        const toggleInput = document.getElementById('acToggleInput')
+        const toggleInput = document.getElementById('autoclear-toggle-input')
         toggleInput.checked = !toggleInput.checked ; config.autoclear = toggleInput.checked
         updateToggleHTML() ; refreshMenu()
         if (config.autoclear) {
@@ -391,7 +391,7 @@
                       + ( msgs.menuLabel_autoClear || 'Autoclear Chats' )
                       + menuState.separator + menuState.word[+config.autoclear]
         menuIDs.push(GM_registerMenuCommand(acLabel, () => {
-            document.getElementById('acToggleLabel').click()
+            document.getElementById('autoclear-toggle-label').click()
         }))
 
         // Add 'Toggle Visibility' command
@@ -547,7 +547,7 @@
         if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
-        document.getElementById('acToggleNavicon').src = `${ // update navicon color in case scheme changed
+        document.getElementById('autoclear-toggle-navicon').src = `${ // update navicon color in case scheme changed
             config.assetHostURL }media/images/icons/incognito/${
             chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
     }
@@ -555,19 +555,19 @@
     function updateToggleHTML() {
 
         // Create/size/position navicon
-        const navicon = document.getElementById('acToggleNavicon') || document.createElement('img')
-        navicon.id = 'acToggleNavicon'
+        const navicon = document.getElementById('autoclear-toggle-navicon') || document.createElement('img')
+        navicon.id = 'autoclear-toggle-navicon'
         navicon.style.width = navicon.style.height = '1.25rem'
         navicon.style.marginLeft = isGPT4oUI ? '2px' : '4px' ; navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
-        const toggleInput = document.getElementById('acToggleInput') || document.createElement('input')
-        toggleInput.id = 'acToggleInput' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
+        const toggleInput = document.getElementById('autoclear-toggle-input') || document.createElement('input')
+        toggleInput.id = 'autoclear-toggle-input' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
         toggleInput.style.display = 'none' ; toggleInput.checked = config.autoclear
 
         // Create/ID/stylize switch
-        const switchSpan = document.getElementById('acSwitchSpan') || document.createElement('span')
-        switchSpan.id = 'acSwitchSpan'
+        const switchSpan = document.getElementById('autoclear-switch-span') || document.createElement('span')
+        switchSpan.id = 'autoclear-switch-span'
         const switchStyles = {
             position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : isGPT4oUI ? 147 : 152 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
@@ -577,8 +577,8 @@
         Object.assign(switchSpan.style, switchStyles)
 
         // Create/ID/stylize knob, append to switch
-        const knobSpan = document.getElementById('acToggleKnobSpan') || document.createElement('span')
-        knobSpan.id = 'acToggleKnobSpan'
+        const knobSpan = document.getElementById('autoclear-toggle-knob-span') || document.createElement('span')
+        knobSpan.id = 'autoclear-toggle-knob-span'
         const knobWidth = 13
         const knobStyles = {
             position: 'absolute', left: '3px', bottom: `${ isFirefox && !firstLink ? 0.075 : 0.055 }em`,
@@ -590,8 +590,8 @@
         Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
         // Create/ID/stylize/fill label
-        const toggleLabel = document.getElementById('acToggleLabel') || document.createElement('label')
-        toggleLabel.id = 'acToggleLabel'
+        const toggleLabel = document.getElementById('autoclear-toggle-label') || document.createElement('label')
+        toggleLabel.id = 'autoclear-toggle-label'
         if (!firstLink) { // add font size/weight since no firstLink to borrow from
             toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
         toggleLabel.style.marginLeft = `-${ !firstLink ? 23 : 41 }px` // left-shift to navicon

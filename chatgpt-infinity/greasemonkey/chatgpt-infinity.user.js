@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.25.5
+// @version             2024.6.25.6
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -314,7 +314,7 @@
         const imLabel = menuState.symbol[+config.infinityMode] + ' '
                       + ( msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ' ∞ '
                       + menuState.separator + menuState.word[+config.infinityMode]
-        menuIDs.push(GM_registerMenuCommand(imLabel, () => { document.getElementById('infToggleLabel').click() }))
+        menuIDs.push(GM_registerMenuCommand(imLabel, () => { document.getElementById('infinity-toggle-label').click() }))
 
         // Add command to toggle Auto-Start
         const astLabel = menuState.symbol[+config.autoStart] + ' '
@@ -388,8 +388,8 @@
                         + '!'
                 )
                 if (config.infinityMode) { // restart session using new reply topic
-                    chatgpt.stop() ; document.getElementById('infToggleLabel').click() // toggle off
-                    setTimeout(() => { document.getElementById('infToggleLabel').click() }, 500) } // toggle on
+                    chatgpt.stop() ; document.getElementById('infinity-toggle-label').click() // toggle off
+                    setTimeout(() => { document.getElementById('infinity-toggle-label').click() }, 500) } // toggle on
                 refreshMenu()
         }}))
 
@@ -552,7 +552,7 @@
         if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
-        const navicon = document.getElementById('infToggleNavicon')
+        const navicon = document.getElementById('infinity-toggle-navicon')
         if (navicon) navicon.src = `${ // update navicon color in case scheme changed
             config.assetHostURL }media/images/icons/infinity-symbol/${
             chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
@@ -561,19 +561,19 @@
     function updateToggleHTML() {
 
         // Create/size/position navicon
-        const navicon = document.getElementById('infToggleNavicon') || document.createElement('img')
-        navicon.id = 'infToggleNavicon'
+        const navicon = document.getElementById('infinity-toggle-navicon') || document.createElement('img')
+        navicon.id = 'infinity-toggle-navicon'
         navicon.style.width = navicon.style.height = '1.25rem'
         navicon.style.marginLeft = isGPT4oUI ? '2px' : '4px' ; navicon.style.marginRight = '4px'
 
         // Create/ID/disable/hide/update checkbox
-        const toggleInput = document.getElementById('infToggleInput') || document.createElement('input')
-        toggleInput.id = 'infToggleInput' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
+        const toggleInput = document.getElementById('infinity-toggle-input') || document.createElement('input')
+        toggleInput.id = 'infinity-toggle-input' ; toggleInput.type = 'checkbox' ; toggleInput.disabled = true
         toggleInput.style.display = 'none' ; toggleInput.checked = config.infinityMode
 
         // Create/ID/stylize switch
-        const switchSpan = document.getElementById('infSwitchSpan') || document.createElement('span')
-        switchSpan.id = 'infSwitchSpan'
+        const switchSpan = document.getElementById('infinity-switch-span') || document.createElement('span')
+        switchSpan.id = 'infinity-switch-span'
         const switchStyles = {
             position: 'relative', left: `${ chatgpt.browser.isMobile() ? 211 : !firstLink ? 160 : isGPT4oUI ? 147 : 152 }px`,
             backgroundColor: toggleInput.checked ? '#ccc' : '#AD68FF', // init opposite  final color
@@ -583,8 +583,8 @@
         Object.assign(switchSpan.style, switchStyles)
 
         // Create/stylize knob, append to switch
-        const knobSpan = document.getElementById('infToggleKnobSpan') || document.createElement('span')
-        knobSpan.id = 'infToggleKnobSpan'
+        const knobSpan = document.getElementById('infinity-toggle-knob-span') || document.createElement('span')
+        knobSpan.id = 'infinity-toggle-knob-span'
         const knobWidth = 13
         const knobStyles = {
             position: 'absolute', left: '3px', bottom: `${ isFirefox && !firstLink ? 0.075 : 0.055 }em`,
@@ -596,8 +596,8 @@
         Object.assign(knobSpan.style, knobStyles) ; switchSpan.append(knobSpan)
 
         // Create/stylize/fill label
-        const toggleLabel = document.getElementById('infToggleLabel') || document.createElement('label')
-        toggleLabel.id = 'infToggleLabel'
+        const toggleLabel = document.getElementById('infinity-toggle-label') || document.createElement('label')
+        toggleLabel.id = 'infinity-toggle-label'
         if (!firstLink) { // add font size/weight since no firstLink to borrow from
             toggleLabel.style.fontSize = '0.875rem' ; toggleLabel.style.fontWeight = 600 }
         toggleLabel.style.marginLeft = `-${ !firstLink ? 23 : 41 }px` // left-shift to navicon
@@ -654,7 +654,7 @@
 
         deactivate() {
             chatgpt.stop() ; clearTimeout(infinityMode.isActive) ; infinityMode.isActive = null
-            document.getElementById('infToggleInput').checked = false // for window listener
+            document.getElementById('infinity-toggle-input').checked = false // for window listener
             notify(( msgs.menuLabel_infinityMode || 'Infinity Mode' ) + ': OFF')
             config.infinityMode = false // in case toggled by PV listener
         },
@@ -665,8 +665,8 @@
     // Define INTERRUPT functions
 
     function restartInNewChat() {
-        chatgpt.stop() ; document.getElementById('infToggleLabel').click() // toggle off
-        setTimeout(() => { document.getElementById('infToggleLabel').click() }, 500) // toggle on
+        chatgpt.stop() ; document.getElementById('infinity-toggle-label').click() // toggle off
+        setTimeout(() => { document.getElementById('infinity-toggle-label').click() }, 500) // toggle on
     }
 
     async function resetInSameChat() {
@@ -688,8 +688,8 @@
     if (document.hidden !== undefined) // ...if Page Visibility API supported
         document.onvisibilitychange = () => {
             if (config.infinityMode) {                
-                if (document.getElementById('infToggleLabel')) // ensure toggle state is accurate
-                    document.getElementById('infToggleLabel').click()
+                if (document.getElementById('infinity-toggle-label')) // ensure toggle state is accurate
+                    document.getElementById('infinity-toggle-label').click()
                 else infinityMode.deactivate()
                 refreshMenu()
         }}
@@ -733,7 +733,7 @@
 
     // Add LISTENER to toggle switch/label/config/menu
     navToggleDiv.onclick = () => {
-        const toggleInput = document.getElementById('infToggleInput')
+        const toggleInput = document.getElementById('infinity-toggle-input')
         toggleInput.checked = !toggleInput.checked
         config.infinityMode = toggleInput.checked
         updateToggleHTML() ; refreshMenu()
@@ -742,7 +742,7 @@
 
     // Auto-start if enabled
     if (config.autoStart) {
-        const navToggle = document.getElementById('infToggleInput')
+        const navToggle = document.getElementById('infinity-toggle-input')
         if (navToggle) navToggle.parentNode.click()
         else { // activate via infinityMode
             infinityMode.activate() ; config.infinityMode = true ; refreshMenu()
