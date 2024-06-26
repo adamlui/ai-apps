@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.25.1
+// @version             2024.6.26
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -765,25 +765,25 @@ setTimeout(async () => {
         },
 
         widescreen: {
-            wideSVGpath: createSVGpath({
+            wideSVGpath() { return createSVGpath({
                 fill: '', 'fill-rule': 'evenodd', d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z'
-            }),
+            })},
 
-            tallSVGpath: createSVGpath({
+            tallSVGpath() { return createSVGpath({
                 fill: '', 'fill-rule': 'evenodd', d: 'm28,11 0,14 -20,0 0,-14 z m-18,2 16,0 0,10 -16,0 0,-10 z'
-            }),
+            })},
 
             create() {
                 const widescreenSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                       widescreenSVGattrs = [['width', 18], ['height', 18], ['viewBox', '8 8 20 20']]
                 widescreenSVGattrs.forEach(([attr, value]) => widescreenSVG.setAttribute(attr, value))
-                widescreenSVG.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath'])
+                widescreenSVG.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath']())
                 return widescreenSVG
             },
 
             update(widescreenSVG) {
                 widescreenSVG.removeChild(widescreenSVG.firstChild) // clear path
-                widescreenSVG.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath'])
+                widescreenSVG.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath']())
                 return widescreenSVG
             }
         }
