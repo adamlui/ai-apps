@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.24.9
+// @version             2024.6.25
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -230,7 +230,7 @@
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@81d37e5/'
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
-    loadSetting('autoget', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun',
+    loadSetting('autoGet', 'autoFocusChatbarDisabled', 'autoScroll', 'fontSize', 'notFirstRun',
                 'prefixEnabled', 'proxyAPIenabled', 'replyLanguage', 'rqDisabled', 'scheme',
                 'stickySidebar', 'streamingDisabled', 'suffixEnabled', 'widerSidebar')
     if (!config.replyLanguage) saveSetting('replyLanguage', config.userLanguage) // init reply language if unset
@@ -239,7 +239,7 @@
         !/Tampermonkey|ScriptCat/.test(getUserscriptManager()) // unsupported userscript manager
         || getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave) // TM in browser that triggers STATUS_ACCESS_VIOLATION
     ) saveSetting('streamingDisabled', true)
-    if (!config.notFirstRun && isMobile) saveSetting('autoget', true) // reverse default auto-get disabled if mobile
+    if (!config.notFirstRun && isMobile) saveSetting('autoGet', true) // reverse default auto-get disabled if mobile
     saveSetting('notFirstRun', true)
 
     // Init UI VARS
@@ -374,12 +374,12 @@
         }))
 
         // Add command to toggle auto-get mode
-        const agmLabel = menuState.symbol[+config.autoget] + ' '
+        const agmLabel = menuState.symbol[+config.autoGet] + ' '
                        + settingsLabels.autoGet.label + ' '
-                       + menuState.separator + menuState.word[+config.autoget]
+                       + menuState.separator + menuState.word[+config.autoGet]
         menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
-            saveSetting('autoget', !config.autoget)
-            notify(settingsLabels.autoGet.label + ' ' + menuState.word[+config.autoget])
+            saveSetting('autoGet', !config.autoGet)
+            notify(settingsLabels.autoGet.label + ' ' + menuState.word[+config.autoGet])
             refreshMenu()
         }))
 
@@ -2060,7 +2060,7 @@
 
     // Show STANDBY mode or get/show ANSWER
     let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
-    if (!config.autoget && !/src=(?:first-run|asktip)/.test(location.href) // Auto-Get disabled and not queried from other site or 1st run
+    if (!config.autoGet && !/src=(?:first-run|asktip)/.test(location.href) // Auto-Get disabled and not queried from other site or 1st run
         || config.prefixEnabled && !/.*q=%2F/.test(document.location) // prefix required but not present
         || config.suffixEnabled && !/.*q=.*(?:%3F|？|%EF%BC%9F)(?:&|$)/.test(document.location)) { // suffix required but not present
             show.reply('standby')
