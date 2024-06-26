@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.26.2
+// @version             2024.6.26.3
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -466,22 +466,7 @@ setTimeout(async () => {
         // Add command to set reply language
         const rlLabel = '🌐 ' + settingsProps.replyLanguage.label
                       + menuState.separator + config.replyLanguage
-        menuIDs.push(GM_registerMenuCommand(rlLabel, () => {
-            while (true) {
-                let replyLanguage = prompt(
-                    ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
-                if (replyLanguage == null) break // user cancelled so do nothing
-                else if (!/\d/.test(replyLanguage)) {
-                    replyLanguage = ( // auto-case for menu/alert aesthetics
-                        [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
-                          : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
-                    saveSetting('replyLanguage', replyLanguage || config.userLanguage)
-                    siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
-                        `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
-                            + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
-                        '', '', 330) // width
-                    refreshMenu() ; break
-        }}}))
+        menuIDs.push(GM_registerMenuCommand(rlLabel, promptReplyLang))
 
         // Add command to set color scheme
         const schemeLabel = ( config.scheme == 'light' ? '☀️' :
@@ -496,6 +481,23 @@ setTimeout(async () => {
         const aboutLabel = `💡 ${settingsProps.about.label}`
         menuIDs.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
     }
+
+    function promptReplyLang() {
+        while (true) {
+            let replyLanguage = prompt(
+                ( msgs.prompt_updateReplyLang || 'Update reply language' ) + ':', config.replyLanguage)
+            if (replyLanguage == null) break // user cancelled so do nothing
+            else if (!/\d/.test(replyLanguage)) {
+                replyLanguage = ( // auto-case for menu/alert aesthetics
+                    [2, 3].includes(replyLanguage.length) || replyLanguage.includes('-') ? replyLanguage.toUpperCase()
+                      : replyLanguage.charAt(0).toUpperCase() + replyLanguage.slice(1).toLowerCase() )
+                saveSetting('replyLanguage', replyLanguage || config.userLanguage)
+                siteAlert(( msgs.alert_langUpdated || 'Language updated' ) + '!', // title
+                    `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
+                        + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
+                    '', '', 330) // width
+                refreshMenu() ; break
+    }}}
 
     function refreshMenu() { for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() }
 
