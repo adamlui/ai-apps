@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.25.7
+// @version             2024.6.26
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -614,15 +614,9 @@
         // Update visual state
         navToggleDiv.style.display = config.toggleHidden ? 'none' : 'flex'
         setTimeout(() => {
-            if (toggleInput.checked) {
-                switchSpan.style.backgroundColor = '#AD68FF'
-                switchSpan.style.boxShadow = '2px 1px 9px #D8A9FF'
-                knobSpan.style.transform = `translateX(${ knobWidth }px) translateY(0)`
-            } else {
-                switchSpan.style.backgroundColor = '#CCC'
-                switchSpan.style.boxShadow = 'none'
-                knobSpan.style.transform = 'translateX(0)'
-            }
+            switchSpan.style.backgroundColor = toggleInput.checked ? '#ad68ff' : '#ccc'
+            switchSpan.style.boxShadow = toggleInput.checked ? '2px 1px 9px #d8a9ff' : 'none'
+            knobSpan.style.transform = toggleInput.checked ? `translateX(${ knobWidth }px) translateY(0)` : 'translateX(0)'
         }, 1) // min delay to trigger transition fx
     }
 
