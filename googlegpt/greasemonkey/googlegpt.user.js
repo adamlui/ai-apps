@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.17
+// @version             2024.6.27.18
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1811,7 +1811,7 @@
                         const newAccessToken = JSON.parse(resp.responseText).accessToken
                         GM_setValue(config.keyPrefix + '_openAItoken', newAccessToken)
                         resolve(newAccessToken)
-                    } catch { appAlert('login') ; return }
+                    } catch { if (get.reply.api == 'OpenAI') appAlert('login') ; return }
                 }})
             } else resolve(accessToken)
     })}
