@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.6
+// @version             2024.6.27.7
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -350,40 +350,7 @@
         const stmLabel = menuState.symbol[+stmState] + ' '
                        + settingsProps.streamingDisabled.label + ' '
                        + menuState.separator + menuState.word[+stmState]
-        menuIDs.push(GM_registerMenuCommand(stmLabel, () => {
-            const scriptCatLink = isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
-                                : isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
-                                            : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
-            if (!/Tampermonkey|ScriptCat/.test(getUserscriptManager())) { // alert userscript manager unsupported, suggest TM/SC
-                siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
-                    `${settingsProps.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
-                        + ( !isEdge && !isBrave ? // suggest TM for supported browsers
-                            ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
-                                : '' )
-                        + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
-                        + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`)
-            } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) // alert TM/browser unsupported, suggest SC
-                siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
-                    `${settingsProps.streamingDisabled.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
-                        + `${ isChrome ? 'Chrome' : isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
-                        + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
-                            + `${ msgs.alert_instead || 'instead' }.`)
-            else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
-                let msg = `${settingsProps.streamingDisabled.label} `
-                        + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
-                        + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
-                        + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
-                const switchPhrase = msgs.alert_switchingOn || 'switching on'
-                msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
-                const alertID = siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg),
-                      alert = document.getElementById(alertID)
-                alert.querySelector('[href="#"]').onclick = () => { alert.querySelector('.modal-close-btn').click() ; toggle.proxyMode() }
-            } else { // functional toggle
-                saveSetting('streamingDisabled', !config.streamingDisabled)
-                notify(settingsProps.streamingDisabled.label + ' ' + menuState.word[+!config.streamingDisabled])
-                refreshMenu()
-            }
-        }))
+        menuIDs.push(GM_registerMenuCommand(stmLabel, toggle.streaming))
 
         // Add command to toggle auto-get mode
         const agmLabel = menuState.symbol[+config.autoGet] + ' '
@@ -833,6 +800,7 @@
 
                             // Call specialized toggle funcs
                             if (key.includes('proxy')) toggle.proxyMode()
+                            else if (key.includes('streaming')) toggle.streaming()
                             else if (key.includes('rq')) toggle.relatedQueries()
                             else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*?)Sidebar$/)[1])
 
@@ -1536,6 +1504,47 @@
             notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
                 + ' ' + menuState.word[+config[mode + 'Sidebar']])
             refreshMenu()
+        },
+
+        streaming() {
+            const streamingToggle = document.querySelector('[id*="streaming"][id*="menu-entry"] input'),
+                  scriptCatLink = isFirefox ? 'https://addons.mozilla.org/firefox/addon/scriptcat/'
+                                : isEdge    ? 'https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh'
+                                            : 'https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf'
+            if (!/Tampermonkey|ScriptCat/.test(getUserscriptManager())) { // alert userscript manager unsupported, suggest TM/SC
+                siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
+                    `${settingsProps.streamingDisabled.label} ${ msgs.alert_isOnlyAvailFor || 'is only available for' }`
+                        + ( !isEdge && !isBrave ? // suggest TM for supported browsers
+                            ` <a target="_blank" rel="noopener" href="https://tampermonkey.net">Tampermonkey</a> ${ msgs.alert_and || 'and' }`
+                                : '' )
+                        + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
+                        + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`
+                )
+                if (streamingToggle) modals.settings.toggle.switch(streamingToggle) // reverse toggle visually
+            } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) { // alert TM/browser unsupported, suggest SC
+                siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
+                    `${settingsProps.streamingDisabled.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
+                        + `${ isChrome ? 'Chrome' : isEdge ? 'Edge' : 'Brave' } ${ msgs.alert_whenUsing || 'when using' } Tampermonkey. `
+                        + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
+                            + `${ msgs.alert_instead || 'instead' }.`
+                )
+                if (streamingToggle) modals.settings.toggle.switch(streamingToggle) // reverse toggle visually
+            } else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
+                let msg = `${settingsProps.streamingDisabled.label} `
+                        + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
+                        + `${ msgs.alert_switchingOn || 'switching on' } ${ msgs.mode_proxy || 'Proxy Mode' }. `
+                        + `(${ msgs.alert_openAIsupportSoon || 'Support for OpenAI API will be added shortly' }!)`
+                const switchPhrase = msgs.alert_switchingOn || 'switching on'
+                msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
+                const alertID = siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg),
+                      alert = document.getElementById(alertID)
+                alert.querySelector('[href="#"]').onclick = () => { alert.querySelector('.modal-close-btn').click() ; toggle.proxyMode() }
+                if (streamingToggle) modals.settings.toggle.switch(streamingToggle) // reverse toggle visually
+            } else { // functional toggle
+                saveSetting('streamingDisabled', !config.streamingDisabled)
+                notify(settingsProps.streamingDisabled.label + ' ' + menuState.word[+!config.streamingDisabled])
+                refreshMenu()
+            }
         },
 
         tooltip(event) { // visibility
