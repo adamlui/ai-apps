@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.6
+// @version             2024.6.27.7
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -817,7 +817,7 @@ setTimeout(async () => {
                             // Call specialized toggle funcs
                             if (key.includes('proxy')) toggle.proxyMode()
                             else if (key.includes('rq')) toggle.relatedQueries()
-                            else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*)Sidebar/)[1])
+                            else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*?)Sidebar$/)[1])
 
                             // ...or generically toggle/notify
                             else {

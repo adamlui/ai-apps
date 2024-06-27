@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.6
+// @version             2024.6.27.7
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1013,7 +1013,7 @@
                             // Call specialized toggle funcs
                             if (key.includes('proxy')) toggle.proxyMode()
                             else if (key.includes('rq')) toggle.relatedQueries()
-                            else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*)Sidebar/)[1])
+                            else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*?)Sidebar$/)[1])
 
                             // ...or generically toggle/notify
                             else {
