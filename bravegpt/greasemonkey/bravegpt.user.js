@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.17
+// @version             2024.6.27.18
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1455,7 +1455,7 @@ setTimeout(async () => {
             const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input')
             if (proxyToggle && proxyToggle.checked != config.proxyAPIenabled) // update visual state of Settings modal
                 modals.settings.toggle.switch(proxyToggle)
-            if (appDiv.querySelector('#ddgpt-alert')) location.reload() // re-send query if user alerted 
+            if (appDiv.getElementById('bravegpt-alert')) location.reload() // re-send query if user alerted 
         },
 
         relatedQueries() {
