@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.7
+// @version             2024.6.27.8
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -340,113 +340,18 @@
     function registerMenu() {
 
         // Add command to toggle proxy API mode
-        const pamLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
+        const pmLabel  = menuState.symbol[+config.proxyAPIenabled] + ' '
                        + settingsProps.proxyAPIenabled.label + ' '
                        + menuState.separator + menuState.word[+config.proxyAPIenabled]
-        menuIDs.push(GM_registerMenuCommand(pamLabel, toggle.proxyMode))
-
-        // Add command to toggle streaming mode or alert unsupported
-        const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
-        const stmLabel = menuState.symbol[+stmState] + ' '
-                       + settingsProps.streamingDisabled.label + ' '
-                       + menuState.separator + menuState.word[+stmState]
-        menuIDs.push(GM_registerMenuCommand(stmLabel, toggle.streaming))
-
-        // Add command to toggle auto-get mode
-        const agmLabel = menuState.symbol[+config.autoGet] + ' '
-                       + settingsProps.autoGet.label + ' '
-                       + menuState.separator + menuState.word[+config.autoGet]
-        menuIDs.push(GM_registerMenuCommand(agmLabel, () => {
-            saveSetting('autoGet', !config.autoGet)
-            notify(settingsProps.autoGet.label + ' ' + menuState.word[+config.autoGet])
-            refreshMenu()
-        }))
-
-        if (!isMobile) {
-
-            // Add command to toggle auto-focus chatbar
-            const afcLabel = menuState.symbol[+!config.autoFocusChatbarDisabled] + ' '
-                           + settingsProps.autoFocusChatbarDisabled.label + ' '
-                           + menuState.separator + menuState.word[+!config.autoFocusChatbarDisabled]
-            menuIDs.push(GM_registerMenuCommand(afcLabel, () => {
-                saveSetting('autoFocusChatbarDisabled', !config.autoFocusChatbarDisabled)
-                notify(settingsProps.autoFocusChatbarDisabled.label + ' ' + menuState.word[+!config.autoFocusChatbarDisabled])
-                refreshMenu()
-            }))
-
-            // Add command to toggle auto-scroll (when streaming)
-            const assLabel = menuState.symbol[+config.autoScroll] + ' '
-                           + settingsProps.autoScroll.label
-                           + menuState.separator + menuState.word[+config.autoScroll]
-            menuIDs.push(GM_registerMenuCommand(assLabel, () => {
-                saveSetting('autoScroll', !config.autoScroll)
-                notify(settingsProps.autoScroll.label + ' ' + menuState.word[+config.autoScroll])
-                refreshMenu()
-            }))
-        }
-
-        // Add command to toggle showing related queries
-        const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
-                      + settingsProps.rqDisabled.label + ' '
-                      + menuState.separator + menuState.word[+!config.rqDisabled]
-        menuIDs.push(GM_registerMenuCommand(rqLabel, toggle.relatedQueries))
-
-        // Add command to toggle prefix mode
-        const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
-                      + settingsProps.prefixEnabled.label + ' '
-                      + menuState.separator + menuState.word[+config.prefixEnabled]
-        menuIDs.push(GM_registerMenuCommand(pfmLabel, () => {
-            saveSetting('prefixEnabled', !config.prefixEnabled)
-            if (config.prefixEnabled && config.suffixEnabled) { // disable Suffix Mode if activating Prefix Mode
-                saveSetting('suffixEnabled', !config.suffixEnabled) }
-            notify(( msgs.mode_prefix || 'Prefix Mode' ) + ' ' + menuState.word[+config.prefixEnabled])
-            refreshMenu()
-        }))
-
-        // Add command to toggle suffix mode
-        const sfmLabel = menuState.symbol[+config.suffixEnabled] + ' '
-                      + settingsProps.suffixEnabled.label + ' '
-                      + menuState.separator + menuState.word[+config.suffixEnabled]
-        menuIDs.push(GM_registerMenuCommand(sfmLabel, () => {
-            saveSetting('suffixEnabled', !config.suffixEnabled)
-            if (config.prefixEnabled && config.suffixEnabled) { // disable Prefix Mode if activating Suffix Mode
-                saveSetting('prefixEnabled', !config.prefixEnabled) }
-            notify(( msgs.mode_suffix || 'Suffix Mode' ) + ' ' + menuState.word[+config.suffixEnabled])
-            refreshMenu()
-        }))
-
-        if (!isCentered && !isMobile) {
-
-            // Add command to toggle wider sidebar
-            const wsbLabel = menuState.symbol[+config.widerSidebar] + ' '
-                           + settingsProps.widerSidebar.label
-                           + menuState.separator + menuState.word[+config.widerSidebar]
-            menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggle.sidebar('wider')))
-
-            // Add command to toggle sticky sidebar
-            const ssbLabel = menuState.symbol[+config.stickySidebar] + ' '
-                           + settingsProps.stickySidebar.label
-                           + menuState.separator + menuState.word[+config.stickySidebar]
-            menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggle.sidebar('sticky')))
-        }
-
-        // Add command to set reply language
-        const rlLabel = '🌐 ' + settingsProps.replyLanguage.label
-                      + menuState.separator + config.replyLanguage
-        menuIDs.push(GM_registerMenuCommand(rlLabel, promptReplyLang))
-
-        // Add command to set color scheme
-        const schemeLabel = ( config.scheme == 'light' ? '☀️' :
-                              config.scheme == 'dark'  ? '🌘' : '🌗' ) + ' '
-                          + settingsProps.scheme.label + menuState.separator
-                          + ( config.scheme == 'light' ? msgs.scheme_light   || 'Light' :
-                              config.scheme == 'dark'  ? msgs.scheme_dark    || 'Dark'
-                                                       : msgs.menuLabel_auto || 'Auto' )
-        menuIDs.push(GM_registerMenuCommand(schemeLabel, modals.scheme.show))
+        menuIDs.push(GM_registerMenuCommand(pmLabel, toggle.proxyMode))
 
         // Add command to launch About modal
         const aboutLabel = `💡 ${settingsProps.about.label}`
         menuIDs.push(GM_registerMenuCommand(aboutLabel, modals.about.show))
+
+        // Add command to launch Settings modal
+        const settingsLabel = `⚙️ ${ msgs.menuLabel_settings || 'Settings' }`
+        menuIDs.push(GM_registerMenuCommand(settingsLabel, modals.settings.show))
     }
 
     function promptReplyLang() {
@@ -465,7 +370,7 @@
                     '', '', 330) // width
                 const replyLangMenuEntry = document.getElementById('replyLanguage-menu-entry')
                 if (replyLangMenuEntry) replyLangMenuEntry.querySelector('span').textContent = replyLanguage
-                refreshMenu() ; break
+                break
     }}}
 
     function refreshMenu() { for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() }
@@ -669,7 +574,7 @@
                     saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
                     const schemeMenuEntry = document.getElementById('scheme-menu-entry')
                     if (schemeMenuEntry) schemeMenuEntry.querySelector('span').textContent = newScheme
-                    updateAppLogoSrc() ; updateAppStyle() ; schemeNotify(newScheme) ; refreshMenu()
+                    updateAppLogoSrc() ; updateAppStyle() ; schemeNotify(newScheme)
                 }
 
                 function schemeNotify(scheme) {
@@ -1489,7 +1394,6 @@
             }
             updateTweaksStyle() // toggle <pre> max-height
             notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
-            refreshMenu()
         },
 
         sidebar(mode) {
@@ -1503,7 +1407,6 @@
                 ssbSVGs.forEach(svg => icons.pin.update(svg))  
             notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
                 + ' ' + menuState.word[+config[mode + 'Sidebar']])
-            refreshMenu()
         },
 
         streaming() {
@@ -1543,7 +1446,6 @@
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
                 notify(settingsProps.streamingDisabled.label + ' ' + menuState.word[+!config.streamingDisabled])
-                refreshMenu()
             }
         },
 
