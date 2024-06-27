@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.13
+// @version             2024.6.27.14
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -779,12 +779,12 @@
                 const settingsContainer = document.createElement('div') ; settingsContainer.id = 'googlegpt-settings-bg'
                 settingsContainer.classList = 'no-user-select'
                 const settingsModal = document.createElement('div') ; settingsModal.id = 'googlegpt-settings'
-                appIcon.style.cssText += 'width: 52px ; position: relative ; top: -37px ; margin: 9px 41.13% -33px' // size/pos icon
-                const settingsTitle = document.createElement('div') ; settingsTitle.id = 'googlegpt-settings-title'
-                settingsTitle.innerHTML = `<h3>${config.appName}</h3><br><h4>${ msgs.menuLabel_settings || 'Settings' }</h4>`
+                appIcon.style.cssText += 'width: 52px ; position: relative ; top: -45px ; margin: 9px 41.13% -43px' // size/pos icon
+                const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'googlegpt-settings-title'
+                const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
                 const settingsTitleIcon = icons.sliders.create()
                 settingsTitleIcon.style.cssText = 'width: 20px ; height: 20px ; position: relative ; top: 3px ; right: 7px'
-                settingsTitle.querySelector('h4').prepend(settingsTitleIcon)
+                settingsTitleH4.prepend(settingsTitleIcon) ; settingsTitleDiv.append(settingsTitleH4)
                 const settingsList = document.createElement('ul')
 
                 // Create/append setting icons/labels/toggles
@@ -924,7 +924,7 @@
                 closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
 
                 // Assemble/append elems
-                settingsModal.append(appIcon, settingsTitle, closeBtn, settingsList)
+                settingsModal.append(appIcon, settingsTitleDiv, closeBtn, settingsList)
                 settingsContainer.append(settingsModal) ; document.body.append(settingsContainer)
 
                 // Add listeners to dismiss modal
@@ -1403,9 +1403,8 @@
           + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
               + '50% { opacity: 0.25 ; transform: scale(1.05) }'
               + '100% { opacity: 0 ; transform: scale(1.35) }}'
-          + '#googlegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px -10px 0 }'
-          + '#googlegpt-settings-title h3 { font-size: 16px ; font-weight: bold ; margin-top: -8px }' // 'GoogleGPT'
-          + '#googlegpt-settings-title h4 { font-size: 22px ; font-weight: bold ; margin-top: -18px }' // 'Settings'
+          + '#googlegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px -15px 0 }'
+          + '#googlegpt-settings-title h4 { font-size: 22px ; font-weight: bold ; margin-top: -3px }' // 'Settings'
           + '#googlegpt-settings-close-btn {'
               + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
               + 'position: absolute ; top: 10px ; right: 13px }'
