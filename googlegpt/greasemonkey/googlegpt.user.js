@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.5
+// @version             2024.6.27.6
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -416,7 +416,7 @@
         greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt',
         mediaHostURL: 'https://media.googlegpt.io/',
         minFontSize: 13, maxFontSize: 24, lineHeightRatio: isMobile ? 1.357 : 1.375,
-        latestAssetCommitHash: '43c4e03' } // for cached messages.json + app logo
+        latestAssetCommitHash: '192762c' } // for cached messages.json + app logo/icon
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -685,6 +685,8 @@
                     `${ config.appName } ${ msgs.alert_willReplyIn || 'will reply in' } `
                         + ( replyLanguage || msgs.alert_yourSysLang || 'your system language' ) + '.',
                     '', '', 330) // width
+                const replyLangMenuEntry = document.getElementById('replyLanguage-menu-entry')
+                if (replyLangMenuEntry) replyLangMenuEntry.querySelector('span').textContent = replyLanguage
                 refreshMenu() ; break
     }}}
 
@@ -875,6 +877,11 @@
                 function updateScheme(newScheme) {
                     scheme = newScheme == 'auto' ? ( chatgpt.isDarkMode() ? 'dark' : 'light' ) : newScheme
                     saveSetting('scheme', newScheme == 'auto' ? false : newScheme)
+                    const schemeMenuEntry = document.getElementById('scheme-menu-entry')
+                    if (schemeMenuEntry) {
+                        schemeMenuEntry.querySelector('span').textContent = newScheme
+                        icons.googleGPT.update(appIcon)
+                    }
                     updateAppLogoSrc() ; updateAppStyle() ; schemeNotify(newScheme) ; refreshMenu()
                 }
 
@@ -885,12 +892,226 @@
                                                  : msgs.menuLabel_auto || 'Auto' ).toUpperCase()
                 )}
             }
+        },
+
+        settings: {
+
+            clickHandler(event) {
+                if (event.target == event.currentTarget || event.target instanceof SVGPathElement)
+                    modals.settings.hide()
+            },
+
+            createAppend() {
+
+                // Init core elems
+                const settingsContainer = document.createElement('div') ; settingsContainer.id = 'googlegpt-settings-bg'
+                settingsContainer.classList = 'no-user-select'
+                const settingsModal = document.createElement('div') ; settingsModal.id = 'googlegpt-settings'
+                appIcon.style.cssText += 'width: 52px ; position: relative ; top: -37px ; margin: 9px 41.13% -33px' // size/pos icon
+                const settingsTitle = document.createElement('div') ; settingsTitle.id = 'googlegpt-settings-title'
+                settingsTitle.innerHTML = `<h3>${config.appName}</h3><br><h4>${ msgs.menuLabel_settings || 'Settings' }</h4>`
+                const settingsTitleIcon = icons.sliders.create()
+                settingsTitleIcon.style.cssText = 'width: 20px ; height: 20px ; position: relative ; top: 3px ; right: 7px'
+                settingsTitle.querySelector('h4').prepend(settingsTitleIcon)
+                const settingsList = document.createElement('ul')
+
+                // Create/append setting icons/labels/toggles
+                Object.keys(settingsProps).forEach((key, idx) => {
+                    const setting = settingsProps[key]
+                    if (isMobile && setting.mobile == false) return
+
+                    // Create/append item/label elems
+                    const settingItem = document.createElement('li') ; settingItem.id = key + '-menu-entry'
+                    const settingLabel = document.createElement('label') ; settingLabel.textContent = setting.label
+                    settingItem.append(settingLabel) ; settingsList.append(settingItem)
+
+                    // Create/prepend icons
+                    let settingIcon
+                    if (key == 'proxyAPIenabled') {
+                        settingIcon = icons.sunglasses.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -0.5px ; margin-right: 9px'
+                    } else if (key == 'streamingDisabled') {
+                        settingIcon = icons.signalStream.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: 0.5px ; margin-right: 9px'
+                    } else if (key == 'autoGet') {
+                        settingIcon = icons.autoSpeechBalloon.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 4.5px ; margin-right: 7px'
+                    } else if (key == 'autoFocusChatbarDisabled') {
+                        settingIcon = icons.inwardCarets.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 4.5px ; margin-right: 7px'
+                    } else if (key == 'autoScroll') {
+                        settingIcon = icons.downArrows.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 3.5px ; left: -1.5px ; margin-right: 6px'
+                    } else if (key == 'rqDisabled') {
+                        settingIcon = icons.speechBalloon.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 2.5px ; left: 0.5px ; margin-right: 9px ; transform: scaleY(-1)'
+                    } else if (key == 'prefixEnabled') {
+                        settingIcon = icons.slash.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 2.5px ; left: 0.5px ; margin-right: 9px'
+                    } else if (key == 'suffixEnabled') {
+                        settingIcon = icons.questionMark.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 4px ; left: -1.5px ; margin-right: 7px'
+                    } else if (key == 'widerSidebar') {
+                        settingIcon = icons.widescreen.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 4px ; left: -1.5px ; margin-right: 7.5px'
+                    } else if (key == 'stickySidebar') {
+                        settingIcon = icons.pin.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 7.5px'
+                    } else if (key == 'replyLanguage') {
+                        settingIcon = icons.language.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -1.5px ; margin-right: 9px'
+                    } else if (key == 'scheme') {
+                        settingIcon = icons.scheme.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 2.5px ; left: -1.5px ; margin-right: 8px'
+                    } else if (key == 'about') {
+                        settingIcon = icons.about.create()
+                        settingIcon.style.cssText = 'position: relative ; top: 3px ; left: -3px ; margin-right: 5.5px'
+                    }
+                    settingItem.prepend(settingIcon)
+
+                    // Create/append toggles/listeners
+                    if (setting.type == 'toggle') {
+
+                        // Init toggle input
+                        const settingToggle = document.createElement('input'),
+                              settingToggleAttrs = [['id', setting + '-toggle'], ['type', 'checkbox'], ['disabled', true]]
+                        settingToggleAttrs.forEach(([attr, value]) => settingToggle.setAttribute(attr, value))
+                        settingToggle.checked = config[key] ^ key.includes('Disabled')
+                        settingToggle.style.display = 'none' // hide checkbox
+
+                        // Create/stylize switch
+                        const switchSpan = document.createElement('span')
+                        const switchStyles = {
+                            position: 'relative', left: '-1px', bottom:'-5.5px', float: 'right',
+                            backgroundColor: settingToggle.checked ? '#ccc' : '#AD68FF', // init opposite  final color
+                            width: '26px', height: '13px', '-webkit-transition': '.4s', transition: '0.4s',  borderRadius: '28px'
+                        }
+                        Object.assign(switchSpan.style, switchStyles)
+
+                        // Create/stylize knob
+                        const knobSpan = document.createElement('span')
+                        const knobWidth = 11
+                        const knobStyles = {
+                            position: 'absolute', left: '1px', bottom: '1px',
+                            width: `${ knobWidth }px`, height: `${ knobWidth }px`, content: '""', borderRadius: '28px',
+                            transform: settingToggle.checked ? // init opposite final pos
+                                'translateX(0)' : 'translateX(14px) translateY(0)',
+                            backgroundColor: 'white',  '-webkit-transition': '0.2s', transition: '0.2s'
+                        }
+                        Object.assign(knobSpan.style, knobStyles)
+
+                        // Append elems
+                        switchSpan.append(knobSpan) ; settingItem.append(settingToggle, switchSpan)
+
+                        // Update visual state w/ animation
+                        setTimeout(() => modals.settings.toggle.updateStyles(settingToggle), idx *25 -25)
+
+                        // Add click listener
+                        settingItem.onclick = () => {
+                            modals.settings.toggle.switch(settingToggle) // visually switch toggle
+
+                            // Call specialized toggle funcs
+                            if (key.includes('proxy')) toggle.proxyMode()
+                            else if (key.includes('rq')) toggle.relatedQueries()
+                            else if (key.includes('Sidebar')) toggle.sidebar(key.match(/(.*)Sidebar/)[1])
+
+                            // ...or generically toggle/notify
+                            else {
+                                saveSetting(key, !config[key]) // update config
+                                notify(`${settingsProps[key].label} ${menuState.word[+key.includes('Disabled') ^ +config[key]]}`)
+                            }
+                        }
+
+                    // Add config word + listeners to pop-up settings
+                    } else {
+                        const configWordSpan = document.createElement('span')
+                        configWordSpan.style.cssText = 'float: right ; font-size: 11px ; margin-top: '
+                            + ( key.includes('about') ? '5px' : '3px ; text-transform: uppercase !important')
+                        if (key.includes('replyLang')) {
+                            configWordSpan.textContent = config.replyLanguage
+                            settingItem.onclick = promptReplyLang
+                        } else if (key.includes('scheme')) {
+                            configWordSpan.textContent = config.scheme || 'Auto'
+                            settingItem.onclick = modals.scheme.show
+                        } else if (key.includes('about')) {
+                            configWordSpan.textContent = `v${GM_info.script.version}`
+                            settingItem.onclick = modals.about.show
+                        } settingItem.append(configWordSpan)
+                    }
+                })
+
+                // Create close button
+                const closeBtn = document.createElement('div') ; closeBtn.id = 'googlegpt-settings-close-btn'
+                closeBtn.title = msgs.tooltip_close || 'Close'
+                const closeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+                const closeSVGattrs = [['height', '8px'], ['viewBox', '0 0 14 14'], 'fill', 'none']
+                closeSVGattrs.forEach(([attr, val]) => closeSVG.setAttribute(attr, val))
+                const closeSVGpath = createSVGpath({
+                    d: 'M13.7071 1.70711C14.0976 1.31658 14.0976 0.683417 13.7071 0.292893C13.3166 -0.0976312 12.6834 -0.0976312 12.2929 0.292893L7 5.58579L1.70711 0.292893C1.31658 -0.0976312 0.683417 -0.0976312 0.292893 0.292893C-0.0976312 0.683417 -0.0976312 1.31658 0.292893 1.70711L5.58579 7L0.292893 12.2929C-0.0976312 12.6834 -0.0976312 13.3166 0.292893 13.7071C0.683417 14.0976 1.31658 14.0976 1.70711 13.7071L7 8.41421L12.2929 13.7071C12.6834 14.0976 13.3166 14.0976 13.7071 13.7071C14.0976 13.3166 14.0976 12.6834 13.7071 12.2929L8.41421 7L13.7071 1.70711Z' })
+                closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
+
+                // Assemble/append elems
+                settingsModal.append(appIcon, settingsTitle, closeBtn, settingsList)
+                settingsContainer.append(settingsModal) ; document.body.append(settingsContainer)
+
+                // Add listeners to dismiss modal
+                const dismissElems = [settingsContainer, closeBtn, closeSVG]
+                dismissElems.forEach(elem => elem.onclick = modals.settings.clickHandler)
+                document.onkeydown = modals.settings.keyHandler
+
+                return settingsContainer
+            },
+
+            hide() {
+                const settingsContainer = document.getElementById('googlegpt-settings-bg')
+                if (!settingsContainer) return
+                settingsContainer.style.animation = 'alert-zoom-fade-out 0.075s ease-out' // chatgpt.js keyframes
+                setTimeout(() => settingsContainer.remove(), 50) // delay for fade-out
+            },
+
+            keyHandler() {
+                const dismissKeys = ['Escape', 'Esc'], dismissKeyCodes = [27]
+                if (dismissKeys.includes(event.key) || dismissKeyCodes.includes(event.keyCode)) {
+                    const settingsModal = document.getElementById('googlegpt-settings')
+                    if (settingsModal && settingsModal.style.display !== 'none'
+                        && (event.key.includes('Esc') || event.keyCode == 27))
+                            modals.settings.hide()
+                }
+            },
+
+            show() {
+                const settingsContainer = document.getElementById('googlegpt-settings-bg') || modals.settings.createAppend()
+                settingsContainer.style.display = ''
+                setTimeout(() => { // delay non-0 opacity's for transition fx
+                    settingsContainer.style.backgroundColor = ( 
+                        `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.1 })`)
+                    settingsContainer.classList.add('animated'); },
+                100)
+            },
+
+            toggle: {
+                switch(settingToggle) {
+                    settingToggle.checked = !settingToggle.checked    
+                    modals.settings.toggle.updateStyles(settingToggle)        
+                },
+
+                updateStyles(settingToggle) { // for .toggle.show() + staggered switch animations in .createAppend()
+                    const switchSpan = settingToggle.parentNode.querySelector('span'),
+                          knobSpan = switchSpan.querySelector('span')
+                    setTimeout(() => {
+                        switchSpan.style.backgroundColor = settingToggle.checked ? '#ad68ff' : '#ccc'
+                        switchSpan.style.boxShadow = settingToggle.checked ? '2px 1px 9px #d8a9ff' : 'none'
+                        knobSpan.style.transform = settingToggle.checked ? 'translateX(14px) translateY(0)' : 'translateX(0)'
+                    }, 1) // min delay to trigger transition fx
+                }
+            }
         }
     }
 
     // Define ICON functions
 
     const icons = {
+
         about: {
             create() {
                 const aboutSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
@@ -900,6 +1121,29 @@
                     d: 'M28.765,4.774c-13.562,0-24.594,11.031-24.594,24.594c0,13.561,11.031,24.594,24.594,24.594  c13.561,0,24.594-11.033,24.594-24.594C53.358,15.805,42.325,4.774,28.765,4.774z M31.765,42.913c0,0.699-0.302,1.334-0.896,1.885  c-0.587,0.545-1.373,0.82-2.337,0.82c-0.993,0-1.812-0.273-2.431-0.814c-0.634-0.551-0.954-1.188-0.954-1.891v-1.209  c0-0.703,0.322-1.34,0.954-1.891c0.619-0.539,1.438-0.812,2.431-0.812c0.964,0,1.75,0.277,2.337,0.82  c0.594,0.551,0.896,1.186,0.896,1.883V42.913z M38.427,24.799c-0.389,0.762-0.886,1.432-1.478,1.994  c-0.581,0.549-1.215,1.044-1.887,1.473c-0.643,0.408-1.248,0.852-1.798,1.315c-0.539,0.455-0.99,0.963-1.343,1.512  c-0.336,0.523-0.507,1.178-0.507,1.943v0.76c0,0.504-0.247,1.031-0.735,1.572c-0.494,0.545-1.155,0.838-1.961,0.871l-0.167,0.004  c-0.818,0-1.484-0.234-1.98-0.699c-0.532-0.496-0.801-1.055-0.801-1.658c0-1.41,0.196-2.611,0.584-3.572  c0.385-0.953,0.86-1.78,1.416-2.459c0.554-0.678,1.178-1.27,1.854-1.762c0.646-0.467,1.242-0.93,1.773-1.371  c0.513-0.428,0.954-0.885,1.312-1.354c0.328-0.435,0.489-0.962,0.489-1.608c0-1.066-0.289-1.83-0.887-2.334  c-0.604-0.512-1.442-0.771-2.487-0.771c-0.696,0-1.294,0.043-1.776,0.129c-0.471,0.083-0.905,0.223-1.294,0.417  c-0.384,0.19-0.745,0.456-1.075,0.786c-0.346,0.346-0.71,0.783-1.084,1.301c-0.336,0.473-0.835,0.83-1.48,1.062  c-0.662,0.239-1.397,0.175-2.164-0.192c-0.689-0.344-1.11-0.793-1.254-1.338c-0.135-0.5-0.135-1.025-0.002-1.557  c0.098-0.453,0.369-1.012,0.83-1.695c0.451-0.67,1.094-1.321,1.912-1.938c0.814-0.614,1.847-1.151,3.064-1.593  c1.227-0.443,2.695-0.668,4.367-0.668c1.648,0,3.078,0.249,4.248,0.742c1.176,0.496,2.137,1.157,2.854,1.967  c0.715,0.809,1.242,1.738,1.568,2.762c0.322,1.014,0.486,2.072,0.486,3.146C39.024,23.075,38.823,24.024,38.427,24.799z' }
                 ))
                 return aboutSVG
+            }
+        },
+
+        autoSpeechBalloon: {
+            create() {
+                const autoSpeechBalloonSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      autoSpeechBalloonSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 -960 960 960']]
+                autoSpeechBalloonSVGattrs.forEach(([attr, value]) => autoSpeechBalloonSVG.setAttribute(attr, value))
+                autoSpeechBalloonSVG.append(createSVGpath({ stroke: 'none', d: 'M323-41v-247h-10q-105 0-172.5-67T73-528q0-105 74-179t179-74h36l-44-44 69-69 162 162-162 162-69-69 44-44h-36q-64 0-109.5 45.5T171-528q0 64 45.5 109.5T326-373h95v96l96-96h117q64 0 109.5-45.5T789-528q0-64-45.5-109.5T634-683h10v-98h-10q105 0 179 74t74 179q0 105-74 179t-179 74h-77L323-41Z' }))
+                return autoSpeechBalloonSVG
+            }
+        },
+
+        downArrows: {
+            create() {
+                const downArrowsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      downArrowsSVGattrs = [['width', 19], ['height', 19], ['viewBox', '0 0 24 24']]
+                downArrowsSVGattrs.forEach(([attr, value]) => downArrowsSVG.setAttribute(attr, value))
+                downArrowsSVG.append(
+                    createSVGpath({ stroke: 'none', d: 'M18,13H6a1,1,0,0,1,0-2H18a1,1,0,0,1,0,2Z' }),
+                    createSVGpath({ stroke: 'none', d: 'M14.71,18.29a1,1,0,0,1,0,1.42l-2,2a1,1,0,0,1-1.42,0l-2-2a1,1,0,0,1,1.42-1.42l.29.3V16a1,1,0,0,1,2,0v2.59l.29-.3A1,1,0,0,1,14.71,18.29ZM11.29,8.71a1,1,0,0,0,1.42,0l2-2a1,1,0,1,0-1.42-1.42l-.29.3V3a1,1,0,0,0-2,0V5.59l-.29-.3A1,1,0,0,0,9.29,6.71Z' })
+                )
+                return downArrowsSVG
             }
         },
 
@@ -916,6 +1160,43 @@
             }
         },
 
+        googleGPT: {
+            create() {
+                const googleGPTicon = document.createElement('img') ; googleGPTicon.id = 'googlegpt-icon'
+                icons.googleGPT.update(googleGPTicon)
+                return googleGPTicon
+            },
+
+            update(googleGPTicon) {
+                googleGPTicon.src = `${config.mediaHostURL}images/icons/googlegpt/${ scheme == 'dark' ? 'white' : 'black' }`
+                                  + `/icon64.png?${config.latestAssetCommitHash}`
+                googleGPTicon.style.filter = googleGPTicon.style.webkitFilter = ( // add RGB shift effect
+                    'drop-shadow(2px 1px 0px #ff5b5b) drop-shadow(-1px -1px 0px #49d749)'
+                  + ( scheme == 'light' ? 'drop-shadow(white 1px 1px)' : '' ))
+            }
+        },
+
+        inwardCarets: {
+            create() {
+                const caretsSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      caretsSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 24 24']]
+                caretsSVGattrs.forEach(([attr, value]) => caretsSVG.setAttribute(attr, value))
+                caretsSVG.append(createSVGpath({ stroke: '', d: 'M11.29,9.71a1,1,0,0,0,1.42,0l5-5a1,1,0,1,0-1.42-1.42L12,7.59,7.71,3.29A1,1,0,0,0,6.29,4.71Zm1.42,4.58a1,1,0,0,0-1.42,0l-5,5a1,1,0,0,0,1.42,1.42L12,16.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z' }))
+                return caretsSVG
+            }
+
+        },
+
+        language: {
+            create() {
+                const languageSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      languageSVGattrs = [['width', 15], ['height', 15], ['viewBox', '0 -960 960 960']]
+                languageSVGattrs.forEach(([attr, value]) => languageSVG.setAttribute(attr, value))
+                languageSVG.append(createSVGpath({ stroke: 'none', d: 'm459-48 188-526h125L960-48H847l-35-100H603L568-48H459ZM130-169l-75-75 196-196q-42-45-78-101t-55-105h117q17 32 40.5 67.5T325-514q35-37 70-93t64-119H0v-106h290v-80h106v80h290v106H572q-23 74-70 152T399-438l82 85-39 111-118-121-194 194Zm508-79h139l-69-197-70 197Z' })                )
+                return languageSVG                
+            }
+        },
+
         pin: {
             filledSVGpath() { return createSVGpath({ stroke: '',
                 d: 'M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z'
@@ -927,7 +1208,7 @@
 
             create() {
                 const pinSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      pinSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 16 16']]
+                      pinSVGattrs = [['id', 'pin-svg'], ['width', 17], ['height', 17], ['viewBox', '0 0 16 16']]
                 pinSVGattrs.forEach(([attr, value]) => pinSVG.setAttribute(attr, value))
                 pinSVG.append(icons.pin[config.stickySidebar ? 'filledSVGpath' : 'hollowSVGpath']())
                 return pinSVG
@@ -940,6 +1221,16 @@
             }
         },
         
+        questionMark: {
+            create() {
+                const questionMarkSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      questionMarkSVGattrs = [['width', 18], ['height', 18], ['viewBox', '0 -960 960 960']]
+                questionMarkSVGattrs.forEach(([attr, value]) => questionMarkSVG.setAttribute(attr, value))
+                questionMarkSVG.append(createSVGpath({ stroke: 'none', d: 'M428-383q0-71 16-111t63-74q47-35 58.5-55.5T577-683q0-35-25-57.5T488-763q-26 0-61 18t-50 70l-114-47q27-82 90.5-122.5T488-885q93 0 151.5 59.5T698-682q0 55-17 95t-70 83q-37 29-48.5 55T550-383H428Zm60 265q-41 0-69.5-28.5T390-216q0-41 28.5-69.5T488-314q41 0 69.5 28.5T586-216q0 41-28.5 69.5T488-118Z' }))
+                return questionMarkSVG
+            }
+        },
+        
         scheme: {
             create() {
                 const schemeSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
@@ -947,6 +1238,36 @@
                 schemeSVGattrs.forEach(([attr, value]) => schemeSVG.setAttribute(attr, value))
                 schemeSVG.append(createSVGpath({ stroke: 'none', d: 'M479.92-34q-91.56 0-173.4-35.02t-142.16-95.34q-60.32-60.32-95.34-142.24Q34-388.53 34-480.08q0-91.56 35.02-173.4t95.34-142.16q60.32-60.32 142.24-95.34Q388.53-926 480.08-926q91.56 0 173.4 35.02t142.16 95.34q60.32 60.32 95.34 142.24Q926-571.47 926-479.92q0 91.56-35.02 173.4t-95.34 142.16q-60.32 60.32-142.24 95.34Q571.47-34 479.92-34ZM530-174q113-19 186.5-102.78T790-480q0-116.71-73.5-201.35Q643-766 530-785v611Z' }))
                 return schemeSVG
+            }
+        },
+        
+        signalStream: {
+            create() {
+                const signalStreamSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      signalStreamSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 0 32 32']]
+                signalStreamSVGattrs.forEach(([attr, value]) => signalStreamSVG.setAttribute(attr, value))
+                signalStreamSVG.append(createSVGpath({ stroke: '', 'stroke-width': 0.5, d: 'M16 11.75c-2.347 0-4.25 1.903-4.25 4.25s1.903 4.25 4.25 4.25c2.347 0 4.25-1.903 4.25-4.25v0c-0.003-2.346-1.904-4.247-4.25-4.25h-0zM16 17.75c-0.966 0-1.75-0.784-1.75-1.75s0.784-1.75 1.75-1.75c0.966 0 1.75 0.784 1.75 1.75v0c-0.001 0.966-0.784 1.749-1.75 1.75h-0zM3.25 16c0.211-3.416 1.61-6.471 3.784-8.789l-0.007 0.008c0.223-0.226 0.361-0.536 0.361-0.879 0-0.69-0.56-1.25-1.25-1.25-0.344 0-0.655 0.139-0.881 0.363l0-0c-2.629 2.757-4.31 6.438-4.506 10.509l-0.001 0.038c0.198 4.109 1.879 7.79 4.514 10.553l-0.006-0.006c0.226 0.228 0.54 0.369 0.886 0.369 0.69 0 1.249-0.559 1.249-1.249 0-0.346-0.141-0.659-0.368-0.885l-0-0c-2.173-2.307-3.573-5.363-3.774-8.743l-0.002-0.038zM9.363 16c0.149-2.342 1.109-4.436 2.6-6.026l-0.005 0.005c0.224-0.226 0.363-0.537 0.363-0.88 0-0.69-0.56-1.25-1.25-1.25-0.345 0-0.657 0.139-0.883 0.365l0-0c-1.94 2.035-3.179 4.753-3.323 7.759l-0.001 0.028c0.145 3.032 1.384 5.75 3.329 7.79l-0.005-0.005c0.226 0.228 0.54 0.369 0.886 0.369 0.69 0 1.249-0.559 1.249-1.249 0-0.346-0.141-0.659-0.368-0.885l-0-0c-1.49-1.581-2.451-3.676-2.591-5.993l-0.001-0.027zM26.744 5.453c-0.226-0.227-0.54-0.368-0.886-0.368-0.691 0-1.251 0.56-1.251 1.251 0 0.345 0.139 0.657 0.365 0.883l-0-0c2.168 2.31 3.567 5.365 3.775 8.741l0.002 0.040c-0.21 3.417-1.609 6.471-3.784 8.789l0.007-0.008c-0.224 0.226-0.362 0.537-0.362 0.88 0 0.691 0.56 1.251 1.251 1.251 0.345 0 0.657-0.14 0.883-0.365l-0 0c2.628-2.757 4.308-6.439 4.504-10.509l0.001-0.038c-0.198-4.108-1.878-7.79-4.512-10.553l0.006 0.007zM21.811 8.214c-0.226-0.224-0.537-0.363-0.881-0.363-0.69 0-1.25 0.56-1.25 1.25 0 0.343 0.138 0.653 0.361 0.879l-0-0c1.486 1.585 2.447 3.678 2.594 5.992l0.001 0.028c-0.151 2.343-1.111 4.436-2.601 6.027l0.005-0.005c-0.224 0.226-0.362 0.537-0.362 0.88 0 0.691 0.56 1.251 1.251 1.251 0.345 0 0.657-0.14 0.883-0.365l-0 0c1.939-2.036 3.178-4.754 3.323-7.759l0.001-0.028c-0.145-3.033-1.385-5.751-3.331-7.791l0.005 0.005z' }))
+                return signalStreamSVG
+            }
+        },
+        
+        slash: {
+            create() {
+                const slashSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      slashSVGattrs = [['width', 15], ['height', 15], ['viewBox', '0 0 15 15']]
+                slashSVGattrs.forEach(([attr, value]) => slashSVG.setAttribute(attr, value))
+                slashSVG.append(createSVGpath({ stroke: '', d: 'M4.10876 14L9.46582 1H10.8178L5.46074 14H4.10876Z' }))
+                return slashSVG
+            }
+        },
+        
+        sliders: {
+            create() {
+                const slidersSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      slidersSVGattrs = [['width', 20], ['height', 20], ['viewBox', '0 -960 960 960']]
+                slidersSVGattrs.forEach(([attr, value]) => slidersSVG.setAttribute(attr, value))
+                slidersSVG.append(createSVGpath({ stroke: 'none', d: 'M435.48-102.48V-360H533v80h320v97.52H533v80h-97.52Zm-328.48-80V-280h257.52v97.52H107Zm160-169.04v-80H107v-96.96h160v-80h97.52v256.96H267Zm168.48-80v-96.96H853v96.96H435.48Zm160-168.48v-257.52H693v80h160V-680H693v80h-97.52ZM107-680v-97.52h417.52V-680H107Z' }))
+                return slidersSVG
             }
         },
 
@@ -967,6 +1288,26 @@
             }
         },
 
+        speechBalloon: {
+            create() {
+                const speechBalloonSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      speechBalloonSVGattrs = [['width', 16], ['height', 16], ['viewBox', '0 -960 960 960']]
+                speechBalloonSVGattrs.forEach(([attr, value]) => speechBalloonSVG.setAttribute(attr, value))
+                speechBalloonSVG.append(createSVGpath({ stroke: 'none', d: 'M350-212q-32.55 0-55.27-22.73Q272-257.45 272-290v-64h492v-342h63.67q33.33 0 55.83 22.72Q906-650.55 906-618v576L736-212H350ZM54-256v-582.4q0-32.38 22.72-54.99Q99.45-916 132-916h482q32.55 0 55.28 22.72Q692-870.55 692-838v334q0 32.55-22.72 55.27Q646.55-426 614-426H224L54-256Zm540-268v-294H152v294h442Zm-442 0v-294 294Z' }))
+                return speechBalloonSVG
+            }
+        },
+
+        sunglasses: {
+            create() {
+                const sunglassesSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      sunglassesSVGattrs = [['width', 17], ['height', 17], ['viewBox', '0 0 512 512']]
+                sunglassesSVGattrs.forEach(([attr, value]) => sunglassesSVG.setAttribute(attr, value))
+                sunglassesSVG.append(createSVGpath({ stroke: 'none', d: 'M507.44,185.327c-4.029-5.124-10.185-8.112-16.704-8.112c0,0-48.021,0-156.827,0h-65.774H243.87h-65.774c-108.806,0-156.827,0-156.827,0c-6.519,0-12.675,2.988-16.714,8.112c-4.028,5.125-5.486,11.815-3.965,18.152c0,0,12.421,56.269,19.927,82.534c7.506,26.265,26.265,48.772,86.29,48.772s59.827,0,74.828,0c21.258,0,46.256-19.99,55.028-45.023c4.97-14.16,12.756-32.738,19.338-47.876c6.582,15.138,14.368,33.716,19.338,47.876c8.773,25.033,33.77,45.023,55.028,45.023c15.001,0,14.803,0,74.828,0s78.784-22.507,86.29-48.772c7.496-26.264,19.918-82.534,19.918-82.534C512.935,197.142,511.478,190.452,507.44,185.327z M90.339,278.734C45.314,263.732,40.318,198.7,40.318,198.7s22.507,0,55.028,0L90.339,278.734z M340.464,278.734c-45.015-15.001-50.022-80.034-50.022-80.034s22.508,0,55.029,0L340.464,278.734z' }))
+                return sunglassesSVG
+            }
+        },
+
         widescreen: {
             wideSVGpath() { return createSVGpath({ stroke: '',
                 fill: '', 'fill-rule': 'evenodd', d: 'm26,13 0,10 -16,0 0,-10 z m-14,2 12,0 0,6 -12,0 0,-6 z'
@@ -978,7 +1319,7 @@
 
             create() {
                 const widescreenSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      widescreenSVGattrs = [['width', 18], ['height', 18], ['viewBox', '8 8 20 20']]
+                      widescreenSVGattrs = [['id', 'ws-svg'], ['width', 18], ['height', 18], ['viewBox', '8 8 20 20']]
                 widescreenSVGattrs.forEach(([attr, value]) => widescreenSVG.setAttribute(attr, value))
                 widescreenSVG.append(icons.widescreen[config.widerSidebar ? 'wideSVGpath' : 'tallSVGpath']())
                 return widescreenSVG
@@ -1058,6 +1399,7 @@
     function updateAppStyle() {
         appStyle.innerText = (
             '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+          + '#googlegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
           + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show grabbing cursor everywhere
               + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: grabbing }'
           + '#googlegpt {'
@@ -1076,6 +1418,7 @@
           + `.kudoai { font-size: ${ isMobile ? 0.85 : 0.75 }rem ; position: relative ; left: ${ isMobile ? 8 : 6 }px ; color: #aaa }`
           + '.kudoai a, .kudoai a:visited { color: #aaa ; text-decoration: none !important }'
           + `.kudoai a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
+          + '#corner-btns { float: right ; margin-top: 2px }'
           + '.corner-btn { float: right ; cursor: pointer ; position: relative ; top: 6px ;'
               + ( scheme == 'dark' ? 'fill: white ; stroke: white;' : 'fill: #adadad ; stroke: #adadad' ) + '}'
           + `.corner-btn:hover { ${ scheme == 'dark' ? 'fill: #aaa ; stroke: #aaa' : 'fill: black ; stroke: black' } ;`
@@ -1169,9 +1512,46 @@
               + '#googlegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
               + '#googlegpt *::-webkit-scrollbar-thumb:hover { background: #a6a6a6 }'
               + '#googlegpt *::-webkit-scrollbar-track { background: none }' )
-          + '#googlegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
-        )
-    }
+
+          // Settings modal
+          + '#googlegpt-settings-bg {'
+              + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ;' // expand to full view-port
+              + 'background-color: rgba(67, 70, 72, 0) ;' // init dim bg but no opacity
+              + 'transition: background-color 0.05s ease ;' // speed to transition in show alert routine
+              + 'display: flex ; justify-content: center ; align-items: center ; z-index: 9999 }' // align
+          + '#googlegpt-settings {'
+              + 'opacity: 0 ; transform: translateX(-2px) translateY(3px) ; min-width: 251px ; max-width: 75vw ; word-wrap: break-word ;'
+              + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.3s cubic-bezier(.165,.84,.44,1) ;'
+              + ( scheme == 'dark' ? 'background-color: black ; color: white ; border: 1px solid white ;'
+                                   : 'background-color: white ; color: black ; border: 1px solid #b5b5b5 ;' )
+              + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
+              + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
+          + '#googlegpt-settings-bg.animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
+          + '@keyframes alert-zoom-fade-out { 0% { opacity: 1 ; transform: scale(1) }'
+              + '50% { opacity: 0.25 ; transform: scale(1.05) }'
+              + '100% { opacity: 0 ; transform: scale(1.35) }}'
+          + '#googlegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px -10px 0 }'
+          + '#googlegpt-settings-title h3 { font-size: 16px ; font-weight: bold ; margin-top: -8px }' // 'GoogleGPT'
+          + '#googlegpt-settings-title h4 { font-size: 22px ; font-weight: bold ; margin-top: -18px }' // 'Settings'
+          + '#googlegpt-settings-close-btn {'
+              + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
+              + 'position: absolute ; top: 10px ; right: 13px }'
+          + `#googlegpt-settings-close-btn path {${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: #9f9f9f ; fill: #9f9f9f' }}`
+          + '#googlegpt-settings-close-btn svg { margin: 6.5px }' // center SVG for hover underlay
+          + `#googlegpt-settings-close-btn:hover { background-color: #f2f2f2${ scheme == 'dark' ? '00' : '' }}`
+          + '#googlegpt-settings ul { list-style: none ; margin-bottom: 2px }' // hide bullets, close bottom gap
+          + '#googlegpt-settings li { font-size: 13.5px ; transition: transform 0.1s ease ;'
+              + `padding: 6px 10px ; border-bottom: 1px dotted ${ scheme == 'dark' ? 'white' : 'black' } ;` // add settings separators
+              + 'border-radius: 3px }' // make highlight strips slightly rounded
+          + '#googlegpt-settings li label { padding-right: 20px }' // right-pad labels so toggles don't hug
+          + '#googlegpt-settings li:last-of-type { border-bottom: none }' // remove last bottom-border
+          + '#googlegpt-settings li, #googlegpt-settings li label { cursor: pointer }' // add finger on hover
+          + '#googlegpt-settings li:hover {'
+              + 'background: rgba(100, 149, 237, 0.88) ; color: white ; fill: white ; stroke: white ;' // add highlight strip
+              + 'transform: scale(1.16) }' // add zoom
+          + '#googlegpt-settings li > input { float: right }' // pos toggles
+          + `#about-menu-entry span { color: ${ scheme == 'dark' ? '#28ee28' : 'green' }}`
+    )}
 
     function updateTweaksStyle() {
 
@@ -1283,21 +1663,21 @@
     }
 
     function updateTooltip(buttonType) { // text & position
-        const cornerBtnTypes = ['about', 'speak', 'ssb', 'csb', 'font-size', 'wsb']
+        const cornerBtnTypes = ['about', 'settings', 'speak', 'ssb', 'font-size', 'wsb']
                   .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
-        const [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [17, 17] : [10, 25],
+        const [ctrAddend, spreadFactor] = [9, 27],
               iniRoffset = spreadFactor * (buttonType == 'send' ? 1.65 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
         // Update text
         tooltipDiv.innerText = (
             buttonType == 'about' ? msgs.menuLabel_about || 'About'
+          : buttonType == 'settings' ? msgs.menuLabel_settings || 'Settings'
           : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
           : buttonType == 'ssb' ? (( config.stickySidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                   + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' ))
-          : buttonType == 'csb' ? msgs.menuLabel_colorScheme || 'Color Scheme'
+                                + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' ))
           : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
-                                   + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
+                                + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
           : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply' : '' )
 
         // Update position
@@ -1462,10 +1842,12 @@
         sidebar(mode) {
             saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
             updateTweaksStyle()
-            const wsbSVG = appDiv.querySelector('#wsb-btn svg'),
-                  ssbSVG = appDiv.querySelector('#ssb-btn svg')
-            if (mode == 'wider' && wsbSVG) icons.widescreen.update(wsbSVG)
-            else if (mode == 'sticky' && ssbSVG) icons.pin.update(ssbSVG)
+            const wsbSVGs = document.querySelectorAll('#ws-svg'),
+                  ssbSVGs = document.querySelectorAll('#pin-svg')
+            if (mode == 'wider' && wsbSVGs.length > 0)
+                wsbSVGs.forEach(svg => icons.widescreen.update(svg))                
+            else if (mode == 'sticky' && ssbSVGs.length > 0)
+                ssbSVGs.forEach(svg => icons.pin.update(svg))  
             notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
                 + ' ' + menuState.word[+config[mode + 'Sidebar']])
             refreshMenu()
@@ -1861,12 +2243,23 @@
                 // Create/append app title elems
                 updateTitleElems()
 
+                // Create/append corner buttons div
+                const cornerBtnsDiv = document.createElement('div') ; cornerBtnsDiv.id = 'corner-btns'
+                appDiv.append(cornerBtnsDiv)
+
                 // Create/append About button
                 const aboutSpan = document.createElement('span'),
                       aboutSVG = icons.about.create()
                 aboutSpan.id = 'about-btn' // for toggle.tooltip()
                 aboutSpan.className = 'corner-btn' ; aboutSpan.style.marginTop = `${ isMobile ? 0.25 : -0.15 }rem`
-                aboutSpan.append(aboutSVG) ; appDiv.append(aboutSpan)
+                aboutSpan.append(aboutSVG) ; cornerBtnsDiv.append(aboutSpan)
+
+                // Create/append Settings button
+                const settingsSpan = document.createElement('span'),
+                      settingsSVG = icons.sliders.create()
+                settingsSpan.id = 'settings-btn' // for toggle.tooltip()
+                settingsSpan.className = 'corner-btn' ; settingsSpan.style.margin = '-3px 7px 0 0'
+                settingsSpan.append(settingsSVG) ; cornerBtnsDiv.append(settingsSpan)
 
                 // Create/append Speak button
                 if (answer != 'standby') {
@@ -1875,7 +2268,7 @@
                     speakerSpan.id = 'speak-btn' // for toggle.tooltip()
                     speakerSpan.className = 'corner-btn'
                     speakerSpan.style.margin = `${ isMobile ? '0.11rem 10px' : '-0.29rem 5px' } 0 0`
-                    speakerSpan.append(speakerSVG) ; appDiv.append(speakerSpan)
+                    speakerSpan.append(speakerSVG) ; cornerBtnsDiv.append(speakerSpan)
                 }
 
                 // Create/append Sticky Sidebar button
@@ -1883,16 +2276,9 @@
                     var ssbSpan = document.createElement('span'),
                         ssbSVG = icons.pin.create()
                     ssbSpan.id = 'ssb-btn' // for toggle.sidebar() + toggle.tooltip()
-                    ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '-1px 8px 0 0'
-                    ssbSpan.append(ssbSVG) ; appDiv.append(ssbSpan)
+                    ssbSpan.className = 'corner-btn' ; ssbSpan.style.margin = '-1.55px 8px 0 0'
+                    ssbSpan.append(ssbSVG) ; cornerBtnsDiv.append(ssbSpan)
                 }
-
-                // Create/append Color Scheme button
-                const csbSpan = document.createElement('span'),
-                      csbSVG = icons.scheme.create()
-                csbSpan.id = 'csb-btn' // for toggle.tooltip()
-                csbSpan.className = 'corner-btn' ; csbSpan.style.margin = `${ isMobile ? 5 : -0.2}px 10px 0 0`
-                csbSpan.append(csbSVG) ; appDiv.append(csbSpan)
 
                 // Create/append Font Size button
                 if (answer != 'standby') {
@@ -1900,8 +2286,8 @@
                         fontSizeSVG = icons.fontSize.create()
                     fontSizeSpan.id = 'font-size-btn' // for toggle.tooltip()
                     fontSizeSpan.className = 'corner-btn'
-                    fontSizeSpan.style.margin = `${ isMobile ? 3 : -1 }px 11px 0 0`
-                    fontSizeSpan.append(fontSizeSVG) ; appDiv.append(fontSizeSpan)
+                    fontSizeSpan.style.margin = `${ isMobile ? 3 : -2 }px 11px 0 0`
+                    fontSizeSpan.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeSpan)
                 }
 
                 // Create/append Wider Sidebar button
@@ -1909,8 +2295,8 @@
                     var wsbSpan = document.createElement('span'),
                         wsbSVG = icons.widescreen.create()
                     wsbSpan.id = 'wsb-btn' // for toggle.sidebar() + toggle.tooltip()
-                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-1px 11px 0 0'
-                    wsbSpan.append(wsbSVG) ; appDiv.append(wsbSpan)
+                    wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = '-2px 11px 0 0'
+                    wsbSpan.append(wsbSVG) ; cornerBtnsDiv.append(wsbSpan)
                 }
 
                 // Add tooltips
@@ -1918,6 +2304,7 @@
 
                 // Add corner button listeners
                 aboutSVG.onclick = modals.about.show
+                settingsSVG.onclick = modals.settings.show
                 if (speakerSVG) speakerSVG.onclick = () => {
                     const dialectMap = [
                         { code: 'en', regex: /^(eng(lish)?|en(-\w\w)?)$/i, rate: 2 },
@@ -1964,11 +2351,10 @@
                     })
                 }
                 if (ssbSVG) ssbSVG.onclick = () => toggle.sidebar('sticky')
-                csbSVG.onclick = modals.scheme.show
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
                 if (wsbSVG) wsbSVG.onclick = () => toggle.sidebar('wider')
                 if (!isMobile) // add hover listeners for tooltips
-                    [aboutSpan, speakerSpan, ssbSpan, csbSpan, fontSizeSpan, wsbSpan].forEach(span => {
+                    [aboutSpan, settingsSpan, speakerSpan, ssbSpan, fontSizeSpan, wsbSpan].forEach(span => {
                         if (span) span.onmouseover = span.onmouseout = toggle.tooltip })
 
                 // Create/append 'by KudoAI' if it fits
@@ -2248,9 +2634,10 @@
     let scheme = config.scheme || ( isDarkMode() ? 'dark' : 'light' )
     const hasSidebar = !!document.querySelector('[class*="kp-"]')
 
-    // Pre-load LOGO
+    // Pre-load LOGO/ICON
     const appLogoImg = document.createElement('img') ; updateAppLogoSrc()
     appLogoImg.onload = () => { appLogoImg.loaded = true ; updateTitleElems() }
+    const appIcon = icons.googleGPT.create()
 
     // Create/ID/classify/listenerize GOOGLEGPT container
     const appDiv = document.createElement('div') ; appDiv.id = 'googlegpt' ;  appDiv.classList.add('fade-in')
