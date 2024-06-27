@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.12
+// @version             2024.6.27.13
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1767,7 +1767,7 @@ setTimeout(async () => {
                     return
                 if (resp.status != 200) {
                     consoleErr(logPrefix + 'Response status', resp.status)
-                    consoleErr(logPrefix + 'Response', resp)
+                    consoleErr(logPrefix + 'Response', JSON.stringify(resp))
                     if (caller == get.reply && caller.api == 'OpenAI')
                         appAlert(resp.status == 401 ? 'login'
                                : resp.status == 403 ? 'checkCloudflare'

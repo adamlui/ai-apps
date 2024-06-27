@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.9
+// @version             2024.6.27.10
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1698,7 +1698,7 @@
                     return
                 if (resp.status != 200) {
                     consoleErr(logPrefix + 'Response status', resp.status)
-                    consoleErr(logPrefix + 'Response', resp)
+                    consoleErr(logPrefix + 'Response', JSON.stringify(resp))
                     if (caller == get.reply && caller.api == 'OpenAI')
                         appAlert(resp.status == 401 ? 'login'
                                : resp.status == 403 ? 'checkCloudflare'
