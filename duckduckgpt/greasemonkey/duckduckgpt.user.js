@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.10
+// @version             2024.6.27.11
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -600,12 +600,12 @@
                 settingsContainer.classList = 'no-user-select'
                 const settingsModal = document.createElement('div') ; settingsModal.id = 'ddgpt-settings'
                 const settingsIcon = icons.ddgpt.create()
-                settingsIcon.style.cssText = 'width: 56px ; position: relative ; top: -33px ; margin: 0 39% -33px' // size/pos icon
-                const settingsTitle = document.createElement('div') ; settingsTitle.id = 'ddgpt-settings-title'
-                settingsTitle.innerHTML = `<h3>${config.appName}</h3><br><h4>${ msgs.menuLabel_settings || 'Settings' }</h4>`
+                settingsIcon.style.cssText = 'width: 56px ; position: relative ; top: -33px ; margin: 0 41% -12px' // size/pos icon
+                const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'ddgpt-settings-title'
+                const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
                 const settingsTitleIcon = icons.sliders.create()
                 settingsTitleIcon.style.cssText = 'width: 21px ; height: 21px ; margin-right: 3px ; position: relative ; top: 2.5px ; right: 3px'
-                settingsTitle.querySelector('h4').prepend(settingsTitleIcon)
+                settingsTitleH4.prepend(settingsTitleIcon) ; settingsTitleDiv.append(settingsTitleH4)
                 const settingsList = document.createElement('ul')
 
                 // Create/append setting icons/labels/toggles
@@ -745,7 +745,7 @@
                 closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
 
                 // Assemble/append elems
-                settingsModal.append(settingsIcon, settingsTitle, closeBtn, settingsList)
+                settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsList)
                 settingsContainer.append(settingsModal) ; document.body.append(settingsContainer)
 
                 // Add listeners to dismiss modal
@@ -1183,7 +1183,6 @@
               + '50% { opacity: 0.25 ; transform: scale(1.05) }'
               + '100% { opacity: 0 ; transform: scale(1.35) }}'
           + '#ddgpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 3px -3px 0 }'
-          + '#ddgpt-settings-title h3 { font-size: 19px ; font-weight: bold ; margin-top: -15px }' // 'DuckDuckGPT'
           + '#ddgpt-settings-title h4 { font-size: 26px ; font-weight: bold ; margin-top: -39px }' // 'Settings'
           + '#ddgpt-settings-close-btn {'
               + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
