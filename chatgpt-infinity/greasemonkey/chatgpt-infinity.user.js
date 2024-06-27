@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.27
+// @version             2024.6.27.1
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -244,7 +244,8 @@
         appName: 'ChatGPT Infinity', appSymbol: '∞', keyPrefix: 'chatGPTinfinity',
         gitHubURL: 'https://github.com/adamlui/chatgpt-infinity',
         greasyForkURL: 'https://greasyfork.org/scripts/465051-chatgpt-infinity',
-        latestAssetCommitHash: '609fc49' } // for messages.json + navicon
+        mediaHostURL: 'https://media.chatgptinfinity.com/',
+        latestAssetCommitHash: '609fc49' } // for cached messages.json + navicon
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = 'https://support.chatgptinfinity.com'
@@ -554,10 +555,9 @@
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
         const navicon = document.getElementById('infinity-toggle-navicon')
-        if (navicon) navicon.src = ( // update navicon color in case scheme changed
-            'https://media.chatgptinfinity.com/images/icons/infinity-symbol/'
-          + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${config.latestAssetCommitHash}`            
-        )
+        if (navicon) navicon.src = `${ // update navicon color in case scheme changed
+            config.mediaHostURL}images/icons/infinity-symbol/`
+          + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${config.latestAssetCommitHash}`
     }
 
     function updateToggleHTML() {
