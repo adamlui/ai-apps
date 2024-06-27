@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27
+// @version             2024.6.27.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -610,21 +610,7 @@
         const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
                       + settingsProps.rqDisabled.label + ' '
                       + menuState.separator + menuState.word[+!config.rqDisabled]
-        menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
-            saveSetting('rqDisabled', !config.rqDisabled)
-            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-            if (relatedQueriesDiv) // update visibility based on latest setting
-                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
-            if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
-                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.related(lastQuery).then(queries => show.related(queries))
-                    .catch(err => { consoleErr(err.message)
-                        if (get.related.status != 'done') api.tryNew(get.related) })
-            }
-            updateTweaksStyle() // toggle <pre> max-height
-            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
-            refreshMenu()
-        }))
+        menuIDs.push(GM_registerMenuCommand(rqLabel, toggleRelatedQueries))
 
         // Add command to toggle prefix mode
         const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
@@ -1450,6 +1436,22 @@
         notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
         refreshMenu()
         if (appDiv.querySelector('#googlegpt-alert')) location.reload() // re-send query if user alerted
+    }
+
+    function toggleRelatedQueries() {
+        saveSetting('rqDisabled', !config.rqDisabled)
+        const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+        if (relatedQueriesDiv) // update visibility based on latest setting
+            relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
+        if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
+            const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+            get.related(lastQuery).then(queries => show.related(queries))
+                .catch(err => { consoleErr(err.message)
+                    if (get.related.status != 'done') api.tryNew(get.related) })
+        }
+        updateTweaksStyle() // toggle <pre> max-height
+        notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
+        refreshMenu()
     }
 
     function toggleSidebar(mode) {

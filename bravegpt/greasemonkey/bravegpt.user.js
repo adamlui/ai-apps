@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27
+// @version             2024.6.27.1
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -415,21 +415,7 @@ setTimeout(async () => {
         const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
                       + settingsProps.rqDisabled.label + ' '
                       + menuState.separator + menuState.word[+!config.rqDisabled]
-        menuIDs.push(GM_registerMenuCommand(rqLabel, () => {
-            saveSetting('rqDisabled', !config.rqDisabled)
-            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-            if (relatedQueriesDiv) // update visibility based on latest setting
-                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
-            if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
-                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-                get.related(lastQuery).then(queries => show.related(queries))
-                    .catch(err => { consoleErr(err.message)
-                        if (get.related.status != 'done') api.tryNew(get.related) })
-            }
-            updateTweaksStyle() // toggle <pre> max-height
-            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
-            refreshMenu()
-        }))
+        menuIDs.push(GM_registerMenuCommand(rqLabel, toggleRelatedQueries))
 
         // Add command to toggle prefix mode
         const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
@@ -1214,6 +1200,22 @@ setTimeout(async () => {
         notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
         refreshMenu()
         if (appDiv.querySelector('#bravegpt-alert')) location.reload() // re-send query if user alerted
+    }
+
+    function toggleRelatedQueries() {
+        saveSetting('rqDisabled', !config.rqDisabled)
+        const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+        if (relatedQueriesDiv) // update visibility based on latest setting
+            relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
+        if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
+            const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+            get.related(lastQuery).then(queries => show.related(queries))
+                .catch(err => { consoleErr(err.message)
+                    if (get.related.status != 'done') api.tryNew(get.related) })
+        }
+        updateTweaksStyle() // toggle <pre> max-height
+        notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
+        refreshMenu()
     }
 
     function toggleSidebar(mode) {
