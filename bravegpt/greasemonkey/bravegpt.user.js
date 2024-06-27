@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.10
+// @version             2024.6.27.12
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1448,7 +1448,10 @@ setTimeout(async () => {
             saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
             notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
             refreshMenu()
-            if (appDiv.querySelector('#bravegpt-alert')) location.reload() // re-send query if user alerted 
+            const proxyToggle = document.querySelector('[id*="proxy"][id*="menu-entry"] input')
+            if (proxyToggle && proxyToggle.checked != config.proxyAPIenabled) // update visual state of Settings modal
+                modals.settings.toggle.switch(proxyToggle)
+            if (appDiv.querySelector('#ddgpt-alert')) location.reload() // re-send query if user alerted 
         },
 
         relatedQueries() {
@@ -1490,7 +1493,8 @@ setTimeout(async () => {
                         + ` <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a>.` // suggest SC
                         + ` (${ msgs.alert_userscriptMgrNoStream || 'Your userscript manager does not support returning stream responses' }.)`
                 )
-                if (streamingToggle) modals.settings.toggle.switch(streamingToggle) // reverse toggle visually
+                if (streamingToggle && streamingToggle.checked == config.streamingDisabled) // revert Settings auto-toggle
+                    modals.settings.toggle.switch(streamingToggle)
             } else if (getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave)) { // alert TM/browser unsupported, suggest SC
                 siteAlert(`${settingsProps.streamingDisabled.label} ${ msgs.alert_unavailable || 'unavailable' }`,
                     `${settingsProps.streamingDisabled.label} ${ msgs.alert_isUnsupportedIn || 'is unsupported in' } `
@@ -1498,7 +1502,8 @@ setTimeout(async () => {
                         + `${ msgs.alert_pleaseUse || 'Please use' } <a target="_blank" rel="noopener" href="${scriptCatLink}">ScriptCat</a> `
                             + `${ msgs.alert_instead || 'instead' }.`
                 )
-                if (streamingToggle) modals.settings.toggle.switch(streamingToggle) // reverse toggle visually
+                if (streamingToggle && streamingToggle.checked == config.streamingDisabled) // revert Settings auto-toggle
+                    modals.settings.toggle.switch(streamingToggle)
             } else if (!config.proxyAPIenabled) { // alert OpenAI API unsupported, suggest Proxy Mode
                 let msg = `${settingsProps.streamingDisabled.label} `
                         + `${ msgs.alert_isCurrentlyOnlyAvailBy || 'is currently only available by' } `
@@ -1509,7 +1514,8 @@ setTimeout(async () => {
                 const alertID = siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg),
                       alert = document.getElementById(alertID)
                 alert.querySelector('[href="#"]').onclick = () => { alert.querySelector('.modal-close-btn').click() ; toggle.proxyMode() }
-                if (streamingToggle) modals.settings.toggle.switch(streamingToggle) // reverse toggle visually
+                if (streamingToggle && streamingToggle.checked == config.streamingDisabled) // revert Settings auto-toggle
+                    modals.settings.toggle.switch(streamingToggle)
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
                 notify(settingsProps.streamingDisabled.label + ' ' + menuState.word[+!config.streamingDisabled])
