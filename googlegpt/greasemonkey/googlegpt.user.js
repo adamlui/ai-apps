@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.2
+// @version             2024.6.27.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1280,8 +1280,9 @@
     }
 
     function updateTooltip(buttonType) { // text & position
-        const cornerBtnTypes = ['about', 'speak', 'ssb', 'csb', 'font-size', 'wsb'],
-              [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [17, 17] : [10, 25],
+        const cornerBtnTypes = ['about', 'speak', 'ssb', 'csb', 'font-size', 'wsb']
+                  .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
+        const [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [17, 17] : [10, 25],
               iniRoffset = spreadFactor * (buttonType == 'send' ? 1.65 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
 
         // Update text
