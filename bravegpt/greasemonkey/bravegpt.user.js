@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.4
+// @version             2024.6.27.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -224,7 +224,7 @@ setTimeout(async () => {
         appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/KudoAI/bravegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt',
         minFontSize: 13, maxFontSize: 24, lineHeightRatio: 1.313,
-        latestAssetCommitHash: 'fbb1187' }
+        latestAssetCommitHash: 'fbb1187' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -2204,10 +2204,8 @@ setTimeout(async () => {
                 })})
 
                 // Auto-scroll if active
-                if (config.autoScroll && !isMobile && config.proxyAPIenabled && !config.streamingDisabled) {
-                    if (config.stickySidebar) answerPre.scrollTop = answerPre.scrollHeight
-                    else window.scrollBy({ top: appDiv.querySelector('footer').getBoundingClientRect().bottom - window.innerHeight + 13 })
-                }
+                if (config.autoScroll && !isMobile && config.proxyAPIenabled && !config.streamingDisabled)
+                    window.scrollBy({ top: appDiv.querySelector('footer').getBoundingClientRect().bottom - window.innerHeight + 13 })
             }
 
             // Focus chatbar conditionally
