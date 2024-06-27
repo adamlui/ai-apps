@@ -219,7 +219,7 @@
 // @description:zu      ⚡ Terus menghasilkan imibuzo eminingi ye-ChatGPT ngokwesizulu
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.20
+// @version             2024.6.27
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -251,11 +251,12 @@
     const config = {
         appName: 'ChatGPT Auto-Continue', appSymbol: '≫', keyPrefix: 'chatGPTautoContinue',
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-continue',
-        greasyForkURL: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue' }
+        greasyForkURL: 'https://greasyfork.org/scripts/466789-chatgpt-auto-continue',
+        latestAssetCommitHash: 'f546f1f' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@f546f1f/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
     config.userLanguage = chatgpt.getUserLanguage()
     loadSetting('notifDisabled')
 

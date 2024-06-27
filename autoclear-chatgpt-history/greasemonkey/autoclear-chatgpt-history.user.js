@@ -225,7 +225,7 @@
 // @description:zu      Ziba itshala lokucabanga okuzoshintshwa ngokuzenzakalelayo uma ukubuka chatgpt.com
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.26.1
+// @version             2024.6.27
 // @license             MIT
 // @icon                https://media.autoclearchatgpt.com/images/icons/openai/black/icon48.png?a8868ef
 // @icon64              https://media.autoclearchatgpt.com/images/icons/openai/black/icon64.png?a8868ef
@@ -266,11 +266,12 @@
     const config = {
         appName: 'Autoclear ChatGPT History', appSymbol: '🕶️', keyPrefix: 'autoclearChatGPThistory',
         gitHubURL: 'https://github.com/adamlui/autoclear-chatgpt-history',
-        greasyForkURL: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history' }
+        greasyForkURL: 'https://greasyfork.org/scripts/460805-autoclear-chatgpt-history',
+        latestAssetCommitHash: 'f34c294' } // for cached messages.json + navicon
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = 'https://support.autoclearchatgpt.com'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@f34c294/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
     config.userLanguage = chatgpt.getUserLanguage()
     loadSetting('autoclear', 'buttonHidden', 'notifDisabled', 'toggleHidden')
 
@@ -547,9 +548,10 @@
         if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
-        document.getElementById('autoclear-toggle-navicon').src = `${ // update navicon color in case scheme changed
-            config.assetHostURL }media/images/icons/incognito/${
-            chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
+        document.getElementById('autoclear-toggle-navicon').src = ( // update navicon color in case scheme changed
+            'https://media.autoclearchatgpt.com/images/icons/incognito/'
+          + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${config.latestAssetCommitHash}`
+        )
     }
 
     function updateToggleHTML() {

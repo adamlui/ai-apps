@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.24
+// @version             2024.6.27
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -266,11 +266,12 @@
     const config = {
         appName: 'ChatGPT Widescreen Mode', appSymbol: '🖥️', keyPrefix: site + 'Widescreen',
         gitHubURL: 'https://github.com/adamlui/chatgpt-widescreen',
-        greasyForkURL: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode' }
+        greasyForkURL: 'https://greasyfork.org/scripts/461473-chatgpt-widescreen-mode',
+        latestAssetCommitHash: '3645b51' } // for messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@3645b51/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
     config.userLanguage = chatgpt.getUserLanguage()
     loadSetting('autoFocusChatbarDisabled', 'fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
                 'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen')

@@ -220,7 +220,7 @@
 // @description:zu      *NGOKUPHEPHA* susa ukusetha kabusha ingxoxo yemizuzu eyi-10 + amaphutha enethiwekhi ahlala njalo + Ukuhlolwa kwe-Cloudflare ku-ChatGPT.
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.26
+// @version             2024.6.27
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -263,11 +263,12 @@
     const config = {
         appName: 'ChatGPT Auto Refresh', appSymbol: '↻', keyPrefix: 'chatGPTautoRefresh',
         gitHubURL: 'https://github.com/adamlui/chatgpt-auto-refresh',
-        greasyForkURL: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh' }
+        greasyForkURL: 'https://greasyfork.org/scripts/462422-chatgpt-auto-refresh',
+        latestAssetCommitHash: '7da042b' } // for messages.json + navicon
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = 'https://support.chatgptautorefresh.com'
-    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + '@7da042b/'
+    config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
     config.userLanguage = chatgpt.getUserLanguage()
     loadSetting('arDisabled', 'notifDisabled', 'refreshInterval', 'toggleHidden')
     if (!config.refreshInterval) saveSetting('refreshInterval', 30) // init refresh interval to 30 secs if unset
@@ -585,9 +586,10 @@
         if (isGPT4oUI) navToggleDiv.style.flexGrow = 'unset' // overcome OpenAI .grow
         if (!firstLink) parentToInsertInto.children[0].style.marginBottom = '5px'
         navToggleDiv.style.paddingLeft = '8px'
-        document.getElementById('auto-refresh-toggle-navicon').src = `${ // update navicon color in case scheme changed
-            config.assetHostURL }media/images/icons/auto-refresh/${
-            chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png`
+        document.getElementById('auto-refresh-toggle-navicon').src = ( // update navicon color in case scheme changed
+            'https://media.chatgptautorefresh.com/images/icons/auto-refresh/'
+          + `${ chatgpt.isDarkMode() ? 'white' : 'black' }/icon32.png?${config.latestAssetCommitHash}`
+        )
     }
 
     function updateToggleHTML() {
