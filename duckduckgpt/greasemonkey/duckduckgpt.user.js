@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.1
+// @version             2024.6.27.2
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -342,7 +342,7 @@
         const pamLabel = menuState.symbol[+config.proxyAPIenabled] + ' '
                        + settingsProps.proxyAPIenabled.label + ' '
                        + menuState.separator + menuState.word[+config.proxyAPIenabled]
-        menuIDs.push(GM_registerMenuCommand(pamLabel, toggleProxyMode))
+        menuIDs.push(GM_registerMenuCommand(pamLabel, toggle.proxyMode))
 
         // Add command to toggle streaming mode or alert unsupported
         const stmState = !config.proxyAPIenabled ? false : !config.streamingDisabled // show disabled state to OpenAI users
@@ -376,7 +376,7 @@
                 msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
                 const alertID = siteAlert(`${ msgs.mode_streaming || 'Streaming Mode' } ${ msgs.alert_unavailable || 'unavailable' }`, msg),
                       alert = document.getElementById(alertID)
-                alert.querySelector('[href="#"]').onclick = () => { alert.querySelector('.modal-close-btn').click() ; toggleProxyMode() }
+                alert.querySelector('[href="#"]').onclick = () => { alert.querySelector('.modal-close-btn').click() ; toggle.proxyMode() }
             } else { // functional toggle
                 saveSetting('streamingDisabled', !config.streamingDisabled)
                 notify(settingsProps.streamingDisabled.label + ' ' + menuState.word[+!config.streamingDisabled])
@@ -421,7 +421,7 @@
         const rqLabel = menuState.symbol[+!config.rqDisabled] + ' '
                       + settingsProps.rqDisabled.label + ' '
                       + menuState.separator + menuState.word[+!config.rqDisabled]
-        menuIDs.push(GM_registerMenuCommand(rqLabel, toggleRelatedQueries))
+        menuIDs.push(GM_registerMenuCommand(rqLabel, toggle.relatedQueries))
 
         // Add command to toggle prefix mode
         const pfmLabel = menuState.symbol[+config.prefixEnabled] + ' '
@@ -453,13 +453,13 @@
             const wsbLabel = menuState.symbol[+config.widerSidebar] + ' '
                            + settingsProps.widerSidebar.label
                            + menuState.separator + menuState.word[+config.widerSidebar]
-            menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggleSidebar('wider')))
+            menuIDs.push(GM_registerMenuCommand(wsbLabel, () => toggle.sidebar('wider')))
 
             // Add command to toggle sticky sidebar
             const ssbLabel = menuState.symbol[+config.stickySidebar] + ' '
                            + settingsProps.stickySidebar.label
                            + menuState.separator + menuState.word[+config.stickySidebar]
-            menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggleSidebar('sticky')))
+            menuIDs.push(GM_registerMenuCommand(ssbLabel, () => toggle.sidebar('sticky')))
         }
 
         // Add command to set reply language
@@ -582,7 +582,7 @@
             // Hyperlink msgs.alert_switching<On|Off>
             const foundState = ['On', 'Off'].find(state =>
                 msg.includes(msgs['alert_switching' + state]) || new RegExp(`\\b${state}\\b`, 'i').test(msg))
-            if (foundState) { // hyperlink switch phrase for click listener to toggleProxyMode()
+            if (foundState) { // hyperlink switch phrase for click listener to toggle.proxyMode()
                 const switchPhrase = msgs['alert_switching' + foundState] || 'switching ' + foundState.toLowerCase()
                 msg = msg.replace(switchPhrase, `<a class="alert-link" href="#">${switchPhrase}</a>`)
             }
@@ -592,7 +592,7 @@
             msgSpan.innerHTML = msg ; alertP.append(msgSpan)
 
             // Activate toggle link if necessary
-            msgSpan.querySelector('[href="#"]')?.addEventListener('click', toggleProxyMode)
+            msgSpan.querySelector('[href="#"]')?.addEventListener('click', toggle.proxyMode)
         })
         appDiv.append(alertP)
     }
@@ -964,7 +964,7 @@
 
     function updateTweaksStyle() {
 
-        // Update tweaks style based on settings (for tweaks init + show.reply() + toggleSidebar())
+        // Update tweaks style based on settings (for tweaks init + show.reply() + toggle.sidebar())
         const isStandbyMode = appDiv.querySelector('.standby-btn'),
               answerIsLoaded = appDiv.querySelector('.corner-btn')
         tweaksStyle.innerText = ( config.widerSidebar ? wsbStyles : '' )
@@ -1128,45 +1128,47 @@
 
     // Define TOGGLE functions
 
-    function toggleProxyMode() {
-        saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
-        notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
-        refreshMenu()
-        if (appDiv.querySelector('#ddgpt-alert')) location.reload() // re-send query if user alerted
-    }
+    const toggle = {
+        proxyMode() {
+            saveSetting('proxyAPIenabled', !config.proxyAPIenabled)
+            notify(( msgs.menuLabel_proxyAPImode || 'Proxy API Mode' ) + ' ' + menuState.word[+config.proxyAPIenabled])
+            refreshMenu()
+            if (appDiv.querySelector('#ddgpt-alert')) location.reload() // re-send query if user alerted 
+        },
 
-    function toggleRelatedQueries() {
-        saveSetting('rqDisabled', !config.rqDisabled)
-        const relatedQueriesDiv = appDiv.querySelector('.related-queries')
-        if (relatedQueriesDiv) // update visibility based on latest setting
-            relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
-        if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
-            const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
-            get.related(lastQuery).then(queries => show.related(queries))
-                .catch(err => { consoleErr(err.message)
-                    if (get.related.status != 'done') api.tryNew(get.related) })
+        relatedQueries() {
+            saveSetting('rqDisabled', !config.rqDisabled)
+            const relatedQueriesDiv = appDiv.querySelector('.related-queries')
+            if (relatedQueriesDiv) // update visibility based on latest setting
+                relatedQueriesDiv.style.display = config.rqDisabled ? 'none' : 'flex'
+            if (!config.rqDisabled && !relatedQueriesDiv) { // get related queries for 1st time
+                const lastQuery = stripQueryAugments(msgChain)[msgChain.length - 1].content
+                get.related(lastQuery).then(queries => show.related(queries))
+                    .catch(err => { consoleErr(err.message)
+                        if (get.related.status != 'done') api.tryNew(get.related) })
+            }
+            updateTweaksStyle() // toggle <pre> max-height
+            notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
+            refreshMenu()
+        },
+
+        sidebar(mode) {
+            saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
+            updateTweaksStyle()
+            const wsbSVG = appDiv.querySelector('#wsb-btn svg'),
+                  ssbSVG = appDiv.querySelector('#ssb-btn svg')
+            if (mode == 'wider' && wsbSVG) icons.widescreen.update(wsbSVG)
+            else if (mode == 'sticky' && ssbSVG) icons.pin.update(ssbSVG)
+            notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
+                + ' ' + menuState.word[+config[mode + 'Sidebar']])
+            refreshMenu()
+        },
+
+        tooltip(event) { // visibility
+            tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
+            updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
+            tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
         }
-        updateTweaksStyle() // toggle <pre> max-height
-        notify(( msgs.menuLabel_relatedQueries || 'Related Queries' ) + ' ' + menuState.word[+!config.rqDisabled])
-        refreshMenu()
-    }
-
-    function toggleSidebar(mode) {
-        saveSetting(mode + 'Sidebar', !config[mode + 'Sidebar'])
-        updateTweaksStyle()
-        const wsbSVG = appDiv.querySelector('#wsb-btn svg'),
-              ssbSVG = appDiv.querySelector('#ssb-btn svg')
-        if (mode == 'wider' && wsbSVG) icons.widescreen.update(wsbSVG)
-        else if (mode == 'sticky' && ssbSVG) icons.pin.update(ssbSVG)
-        notify(( msgs[`menuLabel_${ mode }Sidebar`] || mode.charAt(0).toUpperCase() + mode.slice(1) + ' Sidebar' )
-            + ' ' + menuState.word[+config[mode + 'Sidebar']])
-        refreshMenu()
-    }
-
-    function toggleTooltip(event) { // visibility
-        tooltipDiv.eventYpos = event.currentTarget.getBoundingClientRect().top // for updateTooltip() y-pos calc
-        updateTooltip(event.currentTarget.id.replace(/-btn$/, ''))
-        tooltipDiv.style.opacity = event.type == 'mouseover' ? 1 : 0
     }
 
     // Define SESSION functions
@@ -1557,7 +1559,7 @@
                 // Create/append About button
                 const aboutSpan = document.createElement('span'),
                       aboutSVG = icons.about.create()
-                aboutSpan.id = 'about-btn' // for toggleTooltip()
+                aboutSpan.id = 'about-btn' // for toggle.tooltip()
                 aboutSpan.className = 'corner-btn'
                 aboutSpan.append(aboutSVG) ; cornerBtnsDiv.append(aboutSpan)
 
@@ -1565,7 +1567,7 @@
                 if (answer != 'standby') {
                     var speakerSpan = document.createElement('span'),
                         speakerSVG = icons.speaker.create()
-                    speakerSpan.id = 'speak-btn' // for toggleTooltip()
+                    speakerSpan.id = 'speak-btn' // for toggle.tooltip()
                     speakerSpan.className = 'corner-btn' ; speakerSpan.style.margin = '-2px 8px 0 0'
                     speakerSpan.append(speakerSVG) ; cornerBtnsDiv.append(speakerSpan)
                 }
@@ -1574,7 +1576,7 @@
                 if (!isCentered && !isMobile) {
                     var ssbSpan = document.createElement('span'),
                         ssbSVG = icons.pin.create()
-                    ssbSpan.id = 'ssb-btn' // for toggleSidebar() + toggleTooltip()
+                    ssbSpan.id = 'ssb-btn' // for toggle.sidebar() + toggle.tooltip()
                     ssbSpan.className = 'corner-btn' ; ssbSpan.style.marginRight = '8px'
                     ssbSpan.append(ssbSVG) ; cornerBtnsDiv.append(ssbSpan)
                 }
@@ -1582,7 +1584,7 @@
                 // Create/append Color Scheme button
                 const csbSpan = document.createElement('span'),
                       csbSVG = icons.scheme.create()
-                csbSpan.id = 'csb-btn' // for toggleTooltip()
+                csbSpan.id = 'csb-btn' // for toggle.tooltip()
                 csbSpan.className = 'corner-btn' ; csbSpan.style.margin = '-0.2px 9px 0 0'
                 csbSpan.append(csbSVG) ; cornerBtnsDiv.append(csbSpan)
 
@@ -1590,7 +1592,7 @@
                 if (answer != 'standby') {
                     var fontSizeSpan = document.createElement('span'),
                         fontSizeSVG = icons.fontSize.create()
-                    fontSizeSpan.id = 'font-size-btn' // for toggleTooltip()
+                    fontSizeSpan.id = 'font-size-btn' // for toggle.tooltip()
                     fontSizeSpan.className = 'corner-btn' ; fontSizeSpan.style.margin = '0 10px 0 2px'
                     fontSizeSpan.append(fontSizeSVG) ; cornerBtnsDiv.append(fontSizeSpan)
                 }
@@ -1599,7 +1601,7 @@
                 if (!isCentered && !isMobile) {   
                     var wsbSpan = document.createElement('span'),
                         wsbSVG = icons.widescreen.create()
-                    wsbSpan.id = 'wsb-btn' // for toggleSidebar() + toggleTooltip()
+                    wsbSpan.id = 'wsb-btn' // for toggle.sidebar() + toggle.tooltip()
                     wsbSpan.className = 'corner-btn' ; wsbSpan.style.margin = `${ isFirefox ? 0 : -1 }px 12.5px 0 0`
                     wsbSpan.append(wsbSVG) ; cornerBtnsDiv.append(wsbSpan)
                 }
@@ -1654,13 +1656,13 @@
                         })}}
                     })
                 }
-                if (ssbSVG) ssbSVG.onclick = () => toggleSidebar('sticky')
+                if (ssbSVG) ssbSVG.onclick = () => toggle.sidebar('sticky')
                 csbSVG.onclick = modals.scheme.show
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
-                if (wsbSVG) wsbSVG.onclick = () => toggleSidebar('wider')
+                if (wsbSVG) wsbSVG.onclick = () => toggle.sidebar('wider')
                 if (!isMobile) // add hover listeners for tooltips
                     [aboutSpan, speakerSpan, ssbSpan, csbSpan, fontSizeSpan, wsbSpan].forEach(span => {
-                        if (span) span.onmouseover = span.onmouseout = toggleTooltip })
+                        if (span) span.onmouseover = span.onmouseout = toggle.tooltip })
 
                 // Create/append 'by KudoAI'
                 const kudoAIspan = document.createElement('span')
@@ -1730,7 +1732,7 @@
                 replyForm.onsubmit = handleSubmit
                 chatTextarea.oninput = autosizeChatbar
                 if (!isMobile) // add hover listeners for tooltips
-                    sendButton.onmouseover = sendButton.onmouseout = toggleTooltip
+                    sendButton.onmouseover = sendButton.onmouseout = toggle.tooltip
 
                 // Scroll to top on mobile if user interacted
                 if (isMobile && show.reply.submitSrc) {
