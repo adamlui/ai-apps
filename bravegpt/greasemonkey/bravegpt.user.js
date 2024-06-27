@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.13
+// @version             2024.6.27.14
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -593,12 +593,12 @@ setTimeout(async () => {
                 settingsContainer.classList = 'no-user-select'
                 const settingsModal = document.createElement('div') ; settingsModal.id = 'bravegpt-settings'
                 const settingsIcon = icons.braveGPT.create()
-                settingsIcon.style.cssText = 'width: 59px ; position: relative ; top: -33px ; margin: 0px 41% -33px' // size/pos icon
-                const settingsTitle = document.createElement('div') ; settingsTitle.id = 'bravegpt-settings-title'
-                settingsTitle.innerHTML = `<h3>${config.appName}</h3><br><h4>${ msgs.menuLabel_settings || 'Settings' }</h4>`
+                settingsIcon.style.cssText = 'width: 59px ; position: relative ; top: -33px ; margin: 0px 41% -8px' // size/pos icon
+                const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'bravegpt-settings-title'
+                const settingsTitleH4 = document.createElement('h4') ; settingsTitleH4.textContent = msgs.menuLabel_settings || 'Settings'
                 const settingsTitleIcon = icons.sliders.create()
                 settingsTitleIcon.style.cssText = 'width: 21px ; height: 21px ; margin-right: -4px ; position: relative ; top: 2px ; right: 10px'
-                settingsTitle.querySelector('h4').prepend(settingsTitleIcon)
+                settingsTitleH4.prepend(settingsTitleIcon) ; settingsTitleDiv.append(settingsTitleH4)
                 const settingsList = document.createElement('ul')
 
                 // Create/append setting icons/labels/toggles
@@ -735,7 +735,7 @@ setTimeout(async () => {
                 closeSVG.append(closeSVGpath) ; closeBtn.append(closeSVG)
 
                 // Assemble/append elems
-                settingsModal.append(settingsIcon, settingsTitle, closeBtn, settingsList)
+                settingsModal.append(settingsIcon, settingsTitleDiv, closeBtn, settingsList)
                 settingsContainer.append(settingsModal) ; document.body.append(settingsContainer)
 
                 // Add listeners to dismiss modal
@@ -1165,7 +1165,6 @@ setTimeout(async () => {
               + '50% { opacity: 0.25 ; transform: scale(1.05) }'
               + '100% { opacity: 0 ; transform: scale(1.35) }}'
           + '#bravegpt-settings-title { font-weight: bold ; line-height: 19px ; text-align: center ; margin: 0 -6px -3px 0 }'
-          + '#bravegpt-settings-title h3 { font-size: 19px ; font-weight: bold ; margin-top: -9px }' // 'BraveGPT'
           + '#bravegpt-settings-title h4 { font-size: 26px ; font-weight: bold ; margin-top: -31px }' // 'Settings'
           + '#bravegpt-settings-close-btn {'
               + 'cursor: pointer ; width: 20px ; height: 20px ; border-radius: 17px ; float: right ;'
