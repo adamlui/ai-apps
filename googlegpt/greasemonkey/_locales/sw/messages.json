@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Jibu la mchezo" },
   "tooltip_fontSize": { "message": "Ukubwa wa fonti:" },
   "tooltip_sendReply": { "message": "Tuma jibu" },
+  "tooltip_feelingLucky": { "message": "Ninahisi Bahati" },
   "tooltip_close": { "message": "Funga" },
   "tooltip_sendRelatedQuery": { "message": "Tuma swali linalohusiana" },
   "placeholder_askSomethingElse": { "message": "Uliza kitu kingine" },

@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "જવાબ રમો" },
   "tooltip_fontSize": { "message": "ફોન્ટ માપ" },
   "tooltip_sendReply": { "message": "જવાબ મોકલો" },
+  "tooltip_feelingLucky": { "message": "હું નસીબદાર અનુભવું છું" },
   "tooltip_close": { "message": "બંધ કરો" },
   "tooltip_sendRelatedQuery": { "message": "સંબંધિત ક્વેરી મોકલો" },
   "placeholder_askSomethingElse": { "message": "કઈંક પૂછો" },

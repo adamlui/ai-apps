@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Lumikizanani nafe" },
   "tooltip_fontSize": { "message": "Kakulidwe ka fonti:" },
   "tooltip_sendReply": { "message": "Tumizani yankho" },
+  "tooltip_feelingLucky": { "message": "Ine ndikumverera mwayi" },
   "tooltip_close": { "message": "tseka" },
   "tooltip_sendRelatedQuery": { "message": "Tumizani mafunso okhudzana" },
   "placeholder_askSomethingElse": { "message": "Funsani china" },

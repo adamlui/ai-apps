@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Paleisti atsakymą" },
   "tooltip_fontSize": { "message": "Šrifto dydis" },
   "tooltip_sendReply": { "message": "Siųsti atsakymą" },
+  "tooltip_feelingLucky": { "message": "Man pasisekė" },
   "tooltip_close": { "message": "Užverti" },
   "tooltip_sendRelatedQuery": { "message": "Siųsti susijusią užklausą" },
   "placeholder_askSomethingElse": { "message": "Kažkas kita" },

@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Jawaabta ciyaar" },
   "tooltip_fontSize": { "message": "Cabbirka font" },
   "tooltip_sendReply": { "message": "Jawaab u dir" },
+  "tooltip_feelingLucky": { "message": "Waxaan dareemayaa nasiib wacan." },
   "tooltip_close": { "message": "Xir" },
   "tooltip_sendRelatedQuery": { "message": "U dir su 'aalaha la xiriira" },
   "placeholder_askSomethingElse": { "message": "Weydii wax kale" },

@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Spila svar" },
   "tooltip_fontSize": { "message": "Letursstærð" },
   "tooltip_sendReply": { "message": "Senda svar" },
+  "tooltip_feelingLucky": { "message": "Mér finnst ég heppinn" },
   "tooltip_close": { "message": "Loka" },
   "tooltip_sendRelatedQuery": { "message": "Senda tengda fyrirspurn" },
   "placeholder_askSomethingElse": { "message": "Spurðu um eitthvað annað" },

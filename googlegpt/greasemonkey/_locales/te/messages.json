@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "సమాధానం ప్లే చేయండి" },
   "tooltip_fontSize": { "message": "ఫాంటు పరిమాణము@ label Font style" },
   "tooltip_sendReply": { "message": "ప్రత్యుత్తరం పంపండి" },
+  "tooltip_feelingLucky": { "message": "నేను అదృష్టవంతురాలిగా భావిస్తున్నాను" },
   "tooltip_close": { "message": "క్లోజ్ చేయండి" },
   "tooltip_sendRelatedQuery": { "message": "సంబంధిత ప్రశ్నను పంపండి" },
   "placeholder_askSomethingElse": { "message": "మరేదైనా అడగండి" },

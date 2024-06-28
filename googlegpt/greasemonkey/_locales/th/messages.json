@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "เล่นคำตอบ" },
   "tooltip_fontSize": { "message": "ขนาดฟอนต์" },
   "tooltip_sendReply": { "message": "ส่งข้อความ" },
+  "tooltip_feelingLucky": { "message": "ผมรู้สึกโชคดี" },
   "tooltip_close": { "message": "ปิด" },
   "tooltip_sendRelatedQuery": { "message": "ส่งคำค้นหาที่เกี่ยวข้อง" },
   "placeholder_askSomethingElse": { "message": "ถามบางสิ่ง" },

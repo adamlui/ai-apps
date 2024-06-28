@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Igisubizo" },
   "tooltip_fontSize": { "message": "Imyandikire" },
   "tooltip_sendReply": { "message": "Subiza" },
+  "tooltip_feelingLucky": { "message": "Ndumva nishimye" },
   "tooltip_close": { "message": "Gufunga" },
   "tooltip_sendRelatedQuery": { "message": "Ikibazo #" },
   "placeholder_askSomethingElse": { "message": "Ikindi" },

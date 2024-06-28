@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "ਚਲਾਓ ਜਵਾਬ" },
   "tooltip_fontSize": { "message": "ਫੋਂਟ ਸਾਈਜ਼" },
   "tooltip_sendReply": { "message": "ਜਵਾਬ ਭੇਜੋ" },
+  "tooltip_feelingLucky": { "message": "ਮੈਂ ਖੁਸ਼ਕਿਸਮਤ ਮਹਿਸੂਸ ਕਰ ਰਿਹਾ ਹਾਂ" },
   "tooltip_close": { "message": "ਬੰਦ" },
   "tooltip_sendRelatedQuery": { "message": "ਸੰਬੰਧਿਤ ਪੁੱਛਗਿੱਛ ਭੇਜੋ" },
   "placeholder_askSomethingElse": { "message": "ਕੁਝ ਹੋਰ ਪੁੱਛੋ" },

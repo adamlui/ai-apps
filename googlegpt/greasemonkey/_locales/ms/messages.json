@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Mainkan jawapan" },
   "tooltip_fontSize": { "message": "Saiz huruf" },
   "tooltip_sendReply": { "message": "Balas" },
+  "tooltip_feelingLucky": { "message": "Saya Rasa Bertuah" },
   "tooltip_close": { "message": "Tutup" },
   "tooltip_sendRelatedQuery": { "message": "Hantar pertanyaan berkaitan" },
   "placeholder_askSomethingElse": { "message": "Tanya perkara lain" },

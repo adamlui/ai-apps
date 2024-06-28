@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Пушти одговор" },
   "tooltip_fontSize": { "message": "Големина на фонтот" },
   "tooltip_sendReply": { "message": "Прати одговор" },
+  "tooltip_feelingLucky": { "message": "Се чувствувам среќно" },
   "tooltip_close": { "message": "Затвори" },
   "tooltip_sendRelatedQuery": { "message": "Испрати поврзано барање" },
   "placeholder_askSomethingElse": { "message": "Нешто друго" },

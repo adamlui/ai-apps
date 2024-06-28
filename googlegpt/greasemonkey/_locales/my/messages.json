@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "အဖြေကို ဖွင့်ပါ" },
   "tooltip_fontSize": { "message": "ဖောင့်အရွယ်အစား" },
   "tooltip_sendReply": { "message": "ပြန်စာပို့ရန်" },
+  "tooltip_feelingLucky": { "message": "ငါ ကံေကာင္းေနတယ္လို႔ ခံစားရျခင္း" },
   "tooltip_close": { "message": "ပိတ်ရန်" },
   "tooltip_sendRelatedQuery": { "message": "ဆက်စပ်မေးမြန်းချက် ပေးပို့ပါ" },
   "placeholder_askSomethingElse": { "message": "အခြားတစ်ခုခုကို မေးပါ" },

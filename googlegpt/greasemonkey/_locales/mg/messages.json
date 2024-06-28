@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Mamaky valiny" },
   "tooltip_fontSize": { "message": "Haben'ilay endritsoratra" },
   "tooltip_sendReply": { "message": "Alefaso ny valiny" },
+  "tooltip_feelingLucky": { "message": "Tsara vintana aho" },
   "tooltip_close": { "message": "Mifanakaiky" },
   "tooltip_sendRelatedQuery": { "message": "Handefa fangataham-panazavana mifandraika amin'izany" },
   "placeholder_askSomethingElse": { "message": "Manontania zavatra hafa" },

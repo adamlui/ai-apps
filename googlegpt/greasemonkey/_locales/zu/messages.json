@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Impendulo yokudlala" },
   "tooltip_fontSize": { "message": "Usayizi wefonti" },
   "tooltip_sendReply": { "message": "Thumela impendulo" },
+  "tooltip_feelingLucky": { "message": "Ngizizwa Nginenhlanhla" },
   "tooltip_close": { "message": "Vala" },
   "tooltip_sendRelatedQuery": { "message": "Thumela umbuzo ohlobene" },
   "placeholder_askSomethingElse": { "message": "Buza okunye" },

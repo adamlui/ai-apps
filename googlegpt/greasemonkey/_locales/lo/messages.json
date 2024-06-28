@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "ຫຼິ້ນຄໍາຕອບ" },
   "tooltip_fontSize": { "message": "ຂະໜາດຕົວອັກສອນ" },
   "tooltip_sendReply": { "message": "ຕອບ ຕອບ" },
+  "tooltip_feelingLucky": { "message": "ຂ້ອຍຮູ້ສຶກໂຊກດີ" },
   "tooltip_close": { "message": "ປິດ" },
   "tooltip_sendRelatedQuery": { "message": "ສົ່ງຄຳຖາມທີ່ກ່ຽວຂ້ອງ" },
   "placeholder_askSomethingElse": { "message": "" },

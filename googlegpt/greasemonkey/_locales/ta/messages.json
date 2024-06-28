@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "பதிலை இயக்கவும்" },
   "tooltip_fontSize": { "message": "எறும்பு அளவு" },
   "tooltip_sendReply": { "message": "பதில் அனுப்பு" },
+  "tooltip_feelingLucky": { "message": "நான் அதிர்ஷ்டசாலி போல் உணர்கிறேன்" },
   "tooltip_close": { "message": "மூடு" },
   "tooltip_sendRelatedQuery": { "message": "தொடர்புடைய வினவலை அனுப்பவும்" },
   "placeholder_askSomethingElse": { "message": "வேறு ஏதாவது கேளுங்கள்" },

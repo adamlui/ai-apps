@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Mängi / Vasta" },
   "tooltip_fontSize": { "message": "Kirjasuurus" },
   "tooltip_sendReply": { "message": "Saada vastus" },
+  "tooltip_feelingLucky": { "message": "Mul on vedanud" },
   "tooltip_close": { "message": "Sulge" },
   "tooltip_sendRelatedQuery": { "message": "Saada seotud päring" },
   "placeholder_askSomethingElse": { "message": "Küsi midagi" },

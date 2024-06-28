@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Reproduciraj odgovor" },
   "tooltip_fontSize": { "message": "Veličina fonta" },
   "tooltip_sendReply": { "message": "Pošalji odgovor" },
+  "tooltip_feelingLucky": { "message": "Osjećam se sretno" },
   "tooltip_close": { "message": "Zatvori" },
   "tooltip_sendRelatedQuery": { "message": "Pošaljite povezani upit" },
   "placeholder_askSomethingElse": { "message": "Nešto drugo" },

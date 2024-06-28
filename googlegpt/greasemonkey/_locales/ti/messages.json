@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "መልሲ ተጻወት" },
   "tooltip_fontSize": { "message": "መጠን ፊደላት" },
   "tooltip_sendReply": { "message": "መልሲ ልኣኽ" },
+  "tooltip_feelingLucky": { "message": "ዕድለኛ እየ ዝስምዓኒ" },
   "tooltip_close": { "message": "ዕጾ" },
   "tooltip_sendRelatedQuery": { "message": "ምስዚ ዚተሓሓዝ ሕቶ ልኣኽ" },
   "placeholder_askSomethingElse": { "message": "ካልእ ነገር ሕተቶ" },

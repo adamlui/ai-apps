@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Odtwórz odpowiedź" },
   "tooltip_fontSize": { "message": "Rozmiar czcionki" },
   "tooltip_sendReply": { "message": "Odpowiedz" },
+  "tooltip_feelingLucky": { "message": "Czuję, że mam szczęście" },
   "tooltip_close": { "message": "Zamknij" },
   "tooltip_sendRelatedQuery": { "message": "Wyślij powiązane zapytanie" },
   "placeholder_askSomethingElse": { "message": "Coś innego" },

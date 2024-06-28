@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Reperire" },
   "tooltip_fontSize": { "message": "Dimensio typi:" },
   "tooltip_sendReply": { "message": "Opportuna" },
+  "tooltip_feelingLucky": { "message": "Me 'm Feeling Lucky" },
   "tooltip_close": { "message": "Claudere" },
   "tooltip_sendRelatedQuery": { "message": "Quaeso relatum" },
   "placeholder_askSomethingElse": { "message": "QUE QUAE QUAGE" },

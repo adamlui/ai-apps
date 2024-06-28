@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Cluich am freagairt" },
   "tooltip_fontSize": { "message": "Meud a' chrutha-clò..." },
   "tooltip_sendReply": { "message": "Cuir freagairt" },
+  "tooltip_feelingLucky": { "message": "I am aghast Lucky" },
   "tooltip_close": { "message": "Dùin" },
   "tooltip_sendRelatedQuery": { "message": "Cuir a 'cheist co - cheangailte ris" },
   "placeholder_askSomethingElse": { "message": "Cuir ceist air rudeigin eile" },

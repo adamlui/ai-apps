@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Spela svar" },
   "tooltip_fontSize": { "message": "Teckenstorlek" },
   "tooltip_sendReply": { "message": "Skicka svar" },
+  "tooltip_feelingLucky": { "message": "Jag känner mig lyckligt lottad" },
   "tooltip_close": { "message": "Stäng" },
   "tooltip_sendRelatedQuery": { "message": "Skicka relaterad fråga" },
   "placeholder_askSomethingElse": { "message": "Någonting annat" },

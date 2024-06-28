@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Tubag sa pagdula" },
   "tooltip_fontSize": { "message": "Gidak-on sa font..." },
   "tooltip_sendReply": { "message": "Ipadala ang tubag" },
+  "tooltip_feelingLucky": { "message": "Gibati nako nga swerte" },
   "tooltip_close": { "message": "Duol" },
   "tooltip_sendRelatedQuery": { "message": "Ipadala ang may kalabutan nga pangutana" },
   "placeholder_askSomethingElse": { "message": "Pangutan-a ang usa ka butang nga lain" },

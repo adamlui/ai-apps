@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Жауапты ойнату" },
   "tooltip_fontSize": { "message": "Қаріп өлшемі" },
   "tooltip_sendReply": { "message": "Жауап жіберу" },
+  "tooltip_feelingLucky": { "message": "Мен өзімді бақытты сезінемін" },
   "tooltip_close": { "message": "Жабу" },
   "tooltip_sendRelatedQuery": { "message": "Тиісті сұранысты жіберу" },
   "placeholder_askSomethingElse": { "message": "Басқа нәрсе сұраңыз" },

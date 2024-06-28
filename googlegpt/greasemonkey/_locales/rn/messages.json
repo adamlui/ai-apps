@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Kwinana Reply" },
   "tooltip_fontSize": { "message": "Ubunini bwa Font" },
   "tooltip_sendReply": { "message": "Rungika Rungika" },
+  "tooltip_feelingLucky": { "message": "Numva nishimye" },
   "tooltip_close": { "message": "Ugara" },
   "tooltip_sendRelatedQuery": { "message": "Rungika Rungika Ibibazo bifitaniye isano" },
   "placeholder_askSomethingElse": { "message": "Nusabe ikindi kintu" },

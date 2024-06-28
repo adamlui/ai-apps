@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "جواب پلے کریں" },
   "tooltip_fontSize": { "message": "فونٹ سائز" },
   "tooltip_sendReply": { "message": "جواب بھیجیں" },
+  "tooltip_feelingLucky": { "message": "میں خوش قسمت محسوس کر رہا ہوں" },
   "tooltip_close": { "message": "بند" },
   "tooltip_sendRelatedQuery": { "message": "متعلقہ استفسار بھیجیں" },
   "placeholder_askSomethingElse": { "message": "کچھ پوچھیں" },

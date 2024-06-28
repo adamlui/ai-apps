@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Phát câu trả lời" },
   "tooltip_fontSize": { "message": "Kích thước phông" },
   "tooltip_sendReply": { "message": "Trả lời" },
+  "tooltip_feelingLucky": { "message": "Tôi đang cảm thấy may mắn" },
   "tooltip_close": { "message": "Đóng" },
   "tooltip_sendRelatedQuery": { "message": "Gửi truy vấn liên quan" },
   "placeholder_askSomethingElse": { "message": "Khác" },
