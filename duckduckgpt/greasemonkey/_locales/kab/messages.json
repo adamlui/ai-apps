@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Urar tiririt" },
   "tooltip_fontSize": { "message": "&Teɣzi n tsefsit" },
   "tooltip_sendReply": { "message": "Azen tiririt" },
+  "tooltip_askRandQuestion": { "message": "Asteqsi n usteqsi" },
   "tooltip_close": { "message": "Mdel" },
   "tooltip_sendRelatedQuery": { "message": "Azen asteqsi yettwaxedmen" },
   "placeholder_typeSomething": { "message": "Aru yiwet n tɣawsa" },

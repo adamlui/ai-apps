@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Antwoord afspelen" },
   "tooltip_fontSize": { "message": "Lettertypegrootte" },
   "tooltip_sendReply": { "message": "Reactie versturen" },
+  "tooltip_askRandQuestion": { "message": "Stel willekeurige vraag" },
   "tooltip_close": { "message": "Afsluiten" },
   "tooltip_sendRelatedQuery": { "message": "Verwante query verzenden" },
   "placeholder_typeSomething": { "message": "Typ iets" },

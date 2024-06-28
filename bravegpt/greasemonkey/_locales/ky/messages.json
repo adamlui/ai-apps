@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Жооп ойнотуу" },
   "tooltip_fontSize": { "message": "Шрифттин кегли" },
   "tooltip_sendReply": { "message": "Жооп жөнөтүү" },
+  "tooltip_askRandQuestion": { "message": "Кокус суроо берүү" },
   "tooltip_close": { "message": "Жабуу" },
   "tooltip_sendRelatedQuery": { "message": "Тиешелүү сурам жөнөтүү" },
   "placeholder_askSomethingElse": { "message": "Башка бир нерсе сураңыз" },

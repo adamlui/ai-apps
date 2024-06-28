@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "播放答案" },
   "tooltip_fontSize": { "message": "字體大小" },
   "tooltip_sendReply": { "message": "發送回覆" },
+  "tooltip_askRandQuestion": { "message": "隨機提問" },
   "tooltip_close": { "message": "關閉" },
   "tooltip_sendRelatedQuery": { "message": "傳送相關查詢" },
   "placeholder_askSomethingElse": { "message": "詢問其他問題" },

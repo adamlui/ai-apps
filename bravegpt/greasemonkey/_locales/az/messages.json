@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Cavabı oxut" },
   "tooltip_fontSize": { "message": "Yazı növü böyüklüyü" },
   "tooltip_sendReply": { "message": "Göndər" },
+  "tooltip_askRandQuestion": { "message": "Təsadüfi sual verin" },
   "tooltip_close": { "message": "Bağla" },
   "tooltip_sendRelatedQuery": { "message": "Əlaqəli sorğu göndərin" },
   "placeholder_askSomethingElse": { "message": "Başqa bir şey soruşun" },

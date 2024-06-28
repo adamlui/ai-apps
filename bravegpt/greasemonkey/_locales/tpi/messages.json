@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Toktok bilong bekim" },
   "tooltip_fontSize": { "message": "Sais bilong leta:" },
   "tooltip_sendReply": { "message": "Kirap bekim" },
+  "tooltip_askRandQuestion": { "message": "Toksave long ol samting i no stret" },
   "tooltip_close": { "message": "Klostu" },
   "tooltip_sendRelatedQuery": { "message": "Send a related query" },
   "placeholder_askSomethingElse": { "message": "Mi laik askim yu long wanpela samting moa" },

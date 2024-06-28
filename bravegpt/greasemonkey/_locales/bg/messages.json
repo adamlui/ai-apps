@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Възпроизвеждане на отговор" },
   "tooltip_fontSize": { "message": "Размер на мравка" },
   "tooltip_sendReply": { "message": "За отговор" },
+  "tooltip_askRandQuestion": { "message": "Задайте произволен въпрос" },
   "tooltip_close": { "message": "Затвори" },
   "tooltip_sendRelatedQuery": { "message": "Изпращане на свързано запитване" },
   "placeholder_askSomethingElse": { "message": "Друго" },

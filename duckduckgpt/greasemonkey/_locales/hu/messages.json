@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Válasz lejátszása" },
   "tooltip_fontSize": { "message": "Betűméret" },
   "tooltip_sendReply": { "message": "Válasz elküldése" },
+  "tooltip_askRandQuestion": { "message": "Véletlenszerű kérdés feltevése" },
   "tooltip_close": { "message": "Bezárás" },
   "tooltip_sendRelatedQuery": { "message": "Kapcsolódó lekérdezés küldése" },
   "placeholder_typeSomething": { "message": "Írjon be valamit" },

@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Spæl svar" },
   "tooltip_fontSize": { "message": "Skriftstødd..." },
   "tooltip_sendReply": { "message": "Sende svar" },
+  "tooltip_askRandQuestion": { "message": "Spurningurin er tilvildarligur" },
   "tooltip_close": { "message": "Sløkk" },
   "tooltip_sendRelatedQuery": { "message": "Send viðkomandi spurning" },
   "placeholder_typeSomething": { "message": "Hvat er tað?" },

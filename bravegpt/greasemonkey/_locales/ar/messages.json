@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "تشغيل الإجابة" },
   "tooltip_fontSize": { "message": "حجم الخط" },
   "tooltip_sendReply": { "message": "أرسل رد" },
+  "tooltip_askRandQuestion": { "message": "سؤال عشوائي" },
   "tooltip_close": { "message": "إغلاق" },
   "tooltip_sendRelatedQuery": { "message": "إرسال استعلام ذي صلة" },
   "placeholder_askSomethingElse": { "message": "أسأل عن شئ آخر" },

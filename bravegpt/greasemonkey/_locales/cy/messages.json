@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Chwarae'r ateb" },
   "tooltip_fontSize": { "message": "Maint ffont" },
   "tooltip_sendReply": { "message": "Anfon Ateb" },
+  "tooltip_askRandQuestion": { "message": "Gofyn cwestiwn ar hap" },
   "tooltip_close": { "message": "Cau" },
   "tooltip_sendRelatedQuery": { "message": "Anfon ymholiad cysylltiedig" },
   "placeholder_askSomethingElse": { "message": "Gofyn rhywbeth arall" },

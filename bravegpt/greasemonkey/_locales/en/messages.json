@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Play answer" },
   "tooltip_fontSize": { "message": "Font size" },
   "tooltip_sendReply": { "message": "Send reply" },
+  "tooltip_askRandQuestion": { "message": "Ask random question" },
   "tooltip_close": { "message": "Close" },
   "tooltip_sendRelatedQuery": { "message": "Send related query" },
   "placeholder_askSomethingElse": { "message": "Ask something else" },

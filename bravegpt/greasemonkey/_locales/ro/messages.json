@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Redați răspunsul" },
   "tooltip_fontSize": { "message": "Mărime font " },
   "tooltip_sendReply": { "message": "Trimite un răspuns" },
+  "tooltip_askRandQuestion": { "message": "Puneți o întrebare aleatorie" },
   "tooltip_close": { "message": "Închideți" },
   "tooltip_sendRelatedQuery": { "message": "Trimitere interogare asociată" },
   "placeholder_askSomethingElse": { "message": "Altceva" },

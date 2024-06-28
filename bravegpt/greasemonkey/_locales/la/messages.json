@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Reperire" },
   "tooltip_fontSize": { "message": "Dimensio typi:" },
   "tooltip_sendReply": { "message": "Opportuna" },
+  "tooltip_askRandQuestion": { "message": "QUOS RECTUM QUANTUM" },
   "tooltip_close": { "message": "Claudere" },
   "tooltip_sendRelatedQuery": { "message": "Quaeso relatum" },
   "placeholder_askSomethingElse": { "message": "QUE QUAE QUAGE" },

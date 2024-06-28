@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "जवाफ प्ले गर्नुहोस्" },
   "tooltip_fontSize": { "message": "फन्ट" },
   "tooltip_sendReply": { "message": "जवाफ पठाउनुहोस्" },
+  "tooltip_askRandQuestion": { "message": "अनियमित प्रश्न सोध्नुहोस्" },
   "tooltip_close": { "message": "बन्द गर्नुहोस्" },
   "tooltip_sendRelatedQuery": { "message": "सम्बन्धित क्वेरी पठाउनुहोस्" },
   "placeholder_typeSomething": { "message": "केही टाइप गर्नुहोस्" },

@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "ޖަވާބެއް ކުޅެބަލަ" },
   "tooltip_fontSize": { "message": "ފޮންޓް ސައިޒް" },
   "tooltip_sendReply": { "message": "ޖަވާބު ފޮނުއްވާ" },
+  "tooltip_askRandQuestion": { "message": "ރެންޑަމް ސުވާލެއް ކުރާށެވެ" },
   "tooltip_close": { "message": "ލެއްޕުން" },
   "tooltip_sendRelatedQuery": { "message": "ގުޅުންހުރި ސުވާލު ތައް ފޮނުވުން" },
   "placeholder_askSomethingElse": { "message": "އެހެން ސުވާލެއް ކުރޭ" },

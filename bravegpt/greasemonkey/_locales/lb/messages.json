@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Antwort abspielen" },
   "tooltip_fontSize": { "message": "Schrëftgréisst" },
   "tooltip_sendReply": { "message": "Äntwert schécken" },
+  "tooltip_askRandQuestion": { "message": "Stellt zoufälleg Fro" },
   "tooltip_close": { "message": "Zoumaachen" },
   "tooltip_sendRelatedQuery": { "message": "Zesummenhang Ufro schécken" },
   "placeholder_askSomethingElse": { "message": "Frot eppes anescht" },

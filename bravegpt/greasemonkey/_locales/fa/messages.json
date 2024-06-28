@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "پاسخ را پخش کنید" },
   "tooltip_fontSize": { "message": "اندازه فونت" },
   "tooltip_sendReply": { "message": "ارسال پاسخ" },
+  "tooltip_askRandQuestion": { "message": "سوال تصادفی بپرس" },
   "tooltip_close": { "message": "بستن" },
   "tooltip_sendRelatedQuery": { "message": "ارسال درخواست مرتبط" },
   "placeholder_askSomethingElse": { "message": "یک چیز دیگر" },

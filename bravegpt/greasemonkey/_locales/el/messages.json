@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Αναπαραγωγή απάντησης" },
   "tooltip_fontSize": { "message": "Μέγεθος γραμματοσειράς" },
   "tooltip_sendReply": { "message": "Αποστολή απάντησης" },
+  "tooltip_askRandQuestion": { "message": "Κάντε τυχαία ερώτηση" },
   "tooltip_close": { "message": "Κλείσιμο" },
   "tooltip_sendRelatedQuery": { "message": "Αποστολή σχετικού ερωτήματος" },
   "placeholder_askSomethingElse": { "message": "Κάτι άλλο" },

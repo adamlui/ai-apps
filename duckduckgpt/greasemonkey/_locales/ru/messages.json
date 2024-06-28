@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Воспроизвести ответ" },
   "tooltip_fontSize": { "message": "Размер шрифта" },
   "tooltip_sendReply": { "message": "Отправить ответ" },
+  "tooltip_askRandQuestion": { "message": "Случайный вопрос :" },
   "tooltip_close": { "message": "Закрыть" },
   "tooltip_sendRelatedQuery": { "message": "Отправить связанный запрос" },
   "placeholder_typeSomething": { "message": "Введите текст" },

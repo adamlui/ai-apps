@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "መልስ አጫውት" },
   "tooltip_fontSize": { "message": "የፎንት መጠን..." },
   "tooltip_sendReply": { "message": "መልስ ላክ" },
+  "tooltip_askRandQuestion": { "message": "የዘፈቀደ ጥያቄ ይጠይቁ" },
   "tooltip_close": { "message": "ዝጋ" },
   "tooltip_sendRelatedQuery": { "message": "ተዛማጅ ጥያቄ ይላኩ" },
   "placeholder_typeSomething": { "message": "አንድ ነገር ይተይቡ" },

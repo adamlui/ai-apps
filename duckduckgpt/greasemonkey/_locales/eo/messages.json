@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Ludi respondon" },
   "tooltip_fontSize": { "message": "grando de tiparo" },
   "tooltip_sendReply": { "message": "Sendi  La Respondo" },
+  "tooltip_askRandQuestion": { "message": "Hazarda demando" },
   "tooltip_close": { "message": "Fermi" },
   "tooltip_sendRelatedQuery": { "message": "Sendi rilatan peton" },
   "placeholder_typeSomething": { "message": "Tajpi ion" },

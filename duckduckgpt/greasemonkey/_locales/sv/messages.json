@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Spela svar" },
   "tooltip_fontSize": { "message": "Teckenstorlek" },
   "tooltip_sendReply": { "message": "Skicka svar" },
+  "tooltip_askRandQuestion": { "message": "Ställ slumpmässiga frågor" },
   "tooltip_close": { "message": "Stäng" },
   "tooltip_sendRelatedQuery": { "message": "Skicka relaterad fråga" },
   "placeholder_typeSomething": { "message": "Skriv något …" },

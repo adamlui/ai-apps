@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "പ്ലേ ഉത്തരം" },
   "tooltip_fontSize": { "message": "ചിഹ്ന വലിപ്പം" },
   "tooltip_sendReply": { "message": "മറുപടി അയയ്ക്കുക" },
+  "tooltip_askRandQuestion": { "message": "ക്രമരഹിതമായ ചോദ്യം ചോദിക്കുക" },
   "tooltip_close": { "message": "ക്ലോസ് ചെയ്യുക" },
   "tooltip_sendRelatedQuery": { "message": "ബന്ധപ്പെട്ട ചോദ്യം അയയ്ക്കുക" },
   "placeholder_askSomethingElse": { "message": "മറ്റെന്തെങ്കിലും ചോദിക്കുക" },

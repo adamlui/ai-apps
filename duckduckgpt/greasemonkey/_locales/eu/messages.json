@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Erreproduzitu erantzuna" },
   "tooltip_fontSize": { "message": "Letra-tamaina " },
   "tooltip_sendReply": { "message": "Erantzuna bidali" },
+  "tooltip_askRandQuestion": { "message": "Egin ausazko galdera" },
   "tooltip_close": { "message": "Itxi" },
   "tooltip_sendRelatedQuery": { "message": "Bidali erlazionatutako kontsulta" },
   "placeholder_typeSomething": { "message": "Idatzi zerbait" },

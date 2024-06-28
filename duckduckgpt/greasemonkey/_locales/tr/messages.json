@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Yanıtı oynat" },
   "tooltip_fontSize": { "message": "Yazı boyutu" },
   "tooltip_sendReply": { "message": "Yanıt Gönder" },
+  "tooltip_askRandQuestion": { "message": "Rastgele Soru :" },
   "tooltip_close": { "message": "Kapat" },
   "tooltip_sendRelatedQuery": { "message": "İlgili sorguyu gönder" },
   "placeholder_typeSomething": { "message": "Bir şeyler yazın" },

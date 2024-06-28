@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Fakafaivaʻi e talí" },
   "tooltip_fontSize": { "message": "Lalahi ʻo e mataʻitohí" },
   "tooltip_sendReply": { "message": "ʻAve ʻa e talí" },
+  "tooltip_askRandQuestion": { "message": "Fai ha fehuʻi noaʻia" },
   "tooltip_close": { "message": "Tāpuni" },
   "tooltip_sendRelatedQuery": { "message": "ʻAve ʻa e fehuʻi ʻoku fekauʻaki" },
   "placeholder_typeSomething": { "message": "Taipeʻi ha meʻa" },

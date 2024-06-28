@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Pāʻani pane" },
   "tooltip_fontSize": { "message": "Nui kikokiko" },
   "tooltip_sendReply": { "message": "Hoʻouna pane" },
+  "tooltip_askRandQuestion": { "message": "E nīnau i ka nīnau maʻamau" },
   "tooltip_close": { "message": "Pani" },
   "tooltip_sendRelatedQuery": { "message": "E hoʻouna i ka nīnau pili" },
   "placeholder_askSomethingElse": { "message": "E nīnau i kekahi mea ʻē aʻe" },

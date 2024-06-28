@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Пахш кардани ҷавоб" },
   "tooltip_fontSize": { "message": "Андозаи мӯрча" },
   "tooltip_sendReply": { "message": "Фиристодани ҷавоб" },
+  "tooltip_askRandQuestion": { "message": "Саволҳои тасодуфӣ" },
   "tooltip_close": { "message": "Пӯшидан" },
   "tooltip_sendRelatedQuery": { "message": "Фиристодани дархости марбута" },
   "placeholder_askSomethingElse": { "message": "Як чизи дигарро пурсед" },

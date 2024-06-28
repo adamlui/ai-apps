@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Javobni o'ynang" },
   "tooltip_fontSize": { "message": "Shriftning oʻlchami" },
   "tooltip_sendReply": { "message": "Javob yuboring" },
+  "tooltip_askRandQuestion": { "message": "Tasodifiy savol bering" },
   "tooltip_close": { "message": "Yopish" },
   "tooltip_sendRelatedQuery": { "message": "Tegishli so'rov yuboring" },
   "placeholder_typeSomething": { "message": "Biror narsa yozing" },

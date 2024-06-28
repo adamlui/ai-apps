@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "जवाब खेलें" },
   "tooltip_fontSize": { "message": "चींटी आकार" },
   "tooltip_sendReply": { "message": "जवाब भेजें" },
+  "tooltip_askRandQuestion": { "message": "बेतरतीब सवाल पूछें" },
   "tooltip_close": { "message": "बंद करें" },
   "tooltip_sendRelatedQuery": { "message": "संबंधित क्वेरी भेजें" },
   "placeholder_askSomethingElse": { "message": "कुछ और पूछें" },

@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "נגן תשובה" },
   "tooltip_fontSize": { "message": "גודל פונט" },
   "tooltip_sendReply": { "message": "שלח תגובה" },
+  "tooltip_askRandQuestion": { "message": "שאל שאלה אקראית" },
   "tooltip_close": { "message": "סגירה" },
   "tooltip_sendRelatedQuery": { "message": "שלח שאילתה קשורה" },
   "placeholder_typeSomething": { "message": "יש להקליד משהו..." },

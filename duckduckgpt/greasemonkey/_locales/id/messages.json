@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Putar jawaban" },
   "tooltip_fontSize": { "message": "Ukuran fonta" },
   "tooltip_sendReply": { "message": "Kirim balasan" },
+  "tooltip_askRandQuestion": { "message": "Ajukan pertanyaan acak" },
   "tooltip_close": { "message": "Tutup" },
   "tooltip_sendRelatedQuery": { "message": "Kirim kueri terkait" },
   "placeholder_typeSomething": { "message": "Ketikkan sesuatu" },

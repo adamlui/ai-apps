@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Reproducir respuesta" },
   "tooltip_fontSize": { "message": "Tamaño de fuente" },
   "tooltip_sendReply": { "message": "Enviar respuesta" },
+  "tooltip_askRandQuestion": { "message": "Pregunta aleatoria. " },
   "tooltip_close": { "message": "Cerrar" },
   "tooltip_sendRelatedQuery": { "message": "Enviar consulta relacionada" },
   "placeholder_typeSomething": { "message": "Escribe algo" },

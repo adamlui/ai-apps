@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "উত্তর খেলুন" },
   "tooltip_fontSize": { "message": "ফন্ট মাপ@ label Font style" },
   "tooltip_sendReply": { "message": "উত্তর পাঠান" },
+  "tooltip_askRandQuestion": { "message": "এলোমেলো প্রশ্ন জিজ্ঞাসা করুন" },
   "tooltip_close": { "message": "বন্ধ করুন" },
   "tooltip_sendRelatedQuery": { "message": "সম্পর্কিত ক্যোয়ারী পাঠান" },
   "placeholder_typeSomething": { "message": "কিছু টাইপ করুন" },

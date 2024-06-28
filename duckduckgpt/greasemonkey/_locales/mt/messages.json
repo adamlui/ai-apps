@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Ara t-tweġiba" },
   "tooltip_fontSize": { "message": "Daqs tat-tipa" },
   "tooltip_sendReply": { "message": "Ibgħat tweġiba" },
+  "tooltip_askRandQuestion": { "message": "Staqsi mistoqsija każwali" },
   "tooltip_close": { "message": "Agħlaq" },
   "tooltip_sendRelatedQuery": { "message": "Ibgħat mistoqsija relatata" },
   "placeholder_typeSomething": { "message": "Ikteb xi ħaġa" },

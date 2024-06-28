@@ -30,6 +30,7 @@
   "tooltip_playAnswer": { "message": "Jawaabta ciyaar" },
   "tooltip_fontSize": { "message": "Cabbirka font" },
   "tooltip_sendReply": { "message": "Jawaab u dir" },
+  "tooltip_askRandQuestion": { "message": "Weydii su 'aal lama filaan ah" },
   "tooltip_close": { "message": "Xir" },
   "tooltip_sendRelatedQuery": { "message": "U dir su 'aalaha la xiriira" },
   "placeholder_typeSomething": { "message": "Nooca wax" },
