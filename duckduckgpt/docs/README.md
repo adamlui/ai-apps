@@ -138,8 +138,8 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 <div align="center">
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://media.ddgpt.com/images/logos/dependencies/collage/white.png?latest">
-    <img src="https://media.ddgpt.com/images/logos/dependencies/collage/black.png?latest">
+    <source media="(prefers-color-scheme: dark)" srcset="https://media.ddgpt.com/images/logos/dependencies/collage/en/white.png?latest">
+    <img src="https://media.ddgpt.com/images/logos/dependencies/collage/en/black.png?latest">
 </picture>
 
 [chatgpt.js](https://chatgpt.js.org) © 2023–2024 [KudoAI](https://kudoai.com) & contributors under the MIT license
