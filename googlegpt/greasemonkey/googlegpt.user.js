@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.28.2
+// @version             2024.6.28.3
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1200,6 +1200,18 @@
                 sunglassesSVGattrs.forEach(([attr, value]) => sunglassesSVG.setAttribute(attr, value))
                 sunglassesSVG.append(createSVGpath({ stroke: 'none', d: 'M507.44,185.327c-4.029-5.124-10.185-8.112-16.704-8.112c0,0-48.021,0-156.827,0h-65.774H243.87h-65.774c-108.806,0-156.827,0-156.827,0c-6.519,0-12.675,2.988-16.714,8.112c-4.028,5.125-5.486,11.815-3.965,18.152c0,0,12.421,56.269,19.927,82.534c7.506,26.265,26.265,48.772,86.29,48.772s59.827,0,74.828,0c21.258,0,46.256-19.99,55.028-45.023c4.97-14.16,12.756-32.738,19.338-47.876c6.582,15.138,14.368,33.716,19.338,47.876c8.773,25.033,33.77,45.023,55.028,45.023c15.001,0,14.803,0,74.828,0s78.784-22.507,86.29-48.772c7.496-26.264,19.918-82.534,19.918-82.534C512.935,197.142,511.478,190.452,507.44,185.327z M90.339,278.734C45.314,263.732,40.318,198.7,40.318,198.7s22.507,0,55.028,0L90.339,278.734z M340.464,278.734c-45.015-15.001-50.022-80.034-50.022-80.034s22.508,0,55.029,0L340.464,278.734z' }))
                 return sunglassesSVG
+            }
+        },
+
+        upArrow: {
+            create() {
+                const upArrowSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      upArrowSVGattrs = [['width', 16], ['height', 16], ['viewBox', '4 2 16 16'],
+                                         ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']]
+                upArrowSVGattrs.forEach(([attr, value]) => upArrowSVG.setAttribute(attr, value))
+                upArrowSVG.append(createSVGpath({ stroke: '', fill: 'none', 'stroke-width': '2', linecap: 'round', 'stroke-linejoin': 'round',
+                    d: 'M7 11L12 6L17 11M12 18V7' }))
+                return upArrowSVG
             }
         },
 
@@ -2354,16 +2366,10 @@
 
                 // Create/append send button
                 const sendBtn = document.createElement('button'),
-                      sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
-                      sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
-                          'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
+                      sendSVG = icons.upArrow.create()
                 sendBtn.id = 'send-btn' ; sendBtn.className = 'chatbar-btn'
                 sendBtn.style.right = `${ isFirefox ? 7 : 5 }px`
-                for (const [attr, value] of [
-                    ['viewBox', '4 2 16 16'], ['fill', 'none'], ['width', 16], ['height', 16],
-                    ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
-                ]) sendSVG.setAttribute(attr, value)
-                sendSVG.append(sendSVGpath) ; sendBtn.append(sendSVG) ; continueChatDiv.append(sendBtn)
+                sendBtn.append(sendSVG) ; continueChatDiv.append(sendBtn)
 
                 // Create/append shuffle button
                 const shuffleBtn = document.createElement('div')
