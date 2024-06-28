@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.21
+// @version             2024.6.27.22
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -969,7 +969,7 @@
                 }
                 setTimeout(() => { // delay non-0 opacity's for transition fx
                     settingsContainer.style.backgroundColor = ( 
-                        `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.51 })`)
+                        `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.33 })`)
                     settingsContainer.classList.add('animated'); },
                 100)
             },
