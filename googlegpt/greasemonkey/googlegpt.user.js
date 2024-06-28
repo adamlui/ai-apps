@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.24
+// @version             2024.6.28
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -417,7 +417,7 @@
         greasyForkURL: 'https://greasyfork.org/scripts/478597-googlegpt',
         mediaHostURL: 'https://media.googlegpt.io/',
         minFontSize: 13, maxFontSize: 24, lineHeightRatio: isMobile ? 1.357 : 1.375,
-        latestAssetCommitHash: '192762c' } // for cached messages.json + app logo/icon
+        latestAssetCommitHash: 'fccdd4c' } // for cached messages.json + app logo/icon
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -1125,6 +1125,16 @@
                 return schemeSVG
             }
         },
+
+        shuffle: {
+            create() {
+                const shuffleSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
+                      shuffleSVGattrs = [['width', 21], ['height', 21], ['viewBox', '-1 -1 32 32']]
+                shuffleSVGattrs.forEach(([attr, value]) => shuffleSVG.setAttribute(attr, value))
+                shuffleSVG.append(createSVGpath({ stroke: '', d: 'M23.707,16.293L28.414,21l-4.707,4.707l-1.414-1.414L24.586,22H23c-2.345,0-4.496-1.702-6.702-3.753c0.498-0.458,0.984-0.92,1.46-1.374C19.624,18.6,21.393,20,23,20h1.586l-2.293-2.293L23.707,16.293zM23,11h1.586l-2.293,2.293l1.414,1.414L28.414,10l-4.707-4.707l-1.414,1.414L24.586,9H23c-2.787,0-5.299,2.397-7.957,4.936C12.434,16.425,9.736,19,7,19H4v2h3c3.537,0,6.529-2.856,9.424-5.618C18.784,13.129,21.015,11,23,11zM11.843,14.186c0.5-0.449,0.995-0.914,1.481-1.377C11.364,11.208,9.297,10,7,10H4v2h3C8.632,12,10.25,12.919,11.843,14.186z' }))
+                return shuffleSVG
+            }
+        },
         
         signalStream: {
             create() {
@@ -1335,10 +1345,10 @@
               + `float: left ; margin: ${ isMobile ? 39 : 28 }px -15px 0 0 ; left: ${ isMobile ? 12 : 6 }px ;` // positioning
               + 'border-bottom-style: solid ; border-bottom-width: 1.19rem ; border-top: 0 ; border-bottom-color:'
                   + ( scheme == 'dark' ? '#3a3a3a' : '#eaeaea' ) + '}'
-          + '.continue-chat > textarea {'
+          + '#app-chatbar {'
               + `border: solid 1px ${ scheme == 'dark' ? '#aaa' : '#638ed4' } ; border-radius: 12px 13px 12px 0 ;`
               + 'height: 16px ; max-height: 200px ; resize: none ;'
-              + 'margin: 13px 0 15px 0 ; padding: 13px 25px 13px 10px ;'
+              + 'margin: 13px 0 15px 0 ; padding: 13px 55px 13px 10px ;'
               + 'background: ' + ( scheme == 'dark' ? '#515151' : '#eeeeee70' ) + ' }'
           + ( scheme == 'dark' ? '.continue-chat > textarea { color: white } .continue-chat > textarea::placeholder { color: #aaa }' : '' )
           + '.related-queries { display: flex ; flex-wrap: wrap ; width: 100% ; margin-bottom: 19px }'
@@ -1356,9 +1366,12 @@
           + '.fade-in { opacity: 0 ; transform: translateY(10px) ; transition: opacity 0.5s ease, transform 0.5s ease }'
           + '.fade-in-less { opacity: 0 ; transition: opacity 0.2s ease }'
           + '.fade-in.active, .fade-in-less.active { opacity: 1 ; transform: translateY(0) }'
-          + '#send-btn { border: none ; float: right ; position: relative ; background: none ;'
-              + `color: ${ scheme == 'dark' ? '#aaa' : 'lightgrey' } ; cursor: pointer }`
-          + `#send-btn:hover { color: ${ scheme == 'dark' ? 'white' : '#638ed4' } }`
+          + '.chatbar-btn {'
+              + 'border: none ; float: right ; position: relative ; background: none ; cursor: pointer ;'
+              + `bottom: ${( isFirefox ? 46 : 49 ) + ( hasSidebar ? 3 : 2 )}px ;`
+              + `${ scheme == 'dark' ? 'color: #aaa ; fill: #aaa ; stroke: #aaa' : 'color: lightgrey ; fill: lightgrey ; stroke: lightgrey' }}`
+          + '.chatbar-btn:hover {'
+              + `${ scheme == 'dark' ? 'color: #white ; fill: #white ; stroke: #white' : 'color: #638ed4 ; fill: #638ed4 ; stroke: #638ed4' }}`
           + ( // markdown styles
                 '#googlegpt > pre h1 { font-size: 1.25em } #googlegpt > pre h2 { font-size: 1.1em }' // size headings
               + '#googlegpt > pre > p { margin-bottom: -1.25em }' // eliminate bottom gap
@@ -1550,8 +1563,9 @@
         const cornerBtnTypes = ['about', 'settings', 'speak', 'ssb', 'font-size', 'wsb']
                   .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
         const [ctrAddend, spreadFactor] = [9, 27],
-              iniRoffset = spreadFactor * (buttonType == 'send' ? 1.65 : cornerBtnTypes.indexOf(buttonType) + 1) + ctrAddend
-
+              iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.35
+                                          : buttonType == 'shuffle' ? 2.25
+                                          : cornerBtnTypes.indexOf(buttonType) +1 ) + ctrAddend
         // Update text
         tooltipDiv.innerText = (
             buttonType == 'about' ? msgs.menuLabel_about || 'About'
@@ -1562,10 +1576,11 @@
           : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
                                 + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
-          : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply' : '' )
+          : buttonType == 'send' ? msgs.tooltip_sendReply || 'Send reply'
+          : buttonType == 'shuffle' ? msgs.tooltip_feelingLucky || 'I\'m Feeling Lucky' : '' )
 
         // Update position
-        tooltipDiv.style.top = `${ buttonType != 'send' ? -13
+        tooltipDiv.style.top = `${ !/send|shuffle/.test(buttonType) ? -13
           : tooltipDiv.eventYpos - appDiv.getBoundingClientRect().top - 36 }px`
         tooltipDiv.style.right = `${ iniRoffset - tooltipDiv.getBoundingClientRect().width / 2 }px`
     }
@@ -2332,7 +2347,7 @@
                 chatTextarea.id = 'app-chatbar' ; chatTextarea.rows = '1'
                 chatTextarea.placeholder = ( answer == 'standby' ? msgs.placeholder_askSomethingElse || 'Ask something else'
                                                                  : msgs.tooltip_sendReply || 'Send reply' ) + '...'
-                chatTextarea.style.width = hasSidebar ? '88.8%' : '89.5%'
+                chatTextarea.style.width = hasSidebar ? '79.3%' : '80.1%'
                 continueChatDiv.append(chatTextarea)
                 replyForm.append(continueChatDiv) ; replySection.append(replyForm)
                 appDiv.insertBefore(replySection, appDiv.querySelector('footer'))
@@ -2342,14 +2357,20 @@
                       sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                       sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
                           'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
-                sendButton.id = 'send-btn'
-                sendButton.style.right = isFirefox ? '8px' : '5px'
-                sendButton.style.bottom = `${( isFirefox ? 46 : 49 ) + ( hasSidebar ? 3 : 0 )}px`
+                sendButton.id = 'send-btn' ; sendButton.className = 'chatbar-btn'
+                sendButton.style.right = `${ isFirefox ? 7 : 5 }px`
                 for (const [attr, value] of [
                     ['viewBox', '4 2 16 16'], ['fill', 'none'], ['width', 16], ['height', 16],
                     ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
                 ]) sendSVG.setAttribute(attr, value)
                 sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
+
+                // Create/append shuffle button
+                const shuffleBtn = document.createElement('div')
+                shuffleBtn.id = 'shuffle-btn' ; shuffleBtn.className = 'chatbar-btn'
+                shuffleBtn.style.right = `${ isFirefox ? 8 : 5 }px`
+                const shuffleSVG = icons.shuffle.create()
+                shuffleBtn.append(shuffleSVG) ; continueChatDiv.append(shuffleBtn)
 
                 // Init/fill/append footer
                 const appFooter = appDiv.querySelector('footer') || document.createElement('footer')
@@ -2360,8 +2381,18 @@
                 replyForm.onkeydown = handleEnter
                 replyForm.onsubmit = handleSubmit
                 chatTextarea.oninput = autosizeChatbar
-                if (!isMobile) // add hover listeners for tooltips
+                shuffleBtn.onclick = () => {
+                    const randQAprompt = 'Generate a single random question on any topic then answer it.'
+                                       + 'Do not type anything but the question and answer.'
+                    chatTextarea.value = augmentQuery(randQAprompt)
+                    show.reply.submitSrc = 'click' // for show.reply()'s mobile scroll-to-top if user interacted
+                    chatTextarea.dispatchEvent(new KeyboardEvent('keydown', {
+                        key: 'Enter', bubbles: true, cancelable: true }))
+                }
+                if (!isMobile) { // add hover listeners for tooltips
                     sendButton.onmouseover = sendButton.onmouseout = toggle.tooltip
+                    shuffleBtn.onmouseover = shuffleBtn.onmouseout = toggle.tooltip
+                }
 
                 // Scroll to top on mobile if user interacted
                 if (isMobile && show.reply.submitSrc) {
@@ -2586,7 +2617,7 @@
           wsbStyles = '#center_col, #center_col div { max-width: 516px !important ; overflow: hidden }' // shrink center column
                     + '#googlegpt { width: 455px }' // expand GoogleGPT when in limiting Google host container
                     + '#googlegpt ~ div { width: 540px !important }' // expand side snippets
-                    + `#app-chatbar { width: ${ hasSidebar ? 91.3 : 91.8 }% !important }`,
+                    + `#app-chatbar { width: ${ hasSidebar ? 85.4 : 85.9 }% !important }`,
           ssbStyles = '#googlegpt { position: sticky ; top: 87px }'
                     + '#googlegpt ~ * { display: none }' // hide sidebar contents
     updateTweaksStyle() ; document.head.append(tweaksStyle)
