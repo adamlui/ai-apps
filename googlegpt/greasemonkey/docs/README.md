@@ -176,6 +176,7 @@ When disabled, a ChatGPT account is required to fetch responses. If OpenAI API i
 <br>[highlight.js](https://highlightjs.org) © 2006 [Ivan Sagalaev](https://github.com/isagalaev) under the BSD 3-Clause license
 <br>[KaTeX](https://katex.org) © 2013–2020 [Khan Academy](https://www.khanacademy.org) & other contributors under the MIT license
 <br>[Marked](https://marked.js.org) © 2018+ [MarkedJS](https://github.com/markedjs) © 2011–2018 [Christopher Jeffrey](https://github.com/chjj) under the MIT license
+<br>[Sogou Translate](https://fanyi.sogou.com) © 2024 [Sogou](https://www.sogou.com)
 <br><br>
 
 </div>
