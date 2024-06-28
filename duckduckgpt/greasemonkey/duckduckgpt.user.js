@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.28
+// @version             2024.6.28.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -2038,17 +2038,17 @@
                 appDiv.append(replySection)
 
                 // Create/append send button
-                const sendButton = document.createElement('button'),
+                const sendBtn = document.createElement('button'),
                       sendSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
                       sendSVGpath = createSVGpath({ stroke: '', 'stroke-width': '2', linecap: 'round',
                           'stroke-linejoin': 'round', d: 'M7 11L12 6L17 11M12 18V7' })
-                sendButton.id = 'send-btn' ; sendButton.className = 'chatbar-btn'
-                sendButton.style.right = `${ isFirefox ? 8 : 7 }px`
+                sendBtn.id = 'send-btn' ; sendBtn.className = 'chatbar-btn'
+                sendBtn.style.right = `${ isFirefox ? 8 : 7 }px`
                 for (const [attr, value] of [
                     ['viewBox', '4 2 16 16'], ['fill', 'none'], ['width', 16], ['height', 16],
                     ['stroke', 'currentColor'], ['stroke-width', '2'], ['stroke-linecap', 'round'], ['stroke-linejoin', 'round']
                 ]) sendSVG.setAttribute(attr, value)
-                sendSVG.append(sendSVGpath) ; sendButton.append(sendSVG) ; continueChatDiv.append(sendButton)
+                sendSVG.append(sendSVGpath) ; sendBtn.append(sendSVG) ; continueChatDiv.append(sendBtn)
 
                 // Create/append shuffle button
                 const shuffleBtn = document.createElement('div')
@@ -2070,7 +2070,7 @@
                         key: 'Enter', bubbles: true, cancelable: true }))
                 }
                 if (!isMobile) { // add hover listeners for tooltips
-                    sendButton.onmouseover = sendButton.onmouseout = toggle.tooltip
+                    sendBtn.onmouseover = sendBtn.onmouseout = toggle.tooltip
                     shuffleBtn.onmouseover = shuffleBtn.onmouseout = toggle.tooltip
                 }
 
