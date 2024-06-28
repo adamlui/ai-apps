@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.24
+// @version             2024.6.27.25
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1045,8 +1045,8 @@ setTimeout(async () => {
               + '#bravegpt *::-webkit-scrollbar-thumb:hover { background: #a6a6a6 }'
               + '#bravegpt *::-webkit-scrollbar-track { background: none }' )
           + '#bravegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
-          + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show grabbing cursor everywhere
-              + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: grabbing }'
+          + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
+              + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
           + '#bravegpt {'
               + `word-wrap: break-word ; white-space: pre-wrap ; margin-bottom: ${ isMobile ? -29 : 20}px ;`
               + 'border: 1px solid var(--color-divider-subtle) ; border-radius: 18px ;'
@@ -1075,10 +1075,9 @@ setTimeout(async () => {
           + '#font-size-slider-track::before {' // to add finger cursor to unpadded core only
               + 'content: "" ; position: absolute ; top: 10px ; left: 0 ; right: 0 ; height: calc(100% - 20px) ; cursor: pointer }'
           + '#font-size-slider-thumb { width: 10px ; height: 27px ; border-radius: 30% ; position: relative ; top: -9px ;'
-              + `background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
-              + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: grab ; cursor: -webkit-grab ; cursor: -moz-grab }'
-          + '#font-size-slider-thumb:active { cursor: grabbing ; cursor: -webkit-grabbing ; cursor: -moz-grabbing }'
-          + '#font-size-slider-thumb:hover { transform: scale(1.125) ; transition: transform 0.05s ease }'
+              + `transition: transform 0.05s ease ; background-color: ${ scheme == 'dark' ? 'white' : '#4a4a4a' } ;`
+              + 'box-shadow: rgba(0, 0, 0, 0.21) 1px 1px 9px 0px ; cursor: ew-resize }'
+          + '#font-size-slider-thumb:hover { transform: scale(1.125) }'
           + '.standby-btn { width: 100% ; padding: 13px 0 ; cursor: pointer ; margin: 14px 0 20px ;'
               + `color: ${ scheme == 'dark' ? 'white' : 'black' } ;`
               + `border-radius: 4px ; border: 1px solid ${ scheme == 'dark' ? '#fff' : '#000' } ;`
@@ -1218,7 +1217,7 @@ setTimeout(async () => {
 
             // Create/append slider elems
             fontSizeSlider.cursorOverlay = document.createElement('div')
-            fontSizeSlider.cursorOverlay.classList.add('cursor-overlay') // for grabbing cursor
+            fontSizeSlider.cursorOverlay.classList.add('cursor-overlay') // for resize cursor
             const slider = document.createElement('div') ; slider.id = 'font-size-slider-track'
             slider.className = 'fade-in-less' ; slider.style.display = 'none'
             const sliderThumb = document.createElement('div') ; sliderThumb.id = 'font-size-slider-thumb'
