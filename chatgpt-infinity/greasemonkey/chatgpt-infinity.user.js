@@ -199,7 +199,7 @@
 // @description:zh-TW   從無所不知的 ChatGPT 生成無窮無盡的答案 (用任何語言!)
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.27.1
+// @version             2024.6.27.2
 // @license             MIT
 // @match               *://chatgpt.com/*
 // @match               *://chat.openai.com/*
@@ -225,6 +225,7 @@
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
 // @grant               GM_openInTab
+// @grant               GM_xmlhttpRequest
 // @grant               GM.xmlHttpRequest
 // @noframes
 // @downloadURL         https://update.greasyfork.org/scripts/465051/chatgpt-infinity.user.js
@@ -256,13 +257,16 @@
     if (!config.replyTopic) saveSetting('replyTopic', 'ALL') // init reply topic if unset
     if (!config.replyInterval) saveSetting('replyInterval', 7) // init refresh interval to 7 secs if unset
 
+    // Init FETCHER
+    const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+
     // Define MESSAGES
-    let msgs = {};
+    let msgs = {}
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        xhr({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(resp) {
             try { // to return localized messages.json
                 const msgs = JSON.parse(resp.responseText), flatMsgs = {}
@@ -275,10 +279,10 @@
                 msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
                     msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+                xhr({ method: 'GET', url: msgHref, onload: onLoad })
             }
         }
-    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
+    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded } catch (err) {}
 
     // Init MENU objs
     const menuIDs = [] // to store registered cmds for removal while preserving order
@@ -418,7 +422,10 @@
         menuIDs.push(GM_registerMenuCommand(aboutLabel, launchAboutModal))
     }
 
-    function refreshMenu() { for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() }
+    function refreshMenu() {
+        if (getUserscriptManager() == 'OrangeMonkey') return
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
+    }
 
     function launchAboutModal() {
 
@@ -474,7 +481,7 @@
 
         // Fetch latest meta
         const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({
+        xhr({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
             onload: response => { const updateAlertWidth = 377

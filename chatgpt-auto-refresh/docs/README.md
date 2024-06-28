@@ -88,6 +88,7 @@
 1. Install a userscript manager:
     - ScriptCat for [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf), [Firefox](https://addons.mozilla.org/firefox/addon/scriptcat/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh)
     - Violentmonkey for [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)
+    - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf) or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) for Chrome
     - or Tampermonkey for [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)
 
 2. Install [ChatGPT Auto Refresh](https://greasyfork.chatgptautorefresh.com) (will load in userscript manager installed above)
@@ -126,7 +127,7 @@ ChatGPT Auto Refresh relies on code from the powerful <a href="https://github.co
 
 ## 🌐 Compatibility
 
-ChatGPT Auto Refresh is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org), [Violentmonkey](https://violentmonkey.github.io) or [Tampermonkey](https://www.tampermonkey.net):
+ChatGPT Auto Refresh is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org), [Violentmonkey](https://violentmonkey.github.io), [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf), [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland) or [Tampermonkey](https://www.tampermonkey.net):
 
 - [Google Chrome](https://www.chrome.com)
 - [Mozilla Firefox](https://www.firefox.com)

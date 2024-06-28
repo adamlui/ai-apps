@@ -67,13 +67,14 @@
 1. Install a userscript manager:
     - ScriptCat for [Chrome](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf), [Firefox](https://addons.mozilla.org/firefox/addon/scriptcat/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/scriptcat/liilgpjgabokdklappibcjfablkpcekh)
     - Tampermonkey for [Chrome](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [Firefox](https://addons.mozilla.org/firefox/addon/tampermonkey/), [Edge](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd) or [Opera](https://addons.opera.com/extensions/details/tampermonkey-beta/)
-    - or Violentmonkey* for [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)
+    - Violentmonkey* for [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag), [Firefox](https://addons.mozilla.org/firefox/addon/violentmonkey/) or [Edge](https://microsoftedge.microsoft.com/addons/detail/eeagobfjdenkkddmbclomhiblgggliao)
+    - [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf)* or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland)* for Chrome
 
 2. Install [GoogleGPT](https://greasyfork.googlegpt.io) (will load in userscript manager installed above)
 
 3. Visit [google.com](https://google.com), type your search, engage bot!
 
-##### _*Violentmonkey does not support Streaming Mode, so is not recommended_
+##### _*Violentmonkey, OrangeMonkey & OrangeMonkey Pro do not support Streaming Mode, so are not recommended_
 
 <br><a href="https://github.com/sponsors/KudoAI"><img src="https://media.googlegpt.io/images/banners/sponsor/$10/banner1660x260.png?latest"></a>
 
@@ -93,7 +94,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 ## 🌐 Compatibility 
 
-**GoogleGPT** **GoogleGPT** is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org), [Tampermonkey](https://www.tampermonkey.net) or [Violentmonkey](https://violentmonkey.github.io)*.
+**GoogleGPT** **GoogleGPT** is compatible w/ the following browsers using [ScriptCat](https://docs.scriptcat.org), [Tampermonkey](https://www.tampermonkey.net), [Violentmonkey](https://violentmonkey.github.io)\*, [OrangeMonkey](https://chromewebstore.google.com/detail/orangemonkey/ekmeppjgajofkpiofbebgcbohbmfldaf)* or [OrangeMonkey Pro](https://chromewebstore.google.com/detail/orangemonkey-pro/ggdmdoodcfamjggeigifpjfnnjfbland)*.
 
 ### 🖥️ Desktop
 
@@ -121,7 +122,7 @@ To do so, visit [chrome://extensions](chrome://extensions) > activate **Develope
 
 - [Orion](https://apps.apple.com/app/orion-browser-by-kagi/id1484498200)
 
-##### _*Violentmonkey does not support Streaming Mode, so is not recommended_
+##### _*Violentmonkey, OrangeMonkey & OrangeMonkey Pro do not support Streaming Mode, so are not recommended_
 
 <br>
 

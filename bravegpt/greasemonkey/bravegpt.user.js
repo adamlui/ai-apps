@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.19
+// @version             2024.6.27.20
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -191,6 +191,7 @@
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
 // @grant               GM_getResourceText
+// @grant               GM_xmlhttpRequest
 // @grant               GM.xmlHttpRequest
 // @noframes
 // @downloadURL         https://update.greasyfork.org/scripts/462440/bravegpt.user.js
@@ -242,6 +243,9 @@ setTimeout(async () => {
         || getUserscriptManager() == 'Tampermonkey' && (isChrome || isEdge || isBrave) // TM in browser that triggers STATUS_ACCESS_VIOLATION
     ) saveSetting('streamingDisabled', true)
 
+    // Init FETCHER
+    const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+
     // Init API props
     const openAIendpoints = { auth: 'https://auth0.openai.com', session: 'https://chatgpt.com/api/auth/session' }
     const apis = {
@@ -270,7 +274,7 @@ setTimeout(async () => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        xhr({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(resp) {
             try { // to return localized messages.json
                 const msgs = JSON.parse(resp.responseText), flatMsgs = {}
@@ -283,10 +287,10 @@ setTimeout(async () => {
                 msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
                     msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+                xhr({ method: 'GET', url: msgHref, onload: onLoad })
             }
         }
-    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded; } catch (err) {}
+    }) ; if (!config.userLanguage.startsWith('en')) try { msgs = await msgsLoaded } catch (err) {}
 
     // Init SETTINGS props
     const settingsProps = {
@@ -366,13 +370,16 @@ setTimeout(async () => {
                 break
     }}}
 
-    function refreshMenu() { for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() }
+    function refreshMenu() {
+        if (getUserscriptManager() == 'OrangeMonkey') return
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
+    }
 
     function updateCheck() {
 
         // Fetch latest meta
         const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({
+        xhr({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
             onload: resp => { const updateAlertWidth = 489
@@ -1556,7 +1563,7 @@ setTimeout(async () => {
             const accessToken = GM_getValue(config.keyPrefix + '_openAItoken')
             consoleInfo('OpenAI access token: ' + accessToken)
             if (!accessToken) {
-                GM.xmlHttpRequest({ url: openAIendpoints.session, onload: resp => {
+                xhr({ url: openAIendpoints.session, onload: resp => {
                     if (isBlockedbyCloudflare(resp.responseText)) {
                         appAlert('checkCloudflare') ; return }
                     try {
@@ -1687,7 +1694,7 @@ setTimeout(async () => {
                     api.tryNew(get.reply, 'timeout') }, config.streamingDisabled ? 9000 : 6000)
 
             // Get/show answer from ChatGPT
-            GM.xmlHttpRequest({
+            xhr({
                 method: apis[get.reply.api].method, url: apis[get.reply.api].endpoint,
                 responseType: config.streamingDisabled || !config.proxyAPIenabled ? 'text' : 'stream',
                 headers: api.createHeaders(get.reply.api), data: api.createPayload(get.reply.api, msgChain),
@@ -1711,7 +1718,7 @@ setTimeout(async () => {
         },
 
         json(url, callback) { // for dynamic footer
-            GM.xmlHttpRequest({ method: 'GET', url: url, onload: resp => {
+            xhr({ method: 'GET', url: url, onload: resp => {
                 if (resp.status >= 200 && resp.status < 300) {
                     try { const data = JSON.parse(resp.responseText) ; callback(null, data) }
                     catch (err) { callback(err, null) }
@@ -1749,7 +1756,7 @@ setTimeout(async () => {
                    + ' But the key is variety. Do not be repetitive.'
                        + ' You must entice user to want to ask one of your related queries.'
                    + ` Reply in ${config.replyLanguage}`
-                GM.xmlHttpRequest({
+                xhr({
                     method: apis[get.related.api].method, url: apis[get.related.api].endpoint,
                     responseType: 'text', headers: api.createHeaders(get.related.api),
                     data: api.createPayload(get.related.api, [{ role: 'user', content: rqPrompt }]),
@@ -1999,7 +2006,7 @@ setTimeout(async () => {
                           iv = CryptoJS.enc.Utf8.parse(atob('AAAAAAAAAAAAAAAAAAAAAA==') || '76350b1840ff9832eb6244ac6d444366')
                     const securePayload = CryptoJS.AES.encrypt(JSON.stringify(payload), key, {
                         iv: iv, mode: CryptoJS.mode.CBC, pad: CryptoJS.pad.Pkcs7 }).toString()
-                    GM.xmlHttpRequest({ // audio from Sogou TTS
+                    xhr({ // audio from Sogou TTS
                         url: 'https://fanyi.sogou.com/openapi/external/getWebTTS?S-AppId=102356845&S-Param='
                             + encodeURIComponent(securePayload),
                         method: 'GET', responseType: 'arraybuffer',

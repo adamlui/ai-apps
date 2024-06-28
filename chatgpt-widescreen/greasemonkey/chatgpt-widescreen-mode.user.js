@@ -222,7 +222,7 @@
 // @description:zu      Engeza izinhlobo zezimodi ze-Widescreen + Fullscreen ku-ChatGPT ukuze kube nokubonakala + ukuncitsha ukusukela
 // @author              Adam Lui
 // @namespace           https://github.com/adamlui
-// @version             2024.6.27
+// @version             2024.6.27.1
 // @license             MIT
 // @compatible          chrome
 // @compatible          firefox
@@ -246,6 +246,7 @@
 // @grant               GM_registerMenuCommand
 // @grant               GM_unregisterMenuCommand
 // @grant               GM_openInTab
+// @grant               GM_xmlhttpRequest
 // @grant               GM.xmlHttpRequest
 // @noframes
 // @downloadURL         https://update.greasyfork.org/scripts/461473/chatgpt-widescreen.user.js
@@ -276,12 +277,15 @@
     loadSetting('autoFocusChatbarDisabled', 'fullerWindows', 'fullWindow', 'hiddenFooter', 'hiddenHeader',
                 'notifDisabled', 'ncbDisabled', 'tcbDisabled', 'widerChatbox', 'wideScreen')
 
+    // Init FETCHER
+    const xhr = getUserscriptManager() == 'OrangeMonkey' ? GM_xmlhttpRequest : GM.xmlHttpRequest
+
     // Define MESSAGES
     const msgsLoaded = new Promise(resolve => {
         const msgHostDir = config.assetHostURL + 'greasemonkey/_locales/',
               msgLocaleDir = ( config.userLanguage ? config.userLanguage.replace('-', '_') : 'en' ) + '/'
         let msgHref = msgHostDir + msgLocaleDir + 'messages.json', msgXHRtries = 0
-        GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+        xhr({ method: 'GET', url: msgHref, onload: onLoad })
         function onLoad(resp) {
             try { // to return localized messages.json
                 const msgs = JSON.parse(resp.responseText), flatMsgs = {}
@@ -294,7 +298,7 @@
                 msgHref = config.userLanguage.includes('-') && msgXHRtries == 1 ? // if regional lang on 1st try...
                     msgHref.replace(/([^_]+_[^_]+)_[^/]*(\/.*)/, '$1$2') // ...strip region before retrying
                         : ( msgHostDir + 'en/messages.json' ) // else use default English messages
-                GM.xmlHttpRequest({ method: 'GET', url: msgHref, onload: onLoad })
+                xhr({ method: 'GET', url: msgHref, onload: onLoad })
             }
         }
     }) ; const msgs = await msgsLoaded
@@ -411,7 +415,10 @@
         menuIDs.push(GM_registerMenuCommand(amLabel, launchAboutModal))
     }
 
-    function refreshMenu() { for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu() }
+    function refreshMenu() {
+        if (getUserscriptManager() == 'OrangeMonkey') return
+        for (const id of menuIDs) { GM_unregisterMenuCommand(id) } registerMenu()
+    }
 
     function launchAboutModal() {
 
@@ -465,7 +472,7 @@
 
         // Fetch latest meta
         const currentVer = GM_info.script.version
-        GM.xmlHttpRequest({
+        xhr({
             method: 'GET', url: config.updateURL + '?t=' + Date.now(),
             headers: { 'Cache-Control': 'no-cache' },
             onload: response => { const updateAlertWidth = 377
