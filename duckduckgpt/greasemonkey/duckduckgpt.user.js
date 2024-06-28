@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.27.16
+// @version             2024.6.27.17
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -790,7 +790,7 @@
                 }
                 setTimeout(() => { // delay non-0 opacity's for transition fx
                     settingsContainer.style.backgroundColor = ( 
-                        `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.1 })`)
+                        `rgba(67, 70, 72, ${ scheme === 'dark' ? 0.62 : 0.51 })`)
                     settingsContainer.classList.add('animated'); },
                 100)
             },
