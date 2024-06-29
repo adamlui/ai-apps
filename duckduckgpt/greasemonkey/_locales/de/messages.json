@@ -30,7 +30,7 @@
   "tooltip_playAnswer": { "message": "Antwortnote abspielen" },
   "tooltip_fontSize": { "message": "Schriftgröße" },
   "tooltip_sendReply": { "message": "Antwort senden" },
-  "tooltip_askRandQuestion": { "message": "Wie heisst das fehlende Wort: Frühling, Sommer, Herbst, " },
+  "tooltip_askRandQuestion": { "message": "Zufällige Frage stellen" },
   "tooltip_close": { "message": "Schließen" },
   "tooltip_sendRelatedQuery": { "message": "Zugehörige Abfrage senden" },
   "helptip_proxyAPImode": { "message": "Verwendet eine Proxy-API für den No-Login-Zugriff auf KI" },
