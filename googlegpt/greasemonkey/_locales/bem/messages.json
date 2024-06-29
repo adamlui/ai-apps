@@ -47,7 +47,7 @@
   "helptip_colorScheme": { "message": "Icilangililo cakulangisha ifiputulwa fya UI ifya GoogleGPT muli" },
   "placeholder_askSomethingElse": { "message": "Ask Mukena Bali" },
   "placeholder_typeSomething": { "message": "Mulesunga icintu cimo" },
-  "prompt_updateReplyLang": { "message": "Update Mwakitwile language" },
+  "prompt_updateReplyLang": { "message": "Ubulasanshi ukubika citako" },
   "alert_langUpdated": { "message": "Ludimi lwa lwa Tumama updated" },
   "alert_willReplyIn": { "message": "asuka Iwashita" },
   "alert_yourSysLang": { "message": "mfumo ya lulimi lwenu" },
