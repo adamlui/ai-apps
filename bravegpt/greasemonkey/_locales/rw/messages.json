@@ -86,7 +86,7 @@
   "buttonLabel_dismiss": { "message": "Guhakana" },
   "link_viewChanges": { "message": "Reba impinduka" },
   "link_shareFeedback": { "message": "Tanga Ibyo utekereza" },
-  "prefix_exit" : { "message": "Gusohoka" },
-  "state_on" : { "message": "Birimo gukora" },
-  "state_off" : { "message": "Bikureho" }
+  "prefix_exit": { "message": "Gusohoka" },
+  "state_on": { "message": "Birimo gukora" },
+  "state_off": { "message": "Bikureho" }
 }
