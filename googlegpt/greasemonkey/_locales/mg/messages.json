@@ -1,6 +1,6 @@
 {
   "appName": { "message": "GoogleGPT" },
-  "appDesc": { "message": "Manampy ny valin-tenin'i ChatGPT amin'ny sisin'ny Google Search (azo avy amin'ny GPT-4o!)" },
+  "appDesc": { "message": "Manampy ny valin-tenin'i ChatGPT amin'ny sisin'ny Google Search (azo avy amin'ny Google Gemma + GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Fomba Proxy API" },
   "menuLabel_autoGetAnswers": { "message": "Mahazo Valiny ho azy" },
   "menuLabel_autoFocusChatbar": { "message": "Mifantoka ho azy amin'ny Chatbar" },
