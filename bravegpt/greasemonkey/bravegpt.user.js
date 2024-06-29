@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.28.3
+// @version             2024.6.29
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -225,7 +225,7 @@ setTimeout(async () => {
         appURL: 'https://www.bravegpt.com', gitHubURL: 'https://github.com/KudoAI/bravegpt',
         greasyForkURL: 'https://greasyfork.org/scripts/462440-bravegpt',
         minFontSize: 13, maxFontSize: 24, lineHeightRatio: 1.313,
-        latestAssetCommitHash: '233fd82' } // for cached messages.json
+        latestAssetCommitHash: '2b6b26f' } // for cached messages.json
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
@@ -294,28 +294,41 @@ setTimeout(async () => {
 
     // Init SETTINGS props
     const settingsProps = {
-        proxyAPIenabled: { label: msgs.menuLabel_proxyAPImode || 'Proxy API Mode', type: 'toggle' },
-        streamingDisabled: { label: msgs.mode_streaming || 'Streaming Mode', type: 'toggle' },
-        autoGetDisabled: { label: msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers', type: 'toggle' },
-        autoFocusChatbarDisabled: {
+        proxyAPIenabled: { type: 'toggle',
+            label: msgs.menuLabel_proxyAPImode || 'Proxy API Mode',
+            helptip: msgs.helptip_proxyAPImode || 'Uses a Proxy API for no-login access to AI' },
+        streamingDisabled: { type: 'toggle',
+            label: msgs.mode_streaming || 'Streaming Mode',
+            helptip: msgs.helptip_streamingMode || 'Receive replies in a continuous text stream' },
+        autoGetDisabled: { type: 'toggle',
+            label: msgs.menuLabel_autoGetAnswers || 'Auto-Get Answers',
+            helptip: msgs.helptip_autoGetAnswers || 'Auto-send queries to BraveGPT when using search engine' },
+        autoFocusChatbarDisabled: { type: 'toggle', mobile: false,
             label: msgs.menuLabel_autoFocusChatbar || 'Auto-Focus Chatbar',
-            type: 'toggle', mobile: false },
-        autoScroll: {
+            helptip: msgs.helptip_autoFocusChatbar || 'Auto-focus chatbar whenever it appears' },
+        autoScroll: { type: 'toggle', mobile: false,
             label: `${ msgs.mode_autoScroll || 'Auto-Scroll' } (${ msgs.menuLabel_whenStreaming || 'when streaming' })`,
-            type: 'toggle', mobile: false },
-        rqDisabled: {
+            helptip: msgs.helptip_autoScroll || 'Auto-scroll responses as they generate in Streaming Mode' },
+        rqDisabled: { type: 'toggle',
             label: `${ msgs.menuLabel_show || 'Show' } ${ msgs.menuLabel_relatedQueries || 'Related Queries' }`,
-            type: 'toggle' },
-        prefixEnabled: {
+            helptip: msgs.helptip_showRelatedQueries || 'Show related queries below chatbar' },
+        prefixEnabled: { type: 'toggle',
             label: `${ msgs.menuLabel_require || 'Require' } "/" ${ msgs.menuLabel_beforeQuery || 'before query' }`,
-            type: 'toggle' },
-        suffixEnabled: {
+            helptip: msgs.helptip_prefixMode || 'Require "/" before queries for answers to show' },
+        suffixEnabled: { type: 'toggle',
             label: `${ msgs.menuLabel_require || 'Require' } "?" ${ msgs.menuLabel_afterQuery || 'after query' }`,
-            type: 'toggle' },
-        widerSidebar: { label: msgs.menuLabel_widerSidebar || 'Wider Sidebar', type: 'toggle', mobile: false },
-        replyLanguage: { label: msgs.menuLabel_replyLanguage || 'Reply Language', type: 'prompt' },
-        scheme: { label: msgs.menuLabel_colorScheme || 'Color Scheme', type: 'modal' },
-        about: { label: `${ msgs.menuLabel_about || 'About' } ${config.appName}...`, type: 'modal' }
+            helptip: msgs.helptip_suffixMode || 'Require "?" after queries for answers to show' },
+        widerSidebar: { type: 'toggle', mobile: false, centered: false,
+            label: msgs.menuLabel_widerSidebar || 'Wider Sidebar',
+            helptip: msgs.helptip_widerSidebar || 'Horizontally expand search page sidebar' },
+        replyLanguage: { type: 'prompt',
+            label: msgs.menuLabel_replyLanguage || 'Reply Language',
+            helptip: msgs.helptip_replyLanguage || 'Language for BraveGPT to reply in' },
+        scheme: { type: 'modal',
+            label: msgs.menuLabel_colorScheme || 'Color Scheme',
+            helptip: msgs.helptip_colorScheme || 'Scheme to display BraveGPT UI components in' },
+        about: { type: 'modal',
+            label: `${ msgs.menuLabel_about || 'About' } ${config.appName}...` }
     }
 
     // Init MENU objs
@@ -615,6 +628,7 @@ setTimeout(async () => {
 
                     // Create/append item/label elems
                     const settingItem = document.createElement('li') ; settingItem.id = key + '-menu-entry'
+                    settingItem.title = setting.helptip || '' // for hover assistance
                     const settingLabel = document.createElement('label') ; settingLabel.textContent = setting.label
                     settingItem.append(settingLabel) ; settingsList.append(settingItem)
 
