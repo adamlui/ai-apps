@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29
+// @version             2024.6.29.1
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -1322,6 +1322,11 @@
     function updateAppStyle() {
         appStyle.innerText = (
             '.no-user-select { -webkit-user-select: none ; -moz-user-select: none ; -ms-user-select: none ; user-select: none }'
+          + ( // stylize scrollbars in Chromium/Safari
+                '#googlegpt *::-webkit-scrollbar { width: 7px }'
+              + '#googlegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
+              + '#googlegpt *::-webkit-scrollbar-thumb:hover { background: #a6a6a6 }'
+              + '#googlegpt *::-webkit-scrollbar-track { background: none }' )
           + '#googlegpt * { scrollbar-width: thin }' // make scrollbars thin in Firefox
           + '.cursor-overlay {' // for fontSizeSlider.createAppend() drag listeners to show resize cursor everywhere
               + 'position: fixed ; top: 0 ; left: 0 ; width: 100% ; height: 100% ; z-index: 9999 ; cursor: ew-resize }'
@@ -1433,11 +1438,6 @@
               + `margin: ${ isFirefox ? 1 : -2 }px -32px 12px }`
           + '#googlegpt footer * { color: #aaa ; text-decoration: none }'
           + `#googlegpt footer a:hover { color: ${ scheme == 'dark' ? 'white' : 'black' }}`
-          + ( // stylize scrollbars in Chromium/Safari
-                '#googlegpt *::-webkit-scrollbar { width: 7px }'
-              + '#googlegpt *::-webkit-scrollbar-thumb { background: #cdcdcd }'
-              + '#googlegpt *::-webkit-scrollbar-thumb:hover { background: #a6a6a6 }'
-              + '#googlegpt *::-webkit-scrollbar-track { background: none }' )
 
           // Settings modal
           + '#googlegpt-settings-bg {'
@@ -1448,8 +1448,9 @@
           + '#googlegpt-settings {'
               + 'opacity: 0 ; transform: translateX(-2px) translateY(3px) ; min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
               + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.3s cubic-bezier(.165,.84,.44,1) ;'
-              + ( scheme == 'dark' ? 'background-color: black ; color: white ; border: 1px solid white ;'
-                                   : 'background-color: white ; color: black ; border: 1px solid #b5b5b5 ;' )
+              + 'background-image: linear-gradient(180deg,'
+                  + `${ scheme == 'dark' ? '#75c451 -70%, black 57%' : '#9eb4f2 -70%, white 42%' }) ;`
+              + `border: 1px solid ${ scheme == 'dark' ? 'white ; color: white' : '#b5b5b5 ; color: black' } ;`
               + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
               + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
           + '#googlegpt-settings-bg.animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'

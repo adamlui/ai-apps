@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29
+// @version             2024.6.29.1
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1226,8 +1226,9 @@
           + '#ddgpt-settings {'
               + 'opacity: 0 ; transform: translateX(-2px) translateY(3px) ; min-width: 288px ; max-width: 75vw ; word-wrap: break-word ;'
               + 'transition: opacity 0.1s cubic-bezier(.165,.84,.44,1), transform 0.3s cubic-bezier(.165,.84,.44,1) ;'
-              + ( scheme == 'dark' ? 'background-color: black ; color: white ; border: 1px solid white ;'
-                                   : 'background-color: white ; color: black ; border: 1px solid #b5b5b5 ;' )
+              + `border: 1px solid ${ scheme == 'dark' ? 'white ; color: white' : '#b5b5b5 ; color: black' } ;`
+              + 'background-image: linear-gradient(180deg,'
+                  + `${ scheme == 'dark' ? '#75c451 -70%, black 57%' : '#7683b7 -70%, white 42%' }) ;`
               + 'padding: 11px ; margin: 12px 23px ; border-radius: 15px ; box-shadow: 0 30px 60px rgba(0, 0, 0, .12) ;'
               + `${ scheme == 'dark' ? 'stroke: white ; fill: white' : 'stroke: black ; fill: black' }}` // icon color
           + '#ddgpt-settings-bg.animated > div { opacity: 0.98 ; transform: translateX(0) translateY(0) }'
