@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.3
+// @version             2024.6.29.4
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -1367,7 +1367,7 @@
     }
 
     function updateTooltip(buttonType) { // text & position
-        const cornerBtnTypes = ['about', 'settings', 'speak', 'ssb', 'csb', 'font-size', 'wsb']
+        const cornerBtnTypes = ['about', 'settings', 'speak', 'ssb', 'font-size', 'wsb']
                   .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
         const [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [8, 28] : [6, 27.5],
               iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.5
@@ -1380,7 +1380,6 @@
           : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
           : buttonType == 'ssb' ? (( config.stickySidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
                                    + ( msgs.menuLabel_stickySidebar || 'Sticky Sidebar' ))
-          : buttonType == 'csb' ? msgs.menuLabel_colorScheme || 'Color Scheme'
           : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
                                    + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
@@ -1933,13 +1932,6 @@
                     ssbSpan.append(ssbSVG) ; cornerBtnsDiv.append(ssbSpan)
                 }
 
-                // Create/append Color Scheme button
-                const csbSpan = document.createElement('span'),
-                      csbSVG = icons.scheme.create()
-                csbSpan.id = 'csb-btn' // for toggle.tooltip()
-                csbSpan.className = 'corner-btn' ; csbSpan.style.margin = '0.5px 9px 0 0'
-                csbSpan.append(csbSVG) ; cornerBtnsDiv.append(csbSpan)
-
                 // Create/append Font Size button
                 if (answer != 'standby') {
                     var fontSizeSpan = document.createElement('span'),
@@ -2010,11 +2002,10 @@
                     })
                 }
                 if (ssbSVG) ssbSVG.onclick = () => toggle.sidebar('sticky')
-                csbSVG.onclick = modals.scheme.show
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
                 if (wsbSVG) wsbSVG.onclick = () => toggle.sidebar('wider')
                 if (!isMobile) // add hover listeners for tooltips
-                    [aboutSpan, settingsSpan, speakerSpan, ssbSpan, csbSpan, fontSizeSpan, wsbSpan].forEach(span => {
+                    [aboutSpan, settingsSpan, speakerSpan, ssbSpan, fontSizeSpan, wsbSpan].forEach(span => {
                         if (span) span.onmouseover = span.onmouseout = toggle.tooltip })
 
                 // Create/append 'by KudoAI'

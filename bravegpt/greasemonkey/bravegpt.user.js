@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.4
+// @version             2024.6.29.5
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -1336,7 +1336,7 @@ setTimeout(async () => {
     }
 
     function updateTooltip(buttonType) { // text & position
-        const cornerBtnTypes = ['about', 'settings', 'speak', 'csb', 'font-size', 'wsb']
+        const cornerBtnTypes = ['about', 'settings', 'speak', 'font-size', 'wsb']
                   .filter(type => appDiv.querySelector(`#${type}-btn`)) // exclude invisible ones
         const [ctrAddend, spreadFactor] = appDiv.querySelector('.standby-btn') ? [9, 25] : [5, 28],
               iniRoffset = spreadFactor * ( buttonType == 'send' ? 1.35
@@ -1347,7 +1347,6 @@ setTimeout(async () => {
             buttonType == 'about' ? msgs.menuLabel_about || 'About'
           : buttonType == 'settings' ? msgs.menuLabel_settings || 'Settings'
           : buttonType == 'speak' ? msgs.tooltip_playAnswer || 'Play answer'
-          : buttonType == 'csb' ? msgs.menuLabel_colorScheme || 'Color Scheme'
           : buttonType == 'font-size' ? msgs.tooltip_fontSize || 'Font size'
           : buttonType == 'wsb' ? (( config.widerSidebar ? `${ msgs.prefix_exit || 'Exit' } ` :  '' )
                                    + ( msgs.menuLabel_widerSidebar || 'Wider Sidebar' ))
@@ -1987,13 +1986,6 @@ setTimeout(async () => {
                     speakerSpan.append(speakerSVG) ; appDiv.append(speakerSpan)
                 }
 
-                // Create/append Color Scheme button
-                const csbSpan = document.createElement('span'),
-                      csbSVG = icons.scheme.create()
-                csbSpan.id = 'csb-btn' // for toggle.tooltip()
-                csbSpan.className = 'corner-btn' ; csbSpan.style.margin = '-0.2px 9px 0 0'
-                csbSpan.append(csbSVG) ; appDiv.append(csbSpan)
-
                 // Create/append Font Size button
                 if (answer != 'standby') {
                     var fontSizeSpan = document.createElement('span'),
@@ -2063,11 +2055,10 @@ setTimeout(async () => {
                         })}}
                     })
                 }
-                csbSVG.onclick = modals.scheme.show
                 if (fontSizeSVG) fontSizeSVG.onclick = () => fontSizeSlider.toggle()
                 if (wsbSVG) wsbSVG.onclick = () => toggle.sidebar('wider')
                 if (!isMobile) // add hover listeners for tooltips
-                    [aboutSpan, settingsSpan, speakerSpan, csbSpan, fontSizeSpan, wsbSpan].forEach(span => {
+                    [aboutSpan, settingsSpan, speakerSpan, fontSizeSpan, wsbSpan].forEach(span => {
                         if (span) span.onmouseover = span.onmouseout = toggle.tooltip })
 
                 // Create/append 'by KudoAI'
