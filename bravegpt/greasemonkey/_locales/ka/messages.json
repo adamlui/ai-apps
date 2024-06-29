@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "მოთხოვნამდე" },
   "menuLabel_afterQuery": { "message": "მოთხოვნის შემდეგ" },
   "menuLabel_widerSidebar": { "message": "Ფართო გვერდითი ზოლი" },
-  "menuLabel_stickySidebar": { "message": "Მიჭიკარტებული გვერდითი ზოლი" },
   "menuLabel_replyLanguage": { "message": "Პასუხის ენა" },
   "menuLabel_colorScheme": { "message": "ფერების სქემა" },
   "menuLabel_auto": { "message": "ავტო" },

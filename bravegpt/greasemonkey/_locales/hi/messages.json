@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "क्वेरी से पहले" },
   "menuLabel_afterQuery": { "message": "क्वेरी के बाद" },
   "menuLabel_widerSidebar": { "message": "चौड़ा साइडबार" },
-  "menuLabel_stickySidebar": { "message": "चिपचिपा साइडबार" },
   "menuLabel_replyLanguage": { "message": "उत्तर भाषा" },
   "menuLabel_colorScheme": { "message": "रंग योजनाplasma name" },
   "menuLabel_auto": { "message": "अपने-आप" },

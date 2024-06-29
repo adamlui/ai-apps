@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "перед запросом" },
   "menuLabel_afterQuery": { "message": "после запроса" },
   "menuLabel_widerSidebar": { "message": "Более широкая боковая панель" },
-  "menuLabel_stickySidebar": { "message": "Липкий сайдбар" },
   "menuLabel_replyLanguage": { "message": "Язык ответа" },
   "menuLabel_colorScheme": { "message": "Схема цвета" },
   "menuLabel_auto": { "message": "Auto (Автоматический)" },

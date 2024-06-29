@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "trước truy vấn" },
   "menuLabel_afterQuery": { "message": "sau khi truy vấn" },
   "menuLabel_widerSidebar": { "message": "Sidebar rộng hơn" },
-  "menuLabel_stickySidebar": { "message": "Thanh bên dính" },
   "menuLabel_replyLanguage": { "message": "Ngôn ngữ trả lời" },
   "menuLabel_colorScheme": { "message": "Bảng màu" },
   "menuLabel_auto": { "message": "Tự động" },

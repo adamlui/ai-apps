@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "sebelum kueri" },
   "menuLabel_afterQuery": { "message": "setelah kueri" },
   "menuLabel_widerSidebar": { "message": "Bilah Sisi Lebih Luas" },
-  "menuLabel_stickySidebar": { "message": "Sidebar Sticky" },
   "menuLabel_replyLanguage": { "message": "Bahasa Balas" },
   "menuLabel_colorScheme": { "message": "Skema Warna" },
   "menuLabel_auto": { "message": "Otomatis" },

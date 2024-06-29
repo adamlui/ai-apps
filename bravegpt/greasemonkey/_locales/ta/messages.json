@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "வினவலுக்கு முன்" },
   "menuLabel_afterQuery": { "message": "வினவலுக்குப் பிறகு" },
   "menuLabel_widerSidebar": { "message": "அகலப் பக்கப்பட்டி" },
-  "menuLabel_stickySidebar": { "message": "ஒட்டும் பக்கப்பட்டி" },
   "menuLabel_replyLanguage": { "message": "பதில் மொழி" },
   "menuLabel_colorScheme": { "message": "நிற அமைப்பு" },
   "menuLabel_auto": { "message": "தானியங்கி" },

@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "استفسار سے پہلے" },
   "menuLabel_afterQuery": { "message": "استفسار کے بعد" },
   "menuLabel_widerSidebar": { "message": "وسیع سائڈبار" },
-  "menuLabel_stickySidebar": { "message": "چپچپا سائڈبار" },
   "menuLabel_replyLanguage": { "message": "جواب کی زبان" },
   "menuLabel_colorScheme": { "message": "کلر سکیم" },
   "menuLabel_auto": { "message": "خودکار" },

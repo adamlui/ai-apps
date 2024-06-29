@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "ቅድሚ ሕቶ" },
   "menuLabel_afterQuery": { "message": "ድሕሪ ሕቶ" },
   "menuLabel_widerSidebar": { "message": "ሰፋሕቲ ጎኒ ባር" },
-  "menuLabel_stickySidebar": { "message": "ስቲኪ ጎድባር" },
   "menuLabel_replyLanguage": { "message": "መልሲ ቋንቋ" },
   "menuLabel_colorScheme": { "message": "መደብ ቀለም" },
   "menuLabel_auto": { "message": "ኣውቶሞቢል" },

@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "ከመጠየቁ በፊት" },
   "menuLabel_afterQuery": { "message": "መጠይቅ በኋላ" },
   "menuLabel_widerSidebar": { "message": "ሰፊ የጎን አሞሌ" },
-  "menuLabel_stickySidebar": { "message": "Sticky የጎን አሞሌ" },
   "menuLabel_replyLanguage": { "message": "የምላሽ ቋንቋ" },
   "menuLabel_colorScheme": { "message": "_ይዞታዎች" },
   "menuLabel_auto": { "message": "በራሱ" },

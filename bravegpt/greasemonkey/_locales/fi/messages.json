@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "ennen kyselyä" },
   "menuLabel_afterQuery": { "message": "kyselyn jälkeen" },
   "menuLabel_widerSidebar": { "message": "Leveämpi sivupalkki" },
-  "menuLabel_stickySidebar": { "message": "Kiinnitetty sivupalkki" },
   "menuLabel_replyLanguage": { "message": "Vastauskieli" },
   "menuLabel_colorScheme": { "message": "Väriteema" },
   "menuLabel_auto": { "message": "Auto" },

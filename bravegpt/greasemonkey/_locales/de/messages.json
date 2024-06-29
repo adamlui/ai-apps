@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "vor der Abfrage" },
   "menuLabel_afterQuery": { "message": "nach Abfrage" },
   "menuLabel_widerSidebar": { "message": "Breitere Seitenleiste" },
-  "menuLabel_stickySidebar": { "message": "Sticky" },
   "menuLabel_replyLanguage": { "message": "Antwortsprache" },
   "menuLabel_colorScheme": { "message": "Farbschema" },
   "menuLabel_auto": { "message": "Automatisch" },

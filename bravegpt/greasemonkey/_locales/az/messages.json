@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "sorğudan əvvəl" },
   "menuLabel_afterQuery": { "message": "sorğudan sonra" },
   "menuLabel_widerSidebar": { "message": "Daha geniş yan panel" },
-  "menuLabel_stickySidebar": { "message": "Yapışqan Kənar sahə" },
   "menuLabel_replyLanguage": { "message": "Cavab Dili" },
   "menuLabel_colorScheme": { "message": "Rəng sxemi" },
   "menuLabel_auto": { "message": "Automat" },

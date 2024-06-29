@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "クエリの前" },
   "menuLabel_afterQuery": { "message": "クエリの後" },
   "menuLabel_widerSidebar": { "message": "より広いサイドバー" },
-  "menuLabel_stickySidebar": { "message": "固定サイドバー" },
   "menuLabel_replyLanguage": { "message": "返信言語" },
   "menuLabel_colorScheme": { "message": "配色" },
   "menuLabel_auto": { "message": "自動" },

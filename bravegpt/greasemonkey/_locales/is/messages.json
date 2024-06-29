@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "fyrir fyrirspurn" },
   "menuLabel_afterQuery": { "message": "eftir fyrirspurn" },
   "menuLabel_widerSidebar": { "message": "Breiðari hliðarslá" },
-  "menuLabel_stickySidebar": { "message": "Límd hliðarslá" },
   "menuLabel_replyLanguage": { "message": "Tungumál svars" },
   "menuLabel_colorScheme": { "message": "Litaskema" },
   "menuLabel_auto": { "message": "Sjálfvirkt" },

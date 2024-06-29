@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "ప్రశ్నకు ముందు" },
   "menuLabel_afterQuery": { "message": "ప్రశ్న తర్వాత" },
   "menuLabel_widerSidebar": { "message": "వెడల్పు సైడ్ ‌ బార్" },
-  "menuLabel_stickySidebar": { "message": "అంటుకునే సైడ్ ‌ బార్" },
   "menuLabel_replyLanguage": { "message": "ప్రత్యుత్తర భాష" },
   "menuLabel_colorScheme": { "message": "రంగు స్కీమాplasma name" },
   "menuLabel_auto": { "message": "స్వయంచాలితం" },

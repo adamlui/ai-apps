@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "πριν από το ερώτημα" },
   "menuLabel_afterQuery": { "message": "κατόπιν ερωτήματος" },
   "menuLabel_widerSidebar": { "message": "Ευρύτερη πλευρική στήλη" },
-  "menuLabel_stickySidebar": { "message": "Κολλώδης πλαϊνή μπάρα" },
   "menuLabel_replyLanguage": { "message": "Γλώσσα απάντησης" },
   "menuLabel_colorScheme": { "message": "Σχήμα Χρωμάτων" },
   "menuLabel_auto": { "message": "Αυτόματη εφαρμογή" },

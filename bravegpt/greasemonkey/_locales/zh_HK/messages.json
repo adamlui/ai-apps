@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "查詢前" },
   "menuLabel_afterQuery": { "message": "查詢後" },
   "menuLabel_widerSidebar": { "message": "更寬的側邊欄" },
-  "menuLabel_stickySidebar": { "message": "置頂側邊欄" },
   "menuLabel_replyLanguage": { "message": "回覆語言" },
   "menuLabel_colorScheme": { "message": "基本配色方案" },
   "menuLabel_auto": { "message": "自動" },

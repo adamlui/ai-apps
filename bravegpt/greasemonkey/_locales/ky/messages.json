@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "суроо алдында" },
   "menuLabel_afterQuery": { "message": "суроо кийин" },
   "menuLabel_widerSidebar": { "message": "Wider Sidebar" },
-  "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_replyLanguage": { "message": "Тилге жооп берүү" },
   "menuLabel_colorScheme": { "message": "Түс тандоо" },
   "menuLabel_auto": { "message": "Авто" },

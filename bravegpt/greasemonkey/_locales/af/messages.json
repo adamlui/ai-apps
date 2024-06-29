@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "voor navraag" },
   "menuLabel_afterQuery": { "message": "na navraag" },
   "menuLabel_widerSidebar": { "message": "Wyer Kantbalk" },
-  "menuLabel_stickySidebar": { "message": "Klewerige kantbalk" },
   "menuLabel_replyLanguage": { "message": "Beantwoord Taal" },
   "menuLabel_colorScheme": { "message": "Kleurskema" },
   "menuLabel_auto": { "message": "Ada" },

@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "sa wala pa ang pagpangutana" },
   "menuLabel_afterQuery": { "message": "human sa pangutana" },
   "menuLabel_widerSidebar": { "message": "Mas lapad nga Sidebar" },
-  "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_replyLanguage": { "message": "Tubag Pinulongan" },
   "menuLabel_colorScheme": { "message": "Skema sa Kolor" },
   "menuLabel_auto": { "message": "Auto" },

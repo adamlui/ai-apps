@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "taim ol i askim" },
   "menuLabel_afterQuery": { "message": "bihain long askim" },
   "menuLabel_widerSidebar": { "message": "Wider Sidebar" },
-  "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_replyLanguage": { "message": "Tokples" },
   "menuLabel_colorScheme": { "message": "Skema bilong kol" },
   "menuLabel_auto": { "message": "Automation" },

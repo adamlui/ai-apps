@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "áðrenn spurningurin" },
   "menuLabel_afterQuery": { "message": "eftir at hava spurt" },
   "menuLabel_widerSidebar": { "message": "Breittari síðubarn" },
-  "menuLabel_stickySidebar": { "message": "Sticky Sidebar" },
   "menuLabel_replyLanguage": { "message": "Svar á mál" },
   "menuLabel_colorScheme": { "message": "Farva" },
   "menuLabel_auto": { "message": "Bilur" },

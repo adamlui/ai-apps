@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "асуулга эхлэхээс өмнө" },
   "menuLabel_afterQuery": { "message": "асуулга хийсний дараа" },
   "menuLabel_widerSidebar": { "message": "Өргөн талын цэс" },
-  "menuLabel_stickySidebar": { "message": "Наалттай хажуу цэс" },
   "menuLabel_replyLanguage": { "message": "Хариулах Хэл" },
   "menuLabel_colorScheme": { "message": "Өнгөний схем" },
   "menuLabel_auto": { "message": "Авто" },

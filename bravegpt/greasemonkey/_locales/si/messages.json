@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "විමසුමට පෙර" },
   "menuLabel_afterQuery": { "message": "විමසුමට පසු" },
   "menuLabel_widerSidebar": { "message": "පුළුල් පැති පුවරුව" },
-  "menuLabel_stickySidebar": { "message": "ඇලෙන සුළු පැති පුවරුව" },
   "menuLabel_replyLanguage": { "message": "පිළිතුරු භාෂාව" },
   "menuLabel_colorScheme": { "message": "වේගය" },
   "menuLabel_auto": { "message": "ස්වයංක්‍රීය" },

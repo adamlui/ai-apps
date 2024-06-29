@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "prieš užklausą" },
   "menuLabel_afterQuery": { "message": "po užklausos" },
   "menuLabel_widerSidebar": { "message": "Platesnė šoninė juosta" },
-  "menuLabel_stickySidebar": { "message": "Lipni Šoninė Juosta" },
   "menuLabel_replyLanguage": { "message": "Atsakymo kalba" },
   "menuLabel_colorScheme": { "message": "Spalvų schema" },
   "menuLabel_auto": { "message": "Automatinis" },

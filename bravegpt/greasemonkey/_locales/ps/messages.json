@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "د پوښتنې دمخه" },
   "menuLabel_afterQuery": { "message": "د پوښتنې وروسته" },
   "menuLabel_widerSidebar": { "message": "پراخ اړخپټه" },
-  "menuLabel_stickySidebar": { "message": "سريښناکه اړخ چکۍ" },
   "menuLabel_replyLanguage": { "message": "د ځواب ژبه" },
   "menuLabel_colorScheme": { "message": "رنګبندي" },
   "menuLabel_auto": { "message": "آټو (Auto)" },

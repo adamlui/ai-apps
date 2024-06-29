@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "qabel it-talba" },
   "menuLabel_afterQuery": { "message": "wara t-talba" },
   "menuLabel_widerSidebar": { "message": "Sidebar Usa'" },
-  "menuLabel_stickySidebar": { "message": "Sidebar li teħel" },
   "menuLabel_replyLanguage": { "message": "Lingwa tat-Tweġibiet" },
   "menuLabel_colorScheme": { "message": "Skema tal-Kulur" },
   "menuLabel_auto": { "message": "Awto" },

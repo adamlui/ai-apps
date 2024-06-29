@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "pre upita" },
   "menuLabel_afterQuery": { "message": "nakon upita" },
   "menuLabel_widerSidebar": { "message": "Šira bočna traka" },
-  "menuLabel_stickySidebar": { "message": "Sticky sajdbar" },
   "menuLabel_replyLanguage": { "message": "Jezik odgovora" },
   "menuLabel_colorScheme": { "message": "Color Scheme" },
   "menuLabel_auto": { "message": "Automatski" },

@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "сұраудан бұрын" },
   "menuLabel_afterQuery": { "message": "сұраныстан кейін" },
   "menuLabel_widerSidebar": { "message": "Кеңірек бүйірлік тақта" },
-  "menuLabel_stickySidebar": { "message": "Жабысқақ бүйірлік панель" },
   "menuLabel_replyLanguage": { "message": "Жауап беру тілі" },
   "menuLabel_colorScheme": { "message": "Түстер сұлбасы" },
   "menuLabel_auto": { "message": "Автоматты басқару" },

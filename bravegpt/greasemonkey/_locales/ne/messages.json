@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "क्वेरी अघि" },
   "menuLabel_afterQuery": { "message": "क्वेरी पछि" },
   "menuLabel_widerSidebar": { "message": "फराकिलो साइडबार" },
-  "menuLabel_stickySidebar": { "message": "टाँसिने साइडबार" },
   "menuLabel_replyLanguage": { "message": "जवाफ भाषा" },
   "menuLabel_colorScheme": { "message": "रङ योजना" },
   "menuLabel_auto": { "message": "लेखक" },

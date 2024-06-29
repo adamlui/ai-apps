@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "ചോദ്യത്തിന് മുമ്പ്" },
   "menuLabel_afterQuery": { "message": "ചോദ്യത്തിന് ശേഷം" },
   "menuLabel_widerSidebar": { "message": "വിശാലമായ സൈഡ്ബാർ" },
-  "menuLabel_stickySidebar": { "message": "സ്റ്റിക്കി സൈഡ്ബാർ" },
   "menuLabel_replyLanguage": { "message": "മറുപടി ഭാഷ" },
   "menuLabel_colorScheme": { "message": "നിറം കൊടുക്കുന്ന പദ്ധതി" },
   "menuLabel_auto": { "message": "സ്വതേ" },

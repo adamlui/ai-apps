@@ -11,7 +11,6 @@
   "menuLabel_beforeQuery": { "message": "anvan rechèch/avant de demander" },
   "menuLabel_afterQuery": { "message": "apre rechèch/après la question" },
   "menuLabel_widerSidebar": { "message": "Pi laj Sidebar" },
-  "menuLabel_stickySidebar": { "message": "Baton Sidebar" },
   "menuLabel_replyLanguage": { "message": "Lang Repons" },
   "menuLabel_colorScheme": { "message": "Plan Koulè" },
   "menuLabel_auto": { "message": "Otomatik" },
