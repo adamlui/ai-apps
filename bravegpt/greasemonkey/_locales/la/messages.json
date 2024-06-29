@@ -28,7 +28,7 @@
   "mode_prefix": { "message": "Modus prefix" },
   "mode_suffix": { "message": "Modus Sufix" },
   "tooltip_playAnswer": { "message": "Reperire" },
-  "tooltip_fontSize": { "message": "Dimensio typi:" },
+  "tooltip_fontSize": { "message": "Dimensio typi" },
   "tooltip_sendReply": { "message": "Opportuna" },
   "tooltip_askRandQuestion": { "message": "QUOS RECTUM QUANTUM" },
   "tooltip_close": { "message": "Claudere" },

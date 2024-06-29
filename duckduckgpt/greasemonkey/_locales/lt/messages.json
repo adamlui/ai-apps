@@ -60,7 +60,7 @@
   "alert_isUnsupportedIn": { "message": "nepalaikomas" },
   "alert_whenUsing": { "message": "Naudojant" },
   "alert_pleaseUse": { "message": "(360 mg)" },
-  "alert_instead": { "message": "vietoje." },
+  "alert_instead": { "message": "vietoje" },
   "alert_unavailable": { "message": "neprieinama" },
   "alert_isOnlyAvailFor": { "message": "galima tik" },
   "alert_and": { "message": "ir" },

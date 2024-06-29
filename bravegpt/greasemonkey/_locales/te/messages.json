@@ -45,7 +45,7 @@
   "helptip_replyLanguage": { "message": "లో ప్రత్యుత్తరం ఇవ్వడానికి BraveGPT కోసం భాష" },
   "helptip_colorScheme": { "message": "లో BraveGPT UI భాగాలను ప్రదర్శించే పథకం" },
   "placeholder_askSomethingElse": { "message": "మరేదైనా అడగండి" },
-  "placeholder_typeSomething": { "message": "ఏదో టైప్ చేయండి ..." },
+  "placeholder_typeSomething": { "message": "ఏదో టైప్ చేయండి " },
   "prompt_updateReplyLang": { "message": "ప్రత్యుత్తర భాషను నవీకరించండి" },
   "alert_langUpdated": { "message": "భాష నవీకరించబడింది" },
   "alert_willReplyIn": { "message": "లో ప్రత్యుత్తరం ఇస్తుంది" },

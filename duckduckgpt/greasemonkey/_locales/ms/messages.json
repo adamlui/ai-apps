@@ -58,7 +58,7 @@
   "alert_upToDate": { "message": "Kemas kini" },
   "alert_isUpToDate": { "message": "Kemas kini" },
   "alert_isUnsupportedIn": { "message": "tidak disokong dalam" },
-  "alert_whenUsing": { "message": "Apabila menggunakan..." },
+  "alert_whenUsing": { "message": "Apabila menggunakan" },
   "alert_pleaseUse": { "message": "Sila gunakan" },
   "alert_instead": { "message": "seperti perbualan tele kami sebelumnya" },
   "alert_unavailable": { "message": "tiada" },

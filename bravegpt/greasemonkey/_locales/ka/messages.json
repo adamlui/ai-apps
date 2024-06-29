@@ -59,7 +59,7 @@
   "alert_isUnsupportedIn": { "message": "მხარდაუჭერელია" },
   "alert_whenUsing": { "message": "გამოყენებისას" },
   "alert_pleaseUse": { "message": "Გთხოვთ, გამოიყენოთ" },
-  "alert_instead": { "message": "მის ნაცვლად." },
+  "alert_instead": { "message": "მის ნაცვლად" },
   "alert_unavailable": { "message": "მიუწვდომელი" },
   "alert_isOnlyAvailFor": { "message": "ხელმისაწვდომია მხოლოდ" },
   "alert_and": { "message": "და" },

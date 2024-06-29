@@ -2,7 +2,7 @@
   "appName": { "message": "ChatGPT Infiniti" },
   "appDesc": { "message": "Menjana jawapan yang tidak berkesudahan dari ChatGPT yang serba tahu (dalam mana-mana bahasa!)" },
   "menuLabel_infinityMode": { "message": "Mod Infiniti" },
-  "menuLabel_autoStart": { "message": "Automula." },
+  "menuLabel_autoStart": { "message": "Automula" },
   "menuLabel_toggleVis": { "message": "Kejelasan Item" },
   "menuLabel_autoScroll": { "message": "Tatal Sendiri" },
   "menuLabel_replyLang": { "message": "Bahasa Balas" },

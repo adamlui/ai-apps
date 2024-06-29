@@ -58,7 +58,7 @@
   "alert_isUpToDate": { "message": "hie/si, hatt/et gëtt aktualiséiert" },
   "alert_isUnsupportedIn": { "message": "ass non-supported in ass" },
   "alert_whenUsing": { "message": "wann zu gebrauchen" },
-  "alert_pleaseUse": { "message": "Benotzt w.e.g." },
+  "alert_pleaseUse": { "message": "Benotzt w.e.g" },
   "alert_instead": { "message": "amplaz" },
   "alert_unavailable": { "message": "net disponibel" },
   "alert_isOnlyAvailFor": { "message": "ass nëmmen disponibel fir" },

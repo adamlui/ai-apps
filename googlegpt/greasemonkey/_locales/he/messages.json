@@ -46,7 +46,7 @@
   "helptip_replyLanguage": { "message": "השפה שבה GoogleGPT יכול להגיב" },
   "helptip_colorScheme": { "message": "ערכה להצגת רכיבי ממשק המשתמש של GoogleGPT ב -" },
   "placeholder_askSomethingElse": { "message": "Something else&#10;&#10;" },
-  "placeholder_typeSomething": { "message": "יש להקליד משהו..." },
+  "placeholder_typeSomething": { "message": "יש להקליד משהו" },
   "prompt_updateReplyLang": { "message": "עדכון שפת התגובה" },
   "alert_langUpdated": { "message": "השפה עודכנה" },
   "alert_willReplyIn": { "message": "נשיב בעוד" },

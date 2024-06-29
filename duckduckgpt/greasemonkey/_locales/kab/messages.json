@@ -2,7 +2,7 @@
   "appName": { "message": "DuckDuckGPT" },
   "appDesc": { "message": "Add ChatGPT answers to DuckDuckGo sidebar (izdayen s GPT-4o!)" },
   "menuLabel_proxyAPImode": { "message": "Aɣewwaṛ n API Proxy" },
-  "menuLabel_autoGetAnswers": { "message": "Tiririt ɣef tuttriwin -.." },
+  "menuLabel_autoGetAnswers": { "message": "Tiririt ɣef tuttriwin -" },
   "menuLabel_autoFocusChatbar": { "message": "Auto-Focus Chatbar" },
   "menuLabel_whenStreaming": { "message": "asmi ara tessuffɣeḍ" },
   "menuLabel_show": { "message": "Sken" },

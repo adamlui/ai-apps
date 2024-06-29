@@ -26,7 +26,7 @@
   "alert_onTopicOf": { "message": "މިމައުޟޫޢުގެ މައްޗަށެވެ" },
   "alert_onAllTopics": { "message": "ހުރިހާ މައުޟޫޢުތަކެއްގެ މައްޗަށެވެ" },
   "alert_replyIntUpdated": { "message": "އިންޓަވަލް އަޕްޑޭޓްކޮށްފި" },
-  "alert_willReplyEvery": { "message": "ޖަވާބު ދޭނީ ކޮންމެ.." },
+  "alert_willReplyEvery": { "message": "ޖަވާބު ދޭނީ ކޮންމެ" },
   "alert_choosePlatform": { "message": "ޕްލެޓްފޯމެއް އިޚްތިޔާރު ކުރޭ" },
   "alert_updateAvail": { "message": "ލިބެން ހުރި އަޕްޑޭޓް" },
   "alert_newerVer": { "message": "އަޕްޑޭޓެއް" },

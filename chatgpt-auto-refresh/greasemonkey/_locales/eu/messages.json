@@ -7,7 +7,7 @@
   "menuLabel_refreshInt": { "message": "Freskatzeko tartea" },
   "menuLabel_about": { "message": "Egileari Buruz" },
   "about_version": { "message": "Bertsioa" },
-  "about_poweredBy": { "message": "Teknologia:" },
+  "about_poweredBy": { "message": "Teknologia" },
   "about_sourceCode": { "message": "Iturburu kode" },
   "prompt_updateInt": { "message": "Eguneratu freskatze tartea (segundotan)" },
   "alert_intUpdated": { "message": "Tarte eguneratua" },

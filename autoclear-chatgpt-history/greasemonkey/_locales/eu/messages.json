@@ -6,7 +6,7 @@
   "menuLabel_modeNotifs": { "message": "Moduaren jakinarazpenak" },
   "menuLabel_about": { "message": "Egileari Buruz" },
   "about_version": { "message": "Bertsioa" },
-  "about_poweredBy": { "message": "Teknologia:" },
+  "about_poweredBy": { "message": "Teknologia" },
   "about_sourceCode": { "message": "Iturburu kode" },
   "mode_autoClear": { "message": "Automatikoki garbitu" },
   "alert_choosePlatform": { "message": "Aukeratu plataforma bat" },

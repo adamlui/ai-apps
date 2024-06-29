@@ -18,7 +18,7 @@
   "menuLabel_about": { "message": "Egileari Buruz" },
   "menuLabel_settings": { "message": "Ezarpenak" },
   "about_version": { "message": "Bertsioa" },
-  "about_poweredBy": { "message": "Teknologia:" },
+  "about_poweredBy": { "message": "Teknologia" },
   "about_sourceCode": { "message": "Iturburu kode" },
   "scheme_light": { "message": "Arina" },
   "scheme_dark": { "message": "Iluna" },

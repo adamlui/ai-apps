@@ -2,7 +2,7 @@
   "appName": { "message": "ChatGPT шексіздігі" },
   "appDesc": { "message": "Барлық білетін ChatGPT-тен шексіз жауаптар жасаңыз (кез-келген тілде!)" },
   "menuLabel_infinityMode": { "message": "Шексіздік режимі" },
-  "menuLabel_autoStart": { "message": "Авто бастау." },
+  "menuLabel_autoStart": { "message": "Авто бастау" },
   "menuLabel_toggleVis": { "message": "Көрінуін терістеу" },
   "menuLabel_autoScroll": { "message": "Автоматты тіркеу" },
   "menuLabel_replyLang": { "message": "Жауап беру тілі" },

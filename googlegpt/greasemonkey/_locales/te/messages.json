@@ -46,7 +46,7 @@
   "helptip_replyLanguage": { "message": "లో ప్రత్యుత్తరం ఇవ్వడానికి GoogleGPT కోసం భాష" },
   "helptip_colorScheme": { "message": "లో GoogleGPT UI భాగాలను ప్రదర్శించే పథకం" },
   "placeholder_askSomethingElse": { "message": "మరేదైనా అడగండి" },
-  "placeholder_typeSomething": { "message": "ఏదో టైప్ చేయండి ..." },
+  "placeholder_typeSomething": { "message": "ఏదో టైప్ చేయండి " },
   "prompt_updateReplyLang": { "message": "Update reply language" },
   "alert_langUpdated": { "message": "Language updated" },
   "alert_willReplyIn": { "message": "will reply in" },

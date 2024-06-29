@@ -60,7 +60,7 @@
   "alert_isUnsupportedIn": { "message": "ൽ പിന്തുണയ്ക്കുന്നില്ല" },
   "alert_whenUsing": { "message": "ഉപയോഗിക്കുമ്പോൾ" },
   "alert_pleaseUse": { "message": "ദയവായി ഉപയോഗിക്കുക" },
-  "alert_instead": { "message": "പകരം..." },
+  "alert_instead": { "message": "പകരം" },
   "alert_unavailable": { "message": "ലഭ്യമല്ല" },
   "alert_isOnlyAvailFor": { "message": "s" },
   "alert_and": { "message": "," },

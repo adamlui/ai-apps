@@ -62,7 +62,7 @@
   "alert_instead": { "message": "INSTEAD" },
   "alert_unavailable": { "message": "дастрас нест" },
   "alert_isOnlyAvailFor": { "message": "isang magagamit lamang para sa" },
-  "alert_and": { "message": "You are about to translate the &apos;Or&apos; COMMAND, there are some rules on how to translate it. Please see http: // edu. kde. org/ kturtle/ translator. php to learn how to properly translate it." },
+  "alert_and": { "message": "You are about to translate the &apos;Or&apos; COMMAND, there are some rules on how to translate it. Please see http: // edu. kde. org/ kturtle/ translator. php to learn how to properly translate it" },
   "alert_userscriptMgrNoStream": { "message": "Мудири корвандони шумо ҷавобҳои ҷараёнро пуштибонӣ намекунад" },
   "alert_isCurrentlyOnlyAvailBy": { "message": "kasalukuyang magagamit lamang sa" },
   "alert_openAIsupportSoon": { "message": "Дастгирии OpenAI API ба наздикӣ илова карда мешавад" },

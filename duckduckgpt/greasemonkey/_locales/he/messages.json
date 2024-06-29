@@ -45,7 +45,7 @@
   "helptip_stickySidebar": { "message": "הופך את DuckDuckGPT לגלוי בסרגל הצידי אפילו כשאתה גולל" },
   "helptip_replyLanguage": { "message": "שפה לתגובת DuckDuckGPT" },
   "helptip_colorScheme": { "message": "ערכה להצגת רכיבי ממשק משתמש של DuckDuckGPT ב -" },
-  "placeholder_typeSomething": { "message": "יש להקליד משהו..." },
+  "placeholder_typeSomething": { "message": "יש להקליד משהו" },
   "placeholder_askSomethingElse": { "message": "Something else&#10;&#10;" },
   "prompt_updateReplyLang": { "message": "עדכון שפת התגובה" },
   "alert_langUpdated": { "message": "השפה עודכנה" },

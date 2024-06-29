@@ -28,7 +28,7 @@
   "mode_prefix": { "message": "ቅድመ ቅጥያ ሁነታ" },
   "mode_suffix": { "message": "ቅጥያ ሁነታ" },
   "tooltip_playAnswer": { "message": "መልስ አጫውት" },
-  "tooltip_fontSize": { "message": "የፎንት መጠን..." },
+  "tooltip_fontSize": { "message": "የፎንት መጠን" },
   "tooltip_sendReply": { "message": "መልስ ላክ" },
   "tooltip_askRandQuestion": { "message": "የዘፈቀደ ጥያቄ ይጠይቁ" },
   "tooltip_close": { "message": "ዝጋ" },

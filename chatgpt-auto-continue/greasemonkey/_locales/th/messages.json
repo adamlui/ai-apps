@@ -10,7 +10,7 @@
   "alert_updateAvail": { "message": "มีอัพเดตให้ใช้งาน" },
   "alert_newerVer": { "message": "อัพเดทไปยัง" },
   "alert_isAvail": { "message": "มี   ให้ใช้งานแล้ว" },
-  "alert_upToDate": { "message": "ถึงวันที่    .........................................  ……………." },
+  "alert_upToDate": { "message": "ถึงวันที่    .........................................  ……………" },
   "alert_isUpToDate": { "message": "อัพเดทแล้ว" },
   "notif_chatAutoContinued": { "message": "แชทออโต้ - ดำเนินการต่อ" },
   "buttonLabel_moreApps": { "message": "แอป ChatGPT เพิ่มเติม" },

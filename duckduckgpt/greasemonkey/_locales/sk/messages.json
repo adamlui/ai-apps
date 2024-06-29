@@ -58,7 +58,7 @@
   "alert_upToDate": { "message": "Aktuálny" },
   "alert_isUpToDate": { "message": "sú aktuálne" },
   "alert_isUnsupportedIn": { "message": "nie je podporovaný v" },
-  "alert_whenUsing": { "message": "NovoMix 30 sa tiež môže podáva jedenkrát denne pri po iato nej dávke 12 U v ase ve ere (ve erného jedla)." },
+  "alert_whenUsing": { "message": "NovoMix 30 sa tiež môže podáva jedenkrát denne pri po iato nej dávke 12 U v ase ve ere (ve erného jedla)" },
   "alert_pleaseUse": { "message": "Použite" },
   "alert_instead": { "message": "ANTIMYKOTIKÁ" },
   "alert_unavailable": { "message": "nedostupné" },
