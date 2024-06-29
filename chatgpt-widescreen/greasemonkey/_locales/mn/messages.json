@@ -13,7 +13,7 @@
   "menuLabel_disabled": { "message": "Тохиргоо (Дэмжлэг)" },
   "about_version": { "message": "Хувилбар" },
   "about_poweredBy": { "message": "ИЛЧЛЭГЧ" },
-  "about_sourceCode": { "message": "ᠰᠣᠷᠪᠤᠯᠵᠢ ᠺᠣᠳ᠋" },
+  "about_sourceCode": { "message": "Эх код" },
   "mode_wideScreen": { "message": "Цонхны дэлгэц" },
   "mode_fullWindow": { "message": "Хоолойн" },
   "mode_fullScreen": { "message": "Цонхны дэлгэц" },

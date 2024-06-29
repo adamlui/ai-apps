@@ -7,7 +7,7 @@
   "menuLabel_about": { "message": "Бидний тухай" },
   "about_version": { "message": "Хувилбар" },
   "about_poweredBy": { "message": "ИЛЧЛЭГЧ" },
-  "about_sourceCode": { "message": "ᠰᠣᠷᠪᠤᠯᠵᠢ ᠺᠣᠳ᠋" },
+  "about_sourceCode": { "message": "Эх код" },
   "mode_autoClear": { "message": "Авто Авто" },
   "alert_choosePlatform": { "message": "Платформыг сонгоно уу" },
   "alert_updateAvail": { "message": "Шинэчлэх (update) боломжтой" },
