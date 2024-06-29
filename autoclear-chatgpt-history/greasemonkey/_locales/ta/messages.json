@@ -7,7 +7,7 @@
   "menuLabel_about": { "message": "பற்றி" },
   "about_version": { "message": "பதிப்பு" },
   "about_poweredBy": { "message": "மூலம் இயக்கப்படுகிறது" },
-  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "about_sourceCode": { "message": "மூல குறியீடு" },
   "mode_autoClear": { "message": "தானியங்கு கிளியர்" },
   "alert_choosePlatform": { "message": "ஒரு தளத்தைத் தேர்வுசெய்க" },
   "alert_updateAvail": { "message": "புதிய புதுப்பிப்பு கிடைக்கிறது!" },

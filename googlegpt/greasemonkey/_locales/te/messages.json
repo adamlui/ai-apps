@@ -19,7 +19,7 @@
   "menuLabel_settings": { "message": "సెట్టింగ్‌లు" },
   "about_version": { "message": "Version" },
   "about_poweredBy": { "message": "Powered by" },
-  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "about_sourceCode": { "message": "సోర్స్ కోడ్" },
   "scheme_light": { "message": "లైట్" },
   "scheme_dark": { "message": "చీకటి" },
   "mode_proxy": { "message": "ప్రాక్సీ మోడ్" },

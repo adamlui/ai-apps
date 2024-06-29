@@ -7,7 +7,7 @@
   "menuLabel_about": { "message": "ਇਸ ਬਾਰੇ" },
   "about_version": { "message": "ਵਰਜਨ" },
   "about_poweredBy": { "message": "ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },
-  "about_sourceCode": { "message": "ਸਰੋਤ ਕੋਡ@ info: whatsthis" },
+  "about_sourceCode": { "message": "ਸੂਤਰ ਸੰਕੇਤਾਵਲੀ" },
   "mode_autoClear": { "message": "ਆਟੋ - ਸਾਫ਼" },
   "alert_choosePlatform": { "message": "ਇੱਕ ਪਲੇਟਫਾਰਮ ਚੁਣੋ" },
   "alert_updateAvail": { "message": "ਕੋਈ ਵੇਰਵਾ ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ" },

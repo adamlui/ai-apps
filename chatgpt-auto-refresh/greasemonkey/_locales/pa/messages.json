@@ -8,7 +8,7 @@
   "menuLabel_about": { "message": "ਇਸ ਬਾਰੇ" },
   "about_version": { "message": "ਵਰਜਨ" },
   "about_poweredBy": { "message": "ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },
-  "about_sourceCode": { "message": "ਸਰੋਤ ਕੋਡ@ info: whatsthis" },
+  "about_sourceCode": { "message": "ਸੂਤਰ ਸੰਕੇਤਾਵਲੀ" },
   "prompt_updateInt": { "message": "ਰੀਫਰੈਸ਼ ਅੰਤਰਾਲ ਅੱਪਡੇਟ ਕਰੋ (ਸਕਿੰਟਾਂ ਵਿੱਚ)" },
   "alert_intUpdated": { "message": "ਅੰਤਰਾਲ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ" },
   "alert_willRefresh": { "message": "ChatGPT ਸੈਸ਼ਨ ਆਟੋ ਰੀਫਰੈਸ਼ ਹੋਵੇਗਾ" },

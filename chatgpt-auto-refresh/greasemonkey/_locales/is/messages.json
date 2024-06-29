@@ -8,7 +8,7 @@
   "menuLabel_about": { "message": "Um" },
   "about_version": { "message": "Útgáfa" },
   "about_poweredBy": { "message": "Knúið af" },
-  "about_sourceCode": { "message": "Upprunakóði@ info: whatsthis" },
+  "about_sourceCode": { "message": "Frumkóði" },
   "prompt_updateInt": { "message": "Uppfæra endurhleðslutímabil (í sekúndum)" },
   "alert_intUpdated": { "message": "Millibil uppfært" },
   "alert_willRefresh": { "message": "ChatGPT-lota mun sjálfkrafa endurhlaða hverja einustu" },

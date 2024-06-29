@@ -2,7 +2,7 @@
   "appName": { "message": "GoogleGPT" },
   "appDesc": { "message": "Aldonas AI-respondojn al Google Search (funkciigita de Google Gemma + GPT-4o!)" },
   "menuLabel_autoGetAnswers": { "message": "Aŭtomate ricevi respondojn" },
-  "menuLabel_autoFocusChatbar": { "message": "@ info: whatsthis" },
+  "menuLabel_autoFocusChatbar": { "message": "Aŭtomata Fokusa Babilejo" },
   "menuLabel_whenStreaming": { "message": "dum fluo" },
   "menuLabel_proxyAPImode": { "message": "Proxy API Mode" },
   "menuLabel_show": { "message": "Montri" },
@@ -85,7 +85,7 @@
   "buttonLabel_update": { "message": "Ĝisdatigi" },
   "buttonLabel_dismiss": { "message": "Malakcepti" },
   "link_viewChanges": { "message": "Montri ŝanĝojn" },
-  "link_shareFeedback": { "message": "@ info: whatsthis" },
+  "link_shareFeedback": { "message": "Kunhavigi Rimarkojn" },
   "prefix_exit": { "message": "Eliri" },
   "state_on": { "message": "Oran" },
   "state_off": { "message": "off" }

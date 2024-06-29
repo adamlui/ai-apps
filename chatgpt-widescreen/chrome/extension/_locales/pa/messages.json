@@ -13,7 +13,7 @@
   "menuLabel_disabled": { "message": "ਆਯੋਗ (ਇਕਸਟੈਨਸ਼ਨ ਇੰਸਟਾਲ)" },
   "about_version": { "message": "ਵਰਜਨ" },
   "about_poweredBy": { "message": "ਦੁਆਰਾ ਸੰਚਾਲਿਤ" },
-  "about_sourceCode": { "message": "ਸਰੋਤ ਕੋਡ@ info: whatsthis" },
+  "about_sourceCode": { "message": "ਸੂਤਰ ਸੰਕੇਤਾਵਲੀ" },
   "mode_wideScreen": { "message": "ਚੌੜੀ ਸਕਰੀਨ" },
   "mode_fullWindow": { "message": "ਪੂਰੀ ਵਿੰਡੋ" },
   "mode_fullScreen": { "message": "ਪੂਰੀ ਸਕਰੀਨ" },

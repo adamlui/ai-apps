@@ -7,7 +7,7 @@
   "menuLabel_about": { "message": "За" },
   "about_version": { "message": "Верзија" },
   "about_poweredBy": { "message": "Поддржано од" },
-  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "about_sourceCode": { "message": "Изворен код" },
   "mode_autoClear": { "message": "Автоматско чистење" },
   "alert_choosePlatform": { "message": "Изберете платформа" },
   "alert_updateAvail": { "message": "Достапна надградба" },

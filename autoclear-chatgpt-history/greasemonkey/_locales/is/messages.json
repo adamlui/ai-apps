@@ -7,7 +7,7 @@
   "menuLabel_about": { "message": "Um" },
   "about_version": { "message": "Útgáfa" },
   "about_poweredBy": { "message": "Knúið af" },
-  "about_sourceCode": { "message": "Upprunakóði@ info: whatsthis" },
+  "about_sourceCode": { "message": "Frumkóði" },
   "mode_autoClear": { "message": "Auto-Clear" },
   "alert_choosePlatform": { "message": "Veldu verkvang" },
   "alert_updateAvail": { "message": "Ný uppfærsla í boði" },

@@ -8,7 +8,7 @@
   "menuLabel_about": { "message": "A-zivout" },
   "about_version": { "message": "Handelv" },
   "about_poweredBy": { "message": "Powered by" },
-  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "about_sourceCode": { "message": "Kod orin" },
   "prompt_updateInt": { "message": "Update refresh interval (in secs)" },
   "alert_intUpdated": { "message": "Cancel: Meeting NameMeeting" },
   "alert_willRefresh": { "message": "ChatGPT session will auto-refresh every" },

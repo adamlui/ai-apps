@@ -19,7 +19,7 @@
   "menuLabel_settings": { "message": "Stillingar" },
   "about_version": { "message": "Útgáfa" },
   "about_poweredBy": { "message": "Knúið af" },
-  "about_sourceCode": { "message": "Upprunakóði@ info: whatsthis" },
+  "about_sourceCode": { "message": "Frumkóði" },
   "scheme_light": { "message": "Ljóst" },
   "scheme_dark": { "message": "Dökkt" },
   "mode_proxy": { "message": "Milliþjónshamur" },

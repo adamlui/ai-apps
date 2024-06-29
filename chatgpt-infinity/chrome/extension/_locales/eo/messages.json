@@ -21,7 +21,7 @@
   "alert_replyLangUpdated": { "message": "Lingvo ĝisdatigita" },
   "alert_willReplyIn": { "message": "respondos en" },
   "alert_yourSysLang": { "message": "vian sisteman lingvon" },
-  "alert_replyTopicUpdated": { "message": "@ info: whatsthis" },
+  "alert_replyTopicUpdated": { "message": "Temo ĝisdatigita" },
   "alert_willAnswer": { "message": "respondu demandojn" },
   "alert_onTopicOf": { "message": "pri la temo de" },
   "alert_onAllTopics": { "message": "pri ĉiuj temoj" },

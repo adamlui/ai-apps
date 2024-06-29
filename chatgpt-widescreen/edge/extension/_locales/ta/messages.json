@@ -13,7 +13,7 @@
   "menuLabel_disabled": { "message": "முடக்கப்பட்டது (நீட்டிப்பு நிறுவப்பட்டது)" },
   "about_version": { "message": "பதிப்பு" },
   "about_poweredBy": { "message": "மூலம் இயக்கப்படுகிறது" },
-  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "about_sourceCode": { "message": "மூல குறியீடு" },
   "mode_wideScreen": { "message": "பரந்த திரை" },
   "mode_fullWindow": { "message": "முழு-வடிவம்" },
   "mode_fullScreen": { "message": "முழுத்திரை" },

@@ -5,7 +5,7 @@
   "menuLabel_about": { "message": "பற்றி" },
   "about_version": { "message": "பதிப்பு" },
   "about_poweredBy": { "message": "மூலம் இயக்கப்படுகிறது" },
-  "about_sourceCode": { "message": "@ info: whatsthis" },
+  "about_sourceCode": { "message": "மூல குறியீடு" },
   "mode_autoContinue": { "message": "தானியங்கு தொடர்ச்சி" },
   "alert_updateAvail": { "message": "புதிய புதுப்பிப்பு கிடைக்கிறது!" },
   "alert_newerVer": { "message": "-க்கு ஒரு புதுப்பிப்பு" },
