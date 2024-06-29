@@ -149,7 +149,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Google Search (inikwa amandla yi-Google Gemma + GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.28.3
+// @version             2024.6.28.4
 // @license             MIT
 // @icon                https://media.googlegpt.io/images/icons/googlegpt/black/icon48.png?8652a6e
 // @icon64              https://media.googlegpt.io/images/icons/googlegpt/black/icon64.png?8652a6e
@@ -2359,7 +2359,7 @@
                 chatTextarea.id = 'app-chatbar' ; chatTextarea.rows = '1'
                 chatTextarea.placeholder = ( answer == 'standby' ? msgs.placeholder_askSomethingElse || 'Ask something else'
                                                                  : msgs.tooltip_sendReply || 'Send reply' ) + '...'
-                chatTextarea.style.width = hasSidebar ? '79.3%' : '80.1%'
+                chatTextarea.style.width = isMobile ? '81.4%' : hasSidebar ? '79.3%' : '80.1%'
                 continueChatDiv.append(chatTextarea)
                 replyForm.append(continueChatDiv) ; replySection.append(replyForm)
                 appDiv.insertBefore(replySection, appDiv.querySelector('footer'))
