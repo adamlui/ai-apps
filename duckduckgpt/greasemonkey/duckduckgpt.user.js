@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.4
+// @version             2024.6.29.5
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -502,6 +502,8 @@
     const modals = {
         about: {
             show() {
+
+                // Create/classify modal
                 const chatgptJSver = (/chatgpt-([\d.]+)\.min/.exec(GM_info.script.header) || [null, ''])[1]
                 const aboutModalID = siteAlert(
                     config.appName, // title
@@ -532,9 +534,11 @@
                                 reviewBtns[1].textContent.replace(/\s/g, '')) },
                         function moreChatGPTapps() { safeWindowOpen('https://github.com/adamlui/chatgpt-apps') }
                     ], '', 527) // About modal width
+                const aboutModal = document.getElementById(aboutModalID)
+                aboutModal.classList.add('ddgpt-modal')
 
                 // Resize/format buttons to include emoji + localized label + hide Dismiss button
-                for (const btn of document.getElementById(aboutModalID).querySelectorAll('button')) {
+                for (const btn of aboutModal.querySelectorAll('button')) {
                     btn.style.height = '52px' // re-size to fit meaty text content
                     if (/updates/i.test(btn.textContent)) btn.textContent = (
                         '🚀 ' + ( msgs.buttonLabel_updateCheck || 'Check for Updates' ))
@@ -550,6 +554,8 @@
 
         scheme: {
             show() {
+
+                // Create/classify modal
                 const schemeModalID = siteAlert(`${
                     config.appName } ${( msgs.menuLabel_colorScheme || 'Color Scheme' ).toLowerCase() }:`, '',
                     [ // buttons
@@ -557,9 +563,10 @@
                         function light() { updateScheme('light') },
                         function dark() { updateScheme('dark') }
                 ])
+                const schemeModal = document.getElementById(schemeModalID)
+                schemeModal.classList.add('ddgpt-modal')
 
                 // Center button cluster
-                const schemeModal = document.getElementById(schemeModalID)
                 schemeModal.querySelector('.modal-buttons').style.justifyContent = 'center'
 
                 // Re-format each button
@@ -620,7 +627,8 @@
                 // Init core elems
                 const settingsContainer = document.createElement('div') ; settingsContainer.id = 'ddgpt-settings-bg'
                 settingsContainer.classList = 'no-user-select'
-                const settingsModal = document.createElement('div') ; settingsModal.id = 'ddgpt-settings'
+                const settingsModal = document.createElement('div')
+                settingsModal.id = 'ddgpt-settings' ; settingsModal.className = 'ddgpt-modal'
                 const settingsIcon = icons.ddgpt.create()
                 settingsIcon.style.cssText = 'width: 56px ; position: relative ; top: -33px ; margin: 0 41% -12px' // size/pos icon
                 const settingsTitleDiv = document.createElement('div') ; settingsTitleDiv.id = 'ddgpt-settings-title'
