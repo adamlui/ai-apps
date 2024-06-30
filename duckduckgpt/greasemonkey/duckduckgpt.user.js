@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-DuckDuckGo (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.9
+// @version             2024.6.29.10
 // @license             MIT
 // @icon                https://media.ddgpt.com/images/icons/duckduckgpt/icon48.png?af89302
 // @icon64              https://media.ddgpt.com/images/icons/duckduckgpt/icon64.png?af89302
@@ -229,7 +229,6 @@
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
-    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
@@ -525,7 +524,7 @@
                                   function productHunt() { safeWindowOpen(
                                       'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
                                   function futurepedia() { safeWindowOpen(
-                                      'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review') },
+                                      'https://www.futurepedia.io/tool/duckduckgpt#tool-reviews') },
                                   function alternativeTo() { safeWindowOpen(
                                       'https://alternativeto.net/software/duckduckgpt/about/') }
                                 ], '', 523) // Review modal width
@@ -551,6 +550,41 @@
                         '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
                     else btn.style.display = 'none' // hide Dismiss button
             }}
+        },
+
+        feedback: {
+            show() {
+
+                // Create/classify modal
+                const feedbackModalID = siteAlert(`${
+                    msgs.alert_choosePlatform || 'Choose a platform' }:`, '',
+                    [ // buttons
+                        function greasyFork() { safeWindowOpen(
+                            config.greasyForkURL + '/feedback#post-discussion') },
+                        function github() { safeWindowOpen(
+                            config.gitHubURL + '/discussions/new/choose') },
+                        function productHunt() { safeWindowOpen(
+                            'https://www.producthunt.com/products/duckduckgpt/reviews/new') },
+                        function futurepedia() { safeWindowOpen(
+                            'https://www.futurepedia.io/tool/duckduckgpt#duckduckgpt-review') },
+                        function alternativeTo() { safeWindowOpen(
+                            'https://alternativeto.net/software/duckduckgpt/about/') }
+                    ], '', 408) // width
+                const feedbackModal = document.getElementById(feedbackModalID)
+                feedbackModal.classList.add('ddgpt-modal')
+
+                // Re-style button cluster
+                const buttons = feedbackModal.querySelector('.modal-buttons')
+                buttons.style.cssText += 'display: flex ; flex-wrap: wrap ; justify-content: center ;'
+                                       + ' margin-top: 14px !important' // close gap between title/btns
+
+                // Title-case GitHub button, hide Dismiss button
+                buttons.querySelectorAll('button').forEach((btn, idx) => {
+                    if (idx == 0) btn.style.display = 'none' // hide Dismiss button
+                    else if (btn.textContent == 'Github') btn.textContent = 'GitHub'
+                    btn.style.marginTop = btn.style.marginBottom = '5px'
+                })
+            }
         },
 
         scheme: {
@@ -2330,8 +2364,9 @@
     const appFooter = document.createElement('footer')
     appFooter.classList.add('fade-in', // DDGPT class
                             'feedback-prompt') // DDG class
-    let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Share feedback')
+    let footerContent = createAnchor('#', msgs.link_shareFeedback || 'Share feedback', { target: '_self' })
     footerContent.className = 'js-feedback-prompt-generic' // DDG footer class
+    footerContent.onclick = modals.feedback.show
     appFooter.append(footerContent)
 
     // APPEND DDGPT + footer to DDG

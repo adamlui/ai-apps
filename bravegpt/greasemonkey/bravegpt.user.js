@@ -148,7 +148,7 @@
 // @description:zu      Yengeza izimpendulo ze-AI ku-Brave Search (inikwa amandla yi-GPT-4o!)
 // @author              KudoAI
 // @namespace           https://kudoai.com
-// @version             2024.6.29.10
+// @version             2024.6.29.11
 // @license             MIT
 // @icon                https://media.bravegpt.com/images/icons/bravegpt/icon48.png?0a9e287
 // @icon64              https://media.bravegpt.com/images/icons/bravegpt/icon64.png?0a9e287
@@ -229,7 +229,6 @@ setTimeout(async () => {
     config.updateURL = config.greasyForkURL.replace('https://', 'https://update.')
         .replace(/(\d+)-?([a-zA-Z-]*)$/, (_, id, name) => `${ id }/${ !name ? 'script' : name }.meta.js`)
     config.supportURL = config.gitHubURL + '/issues/new'
-    config.feedbackURL = config.gitHubURL + '/discussions/new/choose'
     config.assetHostURL = config.gitHubURL.replace('github.com', 'cdn.jsdelivr.net/gh') + `@${config.latestAssetCommitHash}/`
     config.userLanguage = chatgpt.getUserLanguage()
     config.userLocale = config.userLanguage.includes('-') ? config.userLanguage.split('-')[1].toLowerCase() : ''
@@ -542,6 +541,40 @@ setTimeout(async () => {
                         '🤖 ' + ( msgs.buttonLabel_moreApps || 'More ChatGPT Apps' ))
                     else btn.style.display = 'none' // hide Dismiss button
             }}
+        },
+
+        feedback: {
+            show() {
+
+                // Create/classify modal
+                const feedbackModalID = siteAlert(`${
+                    msgs.alert_choosePlatform || 'Choose a platform' }:`, '',
+                    [ // buttons
+                        function greasyFork() { safeWindowOpen(
+                            config.greasyForkURL + '/feedback#post-discussion') },
+                        function github() { safeWindowOpen(
+                            config.gitHubURL + '/discussions/new/choose') },
+                        function productHunt() { safeWindowOpen(
+                            'https://www.producthunt.com/products/bravegpt/reviews/new') },
+                        function futurepedia() { safeWindowOpen(
+                            'https://www.futurepedia.io/tool/bravegpt#tool-reviews') },
+                        function alternativeTo() { safeWindowOpen(
+                            'https://alternativeto.net/software/bravegpt/about/') }
+                    ], '', 456) // width
+                const feedbackModal = document.getElementById(feedbackModalID)
+                feedbackModal.classList.add('bravegpt-modal')
+
+                // Re-style button cluster
+                const buttons = feedbackModal.querySelector('.modal-buttons')
+                buttons.style.cssText += 'display: flex ; flex-wrap: wrap ; justify-content: center ;'
+
+                // Title-case GitHub button, hide Dismiss button
+                buttons.querySelectorAll('button').forEach((btn, idx) => {
+                    if (idx == 0) btn.style.display = 'none' // hide Dismiss button
+                    else if (btn.textContent == 'Github') btn.textContent = 'GitHub'
+                    btn.style.marginTop = btn.style.marginBottom = '5px'
+                })
+            }
         },
 
         scheme: {
@@ -2394,8 +2427,9 @@ setTimeout(async () => {
     }
 
     // Init footer CTA to share feedback
-    let footerContent = createAnchor(config.feedbackURL, msgs.link_shareFeedback || 'Feedback')
+    let footerContent = createAnchor('#', msgs.link_shareFeedback || 'Share feedback', { target: '_self' })
     footerContent.classList.add('feedback', 'svelte-8js1iq') // Brave classes
+    footerContent.onclick = modals.feedback.show
 
     // Show STANDBY mode or get/show ANSWER
     let msgChain = [{ role: 'user', content: augmentQuery(new URL(location.href).searchParams.get('q')) }]
